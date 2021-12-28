@@ -1,0 +1,718 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fourier series Answers 1-6 &#8212; Applying Maths in the Chemical &amp; Biomolecular Sciences</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/book-cover.jpg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Applying Maths in the Chemical & Biomolecular Sciences</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Applying Maths in the Chemical &amp; Biomolecular Sciences
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Fourier-A.html">
+   Chapter 9 Fourier Series and Transforms
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/chapter-9/Fourier-answers-1-6.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/chapter-9/Fourier-answers-1-6.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <p>Godfrey Beddard ‘Applying Maths in the Chemical &amp; Biomolecular Sciences’ Chapter 9</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import all python add-ons etc that will be needed later on</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">quad</span>
+<span class="n">init_printing</span><span class="p">()</span>                         <span class="c1"># allows printing of SymPy results in typeset maths format</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;font.size&#39;</span><span class="p">:</span> <span class="mi">14</span><span class="p">})</span>  <span class="c1"># set font size for plots</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="fourier-series-answers-1-6">
+<h1>Fourier series Answers 1-6<a class="headerlink" href="#fourier-series-answers-1-6" title="Permalink to this headline">¶</a></h1>
+<p><strong>Q1 answer</strong> To confirm the integrations involved in calculating <span class="math notranslate nohighlight">\(b_n\)</span>, the method of section 1.4, eq. 12 can be used. Each term in the series is multiplied by <span class="math notranslate nohighlight">\(\sin(mx)\)</span>, and then integrated over the range <span class="math notranslate nohighlight">\(\pm\pi\)</span>. The series <span class="math notranslate nohighlight">\(g(x)\)</span> is given by eqn 1 and approximates <span class="math notranslate nohighlight">\(f(x)\)</span> as</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle  f(x) \approx g(x) = \frac{a_0}{2}+ \sum\limits_{n=1}^\infty a_n\cos(nx) + \sum\limits_{n=1}^\infty b_n\sin(nx)   \]</div>
+<p>Following eqn. 12, but multiplying by the sine the <span class="math notranslate nohighlight">\(m\)</span><sup>th</sup> term gives,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \int\limits_{-\pi}^\pi f(x) \sin(mx)dx = \frac{a_0}{2}\int\limits_{-\pi}^\pi \sin(mx)dx +\int\limits_{-\pi}^\pi \left [\sum\limits_{n=1} a_n\cos(nx)+ \sum\limits_{n=1} b_n\sin(nx ) \right] \sin(mx)dx \]</div>
+<p>The first integral with <span class="math notranslate nohighlight">\(a_0\)</span> is zero, because sine is an odd function, the second integral is zero for the same reason. The last integral has to be treated carefully,however. Using Sympy for example produces answers depending on the values of <span class="math notranslate nohighlight">\(n\)</span> and <span class="math notranslate nohighlight">\(m\)</span>,</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span><span class="p">,</span><span class="n">m</span><span class="p">,</span><span class="n">x</span> <span class="o">=</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39; n m x&#39;</span><span class="p">)</span>
+
+<span class="n">f</span> <span class="o">=</span> <span class="n">sin</span><span class="p">(</span><span class="n">n</span><span class="o">*</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="n">sin</span><span class="p">(</span><span class="n">m</span><span class="o">*</span><span class="n">x</span><span class="p">)</span>
+<span class="n">I0</span><span class="o">=</span>  <span class="n">integrate</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
+<span class="n">I0</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin{cases} 0 &amp; \text{for}\: m = 0 \wedge n = 0 \\- \frac{x \sin^{2}{\left(n x \right)}}{2} - \frac{x \cos^{2}{\left(n x \right)}}{2} + \frac{\sin{\left(n x \right)} \cos{\left(n x \right)}}{2 n} &amp; \text{for}\: m = - n \\\frac{x \sin^{2}{\left(n x \right)}}{2} + \frac{x \cos^{2}{\left(n x \right)}}{2} - \frac{\sin{\left(n x \right)} \cos{\left(n x \right)}}{2 n} &amp; \text{for}\: m = n \\- \frac{m \sin{\left(n x \right)} \cos{\left(m x \right)}}{m^{2} - n^{2}} + \frac{n \sin{\left(m x \right)} \cos{\left(n x \right)}}{m^{2} - n^{2}} &amp; \text{otherwise} \end{cases}\end{split}\]</div>
+</div>
+</div>
+<p>The cases when  when <span class="math notranslate nohighlight">\(m\)</span> and <span class="math notranslate nohighlight">\(n\)</span> are zero or negative do not apply since these must be greater than zero so the first integral that interests us when <span class="math notranslate nohighlight">\(m = n\)</span>. The first two terms evaluate to <span class="math notranslate nohighlight">\(x/2\)</span> hence,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \left. \frac{x}{2} - \frac{1}{2n}\sin(nx)\cos(nx) \right|_{-\pi}^\pi = \pi \]</div>
+<p>When <span class="math notranslate nohighlight">\(m \ne n\)</span></p>
+<div class="math notranslate nohighlight">
+\[\displaystyle  \left. \frac{1}{(m^2 - n^2)}(-m\sin(nx)\cos(mx) + n\sin(mx)\cos(nx)) \right|_{-\pi}^\pi = 0\]</div>
+<p>and the summation is reduced to just this one term. The equation for the coefficients <span class="math notranslate nohighlight">\(b_n\)</span> is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle   b_n= \frac{1}{\pi}\int\limits_{-\pi}^{+\pi}f(x)\sin(nx)dx \qquad  (n \gt 0)  \]</div>
+<p><strong>Q2 answer</strong>   The sine function is odd therefore only <span class="math notranslate nohighlight">\(b\)</span> terms are present and</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle b_n=\frac{1}{L}\int_{-L}^L \sin(x)\sin(n\pi x/L)dx \]</div>
+<p>This is a standard integral; it can be performed by hand by converting to an exponential form. You should confirm the result that Sympy gives.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">L</span><span class="o">=</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39; n x L&#39;</span><span class="p">)</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="n">sin</span><span class="p">(</span><span class="n">n</span><span class="o">*</span><span class="n">pi</span><span class="o">*</span><span class="n">x</span><span class="o">/</span><span class="n">L</span><span class="p">)</span>
+<span class="n">I0</span><span class="o">=</span><span class="n">integrate</span><span class="p">(</span><span class="n">f</span><span class="p">,(</span><span class="n">x</span><span class="p">,</span><span class="o">-</span><span class="n">L</span><span class="p">,</span><span class="n">L</span><span class="p">),</span><span class="n">conds</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">)</span>
+<span class="n">I0</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Fourier-answers-1-6_6_0.png" src="../_images/Fourier-answers-1-6_6_0.png" />
+</div>
+</div>
+<p>As <span class="math notranslate nohighlight">\(n\)</span> is an integer <span class="math notranslate nohighlight">\(\sin(n\pi)\)</span> = 0 and <span class="math notranslate nohighlight">\(\cos(n\pi)\)</span> = 1 thus the integral is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \int_{-L}^L \sin(x)\sin\left(\frac{n\pi x}{L}\right)dx =L\frac{2(-1)^{1+n}n\pi\sin(L)}{n^2\pi^2-L^2} \]</div>
+<p>The Fourier series is therefore</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \sin(x)\approx 2\pi\sin(L)\sum\limits_{n=1}\left(\frac{(-1)^{1+n}n}{n^2\pi^2-L^2}  \right) \sin\left(\frac{n\pi x}{L}\right) \]</div>
+<p>which shows that because the sine is only defined over the range <span class="math notranslate nohighlight">\(-L \lt x \lt L\)</span> and is zero elsewhere, there need to be many terms, <span class="math notranslate nohighlight">\(\gt\)</span> 50, in the series to describe the function accurately as shown in the next figure.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># plot fourier sine series   =  sum (bn sin(n.pi.x/L) n=1...)</span>
+<span class="n">fsin</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">L</span> <span class="p">,</span><span class="n">k</span> <span class="p">:</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">L</span><span class="p">)</span>\
+                        <span class="o">*</span><span class="nb">sum</span><span class="p">(</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">n</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">n</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">x</span><span class="o">/</span><span class="n">L</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">n</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="n">L</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">k</span><span class="p">))</span>
+<span class="n">L</span> <span class="o">=</span> <span class="mf">10.0</span>
+<span class="n">x</span><span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="n">L</span><span class="p">,</span><span class="n">L</span><span class="p">,</span><span class="mi">500</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;gold&#39;</span><span class="p">,</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;sin(x)&#39;</span><span class="p">)</span>
+<span class="n">k</span><span class="o">=</span><span class="mi">5</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">fsin</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span><span class="n">k</span><span class="p">),</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">k</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39; terms&#39;</span> <span class="p">)</span>
+<span class="n">k</span><span class="o">=</span><span class="mi">150</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">fsin</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span><span class="n">k</span><span class="p">),</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">k</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39; terms&#39;</span> <span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;dashed&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;sin(x) and its fourier series to &#39;</span><span class="o">+</span><span class="sa">r</span><span class="s1">&#39;$\pm 8$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;center left&#39;</span><span class="p">,</span> <span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Fourier-answers-1-6_8_0.png" src="../_images/Fourier-answers-1-6_8_0.png" />
+</div>
+</div>
+<p>Figure 1. The sine wave (yellow line) and its Fourier series containing 5 (red) and 150 terms (black) over the range
+<span class="math notranslate nohighlight">\(\pm\)</span> 8. The latter  fits the sine wave well along its whole extent except near to <span class="math notranslate nohighlight">\(\pm L\)</span> where it oscillates wildly. It is zero at <span class="math notranslate nohighlight">\(\pm L\)</span> then repeats itself as may clearly be seen outside the range <span class="math notranslate nohighlight">\(\pm\)</span> 8.</p>
+<p><strong>Q3 answer</strong> (a) Using equations (1) to (3) for <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> gives</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle a_n = \frac{1}{\pi}\int_{-\pi}^\pi (\frac{\pi}{2}-x)\cos(nx)dx \]</div>
+<p>When <span class="math notranslate nohighlight">\(n\)</span> = 0 the integral has the value <span class="math notranslate nohighlight">\(\displaystyle a_0 = \frac{1}{\pi}\int_{-\pi}^\pi (\frac{\pi}{2}-x)dx =\pi\)</span></p>
+<p>When <span class="math notranslate nohighlight">\(n \gt\)</span> 0, the integral is zero, <span class="math notranslate nohighlight">\(a_n = 0;\;n \gt 0\)</span> because the integral produces results proportional to the odd functions <span class="math notranslate nohighlight">\(\sin(x)\)</span> and <span class="math notranslate nohighlight">\(x\)</span>  which are zero over the range <span class="math notranslate nohighlight">\(\pm \pi\)</span>.</p>
+<p>The <span class="math notranslate nohighlight">\(b\)</span> coefficients are</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle b_n = \frac{1}{\pi}\int_{-\pi}^\pi (\frac{\pi}{2}-x)\sin(nx)dx  = -\frac{1}{\pi}\int_{-\pi}^\pi x\sin(nx)dx\]</div>
+<p>This can be integrated ‘by parts’ (<span class="math notranslate nohighlight">\(\int udv = uv-\int vdu\)</span>)</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle b_n= -\frac{x}{n\pi}\left. \cos(nx)\right|_{-\pi}^\pi + \frac{1}{n\pi}\int_{-\pi}^\pi\cos(nx)dx = (-1)^n\frac{2}{n} \]</div>
+<p>The second integral evaluates to zero even though the cosine is an even function and the limits symmetrical. This can be seen by sketching the cosine from <span class="math notranslate nohighlight">\(\pm\pi\)</span>.</p>
+<p>The series is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{\pi}{2}-x \approx \frac{\pi}{2} - 2\cos(x)+\cos(2x)-\frac{2}{3}\cos(3x)+\cdots\]</div>
+<p>and a plot (Fig.2) to <span class="math notranslate nohighlight">\(n\)</span> = 10 terms shows, how well it matches the function except close to <span class="math notranslate nohighlight">\(\pm\pi\)</span> where this is poor. Notice that the function continues past <span class="math notranslate nohighlight">\(\pm\pi\)</span> but the Fourier series repeats itself over this interval. You will notice that there is an overshoot and undershoot near to <span class="math notranslate nohighlight">\(\pm\pi\)</span> rather as in the Gibbs phenomenon. In this case, however, because the line is sloping the size of the overshoot increases to a limit as the number of terms increases.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># plot fourier pi/2-x series  = a0/2 + sum( bn. sin(nx) n = 1...)</span>
+<span class="n">fx</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">k</span> <span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span> <span class="o">+</span> <span class="nb">sum</span><span class="p">(</span>  <span class="p">(</span><span class="mi">2</span><span class="o">/</span><span class="n">n</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">**</span><span class="n">n</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">n</span><span class="o">*</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">k</span><span class="p">)</span> <span class="p">)</span>
+
+<span class="n">x</span><span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span><span class="mi">500</span><span class="p">)</span>
+<span class="n">k</span><span class="o">=</span><span class="mi">5</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">fx</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">k</span><span class="p">),</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">k</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39; terms&#39;</span> <span class="p">)</span>
+<span class="n">k</span><span class="o">=</span><span class="mi">50</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">fx</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">k</span><span class="p">),</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">k</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39; terms&#39;</span> <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="o">-</span><span class="n">x</span> <span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span><span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;dashed&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;dashed&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;dashed&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$\pi/2-x$ and its fourier series to &#39;</span><span class="o">+</span><span class="sa">r</span><span class="s1">&#39;$\pm \pi$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;center left&#39;</span><span class="p">,</span> <span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Fourier-answers-1-6_10_0.png" src="../_images/Fourier-answers-1-6_10_0.png" />
+</div>
+</div>
+<p>Figure 2. Plot of <span class="math notranslate nohighlight">\(\pi\)</span>/2 - <span class="math notranslate nohighlight">\(x\)</span> (dashed, straight line) and its Fourier series with  <span class="math notranslate nohighlight">\(n\)</span> = 5 and 50, over the range <span class="math notranslate nohighlight">\(\pm \pi\)</span>. The series is zero at <span class="math notranslate nohighlight">\(x = \pm \pi\)</span> and would repeat itself indefinitely if drawn to larger positive and negative <span class="math notranslate nohighlight">\(x\)</span>.</p>
+<p><strong>Q4 answer</strong>  (a) The result of the Hermite series summation using Algorithm in section 9.2 with appropriate changes, and with 20 terms in the series, is shown in the left-hand panel in Fig.3. This is a similar fit to the Fourier method for this particular function although it deviates at the extremities because the method assumes the function is periodic, which it is not. More terms in the summation improve the fit but numerical instability can become important due to the factorial and large powers involved.</p>
+<p>(b) In the Chebychev polynomial calculation, the changing normalization <span class="math notranslate nohighlight">\(c\)</span> can be handled by separating the first constant from the rest. Two different but equivalent forms of the polynomial are given in the code.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># using Hermite polynomials to form a fourier series.</span>
+<span class="k">def</span> <span class="nf">Hermite</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">x</span><span class="p">):</span>       <span class="c1"># use recursion formulae, H(n,x)=2xH(n-1,x) -2(n-1)H(n-2,x);  x position, n is order.</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mf">1.0</span>
+    <span class="k">elif</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mf">2.0</span><span class="o">*</span><span class="n">x</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mf">2.0</span><span class="o">*</span><span class="n">x</span><span class="o">*</span><span class="n">Hermite</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">x</span><span class="p">)</span> <span class="o">-</span> <span class="mf">2.0</span><span class="o">*</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">Hermite</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>     <span class="c1"># return H(n,x)</span>
+<span class="c1">#--------------</span>
+<span class="k">def</span> <span class="nf">fact</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>           <span class="c1"># factorial  by recursion</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mf">1.0</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">n</span><span class="o">*</span><span class="n">fact</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="c1">#--------------  </span>
+
+<span class="n">f</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="o">/</span><span class="mf">2.0</span><span class="p">)</span>    <span class="c1"># target function</span>
+<span class="n">w</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>                  <span class="c1"># weighting</span>
+<span class="n">c</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">n</span><span class="p">:</span> <span class="mf">2.0</span><span class="o">**</span><span class="n">n</span><span class="o">*</span><span class="n">fact</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>  <span class="c1"># normalisation</span>
+
+<span class="n">m</span> <span class="o">=</span> <span class="mi">20</span>                                       <span class="c1"># number of terms in series to sum</span>
+<span class="n">L</span> <span class="o">=</span> <span class="mf">7.0</span>
+<span class="n">numx</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="n">L</span><span class="p">,</span><span class="n">L</span><span class="p">,</span><span class="n">numx</span><span class="p">)</span>
+
+<span class="n">func</span><span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span><span class="n">n</span><span class="p">:</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">*</span> <span class="n">Hermite</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="n">w</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> 
+
+<span class="n">I0</span><span class="o">=</span> <span class="p">[</span><span class="n">quad</span><span class="p">(</span><span class="n">func</span><span class="p">,</span><span class="o">-</span><span class="n">L</span><span class="p">,</span><span class="n">L</span><span class="p">,</span><span class="n">args</span> <span class="o">=</span> <span class="n">n</span> <span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">m</span><span class="p">)]</span>     <span class="c1"># separate out integral into list</span>
+
+<span class="n">FS</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="nb">sum</span><span class="p">(</span> <span class="n">I0</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">Hermite</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="n">c</span><span class="p">(</span><span class="n">n</span><span class="p">))</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">m</span><span class="p">))</span>    <span class="c1">#  Fourier series eqn 20</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;function&#39;</span><span class="p">)</span>  <span class="c1"># originla function</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">FS</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;series&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;dashed&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;dashed&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Hermite Fourier series and function&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">([</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span><span class="mi">30</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Fourier-answers-1-6_12_0.png" src="../_images/Fourier-answers-1-6_12_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># using chebychev polynomials</span>
+
+<span class="k">def</span> <span class="nf">Achev</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">x</span><span class="p">):</span>                 <span class="c1"># as recursion  T(n,x)=  2xT(n-1,x) - T(n-2,x) </span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">elif</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">x</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span>  <span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="o">*</span><span class="n">Achev</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">x</span><span class="p">)</span> <span class="o">-</span> <span class="n">Achev</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
+
+<span class="n">f</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">+</span> <span class="n">x</span><span class="o">**</span><span class="mi">3</span><span class="o">/</span><span class="mf">10.0</span> <span class="o">-</span> <span class="mf">2.0</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">7</span>                       <span class="c1"># target function</span>
+<span class="n">w</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="mf">1.0</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mf">1.0</span> <span class="o">-</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>                        <span class="c1"># weighting</span>
+<span class="n">c</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">n</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">else</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mf">2.0</span> <span class="k">if</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="mi">1</span> <span class="c1"># normalisation</span>
+
+<span class="n">chev</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">n</span><span class="p">,</span><span class="n">x</span> <span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">n</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">arccos</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>   <span class="c1"># alternative Chebychev polynomial</span>
+
+<span class="n">m</span> <span class="o">=</span> <span class="mi">10</span>                                       <span class="c1"># number of terms in series to sum</span>
+<span class="n">L</span> <span class="o">=</span> <span class="mf">1.0</span><span class="o">-</span><span class="mf">1e-6</span>                                 <span class="c1"># avoid exactly 1;  weighting -&gt; infinity</span>
+
+<span class="n">numx</span> <span class="o">=</span> <span class="mi">200</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="n">L</span><span class="p">,</span><span class="n">L</span><span class="p">,</span><span class="n">numx</span><span class="p">)</span>
+
+<span class="n">func</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span><span class="n">n</span><span class="p">:</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">*</span> <span class="n">chev</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">x</span><span class="p">)</span> <span class="o">*</span><span class="n">w</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> 
+
+<span class="n">I0</span><span class="o">=</span> <span class="p">[</span><span class="n">quad</span><span class="p">(</span><span class="n">func</span><span class="p">,</span><span class="o">-</span><span class="n">L</span><span class="p">,</span> <span class="n">L</span><span class="p">,</span> <span class="n">args</span> <span class="o">=</span> <span class="n">n</span> <span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">m</span><span class="p">)]</span>               <span class="c1"># separate out integral into list</span>
+
+<span class="n">FS</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="nb">sum</span><span class="p">(</span> <span class="n">I0</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">chev</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="n">c</span><span class="p">(</span><span class="n">n</span><span class="p">))</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">m</span><span class="p">))</span>    <span class="c1">#  Fourier series eqn 20</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;function&#39;</span><span class="p">)</span>           <span class="c1"># original function</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">FS</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;series&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;dashed&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;dashed&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Chebychev Fourier series and function&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">([</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Fourier-answers-1-6_13_0.png" src="../_images/Fourier-answers-1-6_13_0.png" />
+</div>
+</div>
+<p><strong>Q5 answer</strong> (a) The generating function result can be obtained as described in the text, and SymPy is definitely an advantage here. Note that the series is expanded in <span class="math notranslate nohighlight">\(u\)</span> and terms in <span class="math notranslate nohighlight">\(x\)</span> collected.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># generating function method for Laguerre polynomials</span>
+<span class="n">u</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">n</span> <span class="o">=</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;u, x n&#39;</span><span class="p">)</span>
+
+<span class="n">f01</span> <span class="o">=</span> <span class="n">exp</span><span class="p">(</span>  <span class="o">-</span><span class="n">x</span><span class="o">*</span><span class="n">u</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">u</span><span class="p">)</span> <span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">u</span><span class="p">)</span> 
+
+<span class="n">s</span>  <span class="o">=</span> <span class="n">series</span><span class="p">(</span><span class="n">f01</span><span class="p">,</span><span class="n">u</span><span class="p">,</span><span class="n">n</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;L(&#39;</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="s1">&#39;,x) &#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">.</span><span class="n">coeff</span><span class="p">(</span><span class="n">u</span><span class="o">**</span><span class="n">n</span><span class="p">))</span>  <span class="c1"># extract coefficients with powers n.</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>L( 1 ,x)  1 - x
+L( 2 ,x)  x**2/2 - 2*x + 1
+L( 3 ,x)  -x**3/6 + 3*x**2/2 - 3*x + 1
+L( 4 ,x)  x**4/24 - 2*x**3/3 + 3*x**2 - 4*x + 1
+L( 5 ,x)  -x**5/120 + 5*x**4/24 - 5*x**3/3 + 5*x**2 - 5*x + 1
+</pre></div>
+</div>
+</div>
+</div>
+<p>(b) Repeatedly differentiating gives the series directly.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">,</span> <span class="n">n</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x n&#39;</span><span class="p">)</span>
+<span class="n">f02</span> <span class="o">=</span> <span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="n">n</span>
+<span class="n">d</span> <span class="o">=</span> <span class="n">diff</span><span class="p">(</span><span class="n">f02</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">6</span><span class="p">):</span>       <span class="c1"># take result and differentiate again</span>
+    <span class="n">temp</span> <span class="o">=</span> <span class="n">diff</span><span class="p">(</span><span class="n">d</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">d</span> <span class="o">=</span> <span class="n">temp</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;L(&#39;</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="s1">&#39;,x) &#39;</span><span class="p">,</span> <span class="n">expand</span><span class="p">(</span> <span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="n">factorial</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="o">*</span><span class="n">temp</span><span class="p">)</span><span class="o">.</span><span class="n">subs</span><span class="p">({</span><span class="n">n</span><span class="p">:</span><span class="n">i</span><span class="p">}</span> <span class="p">))</span>    <span class="c1"># substitute i (a number ) for n   </span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>L( 0 ,x)  1
+L( 1 ,x)  3 - x
+L( 2 ,x)  x**2/2 - 4*x + 6
+L(
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 3 ,x)  -x**3/6 + 5*x**2/2 - 10*x + 10
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>L( 4 ,x)  x**4/24 - x**3 + 15*x**2/2 - 20*x + 15
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>L( 5 ,x)  -x**5/120 + 7*x**4/24 - 7*x**3/2 + 35*x**2/2 - 35*x + 21
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">,</span> <span class="n">n</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x n&#39;</span><span class="p">)</span>      <span class="c1"># alternative method by using diff(f02,x,i) to differentiate i times</span>
+<span class="n">f02</span> <span class="o">=</span> <span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="n">n</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">6</span><span class="p">):</span>
+    <span class="n">temp</span> <span class="o">=</span> <span class="n">diff</span><span class="p">(</span><span class="n">f02</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">i</span><span class="p">)</span>         <span class="c1"># get ith derivative</span>
+    <span class="n">drvt</span> <span class="o">=</span> <span class="n">temp</span><span class="o">.</span><span class="n">subs</span><span class="p">({</span><span class="n">n</span><span class="p">:</span><span class="n">i</span><span class="p">})</span>      <span class="c1"># replace n with value i </span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;L(&#39;</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="s1">&#39;,x) &#39;</span><span class="p">,</span> <span class="n">simplify</span><span class="p">(</span><span class="n">drvt</span><span class="o">*</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="n">factorial</span><span class="p">(</span><span class="n">i</span><span class="p">)))</span>     <span class="c1"># multiply with exp(x)/factorial</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>L( 0 ,x)  1
+L( 1 ,x)  1 - x
+L( 2 ,x)  x**2/2 - 2*x + 1
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>L( 3 ,x)  -x**3/6 + 3*x**2/2 - 3*x + 1
+L( 4 ,x)  x**4/24 - 2*x**3/3 + 3*x**2 - 4*x + 1
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>L( 5 ,x)  -x**5/120 + 5*x**4/24 - 5*x**3/3 + 5*x**2 - 5*x + 1
+</pre></div>
+</div>
+</div>
+</div>
+<p>(c) Using the recursion formula.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">Lag</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">x</span><span class="p">):</span>       <span class="c1"># recursion formula, adjusted to return L(n,x)</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span><span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">elif</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span><span class="o">-</span><span class="n">x</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">(</span>  <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span> <span class="o">-</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="n">Lag</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">x</span><span class="p">)</span> <span class="o">-</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">Lag</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>  <span class="p">)</span><span class="o">/</span><span class="n">n</span>
+    
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">6</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;L(&#39;</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="s1">&#39;,x)&#39;</span><span class="p">,</span><span class="n">simplify</span><span class="p">(</span><span class="n">Lag</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">x</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>L( 0 ,x) 1
+L( 1 ,x) 1 - x
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>L( 2 ,x) (x - 3)*(x - 1)/2 - 1/2
+L( 3 ,x) -x**3/6 + 3*x**2/2 - 3*x + 1
+L( 4 ,x) x**4/24 - 2*x**3/3 + 3*x**2 - 4*x + 1
+L( 5 ,x) -x**5/120 + 5*x**4/24 - 5*x**3/3 + 5*x**2 - 5*x + 1
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Q6 answer</strong>  The value of <span class="math notranslate nohighlight">\(m\)</span> has to be decided first,as this is not iterated, then values of <span class="math notranslate nohighlight">\(l\)</span> calculated. Choosing <span class="math notranslate nohighlight">\(m\)</span> = 0 with <span class="math notranslate nohighlight">\(l = 0\)</span> gives <span class="math notranslate nohighlight">\(P_m^m = P_0^0 = 1\)</span> and when <span class="math notranslate nohighlight">\(l = 1\)</span> then <span class="math notranslate nohighlight">\(P_{m+1}^m = P_1^0 = xP_0^0 = x\)</span>. The recursion equation (22) can now be used to find <span class="math notranslate nohighlight">\(P_2^0\)</span> with <span class="math notranslate nohighlight">\(l=2\)</span>, which is</p>
+<div class="math notranslate nohighlight">
+\[2P_2^0=3xP_1^0 - P_0^0= 3x^1-1\]</div>
+<p>giving <span class="math notranslate nohighlight">\(\displaystyle P_2^0=(3x^2-1)/2\)</span>. Substituting <span class="math notranslate nohighlight">\(P_2^0\)</span>, with <span class="math notranslate nohighlight">\(x = \cos(\theta)\)</span> into eqn. (21) produces the spherical harmonic. The calculation using SymPy is shown next</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># spherical harmonic calculation</span>
+
+<span class="n">x</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="n">m</span><span class="p">,</span><span class="n">L</span><span class="p">,</span><span class="n">phi</span><span class="o">=</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x n m L phi&#39;</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">Dblfact</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>           <span class="c1"># double factorial  by recursion n(n-2)(n-4)....</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mf">1.0</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">n</span><span class="o">*</span><span class="n">Dblfact</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span>
+<span class="c1">#--------------  </span>
+
+<span class="k">def</span> <span class="nf">P</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">m</span><span class="p">,</span><span class="n">L</span><span class="p">):</span>               <span class="c1"># associated Legendre polynomials</span>
+    <span class="k">if</span> <span class="n">m</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">L</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">if</span> <span class="n">m</span> <span class="o">==</span> <span class="n">L</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">**</span><span class="n">m</span><span class="o">*</span><span class="n">Dblfact</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">m</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="n">m</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">m</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">==</span> <span class="n">L</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">x</span><span class="o">*</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">m</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">P</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">m</span><span class="p">,</span><span class="n">m</span><span class="p">)</span>
+     
+    <span class="k">return</span> <span class="p">(</span><span class="n">x</span><span class="o">*</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">L</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">P</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">m</span><span class="p">,</span><span class="n">L</span><span class="o">-</span><span class="mi">1</span> <span class="p">)</span>  <span class="o">-</span> <span class="p">(</span><span class="n">L</span><span class="o">+</span><span class="n">m</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">P</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">m</span><span class="p">,</span><span class="n">L</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span> <span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">L</span><span class="o">-</span><span class="n">m</span><span class="p">)</span>
+
+<span class="c1">#--------------   </span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;   L   m      assoc legendre&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">L</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span> <span class="p">:</span>
+    <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">L</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:4d}{:4d}</span><span class="s1">      </span><span class="si">{:s}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">L</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span><span class="nb">str</span><span class="p">(</span><span class="n">simplify</span><span class="p">(</span> <span class="n">expand</span><span class="p">(</span><span class="n">P</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">m</span><span class="p">,</span><span class="n">L</span><span class="p">)))</span> <span class="p">)</span> <span class="p">)</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">sph harmonics</span><span class="se">\n</span><span class="s1">   l   m&#39;</span><span class="p">)</span> 
+<span class="k">for</span> <span class="n">L</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span> <span class="p">:</span>
+    <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">L</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+        <span class="n">sph</span><span class="o">=</span> <span class="n">sqrt</span><span class="p">(</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">L</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">factorial</span><span class="p">(</span><span class="n">L</span><span class="o">-</span><span class="n">m</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">pi</span><span class="o">*</span><span class="n">factorial</span><span class="p">(</span><span class="n">L</span><span class="o">+</span><span class="n">m</span><span class="p">))</span> <span class="p">)</span><span class="o">*</span><span class="n">P</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">m</span><span class="p">,</span><span class="n">L</span><span class="p">)</span><span class="o">*</span><span class="n">exp</span><span class="p">(</span><span class="n">I</span><span class="o">*</span><span class="n">m</span><span class="o">*</span><span class="n">phi</span><span class="p">)</span> 
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:4d}{:4d}</span><span class="s1">      </span><span class="si">{:s}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span> <span class="n">L</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span>  <span class="nb">str</span><span class="p">(</span><span class="n">sph</span><span class="p">)</span> <span class="p">))</span>
+        <span class="k">if</span> <span class="n">m</span> <span class="o">!=</span><span class="mi">0</span><span class="p">:</span>
+            <span class="n">sphc</span><span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">**</span><span class="n">m</span><span class="o">*</span><span class="n">sqrt</span><span class="p">(</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">L</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">factorial</span><span class="p">(</span><span class="n">L</span><span class="o">-</span><span class="n">m</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">pi</span><span class="o">*</span><span class="n">factorial</span><span class="p">(</span><span class="n">L</span><span class="o">+</span><span class="n">m</span><span class="p">))</span> <span class="p">)</span><span class="o">*</span><span class="n">P</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">m</span><span class="p">,</span><span class="n">L</span><span class="p">)</span><span class="o">*</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">I</span><span class="o">*</span><span class="n">m</span><span class="o">*</span><span class="n">phi</span><span class="p">)</span> 
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:4d}{:4d}</span><span class="s1">      </span><span class="si">{:s}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span> <span class="n">L</span><span class="p">,</span><span class="o">-</span><span class="n">m</span><span class="p">,</span>  <span class="nb">str</span><span class="p">(</span><span class="n">simplify</span><span class="p">(</span><span class="n">expand</span><span class="p">(</span><span class="n">sphc</span><span class="p">)</span> <span class="p">))))</span>
+        <span class="k">pass</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   L   m      assoc legendre
+   0   0      1
+   1   0      x
+   1   1      -1.0*(1 - x**2)**0.5
+   2   0      3*x**2/2 - 1/2
+   2   1      -3.0*x*(1 - x**2)**0.5
+   2   2      3.0*(1 - x**2)**1.0
+   3   0      x*(5*x**2 - 3)/2
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   3   1      (1 - x**2)**0.5*(1.5 - 7.5*x**2)
+   3   2      15.0*x*(1 - x**2)**1.0
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   3   3      -15.0*(1 - x**2)**1.5
+
+sph harmonics
+   l   m
+   0   0      1/(2*sqrt(pi))
+   1   0      sqrt(3)*x/(2*sqrt(pi))
+   1   1      -0.25*sqrt(6)*(1 - x**2)**0.5*exp(I*phi)/sqrt(pi)
+   1  -1      0.25*sqrt(6)*(1 - x**2)**0.5*exp(-I*phi)/sqrt(pi)
+   2   0      sqrt(5)*(3*x**2/2 - 1/2)/(2*sqrt(pi))
+   2   1      -0.25*sqrt(30)*x*(1 - x**2)**0.5*exp(I*phi)/sqrt(pi)
+   2  -1      0.25*sqrt(30)*x*(1 - x**2)**0.5*exp(-I*phi)/sqrt(pi)
+   2   2      0.125*sqrt(30)*(1 - x**2)**1.0*exp(2*I*phi)/sqrt(pi)
+   2  -2      0.125*sqrt(30)*(1 - x**2)**1.0*exp(-2*I*phi)/sqrt(pi)
+   3   0      sqrt(7)*(5*x*(3*x**2/2 - 1/2)/3 - 2*x/3)/(2*sqrt(pi))
+   3   1      sqrt(21)*(-7.5*x**2*(1 - x**2)**0.5 + 1.5*(1 - x**2)**0.5)*exp(I*phi)/(12*sqrt(pi))
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   3  -1      sqrt(21)*(1 - x**2)**0.5*(0.625*x**2 - 0.125)*exp(-I*phi)/sqrt(pi)
+   3   2      0.125*sqrt(210)*x*(1 - x**2)**1.0*exp(2*I*phi)/sqrt(pi)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   3  -2      0.125*sqrt(210)*x*(1 - x**2)**1.0*exp(-2*I*phi)/sqrt(pi)
+   3   3      -0.125*sqrt(35)*(1 - x**2)**1.5*exp(3*I*phi)/sqrt(pi)
+   3  -3      0.125*sqrt(35)*(1 - x**2)**1.5*exp(-3*I*phi)/sqrt(pi)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">,</span><span class="n">n</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39; x n &#39;</span><span class="p">)</span>     <span class="c1"># alternative and simpler method by differentiating directly</span>
+
+<span class="k">def</span> <span class="nf">P</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">x</span><span class="p">):</span>                <span class="c1"># Legendre polynomial by recursion, see section 4</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">:</span> 
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">elif</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">x</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">((</span><span class="mi">2</span><span class="o">*</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">x</span><span class="o">*</span><span class="n">P</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">x</span><span class="p">)</span> <span class="o">-</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">P</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="n">x</span><span class="p">))</span><span class="o">/</span><span class="n">n</span>
+<span class="c1">#------------</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;   L   m       assoc legendre&#39;</span><span class="p">)</span>      <span class="c1"># Rodrigues formulae (-1)^m(sqrt(1-x^2)d^m/dx^m P(L,x))</span>
+<span class="k">for</span> <span class="n">L</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]:</span>
+    <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">L</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+        <span class="n">f</span> <span class="o">=</span> <span class="n">diff</span><span class="p">(</span><span class="n">P</span><span class="p">(</span><span class="n">L</span><span class="p">,</span><span class="n">x</span><span class="p">),</span> <span class="n">x</span><span class="p">,</span> <span class="n">m</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:4d}{:4d}</span><span class="s1">      </span><span class="si">{:s}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span> <span class="n">L</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">simplify</span><span class="p">(</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">**</span><span class="n">m</span><span class="o">*</span><span class="n">f</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="n">m</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="p">))</span> <span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   L   m       assoc legendre
+   0   0      1
+   1   0      x
+   1   1      -(1 - x**2)**0.5
+   2   0      3*x**2/2 - 1/2
+   2   1      -3*x*(1 - x**2)**0.5
+   2   2      3*(1 - x**2)**1.0
+   3   0      x*(5*x**2 - 3)/2
+   3   1      3*(1 - 5*x**2)*(1 - x**2)**0.5/2
+   3   2      15*x*(1 - x**2)**1.0
+   3   3      -15*(1 - x**2)**1.5
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./chapter-9"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Godfrey Beddard<br/>
+        
+            &copy; Copyright 2022.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

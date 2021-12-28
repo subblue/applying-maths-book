@@ -1,0 +1,691 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>5 Fourier Transforms &#8212; Applying Maths in the Chemical &amp; Biomolecular Sciences</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/book-cover.jpg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Applying Maths in the Chemical & Biomolecular Sciences</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Applying Maths in the Chemical &amp; Biomolecular Sciences
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Fourier-A.html">
+   Chapter 9 Fourier Series and Transforms
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/chapter-9/Fourier-C.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/chapter-9/Fourier-C.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#motivation-and-concept">
+   5.1 Motivation and concept
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-ftir-instrument">
+     5.2 The FTIR instrument
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#nmr">
+   5.3 NMR
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#x-ray-diffraction">
+   5.4 X-ray diffraction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#linear-transforms">
+   5.5 Linear transforms
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-transform">
+   5.6 The Transform
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#fourier-series-and-transforms">
+   5.7 Fourier series and transforms
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-fourier-transform-equations">
+   6 The Fourier Transform equations
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#plotting-transforms">
+     6.1 Plotting transforms
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-functions-can-be-transformed">
+     6.2 What functions can be transformed?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#how-to-calculate-and-plot-a-fourier-transform">
+     6.3 How to calculate and plot a Fourier transform
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#how-the-fourier-transform-works">
+     6.4 How the Fourier transform works
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#phase-sensitive-detection">
+     6.5 Phase sensitive detection
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#parseval-or-plancherel-theorem">
+     6.6 Parseval or Plancherel  theorem.
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#uncertainty-principle">
+     6.6.1 Uncertainty Principle
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#a-a-gaussian-shaped-pulse">
+       (a)  A Gaussian shaped pulse.
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#b-decaying-excited-state">
+       (b) Decaying excited state
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#c-finite-wave-train">
+       (c) Finite wave-train
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#heisenberg-uncertainty">
+       Heisenberg Uncertainty
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#summary-of-some-fourier-transform-properties">
+     6.7 Summary of some  Fourier transform properties
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Godfrey</span> <span class="n">Beddard</span> <span class="s1">&#39;Applying Maths in the Chemical &amp; Biomolecular Sciences an example-based approach&#39;</span> <span class="n">Chapter</span> <span class="mi">9</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;/var/folders/h6/h3x_p71914gf4qttsr5f74940000gn/T/ipykernel_19145/3171124287.py&quot;</span><span class="gt">, line </span><span class="mi">1</span>
+    <span class="n">Godfrey</span> <span class="n">Beddard</span> <span class="s1">&#39;Applying Maths in the Chemical &amp; Biomolecular Sciences an example-based approach&#39;</span> <span class="n">Chapter</span> <span class="mi">9</span>
+            <span class="o">^</span>
+<span class="ne">SyntaxError</span>: invalid syntax
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import all python add-ons etc that will be needed later on</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">quad</span>
+<span class="n">init_printing</span><span class="p">()</span>                         <span class="c1"># allows printing of SymPy results in typeset maths format</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;font.size&#39;</span><span class="p">:</span> <span class="mi">14</span><span class="p">})</span>  <span class="c1"># set font size for plots</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="fourier-transforms">
+<h1>5 Fourier Transforms<a class="headerlink" href="#fourier-transforms" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="motivation-and-concept">
+<h2>5.1 Motivation and concept<a class="headerlink" href="#motivation-and-concept" title="Permalink to this headline">¶</a></h2>
+<p>Fourier transforms are of fundamental importance in the analysis of signals from many types of instruments; these range from infra-red spectroscopy, to x-ray crystallography, to MRI and CT scan imaging and to seismology. Even in everyday life, Fourier transforms are important because they are used to produce the images observed in a digital television and in most other forms of digital information processing. Every scientist is familiar with the interference pattern produced by light passing through a pair of slits; this is the spatial Fourier transform of the two slits.</p>
+<p>Usually, the data, which might be a string of values taken at many sequential times, is transformed to allow the frequencies present be displayed and analysed. More fundamentally, the instruments used to measure infrared and NMR spectra produce data that is itself the Fourier transform of the spectrum, and similarly, in X-ray crystallography, the image of spots produced on the detector is the Fourier transform of the gaps between the planes of atoms in a crystal.</p>
+<p>Although we concentrate on Fourier transforms, they are only one in a class of <em>integral</em> transforms. The Abel transform is an integral transform that is used to recover the three-dimensional information from its two-dimensional image. It is used in such diverse areas as astronomy and the study of the photo-dissociation pathways of molecules. In photo-dissociation experiments, the fragments (atoms, ions, electrons) are spatially dispersed depending on where the breaking bond is pointing at the instant of dissociation. Their image is captured on a camera as 2D information and by transforming this, the geometry of the dissociation process can be determined (Whittaker 2007). Other transforms are the Hilbert, used in signal processing, and the Laplace, used to solve differential equations.</p>
+<p>Folklore has it that Fourier transforms are formidably difficult and abstruse things. We know that they form the basis of the FTIR and NMR instrument, but secretly hope that nobody asks us how or why. In fact, Fourier transforms are quite straightforward but must be treated with respect. We are used to seeing the NMR or IR spectrum as a set of lines at different fixed frequencies and feel comfortable with this, but the raw data produced is a wiggly signal in which the information needed is almost totally obscured. This makes the process of unravelling this in a Fourier transform seems mysterious: ‘I cannot understand the data so where does the spectrum come from? Contrariwise, we are used to interpreting speech and music that are oscillating signals in time, and would not easily understand either of them if Fourier transformed and viewed or heard as a continuously changing spectrum of frequencies.</p>
+<p>We shall come back to this shortly but, briefly, a Fourier transform is an integral and therefore it can be evaluated by any of the methods used to solve integrals. The Fourier transform integral is one of several types of integral transforms that have the general form</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle g(k)=\int f(x)G(k,x)dx      \tag{23}\]</div>
+<p>The ‘transformed’ function is <span class="math notranslate nohighlight">\(g\)</span> and the function being transformed is <span class="math notranslate nohighlight">\(f\)</span>. The algebraic expression <span class="math notranslate nohighlight">\(G\)</span> is called the <em>kernel</em> and this changes depending on the type of transform, Fourier, Abel, etc. The exact form of the kernel is also described later. However, whatever form the transform takes it always occurs between pairs of conjugate variables, which are <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(k\)</span> in equation (23). Often these conjugate pairs are time (seconds) and frequency (1/seconds), or distance and 1/distance. The reciprocal relationship between variables is why the transform converts time into frequency, changing, for example, an oscillating time profile into a spectrum.</p>
+<p>A second property is that these integral transforms are reversible, also called <em>invertible</em>, which means that <span class="math notranslate nohighlight">\(f\)</span> can be changed into <span class="math notranslate nohighlight">\(g\)</span> and <span class="math notranslate nohighlight">\(g\)</span> can be changed into <span class="math notranslate nohighlight">\(f\)</span> depending on which one we start with.</p>
+<p>Solving the Fourier transform integral both algebraically and numerically will be described starting in Section 5.5, but first the role of the Fourier transform in FTIR and NMR experiments, and in X-ray crystallography is outlined.</p>
+<div class="section" id="the-ftir-instrument">
+<h3>5.2 The FTIR instrument<a class="headerlink" href="#the-ftir-instrument" title="Permalink to this headline">¶</a></h3>
+<p>The Fourier transform infra-red (FTIR) spectrometer directly generates the Fourier transform of the spectrum by mechanically moving one mirror of a Michelson interferometer and measuring the signal generated by the interference of the two beams on the detector. Fig. 11 shows a (simulated) example of the raw data from the instrument and the IR spectrum produced after this is transformed. After transformation, the displacement from the centre of the interference signal is changed into reciprocal distance or wavenumbers, cm<span class="math notranslate nohighlight">\(^{-1}\)</span>, which is proportional to the IR transition frequency.</p>
+<p>The FTIR spectrometer is an interferometer, therefore, the waves that have travelled down each of its arms are combined on the detector and this measures the intensity or the square of the wave’s amplitude, Fig. 12. Constructive interference occurs when the path length in both arms differ by zero or a whole number of wavelengths; destructive interference occurs when they are exactly out of phase and the difference in length is an odd multiple of half a wavelength. If only one wavelength is present, changing the path-length <span class="math notranslate nohighlight">\(\Delta\)</span> would make the signal on the detector change sinusoidally. The ‘coherent’ broadband infrared ‘light’ from the source contains many wavelengths, and at a given path-length, some constructively and some destructively interfere, but the signal is greatest when both paths are the same. The relative path-length of the two arms of the interferometer can be changed by mechanically moving one mirror; the full interference pattern is mapped out as a function of path-length and this pattern decreases in an oscillatory manner to some constant, but not zero value, as the difference in path length increases. This is shown in the left of Fig. 11. Because changing either path’s length has the same effect, the signal is symmetrical about zero path difference.</p>
+<p>When the sample is placed in the beam, it absorbs only some frequencies depending on the particular nature of the sample, which results in a change in the signal size on the detector. When this interference signal is subtracted from that obtained without the sample and is transformed, the infrared absorption spectrum is produced. The distance the mirrors are moved is accurately determined by using a visible laser that follows the same path in the interferometer, but does not pass through the sample. This laser produces an interference pattern on a second (photodiode) detector; the number of fringes passed as the arm of the interferometer moves is counted, and this is used to determine how far one mirror has moved relative to the other.</p>
+<p>The FTIR spectrometer has the multiplex (Fellgett) advantage over a wavelength scanning instrument, because all wavelengths are simultaneously measured on the detector, which also receives a large and virtually noise free signal. Both of these factors improve the signal to noise ratio. In comparison, in a scanning instrument, the radiation is detected through a narrow slit and the wavelength is changed by rotating a diffraction grating. In such an instrument the narrow slit, necessary for high resolution, is responsible for a poor signal to noise ratio because only a little light can reach the detector at any given wavelength. Scanning the wavelength also makes the experiment lengthy.</p>
+<img src='fourier-fig11.png' alt='Drawing' style='width:500px;'/>
+Figure 11. Left: A simulated Fourier transform as might be produced directly by an FTIR spectrometer. Right: The IR spectrum after Fourier transforming and converting into transmittance.
+<hr class="docutils" />
+<img src="Fourier fig9-12.png" alt='Drawing' style='width:400px;'/>
+<p>Figure 12. Schematic of an FTIR spectrometer as an interferometer. The laser is used to measure the relative distance of the two arms and does not pass through the sample.</p>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="nmr">
+<h2>5.3 NMR<a class="headerlink" href="#nmr" title="Permalink to this headline">¶</a></h2>
+<p>Possibly the most important analytical technique for the synthetic chemist is NMR spectroscopy. In an NMR experiment, the nuclear magnetization, which is the vector sum of the individual nuclear spins, is tipped from its equilibrium direction, which is along the direction of the huge permanent magnetic field <span class="math notranslate nohighlight">\(B\)</span>, by a relatively weak RF pulse of short duration. By applying this short pulse along the <span class="math notranslate nohighlight">\(x\)</span>- or <span class="math notranslate nohighlight">\(y\)</span>-axis, and therefore at <span class="math notranslate nohighlight">\(90^\text{o}\)</span> to the permanent field, the magnetization is tipped away from the z-direction and experiences a torque and starts to precess. After the RF pulse has ended, the nuclear magnetization, and hence individual nuclear spins, undergoes a free induction decay (FID) by continuing to precess about the permanent magnetic field <span class="math notranslate nohighlight">\(B\)</span>. The rotating magnetization, Fig. 13, is measured by the detecting coil in the x-y plane as an oscillating and decaying signal, which, when Fourier transformed, produces the NMR spectrum.</p>
+<p>In this experiment, the oscillating and decaying signal is converted into reciprocal time or frequency, which is ultimately displayed as a frequency shift <span class="math notranslate nohighlight">\(\delta\)</span> in ppm from a standard compound, such as tetramethylsilane. In a classical sense, it is possible imagine the rotating nuclear magnetization repeatedly passing in front of the detection coil, thereby inducing a current to flow in it as it does so, and which will cause the output signal to rise and fall. Many such magnetizations from the many groups of nuclear spins in different chemical environments produce many signals, resulting in a complicated oscillating FID. Figure 14 shows a synthesized NMR free induction decay of two spins with a frequency of <span class="math notranslate nohighlight">\(10\)</span> and <span class="math notranslate nohighlight">\(11\)</span> MHz, and the corresponding real and imaginary parts of the transform, which we will suppose is the NMR spectrum of two lines separated by <span class="math notranslate nohighlight">\(1\)</span> MHz. The RF pulse used to tip the magnetization contains many frequencies, as may be seen from the Fourier series of a square pulse, and simultaneously excites the nuclear spins in different magnetic environments in the molecule. The analysis of the spectrum provides information about the structure of the molecule, but not bond distances or angles unless sophisticated multiple pulse methods are used (Sanders &amp; Hunter 1987; Levitt 2001).</p>
+<p>In an NMR experiment, the data is obtained as an FID rather than directly as a spectrum because this increases the speed of data acquisition and, more importantly, increases the signal to noise ratio over an instrument where the magnetic field is continuously changing in strength. In the FID, all frequencies are measured simultaneously, as in the FTIR instrument, giving the measurement a multiplex or Fellgett advantage. There are other reasons for measuring the FID, which is that the instrument now operates in real time; this allows multiples of RF pulses to be applied to the sample, and these allow the magnetization to be manipulated via multi-quantum processes.</p>
+<img src="Fourier-9-13.png" alt='Drawing' style='width:400px;'/>
+Figure 13. The sequence of the magnetization and the FID produced during a basic NMR experiment.
+<hr class="docutils" />
+<img src='fourier-fig14.png' alt='Drawing' style='width:950px;'/>
+<p>Figure 14. A simulated FID of two NMR transitions showing its real and ‘imaginary’ parts and the phase. The real part is the absorption spectrum or the normal NMR spectrum, the imaginary part the dispersion. The vertical dashed lines show the frequencies used in the calculation of the FID.</p>
+</div>
+<div class="section" id="x-ray-diffraction">
+<h2>5.4 X-ray diffraction<a class="headerlink" href="#x-ray-diffraction" title="Permalink to this headline">¶</a></h2>
+<p>In FTIR and NMR, a conscious choice is made to perform a transform type of experiment. This is not so in X-ray diffraction, for the very nature of the experiment removes any choice. In X-ray crystallography, the three-dimensional diffraction pattern produced by the X-rays that scatter off the electrons in the many different planes of atoms in the crystal is projected onto the two-dimensional detector surface and is measured as a pattern of bright spots. This image is Fourier transformed and produces the distances between lattice planes from which the molecule’s structure can be determined.</p>
+<p>Scattering of the X-rays occurs because they interact with electrons and cause them to re-radiate, which they do so in all directions. Only when waves originate from planes of atoms that satisfy the Bragg law, <span class="math notranslate nohighlight">\(n\lambda = 2d\sin(\theta)\)</span>, is there constructive interference, and an X-ray is detected on the detector, usually a CCD. Everywhere else, there is destructive interference and no waves exist. The CCD detector is similar in nature to the one in a digital camera or mobile phone and the brightness of a spot is proportional to the amplitude squared (intensity) of the X-ray waves arriving at that point.</p>
+<p>The atoms in a crystal form repeating unit cells and each set of planes of atoms, in principle, will produce one spot on the detector and in a position proportional to the reciprocal of the lattice spacing between planes. Sometimes a crystal’s symmetry may cause extra interference between X-rays from different planes, which produces systematic absences in the X-ray image and these can be use to distinguish one particular type of crystal lattice from another.</p>
+<p>It is important to note that it is not the positions of the spots on the detector that ultimately produces the molecular structure, these positions are determined by the reciprocal planes, but the <em>intensity</em> of the spots.</p>
+<img src='fourier-fig14a.png' alt='Drawing' style='width:300px;'/>
+<p>Figure 14a. The phase of scattered x-rays is given by <span class="math notranslate nohighlight">\(2\pi\)</span> times the ratio of the perpendicular distance from the origin <span class="math notranslate nohighlight">\(R_{hkl}\)</span> to an atom at <span class="math notranslate nohighlight">\((x,y,z)\)</span> to the separation of the hkl planes <span class="math notranslate nohighlight">\(d_{hkl}\)</span> i.e <span class="math notranslate nohighlight">\(\phi=2\pi R_{hkl}/d_{hkl}\)</span>. The hkl plane is perpendicular to the plane of the diagram.</p>
+<hr class="docutils" />
+<p>The two-dimensional image on the detector has to be Fourier transformed into a representation of the crystal structure but, because the absolute value of the transform rather than its amplitude is produced on the detector, phase information is lost and this makes the interpretation of the image very much more difficult than it would otherwise be. This is the origin of the ‘phase’ problem and ingenious methods have had to be devised to overcome this (McKie &amp; McKie 1992; Giacovazzo et al. 1992). The summation of several waves particular to this problem is described in chapter 1.</p>
+<p>Fourier transforms are widely used in other areas, such as image processing, for example from star fields, MRI images, X-ray CT scans, information processing, and in solving many types of differential equations such as those describing molecular diffusion or heat flow. These technologies show that it is essential to be familiar with Fourier transforms whether you are a chemist, physicist, biologist, or a clinician.</p>
+</div>
+<div class="section" id="linear-transforms">
+<h2>5.5 Linear transforms<a class="headerlink" href="#linear-transforms" title="Permalink to this headline">¶</a></h2>
+<p>The next few sections describe the Fourier transform in detail, but first some jargon has to be explained. Formally, a Fourier transform is defined as a linear integral transform of one function or set of data into another; see equation (23). The transform is reversible, or invertible, enabling the original function or data to be retrieved after an inverse transform. These last two sentences are in ‘math-speak’, so what do they really mean?</p>
+<p>Integral simply means that the transform involves an integration as shown in equation (23). The word ‘linear’, in ‘linear transform, means that the transform <span class="math notranslate nohighlight">\(T\)</span> has the property, when operating on two regular functions <span class="math notranslate nohighlight">\(f_1\)</span> and <span class="math notranslate nohighlight">\(f_ 2\)</span>, that <span class="math notranslate nohighlight">\(T( f_1 + f_2) = T( f_1) + T( f_2)\)</span>. This means that the transform of the sum of <span class="math notranslate nohighlight">\(f_ 1\)</span> and <span class="math notranslate nohighlight">\(f_ 2\)</span> is the same as transforming <span class="math notranslate nohighlight">\(f_ 1\)</span>, and then transforming <span class="math notranslate nohighlight">\(f_2\)</span> and adding the result. In addition, the linear transform has the property <span class="math notranslate nohighlight">\(T(cf_1) = cT( f_1)\)</span> if <span class="math notranslate nohighlight">\(c\)</span> is a constant.</p>
+<p>Reversible, or invertible, means that a reverse transform exists that reforms the initial function from the transform; formally this can be written as <span class="math notranslate nohighlight">\(f = T^{-1}[T[f]]\)</span> if <span class="math notranslate nohighlight">\(T^{-1}\)</span> is the inverse transform. Put another way, if a function <span class="math notranslate nohighlight">\(f\)</span> is transformed to form a new function <span class="math notranslate nohighlight">\(g\)</span>, as <span class="math notranslate nohighlight">\(T[f] = g\)</span>, then the inverse transform takes <span class="math notranslate nohighlight">\(g\)</span> and reforms <span class="math notranslate nohighlight">\(f\)</span> as <span class="math notranslate nohighlight">\(f = T^{-1}[g]\)</span>. This might seem to be rather abstract, but is, in fact, very common.</p>
+<p>A straightforward example is the log and exponential functions, as they are convertible into one another as an operator pair: If <span class="math notranslate nohighlight">\(T\)</span> is the exponential operator <span class="math notranslate nohighlight">\(e^{( )}\)</span>, and <span class="math notranslate nohighlight">\(x^2\)</span> is the ‘function’, then <span class="math notranslate nohighlight">\(\displaystyle T[x^2] = e^{x^2}\)</span>. The inverse operator <span class="math notranslate nohighlight">\(T^{-1}\)</span> reproduces the original function: <span class="math notranslate nohighlight">\(T^{-1}[T[x^2]] = x^2\)</span> or, by substitution, it is true that <span class="math notranslate nohighlight">\(\displaystyle T^{-1}[e^{x^2}] = x^2\)</span> if <span class="math notranslate nohighlight">\(T^{-1}\)</span> is the logarithmic operator <span class="math notranslate nohighlight">\(\ln( )\)</span> because <span class="math notranslate nohighlight">\(\displaystyle \ln(e^{x^2}) = x^2\)</span>. The Fourier transform is only a
+more complicated version of an operator than is <span class="math notranslate nohighlight">\(\ln( )\)</span> or <span class="math notranslate nohighlight">\(e^{( )}\)</span>.</p>
+<p>The Fourier transform can be thought of as changing or ‘mapping’ the initial function <span class="math notranslate nohighlight">\(f\)</span> to another function <span class="math notranslate nohighlight">\(g\)</span>, but in a systematic way. The new function may not look like the original, but however one might modify the transformed function <span class="math notranslate nohighlight">\(g\)</span>, when transformed back to <span class="math notranslate nohighlight">\(f\)</span>, it is as if <span class="math notranslate nohighlight">\(f\)</span> itself had been modified. Although it is common to use the word ‘transform’, the word ‘operator’ could equally well be used although this is not usual in this context. Conversely, a matrix when acting on another matrix or a vector, performs a linear transform, however, a matrix is usually called a linear operator.</p>
+</div>
+<div class="section" id="the-transform">
+<h2>5.6 The Transform<a class="headerlink" href="#the-transform" title="Permalink to this headline">¶</a></h2>
+<p>The Fourier transform is used either because a problem is most easily solved in ‘transform space’, or, because of the way an experiment is performed, the data is produced in transform space and has then to be transformed back into ‘real space’. This ‘real space’ is usually either time or distance; the transform space is then frequency (as inverse time) or inverse distance. The time-to-frequency and the distance-to-inverse distance are both <em>conjugate pairs</em> of variables between which the Fourier transform operates. In practice, there are two ‘flavours’ of Fourier transforms. The simpler is the mathematical transformation of a function, such as a sine wave or exponential decay, the other is, effectively, the same process, but performed on real experimental data presented as a list of numbers. The latter is called the Discrete Fourier Transform (DFT). Because the transform is in reciprocal space, values near to zero on its abscissa correspond either to large values of frequency or  reciprocal distance depending on whether the conjugate variable is time or distance respectively.</p>
+<p>The Fourier transform is always between pairs of conjugate variables, time <span class="math notranslate nohighlight">\(\leftrightharpoons\)</span> frequency, so that <span class="math notranslate nohighlight">\(\Delta t\Delta v = 1\)</span> or distance <span class="math notranslate nohighlight">\(\leftrightharpoons\)</span> 1/distance. As the transform changes one variable into its conjugate, it is possible in simple cases to visualize what the spectrum will look like without actually doing the calculation. A sine wave that has a single frequency has a Fourier transform that is a single line at the frequency of the wave. If there are two waves of different frequencies superimposed on one another, two lines will appear after transforming.</p>
+<p>So far, so good, but the length of the waves is not specified. Are they of finite length and so contain only a finite number of oscillations, or are they of infinite extent? If a sine wave is infinitely long, then only one line is observed in the transform, and will be of infinitesimal width and occur at the frequency of the sine wave. This line is a delta function. If the waves are turned on at some point and off again at another, then there are discontinuities at these points, and some additional frequencies must be associated with turning the signal on and off, which will appear in the transformed spectrum as <em>new</em> frequencies. Think of how a waveform is made up of a sum of sine waves of different frequency, see Fig. 1. If a waveform is to be zero in some regions and not in others, then many waves have to be present to cancel out one another as necessary and these are the new frequencies needed. A broadening of the lines also occurs, because <span class="math notranslate nohighlight">\(\Delta t\Delta ν = 1\)</span> and if <span class="math notranslate nohighlight">\(\Delta t\)</span>, the length of the whole sine wave is finite, then <span class="math notranslate nohighlight">\(\Delta v\)</span> has a width associated with it. This is observed in FTIR and NMR spectra, but the software provided with many instruments can be set to remove as much of this broadening as possible by apodizing the lines (Sanders &amp; Hunter 1987). This means multiplying the function with a decreasing function such as <span class="math notranslate nohighlight">\(\displaystyle e^{-x}\)</span> before transforming.</p>
+<p>The effect of Fourier transforming a short and a long rectangular pulse is shown below. The right-hand plots show the real part of the transform, which is a <em>sinc</em> (or Cardinal Sine) function, <span class="math notranslate nohighlight">\(\mathrm{sinc}(ax) \equiv \sin(ax)/ax\)</span>. The result of transforming is mathematically the same for both long and sort pulses, of course, but in a fixed frequency range the effect appears to be different. The short pulse has a wide central band set at zero and widely spaced side bands, which decay rapidly at frequencies away from zero and extend to infinity. The longer pulse has a narrower central band, also centred at zero, and higher frequency side bands than in the short pulse case; the results conform to <span class="math notranslate nohighlight">\(\Delta t\Delta v = 1\)</span>, i.e. short <span class="math notranslate nohighlight">\(\Delta t\)</span> with wide <span class="math notranslate nohighlight">\(\Delta v\)</span> and <em>vice versa</em>.</p>
+<p>If a pulse is turned on and off, as shown in Fig. 15, the transform must have frequencies associated with these changes. Again, think of the pulse being made of many terms in a Fourier series. Fig. 1 shows a few of the terms, but the more of these there are each with a different frequency, the better is a sharp edge or pulse defined. The oscillations in the transform of Fig. 15 arise from the many terms needed to describe the rectangular pulse. In fact, to reproduce the original pulse exactly by reverse transforming, an infinite frequency range is needed. If the transform of Fig. 15 <em>exactly</em> as shown in the right-hand side were reverse transformed, the rectangular pulse shown on the left of the figure would not be produced, because on the plot the transform has a limited frequency range.</p>
+<p>The reciprocal nature of the function and its transform  is also clear in these plots. The wider the function the narrower the transform and vice versa, this leads to an ‘uncertainty principle’ in which it is not possible to measure, at the same time, both the function and its transform with unlimited precision. This is described in detail later on. In Quantum mechanics this leads to the Heisenberg Uncertainty Principle.</p>
+<img src="fourier-fig15.png" alt='Drawing' style='width:500px;'/>
+<p>Figure 15. Example of the Fourier transform of a short and a long rectangular pulse each centred about zero and of total width <span class="math notranslate nohighlight">\(a\)</span>. Only the real part of the transform is shown, and is the sinc function, <span class="math notranslate nohighlight">\(\sin(ax)/ax\)</span>. The transform extends to <span class="math notranslate nohighlight">\(\pm \infty\)</span> and <span class="math notranslate nohighlight">\(a=2\)</span> in the top plots and 4 in the lower ones. The transform crosses zero at equally spaced points which are <span class="math notranslate nohighlight">\(\pm n/a\)</span> where <span class="math notranslate nohighlight">\(n=1,2\cdots\)</span>.</p>
+<hr class="docutils" />
+<p>What is the transform of a cosine wave of finite length? The result is shown in Fig. 16 and is somewhat similar to that of the square pulse except that the transform frequency cannot be centred at zero because the cosine has a finite frequency. The main peak is almost at the cosine’s frequency, and the many other sidebands are needed to account for the fact that the wave is suddenly turned off. Now suppose that the cosine is damped by an exponential function  and smoothly decreases in amplitude, then these extra frequencies disappear, because at the end of the cosine wave there is no discontinuity; the exponential makes the cosine gently approach zero. The result is a widening of the feature at the frequency of the cosine wave, Fig. 17. The effect of the exponential decay is to <em>apodise</em> the transform.</p>
+<img src="fourier-fig16.png" alt='Drawing' style='width:500px;'/>
+<p>Figure 16. Left: A truncated cosine wave of frequency 1/2, starting at zero and of length of 3.5 cycles. Right: The real part of its Fourier transform. The value of the wave’s frequency is marked with a vertical line.</p>
+<img src="fourier-fig17.png" alt='Drawing' style='width:500px;'/>
+Figure 17. The same cosine wave but now apodised by multiplying by $\displaystyle e^{-t/2}$, which makes the cosine diminish at long times. In the transform (right), one peak is found at the frequency of the wave (small vertical line). All the frequencies associated with suddenly ending the cosine are effectively removed.
+</div>
+<hr class="docutils" />
+<div class="section" id="fourier-series-and-transforms">
+<h2>5.7 Fourier series and transforms<a class="headerlink" href="#fourier-series-and-transforms" title="Permalink to this headline">¶</a></h2>
+<p>The connection between the Fourier series and the Fourier transform is important, and it should not be ignored. To produce the Fourier series such as that which describes a rectangular pulse, infinitely many terms in the Fourier series will be needed, and of ever increasing frequency. The Fourier transform allows us to see these frequencies by transforming to frequency space, so that each frequency in the Fourier series appears as a feature.</p>
+<p>In an NMR experiment, a square pulse of RF radiation is used to excite the nuclear spin states in the sample and, as has been seen, the Fourier transform of such a pulse illustrates that it has many frequencies contained within it. In an experiment, the pulse is made of sufficient duration to contain all those frequencies needed to excite the nuclear spins. Of course, these frequencies are not made by the transform, but are there all the time, because to form the pulse in the first place many different sine or cosine waves each of different frequency are added together in the electronic circuitry.</p>
+<p>To illustrate this further, consider a laser pulse with the duration of a few femtoseconds. Such pulses are made by the process of mode-locking. For a laser to work, the light waves in the cavity must fit exactly into its length no matter what the colour of the light, and a node must occur at each of the mirrors; the restriction is that <span class="math notranslate nohighlight">\(n\)</span> half wavelengths must equal the cavity length, <span class="math notranslate nohighlight">\(n\lambda/2 = L\)</span>. If these waves, which have different frequencies for each <span class="math notranslate nohighlight">\(n\)</span>, can be forced to be in phase with one another, a pulse results; mode-locking is the process by which this is achieved. Making the phase the same means ensuring that each of the waves has a maximum in the same place, no matter what their frequency is. A pulse results because waves of different frequency must eventually fall out of step with one another away from zero or <span class="math notranslate nohighlight">\(\pm n\pi\)</span>, where they are in phase. Figure 18 shows that a pulse can only result from the addition of many different frequencies if they are in phase. The pulse is normalized to a maximum of <span class="math notranslate nohighlight">\(\pm 1\)</span> in the figure and shows the amplitude, a photodiode or CCD detector measure the intensity which is the square of this signal is always positive. In a mode-locked laser, <span class="math notranslate nohighlight">\(\approx 10^6\)</span> waves may be added together rather than the few shown; consequently, the laser pulse is far better defined.</p>
+<img src="fourier-fig18.png" alt='Drawing' style='width:400px;'/>
+<p>Figure 18. Left: Eleven cosine waves and their sum show that pulses can only be made by adding waves of different frequency together but only if they have the same phase. Right: One possible sum when the waves are added with random phases. The waves are <span class="math notranslate nohighlight">\(\cos(nx/2)\)</span> where <span class="math notranslate nohighlight">\(n\)</span> is an odd integer. The effect is more pronounced if more waves are used; the pulse becomes shorter and the random noise (right) becomes smaller in amplitude. The lower two plots show the square of the signals in the upper ones, plotted on the same scale. The square is important because if the waves correspond to the photons electric field, the intensity measured is the square of this. The pulses and random noise are both clear.</p>
+<hr class="docutils" />
+<p>To realize mode-locking, a laser must have a broad emission spectrum and nowadays titanium sapphire is often used as the gain medium to produce femtosecond duration pulses, dye-lasers are sometimes still used to produce picosecond pulses. The Ti<span class="math notranslate nohighlight">\(^{3+}\)</span> ions have many different sites in the sapphire (<span class="math notranslate nohighlight">\(\mathrm{Al_2O_3}\)</span>) crystal lattice and therefore have a broad emission spectrum, which is in the far-red part of the visible spectrum and centred around <span class="math notranslate nohighlight">\(850\)</span> nm. The molecules or ions used to produce the fluorescence/luminescence which give rise to lasing, have a certain wavelength range caused by the nature of their potential energy surfaces and by the inhomogeneity of the host material a glass or liquid, for example, which shifts energy levels up and down. The coating on the mirrors, and perhaps added optical elements such as gratings, interference or birefringent (Lyot) filters, restrict the wavelengths over which the laser can operate, and this is done to enable the wavelength to be changed. However, if a short pulse is to be produced, the wavelength range has to be so wide that no filters are wanted, quite the opposite, as little restriction as possible on the wavelength range is desirable, as the product <span class="math notranslate nohighlight">\(\Delta v\Delta t\)</span> has a constant value. This means that a wide frequency (or wavelength) range is necessary if <span class="math notranslate nohighlight">\(\Delta t\)</span> is to be small. This is entirely consistent with the observation that many waves of different frequencies are needed to make a pulse. ( In practice is possible to produce  femtosecond pulses centred at different the wavelenghts as the spread in wavelength needed to produce the pulse is less than the possible wavelength range of the emission.)</p>
+</div>
+<div class="section" id="the-fourier-transform-equations">
+<h2>6 The Fourier Transform equations<a class="headerlink" href="#the-fourier-transform-equations" title="Permalink to this headline">¶</a></h2>
+<p>The derivation of the transform equations is now sketched out by starting with the Fourier series. Butkov (1968) gives the full derivation. The Fourier series, considered in Section 1, are all formed from periodic functions, but suppose that the function is thought of as having an infinite period, or to put it another way, if the limits are <span class="math notranslate nohighlight">\(-L \to L\)</span> then what happens when <span class="math notranslate nohighlight">\(L \to \infty \)</span>? It is easier here to use the complex exponential form of the series, equations (7), and write</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle f(x) = \sum_{n=-\infty}^{\infty}c_ne^{+in\pi x/L}    \tag{24} \]</div>
+<p>with coefficients</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle c_n= \frac{1}{2L}\int_{-L}^L f(x)e^{-in\pi x/L}    \tag{25} \]</div>
+<p>where <span class="math notranslate nohighlight">\(n\)</span> is an integer specifying the position in the series, therefore, <span class="math notranslate nohighlight">\(c_n\)</span> is one of a series of numbers that could be plotted on a graph <span class="math notranslate nohighlight">\(c_n\)</span> vs <span class="math notranslate nohighlight">\(n\)</span>. To simplify (24), we define <span class="math notranslate nohighlight">\(k = n\pi /L\)</span>, which gives <span class="math notranslate nohighlight">\(\Delta k = (\pi/L)\Delta n\)</span> for a small change in <span class="math notranslate nohighlight">\(k\)</span>, and clearly, as <span class="math notranslate nohighlight">\(L\)</span> gets larger, <span class="math notranslate nohighlight">\(k\)</span> gets smaller. However, there is a problem here, for when <span class="math notranslate nohighlight">\(L\to \infty\)</span> it looks as though all values of <span class="math notranslate nohighlight">\(c_n\)</span>, equation (25), will go to zero, because <span class="math notranslate nohighlight">\(L\)</span> is in the denominator.</p>
+<p>Instead of immediately taking the limit, suppose that the values of <span class="math notranslate nohighlight">\(n\)</span> describe adjacent points on a graph of <span class="math notranslate nohighlight">\(c_n\)</span> vs <span class="math notranslate nohighlight">\(n\)</span>, and because adjacent points are the smallest differences that <span class="math notranslate nohighlight">\(n\)</span> can have, then <span class="math notranslate nohighlight">\(\Delta n  = 1\)</span> and so <span class="math notranslate nohighlight">\(\Delta k = \pi /L\)</span> or <span class="math notranslate nohighlight">\((L/\pi )\Delta k = 1\)</span>. Equation (24) can now be multiplied by this factor without difficulty because it is <span class="math notranslate nohighlight">\(1\)</span>, giving</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle f(x)=\sum_{n=-\infty}^{\infty}\frac{L}{\pi}c_ne^{+ikx} \Delta k   \tag{26} \]</div>
+<p>and <span class="math notranslate nohighlight">\(c_n\)</span> is given by equation (25). The limit <span class="math notranslate nohighlight">\(L\to \infty\)</span> also means that <span class="math notranslate nohighlight">\(\Delta k \to  0\)</span>, which makes <span class="math notranslate nohighlight">\(k\)</span> into a continuous variable, and the coefficients <span class="math notranslate nohighlight">\(c_n\)</span> can now be written as a function of <span class="math notranslate nohighlight">\(k\)</span>, i.e. as <span class="math notranslate nohighlight">\(c(k)\)</span> instead of the discrete values <span class="math notranslate nohighlight">\(c_n\)</span>. Taking this limit also changes <span class="math notranslate nohighlight">\(f(x)\)</span> to an integral, because <span class="math notranslate nohighlight">\(\Delta k \to  0\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle f(x)=\lim_{L \rightarrow \infty}\sum_{n=-\infty}^{\infty}\frac{L}{\pi}c_ce^{in\pi x/L}\Delta k =\int_{-\infty}^\infty c(k)e^{ikx} dk\]</div>
+<p>and <span class="math notranslate nohighlight">\(c(k) = Lc_n/\pi \)</span> but from eqn. 25 <span class="math notranslate nohighlight">\(c(k)\)</span> is</p>
+<div class="math notranslate nohighlight">
+\[c(k)= \frac{1}{2\pi}\int_{-\infty}^\infty f(x)e^{-ikx}dx  \]</div>
+<p>This equation is conventionally rewritten by defining a new function <span class="math notranslate nohighlight">\(g(k)\)</span>, where <span class="math notranslate nohighlight">\(g(k) = c(k)\sqrt{2π}\)</span>. This function is the <em>forward transform</em> and is defined as</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle  g(k) = \frac{1}{\sqrt{2\pi}}\int_{-\infty}^\infty f(x)e^{-ikx}dx \qquad\text{       forward transform} \tag{27}\]</div>
+<p>and the reverse transform is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle  f(x) = \frac{1}{\sqrt{2\pi}}\int_{-\infty}^\infty g(k)e^{+ikx}dk \qquad\text{       reverse transform} \tag{28}\]</div>
+<p>notice how the <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(k\)</span> and the signs in the exponential change.</p>
+<p>The two functions form a Fourier transform pair; the function <span class="math notranslate nohighlight">\(f(x)\)</span> with a positive exponential is the ‘reverse’ or ‘inverse’ transform, and <span class="math notranslate nohighlight">\(g(k)\)</span>, equation (27), with a negative exponential, the ‘forward’ transform because it converts the measured or known function <span class="math notranslate nohighlight">\(f(x)\)</span>, where <span class="math notranslate nohighlight">\(x\)</span> might be distance, into the transformed space <span class="math notranslate nohighlight">\(k\)</span> which is inverse distance. Alternatively, if <span class="math notranslate nohighlight">\(x\)</span> represents time then <span class="math notranslate nohighlight">\(k\)</span> represents frequency.</p>
+<p>There are some other points to note.</p>
+<p><strong>(i)</strong> These equations give the value of the transform at one point only. To obtain the full transform, <span class="math notranslate nohighlight">\(k\)</span> has to be varied in principle from <span class="math notranslate nohighlight">\(-\infty\)</span> to +<span class="math notranslate nohighlight">\(\infty\)</span>, but, in practice, a value of <span class="math notranslate nohighlight">\(k\)</span> which is far less than infinity can be used because the transform often has an infinitesimal amplitude at large <span class="math notranslate nohighlight">\(k\)</span>; see Fig. 19 for an example.</p>
+<p><strong>(ii)</strong> Because the integration involves a complex number, the result might be complex or it might be real; this just depends on what the function is and it might therefore be necessary to plot the real, imaginary, and absolute value of the transform.</p>
+<p><strong>(iii)</strong> There are different forms of Fourier transform pairs that differ from one another by normalization constants, <span class="math notranslate nohighlight">\(1/ 2\pi\)</span> in our notation. This can lead to confusion when comparing one calculation with another.</p>
+<p><strong>(iv)</strong> Finally, note that some authors, engineers in particular, often define the forward transform with a positive sign in the exponential and negative in the reverse, which is a change of phase with respect to our notation. They also often use <span class="math notranslate nohighlight">\(j\)</span> instead of <span class="math notranslate nohighlight">\(i\)</span> to mean <span class="math notranslate nohighlight">\(\sqrt{-1}\)</span>.</p>
+<div class="section" id="plotting-transforms">
+<h3>6.1 Plotting transforms<a class="headerlink" href="#plotting-transforms" title="Permalink to this headline">¶</a></h3>
+<p>Because the transform is normally a complex quantity, it has a real and imaginary part. In plotting the transform three graphs can be produced; one for each of the real and the imaginary components of the whole transform and one of the square of the absolute value, which is usually called the power or transform spectrum and is <span class="math notranslate nohighlight">\(g(k)^*g(k) = |g(k)|^2\)</span>, the asterisk indicating the complex conjugate.</p>
+</div>
+<div class="section" id="what-functions-can-be-transformed">
+<h3>6.2 What functions can be transformed?<a class="headerlink" href="#what-functions-can-be-transformed" title="Permalink to this headline">¶</a></h3>
+<p>To perform the transform, <span class="math notranslate nohighlight">\(f(x)\)</span> must be integrable and must converge when the integration limits are infinity; this generally means that <span class="math notranslate nohighlight">\(f(x) \to\)</span> 0 as <span class="math notranslate nohighlight">\(x \to \pm \infty\)</span>: a sufficient condition is that <span class="math notranslate nohighlight">\(\int_{-\infty}^{\infty} |f(x)|dx\)</span> exists.</p>
+</div>
+<div class="section" id="how-to-calculate-and-plot-a-fourier-transform">
+<h3>6.3 How to calculate and plot a Fourier transform<a class="headerlink" href="#how-to-calculate-and-plot-a-fourier-transform" title="Permalink to this headline">¶</a></h3>
+<p>As an illustration, the Fourier transform of a sine wave <span class="math notranslate nohighlight">\(f(x) = \sin(\omega x)\)</span> which has an angular frequency <span class="math notranslate nohighlight">\(\omega = 2\pi/L\)</span> will be calculated over the range <span class="math notranslate nohighlight">\(-L\)</span> to +<span class="math notranslate nohighlight">\(L\)</span>; this supposes also that the function <span class="math notranslate nohighlight">\(f(x)\)</span> is zero everywhere else, see Fig. 19. Choosing the sine function to have the argument <span class="math notranslate nohighlight">\(2\pi x/L\)</span> means that it is zero, i.e. has a node, at <span class="math notranslate nohighlight">\(x = \pm L\)</span>; note that the frequency need not be a multiple of the range of the transform, but the resulting equations are simpler if it is. Because the function is zero outside <span class="math notranslate nohighlight">\(\pm L\)</span>, so is the integral, and the integration limits become <span class="math notranslate nohighlight">\(\pm L\)</span> rather than <span class="math notranslate nohighlight">\(\pm \infty\)</span>. The forward transform uses eqn. 27</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle  g(k) = \frac{1}{\sqrt{2\pi}}\int_{-L}^L \sin(2\pi x/L)e^{-ikx}dx \]</div>
+<p>which is easily integrated using the exponential form of the sine. The result is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle  g(k)= -\frac{4i\pi \sin(Lk)}{k^2L^2-4\pi^2}\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># check using sympy  1j is the Sympy definition of mathematical &#39;i&#39; </span>
+
+<span class="n">L</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">k</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span> <span class="s1">&#39;L x k&#39;</span><span class="p">,</span><span class="n">positive</span> <span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">f01</span> <span class="o">=</span> <span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">pi</span><span class="o">*</span><span class="n">x</span><span class="o">/</span><span class="n">L</span><span class="p">)</span><span class="o">*</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">k</span><span class="o">*</span><span class="n">x</span><span class="p">)</span>
+
+<span class="n">g</span> <span class="o">=</span> <span class="n">simplify</span><span class="p">(</span><span class="n">integrate</span><span class="p">(</span><span class="n">f01</span><span class="p">,(</span><span class="n">x</span><span class="p">,</span><span class="o">-</span><span class="n">L</span><span class="p">,</span><span class="n">L</span><span class="p">),</span><span class="n">conds</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">)</span> <span class="p">)</span>
+<span class="n">g</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Fourier-C_8_0.png" src="../_images/Fourier-C_8_0.png" />
+</div>
+</div>
+<p>which is the same result after converting the exponentials to the sine. This can be checked also by SymPy using the instructions ‘simplify(g.rewrite(sin))’</p>
+<p>The Fourier transform is, in this particular example, wholly the imaginary part of a complex number. When <span class="math notranslate nohighlight">\(k  = 0\)</span> and when <span class="math notranslate nohighlight">\(Lk = \pm n \pi\)</span>, the transform is zero, except when <span class="math notranslate nohighlight">\(Lk = \pm 2\pi\)</span> where the maximum or minimum occurs. When <span class="math notranslate nohighlight">\(Lk = +2\pi\)</span>, the transform has the nominal value of <span class="math notranslate nohighlight">\(0/0\)</span>, which can be evaluated using l’Hopital’s rule (see Chapter 3). Remember to stop differentiating when either the top or bottom of the fraction is not zero, the result is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle  \lim_{k \to 2\pi /L} \frac{-4\pi iL\sin(Lk)}{k^2L^2-4\pi^2} \to \frac{-4\pi i L^2\cos(Lk)}{2kL^2} = -\frac{2\pi i}{k} = -iL\]</div>
+<p>which is the minimum value of the transform. The maximum occurs when <span class="math notranslate nohighlight">\(kL = -2\pi\)</span>, (see Fig. 19), which corresponds to the frequency <span class="math notranslate nohighlight">\(k = 2\pi /L \equiv \omega\)</span> in radians, or 1/<span class="math notranslate nohighlight">\(L\)</span> in Hz, if <span class="math notranslate nohighlight">\(L\)</span> measures time. If <span class="math notranslate nohighlight">\(L\)</span> is distance, cm for example, as in an FTIR spectrometer, then 1/<span class="math notranslate nohighlight">\(L\)</span> is in wavenumbers or cm<span class="math notranslate nohighlight">\(^{-1}\)</span>.</p>
+<p>To plot the transform, it is necessary to plot either the imaginary part (fig 19) or its absolute value; there is no real part in this particular example. Notice that there appear to be two frequencies, one at about 0.5 and at -0.5; negative frequencies do not make any sense if the sine wave is a signal from an experiment and for real experimental data, the negative frequencies need to be ignored. If the range <span class="math notranslate nohighlight">\(\pm L\)</span> is kept the same, and instead of a sine, a cosine wave of the same frequency transformed, the real frequency part of the Fourier transform would now look like the imaginary part of Fig. 19.</p>
+<p>As a sine wave of infinite extent has a single frequency the extra frequencies seen in Fig. 19 must arise due to the fact that this wave exists only between <span class="math notranslate nohighlight">\(\pm L\)</span>. The sudden change in value of the function at <span class="math notranslate nohighlight">\(\pm L\)</span> corresponds to having several different frequencies present, although they are not apparently there. Put another way, if a Fourier series of this truncated sine wave had to be formed very many sines or cosines of a different frequencies would have to be included. Why several terms? A single sine wave normally extends to infinity, many waves of different frequency are needed to reinforce the values near <span class="math notranslate nohighlight">\(k = 0\)</span> and simultaneously to cancel out the part where the amplitude is zero, between <span class="math notranslate nohighlight">\(-L \to -\infty\)</span> and <span class="math notranslate nohighlight">\(L\)</span> and <span class="math notranslate nohighlight">\(\infty\)</span>. Although, for practical purposes, these regions in the integration were ignored, this was only because the sine wave is zero here, but this does not mean that waves do not exist to make the amplitude zero. These terms produce the extra frequencies seen in the transform. Put another way, to understand the transform it is necessary to consider all the terms needed to describe the initial truncated function <span class="math notranslate nohighlight">\(f(x)\)</span> as a Fourier series because it is exactly these terms that appear as frequencies in the transform.</p>
+<img src="fourier-fig19.png" alt='Drawing' style='width:450px;'/>
+<p>Figure 19. Graphs of <span class="math notranslate nohighlight">\(\sin(\omega x)\)</span> from <span class="math notranslate nohighlight">\(\pm L\)</span> when <span class="math notranslate nohighlight">\(L = 10\)</span>; its Fourier transform, the imaginary part (top right), and its spectrum, the square of its absolute value (bottom right). The real part of the transform is zero because <span class="math notranslate nohighlight">\(\displaystyle g(k)= -\frac{4i\pi \sin(Lk)}{k^2L^2-4\pi^2}\)</span> has no real part. (The vertical scales are not the same, but the maximum value of the transform and its absolute value is <span class="math notranslate nohighlight">\(L\)</span>.)</p>
+</div>
+<div class="section" id="how-the-fourier-transform-works">
+<h3>6.4 How the Fourier transform works<a class="headerlink" href="#how-the-fourier-transform-works" title="Permalink to this headline">¶</a></h3>
+<p>The transform appears to have the effect of seeking out any repetitive features in a signal <span class="math notranslate nohighlight">\(f(x)\)</span>. This is true whether it is the discrete transform acting on real data, or the mathematical transform of a sine wave or other function. To understand what the transform does, we must look at eqn 27,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle  g(k) = \frac{1}{\sqrt{2\pi}}\int_{-\infty}^\infty f(x)e^{-ikx}dx \]</div>
+<p>and recall that this only gives the value at one point <span class="math notranslate nohighlight">\(k\)</span>. To obtain the transform, <span class="math notranslate nohighlight">\(k\)</span> has to vary from -<span class="math notranslate nohighlight">\({\infty} \to \infty\)</span> although in practice only a limited range is needed to observe the major features of the transform. In this exponential form, the oscillating nature of the argument is not so apparent, but writing it as</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle  g(k) = \frac{1}{\sqrt{2\pi}}\int_{-\infty}^\infty f(x)(\cos(kx)-i\sin(kx))dx \]</div>
+<p>shows that the function <span class="math notranslate nohighlight">\(f\)</span> is multiplied by a sine and cosine and integrated. Because <span class="math notranslate nohighlight">\(k\)</span> can take any value, the sine and cosine of all possible frequencies multiply <span class="math notranslate nohighlight">\(f\)</span>. Most of the time, multiplication results in a highly oscillatory function, with as many positive parts as negative ones, and the integral evaluates to zero or something very close to it.</p>
+<p>When the period of <span class="math notranslate nohighlight">\(f\)</span> is close to, or the same as, that of the sine or cosine, when multiplied together these no longer integrate to give zero. Hence, the particular frequency determined by <span class="math notranslate nohighlight">\(k\)</span> gives the transform its value. This effect is pictured in Fig. 20. The left-hand column shows a function <span class="math notranslate nohighlight">\(f\)</span> (top image) with a long period compared to a particular frequency of the sine wave in the transform at some value of <span class="math notranslate nohighlight">\(k\)</span>, middle image left. The bottom left curve shows the product of these two curves. The integral of this product, the area under the curve, almost evaluates to zero, with the positive and negative parts cancelling.</p>
+<p>The middle graph of the right-hand column shows a different frequency of the sine wave, because <span class="math notranslate nohighlight">\(k\)</span> now has a different value in <span class="math notranslate nohighlight">\(\sin(kx)\)</span>, and the sine wave’s period now matches that of the function <span class="math notranslate nohighlight">\(f\)</span>; their product is now positive and its integral is not zero. The Fourier transform therefore selects this frequency from among all others. Naturally, if there are several frequencies present in the function, these are each picked out in a similar manner as <span class="math notranslate nohighlight">\(k\)</span> changes.</p>
+<img src="fourier-fig20.png" alt='Drawing' style='width:500px;'/>
+<p>Figure 20. Left column: The function <span class="math notranslate nohighlight">\(f(x)\)</span> has a period that is very different from that of the sine wave <span class="math notranslate nohighlight">\(\sin(4kx)\)</span> middle curve. Their product, lowest left-hand curve, oscillates about zero and integrates to zero or very close to it and so appears as an insignificant feature in the transform. <br>
+Right column: The period of the sine wave, (middle curve) which is determined by <span class="math notranslate nohighlight">\(k\)</span>, is now changed compared to the left-hand figure and now matches the period of the function. The product <span class="math notranslate nohighlight">\(f(x)\sin(kx)\)</span> is now only positive, and integrates to a finite number and so appears as a peak in the transform.</p>
+</div>
+<div class="section" id="phase-sensitive-detection">
+<h3>6.5 Phase sensitive detection<a class="headerlink" href="#phase-sensitive-detection" title="Permalink to this headline">¶</a></h3>
+<p>In measuring signals buried in noise, the technique of phase sensitive detection is a very effective way of extracting the data and removing noise. In this method, the input to an experiment is modulated at a fixed frequency and the signal produced by the experiment is measured at this same frequency by a device known as a <em>lock-in amplifier</em>. This device illustrates the principle underlying the Fourier transform, although it is not a transform method.</p>
+<p>In using a lock-in amplifier to measure fluorescence the light used to excite the molecules, and so stimulate the fluorescence, is modulated by rotating a slotted disc (chopper) in the exciting light’s path. The photomultiplier or photodiode detects the modulated (on - off ) fluorescence signal together with any noise and this signal is passed to the lock-in amplifier. The lock-in also receives a reference signal directly from the chopper and it electronically multiplies this with the fluorescence signal (see fig 20). The schematic of an instrument is shown in Fig.21.</p>
+<p>Multiples (higher harmonics) of the fundamental reference frequency are filtered away, the resulting signal is integrated over many periods of the fundamental frequency, and a DC output signal is produced. As shown in Fig. 20, when the product of reference and signal is integrated, frequencies dissimilar to the reference, <span class="math notranslate nohighlight">\(f(x)\)</span> in the figure, will average to something approaching zero.</p>
+<p>If the reference signal is <span class="math notranslate nohighlight">\(r = r_0\sin(\omega t)\)</span> and the noise free signal <span class="math notranslate nohighlight">\(s = s_0\sin(\omega t + \varphi)\)</span> then the output of the lock-in is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle  V_s= \frac{r_0s_0}{T}\int_0^T \sin(\omega t + \varphi)\sin(\omega t)dt\]</div>
+<p>where <span class="math notranslate nohighlight">\(T = 2\pi n/\omega\)</span> and <span class="math notranslate nohighlight">\(n \gg\)</span> 1 is an integer and <span class="math notranslate nohighlight">\(\varphi\)</span> is the phase (time) delay between the reference and the signal and is due to detectors and the amplifiers and other components in the experiment, but can be changed by the user. Expanding the sines and integrating gives</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle  V_s= \frac{r_0s_0}{T}\int_0^T \cos(\varphi)-\cos(2\omega t+\varphi)dt\\
+=\frac{r_0s_0}{4\omega T}[\sin(\varphi)+2T\omega \cos(\varphi)-\sin(2\omega T+\varphi) ] \end{split}\]</div>
+<p>The sine at twice the reference frequency is electronically filtered away leaving a signal that is constant because <span class="math notranslate nohighlight">\(T\)</span> is the integration time set by the experimentalist and normally ranges from a few milliseconds to a few seconds. The measured signal is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle V_s=\frac{r_0s_0}{4\omega T}[\sin(\varphi)+2T\omega \cos(\varphi) ]   \tag{29}\]</div>
+<p>and as the phase <span class="math notranslate nohighlight">\(\varphi\)</span> can be adjusted by the user, this signal can be maximized.</p>
+<p>Now consider the situation when noise is present and assume that this has a wide range of frequencies <span class="math notranslate nohighlight">\(\omega_{1,2..}\)</span> and amplitudes <span class="math notranslate nohighlight">\(n_{1,2..}\)</span>. The signal from an instrument is normally noisy and is represented as</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle s_0\sin(\omega t+\varphi)+n_1\sin(\omega _1t+\varphi_1)+n_2\sin(\omega _2t+\varphi_2)+\cdots\]</div>
+<p>where <span class="math notranslate nohighlight">\(s_0, \omega\)</span>, and <span class="math notranslate nohighlight">\(\varphi\)</span> are respectively the amplitude, frequency, and phase (relative to the reference) of the data.</p>
+<p>The first term of the signal arises from the information we wish to measure and produces <span class="math notranslate nohighlight">\(V_s\)</span> equation (29). We need only consider one noise term, for all the others behave similarly. Multiplying by the reference at frequency <span class="math notranslate nohighlight">\(\omega\)</span> but ignoring the phase <span class="math notranslate nohighlight">\(\varphi\)</span>, as this adds nothing fundamental but makes the equations more complicated, gives the term,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \sin(\omega_1 t)\sin(\omega t)=[\cos((\omega-\omega_1)t)-\cos((\omega+\omega_1)t)]/2 \]</div>
+<p>Integrating produces</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle V_n= \frac{r_0n_1}{2T} \int_0^T \cos([\omega-\omega_1]t)-\cos([\omega+\omega_1]t) dt\\
+=\frac{r_0n_1}{4T} \left[ \frac{ \sin([\omega_1-\omega]T)}{\omega_1-\omega}  -\frac{\sin([\omega_1+\omega]T)}{\omega_1+\omega}  \right] \end{split}\]</div>
+<p>The sum frequency term is filtered by the instrument and is removed from the output leaving the term <span class="math notranslate nohighlight">\(\displaystyle \frac{ \sin([\omega_1-\omega]T)}{\omega_1-\omega}\)</span> which is the sinc function, see Fig. 15. Suppose that the frequency <span class="math notranslate nohighlight">\(\omega_1\)</span> represents white noise that contains all frequencies more or less equally. As these frequencies differ from <span class="math notranslate nohighlight">\(\omega\)</span> and the absolute value <span class="math notranslate nohighlight">\(| \omega_1-\omega |\)</span> becomes larger the sinc function rapidly becomes very small. This means that the reference sine wave picks out just that frequency containing the signal and rejects almost all of the noise. The total signal is <span class="math notranslate nohighlight">\(V + V_n\)</span> and although it still contains noise at the reference frequency <span class="math notranslate nohighlight">\(\omega\)</span> it contains very little at other frequencies, and the signal to noise ratio is increased very considerably. Often signals can be extracted from what appears to be completely noisy data.</p>
+<p>As a practical consideration, the reference frequency should always be chosen to be a prime number so that the chance of detecting one of the multiples of electrical mains frequency is reduced. Also, this frequency should be in a region where the inherent noise of the experiment is low and if possible be of a high enough frequency to allow a short time <span class="math notranslate nohighlight">\(T\)</span> to be used in the integration step, allowing many separate measurements to be made in a reasonable time.</p>
+<img src="fourier-fig21.png" alt='Drawing' style='width:350px;'/>
+<p>Figure 21. Schematic of phase sensitive detection and a lock-in amplifier.</p>
+</div>
+<div class="section" id="parseval-or-plancherel-theorem">
+<h3>6.6 Parseval or Plancherel  theorem.<a class="headerlink" href="#parseval-or-plancherel-theorem" title="Permalink to this headline">¶</a></h3>
+<p>This theorem is important because it proves that there is no loss of information when transforming between Fourier transform pairs. This is rather important because otherwise how would it be possible to tell what information has been lost or added? Fortunately, it can be shown that</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \int_{-\infty}^{\infty} g^*(k)g(k)dk = \int_{-\infty}^{\infty} f^*(x)f(x)dx  \tag{30}\]</div>
+<p>where the asterisk denotes the complex conjugate. The Fourier transform of <span class="math notranslate nohighlight">\(f(x)\)</span> is <span class="math notranslate nohighlight">\(g(k)\)</span>, which is integrated over its variable <span class="math notranslate nohighlight">\(k\)</span>, and similarly <span class="math notranslate nohighlight">\(f(x)\)</span> is integrated over its variable <span class="math notranslate nohighlight">\(x\)</span>. As the total integral taken over all coordinate space <span class="math notranslate nohighlight">\(x\)</span> and that over its conjugate variable <span class="math notranslate nohighlight">\(k\)</span> is the same, all the information in the original function is retained in the transformation, i.e. it looks as if the transform is a different beast but this is only a disguise as it contains exactly the same information. This, of course, means that if something is done to the transform, then, in effect, the same is done to the function.</p>
+<p>The Plancherel theorem (also called Rayleigh’s theorem as it was first used by him in the theory of Black-Body radiation) is effectively the same but usually written as</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle  \int_{-\infty}^{\infty} |g(k)|^2dk = \int_{-\infty}^{\infty} |f(x)|^2 dx \]</div>
+<p>Graphically it means that the shaded areas are the same. The figure shows the transform of a square wave as in fig 15. The transform is <span class="math notranslate nohighlight">\(\displaystyle g(k)=\frac{\sin(ak)}{ak}\)</span> where <span class="math notranslate nohighlight">\(a = 4\)</span>. The function <span class="math notranslate nohighlight">\(f(x) = 1 \)</span> in the range <span class="math notranslate nohighlight">\(-2\to 2\)</span> so <span class="math notranslate nohighlight">\(\int f(x)^2 dx= 4\)</span>.</p>
+<img src="fourier-fig21a.png" alt='Drawing' style='width:550px;'/>
+<p>Fifure 21a. Illustrating the Parseval or Plancherel theorem. The shaded areas are the same size, although they do not appear to be. The absolute square of the transform <span class="math notranslate nohighlight">\(|g(k)|^2\)</span> extends to <span class="math notranslate nohighlight">\(\pm \infty\)</span> which makes up the area since the function is always positive.</p>
+<p>This theorem is very important in quantum mechanics. Should <span class="math notranslate nohighlight">\(f(x)\)</span> represent a wavefunction that varies as a function of distance <span class="math notranslate nohighlight">\(x\)</span>, which could be the displacement from equilibrium of an harmonic oscillator, then variable <span class="math notranslate nohighlight">\(k\)</span> can be interpreted as the momentum (usually given the letter <span class="math notranslate nohighlight">\(p\)</span>) making <span class="math notranslate nohighlight">\(g(k)\)</span> the wavefunction in ‘momentum space’. This means that calculations can be formed either in spatial coordinates, i.e. distance or in ‘momentum space’ depending upon which is the most convenient mathematically. The change in displacement, <span class="math notranslate nohighlight">\(\delta x\)</span>, and change in momentum, <span class="math notranslate nohighlight">\(\delta p\)</span>, are conjugate pairs of variables and are linked by the Heisenberg uncertainty principle <span class="math notranslate nohighlight">\(\delta x\delta p \ge \hbar/2\)</span>.</p>
+</div>
+<div class="section" id="uncertainty-principle">
+<h3>6.6.1 Uncertainty Principle<a class="headerlink" href="#uncertainty-principle" title="Permalink to this headline">¶</a></h3>
+<p>It is known from experiment that when an emission line from an atomic or molecular transition has a very broad frequency spread, then the lifetime <span class="math notranslate nohighlight">\(\tau\)</span> of the state involved is short lived and vice versa. This is called the ‘time-energy’ uncertainty relationship <span class="math notranslate nohighlight">\(\Delta E\tau \ge \hbar/2\)</span> or equivalently <span class="math notranslate nohighlight">\(v\tau\ge 1/2\)</span> as <span class="math notranslate nohighlight">\(E=hv\)</span>. A similar effect is observed when a time varying signal is measured such as a voltage  on an oscilloscope. The product of the signal’s duration and its bandwidth (its spread in frequency) has a certain minimum value. This is a consequence of the variables, time and frequency being related via a fourier transform. Time and frequency are called <em>conjugate</em> variables.</p>
+<p>To show this can be quite tricky since the variance of the transform has to be calculated and this may not be integrable. The proof is given by Bracewell ‘The Fourier Tranfrom and its Applications’. Instead of giving this proof to illustrate the effect some examples of particular cases are described.</p>
+<p>As a measure of the spread in a value its standard deviation can be used, see Chapter 4 Integration eqn. 26. The square of the standard deviation is the variance and is defined as</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \sigma^2 =\langle x^2\rangle - \langle x\rangle^2\]</div>
+<p>where the brackets <span class="math notranslate nohighlight">\(\langle \rangle\)</span> indicate the average value. The average value of a function <span class="math notranslate nohighlight">\(p(x)\)</span> is defined as</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \langle x_p\rangle= \int xp(x)dx\big/\int p(x)dx\]</div>
+<p>and the average of the square</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \langle x_p^2\rangle= \int x^2p(x)dx\big/\int p(x)dx\]</div>
+<p>The denominator is the normalisation. If the function is symmetrical about zero the mean is also zero and <span class="math notranslate nohighlight">\(\langle x\rangle=0\)</span> and can be ignored. All that is necessary is to calculate <span class="math notranslate nohighlight">\(\langle f^2\rangle\langle g^2\rangle\)</span> for a function <span class="math notranslate nohighlight">\(f\)</span> and its transform <span class="math notranslate nohighlight">\(g\)</span> and take the square root to obtain the standard deviation of the product.</p>
+<p>Often the transform and function may not be good distributions in which case their square is taken as the function to use thus we make the average squared ( also called the energy function) as</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \langle x^2\rangle= \int x^2f^*f dx\big/\int f^*f dx\]</div>
+<p>and a similar equation for the transform <span class="math notranslate nohighlight">\(g\)</span>. As the function and transform is usually complex the square is obtained using the complex conjugate i.e. <span class="math notranslate nohighlight">\(p^2 \to p^*p\)</span>.</p>
+<p>This method will be demonstrated below but sometimes the transform integrals become infinity, in this case we choose to take the deviation as the measure from the peak of the transform <span class="math notranslate nohighlight">\(g\)</span> to the first zero.</p>
+<div class="section" id="a-a-gaussian-shaped-pulse">
+<h4>(a)  A Gaussian shaped pulse.<a class="headerlink" href="#a-a-gaussian-shaped-pulse" title="Permalink to this headline">¶</a></h4>
+<p>A wavepacket comprising several waves of varying frequency can have an overall profile that is Gaussian in shape. This can apply, for example, to a laser pulse or a summation of harmonic oscillator wavefunctions. The normalised Gaussian function is <span class="math notranslate nohighlight">\(\displaystyle f(t)= \frac{e^{-t^2/2\sigma^2}}{\sigma \sqrt{2\pi} } \)</span> where <span class="math notranslate nohighlight">\(\sigma\)</span> is the standard deviation, or width of the Gaussian, see figure 4, Chapter 13 ‘Data Analysis’. The transform of a Gaussian is also a Gaussian but with a different width.</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle g(v)= \frac{1}{\sqrt{2\pi}}\int_{-\infty}^\infty f(t)e^{-ivt} dt = \frac{1}{\sqrt{2\pi}}e^{-i\sigma^2v^2/2}\]</div>
+<p>As the standard deviation of <span class="math notranslate nohighlight">\(f\)</span> is by definition <span class="math notranslate nohighlight">\(\sigma\)</span> and by comparison the standard deviation of <span class="math notranslate nohighlight">\(g\)</span> must be <span class="math notranslate nohighlight">\(1/\sigma\)</span> hence <span class="math notranslate nohighlight">\(\sigma_t\sigma_v=\sigma/\sigma=1\)</span>.</p>
+<p>Calculating using the method outlined above to find <span class="math notranslate nohighlight">\(\langle t^2\rangle\)</span> and <span class="math notranslate nohighlight">\(\langle v^2\rangle\)</span> we expect a different result because we now use the square of the function and transform.</p>
+<p>Taking all integrations between <span class="math notranslate nohighlight">\(\pm\infty\)</span>, the function <span class="math notranslate nohighlight">\(\displaystyle  \int f(t)^2dt= \frac{1}{2a\sqrt{\pi}}\)</span> and <span class="math notranslate nohighlight">\(\displaystyle \int t^2f(t)^2dt = \frac{a}{4\sqrt{\pi}}\)</span> and their ratio is <span class="math notranslate nohighlight">\(\displaystyle \Delta t= \frac{a^2}{2}\)</span>.</p>
+<p>The transform has similar integrals<span class="math notranslate nohighlight">\(\displaystyle  \int g(v)^2dv= \frac{1}{2a\sqrt{\pi}}\)</span> and <span class="math notranslate nohighlight">\(\displaystyle \int v^2g(v)^2dv = \frac{1}{4a^3\sqrt{\pi}}\)</span> and their ratio is <span class="math notranslate nohighlight">\(\displaystyle \Delta v= \frac{1}{2a^2}\)</span>.</p>
+<p>The product of uncertainties after remembering that we calculate the square of the values is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \Delta t\Delta v = 1/2\]</div>
+<p>which is the minimum possible value.</p>
+</div>
+<div class="section" id="b-decaying-excited-state">
+<h4>(b) Decaying excited state<a class="headerlink" href="#b-decaying-excited-state" title="Permalink to this headline">¶</a></h4>
+<p>An excited electronic state can decay by emitting a photon, fluorescence if the transition is allowed or phosphorescence if from a triplet excited state to a singlet ground state.  The time profile can be measured as can the spectral width of the transition and they demonstrate the time - energy/frequency relationship. The excited state has a lifetime <span class="math notranslate nohighlight">\(\tau\)</span> and transition frequency <span class="math notranslate nohighlight">\(\omega_0\)</span>. A spatial analogue is momentum broadening as a result of collisions, in this case the lifetime is replace by the mean free path.</p>
+<p>The field of the emitted photon is <span class="math notranslate nohighlight">\(\displaystyle f(t)=e^{i\omega_0 t-t/2\tau}\)</span> which is that of a plane wave of frequency <span class="math notranslate nohighlight">\(\omega_0\)</span> that decays away (or is damped) with a lifetime <span class="math notranslate nohighlight">\(\tau\)</span>. The detector measure the ‘square’ of this which is <span class="math notranslate nohighlight">\(f(t)^*f(t) = e^{-t/\tau}\)</span>.</p>
+<p>The transform is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle g(\omega)= \frac{1}{\sqrt{2\pi}}\int_{-\infty}^\infty f(t)e^{-i\omega t} dt = \sqrt{\frac{2}{\pi}}\left(\frac{1}{2i (\omega-\omega_0)+1/\tau}\right)\]</div>
+<p>making the measured spectral profile, which has the shape of a Lorentzian curve,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle g(\omega)^*g(\omega)=\frac{2}{\pi}\left( \frac{1}{4(\omega-\omega_0)^2+1/\tau^2} \right) \]</div>
+<p>The full width at half maximum of this curve is <span class="math notranslate nohighlight">\(1/\tau\)</span> which makes <span class="math notranslate nohighlight">\(\Delta t\Delta \omega = \tau/\tau=1\)</span>.  Figure 54 in the answer to question 7 shows the exponential decay and the Lorentzian curves. As the energy is related to the frequency as <span class="math notranslate nohighlight">\(\Delta E =\hbar \Delta \omega\)</span> then <span class="math notranslate nohighlight">\(\tau\Delta E = \hbar\)</span></p>
+<p>The calculation using <span class="math notranslate nohighlight">\(\displaystyle \int g(\omega)^2 d\omega\)</span> as in the previous example will not work here because this integral is infinite.</p>
+</div>
+<div class="section" id="c-finite-wave-train">
+<h4>(c) Finite wave-train<a class="headerlink" href="#c-finite-wave-train" title="Permalink to this headline">¶</a></h4>
+<p>If a plane wave of frequency <span class="math notranslate nohighlight">\(\omega_0\)</span>  exists for a short time <span class="math notranslate nohighlight">\(\pm a\)</span> and is zero elsewhere then over this range <span class="math notranslate nohighlight">\(\displaystyle f(t)=e^{i\omega t};\quad -a\le t \le a\)</span>, see figure 19 where <span class="math notranslate nohighlight">\(a=10\)</span>.  The spread of the wave <span class="math notranslate nohighlight">\(\Delta x = a\)</span>.  The ‘square’ of <span class="math notranslate nohighlight">\(f\)</span> is <span class="math notranslate nohighlight">\(f(x)^*f(x)=1\)</span></p>
+<p>The transform has the form of a sinc function</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle g(\omega)=\int_{-\infty}^\infty f(t)e^{-i\omega t}dt= \sqrt{\frac{2}{\pi}}\frac{\sin\left( a (\omega-\omega_0)\right)}{\omega-\omega_0}\]</div>
+<p>The function <span class="math notranslate nohighlight">\(g^2\)</span> cannot be normalised easily as it produces another integral (the Sine integral) but it is clear that the zeros of the function are at the same place in <span class="math notranslate nohighlight">\(g\)</span> and its square and so we can take the spread <span class="math notranslate nohighlight">\(\Delta \omega\)</span> to be the value from <span class="math notranslate nohighlight">\(\omega_0\)</span> to the first minimum. The zeros of the sinc function occur at <span class="math notranslate nohighlight">\(\mathrm{sinc}(n\pi)\)</span> where <span class="math notranslate nohighlight">\(n\)</span> is an integer greater than zero, thus the first zero occurs at <span class="math notranslate nohighlight">\(\pm \pi/a\)</span> from the central frequency.</p>
+<p>If this zero is associated with <span class="math notranslate nohighlight">\(\Delta \omega\)</span> then <span class="math notranslate nohighlight">\(\Delta \omega =\pi/a\)</span> and the product <span class="math notranslate nohighlight">\(\Delta x\Delta \omega= \pi\)</span>.</p>
+</div>
+<div class="section" id="heisenberg-uncertainty">
+<h4>Heisenberg Uncertainty<a class="headerlink" href="#heisenberg-uncertainty" title="Permalink to this headline">¶</a></h4>
+<p>The relationship  <span class="math notranslate nohighlight">\(\Delta \omega\Delta x \ge 1\)</span> as described in the last example above is not an inherent property of quantum mechanics but is a property of Fourier Transforms. The last example shows that  it is not possible to form a train of electromagnetic  waves for which it is possible to measure, at the same time, the position and wavelength with infinite accuracy.</p>
+<p>However, when considering quantum mechanics a particle is given wavelike properties via the de-Broglie relation. Such a material particle (such as an electron or a molecule) of energy <span class="math notranslate nohighlight">\(E\)</span> and momentum <span class="math notranslate nohighlight">\(\pmb p\)</span> is now associated with a wave of angular frequency <span class="math notranslate nohighlight">\(\omega=2\pi\nu\)</span> and wavevector <span class="math notranslate nohighlight">\(\pmb k\)</span> i.e. <span class="math notranslate nohighlight">\(E=\hbar\omega; \pmb p=\hbar \pmb k\)</span> and leads to <span class="math notranslate nohighlight">\(\Delta x\Delta p \ge \hbar/2\)</span>. The fact that the Schroedinger equation is linear and homogeneous means that for particles a superposition principle applies which gives them wavelike properties. The small value of Planck’s constant makes the limitations of the uncertainty principle totally negligible for anything macroscopic, i.e. greater than approx micron size.</p>
+</div>
+</div>
+<div class="section" id="summary-of-some-fourier-transform-properties">
+<h3>6.7 Summary of some  Fourier transform properties<a class="headerlink" href="#summary-of-some-fourier-transform-properties" title="Permalink to this headline">¶</a></h3>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle 
+\begin{array}{ll}
+\hline
+\text{The transform pair is} &amp;   f (x) \rightleftharpoons g(k)\\[0.15cm] 
+\text{Shift or delay }     &amp;   f (x - x_0)  \rightleftharpoons e^{- ikx_0}g(k)\\[0.15cm]     
+\text{frequency shift} &amp;   f (x)e^{ik_0x} \rightleftharpoons g(k - k_0) \\[0.15cm]
+\text{Reversal }             &amp;   f (-x) \rightleftharpoons g(-k) \\[0.15cm]
+\text{Complex Conjugate }    &amp;   f (x)^* \rightleftharpoons g(k)^* \\[0.15cm]
+\text{Scaling}               &amp; \displaystyle   f(ax)\rightleftharpoons \frac{g(k/a)}{ |a|}\\[0.15cm]
+\text{Derivative}            &amp; \displaystyle   f'(x)\rightleftharpoons 2\pi\,i\,kg(k)\\[0.15cm]
+\hline
+\end{array}
+\end{split}\]</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./chapter-9"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Godfrey Beddard<br/>
+        
+            &copy; Copyright 2022.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

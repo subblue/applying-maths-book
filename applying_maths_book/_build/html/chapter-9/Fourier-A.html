@@ -1,0 +1,483 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chapter 9 Fourier Series and Transforms &#8212; Applying Maths in the Chemical &amp; Biomolecular Sciences</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Applying Maths in the Chemical &amp; Biomolecular Sciences" href="../intro.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/book-cover.jpg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Applying Maths in the Chemical & Biomolecular Sciences</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Applying Maths in the Chemical &amp; Biomolecular Sciences
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Chapter 9 Fourier Series and Transforms
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/chapter-9/Fourier-A.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/chapter-9/Fourier-A.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#motivation-and-concept">
+   1 Motivation and concept
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-fourier-series">
+   1.1 The Fourier Series.
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#series-limits-from-l-to-l">
+     1.2 Series limits from -
+     <span class="math notranslate nohighlight">
+      \(L\)
+     </span>
+     to
+     <span class="math notranslate nohighlight">
+      \(L\)
+     </span>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exponential-representation">
+     1.3 Exponential representation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#deriving-the-integral-describing-the-a-and-b-coefficients">
+     1.4 Deriving the integral describing the
+     <span class="math notranslate nohighlight">
+      \(a\)
+     </span>
+     and
+     <span class="math notranslate nohighlight">
+      \(b\)
+     </span>
+     coefficients
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#odd-and-even-functions">
+     1.5 Odd and even functions
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <p>Godfrey Beddard ‘Applying Maths in the Chemical &amp; Biomolecular Sciences an example-based approach’ Chapter 9</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import all python add-ons etc that will be needed later on</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="n">init_printing</span><span class="p">()</span>                         <span class="c1"># allows printing of SymPy results in typeset maths format</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;font.size&#39;</span><span class="p">:</span> <span class="mi">14</span><span class="p">})</span>  <span class="c1"># set font size for plots</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="chapter-9-fourier-series-and-transforms">
+<h1>Chapter 9 Fourier Series and Transforms<a class="headerlink" href="#chapter-9-fourier-series-and-transforms" title="Permalink to this headline">¶</a></h1>
+<p>This chapter describes several related topics: the Fourier series and Fourier transforms, as well as autocorrelations, convolutions, and their numerical calculation.</p>
+<p>Fourier series are used in solving partial differential equations, as explained in Chapter 10.5, for example, the diffusion and Schroedinger equation. Fourier transforms are used to produce every NMR spectrum, MRI scan, X-ray structure, and IR spectrum recorded; a good grasp of this topic is therefore essential for the molecular scientist.</p>
+<p>In many experiments the measuring instrument distorts the data and, in this case, what is measured is convoluted with the response of the instrument. Here Fourier transforms can unravel the data to produce the true response. At the end of the chapter a different type of transform, the Hadamard transform is also described and some examples of its use in time-resolved measurements, such as time-resolved kinetics and x-ray diffraction, given.</p>
+<div class="section" id="motivation-and-concept">
+<h2>1 Motivation and concept<a class="headerlink" href="#motivation-and-concept" title="Permalink to this headline">¶</a></h2>
+<p>The Taylor and Maclaurin series reconstruct functions as an infinite series in the powers <span class="math notranslate nohighlight">\(x^n\)</span>, and the coefficients needed to do this are the derivatives of the function. These series have rather tight restrictions placed upon them; the function must be differentiable <span class="math notranslate nohighlight">\(n\)</span> times over and the remainder must approach zero. These are described in Chapter 5. In a Fourier series, the expansion is performed instead, as trigonometric series in sines and cosines, with two sets of coefficients, <span class="math notranslate nohighlight">\(a_n\)</span> and <span class="math notranslate nohighlight">\(b_n\)</span>, to describe the <span class="math notranslate nohighlight">\(n^\text{th}\)</span> term, and which are evaluated by integration. The series formally extends to infinity, but in practice, at most only a few tens of terms are needed to replicate most functions to an acceptable level of approximation. The advantage of using a Fourier rather than a Taylor/Maclaurin series is that a wide class of functions can be described by the series, including discontinuous ones. However, by their very nature, Fourier series can only represent <em>periodic functions</em>, and this must not be forgotten. Periodic means that the function repeats itself; the repeat interval is normally taken to be <span class="math notranslate nohighlight">\(-\pi\)</span> to <span class="math notranslate nohighlight">\(+\pi\)</span> but can be extended to the range <span class="math notranslate nohighlight">\(-L\)</span> to <span class="math notranslate nohighlight">\(L\)</span> and <span class="math notranslate nohighlight">\(L\)</span> can even be made infinite.</p>
+<p>To illustrate that it is possible to make an arbitrary shaped function by adding a number of sine and cosine waves, four such waves are shown in Fig.1. It is possible to imagine, without any difficulty, that waveforms that are more complex can be formed by using more sine or cosine terms. The lowest and most complicated waveform is simply the sum of the individual waves, and repeats itself with a period of 2<span class="math notranslate nohighlight">\(\pi\)</span>. This waveform could be the signal that is measured on an oscilloscope or spectrometer and recorded on a computer. It might alternatively, be part of an image that is formed from adjacent columns of different waveforms. Periodic components present in a signal represent information in the waveform or image can be retrieved by performing a Fourier transform. This unravelling process is discussed later on but now the Fourier series is considered.</p>
+<img src = 'fourier-fig1.png' alt='Drawing' style='width:300px;'/>
+<p><strong>Fig 1</strong>. A complex and <em>periodic</em> waveform or function is constructed out of the sum of sine and/or cosine waves. The complicated waveform, repeats itself with a period of 2<span class="math notranslate nohighlight">\(\pi\)</span>. In the Fourier series, the reconstruction of this waveform will require many more sine and cosine terms to reconstruct its form than are used to generate it, because the Fourier series only represents a function <em>exactly</em> when an infinite number of terms are included in the summation.</p>
+</div>
+<div class="section" id="the-fourier-series">
+<h2>1.1 The Fourier Series.<a class="headerlink" href="#the-fourier-series" title="Permalink to this headline">¶</a></h2>
+<p>A Fourier series aims to reconstruct a function, such as a waveform, using the weighted sums of sine and cosine functions or their exponential representations. The great importance and usefulness of the Fourier series is that they represents the best fit, in a least-squares way, to a function <span class="math notranslate nohighlight">\(f(x)\)</span> because <span class="math notranslate nohighlight">\(\displaystyle \int_{-L}^{L}[f(x)-g(x)]^2dx\)</span> is minimized when <span class="math notranslate nohighlight">\(g(x)\)</span> is the Fourier series expansion of <span class="math notranslate nohighlight">\(f(x)\)</span>.</p>
+<p>Because the Fourier series can extend to infinity, many more sine and cosine terms can be used to exactly reproduce a waveform, such as that shown in Fig. 1, than were used to produce it in the first place. The Fourier series cannot somehow magically pick out just those sine and cosine waves used to make the original function, therefore very many terms each with a unique frequency are needed to faithfully reconstruct a waveform.</p>
+<p>If the waveform shown in Fig. 1 were truncated so that it was zero outside <span class="math notranslate nohighlight">\(x = \pm \pi\)</span>, for example, then its Fourier series would have to match this new waveform which suddenly becomes zero and do so a series must contain a sufficiently large number terms  not only to cancel out to zero outside the range <span class="math notranslate nohighlight">\(x = \pm \pi\)</span>, but also to reproduce the function inside the range.</p>
+<p>Suppose that, over the range <span class="math notranslate nohighlight">\(\pm\pi\)</span>, a Fourier series <span class="math notranslate nohighlight">\(g(x)\)</span> approximates a ‘victim’ or target function <span class="math notranslate nohighlight">\(f(x)\)</span>, which might be <span class="math notranslate nohighlight">\(x^3\)</span> or <span class="math notranslate nohighlight">\(\displaystyle (e^{-x} - 1)^2\)</span> or any ‘normal’ function, then the Fourier series <span class="math notranslate nohighlight">\(g(x)\)</span> that approximates the true function <span class="math notranslate nohighlight">\(f(x)\)</span> can be written down in general and in quite a straightforward manner and is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle  g(x) = \frac{a_0}{2}+ \sum\limits_{n=1}^\infty a_n\cos(nx) + \sum\limits_{n=1}^\infty b_n\sin(nx)   \tag{1}\]</div>
+<p>where <span class="math notranslate nohighlight">\(g(x)\)</span> approximates <span class="math notranslate nohighlight">\(f(x)\)</span>. The summations start at index <span class="math notranslate nohighlight">\(n\)</span> = 1, and <span class="math notranslate nohighlight">\(n\)</span> is a positive integer. The <span class="math notranslate nohighlight">\(a_n\)</span> and <span class="math notranslate nohighlight">\(b_n\)</span> coefficients are the integrals</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle   a_n= \frac{1}{\pi}\int\limits_{-\pi}^{+\pi}f(x)\cos(nx)dx \qquad  (n \ge 0) \tag{2} \]</div>
+<div class="math notranslate nohighlight">
+\[\displaystyle   b_n= \frac{1}{\pi}\int\limits_{-\pi}^{+\pi}f(x)\sin(nx)dx \qquad  (n \gt 0) \tag{3} \]</div>
+<p>which are normalized by 1/<span class="math notranslate nohighlight">\(\pi\)</span>.</p>
+<p>When the number of terms in the series is large, then <span class="math notranslate nohighlight">\(g(x) \rightarrow f (x)\)</span>, and when infinite, <span class="math notranslate nohighlight">\(g(x) = f (x)\)</span>. At each value of <span class="math notranslate nohighlight">\(x\)</span>, the Fourier series consists of a constant term, <span class="math notranslate nohighlight">\(a_0\)</span>/2 plus the sum of an infinite number of oscillating terms in integer multiples of <span class="math notranslate nohighlight">\(x\)</span>. Notice, that the target function <span class="math notranslate nohighlight">\(f(x)\)</span> appears as part of the expansion coefficients only, and must, therefore, be capable of being integrated. The target function <span class="math notranslate nohighlight">\(f(x)\)</span> determines the weighting to be placed on each term in the expansion, and this is how information about the shape of <span class="math notranslate nohighlight">\(f(x)\)</span> is included in the expansion.</p>
+<p>If <span class="math notranslate nohighlight">\(f(x)\)</span> is periodic in time, then the variable <span class="math notranslate nohighlight">\(x\)</span> would normally be changed to <span class="math notranslate nohighlight">\(\omega t\)</span> where <span class="math notranslate nohighlight">\(\omega = 2\pi\nu\)</span> is the angular frequency in units of radian s<span class="math notranslate nohighlight">\(^{-1}\)</span>, and <span class="math notranslate nohighlight">\(\nu\)</span> is the frequency in s<span class="math notranslate nohighlight">\(^{-1}\)</span>. If the dimension is spatial, then <span class="math notranslate nohighlight">\(x\)</span> is often replaced with <span class="math notranslate nohighlight">\(2\pi x/L\)</span> of which <span class="math notranslate nohighlight">\(2\pi/L\)</span> can be interpreted as a spatial frequency, with units of radians m<span class="math notranslate nohighlight">\({-1}\)</span> by analogy with ‘normal’ frequencies. Often this spatial frequency is called the wavevector and given the symbol <span class="math notranslate nohighlight">\(k\)</span>.</p>
+<p>Before a worked example, it is worthwhile examining limits other than <span class="math notranslate nohighlight">\(\pm\pi\)</span>, describe the exponential form of the series and also simplifying some series using symmetry. The <span class="math notranslate nohighlight">\(a_n\)</span> and <span class="math notranslate nohighlight">\(b_n\)</span> constants are also derived.</p>
+<div class="section" id="series-limits-from-l-to-l">
+<h3>1.2 Series limits from -<span class="math notranslate nohighlight">\(L\)</span> to <span class="math notranslate nohighlight">\(L\)</span><a class="headerlink" href="#series-limits-from-l-to-l" title="Permalink to this headline">¶</a></h3>
+<p>Over the range <span class="math notranslate nohighlight">\(−L\)</span> to <span class="math notranslate nohighlight">\(L\)</span>, the equations to use for <span class="math notranslate nohighlight">\(f(x)\)</span> are similar to equations (1)–(3) but <span class="math notranslate nohighlight">\(x\)</span> is
+changed to <span class="math notranslate nohighlight">\(\pi x/L\)</span>. The series is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle  g(x) = \frac{a_0}{2}+ \sum\limits_{n=1}^\infty a_n\cos \left(\frac{n\pi x}{L}\right) + \sum\limits_{n=1}^\infty b_n\sin\left(\frac{n\pi x}{L}\right)   \tag{4}\]</div>
+<p>and the coefficients are changed similarly,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle   a_n= \frac{1}{L}\int\limits_{-L}^{L}f(x)\cos \left(\frac{n\pi x}{L}\right)dx \qquad  (n \ge 0) \tag{5} \]</div>
+<div class="math notranslate nohighlight">
+\[\displaystyle   b_n= \frac{1}{L}\int\limits_{-L}^{L}f(x)\sin \left(\frac{n\pi x}{L}\right)dx \qquad  (n \gt 0) \tag{6} \]</div>
+<p>Notice that the arguments, limits, and normalization are each changed compared to those when the range is <span class="math notranslate nohighlight">\(\pm \pi\)</span>. The integral now has limits <span class="math notranslate nohighlight">\(\pm L\)</span> instead of <span class="math notranslate nohighlight">\(\pm \pi\)</span>, and normalization 1/<span class="math notranslate nohighlight">\(L\)</span> rather than 1/<span class="math notranslate nohighlight">\(\pi\)</span>.</p>
+</div>
+<div class="section" id="exponential-representation">
+<h3>1.3 Exponential representation<a class="headerlink" href="#exponential-representation" title="Permalink to this headline">¶</a></h3>
+<p>Because the sine and cosine functions can be represented as sums and differences of complex exponential terms, for example, <span class="math notranslate nohighlight">\(\displaystyle \cos(x) = (e^{ix} + e^{-ix})/2\)</span>, the most general way of describing the Fourier series is to use the complex exponential form;</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle g(x) = \sum\limits_{n=-\infty}^\infty c_ne^{+i\, n\pi x/L}    \tag{7}\]</div>
+<p>and the coefficients become</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle c_n=\frac{1}{2L}\int\limits_{-L}^L f(x)e^{-i\,n\pi x/L}dx    \tag{8} \]</div>
+<p>Note the change in sign and limits in the second exponential, and that <span class="math notranslate nohighlight">\(i=\sqrt{-1}\)</span>. The set of coefficients <span class="math notranslate nohighlight">\(c_n\)</span>, are sometimes called the <em>amplitude spectrum</em> of the transform. Note also that for practical purposes the expansion <span class="math notranslate nohighlight">\(g(x)\)</span>, and the true function <span class="math notranslate nohighlight">\(f(x)\)</span>  are considered equivalent.</p>
+</div>
+<div class="section" id="deriving-the-integral-describing-the-a-and-b-coefficients">
+<h3>1.4 Deriving the integral describing the <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> coefficients<a class="headerlink" href="#deriving-the-integral-describing-the-a-and-b-coefficients" title="Permalink to this headline">¶</a></h3>
+<p>The integrals describing the coefficients <span class="math notranslate nohighlight">\(a_n\)</span> are obtained by multiplying each term in the Fourier series by <span class="math notranslate nohighlight">\(\cos(mx)\)</span>, where <span class="math notranslate nohighlight">\(m\)</span> is an integer, then integrating term by term using the orthogonality of sine and cosine integrals as necessary. The coefficients <span class="math notranslate nohighlight">\(b_n\)</span> can be obtained similarly by multiplying the series by <span class="math notranslate nohighlight">\(\sin(mx)\)</span> and integrating.</p>
+<p>First, the form of the cosine integrals is examined. The integrals containing a product of sine and cosine are all zero for any <span class="math notranslate nohighlight">\(n\)</span> and <span class="math notranslate nohighlight">\(m\)</span> because the integral has ‘odd’ symmetry because of the sine, and the limits are symmetrical;</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle  \int\limits_{-\infty}^{+\infty}\cos(mx)\sin(nx)dx = 0  \tag{9}\]</div>
+<p>To convince you that the symmetry makes the integral zero, which is the area under the curve, a curve is plotted below, see figure 2. The curve, while complicated, is inverted about <span class="math notranslate nohighlight">\(x\)</span> = 0 so that the area <span class="math notranslate nohighlight">\(\gt\)</span> 0 is equal and opposite to that <span class="math notranslate nohighlight">\(\lt\)</span> 0. More details on odd and even functions is given in the next section.</p>
+<img src='fourier-fig1a.png' alt='Drawing' style='width:350px;'/> 
+Figure 2. An odd function such as shown above has zero integral when evaluated over a symmetrical region about zero.
+____
+<p>The product of two cosines makes the integral</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \int\limits_{-\pi}^\pi \cos(mx)\cos(nx)dx = \pi\delta_{n,m}   \tag{10}\]</div>
+<p>where <span class="math notranslate nohighlight">\(m\)</span> and <span class="math notranslate nohighlight">\(n\)</span> are integers and the (Kronecker) delta function <span class="math notranslate nohighlight">\(\delta_{n,m}\)</span> is zero only if <span class="math notranslate nohighlight">\(n \ne m\)</span>, and is <span class="math notranslate nohighlight">\(1\)</span> if <span class="math notranslate nohighlight">\(n = m\)</span>.</p>
+<p>To calculate the <span class="math notranslate nohighlight">\(a_n\)</span> coefficients, <span class="math notranslate nohighlight">\(f(x)\)</span> is represented as the Fourier series <span class="math notranslate nohighlight">\(g(x)\)</span></p>
+<div class="math notranslate nohighlight">
+\[\displaystyle  f(x) \approx g(x) = \frac{a_0}{2}+ \sum\limits_{n=1}^\infty a_n\cos(nx) + \sum\limits_{n=1}^\infty b_n\sin(nx) \tag{11}\]</div>
+<p>and this is now  multiplied by <span class="math notranslate nohighlight">\(\cos(mx)\)</span> and integrated. The cosine integrals with <span class="math notranslate nohighlight">\(m\gt\)</span> 0 are,</p>
+<div class="math notranslate nohighlight">
+\[\int\limits_{-\pi}^\pi f(x) \cos(mx)dx = \frac{a_0}{2}\int\limits_{-\pi}^\pi \cos(mx)dx +\int\limits_{-\pi}^\pi \left [\sum\limits_{n=1} a_n\cos(nx)+ \sum\limits_{n=1} b_n\sin(nx ) \right] \cos(mx)dx \tag{12}\]</div>
+<p>These integrals can be easily evaluated: The first is zero by symmetry, and by direct integration, <span class="math notranslate nohighlight">\(\displaystyle \int_{-\pi}^\pi \cos(mx)dx=\left. \frac{\sin(mx)}{m}\right|_{-\pi}^\pi =0\)</span>. The integral containing <span class="math notranslate nohighlight">\(b_n\)</span> is given by eqn. 10 and is zero also when <span class="math notranslate nohighlight">\(n \ne m\)</span>, therefore eqn. 12 becomes</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \int\limits_{-\pi}^\pi f(x) \cos(mx)dx =\pi\sum\limits_{n=1}a_n\delta_{n,m} = \pi a_n\]</div>
+<p>because the delta function picks out just one term from the summation. Rearranging gives</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle a_n = \frac{1}{\pi}\int\limits_{-\pi}^\pi f(x) \cos(mx)dx   \quad (n \gt 0) \]</div>
+<p>The index has been changed to <span class="math notranslate nohighlight">\(n\)</span> from <span class="math notranslate nohighlight">\(m\)</span> because both <span class="math notranslate nohighlight">\(n\)</span> and <span class="math notranslate nohighlight">\(m\)</span> are integers and only one index is needed; equation (11) was written initially with <span class="math notranslate nohighlight">\(n\)</span>, so this is again chosen. When <span class="math notranslate nohighlight">\(m = n =\)</span> 0, equation (12) becomes</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \int\limits_{-\pi}^\pi f(x)dx =\frac{a_0}{2}\int\limits_{-\pi}^\pi 1dx=\pi a_0 \]</div>
+<p>making <span class="math notranslate nohighlight">\(\displaystyle a_0= \pi^{-1}\int\limits_{-\pi}^\pi f(x)dx\)</span>. Similar arguments lead to the calculation of <span class="math notranslate nohighlight">\(b_n\)</span>.</p>
+</div>
+<div class="section" id="odd-and-even-functions">
+<h3>1.5 Odd and even functions<a class="headerlink" href="#odd-and-even-functions" title="Permalink to this headline">¶</a></h3>
+<p>When functions are either even or odd, the Fourier series is simplified to cosine or sine series respectively. An even function has the property <span class="math notranslate nohighlight">\(f (-x) = f (x)\)</span> and the sine integration (eqn. 6) producing the Fourier coefficient <span class="math notranslate nohighlight">\(b_n\)</span> is odd and therefore <span class="math notranslate nohighlight">\(b_n\)</span> = 0, but only because the integration limits are symmetrical. The cosine integral (eqn. 5) is not zero, and can be written as</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle a_n=\frac{2}{\pi}\int\limits_0^\pi f(x)\cos(nx)dx   \tag{13}\]</div>
+<p>When <span class="math notranslate nohighlight">\(f(x)\)</span> is odd <span class="math notranslate nohighlight">\(f(-x) = -f(x)\)</span>, the opposite situation arises; <span class="math notranslate nohighlight">\(a_n\)</span> = 0 and only the sine terms remain;</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle b_n=\frac{2}{\pi}\int\limits_0^\pi f(x)\sin(nx)dx   \tag{14}\]</div>
+<p>In cases when <span class="math notranslate nohighlight">\(f(x)\)</span> is neither odd nor even, for example <span class="math notranslate nohighlight">\(f(x) = \pi/2 - x\)</span>, both coefficients have to be evaluated.</p>
+<p>As an example, consider calculating the series of <span class="math notranslate nohighlight">\(f(x) = x^2\)</span> over the range <span class="math notranslate nohighlight">\(\pm \pi\)</span>. Because this is an even function, the sine integral should be zero and <span class="math notranslate nohighlight">\(b_n\)</span> = 0. The <span class="math notranslate nohighlight">\(a\)</span> coefficients are</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle a_n=\frac{2}{\pi}\int\limits_0^\pi x^2\cos(nx)dx  \]</div>
+<p>and when <span class="math notranslate nohighlight">\(n\)</span> = 0,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle a_0=\frac{2}{\pi}\int\limits_0^\pi x^2dx =\frac{2}{3}\pi^2 \]</div>
+<p>When <span class="math notranslate nohighlight">\(n\gt\)</span> 0, <span class="math notranslate nohighlight">\(a_n\)</span> can be evaluated using integration by parts.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#using SymPy to do the indefinite integration</span>
+<span class="n">x</span> <span class="p">,</span><span class="n">n</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x n&#39;</span><span class="p">,</span> <span class="n">positive</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+<span class="n">func</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">cos</span><span class="p">(</span><span class="n">n</span><span class="o">*</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="n">pi</span>
+<span class="n">an</span> <span class="o">=</span> <span class="n">integrate</span><span class="p">(</span><span class="n">func</span><span class="p">,</span><span class="n">x</span><span class="p">,</span> <span class="n">conds</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">)</span>      <span class="c1"># coefficients a_n</span>
+<span class="n">an</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Fourier-A_6_0.png" src="../_images/Fourier-A_6_0.png" />
+</div>
+</div>
+<p>Adding the limits <span class="math notranslate nohighlight">\(\pm \pi\)</span> produces zero for the sine terms and the remaining cosine produces <span class="math notranslate nohighlight">\(\displaystyle a_n=(-1)^n\frac{4}{n^3}\)</span>. All the <span class="math notranslate nohighlight">\(b_n\)</span>=0 thus using eqn. 4. the Fourier series for <span class="math notranslate nohighlight">\(x^2\)</span> is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle  x^2 \approx g(x)= \frac{\pi^2}{3}-4\cos(x)+\cos(2x)-\frac{4}{9}\cos(3x) \cdots \ = \frac{\pi^2}{3}+4\sum\limits_{n=1}^\infty \frac{(-1)^n}{n^2}\cos(nx)     \tag{15} \]</div>
+<p>which, as shown in the next figure, is a good representation of <span class="math notranslate nohighlight">\(x^2\)</span>. The following Python code is included as an example of a Fourier series calculation</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig1</span><span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mf">12.5</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;font.size&#39;</span><span class="p">:</span> <span class="mi">16</span><span class="p">})</span>  <span class="c1"># set font size for plots</span>
+<span class="n">ax0</span> <span class="o">=</span> <span class="n">fig1</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">ax1</span> <span class="o">=</span> <span class="n">fig1</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">ax2</span> <span class="o">=</span> <span class="n">fig1</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+
+<span class="n">gx</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">k</span> <span class="p">:</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="mf">3.0</span> <span class="o">+</span> <span class="mf">4.0</span><span class="o">*</span><span class="nb">sum</span><span class="p">(</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">**</span><span class="n">n</span> <span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">n</span><span class="o">*</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="n">n</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">k</span><span class="p">))</span> <span class="c1"># series summation</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span><span class="mi">200</span><span class="p">)</span>   <span class="c1"># define x values, -pi to pi with 200 data points</span>
+
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">ax</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">([</span><span class="n">ax0</span><span class="p">,</span><span class="n">ax1</span><span class="p">]):</span>
+    <span class="n">j</span> <span class="o">=</span> <span class="mi">20</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">:</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">3</span>      <span class="c1"># number of terms in summation</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">gx</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">j</span><span class="p">),</span><span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;dashed&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;max n = &#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">j</span><span class="p">))</span> <span class="c1"># plot as x/pi , 4 terms</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$x/\pi$&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">([</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">15</span><span class="p">])</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+
+<span class="n">kk</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">nvals</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">kk</span><span class="p">)]</span>   <span class="c1"># make list of values 0, 1, 2,...</span>
+<span class="n">fn</span> <span class="o">=</span> <span class="k">lambda</span>  <span class="n">n</span> <span class="p">:</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="mf">3.0</span> <span class="k">if</span> <span class="n">n</span> <span class="o">==</span><span class="mi">0</span> <span class="k">else</span>  <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">**</span><span class="n">n</span><span class="o">/</span><span class="n">n</span><span class="o">**</span><span class="mi">2</span> <span class="k">if</span> <span class="n">n</span> <span class="o">&gt;</span><span class="mi">0</span> <span class="k">else</span> <span class="mi">0</span>
+<span class="n">an</span> <span class="o">=</span> <span class="p">[</span><span class="n">fn</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">kk</span><span class="p">)]</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;grey&#39;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">nvals</span><span class="p">,</span><span class="n">an</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;$a_n$ coefficients&#39;</span><span class="p">)</span> 
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">([</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">])</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;n&#39;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Fourier-A_8_0.png" src="../_images/Fourier-A_8_0.png" />
+</div>
+</div>
+<p><strong>Figure 3</strong>. Left: Plot of <span class="math notranslate nohighlight">\(x^2\)</span> and its Fourier series to <span class="math notranslate nohighlight">\(n\)</span> = 3 showing a poor fit to the true function. More terms produce a better fit but only over the range <span class="math notranslate nohighlight">\(\pm \pi\)</span> as shown in the centre panel where 20 terms are included in the summation. This plot also shows how the fit is only over the range <span class="math notranslate nohighlight">\(\pm \pi\)</span> and then it repeats itself. On the right are shown the coefficients <span class="math notranslate nohighlight">\(a_n\)</span> and shows how rapidly their value decreases as <span class="math notranslate nohighlight">\(n\)</span> increases.</p>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./chapter-9"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="../intro.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Applying Maths in the Chemical &amp; Biomolecular Sciences</p>
+        </div>
+    </a>
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Godfrey Beddard<br/>
+        
+            &copy; Copyright 2022.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

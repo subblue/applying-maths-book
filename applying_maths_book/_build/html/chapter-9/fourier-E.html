@@ -1,0 +1,596 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>9 Discrete Fourier (DFT) and Fast Fourier transforms (FFT) &#8212; Applying Maths in the Chemical &amp; Biomolecular Sciences</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/book-cover.jpg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Applying Maths in the Chemical & Biomolecular Sciences</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Applying Maths in the Chemical &amp; Biomolecular Sciences
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Fourier-A.html">
+   Chapter 9 Fourier Series and Transforms
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/chapter-9/fourier-E.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/chapter-9/fourier-E.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#concept">
+   9.1 Concept
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#nyquist-critical-frequency-and-shannon-sampling-theorem">
+   9.2 Nyquist critical frequency and Shannon sampling theorem
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#calculating-a-discrete-fourier-transform-dft">
+   9.3 Calculating a Discrete Fourier transform ( DFT )
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#aliasing">
+   9.4 Aliasing
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#zero-filling">
+   9.5 Zero filling
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#using-fourier-transforms-for-filtering-smoothing-and-noise-reduction-on-data">
+   10 Using Fourier transforms for filtering, smoothing, and noise reduction on data
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#motivation">
+     10.1 Motivation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#filtering-and-apodising">
+     10.2 Filtering and apodising
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#filtering-a-transform-to-remove-noise">
+     10.3 Filtering a transform to remove noise
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#rolling-or-moving-average">
+   10.4 Rolling or moving average
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Godfrey</span> <span class="n">Beddard</span> <span class="s1">&#39;Applying Maths in the Chemical &amp; Biomolecular Sciences an example-based approach&#39;</span> <span class="n">Chapter</span> <span class="mi">9</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;/var/folders/h6/h3x_p71914gf4qttsr5f74940000gn/T/ipykernel_19210/3171124287.py&quot;</span><span class="gt">, line </span><span class="mi">1</span>
+    <span class="n">Godfrey</span> <span class="n">Beddard</span> <span class="s1">&#39;Applying Maths in the Chemical &amp; Biomolecular Sciences an example-based approach&#39;</span> <span class="n">Chapter</span> <span class="mi">9</span>
+            <span class="o">^</span>
+<span class="ne">SyntaxError</span>: invalid syntax
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import all python add-ons etc that will be needed later on</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">quad</span>
+<span class="n">init_printing</span><span class="p">()</span>                      <span class="c1"># allows printing of SymPy results in typeset maths format</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;font.size&#39;</span><span class="p">:</span> <span class="mi">16</span><span class="p">})</span>  <span class="c1"># set font size for plots</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="discrete-fourier-dft-and-fast-fourier-transforms-fft">
+<h1>9 Discrete Fourier  (DFT)  and Fast Fourier transforms (FFT)<a class="headerlink" href="#discrete-fourier-dft-and-fast-fourier-transforms-fft" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="concept">
+<h2>9.1 Concept<a class="headerlink" href="#concept" title="Permalink to this headline">¶</a></h2>
+<p>Data is normally produced by an instrument as a series of numbers measured at equal intervals, and not as an equation; therefore, any Fourier transform has to be calculated numerically. The sampling intervals could be time, distance, or some other quantity depending on the experiment. Time will be used in the following examples. The numerical transform is usually called a discrete Fourier Transform (DFT) and the algorithm used is called the fast Fourier Transform FFT. A frequently used algorithm was devised by Cooley and Tukey (1965) ( Bracewell 1986, p. 370 ). It is not necessary to devise one of these transforms, because the method is very well established and fast operating code has been written and checked. Explanations of its working can be found in texts such as Numerical Recipes (Prest et al. 1986). Python/Sympy, Maple and Mathematica each have built in discrete Fourier transform routines as do numerical packages such as python/numpy, MathCad, Matlab, IDL, IGOR and Origin. These routines can be used as black boxes, nevertheless a clear understanding of the discrete transform is essential to avoid making mistakes. Some examples of Fourier transforms are shown schematically in Fig. 36.</p>
+<p>The cosine transform produces two delta functions at frequencies <span class="math notranslate nohighlight">\(\pm 1/p\)</span> in the top figure, and <span class="math notranslate nohighlight">\(\pm 2/p\)</span> in the second figure. Because the cosine period is halved, the frequency is doubled. The ‘typical data’, row (C), is supposed to represent some experimental data and if ideally transformed, with an infinite number of sampled points, will give the schematic spectrum on the right, which is shown only as its real part. If the transform is complex then the ‘imaginary’ or absolute parts may also contain useful information. The data has a large number of low frequencies in it but few high frequencies, which is why the transform tails off as the frequency increases. The maximum frequency present in the data is found to be <span class="math notranslate nohighlight">\(\nu_m\)</span>. In row (D), the function is sampled at times starting at zero and separated by <span class="math notranslate nohighlight">\(\Delta\)</span>, and a discrete transform is calculated. The highest frequency present in the transformed data can only be <span class="math notranslate nohighlight">\(1/\Delta\)</span>; the lowest frequency is <span class="math notranslate nohighlight">\(1/T\)</span> where <span class="math notranslate nohighlight">\(T\)</span> is the length of the data. To correctly sample the data <span class="math notranslate nohighlight">\(1/(2\Delta) \equiv \nu_c \gt \nu_m\)</span>; this is known as the Nyquist condition and is explained further below.</p>
+<p>The discrete transform is usually plotted in an unfolded form as shown in row (D), Fig. 36. Row (E) shows it in the same form as the ideal or mathematical transforms. Notice also that the frequency axis is <span class="math notranslate nohighlight">\(\nu/N\)</span>, where <span class="math notranslate nohighlight">\(\nu\)</span>, the frequency integer, is the index number of each point sampled and <span class="math notranslate nohighlight">\(N\)</span> is the number of sampled points. The ratio <span class="math notranslate nohighlight">\(\nu/N\)</span> is not the same as a conventional frequency, because both <span class="math notranslate nohighlight">\(\nu\)</span> and <span class="math notranslate nohighlight">\(N\)</span> are integers.</p>
+<p>There are a number of important differences between discrete transforms that relate to real experimental data and the ideal transforms of mathematical functions. These all relate to how the often the data has been sampled, which means how many data points are measured compared to how rapidly the data changes with time. Typically, <span class="math notranslate nohighlight">\(2^{13} = 8192\)</span> to <span class="math notranslate nohighlight">\(2^{16} = 65536\)</span> data points will be needed with actual data but for ease of calculation, smaller numbers are used in the examples below.</p>
+<p>The discrete transform <span class="math notranslate nohighlight">\(g(t)\)</span> of a signal <span class="math notranslate nohighlight">\(f(t)\)</span> sampled at discrete points <span class="math notranslate nohighlight">\(t\)</span>, is defined as</p>
+<div class="math notranslate nohighlight">
+\[g(\nu)=\frac{1}{\sqrt{N}}\sum\limits_{t=0}^{N-1} f(t)e^{-2\pi i (\nu/N)t }  \tag{44}\]</div>
+<p>where <span class="math notranslate nohighlight">\(N\)</span> is the number of data points and <span class="math notranslate nohighlight">\(\nu\)</span> and <span class="math notranslate nohighlight">\(t\)</span> are integers. The ratio <span class="math notranslate nohighlight">\(\nu/N\)</span>, which can only take on certain values because both <span class="math notranslate nohighlight">\(\nu\)</span> and <span class="math notranslate nohighlight">\(N\)</span> are integers, is unlike a true frequency, <span class="math notranslate nohighlight">\(t \equiv \omega/2\pi\)</span> which can take any value. The values of <span class="math notranslate nohighlight">\(\nu\)</span> range from <span class="math notranslate nohighlight">\(0 \to \)</span>N - 1<span class="math notranslate nohighlight">\(, and the ratio takes only \)</span>N$ values which are</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \nu/N \to 0,\; 1/N, \cdots (N - 1)/N\]</div>
+<p>Transforms with <span class="math notranslate nohighlight">\(\nu/N\)</span> above <span class="math notranslate nohighlight">\(1/2\)</span> do not contain any new data, but a copy of the earlier part of the spectrum. Therefore the transform must be treated with some care to avoid interpreting data in this second half of the spectrum as something different to that in the first. This means not interpreting a feature at an apparently high frequency as something different from its twin at low frequency. The symmetry of the transformed data is seen in Fig. 36. In terms of frequency, a point <span class="math notranslate nohighlight">\(\nu\)</span> has a frequency <span class="math notranslate nohighlight">\(f = \nu/(N\Delta)\)</span>, the maximum frequency is <span class="math notranslate nohighlight">\(f = (N − 1)/(N\Delta)\)</span> because the last point in the transform is numbered <span class="math notranslate nohighlight">\(N - 1\)</span> and as <span class="math notranslate nohighlight">\(\Delta\)</span> is the separation of any two data points, so <span class="math notranslate nohighlight">\(1/\Delta\)</span> is a frequency. See Bracewell (1986) and Prest et al. (1986) for a more detailed discussion.</p>
+<img src="Fourier-fig36.png" alt='Drawing' style='width:550px;'/>
+<p>Figure 36. Some Fourier transforms, (A) to (C), and a discrete transform (D). (Based in part on a web diagram of M. Levoy, Stanford University.)</p>
+<hr class="docutils" />
+<p>The discrete transform algorithms require <span class="math notranslate nohighlight">\(2N\)</span> sampled data points, where <span class="math notranslate nohighlight">\(N\)</span> is an integer. If the data does not contain exactly <span class="math notranslate nohighlight">\(2N\)</span> points, then zeros can be added to the end of the data to make up the number of points required. An example of a discrete transform is shown in Fig. 38; notice in particular where the data appears in the transform. The data being transformed is a set of points representing a square pulse and the transform in the figure is symmetrical about its centre except for the point at <span class="math notranslate nohighlight">\(\nu = 0\)</span>. Any data in the right-hand half of the transform can be ignored; it is a copy of that on the left. The complex exponential part of the transform, equation (44), represents the many roots of unity (Chapter 2) so can be represented as points on a circle on an Argand diagram Fig. 37.</p>
+<img src="Fourier-fig37.png" alt='Drawing' style='width:200px;'/>
+<p>Figure 37. Roots of a complex exponential represented as points on a circle.</p>
+<hr class="docutils" />
+<p>The zeroth and <span class="math notranslate nohighlight">\((N - 1)^{th}\)</span> points are adjacent on this circle as are the zeroth and first point; the <span class="math notranslate nohighlight">\(0^{th}\)</span> and <span class="math notranslate nohighlight">\(N^{th}\)</span> points are at the same position. This folding of the transform into a loop explains the symmetry. Points on the right-hand side have <span class="math notranslate nohighlight">\(1/2 \lt \nu/N \le (N - 1)/N\)</span>, which correspond to negative frequencies. The highest value <span class="math notranslate nohighlight">\(\nu/N\)</span> can have to represent the data is <span class="math notranslate nohighlight">\(1/2\)</span> for any number of data points. Suppose that the transform has <span class="math notranslate nohighlight">\(1024\)</span> points; a point at position <span class="math notranslate nohighlight">\(t\)</span> = 800 corresponds to</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \nu/N = 800/1024 \approx 0.7813\]</div>
+<p>This ratio, however, should really be thought of as a negative frequency of</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle f = (800 - 1024)/(1024\Delta) = -0.2187/\Delta\]</div>
+<p>As Bracewell (1986) comments, ‘This anomaly is a distinct impediment to the visualisation of the connection between the Fourier transform and the Discrete Fourier transform’. It also presents a practical problem; it is always necessary to determine where the true data is going to lie when transformed, because not all computer programs will necessarily return this in the first half of the array that contains all the transformed data.</p>
+<img src="Fourier-fig38.png" alt='Drawing' style='width:500px;'/>
+<p>Figure 38. The real part of the discrete Fourier transform of a square pulse showing the symmetrical positioning of the resulting points. The data in the second half of the abscissa is the mirror image of the first half, except for the point at <span class="math notranslate nohighlight">\(\nu\)</span> = 0. The smallest frequency is the reciprocal of the length of the sampled data, this is <span class="math notranslate nohighlight">\(T = N\Delta\)</span> so the frequency is <span class="math notranslate nohighlight">\(f = 1/N\Delta\)</span>.</p>
+<p>You may consider that the transform looks rather odd in Fig. 38; it looks better if the data is rotated by <span class="math notranslate nohighlight">\(N/2\)</span> points then it will look symmetrical. No new data is present - the effect is just cosmetic, but the result is more understandable and is shown in Fig. 39. The transform now looks like the mathematical transform of a square pulse; see the sinc function, Fig. 15. If the centre frequency is zero, the idea of positive and negative <span class="math notranslate nohighlight">\(\nu/N\)</span> now seems more intuitive.</p>
+<img src="Fourier-fig39.png" alt='Drawing' style='width:500px;'/>
+<p>Figure 39. The transform of Fig. 38 rotated by <span class="math notranslate nohighlight">\(N/2\)</span> points, and clearly showing its symmetrical nature.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="nyquist-critical-frequency-and-shannon-sampling-theorem">
+<h2>9.2 Nyquist critical frequency and Shannon sampling theorem<a class="headerlink" href="#nyquist-critical-frequency-and-shannon-sampling-theorem" title="Permalink to this headline">¶</a></h2>
+<p>The Nyquist critical frequency has been mentioned in passing, but now it is explained more fully. An experimental set of data is band-limited (bandwidth limited), if its maximum frequency has essentially zero amplitude, as sketch (C) shows in Fig. 36. Because the signal’s frequency has a maximum, this means that any feature in the signal cannot change faster than the reciprocal of this frequency. If the signal were conveying information, then anything changing faster than this frequency would be lost. The maximum sinusoidal wave that can be extracted or recovered from data by a discrete (Fourier) transform is given by the Nyquist critical frequency <span class="math notranslate nohighlight">\(\nu_c\)</span> = 1/2<span class="math notranslate nohighlight">\(\Delta\)</span>, where <span class="math notranslate nohighlight">\(\Delta\)</span> is the (time) interval between any two consecutive data points. Consider a set of experimental data points represented by a series of equally spaced points on the time axis separated by <span class="math notranslate nohighlight">\(\Delta\)</span>. The highest frequency in the data, is clearly when consecutive points have the opposite sign,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin{array}{lcc}
+\mathrm{data} &amp;=[&amp;+1 &amp; -1 &amp; +1 &amp; -1 &amp; +1 &amp;\cdots] \\
+\mathrm{index}\; t &amp;=[&amp; 0&amp; 1&amp; 2&amp; 3&amp; 4 &amp;\cdots]
+\end{array}\end{split}\]</div>
+<p>and this series is equivalent to the function <span class="math notranslate nohighlight">\(\displaystyle e^{i\pi t/\Delta}\)</span> if <span class="math notranslate nohighlight">\(\Delta =1, i=\sqrt{-1}\)</span> and <span class="math notranslate nohighlight">\(t\)</span> is the index number of a data point, 0, 1, 2… The exponential series with integer <em>t</em> is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle e^0=1,\quad e^{i\pi}=-1,\quad e^{2i\pi}=1, \quad e^{3i\pi}=-1, \cdots\]</div>
+<p>The highest frequency in the data <span class="math notranslate nohighlight">\(\omega_{max}\)</span> occurs when <span class="math notranslate nohighlight">\(\displaystyle e^{it\omega_{max}}=e^{i\pi t/\Delta}\)</span> or when <span class="math notranslate nohighlight">\(\omega_{max}=\pi/\Delta \)</span> and as <span class="math notranslate nohighlight">\(\omega = 2\pi\nu\)</span> the</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle  \text{Nyquist critical frequency (in Hz) is}\; \nu_c=\frac{1}{2\Delta}  \tag{45}\]</div>
+<p>or two points per cycle. The lowest frequency is zero when all the points have the same value and sign; <span class="math notranslate nohighlight">\([+1 +1 +1 +1 +1 \cdots ]\)</span>. A general digitized waveform therefore has frequencies that can range from 0 to the Nyquist critical frequency; the data may contain higher frequencies than this, but these cannot be measured if they are higher than the critical frequency. Therefore, if twice as many data points than before are sampled in a given time period, the Nyquist frequency increases, because <span class="math notranslate nohighlight">\(\Delta\)</span> is then smaller and higher frequencies in the data can be transformed properly. Conversely, if <span class="math notranslate nohighlight">\(\Delta\)</span> is too large, not enough sampling occurs and the data is not properly described, but this begs the question; how many points are too many and how many too few? The Shannon sampling theorem dictates exactly the minimum number of data points needed to ensure that data of a certain frequency is properly sampled. This theorem states that,</p>
+<p>‘for reliable replication of any waveform, two or more data points per period are required to define each sinusoid in the data’,</p>
+<p>which means that the sampling frequency must be greater than twice the highest frequency in the signal</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle  \text{Shannon theorem} \quad \nu_{sample} \ge 2\nu_{max}   \tag{46}\]</div>
+<p>Whether the Nyquist or Shannon condition applies depends on your particular situation. If you have some data, and for an instrumental reason can sample no higher than a certain value, any frequencies higher than the Nyquist will be under-sampled and not be measured properly. If on the other hand you can sample as often as you wish, no more samples than those predicted by the Shannon limit are needed. However, this sampling rate must apply to all the data even though its value is dictated only by the highest frequency present. If the data is not sampled frequently enough, then aliasing occurs and extra false signals are observed in the Fourier transform. This effect is described after a discrete transform has been calculated.</p>
+<p>The Nyquist frequency has great implications for NMR and effectively dictates how the experiment is performed. A typical spectrometer operates at 400 MHz so that sampling should be done at <span class="math notranslate nohighlight">\(800\)</span> MHz or every <span class="math notranslate nohighlight">\(1.25\)</span> ns, which is a very tall order even with today’s fast electronics. The amount of data collected would also be vast because the FID can last for several seconds, therefore, <span class="math notranslate nohighlight">\(\approx 8 \cdot 10^9\)</span> points over <span class="math notranslate nohighlight">\(10\)</span> seconds and perhaps four times as many bytes depending on the word size of the computer. However, the small frequency shift in the NMR signal from the RF frequency used to excite the nuclei comes to the rescue. This shift is only a few kHz, and if the NMR signal from the detector is mixed (heterodyned), with the frequency of the RF source beating will occur and the KHz frequency shift is extracted. (An analogue radio extracts the audio signal from the MHz broadcast frequency by a similar process.) After heterodyning, it is now relatively easy to sample the low frequency signal at a sufficiently high time resolution, in milliseconds not nanoseconds, to satisfy the Nyquist condition and accurately reproduce all frequencies in the signal. After a discrete Fourier transform, this signal becomes the NMR spectrum.</p>
+<img src="Fourier-fig40.png" alt='Drawing' style='width:300px;'/>
+<p>Figure 40. A sine wave of decreasing amplitude and its sampling at two points per cycle; no more points are needed for such a sine wave. If the frequency changes with time, for example if the signal is chirped, then more data points are needed across the whole curve to describe the highest frequency correctly.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="calculating-a-discrete-fourier-transform-dft">
+<h2>9.3 Calculating a Discrete Fourier transform ( DFT )<a class="headerlink" href="#calculating-a-discrete-fourier-transform-dft" title="Permalink to this headline">¶</a></h2>
+<p>As an illustration of numerically obtaining a discrete transform using the fast Fourier transform algorithm, some data will be synthesized and then transformed. Each data point is in principle a complex number, and therefore can be displayed in different forms: as the real and imaginary parts, as the absolute value, and as the phase. If <span class="math notranslate nohighlight">\(Z\)</span> is a complex number, recall that the absolute value, which is also called the modulus or magnitude, is <span class="math notranslate nohighlight">\(| Z^*Z|^{1/2}\)</span>. The square of this, when plotted against frequency, is called the <em>power spectrum</em>. The  <em>phase</em> of the signal, in radians, is defined as <span class="math notranslate nohighlight">\(\displaystyle \theta =\tan^{-1}\left(\frac{Im(Z)}{Re(Z)}  \right)\)</span>.</p>
+<p>The data shown in Fig. 41, simulates the FID from a mock NMR experiment, with two spins producing NMR transition frequencies of <span class="math notranslate nohighlight">\(1/35\)</span> and <span class="math notranslate nohighlight">\(1/20\)</span> Hz. The FID comprises two cosines multiplied by an exponential decay with a <span class="math notranslate nohighlight">\(200\)</span> s decay time, and extends to <span class="math notranslate nohighlight">\(1000\)</span> seconds. In a real NMR experiment, <span class="math notranslate nohighlight">\(16384\; (2^{14})\)</span> points would be typically used and the total time range would be a fraction of a second to a few seconds duration. The transition frequencies are typically in the <span class="math notranslate nohighlight">\(100\)</span> to <span class="math notranslate nohighlight">\(500\)</span> MHz, region but the actual frequency depends on the strength of the permanent magnetic field.</p>
+<p>The time between any two data points is <span class="math notranslate nohighlight">\(\Delta = T/N\)</span> where <span class="math notranslate nohighlight">\(T\)</span> is the total time range of the data. In this example, this is <span class="math notranslate nohighlight">\(1000\)</span> seconds, and the number of data points <span class="math notranslate nohighlight">\(N = 2048\)</span>. This time increment per point <span class="math notranslate nohighlight">\(\Delta\)</span> is called tp in the calculation, and is <span class="math notranslate nohighlight">\(1000/204 \approx 0.488\)</span>. The maximum, or Nyquist frequency that can be calculated using this data is 1/(2<span class="math notranslate nohighlight">\(\Delta\)</span>) or 1.024 Hz and both frequencies are well below this. The real, imaginary, and phase parts of the transform are calculated and plotted against frequency in Hz, which is <span class="math notranslate nohighlight">\(\nu /(t_p \times N)\)</span> where <span class="math notranslate nohighlight">\(\nu\)</span> is the index number. We could also plot against the index number itself, or against angular frequency <span class="math notranslate nohighlight">\(2\pi\nu /(t_p \times N)\)</span>. It is important to decide what units are to be plotted. Note that the Nyquist frequency is measured in Hz, not angular frequency.</p>
+<p>The calculation using python/numpy/matplotlib is shown below. Note that only the first half of the data is plotted in the FFT. Once the FFT is calculated the .real and .imag parts are plotted as is the phase. The vertical lines on the FFT plots are the two frequencies.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># expample of calculating an FFT </span>
+<span class="n">fig1</span><span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mf">10.0</span><span class="p">,</span><span class="mf">10.0</span><span class="p">))</span>    <span class="c1"># set up 4 plots in one window</span>
+<span class="n">ax0</span> <span class="o">=</span> <span class="n">fig1</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">ax1</span> <span class="o">=</span> <span class="n">fig1</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">ax2</span> <span class="o">=</span> <span class="n">fig1</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">ax3</span> <span class="o">=</span> <span class="n">fig1</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
+
+<span class="n">nu1</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="mf">20.0</span>  <span class="c1"># frequency Hz  (only for plotting make this biggest frequency)</span>
+<span class="n">nu2</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="mf">35.0</span>
+<span class="n">FID</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">t</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">t</span><span class="o">/</span><span class="mi">200</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">nu1</span><span class="o">*</span><span class="n">t</span><span class="p">)</span> <span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">nu2</span><span class="o">*</span><span class="n">t</span><span class="p">))</span>  <span class="c1"># FID</span>
+
+<span class="n">maxt</span> <span class="o">=</span> <span class="mi">1000</span>
+<span class="n">N</span> <span class="o">=</span> <span class="mi">2</span><span class="o">**</span><span class="mi">12</span>                                <span class="c1"># number of data points</span>
+<span class="n">tp</span> <span class="o">=</span> <span class="n">maxt</span><span class="o">/</span><span class="n">N</span>
+<span class="n">t</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">maxt</span><span class="p">,</span><span class="n">N</span><span class="p">)</span>               <span class="c1"># make times to plot FID</span>
+<span class="n">nu</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span><span class="o">/</span><span class="p">(</span><span class="n">tp</span><span class="o">*</span><span class="n">N</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">)]</span>        <span class="c1"># make discrete frequencies to plot fft</span>
+
+<span class="n">ft</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">rfft</span><span class="p">(</span><span class="n">FID</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>                 <span class="c1"># do fft using in-built functions (use rfft an FID is not complex)</span>
+
+<span class="n">ax0</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;grey&#39;</span><span class="p">,</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># plot horizontal loine at zero </span>
+<span class="n">ax0</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">FID</span><span class="p">(</span><span class="n">t</span><span class="p">),</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">)</span>          <span class="c1"># plot FID </span>
+<span class="n">ax0</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;FID&#39;</span><span class="p">)</span>
+<span class="n">ax0</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;t/sec&#39;</span><span class="p">)</span>
+
+<span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">nu</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">N</span><span class="o">//</span><span class="mi">2</span><span class="p">],</span><span class="n">ft</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">N</span><span class="o">//</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">real</span><span class="p">,</span><span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span><span class="n">markersize</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>  <span class="c1"># plot real part of FFT</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;FFT (real part)&#39;</span><span class="p">)</span>
+
+<span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">nu</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">N</span><span class="o">//</span><span class="mi">2</span><span class="p">],</span><span class="n">ft</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">N</span><span class="o">//</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">imag</span><span class="p">,</span><span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span><span class="n">markersize</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span><span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span> <span class="c1"># plot imaginary part of FFT</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;FFT (imag part)&#39;</span><span class="p">)</span>
+
+<span class="n">ax3</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">nu</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">N</span><span class="o">//</span><span class="mi">2</span><span class="p">],</span><span class="n">np</span><span class="o">.</span><span class="n">arctan</span><span class="p">(</span><span class="n">ft</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">N</span><span class="o">//</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">imag</span><span class="o">/</span><span class="n">ft</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">N</span><span class="o">//</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">real</span><span class="p">),</span><span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span><span class="n">markersize</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span><span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+<span class="n">ax3</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;FFT (phase)&#39;</span><span class="p">)</span>
+<span class="n">ax3</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;radian&#39;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">ax</span> <span class="ow">in</span> <span class="p">[</span><span class="n">ax1</span><span class="p">,</span><span class="n">ax2</span><span class="p">,</span><span class="n">ax3</span><span class="p">]:</span>                 <span class="c1"># plot common features</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;grey&#39;</span><span class="p">,</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>  
+    <span class="n">ax</span><span class="o">.</span><span class="n">axvline</span><span class="p">([</span><span class="n">nu1</span><span class="p">],</span><span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;dotted&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;grey&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">axvline</span><span class="p">([</span><span class="n">nu2</span><span class="p">],</span><span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;dotted&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;grey&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="o">*</span><span class="n">nu1</span><span class="p">])</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;frequency/Hz&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/fourier-E_4_0.png" src="../_images/fourier-E_4_0.png" />
+</div>
+</div>
+<img src='fourier-fig41-42.png' alt='Drawing' style='width:600px:'/>
+<p>Figures 41 &amp; 42. Top panel: The time decaying FID, and (right) the real part of its discrete Fourier transform with frequencies of <span class="math notranslate nohighlight">\(1/35 = 0.0286\)</span> and <span class="math notranslate nohighlight">\(1/20\)</span> Hz. Only the first part of the spectrum is plotted; its mirror image at higher frequencies than the Nyquist limit of <span class="math notranslate nohighlight">\(1.024\)</span> Hz is not shown. Bottom panel: Imaginary and phase plots of the transformed data. The phase is in radians; <span class="math notranslate nohighlight">\(\pi\)</span> radians equals <span class="math notranslate nohighlight">\(180^\text{o}\)</span>. At larger frequencies, the phase approaches zero, reaching it at point <span class="math notranslate nohighlight">\(N/2\)</span> or <span class="math notranslate nohighlight">\(1.024\)</span> Hz, which is far to the right of the plotted range.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="aliasing">
+<h2>9.4 Aliasing<a class="headerlink" href="#aliasing" title="Permalink to this headline">¶</a></h2>
+<p>Under-sampling means sampling at less than twice the highest frequency component in the data. This means that adjacent sampling points do not have a small enough separation to represent the highest frequency feature. The consequence of under-sampling a signal is erroneously to fold high frequency parts into the lower frequency parts of the Fourier transform; the effect is called <em>aliasing</em>.</p>
+<p>A sufficient condition for the proper sampling of a sinusoidal signal is that the sampling frequency <span class="math notranslate nohighlight">\(\nu_s\)</span> obeys <span class="math notranslate nohighlight">\(\nu_s /2 \ge \nu_{max}\)</span>. Suppose that for some reason, this condition cannot be met, then as the frequencies of sinusoids in the data increase from <span class="math notranslate nohighlight">\(\nu_s/2\)</span>, which is the maximum frequency for correct sampling, to <span class="math notranslate nohighlight">\(\nu_s\)</span>, these sinusoids are under-sampled and their apparent frequency moves down from <span class="math notranslate nohighlight">\(\nu_s/2\)</span> to zero. To emphasize this, another name for the Nyquist frequency <span class="math notranslate nohighlight">\(\nu_s/2\)</span> is the folding frequency, and the aliased data is sometimes called an ‘image’ or ‘replica’. When a sinusoid of frequency <span class="math notranslate nohighlight">\(\nu_1\)</span> is sampled with frequency <span class="math notranslate nohighlight">\(\nu_s\)</span>, the resulting samples are indistinguishable from those of replicate sinusoids at frequency <span class="math notranslate nohighlight">\(| \nu_1 - n\nu_s |\)</span> where <span class="math notranslate nohighlight">\(n\)</span> is any integer. The replica signals occur because a cosine with frequency <span class="math notranslate nohighlight">\(2\pi\nu\)</span> is indistinguishable from one at frequency <span class="math notranslate nohighlight">\(2\pi\nu n\)</span>, because the cosine is periodic. When aliasing occurs, data from the adjacent higher frequency replica leak into the lowest primary one. The sketch, Fig. 43, attempts to show this. In the top sketch, the primary (normal) Fourier transform is shown as a solid line and replicates as dotted. When the sampling frequency <span class="math notranslate nohighlight">\(\nu_s\)</span> is at least twice the maximum frequency present in the data, <span class="math notranslate nohighlight">\(\nu_{max}\)</span> the replica and transform do not overlap. When this condition does not hold, lower sketch, then the transform and its replica do overlap, and frequencies are folded back into the transform, leading to erroneous data.</p>
+<p>Choosing the sampling frequency may seem rather like the ‘chicken and egg’ situation, because the highest frequency has to be known before performing the transform to find out what the highest frequency is. However, knowing how often to sample the data is easy in practice and can be done in two ways: either ensure that several points sample any oscillatory feature, or frequency limit the data by filtering. More sampling points than are strictly necessary only make the computer calculation slower, but this is not nearly as much of a problem as it used to be. Alternatively, if your instrument cannot sample at the frequency you would like, the data should be filtered to remove frequencies above this in an attempt to limit the effects of aliasing. Such a filter is, not unsurprisingly, called an <em>anti-aliasing</em> filter.</p>
+<img src="Fourier-fig43.png" alt='Drawing' style='width:600px;'/>
+<p>Fig. 43 Correct sampling (top) and under-sampling (bottom) leading to aliasing.</p>
+<hr class="docutils" />
+<p>An everyday example of aliasing may be seen on your television. You may have noticed how the spokes of a car or wheel, or markings on a tyre appear to move slowly backwards or forwards at a rate far smaller than is expected to be the true rate of rotation. This is very apparent in F1 motor racing and also in old Westerns with horse-drawn carriages.</p>
+<p>The effect is due to the camera sampling the scene at too slow a rate to measure rapidly moving objects properly. Suppose spoke 1 is observed when the image is sampled. A short time later, the image is updated on the screen, but the wheel has rotated by a large angle and at the next observation time spoke 2 or even 3 is in the same, or almost the same position, as was spoke 1. As all the spokes look alike, spoke 1 appears to have moved only a small amount forwards or even backwards and the effect is very odd because the rapidly moving vehicle is seen with its wheel apparently moving backwards. The same effect may also be observed directly from the spokes of a car wheel when viewed through vertical railings.</p>
+<p>In the Fourier transform, aliasing has to be taken very seriously or data will be mis-interpreted. Consider the curves shown below Fig. 44; the one on the left is an under-sampled, damped sine wave. The data, which would be recorded as the set of points shown, would appear as an exponential decay. Alternatively, if the samples were taken at a different time a straight line along the axis would be reported or perhaps as a rising exponential. This shows that the phase of the sampling is important; phase here means only where sampling is started. On the right, the data is over-sampled; more data points are present than are strictly necessary, but this is not a problem.</p>
+<img src="Fourier-fig44.png" alt='Drawing' style='width:450px;'/>
+<p>Figure 44. The figure on the left shows the under-sampling of a sine wave. The data, which is recorded as the set of points (shown as circles), would erroneously appear as an exponential decay not as a damped sine wave. On the right, the data is over-sampled; more data points are present than strictly needed.</p>
+<hr class="docutils" />
+<p>The calculation shown in Fig. 45, illustrates the effect of aliasing on an oscillating signal with a constantly changing frequency. The data, accurately sampled with <span class="math notranslate nohighlight">\(4096\)</span> points, is shown on the left and that with <span class="math notranslate nohighlight">\(256\)</span> sampled points, on the right. The abscissa on each transform is <span class="math notranslate nohighlight">\(i/N\)</span> for index <span class="math notranslate nohighlight">\(i\)</span> and ranges from <span class="math notranslate nohighlight">\(0 \to 0.5\)</span>. The failure of the sampling to reproduce the high frequency part of the data is clearly seen in the under-sampled data (top right), where some data is missing.</p>
+<p>The real part of the transform (bottom right), apparently has much higher frequency data present, but this is the effect of aliasing as seen by comparison with the accurate real part of the transform (bottom left). The inset shows details up to <span class="math notranslate nohighlight">\(i/N = 0.05\)</span>. The aliased transform does also contain some correctly transformed data but only up to the Nyquist critical frequency of the 256 data points. You can see how the inset (bottom left) has a similar form to that in the aliased transform at low frequency, but only up to about five periods of the wave. The amplitude is also smaller than the true transform, because the total amount of transformed data is the same but spread out over more frequencies. Reconstructing the data from the aliased transform by reverse transforming produces the curve (top right) which is a very different from the true waveform shown top left.</p>
+<p>To prevent aliasing, either the sampling rate has to be increased, or if this is not possible, the original data has to be filtered to remove higher frequencies. If the latter, the remaining transform will then be accurate, but only up to a certain frequency depending upon how filtering is performed.</p>
+<p>Finally note that aliasing is not the only way that erroneous transforms can be produced. If the data suddenly ends, the transform will ‘assume’ that there is a sudden change in frequency, in effect a step function, and this will generate many unwanted frequencies in the transform. As an example, see the transform of a rectangular pulse, Fig. 15. It is better to apodise the original data, so that the final values are close to zero to prevent this. Apodising means multiplying the original data by a function, <span class="math notranslate nohighlight">\(\displaystyle e^{-x}\)</span> for example, to make its values at long times, (its ‘feet’), effectively zero (see Sanders &amp; Hunter 1987).</p>
+<img src="Fourier-fig45.png" alt='Drawing' style='width:650px;'/>
+<p>Figure 45. Calculations showing proper sampling, left-hand column, and under-sampling, (right), that produces the effect of aliasing. The transforms are plotted as a fraction of the total points. The inset has its <span class="math notranslate nohighlight">\(x\)</span> axis multiplied by <span class="math notranslate nohighlight">\(10\)</span>.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="zero-filling">
+<h2>9.5 Zero filling<a class="headerlink" href="#zero-filling" title="Permalink to this headline">¶</a></h2>
+<p>To increase resolution without increasing acquisition time, the data can be zero filled by adding enough zeros to the data to double its length, which means adding points to both the real and imaginary parts of the data, but only if the data has decayed to quasi-zero at the end of the acquisition period <span class="math notranslate nohighlight">\(T\)</span>. If the data has 2<span class="math notranslate nohighlight">\(N\)</span> points, this means that another 2<span class="math notranslate nohighlight">\(N\)</span> can be added to the end of the FID before Fourier transforming. The number of points in the real part of the spectrum is increased from the usual 2<span class="math notranslate nohighlight">\(N -1\)</span> to 2<span class="math notranslate nohighlight">\(N\)</span>. With a computer, it is easy to add sets of 2<span class="math notranslate nohighlight">\(N\)</span> points repeatedly to the end of the data. However, this does not increase resolution but in effect interpolates between data points. The effect is superficial; no extra information is obtained by adding a second and subsequent zero fills, but it does give nice smooth graphs.</p>
+</div>
+<div class="section" id="using-fourier-transforms-for-filtering-smoothing-and-noise-reduction-on-data">
+<h2>10 Using Fourier transforms for filtering, smoothing, and noise reduction on data<a class="headerlink" href="#using-fourier-transforms-for-filtering-smoothing-and-noise-reduction-on-data" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="motivation">
+<h3>10.1 Motivation<a class="headerlink" href="#motivation" title="Permalink to this headline">¶</a></h3>
+<p>To the experimentalist, noisy data always presents a problem. The best option is always to go and do more experiments, but this is not always possible for any number of reasons. One option to improve the data is smoothing. Although it is rarely thought of as smoothing, one way of doing this on data showing a trend, is to perform a least-squares analysis. The parameters obtained, for example, the slope and gradient of a straight line with their associated standard deviations, provide a description of the data. If the data is not a straight line, then a polynomial fit may be used, and, if an exponential or other complex function, then a non-linear, least-squares may be necessary. However, smoothing data is often done independently and before any fitting is performed in an attempt to reduce the noise.</p>
+<p>As a rule of thumb, the noise and data can be split into three approximate classes:</p>
+<p><strong>(i)</strong> The data is a slowly changing function and the noise is spiky, i.e. of high frequency;</p>
+<p><strong>(ii)</strong> the converse, the noise is slowly varying and the data is of high frequency; and</p>
+<p><strong>(iii)</strong> noise and data are of a similar frequency.</p>
+<p>In cases (i) and (ii) it is generally possible to separate noise and data; in (iii) this may not be possible.</p>
+<p>The Savitsky - Golay method is an optimal polynomial fitting method that spans several data points at a time, replacing each with a mean value. It is available on most data analysis and graphics packages, the details of the calculation are complex and will not be examined here, but is a type of convolution and is good at removing noise spikes on data (Gorry 1990). If the data had an underlying slow trend on it, the rolling average method is also good if the noise is random and spiky on top of the data, see Section 10.4.</p>
+<p>However, smoothing data is always a risky procedure because some of the data may inadvertently be removed with some of the noise, without you realizing it. Thus, the advice is always: <em>do not smooth the data if it can be avoided</em>. Having said this, a noisy signal must sometimes be ‘cleaned up’ to extract the signal from the noise, and a Fourier transform is a good way to do this. This approach is a little different to other smoothing methods, because by transforming the data it is possible to be very specific about what noise is removed. If the data to be improved is a one-dimensional time profile or a noisy image, the method is essentially the same: make a Fourier transform, look for the signal, remove unwanted frequencies and transform back again. If the noise is ‘white’ that is to say equally spread over all frequencies, and the signal wanted is a slowly varying periodic function or the converse then a Fourier transform may be what is needed.</p>
+</div>
+<div class="section" id="filtering-and-apodising">
+<h3>10.2 Filtering and apodising<a class="headerlink" href="#filtering-and-apodising" title="Permalink to this headline">¶</a></h3>
+<p>To filter the data first transform it, then remove some of the frequencies with a filter function. This filter will probably have to be chosen by hand, and will involve some trial and error. Finally, reverse the transform to obtain the smoothed data. There are a number of functions that can be used as filters; they are designed to extract the data and not to add unwanted frequencies back into it after the calculation. Filtering is similar to apodising the data. Apodising means multiplying the signal by an exponential, Gaussian, or other function, before transforming. The apodising filters are designed to remove extra oscillations at the foot of the signal, hence their name, but they do have the effect of broadening any features. The Connes filter is commonly used in FTIR spectroscopy; it has the form <span class="math notranslate nohighlight">\((1 - (x - x_0)^2/a^2)^2\)</span> where <span class="math notranslate nohighlight">\(x = \nu/N\)</span> which ranges from 0 to 1, and <span class="math notranslate nohighlight">\(a\)</span> is a parameter that the user can vary to optimize the signal, and <span class="math notranslate nohighlight">\(x_0\)</span> is the position of the signal to be enhanced. This function looks very like the Gaussian bell-shaped curve. See Bracewell (1986) for several other filters.</p>
+</div>
+<div class="section" id="filtering-a-transform-to-remove-noise">
+<h3>10.3 Filtering a transform to remove noise<a class="headerlink" href="#filtering-a-transform-to-remove-noise" title="Permalink to this headline">¶</a></h3>
+<p>The example of filtering described next uses a square filter function, but the method is quite general. It is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \text{ Transform }\to \text{ Filter }\to \text{ Inverse Transform }\]</div>
+<p>In filtering, the data is transformed, this is then filtered, and finally this is reverse transformed to recover the filtered data. The target signal is a simple sinusoid buried in noise, and is <span class="math notranslate nohighlight">\(\cos(2\pi\omega_0 i)+\cos(2\pi\omega_1 i)\)</span> + rand(<span class="math notranslate nohighlight">\(-5,5\)</span> ), with <span class="math notranslate nohighlight">\(\omega_{0,1} = 50/n,30 /n\)</span> and where rand(<span class="math notranslate nohighlight">\(-5, 5\)</span>) is a uniformly distributed random number between <span class="math notranslate nohighlight">\(-5\)</span> and <span class="math notranslate nohighlight">\(5\)</span>, making the ‘noise’ from the random numbers rather large compared to the signal; <span class="math notranslate nohighlight">\(i\)</span> is the index number ranging from <span class="math notranslate nohighlight">\(1 \to n = 2^{10} = 1024\)</span>. The signal is so noisy that the casual observer might question whether it is anything but noise; Fig. 46. The Fourier transform immediately shows two frequencies and indicates that there is more that a single sine wave present; its frequency can be measured easily, but in most real experiments, the signal could be more complex so the data is filtered, then inverse transformed, to get at the true signal.</p>
+<img src="Fourier-fig46.png" alt='Drawing' style='width:600px;'/>
+<p>Figure 46. Noisy data (left) (with the underlying double cosine superimposed in red) and its Fourier transform (right) illustrating the frequencies hidden in noise can be identified. Only the first part of each data set is shown.</p>
+<hr class="docutils" />
+<p>The vertical lines on the Fourier transform, fig 46, show the regions selected and figure 47 the recovered signal and for comparison the original one used to generate the data but without noise. In generating the filter all values are set to zero except inside the two regions illustrated. (If it is known that the transform cannot be negative then negative values in the filter can be set to zero before inverse transforming.) If the whole of the data between the outer vertical dotted lines is transformed then the quality of the recovered data is poorer because list of intermediate values are included which add noise, (as sine waves of different frequencies) to the recovered signal.</p>
+<img src="Fourier-fig47.png" alt='Drawing' style='width:350px;'/>
+Figure 47. Reconstructed data obtained by filtering the Fourier transform and reverse transforming. Because of the Shannon theorem, very few data points are needed to reconstruct this signal and are determined only by those between the dotted lines in fig 46 all the rest being zero. 
+<hr class="docutils" />
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># due to random noise figure produced may not be the same as in fig 46 or 47</span>
+
+<span class="n">fig1</span><span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mf">10.0</span><span class="p">,</span><span class="mf">5.0</span><span class="p">))</span>   <span class="c1"># calculate data in fig 46/47</span>
+<span class="n">ax0</span> <span class="o">=</span> <span class="n">fig1</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">ax1</span> <span class="o">=</span> <span class="n">fig1</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="n">n</span> <span class="o">=</span> <span class="mi">2</span><span class="o">**</span><span class="mi">10</span>
+<span class="n">f01</span> <span class="o">=</span> <span class="p">[</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="mi">50</span><span class="o">/</span><span class="n">n</span><span class="o">*</span><span class="n">i</span><span class="p">)</span><span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="mi">30</span><span class="o">/</span><span class="n">n</span><span class="o">*</span><span class="n">i</span><span class="p">)</span><span class="o">+</span><span class="mi">10</span><span class="o">*</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">()</span><span class="o">-</span><span class="mf">0.5</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span>
+<span class="n">f02</span><span class="o">=</span>  <span class="p">[</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="mi">50</span><span class="o">/</span><span class="n">n</span><span class="o">*</span><span class="n">i</span><span class="p">)</span><span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="mi">30</span><span class="o">/</span><span class="n">n</span><span class="o">*</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span>
+
+<span class="n">nu</span><span class="o">=</span><span class="p">[</span><span class="n">i</span><span class="o">/</span><span class="n">n</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span>
+
+<span class="n">fft0</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">rfft</span><span class="p">(</span><span class="n">f01</span><span class="p">)</span><span class="o">.</span><span class="n">real</span>
+
+<span class="n">ax0</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">f01</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;grey&#39;</span><span class="p">)</span>
+<span class="n">ax0</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">f02</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">ax0</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">([</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">])</span>
+<span class="n">ax0</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">200</span><span class="p">])</span>
+<span class="n">ax0</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;grey&#39;</span><span class="p">,</span><span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;dotted&#39;</span><span class="p">)</span>
+<span class="n">ax0</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;time&#39;</span><span class="p">)</span>
+<span class="n">ax0</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;noisy signal&#39;</span><span class="p">)</span>
+<span class="n">ax0</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">([</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">10</span><span class="p">])</span>
+
+<span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">nu</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">n</span><span class="o">//</span><span class="mi">2</span><span class="p">],</span><span class="n">fft0</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">n</span><span class="o">//</span><span class="mi">2</span><span class="p">],</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span> 
+<span class="n">ax1</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;grey&#39;</span><span class="p">,</span><span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;dotted&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mf">0.2</span><span class="p">])</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="mf">0.045</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;grey&#39;</span><span class="p">,</span><span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;dotted&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="mf">0.055</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;grey&#39;</span><span class="p">,</span><span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;dotted&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="mf">0.025</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;grey&#39;</span><span class="p">,</span><span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;dotted&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="mf">0.035</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;grey&#39;</span><span class="p">,</span><span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;dotted&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;fourier transform&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;frequency&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">([</span><span class="o">-</span><span class="mi">100</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">300</span><span class="p">,</span><span class="mi">600</span><span class="p">])</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/fourier-E_8_0.png" src="../_images/fourier-E_8_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">temp</span> <span class="o">=</span> <span class="p">[</span> <span class="n">fft0</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>  <span class="k">if</span> <span class="p">(</span><span class="n">i</span><span class="o">/</span><span class="n">n</span> <span class="o">&gt;</span><span class="mf">0.045</span> <span class="ow">and</span> <span class="n">i</span><span class="o">/</span><span class="n">n</span> <span class="o">&lt;</span><span class="mf">0.055</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">i</span><span class="o">/</span><span class="n">n</span> <span class="o">&gt;</span><span class="mf">0.025</span> <span class="ow">and</span> <span class="n">i</span><span class="o">/</span><span class="n">n</span> <span class="o">&lt;</span><span class="mf">0.035</span><span class="p">)</span>  <span class="k">else</span> <span class="mi">0</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="o">//</span><span class="mi">2</span><span class="p">)]</span>
+<span class="n">recover</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">irfft</span><span class="p">(</span><span class="n">temp</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;grey&#39;</span><span class="p">,</span><span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;dotted&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">recover</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;recovered&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">f02</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;grey&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;original&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">200</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">([</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Recovered signal&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;time&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/fourier-E_9_0.png" src="../_images/fourier-E_9_0.png" />
+</div>
+</div>
+<p>The filter function above removes all but a few non-zero data points. This is only possible because the spikes in the transform are very sharp because each is a single frequency. If the signal were an exponential decay instead of a sine wave, then this Fourier method would perform very badly. The exponential is not periodic and is not described by single frequency but by a range of them in the form of a Lorentzian; in this and many other circumstances it is not easy to isolate the data from the noise. If Fourier and other smoothing methods fail then least squares fitting to a line or polynomial may be acceptable as a last resort.</p>
+</div>
+</div>
+<div class="section" id="rolling-or-moving-average">
+<h2>10.4 Rolling or moving average<a class="headerlink" href="#rolling-or-moving-average" title="Permalink to this headline">¶</a></h2>
+<p>This method is widely used in the financial sector to smooth out fluctuations in the price of stocks and shares in an attempt to predict trends, it is also used to predict trends in data such as the number of infections and deaths in pandemics such as due to Covid-9. It is also a particularly good method of removing unwanted noise spikes in experimental data. These are not part of the noise normally expected on data but occur nevertheless because someone switches on an instrument elsewhere in the lab or there is a glitch in the mains power and so forth. Such spikes can completely ruin data so some way of removing them is necessary. The moving average method starts at the beginning of the data, and averages over a small odd number of the next few data points and this average is recorded. This averaging ‘window’ is moved by one point along the data and the new average recorded and so on. This process weights in some future and past data into any point and so if a spike is preset it is averaged away by the normal data on either side of it, see Fig. 48.</p>
+<p>The mid-point moving average is is defined as  <span class="math notranslate nohighlight">\(\displaystyle s_i=\frac{1}{2n+1}\sum_{j=i-n}^{i+n} y_j \)</span> where <span class="math notranslate nohighlight">\(2n + 1\)</span> is the width of the data window and <span class="math notranslate nohighlight">\(i\)</span> runs along the data starting at point <span class="math notranslate nohighlight">\(n\)</span> and ending <span class="math notranslate nohighlight">\(n - 1\)</span> points from the end.</p>
+<img src="Fourier-fig48a.png" alt='Drawing' style='width:200px;'/>
+<p>The method can be made into a recursive algorithm where the updating equation is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle s_i = s_{i-1} + \frac{y(i+n) - y(i-n-1)}{2n + 1}\]</div>
+<p>where the first point has to be explicitly calculated. The recursion works by considering the window at adjacent positions, subtracting the value that has just left the window and adding the one just entered. Although this method is not a Fourier method, it can be considered as a convolution of the data with a kernel function, which is a rectangular pulse with each of its <span class="math notranslate nohighlight">\(m\)</span> points of size <span class="math notranslate nohighlight">\(1/m\)</span>.</p>
+<img src="Fourier-fig48b.png" alt='Drawing' style='width:300px;'/>
+<p>Figure 48. Illustrating the moving averaging smoothing to remove spikes in noise. A filter with <span class="math notranslate nohighlight">\(n\)</span> = 3 was used which is a window of 7 points. The window that calculates point <span class="math notranslate nohighlight">\(s_i\)</span> is moved one point to the right at each step of the calculation. The original data is grey, the smoothed data, red.</p>
+<hr class="docutils" />
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./chapter-9"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Godfrey Beddard<br/>
+        
+            &copy; Copyright 2022.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

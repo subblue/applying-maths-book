@@ -1,0 +1,599 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>1.6 Discontinuous functions &#8212; Applying Maths in the Chemical &amp; Biomolecular Sciences</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/book-cover.jpg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Applying Maths in the Chemical & Biomolecular Sciences</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Applying Maths in the Chemical &amp; Biomolecular Sciences
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Fourier-A.html">
+   Chapter 9 Fourier Series and Transforms
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/chapter-9/Fourier-B.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/chapter-9/Fourier-B.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   1.6 Discontinuous functions
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-gibbs-phenomenon">
+   1.8 The Gibbs phenomenon
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#integrating-differentiating-and-summing-series">
+   2 Integrating, differentiating and summing series
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#summations">
+     2.1 Summations
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#some-formal-points-about-the-fourier-series">
+   3.1 Some formal points about the Fourier series
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#a-general-method-for-numerically-calculating-a-fourier-series">
+     3.2 A general method for numerically calculating a Fourier series
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#generalized-fourier-series-with-orthogonal-polynomials">
+   4 Generalized Fourier series with orthogonal polynomials
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#generating-functions-for-orthogonal-polynomials">
+     4.1 Generating Functions for orthogonal polynomials
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Godfrey</span> <span class="n">Beddard</span> <span class="s1">&#39;Applying Maths in the Chemical &amp; Biomolecular Sciences an example-based approach&#39;</span> <span class="n">Chapter</span> <span class="mi">9</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;/var/folders/h6/h3x_p71914gf4qttsr5f74940000gn/T/ipykernel_19139/3171124287.py&quot;</span><span class="gt">, line </span><span class="mi">1</span>
+    <span class="n">Godfrey</span> <span class="n">Beddard</span> <span class="s1">&#39;Applying Maths in the Chemical &amp; Biomolecular Sciences an example-based approach&#39;</span> <span class="n">Chapter</span> <span class="mi">9</span>
+            <span class="o">^</span>
+<span class="ne">SyntaxError</span>: invalid syntax
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import all python add-ons etc that will be needed later on</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">quad</span>
+<span class="n">init_printing</span><span class="p">()</span>                         <span class="c1"># allows printing of SymPy results in typeset maths format</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;font.size&#39;</span><span class="p">:</span> <span class="mi">14</span><span class="p">})</span>  <span class="c1"># set font size for plots</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="discontinuous-functions">
+<h1>1.6 Discontinuous functions<a class="headerlink" href="#discontinuous-functions" title="Permalink to this headline">¶</a></h1>
+<p>The square wave shown in Fig. 4, has a stepwise discontinuity. When <span class="math notranslate nohighlight">\(x \ge 0,\;  f(x) = 1\)</span>, and when <span class="math notranslate nohighlight">\(x \lt 0,  f (x) = -1\)</span> and the wave repeats itself with a period of <span class="math notranslate nohighlight">\(2\pi\)</span>. This discontinuous function is sometimes called the <em>odd signum</em> function, sgn(<span class="math notranslate nohighlight">\(x\)</span>). It can be shown that, if the discontinuity occurs in the mid range <span class="math notranslate nohighlight">\(-\pi \to \pi\)</span>, each integral, <span class="math notranslate nohighlight">\(a_n\)</span> and <span class="math notranslate nohighlight">\(b_n\)</span>, can be split into two, one being taken from <span class="math notranslate nohighlight">\(-\pi \to 0\)</span> and the second from <span class="math notranslate nohighlight">\(0 \to \pi\)</span>. The Fourier series expansion now has coefficients</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle a_n=\frac{1}{\pi}\int_{\pi}^0 (-1)\cos(nx)dx+\frac{1}{\pi}\int_0^{\pi} (+1)\cos(nx)dx \]</div>
+<p>and when <span class="math notranslate nohighlight">\(n = 0\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle a_0=-\frac{1}{\pi}\int_{\pi}^0 1dx+\frac{1}{\pi}\int_0^{\pi} 1dx =0\]</div>
+<p>and because the function has odd symmetry <span class="math notranslate nohighlight">\(f(-x) = -f(x)\)</span>, the cosine integrals and all other <span class="math notranslate nohighlight">\(a\)</span> coefficients are zero,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle a_n=-\frac{1}{\pi}\int_{\pi}^0 \cos(nx)dx+\frac{1}{\pi}\int_0^{\pi}\cos(nx)dx = \frac{2}{\pi}\left. \sin(nx)\right|_{-\pi}^0 = 0\]</div>
+<p>The <span class="math notranslate nohighlight">\(b\)</span> coefficients are</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle b_n=\frac{1}{\pi}\int_{\pi}^0 (-1)\sin(nx)dx+\frac{1}{\pi}\int_0^{\pi} (+1)\sin(nx)dx = \frac{2}{\pi}\int_0^\pi sin(nx)dx  =  \frac{2}{n\pi}[1-\cos(n\pi)]\]</div>
+<p>However, when <span class="math notranslate nohighlight">\(n\)</span> is even, the coefficient <span class="math notranslate nohighlight">\(b_n\)</span> is zero, because for integer multiples of <span class="math notranslate nohighlight">\(\pi\)</span> the cosine is one, and when <span class="math notranslate nohighlight">\(n\)</span> is odd the cosine is <span class="math notranslate nohighlight">\(-1\)</span>, consequently <span class="math notranslate nohighlight">\(b_n = 4/n\pi\)</span>. The Fourier series equation (1) reduces to</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle g(x) = \sum\limits_{n\,=\,odd}b_n\sin(nx)=\frac{4}{\pi}\sum\limits_{n\,=\,odd}\frac{\sin(nx)}{n} \]</div>
+<img src='fourier-fig4.png' alt='Drawing' style='width:600px;'/>
+Figure 4. A few cycles of a square wave, which is a discontinuous function. Left shows the function $f(x)$ and right its Fourier reconstruction $g(x)$ via a series of $n = 49$ terms.  The over- and undershoot in the Fourier series as shown on the right hand plot is a phenomenon called the Gibbs phenomenon and is discussed next.
+</div>
+<hr class="docutils" />
+<div class="section" id="the-gibbs-phenomenon">
+<h1>1.8 The Gibbs phenomenon<a class="headerlink" href="#the-gibbs-phenomenon" title="Permalink to this headline">¶</a></h1>
+<p>The Fourier series of a square wave is shown in fig 4 (right) with a relatively large number of terms. Adding more will improve the fit to the function, but it will never be exact because an <em>infinite</em> number of terms will be needed to follow the right-angled bends at the top and bottom of the wave. This angle effectively corresponds to an infinite sine frequency.</p>
+<p>The size of the overshoot remains the same independent of the number of terms; this is called the Gibbs’ phenomenon, after J. Willard Gibbs, of thermodynamics fame, who explained its cause as being due to the non-uniform convergence of the Fourier series in the vicinity of a discontinuity.</p>
+<p>It is difficult to prove, but may be seen quite easily graphically; plot the Fourier series approximation to the square wave, say, from <span class="math notranslate nohighlight">\(-0.2 \to +0.2\)</span> and with different numbers of terms in the series, and then observe the height of the overshoot. As more terms are added, this becomes closer to zero, but its amplitude above <span class="math notranslate nohighlight">\(1\)</span> and below <span class="math notranslate nohighlight">\(-1\)</span> remains the same, as shown in the next figure for <span class="math notranslate nohighlight">\(10\)</span> and <span class="math notranslate nohighlight">\(100\)</span> terms in the series.</p>
+<p>The Gibbs phenomenon was first observed by Michelson who is more famous for the interferometric Michelson - Morley experiment that determined that the speed of light was independent of the position of the earth and thus disproved the hypothesis of the aether. By 1898 Michelson had constructed a machine, called the Harmonic Integrator, that could calculate up to eighty terms in a Fourier series and present the results graphically. He noticed the overshoot and wrote to Gibbs for an explanation thinking his machine was in error. You can see a photograph of this machine in ‘A Student’s Guide to Fourier Transforms’ (James 1995). This book also contains a clear introduction to Fourier transforms.</p>
+<img src='fourier-fig5.png' alt='Drawing' style='width:350px;'/>
+Figure 5. The Gibbs phenomenon where the over- and undershoot remain at the same size as more and more terms are added to the Fourier series.</div>
+<div class="section" id="integrating-differentiating-and-summing-series">
+<h1>2 Integrating, differentiating and summing series<a class="headerlink" href="#integrating-differentiating-and-summing-series" title="Permalink to this headline">¶</a></h1>
+<p>If the series for a function <span class="math notranslate nohighlight">\(f(x)\)</span> has been calculated then that for <span class="math notranslate nohighlight">\(\int f(x)dx\)</span> can be easily calculated, providing that the integration can be performed. Similarly if <span class="math notranslate nohighlight">\(df(x)/dx\)</span> is available the series for this can also be obtained. As an example, the series for <span class="math notranslate nohighlight">\(x^4\)</span> can be obtained from the Fourier series for <span class="math notranslate nohighlight">\(x^3\)</span> by integrating term by term; in addition, integration can lead to a better representation of a function with the same number of terms in the summation. The algebraic result will be different from that of a direct series for <span class="math notranslate nohighlight">\(x^4\)</span>, but should be just as good a representation.</p>
+<p>The series for <span class="math notranslate nohighlight">\(x^3\)</span> is calculated first and as this is an odd function, all the even cosine terms are zero; therefore, all the <span class="math notranslate nohighlight">\(a\)</span> coefficients are zero and the series only contains sine or <span class="math notranslate nohighlight">\(b\)</span> terms of the form</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle b_n=\frac{1}{\pi}\int_{-\pi}^\pi x^3\sin(nx)dx\]</div>
+<p>This and similar integrals can be integrated ‘by parts’ or the sine converted to an exponential and then integrated; in either case the sine or exponential part is integrated first, so that the power of <span class="math notranslate nohighlight">\(x\)</span> is reduced in the second term of the ‘by parts’ integration. Using sympy the result is shown below.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x&#39;</span> <span class="p">)</span>
+<span class="n">n</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;n&#39;</span><span class="p">,</span><span class="n">integer</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">f01</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">3</span><span class="o">*</span><span class="n">sin</span><span class="p">(</span><span class="n">n</span><span class="o">*</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="n">pi</span>
+<span class="n">bn</span> <span class="o">=</span> <span class="n">integrate</span><span class="p">(</span><span class="n">f01</span><span class="p">,(</span><span class="n">x</span><span class="p">,</span><span class="o">-</span><span class="n">pi</span><span class="p">,</span><span class="n">pi</span><span class="p">),</span><span class="n">conds</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">)</span>
+<span class="n">simplify</span><span class="p">(</span><span class="n">bn</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Fourier-B_4_0.png" src="../_images/Fourier-B_4_0.png" />
+</div>
+</div>
+<p>As the sine terms are all zero and the cosines alternate 1 for even <span class="math notranslate nohighlight">\(n\)</span> or -1 for odd <span class="math notranslate nohighlight">\(n\)</span> in the limits <span class="math notranslate nohighlight">\(x=\pm n\pi\)</span> and with <span class="math notranslate nohighlight">\(n \gt\)</span> 0, the integral is <span class="math notranslate nohighlight">\(b_n=2(-1)^{n+1}(\pi^2/n - 6/n^3) \)</span>. The expansion of <span class="math notranslate nohighlight">\(x^3\)</span> is therefore,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle x^3 \approx g(x^3) = \sum\limits_{n=1} b_n \sin(nx) = 2(\pi^2-6)\sin(x)-\frac{2\pi^2-3}{2}\sin(2x)+\cdots\]</div>
+<p>The series expansion is plotted in Fig 6; notice how the difference in the value of the series for <span class="math notranslate nohighlight">\(x^3\)</span> is greatest at the limits <span class="math notranslate nohighlight">\(\pm \pi\)</span>, and how the series repeats itself. The Fourier series is zero at both -<span class="math notranslate nohighlight">\(\pi\)</span> and <span class="math notranslate nohighlight">\(\pi\)</span> because it assumes that the function <span class="math notranslate nohighlight">\(x^3\)</span> is periodic; thus just before <span class="math notranslate nohighlight">\(\pi\)</span> its value is <span class="math notranslate nohighlight">\(\pi^3\)</span>, and just after -<span class="math notranslate nohighlight">\(\pi^3\)</span>, and this leads to an overshoot.</p>
+<p>Integrating term by term produces a new series, which is,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle x^4 \approx g(x^4) = 2\int\limits_0^x \sum_{n=1}b_n\sin(nx)dx = 8\sum_{n=1}(-1)^{n+1}(\pi^2/n^2 - 6/n^4)(1-\cos(nx))\]</div>
+<p>and the initial <span class="math notranslate nohighlight">\(8\)</span> arises because the integration of <span class="math notranslate nohighlight">\(x^3\)</span> is <span class="math notranslate nohighlight">\(x^4\)</span>/4 and <span class="math notranslate nohighlight">\(b_n\)</span> was evaluated for <span class="math notranslate nohighlight">\(x^3\)</span>. The curve for <span class="math notranslate nohighlight">\(x^4\)</span> and its Fourier series is shown in Fig.6. The fit is good up to the limit <span class="math notranslate nohighlight">\(\pm \pi\)</span>, the limit of the initial Fourier series. The <span class="math notranslate nohighlight">\(x^4\)</span> series <span class="math notranslate nohighlight">\(g(x^4)\)</span> is smoother than the <span class="math notranslate nohighlight">\(x^3\)</span> and also a better fit to the curve, and this may be attributed to the integration, which measures the area under a curve and has the effect of smoothing the function.</p>
+<img src='fourier-fig6.png' alt='Drawing' style='width:350px;'/>
+Figure 6. The functions $x^3$ and $x^4$ are shown as dashed lines. The wiggly solid curve shows the result of having only 20 terms in the $x^3$ summation. The underlying oscillation of the trigonometric terms is obvious, even though the series clearly approximates $x^3$. The $g(x^4)$ series, after integrating the $x^3$ Fourier series, is a considerably better fit than is  the fit to $x^3$.
+<div class="section" id="summations">
+<h2>2.1 Summations<a class="headerlink" href="#summations" title="Permalink to this headline">¶</a></h2>
+<p>The Fourier series can also be used to evaluate summations; for example the expansion of <span class="math notranslate nohighlight">\(x^2\)</span> in the range <span class="math notranslate nohighlight">\(\pm \pi\)</span>, equation (15), gives</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle  x^2= \frac{\pi^2}{3} - 4 \left ( \cos(x) - \cos(2x)/2^2 + \cos(3x)/3^2 -  \cdots \right ) \]</div>
+<p>When <span class="math notranslate nohighlight">\(x=\pi/2\)</span>, the series produces the result</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle  \frac{\pi^2}{12}= 1-\frac{1}{4}+\frac{1}{9}-\frac{1}{16}+ \cdots \frac{(-1)^n}{n^2}+\cdots \]</div>
+<p>where the series limit is taken to infinity. In fact, this series converges very slowly; the alternating sign in <span class="math notranslate nohighlight">\(\pm 1/n^2\)</span> terms ensures this, and about 360 terms are needed to obtain a value for π accurate to five decimal places: not really a good way to calculate <span class="math notranslate nohighlight">\(\pi\)</span>. When <span class="math notranslate nohighlight">\(x\)</span> = <span class="math notranslate nohighlight">\(\pi\)</span> the series is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle  \frac{\pi^2}{6}= 1+\frac{1}{4}+\frac{1}{9}+\frac{1}{16}+ \cdots \frac{1}{n^2}+\cdots \]</div>
+<p>which converges more rapidly as all the terms have the same sign. Many other unusual summations can be achieved using different Fourier series; however, for us they are only curiosities.</p>
+</div>
+</div>
+<div class="section" id="some-formal-points-about-the-fourier-series">
+<h1>3.1 Some formal points about the Fourier series<a class="headerlink" href="#some-formal-points-about-the-fourier-series" title="Permalink to this headline">¶</a></h1>
+<p>The sine and cosines making up the Fourier series have two important properties: orthogonality and  completeness.</p>
+<p>In the language of vectors, the sine and cosine functions represent a <em>complete orthogonal basis set</em> on which the target function, <span class="math notranslate nohighlight">\(f(x)\)</span>, is expanded as a sum of <span class="math notranslate nohighlight">\(N\)</span> terms. This basis set is of infinite length and is <span class="math notranslate nohighlight">\(\sin(x), \sin(2x), \cdots \sin(nx) \cdots\)</span>, where <span class="math notranslate nohighlight">\(n = 1, 2, \cdots\)</span>, and there is a similar set for the cosines with <span class="math notranslate nohighlight">\(n\)</span> <span class="math notranslate nohighlight">\(\ge\)</span> 0. Any desired accuracy can be achieved, provided that <span class="math notranslate nohighlight">\(N\)</span> is large enough. If the basis set functions are also normalized, the set is <em>orthonormal</em> rather than just orthogonal.</p>
+<p>Basis sets often seem rather abstract because we do not often need to use them explicitly. For example, although not normally described in this way, the exponential function <span class="math notranslate nohighlight">\(\displaystyle e^x = 1 + x + x^2/2! + x^3/3! \cdots \)</span>, is, by contrast, an expansion in the basis set of <span class="math notranslate nohighlight">\(x^n\)</span> and the coefficients are <span class="math notranslate nohighlight">\(1/0!, 1/1!, 1/2!, 1/3!, \cdots 1/n! \cdots\)</span>. This basis set is not orthogonal because the condition for this to apply is that the product of any two elements is zero when taken over the whole range of the set, <span class="math notranslate nohighlight">\(\pm \pi\)</span> for sine and cosine. The dot product of any two orthogonal vectors is zero, see Chapter on Vectors section 2.</p>
+<p>Similarly for the sine and cosine basis set even though it is continuous, the condition is <span class="math notranslate nohighlight">\(\displaystyle \int_{-\pi}^\pi\sin(mx)\sin(nx)dx =\pi\delta_{n,m}\)</span>, which is zero if <span class="math notranslate nohighlight">\(m \ne n\)</span>. This is not true of the coefficient of
+the <span class="math notranslate nohighlight">\(x^n\)</span> basis set of the exponential expansion, thus we cannot form a Fourier series based on this.</p>
+<p>The great importance and usefulness of the Fourier series is that it represents the best fit, in a least-squares way, to any function <span class="math notranslate nohighlight">\(f(x)\)</span> because <span class="math notranslate nohighlight">\(\displaystyle \int_{-L}^{L}[f(x)-g(x)]^2dx\)</span> is minimized when <span class="math notranslate nohighlight">\(g(x)\)</span> is the series expansion of <span class="math notranslate nohighlight">\(f(x)\)</span>.</p>
+<p>A given set of functions, <span class="math notranslate nohighlight">\(S_n(x)\)</span> is said to be complete if some other arbitrary function <span class="math notranslate nohighlight">\(f(x)\)</span> can be expanded in the set of the <span class="math notranslate nohighlight">\(S\)</span> functions. If they have the same boundary conditions, this makes the functions <em>complete and orthogonal</em> in a given range, and in the case of the sine and cosine Fourier series, this range is -<span class="math notranslate nohighlight">\(\pi\)</span> to <span class="math notranslate nohighlight">\(\pi\)</span>. The general series describing <span class="math notranslate nohighlight">\(f(x)\)</span>, is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle  g(x) = \sum\limits_{n=1}^\infty q_nS_n(x)  \tag{16}\]</div>
+<p><span class="math notranslate nohighlight">\(q_n\)</span> being constants that are related to the target function <span class="math notranslate nohighlight">\(f(x)\)</span>. If the <span class="math notranslate nohighlight">\(S\)</span> functions are orthonormal, then, when <span class="math notranslate nohighlight">\(n\)</span> and <span class="math notranslate nohighlight">\(m\)</span> are integers, <span class="math notranslate nohighlight">\(\displaystyle \int S_n^*(x)S_m(x) dx= \delta_{m,n}\)</span>.</p>
+<p>In modern mathematics, the term ‘Fourier series’ does not refer just to the original sine and cosine series, or their complex exponential representation, but to a series formed by other functions that form a complete orthogonal basis set. Often the term generalized Fourier series is used to describe these, but this is not universal. The sine or cosine functions are not unique in forming series and many other functions could be used provided that they can form an orthogonal set. Other such functions include the Hermite polynomials, used to describe the harmonic oscillator wavefunctions, and the Legendre and Chebychev polynomials. In Section 4 it is shown how these can also be used to form series that describe arbitrary target functions <span class="math notranslate nohighlight">\(f(x)\)</span>.</p>
+<div class="section" id="a-general-method-for-numerically-calculating-a-fourier-series">
+<h2>3.2 A general method for numerically calculating a Fourier series<a class="headerlink" href="#a-general-method-for-numerically-calculating-a-fourier-series" title="Permalink to this headline">¶</a></h2>
+<p>An algorithm is given below with which to calculate the Fourier series of a function and is fairly straightforward if equations (5) and (6) are used and care taken over the integration limits. The function is placed in the first line as and the range is from <span class="math notranslate nohighlight">\(\pm 7\)</span>, in this example. The target function is <span class="math notranslate nohighlight">\(\displaystyle f(x)= e^{-x/2}\sin^2(x)\)</span>. The equations (4 to 6) in section 1.2 are used. The series is calculated numerically.</p>
+<p>The result of the calculation is shown in Fig. 7 and is compared with the original function, and for most of the curve the fit is tolerably good but not excellent. The main discrepancy is the overshoot, which is the Gibbs phenomenon.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># using numpy first to do algebraic integration</span>
+
+<span class="n">f</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="o">/</span><span class="mf">2.0</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>           <span class="c1"># target function </span>
+<span class="n">L</span> <span class="o">=</span> <span class="mf">7.0</span>                                             <span class="c1"># limits +- L</span>
+<span class="n">m</span> <span class="o">=</span> <span class="mi">50</span>                                              <span class="c1"># number of terms in series </span>
+<span class="n">a0</span><span class="o">=</span> <span class="n">quad</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="o">-</span><span class="n">L</span><span class="p">,</span><span class="n">L</span> <span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="n">L</span>                              <span class="c1"># integrate; the [0] returns just the result and not error as well </span>
+
+<span class="n">fa</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">n</span> <span class="p">:</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span> <span class="n">n</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">x</span><span class="o">/</span><span class="n">L</span> <span class="p">)</span><span class="o">/</span><span class="n">L</span>     <span class="c1">#  function to give a_n after integration</span>
+<span class="n">fb</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">n</span> <span class="p">:</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span> <span class="n">n</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">x</span><span class="o">/</span><span class="n">L</span> <span class="p">)</span><span class="o">/</span><span class="n">L</span>     <span class="c1">#  function to give b_n after integration</span>
+
+<span class="n">numx</span> <span class="o">=</span> <span class="mi">1000</span>                                         <span class="c1"># number of data points to plot</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="n">L</span><span class="p">,</span><span class="n">L</span><span class="p">,</span><span class="n">numx</span><span class="p">)</span>
+
+<span class="n">FS</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">a0</span><span class="o">/</span><span class="mf">2.0</span>   <span class="o">+</span> <span class="nb">sum</span><span class="p">(</span> <span class="n">quad</span><span class="p">(</span><span class="n">fa</span><span class="p">,</span><span class="o">-</span><span class="n">L</span><span class="p">,</span><span class="n">L</span><span class="p">,</span><span class="n">args</span><span class="o">=</span><span class="n">n</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">n</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">x</span><span class="o">/</span><span class="n">L</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">m</span><span class="p">))</span> \
+                        <span class="o">+</span> <span class="nb">sum</span><span class="p">(</span> <span class="n">quad</span><span class="p">(</span><span class="n">fb</span><span class="p">,</span><span class="o">-</span><span class="n">L</span><span class="p">,</span><span class="n">L</span><span class="p">,</span><span class="n">args</span><span class="o">=</span><span class="n">n</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">n</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">x</span><span class="o">/</span><span class="n">L</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">m</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">color</span> <span class="o">=</span><span class="s1">&#39;lightgreen&#39;</span><span class="p">,</span><span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;solid&#39;</span><span class="p">,</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">FS</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="n">color</span> <span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span>   <span class="n">color</span> <span class="o">=</span><span class="s1">&#39;grey&#39;</span><span class="p">,</span><span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;dashed&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Function &amp; its Fourier series with &#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">m</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39; terms&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Fourier-B_7_0.png" src="../_images/Fourier-B_7_0.png" />
+</div>
+</div>
+<p><strong>Fig 7</strong>. The original function (thick green line) and its Fourier series (red). As can be seen the fit is not tremendously good although  the series does follow the general shape of the function except at the end points <span class="math notranslate nohighlight">\(\pm 7\)</span>.</p>
+<hr class="docutils" />
+</div>
+</div>
+<div class="section" id="generalized-fourier-series-with-orthogonal-polynomials">
+<h1>4 Generalized Fourier series with orthogonal polynomials<a class="headerlink" href="#generalized-fourier-series-with-orthogonal-polynomials" title="Permalink to this headline">¶</a></h1>
+<p>The Fourier series expands a function in sine and cosines. In the language of vectors and matrices, the sine and cosines form a basis set in which the function f is expanded. The essential property that any basis set of functions must have is orthogonality. If <span class="math notranslate nohighlight">\(\varphi\)</span> is such a function, then the basis set is the functions <span class="math notranslate nohighlight">\(\varphi_1, \varphi_2, \cdots\)</span>  and the condition for orthogonality is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \int_a^b\varphi_m(x)^*\varphi_n(x)dx=c_m\delta_{m,n}    \tag{17}\]</div>
+<p>where <span class="math notranslate nohighlight">\(c\)</span> is a constant and <span class="math notranslate nohighlight">\(\delta\)</span> is the delta function and is zero if <span class="math notranslate nohighlight">\(n \ne m\)</span> otherwise it is unity. The asterisk indicates the complex conjugate if the function <span class="math notranslate nohighlight">\(\varphi\)</span> is complex. If the functions are normalized as well as being orthogonal, then <span class="math notranslate nohighlight">\(c_m  = 1\)</span>. The range of the integral, <span class="math notranslate nohighlight">\(a\)</span> to <span class="math notranslate nohighlight">\(b\)</span>, depends on the type of function which might be <span class="math notranslate nohighlight">\(\pm 1\)</span> or <span class="math notranslate nohighlight">\(\pm \infty\)</span>. Some orthogonal polynomials, such as the Hermite polynomials, are so defined that a weighting function <span class="math notranslate nohighlight">\(w\)</span>, is needed to make them orthogonal. In this case, equation (17) is redefined as</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \int_a^b\varphi_m(x)^*\varphi_n(x)w(x)dx=c_m\delta_{m,n}    \tag{18}\]</div>
+<p>Suppose <span class="math notranslate nohighlight">\(f(x)\)</span> is the function we want to expand as a series in the <span class="math notranslate nohighlight">\(\varphi\)</span>’s. The generalized Fourier series is defined in a simpler way than the normal sine/cosine series, because only one function is involved; hence</p>
+<div class="math notranslate nohighlight">
+\[ f(x)=\sum\limits_{n=0}^\infty a_n\varphi_n  \tag{19}\]</div>
+<p>The next task is to find the coefficients <span class="math notranslate nohighlight">\(a_n\)</span>, and this is done by multiplying both sides of (19) by <span class="math notranslate nohighlight">\(\varphi\)</span> and any weighting <span class="math notranslate nohighlight">\(w\)</span>, and integrating;</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \int_a^b f(x)\varphi_m(x)w(x)dx=\int_a^b \sum\limits_{n=0}^\infty a_n\varphi_n(x)\varphi_m(x)w(x)dx=\sum\limits_{n=0}^\infty a_nc_n\delta_{n,m}=a_nc_n \]</div>
+<p>The summation is taken outside the integral in the second step, because it depends on <span class="math notranslate nohighlight">\(n\)</span> not <span class="math notranslate nohighlight">\(x\)</span>, and the orthogonality (18) is used to solve the integral. The summation disappears in the last step because of the property of the <span class="math notranslate nohighlight">\(\delta\)</span> function. The coefficients <span class="math notranslate nohighlight">\(a_n\)</span> are therefore,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle  a_n=\frac{1}{c_n}\int_a^bf(x)\varphi_n(x)w(x)dx  \tag{20} \]</div>
+<p>and this equation and (19) form the equations for the generalized Fourier transform. The only way that information about the function <span class="math notranslate nohighlight">\(f(x)\)</span> enters the calculation, is <em>via</em> the coefficients <span class="math notranslate nohighlight">\(a_n\)</span>.</p>
+<p>The similarity of (19) to the expansion of a vector in its basis set is clear. In a vector equation in three dimensions, we might write <span class="math notranslate nohighlight">\(\displaystyle V=\sum\limits_{m=0}^3v_m \boldsymbol i\)</span> where <span class="math notranslate nohighlight">\(\boldsymbol i\)</span> is the unit vector along the <span class="math notranslate nohighlight">\(x\)</span>-axis, and then the <span class="math notranslate nohighlight">\(v_m\)</span> are the projections of the vector <span class="math notranslate nohighlight">\(V\)</span> onto this axis. If there were
+<span class="math notranslate nohighlight">\(n\)</span> dimensions, which clearly cannot be pictured graphically if <span class="math notranslate nohighlight">\(n \gt\)</span> 3, then the <span class="math notranslate nohighlight">\(v_m\)</span> would be projections of <span class="math notranslate nohighlight">\(V\)</span> onto the <span class="math notranslate nohighlight">\(m^{th}\)</span> axis. Similarly, in (19) the <span class="math notranslate nohighlight">\(a_n\)</span> coefficients are the projections of the function <span class="math notranslate nohighlight">\(f(x)\)</span> onto the <span class="math notranslate nohighlight">\(\varphi\)</span>, but in this case there are more than three ‘axes’.</p>
+<p>The Legendre polynomial <span class="math notranslate nohighlight">\(P_n(x)\)</span> is used as an example of a basis set function with which to calculate the generalized Fourier series of <span class="math notranslate nohighlight">\(\displaystyle e^{-x}\cos^3(x)\)</span> over the range <span class="math notranslate nohighlight">\(\pm \)</span>1. These polynomials appear in problems when an electric charge, perhaps on an ion, is close to other charges, such as from a dipole, or when an electron feels the effect of other electrons and nuclei. All the orthogonal polynomials have several different recursion formulae, and one of the most useful for the Legendre is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle nP_n(x) = (2n - 1)xP_{n-1}(x) - (n - 1)P_{n-2}(x) \]</div>
+<p>for <span class="math notranslate nohighlight">\(n = 2, 3, 4, \cdots\)</span> with <span class="math notranslate nohighlight">\(P_0(x) = 1\)</span> and <span class="math notranslate nohighlight">\(P_1(x) = x\)</span>, and the polynomials are defined only over the range <span class="math notranslate nohighlight">\(x = \pm \)</span>1. The weighting function is 1, and their normalization constant <span class="math notranslate nohighlight">\(c_n = 2/(2n + 1)\)</span>. Although it is not apparent from the formulae, these polynomials are oscillating functions with an increasing number of nodes as <span class="math notranslate nohighlight">\(n\)</span> increases. The Fourier series using Legendre polynomials instead of sine/cosine is sometimes called the Fourier -Legendre series.</p>
+<p>The Chebychev polynomials over the range <span class="math notranslate nohighlight">\(\pm\)</span>1 can be calculated directly as <span class="math notranslate nohighlight">\(T_n(x)=\cos(n\cdot\cos^{-1}(x))\)</span>. Some Legendre and Chebychev polynomials are shown in the next figure.</p>
+<img src='fourier-fig8.png' alt='Drawing' style='width:600px;'/>
+<p>Figures 8 &amp; 9.  Left: Legendre polynomials. Right: Chebychev polynomials. The numbers indicate the order, <span class="math notranslate nohighlight">\(n\)</span>, of the polynomial, <span class="math notranslate nohighlight">\(L(n, x)\)</span> or <span class="math notranslate nohighlight">\(T(n, x)\)</span>. The even numbered ones are drawn with a solid line the odd, dashed. Notice the odd - even nature of the functions corresponds to the index number. Both polynomials are limited to the range <span class="math notranslate nohighlight">\(-1 \le x \le 1\)</span>.</p>
+<hr class="docutils" />
+<p>An example of using Legendre polynomials is shown for the function <span class="math notranslate nohighlight">\(\cos^2(3x)e^{-x}\)</span> in the next calculation. Equations 19 and 20 are used. The fit to he function is good with only 15 terms in the series. For an extended range then the equations need to be put into reduced units to make the range <span class="math notranslate nohighlight">\(\pm 1\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># using legendre polynomials to form a fourier series.</span>
+<span class="k">def</span> <span class="nf">P</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">n</span><span class="p">):</span>         <span class="c1"># recursion formula</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">x</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">((</span><span class="mi">2</span><span class="o">*</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">x</span><span class="o">*</span><span class="n">P</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">-</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">P</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">n</span><span class="o">-</span><span class="mi">2</span><span class="p">))</span><span class="o">/</span><span class="n">n</span>  <span class="c1"># P(n,x)</span>
+
+<span class="n">f</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="n">x</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="p">)</span>    <span class="c1"># target function</span>
+<span class="n">w</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="mf">1.0</span>                          <span class="c1"># weighting</span>
+<span class="n">c</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">n</span><span class="p">:</span> <span class="mf">2.0</span><span class="o">/</span><span class="p">(</span><span class="mf">2.0</span><span class="o">*</span><span class="n">n</span><span class="o">+</span><span class="mf">1.0</span><span class="p">)</span>              <span class="c1"># normalisation</span>
+<span class="n">m</span> <span class="o">=</span> <span class="mi">10</span>                                     <span class="c1"># number of terms in series to sum, wiil be v. slow if this is large</span>
+
+<span class="n">numx</span> <span class="o">=</span> <span class="mi">200</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">numx</span><span class="p">)</span>
+
+<span class="n">func</span>  <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span><span class="n">n</span><span class="p">:</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="n">P</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">n</span><span class="p">)</span><span class="o">*</span><span class="n">w</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> 
+
+<span class="n">LegFS</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span><span class="n">m</span><span class="p">:</span> <span class="nb">sum</span><span class="p">(</span> <span class="n">quad</span><span class="p">(</span><span class="n">func</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">n</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">P</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">n</span><span class="p">)</span><span class="o">/</span><span class="n">c</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">m</span><span class="p">))</span>    <span class="c1"># Legendre Fourier</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;dashed&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;grey&#39;</span><span class="p">,</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;dashed&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;grey&#39;</span><span class="p">,</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;function&#39;</span><span class="p">)</span>  <span class="c1"># originla function</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">LegFS</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">m</span><span class="p">),</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;yellow&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;series&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Legendre Fourier series and function&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Fourier-B_9_0.png" src="../_images/Fourier-B_9_0.png" />
+</div>
+</div>
+<p>The range of some functions, orthogonal polynomials and weighting factors.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin{array}{lcc}
+\text{}\\
+\hline 
+\text{Functions} &amp; \text{symbol } f(x) &amp; \text{Range } &amp; \text{Weighting}^1 &amp; \text{normalisation } c_n \\
+\hline 
+\text{sine/cosine} &amp;                           &amp;\pm\pi\text{ or } \pm L &amp; 1 &amp; \pi \text{ or } L\\
+\text{exponenial}  &amp; \exp(i\pi nx/L)           &amp;\pm\pi\text{ or } \pm L &amp; 1 &amp; \pi \text{ or } L\\
+\text{Legendre}    &amp;  P_n(x)                   &amp;\pm 1                   &amp; 1 &amp; 2/(2n+1)         \\
+\text{Hermite}     &amp;  H_n(x)                   &amp;\pm \infty              &amp; \exp(-x^2)    &amp; 2^nn!\sqrt{\pi}  \\
+\text{Laguerre}    &amp;  L_n(x)                   &amp;0\rightarrow\infty      &amp; \exp(-x)      &amp; 1         \\
+\text{Chebychev (1st kind) }   &amp;  T_n(x)                   &amp;\pm 1                  &amp; 1/\sqrt{1-x^2} &amp;\text{if } n=0\, \pi \text{ else } \pi/2      \\
+\hline
+\end{array}\end{split}\]</div>
+<p><span class="math notranslate nohighlight">\(^1\)</span> If the variable <span class="math notranslate nohighlight">\(x\)</span> is actually an angle <span class="math notranslate nohighlight">\(\theta\)</span> then the volume element for the integration has to be changed from <span class="math notranslate nohighlight">\(dx\)</span> to <span class="math notranslate nohighlight">\(\sin(\theta)d\theta\)</span> and in these cases <span class="math notranslate nohighlight">\(\sin(\theta)\)</span> must multiply the weighting function.</p>
+<div class="section" id="generating-functions-for-orthogonal-polynomials">
+<h2>4.1 Generating Functions for orthogonal polynomials<a class="headerlink" href="#generating-functions-for-orthogonal-polynomials" title="Permalink to this headline">¶</a></h2>
+<p>The named orthogonal polynomials are the solutions of specific differential equations. They occur widely in physics and chemistry; the Hermite polynomials describe the harmonic oscillator wavefunctions; the Legendre electric charge distributions; and the associated Laguerre the electron distribution in the H atom. The spherical harmonic polynomials are based on the Legendre polynomials, with <span class="math notranslate nohighlight">\(x = \cos(\theta)\)</span>, and are used to describe the angular momentum in atoms and molecules; they define the shapes of atomic orbitals, the rotational motion of molecules, and the heat flow around spheres.</p>
+<p>The orthogonal polynomials, such as the Legendre polynomial used in the previous section, can be produced from a series expansion of a generating function. These functions have two variables <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(u\)</span>; expansion is made in the powers of <span class="math notranslate nohighlight">\(u\)</span> and the polynomials are the factors belonging to the terms in <span class="math notranslate nohighlight">\(u^n\)</span> or <span class="math notranslate nohighlight">\(u^n/n!\)</span>. A typical series expansion producing polynomial <span class="math notranslate nohighlight">\(p_n(x)\)</span> is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle f(x,u)= p_0(x)+p_1(x)u + p_2(x)\frac{u^2}{2!}+\cdots = \sum\limits_{n=0}p)n(x)\frac{u^n}{n!}\]</div>
+<p>This definition has to be checked, however, as some polynomials do not require <span class="math notranslate nohighlight">\(u^n\)</span> to be divided by <span class="math notranslate nohighlight">\(1/n!\)</span>. As an example, the Hermite polynomials can be calculated as the coefficients of <span class="math notranslate nohighlight">\(u^n/n!\)</span> in the expansion of <span class="math notranslate nohighlight">\(\displaystyle f(x, u)=\exp(-u^2+ 2xu)\)</span>, thus the Hermites found from the expansion  <span class="math notranslate nohighlight">\(\displaystyle \exp(-u^2+2xu) = \sum\limits_{n=0} H_n(x)u^n/n!\)</span>. The expansion is</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin{align}
+\exp(-u^2)\exp(2xu)&amp; = \left(1-u^2+\frac{u^4}{2!} -\frac{u^6}{3!} +\cdots \right)\left(1+2xu+4xu^2\frac{u^2}{2!}+8x^3\frac{u^3}{3!} +\cdots \right)\\&amp;= 1+2xu+(4x^2-2)\frac{u^2}{2!}-(8x^3-12x)\frac{u^3}{3!}+\cdots 
+\end{align}\end{split}\]</div>
+<p>Using SymPy to do this is simpler, the coefficients in <span class="math notranslate nohighlight">\(x\)</span> of <span class="math notranslate nohighlight">\(u^n/n!\)</span> are the Hermite polynomials</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">,</span><span class="n">u</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x u&#39;</span><span class="p">)</span>
+<span class="n">f01</span> <span class="o">=</span> <span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">u</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="o">*</span><span class="n">u</span><span class="p">)</span>          <span class="c1"># expand terms to get series to u^10</span>
+<span class="n">s</span> <span class="o">=</span> <span class="n">series</span><span class="p">(</span><span class="n">f01</span><span class="p">,</span><span class="n">u</span><span class="p">,</span><span class="n">n</span> <span class="o">=</span> <span class="mi">15</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hermite Polynomials H(n,x) from n =1 to 9&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;H(&#39;</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="s1">&#39;,x) &#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">.</span><span class="n">coeff</span><span class="p">(</span><span class="n">u</span><span class="o">**</span><span class="n">n</span><span class="p">)</span><span class="o">*</span><span class="n">factorial</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>  <span class="c1"># extract coefficients. factorial is inbuilt in SymPy</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hermite Polynomials H(n,x) from n =1 to 9
+H( 1 ,x)  2*x
+H( 2 ,x)  4*x**2 - 2
+H( 3 ,x)  8*x**3 - 12*x
+H( 4 ,x)  16*x**4 - 48*x**2 + 12
+H( 5 ,x)  32*x**5 - 160*x**3 + 120*x
+H( 6 ,x)  64*x**6 - 480*x**4 + 720*x**2 - 120
+H( 7 ,x)  128*x**7 - 1344*x**5 + 3360*x**3 - 1680*x
+H( 8 ,x)  256*x**8 - 3584*x**6 + 13440*x**4 - 13440*x**2 + 1680
+H( 9 ,x)  512*x**9 - 9216*x**7 + 48384*x**5 - 80640*x**3 + 30240*x
+</pre></div>
+</div>
+</div>
+</div>
+<p>Other polynomials that are frequently met are the Legendre, associated Legendre, Laguerre, associated Laguerre, and Chebychev. The associated Legendre and associated Laguerre polynomials are obtained by differentiating their respective polynomials by <span class="math notranslate nohighlight">\(x\)</span>, <span class="math notranslate nohighlight">\(n\)</span> times, but in these cases, and perhaps in others also, it is easier to use Rodrigues’s derivative formula or one of the recursion equations to generate the polynomials. See Margenau &amp; Murphy (1943) and Arkfen (1970) for a full discussion of these polynomials and generating functions.</p>
+<p>The generating function definitions, and a derivative formula for integral <span class="math notranslate nohighlight">\(n\)</span> and <span class="math notranslate nohighlight">\(k\)</span>, are shown in the next table. The associated Legendre generating function is omitted because of its complexity.</p>
+<p>It is worth noting in passing that generating functions play a more general role in mathematics than is described here and are used to form various distribution functions and series of numbers. The generating function <span class="math notranslate nohighlight">\(1/(1 - x)\)</span> produces a square wave -1, +1 repeating sequence; the function <span class="math notranslate nohighlight">\(1/(1 - ax)\)</span> produces the sequence of increasing integer powers of <span class="math notranslate nohighlight">\(a\)</span>; and <span class="math notranslate nohighlight">\(x/(1 - x - x^2)\)</span> generates the Fibonacci sequence. For example,</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="n">f01</span> <span class="o">=</span> <span class="n">x</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">x</span><span class="o">-</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>                    <span class="c1"># expand terms to get series to u^10</span>
+<span class="n">s</span> <span class="o">=</span> <span class="n">series</span><span class="p">(</span><span class="n">f01</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">n</span> <span class="o">=</span> <span class="mi">30</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Fibonacci from n = 1 to 20&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">21</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">.</span><span class="n">coeff</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="n">n</span><span class="p">),</span><span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>  <span class="c1"># extract coefficients.</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Fibonacci from n = 1 to 20
+  1  1  2  3  5  8  13  21  34  55  89  144  233  377  610  987  1597  2584  4181  6765
+</pre></div>
+</div>
+</div>
+</div>
+<p>Other generating functions can, for example, be used to work out the number of ways of selecting several items from a list, where the same item can be picked many times.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./chapter-9"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Godfrey Beddard<br/>
+        
+            &copy; Copyright 2022.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
