@@ -1,7 +1,15 @@
 # Applying Maths in the Chemical and Biomolecular Sciences
-### By Godfrey Beddard
 
-This is an updated and expanded version of the [print book from 2009](https://www.amazon.co.uk/Applying-Maths-Chemical-Biomolecular-Sciences/dp/0199230919).
+This book is a much updated and corrected version of &lsquo;[Applying Maths in the Chemical and Biomolecular Sciences, an example based approach](https://www.amazon.co.uk/Applying-Maths-Chemical-Biomolecular-Sciences/dp/0199230919)&rsquo; published by OUP 2009. 
+
+The code and examples are now all in Python 3 and using numpy, scipy and sympy as necessary for calculations and matplotlib for graphics. The updated text was written using Jupyter notebooks. 
+
+All these packages are free to use, a quite remarkable gift to anyone interested in science, engineering and mathematics. The code for many calculations is included in the text and can be copied and used diectly into a notebook mostly with only minor changes. The code is written in a simple form, not necessarily the most efficient, and is aimed at gaining an undersatanding of the calculation.
+
+More examples have been added to most chapters, for example in chemical kinetics and some new topics added such as fourier methods to solve differential equations, x-ray diffraction and computed tomography. The fully worked out solutions to the problems are included at the end of each chapter.
+
+***Godfrey Beddard Feb. 2022.***
+
 
 
 ## Building the book
