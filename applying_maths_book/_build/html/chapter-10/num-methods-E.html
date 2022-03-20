@@ -1,0 +1,1246 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>8 Reaction schemes with feedback &#8212; Applying Maths in the Chemical &amp; Biomolecular Sciences</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/book-cover.jpg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Applying Maths in the Chemical & Biomolecular Sciences</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Introduction
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-1/chapter1-intro.html">
+   1. Numbers, Equations, Operators, and Algorithms.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-A.html">
+     Numbers to Algorithms
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-Q1-7.html">
+     Questions 1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-B.html">
+     Trigonometric functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-Q8-16.html">
+     Questions 8 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-C.html">
+     9 Sophisticated Counting: permutations, combinations and probability
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-Q17-34.html">
+     Questions 17 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-D.html">
+     10 Modulo arithmetic
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-Q35-39.html">
+     Questions 35 - 39
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-answers-1-7.html">
+     Solutions Q1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-answers-8-16.html">
+     Solutions Q8 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-answers-17-34.html">
+     Solutions Q17 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-answers-35-39.html">
+     Solutions Q35 - 39
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-2/chapter2-intro.html">
+   2. Complex numbers.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2/chapter2-A.html">
+     Real, imaginary,conjugate and modulus
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2/chapter2-Q-1-9.html">
+     Questions 1 - 9
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2/chapter2-B.html">
+     3 De Moivre’s theorem and integer powers of complex numbers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2/chapter2-Q-10-13.html">
+     Questions 10 -13
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2/chapter2-C.html">
+     4 Euler’s theorem
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2/chapter2-Q-14-27.html">
+     Questions 14 - 27
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2/chapter2-answers.html">
+     Solutions Q1 - 27
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-3/differen-intro.html">
+   3. Differentiation.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-A.html">
+     Differentiation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-B.html">
+     Trig functions, logs, power, reciprocals and integrals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-C-Q-4-11.html">
+     Questions 1-11
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-D.html">
+     Product rule and function of function or chain rule.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-E-Q-12-42.html">
+     Questions 12-42
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-F.html">
+     Limits, maxima/minima and calculus of variations.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-G-Q-43-73.html">
+     Questions 43 - 73
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-H.html">
+     Numerically finding the roots of an equation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-I-Q-74-85.html">
+     Questions 74 - 85
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-J.html">
+     Minimizing or maximizing with constraints: Lagrange Undetermined Multipliers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-K-Q-86-92.html">
+     Questions 86 - 92
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-L.html">
+     Partial differentiation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-M-Q-93-114.html">
+     Questions 93-114
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-M1.html">
+     13 Differentiation of vectors
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-N-answers-1-11.html">
+     Solutions Q 1-11
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-O-answers-12-42.html">
+     Solutions Q 12-42
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-P-answers-43-73.html">
+     Solutions Q 43 - 73
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-Q-answers-74-85.html">
+     Solutions Q 74 - 85
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-R-answers-86-92.html">
+     Solutions Q 86 - 94
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-S-answers-93-114.html">
+     Solutions Q 93-114
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-4/integration-intro.html">
+   4. Integration.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-A.html">
+     Integration
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-Q1-14.html">
+     Questions 1-14
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-B.html">
+     Integration by substitution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-Q15-30.html">
+     Questions 15-30
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-C.html">
+     Using parametric equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-Q31-48.html">
+     Questions 31 - 48
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-D.html">
+     Calculating an Average Value.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-Q49-72.html">
+     Questions 49 - 72
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-E.html">
+     The Variational Method in Quantum Mechanics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-Q73-77.html">
+     Questions 73 - 77
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-F.html">
+     10 Multiple integrals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-Q78-86.html">
+     Questions 78 - 86
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-G.html">
+     12 Calculating the energy of a chemical bond using molecular orbitals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-H.html">
+     13 Line integrals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-Q87-96.html">
+     Questions 87 - 96
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-answers-1-14.html">
+     Solutions Q 1 - 14
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-answers-15-30.html">
+     Solutions Q 15 - 30
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-answers-31-48.html">
+     Solutions Q 31 - 48
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-answers-49-72.html">
+     Solutions Q 49 - 72
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-answers-73-96.html">
+     Solutions Q 73 - 96
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-5/chapter-5-intro.html">
+   5. Summations, Series and expansion of Functions.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-A.html">
+     Series, averages, partition functions, DNA melting, atom entropy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-B-Q1-13.html">
+     Questions 1 - 13
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-E.html">
+     Maclaurin and Taylor series expansions. Paramagnetic spins
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-F-Q14-34.html">
+     Questions 14 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-G-Q35-44.html">
+     Questions 35 - 44
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-perturbation-A.html">
+     Perturbation Theory
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-perturbation-B-Q45-48.html">
+     Questions 45 - 48
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-perturbation-C.html">
+     Quantum superposition and wavepackets.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-perturbation-D-Q49-52.html">
+     Questions 49 - 52
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-answers-1-7.html">
+     Solutions Q 1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-answers-8-13.html">
+     Solutions Q8 - 13
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-answers-14-26.html">
+     Solutions Q 14 - 26
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-answers-27-32.html">
+     Solutions Q27 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-answers-33-44.html">
+     Solutions Q33 - 44
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-answers-45-52.html">
+     Solutions Q45 - 52
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-6/vectors-intro.html">
+   6. Vectors.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-A.html">
+     1 Motivation and concept
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-Q1-24.html">
+     Questions 1 - 24
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-B.html">
+     Projections and components
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-Q25-32.html">
+     Questions 25 - 32
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-C.html">
+     Not all axes are right-angled or of equal length
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-Q33-38.html">
+     Questions 33 - 38
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-D.html">
+     Basis sets with more than three dimensions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-Q39-46.html">
+     Questions 39 - 46
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-E.html">
+     Cross product or vector product
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-Q47-52.html">
+     Questions 47 - 52
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-F.html">
+     Torsion or dihedral angles
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-Q53-61.html">
+     Questions 53 - 61
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-G.html">
+     Torque and angular momentum
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-answers-Q1-24.html">
+     Solutions Q1 - 24
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-answers-Q25-32.html">
+     Solutions Q25 - 32
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-answers-Q33-38.html">
+     Solutions Q33 - 38
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-answers-Q39-46.html">
+     Solutions Q38 - 46
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-answers-Q47-52.html">
+     Solutions Q47 - 52
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-answers-Q53-61.html">
+     Solutions Q53 - 61
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-7/matrices-intro.html">
+   7. Matrices
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-A.html">
+     Determinants
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q1-10.html">
+     Questions  1 - 10
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-B.html">
+     Matrices
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q11-16.html">
+     Questions  11 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-C.html">
+     Molecular Group Theory
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q17-30.html">
+     Questions  17 - 30
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-D.html">
+     Rotation matrices: moving molecules
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q31-34.html">
+     Questions 31 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-E.html">
+     Matrices in optics and designing laser cavities
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q35-39.html">
+     Questions 35 - 39
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-F.html">
+     Polarizing optics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q40-44.html">
+     Questions 40 - 44
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-G.html">
+     Solving equations using matrices. Eigenvectors &amp; Eigenvalues.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q45-50.html">
+     Questions 45 - 50
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-H.html">
+     Rate equations and Chemical Kinetics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q51-54.html">
+     Questions 51 - 54
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-I.html">
+     Molecular vibrations and pendulums
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q55-58.html">
+     Questions 55 - 58
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-J.html">
+     Calculating bond length using moments of inertia
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q59-62.html">
+     Questions 59 - 62
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-answersQ1-10.html">
+     Solutions Q1 - 10
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-answersQ11-16.html">
+     Solutions Q11 - 30
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-answersQ17-30.html">
+     Solutions Q17 - 30
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-answersQ31-34.html">
+     Solutions Q31 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-answersQ35-39.html">
+     Solutions Q35 - 39
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-answersQ40-44.html">
+     Solutions Q40 - 44
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-answersQ45-50.html">
+     Solutions Q45 - 50
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-answersQ51-54.html">
+     Solutions Q51 - 54
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-answersQ55-58.html">
+     Solutions Q55 - 58
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-answersQ59-61.html">
+     Solutions Q59 - 61
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-8/matricesQM-intro.html">
+   8. Matrices in Quantum Mechanics
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-8/matricesQM-A.html">
+     Chapter 8 Matrices in Quantum Mechanics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-8/matricesQM-Q1-7.html">
+     Questions 1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-8/matricesQM-B.html">
+     Basis sets and bra-ket algebra
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-8/matricesQM-Q8-12.html">
+     Questions 8 - 12
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-8/matricesQM-C.html">
+     Continuous basis sets
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-8/matricesQM-answers1-7.html">
+     Solutions Q1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-8/matricesQM-answers8-12.html">
+     Solutions Q8 - 12
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-9/Fourier-intro.html">
+   9. Fourier Series and Transforms.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-A-B.html">
+     Fourier series, Gibbs phenomenon, generalised series.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-questions-1-6.html">
+     Questions 1 - 6
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-C.html">
+     Fourier Transforms
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-D.html">
+     Convolution and Autocorrelation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-questions-7-15.html">
+     Questions 7 - 15
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-E.html">
+     Discrete Fourier  (DFT)  and Fast Fourier transforms (FFT)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-questions-16-21.html">
+     Questions 16 - 21
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-F.html">
+     The Hadamard Transform: Encoding and Decoding
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-2D-Diffraction.html">
+     The Fourier transform in two dimensions: images and x-ray Diffraction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-tomography.html">
+     Computed Tomography
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-answers-1-6.html">
+     Solutions Q 1 - 6
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-answers-7-15.html">
+     Solutions Q 7 - 15
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-answers-16-21.html">
+     Solutions Q 16 - 21
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Diff-eqns-intro.html">
+   8. Differential Equations.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Diff-eqns-A.html">
+     Differential Equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Diff-eqns-Q1-23.html">
+     Questions 1 - 23
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Diff-eqns-B.html">
+     Integrating factors
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Diff-eqns-C.html">
+     The ‘D’ operator.  Solving linear differential equations with constant coefficients
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Diff-eqns-D.html">
+     Simultaneous equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Diff-eqns-E.html">
+     Linear equations with variable coefficients
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Diff-eqns-F.html">
+     Partial Differential Equations, PDE
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Diff-eqns-G.html">
+     PDE examples continued
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Diff-eqns-Q24-37.html">
+     Questions 24 - 37
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Diff-eqns-answers-1-21.html">
+     Solutions Q1 - 21
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Diff-eqns-answers-22-37.html">
+     Solutions Q22 - 37
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../references/References.html">
+   References
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/chapter-10/num-methods-E.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/chapter-10/num-methods-E.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#predator-prey-equations">
+   8.1 Predator  - prey equations
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#nerve-impulses-and-the-fitzhugh-nagumo-equations">
+   8.2 Nerve impulses and the Fitzhugh - Nagumo equations
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#limit-cycles">
+   8.3 Limit-cycles
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="reaction-schemes-with-feedback">
+<h1>8 Reaction schemes with feedback<a class="headerlink" href="#reaction-schemes-with-feedback" title="Permalink to this headline">¶</a></h1>
+<p>Feedback in a chemical reaction implies that there are at least two reactions for which the product of one is the reactant for the other, and vice versa; for example, <span class="math notranslate nohighlight">\(X + Y \to 2X \)</span> and <span class="math notranslate nohighlight">\(X \to Y\)</span>. Interesting dynamics can be observed in reactions with feedback, because a product that is also a reactant catalyses its own production. There are many such reactions that are now known for example the Belousov - Zhabotinsky ( bromomalonic acid / <span class="math notranslate nohighlight">\(\mathrm{Ru^{2+}\,/\,BrO_3^-}\)</span> and traces of <span class="math notranslate nohighlight">\(\mathrm{BrO_2}\)</span> ) and chlorine dioxide / I<span class="math notranslate nohighlight">\(_2\)</span> / malonic acid reactions, which involve a complex series of coupled chemical reactions inhibiting and also feeding back on one another, and so catalysing the reaction.</p>
+<p>Feedback is also common in biology, in the interactions of animals with one another, such as the synchronizing of the flashing of fireflies and of the behaviour of predators and prey. In physiology, the electrical response of nerve and cardiac muscle cells show feedback and the physio-chemical system is termed excitable, meaning that under certain specified conditions, far from equilibrium, oscillations in the concentration of different species, or of electrical impulses can occur. See Scott (1995) for a detailed description of oscillating chemical reactions, and Strogatz (1994) for non-linear processes in general. Examples of a few of these processes are now presented.</p>
+<div class="section" id="predator-prey-equations">
+<h2>8.1 Predator  - prey equations<a class="headerlink" href="#predator-prey-equations" title="Permalink to this headline">¶</a></h2>
+<p>One of the simplest set of reactions was first studied by Lotka (1925), it involves two species X and Y and some amount of each is present initially.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin{array}{lll}\\
+Y &amp; \overset{k_1}\to &amp;Y + Y \\
+Y + X&amp; \overset{k_2}\to &amp;X + X \\
+X &amp; \overset{k_3}\to D \\
+\end{array}\tag{48}\end{split}\]</div>
+<p>The amount of species <span class="math notranslate nohighlight">\(Y\)</span> is doubled in the first step and is then lost by reaction with <span class="math notranslate nohighlight">\(X\)</span> to produce more <span class="math notranslate nohighlight">\(X\)</span> in the second. Initially, <span class="math notranslate nohighlight">\(Y\)</span> increases rapidly, but as it does so, the rate of reaction with <span class="math notranslate nohighlight">\(X\)</span> increases. This makes more <span class="math notranslate nohighlight">\(X\)</span> which accelerates the reaction, and <span class="math notranslate nohighlight">\(Y\)</span> is eventually consumed more rapidly than it is formed and its population falls. The population of <span class="math notranslate nohighlight">\(X\)</span> then falls, and the process repeats itself.</p>
+<p>Later, Volterra (1926), who was studying the variation of animal populations, described the same set of reactions in this way.</p>
+<p>“The first case I have considered is that of two associated species, of which one, finding sufficient food in its environment, would multiply indefinitely when left to itself, while the other would perish for lack of nourishment if left alone; but the second feeds upon the first, and so the two species can coexist together. The proportional rate of increase of the prey diminishes as the number of individuals of the predator increases, while the augmentation of the predator increases with the increase of the number of the prey.”</p>
+<p>The longest time series of this oscillatory behaviour appears to be the record of the number of lynx and hare pelts sold by trappers to the Hudson Bay Company in Canada over the period 1848 to 1907. The actual data, while oscillatory, is also rather chaotic, illustrating that the actual behaviour of animals is always going to be rather difficult to model due to the uncontrolled nature of the experiment. Nevertheless, some insight into predator - prey behaviour can be obtained with the rate equations;</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin{array}{lll}\\
+\displaystyle \frac{dY}{dt} &amp; = &amp; k_1Y -k_2 YX &amp; \text{prey}\\
+\displaystyle \frac{dX}{dt} &amp; = &amp; k_2 YX  - k_3 X&amp; \text{predator}\\
+\end{array}\tag{49}\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(Y\)</span> represents a population of prey and <span class="math notranslate nohighlight">\(X\)</span> that of predator. Besides hares and lynx, the creatures could be two types of fish or aphids predated on by ladybirds; you can imagine many other examples.</p>
+<p>This model is a great simplification of actual predator - prey interactions; mathematically, the animals are assumed to be so numerous that they can be treated as if they were molecules in a chemical reaction, but more fundamentally, due to the simplicity of their interactions one with another. A more detailed, and necessarily more complex, description is to be found in Britton (2003) and in Murray (2002). Nonetheless, treating the problem as if it were a chemical one, the prey are breeding at a rate <span class="math notranslate nohighlight">\(k_1Y\)</span>, the mother producing one offspring in each unit of time. The fuel to do this and driving the whole predator - prey scheme is grass, or similar vegetation, assumed to be in unlimited supply. The rate constant <span class="math notranslate nohighlight">\(k_1\)</span> is therefore really a pseudo-, first-order rate constant and effectively contains a term allowing for the quantity of vegetation available to be eaten. In the second equation the prey is killed at rate <span class="math notranslate nohighlight">\(k_2YX\)</span>, which allows the predator to breed. The predators die through natural causes at rate <span class="math notranslate nohighlight">\(k_3X\)</span>; however, all the prey are killed by predators and their population does not die off naturally: there is no term <span class="math notranslate nohighlight">\(Y \overset{k_4} \to D\)</span>, where <span class="math notranslate nohighlight">\(k_4\)</span> is the rate of natural deaths. It is assumed in our model for simplicity only that the rate constant for encounter of prey and predator, <span class="math notranslate nohighlight">\(k_2\)</span>, is the same as the rate of birth of predators, which it may not be. All the rate constants are positive numbers.</p>
+<p>In a molecular example, the equations have to be changed slightly; the first step becomes <span class="math notranslate nohighlight">\(C + Y \overset{k'{-1}}\to Y+Y\)</span> where <span class="math notranslate nohighlight">\(C\)</span> is some compound whose concentration is unchanged during reaction and provides the material and fuel or free energy to form another Y; it is therefore always at vast excess over Y. To make these equations the same as in (11.48), the substitution <span class="math notranslate nohighlight">\(k_1 = k'_{1}C\)</span> is made and so <span class="math notranslate nohighlight">\(k_1\)</span> is a pseudo, first-order rate constant.</p>
+<p>The first step in analysing these equations is to calculate the nullclines and steady state conditions that are also called the equilibrium points. Then the phase plane will be calculated, which plots the number density between predator and prey and finally the time profiles of species <span class="math notranslate nohighlight">\(Y\)</span> and <span class="math notranslate nohighlight">\(X\)</span>. The initial values to do this will be <span class="math notranslate nohighlight">\(X_0 = 60,\; Y_0 = 100.0,\; k_1 = 1.0,\; k_2 = 0.01,\; k_3 = 0.5\)</span>, and time from 0 to 40 units. The unit of time could be in seconds or years; this depends on the situation. We need not specify it here, but clearly, the time would be something of the order of a year for hares and lynx. The numerical calculations used to produce the data in Fig. 19, was based on Algorithm 14 with rate equations defined as</p>
+<p>dydt = lambda y,x : k1<em>y   - k2</em>y*x             # y = prey , x predator  eqns 49</p>
+<p>dxdt = lambda y,x : k2<em>y</em>x - k3*x</p>
+<p>in the for loop the increments are</p>
+<p>x = x + h*dxdt(y,x)</p>
+<p>y = y + h*dydt(y,x)</p>
+<p>and 500 points were used in the normal Euler method of integration.</p>
+<img src='num-methods-fig19.png' alt='Drawing' style='width:400px'/>
+<p>Figure 19. The time profiles of the predator <span class="math notranslate nohighlight">\(X\)</span> and prey <span class="math notranslate nohighlight">\(Y\)</span>. The prey’s population rises first; the predator population always lags behind. The small circle is at <span class="math notranslate nohighlight">\(t = 2\)</span> and is shown in Figure 20. <span class="math notranslate nohighlight">\(X_0 = 60,\; Y_0 = 100.0,\; k_1 = 1.0,\; k_2 = 0.01,\; k_3 = 0.5\)</span>.</p>
+<hr class="docutils" />
+<p>The steady state conditions are found when the rate of change of each population is zero;</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle  \frac{dY}{dt}  =  k_1Y -k_2 YX=0 \qquad  \frac{dX}{dt} =  k_2 YX  - k_3 X=0  \]</div>
+<p>giving <span class="math notranslate nohighlight">\(Y = X = 0\)</span> as one solution and <span class="math notranslate nohighlight">\(Y_e = k_3/k_2,\; X_e = k_1/k_2\)</span> as the other. The nullclines are the equations produced when the derivatives are zero, and in this instance, they are the horizontal and vertical straight lines crossing the axes at the equilibrium values, <span class="math notranslate nohighlight">\(Y_e\)</span> and <span class="math notranslate nohighlight">\(X_e\)</span>. In more complex sets of equations the nullclines could be curves. In Figure 20, the nullclines are plotted as dashed lines. The first equilibrium point at the origin is obvious; no rabbits and no foxes. The second at, <span class="math notranslate nohighlight">\(X_e = 50,\; Y_e = 100\)</span> means that the populations can remain stable given these ratios of rate constants. If the populations are initially different, then they will oscillate in value, ad infinitum, to a greater or lesser extent.</p>
+<p>To obtain the phase plane equation, the rate of change of the predator with prey is needed. This is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{dX}{dY}=\frac{\displaystyle\frac{dX}{dt}}{\displaystyle\frac{dY}{dt}} = \frac{(k_2Y-k_3)X}{(k_1-k_2X)Y}\]</div>
+<p>Separating variables before integrating gives</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \int\frac{k_2Y-k_3}{Y}dY=\int\frac{k_1-k_2X}{X}dX\]</div>
+<p>which evaluates to  <span class="math notranslate nohighlight">\(\displaystyle k_2Y-k_3\ln(Y)=k_1\ln(X)-k_2X+C\)</span> with an arbitrary constant <span class="math notranslate nohighlight">\(C\)</span>. Although this equation does not explicitly contain time, <span class="math notranslate nohighlight">\(X\)</span> and <span class="math notranslate nohighlight">\(Y\)</span> do change with time. The constant <span class="math notranslate nohighlight">\(C\)</span> is evaluated from the initial conditions and the curve produced moves around the non-zero stable point in an anticlockwise manner.</p>
+<p>You can see that the last equation above describing the phase plane is a rather hard one because it is transcendental. We want to plot <span class="math notranslate nohighlight">\(Y\)</span> vs <span class="math notranslate nohighlight">\(X\)</span>, but the equation cannot easily be put in the form <span class="math notranslate nohighlight">\(Y = \cdots\)</span>. Numerically solving the equation <span class="math notranslate nohighlight">\(k_2Y - k_3\ln(Y) = Q\)</span> for each value of <span class="math notranslate nohighlight">\(X\)</span> where <span class="math notranslate nohighlight">\(Q\)</span> is the value of the right-hand side is very tedious, and is made difficult because the equation produces real as well as complex solutions. The simplest way to draw the phase plane curve is to plot the populations for a particular set of parameters. If EulerX and EulerY are the arrays containing the <span class="math notranslate nohighlight">\(X\)</span> and <span class="math notranslate nohighlight">\(Y\)</span> populations calculated with the Euler method (Algorithm 14), then the instructions to plot, say, the first 120 points  are shown below with the point at time 2 also plotted as a circle. It is assume that the number of points, <span class="math notranslate nohighlight">\(n\)</span> and <span class="math notranslate nohighlight">\(maxt\)</span> are already defined.</p>
+<p>plt.plot(Eulery[0:120],Eulerx[0:120])</p>
+<p>tt= int(2*n/maxt)</p>
+<p>plt.scatter(Eulery[tt],Eulerx[tt],s=100)</p>
+<p>The phase plane curve is closed and orbits the steady state or equilibrium point <span class="math notranslate nohighlight">\((X_e,\, Y_e)\)</span>, which means that the oscillations in population continue for ever. If several different pairs of starting population are used, a series of separate closed curves are produced on the phase plane arranged one inside the other, as if they were contours drawn on the inside of a bowl with the equilibrium point at the centre.</p>
+<p>The nullclines clearly split the phase plane into four areas and separate populations at their maxima or minima, Fig. 20. In the bottom right quadrant containing the initial population, both predator and prey populations increase. When the prey reaches a maximum, the <span class="math notranslate nohighlight">\(X = 100\)</span> nullcline is crossed vertically, and the predator population increases while the prey decreases. This quadrant contains the point that is also shown in Fig.19. At the <span class="math notranslate nohighlight">\(Y = 50\)</span> vertical nullcline, the predator population peaks. In the next quadrant (top left), both predator and prey population decrease, and in the final quadrant the predator continues to decrease while the prey recovers. It is interesting to note that the average predator lifetime, in the absence of food from prey, is very short at 2 units of time, which is shown on Fig. 19.</p>
+<img src='num-methods-fig20.png' alt='Drawing' style='width:400px'/>
+<p>Figure 20. Phase plane plot with the parameters <span class="math notranslate nohighlight">\(X_0 = 60,\; Y_0 = 100,\; k_1 = 1, \;k_2 = 0.01,\; k_3 = 0.5\)</span>.
+<span class="math notranslate nohighlight">\(X\)</span> represents the predator, <span class="math notranslate nohighlight">\(Y\)</span> the prey. The equilibrium and initial values are labelled. The circle at t = 2 and vs that at time zero shows that time moves anticlockwise on this plot. (Note that <span class="math notranslate nohighlight">\(X\)</span> is plotted on the vertical axis.)</p>
+<hr class="docutils" />
+<p>The closed form of the phase plane curve shows that the populations oscillate periodically, and will continue to do so for ever. If different initial conditions apply, then a similar plot is produced but with larger or smaller amplitudes. In fact there are an infinite number of these all circling the stable point, <span class="math notranslate nohighlight">\(X_e,\; Y_e\)</span>. This behaviour is in contrast to the limit-cycle behaviour of some oscillating reactions, as observed with the Fitzhugh - Nagumo equations, Section 8.2. The time profiles, Fig. 19, show that the prey population rises before that of the predator. Initially, the prey (hares) breeds and its population increases exponentially. As the predator (lynx) kills the prey, its population growth is limited, reaches a maximum, and starts to fall. However, the predator population has grown too much, and as there is now less prey, the predator population falls as these die off by natural causes determined by rate constant <span class="math notranslate nohighlight">\(k_3\)</span>. Since the predator population has fallen, the prey population, fed on an everlasting amount of grass, can now recover and their population increases and the sequence repeats itself.</p>
+<p>This simple model only gives an indication of what may happen between predator and prey. It is a starting point from which a number of interesting questions can be asked about how animals interact in a more realistic way or even as to how ecosystems behave. One simple change to the model is to limit the amount of grass available to the prey, and hence to their total population in the absence of predators.</p>
+</div>
+<div class="section" id="nerve-impulses-and-the-fitzhugh-nagumo-equations">
+<h2>8.2 Nerve impulses and the Fitzhugh - Nagumo equations<a class="headerlink" href="#nerve-impulses-and-the-fitzhugh-nagumo-equations" title="Permalink to this headline">¶</a></h2>
+<p>The biological cell membrane has a potential difference between its inner and outer surfaces. This potential, along with a pH difference, is used by the molecular motor protein ATPase, either to phosphorylate ADP to ATP, or to hydrolyse ATP to ADP. The membrane in its simplest form can be described as a capacitor and resistor in parallel. However, the membrane’s electrical properties are not passive but excitable, which means that if a current impulse above a certain limit is applied, the membrane potential subsequently oscillates continuously. From 1948 to 1952, Hodgkin and Huxley conducted experiments on the axon of the giant squid. These ‘patch-clamp’ experiments were analysed by assuming that channels for Na<span class="math notranslate nohighlight">\(^+\)</span> and K<span class="math notranslate nohighlight">\(^+\)</span> ions existed and that the resistance of the axon was voltage dependent. They modelled this behaviour with four coupled differential equations. Their work, together with that of Eccles received the 1963 Nobel Prize for Medicine.</p>
+<p>This model of the membrane was itself subsequently modelled by Fitzhugh who simplified it into two differential equations. This was possible because different ions transport on different time scales, Na+ being slow, and rates could be separated on this basis. The equations in reduced form become</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin{array}{lll}\\
+\displaystyle \frac{dv}{dt} &amp; = &amp; v(1-v)(v-\alpha)-w+C \\
+\displaystyle \frac{dw}{dt} &amp; = &amp; \epsilon(v-\gamma w)\\
+\end{array}\end{split}\]</div>
+<p>The potential <span class="math notranslate nohighlight">\(v\)</span> is the fast responding voltage; <span class="math notranslate nohighlight">\(w\)</span> is the slow (Na+) recovery one; <span class="math notranslate nohighlight">\(\alpha,\; \epsilon, \; \gamma\)</span> are constants with <span class="math notranslate nohighlight">\(0 &lt; \alpha &lt; 1,\; \epsilon \ll 1\)</span>; and <span class="math notranslate nohighlight">\(C\)</span> is an optional applied current. The <span class="math notranslate nohighlight">\(v\)</span> nullcline is the cubic equation <span class="math notranslate nohighlight">\(w = v(1 - v)(v - \alpha) + C\)</span>; the <span class="math notranslate nohighlight">\(w\)</span> nullcline is a straight line <span class="math notranslate nohighlight">\(w = v/\gamma \)</span>. These are plotted in Figure 21 as dotted lines with the parameters, <span class="math notranslate nohighlight">\(\alpha = 0.1,\; \epsilon = 0.02\)</span>, and <span class="math notranslate nohighlight">\(\gamma = 2\)</span>. The starting values for the calculation of the phase plane were <span class="math notranslate nohighlight">\(w_0 = -0.2,\; v_0 = 0.25\)</span>, and <span class="math notranslate nohighlight">\(C = 0\)</span>, and in Figure 22,  <span class="math notranslate nohighlight">\(C = 0.025\)</span>.</p>
+<p>The equilibrium point where the nullclines meet is the solution of <span class="math notranslate nohighlight">\(v - \gamma v(1 - v)(v - \alpha) - \gamma C = 0\)</span>, which is a cubic and has an algebraic solution of great complexity but which is easily evaluated when the constants are given values. In Figure 21, the applied current <span class="math notranslate nohighlight">\(C\)</span> is zero and the response of the nerve is to produce one spike and then a highly damped oscillation in <span class="math notranslate nohighlight">\(v\)</span> and <span class="math notranslate nohighlight">\(w\)</span> signals. The <span class="math notranslate nohighlight">\(v\)</span> and <span class="math notranslate nohighlight">\(w\)</span> signals are calculated numerically using the Euler method, Algorithm 14 and more accurately, with Algorithm 15.</p>
+<p>The phase plane shows that the t signal initially increases far more rapidly than does <span class="math notranslate nohighlight">\(w\)</span>, then <span class="math notranslate nohighlight">\(v\)</span> decreases slowly as <span class="math notranslate nohighlight">\(w\)</span> increases following the nullcline, but the response breaks close to the maximum in the <span class="math notranslate nohighlight">\(v\)</span> nullcline. The response then jumps to the other branch of the nullcline that is then followed back to zero about which a few oscillations occur before reaching the stable point. The oscillations are small and difficult to see on the scale of the plot.</p>
+<p>When <span class="math notranslate nohighlight">\(C\)</span> is not zero, the <span class="math notranslate nohighlight">\(v\)</span> nullcline is raised and now instead of oscillating about the stable point where the nullclines meet, a limit-cycle is produced and the phase plane continuously cycles the stable point. A limit-cycle means that the parameters controlling the rate equations are such that the same closed curve is produced whatever the initial <span class="math notranslate nohighlight">\(v\)</span> and <span class="math notranslate nohighlight">\(w\)</span> values are. This is an important result because the oscillation frequency becomes a well defined function of the physio-chemical state of the system, whereas in the Lotka - Volterra case the oscillation frequency is arbitrary and changes with the initial conditions given to the differential equations.</p>
+<p>When the <span class="math notranslate nohighlight">\(v\)</span> nullcline is raised up sufficiently by a large value of <span class="math notranslate nohighlight">\(C\)</span>, the <span class="math notranslate nohighlight">\(w\)</span> nullcline crosses it past its maximum and now the new stable point is formed here rather than near to the lowest point and no oscillations occur; this is not shown and is left as a problem. The limit-cycle is formed when the (stable) point formed, which is where the nullclines cross, is between the maximum and minimum of the <span class="math notranslate nohighlight">\(v\)</span> nullcline.</p>
+<p>The current <span class="math notranslate nohighlight">\(C\)</span> was constant in these examples, but it can be pulsed or made into two pulses separated in time, in which case, chaotic behaviour can be produced. A full discussion can be found in Murray (2002).</p>
+<img src='num-methods-fig21.png' alt='Drawing' style='width:650px'/>
+<p>Figure 21 FitzHugh–Nagumo equation’s phase plane plot and time profile with <span class="math notranslate nohighlight">\(C = 0\)</span> and other values as in the text. The trajectory focuses onto the equilibrium point (0,0) and oscillated about this point although it appears to end here.</p>
+<hr class="docutils" />
+<img src='num-methods-fig22.png' alt='Drawing' style='width:650px'/>
+<p>Figure 22 FitzHugh–Nagumo equations phase plane plot and time profile with <span class="math notranslate nohighlight">\(C = 0.05\)</span> and other values as in the text. The excitable medium in this case produces a limit-cycle. An equilibrium point occurs where the nullclines cross and is not reached by the trajectory following the limit-cycle.</p>
+</div>
+<div class="section" id="limit-cycles">
+<h2>8.3 Limit-cycles<a class="headerlink" href="#limit-cycles" title="Permalink to this headline">¶</a></h2>
+<p>In Figures 21 and 22, depending on the starting conditions, the trajectory focuses on the equilibrium point or studiously avoids it. The latter produces a limit-cycle that can most simply be understood by considering the mechanical analogy of a harmonic vs a double well potential. In one dimension they can both be represented by <span class="math notranslate nohighlight">\(V(x) = ax^2 + bx^4\)</span>. The harmonic potential has <span class="math notranslate nohighlight">\(a \ge 0\)</span>; the double well <span class="math notranslate nohighlight">\(a \lt 0\)</span>, Figure 23. Now suppose that these represent a profile cut through a cylindrical surface formed by rotating about the vertical. The trajectory of a ball released anywhere and at any angle on the harmonic surface, <span class="math notranslate nohighlight">\(a \ge 0\)</span>, will always reach the minimum. In the double well potential, which has the same equation, but with <span class="math notranslate nohighlight">\(a \lt 0\)</span>, has a minimum that forms a valley running around the bottom of the potential and any trajectory will end up here. The path around the minimum is the equivalent to the path followed in the limit-cycle; no matter where the trajectory starts from it will spiral around and end up following the same path. By changing one parameter, a stable equilibrium becomes an unstable one, the former equilibrium position is avoided, and completely different behaviour is observed. The idea of <em>bifurcation</em> now arises naturally, because, by changing one parameter a stable point splits into two, or bifurcates, forming an unstable point and two stable ones. This was met in a mathematical sense with the logistic equation, see Section 1.4.</p>
+<img src='num-methods-fig23.png' alt='Drawing' style='width:500px'/>
+<p>Figure 23. Two potentials with the form <span class="math notranslate nohighlight">\(V(x) = ax^2 + bx^4\)</span>.The parabola has <span class="math notranslate nohighlight">\(b=0\)</span> and the double well with <span class="math notranslate nohighlight">\(b \gt 0\)</span> but with <span class="math notranslate nohighlight">\(a\)</span> negative. The double well has both unstable and stable points. The stable points are indicated by the filled circles.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./chapter-10"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Godfrey Beddard<br/>
+        
+            &copy; Copyright 2022.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

@@ -1,10 +1,8 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# Godfrey Beddard ' Applying Maths in the Chemical & Biomolecular Sciences' Chapter 9
+# ## Questions 7 to 15
 
-# # Questions 7 to 15
-# 
 # **Q7** The excited states of isolated atoms and molecules normally decay exponentially in time. When a spectral line is measured, the spectrometer performs a Fourier transform, converting the time profile into a spectral profile that has a Lorentzian shape, and looks something like a Gaussian but is wider in the wings. (We assume that the line measured is isolated from others so that no overlap occurs.) The detector, a photodiode, CCD camera, or photomultiplier are all 'square law' detectors and measure the square of the absolute value of the electric field of the radiation; $E^*E = | E |^2$. Suppose that the emission starts at time zero and decays with a lifetime of $\tau$ seconds, with a rate $\displaystyle E(t) = e^{-t /\tau}/\tau$  photons/second, calculate the Fourier transform, and plot this with the decay, assuming that $\tau = 10$. Calculate the half-width of the spectral line produced and comment on its value.
 # 
 # **Strategy:** The variable is time $t$ rather than $x$, as in equation (27). The limits are from 0 to $\infty$.
@@ -54,7 +52,8 @@
 # 
 # >**(b)** Repeat the calculation with a Gaussian electron density of width $2d$ centred at position $a$ i.e. $\displaystyle e^{-(x-a)^2/d^2}/d$ . Comment on the scattering.
 # 
-# <img src="Fourier-fig22.png" alt='Drawing' style='width:300px;'/>
+# ![Diagram](Fourier-fig22.png)
+# 
 # Figure 22. Schematic of one atom’s electron density as a $\delta$ function.
 # 
 # _____
@@ -66,8 +65,11 @@
 # 
 # **Q14** Continuing from Q13, consider a comb of atoms represented as $\delta$-function scattering centres that might represent a one-dimensional crystal that can scatter X-rays. Each atom is separated from the next by a distance $a$. Calculate the transform for a row of atoms extending from $-\infty \to\infty$, and show that it is the same as in the figure. The total transform is the sum of this infinite number of individual transforms. Consider two cases; one where the waves have arbitrary wavelengths, and the other when they have wavelength $a$.
 # 
-# <img src="Fourier-fig23.png" alt='Drawing' style='width:500px;'/>
+# ![Diagram](Fourier-fig23.png)
+# 
 # Figure 23. A comb of atoms and its transform
+# 
+# _______
 # 
 # **Strategy:** The initial task here is to define the $\delta$-function for an atom at some position $na$. The total transform is the sum of all the individual atoms, in which case, $n$ ranges from $-\infty \to +\infty$. 
 # 

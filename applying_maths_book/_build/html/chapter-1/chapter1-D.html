@@ -1,0 +1,1607 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>10 Modulo arithmetic, delta functions, series, estimation &#8212; Applying Maths in the Chemical &amp; Biomolecular Sciences</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Questions 35 - 39" href="chapter1-Q35-39.html" />
+    <link rel="prev" title="Questions 17 - 34" href="chapter1-Q17-34.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/book-cover.jpg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Applying Maths in the Chemical & Biomolecular Sciences</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Introduction
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="chapter1-intro.html">
+   1. Numbers, Equations, Operators, and Algorithms.
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="chapter1-A.html">
+     Numbers to Algorithms
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="chapter1-Q1-7.html">
+     Questions 1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="chapter1-B.html">
+     Trigonometric functions.  Waves
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="chapter1-Q8-16.html">
+     Questions 8 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="chapter1-C.html">
+     Sophisticated Counting: permutations, combinations and probability
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="chapter1-Q17-34.html">
+     Questions 17 - 34
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     10 Modulo arithmetic, delta functions, series, estimation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="chapter1-Q35-39.html">
+     Questions 35 - 39
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="chapter1-answers-1-7.html">
+     Solutions Q1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="chapter1-answers-8-16.html">
+     Solutions Q8 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="chapter1-answers-17-34.html">
+     Solutions Q17 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="chapter1-answers-35-39.html">
+     Solutions Q35 - 39
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-2/chapter2-intro.html">
+   2. Complex numbers.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2/chapter2-A.html">
+     Real, imaginary,conjugate and modulus
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2/chapter2-Q-1-9.html">
+     Questions 1 - 9
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2/chapter2-B.html">
+     De Moivre’s theorem and integer powers of complex numbers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2/chapter2-Q-10-13.html">
+     Questions 10 -13
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2/chapter2-C.html">
+     Euler’s theorem
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2/chapter2-Q-14-27.html">
+     Questions 14 - 27
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2/chapter2-answers.html">
+     Solutions Q1 - 27
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-3/differen-intro.html">
+   3. Differentiation.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-A.html">
+     Differentiation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-B.html">
+     Trig functions, logs, power, reciprocals and integrals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-C-Q-4-11.html">
+     Questions 1-11
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-D.html">
+     Product rule and function of function or chain rule.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-E-Q-12-42.html">
+     Questions 12-42
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-F.html">
+     Limits, maxima/minima and Calculus of Variations.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-G-Q-43-73.html">
+     Questions 43 - 73
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-H.html">
+     Numerically finding the roots of an equation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-I-Q-74-85.html">
+     Questions 74 - 85
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-J.html">
+     Minimizing or maximizing with constraints: Lagrange Undetermined Multipliers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-K-Q-86-92.html">
+     Questions 86 - 92
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-L.html">
+     Partial differentiation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-M-Q-93-114.html">
+     Questions 93-114
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-M1.html">
+     Differentiation of vectors
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-N-answers-1-11.html">
+     Solutions Q 1-11
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-O-answers-12-42.html">
+     Solutions Q 12-42
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-P-answers-43-73.html">
+     Solutions Q 43 - 73
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-Q-answers-74-85.html">
+     Solutions Q 74 - 85
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-R-answers-86-92.html">
+     Solutions Q 86 - 94
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-S-answers-93-114.html">
+     Solutions Q 93-114
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-4/integration-intro.html">
+   4. Integration.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-A.html">
+     Integration basics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-Q1-14.html">
+     Questions 1-14
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-B.html">
+     Integration by substitution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-Q15-30.html">
+     Questions 15-30
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-C.html">
+     Using parametric equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-Q31-48.html">
+     Questions 31 - 48
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-D.html">
+     Calculating an Average Value.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-Q49-72.html">
+     Questions 49 - 72
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-E.html">
+     The Variational Method in Quantum Mechanics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-Q73-77.html">
+     Questions 73 - 77
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-F.html">
+     Multiple integrals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-Q78-86.html">
+     Questions 78 - 86
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-G.html">
+     Calculating the energy of a chemical bond using molecular orbitals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-H.html">
+     Line integrals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-Q87-96.html">
+     Questions 87 - 96
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-answers-1-14.html">
+     Solutions Q1 - 14
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-answers-15-30.html">
+     Solutions Q15 - 30
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-answers-31-48.html">
+     Solutions Q31 - 48
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-answers-49-72.html">
+     Solutions Q49 - 72
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-answers-73-96.html">
+     Solutions Q73 - 96
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-5/chapter-5-intro.html">
+   5. Summations, Series and expansion of Functions.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-A.html">
+     Series, averages, partition functions, DNA melting, atom entropy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-B-Q1-13.html">
+     Questions 1 - 13
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-E.html">
+     Maclaurin and Taylor series expansions. Paramagnetic spins
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-F-Q14-34.html">
+     Questions 14 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-G-Q35-44.html">
+     Questions 35 - 44
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-perturbation-A.html">
+     Perturbation Theory
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-perturbation-B-Q45-48.html">
+     Questions 45 - 48
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-perturbation-C.html">
+     Quantum superposition and wavepackets.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-perturbation-D-Q49-52.html">
+     Questions 49 - 52
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-answers-1-7.html">
+     Solutions Q 1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-answers-8-13.html">
+     Solutions Q8 - 13
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-answers-14-26.html">
+     Solutions Q 14 - 26
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-answers-27-32.html">
+     Solutions Q27 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-answers-33-44.html">
+     Solutions Q33 - 44
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-answers-45-52.html">
+     Solutions Q45 - 52
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-6/vectors-intro.html">
+   6. Vectors.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-A.html">
+     Vector basics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-Q1-24.html">
+     Questions 1 - 24
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-B.html">
+     Projections and components
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-Q25-32.html">
+     Questions 25 - 32
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-C.html">
+     Axes need not be right-angled or of equal length
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-Q33-38.html">
+     Questions 33 - 38
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-D.html">
+     Basis sets with more than three dimensions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-Q39-46.html">
+     Questions 39 - 46
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-E.html">
+     Cross product or vector product
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-Q47-52.html">
+     Questions 47 - 52
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-F.html">
+     Torsion or dihedral angles
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-Q53-61.html">
+     Questions 53 - 61
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-G.html">
+     Torque and angular momentum
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-answers-Q1-24.html">
+     Solutions Q1 - 24
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-answers-Q25-32.html">
+     Solutions Q25 - 32
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-answers-Q33-38.html">
+     Solutions Q33 - 38
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-answers-Q39-46.html">
+     Solutions Q38 - 46
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-answers-Q47-52.html">
+     Solutions Q47 - 52
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-answers-Q53-61.html">
+     Solutions Q53 - 61
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-7/matrices-intro.html">
+   7. Matrices
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-A.html">
+     Determinants
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q1-10.html">
+     Questions  1 - 10
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-B.html">
+     Matrices
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q11-16.html">
+     Questions  11 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-C.html">
+     Molecular Group Theory
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q17-30.html">
+     Questions  17 - 30
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-D.html">
+     Rotation matrices: moving molecules
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q31-34.html">
+     Questions 31 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-E.html">
+     Matrices in optics and designing laser cavities
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q35-39.html">
+     Questions 35 - 39
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-F.html">
+     Polarizing optics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q40-44.html">
+     Questions 40 - 44
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-G.html">
+     Solving equations using matrices. Eigenvectors &amp; Eigenvalues.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q45-50.html">
+     Questions 45 - 50
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-H.html">
+     Rate equations and Chemical Kinetics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q51-54.html">
+     Questions 51 - 54
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-I.html">
+     Molecular vibrations and pendulums
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q55-58.html">
+     Questions 55 - 58
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-J.html">
+     Calculating a bond length using moments of inertia
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q59-62.html">
+     Questions 59 - 62
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-answersQ1-10.html">
+     Solutions Q1 - 10
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-answersQ11-16.html">
+     Solutions Q11 - 30
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-answersQ17-30.html">
+     Solutions Q17 - 30
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-answersQ31-34.html">
+     Solutions Q31 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-answersQ35-39.html">
+     Solutions Q35 - 39
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-answersQ40-44.html">
+     Solutions Q40 - 44
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-answersQ45-50.html">
+     Solutions Q45 - 50
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-answersQ51-54.html">
+     Solutions Q51 - 54
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-answersQ55-58.html">
+     Solutions Q55 - 58
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-answersQ59-61.html">
+     Solutions Q59 - 61
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-8/matricesQM-intro.html">
+   8. Matrices in Quantum Mechanics
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-8/matricesQM-A.html">
+     Chapter 8 Matrices in Quantum Mechanics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-8/matricesQM-Q1-7.html">
+     Questions 1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-8/matricesQM-B.html">
+     Basis sets and bra-ket algebra
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-8/matricesQM-Q8-12.html">
+     Questions 8 - 12
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-8/matricesQM-C.html">
+     Continuous basis sets
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-8/matricesQM-answers1-7.html">
+     Solutions Q1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-8/matricesQM-answers8-12.html">
+     Solutions Q8 - 12
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-9/Fourier-intro.html">
+   9. Fourier Series and Transforms.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-A-B.html">
+     Fourier series, Gibbs phenomenon, generalised series.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-questions-1-6.html">
+     Questions 1 - 6
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-C.html">
+     Fourier Transforms
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-D.html">
+     Convolution and Autocorrelation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-questions-7-15.html">
+     Questions 7 - 15
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-E.html">
+     Discrete Fourier  (DFT)  and Fast Fourier transforms (FFT)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-questions-16-21.html">
+     Questions 16 - 21
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-F.html">
+     The Hadamard Transform: Encoding and Decoding
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-2D-Diffraction.html">
+     The Fourier transform in two dimensions: images and x-ray Diffraction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-tomography.html">
+     Computed Tomography
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-answers-1-6.html">
+     Solutions Q 1 - 6
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-answers-7-15.html">
+     Solutions Q 7 - 15
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-answers-16-21.html">
+     Solutions Q 16 - 21
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-10/Diff-eqns-intro.html">
+   10. Differential Equations.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-A.html">
+     Differential Equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-Q1-23.html">
+     Questions 1 - 23
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-B.html">
+     Integrating factors can solve differential equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-C.html">
+     The ‘D’ operator.  Solving linear differential equations with constant coefficients
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-D.html">
+     Simultaneous equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-E.html">
+     Linear equations with variable coefficients
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-F.html">
+     Partial Differential Equations, PDE
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-G.html">
+     PDE examples continued
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-Q24-37.html">
+     Questions 24 - 37
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-answers-1-21.html">
+     Solutions Q1 - 21
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-answers-22-37.html">
+     Solutions Q22 - 37
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-11/num-methods-intro.html">
+   11. Numerical Methods
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-A.html">
+     Numerical Methods
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-Q1-7.html">
+     Questions 1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-B.html">
+     Numerical solution of differential equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-Q8-12.html">
+     Questions 8 - 12
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-C.html">
+     Coupled equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-Q13-16.html">
+     Questions 13 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-D.html">
+     The phase plane, nullclines, and stable points
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-Q17-20.html">
+     Questions 17 - 20
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-E.html">
+     Reaction schemes with feedback
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-Q21-34.html">
+     Questions 21 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-F.html">
+     Boundary value problems: Shooting method
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-Q35-40.html">
+     Questions 35 - 40
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-answers1-7.html">
+     Solutions Q1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-answers8-12.html">
+     Solutions Q8 - 12
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-answers13-16.html">
+     Solutions Q13 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-answers17-20.html">
+     Solutions Q17 - 20
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-answers21-34.html">
+     Solutions Q21 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-answers35-40.html">
+     Solutions Q35 - 40
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-12/monte-carlo-intro.html">
+   12. Monte Carlo Methods
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+  <label for="toctree-checkbox-12">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-A.html">
+     Monte - Carlo
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-Q1-6.html">
+     Questions 1 - 6
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-B.html">
+     Solving rate equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-Q7-10.html">
+     Questions 7 - 10
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-CC.html">
+     Monte Carlo Simulations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-C.html">
+     4 Forster or dipole - dipole energy transfer
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-Q11-17.html">
+     Questions 11 - 17
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-D.html">
+     The Metropolis algorithm
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-answers1-6.html">
+     Solutions Q1 - 6
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-answers7-10.html">
+     Solutions Q7 - 10
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-answers11-17.html">
+     Solutions Q11 - 17
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-13/analysis-intro.html">
+   13. Data Analysis
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+  <label for="toctree-checkbox-13">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-13/analysis-A.html">
+     Characterizing experimental data. Accuracy, precision, mean and standard deviation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-13/analysis-Q1-3.html">
+     Questions 1 - 3
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-13/analysis-B.html">
+     Modelling data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-13/analysis-Q4-9.html">
+     Questions 4 - 9
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-13/analysis-C.html">
+     Modelling data is simpler using matrices
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-13/analysis-Q10-11.html">
+     Questions 10 - 13
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-13/analysis-D.html">
+     Non-linear least squares, gradient expansion, the Levenberg - Marquardt Method
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-13/analysis-answers1-11.html">
+     Solutions Q1 -11
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter1-E.html">
+   SI units, Rounding &amp; converting units, Glossary.
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../references/References.html">
+   References
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../references/Python%20crib.html">
+   Some basic Python instructions with a few examples.
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/chapter-1/chapter1-D.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/chapter-1/chapter1-D.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   10 Modulo arithmetic, delta functions, series, estimation
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cas-registry-number-and-check-digits">
+     CAS registry number and Check digits
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#musical-scales">
+     Musical scales.
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#algorithm-converting-a-decimal-number-to-another-base">
+     Algorithm converting a decimal number to another base.
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#delta-functions-krokecker-and-dirac">
+   11 Delta functions,  Krokecker and Dirac
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#series-arithmetic-and-geometric-progressions">
+   12 Series: Arithmetic and Geometric progressions
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#estimation">
+     13 Estimation
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#x-rays">
+       X-rays
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#mass-of-atmosphere">
+       Mass of atmosphere
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#benjamin-franklin-and-a-pond">
+       Benjamin Franklin and a pond
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#size-of-atom">
+       Size of atom
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="modulo-arithmetic-delta-functions-series-estimation">
+<h1>10 Modulo arithmetic, delta functions, series, estimation<a class="headerlink" href="#modulo-arithmetic-delta-functions-series-estimation" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import all python add-ons etc that will be needed later on</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="n">init_printing</span><span class="p">()</span>                      <span class="c1"># allows printing of SymPy results in typeset maths format</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;font.size&#39;</span><span class="p">:</span> <span class="mi">16</span><span class="p">})</span>  <span class="c1"># set font size for plots</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Clock time is usually measured to base <span class="math notranslate nohighlight">\(60\)</span> for minutes, and <span class="math notranslate nohighlight">\(12\)</span> for hours. For example, if you arrange to meet someone at <span class="math notranslate nohighlight">\(10:35\)</span> and they are <span class="math notranslate nohighlight">\(40\)</span> minutes late, then rather than noting the time as <span class="math notranslate nohighlight">\(10:75\)</span> we say it is <span class="math notranslate nohighlight">\(11:15\)</span>. This is an easy mental calculation expressed more awkwardly and mathematically as</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle 35 + 40 \equiv \,15 \mathrm{mod}\, 60\]</div>
+<p>Symbolically, if the difference between two integers <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> is divided by an integer <span class="math notranslate nohighlight">\(m\)</span>, or <span class="math notranslate nohighlight">\((a - b)/m\)</span>, and if the result is also an integer, then <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> are said to be ‘congruent modulo m’; hardly an expression that flows naturally off the tongue. As an identity, this is written as</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle a \equiv b \text{ mod } m\]</div>
+<p>which means that <span class="math notranslate nohighlight">\(a\)</span> is <em>equivalent</em> to <span class="math notranslate nohighlight">\(b \text{ mod } m\)</span>. More familiarly, it means that integer division <span class="math notranslate nohighlight">\(a/m\)</span> produces the <em>remainder</em> <span class="math notranslate nohighlight">\(b\)</span>; thus <span class="math notranslate nohighlight">\(75/60 = 1\)</span> with remainder <span class="math notranslate nohighlight">\(15\)</span>. Integer division measures only how many times one integer goes into another, ignoring any remainder; thus <span class="math notranslate nohighlight">\(3/2 = 1,\, 23/4 = 5\)</span>, and so forth.</p>
+<p>However, the usage in most computer languages is different to this. In python this is written as</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle  a = b \text{ % } m\]</div>
+<p>which means that <span class="math notranslate nohighlight">\(a\)</span> is the <em>remainder</em> of integer division of <span class="math notranslate nohighlight">\(b\)</span> by <span class="math notranslate nohighlight">\(m\)</span>, this is equivalent to <span class="math notranslate nohighlight">\(b-b//m\)</span> where // means integer division.</p>
+<p>In some computer languages this may be written as</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle a=b\text{ mod } m\]</div>
+<p>and notice the = sign. The equation means that <span class="math notranslate nohighlight">\(a\)</span> is the remainder of dividing a positive number <span class="math notranslate nohighlight">\(b\)</span> by <span class="math notranslate nohighlight">\(m\)</span> a whole number of times. Using python gives</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle  39 \text{ % }  9 \qquad \text{ produces } 9 \]</div>
+<p>because integer division <span class="math notranslate nohighlight">\(39/10 = 3\)</span> with a remainder of <span class="math notranslate nohighlight">\(9\)</span>.</p>
+<p>When <span class="math notranslate nohighlight">\(b\)</span> is a negative integer, the result is the same as calculating <span class="math notranslate nohighlight">\(m - (+b \text{ % } m)\)</span>. For example,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle -39 \text{ % } 9 \qquad \text{ produces } 9 \\
+10-39 \text{ % } 9 \qquad \text{ produces } 9 \end{split}\]</div>
+<div class="section" id="cas-registry-number-and-check-digits">
+<h2>CAS registry number and Check digits<a class="headerlink" href="#cas-registry-number-and-check-digits" title="Permalink to this headline">¶</a></h2>
+<p>An important example is found in the CAS registry number, which is used to uniquely identify every chemical compound.  There are at least 35 million compounds known, so uniqueness is important. The last digit in the CAS number is a check digit, used to confirm the uniqueness of the number. The check digit is obtained by multiplying each preceding digit by its position in the number; taken in reverse order, starting by multiplying the last digit by <span class="math notranslate nohighlight">\(1\)</span>, the second to last by <span class="math notranslate nohighlight">\(2\)</span>, etc. then adding the result and calculating modulo <span class="math notranslate nohighlight">\(10\)</span> of the number produced. The CAS number for naphthalene is <span class="math notranslate nohighlight">\((91 - 20 -3)\)</span>; the <span class="math notranslate nohighlight">\(3\)</span> is the check digit. This is obtained with the following sum, <span class="math notranslate nohighlight">\(0 \times 1 + 2 \times 2 + 1 \times 3 + 9 \times 4 = 43 \)</span> and finally, <span class="math notranslate nohighlight">\(43 \text{ mod } 10 = 3\)</span>, where the <span class="math notranslate nohighlight">\(3\)</span> is the remainder of a whole number of divisions of <span class="math notranslate nohighlight">\(10\)</span> into <span class="math notranslate nohighlight">\(43\)</span>.</p>
+<p>In transmitting digital data, check digit information is added to ensure that the data has not been corrupted and is calculated as for the CAS example .</p>
+</div>
+<div class="section" id="musical-scales">
+<h2>Musical scales.<a class="headerlink" href="#musical-scales" title="Permalink to this headline">¶</a></h2>
+<p>Musical scales and clock time use circular arithmetic. The equal temperament scale has <span class="math notranslate nohighlight">\(12\)</span> frequencies in each octave given by <span class="math notranslate nohighlight">\(2^{n/12}\)</span> times the base frequency where <span class="math notranslate nohighlight">\(n = 0 \to 12\)</span>, this being the scale that most people find is most pleasing to their ears. The next octave, above or below, has exactly the same ratio of frequencies and so follows modulo <span class="math notranslate nohighlight">\(12\)</span> arithmetic.</p>
+</div>
+<div class="section" id="algorithm-converting-a-decimal-number-to-another-base">
+<h2>Algorithm converting a decimal number to another base.<a class="headerlink" href="#algorithm-converting-a-decimal-number-to-another-base" title="Permalink to this headline">¶</a></h2>
+<p>If we want to know what 123 in decimal is in octal (or any other base) the calculation can be done by starting at the beginning and working out what <span class="math notranslate nohighlight">\(2,3,4\)</span> etc are in the new base, which is hardly practical for a large number. We use modulo arithmetic and start with the decimal and cut it into parts. We have to use integer division which mean whole number division and ignoring any fractional value, thus <span class="math notranslate nohighlight">\(3//2 = 1\)</span> where <span class="math notranslate nohighlight">\(//\)</span> means integer division. In comparison <span class="math notranslate nohighlight">\( 3 mod 2 = 1\)</span> which is the remainder.</p>
+<p>An algorithm to do this is</p>
+<p><strong>(1)</strong> modulo the number with the base and save the result,</p>
+<p><strong>(2)</strong> use integer division on the number with the base and make this the new number,</p>
+<p><strong>(3)</strong> repeat from 1.</p>
+<p><strong>(4)</strong> print result in reverse order.</p>
+<p>Modulo <span class="math notranslate nohighlight">\(123\)</span> with <span class="math notranslate nohighlight">\(8\)</span> is <span class="math notranslate nohighlight">\(3\)</span> calculated as integer division <span class="math notranslate nohighlight">\(123//8 = 15\)</span> then <span class="math notranslate nohighlight">\(123-8 \times 15=3\)</span>. Next repeat this with <span class="math notranslate nohighlight">\(15\)</span> which gives <span class="math notranslate nohighlight">\(15\mod\,8 = 7\)</span>  and integer division <span class="math notranslate nohighlight">\(1\)</span>, reversing the order gives <span class="math notranslate nohighlight">\(173\)</span>. Some code to do this is given below.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># convert a decimal number (num) to another base.</span>
+
+<span class="n">base</span><span class="o">=</span> <span class="mi">8</span>
+<span class="n">num</span> <span class="o">=</span> <span class="mi">123</span>
+<span class="n">newn</span><span class="o">=</span> <span class="p">[]</span>
+<span class="k">while</span> <span class="n">num</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="n">rem</span> <span class="o">=</span> <span class="n">num</span> <span class="o">%</span> <span class="n">base</span>           <span class="c1"># modulus</span>
+    <span class="k">if</span> <span class="n">rem</span> <span class="o">&gt;</span> <span class="mi">9</span><span class="p">:</span>
+        <span class="n">rem</span> <span class="o">=</span> <span class="nb">chr</span><span class="p">(</span><span class="mi">65</span><span class="o">-</span><span class="mi">10</span><span class="o">+</span><span class="n">rem</span><span class="p">)</span>   <span class="c1"># make into letter if &gt; 9, see ascii code numbers</span>
+    <span class="n">newn</span><span class="o">.</span><span class="n">append</span><span class="p">(</span> <span class="n">rem</span>  <span class="p">)</span>
+    <span class="n">num</span> <span class="o">=</span> <span class="n">num</span> <span class="o">//</span> <span class="n">base</span>          <span class="c1"># integer division </span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Number in base &#39;</span><span class="p">,</span><span class="n">base</span><span class="p">,</span><span class="s1">&#39; is &#39;</span><span class="p">,</span> <span class="n">newn</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="p">)</span>  <span class="c1"># [::-1] reverses order </span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number in base  8  is  [1, 7, 3]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="delta-functions-krokecker-and-dirac">
+<h1>11 Delta functions,  Krokecker and Dirac<a class="headerlink" href="#delta-functions-krokecker-and-dirac" title="Permalink to this headline">¶</a></h1>
+<p>The Kronecker delta is a function defined with two indices, and has a value of <span class="math notranslate nohighlight">\(1\)</span> when these are the same, and <span class="math notranslate nohighlight">\(0\)</span> when they are different.</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle  \delta_{n,m} = 1 \quad\text{ if } n=m,\quad \text{ i.e. } \delta_{n,n} =1,\quad \text{ otherwise } \delta_{n,m} =0\]</div>
+<p>This function is met when calculating the orthogonality of many functions with integer arguments, for instance, <span class="math notranslate nohighlight">\(\sin(nx)\)</span> and <span class="math notranslate nohighlight">\(\cos(mx)\)</span>, see Chapter 9, and is commonly also found in quantum problems where it is often used to pick out one term in a summation;</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle s_j =\sum_i a_i\delta_{i,j} =a_0\delta_{0,j} +a_1\delta_{1,j}\cdots +a_j\delta_{j,j}+ +\cdots a_n\delta_{n,j} =a_j\]</div>
+<p>The second type of delta function <span class="math notranslate nohighlight">\(\delta(x)\)</span> is named after Dirac. This behaves like a normal continuous function but has a positive value only at <span class="math notranslate nohighlight">\(x\)</span> and elsewhere is exactly zero. The area under the function, which is its integral, is unity. This means that the function is a spike at position <span class="math notranslate nohighlight">\(x\)</span> of infinitesimal width but unit area. Further properties of this function are described in Chapter 9. The Dirac delta can be derived in a number of ways, but the function may be realized by drawing a Gaussian (bell-shaped curve), then making it narrower and narrower until, at the limit, it becomes the <span class="math notranslate nohighlight">\(\delta\)</span> function.</p>
+<p>Just as for the Kronecker delta the Dirac delta function can be used to extract values, in this case from an integral,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \int f(x)\delta(x-a)dx=f(a)\]</div>
+<p>which can be seen as the delta function is zero except when <span class="math notranslate nohighlight">\(x=a\)</span>.</p>
+</div>
+<div class="section" id="series-arithmetic-and-geometric-progressions">
+<h1>12 Series: Arithmetic and Geometric progressions<a class="headerlink" href="#series-arithmetic-and-geometric-progressions" title="Permalink to this headline">¶</a></h1>
+<p>A series of numbers is <span class="math notranslate nohighlight">\(1, 2, 3, 4 \cdots\)</span> or <span class="math notranslate nohighlight">\(1, 2, 4, 8, 16 \cdots\)</span>. If each term is made from the previous one by adding a constant number, this is an <em>arithmetical progression</em>. If, however, each term after the first is multiplied by a constant term, the series is called a <em>geometrical progression</em>. Both series may continue to infinity, but the last value may still be finite.</p>
+<p>Examples of arithmetic progressions are</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle 1+2+3+4+\cdots, \qquad   1+3+5+7+9+\cdots\]</div>
+<p>or in general</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle a_1 +a_2 +a_3 +a_4 +\cdots =a_1 +(a_1 +d)+(a_1 +2d)+\cdots+(a_1 +(n-1)d)\]</div>
+<p>where the constant additional term is <span class="math notranslate nohighlight">\(d\)</span>.</p>
+<p>In the geometric progressions below, in <span class="math notranslate nohighlight">\(G_1\)</span>, each term after the first is multiplied by <span class="math notranslate nohighlight">\(1/2\)</span>, in <span class="math notranslate nohighlight">\(G_2\)</span> the multiplier is <span class="math notranslate nohighlight">\(4\)</span> and is <span class="math notranslate nohighlight">\(x\)</span> in <span class="math notranslate nohighlight">\(G_x\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin{align}
+G_1 &amp;=1+1/2+1/4+1/8+\cdots \\
+G_2 &amp;=1+4+16+64+\cdots \\
+G_x &amp;=a+ax+ax^2 +ax^3 +\cdots +ax^{n-1} +\cdots =a(1+x+x^2 +x^3 +\cdots + x^{n-1} +\cdots)\end{align}\end{split}\]</div>
+<p>The first of these three series, <span class="math notranslate nohighlight">\(G_1\)</span>, converges to a finite value even after an infinite number of terms, and the sum of the terms to infinity is also finite.</p>
+<p>The spectrum of atomic hydrogen and other atoms with one outer electron show an emission spectrum that converges to a limit. In the ultraviolet part of the spectrum, the lines are called the Lyman series and have the form</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \bar \upsilon = R\left( 1-\frac{1}{n^2} \right) \qquad \mathrm{cm^{-1}}\]</div>
+<p>where <span class="math notranslate nohighlight">\(n\)</span> is an integer greater than <span class="math notranslate nohighlight">\(1\)</span> and <span class="math notranslate nohighlight">\(R\)</span> is the Rydberg constant, <span class="math notranslate nohighlight">\(109678\)</span> wavenumbers for hydrogen. The positions of the lines are sketched in figure 25. The symbol <span class="math notranslate nohighlight">\(\bar \upsilon\)</span> represents the frequency in wavenumbers or cm<span class="math notranslate nohighlight">\(^{-1}\)</span>. These are habitually used by spectroscopists rather than s<span class="math notranslate nohighlight">\(^{-1}\)</span> (or Hertz) because the numbers are smaller, a few thousands of wavenumbers correspond to <span class="math notranslate nohighlight">\(\approx 10^{13} \to 10^{15} \mathrm{s^{-1}}\)</span>, where <span class="math notranslate nohighlight">\( 1 \mathrm{cm}^{-1} \equiv 3 \cdot 10^{10} \mathrm{s^{-1}}\)</span>.</p>
+<p><img alt="Drawing" src="../_images/chapter1-fig25.png" /></p>
+<p>Figure 25. The Lyman series converges to a finite value.</p>
+<hr class="docutils" />
+<div class="section" id="estimation">
+<h2>13 Estimation<a class="headerlink" href="#estimation" title="Permalink to this headline">¶</a></h2>
+<p>Estimating quantities is sometimes relatively easy to do and can often be used to help design experiments. An accurate number is not sought; just an order of magnitude estimate is often sufficient. A straightforward example is to estimate the minimum useful concentration of a sample knowing the sensitivity of an instrument. This can be put the other way around. At the maximum allowable sample concentration, we can estimate what the size of the signal will be and whether the method proposed will work or whether another more sensitive instrument should be used. Other forms of estimation can be used to obtain quantities that would otherwise seem impossible, such as calculating the weight of a mountain or the weight of the atmosphere. In these types of problems, we make some simplifying, but not unreasonable assumptions to be able to reach a sensible conclusion; the mountain could reasonably be approximated by a cone or a hemisphere depending on its shape. Several interesting estimation examples are given by Adam (2003).</p>
+<div class="section" id="x-rays">
+<h3>X-rays<a class="headerlink" href="#x-rays" title="Permalink to this headline">¶</a></h3>
+<p>In an X-ray experiment on crystalline Be, suppose that the detector(e.g.a CCD type camera) can respond to single X-ray photons; estimate the least number of electrons that there must be in the crystal’s scattering plane for a signal to be detected. What does this imply for the size of the crystal? (Assume that the scattering from <span class="math notranslate nohighlight">\(n\)</span> electrons is <span class="math notranslate nohighlight">\(n\)</span> times that from a single one and the following data is assumed to be known.)
+The fractional intensity, <span class="math notranslate nohighlight">\(I/I_0\)</span>, of X-ray scattering by a single electron is approximately given by</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{I}{I_0}= \frac{e^4}{(4\pi\epsilon _0)^2m^2c^4}\frac{1}{R^2}\frac{(1+\cos^2(\phi))}{2}\]</div>
+<p>where <span class="math notranslate nohighlight">\(I_0 = 10^8\)</span> is the initial number of X-ray photons per second, <span class="math notranslate nohighlight">\(R\)</span> the distance from the centre of scattering to a detector, and <span class="math notranslate nohighlight">\(\phi\)</span> the angle through which the X-ray is scattered. The detector is <span class="math notranslate nohighlight">\(1\)</span> m from the sample and at an angle <span class="math notranslate nohighlight">\(\phi = 20^{\mathrm{o}}\)</span>.</p>
+<p>In this example, although calculating <span class="math notranslate nohighlight">\(I/I_0\)</span> is straightforward it is not if you use a calculator because the powers produced are too large. The calculation is done by first adding the powers, then the remaining numbers are easily evaluated.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin{align}\frac{I}{I_0}&amp;=\frac{(1.6\cdot 10^{-19})^4}{(4\pi \cdot 8.8\cdot 10^{-12})^2(9.1\cdot 10^{-31})^2(3\cdot 10^8)^4\cdot 1  }\left( \frac{1.8}{2}  \right)\\
+&amp;=\frac{16^4\cdot 10^{-4}}{4^2\pi^2\cdot 8.8^2 \cdot 9.1^2\cdot 3^4\cdot 2} 10^{-76+24+62-32}\cdot 1.8\\[10px] &amp;\approx 10^{-29}\end{align}\end{split}\]</div>
+<p>If the initial X-ray intensity is <span class="math notranslate nohighlight">\(10^8\)</span> photons/sec then <span class="math notranslate nohighlight">\(\approx 10^{-21}\)</span> X-rays are detected from each electron, which means that <span class="math notranslate nohighlight">\(10^{21}\)</span> electrons have to be present to detect one X-ray. As Be contains four electrons, <span class="math notranslate nohighlight">\((1/4) \cdot 10^{21}\)</span> atoms are needed, which is <span class="math notranslate nohighlight">\(10^{21}/(4 \times 6 \cdot 10^{23}) \approx 4\cdot 10^{-4}\)</span> moles. The molar mass is <span class="math notranslate nohighlight">\(9\)</span> g mol<span class="math notranslate nohighlight">\(^{-1}\)</span>, thus, to detect 1 photon/second, the sample has to weigh at least <span class="math notranslate nohighlight">\(0.0036\)</span> g and as the density of Be is <span class="math notranslate nohighlight">\(1.8\;\mathrm{g\; cm^{-3}}\)</span> this is a cube of volume <span class="math notranslate nohighlight">\(0.0036/1.8\)</span> cm<span class="math notranslate nohighlight">\(^3\)</span> which has a side of <span class="math notranslate nohighlight">\(\approx 0.13\)</span> cm which is not large.</p>
+</div>
+<div class="section" id="mass-of-atmosphere">
+<h3>Mass of atmosphere<a class="headerlink" href="#mass-of-atmosphere" title="Permalink to this headline">¶</a></h3>
+<p>Sometimes, a particular estimation seems to be very hard but it turn out not to be. To calculate the mass of the atmosphere would appear to be difficult because of the changing density with increasing altitude. However, if atmospheric pressure is taken at sea level to be <span class="math notranslate nohighlight">\(1 \mathrm{atm} = 101325\)</span> Pa all that is needed is the surface area of the earth and the fact that a pascal is a N m<span class="math notranslate nohighlight">\(^{-2}\)</span> which is force/area. Assuming that the earth is a sphere of radius <span class="math notranslate nohighlight">\(6378\)</span> km, its surface area is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle 4\pi \times 63782 \times 1000^2 = 5.1 \cdot 10^{14} \mathrm{m}^2\]</div>
+<p>and the total force on its surface due to the atmosphere is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle 101325(\mathrm{Pa}) \times 5.1 \cdot 10^{14} (\mathrm{m}^2) \approx 5.18 \cdot 10^{19}\;\mathrm{ N (\;kg m s^{-2}})\]</div>
+<p>The atmospheric mass is therefore <span class="math notranslate nohighlight">\(\approx 5.18 \cdot 10^{19}/g = 5.27 \cdot 10^{18}\)</span> kg where <span class="math notranslate nohighlight">\(g\)</span> is the acceleration due to gravity <span class="math notranslate nohighlight">\(9.81\)</span> m s<span class="math notranslate nohighlight">\(^{-2}\)</span>.</p>
+</div>
+<div class="section" id="benjamin-franklin-and-a-pond">
+<h3>Benjamin Franklin and a pond<a class="headerlink" href="#benjamin-franklin-and-a-pond" title="Permalink to this headline">¶</a></h3>
+<p>The American Benjamin Franklin is famously remembered for flying a kite with an attached wire into a thunderstorm in an attempt to capture lightning and store it in a Leyden jar (Bernal 1973). Luckily, he survived. He is less well known for changing the florid opening of the American Constitution to read ‘We hold these truths to be self - evident, that all men are created equal’. He travelled to England in 1757 to help with the tax situation of Pennsylvanians, and while sailing noticed that oil on water calmed waves, something that had been noticed since the time of the Greeks. Being interested in surface phenomena, when again in London in 1770, he poured no more than a teaspoon of oil on a pond on Clapham Common and observed that the oil spread of its own volition over the pond, sweeping leaves and other debris out of the way as it did so. He estimated that the oil covered about half an acre of the pond (<span class="math notranslate nohighlight">\(2023\;\mathrm{m^2}\)</span> ), and he repeated this experiment everywhere he went from then on. He also recorded seeing colours due to thin film interference effects but could not have explained this, nor could he have realized that a monolayer of molecules was formed because the idea of atoms and molecules was not clearly understood at that time. He appears not to have worked out the thickness of the oil layer.</p>
+<p>To calculate the monolayer thickness, a teaspoon holds approximately 4.5 ml and half an acre is <span class="math notranslate nohighlight">\(2023\;\mathrm{ m^2}\)</span>. From the amount of oil used, the thickness of the layer was <span class="math notranslate nohighlight">\(4.5\cdot 10^{-6}\; \mathrm{m}^3/2023\; \mathrm{m}^2 =2.2\)</span> nm. This is approximately the thickness of a close-packed, one-molecule thick layer of a long chain fatty acid monolayer, and gives a simple and direct estimate of the length of the oil molecules used. Oleic acid is a major constituent of olive oil and is a by-product of making candles; it has an 18-carbon chain so when fully extended would be about 2.8 nm long, remarkably similar to our estimate.</p>
+</div>
+<div class="section" id="size-of-atom">
+<h3>Size of atom<a class="headerlink" href="#size-of-atom" title="Permalink to this headline">¶</a></h3>
+<p>If the density of Li is <span class="math notranslate nohighlight">\(0.534\,\mathrm{ g\, ml^{-1}}\)</span>, what is average size of an atom? A mole contains <span class="math notranslate nohighlight">\(6.022 \cdot 10^{23}\)</span> molecules, therefore <span class="math notranslate nohighlight">\(6.9\)</span> g (the molar mass) contains this number of atoms occupying a volume (<span class="math notranslate nohighlight">\(0.0069\)</span> kg mol<span class="math notranslate nohighlight">\(^{-1})/534 (\mathrm{ kg \,m}^{-3}) = 2.17 \cdot 10^{-29} \mathrm{m}^3\)</span> or <span class="math notranslate nohighlight">\(2.18 \cdot 10^{-2} \mathrm{nm}^3\)</span>. Assuming spherical atoms, each has a radius <span class="math notranslate nohighlight">\(0.17\)</span> nm which is not a bad estimation considering the approximate nature of the calculation. The similar calculation for Pb produces <span class="math notranslate nohighlight">\(0.19\)</span> nm.</p>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./chapter-1"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="chapter1-Q17-34.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Questions 17 - 34</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="chapter1-Q35-39.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Questions 35 - 39</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Godfrey Beddard<br/>
+        
+            &copy; Copyright 2022.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

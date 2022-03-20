@@ -1,0 +1,618 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>13 Differentiation of vectors &#8212; Applying Maths in the Chemical &amp; Biomolecular Sciences</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/book-cover.jpg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Applying Maths in the Chemical & Biomolecular Sciences</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Introduction
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-1/chapter1-intro.html">
+   Chapter 1. Numbers, Equations, Operators, and Algorithms
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-A.html">
+     Chapter 1 Numbers, Equations, Operators, and Algorithms
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-Q1-7.html">
+     Questions 1-7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-B.html">
+     5 Trigonometric functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-Q8-16.html">
+     Questions 8-16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-C.html">
+     9 Sophisticated Counting: permutations, combinations and probability
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-Q17-34.html">
+     Questions 17-34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-D.html">
+     10 Modulo arithmetic
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-Q35-39.html">
+     Questions 35-39
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-answers-1-7.html">
+     Answers 1-7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-answers-8-16.html">
+     Answers 8-16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-answers-17-34.html">
+     Answers 17-34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-answers-35-39.html">
+     Answers 35-39
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-2/chapter2-intro.html">
+   Chapter 2. Complex numbers.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2/chapter2-A.html">
+     Chapter 2.  Complex Numbers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2/chapter2-Q-1-9.html">
+     Questions 1 - 9
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2/chapter2-B.html">
+     3 De Moivre’s theorem and integer powers of complex numbers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2/chapter2-Q-10-13.html">
+     Questions 10 -13
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2/chapter2-C.html">
+     4 Euler’s theorem
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2/chapter2-Q-14-27.html">
+     Questions 14-27
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2/chapter2-answers.html">
+     Answers 1-27
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="differen-intro.html">
+   Chapter 3 Differentiation
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="differen-A.html">
+     Differentiation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="differen-B.html">
+     Sine and Cosine
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="differen-C-Q-4-11.html">
+     Questions 4-11
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="differen-D.html">
+     Product rule and function of function or chain rule.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="differen-E-Q-12-42.html">
+     Questions 12-42
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="differen-F.html">
+     Limits, maxima/minima and calculus of variations.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="differen-G-Q-43-73.html">
+     Questions 43-73
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="differen-H.html">
+     Numerically finding the roots of an equation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="differen-I-Q-74-85.html">
+     Questions 74-85
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="differen-J.html">
+     Minimizing or maximizing with constraints: Lagrange Undetermined Multipliers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="differen-L.html">
+     Partial differentiation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="differen-M-Q-93-114.html">
+     Questions 93-114
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-9/Fourier-intro.html">
+   Chapter 9 Fourier Series and Transforms
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-A-B.html">
+     Fourier series, Gibbs phenomenon, generalised series.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-questions-1-6.html">
+     Questions 1 to 6
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-C.html">
+     Fourier Transforms
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-D.html">
+     Convolution and Autocorrelation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-questions-7-15.html">
+     Questions 7 to 15
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-E.html">
+     Discrete Fourier  (DFT)  and Fast Fourier transforms (FFT)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-questions-16-21.html">
+     Questions 16 to 21
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-F.html">
+     The Hadamard Transform: Encoding and Decoding
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-2D-Diffraction.html">
+     The Fourier transform in two dimensions: images and x-ray Diffraction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-tomography.html">
+     Computed Tomography
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-answers-1-6.html">
+     Answers 1-6
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-answers-7-15.html">
+     Answers 7-15
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-answers-16-21.html">
+     Answers 16-21
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/chapter-3/differen M1.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/chapter-3/differen M1.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#del-div-grad-laplacian-and-curl">
+   13.1 Del, div, grad, Laplacian, and curl
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#del-nabla">
+   13.2 Del,
+   <span class="math notranslate nohighlight">
+    \(\nabla\)
+   </span>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#grad-nabla-f">
+   13.3 Grad
+   <span class="math notranslate nohighlight">
+    \(\nabla f\)
+   </span>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#div-nabla-cdot-v">
+   13.4 Div,
+   <span class="math notranslate nohighlight">
+    \(\nabla \cdot v\)
+   </span>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#laplacian-nabla-cdot-nabla-f">
+   13.5 Laplacian,
+   <span class="math notranslate nohighlight">
+    \(\nabla\cdot\nabla f\)
+   </span>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#curl-nabla-times-pmb-v">
+   13.6 Curl,
+   <span class="math notranslate nohighlight">
+    \(\nabla \times \pmb{v}\)
+   </span>
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="differentiation-of-vectors">
+<h1>13 Differentiation of vectors<a class="headerlink" href="#differentiation-of-vectors" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="del-div-grad-laplacian-and-curl">
+<h2>13.1 Del, div, grad, Laplacian, and curl<a class="headerlink" href="#del-div-grad-laplacian-and-curl" title="Permalink to this headline">¶</a></h2>
+<p>There are four common vector operators involved in differentiation and the <em>del</em> operator. They are widely used in describing the physics of electrostatics, magnetism, and flowing liquids, and in the properties of fields in general. They are only infrequently met in chemistry or the biosciences.  Only the briefest outline is given here; see a specialist text such as ‘Div, Grad, Curl and All That’ (Shey 1993) for more details. The <em>del</em> symbol <span class="math notranslate nohighlight">\(\nabla\)</span> is also called nabla.</p>
+</div>
+<div class="section" id="del-nabla">
+<h2>13.2 Del, <span class="math notranslate nohighlight">\(\nabla\)</span><a class="headerlink" href="#del-nabla" title="Permalink to this headline">¶</a></h2>
+<p>The _vector operator ‘del’ is defined in the <span class="math notranslate nohighlight">\((\pmb{i, j, k})\)</span> basis as</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \nabla =\frac{\partial}{\partial x}\pmb{ i}+\frac{\partial}{\partial y}\pmb{ j}+\frac{\partial}{\partial z}\pmb{ k}\]</div>
+<p>and the <em>gradient</em> or rate of change of a scalar function <span class="math notranslate nohighlight">\(f(x,y,z)\)</span> is the vector</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle\nabla f=\frac{\partial f}{\partial x}\pmb{ i}+\frac{\partial f}{\partial y}\pmb{ j}+\frac{\partial f}{\partial z}\pmb{ k}\]</div>
+</div>
+<div class="section" id="grad-nabla-f">
+<h2>13.3 Grad <span class="math notranslate nohighlight">\(\nabla f\)</span><a class="headerlink" href="#grad-nabla-f" title="Permalink to this headline">¶</a></h2>
+<p>The gradient is a vector that gives the maximum rate of change of a function f and its magnitude in a given direction. For example, if the function is <span class="math notranslate nohighlight">\(f = \sin(x)yz^2\)</span> then the rate of change is the vector</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle\nabla f=\frac{\partial f}{\partial x}\pmb{ i}+\frac{\partial f}{\partial y}\pmb{ j}+\frac{\partial f}{\partial z}\pmb{ k}=\cos(x)yz^2\pmb{i}+\sin(x)z^2\pmb{j}+2\sin(x)yz\pmb{k}\]</div>
+<p>which can be resolved into components along the base vector’s <span class="math notranslate nohighlight">\(\pmb{i, j, k}\)</span> directions.</p>
+</div>
+<div class="section" id="div-nabla-cdot-v">
+<h2>13.4 Div, <span class="math notranslate nohighlight">\(\nabla \cdot v\)</span><a class="headerlink" href="#div-nabla-cdot-v" title="Permalink to this headline">¶</a></h2>
+<p>If a vector <span class="math notranslate nohighlight">\(v\)</span> is represented in the <span class="math notranslate nohighlight">\((\pmb{i, j, k})\)</span> basis as <span class="math notranslate nohighlight">\(\pmb{v} = a\pmb{i} + b\pmb{j} + c\pmb{k}\)</span> then the dot product with the vector <span class="math notranslate nohighlight">\(\nabla\)</span> is called the <em>divergence</em> and is a scalar defined as</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+\displaystyle \nabla \cdot v = &amp;\left(\frac{\partial }{\partial x}\pmb{ i}+\frac{\partial }{\partial y}\pmb{ j}+\frac{\partial }{\partial z}\pmb{ k}\right) \cdot (a\pmb{i}+b\pmb{j}+c\pmb{k})\\ 
+= &amp; \frac{\partial a}{\partial x}+\frac{\partial b}{\partial y}+\frac{\partial c}{\partial z} \end{align}\end{split}\]</div>
+<p>and the <span class="math notranslate nohighlight">\(a, b\)</span>, and <span class="math notranslate nohighlight">\(c\)</span> must depend on <span class="math notranslate nohighlight">\(x, y\)</span>, and <span class="math notranslate nohighlight">\(z\)</span> otherwise the differential would be zero. The base vector multiplication rules are <span class="math notranslate nohighlight">\(\pmb{i}\cdot \pmb{i}=1\)</span> and similarly for <span class="math notranslate nohighlight">\(\pmb{j}, \pmb{k}\)</span> and product between different vectors are zero because these base vectors have unit length and are orthogonal, i.e. at right angles to one another.</p>
+<p>Without specifying at what point we want the gradient to be calculated, the calculation cannot be continued further as was the case <span class="math notranslate nohighlight">\(\nabla f\)</span> calculated above. Suppose that the function is again <span class="math notranslate nohighlight">\(f = \sin(x)yz^2\)</span>  and the point is <span class="math notranslate nohighlight">\((\pi/2, 2, 3)\)</span> then the gradient, or rate of change at this point, is the vector <span class="math notranslate nohighlight">\(\nabla f = 0\pmb{i} + 9\pmb{j} + 12\pmb{k}\)</span>; its magnitude is the absolute value of the vector which is <span class="math notranslate nohighlight">\(\sqrt{81 + 144} = 15\)</span>. Furthermore suppose that we want the gradient from our point in the direction towards the origin <span class="math notranslate nohighlight">\((0,0,0)\)</span>. The vector to the origin is <span class="math notranslate nohighlight">\(\pmb{v} = -(\pi/2)\pmb{i} - 2\pmb{j} - 3\pmb{k}\)</span> which has magnitude <span class="math notranslate nohighlight">\(\sqrt{\pi^2/4+4+9}\)</span>. To make it a unit vector <span class="math notranslate nohighlight">\(\pmb{u}\)</span>, it is divided by its length</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \pmb{u}=\frac{-(\pi/2)\pmb{i} - 2\pmb{j} - 3\pmb{k}}{\sqrt{\pi^2/4+13}}\]</div>
+<p>The magnitude of the rate of change is therefore</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \nabla f\cdot\pmb{u}= \frac{(-(\pi/2)\pmb{i} - 2\pmb{j} - 3\pmb{k})\cdot(0\pmb{i} + 9\pmb{j} + 12\pmb{k})}{\sqrt{\pi^2/4+13}}=-11.18\]</div>
+<p>and lies in the direction given by <span class="math notranslate nohighlight">\(\nabla f = 0\pmb{i} + 9\pmb{j} + 12\pmb{k}\)</span>, and the maximum rate of change is the size of this vector which is <span class="math notranslate nohighlight">\(15\)</span>.</p>
+</div>
+<div class="section" id="laplacian-nabla-cdot-nabla-f">
+<h2>13.5 Laplacian, <span class="math notranslate nohighlight">\(\nabla\cdot\nabla f\)</span><a class="headerlink" href="#laplacian-nabla-cdot-nabla-f" title="Permalink to this headline">¶</a></h2>
+<p>The dot product of the operator del with itself is a scalar function called the <em>Laplacian</em>, which is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \nabla ^2 f=\nabla\cdot(\nabla f)=\frac{\partial^2 f}{\partial x^2}+\frac{\partial^2 f}{\partial y^2}+\frac{\partial^2 f}{\partial z^2}\]</div>
+</div>
+<div class="section" id="curl-nabla-times-pmb-v">
+<h2>13.6 Curl, <span class="math notranslate nohighlight">\(\nabla \times \pmb{v}\)</span><a class="headerlink" href="#curl-nabla-times-pmb-v" title="Permalink to this headline">¶</a></h2>
+<p>The cross product of del with a vector <span class="math notranslate nohighlight">\(v\)</span> is a vector called the curl</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} \displaystyle \nabla \times \pmb{v} = \begin{bmatrix}
+\pmb{i} &amp; \pmb{j} &amp; \pmb{k} \\
+\displaystyle\frac{\partial }{\partial x} &amp; \displaystyle\frac{\partial}{\partial y} &amp; \displaystyle\frac{\partial }{\partial z}\\
+a &amp; b &amp; c 
+\end{bmatrix}\end{split}\]</div>
+<p>This vector is best left as a determinant in which form it is easier to remember.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./chapter-3"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Godfrey Beddard<br/>
+        
+            &copy; Copyright 2022.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

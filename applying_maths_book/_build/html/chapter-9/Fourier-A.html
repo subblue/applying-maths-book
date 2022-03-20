@@ -53,7 +53,6 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="prev" title="Applying Maths in the Chemical &amp; Biomolecular Sciences" href="../intro.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -93,15 +92,42 @@
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../intro.html">
-   Applying Maths in the Chemical &amp; Biomolecular Sciences
+   Introduction
   </a>
  </li>
 </ul>
-<ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Fourier-A-B.html">
    Chapter 9 Fourier Series and Transforms
   </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Fourier-C.html">
+     5 Fourier Transforms
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="fourier-D.html">
+     7 Convolution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="fourier-E.html">
+     9 Discrete Fourier  (DFT)  and Fast Fourier transforms (FFT)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Fourier-F.html">
+     11 The Hadamard Transform: Encoding and Decoding
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -272,7 +298,8 @@
 <h2>1 Motivation and concept<a class="headerlink" href="#motivation-and-concept" title="Permalink to this headline">¶</a></h2>
 <p>The Taylor and Maclaurin series reconstruct functions as an infinite series in the powers <span class="math notranslate nohighlight">\(x^n\)</span>, and the coefficients needed to do this are the derivatives of the function. These series have rather tight restrictions placed upon them; the function must be differentiable <span class="math notranslate nohighlight">\(n\)</span> times over and the remainder must approach zero. These are described in Chapter 5. In a Fourier series, the expansion is performed instead, as trigonometric series in sines and cosines, with two sets of coefficients, <span class="math notranslate nohighlight">\(a_n\)</span> and <span class="math notranslate nohighlight">\(b_n\)</span>, to describe the <span class="math notranslate nohighlight">\(n^\text{th}\)</span> term, and which are evaluated by integration. The series formally extends to infinity, but in practice, at most only a few tens of terms are needed to replicate most functions to an acceptable level of approximation. The advantage of using a Fourier rather than a Taylor/Maclaurin series is that a wide class of functions can be described by the series, including discontinuous ones. However, by their very nature, Fourier series can only represent <em>periodic functions</em>, and this must not be forgotten. Periodic means that the function repeats itself; the repeat interval is normally taken to be <span class="math notranslate nohighlight">\(-\pi\)</span> to <span class="math notranslate nohighlight">\(+\pi\)</span> but can be extended to the range <span class="math notranslate nohighlight">\(-L\)</span> to <span class="math notranslate nohighlight">\(L\)</span> and <span class="math notranslate nohighlight">\(L\)</span> can even be made infinite.</p>
 <p>To illustrate that it is possible to make an arbitrary shaped function by adding a number of sine and cosine waves, four such waves are shown in Fig.1. It is possible to imagine, without any difficulty, that waveforms that are more complex can be formed by using more sine or cosine terms. The lowest and most complicated waveform is simply the sum of the individual waves, and repeats itself with a period of 2<span class="math notranslate nohighlight">\(\pi\)</span>. This waveform could be the signal that is measured on an oscilloscope or spectrometer and recorded on a computer. It might alternatively, be part of an image that is formed from adjacent columns of different waveforms. Periodic components present in a signal represent information in the waveform or image can be retrieved by performing a Fourier transform. This unravelling process is discussed later on but now the Fourier series is considered.</p>
-<img src = 'fourier-fig1.png' alt='Drawing' style='width:300px;'/>
+<p><img alt="Drawing" src="../_images/fourier-fig1.png" /></p>
+<img src='fourier-fig1.png' alt= 'Drawing' style='width: 450px'/>
 <p><strong>Fig 1</strong>. A complex and <em>periodic</em> waveform or function is constructed out of the sum of sine and/or cosine waves. The complicated waveform, repeats itself with a period of 2<span class="math notranslate nohighlight">\(\pi\)</span>. In the Fourier series, the reconstruction of this waveform will require many more sine and cosine terms to reconstruct its form than are used to generate it, because the Fourier series only represents a function <em>exactly</em> when an infinite number of terms are included in the summation.</p>
 </div>
 <div class="section" id="the-fourier-series">
@@ -322,9 +349,9 @@ changed to <span class="math notranslate nohighlight">\(\pi x/L\)</span>. The se
 <div class="math notranslate nohighlight">
 \[\displaystyle  \int\limits_{-\infty}^{+\infty}\cos(mx)\sin(nx)dx = 0  \tag{9}\]</div>
 <p>To convince you that the symmetry makes the integral zero, which is the area under the curve, a curve is plotted below, see figure 2. The curve, while complicated, is inverted about <span class="math notranslate nohighlight">\(x\)</span> = 0 so that the area <span class="math notranslate nohighlight">\(\gt\)</span> 0 is equal and opposite to that <span class="math notranslate nohighlight">\(\lt\)</span> 0. More details on odd and even functions is given in the next section.</p>
-<img src='fourier-fig1a.png' alt='Drawing' style='width:350px;'/> 
-Figure 2. An odd function such as shown above has zero integral when evaluated over a symmetrical region about zero.
-____
+<img src='attachment:fourier-fig1a.png' alt='Drawing' style='width:350px;'/> 
+<p>Figure 2. An odd function such as shown above has zero integral when evaluated over a symmetrical region about zero.</p>
+<hr class="docutils" />
 <p>The product of two cosines makes the integral</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \int\limits_{-\pi}^\pi \cos(mx)\cos(nx)dx = \pi\delta_{n,m}   \tag{10}\]</div>
@@ -373,7 +400,7 @@ ____
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Fourier-A_6_0.png" src="../_images/Fourier-A_6_0.png" />
+<img alt="../_images/Fourier-A_7_0.png" src="../_images/Fourier-A_7_0.png" />
 </div>
 </div>
 <p>Adding the limits <span class="math notranslate nohighlight">\(\pm \pi\)</span> produces zero for the sine terms and the remaining cosine produces <span class="math notranslate nohighlight">\(\displaystyle a_n=(-1)^n\frac{4}{n^3}\)</span>. All the <span class="math notranslate nohighlight">\(b_n\)</span>=0 thus using eqn. 4. the Fourier series for <span class="math notranslate nohighlight">\(x^2\)</span> is</p>
@@ -417,7 +444,7 @@ ____
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Fourier-A_8_0.png" src="../_images/Fourier-A_8_0.png" />
+<img alt="../_images/Fourier-A_9_0.png" src="../_images/Fourier-A_9_0.png" />
 </div>
 </div>
 <p><strong>Figure 3</strong>. Left: Plot of <span class="math notranslate nohighlight">\(x^2\)</span> and its Fourier series to <span class="math notranslate nohighlight">\(n\)</span> = 3 showing a poor fit to the true function. More terms produce a better fit but only over the range <span class="math notranslate nohighlight">\(\pm \pi\)</span> as shown in the centre panel where 20 terms are included in the summation. This plot also shows how the fit is only over the range <span class="math notranslate nohighlight">\(\pm \pi\)</span> and then it repeats itself. On the right are shown the coefficients <span class="math notranslate nohighlight">\(a_n\)</span> and shows how rapidly their value decreases as <span class="math notranslate nohighlight">\(n\)</span> increases.</p>
@@ -449,14 +476,7 @@ ____
               
         
             <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="../intro.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Applying Maths in the Chemical &amp; Biomolecular Sciences</p>
-        </div>
-    </a>
+<div class='prev-next-area'>
 </div>
         
         </div>

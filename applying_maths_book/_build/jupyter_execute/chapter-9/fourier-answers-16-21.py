@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# Godfrey Beddard 'Applying Mathis in the Chemical & Biomolecular Sciences' Chapter 9
+# ## Solutions Q 16 - 21 
 
 # In[1]:
 
@@ -16,9 +16,8 @@ init_printing()                      # allows printing of SymPy results in types
 plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 
-# # Answers 16-21
-# 
-# **Q16 answer** Using the ideas presented in the 'strategy' expanding the integral forms,
+# ### Q16 answer
+# Using the ideas presented in the 'strategy' expanding the integral forms,
 # 
 # $$\displaystyle G^1(u)=2+\frac{2\int E(t)E(u+t)dt}{\int E(t)^2dt}$$
 # 
@@ -205,7 +204,8 @@ plt.plot()
 plt.show()
 
 
-# **Q17 answer**  **(a)** The integration for the $\displaystyle e^{-|x|/a}$ pulse is $\displaystyle \int_{-\infty}^\infty e^{-|x|/a}e^{-|x+u|/a}dx$ which is simplified, as the autocorrelation is symmetric about zero, by doubling the integral from 0 to $\infty$, in which case the absolute values are not needed. The result is $\displaystyle 2\int_0^\infty e^{-2x/a}e^{-u/a}dx = ae^{-u/a}$. However, when plotting the absolute values must be replaced as $u$ can be negative. Thus $\displaystyle A(u) = ae^{-|u|/a}$.
+# ### Q17 answer
+# **(a)** The integration for the $\displaystyle e^{-|x|/a}$ pulse is $\displaystyle \int_{-\infty}^\infty e^{-|x|/a}e^{-|x+u|/a}dx$ which is simplified, as the autocorrelation is symmetric about zero, by doubling the integral from 0 to $\infty$, in which case the absolute values are not needed. The result is $\displaystyle 2\int_0^\infty e^{-2x/a}e^{-u/a}dx = ae^{-u/a}$. However, when plotting the absolute values must be replaced as $u$ can be negative. Thus $\displaystyle A(u) = ae^{-|u|/a}$.
 # 
 # At the fwhm let $u=\tau$ and $\displaystyle A(u)=1/2= ae^{-\tau/a}$ thus $\tau=2a\ln(2a)$. The laser pulse fwhm is $2a\ln(2)$ the autocorrelation is thus $\ln(2a)/\ln(2)$ wider.
 # 
@@ -251,11 +251,12 @@ for i in range(6):       # 6 iterations are enough
     print(x)
 
 
-# which shows that the half width at half maximum (fwhm)  is 2$\cdot$ 1.64. In comparison the same value to the sech<sup>2</sup> pulse is 2$\cdot$ 0.88 thus the autocorrelation is $\approx$ 1.86 times wider. 
+# which shows that the half width at half maximum (fwhm)  is 2$\cdot$ 1.64. In comparison the same value to the $\mathrm{sech}^2$ pulse is 2$\cdot$ 0.88 thus the autocorrelation is $\approx$ 1.86 times wider. 
 # 
-# **Q18 answer** The acoustic pulse, $S(t)$ with $a$ = 0 compared with $a$ = 60,shows that the frequency is higher at short times than at longer ones; a down chirp. see fig 58. The calculated autocorrelation of the chirped and un - chirped pulse, are shown in Fig. 59. The calculation is essentially the same as in section 5. 
+# ### Q18 answer
+# The acoustic pulse, $S(t)$ with $a$ = 0 compared with $a$ = 60,shows that the frequency is higher at short times than at longer ones; a down chirp. see fig 58. The calculated autocorrelation of the chirped and un - chirped pulse, are shown in Fig. 59. The calculation is essentially the same as in section 5. 
 # 
-# <img src="fourier-fig58.png" alt='Drawing' style='width:600px;'/>
+# ![Drawing](fourier-fig58.png)
 # 
 # Figure 58. Left. An acoustic pulse $S(t)$ but without a chirp, $a$ = 0. A chirped  pulse (right) mimicking that emitted by a bat when close to its prey. 
 # 
@@ -263,19 +264,22 @@ for i in range(6):       # 6 iterations are enough
 # 
 # The un-chirped pulse $a$ = 0 produces a linearly decreasing autocorrelation but which is so long that poor range discrimination would be achieved and the bat would hardly ever succeed in catching its prey. The integral of this autocorrelation also increases slowly with time and hence distance, again indicating that the bat would find it difficult to discriminate the prey from something else. The chirped pulse has a small autocorrelation amplitude at long times, therefore, its summation is large and constant when the bat is far from the prey, but it decreases rapidly as it approaches within 3 cm of its target allowing sharp range discrimination. Figure 59 shows the summed autocorrelations together with the experimental data given in the question.
 # 
-# <img src="fourier-fig59.png" alt='Drawing' style='width:600px;'/>
+# ![Drawing](fourier-fig59.png)
+# 
 # Figure 59. Left: Autocorrelations of bat pulses $S(t)$ with no chirp (grey dotted line) and with down chirp (solid green line). Right: The sum of the autocorrelation with time, converted into distance, for the same two pulses together with the experimental data which is the percentage correct response vs difference in distance to the target. (Data was measured from Simmons 1971, Fig. 2.)
 # 
 # ____
 # 
 # The summation in figure 59 was calculated as follows where $A_0$ is the autocorrelation.
 # 
-# S0 = [ 0.0 for i in range( numt) ]  <br> 
-# for i in range( numt ): S0[i] = sum( [ abs( A0[ k ] ) for k in range( i ) ] )
+# $\text{S0 = [ 0.0  for  i  in  range( numt) ] }$
 # 
-# **Q 19 answer** The method to use similar to that used in the example. However, when the raw data is plotted the signal is buried in the noise, Fourier transforming produces an ambiguous result where it is not clear where to set the filter to extract the data. Apodising, by multiplying the data by an exponential decreases the noise in the longer part of the data and helps to identify the frequencies present. The initial FID and its Fourier transform is shown in the figure.
+# $\text{for  i  in  range( numt ): S0[i] = sum( [ abs( A0[ k ] ) for k in range( i ) ] )}$
 # 
-# <img src="fourier-fig60a.png" alt='Drawing' style='width:600px;'/>
+# ### Q19 answer
+# The method to use similar to that used in the example. However, when the raw data is plotted the signal is buried in the noise, Fourier transforming produces an ambiguous result where it is not clear where to set the filter to extract the data. Apodising, by multiplying the data by an exponential decreases the noise in the longer part of the data and helps to identify the frequencies present. The initial FID and its Fourier transform is shown in the figure.
+# 
+# ![Drawing](fourier-fig60a.png)
 # 
 # fig 60 Left: ideal FID of two spins. Right: close-up of the spectrum (imag part of transform) showing two lines, one at each frequency.
 # 
@@ -303,32 +307,32 @@ fft0 = np.fft.rfft(fid0).imag    # as FID contais sine waves FFT is imaginary.
 #.. plots shwon in the next figures
 
 
-# <img src='fourier-fig60.png' alt='Drawing' style='width=600px;'/>
+# ![Drawing](fourier-fig60.png)
 # 
 # Figure 61. Noise added to the FID and then transformed to give a noisy spectrum of which only the imag part is shown. It is clear from the FFT that it is hard to determine which peaks are due to the data and which due to noise.
-# 
-# 
-# __
+# _____
 # 
 # The figure shows that data is clearly swamped by noise. The next step is to apodise by multiplying by an exponential. This decreases the noise relative to the signal as this is largest at earlier times. The decay time can be chosen by trial and error  to best illustrate the features wanted.
 # 
 # #.. define a new list to hold the apodised FID
 # 
-# fid1 = [0 for i in range( n )]          # make new list to hold new FID
-# for i in range(n):
-#  >   fid1[ i ] = fid0[i]*np.exp(-i/1000)
+# $\text{fid1 = [0 for i in range( n )]  }\qquad $ # make new list to hold new FID
+# $\text{for i in range(n):}$
 # 
-# fft1 = np.fft.rfft( fid1 ).imag    # calculate FFT 
+# $\qquad \text{    fid1[ i ] = fid0[i]*np.exp(-i/1000)}$
+# 
+# $\text{fft1 = np.fft.rfft( fid1 ).imag  }\qquad $ # calculate FFT 
 # 
 # #.... plot data as above 
 # 
-# <img src="fourier-fig62.png" alt='Drawing' style='width:550px;'/>
+# ![Drawing](fourier-fig62.png)
 # 
 # Figure 62. The apodised FID (left) is transformed into the spectrum thereby retrieving the two frequencies. The original frequencies, although not perfectly isolated,  are at approx 0.2 and can clearly be identified from the noise.
 # 
 # ____
 # 
-# **Q 20 answer** Plotting the data with and without noise, shows that the pulse lasts for about 2 ps, and examining this close to the maximum time, indicates that the smallest period is about 60 fs. Therefore, $n$ = 2<sup>12</sup> points will be more than adequate for the Fourier transforms.
+# ### Q20 answer
+# Plotting the data with and without noise, shows that the pulse lasts for about 2 ps, and examining this close to the maximum time, indicates that the smallest period is about 60 fs. Therefore, $n$ = 2<sup>12</sup> points will be more than adequate for the Fourier transforms.
 # 
 # The pulse has the form $\displaystyle \sin(x^2/200^2 )\exp(- (x-800.0)^2/200.0^2)$ and the noise, with an amplitude from $\pm$1, is added by including randn(). The plot shows the chirped pulse (pure pulse), and with the noise added, this forms the 'experimental' data. The pure pulse and the recovered data are shown in the second set of figures below. 
 
@@ -374,11 +378,12 @@ fft1 = np.fft.irfft(filter)
 plt.plot(t,pulse,color='red',linewidth=3,linestyle='dotted')
 plt.plot(t[0:n-2],fft1[0:n],color='gray',linewidth=2)
 plt.xlabel('time /fs')
-plt.title('pure (green dotted) and recovered signal')
+plt.title('pure (red dotted) and recovered signal')
 plt.show()
 
 
-# **Q21 answer** The recursive algorithm below is based on the equation in the text. The data is assumed to have been calculated elsewhere and put into array called data, the smoothed data is called sdata.
+# ### Q21 answer
+# The recursive algorithm below is based on the equation in the text. The data is assumed to have been calculated elsewhere and put into array called data, the smoothed data is called sdata.
 
 # In[18]:
 

@@ -1,0 +1,1765 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modelling data &#8212; Applying Maths in the Chemical &amp; Biomolecular Sciences</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Questions 4 - 9" href="analysis-Q4-9.html" />
+    <link rel="prev" title="Questions 1 - 3" href="analysis-Q1-3.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/book-cover.jpg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Applying Maths in the Chemical & Biomolecular Sciences</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Introduction
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-1/chapter1-intro.html">
+   1. Numbers, Equations, Operators, and Algorithms.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-A.html">
+     Numbers to Algorithms
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-Q1-7.html">
+     Questions 1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-B.html">
+     Trigonometric functions.  Waves
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-Q8-16.html">
+     Questions 8 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-C.html">
+     Sophisticated Counting: permutations, combinations and probability
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-Q17-34.html">
+     Questions 17 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-D.html">
+     10 Modulo arithmetic, delta functions, series, estimation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-Q35-39.html">
+     Questions 35 - 39
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-answers-1-7.html">
+     Solutions Q1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-answers-8-16.html">
+     Solutions Q8 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-answers-17-34.html">
+     Solutions Q17 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-answers-35-39.html">
+     Solutions Q35 - 39
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-2/chapter2-intro.html">
+   2. Complex numbers.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2/chapter2-A.html">
+     Real, imaginary,conjugate and modulus
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2/chapter2-Q-1-9.html">
+     Questions 1 - 9
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2/chapter2-B.html">
+     De Moivre’s theorem and integer powers of complex numbers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2/chapter2-Q-10-13.html">
+     Questions 10 -13
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2/chapter2-C.html">
+     Euler’s theorem
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2/chapter2-Q-14-27.html">
+     Questions 14 - 27
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2/chapter2-answers.html">
+     Solutions Q1 - 27
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-3/differen-intro.html">
+   3. Differentiation.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-A.html">
+     Differentiation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-B.html">
+     Trig functions, logs, power, reciprocals and integrals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-C-Q-4-11.html">
+     Questions 1-11
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-D.html">
+     Product rule and function of function or chain rule.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-E-Q-12-42.html">
+     Questions 12-42
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-F.html">
+     Limits, maxima/minima and Calculus of Variations.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-G-Q-43-73.html">
+     Questions 43 - 73
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-H.html">
+     Numerically finding the roots of an equation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-I-Q-74-85.html">
+     Questions 74 - 85
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-J.html">
+     Minimizing or maximizing with constraints: Lagrange Undetermined Multipliers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-K-Q-86-92.html">
+     Questions 86 - 92
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-L.html">
+     Partial differentiation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-M-Q-93-114.html">
+     Questions 93-114
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-M1.html">
+     Differentiation of vectors
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-N-answers-1-11.html">
+     Solutions Q 1-11
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-O-answers-12-42.html">
+     Solutions Q 12-42
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-P-answers-43-73.html">
+     Solutions Q 43 - 73
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-Q-answers-74-85.html">
+     Solutions Q 74 - 85
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-R-answers-86-92.html">
+     Solutions Q 86 - 94
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-S-answers-93-114.html">
+     Solutions Q 93-114
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-4/integration-intro.html">
+   4. Integration.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-A.html">
+     Integration basics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-Q1-14.html">
+     Questions 1-14
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-B.html">
+     Integration by substitution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-Q15-30.html">
+     Questions 15-30
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-C.html">
+     Using parametric equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-Q31-48.html">
+     Questions 31 - 48
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-D.html">
+     Calculating an Average Value.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-Q49-72.html">
+     Questions 49 - 72
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-E.html">
+     The Variational Method in Quantum Mechanics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-Q73-77.html">
+     Questions 73 - 77
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-F.html">
+     Multiple integrals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-Q78-86.html">
+     Questions 78 - 86
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-G.html">
+     Calculating the energy of a chemical bond using molecular orbitals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-H.html">
+     Line integrals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-Q87-96.html">
+     Questions 87 - 96
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-answers-1-14.html">
+     Solutions Q1 - 14
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-answers-15-30.html">
+     Solutions Q15 - 30
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-answers-31-48.html">
+     Solutions Q31 - 48
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-answers-49-72.html">
+     Solutions Q49 - 72
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-answers-73-96.html">
+     Solutions Q73 - 96
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-5/chapter-5-intro.html">
+   5. Summations, Series and expansion of Functions.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-A.html">
+     Series, averages, partition functions, DNA melting, atom entropy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-B-Q1-13.html">
+     Questions 1 - 13
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-E.html">
+     Maclaurin and Taylor series expansions. Paramagnetic spins
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-F-Q14-34.html">
+     Questions 14 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-G-Q35-44.html">
+     Questions 35 - 44
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-perturbation-A.html">
+     Perturbation Theory
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-perturbation-B-Q45-48.html">
+     Questions 45 - 48
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-perturbation-C.html">
+     Quantum superposition and wavepackets.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-perturbation-D-Q49-52.html">
+     Questions 49 - 52
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-answers-1-7.html">
+     Solutions Q 1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-answers-8-13.html">
+     Solutions Q8 - 13
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-answers-14-26.html">
+     Solutions Q 14 - 26
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-answers-27-32.html">
+     Solutions Q27 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-answers-33-44.html">
+     Solutions Q33 - 44
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-answers-45-52.html">
+     Solutions Q45 - 52
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-6/vectors-intro.html">
+   6. Vectors.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-A.html">
+     Vector basics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-Q1-24.html">
+     Questions 1 - 24
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-B.html">
+     Projections and components
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-Q25-32.html">
+     Questions 25 - 32
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-C.html">
+     Axes need not be right-angled or of equal length
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-Q33-38.html">
+     Questions 33 - 38
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-D.html">
+     Basis sets with more than three dimensions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-Q39-46.html">
+     Questions 39 - 46
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-E.html">
+     Cross product or vector product
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-Q47-52.html">
+     Questions 47 - 52
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-F.html">
+     Torsion or dihedral angles
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-Q53-61.html">
+     Questions 53 - 61
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-G.html">
+     Torque and angular momentum
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-answers-Q1-24.html">
+     Solutions Q1 - 24
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-answers-Q25-32.html">
+     Solutions Q25 - 32
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-answers-Q33-38.html">
+     Solutions Q33 - 38
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-answers-Q39-46.html">
+     Solutions Q38 - 46
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-answers-Q47-52.html">
+     Solutions Q47 - 52
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-answers-Q53-61.html">
+     Solutions Q53 - 61
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-7/matrices-intro.html">
+   7. Matrices
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-A.html">
+     Determinants
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q1-10.html">
+     Questions  1 - 10
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-B.html">
+     Matrices
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q11-16.html">
+     Questions  11 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-C.html">
+     Molecular Group Theory
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q17-30.html">
+     Questions  17 - 30
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-D.html">
+     Rotation matrices: moving molecules
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q31-34.html">
+     Questions 31 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-E.html">
+     Matrices in optics and designing laser cavities
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q35-39.html">
+     Questions 35 - 39
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-F.html">
+     Polarizing optics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q40-44.html">
+     Questions 40 - 44
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-G.html">
+     Solving equations using matrices. Eigenvectors &amp; Eigenvalues.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q45-50.html">
+     Questions 45 - 50
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-H.html">
+     Rate equations and Chemical Kinetics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q51-54.html">
+     Questions 51 - 54
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-I.html">
+     Molecular vibrations and pendulums
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q55-58.html">
+     Questions 55 - 58
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-J.html">
+     Calculating a bond length using moments of inertia
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q59-62.html">
+     Questions 59 - 62
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-answersQ1-10.html">
+     Solutions Q1 - 10
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-answersQ11-16.html">
+     Solutions Q11 - 30
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-answersQ17-30.html">
+     Solutions Q17 - 30
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-answersQ31-34.html">
+     Solutions Q31 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-answersQ35-39.html">
+     Solutions Q35 - 39
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-answersQ40-44.html">
+     Solutions Q40 - 44
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-answersQ45-50.html">
+     Solutions Q45 - 50
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-answersQ51-54.html">
+     Solutions Q51 - 54
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-answersQ55-58.html">
+     Solutions Q55 - 58
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-answersQ59-61.html">
+     Solutions Q59 - 61
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-8/matricesQM-intro.html">
+   8. Matrices in Quantum Mechanics
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-8/matricesQM-A.html">
+     Chapter 8 Matrices in Quantum Mechanics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-8/matricesQM-Q1-7.html">
+     Questions 1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-8/matricesQM-B.html">
+     Basis sets and bra-ket algebra
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-8/matricesQM-Q8-12.html">
+     Questions 8 - 12
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-8/matricesQM-C.html">
+     Continuous basis sets
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-8/matricesQM-answers1-7.html">
+     Solutions Q1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-8/matricesQM-answers8-12.html">
+     Solutions Q8 - 12
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-9/Fourier-intro.html">
+   9. Fourier Series and Transforms.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-A-B.html">
+     Fourier series, Gibbs phenomenon, generalised series.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-questions-1-6.html">
+     Questions 1 - 6
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-C.html">
+     Fourier Transforms
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-D.html">
+     Convolution and Autocorrelation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-questions-7-15.html">
+     Questions 7 - 15
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-E.html">
+     Discrete Fourier  (DFT)  and Fast Fourier transforms (FFT)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-questions-16-21.html">
+     Questions 16 - 21
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-F.html">
+     The Hadamard Transform: Encoding and Decoding
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-2D-Diffraction.html">
+     The Fourier transform in two dimensions: images and x-ray Diffraction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-tomography.html">
+     Computed Tomography
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-answers-1-6.html">
+     Solutions Q 1 - 6
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-answers-7-15.html">
+     Solutions Q 7 - 15
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-answers-16-21.html">
+     Solutions Q 16 - 21
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-10/Diff-eqns-intro.html">
+   10. Differential Equations.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-A.html">
+     Differential Equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-Q1-23.html">
+     Questions 1 - 23
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-B.html">
+     Integrating factors can solve differential equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-C.html">
+     The ‘D’ operator.  Solving linear differential equations with constant coefficients
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-D.html">
+     Simultaneous equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-E.html">
+     Linear equations with variable coefficients
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-F.html">
+     Partial Differential Equations, PDE
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-G.html">
+     PDE examples continued
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-Q24-37.html">
+     Questions 24 - 37
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-answers-1-21.html">
+     Solutions Q1 - 21
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-answers-22-37.html">
+     Solutions Q22 - 37
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-11/num-methods-intro.html">
+   11. Numerical Methods
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-A.html">
+     Numerical Methods
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-Q1-7.html">
+     Questions 1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-B.html">
+     Numerical solution of differential equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-Q8-12.html">
+     Questions 8 - 12
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-C.html">
+     Coupled equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-Q13-16.html">
+     Questions 13 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-D.html">
+     The phase plane, nullclines, and stable points
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-Q17-20.html">
+     Questions 17 - 20
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-E.html">
+     Reaction schemes with feedback
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-Q21-34.html">
+     Questions 21 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-F.html">
+     Boundary value problems: Shooting method
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-Q35-40.html">
+     Questions 35 - 40
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-answers1-7.html">
+     Solutions Q1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-answers8-12.html">
+     Solutions Q8 - 12
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-answers13-16.html">
+     Solutions Q13 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-answers17-20.html">
+     Solutions Q17 - 20
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-answers21-34.html">
+     Solutions Q21 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-answers35-40.html">
+     Solutions Q35 - 40
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-12/monte-carlo-intro.html">
+   12. Monte Carlo Methods
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+  <label for="toctree-checkbox-12">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-A.html">
+     Monte - Carlo
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-Q1-6.html">
+     Questions 1 - 6
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-B.html">
+     Solving rate equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-Q7-10.html">
+     Questions 7 - 10
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-CC.html">
+     Monte Carlo Simulations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-C.html">
+     4 Forster or dipole - dipole energy transfer
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-Q11-17.html">
+     Questions 11 - 17
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-D.html">
+     The Metropolis algorithm
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-answers1-6.html">
+     Solutions Q1 - 6
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-answers7-10.html">
+     Solutions Q7 - 10
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-answers11-17.html">
+     Solutions Q11 - 17
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="analysis-intro.html">
+   13. Data Analysis
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+  <label for="toctree-checkbox-13">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="analysis-A.html">
+     Characterizing experimental data. Accuracy, precision, mean and standard deviation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="analysis-Q1-3.html">
+     Questions 1 - 3
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Modelling data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="analysis-Q4-9.html">
+     Questions 4 - 9
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="analysis-C.html">
+     Modelling data is simpler using matrices
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="analysis-Q10-11.html">
+     Questions 10 - 13
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="analysis-D.html">
+     Non-linear least squares, gradient expansion, the Levenberg - Marquardt Method
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="analysis-answers1-11.html">
+     Solutions Q1 -11
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../chapter-1/chapter1-E.html">
+   SI units, Rounding &amp; converting units, Glossary.
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../references/References.html">
+   References
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../references/Python%20crib.html">
+   Some basic Python instructions with a few examples.
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/chapter-13/analysis-B.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/chapter-13/analysis-B.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Modelling data
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#concept">
+     5.1 Concept
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-least-squares-calculation-for-a-straight-line">
+     5.2 The least squares calculation for a straight line
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#residuals">
+     5.3 Residuals
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#chi-squared-chi-2">
+     5.4 Chi squared,
+     <span class="math notranslate nohighlight">
+      \(\chi^2\)
+     </span>
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#confidence-intervals">
+     5.5 Confidence intervals
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-analysis-of-variance-anova-table">
+     5.6 The analysis of variance (ANOVA) table
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#correlation-coefficients">
+   5.7 Correlation coefficients
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="modelling-data">
+<h1>Modelling data<a class="headerlink" href="#modelling-data" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import all python add-ons etc that will be needed later on</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">quad</span><span class="p">,</span><span class="n">odeint</span>
+<span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">t</span><span class="p">,</span> <span class="n">norm</span><span class="p">,</span> <span class="n">chi2</span><span class="p">,</span> <span class="n">f</span>
+<span class="n">init_printing</span><span class="p">()</span>                      <span class="c1"># allows printing of SymPy results in typeset maths format</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;font.size&#39;</span><span class="p">:</span> <span class="mi">14</span><span class="p">})</span>  <span class="c1"># set font size for plots</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="concept">
+<h2>5.1 Concept<a class="headerlink" href="#concept" title="Permalink to this headline">¶</a></h2>
+<p>In many situations, the purpose of an investigation is to obtain an equation (regression model) that can be used to predict the value of one variable by knowledge of others. Probably the most useful and most applied method of doing this is the <em>least squares</em> method. The basic idea is shown in figure 7, where the square of the <span class="math notranslate nohighlight">\(y\)</span> displacement from the line to each data point, is minimized. The minimization is only along <span class="math notranslate nohighlight">\(y\)</span> because it is assumed that the <span class="math notranslate nohighlight">\(x\)</span> values are known exactly. By minimizing these displacements with an assumed model of the data, a straight line for example, the best fit to the data is obtained, and the calculation produces the slope and intercept of the best fitting line. Furthermore, the ‘goodness’ of fit can be made quantitative, allowing different theoretical models that might describe the data to be compared with one another. Different sets of data can also be compared. The least squares is a parametric method because a (parameterised) function is fitted to data, there are non-parametric methods, such as principal component analysis (section 13) that seek to understand the data without knowing the functional form.</p>
+<p>Suppose that in a chemical reaction the product yield is proportional to the pressure. Using the limited number of measurements available, it would be appropriate to calculate a least squares fit to the data to predict the yield that is most likely to occur at any given pressure. This information could then be used to control the reaction in some form of feedback loop. Similarly, if in a reaction the concentration of a compound vs time is measured, this can then be analysed using a least squares method to obtain the rate constant. Taking this further, if the rate constants vs temperature are measured, then an Arrhenius plot can be made and, by a second least squares analysis, the activation energy obtained.</p>
+<p>While the least squares method is extremely useful and universally used, there are some pitfalls to avoid. A straight line can be fitted to any set of data; it is only a matter of how well the line fits and whether this fit is acceptable. Several statistical tests can be used to check this. Fitting is not restricted to straight lines, and quadratic or higher polynomials can be used, as can exponentials or sine and cosines. The function used should always be based on the underlying science. Any set of data could fit equally well to several different functions and the more complicated the function, a polynomial or sum of several exponentials for example, the larger the number of variable parameters will be and the better the fit is going to be. Hence the quip, ‘with enough parameters you can fit the shape of an elephant’. However, the fit may describe the data but have no relationship at all to the underlying science, in which case nothing has been achieved because the parameters obtained have no meaning.</p>
+<p><img alt="Drawing" src="../_images/analysis-fig7.png" /></p>
+<p>Figure 7. The displacements are assumed to be Gaussian distributed. The line is <span class="math notranslate nohighlight">\(Y\)</span>, the experimental points, <span class="math notranslate nohighlight">\(y_i\)</span>. The square of all the displacements is minimized.</p>
+<hr class="docutils" />
+<p>Another pitfall is to make false correlation between observables. The reading age of children shows a very good linear relationship to their shoe size, but to suggest that a child with large shoes must be good at reading is clearly nonsense. The obvious correlation is that older children are generally better at reading than younger ones. A less obvious relationship is found in the rate of the rotational diffusion <span class="math notranslate nohighlight">\(D\)</span> of molecules in the same solvent. This can be measured by observing a molecule’s fluorescence through polarizers. A good linear correlation is found between D and the reciprocal of the molecular mass. This is, however, false. The true correlation is with molecular volume <span class="math notranslate nohighlight">\(V\)</span>, which for a limited class of molecules, such as aromatics or dye molecules, has a similar proportionality to mass. The Stokes - Einstein equation <span class="math notranslate nohighlight">\(D = k_BT/(6\eta V)\)</span>, where <span class="math notranslate nohighlight">\(\eta\)</span> is the viscosity, shows that molecular volume is the important quantity. The <span class="math notranslate nohighlight">\(D\)</span> vs reciprocal mass correlation can now easily be tested; an iodo-derivative has a far greater mass but not much greater volume than the protonated molecule. Remember that a strong observed correlation between the variables does not imply a causal relationship.</p>
+<p>The final thing to look out for when using least squares is outliers. These are data points well away from the trend indicated by other points. It may be argued that these can be ignored as being due to faulty experimentation, but if this is not the case these points have to be dealt with and in Section 3.6 such a test was described. The least squares method is inherently very sensitive to these points, because the square of the deviation is used. It is often quite clear that the line does not fit the data and is pulled away from what one would expect to see as the fit; see figure 15. In this case, a more robust method such as <em>least absolute deviation</em> is required, Section 6.8, without removing data points.</p>
+</div>
+<div class="section" id="the-least-squares-calculation-for-a-straight-line">
+<h2>5.2 The least squares calculation for a straight line<a class="headerlink" href="#the-least-squares-calculation-for-a-straight-line" title="Permalink to this headline">¶</a></h2>
+<p>Suppose that the straight line</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle Y=a_0 +b_0x\]</div>
+<p>is proposed to describe the data. In a least squares analysis, the test is to determine whether the experimental data y follows the equation</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle y_i =a_0 +b_0x_i +\epsilon_i, \quad i=1,2,\cdots n\]</div>
+<p>where <span class="math notranslate nohighlight">\(\epsilon\)</span> is a random error with a mean of zero and standard deviation of <span class="math notranslate nohighlight">\(\sigma\)</span>. The least squares method produces the best constants <span class="math notranslate nohighlight">\(a_0\)</span> and <span class="math notranslate nohighlight">\(b_0\)</span> that describe the data, in the sense that the <span class="math notranslate nohighlight">\(Y\)</span> values calculated are the most probable values of the observations. This is based on the assumption that the data are Gaussian (normally) distributed as is expected to be the case from the central limit theorem.</p>
+<p>What the least squares method does is to minimize the square of the displacement between the values calculated from a ‘model’ function and the experimental data points <span class="math notranslate nohighlight">\(y\)</span>. Figure 7 shows the displacement for one point and a Gaussian distribution from which that point could have been produced. The statistic used to assess the goodness of fit is called ‘chi squared’ <span class="math notranslate nohighlight">\(\chi^2\)</span> and is defined as</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \chi^2=\sum_{i=1}^nw_i(y_i-Y_i)^2\tag{25}\]</div>
+<p>where <span class="math notranslate nohighlight">\(y\)</span> is the experimental data, <span class="math notranslate nohighlight">\(Y\)</span> the model set of estimated data, and <span class="math notranslate nohighlight">\(w\)</span> the weighting. The ideal weighting is <span class="math notranslate nohighlight">\(w_i = 1/\sigma_i^2\)</span> . The <span class="math notranslate nohighlight">\(\chi^2\)</span> forms a distribution and the chance that a certain value can be obtained is calculated in a similar way as for the normal or <span class="math notranslate nohighlight">\(t\)</span> distributions, see Section 5.4.</p>
+<p>On the basis that the deviation of each experimental data point from its true mean value is normally distributed, the probability of observing the <span class="math notranslate nohighlight">\(y_i\)</span> data points is the product of individual normal distributions, which can be written as</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle p= \left(\frac{h}{\sqrt{\pi}}\right)^n\exp\left( -h^2\sum_{i=1}^nw_i(y_i-Y_i)^2\right)\]</div>
+<p>(<span class="math notranslate nohighlight">\(h=1/\sqrt{2\sigma^2}\)</span>) The most likely values are obtained when this probability is at its maximum, and this is found when <span class="math notranslate nohighlight">\(\sum_{i=1}^nw_i(y_i-Y_i)^2\)</span> has a minimum. This is the same as minimizing the <span class="math notranslate nohighlight">\(\chi^2\)</span> therefore this is used as a measure of the ‘goodness of fit’ of the model function to the data. The minimum <span class="math notranslate nohighlight">\(\chi^2\)</span> is found by differentiating this with respect to each of the parameters in the model function. This approach is quite general and is called a Maximum Likelihood method.</p>
+<p>To fit the straight-line model <span class="math notranslate nohighlight">\(Y = a_0 + b_0\)</span>x to experimental data <span class="math notranslate nohighlight">\(y_i\)</span>, the values a and b obtained will be the best estimates of <span class="math notranslate nohighlight">\(a_0\)</span> and <span class="math notranslate nohighlight">\(b_0\)</span> and therefore these are replaced with <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> in the equations. To find the minima, the derivatives <span class="math notranslate nohighlight">\(\partial \chi^2/\partial a\)</span> and <span class="math notranslate nohighlight">\(\partial \chi^2/\partial b\)</span> are calculated,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{\partial }{\partial a} \sum_{i=1}^n (y_i-a-bx_i)^2w_i=-2\sum_{i=1}^n (y_i-a-bx_i)w_i=0\tag{26}\]</div>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{\partial }{\partial b} \sum_{i=1}^n (y_i-a-bx_i)^2w_i=-2\sum_{i=1}^n (y_i-a-bx_i)w_ix_i=0\tag{27}\]</div>
+<p>which produce two equations and two unknowns; these simultaneous equations are known as the <em>normal equations</em> ;</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle a\sum_{i=1}^n w_i+b\sum_{i=1}^n x_iw_i=\sum_{i=1}^n y_iw_i, \qquad a\sum_{i=1}^n x_iw_i+b\sum_{i=1}^n x_i^2w_i=\sum_{i=1}^n y_ix_iw_i \tag{28}\]</div>
+<p>These simultaneous equations can be solved for <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> using the matrix method outlined in chapter 7. The determinant is</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \Delta =\begin{vmatrix}\sum w_i  &amp; \sum w_ix_i \\\sum w_ix_i &amp; \sum w_ix_i^2 \\ \end{vmatrix}\end{split}\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}a=\frac{1}{\Delta}\begin{vmatrix}\sum w_iy_i  &amp; \sum w_ix_i \\\sum w_ix_iy_i &amp; \sum w_ix_i^2 \\ \end{vmatrix}\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}b=\frac{1}{\Delta}\begin{vmatrix}\sum w_i  &amp; \sum w_iy_i \\\sum w_ix_i &amp; \sum w_ix_iy_i \\ \end{vmatrix}\end{split}\]</div>
+<p>The best estimate of the slope <span class="math notranslate nohighlight">\(b\)</span> can be rewritten in a form more convenient for calculation as</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle b=\frac{S_{xy}}{S_{xx}}\tag{29}\]</div>
+<p>where</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle S_{xy}=\sum_{i=1}^n x_iy_iw_i-\frac{\sum_{i=1}^n x_iw_i\sum_{i=1}^n y_iw_i}{\sum_{i=1}^n w_i}\qquad S_{xx}=\sum_{i=1}^n x_iw_i -\frac{\left(\sum_{i=1}^nx_iw_i\right)^2}{\sum_{i=1}^n w_i}\tag{30}\]</div>
+<div class="math notranslate nohighlight">
+\[\displaystyle S_w=\sum_{i=1}^n w_i\tag{31}\]</div>
+<p>The best estimate of the intercept a is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle a=\langle y\rangle- b\langle x\rangle \tag{32}\]</div>
+<p>where the averages are</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \langle x\rangle= \frac{\sum_{i=1}^n x_iw_i}{\sum_{i=1}^n w_i},\qquad \langle y\rangle =\frac{\sum_{i=1}^n y_iw_i}{\sum_{i=1}^n w_i}\]</div>
+<p>This means that the line goes through the ‘centre of gravity’ of the data.</p>
+<p>The intercept is also found by expanding the matrices above,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle a= \frac{\sum_{i=1}^n w_ix_i^2\sum_{i=1}^n w_iy_i-\sum_{i=1}^nw_ix_i\sum_{i=1}^nw_ix_iy_i}{S_wS_{xx}} \tag{33}\]</div>
+<p>Most graphing packages and languages now have least squares fitting routines, but the calculation is also made easy by direct calculation and then weighting can be incorporated and confidence curves drawn. Because the differences between two large sums often occur in calculating terms such as <span class="math notranslate nohighlight">\(S_{xy}\)</span> and <span class="math notranslate nohighlight">\(S_{xx}\)</span>, the possibility of rounding errors can be significant. It is always advisable if possible to use a higher precision calculation than would normally be used.</p>
+<p>The following data is analysed,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin{array}{ccc}\\
+\hline
+x &amp; y &amp; \sigma\\
+\hline
+200&amp; 36.2&amp; 1.5\\ 
+220&amp; 42.7&amp; 1.1\\ 
+240&amp; 44.9&amp; 1.8\\ 
+260&amp; 51.8&amp; 0.3\\ 
+280&amp; 57.7&amp; 2.0\\ 
+300&amp; 60.9&amp; 0.9\\ 
+320&amp; 64.4&amp; 1.2\\ 
+340&amp; 68.2&amp; 1.6\\ 
+360&amp; 76.4&amp; 1.9\\ 
+380&amp; 80.1&amp; 0.9\\
+\hline \end{array}\end{split}\]</div>
+<p>The calculation uses the equations just derived and produces the regression equation <span class="math notranslate nohighlight">\(y = -9.27 + 0.234x\)</span> and with <span class="math notranslate nohighlight">\(95\)</span>% confidence limits, <span class="math notranslate nohighlight">\(a = -9.27 \pm 3.55\)</span> and <span class="math notranslate nohighlight">\(b = 0.234 \pm 0.0128\)</span> which is shown in figure 8. The residuals are shown in figure 9.</p>
+<p>Equations 31-33 are used to calculate the slope and intercept but the equations for the confidence limits are taken from Hines &amp; Montgomery (1990, chapter 14). These equations are in the algorithm as C_slope and C_intercept and are given as equations 37 and 37. They are only valid in the range of the data but are extended to show the large error on the intercept. The mean square error, (mse in the calculation), is the reduced <span class="math notranslate nohighlight">\(\chi^2\)</span> thus <span class="math notranslate nohighlight">\(\text{mse} =\chi^2/(n-2)\)</span> and the <span class="math notranslate nohighlight">\(\chi^2\)</span> is calculated with equation 25.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Algorithm: Weighted Least Squares</span>
+
+<span class="c1">#--------------------------------      </span>
+<span class="k">def</span> <span class="nf">lsq</span><span class="p">(</span><span class="n">xval</span><span class="p">,</span><span class="n">yval</span><span class="p">,</span><span class="n">w</span><span class="p">):</span>
+    <span class="n">Sw</span>   <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">w</span><span class="p">)</span>
+    <span class="n">Sxw</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">xval</span><span class="o">*</span><span class="n">w</span><span class="p">)</span>
+    <span class="n">Syw</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">yval</span><span class="o">*</span><span class="n">w</span><span class="p">)</span>
+    <span class="n">Sxxw</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">xval</span><span class="o">*</span><span class="n">xval</span><span class="o">*</span><span class="n">w</span><span class="p">)</span>
+    <span class="n">Syyw</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">yval</span><span class="o">*</span><span class="n">yval</span><span class="o">*</span><span class="n">w</span><span class="p">)</span>
+    <span class="n">Sxyw</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">xval</span><span class="o">*</span><span class="n">yval</span><span class="o">*</span><span class="n">w</span><span class="p">)</span>
+    <span class="n">xbar</span> <span class="o">=</span> <span class="n">Sxw</span><span class="o">/</span><span class="n">Sw</span>
+    <span class="n">ybar</span> <span class="o">=</span> <span class="n">Syw</span><span class="o">/</span><span class="n">Sw</span>
+    
+    <span class="n">Sxx</span>  <span class="o">=</span> <span class="n">Sxxw</span> <span class="o">-</span> <span class="n">Sxw</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="n">Sw</span>
+    <span class="n">Syy</span>  <span class="o">=</span> <span class="n">Syyw</span> <span class="o">-</span> <span class="n">Syw</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="n">Sw</span>
+    <span class="n">Sxy</span>  <span class="o">=</span> <span class="n">Sxyw</span> <span class="o">-</span> <span class="n">Sxw</span><span class="o">*</span><span class="n">Syw</span><span class="o">/</span><span class="n">Sw</span>
+    <span class="n">slope</span><span class="o">=</span> <span class="n">Sxy</span><span class="o">/</span><span class="n">Sxx</span>
+    <span class="n">intercept</span> <span class="o">=</span> <span class="n">ybar</span> <span class="o">-</span> <span class="n">slope</span><span class="o">*</span><span class="n">xbar</span>
+    
+    <span class="n">mse</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">((</span><span class="n">Syy</span> <span class="o">-</span> <span class="n">slope</span><span class="o">*</span><span class="n">Sxy</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">2</span><span class="p">)</span> <span class="p">)</span>  <span class="c1"># make positive as sqrt is taken next</span>
+    <span class="c1">#print(&#39;mse = &#39;,mse)</span>
+    <span class="n">cov</span>  <span class="o">=</span> <span class="o">-</span><span class="n">mse</span><span class="o">*</span><span class="n">xbar</span><span class="o">/</span><span class="p">(</span><span class="n">Sxx</span><span class="o">*</span><span class="n">Sw</span><span class="p">)</span>                  <span class="c1"># covariance</span>
+    
+    <span class="n">std_dev_slope</span>    <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">mse</span><span class="o">/</span><span class="n">Sxx</span><span class="p">)</span>
+    <span class="n">std_dev_intercept</span><span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">mse</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">Sw</span> <span class="o">+</span> <span class="n">xbar</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="n">Sxx</span><span class="p">))</span>
+
+    <span class="n">prec</span>  <span class="o">=</span> <span class="mf">0.975</span>
+    <span class="n">quant</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="n">prec</span><span class="p">,</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">2</span><span class="p">)</span>                 <span class="c1"># prec quantile for T distribution</span>
+    <span class="n">Z</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">quant</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">mse</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">Sw</span> <span class="o">+</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">xbar</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="n">Sxx</span><span class="p">))</span>  <span class="c1"># function of 95 % confidence limits</span>
+
+    <span class="k">return</span> <span class="n">slope</span><span class="p">,</span><span class="n">intercept</span><span class="p">,</span><span class="n">mse</span><span class="p">,</span><span class="n">cov</span><span class="p">,</span><span class="n">std_dev_slope</span><span class="p">,</span><span class="n">std_dev_intercept</span><span class="p">,</span><span class="n">Z</span>
+<span class="c1">#----------------------------------  end lsq </span>
+
+<span class="n">filename</span><span class="o">=</span><span class="s1">&#39;test data.txt&#39;</span>
+<span class="n">xv</span> <span class="o">=</span> <span class="p">[]</span>                                   <span class="c1"># arrays to hold intial data while being read in</span>
+<span class="n">yv</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">wv</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span> <span class="k">as</span> <span class="n">ff</span><span class="p">:</span>                <span class="c1"># length not known so read in all data and make list of each</span>
+    <span class="n">i</span><span class="o">=</span><span class="mi">0</span>
+    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">ff</span><span class="p">:</span>
+        <span class="n">new_str</span> <span class="o">=</span> <span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+        <span class="n">vals</span> <span class="o">=</span> <span class="n">new_str</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+        <span class="n">xv</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">vals</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> 
+        <span class="n">yv</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">vals</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> 
+        <span class="n">wv</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">vals</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span> 
+<span class="n">ff</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">xv</span><span class="p">)</span>                               <span class="c1"># we do not know length of data before hand </span>
+<span class="n">w</span>    <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>            <span class="c1"># data arrays</span>
+<span class="n">xval</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+<span class="n">yval</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">w</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="nb">float</span><span class="p">(</span><span class="n">wv</span><span class="p">[</span><span class="n">i</span><span class="p">])</span><span class="o">**</span><span class="mi">2</span>              <span class="c1"># make lists into arrays</span>
+    <span class="n">xval</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="nb">float</span><span class="p">(</span><span class="n">xv</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="n">yval</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="nb">float</span><span class="p">(</span><span class="n">yv</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+
+<span class="n">slope</span><span class="p">,</span><span class="n">intercept</span><span class="p">,</span><span class="n">mse</span><span class="p">,</span><span class="n">cov</span><span class="p">,</span><span class="n">std_dev_slope</span><span class="p">,</span><span class="n">std_dev_intercept</span><span class="p">,</span><span class="n">Z</span> <span class="o">=</span> <span class="n">lsq</span><span class="p">(</span><span class="n">xval</span><span class="p">,</span><span class="n">yval</span><span class="p">,</span><span class="n">w</span><span class="p">)</span>  <span class="c1"># calculate return values</span>
+
+<span class="n">line</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">*</span><span class="n">slope</span> <span class="o">+</span> <span class="n">intercept</span>      <span class="c1"># define striaght line fit</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:s}</span><span class="s1"> </span><span class="si">{:8.4g}</span><span class="s1"> </span><span class="si">{:s}</span><span class="s1"> </span><span class="si">{:8.4g}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;slope = &#39;</span><span class="p">,</span><span class="n">slope</span><span class="p">,</span><span class="s1">&#39; intercept = &#39;</span><span class="p">,</span> <span class="n">intercept</span><span class="p">)</span>  <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>slope =    0.2343  intercept =    -9.272
+</pre></div>
+</div>
+</div>
+</div>
+<p><img alt="Drawing" src="../_images/analysis-fig8.png" /></p>
+<p>Figure 8. Least squares fit to <span class="math notranslate nohighlight">\(y = a + bx\)</span> and <span class="math notranslate nohighlight">\(95\)</span>% confidence lines. These are projected to zero so that the large error on the intercept can be seen but the lines are only valid in the range of the data. The <span class="math notranslate nohighlight">\(95\)</span>% confidence limit lines are calculated using the function <span class="math notranslate nohighlight">\(\pm z\)</span>. Notice how the range becomes larger the further away from the data the lines are.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="residuals">
+<h2>5.3 Residuals<a class="headerlink" href="#residuals" title="Permalink to this headline">¶</a></h2>
+<p>After a fit has been obtained, the emphasis falls not on the plot of the data but on analysing the residuals, a plot of which shows the difference between the data and the fitted line. The residuals are calculated for each data point as</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \epsilon_i =(y_i - Y_i)\]</div>
+<p>where <span class="math notranslate nohighlight">\(Y_i\)</span> is the value of the calculated line at the <span class="math notranslate nohighlight">\(i^{th}\; x\)</span> value. The reduced or normalized
+residuals</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle r_i = (y_i - Y_i)/Y_i \tag{34}\]</div>
+<p>are often the best to use, particularly if the data varies in size, as may be the case for exponential data. The reduced residuals between the calculated line and the data are shown in figure 9 and should be randomly distributed about zero if the fit is good, which it would appear to be.</p>
+<p><img alt="Drawing" src="../_images/analysis-fig9.png" /></p>
+<p>Figure 9. Normalized or reduced residual plot</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="chi-squared-chi-2">
+<h2>5.4 Chi squared, <span class="math notranslate nohighlight">\(\chi^2\)</span><a class="headerlink" href="#chi-squared-chi-2" title="Permalink to this headline">¶</a></h2>
+<p>A good measure of the overall goodness of fit is the <span class="math notranslate nohighlight">\(\chi^2\)</span> parameter. This measures the dispersion between the experimental data and the fitted function. If the data is normally distributed then the <span class="math notranslate nohighlight">\(\chi^2\)</span> is expected to be equal to the number of degrees of freedom; this is the number of data points less the constraints, two in the case of a linear fit since there are two parameters. (The reduced <span class="math notranslate nohighlight">\(\chi^2\)</span> is the same quantity as mean square error (mse) used in Algorithm 2). The reduced <span class="math notranslate nohighlight">\(\chi^2\)</span> should have a value close to one if the data is fitted well, and the probability of obtaining this value is <span class="math notranslate nohighlight">\(50\)</span>% since half of the time the <span class="math notranslate nohighlight">\(\chi^2\)</span> should exceed the norm. Values are often either very small, which can indicate that the weighting is too small because the standard deviations used are too big, or very large because the model does not fit the data. If the data is Poisson distributed, then the standard deviation is known exactly and the <span class="math notranslate nohighlight">\(\chi^2\)</span> can be used quantitatively, otherwise, it can only be used loosely and a probability of <span class="math notranslate nohighlight">\(10\)</span>% or larger is usually acceptable.</p>
+<p>To find the probability of the <span class="math notranslate nohighlight">\(\chi^2\)</span> being greater than a certain value, say <span class="math notranslate nohighlight">\(0.843\)</span> which is the value for the data in figure 8 the distribution has to be integrated up to that value, just as was done for the normal and <span class="math notranslate nohighlight">\(t\)</span> distributions discussed earlier. Using Python/Scipy this is</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">2</span>                <span class="c1"># degrees of freedom is n - 2 for two fitting parameters</span>
+<span class="n">chi</span><span class="o">=</span> <span class="mf">0.843</span><span class="o">*</span><span class="n">df</span>             <span class="c1"># make into normal chi squared not reduced chi.</span>
+<span class="n">cumul</span> <span class="o">=</span>  <span class="k">lambda</span> <span class="n">w</span><span class="p">,</span><span class="n">df</span><span class="p">:</span> <span class="n">chi2</span><span class="o">.</span><span class="n">cdf</span><span class="p">(</span><span class="n">w</span><span class="p">,</span><span class="n">df</span><span class="p">)</span>  <span class="c1"># define function </span>
+<span class="n">Q</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">cumul</span><span class="p">(</span><span class="n">chi</span><span class="p">,</span><span class="n">df</span><span class="p">)</span>
+<span class="n">Q</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/analysis-B_5_0.png" src="../_images/analysis-B_5_0.png" />
+</div>
+</div>
+<p>and this means that the probability of obtaining a <span class="math notranslate nohighlight">\(\chi^2\)</span> greater than <span class="math notranslate nohighlight">\(0.84df\)</span> is <span class="math notranslate nohighlight">\(56\)</span>% for eight degrees of freedom, ten data points and two fitted paramaters. This is equivalent to the integral of the <span class="math notranslate nohighlight">\(\chi^2\)</span> distribution from <span class="math notranslate nohighlight">\(\chi^2 \to \infty\)</span>. The distribution function is</p>
+<div class="math notranslate nohighlight">
+\[ \displaystyle f_{\chi^2}(x,n)=\frac{2^{n/2}}{\Gamma(n/2)}x^{n/2-1}e^{-x/2} \]</div>
+<p>where <span class="math notranslate nohighlight">\(\Gamma\)</span> is the gamma function. Because the distribution cannot be less than zero, it is not symmetrical and has a shape skewed towards small values. The integral to find the probability is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle Q= \int_{\chi^2}^\infty f_{\chi^2}(x,n) dx \tag{35}\]</div>
+<p>which is done numerically below using the <span class="math notranslate nohighlight">\(\mathtt{quad()}\)</span> integrator.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mf">8.0</span>
+<span class="n">chi</span> <span class="o">=</span> <span class="mf">0.843</span><span class="o">*</span><span class="n">n</span>
+<span class="n">fchi</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">**</span><span class="p">(</span><span class="n">n</span><span class="o">/</span><span class="mi">2</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="p">(</span><span class="n">n</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">gamma</span><span class="p">(</span><span class="n">n</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span>
+<span class="n">Q</span><span class="p">,</span> <span class="n">err</span> <span class="o">=</span> <span class="n">quad</span><span class="p">(</span><span class="n">fchi</span> <span class="p">,</span><span class="n">chi</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">inf</span> <span class="p">)</span>                <span class="c1"># returns both integral value and its numerical error</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:s}</span><span class="s1"> </span><span class="si">{:6.3f}</span><span class="s1"> </span><span class="si">{:s}</span><span class="s1"> </span><span class="si">{:6.3f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;probability of getting chi sqrd &gt; &#39;</span><span class="p">,</span><span class="n">chi</span><span class="p">,</span><span class="s1">&#39; is&#39;</span><span class="p">,</span> <span class="n">Q</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>probability of getting chi sqrd &gt;   6.744  is  0.564
+</pre></div>
+</div>
+</div>
+</div>
+<p>Generally speaking if <span class="math notranslate nohighlight">\(Q&gt;0.001\)</span> the model is acceptable, and although this seems rather lax, if the model is wrong <span class="math notranslate nohighlight">\(Q\)</span> will be <em>orders of magnitude</em> smaller.  Experience shows that several a good ‘rule of thumb’ is that the reduced chi square is units or equivalently <span class="math notranslate nohighlight">\(\chi^2\approx df\)</span>. Prest et al. 1986 (Chapter 14 Numerical Recipes) has a detailed discussion on chi squared fitting. One important point is that this test of goodness of fit is very useful when the weighting for the data is not known, because the <span class="math notranslate nohighlight">\(\chi^2 \)</span> cannot then be used quantitatively.</p>
+<p>Other tests can be performed on the residuals to assess the goodness of fit.</p>
+<p><strong>(i)</strong><span class="math notranslate nohighlight">\(\quad\)</span> The simplest test is to look at the residuals; if they slope, oscillate, or are curved then the model does not fit the data, no matter what the statistics indicate.</p>
+<p><strong>(ii)</strong><span class="math notranslate nohighlight">\(\quad\)</span> The residuals can be plotted on a normal probability plot and if they are Gaussian (normally) distributed, a straight line is produced.</p>
+<p><strong>(iii)</strong><span class="math notranslate nohighlight">\(\quad\)</span> The number of positive and negative runs in the residuals can be calculated. A ‘run’ occurs when consecutive residuals have the same sign, which is unlikely to occur if they are random. Therefore, if the data is random, then there are an equal number of small runs of positive and of negative numbers.</p>
+<p><strong>(iv)</strong><span class="math notranslate nohighlight">\(\quad\)</span> The autocorrelation of the data should be 1 for the first point, and randomly arranged about zero for the rest, which is expected for a sequence of random numbers.</p>
+<p><strong>(v)</strong><span class="math notranslate nohighlight">\(\quad\)</span> A scedaticity plot aims to determine if the residuals vary with the size of the data itself, i.e. if the errors are larger when the data value is larger or vice versa. The plot is of residuals vs. the experimental <span class="math notranslate nohighlight">\(y\)</span> value. The points should be randomly distributed about zero.</p>
+<p>A good model will produce a small residual (error) variance and if there are two or more competing models then the model with the smallest error variance should be chosen. The variance of the slope and intercept are calculated by expressing the respective equations as functions of <span class="math notranslate nohighlight">\(y_i\)</span> (the experimental data) and using the law of propagation (combination) of errors. The gradient is the ratio <span class="math notranslate nohighlight">\(b = S_{xy} /S_{xx}\)</span> and only the numerator depends on <span class="math notranslate nohighlight">\(y_i\)</span>. Using the relationships</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle S_{xy}=\sum_{i=1}^n w_iy_i(x_i-\langle x\rangle),\quad  S_{xx}=\sum_{i=1}^n w_i(x_i-\langle x\rangle)^2\]</div>
+<p>Hines &amp; Montgomery (Probability &amp; Statistics in Engineering &amp; Management Sciences, pub Wiley 1990) give the variance for slope <span class="math notranslate nohighlight">\(b\)</span> as</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \sigma_b^2=\frac{\sigma^2}{S_{xx}} \tag{36}\]</div>
+<p>and for the intercept <span class="math notranslate nohighlight">\(a\)</span></p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \sigma_a^2=\sigma^2\left(\frac{1}{S_w}+\frac{\langle x\rangle}{S_{xx}}\right)\tag{37}\]</div>
+<p>To use these equations it is necessary to obtain an estimate of the variance <span class="math notranslate nohighlight">\(\sigma^2\)</span>. For the simple linear model an unbiased estimate of the variance of the error <span class="math notranslate nohighlight">\(\epsilon_i\)</span> is given by the reduced <span class="math notranslate nohighlight">\(\chi^2\)</span> as <span class="math notranslate nohighlight">\(\sigma_\epsilon^2\equiv \chi^2/(n-2)\)</span>. THis can be written in terms of quantities already calculated (Hines &amp; Montgomery 1990)  and is called the mean square error, <em>mse</em> used in algorithm 2. Then,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \sigma_\epsilon^2=\frac{S_{yy}-bS_{xy}}{n-2}\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \sigma_b^2=\frac{\sigma_\epsilon^2}{S_{xx}}, \quad \sigma_a^2=\sigma_\epsilon^2\left(\frac{1}{S_w}+\frac{\langle x\rangle}{S_{xx}}\right)\tag{38}\]</div>
+<p>with values <span class="math notranslate nohighlight">\(0.0056\)</span> and <span class="math notranslate nohighlight">\(1.54\)</span> for the data in figure 8.</p>
+<p>Alternative estimates of the variance in the coefficients are quoted by Bevington &amp; Robinson (2003),</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \sigma_a^2=\frac{\sum_iw_ix_i^2}{S_wS{_{xx}}},\quad \sigma_b^2= \frac{1}{S_{xx}}\tag{39}\]</div>
+<p>These variances are calculated by using the equation for error propagation, equation 20, differentiating with respect to each <span class="math notranslate nohighlight">\(y_i\)</span>. However, these equations should not be used unless the weightings are known, which they are for photon counting experiments. If weightings are unknown and a constant weighting used instead, incorrect results are obtained because both expressions 39 now depend only on <span class="math notranslate nohighlight">\(x\)</span>.</p>
+<p>The covariance between the slope and intercept can also be calculated. If this is large then the slope and intercept are not independent of one another. The covariance for the data used above is <span class="math notranslate nohighlight">\(-5\cdot10^{-4}\)</span> which is very small. When several parameters are being estimated such as in a polynomial or nonlinear, least squares calculation then the covariance between pairs of parameters should be examined and is often reported as a matrix of value. Ideally, each values should be small. The covariance for the linear least squares is <span class="math notranslate nohighlight">\(\mathrm{cov} = -\sigma_\epsilon^2\langle x \rangle/(S_{xx} /S_w)\)</span> as may be seen on the code.</p>
+</div>
+<div class="section" id="confidence-intervals">
+<h2>5.5 Confidence intervals<a class="headerlink" href="#confidence-intervals" title="Permalink to this headline">¶</a></h2>
+<p>The confidence intervals about any data point, and hence the whole set, can be obtained from the data. The width of these lines at a given confidence level, 95% is typical, is a measure of the overall quality of fit to the data. As the errors <span class="math notranslate nohighlight">\(\epsilon_i\)</span> are assumed to be normally distributed and independent of one another, then the slope has the confidence interval (Hines &amp; Montgomery 1990)</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle b_0=b\pm t_{\alpha/2}\sqrt{\frac{\sigma_\epsilon^2}{S_{xx}}}\tag{40}\]</div>
+<p>giving <span class="math notranslate nohighlight">\(b_0=0.234\pm 0.0128\)</span> and for the intercept where <span class="math notranslate nohighlight">\(S_w=\sum w_i\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle a_0=a\pm t_{\alpha/2}\sqrt{ \sigma_\epsilon^2\left(\frac{1}{S_w}+\frac{\langle x\rangle^2}{S_{xx}} \right) }\tag{41}\]</div>
+<p>which has a value <span class="math notranslate nohighlight">\(a_0=-9.27\pm 3.55\)</span> or better <span class="math notranslate nohighlight">\(a=-9\pm 4\)</span>, see figure 8.</p>
+<p>The confidence for the mean point can be constructed and this is also called the confidence line <span class="math notranslate nohighlight">\(z\)</span> for the regression curve. It has the following form (Hines &amp; Montgomery 1990)</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle z=y\pm t_{\alpha/2}\sqrt{ \sigma_\epsilon^2\left(\frac{1}{S_w}+\frac{(x-\langle x\rangle)^2}{S_{xx}} \right) }\tag{42}\]</div>
+<p>and these lines are shown in Figure 8. The two curves have a minimum width at <span class="math notranslate nohighlight">\(\langle x\rangle\)</span> and widen either side of this. Strictly, they are not valid outside the range of the data. Prediction lines can be constructed to project confidence limits past the data and these lines are slightly wider than the confidence lines. The prediction lines are produced by replacing <span class="math notranslate nohighlight">\(1/S_w\)</span> by <span class="math notranslate nohighlight">\(1 + 1/S_w\)</span> in equation 42. This takes into account the error from the model and that associated with future observations. The two sets of curves are almost identical with the particular set of data used in figure 8.</p>
+</div>
+<div class="section" id="the-analysis-of-variance-anova-table">
+<h2>5.6 The analysis of variance (ANOVA) table<a class="headerlink" href="#the-analysis-of-variance-anova-table" title="Permalink to this headline">¶</a></h2>
+<p>When fitting models to data, it is common practice to test the fit to see how well the model equation used fits the data. This is done by partitioning the total variability in the calculated <span class="math notranslate nohighlight">\(Y\)</span> into a sum that is ‘explained’ by the model and a ‘residual’ or error term unexplained by the regression as shown in the equations,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \sum_i(y_i -\langle y\rangle)^2=\sum_i (Y_i-\langle y \rangle )^2 +\sum_i (y_i-Y_i)^2, \quad S_{yy}=SS_R+SS_e \]</div>
+<p>The terms on the right are, respectively, the sum of squares ‘explained’ by regression <span class="math notranslate nohighlight">\(SS_R\)</span> and the residual (error) sum of squares <span class="math notranslate nohighlight">\(SS_e\)</span>. Recall that <span class="math notranslate nohighlight">\(y_i\)</span> are the data points and <span class="math notranslate nohighlight">\(Y_i\)</span> the fitted points from the model. The left-hand summation is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle S_{yy}=\sum_i w_iy_i-\frac{\left(\sum_iw_iy_i\right)^2}{\sum_i w_i}\]</div>
+<p>and the right-hand one is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \sum_i(y_i-Y-i)^2=\sigma_e(n-2),\quad \text{ or }\quad SS_e= S_{yy}-S_{xy}/S_{xx}\]</div>
+<p>the middle term <span class="math notranslate nohighlight">\(SS_R\)</span> is found from the difference of the other terms.</p>
+<p>The purpose of the table is to generate a statistic <span class="math notranslate nohighlight">\(F_0\)</span> that can be tested against tables of the <span class="math notranslate nohighlight">\(f\)</span> distribution. The ANOVA table is constructed as</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin{array}{llccc}
+\hline
+\text{Source of variation } &amp; \text{Sum squares } ss &amp; \text{Degree freedom } df &amp; \text{Mean square } ss/df &amp; F_0\\
+\hline
+\text{Regression } &amp; S_{xy}^2 /S_{xx} &amp;  1 &amp;MS_R \text{(regression)} &amp; MS_R/MS_e \\
+\text{Residual error } SS_e &amp; S_{yy} - S_{xy}^2 /S_{xx} &amp; n - 2 &amp; MS_e \text{(error)}\\
+\text{Total } &amp; S_{yy} &amp; n-1 &amp; \\
+\hline \end{array}\end{split}\]</div>
+<p>The data being considered (Figure 8) produces the following table</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin{array}{llccc}
+\hline
+\text{Source of variation } &amp; \text{Sum squares } ss &amp; \text{Degree freedom } df &amp; \text{Mean square } ss/df &amp; F_0\\
+\hline
+\text{Regression } &amp; 1449 &amp;  1 &amp;1449 &amp; 1778 \\
+\text{Residual error } SS_e &amp; 6.7 &amp; 8 &amp; 6.7/8=0.84\\
+\text{Total } &amp; 1506 &amp; 9 &amp; \\
+\hline \end{array}\end{split}\]</div>
+<p>The ANOVA table also leads to a test of ‘significance’ for the model. It can be shown that if the model has no utility, i.e. if the model linking <span class="math notranslate nohighlight">\(x\)</span> to <span class="math notranslate nohighlight">\(y\)</span> does not differ ‘significantly’ from zero, then the statistic</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle  F_0=\frac{ \text{Mean Square for Regression}}{\text{Mean Square for Error}} \]</div>
+<p>should behave like a random variable from an <span class="math notranslate nohighlight">\(F\)</span>-distribution with <span class="math notranslate nohighlight">\(1\)</span> and <span class="math notranslate nohighlight">\((n - 2)\)</span> degrees of freedom. (<span class="math notranslate nohighlight">\(F\)</span>-distributions are tabulated in many books on statistics but can be calculated using Python, as shown below.) Values close to <span class="math notranslate nohighlight">\(1.0\)</span> support the null hypothesis that the model <em>does not fit the data</em> well, while large extreme values, exceeding some critical value from the upper tail of the <span class="math notranslate nohighlight">\(F\)</span>-distribution, lead to the conclusion that <span class="math notranslate nohighlight">\(x\)</span> has a significant effect upon <span class="math notranslate nohighlight">\(y\)</span>.</p>
+<p>The null hypothesis, called <span class="math notranslate nohighlight">\(H_0\)</span>, is one where model does not fit the data, versus <span class="math notranslate nohighlight">\(H_1\)</span> where it does fit the data. To test this, the calculated <span class="math notranslate nohighlight">\(F_0 = 1778\)</span>  greatly exceeds the critical value <span class="math notranslate nohighlight">\(11.26\)</span> at the <span class="math notranslate nohighlight">\(1\)</span>% level calculated from the <span class="math notranslate nohighlight">\(F\)</span>-distribution <span class="math notranslate nohighlight">\(f(0.01, 1, n -2)\)</span>. This suggests that <span class="math notranslate nohighlight">\(x\)</span> has a significant effect upon <span class="math notranslate nohighlight">\(y\)</span>. This result from the ANOVA table is hardly surprising because the data is clearly well described by a straight line.</p>
+<p>The critical value of <span class="math notranslate nohighlight">\(F_0\)</span> is calculated using Python with the <span class="math notranslate nohighlight">\(f\)</span> distribution loaded via scipy.stats defined  the top of the page. (You must avoid using symbol <span class="math notranslate nohighlight">\(f\)</span> in any other python as this overwrites the stats value). The ppf function gives the quantile value needed at the <span class="math notranslate nohighlight">\(1\)</span> level,which is the <span class="math notranslate nohighlight">\(0.99\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mf">0.99</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">8</span><span class="p">)</span>    <span class="c1"># f is name of distribution, see top of page, from scipy.stats ....</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/analysis-B_9_0.png" src="../_images/analysis-B_9_0.png" />
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="correlation-coefficients">
+<h1>5.7 Correlation coefficients<a class="headerlink" href="#correlation-coefficients" title="Permalink to this headline">¶</a></h1>
+<p>The correlation coefficient <span class="math notranslate nohighlight">\(R\)</span> is often listed among the parameters when a spreadsheet or graphing package is used to analyse a straight line fit. It represents the proportion of the variation (information) in <span class="math notranslate nohighlight">\(y\)</span> that can be accounted for by its relationship with <span class="math notranslate nohighlight">\(x\)</span>. However, in the physical and many of the biological sciences, this is a not a useful quantity and <em>should be avoided</em> as a measure of how well a straight line describes the data.</p>
+<p>The reason is that what would be considered as a good fit has a correlation coefficient of, for example, <span class="math notranslate nohighlight">\(R = 0.99\)</span> and a poor fit perhaps a value of <span class="math notranslate nohighlight">\(0.98\)</span>, which is so similar that it provides very poor discrimination between good and bad fits. This poor discrimination is illustrated if larger and larger random numbers are added to the data and the least squares fitting repeated until <span class="math notranslate nohighlight">\(R\)</span> decreases slightly to <span class="math notranslate nohighlight">\(0.98\)</span>. However, the reduced <span class="math notranslate nohighlight">\(\chi^2\)</span> has now increased to <span class="math notranslate nohighlight">\(\approx 8\)</span> i.e. by about ten times, instead of being <span class="math notranslate nohighlight">\(\approx 1\)</span>, indicating that now, with the added random values, the model is a very poor fit to the data.</p>
+<p>If <span class="math notranslate nohighlight">\(R\)</span> is the sample correlation coefficient then <span class="math notranslate nohighlight">\(0 \lt R \lt 1\)</span> and is defined as <span class="math notranslate nohighlight">\(R = b\sqrt{S_{xx} /S_{yy}}\)</span> and
+as the <span class="math notranslate nohighlight">\(S_{xx}\)</span> and <span class="math notranslate nohighlight">\(S_{yy}\)</span> depend only on the data points, the ratio is a constant multiplied by the gradient <span class="math notranslate nohighlight">\(b\)</span> and this is why it is a poor statistic. The constant part is the ‘spread’ of the <span class="math notranslate nohighlight">\(x\)</span> values divided by that of the <span class="math notranslate nohighlight">\(y\)</span>.</p>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./chapter-13"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="analysis-Q1-3.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Questions 1 - 3</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="analysis-Q4-9.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Questions 4 - 9</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Godfrey Beddard<br/>
+        
+            &copy; Copyright 2022.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

@@ -1,0 +1,2082 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sophisticated Counting: permutations, combinations and probability &#8212; Applying Maths in the Chemical &amp; Biomolecular Sciences</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Questions 17 - 34" href="chapter1-Q17-34.html" />
+    <link rel="prev" title="Questions 8 - 16" href="chapter1-Q8-16.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/book-cover.jpg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Applying Maths in the Chemical & Biomolecular Sciences</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Introduction
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="chapter1-intro.html">
+   1. Numbers, Equations, Operators, and Algorithms.
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="chapter1-A.html">
+     Numbers to Algorithms
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="chapter1-Q1-7.html">
+     Questions 1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="chapter1-B.html">
+     Trigonometric functions.  Waves
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="chapter1-Q8-16.html">
+     Questions 8 - 16
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Sophisticated Counting: permutations, combinations and probability
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="chapter1-Q17-34.html">
+     Questions 17 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="chapter1-D.html">
+     10 Modulo arithmetic, delta functions, series, estimation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="chapter1-Q35-39.html">
+     Questions 35 - 39
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="chapter1-answers-1-7.html">
+     Solutions Q1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="chapter1-answers-8-16.html">
+     Solutions Q8 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="chapter1-answers-17-34.html">
+     Solutions Q17 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="chapter1-answers-35-39.html">
+     Solutions Q35 - 39
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-2/chapter2-intro.html">
+   2. Complex numbers.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2/chapter2-A.html">
+     Real, imaginary,conjugate and modulus
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2/chapter2-Q-1-9.html">
+     Questions 1 - 9
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2/chapter2-B.html">
+     De Moivre’s theorem and integer powers of complex numbers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2/chapter2-Q-10-13.html">
+     Questions 10 -13
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2/chapter2-C.html">
+     Euler’s theorem
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2/chapter2-Q-14-27.html">
+     Questions 14 - 27
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2/chapter2-answers.html">
+     Solutions Q1 - 27
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-3/differen-intro.html">
+   3. Differentiation.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-A.html">
+     Differentiation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-B.html">
+     Trig functions, logs, power, reciprocals and integrals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-C-Q-4-11.html">
+     Questions 1-11
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-D.html">
+     Product rule and function of function or chain rule.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-E-Q-12-42.html">
+     Questions 12-42
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-F.html">
+     Limits, maxima/minima and Calculus of Variations.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-G-Q-43-73.html">
+     Questions 43 - 73
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-H.html">
+     Numerically finding the roots of an equation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-I-Q-74-85.html">
+     Questions 74 - 85
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-J.html">
+     Minimizing or maximizing with constraints: Lagrange Undetermined Multipliers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-K-Q-86-92.html">
+     Questions 86 - 92
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-L.html">
+     Partial differentiation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-M-Q-93-114.html">
+     Questions 93-114
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-M1.html">
+     Differentiation of vectors
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-N-answers-1-11.html">
+     Solutions Q 1-11
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-O-answers-12-42.html">
+     Solutions Q 12-42
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-P-answers-43-73.html">
+     Solutions Q 43 - 73
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-Q-answers-74-85.html">
+     Solutions Q 74 - 85
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-R-answers-86-92.html">
+     Solutions Q 86 - 94
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-S-answers-93-114.html">
+     Solutions Q 93-114
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-4/integration-intro.html">
+   4. Integration.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-A.html">
+     Integration basics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-Q1-14.html">
+     Questions 1-14
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-B.html">
+     Integration by substitution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-Q15-30.html">
+     Questions 15-30
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-C.html">
+     Using parametric equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-Q31-48.html">
+     Questions 31 - 48
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-D.html">
+     Calculating an Average Value.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-Q49-72.html">
+     Questions 49 - 72
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-E.html">
+     The Variational Method in Quantum Mechanics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-Q73-77.html">
+     Questions 73 - 77
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-F.html">
+     Multiple integrals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-Q78-86.html">
+     Questions 78 - 86
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-G.html">
+     Calculating the energy of a chemical bond using molecular orbitals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-H.html">
+     Line integrals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-Q87-96.html">
+     Questions 87 - 96
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-answers-1-14.html">
+     Solutions Q1 - 14
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-answers-15-30.html">
+     Solutions Q15 - 30
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-answers-31-48.html">
+     Solutions Q31 - 48
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-answers-49-72.html">
+     Solutions Q49 - 72
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-answers-73-96.html">
+     Solutions Q73 - 96
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-5/chapter-5-intro.html">
+   5. Summations, Series and expansion of Functions.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-A.html">
+     Series, averages, partition functions, DNA melting, atom entropy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-B-Q1-13.html">
+     Questions 1 - 13
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-E.html">
+     Maclaurin and Taylor series expansions. Paramagnetic spins
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-F-Q14-34.html">
+     Questions 14 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-G-Q35-44.html">
+     Questions 35 - 44
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-perturbation-A.html">
+     Perturbation Theory
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-perturbation-B-Q45-48.html">
+     Questions 45 - 48
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-perturbation-C.html">
+     Quantum superposition and wavepackets.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-perturbation-D-Q49-52.html">
+     Questions 49 - 52
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-answers-1-7.html">
+     Solutions Q 1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-answers-8-13.html">
+     Solutions Q8 - 13
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-answers-14-26.html">
+     Solutions Q 14 - 26
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-answers-27-32.html">
+     Solutions Q27 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-answers-33-44.html">
+     Solutions Q33 - 44
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-answers-45-52.html">
+     Solutions Q45 - 52
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-6/vectors-intro.html">
+   6. Vectors.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-A.html">
+     Vector basics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-Q1-24.html">
+     Questions 1 - 24
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-B.html">
+     Projections and components
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-Q25-32.html">
+     Questions 25 - 32
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-C.html">
+     Axes need not be right-angled or of equal length
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-Q33-38.html">
+     Questions 33 - 38
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-D.html">
+     Basis sets with more than three dimensions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-Q39-46.html">
+     Questions 39 - 46
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-E.html">
+     Cross product or vector product
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-Q47-52.html">
+     Questions 47 - 52
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-F.html">
+     Torsion or dihedral angles
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-Q53-61.html">
+     Questions 53 - 61
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-G.html">
+     Torque and angular momentum
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-answers-Q1-24.html">
+     Solutions Q1 - 24
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-answers-Q25-32.html">
+     Solutions Q25 - 32
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-answers-Q33-38.html">
+     Solutions Q33 - 38
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-answers-Q39-46.html">
+     Solutions Q38 - 46
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-answers-Q47-52.html">
+     Solutions Q47 - 52
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-answers-Q53-61.html">
+     Solutions Q53 - 61
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-7/matrices-intro.html">
+   7. Matrices
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-A.html">
+     Determinants
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q1-10.html">
+     Questions  1 - 10
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-B.html">
+     Matrices
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q11-16.html">
+     Questions  11 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-C.html">
+     Molecular Group Theory
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q17-30.html">
+     Questions  17 - 30
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-D.html">
+     Rotation matrices: moving molecules
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q31-34.html">
+     Questions 31 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-E.html">
+     Matrices in optics and designing laser cavities
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q35-39.html">
+     Questions 35 - 39
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-F.html">
+     Polarizing optics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q40-44.html">
+     Questions 40 - 44
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-G.html">
+     Solving equations using matrices. Eigenvectors &amp; Eigenvalues.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q45-50.html">
+     Questions 45 - 50
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-H.html">
+     Rate equations and Chemical Kinetics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q51-54.html">
+     Questions 51 - 54
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-I.html">
+     Molecular vibrations and pendulums
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q55-58.html">
+     Questions 55 - 58
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-J.html">
+     Calculating a bond length using moments of inertia
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q59-62.html">
+     Questions 59 - 62
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-answersQ1-10.html">
+     Solutions Q1 - 10
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-answersQ11-16.html">
+     Solutions Q11 - 30
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-answersQ17-30.html">
+     Solutions Q17 - 30
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-answersQ31-34.html">
+     Solutions Q31 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-answersQ35-39.html">
+     Solutions Q35 - 39
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-answersQ40-44.html">
+     Solutions Q40 - 44
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-answersQ45-50.html">
+     Solutions Q45 - 50
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-answersQ51-54.html">
+     Solutions Q51 - 54
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-answersQ55-58.html">
+     Solutions Q55 - 58
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-answersQ59-61.html">
+     Solutions Q59 - 61
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-8/matricesQM-intro.html">
+   8. Matrices in Quantum Mechanics
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-8/matricesQM-A.html">
+     Chapter 8 Matrices in Quantum Mechanics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-8/matricesQM-Q1-7.html">
+     Questions 1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-8/matricesQM-B.html">
+     Basis sets and bra-ket algebra
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-8/matricesQM-Q8-12.html">
+     Questions 8 - 12
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-8/matricesQM-C.html">
+     Continuous basis sets
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-8/matricesQM-answers1-7.html">
+     Solutions Q1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-8/matricesQM-answers8-12.html">
+     Solutions Q8 - 12
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-9/Fourier-intro.html">
+   9. Fourier Series and Transforms.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-A-B.html">
+     Fourier series, Gibbs phenomenon, generalised series.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-questions-1-6.html">
+     Questions 1 - 6
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-C.html">
+     Fourier Transforms
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-D.html">
+     Convolution and Autocorrelation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-questions-7-15.html">
+     Questions 7 - 15
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-E.html">
+     Discrete Fourier  (DFT)  and Fast Fourier transforms (FFT)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-questions-16-21.html">
+     Questions 16 - 21
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-F.html">
+     The Hadamard Transform: Encoding and Decoding
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-2D-Diffraction.html">
+     The Fourier transform in two dimensions: images and x-ray Diffraction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-tomography.html">
+     Computed Tomography
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-answers-1-6.html">
+     Solutions Q 1 - 6
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-answers-7-15.html">
+     Solutions Q 7 - 15
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-answers-16-21.html">
+     Solutions Q 16 - 21
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-10/Diff-eqns-intro.html">
+   10. Differential Equations.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-A.html">
+     Differential Equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-Q1-23.html">
+     Questions 1 - 23
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-B.html">
+     Integrating factors can solve differential equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-C.html">
+     The ‘D’ operator.  Solving linear differential equations with constant coefficients
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-D.html">
+     Simultaneous equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-E.html">
+     Linear equations with variable coefficients
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-F.html">
+     Partial Differential Equations, PDE
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-G.html">
+     PDE examples continued
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-Q24-37.html">
+     Questions 24 - 37
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-answers-1-21.html">
+     Solutions Q1 - 21
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-answers-22-37.html">
+     Solutions Q22 - 37
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-11/num-methods-intro.html">
+   11. Numerical Methods
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-A.html">
+     Numerical Methods
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-Q1-7.html">
+     Questions 1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-B.html">
+     Numerical solution of differential equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-Q8-12.html">
+     Questions 8 - 12
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-C.html">
+     Coupled equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-Q13-16.html">
+     Questions 13 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-D.html">
+     The phase plane, nullclines, and stable points
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-Q17-20.html">
+     Questions 17 - 20
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-E.html">
+     Reaction schemes with feedback
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-Q21-34.html">
+     Questions 21 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-F.html">
+     Boundary value problems: Shooting method
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-Q35-40.html">
+     Questions 35 - 40
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-answers1-7.html">
+     Solutions Q1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-answers8-12.html">
+     Solutions Q8 - 12
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-answers13-16.html">
+     Solutions Q13 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-answers17-20.html">
+     Solutions Q17 - 20
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-answers21-34.html">
+     Solutions Q21 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-answers35-40.html">
+     Solutions Q35 - 40
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-12/monte-carlo-intro.html">
+   12. Monte Carlo Methods
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+  <label for="toctree-checkbox-12">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-A.html">
+     Monte - Carlo
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-Q1-6.html">
+     Questions 1 - 6
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-B.html">
+     Solving rate equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-Q7-10.html">
+     Questions 7 - 10
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-CC.html">
+     Monte Carlo Simulations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-C.html">
+     4 Forster or dipole - dipole energy transfer
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-Q11-17.html">
+     Questions 11 - 17
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-D.html">
+     The Metropolis algorithm
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-answers1-6.html">
+     Solutions Q1 - 6
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-answers7-10.html">
+     Solutions Q7 - 10
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-answers11-17.html">
+     Solutions Q11 - 17
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-13/analysis-intro.html">
+   13. Data Analysis
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+  <label for="toctree-checkbox-13">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-13/analysis-A.html">
+     Characterizing experimental data. Accuracy, precision, mean and standard deviation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-13/analysis-Q1-3.html">
+     Questions 1 - 3
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-13/analysis-B.html">
+     Modelling data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-13/analysis-Q4-9.html">
+     Questions 4 - 9
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-13/analysis-C.html">
+     Modelling data is simpler using matrices
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-13/analysis-Q10-11.html">
+     Questions 10 - 13
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-13/analysis-D.html">
+     Non-linear least squares, gradient expansion, the Levenberg - Marquardt Method
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-13/analysis-answers1-11.html">
+     Solutions Q1 -11
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter1-E.html">
+   SI units, Rounding &amp; converting units, Glossary.
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../references/References.html">
+   References
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../references/Python%20crib.html">
+   Some basic Python instructions with a few examples.
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/chapter-1/chapter1-C.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/chapter-1/chapter1-C.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#permutations">
+   Permutations
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#combinations">
+   Combinations
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   9.1 Permutations
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#permutation-with-groups-of-identical-objects">
+   9.2 Permutation with groups of identical objects
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   9.3 Combinations
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#lottery">
+     Lottery
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#choosing-groups">
+     Choosing groups
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#number-of-transitions">
+     Number of transitions.
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#number-of-determinants">
+     Number of determinants
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#indistinguishable-objects">
+   9.4 Indistinguishable objects
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sampling-with-replacement">
+   9.5 Sampling with replacement
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#probability">
+   9.6 Probability
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     Probability
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#calculating-probability-sample-space">
+   9.7 Calculating probability: Sample space
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#definitions-notation-and-some-useful-formulae">
+   9.8 Definitions, notation, and some useful formulae
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#independent-and-exclusive-events-sample-spaces-and-conditional-probability">
+   9.9 Independent and exclusive events, sample spaces, and conditional probability
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#i-chance-of-observing-a-head-on-a-coin-and-a-6-on-a-dice">
+     (i) Chance of observing a head on a coin and a
+     <span class="math notranslate nohighlight">
+      \(6\)
+     </span>
+     on a dice.
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ii-cards-drawn-in-succession">
+     (ii) Cards drawn in succession
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#iii-independent-events-molecular-yield">
+     (iii) Independent events. Molecular yield
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#iv-cards-drawn-but-not-replaced">
+     (iv) Cards drawn but not replaced
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#v-throw-a-die-n-time">
+     (v) Throw a die
+     <span class="math notranslate nohighlight">
+      \(n\)
+     </span>
+     time,
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vii-same-birthdays">
+     (vii) Same birthdays
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#v-iii-conditional-probability-throwing-coins">
+     v(iii) Conditional probability. Throwing coins
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-binomial-distribution-see-also-chapter-12-3">
+   9.10 The Binomial distribution  (See also chapter 12.3)
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#chance-of-getting-4-heads-in-12-coin-flips">
+     Chance of getting
+     <span class="math notranslate nohighlight">
+      \(4\)
+     </span>
+     heads in
+     <span class="math notranslate nohighlight">
+      \(12\)
+     </span>
+     coin flips
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#red-shifted-tryptophan-fluorescence">
+     Red shifted Tryptophan fluorescence.
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#isotopes">
+     Isotopes.
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#chromatography">
+     Chromatography
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#large-numbers-most-probable-state-and-entropy">
+   9.11 Large numbers, most probable state and Entropy.
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#entropy">
+     Entropy
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#poisson-distribution-see-also-chapter-13-7">
+   9.13 Poisson distribution (see also Chapter 13.7)
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#franck-condon-factors">
+     Franck-Condon Factors
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sequential-rate-equations">
+     Sequential rate equations
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#poisson-distribution-derived-from-the-binomial">
+     Poisson distribution derived from the binomial.
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#multinomial-distribution">
+   9.14 Multinomial distribution
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#genetics">
+   9.15 Genetics
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="sophisticated-counting-permutations-combinations-and-probability">
+<h1>Sophisticated Counting: permutations, combinations and probability<a class="headerlink" href="#sophisticated-counting-permutations-combinations-and-probability" title="Permalink to this headline">¶</a></h1>
+<p>The branch of mathematics dealing with permutations, combinations, and probability is perhaps that most closely related to everyday experience, particularly so if you play cards or do the lottery. There are different ways of counting the number of the arrangements of objects, such as molecules or footballs and these are permutations and combinations.</p>
+<div class="section" id="permutations">
+<h2>Permutations<a class="headerlink" href="#permutations" title="Permalink to this headline">¶</a></h2>
+<p>Permutations count the number of ways of arranging objects so that each permutation is unique. This means that the order is important.</p>
+</div>
+<div class="section" id="combinations">
+<h2>Combinations<a class="headerlink" href="#combinations" title="Permalink to this headline">¶</a></h2>
+<p>Combinations count the number of ways of selecting objects from a group without considering the order of selecting.</p>
+<p>We shall describe these quantities in terms of ‘objects’ and ‘boxes’ and let them variously apply to dice, playing cards, electrons, atoms, molecules, and energy levels as the context requires.</p>
+<p>In genetics, probabilities are used when calculating the outcome from mixing genes through the generations. In physical science, statistical mechanics uses ideas based on placing particles into energy levels and from their distribution, partition functions can be calculated which in turn lead to thermodynamic qualities.</p>
+<p>The probability or <em>chance</em> of an event occurring, will be defined as the ratio of the number of successful outcomes to the total number of possible outcomes, and can only have values from <span class="math notranslate nohighlight">\(0\)</span> to <span class="math notranslate nohighlight">\(1\)</span>. It is implicitly assumed that any one event is just as likely to occur as any other. A particular outcome is not therefore predictable; only that a certain fraction of times the expected result will occur if many trials are carried out. For instance, you would not expect to be able to throw a die so that a <span class="math notranslate nohighlight">\(1\)</span> is always produced. One might obtain a <span class="math notranslate nohighlight">\(1\)</span> on the first throw. If a <span class="math notranslate nohighlight">\(1\)</span> is obtained on the second throw, this is surprising, but if on a third, this suggests, but does not prove, that the die might be biased because we expect a die to produce a <span class="math notranslate nohighlight">\(1\)</span>, or any of its other numbers, <em>on average</em> only once in six throws. Probability theory allows the calculation of the exact chance of each possible outcome without having to do the experiment. Because the probability or chance of a successful event <span class="math notranslate nohighlight">\(p\)</span>, cannot be greater than <span class="math notranslate nohighlight">\(1\)</span>, the chance of failure is <span class="math notranslate nohighlight">\(q = 1 - p\)</span>.</p>
+</div>
+<div class="section" id="id1">
+<h2>9.1 Permutations<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>A permutation is an <em>ordered</em> arrangement of objects and if the order is changed then a new permutation is produced. The five letters A to E arranged as A B C D E form one permutation; A B C E D and A B E C D are others. If there are five objects then there are <span class="math notranslate nohighlight">\(5! = 5 \times 4 \times 3 \times 2 \times 1 = 120\)</span> permutations. The proof is straightforward: the letter E can be put into five different positions. If D is now moved then it can be placed in four positions, C in three, and so forth; therefore, the number of permutations when all <span class="math notranslate nohighlight">\(n\)</span> objects are chosen is <span class="math notranslate nohighlight">\(n(n - 1)(n - 2) \cdots 1\)</span> which is <span class="math notranslate nohighlight">\(n!\)</span>. This can easily be a truly vast number, but if there are only three objects then there are only 3! = 6 ways of doing this which are ABC, ACB, CAB, BAC, BCA, CBA. The permutation of <span class="math notranslate nohighlight">\(n\)</span> objects is written as</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle P(n, n) = n!\]</div>
+<p>When only some of the objects are chosen, the permutations will be fewer. Suppose that either <span class="math notranslate nohighlight">\(p\)</span> objects at a time are chosen out of <span class="math notranslate nohighlight">\(n\)</span>, or that <span class="math notranslate nohighlight">\(p\)</span> objects are placed into <span class="math notranslate nohighlight">\(n\)</span> boxes so that no more than one is in any box, then the number of ways of doing this <em>‘p from n’</em> calculation is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle P(n, p) = n(n - 1)(n - 2) \cdots (n - p + 1) =\frac{n!}{(n-p)!}\tag{19}\]</div>
+<p>Choosing any two letters, <span class="math notranslate nohighlight">\(p = 2\)</span>, from three, <span class="math notranslate nohighlight">\(n = 3\)</span> produces 3!/1! = 6 permutations. For example, if the letters are ABC, then the six choices are AB, BA, AC, CA, BC, CB. Because each permutation is distinct, if we were to place them into groups or ‘boxes’ then only one arrangement goes into each box. When <span class="math notranslate nohighlight">\(n = p\)</span>, because <span class="math notranslate nohighlight">\(0! = 1\)</span> this equation equals <span class="math notranslate nohighlight">\(P(n, n) = n!\)</span>. If each of the permutations is equally likely, then the probability of any one occurring is <span class="math notranslate nohighlight">\(1/P(n, p)\)</span>. Note also that the notation <span class="math notranslate nohighlight">\(P(n, p)\)</span> is not universal and <span class="math notranslate nohighlight">\(_nP_p,\; ^nP_p\)</span> or <span class="math notranslate nohighlight">\(P_p^n\)</span> are also commonly used.</p>
+</div>
+<div class="section" id="permutation-with-groups-of-identical-objects">
+<h2>9.2 Permutation with groups of identical objects<a class="headerlink" href="#permutation-with-groups-of-identical-objects" title="Permalink to this headline">¶</a></h2>
+<p>If some of the <span class="math notranslate nohighlight">\(n\)</span> objects are identical then clearly the number of choices is going to be reduced. To take an extreme example, if all the objects are identical or indistinguishable from one another, then there is only one way of arranging them and the number of permutations is one. If there are <span class="math notranslate nohighlight">\(n\)</span> objects split into two groups and each of <span class="math notranslate nohighlight">\(v\)</span> and <span class="math notranslate nohighlight">\(w\)</span> are identical objects, the number of permutations is reduced by dividing by the number of ways of separately arranging every identical group, and the result is <span class="math notranslate nohighlight">\(n!/(v!w!)\)</span>. If the <span class="math notranslate nohighlight">\(n\)</span> objects are A A B B B E C D, then there are <span class="math notranslate nohighlight">\(8!/(2!3!) = 8 \times 7 \times 6 \times 5 \times 2 \)</span> ways of arranging them or 12 times less than if all the letters were distinct.</p>
+<p>The identical grouping permutation can be stated more formally as the number of ways of selecting <span class="math notranslate nohighlight">\(n\)</span> objects if these are in <span class="math notranslate nohighlight">\(r\; (\le n)\)</span> groups of <span class="math notranslate nohighlight">\(m_1, m_2, m_3 \cdots m_r\)</span> objects. The total of all <span class="math notranslate nohighlight">\(m_r\)</span> objects must be <span class="math notranslate nohighlight">\(n\)</span>. The number of permutations with groups is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle P_G = \frac{n!}{\prod_{i=1}^r m_i!}\]</div>
+<p>where the symbol <span class="math notranslate nohighlight">\(\prod\)</span> indicates the product. This number is also the number of ways of placing <span class="math notranslate nohighlight">\(n\)</span> distinguishable objects into <span class="math notranslate nohighlight">\(r\)</span> distinguishable boxes so that boxes contain <span class="math notranslate nohighlight">\(m_1,\; m_2, \;m_3 \cdots m_i\)</span> objects each, and each of the objects in any box is alike.</p>
+<p>The number of ways of arranging the amino acid residues of even a small protein is astronomically large, but countable. An active protein in a bee’s sting is called mellitin. It is a protein with only 26 amino acids and which forms two short <span class="math notranslate nohighlight">\(\alpha\)</span>-helical regions, with a bend in between. Two such helices are seen in the crystal structure 2MLT.pdb in the RCSB data base (<a class="reference external" href="http://www.rcsb.org/pdb/home/home.do">www.rcsb.org/pdb/home/home.do</a>).</p>
+<p>The sequence of the structure is</p>
+<p>GLY ILE GLY ALA VAL LEU LYS VAL LEU THR THR GLY LEU PRO ALA LEU ILE SER TRP ILE LYS ARG LYS ARG GLN GLN</p>
+<p>Collecting the residues together produces groups of 3 gly, 3 ile, 2 ala, 2 val, 4 leu, 3 lys, 2 thr, 1 pro, 1 ser, 1 trp, 2 arg, and 2 gln and this produces</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle  \frac{26!}{3!3!2!2!4!3!2!2!2!}\approx 2.4\cdot10^{21}\]</div>
+<p>ways of arranging a chain. Nature has had to search in the ‘space’ of all combinations to find an effective protein (one that causes pain when you are stung) and has had a very long time to do so. However, this number of permutations is still so large that even producing a different sequence at one a minute, supposing that this were possible, would have taken <span class="math notranslate nohighlight">\(\approx 5 \cdot 10^{15}\)</span> years, which is far longer than the age of the Earth. This is, of course, a misleading calculation for two reasons at least. One is that it assumes that the protein always had <span class="math notranslate nohighlight">\(26\)</span> amino acids whereas, in the distant past, it was probably far smaller but was nevertheless effective  enough  to give the bee’s ancient ancestor an evolutionary advantage. Secondly, many permutations of even a few amino acids will not have the stability to form any structure other than a random coil and so could never exist as a functioning protein. Those that do form some stable structure and are effective are then preserved and passed down to the next generation, and by mating and random mutations, improved. Therefore the whole of the possible permutation space is never searched, but the search algorithm that is natural selection very effectively finds a working solution and one that is usually close to the optimum.</p>
+</div>
+<div class="section" id="id2">
+<h2>9.3 Combinations<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>A combination is really a misnomer, because it is the number of ways of choosing <span class="math notranslate nohighlight">\(p\)</span> distinguishable objects from a group of <span class="math notranslate nohighlight">\(n\)</span> distinguishable objects, and the order of choosing these <span class="math notranslate nohighlight">\(p\)</span> objects does not matter. If two letters from ABC are chosen, the number of combinations is three and the choices or combinations are AB <span class="math notranslate nohighlight">\(\equiv\)</span> BA, AC  <span class="math notranslate nohighlight">\(\equiv\)</span> CA, BC  <span class="math notranslate nohighlight">\(\equiv\)</span> CB because the order does not matter.</p>
+<p>If we think of placing objects into boxes, combinations, unlike permutations, allow more than one object to be placed in each box. For example, the letters ABC fill three boxes each containing two objects. Removing <span class="math notranslate nohighlight">\(p\)</span> of the permutations is equivalent to dividing the objects into two groups, the chosen group of <span class="math notranslate nohighlight">\(p\)</span> objects and another group of <span class="math notranslate nohighlight">\(n - p\)</span> objects.</p>
+<p>In a permutation, there are <span class="math notranslate nohighlight">\(n!\)</span> ways of choosing (if all the objects are different) and a combination must be less than this because the ordering of similar objects does not matter, and is less by the factorial of the number chosen, which is <span class="math notranslate nohighlight">\(p!\)</span>. Four objects A B C D produce <span class="math notranslate nohighlight">\(4! = 24\)</span> permutations. If any three (<span class="math notranslate nohighlight">\(p = 3\)</span>) are chosen at a time, the four combinations <span class="math notranslate nohighlight">\(C(4, 3)\)</span> are ABC, ACD, ABD, BCD. Each of these groups has <span class="math notranslate nohighlight">\(p! = 3! = 6\)</span> permutations making <span class="math notranslate nohighlight">\(4 \times 6 = 24\)</span> permutations in total. Thus the number of combinations <span class="math notranslate nohighlight">\(C\)</span> is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle C(n,p)=\frac{p(n,p)}{p!} \tag{20}\]</div>
+<p>Therefore, using equation 19, the number of ways of choosing <span class="math notranslate nohighlight">\(p\)</span> objects at a time out of a total of <span class="math notranslate nohighlight">\(n\)</span>, is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle C(n,p)=\frac{n!}{p!(n-p)!}=\binom{n}{p} \tag{21}\]</div>
+<p>The second notation, ‘n over p’, is that used for the coefficients in the binomial expansion. As for permutations, the notations <span class="math notranslate nohighlight">\(_nC_p,\; ^nC_p,\; C_p^n\)</span> are also commonly used. This number gives the coefficients in the binomial expansion and in the Binomial Probability distribution, see section 9.10.</p>
+<p>The original context of the word combination is that the number <span class="math notranslate nohighlight">\(C(n, p)\)</span> is the number of combinations of <span class="math notranslate nohighlight">\(n\)</span> things selected <span class="math notranslate nohighlight">\(p\)</span> at a time. Since <span class="math notranslate nohighlight">\(\displaystyle \binom{n}{p}=\binom{n}{n-p}\)</span> this is also equal to the number of combinations of <span class="math notranslate nohighlight">\(n\)</span> things selected <span class="math notranslate nohighlight">\(n-p\)</span> at a time.</p>
+<div class="section" id="lottery">
+<h3>Lottery<a class="headerlink" href="#lottery" title="Permalink to this headline">¶</a></h3>
+<p>The chance of winning a lottery can be found from the number of combinations. For instance, choosing 6 numbers out of 48 produces</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle C(48,6)=\frac{48!}{6!42!}=\frac{48\cdot 47\cdot 46 \cdot45 \cdot 44 \cdot 43}{6 \cdot 5\cdot 4 \cdot 3 \cdot 2}=12\,271\,512\]</div>
+<p>possible choices or just under one in twelve million chances of winning, as the chance of any one combination being chosen is just as likely as any other, then its probability is <span class="math notranslate nohighlight">\(1/C(n, p)\)</span>. If <span class="math notranslate nohighlight">\(\approx 12\)</span> million people play each week, then on average one might expect one winner each week, assuming that the numbers are equally likely to be chosen by the players.</p>
+</div>
+<div class="section" id="choosing-groups">
+<h3>Choosing groups<a class="headerlink" href="#choosing-groups" title="Permalink to this headline">¶</a></h3>
+<p>If you are making choices when two or more conditions apply, then the combinations are multiplied together. For example, suppose that a study is to be conducted in which <span class="math notranslate nohighlight">\(25\)</span> patients are to be placed into three groups of equal size. The control group must contain <span class="math notranslate nohighlight">\(8\)</span> persons and therefore so must the experimental groups. These must be selected from <span class="math notranslate nohighlight">\(25 - 8 = 17\)</span> and <span class="math notranslate nohighlight">\(9\)</span> persons each. The number of ways of making this choice is huge even for such small numbers, and is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle C(25, 8)C(17, 6)C(9, 8) =\frac{25!}{8!(25-8)!}\frac{17!}{6!(17-8)!}\frac{9!}{8!(9-8)!}=230\,637\,794\,250\]</div>
+</div>
+<div class="section" id="number-of-transitions">
+<h3>Number of transitions.<a class="headerlink" href="#number-of-transitions" title="Permalink to this headline">¶</a></h3>
+<p>In a stack of energy levels such as in an atom, many transitions are possible from an upper level <span class="math notranslate nohighlight">\(n_2\)</span> to a lower one <span class="math notranslate nohighlight">\(n_1\)</span>, when the selection rules are ignored. Thus level <span class="math notranslate nohighlight">\(6\)</span> can have transitions to levels <span class="math notranslate nohighlight">\(5,4,3,2,1\)</span>, level <span class="math notranslate nohighlight">\(1\)</span> being lowest, and level <span class="math notranslate nohighlight">\(5\)</span> can then transfer to levels <span class="math notranslate nohighlight">\(4,3,2,1\)</span> etc. The first step is to calculate the number of levels and this is just <span class="math notranslate nohighlight">\(n_2-n_1+1\)</span>. You can check this by drawing a set of levels. Next, each transition, of course, involves two levels so we need to find the number of ways of selecting two levels (objects) at a time out of the total and this is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \binom{n_2-n_1+1}{2}=\frac{(n_2-n_1+1)!}{2!(n_2-n_1+1-2)!}=\frac{(n_2-n_1+1)(n_2-n_1)}{2}\]</div>
+</div>
+<div class="section" id="number-of-determinants">
+<h3>Number of determinants<a class="headerlink" href="#number-of-determinants" title="Permalink to this headline">¶</a></h3>
+<p>In the Hartree-Fock self consistent field method of calculating molecular orbitals the wavefunction is described by spin orbitals that are arranged into Slater determinants (see chapter 7 Matrices). There are more spin orbitals than electrons because the wavefunction is expressed as a series of terms and the more terms included lower the energy. The determinants are used to ensure that the Pauli principle applies, which in its wider sense means that the wavefunction is antisymmetric when any two electron coordinates are exchanged. The calculation can be done with the smallest set of determinants, which means using just the lowest energy spin orbitals, but this does not generate the lowest possible energy. What is done is to make wavefunctions, described by Slater determinants, that correspond to one or more excitations and this lowers the energy. This is fine as far as it goes but the number of possible ways excitations can be achieved is vast, and this is of practical importance as each calculation involves evaluating an integral and so has implications on computer time and memory size. Including excited determinants is called <em>Configuration Interaction</em>. A typical example is that of benzene described by <span class="math notranslate nohighlight">\(72\)</span> spin orbitals and <span class="math notranslate nohighlight">\(42\)</span> electrons.</p>
+<p>Instead of thinking of determinants, suppose that there are a number of energy levels, or boxes if you wish, into which particles are placed such that only one is allowed into any level. If, for example, there are <span class="math notranslate nohighlight">\(72\)</span> levels and <span class="math notranslate nohighlight">\(42\)</span> particles what are the number of ways that these can be placed? The number of combinations is <span class="math notranslate nohighlight">\(\displaystyle \binom{72}{42}=\frac{72!}{42!30!}=1.6\cdot 10^{20}\)</span> which is vast. Next, suppose that only the lowest <span class="math notranslate nohighlight">\(42\)</span> levels are occupied how many ways can we move a single particle at a time to an empty level. This would correspond to singly excited determinants and is the number of choices by which one particle can be moved and that is <span class="math notranslate nohighlight">\(30\)</span> and so for all particles is <span class="math notranslate nohighlight">\(42\cdot 30 = 1260\)</span>. Now if two are moved at a time (a doubly excited determinant) then the number is <span class="math notranslate nohighlight">\(\displaystyle \binom{42}{2}\binom{72-42}{2}=374535\)</span>. The extension to moving three at a time is clear but we cannot move all of them at once because there are more particles than empty spaces. You can appreciate just how many integrals have to be evaluated when calculating benzene’s molecular orbitals.</p>
+</div>
+</div>
+<div class="section" id="indistinguishable-objects">
+<h2>9.4 Indistinguishable objects<a class="headerlink" href="#indistinguishable-objects" title="Permalink to this headline">¶</a></h2>
+<p>The cards in a pack of playing cards are clearly distinguishable; it would be pointless if they were not. White tennis balls are generally indistinguishable from one another and so would golf balls be if they were not numbered after manufacture to enable players to identify one from another. Atoms or photons are truly indistinguishable; we cannot label them to tell one from another. The number of ways of placing (distributing) <span class="math notranslate nohighlight">\(n\)</span> indistinguishable objects into <span class="math notranslate nohighlight">\(p\)</span> distinguishable boxes with <span class="math notranslate nohighlight">\(p \ge n\)</span> and with any number of objects being allowed in any one box is,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle C(n+p-1,n)=\frac{(n+p-1)!}{n!(p-1)!}\tag{22}\]</div>
+<p>The proof is involved and given in Margenau &amp; Murphy (1943). We note here only that there are <span class="math notranslate nohighlight">\((n + p - 1)!\)</span> permutations when the <span class="math notranslate nohighlight">\(n\)</span> objects are placed in <span class="math notranslate nohighlight">\(p - 1\)</span> boxes. Using only <span class="math notranslate nohighlight">\(p - 1\)</span> boxes is correct because if there is just one box then there are <span class="math notranslate nohighlight">\(n!\)</span> permutations if we suppose, for the moment, that the objects are distinguishable. However, if the objects are indistinguishable, the number of permutations has to be divided by <span class="math notranslate nohighlight">\(n!\)</span>. (There is only one permutation of <span class="math notranslate nohighlight">\(n\)</span> indistinguishable objects in one box.) Finally, there are <span class="math notranslate nohighlight">\((p - 1)!\)</span> permutations of the (distinguishable) boxes for a given configuration and therefore equation 22 follows. If there are <span class="math notranslate nohighlight">\(n = 2\)</span> objects and <span class="math notranslate nohighlight">\(p = 3\)</span> boxes in which to place them, then there
+should be 4!/2!2! = 6 arrangements. Labelling both objects <span class="math notranslate nohighlight">\(x\)</span> these are</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin{bmatrix}
+xx &amp; - &amp; -\\
+- &amp; xx &amp; -\\
+- &amp; - &amp; xx\\
+x &amp; x &amp; -\\
+- &amp; x &amp; x\\
+x &amp; - &amp; x-\\
+\end{bmatrix}\end{split}\]</div>
+<p>Particles with zero or integer spin angular momentum, such as photons and deuterons, obey Bose - Einstein statistics. Any number of them can occupy a quantum state. When dealing with atoms and molecules and distributing particles among their energy levels, the number of boxes <span class="math notranslate nohighlight">\(p\)</span>, becomes the degeneracy <span class="math notranslate nohighlight">\(g\)</span> of any energy level. The multiplicity is the number of states belonging to one level, i.e. the size of the degeneracy. Degeneracy and multiplicity do tend to be used interchangeably. If the angular momentum quantum number is <span class="math notranslate nohighlight">\(S\)</span>, then this state has a multiplicity of  <span class="math notranslate nohighlight">\(g = 2S + 1\)</span> and is  <span class="math notranslate nohighlight">\(g = 2S + 1\)</span> degenerate unless some specific interaction alters this. If there are <span class="math notranslate nohighlight">\(i = 1 \cdots N\)</span> energy levels then the total number of ways of distributing particles among the levels is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle W = \prod_{i=1}^N\frac{(n+g_i-1)!}{n_i!(g_i-1)!}\]</div>
+<p>where <span class="math notranslate nohighlight">\(g_i\)</span> is the degeneracy of level <span class="math notranslate nohighlight">\(i\)</span>. (see Margenau &amp; Murphy 1943, Chapter 12). For one level, the number of combinations is <span class="math notranslate nohighlight">\(C(n + p - 1, n)\)</span> and the chance of observing any one distinguishable arrangement is considered to be equal in Bose - Einstein statistics and is <span class="math notranslate nohighlight">\(1/C(n + p - 1, n)\)</span>.</p>
+<p>Fermions are half integer spin particles and include electrons, protons, and atoms such as <span class="math notranslate nohighlight">\(^{14}\)</span>N, which are made up of an odd number of fermions. They obey Fermi - Dirac statistics and are restricted so that no more than one of them can be in any quantum state. By the Pauli exclusion principle, a fermion’s wavefunction has to be asymmetric to the exchange of coordinates, and each fermion must have a unique set of quantum numbers. In apparent contradiction an orbital can contain zero, one, or two electrons. Two electrons are allowed to be in an orbital if they have different quantum numbers and are therefore different fermions. An electron’s spin quantum number is <span class="math notranslate nohighlight">\(S = 1/2\)</span> but there is a second quantum number <span class="math notranslate nohighlight">\(m_s = \pm 1/2\)</span> who’s value is related to the spin’s orientation, colloquially spin ‘up’ or ‘down’, so that an orbital can have up to two different fermions in it. However, no more than one of them is in any one quantum state.</p>
+<p>There are only two sets of the electrons’ quantum numbers with which to label the electrons (1/2, 1/2) and (1/2, -1/2), and so no more that two electrons can be in any orbital. If an (imaginary) particle had <span class="math notranslate nohighlight">\(S = 1\)</span> then <span class="math notranslate nohighlight">\(m_s\)</span> would be <span class="math notranslate nohighlight">\(0, \pm 1\)</span> and a maximum of three of them could fill any orbital.</p>
+<p>With indistinguishable particles there are now only <span class="math notranslate nohighlight">\(C(p,n)\)</span> ways of choosing <span class="math notranslate nohighlight">\(p\)</span> singly occupied states from the <span class="math notranslate nohighlight">\(p\)</span> available, and if these distributions are equally likely then <span class="math notranslate nohighlight">\(1/C(p,n)\)</span> is the probability that any one is occupied. Again, if there are <span class="math notranslate nohighlight">\(n = 2\)</span> fermions to be placed in <span class="math notranslate nohighlight">\(p = 3\)</span> levels then the only possible arrangements are</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin{bmatrix}
+a &amp; a &amp; -\\
+- &amp; a &amp; a\\
+a &amp; - &amp; a
+\end{bmatrix}\end{split}\]</div>
+<p>which is <span class="math notranslate nohighlight">\(C(3, 2) = 3!/(2!1!) = 3\)</span></p>
+<p>The number of combinations just described also answers an apparently harder question. If there are <span class="math notranslate nohighlight">\(n\)</span> boxes, and <span class="math notranslate nohighlight">\(p \lt n\)</span> indistinguishable objects to be placed in the boxes so that no more than one is in any box, then the number of ways of doing this is <span class="math notranslate nohighlight">\(C(n, p)\)</span>. The assignment into boxes is the same as selecting <span class="math notranslate nohighlight">\(p\)</span> out of <span class="math notranslate nohighlight">\(n\)</span> objects. In an atom when calculating the term symbols, the number of microstates in a configuration must be enumerated. If there are two electrons to be placed into the three 2p orbitals, a <span class="math notranslate nohighlight">\(p^2\)</span> configuration, then there are <span class="math notranslate nohighlight">\(C(6, 2) = 6!/(2!4!) = 15\)</span> microstates. Why the 6 when there are only three p orbitals? The electrons must each have a unique set of quantum numbers therefore the spin states are unique; spin up is different from spin down. (See Steinfeld (1981) and also Foote (2005) for a diagrammatic way of calculating term symbols.)</p>
+</div>
+<div class="section" id="sampling-with-replacement">
+<h2>9.5 Sampling with replacement<a class="headerlink" href="#sampling-with-replacement" title="Permalink to this headline">¶</a></h2>
+<p>If a bag contains <span class="math notranslate nohighlight">\(n\)</span> objects and we choose <span class="math notranslate nohighlight">\(p\)</span> of them but return each object to the bag before making the next choice, then there are <span class="math notranslate nohighlight">\(n^p\)</span> ways of choosing them: there are always <span class="math notranslate nohighlight">\(n\)</span> ways of choosing, and this is done <span class="math notranslate nohighlight">\(p\)</span> times over. If there are four letters ABCD, then choosing three of them produces <span class="math notranslate nohighlight">\(4^3 = 64\)</span> possible samples. The number of samples under permutation rules is <span class="math notranslate nohighlight">\(4!/1! = 24\)</span> and <span class="math notranslate nohighlight">\(4!/(3!1!) = 2\)</span> under combination rules.</p>
+<p>The number of UK car registration plates can be calculated by ‘sampling with replacement’. Although the way that number plates are labelled has recently changed, there are still many cars with the form of a letter to identify the year of manufacture, a three digit number and three letters. A plate such as K 446 LPW is typical. In this form, each year there are <span class="math notranslate nohighlight">\(3^{10} \times 3^{26} = 150 094 635 296 999 121 \approx 10^{17}\)</span> possible registrations; a ridiculously large number even when many are not used for various reasons. Even if only nine numbers and ten letters were used, there would still be more that <span class="math notranslate nohighlight">\(10^9\)</span> possible registrations.</p>
+<p>Braille is a representation of letters and numbers using a pattern that can be felt by the fingertips, and which enables blind people to read. The pattern consists of raised dots and gaps in a rectangular shape whose height is greater than its width. There are six dots and gaps combined making <span class="math notranslate nohighlight">\(2^6 = 64\)</span> ways of arranging the patterns and that is enough to encode all the letters, numbers, and punctuation marks commonly used.</p>
+<p>The molecular motor ATPase reversibly converts ADP into ATP + phosphate (Pi). The protein crystal structure has been determined to high precision; see the Brookhaven Database (pdb) entry 1E79 and also Gibbons et al. (Nature Structural Biology 7, 1055, 2000). The protein called <span class="math notranslate nohighlight">\(F_1\)</span> contains the rotor part of the motor, has threefold symmetry, and three sites at which the reaction can occur. The reaction site has four possible states</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \mathrm{Empty}\leftrightharpoons \mathrm{ (ATP)_{bound}} \leftrightharpoons \mathrm{(ADP + Pi)_{bound} }\leftrightharpoons\mathrm{ (ADP)_{bound} }\leftrightharpoons \mathrm{Empty }\]</div>
+<p>therefore, there are <span class="math notranslate nohighlight">\(4^3 = 64\)</span> possible binding states in the protein at any one time.</p>
+</div>
+<div class="section" id="probability">
+<h2>9.6 Probability<a class="headerlink" href="#probability" title="Permalink to this headline">¶</a></h2>
+<p>When answering questions about the probability or chance of some event occurring, it is always worth considering whether the question is real. The question ‘what is the chance that next Friday is the 13th?’ is not a question involving chance, since checking with a calendar will produce the answer. Similarly, asking ‘what is the chance that that runner will win this race?’, or ‘what is the chance that Portsmouth will beat Manchester United?’ is not a question that probability theory can answer, since there are factors involved other than pure chance that make the outcome unpredictable. The question ‘what is the chance that I will win the lottery?’ is a question to which only a probabilistic, not predictable, answer can be given, provided of course that you have bought a ticket! A probabilistic answer is possible because one number is just as likely to be drawn as another is, otherwise the lottery would not be fair. The <em>just as likely</em> is important here as it indicates that random chance is involved.</p>
+<p>Quite often, some caution is necessary in analysing problems involving chance or random events. For example, if two coins are simultaneously flipped what is the change of observing two heads? The ways the coins can fall is either head H, or tail T, but to think that there are only three outcomes, HH, HT, TT and the chance <span class="math notranslate nohighlight">\(1/3\)</span> is wrong. This is because there are four outcomes HH, HT, TH and TT so the chance of observing HH is <span class="math notranslate nohighlight">\(1/4\)</span>. The chance of a head and a tail is <span class="math notranslate nohighlight">\(1/2\)</span>.  Thus the definition of probability is</p>
+<div class="section" id="id3">
+<h3>Probability<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>Probability is defined as the ratio of the number of successful outcomes to the total number of possible outcomes.</p>
+</div>
+</div>
+<div class="section" id="calculating-probability-sample-space">
+<h2>9.7 Calculating probability: Sample space<a class="headerlink" href="#calculating-probability-sample-space" title="Permalink to this headline">¶</a></h2>
+<p>The foundations of this subject are based on the ideas of sets and subsets of objects and their properties; for example ‘union’ and ‘intersection’, Figure 20. A set is defined as a collection of objects such as the letters of the alphabet. A subset of these could be the vowels, {a, e, i, o, u}. The sample space is the total number of arrangements of objects that are possible for any particular problem. Flipping two coins has the sample space of four elements {HH, HT, TH, TT }. To determine an event or successful outcome is the purpose or object of the calculation, and is a subset of this sample space. Suppose that the event we want is that one head is to be produced when two coins are tossed; then this is the subset A = {HH, HT, TH}. If we want the event, which is two heads, then only one element exists and this is B = {HH}. An event such as B that contains only one sample point is called a simple event. As probability is defined as the ratio of the number of successful outcomes to the total number of possible outcomes, the probability of observing event A, that of one head, is the number of arrangements for this event over the total number in the sample space, making the probability <span class="math notranslate nohighlight">\(3/4\)</span>. Similarly, observing two heads occurs on average <span class="math notranslate nohighlight">\(1/4\)</span> of the times two coins are thrown.</p>
+<p>As an example, consider a die where faces <span class="math notranslate nohighlight">\(5\)</span> and <span class="math notranslate nohighlight">\(6\)</span> are black and the other four faces are white. We would like to know the chance <span class="math notranslate nohighlight">\(p\)</span> of the top face being white and the chance of it being black. This must be <span class="math notranslate nohighlight">\(1 - p\)</span> since there are no other colours. The sample space is <span class="math notranslate nohighlight">\((1 \to 6)\)</span> and, as usual, it is assumed that each outcome <span class="math notranslate nohighlight">\(1 \to 6\)</span> is equally likely. In the first case, outcome white = <span class="math notranslate nohighlight">\((1, 2, 3, 4)\)</span> and occurs with the probability (chance) <span class="math notranslate nohighlight">\(4/6\)</span>; a black face being uppermost occurs with a chance <span class="math notranslate nohighlight">\(2/6\)</span>. See Stewart (1998) and Goldberg (1986) for clear discussions of probability.</p>
+<p><img alt="Drawing" src="../_images/chapter1-fig20.png" /></p>
+<p>Figure 20. Venn diagrams. Left: A and B are two overlapping ellipses, AB is their overlap and is shaded. The chance of A or B being observed is the intersection of A and B, which is <span class="math notranslate nohighlight">\(p = p(A) + p(B) - p(A, B)\)</span> and is proportional to the total area within the circles less that area overlapped. If A and B do not overlap the events are mutually exclusive and <span class="math notranslate nohighlight">\(p(AB) = 0\)</span>. Right: The union of A and B is the chance of belonging to at least one of A and B and is the shaded area.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="definitions-notation-and-some-useful-formulae">
+<h2>9.8 Definitions, notation, and some useful formulae<a class="headerlink" href="#definitions-notation-and-some-useful-formulae" title="Permalink to this headline">¶</a></h2>
+<p><strong>(i)</strong> The probability of an event <span class="math notranslate nohighlight">\(A\)</span> is <span class="math notranslate nohighlight">\(p(A)\ge 0\)</span>.</p>
+<p><strong>(ii)</strong> The certain event <span class="math notranslate nohighlight">\(S\)</span> has a probability of 1; <span class="math notranslate nohighlight">\(p(S)=1\)</span>.</p>
+<p><strong>(iii)</strong> The probability of an event <span class="math notranslate nohighlight">\(p(A)\)</span> is the sum of  simple events in the sample space.</p>
+<p><strong>(iv)</strong> The word ‘or’ is used in the inclusive sense. Thus, <em>A or B</em> means ‘either A or B, or, both’. The notation <span class="math notranslate nohighlight">\(p(A + B)\)</span>, is the probability that either <span class="math notranslate nohighlight">\(A\)</span> or <span class="math notranslate nohighlight">\(B\)</span> or both occurs. The notation <span class="math notranslate nohighlight">\(p(AB)\)</span> is a joint probability and means that both <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> occur. In set theory, this is the intersection or overlap of <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span>, and is usually written as <span class="math notranslate nohighlight">\(p(A\cap B)\)</span>; figure 20.</p>
+<p><strong>(v)</strong> If several <em>independent</em> events each of a probabilistic nature occur to produce a successful outcome, then the overall chance of this happening is the product of the probabilities of the individual events. An independent event is one whose outcome does not influence that for any of the others; <span class="math notranslate nohighlight">\(p(A \&amp; B) = p(A)p(B)\)</span>.</p>
+<p><strong>(vi)</strong> If two events <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> can occur, their inclusive probability <span class="math notranslate nohighlight">\(p(A + B)\)</span> means that at least one event occurs, which is to be interpreted as event <span class="math notranslate nohighlight">\(A\)</span> or <span class="math notranslate nohighlight">\(B\)</span>  occurs. In figure 20 (left) the sample spaces are related as</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle n(A) + n(B) = n(A + B) + n(AB)\]</div>
+<p>The area <span class="math notranslate nohighlight">\(n(A)\)</span> and <span class="math notranslate nohighlight">\(n(B)\)</span> is the whole of their respective ellipses, <span class="math notranslate nohighlight">\(n(A + B)\)</span> is the total area less the overlap <span class="math notranslate nohighlight">\(n(AB)\)</span>. When divided by the number of arrangements in the sample space these numbers become probabilities. The inclusive probability, either <span class="math notranslate nohighlight">\(A\)</span> or <span class="math notranslate nohighlight">\(B\)</span> or both, is the probability that <span class="math notranslate nohighlight">\(A\)</span> occurs, plus, the chance that <span class="math notranslate nohighlight">\(B\)</span> occurs minus the chance that both occur or</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle p(inclusive) = p(A) + p(B) - p(AB) \tag{23}\]</div>
+<p><strong>(vii)</strong> A mutually exclusive event is one whose outcome prevents any others occurring. The two events <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span>, are mutually exclusive if there is no intersection or overlap of <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span>, <span class="math notranslate nohighlight">\(p(AB) = 0\)</span>, therefore the probability of the occurrence of at least one out of two possible events is the sum of the individual probabilities,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle p(exclusive) = p(A) + p(B)\]</div>
+<p>This equation only applies to two events.</p>
+<p><strong>(viii)</strong> The sample space in tossing a coin is heads and tails, (H, T); in tossing a die this is <span class="math notranslate nohighlight">\((1 \cdots 6)\)</span>, in one set of playing cards <span class="math notranslate nohighlight">\((1 \cdots 52)\)</span>, and so forth. If three coins are used, the sample space contains <span class="math notranslate nohighlight">\(2^3\)</span> elements, HHH, HHT, etc. If <span class="math notranslate nohighlight">\(n_S\)</span> represents the number of arrangements in the whole sample space, <span class="math notranslate nohighlight">\(n_A\)</span> the subset that is the number of ways of arranging events in a successful outcome, <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(n_{NA}\)</span> the subset that is not <span class="math notranslate nohighlight">\(A\)</span> then, clearly, <span class="math notranslate nohighlight">\(n_S = n_A + n_{NA}\)</span>. The probability of outcome <span class="math notranslate nohighlight">\(A\)</span> is therefore</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle p=\frac{n_A}{n_s}=1-\frac{n_{NA}}{n_s}  \tag{24}\]</div>
+<p><strong>(ix)</strong> If <span class="math notranslate nohighlight">\(p\)</span> is the chance that an event occurs, then <span class="math notranslate nohighlight">\(1-p\)</span> is the chance that it will not,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle p(not A) = 1 - p(A)\]</div>
+<p>This is called the complement. On the right of figure 20, the complement of <span class="math notranslate nohighlight">\(p(A\cup B)\)</span> is the area outside the two shaded circles. In the left-hand sketch, the complement of the intersection <span class="math notranslate nohighlight">\(p(A\cap B) \equiv p(AB)\)</span>, is all the area not labelled <span class="math notranslate nohighlight">\(AB\)</span> inside the square.</p>
+<p><strong>(x)</strong> If two objects are placed into two different boxes, hence distinguishable, then the outcomes are (AB, -), (-, AB), (A, B), (B, A). As each of these is a simple event, the probability of each occurring is 1/4. If the objects are <em>indistinguishable</em>, then there are three arrangements (xx, -), (xx, -), (x, x), but the last may be considered to be two events and in this case would occur with a probability of <span class="math notranslate nohighlight">\(2/4\)</span>. However, if we take the three outcomes to be equally likely then the probability of the last is <span class="math notranslate nohighlight">\(1/3\)</span>, and this is the case for bosons.</p>
+</div>
+<div class="section" id="independent-and-exclusive-events-sample-spaces-and-conditional-probability">
+<h2>9.9 Independent and exclusive events, sample spaces, and conditional probability<a class="headerlink" href="#independent-and-exclusive-events-sample-spaces-and-conditional-probability" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="i-chance-of-observing-a-head-on-a-coin-and-a-6-on-a-dice">
+<h3>(i) Chance of observing a head on a coin and a <span class="math notranslate nohighlight">\(6\)</span> on a dice.<a class="headerlink" href="#i-chance-of-observing-a-head-on-a-coin-and-a-6-on-a-dice" title="Permalink to this headline">¶</a></h3>
+<p>If a coin and a die are thrown they are clearly independent events and the chance of observing a head and a <span class="math notranslate nohighlight">\(6\)</span> is <span class="math notranslate nohighlight">\((1/2) \times (1/6)\)</span>. This follows from the fundamental principle of counting; if a job is completed in <span class="math notranslate nohighlight">\(n\)</span> ways and another in <span class="math notranslate nohighlight">\(m\)</span> ways then both can be completed in <span class="math notranslate nohighlight">\(n \times m\)</span> ways. For instance, if there are <span class="math notranslate nohighlight">\(6\)</span> types of anions and <span class="math notranslate nohighlight">\(8\)</span> types of cations then <span class="math notranslate nohighlight">\(48\)</span> different salts can be produced. Now, suppose that two dice are thrown and you want to find the chance that the total of their numbers is <span class="math notranslate nohighlight">\(10\)</span>. The two dice are independent, the result of one does not influence the other, and the probabilities therefore multiply. As one die can fall in one of six ways, two can fall in <span class="math notranslate nohighlight">\(6 \times 6 = 36\)</span> different ways. The number <span class="math notranslate nohighlight">\(10\)</span> can be obtained in three different ways, each of which is equally likely to occur: <span class="math notranslate nohighlight">\(6 + 4,\, 4 + 6,\)</span> and <span class="math notranslate nohighlight">\(5 + 5\)</span>. The probability of observing <span class="math notranslate nohighlight">\(10\)</span> is therefore <span class="math notranslate nohighlight">\(3/36\)</span>. If a sum of <span class="math notranslate nohighlight">\(6\)</span> is sought, then this is produced in the combinations <span class="math notranslate nohighlight">\(1+5,\, 5+1,\, 4+2, \,2+4, \, 1+3\)</span> and would be expected to be observed <span class="math notranslate nohighlight">\(5/36\)</span> times the dice are thrown.</p>
+</div>
+<div class="section" id="ii-cards-drawn-in-succession">
+<h3>(ii) Cards drawn in succession<a class="headerlink" href="#ii-cards-drawn-in-succession" title="Permalink to this headline">¶</a></h3>
+<p>If you want two cards containing the number <span class="math notranslate nohighlight">\(7\)</span> to be drawn in succession from a pack of <span class="math notranslate nohighlight">\(52\)</span> playing cards, what is the chance of this happening if the first card chosen is not replaced in the pack? The chance of the first <span class="math notranslate nohighlight">\(7\)</span> being chosen is <span class="math notranslate nohighlight">\(4/52\)</span> because there are four <span class="math notranslate nohighlight">\(7\)</span>’s in a pack of <span class="math notranslate nohighlight">\(52\)</span> cards. It is now assumed that a <span class="math notranslate nohighlight">\(7\)</span> has been removed and therefore the chance that the second card removed is a <span class="math notranslate nohighlight">\(7\)</span> is <span class="math notranslate nohighlight">\(3/51\)</span> making the chance <span class="math notranslate nohighlight">\((4/51) \times (3/51) = 1/221\)</span> overall. The second choice is <span class="math notranslate nohighlight">\(3/51\)</span> because we have only <span class="math notranslate nohighlight">\(51\)</span> cards left and one <span class="math notranslate nohighlight">\(7\)</span> is assumed to have been removed in our first try. Had we chosen to find the probability that a <span class="math notranslate nohighlight">\(7\)</span> and a <span class="math notranslate nohighlight">\(6\)</span> were to be removed in succession, the chance would be <span class="math notranslate nohighlight">\((4/52) \times (4/51)\)</span>. If instead we wanted to draw a <span class="math notranslate nohighlight">\(7\)</span> or a <span class="math notranslate nohighlight">\(6\)</span> from the pack, then the probability would be <span class="math notranslate nohighlight">\(4/52 + 4/52\)</span> as these are independent of one another; drawing one card does not depend on the other.</p>
+</div>
+<div class="section" id="iii-independent-events-molecular-yield">
+<h3>(iii) Independent events. Molecular yield<a class="headerlink" href="#iii-independent-events-molecular-yield" title="Permalink to this headline">¶</a></h3>
+<p>Independent events can occur in the way molecules react. If a molecule can react to produce two different products A and B with rate constants <span class="math notranslate nohighlight">\(k_A\)</span> and <span class="math notranslate nohighlight">\(k_B\)</span> respectively, the chance of product A being observed is <span class="math notranslate nohighlight">\(p_A = k_A/(k_A + k_B)\)</span> and of B is <span class="math notranslate nohighlight">\(1 - p_A\)</span>, which is <span class="math notranslate nohighlight">\(p_B = k_B /(k_A + k_B)\)</span>. The sum of both events is 1. In chemistry, probability <span class="math notranslate nohighlight">\(p_A\)</span> is normally called the yield of A and is often expressed as a percentage. If an excited state of a molecule can fluoresce with rate constant <span class="math notranslate nohighlight">\(k_f\)</span> or produce another state such as a triplet by intersystem crossing with rate constant <span class="math notranslate nohighlight">\(k_i\)</span> then the fluorescence yield is <span class="math notranslate nohighlight">\(k_f /(k_f + k_i)\)</span> and the triplet yield <span class="math notranslate nohighlight">\(k_i /(k_f + k_i)\)</span>.</p>
+</div>
+<div class="section" id="iv-cards-drawn-but-not-replaced">
+<h3>(iv) Cards drawn but not replaced<a class="headerlink" href="#iv-cards-drawn-but-not-replaced" title="Permalink to this headline">¶</a></h3>
+<p>Suppose that two cards are drawn from a pack and the first not replaced, and we want the chance that the second is a <span class="math notranslate nohighlight">\(7\)</span> of diamonds. This question has two answers. If the first card happens to be the <span class="math notranslate nohighlight">\(7\)</span>, then the chance of the second being this card is obviously zero. If the first card is not the <span class="math notranslate nohighlight">\(7\)</span> of diamonds, the chance of choosing it a second time is <span class="math notranslate nohighlight">\(1/51\)</span> making the chance <span class="math notranslate nohighlight">\((1/52) \times (1/51)\)</span> overall.</p>
+</div>
+<div class="section" id="v-throw-a-die-n-time">
+<h3>(v) Throw a die <span class="math notranslate nohighlight">\(n\)</span> time,<a class="headerlink" href="#v-throw-a-die-n-time" title="Permalink to this headline">¶</a></h3>
+<p>Suppose a die is thrown <span class="math notranslate nohighlight">\(n\)</span> times, what will be the chance that a <span class="math notranslate nohighlight">\(3\)</span> appears at least once? In one throw the <span class="math notranslate nohighlight">\(3\)</span> appears with a chance <span class="math notranslate nohighlight">\(1/6\)</span> and there is a <span class="math notranslate nohighlight">\(5/6\)</span> chance that it does not appear. After <span class="math notranslate nohighlight">\(n\)</span> throws, then the chance is <span class="math notranslate nohighlight">\((5/6)^n\)</span> that the <span class="math notranslate nohighlight">\(3\)</span> does not appear and therefore <span class="math notranslate nohighlight">\(1 - (5/6)^n\)</span> that it appears at least once. For two throws, this is <span class="math notranslate nohighlight">\(11/36\)</span>.</p>
+<p>This calculation can also be described using inclusive probability. Suppose that there are two outcomes A and B, and at least one outcome is required, then the probability is that of event A, plus event B minus that of both A and B or p = p(A) + p(B) - p(AB). The chance that a <span class="math notranslate nohighlight">\(3\)</span> is thrown, is <span class="math notranslate nohighlight">\(1/6\)</span> on the first throw (outcome A), and again on the second throw is <span class="math notranslate nohighlight">\(1/6\)</span>, and the chance of both occurring p(AB) = <span class="math notranslate nohighlight">\(1/36\)</span> making <span class="math notranslate nohighlight">\(1/6 + 1/6 - 1/36 = 11/36\)</span> overall.</p>
+<p><strong>Summary:</strong>  If <span class="math notranslate nohighlight">\(n\)</span> and <span class="math notranslate nohighlight">\(m\)</span> are the numbers <span class="math notranslate nohighlight">\(1\)</span> to <span class="math notranslate nohighlight">\(6\)</span> (the sample space) on a die, then the probability of throwing;</p>
+<p>(1) any number <span class="math notranslate nohighlight">\(n\)</span> is <span class="math notranslate nohighlight">\(1/6\)</span> and of not throwing any <span class="math notranslate nohighlight">\(n\)</span> is <span class="math notranslate nohighlight">\(1-1/6\)</span>.</p>
+<p>(2) either <span class="math notranslate nohighlight">\(n\)</span> or <span class="math notranslate nohighlight">\(m\)</span> is <span class="math notranslate nohighlight">\(1/6+1/6 = 1/3\)</span>.</p>
+<p>(3) the same <span class="math notranslate nohighlight">\(n\)</span> twice in two throws is <span class="math notranslate nohighlight">\((1/6)(1/6)\)</span>.</p>
+<p>(4) <span class="math notranslate nohighlight">\(n\)</span> at least once in two throws is <span class="math notranslate nohighlight">\(1 - (5/6)^2 = 11/36\)</span>.</p>
+<p>(5) <span class="math notranslate nohighlight">\(n\)</span> exactly once in two throws is <span class="math notranslate nohighlight">\(1/6+(1/6)(1-2/6)\)</span>.</p>
+</div>
+<div class="section" id="vii-same-birthdays">
+<h3>(vii) Same birthdays<a class="headerlink" href="#vii-same-birthdays" title="Permalink to this headline">¶</a></h3>
+<p>To illustrate explicitly the use of a sample space, consider the problem of calculating whether at least two people from a group of <span class="math notranslate nohighlight">\(25\)</span> people have the same birthday (see Goldberg 1986, p. 53). First, to simplify the calculation it is necessary to ignore leap years, and then to assume that there are no twins in the group and that births occur with equal probability throughout the year. None of these may be true in a real sample of people, but we will assume that they are.</p>
+<p>The sample space is defined as the total number of arrangements <span class="math notranslate nohighlight">\(n_S = n_A + n_{NA}\)</span> split into those in the group we want to determine <span class="math notranslate nohighlight">\(n_A\)</span>, and those that we do not, <span class="math notranslate nohighlight">\(n_{NA}\)</span>. The sample space is huge, <span class="math notranslate nohighlight">\(n_s = 365^{25}\)</span>, because this is the number of ways that the birthdays can be arranged. Let <span class="math notranslate nohighlight">\(n_A\)</span> be the number of arrangements where at least two people have the same birthday and <span class="math notranslate nohighlight">\(n_{NA}\)</span> the number of those with different birthdays, then <span class="math notranslate nohighlight">\(n_{NA}\)</span> is the number of ways of selecting <span class="math notranslate nohighlight">\(25\)</span> different days from <span class="math notranslate nohighlight">\(365\)</span>.</p>
+<p>The first birthday can be chosen in <span class="math notranslate nohighlight">\(365\)</span> ways, the second in <span class="math notranslate nohighlight">\(365 - 1\)</span> and so forth down to <span class="math notranslate nohighlight">\(365 - (25 - 1)\)</span> ways. This makes</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle n_{NA} = 365 \times 364 \times\cdots \times  342 \times 341\]</div>
+<p>which is the permutation <span class="math notranslate nohighlight">\(P(365, 25) = 365!/(365 - 25)!\)</span>.</p>
+<p>The number of different ways that <span class="math notranslate nohighlight">\(25\)</span> people can be selected is therefore</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle n_A = n_S - n_{NA} = 365^{25} - \frac{365!}{(365 - 25)!}\]</div>
+<p>The probability that at least two people have the same birthday is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle p=\frac{n_S-n_{NA}}{n_S}\]</div>
+<p>if we assume that each of the <span class="math notranslate nohighlight">\(365^{25}\)</span> outcomes is equally likely. The result is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle 1-\frac{356\times 364\cdots 341}{365^{25}}=1-\frac{365!}{(365-25)!365^{25}}=0.569\]</div>
+<p>It is surprising that in such a small group the chance of two or more people having the same birthday is so large. When the number of people is small then the chance of any two having the same birthday approaches zero, as the number increases so must the chance of any two having the same birthday. In fact above <span class="math notranslate nohighlight">\(60\)</span> persons the chance is almost <span class="math notranslate nohighlight">\(100\)</span>%.</p>
+<p>The problem can be tackled in another way. The chance that the first person has a birthday on any day is obviously <span class="math notranslate nohighlight">\(365/365\)</span>, the second person now only has 364 days to be born on so their chance is <span class="math notranslate nohighlight">\(364/365\)</span>, and so on to the last person with chance <span class="math notranslate nohighlight">\(341/365\)</span>. The complement of the product of all these numbers gives the answer above.</p>
+<p><img alt="Drawing" src="../_images/chapter1-fig20a.png" /></p>
+<p>figure 20a. Probability that two people in a group of <span class="math notranslate nohighlight">\(n_A\)</span> have the same birthday.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="v-iii-conditional-probability-throwing-coins">
+<h3>v(iii) Conditional probability. Throwing coins<a class="headerlink" href="#v-iii-conditional-probability-throwing-coins" title="Permalink to this headline">¶</a></h3>
+<p>Sometimes conditional probabilities are required; for example, tossing three coins and deciding what is the chance that the outcome is at least two tails (outcome A) and knowing that the first coin to fall is a head (outcome B). Tossing three coins can only produce the patterns</p>
+<p><span class="math notranslate nohighlight">\(\qquad\qquad\)</span> HHH, HHT, HTH, HTT, THH, THT, TTH, TTT</p>
+<p>and each has a chance of <span class="math notranslate nohighlight">\(1/8\)</span> of being produced in three throws. The first outcome (A) is the chance of having at least two tails and by direct counting this is <span class="math notranslate nohighlight">\(p(A) = 4/8\)</span>. The chance of having a head as the first coin is <span class="math notranslate nohighlight">\(p(B) = 4/8\)</span>. The chance that both conditions apply, is calculated <span class="math notranslate nohighlight">\(p(A, B) = 1/8\)</span> by inspecting the sequence of coins. The conditional probability <span class="math notranslate nohighlight">\(p(A | B)\)</span>, is the chance that both conditions apply divided by the chance that condition B applies, and this is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle p(A|B)=\frac{p(A,B)}{p(B)} \tag{25}\]</div>
+<p>which is <span class="math notranslate nohighlight">\(1/4\)</span>. This means that the added knowledge that the first coin to fall must be a head, has reduced the odds of obtaining two tails, which is not unexpected since insisting on a head as the first coin reduces the choices available. The equation is ‘symmetrical’ and can be rearranged to</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle p(A,B)= p(B)p(A|B)=p(A)p(B|A) \]</div>
+</div>
+</div>
+<div class="section" id="the-binomial-distribution-see-also-chapter-12-3">
+<h2>9.10 The Binomial distribution  (See also chapter 12.3)<a class="headerlink" href="#the-binomial-distribution-see-also-chapter-12-3" title="Permalink to this headline">¶</a></h2>
+<p>If <span class="math notranslate nohighlight">\(n\)</span> boxes each contain a large number <span class="math notranslate nohighlight">\(W\)</span> of white balls and similarly <span class="math notranslate nohighlight">\(B\)</span> black ones, and if one ball is taken from each box, we want to find the chance that exactly <span class="math notranslate nohighlight">\(m\)</span> of them will be white. The chance of choosing a white ball from a single box is <span class="math notranslate nohighlight">\(p = W/(W + B)\)</span> and correspondingly a black one <span class="math notranslate nohighlight">\(q = B/(W + B) = 1 - p\)</span>. Therefore if <span class="math notranslate nohighlight">\(n = 1\)</span>, the probabilities are <span class="math notranslate nohighlight">\(p\)</span> white balls and <span class="math notranslate nohighlight">\(q\)</span> black.</p>
+<p>If there are two boxes, the probabilities are distributed in the same manner as tossing two coins. The coins land as HH, HT, TH, TT and each has a <span class="math notranslate nohighlight">\(50\)</span>% chance of being H or T, therefore the probabilities are <span class="math notranslate nohighlight">\((1/2)^2,\; 2(1/2)(1/2)\)</span>, and <span class="math notranslate nohighlight">\((1/2)^2\)</span> or <span class="math notranslate nohighlight">\(1/4, 1/2\)</span>, and <span class="math notranslate nohighlight">\(1/4\)</span>. (HT being the same as TH). Choosing white and black balls from two boxes has the equivalent probability <span class="math notranslate nohighlight">\(p^2,\; 2pq,\; q^2\)</span>. Choosing <span class="math notranslate nohighlight">\(m\)</span> white balls from <span class="math notranslate nohighlight">\(n\)</span> specified boxes, and <span class="math notranslate nohighlight">\(n - m\)</span> black ones from the rest, has the probability <span class="math notranslate nohighlight">\(q^mp^{n-m}\)</span>, but there are a combinatorial number of ways <span class="math notranslate nohighlight">\(C^n_m\)</span> of choosing <span class="math notranslate nohighlight">\(m\)</span> boxes from the total of <span class="math notranslate nohighlight">\(n\)</span>. Therefore, the total probability of choosing <span class="math notranslate nohighlight">\(m\)</span> balls from <span class="math notranslate nohighlight">\(n\)</span> boxes, is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle P(n,m,q)=\frac{n!}{m!(n-m)!}q^m p^{n-m} \tag{25a}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\displaystyle C^n_m=\binom{n}{m}=\frac{n!}{m!(n-m)!}\)</span> and <span class="math notranslate nohighlight">\(p = 1 - q\)</span>, and is called the Binomial Distribution because the binomial expansion is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle (p+q)^n= \sum_{m=0}^n\frac{n!}{m!(n-m)!}q^mp^{n-m}\tag{25b}\]</div>
+<p>and the coefficients in this distribution are the probability <span class="math notranslate nohighlight">\(P(n, m)\)</span>. This distribution is normalized <span class="math notranslate nohighlight">\(\sum_{m=0}^n P(n,m,q)=1\)</span> because <span class="math notranslate nohighlight">\(p+q=1\)</span> and <span class="math notranslate nohighlight">\((p+q)^n =1\)</span>. The maximum of the  distribution is at <span class="math notranslate nohighlight">\(nq\)</span> which is also its or average mean value. The binomial distribution, and the Gaussian and Poisson distributions which are derived from it, are examined in more detail in Chapter 13 where descriptive statistics are discussed.</p>
+<p>The symmetrical nature of the series for binomial expansion can be seen by working out some terms for example,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin{align} (p+q)^4&amp;= \sum_{m=0}^n\frac{n!}{m!(n-m)!}q^mp^{n-m}\\ &amp;= \frac{4!}{0!4!}q^0p^{4}+\frac{4!}{1!3!}q^1p^{3}+\frac{4!}{2!2!}q^2p^{2}+\frac{4!}{3!1!}q^3p^{1}+\frac{4!}{4!0!}q^4p^{0}\\&amp;=p^4+4qp^3+6q^2p^2+4q^3p+q^4\end{align}\end{split}\]</div>
+<p>where the powers of <span class="math notranslate nohighlight">\(p\)</span> and <span class="math notranslate nohighlight">\(q\)</span> always add up to the same total <span class="math notranslate nohighlight">\(n\)</span> and the factorials are symmetrical and in this case have the values <span class="math notranslate nohighlight">\(1,4,6,4,1\)</span> which form part of Pascal’s triangle and which can be used to work out values if needed. The values in this triangle are the sum of the two immediately right and left above. The first row must be labelled zero.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\displaystyle \begin{array}\\
+0&amp;&amp;&amp;&amp;&amp;&amp;1&amp;&amp;&amp;&amp;\\
+1&amp;&amp;&amp;&amp;&amp;1&amp;&amp;1&amp;&amp;&amp;\\
+2&amp;&amp;&amp;&amp;1&amp;&amp;2&amp;&amp;1&amp;&amp;\\
+3&amp;&amp;&amp;1&amp;&amp;3&amp;&amp;3&amp;&amp;1&amp;\\
+4&amp;&amp;1&amp;&amp;4&amp;&amp;6&amp;&amp;4&amp;&amp;1&amp;
+\end{array}\end{split}\]</div>
+<hr class="docutils" />
+<p>The sum of the coefficients</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \sum_{m=0}^n\frac{n!}{m!(n-m)!}=2^n\]</div>
+<p>The sum is found by supposing that we select balls from <span class="math notranslate nohighlight">\(1:1\)</span> mixture of a huge number of them the chance of selecting a red or white must always be <span class="math notranslate nohighlight">\(1/2\)</span>. The probability of selecting two white balls in succession is <span class="math notranslate nohighlight">\((1/2)^2 \)</span> and of selecting <span class="math notranslate nohighlight">\(20\)</span> in succession the minute chance <span class="math notranslate nohighlight">\((1/2)^{20}\)</span>. The chance of selecting any given sequence of length <span class="math notranslate nohighlight">\(n\)</span> is just <span class="math notranslate nohighlight">\((1/2)^n\)</span>. The number of configurations is simply the inverse of this, thus the sum of the coefficients is <span class="math notranslate nohighlight">\(2^n\)</span>, i.e. <span class="math notranslate nohighlight">\(2^3=1+3+3+1\)</span> as can be checked in the Pascal triangle.</p>
+<p>To see how the combination terms represent the probability think of <span class="math notranslate nohighlight">\(m\)</span> of the <span class="math notranslate nohighlight">\(n\)</span> total number of objects.  Suppose that the first of these chosen is of type <span class="math notranslate nohighlight">\(w\)</span> and has a probability of being chosen (or measured) as <span class="math notranslate nohighlight">\(q\)</span>. The second chosen of type <span class="math notranslate nohighlight">\(w\)</span> then has a probability <span class="math notranslate nohighlight">\(q^2\)</span> and if all chosen are of type <span class="math notranslate nohighlight">\(w\)</span> the probability is <span class="math notranslate nohighlight">\(q^m\)</span>. If exactly <span class="math notranslate nohighlight">\(m\)</span> are of type <span class="math notranslate nohighlight">\(w\)</span> then <span class="math notranslate nohighlight">\(n-m\)</span> are of another type and this probability is <span class="math notranslate nohighlight">\((1-q)^{n-m}\)</span>, thus out of our particular choice of <span class="math notranslate nohighlight">\(m\)</span> objects the probability that they are all of type <span class="math notranslate nohighlight">\(w\)</span> is  <span class="math notranslate nohighlight">\(q^m(1-q)^{n-m}\)</span>. As this choice is not the only one, because the first <span class="math notranslate nohighlight">\(m\)</span> objects can clearly be chosen in another way, in fact <span class="math notranslate nohighlight">\(n\)</span> different ways for the first item  and <span class="math notranslate nohighlight">\(n-1\)</span> for the second and so on leading to <span class="math notranslate nohighlight">\(n-m+1\)</span> in total. The product of these ways of choosing is <span class="math notranslate nohighlight">\(\displaystyle n(n-1)(n-2)(n-3)\cdots = \frac{n!}{(n-m)!}\)</span>. However, this number is too large because it counts choices that differ only in the <em>order</em> of choosing the <span class="math notranslate nohighlight">\(m\)</span> objects (<span class="math notranslate nohighlight">\(m_1m_2\cdots\)</span> is the same as <span class="math notranslate nohighlight">\(m_2m_1\cdots\)</span> ) and so should be divided by the number of permutations of these <span class="math notranslate nohighlight">\(m\)</span> which is <span class="math notranslate nohighlight">\(m!\)</span> making the final multiplier <span class="math notranslate nohighlight">\(\displaystyle \frac{n!}{m!(n-m)!}\)</span>, which is the term in equation 25a.</p>
+<p>It might be easier to think of how to calculate the probability if one imagines that there are <span class="math notranslate nohighlight">\(n\)</span> trials i.e. <span class="math notranslate nohighlight">\(n\)</span> samples taken and where <span class="math notranslate nohighlight">\(m\)</span> is the chance of a successful outcome in one of those <span class="math notranslate nohighlight">\(n\)</span> samples (say choosing a white ball) and let be <span class="math notranslate nohighlight">\(q\)</span> the probability of success and so <span class="math notranslate nohighlight">\(p=1-q\)</span> of failure.</p>
+<p>In calculating the probabilities, the values of <span class="math notranslate nohighlight">\(p\)</span> or <span class="math notranslate nohighlight">\(q\)</span> have to be found from the problem at hand. For instance, to find the chance that no red cards are drawn in a single attempt from each of seven packs of cards, we need to know that half the cards are red. As <span class="math notranslate nohighlight">\(p = 1/2 = q\)</span> this chance is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle P(7,0,1/2)=\frac{7!}{0!(7-0)!}\left( \frac{1}{2}\right)^0 \left(1- \frac{1}{2}\right)^{7-0}=\frac{1}{128}\]</div>
+<p>The chance of picking four red cards is similarly <span class="math notranslate nohighlight">\(35/128\)</span>, and of picking four picture cards (12 in each pack) out of five packs, is <span class="math notranslate nohighlight">\(P(5, 4, 12/52) = 4050/371 298 \approx 0.01\)</span>. The chance of obtaining an even number of aces from six packs of cards, is <span class="math notranslate nohighlight">\(313201/4826809 \approx 0.065\)</span> and is the sum of choosing 2, 4 and 6 aces, each with a chance <span class="math notranslate nohighlight">\(q = 4/52\)</span>.</p>
+<div class="section" id="chance-of-getting-4-heads-in-12-coin-flips">
+<h3>Chance of getting <span class="math notranslate nohighlight">\(4\)</span> heads in <span class="math notranslate nohighlight">\(12\)</span> coin flips<a class="headerlink" href="#chance-of-getting-4-heads-in-12-coin-flips" title="Permalink to this headline">¶</a></h3>
+<p>In this case imagine that the coins are labelled H or T and there are many possible lists of the coins such as HTHHTTHTTHH among which are those that have only <span class="math notranslate nohighlight">\(3\)</span> heads. The strategy is therefore to find the number of lists and so the chance of having any list whatever its composition, and then the chance that any one of these has only <span class="math notranslate nohighlight">\(3\)</span> heads.</p>
+<p>The coin can only be either H or T therefore there are only two choices to make each time and assuming fair coins means that each flip made to extend the list is independent of all previous ones making a total of <span class="math notranslate nohighlight">\(2^{12}=4096\)</span> lists to choose from. The total probability of all events must always be <span class="math notranslate nohighlight">\(1\)</span>, therefore the probability of any one list such as HHHHHHHHHHHH or HTHHTTHTTHH is <span class="math notranslate nohighlight">\(\displaystyle \frac{1}{4096}\)</span>. Perhaps this seems strange. If you do a fair lottery any combination, even one will all the numbers the same, should have an equal chance of being chosen.</p>
+<p>Now the chance of choosing to get <span class="math notranslate nohighlight">\(4\)</span> events out of <span class="math notranslate nohighlight">\(12\)</span> is needed. This is found using the binomial distribution <span class="math notranslate nohighlight">\(\displaystyle C_4^{12}=\binom{12}{4}=\frac{12!}{4!6!}= 495\)</span> and so the chance of throwing a sequence of <span class="math notranslate nohighlight">\(12\)</span> coins with <span class="math notranslate nohighlight">\(4\)</span> heads is <span class="math notranslate nohighlight">\(495 /4096\)</span>. Of course, equation 25a could be used directly with <span class="math notranslate nohighlight">\(p=1/2, q=1-p=1/2, n=12, m=4\)</span> or</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle p(12,4,1/2)=\binom{12}{4}\left(\frac{1}{2}\right)^4\left(\frac{1}{2}\right)^{12-4}=\frac{495}{4096}\]</div>
+</div>
+<div class="section" id="red-shifted-tryptophan-fluorescence">
+<h3>Red shifted Tryptophan fluorescence.<a class="headerlink" href="#red-shifted-tryptophan-fluorescence" title="Permalink to this headline">¶</a></h3>
+<p>The fluorescence of Tryptophan residues in several types of proteins shows variations in emission wavelength over a range of several nanometres around <span class="math notranslate nohighlight">\(340\)</span> nm. Most shifts, but not all, are to the red of Tryptophan in solution. It is suggested that this red shift is due to the presence of electric fields present in the proteins that are caused by nearby residues. The effect might of course just be random, however, only <span class="math notranslate nohighlight">\(3\)</span> in <span class="math notranslate nohighlight">\(19\)</span> different types of protein have blue shifts so its seems that a random effect is unlikely. As a check the binomial theorem can easily be used. There are two choices, red shift or blue shift and so the chance of a blue shift is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \binom{19}{3}\left(\frac{1}{2}\right)^{19}\approx\frac{1}{541}\]</div>
+<p>which clearly shows that this is unlikely to be a random effect.</p>
+</div>
+<div class="section" id="isotopes">
+<h3>Isotopes.<a class="headerlink" href="#isotopes" title="Permalink to this headline">¶</a></h3>
+<p>Consider finding the chance that at least one atom in C<span class="math notranslate nohighlight">\(_{60}\)</span> is a <span class="math notranslate nohighlight">\(^{13}\)</span>C. This isotope is only present at  <span class="math notranslate nohighlight">\(1.109\)</span>% and <span class="math notranslate nohighlight">\(^{12}\)</span>C as <span class="math notranslate nohighlight">\(98.89\)</span>% because carbon only has two stable isotopes.  If we find the chance that no <span class="math notranslate nohighlight">\(^{13}\)</span>C is present then one minus this number is the chance that at least one is present. Of course, it is also possible to find the chance that <span class="math notranslate nohighlight">\(1,2,\cdots\)</span> only are present.</p>
+<p>There are <span class="math notranslate nohighlight">\(60\)</span> atoms therefore out of <span class="math notranslate nohighlight">\(n = 60\)</span> only <span class="math notranslate nohighlight">\(m\)</span> will be <span class="math notranslate nohighlight">\(^{13}\)</span>C and so <span class="math notranslate nohighlight">\((n-m)\)</span> <span class="math notranslate nohighlight">\(^{12}\)</span>C. We shall choose <span class="math notranslate nohighlight">\(m = 0\)</span>, i.e. the ‘success’ that none are present. The probability <span class="math notranslate nohighlight">\(q = 0.01109\)</span> and the calculation that there is no <span class="math notranslate nohighlight">\(^{13}\)</span>C is present sets <span class="math notranslate nohighlight">\(m=0\)</span>, i.e <span class="math notranslate nohighlight">\(P(60,\,0,\,0.01109)\)</span>. To calculate this may seem odd but  <span class="math notranslate nohighlight">\(1-P\)</span> is the chance that at least one atom is present and is what is sought.</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle P(60,0,q)=\frac{60!}{0!(60-0)!}q^0 p^{60-0} = 0.512\]</div>
+<p>which means that there is <span class="math notranslate nohighlight">\(\approx 49\)</span>% chance that at least one <span class="math notranslate nohighlight">\(^{13}\)</span>C is present in each C<span class="math notranslate nohighlight">\(_{60}\)</span> molecule, which is a good outcome if one is doing a <span class="math notranslate nohighlight">\(^{13}\)</span>C NMR experiment.</p>
+<p>A similar calculation is that to find the chance of having one <span class="math notranslate nohighlight">\(^{13}\)</span>C and one <span class="math notranslate nohighlight">\(^{15}\)</span>N in a molecule with 10 carbons and 2 nitrogens. The probabilities of having both multiply together the chance of each singly.</p>
+<p>Rather than use the formula we work out step by step. The probability of one <span class="math notranslate nohighlight">\(^{13}\)</span>C is <span class="math notranslate nohighlight">\(0.01109\)</span> so the chance of not having one is <span class="math notranslate nohighlight">\((1-0.01109)^9\)</span>. The probability of the first one being <span class="math notranslate nohighlight">\(^{13}\)</span>C is <span class="math notranslate nohighlight">\(0.01109(1-0.01109)^9\)</span>, however, this carbon could be in any position so we multiply by <span class="math notranslate nohighlight">\(10\)</span> to give <span class="math notranslate nohighlight">\(10\cdot 0.01109(1-0.01109)^9 = 0.10\)</span> which is <span class="math notranslate nohighlight">\(P(9,1,q)\)</span>. The calculation for the N atom gives <span class="math notranslate nohighlight">\(0.069\)</span> so the joint probability is <span class="math notranslate nohighlight">\(0.0069\)</span>.</p>
+</div>
+<div class="section" id="chromatography">
+<h3>Chromatography<a class="headerlink" href="#chromatography" title="Permalink to this headline">¶</a></h3>
+<p>The shape of a peak as a result of measuring some property of molecules in the mobile phase eluted in a chromatography column will calculated and to do this the column is split into a series of <span class="math notranslate nohighlight">\(N\)</span> theoretical plates just as is done for a distillation column. In each theoretical plate there is equilibrium between the mobile and the stationary phase, but not between one plate and its neighbour because the mobile phase flows through the column. The solid or stationary phase consists of the packing material in the column and onto which the solute adsorbs and then desorbs back into the mobile phase at a later time. The number of plates is large, typically several hundred to a few thousand per metre of column. This is a model based just on probabilities and ignores any of the kinetics of forming and being released from a surface or any molecular properties.</p>
+<p>To calculate the movement down the column we suppose that movement happens in a series of steps <span class="math notranslate nohighlight">\(n\)</span> and because the mobile phase flows through the column <span class="math notranslate nohighlight">\(n\)</span> can be larger than the number of theoretical plates. Initially <span class="math notranslate nohighlight">\(m_0\)</span> moles of solute injected into the column and equilibrium is formed (mobile to solid phase) in the first plate producing <span class="math notranslate nohighlight">\(m_0p\)</span> in the mobile phase and <span class="math notranslate nohighlight">\((1-p)m_0\)</span> in the stationary phase. Next, the mobile phase with its amount <span class="math notranslate nohighlight">\(m_0p\)</span> solute at plate 0 passes this to plate 1 (initially empty) and plate 0 and 1 reach equilibrium. Note that just after moving to plate 1, the mobile phase in plate 0 has has zero solute until this equilibrates with the solid phase. At step two the amount in the mobile phase in plate 1 moves to plate 2, and plate 2 equilibrates, and the amount in the mobile phase in plate 0 also moves to plate 1 and equilibrates again. The process repeats as molecules move down the column.</p>
+<p>You can understand that as some molecules are retained at each step on the stationary phase the injected material initially in plate 0 spreads out among the plates as the mobile phase moves along the column. The profile observed at the end of the column by the detector will therefore have a certain rising and falling shape depending on just how long the molecules are retained at each plate, i.e. depending on the partition constant between stationary and mobile phases vs. how fast the flow rate is. As the amount injected into the column is fixed, the broader the detected profile is the less is its intensity. Clearly what is aimed for is an intense narrow profile so that many species can be identified at once depending on their differing partition constants.</p>
+<p>The equilibration partitions the amount in the mobile and solid phase as <span class="math notranslate nohighlight">\(p:(1-p)\)</span>. The calculation for the fist step is that <span class="math notranslate nohighlight">\(m_0p\)</span> is partitioned into the mobile phase and therefore <span class="math notranslate nohighlight">\(m_0 - m_0p = m_0(1-p)\)</span> adsorbed onto the stationary phase. In the next step the mobile phase moves to the next empty plate and <span class="math notranslate nohighlight">\(m_0p\)</span> is partitioned between phases meaning that at equilibrium <span class="math notranslate nohighlight">\(m_p^2\)</span> is in the mobile and <span class="math notranslate nohighlight">\(m_0p(1-p)\)</span> in the stationary phase. The amount <span class="math notranslate nohighlight">\(m_0p^2\)</span> is transferred to the third plate and equilibrated, and <span class="math notranslate nohighlight">\(m_0p(1-p)\)</span> from the first plate moves to the second and equilibrates. The table shows the scheme. Note the symmetry in the terms at each state, and that the constants follow those of the binomial distribution and Pascal’s triangle, 1, 11, 121, 1331.</p>
+<a class="reference internal image-reference" href="../_images/chapter1-chromat-table.png"><img alt="drawing" class="align-center" src="../_images/chapter1-chromat-table.png" style="width: 470px;" /></a>
+<p>Table 1: Progress down the column and the equilibrium amounts of solute at each stage with plates, <span class="math notranslate nohighlight">\(0,1,2,3\)</span>. The vertical lines indicate equilibration, the curved ones transfer.</p>
+<hr class="docutils" />
+<p>The <em>total</em> amount at each plate is the sum of the mobile and stationary parts, for example from the last row in the table the totals are, <span class="math notranslate nohighlight">\(m_0(1-p)^3,\; 3m_0p(1-p)^2, \;3m_0p^2(1-p), \; m_0p^3\)</span>. Repeating the process produces the binomial distribution and at the <span class="math notranslate nohighlight">\(r^{th}\)</span> plate after <span class="math notranslate nohighlight">\(n\)</span> steps, which means a volume <span class="math notranslate nohighlight">\(nV_m/N\)</span> of mobile phase has passed through the column <span class="math notranslate nohighlight">\(V_m\)</span> being the total mobile volume of the column, the total amount is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle m_r = m_0C^n_r p^r(1-p)^{n-r}\]</div>
+<p>and <span class="math notranslate nohighlight">\(m_r/m_0\)</span> can be interpreted as the ‘probability that the molecule will have achieved <span class="math notranslate nohighlight">\(r\)</span> successes in <span class="math notranslate nohighlight">\(n\)</span> tries’. The molecule is most likely to be found at the <span class="math notranslate nohighlight">\(np^{th}\)</span> plate which is the mean value of the distribution.</p>
+<p>To be of any use the parameter <span class="math notranslate nohighlight">\(p\)</span> has to be related to the properties of the column, in particular to the partition constant <span class="math notranslate nohighlight">\(K\)</span>. If <span class="math notranslate nohighlight">\(V_s\)</span> and <span class="math notranslate nohighlight">\(V_m\)</span> are the total volumes of the stationary and mobile phases in the column respectively, then each plate has volume <span class="math notranslate nohighlight">\((V_s+V_m)/N\)</span>. The equilibrium in each plate is found from the partition between mobile and stationary phases, and we have used <span class="math notranslate nohighlight">\(p\)</span> as the fraction of solute in the mobile phase and hence <span class="math notranslate nohighlight">\((1-p)\)</span> is in the stationary phase. The partition constant <span class="math notranslate nohighlight">\(K\)</span> is therefore the ratio of the amount of the solute in stationary to that in the mobile phase or</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle K=\frac{(1-p)/V_s}{p/V_m}=\frac{1-p}{p}\frac{V_m}{V_s}\]</div>
+<p>from which</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle p=\left(1+K\frac{V_s}{V_m}\right)^{-1}\]</div>
+<p>Normally, we expect the stationary phase to be chosen to have a large value <span class="math notranslate nohighlight">\(K\gg 1\)</span> for the type of molecules being separated, therefore <span class="math notranslate nohighlight">\(p\)</span> is very small, but has to be different for different molecules for separation to be achieved.  As <span class="math notranslate nohighlight">\(p\)</span> is small binomial distribution can be approximated with the Poisson one. (This calculation is shown in the next section).  The amount at the <span class="math notranslate nohighlight">\(r^{th}\)</span> plate becomes</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{m_r}{m_0}\approx \frac{(np)^r}{r!}e^{-np}\]</div>
+<p>If we measure the amount in the eluted solution, i.e mobile phase, at the last but one plate (<span class="math notranslate nohighlight">\(N-1\)</span>) then the total amount is split as <span class="math notranslate nohighlight">\(p:1-p\)</span> between the mobile and stationary phase, the probability of the <span class="math notranslate nohighlight">\(n^{th}\)</span> volume fraction <span class="math notranslate nohighlight">\(V_m/N\)</span> measured is thus</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle P(n)= p\frac{(np)^{(N-1)}}{(N-1)!}e^{-np} \]</div>
+<p>which is the probability that a molecule will be eluted. This is the Poisson distribution multiplied by <span class="math notranslate nohighlight">\(p\)</span>, it still has the shape of the Poisson distribution which for large average value is approximately a ‘bell shaped’ curve. In chapter 4.8 the width of the eluted curve, which needs a knowledge of integration, is examined. (This example is based on one by Perrin,’Mathematics for Chemists’ publ. Wiley 1970).</p>
+</div>
+</div>
+<div class="section" id="large-numbers-most-probable-state-and-entropy">
+<h2>9.11 Large numbers, most probable state and Entropy.<a class="headerlink" href="#large-numbers-most-probable-state-and-entropy" title="Permalink to this headline">¶</a></h2>
+<p>An alternative way of forming the binomial coefficient <span class="math notranslate nohighlight">\(\displaystyle \frac{n!}{m!(n-m)!}\)</span> in equation 25a is to consider many of two different types of atoms, e.g. He and Ne, or types of snooker balls, e.g. red and white which gives a reasonable analogy as He and Ne have no strong interactions between then when not in contact and neither do billiard balls. Suppose that we place the balls into a jar so that red and white layers are apparent. Next by shaking the jar this arrangement is lost and a irregular looking one is formed. In fact if shaking is continued the ordered layers are almost never going to be seen again. This means that the ordered starting point is just one possibility of a truly vast number of others and returning to the original arrangement is highly unlikely which means that the probability of this is extremely small.</p>
+<p>Suppose that there are <span class="math notranslate nohighlight">\(n=100\)</span> similar balls, <span class="math notranslate nohighlight">\(50\)</span> each red and white and that they are numbered, <span class="math notranslate nohighlight">\(1,2\cdots 100\)</span> irrespective of colour, and they are randomly placed to fill <span class="math notranslate nohighlight">\(100\)</span> positions. In placing the first ball there are <span class="math notranslate nohighlight">\(100\)</span> choices, the second can go in any of the <span class="math notranslate nohighlight">\(99\)</span> empty places so that in positioning the first two we have had <span class="math notranslate nohighlight">\(100\times 99 = 9900\)</span> choices. Continuing likewise produces <span class="math notranslate nohighlight">\(100\times 99\times 98\)</span> for the third choice and so on until the last ball is in position making the total number of choices the permutation <span class="math notranslate nohighlight">\(100\times 99 \times 98\times 97\cdots 2\times 1=100!\)</span> and each of these is equally likely to occur.</p>
+<p>If the balls are not numbered but remain coloured, and hence distinguishable, there will be a smaller number of <em>distinguishable</em> arrangements, which is the number of ways of selecting groups <span class="math notranslate nohighlight">\(m\)</span>, and this will be smaller than <span class="math notranslate nohighlight">\(n!\)</span> because exchanging any two red balls for any two white ones makes no difference (See also section 9.2). We want to split the balls into 2 groups with, in this case, 50 balls in each but we are not concerned with the order in which they are put into each group. There are <span class="math notranslate nohighlight">\(50!\)</span> ways of putting the first <span class="math notranslate nohighlight">\(50\)</span> white balls into the first half. Next, the number of ways of selecting the <span class="math notranslate nohighlight">\(m\)</span> groups multiplied by the number of permutation in the first and multiplied by the number of permutations in the second group gives the total possible number of permutations. Therefore <span class="math notranslate nohighlight">\(m\times 50!\times 50!=100!\)</span> ways and so the number of distinguishable arrangements <span class="math notranslate nohighlight">\(m\)</span> is the combination,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle m =\frac{100!}{50!50!}\]</div>
+<p>Evaluating the factorials can be tricky for large numbers and care is needed when computing them, for example <span class="math notranslate nohighlight">\(100! \approx 9.3\cdot 10^{157}\)</span> and larger factorials for relatively small numbers, e.g. 200, can easily exceed the floating point capabilities of a computer. For numbers greater than about <span class="math notranslate nohighlight">\(20\)</span> the Stirling approximation is very good. There are several forms of this but the most common is written as</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle n!=n^ne^n\qquad \text{or}\qquad \ln(n!)=n\ln(n)+n\]</div>
+<p>producing  <span class="math notranslate nohighlight">\(m\approx 1\cdot 10^{29}\)</span>. This means that the balls must be shaken on average of <span class="math notranslate nohighlight">\(10^{29}\)</span> times before a particular arrangement of the balls is found. At one per second this would take <span class="math notranslate nohighlight">\(\approx 10^{21}\)</span> years, compared to the age of the universe <span class="math notranslate nohighlight">\(1.38\cdot 10^{10}\)</span> years; this is a long, long time even for a small number of particles. The chance of recovering the initial arrangement of layers of white and red balls is effectively zero.</p>
+<p>Evaluating <span class="math notranslate nohighlight">\(m\)</span> when there are an equal number of balls or molecules produces</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle m=\frac{n_0!}{(n_0/2)!)^2}\approx 2^{n_0}\sqrt{\frac{2}{n_0\pi}}=\sqrt{\frac{2}{\pi}}2^{n_0-\ln(n_0)/2\ln(2)}\]</div>
+<p>for <span class="math notranslate nohighlight">\(n_0\)</span> in total. Thus for half a mole each of He and Ne, <span class="math notranslate nohighlight">\(n_0=6\cdot 10^{23}\)</span> so that the number of configurations is so vast it is impossible to comprehend; <span class="math notranslate nohighlight">\(m=2^{6\cdot 10^{23}}\)</span>. This vast number is why it has never been observed, and never will be, that the atoms or molecules of a gas are found in just one part of a bottle, i.e. a vacuum will never spontaneously form in a room. However, if the number of atoms is small, say 10, it may be possible to observe behaviour never seen with larger numbers. Such ‘single molecule’ experiments are now quite common. As will be calculate later, the chance that the gas will fill only <span class="math notranslate nohighlight">\(99%\)</span> of any volume and not <span class="math notranslate nohighlight">\(100\)</span>% is also vanishingly small.</p>
+<p>So far we have considered just a <span class="math notranslate nohighlight">\(50:50\)</span> ratio but of course we need not have chosen equal numbers of red and white balls, the argument is quite general and in doing that we arrive at the general binomial coefficient rather than just a specific term. As other possibilities arise, say <span class="math notranslate nohighlight">\(49\)</span> white <span class="math notranslate nohighlight">\(51\)</span> red producing <span class="math notranslate nohighlight">\(\displaystyle 100!/(49!51!)\)</span> and so on the number of configurations increases and the total for all cases is <span class="math notranslate nohighlight">\(\displaystyle \sum_{k=0}^n\frac{n!}{k!(n-k)!}=2^n\)</span> which is proved in relation to the Pascal triangle above. When <span class="math notranslate nohighlight">\(n=100,\; m=2^n= 1.26\cdot 10^{30}\)</span> roughly 12 times larger than <span class="math notranslate nohighlight">\(100!/(50!)^2\)</span>.</p>
+<p>The probability of obtaining a ratio with a number <span class="math notranslate nohighlight">\(k\)</span> of type of ball (or molecule) out of a total on <span class="math notranslate nohighlight">\(n\)</span> is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle p=\frac{n!}{k!(n-k)!}\frac{1}{2^n} \tag{25c}\]</div>
+<p>This distribution is a maximum when <span class="math notranslate nohighlight">\(k=n/2\)</span>. This can be seen with a straightforward argument. The factorial terms are symmetric, <span class="math notranslate nohighlight">\(k!(n-k)!=(n-k)!k!\)</span> and always positive.  When <span class="math notranslate nohighlight">\(k=0\)</span> or <span class="math notranslate nohighlight">\(k=n\)</span> the probability is very small tending to zero; i.e <span class="math notranslate nohighlight">\(1/2^n\)</span> is small so there must be a maximum somewhere in the range <span class="math notranslate nohighlight">\(0\to n\)</span>. The symmetric nature ensures that this will be at <span class="math notranslate nohighlight">\(k = n/2\)</span>. This can also be determined by differentiation. It is not possible to differentiate a factorial, as <span class="math notranslate nohighlight">\(n\)</span> is discrete, but replacing <span class="math notranslate nohighlight">\(n!\)</span> with the Sterling approximation <span class="math notranslate nohighlight">\((n!=n^ne^n)\)</span> and setting the derivative in <span class="math notranslate nohighlight">\(n\)</span> to zero allows the maximum to be found.</p>
+<p>The second feature of this probability distribution is that it becomes extremely narrow as <span class="math notranslate nohighlight">\(n\)</span> increases. This is shown in the figure which shows the normalised probability <span class="math notranslate nohighlight">\(p/p_{max}\)</span> vs <span class="math notranslate nohighlight">\(k/n\)</span> which is a fraction between <span class="math notranslate nohighlight">\(0\)</span> to <span class="math notranslate nohighlight">\(1\)</span>. At large <span class="math notranslate nohighlight">\(n\)</span> the distribution becomes so narrow, or peaked at <span class="math notranslate nohighlight">\(n/2\)</span>, that almost all the probability is described by that at <span class="math notranslate nohighlight">\(n/2\)</span>, i.e. this value is so great compared to others that <span class="math notranslate nohighlight">\(p_{max}\)</span> is in effect greater than all others combined.</p>
+<p><img alt="Display" src="../_images/chapter1-fig20b.png" /></p>
+<p>Figure 20b. The peak normalised probability function  <span class="math notranslate nohighlight">\(\displaystyle p=\frac{n!}{k!(n-k)!}\frac{1}{2^n}\)</span> vs <span class="math notranslate nohighlight">\(k/n\)</span> for different <span class="math notranslate nohighlight">\(n\)</span>. The the data only exists for integer values as shown as circles for <span class="math notranslate nohighlight">\(n=20\)</span>, at larger <span class="math notranslate nohighlight">\(n\)</span> a line is drawn as the points become too congested. The curve for <span class="math notranslate nohighlight">\(n=10000\)</span> is in red. At large <span class="math notranslate nohighlight">\(n\)</span> the distribution becomes very narrow and the maximum value at <span class="math notranslate nohighlight">\(n/2\)</span> is greater than all others combined and the distribution can be approximated by its maximum value.</p>
+<hr class="docutils" />
+<div class="section" id="entropy">
+<h3>Entropy<a class="headerlink" href="#entropy" title="Permalink to this headline">¶</a></h3>
+<p>Returning to  the example of using coloured balls, and starting with ordered layers, on shaking these balls became mixed up and this is a little like two gases diffusing into one another, however, we supposed that there were <span class="math notranslate nohighlight">\(100\)</span> balls and <span class="math notranslate nohighlight">\(100\)</span> slots to put them into each with the same probability. In reality, in a gas the atoms/molecules (particles) themselves occupy virtually no volume compared to the volume occupied by the gas, thus the number of spaces available is vastly more than the number of particles. If we divide the space occupied up into a  number <span class="math notranslate nohighlight">\(w\)</span> of minute cells these are far greater than the number of particles <span class="math notranslate nohighlight">\(n\)</span>. The total number of configurations is found using the similar equation as before</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle m=\frac{w!}{n!(w-n)!}\]</div>
+<p>Using the Sterling formula and simplifying gives</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \ln(m)= w\ln(w)-n\ln(n) -(w-n)\ln(w-n)\]</div>
+<p>Because <span class="math notranslate nohighlight">\(n/w \ll 1\)</span> the log can be rearranged to <span class="math notranslate nohighlight">\(\ln(w-n)=\ln(1-n/w)-\ln(w)\)</span> and then approximating <span class="math notranslate nohighlight">\(\ln(1-n/w)= -n/w\)</span> can be done without any significant error to give</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \ln(m)=n\ln\left(\frac{w}{n}\right)+n\]</div>
+<p>Now suppose that the volume the gas is expanded from <span class="math notranslate nohighlight">\(V_1 \to V_2\)</span> and we define <span class="math notranslate nohighlight">\(r=V_2/V_1\)</span> and therefore the number of spaces/cells <span class="math notranslate nohighlight">\(w\)</span> changes as <span class="math notranslate nohighlight">\(w \to rw\)</span>. The ratio of the number of configurations in the final to initial volume is found using the same equation again and is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \ln\left(\frac{m_2}{m_1}\right)=n\ln\left(\frac{rw}{n}\right)-n\ln\left(\frac{w}{n}\right)=n\ln(r)\]</div>
+<p>meaning that</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{m_2}{m_1}=\left(\frac{V_2}{V_1}\right)^n \tag{25d}\]</div>
+<p>To connect this with the entropy, this is derived from classical thermodynamics. The change in entropy <span class="math notranslate nohighlight">\(S_2-S_1\)</span> upon expanding an ideal gas irreversibly from volume <span class="math notranslate nohighlight">\(V_1\to V_2\)</span>with no addition of heat and without doing work is calculated using</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle S_2-S_1=\int_{V_1}^{V_2}\frac{dQ_{rev}}{T}\tag{25e}\]</div>
+<p>Entropy is always calculated using <span class="math notranslate nohighlight">\(\int Q_{rev}\)</span> so a reversible pathway is needed. As no heat or work is exchanged with the surroundings the change in internal energy is zero (for a perfect gas), <span class="math notranslate nohighlight">\(\Delta U=0\)</span> and the temperature <span class="math notranslate nohighlight">\(T\)</span> is unchanged. To find a reversible path suppose that the gas is in a cylinder with a movable piston connected to a heat reservoir at constant temperature <span class="math notranslate nohighlight">\(T\)</span> and this arrangement allows the volume to change  from <span class="math notranslate nohighlight">\(T_1V_1\to T_2V_2\)</span>. As the piston moves reversibly the pressure is always constant. Using the first law with <span class="math notranslate nohighlight">\(\Delta U=0\)</span> and  <span class="math notranslate nohighlight">\(dW_{rev}=-pdV\)</span> gives</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle 0=dQ_{rev}+dW_{rev}; \qquad dQ_{rev}=RT\frac{dV}{V}\]</div>
+<p>Integrating gives,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle S_2-S_1=R\ln\left(\frac{V_2}{V_1}\right)\]</div>
+<p>From our previous equation (25d) it follows that</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle S_2-S_1= \frac{R}{n}\ln\left(\frac{m_2}{m_1}\right)\]</div>
+<p>The ratio <span class="math notranslate nohighlight">\(R/n\)</span> has a special meaning when <span class="math notranslate nohighlight">\(n\)</span> is the Avogadro number when it becomes the Boltzmann constant <span class="math notranslate nohighlight">\(k_B\)</span>. It is normal to choose some reference state for the entropy, just as we choose (mean) sea level as the zero of height on a map, thus the entropy is defined as</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle S=k_B\ln(m)\tag{25f}\]</div>
+<p>which is the form of equation first derived by Boltzmann. The most natural state to choose as the zero of entropy is a pure substance (e.g. a perfect crystal) at 0 K, where the substance is in perfect arrangement so that <span class="math notranslate nohighlight">\(m = 1\)</span> and <span class="math notranslate nohighlight">\(S_0=0\)</span>. Glasses and solid solutions will not have zero entropy at 0 K neither do some molecules such as CO because of orientational variation.</p>
+<p>We have found that the distribution that <span class="math notranslate nohighlight">\(m\)</span> represents is very sharply peaked at its maximum, with the effect that <span class="math notranslate nohighlight">\(m\)</span> can be replaced just by its maximum value, i.e. <span class="math notranslate nohighlight">\(m\to m_{max}\)</span> which is usually called the number of configurations.</p>
+<p>A gas always fills the volume available, to see how improbable it would be to fill just <span class="math notranslate nohighlight">\(99\)</span>% of the volume imagine that the gas contains <span class="math notranslate nohighlight">\(10^{24}\)</span> molecules, just over a mole, and that the other <span class="math notranslate nohighlight">\(1\)</span>% of the volume is empty. Using our result <span class="math notranslate nohighlight">\(m_2/m_1=(V_2/V_1)^n\)</span>, which is the number of microstates <span class="math notranslate nohighlight">\(m_2\)</span> in volume 2, divided by those in volume 1, the probability is</p>
+<div class="math notranslate nohighlight">
+\[ \displaystyle prob= (0.99)^{10^{24}} \approx 10^{-4.3\cdot 10^{21} }\]</div>
+<p>which is utterly minute and hard to comprehend. Suppose that <span class="math notranslate nohighlight">\(10^{12}\)</span> observations could be made each second, then this would mean taking <span class="math notranslate nohighlight">\(3\cdot 10^{19}\)</span> /year, and if this continues for the age of the universe (<span class="math notranslate nohighlight">\(10^{10})\)</span> years would make <span class="math notranslate nohighlight">\(\approx 10^{29}\)</span> observations. However, this would not be of any help at all as it represents only <span class="math notranslate nohighlight">\(4\cdot 10^{-4\cdot 10^{21} -29}\)</span> of the total, an utterly insignificant amount. Just to be clear <span class="math notranslate nohighlight">\(10^{10^{21}}\)</span> is <span class="math notranslate nohighlight">\(1\)</span> followed by <span class="math notranslate nohighlight">\(\mathrm{1000 \times a\; million \times a\; million\times a\; million\; zeros} \)</span>.</p>
+</div>
+</div>
+<div class="section" id="poisson-distribution-see-also-chapter-13-7">
+<h2>9.13 Poisson distribution (see also Chapter 13.7)<a class="headerlink" href="#poisson-distribution-see-also-chapter-13-7" title="Permalink to this headline">¶</a></h2>
+<p>The Poisson distribution is formed by accumulating many events, <span class="math notranslate nohighlight">\(n\)</span>, where each have a very small probability, <span class="math notranslate nohighlight">\(p\)</span>, of occurring, but the product <span class="math notranslate nohighlight">\(np\)</span>, the mean number of events, is moderate. The distribution is asymmetric and skewed for small positive numbers, <span class="math notranslate nohighlight">\(n \ge 0\)</span>, because it is not possible to have a negative number of events. This distribution is observed when photons are counted or particles counted after a radioactive atom disintegrates, provided their decay time is long compared to the observation time. However, the distribution applies to many other types of events, such as the number of faulty CDs produced, the number of misprints on a printed page, or the number of students absent from a class in any week. One of the earliest examples was recorded over a 20-year period during the 1800’s, and was the number of deaths of infantrymen occurred in the Prussian army after they were kicked by a horse.</p>
+<p>Suppose that a sample of molecules is continuously excited, and their fluorescence viewed through a small aperture or through filters to reduce the intensity so that photons are detected one at a time by a photodiode or photomultiplier. The number of electrical pulses from the detector for, say, <span class="math notranslate nohighlight">\(1000\)</span> time intervals each of <span class="math notranslate nohighlight">\(1\)</span> second duration is recorded. If a <em>histogram</em> of the number of events recorded in each time interval is made, then this should follow a Poisson distribution.</p>
+<p>If DNA is exposed to UV light, photo-damage can occur by base pairs forming dimers. If the DNA is spliced into pieces of equal length, the number of dimers in each piece can be recorded. If the pieces are each very small, <span class="math notranslate nohighlight">\(10\)</span> base pairs for example, most will not contain a dimer, a few will contain one and fewer still will contain two or more and so on. The distribution formed will have a large value for zero dimers and become smaller as the number of dimers increases. In a second experiment, suppose that <span class="math notranslate nohighlight">\(100\)</span> base pair long segments are examined. Now only a few segments have no dimer, some have one and many have two, three, or four but fewer segments will have five or more. This distribution is now peaked at a value of, say, <span class="math notranslate nohighlight">\(2.5\)</span>. Repeating the experiment with a larger segment will cause the distribution to peak at still larger values until it closely resembles a normal or Gaussian distribution. What has changed between the experiments is only the average number of dimers detected in each segment, thus the Poisson distribution is determined by only one parameter, the average number of ‘events’. A similar argument applies to the number of photons or particles detected in progressively longer time intervals.</p>
+<p>The Poisson distribution applies when the number of events <span class="math notranslate nohighlight">\(k\)</span> that are measured is very large, but the chance <span class="math notranslate nohighlight">\(p\)</span> of any one event occurring is very small. The product <span class="math notranslate nohighlight">\(\mu = kp\)</span> is the mean or average number of events and is of moderate value. The distribution can be derived from first principles, see Hines &amp; Montgomery (1990, 6.8) for this proof, or it can be obtained from the binomial distribution when <span class="math notranslate nohighlight">\(k\)</span> is large and <span class="math notranslate nohighlight">\(p\)</span> small. The Poisson distribution is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle P(k,\mu)=\frac{\mu^ke^{-\mu}}{k!} \tag{25g}\]</div>
+<p>also is also called the Poisson frequency distribution or ‘density’ function. The integer number of events is <span class="math notranslate nohighlight">\(k\)</span> and the mean value is <span class="math notranslate nohighlight">\(\mu\)</span>, which is not an integer. The shape of the distribution is shown below and also in Chapter 13, figure 13, for different mean values <span class="math notranslate nohighlight">\(\mu\)</span>.</p>
+<p><img alt="Display" src="../_images/analysis-fig13.png" /></p>
+<p>Figure 20bb The Poisson distribution</p>
+<hr class="docutils" />
+<p>Notice that, when the mean becomes larger, the distribution resembles a normal distribution and is almost symmetrical. But at small <span class="math notranslate nohighlight">\(\mu\)</span>, the distribution is very asymmetrical with the mean always to larger <span class="math notranslate nohighlight">\(k\)</span> than the peak (the mode or most probable value) of the distribution. The standard deviation of the distribution is also shown and this is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \sigma = \sqrt{\mu}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\mu\)</span> is the average number of events detected; for instance, the number of photons detected in a given time period at a given wavelength.</p>
+<p>The chance of no success, that is of not observing an ‘event’, is <span class="math notranslate nohighlight">\(e^{-\mu}\)</span>. The chance of observing exactly one event <span class="math notranslate nohighlight">\(k = 1\)</span> is <span class="math notranslate nohighlight">\(\mu e^{-\mu}\)</span>, of exactly two events <span class="math notranslate nohighlight">\(\mu^2 e^{-\mu}/2!\)</span>, and of exactly <span class="math notranslate nohighlight">\(k\)</span> events is <span class="math notranslate nohighlight">\(P(k, \mu)\)</span>. The chance of observing more than one event is <span class="math notranslate nohighlight">\(1 - e^{-\mu}\)</span> . The sum to infinity is unity, and therefore the distribution is normalized.</p>
+<div class="section" id="franck-condon-factors">
+<h3>Franck-Condon Factors<a class="headerlink" href="#franck-condon-factors" title="Permalink to this headline">¶</a></h3>
+<p>One interesting example of this distribution is found in the shape of the envelope of the absorption and emission spectrum of a diatomic molecule that has a harmonic potential in both the ground and electronic excited state. The chance of absorption is found by analysing the Franck-Condon Factor</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle F_{i,f} =\bigg |\int \psi^*_f(x+a)\psi_i(x)dx\bigg |^2\]</div>
+<p>where <span class="math notranslate nohighlight">\(\psi\)</span> are the Harmonic Oscillator wavefunctions, in the initial <span class="math notranslate nohighlight">\(i\)</span> and final <span class="math notranslate nohighlight">\(f\)</span> energy levels and <span class="math notranslate nohighlight">\(a\)</span> is the displacement of one excited state from the other, i.e. change in bond length between the two electronic states. These wavefunctions are given in section 8.1, equation 18a. Usually only the lowest vibrational level in the ground state is significantly populated because vibrational quanta are usually large (hundreds to a few thousand wavenumbers) compared to thermal energy <span class="math notranslate nohighlight">\(210\;\mathrm{cm^{-1}}\)</span> at room temperature. In this case evaluating the Franck Condon Factor integral is simplified and the result is a Poisson distribution. The calculation is performed in answering question 4.64 in the integration chapter. The Franck-Condon Factor is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle F_{0,n}=\bigg |\int\psi_0\psi_ndx\bigg|^2= \frac{s^ne^{-S}}{n!}\]</div>
+<p>where <span class="math notranslate nohighlight">\(S = \mu\omega a^2/2\hbar\)</span> is called the Huang-Rhys factor and <span class="math notranslate nohighlight">\(\mu\)</span> is the reduced mass of the atoms in the vibration of frequency <span class="math notranslate nohighlight">\(\omega\)</span>.</p>
+<p><img alt="Display" src="../_images/chapter1-fig20c.png" /></p>
+<p>Figure 20c. Harmonic, displaced Potential energy profiles. The spectrum is sketched on the left with the envelope in yellow.</p>
+<p><img alt="Display" src="../_images/integration-fig57.png" /></p>
+<p>Figure 20d. Calulated spectrum for CO.The size of the absorption lines follows the Poisson distribution.</p>
+</div>
+<div class="section" id="sequential-rate-equations">
+<h3>Sequential rate equations<a class="headerlink" href="#sequential-rate-equations" title="Permalink to this headline">¶</a></h3>
+<p>A concatemer of identical proteins can be unfolded one at a time using an atomic force microscope (AFM). Each protein unfolds with the same rate constant. The scheme is <span class="math notranslate nohighlight">\(p_1 \to p_2\to p_3 \to \cdots\)</span>. As the rate constant for any step is the same the chance that the transition from protein, <span class="math notranslate nohighlight">\(n\to m\)</span> is Poisson distributed. The calculation is described in full in chapter 10 (Differential equations) section 7. As the rate constants are all the same the unfolding is not sequential so any protein has the same chance of unfolding at a given applied force from the AFM.</p>
+</div>
+<div class="section" id="poisson-distribution-derived-from-the-binomial">
+<h3>Poisson distribution derived from the binomial.<a class="headerlink" href="#poisson-distribution-derived-from-the-binomial" title="Permalink to this headline">¶</a></h3>
+<p>In the previous section the binomial distribution found by analysing a chromatography column was simplified to the Poisson distribution. The binomial distribution is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle P(n,m,q)=\frac{n!}{m!(n-m)!}q^m (1-q)^{n-m} \]</div>
+<p>which is the total probability of choosing <span class="math notranslate nohighlight">\(m\)</span> objects from <span class="math notranslate nohighlight">\(n\)</span> positions and <span class="math notranslate nohighlight">\(q\)</span> is the chance of choosing any one.</p>
+<p>In the limit that <span class="math notranslate nohighlight">\(q\)</span> is very small and <span class="math notranslate nohighlight">\(n\to \infty\)</span> i.e. is very large the factorials can be simplified because <span class="math notranslate nohighlight">\(n! \sim (n-m)!\)</span> thus</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{n!}{m!(n-m)!}q^m\quad \to\quad \frac{q^m}{m!}\]</div>
+<p>The term <span class="math notranslate nohighlight">\(\displaystyle (1-q)^{n-m}=\frac{(1-q)^n}{(1-q)^m}\)</span> and as <span class="math notranslate nohighlight">\(q\)</span> is small (<span class="math notranslate nohighlight">\(\ll 1\)</span>) <span class="math notranslate nohighlight">\(1-q \to 1\)</span> and so</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{(1-q)^n}{(1-q)^m} \quad \to\quad (1-q)^n\quad \to \quad e^{-q}\]</div>
+<p>which follows from the definition of the exponential (section 3) and combining the terms gives <span class="math notranslate nohighlight">\(\displaystyle \frac{q^me^{-q}}{m!}\)</span> which is the Poisson distribution.</p>
+</div>
+</div>
+<div class="section" id="multinomial-distribution">
+<h2>9.14 Multinomial distribution<a class="headerlink" href="#multinomial-distribution" title="Permalink to this headline">¶</a></h2>
+<p>The binomial distribution is concerned with selecting between two classes: success and failure; but the choices need not be restricted to two classes. We have already calculated the chance of observing groups of objects or events, such as the chance of 3 GLY, 3 ILE, etc. in the protein sequence in Section 8.2. When there are several choices the multinomial distribution is required and is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle P_{mG}=\frac{n!}{\prod_{i=1}^r m_i!}\prod_{i=1}^rp_i^{m_i} \tag{26}\]</div>
+<p>where <span class="math notranslate nohighlight">\(p_i\)</span> is the probability of choosing any object from the <span class="math notranslate nohighlight">\(n\)</span> boxes and <span class="math notranslate nohighlight">\(m_i\)</span> are the numbers in each of <span class="math notranslate nohighlight">\(r\)</span> groups.</p>
+<p>In the calculation of the Maxwell - Boltzmann distribution, <span class="math notranslate nohighlight">\(n\)</span> objects are placed into <span class="math notranslate nohighlight">\(s\)</span> identical boxes. The distribution becomes</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{n!}{\prod_{i=1}^r m_i!}\left( \frac{1}{s}\right)^n\]</div>
+<p>from which the <span class="math notranslate nohighlight">\(m_i\)</span> has to be found and the distribution is maximized subject to the restriction that both the number of particles and the total energy are constant. This is usually done by taking the log of the distribution and, as each <span class="math notranslate nohighlight">\(m_i\)</span> is large using Stirling’s approximation for <span class="math notranslate nohighlight">\(m_i!\)</span>. The constraints are dealt with using the method of Lagrange multipliers see chapter 3.11. The full calculation can be found in textbooks on statistical mechanics.</p>
+</div>
+<div class="section" id="genetics">
+<h2>9.15 Genetics<a class="headerlink" href="#genetics" title="Permalink to this headline">¶</a></h2>
+<p>Mendel discovered that pure bred but different strains of peas gave rise to offspring that showed different features but did so in definite proportions. His peas had yellow and green seeds, but 75.05% of the offspring in 8023 trials were yellow, and the remainder, green. Others have since found very similar numbers in even larger trials and in other organisms, such as fruit flies or mice (Maynard Smith 1995). The genetic information we now know is encoded in DNA. The regions involved in transmitting genetic information are called genes, and these form part of a chromosome of which several different types are present in an organism. We are familiar with the observation that the probability with which molecules react is exponentially distributed, which is expressed in the Arrhenius rate equation, the rate being probability/time. In genetics, the situation is entirely different. The probability distribution is flat and the chance that genes mix genetic information occurs with the same constant probability as if they were selected out of boxes, each one being equally probable. Although these genes ‘mix’ during reproduction, they still retain their own identity and are passed down through the generations. An individual needs two genes to express a trait; yellow vs green seeds or stumpy vs normal wings in a fruit fly, and these mix freely from both parents to produce offspring. These traits are usually called <em>phenotypes</em>. The traits the offspring show are expected to be those of the parents, but depending on the genetic make up (<em>genotype</em>) of the parent, some traits appear less than would be expected from simple numerology. The reason for this is that some genes are recessive to others and therefore a characteristic trait does not manifest itself in the presence of a dominant gene. Only when the genotype is examined can the true make-up of an individual be found.</p>
+<p><img alt="Drawing" src="../_images/chapter1-fig21.png" /></p>
+<p>Figure 21. Genetic make-up after two generations (after Maynard Smith 1995). The yellow colour in pea seeds is dominant over green and occurs in the ratio 3:1, although this is not reflected in the genetic make-up.</p>
+<p><img alt="Drawing" src="../_images/chapter1-fig22.png" /></p>
+<p>Figure 22 A cross between YY and Yy plants.</p>
+<hr class="docutils" />
+<p>If the two genes from each parent are described as Y or y and G or g they can be arranged in a diagram. The uppercase letter indicates a dominant gene, the lower case a recessive. Starting with the pure strains YY and yy, which are called <em>homozygous</em>, the first generation (F1) are <em>heterozygous</em> Yy. If these are now bred, the homozygous reappear with the heterozygous, Figure 21.</p>
+<p>Because the yellow colour in the pea seeds is dominant over the green, although this is not reflected in the genetic make-up (the genotype), the chance of observing yellow peas is therefore <span class="math notranslate nohighlight">\(75\)</span>%, which is very close to that observed experimentally. The chance of observing YY and yy genotypes is <span class="math notranslate nohighlight">\(1/4\)</span> in each case, and of the hybrid Yy, <span class="math notranslate nohighlight">\(1/2\)</span>, because the genes mix freely but retain their own identity, rather like atoms do in forming a molecule. The yellow seeded plants are present in the ratio 3:1 over the green ones. The phenotype ratio yellow to green is therefore <span class="math notranslate nohighlight">\(3:1\)</span>, or put another way, yellow seeded plants are expected to be observed on average in <span class="math notranslate nohighlight">\(3/4\)</span> of all experiments. If a homozygous plant is crossed with a heterozygous one, the chances that green and yellow seeded plants will be produced are equal.</p>
+<p>If, say, <span class="math notranslate nohighlight">\(n= 20\)</span> experiments are performed it should not be assumed that exactly equal numbers of green and yellow seeded plants will be observed since the number of experiments are small and many factors may influence what the plant looks like. This ‘noise’ means that accurate and precise ratios are only produced after averaging a large number of experiments. The numbers could range from <span class="math notranslate nohighlight">\(0 \to 20\)</span> but the average should be <span class="math notranslate nohighlight">\(10\)</span> with the actual probabilities being distributed according to the binomial theorem. The chance (frequency) of observing <span class="math notranslate nohighlight">\(m\)</span> green plants is then from the binomial distribution</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle p(20,m,1/2)=\frac{20!}{m!(20-m)!}\left(\frac{1}{2}\right)^m\left(\frac{1}{2}\right)^{20-m}\]</div>
+<p>which works out to be a very small number, <span class="math notranslate nohighlight">\(9.5 \times 10^{-7}\)</span> of observing <span class="math notranslate nohighlight">\(0\)</span> or <span class="math notranslate nohighlight">\(20\)</span> green pea seeds. The chance of there being exactly <span class="math notranslate nohighlight">\(10\)</span> plants of each type is <span class="math notranslate nohighlight">\(46189/262144 = 0.1762\)</span> or <span class="math notranslate nohighlight">\(17.6\)</span>%. The chance that the actual result differs by <span class="math notranslate nohighlight">\(\pm 1\)</span> from the average value of <span class="math notranslate nohighlight">\(10\)</span> is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{20!}{10!10!}\left(\frac{1}{2}\right)^{20}+\frac{20!}{9!11!}\left(\frac{1}{2}\right)^{20}+\frac{20!}{11!9!}\left(\frac{1}{2}\right)^{20}=0.496\]</div>
+<p>which is approximately a <span class="math notranslate nohighlight">\(50\)</span>% chance that the numbers of peas produced will be <span class="math notranslate nohighlight">\(9, 10\)</span>, or <span class="math notranslate nohighlight">\(11\)</span> and a <span class="math notranslate nohighlight">\(50\)</span>% chance that they will be greater or smaller than these numbers. If the number of experiments is increased to <span class="math notranslate nohighlight">\(2000\)</span>, then there is only a <span class="math notranslate nohighlight">\(5.3\)</span>% chance that the average number will not be between <span class="math notranslate nohighlight">\(1001\)</span> and <span class="math notranslate nohighlight">\(999\)</span>.</p>
+<p>The Punnett square or matrix is a convenient pictorial way of assessing the outcomes of mixing genes. All of the possible genotypes of one parent are placed on the top row, and those of the other parent in the first column and the genotypes of the offspring fill the matrix. The crossing of the F1 hybrids in Fig. 1.21 is represented as</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin{array}{c|cc}
+&amp;  Y &amp; y\\
+\hline
+Y &amp; YY &amp; Yy\\
+y &amp; Yy &amp; yy\\
+\hline
+\end{array}\end{split}\]</div>
+<p>which gives the same result as in  figure 21 but in more compact form.</p>
+<p>In many cases there are two genes that encode for a phenotype, and we assume that the genes are located on different chromosomes and are therefore independent. We can predict the fraction of the types of offspring of, for example, mice with brown vs white coats, brown being dominant and short vs long tails, short being dominant. The genotypes are labelled as <span class="math notranslate nohighlight">\(B\)</span> and <span class="math notranslate nohighlight">\(b\)</span> for the colour, and <span class="math notranslate nohighlight">\(T\)</span> and <span class="math notranslate nohighlight">\(t\)</span> for the tails, so that the genotypes are <span class="math notranslate nohighlight">\(BT,\; Bt,\; bT,\; bt\)</span>, the lower case being recessive. If these animals are mated, the offspring genotypes are shown in the table, where each entry is arranged with <span class="math notranslate nohighlight">\(B/b\)</span> as the first label and <span class="math notranslate nohighlight">\(T/t\)</span> as
+the second, and the dominant before the recessive.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin{array}{c|cccc}
+   &amp; BT &amp; Bt &amp; bT &amp; bt\\
+ \hline
+ BT &amp; BBTT &amp; BBTt&amp; BbTT &amp; BbTt\\
+ Bt &amp; BBTt &amp; \pmb{BBtt} &amp; BbTt &amp; \pmb{Bbtt}\\
+ bT &amp; BbTT &amp; BtTt &amp; bbTT &amp; bbTt\\
+ bt &amp; BbTt &amp; \pmb{Bbtt} &amp; bbTt &amp; bbtt\\
+ \hline \end{array}\end{split}\]</div>
+<p>An offspring’s phenotypes can be characterised using the dash - to mean <span class="math notranslate nohighlight">\(B/b\)</span> or <span class="math notranslate nohighlight">\(T/t\)</span> as appropriate. The table shows that</p>
+<p><strong>(i)</strong> <span class="math notranslate nohighlight">\(9/16\)</span> of genotype <span class="math notranslate nohighlight">\((B\;-\;T\;-\;)\)</span> has phenotype: brown, long tailed</p>
+<p><strong>(ii)</strong> <span class="math notranslate nohighlight">\(3/16\)</span> as <span class="math notranslate nohighlight">\((b\;b\;T\;- )\equiv\)</span> white, long tail</p>
+<p><strong>(iii</strong> <span class="math notranslate nohighlight">\(3/16\)</span> as <span class="math notranslate nohighlight">\((B\;-\;t\;t)\equiv\)</span> brown,short-tail (shown as bold in the square)</p>
+<p><strong>(iv)</strong> <span class="math notranslate nohighlight">\(1/16\)</span> as <span class="math notranslate nohighlight">\((b\;b\;t\;t) \equiv\)</span> white short tail.</p>
+<p>The phenotype ratios are <span class="math notranslate nohighlight">\(9:3:3:1\)</span> and this was observed by Mendel in his studies of peas.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./chapter-1"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="chapter1-Q8-16.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Questions 8 - 16</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="chapter1-Q17-34.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Questions 17 - 34</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Godfrey Beddard<br/>
+        
+            &copy; Copyright 2022.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

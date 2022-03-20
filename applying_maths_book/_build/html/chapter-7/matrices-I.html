@@ -1,0 +1,1913 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Molecular vibrations and pendulums &#8212; Applying Maths in the Chemical &amp; Biomolecular Sciences</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Questions 55 - 58" href="matrices-Q55-58.html" />
+    <link rel="prev" title="Questions 51 - 54" href="matrices-Q51-54.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/book-cover.jpg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Applying Maths in the Chemical & Biomolecular Sciences</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Introduction
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-1/chapter1-intro.html">
+   1. Numbers, Equations, Operators, and Algorithms.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-A.html">
+     Numbers to Algorithms
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-Q1-7.html">
+     Questions 1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-B.html">
+     Trigonometric functions.  Waves
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-Q8-16.html">
+     Questions 8 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-C.html">
+     Sophisticated Counting: permutations, combinations and probability
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-Q17-34.html">
+     Questions 17 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-D.html">
+     10 Modulo arithmetic, delta functions, series, estimation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-Q35-39.html">
+     Questions 35 - 39
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-answers-1-7.html">
+     Solutions Q1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-answers-8-16.html">
+     Solutions Q8 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-answers-17-34.html">
+     Solutions Q17 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-answers-35-39.html">
+     Solutions Q35 - 39
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-2/chapter2-intro.html">
+   2. Complex numbers.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2/chapter2-A.html">
+     Real, imaginary,conjugate and modulus
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2/chapter2-Q-1-9.html">
+     Questions 1 - 9
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2/chapter2-B.html">
+     De Moivre’s theorem and integer powers of complex numbers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2/chapter2-Q-10-13.html">
+     Questions 10 -13
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2/chapter2-C.html">
+     Euler’s theorem
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2/chapter2-Q-14-27.html">
+     Questions 14 - 27
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2/chapter2-answers.html">
+     Solutions Q1 - 27
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-3/differen-intro.html">
+   3. Differentiation.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-A.html">
+     Differentiation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-B.html">
+     Trig functions, logs, power, reciprocals and integrals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-C-Q-4-11.html">
+     Questions 1-11
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-D.html">
+     Product rule and function of function or chain rule.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-E-Q-12-42.html">
+     Questions 12-42
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-F.html">
+     Limits, maxima/minima and Calculus of Variations.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-G-Q-43-73.html">
+     Questions 43 - 73
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-H.html">
+     Numerically finding the roots of an equation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-I-Q-74-85.html">
+     Questions 74 - 85
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-J.html">
+     Minimizing or maximizing with constraints: Lagrange Undetermined Multipliers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-K-Q-86-92.html">
+     Questions 86 - 92
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-L.html">
+     Partial differentiation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-M-Q-93-114.html">
+     Questions 93-114
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-M1.html">
+     Differentiation of vectors
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-N-answers-1-11.html">
+     Solutions Q 1-11
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-O-answers-12-42.html">
+     Solutions Q 12-42
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-P-answers-43-73.html">
+     Solutions Q 43 - 73
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-Q-answers-74-85.html">
+     Solutions Q 74 - 85
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-R-answers-86-92.html">
+     Solutions Q 86 - 94
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-S-answers-93-114.html">
+     Solutions Q 93-114
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-4/integration-intro.html">
+   4. Integration.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-A.html">
+     Integration basics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-Q1-14.html">
+     Questions 1-14
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-B.html">
+     Integration by substitution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-Q15-30.html">
+     Questions 15-30
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-C.html">
+     Using parametric equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-Q31-48.html">
+     Questions 31 - 48
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-D.html">
+     Calculating an Average Value.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-Q49-72.html">
+     Questions 49 - 72
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-E.html">
+     The Variational Method in Quantum Mechanics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-Q73-77.html">
+     Questions 73 - 77
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-F.html">
+     Multiple integrals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-Q78-86.html">
+     Questions 78 - 86
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-G.html">
+     Calculating the energy of a chemical bond using molecular orbitals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-H.html">
+     Line integrals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-Q87-96.html">
+     Questions 87 - 96
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-answers-1-14.html">
+     Solutions Q1 - 14
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-answers-15-30.html">
+     Solutions Q15 - 30
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-answers-31-48.html">
+     Solutions Q31 - 48
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-answers-49-72.html">
+     Solutions Q49 - 72
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-answers-73-96.html">
+     Solutions Q73 - 96
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-5/chapter-5-intro.html">
+   5. Summations, Series and expansion of Functions.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-A.html">
+     Series, averages, partition functions, DNA melting, atom entropy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-B-Q1-13.html">
+     Questions 1 - 13
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-E.html">
+     Maclaurin and Taylor series expansions. Paramagnetic spins
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-F-Q14-34.html">
+     Questions 14 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-G-Q35-44.html">
+     Questions 35 - 44
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-perturbation-A.html">
+     Perturbation Theory
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-perturbation-B-Q45-48.html">
+     Questions 45 - 48
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-perturbation-C.html">
+     Quantum superposition and wavepackets.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-perturbation-D-Q49-52.html">
+     Questions 49 - 52
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-answers-1-7.html">
+     Solutions Q 1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-answers-8-13.html">
+     Solutions Q8 - 13
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-answers-14-26.html">
+     Solutions Q 14 - 26
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-answers-27-32.html">
+     Solutions Q27 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-answers-33-44.html">
+     Solutions Q33 - 44
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-answers-45-52.html">
+     Solutions Q45 - 52
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-6/vectors-intro.html">
+   6. Vectors.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-A.html">
+     Vector basics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-Q1-24.html">
+     Questions 1 - 24
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-B.html">
+     Projections and components
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-Q25-32.html">
+     Questions 25 - 32
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-C.html">
+     Axes need not be right-angled or of equal length
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-Q33-38.html">
+     Questions 33 - 38
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-D.html">
+     Basis sets with more than three dimensions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-Q39-46.html">
+     Questions 39 - 46
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-E.html">
+     Cross product or vector product
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-Q47-52.html">
+     Questions 47 - 52
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-F.html">
+     Torsion or dihedral angles
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-Q53-61.html">
+     Questions 53 - 61
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-G.html">
+     Torque and angular momentum
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-answers-Q1-24.html">
+     Solutions Q1 - 24
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-answers-Q25-32.html">
+     Solutions Q25 - 32
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-answers-Q33-38.html">
+     Solutions Q33 - 38
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-answers-Q39-46.html">
+     Solutions Q38 - 46
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-answers-Q47-52.html">
+     Solutions Q47 - 52
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-answers-Q53-61.html">
+     Solutions Q53 - 61
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="matrices-intro.html">
+   7. Matrices
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-A.html">
+     Determinants
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-Q1-10.html">
+     Questions  1 - 10
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-B.html">
+     Matrices
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-Q11-16.html">
+     Questions  11 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-C.html">
+     Molecular Group Theory
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-Q17-30.html">
+     Questions  17 - 30
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-D.html">
+     Rotation matrices: moving molecules
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-Q31-34.html">
+     Questions 31 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-E.html">
+     Matrices in optics and designing laser cavities
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-Q35-39.html">
+     Questions 35 - 39
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-F.html">
+     Polarizing optics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-Q40-44.html">
+     Questions 40 - 44
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-G.html">
+     Solving equations using matrices. Eigenvectors &amp; Eigenvalues.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-Q45-50.html">
+     Questions 45 - 50
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-H.html">
+     Rate equations and Chemical Kinetics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-Q51-54.html">
+     Questions 51 - 54
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Molecular vibrations and pendulums
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-Q55-58.html">
+     Questions 55 - 58
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-J.html">
+     Calculating a bond length using moments of inertia
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-Q59-62.html">
+     Questions 59 - 62
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-answersQ1-10.html">
+     Solutions Q1 - 10
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-answersQ11-16.html">
+     Solutions Q11 - 30
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-answersQ17-30.html">
+     Solutions Q17 - 30
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-answersQ31-34.html">
+     Solutions Q31 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-answersQ35-39.html">
+     Solutions Q35 - 39
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-answersQ40-44.html">
+     Solutions Q40 - 44
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-answersQ45-50.html">
+     Solutions Q45 - 50
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-answersQ51-54.html">
+     Solutions Q51 - 54
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-answersQ55-58.html">
+     Solutions Q55 - 58
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-answersQ59-61.html">
+     Solutions Q59 - 61
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-8/matricesQM-intro.html">
+   8. Matrices in Quantum Mechanics
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-8/matricesQM-A.html">
+     Chapter 8 Matrices in Quantum Mechanics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-8/matricesQM-Q1-7.html">
+     Questions 1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-8/matricesQM-B.html">
+     Basis sets and bra-ket algebra
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-8/matricesQM-Q8-12.html">
+     Questions 8 - 12
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-8/matricesQM-C.html">
+     Continuous basis sets
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-8/matricesQM-answers1-7.html">
+     Solutions Q1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-8/matricesQM-answers8-12.html">
+     Solutions Q8 - 12
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-9/Fourier-intro.html">
+   9. Fourier Series and Transforms.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-A-B.html">
+     Fourier series, Gibbs phenomenon, generalised series.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-questions-1-6.html">
+     Questions 1 - 6
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-C.html">
+     Fourier Transforms
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-D.html">
+     Convolution and Autocorrelation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-questions-7-15.html">
+     Questions 7 - 15
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-E.html">
+     Discrete Fourier  (DFT)  and Fast Fourier transforms (FFT)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-questions-16-21.html">
+     Questions 16 - 21
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-F.html">
+     The Hadamard Transform: Encoding and Decoding
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-2D-Diffraction.html">
+     The Fourier transform in two dimensions: images and x-ray Diffraction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-tomography.html">
+     Computed Tomography
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-answers-1-6.html">
+     Solutions Q 1 - 6
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-answers-7-15.html">
+     Solutions Q 7 - 15
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-answers-16-21.html">
+     Solutions Q 16 - 21
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-10/Diff-eqns-intro.html">
+   10. Differential Equations.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-A.html">
+     Differential Equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-Q1-23.html">
+     Questions 1 - 23
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-B.html">
+     Integrating factors can solve differential equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-C.html">
+     The ‘D’ operator.  Solving linear differential equations with constant coefficients
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-D.html">
+     Simultaneous equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-E.html">
+     Linear equations with variable coefficients
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-F.html">
+     Partial Differential Equations, PDE
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-G.html">
+     PDE examples continued
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-Q24-37.html">
+     Questions 24 - 37
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-answers-1-21.html">
+     Solutions Q1 - 21
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-answers-22-37.html">
+     Solutions Q22 - 37
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-11/num-methods-intro.html">
+   11. Numerical Methods
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-A.html">
+     Numerical Methods
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-Q1-7.html">
+     Questions 1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-B.html">
+     Numerical solution of differential equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-Q8-12.html">
+     Questions 8 - 12
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-C.html">
+     Coupled equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-Q13-16.html">
+     Questions 13 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-D.html">
+     The phase plane, nullclines, and stable points
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-Q17-20.html">
+     Questions 17 - 20
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-E.html">
+     Reaction schemes with feedback
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-Q21-34.html">
+     Questions 21 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-F.html">
+     Boundary value problems: Shooting method
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-Q35-40.html">
+     Questions 35 - 40
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-answers1-7.html">
+     Solutions Q1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-answers8-12.html">
+     Solutions Q8 - 12
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-answers13-16.html">
+     Solutions Q13 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-answers17-20.html">
+     Solutions Q17 - 20
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-answers21-34.html">
+     Solutions Q21 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-answers35-40.html">
+     Solutions Q35 - 40
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-12/monte-carlo-intro.html">
+   12. Monte Carlo Methods
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+  <label for="toctree-checkbox-12">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-A.html">
+     Monte - Carlo
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-Q1-6.html">
+     Questions 1 - 6
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-B.html">
+     Solving rate equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-Q7-10.html">
+     Questions 7 - 10
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-CC.html">
+     Monte Carlo Simulations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-C.html">
+     4 Forster or dipole - dipole energy transfer
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-Q11-17.html">
+     Questions 11 - 17
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-D.html">
+     The Metropolis algorithm
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-answers1-6.html">
+     Solutions Q1 - 6
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-answers7-10.html">
+     Solutions Q7 - 10
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-answers11-17.html">
+     Solutions Q11 - 17
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-13/analysis-intro.html">
+   13. Data Analysis
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+  <label for="toctree-checkbox-13">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-13/analysis-A.html">
+     Characterizing experimental data. Accuracy, precision, mean and standard deviation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-13/analysis-Q1-3.html">
+     Questions 1 - 3
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-13/analysis-B.html">
+     Modelling data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-13/analysis-Q4-9.html">
+     Questions 4 - 9
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-13/analysis-C.html">
+     Modelling data is simpler using matrices
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-13/analysis-Q10-11.html">
+     Questions 10 - 13
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-13/analysis-D.html">
+     Non-linear least squares, gradient expansion, the Levenberg - Marquardt Method
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-13/analysis-answers1-11.html">
+     Solutions Q1 -11
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../chapter-1/chapter1-E.html">
+   SI units, Rounding &amp; converting units, Glossary.
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../references/References.html">
+   References
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../references/Python%20crib.html">
+   Some basic Python instructions with a few examples.
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/chapter-7/matrices-I.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/chapter-7/matrices-I.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Molecular vibrations and pendulums
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#molecular-vibrations">
+     14 Molecular vibrations
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vibrational-normal-modes">
+     14.1 Vibrational normal modes
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#calculation-of-normal-modes">
+     14.2 Calculation of normal modes
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#summary">
+       Summary:
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#how-to-calculate-vibrational-normal-modes-in-a-molecule-using-the-gfg-matrix-method">
+   14.3 How to calculate vibrational normal modes in a molecule using the GFG matrix method
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Summary
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#stretching-vibrations-of-co-2">
+     Stretching vibrations of CO
+     <span class="math notranslate nohighlight">
+      \(_2\)
+     </span>
+     .
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#bending-motion">
+     Bending motion
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#normal-mode-calculation">
+       Normal mode calculation
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#moments-of-inertia">
+   Moments of Inertia
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-rotational-motion-of-molecules">
+     15.1 The rotational motion of molecules
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#angular-momentum-and-moment-of-inertia">
+     15.2 Angular momentum and moment of inertia
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#solid-bodies">
+     15.3 Solid bodies
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#discrete-bodies-molecules">
+     15.4 Discrete bodies: molecules
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="molecular-vibrations-and-pendulums">
+<h1>Molecular vibrations and pendulums<a class="headerlink" href="#molecular-vibrations-and-pendulums" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import all python add-ons etc that will be needed later on</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="n">init_printing</span><span class="p">()</span>                      <span class="c1"># allows printing of SymPy results in typeset maths format</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;font.size&#39;</span><span class="p">:</span> <span class="mi">14</span><span class="p">})</span>  <span class="c1"># set font size for plots</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="molecular-vibrations">
+<h2>14 Molecular vibrations<a class="headerlink" href="#molecular-vibrations" title="Permalink to this headline">¶</a></h2>
+<p>Matrix eigenvalue - eigenvector problems can also be used to solve a number of related problems such as molecular vibrations, coupled pendulums, and damped oscillators. When the displacements from equilibrium are small the equations produced are linear, and this is always assumed in solving these equations with matrix methods. The numerical methods of Chapter 11 allow the fully non-linear equations to be solved. In this section, the concept of normal modes is described first, then the motion of linked pendulums, and finally the vibrational motion of molecules is described and some examples worked through.</p>
+</div>
+<div class="section" id="vibrational-normal-modes">
+<h2>14.1 Vibrational normal modes<a class="headerlink" href="#vibrational-normal-modes" title="Permalink to this headline">¶</a></h2>
+<p>If the initial displacements made to the atoms of a molecule correspond to that expected of any one of the normal modes, Figure 23, then the oscillations of all atoms continue only in that normal mode. The first reason is because each atom is connected to all others via chemical bonds, and second because each normal mode is orthogonal to every other one. This means that, ideally, no energy flows from one normal mode to any other, and although this happens in practice, for example due to an harmonicity, it need not concern us here. If an arbitrary initial displacement is made that does not correspond to that expected of a normal mode, a complicated motion results. However, this can always be decomposed to a linear combination or sum of the normal modes, taken in various proportions as necessary to describe the motion. The overall motion, when many modes are simultaneously excited, causes beating; this is particularly clear in a coupled pendulum as the two pendulums come into and go out of phase with one another. This is seen when one of the pendulum bobs becomes stationary for an instance while its partner swings maximally; this then loses energy and becomes instantaneously stationary while the other has gained maximum displacement and which continues by swapping energy <em>ad infinitum</em>.</p>
+</div>
+<div class="section" id="calculation-of-normal-modes">
+<h2>14.2 Calculation of normal modes<a class="headerlink" href="#calculation-of-normal-modes" title="Permalink to this headline">¶</a></h2>
+<p>In a mechanical or molecular vibration, we usually try to find the equation relating forces. In simple harmonic motion, such as stretching a chemical bond, the potential energy is by Hooke’s law, <span class="math notranslate nohighlight">\(V = ks^2/2\)</span>, where <span class="math notranslate nohighlight">\(k\)</span> is the force constant and <span class="math notranslate nohighlight">\(s\)</span> the amount the bond extends away from its equilibrium length. The force <span class="math notranslate nohighlight">\(f\)</span> to stretch the bond, is obtained by differentiation of <span class="math notranslate nohighlight">\(\displaystyle f=-\frac{dV}{ds}=-ks\)</span> and is also given by Newton’s second law; force = mass <span class="math notranslate nohighlight">\(\times\)</span> acceleration, <span class="math notranslate nohighlight">\(\displaystyle f=m\frac{d^2s}{dt^2}\)</span> which provides the connection to time. Equating the two terms produces the equation of motion for small displacements from equilibrium, viz.</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{d^2s}{dt^2}+\frac{k}{m}s=0 \tag{46}\]</div>
+<p>The next step is to find out what <span class="math notranslate nohighlight">\(k/m\)</span> represents. By knowing that the motion of the pendulum is periodic, we may assume that the displacement at any time is described by <span class="math notranslate nohighlight">\(s = u\cos(\omega t + \varphi)\)</span>, where <span class="math notranslate nohighlight">\(\omega\)</span> is an angular frequency, <span class="math notranslate nohighlight">\(\varphi\)</span> is the phase, <span class="math notranslate nohighlight">\(t\)</span> is time, and <span class="math notranslate nohighlight">\(u\)</span> is the amplitude of the motion. The phase is arbitrary, and can be set to zero. Differentiating s twice by time and multiplying by m to obtain the force gives</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle m\frac{d^2s}{dt^2}=-m\omega ^2 u\cos(\omega t+\varphi)=-m\omega^2s; \qquad \text{or}\qquad \frac{d^2s}{dt^2}+\omega^2 s=0\]</div>
+<p>By comparison with equation 46, the (angular) oscillation frequency is <span class="math notranslate nohighlight">\(\omega =\sqrt{k/m}\)</span>, and is in radians s<span class="math notranslate nohighlight">\(^{-1}\)</span>. A similar equation describes the oscillation of a pendulum, but now the angular frequency is <span class="math notranslate nohighlight">\(\omega = \sqrt{g/L}\)</span> if <span class="math notranslate nohighlight">\(L\)</span> is the length of the pendulum and <span class="math notranslate nohighlight">\(g\)</span> is the acceleration due to gravity.</p>
+<p>When there is more than one oscillator - for instance, two coupled pendulums or the many vibrations of a polyatomic molecule - there is one force equation for each mass in the molecule. The potential <span class="math notranslate nohighlight">\(V\)</span> for atom 1 now has terms not only describing its own position, but also of all others connected to it, and could contain terms with each of <span class="math notranslate nohighlight">\(s_1, s_2, \cdots\)</span> etc., where <span class="math notranslate nohighlight">\(s\)</span> is the displacement of any atom. The equations are therefore coupled and when placed into a matrix form there are off-diagonal force-terms that are not zero;</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \qquad\qquad \begin{bmatrix}\displaystyle m_1\frac{d^2s_1}{dt^2}\\\displaystyle m_2\frac{d^2s_2}{dt^2\\ \vdots} \end{bmatrix} =\begin{bmatrix}k_{11}&amp; k_{12}&amp; \cdots\\ k_{21} &amp; k_{22} &amp; \cdots \\ \vdots &amp;\vdots &amp;\ddots \end{bmatrix} \begin{bmatrix}s_1\\s_2\\ \vdots \end{bmatrix}\qquad\qquad\qquad\qquad\text{(47)}\end{split}\]</div>
+<p>The <span class="math notranslate nohighlight">\(k\)</span>’s in the square matrix are the forces or negative derivatives of the potential energy with respect to each displacement <span class="math notranslate nohighlight">\(s_1, s_2, \cdots\)</span>. For example, in the coupled pendulum example that will shortly be worked through, we find that <span class="math notranslate nohighlight">\(\displaystyle -\frac{dV}{ds_1}=-\frac{mgs_1}{L}+k(s_2-s_1)\)</span> then <span class="math notranslate nohighlight">\(\displaystyle k_{11}=-\frac{mgs_1}{L}-k\)</span> and <span class="math notranslate nohighlight">\(k_{12}=k_{21}=k\)</span>.</p>
+<p>The next step in the calculation is to write down the equation of motion of the normal modes. Each normal mode has, by definition, its own frequency <span class="math notranslate nohighlight">\(\omega_1, \omega_2, \cdots\)</span> and so forth. Occasionally modes are degenerate, but nevertheless, by analogy with a single oscillator, each normal mode has an equation of the form <span class="math notranslate nohighlight">\(\displaystyle \frac{d^2s_n}{dt^2} + \omega^2s_n = 0\)</span>, where <span class="math notranslate nohighlight">\(s_n\)</span> is the coordinate describing the displacement of the normal mode and is not the same as <span class="math notranslate nohighlight">\(s_1\)</span> or <span class="math notranslate nohighlight">\(s_2\)</span> etc. used above. If the equations for the several normal modes are put into matrix form, this is diagonal, because each normal mode is unique and does not depend on any other;</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \qquad\qquad\begin{bmatrix}\displaystyle \frac{d^2s_{n_1}}{dt^2}\\\displaystyle \frac{d^2s_{n_2}}{dt^2\\ \vdots} \end{bmatrix} =\begin{bmatrix}\omega_{1}^2&amp; 0&amp; \cdots\\ 0 &amp; \omega_{2}^2 &amp; \cdots \\ \vdots &amp;\vdots &amp;\ddots \end{bmatrix} \begin{bmatrix}s_{n_1}\\s_{n_2}\\ \vdots \end{bmatrix}\qquad\qquad\qquad\qquad\text{(48)}\end{split}\]</div>
+<p>The equations 47 and 48 describe the same motion but are on different sets of axes. The former, is in terms of displacements of atoms, and the latter, in displacements of groups of atoms in a <em>normal mode</em>. If equation 47 is diagonalized, this has the effect of ‘rotating’ or more generally transforming the atoms’ coordinates by mixing them up in such a way that they become the normal mode coordinates. The eigenvalues obtained can then be identified with the squared frequencies. Taking equation 47 and making an eigenvalue eigenvector equation gives</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin{bmatrix}k_{11}&amp; k_{12}&amp; \cdots\\ k_{21} &amp; k_{22} &amp; \cdots \\ \vdots &amp;\vdots &amp;\ddots \end{bmatrix} \begin{bmatrix}s_1\\s_2\\ \vdots \end{bmatrix}=\pmb{\lambda}\begin{bmatrix}s_1\\s_2\\ \vdots \end{bmatrix}\end{split}\]</div>
+<p>which can be solved, based on equation 31, by writing it as <span class="math notranslate nohighlight">\(\pmb{ks} = \pmb{λs}\)</span>, where <span class="math notranslate nohighlight">\(\pmb{k}\)</span> is the matrix of force constants, and <span class="math notranslate nohighlight">\(\pmb{s}\)</span> the eigenvalues. Once the eigenvalues are obtained, they form a diagonal matrix and, term by term, are equal to the diagonal matrix of squared frequencies. If the eigenvectors are also obtained, their symmetry gives the pattern of displacements, by which is meant that, if all the values in an eigenvector are the same, the motion is all in one direction and, if different, then some masses are moving in one direction and other masses in other directions as determined by the sign.</p>
+<div class="section" id="summary">
+<h3>Summary:<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h3>
+<p>The matrix of forces is constructed and made into an eigenvalue - eigenvector equation and this is diagonalized. The eigenvalues <span class="math notranslate nohighlight">\(\lambda\)</span> are then equated to the squared frequencies of the normal modes. The eigenvectors indicate the pattern of normal mode displacements.</p>
+<p>Using the matrix method to solve problems of this type is best described with an example. The most difficult part is always obtaining the equation for the energy and therefore forces. In this example, the motion of two identical pendulums will be calculated. They have length <span class="math notranslate nohighlight">\(L\)</span> and mass <span class="math notranslate nohighlight">\(m\)</span> at the end of rigid, mass-less rods, and the masses are coupled together with a spring with force constant <span class="math notranslate nohighlight">\(k\)</span>, Figure 59. The pendulums are initially at equilibrium separated by the un-extended length of the spring, and then energy is added by moving one or both of the individual pendulums by a very small amount so that Hooke’s law for the spring is obeyed, and the change in potential, due to height, is directly proportional to the change in the vertical angle. There are two normal modes, see Figure 60. Either the pendulums swing together in phase both moving in the same direction at constant separation, or they move together and apart stretching and compressing the spring. These are clearly the only possible motions of the two pendulums for small angular motion and we shall want to find out their frequency (eigenvalues) and the normal mode displacements using the eigenvectors.</p>
+<p><img alt="Drawing" src="../_images/matrices-fig59.png" /> <img alt="Drawing" src="../_images/matrices-fig60.png" /></p>
+<p>Left, figure 59, Right figure 60. Left: Two coupled pendulums of length <span class="math notranslate nohighlight">\(L\)</span> and mass <span class="math notranslate nohighlight">\(m\)</span> connected by a spring with force constant k. Right: Calculation of height <span class="math notranslate nohighlight">\(h\)</span>. Right Normal modes of a coupled pendulum.<br><br></p>
+<hr class="docutils" />
+<p>The first step is to work out the potential energy <span class="math notranslate nohighlight">\(V\)</span>, which is the sum of the increase in height as each bob swings and the energy stored due to the change in length of the spring. The potential due to a pendulum’s height change is <span class="math notranslate nohighlight">\(mgh\)</span>, where <span class="math notranslate nohighlight">\(h\)</span> is the vertical displacement when the pendulum swings, defined in the right-hand pane of Figure 59 and <span class="math notranslate nohighlight">\(g\)</span> is the acceleration due to gravity and <span class="math notranslate nohighlight">\(m\)</span> is mass. Next, the energy due to compressing or extend- ing the spring is found then, using the total potential energy, the forces are calculated. The potential energy of extending a spring of force constant <span class="math notranslate nohighlight">\(k\)</span> by distance <span class="math notranslate nohighlight">\(s\)</span>, is <span class="math notranslate nohighlight">\(ks\)</span>. As the restoring force is always equal to the negative derivative of the potential and is also mass times acceleration, then,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle force = -\frac{d}{ds}V=m\frac{d^2s}{dt^2} \tag{49}\]</div>
+<p>It remains, therefore, to calculate the potential <span class="math notranslate nohighlight">\(V\)</span> in terms of the displacement, and to solve the resulting eigenvalue - eigenvector equations.</p>
+<p>Using the right-hand part of Figure 59, by definition, <span class="math notranslate nohighlight">\(\sin(\theta) = s/L\)</span> and <span class="math notranslate nohighlight">\(\cos(\theta) = (L - h)/L\)</span>. The differential equations have to be linear to use the eigenvalue - eigenvector method, thus the displacements and hence angle <span class="math notranslate nohighlight">\(\theta\)</span> is small. Rearranging to find <span class="math notranslate nohighlight">\(h\)</span>, and assuming small angles means that the cosine can be expanding as <span class="math notranslate nohighlight">\(\cos(\theta) = 1 - \theta^2/2 + \cdots\)</span> giving</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle h=L(1-\cos(\theta)\approx \frac{L}{2}\theta^2\]</div>
+<p>The potential energy of each of the two bobs due to their increase in height, is <span class="math notranslate nohighlight">\(mgh = mgL\theta^2/2\)</span>, but the energy is needed in terms of the displacement <span class="math notranslate nohighlight">\(s\)</span> not the angle <span class="math notranslate nohighlight">\(\theta\)</span> and using trigonometry again, <span class="math notranslate nohighlight">\(\sin(\theta) = s/L \approx \theta\)</span>, gives <span class="math notranslate nohighlight">\(\displaystyle \frac{mgs^2}{2L}\)</span> for the potential energy.</p>
+<p>The potential energy due to the spring’s extension or compression is, by Hooke’s law, <span class="math notranslate nohighlight">\(\displaystyle \frac{k}{2} \Delta s^2=\frac{k}{2}(s_2-s_1)^2\)</span> making the total potential energy,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle V=\frac{mg}{2L}s_1^2+\frac{mg}{2L}s_2^2+\frac{k}{2} (s_2-s_1)^2\]</div>
+<p>where the displacement of the pendulums is <span class="math notranslate nohighlight">\(s_1\)</span> and <span class="math notranslate nohighlight">\(s_2\)</span>. This, in effect, means that we have chosen the basis set for the calculation to be the two horizontal displacements. The vector of displacements, which we shall need later on is <span class="math notranslate nohighlight">\(\displaystyle \pmb{s}=\begin{bmatrix} s_1\\s_2\end{bmatrix}\)</span>.</p>
+<p>The force on pendulum one is, by definition, mass <span class="math notranslate nohighlight">\(\times\)</span> acceleration</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle m\frac{d^2s_1}{dt^2}=-\frac{\partial V}{\partial s_1}=-\frac{mgs_1}{L}+k(s_2-s_1)  \tag{50}\]</div>
+<p>and on pendulum two, similarly</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle m\frac{d^2s_2}{dt^2}=-\frac{\partial V}{\partial s_2}=-\frac{mgs_2}{L}+k(s_2-s_1)  \tag{51}\]</div>
+<p>As a check, the force on the pendulums should be due to gravity alone, and not depend on the force constant, <span class="math notranslate nohighlight">\(k\)</span>, viz,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle m\frac{d^2s_1}{dt^1}+m\frac{d^2s_2}{dt^2}=-\frac{mgs_1}{L}+k(s_2-s_1) -\frac{mgs_2}{L}+k(s_2-s_1) =-\frac{mg(s_1+s_2)}{L}\]</div>
+<p>In matrix form the two force equations 50 and 51 become</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \qquad\qquad m\begin{bmatrix}\displaystyle \frac{d^2s_1}{dt^2} \\ \displaystyle \frac{d^2s_2}{dt^2} \end{bmatrix} = \begin{bmatrix} \displaystyle -\frac{mg}{L}-k &amp; k \\ k &amp;\displaystyle  -\frac{mg}{L}-k   \end{bmatrix} \begin{bmatrix}s_1 \\ s_2 \end{bmatrix} \qquad\qquad\qquad\qquad \text{(52)}\end{split}\]</div>
+<p>The eigenvalues are obtained by expanding the secular determinant</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin{vmatrix} \displaystyle -\frac{mg}{L}-k-\lambda &amp; k \\ k &amp;\displaystyle  -\frac{mg}{L}-k -\lambda  \end{vmatrix}=0 \end{split}\]</div>
+<p>and solving the characteristic equation <span class="math notranslate nohighlight">\(\displaystyle \left(-\frac{mg}{L}-k-\lambda \right)^2-k^2=0\)</span> for <span class="math notranslate nohighlight">\(\lambda\)</span>, giving eigenvalues and eigenvectors of</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \lambda_1 = -\frac{mg}{L}; \qquad x_1 = \begin{bmatrix}1 \\ 1 \end{bmatrix} \end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}\lambda_2 = -\frac{mg}{L}-2k; \qquad x_1=\begin{bmatrix} -1 \\ 1 \end{bmatrix}  \end{split}\]</div>
+<p>and the eigenvector modal matrix is <span class="math notranslate nohighlight">\(\displaystyle \begin{bmatrix} 1 &amp; -1\\ 1 &amp; 1 \end{bmatrix}\)</span>.</p>
+<p>The first eigenvalue corresponds to the first eigenvector, and must be the motion where both pendulums move in the same direction since both values in <span class="math notranslate nohighlight">\(x_1\)</span> have the same sign. The second eigenvector shows that the spring is stretched because the displacements are in opposite directions. We may surmise this also, because only the second eigenvalue involves <span class="math notranslate nohighlight">\(k\)</span>, the spring’s force constant.</p>
+<p>The matrix equation of forces for the normal modes is</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \qquad\qquad m\begin{bmatrix}\displaystyle \frac{d^2s_1}{dt^2} \\ \displaystyle \frac{d^2s_2}{dt^2} \end{bmatrix} = \begin{bmatrix} m\omega_1^2 &amp; 0 \\ 0 &amp;m\omega^2_2   \end{bmatrix} \begin{bmatrix}s_1 \\ s_2 \end{bmatrix} \qquad\qquad\qquad\qquad\qquad\qquad \text{(53)}\end{split}\]</div>
+<p>and as the matrix is diagonal it can be equated to the (diagonalized) eigenvalue matrix. Therefore, using <span class="math notranslate nohighlight">\(\lambda_1\)</span> calculated above gives <span class="math notranslate nohighlight">\(\displaystyle -\lambda_1 = m\omega_1^2= \frac{mg}{L}\)</span>  and similarly for <span class="math notranslate nohighlight">\(\lambda_2\)</span>, gives the normal mode frequencies as</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \omega_1^2=\frac{g}{L}; \qquad \omega_2^2=\frac{g}{L}+\frac{2k}{m}\]</div>
+<p>which can also be written as</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \omega_2^2=\omega_1^2 +\frac{2k}{m}\]</div>
+<p>These results tell us that one motion of the pendulums has a frequency <span class="math notranslate nohighlight">\(\sqrt{g/L}\)</span>, which is that of single free pendulum of the same length and mass, and this motion must be that of both pendulums moving in phase with one another in the same direction and without changing the length of the spring because <span class="math notranslate nohighlight">\(k\)</span> is not in the formula. The other, out-of-phase frequency is higher, <span class="math notranslate nohighlight">\(\sqrt{g/L + 2k/m}\)</span>, since <span class="math notranslate nohighlight">\(k\)</span> is positive, and is the motion when the two pendulums are opposed to one another, and therefore, the spring is continually compressed and extended.</p>
+<p>It is interesting to consider what happens when the force constant is very small. In this case, both pendulums tend towards the same frequency because they are hardly coupled;</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \sqrt{\frac{g}{L}+\frac{2k}{m}}\approx \sqrt{\frac{g}{L}}\left(1+\frac{Lk}{mg} \right) \]</div>
+<p>You may know that pendulum clocks fastened to the same wall will become synchronized to one another. This is because there is a coupling between them through the wall, and although very weak, it acts like the spring in this problem, and forces the pendulums to come into phase in a normal mode. In the limit <span class="math notranslate nohighlight">\(k = 0\)</span>, then the two pendulums are independent of one another, because their coupling is zero and although both oscillation frequencies are the same they can never become synchronized unless they are started off that way.</p>
+<p>When the spring constant is very large, or rather the ratio <span class="math notranslate nohighlight">\(k/m\)</span> is large, gravity becomes relatively unimportant and the out-of-phase vibrational normal mode frequency becomes much larger than the in-phase one and approaches <span class="math notranslate nohighlight">\(\omega_2=\sqrt{2k/m}\)</span>. If gravity were ‘turned off’, <span class="math notranslate nohighlight">\(g = 0\)</span>, the pendulums would only move if the relative separation of the bobs was changed from the equilibrium separation by compressing or extending the spring. Only one mode is now possible which is the out-of-phase mode 2 with frequency <span class="math notranslate nohighlight">\(\omega_2=\sqrt{2k/m}\)</span>.</p>
+<p>The two modes with frequencies <span class="math notranslate nohighlight">\(\omega_1\)</span> and <span class="math notranslate nohighlight">\(\omega_2\)</span> are the <em>normal modes</em> of the vibrations; we know this by noting that the eigenvectors are orthogonal as the matrix is Hermitian, but as a check the dot product is <span class="math notranslate nohighlight">\(\displaystyle \begin{bmatrix} -1 &amp; 1\end{bmatrix}\begin{bmatrix} 1 \\ 1\end{bmatrix}=0\)</span>.</p>
+<p>Suppose that the normal modes displacements that form the column matrix <span class="math notranslate nohighlight">\(\pmb{Q}\)</span> are <span class="math notranslate nohighlight">\(Q_1\)</span> and <span class="math notranslate nohighlight">\(Q_2\)</span>. Their value in terms of the pendulum’s displacements are calculated via <span class="math notranslate nohighlight">\(\pmb{Q} = \pmb{x}^T\pmb{s}\)</span> (see next section) where <span class="math notranslate nohighlight">\(\pmb{x}^T\)</span> is the transpose of the eigenvector matrix and <span class="math notranslate nohighlight">\(\pmb{s}\)</span> the vector of displacements, consequently</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \pmb{Q} = \begin{bmatrix}Q_1\\Q_2 \end{bmatrix} = \begin{bmatrix}1 &amp; 1\\-1 &amp; 1 \end{bmatrix}\begin{bmatrix}s_1\\s_2 \end{bmatrix}  =\begin{bmatrix}s_1+s_2\\-s_1+s_2 \end{bmatrix} \end{split}\]</div>
+<p>or <span class="math notranslate nohighlight">\(Q_1=s_1+s_2\)</span> and <span class="math notranslate nohighlight">\( Q_2=S_2-s_1\)</span>.</p>
+<p>To isolate one mode, set <span class="math notranslate nohighlight">\(Q_1 = 0\)</span>, then the displacements of the bobs are equal and opposite <span class="math notranslate nohighlight">\(s_1 = -s_2\)</span>. This corresponds to moving one bob of the pendulum to the left, and the other to the right by the same amount; therefore, the motion is at the same frequency and in phase. This is the out-of-phase normal mode with frequency <span class="math notranslate nohighlight">\(\omega_2\)</span>. The displacements of the bobs follow <span class="math notranslate nohighlight">\(s_1 = u \cos(\omega_2 t + \varphi)\)</span> and <span class="math notranslate nohighlight">\(s_2 = -u \cos(\omega_2 t + \varphi)\)</span>. The total displacement is zero at all times.</p>
+<p>To isolate the other mode, set <span class="math notranslate nohighlight">\(Q_2\)</span> = 0 then <span class="math notranslate nohighlight">\(s_2 = s_1\)</span> and the displacements are always equal to one another during the oscillation, which corresponds to both bobs moving to the right by the same amount, and therefore, they move at the same frequency and with constant phase; this is the in-phase normal mode with frequency <span class="math notranslate nohighlight">\(\omega_1\)</span>. The motion is <span class="math notranslate nohighlight">\(s_1 =s_2 =u\cos(\omega_1 t+\varphi)\)</span>.</p>
+</div>
+</div>
+</div>
+<div class="section" id="how-to-calculate-vibrational-normal-modes-in-a-molecule-using-the-gfg-matrix-method">
+<h1>14.3 How to calculate vibrational normal modes in a molecule using the GFG matrix method<a class="headerlink" href="#how-to-calculate-vibrational-normal-modes-in-a-molecule-using-the-gfg-matrix-method" title="Permalink to this headline">¶</a></h1>
+<p>The basic premises are the same as for the pendulum just calculated.</p>
+<p><strong>(i)</strong><span class="math notranslate nohighlight">\(\quad\)</span> The vibrations undergo simple harmonic motion. In a molecule, this means that each bond is a harmonic oscillator.</p>
+<p><strong>(ii)</strong><span class="math notranslate nohighlight">\(\quad\)</span> Assume that the energy of each potential energy term, which in this case is the ‘spring’ connecting the atoms adds separately to the total.</p>
+<p>If a molecule has potential energy <span class="math notranslate nohighlight">\(V\)</span>, then this energy can be expressed as a Maclaurin expansion about the minimum, or equilibrium, configuration, using displacements of each of the atoms in each of <span class="math notranslate nohighlight">\(x-, y-\)</span>, and <span class="math notranslate nohighlight">\(z-\)</span>directions. Clearly, this is going to be a complicated function. If there are <span class="math notranslate nohighlight">\(n\)</span> atoms with <span class="math notranslate nohighlight">\(3n\)</span> coordinates, the displacement from equilibrium is <span class="math notranslate nohighlight">\(s_i\)</span> for atom coordinate <span class="math notranslate nohighlight">\(i\)</span>. The potential energy is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle V=V_0+\sum_{i=1}^{3n} \left( \frac{\partial V}{\partial s_i}\right)_0s_i+\frac{1}{2}\sum_{i=1}^{3n} \sum_{j=1}^{3n} \left(\frac{\partial ^2 V}{\partial s_i\partial s_j} \right)_0s_is_j+\cdots \tag{54}\]</div>
+<p>The zero subscripts mean that the gradient is evaluated about the equilibrium position at each coordinate, where the extension <span class="math notranslate nohighlight">\(s_i = 0\)</span>. The summation index covers all coordinates <span class="math notranslate nohighlight">\(1 \to 3n\)</span>. The indexing is up to us to choose, but could be 1 for atom ones’s x-coordinate, 2 for <span class="math notranslate nohighlight">\(y\)</span>, 3 for <span class="math notranslate nohighlight">\(z\)</span>, then 4 for atom 2’s x-coordinate, 5 for <span class="math notranslate nohighlight">\(y\)</span> and so on. The second derivative has two summations and contains <span class="math notranslate nohighlight">\((3n)^2\)</span> terms. The reason for all these terms is easiest to see with just two dimensions. Imagine the potential is shaped like a bowl; the height is <span class="math notranslate nohighlight">\(V\)</span> and <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> are the two displacements, <span class="math notranslate nohighlight">\(s\)</span>. The first derivative <span class="math notranslate nohighlight">\(dV/dx\)</span> gives the slope (force) in the x-direction at constant <span class="math notranslate nohighlight">\(y\)</span>, and similarly <span class="math notranslate nohighlight">\(dV/dy\)</span> the force in the y-direction at constant <span class="math notranslate nohighlight">\(x\)</span>. When <span class="math notranslate nohighlight">\(i = j\)</span> the second derivative <span class="math notranslate nohighlight">\(d^2V/dx^2\)</span> describes how the force varies along the x-axis at constant <span class="math notranslate nohighlight">\(y\)</span>. The ‘cross terms’, when <span class="math notranslate nohighlight">\(i \ne j\)</span>, measures these values between the axes.</p>
+<p>The origin of the potential has a value <span class="math notranslate nohighlight">\(V_0\)</span>, which is arbitrary, and because potential energy is a relative measure, <span class="math notranslate nohighlight">\(V_0\)</span> can be set to zero. The first derivative of the potential is the force, and as this is expanding about the equilibrium position, it is zero. The potential is therefore,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle V \approx\frac{1}{2}\sum_{i=1}^{3n} \sum_{j=1}^{3n} \left(\frac{\partial ^2 V}{\partial s_i\partial s_j} \right)_0s_is_j \tag{55}\]</div>
+<p>which is analogous to the quadratic potential based on Hooke’s law. The kinetic energy is by definition <span class="math notranslate nohighlight">\(mv^2/2\)</span> for each mass or</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle T=\frac{1}{2}\sum_i^{3n}m_i\left(\frac{ds_i}{dt} \right)^2 \tag{56}\]</div>
+<p>for all masses. We now have to assume a great deal and jump almost to the answer by using Lagrange’s formulation of Newton’s laws of motion. Furthermore, we are going straight to the matrix form by defining</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle F\equiv \frac{\partial^2 V}{\partial s_i\partial s_j}=k_{ij}\]</div>
+<p>which is a matrix of force constants <span class="math notranslate nohighlight">\(k\)</span>. Next, a matrix <span class="math notranslate nohighlight">\(\pmb{M}\)</span> is defined whose inverse is the matrix of second derivatives of the kinetic energy with respect to velocities <span class="math notranslate nohighlight">\(\dot s\)</span>, in which terms are of the form <span class="math notranslate nohighlight">\(\displaystyle \frac{\partial^2T}{\partial \dot s_i \partial \dot s_j}\)</span> and this turns out to be a diagonal matrix of the masses,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \pmb{M}^{-1} =diagonal(m_1,m_2,\cdots,m_n) \tag{57}\]</div>
+<p>and therefore</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \pmb{M} =diagonal(1/m_1,1/m_2,\cdots,1/m_n) \tag{58}\]</div>
+<p>is the diagonal matrix of <em>reciprocal</em> masses; see Section 4.10.</p>
+<p>Writing out the Lagrange equation gives</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \pmb{M}^{-1} \frac{ d^2\pmb{s} }{dt^2} +\pmb{Fs}=0; \qquad \text{or} \qquad \frac{d^2\pmb{s}}{dt^2}+\pmb{MFs}=0 \tag{59}\]</div>
+<p>The second of these equations looks rather like that for a single oscillator, equation 47, if we identify <span class="math notranslate nohighlight">\(\pmb{MF}\)</span> with <span class="math notranslate nohighlight">\(k/m\)</span>, which, dimensionally, is correct.</p>
+<p>To solve this last equation, it is necessary to show that it can be turned into an eigenvalue - eigenvector equation. Supposing that the motion is harmonic with frequency <span class="math notranslate nohighlight">\(\omega\)</span>, a solution for the <span class="math notranslate nohighlight">\(i^{th}\)</span> atom is <span class="math notranslate nohighlight">\(s_i = a_i\cos(\omega t + \varphi)\)</span> and by differentiating this displacement twice with time, it is seen that this is a solution of equation 59 because the result is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{d^2\pmb{s}}{dt^2}+\omega^2\pmb{s} =0 \tag{60}\]</div>
+<p>Combining the equations 59 and 60 produces the eigenvalue - eigenvector equation</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \pmb{MFs}=\omega^2\pmb{s}; \qquad \text{or} \qquad \left[\pmb{MF}- \omega^2\pmb{I}\right]\pmb{s}=\pmb{0} \tag{61}\]</div>
+<p>with eigenvalues <span class="math notranslate nohighlight">\(\omega^2\)</span> as roots of the secular determinant <span class="math notranslate nohighlight">\(\left|\pmb{MF}- \omega^2\pmb{I}\right| = 0\)</span>.</p>
+<p>The eigenvectors will be labelled <span class="math notranslate nohighlight">\(\pmb{x}\)</span>. There is one difficulty with this which is that <span class="math notranslate nohighlight">\(\pmb{M}\)</span> and <span class="math notranslate nohighlight">\(\pmb{F}\)</span> do not always commute and, although it is not obvious, this is easily overcome by using the square root of matrix <span class="math notranslate nohighlight">\(\pmb{M}\)</span> instead of <span class="math notranslate nohighlight">\(\pmb{M}\)</span> itself.</p>
+<p>In the form shown below, we <em>define</em> a matrix <span class="math notranslate nohighlight">\(\pmb{G}\)</span> as</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \qquad\qquad\begin{align} \pmb{G}&amp;=diagonal\left(1/\sqrt{m_1},1/\sqrt{m_2}\cdots 1/\sqrt{m_n}   \right)\\ \qquad \pmb{G}^{-1}&amp;=diagonal\left(\sqrt{m_1},\sqrt{m_2}\cdots \sqrt{m_n} \right)\end{align}\qquad\qquad \qquad\qquad\qquad\qquad\text{(62)}\end{split}\]</div>
+<p>and define the displacement in terms of <em>reduced</em> mass</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \pmb{q}=\pmb{G}^{-1}\pmb{s} \tag{63}\]</div>
+<p>therefore, each <span class="math notranslate nohighlight">\(q\)</span> matrix element takes the form <span class="math notranslate nohighlight">\(q_i =s_i\sqrt{m_i}\)</span>. With these changes equation 76 becomes</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \pmb{GFGq}=\omega^2\pmb{q} \tag{64}\]</div>
+<p>and the secular determinant</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \left|\pmb{GFG}-\omega^2\pmb{I}\right|=0 \tag{65}\]</div>
+<p>The <span class="math notranslate nohighlight">\(\pmb{F}\)</span> matrix is that of the force constants;
+$<span class="math notranslate nohighlight">\(\displaystyle \pmb{F} =\begin{bmatrix} k_{11} &amp; k_{12} &amp; k_{13} &amp; \cdots\\ k_{21} &amp; k_{22} &amp;\cdots &amp; \cdots \\ \vdots &amp; \vdots &amp; &amp; k_{nn}  \end{bmatrix}\)</span>$</p>
+<p>The <span class="math notranslate nohighlight">\(\pmb{GFG}\)</span> matrix product has the form</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \qquad\qquad\pmb{GFG}=  \begin{bmatrix} \displaystyle\frac{k_{11}}{m_1} &amp; \displaystyle\frac{k_{12}}{\sqrt{m_1m_2} } &amp;\displaystyle\frac{ k_{13}}{\sqrt{m_1m_3}} &amp; \cdots\\
+\displaystyle\frac{k_{21}}{\sqrt{m_1m_2} }&amp; \displaystyle\frac{k_{22}}{m_2} &amp;\cdots &amp; \cdots \\ \vdots &amp; \vdots &amp; &amp; \displaystyle\frac{k_{nn}}{\sqrt{m_n} }  \end{bmatrix}\qquad\qquad \qquad\qquad\qquad\qquad\text{(66)}\end{split}\]</div>
+<p>so that each diagonal term is divided by the mass appropriate to that position in the matrix, and the off-diagonal terms at positions <span class="math notranslate nohighlight">\(i,j\)</span> are divided by the square root of the product of the corresponding masses in the basis set; i.e. by <span class="math notranslate nohighlight">\(\sqrt{m_im_j}\)</span>. The <span class="math notranslate nohighlight">\(k_{ij}\)</span> are the force constants. This matrix of reduced mass is the <span class="math notranslate nohighlight">\(\pmb{GFG}\)</span> matrix.</p>
+<p>A fuller analysis of the problem leads to the conclusion that the eigenvectors x can be used to produce the normal mode displacements <span class="math notranslate nohighlight">\(Q\)</span> via</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \pmb{Q} = \pmb{x}^T\pmb{q} \tag{67}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\pmb{q}=\pmb{G}^{-1}\pmb{s}\)</span> so that each element is <span class="math notranslate nohighlight">\(q_i= s_i\sqrt{m_i}\)</span>, and the coordinate displacements <span class="math notranslate nohighlight">\(s\)</span> are given by</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \pmb{s} = \pmb{GxQ} \tag{68}\]</div>
+<div class="section" id="id1">
+<h2>Summary<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p><span class="math notranslate nohighlight">\(\pmb{G}\)</span> is the diagonal matrix of <span class="math notranslate nohighlight">\(\sqrt{m}\)</span> and <span class="math notranslate nohighlight">\(\pmb{F}\)</span> is the matrix of force constants. The eigenvalues are the squared frequencies of the molecular normal modes <span class="math notranslate nohighlight">\(Q\)</span>, and are calculated from the secular determinant <span class="math notranslate nohighlight">\(\left| \pmb{GFG} - \omega^2\pmb{1} \right| = 0\)</span>. The normal mode and coordinate displacements are calculated using equations 67 and 68.</p>
+</div>
+<div class="section" id="stretching-vibrations-of-co-2">
+<h2>Stretching vibrations of CO<span class="math notranslate nohighlight">\(_2\)</span>.<a class="headerlink" href="#stretching-vibrations-of-co-2" title="Permalink to this headline">¶</a></h2>
+<p>This method is rather abstract but can be made less so by working through an example. We will calculate some of the normal modes of a linear triatomic molecule, such as CO<span class="math notranslate nohighlight">\(_2\)</span>, by considering just the motion along the line of atoms, as shown in Figure 61. A linear molecule is chosen to make the calculation simpler; a bent molecule such as H<span class="math notranslate nohighlight">\(_2\)</span>O or SO<span class="math notranslate nohighlight">\(_2\)</span> can be calculated in a similar manner, but the algebra in calculating the potential is more complex. An example is given at the end.  Herzberg gives several examples including different possible models of the potentials that can be used; Herzberg (1964, vol II, Chapter 2).</p>
+<p><img alt="Drawing" src="../_images/matrices-fig61.png" /></p>
+<p>It is normally assumed that the motion of the atoms is harmonic and we additionally assume that the only force constants are those between adjacent atoms; this is equivalent to assuming that the valence bond model describes the bonding. A molecular orbital model would consider forces constants between one atom and every other atom. The calculation will be done in two ways. First directly, as in Section 14.2 but using mass weighting from the start; then secondly, using python with the <span class="math notranslate nohighlight">\(\pmb{GFG}\)</span> matrix method which introduces mass weighting in the <span class="math notranslate nohighlight">\(\pmb{GFG}\)</span> product.</p>
+<p>The first calculation uses mass-weighted coordinates and force constants. This means that the displacements <span class="math notranslate nohighlight">\(s\)</span> of atom <span class="math notranslate nohighlight">\(i\)</span> are modified to become <span class="math notranslate nohighlight">\(q_i =s_i\sqrt{m_i}\)</span>, and force constants between atoms <span class="math notranslate nohighlight">\(i\)</span> and <span class="math notranslate nohighlight">\(j\)</span> become <span class="math notranslate nohighlight">\(\displaystyle K_{ij}=\frac{k_{ij}}{\sqrt{m_im_j}}\)</span> as in equation 76.</p>
+<p>The starting point is to calculate the potential energy and, from this, the forces on the atoms. As the molecule is symmetrical, there is only one force constant, but the mass-weighted force constants will be different. The normal modes for a simple molecule can easily be sketched, and two of them are shown in Fig. 7.62. The molecule is linear giving <span class="math notranslate nohighlight">\(3N - 5\)</span> or <span class="math notranslate nohighlight">\(4\)</span> modes in total, the other two are the degenerate bending motion in the plane of the page. One where the carbon atom moves down and the two oxygen atoms move up and then vice versa. The other bending normal mode is the similar motion but perpendicular to the plane of the page.</p>
+<p><img alt="Drawing" src="../_images/matrices-fig62.png" /></p>
+<p>The potential energy is the sum of terms for the stretching of each bond; therefore,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle V(s_1,s_2,s_3)=\frac{k}{2}(s_1-s_2)^2+\frac{k}{2}(s_2-s_3)^2 \]</div>
+<p>The forces are the negative derivatives with respect to the displacements</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin{align}-\frac{dV}{ds_1}&amp;=-k(s_1-s_2)\\ -\frac{dV}{ds_2}&amp;=k(s_1-s_2)-k(s_2-s_3)\\ -\frac{dV}{ds_3}&amp;=k(s_2-s_3)\end{align}\end{split}\]</div>
+<p>With <span class="math notranslate nohighlight">\(f\)</span> as the force, placing these equations into matrix form gives</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin{bmatrix}f_1\\f_2\\f_3 \end{bmatrix} =\begin{bmatrix} -k &amp; k &amp; 0\\k &amp; -2k &amp; k\\ 0 &amp; k &amp; -k \end{bmatrix}\begin{bmatrix}s_1\\s_2\\s_3 \end{bmatrix}\end{split}\]</div>
+<p>but, because the masses are different, we must change to mass weighted force constants, using the formula <span class="math notranslate nohighlight">\(K_{ij} = k_{ij}/\sqrt{m_im_j}\)</span>, where <span class="math notranslate nohighlight">\(i\)</span> and <span class="math notranslate nohighlight">\(j\)</span> are the atom indices; for example <span class="math notranslate nohighlight">\(K_{12} = k/\sqrt{m_om_c}\)</span>, is the mass-weighted force constant between atoms 1 and 2, if <span class="math notranslate nohighlight">\(m_o\)</span> is the oxygen mass and <span class="math notranslate nohighlight">\(m_c\)</span> that of the carbon. The matrix of force constants becomes</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \pmb{K}=\begin{bmatrix} \displaystyle\frac{-k}{m_o} &amp; \displaystyle\frac{k}{\sqrt{m_om_c}} &amp; 0\\ \displaystyle\frac{k}{\sqrt{m_om_c}} &amp; \displaystyle\frac{-2k}{m_0} &amp; \displaystyle\frac{k}{\sqrt{m_om_c}}\\ 0 &amp; \displaystyle\frac{k}{\sqrt{m_om_c}} &amp; \displaystyle\frac{-k}{m_0} \end{bmatrix} \end{split}\]</div>
+<p>which is solved as a secular determinant with eigenvalues,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \lambda_1=\frac{-k}{m_o}; \qquad \lambda_2=\frac{-(2m_0+m_c)k}{m_om_c}; \qquad \lambda_3=0\]</div>
+<p>The frequency of each vibration is <span class="math notranslate nohighlight">\(\omega^2 = -\lambda\)</span> so the square of the normal mode frequencies are</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \omega_1^2=\frac{k}{m_o}; \qquad \omega_2^2=\frac{(2m_0+m_c)k}{m_om_c}; \qquad \omega_3=0\]</div>
+<p>The normalized eigenvector modal matrix is, after some rearranging and with <span class="math notranslate nohighlight">\(M=2m_o +m_c\)</span> as the total mass,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \pmb{x}= \frac{1}{\sqrt{2M}}\begin{bmatrix}-\sqrt{M} &amp; \sqrt{m_c} &amp; \sqrt{2m_o}\\ 0 &amp; -2\sqrt{m_o} &amp; \sqrt{2m_c}\\\sqrt{M} &amp; \sqrt{m_c} &amp; \sqrt{2m_o} \end{bmatrix}\end{split}\]</div>
+<p>Notice that the eigenvectors do not depend on the force constants; this matrix is used to produce the geometry that is related to the symmetry of the vibrations, and cannot depend on the value of the force constants. The normal modes depend only on the geometry because the ‘springs’ connecting the atoms can only vibrate in certain patterns governed by the geometry or symmetry of the molecule; the frequency and size of extension depend on the force constants.</p>
+<p>The normal mode coordinates are calculated using <span class="math notranslate nohighlight">\(\pmb{Q} = \pmb{x}^T\pmb{q}\)</span> (equation 67) where <span class="math notranslate nohighlight">\(\pmb{x}^T\)</span> is the transpose of the eigenvector matrix and <span class="math notranslate nohighlight">\(\pmb{q}\)</span> the vector of mass weighted coordinates with <span class="math notranslate nohighlight">\(\pmb{q}=\pmb{s}\sqrt{m}\)</span>;</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin{bmatrix} Q_1\\Q_2\\Q_3\end{bmatrix} =\frac{1}{\sqrt{2M}}\begin{bmatrix}-\sqrt{M} &amp; \sqrt{m_c} &amp; \sqrt{2m_o}\\ 0 &amp; -2\sqrt{m_o} &amp; \sqrt{2m_c}\\\sqrt{M} &amp; \sqrt{m_c} &amp; \sqrt{2m_o} \end{bmatrix}\begin{bmatrix} s_1\sqrt{m_o} \\ s_2\sqrt{m_c} \\s_3\sqrt{m_o} \end{bmatrix}\end{split}\]</div>
+<p>and the individual modes are</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin{align}Q_1&amp;=\sqrt{\frac{m_o}{2}}(s_3-s_1) \\ Q_2&amp;=\sqrt{\frac{m_om_c}{2M}}(s_1-2s_2+s_3)\\ Q_3&amp;=\frac{m_os_1+m_cs_2+m_0s_3}{\sqrt{M}})\end{align}\end{split}\]</div>
+<p>To calculate the individual atom displacements <span class="math notranslate nohighlight">\(s_1 \to s_3\)</span> directly, these three equations have to be solved to get <span class="math notranslate nohighlight">\(s\)</span> in terms of the <span class="math notranslate nohighlight">\(Q\)</span>’s. The coordinate displacements are calculated with the matrix equation <span class="math notranslate nohighlight">\(\pmb{s} = \pmb{GxQ}\)</span> (equation 68), where <span class="math notranslate nohighlight">\(\pmb{x}\)</span> is the eigenvector matrix, <span class="math notranslate nohighlight">\(\pmb{Q}\)</span> is tyhe column vector <span class="math notranslate nohighlight">\(\displaystyle \begin{bmatrix} Q_1\\Q_2\\Q_3\end{bmatrix}\)</span> and <span class="math notranslate nohighlight">\(\pmb{G}\)</span> is the diagonal maytrix of <span class="math notranslate nohighlight">\(1/\sqrt{m}\)</span> equation 62.</p>
+<p>The results is</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin{align}s_1&amp;=-\frac{1}{\sqrt{2m_o}}Q_1+\sqrt{\frac{m_c}{2m_oM}}Q_2+\frac{1}{\sqrt{M}}Q_3 \\
+s_2&amp;=-\sqrt{\frac{2m_o}{m_cM}}Q_2+\frac{1}{\sqrt{M}}Q_3\\
+s_3&amp;=\frac{1}{\sqrt{2m_o}}Q_1+\sqrt{\frac{m_c}{2m_oM}}Q_2+\frac{1}{\sqrt{M}}Q_3\end{align} \end{split}\]</div>
+<p>Looking at these equations, we can choose to make any of the <span class="math notranslate nohighlight">\(Q\)</span>’s zero to isolate normal mode motion. The three cases are now considered.</p>
+<p><strong>(i)</strong> Suppose we choose <span class="math notranslate nohighlight">\(Q_1 = Q_2 = 0\)</span>, then all the atom displacements are the same, <span class="math notranslate nohighlight">\(s_1 = s_2 = s_3 = Q_3/ \sqrt{M}\)</span>, and each atom is moving in the same direction. This cannot be a vibrational normal mode as the bonds are neither stretched nor compressed, but represents a translation, and clearly, this corresponds to the zero frequency eigenvalue <span class="math notranslate nohighlight">\(\omega_3 = 0\)</span>. Note that if <span class="math notranslate nohighlight">\(Q_3 = 0\)</span> this must mean that the centre of mass does not change, no translation occurs, and so we expect to produce normal modes with this condition.</p>
+<p><strong>(ii)</strong> If <span class="math notranslate nohighlight">\(Q_1 =Q_3 =0\)</span> then <span class="math notranslate nohighlight">\(\displaystyle s_1 =s_3=\sqrt{\frac{m_c}{2m_oM}}Q_2\)</span> and <span class="math notranslate nohighlight">\(\displaystyle s_2 =\sqrt{\frac{2m_o}{m_cM}}Q_2\)</span>. In this case this is the asymmetric stretch with the oxygen atoms moving in the same direction and opposed to that of the carbon, and this is <span class="math notranslate nohighlight">\(\omega_2\)</span>. The relative motion is <span class="math notranslate nohighlight">\(s_1 = s_3 = 0.115Q_2\)</span> to <span class="math notranslate nohighlight">\(s_2 = -0.308Q_2\)</span> so the carbon atom moves further than the oxygen atoms do, which is not surprising, because the centre of mass has to be held constant and the C atom has to compensate for the motion of two O atoms. The ratio of the displacements is <span class="math notranslate nohighlight">\(2m_o/m_c\)</span>. The total centre of gravity does not move because the total moment, found by summing the product of displacement times mass, is zero, viz.</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle 2m_0\sqrt{\frac{m_c}{2m_oM}}Q_2-m_c\sqrt{\frac{2m_0}{m_cM}}Q_2=0\]</div>
+<p><strong>(iii)</strong> Finally, if <span class="math notranslate nohighlight">\(Q_2 = Q_3 = 0\)</span> then the equations are solved when <span class="math notranslate nohighlight">\(s_2 = 0\)</span> and <span class="math notranslate nohighlight">\(s_1 = -s_3\)</span>, which is the symmetric stretch <span class="math notranslate nohighlight">\(\omega_1\)</span> with displacements <span class="math notranslate nohighlight">\(±Q_1/\sqrt{2m_o}\)</span> or <span class="math notranslate nohighlight">\(0.176Q_1\)</span>.</p>
+</div>
+<div class="section" id="bending-motion">
+<h2>Bending motion<a class="headerlink" href="#bending-motion" title="Permalink to this headline">¶</a></h2>
+<p>In the case of bending vibrations in a molecule with masses <span class="math notranslate nohighlight">\(m_{1,2,3}\)</span> such as HCN the potential is written as</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle V= k_br_1r_2\frac{\delta\theta^2}{2} \]</div>
+<p>where the bond lengths are <span class="math notranslate nohighlight">\(r_{1,2}\)</span> and the bending force constant <span class="math notranslate nohighlight">\(k_b=k_\theta r_1r_2\)</span> which keeps its units in N/m. For small angle bends</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \delta\theta = \frac{(s_1 - s_2)}{r_1} -  \frac{(s_3 - s_2)}{r_2}\]</div>
+<p>(where vector <span class="math notranslate nohighlight">\(s\)</span> is perpendicular to the internuclear axis just as <span class="math notranslate nohighlight">\(s\)</span> was along the axis) and the mass weighted <span class="math notranslate nohighlight">\(K\)</span> matrix of force constants  becomes</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle K = 
+\begin{bmatrix}
+\displaystyle \frac{k_3}{m_1}\frac{r_2}{r_1} &amp; \displaystyle\frac{-k_3}{\sqrt{m_1m_2}}\left(1+\frac{r_2}{r_1}\right) &amp; \displaystyle \frac{k_3}{\sqrt{m_1m_3}} \\
+\displaystyle\frac{-k_3}{\sqrt{m_1m_2}}\left(1+\frac{r_2}{r_1}\right) &amp; \displaystyle\frac{k_3}{m_2}\left(2+\frac{r_2}{r_1}+\frac{r_1}{r_2}\right) &amp; \displaystyle \frac{-k_3}{\sqrt{m_2m_3}}\left(1+\frac{r_1}{r_2}\right)\\
+\displaystyle \frac{k_3}{\sqrt{m_1m_3}} &amp; \displaystyle\frac{-k_3}{\sqrt{m_2m_3}}\left(1+\frac{r_1}{r_2}\right) &amp; \displaystyle\frac{k_3}{m_3}\frac{r_1}{r_2} \end{bmatrix}\end{split}\]</div>
+<p>which means that the ratio of bond lengths must be known if they are different from 1.</p>
+<p>The eigenvalues are immensely complex so it is necessary to calculate numerically except for the case of <span class="math notranslate nohighlight">\(D_{\infty h}\)</span> point group. In this case the force constants are zero, or <span class="math notranslate nohighlight">\(2k_3(2/m_2 +1/m_1)\)</span> where <span class="math notranslate nohighlight">\(m_2\)</span> is the central atom.</p>
+<p>In the case of <span class="math notranslate nohighlight">\(\mathrm{CO}_2\)</span>, <span class="math notranslate nohighlight">\(m_1\)</span> = 16, <span class="math notranslate nohighlight">\(m_2\)</span> = 12 and the bond length <span class="math notranslate nohighlight">\(r=0.116\)</span> nm. This makes <span class="math notranslate nohighlight">\(\omega^2 =2k_3(2/m_2 +1/m_1)\)</span> or zero. In <span class="math notranslate nohighlight">\(\mathrm{CO}_2\)</span> the bending vibration has a frequency of <span class="math notranslate nohighlight">\(667\;\mathrm{ cm^{-1}}\)</span> and then <span class="math notranslate nohighlight">\(k_3 = 57\)</span> N/m.</p>
+<p>The full calculation for linear stretches using the <span class="math notranslate nohighlight">\(\pmb{G}\)</span> and <span class="math notranslate nohighlight">\(\pmb{F}\)</span> matrix method is given next. You can modify this method to solve many similar normal mode problems with different dimensions and geometries provided the potential energy equation can be worked out and the force constant matrix obtained. If you repeat this calculation the order of the eigenvalues may be different to those shown here, which means that the labels <span class="math notranslate nohighlight">\(Q_{1,2,3}\)</span> may be different to those shown here.</p>
+<div class="section" id="normal-mode-calculation">
+<h3>Normal mode calculation<a class="headerlink" href="#normal-mode-calculation" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Algorithm: Normal mode calculation: linear CO2</span>
+
+<span class="n">m_o</span><span class="p">,</span> <span class="n">m_c</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">s1</span><span class="p">,</span> <span class="n">s2</span><span class="p">,</span> <span class="n">s3</span><span class="p">,</span> <span class="n">Q1</span><span class="p">,</span> <span class="n">Q2</span><span class="p">,</span> <span class="n">Q3</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;m_o, m_c, k, s1, s2, s3, Q1, Q2, Q3&#39;</span><span class="p">)</span>
+
+<span class="c1">#m_o=16   # in amu use for numerical values only</span>
+<span class="c1">#m_c=12</span>
+
+<span class="n">G</span> <span class="o">=</span> <span class="n">Matrix</span><span class="p">([[</span><span class="mi">1</span><span class="o">/</span><span class="n">sqrt</span><span class="p">(</span><span class="n">m_o</span><span class="p">),</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="o">/</span><span class="n">sqrt</span><span class="p">(</span><span class="n">m_c</span><span class="p">),</span><span class="mi">0</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="o">/</span><span class="n">sqrt</span><span class="p">(</span><span class="n">m_o</span><span class="p">)]])</span>
+<span class="n">F</span> <span class="o">=</span> <span class="n">Matrix</span><span class="p">([[</span><span class="o">-</span><span class="n">k</span><span class="p">,</span><span class="n">k</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="n">k</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">k</span><span class="p">,</span><span class="n">k</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="n">k</span><span class="p">,</span><span class="o">-</span><span class="n">k</span><span class="p">]])</span>
+<span class="n">M</span> <span class="o">=</span> <span class="n">G</span><span class="o">*</span><span class="n">F</span><span class="o">*</span><span class="n">G</span>
+<span class="n">M</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \left[\begin{matrix}- \frac{k}{m_{o}} &amp; \frac{k}{\sqrt{m_{c}} \sqrt{m_{o}}} &amp; 0\\\frac{k}{\sqrt{m_{c}} \sqrt{m_{o}}} &amp; - \frac{2 k}{m_{c}} &amp; \frac{k}{\sqrt{m_{c}} \sqrt{m_{o}}}\\0 &amp; \frac{k}{\sqrt{m_{c}} \sqrt{m_{o}}} &amp; - \frac{k}{m_{o}}\end{matrix}\right]\end{split}\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vecs</span><span class="p">,</span><span class="n">vals</span> <span class="o">=</span> <span class="n">M</span><span class="o">.</span><span class="n">diagonalize</span><span class="p">()</span>
+<span class="n">vecs</span><span class="p">,</span><span class="n">vals</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \left( \left[\begin{matrix}1 &amp; -1 &amp; 1\\\frac{\sqrt{m_{c}}}{\sqrt{m_{o}}} &amp; 0 &amp; - \frac{2 \sqrt{m_{o}}}{\sqrt{m_{c}}}\\1 &amp; 1 &amp; 1\end{matrix}\right], \  \left[\begin{matrix}0 &amp; 0 &amp; 0\\0 &amp; - \frac{k}{m_{o}} &amp; 0\\0 &amp; 0 &amp; \frac{- k m_{c} - 2 k m_{o}}{m_{c} m_{o}}\end{matrix}\right]\right)\end{split}\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">w</span> <span class="o">=</span> <span class="n">Matrix</span><span class="p">(</span><span class="n">vecs</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span>    <span class="c1"># normalise eigenvectors   </span>
+<span class="n">v1</span> <span class="o">=</span> <span class="n">w</span><span class="o">/</span><span class="n">sqrt</span><span class="p">(</span><span class="n">w</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">w</span><span class="p">))</span>
+
+<span class="n">w</span> <span class="o">=</span> <span class="n">Matrix</span><span class="p">(</span><span class="n">vecs</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">v2</span> <span class="o">=</span> <span class="n">w</span><span class="o">/</span><span class="n">sqrt</span><span class="p">(</span><span class="n">w</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">w</span><span class="p">))</span>
+
+<span class="n">w</span> <span class="o">=</span> <span class="n">Matrix</span><span class="p">(</span><span class="n">vecs</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span>
+<span class="n">v3</span> <span class="o">=</span> <span class="n">w</span><span class="o">/</span><span class="n">sqrt</span><span class="p">(</span><span class="n">w</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">w</span><span class="p">))</span>
+<span class="n">v1</span><span class="p">,</span><span class="n">v2</span><span class="p">,</span><span class="n">v3</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \left( \left[\begin{matrix}\frac{1}{\sqrt{\frac{m_{c}}{m_{o}} + 2}}\\\frac{\sqrt{m_{c}}}{\sqrt{m_{o}} \sqrt{\frac{m_{c}}{m_{o}} + 2}}\\\frac{1}{\sqrt{\frac{m_{c}}{m_{o}} + 2}}\end{matrix}\right], \  \left[\begin{matrix}- \frac{\sqrt{2}}{2}\\0\\\frac{\sqrt{2}}{2}\end{matrix}\right], \  \left[\begin{matrix}\frac{1}{\sqrt{2 + \frac{4 m_{o}}{m_{c}}}}\\- \frac{2 \sqrt{m_{o}}}{\sqrt{m_{c}} \sqrt{2 + \frac{4 m_{o}}{m_{c}}}}\\\frac{1}{\sqrt{2 + \frac{4 m_{o}}{m_{c}}}}\end{matrix}\right]\right)\end{split}\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># simplify(v1.dot(v1))     # check on normalisation        </span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">Matrix</span><span class="p">([</span><span class="n">v1</span><span class="o">.</span><span class="n">T</span><span class="p">,</span><span class="n">v2</span><span class="o">.</span><span class="n">T</span><span class="p">,</span><span class="n">v3</span><span class="o">.</span><span class="n">T</span><span class="p">])</span><span class="o">.</span><span class="n">T</span>   <span class="c1"># combine into new matrix </span>
+<span class="n">x</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \left[\begin{matrix}\frac{1}{\sqrt{\frac{m_{c}}{m_{o}} + 2}} &amp; - \frac{\sqrt{2}}{2} &amp; \frac{1}{\sqrt{2 + \frac{4 m_{o}}{m_{c}}}}\\\frac{\sqrt{m_{c}}}{\sqrt{m_{o}} \sqrt{\frac{m_{c}}{m_{o}} + 2}} &amp; 0 &amp; - \frac{2 \sqrt{m_{o}}}{\sqrt{m_{c}} \sqrt{2 + \frac{4 m_{o}}{m_{c}}}}\\\frac{1}{\sqrt{\frac{m_{c}}{m_{o}} + 2}} &amp; \frac{\sqrt{2}}{2} &amp; \frac{1}{\sqrt{2 + \frac{4 m_{o}}{m_{c}}}}\end{matrix}\right]\end{split}\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="n">Matrix</span><span class="p">([[</span><span class="n">s1</span><span class="p">,</span><span class="n">s2</span><span class="p">,</span><span class="n">s3</span><span class="p">]])</span>      <span class="c1"># mass weighted coordinates </span>
+<span class="n">q</span> <span class="o">=</span> <span class="n">G</span><span class="o">.</span><span class="n">inv</span><span class="p">()</span><span class="o">*</span><span class="n">s</span><span class="o">.</span><span class="n">T</span>
+<span class="n">q</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \left[\begin{matrix}\sqrt{m_{o}} s_{1}\\\sqrt{m_{c}} s_{2}\\\sqrt{m_{o}} s_{3}\end{matrix}\right]\end{split}\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Q</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">T</span><span class="o">*</span><span class="n">q</span>                     <span class="c1"># calculate normal modes in terms of s</span>
+<span class="n">Q</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \left[\begin{matrix}\frac{m_{c} s_{2}}{\sqrt{m_{o}} \sqrt{\frac{m_{c}}{m_{o}} + 2}} + \frac{\sqrt{m_{o}} s_{1}}{\sqrt{\frac{m_{c}}{m_{o}} + 2}} + \frac{\sqrt{m_{o}} s_{3}}{\sqrt{\frac{m_{c}}{m_{o}} + 2}}\\- \frac{\sqrt{2} \sqrt{m_{o}} s_{1}}{2} + \frac{\sqrt{2} \sqrt{m_{o}} s_{3}}{2}\\\frac{\sqrt{m_{o}} s_{1}}{\sqrt{2 + \frac{4 m_{o}}{m_{c}}}} - \frac{2 \sqrt{m_{o}} s_{2}}{\sqrt{2 + \frac{4 m_{o}}{m_{c}}}} + \frac{\sqrt{m_{o}} s_{3}}{\sqrt{2 + \frac{4 m_{o}}{m_{c}}}}\end{matrix}\right]\end{split}\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">QQ</span> <span class="o">=</span> <span class="n">Matrix</span><span class="p">([[</span><span class="n">Q1</span><span class="p">],[</span><span class="n">Q2</span><span class="p">],[</span><span class="n">Q3</span><span class="p">]])</span>  <span class="c1"># calculate extensions in normal modes. </span>
+<span class="n">extns</span> <span class="o">=</span> <span class="n">G</span><span class="o">*</span><span class="n">x</span> <span class="o">*</span><span class="n">QQ</span>
+<span class="n">extns</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \left[\begin{matrix}\frac{Q_{1}}{\sqrt{m_{o}} \sqrt{\frac{m_{c}}{m_{o}} + 2}} - \frac{\sqrt{2} Q_{2}}{2 \sqrt{m_{o}}} + \frac{Q_{3}}{\sqrt{m_{o}} \sqrt{2 + \frac{4 m_{o}}{m_{c}}}}\\\frac{Q_{1}}{\sqrt{m_{o}} \sqrt{\frac{m_{c}}{m_{o}} + 2}} - \frac{2 Q_{3} \sqrt{m_{o}}}{m_{c} \sqrt{2 + \frac{4 m_{o}}{m_{c}}}}\\\frac{Q_{1}}{\sqrt{m_{o}} \sqrt{\frac{m_{c}}{m_{o}} + 2}} + \frac{\sqrt{2} Q_{2}}{2 \sqrt{m_{o}}} + \frac{Q_{3}}{\sqrt{m_{o}} \sqrt{2 + \frac{4 m_{o}}{m_{c}}}}\end{matrix}\right]\end{split}\]</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="moments-of-inertia">
+<h1>Moments of Inertia<a class="headerlink" href="#moments-of-inertia" title="Permalink to this headline">¶</a></h1>
+<p>Angular momentum plays a central role in chemistry, but this is usually in the context of nuclear and electron spin; for example, nuclear spin gives rise to NMR and electron spin (EPR) spectroscopies, as well as being essential for the formation of the chemical bond. The rotation of whole molecules is a natural consequence of thermal motion and is observed with microwave, infrared, Terahertz, or Raman spectroscopy. These techniques are used to measure the spacing between a molecule’s rotational energy levels. This is described next, followed by a brief description of angular momentum and moments of inertia. Finally, the calculation of bond lengths is described.</p>
+<div class="section" id="the-rotational-motion-of-molecules">
+<h2>15.1 The rotational motion of molecules<a class="headerlink" href="#the-rotational-motion-of-molecules" title="Permalink to this headline">¶</a></h2>
+<p>The collision between molecules in the gas phase and at the prevailing temperature equilibrates the energy among translation, vibration, and rotational motions. A molecule can only have discrete values of vibrational or rotational energy. The lowest rotational energy is zero, and the energy levels become more widely spaced as the quantum number <span class="math notranslate nohighlight">\(J\)</span> is increased. The equation</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle E_j=\frac{\hbar^2}{2I}J(J+1)\]</div>
+<p>describes the rotational energy, in joules, of a (rigid rotor) diatomic or linear molecule, with quantum number <span class="math notranslate nohighlight">\(J = 0, 1, 2, \cdots\)</span>. The multiplicity and also degeneracy of a rotational level with quantum number <span class="math notranslate nohighlight">\(J\)</span>, is <span class="math notranslate nohighlight">\(g_J = 2J + 1\)</span>. The constant <span class="math notranslate nohighlight">\(I\)</span> is the moment of inertia, and is typically <span class="math notranslate nohighlight">\(\approx10^{-45}\;\mathrm{kg\,m^2}\)</span> for a molecule. It is this small, because a molecule’s mass is small, and its bond lengths short. An apple has a value <span class="math notranslate nohighlight">\(I \approx 10^{-4}\;\mathrm{kg\,m^2}\)</span> and a lorry’s wheel <span class="math notranslate nohighlight">\(\approx 10\;\mathrm{kg\,m^2}\)</span>. As we shall see the moment of inertia is related to a bond length.</p>
+<p>A rotational constant is defined as <span class="math notranslate nohighlight">\(B=\frac{\hbar^2}{2I}\)</span> making the energy <span class="math notranslate nohighlight">\(E_J=BJ(J+1)\)</span>. Remembering that a joule is a unit of energy with base units of mass <span class="math notranslate nohighlight">\(\times\)</span> velocity squared, the constant <span class="math notranslate nohighlight">\(B\)</span> has units</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle B=\frac{\hbar^2}{2I}\equiv \frac{\mathrm{J^2\,s^2}}{\mathrm{kg\,m^2}}=\frac{\mathrm{kg^2\,m^4\,s^{-4}s^2}}{\mathrm{kg\,m^2}}= \mathrm{kg\,m^2\,s^{-2}}=\mathrm{J}\]</div>
+<p>Usually, however, <span class="math notranslate nohighlight">\(B\)</span> is expressed in units of wavenumbers (cm<span class="math notranslate nohighlight">\(^{-1}\)</span>) produced by dividing <span class="math notranslate nohighlight">\(B\)</span> by <span class="math notranslate nohighlight">\(100hc\)</span>; the factor <span class="math notranslate nohighlight">\(100c\)</span> is used because <span class="math notranslate nohighlight">\(c\)</span> has units of m s<span class="math notranslate nohighlight">\(^{-1}\)</span> and we want units in cm<span class="math notranslate nohighlight">\(^{-1}\)</span>; <span class="math notranslate nohighlight">\(\displaystyle B=\frac{1}{100hc}\frac{\hbar^2}{2I}\)</span>.</p>
+<p>The rotational constant <span class="math notranslate nohighlight">\(B\)</span> has a value that is typically less than a wavenumber. Its largest value, <span class="math notranslate nohighlight">\(\approx 64 \;\mathrm{cm^{-1}}\)</span>, is for H<span class="math notranslate nohighlight">\(_2\)</span>, but clearly this is not typical, as this is the lightest molecule. Once the rotational spectrum is measured, it is easy to measure <span class="math notranslate nohighlight">\(B\)</span>, because the lines (in a diatomic ) are spaced by <span class="math notranslate nohighlight">\(2B\)</span>. In real molecules, things are more complex, because of centrifugal distortion in the rotating molecule, but this effect is small for low <span class="math notranslate nohighlight">\(J\)</span> quantum numbers and does not fundamentally change our analysis. The last step is to calculate the bond length from <span class="math notranslate nohighlight">\(I\)</span>. At one time, this was the main purpose of microwave spectroscopy, but nowadays, bond lengths of very many small molecules have been accurately measured. The technique is now more often used analytically, for example, to identify species in interstellar dust clouds, or to monitor the ethene produced by ripening fruit.</p>
+</div>
+<div class="section" id="angular-momentum-and-moment-of-inertia">
+<h2>15.2 Angular momentum and moment of inertia<a class="headerlink" href="#angular-momentum-and-moment-of-inertia" title="Permalink to this headline">¶</a></h2>
+<p>The angular momentum of a solid body is the momentum caused by virtue of its rotational motion and is a vector quantity. In an isolated molecule, this motion is about the centre of mass, also called the centre of gravity. The angular momentum produced has a fixed direction in space. In general, it is just as possible to cause the rotational motion of an object to be about its end as it is about its middle. A rod can be spun about its centre, along its axis, or about its end, and each angular momentum will be different. If the body rotates with angular frequency {, the angular momentum <span class="math notranslate nohighlight">\(\pmb{L}\)</span> is given by <span class="math notranslate nohighlight">\(\pmb{L} = \pmb{I\omega}\)</span>, where <span class="math notranslate nohighlight">\(\pmb{I}\)</span> is a matrix of moment of inertia values and <span class="math notranslate nohighlight">\(\pmb{L}\)</span> and { are one-dimensional matrices or vectors. The reason for the vector quantities is that a body can move in three dimensions and the motion can be split into components along three axes. The moment of inertia of (rigidly connected) masses, where each has mass <span class="math notranslate nohighlight">\(m_i\)</span>, is <span class="math notranslate nohighlight">\(I = \sum_i m_ir_i^2\)</span> where <span class="math notranslate nohighlight">\(r_i\)</span> is the <em>perpendicular</em> distance of mass <span class="math notranslate nohighlight">\(i\)</span> from an axis. In fact, we can choose the axes to be anywhere we want so the moment of inertia depends on where these axes are placed; it is therefore not a fundamental property of an object. This presents a problem if we are to try to calculate bond lengths, because different values would be obtained depending on where the axes are placed. The obvious place is to locate the axes at the centre of mass since a freely rotating object will rotate about this point. However, in what directions the axes point relative to the molecule has still to be chosen. Very often, we may choose to align the axes with some symmetry axis of the molecule. The molecule will always rotate about its own inertial axes and if these two sets of axes do not coincide, and they usually do not, the moments of inertia will have the form of a matrix with terms that depend on where an atom is with respect to any two axes, <span class="math notranslate nohighlight">\(I_{xy}, I_{yz}\)</span> etc. All is not lost, however, because there is a simple way to rotate our chosen axes onto the molecule’s inertial axes, making the moment of inertia matrix, diagonal. This will be described in Section 15.8.</p>
+<p>The total kinetic energy of a rigid body is that due to its linear plus rotational energy. The linear kinetic energy is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle E_{lin} = \frac{1}{2}mv^2\]</div>
+<p>and the rotational kinetic energy</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle E_{rot} = \frac{1}{2}I\omega^2\]</div>
+<p>thus, the moment of inertia <span class="math notranslate nohighlight">\(I\)</span>, takes the place of the mass used to describe linear motion and angular velocity <span class="math notranslate nohighlight">\(\omega\)</span> (radians s<span class="math notranslate nohighlight">\(^{-1}\)</span>), replaces linear velocity <span class="math notranslate nohighlight">\(\pmb{v}\)</span> in m s<span class="math notranslate nohighlight">\(^{-1}\)</span>. Similarly, linear momentum <span class="math notranslate nohighlight">\(\pmb{p}= m\pmb{v}\)</span>, is replaced by angular momentum <span class="math notranslate nohighlight">\(\pmb{L} = I\pmb{\omega}\)</span>, which is also vector quantity. The angular momentum relative to the centre of mass about an axis at the centre of a rigid disc of mass <span class="math notranslate nohighlight">\(m\)</span>, is shown in Figure 53 and is <span class="math notranslate nohighlight">\(\pmb{L}= m \pmb{r}\times \pmb{v}\)</span> where <span class="math notranslate nohighlight">\(\pmb{v}\)</span> is the velocity of the edge of the disc and <span class="math notranslate nohighlight">\(\pmb{r}\)</span> its radius vector. The angular momentum points in the direction away from you, if the disc rotates clockwise when you look at its underside.</p>
+<p>Angular velocity is, by definition, the rate of change of the angle <span class="math notranslate nohighlight">\(\theta\)</span> the rigid body moves through, and has units of radians / second. It can be shown that the velocity vector <span class="math notranslate nohighlight">\(\pmb{v}\)</span> in the centre-of-mass coordinate system is related to the angular velocity <span class="math notranslate nohighlight">\(\pmb{\omega}\)</span> as</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \pmb{v}=\pmb{\omega}\times\pmb{r}\]</div>
+<p>The angular momentum becomes <span class="math notranslate nohighlight">\(\pmb{L} = m\pmb{r} \times \pmb{\omega} \times\pmb{r}\)</span>, and evaluating the cross product the angular momentum is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \pmb{L}=\pmb{I\omega}\]</div>
+<p>where <span class="math notranslate nohighlight">\(I\pmb{ }\)</span>is a <span class="math notranslate nohighlight">\(3 \times 3\)</span> matrix of the moment of inertia components. The equation can be written as</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin{bmatrix}L_x\\L_y\\L_z \end{bmatrix}=\begin{bmatrix}I_{xx} &amp; I_{xy} &amp; I_{xz}\\ I_{xy} &amp; I_{yy} &amp; I_{yz}\\I_{xz} &amp; I_{yz} &amp; I_{zz}\\\end{bmatrix}\begin{bmatrix}\omega_x\\ \omega_y\\ \omega_z \end{bmatrix}\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(I_{xy}=I_{yx} \)</span> etc. Calculating each of these terms is described in Section 13.4. The angular momentum is always proportional to the angular velocity; the proportionality is the moment of inertia, and hence the emphasis falls on calculating this. Sometimes, the angular momentum matrix is called the angular momentum <em>tensor</em>.</p>
+<p>To summarize: A molecule or other solid object will rotate about its own inertial (principal) axes that are fixed in space. The geometrical axes we chose to place on the molecule need not be coincident with the inertial axes, in fact, they are usually not, and therefore the inertial matrix has off-diagonal elements. Should the inertial and geometrical axes coincide, only the diagonal values exist. By diagonalizing the inertial matrix, the two sets of axes are made coincident, and the diagonal moments of inertia of the principal or inertial axes can be calculated.</p>
+<p><img alt="Drawing" src="../_images/matrices-fig66.png" /></p>
+<p>Figure 66. The dashed lines represent the molecular axes,i.e. those axes which make sense when looking at the molecules structure; the solid lines the principal axes obtained after diagonalizing the moment of inertia matrix, the third axis of which is perpendicular to the page and shown as a circle. The ellipse represents a molecule.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="solid-bodies">
+<h2>15.3 Solid bodies<a class="headerlink" href="#solid-bodies" title="Permalink to this headline">¶</a></h2>
+<p>If the rotating body is not made of discrete parts such as a molecule is, then integration over the mass and distances must be done instead of summation. The summation is replaced by an integral; some examples are given in Chapter 4.8.2 and 4.10.1. The moments of inertia have been worked out for very many geometrical objects, cones, cylinders and so forth and lists can usually be found in engineering textbooks.</p>
+</div>
+<div class="section" id="discrete-bodies-molecules">
+<h2>15.4 Discrete bodies: molecules<a class="headerlink" href="#discrete-bodies-molecules" title="Permalink to this headline">¶</a></h2>
+<p>The moment of inertia is not an intrinsic property of a body but depends upon the axis about which the moment is taken. In chemical physics, it is usual to make this axis pass through the centre of mass. In engineering, the moment of inertia about some remote axis may be needed instead. By the <em>principle of parallel axes</em>; if the moment of inertia with reference to an axis through its centre of mass <span class="math notranslate nohighlight">\(I_{cm}\)</span> is known, it can easily be changed to a value about a parallel axis <span class="math notranslate nohighlight">\(I_p\)</span> if the parallel axis is a distance <span class="math notranslate nohighlight">\(d\)</span> away. The result is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle I_p=I_{cm}+Md^2 \tag{69}\]</div>
+<p>where <span class="math notranslate nohighlight">\(M\)</span> is the total mass.</p>
+<p>The moment of inertia of a collection of atoms is defined as the summation of the product of the mass and the distance squared from an axis <span class="math notranslate nohighlight">\(\alpha\)</span> through the centre of mass,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle I_\alpha= \sum_i m_ir_i^2 \tag{70}\]</div>
+<p>where <span class="math notranslate nohighlight">\(r_i\)</span> is the distance of mass <span class="math notranslate nohighlight">\(i\)</span> from the axis <span class="math notranslate nohighlight">\(\alpha\)</span> passing through the centre of mass. As the mass (atom) has coordinates <span class="math notranslate nohighlight">\((x, y, z)\)</span>, and <span class="math notranslate nohighlight">\(r\)</span> is the distance given by Pythagoras, for example, from the <span class="math notranslate nohighlight">\(x\)</span>-axis, <span class="math notranslate nohighlight">\(r =\sqrt{(z - z_{cm})^2 + (y - y_{cm})^2}\)</span> where <span class="math notranslate nohighlight">\(z_{cm}\)</span> and <span class="math notranslate nohighlight">\(y_{cm}\)</span> are the coordinate of the centre of mass, and similarly, for the <span class="math notranslate nohighlight">\(y\)</span>- and <span class="math notranslate nohighlight">\(z\)</span>-axes. The <em>centre of mass</em> of <span class="math notranslate nohighlight">\(i\)</span> masses is defined as</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle q_{cm}=\frac{\sum_im_iq_i}{\sum_i m_i}=\frac{\sum_im_iq_i}{M} \tag{71}\]</div>
+<p>where <span class="math notranslate nohighlight">\(q\)</span> can be <span class="math notranslate nohighlight">\(x, y\)</span>, or <span class="math notranslate nohighlight">\(z\)</span> and <span class="math notranslate nohighlight">\(M\)</span> is the total mass. The moment of inertia about the <span class="math notranslate nohighlight">\(x-, y-\)</span>, or <span class="math notranslate nohighlight">\(z\)</span>-axes whose origin is at the centre of mass, is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle I_x=\sum_i m_i(y_i^2+z_i^2)\qquad I_y=\sum_i m_i(x_i^2+z_i^2)\qquad I_z=\sum_i m_i(x_i^2+y_i^2)\]</div>
+<p>The total moment of inertia is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle I_x+I_y+I_z= 2\sum_i m_i(x_i^2+y_i^2+z_i^2)=2\sum_im_ir_i^2 \]</div>
+<p>where <span class="math notranslate nohighlight">\(r_i\)</span> is the distance of mass <span class="math notranslate nohighlight">\(m_i\)</span> from the centre of mass.</p>
+<p>A planar object, such as a sheet or loop of wire in the <span class="math notranslate nohighlight">\(x - y\)</span> plane, with <span class="math notranslate nohighlight">\(z\)</span> being perpendicular to these has moments</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle I_x=\sum_im_i,y_i^2,\quad I_y=\sum_im_ix_i^2,\quad I_z=\sum_im_i(x_i^2+y_i^2)\]</div>
+<p>therefore</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle I_z=I_x+I_y \tag{72}\]</div>
+<p>This is true only for planar bodies or uniform composition (lamina) and is called the <em>Perpendicular Axis Theorem</em>.</p>
+<p>The moment of inertia can also be defined as</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle I_\alpha= Mk^2 \tag{73}\]</div>
+<p>where <span class="math notranslate nohighlight">\(R_g=\sqrt{I_\alpha /M }\)</span>is called the <em>radius of gyration</em> of the body about axis <span class="math notranslate nohighlight">\(\alpha\)</span> and <span class="math notranslate nohighlight">\(k\)</span> is the root mean square radius from the axis.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./chapter-7"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="matrices-Q51-54.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Questions 51 - 54</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="matrices-Q55-58.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Questions 55 - 58</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Godfrey Beddard<br/>
+        
+            &copy; Copyright 2022.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

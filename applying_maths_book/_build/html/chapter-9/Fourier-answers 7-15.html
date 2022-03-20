@@ -53,6 +53,8 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Answers 16-21" href="Fourier-answers-16-21.html" />
+    <link rel="prev" title="Fourier series Answers 1-6" href="Fourier-answers-1-6.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -92,15 +94,72 @@
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../intro.html">
-   Applying Maths in the Chemical &amp; Biomolecular Sciences
+   Introduction
   </a>
  </li>
 </ul>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="Fourier-A.html">
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="Fourier-intro.html">
    Chapter 9 Fourier Series and Transforms
   </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="Fourier-A-B.html">
+     1- 4 Fourier series, Gibbs phenomenon, generalised series.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Fourier-questions-1-6.html">
+     Questions 1 to 6
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Fourier-C.html">
+     5 Fourier Transforms
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Fourier-questions%207-15.html">
+     Questions 7 to 15
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Fourier-F.html">
+     11 The Hadamard Transform: Encoding and Decoding
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Fourier-2D-Diffraction.html">
+     12 The Fourier transform in two dimensions: images and x-ray Diffraction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Fourier-tomography.html">
+     14 Computed Tomography
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Fourier-answers-1-6.html">
+     Fourier series Answers 1-6
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Answers 7-15
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Fourier-answers-16-21.html">
+     Answers 16-21
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -193,7 +252,8 @@
         
               <div>
                 
-  <p>Godfrey Beddard ‘Applying Maths in the Chemical &amp; Biomolecular Sciences’ Chapter 9</p>
+  <div class="tex2jax_ignore mathjax_ignore section" id="answers-7-15">
+<h1>Answers 7-15<a class="headerlink" href="#answers-7-15" title="Permalink to this headline">¶</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import all python add-ons etc that will be needed later on</span>
@@ -208,15 +268,13 @@
 </div>
 </div>
 </div>
-<div class="tex2jax_ignore mathjax_ignore section" id="answers-7-15">
-<h1>Answers 7-15<a class="headerlink" href="#answers-7-15" title="Permalink to this headline">¶</a></h1>
 <p><strong>Q7 answer</strong></p>
 <p>The transform equation is <span class="math notranslate nohighlight">\(\displaystyle g(k)=\frac{1}{\sqrt{2\pi}}\int_0^\infty \frac{\exp(-t/\tau)}{\tau} \exp(-ikt)dt\)</span> which can be integrated directly to give</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle g(k)=\frac{1}{\tau\sqrt{2\pi}} \left[ -\frac{exp(-ikt-t/\tau)}{ik+1/\tau}  \right]_0^\infty =\frac{1}{\sqrt{2\pi}}\frac{1} {ik\tau+1} \]</div>
 <p>The absolute value of a complex number <span class="math notranslate nohighlight">\(z\)</span>, is <span class="math notranslate nohighlight">\(\sqrt{z^*z}\)</span> and its square is clearly <span class="math notranslate nohighlight">\(z^*z\)</span>, where <span class="math notranslate nohighlight">\(z^*\)</span> is the conjugate of the complex number formed by replacing <span class="math notranslate nohighlight">\(i\)</span> by <span class="math notranslate nohighlight">\(-i\)</span>. Doing the same with <span class="math notranslate nohighlight">\(g(k)\)</span> gives <span class="math notranslate nohighlight">\(\displaystyle |g(k)|^2= \frac{1}{2\pi (k^2\tau^2+1)}\)</span> which is the shape of the spectral line.</p>
 <p>The exponential decay with <span class="math notranslate nohighlight">\(\tau = 2\)</span> and the corresponding square of the transform, are shown in Fig. 54. In this case <span class="math notranslate nohighlight">\(k\)</span> corresponds to a frequency in s<span class="math notranslate nohighlight">\(^{-1}\)</span>% because <span class="math notranslate nohighlight">\(t\)</span> is in seconds.</p>
-<img src="fourier-fig54.png" alt='Drawing' style='width:500px;'/>
+<p><img alt="Diagram" src="../_images/Fourier-fig54.png" /></p>
 <p>Figure 54. An exponential decay and (right) the complex conjugate square of its Fourier transform which is a Lorentzian curve.</p>
 <hr class="docutils" />
 <p>The half-width at half-height of the transformed signal squared, is calculated as half the value at <span class="math notranslate nohighlight">\(k = 0\)</span>, which is <span class="math notranslate nohighlight">\(| g(0) |^2 /2 = 1/4\pi\)</span> giving the half-width as <span class="math notranslate nohighlight">\(k_{1/2} = 1/\tau\)</span> which is in inverse proportion to the excited-state lifetime. The shorter the lifetime, the wider will be the spectral line in accordance with <span class="math notranslate nohighlight">\(\Delta t \Delta \nu  = 1\)</span>, if we take the change in time to be the lifetime and the frequency to be proportional to <span class="math notranslate nohighlight">\(k\)</span>, which is reasonable because <span class="math notranslate nohighlight">\(k\)</span> has units of s<span class="math notranslate nohighlight">\(^{-1}\)</span>.</p>
@@ -234,7 +292,7 @@ of the ‘time-energy’ uncertainty principle, but this is not the same as the 
 <div class="math notranslate nohighlight">
 \[\displaystyle  |g(\omega)|^2= g(\omega)^*g(\omega)=\left[\frac{-i}{\sqrt{2\pi}}\frac{1-e^{-i(\omega_0 - \omega)t_0}}{\omega_0 - \omega} \right]\left[\frac{i}{\sqrt{2\pi}}\frac{1-e^{i(\omega_0 - \omega)t_0}}{\omega_0 - \omega}\right]=\frac{1-\cos((\omega_0-\omega)t_0)}{\pi (\omega_0-\omega)^2}\]</div>
 <p>Plots of the pulse and its transforms are shown in fig 55. The real part becomes the sinc function if it is written as <span class="math notranslate nohighlight">\(\displaystyle \frac{t_0}{\sqrt{2\pi}}\frac{\sin(t_0(\omega_0-\omega)}{t_0(\omega_0-\omega))}\)</span>, see fig 15.</p>
-<img src="fourier-fig55.png" alt='Drawing' style='width:500px;'/>
+<p><img alt="Diagram" src="../_images/Fourier-fig55.png" /></p>
 <p>Figure 55. Left top: The electric field of a square pulse of 0.1 ps duration. Bottom right: the square of absolute value of the Fourier transform of the pulse; this is its spectrum. The small vertical line shows the position of the first minima, see part (b). Bottom left: The imaginary component of the Fourier transform, the sinc function, and right, the real part.</p>
 <hr class="docutils" />
 <p><strong>(b)</strong> Differentiating the transform finds the maxima and minima, either side of these are the missing frequencies as the period of the transform’s oscillations is constant. Differentiating gives</p>
@@ -321,7 +379,7 @@ coil of the detector, and inducing the current that is subsequently detected. Th
 </div>
 </div>
 <p><strong>Q11 answer</strong></p>
-<p>The transform is <span class="math notranslate nohighlight">\(\displaystyle g(k)=\frac{1}{\sqrt{2\pi}}\int_{-t_0}^{t_0}\sin(2\pi t/t_0 +\varphi)e^{-ikt}dt\)</span> which can be evaluated by hand or using SymPy. By hand this is made easier by converting the exponential first and then to sin and cos because we shall want to find the real and imaginary parts.</p>
+<p>The transform is <span class="math notranslate nohighlight">\(\displaystyle g(k)=\frac{1}{\sqrt{2\pi}}\int_{-t_0}^{t_0}\sin(2\pi t/t_0 +\varphi)e^{-ikt}dt\)</span> which can be evaluated by hand or using SymPy. By hand this is made easier by converting the exponential first and then to sin and cos because we shall want to find the real and imaginary (sin) parts.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t0</span><span class="p">,</span><span class="n">t</span><span class="p">,</span><span class="n">k</span><span class="p">,</span><span class="n">phi</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;t0 t k phi&#39;</span><span class="p">)</span>
@@ -335,26 +393,16 @@ coil of the detector, and inducing the current that is subsequently detected. Th
 <img alt="../_images/Fourier-answers 7-15_6_0.png" src="../_images/Fourier-answers 7-15_6_0.png" />
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">re</span><span class="p">(</span><span class="n">g</span><span class="p">)</span>    <span class="c1"># sympy does basic conversion to separate real and imaginary parts.</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/Fourier-answers 7-15_7_0.png" src="../_images/Fourier-answers 7-15_7_0.png" />
-</div>
-</div>
 <p><strong>(b)</strong> when <span class="math notranslate nohighlight">\(\varphi = n\pi\)</span> and <span class="math notranslate nohighlight">\(n = 0, 1, 2, \cdots\)</span> then the cosine term is always unity and the sine zero. Thus the transform is wholly imaginary, <span class="math notranslate nohighlight">\(\displaystyle g(k)=\frac{-4\pi t_0\sin(kt_0)}{\sqrt{2\pi}(k^2t_o^2-\pi^2)}\)</span> and the form of the transform is a damped sine wave because the sine is divided by <span class="math notranslate nohighlight">\(k^2\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># real part of transform</span>
-
+<span class="n">fig2</span><span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
 <span class="n">freal</span><span class="o">=</span> <span class="k">lambda</span> <span class="n">k</span> <span class="p">:</span> <span class="o">-</span><span class="mi">4</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">t0</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">k</span><span class="o">*</span><span class="n">t0</span><span class="p">)</span><span class="o">/</span><span class="p">(</span>  <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">k</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">t0</span><span class="o">**</span><span class="mi">2</span><span class="o">-</span><span class="mf">4.0</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="p">)</span>  <span class="c1"># k is variable</span>
 <span class="n">t0</span> <span class="o">=</span> <span class="mf">1.0</span>
-<span class="n">x</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">40</span><span class="p">,</span><span class="mi">100</span> <span class="p">)</span>  <span class="c1"># make 100 points 0 to 40</span>
+<span class="n">k</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">40</span><span class="p">,</span><span class="mi">100</span> <span class="p">)</span>  <span class="c1"># make 100 points 0 to 40</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">freal</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="n">freal</span><span class="p">(</span><span class="n">k</span><span class="p">),</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span> <span class="s1">&#39;k&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Re(g(k))&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
@@ -363,7 +411,7 @@ coil of the detector, and inducing the current that is subsequently detected. Th
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Fourier-answers 7-15_9_0.png" src="../_images/Fourier-answers 7-15_9_0.png" />
+<img alt="../_images/Fourier-answers 7-15_8_0.png" src="../_images/Fourier-answers 7-15_8_0.png" />
 </div>
 </div>
 <p><strong>Q12 answer</strong> <strong>(a)</strong> The Fourier transform of the <span class="math notranslate nohighlight">\(\delta\)</span>-function is obtained directly by using its selecting property. For instance acting on a function <span class="math notranslate nohighlight">\(f\)</span> gives, <span class="math notranslate nohighlight">\(\displaystyle \int f(x)\delta(x-a)dx = f(a)\)</span> and no integration is necessary, therefore</p>
@@ -412,7 +460,7 @@ the products <span class="math notranslate nohighlight">\(kd\)</span> and <span 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Fourier-answers 7-15_11_0.png" src="../_images/Fourier-answers 7-15_11_0.png" />
+<img alt="../_images/Fourier-answers 7-15_10_0.png" src="../_images/Fourier-answers 7-15_10_0.png" />
 </div>
 </div>
 <p><strong>Q15 answer</strong>
@@ -446,7 +494,21 @@ the products <span class="math notranslate nohighlight">\(kd\)</span> and <span 
               
         
             <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="Fourier-answers-1-6.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Fourier series Answers 1-6</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="Fourier-answers-16-21.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Answers 16-21</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
         
         </div>

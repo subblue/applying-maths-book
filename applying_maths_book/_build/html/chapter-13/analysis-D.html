@@ -1,0 +1,1743 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Non-linear least squares, gradient expansion, the Levenberg - Marquardt Method &#8212; Applying Maths in the Chemical &amp; Biomolecular Sciences</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Solutions Q1 -11" href="analysis-answers1-11.html" />
+    <link rel="prev" title="Questions 10 - 13" href="analysis-Q10-11.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/book-cover.jpg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Applying Maths in the Chemical & Biomolecular Sciences</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Introduction
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-1/chapter1-intro.html">
+   1. Numbers, Equations, Operators, and Algorithms.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-A.html">
+     Numbers to Algorithms
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-Q1-7.html">
+     Questions 1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-B.html">
+     Trigonometric functions.  Waves
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-Q8-16.html">
+     Questions 8 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-C.html">
+     Sophisticated Counting: permutations, combinations and probability
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-Q17-34.html">
+     Questions 17 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-D.html">
+     10 Modulo arithmetic, delta functions, series, estimation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-Q35-39.html">
+     Questions 35 - 39
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-answers-1-7.html">
+     Solutions Q1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-answers-8-16.html">
+     Solutions Q8 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-answers-17-34.html">
+     Solutions Q17 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-answers-35-39.html">
+     Solutions Q35 - 39
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-2/chapter2-intro.html">
+   2. Complex numbers.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2/chapter2-A.html">
+     Real, imaginary,conjugate and modulus
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2/chapter2-Q-1-9.html">
+     Questions 1 - 9
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2/chapter2-B.html">
+     De Moivre’s theorem and integer powers of complex numbers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2/chapter2-Q-10-13.html">
+     Questions 10 -13
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2/chapter2-C.html">
+     Euler’s theorem
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2/chapter2-Q-14-27.html">
+     Questions 14 - 27
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2/chapter2-answers.html">
+     Solutions Q1 - 27
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-3/differen-intro.html">
+   3. Differentiation.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-A.html">
+     Differentiation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-B.html">
+     Trig functions, logs, power, reciprocals and integrals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-C-Q-4-11.html">
+     Questions 1-11
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-D.html">
+     Product rule and function of function or chain rule.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-E-Q-12-42.html">
+     Questions 12-42
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-F.html">
+     Limits, maxima/minima and Calculus of Variations.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-G-Q-43-73.html">
+     Questions 43 - 73
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-H.html">
+     Numerically finding the roots of an equation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-I-Q-74-85.html">
+     Questions 74 - 85
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-J.html">
+     Minimizing or maximizing with constraints: Lagrange Undetermined Multipliers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-K-Q-86-92.html">
+     Questions 86 - 92
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-L.html">
+     Partial differentiation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-M-Q-93-114.html">
+     Questions 93-114
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-M1.html">
+     Differentiation of vectors
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-N-answers-1-11.html">
+     Solutions Q 1-11
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-O-answers-12-42.html">
+     Solutions Q 12-42
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-P-answers-43-73.html">
+     Solutions Q 43 - 73
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-Q-answers-74-85.html">
+     Solutions Q 74 - 85
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-R-answers-86-92.html">
+     Solutions Q 86 - 94
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-S-answers-93-114.html">
+     Solutions Q 93-114
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-4/integration-intro.html">
+   4. Integration.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-A.html">
+     Integration basics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-Q1-14.html">
+     Questions 1-14
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-B.html">
+     Integration by substitution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-Q15-30.html">
+     Questions 15-30
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-C.html">
+     Using parametric equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-Q31-48.html">
+     Questions 31 - 48
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-D.html">
+     Calculating an Average Value.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-Q49-72.html">
+     Questions 49 - 72
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-E.html">
+     The Variational Method in Quantum Mechanics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-Q73-77.html">
+     Questions 73 - 77
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-F.html">
+     Multiple integrals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-Q78-86.html">
+     Questions 78 - 86
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-G.html">
+     Calculating the energy of a chemical bond using molecular orbitals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-H.html">
+     Line integrals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-Q87-96.html">
+     Questions 87 - 96
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-answers-1-14.html">
+     Solutions Q1 - 14
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-answers-15-30.html">
+     Solutions Q15 - 30
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-answers-31-48.html">
+     Solutions Q31 - 48
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-answers-49-72.html">
+     Solutions Q49 - 72
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-answers-73-96.html">
+     Solutions Q73 - 96
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-5/chapter-5-intro.html">
+   5. Summations, Series and expansion of Functions.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-A.html">
+     Series, averages, partition functions, DNA melting, atom entropy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-B-Q1-13.html">
+     Questions 1 - 13
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-E.html">
+     Maclaurin and Taylor series expansions. Paramagnetic spins
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-F-Q14-34.html">
+     Questions 14 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-G-Q35-44.html">
+     Questions 35 - 44
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-perturbation-A.html">
+     Perturbation Theory
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-perturbation-B-Q45-48.html">
+     Questions 45 - 48
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-perturbation-C.html">
+     Quantum superposition and wavepackets.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-perturbation-D-Q49-52.html">
+     Questions 49 - 52
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-answers-1-7.html">
+     Solutions Q 1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-answers-8-13.html">
+     Solutions Q8 - 13
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-answers-14-26.html">
+     Solutions Q 14 - 26
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-answers-27-32.html">
+     Solutions Q27 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-answers-33-44.html">
+     Solutions Q33 - 44
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-answers-45-52.html">
+     Solutions Q45 - 52
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-6/vectors-intro.html">
+   6. Vectors.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-A.html">
+     Vector basics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-Q1-24.html">
+     Questions 1 - 24
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-B.html">
+     Projections and components
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-Q25-32.html">
+     Questions 25 - 32
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-C.html">
+     Axes need not be right-angled or of equal length
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-Q33-38.html">
+     Questions 33 - 38
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-D.html">
+     Basis sets with more than three dimensions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-Q39-46.html">
+     Questions 39 - 46
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-E.html">
+     Cross product or vector product
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-Q47-52.html">
+     Questions 47 - 52
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-F.html">
+     Torsion or dihedral angles
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-Q53-61.html">
+     Questions 53 - 61
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-G.html">
+     Torque and angular momentum
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-answers-Q1-24.html">
+     Solutions Q1 - 24
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-answers-Q25-32.html">
+     Solutions Q25 - 32
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-answers-Q33-38.html">
+     Solutions Q33 - 38
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-answers-Q39-46.html">
+     Solutions Q38 - 46
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-answers-Q47-52.html">
+     Solutions Q47 - 52
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-answers-Q53-61.html">
+     Solutions Q53 - 61
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-7/matrices-intro.html">
+   7. Matrices
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-A.html">
+     Determinants
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q1-10.html">
+     Questions  1 - 10
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-B.html">
+     Matrices
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q11-16.html">
+     Questions  11 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-C.html">
+     Molecular Group Theory
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q17-30.html">
+     Questions  17 - 30
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-D.html">
+     Rotation matrices: moving molecules
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q31-34.html">
+     Questions 31 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-E.html">
+     Matrices in optics and designing laser cavities
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q35-39.html">
+     Questions 35 - 39
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-F.html">
+     Polarizing optics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q40-44.html">
+     Questions 40 - 44
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-G.html">
+     Solving equations using matrices. Eigenvectors &amp; Eigenvalues.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q45-50.html">
+     Questions 45 - 50
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-H.html">
+     Rate equations and Chemical Kinetics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q51-54.html">
+     Questions 51 - 54
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-I.html">
+     Molecular vibrations and pendulums
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q55-58.html">
+     Questions 55 - 58
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-J.html">
+     Calculating a bond length using moments of inertia
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q59-62.html">
+     Questions 59 - 62
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-answersQ1-10.html">
+     Solutions Q1 - 10
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-answersQ11-16.html">
+     Solutions Q11 - 30
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-answersQ17-30.html">
+     Solutions Q17 - 30
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-answersQ31-34.html">
+     Solutions Q31 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-answersQ35-39.html">
+     Solutions Q35 - 39
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-answersQ40-44.html">
+     Solutions Q40 - 44
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-answersQ45-50.html">
+     Solutions Q45 - 50
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-answersQ51-54.html">
+     Solutions Q51 - 54
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-answersQ55-58.html">
+     Solutions Q55 - 58
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-answersQ59-61.html">
+     Solutions Q59 - 61
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-8/matricesQM-intro.html">
+   8. Matrices in Quantum Mechanics
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-8/matricesQM-A.html">
+     Chapter 8 Matrices in Quantum Mechanics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-8/matricesQM-Q1-7.html">
+     Questions 1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-8/matricesQM-B.html">
+     Basis sets and bra-ket algebra
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-8/matricesQM-Q8-12.html">
+     Questions 8 - 12
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-8/matricesQM-C.html">
+     Continuous basis sets
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-8/matricesQM-answers1-7.html">
+     Solutions Q1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-8/matricesQM-answers8-12.html">
+     Solutions Q8 - 12
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-9/Fourier-intro.html">
+   9. Fourier Series and Transforms.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-A-B.html">
+     Fourier series, Gibbs phenomenon, generalised series.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-questions-1-6.html">
+     Questions 1 - 6
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-C.html">
+     Fourier Transforms
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-D.html">
+     Convolution and Autocorrelation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-questions-7-15.html">
+     Questions 7 - 15
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-E.html">
+     Discrete Fourier  (DFT)  and Fast Fourier transforms (FFT)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-questions-16-21.html">
+     Questions 16 - 21
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-F.html">
+     The Hadamard Transform: Encoding and Decoding
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-2D-Diffraction.html">
+     The Fourier transform in two dimensions: images and x-ray Diffraction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-tomography.html">
+     Computed Tomography
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-answers-1-6.html">
+     Solutions Q 1 - 6
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-answers-7-15.html">
+     Solutions Q 7 - 15
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-answers-16-21.html">
+     Solutions Q 16 - 21
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-10/Diff-eqns-intro.html">
+   10. Differential Equations.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-A.html">
+     Differential Equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-Q1-23.html">
+     Questions 1 - 23
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-B.html">
+     Integrating factors can solve differential equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-C.html">
+     The ‘D’ operator.  Solving linear differential equations with constant coefficients
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-D.html">
+     Simultaneous equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-E.html">
+     Linear equations with variable coefficients
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-F.html">
+     Partial Differential Equations, PDE
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-G.html">
+     PDE examples continued
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-Q24-37.html">
+     Questions 24 - 37
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-answers-1-21.html">
+     Solutions Q1 - 21
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-answers-22-37.html">
+     Solutions Q22 - 37
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-11/num-methods-intro.html">
+   11. Numerical Methods
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-A.html">
+     Numerical Methods
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-Q1-7.html">
+     Questions 1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-B.html">
+     Numerical solution of differential equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-Q8-12.html">
+     Questions 8 - 12
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-C.html">
+     Coupled equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-Q13-16.html">
+     Questions 13 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-D.html">
+     The phase plane, nullclines, and stable points
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-Q17-20.html">
+     Questions 17 - 20
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-E.html">
+     Reaction schemes with feedback
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-Q21-34.html">
+     Questions 21 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-F.html">
+     Boundary value problems: Shooting method
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-Q35-40.html">
+     Questions 35 - 40
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-answers1-7.html">
+     Solutions Q1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-answers8-12.html">
+     Solutions Q8 - 12
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-answers13-16.html">
+     Solutions Q13 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-answers17-20.html">
+     Solutions Q17 - 20
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-answers21-34.html">
+     Solutions Q21 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-answers35-40.html">
+     Solutions Q35 - 40
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-12/monte-carlo-intro.html">
+   12. Monte Carlo Methods
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+  <label for="toctree-checkbox-12">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-A.html">
+     Monte - Carlo
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-Q1-6.html">
+     Questions 1 - 6
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-B.html">
+     Solving rate equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-Q7-10.html">
+     Questions 7 - 10
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-CC.html">
+     Monte Carlo Simulations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-C.html">
+     4 Forster or dipole - dipole energy transfer
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-Q11-17.html">
+     Questions 11 - 17
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-D.html">
+     The Metropolis algorithm
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-answers1-6.html">
+     Solutions Q1 - 6
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-answers7-10.html">
+     Solutions Q7 - 10
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-answers11-17.html">
+     Solutions Q11 - 17
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="analysis-intro.html">
+   13. Data Analysis
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+  <label for="toctree-checkbox-13">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="analysis-A.html">
+     Characterizing experimental data. Accuracy, precision, mean and standard deviation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="analysis-Q1-3.html">
+     Questions 1 - 3
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="analysis-B.html">
+     Modelling data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="analysis-Q4-9.html">
+     Questions 4 - 9
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="analysis-C.html">
+     Modelling data is simpler using matrices
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="analysis-Q10-11.html">
+     Questions 10 - 13
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Non-linear least squares, gradient expansion, the Levenberg - Marquardt Method
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="analysis-answers1-11.html">
+     Solutions Q1 -11
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../chapter-1/chapter1-E.html">
+   SI units, Rounding &amp; converting units, Glossary.
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../references/References.html">
+   References
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../references/Python%20crib.html">
+   Some basic Python instructions with a few examples.
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/chapter-13/analysis-D.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/chapter-13/analysis-D.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Non-linear least squares, gradient expansion, the Levenberg - Marquardt Method
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#least-absolute-deviation">
+     8.1 Least absolute deviation
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#principal-component-analysis-pca">
+   9 Principal component analysis (PCA)
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="non-linear-least-squares-gradient-expansion-the-levenberg-marquardt-method">
+<h1>Non-linear least squares, gradient expansion, the Levenberg - Marquardt Method<a class="headerlink" href="#non-linear-least-squares-gradient-expansion-the-levenberg-marquardt-method" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import all python add-ons etc that will be needed later on </span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">linalg</span> <span class="k">as</span> <span class="n">lina</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">mpl_toolkits.mplot3d</span> <span class="kn">import</span> <span class="n">Axes3D</span> 
+<span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">quad</span><span class="p">,</span><span class="n">odeint</span>
+<span class="n">init_printing</span><span class="p">()</span>                      <span class="c1"># allows printing of SymPy results in typeset maths format</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;font.size&#39;</span><span class="p">:</span> <span class="mi">14</span><span class="p">})</span>  <span class="c1"># set font size for plots</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>In the least squares method, the derivative of the <span class="math notranslate nohighlight">\(\chi^2\)</span> is taken with respect to each parameter <span class="math notranslate nohighlight">\(\alpha_i\)</span> and minimized. The normal equations of linear least squares analysis (equations 28,44), have terms only in <span class="math notranslate nohighlight">\(a_ix\)</span> or <span class="math notranslate nohighlight">\(a_ix^2\)</span> etc., and can be solved exactly. In non-linear least squares, the normal equations cannot be solved exactly. The function</p>
+<div class="math notranslate nohighlight">
+\[Y = \alpha_1e^{-\alpha_2x} + \alpha_3e^{-\alpha_4x} + \alpha_5\]</div>
+<p>has a form that is common to several schemes in chemical kinetics and when analysing the decay of excited states, but in this function the normal equations still contain exponentials in <span class="math notranslate nohighlight">\(\alpha_i\)</span> and <span class="math notranslate nohighlight">\(x\)</span>, for example <span class="math notranslate nohighlight">\(e^{-\alpha_2x}\)</span> and cannot be solved exactly. An approximate numerical solution has to be sought, usually by an iterative method. Any iterative method follows an algorithm that tries to approach the minimum <span class="math notranslate nohighlight">\(\chi^2\)</span> without searching through the whole range of possible values of the parameters (<span class="math notranslate nohighlight">\(\alpha\)</span>’s). There are several algorithms to choose from, some, such as the simplex, simulated annealing (Prest et al. 1986), and evolutionary (natural selection) algorithms are not least squares methods; however, the best algorithm for non-linear least squares is the Levenberg - Marquardt algorithm (Bevington 1969; Prest et al. 1986; Bevington &amp; Robinson 2003). Importantly, it is easy to implement and operates stably, i.e. it hardly ever fails.</p>
+<p>Using a numerical method implies</p>
+<p><strong>(i)</strong><span class="math notranslate nohighlight">\(\quad\)</span> that starting values have to be defined for each of the parameters sought,</p>
+<p><strong>(ii)</strong><span class="math notranslate nohighlight">\(\quad\)</span>  increments in these have to be determined and are changed as the calculation proceeds,</p>
+<p><strong>(iii)</strong><span class="math notranslate nohighlight">\(\quad\)</span>  some ending condition has been specified for an acceptable fit to the data.</p>
+<p>These requirements mean that this problem is far harder to solve than is linear least-squares, partly for the reasons given, but also because there is no guarantee that the true minimum will be found even if the calculation appears to end satisfactorily. This last effect has two forms. The first is that close to the minimum solution several related sets of parameters can satisfy the same goodness of fit criterion, so that a unique set is not found, only a range of them. The second effect is that the ‘surface’ through and about which the minimum <span class="math notranslate nohighlight">\(\chi^2\)</span> is sought may be rough, with local minima in which the calculation can become trapped.</p>
+<p>The <span class="math notranslate nohighlight">\(\chi^2\)</span> is defined as</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \chi^2=\sum_{i=1}^n w_i(y_i-Y_i(\alpha_j))^2 \]</div>
+<p>where the subscript <span class="math notranslate nohighlight">\(i\)</span> identifies the data points and <span class="math notranslate nohighlight">\(j\)</span> the parameters, <span class="math notranslate nohighlight">\(\alpha_1, \alpha_2\cdots\)</span>. The <span class="math notranslate nohighlight">\(\chi^2\)</span> surface would ideally be shaped rather like a bowl so that it can be imagined how starting at one point the minimum can be reached. But it is instead highly complex, and can be represented as a three-dimensional object only if two parameters are used and if there are more, and there usually are, it is almost impossible to have an idea what this object may look like. In the best circumstance, the object is smooth and a minimum is found, but generally, it might be supposed that the objects ‘landscape’ is ‘corrugated’ with many local minima separated by ‘hills’ and ‘ridges’. However, not withstanding the complexity of the <span class="math notranslate nohighlight">\(\chi^2\)</span> ‘surface’, most equations describing physical and chemical phenomena can be success- fully minimized.</p>
+<p>Quite often, finding the true minimum starts with initial guesses for the parameters close to the final ones that the calculation will produce. Often, approximate parameters can be guessed by looking at the data; they do not usually have to be that good for the calculation to converge perhaps within a factor of 5 or 10. Alternatively, the literature can be consulted to find values for similar experiments. If this is not possible, as there may be too many variables to find them all, then ranges must be placed on these and perhaps hundreds of sets of parameters can be guessed at random and those with the smallest <span class="math notranslate nohighlight">\(\chi^2\)</span> chosen as starting points. Once the calculation is run, if the results are not particularly good it may be because (a) the function is sensitive to the starting values; (b) it ended up in a local not the global minimum; (c) the calculation did not run long enough to converge; or, if it did converge, (d) the model did not describe the data. Starting the calculation with different initial conditions will usually help to sort this out.</p>
+<p>The Levenberg - Marquardt Method combines two different approaches to finding the minimum <span class="math notranslate nohighlight">\(\chi^2\)</span>; Bevington (1969) and Prest et al. (1986) give detailed derivations and equations. The first approach is a gradient-search method that tries to find the steepest descent from any point towards the minimum of the surface that represents the <span class="math notranslate nohighlight">\(\chi^2\)</span>. This method is good when the calculation is a long way from the minimum, as it allows it to be approached rapidly because the gradient is large. When close to the minimum, this method is poor because the gradient may be almost zero and the calculation will creep along, hardly making any progress.</p>
+<p>The gradient in the <span class="math notranslate nohighlight">\(\chi^2\)</span> is calculated as <span class="math notranslate nohighlight">\(\displaystyle \sum_{j=1}^n\frac{\partial \chi^2}{\partial \alpha_j}\)</span>. The second aspect to the method is to change the equations close to the minimum where the model function <span class="math notranslate nohighlight">\(Y\)</span> can be accurately expanded as a Taylor series in the parameters <span class="math notranslate nohighlight">\(\alpha_i\)</span> and the <span class="math notranslate nohighlight">\(\chi^2\)</span> is minimized, and normal equations calculated. It turns out, fortunately, that the two sets of equations, steepest descent and expansion, can be changed into one another by varying only one parameter conventionally called <span class="math notranslate nohighlight">\(\lambda\)</span>.</p>
+<p>It has been shown that the normal equations 44 can be written in matrix form (equation 48)</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \boldsymbol C=\boldsymbol{BA}^{-1}\]</div>
+<p>In the linear case, these equations can be solved by inverting matrix <span class="math notranslate nohighlight">\(A\)</span> and left multiplying by matrix <span class="math notranslate nohighlight">\(B\)</span> as is done in Algorithm 3. The equations in the non-linear case are formally the same as those of equation 48 but now the solution must be obtained iteratively. The iterative part has nothing to do with the Marquardt method; this method changes only the diagonals of matrix <span class="math notranslate nohighlight">\(A\)</span> and so moves from a gradient search to a linear expansion of the function. Matrix <span class="math notranslate nohighlight">\(A\)</span> is changed so that</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle A_{jj}\to A_{jj}(1+\lambda)\]</div>
+<p>and <span class="math notranslate nohighlight">\(\lambda\)</span> is changed in the algorithm to go between gradient expansion where <span class="math notranslate nohighlight">\(\lambda\)</span> large, to function linearization where <span class="math notranslate nohighlight">\(\lambda\)</span> is small.</p>
+<p>The algorithm (Bevington (1969, Curfit p. 237) and Bevington &amp; Robinson (2003)) is</p>
+<p><strong>(i)</strong><span class="math notranslate nohighlight">\(\quad\)</span>  calculate <span class="math notranslate nohighlight">\(\chi^2(\alpha)\)</span></p>
+<p><strong>(ii)</strong><span class="math notranslate nohighlight">\(\quad\)</span>  set <span class="math notranslate nohighlight">\(\lambda = 0.001\)</span></p>
+<p><strong>(iii)</strong><span class="math notranslate nohighlight">\(\quad\)</span>  calculate <span class="math notranslate nohighlight">\(\chi^2(\alpha +\delta\alpha)\)</span> where <span class="math notranslate nohighlight">\(\delta\alpha\)</span> are the increments in parameters <span class="math notranslate nohighlight">\(\alpha\)</span>.</p>
+<p><strong>(iv)</strong><span class="math notranslate nohighlight">\(\quad\)</span>  if <span class="math notranslate nohighlight">\(\chi^2(\alpha+\delta\alpha)&gt;\chi^2(\alpha)\)</span> then <span class="math notranslate nohighlight">\(\lambda\to 10\lambda\)</span> and go to (iii)</p>
+<p><strong>(v)</strong><span class="math notranslate nohighlight">\(\quad\)</span>  if <span class="math notranslate nohighlight">\(\chi^2(\alpha+\delta\alpha)&lt;\chi^2(\alpha)\)</span> then <span class="math notranslate nohighlight">\(\lambda \to \lambda/10\)</span>, make <span class="math notranslate nohighlight">\(\alpha \to \alpha+\delta\alpha\)</span> and go to (iii).</p>
+<p><strong>(vi)</strong><span class="math notranslate nohighlight">\(\quad\)</span>  check at (iii) whether a preset minimum difference in consecutive <span class="math notranslate nohighlight">\(\chi^2\)</span> is produced or maximum number of iterations reached.</p>
+<p>The algorithm is shown below fitted to Poisson distributed data. The data represents a single exponential decay with a constant background and the model function used is <span class="math notranslate nohighlight">\(\displaystyle Y = c_1e^{-c_2x} + c_3\)</span>. The data was simulated, as described in chapter 12.3.4, and the data is</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin{array}\\
+\hline
+x &amp;1    &amp; 5    &amp;9   &amp;13  &amp;17  &amp; 21 &amp;25  &amp;29 &amp; 33 &amp;37 &amp;41 &amp;45 &amp;49\\
+y &amp;1927 &amp; 1329 &amp;812 &amp;568 &amp;390 &amp;290 &amp;171 &amp;112&amp; 87 &amp;48 &amp;43 &amp;26 &amp;26\\
+\hline
+x &amp;53   &amp; 57   &amp;61  &amp;65  &amp;69  &amp;73  &amp;77  &amp;81 &amp; 85 &amp;89 &amp;93 &amp;97\\
+y &amp;14   &amp; 13   &amp;10  &amp;6   &amp;9   &amp;8   &amp;7   &amp;3  &amp; 9  &amp;5  &amp;4  &amp;8\\
+\hline \end{array}\end{split}\]</div>
+<p>The true values used to produce the data are <span class="math notranslate nohighlight">\(c_2 = 0.1, c_3 = 5\)</span>, but the initial value of <span class="math notranslate nohighlight">\(c_1\)</span> is unknown as the data has been simulated with <span class="math notranslate nohighlight">\(20000\)</span> events and Poisson distributed noise has been added with a mean value of <span class="math notranslate nohighlight">\(5\)</span>. The total number of counts in the data is <span class="math notranslate nohighlight">\(5925\)</span>, which is rather a small number for an experiment, although single molecule fluorescence measured through a confocal microscope may have far fewer than this. The implementation is based on Bevington (1969, algorithm Curfit).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Algorithm. Levenburg - Marquardt non-linear least squares.</span>
+
+<span class="k">def</span> <span class="nf">chisqrd</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="mf">0.0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="n">s</span> <span class="o">+</span> <span class="n">w</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="p">(</span><span class="n">yval</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">model</span><span class="p">(</span><span class="n">xval</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">C</span><span class="p">)</span> <span class="p">)</span><span class="o">**</span><span class="mi">2</span>
+    <span class="k">return</span> <span class="n">s</span>
+<span class="c1">#------------------------------</span>
+
+<span class="k">def</span> <span class="nf">getdata</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+    <span class="n">xv</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">yv</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">wv</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>               <span class="c1"># length not known so read in all data and make list of each</span>
+        <span class="n">i</span><span class="o">=</span><span class="mi">0</span>
+        <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">new_str</span> <span class="o">=</span> <span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+            <span class="n">vals</span> <span class="o">=</span> <span class="n">new_str</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+            <span class="n">xv</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">vals</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> 
+            <span class="n">yv</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">vals</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> 
+            <span class="n">wv</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">vals</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span> 
+    <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">xv</span><span class="p">)</span>                             <span class="c1"># we do not know length of data before hand </span>
+    <span class="n">w</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+    <span class="n">xval</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+    <span class="n">yval</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="n">w</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="nb">float</span><span class="p">(</span><span class="n">wv</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>               <span class="c1"># counting weighting</span>
+        <span class="n">xval</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">xv</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+        <span class="n">yval</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">yv</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">xval</span><span class="p">,</span><span class="n">yval</span><span class="p">,</span><span class="n">w</span>
+<span class="c1">#--------------------------------     </span>
+
+<span class="c1"># fitting model   y = c1.exp(-c2.x) + c3</span>
+
+<span class="n">filename</span><span class="o">=</span><span class="s1">&#39;exponential-data.txt&#39;</span>  <span class="c1"># in rows x , y weighting</span>
+
+<span class="n">xval</span><span class="p">,</span><span class="n">yval</span><span class="p">,</span><span class="n">w</span> <span class="o">=</span> <span class="n">getdata</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+
+<span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">xval</span><span class="p">)</span>
+<span class="n">lambd</span><span class="o">=</span> <span class="mf">0.001</span>            <span class="c1"># initial value</span>
+<span class="n">reps</span> <span class="o">=</span> <span class="mi">40</span>               <span class="c1"># typoical value can be altered </span>
+<span class="n">C</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="o">*</span><span class="n">yval</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="mf">0.55</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>  <span class="c1"># initial guessed values</span>
+<span class="n">m</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">C</span><span class="p">)</span>
+<span class="n">model</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span><span class="n">C</span><span class="p">:</span> <span class="n">C</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span> <span class="o">-</span><span class="n">C</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">x</span> <span class="p">)</span> <span class="o">+</span> <span class="n">C</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>  <span class="c1"># function to be fitted </span>
+
+<span class="n">nf</span>   <span class="o">=</span> <span class="n">n</span> <span class="o">-</span> <span class="n">m</span> <span class="o">-</span> <span class="mi">1</span>                                   <span class="c1"># degrees of freedom</span>
+<span class="n">chiB</span> <span class="o">=</span> <span class="mf">1e20</span>                                        <span class="c1"># choose initial value to be huge</span>
+
+<span class="n">B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">m</span><span class="p">,</span><span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">m</span><span class="p">,</span><span class="n">m</span><span class="p">),</span><span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+<span class="n">deriv</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span><span class="n">n</span><span class="p">),</span><span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">L</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">reps</span><span class="p">):</span>
+    <span class="n">beta</span><span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">m</span><span class="p">,</span><span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+    <span class="n">AA</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">m</span><span class="p">,</span><span class="n">m</span><span class="p">),</span><span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="n">deriv</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">C</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">xval</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>               <span class="c1"># dy/dC[0]</span>
+        <span class="n">deriv</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="n">C</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">xval</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">C</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">xval</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="c1"># dy/dC[1]</span>
+        <span class="n">deriv</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1.0</span>                                 <span class="c1"># dy/dC[2]</span>
+        <span class="k">pass</span>
+    <span class="n">chiA</span> <span class="o">=</span> <span class="n">chisqrd</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="o">/</span><span class="n">nf</span>
+    
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">m</span><span class="p">):</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="mf">0.0</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+            <span class="n">s</span> <span class="o">=</span> <span class="n">s</span> <span class="o">+</span> <span class="n">w</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="p">(</span><span class="n">yval</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">model</span><span class="p">(</span><span class="n">xval</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">C</span><span class="p">)</span> <span class="p">)</span><span class="o">*</span><span class="n">deriv</span><span class="p">[</span><span class="n">j</span><span class="p">,</span><span class="n">i</span><span class="p">]</span>
+        <span class="n">beta</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">s</span>
+        <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">j</span><span class="p">):</span>
+            <span class="n">s</span> <span class="o">=</span> <span class="mf">0.0</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+                <span class="n">s</span> <span class="o">=</span> <span class="n">s</span> <span class="o">+</span> <span class="n">w</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="n">deriv</span><span class="p">[</span><span class="n">j</span><span class="p">,</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="n">deriv</span><span class="p">[</span><span class="n">k</span><span class="p">,</span><span class="n">i</span><span class="p">]</span> 
+            <span class="n">AA</span><span class="p">[</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">s</span>
+        <span class="k">pass</span>
+    
+    <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">chiA</span> <span class="o">-</span> <span class="n">chiB</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mf">0.001</span><span class="p">:</span>
+        <span class="k">break</span>
+    <span class="n">AA</span> <span class="o">=</span> <span class="p">(</span> <span class="n">np</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="n">AA</span><span class="p">)</span> <span class="o">+</span> <span class="n">AA</span> <span class="p">)</span><span class="o">/</span><span class="mf">2.0</span>                   <span class="c1"># symmetrise</span>
+    <span class="k">while</span> <span class="n">chiB</span> <span class="o">&gt;</span> <span class="n">chiA</span><span class="p">:</span>                                   <span class="c1"># step iii</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">m</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">m</span><span class="p">):</span>
+                <span class="n">A</span><span class="p">[</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">AA</span><span class="p">[</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">]</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span> <span class="n">AA</span><span class="p">[</span><span class="n">j</span><span class="p">,</span><span class="n">j</span><span class="p">]</span><span class="o">*</span><span class="n">AA</span><span class="p">[</span><span class="n">k</span><span class="p">,</span><span class="n">k</span><span class="p">]</span> <span class="p">)</span>
+            <span class="n">A</span><span class="p">[</span><span class="n">j</span><span class="p">,</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">+</span> <span class="n">lambd</span>
+            <span class="k">pass</span>
+        <span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">m</span><span class="p">):</span>
+            <span class="n">s</span> <span class="o">=</span> <span class="mf">0.0</span>
+            <span class="k">for</span> <span class="n">ii</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">m</span><span class="p">):</span>
+                <span class="n">s</span> <span class="o">=</span> <span class="n">s</span> <span class="o">+</span> <span class="n">beta</span><span class="p">[</span><span class="n">ii</span><span class="p">]</span><span class="o">*</span><span class="n">A</span><span class="p">[</span><span class="n">j</span><span class="p">,</span><span class="n">ii</span><span class="p">]</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span> <span class="n">AA</span><span class="p">[</span><span class="n">j</span><span class="p">,</span><span class="n">j</span><span class="p">]</span><span class="o">*</span><span class="n">AA</span><span class="p">[</span><span class="n">ii</span><span class="p">,</span><span class="n">ii</span><span class="p">]</span> <span class="p">)</span>    
+            <span class="n">B</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">C</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">+</span> <span class="n">s</span>
+            <span class="k">pass</span>
+        <span class="n">chiB</span> <span class="o">=</span> <span class="n">chisqrd</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="o">/</span><span class="n">nf</span>                                
+        <span class="n">lambd</span> <span class="o">=</span> <span class="n">lambd</span><span class="o">*</span><span class="mi">10</span>          <span class="c1"># step iv</span>
+        <span class="k">pass</span>                      <span class="c1"># end while step iii  ChiB &gt; chiA</span>
+    <span class="n">C</span> <span class="o">=</span> <span class="n">B</span>                         <span class="c1"># replace coeffs</span>
+    <span class="n">chiB</span>  <span class="o">=</span> <span class="n">chiA</span>                  <span class="c1"># replace chi^2</span>
+    <span class="n">lambd</span> <span class="o">=</span> <span class="n">lambd</span><span class="o">/</span><span class="mi">10</span>              <span class="c1"># step iv</span>
+    <span class="k">pass</span>                          <span class="c1"># end loop on L </span>
+    
+<span class="n">sig</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span> <span class="n">m</span><span class="p">,</span> <span class="n">dtype</span> <span class="o">=</span> <span class="nb">float</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">m</span><span class="p">):</span>
+    <span class="n">sig</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span> <span class="n">A</span><span class="p">[</span><span class="n">j</span><span class="p">,</span><span class="n">j</span><span class="p">]</span><span class="o">/</span><span class="p">(</span> <span class="n">AA</span><span class="p">[</span><span class="n">j</span><span class="p">,</span><span class="n">j</span><span class="p">]</span> <span class="p">)</span> <span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">m</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:s}{:d}{:s}{:8.4g}{:s}{:6.2g}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;C&#39;</span><span class="p">,</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39; = &#39;</span><span class="p">,</span> <span class="n">C</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="s1">&#39; +/- &#39;</span><span class="p">,</span><span class="n">sig</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:s}{:6.3f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;reduced chi sqrd = &#39;</span><span class="p">,</span><span class="n">chiA</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:s}{:8.4g}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;total calculated counts   =&#39;</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">model</span><span class="p">(</span><span class="n">xval</span><span class="p">[:],</span><span class="n">C</span><span class="p">[:])))</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:s}{:8.4g}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;total experimental counts =&#39;</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">yval</span><span class="p">[:]</span> <span class="p">)</span> <span class="p">)</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C1 =     2128 +/-     30
+C2 =   0.1011 +/- 0.0011
+C3 =    5.045 +/-   0.72
+reduced chi sqrd =  0.883
+total calculated counts   =    5910
+total experimental counts =    5925
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fchi</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">**</span><span class="p">(</span><span class="n">n</span><span class="o">/</span><span class="mi">2</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="p">(</span><span class="n">n</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">gamma</span><span class="p">(</span><span class="n">n</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span> <span class="c1"># chi sqrd function</span>
+<span class="n">Q</span><span class="p">,</span><span class="n">err</span> <span class="o">=</span> <span class="n">quad</span><span class="p">(</span><span class="n">fchi</span> <span class="p">,</span> <span class="n">chiA</span><span class="o">*</span><span class="n">n</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">inf</span> <span class="p">)</span>    <span class="c1"># integrate from chisqrd to infinity</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:s}</span><span class="s1"> </span><span class="si">{:6.3f}</span><span class="s1"> </span><span class="si">{:s}</span><span class="s1"> </span><span class="si">{:6.3f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;probability of getting chi-sqrd &gt; &#39;</span><span class="p">,</span><span class="n">chiA</span><span class="o">*</span><span class="n">n</span><span class="p">,</span><span class="s1">&#39; is&#39;</span><span class="p">,</span> <span class="n">Q</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>probability of getting chi-sqrd &gt;  22.066  is  0.632
+</pre></div>
+</div>
+</div>
+</div>
+<p><img alt="Drawing" src="../_images/analysis-fig14.png" /></p>
+<p>Figure 14. Non-linear least squares fit to  <span class="math notranslate nohighlight">\(\displaystyle Y = c_1e^{-c_2x} + c_3\)</span> with <span class="math notranslate nohighlight">\(c_1= 2128, c_2 = 0.1\)</span>, and <span class="math notranslate nohighlight">\(c_3 = 5.05\)</span>.</p>
+<p>The calculation produces a <span class="math notranslate nohighlight">\(\chi^2= 0.9\)</span> and that corresponds to a probability of <span class="math notranslate nohighlight">\(63\)</span>% which is near perfect; a perfect value of <span class="math notranslate nohighlight">\(1\)</span> produces a <span class="math notranslate nohighlight">\(50\)</span>% chance. The model curve clearly fits the data as shown in Figure 14. The total counts predicted by the model are almost the same as in the data itself, also indicating a close fit. The normalized residuals are calculated as <span class="math notranslate nohighlight">\((y_i - Y_i)/y_i\)</span>.</p>
+<div class="section" id="least-absolute-deviation">
+<h2>8.1 Least absolute deviation<a class="headerlink" href="#least-absolute-deviation" title="Permalink to this headline">¶</a></h2>
+<p>Any least squares method is very sensitive to outliers in the data; see figure 15. You can ‘eyeball’ data and see roughly where a straight line should go through the majority of the data points; however, the least squares line will generally not follow this trend because it is pulled off by the outliers. In such cases, the function to minimize is the absolute value of the deviation rather than the <span class="math notranslate nohighlight">\(\chi^2\)</span> and for an unweighted straight-line fit is the sum</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \sum_i |y_i-a-bx_i|\]</div>
+<p>Using this function now produces a far better fit to the data, but there is no <span class="math notranslate nohighlight">\(\chi^2\)</span> with which to estimate how good this fit is. Taking the absolute value of the distance from the best fit line, rather than the square of the distance, means that the effect of large deviations is reduced. Prest et al. (1986) give an algorithm with which to calculate the minimum deviation line and this is shown in figure 15.</p>
+<p><img alt="Drawing" src="../_images/analysis-fig15.png" /></p>
+<p>Figure 15. Outliers produce a least squares fit that does not reflect the trend exhibited by most of the data points. The line passing mainly through the data is the least absolute deviation LAD line.</p>
+<hr class="docutils" />
+</div>
+</div>
+<div class="section" id="principal-component-analysis-pca">
+<h1>9 Principal component analysis (PCA)<a class="headerlink" href="#principal-component-analysis-pca" title="Permalink to this headline">¶</a></h1>
+<p>In the life sciences, the experimental techniques of chemical physics, for instance, NMR, FTIR, mass spectrometry, and various chromatographic methods are widely used and they produce large quantities of data. The data may consist of hundreds of data sets each containing data from thousands of proteins and metabolites and from which the presence of a few target molecules may be sought. For example, NMR spectra taken on blood plasma will contain signals from thousands of compounds. If samples are taken from a group of patients with a particular disease and a similar group without the disease, the two sets of NMRs can be compared in an attempt to identify markers that may be used to target the disease, either in an attempt either to cure it, or act as an assay to identify its early stages. However, these spectra will be different due to normal variability, will be highly congested and contain numerous overlapping signals from proteins, lipids, sugars, and DNA not involved in the disease. The task is to find the species that are either present or are missing in the diseased group. The problem is that there is an abundance of data but no results.</p>
+<p>Data from any instrument is not always in the form that most easily allows the results required to be extracted from it. PCA attempts to rotate the axes with which the data is presented in such a way as to isolate each of its features independently of all of the others. This method produces new variables that are linear combinations of the original data and these are the principal components; mathematically a new orthogonal basis set is produced with which to represent the data (Jolliffe 2002; Miller &amp; Miller 2005). Recall that in changing a basis, the data (a vector) is unaffected only the axes are changed. Some of these new components may contain only background or noise while others contain the data. Sorting out which ones to keep requires some judgement; the process is not automatic. The PCA method is therefore a way of reducing the size of a data set, the penalty is that some data is lost; however, this may not be significant, simply necessary to expose the pertinent data. This type of analysis is therefore always a balance between simplifying the problem to make it understandable and loosing information. Note that principal component analysis is a non-parametric method of analysing data; correlations are sought between data sets without using any model to describe the data. In contrast, the least squares method is a <em>parametric</em> method because a model (equation) is used to test the data.</p>
+<p>A set of data can be represented as an expansion of coefficients <span class="math notranslate nohighlight">\(a\)</span> in a basis set <span class="math notranslate nohighlight">\(w\)</span> of length, or dimension, <span class="math notranslate nohighlight">\(n\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle x=a_1w_1+a_2w_2+\cdots +a_nw_n\]</div>
+<p>The same data can also be expressed in another basis set <span class="math notranslate nohighlight">\(u\)</span> as</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle x=b_1u_1 +b_2u_2 +\cdots + b_nu_n\]</div>
+<p>but with a different set of coefficients, <span class="math notranslate nohighlight">\(b\)</span>. This distinction is illustrated in figure 16 where any data point has approximately equal values of coefficients <span class="math notranslate nohighlight">\(a\)</span>, because it is approximately equally positioned between the three experimental x-axes whereas those on the new axes <span class="math notranslate nohighlight">\(p\)</span>, have a large initial value <span class="math notranslate nohighlight">\(b_1\)</span>, along <span class="math notranslate nohighlight">\(p_1\)</span> and smaller ones along <span class="math notranslate nohighlight">\(p_2\)</span> and <span class="math notranslate nohighlight">\(p_3\)</span>.</p>
+<p>PCA changes the basis set to optimize the variance placing the principal axis along the direction of maximum spread or variance of the data, and other principal components orthogonally to this. Figure 16 also shows the new axes <span class="math notranslate nohighlight">\(p\)</span> as the principal component axes, two of which are shown on the right and where two regions of data are identified. The missing data in this graph compared to the one on the left is in the direction <span class="math notranslate nohighlight">\(p_3\)</span> and not <span class="math notranslate nohighlight">\(p_2\)</span>, and would be seen on a plot of <span class="math notranslate nohighlight">\(p_1\)</span> vs <span class="math notranslate nohighlight">\(p_3\)</span> and in this way, the change of axes (basis set) can identify different groups of data. The next step in PCA is to reduce the size of the basis set used; this means describing the data in the basis set <span class="math notranslate nohighlight">\(u\)</span> with a smaller set of terms in the summation; <span class="math notranslate nohighlight">\(s\)</span> instead of <span class="math notranslate nohighlight">\(n\)</span>. Because the change of axes puts more contributions of each data point along each principal axis, fewer terms are now needed to form an acceptable description of the data, although all the basis set is needed to reproduce the data exactly. A reduced data set is often the rationale for using PCA, with the aim of identifying new signals, removing noise and/or isolating known interfering signals.</p>
+<p><img alt="Drawing" src="../_images/analysis-fig16.png" /></p>
+<p>Figure 16. Data on the experimental axes (left), and on the axes of principal components (right)</p>
+<hr class="docutils" />
+<p>Matrix methods are used to find the principal components (PC). The data comprises m sets where each set has n data points. The whole data forms an n ×m matrix, D, with each data point in a new row of a given column and these vectors form m columns. The steps to find the principal components are:</p>
+<p><strong>(i)</strong><span class="math notranslate nohighlight">\(\quad\)</span> Remove the mean value from each of the individual datasets so that the centroid of the data becomes the origin of the new axes. In matrix form subtracting the mean from each data point is
+$<span class="math notranslate nohighlight">\(\displaystyle \boldsymbol X= \boldsymbol D -\boldsymbol \mu\)</span>$</p>
+<p>where <span class="math notranslate nohighlight">\(\boldsymbol D\)</span> is the <span class="math notranslate nohighlight">\(n\times m\)</span> matrix of data and <span class="math notranslate nohighlight">\(\boldsymbol \mu\)</span> an <span class="math notranslate nohighlight">\(n\times m\)</span> matrix with the appropriate mean value in each element of its columns. The PC.s are also sensitive to the scale of the data, so it may be necessary to divide the data by the variance giving each set a mean of zero and unit standard deviation during the calculation.<br>
+<strong>(ii)</strong><span class="math notranslate nohighlight">\(\quad\)</span>  The covariance of the data is then calculated, this is an <span class="math notranslate nohighlight">\(m\times m\)</span> symmetrical matrix</p>
+<div class="math notranslate nohighlight">
+\[\boldsymbol C=\frac{1}{n-1}\boldsymbol{XX^T}\tag{52}\]</div>
+<p>The superscript <span class="math notranslate nohighlight">\(T\)</span> is the transpose, and the matrix multiplication has dimensions <span class="math notranslate nohighlight">\((m \times n)\cdot(n \times m) = m \times m)\)</span>. (The <span class="math notranslate nohighlight">\(n-1\)</span> makes an unbiased estimate). The entries in this matrix would be diagonal if the data were random, because each value is then independent of every other. However, this is very unlikely to be the case unless the data contains only random noise; therefore, off-diagonal terms are not zero. The covariance describes how much the data is spread among the axes. If the data were to lie only along each axis the covariance would be diagonal, the rotation of axes accompanying the principal components reduces the off-diagonal component in the covariance.</p>
+<p><strong>(iii)</strong><span class="math notranslate nohighlight">\(\quad\)</span>  The m eigenvalues <span class="math notranslate nohighlight">\(\lambda\)</span> and (column) eigenvectors <span class="math notranslate nohighlight">\(V\)</span> (<span class="math notranslate nohighlight">\(m\times m\)</span> matrix) of the covariance matrix <span class="math notranslate nohighlight">\(C\)</span> are calculated and the eigenvalues are sorted from largest to smallest and the eigenvectors are placed in the same order see chapter 7.12.3. The eigenvalue-eigenvector equation is <span class="math notranslate nohighlight">\(\boldsymbol{CV} = \boldsymbol{\Lambda V}\)</span> where <span class="math notranslate nohighlight">\(\Lambda\)</span> is the diagonal matrix of the eigenvalues <span class="math notranslate nohighlight">\(\lambda\)</span>, i.e. a vector. It is assumed that the calculation produces eigenvectors that are normalized, if not they should be normalized by dividing each column by its vector length <span class="math notranslate nohighlight">\(\vec V_i\to \vec V_i/\sqrt{\vec V_i\cdot \vec V_i}\)</span> where <span class="math notranslate nohighlight">\(\vec V_i\)</span> is one column vector. The eigenvectors form the new principal component basis set because they are orthogonal one to another.</p>
+<p>The eigenvector of the largest eigenvalue forms the principal component of the data, smaller values the other principal components. The largest contains most of the variance or spread of the data and best describes any trend in the data. The smaller eigenvalues do so to lesser extents depending on their size. The largest s eigenvalues are then chosen to approximate the data. The eigenvalues correspond to variances along the principal axes, thus the fractional value of each eigenvalue to the sum of them all is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \lambda_i/ \sum_i^m\lambda_i\]</div>
+<p>and this is the fraction that eigenvalue <span class="math notranslate nohighlight">\(i\)</span> contributes to the data. A measure of the error made by approximating the data by s principal components instead of the total number <span class="math notranslate nohighlight">\(m\)</span>, is the residual variance,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \sigma^2=1-\frac{\sum_i^s \lambda_i}{\sum)i^m \lambda_i}\]</div>
+<p>For example, if the first two eigenvalues describe <span class="math notranslate nohighlight">\(85\)</span>% of the data, it may be appropriate to ignore all the others. As a rule of thumb, when selecting data to eliminate, eigenvalues less than <span class="math notranslate nohighlight">\(\approx 1\)</span> can be ignored.</p>
+<p><strong>(iv)</strong><span class="math notranslate nohighlight">\(\quad\)</span>  To project the data points onto the new axes, the principal components, the dot product of the data <span class="math notranslate nohighlight">\(\boldsymbol X\)</span> is made with each eigenvector <span class="math notranslate nohighlight">\(\boldsymbol V\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \boldsymbol Y = \boldsymbol V^T\boldsymbol X^T\tag{53}\]</div>
+<p>The matrix dimensions are <span class="math notranslate nohighlight">\((m \times m)\cdot(m \times n) = (m \times n)\)</span>. Plotting one row vs another, the data in matrix <span class="math notranslate nohighlight">\(Y\)</span> produces the data along the various principal component axes as shown on the right of figure 16. The first column is <span class="math notranslate nohighlight">\(p_1\)</span>, the second, <span class="math notranslate nohighlight">\(p_2\)</span>, etc. Because the eigenvector (modal) matrix <span class="math notranslate nohighlight">\(V\)</span> is square and orthogonal, the relationship <span class="math notranslate nohighlight">\(\boldsymbol V^{-1} = \boldsymbol V^T\)</span> can be used to reform the original data. The transformation steps are to left multiply both sides of the equation with <span class="math notranslate nohighlight">\(\boldsymbol V\)</span> giving</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \boldsymbol{VV}^T\boldsymbol X^T = \boldsymbol{VY}\]</div>
+<p>Simplifying the left-hand side produces</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \boldsymbol{VV}^T\boldsymbol X^T = \boldsymbol{VV}^{-1}\boldsymbol X^T = \boldsymbol X^T = \boldsymbol{VY}\]</div>
+<p>and then <span class="math notranslate nohighlight">\(\boldsymbol{VY}\)</span> is transposed again to form <span class="math notranslate nohighlight">\(\boldsymbol X\)</span> or,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \boldsymbol X=(\boldsymbol{VY})^T, \qquad \boldsymbol D = \boldsymbol X + \boldsymbol\mu\tag{54}\]</div>
+<p>and <span class="math notranslate nohighlight">\(\boldsymbol\mu\)</span> restores the mean to the data <span class="math notranslate nohighlight">\(\boldsymbol D\)</span>.</p>
+<p><strong>(v)</strong><span class="math notranslate nohighlight">\(\quad\)</span>  When only <span class="math notranslate nohighlight">\(s\)</span> of the eigenvalues and eigenvectors are being used, the <span class="math notranslate nohighlight">\(V\)</span> matrix is reduced by ignoring all but the first <span class="math notranslate nohighlight">\(s\)</span> columns and equation 54 is used to reconstruct the data.</p>
+<p>A python PCA algorithm is detailed below</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Algorithm Pricipal component analysis</span>
+
+<span class="n">filename</span><span class="o">=</span><span class="s1">&#39;PCA data.txt&#39;</span>                    <span class="c1"># 3 sets of data 10 values each </span>
+
+<span class="n">xv</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">yv</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">zv</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span> <span class="k">as</span> <span class="n">ff</span><span class="p">:</span>                 <span class="c1"># length not known so read in all data and make list of each</span>
+    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">ff</span><span class="p">:</span>
+        <span class="n">new_str</span> <span class="o">=</span> <span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+        <span class="n">vals</span> <span class="o">=</span> <span class="n">new_str</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+        <span class="n">xv</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">vals</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> 
+        <span class="n">yv</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">vals</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> 
+        <span class="n">zv</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">vals</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span> 
+<span class="n">ff</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+<span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">xv</span><span class="p">)</span>                               <span class="c1"># get length of data </span>
+<span class="n">m</span> <span class="o">=</span> <span class="mi">3</span>                                     <span class="c1"># 3 axes of data</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">n</span><span class="p">,</span><span class="n">m</span><span class="p">),</span><span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span> 
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span> 
+    <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">xv</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>              <span class="c1"># make lists into arrays, data set 0,1,2 with n values each</span>
+    <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">yv</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">zv</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    
+<span class="c1"># finished reading     </span>
+
+<span class="n">S</span> <span class="o">=</span> <span class="mi">1</span>                                     <span class="c1"># select first S components eigenvals</span>
+<span class="n">means</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">n</span><span class="p">,</span><span class="n">m</span><span class="p">),</span><span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span> 
+<span class="n">X</span>     <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">n</span><span class="p">,</span><span class="n">m</span><span class="p">),</span><span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>  
+<span class="n">VS</span>    <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">m</span><span class="p">,</span><span class="n">m</span><span class="p">),</span><span class="n">dtype</span><span class="o">=</span><span class="nb">float</span> <span class="p">)</span>
+<span class="n">Sev</span>   <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">m</span><span class="p">,</span><span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">m</span><span class="p">):</span>                         <span class="c1"># calculate mean value</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="n">s</span> <span class="o">+</span> <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">k</span><span class="p">]</span>
+    <span class="n">means</span><span class="p">[:,</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">s</span><span class="o">/</span><span class="n">n</span>  
+    <span class="k">pass</span> 
+<span class="n">X</span> <span class="o">=</span> <span class="n">data</span> <span class="o">-</span> <span class="n">means</span>                           <span class="c1"># subtract mean </span>
+<span class="n">C</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="n">X</span><span class="p">)</span> <span class="o">@</span> <span class="n">X</span><span class="o">/</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>              <span class="c1"># make covariance matrix ( @ is matrix multiply)</span>
+
+<span class="p">(</span><span class="n">eigval</span><span class="p">,</span><span class="n">eigvec</span><span class="p">)</span> <span class="o">=</span> <span class="n">lina</span><span class="o">.</span><span class="n">eig</span><span class="p">(</span><span class="n">C</span><span class="p">)</span>              <span class="c1"># eigvals, eigvects of covariance. eigvects normalised</span>
+
+<span class="n">indx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">eigval</span><span class="p">)</span>               
+
+<span class="n">Sev</span><span class="p">[:]</span> <span class="o">=</span> <span class="n">eigval</span><span class="p">[</span>  <span class="n">indx</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]]</span>              <span class="c1"># reverse indx array to get largest first</span>
+<span class="n">VS</span><span class="p">[:,:]</span><span class="o">=</span> <span class="n">eigvec</span><span class="p">[:,</span><span class="n">indx</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;eigenvalues and eigenvectors&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">m</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">Sev</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">VS</span><span class="p">[:,</span><span class="n">i</span><span class="p">])</span> 
+
+<span class="n">V</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">m</span><span class="p">,</span><span class="n">S</span><span class="p">))</span>                        <span class="c1"># do PCA here DR is result                      </span>
+<span class="n">V</span><span class="p">[:,:]</span> <span class="o">=</span> <span class="n">VS</span><span class="p">[:,</span><span class="mi">0</span><span class="p">:</span><span class="n">S</span><span class="p">]</span>                         <span class="c1"># select S sorted eigenvectors</span>
+
+<span class="n">Y</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="n">V</span><span class="p">)</span> <span class="o">@</span> <span class="n">np</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>     <span class="c1"># project onto S new axes </span>
+
+<span class="n">DR</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="n">V</span> <span class="o">@</span> <span class="n">Y</span><span class="p">)</span> <span class="o">+</span> <span class="n">means</span>           <span class="c1"># DR is data on new axes </span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>eigenvalues and eigenvectors
+1 4.886993943985875 [ 0.28976365  0.9562666  -0.03989011]
+2 0.11490529483430316 [ 0.94367801 -0.2784974   0.17863651]
+3 0.08368965006871082 [-0.15971484  0.08940578  0.98310619]
+</pre></div>
+</div>
+</div>
+</div>
+<p><img alt="Drawing" src="../_images/analysis-fig17.png" /></p>
+<p>Figure 17. Left: Data plotted with mean values subtracted together with the principal axes. The major principal axis is (1). Right: Data partly reconstructed (also with mean values subtracted for comparison) with the first eigenvector (red) and then the first two eigenvectors combined (light blue).</p>
+<hr class="docutils" />
+<p>The figure shows the data (centred at zero by subtracting the mean values), and the three principal axes. The first eigenvector, (1) the major axis, is drawn in a red line. The lengths are arbitrary. The eigenvalues are <span class="math notranslate nohighlight">\(4.9, 0.11, 0.084\)</span>. On the right of the figure, two plots are superimposed. The light blue symbols are the data reconstructed from the first two eigenvectors using equations 53 and 54. The original data is flattened onto the plane of the first two principal axes because the third coordinate is ignored. The second set of data (red symbols) is reconstructed using only the first eigenvalue and is a set of points lying along the principal axis at their relative positions when projected from the other axes. If all three eigenvectors are used the original data is reformed exactly.</p>
+<p>Related to PCA is the method of singular value decomposition (SVD). Formally, it is a technique in which one matrix is split into three, one of them is diagonal and the other two are row and column orthogonal as are eigenvector modal matrices (Prest et al. 1986). The reason for expanding a matrix in this way is that it can now be inverted even though it is close to being singular, i.e. inverting it would normally produce infinity or a number that approximates this, and normal inversion methods fail. This method could be used to invert the <span class="math notranslate nohighlight">\(A\)</span> matrix in non-linear least squares, in the example given. The interest in SVD is however not primarily to do with the mathematics but in un-ravelling complex information just as in PCA. SVD can be used either directly on raw data, not the covariance as in PCA, or as a mathematical method to perform PCA (Jolliffe 2002).</p>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./chapter-13"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="analysis-Q10-11.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Questions 10 - 13</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="analysis-answers1-11.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Solutions Q1 -11</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Godfrey Beddard<br/>
+        
+            &copy; Copyright 2022.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

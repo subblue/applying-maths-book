@@ -1,0 +1,1869 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vector basics &#8212; Applying Maths in the Chemical &amp; Biomolecular Sciences</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Questions 1 - 24" href="vectors-Q1-24.html" />
+    <link rel="prev" title="6. Vectors." href="vectors-intro.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/book-cover.jpg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Applying Maths in the Chemical & Biomolecular Sciences</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Introduction
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-1/chapter1-intro.html">
+   1. Numbers, Equations, Operators, and Algorithms.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-A.html">
+     Numbers to Algorithms
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-Q1-7.html">
+     Questions 1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-B.html">
+     Trigonometric functions.  Waves
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-Q8-16.html">
+     Questions 8 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-C.html">
+     Sophisticated Counting: permutations, combinations and probability
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-Q17-34.html">
+     Questions 17 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-D.html">
+     10 Modulo arithmetic, delta functions, series, estimation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-Q35-39.html">
+     Questions 35 - 39
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-answers-1-7.html">
+     Solutions Q1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-answers-8-16.html">
+     Solutions Q8 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-answers-17-34.html">
+     Solutions Q17 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-answers-35-39.html">
+     Solutions Q35 - 39
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-2/chapter2-intro.html">
+   2. Complex numbers.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2/chapter2-A.html">
+     Real, imaginary,conjugate and modulus
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2/chapter2-Q-1-9.html">
+     Questions 1 - 9
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2/chapter2-B.html">
+     De Moivre’s theorem and integer powers of complex numbers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2/chapter2-Q-10-13.html">
+     Questions 10 -13
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2/chapter2-C.html">
+     Euler’s theorem
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2/chapter2-Q-14-27.html">
+     Questions 14 - 27
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2/chapter2-answers.html">
+     Solutions Q1 - 27
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-3/differen-intro.html">
+   3. Differentiation.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-A.html">
+     Differentiation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-B.html">
+     Trig functions, logs, power, reciprocals and integrals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-C-Q-4-11.html">
+     Questions 1-11
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-D.html">
+     Product rule and function of function or chain rule.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-E-Q-12-42.html">
+     Questions 12-42
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-F.html">
+     Limits, maxima/minima and Calculus of Variations.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-G-Q-43-73.html">
+     Questions 43 - 73
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-H.html">
+     Numerically finding the roots of an equation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-I-Q-74-85.html">
+     Questions 74 - 85
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-J.html">
+     Minimizing or maximizing with constraints: Lagrange Undetermined Multipliers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-K-Q-86-92.html">
+     Questions 86 - 92
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-L.html">
+     Partial differentiation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-M-Q-93-114.html">
+     Questions 93-114
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-M1.html">
+     Differentiation of vectors
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-N-answers-1-11.html">
+     Solutions Q 1-11
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-O-answers-12-42.html">
+     Solutions Q 12-42
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-P-answers-43-73.html">
+     Solutions Q 43 - 73
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-Q-answers-74-85.html">
+     Solutions Q 74 - 85
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-R-answers-86-92.html">
+     Solutions Q 86 - 94
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-S-answers-93-114.html">
+     Solutions Q 93-114
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-4/integration-intro.html">
+   4. Integration.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-A.html">
+     Integration basics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-Q1-14.html">
+     Questions 1-14
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-B.html">
+     Integration by substitution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-Q15-30.html">
+     Questions 15-30
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-C.html">
+     Using parametric equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-Q31-48.html">
+     Questions 31 - 48
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-D.html">
+     Calculating an Average Value.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-Q49-72.html">
+     Questions 49 - 72
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-E.html">
+     The Variational Method in Quantum Mechanics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-Q73-77.html">
+     Questions 73 - 77
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-F.html">
+     Multiple integrals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-Q78-86.html">
+     Questions 78 - 86
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-G.html">
+     Calculating the energy of a chemical bond using molecular orbitals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-H.html">
+     Line integrals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-Q87-96.html">
+     Questions 87 - 96
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-answers-1-14.html">
+     Solutions Q1 - 14
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-answers-15-30.html">
+     Solutions Q15 - 30
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-answers-31-48.html">
+     Solutions Q31 - 48
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-answers-49-72.html">
+     Solutions Q49 - 72
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-answers-73-96.html">
+     Solutions Q73 - 96
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-5/chapter-5-intro.html">
+   5. Summations, Series and expansion of Functions.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-A.html">
+     Series, averages, partition functions, DNA melting, atom entropy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-B-Q1-13.html">
+     Questions 1 - 13
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-E.html">
+     Maclaurin and Taylor series expansions. Paramagnetic spins
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-F-Q14-34.html">
+     Questions 14 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-G-Q35-44.html">
+     Questions 35 - 44
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-perturbation-A.html">
+     Perturbation Theory
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-perturbation-B-Q45-48.html">
+     Questions 45 - 48
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-perturbation-C.html">
+     Quantum superposition and wavepackets.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-perturbation-D-Q49-52.html">
+     Questions 49 - 52
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-answers-1-7.html">
+     Solutions Q 1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-answers-8-13.html">
+     Solutions Q8 - 13
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-answers-14-26.html">
+     Solutions Q 14 - 26
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-answers-27-32.html">
+     Solutions Q27 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-answers-33-44.html">
+     Solutions Q33 - 44
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-answers-45-52.html">
+     Solutions Q45 - 52
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="vectors-intro.html">
+   6. Vectors.
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Vector basics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="vectors-Q1-24.html">
+     Questions 1 - 24
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="vectors-B.html">
+     Projections and components
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="vectors-Q25-32.html">
+     Questions 25 - 32
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="vectors-C.html">
+     Axes need not be right-angled or of equal length
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="vectors-Q33-38.html">
+     Questions 33 - 38
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="vectors-D.html">
+     Basis sets with more than three dimensions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="vectors-Q39-46.html">
+     Questions 39 - 46
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="vectors-E.html">
+     Cross product or vector product
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="vectors-Q47-52.html">
+     Questions 47 - 52
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="vectors-F.html">
+     Torsion or dihedral angles
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="vectors-Q53-61.html">
+     Questions 53 - 61
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="vectors-G.html">
+     Torque and angular momentum
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="vectors-answers-Q1-24.html">
+     Solutions Q1 - 24
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="vectors-answers-Q25-32.html">
+     Solutions Q25 - 32
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="vectors-answers-Q33-38.html">
+     Solutions Q33 - 38
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="vectors-answers-Q39-46.html">
+     Solutions Q38 - 46
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="vectors-answers-Q47-52.html">
+     Solutions Q47 - 52
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="vectors-answers-Q53-61.html">
+     Solutions Q53 - 61
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-7/matrices-intro.html">
+   7. Matrices
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-A.html">
+     Determinants
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q1-10.html">
+     Questions  1 - 10
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-B.html">
+     Matrices
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q11-16.html">
+     Questions  11 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-C.html">
+     Molecular Group Theory
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q17-30.html">
+     Questions  17 - 30
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-D.html">
+     Rotation matrices: moving molecules
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q31-34.html">
+     Questions 31 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-E.html">
+     Matrices in optics and designing laser cavities
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q35-39.html">
+     Questions 35 - 39
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-F.html">
+     Polarizing optics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q40-44.html">
+     Questions 40 - 44
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-G.html">
+     Solving equations using matrices. Eigenvectors &amp; Eigenvalues.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q45-50.html">
+     Questions 45 - 50
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-H.html">
+     Rate equations and Chemical Kinetics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q51-54.html">
+     Questions 51 - 54
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-I.html">
+     Molecular vibrations and pendulums
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q55-58.html">
+     Questions 55 - 58
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-J.html">
+     Calculating a bond length using moments of inertia
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q59-62.html">
+     Questions 59 - 62
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-answersQ1-10.html">
+     Solutions Q1 - 10
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-answersQ11-16.html">
+     Solutions Q11 - 30
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-answersQ17-30.html">
+     Solutions Q17 - 30
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-answersQ31-34.html">
+     Solutions Q31 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-answersQ35-39.html">
+     Solutions Q35 - 39
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-answersQ40-44.html">
+     Solutions Q40 - 44
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-answersQ45-50.html">
+     Solutions Q45 - 50
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-answersQ51-54.html">
+     Solutions Q51 - 54
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-answersQ55-58.html">
+     Solutions Q55 - 58
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-answersQ59-61.html">
+     Solutions Q59 - 61
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-8/matricesQM-intro.html">
+   8. Matrices in Quantum Mechanics
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-8/matricesQM-A.html">
+     Chapter 8 Matrices in Quantum Mechanics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-8/matricesQM-Q1-7.html">
+     Questions 1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-8/matricesQM-B.html">
+     Basis sets and bra-ket algebra
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-8/matricesQM-Q8-12.html">
+     Questions 8 - 12
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-8/matricesQM-C.html">
+     Continuous basis sets
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-8/matricesQM-answers1-7.html">
+     Solutions Q1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-8/matricesQM-answers8-12.html">
+     Solutions Q8 - 12
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-9/Fourier-intro.html">
+   9. Fourier Series and Transforms.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-A-B.html">
+     Fourier series, Gibbs phenomenon, generalised series.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-questions-1-6.html">
+     Questions 1 - 6
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-C.html">
+     Fourier Transforms
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-D.html">
+     Convolution and Autocorrelation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-questions-7-15.html">
+     Questions 7 - 15
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-E.html">
+     Discrete Fourier  (DFT)  and Fast Fourier transforms (FFT)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-questions-16-21.html">
+     Questions 16 - 21
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-F.html">
+     The Hadamard Transform: Encoding and Decoding
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-2D-Diffraction.html">
+     The Fourier transform in two dimensions: images and x-ray Diffraction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-tomography.html">
+     Computed Tomography
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-answers-1-6.html">
+     Solutions Q 1 - 6
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-answers-7-15.html">
+     Solutions Q 7 - 15
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-answers-16-21.html">
+     Solutions Q 16 - 21
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-10/Diff-eqns-intro.html">
+   10. Differential Equations.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-A.html">
+     Differential Equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-Q1-23.html">
+     Questions 1 - 23
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-B.html">
+     Integrating factors can solve differential equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-C.html">
+     The ‘D’ operator.  Solving linear differential equations with constant coefficients
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-D.html">
+     Simultaneous equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-E.html">
+     Linear equations with variable coefficients
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-F.html">
+     Partial Differential Equations, PDE
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-G.html">
+     PDE examples continued
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-Q24-37.html">
+     Questions 24 - 37
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-answers-1-21.html">
+     Solutions Q1 - 21
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-answers-22-37.html">
+     Solutions Q22 - 37
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-11/num-methods-intro.html">
+   11. Numerical Methods
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-A.html">
+     Numerical Methods
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-Q1-7.html">
+     Questions 1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-B.html">
+     Numerical solution of differential equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-Q8-12.html">
+     Questions 8 - 12
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-C.html">
+     Coupled equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-Q13-16.html">
+     Questions 13 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-D.html">
+     The phase plane, nullclines, and stable points
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-Q17-20.html">
+     Questions 17 - 20
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-E.html">
+     Reaction schemes with feedback
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-Q21-34.html">
+     Questions 21 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-F.html">
+     Boundary value problems: Shooting method
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-Q35-40.html">
+     Questions 35 - 40
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-answers1-7.html">
+     Solutions Q1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-answers8-12.html">
+     Solutions Q8 - 12
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-answers13-16.html">
+     Solutions Q13 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-answers17-20.html">
+     Solutions Q17 - 20
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-answers21-34.html">
+     Solutions Q21 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-answers35-40.html">
+     Solutions Q35 - 40
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-12/monte-carlo-intro.html">
+   12. Monte Carlo Methods
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+  <label for="toctree-checkbox-12">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-A.html">
+     Monte - Carlo
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-Q1-6.html">
+     Questions 1 - 6
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-B.html">
+     Solving rate equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-Q7-10.html">
+     Questions 7 - 10
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-CC.html">
+     Monte Carlo Simulations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-C.html">
+     4 Forster or dipole - dipole energy transfer
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-Q11-17.html">
+     Questions 11 - 17
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-D.html">
+     The Metropolis algorithm
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-answers1-6.html">
+     Solutions Q1 - 6
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-answers7-10.html">
+     Solutions Q7 - 10
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-answers11-17.html">
+     Solutions Q11 - 17
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-13/analysis-intro.html">
+   13. Data Analysis
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+  <label for="toctree-checkbox-13">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-13/analysis-A.html">
+     Characterizing experimental data. Accuracy, precision, mean and standard deviation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-13/analysis-Q1-3.html">
+     Questions 1 - 3
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-13/analysis-B.html">
+     Modelling data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-13/analysis-Q4-9.html">
+     Questions 4 - 9
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-13/analysis-C.html">
+     Modelling data is simpler using matrices
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-13/analysis-Q10-11.html">
+     Questions 10 - 13
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-13/analysis-D.html">
+     Non-linear least squares, gradient expansion, the Levenberg - Marquardt Method
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-13/analysis-answers1-11.html">
+     Solutions Q1 -11
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../chapter-1/chapter1-E.html">
+   SI units, Rounding &amp; converting units, Glossary.
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../references/References.html">
+   References
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../references/Python%20crib.html">
+   Some basic Python instructions with a few examples.
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/chapter-6/vectors-A.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/chapter-6/vectors-A.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Vector basics
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#notation">
+     1.1 Notation
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#basis-sets">
+     1.2 Basis sets
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#position-vectors">
+     1.3 Position vectors
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#surface-and-interfacial-tension">
+       Surface and Interfacial Tension
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#newton-diagrams-molecular-beams-and-reactive-scattering">
+       Newton Diagrams, molecular beams and reactive scattering
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#vector-multiplication-dot-cross-and-triple-products">
+   2 Vector multiplication: dot, cross, and triple products
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dot-product">
+     2.1 Dot product
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cross-product">
+     2.2 Cross product
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#perpendicular-vectors">
+     2.3 Perpendicular vectors
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#parallel-vectors">
+     2.4 Parallel vectors
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     2.5 Basis sets
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#origin">
+     2.6 Origin
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#magnitude">
+     2.7 Magnitude
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vector-addition-and-subtraction">
+     2.8 Vector addition and subtraction
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dot-products-or-inner-products-in-matrix-vector-form">
+     2.9 Dot Products or Inner Products in matrix-vector form
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#example-i-colliding-molecules">
+       Example (i) Colliding molecules
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#example-ii-isbn-number">
+       Example (ii) ISBN number
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#unit-vectors-and-normalizing-vectors">
+     2.10 Unit vectors and normalizing vectors
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-orthonormal-boldsymbol-i-boldsymbol-j-boldsymbol-k-base-vectors">
+     3 The orthonormal
+     <span class="math notranslate nohighlight">
+      \(\boldsymbol i, \boldsymbol j,\boldsymbol k\)
+     </span>
+     base vectors
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#summary">
+     4 Summary
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id2">
+       Dot Product
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#the-cross-product-exists-only-in-three-dimensions">
+       The Cross Product exists only in three dimensions
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="vector-basics">
+<h1>Vector basics<a class="headerlink" href="#vector-basics" title="Permalink to this headline">¶</a></h1>
+<p>Although vectors, such as force or velocity, have two ‘dimensions’ - magnitude and direction - mathematically, they can have any number of dimensions. A vector’s components need not be objects in any physical space; this is not as bizarre as it sounds, for example, your car can be described by its make, colour, manufacture date, engine-capacity, and model. These values can form a vector such as <span class="math notranslate nohighlight">\((Ford,\; yellow,\;2005, 1900cc,\; estate)\)</span>. However, a vector is more than just a list; it is constructed from a basis set. The basis set contains the primitive components and the vector is constructed as a linear combination of these elements; more of this later. The basis set is not always apparent, for example, when drawing arrows on a graph, but in all cases, including topics as diverse as quantum mechanics and geometry, the basis set must be explicitly defined before a calculation is started. However, in apparent contradiction to this, many vector properties and formulae can be obtained by symbolically, which means algebraically, <span class="math notranslate nohighlight">\(\boldsymbol{ A} + \boldsymbol{B}\)</span>, etc., without a thought about the basis set, and some of these calculations are described in Section 6.2. As an aside, W. Hamilton, of Hamiltonian fame, first seems to have used the word ‘vector’. J. Willard Gibbs who developed much of thermodynamics also largely developed vector analysis.</p>
+<div class="section" id="notation">
+<h2>1.1 Notation<a class="headerlink" href="#notation" title="Permalink to this headline">¶</a></h2>
+<p>It is important to distinguish vectors from scalars. Scalars are printed in normal typeface, 1, 2, 3, etc. Symbols with an arrow <span class="math notranslate nohighlight">\(\vec A, \vec B\)</span>, and so forth will represent vectors. Square brackets <span class="math notranslate nohighlight">\([1\;3\;-4]\)</span> are used to represent a vector’s components 1, 3, and -4, so a vector is written as <span class="math notranslate nohighlight">\(A= [1\; 3\; -4]\)</span>. If <span class="math notranslate nohighlight">\(A\)</span> ends at a point on a graph,it is defined to have a basis set ( <span class="math notranslate nohighlight">\(x, y, z\)</span> ) which, when it is necessary to be explicitly stated, will have round brackets as will coordinates of a point in space (4, 0, 2). Some authors put a line above a letter, e.g. <span class="math notranslate nohighlight">\(\bar B\)</span>, to indicate a vector, we will place an arrow over the letters, for example vector <span class="math notranslate nohighlight">\(A\)</span> to <span class="math notranslate nohighlight">\(B\)</span> is written as <span class="math notranslate nohighlight">\(\vec {AB}\)</span>. The vector’s magnitude or length is enclosed in a pair of vertical lines as <span class="math notranslate nohighlight">\(| A|\)</span>; however, vertical lines are also used to indicate the absolute value of a quantity and represent a determinant, but the context should make the meaning clear.</p>
+</div>
+<div class="section" id="basis-sets">
+<h2>1.2 Basis sets<a class="headerlink" href="#basis-sets" title="Permalink to this headline">¶</a></h2>
+<p>In describing many phenomena, such as the static magnetic field in an NMR machine, right-angled (rectilinear) or Cartesian axes are used. A vector can be represented in this space as a linear combination or multiples of three vectors of <em>unit length</em> each one pointing from the origin along each of the x-, y-, or z-axes. These three <em>unit vectors</em> form the basis set, and in three dimensions are normally labelled <span class="math notranslate nohighlight">\(\vec {i}, \vec{j}\)</span>, and <span class="math notranslate nohighlight">\(\vec k \)</span>. In quantum mechanics, for instance, the basis set needed is not always that of spatial coordinates, and often comprises the set of quantum numbers a given atom or molecule possesses. The basis set for a car with the description, yellow Ford estate, 1900 cc, 2005 could be <span class="math notranslate nohighlight">\(\text{(make, colour, manufacturing date, engine size, model)}\)</span> making <span class="math notranslate nohighlight">\(\begin{bmatrix}Ford &amp; yellow&amp; 2005&amp; 1900 &amp; estate\end{bmatrix}\)</span>.</p>
+<p>Before basis sets are considered, some general vector properties are defined, which still apply whether we specifically use them in the form of the components of a basis set or not.</p>
+</div>
+<div class="section" id="position-vectors">
+<h2>1.3 Position vectors<a class="headerlink" href="#position-vectors" title="Permalink to this headline">¶</a></h2>
+<p>Conventionally, positional vectors are drawn as arrows to indicate which way they point, and a set of axes is not usually shown. Some of the infinite number that could be drawn is shown in Fig. 6.1. Notice that in the top left of the figure, vectors <span class="math notranslate nohighlight">\(\vec R\)</span> and <span class="math notranslate nohighlight">\(\vec S\)</span> are the same even though they are displaced from one another because they have the same length and direction. Consequently, on the top right, <span class="math notranslate nohighlight">\(\vec {R} \ne \vec{ S}\)</span> because their directions differ even though their lengths are identical. The coordinate origin of each vector is always at its base, so <span class="math notranslate nohighlight">\(\vec R\)</span> and <span class="math notranslate nohighlight">\(\vec S\)</span> have their own local coordinate origin whether or not they are equal to one another. To add two vectors, form a triangle; to add three, form a rectangle; and form a polygon if there are more, so that the sum of all the vectors is zero.</p>
+<p>In Fig. 6.1 (iii), the vectors <span class="math notranslate nohighlight">\(\vec {A},\vec{ B}\)</span>, and <span class="math notranslate nohighlight">\(\vec C\)</span> are added by placing the head (or tip) of one to the tail of the other and completing the triangle, the equation is therefore</p>
+<div class="math notranslate nohighlight">
+\[\vec {A}+\vec{B}+\vec{C}=\vec{0} \]</div>
+<p>where <span class="math notranslate nohighlight">\(\vec 0\)</span> is the null or zero vector. It follows that <span class="math notranslate nohighlight">\(\vec{A} + \vec {B} = -\vec {C }\)</span> with <span class="math notranslate nohighlight">\(\vec C\)</span> as drawn in the figure with its head at the foot of <span class="math notranslate nohighlight">\(\vec A\)</span>. The vector <span class="math notranslate nohighlight">\(-\vec{C }\)</span> has the same direction as <span class="math notranslate nohighlight">\(\vec C\)</span> but points in the opposite direction, i.e. its arrow-head would be at the head of <span class="math notranslate nohighlight">\(\vec B\)</span>. Alternatively, the equation could be defined as <span class="math notranslate nohighlight">\(\vec{A} + \vec{B} = \vec{C}\)</span> where <span class="math notranslate nohighlight">\(\vec C\)</span> is the resultant of <span class="math notranslate nohighlight">\(\vec{A} + \vec{B}\)</span>. In this case, <span class="math notranslate nohighlight">\(\vec C \)</span>would have been drawn so that it starts at the foot of <span class="math notranslate nohighlight">\(\vec A\)</span> and points to the head of <span class="math notranslate nohighlight">\(\vec B\)</span>.</p>
+<p>It is easy to get muddled with vector directions and the simplest thing is to make <span class="math notranslate nohighlight">\(\vec {A} + \vec{B} + \vec{C} = \vec{0}\)</span> where the arrows are always head to tail, but note that in this case the resultant of adding <span class="math notranslate nohighlight">\(\vec A\)</span> and <span class="math notranslate nohighlight">\(\vec B \)</span> is <span class="math notranslate nohighlight">\(-\vec C\)</span>.</p>
+<p>To subtract the two vectors shown in (iii), to obtain <span class="math notranslate nohighlight">\(\vec{ A} - \vec{B}\)</span>, reverse <span class="math notranslate nohighlight">\(\vec B\)</span>, which means placing the arrow tip on the other end of the line, see figure 1 (iv). Then place the tip of <span class="math notranslate nohighlight">\(\vec A\)</span> to the base of the reversed <span class="math notranslate nohighlight">\(\vec B\)</span>; the result we shall call <span class="math notranslate nohighlight">\(\vec D\)</span>. The subtraction <span class="math notranslate nohighlight">\(\vec{B} - \vec{A }\)</span> produces the vector <span class="math notranslate nohighlight">\(-\vec {D}\)</span>.</p>
+<p><img alt="Drawing" src="../_images/vectors-fig1.png" /></p>
+<p>Figure 1 Diagram showing some examples of adding and subtracting vectors.</p>
+<hr class="docutils" />
+<p>In Fig. 6.2, OA and OB are vectors and because both start at the origin, they are called <em>position vectors</em> . The basis set for OA and OB are unit vectors along the <span class="math notranslate nohighlight">\(x\)</span>- and <span class="math notranslate nohighlight">\(y\)</span>-axes only, because they are two dimensional. Vector OA comprises 3 units of the <span class="math notranslate nohighlight">\(x\)</span>-axis base vector and 2 units of the <span class="math notranslate nohighlight">\(y\)</span>-axis base vector. Later on, we will find that to solve some problems this basis set will have to be written explicitly as <span class="math notranslate nohighlight">\((i, j)\)</span> where <span class="math notranslate nohighlight">\(i\)</span> and <span class="math notranslate nohighlight">\(j\)</span> are the unit vectors along <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span>, but before doing this the properties of positional vectors are described and some problems solved.</p>
+<p>The length of a position vector is, by Pythagoras’ theorem,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle |\vec A|=\sqrt{a_1^2+a_2^2+a_3^2}\]</div>
+<p>where <span class="math notranslate nohighlight">\(a_1, a_2\)</span>, and <span class="math notranslate nohighlight">\(a_3\)</span> are the components; if <span class="math notranslate nohighlight">\(\vec V\)</span> (Fig. 2, right) ends at <span class="math notranslate nohighlight">\((x_1, y_1, z_) = (3, 4, 5)\)</span>
+then <span class="math notranslate nohighlight">\(|\vec V|= \sqrt{9+16+25}=5\sqrt{2}\)</span> .In vector <span class="math notranslate nohighlight">\(\vec{A}, a_1 =3,\; a_2 =2\)</span> or <span class="math notranslate nohighlight">\(\vec {A} =[3\; 2]\)</span> and there is no <span class="math notranslate nohighlight">\(a_3\)</span> because <span class="math notranslate nohighlight">\(\vec A\)</span> is two dimensional; its length is <span class="math notranslate nohighlight">\(13\)</span> .</p>
+<p>The length or projection of <span class="math notranslate nohighlight">\(\vec A\)</span> along the x-axis is <span class="math notranslate nohighlight">\(\vec A_x =|\vec A|\cos(\theta)=3\)</span> and along the <span class="math notranslate nohighlight">\(y\)</span>-axis <span class="math notranslate nohighlight">\(\vec A_y =|\vec A|\sin(\theta)= 2\)</span> and the angle $\theta =\tan^{-1)(2/3).</p>
+<p>The vector <span class="math notranslate nohighlight">\(\vec AB\)</span> is defined as <span class="math notranslate nohighlight">\(\vec {AB} = \vec{B} -\vec {A}\)</span> (see figure 2) and the individual coordinates are subtracted, therefore <span class="math notranslate nohighlight">\(\vec {AB} = (2, -5)\)</span> and has length <span class="math notranslate nohighlight">\(| \vec {AB}| = \sqrt{29} = 5.385\)</span>. This vector is not the same as the dashed line in figure 2 between <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span>, but a parallel one starting at the origin and ending at <span class="math notranslate nohighlight">\((2, -5)\)</span>. This illustrates that each vector has its own set of axes from which it springs; to make <span class="math notranslate nohighlight">\(\vec AB\)</span> start at the end of <span class="math notranslate nohighlight">\(\vec A\)</span> the origin of its axes have to be placed there, not at zero as our calculation did. The angle between two vectors, say <span class="math notranslate nohighlight">\(\vec A\)</span> and <span class="math notranslate nohighlight">\(\vec {AB}\)</span>, can be calculated by trigonometry, but this is clearly awkward and is overcome by learning how to multiply two vectors together. This is described in the next few sections.</p>
+<p><img alt="Drawing" src="../_images/vectors-fig2.png" /></p>
+<p>Figure 2. Two- and three-dimensional Cartesian coordinates. Right: A vector <span class="math notranslate nohighlight">\(\vec V\)</span> is shown pointing from the origin to point <span class="math notranslate nohighlight">\((x_1, y_1, z_)\)</span>.</p>
+<hr class="docutils" />
+<div class="section" id="surface-and-interfacial-tension">
+<h3>Surface and Interfacial Tension<a class="headerlink" href="#surface-and-interfacial-tension" title="Permalink to this headline">¶</a></h3>
+<p>The surface tension of a liquid is a property of the intermolecular forces that exist in a liquid. Mainly these forces are directed into the liquid at the surface with air (or with the liquid’s vapour) and not out of the surface. The energy of molecules at the surface is greater than that of the bulk and consequently it takes energy to increase the surface area. In thermodynamic terms the surface tension <span class="math notranslate nohighlight">\(\gamma\)</span> is the rate of change of Gibbs energy with increase in area, <span class="math notranslate nohighlight">\(dG=\gamma dA\)</span> thus <span class="math notranslate nohighlight">\(\gamma\)</span> has units of force/length. The values of <span class="math notranslate nohighlight">\(\gamma\)</span> are in the range <span class="math notranslate nohighlight">\(20-30\)</span> mN/m for common liquids such as acetone, benzene or ethanol, but are larger for water (<span class="math notranslate nohighlight">\(72.8\)</span>) because hydrogen bonds are broken and in liquid metals such as mercury where <span class="math notranslate nohighlight">\(\gamma =485\)</span> mN/m the surface tension values are large due to the coulomb attraction to be overcome by bringing an ion from the interior to the surface.</p>
+<p><img alt="Drawing" src="../_images/vectors-fig2a1.png" /></p>
+<p>Figure 2a. Left: The interface of a liquid, air and a solid surface showing the force vectors. Right: Examples of ‘whetting’ top, forming a monolayer, and non-whetting lower. The vectors shown as surface tensions <span class="math notranslate nohighlight">\(\gamma\)</span> are more accurately the forces <span class="math notranslate nohighlight">\(\gamma dL\)</span> where <span class="math notranslate nohighlight">\(dL\)</span> is a small increment in length.</p>
+<hr class="docutils" />
+<p>A drop of liquid water will form on a hydrophobic surface, such as polythene or a fatty acid surface and spread on one that is not such as clean glass. The diagram 2a shows this effect. If the liquid on the solid surface in not to spread then the forces must balance. The vertical components are in equilibrium because the surface is solid, the horizontal ones are shown in fig 2a and are</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \gamma_{23}=\gamma_{13}+\cos(\alpha)\gamma_{12}\]</div>
+<p>where the cosine gives the projection of the force onto the horizontal plane. If <span class="math notranslate nohighlight">\(0^\text{o}\lt \alpha &lt;90^\text{o}\)</span> the surface is ‘whetted’ and if <span class="math notranslate nohighlight">\( 90^\text{o} \lt \alpha \lt 180^\text{o}\)</span> ‘non-whetted’ and a bubble forms.</p>
+<p>If one liquid is added to another and they are immiscible, such as a drop of n-decane added to water, then a lens may form on the surface, see figure 2a1. The shape and position of the lens will depend on the three densities and inter-facial tensions. The surface tension of n-decane is 23.9 mN/m and that between it and water is 52 mN/m which is not a huge amount less than that of water’s surface tension because here also hydrogen bonds have to be broken to accommodate the hydrophobic liquid.</p>
+<p><img alt="Drawing" src="../_images/vectors-fig2a2.png" /></p>
+<p>Figure 2a1. A lens forming on a surface between two immiscible liquids. ‘a, O, w’ refer to air, organic liquid and water respectively. The angles are measured relative to a horizontal axis as shown. The vectors <span class="math notranslate nohighlight">\(\gamma\)</span> are numerically equal to the respective inter-facial tensions.</p>
+<hr class="docutils" />
+<p>The condition for equilibrium is that between the vertical and horizontal components, the horizontal ones are</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \gamma_{oa}\cos(\alpha_2)+\gamma_{wo}\cos(\alpha_3)=\gamma_{wa}\cos(\alpha_1)\]</div>
+<p>and vertical (ignoring gravity)</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \gamma_{oa}\sin(\alpha_2)+\gamma_{wa}\sin(\alpha_1)=\gamma_{wo}\sin(\alpha_3)\]</div>
+<p>If the full horizontal force <span class="math notranslate nohighlight">\(\gamma_{wa}\)</span> exceeds the other two then spreading <span class="math notranslate nohighlight">\(S\gt 0\)</span> will occur;</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle S=\gamma_{wa}-\gamma_{oa}-\gamma_{w0}\]</div>
+</div>
+<div class="section" id="newton-diagrams-molecular-beams-and-reactive-scattering">
+<h3>Newton Diagrams, molecular beams and reactive scattering<a class="headerlink" href="#newton-diagrams-molecular-beams-and-reactive-scattering" title="Permalink to this headline">¶</a></h3>
+<p>An important example of vector addition is found in Newton Diagrams which are used to describe the kinematics of  crossed molecular beams. In these experiments two gaseous species are cooled by expansion into a vacuum chamber and the atoms and molecules are made to collide into one another and the direction and energy of the scattered species is measured. Although the atoms or molecules are cooled they still have considerable velocity, a few hundred metres per second is not uncommon. If no reaction takes place the collision is called <em>elastic</em> (Ar + Ne and Kr +HCl for example) and <em>inelastic</em> if there is a chemical reaction such as <span class="math notranslate nohighlight">\(\mathrm{K+CH_3I} \to \mathrm{KI +CH_3}\)</span> or <span class="math notranslate nohighlight">\(\mathrm{H+I_2}\to \mathrm{I+HI}\)</span> and here the difference in velocity provides the kinetic energy to overcome any reaction barrier.</p>
+<p>A rough sketch of the experimental set up is shown in figure 2b. Inside the evacuated chamber, parts of which may be cooled with liquid nitrogen, the gas pressure is so low that there are no collisions between residual gas molecules and the molecular beams, and these only interact where they cross. After collision the species recoil in a manner determined by the potential energy between them, see Chapter 11.3.8 (Numerical Methods). By examining the number of particles detected vs. the measuring angle the shape of the potential energy between the interacting species can be elucidated. In some cases the recoiling species can be observed to be in the backwards direction, which means being scattered towards the source with an angle <span class="math notranslate nohighlight">\(\Theta \gt 90^\text{o}\)</span>.  This is the case in the reaction <span class="math notranslate nohighlight">\(\mathrm{K+CH_3I} \to \mathrm{KI +CH_3}\)</span>. The skimmer works to select only the centre part of the gas jet and so forms the molecular beam. Pumps remove excess gas before it enters the main chamber.</p>
+<p><img alt="Drawing" src="../_images/vectors-fig2a.png" /></p>
+<p>Figure 2b. Sketch of a crossed molecular beam experiment. The oven heats the gas or if metal is used to form a vapour. The difference in temperature is used to determine the collision energy. Most of the gas/vapour is pumped away here but the centre part of the gas jet is passed into the reaction chamber via the skimmer. This is cone shaped with a very small hole in the apex. The main vacuum chamber is kept under ultra low vacuum. The detector can be moved in an arc to collect scattered species.</p>
+<hr class="docutils" />
+<p>The two beams are represented by vectors of length equal to their velocity. Often the beams approach one another at right angles as in figure 2b because this is simplest experimentally. The centre of mass is a constant of the motion and its vector is shown in the figure also. After collision, the centre of mass still moves along the same direction as before collision, but now the species move with different velocities i.e. different speeds and directions, see figure 2d.  In a Newton Diagram is conventional to show the reactant beams and scattered product beams on the same diagram but with the reactant vectors starting at zero together with the products. As there is spherical symmetry along the direction of each beam these angles are equivalent and so vectors can be drawn in a plane and for the purposes of illustration it is assumed scattering is in this plane also. The molecular beams will also have an energy and hence velocity spread, but, for simplicity we assume that this can be ignored.</p>
+<p><img alt="Drawing" src="../_images/vectors-fig2b.png" /></p>
+<p>Figure 2c. Two molecular beams represented by vectors pre-collision. The centre of mass vector <span class="math notranslate nohighlight">\(\vec v_{cm}\)</span> is shown in red. Vectors of approaching species are <span class="math notranslate nohighlight">\(\vec v_1, \vec v_2\)</span>.</p>
+<hr class="docutils" />
+<p><img alt="Drawing" src="../_images/vectors-fig2c.png" /></p>
+<p>Figure 2d. Newton Diagram for <em>elastic</em> scattering of species 1 and 2. In this figure the collision occurs at the origin of vectors <span class="math notranslate nohighlight">\(\vec v_1\)</span> and <span class="math notranslate nohighlight">\(\vec v_2\)</span> and <span class="math notranslate nohighlight">\(\vec v_1', \vec v_2'\)</span> are the same species after collision. The dashed labels indicate post-collision vectors. The detector is placed at angle <span class="math notranslate nohighlight">\(\Theta\)</span> to beam 1.  Species 1 reaching the detector at an angle <span class="math notranslate nohighlight">\(\Theta\)</span> has been scattered to angle <span class="math notranslate nohighlight">\(\chi\)</span> in the centre of mass (c.m.) system. The vectors <span class="math notranslate nohighlight">\(\vec w\)</span> are relative to the centre of mass meaning that the kinetic energy of the centre of mass <span class="math notranslate nohighlight">\(\frac{1}{2}(m_1+m_2)\vec v_c^2\)</span> has been removed.</p>
+<hr class="docutils" />
+<p>In elastic scattering there is no chemical reaction and species 1 is scattered from <span class="math notranslate nohighlight">\(v_1\)</span> into vector <span class="math notranslate nohighlight">\(v_1'\)</span> and species 2, which only changes slightly in this particular diagram, to <span class="math notranslate nohighlight">\(v_2'\)</span>. If the detector is placed at angle <span class="math notranslate nohighlight">\(\Theta\)</span> in the lab. frame, clearly it will capture scattering only in this direction should there be any. The same scattering in the molecular or centre of mass (c.m.) frame is at angle <span class="math notranslate nohighlight">\(\chi\)</span>. Species 1 in the cm frame is vector <span class="math notranslate nohighlight">\(w_1'\)</span>, i.e. vector <span class="math notranslate nohighlight">\(w_1\)</span> is equivalent to vector <span class="math notranslate nohighlight">\(v_1\)</span> but in the c.m. frame, and similarly for species 2. Changing angle <span class="math notranslate nohighlight">\(\Theta\)</span> must also change angle <span class="math notranslate nohighlight">\(\chi\)</span>.</p>
+<p>According to classical mechanics for any impact parameter <span class="math notranslate nohighlight">\(b\)</span> there is a definite scattering angle <span class="math notranslate nohighlight">\(\chi\)</span>. The connection between <span class="math notranslate nohighlight">\(b\)</span> and <span class="math notranslate nohighlight">\(\chi\)</span>  is described in more detail in the chapter on Numerical Methods (11.3.6). The impact parameter is the distance apart that the two species 1 and 2 meet relative the their line of centres, (see Figure 11.4 in the chapter on Numerical Methods) i.e. if species 1 is fixed on the <span class="math notranslate nohighlight">\(x\)</span> axis and species 2 then moves parallel to it in the <span class="math notranslate nohighlight">\(x\)</span> direction the impact parameter is the distance in the <span class="math notranslate nohighlight">\(y\)</span> direction they are apart.</p>
+<p><img alt="Drawing" src="../_images/vectors-fig2d.png" /></p>
+<p>Figure 2e. Sketch showing one particle (atom/molecule) approaching the other with an attractive potential at long range and a repulsive one at short range, such as a Lennard-Jones potential. The scattering angle is <span class="math notranslate nohighlight">\(\chi\)</span> and the impact parameter <span class="math notranslate nohighlight">\(b\)</span>.</p>
+<hr class="docutils" />
+<p>The total kinetic energy and total momentum remain fixed throughout the whole process and so conservation of momentum produces</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle (m_1+m_2)\vec v_{cm} = m_1\vec v_1+m_2\vec v_2\]</div>
+<p>where <span class="math notranslate nohighlight">\(\vec v_{cm}\)</span> is the velocity of the centre of mass and</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \vec v_{cm} = \frac{m_1\vec v_1}{m_1+m_2}+\frac{m_2\vec v_2}{m_1+m_2}\]</div>
+<p>The momentum can also be written as</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle m_1\vec w_1+m_2\vec m_2 = m_1\vec w_1'+m_2\vec m_2'\]</div>
+<p>Conservation of kinetic energy, <span class="math notranslate nohighlight">\(T\)</span> gives</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin{align} T&amp;= \frac{1}{2}m_1\vec v_1\,^2 + \frac{1}{2}m_2\vec v_2\,^2\\ &amp;= \frac{1}{2}m_1(\vec v_1\mathrm{ '}\,)^2+ \frac{1}{2}m_2(\vec v_2\mathrm{ '})^2 \\ &amp;= \frac{1}{2}(m_1+m_2)v_c^2+\frac{1}{2}\mu v_r^2\end{align}\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\mu=m_1m_2/(m_1+m_2)\)</span> is the reduced mass of the colliding pair. The amount <span class="math notranslate nohighlight">\(\mu v_r^2/2\)</span> is the kinetic energy of the colliding species, i.e. the collision energy. Typical values for the velocities are in the hundreds of metres per second but the difference in velocity <span class="math notranslate nohighlight">\(|\vec v_r|\)</span> is what is important to calculate the collision energy. If the relative atomic or molecular masses are 20 and 40 and the relative velocity 100 m/s the collision energy is <span class="math notranslate nohighlight">\(20\cdot 40/60\text{ amu } 10^4\;N_A\approx 482\)</span> kJ/mole where <span class="math notranslate nohighlight">\(N_A\)</span> is Avogadro’s number. This is a relatively large energy and sufficient to cause a chemical reaction if this were possible.</p>
+<p>The initial relative velocity of the two species is ,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \vec v_r=\vec v_1-\vec v_2\]</div>
+<p>(see fig 2c) and after collision,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \vec v_r'=\vec v_1' - \vec v_2'\]</div>
+<p>where <span class="math notranslate nohighlight">\(\vec v_r'\)</span> the final relative velocity is shown in fig 2a. Relative to the moving centre of mass these vectors are</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \vec v_r=\vec w_1-\vec w_2\qquad \vec v_r'=\vec w_1' - \vec w_2'\]</div>
+<p>Construction from the vector diagram gives</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \vec v_1=\vec v_{cm}+w_1, \qquad \vec v_1'= \vec v_{cm}+\vec w_1'\qquad
+\vec v_2=\vec v_{cm}+w_2, \qquad \vec v_2'= \vec v_{cm}+\vec w_2'\]</div>
+<p>which means that the velocity of a species is the velocity of the centre of mass plus the velocity relative to that.</p>
+<p>The relative velocity’s components <span class="math notranslate nohighlight">\(\vec w\)</span> are found by removing the centre of mass, which turns out to be the same as weighting the <span class="math notranslate nohighlight">\(\vec v_r\)</span> with the mass fraction of the other species,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \vec w_1 =\vec v_1-\vec v_{cm}= \vec v_r\frac{m_2}{m_1+m_2} \]</div>
+<p>and similarly for the other vectors,</p>
+<div class="math notranslate nohighlight">
+\[ \vec w_2 = -\vec v_r \frac{m_1}{m_1+m_2}
+\qquad\vec w_1' = \vec v_r' \frac{m_2}{m_1+m_2}\qquad \vec w_2' = -\vec v_r' \frac{m_1}{m_1+m_2}\tag{0}\]</div>
+<p>from which it can be seen that for elastic scattering <span class="math notranslate nohighlight">\(|\vec w_1|=|\vec w_1'|\)</span> and similarly for <span class="math notranslate nohighlight">\(\vec w_2\)</span>. The vectors in each pair are only rotated by <span class="math notranslate nohighlight">\(\chi\)</span> from one another and as energy is related to the magnitude of the velocity squared the total energy is unchanged.</p>
+<p>The direction of the scattering, forwards or backwards can be appreciated with figure 2d and fig 11.5, 11.6 and 11.10 (Chapter 11). If the impact parameter is large the approaching atom skims past the other and its trajectory is only slightly changed and scattering is in the forwards direction. If, on the other hand <span class="math notranslate nohighlight">\(b\)</span> is small the collision is much more ‘head on’ and the scattering returns the atom towards its starting position, effectively a reflection, and the scattering is backwards. The zero angle for scattering is taken to be that given by vector <span class="math notranslate nohighlight">\(\vec v_r\)</span>, or equivalently <span class="math notranslate nohighlight">\(\vec w_1\)</span>, the back scattering at <span class="math notranslate nohighlight">\(180^\text{o}\)</span> is in the direction of <span class="math notranslate nohighlight">\(\vec w_2\)</span>.</p>
+<p>If a chemical reaction can occur the process is called <em>reactive</em> or <em>inelastic</em> scattering and then the mass of the scattered species has changed <span class="math notranslate nohighlight">\(\mathrm{K+CH_3I} \to \mathrm{KI +CH_3}\)</span> for example and so the equations above have to be modified accordingly. Additionally molecules have internal energy and this changes on reaction not least due to the differences in zero point energy but also other vibrational and rotational levels may be excited. This change in total kinetic energy means that the vector of the product must lie between two limits; no internal energy or <span class="math notranslate nohighlight">\(100\)</span>% internal energy and the (product) vector <span class="math notranslate nohighlight">\(\vec w_1'\)</span> can lie anywhere on a circle centred at the c.o.m. with radius <span class="math notranslate nohighlight">\(|\vec w_1'|\)</span>. This also means that because <span class="math notranslate nohighlight">\(\vec v_1'\)</span> is linked to <span class="math notranslate nohighlight">\(\vec w_1'\)</span> it is to be found within a cone whose centre line is <span class="math notranslate nohighlight">\(\vec v_{cm}\)</span>.</p>
+<p>If the impact parameter is large, at grazing incidence where their separation is a little larger than the sum of their radii, then a ‘spectator stripping’ reaction may occur. An example of this is <span class="math notranslate nohighlight">\(\mathrm{K + I_2 \to I + KI}\)</span> where the I atom largely follows the trajectory of I<span class="math notranslate nohighlight">\(_2\)</span> and is measured in the forwards direction. The other extreme case is rebound reaction in which there is backwards scattering, <span class="math notranslate nohighlight">\(\mathrm{K+CH_3I} \to \mathrm{KI +CH_3}\)</span> and <span class="math notranslate nohighlight">\(\mathrm{H + Cl_2 \to HCl + H}\)</span> are examples of this and so the reaction must occur when the K or H atoms approach with small impact parameter, i.e. along the line of centres.</p>
+<p>A third possibility exists which is that the species form a complex instead of immediately scattering. If this complex is long-lived compared to the time it takes to reach the detector, a few milliseconds, then the only product to be observed will be in the direction determined by the centre of mass vector. If the complex is short lived, say a few rotational periods then the products will be sprayed out in all directions as it rotates making analysis very hard. See Bernstein (1982) and Steinfeld (1999) for a full explanation of reaction dynamics.</p>
+</div>
+</div>
+</div>
+<div class="section" id="vector-multiplication-dot-cross-and-triple-products">
+<h1>2 Vector multiplication: dot, cross, and triple products<a class="headerlink" href="#vector-multiplication-dot-cross-and-triple-products" title="Permalink to this headline">¶</a></h1>
+<p>Multiplying two vectors together can be done in <em>two</em> ways; the result is either a scalar (number), or a vector.</p>
+<p><span class="math notranslate nohighlight">\(\quad\)</span> The <em>dot or scalar product</em> <span class="math notranslate nohighlight">\(\vec{A}\cdot \vec{ B}\)</span> of vectors <span class="math notranslate nohighlight">\(\vec{A}\)</span> and <span class="math notranslate nohighlight">\(\vec{B}\)</span> produces a number.</p>
+<p><span class="math notranslate nohighlight">\(\quad\)</span> The <em>cross or vector product</em> <span class="math notranslate nohighlight">\(\vec{A} \times \vec{B}\)</span> produces another vector.</p>
+<p>Triple products, as you would imagine, are more complicated, and can form a vector <span class="math notranslate nohighlight">\(\vec{A} \times (\vec{B} \times \vec C )\)</span> or a scalar <span class="math notranslate nohighlight">\(\vec{A}\cdot \vec B \times \vec C\)</span>. They are described in Sections 17 and 18.</p>
+<div class="section" id="dot-product">
+<h2>2.1 Dot product<a class="headerlink" href="#dot-product" title="Permalink to this headline">¶</a></h2>
+<p>The dot product of two vectors <span class="math notranslate nohighlight">\(\vec{A}\)</span> and <span class="math notranslate nohighlight">\(\vec{B}\)</span> is a number and is defined as</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \vec A\cdot \vec B=|\vec A||\vec B|\cos(\theta) \tag{1}\]</div>
+<p>where <span class="math notranslate nohighlight">\(|\vec A|\)</span> is the absolute value of the vector <span class="math notranslate nohighlight">\(A\)</span>, which is its length, and <span class="math notranslate nohighlight">\(\theta\)</span> is the angle between the vectors. Figure 3 shows a two-dimensional vector. The dot product is a number not a vector because the absolute values <span class="math notranslate nohighlight">\(|\vec A||\vec B|\)</span> are numbers and as shown in figure 3, it is the length of <span class="math notranslate nohighlight">\(A\)</span> times <span class="math notranslate nohighlight">\(|\vec A|\cos(\theta)\)</span>, which is the same as the length of <span class="math notranslate nohighlight">\(B\)</span> times <span class="math notranslate nohighlight">\(|\vec A|\cos(\theta)\)</span>.</p>
+<p>We can find the angle between any two vectors by rearranging equation 1;</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \cos(\theta)=\frac{\vec A \cdot \vec B}{|\vec A||\vec B|} \tag{2}\]</div>
+<p>Before this equation can be evaluated, the vectors <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> have to be represented in a basis set, that is, as components of basis vectors. Usually, and for simplicity, we choose a basis set that runs along the <span class="math notranslate nohighlight">\(x\)</span>-, <span class="math notranslate nohighlight">\(y\)</span>-, and <span class="math notranslate nohighlight">\(z\)</span>-axis. This is described in section 2.5.</p>
+<p>In figure 2c above the centre of mass scattering angle <span class="math notranslate nohighlight">\(\chi\)</span> can be found from the dot product of <span class="math notranslate nohighlight">\(\vec w_1\cdot \vec w_1'\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \vec w_1\cdot \vec w_1' = |\vec w_1|| \vec w_1'|\cos(\chi)\]</div>
+<p>and the vectors are defined above giving</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \vec w_1\cdot \vec w_1' = |\vec v_r|^2\left(\frac{m_2}{m_1+m_2}\right)^2\cos(\chi)\]</div>
+<p>because the scattering is elastic <span class="math notranslate nohighlight">\(|\vec v_r|=|\vec v_r'|\)</span> and <span class="math notranslate nohighlight">\(\vec v_r =\vec v_1-\vec v_2\)</span> which are the original velocities of species 1 and 2. However, without knowing what the vectors are in terms of numbers, i.e. in a basis set, the angle <span class="math notranslate nohighlight">\(\chi\)</span> cannot be found.</p>
+</div>
+<div class="section" id="cross-product">
+<h2>2.2 Cross product<a class="headerlink" href="#cross-product" title="Permalink to this headline">¶</a></h2>
+<p>The dot product is not the only way we can multiply two vectors, this can be done so that
+a vector rather than the scalar is produced. The cross product is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \vec A\times \vec B=|\vec A||\vec B|\sin(\theta)\vec n \tag{3}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\vec n\)</span> is a unit vector perpendicular to vectors <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span>. More details are given in Section 16. This product vector is at right angles to the other two, consequently the cross product is unique to vectors in a three-dimensional space. The cross product, also called the <em>vector product</em> , is used to simplify geometric calculations, such as calculating torsion angles between bonds in proteins or other molecules, or the distance of an atom from the plane of a molecule; for instance, an oxygen molecule above the plane of the haem in haemoglobin, see Q 52. Cross products have other geometric uses, such as calculating the torque when tightening a screw thread, or the angular momentum and velocity of rotating bodies. Cross products also enable us to calculate the area of a triangle or parallelogram.</p>
+</div>
+<div class="section" id="perpendicular-vectors">
+<h2>2.3 Perpendicular vectors<a class="headerlink" href="#perpendicular-vectors" title="Permalink to this headline">¶</a></h2>
+<p>If the angle <span class="math notranslate nohighlight">\(\theta\)</span> between two vectors is <span class="math notranslate nohighlight">\(90^{\text{o}}\)</span>, then the dot product is zero</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \vec A\cdot \vec B=|\vec A||\vec B|\cos(90^{\text{o}})=0 \]</div>
+<p>Because the two vectors are at right angles to one another, the projection of vector <span class="math notranslate nohighlight">\(A\)</span> onto <span class="math notranslate nohighlight">\(B\)</span> and vice versa is zero, but this does not mean that either <span class="math notranslate nohighlight">\(\vec A = \vec 0\)</span> or <span class="math notranslate nohighlight">\(\vec B = \vec 0\)</span>. If two vectors <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> satisfy the condition, <span class="math notranslate nohighlight">\(\vec A \cdot\vec B = \vec 0\)</span> they are said to be <em>orthogonal</em> . If the vectors both have a length of unity <span class="math notranslate nohighlight">\(|\vec A| = |\vec B| = 1\)</span>, they are normalized, and if <span class="math notranslate nohighlight">\(\vec A\cdot \vec B = \vec 0\)</span> then they are also orthogonal and together these two conditions make the vectors <em>orthonormal</em> .</p>
+<p>The cross product of two perpendicular, three-dimensional vectors is not zero, but <span class="math notranslate nohighlight">\(\displaystyle \vec A\times \vec B=|\vec A||\vec B|\)</span> and the unit vector <span class="math notranslate nohighlight">\(\vec n\)</span> is perpendicular to both vectors <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span>.</p>
+</div>
+<div class="section" id="parallel-vectors">
+<h2>2.4 Parallel vectors<a class="headerlink" href="#parallel-vectors" title="Permalink to this headline">¶</a></h2>
+<p>If two vectors are parallel, <span class="math notranslate nohighlight">\(\displaystyle \vec A\cdot \vec B=|\vec A||\vec A|\cos(0) =|\vec A||\vec B|\)</span>, because the angle between them is zero. Therefore, the dot product of a vector with itself is the square of its magnitude, <span class="math notranslate nohighlight">\(\displaystyle \vec A\cdot \vec A=|\vec A|^2\)</span> and this is a convenient way of calculating its length.  The cross product of two three-dimensional vectors is zero <span class="math notranslate nohighlight">\(\displaystyle \vec A\times \vec B=|\vec A||\vec B|\sin(0)\vec n=0\)</span>.</p>
+<p><img alt="Drawing" src="../_images/vectors-fig3.png" /></p>
+<p>Figure 3. Left: Vector <span class="math notranslate nohighlight">\(\vec A\)</span> with components <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> on the <span class="math notranslate nohighlight">\(x\)</span>- and <span class="math notranslate nohighlight">\(y\)</span>- axes; <span class="math notranslate nohighlight">\(a = |\vec A|\cos(\theta), b = |\vec A\sin(\theta)\)</span>. Middle and right: Projection of vector <span class="math notranslate nohighlight">\(A\)</span> on <span class="math notranslate nohighlight">\(B\)</span> which is <span class="math notranslate nohighlight">\(|\vec A|\cos(\theta)\)</span> and of <span class="math notranslate nohighlight">\(B\)</span> on <span class="math notranslate nohighlight">\(A\)</span> which is <span class="math notranslate nohighlight">\(|\vec B|\cos(\theta)\)</span>.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="id1">
+<h2>2.5 Basis sets<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>Once we define a basis set then specific, rather than general calculation can be performed. For example, if vectors <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> of figure 3 are given magnitudes we cannot tell what the angle between them is because we do not know how <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> relate to one another. A basis set provides the scaffold, as it were, on which the vectors are fixed. It is possible to choose different basis sets to solve the same problem and to convert between one set and another. The following three properties of vectors and basis sets are important:</p>
+<p>(i) Every vector is always made from a linear combination of the components of its basis set.</p>
+<p>(ii) Because a basis set is the minimal possible set, it cannot be decomposed any further or made any simpler.</p>
+<p>(iii) Any vector is unchanged by changing its basis set and therefore its coefficients must change between bases.</p>
+<p>For example, the vector <span class="math notranslate nohighlight">\(A\)</span> in figure 3 has components of <span class="math notranslate nohighlight">\(a\)</span> units on the <span class="math notranslate nohighlight">\(x\)</span>-axis and <span class="math notranslate nohighlight">\(b\)</span> on the <span class="math notranslate nohighlight">\(y\)</span>- and is therefore described as <span class="math notranslate nohighlight">\(\vec A = a\boldsymbol i + b\boldsymbol j\)</span>. In Cartesian coordinates, the basis set most often used is made of orthogonal, unit vectors along each of the <span class="math notranslate nohighlight">\(x-, y-\)</span> and <span class="math notranslate nohighlight">\(z\)</span>-axes; conventionally we represent this as the basis set <span class="math notranslate nohighlight">\((\boldsymbol i, \boldsymbol j,\boldsymbol k)\)</span> where <span class="math notranslate nohighlight">\(\boldsymbol i, \boldsymbol j\)</span> and <span class="math notranslate nohighlight">\(\boldsymbol k\)</span> are <em>orthogonal unit vectors</em> . Figure 4 shows the basis set vectors and a three-dimensional vector separated into it basis set components. A unit vector has length of <span class="math notranslate nohighlight">\(1\)</span>, so a vector can be made from multiples of this. The <span class="math notranslate nohighlight">\((\boldsymbol i, \boldsymbol j, \boldsymbol k)\)</span> basis set is described more detail in Section 3.</p>
+<p>Any vector can always be represented in several different but equivalent ways depending on which is easiest. We can choose to manipulate a three-dimensional vector in multiples of unit basis vectors <span class="math notranslate nohighlight">\(\boldsymbol i, \boldsymbol j, \boldsymbol k\)</span> or transform it into column or row matrices. The three-dimensional <span class="math notranslate nohighlight">\(\boldsymbol i, \boldsymbol j, \boldsymbol k\)</span> basis set written as three single column matrices and in standard form is</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle (\boldsymbol i,\boldsymbol j,\boldsymbol k)\equiv \begin{bmatrix}1\\0\\0\end{bmatrix} \begin{bmatrix}0\\1\\0\end{bmatrix} \begin{bmatrix}0\\0\\1\end{bmatrix} \end{split}\]</div>
+<p>where the individual vectors are <span class="math notranslate nohighlight">\(\displaystyle i=\begin{bmatrix}1\\0\\0\end{bmatrix}\)</span> and similarly for <span class="math notranslate nohighlight">\(j,k\)</span>. A vector <span class="math notranslate nohighlight">\(2\boldsymbol i + 3\boldsymbol j - \boldsymbol k\)</span> put into the column matrix form of the basis set is represented as</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle (2\boldsymbol i + 3\boldsymbol j - \boldsymbol k)= \begin{bmatrix}2\\0\\0\end{bmatrix} \begin{bmatrix}0\\3\\0\end{bmatrix} \begin{bmatrix}0\\0\\-1\end{bmatrix} \end{split}\]</div>
+<p>or more commonly as</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle (2\boldsymbol i + 3\boldsymbol j - \boldsymbol k)= \begin{bmatrix}2\\3\\-1\end{bmatrix}\end{split}\]</div>
+<p>If the basis set is chosen as row matrices then <span class="math notranslate nohighlight">\(\displaystyle (2\boldsymbol i + 3\boldsymbol j - \boldsymbol k)\equiv [2,3,-1]\)</span></p>
+<p>The matrix formulation of vectors is very adaptable and not restricted to three dimensions; in fact, any number of dimensions can be used. However, the <span class="math notranslate nohighlight">\((\boldsymbol i  \boldsymbol j  \boldsymbol k)\)</span> basis set can only be used up to three dimensions.</p>
+<p>The elements of basis set can be numbers, or they could be a vector, a matrix, or a function or a set of functions. Some examples are considered more fully after some basic properties have been described. Using functions as a basis set is described in Chapter 9. For the present, we shall assume that a suitable basis set always exists and perform some calculations.</p>
+</div>
+<div class="section" id="origin">
+<h2>2.6 Origin<a class="headerlink" href="#origin" title="Permalink to this headline">¶</a></h2>
+<p>If it is not otherwise specified, it is assumed that the origin of a vector is at the centre of the coordinates, i.e. at <span class="math notranslate nohighlight">\((0, 0, 0)\)</span>. If this is not the case and the origin is at some other place, <span class="math notranslate nohighlight">\((a, b, c)\)</span> then we must subtract <span class="math notranslate nohighlight">\(a, b\)</span>, and <span class="math notranslate nohighlight">\(c\)</span> from each of the three components and use <span class="math notranslate nohighlight">\((x-a,\;  y-b,\; z-c)\)</span>  as our vector. This has the effect of moving the origin to the base of our vector. In addition, when subtracting two sets of coordinates to make a vector, its base is now at the origin of the new set of coordinates, i.e. the origin has again been shifted. This is important; a vector always starts at the origin of its own local coordinates, which may not be the same as initially drawn on a diagram, so some care is needed; vectors are only a direction and length in space; they carry around their own coordinate system or basis set with them but this is hardly ever drawn.</p>
+</div>
+<div class="section" id="magnitude">
+<h2>2.7 Magnitude<a class="headerlink" href="#magnitude" title="Permalink to this headline">¶</a></h2>
+<p>The magnitude of a vector <span class="math notranslate nohighlight">\(A\)</span>, which may be imagined as its length, is used as <span class="math notranslate nohighlight">\(|\vec{A}|\)</span>. If <span class="math notranslate nohighlight">\(\vec{A} = [a b c]\)</span> where <span class="math notranslate nohighlight">\(A\)</span> has components <span class="math notranslate nohighlight">\(a, b, c\)</span> in the 3-dimensional basis set <span class="math notranslate nohighlight">\((x, y, z)\)</span>, then</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle |\vec A|\sqrt{a^2+b^2+c^2} \tag{3}\]</div>
+<p>but we can equivalently calculate</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle |\vec{A}|=\sqrt{\vec A\cdot \vec A} \tag{4}\]</div>
+<p>because any vector is parallel to itself and therefore <span class="math notranslate nohighlight">\(\theta = 0\)</span> in the dot product. This latter equation is very useful indeed when using the computer to do calculations because the dot product is usually a in-built function.</p>
+<p><img alt="Drawing" src="../_images/vectors-fig4.png" /></p>
+<p>Figure 4. The orthogonal and normalized base vectors <span class="math notranslate nohighlight">\((i, j, k )\)</span>.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="vector-addition-and-subtraction">
+<h2>2.8 Vector addition and subtraction<a class="headerlink" href="#vector-addition-and-subtraction" title="Permalink to this headline">¶</a></h2>
+<p>Addition follows the familiar rules, <em>except</em> that each element in the vector adds separately;
+for example, the three-dimensional vectors represented by the two sets of coordinates is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle [1\quad 3\quad 4] +[-2\quad 4\quad 5]=[-1\quad 1\quad -1]\]</div>
+<p>and subtracting similarly</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle [1\quad 3\quad 4] -[-2\quad 4\quad 5]=[3\quad -7\quad 9]\]</div>
+<p>which, in effect, is what is done when drawing out a vector triangle. The same rule applies when adding matrices. In row and column matrix-vector notation, the same vector addition is written in matrix form as</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin{bmatrix}1\\-3\\4\end{bmatrix} +\begin{bmatrix}-2\\4\\5\end{bmatrix}= \begin{bmatrix}-1\\1\\-1\end{bmatrix}\end{split}\]</div>
+<p>Addition is <em>commutative</em></p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \vec{A} +\vec{B} = \vec{B} + \vec{A}\]</div>
+<p>and associative</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \vec{A} +(\vec{B}+\vec{C}) = (\vec{A} +\vec{B})+\vec{C}\]</div>
+<p>which means that vectors can be added or subtracted in any order.</p>
+</div>
+<div class="section" id="dot-products-or-inner-products-in-matrix-vector-form">
+<h2>2.9 Dot Products or Inner Products in matrix-vector form<a class="headerlink" href="#dot-products-or-inner-products-in-matrix-vector-form" title="Permalink to this headline">¶</a></h2>
+<p>The dot product using vectors in a three-dimensional basis set is calculated by defining the vectors as one-dimensional matrices, multiplying element by element and summing the result. See chapter 7 for matrix multiplication. The result is</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \qquad\qquad\vec A \cdot \vec B=\begin{bmatrix} a &amp; b &amp; c \end{bmatrix}\begin{bmatrix} d\\e\\f \end{bmatrix} \qquad\qquad\qquad\qquad \text{(5)}\end{split}\]</div>
+<p>In a dot product, the left-hand of the two vectors is <em>always</em> written as a row and the right always a column. The vector dot product is also called the vector <em>inner product</em> .</p>
+<p>Changing a row into a column vector is called <em>transposing</em> , and this operation is indicated by a superscript <span class="math notranslate nohighlight">\(T\)</span>. In quantum mechanics, the complex conjugate of each element in the row is always made when the dot product is formed from column vectors. The transpose is</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin{bmatrix} a &amp; b &amp; c \end{bmatrix}^T = \begin{bmatrix} a \\ b \\c \end{bmatrix}  \end{split}\]</div>
+<p>The angle between two vectors is <span class="math notranslate nohighlight">\(\cos(\theta) = (\vec A\cdot \vec B )/|\vec{A}||\vec{B}|\)</span>, equation 2, which can be expanded in the basis set giving</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \cos(\theta)=\frac{ad+be+cf}{\sqrt{a^2+b^2+c^2}\sqrt{d^2+e^2+f^2}} \tag{6}\]</div>
+<p>The normalization terms on the bottom of this equation are just the length of each vector as calculated by Pythagoras’ theorem. The angle between two vectors <span class="math notranslate nohighlight">\(\vec A = [3\quad 2\quad 1]\)</span> and <span class="math notranslate nohighlight">\(\vec B=[-1\quad  0 \quad 1]\)</span> is calculated as follows: the length of each vector is <span class="math notranslate nohighlight">\(|\vec A|= \sqrt{9+4+1} =\sqrt{14}\)</span> and <span class="math notranslate nohighlight">\(|\vec B|= \sqrt{1+0+1} =\sqrt 2\)</span>, and the dot product is <span class="math notranslate nohighlight">\(\displaystyle \begin{bmatrix} 3&amp;2&amp;1 \end{bmatrix}\begin{bmatrix} -1\\0\\1  \end{bmatrix}=-2\)</span> and the angle <span class="math notranslate nohighlight">\(\cos(\theta)= -2/(\sqrt 14\sqrt 2)\)</span> which is <span class="math notranslate nohighlight">\(112.2^\text{o} \)</span>.</p>
+<div class="section" id="example-i-colliding-molecules">
+<h3>Example (i) Colliding molecules<a class="headerlink" href="#example-i-colliding-molecules" title="Permalink to this headline">¶</a></h3>
+<p>Newton diagrams describing elastic scattering are given above. The angles  and vectors are shown in figure 2c. Suppose the initial speeds in an experiment colliding <span class="math notranslate nohighlight">\(\mathrm{Kr+HI}\)</span> are <span class="math notranslate nohighlight">\(800\)</span> and <span class="math notranslate nohighlight">\(250\)</span> m/s respectively. The masses are <span class="math notranslate nohighlight">\(84\)</span> and <span class="math notranslate nohighlight">\(128\)</span> amu and the scattering angle is  <span class="math notranslate nohighlight">\(\chi =25^\text{o}\)</span> in the c.o.m. frame, see fig 2b. We want to calculate the angle <span class="math notranslate nohighlight">\(\Theta\)</span>, the detector angle in the lab frame and also the angle <span class="math notranslate nohighlight">\(\delta\)</span> which is used in the transformation from lab to centre of mass coordinates. It is necessary, therefore, to calculate <span class="math notranslate nohighlight">\(\vec v_1'\)</span> (see figure 2c) and to do this <span class="math notranslate nohighlight">\(\vec w_1\)</span> and <span class="math notranslate nohighlight">\(\vec w_1'\)</span> are needed.</p>
+<p>The initial vectors are <span class="math notranslate nohighlight">\(\vec v_1 =\begin{bmatrix} 800 &amp; 0\end{bmatrix}, \quad \vec v_2 =\begin{bmatrix} 0 &amp; 250\end{bmatrix}\)</span>, thus <span class="math notranslate nohighlight">\(\vec v_r=\vec v_1-\vec v_2=\begin{bmatrix} 800 &amp; -250\end{bmatrix}\)</span> with magnitude <span class="math notranslate nohighlight">\(|v_r|=\sqrt{800^2+250^2}\)</span>.</p>
+<p>The dot product connecting the <span class="math notranslate nohighlight">\(\vec w\)</span> vectors (see equation 0) to the scattering angle <span class="math notranslate nohighlight">\(\chi\)</span> is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \vec w_1\cdot \vec w_1' = |\vec v_r|^2\left(\frac{m_2}{m_1+m_2}\right)^2\cos(\chi)\]</div>
+<p>where <span class="math notranslate nohighlight">\(|\vec v_r|=|\vec v_r'|\)</span>. However, this does not help  as the <span class="math notranslate nohighlight">\(w\)</span> vectors on the left-hand side of the equation have to be found another way because we cannot determine the individual vectors from the result of the dot product.  From construction (figure 2c) these vectors are <span class="math notranslate nohighlight">\(\vec w_1=\vec v_1-\vec v_{cm}\,, \quad \vec w_1'=\vec v_1'-\vec v_{cm}\)</span>.</p>
+<p>The centre of mass vector is <span class="math notranslate nohighlight">\(\displaystyle \vec v_{cm} = \frac{m_1\vec v_1}{m_1+m_2}+\frac{m_2\vec v_2}{m_1+m_2}\)</span> which using the values given is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \vec v_{cm}=\frac{84}{212}\begin{bmatrix}800 &amp; 0 \end{bmatrix}+\frac{128}{212}\begin{bmatrix}0 &amp;250 \end{bmatrix} = \begin{bmatrix}317 &amp; 151\end{bmatrix}\]</div>
+<p>and so <span class="math notranslate nohighlight">\(\vec w_1= \begin{bmatrix}800-317 &amp; 151\end{bmatrix}\)</span> but <span class="math notranslate nohighlight">\(\vec w_1'\)</span> has to be found and, as it has the same length as <span class="math notranslate nohighlight">\(\vec w_1\)</span> but a different angle, it can be found by rotating <span class="math notranslate nohighlight">\(\vec w_1\)</span> about the centre of mass. The rotation is performed by using a matrix, and is described in section 7 in chapter 7 Matrices. The first step is, however, to make sure rotation is about zero by removing the centre of mass coordinates from vector <span class="math notranslate nohighlight">\(\vec w_1\)</span> then rotate by <span class="math notranslate nohighlight">\(-\chi\)</span> to make rotation anticlockwise. The operation is to right multiply the rotation matrix by the vector <span class="math notranslate nohighlight">\(\vec w_1\)</span>, less the centre of mass, then add this back after rotation, viz,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin{bmatrix}\cos(\chi)&amp; \sin(\chi)\\ -\sin(\chi)&amp;\cos(\chi)\end{bmatrix} \begin{bmatrix}800-317\\0-151 \end{bmatrix}+\begin{bmatrix}317\\151 \end{bmatrix}=\begin{bmatrix}818.5\\218.3 \end{bmatrix}\end{split}\]</div>
+<p>which are the coordinates at the end of <span class="math notranslate nohighlight">\(\vec w_1'\)</span> therefore  <span class="math notranslate nohighlight">\(\vec v_1'=\begin{bmatrix}818.5 &amp; 218.3\end{bmatrix}\)</span>. This is also the coordinates at the tip of <span class="math notranslate nohighlight">\(\vec v_1'\)</span> and so the angle <span class="math notranslate nohighlight">\(\Theta = \tan^{-1}(218.3/818.5) \approx 15^\text{o}\)</span>.</p>
+<p>Now that we have both <span class="math notranslate nohighlight">\(\vec w_1'\)</span> and <span class="math notranslate nohighlight">\(\vec v_1'\)</span> the dot product will give the angle</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \cos(\delta)= \frac{\vec w_1'\cdot\vec v_1'}{|\vec w_1'||\vec v_1'|}\]</div>
+<p>and the calculation is simple!</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle |\vec v_1'| = \sqrt{818.5^2+218.3^2}=847.1,\quad|\vec w_1'| = \sqrt{ (818.5-317)^2+(218.3-151)^2} = 505.9\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \vec w_1'\cdot\vec v_1'= \begin{bmatrix}818.5 &amp; 218.3 \end{bmatrix}\begin{bmatrix}818.5-317 \\ 218.3-151 \end{bmatrix}=425169.34\end{split}\]</div>
+<p>making <span class="math notranslate nohighlight">\(\delta = 7.3^\text{o}\)</span>. The Jacobian to transform from lab to centre of mass coordinates is <span class="math notranslate nohighlight">\(\displaystyle \left(\frac{|v_1'|}{|w_1'|}\right)^2\frac{1}{|\cos(\delta)|}\)</span>.</p>
+<p>The calculation starting with <span class="math notranslate nohighlight">\(\Theta\)</span> and finding <span class="math notranslate nohighlight">\(\chi\)</span> is a little different. Once <span class="math notranslate nohighlight">\(\vec w_1\)</span> is found the vector <span class="math notranslate nohighlight">\(\vec w_1'\)</span> will lie on a circle of radius <span class="math notranslate nohighlight">\(|\vec w_1|\)</span> with its centre at the centre of mass. The vector <span class="math notranslate nohighlight">\(\vec v_1'\)</span> will intersect this at two points and then <span class="math notranslate nohighlight">\(\vec w_1'\)</span> can be found by substituting <span class="math notranslate nohighlight">\(y=x\tan(\Theta)\)</span> into the equation for the circle described.</p>
+</div>
+<div class="section" id="example-ii-isbn-number">
+<h3>Example (ii) ISBN number<a class="headerlink" href="#example-ii-isbn-number" title="Permalink to this headline">¶</a></h3>
+<p>An unexpected application of the dot product of a large vector is that used to check the ISBN number of a book. This code is unique to a book and also to each edition. A typical code is <span class="math notranslate nohighlight">\(978-0-19-923091-4\)</span> where the last digit is the check digit used to determine if the rest of the code is correct. This is clearly useful when a book is ordered, for example, if the check digit is not <span class="math notranslate nohighlight">\(4\)</span> a simple swapping of two digits may have occurred.</p>
+<p>The calculation to produce the check digit (<span class="math notranslate nohighlight">\(4\)</span>) is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle 10-\left(\begin{bmatrix}1&amp;3&amp;1&amp;3&amp;1&amp;3&amp;1&amp;3&amp;1&amp;3&amp;1&amp;3\end{bmatrix}\cdot \begin{bmatrix}9&amp;7&amp;8&amp;0&amp;1&amp;9&amp;2&amp;3&amp;0&amp;9&amp;1\end{bmatrix}^T\right)\text{mod}(10)=4\]</div>
+</div>
+</div>
+<div class="section" id="unit-vectors-and-normalizing-vectors">
+<h2>2.10 Unit vectors and normalizing vectors<a class="headerlink" href="#unit-vectors-and-normalizing-vectors" title="Permalink to this headline">¶</a></h2>
+<p>Unit vectors, as their name suggests, have a length of <span class="math notranslate nohighlight">\(1\)</span>. A vector can be made into a unit vector by dividing by its length. If a vector is <span class="math notranslate nohighlight">\(\vec v = [a\quad b\quad c\quad d]\)</span> the normalizing condition is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle N^2(a^2 +b^2 +c^2 +d^2)=1 \tag{7}\]</div>
+<p>where <span class="math notranslate nohighlight">\(N\)</span> is the normalization constant. If, for example, <span class="math notranslate nohighlight">\(a = 2, b = -4, c = 5, d = 1\)</span>, then <span class="math notranslate nohighlight">\(N^2(4+16+25+1)=1\)</span> or <span class="math notranslate nohighlight">\(N=1/\sqrt{46}\)</span> and the normalized or unit vector is <span class="math notranslate nohighlight">\([0.295\quad 0.589\quad 0.737\quad 0.147]\)</span>.</p>
+<p>A second method is to use the dot product formula on the same vector, <span class="math notranslate nohighlight">\(\vec v \cdot \vec v\)</span>, and because these must be parallel, <span class="math notranslate nohighlight">\(\cos(\theta) = 1\)</span>, then,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \vec v_n =\frac{\vec v}{|\vec v |}=\frac{\vec v}{\sqrt{\vec v \cdot \vec v} }  \tag{8}\]</div>
+<p>where <span class="math notranslate nohighlight">\(|\vec v|\)</span> is the absolute value of length of the vector</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle |\vec v|=\sqrt{\vec v \cdot \vec v} =\sqrt{a^2+b^2+c^2+d^2} \tag{9}\]</div>
+<p>The angle <span class="math notranslate nohighlight">\(\theta\)</span> between and  two <em>normalised</em> vectors <span class="math notranslate nohighlight">\(\vec v_n\; \vec w_n\)</span> is found using</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \cos(\theta) =\vec v_n \cdot \vec w_n \tag{10}\]</div>
+</div>
+<div class="section" id="the-orthonormal-boldsymbol-i-boldsymbol-j-boldsymbol-k-base-vectors">
+<h2>3 The orthonormal <span class="math notranslate nohighlight">\(\boldsymbol i, \boldsymbol j,\boldsymbol k\)</span> base vectors<a class="headerlink" href="#the-orthonormal-boldsymbol-i-boldsymbol-j-boldsymbol-k-base-vectors" title="Permalink to this headline">¶</a></h2>
+<p>A general method for describing a three-vector is to express it in terms of vectors along a set of axes. If the mutually perpendicular set of <span class="math notranslate nohighlight">\(x\)</span>-, <span class="math notranslate nohighlight">\(y\)</span>-, and <span class="math notranslate nohighlight">\(z\)</span>-axes is chosen, the basis set is orthogonal set. If the base vectors are also normalized to <span class="math notranslate nohighlight">\(1\)</span>, each base vector is a unit vector and the set is orthonormal. Conventionally, orthonormal base vectors are labelled <span class="math notranslate nohighlight">\(\boldsymbol i,\boldsymbol j,\boldsymbol k\)</span> and any vector in this basis is written as,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \vec v = a\boldsymbol{i} +b\boldsymbol j+c\boldsymbol k \]</div>
+<p>where just for  this special basis set the vectors <span class="math notranslate nohighlight">\(\boldsymbol i,\boldsymbol j,\boldsymbol k\)</span> are in bold italic. The vector <span class="math notranslate nohighlight">\(\vec v\)</span> is interpreted as having length <span class="math notranslate nohighlight">\(a\)</span> along the <span class="math notranslate nohighlight">\(x\)</span> axis direction and <span class="math notranslate nohighlight">\(b,c\)</span> along <span class="math notranslate nohighlight">\(y\)</span> and <span class="math notranslate nohighlight">\(z\)</span> respectively, hence the length of the vector is <span class="math notranslate nohighlight">\(\sqrt{a^2+b^2+c^2}\)</span>.</p>
+<p>To be clear: any vector such as <span class="math notranslate nohighlight">\(\vec v\)</span> is the linear combination of base vectors <span class="math notranslate nohighlight">\(\boldsymbol i,\boldsymbol j\)</span>, and <span class="math notranslate nohighlight">\(\boldsymbol k\)</span> taken in proportions <span class="math notranslate nohighlight">\(a, b\)</span>, and <span class="math notranslate nohighlight">\(c\)</span>. This is why the vectors <span class="math notranslate nohighlight">\(\boldsymbol i,\;\boldsymbol j\)</span>, and <span class="math notranslate nohighlight">\(\boldsymbol k\)</span> are called the base vectors or the basis set for describing other vectors.</p>
+<p>If two vectors are</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle v = 3\boldsymbol i - 4\boldsymbol j + \boldsymbol k \text{  and  } w = 5\boldsymbol i + 8\boldsymbol j - 10\boldsymbol k\]</div>
+<p>their dot product is <span class="math notranslate nohighlight">\(\vec v \cdot \vec w = -27\)</span>. By multiplication, the following sum results:</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \vec v \cdot \vec w  = 15 \boldsymbol{i\cdot i} - 32\boldsymbol{j\cdot j} - 10\boldsymbol{k\cdot k} + 24\boldsymbol{i\cdot j} - 30\boldsymbol{k\cdot j} - 20\boldsymbol{j\cdot i} + 40\boldsymbol{j\cdot k} + 5\boldsymbol{k\cdot i} + 8\boldsymbol{k\cdot j}\]</div>
+<p>At first sight, this seems a very complicated way of finding the dot product. However, the full multiplication is not necessary for two reasons; first, because <span class="math notranslate nohighlight">\(\boldsymbol i,\boldsymbol j\)</span>, and <span class="math notranslate nohighlight">\(\boldsymbol k\)</span> are themselves <em>orthogonal</em> vectors of length <span class="math notranslate nohighlight">\(1\)</span>, i.e. normalized so the dot product is <span class="math notranslate nohighlight">\(1\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \boldsymbol{i\cdot i} = \boldsymbol{j\cdot j} = \boldsymbol{k\cdot k} = 1\]</div>
+<p>because any vector is clearly parallel to itself and <span class="math notranslate nohighlight">\(\cos(0) = 1\)</span>. Secondly, the base vectors <span class="math notranslate nohighlight">\(\boldsymbol i,\boldsymbol j\)</span>, and <span class="math notranslate nohighlight">\(\boldsymbol k\)</span> are orthogonal, because they lie along axes mutually set at <span class="math notranslate nohighlight">\(90^\text{o}\)</span>; therefore <span class="math notranslate nohighlight">\(\boldsymbol{i\cdot j} =\boldsymbol{ j\cdot k} = \boldsymbol{i\cdot k} = 0\)</span>. We can calculate a dot product fairly simply with the following rules:</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \boldsymbol{i\cdot i} = \boldsymbol{j\cdot j} = \boldsymbol{k\cdot k} = 1, \tag{11}\]</div>
+<div class="math notranslate nohighlight">
+\[\displaystyle \boldsymbol{i\cdot j} = \boldsymbol{j\cdot k} = \boldsymbol{i\cdot k} = 0 \tag{12}\]</div>
+<p>Stated in words:</p>
+<p>Calculate the dot product by multiplying both of the <span class="math notranslate nohighlight">\(\boldsymbol i\)</span> vector terms together, making <span class="math notranslate nohighlight">\(\boldsymbol {i\cdot i} = 1\)</span>, do the same for <span class="math notranslate nohighlight">\(\boldsymbol j\)</span> and <span class="math notranslate nohighlight">\(\boldsymbol k\)</span>. Ignore, or make zero, all other cross terms, such as, <span class="math notranslate nohighlight">\(\boldsymbol {i\cdot j}\)</span>.</p>
+<p>Therefore, for our example   <span class="math notranslate nohighlight">\(\vec v \cdot \vec w = 15-32-10 =-27 \)</span> and this is the same result as would be obtained from the vector dot product equation 5,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin{bmatrix} 3&amp;-4 &amp;1 \end{bmatrix}\begin{bmatrix} 5\\8\\-10 \end{bmatrix} =-27 \end{split}\]</div>
+<p>This is an important point as it means we have two ways of calculating vectors. When vectors have more than three dimensions, the matrix methods become far simpler, particularly when using the computer to do calculations.</p>
+<p><img alt="Drawing" src="../_images/vectors-fig5.png" /></p>
+<p>Figure 5. Unit vectors <span class="math notranslate nohighlight">\(\boldsymbol i\)</span>, <span class="math notranslate nohighlight">\(\boldsymbol j\)</span>, <span class="math notranslate nohighlight">\(\boldsymbol k\)</span>, and the vector, <span class="math notranslate nohighlight">\(\vec v = a\boldsymbol i+ b\boldsymbol j+ c\boldsymbol k\)</span>, which has length <span class="math notranslate nohighlight">\(a, b,  c\)</span> along each of the axes shown and which are the projections of <span class="math notranslate nohighlight">\(\vec v\)</span> on the axes. Right: the vector <span class="math notranslate nohighlight">\(0.75\boldsymbol i - 1.5\boldsymbol j+ 2\boldsymbol k\)</span>.</p>
+<hr class="docutils" />
+<p>The dot product of the vectors <span class="math notranslate nohighlight">\(\vec A\)</span> and <span class="math notranslate nohighlight">\(\vec B\)</span> in figure 2 is in the <span class="math notranslate nohighlight">\((\boldsymbol i,\;\boldsymbol j)\)</span> basis is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle (3i+2j)\cdot(5\boldsymbol i-3\boldsymbol j)=15\boldsymbol i\cdot \boldsymbol i -9 \boldsymbol i\cdot \boldsymbol j + 10\boldsymbol  i\cdot\boldsymbol  i - 6\boldsymbol i\cdot \boldsymbol j =9\]</div>
+<p>and in the matrix/vector basis where we multiply elements in the same position and add, i.e. (0,0)+(1,1) etc</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin{bmatrix}3 &amp; 2\end{bmatrix}\begin{bmatrix}5 \\ -3\end{bmatrix}=9\end{split}\]</div>
+<p>If we wish to find the angle between the vectors then eqn. 2 has to be used. The length of a vector is the sqyure root of its dot product with itself so for vector <span class="math notranslate nohighlight">\(\vec A\)</span></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle |\vec A|^2 =\begin{bmatrix}3 &amp; 2\end{bmatrix}\begin{bmatrix}3 \\ 2\end{bmatrix}=13\end{split}\]</div>
+<p>so <span class="math notranslate nohighlight">\(|\vec A|=\sqrt{13}\)</span>. Similarly <span class="math notranslate nohighlight">\(|\vec B|=\sqrt{34}\)</span> making <span class="math notranslate nohighlight">\(\cos(\theta)=9/(\sqrt{13}\sqrt{34})\sim 65^\text{o}\)</span></p>
+</div>
+<div class="section" id="summary">
+<h2>4 Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id2">
+<h3>Dot Product<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p><span class="math notranslate nohighlight">\(\displaystyle \qquad \vec A \cdot \vec B= |\vec A||\vec B|\cos(\theta)\)</span></p>
+<p>The magnitude of <span class="math notranslate nohighlight">\(\vec A\)</span> is <span class="math notranslate nohighlight">\(\displaystyle |\vec A|=\sqrt{\vec A \cdot \vec A}\)</span></p>
+<p>A vector defined as <span class="math notranslate nohighlight">\(\vec A=[a\;b\;c\;d]\)</span> has 4 base vectors <span class="math notranslate nohighlight">\(\displaystyle \qquad \begin{bmatrix} 1\\0\\0\\0\end{bmatrix}\begin{bmatrix} 0\\1\\0\\0\end{bmatrix}\begin{bmatrix} 0\\0\\1\\0\end{bmatrix}\begin{bmatrix} 0\\0\\0\\1\end{bmatrix}\)</span></p>
+<p>and has dot product <span class="math notranslate nohighlight">\(\displaystyle \vec A \cdot \vec B=\begin{bmatrix}a\; b\; c\; d\end{bmatrix}\begin{bmatrix}e\\f\\g\\h\end{bmatrix} =ae+df+cg+dh\)</span></p>
+<p>In three dimensions only, in addition to the matrix method, orthonormal base vectors <span class="math notranslate nohighlight">\(\boldsymbol i, \boldsymbol j, \boldsymbol k\)</span> can be used ,e.g.  <span class="math notranslate nohighlight">\(\vec A=a\boldsymbol i+b\boldsymbol j+c\boldsymbol k\)</span></p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \vec A\cdot \vec B = (a\boldsymbol i + b\boldsymbol j + c\boldsymbol k)\cdot(c\boldsymbol i + d\boldsymbol j + e\boldsymbol k) = ac + bd + ce\]</div>
+</div>
+<div class="section" id="the-cross-product-exists-only-in-three-dimensions">
+<h3>The Cross Product exists only in three dimensions<a class="headerlink" href="#the-cross-product-exists-only-in-three-dimensions" title="Permalink to this headline">¶</a></h3>
+<div class="math notranslate nohighlight">
+\[\displaystyle \vec A \times \vec B=|\vec A||\vec B|\sin(\theta)\vec n \]</div>
+<p>where <span class="math notranslate nohighlight">\(\vec n\)</span> is a unit vectors perpendicular to vectors <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span>.</p>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./chapter-6"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="vectors-intro.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">6. Vectors.</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="vectors-Q1-24.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Questions 1 - 24</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Godfrey Beddard<br/>
+        
+            &copy; Copyright 2022.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

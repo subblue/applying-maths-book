@@ -1,0 +1,1922 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Numerical Methods &#8212; Applying Maths in the Chemical &amp; Biomolecular Sciences</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/book-cover.jpg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Applying Maths in the Chemical & Biomolecular Sciences</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Introduction
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-1/chapter1-intro.html">
+   1. Numbers, Equations, Operators, and Algorithms.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-A.html">
+     Numbers to Algorithms
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-Q1-7.html">
+     Questions 1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-B.html">
+     Trigonometric functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-Q8-16.html">
+     Questions 8 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-C.html">
+     9 Sophisticated Counting: permutations, combinations and probability
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-Q17-34.html">
+     Questions 17 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-D.html">
+     10 Modulo arithmetic
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-Q35-39.html">
+     Questions 35 - 39
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-answers-1-7.html">
+     Solutions Q1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-answers-8-16.html">
+     Solutions Q8 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-answers-17-34.html">
+     Solutions Q17 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-answers-35-39.html">
+     Solutions Q35 - 39
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-2/chapter2-intro.html">
+   2. Complex numbers.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2/chapter2-A.html">
+     Real, imaginary,conjugate and modulus
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2/chapter2-Q-1-9.html">
+     Questions 1 - 9
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2/chapter2-B.html">
+     3 De Moivre’s theorem and integer powers of complex numbers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2/chapter2-Q-10-13.html">
+     Questions 10 -13
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2/chapter2-C.html">
+     4 Euler’s theorem
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2/chapter2-Q-14-27.html">
+     Questions 14 - 27
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2/chapter2-answers.html">
+     Solutions Q1 - 27
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-3/differen-intro.html">
+   3. Differentiation.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-A.html">
+     Differentiation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-B.html">
+     Trig functions, logs, power, reciprocals and integrals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-C-Q-4-11.html">
+     Questions 1-11
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-D.html">
+     Product rule and function of function or chain rule.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-E-Q-12-42.html">
+     Questions 12-42
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-F.html">
+     Limits, maxima/minima and calculus of variations.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-G-Q-43-73.html">
+     Questions 43 - 73
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-H.html">
+     Numerically finding the roots of an equation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-I-Q-74-85.html">
+     Questions 74 - 85
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-J.html">
+     Minimizing or maximizing with constraints: Lagrange Undetermined Multipliers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-K-Q-86-92.html">
+     Questions 86 - 92
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-L.html">
+     Partial differentiation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-M-Q-93-114.html">
+     Questions 93-114
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-M1.html">
+     13 Differentiation of vectors
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-N-answers-1-11.html">
+     Solutions Q 1-11
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-O-answers-12-42.html">
+     Solutions Q 12-42
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-P-answers-43-73.html">
+     Solutions Q 43 - 73
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-Q-answers-74-85.html">
+     Solutions Q 74 - 85
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-R-answers-86-92.html">
+     Solutions Q 86 - 94
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-S-answers-93-114.html">
+     Solutions Q 93-114
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-4/integration-intro.html">
+   4. Integration.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-A.html">
+     Integration
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-Q1-14.html">
+     Questions 1-14
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-B.html">
+     Integration by substitution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-Q15-30.html">
+     Questions 15-30
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-C.html">
+     Using parametric equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-Q31-48.html">
+     Questions 31 - 48
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-D.html">
+     Calculating an Average Value.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-Q49-72.html">
+     Questions 49 - 72
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-E.html">
+     The Variational Method in Quantum Mechanics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-Q73-77.html">
+     Questions 73 - 77
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-F.html">
+     10 Multiple integrals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-Q78-86.html">
+     Questions 78 - 86
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-G.html">
+     12 Calculating the energy of a chemical bond using molecular orbitals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-H.html">
+     13 Line integrals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-Q87-96.html">
+     Questions 87 - 96
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-answers-1-14.html">
+     Solutions Q 1 - 14
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-answers-15-30.html">
+     Solutions Q 15 - 30
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-answers-31-48.html">
+     Solutions Q 31 - 48
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-answers-49-72.html">
+     Solutions Q 49 - 72
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-answers-73-96.html">
+     Solutions Q 73 - 96
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-5/chapter-5-intro.html">
+   5. Summations, Series and expansion of Functions.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-A.html">
+     Series, averages, partition functions, DNA melting, atom entropy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-B-Q1-13.html">
+     Questions 1 - 13
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-E.html">
+     Maclaurin and Taylor series expansions. Paramagnetic spins
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-F-Q14-34.html">
+     Questions 14 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-G-Q35-44.html">
+     Questions 35 - 44
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-perturbation-A.html">
+     Perturbation Theory
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-perturbation-B-Q45-48.html">
+     Questions 45 - 48
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-perturbation-C.html">
+     Quantum superposition and wavepackets.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-perturbation-D-Q49-52.html">
+     Questions 49 - 52
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-answers-1-7.html">
+     Solutions Q 1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-answers-8-13.html">
+     Solutions Q8 - 13
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-answers-14-26.html">
+     Solutions Q 14 - 26
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-answers-27-32.html">
+     Solutions Q27 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-answers-33-44.html">
+     Solutions Q33 - 44
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-answers-45-52.html">
+     Solutions Q45 - 52
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-6/vectors-intro.html">
+   6. Vectors.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-A.html">
+     1 Motivation and concept
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-Q1-24.html">
+     Questions 1 - 24
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-B.html">
+     Projections and components
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-Q25-32.html">
+     Questions 25 - 32
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-C.html">
+     Not all axes are right-angled or of equal length
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-Q33-38.html">
+     Questions 33 - 38
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-D.html">
+     Basis sets with more than three dimensions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-Q39-46.html">
+     Questions 39 - 46
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-E.html">
+     Cross product or vector product
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-Q47-52.html">
+     Questions 47 - 52
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-F.html">
+     Torsion or dihedral angles
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-Q53-61.html">
+     Questions 53 - 61
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-G.html">
+     Torque and angular momentum
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-answers-Q1-24.html">
+     Solutions Q1 - 24
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-answers-Q25-32.html">
+     Solutions Q25 - 32
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-answers-Q33-38.html">
+     Solutions Q33 - 38
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-answers-Q39-46.html">
+     Solutions Q38 - 46
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-answers-Q47-52.html">
+     Solutions Q47 - 52
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-answers-Q53-61.html">
+     Solutions Q53 - 61
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-7/matrices-intro.html">
+   7. Matrices
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-A.html">
+     Determinants
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q1-10.html">
+     Questions  1 - 10
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-B.html">
+     Matrices
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q11-16.html">
+     Questions  11 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-C.html">
+     Molecular Group Theory
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q17-30.html">
+     Questions  17 - 30
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-D.html">
+     Rotation matrices: moving molecules
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q31-34.html">
+     Questions 31 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-E.html">
+     Matrices in optics and designing laser cavities
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q35-39.html">
+     Questions 35 - 39
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-F.html">
+     Polarizing optics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q40-44.html">
+     Questions 40 - 44
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-G.html">
+     Solving equations using matrices. Eigenvectors &amp; Eigenvalues.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q45-50.html">
+     Questions 45 - 50
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-H.html">
+     Rate equations and Chemical Kinetics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q51-54.html">
+     Questions 51 - 54
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-I.html">
+     Molecular vibrations and pendulums
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q55-58.html">
+     Questions 55 - 58
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-J.html">
+     Calculating bond length using moments of inertia
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q59-62.html">
+     Questions 59 - 62
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-answersQ1-10.html">
+     Solutions Q1 - 10
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-answersQ11-16.html">
+     Solutions Q11 - 30
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-answersQ17-30.html">
+     Solutions Q17 - 30
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-answersQ31-34.html">
+     Solutions Q31 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-answersQ35-39.html">
+     Solutions Q35 - 39
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-answersQ40-44.html">
+     Solutions Q40 - 44
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-answersQ45-50.html">
+     Solutions Q45 - 50
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-answersQ51-54.html">
+     Solutions Q51 - 54
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-answersQ55-58.html">
+     Solutions Q55 - 58
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-answersQ59-61.html">
+     Solutions Q59 - 61
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-8/matricesQM-intro.html">
+   8. Matrices in Quantum Mechanics
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-8/matricesQM-A.html">
+     Chapter 8 Matrices in Quantum Mechanics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-8/matricesQM-Q1-7.html">
+     Questions 1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-8/matricesQM-B.html">
+     Basis sets and bra-ket algebra
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-8/matricesQM-Q8-12.html">
+     Questions 8 - 12
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-8/matricesQM-C.html">
+     Continuous basis sets
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-8/matricesQM-answers1-7.html">
+     Solutions Q1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-8/matricesQM-answers8-12.html">
+     Solutions Q8 - 12
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-9/Fourier-intro.html">
+   9. Fourier Series and Transforms.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-A-B.html">
+     Fourier series, Gibbs phenomenon, generalised series.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-questions-1-6.html">
+     Questions 1 - 6
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-C.html">
+     Fourier Transforms
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-D.html">
+     Convolution and Autocorrelation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-questions-7-15.html">
+     Questions 7 - 15
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-E.html">
+     Discrete Fourier  (DFT)  and Fast Fourier transforms (FFT)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-questions-16-21.html">
+     Questions 16 - 21
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-F.html">
+     The Hadamard Transform: Encoding and Decoding
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-2D-Diffraction.html">
+     The Fourier transform in two dimensions: images and x-ray Diffraction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-tomography.html">
+     Computed Tomography
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-answers-1-6.html">
+     Solutions Q 1 - 6
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-answers-7-15.html">
+     Solutions Q 7 - 15
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-answers-16-21.html">
+     Solutions Q 16 - 21
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Diff-eqns-intro.html">
+   8. Differential Equations.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Diff-eqns-A.html">
+     Differential Equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Diff-eqns-Q1-23.html">
+     Questions 1 - 23
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Diff-eqns-B.html">
+     Integrating factors
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Diff-eqns-C.html">
+     The ‘D’ operator.  Solving linear differential equations with constant coefficients
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Diff-eqns-D.html">
+     Simultaneous equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Diff-eqns-E.html">
+     Linear equations with variable coefficients
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Diff-eqns-F.html">
+     Partial Differential Equations, PDE
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Diff-eqns-G.html">
+     PDE examples continued
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Diff-eqns-Q24-37.html">
+     Questions 24 - 37
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Diff-eqns-answers-1-21.html">
+     Solutions Q1 - 21
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Diff-eqns-answers-22-37.html">
+     Solutions Q22 - 37
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../references/References.html">
+   References
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/chapter-10/Num-methods-A.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/chapter-10/Num-methods-A.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Numerical Methods
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#rounding-errors">
+     1.1 Rounding errors
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#truncation-errors">
+     1.2 Truncation errors
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#unstable-recursion-magnification-of-errors">
+     1.3 Unstable recursion: magnification of errors
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#organized-chaos">
+     1.4 Organized Chaos
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#numerical-methods-used-to-find-the-roots-of-an-equation">
+   2 Numerical methods used to find the roots of an equation
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#secant-method">
+     Secant method
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#numerical-integration">
+   3 Numerical integration
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#always-try-some-algebra-first">
+     3.1 Always try some algebra first
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#mid-point-rule-integration">
+     3.2 Mid-point rule integration
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#trapezoidal-rule-integration">
+     3.3 Trapezoidal rule integration
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#simpson-s-rule-integration">
+     3.4 Simpson’s rule integration
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#integrating-data-from-an-experiment">
+     3.5 Integrating data from an experiment
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#atomic-and-molecular-beam-scattering">
+   3.6 Atomic and molecular beam scattering
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#background-and-derivation-of-formulae">
+     3.7 Background and derivation of formulae
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#scattering">
+     3.8 Scattering
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-coulomb-potential">
+     3.9 The  Coulomb potential
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-lennard-jones-potential">
+   3.10 The Lennard-Jones potential
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#analysis-of-results">
+     3.11 Analysis of results
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="numerical-methods">
+<h1>Numerical Methods<a class="headerlink" href="#numerical-methods" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import all python add-ons etc that will be needed later on</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">quad</span><span class="p">,</span><span class="n">odeint</span>
+<span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">fsolve</span>
+<span class="n">init_printing</span><span class="p">()</span>                      <span class="c1"># allows printing of SymPy results in typeset maths format</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;font.size&#39;</span><span class="p">:</span> <span class="mi">16</span><span class="p">})</span>  <span class="c1"># set font size for plots</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>This chapter outlines several numerical techniques and associated algorithms which are needed to perform integrations and solve differential equations. These are written generically and with Python. Accurate and efficient ways of calculating results from theory is an essential tool for any scientist. Using computer algebra programs such as Sympy is a great boon because calculations can be done to great numerical precision and accuracy. However, in line with our objective of understanding the principles of how to solve problems, several techniques, which contain the essence of the method to be used, are outlined.</p>
+<p>Once these are understood, you will have the knowledge to understand the more complex ‘black-box’ methods that Maple, SymPy, or other software use.</p>
+<p>To start this chapter, some details on numerical accuracy are reviewed; next simple integration methods are described with a few examples and problems. More difficult, and interesting, is the numerical integration of differential equations, some of which only have numerical solutions. The various methods used are explained. A different numerical approach is taken in the next chapter on Monte Carlo methods. Simple integration is rather slow by this method but integrating differential equations is very robust. Monte Carlo methods are very versatile at simulating physical processes, such as diffusion or fluorescence, and occasionally this is the only way to do the calculation. Simulation also provides a good way to understand the processes involved, some of which can be very complex and not always easily translated into differential equations.</p>
+<div class="section" id="rounding-errors">
+<h2>1.1 Rounding errors<a class="headerlink" href="#rounding-errors" title="Permalink to this headline">¶</a></h2>
+<p>In many calculations, the errors introduced by the computer due to the way its integers and real numbers are manipulated do not matter. Sometimes, the answer the computer returns may be precise and will be printed to many decimal places; however, it may not be accurate. To understand this, the expression <span class="math notranslate nohighlight">\((1 - x)^6\)</span> is expanded as the series <span class="math notranslate nohighlight">\(1-6x+15x^2 -20x^3 +15x4 -6x^5 +x^6\)</span> and this is plotted close to its minimum at <span class="math notranslate nohighlight">\(x\approx 1\)</span> in Fig.1. While the scale is small, <span class="math notranslate nohighlight">\(\approx 10^{-13}\)</span>, determining the exact root of the equation numerically is difficult. Of course, we know it is at <span class="math notranslate nohighlight">\(1\)</span>, but the computer will not give this answer even using a Newton-Raphson iterative scheme. The reason for the noisy plot is because the alternating positive and negative terms in the summation add up to almost zero, and the rounding error in the precision with which the numbers are calculated becomes important, and this limits the accuracy of the calculation.</p>
+<p>A real number is converted in the computer into a floating-point number represented as <span class="math notranslate nohighlight">\(x = \pm 0.d_1d_2d_3d_4 \cdot 10^y\)</span> which only approximately represents the number; i.e. it is only accurate to a certain number of decimal places. The mantissa, is the fraction <span class="math notranslate nohighlight">\(0.d_1d_2d_3d_4\)</span>, where <span class="math notranslate nohighlight">\(d_1\)</span> etc. are the digits <span class="math notranslate nohighlight">\(0\cdots 9\)</span>. A floating-point number is usually described as a single or double precision and the number of decimal places is typically <span class="math notranslate nohighlight">\(7\)</span> and <span class="math notranslate nohighlight">\(14\)</span> respectively; this depends on the type of computer being used. Normally nowadays double precision is standard for example <span class="math notranslate nohighlight">\(17\)</span> digits.</p>
+<p>However, as seen in Fig. 1, 17 digits are not good enough to find the root; <span class="math notranslate nohighlight">\(25\)</span> decimal places give a far more accurate result. The instruction Digits:= 25, sets <span class="math notranslate nohighlight">\(25\)</span> decimal place precision for floating point numbers.
+Using the Newton-Raphson method (see Chapter 3.10), the root cannot be found accurately: the method is</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span>  <span class="mf">1.0</span> <span class="o">-</span><span class="mf">6.0</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span><span class="mi">15</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span><span class="mf">20.0</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">3</span> <span class="o">+</span><span class="mf">15.0</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">4</span> <span class="o">-</span><span class="mf">6.0</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">5</span> <span class="o">+</span><span class="n">x</span><span class="o">**</span><span class="mi">6</span>
+<span class="n">df</span><span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="o">-</span><span class="mf">6.0</span> <span class="o">+</span><span class="mf">30.0</span><span class="o">*</span><span class="n">x</span> <span class="o">-</span><span class="mf">60.0</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span><span class="mf">60.0</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">3</span> <span class="o">-</span><span class="mf">30.0</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">4</span> <span class="o">+</span><span class="mf">6.0</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">5</span>      <span class="c1"># derivative</span>
+<span class="n">s</span>  <span class="o">=</span> <span class="mf">0.8</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">):</span>
+    <span class="n">snew</span> <span class="o">=</span> <span class="n">s</span> <span class="o">-</span> <span class="n">f</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="o">/</span><span class="n">df</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+    <span class="k">if</span> <span class="nb">abs</span><span class="p">(</span><span class="n">snew</span><span class="o">-</span><span class="n">s</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mf">1e-10</span><span class="p">:</span>
+        <span class="k">break</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="n">snew</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.0030182818841857
+</pre></div>
+</div>
+</div>
+</div>
+<p>With typical double precision (16 decimal places), the root found is 1.0030182818841857, which is not even on the graph shown below, but furthermore it depends greatly on the starting value. If the function <span class="math notranslate nohighlight">\((1 - x)^6\)</span> is plotted directly without expanding, and hence without accumulating rounding errors, then the curve looks like that obtained with <span class="math notranslate nohighlight">\(25\)</span> digits precision. This illustrates the important point that in many cases a small amount of algebra can significantly improve numerical calculations; errors rapidly accumulate with the repeated adding and subtracting of similarly sized numbers, and once an error is present it contaminates all subsequent results.</p>
+<p><img alt="Drawing" src="chapter-10/num-methods-fig1.png" /></p>
+<p>Figure 1. Plots of the series expansion of <span class="math notranslate nohighlight">\((1 - x)^6\)</span> with two different values of floating point precision. (Notice the axes range.)</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="truncation-errors">
+<h2>1.2 Truncation errors<a class="headerlink" href="#truncation-errors" title="Permalink to this headline">¶</a></h2>
+<p>In summing a series, the number of terms to be added has to be decided in advance. This automatically leads to an error that is nothing to do with arithmetical precision. The calculation should be repeated with more terms until the number of decimal places you require is continuously obtained. Rounding errors must additionally be considered, especially if the series contains alternating positive and negative terms; the errors can accumulate as the summation continues but will not be the same for all values of <span class="math notranslate nohighlight">\(x\)</span>.</p>
+<p>Consider the series <span class="math notranslate nohighlight">\( \displaystyle \sin(x)=1-\frac{x^3}{3!}+\frac{x^5}{5!}-\cdots\)</span> which is valid for all <span class="math notranslate nohighlight">\(x\)</span>. If the series is summed up to the term <span class="math notranslate nohighlight">\(x^n/n!\)</span> with <span class="math notranslate nohighlight">\(x \gt 0\)</span>, the error is less than <span class="math notranslate nohighlight">\(\displaystyle \left| \frac{x^{n+2}}{(n+2)!}\right|\)</span>. The values of <span class="math notranslate nohighlight">\(\sin(0.5)\)</span> is <span class="math notranslate nohighlight">\(0.47942553\)</span> whether calculated directly using Python or as the summation up to the <span class="math notranslate nohighlight">\(x^7\)</span> term. If, however, <span class="math notranslate nohighlight">\(x\)</span> is large, for instance <span class="math notranslate nohighlight">\(x = 5.5\pi\)</span>, then we know by drawing a graph that  <span class="math notranslate nohighlight">\(sin(x) = -1\)</span>, but by summation up to <span class="math notranslate nohighlight">\(x^7\)</span> the result is <span class="math notranslate nohighlight">\(-79258.34\)</span>: clearly this is ridiculous because <span class="math notranslate nohighlight">\(\sin(x) \le 1 \)</span> for all <span class="math notranslate nohighlight">\(x\)</span>. Only if the number of terms in the summation is increased to at least terms <span class="math notranslate nohighlight">\(\gt x^{59}\)</span>, and the numerical precision increased to <span class="math notranslate nohighlight">\(20\)</span> decimal places can an accurate result be obtained from the series approach. In this instance, we know that the answer from the small summation is incorrect because the properties of <span class="math notranslate nohighlight">\(\sin(x)\)</span> are well known, but if you are summing a series whose result is unknown, then great care is necessary.</p>
+</div>
+<div class="section" id="unstable-recursion-magnification-of-errors">
+<h2>1.3 Unstable recursion: magnification of errors<a class="headerlink" href="#unstable-recursion-magnification-of-errors" title="Permalink to this headline">¶</a></h2>
+<p>In solving integrals, a recursion formula can often be found, particularly when the integration is done by parts. An example met before (Q4.22) is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle I_n=\int_0^1 x^ne^{x-1}dx = x^ne^{x-1} \bigg|_0^1 -n\int_0^1 x^{n-1}e^{x-1} dx =1-nI_{n-1}\]</div>
+<p>To evaluate the integral with the code below different <span class="math notranslate nohighlight">\(n\)</span>, the starting value with <span class="math notranslate nohighlight">\(n = 0\)</span> is required, which is <span class="math notranslate nohighlight">\(I_0 = 1 - 1/e\)</span>. In the recursion calculation, <span class="math notranslate nohighlight">\(s\)</span> has, arbitrarily, been chosen as the name for the integral because <span class="math notranslate nohighlight">\(I\)</span> and <span class="math notranslate nohighlight">\(int\)</span> are reserved names in Sympy. Recall that <span class="math notranslate nohighlight">\(s= 1 - n* s\)</span>; is an assignment, meaning that the new value of <span class="math notranslate nohighlight">\(s\)</span> is <span class="math notranslate nohighlight">\(1 - n \times (current\; value)\)</span>. Some of the results are tabulated below the code, <span class="math notranslate nohighlight">\(n\)</span> is the power to which <span class="math notranslate nohighlight">\(x\)</span> is raised, <span class="math notranslate nohighlight">\(s\)</span> is the recursion answer and <span class="math notranslate nohighlight">\(f(n)\)</span> the result of algebraic integration.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">,</span> <span class="n">n</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x n&#39;</span><span class="p">,</span><span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>                <span class="c1"># use SymPy</span>
+
+<span class="n">s</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">-</span> <span class="mf">1.0</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mf">1.0</span><span class="p">)</span>            <span class="c1"># initial value</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:s}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;n      s      f(n)&#39;</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">23</span><span class="p">):</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">-</span> <span class="n">n</span><span class="o">*</span><span class="n">s</span>                    <span class="c1"># recursion </span>
+    <span class="n">eqn</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="n">n</span><span class="o">*</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="n">integrate</span><span class="p">(</span><span class="n">eqn</span><span class="p">,(</span><span class="n">x</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">1.0</span><span class="p">)</span> <span class="p">)</span>  <span class="c1"># normal integration</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:d}</span><span class="s1"> </span><span class="si">{:10.6g}</span><span class="s1"> </span><span class="si">{:s}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">s</span><span class="p">,</span><span class="nb">str</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">evalf</span><span class="p">()</span> <span class="p">)[</span><span class="mi">0</span><span class="p">:</span><span class="mi">8</span><span class="p">]</span> <span class="p">)</span> <span class="p">)</span>    <span class="c1"># format output</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>n      s      f(n)
+1   0.367879 0.367879
+2   0.264241 0.264241
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3   0.207277 0.207276
+4   0.170893 0.170893
+5   0.145533 0.145532
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6   0.126802 0.126802
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7   0.112384 0.112383
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8   0.100932 0.100931
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>9  0.0916123 0.091612
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10  0.0838771 0.083877
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>11  0.0773522 0.077352
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>12  0.0717732 0.071773
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>13  0.0669478 0.066947
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>14  0.0627311 0.062732
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>15  0.0590338 0.059020
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>16  0.0554593 0.055664
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>17  0.0571919 0.062500
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>18 -0.0294537 0
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>19    1.55962 -16.0000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>20   -30.1924 0
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>21     635.04 16384.00
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>22   -13969.9 0
+</pre></div>
+</div>
+</div>
+</div>
+<p>The failure of both the Sympy integration and the recursion formula indicates how careful one needs to be with some apparently innocent numerical calculations. After about <span class="math notranslate nohighlight">\(n = 10\)</span> it is difficult to judge which calculation gives the most accurate result, and by <span class="math notranslate nohighlight">\(n = 18\)</span>, both are clearly wrong. If integer constants  are used then accurate results are obtained for the direct integration, but using integers will not always be an option.</p>
+<p>While this calculation is a little unusual, it is not uncommon. When calculating wavefunctions using Hermite or other polynomials, large powers of <span class="math notranslate nohighlight">\(x\)</span>, exponentials and recursion formulae are commonly used. Recursion and difference formulae are often used in the numerical integration of differential equations, see Section 11.3, consequently, their numerical integration is akin to an art rather than a science. However, you should not be too despondent or sceptical about numerical methods because with care, and sometimes cunning, accurate results can be obtained.</p>
+</div>
+<div class="section" id="organized-chaos">
+<h2>1.4 Organized Chaos<a class="headerlink" href="#organized-chaos" title="Permalink to this headline">¶</a></h2>
+<p>You need to be aware that recursion can sometimes lead to chaotic behaviour as a normal outcome of a calculation. This is a different sort of chaos to that just calculated; it is very much like ‘organized chaos’ and is not due to rounding or precision errors. Often this chaos is termed ‘deterministic’.</p>
+<p>There is an important distinction therefore to be made between different types of ‘Chaos’. In classical and quantum mechanics, in studying molecules for example, it is also observed that regular motion can suddenly become chaotic even though the underlying equations of motion do not indicate that this will necessarily happen. By ‘chaotic’ is meant that two starting conditions placed arbitrary close to one another in value, will lead to entirely different but <em>repeatable outcomes</em> at some later time. If the cause of the chaos is due to rounding errors, the outcome is not repeatable but unpredictable.</p>
+<p>We take a short diversion into this interesting topic via a well-known example of deterministic chaos, first described in detail by May (1974, 1987) and May &amp; Oster (1976), and called the <em>logistic map</em>. This arises from the recursive equation</p>
+<div class="math notranslate nohighlight">
+\[x_{n+1} = rx_n(1 - x_n)\]</div>
+<p>where <span class="math notranslate nohighlight">\(r\)</span> is a constant and this equation is the discrete version of the logistic equation (Verhulst 1838) used to describe population growth, <span class="math notranslate nohighlight">\(dN/dt=rN(1-k/N)\)</span> where <span class="math notranslate nohighlight">\(N\)</span> is the population <span class="math notranslate nohighlight">\(r\)</span> the growth rate and <span class="math notranslate nohighlight">\(k\)</span> a constant the carrying capacity. This equation works well only for some species such as bacteria but not for other more complex ones. The reaction <span class="math notranslate nohighlight">\(A+X\leftrightharpoons 2X,\quad X+B\to C\)</span> has the related rate equation <span class="math notranslate nohighlight">\(dX/dt=-(k_1A+k_2B)X+4k_2X^2\)</span> if <span class="math notranslate nohighlight">\([A],[B]\)</span> are held constant.</p>
+<p>Returning to the logistic map, if <span class="math notranslate nohighlight">\(x_{n+1}\)</span> is plotted vs <span class="math notranslate nohighlight">\(x_n\)</span>  then it has an inverted parabola like shape, fig 1a, with a maximum at <span class="math notranslate nohighlight">\(r/4\)</span>.</p>
+<p><img alt="Drawing" src="chapter-10/num-methods-fig1a.png" /></p>
+<p>Figure 1a. plot of the equation <span class="math notranslate nohighlight">\(x_{n+1} = rx_n(1 - x_n)\)</span>.</p>
+<hr class="docutils" />
+<p>We shall call <span class="math notranslate nohighlight">\(x\)</span> the population, <span class="math notranslate nohighlight">\(r\)</span> the growth rate and <span class="math notranslate nohighlight">\(n\)</span> number of iterations which could also be interpreted at discrete units of time. When the growth rate <span class="math notranslate nohighlight">\(r\lt 1\)</span> the population decreases from its initial value <span class="math notranslate nohighlight">\(x_0\)</span> to zero. Only above <span class="math notranslate nohighlight">\(r\ge 1\)</span> does the population increase. As it does it rises rapidly, then oscillates before reaching a steady value.  However, at a value of <span class="math notranslate nohighlight">\(r\ge 3\)</span> bifurcation occurs, i.e. the oscillations persist indefinitely, and two values are alternately produced. As <span class="math notranslate nohighlight">\(r\)</span> increases a little more, two periods are seen and four values exist, and these double again as <span class="math notranslate nohighlight">\(r\)</span> continues to increase until eventually chaos ensues at about <span class="math notranslate nohighlight">\(r = 3.9\)</span>. Above <span class="math notranslate nohighlight">\( r = 4 \)</span>, <span class="math notranslate nohighlight">\(x_n\)</span> becomes negative, thus the valid range is <span class="math notranslate nohighlight">\( 0\lt r \le 4\)</span>. Figure 1b shows this behaviour with an initial value of <span class="math notranslate nohighlight">\(x_0 = 0.1\)</span>.</p>
+<p><img alt="Drawing" src="chapter-10/num-methods-fig1b.png" /></p>
+<p>Figure 1b. The population <span class="math notranslate nohighlight">\(x_n\)</span> shown vs. iteration number <span class="math notranslate nohighlight">\(n\)</span> for different growth rates <span class="math notranslate nohighlight">\(r\)</span>. Notice that bifurcation occurs above <span class="math notranslate nohighlight">\(r=3\)</span> and that chaotic behaviour at <span class="math notranslate nohighlight">\(r=3.9\)</span>. The data points are in red, the line simply aids the eye to help follow the pattern of the points.</p>
+<hr class="docutils" />
+<p>To be able to view the bifurcations more easily a plot of population <span class="math notranslate nohighlight">\(x_n\)</span> vs <span class="math notranslate nohighlight">\(r\)</span> is made and apparently random behaviour from otherwise regular behaviour is observed, Fig. 2. Some authors call this an orbit plot. The iteration is continued at each <span class="math notranslate nohighlight">\(r\)</span> for at least a hundred steps to allow and initial oscillations to die out and become constant or to allow any constant oscillation to become steady or random depending on <span class="math notranslate nohighlight">\(r\)</span>. As <span class="math notranslate nohighlight">\(r\)</span> increases the doubling multiplies to <span class="math notranslate nohighlight">\(4, 8, 16\cdots \)</span> and more numerous sets of numbers produce a random looking but regular pattern.   Figure 2 shows part of the plot.   The values up to <span class="math notranslate nohighlight">\(r=1\)</span> are zero then they rise uniformly in a single curved line to join the plot shown. The initial pitchfork bifurcation at <span class="math notranslate nohighlight">\(r=3\)</span> is clear as are the next few bifurcations (at each of which the number of points double) at <span class="math notranslate nohighlight">\(r\approx 3.449, 3.5409, 3.5644\cdots \)</span> but then become too numerous to see on this plot. Pain (1993, chapter 12) and Strogatz 1994 chapter 10) both describe these non-linear and chaotic effects that have been observed experimentally as well as a detailed mathematical description of this topic.</p>
+<p><img alt="Drawing" src="chapter-10/num-methods-fig2.png" /></p>
+<p>Figure 2. Bifurcations and ordered chaos generated by iterating <span class="math notranslate nohighlight">\(x_{n+1} = rx_n(1 - x_n)\)</span>.</p>
+<hr class="docutils" />
+<p>The Feigenbaum constant <span class="math notranslate nohighlight">\(\delta=4.669301\cdots\)</span> is the ratio of three successive birfurcation points and is a property of all maps of this type, not just the logistic map. The constant is <span class="math notranslate nohighlight">\(\displaystyle \delta =\lim_{n\to \infty}\frac{\mu_{n+1}-\mu_n}{\mu_{n+2}-\mu_{n+1}}\)</span> where <span class="math notranslate nohighlight">\(n\)</span> is the index of the birfucation and <span class="math notranslate nohighlight">\(\mu\)</span> the value of <span class="math notranslate nohighlight">\(r\)</span> at that point. Interestingly, any equation that shows an inverted curve, such as <span class="math notranslate nohighlight">\(x_{n+1}=r\sin(x_n)\)</span>, shows very similar behavior in all respects to that of the logistic map.</p>
+<p>The code to do this calculation is</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Algorithm L:ogistic eqn. &amp; Bifurcation </span>
+
+<span class="n">fig1</span><span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">6</span><span class="p">)</span> <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;font.size&#39;</span><span class="p">:</span> <span class="mi">16</span><span class="p">})</span>
+
+<span class="n">Leqn</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">r</span><span class="p">,</span><span class="n">x</span><span class="p">:</span> <span class="n">r</span><span class="o">*</span><span class="n">x</span><span class="o">*</span><span class="p">(</span><span class="mf">1.0</span><span class="o">-</span><span class="n">x</span><span class="p">)</span>        <span class="c1"># logistic map eqn</span>
+
+<span class="n">n</span> <span class="o">=</span> <span class="mi">200</span>                               <span class="c1"># increase this for more detail</span>
+<span class="n">dn</span><span class="o">=</span> <span class="mi">200</span>
+<span class="n">m</span> <span class="o">=</span> <span class="n">n</span> <span class="o">+</span> <span class="n">dn</span>
+<span class="n">popl</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">n</span><span class="p">,</span><span class="n">n</span><span class="p">),</span><span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>    <span class="c1"># define 2D array</span>
+<span class="n">popl</span><span class="p">[:,:]</span> <span class="o">=</span> <span class="mi">2</span>                         <span class="c1"># set value outside plot range</span>
+<span class="n">r0</span>  <span class="o">=</span> <span class="mf">2.5</span>                             <span class="c1"># r start</span>
+<span class="n">rmax</span><span class="o">=</span> <span class="mf">4.0</span>                             <span class="c1"># r end   </span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">r0</span><span class="p">,</span><span class="n">rmax</span><span class="p">,</span><span class="n">n</span><span class="p">)</span>            <span class="c1"># growth rate array</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="mf">0.0</span>                               <span class="c1"># initial x </span>
+<span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">m</span><span class="p">):</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">Leqn</span><span class="p">(</span><span class="n">r</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">x</span><span class="p">)</span>             <span class="c1">#        x = r*x*(1.0 - x)</span>
+        <span class="k">if</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="n">n</span><span class="p">:</span>
+            <span class="n">popl</span><span class="p">[</span><span class="n">j</span><span class="p">,</span><span class="n">i</span><span class="o">-</span><span class="n">dn</span><span class="p">]</span> <span class="o">=</span> <span class="n">x</span>          <span class="c1"># save last n do this to get all branches as these oscillate</span>
+        <span class="k">pass</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mf">1.0</span><span class="o">/</span><span class="n">n</span>                     <span class="c1"># increment x</span>
+    <span class="k">pass</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">r</span><span class="p">[:],</span><span class="n">popl</span><span class="p">[:,</span><span class="n">i</span><span class="p">],</span><span class="n">marker</span><span class="o">=</span><span class="s1">&#39;.&#39;</span><span class="p">,</span><span class="n">s</span> <span class="o">=</span> <span class="mf">0.01</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>  <span class="c1"># plot </span>
+    
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">([</span><span class="n">r0</span><span class="p">,</span><span class="mi">4</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$r$&#39;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$p$&#39;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Num-methods-A_7_0.png" src="../_images/Num-methods-A_7_0.png" />
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="numerical-methods-used-to-find-the-roots-of-an-equation">
+<h1>2 Numerical methods used to find the roots of an equation<a class="headerlink" href="#numerical-methods-used-to-find-the-roots-of-an-equation" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="secant-method">
+<h2>Secant method<a class="headerlink" href="#secant-method" title="Permalink to this headline">¶</a></h2>
+<p>We now set aside the questions of numerical accuracy and chaos and look at some practical methods of numerically solving all sorts of equations. Sometimes in integration or in solving differential equations, the root of some function is required; three related numerical methods, the Secant, Regula Falsi, and bisection, are now described. The Newton - Raphson method has already been met in Chapter 3.10 and is used when the equation can be differentiated.</p>
+<p>The secant method is similar in idea to the Newton - Raphson method except that the derivative is expressed as a difference equation. If <span class="math notranslate nohighlight">\(f (x) = 0\)</span> is the equation whose roots or <span class="math notranslate nohighlight">\(x\)</span> values we want to find, then, in a recursive scheme, the next <span class="math notranslate nohighlight">\(x\)</span> value is given by Newton - Raphson as <span class="math notranslate nohighlight">\(x_{n+1} = x_n  f(x_n)/f'(x_n)\)</span> with <span class="math notranslate nohighlight">\(n = 0, 1, 2 \cdots\)</span> and <span class="math notranslate nohighlight">\(f'\)</span> is the derivative with respect to <span class="math notranslate nohighlight">\(x\)</span>. Notice how similar this equation is to the general form of the logistic map in the previous section, i.e <span class="math notranslate nohighlight">\(x_{n+1}=f(x_n)\)</span>.  The <span class="math notranslate nohighlight">\(x_0\)</span> value to start the calculation must be somewhere near to the root, and can be estimated by plotting the function. At the end of each step, the new value <span class="math notranslate nohighlight">\(x_{n+1}\)</span> is substituted into the right-hand side of the equation, and the process is repeated until the absolute value of the function becomes less than some preset tolerance or the number of iterations is exceeded.
+In the secant method, the derivative is approximated as</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle f'(x_n)\approx \frac{\Delta f}{\Delta x}=\frac{f(x_n)-f(x_{n-1})}{x_n-x_{n-1}}\]</div>
+<p>then substituting into the Newton - Raphson equation gives</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle  x_{n+1} = x_n -f(x_n)\frac{x_n-x_{n-1}}{f(x_n)-f(x_{n-1})}  \tag{1}\]</div>
+<p>which is the working equation for the secant method. Two initial guesses of the root are required, because the equation has to have points at <span class="math notranslate nohighlight">\(x_1\)</span> and <span class="math notranslate nohighlight">\(x_2\)</span> to begin the iterative process and these are usually to one side of the root. Once the method is close to a root, the number of digits of accuracy doubles for every two iterations. However, the method can sometimes fail because the particular curvature of the function may produce <span class="math notranslate nohighlight">\(f(x_n) = f(x_{n1})\)</span>.</p>
+<p>In each of the following three algorithms the new value <span class="math notranslate nohighlight">\(x_{n+1}\)</span> is called <span class="math notranslate nohighlight">\(x_m\)</span> and is given a dummy value greater than the tolerance to start with. The root and the value of the function at the root, which should be zero or very close to it, are printed. The equation is <span class="math notranslate nohighlight">\(x^5 + x = 1\)</span>. The three methods give essentially the same result if the tolerance on ending the calculation is similar.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Algorithm; Secant method</span>
+
+<span class="n">f</span>  <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">**</span><span class="mi">5</span><span class="o">+</span><span class="n">x</span> <span class="o">-</span> <span class="mi">1</span>      <span class="c1"># function to solve</span>
+<span class="n">x1</span> <span class="o">=</span> <span class="mf">0.0</span>  
+<span class="n">x2</span> <span class="o">=</span> <span class="mf">0.5</span>
+<span class="n">xm</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">x2</span>
+<span class="n">xtol</span><span class="o">=</span><span class="mf">1e-8</span>
+<span class="k">while</span> <span class="nb">abs</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">xm</span><span class="p">))</span>  <span class="o">&gt;</span> <span class="n">xtol</span><span class="p">:</span>
+    <span class="n">xm</span> <span class="o">=</span> <span class="n">x1</span> <span class="o">-</span> <span class="n">f</span><span class="p">(</span><span class="n">x1</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">x2</span><span class="o">-</span><span class="n">x1</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">x2</span><span class="p">)</span><span class="o">-</span><span class="n">f</span><span class="p">(</span><span class="n">x1</span><span class="p">))</span>
+    <span class="n">x1</span> <span class="o">=</span> <span class="n">x2</span>
+    <span class="n">x2</span> <span class="o">=</span> <span class="n">xm</span>
+    <span class="k">pass</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:s}</span><span class="s1"> </span><span class="si">{:12.8f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;root = &#39;</span><span class="p">,</span> <span class="n">xm</span><span class="p">)</span>   <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>root =    0.75487767
+</pre></div>
+</div>
+</div>
+</div>
+<p>If the starting points span the root, then the false position or Regula Falsi method is used. This method uses the same equation as the secant method but a slightly different algorithm is used to generate the next point. This ensures that the root is always straddled. The algorithm is</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Algorithm; Regula Falsi</span>
+
+<span class="n">f</span>  <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">**</span><span class="mi">5</span><span class="o">+</span><span class="n">x</span><span class="o">-</span><span class="mi">1</span>
+<span class="n">x1</span> <span class="o">=</span> <span class="mf">0.0</span>
+<span class="n">x2</span> <span class="o">=</span> <span class="mf">1.0</span>
+<span class="n">xm</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">x2</span>
+<span class="n">xtol</span> <span class="o">=</span> <span class="mf">1e-8</span>
+<span class="k">while</span> <span class="nb">abs</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">xm</span><span class="p">))</span>  <span class="o">&gt;</span> <span class="n">xtol</span><span class="p">:</span>
+    <span class="n">xm</span> <span class="o">=</span> <span class="n">x1</span><span class="o">-</span><span class="n">f</span><span class="p">(</span><span class="n">x1</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">x2</span><span class="o">-</span><span class="n">x1</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">x2</span><span class="p">)</span><span class="o">-</span><span class="n">f</span><span class="p">(</span><span class="n">x1</span><span class="p">))</span>
+    <span class="k">if</span> <span class="n">f</span><span class="p">(</span><span class="n">x1</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">f</span><span class="p">(</span><span class="n">x2</span><span class="p">)</span> <span class="p">:</span>
+        <span class="n">x1</span> <span class="o">=</span> <span class="n">xm</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">x2</span> <span class="o">=</span> <span class="n">xm</span>
+    <span class="k">pass</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:s}</span><span class="s1"> </span><span class="si">{:12.8f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;root = &#39;</span><span class="p">,</span> <span class="n">xm</span><span class="p">)</span>   <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>root =    0.75487766
+</pre></div>
+</div>
+</div>
+</div>
+<p>The bisection method is the simplest and most robust method. The initial estimates must span the root; therefore, the function is calculated from some point until its sign is changed, if the whereabouts of the root is unknown. At this point, the bisection method is repeatedly used to divide the region into finer parts.  The while loop is also limited by the number of iterations to prevent this becoming infinite. One ‘trick’ that can sometimes be used in the secant and Regula Falsi method, should they fail, is to add a small number, <span class="math notranslate nohighlight">\(\lt 10^{-6}\)</span>, to the denominator, to prevent it accidentally becoming zero.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Algorithm; Bisection Method</span>
+
+<span class="n">f</span>  <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">**</span><span class="mi">5</span><span class="o">+</span><span class="n">x</span><span class="o">-</span><span class="mi">1</span>
+
+<span class="k">def</span> <span class="nf">bisect</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">x1</span><span class="p">,</span><span class="n">x2</span><span class="p">):</span>   
+    <span class="n">xm</span>   <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">x2</span>
+    <span class="n">xtol</span> <span class="o">=</span> <span class="mf">1e-8</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="nb">abs</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">xm</span><span class="p">))</span>  <span class="o">&gt;</span> <span class="n">xtol</span> <span class="ow">and</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">40</span><span class="p">:</span>    <span class="c1"># limit loop to 40 times</span>
+        <span class="n">xm</span> <span class="o">=</span> <span class="p">(</span><span class="n">x2</span><span class="o">+</span><span class="n">x1</span><span class="p">)</span><span class="o">/</span><span class="mf">2.0</span>
+        <span class="k">if</span> <span class="n">f</span><span class="p">(</span><span class="n">x1</span><span class="p">)</span><span class="o">*</span><span class="n">f</span><span class="p">(</span><span class="n">xm</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">x1</span> <span class="o">=</span> <span class="n">xm</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">x2</span> <span class="o">=</span> <span class="n">xm</span>
+        <span class="k">pass</span>
+        <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">xm</span>
+
+<span class="n">ans</span> <span class="o">=</span> <span class="n">bisect</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">1.0</span><span class="p">)</span>    <span class="c1"># call bisect with initial values 0 and 1</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:s}</span><span class="s1">  </span><span class="si">{:12.8f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;root = &#39;</span><span class="p">,</span> <span class="n">ans</span><span class="p">)</span>   <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>root =     0.75487766
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="numerical-integration">
+<h1>3 Numerical integration<a class="headerlink" href="#numerical-integration" title="Permalink to this headline">¶</a></h1>
+<p>Two methods of numerical integration have been briefly described in other chapters, one is the series expansion of a function and then a numerical evaluation of the terms; the other is the Euler - Maclaurin formula Chapter 5.7 and care needs to be exercised with both these methods. Three general and simpler methods are now outlined; these are the mid-point, the trapezoid, and Simpson’s rule. More sophisticated numerical methods than these are described in Numerical Recipes (Prest et al. 1986) and similar specialized texts.</p>
+<p>Each of these methods divides the function to be integrated into small strips at predetermined abscissas, which are then multiplied by a certain constant number depending on the method, and added together. The integration becomes a summation, Fig. 3, and the general name for such a numerical integration method is <em>quadrature</em>. These methods are similar to the basic way we think about integration as the limiting area of a summation of rectangular strips as the width of each strip tends to zero. If the strips are fine enough, the result is a good approximation to the true value. In general, however, we do not initially know how many strips will be needed and some experimentation with this number is always necessary.</p>
+<p>It should be remembered that whatever numerical method is used, a polynomial is being integrated and not the original equation, and thus the ability of this to describe the curve will affect the results. The more sophisticated the method becomes, the higher the order of the polynomial used.</p>
+<p><img alt="Drawing" src="chapter-10/num-methods-fig3.png" /></p>
+<p>Figure 3. The trapezoidal rule approximates an integral with straight lines between points <span class="math notranslate nohighlight">\(x_1,\, x_2,\, \cdots\)</span>, although not very well in this example, where the strips are too far apart to represent the function accurately. The mid-point method, on the other hand, evaluates the function half way between each point, three of which are shown by the vertical dotted lines.</p>
+<hr class="docutils" />
+<div class="section" id="always-try-some-algebra-first">
+<h2>3.1 Always try some algebra first<a class="headerlink" href="#always-try-some-algebra-first" title="Permalink to this headline">¶</a></h2>
+<p>There is always a tendency when using numerical methods to submit the equation directly to the computer. In many cases, however, performing some algebra first will help. This might mean simplifying the equation, removing constants to outside the integration, and, in particular, substitution of variables, which is done in standard integration. Consider the integral <span class="math notranslate nohighlight">\(\displaystyle \int_0^\infty (1+x^2)^{-1}dx\)</span> This converges very slowly and makes the upper limit very large, which results in a slow calculation and potentially inaccurate numerical result. In fact, due to rounding errors, the result will get worse as the numerical integration proceeds. Some values of <span class="math notranslate nohighlight">\(1/(1 + x^2)\)</span> are given in Table 2 and show that the maximum <span class="math notranslate nohighlight">\(x\)</span> in the integration has to be at least <span class="math notranslate nohighlight">\(100\)</span> for four-figure accuracy. This means that at least <span class="math notranslate nohighlight">\(1000\)</span> points have to be used in the integration and even possibly <span class="math notranslate nohighlight">\(10,000\)</span>.</p>
+<p>What is needed is to transform the function into something less extended. The substitution <span class="math notranslate nohighlight">\(x = e^{uz} - 1\)</span> where <span class="math notranslate nohighlight">\(u\)</span> is a small constant will do this. Typically, <span class="math notranslate nohighlight">\(u = 5\)</span>, although this value is not critical. Differentiating <span class="math notranslate nohighlight">\(x = e^{uz} - 1\)</span> gives <span class="math notranslate nohighlight">\(dx = ue^{uz}dz\)</span>, but the limits are still the same; <span class="math notranslate nohighlight">\(z = 0\)</span> when <span class="math notranslate nohighlight">\(x = 0\)</span> and <span class="math notranslate nohighlight">\(z = \infty\)</span> when <span class="math notranslate nohighlight">\(x = \infty\)</span>. Making substitutions and simplifying a little makes the integral,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \int_o^\infty \frac{u}{2e^{-uz}+e^{uz}-2}dx\]</div>
+<p>The upper limit is still <span class="math notranslate nohighlight">\(\infty\)</span>, but now this is not really important. If <span class="math notranslate nohighlight">\(z = 3\)</span>, the function in the integral has the value <span class="math notranslate nohighlight">\(\approx 1.5\cdot 10^{-6}\)</span> making the whole expression virtually zero beyond this value, and so <span class="math notranslate nohighlight">\(3\)</span> is the effective upper limit; quite an improvement on infinity. Additionally, fewer points in the integration are needed for the same precision.</p>
+<p>Table 2. The slow convergence over a wide range of <span class="math notranslate nohighlight">\(x\)</span>
+$<span class="math notranslate nohighlight">\(\displaystyle \begin{array}{ccc}
+x &amp; 0.01 &amp; 0.1 &amp; 1 &amp; 10 &amp; 100 \\[0.25cm]
+\hline
+1/(1+x^2) &amp;0.9999000&amp; 0.9900990&amp;0.5 &amp; 0.0099009&amp; 0.000099\\
+\end{array}\)</span>$</p>
+</div>
+<div class="section" id="mid-point-rule-integration">
+<h2>3.2 Mid-point rule integration<a class="headerlink" href="#mid-point-rule-integration" title="Permalink to this headline">¶</a></h2>
+<p>Mid-point integration assumes that the function is split equally into <span class="math notranslate nohighlight">\(N\)</span> points, and any point is connected by a straight line to the next, thus ignoring any curvature between these points. Clearly, for a rapidly oscillating or varying function, many determinations of N will be needed to obtain an accurate answer. The mid-point method, not surprisingly, sums the values of the <em>function</em> at the mid-point of each strip, <span class="math notranslate nohighlight">\(x_1^m \; x_2^m \cdots x_N^m \)</span> as</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle I_m=\int_a^b f(x)dx \approx \frac{b-a}{N}[f(x_1^m)+f(x_2^m)+\cdots + f(x_N^m)]\]</div>
+<p>and as <span class="math notranslate nohighlight">\(x_1^m = a+h/2,\; x_2^m = a+3h/2 \cdots x_N^m =a+(N+1)h/2\)</span> in summation notation the equation is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle I_m=\int_a^b f(x)dx\approx \sum_{j=0}^{N-1} f(a+(j+1/2)h) \tag{2}\]</div>
+<p>One advantage of this rule is that it enables functions with singularities in the integration range to be calculated. For instance, <span class="math notranslate nohighlight">\(1/(1 - x)\)</span> is infinite at <span class="math notranslate nohighlight">\(x = 1\)</span>, but an integration spanning this point need not fail with the midpoint method but will do so with all other methods that calculate the function at integer increments of <span class="math notranslate nohighlight">\(h\)</span>.</p>
+<p>The error in the integral calculated with the mid-point method is <span class="math notranslate nohighlight">\(\displaystyle \epsilon = \pm\frac{(b-a)^3f''(c)}{24N^2}\)</span> and this will be greatly reduced by increasing the number of points <span class="math notranslate nohighlight">\(N\)</span>. The size of this error is found by calculating two points <span class="math notranslate nohighlight">\(c\)</span> where the second derivative has its maximum and minimum in the range <span class="math notranslate nohighlight">\(a \le c \le b\)</span>, and choosing the largest absolute value. This can be the most difficult part of the calculation and is usually not worth the effort. It is easier to calculate the integral by doubling the number of points each time until a sufficient number of decimal places are unchanging in the result. The mid-point method is the simplest to calculate and gives accurate answers, yet it is hardly mentioned in textbooks compared to the two methods described next. Notice that, because the mid-points are used, there is one less point in the summation using the mid-point method than in the trapezoid or Simpson’s method described next.</p>
+<p>The mid point method is illustrated in the next algorithm where <span class="math notranslate nohighlight">\(e^{-x^2}\)</span> is integrated from <span class="math notranslate nohighlight">\(0 \to 1\)</span>. The exact value is <span class="math notranslate nohighlight">\(0.74682\)</span> and the numerical value is <span class="math notranslate nohighlight">\(0.74690\)</span> which is close and only used <span class="math notranslate nohighlight">\(20\)</span> points in the integration, however, To obtain <span class="math notranslate nohighlight">\(5\)</span> decimal place accuracy more than <span class="math notranslate nohighlight">\(100\)</span> terms are needed.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Algorithm; mid point integration method writtten as a subroutine or def</span>
+
+<span class="c1">#--------------------------</span>
+<span class="k">def</span> <span class="nf">mid_point</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">N</span><span class="p">):</span>    <span class="c1"># define routine</span>
+    <span class="n">h</span> <span class="o">=</span> <span class="p">(</span><span class="n">b</span><span class="o">-</span><span class="n">a</span><span class="p">)</span><span class="o">/</span><span class="n">N</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="mf">0.0</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>              <span class="c1"># last value is N-1, first 0</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="n">s</span> <span class="o">+</span><span class="n">h</span><span class="o">*</span><span class="n">f</span><span class="p">(</span> <span class="n">a</span><span class="o">+</span><span class="p">(</span><span class="n">j</span><span class="o">+</span><span class="mf">0.5</span><span class="p">)</span><span class="o">*</span><span class="n">h</span> <span class="p">)</span>
+    <span class="k">return</span> <span class="n">s</span>
+<span class="c1">#---------------------------</span>
+<span class="n">f</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>     <span class="c1"># define function</span>
+<span class="n">a</span> <span class="o">=</span> <span class="mf">0.0</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mf">1.0</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">20</span>
+ 
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:s}</span><span class="s1"> </span><span class="si">{:6.5f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;sum = &#39;</span><span class="p">,</span> <span class="n">mid_point</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">n</span><span class="p">))</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>sum =  0.74690
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="trapezoidal-rule-integration">
+<h2>3.3 Trapezoidal rule integration<a class="headerlink" href="#trapezoidal-rule-integration" title="Permalink to this headline">¶</a></h2>
+<p>Trapezoidal integration is also straightforward. The equation to approximate the
+integral is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle I_T=\int_a^b f(x)dx \approx \frac{b-a}{2N}\bigg(f(x_1)+2f(x_2)+2f(x_3)+\cdots + f(x_N)\bigg) \tag{3}\]</div>
+<p>whereby the integration is again split into <span class="math notranslate nohighlight">\(N\)</span> strips, Fig. 3, and <span class="math notranslate nohighlight">\(N\)</span> must be an even number. Calculating points <span class="math notranslate nohighlight">\(x_1,\, x_2,\cdots\)</span>  is easily done because they are related to the gap between the points; <span class="math notranslate nohighlight">\(x_2 =x_1 +h,\,x_3 =x_1 +2h\)</span> ,and so forth; see Fig.3, and <span class="math notranslate nohighlight">\(h=(b-a)/N\)</span> is the width of one strip.</p>
+<p>The integral can be calculated either, as in equation (3), by adding up the first and last value of <span class="math notranslate nohighlight">\(f\)</span> and twice all the rest and then multiplying by <span class="math notranslate nohighlight">\(h/2\)</span>, or by adding up all the values of <span class="math notranslate nohighlight">\(f\)</span> then subtracting half the value of the first and last points and finally multiplying the result by <span class="math notranslate nohighlight">\(h\)</span>. Usually, as with all numerical methods, the result is calculated with several increasing values of <span class="math notranslate nohighlight">\(N\)</span> to see if convergence is achieved. The error <span class="math notranslate nohighlight">\(\epsilon\)</span> indicates how many decimal places the result is accurate to and is reduced as <span class="math notranslate nohighlight">\(1/N^2\)</span>, the same as for the mid-point rule.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Algorithm Trapezoid rule</span>
+
+<span class="n">f</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>     <span class="c1"># define function</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="mf">0.0</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mf">1.0</span>
+<span class="n">N</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="n">h</span> <span class="o">=</span> <span class="p">(</span><span class="n">b</span><span class="o">-</span><span class="n">a</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
+<span class="n">s</span> <span class="o">=</span> <span class="mf">0.0</span>
+<span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>              <span class="c1"># last value is N, first 0</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="n">s</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">f</span><span class="p">(</span> <span class="n">a</span> <span class="o">+</span> <span class="n">j</span><span class="o">*</span><span class="n">h</span> <span class="p">)</span>
+    
+<span class="n">ss</span><span class="o">=</span> <span class="n">h</span><span class="o">*</span><span class="p">(</span><span class="n">s</span> <span class="o">-</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="o">+</span><span class="n">f</span><span class="p">(</span><span class="n">b</span><span class="p">))</span>  <span class="p">)</span><span class="o">/</span><span class="mf">2.0</span>   
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:s}</span><span class="s1"> </span><span class="si">{:6.5f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;sum = &#39;</span><span class="p">,</span> <span class="n">ss</span><span class="p">)</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>sum =  0.74667
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="simpson-s-rule-integration">
+<h2>3.4 Simpson’s rule integration<a class="headerlink" href="#simpson-s-rule-integration" title="Permalink to this headline">¶</a></h2>
+<p>Simpson’s rule is slightly more sophisticated than the trapezoidal method, as it fits a
+quadratic function to data points rather than straight lines; the formula is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle I_S=\int_a^b f(x)dx \approx \frac{b-a}{3N}[f(x_1)+4\sum_{j=odd}f(x_i)+2\sum_{j=even}f(x_i) \cdots + f(x_N)] \tag{3}\]</div>
+<p>The sum is made by adding the first and last point to four times the sum of the odd indexed points, and to twice the sum of the even numbered points. The number of data points must be an even number. The error is reduced as <span class="math notranslate nohighlight">\(1/N^4\)</span> so decreases rapidly as the number of data points increase. The method is incorporated into a procedure called a def in Python. Values are passed to this to do the calculation. A similar process could be used to make procedures of the other integration methods.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Algorithm; Simpson&#39;s rule</span>
+
+<span class="n">f</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>     <span class="c1"># define function</span>
+
+<span class="k">def</span> <span class="nf">simp</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">N</span><span class="p">):</span>
+
+    <span class="n">h</span> <span class="o">=</span> <span class="p">(</span><span class="n">b</span><span class="o">-</span><span class="n">a</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="o">-</span><span class="n">f</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="o">-</span><span class="n">f</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+    <span class="n">k</span><span class="o">=</span><span class="mi">1</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>              <span class="c1"># last value is N, first 0</span>
+        <span class="k">if</span> <span class="n">k</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>                    
+            <span class="n">s</span> <span class="o">=</span> <span class="n">s</span> <span class="o">+</span> <span class="mf">2.0</span><span class="o">*</span><span class="n">f</span><span class="p">(</span> <span class="n">a</span> <span class="o">+</span> <span class="n">j</span><span class="o">*</span><span class="n">h</span> <span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">s</span> <span class="o">=</span> <span class="n">s</span> <span class="o">+</span> <span class="mf">4.0</span><span class="o">*</span><span class="n">f</span><span class="p">(</span> <span class="n">a</span> <span class="o">+</span> <span class="n">j</span><span class="o">*</span><span class="n">h</span> <span class="p">)</span>  <span class="c1"># odd  </span>
+        <span class="n">k</span><span class="o">=-</span><span class="n">k</span>                          <span class="c1"># switch odd-even</span>
+        <span class="k">pass</span>
+    <span class="n">ss</span> <span class="o">=</span> <span class="n">h</span><span class="o">*</span><span class="n">s</span><span class="o">/</span><span class="mf">3.0</span>
+    <span class="k">return</span> <span class="n">ss</span>
+<span class="n">a</span> <span class="o">=</span> <span class="mf">0.0</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mf">1.0</span>
+<span class="n">N</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="n">ss</span> <span class="o">=</span> <span class="n">simp</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">N</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:s}</span><span class="s1"> </span><span class="si">{:6.5f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;sum = &#39;</span><span class="p">,</span> <span class="n">ss</span><span class="p">)</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>sum =  0.74682
+</pre></div>
+</div>
+</div>
+</div>
+<p>and as can be seen this result is much closer to the algebraic one that the other methods for the same number of points in the integration.</p>
+<p>In Bjerrum’s theory of ionic association in solution, the concentration of ion pairs is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle n_{1,2}=3n_1\left( \frac{e^2}{4\pi\epsilon_0k_BT} \right)^3\left( \frac{1}{\epsilon a_0} \right)^3\int_2^be^xx^{-4}dx\]</div>
+<p>where</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle a_0 = \frac{| z_1z_2 |}{2\epsilon}\frac{e^2}{4\pi\epsilon_0k_BT }\]</div>
+<p>and <span class="math notranslate nohighlight">\(b = 2a_0/\sigma\)</span> is a number greater than 2. The ionic charges are <span class="math notranslate nohighlight">\(z_1,\, z_2\)</span>, the solvent dielectric constant <span class="math notranslate nohighlight">\(\epsilon\)</span>, the minimum possible separation of the ions, when pressed together, is <span class="math notranslate nohighlight">\(\sigma\)</span>. The limit <span class="math notranslate nohighlight">\(b\)</span> has, in practice, a maximum value of <span class="math notranslate nohighlight">\(\approx 50\)</span>. The integral does not have an analytical solution, other than as another integral <span class="math notranslate nohighlight">\(( Ei(x))\)</span>, and is normally tabulated. To evaluate this integral at any value of <span class="math notranslate nohighlight">\(b\)</span> we will use the Simpson’s method.</p>
+<p>Before doing the calculation, the function <span class="math notranslate nohighlight">\(e^x x^{-4}\)</span> should be examined. It changes slowly with <span class="math notranslate nohighlight">\(x\)</span>, as may be seen by plotting, and has a minimum at <span class="math notranslate nohighlight">\(x = 4\)</span>, where the ions are at separation <span class="math notranslate nohighlight">\(a_0\)</span>. At larger values of <span class="math notranslate nohighlight">\(x\)</span>, the function rises rapidly as the exponential term dominates the <span class="math notranslate nohighlight">\(x^{-4}\)</span> term. The value of <span class="math notranslate nohighlight">\(a_0\)</span> for a 1-1 electrolyte is <span class="math notranslate nohighlight">\(0.350\)</span> nm in water at <span class="math notranslate nohighlight">\(25\,^\text{o}\)</span>C taking the dielectric constant to be <span class="math notranslate nohighlight">\(80\)</span>. The calculation is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \mathrm{a_0 = \frac{(1.602 \cdot 10^{-19} C)^2}{8\pi \cdot 8.854 \cdot 10^{-12} Fm^{-1} \cdot 1.381 \cdot 10^{-23} JK^{-1}\cdot298 K \cdot 80}}\]</div>
+<p>The unit is <span class="math notranslate nohighlight">\(\mathrm{C^2/(Fm^{-1}JK^{-1}K)}\)</span> and it is not immediately obviously that this is metres. A farad (F) is a coulomb/volt and a volt is joule/coulomb, therefore a farad is <span class="math notranslate nohighlight">\(\mathrm{F = C^2J^{-1}}\)</span> giving <span class="math notranslate nohighlight">\(a_0\)</span> units of distance. Returning now to the numerical calculation, the integral at <span class="math notranslate nohighlight">\(b = 2\)</span> is clearly zero, starting at <span class="math notranslate nohighlight">\(b = 3\)</span> and incrementing by <span class="math notranslate nohighlight">\(9\)</span> to <span class="math notranslate nohighlight">\(30\)</span> in a loop, gives range of values.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># integral in Byerrum equation using Simpson&#39;s method</span>
+
+<span class="n">f</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">4</span><span class="p">)</span>   <span class="c1"># function to ingtegrate</span>
+<span class="n">a</span> <span class="o">=</span> <span class="mf">2.0</span>
+<span class="n">N</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:s}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;limit b    integral&#39;</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">35</span><span class="p">,</span><span class="mi">9</span><span class="p">):</span> <span class="c1"># start 3 , end 30, step 9</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="n">k</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="n">simp</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">N</span><span class="p">)</span> 
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:4d}</span><span class="s1">      </span><span class="si">{:10.6g}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span> <span class="p">)</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>limit b    integral
+   3        0.325655
+  12         13.4088
+  21         8519.53
+  30      1.53234e+07
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="integrating-data-from-an-experiment">
+<h2>3.5 Integrating data from an experiment<a class="headerlink" href="#integrating-data-from-an-experiment" title="Permalink to this headline">¶</a></h2>
+<p>Integrating a curve formed from data points obtained from an experiment has to be done numerically. The safest method is to draw straight lines between the data points and calculate the area as rectangles and triangles, which is what the trapezoidal method does, and this works even if the data is not evenly spaced. You might in addition want to fit the data by a least squares method, which has the effect of smoothing the data, integrating the resulting equation and comparing the results. Alternatively, fitting a polynomial to the data and then integrating may give the required solution.</p>
+</div>
+</div>
+<div class="section" id="atomic-and-molecular-beam-scattering">
+<h1>3.6 Atomic and molecular beam scattering<a class="headerlink" href="#atomic-and-molecular-beam-scattering" title="Permalink to this headline">¶</a></h1>
+<p>In this next extended example, more of a ‘real world’ rather than a purely mathematical calculation is described; it is the classical model of the elastic scattering of one particle, an atom or molecule, off another. The formulae are developed first, and then integrated using the Coulomb and Lennard-Jones 6-12 potentials, the latter being done numerically. In this example, the scattering angle is calculated. In a later example, the actual trajectory followed by a particle during elastic scattering is calculated and drawn.</p>
+<div class="section" id="background-and-derivation-of-formulae">
+<h2>3.7 Background and derivation of formulae<a class="headerlink" href="#background-and-derivation-of-formulae" title="Permalink to this headline">¶</a></h2>
+<p>Geiger and Marsden performed one of the most famous scattering experiments during the first decade of the twentieth century. Alpha particles were passed through a very thin Au foil and the positions of these particles detected by scintillation counting after scattering off the Au atoms. In 1910, while at Manchester University, Rutherford deduced that the mass of the atom was not distributed like that in a raisin pudding throughout its volume, but concentrated at its centre in a very small dense nucleus, thus confirming a ‘planetary’ model of the atom. This laid the foundation for the old quantum (Bohr) model of the atom.</p>
+<p>In the modern version of this experiment, the nature of the force between two particles, such as atoms, molecules, or ions, is sought. A cold beam of atoms or molecules (particles) can be made by passing its gas through a small conical shaped aperture (a skimmer) into a region of high vacuum, typically <span class="math notranslate nohighlight">\(\lt 10^{-6}\)</span> torr. If the particles in one beam strike those in a second beam made in the same way, but at right angles, the particles can scatter off one another elastically. This scattering is not exactly like that of one snooker or billiard ball bouncing off another, but depends on the intermolecular potential energy between the particles. This may be mainly Coulombic if the particles are charged, but if neutral, then a Lennard-Jones potential better describes the interaction; see Fig. 30 (in solutions) for a graph of the potential. The angular position of the scattered particles can be used to calculate the form of the interaction potential. Nowadays detection of the particles’ position is measured by a CCD camera with a scintillation plate in front of it. This converts a particle’s kinetic energy into a photon. Alternatively, if this is not sensitive enough a specially designed particle detector has to be made and this moved from place to place to record the complete scattering pattern.</p>
+<p>The geometry of the experiment is sketched in Fig. 4. The incident beam of particles, which has the shape of a cylindrical rod, is aimed towards the target atom. The potential energy between particles depends only on the separation of the particles; this is called a central force and the motion of the two particles about their centre of mass, can always be reduced to an equivalent one-particle problem, which means that the target can be considered to have infinite mass and therefore cannot move. If the incoming particles are initially off-axis they are deflected by the target and generally continue to travel away from their source but if they are more or less on axis they can be backscattered, orbit or sling-shot around the target.</p>
+<p><img alt="Drawing" src="chapter-10/num-methods-fig4.png" /></p>
+<p>Figure 4. Geometry and definition of angle in particle - particle scattering. <span class="math notranslate nohighlight">\(\theta\)</span> is the angle at any position <span class="math notranslate nohighlight">\(r\)</span>, <span class="math notranslate nohighlight">\(\theta_0\)</span> the angle when the particles are closest at <span class="math notranslate nohighlight">\(r_0\)</span> and <span class="math notranslate nohighlight">\(\chi\)</span> is the scattering angle. The incoming beam has cylindrical symmetry.</p>
+<hr class="docutils" />
+<p>The incident particle starts at <span class="math notranslate nohighlight">\(-\infty\)</span> and a distance b off the axis, and has a total energy of <span class="math notranslate nohighlight">\(E_0\)</span>. The distance <span class="math notranslate nohighlight">\(b\)</span> is called the <em>impact parameter</em>, Fig. 4, and is the distance by which the particles would miss one another if there were no interaction between them. The distance between the particles is the vector r, and the closest that they approach to one another is <span class="math notranslate nohighlight">\(r_0\)</span>. This minimum distance occurs in a repulsive potential at a distance greater than b, because the initial energy causes the incoming particle to rise up the potential ‘hill’ to an extent depending on its total energy. A more realistic potential, such as a Lennard-Jones 6-12, has both attractive and repulsive parts. The attractive part is usually more extended than the repulsive, so that the particles are attracted to one another at long range and repel at short range, consequently, the distance of closest approach can now be smaller than <span class="math notranslate nohighlight">\(b\)</span>. The particle has a final asymptotic angle <span class="math notranslate nohighlight">\(\chi\)</span> and the geometry shown in the figure gives this angle as</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle  \chi=\pi-2\theta_0 \tag{5}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\theta_0\)</span> is the angle between the particles when they are closest. The aim of the calculation is to find <span class="math notranslate nohighlight">\(\theta_0\)</span> as a function of <span class="math notranslate nohighlight">\(b\)</span> and <span class="math notranslate nohighlight">\(E_0\)</span>, and hence <span class="math notranslate nohighlight">\(\chi\)</span>, which can be measured experimentally. During a collision, the total energy and angular momentum are both conserved and are therefore constant, because no external forces act on the particles. The initial energy is <span class="math notranslate nohighlight">\(E_0 = \mu v_0^2/2\)</span>, where <span class="math notranslate nohighlight">\(v_0\)</span> is the asymptotic relative radial velocity and the reduced mass of the two particles is <span class="math notranslate nohighlight">\(\mu\)</span>. The initial energy is equal to the total energy, which is the sum of the kinetic and potential energy <span class="math notranslate nohighlight">\(U(r)\)</span> giving</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle E_0=\frac{\mu v^2}{2}{+\frac{L^2}{2\mu r^2}+U(r)} \tag{6}\]</div>
+<p>The kinetic energy is <span class="math notranslate nohighlight">\(\mu v^2/2\)</span>, where <span class="math notranslate nohighlight">\(v = dr/dt\)</span> is the radial velocity at time <span class="math notranslate nohighlight">\(t\)</span> during the collision, and <span class="math notranslate nohighlight">\(L\)</span> the angular momentum. The centrifugal energy due to rotational motion, is <span class="math notranslate nohighlight">\(L^2/2\mu r^2\)</span>, which is positive, and when this reaches its maximum, the radial velocity <span class="math notranslate nohighlight">\(v\)</span> is zero, and the particles are at their closest point, <span class="math notranslate nohighlight">\(r_0\)</span>. Since the initial velocity <span class="math notranslate nohighlight">\(v_0\)</span> is perpendicular to <span class="math notranslate nohighlight">\(b\)</span>, the angular momentum is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle L=\mu b v_0 =b\sqrt{2E_0\mu}\]</div>
+<p>making</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle  E_0=\frac{\mu v^2}{2} + E_0\left(\frac{b}{r} \right)^2+U(r) \tag{7}\]</div>
+<p>In this form the centrifugal energy is a function of <span class="math notranslate nohighlight">\(r\)</span> and the total potential energy can be considered to be the effective potential <span class="math notranslate nohighlight">\(\displaystyle U_{eff}(r) = E_0\left(\frac{b}{r}\right)^2 + U(r)\)</span> instead of simply <span class="math notranslate nohighlight">\(U(r)\)</span>. By definition, angular momentum is <span class="math notranslate nohighlight">\(\displaystyle L = \mu r^2\frac{dθ}{dt}\)</span> and also as <span class="math notranslate nohighlight">\(L = \mu bv_0\)</span>, therefore <span class="math notranslate nohighlight">\(\displaystyle d\theta = b v_0r^{-2}dt\)</span>.</p>
+<p>Our aim is to find <span class="math notranslate nohighlight">\(\theta\)</span> the scattering angle and, because the last equation involves <span class="math notranslate nohighlight">\(d\theta\)</span> and <span class="math notranslate nohighlight">\(dt\)</span>, an integration will be needed, and a change of variable to <span class="math notranslate nohighlight">\(r\)</span> from <span class="math notranslate nohighlight">\(t\)</span>. This change is found using the energy which, by definition, is <span class="math notranslate nohighlight">\(E = \mu(dr/dt)^2/2\)</span> giving <span class="math notranslate nohighlight">\(\displaystyle dt = \sqrt{\frac{\mu}{2E}}dr\)</span>. Combining this with <span class="math notranslate nohighlight">\(d\theta = bv_0r^{−2}dt\)</span>, substituting <span class="math notranslate nohighlight">\(E = \mu v^2/2\)</span>, using equation 7, and simplifying a little gives the differential equation;</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{d\theta}{dr}=-\frac{b}{r^2}\left(1-\frac{U(r)}{E_0}-\frac{b^2}{r^2}  \right)^{-1/2} \tag{8}\]</div>
+<p>The leading negative sign is introduced because <span class="math notranslate nohighlight">\(d\theta /dr\)</span> describes the incoming particle. The angle <span class="math notranslate nohighlight">\(\theta\)</span>, which depends on energy <span class="math notranslate nohighlight">\(E_0\)</span> and impact parameter <span class="math notranslate nohighlight">\(b\)</span>,  can be calculated by integrating from its minimum value at <span class="math notranslate nohighlight">\(r = r_0\)</span> to infinity, and takes the form,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \theta_0(E_0,b) = -\int_{\infty}^{r_0} \frac{d\theta}{dr} dr =+b\int_{r_0}^{\infty}\frac{1}{r^2\sqrt{1-\frac{U(r)}{E_0} -\frac{b^2}{r^2}  }}dr \tag{9}\]</div>
+<p>Note that the angle <span class="math notranslate nohighlight">\(\theta_0\)</span> depends on the impact parameter <span class="math notranslate nohighlight">\(b\)</span>, the initial energy of the particle <span class="math notranslate nohighlight">\(E_0\)</span>, and the potential <span class="math notranslate nohighlight">\(U\)</span>, each of which must be known, as must <span class="math notranslate nohighlight">\(r_0\)</span>, before the calculation can be completed.</p>
+<p>This equation is also conveniently rewritten as <span class="math notranslate nohighlight">\(\theta_0=\int g(r)dr\)</span> where</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle g(r)=\frac{b}{r^2}\frac{1}{\sqrt{1-U(r)/E_0-(b/r)^2}}  \tag{10}\]</div>
+</div>
+<div class="section" id="scattering">
+<h2>3.8 Scattering<a class="headerlink" href="#scattering" title="Permalink to this headline">¶</a></h2>
+<p>The scattering by two different potentials, the Coulomb and the Lennard-Jones 6-12 will be illustrated. The first step in the calculation is to find the equation for the separation <span class="math notranslate nohighlight">\(r_0\)</span>. This is done by using conservation of energy and then knowing that the radial velocity <span class="math notranslate nohighlight">\(v\)</span> is zero at the turning point <span class="math notranslate nohighlight">\(r_0\)</span>. From eqn 6 with <span class="math notranslate nohighlight">\(v = 0\)</span> and <span class="math notranslate nohighlight">\(r = r_0\)</span>, the energy is</p>
+<p><span class="math notranslate nohighlight">\(\displaystyle E_0 = \frac{L^2}{2\mu r_0^2} + U(r_0)\)</span>.</p>
+<p>Substituting for <span class="math notranslate nohighlight">\(L=b\sqrt{2E_0\mu}\)</span> and rearranging gives</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle 1-\frac{b^2}{r_0^2}-\frac{U(r_0)}{E_0}=0 \tag{11}\]</div>
+<p>This is solved for <span class="math notranslate nohighlight">\(r_0\)</span> and the largest root used, if there is more than one. Depending on the potential <span class="math notranslate nohighlight">\(r_0\)</span> may have to be found numerically, for example, by using the bisection method, see section 2.</p>
+<p>The next step depends on the potential and as an example the results of a hard sphere collision between two spheres is shown in figure 5. In this potential if the sum of the two colliding spheres is  <span class="math notranslate nohighlight">\(d\)</span> the potential is infinite when <span class="math notranslate nohighlight">\(b \le d\)</span> and zero otherwise. This means that</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle  \theta_0= +b\int_{d}^{\infty}\frac{1}{r^2\sqrt{1 -\frac{b^2}{r^2}  }}dr \]</div>
+<p>changing the variable to <span class="math notranslate nohighlight">\(u=1/r\)</span> produces <span class="math notranslate nohighlight">\(dr=-dr/r^2\)</span> and then <span class="math notranslate nohighlight">\(\displaystyle \theta_0= \int_d^\infty (1-b^2u^2)^{-1/2}du\)</span> and this has a standard form;</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \theta_0= \sin^{-1}\left(\frac{b}{d} \right)\]</div>
+<p>and so the scattering angle is <span class="math notranslate nohighlight">\(\displaystyle \chi=\pi- \sin^{-1}\left(\frac{b}{d} \right)\)</span> which is independent of the collision energy. This is shown in fig 5, where <span class="math notranslate nohighlight">\(x = b/d\)</span>.</p>
+</div>
+<div class="section" id="the-coulomb-potential">
+<h2>3.9 The  Coulomb potential<a class="headerlink" href="#the-coulomb-potential" title="Permalink to this headline">¶</a></h2>
+<p>The Coulomb potential energy between charges <span class="math notranslate nohighlight">\(q_1\)</span> and <span class="math notranslate nohighlight">\(q_2\)</span> at separation <span class="math notranslate nohighlight">\(r\)</span> is <span class="math notranslate nohighlight">\(U(r) = \alpha/r\)</span> where <span class="math notranslate nohighlight">\(\alpha = q_1q_2/4\pi \epsilon_0\)</span> in SI units. Depending on the charges, the Coulomb potential can be repulsive or attractive. This <span class="math notranslate nohighlight">\(1/r\)</span> form of potential also describes that due to gravity, where <span class="math notranslate nohighlight">\(\alpha = -Gm_1m_2\)</span>. For example, it will describe a comet being attracted to and flung around the sun or a planet, <span class="math notranslate nohighlight">\(G\)</span> being the gravitational constant and <span class="math notranslate nohighlight">\(m_1\)</span> and <span class="math notranslate nohighlight">\(m_2\)</span> the masses.</p>
+<p>Considering now the Coulomb potential, the smallest separation of the particles is found from equation 11, which is a quadratic in <span class="math notranslate nohighlight">\(r_0\)</span>. The result is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle r_0=\frac{\alpha \pm\sqrt{\alpha^2+4b^2E_0^2}}{2E_0} \]</div>
+<p>and the larger root should be taken. The smallest value <span class="math notranslate nohighlight">\(r_0\)</span> can take occurs when <span class="math notranslate nohighlight">\(b\)</span> = 0, and is <span class="math notranslate nohighlight">\(\alpha/E_0\)</span>, which is the minimum separation because it is limited by the initial energy. The angle <span class="math notranslate nohighlight">\(\theta_0\)</span> is given by equation 10, with <span class="math notranslate nohighlight">\(g(r)\)</span> given by <span class="math notranslate nohighlight">\(\displaystyle \frac{b}{r^2}\left( 1-\frac{\alpha}{rE_0} -\frac{b^2}{r^2}  \right)^{-1/2}\)</span>.</p>
+<p>The integral (10) can be solved by substituting <span class="math notranslate nohighlight">\(r=1/u\)</span> to make</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \theta_0=b\int_0^{u_0}\frac{1}{\sqrt{ 1-a u -b^2u^2  } } du\]</div>
+<p>where for clarity <span class="math notranslate nohighlight">\(a=\alpha/E_0\)</span> and <span class="math notranslate nohighlight">\(\displaystyle u_0=1/r_0= \frac{-a\pm \sqrt{a^2+4b^2}  }{2b^2}\)</span>.</p>
+<p>This has the form of a standard integral; <span class="math notranslate nohighlight">\(\displaystyle \int \frac{dx}{\sqrt{f+gx+hx^2}}=-\frac{1}{\sqrt{-h}}\sin^{-1}\left(  \frac{2hx+g}{g^2-4fh}\right) + const\)</span> if <span class="math notranslate nohighlight">\(h\)</span> is negative and <span class="math notranslate nohighlight">\(cont\)</span> is the integration constant. The relationship <span class="math notranslate nohighlight">\(\displaystyle \sin^{-1}(x)=i\ln\left( ix+\sqrt{1-x^2} \right)\)</span> is also needed to simplify the answer after the limits have been included.</p>
+<p>The result for the scattering angle is <span class="math notranslate nohighlight">\(\displaystyle \chi=2\sin^{-1}\left(\frac{\alpha }{\sqrt{\alpha^2+4E_0b^2}}  \right) \)</span> which by using a right angled triangle can be recast as</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \chi=2\tan^{-1}\left( \frac{\alpha}{2E_ob} \right) \tag{12}\]</div>
+<p>which lies between <span class="math notranslate nohighlight">\(0\)</span> and <span class="math notranslate nohighlight">\(\pi\)</span> radians because the Coulomb potential is wholly repulsive between to atoms. At <span class="math notranslate nohighlight">\(b = 0,\, \chi = \pi\)</span> and a head-on collision occurs; at larger impact parameters the scattering angle gradually decays to zero. The particle never really misses the target, on an atomic scale, because the Coulomb interaction spreads out into space to infinity and this can be seen as the scattering angle decreases slowly.</p>
+<p>Fig. 5 shows the scattering angles for the Coulomb collision, plotted as <span class="math notranslate nohighlight">\(\chi/\pi\)</span> vs <span class="math notranslate nohighlight">\(x = 2E_0b/\alpha\)</span>, which is dimensionless, and for a hard sphere collision vs <span class="math notranslate nohighlight">\(x = b/d\)</span> (see Q.7). When <span class="math notranslate nohighlight">\(x \gt 1\)</span> this measures the number of times that the impact parameter, the separation of the centres of the atoms, exceeds the sum of their radii. With hard spheres, because there is no long range interaction between them, the scattering angle <span class="math notranslate nohighlight">\(\chi\)</span> is zero when their separation is greater than the sum of their radii <span class="math notranslate nohighlight">\(d\)</span>.</p>
+<p>In coulomb scattering the quantity <span class="math notranslate nohighlight">\(\alpha/2E_0\)</span> has dimensions of distance because <span class="math notranslate nohighlight">\(\alpha = q_1q_2/4\pi\epsilon_0\)</span> and has units <span class="math notranslate nohighlight">\(\mathrm{C^2/(C^2J^{-1}m^{-1})}\)</span> where C is the Coulomb, and <span class="math notranslate nohighlight">\(\alpha/2E_0\)</span> is therefore the effective diameter of the target. In the Coulomb case, the potential spreads out as <span class="math notranslate nohighlight">\(1/r\)</span> and one particle influences the other and is the cause of the small angular deflection at large <span class="math notranslate nohighlight">\(x\)</span> values. At small <span class="math notranslate nohighlight">\(x\)</span>, which is close to a ‘head on’ collision, Coulomb scattering is similar to that of a hard sphere.</p>
+<p><img alt="Drawing" src="chapter-10/num-methods-fig5.png" /></p>
+<p>Figure 5. Scattering angle as fraction of <span class="math notranslate nohighlight">\(\pi\)</span> radians or <span class="math notranslate nohighlight">\(\chi/\pi\)</span> vs dimensionless parameter <span class="math notranslate nohighlight">\(x = b/d\)</span> for hard sphere and <span class="math notranslate nohighlight">\(x = 2E_0b/\alpha\)</span> for repulsive Coulomb potentials (see text). The inset diagrams show, schematically, Coulomb deflections with potential as diffuse filled circles). When the impact parameter <span class="math notranslate nohighlight">\(b\)</span> is greater than the sum of the radii <span class="math notranslate nohighlight">\(d\)</span> there is no scattering in the hard sphere collision, but this does occur with the coulomb potential as this has a finite, although decreasing value at large separation’s.</p>
+<hr class="docutils" />
+</div>
+</div>
+<div class="section" id="the-lennard-jones-potential">
+<h1>3.10 The Lennard-Jones potential<a class="headerlink" href="#the-lennard-jones-potential" title="Permalink to this headline">¶</a></h1>
+<p>The LJ potential <span class="math notranslate nohighlight">\(\displaystyle U(r) = 4\epsilon\left[(\sigma/r)^{12} - (\sigma/r)^6\right]\)</span> has both attractive and repulsive parts to it; see Fig. 5.30 (in the solutions). The well depth is <span class="math notranslate nohighlight">\(-\epsilon\)</span> and <span class="math notranslate nohighlight">\(\sigma\)</span> is a measure of the extent of the potential. The minimum energy occurs at <span class="math notranslate nohighlight">\(2^{1/6}\sigma\)</span>. Both the integration to find <span class="math notranslate nohighlight">\(\theta_0\)</span> and the initial value <span class="math notranslate nohighlight">\(r_0\)</span>, have to be calculated numerically. The interaction between two heavy noble gas atoms is described well with this type of potential, but molecules more approximately so. Substituting for the potential into (9) gives</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \theta_0=b\int_{r_0}^\infty \frac{1}{r^2}\left( 1-\frac{U(r)}{E_0}-\frac{b^2}{r^2} \right)^{-1/2}dr\]</div>
+<p>This integral has to be solved numerically; it also has a difficult limit and the function  tends to infinity when <span class="math notranslate nohighlight">\(r = r_0\)</span> and decays slowly to zero as <span class="math notranslate nohighlight">\(r\)</span> increases, a value of at least <span class="math notranslate nohighlight">\(r = 1000\)</span> is typically needed to get an accurate integration when <span class="math notranslate nohighlight">\(\sigma,\, b,\, \epsilon,\, E_0 \approx 1\)</span>. Using the substitution <span class="math notranslate nohighlight">\(r = r_0/(1 − w^2) \)</span> simplifies the limits and also makes the calculation more accurate.</p>
+<p>When <span class="math notranslate nohighlight">\(r=r_0\)</span> then <span class="math notranslate nohighlight">\(w\)</span> = 0 and when <span class="math notranslate nohighlight">\(r=\infty,\,w = 1\)</span> thus the new limits are <span class="math notranslate nohighlight">\(w=0,\,1\)</span>. Differentiating gives <span class="math notranslate nohighlight">\(dr = 2r_0w/(1 - w^2)^{2}dw\)</span> and this also has to be substituted into the integral producing</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \theta_0=\frac{2b}{r_0}\int_0^1 w \left( 1-\frac{1}{E_0}U\left(\frac{r_0}{1-w^2}\right)-\frac{b^2(1-w^2)^2}{r_0^2}\right)^{-1/2}dw \tag{14}\]</div>
+<p>The distance <span class="math notranslate nohighlight">\(r_0\)</span> still has to be found and using eqn. 11 it is the largest root of</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle  r=b\left(1-4\frac{\epsilon}{E_0}\left[\left(\frac{\sigma}{r}\right)^{12} - \left(\frac{\sigma}{r}\right)^6 \right]    \right)^{-1/2} \tag{15}\]</div>
+<p>for each value of <span class="math notranslate nohighlight">\(b\)</span> required. The bisection method is easy to use for this calculation, however, as it is important to take the largest positive root, this can be found by starting at a large value of <span class="math notranslate nohighlight">\(r\)</span> and decreasing this in steps until a change of sign in eqn 15 occurs.</p>
+<p>The schematic of an algorithm for the whole calculation over a range of <span class="math notranslate nohighlight">\(b\)</span>  is shown below. The calculation only requires the ratio <span class="math notranslate nohighlight">\(E_0/\epsilon\)</span> as input and to plot universal curves <span class="math notranslate nohighlight">\(b\)</span> is reduced to <span class="math notranslate nohighlight">\(b/\sigma\)</span> so that <span class="math notranslate nohighlight">\(\sigma\)</span> = 1 and <span class="math notranslate nohighlight">\(\epsilon\)</span> = 1 is chosen. For simplicity, a python integration routine quad will be used in step 2(iii).</p>
+<p><strong>(1)</strong><span class="math notranslate nohighlight">\(\quad\)</span>Define the constants, <span class="math notranslate nohighlight">\(E_0,\,\epsilon\)</span> ,etc.,range,increment in <span class="math notranslate nohighlight">\(b\)</span>, and number of points.</p>
+<p><strong>(2)</strong><span class="math notranslate nohighlight">\(\quad\)</span> Start loop over several <span class="math notranslate nohighlight">\(b\)</span> values in the range <span class="math notranslate nohighlight">\(0 \to 3\)</span></p>
+<p><strong>(i)</strong><span class="math notranslate nohighlight">\(\quad\)</span> Search for the root, equation 15, starting at maximum <span class="math notranslate nohighlight">\(r\)</span> which is <span class="math notranslate nohighlight">\(bm\)</span>.</p>
+<p><strong>(ii)</strong><span class="math notranslate nohighlight">\(\quad\)</span> Find an accurate root <span class="math notranslate nohighlight">\(r_0\)</span> using the bisection method.</p>
+<p><strong>(iii)</strong><span class="math notranslate nohighlight">\(\quad\)</span> Calculate the integral equation 9  or 10.</p>
+<p><strong>(iv)</strong><span class="math notranslate nohighlight">\(\quad\)</span> Calculate angle <span class="math notranslate nohighlight">\(\chi\)</span></p>
+<p><strong>(v)</strong><span class="math notranslate nohighlight">\(\quad\)</span> Store results</p>
+<p><strong>(vi)</strong><span class="math notranslate nohighlight">\(\quad\)</span> Increment <span class="math notranslate nohighlight">\(b\)</span></p>
+<p>End Loop
+(3) Plot graph.</p>
+<p>The plotting is commented out but an annotated plot is shown in fig 6.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Algorithm; Elastic scattering with LJ potential</span>
+
+<span class="k">def</span> <span class="nf">scattering</span><span class="p">(</span><span class="n">E0</span><span class="p">,</span><span class="n">eps</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">num</span><span class="p">):</span>           <span class="c1"># solve equations</span>
+    
+    <span class="n">U</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">r</span><span class="p">:</span> <span class="mf">4.0</span><span class="o">*</span><span class="n">eps</span><span class="o">*</span><span class="p">((</span><span class="n">sigma</span><span class="o">/</span><span class="n">r</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="n">sigma</span><span class="o">/</span><span class="n">r</span><span class="p">)</span><span class="o">**</span><span class="mi">6</span><span class="p">)</span>         <span class="c1"># L-J 6-12 potential</span>
+    <span class="n">g</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">r</span><span class="p">,</span><span class="n">b</span><span class="p">:</span> <span class="n">b</span><span class="o">/</span><span class="p">(</span><span class="n">r</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mf">1.0</span> <span class="o">-</span> <span class="n">U</span><span class="p">(</span><span class="n">r</span><span class="p">)</span><span class="o">/</span><span class="n">E0</span> <span class="o">-</span> <span class="p">(</span><span class="n">b</span><span class="o">/</span><span class="n">r</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="p">)</span>    <span class="c1"># eqn 10</span>
+    
+    <span class="n">angle</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span>       <span class="c1"># initial values</span>
+    <span class="n">bval</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.0</span>
+    
+    <span class="n">f</span>  <span class="o">=</span> <span class="k">lambda</span> <span class="n">r0</span><span class="p">:</span> <span class="n">r0</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="mf">1.0</span><span class="o">-</span><span class="n">U</span><span class="p">(</span><span class="n">r0</span><span class="p">)</span><span class="o">/</span><span class="n">E0</span><span class="p">)</span> <span class="o">-</span> <span class="n">b</span><span class="o">**</span><span class="mi">2</span>                    <span class="c1"># eqn 11 solve for r0</span>
+    <span class="n">ff</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">w</span><span class="p">:</span> <span class="n">g</span><span class="p">(</span><span class="n">r0</span><span class="o">/</span><span class="p">(</span><span class="mf">1.0</span> <span class="o">-</span> <span class="n">w</span><span class="o">**</span><span class="mi">2</span><span class="p">),</span><span class="n">b</span><span class="p">)</span><span class="o">*</span><span class="mi">2</span><span class="o">*</span><span class="n">r0</span><span class="o">*</span><span class="n">w</span><span class="o">/</span><span class="p">(</span><span class="mf">1.0</span> <span class="o">-</span> <span class="n">w</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>     <span class="c1"># eqn to solve subs included</span>
+    
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="p">):</span>
+        <span class="n">r0</span> <span class="o">=</span> <span class="n">bm</span>                    <span class="c1"># start at max value</span>
+        <span class="k">while</span> <span class="n">f</span><span class="p">(</span><span class="n">r0</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mf">0.0</span><span class="p">:</span>
+            <span class="n">r0</span> <span class="o">=</span> <span class="n">r0</span> <span class="o">-</span> <span class="n">delta_b</span>      <span class="c1"># step 1 look for rargest roor</span>
+            <span class="k">pass</span>
+        <span class="n">x1</span> <span class="o">=</span> <span class="n">r0</span> <span class="o">-</span> <span class="mf">0.1</span>
+        <span class="n">x2</span> <span class="o">=</span> <span class="n">r0</span> <span class="o">+</span> <span class="mf">0.1</span>
+        <span class="n">xm</span> <span class="o">=</span> <span class="n">bisect</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">x1</span><span class="p">,</span><span class="n">x2</span><span class="p">)</span>       <span class="c1"># look for root</span>
+        <span class="n">r0</span> <span class="o">=</span> <span class="n">xm</span> <span class="o">+</span> <span class="mf">1e-6</span>             <span class="c1"># add for numberical stability</span>
+    
+        <span class="n">theta</span><span class="p">,</span> <span class="n">temp</span> <span class="o">=</span> <span class="n">quad</span><span class="p">(</span><span class="n">ff</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># integrate equation using standard library method</span>
+        <span class="n">chi</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">-</span> <span class="mf">2.0</span><span class="o">*</span><span class="n">theta</span>
+        <span class="n">angle</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">chi</span>
+        <span class="n">bval</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>  <span class="o">=</span> <span class="n">b</span><span class="o">/</span><span class="n">sigma</span>         <span class="c1"># save result</span>
+        <span class="n">b</span> <span class="o">=</span> <span class="n">b</span> <span class="o">+</span> <span class="n">delta_b</span>            <span class="c1"># increment</span>
+    <span class="k">pass</span>
+    
+    <span class="k">return</span> <span class="n">bval</span><span class="o">/</span><span class="n">sigma</span> <span class="p">,</span><span class="n">angle</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span>
+<span class="c1">#-----------</span>
+<span class="k">def</span> <span class="nf">bisect</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">x1</span><span class="p">,</span><span class="n">x2</span><span class="p">):</span>               <span class="c1"># bisection method</span>
+    <span class="n">xm</span> <span class="o">=</span> <span class="mf">2.0</span><span class="o">*</span><span class="n">x2</span>
+    <span class="n">xtol</span> <span class="o">=</span> <span class="mf">1e-6</span>                    <span class="c1"># tolerance on root</span>
+    <span class="k">while</span> <span class="nb">abs</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">xm</span><span class="p">))</span>  <span class="o">&gt;</span> <span class="n">xtol</span><span class="p">:</span>
+        <span class="n">xm</span> <span class="o">=</span> <span class="p">(</span><span class="n">x2</span> <span class="o">+</span> <span class="n">x1</span><span class="p">)</span><span class="o">/</span><span class="mf">2.0</span>
+        <span class="k">if</span> <span class="n">f</span><span class="p">(</span><span class="n">x1</span><span class="p">)</span><span class="o">*</span><span class="n">f</span><span class="p">(</span><span class="n">xm</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">x1</span> <span class="o">=</span> <span class="n">xm</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">x2</span> <span class="o">=</span> <span class="n">xm</span>
+        <span class="k">pass</span>
+    <span class="k">return</span> <span class="n">xm</span>
+<span class="c1">#-----------</span>
+
+<span class="c1">#fig1 = plt.figure(figsize=(6,6))         # define figure size</span>
+<span class="c1">#plt.axhline(0,linewidth=1,color=&#39;grey&#39;)</span>
+<span class="n">clr</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span><span class="s1">&#39;red&#39;</span><span class="p">,</span><span class="s1">&#39;green&#39;</span><span class="p">]</span>               <span class="c1"># colour of plot lines.</span>
+
+<span class="n">E0</span>    <span class="o">=</span> <span class="mf">0.2</span>         <span class="c1"># set initial values</span>
+<span class="n">eps</span>   <span class="o">=</span> <span class="mf">1.0</span>
+<span class="n">sigma</span> <span class="o">=</span> <span class="mf">1.0</span>
+<span class="n">n</span>     <span class="o">=</span> <span class="mi">200</span>         <span class="c1"># number of data points</span>
+<span class="n">bm</span>    <span class="o">=</span> <span class="mf">3.0</span>         <span class="c1"># initial impact parameter</span>
+<span class="n">delta_b</span> <span class="o">=</span> <span class="n">bm</span><span class="o">/</span><span class="n">n</span>      <span class="c1"># increment </span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">delta_b</span>
+
+<span class="n">angle</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+<span class="n">bval</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">eps</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">([</span><span class="n">E0</span><span class="o">*</span><span class="mi">5</span><span class="p">,</span><span class="n">E0</span><span class="p">,</span><span class="n">E0</span><span class="o">/</span><span class="mi">5</span><span class="p">]):</span>     <span class="c1"># calculate for 3 values </span>
+    <span class="n">bval</span><span class="p">,</span><span class="n">angle</span> <span class="o">=</span> <span class="n">scattering</span><span class="p">(</span><span class="n">E0</span><span class="p">,</span><span class="n">eps</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">i</span><span class="p">)</span>
+    <span class="c1">#plt.plot(bval, angle,color = clr[i])    # plot results</span>
+    <span class="k">pass</span>
+<span class="c1">#plt.show()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>A few points should be made about the calculation before considering the results. The integration is very tricky when the deflection angle is large and negative, because this angle can become <span class="math notranslate nohighlight">\(-\infty\)</span> and occasionally the integration will fail because here the square root becomes zero or imaginary. This can usually be avoided by adding a small amount to <span class="math notranslate nohighlight">\(r_0\)</span> and <span class="math notranslate nohighlight">\(10^{-6}\)</span> was found to be sufficient to prevent this and not significantly affect the results. The largest positive root is sought by calculating from the largest <span class="math notranslate nohighlight">\(r\)</span>, which can be taken to be the same as the largest <span class="math notranslate nohighlight">\(b\)</span>, to the smallest <span class="math notranslate nohighlight">\(r\)</span>, finding a change in sign and then starting the bisection method. This is necessary because the <span class="math notranslate nohighlight">\(r_0\)</span> equation can have three roots when <span class="math notranslate nohighlight">\(b\)</span> is large. The function <span class="math notranslate nohighlight">\(g\)</span>, equation 10 is a function of <span class="math notranslate nohighlight">\(r\)</span> and <span class="math notranslate nohighlight">\(b\)</span>, and when the substitution is made, <span class="math notranslate nohighlight">\(r\)</span> is replaced. The differential <span class="math notranslate nohighlight">\(dw\)</span> also has to be substituted for <span class="math notranslate nohighlight">\(dr\)</span>, and this can be seen in the function ff.</p>
+<p>The angle <span class="math notranslate nohighlight">\(\chi\)</span> vs <span class="math notranslate nohighlight">\(b/\sigma\)</span> is plotted below for three values of the ratio <span class="math notranslate nohighlight">\(E/\epsilon\)</span>.</p>
+<p><img alt="Drawing" src="chapter-10/num-methods-fig6.png" /></p>
+<p>Figure 6. Scattering angles with the Lennard-Jones potential.</p>
+<hr class="docutils" />
+<div class="section" id="analysis-of-results">
+<h2>3.11 Analysis of results<a class="headerlink" href="#analysis-of-results" title="Permalink to this headline">¶</a></h2>
+<p>When the impact parameter <span class="math notranslate nohighlight">\(b\)</span> is small (<span class="math notranslate nohighlight">\(b/\sigma \lt 1\)</span>), the recoil angle <span class="math notranslate nohighlight">\(\chi\)</span> is large and positive and the repulsive part of the potential is dominant. When <span class="math notranslate nohighlight">\(b\)</span> increases, the overall deflection can become zero. This is called a ‘glory’ and the initial energy and values of <span class="math notranslate nohighlight">\(b\)</span> mean that the particles are initially attracted to one another, but the impact angle is glancing and, as the repulsive part of the potential is reached, just enough repulsion is present to return the particle on to its original path; the attractive and repulsive interactions exactly cancel. Rainbow scattering occurs when <span class="math notranslate nohighlight">\(d\chi/db = 0\)</span> at the minimum of the curve shown in Fig. 6. At some <span class="math notranslate nohighlight">\(b\)</span> values, the approaching particle can become captured, the angle increases past <span class="math notranslate nohighlight">\(-\pi\)</span> to <span class="math notranslate nohighlight">\(-\infty\)</span> and the particles orbit one another. This is seen with <span class="math notranslate nohighlight">\(E/\epsilon = 1/5\)</span> at <span class="math notranslate nohighlight">\(b/\sigma \approx 2.29\)</span>. The trajectories are shown in Fig. 10,  the algorithm with which to calculate them is also given.</p>
+<p>In actual experiments and in quantum calculations, interferences between the different paths the same particle can take are observed. These must be absent in any classical calculation. Scattering is observed experimentally by performing molecular beam experiments and the scattering is, fortunately, not always elastic and chemical reactions can occur and this is called <em>reactive scattering</em>. These experiments have provided lots of fundamental information about chemical reactions and there are a number of clear descriptions of this, see, for example, Rigby et al. (1986), Steinfeld et al. (1999), Bernstein (1982), Eyring et al. (1980), and Hirst (1990).</p>
+<p>end</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./chapter-10"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Godfrey Beddard<br/>
+        
+            &copy; Copyright 2022.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# Godfrey Beddard 'Applying Maths in the Chemical & Biomolecular Sciences' Chapter 9
+# ## Solutions Q 1 - 6
 
 # In[1]:
 
@@ -16,9 +16,8 @@ init_printing()                         # allows printing of SymPy results in ty
 plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 
-# # Fourier series Answers 1-6
-# 
-# **Q1 answer** To confirm the integrations involved in calculating $b_n$, the method of section 1.4, eq. 12 can be used. Each term in the series is multiplied by $\sin(mx)$, and then integrated over the range $\pm\pi$. The series $g(x)$ is given by eqn 1 and approximates $f(x)$ as 
+# ### Q1 answer 
+# To confirm the integrations involved in calculating $b_n$, the method of section 1.4, eq. 12 can be used. Each term in the series is multiplied by $\sin(mx)$, and then integrated over the range $\pm\pi$. The series $g(x)$ is given by eqn 1 and approximates $f(x)$ as 
 # 
 # $$\displaystyle  f(x) \approx g(x) = \frac{a_0}{2}+ \sum\limits_{n=1}^\infty a_n\cos(nx) + \sum\limits_{n=1}^\infty b_n\sin(nx)   $$
 # 
@@ -31,10 +30,10 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # In[2]:
 
 
-n,m,x =symbols(' n m x')
+n,m,x = symbols('n, m, x')
 
 f = sin(n*x)*sin(m*x)
-I0=  integrate(f,x)
+I0=  integrate(f,x, conds ='none')  # conds='none' means no special conditions
 I0
 
 
@@ -49,8 +48,9 @@ I0
 # and the summation is reduced to just this one term. The equation for the coefficients $b_n$ is
 # 
 # $$\displaystyle   b_n= \frac{1}{\pi}\int\limits_{-\pi}^{+\pi}f(x)\sin(nx)dx \qquad  (n \gt 0)  $$
-
-# **Q2 answer**   The sine function is odd therefore only $b$ terms are present and
+# 
+# ### Q2 answer   
+# The sine function is odd therefore only $b$ terms are present and
 # 
 # $$\displaystyle b_n=\frac{1}{L}\int_{-L}^L \sin(x)\sin(n\pi x/L)dx $$
 # 
@@ -79,14 +79,14 @@ I0
 
 
 # plot fourier sine series   =  sum (bn sin(n.pi.x/L) n=1...)
-fsin = lambda x, L ,k : 2*np.pi*np.sin(L)                        *sum( (-1)**(n+1)*n*np.sin(n*np.pi*x/L)/(np.pi**2*n**2 - L**2) for n in range (1,k))
+fsin = lambda x, L ,k : 2*np.pi*np.sin(L)            *sum( (-1)**(n+1)*n*np.sin(n*np.pi*x/L)/(np.pi**2*n**2 - L**2) for n in range (1,k))
 L = 10.0
-x= np.linspace(-L,L,500)
+x = np.linspace(-L,L,500)
 
 plt.plot(x,np.sin(x),color='gold',linewidth=8,label='sin(x)')
-k=5
+k = 5
 plt.plot(x, fsin(x, 8,k),color='red',label=str(k)+' terms' )
-k=150
+k = 150
 plt.plot(x, fsin(x, 8,k),color='black',label=str(k)+' terms' )
 
 plt.axhline(0,linestyle='dashed')
@@ -96,10 +96,11 @@ plt.legend(loc='center left', bbox_to_anchor=(1, 0.5))
 plt.show()
 
 
-# Figure 1. The sine wave (yellow line) and its Fourier series containing 5 (red) and 150 terms (black) over the range
-# $\pm$ 8. The latter  fits the sine wave well along its whole extent except near to $\pm L$ where it oscillates wildly. It is zero at $\pm L$ then repeats itself as may clearly be seen outside the range $\pm$ 8.
+# Figure 1. The sine wave (yellow line) and its Fourier series containing 5 (red) and 150 terms (black) over the range $\pm$ 8. The latter  fits the sine wave well along its whole extent except near to $\pm L$ where it oscillates wildly. It is zero at $\pm L$ then repeats itself as may clearly be seen outside the range $\pm$ 8.
+# ________
 # 
-# **Q3 answer** (a) Using equations (1) to (3) for $a$ and $b$ gives
+# ### Q3 answer
+# (a) Using equations (1) to (3) for $a$ and $b$ gives
 # 
 # $$\displaystyle a_n = \frac{1}{\pi}\int_{-\pi}^\pi (\frac{\pi}{2}-x)\cos(nx)dx $$
 # 
@@ -115,24 +116,25 @@ plt.show()
 # 
 # $$\displaystyle b_n= -\frac{x}{n\pi}\left. \cos(nx)\right|_{-\pi}^\pi + \frac{1}{n\pi}\int_{-\pi}^\pi\cos(nx)dx = (-1)^n\frac{2}{n} $$
 # 
-# The second integral evaluates to zero even though the cosine is an even function and the limits symmetrical. This can be seen by sketching the cosine from $\pm\pi$.
+# (b) The second integral evaluates to zero even though the cosine is an even function and the limits symmetrical. This can be seen by sketching the cosine from $\pm\pi$.
 # 
 # The series is
 # 
 # $$\displaystyle \frac{\pi}{2}-x \approx \frac{\pi}{2} - 2\cos(x)+\cos(2x)-\frac{2}{3}\cos(3x)+\cdots$$
 # 
-# and a plot (Fig.2) to $n$ = 10 terms shows, how well it matches the function except close to $\pm\pi$ where this is poor. Notice that the function continues past $\pm\pi$ but the Fourier series repeats itself over this interval. You will notice that there is an overshoot and undershoot near to $\pm\pi$ rather as in the Gibbs phenomenon. In this case, however, because the line is sloping the size of the overshoot increases to a limit as the number of terms increases.
+# and a plot (Fig.Q3) to $n$ = 10 terms shows how well it matches the function, except close to $\pm\pi$. Notice that the function continues past $\pm\pi$ but the Fourier series repeats itself over this interval. You will notice that there is an overshoot and undershoot near to $\pm\pi$ rather as in the Gibbs phenomenon. In this case, however, because the line is sloping the size of the overshoot increases to a limit as the number of terms increases.
 
 # In[5]:
 
 
 # plot fourier pi/2-x series  = a0/2 + sum( bn. sin(nx) n = 1...)
+
 fx = lambda x, k : np.pi/2 + sum(  (2/n)*(-1)**n*np.sin(n*x) for n in range(1,k) )
 
-x= np.linspace(-2*np.pi,2*np.pi,500)
-k=5
+x = np.linspace(-2*np.pi,2*np.pi,500)
+k = 5
 plt.plot(x, fx(x, k),color='red',label=str(k)+' terms' )
-k=50
+k = 50
 plt.plot(x, fx(x, k),color='black',label=str(k)+' terms' )
 plt.plot(x, np.pi/2-x ,color='gray',linestyle='dashed')
 
@@ -144,9 +146,11 @@ plt.legend(loc='center left', bbox_to_anchor=(1, 0.5))
 plt.show()
 
 
-# Figure 2. Plot of $\pi$/2 - $x$ (dashed, straight line) and its Fourier series with  $n$ = 5 and 50, over the range $\pm \pi$. The series is zero at $x = \pm \pi$ and would repeat itself indefinitely if drawn to larger positive and negative $x$.
+# Figure Q3. Plot of $\pi$/2 - $x$ (dashed, straight line) and its Fourier series with  $n$ = 5 and 50, over the range $\pm \pi$. The series is zero at $x = \pm \pi$ and would repeat itself indefinitely if drawn to larger positive and negative $x$.
+# ________
+# ### Q4 answer
 # 
-# **Q4 answer**  (a) The result of the Hermite series summation using Algorithm in section 9.2 with appropriate changes, and with 20 terms in the series, is shown in the left-hand panel in Fig.3. This is a similar fit to the Fourier method for this particular function although it deviates at the extremities because the method assumes the function is periodic, which it is not. More terms in the summation improve the fit but numerical instability can become important due to the factorial and large powers involved.
+# (a) The result of the Hermite series summation using Algorithm in section 9.2 with appropriate changes, and with 20 terms in the series, is shown in the left-hand panel in Fig.3. This is a similar fit to the Fourier method for this particular function although it deviates at the extremities because the method assumes the function is periodic, which it is not. More terms in the summation improve the fit but numerical instability can become important due to the factorial and large powers involved.
 # 
 # (b) In the Chebychev polynomial calculation, the changing normalization $c$ can be handled by separating the first constant from the rest. Two different but equivalent forms of the polynomial are given in the code.
 
@@ -154,7 +158,8 @@ plt.show()
 
 
 # using Hermite polynomials to form a fourier series.
-def Hermite(n,x):       # use recursion formulae, H(n,x)=2xH(n-1,x) -2(n-1)H(n-2,x);  x position, n is order.
+#----------------
+def Hermite(n,x):   # recursion formulaa, H(n,x)=2xH(n-1,x) -2(n-1)H(n-2,x),  x position, n is order.
     if n == 0:
         return 1.0
     elif n == 1:
@@ -162,7 +167,7 @@ def Hermite(n,x):       # use recursion formulae, H(n,x)=2xH(n-1,x) -2(n-1)H(n-2
     else:
         return 2.0*x*Hermite(n-1,x) - 2.0*(n-1)*Hermite(n-2,x)     # return H(n,x)
 #--------------
-def fact(n):           # factorial  by recursion
+def fact(n):        # factorial  by recursion
     if n == 0 or n == 1:
         return 1.0
     else:
@@ -198,7 +203,7 @@ plt.show()
 
 
 # using chebychev polynomials
-
+#----------------------
 def Achev(n,x):                 # as recursion  T(n,x)=  2xT(n-1,x) - T(n-2,x) 
     if n == 0:
         return 1
@@ -206,6 +211,7 @@ def Achev(n,x):                 # as recursion  T(n,x)=  2xT(n-1,x) - T(n-2,x)
         return x
     else:
         return  2*x*Achev(n-1,x) - Achev(n-2,x)
+#----------------------
 
 f = lambda x: x + x**3/10.0 - 2.0*x**7                       # target function
 w = lambda x: 1.0/np.sqrt(1.0 - x**2)                        # weighting
@@ -235,13 +241,14 @@ plt.legend()
 plt.show()
 
 
-# **Q5 answer** (a) The generating function result can be obtained as described in the text, and SymPy is definitely an advantage here. Note that the series is expanded in $u$ and terms in $x$ collected.
+# ### Q5 answer
+# (a) The generating function result can be obtained as described in the text, and SymPy is definitely an advantage here. Note that the series is expanded in $u$ and terms in $x$ collected.
 
 # In[8]:
 
 
 # generating function method for Laguerre polynomials
-u, x, n =symbols('u, x n')
+u, x, n = symbols('u, x, n')
 
 f01 = exp(  -x*u/(1 - u) )/(1 - u) 
 
@@ -255,7 +262,7 @@ for n in range(1,6):
 # In[9]:
 
 
-x, n = symbols('x n')
+x, n = symbols('x, n')
 f02 = exp(-x)*x**n
 d = diff(f02,x)
 for i in range(6):       # take result and differentiate again
@@ -267,7 +274,7 @@ for i in range(6):       # take result and differentiate again
 # In[10]:
 
 
-x, n = symbols('x n')      # alternative method by using diff(f02,x,i) to differentiate i times
+x, n = symbols('x, n')      # alternative method by using diff(f02,x,i) to differentiate i times
 f02 = exp(-x)*x**n
 for i in range(6):
     temp = diff(f02,x,i)         # get ith derivative
@@ -292,7 +299,8 @@ for i in range(6):
     print('L(',i,',x)',simplify(Lag(i,x)))
 
 
-# **Q6 answer**  The value of $m$ has to be decided first,as this is not iterated, then values of $l$ calculated. Choosing $m$ = 0 with $l = 0$ gives $P_m^m = P_0^0 = 1$ and when $l = 1$ then $P_{m+1}^m = P_1^0 = xP_0^0 = x$. The recursion equation (22) can now be used to find $P_2^0$ with $l=2$, which is
+# ### Q6 answer
+# The value of $m$ has to be decided first,as this is not iterated, then values of $l$ calculated. Choosing $m$ = 0 with $l = 0$ gives $P_m^m = P_0^0 = 1$ and when $l = 1$ then $P_{m+1}^m = P_1^0 = xP_0^0 = x$. The recursion equation (22) can now be used to find $P_2^0$ with $l=2$, which is
 # 
 # $$2P_2^0=3xP_1^0 - P_0^0= 3x^1-1$$
 # 
@@ -303,7 +311,7 @@ for i in range(6):
 
 # spherical harmonic calculation
 
-x,n,m,L,phi=symbols('x n m L phi')
+x,n,m,L,phi = symbols('x, n, m, L, phi')
 
 def Dblfact(n):           # double factorial  by recursion n(n-2)(n-4)....
     if n == 0 or n == 1:
@@ -328,7 +336,7 @@ print('   L   m      assoc legendre')
 for L in [0,1,2,3] :
     for m in range(L+1):
         print('{:4d}{:4d}      {:s}'.format(L, m,str(simplify( expand(P(x,m,L))) ) ) )
-print('\nsph harmonics\n   l   m') 
+print('\n              spherical harmonics\n   L   m') 
 for L in [0,1,2,3] :
     for m in range(L+1):
         sph= sqrt( (2*L+1)*factorial(L-m)/(4*pi*factorial(L+m)) )*P(x,m,L)*exp(I*m*phi) 
@@ -358,4 +366,10 @@ for L in [0,1,2,3]:
     for m in range(L+1):
         f = diff(P(L,x), x, m)
         print('{:4d}{:4d}      {:s}'.format( L, m, str(simplify( (-1)**m*f*(1-x**2)**(m/2) )) ))
+
+
+# In[ ]:
+
+
+
 

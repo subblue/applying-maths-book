@@ -1,0 +1,93 @@
+Traceback (most recent call last):
+  File "/Users/godfreybeddard/Library/Python/3.8/lib/python/site-packages/jupyter_cache/executors/utils.py", line 51, in single_nb_execution
+    executenb(
+  File "/Users/godfreybeddard/Library/Python/3.8/lib/python/site-packages/nbclient/client.py", line 1093, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "/Users/godfreybeddard/Library/Python/3.8/lib/python/site-packages/nbclient/util.py", line 84, in wrapped
+    return just_run(coro(*args, **kwargs))
+  File "/Users/godfreybeddard/Library/Python/3.8/lib/python/site-packages/nbclient/util.py", line 62, in just_run
+    return loop.run_until_complete(coro)
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.8/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/Users/godfreybeddard/Library/Python/3.8/lib/python/site-packages/nbclient/client.py", line 559, in async_execute
+    await self.async_execute_cell(
+  File "/Users/godfreybeddard/Library/Python/3.8/lib/python/site-packages/nbclient/client.py", line 854, in async_execute_cell
+    self._check_raise_for_error(cell, exec_reply)
+  File "/Users/godfreybeddard/Library/Python/3.8/lib/python/site-packages/nbclient/client.py", line 756, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+# Algorithm: Weighted Least Squares
+
+#--------------------------------      
+def lsq(xval,yval,w):
+    Sw   = np.sum(w)
+    Sxw  = np.sum(xval*w)
+    Syw  = np.sum(yval*w)
+    Sxxw = np.sum(xval*xval*w)
+    Syyw = np.sum(yval*yval*w)
+    Sxyw = np.sum(xval*yval*w)
+    xbar = Sxw/Sw
+    ybar = Syw/Sw
+    
+    Sxx  = Sxxw - Sxw**2/Sw
+    Syy  = Syyw - Syw**2/Sw
+    Sxy  = Sxyw - Sxw*Syw/Sw
+    slope= Sxy/Sxx
+    intercept = ybar - slope*xbar
+    
+    mse  = np.abs((Syy - slope*Sxy)/(n - 2) )  # make positive as sqrt is taken next
+    #print('mse = ',mse)
+    cov  = -mse*xbar/(Sxx*Sw)                  # covariance
+    
+    std_dev_slope    = np.sqrt(mse/Sxx)
+    std_dev_intercept= np.sqrt(mse*(1/Sw + xbar**2/Sxx))
+
+    prec  = 0.975
+    quant = t.ppf(prec, n - 2)                 # prec quantile for T distribution
+    Z = lambda x: quant*np.sqrt(mse*(1/Sw +(x - xbar)**2/Sxx))  # function of 95 % confidence limits
+
+    return slope,intercept,mse,cov,std_dev_slope,std_dev_intercept,Z
+#----------------------------------  end lsq 
+
+filename='test data.txt'
+xv = []                                   # arrays to hold intial data while being read in
+yv = []
+wv = []
+with open(filename) as ff:                # length not known so read in all data and make list of each
+    i=0
+    for line in ff:
+        new_str = ' '.join(line.split())
+        vals = new_str.split(' ')
+        xv.append(vals[0]) 
+        yv.append(vals[1]) 
+        wv.append(vals[2]) 
+ff.close()
+n = len(xv)                               # we do not know length of data before hand 
+w    = np.zeros(n,dtype=float)            # data arrays
+xval = np.zeros(n,dtype=float)
+yval = np.zeros(n,dtype=float)
+for i in range(n):
+    w[i] = 1/float(wv[i])**2              # make lists into arrays
+    xval[i]=float(xv[i])
+    yval[i]=float(yv[i])
+
+slope,intercept,mse,cov,std_dev_slope,std_dev_intercept,Z = lsq(xval,yval,w)  # calculate return values
+
+line = lambda x: x*slope + intercept      # define striaght line fit
+
+print('{:s} {:8.4g} {:s} {:8.4g}'.format('slope = ',slope,' intercept = ', intercept)  )
+------------------
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mFileNotFoundError[0m                         Traceback (most recent call last)
+[0;32m/var/folders/gn/whk4pp2x4kz_ftg0b1ycmh340000gn/T/ipykernel_22372/562434147.py[0m in [0;36m<module>[0;34m[0m
+[1;32m     36[0m [0myv[0m [0;34m=[0m [0;34m[[0m[0;34m][0m[0;34m[0m[0;34m[0m[0m
+[1;32m     37[0m [0mwv[0m [0;34m=[0m [0;34m[[0m[0;34m][0m[0;34m[0m[0;34m[0m[0m
+[0;32m---> 38[0;31m [0;32mwith[0m [0mopen[0m[0;34m([0m[0mfilename[0m[0;34m)[0m [0;32mas[0m [0mff[0m[0;34m:[0m                [0;31m# length not known so read in all data and make list of each[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m     39[0m     [0mi[0m[0;34m=[0m[0;36m0[0m[0;34m[0m[0;34m[0m[0m
+[1;32m     40[0m     [0;32mfor[0m [0mline[0m [0;32min[0m [0mff[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+
+[0;31mFileNotFoundError[0m: [Errno 2] No such file or directory: 'test data.txt'
+FileNotFoundError: [Errno 2] No such file or directory: 'test data.txt'
+

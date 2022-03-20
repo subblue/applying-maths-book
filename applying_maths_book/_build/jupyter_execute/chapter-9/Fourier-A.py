@@ -17,6 +17,12 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 # # Chapter 9 Fourier Series and Transforms
 
+# In[ ]:
+
+
+
+
+
 # This chapter describes several related topics: the Fourier series and Fourier transforms, as well as autocorrelations, convolutions, and their numerical calculation. 
 # 
 # Fourier series are used in solving partial differential equations, as explained in Chapter 10.5, for example, the diffusion and Schroedinger equation. Fourier transforms are used to produce every NMR spectrum, MRI scan, X-ray structure, and IR spectrum recorded; a good grasp of this topic is therefore essential for the molecular scientist. 
@@ -29,7 +35,9 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # To illustrate that it is possible to make an arbitrary shaped function by adding a number of sine and cosine waves, four such waves are shown in Fig.1. It is possible to imagine, without any difficulty, that waveforms that are more complex can be formed by using more sine or cosine terms. The lowest and most complicated waveform is simply the sum of the individual waves, and repeats itself with a period of 2$\pi$. This waveform could be the signal that is measured on an oscilloscope or spectrometer and recorded on a computer. It might alternatively, be part of an image that is formed from adjacent columns of different waveforms. Periodic components present in a signal represent information in the waveform or image can be retrieved by performing a Fourier transform. This unravelling process is discussed later on but now the Fourier series is considered.
 # 
-# <img src = 'fourier-fig1.png' alt='Drawing' style='width:300px;'/>
+# ![Drawing](fourier-fig1.png)
+# 
+# <img src='fourier-fig1.png' alt= 'Drawing' style='width: 450px'/>
 # 
 # **Fig 1**. A complex and _periodic_ waveform or function is constructed out of the sum of sine and/or cosine waves. The complicated waveform, repeats itself with a period of 2$\pi$. In the Fourier series, the reconstruction of this waveform will require many more sine and cosine terms to reconstruct its form than are used to generate it, because the Fourier series only represents a function _exactly_ when an infinite number of terms are included in the summation.
 
@@ -94,7 +102,8 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # To convince you that the symmetry makes the integral zero, which is the area under the curve, a curve is plotted below, see figure 2. The curve, while complicated, is inverted about $x$ = 0 so that the area $\gt$ 0 is equal and opposite to that $\lt$ 0. More details on odd and even functions is given in the next section.
 # 
-# <img src='fourier-fig1a.png' alt='Drawing' style='width:350px;'/> 
+# <img src='attachment:fourier-fig1a.png' alt='Drawing' style='width:350px;'/> 
+# 
 # Figure 2. An odd function such as shown above has zero integral when evaluated over a symmetrical region about zero.
 # ____
 # 

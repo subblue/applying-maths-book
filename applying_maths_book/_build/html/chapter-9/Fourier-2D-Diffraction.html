@@ -1,0 +1,1728 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Fourier transform in two dimensions: images and x-ray Diffraction &#8212; Applying Maths in the Chemical &amp; Biomolecular Sciences</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Computed Tomography" href="Fourier-tomography.html" />
+    <link rel="prev" title="The Hadamard Transform: Encoding and Decoding" href="Fourier-F.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/book-cover.jpg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Applying Maths in the Chemical & Biomolecular Sciences</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Introduction
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-1/chapter1-intro.html">
+   1. Numbers, Equations, Operators, and Algorithms.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-A.html">
+     Numbers to Algorithms
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-Q1-7.html">
+     Questions 1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-B.html">
+     Trigonometric functions.  Waves
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-Q8-16.html">
+     Questions 8 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-C.html">
+     Sophisticated Counting: permutations, combinations and probability
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-Q17-34.html">
+     Questions 17 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-D.html">
+     10 Modulo arithmetic, delta functions, series, estimation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-Q35-39.html">
+     Questions 35 - 39
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-answers-1-7.html">
+     Solutions Q1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-answers-8-16.html">
+     Solutions Q8 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-answers-17-34.html">
+     Solutions Q17 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-answers-35-39.html">
+     Solutions Q35 - 39
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-2/chapter2-intro.html">
+   2. Complex numbers.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2/chapter2-A.html">
+     Real, imaginary,conjugate and modulus
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2/chapter2-Q-1-9.html">
+     Questions 1 - 9
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2/chapter2-B.html">
+     De Moivre’s theorem and integer powers of complex numbers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2/chapter2-Q-10-13.html">
+     Questions 10 -13
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2/chapter2-C.html">
+     Euler’s theorem
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2/chapter2-Q-14-27.html">
+     Questions 14 - 27
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2/chapter2-answers.html">
+     Solutions Q1 - 27
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-3/differen-intro.html">
+   3. Differentiation.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-A.html">
+     Differentiation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-B.html">
+     Trig functions, logs, power, reciprocals and integrals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-C-Q-4-11.html">
+     Questions 1-11
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-D.html">
+     Product rule and function of function or chain rule.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-E-Q-12-42.html">
+     Questions 12-42
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-F.html">
+     Limits, maxima/minima and Calculus of Variations.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-G-Q-43-73.html">
+     Questions 43 - 73
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-H.html">
+     Numerically finding the roots of an equation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-I-Q-74-85.html">
+     Questions 74 - 85
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-J.html">
+     Minimizing or maximizing with constraints: Lagrange Undetermined Multipliers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-K-Q-86-92.html">
+     Questions 86 - 92
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-L.html">
+     Partial differentiation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-M-Q-93-114.html">
+     Questions 93-114
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-M1.html">
+     Differentiation of vectors
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-N-answers-1-11.html">
+     Solutions Q 1-11
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-O-answers-12-42.html">
+     Solutions Q 12-42
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-P-answers-43-73.html">
+     Solutions Q 43 - 73
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-Q-answers-74-85.html">
+     Solutions Q 74 - 85
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-R-answers-86-92.html">
+     Solutions Q 86 - 94
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-S-answers-93-114.html">
+     Solutions Q 93-114
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-4/integration-intro.html">
+   4. Integration.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-A.html">
+     Integration basics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-Q1-14.html">
+     Questions 1-14
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-B.html">
+     Integration by substitution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-Q15-30.html">
+     Questions 15-30
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-C.html">
+     Using parametric equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-Q31-48.html">
+     Questions 31 - 48
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-D.html">
+     Calculating an Average Value.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-Q49-72.html">
+     Questions 49 - 72
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-E.html">
+     The Variational Method in Quantum Mechanics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-Q73-77.html">
+     Questions 73 - 77
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-F.html">
+     Multiple integrals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-Q78-86.html">
+     Questions 78 - 86
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-G.html">
+     Calculating the energy of a chemical bond using molecular orbitals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-H.html">
+     Line integrals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-Q87-96.html">
+     Questions 87 - 96
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-answers-1-14.html">
+     Solutions Q1 - 14
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-answers-15-30.html">
+     Solutions Q15 - 30
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-answers-31-48.html">
+     Solutions Q31 - 48
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-answers-49-72.html">
+     Solutions Q49 - 72
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-answers-73-96.html">
+     Solutions Q73 - 96
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-5/chapter-5-intro.html">
+   5. Summations, Series and expansion of Functions.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-A.html">
+     Series, averages, partition functions, DNA melting, atom entropy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-B-Q1-13.html">
+     Questions 1 - 13
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-E.html">
+     Maclaurin and Taylor series expansions. Paramagnetic spins
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-F-Q14-34.html">
+     Questions 14 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-G-Q35-44.html">
+     Questions 35 - 44
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-perturbation-A.html">
+     Perturbation Theory
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-perturbation-B-Q45-48.html">
+     Questions 45 - 48
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-perturbation-C.html">
+     Quantum superposition and wavepackets.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-perturbation-D-Q49-52.html">
+     Questions 49 - 52
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-answers-1-7.html">
+     Solutions Q 1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-answers-8-13.html">
+     Solutions Q8 - 13
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-answers-14-26.html">
+     Solutions Q 14 - 26
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-answers-27-32.html">
+     Solutions Q27 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-answers-33-44.html">
+     Solutions Q33 - 44
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-answers-45-52.html">
+     Solutions Q45 - 52
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-6/vectors-intro.html">
+   6. Vectors.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-A.html">
+     Vector basics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-Q1-24.html">
+     Questions 1 - 24
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-B.html">
+     Projections and components
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-Q25-32.html">
+     Questions 25 - 32
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-C.html">
+     Axes need not be right-angled or of equal length
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-Q33-38.html">
+     Questions 33 - 38
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-D.html">
+     Basis sets with more than three dimensions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-Q39-46.html">
+     Questions 39 - 46
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-E.html">
+     Cross product or vector product
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-Q47-52.html">
+     Questions 47 - 52
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-F.html">
+     Torsion or dihedral angles
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-Q53-61.html">
+     Questions 53 - 61
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-G.html">
+     Torque and angular momentum
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-answers-Q1-24.html">
+     Solutions Q1 - 24
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-answers-Q25-32.html">
+     Solutions Q25 - 32
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-answers-Q33-38.html">
+     Solutions Q33 - 38
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-answers-Q39-46.html">
+     Solutions Q38 - 46
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-answers-Q47-52.html">
+     Solutions Q47 - 52
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-answers-Q53-61.html">
+     Solutions Q53 - 61
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-7/matrices-intro.html">
+   7. Matrices
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-A.html">
+     Determinants
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q1-10.html">
+     Questions  1 - 10
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-B.html">
+     Matrices
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q11-16.html">
+     Questions  11 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-C.html">
+     Molecular Group Theory
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q17-30.html">
+     Questions  17 - 30
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-D.html">
+     Rotation matrices: moving molecules
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q31-34.html">
+     Questions 31 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-E.html">
+     Matrices in optics and designing laser cavities
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q35-39.html">
+     Questions 35 - 39
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-F.html">
+     Polarizing optics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q40-44.html">
+     Questions 40 - 44
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-G.html">
+     Solving equations using matrices. Eigenvectors &amp; Eigenvalues.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q45-50.html">
+     Questions 45 - 50
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-H.html">
+     Rate equations and Chemical Kinetics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q51-54.html">
+     Questions 51 - 54
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-I.html">
+     Molecular vibrations and pendulums
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q55-58.html">
+     Questions 55 - 58
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-J.html">
+     Calculating a bond length using moments of inertia
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q59-62.html">
+     Questions 59 - 62
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-answersQ1-10.html">
+     Solutions Q1 - 10
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-answersQ11-16.html">
+     Solutions Q11 - 30
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-answersQ17-30.html">
+     Solutions Q17 - 30
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-answersQ31-34.html">
+     Solutions Q31 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-answersQ35-39.html">
+     Solutions Q35 - 39
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-answersQ40-44.html">
+     Solutions Q40 - 44
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-answersQ45-50.html">
+     Solutions Q45 - 50
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-answersQ51-54.html">
+     Solutions Q51 - 54
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-answersQ55-58.html">
+     Solutions Q55 - 58
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-answersQ59-61.html">
+     Solutions Q59 - 61
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-8/matricesQM-intro.html">
+   8. Matrices in Quantum Mechanics
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-8/matricesQM-A.html">
+     Chapter 8 Matrices in Quantum Mechanics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-8/matricesQM-Q1-7.html">
+     Questions 1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-8/matricesQM-B.html">
+     Basis sets and bra-ket algebra
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-8/matricesQM-Q8-12.html">
+     Questions 8 - 12
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-8/matricesQM-C.html">
+     Continuous basis sets
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-8/matricesQM-answers1-7.html">
+     Solutions Q1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-8/matricesQM-answers8-12.html">
+     Solutions Q8 - 12
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="Fourier-intro.html">
+   9. Fourier Series and Transforms.
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="Fourier-A-B.html">
+     Fourier series, Gibbs phenomenon, generalised series.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Fourier-questions-1-6.html">
+     Questions 1 - 6
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Fourier-C.html">
+     Fourier Transforms
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Fourier-D.html">
+     Convolution and Autocorrelation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Fourier-questions-7-15.html">
+     Questions 7 - 15
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Fourier-E.html">
+     Discrete Fourier  (DFT)  and Fast Fourier transforms (FFT)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Fourier-questions-16-21.html">
+     Questions 16 - 21
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Fourier-F.html">
+     The Hadamard Transform: Encoding and Decoding
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     The Fourier transform in two dimensions: images and x-ray Diffraction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Fourier-tomography.html">
+     Computed Tomography
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Fourier-answers-1-6.html">
+     Solutions Q 1 - 6
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Fourier-answers-7-15.html">
+     Solutions Q 7 - 15
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Fourier-answers-16-21.html">
+     Solutions Q 16 - 21
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-10/Diff-eqns-intro.html">
+   10. Differential Equations.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-A.html">
+     Differential Equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-Q1-23.html">
+     Questions 1 - 23
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-B.html">
+     Integrating factors can solve differential equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-C.html">
+     The ‘D’ operator.  Solving linear differential equations with constant coefficients
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-D.html">
+     Simultaneous equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-E.html">
+     Linear equations with variable coefficients
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-F.html">
+     Partial Differential Equations, PDE
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-G.html">
+     PDE examples continued
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-Q24-37.html">
+     Questions 24 - 37
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-answers-1-21.html">
+     Solutions Q1 - 21
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-answers-22-37.html">
+     Solutions Q22 - 37
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-11/num-methods-intro.html">
+   11. Numerical Methods
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-A.html">
+     Numerical Methods
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-Q1-7.html">
+     Questions 1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-B.html">
+     Numerical solution of differential equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-Q8-12.html">
+     Questions 8 - 12
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-C.html">
+     Coupled equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-Q13-16.html">
+     Questions 13 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-D.html">
+     The phase plane, nullclines, and stable points
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-Q17-20.html">
+     Questions 17 - 20
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-E.html">
+     Reaction schemes with feedback
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-Q21-34.html">
+     Questions 21 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-F.html">
+     Boundary value problems: Shooting method
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-Q35-40.html">
+     Questions 35 - 40
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-answers1-7.html">
+     Solutions Q1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-answers8-12.html">
+     Solutions Q8 - 12
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-answers13-16.html">
+     Solutions Q13 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-answers17-20.html">
+     Solutions Q17 - 20
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-answers21-34.html">
+     Solutions Q21 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-answers35-40.html">
+     Solutions Q35 - 40
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-12/monte-carlo-intro.html">
+   12. Monte Carlo Methods
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+  <label for="toctree-checkbox-12">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-A.html">
+     Monte - Carlo
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-Q1-6.html">
+     Questions 1 - 6
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-B.html">
+     Solving rate equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-Q7-10.html">
+     Questions 7 - 10
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-CC.html">
+     Monte Carlo Simulations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-C.html">
+     4 Forster or dipole - dipole energy transfer
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-Q11-17.html">
+     Questions 11 - 17
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-D.html">
+     The Metropolis algorithm
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-answers1-6.html">
+     Solutions Q1 - 6
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-answers7-10.html">
+     Solutions Q7 - 10
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-answers11-17.html">
+     Solutions Q11 - 17
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-13/analysis-intro.html">
+   13. Data Analysis
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+  <label for="toctree-checkbox-13">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-13/analysis-A.html">
+     Characterizing experimental data. Accuracy, precision, mean and standard deviation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-13/analysis-Q1-3.html">
+     Questions 1 - 3
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-13/analysis-B.html">
+     Modelling data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-13/analysis-Q4-9.html">
+     Questions 4 - 9
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-13/analysis-C.html">
+     Modelling data is simpler using matrices
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-13/analysis-Q10-11.html">
+     Questions 10 - 13
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-13/analysis-D.html">
+     Non-linear least squares, gradient expansion, the Levenberg - Marquardt Method
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-13/analysis-answers1-11.html">
+     Solutions Q1 -11
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../chapter-1/chapter1-E.html">
+   SI units, Rounding &amp; converting units, Glossary.
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../references/References.html">
+   References
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../references/Python%20crib.html">
+   Some basic Python instructions with a few examples.
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/chapter-9/Fourier-2D-Diffraction.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/chapter-9/Fourier-2D-Diffraction.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#motivation-and-concept">
+   Motivation and concept
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#d-transforms">
+   12 2D transforms.
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#x-ray-diffraction">
+   13 X-ray Diffraction.
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#fourier-synthesis">
+     13.1 Fourier Synthesis
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#unit-cell-miller-indices-and-planes-of-atoms">
+     13.2 Unit Cell, Miller indices and planes of atoms
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#diffraction-of-x-rays">
+     13.3 Diffraction of x-rays
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#calculating-the-unit-cell-and-indexing">
+     13.4 Calculating the unit cell and indexing
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#atomic-structure-factors">
+     13.5 Atomic Structure Factors
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     13.6 Fourier Synthesis
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-structure-factor-f-hkl">
+     13.7   The Structure Factor
+     <span class="math notranslate nohighlight">
+      \(F_{hkl}\)
+     </span>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-of-calculating-the-structure-factors-tio-2">
+     13.8 Example of calculating the structure factors, TiO
+     <span class="math notranslate nohighlight">
+      \(_2\)
+     </span>
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#reflexion">
+       (100) reflexion
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id2">
+       (200) reflexion
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id3">
+       (110) reflexion
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     13.9 Fourier synthesis
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="the-fourier-transform-in-two-dimensions-images-and-x-ray-diffraction">
+<h1>The Fourier transform in two dimensions: images and x-ray Diffraction<a class="headerlink" href="#the-fourier-transform-in-two-dimensions-images-and-x-ray-diffraction" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="motivation-and-concept">
+<h2>Motivation and concept<a class="headerlink" href="#motivation-and-concept" title="Permalink to this headline">¶</a></h2>
+<p>The fourier transform can be extended to 2D and 3D. The 2D transform is important in image analysis, optics and 2D spectroscopies such as ultrafast infra-red and nmr analysis. The 3D transform is used to describe x-ray diffraction from crystals which is the definitive way of determining molecular structure and is of central importance in chemistry and biochemistry. We shall illustrate how x-ray diffraction leads to structure using 2D fourier transforms.</p>
+</div>
+<div class="section" id="d-transforms">
+<h2>12 2D transforms.<a class="headerlink" href="#d-transforms" title="Permalink to this headline">¶</a></h2>
+<p>The 2D forward and inverse transform is written down easily by analogy with the 1D versions, but rather than use <span class="math notranslate nohighlight">\(k_x,k_y\)</span> for the conjugate variables it is clearer instead to use <span class="math notranslate nohighlight">\(u,v\)</span></p>
+<div class="math notranslate nohighlight">
+\[\displaystyle g(u,v)=\int_{-\infty}^\infty\int_{-\infty}^\infty f(x,y)e^{-i(xu+yv)}dxdy\]</div>
+<div class="math notranslate nohighlight">
+\[\displaystyle f(x,y)=\int_{-\infty}^\infty\int_{-\infty}^\infty g(u,v)e^{+i(xu+yv)}dudv\tag{49}\]</div>
+<p>and, clearly, if the function <span class="math notranslate nohighlight">\(f(x,y)\)</span> can be written as the product <span class="math notranslate nohighlight">\(f(x)f(y)\)</span>, which means no terms such as <span class="math notranslate nohighlight">\(xy\)</span> are present then the 2D transform is the product of 1D ones, which is a great simplification,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle g(u,v)=\int_{-\infty}^\infty f(x)e^{-ixu}dx\int_{-\infty}^\infty f(y)e^{-iyv}dy\tag{50}\]</div>
+<p>The symmetry properties of the function <span class="math notranslate nohighlight">\(f\)</span> are important and show themselves clearly in the transform, which is most easily viewed as an image. If <span class="math notranslate nohighlight">\(f(x,y)\)</span> is real, which it will be in an experiment, then <span class="math notranslate nohighlight">\(g(u,v)=g^{*}(-u,-v)\)</span> and then <span class="math notranslate nohighlight">\(|g(u,v|^2\)</span> is centrosymmetric, i.e. has a centre of inversion. If the function does not change after rotation about the origin by <span class="math notranslate nohighlight">\((360/n)^\text{o}\)</span>, i.e. is indistinguishable after <span class="math notranslate nohighlight">\(n\)</span>-fold rotation, then the transform behaves similarly. If <span class="math notranslate nohighlight">\(f\)</span> is real and <span class="math notranslate nohighlight">\(n\)</span> is odd then <span class="math notranslate nohighlight">\(|g(u,v|^2\)</span> has <span class="math notranslate nohighlight">\(n\)</span>-fold symmetry but is also centrosymmetric so that <span class="math notranslate nohighlight">\(2n\)</span>-fold symmetry is apparent in the transform, i.e. <span class="math notranslate nohighlight">\(5\)</span>-fold symmetry appears as <span class="math notranslate nohighlight">\(10\)</span>-fold, see figure 63. Mirror planes behave similarly, <span class="math notranslate nohighlight">\(f(x,y)=\pm f(-x,y)\)</span> produce <span class="math notranslate nohighlight">\(g(-u,v)=\pm g(u,v)\)</span> and <span class="math notranslate nohighlight">\(|g(u,v|^2\)</span> has mirror plane symmetry. Besides these symmetry properties the basic inverse relationship between a function and its transform still exists, but now in both <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span>, i.e. the further apart the features in the function are the closer they will be in the transform and <em>vice versa</em>.</p>
+<p>The first image below is that of two point sources and results in a cosine shaped image as the transform of two delta functions is a cosine. A cut through the image along the direction of the two points would produce a cosine, although the way the colour is presented in the image distorts ones perception of this. The four-fold image shows the same effect but now in two directions producing a transform of squares rather than lines. The blue part of the image has the greatest intensity, the red the least. The three-, five- and seven-fold points produce double the symmetry due to the transform being centrosymmetric. As a technical aside, when calculating the transforms the images have to be centralised before they have the appearance shown. Python/numpy has a function to do this. If the numpy library is called <em>np</em> then the transform of a 2D array called <em>image</em> is <span class="math notranslate nohighlight">\(\mathtt{g2D = np.fft.fft2(image)}\)</span> and to centralise the transform <span class="math notranslate nohighlight">\(\mathtt{FTimage = np.fft.fftshift(g2D)}\)</span>. Plotting can be done using <span class="math notranslate nohighlight">\(\mathtt{plt.imshow(FTimage)}\)</span>.</p>
+<p><img alt="Drawing" src="../_images/fourier-fig63.png" /></p>
+<p>Figure 63. The absolute values of the fourier transforms of the point images shown in the inset to each figure for <span class="math notranslate nohighlight">\(2,3,4,5,6, 7\)</span> fold rotational symmetry. The doubling of the symmetry when there is an odd number of points is clear as are the mirror planes. The points are rotated slightly from vertical to show that the transform follows the orientation of these points. A grid of <span class="math notranslate nohighlight">\(2^{10}\times 2^{10}\)</span> points was used to make the transform. Blue is the most intense, dark red the least.</p>
+<hr class="docutils" />
+<p>The 1D transform of a single ‘top hat’ or rectangular shape is the sinc function, see fig 15 earlier in the chapter. In two dimensions the ‘top hat’ function in <span class="math notranslate nohighlight">\(x\)</span> becomes a slit, of infinite length in the <span class="math notranslate nohighlight">\(y\)</span> direction, or a rectangular hole if <span class="math notranslate nohighlight">\(y\)</span> is of finite length.  Light passes through the slit will be diffracted, (Franhofer diffraction), and its intensity is described by the absolute value of the fourier transform. These transforms can be observed experimentally using a laser pointer or collimated light from a LED with masks cut with rectangular or circular apertures or as pinholes representing a molecule’s atoms or even a lattice of pinholes. When the light is projected onto a screen the transform should be apparent. The size of the apertures relative to laser wavelength need to be considered to optimise the effects. The transform can also be calculated as illustrated below.</p>
+<p>The transform of the slit of width <span class="math notranslate nohighlight">\(a\)</span> if the function <span class="math notranslate nohighlight">\(f(x,y) = \begin{cases} 1,  &amp; |x|\le a/2 \\
+0, &amp;|x|\gt a/2  \end{cases}\)</span></p>
+<p>and is infinitely long in the <span class="math notranslate nohighlight">\(y\)</span> direction, as is shown by the limits,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin{align} g(u,v)&amp;=\int_{-a/2}^{a/2} e^{-ixu}dx \int_{-\infty}^\infty e^{-iyv}dy\\
+&amp;=\frac{2\sin(au/2)}{u}\delta(v) = a\;\text{sinc}(au/2)\delta(v)\end{align}\end{split}\]</div>
+<p>and along the axis <span class="math notranslate nohighlight">\(v=0\)</span> and therefore the delta function <span class="math notranslate nohighlight">\(\delta(v)=1\)</span> and the diffracted light has intensity <span class="math notranslate nohighlight">\(|g(u,v)|^2=a^2\text{sinc}(au/2)\)</span>.</p>
+<p>If there is a rectangular hole of size <span class="math notranslate nohighlight">\(a x b\)</span> then the similar calculation uses both finite limits and is</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin{align} g(u,v)&amp;=\int_{-a/2}^{a/2} e^{-ixu}dx \int_{-b/2}^
+{b/2} e^{-iyv}dy\\ &amp;=\frac{2\sin(au/2)}{u}\frac{2\sin(bv/2)}{v}\\&amp;= ab\;\text{sinc}(au/2)\text{sinc}(bv/2)\end{align}\end{split}\]</div>
+<p>which are two sinc functions at right-angles to one another. The image is shown in fig 64. If diffraction occurred through such an aperture the absolute value would be obtained because detectors (and our eyes) measure the intensity which is the square of the light’s amplitude. The image would look similar except that all the function would be positive rather than both positive and negative. Notice the similarity of this to the transform of four points arranged in a square, fig 63, (ignoring the rotation of the latter). The difference in the transforms occurs because when more than one object is present a cosine along each symmetry axis is also present. This may be understood as the image of two or more delta functions convoluted with the shape of the object itself; when more than one object is transformed the transform spreads out over transform space.</p>
+<p><img alt="Drawing" src="../_images/fourier-fig64.png" /></p>
+<p>Figure 64. The transform of a rectangular aperture. <span class="math notranslate nohighlight">\(\displaystyle g(u,v)=4\sin(au/2)\sin(bv/2)/uv\)</span> where <span class="math notranslate nohighlight">\(b/a=2\)</span> The dotted lines show the negative part of the transform. Yellow represents large values. The straight horizontal and vertical lines are where the transform is exactly zero and shows that the image is dissected by the zero’s of the function in both vertical and horizontal directions. The vertical lines are separated horizontally by <span class="math notranslate nohighlight">\(2\pi/a\)</span>, the horizontal by <span class="math notranslate nohighlight">\(2\pi/b\)</span> except for the centres which are separated by twice these amounts. A horizontal or vertical cut through the centre lines will produce a plot of the sinc function as in figure 15.</p>
+<hr class="docutils" />
+<p>The transform of annular aperture (ring) and of a disc shaped aperture can be calculated in a related way by using polar coordinates, which is far more convenient because of the radial symmetry. The transform for a ring is in terms of a Bessel function and for a disc is an Airy function, both of which are integrals that oscillate rather as the sinc function does. The transforms for one and two discs is shown, as their absolute value, in figure 65. These results are calculated using the numerical FFT. The diffraction pattern has the symmetry of the circle with ever increasing waves radiating outwards. The right-hand figure shows two discs separated by a small amount, here the transform looks like that of two points (a cosine) convoluted with a disc, i.e a cosine superimposed on expanding circles. The cosine rises and falls along the direction of centres of the two discs. The closer the two discs are the further apart the features in the transform due to the reciprocal nature of the variables in real space (<span class="math notranslate nohighlight">\(x,y\)</span>) and conjugate or transform space (<span class="math notranslate nohighlight">\(u,v\)</span>).</p>
+<p><img alt="Drawing" src="../_images/fourier-fig65.png" /></p>
+<p>Figure 65, Left. Single disc and its transform shown as an image. Right. Two discs showing the effect of two points convoluted with a disc. The disc’s transform is divided up by a cosine. The inset shows the original object.</p>
+<hr class="docutils" />
+<p>The similar effect can be seen in fig 66 where four squares are displaced just as in the top right image of fig 0, but in fig 66 the objects have vertical and horizontal sides. This extra symmetry is imposed on the diagonal cosine lines lines shown in figure 63 as extra vertical and horizontal features, just as in figure 64. Furthermore, the size of the squares is smaller than their separation so that the extra lines in fig 66 compared to 65 are further apart than the pattern due to the the centres of the squares themselves. This is because of the reciprocal relationship of the transform from ‘real space’ to ‘transform space’ or from <span class="math notranslate nohighlight">\(x\)</span> to <span class="math notranslate nohighlight">\(k\)</span> the conjugate variables.</p>
+<p><img alt="Drawing" src="../_images/fourier-fig66.png" /></p>
+<p>Figure 66. Absolute value of the fourier transform of the four squares shown in the inset. Compared to the top right image of figure 65, the extra symmetry of the vertical and horizontal lines is apparent and similar to that in figure 64. The image area shown is 9 times than that in 65 and the colour range has been exaggerated/saturated to show the detail. Blue is the highest, red the lowest intensity.</p>
+<hr class="docutils" />
+<p>In figure 63 the transform of some regular patterns was calculated and with an irregular pattern, such as the arrangement of atoms in many molecules, related result is produced. Figure 67 shows the transform of the pattern shown in the inset. There are similarities with the patterns of fig 63, but the lower symmetry restricts the symmetry of the transform.</p>
+<p><img alt="Drawing" src="../_images/fourier-fig67.png" /></p>
+<p>Figure 67. Five atoms and their fourier transform.</p>
+<hr class="docutils" />
+<p>The fourier transform of a lattice of points is also a lattice but now in transform space. The 2D lattice, fig D10, has a minimum repeating shape with lengths of <span class="math notranslate nohighlight">\(a = 70\)</span> and <span class="math notranslate nohighlight">\( b = 120\)</span> set at an angle <span class="math notranslate nohighlight">\(\gamma=80^\text{o}\)</span>. The fourier transform is also a grid with lengths <span class="math notranslate nohighlight">\(a^*,b^*\)</span> of</p>
+<div class="math notranslate nohighlight">
+\[ \displaystyle a^*=\frac{1}{a\sin(\gamma)},\; b^*=\frac{1}{b\sin(\gamma)}\]</div>
+<p>but because we have used a grid to do the transform, i.e. sampled the lattice by making a 2D grid, the <span class="math notranslate nohighlight">\(a,b\)</span> values must be multiplied by the grid size, in this case <span class="math notranslate nohighlight">\(2^{12}\)</span>. In fig 63 the top right-hand image shows the absolute value of the transform of just four points set as a square. In the grid of fig 68 there are numerous groups of four points and so the transform becomes more like a set of point functions just. This is similar to what happens in one dimension where several wide top-hat function produce a set of narrow transforms and an infinite number eventually a comb of delta functions.</p>
+<p><img alt="Drawing" src="../_images/fourier-fig68.png" /></p>
+<p>Figure 68. A 2D lattice and the absolute value of its fourier transform. Notice how the image is rotated and the lengths between points are related as reciprocals. Lengths <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(a^*\)</span> are shown in blue, <span class="math notranslate nohighlight">\(b,\;b*\)</span> in red.</p>
+<hr class="docutils" />
+<p>If each point is now ‘decorated’ to form a pattern as in fig 69, i.e. to make a 2D lattice of ‘molecules’, the transform’s pattern is just the same as that consisting only of points, fig 68. This may seem surprising. The  positions in the transform are unchanged, compared to a plain lattice, due to the regular or repetitive nature of the points, but their relative intensity is modulated. The key point is that it is the <em>intensity</em> of each spot that provides the information about the structure of the original image, not the position of the spots in the transform, which gives only the spacing of the repeated pattern.  The various intensities in the transform is due to the fact that interference from different atoms occurs in a manner depending only on their relative positions.</p>
+<p>The image of molecules on a lattice, the transform and the transform with the superimposed transform of a single molecule is shown in fig 69. We can think of the transform as the convolution of a single molecule with a lattice of points.</p>
+<p><img alt="Drawing" src="../_images/fourier-fig69.png" /></p>
+<p>Figure 69. Left, a lattice of molecules, with the unit cell outlined (<span class="math notranslate nohighlight">\(a\)</span>=blue). Centre, the absolute value of the transform and the reciprocal unit cell (<span class="math notranslate nohighlight">\(a^*\)</span>=blue), and Right, the absolute value of the transform of the whole and the absolute value of transform of a single molecule superimposed. Note how in the transform the intensity of the spots changes and follows that of the single molecule’s pattern.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="x-ray-diffraction">
+<h2>13 X-ray Diffraction.<a class="headerlink" href="#x-ray-diffraction" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="fourier-synthesis">
+<h3>13.1 Fourier Synthesis<a class="headerlink" href="#fourier-synthesis" title="Permalink to this headline">¶</a></h3>
+<p>The transform of several images has been described but these only become properly interesting when considered in the context of x-ray diffraction from crystals. The nature of x-ray diffraction is discussed shortly as is the connection between the crystal structure, the experimentally measured fourier transform and the fourier <em>synthesis</em> of the structure. To do this we shall have to understand the scattering of x-rays by the electrons in the planes of atoms that exist in a (perfect) crystal because of the repetitive nature of each atom’s position. The approach so far has been to start off with a lattice of points as in fig 68, or 69 and form the diffraction pattern, which is the fourier transform, but in an experiment things are the other way round, the data is the diffraction pattern and we want to know each atom’s position. The use of fast computers and new algorithms nowadays make most of the analysis automatic, nevertheless the fundamentals must be understood otherwise how would one know if the results of automatic analysis make sense?</p>
+<p>The experimental data available is the position and intensity of the spots on the diffraction image. Because all detectors measure the intensity of the x-ray, which is its amplitude squared, and not its amplitude which is proportional to the electron density of an atom, the image cannot be directly transformed back into a structure. However, there is also an excess of information, for example, a molecule consisting of <span class="math notranslate nohighlight">\(10\)</span> atoms needs <span class="math notranslate nohighlight">\(30\)</span> values to determine its coordinates but there may be <span class="math notranslate nohighlight">\(n=1000\)</span> or so reflexions recorded so that there will be many redundant observations which can also be used. The problem is therefore given the intensities, how can we work backwards and determine the atomic coordinates? Bragg proposed a method, which is to let the intensities be found by a fourier <em>series</em>, this process is called fourier <em>synthesis</em> (section 1.1) rather than the fourier <em>analysis</em> described in section 6. Variants of fourier synthesis form the basis of almost all crystal structure determinations.</p>
+<p>The equation for fourier synthesis in one dimension is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle F(x)=A_0+A_1\cos\big(2\pi (x/a+\varphi_1)\big)+A_2\cos\big(2\pi (2x/a+\varphi_2)\big) +\cdots\]</div>
+<div class="math notranslate nohighlight">
+\[\displaystyle =\sum_{n=0}^\infty A_n\cos\big(2\pi (nx/a+\varphi_n)\big) \tag{51}\]</div>
+<p>where <span class="math notranslate nohighlight">\(a\)</span> is the repeat distance, i.e. the length of one side of the unit cell, <span class="math notranslate nohighlight">\(\varphi\)</span> the phase and <span class="math notranslate nohighlight">\(A\)</span> the amplitude which ultimately depends on the type of atom. The greater the number electrons an atom has, the greater the scattering. The phase depends on how far an atom is from the origin of the unit cell in the direction of a particular <span class="math notranslate nohighlight">\((hkl)\)</span> plane. This is sketched in fig 70.</p>
+<p><img alt="Drawing" src="../_images/fourier-fig70.png" /></p>
+<p>Figure 70. The phase of scattered x-rays is given by <span class="math notranslate nohighlight">\(2\pi\)</span> times the ratio of the perpendicular distance from the origin <span class="math notranslate nohighlight">\((0,0,0)\)</span> to an atom <span class="math notranslate nohighlight">\(R\)</span> at <span class="math notranslate nohighlight">\((x,y,z)\)</span> to the separation of the <span class="math notranslate nohighlight">\(hkl\)</span> planes <span class="math notranslate nohighlight">\(d_{hkl}\)</span> i.e <span class="math notranslate nohighlight">\(\varphi=-2\pi R/d_{hkl}\)</span>. The <span class="math notranslate nohighlight">\(hkl\)</span> plane is perpendicular to the plane of the diagram.</p>
+<hr class="docutils" />
+<p>In three dimensions the same form of equation is found, now with directions <span class="math notranslate nohighlight">\(x,y,z\)</span>, summation with the integers <span class="math notranslate nohighlight">\(h,k,l\)</span> and with unit cell dimensions <span class="math notranslate nohighlight">\(a,b,c\)</span>. The property measured is the electron density <span class="math notranslate nohighlight">\(\rho\)</span>, which has units of number of electrons/nm<span class="math notranslate nohighlight">\(^3\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \rho(x,y,z)=\sum_{h=-\infty}^\infty\sum_{k=-\infty}^\infty\sum_{l=-\infty}^\infty A_{hkl}\cos\big(2\pi (hx/a+ky/b+lz/c)\big) \tag{52}\]</div>
+<p>which can also be put into the more general exponential form</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \rho(x,y,z)=V^{-1}\sum_{h=-\infty}^\infty\sum_{k=-\infty}^\infty\sum_{l=-\infty}^\infty F_{hkl}\exp\big(-2\pi i( hx/a+ky/b+lz/c)\big) \tag{53}\]</div>
+<p>The amplitudes <span class="math notranslate nohighlight">\(A_{hkl}\)</span> are related to the structure factors <span class="math notranslate nohighlight">\(F_{hkl}\)</span>, described shortly, where <span class="math notranslate nohighlight">\(A_{hkl}=F_{hkl}/V\)</span> and <span class="math notranslate nohighlight">\(V\)</span> is the volume of the unit cell. The structure factors <span class="math notranslate nohighlight">\(F_{hkl}\)</span> are functions of the unit cell dimensions <span class="math notranslate nohighlight">\(a,b,c\)</span>, the atom’s position e.g. <span class="math notranslate nohighlight">\(x_j,y_j,z_j\)</span> for atom <span class="math notranslate nohighlight">\(j\)</span> at each reflection plane <span class="math notranslate nohighlight">\(h,k,l\)</span> whereas in eqn. 53 the <span class="math notranslate nohighlight">\(x,y,z\)</span> are any coordinates in the unit cell used locate the electron density. Normally the unit cell <span class="math notranslate nohighlight">\(x/a,y/b,z/c\)</span> would be split in to a grid of, say, 25 points in each direction.</p>
+<p>Equation 53 also shows how the electron density and structure factors are related as a fourier transform pair. The electron density is used to locate the atoms, large at an atom but small otherwise.</p>
+<p>( Often the atom coordinates are given as fractions of the unit cell dimensions, i.e. <span class="math notranslate nohighlight">\(x/a\)</span> instead of <span class="math notranslate nohighlight">\(x\)</span> etc. and then eqn. 53 becomes</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \rho(x,y,z)=V^{-1}\sum_{h=-\infty}^\infty\sum_{k=-\infty}^\infty\sum_{l=-\infty}^\infty F_{hkl}\exp\big(-2\pi i( hx+ky+lz)\big) \tag{53'}\]</div>
+<p>so it is important to check what convention is used. Some authors also prefer to use vector notation so that <span class="math notranslate nohighlight">\(hx+ky+lz\equiv \vec H \cdot \vec X\)</span> where <span class="math notranslate nohighlight">\(\vec H=[h,k,l],\quad \vec X=[x,y,z]\)</span>. )</p>
+<p>It is clear that to be able to calculate this series the unit cell dimensions (<span class="math notranslate nohighlight">\(a,b,c)\)</span> have to be found as well as the structure factor <span class="math notranslate nohighlight">\(F_{hkl}\)</span>, and that is all that is necessary to determine the structure. In evaluating the series the electron density will rise at the position of an atom and fall, effectively to zero, between atoms giving a 3D picture of the atoms.  In theory an infinite number of structure factors <span class="math notranslate nohighlight">\(F_{hkl}\)</span> are necessary in eqn. 53, but naturally we only have a finite number of diffraction spots and so some error is introduced into each atom’s position, but these are not too serious in x-ray diffraction because there is a fall-off in scattering intensity with Bragg angle <span class="math notranslate nohighlight">\(\theta\)</span> so that the structure factors get smaller as this angle increases. Consequently the series converges which is the next best thing to an infinite one.</p>
+<p>All detectors measures the <em>square</em> of the structure factor, <span class="math notranslate nohighlight">\(F_{hkl}^2\)</span> thus only its absolute value is known, which is a serious problem because the structure factor can be positive or negative. This is called the <em>phase problem</em> and is a significant obstacle in structure determination. No one has yet discovered how to measure the x-ray amplitude instead of the intensity and so a fourier synthesis has to be used, i.e. constructing the electron density by choosing, by non-linear, least-squares or other methods, various <span class="math notranslate nohighlight">\(F_{hkl}\)</span> until the data is fitted. This sounds quite simple but as we shall see the overall sign and magnitude of the calculated <span class="math notranslate nohighlight">\(F\)</span> depends on each atom’s position in the unit cell.</p>
+<p>Leaving these problems aside for the present, the first step in determining the structure is to obtain the unit cell dimensions and this means understanding the Miller indices to describe planes of atoms.</p>
+</div>
+<div class="section" id="unit-cell-miller-indices-and-planes-of-atoms">
+<h3>13.2 Unit Cell, Miller indices and planes of atoms<a class="headerlink" href="#unit-cell-miller-indices-and-planes-of-atoms" title="Permalink to this headline">¶</a></h3>
+<p>The convention in describing crystals is that a <em>crystal structure</em> consists of atoms, a <em>crystal lattice</em> consists of points, and a <em>crystal system</em> consists of axes usually described by vectors. In a crystal the <em>unit cell</em> represents a repeated structure containing the atoms positions and is described by vectors <span class="math notranslate nohighlight">\(\bar a,\bar b, \bar c\)</span>, which need not be at right angles to one another. The unit cell is normally taken to have the minimum size needed to describe the repeating nature of the atoms. If a point in the unit cell is chosen to be the origin, a corner for example, this single position, when repeated over and over in the crystal, forms a lattice of points as in Fig 68. This lattice will belong to one of the <span class="math notranslate nohighlight">\(7\)</span> crystal systems and <span class="math notranslate nohighlight">\(14\)</span> Bravais lattices. The origin does not have to be the position of an atom but often is. The other atoms then form a similar lattice but displaced in a manner described by the atom’s position relative to the origin, this is equivalent to imagining that the whole unit cell is replicated again and again to form the crystal.</p>
+<p>The 3D lattice based on the atom at the origin is then imagined to be divided into stacks of similar planes of atoms all in the same position relative in their unit cell, see fig 71. These planes (shown edge-on as lines in fig 71) are given indices (<span class="math notranslate nohighlight">\(h k l\)</span>) which are called Miller Indices where <span class="math notranslate nohighlight">\(h,k,l\)</span> are positive or negative integers including zero. Although there are numerous parallel planes we refer to them collectively using only their unique <span class="math notranslate nohighlight">\(h,k,l\)</span> values such as (<span class="math notranslate nohighlight">\(3\;14\;\bar 1\)</span>), where the bar indicates a negative direction.  Via the Bragg diffraction equation (eqn. D4) each set of planes, and thus each <span class="math notranslate nohighlight">\(hkl\)</span>, produce one bright spot on the detector.</p>
+<p>To work out the Miller indices for any set of planes start by moving along the unit cell in the <span class="math notranslate nohighlight">\(\bar a\)</span> direction and count how many pieces <span class="math notranslate nohighlight">\(a\)</span> is divided into by the planes, i.e. the number of spaces crossed, then repeat this for sides <span class="math notranslate nohighlight">\(b\)</span> and <span class="math notranslate nohighlight">\(c\)</span>, the integers produced are the Miller indices.</p>
+<p><img alt="Drawing" src="../_images/fourier-fig71.png" /></p>
+<p>Figure 71. Labelling planes with Miller indices. The lattice is the same in both parts of the figure, only the <span class="math notranslate nohighlight">\(a-b\)</span> plane is shown.</p>
+<hr class="docutils" />
+<p>An alternative way to find the Miller indices is to look along the edges of the unit cell and count how many unit cells it takes to meet the line whose <span class="math notranslate nohighlight">\((hkl)\)</span> is required. These three numbers are then listed, e.g. <span class="math notranslate nohighlight">\((3a,\infty b,2c)\)</span>. The reciprocal of the integers is taken to make <span class="math notranslate nohighlight">\((1/3,0,1/2)\)</span> and then the fractions cleared by multiplying by the common factor to give <span class="math notranslate nohighlight">\((2,0,3)\)</span>.</p>
+</div>
+<div class="section" id="diffraction-of-x-rays">
+<h3>13.3 Diffraction of x-rays<a class="headerlink" href="#diffraction-of-x-rays" title="Permalink to this headline">¶</a></h3>
+<p>Before we can find the cell dimensions it is necessary to understand how the x-rays are diffracted off the repeated and regular structure of the crystal. Diffraction of x-rays occurs by interaction of the electrons with the x-rays which then re-radiate in all directions. Only those directions satisfying conservation of momentum produce a diffracted beam that can be recorded as a bright spot on a detector. This means the only waves detected are those whose path-length differs by an integer number of wavelengths and therefore add constructively and so re-enforce one another, all other waves cancel to zero. The condition for diffraction is given most generally by the Laue equation or equivalently and more simply by the Bragg condition</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle n\lambda =2d\sin(\theta)\tag{54}\]</div>
+<p>where <span class="math notranslate nohighlight">\(d\)</span> is the <em>perpendicular</em> spacing between similar planes of atoms and <span class="math notranslate nohighlight">\(\theta\)</span> is the angle the incoming x-ray makes to the plane of atoms. The diffraction order is <span class="math notranslate nohighlight">\(n\)</span> and <span class="math notranslate nohighlight">\(\lambda\)</span> the x-ray wavelength, for example 0.1542 nm for Cu<span class="math notranslate nohighlight">\(K_{1\alpha}\)</span> or <span class="math notranslate nohighlight">\(0.178892\)</span> nm for Co<span class="math notranslate nohighlight">\(K_{1\alpha}\)</span>.</p>
+<p>As there are different orders of diffraction <span class="math notranslate nohighlight">\(n=0,\pm 1,\pm 2 \cdots\)</span> the third order reflexion from <span class="math notranslate nohighlight">\((100)\)</span> planes,for example, can be looked at in this way or it could be a first order reflexion from the set of planes <span class="math notranslate nohighlight">\((300)\)</span> with <span class="math notranslate nohighlight">\(1/3\)</span> of the spacing of the <span class="math notranslate nohighlight">\((100)\)</span> planes. Consequently we can divide by the common factor <span class="math notranslate nohighlight">\(3\)</span>, i.e.,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle 3\lambda = 2 d_{100}\sin(\theta_{300}) \\ \lambda =2d_{300}\sin(\theta_{300}) \end{split}\]</div>
+<p>and this latter form of the equation is usually chosen by crystallographers so that <span class="math notranslate nohighlight">\(n\)</span> does not appear in the Bragg equation.</p>
+<p>Although the x-rays are diffracted it is usual to speak of them being ‘reflected’ from the planes of atoms because of the similarity of the geometry to that of reflexion by light. Figure 72 shows (images A and B) the Bragg arrangement for scattering off planes containing atoms. The path-length of the diffracted rays must be integer multiples of one another and this is only achieved at a fixed <span class="math notranslate nohighlight">\(d_{hkl}\)</span> at a certain angle <span class="math notranslate nohighlight">\(\theta\)</span>. Figures (C) and (D) show the scattering from different planes on the same lattice. Notice how the lattice has to be rotated to effect the Bragg condition for different <span class="math notranslate nohighlight">\(h,k,l\)</span> because <span class="math notranslate nohighlight">\(\lambda\)</span> is constant and has a fixed direction in any experiment. To satisfy the Bragg condition when <span class="math notranslate nohighlight">\(d_{hkl}\)</span> is small <span class="math notranslate nohighlight">\(\theta\)</span>, the diffracted angle, has to be large and <em>vice versa</em>. As the crystal is rotated only at certain <span class="math notranslate nohighlight">\(\theta\)</span>, and hence at some <span class="math notranslate nohighlight">\(hkl\)</span>, will diffraction occur, otherwise x-rays will pass through without being diffracted. The result is an image of diffracted x-ray that contains relatively few spots, even if this number is many thousands.</p>
+<p>It is clear from fig 71 and 72 that at large <span class="math notranslate nohighlight">\(h,k,l,\;d_{hkl}\)</span> is small and the diffracted angle <span class="math notranslate nohighlight">\(\theta\)</span> is large. Using a tetragonal crystal as an example, the larger the Miller indices (<span class="math notranslate nohighlight">\(hkl\)</span>) become the smaller the separation of the planes since</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle d_{hkl}=\frac{1}{\sqrt{h^2/a^2+k^2/b^2+l^2/c^2}}\qquad \text{tetragonal crystal  } a=b \neq c \text{, all angles } 90^\text{o}\]</div>
+<p>where <span class="math notranslate nohighlight">\(a=b\ne c\)</span> give the length of the unit cell’s sides. The smaller the values of <span class="math notranslate nohighlight">\(d_{hkl}\)</span> or the larger the <span class="math notranslate nohighlight">\((hkl)\)</span> the more detail the diffracted image of the crystal contains. In other words, as is expected for the conjugate relationship between fourier variables, small separation of lattice planes means spots at large distance from the origin in the diffracted image. This means that for fine resolution of a molecular structure accurate measurement of points at the periphery of an image is vitally important.</p>
+<p><img alt="Drawing" src="../_images/fourier-fig72-top.png" />
+<img alt="Drawing" src="../_images/fourier-fig72-btm.png" /></p>
+<p>Figure 72. (A) The general Bragg condition. If the planes of atoms do not satisfy the Bragg condition at a certain angle no diffraction occurs. (B) Construction for the Bragg equation. The wavefronts emerging after diffraction are always in phase. (C),(D) two particular cases of the same lattice but showing diffraction from different Miller indices. The crystal has to be rotated to satisfy the Bragg condition as normally the x-ray wavelength and direction are both fixed. The relative <span class="math notranslate nohighlight">\(d_{hkl}\)</span> and angles are approximately correct for Cu K<span class="math notranslate nohighlight">\(_\alpha\)</span>,<span class="math notranslate nohighlight">\(\lambda = 0.154\)</span> nm. The unit cell is shown as the red parallelogram.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="calculating-the-unit-cell-and-indexing">
+<h3>13.4 Calculating the unit cell and indexing<a class="headerlink" href="#calculating-the-unit-cell-and-indexing" title="Permalink to this headline">¶</a></h3>
+<p>The unit cell dimensions can often be found using power diffraction, and you will probably have done such an experiment in a practical course. In this method the crystals are crushed and placed into a narrow glass capillary tube which is placed in the centre of the instrument. The detector moves in an arc round the sample and the diffracted x-ray  are recorded as a function of the angle. This arrangement is called a Debye-Scherrer camera. In the past the detector was a strip of photographic film that was darkened by the x-rays and older textbook show the images produced as arcs on this paper. Nowadays a particle counting or imaging detector is used but in either case a plot of angle vs. intensity is produced. The crystals are at random angles (in <span class="math notranslate nohighlight">\(\theta\)</span> and <span class="math notranslate nohighlight">\(\phi\)</span>) but by Bragg’s law the diffraction can occur only at certain <span class="math notranslate nohighlight">\(\theta\)</span> angles of the planes of atoms to the x-ray beam (see fig72(A) but those planes can be anywhere around the x-ray beam at an angle <span class="math notranslate nohighlight">\(\phi\)</span>, i.e. there is cylindrical symmetry. Different <span class="math notranslate nohighlight">\(hkl\)</span> planes diffract at different angles and so several cones are produced, see fig 73. As there are numerous crystals, all angles <span class="math notranslate nohighlight">\(\phi\)</span> around the x-ray beam direction (at a given <span class="math notranslate nohighlight">\(2\theta\)</span> ) will diffract and so the all cones will have many photons.  The detector will intercept only a few of these as it moves in an arc, see fig 74, and produce a series of lines with a characteristic pattern.</p>
+<p><img alt="Drawing" src="../_images/fourier-fig73.png" /></p>
+<p>Fig. 73. The powdered crystals have random orientations (<span class="math notranslate nohighlight">\(\theta\)</span> and <span class="math notranslate nohighlight">\(\phi\)</span>and diffract along cones. The dots show that if there are just a few crystals only a few spots would be produced.</p>
+<hr class="docutils" />
+<p>The arrangement of an experiment is shown in fig 74, and a simulated set of data in fig 75. In this figure the wide, grey regions are where the x-rays enter, on the left and leave on the right.</p>
+<p><img alt="Drawing" src="../_images/fourier-fig74.png" /></p>
+<p>fig. 74. Arrangement for powder diffraction</p>
+<p><img alt="Drawing" src="../_images/fourier-fig75.png" />
+fig 75. Simulated powder diffraction pattern. The x-rays enter on the left and leaves on the right at <span class="math notranslate nohighlight">\(\pm 180\)</span>.</p>
+<hr class="docutils" />
+<p>The pattern in fig 75 corresponds to that of a cubic crystal of side <span class="math notranslate nohighlight">\(a\)</span> and combining the Bragg law and the inter-planar distance <span class="math notranslate nohighlight">\(d_{hkl}\)</span> gives</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \sin^2(\theta)=\left(\frac{\lambda}{2a}\right)^2(h^2+k^2+l^2)\]</div>
+<p>by using the formula above with <span class="math notranslate nohighlight">\(a=b=c\)</span>. The pattern of lines, starting at the right (ignoring the <span class="math notranslate nohighlight">\(180^\text{o}\)</span>) and moving left shows six more or less equally spaced lines the a gap before the seventh line. The Miller indices <span class="math notranslate nohighlight">\((hkl)\)</span> are, from the right, <span class="math notranslate nohighlight">\(100,110,111,200,210,211,220\cdots \)</span> corresponding to <span class="math notranslate nohighlight">\(h^2+k^2+l^2= 1,2,3,5,5,6,8\cdots\)</span>. There is no line when <span class="math notranslate nohighlight">\(h^2+k^2+l^2 =7\)</span> (or <span class="math notranslate nohighlight">\(15\)</span>) as this number cannot be made with integers, hence the gap in the pattern which characteristic of a simple cubic crystal. Face-centred and body-centred also have characteristic patterns with the restrictions that for fcc., <span class="math notranslate nohighlight">\(hkl\)</span> are all odd or all even, and for bcc., <span class="math notranslate nohighlight">\(h+k+l\)</span> must be even and so if plotted <span class="math notranslate nohighlight">\(n\)</span> has to follow these particular rules.</p>
+<p>Once the <span class="math notranslate nohighlight">\(\theta\)</span> is measured a simple way of estimating <span class="math notranslate nohighlight">\((\lambda/2a)^2\)</span> is to plot <span class="math notranslate nohighlight">\(\sin^2(\theta)\)</span> vs. <span class="math notranslate nohighlight">\(n\)</span> where <span class="math notranslate nohighlight">\(n\)</span> is a sequence of integers and look for the points where the values cross by drawing horizontal and vertical lines on the plot. Next draw a straight line from the origin with guessed gradients until this line crosses each the other two. It is simpler than it sounds and is shown in fig76. Once the values of <span class="math notranslate nohighlight">\(n\equiv h^2+k^2+l^2\)</span> are known a least squares can be used to improve the fit.</p>
+<p><img alt="Drawing" src="../_images/fourier-fig76.png" /></p>
+<p>Fig 76. Estimating the unit cell dimension <span class="math notranslate nohighlight">\(a\)</span> for a cubic crystal. Each horizontal line has the value <span class="math notranslate nohighlight">\(\sin^2(\theta)\)</span>. By trying values, the slope of the straight line when each pair of the the horizontal and vertical lines cross, is <span class="math notranslate nohighlight">\(\left(\lambda/2a\right)^2\)</span> from which <span class="math notranslate nohighlight">\(a\)</span> can be calculated.</p>
+<hr class="docutils" />
+<p>There are other methods such as visibly aligning a single crystal along a particular axis and using a rotation method to separate out different <span class="math notranslate nohighlight">\(hkl\)</span> because the alignment fixes one of these values and these methods are detailed in specialist texts such as McKie &amp; Mckie ‘Essentials of Crystallography’ publ. Blackwell, 1986.</p>
+</div>
+<div class="section" id="atomic-structure-factors">
+<h3>13.5 Atomic Structure Factors<a class="headerlink" href="#atomic-structure-factors" title="Permalink to this headline">¶</a></h3>
+<p>As the x-rays scatter off the electrons in an atom, clearly the more electrons there are the greater the scattering will be. Thus we expect, and observe, that heavy atoms produce much more intense bright spots on a detector than do lighter atoms. However, atoms are not point objects but have a real size with an electron ‘cloud’ radius that is only a little smaller than a bond length. Electron density is greater towards the atom’s centre and less towards the perimeter.</p>
+<p>Assuming a largely spherical electron distribution, when x-rays are scattered and detected at an angle away from incoming the x-ray’s direction, there will be a path-length difference between one side of the atom and the other and this leads to scattered waves becoming out of phase, and hence of reduced intensity and increasingly so as the scattering angle increases. As the atoms in a molecule are always close to one another, so are electrons on different atoms and this proximity potentially leads to a great computational complication. However, this is easily overcome by assuming that atoms are point objects and using a function, the <em>atomic scattering factor</em>, on each atom to allow for the scattering from its different parts. The atomic scattering factor is a decaying function of the scattering angle. At zero angle it is the atomic number <span class="math notranslate nohighlight">\(Z\)</span> (plus or minus the number of charges for ions) and decreases to a constant value in terms of <span class="math notranslate nohighlight">\(\sin(\theta)\lambda=1/(2d_{hkl})\)</span>.  The scattering factor can be accurately calculated using quantum chemistry methods, Hartree-Fock for example, and in some cases measured, and are known accurately. The calculated function can conveniently be described by the sum of four Gaussians, e.g.</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle f_{q}= \sum_i^4 a_i e^{\large -b_i\left(q/4\pi\right)^2}+c,\qquad q=\sin(\theta)/\lambda=1/2d_{hkl}\tag{55}\]</div>
+<p>with constants <span class="math notranslate nohighlight">\(b_i\)</span> and <span class="math notranslate nohighlight">\(c\)</span> tabulated for each atom and its ions. Later on, clarity, we label the atomic scattering factor <span class="math notranslate nohighlight">\(f_j^{hkl}\)</span> for atom <span class="math notranslate nohighlight">\(j\)</span> and Miller indices ${hkl}. Typical examples are shown in fig 77.</p>
+<p><img alt="Drawing" src="../_images/fourier-fig77.png" /></p>
+<p>Figure 77. Calculated atomic scattering factors.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="id1">
+<h3>13.6 Fourier Synthesis<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>To illustrate how fourier synthesis can work, suppose that there is a ‘crystal’ of only three diatomic molecules. Adding waves of different random frequencies but the same phase as shown in figure 1 of this chapter will always produce a complicated and repeating wave. By adding waves of <em>different amplitude</em>, <em>frequency</em> and <em>phase</em> it is possible to construct a total wave that is localised where the peaks are. Furthermore, relatively few waves are needed as shown in fig. 78. The left panel shows, at the top, the three molecules positioned face-on and the right-hand panel positioned edge-on, the summed wave is shown immediately below (brown) and the individual waves are numbered with their frequency. It is clear that with only a few waves their summed values can reproduce, quite well, the positions of the atoms. In an x-ray diffraction experiment the peaks would represent electron density and summing the waves is equivalent to calculating equation D1 given above.</p>
+<p><img alt="Drawing" src="../_images/Fourier-fig78.png" /></p>
+<p>Figure 78. Fourier synthesis of atomic positions. Left face on in x-y plane and right end on in the y-z plane. The waves forming the total are shown numbered below. Notice that the waves have different amplitudes and phases. (After J. Waser J. Chem. Educ. p446,v45,1968).</p>
+<hr class="docutils" />
+<p>The right hand figure shows each molecule end on so has only one peak. Combining both figures can better reproduce the molecule if plotted as contours, and such a plot is shown in fig. 79, where the location of the atoms is clear. In this calculation the amplitude and phase of the waves was chosen by trial and error until a reasonable result was produced. This is equivalent to knowing the geometric structure factors <span class="math notranslate nohighlight">\(F_{hkl}\)</span> and an example of finding these is given next where the general formula is introduced.</p>
+<p><img alt="Drawing" src="../_images/fourier-fig79.png" /></p>
+<p>Figure 79. Contour plot combining total waves from fig. 78 and shown as contours. The two central contours have the largest values, with others decreasing outwards.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="the-structure-factor-f-hkl">
+<h3>13.7   The Structure Factor <span class="math notranslate nohighlight">\(F_{hkl}\)</span><a class="headerlink" href="#the-structure-factor-f-hkl" title="Permalink to this headline">¶</a></h3>
+<p>The structure factor, <span class="math notranslate nohighlight">\(F_{hkl}\)</span>, measures the size of the scattering from each <span class="math notranslate nohighlight">\(hkl\)</span> plane by taking into account where the atom is relative to the plane and the atomic scattering factor, <span class="math notranslate nohighlight">\(f_q\)</span>, for that particular atom. To do the calculation, waves from each atom in the unit cell have to be summed as they are in superposition. The result could be zero if the total, by symmetry adds up to this or could be positive or negative. A zero result is an example of systematic absences.  In chapter 1 the superposition of cosine waves of frequency <span class="math notranslate nohighlight">\(\omega\)</span> and phase <span class="math notranslate nohighlight">\(\varphi\)</span>, such as <span class="math notranslate nohighlight">\(\psi=a\cos(\omega t +\varphi)\)</span>, was examined. The more general wave is written as a complex exponential, with <span class="math notranslate nohighlight">\(i=\sqrt{-1}\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \psi = |a| e^{i(\omega t +\varphi)} = |a|e^{i\varphi}e^{i\omega t}=ae^{i\omega t}\]</div>
+<p>where the amplitude is <span class="math notranslate nohighlight">\(a=|a|e^{i\varphi}\)</span> and as the phase varies from <span class="math notranslate nohighlight">\(0\to \pi\)</span> the exponential changes from <span class="math notranslate nohighlight">\(1\)</span> to <span class="math notranslate nohighlight">\(-1\)</span>. The frequency <span class="math notranslate nohighlight">\(\omega\)</span> is the same for all waves and can be ignored henceforth at it changes nothing.</p>
+<p>The amplitude of several waves is the sum of amplitudes and becomes</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle a_s=\sum_j^N a_j= \sum_j^N |a_j|e^{i\varphi_j} \tag{56}\]</div>
+<div class="math notranslate nohighlight">
+\[\displaystyle \qquad\qquad\qquad =\sum_j^N|a_j|\cos(\varphi_j)+i\sum_j^N|a_j|\sin(\varphi_j)\]</div>
+<p>where De-Moivre’s theorem was used. The (square law) detector always measure the intensity not the amplitude, i.e. <span class="math notranslate nohighlight">\(a_s^*a_s\)</span> and so the result of a measurement is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle I=\sum_j^N |a_j|e^{-i\varphi_j}\sum_j^N |a_i|e^{i\varphi_j}=\left(\sum_j^N|a_j|\cos(\varphi_j)\right)^2+\left(\sum_j^N|a_j|\sin(\varphi_j)\right)^2\tag{57}\]</div>
+<p>In x-ray crystallography the amplitude is given by the atomic structure factor of atom <span class="math notranslate nohighlight">\(j\)</span> at each <span class="math notranslate nohighlight">\(hkl\)</span>,  <span class="math notranslate nohighlight">\(f_j^{hkl}\)</span> and the phase <span class="math notranslate nohighlight">\(\varphi=2\pi(hx_j+ky_j+kz_j)\)</span>. The summation is only over the number of atoms <span class="math notranslate nohighlight">\(N\)</span> in the unit cell and the <span class="math notranslate nohighlight">\(x_j,y_j,z_j\)</span> are the atom coordinates as <em>fractions</em> of the unit cell dimensions.</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle F_{hkl} = \sum_j^N f_j^{hkl}e^{2\pi i(hx_j+ky_j+lz_j)}\qquad\qquad\qquad\qquad\qquad\qquad\]</div>
+<div class="math notranslate nohighlight">
+\[\displaystyle \qquad\qquad\qquad =\sum_j^Nf_j^{hkl}\cos\big(2\pi(hx_j+ky_j+lz_j)\big) + i\sum_i^Nf_j^{hkl} \sin\big(2\pi(hx_j+ky_j+lz_j)\big) \tag{57}\]</div>
+<p>The cosine and sine terms are sometimes called the <em>geometric structure factors</em> because they are functions of coordinates <span class="math notranslate nohighlight">\(x_j,y_j,z_j\)</span> of the <span class="math notranslate nohighlight">\(j^{th}\)</span> atom in the unit cell. Notice that <span class="math notranslate nohighlight">\(F_{hkl}\)</span> can be zero, positive, negative, real or complex. The detector measures an <span class="math notranslate nohighlight">\(hkl\)</span> reflexion as</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle I_{hkl}=|F_{hkl}|^2=\left(\sum_j^Nf_j^{hkl}\cos\big(2\pi(hx_j+ky_j+lz_j)\big)\right)^2+\left(\sum_i^Nf_j^{hkl}\sin\big(2\pi(hx_j+ky_j+lz_j)\big)\right)^2\tag{58}\]</div>
+<p>and this is true for all crystals whatever their symmetry. Whenever there is a centre of symmetry, such as in Rutile (TiO<span class="math notranslate nohighlight">\(_2\)</span>), the sine terms in the aggregate evaluate to zero and this is because for each angle <span class="math notranslate nohighlight">\(\theta\)</span> there is one at <span class="math notranslate nohighlight">\(-\theta\)</span> and <span class="math notranslate nohighlight">\(-\sin(\theta)=\sin(-\theta)\)</span>.</p>
+<p>The diffraction itself produces scattering of amplitude <span class="math notranslate nohighlight">\(F_{hkl}\)</span> which brings us back to eqn 53 which shows how the electron density is related to the structure factor.  The measurement changes the data by effectively measuring the absolute value <span class="math notranslate nohighlight">\(|F_{hkl}|\)</span> and the sign of <span class="math notranslate nohighlight">\(F\)</span> is therefore lost and there is no experimental method with which to determine it. Using fourier synthesis is the option mainly used, effectively guessing a structure based on starting with as much information as is available about the molecules and its crystal and proceeding by least squares type fitting until an acceptable ‘model’ of the molecules is reached.</p>
+<p>In some cases, particularly when the origin of the unit cell is centro-symmetric, (has a centre of inversion) the structure factor is always real and the phase angle can only be <span class="math notranslate nohighlight">\(0\)</span> or <span class="math notranslate nohighlight">\(\pi\)</span> so <span class="math notranslate nohighlight">\(e^{i\varphi} =\pm 1\)</span>.</p>
+</div>
+<div class="section" id="example-of-calculating-the-structure-factors-tio-2">
+<h3>13.8 Example of calculating the structure factors, TiO<span class="math notranslate nohighlight">\(_2\)</span><a class="headerlink" href="#example-of-calculating-the-structure-factors-tio-2" title="Permalink to this headline">¶</a></h3>
+<p>To calculate the structure factor and so spot intensity we use the coordinates for TiO<span class="math notranslate nohighlight">\(_2\)</span> which has a tetragonal structure with <span class="math notranslate nohighlight">\(a = b = 4.653\, ,c=2.969\)</span>, <span class="math notranslate nohighlight">\(\alpha=\beta=\gamma=90^\text{o}\)</span> with <span class="math notranslate nohighlight">\(a,b,c\)</span> in Angstrom. Figure 80 shows the structure. The repeating unit consists of two Ti atoms and four oxygens. The central Titanium is octahedrally coordinated with respect the the oxygens and the other Ti atoms are at the corners of the square prism. The atom coordinates are</p>
+<p><span class="math notranslate nohighlight">\(\begin{array}{lll}
+\text{Ti0} &amp; [0.5000&amp; 0.5000&amp;  0.0000] &amp;
+\text{Ti1} &amp; [0.0000&amp; 0.0000&amp;  0.0000]\\
+\text{O1 } &amp; [0.8045&amp; 0.1954&amp;  0.5000]&amp;
+\text{O2 } &amp; [0.1954&amp; 0.8045&amp;  0.5000]\\
+\text{O3 } &amp; [0.3045&amp; 0.3045&amp;  0.0000]&amp;
+\text{O4 } &amp; [0.6954&amp; 0.6954&amp;  0.0000]\\
+\text{O5 } &amp; [0.3045&amp; 0.3045&amp;  1.0000]&amp;
+\text{O6 } &amp; [0.6954&amp; 0.6954&amp;  1.0000]\\
+\end{array}\)</span></p>
+<p>The unit cell consists of the four oxygen atoms labelled and the Ti atom at bottom left connected to oxygen 1 and the central one.  When an atom does not lie on a plane defined by <span class="math notranslate nohighlight">\((hkl)\)</span> it still scatters x-rays but with a phase shifted by the fraction of the separation between the <span class="math notranslate nohighlight">\(hkl\)</span> planes. The following analysis and figures are adapted from chapter 6 of C. Bunn, ‘Chemical Crystallography’ publ. OUP. 1961.</p>
+<p><img alt="Drawing" src="../_images/fourier-fig80.png" /></p>
+<p>Figure 80. The structure of Ti0<span class="math notranslate nohighlight">\(_2\)</span>. The Ti atoms are black the oxygen red and the numbered O atoms show the repeating unit containing the Ti atom at the lower left connected to oxygen 1 and the central one. The atoms are not shown at their real size, the O<span class="math notranslate nohighlight">\(^{2-}\)</span> has a radius <span class="math notranslate nohighlight">\(\approx 1.23\)</span> Angstrom and the Ti<span class="math notranslate nohighlight">\(^{4+}\approx 0.65\)</span> Angstrom.</p>
+<hr class="docutils" />
+<div class="section" id="reflexion">
+<h4>(100) reflexion<a class="headerlink" href="#reflexion" title="Permalink to this headline">¶</a></h4>
+<p>In this and the other reflexions we will calculate the structure factor by examining individual waves rather than plugging values into eqn. D4. Of course in practice the equation would always be used but it is useful to gain an insight into what the equation means.</p>
+<p>The set of (100) planes is shown in the figure 100F by looking down the <span class="math notranslate nohighlight">\(c\)</span> axis. The symmetry of the structure can be easily seen. The waves produced by the distance <span class="math notranslate nohighlight">\(d_{100}\)</span> are shown on the right. In this case the diffracted intensity is zero when summed over the two Ti and four oxygen atoms.</p>
+<p>As shown in fig. 70, if an atom is at a distance <span class="math notranslate nohighlight">\(D\)</span> from a plane it is at a fraction <span class="math notranslate nohighlight">\(D/d_{hkl}\)</span> of the inter-planar distance with a phase of <span class="math notranslate nohighlight">\(2\pi D/d_{hkl}\)</span> and contributes <span class="math notranslate nohighlight">\(f_{d_{hkl}}\cos(2\pi D/d_{hkl} )\)</span> to the total intensity where <span class="math notranslate nohighlight">\(f_{d_{hkl}}\)</span> is the atomic scattering factor for the atom at distance <span class="math notranslate nohighlight">\(D\)</span> with coordinate <span class="math notranslate nohighlight">\({xyz}\)</span>, see fig. 77. When the phase is zero or <span class="math notranslate nohighlight">\( 2\pi\)</span> then the cosine is <span class="math notranslate nohighlight">\(1\)</span> because <span class="math notranslate nohighlight">\(\cos(0)=\cos(2\pi) = 1\)</span>. Similarly if the phase difference is <span class="math notranslate nohighlight">\(\pi/2\)</span> or <span class="math notranslate nohighlight">\(90^\text{0}\)</span> the phase is zero; <span class="math notranslate nohighlight">\(\cos(\pi/2)=0\)</span>. The opposite is the case for phase based on sine waves but as the TiO<span class="math notranslate nohighlight">\(_2\)</span> has a centre of symmetry at the origin, the sine terms always add up to zero and need not be calculated.</p>
+<p>Looking down the <span class="math notranslate nohighlight">\(c\)</span> axis in fig. 80, i.e. showing the edges of the (110) planes, seen as horizontal lines, produces fig. 81; the Ti<span class="math notranslate nohighlight">\(_2\)</span> ion is at half the <span class="math notranslate nohighlight">\(d_{100}\)</span> distance and so has phase <span class="math notranslate nohighlight">\(\cos(2\pi/2)=-1\)</span> where as the Ti<span class="math notranslate nohighlight">\(_1\)</span> ion is at zero and so has phase(<span class="math notranslate nohighlight">\(\cos(0)=+1\)</span> so the waves from each of these ions are completely out of phase and so add to zero. Similarly the oxygen atoms <span class="math notranslate nohighlight">\(1\)</span> and <span class="math notranslate nohighlight">\(3\)</span> are separated by <span class="math notranslate nohighlight">\(D=d_{100}/2\)</span> so are also completely out of phase with one another and for the same reason so are O atoms <span class="math notranslate nohighlight">\(2\)</span> and <span class="math notranslate nohighlight">\(4\)</span>. Thus each atom is paired with another similar one exactly out of phase with it and diffraction from the <span class="math notranslate nohighlight">\((100)\)</span> plane is expected to have a   structure factor of zero; <span class="math notranslate nohighlight">\(F_{100}=0\)</span> as is confirmed by experiment.</p>
+<p><img alt="Drawing" src="../_images/fourier-fig81.png" /></p>
+<p>Figure 81. Left. View down the <span class="math notranslate nohighlight">\(c\)</span> axis showing the <span class="math notranslate nohighlight">\((100)\)</span> plane and the distance used in calculating the   structure factor <span class="math notranslate nohighlight">\(F_{100}\)</span> The Ti ions are shown in black the oxygens in red. Right. Showing the waves belonging to each atom in this reflexion. Each wavelength is <span class="math notranslate nohighlight">\(d_{100}\)</span>. The sum of all waves is zero.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="id2">
+<h4>(200) reflexion<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
+<p>Although the <span class="math notranslate nohighlight">\((200)\)</span> planes are parallel to <span class="math notranslate nohighlight">\((100)\)</span> the <span class="math notranslate nohighlight">\((200)\)</span> reflection is not zero. This can be seen in fig. 82, and is because the <span class="math notranslate nohighlight">\(d_{200}\)</span> is half that of <span class="math notranslate nohighlight">\(d_{100}\)</span>. This means that Ti<span class="math notranslate nohighlight">\(_1\)</span> and Ti<span class="math notranslate nohighlight">\(_2\)</span> are now in phase with one another as each is on a <span class="math notranslate nohighlight">\((200)\)</span> plane and therefore each has zero phase. The phase contribution from the Ti ions is therefore <span class="math notranslate nohighlight">\(2f^{Ti}_{d_{200}}\cos(0)=2f^{Ti}_{d_{200}}\cos(0) = 16.02\)</span> where the number is the value of the atomic scattering factor at <span class="math notranslate nohighlight">\(1/2d_{200}=0.214\)</span>. Pairs of oxygen atoms are in the same relative symmetry, <span class="math notranslate nohighlight">\(1 : 3\)</span> and <span class="math notranslate nohighlight">\(2 : 4\)</span> so only the phase of O<span class="math notranslate nohighlight">\(_2\)</span> and O<span class="math notranslate nohighlight">\(_3\)</span> need be calculated.  Oxygen 2 is at <span class="math notranslate nohighlight">\(y/b=0.8025\)</span> so the structure factor is <span class="math notranslate nohighlight">\(F^O_{d_{200}}\cos( 2\pi h 0.8025)= -4.76\)</span> where <span class="math notranslate nohighlight">\(k=l=0\)</span> and <span class="math notranslate nohighlight">\(x/a=0.8025\)</span>. The same value is found for all the oxygen atoms making the total structure factor <span class="math notranslate nohighlight">\(F_{d_{200}}= 13\)</span> and the intensity <span class="math notranslate nohighlight">\(169\)</span>.</p>
+<p><img alt="Drawing" src="../_images/fourier-fig82.png" /></p>
+<p>Figure 82. Left. Same view as figure 81.  The <span class="math notranslate nohighlight">\((200)\)</span> planes are shown as lines. Right The waves from each atom and their sum is shown in red whose amplitude is moderate. By symmetry oxygens <span class="math notranslate nohighlight">\(1\)</span> and <span class="math notranslate nohighlight">\(3\)</span> contribute equally as do <span class="math notranslate nohighlight">\(2\)</span> and <span class="math notranslate nohighlight">\(4\)</span>.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="id3">
+<h4>(110) reflexion<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h4>
+<p>The (110) reflection is strong, fig. 83. All the Ti atoms are in the (110) plane and so their phase is <span class="math notranslate nohighlight">\(0\)</span> or <span class="math notranslate nohighlight">\(2\pi\)</span> thus the cosine is unity and the amplitude of each is <span class="math notranslate nohighlight">\(f^{Ti}_{d_{110}}=16.95\)</span> where <span class="math notranslate nohighlight">\(1/2d_{110}= 0.152\)</span>. Oxygens <span class="math notranslate nohighlight">\(1\)</span> and <span class="math notranslate nohighlight">\(2\)</span> are also in the plane and their phase is similarly <span class="math notranslate nohighlight">\(2\pi\)</span> thus each amplitude is <span class="math notranslate nohighlight">\(f^O_{d_{110}}=6.96\)</span>. The other oxygens are at fractional distances of <span class="math notranslate nohighlight">\(d_{110}\)</span>. Oxygen 3 is at a distance <span class="math notranslate nohighlight">\(D_{O3}=2.003\)</span> which is a phase angle of <span class="math notranslate nohighlight">\(2\pi 2.003/4.65\equiv 219^\text{o}\)</span> with amplitude <span class="math notranslate nohighlight">\(f^O_{d_{110}}\cos(2\pi 0.43)=-5.39\)</span>. The fourth oxygen also has a phase angle of <span class="math notranslate nohighlight">\(-219^\text{o}\)</span> but adds towards the total because <span class="math notranslate nohighlight">\(\cos(-\theta)=\cos(\theta)\)</span>. From all 6 atoms in the unit cell the total structure factor is <span class="math notranslate nohighlight">\(F_{110}=37\)</span> so the intensity is <span class="math notranslate nohighlight">\(1369\)</span> and should be seen as an intensely bright spot.</p>
+<p><img alt="Drawing" src="../_images/fourier-fig83.png" /></p>
+<p>Figure 83. Left. Same view as figure 81 showing the (110) planes. Right The waves from each atom and their sum shown in red whose amplitude is large. By symmetry the oxygens <span class="math notranslate nohighlight">\(1\)</span> and <span class="math notranslate nohighlight">\(2\)</span> contribute identically as do <span class="math notranslate nohighlight">\(3\)</span> and <span class="math notranslate nohighlight">\(4\)</span>.</p>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="id4">
+<h3>13.9 Fourier synthesis<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p>Having obtained structure factors we can attempt to find the position of the atoms. All that has to be done is to use eqns D3 with D5. Of course we already know the answer but let us check that we can reproduce the positions of the atoms of fig 81 for example, and by looking down the <span class="math notranslate nohighlight">\(c\)</span> axis calculate the projection of the structure onto the <span class="math notranslate nohighlight">\(a-b\)</span> plane.  Figure 84 shows the result where the centroid of the contours are in the same relative positions as the original, fig 81. The most intense features arise from the Ti atoms as they contain most electrons. This figure was calculated by dividing the unit cell into a <span class="math notranslate nohighlight">\(40 \times 40\times 40\)</span> grid and summing along the <span class="math notranslate nohighlight">\(c\)</span> axis. Only <span class="math notranslate nohighlight">\(hkl\)</span> values from <span class="math notranslate nohighlight">\(-5 \to +5\)</span> were used showing that a reasonable reproduction of the structure is possible using a relatively limited range of. Using a larger range of <span class="math notranslate nohighlight">\(hkl\)</span> reduces the spot sizes as smaller <span class="math notranslate nohighlight">\(d_{hkl}\)</span> are used and so the resolution increases.</p>
+<p><img alt="Drawing" src="../_images/fourier-fig84.png" /></p>
+<p>Figure 84. The calculated projection onto the <span class="math notranslate nohighlight">\(a-b\)</span> plane, i.e. looking down the <span class="math notranslate nohighlight">\(c\)</span>-axis. The unit cell is outlined and a few extra atoms are also shown. The Ti scatter with the greater intensity than the oxygen. The maximum contour is limited and consequently the Ti atoms are white at their most intense position. This calculated projection structure is the same as in fig 80 and 81.</p>
+<hr class="docutils" />
+<p>Changing the positions of oxygens <span class="math notranslate nohighlight">\(1\)</span> and <span class="math notranslate nohighlight">\(2\)</span> by <span class="math notranslate nohighlight">\(5\)</span>% in both <span class="math notranslate nohighlight">\(x,y\)</span> and keeping <span class="math notranslate nohighlight">\(z\)</span> unchanged, to maintain the symmetry, produced a clear change in the synthesised projection, see fig. 85.</p>
+<p><img alt="Drawing" src="../_images/fourier-fig85.png" /></p>
+<p>Figure 85. Comparison of the calculated structures, the original, left is the same as above, the one of the right has oxygens 1 and 2 moved inwards by 0.023 nm. The grid emphasizes how this small change is clearly observable.</p>
+<hr class="docutils" />
+<p>The reliability or <span class="math notranslate nohighlight">\(R\)</span> factor is used to measure the goodness of fit between the structure factor using experimental data and that calculated and has the form;</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle R=\frac{\sum|\;|F_{expt}|-|F_{calc}|\;|}{\sum|F_{expt}|}\tag{58}\]</div>
+<p>The absolute values used in <span class="math notranslate nohighlight">\(R\)</span> just means that all <span class="math notranslate nohighlight">\(F\)</span> are positive. An <span class="math notranslate nohighlight">\(R\)</span> value of less that <span class="math notranslate nohighlight">\(\approx 0.2\)</span> may be acceptable as an initial fit, but half this value or better is expected for a refined fit to the data. The <span class="math notranslate nohighlight">\(R\)</span> factor between the two structures, fig. 85, is <span class="math notranslate nohighlight">\(0.26\)</span> showing that the agreement between them is poor as is clear from the images of the projections. The bond lengths Ti to oxygen 1 (or 2) is only changed by 0.023 nm in a bond length of 0.20 nm and this shows how sensitive x-ray diffraction is to small changes in geometry. The bond length Ti to oxygen 3 (or 4) is similar to that for the other two oxygens and is <span class="math notranslate nohighlight">\(0.196\)</span> nm but looks less because of the projection down the <span class="math notranslate nohighlight">\(c\)</span> axis.</p>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./chapter-9"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="Fourier-F.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">The Hadamard Transform: Encoding and Decoding</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="Fourier-tomography.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Computed Tomography</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Godfrey Beddard<br/>
+        
+            &copy; Copyright 2022.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

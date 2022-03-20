@@ -53,6 +53,8 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="11 The Hadamard Transform: Encoding and Decoding" href="Fourier-F.html" />
+    <link rel="prev" title="5 Fourier Transforms" href="Fourier-C.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -92,15 +94,72 @@
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../intro.html">
-   Applying Maths in the Chemical &amp; Biomolecular Sciences
+   Introduction
   </a>
  </li>
 </ul>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="Fourier-A.html">
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="Fourier-intro.html">
    Chapter 9 Fourier Series and Transforms
   </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="Fourier-A-B.html">
+     1- 4 Fourier series, Gibbs phenomenon, generalised series.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Fourier-questions-1-6.html">
+     Questions 1 to 6
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Fourier-C.html">
+     5 Fourier Transforms
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Questions 7 to 15
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Fourier-F.html">
+     11 The Hadamard Transform: Encoding and Decoding
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Fourier-2D-Diffraction.html">
+     12 The Fourier transform in two dimensions: images and x-ray Diffraction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Fourier-tomography.html">
+     14 Computed Tomography
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Fourier-answers-1-6.html">
+     Fourier series Answers 1-6
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Fourier-answers%207-15.html">
+     Answers 7-15
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Fourier-answers-16-21.html">
+     Answers 16-21
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -193,8 +252,7 @@
         
               <div>
                 
-  <p>Godfrey Beddard ‘ Applying Maths in the Chemical &amp; Biomolecular Sciences’ Chapter 9</p>
-<div class="tex2jax_ignore mathjax_ignore section" id="questions-7-to-15">
+  <div class="section" id="questions-7-to-15">
 <h1>Questions 7 to 15<a class="headerlink" href="#questions-7-to-15" title="Permalink to this headline">¶</a></h1>
 <p><strong>Q7</strong> The excited states of isolated atoms and molecules normally decay exponentially in time. When a spectral line is measured, the spectrometer performs a Fourier transform, converting the time profile into a spectral profile that has a Lorentzian shape, and looks something like a Gaussian but is wider in the wings. (We assume that the line measured is isolated from others so that no overlap occurs.) The detector, a photodiode, CCD camera, or photomultiplier are all ‘square law’ detectors and measure the square of the absolute value of the electric field of the radiation; <span class="math notranslate nohighlight">\(E^*E = | E |^2\)</span>. Suppose that the emission starts at time zero and decays with a lifetime of <span class="math notranslate nohighlight">\(\tau\)</span> seconds, with a rate <span class="math notranslate nohighlight">\(\displaystyle E(t) = e^{-t /\tau}/\tau\)</span>  photons/second, calculate the Fourier transform, and plot this with the decay, assuming that <span class="math notranslate nohighlight">\(\tau = 10\)</span>. Calculate the half-width of the spectral line produced and comment on its value.</p>
 <p><strong>Strategy:</strong> The variable is time <span class="math notranslate nohighlight">\(t\)</span> rather than <span class="math notranslate nohighlight">\(x\)</span>, as in equation (27). The limits are from 0 to <span class="math notranslate nohighlight">\(\infty\)</span>.
@@ -244,15 +302,16 @@ except for a constant frequency offset.</p>
 <blockquote>
 <div><p><strong>(b)</strong> Repeat the calculation with a Gaussian electron density of width <span class="math notranslate nohighlight">\(2d\)</span> centred at position <span class="math notranslate nohighlight">\(a\)</span> i.e. <span class="math notranslate nohighlight">\(\displaystyle e^{-(x-a)^2/d^2}/d\)</span> . Comment on the scattering.</p>
 </div></blockquote>
-<img src="Fourier-fig22.png" alt='Drawing' style='width:300px;'/>
-Figure 22. Schematic of one atom’s electron density as a $\delta$ function.
+<p><img alt="Diagram" src="../_images/Fourier-fig22.png" /></p>
+<p>Figure 22. Schematic of one atom’s electron density as a <span class="math notranslate nohighlight">\(\delta\)</span> function.</p>
 <hr class="docutils" />
 <p><strong>Strategy:</strong> General properties of <span class="math notranslate nohighlight">\(\delta\)</span>-functions are given in Chapter 1.10. In this question, the useful property is that it extracts the function <span class="math notranslate nohighlight">\(f(a)\)</span> out of the integral <span class="math notranslate nohighlight">\(\displaystyle \int_{-\infty}^{\infty} f(x)\delta(x-a)dx = f(a)\)</span> and no calculation is necessary. If <span class="math notranslate nohighlight">\(P\)</span> is the Fourier transform, then the ‘power density’ is <span class="math notranslate nohighlight">\(P^*P\)</span>.</p>
 <p><strong>Q13</strong> Following on from the previous question, suppose now that there are two (atom) delta functions separated by a distance <span class="math notranslate nohighlight">\(2a\)</span>. Show that the Fourier transform is a cosine and calculate the probability density.</p>
 <p><strong>Strategy:</strong> The delta function at position <span class="math notranslate nohighlight">\(\pm a\)</span> is <span class="math notranslate nohighlight">\(\delta (x \pm a)\)</span>.</p>
 <p><strong>Q14</strong> Continuing from Q13, consider a comb of atoms represented as <span class="math notranslate nohighlight">\(\delta\)</span>-function scattering centres that might represent a one-dimensional crystal that can scatter X-rays. Each atom is separated from the next by a distance <span class="math notranslate nohighlight">\(a\)</span>. Calculate the transform for a row of atoms extending from <span class="math notranslate nohighlight">\(-\infty \to\infty\)</span>, and show that it is the same as in the figure. The total transform is the sum of this infinite number of individual transforms. Consider two cases; one where the waves have arbitrary wavelengths, and the other when they have wavelength <span class="math notranslate nohighlight">\(a\)</span>.</p>
-<img src="Fourier-fig23.png" alt='Drawing' style='width:500px;'/>
-Figure 23. A comb of atoms and its transform
+<p><img alt="Diagram" src="../_images/Fourier-fig23.png" /></p>
+<p>Figure 23. A comb of atoms and its transform</p>
+<hr class="docutils" />
 <p><strong>Strategy:</strong> The initial task here is to define the <span class="math notranslate nohighlight">\(\delta\)</span>-function for an atom at some position <span class="math notranslate nohighlight">\(na\)</span>. The total transform is the sum of all the individual atoms, in which case, <span class="math notranslate nohighlight">\(n\)</span> ranges from <span class="math notranslate nohighlight">\(-\infty \to +\infty\)</span>.</p>
 <p>The physics involved determines how to solve the infinite sum produced. If the X-rays (or photons/waves in general) scattering off the atoms are in phase, then a different sum is obtained compared to when they are not in phase. Being ‘in phase’ means that the X-rays scatter, so that the scattering from each atom reinforces the total at the scattering angle; being out of phase means that the scattering is overall zero. If the waves have different wavelengths, in general the overall scattering must be zero, because the scattering from adjacent atoms cannot reinforce one another.</p>
 <p><strong>Q15</strong> A laser produces an exponentially shaped pulse <span class="math notranslate nohighlight">\(\displaystyle p = e^{-|\,ax\,|}\)</span>, with a duration (fwhm) of <span class="math notranslate nohighlight">\(\tau = 10\)</span> fs at 800 nm.</p>
@@ -289,7 +348,21 @@ Figure 23. A comb of atoms and its transform
               
         
             <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="Fourier-C.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">5 Fourier Transforms</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="Fourier-F.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">11 The Hadamard Transform: Encoding and Decoding</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
         
         </div>

@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# Godfrey Beddard 'Applying Maths in the Chemical & Biomolecular Sciences' Chapter 9 
+# # Answers 7-15
 
 # In[1]:
 
@@ -16,8 +16,6 @@ init_printing()                      # allows printing of SymPy results in types
 plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 
-# # Answers 7-15
-# 
 # **Q7 answer**
 # 
 # The transform equation is $\displaystyle g(k)=\frac{1}{\sqrt{2\pi}}\int_0^\infty \frac{\exp(-t/\tau)}{\tau} \exp(-ikt)dt$ which can be integrated directly to give 
@@ -28,8 +26,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # The exponential decay with $\tau = 2$ and the corresponding square of the transform, are shown in Fig. 54. In this case $k$ corresponds to a frequency in s$^{-1}$% because $t$ is in seconds.
 # 
-# 
-# <img src="fourier-fig54.png" alt='Drawing' style='width:500px;'/>
+# ![Diagram](Fourier-fig54.png)
 # 
 # Figure 54. An exponential decay and (right) the complex conjugate square of its Fourier transform which is a Lorentzian curve.
 # 
@@ -58,8 +55,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # Plots of the pulse and its transforms are shown in fig 55. The real part becomes the sinc function if it is written as $\displaystyle \frac{t_0}{\sqrt{2\pi}}\frac{\sin(t_0(\omega_0-\omega)}{t_0(\omega_0-\omega))}$, see fig 15.
 # 
-# 
-# <img src="fourier-fig55.png" alt='Drawing' style='width:500px;'/>
+# ![Diagram](Fourier-fig55.png)
 # 
 # Figure 55. Left top: The electric field of a square pulse of 0.1 ps duration. Bottom right: the square of absolute value of the Fourier transform of the pulse; this is its spectrum. The small vertical line shows the position of the first minima, see part (b). Bottom left: The imaginary component of the Fourier transform, the sinc function, and right, the real part.
 # 
@@ -156,7 +152,7 @@ plt.show()
 
 # **Q11 answer**
 # 
-# The transform is $\displaystyle g(k)=\frac{1}{\sqrt{2\pi}}\int_{-t_0}^{t_0}\sin(2\pi t/t_0 +\varphi)e^{-ikt}dt$ which can be evaluated by hand or using SymPy. By hand this is made easier by converting the exponential first and then to sin and cos because we shall want to find the real and imaginary parts.
+# The transform is $\displaystyle g(k)=\frac{1}{\sqrt{2\pi}}\int_{-t_0}^{t_0}\sin(2\pi t/t_0 +\varphi)e^{-ikt}dt$ which can be evaluated by hand or using SymPy. By hand this is made easier by converting the exponential first and then to sin and cos because we shall want to find the real and imaginary (sin) parts.
 
 # In[3]:
 
@@ -167,24 +163,18 @@ g = 1/(sqrt(2*pi))*integrate( sin(2*pi*t/t0 +phi)*(cos(k*t) +1j*sin(k*t)) ,(t,-t
 simplify(g)
 
 
+# **(b)** when $\varphi = n\pi$ and $n = 0, 1, 2, \cdots$ then the cosine term is always unity and the sine zero. Thus the transform is wholly imaginary, $\displaystyle g(k)=\frac{-4\pi t_0\sin(kt_0)}{\sqrt{2\pi}(k^2t_o^2-\pi^2)}$ and the form of the transform is a damped sine wave because the sine is divided by $k^2$.
+
 # In[4]:
 
 
-re(g)    # sympy does basic conversion to separate real and imaginary parts.
-
-
-# **(b)** when $\varphi = n\pi$ and $n = 0, 1, 2, \cdots$ then the cosine term is always unity and the sine zero. Thus the transform is wholly imaginary, $\displaystyle g(k)=\frac{-4\pi t_0\sin(kt_0)}{\sqrt{2\pi}(k^2t_o^2-\pi^2)}$ and the form of the transform is a damped sine wave because the sine is divided by $k^2$.
-
-# In[5]:
-
-
 # real part of transform
-
+fig2= plt.figure(figsize=(5, 4))
 freal= lambda k : -4*np.pi*t0*np.sin(k*t0)/(  np.sqrt(2*np.pi)*(k**2*t0**2-4.0*np.pi**2) )  # k is variable
 t0 = 1.0
-x  = np.linspace(0,40,100 )  # make 100 points 0 to 40
+k  = np.linspace(0,40,100 )  # make 100 points 0 to 40
 
-plt.plot(x,freal(x),color='blue')
+plt.plot(k,freal(k),color='blue')
 plt.xlabel( 'k')
 plt.title('Re(g(k))')
 plt.axhline(0,linewidth=1,color='black')
@@ -239,7 +229,7 @@ plt.show()
 # 
 # If we calculate $\chi(m)$, starting with $n = 1 \to 50$ and $m = 0 \to 10$ a series of spikes is produced at $m = 0, 1, 2, \cdots$ and so forth, which become more like $\delta$ functions as $n$ increases. The next figure demonstrates this.
 
-# In[6]:
+# In[5]:
 
 
 
