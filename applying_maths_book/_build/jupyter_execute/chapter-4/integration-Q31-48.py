@@ -72,9 +72,9 @@
 # 
 # Follow the 'recipe' given by the formula and assuming that $a$ is a constant, show that;
 # 
-# $\displaystyle \begin{array}{ccccc}
-# (a) & L[a]=a/s & (b) & L[a^{at}]=1/(s-a) & (c) & L[t]= 1/s^2 \\
-# (d) & \displaystyle L[f(at)]=\frac{1}{a}F\left(\frac{s}{a}\right) & (e) &\displaystyle L\left[ \frac{df}{dt} \right]=sF(s)-f(0)
+# $\displaystyle \begin{array}{lll}
+# (a)\;  L[a]=a/s & (b)\;  L[a^{at}]=1/(s-a) & (c)\;  L[t]= 1/s^2 \\
+# (d)\;  \displaystyle L[f(at)]=\frac{1}{a}F\left(\frac{s}{a}\right) & (e)\; \displaystyle L\left[ \frac{df}{dt} \right]=sF(s)-f(0)
 # \end{array}$
 # 
 # $(f)$ Plot some of the functions and their transforms such as (a) and (b) with $a = 2$.
@@ -88,12 +88,12 @@
 # ### Q39 Wavefunctions
 # The first few harmonic oscillator wavefunctions are
 # 
-# $$\displaystyle \begin{array}{lll}
+# $\displaystyle \begin{array}{lll}
 # \displaystyle   \psi_0(x)=N_0e^{-\alpha x^2/2} 
 # & \displaystyle \psi_1(x)=\sqrt{2\alpha}N_0xe^{-\alpha x^2/2}\\
 # \displaystyle \psi_2(x)=\frac{N_0}{2}(2\alpha x^2-1)e^{-\alpha x^2/2} 
 # & \displaystyle \psi_3(x)=\sqrt{\frac{\alpha}{3}}N_0(2\alpha x^2-3)xe^{-\alpha x^2/2}
-# \end{array}$$
+# \end{array}$
 # 
 # where $\displaystyle N_0 = (\alpha/\pi)^{1/4},\quad \alpha = \sqrt{k\mu}/\hbar$ and $k$ is the force constant and $\mu$ reduced mass. By inspection, classify the wavefunctions into odd or even functions.
 # 
@@ -107,7 +107,7 @@
 # In general, normalization is interpreted to mean that the probability of a particle being somewhere in all possible space is 1 and the probability of being between $x$ and $x + dx$ is $\psi^2dx$.
 # 
 # ### Q41 Model of disease
-# In an SIS type of disease an individual is either susceptible $S$ or infected $I$, for example the common cold and coronavirus. Such infections do not give immunization upon recovery from infection, i.e. there is no long lasting immunity and individuals become susceptible again, typically after a few months. The scheme is
+# In an SIS type of disease an individual is either susceptible $S$ or infected $I$, for example the common cold. Such infections do not give immunization upon recovery from infection, i.e. there is no long lasting immunity and individuals become susceptible again, typically after a few months. The scheme is
 # 
 # $$\displaystyle S\overset{k_1SI}\longrightarrow I \overset{k_2I}\longrightarrow S$$
 # 
@@ -141,18 +141,18 @@
 # 
 # **Strategy:** In any complete set of wavefunctions that describe an atom or molecule, any one wavefunction is always orthogonal to all the others. This means that the product of two different wavefunctions integrated over all the coordinate(s) is always zero. More formally put, this is the 'odd $\times$ even' description. If a wavefunction has been multiplied by itself, and then the product is integrated and the result has the value $1$, then the wavefunction has been normalized. Always use orthogonality if possible to determine if an integral is zero or not.
 # 
-# ### Q44 Voltage across membrane
-# If a voltage gradient is imposed on a semi-permeable membrane, such as that in a biological cell, a current made up of ions will flow. The flux $J$ of these ions (mole s$^{-1}$ m$^{-2}$) through a membrane is given by (Jackson 2006),
+# ### Q44 Voltage across a membrane
+# If a voltage gradient is imposed on a semi-permeable membrane, such as that in a biological cell, a current made up of ions will flow. The flux $J$ of these ions (mole s$^{-1}$ m$^{-2}$) through a membrane is given by ,
 # 
 # $$\displaystyle \displaystyle J=-D\left( \frac{zFc}{RT}\frac{dV}{dx}+\frac{dc}{dx} \right) \tag{21}$$
 # 
-# where $D$ is the diffusion coefficient, $c$ the ion concentration, which is a function of position $x$, $z$ the ion's charge, and $F$ the Faraday constant. 
+# where $D$ is the diffusion coefficient, $c$ the ion concentration, which is a function of position $x$, $z$ the ion's charge, and $F$ the Faraday constant, (see Jackson 2006). 
 # 
-# The flux equation is the sum of two terms: one is from the flux due to the concentration gradient across the membrane, by Fick's law this is $-Ddc/dx$, and the other term is caused by the applied voltage itself $-(zFc)dV/dx$. Multiplying $J$ by $zF$ converts flux into a current per area (units A m$^{-2}$),
+# The flux equation is the sum of two terms: one is from the flux due to the concentration gradient across the membrane, by Fick's first law this is $-Ddc/dx$, and the other term is caused by the applied voltage itself $-(zFc)dV/dx$. Multiplying $J$ by $zF$ converts flux into a current per area (units A m$^{-2}$),
 # 
 # $$\displaystyle I=-zFD\left( \frac{zFc}{RT}\frac{dV}{dx}+\frac{dc}{dx} \right) \tag{22}$$
 # 
-# (a) Show that the units of J are mole s$^{-1}$ m$^{-2}$ and confirm the units of the equation for the current $I$.
+# (a) Show that the units of flux $J$ are mole s$^{-1}$ m$^{-2}$ and confirm the units of the equation for the current $I$.
 # 
 # (b) Verify by differentiation that the current $I$ can be written as
 # 
@@ -164,7 +164,7 @@
 # 
 # (e) Calculate the equation giving the limits at large positive and large negative voltages.
 # 
-# (f) Plot a graph of the current vs voltage. Choose $D \approx 10^{-10} \,\mathrm{m^2\,s^{-1}}$, and voltage difference $a \to b$ of a maximum of a few hundred mV and concentrations of mM so that $c_b \approx 10^{-4}\,\mathrm{ dm^3 \,mol^{-1} }$ and $c_b \approx 10c_a$. Choose the positive constant $\alpha$ to suite your plotting scale; typically $\alpha = 10^6$.
+# (f) Plot a graph of the current *vs*. voltage. Choose $D \approx 10^{-10} \,\mathrm{m^2\,s^{-1}}$, and voltage difference $a \to b$ of a maximum of a few hundred mV and concentrations of mM so that $c_b \approx 10^{-4}\,\mathrm{ dm^3 \,mol^{-1} }$ and $c_b \approx 10c_a$. Choose the positive constant $\alpha$ to suite your plotting scale; typically $\alpha = 10^6$.
 # 
 # **Strategy: (a)** Look up the SI units of voltage, Faraday constant, and so forth and substitute into the equation. In (b) to 'show' or verify does not mean 'prove' so start from the answer given and work back.
 # 
@@ -212,7 +212,7 @@
 # 
 # (b) By integrating the distribution $P(u)$ from $u_0$ to infinity, find the probability that a molecule has a speed greater than $u_0$.
 # 
-# (c) Using your result from (b), calculate the fraction of SO$_2$ molecules which have a speed greater than $350',\mathrm{ m\,s^{-1}}$ at $100,\, 300$ K, and at $500$ K. ($k_B = 1.38 \cdot 10^{-23}\,\mathrm{ J\,K^{-1}}$. Do not forget to use $m$ in kg.)
+# (c) Using your result from (b), calculate the fraction of SO$_2$ molecules which have a speed greater than $350\,\mathrm{ m\,s^{-1}}$ at $100,\, 300$ K, and at $500$ K. ($k_B = 1.38 \cdot 10^{-23}\,\mathrm{ J\,K^{-1}}$. Do not forget to use $m$ in kg.)
 # 
 # (d) Calculate the fraction of molecules with energy $\gt k_BT$ by converting the equation from velocity to energy and calculate $\displaystyle \int_{k_BT}^\infty P(E)dE$ using $E=mu^2/2$.
 # 
@@ -232,3 +232,9 @@
 # (The acceleration due to gravity is $g = GM/R^2$ where $G$ is the gravitational constant, $6.67 \cdot 10^{-11}\,\mathrm{ N\, m^2\, kg^{-2}}$, $M$ is the mass, and $R$ the radius. You will need to look these up.)
 # 
 # **Strategy:** (a) and (b) use the formula developed in the previous question for the fraction of molecules having a speed greater than a given value. (c) Use the Boltzmann distribution to calculate the fraction of atoms and molecules at a given height. The potential energy of a mass $m$ is $mgh$ at altitude $h,\, g$ being the acceleration due to gravity.
+
+# In[ ]:
+
+
+
+

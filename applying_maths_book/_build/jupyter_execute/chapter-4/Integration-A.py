@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-#  # Integration basics
+#  ## Integration basics
 
 # In[1]:
 
@@ -15,7 +15,7 @@ init_printing()                      # allows printing of SymPy results in types
 plt.rcParams.update({'font.size': 16})  # set font size for plots
 
 
-# ## 1 Basic concepts
+# ### 1 Basic concepts
 # Broadly speaking, integration is used to calculate the amount of some quantity. This might be the total concentration of a chemical product produced up to a certain time, the total amount of work done by a gas when expanding or that done in moving an object against gravity. Consider, for example, calculating the amount of oxygen in a tall column of still air. This is not simply the volume of the column times the gas density because gravity increases the O$_2$ concentration close to ground level. To calculate the total amount of O$_2$, the change in density has to be allowed for by integrating from the ground upwards, which means knowing how the density varies with altitude. Bearing in mind that integration will give us the total amount of O$_2$, the obvious way would be to take the column and divide it into many thin horizontal slabs, work out the amount of O$_2$ in each, and add them all up. The integral is the result that would be obtained when the slabs are made infinitesimally thin and, as with differentiation, the change is from a finite amount to an infinitesimal one, $\Delta x \to dx$. When this change is made the summation becomes an integral.
 # 
 # Now consider a general curve described by some function $f(x)$, and further suppose that it can be integrated because not all functions can be. Imagine splitting the area under a graph of $f(x)$ into $n$ small rectangles over the range $x = a$ to $x = b$ some of which are shown in the sketch, Figure 1, where there are only four rectangles. The purpose of doing this is to find the total area under the curve as accurately as possible. The total area of all the rectangles is
@@ -58,7 +58,12 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # The symbol $ \bigg|_a^b$ is the substitution symbol. Because neither $g(b)$ nor $g(a)$ are functions of $x$, $g(b) - g(a)$ is a _number_ and differentiating the result with respect to $x$ would produce zero. The definite integral, equation 2, is sometimes called the _fundamental theorem of calculus_.
 # 
-# #### Example, work done by gas
+# ![Drawing](integration-fig2-3.png) 
+# 
+# Figure 2 left, and 3 right. Left. The integral of $x^2$ from $1 \to 4$, changing the limits changes the value of the integral. Right, integration limits $a, \, b $ and $s$.
+# _______
+# 
+# #### **Work done by gas**
 # An example met early on in studying thermodynamics is to calculate the work $w$ done on an ideal gas, as its volume changes. Work is force $\times$ distance moved, pressure is force divided by area, so work is also the pressure $\times$ change in volume. To account for a series of infinitesimal volume changes, $dV$, made under reversible conditions, the quantity $pdV$ must be integrated. The integral is
 # 
 # $$\displaystyle W_{rev}=-\int pdV $$
@@ -83,10 +88,6 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # where $a$ and $b$ are constants depending on the particular gas. 
 # 
-# ![Drawing](integration-fig2.png) ![Drawing](integration-fig3.png)
-# 
-# Figure 2. left. The integral of $x^2$ from $1 \to 4$, changing the limits changes the value of the integral. Right, Figure 3. integration limits $a, \, b $ and $s$.
-# _______
 # 
 # ### 1.3 Changing limits, odd and even functions
 # 
@@ -148,7 +149,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # To show how integration can solve many chemical and physical problems is one aim of this chapter, but first, the mechanics of performing integration must be understood.
 # 
-# ## 2 Mechanics of integration
+# ### 2 Mechanics of integration
 # 
 # Integration is often a trial and error process, and some experimenting with different options is necessary even when using the computer. Start by simplifying expressions, perhaps by using partial fractions, then look for standard formulas and standard methods such as integration by parts. If none are found suitable, substitutions can be tried, then standard forms and methods looked for again because only with these can an integration be found. If all else fails, numerical methods have to be used; see Chapter 11.
 # 
@@ -191,7 +192,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # Note that to produce a log, the denominator must be _linear_ in $x$, e.g. $2 + 3x$, but cannot contain anything like $x^2$ or $x^3$. The general formula is
 # 
-# $$\displaystyle \int\frac{1}{ax+b}dx=\frac{1}{a}\ln(ax+b)  \tag{8}$$
+# $$\displaystyle \int\frac{1}{ax+b}dx=\frac{1}{a}\ln(ax+b) +const \tag{8}$$
 # 
 # ### 2.4 Partial fractions
 # 
@@ -199,13 +200,13 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # $$\displaystyle \int\frac{x-3}{x^2-2x-15}dx $$
 # 
-# and this has to be simplified; the hardest part is factoring the denominator. Some experimenting is often required, however, the SymPy factor instruction can make this easier,
+# and this has to be simplified; the hardest part is factoring the denominator. Some experimenting is often required, however, the SymPy $\mathtt{factor(\cdots)}$ instruction can make this easier,
 
 # In[2]:
 
 
 x = symbols('x')
-factor(x**2-2*x-15)
+factor( x**2 - 2*x - 15 )
 
 
 # The function to integrate becomes
@@ -222,7 +223,7 @@ factor(x**2-2*x-15)
 # 
 # which is true for all values of $x$. Therefore, if $x = -3$ then $A = 6/8 = 3/4$ and if $x = 5$ then $B = 1/4$. The integration becomes
 # 
-# $$\displaystyle \int\frac{x-3}{x^2-2x-15}dx =\int \frac{3}{4(x+3)}+\frac{1}{4(x-5)}=\frac{3}{4}\ln(x+3)+\frac{1}{4}\ln(x-5)+c$$
+# $$\displaystyle \int\frac{x-3}{x^2-2x-15}dx =\int \frac{3}{4(x+3)}+\frac{1}{4(x-5)}=\frac{3}{4}\ln(x+3)+\frac{1}{4}\ln(x-5)+const$$
 # 
 # Of course we could use Sympy to do the whole integration
 
@@ -292,7 +293,11 @@ integrate(eq, x )
 # 
 # The sine, cosine, and tangent together with the other trig functions can be expressed as complex exponentials and in this form are easy to integrate as are the hyperbolic functions sinh, cosh, and tanh; see Chapter 1.
 # 
-# The square of sines and cosines are also easily integrated using exponentials. For example, $\displaystyle \int \sin^2(x)dx$ is converted into an exponential form using $\displaystyle \sin(x)=\frac{e^{ix}-e^{-ix}}{2i}$ where $i=\sqrt{-1}$. The integral is 
+# The square of sines and cosines are also easily integrated using exponentials. For example, $\displaystyle \int \sin^2(x)dx$ is converted into an exponential form using 
+# 
+# $$\displaystyle \sin(x)=\frac{e^{ix}-e^{-ix}}{2i}$$
+# 
+# where $i=\sqrt{-1}$. The integral is 
 # 
 # $$\displaystyle   \int \sin^2(x)dx =\int \left(\frac{e^{ix}-e^{-ix}}{2i}\right)^2dx=-\frac{1}{4}\int \left(e^{2ix}-2+e^{-2ix}\right) dx\\
 # =-\frac{1}{4}\left(\frac{e^{2ix}}{2i}-2x-\frac{e^{-2ix}}{2i}  \right)=\frac{1}{4}\left(2x-\sin(2x)\right)$$
@@ -301,7 +306,7 @@ integrate(eq, x )
 # 
 # ### 2.8 Mean value theorem for integrals
 # 
-# The _first mean value theorem_ states that for a point s in the range of an integration, $a \le s \le b$ then
+# The _first mean value theorem_ states that for a point $s$ in the range of an integration, $a \le s \le b$ then
 # 
 # $$\displaystyle \int_a^b f(x)dx = (b-a) \overline{f(s)}$$
 # 
@@ -342,7 +347,7 @@ integrate(eq, x )
 # 
 # ### 2.11 Integrals with infinite limits
 # 
-# Even though the limit of an integral may extend to infinity, some integrals are nonetheless finite. One example of this was given in the previous section. Naturally, some may also become infinite: $\int_0^x xdx$ is clearly going to be infinite as its result $x^2$ will become infinite when $x$ is infinity. It is probably true that most polynomial functions in which its largest power is positive will reach $\pm \infty$ with limits 0 to infinity. If a function is odd, such as $xe^{-x^2}$ and the limits extend equally far to the left and right even to infinity, then the integral is always zero, as discussed in Section 1.3.
+# Even though the limit of an integral may extend to infinity, some integrals are nonetheless finite. One example of this was given in the previous section. Naturally, some may also become infinite: $\int_0^\infty xdx$ is clearly going to be infinite as its result $x^2$ will become infinite when $x$ is infinity. It is probably true that most polynomial functions in which its largest power is positive will reach $\pm \infty$ with limits 0 to infinity. If a function is odd, such as $xe^{-x^2}$ and the limits extend equally far to the left and right even to infinity, then the integral is always zero, as discussed in Section 1.3.
 # 
 # With reciprocal functions, or polynomials with negative powers, as the limit extends to infinity the function becomes smaller and smaller and so may converge to a finite value. For instance, integrating $1/x^2$ from 1 to infinity produces a finite result:
 # 
@@ -368,14 +373,13 @@ integrate(eq, x )
 
 x,b = symbols('x,b')
 a,n = symbols('a,n', nonzero = True)
-eqn = tan(a*x+b)
+eqn = tan( a*x + b)
 ans = integrate(eqn,x)
 print( ans)
 
 
 # ### 2.14 Table of integrals
 # Integration constants are not added
-# 
 # 
 # $\displaystyle \int_a^b x^{n}  =  \begin{cases}\displaystyle \frac{x^{n + 1}}{n + 1} & \text{for}\: n \neq -1 \\\log{\left (x \right )} & \text{otherwise} \end{cases} $
 # 
@@ -428,11 +432,17 @@ print( ans)
 # In[5]:
 
 
-x,n,a,b = symbols('x,n,a,b', positive = True)   # use Sympy
-eqns = [x**n, 1/(a*x), exp(a*x+b), 1/(a*x+b)]   # list of integrals here 
+x,n,a,b,c = symbols('x,n,a,b,c', positive = True)   # use Sympy
+eqns = [x**n, 1/(a*x), exp(a*x + b), 1/(a*x + b)]   # list of integrals here 
 ans = []
 for  i, eqn in enumerate(eqns): 
-    ans.append(simplify(integrate(eqn, x) ) )   # append make list of answers
-
+    ans.append(simplify(integrate(eqn, x) ) )       # append make list of answers
+    pass
 ans
+
+
+# In[ ]:
+
+
+
 

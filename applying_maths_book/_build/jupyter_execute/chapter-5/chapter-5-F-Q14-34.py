@@ -174,7 +174,11 @@
 # **Strategy:** To calculate the force for small extensions in $\alpha$, it is necessary to expand $\displaystyle(1 - \alpha)^{-2}$ using the binomial expansion. A small extension implies $\alpha \lt 1$.
 # 
 # ### Q34 DNA end to end distance
-# The mean square end-to-end separation of a DNA or other polymer chain is given by $\displaystyle \langle r^2 \rangle = 2pL - 2p^2[1 - e^{-L/p}]$, where $L$ is the contour length and $p$ the persistence length. 
+# The mean square end-to-end separation of a DNA or other polymer chain is given by 
+# 
+# $$\displaystyle \langle r^2 \rangle = 2pL - 2p^2[1 - e^{-L/p}]$$
+# 
+# where $L$ is the contour length and $p$ the persistence length. 
 # 
 # Calculate $\langle r^2 \rangle$,
 # 

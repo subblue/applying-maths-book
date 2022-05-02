@@ -21,10 +21,10 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # In[2]:
 
 
-alpha,beta,gamma,a,b,c=symbols('alpha,beta,gamma,a,b,c')
+alpha, beta, gamma, a, b, c = symbols('alpha, beta, gamma, a, b, c')
 
-n2=(cos(alpha)-cos(gamma)*cos(beta))/sin(gamma)
-M = Matrix([[a,0,0],[b*cos(gamma),b*sin(gamma),0],[c*cos(beta),c*n2,c*sqrt(sin(beta)**2-n2**2)]])
+n2 = (cos(alpha) -  cos(gamma)*cos(beta))/sin(gamma)
+M  = Matrix( [ [a,0,0],[b*cos(gamma),b*sin(gamma),0],[c*cos(beta),c*n2,c*sqrt(sin(beta)**2-n2**2)] ] )
 M
 
 
@@ -62,9 +62,9 @@ M.det()
 # In[4]:
 
 
-alpha,beta,gamma,a,b,c,v1,v2,v3 = symbols('alpha,beta,gamma,a,b,c,v1,v2,v3')
-v  = Matrix([[v1,v2,v3]])
-M  = Matrix( [ [a,0,0],[0,b,0],[ c*cos(beta),0,c*sin(beta)] ] )
+alpha, beta, gamma, a, b, c, v1, v2, v3 = symbols('alpha, beta, gamma, a, b, c, v1, v2, v3')
+v  = Matrix([[v1, v2, v3]])
+M  = Matrix( [ [a, 0, 0],[0, b, 0],[ c*cos(beta), 0, c*sin(beta)] ] )
 
 
 # In[5]:
@@ -77,13 +77,13 @@ d
 # In[6]:
 
 
-lensqrd = d*d.T  # .T is transpose to get row column multiplication
+lengthsqrd = d*d.T  # .T is transpose to get row column multiplication
 
 
 # In[7]:
 
 
-simplify(expand(lensqrd))
+simplify(expand(lengthsqrd))
 
 
 # which is the same as equation 21 when $\alpha=\gamma=\pi/2$.
@@ -129,16 +129,16 @@ N2 = np.array([  0.0849*a,  0.1795*b,  0.1486*c ])
 N3 = np.array([ -0.0849*a, -0.1795*b, -0.1486*c ]) 
                
 alpha = np.pi/2 
-beta = 115.5*np.pi/180 
-gama = np.pi/2
+beta  = 115.5*np.pi/180 
+gama  = np.pi/2
 
-bond_length = lambda delta : np.abs(np.sqrt( delta[0]**2+ delta[1]**2+ delta[2]**2                                         + 2*delta[0]*delta[2]*np.cos(beta ) ) )  # lambda function 
+bond_length = lambda delta : np.abs(np.sqrt( delta[0]**2 + delta[1]**2 + delta[2]**2                                         + 2*delta[0]*delta[2]*np.cos(beta ) ) )  # lambda function 
 
-print('{:s}{:8.4f}'.format('length N1-C /nm = ',bond_length(N1-C)/10 ) )
-print('{:s}{:8.4f}'.format('length N2-C /nm = ',bond_length(N2-C)/10 ) )
+print('{:s}{:8.4f}'.format('length N1-C  /nm = ',bond_length(N1-C)/10 ) )
+print('{:s}{:8.4f}'.format('length N2-C  /nm = ',bond_length(N2-C)/10 ) )
 print('{:s}{:8.4f}'.format('length N1-N3 /nm = ',bond_length(N1-N3)/10 ) )
 
-dot_prod = lambda u,v,beta: u[0]*v[0]+u[1]*v[1]+u[2]*v[2]+(u[0]*v[2]+u[2]*v[0])*np.cos(beta) # function
+dot_prod = lambda u,v,beta: u[0]*v[0] + u[1]*v[1] + u[2]*v[2] + (u[0]*v[2] + u[2]*v[0])*np.cos(beta) # function
 
 angle = lambda u,v,beta: np.arccos(dot_prod(u,v,beta)/(bond_length(u)*bond_length(v))) # function 
 
@@ -167,7 +167,7 @@ alpha = np.pi/2
 beta  = 115.5*np.pi/180 
 gama  = np.pi/2 
 
-n2 = ( np.cos(alpha)- np.cos(gama)*np.cos(beta) )/ np.sin(gama)
+n2 = ( np.cos(alpha) - np.cos(gama)*np.cos(beta) )/ np.sin(gama)
 
 M = np.array([[a,0,0],[b*np.cos(gama),b*np.sin(gama),0],
               [c*np.cos(beta),c*n2,c*np.sqrt(np.sin(beta)**2-n2**2)]])
@@ -184,7 +184,7 @@ bondCN1
 # In[11]:
 
 
-dcm2 = (C-N2).T @ M
+dcm2 = (C - N2).T @ M
 bondCN2 = np.sqrt(np.dot(dcm2,dcm2))
 bondCN2
 

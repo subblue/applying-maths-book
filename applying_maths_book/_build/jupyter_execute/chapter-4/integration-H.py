@@ -79,7 +79,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # In[2]:
 
 
-t=symbols('t',positive=True)
+t = symbols('t',positive=True)
 eq = cos(t)*sin(t)
 integrate(eq,t)
 
@@ -94,7 +94,7 @@ integrate(eq,t)
 # 
 # ![Drawing](integration-fig34-35.png) 
 # 
-# Figure 34 (Left) & 35. Right.  A line integral is made along curve $C$. Right. Calculating a small length of a curve $\delta s$s.
+# Figure 34 (Left) & 35. Right.  A line integral is made along curve $C$. Right. Calculating a small length of a curve $\delta s$.
 # _____
 # 
 # ### 13.3 Arc length on a surface $P(x,y)$
@@ -142,8 +142,8 @@ integrate(eq,t)
 # In[4]:
 
 
-theta=symbols('theta',positive=True)
-eq = sqrt(1+theta**2)
+theta = symbols('theta',positive=True)
+eq = sqrt(1 + theta**2)
 integrate(eq, theta )
 
 
@@ -186,8 +186,7 @@ integrate(eq, theta )
 # Figure 36. The integral of a _state function_ is independent of path and depends only on starting and ending positions $A$ and $B$.
 # _____
 # 
-# 
-# ## 14 Path integrals in Chemical Thermodynamics
+# ### 14 Path integrals in Chemical Thermodynamics
 # 
 # In thermodynamics, all the integrals you are likely to meet are line functions in 8-dimensional space - not a very appealing thought. Thermodynamics can consequently appear to be so very complicated because the choice of variables is so very large. Normally, 'natural' variables are chosen depending upon which can easily be measured, usually these are $p, V$ and $T$. However, any two independent variables can be chosen from the eight state functions $p, V, A, T, H, U, G, S$.
 # 

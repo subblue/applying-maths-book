@@ -82,11 +82,11 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # so neither $p_x$ nor $p_y$ are orthogonal to the $p_1$ orbital. The same is true of the $p_2$ orbital. They would therefore not be of much use to study molecular properties.
 # 
-# (c) The wavefunctions $psi_s, \psi_{p_x}, \psi_z$ are orthogonal to one another, and this makes the calculation easy. A basis set of these orbitals in the order, $(s, x, z)$ can be used. The $+xy$ and $-xy$ orbitals are orthogonal as shown by the dot product calculation;
+# (c) The wavefunctions $\psi_s, \psi_{p_x}, \psi_z$ are orthogonal to one another, and this makes the calculation easy. A basis set of these orbitals in the order, $(s, x, z)$ can be used. The $+xy$ and $-xy$ orbitals are orthogonal as shown by the dot product calculation;
 # 
 # $$\displaystyle \vec \psi_{sp^2(+xy)}\cdot \vec\psi_{sp^2(-xy)}=\begin{bmatrix} 1/\sqrt{3}& 1/\sqrt{6} &1\sqrt{2}\end{bmatrix}\begin{bmatrix} 1/\sqrt{3}\\ 1/\sqrt{6} \\-1\sqrt{2}\end{bmatrix}=\frac{1}{3}+\frac{1}{6}-\frac{1}{2}=0$$
 # 
-# The similar calculation with the other orbitals shows that they are orthogonal to one another. The hybrid orbitals are not orthogonal to the $p_x$ or $p_y$ orbitals. The $p_x$ is represented with the vector $\begin{bmatrix}0 &1& 0\end{bmatrix}$ in the $(s, p_x, p_y$ basis set. The $p_z$ orbital is orthogonal to both the $±\pm xy$ orbitals. This can be understood because there is no $z$ component in these orbitals. By forming a basis set in $(s, p_x, p_y, p_z)$ the $xy$ orbitals will have a zero component for $p_z$, the $p_z$ orbital has $1$ here and zero elsewhere, therefore the dot product zero, e.g.
+# The similar calculation with the other orbitals shows that they are orthogonal to one another. The hybrid orbitals are not orthogonal to the $p_x$ or $p_y$ orbitals. The $p_x$ is represented with the vector $\begin{bmatrix}0 &1& 0\end{bmatrix}$ in the $(s, p_x, p_y)$ basis set. The $p_z$ orbital is orthogonal to both the $±\pm xy$ orbitals. This can be understood because there is no $z$ component in these orbitals. By forming a basis set in $(s, p_x, p_y, p_z)$ the $xy$ orbitals will have a zero component for $p_z$, the $p_z$ orbital has $1$ here and zero elsewhere, therefore the dot product zero, e.g.
 # 
 # $$\displaystyle \begin{bmatrix} -\frac{1}{\sqrt{3}} &\pm\frac{1}{\sqrt{2}} &-\frac{1}{\sqrt{6}} & 0\end{bmatrix} \begin{bmatrix} 0\\0\\0\\1 \end{bmatrix} = 0$$
 # 
@@ -96,7 +96,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # ![Drawing](vectors-fig69.png)
 # 
-# Figure 69. The $2p$ orbitals (top) and the sp$^2$ hybrids in the $x-y$ plane.
+# Figure 69. The $2p$ orbitals (top) and the sp$^2$ hybrids (bottom).
 # _____________
 # 
 # (e) To test for orthogonality of the base orbitals $p_0$ and $p_{+1}$, the calculation is
@@ -194,16 +194,16 @@ def get_angle(veca,vecb):
     return angle
 #---------------------------
 
-Oa = np.array([1/2,1  ,1/2])  # use np.array() to make vectors 
-Ob = np.array([0  ,0  ,1  ])
-Oc = np.array([3/2,0  ,1/2])
-Od = np.array([3/2,1/2,1  ])
-Oe = np.array([2  ,1/2,1/2])
+Oa = np.array([1/2, 1  , 1/2])  # use np.array() to make vectors 
+Ob = np.array([0  , 0  , 1  ])
+Oc = np.array([3/2, 0  , 1/2])
+Od = np.array([3/2, 1/2, 1  ])
+Oe = np.array([2  , 1/2, 1/2])
 
-ab = Ob-Oa        # define new vectors
-ac = Oc-Oa
-ad = Od-Oa
-ae = Oe-Oa
+ab = Ob - Oa        # define new vectors
+ac = Oc - Oa
+ad = Od - Oa
+ae = Oe - Oa
 
 print('{:s}{:8.2f}{:s}'.format('angle ab-ac ',get_angle(ab,ac) ,' degrees') )
 print('{:s}{:8.2f}{:s}'.format('angle ab-ad ',get_angle(ab,ad) ,' degrees') )

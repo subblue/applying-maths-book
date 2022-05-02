@@ -43,7 +43,7 @@
 # 
 # (b) Integrate this result and prove Euler's theorem.
 # 
-# ### Q23
+# ### Q23 Fourier transform of a square wave
 # Calculate the real and imaginary parts of 
 # $\displaystyle \frac{1}{\sqrt{2\pi}}\left( \frac{1-e^{i\omega t}}{i\omega} \right)$. 
 # 

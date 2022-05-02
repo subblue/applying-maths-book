@@ -444,7 +444,7 @@ GramSchmidt([psi1,psi2,psi3],True)  # orthogonalise and normalise
 # In[10]:
 
 
-e1,e2 = symbols('e1,e2')
+e1, e2 = symbols('e1, e2')
 
 e1 = Matrix([2,-1,-1])
 e2 = Matrix([-1,2,-1])

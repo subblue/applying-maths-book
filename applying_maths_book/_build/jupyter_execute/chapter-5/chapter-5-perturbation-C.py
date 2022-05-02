@@ -81,18 +81,18 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # wavepacket calculation
 
 def Hermite(n,x):       # use recursion formulae, x is real, n is order.
-    if n==0:
+    if n == 0:
         return 1
-    elif n==1:
+    elif n == 1:
         return 2*x
     else:
-        return 2*x*Hermite(n-1,x) - 2*(n-1)*Hermite(n-2,x)
+        return 2*x*Hermite(n - 1,x) - 2*(n - 1)*Hermite(n - 2,x)
 #--------------
 def fact(n):           # factorial
-    if n ==0 or n==1:
+    if n == 0 or n == 1:
         return 1
     else:
-        return n*fact(n-1)
+        return n*fact(n - 1)
 #--------------  
 
 fig1= plt.figure(figsize=(15, 6))   # use figure to define plot size and subplots

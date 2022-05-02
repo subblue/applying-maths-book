@@ -96,36 +96,36 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # The geometric solution can be seen by noting that the internal angles of a triangle add to $180^\text{o}$. The triangle $AOC$ is equilateral thus $2\theta+ \angle AOC=180$ and also $\varphi+\angle AOC =180$ hence $\varphi=2\theta$. The angle $ABC$ is $90^\text{o}$ as shown in a particular case by making $\varphi = 90^\text{o}$ then $\theta = 45^\text{o}$ and by symmetry so is $\angle ABC$. In the general case $\angle OCB = (180-\varphi)/2=90-\theta$, and  $\angle ACB = \theta+90-\theta=90^\text{o}$.
 # 
-# In the vector solution we find the coordinates of points $A$ and $B$ which are $A=(-r,0),\; B=(r,0)$. Point $C$ is restricted to lie on the circle where $x^2 +y^2 =r^2$, therefore point $C$ has coordinates $(x, r^2 -x^2)$ and the vector from $C \to A, \;\vec{CA}$ is, in the $i,j$ basis 
+# In the vector solution we find the coordinates of points $A$ and $B$ which are $A=(-r,0),\; B=(r,0)$. Point $C$ is restricted to lie on the circle where $x^2 +y^2 =r^2$, therefore point $C$ has coordinates $(x, r^2 -x^2)$ and the vector from $C \to A, \;\overrightarrow{CA}$ is, in the $i,j$ basis 
 # 
-# $$\displaystyle \vec{CA} = -(r+x)\;\boldsymbol i -\sqrt{r^2 -x^2}\;\boldsymbol j$$
+# $$\displaystyle \overrightarrow{CA} = -(r+x)\;\boldsymbol i -\sqrt{r^2 -x^2}\;\boldsymbol j$$
 # 
 # and vector 
 # 
-# $$\displaystyle \vec{CB}=(r-x)\;\boldsymbol i-\sqrt{r^2-x^2}\;\boldsymbol j$$
+# $$\displaystyle \overrightarrow{CB}=(r-x)\;\boldsymbol i-\sqrt{r^2-x^2}\;\boldsymbol j$$
 # 
 # The dot product is 
 # 
-# $$\displaystyle \vec{CA}\cdot\vec{CB}=-(r^2-x^2-r^2+x^2)=0$$
+# $$\displaystyle \overrightarrow{CA}\cdot\overrightarrow{CB}=-(r^2-x^2-r^2+x^2)=0$$
 # 
 # so the vectors are at right angles and the result is general as $x$ can be any point on the circumference.
 # 
 # In matrix vector form the calculation is some what clearer using basis set $\begin{bmatrix}1&0\\0&1\\ \end{bmatrix}$,
 # 
-# $$\displaystyle \vec{CA}\cdot\vec{CB}=-\begin{bmatrix}r+x& \sqrt{r^2-x^2} \end{bmatrix}\begin{bmatrix} r-x\\- \sqrt{r^2-x^2}\end{bmatrix}=0$$
+# $$\displaystyle \overrightarrow{CA}\cdot\overrightarrow{CB}=-\begin{bmatrix}r+x& \sqrt{r^2-x^2} \end{bmatrix}\begin{bmatrix} r-x\\- \sqrt{r^2-x^2}\end{bmatrix}=0$$
 # 
 # ### Q6 answer
-# The vector $\vec{AB}$ is made from the coordinates of $B$ minus those of $A$; $\displaystyle \vec{AB} = 2r\boldsymbol i + 0\boldsymbol j$,
+# The vector $\overrightarrow{AB}$ is made from the coordinates of $B$ minus those of $A$; $\displaystyle \overrightarrow{AB} = 2r\boldsymbol i + 0\boldsymbol j$,
 # 
-# in the $(i, j)$ basis and in matrix-vector form is $\displaystyle \vec{AB} = \begin{bmatrix}2r & 0\end{bmatrix}$.
+# in the $(i, j)$ basis and in matrix-vector form is $\displaystyle \overrightarrow{AB} = \begin{bmatrix}2r & 0\end{bmatrix}$.
 # 
 # The dot product to find $\theta$ is
 # 
-# $$\displaystyle \vec{AB}\cdot\vec{AC}= \begin{bmatrix}2r& 0 \end{bmatrix}\begin{bmatrix}r+x\\ \sqrt{r^2-x^2}\end{bmatrix}=2r(r+x)$$
+# $$\displaystyle \overrightarrow{AB}\cdot\overrightarrow{AC}= \begin{bmatrix}2r& 0 \end{bmatrix}\begin{bmatrix}r+x\\ \sqrt{r^2-x^2}\end{bmatrix}=2r(r+x)$$
 # 
 # The dot product is equivalently given by
 # 
-# $$\displaystyle |\vec{AB}||\vec{AC}|\cos(\theta) = 2r(\sqrt{(x+r)^2+r^2-x^2}) = 2r\sqrt{2r(r+x)}\cos(\theta)$$
+# $$\displaystyle |\overrightarrow{AB}||\overrightarrow{AC}|\cos(\theta) = 2r(\sqrt{(x+r)^2+r^2-x^2}) = 2r\sqrt{2r(r+x)}\cos(\theta)$$
 # 
 # and so $\cos(\theta)=\sqrt{(r+x)/2r}$. 
 # 
@@ -157,29 +157,43 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # and the third angle is therefore $55.46^\text{o}$.
 # 
-# ### Q10 answer
-# The O-C-CA angle is found from the dot product of $\vec {CO}$  and $\vec {CC_A}$. Vector $\vec {CO}$ is calculated as the coordinates of atom O minus those of atom C, and $\vec {CC_A}$ similarly.
+# ### Q9 answer
+# As $\vec A \cdot \vec B = |\vec A||\vec B|\cos(\theta )$, the dot product $\displaystyle \vec A \cdot \vec B=\begin{bmatrix}2\\3\\4\end{bmatrix}\begin{bmatrix}4&3&2\end{bmatrix}=25$
 # 
-# $$\displaystyle \begin{align} \vec{CO}=&\begin{bmatrix}41.688 - 41.412 & 42.322 - 41.542 & 6.632 - 7.455\end{bmatrix}=\begin{bmatrix}0.276& 0.870&-0.823\end{bmatrix}\\
-# \vec{CC_A} =&\begin{bmatrix}-0.270& 0.395& 1.463\end{bmatrix}\end{align}$$
+# therefore $|\vec A|=\sqrt{4+9+16}=\sqrt{29}$ and this is also the length of $\vec B$. The angle is therefore $\theta=\cos^{-1}25/29)$ radians. In python the calculation is
+
+# In[2]:
+
+
+A = np.array([2,3,4])
+B = np.array([4,3,2])
+theta_rads = np.arccos(np.dot(A,B)/(np.sqrt(np.dot(A,A))*np.sqrt(np.dot(B,B))))
+print('{:s}{:8.5}'.format('angle in degrees =', theta_rads*180/np.pi) )
+
+
+# ### Q10 answer
+# The O-C-CA angle is found from the dot product of $\overrightarrow {CO}$  and $\overrightarrow {CC_A}$. Vector $\overrightarrow {CO}$ is calculated as the coordinates of atom O minus those of atom C, and $\overrightarrow {CC_A}$ similarly.
+# 
+# $$\displaystyle \begin{align} \overrightarrow=&\begin{bmatrix}41.688 - 41.412 & 42.322 - 41.542 & 6.632 - 7.455\end{bmatrix}=\begin{bmatrix}0.276& 0.870&-0.823\end{bmatrix}\\
+# \overrightarrow =&\begin{bmatrix}-0.270& 0.395& 1.463\end{bmatrix}\end{align}$$
 # 
 # The cosine of the angle, using equation 2 or 6, is $-0.4944$ giving an angle of $119.61^\text{o}$ which is a typical value for an sp$^2$ type C-CO bond angle. The CO bond length is $\sqrt{\vec{CO}\cdot\vec{CO}} =1.229$ angstrom.
 # 
 # Calculating the C-CA-N bond angle using Python ,defining the coordinates first as vectors, gives
 
-# In[2]:
+# In[3]:
 
 
-C = np.array([41.412,41.452,7.455])   # coordinate vectors in Angstrom
-CA= np.array([ 41.142, 41.847, 8.918 ])
-N = np.array([42.193,41.289,9.774]) 
+C  = np.array([41.412,41.452,7.455])   # coordinate vectors in Angstrom
+CA = np.array([ 41.142, 41.847, 8.918 ])
+N  = np.array([42.193,41.289,9.774]) 
 CAC = C - CA                          # bond vectors 
 CAN = N - CA  
 CN_bond = np.sqrt(np.dot(CAN,CAN) );           # bondlength  angstrom
 CC_bond = np.sqrt(np.dot(CAC,CAC) );           # bondlength
-dCN=np.dot(CAC,CAN)
-dCC=np.dot(CAC,CAC)
-dNN=np.dot(CAN,CAN)
+dCN = np.dot(CAC,CAN)
+dCC = np.dot(CAC,CAC)
+dNN = np.dot(CAN,CAN)
 
 angle = np.arccos(dCN/(np.sqrt(dCC)*np.sqrt(dNN )))*180/np.pi # angle in degrees
 
@@ -209,27 +223,29 @@ print('{:s}{:6.3f}{:s}{:6.3f}{:s}{:6.1f}'.format(
 # The angles are the inverse cosines of these values or $180$ minus the angle if not acute. With the $x$-axis the angle is $95.11^\text{o}$, with $y, 63.55^\text{o}$ and with $z, 152.99^\text{o}$, but as acute angles these must be $84.88, 63.55$, and $27.02$ degrees respectively.
 # 
 # ### Q12 answer
-# The dot product is that between vectors $\vec{OB}$ and $\vec{AC}$. The coordinates of $A$ are $(d, 0 0)$ so that the vectors can be written as 
+# The dot product is that between vectors $\overrightarrow{OB}$ and $\overrightarrow{AC}$. The coordinates of $A$ are $(d, 0 0)$ so that the vectors can be written as 
 # 
-# $$\displaystyle \vec{OA} = d\boldsymbol i + 0\boldsymbol j + 0\boldsymbol k = d\boldsymbol i$$
+# $$\displaystyle \overrightarrow{OA} = d\boldsymbol i + 0\boldsymbol j + 0\boldsymbol k = d\boldsymbol i$$
 # 
 # or in matrix vector form as 
 # 
-# $$\displaystyle \vec{OA} = \begin{bmatrix}d &0& 0\end{bmatrix}$$
+# $$\displaystyle \overrightarrow{OA} = \begin{bmatrix}d &0& 0\end{bmatrix}$$
 # 
 # either will do. The other vectors are 
 # 
-# $$\displaystyle \vec{OC} = 0\boldsymbol i + d\boldsymbol j + d\boldsymbol kb; \quad\vec{OB} = d\boldsymbol i + d\boldsymbol j + d\boldsymbol k$$
+# $$\displaystyle \overrightarrow{OC}= 0\boldsymbol i + d\boldsymbol j + d\boldsymbol k; \quad \overrightarrow{OB} = d\boldsymbol i + d\boldsymbol j + d\boldsymbol k$$
 # 
-# The vector $\vec{AC}$ is therefore $\vec{AC} = \vec{OC} - \vec{OA} = -d\boldsymbol i + d\boldsymbol j + d\boldsymbol k$. The length of the diagonal, the square root of the sum of the square of each term in the vector, is $3d$. The angle is found using the dot product
+# The vector $\vec{AC}$ is therefore $\overrightarrow{AC} = \overrightarrow{OC} - \overrightarrow{OA} = -d\boldsymbol i + d\boldsymbol j + d\boldsymbol k$. 
 # 
-# $$\displaystyle \vec{OB}\cdot\vec{AC}=(d\boldsymbol i + d\boldsymbol j + d\boldsymbol k)\cdot(-d\boldsymbol i + d\boldsymbol j + d\boldsymbol k) = d^2$$
+# The length of the diagonal, the square root of the sum of the square of each term in the vector, is $3d$. The angle is found using the dot product
+# 
+# $$\displaystyle \overrightarrow{OB}\cdot\overrightarrow{AC}=(d\boldsymbol i + d\boldsymbol j + d\boldsymbol k)\cdot(-d\boldsymbol i + d\boldsymbol j + d\boldsymbol k) = d^2$$
 # 
 # and 
 # 
-# $$\displaystyle \vec{OB}\cdot\vec{AC}=|\vec{OB}||\vec{AC}|\cos(\theta)=9d^2\cos(\theta)$$
+# $$\displaystyle\overrightarrow{OB} \cdot\overrightarrow{AC} =|\overrightarrow{OB}||\overrightarrow{AC}|\cos(\theta)=9d^2\cos(\theta)$$
 # 
-# therefore the angle is $\theta = cos^{-1}(1/3) = 70.52^\text{o}$ which is $70^\text{o} 31'$. The obtuse angle can be calculated by reversing one of the vectors or by geometry with the calculation $180 - \theta$ ; the angle is $109.47^\text{o}$, which is the tetrahedral bond angle.
+# therefore the angle is $\theta = \cos^{-1}(1/3) = 70.52^\text{o}$ which is $70^\text{o} 31'$. The obtuse angle can be calculated by reversing one of the vectors or by geometry with the calculation $180 - \theta$ ; the angle is $109.47^\text{o}$, which is the tetrahedral bond angle.
 # 
 # ![Drawing](vectors-fig60.png)
 # 
@@ -239,7 +255,7 @@ print('{:s}{:6.3f}{:s}{:6.3f}{:s}{:6.1f}'.format(
 # ### Q13 answer
 # As the bond is drawn within a cube, figure 10, the angle $\phi = 45^\text{o}$. Letting the cube have a side of $1$ unit, then the vector 
 # 
-# $$\displaystyle \vec{Og}= \begin{bmatrix}0& 1& 0\end{bmatrix},\; \vec {Oa} =\begin{bmatrix}1& 1 &0\end{bmatrix}, \; \vec{Og} =\begin{bmatrix} 1& 1& 1\end{bmatrix}$$
+# $$\displaystyle \overrightarrow{Og}= \begin{bmatrix}0& 1& 0\end{bmatrix},\; \overrightarrow {Oa} =\begin{bmatrix}1& 1 &0\end{bmatrix}, \; \vec{Og} =\begin{bmatrix} 1& 1& 1\end{bmatrix}$$
 # 
 # Using the equation for dot products with the normalized vectors gives 
 # 
@@ -251,7 +267,7 @@ print('{:s}{:6.3f}{:s}{:6.3f}{:s}{:6.1f}'.format(
 # 
 # then $\chi=54.7^\text{o}$.
 # 
-# The angle $\alpha$ is most easily found by making point $g$ the origin and recalculating vectors $\vec{gO}$ and $\vec{gf}$. The recalculated vectors are $\vec{gO} = \begin{bmatrix}-1 &-1& -1\end{bmatrix},\;\vec{gf} = \begin{bmatrix}-1& 1& 1 \end{bmatrix}$, therefore,
+# The angle $\alpha$ is most easily found by making point $g$ the origin and recalculating vectors $\overrightarrow{gO}$ and $\overrightarrow{gf}$. The recalculated vectors are $\overrightarrow{gO} = \begin{bmatrix}-1 &-1& -1\end{bmatrix},\;\overrightarrow{gf} = \begin{bmatrix}-1& 1& 1 \end{bmatrix}$, therefore,
 # 
 # $$\displaystyle \cos(\alpha)=\frac{1}{\sqrt{3}}\begin{bmatrix}-1& -1 &-1\end{bmatrix}\frac{1}{\sqrt{3}}\begin{bmatrix}-1\\ 1 \\1\end{bmatrix}=-\frac{1}{\sqrt{3}}$$
 # 
@@ -263,7 +279,7 @@ print('{:s}{:6.3f}{:s}{:6.3f}{:s}{:6.1f}'.format(
 # $0.157$ nm, then the side of the cube, of length $2a$, is $0.181$ nm. The distance between H atoms is $2 mH$,
 # which is $2a\sqrt{2}$ or $0.256$ nm.
 # 
-# ![Drawing](vectors-fig61.png) ![Drawing](vectors-fig62.png)
+# ![Drawing](vectors-fig61-62.png)
 # 
 # Left Figure 61, Right fig 62. Left. Methane is shown drawn inside a tetrahedron and in the conventional perspective way. The axes are shown as dashed lines. Right.  Bond length calculation.
 # ______
@@ -282,7 +298,7 @@ print('{:s}{:6.3f}{:s}{:6.3f}{:s}{:6.1f}'.format(
 # 
 # as the magnitude of each vector is $a\sqrt{3}$. The angle is therefore $\theta=\cos^{-1}(-1/3)=1.9106$ radian which corresponds to $109.47^\text{o}$. The calculation done symbolically using Python/Sympy is
 
-# In[3]:
+# In[4]:
 
 
 a = symbols('a')
@@ -293,7 +309,7 @@ dot_prod = B1.dot(B2)
 dot_prod
 
 
-# In[4]:
+# In[5]:
 
 
 angle = dot_prod/( sqrt(B1.dot(B1))*sqrt( B2.dot(B2) ) )
@@ -305,7 +321,7 @@ angle
 # ### Q15 answer
 # The bond is made into a vector and its length calculated using equation 3 and 4. The bond angles are calculated with equation 2. The O-H$_1$ and O-H$_2$ bond vectors are the difference between the atom's coordinates. By symmetry, the bond lengths must be the same but may be slightly different due to experimental uncertainty in determining the coordinates.
 
-# In[5]:
+# In[6]:
 
 
 Oatom = np.array([2.0317, -1.1893, -1.0464])
@@ -318,13 +334,13 @@ bond2 = np.sqrt(dot22 )
 angle = np.arccos(np.dot( (Oatom-H1),(Oatom-H2)/(bond1*bond2)) ) 
 
 print('{:s}{:6.4f}{:s}{:6.4f}{:s}{:8.2f}{:s}'.
-      format('bond 1 =',bond1/10,' nm, bond 2 =', bond2/10,' nm angle =', angle*180/np.pi,' degrees'  ) )
+      format('bond 1 = ',bond1/10,' nm, bond 2 = ', bond2/10,' nm, angle = ', angle*180/np.pi,' degrees'  ) )
 
 
 # ### Q16 answer
 # Define vectors for each atom in NH$_3$; use the dot product of the difference of two atom vectors to calculate the bond length; equation 9.
 
-# In[6]:
+# In[7]:
 
 
 N = np.array([-0.0200,-0.9149,0.1781])
@@ -350,11 +366,11 @@ print('{:s} {:8.2f} {:8.2f} {:8.2f}'.format( 'bond angles/degree',angle1,angle2,
 # 
 # (b) Ammonia has a three fold symmetry (C$_{3V}$ point group). Bond angles and distances confirm this within the experimental error. The distance from the plane of the hydrogen atoms to the nitrogen can therefore be calculated by finding the mid-point of the three H atoms and calculating the distance of this point from the N atom.
 
-# In[7]:
+# In[8]:
 
 
-Hav = (H1+H2+H3)/3
-dist=np.sqrt( np.dot(Hav-N,Hav-N) )
+Hav = (H1 + H2 + H3)/3
+dist= np.sqrt( np.dot(Hav - N,Hav - N) )
 print('{:s} {:6.4f} {:s}'.format('N to mean H distance', dist, ' angstrom')  ) 
 
 
@@ -391,18 +407,18 @@ print('{:s} {:6.4f} {:s}'.format('N to mean H distance', dist, ' angstrom')  )
 # Figure 63. Section of truncated cube.
 # _______
 # 
-# The dot product should be used to find the angle between vectors $\vec{OA}$ and $\vec{OB}$, which must be normalized or their length determined. This angle is given by 
+# The dot product should be used to find the angle between vectors $\overrightarrow{OA}$ and $\overrightarrow{OB}$, which must be normalized or their length determined. This angle is given by 
 # 
-# $$\displaystyle \theta=\cos^{-1}\left(\frac{\vec{OA}\cdot \vec{OB}}{|\vec{OA}||\vec{OB}|}\right)$$
+# $$\displaystyle \theta=\cos^{-1}\left(\frac{\overrightarrow{OA}\cdot \overrightarrow{OB} }{|\overrightarrow{OA}| |\overrightarrow{OB}|} \right)$$
 # 
-# The length of $\vec{OA}$ is the same as that of $\displaystyle \vec{OB}$ or $|\vec{OA}|^2= \begin{bmatrix}u&v&w\end{bmatrix} \begin{bmatrix}u\\v\\w\end{bmatrix}$ hence $|\vec{OA}|= u^2+v^2+w^2$ and $\vec{OA}\cdot \vec{OB}=\begin{bmatrix}u&v&w\end{bmatrix} \begin{bmatrix}u\\w\\v\end{bmatrix}=u^2+2vw$ making the angle 
+# The length of $\overrightarrow{OA}$ is the same as that of $\displaystyle \overrightarrow{OB}$ or $|\overrightarrow{OA}|^2= \begin{bmatrix}u&v&w\end{bmatrix} \begin{bmatrix}u\\v\\w\end{bmatrix}$ hence $|\overrightarrow{OA}|= u^2+v^2+w^2$ and $\overrightarrow{OA}\cdot \overrightarrow{OB}= \begin{bmatrix} u&v&w\end{bmatrix} \begin{bmatrix}u\\w\\v\end{bmatrix} = u^2+2vw$ making the angle 
 # 
 # $$\displaystyle \theta= \cos^{-1}\left( \frac{u^2+2vw}{u^2+v^2+w^2}\right)$$
 # 
 # Using values $u=0.6786,\;v=u,\; w=0.2811$ produces an angle $\theta = 32.65^\text{o}$.
 # 
 # (b) By symmetry the three points $A, B, C$ form an equilateral triangle because they are at an equal distance from the centre of the cube, each distance being $\sqrt{u^2 + v^2 + w^2}$ and the lengths of the sides of the
-# triangle are the same. One side is the vector $OA-OB$ or $\begin{bmatrix}0& v-w& w-v\end{bmatrix}$ which has length $(v-w)^2 +(w-v)^2= (v - w)^2$ and because $u = v$, the internal angles must all be $60^\text{o}$. The triangle is therefore also isosceles (equilateral being a special case of an isosceles triangle). The point $p$ is at the centre of the triangle therefore this has coordinates that must be the average of those of $A, B, C$ and which are
+# triangle are the same. One side is the vector $OA - OB$ or $\begin{bmatrix}0& v - w& w-v\end{bmatrix}$ which has length $(v-w)^2 +(w-v)^2= (v - w)^2$ and because $u = v$, the internal angles must all be $60^\text{o}$. The triangle is therefore also isosceles (equilateral being a special case of an isosceles triangle). The point $p$ is at the centre of the triangle therefore this has coordinates that must be the average of those of $A, B, C$ and which are
 # 
 # $$\displaystyle \left(\frac{2u+w}{3},\frac{2v+w}{3},\frac{u+v+w}{3}\right)$$
 # 
@@ -410,22 +426,22 @@ print('{:s} {:6.4f} {:s}'.format('N to mean H distance', dist, ' angstrom')  )
 # 
 # The vector
 # 
-# $$\displaystyle \vec{Op}=\begin{bmatrix}\displaystyle\frac{2u+w}{3} &\displaystyle\frac{2v+w}{3} &\displaystyle\frac{u+v+w}{3} \end{bmatrix}$$
+# $$\displaystyle \overrightarrow{Op}=\begin{bmatrix}\displaystyle\frac{2u+w}{3} &\displaystyle\frac{2v+w}{3} &\displaystyle\frac{u+v+w}{3} \end{bmatrix}$$
 # 
 # and from $a$ to $p$ is 
 # 
-# $$\displaystyle \vec{Ap}=\begin{bmatrix}\displaystyle\frac{2u+w}{3}-u &\displaystyle\frac{2v+w}{3}-v &\displaystyle\frac{u+v+w}{3}-w \end{bmatrix}$$
+# $$\displaystyle \overrightarrow{Ap}=\begin{bmatrix}\displaystyle\frac{2u+w}{3}-u &\displaystyle\frac{2v+w}{3}-v &\displaystyle\frac{u+v+w}{3}-w \end{bmatrix}$$
 # 
-# which is $\vec{Op}-\vec{Ap}$.
+# which is $\overrightarrow{Op}-\overrightarrow{Ap}$.
 # 
 # The dot product is easier to calculate if first simplified with $u = v$ to remove $v$. The fact that the dot product is zero, can be seen by inspecting the terms, as the column vector has equal elements and the sum of the first two entries of the row vector are equal but opposite to the third.
 # 
 # $$\displaystyle \frac{1}{9}\begin{bmatrix}-u+w &-u+w &2(u-w) \end{bmatrix}\begin{bmatrix}2u+w \\2u+w \\2u+w \end{bmatrix}=0$$
 # 
-# Because this product is zero $\vec{Op}$ and $\vec{Ap}$ are perpendicular.
+# Because this product is zero $\overrightarrow{Op}$ and $\overrightarrow{Ap}$ are perpendicular.
 # 
 # ### Q20 answer
-# (a) The vectors of the rays $AB$ and $CD$ are subtracted, as shown below. The dotted line is the resultant vector of length $n\lambda$; the vector equation is $|\vec{AB}|-|\vec{CD}|=n\lambda$.
+# (a) The vectors of the rays $AB$ and $CD$ are subtracted, as shown below. The dotted line is the resultant vector of length $n\lambda$; the vector equation is $|\overrightarrow{AB}|-|\overrightarrow{CD}|=n\lambda$.
 # 
 # ![Drawing](vectors-fig64.png)
 # 
@@ -474,26 +490,30 @@ print('{:s} {:6.4f} {:s}'.format('N to mean H distance', dist, ' angstrom')  )
 # 
 # (b) Following part(a) but now using the Miller indices, the vectors of the first plane are $\begin{bmatrix}h&0&0\end{bmatrix}, \begin{bmatrix}0&k&0\end{bmatrix}, \begin{bmatrix}0&0&l\end{bmatrix}$; the two vectors in the plane are then the differences $\begin{bmatrix}h&-k&0\end{bmatrix}, \begin{bmatrix}h&0&-l\end{bmatrix}$ and their cross product the vector $\vec v=\begin{bmatrix}kl&hl&hk\end{bmatrix}$, and similarly for another plane the vector must be $\vec{v'}=\begin{bmatrix}k'l'&h'l'&h'k'\end{bmatrix}$.
 # 
-# To obtain the dot product, the vectors must be normalised; the constants are $|\vec v|=\sqrt{(kl)^2+(hl)^2+(hk)^2}$ and  $|\vec {v'}|=\sqrt{(k'l')^2+(h'l')^2+(h'k')^2}$ and the angle obtained from the dot product
+# To obtain the dot product, the vectors must be normalised; the constants are 
+# 
+# $$\displaystyle |\vec v|=\sqrt{(kl)^2+(hl)^2+(hk)^2},\quad\text{and}\quad |\vec {v'}|=\sqrt{(k'l')^2+(h'l')^2+(h'k')^2}$$
+# 
+# and the angle obtained from the dot product
 # 
 # $$\displaystyle \cos(\theta)=\frac{\vec v\cdot\vec{v'}}{|\vec v||\vec{v'}|}$$
 # 
 # The calculation in Python is
 
-# In[8]:
+# In[9]:
 
 
 # Algorithm Testing for parallel planes.
 #------------------------
 def parl_planes(h,k,ell,h1,k1,ell1):  # input hkl, for each plane 
 
-    p= np.array([h,0,0])
-    q= np.array([0,k,0])
-    r= np.array([0,0,ell])
+    p = np.array([h,0,0])
+    q = np.array([0,k,0])
+    r = np.array([0,0,ell])
     
-    p1=np.array([h1,0,0])
-    q1=np.array([0,k1,0])
-    r1=np.array([0,0,ell1])
+    p1 = np.array([h1,0,0])
+    q1 = np.array([0,k1,0])
+    r1 = np.array([0,0,ell1])
     
     cp = np.cross(p-q, p-r)
     cp1= np.cross(p1-q1,p1-r1)
@@ -521,7 +541,7 @@ parl_planes(1,1,1,2,2,0)
 # 
 # when the plane has intercepts, $p,q,r$. 
 # 
-# (b) The intercepts of the plane %(1\;1\;0) are $p=a,q=b,r=\infty$ thus the perpendicular distance from the origin is $d_0=ab/\sqrt{a^2+b^2}$. The plane $(2\;2\;0)$ has intercepts $p=a/2,q=b/2,r=\infty$ and thus $d_0=ab/2\sqrt{a^2+b^2}$ and the separation between then is the difference.
+# (b) The intercepts of the plane $(1\;1\;0)$ are $p=a,q=b,r=\infty$ thus the perpendicular distance from the origin is $d_0=ab/\sqrt{a^2+b^2}$. The plane $(2\;2\;0)$ has intercepts $p=a/2,q=b/2,r=\infty$ and thus $d_0=ab/2\sqrt{a^2+b^2}$ and the separation between then is the difference.
 # 
 # The values for other planes are calculated in a similar way; for example, plane $(\bar 3\; 2 \;0)$ has intercepts $h = -a/3, k=b/2, l=\infty$.
 # 
@@ -558,7 +578,7 @@ parl_planes(1,1,1,2,2,0)
 # 
 # which, by simplifying and rearranging, gives Bragg's Law; $\lambda = 2d\sin(\theta)$.
 # 
-# ### Q 24 answer
+# ### Q24 answer
 # (a) Follow the pattern to complete all the labels!
 # 
 # (b) This separation is the reciprocal of the distance from the origin of the lattice to $(Q\;3\;0)$ on the Ewald diagram. This distance is $\sqrt{(3b^*)^2 + a^*} = 48\;\mathrm{nm^{-1}}$, which makes the separation $0.144$ nm. The angle is calculated as the dot product of the vector, call this $\vec B_1$ from $(Q;1\;0) \to (Q\;3;0)$ and that of $\vec B_2$, from $(Q\;1;0) \to (0;0;0)$. To make the calculation easier, move the vectors' origin to the point $(Q \;1\;0)$, at the centre of the sphere, then the vector $\vec B_1$ is $\vec B_1=\begin{bmatrix}0&2b^*& 0\end{bmatrix}$ and when normalised is $\vec B_1=\begin{bmatrix}0&2b^*& 0\end{bmatrix}/2b^* =\begin{bmatrix}0&1& 0\end{bmatrix} $.
@@ -581,7 +601,7 @@ parl_planes(1,1,1,2,2,0)
 # Figure 67. The construction shows the angle $\theta$ moved by point $(1\;2\;0)$ to intersect with the Ewald sphere centred at $(\bar 1\;1\;0)$. The smaller grey circle describes the rotation of point $(0\;1\;0)$ about the origin.
 # _____
 
-# In[9]:
+# In[10]:
 
 
 x, y = symbols('x, y')  # use Sympy, define unknowns x, y
@@ -594,12 +614,12 @@ c2 = (x+a)**2 + (y-b)**2 - 1/lamb**2
 
 ans = solve([c1,c2],(x,y))
 
-print('{:s}{:s}{:s}{:s}'.format('x, y = ', str(ans[0]),' x, y = ',str( ans[1])  ) )
+print('{:s}{:6.3f} {:6.3f}{:s}{:6.3f} {:6.3f}'.format('x,y= ', ans[0][0], ans[0][1],' x,y= ', ans[1][0],ans[1][1] ))
 
 
 # The initial point $(1\;2\;0)$  has coordinates $(a^*, 2b^*)$ and the angle between this and the points of intersection are found using a dot product. The vector to $(\bar 1\;1\;0)$ is $\bar v_1 =\begin{bmatrix}2\sqrt{3} &4\end{bmatrix}$ and to the upper intersection $\vec v_2 = \begin{bmatrix}-1.04678& 5.1869\end{bmatrix}$. The smaller angle to the diffraction position is $52.3^\text{o}$, as calculated
 
-# In[10]:
+# In[11]:
 
 
 v1  = np.array([a,2*b])

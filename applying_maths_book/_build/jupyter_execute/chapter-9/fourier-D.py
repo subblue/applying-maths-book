@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Convolution and Autocorrelation
+# ## Convolution and Autocorrelation
 
 # In[1]:
 
@@ -16,7 +16,7 @@ init_printing()                      # allows printing of SymPy results in types
 plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 
-# ## Motivation and concept
+# ### Motivation and concept
 # 
 # Instruments measure everything: for example, mass, energy, number of particles, wavelength of light, voltage, current, and images. However, every instrument distorts the data to a greater or lesser extent, and obviously we try to make these distortions insignificant but this is not always possible. In cases when a detector may not respond quickly enough to an event, when very wide slits have to be used in a spectrometer to detect a weak signal, or an electronic circuit does not respond in a linear manner to the input voltage, a distortion to the data is unavoidable. The effect is to _convolute_ the ideal response, as defined by the physics behind the experiment, with the instrumental response. Fortunately Fourier transforms can usually be used to unravel the effect of convolution, however, in some circumstances this may not be possible.
 # 
@@ -96,7 +96,9 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # In[2]:
 
 
-def do_convolution(f,w):  # do by double summation 
+# algorithm convolution by double summation
+#---------------------------
+def do_convolution(f,w):   # f and w are arrays 
     # Sigma f(n-m)g(m) ;   c(0) = f(0)w(0),    c(1) =  f(0)w(1) + f(1)w(0)  etc 
     n = len(f)
     c = [0.0 for i in range(n)]
@@ -107,6 +109,7 @@ def do_convolution(f,w):  # do by double summation
             pass
         c[k] = s
     return c
+#---------------------------
 
 n = 2**10
 f = [ np.exp(-i/100.0)  for i in range(n)]
@@ -166,7 +169,7 @@ plt.show()
 # $\quad$(4) The product of two functions is the reverse transform of the convolution of their transforms: $f\cdot w=T^{-1}[ T(f)\otimes T(w) ]$.
 # 
 # 
-# #### Proof of convolution as transform
+# #### **Proof of convolution as transform**
 # 
 # The proof that the convolution is a product of transforms starts with the definition in eqn 33 the transform is made and the order of integration is changed. (The limits are removed for clarity and are $u,t \pm \infty$ and replaced with the variable). The first step is to convert $w$ into its fourier transform, which introduces another integral
 # 
@@ -196,7 +199,7 @@ plt.show()
 # Figure 29. Left: The two waveforms are the Fourier transform of a square pulse (top) and two delta functions (lower). When these are multiplied together and reverse transformed two pulses are produced which is the convolution of the delta functions and the single square pulse. The same method has been used to make Fig. 24, even though the functions differ.
 # ______
 # 
-# #### Shifting a wavepacket: $T(f\cdot w)=T(f)\otimes T(w)$:   Products and transforms
+# #### **Shifting a wavepacket: $T(f\cdot w)=T(f)\otimes T(w)$:   Products and transforms**
 # 
 # As an illustration that the transform of a product is the convolution of the transforms we examine a wavepacket which  has the form of a complex exponential modified by a gaussian envelope, fig 29a. A femtosecond laser pulse could have this time profile, a vibrational wavepacket this shape with bond extension $x$.  The wavepacket is
 # 
@@ -215,7 +218,7 @@ plt.show()
 # Figure 29a. A Gaussian wavepacket shifted by convolution with the $\delta$ function $\delta(k-k_0)$ in $k$ space. The various widths are shown as red lines. The left hand panel shows the function in 'real' $x$ space, the right hand one in transform $k$ space. The constants used were $\sigma=1,k_0=10$.
 # ________
 # 
-# #### Code example of convolution by fourier transform
+# #### **Code example of convolution by fourier transform**
 
 # In[3]:
 
@@ -251,7 +254,7 @@ plt.show()
 # Figure 29b. The figure shows the difference between the correct convolution done by summation ( red curve left ) and the artefact introduced by using the Fourier method ( red curve right ) this is produced when the functions are not the same size, preferably zero, at the start and end of the data.
 # ________
 # 
-# ## 8 Autocorrelation and cross-correlation
+# ### 8 Autocorrelation and cross-correlation
 # 
 # A correlation is a function that measures the similarity of one set of data to another. A cross-correlation is formed if the data are dissimilar, an autocorrelation if there is only one set of data. The data might be a voltage from a detector, it might be an image or residuals from fitting a set of data.  In Fig. 30 part of a noisy sinusoidal curve is shown in black and labelled 1. The second curve (2, red) is displaced only a little from the first and is clearly only slightly different; the third (3, grey) which is displaced by more is clearly different from the first as it is positive at large $x$ when the first curve is negative. The right-hand figure shows the autocorrelation of the curve (1) shown on the left, and as this is an oscillating curve, the autocorrelation also oscillates but eventually reaches zero. The oscillation is a result of the fact that a sinusoidal curve is similar to itself after each period, and the autocorrelation measures this similarity by increasing and decreasing. The autocorrelation is also less noisy that the data because it involves summing or integrating over many data points. 
 # 
@@ -377,7 +380,7 @@ plt.show()
 # 
 # ### 8.4 Examples
 # 
-# #### **(i)** Periodic function
+# #### **(i) Periodic function**
 # If the function is periodic then the integration limits should cover one period. The normalized autocorrelation of a cosine $A\cos(2\pi\nu t + \varphi)$, where the period is $T = 1/\nu$ and $\varphi$ is the phase, is calculated as
 # 
 # $$\displaystyle G(u) = \frac{\int\limits_0^T \cos(2\pi\nu t+\varphi)\cos(2\pi \nu (u+t)+\varphi)dt}{\int\limits_0^T \cos^2(2\pi \nu t+\varphi)dt}$$
@@ -387,7 +390,7 @@ plt.show()
 # In[4]:
 
 
-t,phi,T, u = symbols('t phi T u',positive =True)
+t, phi, T, u = symbols('t, phi, T, u',positive =True)
 
 f01 = cos(2*pi*t/T+phi)*cos(2*pi*t/T+phi+2*pi*u/T )
 
@@ -403,7 +406,7 @@ simplify(G)
 # 
 # Using the Euler relationship, $\displaystyle e^{-i\theta} = \cos(\theta) + i \sin(\theta)$, the real or imaginary parts of the function give the cosine or sine result respectively.
 # 
-# #### **(ii)** aperiodic function
+# #### **(ii) aperiodic function**
 # If the function is not periodic, then the limits must be determined by the function being used. The normalized autocorrelation $A(u)$ of the function $f(t) = e^{-at}$, when $t \ge 0$ and $f (t) = 0$ when $t \lt 0$, will be calculated, and also its full width at half-maximum, fwhm. The integration limits can be changed from those in equation (42) because the function is zero for $t \lt 0$ and the lower limit can be zero. The normalization, using equation (42), is
 # 
 # $$\displaystyle \int_{-\infty}^{\infty} f(t)^2dt=\int_0^\infty e^{-2at}dt = \frac{1}{2a}$$
@@ -416,7 +419,7 @@ simplify(G)
 # 
 # As a check, at $u = 0,\, A(0) = 1$, which is correct and the function is even or symmetrical about its y-axis, or, $u = 0$. The _fwhm_ is calculated when $\displaystyle A(u_h) = 0.5 = e^{-a|u_h|}$ or $\displaystyle |u_h|=a^{-1}\ln(2)$ and thus _fwhm_ is $\displaystyle 2a^{-1}\ln(2)$. This is twice as wide in this instance as the initial function.
 # 
-# #### **(iii)** Laser pulses
+# #### **(iii) Laser pulses**
 # The duration of a short laser pulse is often measured as an autocorrelation with an optical correlator. If the intensity profile $I$ of the short laser pulse is a Gaussian centred at zero $\displaystyle I = e^{-2(t/a)^2}$, it is possible to calculate the width of its normalized autocorrelation. If the calculated autocorrelation shape is compared with an experimentally measured one, an estimation of the laser pulse's duration can be made. The optical correlator to do this measurement is a Michelson interferometer; the path length in one arm is changed relative to the other so that one pulse is moved past the other in time. The pulses are combined in a frequency doubling crystal, and a u.v. signal is detected only when the pulses overlap. 
 # 
 # To achieve this, the doubled frequency, which is in the ultraviolet part of the spectrum, is separated from the fundamental wavelength by a filter. The size of the signal vs the distance the mirror moves, which is proportional to time, is the autocorrelation see Fig. 32. 
@@ -443,7 +446,7 @@ G.doit()
 
 # The normalization integration can be looked up  but need not be worked out because it is the value of autocorrelation when $u$ = 0. The normalization equation is therefore $\displaystyle \int e^{-2t^2/a^2}dt=a\sqrt{\pi /2}$. The normalized autocorrelation $G(u)$ is also a Gaussian, with a value $\displaystyle G(u)=e^{-u^2/(2a^2)}$. The _fwhm_ of this function is calculated when $G(u)=1/2$ and is $a\sqrt{2\ln(2)}$ and that of the original pulse is $a\sqrt{\ln(2)}$ therefore, the autocorrelation is $\sqrt{2} \approx$ 1.414 times wider than the pulse. Knowing this factor provides a convenient way of measuring the duration of a short laser pulse assuming it has a Gaussian profile.
 # 
-# #### **(iv)** Goodness of data fitting
+# #### **(iv) Goodness of data fitting**
 # The randomness or otherwise of the autocorrelation of the residuals obtained from fitting real data to a model (theory) is important when determining the 'goodness of fit'. The function is now a set of data points not an equation. The data in Fig. 33 shows the autocorrelation of a random sequence of values where the mean is 0 (left) and $1/2$ (right). When the mean is zero, only the first point has a value not essentially zero. When the mean is $1/2$, there is a correlation between each point, and this decreases as the separation between points increases. Since the mean is $1/2$ (or any value not zero), this means that each point is related to all the others, because, besides random fluctuations, they all have the same underlying value. Their correlation becomes less the further they are separated. 
 # 
 # The normalized autocorrelation of any line $y$ = constant, is a sloping straight line starting at $1$ and ending at $0$. This is to be expected, because at zero displacement the line is overlapped with itself, whereas at the maximum displacement, only one term remains, see equation (36), and this value is small. In Fig. 33, the random noise has a large correlation at zero displacement because the whole trace must be perfectly correlated with itself; its value is 1 but only because the autocorrelation is normalized.
@@ -455,7 +458,9 @@ G.doit()
 # In[6]:
 
 
-def do_autoc(f,w):          # correlation call as (w,w) for autocorrelation ac(k)= sum_i=0^{n-k} f(i)w(k+i) /norm
+# Algorithm: Autocorrelation
+#-----------------------
+def do_autoc(f,w):       # Autocorrelation ac(k)= sum_i=0^{n-k} f(i)w(k+i) /norm
     n = len(w)
     ac = [0.0 for i in range(n)]
     sf = sum([f[i]**2 for i in range(n)])
@@ -468,7 +473,7 @@ def do_autoc(f,w):          # correlation call as (w,w) for autocorrelation ac(k
         ac[k] = s
     
     return ac/normfw
-#-------------
+#----------------------
 
 fig1= plt.figure(figsize=(8.0,4.0))
 ax0 = fig1.add_subplot(1,2,1)
@@ -481,7 +486,7 @@ t0= [i for i in range(n)]
 ss = sum(s)/n                       # get average 
 s0 = [s[i] - ss for i in range(n)]  # subtract average
 
-ax0.plot(t0, do_autoc(s0,s0),color='blue')
+ax0.plot(t0, do_autoc(s0,s0),color='blue') #  (S0, S0) is autocorrelation  
 ax0.axhline(0,color='black',linewidth=1)
 ax0.set_xlabel('x')
 ax0.set_title('autocorrelation, av = 0')

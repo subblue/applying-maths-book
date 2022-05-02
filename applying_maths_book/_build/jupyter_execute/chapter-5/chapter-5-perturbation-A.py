@@ -85,7 +85,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # The zeroth-order term is the initial unperturbed equation. Technically it is multiplied by $\lambda^0$ ($\lambda$ to power 0) but as this is $1$, it is not written explicitly.  When each term multiplied by $\lambda$ is added together  the sum is zero and thus each term in square brackets is itself zero.
 # 
-# #### First order correction to the energy
+# #### **First order correction to the energy**
 # 
 # To obtain the first-order correction to the energy it is assumed that $\lambda^2$ is smaller than $\lambda$ and similarly for higher powers and therefore these can be ignored. The first-order energy correction is obtained by extracting just the terms in $\lambda$ and is
 # 
@@ -133,7 +133,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # This equation tells us that to obtain the energy change to level $n$ caused by the small perturbation $V$, only the wavefunctions belonging to quantum level $n$ of the initial unperturbed Hamiltonian $H^0$, equation (31), need to be known. The energy change itself is the average of the perturbation potential $V$ with the unperturbed wavefunctions.
 
-# #### New wavefunctions
+# #### **New wavefunctions**
 # 
 # To calculate the correction to the wavefunction it is necessary to return to equation (38b) but this time left multiplying by $\psi_m^0$ and integrating. ( $\,\psi_n^0$ was used before) but now it is assumed that $m \ne n$.( When $n = m$ the calculation follows that above). The equation becomes 
 # 
@@ -247,10 +247,10 @@ numk= 3*numn       # maximum k
 x0  = -L/2.0       # left side of box
 xm  =  L/2.0       # right side of box
 
-E0 =  [(n*np.pi*hbar/L)**2/(2*mu) for n in range(numn+numk)]   # energy levels in Joule
+E0 =  [(n*np.pi*hbar/L)**2/(2*mu) for n in range(numn+numk)]    # energy levels in Joule
         
-V = lambda x: 3.0*E0[1]/(4.0*L)*(x-x0)                         # perturbing potential
-#V = lambda x : 0.25*x**2                                      # potential for question 45
+V = lambda x: 3.0*E0[1]/(4.0*L)*(x - x0)                        # perturbing potential
+#V = lambda x : 0.25*x**2                                       # potential for question 45
 
 psi = lambda x,n : np.sqrt(2.0/L)*np.sin( n*np.pi*(x - x0)/L )  # wavefunction psi^0(n)
 func= lambda x,n,k: psi(x,n)*V(x)*psi(x,k)                      # function psi V psi to integrate from 0 to L
@@ -264,18 +264,18 @@ for n in range(1,numn):
             #print(n,k,Vbar[n][k]*sc)                         # print individual values
     pass
 
-E1 = [ Vbar[i][i] for i in range(numn) ]                            # first order correction
+E1 = [ Vbar[i][i] for i in range(numn) ]                      # first order correction
 
 numx = 200     # number of data points
-x = np.linspace(x0,xm,numx)                                         # make numx, x values in range 0 to L 
+x = np.linspace(x0,xm,numx)                                   # make numx, x values in range 0 to L 
 
-a = [[0.0 for k in range(numk)] for n in range(numn)]               # coefficient A_k;   call as phi[n][k]
-a2= [[0.0 for k in range(numk)] for n in range(numn)]               # coefficients for E_n^(2) , i.e. 2nd order correction
-for n in range(1,numn):                                             # calculate new wavefunction
+a = [[0.0 for k in range(numk)] for n in range(numn)]         # coefficient A_k;   call as phi[n][k]
+a2= [[0.0 for k in range(numk)] for n in range(numn)]         # coefficients for E_n^(2) , i.e. 2nd order correction
+for n in range(1,numn):                                       # calculate new wavefunction
     for k in range(numk):
         if n != k:
             a[n][k] =  Vbar[n][k]/( E0[n] - E0[k] )
-            a2[n][k]= (Vbar[n][k]**2)/( E0[n] - E0[k] )             # term for 2nd order correction
+            a2[n][k]= (Vbar[n][k]**2)/( E0[n] - E0[k] )       # term for 2nd order correction
         pass
     pass
 E2= [ sum([a2[n][k] for k in range(numk)] ) for n in range(numn)] 

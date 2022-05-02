@@ -39,9 +39,9 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # In[2]:
 
 
-a,b,x = symbols('a,b,x', positive=True)
-eq= b*sqrt(1-x**2/a**2)
-ans=integrate(eq,(x,0,a))
+a, b, x = symbols('a, b, x', positive=True)
+eq  = b*sqrt(1 -x**2/a**2)
+ans = integrate(eq,(x,0,a))
 ans
 
 
@@ -58,11 +58,11 @@ ans
 # Figure 9. The area of the quadrant is $\pi ab/4$.
 # _________
 # 
-# ## 7 Plane polar coordinates
+# ### 7 Plane polar coordinates
 # 
 # Sometimes equations are simpler and calculations easier when not done in Cartesian (rectilinear) coordinates but in polar or one of several other coordinate systems. Using Cartesian coordinates to integrate closed curves, such as circles or cardioids and so forth, can also lead to some pitfalls. The equation of a circle of radius 1 and centred at the origin $(0, 0)$ is $x^2 + y^2 = 1$. When integrated, because exactly half the area is above the x-axis, this part should have a positive area and the half below a negative one making the total zero, whereas the area is clearly $\pi$. Rearranging to find $y$ and integrating gives $\int_{-1}^{1}\sqrt{1-x^2}dx=\pi/2$ and although the integration was across the diameter $x = -1$ to $1$, only half of the area has been evaluated. This is because, by convention, only the positive part of the square root was used, and although it appears that we have integrated over the whole area in fact only half of the area has been covered. If $-\int_{-1}^{1}\sqrt{1-x^2}dx$ is added to account for the other half, the result is zero. The area of the cardioid shown in Fig. 11 would similarly be zero because there is as much negative area below the x-axis as there is positive above it. A common way round this problem of false zero areas is to identify a symmetrical curve, calculate part of it and multiply the result according to symmetry, to obtain the whole area.
 # 
-# Two-dimensional curves represented in plane polar coordinates ($r, \,\theta$ have coordinates that are the _radius_ $r$, the distance from the origin called the _pole_, to a point on the curve at an angle $\theta$, and this angle is conventionally measured anticlockwise upwards from the horizontal. The pole is at $r = 0$ and the horizontal $\theta = 0$. A circle of radius $a$ centred at the origin is $x^2 + y^2 = a^2$ in Cartesian coordinates but $r = a$ in plane polar coordinates. 
+# Two-dimensional curves represented in plane polar coordinates ($r, \,\theta)$ have coordinates that are the _radius_ $r$, the distance from the origin called the _pole_, to a point on the curve at an angle $\theta$, and this angle is conventionally measured anticlockwise upwards from the horizontal. The pole is at $r = 0$ and the horizontal $\theta = 0$. A circle of radius $a$ centred at the origin is $x^2 + y^2 = a^2$ in Cartesian coordinates but $r = a$ in plane polar coordinates. 
 # 
 # Suppose that the origin of the coordinates lies on the circumference of a circle and the line $\theta = 0$ passes horizontally through the circle's centre, the equation $r = 2a \cos(\theta)$ describes this circle, see Fig. 12.
 # 
@@ -90,7 +90,7 @@ ans
 # 
 # Imagine in Figure 11 that the radius arm $r$ extending from $0 \to \alpha$ is moved anticlockwise to point $\beta$, a movement that produces the segmental area between the pole and $\alpha$ to $\beta$. If $\beta$ continues all the way round and back again to $\alpha$ then the whole area is calculated. Two cases now have to be distinguished; the first when the pole is within the curve as shown on the right of Figure 11. The second is when the pole is outside the curve or on its circumference and these cases are dealt with next.
 # 
-# ![Drawing](integration-fig11a.png )![Drawing](integration-fig11b.png )
+# ![Drawing](integration-fig11a-11b.png )
 # 
 # Figure 11a. Left: The cardioid $r = a(1 + \cos(\theta))$ with $a = 1$ drawn in polar coordinates but with 'normal axes' which are, however, not $x$ and $y$ but in angle and showing only $0$ and $\pi/2$ radians.Figure 11b. The same cardoid as in 11a but with polar axes.
 # _________
@@ -114,9 +114,9 @@ ans
 # 
 # For this particular circle $2a \cos(\theta) = 0$, and the angles forming the integration's limits are therefore $\pm \pi/2$ or $\pm k\pi/2$ where $k$ is one of the odd integers $\cdots -3, -1, 1, 3 \cdots$ and so forth. This multiplicity is expected because the cosine function does repeatedly become zero. The limits to the integration are therefore $-\pi/2$ and $\pi/2$ when $k = \pm 1$, which moves the radius arm only once around the curve during integration. 
 # 
-# ![Drawing](integration-fig11c.png ) ![Drawing](integration-fig12.png )
+# ![Drawing](integration-fig11c-12.png )
 # 
-# Figure 11c. Left: A 'Peanut', $r = 1/4 + \sin^2(\theta + \pi/4)$. Figure 12. Right. Plot of $r = 2 \cos(\theta)$. The angle the curve makes with the horizontal or polar axis, at the pole (origin) is $\pm \pi /2$.
+# Figure 11c. Left and figure 12, right. Left. A 'Peanut', $r = 1/4 + \sin^2(\theta + \pi/4)$. Right. Plot of $r = 2 \cos(\theta)$. The angle the curve makes with the horizontal or polar axis, at the pole (origin) is $\pm \pi /2$.
 # ______
 # 
 # Doing the same calculation for the cardioid, the integration limits are the angles that make $1 + \cos(\theta) = 0$, which occur when $\cos(\theta) = -1$ and is satisfied when $\theta = \pm \pi$ and multiples thereof. Therefore, the angle is $\pm k\pi$ and hence the limits are $\pm \pi$. The total area of the cardioid is

@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Chapter 8 Matrices in Quantum Mechanics
+# ## Matrices in Quantum Mechanics
 
 # In[1]:
 
@@ -16,15 +16,15 @@ init_printing()                      # allows printing of SymPy results in types
 plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 
-# ## 1 Concept and motivation
+# ### 1 Concept and motivation
 # 
-# The Schroedinger equation (1) can be solved, in principle, by integration in the same manner as other similar differential equations and the energies $E$ and wavefunctions $\varphi$ determined.
+# The Schroedinger equation (1) can be solved, in principle, by integration in the same manner as other similar differential equations and the energies $E$ and wavefunctions $\varphi$ determined,
 # 
 # $$\displaystyle \left(-\frac{\hbar^2}{2m}\frac{d^2}{dx^2}+V(x)\right)\varphi=E\varphi \tag{1}$$
 # 
-# where $\varphi$ is a function of $x$, although this is often not explicitly stated. Unfortunately an algebraic solution turns out to be possible only for a few potentials $V(x)$. Among these are the harmonic and Morse oscillator, the particle in a box or on a ring, the rigid rotor and the hydrogenic type atoms with a single electron. Flugge (1999) gives several more one dimensional examples. For other problems, for example, to predict an NMR spectrum or that of a non-rigid rotor the equation is solved by recasting it in a basis set and using the properties of eigenvalue - eigenvector matrices. This is in essence an algebraic method although numerical values can be calculated. The Schroedinger equation can also be solved numerically for an arbitrary potential, by using one of several integration methods; see Chapter 11. However, numerical integration does not easily lend itself to predicting trends and identifying important parameters and limits, which an algebraic solution does.
+# where $\varphi$ is a function of $x$, although this is often not explicitly stated. Unfortunately an algebraic solution turns out to be possible only for a few potentials $V(x)$. Luckily, among these are the rather useful ones, the harmonic and Morse oscillator, the particle in a box or on a ring, the rigid rotor and the hydrogenic type atoms with a single electron. Flugge (1999) gives several more one dimensional examples. For other problems, for example, to predict an NMR spectrum or that of a non-rigid rotor the equation is solved by recasting it in a basis set and using the properties of eigenvalue - eigenvector matrices. This is in essence an algebraic method although numerical values can be calculated. The Schroedinger equation can also be solved numerically for an arbitrary potential, by using one of several integration methods; see Chapter 11. However, numerical integration does not easily lend itself to predicting trends and identifying important parameters and limits, which an algebraic solution does.
 # 
-# This chapter has two parts, the first assumes some knowledge of basis sets and several problems are solved using them, and, in the second part, basis sets and _bra-ket_ algebra are described, and how these objects are manipulated is illustrated. If you are unfamiliar with these topics, it may be worth looking at the second part first.
+# This chapter has two parts, the first assumes some knowledge of basis sets and several problems are solved using them and in the second part, basis sets and _bra-ket_ algebra are described. How these objects are manipulated is illustrated. If you are unfamiliar with these topics, it may be worth looking at the second part first.
 # 
 # ### 1.1 Notation
 # 
@@ -36,7 +36,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # $$\displaystyle \int\varphi_n^*\varphi_mdx=\delta_{n,m}$$
 # 
-# and in Dirac 'bra-ket' notation the orthogonality and normalization of the wavefunctions is written as 
+# The superscript * represents the complex conjugate, which means that if the wavefunction is complex replace $i$ with $-i$ and vice versa. If it is not complex, i.e. 'normal' the complex conjugate changes nothing. In Dirac 'bra-ket' notation the orthogonality and normalization of the wavefunctions is written as 
 # 
 # $$\displaystyle \langle\varphi_n | \varphi_m \rangle = \delta_{n,m}$$
 # 
@@ -62,7 +62,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # Interactions between different levels $n$ and $m$ lead to interesting effects, and this chapter describes how these may be calculated. No interaction occurs if $S = H^0$ because $H^0$ exactly solves the Schroedinger equation with wavefunctions $\varphi_i$, which are orthogonal,
 # 
-# $$\displaystyle H_{nm}=\int \varphi_n^*H^0\varphi_mdx=E_0\int\varphi_0^*\varphi_mdx=0\qquad n\ne m\tag{7}$$
+# $$\displaystyle H_{nm}=\int \varphi_n^*H^0\varphi_mdx=E_0\int\varphi_n^*\varphi_mdx=0\qquad n\ne m\tag{7}$$
 # 
 # Expectation values are also called matrix elements and these are explained next. Suppose that the (quantum) harmonic oscillator is to be solved. The wavefunction is a function of position, the bond extension, and the operator is
 # 
@@ -85,7 +85,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # $$\displaystyle \qquad\qquad\begin{bmatrix}H_{00} &0 & 0 & \cdots \\0 & H_{11} & 0& \cdots  \\0&\vdots & \ddots &\cdots & \\ \vdots & \vdots & \vdots & H_{nn}\\ \end{bmatrix} \begin{bmatrix}\varphi_0 \\\varphi_2\\ \vdots \\ \varphi_n \end{bmatrix}=\begin{bmatrix}E_0\\E_1\\ \vdots \\E_n \end{bmatrix}\begin{bmatrix}\varphi_0 \\\varphi_2\\ \vdots \\ \varphi_n \end{bmatrix}\qquad\qquad\qquad\qquad \text{(9)}$$
 # 
 # 
-# and therefore a set of equations, such as 4 is obtained, one for each quantum number $n$. The matrix 9 is already diagonalized, therefore $E_0 = H_{00}, E_1 = H_{11}$, and so forth and these are the eigenvalues or energies.
+# and therefore a set of equations, such as 4 is obtained, one for each quantum number $n$. The matrix 9 is already diagonalized, therefore $E_0 = H_{00}, E_1 = H_{11}$, and so forth and these are the eigenvalues or energies. Clearly, to do any of these calculations the wavefunctions $\varphi$ have to be known.
 # 
 # The effect of using a different potential is calculated next. Hamiltonian $H$ has a new term in the potential energy, and this manifests itself as off-diagonal terms in the $H_{nm}$ matrix equation 8. The hamiltonian can be written as
 # 
@@ -93,13 +93,13 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # where $V^1$ is the new potential. Each integral $H_{nm}=\int\varphi^*_nH\varphi_m dx$ has to be solved first and the new matrix diagonalised. In some problems, such as the NMR nuclear spin example given below, the wavefunctions are never known, only their integrals with the angular momentum operator, which means that $H_{nm}$ is known directly. In problems that have a large number of states, such as an anharmonic oscillator, a huge matrix will be needed to calculate accurate values of the energies because there are many non-zero, off-diagonal terms. In this case, the larger the matrix is, the more accurate the answers become, provided numerical accuracy can be maintained. In examples involving electron or nuclear spin, the matrix has a finite size that completely determines the problem, and accurate results are obtained from small matrices. 
 
-# ### 2.1 The effect of new potential energy
+# ### 2.1 The effect of new potential energy. Expanding in a basis set.
 # 
 # The energies and wavefunctions of the harmonic oscillator are well known, the Hamiltonian is
 # 
 # $$\displaystyle H^0= -\frac{\hbar^2}{2m}\frac{d^2}{dx^2}+\frac{1}{2}kx^2\equiv H^k+V$$
 # 
-# Suppose that to make the potential more like that of a real molecule, a term $v^1$ replaces the potential energy making it quartic, i.e. $V^1 = k'x^4/2$, but any similar potential, such as the Morse potential, could be used. The harmonic oscillator wavefunctions $\varphi$ would no longer be 'diagonal in the eigenstates' meaning that the wavefunctions $\varphi$ that are solutions with $H^0$ are not solutions of the Schroedinger equation with the new potential. With the new potential, some, if not all of the off-diagonal expectation values (matrix elements) $H_{23}, H_{53}$ for example will no longer be zero. The new energies are no longer given by the diagonal elements of the matrix but by an equation of the form of equation 8, which has to be diagonalized.
+# Suppose that to make the potential more like that of a real molecule, a term $V^1$ replaces the potential energy making it quartic, i.e. $V^1 = k'x^4/2$, but any similar potential, such as the Morse potential, could be used. The harmonic oscillator wavefunctions $\varphi$ would no longer be 'diagonal in the eigenstates' meaning that the wavefunctions $\varphi$ that are solutions with $H^0$ are not solutions of the Schroedinger equation with the new potential. With the new potential, some, if not all of the off-diagonal expectation values (matrix elements) $H_{23}, H_{53}$ for example will no longer be zero. The new energies are no longer given by the diagonal elements of the matrix but by an equation of the form of equation 8, which has to be diagonalized.
 # 
 # The wavefunctions of the quartic oscillator will be labelled $\psi$, however, the Schroedinger equation cannot yet be solved with this potential because the equation $H_{nm} = \int \psi^*_nH\psi_mdx$ cannot be worked out because the $\psi$ are unknown. One solution to this problem is to solve the Schroedinger equation with the quartic potential, $V^1$, using the harmonic wavefunctions $\varphi$ as a basis, and so obtain the quartic eigenvalues (energies) and eigenvectors in terms of these $\varphi$. The eigenvectors $v$ are used to _expand_ the unknown wavefunctions $\psi$ in terms of the known ones $\varphi$. A basis set to describe the new wavefunctions has to be constructed. This basis set has to be orthogonal and although it does not need be normalized, it is usually easier to use if it is. A basis set is used because _any_ vector can be described as a _linear combination of basis vectors_ (Chapter 6) and it is proposed that any wavefunction can be described as a weighted sum of basis wavefunctions. The basis set used is the set of harmonic oscillator wavefunctions (eigenvectors) $\varphi$ which solve the equation $H^0\varphi = E\varphi$. The new wavefunctions then have the form
 # 
@@ -108,7 +108,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # where $a_1, a_2$ and so forth, are the amounts of each $\varphi$ needed to make the $\psi$ that solves -  which means, will diagonalize - the Schroedinger equation $(H^k + V^1)\psi = E\psi$. As there are
 # many levels $0 \to n$, each $\psi$ has its own expansion and there are, therefore, $n^2$ coefficients in
 # total. Each wavefunction has its own set of coefficients and it is better to give them two
-# subscripts and label the coefficients $v_{1k}, t_{2k}, \cdots$ as they are elements of the $k^{th}$ (column) eigenvector of the matrix of $v$'s. The $k^{th}$ of a total of $n$ wavefunctions is
+# subscripts and label the coefficients $v_{1k}, v_{2k}, \cdots$ as they are elements of the $k^{th}$ (column) eigenvector of the matrix of $v$'s. The $k^{th}$ of a total of $n$ wavefunctions is
 # 
 # $$\displaystyle \psi_k = v_{1k}\varphi_1 + v_{2k}\varphi_2 + \cdots + v_{nk}\varphi_n \tag{11}$$ 
 # 
@@ -117,7 +117,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # ### Summary of the method
 # 
-# **(i)**$\quad$ The wavefunctions $\psi$ are the solutions to Schroedinger's equation with Hamiltonian $H + V^1$, and $\varphi$ is the exact solution to a simpler problem with Hamiltonian $H^0$, such as the harmonic oscillator or particle in a box, from whose wavefunctions a linear combination is made to find $\psi$.
+# **(i)**$\quad$ The wavefunctions $\psi$ are the solutions to Schroedinger's equation with Hamiltonian $H + V^1$, and $\varphi$ is the exact wavefunction to a simpler problem with Hamiltonian $H^0$, such as the harmonic oscillator or particle in a box. A linear combination of these known wavefunctions is is made to find $\psi$.
 # 
 # **(ii)**$\quad$ The $\varphi$ are orthogonal to one another; to form the complete basis set they must be and it is simpler to start with each $\varphi$ normalized.
 # 
@@ -257,8 +257,9 @@ factor(Hnm)
 # In[4]:
 
 
-#Algorithm Harmonic oscillator built from particle in a box wavefunctions
+# Algorithm Harmonic oscillator built from particle in a box wavefunctions
 
+#-----------------------------------
 def Hintegrals(n,m):
     n = n + 1                            # add 1 as python array index start at zero 
     m = m + 1
@@ -288,12 +289,12 @@ for n in range(num):
 vals,vecs = LA.eigh(Hnm)  
 
 indx = np.argsort(vals)              # find index of sorted array
-print('{:s}'.format('   n  matrix/J   exact/J'))
+print('{:s} {:d}'.format('   n  matrix/J   exact/J. Matrix size = ',num))
 for i in range(0,20,2):
     print('{:4d} {:8.4g}  {:8.4g}'.format(i, vals[indx[i]], hbar*np.sqrt(k/mu)*(i+1/2) )  ) # sorted energies
 
 
-# Th exact values are $E_n=\hbar\sqrt{k/\mu}(n+1/2)$ which is the normal equation fro the Harmonic oscillator. With a small matrix the calculated values are 
+# The exact values are $E_n=\hbar\sqrt{k/\mu}(n+1/2)$ which is the normal equation fro the Harmonic oscillator. With a small matrix the calculated values are 
 # 
 # $$\begin{array}{ccc}
 # n  & \text{ matrix} \times 10^{20}{/ J}   &   \text{exact}\times 10^{20}{/ J}\\
@@ -324,6 +325,7 @@ for i in range(0,20,2):
 # In[5]:
 
 
+#-------------------
 def psi(qn,x):      # calculating the wavefunction, note that (i+1) is used as the lowest valid 
                     # particle in a box quantum number is 1
     s = 0.0
@@ -335,7 +337,7 @@ def psi(qn,x):      # calculating the wavefunction, note that (i+1) is used as t
 
 # ![Drawing](matricesQm-fig1.png)
 # 
-# Figure 1. Approximate wavefunctions for $n = 0\to 8$ levels of HCl as a harmonic oscillator using the particle in a box basis set. The potential is also shown, and the energy is in units of $h\nu$ where $\nu$ is the transition frequency. The wavefunctions are scaled to a convenient amplitude for display and are essentially identical to those calculated using the equations derived directly from Schroedinger's equation, Fig. 4.48 of the solutions.
+# Figure 1. Approximate wavefunctions for $n = 0\to 8$ levels of HCl as a harmonic oscillator using the particle in a box basis set. The potential is also shown, and the energy is in units of $h\nu$ where $\nu$ is the transition frequency. The wavefunctions are scaled to a convenient amplitude for display and are essentially identical to those calculated using the equations derived directly from Schroedinger's equation, Fig. 48 in solutions to chapter 4.
 # __________
 # 
 # ### 3 NMR spectrum with two spins
@@ -348,7 +350,7 @@ def psi(qn,x):      # calculating the wavefunction, note that (i+1) is used as t
 # 
 # $$\displaystyle S=-\frac{1}{\hbar}\sum_i\gamma_i(1-\sigma_i)\pmb{I}_i\cdot \pmb{B}+\frac{1}{\hbar^2}\sum_{i>j}\sum_j J_{ij}\pmb{I}_i\cdot \pmb{I}_j \tag{16}$$
 # 
-# The applied magnetic field is always in the z-direction with a magnitude $B_0$ tesla, and is zero in other directions. $\pmb{I}$ is the nuclear spin angular momentum vector with components in the $x-, y-,$ and $z$-directions of $I_x, I_y$, and $I_z$ respectively. Angular momentum has the same units as $\hbar$; J s rad$^{-1}$. The constant $\gamma$ is the magnetogyric ratio (rad T$^{-1}$ s$^{-1}$) of each atom $i, \sigma_i$
+# The applied magnetic field is always in the z-direction with a magnitude $B_0$ tesla, and is zero in other directions. $\pmb{I}$ is the nuclear spin angular momentum vector with components in the $x$-, $y$-, and $z$-directions of $I_x, I_y$, and $I_z$ respectively. Angular momentum has the same units as $\hbar$; J s rad$^{-1}$. The constant $\gamma$ is the magnetogyric ratio (rad T$^{-1}$ s$^{-1}$) of each atom $i, \sigma_i$
 # the shielding constant (dimensionless) leading to the chemical shift and $J_{ij}$ the spin-spin coupling constant (rad s$^{-1}$) between any two atoms $i$ and $j$.
 # 
 # Spin is described by two quantum numbers $s$ and $m_z$ and for protons $s = 1/2$ and $m_z = \pm 1/2$. The latter is the quantum number associated with the projection of the spin angular momentum on the unique z-axis. The magnetic field $B$ along the z-direction breaks the threefold degeneracy of the angular momentum by making it unique along $z$, but it remains degenerate in $x$ and $y$. From now on, and only for clarity, $m$ will replace $m_z$. The wavefunction is written symbolically as $\psi_{sm} \equiv |sm\rangle$ and the $s-m$ basis set will be used. This is a basis set made up of the spin wavefunctions but labelled with the two spin quantum numbers. As there are two spins, each with quantum numbers $s = 1/2; m_z = \pm 1/2$, this basis set has only four elements. It is described in detail shortly. The spin wavefunctions are, by definition, orthonormal, which means that in general for spin $j$ and $k$, the integral
@@ -430,7 +432,7 @@ def psi(qn,x):      # calculating the wavefunction, note that (i+1) is used as t
 # 
 # $$\displaystyle \left( \begin{bmatrix} s_a \\ m_a \\ s_b \\ m_b \end{bmatrix}\right)\equiv \left( \begin{bmatrix} 1/2\\1/2\\1/2\\1/2\end{bmatrix},\begin{bmatrix} 1/2\\-1/2\\1/2\\1/2\end{bmatrix},\begin{bmatrix} 1/2\\1/2\\1/2\\-1/2\end{bmatrix},\begin{bmatrix} 1/2\\-1/2\\1/2\\-1/2\end{bmatrix}\right)\qquad\qquad\qquad\qquad  \text{(23)}$$
 # 
-# Symbols could have been chosen instead of numbers. For example, if $/alpha = 1/2, \beta = -1/2$ then the basis set would be
+# Symbols could have been chosen instead of numbers. For example, if $\alpha = 1/2, \beta = -1/2$ then the basis set would be
 # 
 # $$\displaystyle \left( \begin{bmatrix} s_a \\ m_a \\ s_b \\ m_b \end{bmatrix}\right)\equiv \left( \begin{bmatrix} \alpha\\\alpha\\\alpha\\\alpha\end{bmatrix},\begin{bmatrix} \alpha\\\beta\\\alpha\\\alpha\end{bmatrix},\begin{bmatrix} \alpha\\\alpha\\\alpha\\\beta\end{bmatrix},\begin{bmatrix} \alpha\\\beta\\\alpha\\\beta\end{bmatrix}\right) $$
 # 
@@ -493,7 +495,8 @@ def psi(qn,x):      # calculating the wavefunction, note that (i+1) is used as t
 # In[6]:
 
 
-Ix,Iy,Iz,sa,sb,ma,mb,hbar,qa,qb,m1,m11,m2,m22,Ixyz,J= symbols('Ix,Iy,Iz,sa,sb,ma,mb,hbar,qa,qb,m1,m11,m2,m22,Ixyz,J')
+Ix, Iy, Iz, sa, sb, ma, mb, hbar, qa, qb, m1, m11, m2, m22, Ixyz, J= symbols('Ix,Iy,Iz,sa,sb,ma,mb,hbar,qa,qb,m1,m11,m2,m22,Ixyz,J')
+
 #------------------------------------------
 def Iz(sa,ma,sb,mb):
     if ma == mb: return hbar*ma   # <sm|Iz|sm>
@@ -515,14 +518,13 @@ def delta(p,q):
 #---------------------------------    
     
 n = 4
-H = Matrix([ [0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0] ] )  # define zero matrix
+H = Matrix([ [0,0,0,0], [0,0,0,0], [0,0,0,0], [0,0,0,0] ] )  # define zero matrix
 
-ma = Matrix([ [1/2,1/2,-1/2,-1/2] ])
-mb = Matrix([ [1/2,-1/2,1/2,-1/2] ])
+ma = Matrix([ [1/2, 1/2, -1/2, -1/2] ])
+mb = Matrix([ [1/2, -1/2, 1/2, -1/2] ])
 
 for i in range(n):
-    for k in range(n):
-        
+    for k in range(n): 
         m1 = ma[i]
         m11= ma[k]
         m2 = mb[i]
@@ -538,7 +540,6 @@ H
 
 
 eigvals = H.eigenvals()   # calculate eigenvalues: H.eigenevcts() gets eigenvectors and eigenvalues
-
 for i in range(n): 
     print( (list( eigvals.keys())[i] ) )  # print values
 

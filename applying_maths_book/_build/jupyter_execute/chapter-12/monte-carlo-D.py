@@ -14,6 +14,8 @@ init_printing()                         # allows printing of SymPy results in ty
 plt.rcParams.update({'font.size': 16})  # set font size for plots
 
 
+# ### Introduction to the Metropolis algorithm
+# 
 # This is a extremely important algorithm because it speeds up many calculations bringing them into the realm of possibilities. The algorithm calculates average properties by using Monte-Carlo methods to preferentially sample important contributions to the result and thus does not waste time on unimportant ones. In illustrating this algorithm examples from statistical thermodynamics and quantum mechanics are used. 
 # 
 # In statistical mechanics, if the partition function or 'sum over states' $Z$ is calculated, all other thermodynamic properties such as internal energy, entropy or heat capacity, can be evaluated. For example, the internal energy $U$ at constant volume is  
@@ -22,7 +24,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # where $U_0$ is the internal energy at $T=0$.  As a result, a great deal of attention is paid in textbooks to evaluating $Z$ for different problems, such as the harmonic oscillator or rigid rotor. If a thermodynamic 'system' is in contact with a heat bath, then the canonical (ensemble) partition function $Z$ (at constant $N,\; V,\; T$) is defined as the 'sum over states' hence
 # 
-# $$\displaystyle Z = \sum_n g_ne^{−E_n/k_BT}$$
+# $$\displaystyle Z = \sum_n g_ne^{-E_n/k_BT}$$
 # 
 # where the energy of level or state $n$ is $E_n,\; k_B$ is Boltzmann's constant, and $T$ the temperature. The degeneracy of level $n$ is $g_n$. 
 # 
@@ -62,7 +64,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # ### Basis of the Algorithm
 # 
-# The Metropolis algorithm allows an estimation of the ratio of the two sums to be made in an efficient way. This avoids having to calculate $Z$, which, as we have seen, may be impossible. The algorithm overcomes the necessity to search all the 'phase space', as configurations are generically called, and biases the random guessing of which configuration to add to the total, by using the Boltzmann distribution of energies. In doing this, the algorithm tries to add to the estimate of Q only those configurations contributing significantly to its value and, in doing so, performs a random walk among the configurations; see Figure 12 for a picture of two configurations. This random walk is also called a _Markov process_. This is defined as a process whereby a 'system' goes from one state to another in a random fashion, but has no memory of its previous condition.
+# The Metropolis algorithm allows an estimation of the ratio of the two sums to be made in an efficient way. This avoids having to calculate $Z$, which, as we have seen, may be impossible. The algorithm overcomes the necessity to search all the 'phase space', as configurations are generically called, and biases the random guessing of which configuration to add to the total, by using the Boltzmann distribution of energies. In doing this, the algorithm tries to add to the estimate of $Q$ only those configurations contributing significantly to its value and, in doing so, performs a random walk among the configurations; see Figure 12 for a picture of two configurations. This random walk is also called a _Markov process_. This is defined as a process whereby a 'system' goes from one state to another in a random fashion, but has no memory of its previous condition.
 # 
 # To sample points in configuration space, according to the Boltzmann distribution, it is sufficient, but not necessary, to impose 'detailed balance' between any two configurations. This means that if $w_{12}$ is the rate to go from configuration (or state) 1 with energy $E_1$, to a new state 2 with energy $E_2$, then the reverse transition $w_{21}$ is related by
 # 
@@ -72,8 +74,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # $$\displaystyle  w_{12} = w_{21}e^{-\Delta E/k_BT}, \qquad \Delta E = E_2 - E_1$$
 # 
-# The ratio of rates is the same as the ratio of probabilities of going between two configurations. The detailed balance condition ensures that any one configuration can be reached from another in a finite number of steps, and this condition is called ergodicity. This condition means that no configurations are systematically missed. Furthermore, if a sufficient number of samples are used in the calculation, all configurations will be sampled in pro- portion to their importance in contributing to $\langle Q \rangle$. The algorithm can also be viewed as a random walk among the many configurations, preferentially adding in those that contribute most to the average.
-# 
+# The ratio of rates is the same as the ratio of probabilities of going between two configurations. The detailed balance condition ensures that any one configuration can be reached from another in a finite number of steps, and this condition is called ergodicity. This condition means that no configurations are systematically missed. Furthermore, if a sufficient number of samples are used in the calculation, all configurations will be sampled in proportion to their importance in contributing to $\langle Q \rangle$. The algorithm can also be viewed as a random walk among the many configurations, preferentially adding in those that contribute most to the average. The result is that states are produced in proportion to their Boltzmann distribution just as the states in reality are supposed to do.
 # 
 # All the basics of the algorithm are now assembled. The Metropolis idea is to compare two energies $E_1$ and $E_2$ from two guessed configurations 1 and 2. If the new one, 2, has the lower energy, then this configuration is accepted. If not, the chance of the new one, 2, contributing to $\langle Q \rangle$ is guessed by comparing $e^{-(E_2-E_1)/k_BT }$ to a uniform random number from zero to one and accepting configuration 2 if the random number is smaller; otherwise, the old configuration 1 is accepted, and so on.
 
@@ -193,7 +194,7 @@ print('{:s} {:8.4g} {:s} {:8.4g} {:s} {:8.4g}'.format('av E=',Eav, 'av e^2=',E2a
 # 
 # The harmonic oscillator clearly also has kinetic energy. The calculation to estimate this is essentially the same as just described; however, the constants are interpreted in a different way. The constant $k$ now represents the reduced mass, which is will become $10$ amu, and displacement $x$ now represents the velocity $v$ in m s<sup>-1</sup> about the origin of coordinates taken as the center of gravity of the molecule. The velocity must range from at least $\pm 4000\, \mathrm{ m\, s^{-1}}$ if the exponential $e^{-\Delta E/(k_BT)}$ is to be $\approx 10^{-8}$ or less at the largest speed. A typical value of the average kinetic energy (per molecule) is found to be $2.03 \pm 0.01 \cdot 10^{-21}$ J, which is effectively the same result as for the previous Monte Carlo calculation of $\langle E \rangle$  and demonstrates the equipartition theorem.
 # 
-# #### Maxwell distribution
+# #### **Maxwell distribution**
 # 
 # Normally kinetic energy $mv^2/2$ is interpreted as that due to molecules of a gas colliding with one another rather than that of the atoms of a harmonic oscillator. If this is the case then the Maxwell speed distribution can be constructed. To do this, the velocities that are accepted in the Metropolis step are stored as the calculation proceeds. Velocity is a vector but speed is not; consequently, the angles that a molecule has with respect to any axes are integrated away on calculating the speed distribution and no longer enter into the calculation. The result is that the speed distribution depends only on $v^2$, which is interpreted as a scalar equal to the speed squared. For example, the probability per unit speed of molecules with speed $s = |v|$ is,
 # 
@@ -284,7 +285,7 @@ CV     = (E2av - Eav**2)/(kB*T**2)
 # 
 # $$\displaystyle  E_\alpha = -J\sum_k s_ks_{k+1}  \tag{13d}$$
 # 
-# where $s_k =\pm 1$ represents the spin on the $k^{th}$ site, and the sum is taken over all pairs $s_ks_{k+1}$. The various combinations the spins take produce the different energies $E_\alpha$. Because the exchange interaction depends on the overlap of wavefunctions, as does the related Coulomb interaction, it is of very short-range; therefore, only the nearest neighbors are important, and the summation of eqn 13d is pairwise.
+# where $s_k =\pm 1$ represents the spin on the $k^{th}$ site, and the sum is taken over all pairs $s_ks_{k+1}$. The various combinations the spins take produce the different energies $E_\alpha$. Because the exchange interaction depends on the overlap of wavefunctions, as does the related Coulomb interaction, it is of very short-range; therefore, only the nearest neighbors are important, and the summation of eqn. 13d is pairwise.
 # 
 # ![Drawing](monte-carlo-fig12c.png)
 # 
@@ -296,7 +297,7 @@ CV     = (E2av - Eav**2)/(kB*T**2)
 # 
 # The entropy of the chain of $N$ spins is $k_B\ln(2)$ at zero temperature, because two degenerate and ordered spin states exist. At high temperatures, where the thermal energy is far greater than the spin interaction energy, the entropy is $Nk_B\ln(2)$. This is $N$ times greater than at 0 K and a dependence on $N$ is to be expected because entropy is an extensive quantity. The entropy therefore initially increases with an increase in temperature and then becomes constant. The magnetization and susceptibility can also be simulated. Details of these calculations are given below.
 # 
-# Without having to evaluate the partition function directly, the energy, heat capacity, and entropy can be calculated using the Metropolis algorithm. In the calculation shown in Figure 2, a chain of $500$ spins is simulated and the number of spin states is therefore $2^{500} \approx 3 \cdot 10^{150}$, all of which would have to be evaluated in a direct calculation. The results of the Monte Carlo calculation, Figure 13e, have been obtained by randomly sampling each site $4000$ times. Although this represents a large number of calculations, it is only a miniscule fraction of the total number of possible spin states and demonstrates the power of this algorithm. 
+# Without having to evaluate the partition function directly, the energy, heat capacity, and entropy can be calculated using the Metropolis algorithm. In the calculation shown in Figure 2, a chain of $500$ spins is simulated and the number of spin states is therefore $2^{500} \approx 3 \cdot 10^{150}$, all of which would have to be evaluated in a direct calculation. The results of the Monte Carlo calculation, Figure 13e, have been obtained by randomly sampling each site $4000$ times. Although this represents a large number of calculations, it is only a minuscule fraction of the total number of possible spin states and demonstrates the power of this algorithm. 
 # 
 # It is clear that the Metropolis algorithm accurately simulates the change in energy and heat capacity with temperature. In implementing this particular Monte Carlo calculation, there are three considerations. The first is to calculate the energy change caused by flipping one spin, the second is to decide what happens at the ends of the chain, and the third is to determine what values the spins should have at the start of the calculation. First, to determine the energy change, a site is chosen at random and its spin flipped. The change in energy this causes is found by looking at the site and its two neighbors and calculating what happens; Figure 13f shows two examples. The change in energy $\Delta E = E_2-E_1$ is either zero or $\pm 4J$, and because a negative or zero change in energy is always accepted, the exponential expression in the Metropolis sampling step is always $\displaystyle e^{-4J/(k_BT)}$. This can be calculated outside the Monte Carlo loop, which saves considerable time.
 # 
@@ -376,7 +377,7 @@ print('{:s} {:f} {:s} {:f}'.format('av energy/site =',avE/L, 'Cv =',Cv) )
 # Figure 12f. Left: The red circles are the Monte Carlo calculated energy, $\langle E\rangle$, per spin; $\langle E\rangle/JN$. Right  The heat capacity per spin $\langle C_V\rangle /k_B$ vs temperature (K), with $J/k_B = 1$ K. One run of $4000$ samples is shown for each point. The lines are from the analytical functions, see text.
 # _________
 # 
-# #### Calculating the Entropy
+# #### **Calculating the Entropy**
 # Although the entropy at a given temperature $T$ can be calculated by integrating $C_V/T$, it can also be calculated more fundamentally from the arrangement of the spins. Maps of the spin state at the end of a calculation indicate how the entropy changes with temperature, and three examples are shown in Figure 12g. 
 # 
 # Informally, we may label a black group as 'parallel spin up' and a white one 'parallel spin down', although 'up' and 'down' should not be taken literally. Within any blocks of either color, the spins are parallel to one another; hence, the coupling is $-J$ between adjacent spins. A color boundary thus indicates spin pairing and a coupling of $+ J$ between these two spins; see Figure 12e. At $T = 0$ K, all spins are in the same state, which would mean that the whole strip would be of the same color. However, there are two ground states at $T = 0$ and these could be colored either black or white. At low temperatures, for example, $T$ = 1/2 or 1 K, (Figure 12g) spins are grouped into a few large blocks of similar spin state. Although only one example is given in the figure, it is clear that if many calculations are performed here only a limited number of arrangements of these large blocks of spins will be possible. These configurations or arrangements determine the entropy. As the temperature is increased, the coupling between spins becomes relatively less important compared to the energy supplied by the surrounding heat bath. This reduces the size of the groups of similar spin state but increases their number, which leads to more of ways of arranging them, and hence, a larger entropy.
@@ -396,7 +397,7 @@ print('{:s} {:f} {:s} {:f}'.format('av energy/site =',avE/L, 'Cv =',Cv) )
 # Figure 12g.  Examples of spin states for $500$ spins and $2000$ samples/ spin and with $J/k_B =1$ K at $T=1/2$, top ,$1$ K middle, and $10$ K bottom. The pattern at $T=1/2$ K contains $15$ groups since the blue areas correspond to one spin state and white the other. 
 # ___________
 # 
-# Finally, we note that $S = k_B\ln(\Omega)$ is derived using a microcanonical ensemble, ($N,\; V,\; E$ constant), whereas the entropy calculated using the partition function is derived from a canonical ensemble ($N, \;V, \;T$ constant). Energy fluctuations are permitted in the canonical ensemble but energy is fixed in the microcanonical ensemble. This inherent difference does not contradict their equivalency, provided that the size of the fluctuations becomes vanishingly small in the canonical ensemble, which it does in the limit of large $N$. The argument to demonstrate this follows along the lines of that above where the energy dispersion $\sigma$  is now interpreted as the energy fluctuation of the canonical ensemble. The ratio of energy fluctuation to average energy $\sigma/\langle E\rangle \approx  1/\sqrt{N}$, becomes vanishingly small as N increases.
+# Finally, we note that $S = k_B\ln(\Omega)$ is derived using a micro-canonical ensemble, ($N,\; V,\; E$ constant), whereas the entropy calculated using the partition function is derived from a canonical ensemble ($N, \;V, \;T$ constant). Energy fluctuations are permitted in the canonical ensemble but energy is fixed in the micro-canonical ensemble. This inherent difference does not contradict their equivalency, provided that the size of the fluctuations becomes vanishingly small in the canonical ensemble, which it does in the limit of large $N$. The argument to demonstrate this follows along the lines of that above where the energy dispersion $\sigma$  is now interpreted as the energy fluctuation of the canonical ensemble. The ratio of energy fluctuation to average energy $\sigma/\langle E\rangle \approx  1/\sqrt{N}$, becomes vanishingly small as N increases.
 # 
 # ![Drawing](monte-carlo-fig12h.png)
 # 
@@ -427,11 +428,11 @@ def get_entropy(spin):
 #-------------
 
 
-# #### Phase Change
+# #### **Phase Change**
 # 
 # The gradual and continuous change in the heat capacity and entropy indicates that the phase transition between ordered and disordered spins is unlike the familiar first-order or 'all-or-none' phase transitions or even that in the two-dimensional Ising spin model, see below. Whereas the general change in $C_V$ and $S$ with temperature is similar to that of a normal substance ($\mathrm{O_2,\; H_2O}$, etc.), the detail is quite different. This is because in the 1-D spin case the heat capacity increases and decreases in a continuous manner with increasing temperature. Similarly, the entropy smoothly increases with temperature to reach its final value. In a normal substance, however, there is a step change both in CV and S at a phase boundary. The cause of the different behavior is because, energetically, it is more favorable for two regions of opposite spins to co-exist than it is for either one or the other to exist on its own. Interestingly, a similar behavior occurs with the co-existence of helix and coil regions in proteins.
 # 
-# #### Magnetisation 
+# #### **Magnetisation** 
 # 
 # The magnetisation $M$ can also be calculated via $M=\sum_ks_k$ and from this the susceptibility 
 # 
@@ -439,7 +440,7 @@ def get_entropy(spin):
 # 
 # which can be measured experimentally. The susceptibility is formally the magnetisation divided by the magnetic field intensity, $\partial \langle M\rangle /\partial B$. 
 # 
-# There is no spontaneous magnetisation in a 1-D spin system except at 0 K. To illustrate why the average magnetisation $M$ is small even at low temperatures, consider a chain of $N+1$ spins at absolute zero so that they are all aligned parallel to one another. Recall that the energy is determined by the interaction between spins and, as they are aligned parallel to one another, the total interaction energy is $-JN$. If each spin has a magnetic moment $\mu$  (J T$^{-1}$), the magnetisation is $\mu( N + 1) \approx \mu N$ when $N$ is large. Suppose that just sufficient energy is added so that the entire first half of the spins is inverted making the total magnetisation exactly zero. At the interface, two spins are paired (anti-parallel) with coupling energy $J$ (see figure 12e ) and all the rest have energy $-J$, making the total energy $-J(N-1)+J =-J(N-2)$.
+# There is no spontaneous magnetisation in a 1-D spin system except at 0 K. To illustrate why the average magnetisation $M$ is small even at low temperatures, consider a chain of $N+1$ spins at absolute zero so that they are all aligned parallel to one another. Recall that the energy is determined by the interaction between spins and, as they are aligned parallel to one another, the total interaction energy is $-JN$. If each spin has a magnetic moment $\mu$  (J T$^{-1}$), the magnetisation is $\mu( N + 1) \approx \mu N$ when $N$ is large. Suppose that just sufficient energy is added so that the entire first half of the spins is inverted making the total magnetisation exactly zero. At the interface, two spins are paired (anti-parallel) with coupling energy $J$ (see fig. 12e ) and all the rest have energy $-J$, making the total energy $-J(N-1)+J =-J(N-2)$.
 # 
 # Because $N$ is vast, the total is effectively the same as when all spins are aligned. Consequently, at temperatures higher than $\approx J / Nk_B$ , which is vanishingly small for large $N$, there is insufficient energy to stabilise the aligned spin state compared to disordered ones, and the overall magnetisation is close to zero.
 # 
@@ -448,7 +449,7 @@ def get_entropy(spin):
 # figure 12i. left: Magnetisation /spin vs temperature. Notice how rapidly this decreases with temperature to become approximately zero. This may also be seen in figure 12g where patterns of spins are shown. Right. The magnetic susceptibility vs temperature, $\displaystyle \chi = \frac{1}{k_BT}\left( \langle M^2\rangle - \langle M\rangle^2   \right)$. 
 # _____
 # 
-# #### Algebraic calculation of 1D Ising spin energy
+# #### **Algebraic calculation of 1D Ising spin energy**
 # 
 # The partition function is defined as $\displaystyle Z = \sum_\alpha e^{-E_\alpha /k_BT}$ 
 # 
@@ -586,9 +587,9 @@ kB = 1.0
 T  = 2.0    
 beta = J/( kB*T )
 
-#tot_E,tot_E2,tot_M,spin = ising2d(beta)  # remove # to do calculation
+#tot_E,tot_E2,tot_M,spin = ising2d(beta)  # remove # to do calculation which is v slow.
 
-#print(tot_E,tot_E2,tot_M,spin)
+#print(tot_E,tot_E2,tot_M,'\n',spin)
 
 
 # In[ ]:

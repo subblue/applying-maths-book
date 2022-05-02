@@ -26,10 +26,10 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # In[2]:
 
 
-omega,a,t,u = symbols('omega a t u',positive=True)
+omega, a, t, u = symbols('omega, a, t, u',positive=True)
 
-f01= cos(omega*t/a)*exp(-(t/a)**2/2)         # define electric fields
-f02= cos(omega*(t+u)/a)*exp(-((t+u)/a)**2/2)
+f01 = cos(omega*t/a)*exp(-(t/a)**2/2)         # define electric fields
+f02 = cos(omega*(t+u)/a)*exp(-((t+u)/a)**2/2)
 ef01   = expand(f01.rewrite(exp))
 intf01 = integrate(ef01,(t,-oo,oo),conds='none')
 simplify(intf01)
@@ -80,6 +80,9 @@ plt.xlabel('time')
 plt.show()
 
 
+# Fig. 56. The First order correlation.
+# ______
+# 
 # **(b)** The second-order correlation is calculated in a similar way; expanding the terms before integrating gives
 # 
 # $$\displaystyle G^2(u)=2+4\frac{\int E(t)E(u+t)^3 + E(t)^3E(u+t)dt}{\int E(t)^4dt}+6\frac{\int E(t)^2E(u+t)^2 dt}{\int E(t)^4dt}$$
@@ -96,7 +99,7 @@ plt.show()
 
 
 # to calculate G^2(u)
-omega,a,t,u = symbols('omega a t u',positive=True)
+omega, a, t, u = symbols('omega, a, t, u',positive=True)
 
 f01= cos(omega*t/a)*exp(-(t/a)**2/2)          # define electric fields
 f02= cos(omega*(t+u)/a)*exp(-((t+u)/a)**2/2)
@@ -122,8 +125,8 @@ simplify(term13)
 
 
 # integration E(t)^2 x E(t+u)^2
-ef02= expand(f02.rewrite(exp))
-ef22= expand(ef01**2*ef02**2)
+ef02 = expand(f02.rewrite(exp))
+ef22 = expand(ef01**2*ef02**2)
 term22 = integrate(ef22,(t,-oo,oo),conds='none')
 factor(term22)
 
@@ -167,6 +170,7 @@ plt.show()
 
 
 # Figure 57. Normalized fringe resolved autocorrelation $G^2(u)$ with the upper and lower bounds shown as solid lines. The frequency of the pulse is constant throughout its duration so this is a _transform-limited_ pulse with zero chirp. The constants are $a$ = 5 and $\omega$ = 10.
+# __________
 # 
 # **(b**) The outline pulse shape is found by ignoring the cosine term and integrating. The results is shown below. THe lower profile is found by subtracting the two exponentials, and has the effect only of changing the +4 term to -4.
 
@@ -174,7 +178,7 @@ plt.show()
 
 
 # outline pulse , ****   ignore cosine ****
-t ,a,u =symbols('t a u',positive=True)
+t, a, u = symbols('t, a, u',positive=True)
 f011= ( exp(-(t/a)**2/2)  + exp(-((t+u)/a)**2/2) )**4     # define electric fields
 s = integrate(f011,(t,-oo,oo),conds='none')
 expand(s)
@@ -196,7 +200,7 @@ expand(s)
 gk = lambda k,a, omega : 0.5*a*(np.exp(2.0*a*k*omega) +1 )*np.exp(-(a*k + omega )**2/2.0)
 a = 5
 omega = 10
-k=np.linspace(0,4,500)
+k = np.linspace(0,4,500)
 plt.plot(k,gk(k,a,omega),color='blue')
 plt.xlabel('k')
 plt.title('Fourier Transform of pulse')
@@ -229,7 +233,6 @@ Au
 
 
 df = simplify(diff(Au,u) )
-
 factor(df)
 
 
@@ -237,9 +240,9 @@ factor(df)
 
 
 # Newton-Raphson
-# derivative of A(u) is df
-# simplified function and derivative used 
-df = lambda u: -16*np.exp(2*u)*(2*u*np.exp(4*u)+8*u*np.exp(2*u)+2*u-3*np.exp(4*u) +3)/(np.exp(2*u) -1 )**4
+# derivative of A(u) is df    # simplified function and derivative used 
+
+df = lambda u: -16*np.exp(2*u)*(2*u*np.exp(4*u)+8*u*np.exp(2*u)+2*u-3*np.exp(4*u) +3)                 /(np.exp(2*u) -1 )**4
 
 # function A(u)-1/2  and find value when zero (root).
 

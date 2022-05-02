@@ -31,7 +31,12 @@
 # 
 # (a) Using the Euler method, write down and solve the rate equations and plot each species vs
 # time up to $10$ seconds using a time step of milliseconds. The initial concentrations are
-# $S(0) = 5 \cdot 10^{-3}\,\mathrm{  mol\, dm^{-3}}, E(0) = 1.5 \cdot 10^{-3} \,\mathrm{  mol\, dm^{-3}}, ES(0) = 0 \,\mathrm{  mol\, dm^{-3}}$ and the rate constants are $k_1 = 1000\,\mathrm{dm^3\, mol^{-1}\, s^{-1}}, k_{-1} = 0.05\,\mathrm{ s^{-1}}, k_2 = 1.0\,\mathrm{ s^{-1}}$.
+# 
+# $S(0) = 5 \cdot 10^{-3}\,\mathrm{  mol\, dm^{-3}}, E(0) = 1.5 \cdot 10^{-3} \,\mathrm{  mol\, dm^{-3}}, ES(0) = 0 \,\mathrm{  mol\, dm^{-3}}$ 
+# 
+# and the rate constants are 
+# 
+# $k_1 = 1000\,\mathrm{dm^3\, mol^{-1}\, s^{-1}}, k_{-1} = 0.05\,\mathrm{ s^{-1}}, k_2 = 1.0\,\mathrm{ s^{-1}}$.
 # 
 # (b) Explain the shape of the curves produced and identify where the steady state is likely to be valid.
 # 
@@ -53,3 +58,9 @@
 # from $x  = 0 \to 10$ with the initial conditions $y_0 = 5,\; dy/dx\big|_0 = 1$, and $d^2y/dx^2\big|_0 = 2$. Note that there are three initial conditions, each evaluated at $x = 0$.
 # 
 # **Strategy:** Define two new variables to represent the derivatives and so split the equation into three and solve numerically. This equation can be solved directly by SymPy, but only by producing integrals that have to be solved numerically.
+
+# In[ ]:
+
+
+
+

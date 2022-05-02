@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## Non-linear least squares, gradient expansion, the Levenberg - Marquardt Method
+# ## Non-linear least squares. Least absolute deviation. Principal component analysis
 
 # In[1]:
 
@@ -18,6 +18,8 @@ init_printing()                      # allows printing of SymPy results in types
 plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 
+# ### Non-linear  least squares
+# 
 # In the least squares method, the derivative of the $\chi^2$ is taken with respect to each parameter $\alpha_i$ and minimized. The normal equations of linear least squares analysis (equations 28,44), have terms only in $a_ix$ or $a_ix^2$ etc., and can be solved exactly. In non-linear least squares, the normal equations cannot be solved exactly. The function 
 # 
 # $$Y = \alpha_1e^{-\alpha_2x} + \alpha_3e^{-\alpha_4x} + \alpha_5$$
@@ -223,7 +225,7 @@ print('{:s} {:6.3f} {:s} {:6.3f}'.format('probability of getting chi-sqrd > ',ch
 # Figure 15. Outliers produce a least squares fit that does not reflect the trend exhibited by most of the data points. The line passing mainly through the data is the least absolute deviation LAD line.
 # ______
 # 
-# ## 9 Principal component analysis (PCA)
+# ### 9 Principal component analysis (PCA)
 # 
 # In the life sciences, the experimental techniques of chemical physics, for instance, NMR, FTIR, mass spectrometry, and various chromatographic methods are widely used and they produce large quantities of data. The data may consist of hundreds of data sets each containing data from thousands of proteins and metabolites and from which the presence of a few target molecules may be sought. For example, NMR spectra taken on blood plasma will contain signals from thousands of compounds. If samples are taken from a group of patients with a particular disease and a similar group without the disease, the two sets of NMRs can be compared in an attempt to identify markers that may be used to target the disease, either in an attempt either to cure it, or act as an assay to identify its early stages. However, these spectra will be different due to normal variability, will be highly congested and contain numerous overlapping signals from proteins, lipids, sugars, and DNA not involved in the disease. The task is to find the species that are either present or are missing in the diseased group. The problem is that there is an abundance of data but no results.
 # 

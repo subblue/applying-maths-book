@@ -14,7 +14,9 @@
 # 
 # (b) 
 # 
-# $$\displaystyle(i)\; |s\rangle\langle s|, \quad (ii)\; |s\rangle \langle p_x| ,\quad (iii)\; |s\rangle \langle s|\varphi\rangle, \quad (iv)\; |s\rangle \langle p_x| \varphi\rangle, \\ (v)\; \langle\varphi|\psi\rangle, \quad(vi)\; \langle p_y| \psi\rangle,\quad (vii)v |\varphi\rangle \langle\psi |, \quad (viii)\; |s\rangle \langle p_x| \varphi\rangle$$
+# $$\displaystyle \begin{array}\\
+# (i)\;|s\rangle\langle s|, & (ii)\; |s\rangle \langle p_x|,& (iii)\; |s\rangle \langle s|\varphi\rangle, &(iv)\; |s\rangle \langle p_x| \varphi\rangle, \\ (v)\; \langle\varphi|\psi\rangle, &(vi)\; \langle p_y| \psi\rangle, & (vii)\; |\varphi\rangle \langle\psi |, & (viii)\; |s\rangle \langle p_x| \varphi\rangle
+# \end{array}$$
 # 
 # **Strategy:** Check that the matrices are commensurate for each calculation, the column of the left matrix (or vector) must have the same number or rows as the right matrix (or vector), and if so multiply them out. The next important point is to note that in vector form the standard basis sets are orthogonal and normalized, which means they are
 # 
@@ -64,9 +66,11 @@
 # 
 # (d) Calculate the $\pmb{L}^+$ operator for spins, $0, 1, 2, 3$ and then for half unit spins $1/2, 3/2, 5/2$ in the $L,m$ basis set.
 # 
-# **Strategy:** (b) The basis set must contain all m values therefore the set could be $(3/2, -3/2),
-# (3/2, -1/2), (3/2, 1/2), (3/2, 3/2)$ if $L = 3/2$. Define vectors so that they are orthonormal.
-# (c) The raising and lowering operators form a block diagonal matrix. Individual blocks of which can be calculated as in (a) or a more extensive basis set formed and the whole matrix calculated. It may be useful to define a python/Sympy  function to work out terms in the operator according to the $\pmb{L}^+, \pmb{L}^-$ equations.
+# **Strategy:** (b) The basis set must contain all $m$ values therefore the set could be 
+# 
+# $$(3/2, -3/2),\quad (3/2, -1/2),\quad (3/2, 1/2),\quad (3/2, 3/2)$$
+# 
+# if $L = 3/2$. Define vectors so that they are orthonormal. (c) The raising and lowering operators form a block diagonal matrix. Individual blocks of which can be calculated as in (a) or a more extensive basis set formed and the whole matrix calculated. It may be useful to define a python/Sympy  function to work out terms in the operator according to the $\pmb{L}^+, \pmb{L}^-$ equations.
 # 
 # 
 # ### Q12

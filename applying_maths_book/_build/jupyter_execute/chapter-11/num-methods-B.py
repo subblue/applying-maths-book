@@ -95,11 +95,11 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 
 # Algorithm 9: Euler's method
 #--------------------------------
-def Eulerf(f,t0,y0,maxt,N):            # Euler method, function f 
+def Eulerf(f, t0, y0, maxt, N):            # Euler method, function f 
     
-    Eulery= np.zeros(N,dtype=float)    # define arrays to hold results
-    dtime = np.zeros(N,dtype=float)
-    h = (maxt-t0)/N
+    Eulery = np.zeros(N,dtype=float)    # define arrays to hold results
+    dtime  = np.zeros(N,dtype=float)
+    h = (maxt - t0)/N
     #print('step size',h)
     
     y = y0
@@ -140,7 +140,7 @@ soln0,time0 = Eulerf(dydt,t0,y0,maxt,N)  # return results as arrays
 # 
 # Many of the examples used are not particularly sensitive to the integration method; however, some equations are generally exquisitely sensitive, while others are only so for some sets of initial conditions and not for others. It is not obvious beforehand whether this is going to be the case or not and because of this more sophisticated integration schemes are necessary. The two described here are an improvement on the Euler algorithm and the Runge -Kutta method.
 # 
-# #### Modified Euler or Heun's method
+# #### **Modified Euler or Heun's method**
 # 
 # The Euler method is rather crude but is easy to implement and is easily improved. Consider again equation 19. The updated $y$ value was calculated using 
 # 
@@ -171,10 +171,10 @@ soln0,time0 = Eulerf(dydt,t0,y0,maxt,N)  # return results as arrays
 
 # Algorithm 10: Modified Euler or Heun's method
 #--------------------------
-def Mod_Eulerf(f,t0,y0,maxt,N):            # Euler method, function f 
+def Mod_Eulerf(f, t0, y0, maxt, N):            # Euler method, function f 
     
-    Eulery= np.zeros(N,dtype=float)    # define arrays to hold results
-    dtime = np.zeros(N,dtype=float)
+    Eulery = np.zeros(N,dtype=float)    # define arrays to hold results
+    dtime  = np.zeros(N,dtype=float)
     h = (maxt-t0)/N
     #print('step size',h) 
     y = y0
@@ -183,8 +183,8 @@ def Mod_Eulerf(f,t0,y0,maxt,N):            # Euler method, function f
     dtime[0] = t0
     for  i in range(1,N):              # loop starts
         k1 = f(t,y)                    # Changes start here
-        k2 = f(t+h,y+h*k1)
-        y = y + h*(k1+k2)/2            # increment y
+        k2 = f(t + h, y + h*k1)
+        y = y + h*(k1 + k2)/2          # increment y
         t = t + h
         Eulery[i] = y
         dtime[i] = t
@@ -192,15 +192,15 @@ def Mod_Eulerf(f,t0,y0,maxt,N):            # Euler method, function f
     return Eulery,dtime
 #--------------------------    
 
-dydt = lambda t,y : -2*np.exp(3-t)-3*y  # equation to integrate 
-t0  = 2.0                               # initial values
+dydt = lambda t,y : -2*np.exp(3 - t) - 3*y              # equation to integrate 
+t0  = 2.0                              # initial values
 y0  = 1.0
 maxt= 7.0
-N   = 50                                # number of points
-soln0,time0 = Mod_Eulerf(dydt,t0,y0,maxt,N)  # return results
+N   = 50                               # number of points
+soln0,time0 = Mod_Eulerf(dydt, t0, y0, maxt, N)         # return results
 
 
-# #### Runge - Kutta method
+# #### **Runge - Kutta method**
 # 
 # There are other more sophisticated methods than the modified Euler of which the Runge-Kutta method is often the method of choice. The Runge-Kutta method uses the average of the gradient at the mid- and end-points of an interval to calculate the next $y$ value. This is an example of a *predictor - corrector* method, which as the name suggests, predicts the next value then makes a weighted correction to this (Prest et al. 1986). In this method, *four* quantities are required for each equation being solved. The equation being solved is as before $dy/dt = f(t, y)$ and $h$ is the increment in $t$.
 # 
@@ -219,11 +219,11 @@ soln0,time0 = Mod_Eulerf(dydt,t0,y0,maxt,N)  # return results
 
 # Algorithm 11: Runge - Kutta 
 #---------------------------------
-def Runge_Kutta(f,t0,y0,maxt,N):            # Euler method, function f 
+def Runge_Kutta(f, t0, y0, maxt, N):            # Euler method, function f 
     
-    Eulery= np.zeros(N,dtype=float)    # define arrays to hold results
-    dtime = np.zeros(N,dtype=float)
-    h = (maxt-t0)/N
+    Eulery = np.zeros(N,dtype=float)    # define arrays to hold results
+    dtime  = np.zeros(N,dtype=float)
+    h = (maxt - t0)/N
     #print('step size',h)
     
     y = y0
@@ -232,10 +232,10 @@ def Runge_Kutta(f,t0,y0,maxt,N):            # Euler method, function f
     dtime[0] = t0
     for  i in range(1,N):              # loop starts
         k1 = f(t,y)
-        k2 = f(t+h,y+h*k1/2)
-        k3 = f(t+h,y+h*k2/2)
-        k4 = f(t+h,y+h*k3/2)
-        y = y + h*(k1+2*k2+2*k3+k4)/6
+        k2 = f(t + h, y + h*k1/2)
+        k3 = f(t + h, y + h*k2/2)
+        k4 = f(t + h, y + h*k3/2)
+        y = y + h*(k1 + 2*k2 + 2*k3 + k4)/6
         t = t + h
         Eulery[i] = y
         dtime[i] = t
@@ -243,7 +243,7 @@ def Runge_Kutta(f,t0,y0,maxt,N):            # Euler method, function f
     return Eulery,dtime
 #-----------------------------------    
 
-dydt = lambda t,y : -2*np.exp(3-t)-3*y  # equation to integrate 
+dydt = lambda t,y : -2*np.exp(3 - t) - 3*y  # equation to integrate 
 t0  = 2.0                               # initial values
 y0  = 1.0
 maxt= 7.0
@@ -297,9 +297,9 @@ soln0,time0 = Runge_Kutta(dydt,t0,y0,maxt,N)  # return results
 # 
 # **(1)**$\quad$ Define potential energy or force & number of time steps.
 # 
-# **(2)**$\quad$ Define initial position $r(t_0)$,velocity t,and force.
+# **(2)**$\quad$ Define initial position $r(t_0)$, velocity $v$, and force.
 # 
-# Calculate second position at $t_0 - \Delta t$.
+# $\qquad$ Calculate second position at $t_0 - \Delta t$.
 # 
 # 
 # **(3)**$\quad$ Loop over time steps
@@ -351,12 +351,12 @@ soln0,time0 = Runge_Kutta(dydt,t0,y0,maxt,N)  # return results
 
 # Algorithm 12; Verlet method. Falling under gravity
 
-y0= 30.0     # initial height  metres
-v0= 0.0      # initial velocity  m/s
-t = 0.0
-dt= 0.005    # timer increment  seconds
-g = 9.8      # acceleration m/s/s
-n = 2000     # number of data points
+y0 = 30.0     # initial height  metres
+v0 = 0.0      # initial velocity  m/s
+t  = 0.0
+dt = 0.005    # timer increment  seconds
+g  = 9.8      # acceleration m/s/s
+n  = 2000     # number of data points
 
 height= np.zeros(n,dtype=float)     # define arrays to hold data
 atime = np.zeros(n,dtype=float)
@@ -425,7 +425,7 @@ for i in range(1,n):                 # Verlet loop
 # Algorithm 13; Atom atom scattering using the Verlet method
 # the plotting is commented out
 #-------------------------------
-def scattering(U,ff, x0,y0,t,dt):        # uses Verlet  algorithm
+def scattering(U, ff, x0, y0, t, dt):        # uses Verlet  algorithm
 
     atime = np.zeros(n,dtype=float)
     posx  = np.zeros(n,dtype=float)
@@ -470,10 +470,10 @@ eps = 1.0      # set initial values
 sig = 1.0
 E0  = 0.2
 n   = 2000
-x0 = -10.0
-y0 = 2.28      # impact parameter b
-t  = 0.0
-dt = 0.02      # time step
+x0  = -10.0
+y0  = 2.28      # impact parameter b
+t   = 0.0
+dt  = 0.02      # time step
 
 #fig1 = plt.figure(figsize=(9,8))
 #plt.axes().set_aspect(1)
@@ -494,7 +494,7 @@ for i,y0 in enumerate([j*0.15 for j in range(0,21)]):   # calculate range of val
 # The effect that the attractive and repulsive parts of the potential have is clear. At small impact parameter, the repulsive part of the potential acts not unlike a hard sphere and the approaching particle bounces almost straight off. As the impact parameter is increased, more of the attractive and less of the repulsive part of the potential is felt. Eventually the attractive potential only gradually draws the particle in only to force it to be violently repelled at a smaller separation. Then at an impact of about $2.27 \to 2.295$ the attraction almost exactly balances the kinetic energy and the incoming particle is trapped for a short period and performs a complete orbit or two before leaving. At still greater impact para- meter, all that the potential can now do is to bend the incoming particle from its initial course. The trajectory at $b = 1.65$ has almost zero displacement and is called a 'Glory', see also Fig. 6 which shows the scattering angle $\chi$ vs impact parameter.
 # 
 # 
-# ### 4.10a  Numerical solution of the Diffusion equation
+# ### 4.10a  Numerical solution of the Diffusion equation illustrated with transient grating decay.
 # 
 # Although the diffusion equation can be solved in many simple cases, often the geometry needed for a particular experiment is not simple and then a numerical solution is the only course of action. This is particularly the case for two and three dimensional problems. 
 # 
@@ -529,7 +529,7 @@ for i,y0 in enumerate([j*0.15 for j in range(0,21)]):   # calculate range of val
 # 
 # The condition for absolute stability depends on both the spatial and temporal steps and is $\displaystyle \frac{D\Delta t}{(\Delta x)^2} \le 1/2$ and  making $m$ bigger (more spatial grid points) is the only way to ensure absolute stability since the spatial extent is defined in the initial conditions pertaining to the problem at hand and $\Delta t$c depend on $\delta x$.
 # 
-# #### Initial Conditions
+# #### **Initial Conditions**
 # As with the solution of any differential equation  the calculation cannot be completed until the initial conditions have been specified. There are two types of these. The simplest to apply is to fix the value of $C$ at the edge of the grid to a constant value, the Dirichlet condition, the other is to make the gradient at the edge a constant value, Neumann condition. The former is more suitable for thermal calculations where the edges can be kept at a constant temperature. It would be hard to make a membrane that held the same chemical species at a higher concentration on one side than the other. 
 # 
 # The  Neumann initial condition is 
@@ -540,8 +540,11 @@ for i,y0 in enumerate([j*0.15 for j in range(0,21)]):   # calculate range of val
 # 
 # where $\alpha,\;\beta$ are constants. This condition ensures conservation of mass as no material can enter or leave and is enabled by making $C_0= C_1, C_m = C_{m-1}$ at each updating step.  The same condition when dealing with thermal diffusion corresponds to having an insulated block of material unable to exchange energy with its surroundings.
 # 
-# #### Example Calculation: Decay of Transient Grating. (See also chapter 10.10.) 
-# Some initial concentration has to be present at zero time which means defining $C \gt 0$ and the form the concentration profile will take vs position $x$.  For illustration we assume this profile is the function  $a+b\cos(kx)$. This has the form expected in a transient grating experiment, which can be used to measure the diffusion coefficient of electronically excited states.  In these type of experiments a polarised laser pulse is split into two parts and recombined in a solution containing molecules that will absorb this light. As the beams are from the same source they are 'in phase' and will interfere at the sample producing strips of excited molecules separated by strips of unexcited ones. This grating is 'transient' because molecules diffuse and also because the excited states decay away. A third probe laser is used to scatter light off the transient grating and measures how quickly this decays away. In fluid solution rotational diffusion of the molecules primarily washes out the grating, whereas if this is not possible linear diffusion will do this but on a much longer time scale. A thermal grating may also be present if absorption is into a solid substrate.  Figure 30f in chapter 10 ( differential equations section 10) shows a possible experimental set-up.
+# #### **Example Calculation: Decay of Transient Grating. (See also chapter 10.10.)** 
+# 
+# In the transsient grating experiment a laser pulse is split into two parts and recombined in a sample and so produces a grating from which a probe laser can be diffracted. The grating dies away depending on excited state lifetime and linear and rotational diffusion. See Chapter 10.10 for a digram and details.
+# 
+# an initial concentration of $C$ has to be present at zero time which means defining $C \gt 0$ and the form the concentration profile will take vs. position $x$.  For illustration we assume this profile is the function  $a+b\cos(kx)$. This has the form expected in a transient grating experiment, which can be used to measure the diffusion coefficient of electronically excited states.  In these type of experiments a polarised laser pulse is split into two parts and recombined in a solution containing molecules that will absorb this light. As the beams are from the same source they are 'in phase' and will interfere at the sample producing strips of excited molecules separated by strips of unexcited ones. This grating is 'transient' because molecules diffuse and also because the excited states decay away. A third probe laser is used to scatter light off the transient grating and measures how quickly this decays away. In fluid solution rotational diffusion of the molecules primarily washes out the grating, whereas if this is not possible linear diffusion will do this but on a much longer time scale. A thermal grating may also be present if absorption is into a solid substrate.  Figure 30f in chapter 10 ( differential equations section 10) shows a possible experimental set-up.
 # 
 # Before the calculation can start the dimensions in space and time have to be worked out. As a laser wavelength is measure in nanometres it seems sensible to use this as a unit of distance. The grating wavelength formed by the intersection of the two laser beams has wavelength $\Lambda=\lambda/2\cos(\theta/2)$. Using a $532$ nm laser and an angle of $20$ degrees between beams produces a value of $\Lambda \approx 46$ nm. The initial grating will have the form $c_{00}+\cos(2kx)$ where $x$ is in nm and $k=\pi/\Lambda$. The population $c_{00}$ is that in the sample where no grating is present but molecules are excited and we chose this to be ($c_{00}=2$). Outside the region where the grating is formed the concentration of excited molecules zero and as a result an area larger than the grating is used in the calculation. The reason for doing this is that as time progresses the excited molecules can diffuse into this unexcited area.
 # 
@@ -565,11 +568,11 @@ plt.rcParams.update({'font.size': 14})        # set font size for plots
 
 ax = [fig.add_subplot(230 + i) for i in range(1,7)]  # make axes to plot
 
-Lambda = (530e-9/2)*np.sin(20*np.pi/360)*1e9  # 530 nm light grating wavelength in nm
+Lambda = (530e-9 /2)*np.sin(20*np.pi/360)*1e9 # 530 nm light grating wavelength in nm
 w  =   20*Lambda                              # total calculation width as multiple of grating wavelength
 nsteps = 5000
 
-D  = 1e-8*1e18/1e9                             # diffusion cofff   m^2/s->1e18/1e9 nm^2/ns 
+D  = 1e-8*1e18/1e9                            # diffusion cofff   m^2/s->1e18/1e9 nm^2/ns 
 dx = 0.7                                      # step length nm
 nx = int( w/dx )                              # total number of steps
 dt = dx**2/D/2                                # time step in nanosec 
@@ -588,7 +591,7 @@ for i in range(q,nx-q):
 #--------------------
 def update_step(c0):     # Propagate with forward-difference in time, central-difference in space
     c[1:-1] = c0[1:-1] + alphax*(c0[2:] - 2*c0[1:-1] + c0[:-2])   #  -kk*dt*c0[1:-1]
-    c[0]    = c[1]                             # Neumann condition   dc/dt=const
+    c[0]    = c[1]                            # Neumann condition   dc/dt=const
     c[nx-1] = c[nx-2]
     return c
 #-------------------

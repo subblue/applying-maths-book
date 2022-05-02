@@ -566,7 +566,7 @@ simplify(S)
 
 # ### Drawing two or more plots
 # 
-# In this case it is necessary to define a figure and axes rather than using plt. as for just a single graph. Using a figure alsoa llows the plot size to be defined rather than having to use the default.
+# In this case it is necessary to define a figure and axes rather than using plt. as for just a single graph. Using a figure also allows the plot size to be defined rather than having to use the default.
 
 # In[27]:
 

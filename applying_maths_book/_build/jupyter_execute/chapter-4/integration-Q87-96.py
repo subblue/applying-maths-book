@@ -32,7 +32,7 @@
 # ### Q90 Mean value
 # Calculate the mean value of $r^2 = x^2 + y^2$ over the ellipse defined in the previous question.
 # 
-# ### Q91
+# ### Q91 Line integral
 # If $C$ is a line joining $(0, 0)$ to $(a, b)$ calculate $\displaystyle \int_C e^x\sin(y)dx+e^x\cos(y)dy$.
 # 
 # **Strategy:** Use the two function formula and convert $dy$ into $dy/dx$ where $y$ is determined by the limits on the line, in this case a straight line from the origin to $(a, b)$.
@@ -45,7 +45,11 @@
 # 
 # 
 # ### Q93 Arc length
-# Calculate the arc length for curves **(a)** $r = 1$ and **(b)** $r = e^{-\theta}$ from $0 \to 2\pi$, and **(c)** the catenary $y=\cosh(x)$ from $x=0\to x_0$ where $x_0 \gt 0$.
+# Calculate the arc length for curves 
+# 
+# (a) $r = 1$
+# 
+# (b) $r = e^{-\theta}$ from $0 \to 2\pi$, and **(c)** the catenary $y=\cosh(x)$ from $x=0\to x_0$ where $x_0 \gt 0$.
 # 
 # ### Q94 Surface area
 # The surface area of a function $f(x)$ is given by $\displaystyle A=2\pi\int_a^b f(x)\sqrt{1+f'(x)^2}dx$.
@@ -70,7 +74,13 @@
 # 
 # **Strategy:** Follow the example and make the integral into one in $dp$ and then $dT$ alone. Substitute for the partial derivatives and use the gas law to substitute variables to make an equation in $p$ or $T$ as necessary. Only then, work out the remaining derivative, $dp/dT$ or $dT/dp$ depending on the path taken.
 # 
-# ### Q96 Entropy of van-der-Waals gas
-# Calculate the entropy for an van-der-Walls gas whose equation of state is $(p+a/V^2)(V-b)=RT$ where $a,\,b$ are constants. Is the entropy different to that of an ideal gas and if so why?
+# ### Q96 Entropy of van der Waals gas
+# Calculate the entropy for an van der Walls gas whose equation of state is $(p+a/V^2)(V-b)=RT$ where $a,\,b$ are constants. Is the entropy different to that of an ideal gas and if so why?
 # 
 # **Strategy:** Calculate $(\partial V/\partial T)_p$ then use equation 89.  
+
+# In[ ]:
+
+
+
+

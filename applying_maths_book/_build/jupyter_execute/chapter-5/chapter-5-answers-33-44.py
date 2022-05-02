@@ -11,7 +11,7 @@ get_ipython().run_line_magic('matplotlib', 'inline')
 import numpy as np
 import matplotlib.pyplot as plt
 from sympy import *
-init_printing()                      # allows printing of SymPy results in typeset maths format
+init_printing()             # allows printing of SymPy results in typeset maths format
 plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 
@@ -186,8 +186,8 @@ plt.show()
 
 # Doppler shift
 
-s   = 330                      # speed of sound m/s
-mph = 60                     # vehicle speed in mph
+vs  = 330                      # speed of sound m/s
+mph = 60                       # vehicle speed in mph
 v   = mph *1609.34/3600.0      # mph in m/s
 v0  = 0.0                      # observer's speed
 x0  = 1.0                      # observer's distance  
@@ -197,13 +197,13 @@ numx = 200                   # number of data points
 x = np.linspace(-10,10,numx) # numx points evenly spaced from -10 to 10
 print('{:6.2f} {:s}{:6.2f}{:s} '.format(mph, 'mph is equivalent to ',v,' m/s' )) 
 
-f = lambda v, x : f0*(s+v0)/(s-v) if x > 0 else f0*(s+v0)/(s+v)
+f = lambda v, x : f0*(vs+v0)/(vs-v) if x > 0 else f0*(vs+v0)/(vs+v)
 
-rel_v = [ v*np.cos(np.arctan(x0/x[i])) for i in range(numx)]  # find angle to observer at x0 then apparent velocity
+rel_v = [ v*np.cos(np.arctan(x0/x[i])) for i in range(numx)]  # angle to observer at x0 then apparent velocity
 
 f01 = [ f( rel_v[i], x[i] ) for i in range(numx)]
 
-fig1= plt.figure( figsize=(5, 5) )
+fig1 = plt.figure( figsize=(5, 5) )
 plt.rcParams.update({'font.size': 16})  # set font size for plots
 plt.plot( x, f01,color='blue')
 plt.axhline(f0,color='gray',linewidth=1)
@@ -220,19 +220,19 @@ plt.show()
 # ____
 # (b) Rearranging the frequency equation into two parts,then dividing top and bottom by $s$, produces
 # 
-# $$\displaystyle  \frac{f}{f_0}=\frac{s}{s-v}+\frac{v_0}{s-v}=\left(1+\frac{v_0}{s}\right)\frac{1}{1-v/s}$$
+# $$\displaystyle  \frac{f}{f_0}=\frac{v_s}{v_s-v}+\frac{v_0}{v_s-v}=\left(1+\frac{v_0}{v_s}\right)\frac{1}{1-v/v_s}$$
 # 
-# Expanding in terms of $v/s$, as this is a small speed ($60/740$) gives
+# Expanding in terms of $v/v_s$, as this is a small speed ($60/740$) gives
 # 
-# $$\displaystyle  \frac{f}{f_0} \approx \left(1+\frac{v_0}{s}\right)\left( 1+\frac{v}{s}+ \frac{v^2}{s^2}+\cdots\right)$$
+# $$\displaystyle  \frac{f}{f_0} \approx \left(1+\frac{v_0}{v_s}\right)\left( 1+\frac{v}{v_s}+ \frac{v^2}{v_s^2}+\cdots\right)$$
 # 
-# As $v_0$, the speed of the observer is also very small compared to the speed of sound this makes $v_0/s \to 0$ and the fractional change in frequency approximately 
+# As $v_0$, the speed of the observer is also very small compared to the speed of sound this makes $v_0/v_s \to 0$ and the fractional change in frequency approximately 
 # 
-# $$\displaystyle \frac{f-f_0}{f_0} = \frac{v}{s}+ \frac{v^2}{s^2}+ \cdots $$
+# $$\displaystyle \frac{f-f_0}{f_0} = \frac{v}{v_s}+ \frac{v^2}{v_s^2}+ \cdots $$
 # 
 # The squared term can be ignored because $v\lt s$ and finally, therefore 
 # 
-# $$\displaystyle \frac{f-f_0}{f_0} \approx \frac{v}{s}$$
+# $$\displaystyle \frac{f-f_0}{f_0} \approx \frac{v}{v_s}$$
 # 
 # Using the values given in the question, the perceived frequency is $1.08f_0$ and the change is $f_0 \cdot 60/740 = 0.08 f_0$. If the siren works at $440$ Hz, A on a musical scale, the change in frequency is only $32.5$ Hz or by $1.074$ times. This ratio is a change in frequency by slightly more than a minor second which would be an increase of $2^{1/12} = 1.059$ times, but less than a major second, which would be an increase of $2^{2/12} = 1.122$ times.
 # 
@@ -279,17 +279,17 @@ deltaE= E2 - E1
 fEp = lambda V: (E2 + E1 + np.sqrt(deltaE**2 + 4*V**2))/2.0   # exact 
 fEm = lambda V: (E2 + E1 - np.sqrt(deltaE**2 + 4*V**2))/2.0
 
-numx=100
-x=np.linspace(0,3,numx)
+numx= 100
+x  = np.linspace(0,3,numx)
 
-Ep=[fEp(x[i]) for i in range(numx)]                # exact
-Em=[fEm(x[i]) for i in range(numx)]
+Ep =[fEp(x[i]) for i in range(numx)]                # exact
+Em =[fEm(x[i]) for i in range(numx)]
 
-Elimp=[ (E1+E2)/2.0+x[i] for i in range(numx)]     # limiting value x represents V
-Elimm=[ (E1+E2)/2.0-x[i] for i in range(numx)]
+Elimp = [ (E1+E2)/2.0+x[i] for i in range(numx)]     # limiting value x represents V
+Elimm = [ (E1+E2)/2.0-x[i] for i in range(numx)]
 
-Eaprxp=[E2 + x[i]**2/deltaE for i in range(numx)]  # approximation 
-Eaprxm=[E1 - x[i]**2/deltaE for i in range(numx)]
+Eaprxp= [E2 + x[i]**2/deltaE for i in range(numx)]  # approximation 
+Eaprxm= [E1 - x[i]**2/deltaE for i in range(numx)]
 
 plt.plot(x,Ep,color='black',linestyle='solid',label='exact E+')
 plt.plot(x,Em,color='black',linestyle ='solid')
@@ -373,11 +373,11 @@ print(s)
 
 # 2D Madelung constant , square lattice.
 
-f01 = lambda m,n :((-1)**(m+n))/np.sqrt(m**2 + n**2) if (m**2 + n**2) != 0 else 0.0 # m^2=n^2 to stop +-n+-m=0
- 
+f01 = lambda m,n :((-1)**(m+n))/np.sqrt(m**2 + n**2) if (m**2 + n**2) != 0 else 0.0
+                                            # m^2=n^2 to stop +-n+-m=0
 s = 200
-aterms = [[ f01(n,m) for n in range(-s,s+1)]  for m in range(-s,s+1)  ]  # s+1 to make indices go from -s ..0..s
-
+aterms = [[ f01(n,m) for n in range(-s,s+1)]  for m in range(-s,s+1)  ]  
+                                            # s+1 to make indices go from -s ..0..s
 M = sum( map( sum, aterms) ) 
 print(M)
 
@@ -391,7 +391,7 @@ for n in range(-s,s+1,1):
     for m in range(-s,s+1,1):
         temp = n**2 + m**2
         if temp != 0:
-            sm = sm +(-1)**(n+m)/np.sqrt(temp)
+            sm = sm + (-1)**(n+m)/np.sqrt(temp)
 print(sm)            
 
 

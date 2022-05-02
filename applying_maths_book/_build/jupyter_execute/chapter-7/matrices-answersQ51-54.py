@@ -130,7 +130,7 @@ print('{:s} {:8.5f}'.format('sum of population should be 1 only if kf = 0', sum(
 
 
 # 
-# ![Drawing](matrices-fig92a.png) ![Drawing](matrices-fig92b.png)
+# ![Drawing](matrices-fig92a-92b.png)
 # 
 # Figure 92. log of time profile of populations on molecules 1 and 7 in the FMO antenna when molecule 7 is initially excited. Left: Notice how little time is needed for the energy to equilibrate. Right: When a quenching rate of $10^{12}\,\mathrm{ s^{-1}}$ is added to molecule 1 the population decays to zero even from molecule 7, but notice the change of time scale. The population is 1 at $t = 0$ although this may not be clear on the figure.
 # __________
@@ -146,8 +146,8 @@ print('{:s} {:8.5f}'.format('sum of population should be 1 only if kf = 0', sum(
 # In[5]:
 
 
-a,b = symbols('a,b')
-M = Matrix([[-2*a,a],[a,-2*a]])
+a, b = symbols('a, b')
+M = Matrix( [ [-2*a,a], [a,-2*a] ] )
 X, Lambda = M.diagonalize()
 X, Lambda
 
@@ -157,7 +157,7 @@ X, Lambda
 # In[6]:
 
 
-Mtob = X*Lambda**b *X.inv()
+Mtob = X*Lambda**b * X.inv()  # with sympy * is matrix multiply (unlike python/numpy)
 simplify(Mtob) 
 
 
@@ -214,7 +214,7 @@ Mtob.det()
 # In[8]:
 
 
-n, BB0, BA0, AA0 = symbols('n, BB0, BA0, AA0',integer=True)
+n, BB0, BA0, AA0 = symbols('n, BB0, BA0, AA0', integer = True)
 M = Matrix([[1,1/2,0],[0,1/2,1],[0,0,0]])
 M
 
@@ -237,7 +237,7 @@ Lambda
 # In[11]:
 
 
-Lambda = Matrix([[0,0,0],[0,(1/2)**n,0],[0,0,1]]  )  # Lambda^n
+Lambda = Matrix( [ [0,0,0], [0,(1/2)**n,0], [0,0,1] ]  )  # Lambda^n
 Mn = X*Lambda*X.inv()*B0
 Mn
 

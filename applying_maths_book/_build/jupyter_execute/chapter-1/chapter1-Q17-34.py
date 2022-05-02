@@ -106,7 +106,8 @@
 # ### Q32 Fraction of boy *vs*. girl babies
 # When a whole population is considered, boys and girls are born with equal frequency. 
 # 
-# (a) What fraction of families with six children is expected to have four girls?<br>
+# (a) What fraction of families with six children is expected to have four girls?
+# 
 # (b) How is this fraction changed if the birth ratio is $3:2$ in favour of girls?
 # 
 # ### Q33 Binomial coefficients

@@ -24,7 +24,11 @@
 # **Strategy:** In this example, the variables are $a$ and $b$, not $x$ and $y$: change them to $x$ and $y$ if you find this easier.
 # 
 # ### Q89 Photon's shortest path
-# Photons always take a path through a series of optical elements, of any description whatsoever, that minimizes the total time taken. Prove Snell's law $n_a \sin(\theta_a) = n_b \sin(\theta_b)$, by calculating the minimum time a photon takes to get from A to B when it crosses a boundary from one medium to another with refractive indices $n_a$ and $n_b$ and $n_b \lt n_a$, as shown in Fig. 32. The speed of light in a medium is $c/n$ where $n$ is the medium's refractive index. Use python/SymPy to do the calculation if you wish.
+# Photons always take a path through a series of optical elements, of any description whatsoever, that minimizes the total time taken. Prove Snell's law 
+# 
+# $$\displaystyle n_a \sin(\theta_a) = n_b \sin(\theta_b)$$
+# 
+# by calculating the minimum time a photon takes to get from A to B when it crosses a boundary from one medium to another with refractive indices $n_a$ and $n_b$ and $n_b \lt n_a$, as shown in Fig. 32. The speed of light in a medium is $c/n$ where $n$ is the medium's refractive index. Use python/SymPy to do the calculation if you wish.
 # 
 # ![Drawing](differen-fig32.png)
 # 
@@ -39,8 +43,15 @@
 # 
 # **Strategy:** A thought experiment suggests that the most likely entropy is when each component is present with a mole fraction of 1/$n$<sup>th</sup> of the total if there are $n$ species present in the mixture, since this is the most varied way the solution can be divided up into its components.
 # 
-# If there are two components, with mole fraction $x_1$ and $x_2$ and therefore $x_2 = 1 - x_1$, the entropy is $S = -k_B[x_1 \ln(x_1) + (1 - x_1)\ln(1 - x_1)]$. The minimum is found by differentiating, which produces
-# $\displaystyle \frac{dS}{dx_i} = -k_B[\ln(x_1) - \ln(1 - x_1)] = 0$, which has the solution $x_1$ = 1/2 if the sum of the mole fractions add to unity which, by definition, they must. If there were $n$ species this approach would become impossible, or at least very tedious, and therefore the Lagrange method is preferable.
+# If there are two components, with mole fraction $x_1$ and $x_2$ and therefore $x_2 = 1 - x_1$, the entropy is 
+# 
+# $$\displaystyle S = -k_B\big(x_1 \ln(x_1) + (1 - x_1)\ln(1 - x_1)\big)$$
+# 
+# The minimum is found by differentiating, which produces
+# 
+# $$\displaystyle \frac{dS}{dx_i} = -k_B\big(\ln(x_1) - \ln(1 - x_1)\big) = 0$$
+# 
+# which has the solution $x_1$ = 1/2 if the sum of the mole fractions add to unity which, by definition, they must. If there were $n$ species this approach would become impossible, or at least very tedious, and therefore the Lagrange method is preferable.
 # 
 # ### Q91 Maximum entropy distribution
 # In the gas phase reaction $\mathrm{ F + H_2 \to HF_v + H}$, the product HF is produced in a range of vibrational quantum states, only $v$ = 0, 1, 2, 3 being energetically possible under the experimental conditions used. The fraction of HF molecules found in vibrational energy level $v$ is $x_v$ but these are subject to a

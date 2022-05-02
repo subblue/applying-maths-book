@@ -28,7 +28,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # where $\pmb A$ is an $n \times n$ square matrix, $\pmb x$ is one of $n$, one-dimensional column matrices (column vectors) and each one is called an eigenvector, $\lambda$  represents one of $n$ numbers, and each $\lambda$ is called an eigenvalue.
 # 
-# #### Addition and subtraction
+# #### **Addition and subtraction**
 # 
 # To add or subtract two matrices they must have the same shape. To add or subtract a constant or another matrix their individual elements are added or subtracted. Similarly, to multiply or divide by a constant number (a scalar), each element is also multiplied or divided by this value. Multiplying two matrices together is more complicated and depends on the order with which this is done and the shapes of the two matrices; sometimes it is just not possible.
 # 
@@ -44,10 +44,10 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # and similarly for the other calculations.
 # 
-# #### Division
+# #### **Division**
 # One matrix _cannot_ be divided by another; the inverse matrix of the divisor is formed instead and then these matrices are multiplied together. The inverse of a matrix $\pmb M$ is always written as $\pmb{M}^{-1}$. Generating the inverse of a matrix is difficult unless the matrix is small, and one would normally use Python/Sympy to do this.
 # 
-# #### Multiplication
+# #### **Multiplication**
 # Matrices can be multiplied together. The multiplication order is always important; $\pmb{AB}$ is not necessarily the same as $\pmb{BA}$. With three or more matrices $\pmb{ABC}$, the multiplication sequence does not matter as long as the ordering is the same. This is the associatite property
 # 
 # $$\displaystyle \pmb{ABC}\equiv \pmb{A}(\pmb{BC})\equiv (\pmb{AB})\pmb{C}$$
@@ -209,7 +209,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # where $n$ is the length of the determinant's row or column.
 
-# ## 5 Matrix multiplication
+# ### 5 Matrix multiplication
 # 
 # The _shape_ of the matrices and their multiplication _order_ must both be respected. If multiplication is possible, and it not always is, then, in general, multiplication $\pmb{AB}$ does not give the same result as $\pmb{BA}$. The matrices
 # 
@@ -227,9 +227,9 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # Multiplying two $2 \times 2$ matrices produces
 # 
-# $$\displaystyle \begin{bmatrix} a_{11} & a_{12} \\ a_{21} & a_{22} \end{bmatrix} \times \begin{bmatrix} b_{11} & b_{12} \\ b_{21} & b_{22} \end{bmatrix} 
-# =\begin{bmatrix}row(1)\cdot col(1) & row(1)\cdot col(2)\\ row(2)\cdot col(1)& row(2)\cdot col(2)\end{bmatrix}
-# =\begin{bmatrix} a_{11}b_{11}+a_{12}b_{21} & a_{11}b_{12}+a_{12}b_{22} \\ a_{21}b_{11}+a_{22}b_{21} & a_{21}b_{12}+a_{22}b_{22} \end{bmatrix}$$
+# $$\displaystyle \begin{align} \begin{bmatrix} a_{11} & a_{12} \\ a_{21} & a_{22} \end{bmatrix} \times \begin{bmatrix} b_{11} & b_{12} \\ b_{21} & b_{22} \end{bmatrix} 
+# &=\begin{bmatrix}row(1)\cdot col(1) & row(1)\cdot col(2)\\ row(2)\cdot col(1)& row(2)\cdot col(2)\end{bmatrix}\\
+# &=\begin{bmatrix} a_{11}b_{11}+a_{12}b_{21} & a_{11}b_{12}+a_{12}b_{22} \\ a_{21}b_{11}+a_{22}b_{21} & a_{21}b_{12}+a_{22}b_{22} \end{bmatrix}\end{align}$$
 # 
 # and it is useful to look at the pattern of elements where you can see the $\pmb{A}$ matrix in the pattern of $a$'s and columns in $\pmb{B}$ appear as rows in the sums. If the matrices are not square, multiplying a $n \times  m$ matrix by a $m \times r$ one results in a $n \times r$ matrix as shown above. The equation with which to calculate the (row - column) $ij^{th}$ element of any matrix multiplication is
 # 
@@ -311,7 +311,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # ### 5.5 Functions of matrices
 # 
-# In the study of the theory of nuclear magnetic resonance, NMR, a quantum mechanical description of nuclear spin is essential. To explore the rotation of the magnetization as used in inversion recovery, spin-echo, or a complicated two-dimensional experiment, such as COSY, requires the exponentiation of matrices (Levitt 2001). Exponentiation can only be performed by expanding the exponential and evaluating the terms in the series 329 one by one as
+# In the study of the theory of nuclear magnetic resonance, NMR, a quantum mechanical description of nuclear spin is essential. To explore the rotation of the magnetization as used in inversion recovery, spin-echo, or a complicated two-dimensional experiment, such as COSY, requires the exponentiation of matrices (Levitt 2001). Exponentiation can only be performed by expanding the exponential and evaluating the terms in the series one by one as
 # 
 # $$\displaystyle e^{\pmb{M}}=\pmb{1} + \pmb{M}+ \frac{\pmb{M}^2}{2!}+\cdots; \quad e^{-\pmb{M}}=\pmb{1} - \pmb{M}+ \frac{\pmb{M}^2}{2!}-\cdots$$
 # 
@@ -320,7 +320,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # The matrix $\pmb{1}$ is a unit diagonal matrix. Similar expressions are formed with trig and log functions according to their expansion formula and with Taylor or Maclaurin series for other functions. The familiar relationship $e^Ae^B = e^{A+B}$ is only true if the matrices $A$ and $B$ commute. In Section 13.2 and 13.3 a transformation is describe which enables the exponential of a matrix to be found.
 # 
 # 
-# ## 5.6 Block diagonal matrices
+# ### 5.6 Block diagonal matrices
 # 
 # In many instances, a matrix can be blocked into smaller ones symmetrically disposed along the diagonal. The result of this is that the problem reduces to the lesser one of solving several matrices where each is much smaller than the whole and is therefore more easily solved. Why should we bother with this if the computer can diagonalize any matrix we give it to do? The reason is that eigenvalues can more easily be identified within the basis set by doing the calculation this way. Recall that the basis set you choose to use, for example in a quantum problem, determines the ordering of elements in a matrix. Why does this matter? It matters because when the spectrum from a molecule is observed, which measures only the difference in energy levels, we would like to know what quantum numbers give rise to what spectral lines. If the matrix is a block diagonal one, then this is made somewhat easier because we know what parts of the basis set elements are involved because each block when diagonalized contains only that part of the basis set that was in it in the first place. If the whole matrix is diagonalized blind, as it were, and without thinking about the problem beforehand, this information can be lost because all the elements and hence eigenvalues can be mixed up. The elements in the basis set can be ordered in any way you want, and different basis sets can be chosen for the same problem. By trying different ordering, it is sometimes possible to discover a block diagonal form for a matrix and so aid its solution. In the study of group theory, blocking matrices proves to be a powerful way of determining the irreducible representation; see Section 6. 
 # 
@@ -359,13 +359,13 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # The is a distinction between doing numerical and symbolic calculations. Python/numpy is used for numerical work and Sympy for algebraic/symbolic calculations. The notation is slightly different depending on whether you use Sympy or numpy.
 # 
-# #### (a) Symbolic calculations using Sympy
+# #### **(a) Symbolic calculations using Sympy**
 
 # In[2]:
 
 
-M,N, a, b, c,d = symbols('M,N,a,b,c,d')    # define symbols to use        
-M = Matrix( [[a,b],[c,d]]   )              # note double sets of brackets
+M, N, a, b, c, d = symbols('M, N, a, b, c, d')    # define symbols to use        
+M = Matrix( [[a, b], [c, d]]   )              # note double sets of brackets
 M
 
 
@@ -392,7 +392,7 @@ M*N                              # matrix multiply
 # In[6]:
 
 
-N*M-M*N                         # M and N do not commute
+N*M - M*N                        # M and N do not commute
 
 
 # In[7]:
@@ -418,10 +418,10 @@ Transpose(V)*W                   # same as dot product
 # In[10]:
 
 
-V*transpose(W)                   # outer product  is a matrix see figure 7
+V*transpose(W)                   # outer product is a matrix see figure 7
 
 
-# #### (B) Using numpy for numerical calculation.  Note that the notation is different to that of Sympy. 
+# #### **(B) Using numpy for numerical calculation.  Note that the notation is different to that of Sympy** 
 
 # In[11]:
 
@@ -459,16 +459,22 @@ v.dot(v)            # dot product with itself is scalar
 # In[16]:
 
 
-v @ a               # will automatically make transpose
+np.dot(v, v)        # alternative way of doing dot product
 
 
 # In[17]:
 
 
-a @ v               # will automatically make transpose
+v @ a               # will automatically make transpose
 
 
 # In[18]:
+
+
+a @ v               # will automatically make transpose
+
+
+# In[19]:
 
 
 a @ b - b @ a       # commute ? No!

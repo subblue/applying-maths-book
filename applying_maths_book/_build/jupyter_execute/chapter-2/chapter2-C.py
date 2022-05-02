@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ##  Euler's theorem
+# ###  Euler's theorem
 # 
 # The exponential series is $\displaystyle e^x = 1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \cdots$, and similarly a series can be formed in the complex number $w$, 
 # 
@@ -59,7 +59,7 @@
 # 
 # With the definition of eqn 20, $(w_n)^n\equiv w_n^n=e^{2\pi i}=1 =w_n^0$. if we add $n$ to any of the roots for example $w_n^{j+n}$ then  $w_n^{j+n}=w_n^nw_n^j=w_n^j$ which shows that the roots are cyclic $j$ being an integer and have a period of $n$. 
 # 
-# #### Sum and product of the roots of unity
+# #### **Sum and product of the roots of unity**
 # Figure 5 shows the five roots of unity. The sum of these roots, provide there are two or more, is zero, which can be intuitively seen by looking at the image. A geometric argument is that each root can be considered as a vector based at $(0,0i)$ and their sum will be zero as each is equally spaced from its neighbour.
 # 
 # The sum is 
@@ -85,7 +85,7 @@
 # $$\displaystyle e^{2\pi i (n-1)/2}=e^{i\pi n}e^{-i\pi}$$
 # 
 # As $e^{-i\pi} = -1$ and the other term is $\pm 1$ depending on whether $n$ is odd or even therefore the product is always $ 1$ if $n$ is even and $-1$ if odd, i.e $(-1)^n$.
-
+# 
 # ### 4.2 Examples
 # 
 # Euler's formula is important in science, because it permits the description of a sinusoidally varying real quantity by means of complex exponentials as in Fourier Transforms described in Chapter 9. This change simplifies equations, because it is far easier to manipulate exponentials than trig functions. For example, the general form of a sinusoidally varying quantity, such as a plane wave, is $f (t) = a_0\cos(\omega t - \theta)$, where $a_0$ is the amplitude, $\omega$ the frequency, and $\theta$ the phase. These are all constants, and $t$ is time and is a real variable. The equivalent complex function is

@@ -16,30 +16,31 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 
 # ### Q74 answer
-# The equation is $x^5-5=0$ and the derivative is $f^'(x)= 5x^4$. Using the algorithm below starting at $x = 2$ produces $1.3797$ which is accurate to four decimal places. The other four roots, making five in all, are complex (see Chapter 2).
+# The equation is $x^5-5=0$ and the derivative is $f'(x)= 5x^4$. Using the algorithm below starting at $x = 2$ produces $1.3797$ which is accurate to four decimal places. The other four roots, making five in all, are complex (see Chapter 2).
 # 
 # **Exercise:** Write a general procedure to find any real $n^{th}$ real root of a number $m$ e.g. $\sqrt[n]{m}$.
 
 # In[2]:
 
 
-# for nth root of m let x^n-m=0, 
-#If n and m are large, many iterations are needed
+# for nth root of m let x^n - m = 0, 
+# If n and m are large, many iterations are needed
 n = 5
 m = 5
-f  = lambda x: x**n-m
-df = lambda x: n*x**(n-1)
-x = 1.0
-for i in range(100):         # assume 100 iterations is plenty
+f  = lambda x: x**n - m
+df = lambda x: n*x**(n-1)    # derivative
+x = 2.0                      # initial guess
+for i in range(20):          # Newton-Raphson, assume 20 iterations is plenty
     xn = x - f(x)/df(x)
-    if abs(xn - x) < 1e-5:  # set precision
+    if abs(xn - x) < 1e-6:   # set precision
+        print('root found',x)
         break
     x = xn
-    print(i,x)
+    print('iteration',i,x)
 
 
 # ### Q75 answer
-# The function is $f(x) = 3 - 8x^2 + x^4$ and the derivative $f^'(x) = -16x + 4x^3$. The Newton - Raphson algorithm produces one root, starting at $x =3$, of $2.7578$ and one of $0.6280$ starting at $x =1$. The roots are therefore $\pm 2.7578$ and $\pm 0.6280$ which are confirmed by plotting the graph, Fig. 23. SymPy produces the following exact results as integer constants are used. If real numbers were used, e.g. $3.0$ or $8.0$ the answers would be evaluated as floating point numbers.
+# The function is $f(x) = 3 - 8x^2 + x^4$ and the derivative $f'(x) = -16x + 4x^3$. The Newton - Raphson algorithm produces one root, starting at $x =3$, of $2.7578$ and one of $0.6280$ starting at $x =1$. The roots are therefore $\pm 2.7578$ and $\pm 0.6280$ which are confirmed by plotting the graph, Fig. 23. SymPy produces the following exact results as integer constants are used. If real numbers were used, e.g. $3.0$ or $8.0$ the answers would be evaluated as floating point numbers.
 
 # In[3]:
 
@@ -67,10 +68,16 @@ ans[0].evalf()  # get number as floating point
 # 
 # This result means that if you can measure the frequency or the wavelength of maximum intensity, the temperature can be estimated, but this would not be as accurate a result as fitting to the whole distribution curve. Pyrometers work on this principle.
 # 
-# Notice that by starting at $x = 2$, the calculation will fail because the derivative $f^'(2) = 0$; starting at a value lower than $x = 2$ produces a result that is effectively zero because the root $f (0) = 0$ is found; therefore some care is needed when looking for roots.
+# Notice that by starting at $x = 2$, the calculation will fail because the derivative $f'(2) = 0$; starting at a value lower than $x = 2$ produces a result that is effectively zero because the root $f (0) = 0$ is found; therefore some care is needed when looking for roots.
 # 
 # ### Q77 answer
-# The equation, after substitution $\displaystyle x=\frac{hc}{\lambda_{max}k_BT}$ and rearranging, is $x=5(1-e^{-x})$ or $f(x)= x-5(1-e^{-x})$ with the derivative $f'(x)=1-5e^{-x}$. Starting at $x = 4$ the result is $x = 4.96511$ making $\displaystyle \lambda_{max}T=\frac{hc}{4.96511k_B}$ which is the same result as given in Q65 but now calculated accurately.
+# The equation, after substitution $\displaystyle x=\frac{hc}{\lambda_{max}k_BT}$ and rearranging, is $x=5(1-e^{-x})$ or 
+# 
+# $$f(x)= x-5(1-e^{-x})$$
+# 
+# with the derivative $f'(x)=1-5e^{-x}$. 
+# 
+# Starting at $x = 4$ and using Newton-Raphson the result is $x = 4.96511$ making $\displaystyle \lambda_{max}T=\frac{hc}{4.96511k_B}$ which is the same result as given in Q65 but now calculated accurately.
 # 
 # ### Q78 answer
 # (a) By differentiating $f$ and substituting into the compliance, gives 
@@ -90,32 +97,32 @@ ans[0].evalf()  # get number as floating point
 # ### Q79 answer
 # The equation for material balance on species $A$ is
 # 
-# $$\displaystyle \mathrm{C_A +C_B = HA + A^- } \tag{i}$$
+# $$\displaystyle \mathrm{c_A +c_B = HA + A^- } \tag{i}$$
 # 
 # and balancing charges is
 # 
-# $$\displaystyle \mathrm{C_B + H_3O^+ = OH^- + A^-} \tag{ii}$$
+# $$\displaystyle \mathrm{c_B + H_3O^+ = OH^- + A^-} \tag{ii}$$
 # 
-# where $C_B$ is also the concentration of Na$^+$ ions. The concentrations $C_A\; C_B$ are the initial or total amounts present, the other values are those at equilibrium.  Isolating $\mathrm{HA, \; H_3O^+, \; OH^-}$ and letting $x = \mathrm{[H_3O^+]}$ then substituting into the equilibrium equation for $K_A$ gives
+# where $c_B$ is also the concentration of Na$^+$ ions. The concentrations $c_A\; c_B$ are the initial or total amounts present, the other values are those at equilibrium.  Isolating $\mathrm{HA, \; H_3O^+, \; OH^-}$ and letting $x = \mathrm{[H_3O^+]}$ then substituting into the equilibrium equation for $K_A$ gives
 # 
-# $$\displaystyle K_A=x\left( \frac{C_B + x - K_w/x }{C_A - x + K_w/x  }\right)$$ 
+# $$\displaystyle K_A=x\left( \frac{c_B + x - K_w/x }{c_A - x + K_w/x  }\right)$$ 
 # 
 # which can be rearranged to give the equation in the question.
 # 
 # (b) Using the values in the question, the equation to solve for $x$ using the Newton - Raphson method is the cubic
 # 
-#  $$\displaystyle x - \frac{K_A( C_A - x + K_w/x )}{(C_B +  x - K_w/x)} =0$$
+#  $$\displaystyle x - \frac{K_A( c_A - x + K_w/x )}{(c_B +  x - K_w/x)} =0$$
 #  
-# and as we have no idea what the answer might be we solve numerically and the result is $\mathrm{pH}=4.7$. However, the acid and base concentrations are far larger than  that of $\mathrm{[H_3O^+]\; [OH^-]}$ and so some approximations can be made.
+# and as we have no idea what the answer might be we solve numerically and the result is $\mathrm{pH} = 4.7$. However, the acid and base concentrations are far larger than  that of $\mathrm{[H_3O^+]\; [OH^-]}$ and so some approximations can be made.
 # 
-# This produces $\displaystyle K_A=x\left( \frac{C_B + x - K_w/x }{C_A - x + K_w/x  }\right) \to x\frac{C_A}{C_B}$.
+# This produces $\displaystyle K_A=x\left( \frac{c_B + x - K_w/x }{c_A - x + K_w/x  }\right) \to x\frac{c_A}{c_B}$.
 # 
-# Rearranging leads to the Henderson-Hasselbalch equation; $\mathrm{pH}=\mathrm{p}K_A - \log_{10}(C_A/C_B)  $, which produces the same pH within $1$%.
+# Rearranging leads to the Henderson-Hasselbalch equation; $\mathrm{pH}=\mathrm{p}K_A - \log_{10}(c_A/c_B)  $, which produces the same pH within $1$%.
 # 
 # ### Q80 answer
-# The solution is $0.1$ M ammonia solution with $K_A= 10^{-9.25}$.  Had the base constant been given instead we could convert as $K_w=K_AK_B$ but we can start with  the full equation given in the previous question. THis can be solved using the Newton-Raphson method but this is not needed in this case.
+# The solution is $0.1$ M ammonia solution with $K_A= 10^{-9.25}$.  Had the base constant been given instead we could convert as $K_w=K_AK_B$ but we can start with  the full equation given in the previous question. This can be solved using the Newton-Raphson method but is not needed in this case.
 # 
-# As ammonia is a base we may suppose $c_a \approx 0$ then from equation 2, 
+# As ammonia is a base we may suppose $c_a \approx 0$ then from equations in the previous question, 
 # 
 # $$\displaystyle K_A= \mathrm{[H^+]} \frac{(c_b + \mathrm{[H^+]} - \mathrm{[OH^-])} }{(- \mathrm{[H^+]} + \mathrm{[OH^-]} )}  $$ 
 # 
@@ -123,13 +130,13 @@ ans[0].evalf()  # get number as floating point
 # 
 # $$\displaystyle K_A= \mathrm{[H^+]} \frac{(c_b - \mathrm{[OH^-])} }{ \mathrm{[OH^-]} }  $$
 # 
-# substituting for $K_B$ and $\mathrm{[H^+]}$ and letting $y=\mathrm{[OH^-]}$ gives $ y^2+K_By-c_bK_B=0$ which has a solution $y = 1.8\cdot 10^{-3}$ and so pH = $11.25$.
+# substituting for $K_B$ and $\mathrm{[H^+]}$ and letting $y=\mathrm{[OH^-]}$ gives $ y^2+K_By-c_bK_B=0$ which has a solution $y = 1.8\cdot 10^{-3}$ and so $p\text{H} = 11.25$.
 # 
 # As the concentration of base is often far greater than the $\mathrm{[OH^-]}$ then we can further approximate to 
 # 
 # $$\displaystyle K_A= \mathrm{[H^+]} \frac{c_b  }{ \mathrm{[OH^-]} }  $$
 # 
-# rearranging produces $\mathrm{[OH^-]} \approx \sqrt{K_bc_b}$. The pH = $11.25$, essentially the same as the accurate calculation.
+# rearranging produces $\mathrm{[OH^-]} \approx \sqrt{K_bc_b}$. The $p\text{H} = 11.25$, essentially the same as the accurate calculation.
 # 
 # ### Q81 answer
 # The potential well has a depth of $V_0hc$, which is $2.44 \cdot 10^{-20}$ J. The constants conveniently make $\alpha = 1.00$ in part (a) and $12.0$ in part (b). 
@@ -222,8 +229,8 @@ diff(r*acosh(1/r),r)
 
 
 x, r = symbols('x r')
-f = r*cosh(x/r)**2               # acosh is cosh^{-1}
-ans=integrate(4*pi*f, (x,0,x) )  # integrate x from 0 to x
+f   = r*cosh(x/r)**2               # acosh is cosh^{-1}
+ans = integrate(4*pi*f, (x,0,x) )  # integrate x from 0 to x
 simplify(ans)
 
 
@@ -275,8 +282,8 @@ print('{:s}{:6.3f}{:s}{:6.3f}'.format('r =  ',r,' area = ', area(r,x0) ) )
 # In[9]:
 
 
-f = lambda x: x**m - c   # function
-m = 91/30                    # constants
+f = lambda x: x**m - c          # function
+m = 91/30                       # constants
 c = 11/9971
 x = 1  # initial guess
 
@@ -297,9 +304,9 @@ print('{:s} {:10.7f}'.format('x = ', x))
 
 # Halley's method for orbits
 
-def Halley(x,f,df,ddf):                    # Halley's method
+def Halley(x,f,df,ddf):                     # Halley's method
 
-    for i in range(100):                   # assume 100 iterations is plenty
+    for i in range(100):                    # assume 100 iterations is plenty
         xn = x - 2.0 *df(x)*f(x)/(2.0*df(x)**2 - ddf(x)*f(x))
         if abs(xn - x) < 1e-10:             # set precision
             break

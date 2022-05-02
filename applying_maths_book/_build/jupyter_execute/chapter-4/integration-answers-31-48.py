@@ -32,7 +32,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # In[2]:
 
 
-theta, a = symbols('theta,a',positive = True)
+theta, a = symbols('theta, a',positive = True)
 eq = ((a*sin(theta)*cos(theta))**2)/2
 integrate(eq,(theta,0,pi/2))
 
@@ -49,7 +49,7 @@ integrate(eq,(theta,0,pi/2))
 # In[3]:
 
 
-theta, a, n  = symbols('theta,a,n', positive = True)
+theta, a, n  = symbols('theta, a, n', positive = True)
 eq = (a*(n*cos(theta) + cos(n*theta)))**2/2
 simplify(integrate(eq,(theta,-pi/2,pi/2)))
 
@@ -73,13 +73,13 @@ simplify(integrate(eq,(theta,-pi/2,pi/2)))
 # 
 # $$\displaystyle \frac{a^2}{2}\int_{-2\pi/3}^{2\pi/3} (2\cos(\theta)+1)^2 d\theta= \frac{a^2( -3\sqrt{3}+2\pi)}{2}$$
 # 
-# making the area excluding the loop $a$2(3\sqrt{3} + \pi)$. The inner loop calculation using Sympy is 
+# making the area excluding the loop $a^2(3\sqrt{3} + \pi)$. The inner loop calculation using Sympy is 
 
 # In[4]:
 
 
-theta, a, n  = symbols('theta,a,n', positive = True)
-eq = a**2*(2*cos(theta) +1)**2/2
+theta, a, n  = symbols('theta, a, n', positive = True)
+eq = a**2*(2*cos(theta) + 1)**2/2
 simplify(integrate(eq,(theta,2*pi/3,4*pi/3)))
 
 
@@ -89,7 +89,7 @@ simplify(integrate(eq,(theta,2*pi/3,4*pi/3)))
 # In[5]:
 
 
-theta, a  = symbols('theta,a', positive = True)
+theta, a  = symbols('theta, a', positive = True)
 n = 5
 eq = n*a**2*(cos(n*theta) )**2/2
 simplify(integrate(eq,(theta,-pi/(2*n),pi/(2*n))))
@@ -125,7 +125,7 @@ simplify(integrate(eq,(theta,-pi/(2*n),pi/(2*n))))
 # 
 # By plotting only between limits, it is found that the negative areas on the right-hand plot correspond to the smaller loop in the polar plot. Note that some graphics packages may put the smaller loop inside the larger one.
 # 
-# ![Drawing](integration-fig46a.png) ![Drawing](integration-fig46b.png)
+# ![Drawing](integration-fig46a-46b.png) 
 # 
 # Figure 46. Polar coordinate plot. The zeros are also shown on the right hand plot. Right: Normal or Cartesian plot.
 # ____
@@ -176,7 +176,7 @@ simplify(integrate(eq,(theta,-pi/(2*n),pi/(2*n))))
 # In[6]:
 
 
-x, x0,alpha  = symbols('x,x0,alpha', positive = True)
+x, x0, alpha  = symbols('x, x0, alpha', positive = True)
 eq = x**2*exp(-alpha*x**2)
 simplify(integrate(eq,(x,x0,oo))) 
 
@@ -193,7 +193,7 @@ simplify(integrate(eq,(x,x0,oo)))
 # In[7]:
 
 
-x,alpha,n  = symbols('x,alpha,n', positive = True)
+x, alpha, n  = symbols('x, alpha, n', positive = True)
 eq = x**n*exp(-alpha*x**2)
 simplify(integrate(eq,(x,-oo,oo))  )
 
@@ -244,7 +244,7 @@ simplify(integrate(eq,(x,-oo,oo))  )
 # In[8]:
 
 
-x,alpha,n  = symbols('x,alpha,n', positive = True)
+x, alpha, n  = symbols('x, alpha, n', positive = True)
 eq = exp(-alpha*x**2)
 simplify(integrate(eq,x ))
 
@@ -423,8 +423,8 @@ simplify(integrate(eq,x ))
 # In[9]:
 
 
-u,u0,alpha=symbols('u,u0,alpha',positive =True)
-Pu= 4*pi*(alpha/pi)**(3/2)*u**2*exp(-alpha*u**2)
+u, u0, alpha = symbols('u, u0, alpha',positive =True)
+Pu= 4*pi*(alpha/pi)**(3/2)*u**2 *exp(-alpha*u**2)
 integrate(Pu,(u,0,oo)) 
 
 
@@ -451,7 +451,8 @@ simplify(integrate(Pu,(u,u0,oo))  )
 # 100& 0.024\\
 # 300& 0.37\\
 # 500& 0.60\\
-# 1000& 0.82
+# 1000& 0.82\\
+# \hline
 # \end{array}$$
 # 
 # ![Drawing](integration-fig50.png) 
@@ -471,7 +472,7 @@ simplify(integrate(Pu,(u,u0,oo))  )
 # In[11]:
 
 
-E,kBT,m=symbols('E,kBT,m',positive =True)
+E, kBT, m = symbols('E, kBT, m',positive = True)
 PE= 4*pi*sqrt((m/(2*pi*kBT))**3)*(2*E/m)*exp(-E/(kBT))/sqrt(2*m*E)
 simplify(integrate(PE,(E,kBT,oo) ) )
 

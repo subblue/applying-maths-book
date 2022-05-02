@@ -336,8 +336,8 @@ p_sol_liq= lambda T: p3 + DH_fus/DV_fus*(np.log(T)-np.log(T3))
 # In[3]:
 
 
-p0,p,g=symbols('p0,p,g')
-eq=(p0/p)**(1/g)/sqrt( 1-(p/p0)**((g-1)/g) )
+p0, p, g = symbols('p0, p, g')
+eq = (p0/p)**(1/g)/sqrt( 1 - (p/p0)**((g - 1)/g) )
 simplify(diff(eq,p) )
 
 

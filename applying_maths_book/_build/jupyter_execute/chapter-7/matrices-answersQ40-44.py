@@ -58,8 +58,8 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # In[2]:
 
 
-theta, V = symbols('theta, V')   # notice different way of writing row  & column matrix
-Int = V**2*Matrix([ [ 2*cos(theta)**2 -1, 2*sin(theta)*cos(theta)]  ] )          *Matrix([ [2*cos(theta)**2-1], [2*sin(theta)*cos(theta)]  ] )
+theta, V = symbols('theta, V')   # notice way of writing a row and a column matrix
+Int = V**2 * Matrix([ [ 2*cos(theta)**2 -1, 2*sin(theta)*cos(theta)]  ] )           * Matrix([ [2*cos(theta)**2-1], [2*sin(theta)*cos(theta)]  ] )
 Int
 
 
@@ -115,7 +115,7 @@ simplify(2*sin(theta)*cos(theta)/(2*cos(theta)**2-1) )
 # 
 # ![Drawing](matrices-fig86.png)
 # 
-# Figure 86. Scheme for Q43.
+# Figure 86. Experimental set-up.
 # ________
 # 
 # The matrices are
@@ -207,7 +207,7 @@ beta  = pi/2
 alpha = 0
 delta = pi
 
-Wave_plate = Matrix([[cos(theta)**2+sin(theta)**2*exp(-1J*delta),cos(theta)*sin(theta)*(1-exp(-1J*delta))]                   ,[cos(theta)*sin(theta)*(1-exp(-1J*delta)),sin(theta)**2+cos(theta)**2*exp(-1J*delta)]])
+Wave_plate = Matrix([[cos(theta)**2+sin(theta)**2*exp(-1J*delta), cos(theta)*sin(theta)*(1-exp(-1J*delta))]                   ,[cos(theta)*sin(theta)*(1-exp(-1J*delta)), sin(theta)**2+cos(theta)**2*exp(-1J*delta)]])
 Wave_plate
 
 

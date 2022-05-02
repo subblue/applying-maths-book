@@ -170,7 +170,7 @@ plt.show()
 # In[3]:
 
 
-t0,t,k,phi = symbols('t0, t, k, phi',real=True)
+t0, t, k, phi = symbols('t0, t, k, phi',real=True)
 
 g = 1/(sqrt(2*pi))*integrate( sin(2*pi*t/t0 +phi)*exp(-1J*k*t) ,(t,-t0,t0), conds='none')
 

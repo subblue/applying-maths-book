@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Discrete Fourier  (DFT)  and Fast Fourier transforms (FFT)
+# ## Discrete Fourier  (DFT)  and Fast Fourier transforms (FFT)
 
 # In[1]:
 
@@ -15,7 +15,7 @@ init_printing()                      # allows printing of SymPy results in types
 plt.rcParams.update({'font.size': 16})  # set font size for plots
 
 
-# ## Concept
+# ### Concept
 # 
 # Data is normally produced by an instrument as a series of numbers measured at equal intervals, and not as an equation; therefore, any Fourier transform has to be calculated numerically. The sampling intervals could be time, distance, or some other quantity depending on the experiment. Time will be used in the following examples. The numerical transform is usually called a discrete Fourier Transform (DFT) and the algorithm used is called the fast Fourier Transform FFT. A frequently used algorithm was devised by Cooley and Tukey (1965) ( Bracewell 1986, p. 370 ). It is not necessary to devise one of these transforms, because the method is very well established and fast operating code has been written and checked. Explanations of its working can be found in texts such as Numerical Recipes (Prest et al. 1986). Python/Sympy, Maple and Mathematica each have built in discrete Fourier transform routines as do numerical packages such as python/numpy, MathCad, Matlab, IDL, IGOR and Origin. These routines can be used as black boxes, nevertheless a clear understanding of the discrete transform is essential to avoid making mistakes. Some examples of Fourier transforms are shown schematically in Fig. 36.
 # 
@@ -48,10 +48,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # ![Drawing](Fourier-fig36-top.png)
 # ![Drawing](Fourier-fig36-btm.png)
 # 
-# 
-# 
 # Figure 36. Some Fourier transforms, (A) to (C), and a discrete transform (D). (Based in part on a web diagram of M. Levoy, Stanford University.)
-# 
 # ______
 # 
 # The discrete transform algorithms require $2N$ sampled data points, where $N$ is an integer. If the data does not contain exactly $2N$ points, then zeros can be added to the end of the data to make up the number of points required. An example of a discrete transform is shown in Fig. 38; notice in particular where the data appears in the transform. The data being transformed is a set of points representing a square pulse and the transform in the figure is symmetrical about its centre except for the point at $\nu = 0$. Any data in the right-hand half of the transform can be ignored; it is a copy of that on the left. The complex exponential part of the transform, equation (44), represents the many roots of unity (Chapter 2) so can be represented as points on a circle on an Argand diagram Fig. 37.
@@ -74,7 +71,6 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # ![Drawing](fourier-fig38.png)
 # 
 # Figure 38. The real part of the discrete Fourier transform of a square pulse showing the symmetrical positioning of the resulting points. The data in the second half of the abscissa is the mirror image of the first half, except for the point at $\nu$ = 0. The smallest frequency is the reciprocal of the length of the sampled data, this is $T = N\Delta$ so the frequency is $f = 1/N\Delta$.
-# 
 # _________
 # 
 # You may consider that the transform looks rather odd in Fig. 38; it looks better if the data is rotated by $N/2$ points then it will look symmetrical. No new data is present - the effect is just cosmetic, but the result is more understandable and is shown in Fig. 39. The transform now looks like the mathematical transform of a square pulse; see the sinc function, Fig. 15. If the centre frequency is zero, the idea of positive and negative $\nu/N$ now seems more intuitive. If you wish you can imagine the transform rolled round a cylinder, cut down the middle (at zero) it gives figure 38, cut down the opposite side fig 39.
@@ -82,7 +78,6 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # ![Drawing](fourier-fig39.png)
 # 
 # Figure 39. The transform of Fig. 38 rotated by $N/2$ points, and clearly showing its symmetrical nature.
-# 
 # ______
 
 # ### 9.2 A four point DFT.
@@ -262,11 +257,11 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 
 ## example of calculating an FFT. 
 
-fig1= plt.figure(figsize=(10.0,10.0))    # set up 4 plots in one window
-ax0 = fig1.add_subplot(2,2,1)
-ax1 = fig1.add_subplot(2,2,2)
-ax2 = fig1.add_subplot(2,2,3)
-ax3 = fig1.add_subplot(2,2,4)
+fig1= plt.figure(figsize=(16.0,5.0))    # set up 4 plots in one window
+ax0 = fig1.add_subplot(1,4,1)
+ax1 = fig1.add_subplot(1,4,2)
+ax2 = fig1.add_subplot(1,4,3)
+ax3 = fig1.add_subplot(1,4,4)
 
 nu1 = 1/20.0  # frequency Hz  (only for plotting make this biggest frequency)
 nu2 = 1/35.0
@@ -281,12 +276,12 @@ nu = [i/(tp*N) for i in range(N)]        # make discrete frequencies to plot fft
 ft = np.fft.rfft(FID(t))                 # do fft using in-built functions (use rfft as FID is not complex)
 
 ax0.axhline(0,color='grey',linewidth=1)  # plot horizontal loine at zero 
-ax0.plot(t,FID(t),color='green')         # plot FID 
+ax0.plot(t,FID(t),color='green',linewidth=1)         # plot FID 
 ax0.set_title('FID')
 ax0.set_xlabel('t/sec')
 
 ax1.plot(nu[0:N//2],ft[0:N//2].real, color='blue')  # plot real part of FFT as line
-ax1.scatter(nu[0:N//2],ft[0:N//2].real,s=5, color='blue')  # plot real part of FFT as points
+ax1.scatter(nu[0:N//2],ft[0:N//2].real,s=10, color='blue')  # plot real part of FFT as points
 ax1.set_title('FFT (real part)')
 
 ax2.scatter(nu[0:N//2],ft[0:N//2].imag,s=5,color='red') # plot imaginary
@@ -307,7 +302,7 @@ plt.tight_layout()
 plt.show()
 
 
-# Figures 41 & 42. Top panel: The time decaying FID, and (right) the real part of its discrete Fourier transform with frequencies of $1/35 = 0.0286$ and $1/20$ Hz. Only the first part of the spectrum is plotted; its mirror image at higher frequencies than the Nyquist limit of $1.024$ Hz is not shown. Bottom panel: Imaginary and phase plots of the transformed data. The phase is in radians; $\pi$ radians equals $180^\text{o}$. At larger frequencies, the phase approaches zero, reaching it at point $N/2$ or $1.024$ Hz, which is far to the right of the plotted range.
+# Figures 41 & 42 combined. Left: The time decaying FID, and next the real part of its discrete Fourier transform with frequencies of $1/35 = 0.0286$ and $1/20$ Hz. Only the first part of the spectrum is plotted; its mirror image at higher frequencies than the Nyquist limit of $1.024$ Hz is not shown. Right: Imaginary and phase plot (far right) of the transformed data. The phase is in radians; $\pi$ radians equals $180^\text{o}$. At larger frequencies, the phase approaches zero, reaching it at point $N/2$ or $1.024$ Hz, which is far to the right of the plotted range.
 # _____
 
 # ### 9.7 Aliasing
@@ -343,18 +338,16 @@ plt.show()
 # 
 # Finally note that aliasing is not the only way that erroneous transforms can be produced. If the data suddenly ends, the transform will 'assume' that there is a sudden change in frequency, in effect a step function, and this will generate many unwanted frequencies in the transform. As an example, see the transform of a rectangular pulse, Fig. 15. It is better to apodise the original data, so that the final values are close to zero to prevent this. Apodising means multiplying the original data by a function, $\displaystyle e^{-x}$ for example, to make its values at long times, (its 'feet'), effectively zero (see Sanders & Hunter 1987).
 # 
-# ![Drawing](fourier-fig45-top.png)
-# ![Drawing](fourier-fig45-btm.png)
+# ![Drawing](fourier-fig45.png)
 # 
 # Figure 45. Calculations showing proper sampling, left-hand column, and under-sampling, (right), that produces the effect of aliasing. The transforms are plotted as a fraction of the total points. The inset has its $x$ axis multiplied by $10$.
-# 
 # _________
 # 
 # ### 9.8 Zero filling
 # 
 # To increase resolution without increasing acquisition time, the data can be zero filled by adding enough zeros to the data to double its length, which means adding points to both the real and imaginary parts of the data, but only if the data has decayed to quasi-zero at the end of the acquisition period $T$. If the data has 2$N$ points, this means that another 2$N$ can be added to the end of the FID before Fourier transforming. The number of points in the real part of the spectrum is increased from the usual 2$N -1$ to 2$N$. With a computer, it is easy to add sets of 2$N$ points repeatedly to the end of the data. However, this does not increase resolution but in effect interpolates between data points. The effect is superficial; no extra information is obtained by adding a second and subsequent zero fills, but it does give nice smooth graphs.
 
-# ## 10 Using Fourier transforms for filtering, smoothing, and noise reduction on data
+# ### 10 Using Fourier transforms for filtering, smoothing, and noise reduction on data
 # 
 # ### 10.1 Motivation
 # 
@@ -459,7 +452,7 @@ plt.show()
 
 # The filter function above removes all but a few non-zero data points. This is only possible because the spikes in the transform are very sharp because each is a single frequency. If the signal were an exponential decay instead of a sine wave, then this Fourier method would perform very badly. The exponential is not periodic and is not described by single frequency but by a range of them in the form of a Lorentzian; in this and many other circumstances it is not easy to isolate the data from the noise. If Fourier and other smoothing methods fail then least squares fitting to a line or polynomial may be acceptable as a last resort.
 # 
-# ### 10.4 Rolling or moving average    
+# ### Rolling or moving average    
 # 
 # This method is widely used in the financial sector to smooth out fluctuations in the price of stocks and shares in an attempt to predict trends, it is also used to predict trends in data such as the number of infections and deaths in pandemics such as due to Covid-9. It is also a particularly good method of removing unwanted noise spikes in experimental data. These are not part of the noise normally expected on data but occur nevertheless because someone switches on an instrument elsewhere in the lab or there is a glitch in the mains power and so forth. Such spikes can completely ruin data so some way of removing them is necessary. The moving average method starts at the beginning of the data, and averages over a small odd number of the next few data points and this average is recorded. This averaging 'window' is moved by one point along the data and the new average recorded and so on. This process weights in some future and past data into any point and so if a spike is preset it is averaged away by the normal data on either side of it, see Fig. 48.
 # 
@@ -477,13 +470,12 @@ plt.show()
 # 
 # where the first point has to be explicitly calculated. The recursion works by considering the window at adjacent positions, subtracting the value that has just left the window and adding the one just entered. Although this method is not a Fourier method, it can be considered as a convolution of the data with a kernel function, which is a rectangular pulse with each of its $m$ points of size $1/m$.
 # 
-# ![Drawing](fourier-fig48b.png) 
-# ![Drawing](fourier-fig48bb.png)
+# ![Drawing](fourier-fig48.png) 
 # 
 # Figure 48 . Left. Illustrating the moving averaging smoothing to remove spikes in noise. A filter with $n$ = 3 was used which is a window of 7 points.  The original data is grey, the smoothed data, red. Right.  Daily deaths  due to Covid19 in the USA for a few weeks after March 4, 2020. The original data is grey, the rolling average data, red. A 5 day average was used. 
 # __________
 
-# ### 10.5 The Hilbert Transform and the Analytic Signal
+# ### The Hilbert Transform and the Analytic Signal
 # 
 # In some cases it is desirable to find the envelope of a signal, such as an FID or that of a pulse such as figure 35 in question 16. To do this the Hilbert transform is needed and with it the *analytic signal*. The analytic signal is defined as
 # 

@@ -46,7 +46,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # and the joint chance that an individual has both 'A' and 'a' genes  $2p(1 - p)$, then, by equation 24, the probability of not being 'aa' but having an 'a' gene is $2p(1 - p)/(1 - p)^2$.
 # 
 # ### Q20 answer
-# (a)$p=V_A/(V_A +V_B)$. 
+# (a) $p=V_A/(V_A +V_B)$. 
 # 
 # (b) For $N$ molecules,the chance of all molecules being in volume $V_A$ becomes a product of individual ones since one molecule does not influence any other. The result is $\left(V_A/(V_A + V_B)\right)^N$. For equal volumes and only $100$ molecules, the probability is extremely small $p = 1/2^{100} \approx 8 \cdot 10^{-31}$. For $1000$ molecules, this probability becomes infinitesimal $\approx 10^{-301}$. If a mole of gas molecules were present this chance is so small that it has been effectively zero since the universe began and is likely to be so until it ends. 
 # 
@@ -89,7 +89,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # In[2]:
 
 
-def fact(n):                # recursively calculay factorial
+def fact(n):                # recursively calculate factorial
     if n == 0 or n==1:
         return 1
     else:

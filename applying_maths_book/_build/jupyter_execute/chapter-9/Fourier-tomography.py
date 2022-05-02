@@ -1,9 +1,9 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Computed Tomography
+# ## Computed Tomography
 
-# ## Motivation and concept
+# ### Motivation and concept
 # 
 # One important application of fourier transforms is x-ray Computed Tomography which, in medicine, is called a CAT scan and is used to observe soft tissue inside a person's body. The method is quite general and can be used in diverse applications, for example, to measure the position and concentration of different chemical species in a combustion reaction (i.e. in a flame) or to examine the quality of steel inside steel-reinforced concrete. Waves, which could be electromagnetic or acoustic, are passed through an object and the absorption at many points along a line is measured and then this is repeated at each of many angles. After transforming, this data can reproduce an accurate image of the original object. Houndsfield and Cormack received the 1979 Nobel prize in Physiology or Medicine for discovering the technique of x-ray computed tomography. 
 # 
@@ -139,15 +139,15 @@
 # 
 # Having measured the projections at all angles the filtered back projection method starts with the sinogram. 
 # 
-# $\quad$(a) Fourier transform the first line in the sinogram.
+# $\quad$**(a)** Fourier transform the first line in the sinogram.
 # 
-# $\quad$(b) Multiply this transform by the absolute value of the frequency (the filter function).
+# $\quad$**(b)** Multiply this transform by the absolute value of the frequency (the filter function).
 # 
-# $\quad$(c) Calculate the reverse transform.
+# $\quad$**(c)** Calculate the reverse transform.
 # 
-# $\quad$(d) Continue to do this for all lines in the sinogram. 
+# $\quad$**(d)** Continue to do this for all lines in the sinogram. 
 # 
-# $\quad$(e) Construct the image plane with the new sinogram just as in normal back projection.
+# $\quad$**(e)** Construct the image plane with the new sinogram just as in normal back projection.
 # 
 # In practice the transforms have to be done numerically on a grid of data points and thus fast fourier transforms are used. The stages of the reconstruction are shown at the end of this section. Also the image can be constructed 'on the fly' rather than as suggested in (a)-(e) above. There are other concerns also, for example the filter $|\omega|$ has to end at some finite value so has the form not of a V shape but more like an M and this introduces some extra frequencies as noise into the transform. Thus it is common to add some apodizing function by applying other filters (Gaussian, Hanning) to damping out these oscillations. Thus there is a trade-off between sharp edges to the image and some noise, vs. smoothing edges and less noise. 
 # 
@@ -156,7 +156,6 @@
 # ![Drawing](fourier-radon-fig8.png)
 # 
 # Figure 93. Left. Reconstruction of the object in figure 89 with basic back projection (left) compared with filtered back projection (Right). Middle, comparison of the profile along the line A (top) and along B (lower) for filtered, red, and basic back projection, blue.
-# 
 # ______
 # 
 # ### 14.4 Number of samples
@@ -211,7 +210,6 @@
 # 
 # and is the 1D fourier transform of that part of the image $f(x,y)$ that lies on the line defined by $u=x\cos(\theta),v= y\sin(\theta))$ and is the general form of the Slice Theorem.
 # 
-# 
 # ### 14.6 Stages in the filtered back projection.
 # 
 # The figures show some data, starting with line 30 of the sonogram (length 256 pixels), which is at an angle of $42^\text{o}$. The second image (B) shows the fast fourier transform of A but rotated by half its length (128) to make the centre of the transform at the centre of the array. This is then multiplied by the filter $|\omega|$ with frequency zero at the centre. You can see how this product changes the transform giving it an inverted look.  Finally the inverse /reverse or back fourier transform is made and again rotated so that it is at the centre of the data. By making the first and last points in the filter equal to zero adds a long period sine wave to the data as can be seen in frame E, but over all the angles the phase of this sine wave varies and eventually exactly cancels out. 
@@ -229,7 +227,7 @@ get_ipython().run_line_magic('matplotlib', 'inline')
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy import ndimage, misc
-
+plt.rcParams.update({'font.size': 16})  # set font size for plots
 # make the sonogram from the image call it p[ ..., ...], image is n by n.
 # e.g n = 2**m to make FFT fast, say say 256
 # This code is slow and not the most efficient but illustrates the method. 
@@ -287,24 +285,28 @@ def filterproj(p):
     return imtest
 #----------------------------
 
-fig,(ax1,ax2,ax3) = plt.subplots( nrows=3, ncols=1, figsize=(10,25) )  # define plots
-plt.rcParams.update({'font.size': 16})  # set font size for plots
+
+# In[2]:
+
+
+fig,(ax1,ax2,ax3) = plt.subplots( nrows=1, ncols=3, figsize=(15,10) )  # define plots
 
 n = 2**8                                          # size of image to use
-nc = n//2
+nc = n//2                                         # integer division
 
 imageA = makeimage()
-
+ax1.set_title('Original image')
 ax1.imshow(imageA,origin='lower',cmap='gray')     # plot original image
 
 p = sinog(imageA,n)
-
+ax2.set_title('sinogram')
 ax2.imshow(p, cmap='nipy_spectral_r')             # plot sinogram
 
 fimage = filterproj(p)
-
+ax3.set_title('Reconstructed image')
 ax3.imshow(np.real(fimage) ,cmap='gray')          # plot filtered back transform
 
+plt.tight_layout()
 plt.show()
 
 

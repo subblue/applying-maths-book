@@ -34,6 +34,7 @@
 # 
 # ### Q8
 # Find the modulus and argument of
+# 
 # (a) $\cos(\theta) - i \sin(\theta)$, 
 #    
 # (b) $1-i\tan(\theta)$, where $0 \lt \theta \lt \pi/2$ in both cases.

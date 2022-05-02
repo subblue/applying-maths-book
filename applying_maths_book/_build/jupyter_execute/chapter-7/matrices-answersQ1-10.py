@@ -39,7 +39,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 
 x, a, b = symbols('x, a, b')
-M = Matrix( [[x,a,b],[a,x,b],[a,b,x]] )
+M = Matrix( [ [x,a,b], [a,x,b], [a,b,x] ] )
 char_eqn = M.det()
 
 factor(char_eqn )
@@ -60,7 +60,7 @@ solve(char_eqn,x)
 # In[4]:
 
 
-M = np.array([[1,2,3,4],[5,6,7,8],[9,10,11,12],[13,14,15,16]] )  # numerical method  
+M = np.array( [ [1,2,3,4], [5,6,7,8], [9,10,11,12], [13,14,15,16] ] )  # numerical method  
 print(LA.det(M))            # LA calls linear algebra package defined at top of document
 
 
@@ -68,7 +68,7 @@ print(LA.det(M))            # LA calls linear algebra package defined at top of 
 
 
 M = symbols('M')                                                 # symbolic algebra
-M = Matrix([[1,2,3,4],[5,6,7,8],[9,10,11,12],[13,14,15,16]] )
+M = Matrix( [ [1,2,3,4], [5,6,7,8], [9,10,11,12], [13,14,15,16] ] )
 M.det()
 
 
@@ -80,11 +80,11 @@ M.det()
 
 
 n = 4
-M = np.zeros((n,n),dtype=int)
+M = np.zeros((n,n), dtype = int)
 s = 1
 for i in range(n):
     for j in range(n):
-        M[i,j]= s
+        M[i,j] = s
         s = s + 1
 print(LA.det(M))        # LA calls linear algebra package defined at top of document
 
@@ -141,18 +141,18 @@ print( '{:s} {:8.2f}'.format('value = ', LA.det(M) ) )
 
 # Algorithm  Huckel Calculation Cyclic polyenes
 
-n,M,x = symbols('n,M,x')      # define symbols to use
+n, M, x = symbols('n, M, x')      # define symbols to use
 n = 6                         # define size of linear polyene
 M = zeros(n,n)                # make an array of zeros 
 for i in range(n):
     M[i,i] = x
     if (i > -1) and (i < n-1):
-        M[i,i+1] = 1
-        M[i+1,i] = 1
+        M[i, i+1] = 1
+        M[i+1, i] = 1
         
     pass
-M[0,n-1] = 1                   # n-1 because index runs from 0 to n-1, for n values
-M[n-1,0] = 1
+M[0, n-1] = 1                  # n-1 because index runs from 0 to n-1, for n values
+M[n-1, 0] = 1
 M
 
 
@@ -169,7 +169,7 @@ factor(char_eqn)
 # 
 # ![Drawing](matrices-fig74.png)
 # 
-# Fig. 7.74 Benzene (left) and cyclo-octatetraene Huckel MO energies measured relative to energy $\alpha$. Note that the energy integral $\beta$ is a negative number.
+# Fig. 74 Benzene (left) and cyclo-octatetraene Huckel MO energies measured relative to energy $\alpha$. Note that the energy integral $\beta$ is a negative number.
 # _________
 # 
 # ### Q8 answer
@@ -180,14 +180,14 @@ factor(char_eqn)
 
 
 # Algorithm  Huckel Calculation Fulvalene
-n,M,x = symbols('n,M,x')      # define symbols to use
+n, M, x = symbols('n, M, x')      # define symbols to use
 n = 6                         # define size of linear polyene
 M = zeros(n,n)                # make an array of zeros 
 for i in range(n):
     M[i,i] = x
     if (i > -1) and (i < n-1):
-        M[i,i+1] = 1
-        M[i+1,i] = 1
+        M[i, i+1] = 1
+        M[i+1, i] = 1
         
     pass
 M[1,5] = 1     # 1 and 5 not 2 and 6, as index runs from zero
@@ -207,7 +207,7 @@ print(char_eqn)
 
 solns = solve(char_eqn,x)
 
-for i,j in enumerate(solns):  # print out each solution in a table
+for i,j in enumerate(solns):      # print out each solution in a table, j is sqrt(-1)
     print('x = {:8.4g} '.format( complex(solns[i].evalf() )) )
 
 
@@ -243,7 +243,7 @@ for i,j in enumerate(solns):  # print out each solution in a table
 # 
 # The separation of the two atoms is $(r/d)^2 = 2 - 2\cos(\theta)$ by the cosine rule. Substituting $b_\theta = e^{-\sqrt{-2-2\cos(\theta)}}$ with values $\alpha = 0 ; \beta = -1$, gives the energies shown in Figure 76. The exact value of $\beta$ does not matter as long as it is negative; the energy is then in units of $\beta$. The lowest energy is $2E_m + E_1$ and this is shown as $E_T$ at the bottom of the figure, and illustrates that the bent form of the molecule has the lowest energy. However the model is unrealistic at a smaller angle that $60^\text{o}$ as here repulsion must increase the energy as the bond will become shorter than the equilibrium value. The change in energy with angle above $60^\text{o}$ is small but this may not be realistic in view of the crudeness of the model. All that can be concluded is that the bent form is lower in energy that the straight one. As an exercise, recalculate the energy where the angular dependence is put in the form $b_\theta = 2 - 2 \sin(\theta/2)$, which has a value of $1$ at $60^\text{o}$.
 # 
-# ![Drawing](matrices-fig76.png) ![Drawing](matrices-fig76a.png) 
+# ![Drawing](matrices-fig76.png)
 # 
 # Figure 76. Left. The energy of Na$_3$ as a function of bond angle assuming a simple exponential model of orbital overlap, and that the bond lengths remain constant as the angle increases, (right).
 # _______
@@ -268,7 +268,7 @@ for i,j in enumerate(solns):  # print out each solution in a table
 # In[13]:
 
 
-x,m = symbols('x,m')
+x, m = symbols('x, m')
 m = 10
 f01 = [0 for i in range(m)]   # save values as we go along
 f01[1] = x
@@ -282,4 +282,4 @@ for i in range(3,m):
 # 
 # ![Drawing](matrices-fig77.png)
 # 
-# Figure 77. Plot of variable $x$, which is proportional to energy vs the number of carbon atoms in a linear polyene, $E = \alpha-\beta x$
+# Figure 77. Plot of variable $x$, which is proportional to energy vs. the number of carbon atoms in a linear polyene, $E = \alpha-\beta x$

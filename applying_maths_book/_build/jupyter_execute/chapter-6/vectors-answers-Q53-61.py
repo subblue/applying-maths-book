@@ -54,22 +54,22 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 
 
 d = symbols('d', positive = True)        # Use sympy make d a real positive value
-C1 = Matrix([-5*d/6,0           , d*sqrt(2/3)])  # coordinates 1-6 for chair form.
-C2 = Matrix([-d/2  ,d*sqrt(2/3) , 0])
-C3 = Matrix([d/2   ,d*sqrt(2/3) , 0])
-C4 = Matrix([5*d/6 ,0           ,-d*sqrt(2/3)])
-C5 = Matrix([d/2  ,-d*sqrt(2/3), 0])
-C6 = Matrix([-d/2   ,-d*sqrt(2/3), 0])
-C4b =Matrix([5*d/6 ,0           , d*sqrt(2/3)]) # C4 boat 
+C1 = Matrix( [-5*d/6,0            , d*sqrt(2/3)] )  # coordinates 1-6 for chair form.
+C2 = Matrix( [-d/2  , d*sqrt(2/3) , 0] )
+C3 = Matrix( [d/2   , d*sqrt(2/3) , 0] )
+C4 = Matrix( [5*d/6 , 0           , -d*sqrt(2/3)] )
+C5 = Matrix( [d/2   , -d*sqrt(2/3), 0] )
+C6 = Matrix( [-d/2  , -d*sqrt(2/3), 0] )
+C4b= Matrix( [5*d/6 , 0           , d*sqrt(2/3)] ) # C4 boat 
 
-C14chair= sqrt((C1-C4).dot(C1-C4))
+C14chair = sqrt((C1-C4).dot(C1-C4))
 C14chair
 
 
 # In[3]:
 
 
-C14boat= sqrt((C1-C4b).dot(C1-C4b))
+C14boat = sqrt( (C1 - C4b).dot(C1 - C4b) )
 C14boat
 
 
@@ -87,11 +87,11 @@ C14boat
 
 
 # using sympy with previously defined values.
-d1= C6-C1
-d2= C2-C6
-d5= C5-C6
-m = d1.cross(d2)
-n = d2.cross(d5)
+d1 = C6 - C1
+d2 = C2 - C6
+d5 = C5 - C6
+m  = d1.cross(d2)
+n  = d2.cross(d5)
 psi = acos(m.dot(n) /(sqrt(m.dot(m))*sqrt(n.dot(n)) ) )
 print('{:s}{:8.2f}'.format('dihedral angle = ',  psi*180/np.pi ))
 
@@ -102,7 +102,7 @@ print('{:s}{:8.2f}'.format('dihedral angle = ',  psi*180/np.pi ))
 
 
 m = -d2.cross(d1)
-n = d1.cross(d5)
+n =  d1.cross(d5)
 psi = acos(m.dot(n) /(sqrt(m.dot(m))*sqrt(n.dot(n)) ) )
 print('{:s}{:8.2f}'.format('dihedral angle = ',  psi*180/np.pi ))
 
@@ -112,7 +112,7 @@ print('{:s}{:8.2f}'.format('dihedral angle = ',  psi*180/np.pi ))
 # In[6]:
 
 
-d4=C4b-C5
+d4  =C4b - C5
 m = d1.cross(d2)
 n = d2.cross(d4)
 psi = acos(m.dot(n) /(sqrt(m.dot(m))*sqrt(n.dot(n)) ) )
@@ -137,25 +137,25 @@ print('{:s}{:8.2f}'.format('dihedral angle = ',  psi*180/np.pi ))
 # In[7]:
 
 
-C8 =np.array([ 120.627 , 4.607 ,38.990  ])
-N11=np.array([ 120.292 , 4.951 , 40.228 ]) 
-C12=np.array([ 118.955 , 4.753 , 40.750 ]) 
-C13=np.array([ 117.996 , 5.868 , 40.333 ]) 
-N16=np.array([ 118.093 , 7.008 , 41.010 ])
+C8  = np.array( [ 120.627 , 4.607 ,38.990  ] )
+N11 = np.array( [ 120.292 , 4.951 , 40.228 ] ) 
+C12 = np.array( [ 118.955 , 4.753 , 40.750 ] ) 
+C13 = np.array( [ 117.996 , 5.868 , 40.333 ] ) 
+N16 = np.array( [ 118.093 , 7.008 , 41.010 ] )
 
 #this procedure accepts atom vectors as input
 
-def torsion_angle(a1,a2,a3,a4):
+def torsion_angle(a1, a2, a3, a4):
     A = a2 - a1
     B = a3 - a2
     C = a4 - a3
-    m = np.cross(A,B)
-    n = np.cross(B,C)
-    cos_angle = np.dot(m,n)/(np.sqrt(np.dot(n,n))*np.sqrt(np.dot(m,m) ) )
+    m = np.cross(A, B)
+    n = np.cross(B, C)
+    cos_angle = np.dot(m, n)/(np.sqrt( np.dot(n, n) )*np.sqrt( np.dot(m, m) ) )
     angle = np.sign(np.dot(n,A))*np.arccos(cos_angle)*180/np.pi
     return angle
 
-phi = torsion_angle(C8,N11,C12,C13)
+phi = torsion_angle(C8, N11, C12, C13)
 print('{:s}{:8.2f}'.format(' torsion angle =', phi) )
 phi=torsion_angle(N11,C12,C13,N16)
 print('{:s}{:8.2f}'.format(' torsion angle =', phi) )
@@ -174,9 +174,9 @@ print('{:s}{:8.2f}'.format(' torsion angle =', phi) )
 dataname='1TIM.pdb'
 
 numA =  36                    # residue 36
-numB =  numA+1                # residue B 
-numC =  numA-1
-chain= 'B'                   # which chain ?                   
+numB =  numA + 1              # residue B 
+numC =  numA - 1
+chain= 'B'                    # which chain ?                   
 
 resA = np.zeros((14,3),dtype=float)        # as largest residiue trp has 14 atoms, 3 for x,y,z
 resB = np.zeros((14,3),dtype=float)
@@ -217,12 +217,12 @@ print('{:s}{:6.3f}'.format('torsion angle = ',torsion_angle(resC[2],resA[0],resA
 # In[10]:
 
 
-C1 = np.array( [ 8.500 , 0.483 , -4.443 ])
-C2 = np.array( [ 8.902 , -0.134, -5.779 ])
-C3 = np.array( [ 8.751 , 1.078 , -6.697 ])
-C4 = np.array( [ 9.378 , 2.172 , -5.835 ])
-C5 = np.array( [ 8.989 , 3.594 , -6.187 ])
-O4 = np.array( [ 8.917 , 1.839 , -4.493 ])
+C1 = np.array( [ 8.500 , 0.483 , -4.443 ] )
+C2 = np.array( [ 8.902 , -0.134, -5.779 ] )
+C3 = np.array( [ 8.751 , 1.078 , -6.697 ] )
+C4 = np.array( [ 9.378 , 2.172 , -5.835 ] )
+C5 = np.array( [ 8.989 , 3.594 , -6.187 ] )
+O4 = np.array( [ 8.917 , 1.839 , -4.493 ] )
 print('{:s}{:6.3f}'.format('torsion angle = ',torsion_angle(C1,C2,C3,C4) ) )
 
 
@@ -240,9 +240,9 @@ n =np.cross( (C4-O4) , (C1-O4) )
 # In[12]:
 
 
-T=O4
-p=C3
-d = np.dot(n,p-T)/np.sqrt(np.dot(n,n) )
+T = O4
+p = C3
+d = np.dot(n,p-T)/np.sqrt( np.dot(n,n) )
 print('{:s}{:6.3f}'.format('to C3 d = ',d ) )
 d = np.dot(n,C2-T)/np.sqrt(np.dot(n,n) )
 print('{:s}{:6.3f}'.format('to C2 d = ',d ) )
@@ -258,15 +258,15 @@ print('{:s}{:6.3f}'.format('to C5 d = ',d ) )
 # In[13]:
 
 
-O5= np.array([ 3.903 , 9.424 , 56.660 ]) 
-C5= np.array([ 3.829 , 10.592 , 57.472 ])
-C4= np.array([ 2.610 , 11.430 , 57.099 ]) 
-C3= np.array([ 1.382 , 10.524 , 57.025 ]) 
-C2= np.array([ 1.034 , 10.517 , 55.563 ]) 
-C1= np.array([ 1.598 , 11.813 , 55.022 ]) 
-O4= np.array([ 2.772 , 12.046 , 55.805 ])
-N9= np.array([ 1.981 , 11.653 , 53.605 ]) 
-C4B= np.array([ 1.493 , 12.380 , 52.547 ])
+O5 = np.array( [ 3.903 , 9.424  , 56.660 ] ) 
+C5 = np.array( [ 3.829 , 10.592 , 57.472 ] )
+C4 = np.array( [ 2.610 , 11.430 , 57.099 ] ) 
+C3 = np.array( [ 1.382 , 10.524 , 57.025 ] ) 
+C2 = np.array( [ 1.034 , 10.517 , 55.563 ] ) 
+C1 = np.array( [ 1.598 , 11.813 , 55.022 ] ) 
+O4 = np.array( [ 2.772 , 12.046 , 55.805 ] )
+N9 = np.array( [ 1.981 , 11.653 , 53.605 ] ) 
+C4B= np.array( [ 1.493 , 12.380 , 52.547 ] )
 print('{:s}{:6.3f}'.format('gamma  = ',torsion_angle(O5,C5,C4,C3) ) )
 print('{:s}{:6.3f}'.format('v2     = ',torsion_angle(C1,C2,C3,C4) ) )
 print('{:s}{:6.3f}'.format('chi    = ',torsion_angle(O4,C1,N9,C4B)) )

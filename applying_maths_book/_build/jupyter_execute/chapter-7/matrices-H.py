@@ -50,9 +50,25 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # We know from direct integration that $\displaystyle A = A_0e^{-k_1t}$, and from the theory of coupled linear differential equations that the solution in general for all species are _sums of exponential_ terms, see Chapter 10.7. If the initial concentration of $A = A_0$ and initially $B = C =0$, then the concentration of $B$ is
 # 
-# $$\displaystyle B(t)=\frac{k_1A_0}{k_1-k_2}\left(e^{-k_2t}-e^{-k_1t} \right) \tag{36}$$
+# $$\displaystyle B(t)=\frac{k_1}{k_1-k_2}A_0\left(e^{-k_2t}-e^{-k_1t} \right) \tag{36}$$
 # 
 # which is of the form expected, with an exponential decay preceded by a grow-in, see Figure 55. Notice that $k_1$ cannot have the same value as $k_2$ as then the equation for the population would be $0/0$, which is undefined; but in fact there is no reason why these rate constants should not be equal, that is to say that $B$ is formed with the same rate constant as it decays. This special case is dealt with in Chapter 10.7(ii).
+# 
+# As an extension to this scheme, suppose that A has an extra form of decay and rather than just forming B it also forms D with a rate constant $k_3$. This might be another chemical species or if A is an excited state, then D could be the ground state and A has fluoresced. Either way the scheme is  
+# 
+# $$\displaystyle \displaystyle A \overset{k_1}\to B \overset{k_2}\to C; \qquad A \overset{k_3}\to D$$
+# 
+# and $\displaystyle \frac{dA}{dt}=-(k_1+k_3)A$ but B is unchanged as $\displaystyle \frac{dB}{dt}= k_1A - k_2B$. Notice that although $dB/dt$ is the same as in the scheme above B itself appears with rate constant $k_1+k_3$ which is the decay of A but only the fraction $k_1/(k_1+k_3)$ of A forms D. By inspecting the scheme, we can write down the decay of A and the appearance of D without any further calculation, giving
+# 
+# $$\displaystyle A = A_0e^{-(k_1+k_3)t},\quad D=\frac{k_3}{k_1+k_3}A_0\left(1-e^{-(k_1+k_3)t} \right)$$
+# 
+# which shows that D appears as A decays. The change in B has to be calculated, and as expected the result is similar to that of eqn 36, i.e replace $k_1$ with $k_1+k_3$,  and is 
+# 
+# $$\displaystyle B(t)=\frac{k_1}{k_1+k_3-k_2}A_0\left(e^{-(k_1+k_3)t}-e^{-k_2t} \right) $$
+# 
+# and which shows that B appears or 'grows-in' with the rate constant $k_1+k_3$, i.e. just with the rate constant that A decays.
+# 
+# The next section describes how this and many other complex schemes can be solved using matrix methods both algebraically and more often for complicated rate equations, numerically.
 # 
 # ### 13.2 Matrix solutions
 # 
@@ -71,7 +87,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # Notice how the decay rate constant of each species is on the diagonal, and the grow-in or decay of species $C$ from $B$ and $B$ from $A$, on the off-diagonal. Notice also that the matrix is not Hermitian, i.e. is not symmetrical, although each term is real. This means that when the equation is solved the eigenvectors $x$ are not orthogonal.
 # 
-# #### Secular Determinant
+# #### **Secular Determinant**
 # 
 # Solving the matrix equation 37 is done in two steps. First the eigenvalues $\lambda$ are obtained from the secular determinant of the rate constants, then equation 39 is used to obtain the populations with time. The justification for this is given in the next section, 13.3; we use it first. The secular determinant of matrix $\pmb{k}$ is
 # 
@@ -79,7 +95,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # whose characteristic equation is $(k_1 + \lambda)(k_2 + \lambda)\lambda = 0$ and from which, by inspection, $λ_1 =-k_1,\; \lambda_2 =-k_2$,and $\lambda_3 =0$.
 # 
-# #### Time profiles
+# #### **Time profiles**
 # 
 # To calculate the populations, or concentrations, the matrix equation
 # 
@@ -106,7 +122,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # The calculation, using python/Sympy, is shown below. The solution is found algebraically but in practice for complex kinetic schemes a purely numerical solution is the way to proceed because algebraic solution become impossibly complex.
 # 
-# #### Example of algebraic solution of $A \to B \to C$
+# #### **Algebraic solution of $A \to B \to C$**
 # 
 # It is assumed that the rate constants are $k_1$ and $k_2$, and that, at time zero, the amount of $A$ present $A_0 = 1$, and that $B_0 = C_0 = 0$; This code will calculate any $A \leftrightharpoons B \leftrightharpoons C$ when the $\pmb{k}$ matrix is modified.
 
@@ -147,7 +163,7 @@ populations
 # Figure 55. Populations of species $A, \;B$, and $C$ with time when $k_1 = 1,\; k_2 = 1.5$ with initial concentrations $A_0 =1,\;B_0 =C_0 =0$. The scheme is $\displaystyle A \overset{k_1}\to B \overset{k_2}\to C$.
 # ________
 # 
-# #### Example of numerical solution of $A \leftrightharpoons B \leftrightharpoons C$ 
+# #### **Numerical solution of $A \leftrightharpoons B \leftrightharpoons C$** 
 
 # In[5]:
 
@@ -155,21 +171,21 @@ populations
 # numerical calculation using python/numpy
 
 max_num = 200
-t = np.linspace(0,10,max_num)    # range 0 to 10, 200 points 
-M0= np.array([1,0,0])            # initial concentrations
-n  = 3                           # number of equations
-k1 = 1.0                         # rate constnat
+t  = np.linspace(0,10,max_num)    # range 0 to 10, 200 points 
+M0 = np.array([1,0,0])            # initial concentrations
+n  = 3                            # number of equations
+k1 = 1.0                          # rate constnat
 k2 = 1.5
-M = np.array([ [-k1,0,0],[k1,-k2,0],[0,k2,0]    ])   # rate constnat matrix
+M = np.array([ [-k1,0,0], [k1,-k2,0], [0,k2,0]    ])   # rate constnat matrix
 
 val,vec = LA.eig(M)              # eigenvalues;  eigenvectors
 #print('eigenval, eigenvec', val,'\n', vec)
 
-iv_vec = LA.inv(vec)                      # invert once and save 
-f01 = lambda m,k: np.exp( val[m]*t[k] )   # define diagonal in matrix 
-exp_mat = np.zeros((n,n),dtype=float)     # define matrix 
+iv_vec = LA.inv(vec)                       # invert once and save 
+f01 = lambda m,k: np.exp( val[m]*t[k] )    # define diagonal in matrix 
+exp_mat = np.zeros((n,n),dtype=float)      # define matrix 
 
-pop = np.zeros((n,max_num),dtype=float)   # define 2D array for results 
+pop = np.zeros((n,max_num),dtype=float)    # define 2D array for results 
 
 for i in range(max_num):
     for j in range(n):
@@ -183,7 +199,7 @@ plt.show()
 # Plotting the three curves of pop[...] will produce figure 55.
 # ____________
 # 
-# #### Circular reaction scheme
+# #### **Circular reaction scheme**
 # 
 # When the rate equations are more complex then a numerical solution is to be preferred simply because the equations can become impossibly complex. Consider a scheme (figure 55a) in which three species A, B, C are interconnected each with the others. 
 # 
@@ -195,7 +211,7 @@ plt.show()
 # 
 # $$\displaystyle \begin{align} \frac{da}{dt}&= -(k_{12}+k_{13})a+k_{21}b+k_{31}c  \\ \frac{db}{dt}&= k_{12}a-(k_{21}+k_{23})b+k_{32}c \\\frac{dc}{dt}&= k_{13}a + k_{23}b-(k_{31}+k_{32})c \end{align} $$
 # 
-# where $a,b,c$ are the concentrations of each species and $k_{21}$ is the rate constant from $b \to a$ and similarly for the others. In matrix form these equations are,
+# where $a,b,c$ are the concentrations of each species and $k_{21}$ is the rate constant from $b \to a$ and similarly for the others. In matrix form these equations are, where the dot over a letter indicated the time derivative, 
 # 
 # $$\displaystyle \begin{bmatrix}\dot a\\ \dot b\\ \dot c \end{bmatrix}=\begin{bmatrix}-(k_{12}+k_{13}) & k_{21} & k_{31}\\k_{12} & -(k_{21}+k_{23}) & k_{32} \\k_{13} & k_{23} & -(k_{32}+k_{31})  \\ \end{bmatrix}\begin{bmatrix}a\\b\\c\end{bmatrix}$$
 # 
@@ -209,7 +225,7 @@ plt.show()
 # 
 # This method can be extended to schemes with many other species as in question 52. If, for instance, species $b$ decays such as by fluorescence or phosphorescence then $-k_f b$ is added to the summation term in the rate equation for that species. The limitation is that only first order, or pseudo first order, reactions are possible, i.e. the rate constant matrix must not involve and concentrations unless they have a constant value.
 
-# #### Energy transfer on a Polygon. Circulant determinants.
+# #### **Energy transfer on a Polygon. Circulant determinants**
 # 
 # In this example we consider energy transfer between molecules equally spaced apart on a polygon. The determinant produced is similar to the $\mathrm{H\overset{\cdot\cdot}uckel }$ one described in section 2 although the problem is totally different.
 # 
@@ -229,7 +245,7 @@ plt.show()
 # 
 # Suppose that the molecules are on the corners of a square and for simplicity only near-neighbour transfer is allowed, then the rate equations are
 # 
-# $$\displaystyle \qquad\qquad\begin{bmatrix}\frac{d p_0}{dt}\\\frac{d p_1}{dt}\\ \frac{d p_2}{dt}\\ \frac{d p_3}{dt} \end{bmatrix}=\begin{bmatrix} -2k & k & 0  & k \\ k & -2k & k & 0 \\0& k & -2k & k \\k & 0 & k & -2k\end{bmatrix}\begin{bmatrix}p_0(0)\\p_1(0)\\  p_2(0)\\ p_3(0) \end{bmatrix} \qquad\qquad\begin{matrix}  0 &\cdots & 1\\ \vdots & &\vdots\\ 3 &\cdots& 2\end{matrix}\qquad\qquad\qquad\qquad\text{(41a)}$$
+# $$\displaystyle \qquad\qquad\begin{bmatrix}\dot p_0\\ \dot p_1\\ \dot p_2\\ \dot p_3 \end{bmatrix}=\begin{bmatrix} -2k & k & 0  & k \\ k & -2k & k & 0 \\0& k & -2k & k \\k & 0 & k & -2k\end{bmatrix}\begin{bmatrix}p_0(0)\\p_1(0)\\  p_2(0)\\ p_3(0) \end{bmatrix} \qquad\qquad\begin{matrix}  0 &\cdots & 1\\ \vdots & &\vdots\\ 3 &\cdots& 2\end{matrix}\qquad\qquad\qquad\qquad\text{(41a)}$$
 # 
 # The initial amounts excited are $p_i(0)$ where $i=0,\cdots, 3$ which we make zero except for $p_0(0)=1$. The first equation when written out in the usual way is  
 # 
@@ -291,9 +307,13 @@ plt.show()
 # 
 # $$\displaystyle \pmb x_t=\frac{1}{n}\pmb x[e^{\lambda t}]\pmb x^*\pmb M_0 $$ 
 # 
-# Although the eigenvector matrix $\pmb x$ is useful here, this is nothing compared to its general use which is that if $v$ is any vector then multiplying as $\pmb x v$ is the Discrete Fourier Transform (DFT) of vector $v$. This leads automatically to the Fast Fourier Transform (FFT) algorithms used universally in all sorts of signal analysis from music to CT scans. 
+# Although the eigenvector matrix $\pmb x$ is useful here, this is nothing compared to its general use which is that if $\vec v$ is any vector then multiplying as $\pmb x \vec v$ is the Discrete Fourier Transform (DFT) of vector $v$. This leads automatically to the Fast Fourier Transform (FFT) algorithms used universally in all sorts of signal analysis from music to CT scans. These are described in the Chapter 9 on Fourier Series and Transforms.
 # 
-# Before doing the calculation there is an important feature about the time profiles we already know. The $\lambda$ are scaled rate constants, i.e. they are the rate constant $k$ multiplied by a negative number. When $j=0, \lambda = -2k(1-\cos(0))$ which is zero meaning that there is always a constant term in the population $p$ because $e^0 = 1$ indicating that equilibrium will always be reached when the other terms have decayed away. (We are ignoring here the fact that the molecules themselves can decay by fluorescence, intersystem crossing or internal conversion but we shall assume that an excited state is long lived compared to energy transfer and so is effectively infinitely long lived). We also know that the time profiles have the form $\displaystyle p(t)=\frac{1}{n}\sum_{m=0}^{n-1}c_me^{+\lambda_m\,t}$, i.e the sum/difference of exponential terms where $c$ are the coefficients for each term. In the circulant matrices the $c$'s are always $\pm 1$ and the $1/n$ makes the initial population at time zero equal to $1$ and the final population of all species $1/n$ when the energy is evenly spread out. 
+# Before doing the calculation there is an important feature about the time profiles we already know. The $\lambda$ are scaled rate constants, i.e. they are the rate constant $k$ multiplied by a negative number. When $j=0, \lambda = -2k(1-\cos(0))$ which is zero meaning that there is always a constant term in the population $p$ because $e^0 = 1$ indicating that equilibrium will always be reached when the other terms have decayed away. (We are ignoring here the fact that the molecules themselves can decay by fluorescence, intersystem crossing or internal conversion but we shall assume that an excited state is long lived compared to energy transfer and so is effectively infinitely long lived). We also know that the time profiles have the form 
+# 
+# $$\displaystyle p(t)=\frac{1}{n}\sum_{m=0}^{n-1}c_me^{+\lambda_m\,t}$$
+# 
+# i.e. the sum/difference of exponential terms where $c$ are the coefficients for each term. In the circulant matrices the $c$'s are always $\pm 1$ and the $1/n$ makes the initial population at time zero equal to $1$ and the final population of all species $1/n$ when the energy is evenly spread out. 
 # 
 # The calculation in python is shown below for the general case. The number of molecules is $6$ and this shows that the population of $1$ and $5$ are equivalent and both rise and then fall as energy passes through them and that molecules further away from that one initially excited (molecule 0) take longer to reach equilibrium. If you try this with larger $n$ you will see this behaviour is general and in line with what intuition would suggest.
 
@@ -313,7 +333,7 @@ X   = np.zeros((n,n),dtype = complex)  # matrix for eigenvectors
 exp_mat = np.zeros((n,n),dtype = complex)         # define matrix for exp(lambda)
 pop     = np.zeros((n,max_num),dtype=complex)     # define 2D array for results initially zero
 
-M0[0] = 1   # initial population
+M0[0] = 1.0 # initial population
 k = 1.0     # rate constant
 
 for j in range(n):                   # calculate eigenvectors (X) and eigenvalues (lam)
@@ -348,7 +368,11 @@ plt.show()
 # 
 # In the last two steps, $\pmb{k}$ has been separated out, and the remaining series identified as the first few terms of the exponential expansion.
 # 
-# The second equation, (39), used in the calculation, is $\pmb{M}(t) = \pmb{X}[e^{\lambda t}]\pmb{X}^{-1}\pmb{M}_0$ and the form of this needs explaining. First, each value in the column vector $\pmb{M}(t)$ represents the concentration of each species at time $t$, the column vector $\pmb{M}_0$ holds the initial concentrations
+# The second equation, (39), used in the calculation, is 
+# 
+# $$\displaystyle \pmb{M}(t) = \pmb{X}[e^{\lambda t}]\pmb{X}^{-1}\pmb{M}_0$$
+# 
+# and the form of this needs explaining. First, each value in the column vector $\pmb{M}(t)$ represents the concentration of each species at time $t$, the column vector $\pmb{M}_0$ holds the initial concentrations
 # of the same species. The equation we start with is $\pmb{M}(t) = \pmb{M}_0 e^{-\pmb{k}t}$. To solve this it has to be converted into $\pmb{M}(t) = \pmb{X}[e^{\lambda t}]\pmb{X}^{-1}\pmb{M}_0$, and to do this a _similarity transform_ is needed.
 # 
 # ### 13.4 Similarity Transforms
@@ -357,7 +381,9 @@ plt.show()
 # 
 # $$\displaystyle \pmb{W} = \pmb{X}^{-1}\pmb{NX} \tag{42}$$
 # 
-# then $\pmb{X}^{-1}\pmb{NX}$ is a similarity transform; $\pmb{X}\pmb{NX}^{-1}$ is also a similarity transform. A similarity transform is equivalent to changing the basis set of one matrix into another basis; this might also be considered a coordinate transformation. If matrix $\pmb{W}$ operates on an object, this is the equivalent of transforming the object (this could be a rotation), then operating on it by $\pmb{N}$,which stretches or alters the object in some way (but does not rotate),  then undoing the initial transformation with a further transformation (rotation in the opposite direction) with $\pmb{X}^{-1}$. Thus, $\pmb{W}$ performs the same operation as $\pmb{N}$ but uses a different set of axes.
+# then $\pmb{X}^{-1}\pmb{NX}$ is a similarity transform; $\pmb{X}\pmb{NX}^{-1}$ is also a similarity transform. A similarity transform is equivalent to changing the basis set of one matrix into another basis; this might also be considered a coordinate transformation. 
+# 
+# If matrix $\pmb{W}$ operates on an object, this is the equivalent of transforming the object (which could be a rotation), then operating on it by $\pmb{N}$, which stretches or alters the object in some way (but does not rotate), then undoing the initial transformation with a further transformation (rotation in the opposite direction) with $\pmb{X}^{-1}$. Thus, $\pmb{W}$ performs the same operation as $\pmb{N}$ but uses a different set of axes.
 # 
 # The similarity transform is most useful in diagonalizing matrices, because, if a matrix $\pmb{W}$ can be diagonalized and its matrix of eigenvectors $\pmb{X}$ calculated, then $\pmb{W}$ is _similar_ to the diagonal matrix of its eigenvalues $\pmb{\Lambda}$, where the eigenvectors $\pmb{X}$ act as the similarity matrices. The diagonal matrix is
 # 
@@ -509,7 +535,7 @@ M5
 
 s, sigma, lambda1, lambda2, N = symbols('s, sigma, lambda1, lambda2, N')
 
-M = Matrix([[1,1],[s*sigma,s]])
+M = Matrix( [ [1,1], [s*sigma,s] ] )
 evecs,evals  = M.diagonalize()
 evecs,evals
 
@@ -519,15 +545,15 @@ evecs,evals
 # In[11]:
 
 
-Lambda =   Matrix( [[lambda1,0], [0,lambda2]]) 
-X = Matrix([[1/(lambda1-1),1/(lambda2-1)],[1,1]])  # X matrix, and its inverse 
+Lambda =   Matrix( [ [lambda1,0], [0,lambda2] ] ) 
+X = Matrix( [ [1/(lambda1-1), 1/(lambda2-1)], [1,1] ])  # X matrix, and its inverse 
 X
 
 
 # In[12]:
 
 
-X.inv()    # add  hash before X to remove result
+# X.inv()    # invert matrix, remove hash to see this
 
 
 # In[13]:

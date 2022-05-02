@@ -28,7 +28,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # ### Q2 answer
 # (a) Multiplying $i^2$ by $i$ produces $i^3 = -i$ and $i^4 = 1$ because $(-1)^2 =1$. Similarly $i^5 = i$ and $i^6 = i^2 =-1$.
 # 
-# (b) From these results, starting at n=0 the integer powers of i are repeated in a series of four terms:
+# (b) From these results, starting at $n=0$ the integer powers of $i$ are repeated in a series of four terms:
 # 
 # $$\displaystyle \begin{array}{l|ccc}
 # \hline
@@ -48,7 +48,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # $$\displaystyle \sqrt{z^*z} = \sqrt{(-7 - 24i)(-7 + 24i)} = \sqrt{7^2 + 24^2} = 25$$
 # 
-# and argument is $\theta = \tan^{-1}(-24/7) = -1.28$ radians or $-73.4^\mathrm{o}$.
+# and argument is $\theta = \tan^{-1}(-24/7) = -1.287$ radians or $-73.7^\mathrm{o}$ or $106.3^\text{o}$ (blue arc) which is twice the angle of $z$. 
 # 
 # ![Drawing](chapter2-fig8.png )
 # 
@@ -82,7 +82,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # In[2]:
 
 
-# example using SymPy. Notice that i is replace with 1j
+# example using SymPy. Notice that i becomes 1j
 
 z = symbols('z')
 z =(2-5*1j)*(3+1j)/(3-1j)
@@ -100,8 +100,7 @@ print('argument (degrees) = ',atan( im(z)/re(z) )*180/np.pi   )
 # 
 # $$\displaystyle |a+ib|= \sqrt{1+\tan^2(\theta)}= \sqrt{\frac{\cos^2(\theta)+\sin^2(\theta)}{\cos^2(\theta)}}=\frac{1}{\cos(\theta)}$$
 # 
-# and the argument 
-# $$\displaystyle \alpha = \tan^{-1}(-\tan(\theta)) = -\theta$$
+# and the argument $\displaystyle \alpha = \tan^{-1}(-\tan(\theta)) = -\theta$.
 # 
 # ### Q9 answer
 # Multiplying $z^2$ and equating the result with $w$ produces $u + it = x^2 - y^2 + 2xyi$. Comparing the real and imaginary parts on either side of the equation it follows that $u = x^2 - y^2$ and $t = 2xy$.
@@ -133,7 +132,17 @@ print('argument (degrees) = ',atan( im(z)/re(z) )*180/np.pi   )
 # 
 # $$\displaystyle w=R^{1/n}\left( \cos\left( \frac{\theta+2\pi m}{n} \right) +i\sin\left( \frac{\theta+2\pi m}{n} \right)  \right) $$
 # 
-# with $n = 2,\, R = 1$ and $m = 0,\, 1$ because there are two roots. Using equation 12 to make this equal to $z = i$, it follows that $i = \cos(\pi/2) + i \sin(\pi/2)$ because $\cos(\pi/2) = 0$ and $\sin(\pi/2) = 1$. The square roots of $i$ are therefore $\displaystyle w=\cos(\pi/4)+i\sin(\pi/4)=(1+i)/\sqrt{2}$ and $\displaystyle w=\cos(5\pi/4)+i\sin(5\pi/4)=(1-i)/\sqrt{2}$, which can be written as $\displaystyle w=\cos(k\pi/4)+i\sin(k\pi/4)$ with $k=1,\,5$. The modulus is $\sqrt{w^*w}=\sqrt{(1-i)(1+i)/2}=1$. See figure 9.
+# with $n = 2,\, R = 1$ and $m = 0,\, 1$ because there are two roots. Using equation 12 to make this equal to $z = i$, it follows that $i = \cos(\pi/2) + i \sin(\pi/2)$ because $\cos(\pi/2) = 0$ and $\sin(\pi/2) = 1$. 
+# 
+# The square roots of $i$ are therefore 
+# 
+# $$\displaystyle w=\cos(\pi/4)+i\sin(\pi/4)=(1+i)/\sqrt{2},\quad\text{and}\quad \displaystyle w=\cos(5\pi/4)+i\sin(5\pi/4)=(1-i)/\sqrt{2}$$
+# 
+# which can be written as $\displaystyle w=\cos(k\pi/4)+i\sin(k\pi/4)$
+# 
+# with $k=1,5$
+# 
+# The modulus is $\sqrt{w^*w}=\sqrt{(1-i)(1+i)/2}=1$. See figure 9.
 # 
 # ### Q12 answer
 # The general equation is $w^n =z$ with $n=4$ and $z=16$. Using equation 14,

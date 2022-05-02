@@ -66,7 +66,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # The expansion of $1/(1 + x)$ and of $1/(1 + ax)$, for example, follows immediately by substitution of $x \rightarrow -x $ and $x \rightarrow ax$  into the series of equation (1). In the latter case for the series to be valid $|\, ax \,| < 1$, where $a$ is a constant.
 # 
-# #### Summation of waves
+# #### **Summation of waves**
 # The summation of waves occurs in fourier analysis, a wave in its general form is $e^{-i\omega t}$ which propagates at frequency $\omega$ and time $t$. The sum of many waves of different frequency and in phase with one another produces a pulse, this is how a pulse is formed in a mode-locked laser. It is also how diffraction from an array of scatterers, (electrons in atoms) produces a spot in a x-ray diffraction pattern from a single crystal. The sum to $N$ terms is formed from waves at frequencies $n\omega$, 
 # 
 # $$\displaystyle S=\sum_{n=-N}^N e^{-in\omega t}$$
@@ -85,7 +85,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # which is a series of spikes separated by $2\pi/\omega$, see fig. 21b chapter 9 (Fourier transforms). 
 # 
-# #### Making new series
+# #### **Making new series**
 # New series can often be made from existing ones. Suppose each term in the series of $f(x)=1+x+x^2+\cdots$ is differentiated, then using eqn 2,
 #  
 # $$\displaystyle f^′(x)= \frac{1}{(1 - x)^2} =1+2x+3x^2 +4x^3 +\cdots+nx^{n-1} +\cdots  \tag{3}$$
@@ -165,11 +165,11 @@ plt.show()
 # 
 # ### 2 Average quantities
 # 
-# Any quantity $x$, such as a set of measurements of some phenomenon or of the discrete energy levels of an atom or molecule has an average value
+# Any quantity, $x$, which is one of a set of measurements has an average value
 # 
 # $$\displaystyle \langle x \rangle= \frac{\sum xp(x)}{\sum p(x)}      \tag{6}$$
 # 
-# which is also called the _first moment_ of the distribution $p(x)$; the second moment is $\langle x^2 \rangle$, the fourth $\langle x^4 \rangle$, etc. The average of $x^2$ is
+# and this is also called the _first moment_ of the distribution $p(x)$; the second moment is $\langle x^2 \rangle$, the fourth $\langle x^4 \rangle$, etc. The average of $x^2$ is
 # 
 # $$\displaystyle  \langle x^2 \rangle = \frac{\sum x^2p(x)}{\sum p(x)} \tag{7}$$
 # 
@@ -177,9 +177,9 @@ plt.show()
 # 
 # $$\displaystyle \sigma^2 =\langle x^2 \rangle -\langle x \rangle^2 $$
 # 
-# A more meaningful description is that $\sigma$ is the dispersion in the value of $x$, meaning it is the spread in its value; experimental values are often quoted as $\langle x \rangle \pm \sigma$. The chapter on integration has examples of averaging using integrals rather than summations, and variance is described in Chapter 13 Data analysis.
+# A more meaningful description is that $\sigma$ is the _dispersion_ in the value of $x$, meaning it is the spread in its value; experimental values are often quoted as $\langle x \rangle \pm \sigma$. The chapter on integration has examples of averaging using integrals rather than summations, and variance is described in Chapter 13 Data analysis.
 # 
-# #### (i) Average energy of a molecule or atom 
+# #### **(i) Average energy of a molecule or atom** 
 # 
 # The average energy is described by
 # 
@@ -217,7 +217,7 @@ plt.show()
 # 
 # $$ \displaystyle \langle E\rangle =k_BT^2\frac{1}{Z}\frac{dZ}{dT}=k_BT^2\frac{d\log(Z)}{dT}\tag{8d}$$
 # 
-# If rotational levels are considered typically several tens of levels are populated at room temperature and the summation therefore involves many terms, for example if the rotational constant $B=1\;\mathrm{cm^{-1}}$, $\approx 50 $ levels are needed to produce a constant average energy of $\approx 104\;\mathrm{cm^{-1}}$. A vibration of $1000\;\mathrm{cm^{-1}}$ levels only to $n=2$ are needed to produce four figure accuracy of $500.4 \; \mathrm{ cm^{-1}}$.
+# If rotational levels are considered typically several tens of levels are populated at room temperature and the summation therefore involves many terms, for example if the rotational constant $B=1\;\mathrm{cm^{-1}}$, $\approx 55 $ levels are needed to produce a constant average energy of $\approx 14500\;\mathrm{cm^{-1}}$. A vibration of $1000\;\mathrm{cm^{-1}}$ levels only to $n=2$ are needed to produce four figure accuracy of $500.4 \; \mathrm{ cm^{-1}}$.
 # 
 # #### (ii) Polymers
 # In synthesizing polymers by radical or condensation polymerisation, the random nature of the chemistry that adds monomers to an already growing chain dictates that a range of polymer lengths is normally produced; the polymer is poly-disperse. Two different averages are frequently taken to characterize the polymer; one is the number average mass, the other the weight average mass. 
@@ -284,7 +284,7 @@ plt.show()
 # 
 # which is equation 12. The partition function, $Z$, is the normalization term and determines what fraction of the total energy is in each level or how energy is partitioned among the various level
 
-# #### (i) Bond rotation 
+# #### **(i) Bond rotation** 
 # 
 # The use of the word 'particle' is rather general, it might represent a molecule in a given vibrational or rotational energy level, a nuclear spin state in an NMR experiment, or the torsional energy of a restricted rotor as in the alkyl chain of hydrocarbons (Jackson 2006). In this example, consider butane, which has trans and gauche configurations as shown in figure 1a. These have different energies due to interactions between the protons on carbon $1$ and $4$ as bond C2 to C3 rotates.
 # 
@@ -310,8 +310,8 @@ plt.show()
 # Figure 1b. Probability of an all trans chain vs the ratio $E_g/k_BT$ for butane and then for a ten fold longer chain of butane like repeat units. Large $E_g/k_BT$ corresponds to low temperature or small energy $E_g$.
 # 
 # ___________________________
-
-# #### (ii) DNA melting: Zipper model  
+# 
+# #### **(ii) DNA melting: Zipper model**  
 # 
 # DNA can melt if the temperature is raised a little above room temperature, $60 \to 70^\text{o}$C would be typical depending on the composition. As a very simple model(see sketch) suppose that as the double stranded molecule unfolds the separated residues become free to move about on the backbone, with degeneracy $g$, but linked residues remain fixed in place. One end of the double stranded molecule is fixed thus the molecule can only unfold from the other. Link $n$ can only open if all those before it are already open, i.e. links $n=0,1,2,\cdots, N-1$ and the energy to do this is $\epsilon$ so that $n$ open links have energy $n\epsilon$. Closed links have energy zero and the energy needed to open a link other than that next to already open ones is infinite.  This model was first examined by C. Kittel Am. J. Physics, v37, p917, 1969.
 # 
@@ -341,10 +341,10 @@ plt.show()
 # In[3]:
 
 
-g,N,epsilon,k,T = symbols('g,N,epsilon,k,T')
+g, N, epsilon, k, T = symbols('g, N, epsilon, k, T')
 
-Z   = (1-(g**N*exp(-N*epsilon/(k*T))))/(1-g*exp(-epsilon/(k*T))) 
-avn = (1/epsilon)*simplify(( k*T**2*diff(Z,T)/Z))
+Z   = (1 - (g**N*exp(-N*epsilon/(k*T))))/(1 - g*exp(-epsilon/(k*T))) 
+avn = (1/epsilon)*simplify( ( k*T**2*diff(Z,T)/Z) )
 avn
 
 
@@ -361,7 +361,7 @@ avn
 # 
 # At low values of $\epsilon/k_BT$, which means at high temperature or zero energy to unfold, almost the whole zipper is unfolded, as intuition would suggest Conversely at large $\epsilon/k_BT$, low temperature or large unfolding energy almost all bonds are intact. The transition between the two is quite sharp and occurs at $\ln(g)=\epsilon/k_BT$ as can be seen in equation 12b. The heat capacity which is $d\langle E\rangle/dT$ shows a sharp peak at this value. This overall behaviour  somewhat unexpected, the model does not immediately suggest that a 'phase transition' should occur. In effect it means that either the zipper is closed or it is fully open and hardly ever in between. 
 
-# #### (iii) Entropy of atoms and molecules
+# #### **(iii) Entropy of atoms and molecules**
 # 
 # In the gas phase the entropy of atoms can be calculated knowing the contribution from translation and electronic terms. The calculation is in two parts, first the partition function must be evaluated and then used to obtain the entropy. 
 # 

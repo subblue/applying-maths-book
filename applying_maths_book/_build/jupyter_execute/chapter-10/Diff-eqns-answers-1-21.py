@@ -71,7 +71,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # In[2]:
 
 
-x,t,k,N,C1 = symbols('x,t,k,N,C1' )       # use SymPy , define symbolic variables
+x, t, k, N, C1 = symbols('x, t, k, N, C1' )       # use SymPy , define symbolic variables
 x = Function('x')
 f01 = Derivative( x(t),t) -k*x(t)*( N - x(t) )    # eqn 7 
 ans = dsolve(f01 )
@@ -463,7 +463,7 @@ print('{:s} {:f} {:s} {:f} {:f} '.format('times at conc', Bc, 'are ',roots[0],ro
 # In[7]:
 
 
-k3,N_ss,t,N0,C1= symbols('k3, N_ss,  t, N0, C1')   # SymPy define symbols to use
+k3, N_ss, t, N0, C1= symbols('k3, N_ss, t, N0, C1')   # SymPy define symbols to use
 N  = Function('N')
 f01= Derivative(N(t),t) - k3*(N_ss - N(t))*N(t)        # define and symbolically solve equation
 ans = dsolve(f01)

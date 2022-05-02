@@ -49,9 +49,9 @@
 # **Strategy:** (b) Having set up the FID, transform it using equations (27 - 28), integrate from $t = 0$ to some large value, say $1000$, but you may have to change this to reproduce the figure. Too short an integration time produces wiggles on the transform, why is this?
 # 
 # ### Q11 Phase
-# **(a)** Show that, if the phase $\displaystyle \varphi$ of $\sin(2\pi t/t_0 + \varphi)$ is chosen not to be $n\pi$, where $n$ is an integer including zero, then both real and imaginary parts of its Fourier transform exist.
+# (a) Show that, if the phase $\displaystyle \varphi$ of $\sin(2\pi t/t_0 + \varphi)$ is chosen not to be $n\pi$, where $n$ is an integer including zero, then both real and imaginary parts of its Fourier transform exist.
 # 
-# **(b)** When the phase is n$\pi$ show that the transform is imaginary.
+# (b) When the phase is n$\pi$ show that the transform is imaginary.
 # 
 # ### Q12 Electron density as a delta function
 # Suppose that the electron density of an atom can be represented in one dimension as a delta function at a distance $a$ from the origin; $\delta(x - a)$. The scattering of electromagnetic waves, such as X-rays off an atom's electrons is represented by the Fourier transform with such a delta function.

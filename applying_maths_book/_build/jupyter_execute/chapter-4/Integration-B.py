@@ -71,7 +71,7 @@
 # 
 # $$\displaystyle I=\int\frac{f'(x)}{f(x)}dx =\ln(|f(x)|) +c  \tag{12}$$
 # 
-# where $f'(x)$ is the derivative of $f$ and $c$ is the constant of integration. The symbols $| ',|$ indicate that the absolute value of the function must be taken because the log of a negative number is not permissible. 
+# where $f'(x)$ is the derivative of $f$ and $c$ is the constant of integration. The symbols $| \;|$ indicate that the absolute value of the function must be taken because the log of a negative number is not permissible. 
 # 
 # This result can be demonstrated by substitution of $u = f(x)$ then $du = f '(x)dx$ into equation 12 giving
 # 
@@ -87,8 +87,9 @@
 # 
 # $$\displaystyle \int\frac{f'(x)}{\sqrt{f(x)}}dx=2\sqrt{f(x)}+c  \tag{13}$$
 # 
-# and this can be verified by letting f (x) = u and differentiating f (x) + c. Try this and then integrate both sides of the equation.
-#  The third equation involves a function and its derivative and is the product,
+# and this can be verified by letting $f (x) = u$ and differentiating $f (x) + c$. Try this and then integrate both sides of the equation.
+#  
+# The third equation involves a function and its derivative and is the product,
 #  
 #  $$\displaystyle I=\int f(x)f'(x)dx=\frac{1}{2}f(x)^2+c . \tag{14}$$
 #  
@@ -98,7 +99,7 @@
 #  
 #  where the function is $\cos(x)$. Of course, the integral in this particular case could have been written the other way round. The result would then be $\displaystyle \int\sin(x)\cos(x)dx=-\frac{1}{2}\sin^2(x) +c$ but because $\cos^2(x)+\sin^2(x)=1$ this is the same result if the $1$ is added to the arbitrary constant $c$.
 #  
-# ## 5 Integration by parts
+# ### 5 Integration by parts
 # 
 # Very often the products of two functions must be integrated and one way of doing this is to use 'integration by parts'. Integration by parts is a major tool to integrate seemingly difficult expressions.
 # 
@@ -118,9 +119,11 @@
 #    
 # $\quad$ **The integral of $udv$ is $u$ times the integral of $dv$, which is $v$ minus the integral of $v$ times the derivative of $u$**.
 # 
-# The trick is to find $u$ that can be differentiated, which is usually easy, and $v$ that can be integrated, which is sometimes much harder. It is worth exchanging $u$ and $v$ if the resulting integration gets more complicated. Some examples should make this important method clearer.
+# The trick is to find $u$ that can be differentiated, which is usually easy, and $v$ that can be integrated, which is sometimes much harder. It is worth exchanging $u$ and $v$ if the resulting integration gets more complicated. 
 # 
-# #### Example 1  
+# A few examples should make this important method clearer.
+# 
+# #### **(i) $\displaystyle \int y\cos(y)dy$**
 # To solve $\displaystyle \int y\cos(y)dy$ using equation 16
 # 
 # (i) Start by trying $u=y$ and $dv=\cos(y)dy$
@@ -133,7 +136,7 @@
 # 
 # $$\displaystyle \int y\cos(y)dy=y\sin(y)-\int \sin(y)dy = y\sin(y)+\cos(y)+c$$
 # 
-# #### Example 2
+# #### **(ii) $\int x\ln(x)dx$**
 # The integral $\int x\ln(x)dx$ can be evaluated by parts if $u=\ln(x)$ and $dv=xdx$, producing
 # 
 # $$\displaystyle \int x\ln(x)=\ln(x)\frac{x^2}{2}-\frac{1}{2}\int\frac{1}{x}x^2dx =\ln(x)\frac{x^2}{2}-\frac{x^2}{4}+c$$
@@ -149,7 +152,7 @@
 # 
 # which is the same result as by the first method when both sides are divided by two.
 # 
-# #### Example 3
+# #### **(iii) $\int e^x\sin(x)dx$**
 # Sometimes successive integration is necessary, as with $\int e^x\sin(x)dx$. To integrate this function let $u = e^x$ and $dv = \sin(x)dx$. This produces
 # 
 # $$\displaystyle \int e^x\sin(x)dx=-e^x\cos(x)+\int e^x\cos(x)dx $$

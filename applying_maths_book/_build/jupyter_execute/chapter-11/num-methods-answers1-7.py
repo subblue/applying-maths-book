@@ -26,13 +26,13 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 
 
 #-----------------------
-def trapz(f,a,b,n):        # trapezoidal rule as a subroutine.
-    h = (b-a)/n
+def trapz(f, a, b, n):        # trapezoidal rule as a subroutine.
+    h = (b - a)/n
     s = 0.0
     for i in range(n+1):
-        s = s + f(a+i*h)   # add values 
+        s = s + f(a + i*h)   # add values 
         pass
-    s = h*(s -(f(a)+f(b))/2.0  )
+    s = h*(s -(f(a) + f(b))/2.0  )
     return s
 #------------------------
 f = lambda x: np.cos(x**2)   # define function to integrate
@@ -106,7 +106,7 @@ print('pythod quad integrator answer ',quad(f,0,10)[0]  )    # use Python built-
 # In[3]:
 
 
-b,r,d,C1 = symbols('b, r, d, C1',positive =True)
+b, r, d, C1 = symbols('b, r, d, C1', positive = True)
 f = 1/(r*sqrt(r**2-b**2))
 integrate(f,r )
 

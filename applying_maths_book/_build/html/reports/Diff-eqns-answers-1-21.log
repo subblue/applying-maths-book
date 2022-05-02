@@ -32,12 +32,13 @@ nbclient.exceptions.CellTimeoutError: A cell timed out while it was being execut
 The message was: Cell execution timed out.
 Here is a preview of the cell contents:
 -------------------
-t = symbols('t')
-Bc= 0.8
-k1= 5
-k0= 0.19
-A0= 70.0/60.0
-s = solve(Bc - A0*(1.0 -exp( -k1*t)) + k0*t, t)
-s
+# import all python add-ons etc that will be needed later on
+%matplotlib inline
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.optimize import fsolve
+from sympy import *
+init_printing()                      # allows printing of SymPy results in typeset maths format
+plt.rcParams.update({'font.size': 14})  # set font size for plots
 -------------------
 

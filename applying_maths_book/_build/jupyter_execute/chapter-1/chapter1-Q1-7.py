@@ -7,7 +7,7 @@
 # Calculate the relative populations of two energies separated by $1$ cm$^{-1}$ and then by $1500$ cm$^{-1}$, at both $30$ and $300$ K. If these energy levels are found in a molecule, what two different types of motion are implicated?
 # 
 # ### Q2  
-# Calculate without using your calculator;
+# Calculate by hand,
 # 
 # $$\displaystyle\begin{array}{lll}\\
 # \hline

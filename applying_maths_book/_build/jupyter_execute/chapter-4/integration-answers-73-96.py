@@ -11,7 +11,7 @@ get_ipython().run_line_magic('matplotlib', 'inline')
 import numpy as np
 import matplotlib.pyplot as plt
 from sympy import *
-init_printing()                      # allows printing of SymPy results in typeset maths format
+init_printing()                # allows printing of SymPy results in typeset maths format
 plt.rcParams.update({'font.size': 16})  # set font size for plots
 
 
@@ -39,7 +39,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # In[2]:
 
 
-a,x,U,hbar,m,L = symbols('a,x,U,hbar,m,L', positive = True)
+a, x, U, hbar, m, L = symbols('a, x, U, hbar, m, L', positive = True)
 psi = exp(-a*x**2)
 N = integrate(psi**2,(x,-oo,oo))  # normalisation
 eqa= psi*( -hbar**2/(2*m)*diff(psi,x,x) + U*psi)  # potential value U
@@ -69,10 +69,10 @@ simplify(EV/N)
 # In[3]:
 
 
-alpha,x,hbar,m,k= symbols('alpha,x,hbar,m,k',positive =True)
+alpha, x, hbar, m, k = symbols('alpha, x, hbar, m, k', positive = True)
 
 psi = sqrt(alpha/sqrt(pi))*exp(-alpha*x**2/2)
-N = simplify(integrate(psi**2,(x,-oo,oo) ) )      # normalisation integral psi x psi
+N   = simplify(integrate(psi**2,(x,-oo,oo) ) )      # normalisation integral psi x psi
 N
 
 
@@ -125,10 +125,10 @@ simplify(Enrg)
 # In[5]:
 
 
-alpha,beta,x = symbols('alpha,beta,x',positive=True)
+alpha, beta, x = symbols('alpha, beta, x',positive=True)
 
 psi = exp(-alpha*x**2/2)            # wavefunction
-N = integrate(psi**2,(x,-oo,oo))    #  normalisation
+N   = integrate(psi**2,(x,-oo,oo))    #  normalisation
 
 Hpsi = (-diff(psi,x,x)/2 + (1-exp(-beta*x**2))*psi )
 EV   = simplify( integrate(psi*Hpsi,(x,-oo,oo) )/N )    # variational energy
@@ -169,7 +169,7 @@ solve( (alpha**(3/2) + alpha**(1/2) )*( alpha +1 )**(1/2)-2,alpha )
 # In[7]:
 
 
-r,alpha =symbols('r,alpha',positive =True)
+r, alpha = symbols('r, alpha', positive = True)
 R  = exp(-alpha*r**2/2)                            # radial wavefunction
 eq = 4*pi* R*( -diff(r*R,r,r)/(2*r) - R/r )*r**2   # numerator integral psi H psi     
 EV = integrate(eq, (r,0,oo)) /sqrt((pi/alpha)**3) # divide by normalisation N
@@ -200,7 +200,7 @@ simplify(EV)
 # In[8]:
 
 
-x,y=symbols('x,y',positive =True)
+x, y = symbols('x, y',positive =True)
 
 eq = x**2*sin(x+y)
 Iy = integrate(integrate( eq, (y,x,2*x) ), (x,0,1.0) )
@@ -318,10 +318,10 @@ print('{:8.4f}{:8.4f}'.format( Ix,Iy ) )
 # In[9]:
 
 
-a,theta,u,v = symbols('a,theta,u,v',positive=True)
+a, theta, u, v = symbols('a, theta, u, v',positive = True)
 
-fx = a*sqrt((u**2-1)*(1-v**2))*cos(theta)
-fy = a*sqrt((u**2-1)*(1-v**2))*sin(theta)
+fx = a*sqrt((u**2 - 1)*(1 - v**2))*cos(theta)
+fy = a*sqrt((u**2 - 1)*(1 - v**2))*sin(theta)
 fz = a*u*v
 
 dxu = diff(fx,u)
@@ -404,9 +404,9 @@ simplify(Jac.det())
 # In[10]:
 
 
-rho,u,v,q,a0 = symbols('rho,u,v,q,a0',positive=True)
+rho, u, v, q, a0 = symbols('rho, u, v, q, a0', positive = True)
 
-eq = exp(-u*rho)*(u-v)
+eq = exp(-u*rho)*(u - v)
 simplify( integrate(  integrate ( q**2*rho**3/(2*a0)*eq, (u,1,oo) ) , (v,-1,1)  ) )
 
 
@@ -491,8 +491,8 @@ plt.show()
 # In[12]:
 
 
-a,b,x,y = symbols('a,b,x,y',positive =True)
-eq = sqrt(1-x**2/a**2)
+a, b, x, y = symbols('a, b, x, y',positive =True)
+eq = sqrt(1 - x**2/a**2)
 expand( integrate( eq ,x ) )
 
 
@@ -513,9 +513,9 @@ expand( integrate( eq ,x ) )
 # In[13]:
 
 
-a,b,x,y,u = symbols('a,b,x,y,u',positive=True)
+a, b, x, y, u = symbols('a, b, x, y, u',positive=True)
 
-eq  = x**2*sqrt(1-x**2/a**2)
+eq  = x**2*sqrt(1 - x**2/a**2)
 ans = simplify(2*b*integrate(eq,x ) )
 ans.subs(x,a)-ans.subs(x,-a)            # do limits manually 
 
@@ -528,7 +528,7 @@ ans.subs(x,a)-ans.subs(x,-a)            # do limits manually
 # In[14]:
 
 
-a,b,x,y,u=symbols('a,b,x,y,u',positive=True)
+a, b, x, y, u = symbols('a, b, x, y, u', positive = True)
 eq = (x**2 + y**2)/(pi*a*b)
 ans = integrate( integrate( eq, (y,-b*sqrt(1-x**2/a**2),b*sqrt(1-x**2/a**2)  ) )  ,x   ) 
 ans0 = simplify(ans)
@@ -547,7 +547,7 @@ simplify( ans0.subs(x,a)-ans0.subs(x,-a) )  # do limits manually
 # In[15]:
 
 
-a,b,x,=symbols('a,b,x',positive =True)
+a, b, x = symbols('a b, x', positive = True)
 
 eq=  exp(x)*(sin(b*x/a) + b*cos(b*x/a)/a )
 integrate(eq,(x,0,a)   )
@@ -650,9 +650,9 @@ integrate(eq,(x,0,a)   )
 # In[16]:
 
 
-a,b,p,V,T,R,p0,p1=symbols('a,b,p,V,T,R,p0,p1',positive=True)
+a, b, p, V, T, R, p0, p1 = symbols('a, b, p, V, T, R, p0, p1',positive=True)
 
-eq= R*V**3/(p*V**3-a*V-2*a*b)
+eq= R*V**3/(p*V**3 - a*V-2*a*b)
 factor(integrate(eq, p ) )
 
 

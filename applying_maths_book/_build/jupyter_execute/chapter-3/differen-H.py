@@ -15,7 +15,7 @@ init_printing()                      # allows printing of SymPy results in types
 plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 
-# ## 9 The Newton - Raphson algorithm: 
+# ### 9 The Newton - Raphson algorithm: 
 # 
 # Two numerical methods are now described for solving equations, which means finding their roots, i.e. the values of $x$ when $y = 0$. The Newton - Raphson method uses the derivatives of a function to determine ever-closer approximations to the root of an equation; the related secant and Regula-Falsi (false-position) methods can be used on real experimental data whose equation is unknown. These methods work by making successive approximations.
 # 

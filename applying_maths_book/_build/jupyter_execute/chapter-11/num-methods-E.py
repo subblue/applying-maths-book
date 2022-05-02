@@ -109,7 +109,7 @@
 # 
 # This simple model only gives an indication of what may happen between predator and prey. It is a starting point from which a number of interesting questions can be asked about how animals interact in a more realistic way or even as to how ecosystems behave. One simple change to the model is to limit the amount of grass available to the prey, and hence to their total population in the absence of predators.
 
-# ### 8.2 Nerve impulses and the Fitzhugh - Nagumo equations
+# ### 8.3 Nerve impulses and the Fitzhugh - Nagumo equations
 # 
 # The biological cell membrane has a potential difference between its inner and outer surfaces. This potential, along with a pH difference, is used by the molecular motor protein ATPase, either to phosphorylate ADP to ATP, or to hydrolyse ATP to ADP. The membrane in its simplest form can be described as a capacitor and resistor in parallel. However, the membrane's electrical properties are not passive but excitable, which means that if a current impulse above a certain limit is applied, the membrane potential subsequently oscillates continuously. From 1948 to 1952, Hodgkin and Huxley conducted experiments on the axon of the giant squid. These 'patch-clamp' experiments were analysed by assuming that channels for Na$^+$ and K$^+$ ions existed and that the resistance of the axon was voltage dependent. They modelled this behaviour with four coupled differential equations. Their work, together with that of Eccles received the 1963 Nobel Prize for Medicine. 
 # 
@@ -146,7 +146,7 @@
 # Figure 22 FitzHugh–Nagumo equations phase plane plot and time profile with $C = 0.05$ and other values as in the text. The excitable medium in this case produces a limit-cycle. An equilibrium point occurs where the nullclines cross and is not reached by the trajectory following the limit-cycle.
 # ________
 # 
-# ### 8.3 Limit-cycles
+# ### 8.4 Limit-cycles
 # 
 # In Figures 21 and 22, depending on the starting conditions, the trajectory focuses on the equilibrium point or studiously avoids it. The latter produces a limit-cycle that can most simply be understood by considering the mechanical analogy of a harmonic vs a double well potential. In one dimension they can both be represented by 
 # 

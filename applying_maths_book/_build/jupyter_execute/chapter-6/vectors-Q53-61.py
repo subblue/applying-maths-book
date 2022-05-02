@@ -4,7 +4,7 @@
 # # Questions 53 - 61
 
 # ### Q53 Normalise
-# Show that in normalizing equation (6.51) the unit vectors disappear.
+# Show that in normalizing equation 51 the unit vectors disappear.
 # 
 # ### Q54 Cyclohexane bond lengths
 # In the chair and boat form of cyclohexane $\mathrm{C_6H_{12}}$ calculate; 

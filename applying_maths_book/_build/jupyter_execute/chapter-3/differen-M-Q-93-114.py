@@ -79,7 +79,7 @@
 # 
 # (a) an ideal gas,
 # 
-# (b)a van der Waals gas
+# (b)a van-der-Waal's gas
 # 
 # ![Drawing](differen-fig37.png)
 # 
@@ -87,7 +87,11 @@
 # _____
 # 
 # ### Q101 1D diffusion
-# The equation $\displaystyle \frac{\partial c}{\partial t} = D\frac{\partial^2 c}{\partial x^2} - v\frac{\partial c}{\partial x}$ describes the one-dimensional diffusion of molecules or colloids in the presence of a steady force moving the particles at velocity $v$. $D$ is the diffusion coefficient, $c$ concentration, $x$ position, and $t$ time.
+# The equation 
+# 
+# $$\displaystyle \frac{\partial c}{\partial t} = D\frac{\partial^2 c}{\partial x^2} - v\frac{\partial c}{\partial x}$$
+# 
+# describes the one-dimensional diffusion of molecules or colloids in the presence of a steady force moving the particles at velocity $v$. $D$ is the diffusion coefficient, $c$ concentration, $x$ position, and $t$ time.
 # 
 # (a) What are the units of the diffusion coefficient $D$?
 # 
@@ -103,14 +107,14 @@
 # 
 # **Strategy:** The first law relates heat change $dQ$ to change in the internal energy, $dU$, and the work, $-PdV$. Make $U$ a function of temperature; $\displaystyle dU = \left(\frac{dU}{ dT}\right)dT$ means that the heat capacity has to be found in terms of $dU/dT$.
 # 
-# ### Q100 Internal energy
+# ### Q103 Internal energy
 # Combining the first and second laws produces $dU = TdS - pdV$, where $S$ is the entropy and is a function of $T$ and $V$, i.e. $S = S(T, V)$.
 # 
 # (a) Calculate $\displaystyle \left( \frac{\partial S}{\partial T}\right)_V$ and $\displaystyle \left( \frac{\partial S}{\partial V}\right)_T$ by assuming that the internal energy also is a function of $T$ and $V$, i.e $U=U(T,V)$.
 # 
 # (b) Next,using $H=U+pV$ state $dH$ as a total derivative and so find $\displaystyle \left( \frac{\partial S }{\partial T}\right)_p$ where $H=H(U,p,V)$ and $S=S(p,T)$.
 # 
-# ### Q104 Internal energy of a van-der-Waals gas
+# ### Q104 Internal energy of a van-der-Waal's gas
 # Using equation (50) find the expression for the internal energy of a van der Waals gas.
 # 
 # ### Q105 Partial derivative
@@ -119,7 +123,7 @@
 # ### Q106 Mixed derivative
 # If $p(V - B_T) = RT$ find $(\partial V/\partial p)_T,\; (\partial V/\partial T)_p$, and the mixed derivatives if $B_T$ is a function only of $T$.
 # 
-# ### Q107 van-der-Waals equation of state
+# ### Q107 van-der-Waal's equation of state
 # One of the Maxwell relationships, 
 # 
 # $$\displaystyle \left( \frac{\partial S}{\partial p}\right)_T=-\left( \frac{\partial V}{\partial T}\right)_p$$
@@ -135,14 +139,15 @@
 # where $T_c$ and $p_c$ are constants. (This question is based on one in Barrow 1979, Chapter 8.)
 # 
 # ### Q108 Enthalpy
-# Enthalpy is defined as $H = U + pV$. Total differentiation produces $dH = dU + pdV + Vdp$ and since
-# $dU = TdS - pdV$ then 
+# Enthalpy is defined as $H = U + pV$. 
+# 
+# Total differentiation produces $dH = dU + pdV + Vdp$ and since $dU = TdS - pdV$ then 
 # 
 # $$dH = TdS + Vdp$$
 # 
 # (a) Using $\displaystyle \left(\frac{\partial S}{\partial p}  \right)_T= -\left(\frac{\partial V}{\partial T}  \right)_p$, and the previous equation for $dH$, find an equation for $(\partial H/\partial p)_T$ that does not involve the entropy.
 # 
-# (b) Differentiate the equation you produce with respect to $T$ at constant pressure to obtain an equation for $(\partial C_p /\partial p)_T$ where $C_p$, the heat capacity at constant pressure, is $C_p = dH/dT \equiv (\partial H/\partial T)_p$ . Formally integrate the result to obtain an equation showing how $C_p$ changes with pressure from 0 to a new pressure $p_1$. Calculate the change for a van der Waals and Berthelot gas. (See previous question.)
+# (b) Differentiate the equation you produce with respect to $T$ at constant pressure to obtain an equation for $(\partial C_p /\partial p)_T$ where $C_p$, the heat capacity at constant pressure, is $C_p = dH/dT \equiv (\partial H/\partial T)_p$ . Formally integrate the result to obtain an equation showing how $C_p$ changes with pressure from 0 to a new pressure $p_1$. Calculate the change for a van-der-Waal's and Berthelot gas. (See previous question.)
 # 
 # ### Q109 Gas expansion
 # A gas changes in volume during heating; the heat absorbed $q$ differs from the increase in internal energy $U$ by the amount of work done by the gas, $pdV$, hence $q = U + pdV$. The heat capacity at constant pressure $C_p$ is the rate of change of enthalpy with temperature and that at constant volume, $C_V$, is the rate of change of internal energy with temperature. The enthalpy is $H = U + pV$ and the internal energy is a function of $p,\; V$, and $T$, i.e. $U = f(p, V, T)$.
@@ -165,11 +170,15 @@
 # **Strategy:** It is not obvious where to start but the internal energy $U$ is given either by $H = U + pV$ or $A = U - TS$. Differentiation with respect to $V$ at constant $T$ is required, so the second equation describing the Helmholtz free energy $A$ should be tried. Recall that $A$, $U$, and $S$ are each functions of $V$ and $T$. The equation $dA = -SdT - pdV$ is also needed. The van der Waals equation is $(p + n^2a/V^2)(V - nb) = nRT$, where $n$ is the number of moles and $a$ and $b$ are constants, and for the calculation in (b) the value of each constant should be looked up in a textbook such as McQuarrie & Simon (1997).
 # 
 # ### Q112 Internal energy
-# An alternative starting point to find the internal energy of a non-ideal (monatomic) gas is to  combine the first and second laws as $dU = TdS - pdV$, and then to use $\displaystyle \Delta U=\int \left(  \frac{\partial U}{\partial V}\right)_TdV$ to find the internal energy due to expansion of the gas at constant temperature.
+# An alternative starting point to find the internal energy of a non-ideal (monatomic) gas is to  combine the first and second laws as $dU = TdS - pdV$, and then to use 
+# 
+# $$\displaystyle \Delta U=\int \left(  \frac{\partial U}{\partial V}\right)_TdV$$
+# 
+# to find the internal energy due to expansion of the gas at constant temperature.
 # 
 # (a) Find $(\partial U/\partial V)_T $ as in equation (50) and
 # 
-# (b) the total energy of the van der Waals gas, which is its internal plus kinetic energy.
+# (b) the total energy of the van-der-Waal's gas, which is its internal plus kinetic energy.
 # 
 # **Strategy:** The internal energy of an ideal gas is zero but it still has kinetic energy. An ideal monatomic gas has energy $3nk_BT/2$, where $k_B$ is Boltzmann's constant. A term $nk_BT/2$ is added for each degree of freedom in the molecule, one for its kinetic energy in three dimensions, or equivalently each squared term in the energy, potential and kinetic. Therefore a diatomic gas has an extra $nk_BT2/s$ each for potential and kinetic energy because the bond stretching energy varies in proportion to the square of the extension. In (a) the Maxwell equation $\displaystyle \left(\frac{\partial S}{\partial V}  \right)_T=\left(\frac{\partial p}{\partial T}  \right)_V$ is required. See Chapter 4 if you are unfamiliar with integration.
 # 

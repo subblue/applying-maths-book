@@ -42,7 +42,7 @@
 # 
 # which can be converted to terms in $x$ and $y$. The errors increase generally with $r$ and the $x$ and $y$ errors are  The angular terms are zero at $n\pi/4$, if $n$ is an integer, and at radius $r = \sigma_r /\sigma_\theta$.
 # 
-# ### Q14 answer
+# ### Q4 answer
 # Starting, as in the text, the normal equations are produced by minimizing the $\chi^2$.
 # 
 # $$\displaystyle \frac{\partial}{\partial b}\sum_i^nw_i(y_i-bx_i)^2=-2\sum_i^nw_ix_i(y_i-bx_i)=0\\

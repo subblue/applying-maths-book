@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Numbers to Algorithms
+# ## Numbers to Algorithms.
 
 # In[1]:
 
@@ -11,12 +11,12 @@ get_ipython().run_line_magic('matplotlib', 'inline')
 import numpy as np
 import matplotlib.pyplot as plt
 from sympy import *
-init_printing()                      # allows printing of SymPy results in typeset maths format
+init_printing()                  # allows printing of SymPy results in typeset maths format
 plt.rcParams.update({'font.size': 16})  # set font size for plots
 
 
 # 
-# ## 1 Symbols and basics
+# ### 1 Symbols and basics
 # 
 # When you learn mathematics, it is normal to use $x$ and $y$ to do most of the algebraic manipulations. In science, $x$ and $y$ are almost never used and this simple change can make a simple equation look complicated. This is something that you just have to get used to, but is made easier if you think what the variables mean; then perhaps you will be confident, say, to differentiate with respect to temperature $T$ rather than feeling that this can only be done with variable $x$. How ingrained using $x$ and $y$ are, is not, however, to be underestimated, for even experienced practitioners will on occasion revert to these when faced with a difficult calculation.
 # 
@@ -78,7 +78,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # $$\displaystyle \mathtt{eqn1 = x**2 + 3*x - 2}$$
 # 
-# is acceptable but not $\mathtt{eqn1 = x**2 + 3*x = 2}$.  Details of Python syntax is shown in Appendix 1. Because many different symbols are used in maths, and some only infrequently, these are listed in the Glossary with their meanings.
+# is acceptable but not $\mathtt{eqn1 = x**2 + 3*x = 2}$.  Details of Python syntax are given at the end of the book. Because many different symbols are used in maths, and some only infrequently, these are listed in the Glossary with their meanings, also at the end of the book
 # 
 # ### 1.5 Functions
 # 
@@ -103,9 +103,11 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # The other type of 'function' is a sort of subroutine, to give it an old fashioned name, and has the form <br>
 # 
-# $ \mathtt{def\;\; afunc( x, y ):}\\
-#   \quad  \mathtt{a= 2*x+3*y**2}\\
-#    \quad \mathtt{return\;\; a}$
+# $ \mathtt{def\;\; afunc( x, y ):}$
+# 
+# $\quad  \mathtt{a= 2*x+3*y**2}$
+# 
+# $\quad \mathtt{return\;\; a}$
 #    
 # and is used as 
 # 
@@ -132,7 +134,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # ![drawing](chapter1-fig0.png)
 
-# ## 2 Integers, real, and irrational numbers
+# ### 2 Integers, real, and irrational numbers
 # 
 # Integers are the numbers that are colloquially called whole numbers, $-2, 0, 3$, etc. and they extend from minus infinity to plus infinity; $-\infty$ to $+\infty$ and although there is an infinity of them they are what mathematicians call countable. Integers are clearly not the only numbers as we are familiar with the real numbers such as $1.2,\, 3.56$, and so on, of which there is also an infinite number, but many, many more than there are integers. If two different real numbers are chosen, an infinite number of others can be squeezed in between them simply by adding more decimal places; this and other interesting discussions on numbers and algorithms are explained clearly in 'The Emperor's New Mind' (R.Penrose publ. 1990 Vintage OUP). Surprisingly, real numbers can usually be reduced to a rational fraction which is a ratio of two integers, e.g. $0.751 = 326/533$, but, for some numbers, $\pi,\, e, \sqrt{2}$ there is no ratio of integers that will accurately form the number and they are called _irrational_, i.e. not being logical! You may recall that $\pi \approx 22/7$ , which would seem to contradict this statement, but $22/7$ is a very poor approximation to $\pi$, only accurate to three digits, $355/113$ is better but only to seven digits.
 # 
@@ -213,14 +215,13 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # ![drawing](chapter1-fig3.png)
 # 
 # Figure 3. Geometric construction to calculate $\pi$. (Not drawn to scale). 
-# 
 # _____
 # 
 # Any algorithm is a process or 'machine' used to arrive at an answer and starts by defining the parameters needed, then setting their initial values. A termination criterion has also to be defined to stop the calculation. The calculation is then performed step by step, repeating steps as necessary and the results printed as the calculation proceeds or just at the end as necessary. If the calculation involves repeated evaluations, as in this case, then a loop is needed to do this.
 # 
-# In the Python code, note that the equal symbol = while looking like an equality sign in mathematics does indicate an equation but rather that an _assignment_ is being made; for example, the statement m= 20: means 'set aside some space in the computer's memory, give it the name $m$, and when that name is called it will produce the number 20'. 
+# In the Python code, note that the equal symbol = while looking like an equality sign in mathematics does indicate an equation but rather that an _assignment_ is being made; for example, the statement $\mathtt{m= 20}$ means 'set aside some space in the computer's memory, give it the name $m$, and when that name is called it will produce the number 20'. 
 # 
-# The instruction $\mathtt{for \;i\; in \;range(m):}$  starts a  loop that repeats the calculation $m$ times starting at zero, automatically incrementing the value of $i$. In this example, this is done 20 times, which corresponds to using a $6$ by $226$-gon which has $402,653,184$ sides! 
+# The instruction $\mathtt{for \;i\; in \;range(m):}$  starts a  loop that repeats the calculation $m$ times starting at zero, automatically incrementing the value of $i$. In this example, this is done $20$ times, which corresponds to using a $6$ by $226$-gon which has $402,653,184$ sides! 
 # 
 # The results are reproduced here, but it is clear that the true value of $\pi$ is being approached and the last approximate value listed is accurate to $12$ decimal places.
 
@@ -229,9 +230,9 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 
 # Algorithm. Al-Kashi's method of calculating pi
 
-m = 20                              # number of iterations
+m  = 20                             # number of iterations
 xa = np.sqrt(3.0)                   # initial guess for x
-na = 6.0                            # number of sided on polygon
+na = 6                              # number of sided on polygon
 print('{:d} {:s}{:10.8f}'.format( 0,'first guess ',3*np.sqrt(4 - xa**2 ) )  )
 for i in range(m):
     xb = np.sqrt( 2 + xa )          # new value of x 
@@ -335,7 +336,7 @@ for i in range(m):                          # do iteration
 # 
 # Fullerenes, such as $\mathrm{C_{60}}$, and soccer balls, have a truncated icosahedral structure in which the vertices of the icosahedron are cut away to reveal a regular solid with sides of pentagons and hexagons. The truncated icosahedron is one of the Archimedean solids. In both cases the coordinates of the vertices are related by the golden ratio. The C$_{60}$ is formed of hexagons and pentagons and also has vertices given in terms of the golden ratio.
 
-# ![drawing](chapter1-fig6.png) ![drawing](chapter1-fig6a.png)
+# ![drawing](chapter1-fig6.png) 
 # 
 # Figure 6. An icosahedron (left) and a truncated icosahedron (right) which is the shape of a football and C$_{60}$ molecules.
 # ____
@@ -355,9 +356,9 @@ for i in range(m):                          # do iteration
 # 
 # The rules of this 'game' define the algorithm and are:
 # 
-# >**(i)** If the value of the function $R$ at $k_a \lt k_b$, then B is moved to $k_b$ to reduce the interval over which the minimum is to be found; the point $k_a$ becomes $k_b$ and a new $k_a$ is calculated in the original region A to $k_b$ and is placed at $1/\phi$ along this interval, labelled in the diagram as $k_a$.
+# $\quad$**(i)** If the value of the function $R$ at $k_a \lt k_b$, then B is moved to $k_b$ to reduce the interval over which the minimum is to be found; the point $k_a$ becomes $k_b$ and a new $k_a$ is calculated in the original region A to $k_b$ and is placed at $1/\phi$ along this interval, labelled in the diagram as $k_a$.
 # 
-# >**(ii)** If the value of the curve at $k_a \gt k_b$ then labels A and B are swapped around, meaning that A is moved to $x_a$ to reduce the search interval; $k_b$ becomes $k_a$ and a new $k_b$ is placed at $1 - 1/\phi$ along the original region $k_a$ to B.
+# $\quad$**(ii)** If the value of the curve at $k_a \gt k_b$ then labels A and B are swapped around, meaning that A is moved to $x_a$ to reduce the search interval; $k_b$ becomes $k_a$ and a new $k_b$ is placed at $1 - 1/\phi$ along the original region $k_a$ to B.
 # 
 # These processes are repeated until a fixed number of iterations have occurred, or the minimum difference in two consecutive $k$ values found to within a certain error whose value you must decide.
 # 
@@ -368,13 +369,14 @@ for i in range(m):                          # do iteration
 
 # Algorithm. Golden Section Search
 
-f= lambda x:  x**3 - 5*x**2           # define a function
+f = lambda x:  x**3 - 5*x**2          # define a function
 
 a = 0.0                               # set limits a and b
 b = 6.0
 N = 20                                # number of iterations 
 Lmt= 0.02                             # smallest b-a allowed this is for you to determine
-g = (np.sqrt(5.0)-1.0)/2.0               # golden ratio
+
+g = (np.sqrt(5.0)-1.0)/2.0            # golden ratio
 ka = g*a+(1-g)*b                      # define start points
 kb = g*b+(1-g)*a
 fa = f(ka)                            # function at start pos’ns
@@ -403,7 +405,7 @@ while abs(b-a)> Lmt and i < N-1 :
 # The table of results shows how the search range is reduced as iteration proceeds. The minimum of the function is known by differentiation, which is how we can check that the calculation is correct, and is at $x = 10/3 = 3.33 \cdots$ with a value $-18.519$; effectively the same as found by the Golden Section iteration.
 # 
 # 
-# ## 3 The exponential $e$ and $e^x$
+# ### 3 The exponential $e$ and $e^x$
 # 
 # The final number we consider is the exponential $e = 2.7182818284 \cdots$ familiar from Boltzmann's equation, the growth of populations of bacteria, or the decay of a compound by its first-order reaction. It also describes the largest rate of increase of compound interest achievable in your savings account or mortgage.
 # 
@@ -453,6 +455,7 @@ while abs(b-a)> Lmt and i < N-1 :
 
 
 # Algorithm. Series (recursive) calculation of an exponetial exp(x).
+
 p = 1.0 
 s = 1.0
 x = 1.0                    # exponential value to calculate, if 2 calculates e^2
@@ -463,13 +466,33 @@ for i in range(1,12):      # increase number if does not comverge
     pass
 
 
+# #### Boltzmann's Distribution
 # There are numerous examples of the exponential function in chemistry and physics. One of the most important is Boltzmann's equation, which relates the population of two energy levels, an upper one $n_2$ to that of a lower one $n_1$ and which are separated by energy $\Delta E$ at absolute temperature $T$,
 # 
 # $$\displaystyle \frac{n_2}{n_1}=e^{-\Delta E/(k_BT)} $$
 # 
 # Boltzmann's constant has the value $k_B = 1.38065 \times 10^{-23}\, \mathrm{J\, K^{-1}}$.
 # 
-# ## 4 Logarithms
+# #### First order or exponential decay
+# It is interesting to derive the first order rate expression to see why in theory, although not in practice, the decay continues to infinity. This was probably first derived by von Schweidler in 1905. First order processes occur in the radioactive decay of atoms, the decay of molecular and atomic excited states, such as by fluorescence, and in dissociation and cis/trans isomerisation of molecules.
+# 
+# The basic assumption is that the probability of reaction $p$ in a time interval $\Delta t$ is independent of past history and depends only on the length of the time interval $\Delta t$, and when this is sufficiently short the probability is _proportional_ to this interval as $p=k\Delta t$ where $k$ is the proportionality constant which depends on the particular atom of molecule. This will become the decay rate constant.
+# 
+# The probability of no reaction in the short time interval $\Delta t$ is $1-p=1-k\Delta t$. If it survives this interval the probability of surviving the next interval is also $1-k\Delta t$ and so by the law of probabilities, the chance of surviving both intervals is the product $(1-k\Delta t)^2$ and so for $n$ such intervals the probability is $(1-k\Delta t)^n$. The total time is the sum of all time intervals, $t=n\Delta t$ and by substituting gives $(1-kt/n)^n$. 
+# 
+# The chance that the molecule or atom will remain unchanged at time $t$ is just that value when $\Delta t$ tends to zero, i.e. is made infinitesimally small and then we can recognize that 
+# 
+# $$\displaystyle e^{-x}=\lim_{n\to \infty}\left(1-\frac{x}{n}\right)^n$$
+# 
+# and obtain the limiting value as $p=e^{-kt}$. Instead of considering just one atom let there be $N_0$ initially then the fraction remaining unreacted at time $t$ is  
+# 
+# $$\displaystyle \frac{N}{N_0}=e^{-kt}$$
+# 
+# which is the familiar first order decay expression.
+# 
+# Even for a single molecule the probability of remaining unreacted can extend to infinity. In practice this is only a matter of sensitivity in an experiment. In time-resolved, single-photon counting, used to measure the decay by fluorescence of an excited state, the decay is routinely measured down to 5 orders of magnitude, transient absorption decay, remarkably, has been followed to at least 9 orders of magnitude decrease in intensity and 13 orders in time. But eventually either, no matter how many times the experiment is repeated or, how many molecules we start with the noise inherent in the experiment will dominate and we can go no further. Thus if the decay has a rate constant of 1/nanosecond the chance of waiting even as short a time as a microsecond without it decaying first is tiny, $p=e^{-10^{-6}\cdot 10^9}\approx 10^{-435}$! This is of course why we say that first order reactions come to a halt after a certain time, the chance of observing becomes so small any signal is lost in noise and, even if we started with a mole's worth of molecules, the probability of remaining unreacted is $\approx 10^{-435+23}$ which is still utterly minute.
+
+# ### 4 Logarithms
 # 
 # The 'inverse' of the exponential is the logarithm, because if $y = e^x$ then a function, the logarithm, can be defined as $\ln(e^x) = x$, and therefore $\ln(y) = x$. More generally put, the logarithm of $x$ is the power by which a base number $b$ must be raised to give $x$. Normally we use base 10 or base $e$ and the use the symbols $\log(x)$ or $\log_{10}(x)$ for base 10 and $\ln(x)$ for base $e$ which are also called the natural logs.  Note, however, that this convention is not always followed in computer languages.
 # 
@@ -493,7 +516,7 @@ for i in range(1,12):      # increase number if does not comverge
 # 
 # The idea behind the logarithm, therefore, is to 
 # 
-# $$\displaystyle \text{"use addition to multiply and subtraction to divide"}$$
+# $$\displaystyle \text{'use addition to multiply and subtraction to divide'}$$
 # 
 # and this is because logs relate to powers of numbers. The calculation $128/4$ done with logs is
 # 
@@ -511,7 +534,9 @@ for i in range(1,12):      # increase number if does not comverge
 # 
 # Note that this rule does not apply to $\displaystyle \frac{\log(a)}{\log(b)}$  , which cannot be simplified.
 # 
-# The _third law_ of logs is:
+# When Napier invented logarithms in c.1614, he used bones inscribed with numbers. The old-fashioned slide rule uses the principle of addition and subtraction to do multiplication and division with lines marked on rulers that slide past one another. The slide rule is quite easy to use with practice, and not that much slower, but less accurate, than a hand calculator but no one ever uses one today.
+# 
+# The 'third law' of logs is:
 # 
 # $$\displaystyle \log(x^n) = n \log(x)\tag{12}$$
 # 
@@ -534,6 +559,7 @@ for i in range(1,12):      # increase number if does not comverge
 # \end{array}$$
 # 
 # 
+# #### First order reaction
 # The change in population of a chemical species $c(t)$ decaying by a first-order process follows an exponential law, 
 # 
 # $$\displaystyle c(t) = c_0e^{-kt}$$
@@ -544,7 +570,18 @@ for i in range(1,12):      # increase number if does not comverge
 # 
 # because a plot of the $\ln$ vs time  $t$ is a straight line of slope $-k$. Dividing the concentration $c(t)$ by that initially present $c_0$ makes the log dimensionless.
 # 
-# When Napier invented logarithms in c.1614, he used bones inscribed with numbers. The old-fashioned slide rule uses the principle of addition and subtraction to do multiplication and division with lines marked on rulers that slide past one another. The slide rule is quite easy to use with practice, and not that much slower, but less accurate, than a hand calculator.
+# #### Entropy of volume change in a gas
+# When a gas expands at constant temperature (isothermally) there will be a change in entropy and a quantity of work done. If the change is carried out reversibly while the pressure changes this produces the maximum amount of work. Reversibility means that the pressure is continuously adjusted so slightly that equilibrium is maintained. The equation for the change in entropy when $n$ moles of an ideal gas goes from volume $V_1\to V_2$ is
+# 
+# $$\displaystyle \Delta S =nR\ln\left(\frac{V_2}{V_1} \right)$$
+# 
+# in units of J/mol/K. Notice that the log is a ratio and therefore dimensionless as it must always be. If the ratio of the change in volume is $3$ then the entropy change per mole is $8.314\ln(3)\approx 9.1 $ J/mol/K.
+# 
+# The work done under the same conditions, isothermal reversible change, is in joules/mole and is 
+# 
+# $$\displaystyle w =-nRT\ln\left(\frac{V_2}{V_1} \right)$$
+# 
+# The derivation of these equations need a knowledge of calculus and can be found in any phys. chem. or specialist textbook. 
 # 
 # ### 4.2 Summary of logs and powers: definition $x=b^{\log_b(x)}$
 # 
@@ -552,7 +589,7 @@ for i in range(1,12):      # increase number if does not comverge
 # \hline
 # a^0 = 1& \log(0)=-\infty& \log(1)=0,\quad \log(\infty)=\infty\\[10pt]
 # a^{n+m}=a^ma^n & \log(a)+\log(b)=\log(a\cdot b) & \text{ if } a \gt 0 ; b\gt 0\\[10pt]
-# a^{n-m}=a^na^{-m}=\frac{a^n}{a^m} & \displaystyle \log(a)-\log(b)=\log\left(\frac{a}{b}\right) & \text{ if } a \gt 0 ; b\gt 0\\[10pt]
+# a^{n-m}=a^na^{-m}=\displaystyle \frac{a^n}{a^m} & \displaystyle \log(a)-\log(b)=\log\left(\frac{a}{b}\right) & \text{ if } a \gt 0 ; b\gt 0\\[10pt]
 # \left(a^m \right)^n=a^{m\cdot n} & \log(a^n)=n\log(a)& \text{ if } a \gt 0 ; n\ne 0\\[10pt]
 # \text{ change base } &\log_a(x)=\log_a(b)\log_b(x)\\[10pt]
 # \hline
@@ -577,11 +614,17 @@ for i in range(1,12):      # increase number if does not comverge
 # 
 # Figure 8 Graph of exponential and log functions with the straight line $y = x$. The symmetry between $e^x$ and $\ln(x)$ is clear.
 
-# In[ ]:
-
-
-
-
+# ### 4.5 Arguments to functions such as exponential, sine etc.  do not have units
+# 
+# In all functions, exponential, logs, cosine, sine, and so on the argument $p,\,L$ in $\ln(p),\sin(L)$ must always be dimensionless. This leads to confusion particularly with equilibrium constants and pressures. For example in an equilibrium in the gas phase such as between species $A_2$ and $A$
+# 
+# $$\displaystyle A_2\rightleftharpoons 2A$$
+# 
+# the equilibrium constant in terms of partial pressures is $K_P=P_A^2/P_{A_2}$  which clearly has dimensions and when used to calculate the free energy
+# 
+# $$\displaystyle \Delta G^\text{o}=-RT\ln(K_P)$$ 
+# 
+# causes problems: the log cannot have units.  The way round this is to divide $K_p$ by $1$ unit for example $1$ atm. or $1$ bar whatever units are being used.  However, care is needed because if your pressures are in Torr ($750$ torr =$1$ bar) then the conversion will be needed. As an example if the pressure is in torr and $K_P=2$ then $\Delta G=-RT\ln(2)$ but as we work in SI units with $RT$ then so must be the pressure producing $\displaystyle -RT\ln\left(\frac{2}{750}\frac{\text{bar}}{1\, \text{bar}}\right)$.
 
 # In[ ]:
 

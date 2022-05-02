@@ -16,45 +16,62 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 
 
 # ### Q27 answer 
-# The function is shown in the next figure. Its integral is expected to be small because there is almost as much positive as negative area. Start by calculating the series to see if a summation formula is obvious, which it appears not to be as shown in the calculation below. The numerical result based on the series expansion produces a poor result up to $x = 20$, most probably due to numerical precision /rounding errors in adding and subtracting large powers of $x$. The answer to smaller $x$ values is more accurate. 
+# The function is shown in the next figure. Its integral is expected to be small because there is almost as much positive as negative area. Start by calculating the series to see if a summation formula is obvious, which it appears not to be,
 
 # In[2]:
+
+
+x = symbols('x')
+series(exp(-x)*(3*x**2-x**3),x,n=10)
+
+
+# The numerical result based on the series expansion produces a poor result up to $x = 20$, most probably due to numerical precision /rounding errors in adding and subtracting large powers of $x$. The answer to smaller $x$ values is more accurate but large numbers of terms are needed as shown in the list below the next figure. 
+
+# In[3]:
 
 
 # **** The very last part of this calculation may be v slow ****
 # because the integration is first done algebraically.
 
-fig=plt.figure(figsize=(6,6))
+fig = plt.figure(figsize=(6,6))
 plt.rcParams.update({'font.size': 16})  # set font size for plots
 
-z = symbols('z')
-f01 = exp(-z)*(3*z**2 - z**3)     # SymPy function
+z   = symbols('z')
+sfunc = exp(-z)*(3*z**2 - z**3)           # SymPy function
+func = lambdify(z,sfunc,'numpy')            # make SymPy result into numpy function
 
-s = series(f01,z,0,7)             # series(function name, variable, start, end powers )
-print('{:s} {:s}'.format('First few terms of series', str(s) ) )
-f02 = lambdify(z,f01,'numpy')     # make SymPy result into numpy function
+s0   = series(sfunc,z,0,n = 30)             # series(function name, variable, start, n= power )
+print('{:s} {:s}'.format('First few terms of series', str(s0)[0:29] ) )
 
-s = series(f01,z,0,50).removeO()  # remove 'big O' from result
-f03 = lambdify(z,s,'numpy')       # make SymPy result into numpy function
-
-numx = 200
-maxx = 20.0
+smax = 30                                 # repeat for numberical calc, maximum power of z
+s   = series(s0,z,0,n = smax).removeO()  # remove 'big O' from result
+aseries = lambdify(z,s,'numpy')           # make SymPy result into numpy function
+numx = 200                                # maximum numbe rof x values
+maxx = 10.0                               # max x 
 x = np.linspace(0, maxx, numx )
-plt.plot(x,f03(x),color='red',label='series to '+r'$x^{30}$')
-plt.plot(x,f02(x),color='blue',label='exact function',linewidth=3)
+
+
+plt.plot(x,func(x),color='cyan',label='exact function',linewidth=6 )
+plt.plot(x,aseries(x),color='red',label='series to '+r'$x^{30}$')
 plt.axhline(0,color='black')
 plt.axis([0, maxx, -1, 1])
+plt.xlabel(r'$x$')
 plt.legend()
 plt.show()
 
-a_int = integrate(f01,(z, 0.0, maxx) )   # SymPy symbolic integration
-print('{:s} {:f} {:f}'.format('exact integral 0 to ' ,maxx, a_int) )
-for i in range(60,75):
-    s = series(f01,z,0,i).removeO()
-    s_int = integrate(s,(z,0.0,maxx ))
-    print('{:4d} {:s} {:12.5g}'.format(i,' I= ', s_int),end=';') 
+a_int = integrate(sfunc,(z, 0.0, maxx) )   # SymPy symbolic integration
 
-print('finished')            
+print('{:s} {:f} {:s}{:8.5g}'.format('exact integral 0 to ' ,maxx,' is ', a_int) )
+
+print('calculating series to limit 30 to 45 and integral values')
+ans = []
+for i in range(30,48,2):
+    s = series(sfunc,z,0,n = i).removeO()   # make series to max z**i, i.e. z**35, 36 etc
+    s_int = integrate(s,(z,0.0,maxx ) )   # numerically integrate series from 0 to maxxx
+    ans.append([i,s_int])                     # make list just to print in one go
+
+for i in range(len(ans)):
+    print('{:s}'.format( str(ans[i]) )  )           
 
 
 # Figure 26. The area under the curve from zero to 20 is close to zero.
@@ -88,16 +105,17 @@ print('finished')
 # because $\ln(n)/2 \ll n$ when $n$ is large. Plotting the approximation $\ln(n!) \approx n\ln(n) - n + \ln(n)/2 + 1$ shows that this is surprisingly accurate for almost all $n$ and $\ln(n!) \approx n \ln(n) - n$  down to about $n = 10$. The gamma function describes factorials of real positive and negative numbers not just positive integers.
 # 
 
-# In[3]:
+# In[4]:
 
 
+#--------------------
 def fact(n):              # will overflow if n is too large > 100
     if n == 0 or n == 1:
         return 1
     else:
         return n * fact(n-1)
 #--------------------
-bfact = lambda n: (n-0.5)*np.log(n) - n
+bfact = lambda n: (n - 0.5)*np.log(n) - n
 
 maxn = 100
 n = np.linspace(1,maxn,maxn)
@@ -139,7 +157,7 @@ plt.show()
 # 
 # The value for HD is $B_e = 45.655\,\mathrm{ cm^{-1}}$ and for $\mathrm{I_2}$ is  $0.03735 \,\mathrm{ cm^{-1}}$. At $30$ K the partition function for HD calculated as an integral is $0.695 \times 30/45.655 = 0.457$ and is $4.57$ at $300$ K. The values for $\mathrm{I_2}$ are $556.6$ and $5566$ at the same two temperatures. The partition function for HD at $30$ K calculated properly as a summation is $1.037$. The calculation is
 
-# In[4]:
+# In[5]:
 
 
 B   = 45.655                # cm^(-1)
@@ -159,18 +177,18 @@ print('{:s}{:10.5f}{:s}{:6.3f}{:s}'.format('Z = ',Z,' at ',T, ' K'))
 # 
 # The summation for the partition function starts with $J = 0$, but the Euler-Maclaurin formula with $J = 1$ therefore the first term, which is $1$, has to be added to our result. The calculation is shown next and the three different results plotted. The maximum $J$ used is $8$ as the rotational constant is very large. Smaller values will need far larger maximum values, which can be checked by calculating $\exp(-BJ(J+1)/k_BT)$.
 
-# In[5]:
+# In[6]:
 
 
 # calculation of rotational partition function by three different methods.
 B   = 45.655                # value for HD cm^(-1)
 k_B = 1.38e-23 *5.034e22    # cm^(-1)
-maxT= 300.0                   # maximum temperature
+maxT= 300.0                 # maximum temperature
 
 m = 1
 maxJ = 10                   # max J, see previous calculation
 
-k, x, T = symbols('k x T')  # start to use sympy for Euler-Maclaurin, define symbols
+k, x, T = symbols('k, x, T')# start to use sympy for Euler-Maclaurin, define symbols
 
 f =  (2*x+1)*exp(-((B*x)/(k_B*T))*(x+1))   # terms in partition function
 s1 = integrate(f,(x,m,maxJ))              
@@ -246,11 +264,11 @@ plt.show()
 # 
 # but you can still differentiate directly by substituting first with $x$ if you prefer because $\alpha = x/NL$. As a check,  the differentiation of $dS/d\alpha$ is calculated using sympy
 
-# In[6]:
+# In[7]:
 
 
-alpha, k_B, N = symbols('alpha k_B N')
-f01 = (1+alpha)*ln(1+alpha)+(1-alpha)*ln(1-alpha)
+alpha, k_B, N = symbols('alpha, k_B, N')
+f01 = (1 + alpha)*ln( 1 + alpha ) + ( 1 - alpha )*ln( 1 - alpha )
 ans = (k_B*N/2)*diff(f01,alpha)
 ans
 
@@ -271,12 +289,12 @@ ans
 # 
 # The plot below shows the approximate force equation just derived but plotted as $FL/k_BT$  vs. fractional extension $\alpha$. Plotting this way makes the force dimensionless. The full equation is also plotted and the comparison clearly shows the region where the approximation is valid.
 
-# In[7]:
+# In[8]:
 
 
 alpha  = np.linspace(0,0.999,100)                                # define set of data points
 fapprox= [alpha[i] for i in range(100)]                          # Hook's law
-f = [0.5*np.log((1+alpha[i])/(1-alpha[i])) for i in range(100)]  # reduced force into array
+f = [0.5*np.log((1 + alpha[i])/(1 - alpha[i])) for i in range(100)]  # reduced force into array
 
 fig1=plt.figure(figsize=(5,5))
 plt.rcParams.update({'font.size': 14})  # set font size for plots

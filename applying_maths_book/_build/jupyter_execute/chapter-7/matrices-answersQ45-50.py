@@ -56,7 +56,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # In[2]:
 
 
-u,v = symbols('u,v') 
+u, v = symbols('u, v') 
 
 M = Matrix([[0,-u,v],[u,0,0],[-v,0,0]  ] )
 M.eigenvals()
@@ -91,11 +91,11 @@ simplify(ans[2][2][0] )
 # In[6]:
 
 
-#. Algorithm  Eigenvalues and Eigenvector of Butadiene
+# Algorithm  Eigenvalues and Eigenvector of Butadiene
 # using Sympy for algebraic solutions
 n = 4      # n = number of atoms 
 x = symbols('x')
-M = Matrix([ [x,1.0,0,0],[1,x,1,0] , [0,1,x,1], [0,0,1,x ]])  # Huckel matrix 
+M = Matrix([ [x,1.0,0,0],[1,x,1,0] , [0,1,x,1], [0,0,1,x ] ])  # Huckel matrix 
 M.eigenvals()
 
 
@@ -104,7 +104,7 @@ M.eigenvals()
 # In[7]:
 
 
-M = np.array([ [0,1.0,0,0],[1,0,1,0] , [0,1,0,1], [0,0,1,0 ]])  # Huckel matrix 
+M = np.array([ [0,1.0,0,0], [1,0,1,0], [0,1,0,1], [0,0,1,0 ]])  # Huckel matrix 
 ans = LA.eigh(M)
 ans[0]
 
@@ -257,7 +257,7 @@ print('{:s} {:6.3f}'.format(' dipole = ',d_pi) )
 
 
 # Huckel determinant for benzene  using Sympy/python
-n,M,x = symbols('n,M,x')  # benzene 
+n, M, x = symbols('n, M, x')  # benzene 
 n = 6
 M = zeros(n,n)    # define nxn array as zeros
 for i in range(n):
@@ -274,7 +274,7 @@ M
 # In[17]:
 
 
-M.eigenvects()  # order is:  eigenval=0, degeneracy, eigevector. labelled 1 to 6 in text
+M.eigenvects()  # order is:  eigenval, degeneracy, eigevector. labelled 1 to 6 in text
 
 
 # The order of the energies is that $2 + x$ is the lowest; then a degenerate pair at energy $x + 1$, and at $x - 1$, and the highest at $x - 2$; recall that $\displaystyle x=\frac{\alpha-E}{\beta }$ and that $\beta$ is negative. The of nodes in the eigenvectors determines the energy, with the lowest being the eigenvector where each element has the same sign; in this example this is number 6. The highest energy orbital has the most changes in sign and is number 1.

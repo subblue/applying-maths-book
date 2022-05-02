@@ -50,16 +50,16 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # In[2]:
 
 
-a1,a2,a3,b1,b2,b3,c1,c2,c3=symbols('a1,a2,a3,b1,b2,b3,c1,c2,c3', real=True)
+a1, a2, a3, b1, b2, b3, c1, c2, c3 = symbols('a1, a2, a3, b1, b2, b3, c1, c2, c3', real=True)
 
-A = Matrix([a1,a2,a3])
-B = Matrix([b1,b2,b3])
-C = Matrix([c1,c2,c3])
+A = Matrix( [a1, a2, a3] )
+B = Matrix( [b1, b2, b3] )
+C = Matrix( [c1, c2, c3] )
 
-f1 = A.cross(B.cross(C))      # A x( B x C)
-f2 = B*(A.dot(C))             # B(A.C)
-f3 = C*(A.dot(B))             # C(A.B)
-simplify( f1-f2+f3 )
+f1 = A.cross( B.cross(C) )      # A x( B x C)
+f2 = B*(A.dot(C))               # B(A.C)
+f3 = C*(A.dot(B))               # C(A.B)
+simplify( f1 - f2 + f3 )
 
 
 # ### Q50 answer
@@ -68,16 +68,16 @@ simplify( f1-f2+f3 )
 # In[3]:
 
 
-A = np.array([1,-2,3])
-B = np.array([4,6,0])
-p = np.array([1,2,3])
+A = np.array( [1, -2, 3] )
+B = np.array( [4,  6, 0] )
+p = np.array( [1,  2, 3] )
 a = p - A               # is a vector length 3
 b = p - B
 ab = np.cross(a,b)
 # print('ab =',ab)
-d = np.sqrt(np.dot(ab,ab))/np.sqrt(np.dot(a,a))
+d = np.sqrt( np.dot(ab,ab) )/np.sqrt( np.dot(a,a) )
 print('{:s}{:6.3f}'.format('d =',d ) )
-d_B_Ap = np.sqrt(np.dot(ab,ab))/np.sqrt(np.dot(b,b))
+d_B_Ap = np.sqrt( np.dot(ab,ab) )/np.sqrt( np.dot(b,b) )
 print('{:s}{:6.3f}'.format('dist B to Ap =',d_B_Ap) )
 
 
@@ -119,7 +119,7 @@ print('{:s}{:6.3f}'.format('dist B to Ap =',d_B_Ap) )
 
 # check on distaces
 r = 1
-f = lambda x,y : np.abs(y/2-x*np.sqrt(3)/2) + y + np.abs((x-r)*np.sqrt(3)/2 +y/2)
+f = lambda x,y : np.abs(y/2-x*np.sqrt(3)/2) + y + np.abs((x - r)*np.sqrt(3)/2 + y/2)
 
 f(1/4,1/8)
 
@@ -132,7 +132,7 @@ f(1/4,1/8)
 # In[5]:
 
 
-length = lambda v: np.sqrt(np.dot(v,v))
+length = lambda v: np.sqrt(np.dot(v, v))
 
 Fe   = np.array([6.591, -16.663,  12.091])        #pdb 1THB. HETATM 1THN3507, HEM C 1
 HisN = np.array([7.742, -15.655,  10.429])        # HIS 87 NE2 1THB3086
@@ -172,10 +172,10 @@ print('{:s}{:8.3f}'.format('distance Fe to plane', d ) )
 
 
 # get equation of plane with Sympy 
-x,y,z,=symbols('x,y,z')  # use sympy as xyz are symbols 
-X = Matrix([x,y,z])
-X0= Matrix([NA[0],NA[1],NA[2]])  # any point in plane 
-plane= n.dot(X-X0)
+x, y, z = symbols('x, y, z')  # use sympy as xyz are symbols 
+X = Matrix( [x, y, z] )
+X0= Matrix( [NA[0], NA[1], NA[2]] )  # any point in plane 
+plane= np.dot(n,X - X0)              # n is defined above
 print(plane)
 
 

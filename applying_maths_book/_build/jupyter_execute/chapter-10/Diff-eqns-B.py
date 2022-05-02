@@ -15,8 +15,6 @@ init_printing()                      # allows printing of SymPy results in types
 plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 
-# 
-# 
 # ### 4.1 Homogeneous equations
 # 
 # A homogeneous differential equation has the form
@@ -113,7 +111,7 @@ factor(ans)
 # 
 # $$\displaystyle ye^{\large{\int Pdx}}=\int Qe^{\large{\int Pdx}}dx +c\tag{12}$$
 # 
-# #### (i) Example
+# #### **(i) Example**
 # The equation $\displaystyle \frac{dy}{dx} + \frac{y}{x}= 3\sin(x)$ is solved. 
 # 
 # In this equation $P = 1/x$ and $Q = 3\sin(x)$. The integrating factor is simple in this case and is 
@@ -138,7 +136,7 @@ factor(ans)
 # 
 # and the remaining integral is now a difficult one with the answer involving the error function.
 # 
-# #### (ii) Coupled chemical kinetic equations.
+# #### **(ii) Coupled chemical kinetic equations**
 # One particularly useful application of this method is to solve coupled kinetic equations. If a molecule reacts in a scheme 
 # 
 # $$\displaystyle A \stackrel {k_1} \longrightarrow B \stackrel  {k_2}\longrightarrow  C$$
@@ -195,8 +193,7 @@ factor(ans)
 # 
 # Substituting back gives $\displaystyle y=-\frac{1}{x(e^x+c)} $
 
-# ## 5 Second-order differential equations
-# 
+# ### 5 Second-order differential equations
 # ### 5.1 Newton's laws and differential equations describing motion
 # 
 # Differential equations dominate the study of the motion of the planets and of molecules. In single molecules or in ensembles of them, molecular dynamics calculations rely on solving many simultaneous equations according to Newton's laws of motion, linked to potentials describing intermolecular interactions. 
@@ -285,7 +282,7 @@ factor(ans)
 # 
 # The calculation can be completed when different types of forces are assigned to $f(x)$. Two examples are given, one for the motion of a rocket, another for simple harmonic motion.
 # 
-# #### (i) Rockets
+# #### **(i) Rockets**
 # At the end of section 3.5 the motion of a rocket launched vertically was examined. Figure 8b. shows plots of velocity and time vs distance away from the earth's surface. To calculate the distance moved in a given time equation 15 can be used. 
 # 
 # The equation to use is $\displaystyle \frac{dv}{dt}\equiv v\frac{dv}{dr}=-\frac{gR^2}{r^2}$ which leads to $\displaystyle F(r)= v_0^2 - 2gR+ \frac{2gR^2}{r}$. 
@@ -310,7 +307,7 @@ factor(ans)
 # 
 # $$\displaystyle \sinh^{-1}(x)=  \ln(x+\sqrt{x^2+1})$$ 
 # 
-# #### (ii) Hooke's Law and simple harmonic motion
+# #### **(ii) Hooke's Law and simple harmonic motion**
 # In the case of a force in a line towards the origin that is a fixed point, simple harmonic motion ensues if the force is described by Hooke's law $f (x) = -kx$ where $k$ is the force constant and $x$ the displacement from the origin. The minus sign indicates that the force is towards the origin; when $\displaystyle d^2x/dt^2$ is negative $x$ is positive and vice versa. The equation of motion is now
 # 
 # $$\displaystyle  \frac{d^2x}{dt^2}=-\frac{k}{m}x $$
@@ -365,9 +362,8 @@ factor(ans)
 # In[3]:
 
 
-t,v,B,A = symbols('t,v,B,A', positive = True )
-
-ans = integrate(A**2* v*( 1-cos(4*pi*v*t+2*B  ) )/2,(t,0,1/v) )
+t, v, B, A = symbols('t, v, B, A', positive = True )
+ans = integrate(A**2* v*( 1 - cos(4*pi*v*t+2*B  ) )/2,(t,0,1/v) )
 simplify(ans)
 
 
@@ -397,7 +393,7 @@ simplify(ans)
 # __________
 # The figure shows the classical probability together with a harmonic potential such as for a diatomic molecule. The potential has a force constant of $172$ N/m and the first quantised energy level is shown at energy $E_1$. The square of the wavefunction is also shown. The classical probability extends only as far as the turning points at energy $E_1$. The difference between the probabilities is quite considerable not in their overall size but in their shape. The classical probability cannot extend past the turning point, but the quantised probability does so quite considerably. At large quantum numbers, e.g. $20$ the wavefunction has more probability close to the turning points, than in the middle of the potential and so resembles the classical behaviour a little more closely.
 # 
-# #### (iii) Springs
+# #### **(iii) Springs**
 # 
 # Problems with springs often state that the spring has a weight attached, which causes the spring to extend by a certain amount. It is then extended or compressed by a further amount and let go. The equation of motion is then sought.
 # 
@@ -412,7 +408,7 @@ simplify(ans)
 # 
 # If the initial displacement is above the equilibrium position $x_0 = -3$, therefore $x = -3\cos(\omega t)$. Finally, the frequency is found from Hooke's law. At equilibrium, $mg = ks$ and $s = 5$ is the displacement from equilibrium before the mass is moved. Therefore, the force constant $k = 2 \cdot 9.81/5\,\mathrm{ N \,m^{-1 }}$ and the frequency squared is $\omega^2 = k/m$ or $\omega = 1.4\,\mathrm{ rad\, s^{-1}}$. This corresponds to a natural frequency of $\nu = \omega /2\pi$ or $0.223\,\mathrm{ s^{-1}}$ and period $T = 1/\nu = 4.49$ seconds. The position of the mass at any time $t$ is found to be $x = -3 \cos(1.4t)$. Note that if the question stated that the _weight_ was 2 kg then this would correspond to $mg$ not $m$ and the mass to use would therefore be $2/9.81$ kg.
 # 
-# #### (iv) Total energy
+# #### **(iv) Total energy**
 # 
 # The total energy is the sum of the kinetic and potential energy and is a constant if no external force acts on the system. The kinetic energy is that due to motion $mv^2/2$, and the potential energy can take several forms depending on how the motion is achieved. On extending a spring, the potential energy is force multiplied by distance displaced and the force is given by Hooke's law. If the potential energy is that due to displacing a mass in a gravitational field, as occurs with a pendulum, then the potential is $mgh$ where $h$ is the height change.
 # 

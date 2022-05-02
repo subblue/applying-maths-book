@@ -167,9 +167,7 @@ eq= r**4*(6-r/a0)**2*exp(-2*r/(3*a0))
 # 
 # and the sine integral was worked out by converting to the exponential form. Multiplying the two results and rearranging gives the normalization as $\displaystyle N=\frac{1}{81\sqrt{\pi}}\sqrt{\frac{1}{a_0^3}}$
 # 
-# ## 11 Change of variables in integrals: Jacobians
-# 
-# ### 11.1 Jacobians
+# ### 11 Change of variables in integrals: Jacobians
 # 
 # In Section 3 the method of simplifying an integration by a change of variable was described. A commonly used change of variables in multiple integrals is from Cartesian either to plane polar or spherical polar coordinates. The (plane) polar coordinates are two dimensional and spherical polar are three dimensional; see Chapter 1.6.1. They are used only to simplify a calculation by using those coordinates that reflect the underlying symmetry of the problem being studied, thus the shapes of the s, p, d and other atomic wavefunctions (orbitals) are naturally described in terms of three-dimensional spherical polar coordinates with a radius $r$, a polar $\theta$, and an equatorial (azimuthal) angle $\phi$. However, many two or three or higher dimensional integrations can be simplified by a suitable algebraic substitution, which may also be thought of as a change of coordinates. Fortunately, there is a systematic way of doing this using a determinant of derivatives, called the Jacobian and these are described in this section. Determinants are described in Chapter 7.
 # 
@@ -248,7 +246,7 @@ eq= r**4*(6-r/a0)**2*exp(-2*r/(3*a0))
 
 # A few examples are now worked through.
 # 
-# #### Example (i)
+# #### **(i) A coordinate change can simplify**
 # A coordinate change will simplify the integral 
 # 
 # $$\displaystyle \int\int \frac{1}{\sqrt{(x-y)^2+2(x+y)+1}}dxdy$$
@@ -269,7 +267,7 @@ eq= r**4*(6-r/a0)**2*exp(-2*r/(3*a0))
 # 
 # $$\displaystyle  \int\int \frac{1}{\sqrt{(x-y)^2+2(x+y)+1}}dxdy=\int\int1 dudv=uv +c$$
 # 
-# #### Example (ii)
+# #### **(ii) Covert to plane polar coordinates**
 # The integral 
 # 
 # $$\displaystyle I=\int_0^1\int_0^\sqrt{1-x^2} x(1-xy^3)dydx$$
@@ -295,7 +293,7 @@ eq= r**2*cos(theta)-r**6*cos(theta)**2*sin(theta)**3
 integrate( eq,theta)
 
 
-# #### Example(iii)
+# #### **(iii) Change to polar coordinates**
 # The following integral will be solved by transforming to polar coordinates 
 # 
 # $$\displaystyle I= \int_0^\infty\int_0^x x^2e^{-x^2-y^2}dxdy$$
@@ -327,7 +325,7 @@ trigsimp( expand(ans_r*ans_theta) )
 # 
 # Figure 27 Example (iv). Integration limits in the $\theta - r$ plane. 
 # _____
-# #### Example (iv)
+# #### **Last example (iv)**
 # The integral $\displaystyle I = \int_0^3\int_0^1\frac{x^2}{(x^2+y^2)^{5/2}}dxdy$
 # 
 # can be solved by converting to polar coordinates first then changing the integration limits. Converting produces  
@@ -345,9 +343,9 @@ trigsimp( expand(ans_r*ans_theta) )
 # In[8]:
 
 
-r,theta=symbols('r,theta', positive = True)
+r, theta = symbols('r, theta', positive = True)
 eq = cos(theta)**2/r**2
-integrate(integrate(  eq, (r,1/sin(theta),1/cos(theta) )   ) ,(theta,pi/4,atan(3)))  
+integrate(integrate( eq, (r, 1/sin(theta), 1/cos(theta) )), (theta, pi/4, atan(3)) )  # Double integral
 
 
 # and for the second part $\displaystyle \int_{\tan^{-1}(3)}^{\pi/2} \int_{1/\sin(\theta)}^{3/\sin(\theta)} \frac{\cos^2(\theta)}{r^2} dr d\theta =\frac{\sqrt{10}}{450}$ making the result $\displaystyle\frac{1}{\sqrt{2}}-\frac{19\sqrt{10}}{90}$.
@@ -355,17 +353,5 @@ integrate(integrate(  eq, (r,1/sin(theta),1/cos(theta) )   ) ,(theta,pi/4,atan(3
 # In[9]:
 
 
-integrate(integrate(  eq, (r,1/sin(theta),3/sin(theta) )   ) ,(theta,atan(3),pi/2))  
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
+integrate(integrate( eq, (r,1/sin(theta),3/sin(theta)) ), (theta,atan(3),pi/2) )  
 

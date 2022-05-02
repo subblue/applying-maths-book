@@ -58,21 +58,21 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # Differentiating logarithms always has the form: 'derivative divided by the function'.
 # 
-# $$\displaystyle \frac{d}{dx}\ln\left( f(x) \right)=\frac{f'(x)}{f(x)} \quad \text{where }\quad f'=\frac{d}{dx} \tag{10} $$
+# $$\displaystyle \frac{d}{dx}\ln\left( f(x) \right)=\frac{f'(x)}{f(x)} \quad \text{where }\quad f' =\frac{d}{dx} \tag{10} $$
 # 
 # for example,
 # 
-# $$\displaystyle \frac{d}{dx}\ln(x)=\frac{1}{x}\\ \frac{d}{dx}\ln\left(\sin(x)\right)=\frac{\cos(x)}{\sin(x)}=\frac{1}{\tan(x)}$$
+# $$\displaystyle \begin{align}\frac{d}{dx}\ln(x)&=\frac{1}{x}\\ \frac{d}{dx}\ln\left(\sin(x)\right)&=\frac{\cos(x)}{\sin(x)}=\frac{1}{\tan(x)}\end{align}$$
 # 
 # Differentiating $\ln(y)$ with respect to $x$ produces a most useful form, which is worth remembering
 # 
 # $$\displaystyle \frac{d}{dx}\ln(y)=\frac{1}{y}\frac{dy}{dx} \tag{11}$$
 # 
-# In thermodynamics, the van't Hoff equation has this last form, 
+# The van't Hoff equation of chemical thermodynamics has this last form, 
 # 
 # $$\displaystyle \frac{d\ln(K_p)}{dT}=\frac{\Delta_rH^{\mathrm{o}}}{RT^2}$$
 # 
-# which describes the change of an equilibrium constant $K_p$ for a reaction carried out at constant pressure with temperature $T$ and is an example of Le Chatelier's principle. $\Delta_rH^{\mathrm{o}}$ is the standard molar enthalpy of the reaction. In this form it is easier to plot or integrate wrt.temperature.
+# This equation describes the change of an equilibrium constant $K_p$ for a reaction carried out at constant pressure with temperature $T$ and quantifies the Le Chatelier principle. $\Delta_rH^{\mathrm{o}}$ is the standard molar enthalpy of the reaction. In this form it is easier to plot or integrate wrt.temperature.
 # 
 # A particularly cunning and somewhat complicated example using this log derivative is to solve the equation
 # 
@@ -99,18 +99,22 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # ### 3.13 $x$ as a power: 
 # 
-# Expressions such as $y=a^x,\;y=x^{1/x},\; y= x^x $ etc can be differentiated quite easily with a little care.
+# Expressions such as $y=a^x,\;y=x^{1/x},\; y= x^x $ etc. can be differentiated quite easily with a little care.
 # 
-# #### Example (i) $a^x$ 
+# #### **(i) $a^x$**
 # In cases where there are powers of $x$ it is best to take logs of both sides first. For example,
 # if $y = a^x$, taking logs of both sides gives $\ln(y) = x \ln(a)$ and differentiating produces
 # 
 # $$\displaystyle \frac{1}{y}\frac{dy}{dx}=\ln(a)  \tag{12}$$
 # 
-# and simplifying produces $\displaystyle \frac{dy}{dx}=y\ln(a)=a^x\ln(a)$. In the special case that $a = e$ ($e$ is the exponential constant), then the exponential derivative is retrieved because $\ln(e)  = 1$.
+# and simplifying produces 
+# 
+# $$\displaystyle \frac{dy}{dx}=y\ln(a)=a^x\ln(a)$$
+# 
+# In the special case that $a = e$ ($e$ is the exponential constant), then the exponential derivative is retrieved because $\ln(e)  = 1$.
 # 
 # 
-# #### Example (ii) $e^\pi$ vs. $\pi^e$
+# #### **(ii) Which is larger $e^\pi$ or $\pi^e$ ?**
 # As a second example we differentiate $x^{1/x}$ and from this we can determine which is larger $e^\pi$ or $\pi^e$.
 # 
 # First take logs giving $\displaystyle \ln(y)=\frac{1}{x}\ln(x)$ and then differentiate and using eqn. 11 to simplify gives
@@ -119,7 +123,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # To determine which is bigger by dividing $e^\pi $ and $ \pi^e$ by $e$ and $\pi$ means that we should compare  $e^{1/e}$  and $\pi^{1/\pi}$. The thing to realize here is that if we find the maximum of the derivative of $x^{1/x}$ we can then check which of our two terms is bigger. To find the minimum/maximum is very simple (see section 9) and is found by setting the derivative to zero, then $\ln(x)=1$ so that $x=e$ is the _global maximum_ and this means that $e^{1/e}$ is the maximum possible value and so $e^\pi\; \gt\; \pi^e$.
 # 
-# #### Example (iii) Factorials 
+# #### **(iii) Factorials** 
 # A factorial is defined as $x!=x\cdot(x-1)\cdot (x-2)\cdots 2\cdot 1$ where $x$ is an integer, thus this function cannot be differentiated. Factorials occur most commonly in evaluating probabilities such as the binomial coefficients 
 # 
 # $$\displaystyle \binom{n}{x}=\frac{n!}{x!(n-x)!}$$
@@ -134,12 +138,18 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # $$\displaystyle \frac{d\,\ln\,x!}{dx}=\frac{1}{x!}\frac{d x!}{dx}=\ln(x)+2. \qquad \frac{dx!}{dx}=x!(\ln(x)+2)$$
 # 
-# To find the maximum in  $\displaystyle \binom{n}{x}\equiv y=\frac{n!}{x!(n-x)!}$ substitute for the factorials using Stirling's formula, differentiate and set the result to zero. 
+# To find the maximum in  $\displaystyle \binom{n}{x}\equiv y=\frac{n!}{x!(n-x)!}$,
+# 
+# substitute for the factorials using Stirling's formula, differentiate and set the result to zero. 
 # 
 # $$\displaystyle \begin{align} \ln(y)&= n\ln(n)-x\ln(x)-x-(n-x)\ln(n-x)-(n-x) \\
 # \frac{1}{y}\frac{dy}{dx}&=-\ln(x) +\ln(n-x) \end{align} $$
 # 
-# substituting for $y$ produces $\displaystyle\frac{dy}{dx}=\frac{n!}{x!(n-x)!}(-\ln(x) +\ln(n-x) )$ and the maximum (or minimum) is found when the derivative is zero which can only be when $\ln(x)=\ln(n-x)$ or $x=n/2$. This can only be a maximum because the distribution is always positive.
+# substituting for $y$ produces 
+# 
+# $$\displaystyle\frac{dy}{dx}=\frac{n!}{x!(n-x)!}(-\ln(x) +\ln(n-x) )$$
+# 
+# and the maximum (or minimum) is found when the derivative is zero which can only be when $\ln(x)=\ln(n-x)$ or $x=n/2$. This can only be a maximum because the distribution is always positive and can be confirmed by direct calculation or plotting values. See Pascal's triangle and Binomial distribution in Chapters 1 and 12.
 # 
 # 
 # ### 3.14 Reciprocal derivatives
@@ -173,9 +183,9 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # The aim in differentiating integrals is not to work out the integral first, which might not be possible anyway, and then differentiate the result, but to use equation (15), which avoids doing this.
 # 
-# #### Example: Nearest Neighbour Distribution
+# #### **Nearest Neighbour Distribution**
 # 
-# One interesting, but rather sophisticated example of differentiating integrals occurs when finding the distribution of nearest (closest or first) neighbour molecules in a solution ( Chandrashkar, Rev Mod Phys 1943, v15,1).
+# One interesting, but rather sophisticated example of differentiating integrals occurs when finding the distribution of nearest (closest or first) neighbour molecules in a solution, Chandrasekhar(1943).
 # 
 # Let $w(r)$ be the probability that the nearest neighbour occurs between distance  $r$ and $r + dr$. This must be the probability than no molecules exist up to $r$ and that the next molecule exists in the shell $r \to r + dr$. Thus, 
 # 
@@ -203,7 +213,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # Figure 5a. Probability of a nearest neighbour $w(r)$ at various concentrations.
 # _____
 # 
-# #### Functions of two variables
+# #### **Functions of two variables**
 # 
 # A different case, and one to be aware of, involves function in _two_ variables, say $x$ and $y$.
 # In this example, notice the variable of the integration is $y$, that of differentiation $x$, and therefore the differentiation is first performed inside the integration.
@@ -226,7 +236,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # While it is possible to repeatedly take derivatives of many functions, for instance $\displaystyle \frac{d^3}{dx^3}\sin(x)$, what about the $1/3$ or $1/2$ or $-1$ derivative? What would such a thing mean? In the case of $1/2$ derivatives we can say that if the function is $x^n$ then the half derivative is such that $\displaystyle \frac{d^{1/2}}{dx^{1/2}}\frac{d^{1/2}}{dx^{1/2}}x^n\equiv nx^{n-1}$. In other words differentiating, or operating twice on $x^n$ with $d^{1/2}/dx^{1/2}$, is the same as differentiating once with $dy/dx$. 
 # 
-# The general result for the $n^{th}$ derivative of $x^m$ is $\displaystyle \frac{d^ny}{dx^n}=\frac{m!}{(m-n)!}x^{m-n}$ which can be generalised if $n$ is a fraction by changing the factorials to gamma functions as $n!=\Gamma (n+1)$ thus $\displaystyle \frac{d^ny}{dx^n}=\frac{\Gamma (m+1)}{\Gamma(m-n+1)}x^{m-n}$. As many functions can be expressed as power series it is possible to fractionally differentiate these. However, these unusual derivatives need not have more than a curiosity interest for us; they appear in Morse's paper on the anharmonic oscillator (P. Morse, Physical Review, 34, 57,1929) and hardly anywhere else.
+# The general result for the $n^{th}$ derivative of $x^m$ is $\displaystyle \frac{d^ny}{dx^n}=\frac{m!}{(m-n)!}x^{m-n}$ which can be generalised if $n$ is a fraction by changing the factorials to gamma functions as $n!=\Gamma (n+1)$ thus $\displaystyle \frac{d^ny}{dx^n}=\frac{\Gamma (m+1)}{\Gamma(m-n+1)}x^{m-n}$. As many functions can be expressed as power series it is possible to fractionally differentiate these. However, these unusual derivatives need not have more than a curiosity interest for us; they appear in Morse's paper on the anharmonic oscillator (P. Morse, Physical Review, 34, 57, 1929) and hardly anywhere else.
 
 # ### 3.17 Table of the differentials of some common functions.
 # 

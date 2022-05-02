@@ -3,7 +3,7 @@
 
 # ## Questions 15-30
 
-# 
+# ### All these questions,except the last,  are of a mathematical nature.
 # 
 # ### Q15
 # Evaluate
@@ -95,7 +95,7 @@
 # 
 # (a) find $\displaystyle \int_{-\pi}^{\pi}dx$,
 # 
-# (b) Show that $\displaystyle \int_{-\pi}^\pi e^{imx}e^{-inx}=2\pi\delta_{n,m}$,
+# (b) Show that $\displaystyle \int_{-\pi}^\pi e^{imx}e^{-inx}=2\pi\delta_{n,m}$
 # 
 # where $m$ and $n$ are integers. If $m = n$ then the delta function $\delta_{n,m} = 1$, otherwise it is zero.
 # 
@@ -124,3 +124,9 @@
 # ![Drawing](integration-fig8.png)
 # 
 # Figure 8. Geometry for Q30.
+
+# In[ ]:
+
+
+
+

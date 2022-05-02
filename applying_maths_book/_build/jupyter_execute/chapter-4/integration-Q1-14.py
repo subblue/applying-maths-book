@@ -31,7 +31,7 @@
 # ### Q4 Stoke's Law
 # The movement of a molecule of mass $m$ in a viscous medium, such as its solvent, is subject to Newton's equation: force equals mass $\times$ acceleration, or
 # 
-# $$\displaystyle m\frac{fv}{dt}=F_{frict}$$
+# $$\displaystyle m\frac{dv}{dt}=F_{frict}$$
 # 
 # where its velocity is $v$ and $F_{frict}$ is the frictional force on the molecule from the solvent and is given by Stokes' law 
 # 
@@ -60,7 +60,7 @@
 # **Strategy:** This is a standard integral, and can be looked up in the table or converted into its exponential form and then integrated. The result should be inspected at large $L$.
 # 
 # ### Q7 Acceleration
-# The acceleration f of a particle is given by the vector equation,
+# The acceleration $f$ of a particle is given by the vector equation,
 # 
 # $$\displaystyle f = 2\sin(\omega_0 t)\boldsymbol{ i} + \cos(\omega_0 t)\boldsymbol{j} + t\boldsymbol{k}$$
 # 
@@ -90,7 +90,7 @@
 # 
 # **Strategy:** You are given the equation with which to calculate the work done. Note that the engine compresses the gas, so the final volume is less than that of the initial, hence the upper limit of the integration must be smaller than the lower. The lower limit is always taken to be the initial value, $V$. Because the compression is adiabatic, you must use the equation given, $pV^\gamma = k$, rather than the ideal gas law. It is easier to do the calculation algebraically first and evaluate $k$ afterwards using the values in the question. In the second part, calculate the work as the increase in internal energy from an initial to final temperature and knowing the work from part (a), find the final temperature.
 # 
-# ### Q10 Van-der-Waals gas
+# ### Q10 Van der Waals gas
 # (a) Calculate the work done in increasing the volume of a van der Waals gas where 
 # 
 # $$\displaystyle (p + an^2/V^2)(V - nb) = nRT$$

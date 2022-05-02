@@ -1,9 +1,9 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # SI units, Rounding & converting units, Glossary.
+# ## SI units, Rounding, converting units & Glossary.
 
-# ## SI units and prefixes
+# ### SI units and prefixes
 # 
 # The International System of Units (SI) is nowadays used in all textbooks and much of the scientific literature. See Mills et al. (1993) or Cohen et al. (2007) for a full description of all units. The SI system is based on a set of defined units so that a quantity either has one of these units, or is derived from them. There is also a set of named prefixes for numerical values and these are shown below.
 # 
@@ -73,7 +73,7 @@
 # 
 # and is twice the absolute value of the energy of the 1s electron in hydrogen or twice the ionization energy. The unit of time in atomic units is $\hbar/E_h = 2.41888 \cdot 10^{-17}$ s.
 # 
-# ##  Converting a number to different units
+# ###  Converting a number to different units
 # 
 # It is often necessary to convert between different sets of units. All non-SI units have a definition in terms of the corresponding SI units. An example conversion table for pressure is
 # 
@@ -92,13 +92,13 @@
 # 
 # To convert pressure data from the units of Torr to the SI unit of $\mathrm{N\,m^{-2}}$ (or Pa), one of two methods can be used
 # 
-# ### Method 1; Direct Substitution
+# #### **Method 1; Direct Substitution**
 # 
 # Substitute the value of $1$ torr for its equivalent in $\mathrm{N\,m^{-2}}$ as if 'torr' were a variable in the equation:
 # 
 # $$\displaystyle p = 760\, \mathrm{torr} = 760 \times(133.322\, \mathrm{N\, m^{-2}}) = 101325\, \mathrm{N\,m^{-2}}$$ 
 # 
-# #### Method 2; Multiply by 1
+# #### **Method 2; Multiply by 1**
 # 
 # This is the most reliable method to use. The equation is multiplied by $1$ by using a unit conversion so that the unit to remove is on the denominator. For example from the definition of a torr,
 # 
@@ -123,7 +123,7 @@
 # 
 # making $\hbar = 5.3 \mathrm{\,cm}^{-1}$ fs.
 # 
-# ## Conversion table: Energy units and related quantities
+# ### Conversion table: Energy units and related quantities
 # 
 # $$\displaystyle \begin{array}{c|ccccc1 }
 # \hline\\
@@ -146,7 +146,7 @@
 # 
 # $$\displaystyle  1.381\cdot10^{-23} (\mathrm{J/K}) \times300 \,\mathrm{K} \equiv (1.381\cdot10^{-23} \times 300) \,\mathrm{J} \times \frac{5.034\cdot 10^{22} \mathrm{cm^{-1}}}{1\,\mathrm{J}} = 208.5 \,\mathrm{cm^{-1}}$$ 
 # 
-# ## Table of Scientific Constants
+# ### Table of Scientific Constants
 # 
 # Values mainly from CODATA 2018, and NIST SP961 2019.
 # 
@@ -162,7 +162,7 @@
 # \text{Proton mass } & m_p &1.672 621 923 69(51)\cdot 10^{-27}\;\mathrm{ kg}\\
 # & & 1.007 276 466 621(53) u=\\&& \quad 1836.152 673 43(11) m_e\\ 
 # \text{Neutron mass} &m_n & 1.008 664 915 95(49) u  \\
-# \text{Unified atomic mass unit∗∗ } &u=\mathrm{(mass\; ^{12}C\;atom)}/12 & 1.66053906660(50)\cdot 10^{-27}\;\mathrm{ kg}\\
+# \text{Unified atomic mass unit}^{**} &u=\mathrm{(mass\; ^{12}C\;atom)}/12 & 1.66053906660(50)\cdot 10^{-27}\;\mathrm{ kg}\\
 # \text{Permittivity of free space } &\epsilon_0=1/\mu_0c^2 & 8.8541878128(13)\cdot 10^{-12}\;\mathrm{ F\,m^{-1}}\\
 # \text{Permeability of free space } &\mu_0/(4\pi\times 10^{-7}) & 1.0 \;\mathrm{N\,A^{-2}}\\
 # \text{Bohr radius, } (m_\text{nucleus} = \infty)   & \alpha_0=4\pi\epsilon_0\hbar^2/m_ee^2 &  0.529177210903(80)\times 10^{-10}\;\mathrm{ m}\\
@@ -204,7 +204,7 @@
 # \hline \end{array}$$
 #   
 
-# ##  Significant figures and rounding numbers
+# ###  Significant figures and rounding numbers
 # 
 # A measurement always has two parts: a numerical value and its associated units. It is essential to report numbers to the appropriate number of decimal places. This is done either according to what is possible from the experimental conditions, or from the precision of numbers used in a calculation; and therefore some adjustment, called rounding, of the number is necessary.
 # 
@@ -264,7 +264,7 @@
 # 10^{12.5} &= 3.16 \cdot 10^{12} &
 # \end{array}$$
 
-# ## Experimental results with experimental uncertainties or errors
+# ### Experimental results with experimental uncertainties or errors
 # 
 # There are only a few instances is chemistry where a value you are trying to measure or calculate is an integer, for example a quantum number or the number of atoms in a unit cell of a crystal but in most cases the result will be a real number. The number of significant figures quoted indicates how precise you consider the number to be. As an example a mass of $2.3457$ g measured on an analytical balance must be assumed to be somewhere in the range $2.34565 \to 2.34575$, i.e an _absolute error bound_ of $0.00005$ g which is half the last significant figure. 
 # 
@@ -282,26 +282,26 @@
 # 
 # In the last case, the rounded result is a little smaller than the result but the error is so large that this is of no consequence. In other words, the $92.81$ is only one of many results that could have been obtained had the experiment been repeated many more times and values from at least $60 \to 120$ are to be expected. In cases such as $92.5\pm 0.35$, you might not want to round up either to $93$ or down to $92$. In this case the rounded number could be reported as $(0.92_5 \pm 0.04) \times 10^2$.
 # 
-# 
 # ![Drawing](chapter1-fig26.png)
 # 
 # Figure 26. Illustrating the error of $\pm 30$ on the number $-6051.78$. The red dot is the original number, the blue dot the rounded one, and the red line the error. 
 # ________
 
-# # Glossary of Selected Mathematical Symbols
+# ### Glossary of Selected Mathematical Symbols
 # 
 # $$\begin{array}{lll}
 # \hline
 # \large\text{Symbols} & \large\text{meaning}\\
 # a=b & \text{Equality, with numbers }\pi = 3.14159 \cdots \text{ dots are added as necessary.}\\
-# a\ne b & a \text{is not equal to }b\\
+# a\ne b & a \text{ is not equal to }b\\
 # a\equiv b & \text{Identity; } a \text{ is identical to }b, (a + b)^2 \equiv a^2 + 2ab + b^2. \text{ Rarely used.}\\
 # a\lt b & a \text{ is less than }b\\
 # a\gt b & a \text{ is greater than }b\\
 # \le & \text{less than or equal to}\\
 # \ge & \text{greater than or equal to}\\
 # \ll & \text{much less than}\\
-# \gg &\text{ much greater than}\\
+# \gg &\text{much greater than}\\
+# a \propto b & a \text{ is proportional to } b\\
 # a\approx b & a\text{ is approximately equal to }b\\
 # a\sim b & a\text{ is of the order of }b, \text{ or a changes at the same rate as }b\\
 # 373 \overset{\text{^}}= 100\,^\text{o} & \text{Indicates change of units to equivalent value}\\
@@ -319,8 +319,8 @@
 # \delta(x) & \text{Kronecker Delta }\delta (x) = 1\text{ if }x = 0 \text{ else is zero}\\
 # \delta_{n,m} & \text{Delta function }\delta_{n,m} = 1\text{ if }x = 0 \text{ else is zero},\; n,m\text{ are integers}\\
 # f(x) & \text{function of } x\\
-# f'(x)\;f''(x) & \text{First and second derivaties wrt. }x\\
-# \dot f,\;\ddot f & \text{First and second derivaties wrt. to time}\\
+# f'(x)\;f''(x) & \text{First and second derivatives wrt. }x\\
+# \dot f,\;\ddot f & \text{First and second derivatives wrt. to time}\\
 # \text{O}(x^n) & \text{Big ‘O’ notation. Used in series expansion to indicate that the next}\\& \text{unwritten terms do not grow faster than }x^n\\
 # \hline
 # \end{array}$$

@@ -56,7 +56,7 @@
 # Calculate $\sqrt{23}$. The initial two $r$ values can be chosen to be $0$ and $1$.
 # 
 # ### Q15 Fibonacci series
-# (a) Use a recursion equation and Python if you wish, to calculate the Fibonacci series whose first two values are 1, and all other values are the sum of the previous two.
+# (a) Use a recursion equation and Python if you wish, to calculate the Fibonacci series whose first two values are 1 and all other values are the sum of the previous two.
 # 
 # (b) Show numerically that the ratio of two adjacent Fibonacci numbers tends to the golden ratio.
 # 
@@ -64,9 +64,11 @@
 # 
 # show that the ratio of two adjacent numbers tends to $1 + \sqrt{2}$ and if the equation is $f_n = f_{n-1} + 2f_{n-2}$ show that ratio tends to 2. In both these formulae $f_1 = 1$ and $f_2 = 1$.
 # 
-# **Strategy:** Define a vector to hold the values $f_n, f_{n-1}$, etc. define the first two values then use a loop to increment values.
+# (d) Make a Fibonacci series going backwards from the first two terms in the series in (a) by subtracting the next value rather than adding it.
 # 
-# ### Q16 Pascal's Triangle
+# **Strategy:** Define an array to hold the values $f_n, f_{n-1}$, etc. define the first two values then use a loop to increment values.
+# 
+# ### Q16 Pascal's Triangle and AX nmr spectra
 # Pascal's triangle is a mnemonic for binomial coefficients. If a pyramidal triangle is made, the coefficients are placed in rows one above the other and any value is found by adding together the numbers one to the left and one to the right from the row above. If a right-angled triangle is made, then the numbers added are the one above and the one to the left. 
 # 
 # The binomial coefficients also form the pattern of splitting, in simple AX type, NMR spectra showing the $n : n + 1$ rule. For example, a CH$_2$ next to CH$_3$ has four lines of intensity $1:3:3:1$.

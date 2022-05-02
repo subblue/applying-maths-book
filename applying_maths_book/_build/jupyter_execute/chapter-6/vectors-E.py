@@ -50,7 +50,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # because $-\vec A \times  \vec B = \vec B \times  \vec A$.
 # 
-# ![Drawing](vectors-fig32.png) ![Drawing](vectors-fig33.png)
+# ![Drawing](vectors-fig32-33.png)
 # 
 # Left Figure 32. Right figure 33. Left. Definition of cross products $\vec u \times \vec v$ and $\vec v \times \vec u$. Notice that $\vec u$ and $\vec v$ are in the same plane and that the two resultant vectors point in opposite directions. Notice also the relative orientation of the vectors. Right. Parallelogram.
 # ______

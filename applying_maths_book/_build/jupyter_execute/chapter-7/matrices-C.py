@@ -53,21 +53,21 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # The operators are:
 # 
-# #### (i) Identity
+# #### **(i) Identity**
 # 
 # The identity id labelled $E$. No atoms change position with this operation and all molecules possess the Identity.
 # 
-# #### (ii) Rotation
+# #### **(ii) Rotation**
 # Rotation about an axis, labelled $C_n$. This symmetry element is an axis that often coincides with an x-, y-, or z-axis, but might be in any other direction depending upon the molecule. Rotation by $180^\text{o}$ is labelled $C_2$, by $120^\text{o}\; C_3$, etc. The subscript defines how many times the operation that makes the molecule identical has to occur. A molecule may have rotation about more than one axis. The label $C$ is a shorthand for cyclic.
 # 
-# #### (iii) Reflection
+# #### **(iii) Reflection**
 # Reflection in a mirror plane$^{**}\; \sigma$ The symmetry element is a plane. There are three types of mirror planes: vertical if the mirror edge runs along the principal axis, horizontal if this axis is at $90^\text{o}$ to the mirror, and dihedral if the mirror divides two axes; see figure 10. There may be more than one of each type of mirror plane in a molecule. For example, water or ClO$_2$ has two vertical planes labelled $\sigma$ and $\sigma'$ or $\sigma_V$ and $\sigma_V'$ (or $\sigma(y,z)$ and $\sigma(x,z)$), see Figure 11. A horizontal mirror plane is labelled $\sigma_h$, a dihedral plane $\sigma_d$. One or more superscript dashes ' are added if more than one of a type of mirror plane is present. In cases where a mirror plane falls on two axes this may alter- natively be labelled $\sigma(x, z)$ etc.
 # 
 # 
-# #### (iv) Inversion
+# #### **(iv) Inversion**
 # Inversion through a centre $i$. The element is the centre of inversion the operation always changes coordinates from $(x, y, z) \to (-x, -y, -z)$ and _vice versa_. See figure 12. Only one inversion centre is possible.
 # 
-# #### (v) Rotation - reflection
+# #### **(v) Rotation - reflection**
 # A combined rotation - reflection operation, $S_n$, also called an _improper rotation_. There may be more than one of these. The axis subscript $n$ is defined as in (ii). The operation is rotation followed by reflection in a plane perpendicular to the rotation, $\sigma_nC_n$. Figure 14 shows an example of an $S_4$ operation ($S$ is from the word *Sphenoidisch*).
 # 
 # $^*$ An operation that 'takes it into itself' is used in some texts to mean indistinguishable.
@@ -94,11 +94,11 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # Figure 12. Each of these molecules has an inversion centre. This is shown with a red dot and is at the S atom in SF$_6$ so not visible. Every atom can be moved through the inversion centre to an equivalent point on the opposite side of the molecule leaving it indistinguishable. The operation always changes coordinates from $(x, y, z) \to (-x, -y, -z)$ and _vice versa_.
 # 
-# ![Drawing](matrices-fig14.png)
+# ![Drawing](matrices-fig13.png)
 # 
 # Figure 13 Symmetry elements in naphthalene. The principal axis is out of plane along $z$.
 # 
-# ![Drawing](matrices-fig13.png)
+# ![Drawing](matrices-fig14.png)
 # 
 # Figure 14. The $S_4$ rotation-reflection operation applied to the tetrahedral molecule CCl$_4$. The atoms are labelled only to allow the operations to be followed they are otherwise identical.
 # ______
@@ -352,7 +352,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # In[2]:
 
 
-A,C3,SV = symbols('A,C3,SV')
+A, C3, SV = symbols('A, C3, SV')
 
 SV = Matrix([[0,1,0],[1,0,0],[0,0,1]]  )
 C3 = Matrix([[0,0,1],[1,0,0],[0,1,0]]  )
@@ -368,7 +368,7 @@ A
 # 
 # In the $C_{2V}$ table (see Section 6.9), the product $\pmb{B}_1 \otimes \pmb{B}_2 = \pmb{A}_2$ as may be seen by multiplying the two elements of symmetry species $B_1$ and $B_2$ column by column and identifying the pattern of characters produced. If two species that are doubly or triply degenerate ($E$ or $T$ Mulliken labels) form a direct product, this has to be reduced in the normal way to a sum of irreducible representations. For example, in $C_{3V}$, figure 15, the direct product $\pmb{E}\otimes \pmb{E}$ produces the result$\pmb{E}\otimes \pmb{E} = 4\pmb{E} \oplus \pmb{C}_3 \oplus 0\sigma_V$. The symbol $\oplus$ means the symmetry species are added or, more properly, that $4E,\, C_3$ but no $\sigma_V$ are included in $\pmb{E}\otimes \pmb{E}$. It is common in many texts just to use + instead of $\oplus$. Reducing direct products is explained in Section 6.13, but first one important use of them is illustrated.
 # 
-# ## 6.12 Selection Rules
+# ### 6.12 Selection Rules
 # 
 # In the spectroscopy of molecules, symmetry and point group tables can be used to determine whether an electronic, vibrational, or rotational transition is going to appear in the spectrum. The probability of a transition is proportional to the expectation value of the operator for that type of transition. This can be written for two wavefunctions for states $a$ and $b$ and an operator $\pmb{\mu}$ as 
 # 
@@ -402,7 +402,7 @@ A
 # 
 # In benzene the ground state to first excited singlet state is formally symmetry forbidden but this transition becomes allowed because a vibration of $e_g$ symmetry species ($D_{6h}$ point group) can change the ground or excited state geometry. In this case, the symmetry species of the ground (or excited) state is multiplied by the symmetry of the vibration. This then forms the new symmetry of the ground state and the method outlined above is used to determine if the transition is allowed. The intensity of the transition is borrowed, or 'stolen' from an allowed transition nearby in energy and with the same symmetry as the vibrationally modified state.
 # 
-# ## 6.13 Reducible Representations
+# ### 6.13 Reducible Representations
 # 
 # When, for instance, the orbitals in a molecule are operated on with rotations or reflections, a reducible representation $\Gamma_R$ is produced. This can be decomposed into some irreducible representations, which are the rows that appear in the character table. The effect that symmetry operations have, were calculated in Section 6.8 by setting up a matrix for each atom/orbital and working out the effect of each operation. A matrix has the following general form with unit Cartesian vectors, $x_1, y_1, z_2$ and so forth on each atom.
 # 
@@ -501,7 +501,7 @@ A
 # 
 # ### 6.15 Application to molecular vibrations
 # 
-# Group theory plays an important part in working out what spectroscopic transitions can occur in a molecule, and this was outlined in Section 7.6.12. In addition, it can be used to work out what the normal mode symmetry species are going to be. Recall that a normal mode is the collective motion of the atoms in a molecule such that a constant phase relationship is maintained between them; see Figs 7.27, 7.78, and 7.79. Often these are characterized as symmetric stretch, asymmetric stretch, and bending vibrations, which is fine in a small molecule, such as SO$_2$ or water. However, in larger molecule the vibrational motion becomes more complex and cannot be so simply described, but is instead characterized as a symmetry species of the molecule. The normal mode vibrations are given by the Mulliken labels listed in the left-hand column of the point group but usually with a lower case letter, e.g. $b_{2g}$ rather than $B_{2g}$.
+# Group theory plays an important part in working out what spectroscopic transitions can occur in a molecule, and this was outlined in Section 7.6.12. In addition, it can be used to work out what the normal mode symmetry species are going to be. Recall that a normal mode is the collective motion of the atoms in a molecule such that a constant phase relationship is maintained between them; see Figs 27, 78, and 79. Often these are characterized as symmetric stretch, asymmetric stretch, and bending vibrations, which is fine in a small molecule, such as SO$_2$ or water. However, in larger molecule the vibrational motion becomes more complex and cannot be so simply described, but is instead characterized as a symmetry species of the molecule. The normal mode vibrations are given by the Mulliken labels listed in the left-hand column of the point group but usually with a lower case letter, e.g. $b_{2g}$ rather than $B_{2g}$.
 # 
 # The method outlined for working out orbital symmetry species can be adapted for use here. Again, a table is made up with a top row as the symmetry operations and entries filled in according to rules very similar for those for orbitals.
 # 
@@ -626,7 +626,7 @@ A
 # 
 # ![Drawing](matrices-fig26.png)
 # 
-# Figure 26 Left: Vectors which are the basis functions used to determine normal modes. Right: The two symmetric $a_1$ (top) and one asymmetric normal mode $b_1$ as $v_1 - v_2$.
+# Figure 26 Left: Vectors which are the basis functions used to determine normal modes. Middle:  The asymmetric normal mode $b_1$ as $v_1 - v_2$. Right, the two symmetric $a_1$ modes.
 # ______
 # 
 # In $C_{2V}$, the normal mode vibrations have been found to comprise the symmetry species $2A_1$ and $B_1$. The $L_M$ formula is shown as a table with $v_1$ as the victim vector. The table also shows the characters for each symmetry species.

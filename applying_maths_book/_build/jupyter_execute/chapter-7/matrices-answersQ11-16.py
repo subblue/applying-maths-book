@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## Solutions Q11 - 30
+# ## Solutions Q11 - 16
 
 # In[1]:
 

@@ -61,7 +61,7 @@ print(w)
 # In[3]:
 
 
-f  =lambda x: -(x - 2)+(np.exp(-x) -2)*np.exp(-x)   # must be a function to use fsolve
+f  = lambda x: -(x - 2)+(np.exp(-x) -2)*np.exp(-x)   # must be a function to use fsolve
 print(fsolve(f,1))     # 1 is initial guess
 
 
@@ -160,7 +160,7 @@ simplify(ans)
 # 
 # As all these equations are equal to one another, i.e. each are zero, it follows that 
 # 
-# $$$-k_B (\ln(x_1) + 1) = -k_B(\ln(x_2) + 1) = \cdots$$
+# $$-k_B (\ln(x_1) + 1) = -k_B(\ln(x_2) + 1) = \cdots$$
 # 
 # and so on for all species. As each $x_i$ is the mole fraction of species $i$, $x_i$ is a real number between 0 and 1 and with some simplifying it follows that $\ln(x_1) = \ln(x_2) = \cdots$ and hence,
 # 
@@ -206,7 +206,7 @@ simplify(ans)
 # In[7]:
 
 
-x,y,z,f,g,h,M,L =symbols('x, y, z, f, g, h, M, L')
+x, y, z, f, g, h, M, L =symbols('x, y, z, f, g, h, M, L')
 
 f = 4*x + 3*y + 10*z
 g = x + y + z - 1

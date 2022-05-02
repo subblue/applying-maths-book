@@ -19,12 +19,26 @@
 # Suppose that a harmonic potential is modified by a perturbing cubic term of magnitude $bx^3$, the oscillator now becomes anharmonic. Calculate the energy levels and spectrum.
 # 
 # ### Q48 Particle on a ring with potential
-# The particle on a ring can approximate the energy levels of a cyclic polyene. The potential energy is zero and the Schroedinger equation $\displaystyle -\frac{\hbar^2}{2\mu}\frac{d^2\psi}{d\varphi^2}=E\psi$ where the angle $\varphi$ has values from $-\pi \cdots \pi$ radians. The wavefunction is $\displaystyle \psi_n= e^{in\varphi}/\sqrt{2\pi}$ and the quantum numbers are $n=0,  \pm 1, \pm 2, \cdots$
+# The particle on a ring can approximate the energy levels of a cyclic polyene. The potential energy is zero and the Schroedinger equation 
+# 
+# $$\displaystyle -\frac{\hbar^2}{2\mu}\frac{d^2\psi}{d\varphi^2}=E\psi$$
+# 
+# where the angle $\varphi$ has values from $-\pi \cdots \pi$ radians. The wavefunction is 
+# 
+# $$\displaystyle \psi_n= e^{in\varphi}/\sqrt{2\pi}$$
+# 
+# and the quantum numbers are $n = 0,  \pm 1, \pm 2, \cdots$
 # 
 # (a) Calculate the unperturbed energies $E_n$.
 # 
-# (b) Calculate the perturbed energy of the lowest level ($n = 0$) to second order, when the potential has the value $V$ from $-a\pi \cdots a\pi$  where $a$ is a fraction $\lt$ 1. If we were to suppose that our ring was pyridine then the nitrogen would have a different potential to that of the carbons. Call this value $V$, and then $a$ could be 1/6. Find the energy if $V = 0.1E_1$. The figure shows a particle on a ring with a small region of perturbation.
+# (b) Calculate the perturbed energy of the lowest level ($n = 0$) to second order, when the potential has the value $V$ from $-a\pi \cdots a\pi$  where $a$ is a fraction $\lt 1$. If we were to suppose that our ring was pyridine then the nitrogen would have a different potential to that of the carbons. Call this value $V$, and then $a$ could be 1/6. Find the energy if $V = 0.1E_1$. The figure shows a particle on a ring with a small region of perturbation.
 # 
 # ![Drawing](series-fig14.png)
 # 
 # Figure 14. Particle on a ring with a small region of perturbation
+
+# In[ ]:
+
+
+
+

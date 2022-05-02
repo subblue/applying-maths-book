@@ -30,7 +30,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # In[2]:
 
 
-n,m,x = symbols('n, m, x')
+n, m, x = symbols('n, m, x')
 
 f = sin(n*x)*sin(m*x)
 I0=  integrate(f,x, conds ='none')  # conds='none' means no special conditions
@@ -59,7 +59,7 @@ I0
 # In[3]:
 
 
-n, x, L=symbols(' n x L')
+n, x, L=symbols('n, x, L')
 f = sin(x)*sin(n*pi*x/L)
 I0=integrate(f,(x,-L,L),conds='none')
 I0
@@ -67,18 +67,20 @@ I0
 
 # As $n$ is an integer $\sin(n\pi)$ = 0 and $\cos(n\pi)$ = 1 thus the integral is
 # 
-# $$\displaystyle \int_{-L}^L \sin(x)\sin\left(\frac{n\pi x}{L}\right)dx =L\frac{2(-1)^{1+n}n\pi\sin(L)}{n^2\pi^2-L^2} $$
+# $$\displaystyle \int_{-L}^L \sin(x)\sin\left(\frac{n\pi x}{L}\right)dx =L\frac{2(-1)^{1+n}n\pi\sin(L)}{n^2\pi^2-L^2} $$ 
 # 
 # The Fourier series is therefore
 # 
 # $$\displaystyle \sin(x)\approx 2\pi\sin(L)\sum\limits_{n=1}\left(\frac{(-1)^{1+n}n}{n^2\pi^2-L^2}  \right) \sin\left(\frac{n\pi x}{L}\right) $$
 # 
-# which shows that because the sine is only defined over the range $-L \lt x \lt L$ and is zero elsewhere, there need to be many terms, $\gt$ 50, in the series to describe the function accurately as shown in the next figure.
+# which shows that because the sine is only defined over the range $-L \lt x \lt L$ and is zero elsewhere, there need to be many terms, $\gt$ 50, in the series to describe the function accurately as shown in the figure below. 
+# 
+# The sine wave (yellow line) and its Fourier series containing 5 (red) and 150 terms (black) calculated over the range $\pm$ 8. The latter  fits the sine wave well along its whole extent except near to $\pm L$ where it oscillates wildly. It is zero at $\pm L$ then repeats itself as may clearly be seen outside the range $\pm$ 8.
 
 # In[4]:
 
 
-# plot fourier sine series   =  sum (bn sin(n.pi.x/L) n=1...)
+# plot fourier sine series   =  sum (bn sin(n.pi.x/L) n=1...) 
 fsin = lambda x, L ,k : 2*np.pi*np.sin(L)            *sum( (-1)**(n+1)*n*np.sin(n*np.pi*x/L)/(np.pi**2*n**2 - L**2) for n in range (1,k))
 L = 10.0
 x = np.linspace(-L,L,500)
@@ -96,7 +98,6 @@ plt.legend(loc='center left', bbox_to_anchor=(1, 0.5))
 plt.show()
 
 
-# Figure 1. The sine wave (yellow line) and its Fourier series containing 5 (red) and 150 terms (black) over the range $\pm$ 8. The latter  fits the sine wave well along its whole extent except near to $\pm L$ where it oscillates wildly. It is zero at $\pm L$ then repeats itself as may clearly be seen outside the range $\pm$ 8.
 # ________
 # 
 # ### Q3 answer
@@ -146,7 +147,7 @@ plt.legend(loc='center left', bbox_to_anchor=(1, 0.5))
 plt.show()
 
 
-# Figure Q3. Plot of $\pi$/2 - $x$ (dashed, straight line) and its Fourier series with  $n$ = 5 and 50, over the range $\pm \pi$. The series is zero at $x = \pm \pi$ and would repeat itself indefinitely if drawn to larger positive and negative $x$.
+# Plot of $\pi$/2 - $x$ (dashed, straight line) and its Fourier series with  $n$ = 5 and 50, over the range $\pm \pi$. The series is zero at $x = \pm \pi$ and would repeat itself indefinitely if drawn to larger positive and negative $x$.
 # ________
 # ### Q4 answer
 # 
@@ -288,7 +289,7 @@ for i in range(6):
 
 
 def Lag(n,x):       # recursion formula, adjusted to return L(n,x)
-    if n ==0:
+    if n == 0:
         return 1
     elif n == 1:
         return 1-x
@@ -311,8 +312,9 @@ for i in range(6):
 
 # spherical harmonic calculation
 
-x,n,m,L,phi = symbols('x, n, m, L, phi')
+x, n, m, L, phi = symbols('x, n, m, L, phi')
 
+#--------------
 def Dblfact(n):           # double factorial  by recursion n(n-2)(n-4)....
     if n == 0 or n == 1:
         return 1.0
@@ -339,9 +341,9 @@ for L in [0,1,2,3] :
 print('\n              spherical harmonics\n   L   m') 
 for L in [0,1,2,3] :
     for m in range(L+1):
-        sph= sqrt( (2*L+1)*factorial(L-m)/(4*pi*factorial(L+m)) )*P(x,m,L)*exp(I*m*phi) 
+        sph = sqrt( (2*L+1)*factorial(L-m)/(4*pi*factorial(L+m)) )*P(x,m,L)*exp(I*m*phi) 
         print('{:4d}{:4d}      {:s}'.format( L, m,  str(sph) ))
-        if m !=0:
+        if m != 0:
             sphc= (-1)**m*sqrt( (2*L+1)*factorial(L-m)/(4*pi*factorial(L+m)) )*P(x,m,L)*exp(-I*m*phi) 
             print('{:4d}{:4d}      {:s}'.format( L,-m,  str(simplify(expand(sphc) ))))
         pass
@@ -351,8 +353,9 @@ for L in [0,1,2,3] :
 # In[13]:
 
 
-x,n = symbols(' x n ')     # alternative and simpler method by differentiating directly
+x, n = symbols(' x, n ')     # alternative and simpler method by differentiating directly
 
+#------------
 def P(n,x):                # Legendre polynomial by recursion, see section 4
     if n == 0 : 
         return 1

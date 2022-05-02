@@ -20,7 +20,7 @@
 # (b) If $k = 518.0\,\mathrm{ N\, m^{-1}}$ and $v = 5889.0\,\mathrm{ cm^{-1}}$ what is the absolute change in frequency in s$^{-1}$ or Hz?
 # 
 # ### Q3 Thermometer
-# In the common thermometer, the thermal expansion of a liquid is measured and calibrated to the temperature rise. Mercury or ethanol is often used. If this is held in a $1$ ml reservoir and the capillary of the thermometer has a $0.12$ mm diameter, work out the sensitivity of this thermometer if $\beta$ is the coefficient of volume expansion. The liquid's volume expands as $V = V_0(1 + \beta\delta T)$ for a temperature rise of $\delta T$. Sensitivity is the change in length of the liquid for a 1 K rise in temperature. The constants are $\beta\text{(Hg)} = 1.81 \cdot 10^{-4}\,\mathrm{ K^{-1}}$, and $\beta \text{(EtOH)} = 1.08 \cdot 10^{-3}\,\mathrm{ K^{-1}}$.
+# In the common thermometer, the thermal expansion of a liquid is measured and calibrated to the temperature rise. Mercury or ethanol is often used. If this is held in a $1$ ml reservoir and the capillary of the thermometer has a $0.12$ mm diameter, work out the sensitivity of this thermometer if $\beta$ is the coefficient of volume expansion. The liquid's volume expands as $V = V_0(1 + \beta\delta T)$ for a temperature rise of $\delta T$. Sensitivity is the change in length of the liquid for a 1 K rise in temperature. The constants are $\beta\text{( Hg )} = 1.81 \cdot 10^{-4}\,\mathrm{ K^{-1}}$, and $\beta \text{( EtOH )} = 1.08 \cdot 10^{-3}\,\mathrm{ K^{-1}}$.
 # 
 # **Strategy:** The sensitivity you need to work out is $\delta L/\delta T$. Use the volume of the capillary to work out its length.
 # 
@@ -58,7 +58,7 @@
 # (b) What is the meaning of parameter $a$?
 # 
 # ### Q9 Electric field of light wave
-# (a) The electric field of a laser or other plane light-wave of frequency $\omega$ is $\displaystyle E = A e^{i(\omega t - kx +\varphi)}$, where $x$ is the distance from the source, $k$ the wavevector (2$\pi/\lambda$), $\varphi$ the phase, and $A$ is a constant and is the amplitude of the wave at $t = 0$ and $x = 0$. 
+# (a) The electric field of a laser or other plane light-wave of frequency $\omega$ is $\displaystyle E = A e^{i(\omega t - kx +\varphi)}$, where $x$ is the distance from the source, $k$ the wavevector (2$\pi/\lambda$), $\varphi$ the phase, and $A$ is a constant and is the amplitude of the wave at $t = 0,x = 0,\varphi=0$. 
 # 
 # Show that the $n^\text{th}$ derivative with respect to time of $E$ is $\displaystyle \frac{d^nE}{dt^n}=(i \omega)^n E$
 # 
@@ -79,5 +79,11 @@
 # 
 # **Strategy:** Do not let the unusual form of the differential put you off. Use $d \ln(c) = dc/c$
 # 
-# ### Q11 Differentiate and integral
+# ### Q11 Differentiate the integral
 # Use eqn. 15 to evaluate $\displaystyle \frac{d}{dx}\int_0^{a/x}\frac{x^2}{e^{-x}+1}dx$
+
+# In[ ]:
+
+
+
+

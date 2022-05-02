@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # The Hadamard Transform: Encoding and Decoding 
+# ## The Hadamard Transform: Encoding and Decoding 
 
 # In[1]:
 
@@ -16,7 +16,7 @@ init_printing()                      # allows printing of SymPy results in types
 plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 
-# ## Motivation and concept
+# ### Motivation and concept
 # 
 # To obtain the average value of a quantity, such as weight, individual measurements are usually made, then added together and divided by the number of measurements made. However, this is not the only way of obtaining the average. You may be familiar with the method of weighing several objects at a time and perhaps know also that doing this will reduce the error in the average value. This multiple weighing method is an example of using a _Hadamard transform_ and anything that can be measured in groups can be treated in the same way, for example, a spectrum or an image, thus the method is quite general. The reason that this multiple measuring method works is that the error is introduced by the balance not by the objects being weighed. A large weight therefore has the same error associated with its measurement as a smaller one does.
 # 
@@ -135,15 +135,15 @@ def valid_seq_length(n):
     
     maxi = 200
     Hseq = np.zeros(maxi,dtype=int)
-    for i in range(maxi):                   # produce Hadamard sequence numbers
+    for i in range(maxi):                  # produce Hadamard sequence numbers
         for m in range(0,maxi):
             if isprime(i) and i == 4*m + 3:
                 Hseq[i]=i
             pass
     if n in Hseq[0:maxi]:
-        is_ok=True
+        is_ok = True
     else:
-        is_ok=False
+        is_ok = False
     return is_ok
 #------------
 def isprime(n):     # check if integer n is a prime, range starts with 2 and only needs to go up the squareroot of n
@@ -158,7 +158,7 @@ def make_S_mat(Srow):
     for i in range(n):
         for j in range(n):
             S[i,j] = Srow[n-1-j]
-        Srow = np.roll(Srow, -1)             # rotate by 1 element at a time
+        Srow = np.roll(Srow, -1)           # rotate by 1 element at a time
         pass
     return S
 #------------

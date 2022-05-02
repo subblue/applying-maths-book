@@ -11,7 +11,7 @@ get_ipython().run_line_magic('matplotlib', 'inline')
 import numpy as np
 import matplotlib.pyplot as plt
 from sympy import *
-init_printing()                      # allows printing of SymPy results in typeset maths format
+init_printing()            # allows printing of SymPy results in typeset maths format
 plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 
@@ -57,7 +57,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # and you can justify halting the expansion at the first term because $\delta\mu/\mu \lt 1$ and therefore $(\delta\mu/\mu)^2$ is even smaller.
 # 
-# (b) Using values in the question, the relative change $\delta\nu/\nu = 0.01$ and before calculating the frequency this must be changed into s$^{-1}$ from cm$^{-1}$. The wavenumber or cm$^{-1}$ is frequently used in spectroscopy because its numerical value is easier to remember and use than a frequency expressed in s$^{-1}$.The conversion requires us to multiply by $c$, the speed of light, hence $5889.0\,\mathrm{ cm^{-1}} \equiv 2.997924 \cdot 10^{10}\,\mathrm{ cm\, s^{-1} \cdot 5889.0\, cm^{-1}} = 1.7655 \cdot 10^{14}\,\mathrm{ s^{-1}}$. The frequency change is $58.89\,\mathrm{ cm^{-1}}$ or $1.7655 \cdot 10^{12}\,\mathrm{ s^{-1}}$.
+# (b) Using values in the question, the relative change $\delta\nu/\nu = 0.01$ and before calculating the frequency this must be changed into s$^{-1}$ from cm$^{-1}$. The wavenumber or cm$^{-1}$ is frequently used in spectroscopy because its numerical value is easier to remember and use than a frequency expressed in s$^{-1}$. The conversion requires us to multiply by $c$, the speed of light, hence $5889.0\,\mathrm{ cm^{-1}} \equiv 2.997924 \cdot 10^{10}\,\mathrm{ cm\, s^{-1} \cdot 5889.0\, cm^{-1}} = 1.7655 \cdot 10^{14}\,\mathrm{ s^{-1}}$. The frequency change is $58.89\,\mathrm{ cm^{-1}}$ or $1.7655 \cdot 10^{12}\,\mathrm{ s^{-1}}$.
 # 
 # The problem could perhaps more usefully have been posed the opposite way round; by knowing that the resolution of a spectrometer is $\nu \pm \delta \nu$ will it be possible to observe a line from two isotopic species whose mass differ by $1$%?
 # 
@@ -74,16 +74,16 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # ### Q4 answer
 # 
-# $\displaystyle \begin{array}\\
+# $\displaystyle \begin{array}{lll}\\
 # \hline
-# (a)&(i) &dy/dx = 12x^3 + \cos(x)\\ 
-# &(ii) &dy/dx = -40x{-5} + 10x\\ 
-# &(iii) &\displaystyle \frac{dy}{dx}=\frac{1}{x}-\frac{1}{ax^2}\\ 
-# &(iv) &dy/dx = ae^{ax} + 2x\\
+# (a)&(i) &dy/dx &= &12x^3 + \cos(x)\\ 
+# &(ii) &dy/dx &= &-40x{-5} + 10x\\ 
+# &(iii) &\displaystyle \frac{dy}{dx}&=&\displaystyle \frac{1}{x}-\frac{1}{ax^2}\\ 
+# &(iv) &dy/dx &= &ae^{ax} + 2x\\
 # \hline
-# (b)& (i) &dy/da=0\\ 
-# &(ii)  &dy/da=xe^{ax}\\ 
-# &(iii) &dy/da=x^2\\ \hline \end{array}$
+# (b)& (i) &dy/da&=&0\\ 
+# &(ii)  &dy/da&=&xe^{ax}\\ 
+# &(iii) &dy/da&=&x^2\\ \hline \end{array}$
 # 
 # (c) Differentiating $\sin(ax)$ five times gives the sequence 
 # 

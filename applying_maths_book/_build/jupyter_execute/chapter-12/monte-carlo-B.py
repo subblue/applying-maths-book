@@ -85,7 +85,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # Normally, in dealing with chemical kinetics, $N_A$ is so vast that $\displaystyle a = k_2\frac{N_A^2}{2}$, but in the Monte Carlo simulations, $N_A$ is small because individual molecules are dealt with, and the exact formula must be used. Thus, macroscopic, (kinetic), chemical equations are only valid when deviations from the Poisson distribution are negligible.
 # ____
 # 
-# #### Comment  on validity
+# #### **Comment  on validity**
 # 
 # The term 
 # 
@@ -124,7 +124,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # In the case of a termolecular reaction $\mathrm{ A + B + C} \rightarrow $ when the probability of three molecules simultaneously colliding is calculated the probability the chance that this occurs in  an infinitesimal time interval $d t$ is proportional to $dt^2$ so becomes vanishingly small and thus does not occur with any physical reality. It is often convenient, however, to consider a termolecular scheme as a simplified approximation to a scheme such as $N_A+N_B \leftrightharpoons X^*; \; X^* + N_C \longrightarrow$ 
 # 
-# #### Outline of method
+# #### **Outline of method**
 # 
 # The outline plan for the Gillespie algorithm is actually quite simple
 # 
@@ -134,7 +134,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # $\qquad$Set the maximum time. 
 # 
-# $\qquad$Set the time to zero; t = 0.
+# $\qquad$Set the time to zero, $t = 0$.
 # 
 # **(2)**$\quad$ Start a loop around the calculation until the time is up or no molecules are left. 
 # 

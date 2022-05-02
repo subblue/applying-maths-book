@@ -100,11 +100,11 @@ dxdt = lambda t,x,y : np.sin(t) - 1 - y
 for i in range(1,n):
     k1 = dydt(t,x,y)
     L1 = dxdt(t,x,y)
-    k2 = dydt(t+h,x+L1*h, y+k1*h)
-    L2 = dxdt(t+h,x+L1*h, y+k1*h)
+    k2 = dydt(t + h, x + L1*h, y + k1*h)
+    L2 = dxdt(t + h, x + L1*h, y + k1*h)
     
-    y = y + h*(k1+k2)/2
-    x = x + h*(L1+L2)/2
+    y = y + h*(k1 + k2)/2
+    x = x + h*(L1 + L2)/2
     t = t + h
     Eulery[i] = y
     Eulerx[i] = x
@@ -122,17 +122,17 @@ for i in range(1,n):
     k1 = dydt(t,x,y)
     L1 = dxdt(t,x,y)
     
-    k2 = dydt(t+h/2,x+L1*h/2, y+k1*h/2)
-    L2 = dxdt(t+h/2,x+L1*h/2, y+k1*h/2)
+    k2 = dydt(t + h/2, x + L1*h/2, y + k1*h/2)
+    L2 = dxdt(t + h/2, x + L1*h/2, y + k1*h/2)
     
-    k3 = dydt(t+h/2,x+L2*h/2, y+k2*h/2)
-    L3 = dxdt(t+h/2,x+L2*h/2, y+k2*h/2)
+    k3 = dydt(t + h/2, x + L2*h/2, y + k2*h/2)
+    L3 = dxdt(t + h/2, x + L2*h/2, y + k2*h/2)
     
-    k4 = dydt(t+h,x+L3*h, y+k3*h)
-    L4 = dxdt(t+h,x+L3*h, y+k3*h)
+    k4 = dydt(t + h, x + L3*h, y + k3*h)
+    L4 = dxdt(t + h, x + L3*h, y + k3*h)
     
-    y = y + h*(k1+2*k2+2*k3+k4)/6
-    x = x + h*(L1+2*L2+2*L3+L4)/6
+    y = y + h*(k1 + 2*k2 + 2*k3 + k4)/6
+    x = x + h*(L1 + 2*L2 + 2*L3 + L4)/6
     t = t + h
     Eulery[i] = y
     Eulerx[i] = x
@@ -140,7 +140,80 @@ for i in range(1,n):
     pass
 
 
-# ### 5.2 Second and higher order differential equations. The Numerov algorithm and the Schroedinger equation. 
+# ### 5.2 The Polymerase Chain Reaction PCR. A real world example of coupled equations
+# 
+# The polymerase chain reaction (PCR) is a technique, that in a few hours at most, can vastly multiply the number of selected fragments of DNA by thousands to millions of times. The method has recently been widely used as a test for the presence of Covid-19 but has been used long before that to detect a whole range diseases caused by viruses, bacteria and parasites. Other methods can be used for many diseases but PCR has the advantage of being able to amplify minute amounts of DNA. This technique is also important as part of fingerprint detection. The technique was invented by K. Mullis in 1983. He subsequently shared the Nobel Prize in Chemistry in 1993 for his 'invention of the polymerase chain reaction (PCR) method' with M. Smith for his 'fundamental contributions to the establishment of oligonucleotide-based, site-directed mutagenesis and its development for protein studies'. 
+# 
+# The target a double-stranded DNA molecule, which has previously been split into segments of a few hundred to to a few thousand base pairs, is initially denatured by heating into two single strands. The denaturing is a cooperative effect and occurs over a narrow temperature range, $90-95\,^\text{o}$C, see Kittel and Bragg-Zimm zippers, chapters 1, 3.(ii) and Chapter 7,13.5 respectively. The denaturing is the first stage of the PCR cycle. The narrow temperature range of both denaturing and also subsequent steps, described shortly, mean that very precise and rapid temperature control is required.
+# 
+# Two small oligonucleotides (typically $15-30$ base pairs) are chemically synthesised and that are complementary to sequences on opposite strands of the target DNA sequence (3' and 5' ends) and that flank the target to be amplified, are used as primers. To bind the primers to the single strands it is necessary to reform the H-bonds and enable $\pi-\pi$ stacking to occur which requires some cooling to the solution but there is a balance: cooling must not be too much otherwise the the single strands recombine. However, if there is no cooling there is too much energy and the H bonds and pi-stacking cannot occur, i.e. unless cooled the equilibrium is too far towards separated primer and single stranded DNA species. This step is called 'annealing' or 'hybridisation'.  
+# 
+# The third stage is to convert the single strand with bound primer to form the new double stranded DNA and this is achieved by a DNA polymerase (protein) enzyme. This is called 'extension' or 'elongation'. This should be done at the optimum temperature for the polymerase ($68-72\,^\text{o}$C). The most commonly used polymerase is the heat resistant enzyme initially isolated from the bacterium _Thermus aquaticus_ ('Taq Poly') that lives in hot springs and can resist ($100\,^\text{o}$C).  Because DNA always pairs bases as G-C and A-T the DNA single strand makes a template on which to form an identical double stranded DNA using the nucleotides (i.e. base-sugar-phosphate molecules or dNTPs) present in solution.  The chain is completed when the new DNA is produced and fed-back in the denaturing step.
+# 
+# After the first cycle, each target molecule of DNA has been copied twice thus the number of DNA copies is doubled, and after, for example $25$ cycles there are $2^{25} \approx 33\cdot 10^6$ copies. The mixture to perform the PCR, besides buffer, are the DNA fragments to be copied, the primer sequence, often artificially synthesised, the Taq polymerase and the nucleotide bases (dNTPs).
+# 
+# To detect the DNA a fluorphore can be used, and this can have great sensitivity because single photons can easily be detected. There are several strategies, the simplest is to use a dye that is largely non-fluorescent when in solution but when intercalated into the DNA becomes highly fluorescent. Other methods use a dye-quencher molecule such that when it is bound the dye and quencher are separated and the fluorescence yield increases dramatically. Similarly to this two dyes may be linked in the same molecule and undergo Forster resonance energy transfer (FRET) when close to one another but not when kept apart. 
+# 
+# ![Drawing](num-methods-fig20c.png)
+# 
+# Figure 20c.Sketch of the PCR method. Redrawn from NobelPrize.org. Nobel Prize Outreach AB 2022.
+# ________
+# 
+# ### PCR rate equations
+# 
+# The rate equations for a basic PCR are shown below using the notation, $D$, double strand DNA, $S$ single strand DNA, $E$ the Taq Poly enzyme and $P$ the primer.  We implicitly assume that there are enough molecules that the rate equation is accurate, and that a Monte-Carlo method is not needed. The steps taken in order my varying the temperature are
+# 
+# (A) Dissociation of DNA into two strands at the highest temperature $\approx 95^{o}$C
+# 
+# (B) Primer sequence attaches to single stranded DNA at the lowest temperature $\approx 72^{o}$C
+# 
+# (C) The Taq enzyme adds base pairs to primer-single stranded DNA to make new double stranded DNA. This extension phase assumes the Michaelis - Menten scheme and occiurs at $\approx 85^{o}$C. 
+# 
+# Each of these steps has to occur at a different temperature so this has to be closely controlled, being raised and lowered as necessary to move the reaction towards product. The order is $95 \to 72 \to 85$ which is then repeated. To calculate this numerically the rate constants have to be temperature dependent. This is done in two ways, the enzyme reaction is very specific and so a Gaussian temperature profile is used. If the temperature is too high or too low the rate constant tends to zero, i.e. $k_2$ (see below) varies as $k_2\exp(-(T_0-T)^2/\sigma)$. All the other rate constants $k_i$ must have a value of zero below a critical temperature and so are given the sigmoidal form $k_i/(1+\exp(-(T_0-T)/\sigma_0)$ which rises from zero below $\approx T_0$ to a _constant_ value $k_i$ above: $\sigma_0$ controls how fast the function rises, but should be only a few degrees. For simplicity the temperature profile was made sinusoidal (rather than stepwise) with a period of $60$ seconds starting at the highest temperature. Such rapid cycling will be easier small device such as one using microchannels to contain the species as with a 'lab-on-a-chip'.
+# 
+# The reaction scheme is 
+# 
+# $$\displaystyle \begin{array}\\ 
+# D & \overset{k_D}{\underset{k_{-D}} \rightleftharpoons} &  2S\qquad\qquad \qquad\qquad 95\mathrm{^{o} C,denaturing}\\
+# S + P &\overset{k_{sp}}{\underset{k_{-sp}} \rightleftharpoons}& SP \qquad\qquad \qquad\qquad 72\mathrm{^{o}C, annealing}\\
+# E + SP &\overset{k_{1}}{\underset{k_{-1}} \rightleftharpoons}& E\cdot SP \overset{k_2}\longrightarrow E+D\;\;\qquad 85\mathrm{^{o}C, extending}\\
+# \end{array}$$
+# 
+# and we ignore the possibility that the enzyme $E$ may also decompose at the higher temperatures as this is known to be small $\approx 0.1%$ at each cycle. 
+# 
+# The scheme can be solved numerically and although the rate equations may look formidable they are easily formed from the scheme above and can be integrated either using an inbuilt Python integrator or a Euler method.
+# 
+# $$\displaystyle \begin{align}\frac{d[D]}{dt} & = -k_D[D]+\frac{1}{2} k_{-D}[S]^2 + k_2[E\cdot SP]\\
+# \frac{d[S]}{dt}  & = +2k_D[D] - k_{-D}[S]^2-k_{sp}[S][P]+k_{-sp}[SP]\\
+# \frac{d[P]}{dt} &= -k_{sp}[S][P]+k_{-sp}[SP]\\
+# \frac{d[SP]}{dt} & = +k_{sp}[S][P] -k_{-sp}[SP] - k_1[E][SP] + k_{-1}[E\cdot SP]\\
+# \frac{d[E\cdot SP]}{dt} & = + k_1[E][SP] - (k_{-1}+k_2)[E\cdot SP]\\
+# \frac{d[E]}{dt} & = -k_1[E][SP]+(k_{-1}+k_2)[E\cdot SP]\\
+# \end{align}$$
+# 
+# The result of integrating is shown in fig 21a assuming DNA segments of $b=200$ base pairs. The concentration of the double stranded DNA ($D$, red), the single strand ($S$, green) and the complex ($E\cdot SP$, black) are shown. The initial amounts and rate constants are shown in the table (SI units are used as appropriate for first and second order reactions).
+# 
+# $$\displaystyle \begin{array}\\
+# k_D=3000/b, & k_{-D}=10^6,& k_{sp}=5\cdot10^5, & k_{-sp}=10^{-4},& k_1=10^8, & k_{-1}=10, & k_2=60\\
+# D_0=10^{-15}, &P_0=2\cdot10^{-7}, & E_0=5\cdot 10^{-9},& S_0=SP_0=E\cdot SP_0=0 & \sigma=8 & \sigma_0=2\\
+# \end{array}$$
+# 
+# Notice that only a tiny amount of DNA need be present initially but that the primer is in vast excess over this and the enzyme $E$. This makes the annealing step pseudo-first order and $k_{sp}[P] \gg k_{-sp}$, but mainly the excess dose not limit the amount of $D$ produced as $P$ is consumed in the reaction. Of course there must be also sufficient nucleotides present to make the new DNA. The amount of all these concentrations depend on the particular situation but usually this is determined when the detection limit is exceeded by a suitable margin. Similarly to primer, increasing the amount of enzyme will also produce more DNA in a given time because $k_1[E][SP]$ is increased.
+# 
+# The unusual oscillatory behaviour is due to the temperature cycling which causes the rate constants to turn on and off. The decreasing region in $D$ is due to the temperature increasing which starts DNA denaturing into two strands $S$ which correspondingly increases (green). More double stranded DNA $D$ is produced as the enzyme reaction $E+SP$ starts and which stops when the temperature changes making $[D]$ constant. Recall that the temperature range is narrow over which this reaction occurs, i.e. $\exp(-(T_0-T)^2/\sigma)$ as described above so the increase in $D$ is short lived.
+# 
+# ![Drawing](num-methods-fig20a.png)
+# 
+# Figure 20a. The populations of various species *vs*. time in the PCR reaction. See text for details.
+# __________
+# 
+# Although the amount of double stranded DNA is increasing it is hard to see by how much in this plot. By totaling $[D]$ into groups of periods, then the exponential increase is more obvious as shown in fig 20b. The doubling time in the linear part of the plot is $\approx 89$ s. The doubling time is calculated assuming $[D]=[D_0]e^{kt}$ and using $t_2=\ln(2)/k$ just as if a half-life were calculated.
+# 
+# ![Drawing](num-methods-fig20b.png)
+# 
+# Figure 20b. The total amount of double stranded DNA, $[D]$ *vs*. time. The circles show the cycles. The dashed line is an exponential fit with a doubling time of $\approx 89$ s.
+
+# ### 5.3 Second and higher order differential equations. The Numerov algorithm and the Schroedinger equation. 
 # 
 # The most important second order equation you will meet is most likely to be the Schroedinger equation. The numerical solution to find the energy (eigenvalues) of this is dealt with in section 9 of this chapter but the Numerov algorithm used to calculate the wavefunction is described below after the general solution of other second order equations  is described.
 # 
@@ -171,9 +244,9 @@ x0 = 0
 # In[6]:
 
 
-x,y,C1,C2 = symbols('x, y, C1, C2')
+x, y, C1, C2 = symbols('x, y, C1, C2')
 y  = Function('y')
-eq = diff(y(x),x,x)+3*diff(y(x),x)+5*y(x)
+eq = diff(y(x),x,x) + 3*diff(y(x),x)+5*y(x)
 ans= dsolve(eq,y(x))
 ans
 
@@ -194,7 +267,7 @@ simplify(dydx)
 # Figure12 Numerical (solid line) and algebraic solution to equation 34.
 # _____
 # 
-# #### Higher order equations
+# #### **Higher order equations**
 # 
 # The higher order equation
 # 
@@ -210,8 +283,8 @@ simplify(dydx)
 # 
 # The initial conditions must also be specified before a solution can be found. In this case, there are, in effect, three integration steps because of the third power of the derivative. The three initial conditions must specify, at the initial $x$ chosen, a value of $y, \;dy/dt$ and $d^2y/dt^2$.
 # 
-
-# ### 5.3 The Numerov method
+# 
+# ### 5.4 The Numerov method
 # 
 # The conventional Numerov method is used to solve second-order differential equations which do not have a first derivative and are of the form 
 # 
@@ -292,14 +365,14 @@ simplify(dydx)
 # 
 # which means that $y$ must be known at two points, $n$ and $n+1$ at the start of the calculation. Normally starting at large $x$ values relative to the minimum of the potential means that here the wavefunctuon is zero and so initial values such as  $y_0 =0 ,\;y_1 = 0.001$ can be used. The wavefunction can be normalised at the end of the calculation ($\int\psi dx=1$) so these values are not critical. The function $f$ is known at all points via $V(x)$  but as noted the eigenvalue $E$ must be known. Note also the sign of $f(x)$ when using the Schroedinger equation $\displaystyle f(x)= -\frac{2m}{\hbar^2}\left(V(x)-E\right)$.  
 # 
-# As an example calculation, the wavefunction of a quantum harmonic oscillator with $V= (k/2)x^2$ is calculated using  constants $\mu=1,\;\hbar = 1,\; k = 20 $. The eigenvalues are $\displaystyle E_n=\hbar \sqrt{\frac{k}{\mu} }\left(n+\frac{1}{2}\right)$. This method does not perform well when,for example, the potential has a double well and in conjunction with the shooting method because numerical precision becomes an issue. In this case more sophisticated algorithms are needed. These are usually the ones that are provided by the computer language you use, 'odeint' in Python/Scipy for example.
+# As an example calculation, the wavefunction of a quantum harmonic oscillator with $V= (k/2)x^2$ is calculated using  constants $\mu=1,\;\hbar = 1,\; k = 20 $. The eigenvalues are $\displaystyle E_n=\hbar \sqrt{\frac{k}{\mu} }\left(n+\frac{1}{2}\right)$. This method does not perform well when, for example, the potential has a double well and in conjunction with the shooting method because numerical precision becomes an issue. In this case more sophisticated algorithms are needed. These are usually the ones that are provided by the computer language you use, $\mathtt{odeint(\cdots)}$ in Python/Scipy for example.
 
 # In[8]:
 
 
 # Algorithm 11.16a; Numerov method
 
-def numerov(V,x,E0):
+def numerov(V, x, E0):
     n = len(x)                                   # number of data points
     y = np.zeros(n,dtype = float)                # make array for wavefunction y
     f = lambda x: -2.0*mu/hbar**2*(V(x) - E0)    # calculate function f 
@@ -309,19 +382,18 @@ def numerov(V,x,E0):
     y[1] = 0.001
     q = h**2/12.0                                # define once outside loop
     for i in range(2,n):
-        y[i] = ( 2*y[i-1]*(1-5*q*f(x[i-1])) - y[i-2]*(1+q*f(x[i-2])) )/ (1 + q*f(x[i]) )  # eqn 35e
+        y[i] = ( 2*y[i-1]*(1 - 5*q*f(x[i-1])) - y[i-2]*(1 + q*f(x[i-2])) )/ (1 + q*f(x[i]) )  # eqn 35e
     return y
 #------------
 
 num = 1001                    # number of data points, odd so that there is a point at x=0
 xn  = 3.0                     # +- x extent of potential V
 x   = np.linspace(-xn,xn,num) # make array of x values  
-
-n  = 2                        # quantum number 
-k  = 20.0                     # force constant
+n   = 2                       # quantum number 
+k   = 20.0                    # force constant
 hbar= 1.0                     # define constants
 mu  = 1.0
-E0  = hbar*np.sqrt(k/mu)*(n+1/2)   # eigenvalue 
+E0  = hbar*np.sqrt(k/mu)*(n + 1/2)   # eigenvalue 
 
 V = lambda x :0.5*k*x**2      # potentiual 
 
@@ -334,3 +406,9 @@ y = numerov(V,x,E0)           # calculate wavefunction
 # ![Drawing](num-methods-fig11a.png)
 # 
 # figure 12a. Quantum harmonic potential  and the $n=2$ wavefunction calculated using the Numerov method and the Schroedinger equation. The constants are arbitrary; force constant $k=20,\; \mu = 1,\; \hbar=1$.
+
+# In[ ]:
+
+
+
+

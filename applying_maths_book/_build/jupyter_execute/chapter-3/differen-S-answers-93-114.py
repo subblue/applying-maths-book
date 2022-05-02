@@ -28,7 +28,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # The mixed derivative does need us to specify which variable is held constant,
 # 
-# $$\displaystyle \frac{\partial ^2z}{\partial x \partial y}=\left(\frac{\partial z}{\partial x }  \right)_y\left(\frac{\partial z}{\partial y }  \right)_x= \left( 2x\sin(y/x)-y\frac{(x^2+y^2)}{x^2}\cos(y/x) \right)\left( 2y\sin(y/x)+ y\frac{(x^2+y^2)}{x}\cos(y/x) \right) $$
+# $$\displaystyle \frac{\partial ^2z}{\partial x \partial y}=\left(\frac{\partial z}{\partial x }  \right)_y\left(\frac{\partial z}{\partial y }  \right)_x= \left( 2x\sin\left(\frac{y}{x}\right)-y\frac{(x^2+y^2)}{x^2}\cos\left(\frac{y}{x}\right) \right)\left( 2y\sin\left(\frac{y}{x}\right)+ y\frac{(x^2+y^2)}{x}\cos\left(\frac{y}{x}\right) \right) $$
 # 
 # which can be simplified somewhat. Using SymPy the mixed calculation can be done in one step 
 
@@ -36,7 +36,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 
 z, x, y = symbols('z, x, y')
-z = (x**2+y**2)*sin(y/x)
+z = (x**2 + y**2)*sin(y/x)
 simplify(diff(z,x,y) )
 
 
@@ -78,7 +78,7 @@ simplify(diff(z,x,y) )
 # In[3]:
 
 
-x, D, c0,t = symbols('x, D, c0, t')
+x, D, c0, t = symbols('x, D, c0, t')
 
 f= c0/sqrt(4*pi*D*t)*exp(-x**2/(4*D*t))
 if simplify((D*diff(f,x,x)  - diff( f,t))) == 0:
@@ -122,9 +122,9 @@ else:
 # In[4]:
 
 
-a,b,R, T , p, V=symbols(' a b R T p V') 
+a, b, R, T, p, V = symbols(' a, b, R, T, p, V') 
 
-pvdw = R*T/(V-b)-a/V**2   # pressure in vdw equation
+pvdw = R*T/(V - b) - a/V**2   # pressure in vdw equation
 dpdv = diff(pvdw,V)       # dpdV
 dpdv
 
@@ -328,7 +328,13 @@ ans
 # which produces $S=S_0+C_p\ln(T)$ and assuming that $C_p$ is independent of temperature over the range of temperatures studied and $S_0$ is an integration constant.
 # 
 # ### Q104 answer
-# Equation(50) states that  $\displaystyle\left( \frac{\partial U}{\partial V}\right)_T=T\left( \frac{\partial p}{\partial T}\right)_V-p$ and as the van der Waals equation is $\displaystyle \left(p+\frac{a}{V^2}\right)(V-b)=RT$, differentiating pressure wrt $T$ gives $\displaystyle T\left( \frac{\partial p}{\partial T}\right)_V= \frac{RT}{V-b}= p+\frac{a}{V^2}$, therefore $\displaystyle\left( \frac{\partial U}{\partial V}\right)_T=\frac{a}{V^2}$.
+# Equation(50) states that  $\displaystyle\left( \frac{\partial U}{\partial V}\right)_T=T\left( \frac{\partial p}{\partial T}\right)_V-p$ 
+# 
+# and as the van der Waals equation is $\displaystyle \left(p+\frac{a}{V^2}\right)(V-b)=RT$, differentiating pressure wrt $T$ gives 
+# 
+# $$\displaystyle T\left( \frac{\partial p}{\partial T}\right)_V= \frac{RT}{V-b}= p+\frac{a}{V^2}$$
+# 
+# therefore $\displaystyle\left( \frac{\partial U}{\partial V}\right)_T=\frac{a}{V^2}$.
 
 # ### Q105 answer
 # Volume has the general form $V=f(p,V,E)$ and because $E$ is stated to be constant, its derivative is zero, giving 
@@ -342,7 +348,7 @@ ans
 # ### Q106 answer
 # Rewriting to isolate $V$ gives $V=RT/p+B_T$ and differentiating produces 
 # 
-# $$\displaystyle \left( \frac{\partial V}{\partial p}\right)_T=-\frac{RT}{p^2}$ and $\displaystyle \left( \frac{\partial V}{\partial T}\right)_p=\frac{R}{p}+\frac{dB_T}{dT}$$ 
+# $$\displaystyle \left( \frac{\partial V}{\partial p}\right)_T=-\frac{RT}{p^2}\quad\text{and}\quad\displaystyle \left( \frac{\partial V}{\partial T}\right)_p=\frac{R}{p}+\frac{dB_T}{dT}$$ 
 # 
 # The mixed derivatives are the same 
 # 
@@ -355,7 +361,15 @@ ans
 # 
 # $$\displaystyle \Delta S_{p_0 \to p_1} =-\int_{p_0}^{P_1} \left(\frac{\partial V}{\partial T} \right)_pdp$$
 # 
-# (a) Expanding the van der Waals equation of state $(p+a/V^2)(V-b)=RT$ gives $pV+a/V - pb-ab/V^2 = RT$. Differentiating $V$ with respect to $T$ with $p$ constant and rearranging gives $\displaystyle \left(\frac{\partial V}{\partial T} \right)_p\left( p-a/V^2 +2ab/V^3 \right)=R$. The entropy is obtained by substituting for the derivative, forming an integral with a standard logarithmic form; for example, see Integration 2.3.
+# (a) Expanding the van der Waals equation of state $(p+a/V^2)(V-b)=RT$ gives 
+# 
+# $$\displaystyle pV+a/V - pb-ab/V^2 = RT$$ 
+# 
+# Differentiating $V$ with respect to $T$ with $p$ constant and rearranging gives 
+# 
+# $$\displaystyle \left(\frac{\partial V}{\partial T} \right)_p\left( p-a/V^2 +2ab/V^3 \right)=R$$ 
+# 
+# The entropy is obtained by substituting for the derivative, forming an integral with a standard logarithmic form; for example, see Integration 2.3.
 # 
 # $$\displaystyle \Delta S_{0\to p}=-R\int_0^p \frac{1}{p-a/V^2 +2ab/V^3}dp=-R\ln\left(p-\frac{a}{V^2} +\frac{2ab}{V^3}  \right)\bigg | _0^p$$
 # 

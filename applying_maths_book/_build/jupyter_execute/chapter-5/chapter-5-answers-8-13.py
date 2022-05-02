@@ -11,7 +11,7 @@ get_ipython().run_line_magic('matplotlib', 'inline')
 import numpy as np
 import matplotlib.pyplot as plt
 from sympy import *
-init_printing()                         # allows printing of SymPy results in typeset maths format
+init_printing()                 # allows printing of SymPy results in typeset maths format
 plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 
@@ -29,8 +29,8 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # In[2]:
 
 
-h,nu,kB,T = symbols('h nu kB T')
-Z = exp(-h*nu/(2*kB*T))/( 1-exp(-h*nu/(kB*T)) )
+h, nu, kB, T = symbols('h, nu, kB, T')
+Z = exp(-h*nu/(2*kB*T))/( 1 - exp(-h*nu/(kB*T)) )
 f = simplify(kB*T**2*diff(ln(Z),T))
 cv= diff(f,T) 
 simplify(cv)
@@ -81,18 +81,18 @@ print('{:s}{:8.3f}{:s}'.format('Unmeasurable frequency nu4  = ', float(nu4),' cm
 f  = lambda x: ( x*a/np.sinh(x*a) )**2 - (0.37 - s)
 df = lambda x: 2*a**2*x/np.sinh(a*x)**2-2*a**3*x**2*np.cosh(a*x)/np.sinh(a*x)**3 # derivative
 print('{:s}'.format('Result by Newton-Raphson') )
-x = 700.0                # initial guess in cm^(-1)
+x  = 700.0                # initial guess in cm^(-1)
 x0 = 0
      
-for i in range(20):   # guess max number of iteration; jump out when converged
+for i in range(20):       # guess max number of iteration; jump out when converged
     x0 = x - f(x)/df(x)
     print('{:d} {:10.5f}'.format(i,x) )
-    if abs(x-x0) < 0.001:
+    if abs(x - x0) < 0.001:
         break
     x = x0
     pass
 
-fig=plt.figure(figsize=(4,4))
+fig = plt.figure(figsize=(4,4))
 plt.rcParams.update({'font.size': 16})  # set font size for plots
 xx = np.linspace(200,1600,200)    
 plt.plot(xx,f(xx),color='red') 
@@ -120,7 +120,7 @@ plt.show()
 # In[4]:
 
 
-x,n = symbols('x n')
+x, n = symbols('x, n')
 s0 = Sum(n*n*x**n,(n,0,oo))
 s0.doit()
 
@@ -130,7 +130,7 @@ s0.doit()
 # In[5]:
 
 
-x,n = symbols('x n')
+x, n = symbols('x, n')
 s = Sum(x**n,(n,0,oo))
 s.doit()
 
@@ -195,7 +195,7 @@ plt.show()
 
 
 # use symbpy to differentiate C_V= dE/dT
-k_B,T = symbols('k_B T')
+k_B, T = symbols('k_B, T')
 f = diff( exp(-1/(k_B*T))/(1 - exp(-1/(k_B*T))),T)
 CV= simplify(f)
 CV
@@ -436,7 +436,6 @@ plt.show()
 
 
 x, L = symbols('x, L')
-
 f01= x*Sum((1-x)**(L-1),(L,0,oo))
 simplify(f01.doit() )
 

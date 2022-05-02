@@ -44,7 +44,7 @@
 # ### Q47 Limits
 # Find the limits 
 # 
-# $$\displaystyle \begin{array}{lccc}
+# $$\displaystyle \begin{array}{llll}
 # (a) & \displaystyle \lim_{x\to 0}\frac{\cos(x)}{x} & (b)& \displaystyle\lim_{x\to 0}\frac{x}{\sin(x)} & (c) &\displaystyle\lim_{x\to 0}\frac{x^2}{\sin(x)}\\
 # (d) & \displaystyle\lim_{x\to 0}\frac{e^{-x}-1}{x^3} & (e)& \displaystyle\lim_{x\to -\infty}xe^x & (f) &\displaystyle\lim_{x\to \infty}x^{1/x}\\
 # (g) & \displaystyle\lim_{\theta\to \pi/2}\sin(\theta)^{\tan(\theta)} & (h)& \displaystyle\lim_{x\to 0}\frac{e^{i\pi x}-e^{-i\pi x}}{ix} & (i) &\displaystyle\lim_{\theta\to 0}\frac{\sin(n\theta)}{\sin(\theta)}\\
@@ -59,7 +59,16 @@
 # $$\displaystyle \;(a)\displaystyle \lim_{x\to 0}\frac{\sin(x)-x^2}{x} \quad (b) \;\displaystyle\lim_{x\to 0}\frac{ (\sin(x)+x^2)^2 }{x} \quad (c) \;\displaystyle\lim_{x\to \infty}x-\sqrt{x^2+x} \quad (d) \;\displaystyle \lim_{x\to \infty}x+\sqrt{x^2+x} $$
 # 
 # ### Q49 Base jumper
-# A base jumper drops from a skyscraper and falls with velocity $v$, which is limited by the air resistance of the parachute and is proportional to $v^2$ making their velocity at time $t$, $\displaystyle v = v_\infty \tanh\left(\frac{gt}{v_\infty}\right)$. The corresponding distance dropped is $\displaystyle x = \frac{v_\infty^2}{g} \ln\left[\cosh\left(\frac{gt}{v_\infty}\right)\right]$, where $g$ is the acceleration due to gravity.
+# A base jumper drops from a skyscraper and falls with velocity $v$, which is limited by the air resistance of the parachute and is proportional to $v^2$ making their velocity at time $t$, 
+# 
+# $$\displaystyle v = v_\infty \tanh\left(\frac{gt}{v_\infty}\right)$$
+# 
+# The corresponding distance dropped is 
+# 
+# $$\displaystyle x = \frac{v_\infty^2}{g} \ln\left(\cosh\left(\frac{gt}{v_\infty}\right)\right)$$
+# 
+# where $g$ is the acceleration due to gravity.
+# 
 # (a) By taking the limit $t \to \infty$, what does $v_\infty$ represent?
 # 
 # (b) Find the limits on $v$ and $x$ when $v_\infty \to \infty$, which corresponds to falling in a vacuum.
@@ -85,7 +94,7 @@
 # calculation:
 # 
 # ### Q53 Cycloid
-# A cycloid, Fig. 16, is the path (locus) drawn out by a point on a tyre as it rolls along a road and can be described with the parametric equations $x = at - a\sin(t))$ and $y = a - a\cos(t))$. Find its maximum value. 
+# A cycloid, Fig. 16, is the path (locus) drawn out by a point on a tyre as it rolls along a road and can be described with the parametric equations $x = at - a\sin(t)$ and $y = a - a\cos(t)$. Find its maximum value. 
 # 
 # Incidentally, the inverted cycloid is called the brachistochrone, which is the curve along which an object will fall, in the absence of resistance, in the shortest time between two points, see Section 8.2. Other facts are that the length of the cycloid baseline between adjacent cusps is the circumference of the generating circle. The area of the curve is three times that of the generating circle. This was first demonstrated by Galileo in 1599 by using models and by weighing the shape of the cycloid and circle. The architect Christopher Wren, famous for designing St Paul's Cathedral in London, showed in 1658 that the _length_ of one arc equals the perimeter of the square enclosing the circle. 
 # 
@@ -131,9 +140,9 @@
 # 
 # $$\displaystyle y^2 = \frac{(4 - x)^3}{x}$$
 # 
-# ![Display](differen-fig17.png) ![Display](differen-fig18.png)
+# ![Display](differen-fig17-18.png) 
 # 
-# Figure 17 & 18. Left. The triangle to maximise is OPN. Right. The pear shaped quartic $a=2, b=4$.
+# Figure 17, left and 18 right. Left. The triangle to maximise is OPN. Right. The pear shaped quartic $a=2, b=4$.
 # 
 # 
 # ### Q57 Optimum speed
@@ -173,8 +182,7 @@
 # 
 # ![Display](differen-fig19.png)
 # 
-# Fig. 3.19 The tractrix is shown in blue and is the path followed by dragging. The length of the lead is fixed at $a$ = 1 as the dog is pulled. You start at $y = 0$, the dog at $(1, 0)$. The inset shows the angle $\theta$ which you look back at the dog (in degrees) vs the distance walked along the y-axis.
-# 
+# Fig. 19 The tractrix is shown in blue and is the path followed by dragging. The length of the lead is fixed at $a$ = 1 as the dog is pulled. You start at $y = 0$, the dog at $(1, 0)$. The inset shows the angle $\theta^\text{o}$ which you look back at the dog (in degrees) vs. the distance walked along the y-axis.
 # _____
 # 
 # The equation of the curve is $\displaystyle y=a\ln\left(\frac{a+\sqrt(a^2-x^2}{x}  \right)-\sqrt{a^2-x^2}$   where $a$ is a constant such that $a\lt x $ and the man walks up the y-axis.
@@ -255,7 +263,11 @@
 # (b) Estimate the constant and limits to $\lambda$ and $T$ that makes this approximation valid.
 # 
 # ### Q66 probability of finding atom
-# The probability of finding the nuclei at a given internuclear separation $x$ in a diatomic molecule is given by $\psi^*(x)\psi (x)$, where $\psi(x)$ is the wavefunction and the * indicates that if $\psi$ has a complex part the complex conjugate should be used. The $v = 1$ vibrational level of a harmonic oscillator has the wavefunction $\displaystyle \psi(x)=\left(\frac{\alpha}{4\pi} \right)^{1/4}(2\alpha x-1)e^{-\alpha x^2/2}$. At what internuclear separation is the maximum and at what the minimum probability?
+# The probability of finding the nuclei at a given internuclear separation $x$ in a diatomic molecule is given by $\psi^*(x)\psi (x)$, where $\psi(x)$ is the wavefunction and the * indicates that if $\psi$ has a complex part the complex conjugate should be used. The $v = 1$ vibrational level of a harmonic oscillator has the wavefunction 
+# 
+# $$\displaystyle \psi(x)=\left(\frac{\alpha}{4\pi} \right)^{1/4}(2\alpha x-1)e^{-\alpha x^2/2}$$
+# 
+# At what internuclear separation is the maximum and at what the minimum probability?
 # 
 # ### Q67 Extending a protein by atomic force microscopy
 # If a protein or a length of DNA is attached to one end of the cantilever of an atomic force microscope, AFM, the other end being fixed to the microscope's base and then the cantilever retracted, the force produced on the cantilever during extension is described by the worm-like-chain (wlc) model of extension. The protein acts like a spring but one whose force vs extension varies in a complicated way. At low extension, Hooke's law is obeyed, but at larger extension, this is not the case. Experimentally it is found that, to a good approximation, the force f is related to the extension x as predicted by the wlc model,
@@ -264,7 +276,11 @@
 # 
 # where $L_p$ is the length of the protein ($\approx 30$ nm) and $p$ is the persistence length ($\approx 0.4$ nm), which is a measure of how easily the protein can bend. The measured force is small as would be expected for a single molecule and is measured in piconewton; $1\, \mathrm{pN} \equiv 10^{-12}$ N.
 # 
-# The true response of the cantilever also depends upon how easily the cantilever itself bends Fig. 21. The compliance $ h$,which is the reciprocal of the total force constant, thus describes both the protein and cantilever behaviour and is $\displaystyle h=\frac{1}{k_s}+\frac{dx}{df}$, where the cantilever has a force constant $k_s$, and $h$ has units of m/N.
+# The true response of the cantilever also depends upon how easily the cantilever itself bends Fig. 21. The compliance $ h$,which is the reciprocal of the total force constant, thus describes both the protein and cantilever behaviour and is 
+# 
+# $$\displaystyle h=\frac{1}{k_s}+\frac{dx}{df}$$
+# 
+# where the cantilever has a force constant $k_s$, and $h$ has units of m/N.
 # 
 # ![Display](differen-fig21.png)
 # 
@@ -319,7 +335,11 @@
 # 
 # Starting with $1$ mole of $\mathrm{N_2O_4}$ the number of moles reacted is $1 - \xi$ and the number of moles of NO$_2$ produced will be $2\xi$ where $\xi$ (pronounced xi) is the extent of reaction and has units of moles. The extent of reaction $\xi$ is the number of moles reacted multiplied by the stoicheiometry constant. 
 # 
-# The total number of moles is $1-\xi+2\xi=1+\xi$ and the mole fraction of $\mathrm{N_2O_4}$ is $\displaystyle x_{N_2O_4}=\frac{1-\xi}{1+\xi}$ and of NO$_2$ is $\displaystyle x_{NO_2}=\frac{2\xi}{1+\xi}$. If the total pressure is held constant at $1$ bar, then $p_{N_2O_4}=x_{N_2O_4} p_0$ and $p_{NO_2} =x_{NO_2} p_0$.
+# The total number of moles is $1-\xi+2\xi=1+\xi$ and the mole fractions are 
+# 
+# $$\displaystyle x_{N_2O_4}=\frac{1-\xi}{1+\xi}\quad\text{and}\quad  x_{NO_2}=\frac{2\xi}{1+\xi}$$
+# 
+# If the total pressure is held constant at $1$ bar, then $p_{N_2O_4}=x_{N_2O_4} p_0$ and $p_{NO_2} =x_{NO_2} p_0$.
 # 
 # The total Gibbs energy is 
 # 
@@ -374,3 +394,9 @@
 # $$\displaystyle  E = -2NS^2(J_1 \cos(\theta) + J_2 \cos(2\theta))$$
 # 
 # Find three possible minimum energies if $\theta$ is the angle between the overall magnetic moment between planes.
+
+# In[ ]:
+
+
+
+

@@ -1,14 +1,14 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # The Fourier transform in two dimensions: images and x-ray Diffraction
+# ## The Fourier transform in two dimensions: images and x-ray Diffraction
 
 # 
-# ## Motivation and concept
+# ### Motivation and concept
 # 
 # The fourier transform can be extended to 2D and 3D. The 2D transform is important in image analysis, optics and 2D spectroscopies such as ultrafast infra-red and nmr analysis. The 3D transform is used to describe x-ray diffraction from crystals which is the definitive way of determining molecular structure and is of central importance in chemistry and biochemistry. We shall illustrate how x-ray diffraction leads to structure using 2D fourier transforms.
 # 
-# ## 12 2D transforms.
+# ### 12 2D transforms.
 # 
 # The 2D forward and inverse transform is written down easily by analogy with the 1D versions, but rather than use $k_x,k_y$ for the conjugate variables it is clearer instead to use $u,v$
 # 
@@ -95,7 +95,7 @@
 # Figure 69. Left, a lattice of molecules, with the unit cell outlined ($a$=blue). Centre, the absolute value of the transform and the reciprocal unit cell ($a^*$=blue), and Right, the absolute value of the transform of the whole and the absolute value of transform of a single molecule superimposed. Note how in the transform the intensity of the spots changes and follows that of the single molecule's pattern.
 # ________
 
-# ## 13 X-ray Diffraction.
+# ### 13 X-ray Diffraction.
 # 
 # ### 13.1 Fourier Synthesis
 # 
@@ -189,7 +189,7 @@
 # 
 # ![Drawing](fourier-fig73.png)
 # 
-# Fig. 73. The powdered crystals have random orientations ($\theta$ and $\phi$and diffract along cones. The dots show that if there are just a few crystals only a few spots would be produced. 
+# Fig. 73. The powdered crystals have random orientations ($\theta$ and $\phi$) and diffract along cones. The dots show that if there are just a few crystals only a few spots would be produced. 
 # _____
 # The arrangement of an experiment is shown in fig 74, and a simulated set of data in fig 75. In this figure the wide, grey regions are where the x-rays enter, on the left and leave on the right. 
 # 
@@ -198,7 +198,7 @@
 # fig. 74. Arrangement for powder diffraction
 # 
 # ![Drawing](fourier-fig75.png)
-# fig 75. Simulated powder diffraction pattern. The x-rays enter on the left and leaves on the right at $\pm 180$.
+# fig 75. Simulated powder diffraction pattern from a cubic unit cell. The x-rays enter on the left and leaves on the right at $\pm 180$.
 # ________
 # The pattern in fig 75 corresponds to that of a cubic crystal of side $a$ and combining the Bragg law and the inter-planar distance $d_{hkl}$ gives
 # 
@@ -223,7 +223,7 @@
 # 
 # $$\displaystyle f_{q}= \sum_i^4 a_i e^{\large -b_i\left(q/4\pi\right)^2}+c,\qquad q=\sin(\theta)/\lambda=1/2d_{hkl}\tag{55}$$
 # 
-# with constants $b_i$ and $c$ tabulated for each atom and its ions. Later on, clarity, we label the atomic scattering factor $f_j^{hkl}$ for atom $j$ and Miller indices ${hkl}. Typical examples are shown in fig 77.
+# with constants $b_i$ and $c$ tabulated for each atom and its ions. Later on, clarity, we label the atomic scattering factor $f_j^{hkl}$ for atom $j$ and Miller indices ${hkl}$. Typical examples are shown in fig 77.
 # 
 # ![Drawing](fourier-fig77.png)
 # 
@@ -237,7 +237,6 @@
 # ![Drawing](Fourier-fig78.png)
 # 
 # Figure 78. Fourier synthesis of atomic positions. Left face on in x-y plane and right end on in the y-z plane. The waves forming the total are shown numbered below. Notice that the waves have different amplitudes and phases. (After J. Waser J. Chem. Educ. p446,v45,1968). 
-# 
 # _______
 # 
 # The right hand figure shows each molecule end on so has only one peak. Combining both figures can better reproduce the molecule if plotted as contours, and such a plot is shown in fig. 79, where the location of the atoms is clear. In this calculation the amplitude and phase of the waves was chosen by trial and error until a reasonable result was produced. This is equivalent to knowing the geometric structure factors $F_{hkl}$ and an example of finding these is given next where the general formula is introduced. 
@@ -301,7 +300,7 @@
 # Figure 80. The structure of Ti0$_2$. The Ti atoms are black the oxygen red and the numbered O atoms show the repeating unit containing the Ti atom at the lower left connected to oxygen 1 and the central one. The atoms are not shown at their real size, the O$^{2-}$ has a radius $\approx 1.23$ Angstrom and the Ti$^{4+}\approx 0.65$ Angstrom.
 # ______
 # 
-# #### (100) reflexion
+# #### **(100) reflexion**
 # 
 # In this and the other reflexions we will calculate the structure factor by examining individual waves rather than plugging values into eqn. D4. Of course in practice the equation would always be used but it is useful to gain an insight into what the equation means. 
 # 
@@ -316,7 +315,7 @@
 # Figure 81. Left. View down the $c$ axis showing the $(100)$ plane and the distance used in calculating the   structure factor $F_{100}$ The Ti ions are shown in black the oxygens in red. Right. Showing the waves belonging to each atom in this reflexion. Each wavelength is $d_{100}$. The sum of all waves is zero.
 # ______
 # 
-# #### (200) reflexion
+# #### **(200) reflexion**
 # 
 # Although the $(200)$ planes are parallel to $(100)$ the $(200)$ reflection is not zero. This can be seen in fig. 82, and is because the $d_{200}$ is half that of $d_{100}$. This means that Ti$_1$ and Ti$_2$ are now in phase with one another as each is on a $(200)$ plane and therefore each has zero phase. The phase contribution from the Ti ions is therefore $2f^{Ti}_{d_{200}}\cos(0)=2f^{Ti}_{d_{200}}\cos(0) = 16.02$ where the number is the value of the atomic scattering factor at $1/2d_{200}=0.214$. Pairs of oxygen atoms are in the same relative symmetry, $1 : 3$ and $2 : 4$ so only the phase of O$_2$ and O$_3$ need be calculated.  Oxygen 2 is at $y/b=0.8025$ so the structure factor is $F^O_{d_{200}}\cos( 2\pi h 0.8025)= -4.76$ where $k=l=0$ and $x/a=0.8025$. The same value is found for all the oxygen atoms making the total structure factor $F_{d_{200}}= 13$ and the intensity $169$.
 # 
@@ -325,7 +324,7 @@
 # Figure 82. Left. Same view as figure 81.  The $(200)$ planes are shown as lines. Right The waves from each atom and their sum is shown in red whose amplitude is moderate. By symmetry oxygens $1$ and $3$ contribute equally as do $2$ and $4$.
 # _______
 # 
-# #### (110) reflexion
+# #### **(110) reflexion**
 # 
 # The (110) reflection is strong, fig. 83. All the Ti atoms are in the (110) plane and so their phase is $0$ or $2\pi$ thus the cosine is unity and the amplitude of each is $f^{Ti}_{d_{110}}=16.95$ where $1/2d_{110}= 0.152$. Oxygens $1$ and $2$ are also in the plane and their phase is similarly $2\pi$ thus each amplitude is $f^O_{d_{110}}=6.96$. The other oxygens are at fractional distances of $d_{110}$. Oxygen 3 is at a distance $D_{O3}=2.003$ which is a phase angle of $2\pi 2.003/4.65\equiv 219^\text{o}$ with amplitude $f^O_{d_{110}}\cos(2\pi 0.43)=-5.39$. The fourth oxygen also has a phase angle of $-219^\text{o}$ but adds towards the total because $\cos(-\theta)=\cos(\theta)$. From all 6 atoms in the unit cell the total structure factor is $F_{110}=37$ so the intensity is $1369$ and should be seen as an intensely bright spot.
 # 

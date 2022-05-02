@@ -22,7 +22,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # $$\pmb{M}\vec x =  \vec C \tag{28} $$
 # 
-# where $\pmb M$ is a matrix and $\vec x$ and $\vec C$ are column vectors (one-dimensional matrices). Later on, we consider eigenvalue - eigenvector equations, which are more important and useful to us. In this section only matrices are given bold letters and the arrow above a vector is dropped as the context should make it clear when a vector is used.
+# where $\pmb M$ is a matrix and $\vec x$ and $\vec C$ are column vectors (one-dimensional matrices). Later on, we consider eigenvalue - eigenvector equations, which are more important and useful to us. In this section matrices are given bold letters, a vector is indicated by an arrow.
 # 
 # A set of simultaneous equations can conventionally be written as shown below, but the matrix equation is equivalent and clearer.
 # 
@@ -35,7 +35,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # **(a)**$\quad$ Calculate the determinant of the matrix.
 # 
-# **(b)**$\quad$ Replace one column of the matrix by the column vector $C$ to form a new matrix. 
+# **(b)**$\quad$ Replace one column of the matrix by the column vector $\vec C$ to form a new matrix. 
 # 
 # **(c)**$\quad$ Divide the determinant of this by the determinant of the original matrix.
 # 
@@ -49,17 +49,17 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # component $i = 1$ gives the unknown $x$, the second $y$ the third $z$. The value of $x$ is
 # 
 # $$ \frac{ \begin{vmatrix} 6 & 4 & 1 \\ -3 & -3 & 6 \\ 0 & -1 & 4 \\ \end{vmatrix}} {\begin{vmatrix} 3 & 4 & 1 \\ 1 & -3 & 6 \\ 2 & -1 & 4 \\ \end{vmatrix}}  =\frac{6(-12+6)-4(-12)+1(3)}{3(-12+6)-4(4-12)+1(-1+6)}= \frac{15}{19} $$
-
+# 
 # ### 12.2 A matrix method for solving simultaneous equations
 # 
-# The formal matrix method to solve equation (28) is to invert the equation by multiplying both sides by $\pmb{M}^{-1}$ to form $\pmb{M}^{-1}\pmb{M} = \pmb{1}$ and therefore $\pmb{M}^{-1}\pmb{M}\vec x = \pmb{M}^{-1}C$. The next step is to replace the $\pmb{M}^{-1}\pmb{M}$ by the unit matrix $\pmb{1}$, but this has no further effect because $\pmb{1}\vec x = \pmb{M}^{-1}C$ is the same as
+# The formal matrix method to solve equation (28) is to invert the equation by multiplying both sides by $\pmb{M}^{-1}$ to form $\pmb{M}^{-1}\pmb{M} = \pmb{1}$ and therefore $\pmb{M}^{-1}\pmb{M}\vec x = \pmb{M}^{-1}\vec C$. The next step is to replace the $\pmb{M}^{-1}\pmb{M}$ by the unit matrix $\pmb{1}$, but this has no further effect because $\pmb{1}\vec x = \pmb{M}^{-1}\vec C$ is the same as
 # 
-# $$ \vec x=\pmb{M}^{-1}C\tag{30}$$
+# $$ \vec x=\pmb{M}^{-1}\vec C\tag{30}$$
 # 
-# The matrix method of solving simultaneous equations has therefore become that of finding the inverse of a matrix $\pmb{M}$, and performing a matrix multiplication with $C$.
+# The matrix method of solving simultaneous equations has therefore become that of finding the inverse of a matrix $\pmb{M}$, and performing a matrix multiplication with $\vec C$.
 # 
-# #### (i) Example using eqns. 29
-# In practice, you will generally want to use the computer to solve simultaneous equations and this is illustrated in two ways below using Python. In the matrix method, $C$ is a column matrix and $\pmb{M}$ has rows of the equation coefficients. Some methods are shown below. The first two using numpy, which gives a numerical answer, the second using Sympy which gives the result algebraically but can be converted to real numbers by multiplying by $1.0$. When using numpy the $\mathtt{linalg.inv(..)}$ produces the inverse of the matrix, the dot product $\mathtt{np.dot(..,..)}$ performs the matrix multiplication. 
+# #### **(i) Solving simultaneous equations with the computer**
+# In practice, you will generally want to use the computer to solve simultaneous equations and this is illustrated in two ways below using Python. In the matrix method, $\vec C$ is a column matrix and $\pmb{M}$ has rows of the equation coefficients. Some methods are shown below. The first two using numpy, which gives a numerical answer, the second using Sympy which gives the result algebraically but can be converted to real numbers by multiplying by $1.0$. When using numpy the $\mathtt{linalg.inv(..)}$ produces the inverse of the matrix, the dot product $\mathtt{np.dot(..,..)}$ performs the matrix multiplication. 
 # 
 # The equation to be solved is eqn. 29 above. 
 
@@ -67,12 +67,12 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 
 M = np.array([ [3,4,1],[1,-3,6],[2,-1,4] ] )
-C = np.array([6,-3,0])
-answer = np.dot(np.linalg.inv( M) ,C )
+C = np.array( [6,-3,0] )
+answer = np.dot( np.linalg.inv( M), C )
 answer
 
 
-# An alternative is to use the numpy linear algebra package 'linalg', see the top of this section for how to include it, i.e $\mathtt{from\; numpy\; import\; linalg\; as\; LA}$.  The solve routine may be more numerically robust than matrix inversion. 
+# An alternative is to use the numpy linear algebra package $\mathtt{linalg}$, see the top of this section for how to include it, i.e $\mathtt{from\; numpy\; import\; linalg\; as\; LA}$.  The solve routine may be more numerically robust than matrix inversion. 
 
 # In[3]:
 
@@ -87,7 +87,7 @@ LA.solve(M,C)
 # In[4]:
 
 
-M,C = symbols('M,C')
+M, C = symbols('M, C')
 M = Matrix([ [3,4,1],[1,-3,6],[2,-1,4] ])
 C = Matrix([6,-3,0])
 M**(-1)*C
@@ -98,7 +98,7 @@ M**(-1)*C
 # In[5]:
 
 
-x,y,z = symbols('x,y,z')
+x, y, z = symbols('x, y, z')
 eq1 = 3*x +4*y   +z -6
 eq2 =   x -3*y +6*z +3
 eq3 = 2*x   -y +4*z
@@ -107,7 +107,7 @@ ans = solve((eq1,eq2,eq3))
 ans
 
 
-# #### (ii) Mixing solutions
+# #### **(ii) Mixing solutions**
 # 
 # It is quite easy to work out how to make a mixture of two components from standard solutions but what if three standards are needed ? The calculation becomes one of solving three simultaneous equations for which a matrix method is suitable. 
 # 
@@ -128,8 +128,8 @@ ans
 # In[6]:
 
 
-M = np.array([[2.0,5.5,1],[1.5,4.5,2.47],[1,1,1]])
-C = np.array([2.7,2.9,1])
+M = np.array( [[2.0, 5.5, 1], [1.5, 4.5, 2.47], [1, 1, 1]] )
+C = np.array( [2.7, 2.9, 1] )
 ans = LA.solve(M,C)
 print('{:6.3f} {:6.3f} {:6.3f}'.format(ans[0],ans[1],ans[2] ) )
 
@@ -145,7 +145,7 @@ print('{:6.3f} {:6.3f} {:6.3f}'.format(ans[0],ans[1],ans[2] ) )
 # 
 # In the situation that the mixture needs three different species then the method can be extended, by having four or more columns and rows in the matrix but the new solution must lie within the volume contained by species $[X],[Y],[Z]$ rather than an area.  
 
-# #### (iii) Rotational Spectroscopy
+# #### **(iii) Rotational Spectroscopy**
 # 
 #  Raman spectroscopy has been used to measure the rotational energy levels of benzene vapour, which are then used to obtain accurate CH bond lengths. The rotational constants obtained from C$_6$H$_6$ and C$_6$D$_6$, are $B = 0.18960 \pm 0.00005$ and $B = 0.15681 \pm 0.00008 \;\mathrm{cm^{-1}}$, which describe the motion _perpendicular_ to benzene's sixfold axis. The bond lengths will be calculated assuming that the molecule has $D_{6h}$ symmetry, i.e. is a regular hexagon and behaves as a rigid rotor. This calculation shows how isotopic substitution makes it possible to calculate very accurate bond lengths even in large molecules; in fact, far more accurately than by X-ray crystallography.
 # 
@@ -169,7 +169,7 @@ print('{:6.3f} {:6.3f} {:6.3f}'.format(ans[0],ans[1],ans[2] ) )
 # In[7]:
 
 
-r,s,c,hbar,B_H,B_D,m_H,m_D,m_C = symbols('r,s,c,hbar,B_H,B_D,m_H,m_D,m_C')
+r, s, c, hbar, B_H, B_D, m_H, m_D, m_C = symbols('r, s, c, hbar, B_H, B_D, m_H, m_D, m_C')
 
 m_C = 1.992648e-26   # mass C
 m_H = 1.673534e-27
@@ -179,16 +179,17 @@ c   = 2.99792458e10  # in cm/sec
 B_D = 0.15681*c      # rotational const D
 B_H = 0.18960*c
 
-eq1 = (m_C +m_H)*r**2 +m_H*s**2 +2*m_H*r*s - hbar/(12*pi*B_H)
-eq2 = (m_C +m_D)*r**2 +m_D*s**2 +2*m_D*r*s - hbar/(12*pi*B_D)
+eq1 = (m_C + m_H)*r**2 + m_H*s**2 + 2*m_H*r*s - hbar/(12*pi*B_H)
+eq2 = (m_C + m_D)*r**2 + m_D*s**2 + 2*m_D*r*s - hbar/(12*pi*B_D)
 
 ans = solve((eq1,eq2),(r,s) )  # order returned r , s
-ans
+for i in range(len(ans)):             # do this only to print clearly
+    print('{:4d} {:8.4e}  {:8.4e}'.format(i, ans[i][0],ans[i][1]) )
 
 
 # The only physically meaningful roots of these equations are when both are positive, i.e. $r = 0.13973 $ nm for the CC bond length and $s = 0.10843$ nm for the CH bond length. The results are quoted to 5 figures, as this is the precision of the initial data.
 # 
-# #### (iv) Balancing complex chemical equations with  Gaussian Elimination
+# #### **(iv) Balancing complex chemical equations**
 # 
 # **(a)** Balancing an equation such as 
 # 
@@ -236,20 +237,23 @@ ans
 # 
 # **(b)** $\displaystyle  \mathrm{CO + CO_2 + H_2 \to CH_4 + H_2O}$
 # 
-# The equation $\displaystyle  \mathrm{CO + CO_2 + H_2 \to CH_4 + H_2O}$,
+# The equation 
+# 
+# $$\displaystyle  \mathrm{CO + CO_2 + H_2 \to CH_4 + H_2O}$$
+# 
 # presents a different problem. There are three (C,H,O) species and five molecules (and equations) meaning that there is an unlimited number of solutions.  The resulting echelon form will have two columns and to find solutions a linear combination of these has to be made (by trial and error) with results accepted provided no fractions or zero values result. The matrix is in row order C, O, H. If there are sign changes in the result this this should be rejected, otherwise the values are used by ignoring the sign, i.e. correct values should be all positive or all negative. 
 
 # In[10]:
 
 
-mCO = Matrix([ [-1,-1,0,1,0],[-1,-2,0,0,1],[0,0,-2,4,2]  ] )
+mCO = Matrix([ [-1,-1,0,1,0], [-1,-2,0,0,1], [0,0,-2,4,2]  ] )
 mCO
 
 
 # In[11]:
 
 
-ans,temp = mCO.rref()   # reduced echelon form of matrix . Ignore temp as it is unimportant here.
+ans, temp = mCO.rref()   # reduced echelon form of matrix . Ignore temp as it is unimportant here.
 ans
 
 
@@ -259,21 +263,17 @@ ans
 
 
 col5 = ans[:,-1]  # last column
-col4 = ans[:,-2]  # last but 1
+col4 = ans[:,-2]  # last but 1 column
 
 test= 2*col4 + 3*col5 # just guess values 3 and 2. 5 and 3 also work
 test
 
 
-# making the coefficients $\begin{bmatrix} 1 & 1 & 7 & 2 & 3\end{bmatrix}$ and
+# making the coefficients $\begin{bmatrix} 1 & 1 & 7 & 2 & 3\end{bmatrix}$ and $\displaystyle  \mathrm{CO + CO_2 + 7H_2 \to 2CH_4 + 3H_2O}$
 # 
-# $$\displaystyle  \mathrm{CO + CO_2 + 7H_2 \to 2CH_4 + 3H_2O}$$
-# 
-# an alternative is of many is
-# 
-# $$\displaystyle  \mathrm{5CO + CO_2 + 19H_2 \to 6CH_4 + 7H_2O}$$
+# an alternative is of many is $\displaystyle  \mathrm{5CO + CO_2 + 19H_2 \to 6CH_4 + 7H_2O}$.
 
-# ## 12.3 Eigenvalue - Eigenvector equations
+# ### 12.3 Eigenvalue - Eigenvector equations
 # 
 # A most important and interesting type of equation is the eigenvalue - eigenvector equation
 # which has the form
@@ -342,7 +342,7 @@ test
 
 #  LA.eig() is imported linear algebra library shown at top of page
 
-M = np.array([[2,4],[3,1] ] )     # is a matrix in numpy
+M = np.array( [ [2,4], [3,1] ] )     # is a matrix in numpy
 
 evals,evecs = LA.eig(M)           # eigenvals and eigenvectors are returned
 
@@ -362,8 +362,8 @@ print(evecs.T[0],evecs.T[1])  # these are first and second eigenvectors  .T is t
 
 # with Sympy, algebraic solution
 M = symbols('M')
-M = Matrix([[2,4],[3,1] ])         # note different syntax to numpy
-# M.eigenvals()    # use if eigenvals only are wanted 
+M = Matrix( [ [2,4], [3,1] ] )         # note different syntax to numpy
+# M.eigenvals()                        # use if eigenvals only are wanted 
 ans = M.eigenvects()     # returns in order : eigenvalue, multiplicity, eigenvectors not normalised
 ans
 
@@ -381,19 +381,15 @@ ev1
 
 
 M = symbols('M')
-M = Matrix([[2,4],[3,1] ])         # note different syntax to numpy
+M = Matrix( [ [2,4], [3,1] ] )         # note different syntax to numpy
 
-evecs, evals = M.diagonalize()     # note order of returned matrices
+evecs, evals = M.diagonalize()         # note order of returned matrices
 evals,evecs
 
 
-# In[18]:
-
-
-but here the eigenvalues are presented differently, but can easily vbe normalised is required.
-
-
-# #### (i) Example.
+# but here the eigenvalues are presented differently, but can easily be normalised if required.
+# 
+# #### **(i) Calculating eigenvalues and eigenvectors by hand.**
 # To illustrate the method, the eigenvalues $\lambda_1$ and $\lambda_2$ of $\displaystyle A=\begin{bmatrix} 2 & 4\\ 3 & 1\ \end{bmatrix}$ and the corresponding  eigenvectors will be found  by hand. 
 # 
 # Our strategy will be to convert the matrix to the form of equation 33, expand the secular determinant, and solve for $\lambda$. Equation 34 will be used to calculate the eigenvectors. The calculation is relatively simple for this small matrix. The equation to solve is 
@@ -438,8 +434,6 @@ but here the eigenvalues are presented differently, but can easily vbe normalise
 # The same calculation using Python or Sympy is far easier and, in practice, you will always do the calculation in this way.
 
 # ### 12.7 Properties of eigenvalues and eigenvectors
-# 
-# 
 # Some of the more important properties of eigenvalues and eigenvectors are listed here.
 # 
 # **(a)**$\quad$ Any scalar multiple of an eigenvector is also an eigenvector, because the operator $\pmb A$ is linear; e.g. if an eigenvector is $x$ then $3x$ is also an eigenvector. If the operator $\pmb A$ is raised to an integer power, $p = 0, \pm 1, \pm 2, \cdots$ then the eigenvalues are $\lambda^p$. The eigenvectors are the same as those of $\pmb A$.
@@ -494,7 +488,7 @@ but here the eigenvalues are presented differently, but can easily vbe normalise
 # Figure 54. The diagonal matrix produces energy levels (left). The interactions 1-3 and 2-3 move the energy levels about as sketched (right).
 # ________________________
 # 
-# #### Coupling between two spins. The secular determinant and block diagonal matrices.
+# #### **Coupling between two spins. The secular determinant and block diagonal matrices**
 # 
 # The coupling between two spins will be calculated. The magnetic moments of electrons and nuclei are coupled via the so-called _contact_ interaction, introduced by Fermi to account for the hyperfine interactions in atomic spectra. The nucleus has spin angular momentum $I$ and the electron $S$. The interaction represents the energy of the nuclear magnetic moment in the magnetic field at the nucleus, produced by the 'spinning' electrons. The coupling matrix with nuclear spin $S_n = 1/2$ and electron spin $S_e = 1/2$ produces a $4 \times 4$ matrix because terms arise from spin combinations $\alpha\alpha, \alpha\beta, \beta\alpha, \beta\beta$. The first letter describes the electron spin, the second nuclear spin. The label $\alpha$ represents either the electron or nuclear spin wavefunction with spin magnetic quantum number $m_s = 1/2$ and $\beta$ that with $m_s = -1/2$ ($m_s$ is also called the projection or azimuthal quantum number). With the basis set $(\alpha\alpha, \alpha\beta, \beta\alpha, \beta\beta)$ determining the order of terms in the rows and columns of the interaction matrix is
 # 
@@ -514,20 +508,20 @@ but here the eigenvalues are presented differently, but can easily vbe normalise
 # 
 # To find the eigenvectors we can use Python/Sympy
 
-# In[89]:
+# In[18]:
 
 
 M = symbols('M')
 M = Matrix([[1,0,0,0],[0,-1,2,0],[0,2,-1,0],[0,0,0,1]])
 
 
-# In[90]:
+# In[19]:
 
 
 M.eigenvals()  # second value in each pair is multiplicity
 
 
-# In[91]:
+# In[20]:
 
 
 M.eigenvects()    # eigenvalues and eigenvectors. second number in each (1 , 3) is multiplicity
@@ -537,7 +531,7 @@ M.eigenvects()    # eigenvalues and eigenvectors. second number in each (1 , 3) 
 # 
 # A simpler notation can be found is using (sympy) diagonalisation where the eigenvector's matrix is returned first.
 
-# In[92]:
+# In[21]:
 
 
 M.diagonalize()

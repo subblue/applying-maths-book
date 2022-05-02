@@ -25,14 +25,14 @@
 # 
 # **Strategy:** Usually with powers of $x$ and $y$ it is simpler to take logs first then differentiate.
 # 
-# ### Q14
+# ### Q14 Differentiate an integral
 # (a) Differentiate  $\displaystyle \int e^{ax}dx$ $n$ times by $a$ and show that
 #   
 # $$\displaystyle \int x^ne^{ax}dx=\frac{d^n}{da^n}\left(  \frac{e^{ax}}{a} \right)$$  
 # 
 # (b) Find two similar relationships for  $\displaystyle \int\sin(ax)dx$ when $n$ is even and for  $\displaystyle \int \cos(ax)dx$ when odd. This is quite a neat way to perform these integrals.
 # 
-# ### Q15
+# ### Q15 Parametric eqn.
 # (a) Use Python/Matplotlib to plot the parametric function
 # 
 # $$\displaystyle  x = \sin(t) - \sin^3(2t),\qquad y = \cos(t) - \cos^3(2t)$$
@@ -42,7 +42,7 @@
 # 
 # This is a rather complex curve that would be hard to define in terms of $x$ and $y$ alone. Try changing the constant $2$ to $3$ and the powers to see how the curve alters.
 # 
-# ### Q16
+# ### Q16 Cardioid
 # (a) Calculate the gradient of the Cardioid with parametric equations
 # 
 # $$\displaystyle  x = 2\cos(t) + \cos(2t) + 1, \qquad y = 2 \sin(t) + \sin(2t)$$
@@ -61,7 +61,7 @@
 # 
 # **Strategy:** Use equation (15).
 # 
-# ### Q18
+# ### Q18 Chain rule
 # If $y=x^2 +2,\;x=\sqrt{w},\; w=\cos(u)$, using the chain rule write down $dy/du$ in terms of $x,\,u$, and $w$, then calculate the derivative in terms of $u$ alone. Confirm the result by substituting the equations first.
 # 
 # ### Q19
@@ -75,19 +75,19 @@
 # 
 # **Strategy:** Being a function of $s$ means the functions are $y(s) =\cdots$  and $x(s) =\cdots$ or 'something in $s$'. In full notation $f (s) = y(s)e^{-ax(s)}$ . As both $x$ and $y$ are functions of the independent variable $s$, then the derivatives of $x$ and $y$ with respect to s must be found. It is here necessary to overcome our prejudice of $x$ as the only differentiation variable. If the equation had different symbols, it might be easier.
 # 
-# ### Q21
+# ### Q21 
 # If $\displaystyle y=x^n\ln(x)$
 # 
 # (a) Show that $\displaystyle xy′=ny+x^n$.
 # 
 # (b) Calculate $y''$
 # 
-# ### Q21
+# ### Q22 Distance and velocity
 # Show that $\displaystyle \frac{d}{dx}\left( \frac{v^2}{2} \right) =\frac{d^2x}{dt^2}$ where $x$ represents the distance travelled by a body in time $t$ when $v$ is its velocity.
 # 
 # **Strategy:** Notice that the derivatives are in time $t$ and distance $x$ and that they have to be connected; the way to do this is via the velocity.
 # 
-# ### Q23
+# ### Q23 Lemniscate of Bernoulli
 # (a) Find the gradient $dy/dx$ of the Lemniscate of Bernoulli, $\displaystyle (x^2 + y^2)^2 = a^2(y^2 - x^2)$ shown in Fig. 7.
 # 
 # (b) Determine where the gradient is zero; it is easy to see on the figure, but show it mathematically.
@@ -171,7 +171,7 @@
 # (a) Confirm the units of the internal energy are correct. What does the first term on the right
 # represent?
 # 
-# (b Calculate the heat capacity (at constant volume) $C_V$, which is the rate of change of energy with temperature.
+# (b) Calculate the heat capacity (at constant volume) $C_V$, which is the rate of change of energy with temperature.
 # 
 # (c) Convert the result to dimensionless quantities using $x = h\nu/k_BT$ so that the result is given in terms of temperature with $\theta = h\nu_D /k_B$ being the Debye temperature. Why are the units of $x$ and $\theta$ dimensionless?
 # 
@@ -245,7 +245,11 @@
 # ### Q37 Wavepacket
 # A wavepacket is the sum of many wavefunctions and because this sum is not an eigenstate, it evolves in time. Generating a wavepacket is easy using femtosecond laser pulses because they have a wide energy spread and many molecular vibrational or rotational energy levels can be (almost) simultaneously excited. The wavepacket has the appearance of a classical particle moving from side to side in the potential, this can be observed using a second femtosecond laser pulse.
 # 
-# The frequency $\omega$ of the wavepacket's oscillatory motion can be calculated from $\displaystyle \omega = \frac{1}{\hbar}\frac{\partial E_n}{\partial n}$ where $n$ is the vibrational quantum number and $E_n$ the energy. This formula is obtained from the 'angle - action' or Hamilton - Jacobi formulation of mechanics (see Goldstein 1980, p. 459). This formula enables the frequency of any oscillation to be found even if the equations of motion are not solved. 
+# The frequency $\omega$ of the wavepacket's oscillatory motion can be calculated from 
+# 
+# $$\displaystyle \omega = \frac{1}{\hbar}\frac{\partial E_n}{\partial n}$$
+# 
+# where $n$ is the vibrational quantum number and $E_n$ the energy. This formula is obtained from the 'angle - action' or Hamilton - Jacobi formulation of mechanics (see Goldstein 1980, p. 459). This formula enables the frequency of any oscillation to be found even if the equations of motion are not solved. 
 # 
 # The energy $E$ of a Morse (anharmonic) oscillator of frequency $\omega_e$ and anharmonicity $x_e$ is 
 # 
@@ -300,7 +304,11 @@
 # 
 # $$\displaystyle Z = \sum_{\nu =0}^\infty  e^{-E_\nu /k_BT} $$
 # 
-# where $N$ is the total number of particles, and $n_\nu$ the number in level $\nu$. In the harmonic oscillator model of a diatomic molecule the energy levels are $\displaystyle E_\nu = \hbar\omega(\nu + 1/2)$, with quantum number $\nu$, and $\displaystyle Z=e^{-\theta/2T}(1-e^{-\theta/T})^{-1}$ where $\displaystyle \theta = \hbar\omega/k_B$ is a characteristic temperature for the vibration which is in the range of a few hundred to a few thousand degrees K.
+# where $N$ is the total number of particles, and $n_\nu$ the number in level $\nu$. In the harmonic oscillator model of a diatomic molecule the energy levels are $\displaystyle E_\nu = \hbar\omega(\nu + 1/2)$, with quantum number $\nu$, and 
+# 
+# $$\displaystyle Z=e^{-\theta/2T}(1-e^{-\theta/T})^{-1}$$
+# 
+# where $\displaystyle \theta = \hbar\omega/k_B$ is a characteristic temperature for the vibration which is in the range of a few hundred to a few thousand degrees K.
 # 
 # (a) Calculate the internal energy $\displaystyle U = Nk_BT^2\frac{ d \ln(Z)}{dT} $ and heat capacity $\displaystyle C_V = \frac{dU}{dT}$, which is the rate of change of internal energy with temperature.
 # 
@@ -316,11 +324,11 @@
 # (a) Write down the partition function and calculate the energy $U$ of the nuclei in a constant magnetic field if
 # $\displaystyle U=-N\frac{d\ln(Z)}{d\beta}$ and $\beta=1/k_BT$.
 # 
-# (b) Calculate the magnetic field contribution to the heat capacity $C_B = dU/dT$ . (The calculation is easier if the derivative is converted to $dU/d\beta$ first.
+# (b) Calculate the magnetic field contribution to the heat capacity $C_B = dU/dT$. The calculation is easier if the derivative is converted to $dU/d\beta$ first.
 # 
 # (c)  Investigate the high and low temperature limits of $U$ and $C_\nu$.
 # 
-# (d) Calculate the entropy $S = UT + Nk_B \ln(Z)$ and show that at high temperatures this reaches the limit $S /to k \ln(3^N )$. Comment on the result.
+# (d) Calculate the entropy $S = UT + Nk_B \ln(Z)$ and show that at high temperatures this reaches the limit $S \to k \ln(3^N )$. Comment on the result.
 # 
 # (e) Plot graphs of $U$ and $C_V$ for $^{14}$N nuclei if $B_0 =14$ T and $\gamma =1.97\cdot 10^7\,\mathrm{ rad\, T^{-1}\,s^{-1}}$.
 # 
@@ -329,3 +337,9 @@
 # ![Display](differen-fig11.png)
 # 
 # Figure. 11 Spin 1 nucleus' energy levels in a magnetic field.
+
+# In[ ]:
+
+
+
+

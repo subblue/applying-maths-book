@@ -88,7 +88,7 @@
 # ### Q13 Polymer backbone angles
 # Figure 10 shows part of the backbone of a carbon polymer chain drawn within two cubes, and with each bond of length $d$. Calculate the angles $\theta, \phi$, and $\chi$ the angle to the $y$-axis, and the bond angle $\alpha$.
 # 
-# **Strategy:** Define the sides and diagonals as three-dimensional vectors. Choose O as the origin to begin with. The basis set is that of three orthogonal vectors along the $x-, y-$, and $z$-axes. To calculate $\alpha$ move this carbon atom to the origin and recalculate vectors $\vec{go}$ and $\vec{gf}$.
+# **Strategy:** Define the sides and diagonals as three-dimensional vectors. Choose $O$ as the origin to begin with. The basis set is that of three orthogonal vectors along the $x-, y-$, and $z$-axes. To calculate $\alpha$ move this carbon atom to the origin and recalculate vectors $\vec{go}$ and $\vec{gf}$.
 # 
 # ![Drawing](vectors-fig10.png)
 # 
@@ -176,7 +176,7 @@
 # 
 # ![Drawing](vectors-fig13.png)
 # 
-# Figure 13. Geometrical construction showing X-rays diffracted off a row of atoms, and right the cones of diffracted X-rays generated for the $-2,-1, 0,+1,+2$  diffraction orders. The line A-C is the wavefront of the incident beam and B-D that of the diffracted beam. The angle $\theta$ is half the cone apex angle.
+# Figure 13. Geometrical construction showing X-rays diffracted off a row of atoms, and right the cones of diffracted X-rays generated for the $-2,-1, 0,+1,+2$  diffraction orders. The line A-C is the wavefront of the incident beam and B-D that of the diffracted beam. The angle $\theta$ is half the cone apex angle. See also the section in the Fourier Transform which describes with x-ray diffraction.
 # _________
 
 # ### Q21 Orthorhombic crystal
@@ -213,7 +213,7 @@
 # 
 # ![Drawing](vectors-fig14.png)
 # 
-# Figure 14. Orthogonal crystal axes and two lattice planes with their Miller indices. The numbers on the axes divide each total axis into quarters. The lower, yellow traingular plane has $(h\;k\;l)=(2\;2\;4\;)$.  The gray plane has indices $(h\;k\;l)$.
+# Figure 14. Orthogonal crystal axes and two lattice planes with their Miller indices. The numbers on the axes divide each total axis into quarters. The lower, yellow traingular plane has $(h\;k\;l)=(2\;2\;4\;)$.  The gray plane has indices $(h\;k\;l)$. See also the section in Fourier Transforms which describes with x-ray diffraction.
 # ____
 # 
 # ### Q22 Distance to plane
@@ -225,7 +225,7 @@
 # 
 # You may wish to look at Section 16.4 before attempting this question.
 # 
-# **Strategy:** An orthorhombic crystal has a unit cell with orthogonal axes of different length, $a, b, c$. The distance from the origin to a plane is given by equation 47, but in the case that the intercepts are known, the plane then passes through points $(p, 0, 0), (0, q, 0)$ and $(0, 0, r)$. The equation is $\displaystyle \frac{x}{p}+\frac{y}{q}+\frac{z}{r}=1$ where the axes are in order $(x,y,z)\equiv (a,b,c)$.
+# **Strategy:** An orthorhombic crystal has a unit cell with orthogonal axes of different length, $a, b, c$. The distance from the origin to a plane is given by equation 47, but in the case that the intercepts are known, the plane then passes through points $(p, 0, 0), (0, q, 0)$ and $(0, 0, r)$. The equation is $\displaystyle \frac{x}{p}+\frac{y}{q}+\frac{z}{r}=1$ where the axes are in order $(x,y,z)\equiv (a,b,c)$. See also the section in Fourier Transforms which describes with x-ray diffraction.
 # 
 # ### Q23 Ewald sphere
 # 
@@ -242,7 +242,7 @@
 # 
 # ![Drawing](vectors-fig15.png)
 # 
-# Figure 15. Left. Diffraction off planes of atoms. Right. Ewald sphere construction.
+# Figure 15. Left. Diffraction off planes of atoms. Right. Ewald sphere construction. See also the section in Fourier Transforms which describes with x-ray diffraction.
 # _________
 # 
 # ### Q24 Ewald sphere and Miller indices
@@ -250,7 +250,7 @@
 # 
 # ![Drawing](vectors-fig16.png)
 # 
-# Figure 16 Ewald sphere and Miller indices of lattice planes.
+# Figure 16 Ewald sphere and Miller indices of lattice planes. See also the section in Fourier Transforms which describes with x-ray diffraction.
 
 # In[ ]:
 

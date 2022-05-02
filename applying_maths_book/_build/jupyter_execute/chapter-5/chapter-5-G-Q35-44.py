@@ -35,7 +35,7 @@
 # 
 # The figure below shows the geometry of the ion-dipole interaction. A more complete, and more complicated calculation, would allow the ion to be at any angle to the dipole and the results averaged, but the result is qualitatively the same. The dipole length is $2d$.
 # 
-# ![Drawing](series-fig5.5.png)
+# ![Drawing](series-fig5.png)
 # 
 # Figure 5. Geometry of the ion-dipole interaction. A more complete, and more complicated calculation, would allow the ion to be at any angle to the dipole and the results averaged, but the result is qualitatively the same. The dipole length is $2d$.
 # _____
@@ -61,11 +61,11 @@
 # **Strategy:** Because the interaction is electrostatic (or Coulomb) in nature, the energy is always calculated by adding together the interaction between pairs of charges; one charge each end of the dipole on one molecule with each of the charges on the other. The energy is inversely proportional to the separation of each pair of charges so there are four terms to consider.
 # 
 # ### Q38 Doppler effect
-# The pitch of an ambulance's siren sounds higher as it speeds towards us and lower as it recedes. This is caused by the Doppler effect. Because the source is moving, the separation between the sound waves becomes smaller as the source approaches and longer as it recedes.
+# The pitch of an ambulance's siren sounds higher as it speeds towards us and lower as it recedes. This is caused by the Doppler effect. Because the source is moving, the separation between the sound waves becomes smaller as the source approaches and longer as it recedes. The Doppler effect is widely used for example in radar speed cameras, in flow measurements in pipes or blood flow in veins and arteries. The Mossbaauer effect in the $gamma$ ray region of the spectrum also relies on the Doppler effect by moving the sample it can come into resonance with the source and so transitions are detected by absorption.
 # 
-# In approaching you, the sound frequency appears to be up-shifted from $f_0$ to $\displaystyle f = f_0\left(\frac{s+v_0}{s-v} \right)$ where $s$ is the speed of sound in air, approximately $331\, \mathrm{m\,s^{-1}}$ or $740$ m.p.h., $f_0$ the true frequency of the siren is $440$ Hz and $v$ the velocity of the ambulance is $60$ m.p.h. and $v_0$ is your, the observers, speed. 
+# In approaching you, the sound frequency appears to be up-shifted from $f_0$ to $\displaystyle f = f_0\left(\frac{v_s+v_0}{v_s-v} \right)$ where $v_s$ is the speed of sound in air, approximately $331\, \mathrm{m\,s^{-1}}$ or $740$ m.p.h., $f_0$ the true frequency of the siren is $440$ Hz and $v$ the velocity of the ambulance is $60$ m.p.h. and $v_0$ is your, the observers, speed. 
 # 
-# When the vehicle moves away from you the perceived frequency is lower as now  $\displaystyle f = f_0\left(\frac{s+v_0}{s+v} \right)$ ; notice the sign change.
+# When the vehicle moves away from you the perceived frequency is lower as now  $\displaystyle f = f_0\left(\frac{v_s+v_0}{v_s+v} \right)$ ; notice the sign change.
 # 
 # (a) Sketch how the sound _frequency_ perceived by a stationary observer positioned, as shown in the figure, would change as the vehicle passes.
 # 
@@ -74,14 +74,14 @@
 # Figure 7. In the figure the stationary vehicle produces sound wave-fronts that are equally spaced from one another in all directions if measured at equal time intervals. The moving vehicle causes the sound waves to appear to close up in the direction of travel, and to move apart in the opposite direction. If you are at the side of the road, the sound is that component of the forward motion in your direction. If you are in the vehicle, the pitch of the sound appears to be the same whether you are moving or stationary because the sound waves are always generated at the same frequency and because they are moving much faster than the vehicle.
 # ____
 # 
-# (b) Show that the perceived _frequency shift_ $(f - f_0)/f$ is proportional to $v$, the speed of the ambulance. Assume that your speed $v_0$ is small compared to the speed of sound.
+# (b) Show that the perceived _frequency shift_ $\Delta f=(f - f_0)/f$ is proportional to $v$, the speed of the ambulance. Assume that your speed $v_0$ is small compared to the speed of sound.
 # 
-# **Strategy:** (a) The frequency heard is higher than normal when the ambulance is approaching and coming directly towards us, but is at exactly frequency $f_0$ when it is right in front of us, and falls as it departs.  (b) If we were to assume that both $t_0$ and $t$ are small compared to $s$, the speed of sound in air, and simply ignore them, then $f = f_0$ and the frequency would not change. Experience tells us that the perceived frequency does change, so this assumption cannot be correct because it is too crude. Instead, rearrange the frequency equation into two parts, and ratio the speeds to produce terms such as $\displaystyle (1 - v/s)^{-1}$ and then expand into a series.
+# **Strategy:** (a) The frequency heard is higher than normal when the ambulance is approaching and coming directly towards us, but is at exactly frequency $f_0$ when it is right in front of us, and falls as it departs.  (b) If we were to assume that both $t_0$ and $t$ are small compared to $v_s$, the speed of sound in air, and simply ignore them, then $f = f_0$ and the frequency would not change. Experience tells us that the perceived frequency does change, so this assumption cannot be correct because it is too crude. Instead, rearrange the frequency equation into two parts, and ratio the speeds to produce terms such as $\displaystyle (1 - v/v_s)^{-1}$ and then expand into a series.
 
 # ### Q39 H atom Lyman-$\alpha$ line
 # (a) The relativistic red shift observed in the H atom Lyman-$\alpha$ line from a star in a distant galaxy is $\displaystyle \frac{\Delta \lambda}{\lambda}= \sqrt{\frac{1+v/c}{1-v/c}}-1$ where $c$ is the speed of light and $v$ the relative velocity of the star.
 # 
-# (b Show that for a small relative star velocity $\displaystyle \frac{\Delta \lambda}{\lambda}=\frac{v}{c}$.
+# (b) Show that for a small relative star velocity $\displaystyle \frac{\Delta \lambda}{\lambda}=\frac{v}{c}$.
 # 
 # (c) If the laboratory reference transition is $\Delta \lambda = 0.1$ nm wide, what is the smallest speed a star must be receding by to separate it from the reference line, assuming that a separation of $2\Delta \lambda$ is needed?
 # 
@@ -177,3 +177,9 @@
 # (b) Use a Taylor series to expand the molecular energy $U$ in terms of the electric field $E$ about the energy $U_0$ in a field, which is zero.
 # 
 # (c) If $\displaystyle \langle \mu_z \rangle = \mu_{z0} + \alpha E +  \beta E^2 /2 + \cdots$ where $\alpha$ is the polarizability and $\beta$ the hyper - polarizability, find expressions for $\alpha$ and $\beta$ as derivatives of the energy with field strength.
+
+# In[ ]:
+
+
+
+

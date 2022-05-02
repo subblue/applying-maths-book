@@ -198,7 +198,7 @@ vecs.evalf()  # eigenvectors as 4 columns
 # 
 # The mode frequency ratios are in rough agreement with the measured frequencies; the two highest frequencies are for the asymmetric stretches, $\omega_2$ and $\omega_3$, and are similar in value. The symmetric stretch is lower in frequency, but experimentally, not nearly as low as this calculation suggests.
 # 
-# The bending modes are calculated in a similar manner, with displacements perpendicular to the bonds. Only two of the displacements produce bends, which are and the frequencies are $\omega_5^2 = 1.098k_b$ and $\omega_6^2 = 1.083k_b$. If we assume a single bending force constant $k_b$, which is less than that for the stretch, these two modes should correspond to the $612$ and $619\;\mathrm{cm^{-1}}$ transitions but saying which is which with such a crude model of the potential energy, does not make sense at all. The bends are doubly degenerate because it does not matter for a bend in a linear molecule if it occurs in the plane of the drawing, as above, or at right angles to this.
+# The bending modes are calculated in a similar manner, with displacements perpendicular to the bonds. Only two of the displacements produce bends and their frequencies are $\omega_5^2 = 1.098k_b$ and $\omega_6^2 = 1.083k_b$. If we assume a single bending force constant $k_b$, which is less than that for the stretch, these two modes should correspond to the $612$ and $619\;\mathrm{cm^{-1}}$ transitions but saying which is which with such a crude model of the potential energy, does not make sense at all. The bends are doubly degenerate because it does not matter for a bend in a linear molecule if it occurs in the plane of the drawing, as above, or at right angles to this.
 # 
 # ![Drawing](matrices-fig98.png)
 # 

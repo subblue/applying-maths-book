@@ -16,7 +16,7 @@
 # 
 # ### 8.1 Reduction to simpler forms by change of variable and substitution
 # 
-# #### (i) Substitution
+# #### **(i) Substitution**
 # Sometimes a simple substitution can produce constant coefficients, but success in this depends very much on the exact form of the equation. The equation 
 # 
 # $$\displaystyle \cos(x)\frac{d^2y}{dx^2}+\sin(x)\frac{dy}{dx}+a\cos^3(x)y=0$$
@@ -29,7 +29,7 @@
 # 
 # $$\displaystyle (1-u^2)\frac{d^2y}{du^2}+ay=0$$
 # 
-# #### (ii)  Euler or Cauchy eqns.
+# #### **(ii)  Euler or Cauchy eqns.**
 # Equations of the particular type $\displaystyle x^3\frac{d^3y}{dx^3}+ax^2\frac{d^2y}{dx^2}+bx\frac{dy}{dx}+cy=f(x)$ 
 # 
 # where terms in $x$ have the same power as the differential are called Euler's or Cauchy's equation and can be simplified with the substitution $\displaystyle x = e^{-z}$. The derivative is $\displaystyle dz/dx = e^{−z}$ and if $D \equiv d/dz$ then
@@ -46,7 +46,7 @@
 # 
 # and used to simplify the differential equation. Note that the right-hand side has derivatives in $dy/dz$.
 # 
-# #### (iii) Using derivatives
+# #### **(iii) Using derivatives**
 # To solve the equation $\displaystyle x^2\frac{d^2y}{dx^2}+2x\frac{dy}{dx}-y=0$ 
 # 
 # first simplify this to $\displaystyle (D^2+D-1)y=0$ using the derivatives alone. The characteristic equation has roots $\displaystyle \frac{\sqrt{5}-1}{2},\;\frac{-\sqrt{5}-1}{2}$. However, the operator $D$ is a function of $z$ not of $x$, hence, the solution is a function of $z$, giving the solution
@@ -57,7 +57,7 @@
 # 
 # $$\displaystyle y=Ax^{\large{(-1+\sqrt(5))/2}}+Bx^{\large{(-1-\sqrt(5))/2}}$$
 # 
-# #### (iv) Special form
+# #### **(iv) Special form**
 # If the equation can be put into the form, $\displaystyle \frac{d^2y}{dx^2}+P(x)\frac{dy}{dx}+Q(x)y = 0 $ 
 # 
 # then it can be reduced by the transformation $y = uv$ where 
@@ -70,7 +70,7 @@
 # 
 # and the final solution is $y=uv$.
 # 
-# #### (v) Special form
+# #### **(v) Special form**
 # The equation $\displaystyle \frac{d^2 y}{dx^2}+x\frac{dy}{dx}+(x-1)y = 0$ 
 # 
 # can be solved with this method if $\displaystyle v=e^{-(1/2)\large{\int}xdx}= e^{-x^2/4}$
@@ -94,7 +94,7 @@
 # 
 # By taking derivatives of $y$ based on this expansion, the differential equation can be reconstructed in terms of the powers of $x$ and these constants. To find the constants, the powers of $x$ are collected together and the resulting group of constants solved assuming that each group of them is zero. What results is a recursion formula with which to calculate the constants and so the equation is solved without any formal integration. It is assumed that the solution can be found with this method, because this is 'usually' the case for problems in chemical physics. There is a simple way to check if a series solution is possible and if not, a related method due to Frobenius can be tried in these cases.
 # 
-# #### (i) Example. The basic series method 
+# #### **(i) The basic series method** 
 # The basic series method is illustrated with the equation 
 # 
 # $$\displaystyle  \frac{d^2y}{dx^2}+x\frac{dy}{dx}+y=0 $$
@@ -156,7 +156,7 @@
 # The two solutions are independent of one another, and the even powered series is the expansion of $\displaystyle e^{-x^2/2}$, while the odd series is not so easily identified. The coefficients are determined by the initial conditions and, if $y(0) = a_0$ and $dy/dx $= 0 at $x$ = 0, then the solution is $\displaystyle y = a_0e^{-x^2/2}$.
 # 
 # 
-# #### (ii) Example
+# #### **(ii) Example**
 # The equation is $\displaystyle \frac{d^2y}{dx^2}+(\alpha-\beta x^2)y=0$ and following the previous calculation, the recursion equation is
 # 
 # $$\displaystyle a_{n+2}=\frac{\beta a_{n-2}-\alpha a_n}{(n+1)(n+2)}$$
@@ -170,7 +170,7 @@
 # 
 # There are two series in the result; one with terms in $a_0$ and the other in $a_1$. These are independent solutions.
 # 
-# #### (iii)  The Hermite equation
+# #### **(iii) The Hermite equation**
 # The Hermite equation is important because it leads to the solution of the Schroedinger equation for the quantum mechanical harmonic oscillator. This is discussed at the end of this section but first a method of solution is determined. The equation has the form
 # 
 # $$\displaystyle \frac{d^2y}{dx^2}-2x\frac{dy}{dx}+2\gamma y=0  \tag{39}$$

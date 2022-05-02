@@ -16,9 +16,14 @@
 # 
 # Starting with arbitrarily polarized light, such as sunshine, which has its electric vector randomly changing and so takes up any angle, passing it through a polarizer produces linear polarized light. If this light is then passed through a wave-plate, depending on the type of wave-plate and the direction of its polarization axis either the linear polarization is rotated, or it becomes circularly polarized. In the most general case, elliptically polarized light results, again with the major axis is a direction determined by the wave-plate used. Some examples of this effect are given in Fig. 48.
 # 
-# ![Drawing](matrices-fig45.png) ![Drawing](matrices-fig46.png)
+# ![Drawing](matrices-fig45.png) 
+# 
+# Figure 45.Linear, vertically polarized light. Vertical polarized light has its electric field oscillating in the x - direction.
+# _______
+# 
+# ![Drawing](matrices-fig46.png)
 #  
-# Figure 45,left. Figure 46, right Left. Linear, vertically polarized light. Vertical polarized light has its electric field oscillating in the x - direction. Right. Polarization experiment; polarizer 1 and 2 are crossed and ideally, in the absence of any perturbation to the sample, caused by polarised laser light, do not transmit any light.
+# Figure 46. A polarization experiment; polarizer 1 and 2 are crossed and will not transmit any light. If the sample is perturbed, such by polarised laser light, it acts as a waveplate and some light is transmitted. 
 # __________
 # The fundamental nature of light can be considered to be one of the two circular polarized states, left and right. To allow analysis of any polarization states, two types of algebra have been developed; these are the Jones and Mueller matrices. We shall concentrate on the Jones matrices. Gerrard & Burch (1975) describe the Mueller matrices, which are more appropriate for partially polarized light. The state of the electric field is represented as a _Maxwell column_; equation 27 shows equivalent forms of this
 # 
@@ -26,6 +31,10 @@
 # 
 # where $\Delta$ is the phase difference between vertical and horizontal components, and $\psi$ is the angle of the electric vector of the light from the laboratory y-axis. $A_V$ is the amplitude of the vertical or y, component of the electric field and $A_H$ that of the horizontal component; note that intensity (J/cm$^2$) is amplitude squared and this is what is measured on a photodiode, a CCD detector, or your eye. This is most important; working with the _amplitude_ allows us to calculate correctly the effect of the phase. If we were to work only with the intensity then effects based on phase differences would not be correct.
 # 
+# ![Drawing](matrices-fig47.png)
+# 
+# Figure 47. Light composed of equal amounts of horizontal and vertically linearly polarized light is incident on a polarizer. The polarizer is set to pass the vertical component only; the horizontal component is reflected out of the beam. If a film of Polaroid aligned in the same manner was used, the horizontal component would be absorbed by the polarizer.
+# __________
 # Linear polarized light is a linear combination of two circular polarization states but with zero phase difference between them ($\Delta = 0$), consequently the orientation of its electric vector lies in one plane only and this may take any angle compared to the lab y-axis. The vectors representing linear polarization with unity amplitude in the vertical and horizontal directions respectively $\displaystyle V=\begin{bmatrix} 1\\0\end{bmatrix}, H=\begin{bmatrix} 0\\1\end{bmatrix}$ because $\psi=0$ and $\delta=0$.
 # 
 # Linearly polarized light can be formed at $\phi = 45^\text{o}$ to the vertical and is then described by the normalized vector $\displaystyle L_{45}=\begin{bmatrix} 1\\1 \end{bmatrix}$ which has equal components in the vertical and horizontal directions. Linearly polarized light at any angle $\psi$ has vertical and horizontal components of $\sin(\psi)$ and $\cos(\psi)$. The angle $\psi$ is sometimes called the _pass-plane_ or _vibration plane_ of the polarized radiation. Linearly polarized light at an angle $\psi$ to the vertical is shown below left in figure 49.
@@ -36,11 +45,10 @@
 # 
 # because $e^{i\pi/2} = i$. The amplitude of a unit-amplitude, circularly polarized wave along the z-axis is $A = \cos(z) + i \sin(z)$ which is also $e^{iz}$. Elliptically polarized light is the most general form with linear and circular polarization as its limits; it has all other possible ratios of amplitudes, angles $\psi$, and phase differences $\Delta$. In elliptically and circularly polarized light, the electric field spirals either clockwise or anticlockwise about the direction of travel.
 
-# ![Drawing](matrices-fig47.png)
+# ![Drawing](matrices-fig48.png)
 # 
-# Figure 47. Light composed of equal amounts of horizontal and vertically linearly polarized light is incident on a polarizer. The polarizer is set to pass the vertical component only; the horizontal component is reflected out of the beam. If a film of Polaroid aligned in the same manner was used, the horizontal component would be absorbed by the polarizer.
-# __________
-# 
+# Figure 48. Linearly polarized light, the phase between the x and y components is zero. This polarization can be at any angle. Middle: Left and right circular polarized light has equal components of x and y polarizations but $90^\text{o}$ out of phase. Right: Elliptically polarized light can be left or right polarized but with different amounts of x and y components and some arbitrary phase between them.
+# _______
 # The intensity of the light after passing through an optical polarizing element, a polarizer, or wave-plate is the dot product of the Jones matrices, because crudely speaking intensity is amplitude squared. The Hermitian transpose must be used to form the row from the column, which means taking the complex conjugate as well as transposing. Thus, for unit amplitude linear V-polarized light the intensity is
 # 
 # $$\displaystyle V^T\cdot V=\begin{bmatrix} 1 & 0\end{bmatrix}\begin{bmatrix} 1 \\ 0\end{bmatrix}=1$$
@@ -63,9 +71,9 @@
 # 
 # The angle $\theta$ rotated is calculated from the column output vector as $\displaystyle \tan(\theta) =\frac{H_{out}}{V_{out}}$. 
 # 
-# ![Drawing](matrices-fig48.png) ![Drawing](matrices-fig49.png)
+# ![Drawing](matrices-fig49.png)
 # 
-# Figure 48, left. Figure 49,right Left: Linearly polarized light, the phase between the x and y components is zero. This polarization can be at any angle. Middle: Left and right circular polarized light has equal components of x and y polarizations but $90^\text{o}$ out of phase. Right: Elliptically polarized light can be left or right polarized but with different amounts of x and y components and some arbitrary phase between them. Right. Linearly polarized light, the linear components are at $90^\text{o}$ to one another but rotated to give a linearly polarized beam at $\psi$ to the vertical. Right: circular polarized light with equal components but $90^\text{o}$ out of phase with one another, the axis of the circle is shown dotted and is at $\psi$ to the vertical as in the left figure.
+# Figure 49. Linearly polarized light, the linear components are at $90^\text{o}$ to one another but rotated to give a linearly polarized beam at $\psi$ to the vertical. Right: circular polarized light with equal components but $90^\text{o}$ out of phase with one another, the axis of the circle is shown dotted and is at $\psi$ to the vertical as in the left figure.
 # _________
 # 
 # Now  we are in business to do almost any real calculation when we know the form of the $2 \times 2$ matrices! These have been worked out and are:
@@ -98,9 +106,9 @@
 # 
 # As an example, the effect of a wave-plate is examined. Vertically polarized light of amplitude $V$ is passed through a half-wave plate with its fast axis at $\theta = 0^\text{o}$, and in a separate experiment at $\theta = 45^\text{o}$ and the nature of the resultant beam examined. The arrangement is sketched in Fig. 51. Because the wave-plate only rotates the polarization and does not absorb or reflect, the beam's intensity should be unchanged. This should be checked to see that it is true.
 # 
-# ![Drawing](matrices-fig50.png) ![Drawing](matrices-fig51.png)
+# ![Drawing](matrices-fig50-51.png)
 # 
-# Figure 50. Left. In the general case, a wave-plate converts linearly polarized light into elliptically polarized light with axis depending on the angle $\theta$, the wave-plate and principal axis make to the polarization, and on the crystal thickness, which determines the phase delay $\Delta$. Right. Vertically polarized light passing through a half-wave-plate. At $45^\text{o}$ the output is horizontal.
+# Figure 50. Left and 51 right. Left. In the general case, a wave-plate converts linearly polarized light into elliptically polarized light with axis depending on the angle $\theta$, the wave-plate and principal axis make to the polarization, and on the crystal thickness, which determines the phase delay $\Delta$. Right. Vertically polarized light passing through a half-wave-plate. Oriented at $45^\text{o}$ the output from the waveplate is horizontal.
 # _________
 # Using the matrices in the table, the matrix equation for the wave-plate with its fast axis at $0^\text{o}$ is
 # 
@@ -111,3 +119,9 @@
 # $$\displaystyle \begin{bmatrix} 2\cos^2(\pi/4)-1 & 2\sin(\pi/4)\cos(\pi/4)\\ 2\sin(\pi/4)\cos(\pi/4) & 1-2\cos^2(\pi/4) \end{bmatrix}=\begin{bmatrix} 0 & 1\\ 1 & 0 \end{bmatrix}$$
 # 
 # and the matrix equation $\displaystyle \begin{bmatrix} 0 & 1\\ 1 & 0 \end{bmatrix}\begin{bmatrix} V\\ 0 \end{bmatrix}=V\begin{bmatrix} 0 \\ 1  \end{bmatrix}$, which shows that the half wave plate at $45^\text{o}$ rotates the vertical polarization to horizontal. This is extremely useful in practice to manipulate laser beams to the correct polarization for lots of different types of experiments. The rotation angle is always twice the wave-plate angle. The output intensity is unchanged at $V^2$.
+
+# In[ ]:
+
+
+
+

@@ -249,7 +249,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # ![Drawing](diffeqn-fig39.png)
 # 
-# Fig. 10.39 Populations of excited $M^*$ (blue) and excimer $E^*$ on a log scale vs. time in ns. The non-single exponential decay is obvious.
+# Fig. 39. Populations of excited $M^*$ (blue) and excimer $E^*$ on a log scale vs. time in ns. The non-single exponential decay is obvious.
 # _____
 # 
 # ### Q31 answer
@@ -464,7 +464,7 @@ ans5
 # In[7]:
 
 
-x,L = symbols('x, L')
+x, L = symbols('x, L')
 n   = symbols('n', integer=True)
 ans = integrate(x**2*sin(n*pi*x/L),(x,0,L),conds='none')
 simplify(ans)
@@ -482,7 +482,7 @@ simplify(ans)
 # In[8]:
 
 
-x,a,t,c = symbols('x, a, t, c')
+x, a, t, c = symbols('x, a, t, c')
 #f00 = -c/2*sech(sqrt(c)/2*(x-c*t))**2  # solution to test 
 f00 = 3*c*sech(sqrt(c)/2*(x-c*t))**2
 #f01 = f00.rewrite(exp)

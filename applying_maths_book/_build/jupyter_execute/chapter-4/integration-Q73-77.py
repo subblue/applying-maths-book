@@ -43,7 +43,7 @@
 # 
 # $$\displaystyle V = 1 - e^{-\beta x^2}$$
 # 
-# As the lowest level is required expand the potential. Use the Schroedinger equation in atomic units is 
+# As the lowest level is required expand the potential. The Schroedinger equation in atomic units is 
 # 
 # $$\displaystyle \left( -\frac{1}{2}\frac{d^2}{dx^2}+V_x \right)\psi_x=E\psi_x$$
 # 
@@ -51,7 +51,7 @@
 # 
 # Comment of the results obtained.
 # 
-# **Strategy:** The potential is anharmonic with a value of 1 at large values of $\pm x$ and zero at the origin. The expansion of the potential at small $x$ is $1-e^{-\beta x^2}\approx \beta x^2-\beta^2x^4/2\cdots$, and therefore the Gaussian wavefunction suggested as a trial wavefunction should be a good approximation as this is the form of the lowest wavefunction for a harmonic potential. 
+# **Strategy:** The potential is anharmonic with a value of $1$ at large values of $\pm x$ and zero at the origin. The expansion of the potential at small $x$ is $1-e^{-\beta x^2}\approx \beta x^2-\beta^2x^4/2\cdots$, and therefore the Gaussian wavefunction suggested as a trial wavefunction should be a good approximation as this is the form of the lowest wavefunction for a harmonic potential. 
 # 
 # 
 # ### Q77 H atom energy with trial wavefunction

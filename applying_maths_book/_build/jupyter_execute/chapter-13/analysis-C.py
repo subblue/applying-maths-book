@@ -336,7 +336,7 @@ for i in range(m):
 # Figure 13 The Poisson distribution for different integer $k$ values and various means values $\mu$. Although $k$ is an integer, the lines are drawn as if it were continuous. The standard deviation $\sigma = \sqrt{\mu}$, is shown for $\mu = 2$ and $12$. The distribution becomes more Normal as $\mu$ increases.
 # _________
 
-# #### Example (i) Counting photons
+# #### **(i) Counting photons**
 # 
 # A photomultiplier records photons at a constant rate of $\lambda =0.4$ events per $100$ nanoseconds.
 # 
@@ -346,7 +346,7 @@ for i in range(m):
 # 
 # **Solution**. The parameter $\mu =\lambda t =0.4\cdot 2$ taking the time unit as $100$ ns and $k=0$ for no event so $ p(k,\mu) = e^{-0.8} = 0.45 $. In (b) because the events are independent so probability of an event between time slot $2\to 3$ is the same as that of $0\to 1$, thus $p(k,\mu)= e^{-0.4}=0.67$.
 # 
-# #### Example (ii) Still counting photons 
+# #### **(ii) Still counting photons** 
 # Counting photons with a more fluorescent sample photons are recorded at a rate of $4$ per $100$ ns. What is the chance that 
 # 
 # $\quad$ (a) one has been detected in $50$ ns and 
@@ -355,26 +355,26 @@ for i in range(m):
 # 
 # **Solution**. Again taking the time unit as $100$ ns $\mu=4\cdot 0.5$ for the first photon ($k=1$) giving $p(k,\mu)=\mu e^{-\mu} = 2e^{-2} = 0.27$. (b) The probability of the total event is the product of the two, where each event is independent, there is one photon in the first period and $4$ more in the extra period. For the extra period, $\mu=4\cdot 2$ and the probability with $k=4$ is $p(k,\mu)=8^4e^{-8}/4!=0.057$ and combined is $0.0155$.
 # 
-# #### Example (iii) CCD detecting photons
+# #### **(iii) CCD detecting photons**
 # There is a $2$% chance of a CCD detecting a photon / angstrom in the range 3500 to 3600 angstrom. 
 # 
 # $\quad$ What is the chance that at least two photons will be detected? 
 # 
 # **Solution**. As two or more are detected we find the chance of not detecting zero or one photons, which is $1-p(0,\mu)-p(1,\mu)$ and as $\mu= 0.02\cdot 100 = 2 $ the chance is $1- 2^0e^{-2}/0!-2^1e^{-2}/1= 0.59$. As no time period is specified this period could take any value without changing the answer excepting that the probability would then be $0.59$/time period. 
 # 
-# #### Example (iv) DNA cleavage
+# #### **(iv) DNA cleavage**
 # Poisson distributions arise in surprising situations. DNA can be cleaved in various ways, for example by special enzymes or in a simpler way with a dye intercalated between base pairs or simply ultra-violet light. 
 # 
 # $\quad$ If a piece of DNA containing $n = 12000$ base pairs and with $50$% Guanine content is to be cleaved by a reagent that recognises the sequence GGCGCC, we would like to know what is the chance that there is failure to cleave. 
 # 
 # **Solution**. As there are six bases to be recognised but only four types of bases in DNA (G,C,A,T) the chance of matching the sequence is $p=1/4^6=1/4096$ with average of $\mu = np =12000/4096=2.93$. Using the Poisson distribution the chance of no cleavage ($k=0$) is $P(0,\mu)=\mu^0e^\mu/0!= 0.053$ or $5.3$% which means that $\approx 95$% are cleaved. In this calculation it is implicitly assumed that all small groups of sequences are equally likely, which is probably not an unreasonable assumption in a long piece of DNA.
 # 
-# #### Example (v) Chance of winning lottery
+# #### **(v) Chance of winning lottery**
 # In a lottery every player has to guess a sequence of $6$ digits from $0\to 9$. If a million people play, what is the probability that there are two winners?
 # 
 # **Solution**. Each player has a one in a million chance of guessing the right number and each player guesses independently. The number of winners is then a Poisson random variable with $\mu=10^6\cdot 10^{-6}=1$. The chance is $p(2,1)= 1^2e^{-1}/2!\approx 0.18$.
 # 
-# #### Cumulative distribution
+# #### **Cumulative distribution**
 # 
 # The cumulative distribution is found by summing to a given $k$ value
 # 
@@ -382,7 +382,7 @@ for i in range(m):
 # 
 # The cumulative distribution is used to estimate the chance of having a value larger than say the 95% probability. 
 # 
-# #### Weighting the Poisson data
+# #### **Weighting the Poisson data**
 # 
 # Photon and particle counting experiments normally follow a Poisson distribution. The weighting to use is $w_i = 1/c_i$ where $c_i$ is the mean number of counts at the $i^{th}$ data point in the data, thus, the weighting is always known. This does lead to a specific problem, viz., what happens when no counts are recorded in a particular channel, $c_i = 0$? This is quite possible at low light levels as occurs in single photon counting fluorescence decay experiments, or, when measuring fluorescence from single molecules through a confocal microscope. The advice to deal with this is to manipulate the data either by ignoring values below $10$ counts, or to add 1 to every data point or to make each zero into 1 and leave all the rest alone. None of this is satisfactory because it will cause incorrect parameters to be produced to the fitted data, and must be avoided. By making these changes, both the data and residuals are changed similarly so the effect can be disguised. The solution (Turton et al. Anal. Chem. 2003) is to fit the data with a weighting of 1 and then the use values from the fitted curve as the weighting and refit the data. This has been shown to produce unbiased fits down to a very few counts in the total signal and contradicts the widespread assumption that least squares fitting of Poisson distributed data is invalid. One further point worth making is that when conducting counting experiments, it is not the maximum number of counts in any one channel that is important for data fitting but the total number of counts in the whole signal.
 

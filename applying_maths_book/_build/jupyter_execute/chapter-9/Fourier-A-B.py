@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Fourier series, Gibbs phenomenon, generalised series.
+# ## Fourier series, Gibbs phenomenon, generalised series.
 
 # In[1]:
 
@@ -16,7 +16,7 @@ init_printing()                         # allows printing of SymPy results in ty
 plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 
-# ## Motivation and concept
+# ### Motivation and concept
 # 
 # The Taylor and Maclaurin series reconstruct functions as an infinite series in the powers $x^n$, and the coefficients needed to do this are the derivatives of the function. These series have rather tight restrictions placed upon them; the function must be differentiable $n$ times over and the remainder must approach zero. These are described in Chapter 5. In a Fourier series, the expansion is performed instead, as trigonometric series in sines and cosines, with two sets of coefficients, $a_n$ and $b_n$, to describe the $n^\text{th}$ term, and which are evaluated by integration. The series formally extends to infinity, but in practice, at most only a few tens of terms are needed to replicate most functions to an acceptable level of approximation. The advantage of using a Fourier rather than a Taylor/Maclaurin series is that a wide class of functions can be described by the series, including discontinuous ones. However, by their very nature, Fourier series can only represent _periodic functions_, and this must not be forgotten. Periodic means that the function repeats itself; the repeat interval is normally taken to be $-\pi$ to $+\pi$ but can be extended to the range $-L$ to $L$ and $L$ can even be made infinite.
 # 
@@ -27,7 +27,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # Figure 1. A complex and _periodic_ waveform or function is constructed out of the sum of sine and/or cosine waves. The complicated waveform, repeats itself with a period of 2$\pi$. In the Fourier series, the reconstruction of this waveform will require many more sine and cosine terms to reconstruct its form than are used to generate it, because the Fourier series only represents a function _exactly_ when an infinite number of terms are included in the summation. The phase and period shown with arrows relate only to the cosine (red waveform) with a period of $2\pi$. The phase is the distance the peak of the waveform is when measured from zero, and the amplitude the size of the wave at its maximum, measured from zero displacement which is the thin horizontal line.
 # _____
 
-# ## 1 The Fourier Series.
+# ### 1 The Fourier Series.
 # 
 # A Fourier series aims to reconstruct a function, such as a waveform, using the weighted sums of sine and cosine functions or their exponential representations. The great importance and usefulness of the Fourier series is that they represents the best fit, in a least-squares way, to a function $f(x)$ because 
 # 
@@ -52,7 +52,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # When the number of terms in the series is large, then $g(x) \rightarrow f (x)$, and when infinite, $g(x) = f (x)$. At each value of $x$, the Fourier series consists of a constant term, $a_0$/2 plus the sum of an infinite number of oscillating terms in integer multiples of $x$. Notice, that the target function $f(x)$ appears as part of the expansion coefficients only, and must, therefore, be capable of being integrated. The target function $f(x)$ determines the weighting to be placed on each term in the expansion, and this is how information about the shape of $f(x)$ is included in the expansion.
 # 
-# If $f(x)$ is periodic in time, then the variable $x$ would normally be changed to $\omega t$ where $\omega = 2\pi\nu$ is the angular frequency in units of radian s$^{-1}$, and $\nu$ is the frequency in s$^{-1}$. If the dimension is spatial, then $x$ is often replaced with $2\pi x/L$ of which $2\pi/L$ can be interpreted as a spatial frequency, with units of radians m${-1}$ by analogy with 'normal' frequencies. Often this spatial frequency is called the wavevector and given the symbol $k$.
+# If $f(x)$ is periodic in time, then the variable $x$ would normally be changed to $\omega t$ where $\omega = 2\pi\nu$ is the angular frequency in units of radian s$^{-1}$, and $\nu$ is the frequency in s$^{-1}$. If the dimension is spatial, then $x$ is often replaced with $2\pi x/L$ of which $2\pi/L$ can be interpreted as a spatial frequency, with units of radians m${-1}$ by analogy with 'normal' frequencies. Often this spatial frequency is called the _wavevector_ and given the symbol $k$.
 # 
 # Before a worked example, it is worthwhile examining limits other than $\pm\pi$, describe the exponential form of the series and also simplifying some series using symmetry. The $a_n$ and $b_n$ constants are also derived.
 # 
@@ -160,7 +160,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 
 #using SymPy to do the indefinite integration
-x ,n = symbols('x n', positive = True)
+x, n = symbols('x, n', positive = True)
 func = x**2*cos(n*x)/pi
 a_n = integrate(func,x, conds='none')      # coefficients a_n
 a_n
@@ -182,13 +182,14 @@ ax0 = fig1.add_subplot(1,3,1)
 ax1 = fig1.add_subplot(1,3,2)
 ax2 = fig1.add_subplot(1,3,3)
 
-gx = lambda x, k : (np.pi**2)/3.0 + 4.0*sum( (-1)**n *np.cos(n*x)/n**2 for n in range(1,k)) # series summation
+gx = lambda x, k : (np.pi**2)/3.0 + 4.0*sum( (-1)**n *np.cos(n*x)/n**2 for n in range(1,k)) # g series summation
 
 x = np.linspace(-2*np.pi,2*np.pi,200)   # define x values, -pi to pi with 200 data points
 
-for i,ax in enumerate([ax0,ax1]):
+for i, ax in enumerate([ax0, ax1]):
     j = 20
-    if i == 0 : j = 3      # number of terms in summation
+    if i == 0 : 
+        j = 3                           # number of terms in summation
     ax.plot(x/np.pi, gx(x,j),linestyle='dashed',color='black',label='max n = '+str(j)) # plot as x/pi , 4 terms
     ax.plot(x/np.pi,x**2,color='red')
     ax.set_xlabel(r'$x/\pi$')
@@ -197,9 +198,10 @@ for i,ax in enumerate([ax0,ax1]):
     ax.legend()
 
 kk = 10
-nvals = [i for i in range(kk)]   # make list of values 0, 1, 2,...
-fn = lambda  n : (np.pi**2)/3.0 if n ==0 else  (-1)**n/n**2 if n >0 else 0
-an = [fn(i) for i in range(kk)]
+nvals = [i for i in range(kk) ]                                       # make list of values 0, 1, 2,...
+fn = lambda  n : (np.pi**2)/3.0 if n ==0 else  (-1)**n/n**2 if n > 0 else 0
+an = [ fn(i) for i in range(kk) ]                                     # make list of fn(0), fn(1) etc
+
 ax2.axhline(0,linewidth=1, color='grey')
 ax2.bar(nvals,an,label=r'$a_n$ coefficients') 
 ax2.set_ylim([-2,4])
@@ -257,8 +259,8 @@ plt.show()
 # Figure 5. The Gibbs phenomenon where the over- and undershoot remain at the same size as more and more terms are added to the Fourier series.
 # 
 # _______
-
-# ## 2 Integrating, differentiating and summing series
+# 
+# ### 2 Integrating, differentiating and summing series
 # 
 # If the series for a function $f(x)$ has been calculated then that for $\int f(x)dx$ can be easily calculated, providing that the integration can be performed. Similarly if $df(x)/dx$ is available the series for this can also be obtained. As an example, the series for $x^4$ can be obtained from the Fourier series for $x^3$ by integrating term by term; in addition, integration can lead to a better representation of a function with the same number of terms in the summation. The algebraic result will be different from that of a direct series for $x^4$, but should be just as good a representation. 
 # 
@@ -295,7 +297,7 @@ simplify(bn)
 # Figure 6. The functions $x^3$ and $x^4$ are shown as dashed lines. The wiggly solid curve shows the result of having only 20 terms in the $x^3$ summation. The underlying oscillation of the trigonometric terms is obvious, even though the series clearly approximates $x^3$. The $g(x^4)$ series, after integrating the $x^3$ Fourier series, is a considerably better fit than is  the fit to $x^3$.
 # 
 # ______
-
+# 
 # ### 2.1 Summations 
 # 
 # The Fourier series can also be used to evaluate summations; for example the expansion of $x^2$ in the range $\pm \pi$, equation (15), gives
@@ -313,7 +315,7 @@ simplify(bn)
 # 
 # which converges more rapidly as all the terms have the same sign. Many other unusual summations can be achieved using different Fourier series; however, for us they are only curiosities.
 
-# ## 3 Some formal points about the Fourier series
+# ### 3 Some formal points about the Fourier series
 # 
 # The sine and cosines making up the Fourier series have two important properties: orthogonality and  completeness.
 # 
@@ -333,7 +335,7 @@ simplify(bn)
 # $q_n$ being constants that are related to the target function $f(x)$. If the $S$ functions are orthonormal, then, when $n$ and $m$ are integers, $\displaystyle \int S_n^*(x)S_m(x) dx= \delta_{m,n}$.
 # 
 # In modern mathematics, the term 'Fourier series' does not refer just to the original sine and cosine series, or their complex exponential representation, but to a series formed by other functions that form a complete orthogonal basis set. Often the term generalized Fourier series is used to describe these, but this is not universal. The sine or cosine functions are not unique in forming series and many other functions could be used provided that they can form an orthogonal set. Other such functions include the Hermite polynomials, used to describe the harmonic oscillator wavefunctions, and the Legendre and Chebychev polynomials. In Section 4 it is shown how these can also be used to form series that describe arbitrary target functions $f(x)$.
-
+# 
 # ### 3.1 A general method for numerically calculating a Fourier series
 # 
 # An algorithm is given below with which to calculate the Fourier series of a function and is fairly straightforward if equations (5) and (6) are used and care taken over the integration limits. The function is placed in the first line as and the range is from $\pm 7$, in this example. The target function is $\displaystyle f(x)= e^{-x/2}\sin^2(x)$. The equations (4 to 6) in section 1.2 are used. The series is calculated numerically.
@@ -348,8 +350,8 @@ simplify(bn)
 f = lambda x: np.exp(-x/2.0)*np.sin(x)**2           # target function 
 L = 7.0                                             # limits +- L
 m = 50                                              # number of terms in series 
-a0= quad(f,-L,L )[0]/L                              # integrate; the [0] returns just the result and not error as well 
-
+val, err = quad(f,-L,L )                            # result and error as well 
+a0 = val/L
 fa = lambda x, n : f(x)*np.cos( n*np.pi*x/L )/L     #  function to give a_n after integration
 fb = lambda x, n : f(x)*np.sin( n*np.pi*x/L )/L     #  function to give b_n after integration
 
@@ -357,7 +359,7 @@ numx = 1000                                         # number of data points to p
 x = np.linspace(-L,L,numx)
 
 FS = lambda x: a0/2.0   + sum( quad(fa,-L,L,args=n)[0]*np.cos(n*np.pi*x/L) for n in range(1,m))                         + sum( quad(fb,-L,L,args=n)[0]*np.sin(n*np.pi*x/L) for n in range(1,m))
-
+                                                     # quad(...)[0] returns only the integral
 plt.plot(x,f(x), color ='gold',linestyle='solid',linewidth=10)
 plt.plot(x,FS(x),color ='blue',linewidth=1)
 plt.axhline(0,   color ='grey',linestyle='dashed')
@@ -370,7 +372,7 @@ plt.show()
 # 
 # ______
 
-# ## 4 Generalized Fourier series with orthogonal polynomials
+# ### 4 Generalized Fourier series with orthogonal polynomials
 # 
 # The Fourier series expands a function in sine and cosines. In the language of vectors and matrices, the sine and cosines form a basis set in which the function f is expanded. The essential property that any basis set of functions must have is orthogonality. If $\varphi$ is such a function, then the basis set is the functions $\varphi_1, \varphi_2, \cdots$  and the condition for orthogonality is
 # 
@@ -435,7 +437,8 @@ x = np.linspace(-1,1,numx)
 
 func  = lambda x,n: f(x)*P(x,n)*w(x) 
 
-LegFS = lambda x,m: sum( quad(func,-1,1,args=(n))[0]*P(x,n)/c(n) for n in range(0,m))    # Legendre Fourier
+LegFS = lambda x,m: sum( quad(func,-1,1,args=(n))[0]*P(x,n)/c(n) for n in range(0,m))    
+                                           # Legendre Fourier, quad(...)[0] returns just integral
 
 plt.axhline(0,linestyle='dashed',color='grey',linewidth=1)
 plt.axvline(0,linestyle='dashed',color='grey',linewidth=1)
@@ -447,7 +450,8 @@ plt.legend()
 plt.show()
 
 
-# The range of some functions, orthogonal polynomials and weighting factors.
+# Figure 9. The range of some functions, orthogonal polynomials and weighting factors.
+# __________
 # 
 # $$\displaystyle \begin{array}{lcc}
 # \text{}\\
@@ -467,7 +471,7 @@ plt.show()
 # 
 # ### 4.1 Generating Functions for orthogonal polynomials
 # 
-# The named orthogonal polynomials are the solutions of specific differential equations. They occur widely in physics and chemistry; the Hermite polynomials describe the harmonic oscillator wavefunctions; the Legendre electric charge distributions; and the associated Laguerre the electron distribution in the H atom. The spherical harmonic polynomials are based on the Legendre polynomials, with $x = \cos(\theta)$, and are used to describe the angular momentum in atoms and molecules; they define the shapes of atomic orbitals, the rotational motion of molecules, and the heat flow around spheres.
+# The named orthogonal polynomials are the solutions of specific differential equations. They occur widely in Physics and Chemistry; the Hermite polynomials describe the harmonic oscillator wavefunctions; the Legendre electric charge distributions; and the associated Laguerre the electron distribution in the H atom. The spherical harmonic polynomials are based on the Legendre polynomials, with $x = \cos(\theta)$, and are used to describe the angular momentum in atoms and molecules; they define the shapes of atomic orbitals, the rotational motion of molecules, and the heat flow around spheres.
 # 
 # The orthogonal polynomials, such as the Legendre polynomial used in the previous section, can be produced from a series expansion of a generating function. These functions have two variables $x$ and $u$; expansion is made in the powers of $u$ and the polynomials are the factors belonging to the terms in $u^n$ or $u^n/n!$. A typical series expansion producing polynomial $p_n(x)$ is
 # 
@@ -484,14 +488,29 @@ plt.show()
 # In[7]:
 
 
-x,u = symbols('x u')
+x, u = symbols('x, u')
 f01 = exp(-u**2 + 2*x*u)          # expand terms to get series to u^10
-s = series(f01,u,n = 15)
+s = series(f01,u,n = 10)
 print('Hermite Polynomials H(n,x) from n =1 to 9')
 for n in range(1,10):
     print('H(',n,',x) ', s.coeff(u**n)*factorial(n))  # extract coefficients. factorial is inbuilt in SymPy
+# now plot data 
+
+xx  = np.linspace(-2,2,100)
+cols=['red','blue','green']
+for i,k in enumerate( [5,6,7] ):
+    f01 = lambdify(x, s.coeff(u**k)*factorial(k) )     # make algeraic answer into function 
+    plt.plot(xx, f01(xx),color=cols[i],label='H('+str(k)+',x)')
+
+plt.axhline(0,color='grey', linewidth=1)
+plt.ylim([-1.1e3,1.1e3])
+plt.legend(fontsize=10)
+plt.show()
 
 
+# Figure 10. Some of the Hermite polynomials calculated using a generating function. The series produced is exact.
+# _______
+# 
 # Other polynomials that are frequently met are the Legendre, associated Legendre, Laguerre, associated Laguerre, and Chebychev. The associated Legendre and associated Laguerre polynomials are obtained by differentiating their respective polynomials by $x$, $n$ times, but in these cases, and perhaps in others also, it is easier to use Rodrigues's derivative formula or one of the recursion equations to generate the polynomials. See Margenau & Murphy (1943) and Arkfen (1970) for a full discussion of these polynomials and generating functions.
 # 
 # The generating function definitions, and a derivative formula for integral $n$ and $k$, are shown in the next table. The associated Legendre generating function is omitted because of its complexity.
@@ -502,7 +521,7 @@ for n in range(1,10):
 
 
 x = symbols('x')
-f01 = x/(1-x-x**2)                    # expand terms to get series to u^10
+f01 = x/(1 - x - x**2)                    # expand terms to get series to u^10
 s = series(f01,x,n = 30)
 print('Fibonacci from n = 1 to 20')
 for n in range(1,21):

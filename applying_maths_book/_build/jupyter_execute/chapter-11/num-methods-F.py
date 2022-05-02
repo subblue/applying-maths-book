@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Boundary value problems: Shooting method
+# ## Boundary value problems.
 
 # In[1]:
 
@@ -17,6 +17,8 @@ init_printing()                      # allows printing of SymPy results in types
 plt.rcParams.update({'font.size': 16})  # set font size for plots
 
 
+# ### Shooting method
+# 
 # The previous examples have been treated as initial value problems, but, in many cases, the equation being examined requires that the solution has predetermined value at two places, and a number of engineering and quantum mechanical problems have this restriction. Figure 25 illustrates, in a schematic way, the difference in the initial value and boundary conditions for a second-order equation; $d^2y/dx^2 = f (x,y)$. The top sketch shows the two initial conditions chosen at $x = 0$ to be $y = 1$ and $dy/dx|_0 = 2$; the gradient is shown as an arrow. The lower figure illustrates the situation if the boundary condition on $y$ is one when $x = 0$, and zero when $x = 2$, which is the limit of the calculation; $x$ can only range from $0 \to 2$.
 # 
 # The only way to solve differential equations is to know what the initial conditions are. In the boundary value problem, the true initial gradient $dy/dx|0 = \alpha$ and $\alpha$ is unknown, but whose value will produce the required result that at $x = 2,\; y = 0$. Initially $\alpha$ has to be guessed, the calculation performed and then repeated with new guesses until the boundary condition is satisfied. Fortunately, this guessing can be made into an iterative process gradually homing in on the true value.
@@ -73,7 +75,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 
 # Algorithm 17:  modified Euler procedure for coupled equations
 #----------------------------
-def mod_euler(dydx,dzdx,xvals, x0,y0,z0,xn,n):  # Modified Euler or RK2 method
+def mod_euler(dydx, dzdx, xvals, x0, y0, z0, xn, n):  # Modified Euler or RK2 method
     
     Eulery = np.zeros(n,dtype=float)   # define arrays for results
     Eulerz = np.zeros(n,dtype=float)
@@ -88,7 +90,7 @@ def mod_euler(dydx,dzdx,xvals, x0,y0,z0,xn,n):  # Modified Euler or RK2 method
     for i in range(1,n):      # modified Euler 
         k1 = dydx(y,z)
         L1 = dzdx(y,z)
-        k2 = dydx(y,z + L1*h)
+        k2 = dydx(y,       z + L1*h)
         L2 = dzdx(y + k1*h,z + L1*h)
         y  = y + h*(k1 + k2)/2
         z  = z + h*(L1 + L2)/2
@@ -109,13 +111,13 @@ def mod_euler(dydx,dzdx,xvals, x0,y0,z0,xn,n):  # Modified Euler or RK2 method
 # Algorithm 18:  Basic Shooting method 
 
 dydx = lambda y, z : z             # define differential equations as functions 
-dzdx = lambda y, z : -3*z-5*y
+dzdx = lambda y, z : -3*z - 5*y
 
 n  = 200                           # number of points
 x0 = 0.0                           # left hand boundary
 xn = 2.0                           # calculate to this boundary
 y0 = 1.0                           # left hand boundary, point a
-yxn = 0.0                          # boundary at xn
+yxn= 0.0                           # boundary at xn
 
 alpha0 = 0.0                       # initial alpha guess dy/dx=alpha
 alpha1 = 1.0 + alpha0              # guess initial value
@@ -123,17 +125,17 @@ Q = 1e-7                           # choose limit on accuracy of bisection
 
 xvals = np.zeros(n,dtype=float)    # define array to hold x values
 
-yvals,zvals = mod_euler( dydx,dzdx, xvals, x0,y0,alpha0,xn,n)   # solve with initial alpha
+yvals,zvals = mod_euler( dydx, dzdx, xvals, x0, y0, alpha0, xn, n)   # solve with initial alpha
 yn0 = yvals[n-1]                   # initial value at right hand boundary xn
 
 k = 0
 while k < 5 and np.abs(yn0 - yxn) > Q:                        # start iterative loop to find solution
-    yvals,zvals = mod_euler( dydx,dzdx,xvals, x0,y0,alpha1,xn,n)  # do integration here
+    yvals,zvals = mod_euler( dydx, dzdx, xvals, x0, y0, alpha1, xn, n)  # do integration here
     yn1   = yvals[n-1]
-    alpha1= alpha1 -(yn1-yxn)*(alpha1-alpha0)/(yn1-yn0)     # secant method 
+    alpha1= alpha1 -(yn1 - yxn)*(alpha1 - alpha0)/(yn1 - yn0)     # secant method 
     alpha0= alpha1
-    yn0   = yn1                                             # end secant
-    k = k + 1                                               # loop counter
+    yn0   = yn1                                                   # end secant
+    k = k + 1                                                     # loop counter
     print('{:s} {:d} {:s} {:g}'.format('index = ', k,' error =',yn0 - yxn) )
     pass
 print('{:s} {:f}'.format('alpha_0',alpha0) )
@@ -148,7 +150,7 @@ print('{:s} {:f}'.format('alpha_0',alpha0) )
 # Figure 26. Solution to boundary problem equation 51. The initial values $y_0 = 1$ and $dy/dx|0 = -11.9$ were calculated and are consistent with boundary values $y_0 = 1$ and $y_2 = 0$.
 # ____
 # 
-# ## 10 Numerical integration of the Schroedinger equation
+# ### 10 Numerical integration of the Schroedinger equation
 # 
 # In one dimension, the Schroedinger equation for a particle of mass $m$ with an energy $E$ in a potential $V(x)$ is
 # 
@@ -177,7 +179,7 @@ print('{:s} {:f}'.format('alpha_0',alpha0) )
 # 
 # ### 10.1 The shooting method with a quadratic potential
 # 
-# #### Calculating eigenvalues and wavefunctions
+# #### **Eigenvalues and wavefunctions**
 # 
 # In solving the Schroedinger equation is is necessary to re-write it into a more convenient form and also split it into to equations as done with previous examples of second order equations. Rearranging produces
 # 
@@ -191,7 +193,7 @@ print('{:s} {:f}'.format('alpha_0',alpha0) )
 # 
 # The calculation starts by solving the Schroedinger equation for $\psi$ at zero energy and $x = 0$, which happens to be at the lowest point of the potential, and $E$ is incremented by a small amount and at each new value the *sign* of the wavefunction at the boundary is checked. The energy is incremented until $\psi$ changes sign. When this happens an eigenvalue has been passed and the energy $E$ of the eigenvalue is between these last two values. The bisection method is now used to find an accurate value of the eigenvalue. This is a very stable method but takes several steps to reach the minimum for a given level of precision; the slowness of this method is more than compensated for by its stability because the Newton - Raphson or secant methods are rather subject to instability and can miss eigenvalues. A new energy is now chosen just above the last one found and a new eigenvalue sought and so forth, until the maximum energy required has been reached. The energy increments must be small enough not to miss an eigenvalue but not so small that the calculation takes an inordinate length of time, so some knowledge of the likely energy spacing, based on your knowledge of the chemical physics involved, is going to be useful.
 # 
-# #### Eigenvalues
+# #### **Eigenvalues**
 # 
 # The solutions of the Schroedinger equation in a symmetrical potential have either an 'odd' or 'even' parity, meaning that the wavefunction is either symmetrical and has a mirror image about the y-axis, or non-symmetrical and has instead a centre of inversion. If the wavefunction is of even parity then $\psi(x) = \psi(-x)$ and is finite at the origin but has zero slope; the initial condition is therefore
 # 
@@ -213,14 +215,14 @@ print('{:s} {:f}'.format('alpha_0',alpha0) )
 # Algorithm 19; Shooting method used to solve the Schroedinger equation.
 
 #--------------
-def solve_SE(V,init0,init1,E0):      # dpsidx = v, dvdx = 2mu/(hbar^2)(V-E)*psi
+def solve_SE(V, init0, init1, E0):      # dpsidx = v, dvdx = 2mu/(hbar^2)(V-E)*psi
     
     def derivs(y,x):                                            # y =[init0,init1]
         dvdx = lambda x: (2.0*mu/hbar**2)*( V(x) - E0 )*y[0]    # potential varies with x
         dpsidx= y[1]
         return dpsidx, dvdx(x) 
 
-    y = odeint( derivs, [init0,init1], x)             # Numpy/Scipy method : derivatives, initial values , x.
+    y = odeint( derivs, [init0, init1], x)             # Numpy/Scipy method : derivatives, initial values , x.
     return y                                          # shape= [n,2], y= wavefunction at energy E0
 #------------
 
@@ -235,8 +237,8 @@ xN =   5.0                                            # boundary or infinity x
 x = np.linspace(x0,xN,n)                              # start, stop & number of points
 yxN =    0.0                                          # boundary value at maxN
 deltaE = 1.0                                          # energy increment, must be less than sep'n of energy levels
-maxE = 100.0                                          # max energy
-Q =      1e-13                                        # stopping value
+maxE   = 100.0                                        # max energy
+Q      = 1e-13                                        # stopping value
 xf = xN
 Qnum  =[]                                             # arrays to hold results
 Eigval=[]
@@ -244,7 +246,7 @@ for indx in [0,1]:                                    # do odd-even values
     En0 =    0.0                                      # starting energy
     Qn  =   indx                                      # even/odd quantum number
     dydx=   indx*1.0                                  # initial dy/dx guess
-    y0 =    1.0-indx                                  # y0 even quantum num, any value here is ok except 0 
+    y0 =    1.0 - indx                                # y0 even quantum num, any value here is ok except 0 
     y  = solve_SE(V,y0,dydx,En0)                      # get all y values at energy En0
     yN0= y[n-1,0]                                     # save point at boundary i.e. at xN
     En1= En0 + deltaE                                 # second try with energy
@@ -259,7 +261,7 @@ for indx in [0,1]:                                    # do odd-even values
             while abs(En1 - En0) > Q :                # difference in energy>Q
                 Em =(En1 + En0)/2.0                   # mid point
                 y  = solve_SE(V, y0, dydx,  Em)       # recalc at energy Em. y is wavefunction
-                ym = y[n-1,0]                         # y at boundary
+                ym = y[n - 1,0]                       # y at boundary
                 if yN0*ym > 0:                        # check sign of y (wavefunction)
                     En0 = Em 
                 else:
@@ -315,7 +317,7 @@ for i in range(s):
 # 
 # The harmonic potential is unusual because as the energy increases so does the width of the well and it does so in such a way that the energy separation between adjacent levels is constant. In comparison in the infinite square well, adjacent levels separate by ever-increasing amounts as the energy increases. In a potential such as $|x^{3/2}|$, the level separation decreases with an increase in energy as they also do in the hydrogen atom, where the potential is proportional to $1/x$, or in the anharmonic oscillator with the Morse potential. The difference in the spacing between energy levels the harmonic and double well potentials is shown in Fig. 11.28. In the double well potential below an energy of $30$ units, the well is narrow, which means it effectively has a large force constant causing the energy levels to be widely spaced, compared to the harmonic potential which is wider, at the same energy, and therefore has a smaller force constant. Well above the barrier, the widths of the double and harmonic potential gradually become similar and the energy spacings are now also more similar to one another.
 # 
-# #### Wavefunctions
+# #### **Wavefunctions**
 # 
 # Once the eigenvalues are known the wavefunctions have also effectively been calculated, see Algorithm 11.18. Depending on the method used one half of the wavefunction can be calculated then its image used to form the other half or the whole may be calculated in one go. This is possible because in a symmetrical well the left half is either the mirror image or the inverse mirror image of the right half. Figure 11.29 shows some of the wavefunctions, eigenvalues, and the double well potential of Fig. 11.28. 
 # 

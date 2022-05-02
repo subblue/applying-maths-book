@@ -33,12 +33,12 @@ f2= -0.2
 d = 0.05/n
 u = 0.25/n
 
-Gd=Matrix([[1,d/n],[0,1] ] ) 
-Gu=Matrix([[1,u/n],[0,1] ] ) 
-Gx=Matrix([[1,x],[0,1] ] ) 
+Gd = Matrix( [ [1,d/n], [0,1] ] ) 
+Gu = Matrix( [ [1,u/n], [0,1] ] ) 
+Gx = Matrix( [ [1,x],   [0,1] ] ) 
 
-L1=Matrix([[1,0],[-1/f1,1] ] )
-L2=Matrix([[1,0],[-1/f2,1] ] )
+L1 = Matrix( [ [1,0], [-1/f1,1] ] )
+L2 = Matrix( [ [1,0], [-1/f2,1] ] )
 
 ABCD = Gu*L1*Gd*L2*Gx
 
@@ -76,8 +76,8 @@ mag
 
 
 # thick lens calculation
-MG = lambda x,n: np.array([[1,x/n],[0,1] ] )  
-MR = lambda r,n2,n1 :np.array( [ [1,0],[-(n2-n1)/r,1]]) 
+MG = lambda x,n: np.array( [ [1,x/n], [0,1] ] )  
+MR = lambda r,n2,n1 :np.array( [ [1,0], [-(n2-n1)/r,1] ] ) 
 
 r1 = -100.0
 r2 = 300.0
@@ -102,12 +102,12 @@ print('{:s} {:6.3f}'.format('magnification ',1/ABCD[1,1]) )
 # In[7]:
 
 
-M1 = lambda f :np.array([[1,0],[-1/f,1]])  # mirror matrix
-G1 = lambda L: np.array([[1,L],[0,1]])     # gap matrix
-L  = 0.5                                   # laser length metres
+M1 = lambda f :np.array( [ [1,0], [-1/f,1] ])  # mirror matrix
+G1 = lambda L: np.array( [ [1,L], [0,1] ])     # gap matrix
+L  = 0.5                                       # laser length metres
 f1 = 0.1
 f2 = 0.2
-M  = G1(L) @ M1(f2) @ G1(L) @ M1(f1)       # matrix multiply
+M  = G1(L) @ M1(f2) @ G1(L) @ M1(f1)           # matrix multiply
 A = M[0,0]
 B = M[0,1]
 C = M[1,0]
@@ -200,8 +200,8 @@ G.subs(A*D - B*C,1)  # substitute with value from determinant
 # In[11]:
 
 
-G = lambda d:  np.array([[1,d],[0,1]])
-M = lambda f:  np.array([[1,0],[-1/f,1]])
+G = lambda d:  np.array( [ [1,d], [0,1] ])
+M = lambda f:  np.array( [[ 1,0], [-1/f,1] ])
 
 L1 = 50
 L2 = 200

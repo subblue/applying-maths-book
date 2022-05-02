@@ -131,8 +131,8 @@ series( 1/(1-w),w )
 # In[4]:
 
 
-k, p = symbols('k p')
-s =  (1-p)*summation(k**2*p**(k-1),(k,1,oo)) 
+k, p = symbols('k, p')
+s =  (1 - p)*summation(k**2*p**(k - 1),(k,1,oo)) 
 simplify(s)
 
 
@@ -153,7 +153,7 @@ simplify(s)
 
 
 # calculation of sinc function
-fig=plt.figure(figsize=(5,4))
+fig1 = plt.figure(figsize=(5,4))
 plt.rcParams.update({'font.size': 16})  # set font size for plots
 
 x = np.linspace(-3*np.pi,3*np.pi,100)
@@ -161,7 +161,7 @@ sinc2 = lambda x: (np.sin(x)/x)**2
 plt.plot(x,sinc2(x),color='blue')
 for i in range(1,4):
     v = i*np.pi
-    plt.axvline(v,linestyle='--',color='gray',linewidth=1)
+    plt.axvline( v,linestyle='--',color='gray',linewidth=1)
     plt.axvline(-v,linestyle='--',color='gray',linewidth=1)
 plt.xlabel(r'$x$')
 plt.ylabel(r'$\sinc^2(x)$')
@@ -268,22 +268,22 @@ print('{:s}{:20.16f}'.format('accurate', np.pi))
 
 
 # Use our own factorial function using recursion; good for small values of n 
-
+#-------------------
 def fact(n):
-    if n == 0 or n ==1:
+    if n == 0 or n == 1:
         return 1
     else:
         return n*fact(n-1)
 #--------------------
 
 nmax = 20
-x  = 2.0
-val= [0.0 for i in range(nmax)]
-s = 0.0
+x    = 2.0
+val  = [0.0 for i in range(nmax)]
+s    = 0.0
 for n in range(nmax):
-    s = s+(-1)**n*x**(6*n+1)/((6*n+1)*(fact(2*n)))
+    s = s + (-1)**n*x**(6*n + 1)/((6*n + 1)*(fact(2*n)))
     val[n] = s
-    #print('{:4d}{:16.10f}'.format(n,s))
+    #print('{:4d}{:16.10f}'.format(n,s))   # print each value if needed
     pass
 print('{:s} {:f} {:s} {:f}'.format('sum to ',x, ' is ',s ))
 plt.plot(val,marker='o',markersize=4,color='blue')
@@ -302,7 +302,7 @@ plt.show()
 
 
 x = symbols('x')
-ans= integrate(cos(x**3), (x,0,2),conds='none')
+ans = integrate(cos(x**3), (x,0,2),conds='none')
 ans.evalf()
 
 
@@ -317,11 +317,11 @@ ans.evalf()
 # Try some functions such as cos(z^3)sin(z). 
 # this is a ***slow***  calculation as the symbolic result is found first.
 
-z = symbols('z')                            # define symbolic variable                         
+z   = symbols('z')                          # define symbolic variable                         
 f01 = cos(z**3)*exp(-z)                     # function to expand into series
 
 num_terms = 150
-s =  series(f01,z,0,num_terms).removeO()    # get series and remove 'big O' as last term 150 terms in series
+s   =  series(f01,z,0,num_terms).removeO()  # get series and remove 'big O' as last term 150 terms in series
 f03 = lambdify(z,s,'numpy')                 # make into numpy function after series expansion
 
 numx = 1000

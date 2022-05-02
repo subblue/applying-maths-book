@@ -16,7 +16,7 @@ init_printing()                      # allows printing of SymPy results in types
 plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 
-# ## 1  Notation: matrices and determinants
+# ### 1  Notation: matrices and determinants
 # 
 # Matrices are represented by square $[\cdots]$ or round $( )$ brackets surrounding the block of numbers; determinants always by straight lines $||$and sometimes a pair of double straight lines $|| \;||$. The following matrix has $m = 4$ rows and $n = 3$ columns. The elements of any matrix or determinant are referenced with two subscripts, so, if the matrix $A$ has $m$ rows and $n$ columns, i.e. an $m \times n$ matrix, the $mn^{th}$ element is written as $A_{mn}$ and the indexing is always row by column. The diagonal is only present in a square matrix or determinant and is the series of terms from top left to bottom right that have the same indices, e.g., $a_{22}$. The anti-diagonal passes from top right to bottom left.
 # 
@@ -47,7 +47,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # Figure 2. A row and column matrix are also vectors.
 # __________
 
-# ## 2 Determinants
+# ### 2 Determinants
 # 
 # The value of a determinant is always a number or a polynomial equation. Suppose a determinant consisting of the squares of the numbers one to four is
 # 
@@ -126,17 +126,17 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # ### 2.3 Determinants have the following properties
 # 
-# $\quad$(i) A common multiplier can be factored out of a determinant.
+# $\quad$**(i)** A common multiplier can be factored out of a determinant.
 # 
-# $\quad$(ii) If any two rows or two columns are equal, or if a row or column is zero, the determinant is zero.
+# $\quad$**(ii)** If any two rows or two columns are equal, or if a row or column is zero, the determinant is zero.
 # 
-# $\quad$(iii) If any two row or columns are interchanged, then the value of the determinant changes sign.
+# $\quad$**(iii)** If any two row or columns are interchanged, then the value of the determinant changes sign.
 # 
-# $\quad$(iv) If any row or column is multiplied by a constant then the whole determinant is multiplied by that factor.
+# $\quad$**(iv)** If any row or column is multiplied by a constant then the whole determinant is multiplied by that factor.
 # 
-# $\quad$(v) The determinant's value is unaltered if a row or column is multiplied by a constant and then added to another row or column.
+# $\quad$**(v)** The determinant's value is unaltered if a row or column is multiplied by a constant and then added to another row or column.
 # 
-# $\quad$(vi) The determinant of the product of two matrices and the product of each matrix's determinant, $|AB|=|A||B|$
+# $\quad$**(vi)** The determinant of the product of two matrices and the product of each matrix's determinant, $|AB|=|A||B|$
 # 
 # ### 2.4 Evaluating determinants using Python and Sympy
 # 
@@ -165,7 +165,7 @@ M
 M.det()  # determinant produces a polynomial
 
 
-# #### Examples
+# #### **(i) Rotation matrix**
 # 
 # **(i)**  To work out the determinant of the matrix   $\displaystyle \begin{vmatrix}
 # \cos(x) & \sin(x)\\
@@ -181,7 +181,8 @@ M.det()  # determinant produces a polynomial
 # 
 # and by the well-known trigonometric identity, $\cos^2(x) + \sin^2(x) = 1$. The determinant is therefore unity. This matrix is a rotation matrix and its use is described in Section 7. Because the determinant is one the matrix does not distort the object rotated.
 # 
-# **(ii)** The determinant $\displaystyle \begin{vmatrix} x & 1 & 1\\ 1 & x & 1 \\ 1 & 1 & x \\\end{vmatrix}=0$ is another way of writing a polynomial. Since there are three occurrences of x the determinant should produce a cubic equation. Expanding by using cofactors, as in equation (7.2), produces
+# #### **(ii) Polynomial **
+# The determinant $\displaystyle \begin{vmatrix} x & 1 & 1\\ 1 & x & 1 \\ 1 & 1 & x \\\end{vmatrix}=0$ is another way of writing a polynomial. Since there are three occurrences of x the determinant should produce a cubic equation. Expanding by using cofactors, as in equation (7.2), produces
 # 
 # $$\displaystyle \begin{vmatrix} x & 1 & 1\\ 1 & x & 1 \\ 1 & 1 & x \\\end{vmatrix}=x(x^2-1)-(x-1)+(1-x)=x^3-3x+2=0$$
 # 
@@ -195,7 +196,7 @@ M = Matrix([ [x,1,1], [1,x,1],[1,1,x] ])
 solve(M.det(),x)
 
 
-# #### **(iii)** The $\mathrm{H\overset{\cdot\cdot}uckel } $ MO method. 
+# #### **(iii) The $\mathrm{H\overset{\cdot\cdot}uckel } $ MO method** 
 # 
 # In the $\mathrm{H\overset{\cdot\cdot}uckel }$ molecular orbital approximation $\pi$ bonding energies of molecules, ions, and radicals can be calculated. This method reflects the topology of the structure because only adjacent atoms interact with one another, and the change in energy with the length or angle of bonds is not included in the calculation. In this model of $\pi$ bonding, each electron in a $\pi$ orbital interacts only with $\pi$ electrons on the nearest atoms. This interaction energy is calculated from the resonance (exchange) Coulomb energy integral, is conventionally given the symbol $\beta$, and is _negative_ since interaction is attractive. It has a value $\approx -300$  kJ/mole, although estimates vary widely. The $\pi$ electrons on any atom also have their own energy, which is the Coulomb self-energy integral, and this is labelled $\alpha$. The interaction energies can be made into a determinant, called the secular determinant$^*$, and which is then solved to find the energy. This determinant is formed by a set of simple rules; why it works is explained later on in Section 12.3 that describes eigenvalue - eigenvector equations, in particular the Secular equation, eqn. 32.
 # 
@@ -245,10 +246,10 @@ solve(M.det(),x)
 # Huckel determinant linear polyene  
 # The calculation is slow for large matrices n > 20 due to determinant evaluation
 
-n,M,x = symbols('n,M,x') # use Sympy, define symbolic variables 
-n = 4                   # size of matrix
-M = zeros(n,n)          # define empty matrix
-for i in range(n):      # fill matrix according to rules above
+n, M, x = symbols('n, M, x') # use Sympy, define symbolic variables 
+n = 4                        # size of matrix
+M = zeros(n,n)               # define empty matrix
+for i in range(n):           # fill matrix according to rules above
     M[i,i] = x
     if (i > -1) and (i<n-1):
         M[i,i+1] = 1
@@ -273,7 +274,7 @@ solve(char_eqn)            # algebraically solve for roots
 # In[9]:
 
 
-solve(char_eqn.evalf())   # always use numberical solution for larger polynomials
+solve( char_eqn.evalf() )   # always use numberical solution for larger polynomials
 
 
 # The solutions give each of the values of $x$ and as $\displaystyle x=\frac{\alpha-\beta}{\beta}$ the four energies given by $E=\alpha-\beta x$ and are,
@@ -283,7 +284,7 @@ solve(char_eqn.evalf())   # always use numberical solution for larger polynomial
 # 
 # Figure 4 shows the $\mathrm{H\overset{\cdot\cdot}uckel }$ energy levels for butadiene measured as changes from $\alpha$. The integral $\beta$ is negative.
 # 
-# ![Drawing](matrices-fig4.png) ![Drawing](matrices-fig5.png)
+# ![Drawing](matrices-fig4-5.png)
 # 
 # Left, Figure 4. Right Fig. 5. Left. $\mathrm{H\overset{\cdot\cdot}uckel }$ energy levels for butadiene measured relative to $\alpha$. The integral $\beta$ is negative. Right. Figure 5. Graphical solution of the characteristic polynomial for butadiene.
 # __________
@@ -294,7 +295,7 @@ solve(char_eqn.evalf())   # always use numberical solution for larger polynomial
 # 
 # The characteristic polynomial can be plotted also, as shown in Fig.5, to convince you that the solutions are correct. The roots of the equation $(y = 0)$ can be seen to be at just greater than $\pm 0.6$ and $\pm 1.6$. A more detailed plot would give more accurate answers but not as exactly as the algebraic solution.
 
-# #### **(iv)** $\mathrm{H\overset{\cdot\cdot}uckel }$ method for single rings. Circulant determinants.
+# #### **(iv) $\mathrm{H\overset{\cdot\cdot}uckel }$ method for single rings. Circulant determinants**
 # 
 # When the molecule has a ring of delocalised electrons such as benzene the $\mathrm{H\overset{\cdot\cdot}uckel }$ method can be treated rather simply using _Circulant_ determinants. As an illustration suppose the molecule has a diamond or square shape then the determinant has extra terms in position $0-3$ and $3-0$ to join the first and last atoms, i.e 
 # 
@@ -397,9 +398,9 @@ solve(char_eqn.evalf())   # always use numberical solution for larger polynomial
 # Figure 5a. $\mathrm{H\overset{\cdot\cdot}uckel }$ molecular orbital shapes. The middle two images are made by separating real and imaginary parts of $v_1$. The circles represent positive and negative phases of the $\pi$ orbital ($1$ and $-1$ in the eigenvector) and the absence of a circle, zero contribution from that orbital. The energies increase from left to right and are $\alpha+2\beta,\;\alpha,\;\alpha,\;\alpha-2\beta$. The dotted lines are the nodes separating positive and negative phases. The more nodes there are less delocalised the electrons are and the higher the energy.
 # _______
 # 
-# Interaction between $\pi$ orbitals is clear in aromatic molecules but it is possible that molecules themselves can interact also between near neighbours, if the molecules are disposed linearly _J aggregates_ are formed but molecules can be in a ring. The most famous example is the LH2 and LH1 light harvesting antenna of bacterial photosynthesis which has 18 or so chromophores arranged in a loop which interact with nearest neighbours. In sections 12 and 13  teh kinetics of energy transfer in complicated assemblies of molecules is analysed. 
+# Interaction between $\pi$ orbitals is clear in aromatic molecules but it is possible that molecules themselves can interact also between near neighbours, if the molecules are disposed linearly _J aggregates_ are formed but molecules can be in a ring. The most famous example is the LH2 and LH1 light harvesting antenna of bacterial photosynthesis which has 18 or so chromophores arranged in a loop which interact with nearest neighbours. In sections 12 and 13  the kinetics of energy transfer in complicated assemblies of molecules is analysed. 
 
-# #### **(v)** Slater Determinants.
+# #### **(v) Slater Determinants**
 # 
 # Finding a solution to the electronic Schroedinger equation for molecules allows the calculation of molecular geometry and the corresponding energy levels. The electronic Schroedinger equation calculates the energy of the electrons at a fixed nuclear separation, i.e. after the Born-Oppenheimer approximation is invoked. This approximation is made to simplify the equations and is valid as the mass of the electron is far less than that of a proton or neutron and so the electrons can realise their minimum energy without being influenced any change in the motion of the nuclei. A potential energy surface is then made by repeatedly solving at different but fixed nuclear positions, i.e. the electronic energy is minimized in the field of the point charges of the nuclei. An excellent description of the theory is given by A. Szabo and N. Ostlund 'Modern Quantum Chemistry' publ Dover 1982. The description that follows is based on chapter 2 of that book.
 # 

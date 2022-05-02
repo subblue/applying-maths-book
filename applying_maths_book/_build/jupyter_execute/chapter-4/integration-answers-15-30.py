@@ -41,7 +41,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # In[2]:
 
 
-x,a=symbols('x,a',positive =True)
+x, a = symbols('x, a',positive =True)
 integrate(cot(a*x),x)
 
 
@@ -181,12 +181,12 @@ integrate(cot(a*x),x)
 # In[3]:
 
 
-a,x = symbols('a,x',positive = True)
+a, x = symbols('a, x',positive = True)
 
 def Intn(n):
     if n == 0: return exp(a*x)/a
-    if n == 1: return (a*x-1)*exp(a*x)/a**2  
-    return (x**n*exp(a*x)-n*Intn(n-1))/a     # recursion formula
+    if n == 1: return (a*x - 1)*exp(a*x)/a**2  
+    return (x**n*exp(a*x) - n*Intn(n - 1))/a     # recursion formula
 #-----------------
 
 simplify(Intn(5) )      #  integral x^5 exp(a*x)
@@ -220,13 +220,13 @@ simplify(Intn(5) )      #  integral x^5 exp(a*x)
 # In[4]:
 
 
-a,x=symbols('a,x',positive =True)
+a, x = symbols('a, x',positive =True)
 
 def intxn(n):
     if n == 0: return sqrt(pi/(4*a) )
     if n == 1: return 1/(2*a)
     if n == 2: return sqrt(pi/a)/(4*a)
-    return (n-1)*intxn(n-2)/(2*a)       # recursion chnage n to n-2 
+    return (n - 1)*intxn(n - 2)/(2*a)       # recursion chnage n to n-2 
 #-----------------
 
 ans = []

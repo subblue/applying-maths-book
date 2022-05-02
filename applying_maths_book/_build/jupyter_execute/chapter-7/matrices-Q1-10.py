@@ -34,6 +34,8 @@
 # 
 # (a) Calculate the MO energies for benzene and cyclo-octatetraene assuming that $x=(\alpha-E)/\beta$.
 # 
+# (b) Sketch and label the energy levels.
+# 
 # **Strategy:** Work out what it means to form a ring by adding extra matrix elements to the Huckel MO matrix.
 # 
 # ### Q8 Fulvalene energy

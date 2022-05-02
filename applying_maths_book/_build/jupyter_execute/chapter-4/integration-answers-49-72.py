@@ -65,8 +65,8 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # In[2]:
 
 
-x=symbols('x', positive=True)
-integrate( sqrt((x**2-1)/x**4), (x,1,oo) )
+x = symbols('x', positive=True)
+integrate( sqrt((x**2 - 1)/x**4), (x,1,oo) )
 
 
 # The surface area returned is infinite. This is really a very strange result; in fact, it seems to be nonsensical. The volume is finite therefore the horn can be filled with something, a volume equal to $\pi\;\mathrm{ dm^3}$ (litres) of paint for example. Its inner surface would be covered but its outer surface area needs an infinite amount of paint to cover it. Repeating the calculation to some finite length, say $100$, produces a similar result; the surface area is far greater than the volume, but is this not a misleading comparison?  The units involved are different. The volume is measured in m$^3$, area in m$^2$. Therefore if $\pi$ litres is used to fill the volume of an infinitely long horn, the surface can be still be covered with this amount of paint but only with an infinitely thin layer. As you will have realized this is not possible. Consider the case when the length is for instance $9$ dm, and the integral extends from $1 \to 10$. The area is now $4.83 \pi\;\mathrm{ dm^2}$ and the volume $0.9\pi\;\mathrm{ dm^3}$, which means that the coat of paint can now be $\approx 0.18 $ dm thick.
@@ -117,7 +117,7 @@ integrate( sqrt((x**2-1)/x**4), (x,1,oo) )
 # In[3]:
 
 
-E,kB,T=symbols('E,kB,T',positive =True)
+E, kB, T = symbols('E, kB, T',positive =True)
 eq2 = E**2*exp(-E/(kB*T) )
 eq1 = exp(-E/(kB*T) )
 integrate(eq2,(E,0,oo)) /integrate(eq1,(E,0,oo))
@@ -165,9 +165,9 @@ integrate(eq2,(E,0,oo)) /integrate(eq1,(E,0,oo))
 # In[4]:
 
 
-E,E0,kb,T = symbols('E,E0,kb,T',positive =True)
-eq2= (E**2-E*E0)*exp(-E/(kb*T))
-eq1= (E-E0)*exp(-E/(kb*T))
+E, E0, kb, T = symbols('E, E0, kb, T',positive = True)
+eq2= (E**2 - E*E0)*exp(-E/(kb*T))
+eq1= (E - E0)*exp(-E/(kb*T))
 simplify( (integrate(eq2,(E,E0,oo)) )/ (integrate(eq1,(E,E0,oo)) ) )
 
 
@@ -185,7 +185,7 @@ simplify( (integrate(eq2,(E,E0,oo)) )/ (integrate(eq1,(E,E0,oo)) ) )
 # In[5]:
 
 
-a,u = symbols('a,u',positive =True)
+a, u = symbols('a, u',positive =True)
 eq = u**3*exp(-a*u**2)
 integrate(eq,(u,0,oo)) 
 
@@ -228,7 +228,7 @@ integrate(eq,(u,0,oo))
 # In[6]:
 
 
-E,kb,T = symbols('E,kb,T',positive =True)  
+E, kb, T = symbols('E, kb, T',positive =True)  
 eq32 = sqrt(E**3)*exp(-E/(kb*T))
 eq12 = sqrt(E)*exp(-E/(kb*T) )
 integrate(eq32,(E,0,oo))/integrate(eq12,(E,0,oo))
@@ -297,8 +297,8 @@ integrate(eq32,(E,0,oo))/integrate(eq12,(E,0,oo))
 # In[7]:
 
 
-x0,x = symbols('x0, x',positive =True)
-eq = x**2/(pi*sqrt(x0**2-x**2) )
+x0, x = symbols('x0, x', positive =True)
+eq = x**2/(pi*sqrt(x0**2 - x**2) )
 integrate(eq,(x,-x0,x0 ))
 
 
@@ -318,7 +318,7 @@ integrate(eq,(x,-x0,x0 ))
 # In[8]:
 
 
-alpha, x=symbols('alpha,x',positive =True)
+alpha, x = symbols('alpha, x',positive = True)
 psi1 = sqrt(2*alpha)*sqrt(sqrt(alpha/pi))*x*exp(-alpha*x**2/2)
 integrate( psi1**2,(x,-oo,oo) )
 
@@ -336,7 +336,7 @@ integrate( psi1**2,(x,-oo,oo) )
 # In[9]:
 
 
-alpha, x,n=symbols('alpha,x,n',positive =True)
+alpha, x, n = symbols('alpha, x, n', positive = True)
 
 def afact(n):     # factorial recursion formula
     
@@ -397,8 +397,8 @@ ans
 # In[10]:
 
 
-x,alpha = symbols('x,alpha',positive =True)
-eq =  exp(-alpha*x**2/2)*(alpha*x**2-1)*exp(-alpha*x**2/2)
+x, alpha = symbols('x, alpha', positive = True)
+eq =  exp(-alpha*x**2/2)*(alpha*x**2 - 1)*exp(-alpha*x**2/2)
 integrate(eq,(x,-oo,oo) ) 
 
 
@@ -426,9 +426,9 @@ integrate(eq,(x,-oo,oo) )
 # In[11]:
 
 
-beta,s,E = symbols('beta,s,E',positive =True)
-eqn = beta**s*E**(s-1)*exp(-beta*E)/factorial(s-1)
-( integrate( eqn, (E,0,oo) ) )
+beta, s, E = symbols('beta, s, E',positive = True)
+eqn = beta**s*E**(s - 1)*exp(-beta*E)/factorial(s - 1)
+integrate( eqn, (E,0,oo) ) 
 
 
 # which when simplified has the value unity, because the gamma function $\Gamma(s)=(s-1)!$. The average is therefore 
@@ -438,9 +438,9 @@ eqn = beta**s*E**(s-1)*exp(-beta*E)/factorial(s-1)
 # In[12]:
 
 
-beta,s,E = symbols('beta,s,E',positive =True)
-avE = beta**s*E**s*exp(-beta*E)/factorial(s-1)
-simplify(( integrate( avE, (E,0,oo) ) ) )
+beta, s, E = symbols('beta, s, E',positive = True)
+avE = beta**s * E**s * exp(-beta*E)/factorial(s - 1)
+simplify( integrate( avE, (E,0,oo) ) )
 
 
 # where again $\Gamma(s)=(s-1)!$ is used to simplify. The average energy squared is
@@ -477,7 +477,7 @@ simplify(( integrate( avE, (E,0,oo) ) ) )
 # In[13]:
 
 
-L,x = symbols('L,x',positive =True)
+L, x = symbols('L, x', positive = True)
 n   = symbols('n',integer=True)
 eq1  = 2/L*x*sin(n*pi*x/L)**2
 simplify(integrate(eq1, (x,0,L)) )
@@ -513,10 +513,10 @@ simplify(integrate(eq1, (x,0,L)) )
 # In[14]:
 
 
-L,x,hbar,m = symbols('L,x,hbar,m',positive = True)
-k = symbols('k',integer=True)
+L, x, hbar, m = symbols('L, x, hbar, m',positive = True)
+k = symbols('k',integer = True)
 
-psi= sqrt(2/L)*sin(k*pi*x/L)
+psi = sqrt(2/L)*sin(k*pi*x/L)
 
 simplify(-hbar**2/(2*m)*integrate(psi*diff(psi,x,x),(x,0,L)) )
 
@@ -542,10 +542,10 @@ simplify(-hbar**2/(2*m)*integrate(psi*diff(psi,x,x),(x,0,L)) )
 # In[15]:
 
 
-L,x = symbols('L,x',positive=True)
-n,k = symbols('n,k',integer=True,positive =True)
+L, x = symbols('L, x',positive = True)
+n, k = symbols('n, k',integer = True, positive = True)
 
-eq=(2/L)* sin(n*pi*x/L)*x*sin(k*pi*x/L)
+eq = (2/L)* sin(n*pi*x/L)*x*sin(k*pi*x/L)
 simplify(integrate(eq,(x,0,L)) )
 
 
@@ -595,15 +595,15 @@ simplify(integrate(eq,(x,0,L)) )
 
 
 
-alpha, x,x0,x_a,x_b,n,m = symbols('alpha,x,x0,x_a,x_b,n,m',positive =True) # reuse from Q59
+alpha, x, x0, x_a, x_b, n, m = symbols('alpha, x, x0, x_a, x_b, n, m',positive = True) #from Q59
 
-def afact(n):             # factorial recursion formula
+def afact(n):                    # factorial recursion formula
     if n == 0 or n == 1 :
         return 1
     else:
         return n*afact(n-1)
 #------------
-def aherm(n,x):           #  Hermite polynomial recursion formula
+def aherm(n,x):                  #  Hermite polynomial recursion formula
     
     if n == 0:
         return 1+0*x
@@ -622,8 +622,8 @@ for n in range(nmax):
     psin[n] = psi(n,x_a)
     pass
 
-pp =[]
-for i in range(nmax):                  # do this way to simpligy list
+pp = []
+for i in range(nmax):            # do this way to simpligy list
     pp.append(simplify(psin[i]))
 
 pp
@@ -639,7 +639,7 @@ pp
 
 
 FC = []
-for i in [0,1,5,6]:
+for i in [0, 1, 5, 6]:
     ans = integrate(psi(0,x_a)*psi(0,x_b),(x,-oo,oo))
     FC.append([i,simplify( abs( ans)**2) ] )  #  add result to list
 FC
@@ -656,7 +656,7 @@ FC
 # 
 # (d) Plotting the FC factors vs quantum number with reduced displacement $X = 1$ and $5$, produces the graphs below. When there is a small displacement, most of the intensity of the transition, as controlled by the FC factors, goes into vibrational levels with small quantum numbers of state $b$, whereas, when the displacement is large, higher state $b$ quantum numbers are excited Figure 56.
 # 
-# ![Drawing](integration-fig56a.png) ![Drawing](integration-fig56b.png)
+# ![Drawing](integration-fig56a-56b.png)
 # 
 # Figure 56. Left: Franck - Condon factors from $n = 0$ and $m = 0 \to 10$ in the upper state with reduced displacements of $X = 1$ and $5$. Right: The potential energy surfaces with small and large displacements.
 # The dashed lines indicate the range over which transitions can occur. The projection of the ground state wavefunction on the upper potential gives rise to the spectrum only the envelope of which is shown.
@@ -696,7 +696,7 @@ FC
 # In[18]:
 
 
-kf,a,t = symbols('kf,a,t',positive=True)
+kf, a, t = symbols('kf, a, t', positive = True)
 eq = exp(-kf*t - a*sqrt(pi*kf*t))
 simplify(integrate(eq,(t,0,oo)) ) 
 
@@ -747,7 +747,7 @@ simplify(integrate(eq,(t,0,oo)) )
 # In[19]:
 
 
-theta = symbols('theta',positive =True)
+theta = symbols('theta', positive =True)
 
 numer = integrate(cos(theta)**2*sin(theta), (theta,0,pi))
 denom = integrate(sin(theta), (theta,0,pi))
@@ -811,9 +811,9 @@ numer/denom
 # In[20]:
 
 
-n,Z,r,a_0=symbols('n,Z,r,a_0',positive=True)
+n, Z, r, a_0 = symbols('n, Z, r, a_0', positive = True)
 
-eq =4*(Z/a_0)**3* r**(2+n)*exp(-2*Z*r/a_0)
+eq = 4*(Z/a_0)**3 * r**(2+n)*exp(-2*Z*r/a_0)
 simplify(integrate(eq,(r,0,oo) ))
 
 
@@ -822,8 +822,8 @@ simplify(integrate(eq,(r,0,oo) ))
 # In[21]:
 
 
-n,Z,a_0 = symbols('n,Z,a_0',positive = True)
-ans = [''for i in range(7)]
+n, Z, a_0 = symbols('n, Z, a_0', positive = True)
+ans = ['' for i in range(7)]
 for i,n in enumerate([-2,-1,0,1,2,3,4]):
     ans[i] = (1/2)**(1+n)*(a_0/Z)**n*factorial(n+2)
 ans[:]    
@@ -842,9 +842,9 @@ ans[:]
 # In[22]:
 
 
-Z,a_0,r=symbols('Z,a_0,r',positive=True)
+Z, a_0, r=symbols('Z, a_0, r',positive=True)
 
-eq =4*(Z/a_0)**3* r**2*exp(-2*Z*r/a_0)
+eq = 4*(Z/a_0)**3 * r**2 * exp(-2*Z*r/a_0)
 simplify(integrate(eq,(r,0,a_0)) )
 
 
@@ -893,8 +893,8 @@ simplify(integrate(eq,(r,0,a_0)) )
 
 
 a = symbols('a',positive =True)
-ans = series( (exp(a)+exp(-a) )/(exp(a)-exp(-a)),a)
--simplify( ans-1/a)
+ans = series( (exp(a) + exp(-a) )/(exp(a) - exp(-a)),a)
+simplify( ans - 1/a)
 
 
 # As $a \ll 1$ then $a^3$ and higher powers are insignificant therefore the result is for the average energy is 
@@ -946,7 +946,7 @@ ans = series( (exp(a)+exp(-a) )/(exp(a)-exp(-a)),a)
 
 B,k_B,T,J=symbols('B,k_B,T,J',positive =True)
 
-eq=J*(2*J+1)*exp(-B*J*(J+1)/(k_B*T))
+eq = J*(2*J+1)*exp(-B*J*(J+1)/(k_B*T))
 simplify(integrate(eq,(J,0,oo)) )
 
 
@@ -967,7 +967,7 @@ simplify(integrate(eq,(J,0,oo)) )
 # 
 # ![Drawing](integration-fig61.png)
 # 
-# Figure 61, Rotational distribution for Br$_2$, at $30, \,300$, and $600$ K, assuming $J$ is a continuous quantity. The maximum and average value of the rotational quantum number is shown on the graph at $600$ K. They differ because the distribution is not symmetrical.
+# Figure 61. Rotational distribution for Br$_2$, at $30, \,300$, and $600$ K, assuming $J$ is a continuous quantity. The maximum and average value of the rotational quantum number is shown on the graph at $600$ K. They differ because the distribution is not symmetrical.
 # ______
 # 
 # ### Q71 answer
@@ -987,7 +987,7 @@ simplify(integrate(eq,(J,0,oo)) )
 
 
 epsilon,k,T=symbols('epsilon,k,T',positive=True)
-eq=sqrt(epsilon)*exp(-epsilon/(k*T))
+eq = sqrt(epsilon)*exp(-epsilon/(k*T))
 simplify(integrate(eq,epsilon) )
 
 

@@ -366,7 +366,7 @@ print('{:s} {:6.3f} {:s} {:6.3f}'.format('probability of getting chi sqrd > ',ch
 f.ppf(0.99,1,8)    # f is name of distribution, see top of page, from scipy.stats ....
 
 
-# ## 5.7 Correlation coefficients
+# ### 5.7 Correlation coefficients
 # 
 # The correlation coefficient $R$ is often listed among the parameters when a spreadsheet or graphing package is used to analyse a straight line fit. It represents the proportion of the variation (information) in $y$ that can be accounted for by its relationship with $x$. However, in the physical and many of the biological sciences, this is a not a useful quantity and _should be avoided_ as a measure of how well a straight line describes the data. 
 # 

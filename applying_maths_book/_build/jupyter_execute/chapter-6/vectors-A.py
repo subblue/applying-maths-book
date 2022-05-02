@@ -3,7 +3,7 @@
 
 # ## Vector basics 
 
-# Although vectors, such as force or velocity, have two 'dimensions' - magnitude and direction - mathematically, they can have any number of dimensions. A vector's components need not be objects in any physical space; this is not as bizarre as it sounds, for example, your car can be described by its make, colour, manufacture date, engine-capacity, and model. These values can form a vector such as $(Ford,\; yellow,\;2005, 1900cc,\; estate)$. However, a vector is more than just a list; it is constructed from a basis set. The basis set contains the primitive components and the vector is constructed as a linear combination of these elements; more of this later. The basis set is not always apparent, for example, when drawing arrows on a graph, but in all cases, including topics as diverse as quantum mechanics and geometry, the basis set must be explicitly defined before a calculation is started. However, in apparent contradiction to this, many vector properties and formulae can be obtained by symbolically, which means algebraically, $\boldsymbol{ A} + \boldsymbol{B}$, etc., without a thought about the basis set, and some of these calculations are described in Section 6.2. As an aside, W. Hamilton, of Hamiltonian fame, first seems to have used the word 'vector'. J. Willard Gibbs who developed much of thermodynamics also largely developed vector analysis. 
+# Although vectors, such as force or velocity, have two 'dimensions' - magnitude and direction - mathematically, they can have any number of dimensions. A vector's components need not be objects in any physical space; this is not as bizarre as it sounds, for example, your car can be described by its make, colour, manufacture date, engine-capacity, and model. These values can form a vector such as (Ford, yellow, 2005, 1900 cc, estate). However, a vector is more than just a list; it is constructed from a basis set. The basis set contains the primitive components and the vector is constructed as a linear combination of these elements; more of this later. The basis set is not always apparent, for example, when drawing arrows on a graph, but in all cases, including topics as diverse as quantum mechanics and geometry, the basis set must be explicitly defined before a calculation is started. However, in apparent contradiction to this, many vector properties and formulae can be obtained by symbolically, which means algebraically, $\boldsymbol{ A} + \boldsymbol{B}$, etc., without a thought about the basis set, and some of these calculations are described in Section 6.2. As an aside, W. Hamilton, of Hamiltonian fame, first seems to have used the word 'vector'. J. Willard Gibbs who developed much of thermodynamics also largely developed vector analysis. 
 # 
 # 
 # ### 1.1 Notation
@@ -51,7 +51,7 @@
 # Figure 2. Two- and three-dimensional Cartesian coordinates. Right: A vector $\vec V$ is shown pointing from the origin to point $(x_1, y_1, z_)$.
 # ________
 
-# #### Surface and Interfacial Tension
+# #### **Surface and Interfacial Tension**
 # The surface tension of a liquid is a property of the intermolecular forces that exist in a liquid. Mainly these forces are directed into the liquid at the surface with air (or with the liquid's vapour) and not out of the surface. The energy of molecules at the surface is greater than that of the bulk and consequently it takes energy to increase the surface area. In thermodynamic terms the surface tension $\gamma$ is the rate of change of Gibbs energy with increase in area, $dG=\gamma dA$ thus $\gamma$ has units of force/length. The values of $\gamma$ are in the range $20-30$ mN/m for common liquids such as acetone, benzene or ethanol, but are larger for water ($72.8$) because hydrogen bonds are broken and in liquid metals such as mercury where $\gamma =485$ mN/m the surface tension values are large due to the coulomb attraction to be overcome by bringing an ion from the interior to the surface.
 # 
 # ![Drawing](vectors-fig2a1.png)
@@ -85,7 +85,7 @@
 # 
 # $$\displaystyle S=\gamma_{wa}-\gamma_{oa}-\gamma_{w0}$$
 # 
-# #### Newton Diagrams, molecular beams and reactive scattering
+# #### **Newton Diagrams, molecular beams and reactive scattering**
 # 
 # An important example of vector addition is found in Newton Diagrams which are used to describe the kinematics of  crossed molecular beams. In these experiments two gaseous species are cooled by expansion into a vacuum chamber and the atoms and molecules are made to collide into one another and the direction and energy of the scattered species is measured. Although the atoms or molecules are cooled they still have considerable velocity, a few hundred metres per second is not uncommon. If no reaction takes place the collision is called _elastic_ (Ar + Ne and Kr +HCl for example) and _inelastic_ if there is a chemical reaction such as $\mathrm{K+CH_3I} \to \mathrm{KI +CH_3}$ or $\mathrm{H+I_2}\to \mathrm{I+HI}$ and here the difference in velocity provides the kinetic energy to overcome any reaction barrier. 
 # 
@@ -93,26 +93,26 @@
 # 
 # ![Drawing](vectors-fig2a.png)
 # 
-# Figure 2b. Sketch of a crossed molecular beam experiment. The oven heats the gas or if metal is used to form a vapour. The difference in temperature is used to determine the collision energy. Most of the gas/vapour is pumped away here but the centre part of the gas jet is passed into the reaction chamber via the skimmer. This is cone shaped with a very small hole in the apex. The main vacuum chamber is kept under ultra low vacuum. The detector can be moved in an arc to collect scattered species.
+# Figure 2b. Sketch of a crossed molecular beam experiment. The oven heats the gas or if a metal is used to form its vapour. The difference in temperature is used to determine the collision energy. Most of the gas/vapour is pumped away here but the centre part of the gas jet is passed into the reaction chamber via the skimmer. This is cone shaped with a very small hole in the apex. The main vacuum chamber is kept under ultra low vacuum. The detector can be moved in an arc to collect scattered species.
 # ______________________
 # 
 # The two beams are represented by vectors of length equal to their velocity. Often the beams approach one another at right angles as in figure 2b because this is simplest experimentally. The centre of mass is a constant of the motion and its vector is shown in the figure also. After collision, the centre of mass still moves along the same direction as before collision, but now the species move with different velocities i.e. different speeds and directions, see figure 2d.  In a Newton Diagram is conventional to show the reactant beams and scattered product beams on the same diagram but with the reactant vectors starting at zero together with the products. As there is spherical symmetry along the direction of each beam these angles are equivalent and so vectors can be drawn in a plane and for the purposes of illustration it is assumed scattering is in this plane also. The molecular beams will also have an energy and hence velocity spread, but, for simplicity we assume that this can be ignored.
 # 
-# ![Drawing](vectors-fig2b.png)
-# 
-# Figure 2c. Two molecular beams represented by vectors pre-collision. The centre of mass vector $\vec v_{cm}$ is shown in red. Vectors of approaching species are $\vec v_1, \vec v_2$.
-# ________
-# 
 # ![Drawing](vectors-fig2c.png)
 # 
-# Figure 2d. Newton Diagram for _elastic_ scattering of species 1 and 2. In this figure the collision occurs at the origin of vectors $\vec v_1$ and $\vec v_2$ and $\vec v_1', \vec v_2'$ are the same species after collision. The dashed labels indicate post-collision vectors. The detector is placed at angle $\Theta$ to beam 1.  Species 1 reaching the detector at an angle $\Theta$ has been scattered to angle $\chi$ in the centre of mass (c.m.) system. The vectors $\vec w$ are relative to the centre of mass meaning that the kinetic energy of the centre of mass $\frac{1}{2}(m_1+m_2)\vec v_c^2$ has been removed.
+# Figure 2c. Two molecular beams represented by vectors pre - collision. The centre of mass vector $\vec v_{cm}$ is shown in red. Vectors of approaching species are $\vec v_1, \vec v_2$.
+# ________
+# 
+# ![Drawing](vectors-fig2d.png)
+# 
+# Figure 2d. Newton Diagram for _elastic_ scattering of species 1 and 2. In this figure the collision occurs at the origin of vectors $\vec v_1$, (bottom left) pre-collision the vectors more as in figs 2a and 2b). After collision these vectors are labelled $\vec v_2$ and $\vec v_1', \vec v_2'$. The dashed labels indicate post-collision vectors. The detector is placed at angle $\Theta$ to beam 1.  Species 1 reaching the detector at an angle $\Theta$ has been scattered to angle $\chi$ in the centre of mass (c.m.) system. The vectors $\vec w$ are relative to the centre of mass meaning that the kinetic energy of the centre of mass $\frac{1}{2}(m_1+m_2)\vec v_c^2$ has been removed.
 # _______
 # 
 # In elastic scattering there is no chemical reaction and species 1 is scattered from $v_1$ into vector $v_1'$ and species 2, which only changes slightly in this particular diagram, to $v_2'$. If the detector is placed at angle $\Theta$ in the lab. frame, clearly it will capture scattering only in this direction should there be any. The same scattering in the molecular or centre of mass (c.m.) frame is at angle $\chi$. Species 1 in the cm frame is vector $w_1'$, i.e. vector $w_1$ is equivalent to vector $v_1$ but in the c.m. frame, and similarly for species 2. Changing angle $\Theta$ must also change angle $\chi$.
 # 
 # According to classical mechanics for any impact parameter $b$ there is a definite scattering angle $\chi$. The connection between $b$ and $\chi$  is described in more detail in the chapter on Numerical Methods (11.3.6). The impact parameter is the distance apart that the two species 1 and 2 meet relative the their line of centres, (see Figure 11.4 in the chapter on Numerical Methods) i.e. if species 1 is fixed on the $x$ axis and species 2 then moves parallel to it in the $x$ direction the impact parameter is the distance in the $y$ direction they are apart.
 # 
-# ![Drawing](vectors-fig2d.png)
+# ![Drawing](vectors-fig2e.png)
 # 
 # Figure 2e. Sketch showing one particle (atom/molecule) approaching the other with an attractive potential at long range and a repulsive one at short range, such as a Lennard-Jones potential. The scattering angle is $\chi$ and the impact parameter $b$. 
 # ________
@@ -173,7 +173,7 @@
 # 
 # A third possibility exists which is that the species form a complex instead of immediately scattering. If this complex is long-lived compared to the time it takes to reach the detector, a few milliseconds, then the only product to be observed will be in the direction determined by the centre of mass vector. If the complex is short lived, say a few rotational periods then the products will be sprayed out in all directions as it rotates making analysis very hard. See Bernstein (1982) and Steinfeld (1999) for a full explanation of reaction dynamics. 
 
-# ## 2 Vector multiplication: dot, cross, and triple products
+# ### 2 Vector multiplication: dot, cross, and triple products
 # 
 # Multiplying two vectors together can be done in _two_ ways; the result is either a scalar (number), or a vector.
 # 
@@ -239,11 +239,11 @@
 # 
 # Once we define a basis set then specific, rather than general calculation can be performed. For example, if vectors $A$ and $B$ of figure 3 are given magnitudes we cannot tell what the angle between them is because we do not know how $A$ and $B$ relate to one another. A basis set provides the scaffold, as it were, on which the vectors are fixed. It is possible to choose different basis sets to solve the same problem and to convert between one set and another. The following three properties of vectors and basis sets are important:
 # 
-# (i) Every vector is always made from a linear combination of the components of its basis set.
+# **(i)** Every vector is always made from a linear combination of the components of its basis set.
 # 
-# (ii) Because a basis set is the minimal possible set, it cannot be decomposed any further or made any simpler.
+# **(ii)** Because a basis set is the minimal possible set, it cannot be decomposed any further or made any simpler.
 # 
-# (iii) Any vector is unchanged by changing its basis set and therefore its coefficients must change between bases.
+# **(iii)** Any vector is unchanged by changing its basis set and therefore its coefficients must change between bases.
 # 
 # For example, the vector $A$ in figure 3 has components of $a$ units on the $x$-axis and $b$ on the $y$- and is therefore described as $\vec A = a\boldsymbol i + b\boldsymbol j$. In Cartesian coordinates, the basis set most often used is made of orthogonal, unit vectors along each of the $x-, y-$ and $z$-axes; conventionally we represent this as the basis set $(\boldsymbol i, \boldsymbol j,\boldsymbol k)$ where $\boldsymbol i, \boldsymbol j$ and $\boldsymbol k$ are _orthogonal unit vectors_ . Figure 4 shows the basis set vectors and a three-dimensional vector separated into it basis set components. A unit vector has length of $1$, so a vector can be made from multiples of this. The $(\boldsymbol i, \boldsymbol j, \boldsymbol k)$ basis set is described more detail in Section 3.
 # 
@@ -330,7 +330,7 @@
 # The normalization terms on the bottom of this equation are just the length of each vector as calculated by Pythagoras' theorem. The angle between two vectors $\vec A = [3\quad 2\quad 1]$ and $\vec B=[-1\quad  0 \quad 1]$ is calculated as follows: the length of each vector is $|\vec A|= \sqrt{9+4+1} =\sqrt{14}$ and $|\vec B|= \sqrt{1+0+1} =\sqrt 2$, and the dot product is $\displaystyle \begin{bmatrix} 3&2&1 \end{bmatrix}\begin{bmatrix} -1\\0\\1  \end{bmatrix}=-2$ and the angle $\cos(\theta)= -2/(\sqrt 14\sqrt 2)$ which is $112.2^\text{o} $.
 # 
 # 
-# #### Example (i) Colliding molecules
+# #### **(i) Colliding molecules**
 # Newton diagrams describing elastic scattering are given above. The angles  and vectors are shown in figure 2c. Suppose the initial speeds in an experiment colliding $\mathrm{Kr+HI}$ are $800$ and $250$ m/s respectively. The masses are $84$ and $128$ amu and the scattering angle is  $\chi =25^\text{o}$ in the c.o.m. frame, see fig 2b. We want to calculate the angle $\Theta$, the detector angle in the lab frame and also the angle $\delta$ which is used in the transformation from lab to centre of mass coordinates. It is necessary, therefore, to calculate $\vec v_1'$ (see figure 2c) and to do this $\vec w_1$ and $\vec w_1'$ are needed.
 # 
 # The initial vectors are $\vec v_1 =\begin{bmatrix} 800 & 0\end{bmatrix}, \quad \vec v_2 =\begin{bmatrix} 0 & 250\end{bmatrix}$, thus $\vec v_r=\vec v_1-\vec v_2=\begin{bmatrix} 800 & -250\end{bmatrix}$ with magnitude $|v_r|=\sqrt{800^2+250^2}$. 
@@ -368,7 +368,7 @@
 # 
 # The calculation starting with $\Theta$ and finding $\chi$ is a little different. Once $\vec w_1$ is found the vector $\vec w_1'$ will lie on a circle of radius $|\vec w_1|$ with its centre at the centre of mass. The vector $\vec v_1'$ will intersect this at two points and then $\vec w_1'$ can be found by substituting $y=x\tan(\Theta)$ into the equation for the circle described.
 # 
-# #### Example (ii) ISBN number
+# #### **(ii) ISBN number**
 # An unexpected application of the dot product of a large vector is that used to check the ISBN number of a book. This code is unique to a book and also to each edition. A typical code is $978-0-19-923091-4$ where the last digit is the check digit used to determine if the rest of the code is correct. This is clearly useful when a book is ordered, for example, if the check digit is not $4$ a simple swapping of two digits may have occurred.
 # 
 # The calculation to produce the check digit ($4$) is
@@ -454,7 +454,7 @@
 # 
 # ### 4 Summary
 # 
-# #### Dot Product
+# #### **Dot Product**
 # $\displaystyle \qquad \vec A \cdot \vec B= |\vec A||\vec B|\cos(\theta)$  
 # 
 # The magnitude of $\vec A$ is $\displaystyle |\vec A|=\sqrt{\vec A \cdot \vec A}$
@@ -467,7 +467,7 @@
 # 
 # $$\displaystyle \vec A\cdot \vec B = (a\boldsymbol i + b\boldsymbol j + c\boldsymbol k)\cdot(c\boldsymbol i + d\boldsymbol j + e\boldsymbol k) = ac + bd + ce$$
 # 
-# #### The Cross Product exists only in three dimensions
+# #### **The Cross Product exists only in three dimensions**
 # 
 # $$\displaystyle \vec A \times \vec B=|\vec A||\vec B|\sin(\theta)\vec n $$
 # 

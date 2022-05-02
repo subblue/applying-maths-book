@@ -36,9 +36,9 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # **(i)** To differentiate $\displaystyle y=\sin(ax^2+x^{-3})$ treat the sine as the outside function, differentiate it to produce $\cos(\cdots)$, then multiply by the differential of the terms inside the sine bracket
 # 
-# $$\displaystyle \qquad\qquad\begin{align} y=&\sin(\underline{ax^2+x^{-3}})\\
-#  &\uparrow \qquad \uparrow\\
-# &\text{outside}\; \text{      inside}\end{align} \qquad\qquad\qquad\qquad\text{(16)} $$
+# $$\displaystyle \qquad\qquad\begin{align} y& =\sin(\underline{ax^2+x^{-3}})\\
+#  &\quad\uparrow \qquad \uparrow\\
+# &\text{   outside}\; \text{      inside}\end{align} \qquad\qquad\qquad\qquad\qquad\text{(16)} $$
 # 
 # differentiating the outside first, then the inside
 # 
@@ -134,20 +134,24 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # $$\displaystyle  \frac{d}{dx}\left(\frac{f}{g}\right)=\frac{gf'-fg'}{g^2}  \tag{21}$$
 # 
-# where the brackets and x are suppressed for clarity.  For example using eqn. (20)
+# where the brackets and $x$ are suppressed for clarity.  For example using eqn. (20)
 # 
 # $$\displaystyle  (a) \quad y=\frac{\sin(x)}{1+x^2}, \qquad \frac{dy}{dx}=\frac{\cos(x)}{1+x^2}-2x\frac{\sin(x)}{(1+x^2)^2}$$
 # 
 # and using eqn. 21
 # 
-# $$\displaystyle  (b) \quad y=\tan(x)=\frac{\sin(x)}{\cos(x)}, \qquad \frac{dy}{dx}=\frac{\cos^2(x)+\sin^2(x)}{\cos^2(x)}=1+\tan^2(x)=\frac{1}{\cos^2(x)}$$
+# $$\displaystyle  (b) \quad y=\tan(x)=\frac{\sin(x)}{\cos(x)}, \qquad \frac{dy}{dx}=\frac{\cos^2(x)+\sin^2(x)}{\cos^2(x)}=1+\tan^2(x)$$
 
 # ### 4.6 Differentiation with respect to a function
 # 
 # Sometimes in thermodynamics, but also elsewhere, equations are put in the form $\displaystyle \frac{d}{d(1/x)}$ rather than $\displaystyle \frac{d}{dx}$. For example, at constant pressure the Gibbs - Helmholtz equation, the derivative of the change of (Gibbs) free energy $\Delta G$ with temperature, can be written as
 # $\displaystyle \frac{d(\Delta G/T)}{d(1/T)}$ rather than $\displaystyle \frac{d\Delta G}{dT}$. The reason for doing this is largely historical and relates to a time not so long ago when computers were not readily available, and so the equation was simplified making it easier to integrate or plot by hand on graph paper. 
 # 
-# To calculate this double reciprocal derivative we start with the Gibbs - Helmholtz equation. To obtain this we start with the basic equation $dG = Vdp - SdT$ at constant pressure so that $dp = 0$, therefore taking the derivative gives $\displaystyle \left( \frac{\partial G}{\partial T} \right)_p=-S$. But as $G = H - TS$ we obtain the equation as is now normally written for a change in $G$,
+# To calculate this double reciprocal derivative we start with the Gibbs - Helmholtz equation. To obtain this we start with the basic equation $dG = Vdp - SdT$. At constant pressure $dp = 0$, and taking the derivative gives 
+# 
+# $$\displaystyle \left( \frac{\partial G}{\partial T} \right)_p=-S$$
+# 
+# But as $G = H - TS$ we obtain the equation as is now normally written for a change in $G$,
 # 
 # $$\displaystyle  \left( \frac{\partial \Delta G}{\partial T} \right)_p=\frac{\Delta G-\Delta H}{T} \tag{22}$$
 # 
@@ -177,7 +181,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # Therefore, a plot of the log of the equilibrium constant vs reciprocal temperature is a horizontal line of intercept $-\Delta H^{\text{o}}/R$. If the line is not constant, but sloping or varying, then $\Delta H^{\text{o}}$ depends on temperature.
 # 
-# ## 4.7 Implicit differentiation
+# ### 4.7 Implicit differentiation
 # 
 # Quite often, an equation we may want to differentiate contains powers or functions of $y$ as well as $x$. For example, $\displaystyle \sin(y) + x^2e^x = 1$, and cannot easily be put into the form $y = \cdots$. In this case implicit differentiation is necessary, which is just a grand sounding name for a rather simple procedure and one with which you are already familiar. All that is done is to differentiate any function of $y$ using the function-of-function or product rule or both, as appropriate, and remembering that the differential of $y$ is $dy/dx$.
 # 
@@ -187,7 +191,15 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # To test how well you understand this, find $dx/dy$ by direct calculation using $\displaystyle\sin(y) + x^2e^x = 1$, and thus show that $\displaystyle \frac{dy}{dx}=\left( \frac{dx}{dy} \right)^{-1}$.
 # 
-# An apparently hard differentiation is to find $dy/dx$ for $\displaystyle y^y-x^x=0$. This is however made easier if logs are taken first then differentiated implicitly. Thus differentiate $y\ln(y)=x\ln(x)$ leading to $\displaystyle \frac{dy}{dx}\ln(y)+\frac{y}{y}\frac{dy}{dx}=\ln(x)+\frac{x}{x}$ which can be simplified to $\displaystyle \frac{dy}{dx}\left(1+\ln(y)\right)=1+\ln(x)$. SymPy produces the same result after a little simplification and remembering that the function equals zero
+# An apparently hard differentiation is to find $dy/dx$ for $\displaystyle y^y-x^x=0$. This is however made easier if logs are taken first then differentiated implicitly. Thus differentiate $y\ln(y)=x\ln(x)$ leading to 
+# 
+# $$\displaystyle \frac{dy}{dx}\ln(y)+\frac{y}{y}\frac{dy}{dx}=\ln(x)+\frac{x}{x}$$
+# 
+# which can be simplified to 
+# 
+# $$\displaystyle \frac{dy}{dx}\left(1+\ln(y)\right)=1+\ln(x)$$
+# 
+# SymPy produces the same result after a little simplification and remembering that the function equals zero
 
 # In[2]:
 
@@ -199,9 +211,9 @@ ans = diff(f,x)             # define y as a function of x so that it will be dif
 simplify(ans)
 
 
-# ## 4.8 Parametric functions and their differentiation
+# ### 4.8 Parametric functions and their differentiation
 # 
-#   Sometimes it is easier to describe equations in parametric form as two functions with a common or dummy variable, rather than in the conventional way; there is no fundamental reason for doing so, just convenience. An example is the equation of a circle. If it has a radius a and is centred at the origin,
+#   Sometimes it is easier to describe equations in parametric form as two functions with a common or dummy variable, rather than in the conventional way; there is no fundamental reason for doing so, just convenience. An example is the equation of a circle. If it has a radius $a$ and is centred at the origin,
 #   
 # $$\displaystyle  x^2 +y^2 =a^2$$
 # 
@@ -217,7 +229,7 @@ simplify(ans)
 # 
 # To differentiate the parametric form use the function-of-function approach and write
 # 
-# $$\displaystyle  \frac{dy}{dx}=\frac{dy}{dt}\frac{dt}{dx}=\frac{dy}{dt}/\frac{dx}{dt};  \qquad \frac{dx}{dt} \ne 0\tag{23}$$
+# $$\displaystyle  \frac{dy}{dx}=\frac{dy}{dt}\frac{dt}{dx}=\frac{dy}{dt}/\frac{dx}{dt};  \quad \text{provided}\quad\frac{dx}{dt} \ne 0\tag{23}$$
 # 
 # Therefore, $dy/dx$ is always the ratio of the two derivatives with respect to $t$, the parametric variable. 
 # 
@@ -247,7 +259,11 @@ simplify(ans)
 # 
 # $$\displaystyle   x=t^3 -t,\qquad y=2\sin(t^2)$$
 # 
-# The gradient from equation (23) is $\displaystyle \frac{dy}{dx}=\frac{4t\cos(t^2)}{3t^2-1}$. To reform this into an equation in $y$ is possible, but to make an equation in $x$ will be messy and there is no reason to do so. At our 'victim' point, $x  = 2$, the value of $t$ is the solution of $t^3 - t = 2$ which, we can use a built in fsolve function in numpy/scipy or use the Newton - Raphson method which is described in part 10 of this chapter. 
+# The gradient from equation (23) is 
+# 
+# $$\displaystyle \frac{dy}{dx}=\frac{4t\cos(t^2)}{3t^2-1}$$
+# 
+# To reform this into an equation in $y$ is possible, but to make an equation in $x$ will be messy and there is no reason to do so. At our 'victim' point, $x  = 2$, the value of $t$ is the solution of $t^3 - t = 2$ which, we can use a built in fsolve function in numpy/scipy or use the Newton - Raphson method which is described in part 10 of this chapter. 
 
 # In[4]:
 
@@ -276,7 +292,7 @@ print('y0 = ', 2*np.sin(ans**2))
 # 
 # and so forth for other tangents. The vertical tangent occurs at $dx/dt = 3t^2 - 1 = 0$ or $t = 1/\sqrt{3}$, with $x = \pm 0.385$ and $y = 0.654$, which are either side of the central loop in the curve.
 # 
-# #### Calculating the Parametric Equation
+# #### **Calculating the Parametric Equation**
 # 
 # As an example consider finding the parametric equations of an epicycloid. This is the curve formed when one disc rotates about another, such as two coins. In the (false) models of the solar system, such as proposed by Ptolemy, epicycloids were used to describe the motion of the planets. Initially these worked quite well but as time passes such models, based as they were on incorrect physics, became increasingly inaccurate.  If the epicycloid curve produced has one cusp it is called a cardioid due to its heart-like shape, those with two cusps are called nephroids after the shape of a kidney. Figure 6a shows two epicycloids, the number of cusps corresponds to the ratio of radii.
 # 
@@ -323,63 +339,66 @@ print('y0 = ', 2*np.sin(ans**2))
 # 
 # Notation $f'=d/dx,\; f(x),\; g(x) $ are general functions in $x$ such as $x^2$ or $\sin(x)e^x$ etc. but mostly written as $f$ and $g$ for clarity. Constants used are $a$ and $b$.
 # 
-# #### Exponentials 
+# #### **Exponentials**
 # $$\displaystyle   y=e^{f(x)} \qquad \frac{dy}{dx}=f'(x)e^{f(x)}$$
-# 
 # _______
-# #### Logarithms
+# #### **Logarithms**
 # $$\displaystyle   y=\ln(f(x))\qquad \frac{d}{dx} \ln\left(  f(x) \right) =\frac{f'(x)}{f(x)} $$
-# 
 # _________
-# #### Function of a Function or Chain Rule
+# #### **Function of a Function or Chain Rule**
 # $$\displaystyle  \begin{align} \frac{d}{dx}f\left(g(x)  \right)&=\frac{df}{du}\frac{du}{dx} ;\quad \text{where } u=g(x)\\
 # \frac{d}{dx}f\left(g(x)  \right)&=f'g'\\
 # \frac{dy}{dx}&=\frac{dy}{dt}\frac{dt}{dx}
 # \end{align}$$
 # 
 # $$\displaystyle \text{e.g.}\qquad y=\sin(ax^2+x^{-3}) \quad \to\quad \frac{dy}{dx}=\cos(ax^2+x^{-3})(2ax-3x^{-4})$$
-# 
 # _________
-# #### Product Rule
+# #### **Product Rule**
 # $$\displaystyle   \frac{d}{dx}fg = g\frac{d}{dx}f+f\frac{d}{dx}g \equiv gf'+fg'$$
 # 
-# or explicitly
+# $\qquad$or explicitly
 # 
 # $$\displaystyle   \frac{d}{dx}f(x)g(x) = g(x)\frac{df(x)}{dx}+f(x)\frac{dg(x)}{dx}$$
 # 
 # $$\displaystyle \text{e.g.}\qquad  y=x^2e^{-x} \qquad \to \qquad \frac{dy}{dx}=2xe^{-x}-x^2e^{-x}$$
 # _________
 # 
-# #### Function of powers of $x$
+# #### **Function of powers of $x$**
 # 
 # $$\displaystyle  y=a^x \qquad \text{ take logs }; \qquad \ln(y)=x\ln(a) \qquad \to \qquad \frac{1}{y}\frac{dy}{dx}=\ln(a)$$
-# 
 # __________
-# #### Reciprocal Derivatives
+# #### **Reciprocal Derivatives**
 # 
 # $$\displaystyle   \frac{dy}{dx}=\left(\frac{dx}{dy}  \right)^{-1}; \qquad \frac{d^2y}{dx^2}=-\frac{d^2x}{dy^2} \left( \frac{dx}{dy} \right)^{-3}$$
 # 
 # __________
-# #### Changing Variables
+# #### **Changing Variables**
 # 
-# If a function is expressed as $f(x)$ and you want it as $f(t)$ then; 
+# $\qquad$If a function is expressed as $f(x)$ and you want it as $f(t)$ then; 
+# 
 # $$\displaystyle   \frac{df}{dt}=\frac{df}{dx}\frac{dx}{dt}$$
 # 
 # ________
-# #### Parametric equations
+# #### **Parametric equations**
 # 
 # $$\displaystyle  y=f(t),\qquad x=g(t); \qquad \frac{dy}{dx}=\frac{dy}{dt}\frac{dt}{dx}= \frac{dy}{dt}/\frac{dx}{dt}$$
 # 
 # _________
-# #### Integrals
+# #### **Integrals**
 # 
 # $$\displaystyle  \frac{d}{dx}\int f(u)du=f(x);\qquad \frac{d}{dx} \int_a^x f(u)du=f(x);\qquad \frac{d}{dx} \int_a^b f(u)du=0$$
 # 
-# If the limits $u$ and $v$ are functions of $x$ then use Leibniz's rule
+# $\qquad$If the limits $u$ and $v$ are functions of $x$ then use Leibniz's rule
 # 
 # $$\displaystyle  \frac{d}{dx}\int_{v(x)}^{u(x)}f(s)ds=u'f(u)-v'f(v)$$
 # 
-# If the differentiation variable is not the integration variable
+# $\qquad$If the differentiation variable is not the integration variable
 # 
 # $$\displaystyle  \frac{d}{da}\int f(a,s)ds=\int\frac{\partial}{\partial a}f(a,s)ds$$
 # 
+
+# In[ ]:
+
+
+
+

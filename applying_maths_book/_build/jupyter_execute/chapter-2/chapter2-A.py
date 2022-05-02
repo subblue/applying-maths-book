@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Real, imaginary,conjugate and modulus
+# ## Real, imaginary, conjugate and modulus
 
 # In[1]:
 
@@ -15,7 +15,7 @@ init_printing()                      # allows printing of SymPy results in types
 plt.rcParams.update({'font.size': 16})  # set font size for plots
 
 
-# ## Motivation and concept
+# ### Motivation and concept
 # 
 # Complex numbers arise naturally in mathematics, often when solving quadratic equations such as $x^2+x+1=0$, which has the solutions 
 # 
@@ -49,7 +49,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # $$\displaystyle i^0=1, \quad i^1=i, \quad i^2=-1, \quad i^3=-i , \quad i^4=1, \quad i^5=i , \quad i^6=-1,\quad i^7=-i \cdots$$
 # 
-# ## 1 Complex conjugate
+# ### 1 Complex conjugate
 # 
 # Complex numbers possess a new property compared to real numbers and this is the complex conjugate. If $z = a + ib$ then the complex conjugate is defined as
 # 
@@ -105,6 +105,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # ![Drawing](chapter2-fig3.png )
 # 
 # Figure 3. Left: Adding two complex numbers together to form $z_1+z_2$ green dashed line. Right: Adding and subtracting $z$ and its complex conjugate $z^*$. The red arrow pointing down has the same length and angle as has $z^*$ except that it starts at the end point of the line from the origin to $z$ and ends at $z+z^*$ The arrow going up is the reverse of that going down and leads to $z-z^*$. 
+# _________
 # 
 # ### 1.3 Modulus and Argument
 # 
@@ -154,14 +155,14 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # $\qquad$ $z^* = a - ib = r\left(\cos(\theta) - i \sin(\theta)\right)$ is the complex conjugate of $z$.
 # 
-# $\qquad$ $zz^* = | z |^2 = | z* |^2$ is the _absolute value squared_ is always a positive real number.
+# $\qquad$ $zz^* = | z |^2 = | z^* |^2$ is the _absolute value squared_ is always a positive real number.
 # 
 # ![Drawing](chapter2-fig4.png )
 # 
 # Figure 4. As the angle (argument) $\theta$ varies anticlockwise from $0\to 2\pi$, the complex number changes from $1 \to i$ to $-1$ to $-i$ according to Euler's theorem, equation 19. A unit circle has radius of $1$.
 # ______
 # 
-# ## 2 Using Python and Sympy
+# ### 2 Using Python and Sympy
 # 
 # When using a computer language the complex number $a+ib$ is not usually written in the mathematical way. In Python $\mathtt{1J}$ or $\mathtt{1j}$ is used instead of $i$, thus $\mathtt{3*1j}$ is permissible, however, so is $\mathtt{3j}$ or $\mathtt{5J}$. The parts of a complex number can be extracted by using the $\mathtt{re()}$ and $\mathtt{im()}$ functions. An alternative is to use $\mathtt{z.real,\; z.imag}$ or $\mathtt{z.conjugate()}$ (notice brackets) as shown below. In Sympy $\mathtt{I}$ is used to represent $i$, so care has to be taken not to use this as a variable or constant.
 

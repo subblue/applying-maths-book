@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Solutions Q38 - 46
+# # Solutions Q39 - 46
 
 # In[1]:
 
@@ -175,9 +175,9 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # The dot products are 
 # 
-# $$\displaystyle \vec\mu_O\cdot\vec\mu_x=\frac{\alpha\beta}{3}\begin{bmatrix}1&-1&1\end{bmatrix}\begin{bmatrix}-1\\1\\-1 \end{bmatrix}=-\alpha\beta \\
-# \vec\mu_O\cdot\vec R=\frac{\alpha d}{3}\begin{bmatrix}1&-1&1\end{bmatrix}\begin{bmatrix}1\\-1\\-1 \end{bmatrix}=\frac{\alpha d}{3} \\
-# \vec\mu_x\cdot\vec R=\frac{\beta d}{3}\begin{bmatrix}-1&1&-1\end{bmatrix}\begin{bmatrix}1\\-1\\-1 \end{bmatrix}=-\frac{\beta d}{3} $$
+# $$\displaystyle \begin{align}\vec\mu_O\cdot\vec\mu_x &=\frac{\alpha\beta}{3}\begin{bmatrix}1&-1&1\end{bmatrix}\begin{bmatrix}-1\\1\\-1 \end{bmatrix}=-\alpha\beta \\
+# \vec\mu_O\cdot\vec R &=\frac{\alpha d}{3}\begin{bmatrix}1&-1&1\end{bmatrix}\begin{bmatrix}1\\-1\\-1 \end{bmatrix}=\frac{\alpha d}{3} \\
+# \vec\mu_x\cdot\vec R &=\frac{\beta d}{3}\begin{bmatrix}-1&1&-1\end{bmatrix}\begin{bmatrix}1\\-1\\-1 \end{bmatrix} =-\frac{\beta d}{3} \end{align}$$
 # 
 # The dipolar energy is therefore
 # 
@@ -195,33 +195,33 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 
 alpha,beta,R,d=symbols('alpha,beta,R,d')
 
-muXa = beta*Matrix([-1,1,-1])/sqrt(3)   # x dipole axial
-muXe = beta*Matrix([-1,-1,1])/sqrt(3)   # x dipole equatorial
-muOa = alpha*Matrix([1,-1,1])/sqrt(3)   # O dipole axial
-muOe = alpha*Matrix([-1,-1,-1])/sqrt(3) # O dipole equatorial
+muXa = beta*Matrix( [-1, 1, -1] )/sqrt(3)   # x dipole axial
+muXe = beta*Matrix( [-1,-1,  1] )/sqrt(3)   # x dipole equatorial
+muOa = alpha*Matrix([1, -1,  1] )/sqrt(3)   # O dipole axial
+muOe = alpha*Matrix([-1,-1, -1] )/sqrt(3) # O dipole equatorial
 R    = d*Matrix([1,-1,-1])/sqrt(3)      # vector between dipoles
-energy_axial_axial= (muOa.T * muXa)/d**3-3*(muOa.T *R)*(muXa.T*R)/d**5
+energy_axial_axial= (muOa.T * muXa)/d**3 - 3*(muOa.T *R)*(muXa.T*R)/d**5
 energy_axial_axial
 
 
 # In[3]:
 
 
-energy_axial_equat= (muOe.T * muXa)/d**3-3*(muOe.T *R)*(muXa.T*R)/d**5
+energy_axial_equat = (muOe.T * muXa)/d**3 - 3*(muOe.T *R)*(muXa.T*R)/d**5
 energy_axial_equat
 
 
 # In[4]:
 
 
-energy_equat_equat= (muOe.T * muXe)/d**3-3*(muOe.T *R)*(muXe.T*R)/d**5
+energy_equat_equat = (muOe.T * muXe)/d**3 - 3*(muOe.T *R)*(muXe.T*R)/d**5
 energy_equat_equat
 
 
 # In[5]:
 
 
-energy_equat_axial= (muOe.T * muXa)/d**3-3*(muOe.T *R)*(muXa.T*R)/d**5
+energy_equat_axial = (muOe.T * muXa)/d**3 - 3*(muOe.T *R)*(muXa.T*R)/d**5
 energy_equat_axial
 
 
@@ -264,7 +264,11 @@ energy_equat_axial
 # 
 # $$\displaystyle \vec\mu_1\cdot\vec\mu_2=\begin{bmatrix}-0.699& -0.599& -0.388\end{bmatrix}\begin{bmatrix}0.823 \\0.344 \\-0.451\end{bmatrix}=-0.607$$
 # 
-# and calculating the other dot products in a similar way produces; $\chi = \vec\mu_1\cdot\vec\mu_2 - 3(\vec\mu_1\cdot\vec r)(\vec\mu_2\cdot\vec r) = -0.689$ and therefore $\chi^2 = 0.476$. The calculation in Python can be done as follows:
+# and calculating the other dot products in a similar way produces; 
+# 
+# $$\displaystyle \chi = \vec\mu_1\cdot\vec\mu_2 - 3(\vec\mu_1\cdot\vec r)(\vec\mu_2\cdot\vec r) = -0.689$$
+# 
+# and therefore $\chi^2 = 0.476$. The calculation in Python can be done as follows:
 
 # In[6]:
 

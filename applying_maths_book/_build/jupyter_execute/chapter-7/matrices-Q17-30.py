@@ -23,7 +23,7 @@
 # ### Q20 Similarity transform
 # Using the similarity transforms, $A_1 = \sigma_V^{-1}C_3^-\sigma_V$ and $A_2 = \sigma_V^{-1}C_3^+\sigma_V$ show that the $\sigma$ operations belong to the same class in $C_{3V}$ as $C_3^+$ and $C_3^-$. Use the matrices from the previous question and Sympy to perform the matrix multiplication if necessary.
 # 
-# ### Q21 XeF$_4$
+# ### Q21 $\mathrm{XeF_4}$
 # The molecule XeF$_4$ is square planar and because of its high symmetry, it has many symmetry elements. Assign its point group and also sketch and list all the symmetry elements. To confirm positively the point group you will need a set of tables. These can be found in most physical chemistry textbooks and in any book on molecular group theory.
 # 
 # **Strategy:** Not all the symmetry elements need be to found to assign a point group. Sketching the molecule immediately suggests fourfold symmetry. Do not forget to look for S symmetry elements and a centre of inversion. Use the point group 'road map' to identify the point group if necessary; see Fig.17.
@@ -39,12 +39,12 @@
 # 
 # (b) Show that operators $C_2$ and $\sigma'$ commute.
 # 
-# ### Q24 H2C=CF$_2$
-# Using the molecule H2C=CF$_2$, which has $C_{2V}$ symmetry, generate matrices for each operation, $C_2, \sigma$ and $\sigma'$. Use the basis set $(H_a, H_b, C, C, F_a, F_b)$. Swap the order of atoms in the $C_2$ basis set in any way you choose and show that although the matrix formed is different, the matrix multiplication has the same result on the molecule. The fluorine and hydrogen atoms are in the $\sigma$ plane. (Use Sympy to perform the matrix multiplications.)
+# ### Q24 $\mathrm{H_2C=CF_2}$
+# Using the molecule $\mathrm{H_2C=CF_2}$, which has $C_{2V}$ symmetry, generate matrices for each operation, $C_2, \sigma$ and $\sigma'$. Use the basis set $(H_a, H_b, C, C, F_a, F_b)$. Swap the order of atoms in the $C_2$ basis set in any way you choose and show that although the matrix formed is different, the matrix multiplication has the same result on the molecule. The fluorine and hydrogen atoms are in the $\sigma$ plane. (Use Sympy to perform the matrix multiplications.)
 # 
 # ![Drawing](matrices-fig27.png)
 # 
-# Figure 27 F$_2$CCH$_2$ which belongs to the $C_{2V}$ point group as do H$_2$O, SO$_2$, NO$_2$ and COCl$_2$.
+# Figure 27 $\mathrm{F_2CCH_2}$ which belongs to the $C_{2V}$ point group as do $\mathrm{H_2O,\; SO_2,\; NO_2}$ and $\mathrm{COCl_2}$.
 # _________
 
 # ### Q25 Pyramidal molecules
@@ -105,10 +105,20 @@
 # **Strategy:** Find the reduced representation first, then place vectors to represent the p orbitals rising out of the plane of the rings. Choosing a victim orbital, work out how this is transformed under each of the symmetry operations in turn, and build up the orbitals comprising a molecular orbital. You will have to choose three different orbitals as victims, because more than one of each type of some symmetry species is present. For example, orbitals on atom $1, 2$, and $9$ do not interconvert so can be chosen as victims. The method is explained in Sections 6.13 and 6.16.
 # 
 # 
-# ### Q30 BF$_3$
-# The molecule BF$_3$ belongs to the point group $D_{3h}$. Work out the symmetry of the displacements describing its in plane stretching vibrational normal modes. The point group is
+# ### Q30 $\mathrm{BF_3}$
+# The molecule $\mathrm{BF_3}$ belongs to the point group $D_{3h}$. Work out the symmetry of the displacements describing its in plane stretching vibrational normal modes. The point group is
 # 
-# ![Drawing](D3h.png)
+# $$\displaystyle \begin{array}{c|rrrrrr|c|c }
+# \large{D_{3h}} &E & 2C_3& 3C_2& \sigma_h & 2S_3& 3\sigma_v & & \\
+# \hline
+# A_1'& 1 &  1&  1&  1&  1&  1& & x^2+y^2+z^2\\
+# A_2'& 1 &  1& -1&  1&  1& -1& R_z &  \\
+# E'  & 2 & -1&  0&  2& -1&  0& (x,y)& (x^2-y^2,xy)\\
+# A_1^"& 1 &  1&  1& -1& -1& -1& & \\
+# A_2^"& 1 &  1& -1& -1& -1&  1& z & \\
+# E^"  & 2 & -1&  0& -2&  1&  0& (R_x,R_y) & (xz,yz)\\
+# \hline
+# \end{array}$$
 # 
 # (One normal mode is doubly degenerate so use Sympy's GramSchmidt function to make the vectors orthogonal.)
 # 

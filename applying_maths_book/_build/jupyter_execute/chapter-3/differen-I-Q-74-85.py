@@ -22,11 +22,11 @@
 # ### Q76 Blackbody radiation law
 # Planck's black-body radiation distribution law is derived as the product of the average energy of the (Bose - Einstein) photons of frequency $\nu$, which is 
 # 
-# $$\displaystyle \langle E\rangle = h\nu[e^{h\nu/k_BT} - 1]^{-1}$$
+# $$\displaystyle \langle E\rangle = h\nu\left(e^{h\nu/k_BT} - 1\right)^{-1}$$
 # 
 # and the density of these states, the number per unit frequency, or $dn/d\nu = 8\pi\nu^2/c^3$. The energy/unit volume/unit frequency is
 # 
-# $$\rho(\nu ) = 8\pi h\left(\frac{\nu}{c}  \right)^3[e^{h\nu/k_BT} - 1]^{-1}$$
+# $$\rho(\nu ) = 8\pi h\left(\frac{\nu}{c}  \right)^3\left(e^{h\nu/k_BT} - 1\right)^{-1}$$
 # 
 # This energy density vs frequency can be used to determine the temperature of a hot body such as a lava flow, a furnace, the sun or another star. The distribution of energy density has a maximum value at a certain frequency at a given temperature.
 # 
@@ -44,7 +44,7 @@
 # ### Q78 Protein forced unfolding
 # In experiments to measure the unfolding of a protein by pulling on one end with the tip of an AFM, the following equation was used to calculate the force $f$ at a given retraction speed $v$ of the AFM tip,
 # 
-# $$ -\frac{x_u}{k_BT}-\frac{d}{df}\ln(h)+\frac{kh}{v}e^{\frac{fx_u}{k_BT}}=0$$
+# $$ -\frac{x_u}{k_BT}-\frac{d}{df}\ln(h)+\frac{kh}{v}e^{fx_u/(k_BT)}=0$$
 # 
 # This is a transcendental equation and cannot be solved algebraically. The constant $x_u$ is a measure of the position of the transition state on the pathway to unfolding and $h$ is the compliance of the cantilever and protein and is $\displaystyle h=\frac{1}{k_s}+\frac{dx}{df}$. The compliance describes how easily the cantilever and the protein deform and is the inverse of the effective force constant. 
 # 
@@ -123,7 +123,7 @@
 # **Strategy:** To calculate $79^{1/9}$ let $c = 79$ and $m = 9$,and find the root when $x^m - c = 0$.
 #  
 # ### Q84 Planets motion
-# The planets move in elliptical orbits around the sun. An ellipse has semi-major and semi-minor axes that are the maximum and minimum radii respectively, measured from the centre of the ellipse to its circumference. If $a$ is the semi-major axis, then the semi-minor axis is $b = \epsilon a$ where $\epsilon$ is the _eccentricity_ of the orbit; $0 \lt \epsilon \le 1$. For the earth $\epsilon = 0.01671$, for Mercury $0.2056$, Pluto $0.2288$ and Halley's comet $0.9761$. (An eccentricity of $ge 1$ produces a hyperbolic path, such as followed by the extra-solar system object ʻOumuamua with a value $1.1995$).
+# The planets move in elliptical orbits around the sun. An ellipse has semi-major and semi-minor axes that are the maximum and minimum radii respectively, measured from the centre of the ellipse to its circumference. If $a$ is the semi-major axis, then the semi-minor axis is $b = \epsilon a$ where $\epsilon$ is the _eccentricity_ of the orbit; $0 \lt \epsilon \le 1$. For the earth $\epsilon = 0.01671$, for Mercury $0.2056$, Pluto $0.2288$ and Halley's comet $0.9761$. (An eccentricity of $\ge 1$ produces a hyperbolic path, such as followed by the extra-solar system object ʻOumuamua with a value $1.1995$).
 # 
 # An important problem in celestial mechanics is to know where a planet or its moon was at a given time in the past or will be in the future, when its current position is known. Kepler solved this problem with the equation
 # 
@@ -150,11 +150,17 @@
 # 
 # ______
 # 
-# ### Q85 Full width of function.
+# ### Q85 Full width of pulse.
 # The Fourier transform of a square pulse has the form $\displaystyle g(\omega) = \frac{(1 - e^{- i\omega \tau})}{i\omega}$ where $\tau$ is the pulse's duration.
 # 
-# (a) Calculate the half width at half maximum (_hwhm_) of the real part of the transform which is $\displaystyle f(\omega)\equiv Re[g(\omega)]=\frac{\tau}{\sqrt{2\pi}}\frac{\sin(\omega \tau )}{\omega \tau}$
+# (a) Calculate the half-width at half maximum (_hwhm_) of the real part of the transform which is $\displaystyle f(\omega)\equiv Re[g(\omega)]=\frac{\tau}{\sqrt{2\pi}}\frac{\sin(\omega \tau )}{\omega \tau}$
 # 
 # (b) Evaluate the _hwhm_ when $\tau = 3$.
 # 
 # **Strategy:** (a) Calculate the function at $\omega = 0$ using l'Hopital's rule, then calculate $f(0) = 1/2$ and obtain an equation for $\omega$. (b) The resulting transcendental equation has to be solved numerically. Plot a graph to convince yourself of the answer.
+
+# In[ ]:
+
+
+
+

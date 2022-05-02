@@ -23,7 +23,7 @@
 # \text{linearly polarised along}\; z& \pmb{\mu}_z,\; \Delta s=0,\; \Delta m=0 & \mu m \\
 # \hline
 # \text{Right and left polarised} &  \pmb{\mu}_{\pm},\; \Delta s=0,\Delta m=\pm 1&\pmb{\mu}_z=\mu\sqrt{s(s+1)-m(m\pm 1)} \\
-# \text{in x-y plane}& \pmb{\mu}_{\pm}=\pmb{\mu}_x+\pm \pmb{\mu}_y & \\ \hline \end{array}$$
+# \text{in x-y plane}& \pmb{\mu}_{\pm}=\pmb{\mu}_x\pm \pmb{\mu}_y & \\ \hline \end{array}$$
 #  
 #  
 # The basis set can be the same as in the text example, equation 24.
@@ -80,14 +80,14 @@
 # (c) Calculate the matrix of expectation values in the basis $m = 0, 1, -1, 2, -2, 3, -3, \cdots $  which
 # means that the wavefunction in the presence of the potential has the form of equation 11 *viz*; $\psi= \sum_{i=0} v_i\varphi_i $.
 # 
-# (d) Solve this problem using Maple, and calculate the new energy levels in the presence of the potential $ $V. Check that the levels are sorted in order of their energy. Assume that $m = 3$ and, using the algebraic expression, compare the energies as $m$ increases versus those for the free rotor. Use the value $A = \hbar^2/2I = 17\,\mathrm{ cm^{-1}}$, which is the value for protons in methanol rotating about the CO bond and, assume $V = 200\,\mathrm{ cm^{-1}}$ for the restricted rotor and zero for the free rotor.
+# (d) Solve this problem using python/numpy/sympy, and calculate the new energy levels in the presence of the potential $V$. Check that the levels are sorted in order of their energy. Assume that $m = 3$ and, using the algebraic expression, compare the energies as $m$ increases versus those for the free rotor. Use the value $A = \hbar^2/2I = 17\,\mathrm{ cm^{-1}}$, which is the value for protons in methanol rotating about the CO bond and, assume $V = 200\,\mathrm{ cm^{-1}}$ for the restricted rotor and zero for the free rotor.
 # 
 # **Strategy:** In (a) you are asked to show that the wavefunction is a solution, not prove it; therefore substitute and simplify to get the answer and do the same for part (b). The solution can be found using methods described in Chapter 10.6. Having these answers, construct the basis set and matrix with the same ordering, any basis set ordering can be chosen as long as it is used throughout. Finally, diagonalize the matrix using Python/Sympy. The matrix element for any Hamiltonian H and quantum numbers $m$ and $m'$ is $\int\psi^*_mH\psi_m d\theta \equiv \langle m|H|m'\rangle$ The wavefunction is complex; therefore, remember to take the complex conjugate where necessary.
 # 
-# The expectation values of operator $H^0$ produce only diagonal terms in the matrix, because, as the saying goes, "$H^0$ is diagonal in its own eigenstates". This means that $H^0$ exactly solves the Schroedinger equation, $H^0\varphi = E_0\varphi$, and $E_0$ is the energy for each quantum level. In this example, $H^0$ would correspond to that for the rigid rotor with no internal rotation. The other operator $H^1$, has the effect of coupling energy levels and therefore, in calculating the expectation values, the two numbers $m$ and $m'$ are different.
+# The expectation values of operator $H^0$ produce only diagonal terms in the matrix, because, as the saying goes, '$H^0$ is diagonal in its own eigenstates'. This means that $H^0$ exactly solves the Schroedinger equation, $H^0\varphi = E_0\varphi$, and $E_0$ is the energy for each quantum level. In this example, $H^0$ would correspond to that for the rigid rotor with no internal rotation. The other operator $H^1$, has the effect of coupling energy levels and therefore, in calculating the expectation values, the two numbers $m$ and $m'$ are different.
 # 
 # ### Q5
-# The first three levels observed in the hindered rotational spectrum of $\mathrm{CH_3CH_2F}$, are at $242.7, 225.5, 208.4$ and $177.0\,\mathrm{ cm^{-1}}$ (Sage & Klemperer 1963). Using the method of the previous question, and by fitting the observed energy difference to trial values, find the value of $A = \hbar^2/2I$ in $\mathrm{ cm^{-1}}$. The potential's magnitude is $V_3 = 1158\, \mathrm{ cm^{-1}}$.
+# The first three transitions observed in the hindered rotational spectrum of $\mathrm{CH_3CH_2F}$, are at $242.7, 225.5, 208.4$ and $177.0\,\mathrm{ cm^{-1}}$ (Sage & Klemperer 1963). Using the method of the previous question, and by fitting the observed energy difference to trial values, find the value of $A = \hbar^2/2I$ in $\mathrm{ cm^{-1}}$. The potential's magnitude is $V_3 = 1158\, \mathrm{ cm^{-1}}$.
 # 
 # By guessing some values and repeating the calculation with a sufficiently large basis set a value of
 # $A = 6.3\,\mathrm{ cm^{-1}}$ provides a fairly good fit to the data. Do you agree?
@@ -118,7 +118,7 @@
 # 
 # ( An orthorhombic crystal has $90^\mathrm{o}$ angles but different lengths along the $x, y, z$-axis.)
 # 
-# (a) Calculate the orbitals' energies by setting up the secular equation using the spherical harmonic functions given below to describe the wavefunctions. Examine the matrix element integrals of the form $\langle Y_{0,\pm 1} | V | Y_{0,\pm 1}\rangle$  and decide which ones are zero without calculating them all. The radial part of any wavefunction can be ignored as it does not depend on $A$ and $B$ and is the same in all directions. The angular parts of the orbitals are
+# (a) Calculate the orbitals' energies by setting up the secular equation using the spherical harmonic functions ($Y$)  given below to describe the wavefunctions. Examine the matrix element integrals of the form $\langle Y_{0,\pm 1} | V | Y_{0,\pm 1}\rangle$  and decide which ones are zero without calculating them all. The radial part of any wavefunction can be ignored as it does not depend on $A$ and $B$ and is the same in all directions. The angular parts of the orbitals are
 # 
 # $$\displaystyle Y_{10}=n\sqrt{2}\cos(\theta),\qquad Y_{1,\pm 1}=\mp n\sin(\theta)e^{\pm i\varphi}$$
 # 
@@ -130,13 +130,13 @@
 # 
 # **Strategy:** The potential is in $x, y, z$, the wavefunctions in $r, \theta, \varphi$, so the conversions from Cartesian to spherical polar coordinates are needed. These are 
 # 
-# $$\displaystyle z = r \cos(\theta), y = r \sin(\theta)\sin(\varphi), z = r \sin(\theta)\cos(\varphi)$$
+# $$\displaystyle z = r \cos(\theta),\quad y = r \sin(\theta)\sin(\varphi),\quad z = r \sin(\theta)\cos(\varphi)$$
 # 
 # see Chapter 4.11. The Jacobian for the change from Cartesian to spherical polar coordinates is also needed, this is 
 # 
 # $$\displaystyle dxdydz \to r^2 \sin(\theta)drd\theta d\varphi$$
 # 
-# Examining the integrals first can determine whether they are zero or not. The integration limits on $\theta$ are $ 0 \to \pi$, and $\varphi$ are $0 \to 2\phi$. There are three values of the m quantum numbers therefore, ordering of the basis set could be $0, 1, -1$. The following results are useful;
+# Examining the integrals first can determine whether they are zero or not. The integration limits on $\theta$ are $ 0 \to \pi$, and $\varphi$ are $0 \to 2\phi$. There are three values of the $m$ quantum numbers therefore, ordering of the basis set could be $0, 1, -1$. The following results are useful;
 # 
 # $$\displaystyle \begin{align} &\int_0^{2\pi}\cos^2(\varphi)d\varphi =\int_0^{2\pi}\sin^2(\varphi)d\varphi=\pi \\
 # &\int_0^{2\pi}\cos^n(\varphi)d\varphi   =\int_0^{2\pi}\sin^n(\varphi)d\varphi= (0 \; \text{if }n\;  \text{odd and}\; \ne 0 \; n\;\text{even} ) \\

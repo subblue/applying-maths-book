@@ -32,8 +32,8 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # In[2]:
 
 
-f = lambda x:  1.0 -6.0*x +15*x**2 -20.0*x**3 +15.0*x**4 -6.0*x**5 +x**6
-df= lambda x: -6.0 +30.0*x -60.0*x**2 +60.0*x**3 -30.0*x**4 +6.0*x**5      # derivative
+f = lambda x:  1.0 - 6.0*x + 15*x**2 - 20.0*x**3 + 15.0*x**4 - 6.0*x**5 + x**6
+df= lambda x: -6.0 + 30.0*x - 60.0*x**2 + 60.0*x**3 - 30.0*x**4 + 6.0*x**5      # derivative
 s  = 0.8
 for i in range(100):
     snew = s - f(s)/df(s)
@@ -68,7 +68,7 @@ print(s)
 # In[3]:
 
 
-x, n = symbols('x n',positive=True)          # use SymPy
+x, n = symbols('x, n',positive=True)          # use SymPy
 
 s = 1.0 - 1.0/np.exp(1.0)                    # initial value
 ans_s = []                                   # arrays to hold results
@@ -147,7 +147,7 @@ for i in range(len(ans_s)):
 #fig1= plt.figure( figsize=(6,6) )    # remove # to plot
 #plt.rcParams.update({'font.size': 16})
 
-Leqn = lambda r,x: r*x*(1.0-x)        # logistic map eqn
+Leqn = lambda r,x: r*x*(1.0 - x)        # logistic map eqn
 
 n = 100                               # increase this for more detail, e.g 200
 dn= 100                               # ditto
@@ -178,7 +178,7 @@ for j in range(n):
 #plt.show()
 
 
-# ## 2 Numerical methods used to find the roots of an equation
+# ### 2 Numerical methods used to find the roots of an equation
 # 
 # ### Secant method
 # 
@@ -202,13 +202,13 @@ for j in range(n):
 
 # Algorithm 2; Secant method
 
-f  = lambda x: x**5+x - 1      # function to solve
+f  = lambda x: x**5 + x - 1      # function to solve
 x1 = 0.0  
 x2 = 0.5
 xm = 2*x2
 xtol=1e-8
 while abs(f(xm))  > xtol:
-    xm = x1 - f(x1)*(x2-x1)/(f(x2)-f(x1))
+    xm = x1 - f(x1)*(x2 - x1)/(f(x2) - f(x1))
     x1 = x2
     x2 = xm
     pass
@@ -222,13 +222,13 @@ print('{:s} {:12.8f}'.format('root = ', xm)   )
 
 # Algorithm 3; Regula Falsi
 
-f  = lambda x: x**5+x-1
+f  = lambda x: x**5 + x - 1
 x1 = 0.0
 x2 = 1.0
 xm = 2*x2
 xtol = 1e-8
 while abs(f(xm))  > xtol:
-    xm = x1-f(x1)*(x2-x1)/(f(x2)-f(x1))
+    xm = x1 - f(x1)*(x2 - x1)/(f(x2) - f(x1))
     if f(x1) > f(x2) :
         x1 = xm
     else:
@@ -246,14 +246,14 @@ print('{:s} {:12.8f}'.format('root = ', xm)   )
 
 # Algorithm 4; Bisection Method
 
-f  = lambda x: x**5+x-1
+f  = lambda x: x**5 + x - 1
 
 def bisect(f,x1,x2):   
     xm   = 2*x2
     xtol = 1e-8
     n = 0
     while abs(f(xm))  > xtol and n < 40:    # limit loop to 40 times
-        xm = (x2+x1)/2.0
+        xm = (x2 + x1)/2.0
         if f(x1)*f(xm) > 0:
             x1 = xm
         else:
@@ -266,7 +266,7 @@ ans = bisect(f,0.0,1.0)    # call bisect with initial values 0 and 1
 print('{:s}  {:12.8f}'.format('root = ', ans)   )
 
 
-# ## 3 Numerical integration
+# ### 3 Numerical integration
 # Two methods of numerical integration have been briefly described in other chapters, one is the series expansion of a function and then a numerical evaluation of the terms; the other is the Euler - Maclaurin formula Chapter 5.7 and care needs to be exercised with both these methods. Three general and simpler methods are now outlined; these are the mid-point, the trapezoid, and Simpson's rule. More sophisticated numerical methods than these are described in Numerical Recipes (Prest et al. 1986) and similar specialized texts.
 # 
 # Each of these methods divides the function to be integrated into small strips at predetermined abscissas, which are then multiplied by a certain constant number depending on the method, and added together. The integration becomes a summation, Fig. 3, and the general name for such a numerical integration method is *quadrature*. These methods are similar to the basic way we think about integration as the limiting area of a summation of rectangular strips as the width of each strip tends to zero. If the strips are fine enough, the result is a good approximation to the true value. In general, however, we do not initially know how many strips will be needed and some experimentation with this number is always necessary.
@@ -328,7 +328,7 @@ print('{:s}  {:12.8f}'.format('root = ', ans)   )
 # Algorithm 5; mid point integration method writtten as a subroutine or def
 #--------------------------
 def mid_point(f,a,b,N):    # define routine
-    h = (b-a)/N
+    h = (b - a)/N
     s = 0.0
     for j in range(N):              # last value is N-1, first 0
         s = s +h*f( a+(j+0.5)*h )
@@ -363,12 +363,12 @@ f = lambda x: np.exp(-x**2)     # define function
 a = 0.0
 b = 1.0
 N = 20
-h = (b-a)/(N)
+h = (b - a)/(N)
 s = 0.0
 for j in range(N+1):              # last value is N, first 0
     s = s + 2*f( a + j*h )
     
-ss= h*(s -(f(a)+f(b))  )/2.0   
+ss= h*(s -(f(a) + f(b))  )/2.0   
 print('{:s} {:6.5f}'.format('sum = ', ss) )
 
 
@@ -390,7 +390,7 @@ print('{:s} {:6.5f}'.format('sum = ', ss) )
 def simp(f,a,b,N):                      # simpson's rule subroutine
 
     h = (b-a)/(N)
-    s = -f(a)-f(b)
+    s = - f(a) - f(b)
     k=1
     for j in range(N+1):                # last value is N, first 0
         if k == 1:                    
@@ -414,7 +414,7 @@ print('{:s} {:6.5f}'.format('sum = ', ss) )
 
 # and as can be seen this result is much closer to the algebraic one that the other methods for the same number of points in the integration.
 # 
-# #### Example. Concentration of ion pairs
+# #### **Example. Concentration of ion pairs**
 # Bjerrum's theory of ionic association in solution, the concentration of ion pairs is
 # 
 # $$\displaystyle n_{1,2}=3n_1\left( \frac{e^2}{4\pi\epsilon_0k_BT} \right)^3\left( \frac{1}{\epsilon a_0} \right)^3\int_2^be^xx^{-4}dx$$
@@ -436,13 +436,13 @@ print('{:s} {:6.5f}'.format('sum = ', ss) )
 
 # integral in Byerrum equation using Simpson's method
 
-f = lambda x: np.exp(x)*x**(-4)   # function to ingtegrate
+f = lambda x: np.exp(x)*x**(-4)                      # function to ingtegrate
 a = 2.0
 N = 100
 print('{:s}'.format('limit b    integral'))
-for k in range(3,35,9): # start 3 , end 30, step 9
+for k in range(3,30,5):                              # start 3 , end 30, step 5
     b = k
-    s = simp(f,a,b,N)             # use Simpson's rule
+    s = simp(f,a,b,N)                                # use Simpson's rule
     print('{:4d}      {:10.6g}'.format(b, s) )
     pass
 
@@ -451,7 +451,7 @@ for k in range(3,35,9): # start 3 , end 30, step 9
 # 
 # Integrating a curve formed from data points obtained from an experiment has to be done numerically. The safest method is to draw straight lines between the data points and calculate the area as rectangles and triangles, which is what the trapezoidal method does, and this works even if the data is not evenly spaced. You might in addition want to fit the data by a least squares method, which has the effect of smoothing the data, integrating the resulting equation and comparing the results. Alternatively, fitting a polynomial to the data and then integrating may give the required solution.
 # 
-# ## 3.6 Atomic and molecular beam scattering
+# ### 3.6 Atomic and molecular beam scattering
 # 
 # In this next extended example, more of a 'real world' rather than a purely mathematical calculation is described; it is the classical model of the elastic scattering of one particle, an atom or molecule, off another. The formulae are developed first, and then integrated using the Coulomb and Lennard-Jones 6-12 potentials, the latter being done numerically. In this example, the scattering angle is calculated. In a later example, the actual trajectory followed by a particle during elastic scattering is calculated and drawn.
 # 
@@ -566,10 +566,9 @@ for k in range(3,35,9): # start 3 , end 30, step 9
 # ![Drawing](num-methods-fig5.png)
 # 
 # Figure 5. Scattering angle as fraction of $\pi$ radians or $\chi/\pi$ vs dimensionless parameter $x = b/d$ for hard sphere and $x = 2E_0b/\alpha$ for repulsive Coulomb potentials (see text). The inset diagrams show, schematically, Coulomb deflections with potential as diffuse filled circles). When the impact parameter $b$ is greater than the sum of the radii $d$ there is no scattering in the hard sphere collision, but this does occur with the coulomb potential as this has a finite, although decreasing value at large separation's.
-# 
 # _____
 # 
-# ## 3.10 The Lennard-Jones potential
+# ### 3.10 The Lennard-Jones potential
 # 
 # The LJ potential 
 # 

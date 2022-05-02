@@ -2,12 +2,16 @@
 # coding: utf-8
 
 # ## De Moivre's theorem and integer powers of complex numbers
+
+# ### Complex number as $z = r\left(\cos(\theta) + i \sin(\theta)\right)$
 # 
-# A complex number $z$ can be written as
+# A complex number $z=a+ib$ can be written equivalently as
 # 
 # $$\displaystyle z = r\left(\cos(\theta) + i \sin(\theta)\right)$$
 # 
-# and if $n$ is an integer, what is $z^n = r^n\left(\cos(\theta) + i \sin(\theta)\right)^n$ ? The trigonometric part can be shown to have the simple form,
+# and if $n$ is an integer, what is $z^n = r^n\left(\cos(\theta) + i \sin(\theta)\right)^n$ ? 
+# 
+# The trigonometric part can be shown to have the simple form,
 # 
 # $$\displaystyle \left(\;\cos(\theta) + i \sin(\theta)\;\right)^n = \cos(n\theta) + i \sin(n\theta) \tag{8}$$
 # 
@@ -20,24 +24,24 @@
 # To demonstrate that De Moivre's theorem is correct, calculate the product of two complex numbers expressed in angular form, and then let $\theta_1 = \theta_2$. Suppose, for simplicity, that $r_1 = r_2 = 1$, then the product of two numbers is
 # 
 # $$\displaystyle \begin{align}
-# \left(\cos(\theta_1) + i\sin(\theta_1)\right)\left(\cos(\theta_2) + i\sin(\theta_2)\right) 
+# \big(\cos(\theta_1) + i\sin(\theta_1)\big)\big(\cos(\theta_2) + i\sin(\theta_2)\big) 
 # & = \cos(\theta_1)\cos(\theta_2) + i \cos(\theta_1)\sin(\theta_2) + i\sin(\theta_1)\cos(\theta_2) -\sin(\theta_1)\sin(\theta_2)\\
 # &=\cos(\theta_1 +\theta_2)+i\sin(\theta_1 +\theta_2)
 # \end{align}$$
 # 
 # The double angle formula (Chapter 1.5.1) was used in the last step, and letting $\theta_1 = \theta_2$ produces
 # 
-# $$\displaystyle \left(\cos(\theta) + i\sin(\theta)\right)^2 = \cos(2\theta) + i\sin(2\theta)$$
+# $$\displaystyle \big(\cos(\theta) + i\sin(\theta)\big)^2 = \cos(2\theta) + i\sin(2\theta)$$
 # 
 # as predicted by De Moivre's theorem. This result can be generalized to any power of a real or complex value $n$.
 # 
-# The product $z_1z_2$ and quotient $z-1/z-2$ of two complex numbers are written in this form as
+# The product $z_1z_2$ and quotient $z_1/z_2$ of two complex numbers are written in this form as
 # 
-# $$\displaystyle z_1z_2 = r_1r_2\left(\cos(\theta_1 + \theta_2) + i \sin(\theta_1 + \theta_2)\right) \tag{10}$$
+# $$\displaystyle z_1z_2 = r_1r_2\big(\cos(\theta_1 + \theta_2) + i \sin(\theta_1 + \theta_2)\big) \tag{10}$$
 # 
 # where the angles add, and provided that $z_2 \ne 0$,
 # 
-# $$\displaystyle \frac{z_1}{z_2} =\frac{r_1}{r_2} \left(\cos(\theta_1 -\theta_2)+i\sin(\theta_1 -\theta_2)\right)$$
+# $$\displaystyle \frac{z_1}{z_2} =\frac{r_1}{r_2} \big(\cos(\theta_1 -\theta_2)+i\sin(\theta_1 -\theta_2)\big)$$
 # 
 # where the angles subtract. 
 # 
@@ -48,15 +52,15 @@
 # Figure 5. Geometrical interpretation of the multiplication of two complex numbers.
 # _____
 # 
-# #### Hyperbolic functions and complex numbers
+# ### Hyperbolic functions and complex numbers
 # 
 # In the case of hyperbolic functions there are related formulae since $\displaystyle \cosh(x) + \sinh(x) = e^x$ then 
 # 
-# $$\displaystyle (\;\cosh(x)+\sinh(x)\;)^n=\cosh(nx)+\sinh(nx) $$
+# $$\displaystyle \big(\cosh(x)+\sinh(x)\big)^n=\cosh(nx)+\sinh(nx) $$
 # 
 # and for a complex number $z=x+iy$ 
 # 
-# $$\displaystyle (\;\cos(z)+\sin(z)\;)^n=\cos(nz)+\sin(nz) $$
+# $$\displaystyle \big(\cos(z)+\sin(z)\big)^n=\cos(nz)+\sin(nz) $$
 # 
 # 
 # ### 3.1 Roots of a complex number
@@ -103,8 +107,7 @@
 # 
 # ![Drawing](chapter2-fig6.png )
 # 
-# Figure 6. The five roots of the equation $z^5 = 1$ form a pentagon.
-# 
+# Figure 6. The five roots of the equation $z^5 = 1$ form a pentagon. The radial lines to each root are $72^\text{o}$ apart. 
 
 # In[ ]:
 

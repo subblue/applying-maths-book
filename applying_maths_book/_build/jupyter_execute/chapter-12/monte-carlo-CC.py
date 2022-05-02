@@ -22,7 +22,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # ### 3.2 Simulating physical processes
 # 
-# As this is a very general approach, and in principle applies to almost any process, there are no fixed rules other than to understand the problem at a fundamental level and then decide how it can be broken down into individual steps. Random numbers are always used to decide what is going to happen next, and the result of many trial calculations summed to remove any bias set up by the random nature of the process.
+# As this is a very general approach, and in principle applies to almost any process, there are no fixed rules other than to understand the problem at a fundamental level and then decide how it can be broken down into individual steps. Random numbers are always used to decide what is going to happen next, and the result of many trial calculations summed to remove any bias set up by the random nature of the process. It is important to bear in mind that we do not try to simulate any actual physical process but rather use a sort of pseudo-dynamics to reach the result by taking one atom or molecule at a time and deciding what it might end up doing, and then repeating this numerous times until we are satisfied with the result according to some predetermined condition.
 # 
 # As an example, consider simulating one-dimensional molecular diffusion. This could describe the diffusion of a molecule inside a long nanotube, along a channel in a zeolite or along a path into an enzyme's active site. At any particular point, the molecule could be buffeted by a solvent molecule and knocked forwards or backwards. To idealize the problem we assume that each displacement or step is of the same length. More colourfully, it has become the convention in textbooks to describe a random walk as the meanderings of the proverbial drunkard.
 # In the simulation of a random walk, only discrete steps can be taken $1, 2, 3 \cdots$ and so on. A random walk of this discrete type is described as a Markov chain of events in which the next event to occur depends only on the current situation or state and has no history of past events because each event has to be independent of all others.
@@ -120,7 +120,7 @@ for i in range(n):
 # 
 # ### 3.4 Reacting molecules.
 # 
-# Many molecules react by a first-order process; $A\overset{k}\to B$, e.g. $\mathrm{CH_3CN} \to \mathrm{CH_3NC}$ or a cis - trans isomerization. A first-order decay was calculated by the Gillespie method in Section 2.2, but the method used there is very different to this one. 
+# Many molecules react by a first-order process; $A\overset{k}\to B$, e.g. $\mathrm{CH_3CN} \to \mathrm{CH_3NC}$ or a cis - trans isomerisation. A first-order decay was calculated by the Gillespie method in Section 2.2, but the method used there is very different to this one. 
 # 
 # Imagine instantly starting a reaction and then being able to observe each molecule individually and record the instant $t$ that each reacts. Each molecule follows a first-order process, the probability of not having reacted up to time $t$ is $p = e^{-kt}$, where $k$ is the rate constant and the lifetime $\tau$ for the reaction is $\tau = 1/k$. Observing these times for different molecules allows the probability distribution to be made and the reaction rate constant or lifetime calculated. The lifetimes of excited states and of first-order reactions have a huge range from $\approx 10^{-13}$ to $\gt 10$ s. The lifetimes of radioactive nuclei range from a few seconds to thousands of years.
 # 
@@ -134,11 +134,11 @@ for i in range(n):
 # 
 # **(1)**$\quad$ Define parameters; set arrays to initial values;
 # 
-# **(2)**$\quad$ Repeat the following calculation in a 'for' loop 
+# **(2)**$\quad$ Repeat the following calculation in a 'for' loop. 
 # 
 # $\qquad$ Calculate $t=-\ln(p)/k$, where $p$ is a random number $0 \to 1$.
 # 
-# $\qquad$  $t$ to an integer to use as array index
+# $\qquad$  Convert $t$ to an integer to use as array index (see code below).
 # 
 # $\qquad$ Add up the number of events with this index in $\mathtt{fcount}$.
 # 

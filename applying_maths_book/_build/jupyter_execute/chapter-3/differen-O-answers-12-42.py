@@ -12,14 +12,14 @@ import numpy as np
 import matplotlib.pyplot as plt
 from sympy import *
 from scipy.optimize import fsolve
-init_printing()                      # allows printing of SymPy results in typeset maths format
+init_printing()               # allows printing of SymPy results in typeset maths format
 plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 
 # ### Q12 answer
 # Results are mainly calculated as function of function and/or as products.
 # 
-# $\displaystyle \begin{array}\\
+# $\displaystyle \begin{array}{lll}\\
 # (a)&\displaystyle \frac{d}{dx}\sin(ax)e^{-bx} = a\cos(ax)e^{-bx}-b\sin(ax)e^{-bx}\\
 # (b)& \displaystyle\frac{d}{dx}\tanh(x)e^{-bx}=\frac{d}{dx}\frac{\sinh(x)e^{-bx}}{\cosh(x)}=\frac{\cosh(x)e^{-bx}-b\sinh(x)e^{-bx}}{\cosh(x)}-\frac{\sinh^2(x)e^{-bx}}{\cosh^2(x)}\\
 # (c)&\displaystyle\frac{d}{dx}e^{-2b\sin(x^2)}=-4bx\cos(x^2)e^{-2b\sin(x^2)}\\
@@ -41,9 +41,8 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # Rearranging to $\sin(y) = x/a$ and (implicitly) differentiating gives $\displaystyle \cos(y)\frac{dy}{dx}=\frac{1}{a}$. Substituting for $y$ into this result will produce a very complicated equation. Instead,  if $y$ is thought of as an angle(see Fig.38) it follows that 
 # 
-# $$\displaystyle \sin(y) = x/a \equiv\qquad \text{ opposite/hypotenuse}$$
-# 
-# $$\displaystyle \cos(y) =\sqrt{a^2-x^2}/a \equiv\qquad \text{ adjacent/hypotenuse}$$
+# $$\displaystyle \begin{align}\sin(y) &= x/a &\equiv\qquad \text{ opposite/hypotenuse}\\
+#  \cos(y) &=\sqrt{a^2-x^2}/a &\equiv\qquad \text{ adjacent/hypotenuse}\end{align}$$
 # 
 # and consequently 
 # 
@@ -59,7 +58,9 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # (k) $\displaystyle \frac{d}{dq}(\sin^2(q)+q^2\cos(q))=2\sin(q)\cos(q)+2q\cos(q)-q^2\sin(q)$
 # 
 # ### Q13 answer
-# (a) Taking logs gives $\ln(y)=y\ln(x)$ and differentiating $\displaystyle \frac{1}{y}\frac{dy}{dx}=\frac{dy}{dx}\ln(x)+\frac{y}{x} \to \frac{dy}{dx}=\frac{y^2}{x(1-y\ln(x))}$
+# (a) Taking logs gives $\ln(y)=y\ln(x)$ and differentiating 
+# 
+# $$\displaystyle \frac{1}{y}\frac{dy}{dx}=\frac{dy}{dx}\ln(x)+\frac{y}{x} \to \frac{dy}{dx}=\frac{y^2}{x(1-y\ln(x))}$$
 # 
 # (b) again taking logs gives $\ln(x)=y\ln(y)$ hence $\displaystyle \frac{1}{x}=\frac{dy}{dx}\ln(y)+\frac{dy}{dx}$
 # 
@@ -92,14 +93,14 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # In[2]:
 
 
-fig = plt.figure(figsize=(12,5))       # plot using matplotlib 
-plt.rcParams.update({'font.size': 16})  # set font size for plots
-ax0=fig.add_subplot(1,2,1)
-ax1=fig.add_subplot(1,2,2)
-ax0.set_aspect(1)                      # set aspect ratio = 1
+fig = plt.figure(figsize=(12,5))           # plot using matplotlib 
+plt.rcParams.update({'font.size': 16})     # set font size for plots
+ax0 = fig.add_subplot(1,2,1)
+ax1 = fig.add_subplot(1,2,2)
+ax0.set_aspect(1)                          # set aspect ratio = 1
 
-t = np.linspace(-np.pi,np.pi,200)      # set range for t
-x = lambda t: np.sin(t) - np.sin(2*t)**3   # numpy is used, invoked by using np. see top of page.
+t = np.linspace(-np.pi,np.pi,200)          # set range for t
+x = lambda t: np.sin(t) - np.sin(2*t)**3   # numpy invoked by using np, see top of page
 y = lambda t: np.cos(t) - np.cos(2*t)**3
 
 ax0.plot(x(t),y(t),color='blue')
@@ -153,9 +154,12 @@ simplify(dydt/dxdt)
 # In[4]:
 
 
-# from scipy.optimize import fsolve  # should be included at top of script.
+# from scipy.optimize import fsolve     # should be included at top of script.
+
 dx = lambda t: np.cos(t) - 6*np.sin(2*t)**2*np.cos(2*t) # function to use
+
 ans = fsolve(dx,0.1,full_output=True)   # 0.1 is initial guess; full_output is used to check convergence.
+
 print(ans[0],ans[-1])
 print('coordinates',  x(ans[0]),y(ans[0]) )
 
@@ -196,7 +200,7 @@ print('coordinates',  x(ans[0]),y(ans[0]) )
 # the calculations are shown below
 t = symbols(' t', positive = True)      # use SymPy
 dydx = cos(t) + cos(2*t)
-ans = solve(dydx, t, check = False)  # use check = False so as not to miss root
+ans = solve(dydx, t, check = False)     # use check = False so as not to miss root
 ans
 
 
@@ -252,7 +256,7 @@ for j,i in enumerate(ans):
 # In[7]:
 
 
-a,s,x,y,f = symbols('a, s, x, y, f')
+a, s, x, y, f = symbols('a, s, x, y, f')
 y = Function('y')
 x = Function('x')
 f = y(s)*exp(-a*x(s))
@@ -426,9 +430,9 @@ simplify(diff(ans,x) )               # second derivative
 # 
 # Differentiating both sides gives
 # 
-# $$\displaystyle \frac{\cos(y)}{\cos(y)}\frac{dy}{dx}+\frac{\sin^2(y)}{\cos^2(y)}\frac{dy}{dx}=\cosh(x); \qquad \frac{dy}{dx}=\cosh(x)\cos^2(x)$$
+# $$\displaystyle \frac{\cos(y)}{\cos(y)}\frac{dy}{dx}+\frac{\sin^2(y)}{\cos^2(y)}\frac{dy}{dx}=\cosh(x); \qquad \frac{dy}{dx}=\cosh(x)\cos^2(y)$$
 # 
-# The second derivative is $\displaystyle \frac{d^2y}{dx^2}=\sinh(x)\cos^2(x)-2\cosh(x)\cos(x)\sin(x)$
+# The second derivative is $\displaystyle \frac{d^2y}{dx^2}=\sinh(x)\cos^2(y)-2\cosh(x)\cos(y)\sin(y)\frac{dy}{dx}$ which can be simplified a little further.
 # 
 # ### Q30 answer
 # Both $V$ and $\psi$ are functions of $x$. Operating once with $D$ is formally 
@@ -514,7 +518,7 @@ simplify(diff(ans,x) )               # second derivative
 # 
 # giving 
 # 
-# $$\displaystyle \beta=2.303\left[\frac{K_w}{[\text{H}^+]}+[\text{H}^+]+\frac{C_BK_a[\text{H}^+]}{ ([\text{H}^+]+K_a)^2 }  \right]$$
+# $$\displaystyle \beta=2.303\left(\frac{K_w}{[\text{H}^+]}+[\text{H}^+]+\frac{C_BK_a[\text{H}^+]}{ ([\text{H}^+]+K_a)^2 }  \right)$$
 # 
 # The calculation is also easy using SymPy.
 
@@ -538,7 +542,7 @@ simplify(ans)
 # 
 # (c) The maximum or minimum $\beta$ occurs at 
 # 
-# $$\displaystyle \frac{d\beta}{d[\text{H}^+]}=2.303\left[-\frac{K_w}{[\text{H}^+]^2}+1+\frac{C_BK_a}{ ([\text{H}^+]+K_a)^2 }  -2\frac{C_BK_a[\text{H}^+]}{ ([\text{H}^+]+K_a)^3 } \right]=0$$
+# $$\displaystyle \frac{d\beta}{d[\text{H}^+]}=2.303\left(-\frac{K_w}{[\text{H}^+]^2}+1+\frac{C_BK_a}{ ([\text{H}^+]+K_a)^2 }  -2\frac{C_BK_a[\text{H}^+]}{ ([\text{H}^+]+K_a)^3 } \right)=0$$
 # 
 # which simplifies to 
 # 

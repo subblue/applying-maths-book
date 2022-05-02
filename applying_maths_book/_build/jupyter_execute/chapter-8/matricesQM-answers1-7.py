@@ -138,24 +138,24 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # In[2]:
 
 
-i,k,ma,mb,n,Ix,Iy,Iz,qa,qb,qc,hbar,Jab,Jbc,Jac = symbols('i,k,ma,mb,n,Ix,Iy,Iz,qa,qb,qc,hbar,Jab,Jbc,Jac')
+i,k,ma,mb,n,Ix,Iy,Iz,qa,qb,qc,hbar,Jab,Jbc,Jac           = symbols('i,k,ma,mb,n,Ix,Iy,Iz,qa,qb,qc,hbar,Jab,Jbc,Jac')
 
 #------------------------------
-def Iz(sa,ma,sb,mb):
+def Iz(sa, ma, sb, mb):
     if ma == mb: return hbar*ma   # <sm|Iz|sm>
     else:        return 0
 #------------------------------
-def Iy(sa,ma,sb,mb):  # -i<sm|Iy|sm +1/-1 >
+def Iy(sa, ma, sb, mb):  # -i<sm|Iy|sm +1/-1 >
     if mb == ma+1:    return ( 1j*hbar/2)*sqrt(sa*(sa+1)-ma*(ma+1) )
     elif mb == ma-1:  return (-1j*hbar/2)*sqrt(sa*(sa+1)-ma*(ma-1) )
     else: return 0
 #------------------------------    
-def Ix(sa,ma,sb,mb):  # <sm|Ix|sm +1/-1 >
+def Ix(sa, ma, sb, mb):  # <sm|Ix|sm +1/-1 >
     if mb == ma+1:    return ( hbar/2)*sqrt(sa*(sa+1)-ma*(ma+1) )
     elif mb == ma-1:  return ( hbar/2)*sqrt(sa*(sa+1)-ma*(ma-1) )
     else: return 0
 #-------------------------------
-def delta(p,q):
+def delta(p, q):
     if p == q: return 1
     else: return 0
 #--------------------------------    
@@ -256,24 +256,27 @@ simplify(ans)
 
 # Hindered Rigin Rotor Algorithm
 #--------------------------------
-def Hnm(m,m1):
-    if m == m1 : return A*m**2 + V3/2
-    elif (m1 == m + 3)or(m1==m-3): return -V3/4
-    else: return 0.0
+def Hnm(m, m1):
+    if m == m1 : 
+        return A*m**2 + V3/2
+    elif (m1 == m + 3) or (m1 == m - 3): 
+        return -V3/4
+    else: 
+        return 0.0
 #---------------------------------
 A = 17.0
 V3= 200.0
 n = 20                                        # matrix size 2*n+1 
-H = np.zeros((2*n+1,2*n+1),dtype=float)       # matrix initiall zero
+H = np.zeros((2*n + 1, 2*n + 1),dtype=float)  # matrix initiall zero
 
-Bset = np.zeros(2*n+1,dtype=int)                # basis set
+Bset = np.zeros(2*n+1,dtype=int)              # basis set
 
 Bset[0] = 0
-k=1
+k = 1
 for i in range(1,2*n+1,2):                    # make basis set
-    Bset[i]=k
-    Bset[i+1]=-k
-    k=k+1
+    Bset[i] = k
+    Bset[i+1] = -k
+    k = k + 1
         
 for i in range(2*n+1):                        # fill matrix 
     for k in range(2*n+1):
@@ -283,7 +286,7 @@ for i in range(2*n+1):                        # fill matrix
         pass
     pass
 
-vals,vecs= LA.eigh(H) 
+vals,vecs = LA.eigh(H) 
 
 
 # In[5]:
@@ -298,9 +301,9 @@ for i in range(13):
 # ![Drawing](matricesQm-fig8.png)
 # ________
 # 
-# $$\displaystyle \begin{array}{lrr}
+# $$\displaystyle \begin{array}{lcr}
 # \hline
-# \text{m} & H^0\,\text{(free rotor)/cm}^{-1} & H^0+H^1\, /\mathrm{cm^{-1}} \\
+# \text{m} &  H^0\,\text{(free rotor)/cm}^{-1}&\quad H^0+H^1\, /\mathrm{cm^{-1}} \\
 # \hline 
 #  0& 0 & 71.79\text{ single}\\
 # \pm 1 & 17 & 78.56 \text{ double}\\
@@ -309,7 +312,7 @@ for i in range(13):
 # \pm 4 & 272 & 377.5 \text{ double}\\
 # \pm 5 & 425 & 528.6 \text{ double} \\ \hline \end{array}$$
 # 
-
+# 
 # ### Q5 answer
 # The recommended values in the question do produce quite a good fit to the data; the lowest transition is about 1 wavenumber out as is the second but the third and fourth by $2-3$ wavenumbers. Still a small error , less that 1%. The calculation is very sensitive the the value of $A$  and it seems that a better fit will be hard to obtain, primarily because the assumed potential is not exactly correct. Other sinusoidal functions could be tried but would then have to be justified by some physical explanation as to why they are used. With some arbitrary function, with many parameters a better fit could certainly be found, but this would have no physical meaning and would not explain the spectrum. 
 # 
@@ -401,6 +404,6 @@ simplify(ans10)
 
 # The other integrals may be calculated similarly. 
 # 
-# (b) The px, py, pz orbitals point along the $x-, y-$, and $z$-axes. As the potential has no terms in $xy, xz$ or $yz$ the field it produces is only along the axes. The matrix will therefore be diagonal. The matrix elements are calculated in the same manner as in (a) the eigenvalues can be read from the matrix, because it is diagonal.
+# (b) The px, py, pz orbitals point along the $x$-, $y$-, and $z$-axes. As the potential has no terms in $xy, xz$ or $yz$ the field it produces is only along the axes. The matrix will therefore be diagonal. The matrix elements are calculated in the same manner as in (a) the eigenvalues can be read from the matrix, because it is diagonal.
 # 
 # **Exercise:** Calculate the splitting the field $V$ produces in the five d orbitals.

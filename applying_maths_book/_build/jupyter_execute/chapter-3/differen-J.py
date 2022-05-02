@@ -25,7 +25,7 @@
 # 
 # which is done by taking (partial) derivatives of $Q$ in $x,\; y$, and $\lambda$ and letting $\partial Q/\partial x = \partial Q/\partial y= \partial Q/\partial \lambda = 0$ and solving the simultaneous equations,
 # 
-# $$\displaystyle \qquad\qquad\qquad \frac{df(x,y)}{dx}+\lambda \frac{dg(x,y)}{dx}=0 \qquad\qquad\qquad\qquad\qquad\qquad\qquad \\ \qquad\qquad\qquad\qquad\frac{df(x,y)}{dy}+\lambda\frac{dg(x,y)}{dy}=0 \qquad\qquad\qquad\qquad\qquad\qquad\qquad \text{(37)} $$
+# $$\displaystyle \qquad\qquad\qquad \begin{align}\frac{df(x,y)}{dx}+\lambda \frac{dg(x,y)}{dx}&=0  \\\frac{df(x,y)}{dy}+\lambda\frac{dg(x,y)}{dy}&=0 \end{align}\qquad\qquad\qquad\qquad \text{(37)} $$
 # 
 # Notice that differentiation is with respect to $x$ and then with $y$ as variables on both function and constraint. The method or algorithm is
 # 
@@ -49,7 +49,7 @@
 # 
 # An example shows how this algorithm works. 
 # 
-# #### (i) Distance to a point
+# #### **(i) Distance to a point**
 # Suppose you are set the problem to find the shortest distance from any point $(x_0, y_0)$, which could be the origin $(0, 0)$, to the Gaussian curve $\displaystyle y = e^{-x^2}$, see fig 30.
 # 
 # **(a)** The Gaussian exponential defines the constraint, which means that the points we find must lie on this curve, and therefore $g$ is defined as
@@ -84,11 +84,14 @@
 # 
 # **(e)** The quantities $x_0$ and $y_0$ are constants in the last equation, which can be solved to find $x$ and then this substituted into our function $y = e^{-x^2}$ to obtain $y$. The distance from the origin with $x_0 = 0$ and $y_0 = 0$ to the curve is found by solving $\displaystyle -1+2e^{-2x^2}=0$ giving $\displaystyle x=\pm\sqrt{\frac{\ln(2)}{2}} =\pm 0.5887$ and $y=1/\sqrt{2}$ as the coordinates of the shortest distance, see Fig. 30. This distance itself is found by substituting into $f (x, y)$, equation (38), and is $(\ln(2) + 1)/2 \approx 0.92$.
 # 
-# #### (ii) Object -  image distance in a thin lens
+# #### **(ii) Object -  image distance in a thin lens**
 # In this second example, the closest distance an object can be to its image, when using a thin lens, is found. The lens has a focal length $f$, the object is at a distance $u$ before, and the image $v$, after the lens. 
 # 
-# The lens maker's formula $\displaystyle \frac{1}{u}+\frac{1}{v}=\frac{1}{f}$ relates these distances to the
-# focal length. The total object - image distance is $u + v = c$, where $c$ is a constant, and this distance must be minimized subject to the Lens Maker's formula. The figure (31) shows the object and image distances which are taken to be positive.
+# The lens maker's formula 
+# 
+# $$\displaystyle \frac{1}{u}+\frac{1}{v}=\frac{1}{f}$$
+# 
+# relates these distances to the focal length. The total object - image distance is $u + v = c$, where $c$ is a constant, and this distance must be minimized subject to the Lens Maker's formula. The figure (31) shows the object and image distances which are taken to be positive.
 # 
 # Using the Lagrange multiplier method, the function is clearly the lens maker's formula,
 # 

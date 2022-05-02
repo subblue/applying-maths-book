@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## Trigonometric functions.  Waves
+# ## Trig, hyperbolic and inverse functions, waves, polar coordinates & factorials
 
 # In[1]:
 
@@ -31,9 +31,8 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # There are very many relationships between the trig functions; some of the most commonly met are, for angles $x$ and $y$ are shown below
 # 
-# ### Table of trig relationships
-# 
-# $$\displaystyle\begin{array}{lll}\\
+# $$\displaystyle \textbf{Table of trig relationships}\quad\\
+# \begin{array}{lll}\\
 # \hline
 # \sin(-x) =-\sin(x) & \cos(-x)=\cos(x)\\[5pt]
 # \cos^2(x)+\sin^2(x)=1 & \cos^2(x)-\sin^2(x)=2\cos^2(x)-1 = \cos(2x) &\\[5pt]
@@ -125,7 +124,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # with units distance/time. 
 # 
-# If the medium is _dispersive_, as is air or glass to visible light, then $\omega/k$ is not constant. Dispersion means that the medium through which the wave is passing affects the wave so that the phase velocity of the wave depends on the frequency; thus, red light is transmitted through the same piece of glass in less time than blue light. The refractive index at short (blue) wavelengths is larger than at longer wavelengths. 
+# If the medium is _dispersive_, as is air or glass to visible light, then $\omega/k$ is not constant. Dispersion means that the medium through which the wave is passing affects the wave so that the phase velocity of the wave depends on the frequency; thus, red light is transmitted through the same piece of glass in less time than blue light. The refractive index at short (blue) wavelengths is larger than at longer wavelengths. The speed of light in a medium of refractive index $n_\lambda$ at wavelength $\lambda$ is $c_n = c/n_\lambda$ where $c$ is the speed of light in vacuum defined as $c=2.99792458\cdot 10^8 \,\mathrm{m\,s^{-1}}$.
 # 
 # The _group velocity_ $v_g$ is a second measure of the speed of a wave-like disturbance. It applies only when a wave is composed of many individual waves of different frequencies and is defined as $\Delta \omega /\Delta k$. The superposition of these waves does not remain constant in time and therefore the profile of the disturbance changes with time, although each individual wave moves with its phase velocity. The group velocity is also the speed at which energy is transmitted and is the speed at which the maximum of the combined wave moves.
 # 
@@ -152,21 +151,21 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # ### 5.5 Superposition of waves.
 # 
-# A defining characteristic of waves is that they can form superpositions, which is to say that when added or subtracted a new waveform is produced. This leads to interference and diffraction phenomena. In quantum mechanics wavepackets are formed as superpositions and are described in the chapter on Summation and Series. 
+# A defining characteristic of waves is that they can form superpositions, which is to say that when added or subtracted a new waveform is produced. This leads to interference and diffraction phenomena. In quantum mechanics wavepackets are formed as superpositions of wavefunctions and are described in Chapter 5, (Summation and Series). 
 # 
-# In x-ray diffraction the x-rays are scattered by the atoms that are present in regular and repeated positions in a crystal. The repeated pattern is called the unit cell. The Bragg equation $n\lambda=2d\sin(\theta) $ defines the angle $\theta$ that the x-rays are diffracted off planes with a separation $d$.  As the incident and diffracted angle is $\theta$ the diffracted rays can be considered to be reflected off the lattice planes. Only the diffracted (reflected) waves that interfere constructively with one another to produce light spots on the detector. Diffraction off crystals  is described in more detail in Chapter 9, Fourier Transforms.
+# In x-ray diffraction the x-rays are scattered by the atoms that are present in regular and repeated positions in a crystal. The smallest set of repeated positions is called the unit cell. The Bragg equation $n\lambda = 2d\sin(\theta) $ defines the angle $\theta$ that the x-rays are diffracted off planes with a separation $d$. Only some angles cause diffraction because $n$ is an integer and the values of $d$ are determined by the limited number spacing between atoms. As the incident and diffracted angle are equal at $\theta$ the diffracted rays can be considered to be reflected off the lattice planes. Only the diffracted (reflected) waves that interfere constructively with one another to produce light spots on the detector. Diffraction with crystals is described in more detail in Chapter 9, Fourier Transforms.
 # 
 # A general wave of frequency $\omega$ has the form 
 # 
 # $$\displaystyle \psi=a\cos(\omega t +\varphi)=a\cos(\omega t)\cos(\varphi)-a\sin(\omega t)\sin(\varphi)$$
 # 
-# where $\varphi$ is the phase and the expansion formula of $\cos(x+y)$ was used, see section 5.1. As the phase varies from $0\to \pi$ the  amplitude of the sine and cosine changes from $1$ to $-1$.
+# where $\varphi$ is the phase and the expansion formula of $\cos(x+y)$ was used, see section 5.1. As the phase varies from $0\to \pi$ the  amplitude of the sine and cosine changes from $1$ to $-1$. In x-ray diffraction the phase is proportional to the perpendicular distance $x_i$ from the lattice plane to each atom and $\varphi_i=2\pi x_i/d$
 # 
 # The sum of waves from the $N$ atoms in the unit cell is 
 # 
 # $$\displaystyle \psi = \sum_{i=1}^N a_i\cos(\omega t)\cos(\varphi_i)-\sum_{i=1}^Na_i\sin(\omega t)\sin(\varphi_i) $$
 # 
-# As the x-ray frequency is constant, and does not depend on $N$ its terms can be removed from the summation,
+# The number $N$ will be small for most molecules such as benzene, typically one or two times the number of atoms in the molecule, but is thousands for large proteins. As the x-ray frequency is constant, and does not depend on $N$ its terms can be removed from the summation,
 # 
 # $$\displaystyle \psi = \cos(\omega t)\sum_{i=1}^N a_i\cos(\varphi_i)-\sin(\omega t)\sum_{i=1}^Na_i\sin(\varphi_i) $$
 # 
@@ -186,13 +185,15 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # $$\displaystyle  \tan(\varphi_s) =\frac{\sum_{i=1}^N a_i\sin(\varphi_i)}{\sum_{i=1}^N a_i\cos(\varphi_i)}$$
 # 
-# A more general derivation is given in chapter 9, Fourier Series and Transforms.
+# A more general derivation of the superposition is given in chapter 9, Fourier Series and Transforms.
+# 
+# To recap, the intensity $I$ is that due to all atoms in the unit cell in proportion to their phase $\varphi_i$ and is unique at each possible scattering angle $\theta$, thus in x-ray diffraction from crystals the positional information is contained in the intensity of the measured spots on the detector not their position.
 # 
 # ### 5.6 Hyperbolic functions
 # 
-# The hyperbolic functions are closely related to the circular functions, sine, cosine, etc. of trigonometry. The equation of a (unit) circle is $x^2 + y^2 = 1$ and in parametric form $\cos(\theta) = x,\; \sin(\theta) = y$ and any point has coordinates $(\cos(\theta), \sin(\theta))$ }. The equation for a hyperbola is $x^2 - y^2 = 1$ or, in parametric form, $\cosh(t) = x,\; \sinh(t) = y$, but $t$ is not a measure of angle. The two curves produced are shown in figure 14, and one point plotted on each, at a value of $\theta$ and $t =2\pi/3$. The hyperbolic functions are often pronounced, 'shine', 'cosh' and 'than', with emphasis on the 'th'. The shape of a freely hanging cable supported at its ends only, follows the equation $y = \cosh(x)$, and is called a _catenary_. The arch in St Louis in the United States follows closely that of an inverted cosh.
+# The hyperbolic functions are closely related to the circular functions, sine, cosine, etc. of trigonometry. The equation of a (unit) circle is $x^2 + y^2 = 1$ and in parametric form $\cos(\theta) = x,\; \sin(\theta) = y$ and any point has coordinates $(\cos(\theta), \sin(\theta))$ }. The equation for a hyperbola is $x^2 - y^2 = 1$ or, in parametric form, $\cosh(t) = x,\; \sinh(t) = y$, but $t$ is not a measure of angle. The two curves produced are shown in figure 14, and one point plotted on each, at a value of $\theta$ and $t =2\pi/3$. The hyperbolic functions are often pronounced, 'shine', 'cosh' and 'than', with emphasis on the 'th'. 
 # 
-# The equations of the hyperbolic functions are similar to those of normal trig functions, but not identical, for example;
+# The shape of a freely hanging cable supported at its ends only, follows the equation $y = \cosh(x)$, and is called a *catenary*. The arch in St Louis in the United States follows closely that of an inverted cosh. The equations of the hyperbolic functions are similar to those of normal trig functions, but not identical, for example;
 # 
 # $$\displaystyle \tanh(x)=\frac{\sinh(x)}{\cosh(x)},\qquad \cosh^2(x)-\sinh^2(x)=1, \qquad \cosh^2(x)+\sinh^2(x)=\cosh(2x)$$
 # 
@@ -202,7 +203,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 
 
 x = symbols('x')
-simplify(cosh(x)**2+sinh(x)**2)
+simplify( cosh(x)**2 + sinh(x)**2 )
 
 
 # produces the result $\cosh(2x)$. 
@@ -231,7 +232,7 @@ simplify(cosh(x)**2+sinh(x)**2)
 # 
 # ________
 
-# ## 6 Inverse functions
+# ### 6 Inverse functions
 # 
 # The log and exponential functions are inverses of one another, and similarly $x^n$ and $x^{1/n}$ because when one is made a function of the other, the result is $x;\; \ln(e^x) = x$ and $(x^{1/n})^n = x$. If the function is written as $f(x)$ then the inverse is $f^{-1}(x)$, therefore
 # 
@@ -248,26 +249,29 @@ simplify(cosh(x)**2+sinh(x)**2)
 # In[3]:
 
 
-x =symbols('x')
+x = symbols('x')
 asinh(x).rewrite('log')
 
 
-# #### Table of Inverse functions.  $i=\sqrt{-1}$,
-# 
-# $$\displaystyle \begin{align}\sin^{-1}(x) &= -i\log(ix +\sqrt{1-x^2} )\\
+# ________
+# $$\displaystyle \textbf{Table of inverse functions}\quad i=\sqrt{-1}\\
+# \begin{array}{lll}
+# \hline
+# \sin^{-1}(x) &= -i\log(ix +\sqrt{1-x^2} )\\
 # \cos^{-1}(x) &= +i\log(ix +\sqrt{1-x^2} ) + \frac{\pi}{2}\\
 # \tan^{-1}(x) &= \frac{i}{2}\left( \log(1-ix)- \log(1+ix )  \right)\\
 # \sinh^{-1}(x) & = \log(x+\sqrt{1+x^2})\\
 # \cosh^{-1}(x) & = \log(x+\sqrt{x^2-1})\\
 # \tanh^{-1}(x) & =\frac{1}{2} \log(x+1)-\frac{1}{2}\log(1-x)\\
-# \end{align}$$
+# \hline\end{array}$$
+# ________
 # 
 # ![Drawing](chapter1-fig16.png)
 # 
 # Figure 16. Inverse trig functions with $y$ limited to the range $\pm 2 \pi$. The $\tan^{-1}$ functions extend to $x = \pm\infty$ with a limit of integer multiples of $y = \pm \pi/2$.
 # _________
 # 
-# ## 7 Cartesian and polar coordinates
+# ### 7 Cartesian and polar coordinates
 # 
 # When drawing a graph a right-angled set of axes is normally used. The origin is the point (0, 0) and then any other point is represented by two numbers $(x,\; y)$ in the x-y plane. In three dimensions the coordinates are $(x,\; y,\; z)$. These coordinates are described as rectilinear when right-angled axes are used and as Cartesian when $(x,\; y,\; z)$ are used.
 # 
@@ -282,7 +286,7 @@ asinh(x).rewrite('log')
 # 
 # In two dimensions, _plane polar_ coordinates are used to define a point in the x-y plane. If z is included then these coordinates become the cylindrical coordinates. The relationship of plane polar to Cartesian coordinates is
 # 
-# $$\displaystyle x=r\cos(\theta), y=r\sin(\theta), \qquad r^2 =x^2 +y^2$$
+# $$\displaystyle x=r\cos(\theta),\quad y=r\sin(\theta), \quad r^2 =x^2 +y^2$$
 # 
 # The angle $\theta$ is measured from the x- to the y-axis, figure 18
 # 
@@ -295,7 +299,7 @@ asinh(x).rewrite('log')
 # Figure 18. Plane polar coordinates.
 # _______
 
-# ## 8 Factorials
+# ### 8 Factorials
 # 
 # The factorial function is the product of a set of positive integers from 1 up to n;
 # 
@@ -303,11 +307,17 @@ asinh(x).rewrite('log')
 # 
 # with the limits that
 # 
-# $$\displaystyle 0! = 1, (-n)! = \infty$$
+# $$\displaystyle 0! = 1,\qquad (-n)! = \infty$$
 # 
-# The factorials can also be calculated recursively as $(n + 1)! = (n + 1)n!$. In Figure 19 notice how rapidly the factorials increase as $n$ increases. The plot is of $\ln(n!)$ vs $n$, which shows that $n!$ increases more rapidly than does $e^n$x, which would be a line of slope 1 on this graph.
+# The factorials can also be calculated recursively as 
 # 
-# Fractional, negative, and complex factorials are defined by the (complete) gamma function $\Gamma(n)$. Positive integer values of this function produce the factorials, and are related as $\Gamma(n) = (n - 1)!$.
+# $$\displaystyle (n + 1)! = (n + 1)n!$$
+# 
+# In Figure 19 notice how rapidly the factorials increase as $n$ increases. The plot is of $\ln(n!)$ vs $n$, which shows that $n!$ increases more rapidly than does $e^n$x, which would be a line of slope 1 on this graph.
+# 
+# Fractional, negative, and complex factorials are defined by the (complete) gamma function $\Gamma(n)$. Positive integer values of this function produce the factorials, and are related as 
+# 
+# $$\displaystyle \Gamma(n) = (n - 1)!$$
 # 
 # The gamma function is the integral 
 # 
@@ -331,18 +341,28 @@ asinh(x).rewrite('log')
 # 
 # is sometimes given the symbol $(x)_n$ which is called the Pochhammer symbol, although this notation is not universal. Ratios of factorials similar to these occur in quantum mechanics, particularly when angular momentum quantum numbers are involved.
 # 
+# ####  **Stirling's formula**
+# 
 # The log of the factorial is often used as a way of calculating factorials and Stirling's formula
 # 
-# $$\displaystyle \ln(n!) = n \ln(n) - n \tag{18}$$
+# $$\displaystyle \ln(n!) = n \ln(n) - n  \tag{18}$$
 # 
-# is particularly useful for large $n$.
+# is particularly useful for large $n$. For smaller values we can use the equivalent formula $\displaystyle  n!=n^ne^{-n}$.
+# 
+# The approximations is calculated as
+# 
+# $$\displaystyle \begin{align}\ln(n!)&=\sum_{j=1}^n \ln(n_j) \approx \int_1^n \ln(x)dx=(n\ln(n)-n)\big|_1^n\\ &= n \ln(n) - n+1\end{align} $$
+# 
+# A much more accurate approximation is 
+# 
+# $$\displaystyle \ln(n!) = \left(n+\frac{1}{2}\right) \ln(n) - n +\frac{1}{2}\ln(2\pi)$$
 # 
 # ![Drawing](chapter1-fig19.png) 
 #  
-#  Figure 19. Left: $\ln(n!)$ vs $n$. Right: The gamma function (solid line) and the factorial (circles).
+#  Figure 19. Left: $\ln(n!)$ vs $n$. The curve is not smooth because the factorials are integer numbers. Right: The gamma function (solid line) and the factorial (circles).
 #  _____
 #  
-# ## 8.1 Recursion. Calculating Factorials and Orthogonal Polynomials.
+# ### 8.1 Recursion. Calculating Factorials and Orthogonal Polynomials.
 # 
 # Recursion is a general method by which certain functions, such as a factorial or a polynomial, can be calculated by starting with one or two values and using these as a seed to generate further values. The recursion equations are sometimes also called difference equations. 
 # 
@@ -356,6 +376,7 @@ asinh(x).rewrite('log')
 
 
 #### Algorithm. Direct calculation of a factorial 
+#-----------------
 def fact(n):
     if n <= 1 :
         return 1
@@ -373,11 +394,12 @@ print(fact(15))
 
 
 #### Algorithm. Recursive function calculation of factorial
+#---------------------
 def fact(n):
     if n <= 1 :
         return 1
     return n*fact(n-1)
-
+#---------------------
 print(fact(15))
 
 
@@ -402,8 +424,9 @@ print(fact(15))
 
 #### Algorithm. Hermite Polynomial Recursion.  (This is slow for large n )
 
-x, n = symbols('x,n')       # define n and x in SymPy
+x, n = symbols('x, n')       # define n and x in SymPy
 
+#----------------------
 def herm(n, x):             # define recursion equations returns the nth hermite with argument x 
     if n == 0:
         return 1 
@@ -411,8 +434,8 @@ def herm(n, x):             # define recursion equations returns the nth hermite
         return 2*x 
     else: 
         return (2*x*herm(n - 1, x))  - 2*(n- 1)*herm(n - 2, x) 
-    
-expand(herm(10,x))         # return 10th Hermite as polynomial
+#----------------------    
+expand(herm(10,x))          # return 10th Hermite as polynomial
 
 
 # In[ ]:

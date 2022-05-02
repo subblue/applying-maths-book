@@ -129,8 +129,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # can be converted into sine and cosines.
 # 
 # **Case (iii)**$\quad$ The roots are the same. In this case, one solution is missing and a test solution has to be tried.
-# 
-# #### Example Case (i)
+# #### **Case (i)**
 # Suppose that the equation is $\displaystyle \frac{d^2y}{dx^2} -\frac{dy}{dx}-12=0 $ or $\displaystyle D^2 -D-12 = 0$,
 # 
 # with the initial conditions $y = 0$ and $dy/dx = 2$ at $x = 0$.
@@ -150,8 +149,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # The initial condition, $y = 0$ at $x = 0$, gives $A = -B$ and from the gradient found by differentiating the solution gives  $2 = -3A + 4B$, as $dy/dx = 2$ at $x = 0$. Then $A = -2/7$ and $B = 2/7$ and the final result is 
 # 
 # $$\displaystyle y = \frac{2}{7} (e^{4x} - e^{-3x})$$
-# 
-# #### Case (ii)
+# #### **Case (ii)**
 # The equation $\displaystyle \frac{d^2y}{dx^2}+16=0$, 
 # 
 # has the auxiliary equation $\displaystyle k^2 + 16 = 0$ with roots $k=\pm 4i$. The solution is
@@ -165,8 +163,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # which could be written with new constants $a$ and $b$ (determined by boundary conditions) as $y = a\cos(4x) + b\sin(4x)$.
 # 
 # This is the most compact form of the general solution except perhaps the equivalent form $\displaystyle y = R\cos(4x + \varphi)$ where $R$ is the amplitude and $\varphi$ the phase.
-# 
-# #### Case (iii)
+# #### **Case (iii)**
 # The equation $\displaystyle \frac{d^2y}{dx^2}-4\frac{dy}{dx}=4y = 0$, 
 # 
 # has the auxiliary equation $\displaystyle k^2 - 4k + 4 = 0$ with both roots $k = 2$. This means that one solution is missing. We can, so far, write only $\displaystyle y = Ae^{2x} + y_2$ and have to find $y_2$.
@@ -249,8 +246,8 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # When $\varphi(m) =0$ , clearly this method will fail and then that of section 6.7 has to be used.
 # 
-# #### Example.
-# The equation $\displaystyle \frac{d^2y}{dx^2}+\frac{dy}{dx}=6y=10+e^{4x}$, 
+# #### **Example**
+# The equation $\displaystyle \frac{d^2y}{dx^2}+\frac{dy}{dx}=6y+10+e^{4x}$, 
 # 
 # which is also $(D^2 +D-6)y=10+e^{4x}$, can now be solved.
 # 
@@ -282,7 +279,15 @@ ans
 # 
 # Equations of the form $\varphi(D)y = b \sin(mx)$ and $\varphi(D)y = b\cos(mx)$ often describe forces and simple harmonic motion where the driving force is a sine or cosine. To solve this type of equation, use the exponential from $\displaystyle e^{imx}$ etc. to replace the sine or cosine term. The real part is then extracted if $f(x)$ is a cosine, and the imaginary part if a sine, because $\displaystyle e^{\pm iax} = \cos(ax) \pm i\sin(ax)$. This method is therefore effectively the same as the previous section.
 # 
-# If the equation is $\displaystyle 2\frac{d^2y}{dx^2}-5\frac{dy}{dx}-3y=7\sin(4x)$  the complementary function is found with $(2D + 1)(D − 3)y = 0$ which has roots −1/2 and 3 and gives $\displaystyle y_h=Ae^{-x/2}+Be^{3x}$. Replacing the sine by an exponential makes a particular integral
+# If the equation is 
+# 
+# $$\displaystyle 2\frac{d^2y}{dx^2}-5\frac{dy}{dx}-3y=7\sin(4x)$$
+# 
+# the complementary function is found with $(2D + 1)(D - 3)y = 0$ which has roots -1/2 and 3 and gives 
+# 
+# $$\displaystyle y_h=Ae^{-x/2}+Be^{3x}$$
+# 
+# Replacing the sine by an exponential makes a particular integral
 # 
 # $$\displaystyle y_p=7\frac{1}{2D^2-5D-3}e^{4ix}$$
 # 
@@ -316,7 +321,7 @@ ans2
 # 
 # is used. This is done by replacing each $D$ by $D + m$ with the $m$ coming from the power in the exponential. If, for example, $\varphi(D) = D + 3$ then $\varphi(D + m) = D + 3 + m$. If the function $G(x) = 1$, then the $f(x)$ reverts to a pure exponential. The formula (32) allows a solution in cases where $\varphi(m) = 0$.
 # 
-# #### Example
+# #### **Example**
 # The equation $(D^2 + D - 2)y = 2\sinh(2x)$ has the complementary function $\displaystyle y_h = Ae^{−2x} + Be^{x}$. The sinh is now expanded into exponentials making the particular integral
 # 
 # $$\displaystyle y_p=\frac{1}{(D-1)(D+2)}\left(e^{2x}-e^{-2x}  \right)$$
@@ -347,7 +352,7 @@ ans2
 # 
 # and the polynomial $f(x)$ is differentiated by the series until no terms are left. Often a term in 1/$D$ is present after differentiating. This term cannot be expanded as a series and instead it is used to integrate each $x$ term remaining and this is illustrated in the next example.
 # 
-# #### Example (i)
+# #### **Example (i)**
 # If the equation to solve is $\displaystyle (D^2 + D - 2)y = x^3e^{-2x}$ then the complementary function is the same as that in the last example and is 
 # 
 # $$\displaystyle y_h = Ae^x + Be^{-2x}$$
@@ -362,7 +367,7 @@ ans2
 # 
 # The general solution is therefore $\displaystyle y= Ae^x+Be^{-2x}-\frac{1}{3}e^{-2x}\left(\frac{x^4}{4}+\frac{x^3}{3}+\frac{x^2}{3}+\frac{2}{9}x\right)$
 # 
-# #### Example (ii)
+# #### **Example (ii)**
 # To solve $\displaystyle (D^2 +3D-4)y = x $ the roots of $\displaystyle k^2 +3k-4=0$ produce $k = 1$ and $-4$ and therefore the complementary function is 
 # 
 # $$\displaystyle y_h = Ae^{-4x} + Be^x$$
@@ -438,7 +443,7 @@ collect(expand(ans),exp(-2*x))
 # Fig 12. The three cases when an oscillator is damped, i.e. friction impedes motion. The parameters used are shown on the plots. The dotted line is the exponential decay $\displaystyle e^{-ht}$ where $h=c/2m$  is the damping coefficient, $c$, divided by the mass $m$ and is the same in each plot and is added for comparison. 
 # ____
 # 
-# #### (i) Over-damping
+# #### **(i) Over-damping**
 # When the damping is very large the motion is very sluggish and no oscillations are observed. This behaviour is observed when  $\displaystyle h^2 - \omega^2 \gt 0$ the values of $m_1$ and $m_2$ in the exponentials are both negative because $\displaystyle \sqrt{ h^2 - \omega^2} \lt h$ and this is called the _over-damped case_. 
 # 
 # In this case, the oscillator eventually drifts to a standstill in a gradual and uniform manner without oscillating. This situation would correspond to that describing the motion of a light pendulum moving in thick oil. If the initial displacement is $d$ and the motion starts with an initial velocity of zero, the initial conditions are $x(0) = d$ and $dx/dt = 0$ when $t$ = 0. With these conditions $d = A + B$ and $dx/dt =0= m_1A+m_2B$ and therefore $A=-m_2d/(m_1 -m_2)$ and $B=m_1d/(m_1 -m_2)$ which gives 
@@ -451,7 +456,7 @@ collect(expand(ans),exp(-2*x))
 # 
 # and will decay bi-exponentially to zero.
 # 
-# #### (ii) Under-damping
+# #### **(ii) Under-damping**
 # When the damping constant is small the oscillator can still move somewhat freely and is only gently impeded by friction that eventually bringing it to rest. When $\displaystyle h^2 - \omega^2 \lt 0$, the motion is _under-damped_. A mechanical analogy is the motion of weight suspended by a (real) spring or elastic band. In this case  $m_1$ and $m_2$ are complex numbers, which means that exponentials can be represented as sines and cosines. If $\displaystyle h^2 - \omega^2 = -\omega_1^2$ the displacement is 
 # 
 # $$\displaystyle x = Ae^{-ht+i\omega_1t} + Be^{-ht-i\omega_1t}$$
@@ -480,7 +485,7 @@ collect(expand(ans),exp(-2*x))
 # 
 # which shows that the energy is dissipated with twice the rate constant than that of the  oscillations decay. Sometimes the _logarithmic derivative_ is referred to, this is $ E$ is $\displaystyle \frac{\ln(E)}{dt}=-2h$. 
 # 
-# #### (iii) Critical damping
+# #### **(iii) Critical damping**
 # In this case the oscillator comes to rest in the quickest possible time without overshooting. This has everyday practical application in hydraulic and pneumatic systems such as spring returns for closing doors. When $\displaystyle \omega^2 = h^2$ and $\omega_1$ = 0, the motion is _critically damped_. The characteristic equation is now $\displaystyle k^2 + 2hk + h^2 = 0$ with double roots $\pm h$. The solution is sought from the method outlined in Section 4.3(iii). One solution is $\displaystyle x_1 = e^{-ht}$ and a test solution tried as $\displaystyle x_2 = te^{-ht}$, which is a suitable function. This is tested by differentiating the result, $\displaystyle x = Ae^{-ht}(1 + Bt)$.
 # 
 # With the initial conditions as before, 
@@ -498,7 +503,7 @@ collect(expand(ans),exp(-2*x))
 # 
 # When a mass is driven by an external power source, it can be made to move continuously and therefore has behaviour not seen in a free oscillator. If the oscillator is also damped some of the energy is dissipated as heat into the surroundings. However, if damping is essentially absent and if the driving force is at the same period and phase as the natural period of the oscillator, _resonance_ occurs. In this situation, the energy supplied cannot be dissipated and the oscillator can be destroyed by being forced to undergo ever larger displacements from its equilibrium position.
 # 
-# #### Constant external force
+# #### **Constant external force**
 # If the external force is constant then the equation of motion is,
 # 
 # $$\displaystyle \frac{d^2x}{dt^2}+2h\frac{dx}{dt}+\omega^2x=W $$
@@ -511,7 +516,7 @@ collect(expand(ans),exp(-2*x))
 # 
 # In $D$ notation the equation is $\displaystyle D^2 +2hD+\omega^2x'=0$.
 # 
-# #### Varying external force
+# #### **Varying external force**
 # When the driving force is not constant then its form is clearly going to determine the nature of the solution. The general equation is
 # 
 # $$\displaystyle \frac{d^2x}{dt^2}+2h\frac{dx}{dt}+\omega^2x=f(t) $$
@@ -562,15 +567,12 @@ collect(expand(ans),exp(-2*x))
 # Although the damped, forced oscillator is described in terms of a mechanical oscillator, such as a pendulum or a spring, it also forms a classical model of how an atom or molecule interacts non-resonantly with a light wave. The electric field of the radiation produces a sinusoidal force on each electron. The displacement of the electron $\delta x$ produces a dipole moment $e\delta x$ if $e$ is the electronic charge. The polarization or dipole moment/unit volume is obtained from this model by summing over all the electrons in a given volume. The refractive index and conductivity can be derived from the polarization. However, the classical model of absorbing a photon leads to very unusual behaviour because energy would be absorbed over a wide range of frequencies and in increasing amounts as resonance is approached, which is clearly not what is observed experimentally. Only a quantum model
 # properly describes absorption.
 # 
-# 
-# #### Q-switching lasers.
-# 
+# #### **Q-switching lasers**
 # $Q$-switching is used to produce intense nanosecond duration laser pulses, which are used to measure rates of chemical reactions; they are also used in cutting and welding materials and in laser ranging or 'lidar'. Siegman (1986) describes Q-switching in detail but the basic idea is as follows. The gain material is excited by flash lamps or laser diodes but the laser cavity is initially held in a condition of low gain, so it cannot lase even though the gain medium, such as Nd$^{3+}$ ions in YAG, is being excited. The gain is forced to be low by an electro-optic polarizer inserted inside the laser cavity. This is aligned so that those photons that reach the cavity mirrors are not fed back into the gain medium with the correct polarization and are therefore not amplified. As the gain material is excited, a large population inversion soon results and consequently it contains a large amount of stored energy. A laser pulse is now made by suddenly increasing the $Q$ of the laser cavity by increasing the gain. This can be done by switching the state of the electro-optic polarizer so that light can now travel back and forth between the mirrors. The effect that this has is to cause a very rapid rise in the gain of the cavity because, by stimulated emission, the stored energy is converted into photons, and a laser pulse of a few nanoseconds duration is produced. The photons deplete the gain far more rapidly than it can be replenished by excitation from the flash lamps, and the gain drops, terminating the laser pulse. 
 # 
 # The $Q$ of an optical cavity is given by $Q = \omega E/(-dE/dt)$, where $\omega$ is the laser frequency, $E$ the energy, and $dE/dt$ the power or rate of change of energy. The Nd YAG laser operates at $1064$ nm and can typically produce a $1$ J, 10 ns duration $Q$-switched laser pulse. If the cavity gain is switched in $10$ ns, then the $Q$ of the cavity is, for a short period, extremely high at $\approx$ $3$ million.
 # 
-# #### Atomic Force Microscope
-# 
+# #### **Atomic Force Microscope**
 # The $Q$ of mechanical systems is also important. The scanning atomic force microscope, AFM, has a microscopic cantilever with an even smaller tip at its base. The first type of instruments worked in contact mode where the tip was dragged over a surface using piezoelectric actuators to control its position. The distance from the surface was measured by how much the cantilever was bent by the surface forces. In this mode, the surface can be damaged by the tip. To prevent this and to increase the quality of the images, the tip can be made to oscillate up and down when driven by a piezoelectric crystal and it only 'taps' the surface once per period. The electrons in an atom on the surface interact with the tip as it approaches and it does not have to touch a molecule for its presence to be felt. The oscillation's amplitude ($ \approx 20$ nm) is maintained by a feedback loop and, as it approaches a molecule on the surface, the oscillation frequency changes and so the feedback changes also thus providing a measure of the surface shape. If the $Q$ of the cantilever is high, then the amplitude of the cantilever's response is large when the driving frequency is close to that of its natural frequency and is small at other frequencies. When a molecule is encountered, the force on the cantilever changes its frequency by a small amount, which because the $Q$ is high, causes a large change in its amplitude; see Fig. 14 thus increasing sensitivity. The $Q$ of the cantilever can be as high as $20000$ when operated at $250$ kHz and images with resolution of a few angstrom are possible.
 # 
 # The $Q$ factor can be redefined as the ratio of the resonant frequency to the full width at half maximum of the curve of power absorbed vs driving frequency or $Q = \omega/\Delta\omega$. This can be shown to be $Q = \omega m/h$. The characteristic behaviour of an oscillator with a high $Q$ factor (low damping) is that it responds by peaking with large displacements near to resonance, and is relatively unperturbed by other driving frequencies. The displacements are large, because the denominator in the amplitude becomes small, both as a result of $h$ being small and $\omega_f \to \omega$. If the damping should be zero ($h$ = 0), then a 'resonance catastrophe' can occur as the amplitude becomes infinity when $\omega_f = \omega$. When the $Q$ is low, which means that the damping factor is large, the oscillator amplitude remains small over a wide range of driving frequencies. A detailed account of damped and forced oscillators is given by Pain (1993).

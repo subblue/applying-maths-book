@@ -39,8 +39,8 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 
 #  using symbolic algebra SymPy to find the series, infinity is oo (two lc letter o together)
-x, a = symbols('x  a')         
-f01=(1/(1+a*x)**3 )
+x, a = symbols('x, a')         
+f01 = (1/(1 + a*x)**3 )
 series(f01,x)
 
 
@@ -130,9 +130,9 @@ print('{:s}{:10.3f}{:s}{:10.3f}'.format('average = ',av_x,', std dev = ',np.sqrt
 # In[6]:
 
 
-# calulation part (c) 
-# Z = lambda nu:np.exp(-h*c*nu/(2*kB*T))/(1.0-np.exp(-h*c*nu/(kB*T))) # normal equation 
-Z = lambda theta:np.exp(-theta/(2*T))/(1.0-np.exp(-theta/T))          # in terms of theta
+# calculation part (c) 
+# Z = lambda nu:np.exp(-h*c*nu/(2*kB*T))/(1.0-np.exp(-h*c*nu/(kB*T)))   # normal equation 
+Z = lambda theta:np.exp(-theta/(2*T))/(1.0 - np.exp(-theta/T))          # in terms of theta
                        
 kB= 1.38054e-23          # J /K
 h = 6.62559e-34          # SI units  Js
@@ -141,10 +141,10 @@ T = 300.0                # K
 thetaN = 3394.6          # K nitrogen
 
 nmax = 7
-pN=[np.exp(-(n+0.5)*thetaN/T)/Z(thetaN) for n in range(0,nmax)]   # relative population
+pN = [ np.exp(-(n+0.5)*thetaN/T)/Z(thetaN) for n in range(0,nmax) ]     # relative population
 
 thetaI = 308.7           # K Iodine
-pI=[np.exp(-(n+0.5)*thetaI/T)/Z(thetaI) for n in range(0,nmax)]
+pI = [ np.exp(-(n+0.5)*thetaI/T)/Z(thetaI) for n in range(0,nmax) ]
 
 print('{:s}{:6.2f}{:s}'.format(' Nitrogen frequency ',thetaN*kB/(h*c), ' cm^(-1)'))
 print('{:s}{:6.2f}{:s}'.format(' Iodine frequency   ',thetaI*kB/(h*c), ' cm^(-1)'))
@@ -194,7 +194,7 @@ print('\n{:s}{:f}{:s}{:f}'.format('total population N2 =  ', sum(pN), ' and I2 =
 # In[7]:
 
 
-fig=plt.figure(figsize=(6,6))
+fig = plt.figure(figsize=(6,6))
 plt.rcParams.update({'font.size': 16})  # set font size for plots
 
 kB   = 1.38054e-23          # J /K

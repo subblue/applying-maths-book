@@ -148,28 +148,45 @@ for i in range(2,20):          # recursion
 # In[5]:
 
 
+# Fibonacci series
+
+def fibo(n):
+    if n <= 1:
+        return 1
+    else:
+        return ( fibo(n-1)+ fibo(n-2) )
+#----------------------              
+for i in range(10):
+    print( fibo(i),end=',' )    
+
+
+# In[6]:
+
+
+# ratio of series
+print('{:s}{:10.7f}\n'.format('goldern ratio', ( 1+np.sqrt(5) )/2) )
 f = np.zeros(20,dtype=int)
-f[0]=1
-f[1]=1
+f[0] = 1
+f[1] = 1
 print('{:s}'.format('i     f_n   f_n/f_(n-1)')) 
 for i in range(2,20):
     f[i] = f[i-1] + f[i-2]
-    if i % 2 ==0:
+    if i % 2 == 0:
         print('{:2d} {:6d}   {:f}'.format( i, f[i], f[i]/f[i-1])  )
     pass
 
 
-# (c) and (d) adjusting the algorithm above and repeating the calculation confirms the results asked for in the question.
+# (d) The reverse series is $\cdots, -8,5,-3,2,-1,1,0,1,1,2,\cdots$
 # 
 # ### Q16 answer 
 # (a) The first few terms are
 # 
-# $\displaystyle \begin{array}{cccccccccc}
+# $$\displaystyle \begin{array}{cccccccccc}
 # & & & & & 1 & & & & \\
 # & & & 1 & & 2 & &  1 \\
 # & &1 && 3 & & 3 && 1\\
 # &1 & &4& & 6 & &4& & 1\\
-# 1 &&5 &&10 &&10 &&5&& 1\end{array}$
+# 1 &&5 &&10 &&10 &&5&& 1\end{array}$$
 # 
 # (b) expanding the left-hand side gives eqn 21; 
 # 
@@ -194,7 +211,7 @@ for i in range(2,20):
 # This can be made into a recursive algorithm. The starting value is $1$ and this has to be multiplied by
 # $(n - q)/(q + 1)$ each time round a loop in which $q$ starts at zero and ends at the value $n$.
 
-# In[6]:
+# In[7]:
 
 
 # Q 16 Binomial coefficient recursion

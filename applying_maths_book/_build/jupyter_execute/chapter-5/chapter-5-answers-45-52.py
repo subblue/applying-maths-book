@@ -47,7 +47,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 from sympy.functions.special.polynomials import hermite            
 
-n, m, x,alpha,hbar,omega = symbols('n,m,x,alpha,hbar,omega',positive=True)   # define using sympy
+n, m, x,alpha,hbar,omega = symbols('n,m,x,alpha,hbar,omega',positive=True) #using sympy
 
 E = lambda n:hbar*omega*(n+1/2)
 #-------------------------------------
@@ -57,7 +57,7 @@ def psi(n):     # wavefunction, factorial is an inbuilt  SymPy function
 print('{:s}'.format('non-zero values;2nd order correction'))
 print('{:s}'.format('n,  sum(int(psi(n) * psi(m))**2)/(E(n)-E(m))' ) )
 
-alist = []                                                 # list to hold results for printing
+alist = []                                    # list to hold results for printing
 s = 0
 for n in range(5):
     s = 0
@@ -68,7 +68,7 @@ for n in range(5):
             ans = integrate(f01,(x,-oo,oo),conds='none')   # integrate algeraically
             #print(n,m,ans/(E(n)-E(m)))
             if ans != 0:                                   # check if integral is zero
-                s = s + ans**2/( E(n)-E(m) )               # add each 2nd order term
+                s = s + ans**2/( E(n) - E(m) )             # add each 2nd order term
     alist.append(s)                                        # add to list   
 
 for i in range(5):
@@ -143,15 +143,16 @@ L = 1*nm           # box length m
 c1= 1/2.0
 c2= 2/3.0          # coefficients
 
-N = 1.0/np.sqrt(c1**2+c2**2)         # normalisation
+N = 1.0/np.sqrt(c1**2 + c2**2)         # normalisation
 E = lambda n: (h*n)**2/(8*m*L**2)    # energy J
 omega = (E(4)-E(3))*2*np.pi/h        # frequency s^(-1)
 period = 2*np.pi/omega               # s
+
 print('{:s} {:6.2f}\n{:s} {:10.4g}  {:10.4g}\n{:s} {:10.4g}\n{:s} {:10.4g}\n'.  format('normalisation', N, 'energy n= 3,4 ',E(3),E(4),'frequency 1/sec', omega,'period s', period))
 
 psi = lambda x,n,t: np.sqrt(2/L)*np.sin(n*np.pi*x/L)*np.exp(-1j*2*np.pi*E(n)*t/h)  # wavefunction
  
-prob= lambda x,n,m,t: 1e-9*N**2*((c1*psi(x,n,t)+ c2*psi(x,m,t))* np.conjugate(c1*psi(x,n,t)+ c2*psi(x,m,t))).real
+prob= lambda x,n,m,t: 1e-9*N**2*((c1*psi(x,n,t) + c2*psi(x,m,t))* np.conjugate(c1*psi(x,n,t)+ c2*psi(x,m,t))).real
 
 x = np.linspace(0,L,200)
 cols=['red','blue','green','red','blue','green','red','blue','green','grey','black']
@@ -192,7 +193,7 @@ plt.show()
 
 
 # wavepacket calculation  This code follows some of the calculation desribed in the text.
-
+#--------------
 def Hermite(n,x):       # use recursion formulae, x is real, n is order.
     if n==0:
         return 1
@@ -216,7 +217,7 @@ ps = 1e-12                    # picoseconds
 amu= 1.6604e-27               # kg       
 c  = 2.9979e10                # cm/s
 h  = 6.6256e-34               # J.s
-mu = 1*35/(1+35)*amu          # kg
+mu = 1*35/(1 + 35)*amu        # kg
 nu = 2989.7                   # HCl frequency in cm^(-1)
 k  = (2*np.pi*nu*c)**2*mu     # force constant N.m 
 alpha  = 2*np.pi*np.sqrt(mu*k)/h # 
@@ -282,12 +283,12 @@ ax0 = plt.subplot(1,2,1)
 ax1 = plt.subplot(3,2,2)
 ax2 = plt.subplot(3,2,4)
 ax3 = plt.subplot(3,2,6)
-
+#-------------
 def fact(n):           # factorial
-    if n ==0 or n==1:
+    if n == 0 or n == 1:
         return 1
     else:
-        return n*fact(n-1)
+        return n*fact(n - 1)
 #--------------  
 # radial function next
 Radl = lambda n, el, r:   np.sqrt( ( fact(n-el-1) * (2/(n*a0))**3)/(2*n*fact(n+el)) )                 * ( (2*r)/(n*a0))**el *np.exp(-r/(n*a0) )* GL( n-el-1,2*el+1,(2.0*r)/(n*a0) )   
@@ -315,14 +316,16 @@ numt  = 512                        # time points  ps
 tstep = 1
 xr = np.linspace(0, 3000*a0, numr) # fix size of radial calculation
 yt = np.linspace(0,tstep*numt,numt)# fix time range 
+
 print('{:s} {:f}'.format('time / point ps', yt[1]-yt[0]))
 print('{:s} {:f}'.format('distance / point pm', xr[1]-xr[0]))
+
 rvals,tvals = np.meshgrid(xr,yt)                                       # set up grid of points to plot contour
 
 aprob = (wp(rvals,el,tvals) * np.conjugate(wp(rvals,el,tvals))).real   # make Psi^*Psi; divide by 10^-12 toscale
 Lvls= [i for i in np.linspace(0,0.1,15)]         # adjust linspace to chnage range & number of contours
-ax0.contour(rvals,tvals, aprob, cmap = plt.cm.brg, levels=Lvls) 
 
+ax0.contour(rvals,tvals, aprob, cmap = plt.cm.brg, levels=Lvls) 
 ax0.xaxis.grid(True, zorder=0)
 ax0.yaxis.grid(True, zorder=0)
 ax0.set_title('H atom wave packet n= '+str(qn[0])+ ' to '+str(qn[10]))
@@ -414,7 +417,7 @@ f= lambda t: ((a1*B31)**2+ (a2*B32)**2 + 2*a1*a2*B31*B32*np.cos(deltaE*t/hbar))*
 numt = 500
 T = 2.0                             # T is gap between points
 t = np.linspace(0, numt*T, numt)    # t in ps
-ax0.plot(t,f(t)/f(0))
+ax0.plot(t,f(t)/f(0),color='blue')
 ax0.set_ylim([0,1])
 ax0.set_xlim([0,1000])
 ax0.set_xlabel('time /ps')
@@ -423,7 +426,7 @@ ax0.set_title('Quantum beats')
 invt  = np.linspace(0,1.0/(2.0*T), numt//2)   # set frequency for fft
 isfft = np.fft.rfft(f(t))
 freq  = max(invt)
-ax1.plot(invt,np.abs(isfft[:-1]))
+ax1.plot(invt,np.abs(isfft[:-1]),color='red')
 ax1.set_xlim([0,freq])
 minor_ticks=np.linspace(0,0.1,11)
 ax1.set_xticks(minor_ticks, minor=True)

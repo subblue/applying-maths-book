@@ -257,7 +257,7 @@ expand(ans2)
 # 
 # and the maximum is at $\displaystyle u_p=\sqrt{\frac{2k_BT}{m}}$.
 # 
-# The maximum speed is also the most probable speed, and using the data given this speed is, in m s$^{-1}, 16.087\sqrt{T}$, or $160.87$ at $100$ K, $278.63$ at $300$ K, and $359.72$ at $500$ K. 
+# The maximum speed is also the most probable speed, and using the data given this speed is, in $\mathrm{m\,s^{-1}},\; 16.087\sqrt{T}$, or $160.87$ at $100$ K, $278.63$ at $300$ K, and $359.72$ at $500$ K. 
 # 
 # (c) First,define the constants in SI units, putting mass $m$ into kg. Let the speed distribution be a function of speed $u$ and temperature $T$. The python code below plots $P(u)$ vs $u$ at the temperatures shown
 
@@ -285,7 +285,7 @@ plt.annotate('100 K',xy=(125,0.0055) )
 plt.annotate('300 K',xy=(250,0.0032) )
 plt.annotate('500 K',xy=(500,0.002) )
 plt.ylabel(r'$P(u)$')
-plt.xlabel(r'$U \; /ms^{-1}$')
+plt.xlabel(r'$U \; /\,ms^{-1}$')
 plt.show()
 
 
@@ -333,10 +333,22 @@ plt.show()
 # 
 # from which $\displaystyle v=\left( \frac{a}{3b} \right)^{1/4}w^{1/2}$.   
 # 
-# Since $w$ is weight this shows the necessity of reducing weight in an aeroplane but surprisingly only as its square root. To check this is a minimum, $d^2p/dw^2$ should be positive at the calculated $v$. Because $\displaystyle \frac{d^2p}{dw^2}=\frac{2aw^2}{v^3}+6bv$ is clearly positive, both $a$ and $b$ being positive, the calculation has produced the optimum speed.
+# Since $w$ is weight this shows the necessity of reducing weight in an aeroplane but surprisingly only as its square root. To check this is a minimum, $d^2p/dw^2$ should be positive at the calculated $v$. Because 
+# 
+# $$\displaystyle \frac{d^2p}{dw^2}=\frac{2aw^2}{v^3}+6bv$$
+# 
+# is clearly positive, both $a$ and $b$ being positive, the calculation has produced the optimum speed.
 # 
 # ### Q58 answer
-# The gradient (tangent) is $\displaystyle 2b^2y\frac{dy}{dx}=3x^2(a-x)-x^3$ and is zero when $dy/dx=0$. Substituting for $y$ produces $\displaystyle \frac{(3a-4x)\sqrt{x}}{2b\sqrt{a-x}}=0$ which has solutions at $x = 0$, and $x = \pm 3a/4$. The gradient would appear to be infinite at $x = a$. 
+# The gradient (tangent) is 
+# 
+# $$\displaystyle 2b^2y\frac{dy}{dx}=3x^2(a-x)-x^3$$
+# 
+# and is zero when $dy/dx=0$. Substituting for $y$ produces 
+# 
+# $$\displaystyle \frac{(3a-4x)\sqrt{x}}{2b\sqrt{a-x}}=0$$
+# 
+# which has solutions at $x = 0$, and $x = \pm 3a/4$. The gradient would appear to be infinite at $x = a$. 
 # 
 # ### Q59 answer
 # (a) First derivative: rearrange the equation to $\sin(u) = p$, differentiating produces $\displaystyle \cos(u)\frac{du}{dp}=\frac{1}{\cos(u)}$. 
@@ -345,7 +357,11 @@ plt.show()
 # 
 # which simplifies to $\displaystyle \frac{d^2u}{dp^2}=\tan(u)\left(\frac{du}{dp}\right)^2$.
 # 
-# As $\sin(u) = p$, which is also defined as sine = opposite/ hypotenuse = $p/1$ by the trigonometry of a right-angled triangle with a hypotenuse of 1, then, because the tangent is opposite/adjacent, $\displaystyle \tan(u)=\frac{p}{\sqrt{1-p^2}}$. Substituting produces 
+# As $\sin(u) = p$, which is also defined as sine = opposite/ hypotenuse = $p/1$ by the trigonometry of a right-angled triangle with a hypotenuse of 1, then, because the tangent is opposite/adjacent, 
+# 
+# $$\displaystyle \tan(u)=\frac{p}{\sqrt{1-p^2}}$$
+# 
+# Substituting produces 
 # 
 # $$\displaystyle \frac{du}{dp}=\frac{1}{\cos(u)}=\frac{1}{\sqrt{1-p^2}}\quad\text{ and }\quad \frac{d^2u}{dp^2}= \frac{p}{ (1-p^2)^{3/2} }$$
 # 
@@ -365,7 +381,7 @@ plt.show()
 # In[7]:
 
 
-x,v,g,h,=symbols('x, v, g, h')
+x, v, g, h =symbols('x, v, g, h')
 
 R  = v**2*x*sqrt(1-x**2)/g*(1+sqrt(1+2*g*h/(v*x)**2))
 ans= diff(R,x)
@@ -455,7 +471,7 @@ plt.show()
 
 
 # must include fsolve using from scipy.optimize import fsolve
-eqn = lambda x: 3-8*x**2+x**4
+eqn = lambda x: 3  -8*x**2 + x**4
 ans = fsolve(eqn,0.5)
 print('{:s} {:6.3f}'.format('k value at minumum =', ans[0]) )
 
@@ -485,7 +501,7 @@ print('{:s} {:6.3f}'.format('k value at minumum =', ans[0]) )
 # 
 # $$\displaystyle \begin{array}{lccc}
 # \hline
-# \text{100 K} & B \text{ cm}^{-1} &\text{300 K} & \text{ 500 K} \\
+# &\text{100 K} & B \text{ cm}^{-1} &\text{300 K} & \text{ 500 K} \\
 # \hline
 # \text{HCl} &10.59& 1 & 3 & 4\\
 # \text{CO}  &1.93 & 4 & 7 & 9\\
@@ -507,9 +523,9 @@ print('{:s} {:6.3f}'.format('k value at minumum =', ans[0]) )
 # In[11]:
 
 
-tau,omega,omega0,g=symbols('tau, omega, omega0, g')
+tau, omega, omega0, g = symbols('tau, omega, omega0, g')
 
-g  = (tau/pi)*(1/(1+tau**2*(omega-omega0)**2))
+g  = (tau/pi)*(1/(1 + tau**2*(omega - omega0)**2))
 ans= diff(g,omega,omega)
 simplify(ans)
 
@@ -620,7 +636,11 @@ solve(ans,x)                   # solve equation
 # _____
 # 
 # ### Q69 answer
-# (a,b) The maximum number of levels is found when the difference in energy levels approaches zero then $\displaystyle \frac{dE_n}{dn}=\nu_e-2x_e\nu_e(n+1/2)=0$ or $\displaystyle n=\frac{1}{2x_e}-\frac{1}{2}$ and as $x_e = 0.0174098, \,n_{max} = 28$. The calculated dissociation energy is $E = 42928.8\,\mathrm{ cm^{-1}}$ or $0.9994D_e$ , which is very close to, but just below, the dissociation energy.
+# (a,b) The maximum number of levels is found when the difference in energy levels approaches zero then 
+# 
+# $$\displaystyle \frac{dE_n}{dn}=\nu_e-2x_e\nu_e(n+1/2)=0\quad\text{or}\quad n=\frac{1}{2x_e}-\frac{1}{2}$$
+# 
+# and as $x_e = 0.0174098, \,n_{max} = 28$. The calculated dissociation energy is $E = 42928.8\,\mathrm{ cm^{-1}}$ or $0.9994D_e$ , which is very close to, but just below, the dissociation energy.
 # 
 # (c) The calculation, assuming discrete quantum numbers, is shown below and in cm$^{-1}$ for simplicity. The differences in the energy of the $n^{th}$ and $(n + 1)^{th}$ terms are checked and as long as $E_{n+1} \gt E_n$ the quantum numbers $n$ are incremented.
 
@@ -675,15 +695,15 @@ print('{:s} {:d}{:s} {:8.2f}'.format('n_max =',n, ', D_e =', E(n)) )
 # In[15]:
 
 
-DeltaGN2O4= 97.79*1000  # J/mol
-DeltaGNO2 = 51.26*1000
+DeltaGN2O4 = 97.79*1000  # J/mol
+DeltaGNO2  = 51.26*1000
 
 R = 8.314  # J/K/mole
-
+T = 320    # K
 dDeltaG = lambda xi: 2*DeltaGNO2-DeltaGN2O4 + R*T*np.log(4*xi**2/(1-xi**2))
-T = 320
-xi_eq = fsolve(dDeltaG,0.1)[0]    # 0.1 is initial guess, take 1 st answer only with [0]
-k_p   = 4*xi_eq**2/(1-xi_eq**2)
+
+xi_eq = fsolve(dDeltaG,0.1)[0]    # 0.1 is initial guess, take 1st answer only with [0]
+k_p   = 4*xi_eq**2/(1 - xi_eq**2)
 print('{:s} {:6.4f} {:s} {:6.3f} '.format('xi(eq) =', xi_eq ,', K_p = ',k_p) ) 
 
 

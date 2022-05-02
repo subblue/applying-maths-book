@@ -46,7 +46,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # In[2]:
 
 
-theta, a,b  = symbols('theta, a, b')  # use Sympy
+theta, a, b  = symbols('theta, a, b')  # use Sympy
 R = Matrix([ [cos(theta),sin(theta)],[-sin(theta),cos(theta)] ])
 v = Matrix([a,b])    # define a vector 
 R*v                  # rotates about zero.  Unlike numpy * is matrix rotation
@@ -90,15 +90,15 @@ R*v                  # rotates about zero.  Unlike numpy * is matrix rotation
 # An algorithm in Python using rotation matrices to rotate a molecules image starts by defining the coordinates, in this example of ethanol. These coordinates are
 # 
 # $$\displaystyle \begin{array}{lll}\\
-# C1= [ -0.968, -0.008, -0.167] & \text{carbon of CH2OH} \\
-# Ox= [ -0.953, 1.395, -0.142 ] & \text{O atoms}  \\
-# H1 = [  0.094, -0.344, -0.200 ] &\text{H on C1}\\
-# C2= [ -1.683, -0.523, 1.084 ] &\text{Carbon OF CH3}\\ 
-# H2= [ -1.490, -0.319, -1.102 ] &\text{H on C1}\\
-# H3= [ -1.842, 1.688, -0.250 ] &\text{H on O atom}\\
-# H4= [ -1.698, -1.638, 1.101 ] &\text{H on C2}\\
-# H5= [ -1.171, -0.174, 2.011 ] &\text{H on C2}\\
-# H6= [ -2.738, -0.167, 1.117 ] &\text{H on C2}\\ \end{array} $$
+# C1= \begin{bmatrix} -0.968& -0.008& -0.167\end{bmatrix} & \text{carbon in CH2OH} \\
+# Ox= \begin{bmatrix} -0.953& 1.395 & -0.142 \end{bmatrix} & \text{O atom}  \\
+# H1 =\begin{bmatrix}  0.094& -0.344& -0.200 \end{bmatrix} &\text{H on C1}\\
+# C2= \begin{bmatrix} -1.683& -0.523& 1.084 \end{bmatrix} &\text{Carbon in CH3}\\ 
+# H2= \begin{bmatrix} -1.490& -0.319& -1.102 \end{bmatrix} &\text{H on C1}\\
+# H3= \begin{bmatrix} -1.842& 1.688 & -0.250 \end{bmatrix} &\text{H on O atom}\\
+# H4= \begin{bmatrix} -1.698& -1.638& 1.101 \end{bmatrix} &\text{H on C2}\\
+# H5= \begin{bmatrix} -1.171& -0.174& 2.011 \end{bmatrix} &\text{H on C2}\\
+# H6= \begin{bmatrix} -2.738& -0.167& 1.117 \end{bmatrix} &\text{H on C2}\\ \end{array} $$
 # 
 # The input to the procedure must have the three rotation angles and the coordinates of the molecule. A graph of the molecule will be plotted in the usual chemical way after rotation. The labelled structure is shown in Figure 32.
 # 
@@ -113,18 +113,18 @@ R*v                  # rotates about zero.  Unlike numpy * is matrix rotation
 
 
 # Algorithm. Rotating a Molecule
-from mpl_toolkits.mplot3d import Axes3D  # import ability to plot in 3D
+from mpl_toolkits.mplot3d import Axes3D    # import ability to plot in 3D
 
 fig = plt.figure(figsize=(10,8))
-plt.rcParams.update({'font.size': 16})  # set font size for plots
-ax0=plt.subplot(121,projection='3d')    # set 3D projection for two plots side by side
-ax1=plt.subplot(122,projection='3d')
+plt.rcParams.update({'font.size': 16})     # set font size for plots
+ax0 = plt.subplot(121,projection='3d')     # set 3D projection for two plots side by side
+ax1 = plt.subplot(122,projection='3d')
 
 #------------------------------
 def rotate_molecule(a, b, c):  # input order is psi, theta, phi
     psi   = a*np.pi/180.0  
     theta = b*np.pi/180.0 
-    phi   = c*np.pi/180.0  # make into radians # eqns (13) to (15), follow
+    phi   = c*np.pi/180.0      # make into radians # eqns (13) to (15), follow
     
     rot_psi   = np.array( [[ np.cos(psi),np.sin(psi),0 ], [ -np.sin(psi),np.cos(psi),0 ], [ 0,0,1]] )
                        
@@ -165,15 +165,15 @@ def add_labels(ax):
     ax.set_zlabel(r'$z$')
 #---------------------------------
 
-C1= [ -0.968, -0.008, -0.167]    # define coordinaates
-Ox= [ -0.953, 1.395, -0.142 ]  
-H1= [ 0.094, -0.344, -0.200 ]  
-C2= [ -1.683, -0.523, 1.084 ] 
+C1= [ -0.968, -0.008, -0.167 ]    # define coordinaates
+Ox= [ -0.953, 1.395 , -0.142 ]  
+H1= [ 0.094 , -0.344, -0.200 ]  
+C2= [ -1.683, -0.523,  1.084 ] 
 H2= [ -1.490, -0.319, -1.102 ]
-H3= [ -1.842, 1.688, -0.250 ]  
-H4= [ -1.698, -1.638, 1.101 ]  
-H5= [ -1.171, -0.174, 2.011 ]  
-H6= [ -2.738, -0.167, 1.117 ] 
+H3= [ -1.842, 1.688 , -0.250 ]  
+H4= [ -1.698, -1.638,  1.101 ]  
+H5= [ -1.171, -0.174,  2.011 ]  
+H6= [ -2.738, -0.167,  1.117 ] 
 
 # put the list of coordinates given above here.
 # mol is the name of atom list to draw molecule
@@ -266,7 +266,7 @@ plt.show()
 
 # Algorthim: Algebraic calculation using a Jacobian using Sympy
 
-r,theta, fx, fy, P, fxx, fyy = symbols('r, theta, fx, fy, P, fxx, fyy')
+r, theta, fx, fy, P, fxx, fyy = symbols('r, theta, fx, fy, P, fxx, fyy')
 
 fx = r*cos(theta)
 fy = r*sin(theta)
@@ -278,7 +278,7 @@ J
 # In[5]:
 
 
-P = Matrix([diff(f,r),diff(f,theta)])
+P = Matrix( [ diff(f,r),diff(f,theta) ] )
 P
 
 

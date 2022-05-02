@@ -46,7 +46,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # **(e)** The value of $a$ found is put back into the equation for $E_V$ to obtain its minimum value. This will be the best approximation to the energy with the type of wavefunction chosen. Better or worse energies can be found with different wavefunctions.
 # 
-# #### 9.1 A 1D example
+# ### 9.1 A 1D example
 # As a one-dimensional example, suppose that an electron is subject to a delta function potential that exists only at the origin (Szabo & Ostlund 1982). This potential is simple to deal with mathematically, but it is somewhat unrealistic: it could perhaps approximate a defect in a nanowire or an oxygen atom in a chain of carbons. The Schroedinger equation in atomic units (see chapters 1.15.3 & 11.10.2) is
 # 
 # $$\displaystyle \left( -\frac{1}{2}\frac{d^2}{dx^2}-\delta (x) \right) \psi=E\psi  \tag{48}$$
@@ -67,7 +67,9 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # Figure 21. A delta function potential with a value of $-1$ at the origin.
 # _____
-# **(c)** To use equation 47 the integrals have to be evaluated. The denominator, which ensures normalization, is $\displaystyle \int \psi^*\psi dx=\sqrt{\frac{\pi}{2a}}$
+# **(c)** To use equation 47 the integrals have to be evaluated. The denominator, which ensures normalization, is 
+# 
+# $$\displaystyle \int \psi^*\psi dx=\sqrt{\frac{\pi}{2a}}$$
 # 
 # and the expectation integral $\int\psi H \psi dx$ is 
 # 
@@ -89,7 +91,11 @@ integrate( eq, (x,-oo,oo) )
 # 
 # but this gives the energy in terms of $a$, which is the variational parameter also called the Ritz parameter.
 # 
-# **(d, e)** To find the minimum energy, $E_V$ has to be minimized. Differentiation with respect to $a$ is $ \displaystyle \frac{d}{da}\left(\frac{a}{2}-\sqrt{\frac{2a}{\pi} }\right)=\frac{1}{2}-\frac{2}{\pi a}$ from which $a = 2/\pi$. Substituting into $E_V$ gives the energy as $-1/\pi  =-0.318$ fairly close to, but greater than, the true value of $-0.5$ and not so bad considering the simplicity of the potential.
+# **(d, e)** To find the minimum energy, $E_V$ has to be minimized. Differentiation with respect to $a$ is 
+# 
+# $$ \displaystyle \frac{d}{da}\left(\frac{a}{2}-\sqrt{\frac{2a}{\pi} }\right)=\frac{1}{2}-\frac{2}{\pi a}$$
+# 
+# from which $a = 2/\pi$. Substituting into $E_V$ gives the energy as $-1/\pi  =-0.318$ fairly close to, but greater than, the true value of $-0.5$ and not so bad considering the simplicity of the potential.
 # 
 # ### 9.2 A semi-proof of the method
 # 
