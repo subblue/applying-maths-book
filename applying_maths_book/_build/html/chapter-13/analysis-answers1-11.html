@@ -768,7 +768,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-7/matrices-L.html">
-     15.7 Principal axes
+     Principal axes for Moments of Inertia
     </a>
    </li>
    <li class="toctree-l2">
@@ -1549,14 +1549,13 @@ v_{-m}=v_e(1-2x_e)-2m(B_e-\alpha_e)-\alpha_e m^2\end{split}\]</div>
 <p>so that a plot of <span class="math notranslate nohighlight">\(v_m + v_{-m}\)</span> against <span class="math notranslate nohighlight">\(m^2\)</span> is a straight line with slope <span class="math notranslate nohighlight">\(-2\alpha_e\)</span> and intercept <span class="math notranslate nohighlight">\(2v_0 = 2v_e(1 - 2x_e)\)</span> thus enabling <span class="math notranslate nohighlight">\(v_e\)</span> and <span class="math notranslate nohighlight">\(\alpha_e\)</span> to be found.</p>
 <p>(h,i) Note that the weighting is added as <span class="math notranslate nohighlight">\(1/\sigma^2\)</span>. Using the weighted least squares Algorithm 2, the data produces</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}\displaystyle \begin{array}\\
-\hline
- ^{35}\text{Cl}&amp; \alpha_e &amp; v_e/\mathrm{cm^{-1}} &amp; v_e\mathrm{cm^{-1}} &amp; k/\mathrm{Nm^{-1} }\\
+\[\begin{split}\displaystyle \begin{array}{ccccc}\\
+ ^{35}\text{Cl}&amp; \alpha_e &amp; v_e\,/\,\mathrm{cm^{-1}} &amp; v_e\,/\,\mathrm{cm^{-1}} &amp; k\,/\,\mathrm{Nm^{-1} }\\
  \hline
  \text{value} &amp;0.3027 &amp; 2885.86&amp;2989.92 &amp;516.03\\
  \sigma &amp;0.00025 &amp; 0.018&amp;0.018 &amp;0.0061 \\
- \hline
- ^{37}\text{Cl}&amp; \alpha_e &amp; v_e/\mathrm{cm^{-1}} &amp; v_e\mathrm{cm^{-1}} &amp; k/\mathrm{Nm^{-1} }\\
+ \hline\\
+ ^{37}\text{Cl}&amp; \alpha_e &amp; v_e\,/\,\mathrm{cm^{-1}} &amp; v_e\,/\,\mathrm{cm^{-1}} &amp; k\,/\,\mathrm{Nm^{-1} }\\
  \hline
  \text{value} &amp;0.3020 &amp;2883.77 &amp;2987.75 &amp;516.06\\
  \sigma &amp;0.0002 &amp;0.015 &amp;0.015 &amp;0.0060\\
@@ -1605,7 +1604,7 @@ v_{-m}=v_e(1-2x_e)-2m(B_e-\alpha_e)-\alpha_e m^2\end{split}\]</div>
 </div>
 <div class="section" id="q13-answer">
 <h2>Q13 answer<a class="headerlink" href="#q13-answer" title="Permalink to this headline">¶</a></h2>
-<p>In wavenumbers <span class="math notranslate nohighlight">\(G(n)=v_e(n+1/2)-x-ev_e(n+1/2)^2+y_ev_e(n+1/2)^3\)</span> and the difference <span class="math notranslate nohighlight">\(n\to n+1\)</span></p>
+<p>In wavenumbers <span class="math notranslate nohighlight">\(G(n)=v_e(n+1/2)-x_ev_e(n+1/2)^2+y_ev_e(n+1/2)^3\)</span> and the difference <span class="math notranslate nohighlight">\(n\to n+1\)</span></p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \Delta G=v_e(1 +13y_e/4-2x_e+2(3y_e-x_e)n+3y_en^2 )\]</div>
 <p>which means that a polynomial of the form <span class="math notranslate nohighlight">\(y = c_1 + c_2x + c_3n^2\)</span> should fit the data with <span class="math notranslate nohighlight">\(n\)</span> starting at zero. Doing this means that <span class="math notranslate nohighlight">\(n\)</span> is now a variable and can take any value unlike in the equation for <span class="math notranslate nohighlight">\(G\)</span> where it is an integer. To obtain the area under the curve and hence dissociation energy, <span class="math notranslate nohighlight">\(n\)</span> can be integrated from zero to whatever value it has that makes <span class="math notranslate nohighlight">\(y = 0\)</span>. The weighting is unknown so that in the polynomial least squares this is made equal to one.</p>

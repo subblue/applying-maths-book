@@ -191,7 +191,6 @@ for i in range(1,12):                      # print out S matrices up to size of 
 # The figure below shows two $\boldsymbol S$ matrices of sizes $7$ and $11$. The circulant nature of these matrices is clear. 
 # 
 # ![Drawing](fourier-fig50b.png)
-# 
 # _____
 # 
 # In the calculation the inverse of the $\boldsymbol S$ matrix is needed. This can be inverted in SymPy as $\boldsymbol S^{-1}$ but for the particular form of this matrix, inversion can be obtained more quickly using the formula
@@ -199,3 +198,9 @@ for i in range(1,12):                      # print out S matrices up to size of 
 # $$ \boldsymbol S^{-1}= \frac{2}{n+1} ( 2 \boldsymbol S^T -\boldsymbol J_n  ) $$
 # 
 # where $T$ is the transpose and matrix $\boldsymbol J$ is an $n\times n$ matrix where every value is one (Harwit & Sloane 1979).
+
+# In[ ]:
+
+
+
+

@@ -768,7 +768,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-7/matrices-L.html">
-     15.7 Principal axes
+     Principal axes for Moments of Inertia
     </a>
    </li>
    <li class="toctree-l2">
@@ -1389,11 +1389,11 @@
 <div class="section" id="q8-excited-state-blocking">
 <h2>Q8 Excited state blocking<a class="headerlink" href="#q8-excited-state-blocking" title="Permalink to this headline">¶</a></h2>
 <p>We have assumed in previous calculations that the population of the final state does not affect the transition from other states, but, in fact, the rate of a transition is proportional to the difference in population between energy levels. Two common situations arise where the final state population can affect the transition from an upper level; one is a three or four level laser and the other is the phenomenon of band filling in semiconductors, where, because of the Pauli principle, only two electrons can fill any electronic energy level. A generic diagram is shown in Figure 8. It is assumed that state <span class="math notranslate nohighlight">\(T\)</span> is full when it receives half the total population.</p>
-<p>Calculate the decay of state A if <span class="math notranslate nohighlight">\(k_1 = 1/(100\mathrm{ ns})\)</span> and <span class="math notranslate nohighlight">\(k_2 = 1/(30\, \mathrm{ns})\)</span>. Assume that the probability of going into state <span class="math notranslate nohighlight">\(T\)</span> is reduced in proportion to the fraction of the total number already in that state.</p>
-<p><strong>Strategy:</strong> The excited state lifetime is <span class="math notranslate nohighlight">\(1/(k_1 + k_2)\)</span>, but <span class="math notranslate nohighlight">\(k_2\)</span> is a function of the population in level <span class="math notranslate nohighlight">\(T\)</span> so the lifetime changes as time progresses. This can be accommodated by making a function</p>
+<p>Calculate the decay of state A if <span class="math notranslate nohighlight">\(k_f = 1/(100\mathrm{ ns})\)</span> and <span class="math notranslate nohighlight">\(k_{isc} = 1/(30\, \mathrm{ns})\)</span>. Assume that the probability of going into state <span class="math notranslate nohighlight">\(T\)</span> is reduced in proportion to the fraction of the total number already in that state.</p>
+<p><strong>Strategy:</strong> The excited state lifetime is <span class="math notranslate nohighlight">\(1/(k_f + k_{isc})\)</span>, but <span class="math notranslate nohighlight">\(k_{isc}\)</span> is a function of the population in level <span class="math notranslate nohighlight">\(T\)</span> so the lifetime changes as time progresses. This can be accommodated by making a function</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle k_2(n) = \left(1 - \frac{2n_T}{n}\right)k_2\]</div>
-<p>where <span class="math notranslate nohighlight">\(n_T\)</span> is the number in level <span class="math notranslate nohighlight">\(T\)</span> at any state of the calculation. At the start, <span class="math notranslate nohighlight">\(n_T = 0\)</span> and therefore <span class="math notranslate nohighlight">\(k_2(n) = k_2\)</span>, and at the end <span class="math notranslate nohighlight">\(n_T = n/2\)</span>, and <span class="math notranslate nohighlight">\(k_2(n) = 0\)</span>. As time progresses, proportionately more and more population enters state G because the value of <span class="math notranslate nohighlight">\(k_2(n)\)</span> becomes smaller. Start by modifying the code in the solution to Q7).</p>
+\[\displaystyle k_2(n) = \left(1 - \frac{2n_T}{n}\right)k_{isc}\]</div>
+<p>where <span class="math notranslate nohighlight">\(n_T\)</span> is the number in level <span class="math notranslate nohighlight">\(T\)</span> at any state of the calculation. At the start, <span class="math notranslate nohighlight">\(n_T = 0\)</span> and therefore <span class="math notranslate nohighlight">\(k_2(n) = k_{isc}\)</span>, and at the end <span class="math notranslate nohighlight">\(n_T = n/2\)</span>, and <span class="math notranslate nohighlight">\(k_2(n) = 0\)</span>. As time progresses, proportionately more and more population enters state G because the value of <span class="math notranslate nohighlight">\(k_2(n)\)</span> becomes smaller. Start by modifying the code in the solution to Q7).</p>
 <p><img alt="Drawing" src="../_images/monte-carlo-fig8.png" /></p>
 <p>figure 8. A scheme where population difference becomes important.</p>
 </div>

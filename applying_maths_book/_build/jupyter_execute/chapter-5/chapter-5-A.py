@@ -56,7 +56,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # $$\displaystyle \sum_{n=1}^N x^n=\frac{x^m-x^{N+1}}{1-x}$$
 # 
 # 
-# The function  $f(x)  = 1/(1-x) $ (eqn. 2) can be represented by the polynomial series equation (1), again this is only true if $-1\, x \,| \lt 1$. The polynomial is calculated as
+# The function  $f(x)  = 1/(1-x) $ (eqn. 2) can be represented by the polynomial series equation (1), again this is only true if $-1\, x \, \lt 1$. The polynomial is calculated as
 # 
 # $$\displaystyle f(0) = 1, \quad f(1/2) = 1 + 1/2 + 1/4 + 1/8 + \cdots$$
 # 
@@ -103,6 +103,22 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # $$\displaystyle \sum_{n=1}^\infty (-1)^n nx^{n-1} = \frac{1}{(1+x)^2}$$
 # 
 # and the $\displaystyle (-1)^n$ ensures that alternate terms are positive and negative.
+# 
+# #### Table of summations
+# 
+# $$\displaystyle \begin{array}{l|l|l}
+# \hline
+# \sum_0^\infty\limits x^n = \displaystyle\frac{1}{1-x},\quad |x|<1&
+# \sum_0^\infty\limits (-x)^n = \displaystyle\frac{1}{1+x},\quad |x|<1&
+# \sum_0^\infty\limits nx^n =\displaystyle\frac{x}{(1-x)^2},\quad |x|<1\\
+# \sum_0^\infty\limits nx(1-x)^n=\displaystyle \frac{1-x}{x},\quad |x-1|<1&
+# \sum_0^\infty\limits x^n(1-x) =1,\quad |x|<1&
+# \sum_0^\infty\limits nx^n(1-x) =\displaystyle\frac{x}{1-x},\quad |x|<1\\
+# \sum_0^\infty\limits nx(1-x)^{n-1} =\displaystyle\frac{1}{x},\quad |x-1|<1&
+# \sum_0^\infty\limits x(1-x)^{n-1} =\displaystyle\frac{1}{1-x},\quad |x-1|<1&
+# \sum_0^\infty\limits nx^{n-1}(1-x) =\displaystyle\frac{1}{1-x},\quad |x|<1\\
+# \hline
+# \end{array}$$
 # 
 # Figure 1, below, shows the function of equation (3) and several approximations which are ever longer series with increasing powers of $x$. Expanding the series as far as $x^6$ only matches the $f(x)$ well up to about $x = 0.5$ indicating the rather obvious fact that that many terms may be needed to accurately reproduce a function. The plot also shows haw a function may be approximated by its first couple of terms when the variable $x$ is very small.  This is a very common procedure to account for a perturbation.
 
@@ -187,7 +203,7 @@ plt.show()
 # 
 # where the summation covers all the energy states and $p(E)$ is the distribution function, which is very often a thermal or Boltzmann distribution, $\displaystyle p(E) = e^{-E/k_BT}$ with temperature $T$ and Boltzmann’s constant $k_B$. In special situations this might be replaced by the Bose-Einstein or Fermi-Dirac distribution among others. 
 # 
-# If the lowest energy is zero and the largest infinity and $E$ has discrete integer values, in units of $k_BT, the average energy is, by definition,
+# If the lowest energy is zero and the largest infinity and $E$ has discrete integer values, in units of $k_BT$, the average energy is, by definition,
 # 
 # $$\displaystyle \langle E \rangle=\frac{\sum_{E=0}^\infty\limits Ee^{-E/k_BT}}{\sum_{E=0}^\infty\limits e^{-E/k_BT}}\tag{8a}$$
 # 
@@ -219,7 +235,7 @@ plt.show()
 # 
 # If rotational levels are considered typically several tens of levels are populated at room temperature and the summation therefore involves many terms, for example if the rotational constant $B=1\;\mathrm{cm^{-1}}$, $\approx 55 $ levels are needed to produce a constant average energy of $\approx 14500\;\mathrm{cm^{-1}}$. A vibration of $1000\;\mathrm{cm^{-1}}$ levels only to $n=2$ are needed to produce four figure accuracy of $500.4 \; \mathrm{ cm^{-1}}$.
 # 
-# #### (ii) Polymers
+# #### **(ii) Polymers**
 # In synthesizing polymers by radical or condensation polymerisation, the random nature of the chemistry that adds monomers to an already growing chain dictates that a range of polymer lengths is normally produced; the polymer is poly-disperse. Two different averages are frequently taken to characterize the polymer; one is the number average mass, the other the weight average mass. 
 # 
 # The number average mass $m_n$ is
@@ -241,6 +257,24 @@ plt.show()
 # $$\displaystyle \langle m_w\rangle = m_0 \frac{\sum_{k=1}\limits n_k^3e^{-an_k}}{\sum_{k=1}\limits n_k^2e^{-an_k}} = m_0\frac{4e^a+e^{2a}+1}{e^{2a}-1}$$
 # 
 # which is clearly not the same as $\langle m_n \rangle$. The two averages are approximately linear, for $a<1$, if plotted on a log-log plot and have a negative slope, with $\langle m_w\rangle \gt \langle m_n\rangle$. When $a \gt 1$ the two curves converge to a limiting value of $m_0$.
+# 
+# #### **(iii) Sequence repeats in DNA**
+# 
+# Our DNA is packaged into $46$ chromosomes (22 pairs and 2 sex chromosomes) but each chromosome is still too vast to analyse and so it is broken into more manageable pieces by mechanical or chemical or enzymatic means. If we want to identify a particular sequence, say of $n$ base pairs  we will want to estimate what is the average separation of these is so that a suitable number of fragments are present containing the sequence.  It is assumed that the DNA is initially so long, $\sim 10^6$ base pairs, that there are equal amounts of GCAT bases. If the sequence to identify is $n=8$ bases long and is GGCATGGA then the chance of finding the first G is $1/4$ and of the second adjacent G is $ 1/16$ and as each event is independent of any other the probabilities multiply to give $\displaystyle p=\frac{1}{4}\frac{1}{4}\frac{1}{4}\cdots= \frac{1}{4^n}$, thus for $n=8$ the chance of finding any specified consecutive sequence is very small $1/4^8=1/65536$. This is true whatever the sequence is as long as the bases are in a fixed order. To detect an 8-mer the fragment will, of course, have to have on average at least these many bases since we do not know before hand if the sequence is present. What then is the average distance from one sequence to the next? The probability of _not_ seeing the next sequence in $m$ moves is $(1-1/4^n)^{m-1} $ and then seeing one in the next move is the product
+# 
+# $$\displaystyle p(m)=\left(1-\frac{1}{4^n}\right)^{m-1}\frac{1}{4^n}$$
+# 
+# With the substitution $p=1/4^n$ the average is therefore
+# 
+# $$ \mu= \frac{\sum_{m=0}^\infty\limits m\left(1-p\right)^{m-1}p}{\sum_{m=0}^\infty\limits \left(1-p\right)^{m-1}p}$$
+# 
+# The normalisation (denominator) is the sum $\displaystyle \frac{1}{1-p}\sum_{m=0}^\infty\limits \left(1-p\right)^{m}p=  \frac{1}{1-p}\to 1$ because $p\lt\lt 1$. The numerator is $\displaystyle \frac{1}{1-p}\sum_{m=0}^\infty\limits mp\left(1-p\right)^m= \frac{1}{p}$ so the average is
+# 
+# $$\displaystyle \mu = \frac{1}{p}=4^n$$
+# 
+# which means that when the sequence is long a huge number of base pairs are needed, on average, if the sequence is to be present more than once. This is important in PCR where a sequence of perhaps $15 \to 30 $ primer base pairs are used to identify and so amplify the DNA. This primer sequence is so long that the probability of this occurring by random is tiny in fragmented DNA with only a few thousand base pairs. This makes the PCR amplification very specific indeed, i.e if the target sequence is not there, amplification is highly unlikely to occur by random chance.    
+
+# 
 # 
 # ### 3 Partition Functions
 # 

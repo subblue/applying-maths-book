@@ -79,7 +79,7 @@ def convert_base(base,num):
     while num > 0:
         rem = num % base               # modulus
         if rem > 9:
-            rem = chr(65 - 10 + rem)   # make into letter if > 9, see ascii code numbers
+            rem = chr(65 - 10 + rem)   # make into letter if > 9, look up ascii code numbers
         newn.append( rem  )
         num = num // base              # integer division
         pass
@@ -87,11 +87,11 @@ def convert_base(base,num):
 #------------------------
 
 base = 8
-num  = 123
+num  = 2130
 
 ans = convert_base(base,num)
 
-print('Number in base ',base,' is ', ans[::-1] )  # [::-1] reverses order 
+print(num,' in base ',base,' is ', ans[::-1] )  # [::-1] reverses order 
 
 
 # ### 11 Delta functions,  Krokecker and Dirac

@@ -163,14 +163,13 @@
 # 
 # (h,i) Note that the weighting is added as $1/\sigma^2$. Using the weighted least squares Algorithm 2, the data produces
 # 
-# $$\displaystyle \begin{array}\\
-# \hline
-#  ^{35}\text{Cl}& \alpha_e & v_e/\mathrm{cm^{-1}} & v_e\mathrm{cm^{-1}} & k/\mathrm{Nm^{-1} }\\
+# $$\displaystyle \begin{array}{ccccc}\\
+#  ^{35}\text{Cl}& \alpha_e & v_e\,/\,\mathrm{cm^{-1}} & v_e\,/\,\mathrm{cm^{-1}} & k\,/\,\mathrm{Nm^{-1} }\\
 #  \hline
 #  \text{value} &0.3027 & 2885.86&2989.92 &516.03\\
 #  \sigma &0.00025 & 0.018&0.018 &0.0061 \\
-#  \hline
-#  ^{37}\text{Cl}& \alpha_e & v_e/\mathrm{cm^{-1}} & v_e\mathrm{cm^{-1}} & k/\mathrm{Nm^{-1} }\\
+#  \hline\\
+#  ^{37}\text{Cl}& \alpha_e & v_e\,/\,\mathrm{cm^{-1}} & v_e\,/\,\mathrm{cm^{-1}} & k\,/\,\mathrm{Nm^{-1} }\\
 #  \hline
 #  \text{value} &0.3020 &2883.77 &2987.75 &516.06\\
 #  \sigma &0.0002 &0.015 &0.015 &0.0060\\
@@ -232,7 +231,7 @@
 # The weighting is $1/y_i$ ($y$=number of areas) assuming that the data is Poisson distributed. $\chi^2=1.15$ giving a probability of obtaining this or a higher number as $0.95$ which means that the Poisson model fits the data. 
 # 
 # ### Q13 answer
-# In wavenumbers $G(n)=v_e(n+1/2)-x-ev_e(n+1/2)^2+y_ev_e(n+1/2)^3$ and the difference $n\to n+1$
+# In wavenumbers $G(n)=v_e(n+1/2)-x_ev_e(n+1/2)^2+y_ev_e(n+1/2)^3$ and the difference $n\to n+1$
 # 
 # $$\displaystyle \Delta G=v_e(1 +13y_e/4-2x_e+2(3y_e-x_e)n+3y_en^2 )$$
 # 

@@ -38,11 +38,11 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # $$I(t)=I_0\exp(-k(t)) ; \qquad k(t)=k_f\left( 1+\alpha\sqrt{\frac{1}{k_ft}}  \right)$$
 # 
-# This behaviour is shown in Figure 16 and is a direct consequence of the spatial arrangement of several acceptors around a donor. It has been confirmed by numerous experiments.
+# This behaviour is shown in Figure 13 and is a direct consequence of the spatial arrangement of several acceptors around a donor. It has been confirmed by numerous experiments.
 # 
-# ![Drawing](monte-carlo-fig15.png)
+# ![Drawing](monte-carlo-fig12.png)
 # 
-# Figure 15. Donor (centre) surrounded by acceptors at different distances. The transfer rate and hence excited state decay of the donor depends upon how far away the acceptors are.|
+# Figure 12. Donor (centre) surrounded by acceptors at different distances. The transfer rate and hence excited state decay of the donor depends upon how far away the acceptors are.|
 # ____
 # 
 # To calculate the decay of the excited donor using a Monte Carlo method, the donor is placed at the origin. Initially, it might seem to be a good idea to place molecules at random on a grid, record the numbers in an array, and work out the rate constant for transfer for each of them. However, only the distance from the donor is needed, not the coordinates, and each randomly chosen distribution of molecules is only needed once; therefore, the distance can be calculated 'on the fly' by guessing x-, y-, and z-values, but not saving them, and calculating the distance from the origin using Pythagoras' theorem. Only distances up to a certain value are used, so that the enclosed volume is a sphere of radius $6R_0$, this being large enough to give a negligible contribution to the total rate constant. The sum of all these rate constants plus that for fluorescence is added up to give the total chance of transferring energy or fluorescing. Because the transfer rate goes to infinity at zero separation, a minimum separation of donor an acceptor has to be determined. This is chosen to be 1 nm, which is only slightly larger than the typical centre to centre separation on contact, of two large aromatic molecules. 
@@ -108,9 +108,9 @@ dtime = np.zeros(bins,dtype=float)
 #plt.show()
 
 
-# ![Drawing](monte-carlo-fig16.png)
+# ![Drawing](monte-carlo-fig13.png)
 # 
-# Figure 16 Decay of a donor surrounded by many acceptors and a theoretical fit to equation 14 with $\alpha = 1.25$.
+# Figure 13. Decay of a donor surrounded by many acceptors and a theoretical fit to equation 14 with $\alpha = 1.25$.
 # ____
 # A log plot of the data fitted to the theoretical equation (12.14) is shown in Fig. 12.16. The fit is good but not exact. At small times, the calculated curve does not match the simulation that well. This may be due to the small number of calculation performed, 5000 only, but could also be due to the fact that the theoretical curve is only an approximation and clearly not exact at very small times because at time zero the rate constant tends to infinity.
 # 
@@ -126,28 +126,35 @@ dtime = np.zeros(bins,dtype=float)
 # 
 # The computational strategy is to represent the surface monolayer as a matrix in which each matrix element is one of three integers to represent A and B molecules and impurity. It does not much matter what these integers are, so zero is chosen for the impurity, 1 for type A and 2 for type B molecules. In the case of the forest, the number 2 can represent the burning trees, 1 those that can catch fire, and 0 the areas with no trees. The initial tree that catches fire or the initial position of molecule B is chosen at random, as are the impurities. The matrix is searched sequentially and the neighbours of each molecule are tested. If a neighbour is of type A, then it is converted into type B. This is repeated until no more can be converted and the number changed is counted. The calculation is then repeated several times with atoms/trees at different random positions. After repeating the calculation at different impurity  concentrations, the number of A type molecules converted to B vs the fraction of impurities is plotted.
 # 
-# ![Drawing](monte-carlo-fig17.png)
+# ![Drawing](monte-carlo-fig14.png)
 # 
-# Fig. 17 The array dimensions are made larger than the reaction area to avoid edge effects.
+# Figure 14. The array dimensions are made larger than the reaction area to avoid edge effects.
 # ____
-# The algorithm is similar to that used for SIR disease propagation, but now a two - dimensional array (matrix) is used. The algorithm is split into parts: (a) defining constants and initial values, (b) filling the matrix with the different type of molecules, and (c) running the calculation with the restriction that only adjacent molecules can react and are those whose index is $\pm 1$ in each of the x- and y-directions, making four possibilities. The calculation is continued until the number of changes can go no further, rather than for a
-# number of days, as in the disease propagation problem. This is done in a 'while' loop; see the code below. A counter c is used and one added to it each time the matrix has a value of 2. The 'while' loop continues to operate until the number of type B molecules are unchanged, and then the loop is left when the condition b $\gt$ c is met. 
+# The algorithm is similar to that used for SIR disease propagation, but now a two - dimensional array (matrix) is used. The algorithm is split into parts: 
+# 
+# (a) defining constants and initial values, 
+# 
+# (b) filling the matrix with the different type of molecules, and 
+# 
+# (c) running the calculation with the restriction that only adjacent molecules can react and are those whose index is $\pm 1$ in each of the x- and y-directions, making four possibilities. 
+# 
+# The calculation is continued until the number of changes can go no further, rather than for a number of days, as in the disease propagation problem. This is done in a 'while' loop; see the code below. A counter $\mathtt{c}$ is used and one added to it each time the matrix has a value of $2$. The 'while' loop continues to operate until the number of type B molecules are unchanged, and then the loop is left when the condition $\mathtt{b \gt c}$ is met. 
 # In each iteration, the whole array is searched.
 # 
-# The data arrays are made 2 numbers larger in each direction than the true size, so that when the calculation reaches the edge of the array, the array bounds are not exceeded. These points around the edge of the array are ignored in the calculation; the 'for' loops start at 1 and extend to $n$ for this reason, see sketch Fig.17. The arrows show how a site is connected to another.
+# The data arrays are made $2$ numbers larger in each direction than the true size, so that when the calculation reaches the edge of the array, the array bounds are not exceeded. These points around the edge of the array are ignored in the calculation; the 'for' loops start at $1$ and extend to $n$ for this reason, see sketch Fig. 14. The arrows show how a site is connected to another.
 # 
-# The numbers used in the following calculation are only indicative. The grid is relatively small, with 20 units on each side; increasing this will significantly slow down the calculation as will increasing the number of repeats, presently set at 10, or the number of fractions to be calculated between 0 and 1.
+# The numbers used in the following calculation are only indicative. The grid is relatively small, with $20$ units on each side; increasing this will significantly slow down the calculation as will increasing the number of repeats, presently set at $10$, or the number of fractions to be calculated between $0$ and $1$.
 # 
-# ![Drawing](monte-carlo-fig18.png)
+# ![Drawing](monte-carlo-fig15.png)
 # 
-# Figure 18 Left: The percentage of molecules reacted (or trees burning) as a percentage of impurities (or gaps between trees). The sudden fall off is a sign of the connectivity ending in the spatial arrangement. The straight line shows what would be expected if the number of reacted molecules were directly proportional to the number of impurities. Right: The relative reaction rate vs % impurity.
+# Figure 15. Left: The percentage of molecules reacted (or trees burning) as a percentage of impurities (or gaps between trees). The sudden fall off is a sign of the connectivity ending in the spatial arrangement. The straight line shows what would be expected if the number of reacted molecules were directly proportional to the number of impurities. Right: The relative reaction rate vs. percentage of impurity.
 # ____
 # 
-# A typical set of data is shown in Figure 18. The right-hand graph shows the relative reaction rate vs percentage of impurity. The sudden fall off in the number of molecules reacted is a sign of percolation. The left-hand graph shows the percentage of A molecules that have reacted vs the percentage of impurities, $x$. The straight line in this graph is $100 - x$, and shows what would be expected if the number of reacted molecules were linearly proportional to the number of impurities present. Clearly, linearity is not the case. The reason for this behaviour has to do with the connectivity of the array when impurities or gaps are present. In two dimensions, islands of potentially reactive molecules can become isolated by impurities and this limits B type molecules from reaching these molecules. Similarly, gaps between burning trees prevent others from catching fire. The right-hand graph shows that $\lt 30$% impurity can be tolerated without affecting the reaction rate by very much, but a $\gt 45$% impurity almost stops the reaction. The maps, Figure.19, show a typical pattern of molecules or trees at different percentages of impurity or gaps. The change from almost complete connectivity to almost none is quite dramatic and typical of percolation; see Sahimi (1994) for a discussion of percolation.
+# A typical set of data is shown in Figure 15. The right-hand graph shows the relative reaction rate vs percentage of impurity. The sudden fall off in the number of molecules reacted is a sign of percolation. The left-hand graph shows the percentage of A molecules that have reacted vs the percentage of impurities, $x$. The straight line in this graph is $100 - x$, and shows what would be expected if the number of reacted molecules were linearly proportional to the number of impurities present. Clearly, linearity is not the case. The reason for this behaviour has to do with the connectivity of the array when impurities or gaps are present. In two dimensions, islands of potentially reactive molecules can become isolated by impurities and this limits B type molecules from reaching these molecules. Similarly, gaps between burning trees prevent others from catching fire. The right-hand graph shows that $\lt 30$% impurity can be tolerated without affecting the reaction rate by very much, but a $\gt 45$% impurity almost stops the reaction. The maps, Figure.19, show a typical pattern of molecules or trees at different percentages of impurity or gaps. The change from almost complete connectivity to almost none is quite dramatic and typical of percolation; see Sahimi (1994) for a discussion of percolation.
 # 
-# ![Drawing](monte-carlo-fig19.png)
+# ![Drawing](monte-carlo-fig16.png)
 # 
-# Figure 19. Maps of the amount of B molecules (yellow), A type molecules (blue-green), and impurity (black), with different a percentage of impurity, from top left, top row 10% & 30%, and bottom row 50% & 70%. Alternatively, the picture shows the number of burning trees (yellow) the number not burning (blue-green), and the number of gaps (black). The change from 30% to 50% impurity (or gaps) is quite dramatic, the fire being severely limited in the latter. 
+# Figure 16. Maps of the amount of B molecules (yellow), A type molecules (blue-green), and impurity (black), with different a percentage of impurity, from top left, top row 10% & 30%, and bottom row 50% & 70%. Alternatively, the picture shows the number of burning trees (yellow) the number not burning (blue-green), and the number of gaps (black). The change from 30% to 50% impurity (or gaps) is quite dramatic, the fire being severely limited in the latter. 
 # ____
 
 # In[3]:

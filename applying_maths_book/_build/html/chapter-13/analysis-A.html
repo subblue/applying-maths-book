@@ -768,7 +768,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-7/matrices-L.html">
-     15.7 Principal axes
+     Principal axes for Moments of Inertia
     </a>
    </li>
    <li class="toctree-l2">
@@ -1402,18 +1402,16 @@
     t
    </em>
   </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#table-3-student-s-t-distribution">
+   Table 3 Student’s
+   <em>
+    t
+   </em>
+   distribution
+  </a>
   <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#table-3-student-s-t-distribution">
-     <strong>
-      Table 3 Student’s
-      <em>
-       t
-      </em>
-      distribution
-     </strong>
-    </a>
-   </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#ii-response-times">
      <strong>
@@ -1537,8 +1535,8 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#parameter-estimation-maximum-likelihood-method">
-   4.3 Parameter estimation: Maximum Likelihood Method
+  <a class="reference internal nav-link" href="#maximum-likelihood-method-parameter-estimation">
+   4.3 Maximum Likelihood Method. Parameter estimation:
   </a>
  </li>
 </ul>
@@ -1562,8 +1560,8 @@
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="o">*</span>
 <span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">quad</span>
-<span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">t</span><span class="p">,</span><span class="n">norm</span>       <span class="c1"># statistical functions</span>
-<span class="n">init_printing</span><span class="p">()</span>                      <span class="c1"># allows printing of SymPy results in typeset maths format</span>
+<span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">t</span><span class="p">,</span><span class="n">norm</span>      <span class="c1"># statistical functions</span>
+<span class="n">init_printing</span><span class="p">()</span>                     <span class="c1"># allows printing of SymPy results in typeset maths format</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;font.size&#39;</span><span class="p">:</span> <span class="mi">14</span><span class="p">})</span>  <span class="c1"># set font size for plots</span>
 </pre></div>
 </div>
@@ -1820,40 +1818,32 @@ always necessary to check the equation being used, which unfortunately, is not a
 <div class="math notranslate nohighlight">
 \[\displaystyle \langle x \rangle\pm t_{\alpha/2}\frac{s}{\sqrt{n}}\tag{12}\]</div>
 <p>where <span class="math notranslate nohighlight">\(t_{\alpha/2}\)</span> is obtained by integrating the distribution, just as was done for the normal distribution. Only a few values are used regularly, some of which are listed in Table 3. (Notice that in the table that <span class="math notranslate nohighlight">\(t\)</span> is one less than the number of data points.)</p>
+</div>
 <div class="section" id="table-3-student-s-t-distribution">
-<h3><strong>Table 3 Student’s <em>t</em> distribution</strong><a class="headerlink" href="#table-3-student-s-t-distribution" title="Permalink to this headline">¶</a></h3>
+<h2>Table 3 Student’s <em>t</em> distribution<a class="headerlink" href="#table-3-student-s-t-distribution" title="Permalink to this headline">¶</a></h2>
 <div class="math notranslate nohighlight">
-\[\begin{split}\displaystyle \begin{array}{ccccc}\\
+\[\text{Student's } t, \text{two tailed confidence}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin{array}{cccc|c|ccc}
 \hline
-\text{two tailed confidence} &amp; 90\text{ %} &amp; 95\text{ %} &amp; 99\text{ %}\\
-\alpha/2\;\to &amp; 0.05 &amp; 0.025 &amp; 0.005\\
+&amp; 90\text{ %} &amp; 95\text{ %} &amp; 99\text{ %}&amp; &amp; &amp; 90\text{ %} &amp; 95\text{ %} &amp; 99\text{ %}\\
+\alpha/2\to &amp; 0.05 &amp; 0.025 &amp; 0.005&amp; &amp;   &amp; 0.05 &amp; 0.025 &amp; 0.005\\
 \hline
-v = n-1 &amp; &amp; &amp;\\
-1 &amp;  6.314 &amp; 12.706 &amp; 63.657 \\
-2 &amp;  2.920 &amp;  4.303 &amp;  9.925 \\
-3 &amp;  2.353 &amp;  3.182 &amp;  5.841 \\
-4 &amp;  2.132 &amp;  2.776 &amp;  4.604 \\
-5 &amp;  2.015 &amp;  2.571 &amp;  4.032 \\
-6 &amp;  1.943 &amp;  2.447 &amp;  3.707 \\
-7 &amp;  1.895 &amp;  2.365 &amp;  3.499 \\
-8 &amp;  1.860 &amp;  2.306 &amp;  3.355 \\
-9 &amp;  1.833 &amp;  2.262 &amp;  3.250 \\
-10 &amp;  1.812 &amp;  2.228 &amp;  3.169\\
-11 &amp;  1.796 &amp;  2.201 &amp;  3.106\\
-12 &amp;  1.782 &amp;  2.179 &amp;  3.055\\
-13 &amp;  1.771 &amp;  2.160 &amp;  3.012\\
-14 &amp;  1.761 &amp;  2.145 &amp;  2.977\\
-15 &amp;  1.753 &amp;  2.131 &amp;  2.947\\
-20 &amp;  1.725 &amp;  2.086 &amp;  2.845\\
-30 &amp;  1.697 &amp;  2.042 &amp;  2.750\\
-40 &amp;  1.684 &amp;  2.021 &amp;  2.704\\
-50 &amp;  1.676 &amp;  2.009 &amp;  2.678\\
-\hline
-\infty \text{ normal dist'n} &amp; 1.645 &amp; 1.960 &amp; 2.576\\
-\hline \end{array}\end{split}\]</div>
+v &amp; &amp; &amp;\\
+1 &amp;  6.314 &amp; 12.706 &amp; 63.657 &amp; &amp; 11 &amp;  1.796 &amp;  2.201 &amp;  3.106\\
+2 &amp;  2.920 &amp;  4.303 &amp;  9.925 &amp; &amp; 12 &amp;  1.782 &amp;  2.179 &amp;  3.055\\
+3 &amp;  2.353 &amp;  3.182 &amp;  5.841 &amp; &amp; 13 &amp;  1.771 &amp;  2.160 &amp;  3.012\\
+4 &amp;  2.132 &amp;  2.776 &amp;  4.604 &amp; &amp; 14 &amp;  1.761 &amp;  2.145 &amp;  2.977\\
+5 &amp;  2.015 &amp;  2.571 &amp;  4.032 &amp; &amp; 15 &amp;  1.753 &amp;  2.131 &amp;  2.947\\
+6 &amp;  1.943 &amp;  2.447 &amp;  3.707 &amp; &amp; 20 &amp;  1.725 &amp;  2.086 &amp;  2.845\\
+7 &amp;  1.895 &amp;  2.365 &amp;  3.499 &amp; &amp; 30 &amp;  1.697 &amp;  2.042 &amp;  2.750\\
+8 &amp;  1.860 &amp;  2.306 &amp;  3.355 &amp; &amp; 40 &amp;  1.684 &amp;  2.021 &amp;  2.704\\
+9 &amp;  1.833 &amp;  2.262 &amp;  3.250 &amp; &amp; 50 &amp;  1.676 &amp;  2.009 &amp;  2.678\\
+10 &amp;  1.812 &amp;  2.228 &amp;  3.169&amp; &amp; \infty&amp; 1.645 &amp; 1.960 &amp; 2.576\\
+\hline  
+ \end{array}\\v =\infty \text{ is normal distribution}\end{split}\]</div>
 <p><img alt="Drawing" src="../_images/analysis-fig5.png" /></p>
 <p>Figure 5. Student’s <span class="math notranslate nohighlight">\(t\)</span> distribution is wider in the wings than the normal distribution, which it approaches when <span class="math notranslate nohighlight">\(v\)</span> is larger that <span class="math notranslate nohighlight">\(\approx 15\)</span></p>
-</div>
 <hr class="docutils" />
 <div class="section" id="ii-response-times">
 <h3><strong>(ii) Response times</strong><a class="headerlink" href="#ii-response-times" title="Permalink to this headline">¶</a></h3>
@@ -2159,8 +2149,8 @@ V=\begin{bmatrix}\displaystyle\frac{\partial T}{\partial m}&amp;\displaystyle\fr
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle \sigma^2 =\begin{bmatrix} 1&amp;1\end{bmatrix}\begin{bmatrix} \left(\displaystyle\frac{\partial T}{\partial m}\right)^2\sigma_m^2 \\ \left(\displaystyle\frac{\partial T}{\partial c}\right)^2\sigma_c^2\end{bmatrix}= \left(\displaystyle\frac{\partial T}{\partial m}\right)^2\sigma_m^2+  \left(\frac{\partial T}{\partial c}\right)^2\sigma_c^2\end{split}\]</div>
 </div>
-<div class="section" id="parameter-estimation-maximum-likelihood-method">
-<h2>4.3 Parameter estimation: Maximum Likelihood Method<a class="headerlink" href="#parameter-estimation-maximum-likelihood-method" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="maximum-likelihood-method-parameter-estimation">
+<h2>4.3 Maximum Likelihood Method. Parameter estimation:<a class="headerlink" href="#maximum-likelihood-method-parameter-estimation" title="Permalink to this headline">¶</a></h2>
 <p>The variance and mean have been used in our calculations on the assumption that they were the ‘best estimation’ of these properties, which means that they are as close as possible to the true values for the underlying process given that only a limited number of measurements are taken. Using the Maximum Likelihood method these estimates, such as mean and variance, can be found in terms of the measured values which we call <span class="math notranslate nohighlight">\(x_i\)</span>.</p>
 <p>A series of measurements of the same thing will always have a probability distribution <span class="math notranslate nohighlight">\(f(x,\theta)\)</span> with measured values <span class="math notranslate nohighlight">\(x_1,x_2\cdots\)</span> and the distribution will always depend on some unknown parameter <span class="math notranslate nohighlight">\(\theta\)</span>, for example it could be the the mean. The likelihood function of observing a series of events is therefore the product of individual events, viz, <span class="math notranslate nohighlight">\(L(\theta) = f(x_1,\theta) f(x_2,\theta) f(x_3,\theta)\cdots f(x_n,\theta)\)</span>. What we want to know is what quantity best describes the quantity <span class="math notranslate nohighlight">\(\theta\)</span>, i.e what is the most likely value of this quantity.  This can be found by differentiating <span class="math notranslate nohighlight">\(L\)</span> with respect to this quantity which is often the mean or variance, then setting the value to zero in the usual way of finding a maximum.</p>
 <p>Suppose that the process measured follows a normal distribution but with an unknown mean <span class="math notranslate nohighlight">\(\mu\)</span> but known variance <span class="math notranslate nohighlight">\(\sigma^2\)</span>. The likelihood function is</p>

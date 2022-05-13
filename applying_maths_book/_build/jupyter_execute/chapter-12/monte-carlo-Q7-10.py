@@ -19,13 +19,13 @@
 # ### Q8 Excited state blocking
 # We have assumed in previous calculations that the population of the final state does not affect the transition from other states, but, in fact, the rate of a transition is proportional to the difference in population between energy levels. Two common situations arise where the final state population can affect the transition from an upper level; one is a three or four level laser and the other is the phenomenon of band filling in semiconductors, where, because of the Pauli principle, only two electrons can fill any electronic energy level. A generic diagram is shown in Figure 8. It is assumed that state $T$ is full when it receives half the total population.
 # 
-# Calculate the decay of state A if $k_1 = 1/(100\mathrm{ ns})$ and $k_2 = 1/(30\, \mathrm{ns})$. Assume that the probability of going into state $T$ is reduced in proportion to the fraction of the total number already in that state.
+# Calculate the decay of state A if $k_f = 1/(100\mathrm{ ns})$ and $k_{isc} = 1/(30\, \mathrm{ns})$. Assume that the probability of going into state $T$ is reduced in proportion to the fraction of the total number already in that state.
 # 
-# **Strategy:** The excited state lifetime is $1/(k_1 + k_2)$, but $k_2$ is a function of the population in level $T$ so the lifetime changes as time progresses. This can be accommodated by making a function 
+# **Strategy:** The excited state lifetime is $1/(k_f + k_{isc})$, but $k_{isc}$ is a function of the population in level $T$ so the lifetime changes as time progresses. This can be accommodated by making a function 
 # 
-# $$\displaystyle k_2(n) = \left(1 - \frac{2n_T}{n}\right)k_2$$
+# $$\displaystyle k_2(n) = \left(1 - \frac{2n_T}{n}\right)k_{isc}$$
 # 
-# where $n_T$ is the number in level $T$ at any state of the calculation. At the start, $n_T = 0$ and therefore $k_2(n) = k_2$, and at the end $n_T = n/2$, and $k_2(n) = 0$. As time progresses, proportionately more and more population enters state G because the value of $k_2(n)$ becomes smaller. Start by modifying the code in the solution to Q7).
+# where $n_T$ is the number in level $T$ at any state of the calculation. At the start, $n_T = 0$ and therefore $k_2(n) = k_{isc}$, and at the end $n_T = n/2$, and $k_2(n) = 0$. As time progresses, proportionately more and more population enters state G because the value of $k_2(n)$ becomes smaller. Start by modifying the code in the solution to Q7).
 # 
 # ![Drawing](monte-carlo-fig8.png)
 # 
@@ -59,3 +59,9 @@
 # Solve these equations by using the Gillespie Monte Carlo method to calculate the time profile of species Y and X over $200$ time units with initial values, $Y_0 = 400,\; X_0 = 100,\; k_1 = 0.5,\; k_2 = 0.001, \;k_3 = 0.5$. Use $1000$ time bins. Comment on the results.
 # 
 # **Strategy:** Use the model as in the text, making sure that $a_0$ is calculated correctly. Do not forget that there are three reactions, so three choices have to be made as to which reaction is occurring at any time. If you also plot the phase plane this is, not surprisingly, very random compared to a direct numerical solution.
+
+# In[ ]:
+
+
+
+

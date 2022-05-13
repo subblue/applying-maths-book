@@ -24,9 +24,9 @@
 # 
 # **Exercise:** Investigate what happens when the barrier becomes very narrow and then very high and narrow.
 # 
-# ![Drawing](num-methods-fig48a.png) ![Drawing](num-methods-fig48b.png)
+# ![Drawing](num-methods-fig48.png)
 # 
-# Fig. 11.48 Left: The potential well $V(x) = -10/\cosh^2(\alpha x)$ , its
+# Fig. 48 Left: The potential well $V(x) = -10/\cosh^2(\alpha x)$ , its
 # four eigenvalues and wavefunctions. Right: The potential hill, $V(x) = +5/\cosh^2(\alpha x)$ in an infinitely deep square well of width $10$. The wavefunctions are for levels $0, 1, 6, 7, 8, 9$ and $10$.
 # _________
 # 
@@ -64,3 +64,9 @@
 # \end{array}$$
 # 
 # It is clear that the eigenvalues are only approximately correct and illustrates that quantum calculations can sometimes be unexpectedly difficult. 
+
+# In[ ]:
+
+
+
+

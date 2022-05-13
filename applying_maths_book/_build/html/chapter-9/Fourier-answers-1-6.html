@@ -768,7 +768,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-7/matrices-L.html">
-     15.7 Principal axes
+     Principal axes for Moments of Inertia
     </a>
    </li>
    <li class="toctree-l2">
@@ -1705,19 +1705,16 @@ L( 2 ,x)  x**2/2 - 4*x + 6
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>L( 0 ,x)  1
 L( 1 ,x)  1 - x
+L( 2 ,x)  x**2/2 - 2*x + 1
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>L( 2 ,x)  x**2/2 - 2*x + 1
-L( 3 ,x)  -x**3/6 + 3*x**2/2 - 3*x + 1
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>L( 3 ,x)  -x**3/6 + 3*x**2/2 - 3*x + 1
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>L( 4 ,x)  x**4/24 - 2*x**3/3 + 3*x**2 - 4*x + 1
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>L(
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 5 ,x)  -x**5/120 + 5*x**4/24 - 5*x**3/3 + 5*x**2 - 5*x + 1
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>L( 5 ,x)  -x**5/120 + 5*x**4/24 - 5*x**3/3 + 5*x**2 - 5*x + 1
 </pre></div>
 </div>
 </div>
@@ -1739,7 +1736,10 @@ L( 3 ,x)  -x**3/6 + 3*x**2/2 - 3*x + 1
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>L( 0 ,x) 1
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>L(
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 0 ,x) 1
 L( 1 ,x) 1 - x
 L( 2 ,x) (x - 3)*(x - 1)/2 - 1/2
 L( 3 ,x) -x**3/6 + 3*x**2/2 - 3*x + 1
@@ -1807,23 +1807,25 @@ L( 4 ,x) x**4/24 - 2*x**3/3 + 3*x**2 - 4*x + 1
    1   0      x
    1   1      -1.0*(1 - x**2)**0.5
    2   0      3*x**2/2 - 1/2
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   2   1      -3.0*x*(1 - x**2)**0.5
+   2   1      -3.0*x*(1 - x**2)**0.5
    2   2      3.0*(1 - x**2)**1.0
-   3   0      x*(5*x**2 - 3)/2
-   3   1      (1 - x**2)**0.5*(1.5 - 7.5*x**2)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   3   2      15.0*x*(1 - x**2)**1.0
-   3   3      -15.0*(1 - x**2)**1.5
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   3   0      x*(5*x**2 - 3)/2
+   3   1      (1 - x**2)**0.5*(1.5 - 7.5*x**2)
+   3   2      15.0*x*(1 - x**2)**1.0
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   3   3      -15.0*(1 - x**2)**1.5
 
               spherical harmonics
    L   m
    0   0      1/(2*sqrt(pi))
    1   0      sqrt(3)*x/(2*sqrt(pi))
    1   1      -0.25*sqrt(6)*(1 - x**2)**0.5*exp(I*phi)/sqrt(pi)
-   1  -1      0.25*sqrt(6)*(1 - x**2)**0.5*exp(-I*phi)/sqrt(pi)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   1  -1      0.25*sqrt(6)*(1 - x**2)**0.5*exp(-I*phi)/sqrt(pi)
    2   0      sqrt(5)*(3*x**2/2 - 1/2)/(2*sqrt(pi))
    2   1      -0.25*sqrt(30)*x*(1 - x**2)**0.5*exp(I*phi)/sqrt(pi)
 </pre></div>
@@ -1831,10 +1833,10 @@ L( 4 ,x) x**4/24 - 2*x**3/3 + 3*x**2 - 4*x + 1
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   2  -1      0.25*sqrt(30)*x*(1 - x**2)**0.5*exp(-I*phi)/sqrt(pi)
    2   2      0.125*sqrt(30)*(1 - x**2)**1.0*exp(2*I*phi)/sqrt(pi)
    2  -2      0.125*sqrt(30)*(1 - x**2)**1.0*exp(-2*I*phi)/sqrt(pi)
+   3   0      sqrt(7)*(5*x*(3*x**2/2 - 1/2)/3 - 2*x/3)/(2*sqrt(pi))
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   3   0      sqrt(7)*(5*x*(3*x**2/2 - 1/2)/3 - 2*x/3)/(2*sqrt(pi))
-   3   1      sqrt(21)*(-7.5*x**2*(1 - x**2)**0.5 + 1.5*(1 - x**2)**0.5)*exp(I*phi)/(12*sqrt(pi))
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   3   1      sqrt(21)*(-7.5*x**2*(1 - x**2)**0.5 + 1.5*(1 - x**2)**0.5)*exp(I*phi)/(12*sqrt(pi))
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   3  -1      sqrt(21)*(1 - x**2)**0.5*(0.625*x**2 - 0.125)*exp(-I*phi)/sqrt(pi)
@@ -1843,7 +1845,9 @@ L( 4 ,x) x**4/24 - 2*x**3/3 + 3*x**2 - 4*x + 1
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   3  -2      0.125*sqrt(210)*x*(1 - x**2)**1.0*exp(-2*I*phi)/sqrt(pi)
    3   3      -0.125*sqrt(35)*(1 - x**2)**1.5*exp(3*I*phi)/sqrt(pi)
-   3  -3      0.125*sqrt(35)*(1 - x**2)**1.5*exp(-3*I*phi)/sqrt(pi)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   3  -3      0.125*sqrt(35)*(1 - x**2)**1.5*exp(-3*I*phi)/sqrt(pi)
 </pre></div>
 </div>
 </div>
@@ -1871,16 +1875,16 @@ L( 4 ,x) x**4/24 - 2*x**3/3 + 3*x**2 - 4*x + 1
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   L   m       assoc legendre
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   0   0      1
+   0   0      1
    1   0      x
    1   1      -(1 - x**2)**0.5
    2   0      3*x**2/2 - 1/2
    2   1      -3*x*(1 - x**2)**0.5
    2   2      3*(1 - x**2)**1.0
    3   0      x*(5*x**2 - 3)/2
-   3   1      3*(1 - 5*x**2)*(1 - x**2)**0.5/2
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   3   1      3*(1 - 5*x**2)*(1 - x**2)**0.5/2
    3   2      15*x*(1 - x**2)**1.0
    3   3      -15*(1 - x**2)**1.5
 </pre></div>

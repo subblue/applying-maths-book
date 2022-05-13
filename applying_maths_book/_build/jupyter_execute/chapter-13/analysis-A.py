@@ -12,8 +12,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 from sympy import *
 from scipy.integrate import quad
-from scipy.stats import t,norm       # statistical functions
-init_printing()                      # allows printing of SymPy results in typeset maths format
+from scipy.stats import t,norm      # statistical functions
+init_printing()                     # allows printing of SymPy results in typeset maths format
 plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 
@@ -297,35 +297,26 @@ qtile(0.69146246 )
 # 
 # where $t_{\alpha/2}$ is obtained by integrating the distribution, just as was done for the normal distribution. Only a few values are used regularly, some of which are listed in Table 3. (Notice that in the table that $t$ is one less than the number of data points.)
 # 
-# #### **Table 3 Student's *t* distribution**
-# $$\displaystyle \begin{array}{ccccc}\\
+# ### Table 3 Student's *t* distribution
+# $$\text{Student's } t, \text{two tailed confidence}$$
+# $$\displaystyle \begin{array}{cccc|c|ccc}
 # \hline
-# \text{two tailed confidence} & 90\text{ %} & 95\text{ %} & 99\text{ %}\\
-# \alpha/2\;\to & 0.05 & 0.025 & 0.005\\
+# & 90\text{ %} & 95\text{ %} & 99\text{ %}& & & 90\text{ %} & 95\text{ %} & 99\text{ %}\\
+# \alpha/2\to & 0.05 & 0.025 & 0.005& &   & 0.05 & 0.025 & 0.005\\
 # \hline
-# v = n-1 & & &\\
-# 1 &  6.314 & 12.706 & 63.657 \\
-# 2 &  2.920 &  4.303 &  9.925 \\
-# 3 &  2.353 &  3.182 &  5.841 \\
-# 4 &  2.132 &  2.776 &  4.604 \\
-# 5 &  2.015 &  2.571 &  4.032 \\
-# 6 &  1.943 &  2.447 &  3.707 \\
-# 7 &  1.895 &  2.365 &  3.499 \\
-# 8 &  1.860 &  2.306 &  3.355 \\
-# 9 &  1.833 &  2.262 &  3.250 \\
-# 10 &  1.812 &  2.228 &  3.169\\
-# 11 &  1.796 &  2.201 &  3.106\\
-# 12 &  1.782 &  2.179 &  3.055\\
-# 13 &  1.771 &  2.160 &  3.012\\
-# 14 &  1.761 &  2.145 &  2.977\\
-# 15 &  1.753 &  2.131 &  2.947\\
-# 20 &  1.725 &  2.086 &  2.845\\
-# 30 &  1.697 &  2.042 &  2.750\\
-# 40 &  1.684 &  2.021 &  2.704\\
-# 50 &  1.676 &  2.009 &  2.678\\
-# \hline
-# \infty \text{ normal dist'n} & 1.645 & 1.960 & 2.576\\
-# \hline \end{array}$$
+# v & & &\\
+# 1 &  6.314 & 12.706 & 63.657 & & 11 &  1.796 &  2.201 &  3.106\\
+# 2 &  2.920 &  4.303 &  9.925 & & 12 &  1.782 &  2.179 &  3.055\\
+# 3 &  2.353 &  3.182 &  5.841 & & 13 &  1.771 &  2.160 &  3.012\\
+# 4 &  2.132 &  2.776 &  4.604 & & 14 &  1.761 &  2.145 &  2.977\\
+# 5 &  2.015 &  2.571 &  4.032 & & 15 &  1.753 &  2.131 &  2.947\\
+# 6 &  1.943 &  2.447 &  3.707 & & 20 &  1.725 &  2.086 &  2.845\\
+# 7 &  1.895 &  2.365 &  3.499 & & 30 &  1.697 &  2.042 &  2.750\\
+# 8 &  1.860 &  2.306 &  3.355 & & 40 &  1.684 &  2.021 &  2.704\\
+# 9 &  1.833 &  2.262 &  3.250 & & 50 &  1.676 &  2.009 &  2.678\\
+# 10 &  1.812 &  2.228 &  3.169& & \infty& 1.645 & 1.960 & 2.576\\
+# \hline  
+#  \end{array}\\v =\infty \text{ is normal distribution}$$
 # 
 # ![Drawing](analysis-fig5.png)
 # 
@@ -644,7 +635,7 @@ sigT.evalf(3)
 # 
 # $$\displaystyle \sigma^2 =\begin{bmatrix} 1&1\end{bmatrix}\begin{bmatrix} \left(\displaystyle\frac{\partial T}{\partial m}\right)^2\sigma_m^2 \\ \left(\displaystyle\frac{\partial T}{\partial c}\right)^2\sigma_c^2\end{bmatrix}= \left(\displaystyle\frac{\partial T}{\partial m}\right)^2\sigma_m^2+  \left(\frac{\partial T}{\partial c}\right)^2\sigma_c^2$$
 # 
-# ### 4.3 Parameter estimation: Maximum Likelihood Method
+# ### 4.3 Maximum Likelihood Method. Parameter estimation: 
 # 
 # The variance and mean have been used in our calculations on the assumption that they were the 'best estimation' of these properties, which means that they are as close as possible to the true values for the underlying process given that only a limited number of measurements are taken. Using the Maximum Likelihood method these estimates, such as mean and variance, can be found in terms of the measured values which we call $x_i$.
 # 

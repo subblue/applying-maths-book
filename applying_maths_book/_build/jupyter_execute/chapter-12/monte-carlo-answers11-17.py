@@ -72,62 +72,65 @@ plt.show()
 # In[4]:
 
 
-#Algorithm: DNA bases
+# Algorithm: DNA bases
 
-beta= 7.0
-d   = 0.34                                  # base separation
-kf  = 10**(-3)/380.0
-k0  = 3.0
-nb  = 12+1                                  # number of bases + dye
-dye =( nb-1 )//2 + 1                        # put dye in middle
-reps= 50000
-maxt= 1000.0
-bins= 1000
-DNA   = np.zeros(nb,dtype=int )
-Acount= np.zeros(bins,dtype=int)            # initial arrays zero
-dtime = np.zeros(bins,dtype=float)
-
-for i in range( bins ):                     # set time
-    dtime[i]= i*maxt/bins 
-    pass
-for j in range(reps):
-    for i in range(nb):                     # G into DNA if rand > 3 
-        if 4*np.random.ranf() > 3:
-            DNA[i] = 1 
-        else:
-            DNA[i] = 0                      # base G has value 1
-        pass
+def DNAbases():
+    beta= 7.0
+    d   = 0.34                                  # base separation
+    kf  = 10**(-3)/380.0
+    k0  = 3.0
+    nb  = 12+1                                  # number of bases + dye
+    dye =( nb-1 )//2 + 1                        # put dye in middle
+    reps= 50000
+    maxt= 1000.0
+    bins= 1000
+    DNA   = np.zeros(nb,dtype=int )
+    Acount= np.zeros(bins,dtype=int)            # initial arrays zero
+    dtime = np.zeros(bins,dtype=float)
     
-    a0 = kf 
-    for i in range(nb) :                    # look for G, dye = 6 for 10 bases
-        if DNA[i] == 1 and i != dye :
-            a0 = a0 + k0*np.exp(-beta*abs(i-dye)*d)  # total rate
-            pass 
+    for i in range( bins ):                     # set time
+        dtime[i]= i*maxt/bins 
         pass
-    t = -np.log( np.random.ranf() )/ a0     # equation 13
-    indx = int(np.round(t*bins/maxt) )      # make into index
-               
-    if indx < bins -1:
-        Acount[indx+1]= Acount[indx+1] + 1  # make histogram
-        pass 
-    pass                                    # end reps 
-
-#print('finished')
-#Acount[0]=Acount[1]
-#plt.plot(dtime,Acount,color='red',linewidth=2)
+    for j in range(reps):
+        for i in range(nb):                     # G into DNA if rand > 3 
+            if 4*np.random.ranf() > 3:
+                DNA[i] = 1 
+            else:
+                DNA[i] = 0                      # base G has value 1
+            pass
+        
+        a0 = kf 
+        for i in range(nb) :                    # look for G, dye = 6 for 10 bases
+            if DNA[i] == 1 and i != dye :
+                a0 = a0 + k0*np.exp(-beta*abs(i-dye)*d)  # total rate
+                pass 
+            pass
+        t = -np.log( np.random.ranf() )/ a0     # equation 13
+        indx = int(np.round(t*bins/maxt) )      # make into index
+                   
+        if indx < bins -1:
+            Acount[indx+1]= Acount[indx+1] + 1  # make histogram
+            pass 
+        pass                                    # end reps 
+    return dtime,Acount
+    
+#times,counts = DNAbases()                         # remove # to calculate 
+#print('finished')                         
+#Acount[0] = Acount[1]
+#plt.plot(times,counts,color='red',linewidth=1)
 #plt.yscale('log')
 #plt.show()
 
 
-# ![Drawing](monte-carlo-fig26.png)
+# ![Drawing](monte-carlo-fig35.png)
 # 
-# Figure 26. Semi-log plot of the decay of the donor excited state calculated with equal amounts of each base. The highly non-exponential nature of the decay is clear. The calculation is of $500000$ repeated calculations. The $1/e $ time of the decay is $\approx 2$ ps.
+# Figure 35. Semi-log plot of the decay of the donor excited state calculated with equal amounts of each base. The highly non-exponential nature of the decay is clear. The calculation is of $500000$ repeated calculations. The $1/e $ time of the decay is $\approx 2$ ps.
 # ____
 # 
-# The calculation shows that the decay is initially very fast; only$\approx 2$ ps and then slows dramatically as the more distant G bases quench. The very rapid decrease of the quenching rate constant with distance and the spatial dependence of the quenchers, as with donor - acceptor energy or electron transfer in solution, causes the non -exponential decay.
+# The calculation shows that the decay is initially very fast; only $\approx 2$ ps and then slows dramatically as the more distant G bases quench. The very rapid decrease of the quenching rate constant with distance and the spatial dependence of the quenchers, as with donor - acceptor energy or electron transfer in solution, causes the non - exponential decay.
 # 
 # ### Q16 answer
-# We define the array P to hold the information about each student. To generate a random number from $0 \to 1$, np.random.ranf()  but to generate a random integer in the range $0 \to n-1$ it is convenient to use np.random.randint(0,n).  The algorithm is shown next 
+# We define the array P to hold the information about each student. To generate a random number from $0 \to 1$, $\mathtt{np.random.ranf()}$  but to generate a random integer in the range $0 \to n-1$ it is convenient to use $\mathtt{np.random.randint(0,n)}$.  The algorithm is shown next 
 
 # In[5]:
 
@@ -135,71 +138,77 @@ for j in range(reps):
 #Algorithm 18   Q12: SIR simulation
 # P[]= 0 = Immune, 1 = susceptible,  2= Infected.
 
-nums  = 1000                    # number of people
-fract = 0.01                    # initially immune
-recovr= 0.2                     # chance recovery / day
-num_infect=1                    # number infected / day
-numd = 50                       # number of  days
-reps = 40
-
-data = np.zeros(numd,dtype=int) # array for infected
-sdata= np.zeros(numd,dtype=int) # array for susceptibles
-P = np.zeros(nums,dtype=float)  # student array to zero
-
-remov = 0                       # number removed 
-for k in range( reps):          # loop for repeat calc’n     
-    #set up P array with values 0,1 and 2
+def SIR_mc():
+    nums  = 1000                    # number of people
+    fract = 0.01                    # initially immune
+    recovr= 0.2                     # chance recovery / day
+    num_infect=1                    # number infected / day
+    numd = 50                       # number of  days
+    reps = 40
     
-    for i in range(nums):
-        P[i] = 1                        # initially all susceptible
-    fn= int(np.round(fract*nums) )      # make into integer
-    n = 0
-    while n < fn:                       # exact fract*nums immune
-        ra = np.random.randint(0,nums)  # choose rand num= 0 to nums-1
-        if P[ra] != 0:
-            P[ra] = 0
-            n = n + 1
-            pass
-        pass
-    n = 0
-    while n < 1:                        #1 infected not one of immune
-        ra = np.random.randint(0,nums)
-        if P[ra] == 1:
-            P[ra] = 2 
-            n = 1
-            pass
-        pass
-
-    # The main part of the calculation follows 
-    for j in range(numd):                         # loop over days 
-        for i in range(nums):                     # loop students 
-            if P[i] == 2:                         # spread infection
-                for ii in range(num_infect):
-                    ra = np.random.randint(0,nums)# infect new stdnt
-                    if P[ra]== 1:
-                        P[ra] = 2 
-                        remov = remov + 1
-                        pass
-                    pass                          # end for ii
-                pass                              # end if
-            if np.random.ranf() < recovr:         # chance of recovery
-                ra = np.random.randint(1,nums)
-                if P[ra] == 2:  P[ra]= 0
+    data = np.zeros(numd,dtype=int) # array for infected
+    sdata= np.zeros(numd,dtype=int) # array for susceptibles
+    P = np.zeros(nums,dtype=float)  # student array to zero
+    
+    remov = 0                       # number removed 
+    for k in range( reps):          # loop for repeat calc’n     
+        #set up P array with values 0,1 and 2
+        
+        for i in range(nums):
+            P[i] = 1                        # initially all susceptible
+        fn= int(np.round(fract*nums) )      # make into integer
+        n = 0
+        while n < fn:                       # exact fract*nums immune
+            ra = np.random.randint(0,nums)  # choose rand num= 0 to nums-1
+            if P[ra] != 0:
+                P[ra] = 0
+                n = n + 1
                 pass
-            pass                                  # end for i
-        c = 0 
-        s = 0
-        for i in range(nums):                     # find num infected 
-            if P[i]== 2: c = c + 1
-            if P[i]== 1: s = s + 1
             pass
-        data[j]= data[j] + c                      # number infected 
-        sdata[j]= sdata[j]+ s                     # number suscept
-        pass                                      # end for j 
-    pass                                          # end for reps 
+        n = 0
+        while n < 1:                        #1 infected not one of immune
+            ra = np.random.randint(0,nums)
+            if P[ra] == 1:
+                P[ra] = 2 
+                n = 1
+                pass
+            pass
+    
+        # The main part of the calculation follows 
+        for j in range(numd):                         # loop over days 
+            for i in range(nums):                     # loop students 
+                if P[i] == 2:                         # spread infection
+                    for ii in range(num_infect):
+                        ra = np.random.randint(0,nums)# infect new stdnt
+                        if P[ra]== 1:
+                            P[ra] = 2 
+                            remov = remov + 1
+                            pass
+                        pass                          # end for ii
+                    pass                              # end if
+                if np.random.ranf() < recovr:         # chance of recovery
+                    ra = np.random.randint(1,nums)
+                    if P[ra] == 2:  P[ra]= 0
+                    pass
+                pass                                  # end for i
+            c = 0 
+            s = 0
+            for i in range(nums):                     # find num infected 
+                if P[i]== 2: c = c + 1
+                if P[i]== 1: s = s + 1
+                pass
+            data[j]= data[j] + c                      # number infected 
+            sdata[j]= sdata[j]+ s                     # number suscept
+            pass                                      # end for j 
+        pass                                          # end for reps 
+    
+    num_infected = int(remov/reps)                    # number infected
+    print('finished, num infected',num_infected)
+    
+    return data,sdata
 
-num_infected = int(remov/reps)                    # number infected
-print('finished, num infected',num_infected)
+data, sdata = SIR_mc()
+
 #plt.plot(sdata,color='red')
 #plt.plot(data,color='blue')
 #plt.show()
@@ -209,6 +218,6 @@ print('finished, num infected',num_infected)
 # 
 # Exercise: Repeat the calculation with different fractions of initially immune persons. What do you conclude about immunising populations against disease? Estimate what fraction of people needs to be immunised to prevent widespread disease.
 # 
-# ![Drawing](monte-carlo-fig27.png)
+# ![Drawing](monte-carlo-fig36.png)
 # 
-# Figure 27. Result of Monte-Carlo simulation of S-I-R disease spread. There were $1000$ persons, only one of whom was initially infected and $1$% were immune to the disease. Almost everyone else catches the disease, $810$ entering the removed class out of $1000$ individuals.
+# Figure 36. Result of Monte-Carlo simulation of S-I-R disease spread. There were $1000$ persons, only one of whom was initially infected and $1$% were immune to the disease. Almost everyone else catches the disease, $810$ entering the removed class out of $1000$ individuals.

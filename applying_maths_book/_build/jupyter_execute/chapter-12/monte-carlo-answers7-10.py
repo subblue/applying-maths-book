@@ -23,9 +23,9 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # The parameter $a_0$, equation 8, is the sum $a_0 =k_fn_A+k_{isc}n_A+k_Tn_T$. The rate constants must be put into a ns scale which means dividing $k_k,\; k_{isc}$ by $10^9$.  
 # 
-# ![Drawing](monte-carlo-fig22.png)
+# ![Drawing](monte-carlo-fig31.png)
 # 
-# Figure 22. A Monte Carlo calculation of the decay of an excited state and the rise and decay of a triplet state, together with the increase of the ground state's population. The parameters used are listed below.
+# Figure 31. A Monte Carlo calculation of the decay of an excited state and the rise and decay of a triplet state, together with the increase of the ground state's population. The parameters used are listed below.
 # _________
 
 # In[2]:
@@ -60,7 +60,7 @@ Acount[0] = A0
 Tcount[0] = T0
 Gcount[0] = G0
 indx = 0
-while indx < bins and nG < A0 :   # check no nagative counts
+while indx < bins and nG < A0 :   # check no negative counts
     a1 = k1*nA
     a2 = kisc*nA
     a3 = kT*nT
@@ -91,7 +91,7 @@ while indx < bins and nG < A0 :   # check no nagative counts
 
 
 # ### Q8 answer
-# Refer to Algorithm 5. After setting the initial values inside the loop, the following changes can be made to account for the filling of state $T$. The value of $k_{isc}$ as it changes, is now called knT.
+# Modify the code for question 7. After setting the initial values inside the loop, the following changes can be made to account for the filling of state $T$. The value of $k_{isc}$ as it changes, is now called knT.
 
 # In[3]:
 
@@ -110,11 +110,11 @@ while indx < bins and nA > 0:
     phif = kf/k1
 
 
-# The last statement phif = kf/k1 , is necessary inside the loop since this value changes as time proceeds. There are always two decisions to make; one calculates the time and the other which reaction will occur based on phif. At long times when the state T is full, the yield $\varphi$ becomes unity because the state A can only convert to state G. If $k_f$ is the fluorescence rate constant, then $\varphi$ is the fluorescence yield, which is the same as the yield for ground state formation. The calculation should continue as long as nA does not become zero, and to ensure this, make its initial value equal to the number of events. The result of one simulation is shown below in Fig. 23.
+# The last statement $\mathtt{phif = kf/k1}$ , is necessary inside the loop since this value changes as time proceeds. There are always two decisions to make; one calculates the time and the other which reaction will occur based on $\mathtt{phif}$. At long times when the state T is full, the yield $\varphi$ becomes unity because the state A can only convert to state G. If $k_f$ is the fluorescence rate constant, then $\varphi$ is the fluorescence yield, which is the same as the yield for ground state formation. The calculation should continue as long as nA does not become zero, and to ensure this, make its initial value equal to the number of events. The result of one simulation is shown below in Fig. 23.
 # 
-# ![Drawing](monte-carlo-fig23.png)
+# ![Drawing](monte-carlo-fig32.png)
 # 
-# Figure 23. $\log_{10}$ of the number of counts in the fluorescence signal (A), with the number of particles on the state T being restricted, and (B), with no restriction, giving the decay $\exp(-(k_f + k_{isc})t )$. The dotted line following the data has a lifetime of $1/k_f = 100$ ns, and the fluorescence reaches this value when state T is full.
+# Figure 32. $\log_{10}$ of the number of counts in the fluorescence signal (A), with the number of particles on the state T being restricted, and (B), with no restriction, giving the decay $\exp(-(k_f + k_{isc})t )$. The dotted line following the data has a lifetime of $1/k_f = 100$ ns, and the fluorescence reaches this value when state T is full.
 # _____
 # 
 # ### Q9 answer
@@ -158,9 +158,9 @@ while indx < bins :
 # plot results
 
 
-# ![Drawing](monte-carlo-fig24.png)
+# ![Drawing](monte-carlo-fig33.png)
 # 
-# Figure 24.  A Monte Carlo calculation of susceptible (S) and infected (I ) population in an S-I-R infection. The parameters used are given in the question and are $ k_2 = 2.18\cdot 10^{-3},\; k_1 = 0.452, \; S_0 = 762, \; I_0 = 1$.
+# Figure 33.  A Monte Carlo calculation of susceptible (S) and infected (I ) population in an S-I-R infection. The parameters used are given in the question and are $ k_2 = 2.18\cdot 10^{-3},\; k_1 = 0.452, \; S_0 = 762, \; I_0 = 1$.
 # ____
 # 
 # ### Q10 answer
@@ -200,6 +200,6 @@ while indx < bins :
 
 # Plotting the data, the populations oscillate as expected; one species grows at the expense of the other, which then almost dies off and then vice versa. See Chapter 11.7 for a fuller description. The fact that a Monte Carlo integration method is used means that the data is far more erratic than using an Euler integration method, just as might be expected because of random choices made as the calculation proceeds. Many more events would have to be taken to improve the result and to make it closer to a direct integration method. However, perhaps the result represents more closely what might happen in nature to two populations where there is only a limited number of individuals.
 # 
-# ![Drawing](monte-carlo-fig25.png)
+# ![Drawing](monte-carlo-fig34.png)
 # 
-# Figure 25. Predator and prey populations vs time calculated by the Monte Carlo solution of differential equations by the Gillespie method. Species $Y$ (prey) is the blue line which rises before $Z$, the red one, and always leads it. The parameters used were $bins = 1000,\; maxt = 200.0,\; k_1 = 0.5,\;k_2 = 0.001,\;k_3 = 0.5,\;y_0 = 400.0,\;z_0 = 200.0$
+# Figure 34. Predator and prey populations vs time calculated by the Monte Carlo solution of differential equations by the Gillespie method. Species $Y$ (prey) is the blue line which rises before $Z$, the red one, and always leads it. The parameters used were $bins = 1000,\; maxt = 200.0,\; k_1 = 0.5,\;k_2 = 0.001,\;k_3 = 0.5,\;y_0 = 400.0,\;z_0 = 200.0$

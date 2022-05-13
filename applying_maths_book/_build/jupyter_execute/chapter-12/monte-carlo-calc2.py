@@ -618,7 +618,7 @@ plt.show()
 
 
 
-# In[2]:
+# In[19]:
 
 
 # metropolos 2D ising spins
@@ -688,8 +688,8 @@ print(L,n,N,J,kB)
 
 T = [0.1,0.25,0.5,0.75,1,1.25,1.5,1.75,2,2.1,2.2,2.3,2.4,2.5,2.6,2.7,2.8,2.9,3,3.25,3.5,3.75,4,4.25,4.5,4.75,5]
 num = len(T)
-CV=np.zeros(num,dtype=float)
-Mag=np.zeros(num,dtype=float)
+CV = np.zeros(num,dtype=float)
+Mag= np.zeros(num,dtype=float)
 
 for i in range(1,num):
     beta = J/( kB*T[i] )
@@ -704,7 +704,7 @@ for i in range(1,num):
 print('finished')
 
 
-# In[5]:
+# In[24]:
 
 
 fig1=plt.figure(figsize=(12,6))
@@ -713,8 +713,8 @@ ax1 = fig1.add_subplot(1,2,2)
 plt.rcParams.update({'font.size': 16})  # set font size for plots
 
 
-ax0.plot(T,CV,color='grey')
-ax0.scatter(T,CV,color='red',s=50)
+ax0.plot(T[:],CV[:],color='grey')
+ax0.scatter(T[:],CV[:],color='red',s=50)
 ax0.set_xlim([0,5])
 ax0.set_ylim([0,2])
 ax0.set_xlabel(r'$k_BT$')
@@ -740,13 +740,13 @@ plt.tight_layout()
 plt.show()
 
 
-# In[ ]:
+# In[25]:
 
 
+T
 
 
-
-# In[164]:
+# In[27]:
 
 
 fig1=plt.figure(figsize=(10,5))
@@ -789,7 +789,7 @@ plt.hist(np.random.randint(L,size=1000),bins=8 )
 plt.show()
 
 
-# In[83]:
+# In[22]:
 
 
 M = lambda beta : (1.0 - np.sinh(2/beta)**(-4) )**(1/8)
@@ -924,13 +924,13 @@ plt.show()
 
 
 
-# In[14]:
+# In[12]:
 
 
 # P[,]>= 1 = A molecs, 2 = B molecs, 0 = impurity.
 
 n    = 20                                #size of grid side
-reps = 100                               #repeat calc’n
+reps = 200                               #repeat calc’n
 fract= 0.0                               #initial fraction impurity
 num_fract = 20                           #number of fractions calc’d
 delta_fract= 0.05                        #increment fraction
@@ -1003,7 +1003,7 @@ print(fdata)
 print(data)
 
 
-# In[20]:
+# In[14]:
 
 
 fig1= plt.figure(figsize=(12,6))
@@ -1043,14 +1043,14 @@ plt.show()
 
 
 
-# In[18]:
+# In[16]:
 
 
-fig1= plt.figure(figsize=(10,10))
-ax0 = fig1.add_subplot(2,2,1)
-ax1 = fig1.add_subplot(2,2,2)
-ax2 = fig1.add_subplot(2,2,3)
-ax3 = fig1.add_subplot(2,2,4)
+fig1= plt.figure(figsize=(16,10))
+ax0 = fig1.add_subplot(1,4,1)
+ax1 = fig1.add_subplot(1,4,2)
+ax2 = fig1.add_subplot(1,4,3)
+ax3 = fig1.add_subplot(1,4,4)
 plt.rcParams.update({'font.size': 16})
 
 ax_num=[ax0,ax1,ax2,ax3]

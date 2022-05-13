@@ -768,7 +768,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-7/matrices-L.html">
-     15.7 Principal axes
+     Principal axes for Moments of Inertia
     </a>
    </li>
    <li class="toctree-l2">
@@ -1435,7 +1435,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 11.0410 +/-   0.0041
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 11.0496 +/-   0.0041
 </pre></div>
 </div>
 </div>
@@ -1454,8 +1454,8 @@
 <p>(a) The mean value method using Algorithm 2 with <span class="math notranslate nohighlight">\(f = 1/x^{1/2}\)</span> and <span class="math notranslate nohighlight">\(20000\)</span> samples, gives typical values <span class="math notranslate nohighlight">\(1.99 \pm 0.02\)</span> which is close to the true value of <span class="math notranslate nohighlight">\(2.0\)</span>. Similar good agreement with the analytic result is found when <span class="math notranslate nohighlight">\(\gamma\)</span> is positive.</p>
 <p>(b) Using <span class="math notranslate nohighlight">\(f = 1/x^{0.8}\)</span> gives rather erratic answers, with an average <span class="math notranslate nohighlight">\(4.7 \pm 0.4\)</span>, being typical after <span class="math notranslate nohighlight">\(20000\)</span> samples, which is far from the true value of <span class="math notranslate nohighlight">\(5\)</span>. After <span class="math notranslate nohighlight">\(10^5\)</span> samples the result has not settled down to a fixed value, nor has it done so after <span class="math notranslate nohighlight">\(10^6\)</span> samples, with a value <span class="math notranslate nohighlight">\(4.7 \pm 0.1\)</span> being typical, which is quite unexpected and unusual behaviour. See figure 20a. Using python/Sympy the correct value is obtained.</p>
 <p>The origin of this behaviour would appear to lie in the fact that the function tends to infinity as <span class="math notranslate nohighlight">\(x \to 0\)</span>. With an increasing number of samples, there are many <span class="math notranslate nohighlight">\(x\)</span> values close to zero and the large numbers these produce have a disproportionate effect on the integral relative to those at large <span class="math notranslate nohighlight">\(x\)</span>, which contribute almost nothing. Importance sampling should correct this effect.</p>
-<p><img alt="Drawing" src="../_images/monte-carlo-fig20a.png" /></p>
-<p>Figure 20a. Monte-Carlo calculation of the integral <span class="math notranslate nohighlight">\(\int_0^1 x^\gamma dx\)</span> with <span class="math notranslate nohighlight">\(\gamma =-0.8\)</span> showing that the true average <span class="math notranslate nohighlight">\(5\)</span> is not approached even for a huge number of samples.</p>
+<p><img alt="Drawing" src="../_images/monte-carlo-fig29.png" /></p>
+<p>Figure 29. Monte-Carlo calculation of the integral <span class="math notranslate nohighlight">\(\int_0^1 x^\gamma dx\)</span> with <span class="math notranslate nohighlight">\(\gamma =-0.8\)</span> showing that the true average <span class="math notranslate nohighlight">\(5\)</span> is not approached even for a huge number of samples.</p>
 <hr class="docutils" />
 <p>(c) The distribution function is <span class="math notranslate nohighlight">\(p(x) = x^\lambda\)</span> where <span class="math notranslate nohighlight">\(\lambda\)</span> has to be chosen to be between zero and <span class="math notranslate nohighlight">\(\gamma\)</span>. This function is almost the same as <span class="math notranslate nohighlight">\(f\)</span>, and by dividing by <span class="math notranslate nohighlight">\(f\)</span> makes the function integrated much flatter and so has a reduced standard deviation.</p>
 <p>The integral is changed to <span class="math notranslate nohighlight">\(\displaystyle \int_0^1 x^\gamma dx=\int_0^1\left(x^{\gamma-\lambda}  \right)x^\lambda dx\)</span> and normalising the distribution produces <span class="math notranslate nohighlight">\(\displaystyle \frac{1}{N}\int_0^tx^\lambda dx=x^{t+1}=r\)</span> from which <span class="math notranslate nohighlight">\(t = r^{1/(t+1)}\)</span>. The normalization constant is <span class="math notranslate nohighlight">\(N = 1/(1 + \lambda)\)</span>. The next step is to choose a value for <span class="math notranslate nohighlight">\(\lambda\)</span> and this is done so that <span class="math notranslate nohighlight">\(\gamma -\lambda\)</span> is close to zero because small powers of <span class="math notranslate nohighlight">\(x\)</span> lead to an accurate integration; choosing <span class="math notranslate nohighlight">\(\gamma -\lambda = 0.1\)</span> is a suitable value although other small values could be used. Making these changes and using <span class="math notranslate nohighlight">\(t=\mathrm{rand}()^{1/(\lambda+1)}\)</span>; in the importance sampling algorithm after 20000 samples, a value of <span class="math notranslate nohighlight">\(4.996 \pm 0.020\)</span> is obtained. This is now acceptably close to the true value of <span class="math notranslate nohighlight">\(5\)</span>. Furthermore, if the difference between <span class="math notranslate nohighlight">\(\lambda\)</span> and <span class="math notranslate nohighlight">\(\gamma\)</span> is made smaller, for instance <span class="math notranslate nohighlight">\(\gamma -\lambda = 0.01\)</span>, then the calculation produces <span class="math notranslate nohighlight">\(4.995 \pm 0.008\)</span> after only <span class="math notranslate nohighlight">\(1000\)</span> samples; quite an improvement. Finally, making the difference zero produces the exact result with zero standard deviation. Why is this?</p>
@@ -1463,8 +1463,8 @@
 <div class="section" id="q6-answer">
 <h2>Q6 answer<a class="headerlink" href="#q6-answer" title="Permalink to this headline">¶</a></h2>
 <p>Using the mean value method and the functions in the question the integration produces <span class="math notranslate nohighlight">\(B_2= -0.0244 \pm  0.0006\)</span> after <span class="math notranslate nohighlight">\(30000\)</span> samples. The only way to determine convergence in the integral is to repeat it with a larger <span class="math notranslate nohighlight">\(r\)</span> and with more data points, even though the error appears to be small.</p>
-<p><img alt="Drawing" src="../_images/monte-carlo-fig21.png" /></p>
-<p>Figure 21. The function to be integrated is <span class="math notranslate nohighlight">\(f(r)\)</span> (blue line) and the potential <span class="math notranslate nohighlight">\(U/4\epsilon\)</span> .</p>
+<p><img alt="Drawing" src="../_images/monte-carlo-fig30.png" /></p>
+<p>Figure 30. The function to be integrated is <span class="math notranslate nohighlight">\(f(r)\)</span> (blue line) and the potential <span class="math notranslate nohighlight">\(U/4\epsilon\)</span> .</p>
 </div>
 </div>
 

@@ -768,7 +768,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-7/matrices-L.html">
-     15.7 Principal axes
+     Principal axes for Moments of Inertia
     </a>
    </li>
    <li class="toctree-l2">
@@ -1506,9 +1506,16 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#v-iii-conditional-probability-throwing-coins">
+    <a class="reference internal nav-link" href="#viii-conditional-probability-throwing-coins">
      <strong>
-      v(iii) Conditional probability. Throwing coins
+      (viii) Conditional probability. Throwing coins
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ix-passwords">
+     <strong>
+      (ix) Passwords
      </strong>
     </a>
    </li>
@@ -1839,8 +1846,8 @@ a &amp; - &amp; a
 <p>figure 20a. Probability that two people in a group of <span class="math notranslate nohighlight">\(n_A\)</span> have the same birthday.</p>
 </div>
 <hr class="docutils" />
-<div class="section" id="v-iii-conditional-probability-throwing-coins">
-<h3><strong>v(iii) Conditional probability. Throwing coins</strong><a class="headerlink" href="#v-iii-conditional-probability-throwing-coins" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="viii-conditional-probability-throwing-coins">
+<h3><strong>(viii) Conditional probability. Throwing coins</strong><a class="headerlink" href="#viii-conditional-probability-throwing-coins" title="Permalink to this headline">¶</a></h3>
 <p>Sometimes conditional probabilities are required; for example, tossing three coins and deciding what is the chance that the outcome is at least two tails (outcome A) and knowing that the first coin to fall is a head (outcome B). Tossing three coins can only produce the patterns</p>
 <p><span class="math notranslate nohighlight">\(\qquad\qquad\)</span> HHH, HHT, HTH, HTT, THH, THT, TTH, TTT</p>
 <p>and each has a chance of <span class="math notranslate nohighlight">\(1/8\)</span> of being produced in three throws. The first outcome (A) is the chance of having at least two tails and by direct counting this is <span class="math notranslate nohighlight">\(p(A) = 4/8\)</span>. The chance of having a head as the first coin is <span class="math notranslate nohighlight">\(p(B) = 4/8\)</span>. The chance that both conditions apply, is calculated <span class="math notranslate nohighlight">\(p(A, B) = 1/8\)</span> by inspecting the sequence of coins. The conditional probability <span class="math notranslate nohighlight">\(p(A | B)\)</span>, is the chance that both conditions apply divided by the chance that condition B applies, and this is</p>
@@ -1849,6 +1856,17 @@ a &amp; - &amp; a
 <p>which is <span class="math notranslate nohighlight">\(1/4\)</span>. This means that the added knowledge that the first coin to fall must be a head, has reduced the odds of obtaining two tails, which is not unexpected since insisting on a head as the first coin reduces the choices available. The equation is ‘symmetrical’ and can be rearranged to</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle p(A,B)= p(B)p(A|B)=p(A)p(B|A) \]</div>
+</div>
+<div class="section" id="ix-passwords">
+<h3><strong>(ix) Passwords</strong><a class="headerlink" href="#ix-passwords" title="Permalink to this headline">¶</a></h3>
+<p>Finally in this section consider a hacker using a computer to guess what your password is. Of course this could happen by random chance happen on the first try but the chance is small if the password is made up of <em>random</em> characters, letters and numbers. However, the hacker can easily try <span class="math notranslate nohighlight">\(10^8\)</span> times with a computer so probabilities become a consideration</p>
+<p>Suppose that the requirements are very low, such that the password must have four letters, two of which are capitals and four numbers. As there are <span class="math notranslate nohighlight">\(26\)</span> letters in our alphabet and ten numbers (<span class="math notranslate nohighlight">\(0\to 9\)</span>) the total number of passwords is</p>
+<p><span class="math notranslate nohighlight">\(N= 26^2\cdot26^2\cdot10^4=4569760000\)</span></p>
+<p>and so the chance of guessing correctly is <span class="math notranslate nohighlight">\(1/N\)</span> which is quite small. Now the chance of not guessing correctly is <span class="math notranslate nohighlight">\(1-1/N\)</span> and to do so <span class="math notranslate nohighlight">\(10^8\)</span> times is <span class="math notranslate nohighlight">\((1-1/N)^{10^8}\)</span>. Therefore the chance of guessing correctly is the complement of this which is</p>
+<div class="math notranslate nohighlight">
+\[P_{correct}=1-(1-1/N)^{10^8}\]</div>
+<p>and is <span class="math notranslate nohighlight">\(0.021\)</span> or <span class="math notranslate nohighlight">\(2.1\)</span>% which you might think is a good enough risk for you but is rather high if many millions of passwords are being challenged. If the hacker tried <span class="math notranslate nohighlight">\(10^{10}\)</span> times then the chance of guessing correctly is <span class="math notranslate nohighlight">\(87\)</span>%, very high indeed.</p>
+<p>Adding one or two non-alphabetical characters such as space, dash, question mark etc. really helps as would more random numbers and letters. Thus if the password contains <span class="math notranslate nohighlight">\(15\)</span> characters for example <span class="math notranslate nohighlight">\(8\)</span> letters, <span class="math notranslate nohighlight">\(4\)</span> numbers and <span class="math notranslate nohighlight">\(3\)</span> non-alphbetical characters (there are at least <span class="math notranslate nohighlight">\(30\)</span>) the total number of possibilities is <span class="math notranslate nohighlight">\(N =26^8\cdot 10^4 \cdot 30^3 \approx 5\cdot 10^{19}\)</span> and the chance of guessing after the huge, and possibly impractical, number of <span class="math notranslate nohighlight">\(10^{18}\)</span> guesses is still effectively zero.</p>
 </div>
 </div>
 <div class="section" id="the-binomial-distribution-see-also-chapter-12-3">
@@ -2055,7 +2073,7 @@ a &amp; - &amp; a
 </div>
 <div class="section" id="multinomial-distribution">
 <h2>9.14 Multinomial distribution<a class="headerlink" href="#multinomial-distribution" title="Permalink to this headline">¶</a></h2>
-<p>The binomial distribution is concerned with selecting between two classes: success and failure; but the choices need not be restricted to two classes. We have already calculated the chance of observing groups of objects or events, such as the chance of 3 GLY, 3 ILE, etc. in the protein sequence in Section 8.2. When there are several choices the multinomial distribution is required and is</p>
+<p>The binomial distribution is concerned with selecting between two classes: success and failure; but the choices need not be restricted to two classes. We have already calculated the chance of observing groups of objects or events, such as the chance of 3 GLY, 3 ILE, etc. in the protein sequence in Section 9.2. When there are several choices the multinomial distribution is required and is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle P_{mG}=\frac{n!}{\prod_{i=1}^r m_i!}\prod_{i=1}^rp_i^{m_i} \tag{26}\]</div>
 <p>where <span class="math notranslate nohighlight">\(p_i\)</span> is the probability of choosing any object from the <span class="math notranslate nohighlight">\(n\)</span> boxes and <span class="math notranslate nohighlight">\(m_i\)</span> are the numbers in each of <span class="math notranslate nohighlight">\(r\)</span> groups.</p>

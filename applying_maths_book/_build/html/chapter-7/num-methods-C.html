@@ -1,0 +1,1792 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coupled equations &#8212; Applying Maths in the Chemical &amp; Biomolecular Sciences</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/book-cover.jpg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Applying Maths in the Chemical & Biomolecular Sciences</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Applying Maths in the Chemical and Biomolecular Sciences.
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-1/chapter1-intro.html">
+   1. Numbers, Equations, Operators, and Algorithms.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-A.html">
+     Numbers to Algorithms.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-Q1-7.html">
+     Questions 1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-B.html">
+     Trig, hyperbolic and inverse functions, waves, polar coordinates &amp; factorials
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-Q8-16.html">
+     Questions 8 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-C.html">
+     Sophisticated Counting.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-Q17-34.html">
+     Questions 17 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-D.html">
+     Modulo arithmetic,
+     <span class="math notranslate nohighlight">
+      \(\delta\)
+     </span>
+     functions, types of  series &amp;  estimating quantities
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-Q35-39.html">
+     Questions 35 - 39
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-answers-1-7.html">
+     Solutions Q1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-answers-8-16.html">
+     Solutions Q8 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-answers-17-34.html">
+     Solutions Q17 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-answers-35-39.html">
+     Solutions Q35 - 39
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-2/chapter2-intro.html">
+   2. Complex numbers.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2/chapter2-A.html">
+     Real, imaginary, conjugate and modulus
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2/chapter2-Q-1-9.html">
+     Questions 1 - 9
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2/chapter2-B.html">
+     De Moivre’s theorem and integer powers of complex numbers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2/chapter2-Q-10-13.html">
+     Questions 10 -13
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2/chapter2-C.html">
+     Euler’s theorem
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2/chapter2-Q-14-27.html">
+     Questions 14 - 27
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2/chapter2-answers.html">
+     Solutions Q1 - 27
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-3/differen-intro.html">
+   3. Differentiation.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-A.html">
+     Differentiation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-B.html">
+     Trig functions, logs, power, reciprocals and integrals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-C-Q-4-11.html">
+     Questions 1-11
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-D.html">
+     Product rule and function of function or chain rule.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-E-Q-12-42.html">
+     Questions 12-42
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-F.html">
+     Limits, l’Hopital’s rule, max and min and Calculus of Variations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-G-Q-43-73.html">
+     Questions 43 - 73
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-H.html">
+     Numerically finding the roots of an equation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-I-Q-74-85.html">
+     Questions 74 - 85
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-J.html">
+     Minimizing or maximizing with constraints: Lagrange Undetermined Multipliers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-K-Q-86-92.html">
+     Questions 86 - 92
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-L.html">
+     Partial differentiation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-M-Q-93-114.html">
+     Questions 93-114
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-M1.html">
+     Differentiation of vectors
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-N-answers-1-11.html">
+     Solutions Q 1-11
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-O-answers-12-42.html">
+     Solutions Q 12-42
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-P-answers-43-73.html">
+     Solutions Q 43 - 73
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-Q-answers-74-85.html">
+     Solutions Q 74 - 85
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-R-answers-86-92.html">
+     Solutions Q 86 - 94
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-S-answers-93-114.html">
+     Solutions Q 93-114
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-4/integration-intro.html">
+   4. Integration.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-A.html">
+     Integration basics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-Q1-14.html">
+     Questions 1-14
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-B.html">
+     Integration by substitution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-Q15-30.html">
+     Questions 15-30
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-C.html">
+     Using parametric equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-Q31-48.html">
+     Questions 31 - 48
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-D.html">
+     Calculating an Average Value.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-Q49-72.html">
+     Questions 49 - 72
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-E.html">
+     The Variational Method in Quantum Mechanics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-Q73-77.html">
+     Questions 73 - 77
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-F.html">
+     Multiple integrals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-Q78-86.html">
+     Questions 78 - 86
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-G.html">
+     Calculating the energy of a chemical bond using molecular orbitals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-H.html">
+     Line integrals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-Q87-96.html">
+     Questions 87 - 96
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-answers-1-14.html">
+     Solutions Q1 - 14
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-answers-15-30.html">
+     Solutions Q15 - 30
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-answers-31-48.html">
+     Solutions Q31 - 48
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-answers-49-72.html">
+     Solutions Q49 - 72
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-answers-73-96.html">
+     Solutions Q73 - 96
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-5/chapter-5-intro.html">
+   5. Summations, Series and expansion of Functions.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-A.html">
+     Series, averages, partition functions, DNA melting, atom entropy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-B-Q1-13.html">
+     Questions 1 - 13
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-E.html">
+     Maclaurin and Taylor series expansions. Paramagnetic spins. Euler-Maclaurin formula.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-F-Q14-34.html">
+     Questions 14 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-G-Q35-44.html">
+     Questions 35 - 44
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-perturbation-A.html">
+     Perturbation Theory
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-perturbation-B-Q45-48.html">
+     Questions 45 - 48
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-perturbation-C.html">
+     Quantum superposition and wavepackets.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-perturbation-D-Q49-52.html">
+     Questions 49 - 52
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-answers-1-7.html">
+     Solutions Q 1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-answers-8-13.html">
+     Solutions Q8 - 13
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-answers-14-26.html">
+     Solutions Q 14 - 26
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-answers-27-32.html">
+     Solutions Q27 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-answers-33-44.html">
+     Solutions Q33 - 44
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-answers-45-52.html">
+     Solutions Q45 - 52
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-6/vectors-intro.html">
+   6. Vectors.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-A.html">
+     Vector basics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-Q1-24.html">
+     Questions 1 - 24
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-B.html">
+     Projections and components
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-Q25-32.html">
+     Questions 25 - 32
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-C.html">
+     Axes need not be right-angled or of equal length
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-Q33-38.html">
+     Questions 33 - 38
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-D.html">
+     Basis sets with more than three dimensions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-Q39-46.html">
+     Questions 39 - 46
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-E.html">
+     Cross product or vector product
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-Q47-52.html">
+     Questions 47 - 52
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-F.html">
+     Torsion or dihedral angles
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-Q53-48.html">
+     Questions 53 - 48
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-G.html">
+     Torque and angular momentum
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-Q59-61.html">
+     Questions 59 - 61
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-answers-Q1-24.html">
+     Solutions Q1 - 24
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-answers-Q25-32.html">
+     Solutions Q25 - 32
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-answers-Q33-38.html">
+     Solutions Q33 - 38
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-answers-Q39-46.html">
+     Solutions Q39 - 46
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-answers-Q47-52.html">
+     Solutions Q47 - 52
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-answers-Q53-61.html">
+     Solutions Q53 - 61
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="matrices-intro.html">
+   7. Matrices
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-A.html">
+     Determinants
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-Q1-10.html">
+     Questions  1 - 10
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-B.html">
+     Matrices
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-Q11-16.html">
+     Questions  11 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-C.html">
+     Molecular Group Theory
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-Q17-30.html">
+     Questions  17 - 30
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-D.html">
+     Rotation matrices: moving molecules
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-Q31-34.html">
+     Questions 31 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-E.html">
+     Matrices in optics and designing laser cavities
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-Q35-39.html">
+     Questions 35 - 39
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-F.html">
+     Polarizing optics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-Q40-44.html">
+     Questions 40 - 44
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-G.html">
+     Solving equations using matrices. Eigenvectors &amp; Eigenvalues.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-Q45-50.html">
+     Questions 45 - 50
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-H.html">
+     Rate equations and Chemical Kinetics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-Q51-54.html">
+     Questions 51 - 54
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-I.html">
+     Molecular vibrations and pendulums
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-Q55-58.html">
+     Questions 55 - 58
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-J.html">
+     Moments of Inertia
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-Q59-60.html">
+     Questions 59 - 62
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-K.html">
+     Calculating a bond length using moments of inertia
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-Q61.html">
+     Question 61
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-L.html">
+     Principal axes for Moments of Inertia
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-Q62.html">
+     Question 62
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-answersQ1-10.html">
+     Solutions Q1 - 10
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-answersQ11-16.html">
+     Solutions Q11 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-answersQ17-30.html">
+     Solutions Q17 - 30
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-answersQ31-34.html">
+     Solutions Q31 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-answersQ35-39.html">
+     Solutions Q35 - 39
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-answersQ40-44.html">
+     Solutions Q40 - 44
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-answersQ45-50.html">
+     Solutions Q45 - 50
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-answersQ51-54.html">
+     Solutions Q51 - 54
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-answersQ55-58.html">
+     Solutions Q55 - 58
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-answersQ59-61.html">
+     Solutions Q59 - 61
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-8/matricesQM-intro.html">
+   8. Matrices in Quantum Mechanics
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-8/matricesQM-A.html">
+     Matrices in Quantum Mechanics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-8/matricesQM-Q1-7.html">
+     Questions 1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-8/matricesQM-B.html">
+     Basis sets and bra-ket algebra
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-8/matricesQM-Q8-12.html">
+     Questions 8 - 12
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-8/matricesQM-C.html">
+     Continuous basis sets
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-8/matricesQM-answers1-7.html">
+     Solutions Q1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-8/matricesQM-answers8-12.html">
+     Solutions Q8 - 12
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-9/Fourier-intro.html">
+   9. Fourier Series and Transforms.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-A-B.html">
+     Fourier series, Gibbs phenomenon, generalised series.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-questions-1-6.html">
+     Questions 1 - 6
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-C.html">
+     Fourier Transforms
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-questions-7-15.html">
+     Questions 7 - 15
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-D.html">
+     Convolution and Autocorrelation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-questions-16-21.html">
+     Questions 16 - 21
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-E.html">
+     Discrete Fourier  (DFT)  and Fast Fourier transforms (FFT)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-F.html">
+     The Hadamard Transform: Encoding and Decoding
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-answers-1-6.html">
+     Solutions Q 1 - 6
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-answers-7-15.html">
+     Solutions Q 7 - 15
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-answers-16-21.html">
+     Solutions Q 16 - 21
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-2D-Diffraction.html">
+     The Fourier transform in two dimensions: images and x-ray Diffraction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-tomography.html">
+     Computed Tomography
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-10/Diff-eqns-intro.html">
+   10. Differential Equations.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-A.html">
+     Differential Equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-Q1-23.html">
+     Questions 1 - 23
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-B.html">
+     Integrating factors can solve differential equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-C.html">
+     The ‘D’ operator.  Solving linear differential equations with constant coefficients
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-D.html">
+     Simultaneous equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-Q24-37.html">
+     Questions 24 - 37
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-E.html">
+     Linear equations with variable coefficients
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-F.html">
+     Partial Differential Equations, PDE
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-G.html">
+     PDE examples continued
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-answers-1-21.html">
+     Solutions Q1 - 21
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-answers-22-37.html">
+     Solutions Q22 - 37
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-11/num-methods-intro.html">
+   11. Numerical Methods
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-A.html">
+     Numerical Methods
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-Q1-7.html">
+     Questions 1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-B.html">
+     Numerical solution of differential equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-Q8-12.html">
+     Questions 8 - 12
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-C.html">
+     Coupled equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-Q13-16.html">
+     Questions 13 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-D.html">
+     The phase plane, nullclines, and stable points
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-Q17-20.html">
+     Questions 17 - 20
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-E.html">
+     Reaction schemes with feedback
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-Q21-34.html">
+     Questions 21 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-F.html">
+     Boundary value problems.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-Q35-40.html">
+     Questions 35 - 40
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-answers1-7.html">
+     Solutions Q1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-answers8-12.html">
+     Solutions Q8 - 12
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-answers13-16.html">
+     Solutions Q13 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-answers17-20.html">
+     Solutions Q17 - 20
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-answers21-34.html">
+     Solutions Q21 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-answers35-40.html">
+     Solutions Q35 - 40
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-12/monte-carlo-intro.html">
+   12. Monte Carlo Methods
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+  <label for="toctree-checkbox-12">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-A.html">
+     Monte - Carlo Methods
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-Q1-6.html">
+     Questions 1 - 6
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-B.html">
+     Solving rate equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-Q7-10.html">
+     Questions 7 - 10
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-CC.html">
+     Monte Carlo Simulations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-C.html">
+     Energy transfer. Autocatalytic reaction and spreading of fires
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-Q11-17.html">
+     Questions 11 - 17
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-D.html">
+     The Metropolis algorithm
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-answers1-6.html">
+     Solutions Q1 - 6
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-answers7-10.html">
+     Solutions Q7 - 10
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-answers11-17.html">
+     Solutions Q11 - 17
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-13/analysis-intro.html">
+   13. Data Analysis
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+  <label for="toctree-checkbox-13">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-13/analysis-A.html">
+     Characterizing experimental data. Accuracy, precision, mean and standard deviation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-13/analysis-Q1-3.html">
+     Questions 1 - 3
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-13/analysis-B.html">
+     Modelling data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-13/analysis-Q4-9.html">
+     Questions 4 - 9
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-13/analysis-C.html">
+     Modelling data is simpler using matrices
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-13/analysis-Q10-11.html">
+     Questions 10 - 13
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-13/analysis-D.html">
+     Non-linear least squares. Least absolute deviation. Principal component analysis
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-13/analysis-answers1-11.html">
+     Solutions Q1 -11
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../chapter-1/chapter1-E.html">
+   SI units, Rounding, converting units &amp; Glossary.
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../references/References.html">
+   References
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../references/Python%20crib.html">
+   Some basic Python instructions with a few examples.
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/chapter-7/num-methods-C.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/chapter-7/num-methods-C.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#modified-euler-and-runge-kutta-equations">
+   5.1 Modified Euler and Runge - Kutta equations
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-polymerase-chain-reaction-pcr-a-real-world-example-of-coupled-equations">
+   5.2 The Polymerase Chain Reaction PCR. A real world example of coupled equations
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pcr-rate-equations">
+   PCR rate equations
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#second-and-higher-order-differential-equations-the-numerov-algorithm-and-the-schroedinger-equation">
+   5.3 Second and higher order differential equations. The Numerov algorithm and the Schroedinger equation.
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#higher-order-equations">
+     <strong>
+      Higher order equations
+     </strong>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-numerov-method">
+   5.4 The Numerov method
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="coupled-equations">
+<h1>Coupled equations<a class="headerlink" href="#coupled-equations" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import all python add-ons etc that will be needed later on</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="n">init_printing</span><span class="p">()</span>                      <span class="c1"># allows printing of SymPy results in typeset maths format</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;font.size&#39;</span><span class="p">:</span> <span class="mi">16</span><span class="p">})</span>  <span class="c1"># set font size for plots</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Similar numerical methods to those used for single equations can be used to solve coupled or simultaneous ones. Coupled reactions are commonly found in chemical kinetics, MD simulations, enzyme kinetics, and catalysis; also in the decay of radioactive atoms as well as in the spread of diseases and the predator - prey type behaviour of animals. In each case, species interact or convert into one another and at least two differential equations are needed to describe this. In many cases, these sets of equations cannot be solved algebraically and a numerical method has therefore to be used. As an example, we deliberately start with a pair of equations that can be solved analytically, and this will allow comparison of the numerical solution with the algebraic one. The equations are</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{dy}{dt}=\cos(t)-x \qquad \frac{dx}{dt}=\sin(t)-1-y  \tag{32}\]</div>
+<p>subject to the initial condition <span class="math notranslate nohighlight">\(x(t_0) = 1,\; y(t_0) = -3\)</span> when <span class="math notranslate nohighlight">\(t_0 = 0\)</span>. Notice that the first equation <span class="math notranslate nohighlight">\(dy/dt = \cdots\)</span> is a function of <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(t\)</span> and the second a function of <span class="math notranslate nohighlight">\(y\)</span> and <span class="math notranslate nohighlight">\(t\)</span> but in general <span class="math notranslate nohighlight">\(dy/dt\)</span> and <span class="math notranslate nohighlight">\(dx/dt\)</span> could be functions of <span class="math notranslate nohighlight">\(x\)</span>, <span class="math notranslate nohighlight">\(y\)</span>, and <span class="math notranslate nohighlight">\(t\)</span>. These equations can be solved algebraically using the method of operators (Chapter 10.4) by making a second-order equation out of the pair and the solutions are</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle y = \sin(t) - \sinh(t) - 1 - 2 \cosh(t)\quad\text{and}\quad x = \cosh(t) + 2 \sinh(t)\]</div>
+<p>These functions are plotted in Fig. 11 as dashed lines. The result of a modified Euler integration using Algorithm 15 from <span class="math notranslate nohighlight">\(t = 0 \cdots 3\)</span> is also shown as the solid lines with <span class="math notranslate nohighlight">\(N = 200\)</span> steps.</p>
+<p><img alt="Drawing" src="chapter-7/num-methods-fig11.png" /></p>
+<p>Figure 11. The algebraic solution to the two equations (32) (dashed lines) over the range <span class="math notranslate nohighlight">\(-4 \to 4\)</span> and the modified Euler numerical solution (solid line) with <span class="math notranslate nohighlight">\(200\)</span> steps over the range <span class="math notranslate nohighlight">\(t = 0 \to 3\)</span>.</p>
+<hr class="docutils" />
+<p>The code shown below for the calculation is similar to that in Algorithm 9, except that two functions are defined and both <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> are incremented. The modified Euler method can be used just as easily as with a single equation, but for clarity, the simpler method is illustrated.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Algorithm 14;   Euler&#39;s method for coupled equations</span>
+
+<span class="n">dydt</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">t</span><span class="p">,</span><span class="n">x</span> <span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="o">-</span> <span class="n">x</span>        <span class="c1"># eqns 32</span>
+<span class="n">dxdt</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">t</span><span class="p">,</span><span class="n">y</span> <span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">y</span>
+
+<span class="n">t0</span> <span class="o">=</span> <span class="mf">0.0</span>
+<span class="n">maxt</span> <span class="o">=</span> <span class="mf">2.0</span>
+<span class="n">x0</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">y0</span> <span class="o">=</span> <span class="o">-</span><span class="mi">3</span>
+<span class="n">n</span>  <span class="o">=</span> <span class="mi">200</span>
+
+<span class="n">Eulery</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>   <span class="c1"># define arrays to hold results</span>
+<span class="n">Eulerx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+<span class="n">dtime</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+
+<span class="n">h</span> <span class="o">=</span> <span class="p">(</span><span class="n">maxt</span> <span class="o">-</span> <span class="n">t0</span><span class="p">)</span><span class="o">/</span><span class="n">n</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">x0</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">y0</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">t0</span>
+<span class="n">Eulery</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">y0</span>
+<span class="n">Eulerx</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">x0</span>
+<span class="n">dtime</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>  <span class="o">=</span> <span class="n">t0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">y</span> <span class="o">+</span> <span class="n">h</span><span class="o">*</span><span class="n">dydt</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">h</span><span class="o">*</span><span class="n">dxdt</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="n">t</span> <span class="o">+</span> <span class="n">h</span>
+    <span class="n">Eulery</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">y</span>
+    <span class="n">Eulerx</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">x</span>
+    <span class="n">dtime</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>  <span class="o">=</span> <span class="n">t</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="modified-euler-and-runge-kutta-equations">
+<h2>5.1 Modified Euler and Runge - Kutta equations<a class="headerlink" href="#modified-euler-and-runge-kutta-equations" title="Permalink to this headline">¶</a></h2>
+<p>The Euler method for coupled equations can be improved in the same way as for equation (23). The resulting equations with which to calculate <span class="math notranslate nohighlight">\(dy/dt = f (t, x, y)\)</span> and <span class="math notranslate nohighlight">\(dx/dt = g(t, x, y)\)</span> are changed from</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle  y_{n+1} = y_n + hf(t_n,x_n,y_n) \qquad \text{and} \qquad x_{n+1} = x_n + hg(t_n,x_n,y_n)\]</div>
+<p>to</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle  y_{n+1} = y_n + \frac{h}{2}[f(t_n,x_n,y_n) + f(t_n+h, x_n+hg(t_n,x_n,y_n), y_n+hf(t_n,x_n,y_n))]\]</div>
+<div class="math notranslate nohighlight">
+\[\displaystyle  x_{n+1} = x_n + \frac{h}{2}[g(t_n,x_n,y_n) +  g(t_n+h, x_n+hg(t_n,x_n,y_n), y_n+hf(t_n,x_n,y_n))  ]\]</div>
+<p>which is much more clearly written out as</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \qquad\qquad\begin{array}{ll}
+\displaystyle x_{n+1} = x_n+\frac{h}{2}(L_1+L_2) &amp; \displaystyle y_{n+1} = y_n+\frac{h}{2}(k_1+k_2) \\[10pt]
+\displaystyle k_1=f(t_n,x_n,y_n) &amp; \displaystyle L_1=g(t_n,x_n,y_n)\\[10pt]
+\displaystyle k_2=f(t_n+h, x_n+hL_1, y_n+hk_1) &amp; \displaystyle L_2=g(t_n+h, x_n+hL_1, y_n+hk_1)\\
+\end{array}\qquad\qquad\qquad \text{33}\end{split}\]</div>
+<p>This can be translated quite easily into Python, because only the part within the for loop is changed. The rest is based on algorithm 14.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Algorithm 15;   Heun&#39;s or modified Euler for coupled equations</span>
+
+<span class="n">dydt</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">t</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">y</span> <span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="o">-</span> <span class="n">x</span>        <span class="c1"># eqns 32 it does not matter that y is not present</span>
+<span class="n">dxdt</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">t</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">y</span> <span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">y</span>    
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">k1</span> <span class="o">=</span> <span class="n">dydt</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+    <span class="n">L1</span> <span class="o">=</span> <span class="n">dxdt</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+    <span class="n">k2</span> <span class="o">=</span> <span class="n">dydt</span><span class="p">(</span><span class="n">t</span> <span class="o">+</span> <span class="n">h</span><span class="p">,</span> <span class="n">x</span> <span class="o">+</span> <span class="n">L1</span><span class="o">*</span><span class="n">h</span><span class="p">,</span> <span class="n">y</span> <span class="o">+</span> <span class="n">k1</span><span class="o">*</span><span class="n">h</span><span class="p">)</span>
+    <span class="n">L2</span> <span class="o">=</span> <span class="n">dxdt</span><span class="p">(</span><span class="n">t</span> <span class="o">+</span> <span class="n">h</span><span class="p">,</span> <span class="n">x</span> <span class="o">+</span> <span class="n">L1</span><span class="o">*</span><span class="n">h</span><span class="p">,</span> <span class="n">y</span> <span class="o">+</span> <span class="n">k1</span><span class="o">*</span><span class="n">h</span><span class="p">)</span>
+    
+    <span class="n">y</span> <span class="o">=</span> <span class="n">y</span> <span class="o">+</span> <span class="n">h</span><span class="o">*</span><span class="p">(</span><span class="n">k1</span> <span class="o">+</span> <span class="n">k2</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">h</span><span class="o">*</span><span class="p">(</span><span class="n">L1</span> <span class="o">+</span> <span class="n">L2</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="n">t</span> <span class="o">+</span> <span class="n">h</span>
+    <span class="n">Eulery</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">y</span>
+    <span class="n">Eulerx</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">x</span>
+    <span class="n">dtime</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>  <span class="o">=</span> <span class="n">t</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The Runge - Kutta method can also be used with coupled equations in a similar way as in the last algorithm; notice how the <span class="math notranslate nohighlight">\(k\)</span>’s are defined in terms of <span class="math notranslate nohighlight">\(dydt\)</span> and add to terms in <span class="math notranslate nohighlight">\(y\)</span> and <span class="math notranslate nohighlight">\(L\)</span>’s to those in <span class="math notranslate nohighlight">\(x\)</span>. Based on Algorithm 11 the modified equations are only in the for loop.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Algorithm 16     Runge - Kutta fourth order (RK4)  method for coupled equations.</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">k1</span> <span class="o">=</span> <span class="n">dydt</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+    <span class="n">L1</span> <span class="o">=</span> <span class="n">dxdt</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+    
+    <span class="n">k2</span> <span class="o">=</span> <span class="n">dydt</span><span class="p">(</span><span class="n">t</span> <span class="o">+</span> <span class="n">h</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">x</span> <span class="o">+</span> <span class="n">L1</span><span class="o">*</span><span class="n">h</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">y</span> <span class="o">+</span> <span class="n">k1</span><span class="o">*</span><span class="n">h</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">L2</span> <span class="o">=</span> <span class="n">dxdt</span><span class="p">(</span><span class="n">t</span> <span class="o">+</span> <span class="n">h</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">x</span> <span class="o">+</span> <span class="n">L1</span><span class="o">*</span><span class="n">h</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">y</span> <span class="o">+</span> <span class="n">k1</span><span class="o">*</span><span class="n">h</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+    
+    <span class="n">k3</span> <span class="o">=</span> <span class="n">dydt</span><span class="p">(</span><span class="n">t</span> <span class="o">+</span> <span class="n">h</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">x</span> <span class="o">+</span> <span class="n">L2</span><span class="o">*</span><span class="n">h</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">y</span> <span class="o">+</span> <span class="n">k2</span><span class="o">*</span><span class="n">h</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">L3</span> <span class="o">=</span> <span class="n">dxdt</span><span class="p">(</span><span class="n">t</span> <span class="o">+</span> <span class="n">h</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">x</span> <span class="o">+</span> <span class="n">L2</span><span class="o">*</span><span class="n">h</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">y</span> <span class="o">+</span> <span class="n">k2</span><span class="o">*</span><span class="n">h</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+    
+    <span class="n">k4</span> <span class="o">=</span> <span class="n">dydt</span><span class="p">(</span><span class="n">t</span> <span class="o">+</span> <span class="n">h</span><span class="p">,</span> <span class="n">x</span> <span class="o">+</span> <span class="n">L3</span><span class="o">*</span><span class="n">h</span><span class="p">,</span> <span class="n">y</span> <span class="o">+</span> <span class="n">k3</span><span class="o">*</span><span class="n">h</span><span class="p">)</span>
+    <span class="n">L4</span> <span class="o">=</span> <span class="n">dxdt</span><span class="p">(</span><span class="n">t</span> <span class="o">+</span> <span class="n">h</span><span class="p">,</span> <span class="n">x</span> <span class="o">+</span> <span class="n">L3</span><span class="o">*</span><span class="n">h</span><span class="p">,</span> <span class="n">y</span> <span class="o">+</span> <span class="n">k3</span><span class="o">*</span><span class="n">h</span><span class="p">)</span>
+    
+    <span class="n">y</span> <span class="o">=</span> <span class="n">y</span> <span class="o">+</span> <span class="n">h</span><span class="o">*</span><span class="p">(</span><span class="n">k1</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">k2</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">k3</span> <span class="o">+</span> <span class="n">k4</span><span class="p">)</span><span class="o">/</span><span class="mi">6</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">h</span><span class="o">*</span><span class="p">(</span><span class="n">L1</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">L2</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">L3</span> <span class="o">+</span> <span class="n">L4</span><span class="p">)</span><span class="o">/</span><span class="mi">6</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="n">t</span> <span class="o">+</span> <span class="n">h</span>
+    <span class="n">Eulery</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">y</span>
+    <span class="n">Eulerx</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">x</span>
+    <span class="n">dtime</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>  <span class="o">=</span> <span class="n">t</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="the-polymerase-chain-reaction-pcr-a-real-world-example-of-coupled-equations">
+<h2>5.2 The Polymerase Chain Reaction PCR. A real world example of coupled equations<a class="headerlink" href="#the-polymerase-chain-reaction-pcr-a-real-world-example-of-coupled-equations" title="Permalink to this headline">¶</a></h2>
+<p>The polymerase chain reaction (PCR) is a technique, that in a few hours at most, can vastly multiply the number of selected fragments of DNA by thousands to millions of times. The method has recently been widely used as a test for the presence of Covid-19 virus but has been used long before that to detect a whole range diseases caused by viruses, bacteria and parasites. Other methods can be used for many diseases but PCR has the advantage of being able to amplify minute amounts of DNA. This technique is also important as part of fingerprint detection. The technique was invented by K. Mullis in 1983. He subsequently shared the Nobel Prize in Chemistry in 1993 for his ‘invention of the polymerase chain reaction (PCR) method’ with M. Smith for his ‘fundamental contributions to the establishment of oligonucleotide-based, site-directed mutagenesis and its development for protein studies’.</p>
+<p>The target, a double-stranded DNA molecule is initially denatured by heating into two single strands. This DNA had previously been split into segments of a few hundred to to a few thousand base pairs. The denaturing is a cooperative effect and occurs over a narrow temperature range, <span class="math notranslate nohighlight">\(90-95\,^\text{o}\)</span>C, see Kittel and Bragg-Zimm zippers, chapters 1, 3.(ii) and Chapter 7,13.5 respectively. The denaturing is the first stage of the PCR cycle. The narrow temperature range of both denaturing and also subsequent steps, described shortly, mean that very precise and rapid temperature control is required. Because of the cooperative nature of denaturing and extending DNA the Arrhenius equation does not generally apply when considering how rate constants change with temperature.</p>
+<p>Two small oligonucleotides (typically <span class="math notranslate nohighlight">\(15-30\)</span> base pairs) are chemically synthesised and that are complementary to sequences on opposite strands of the target DNA sequence (3’ and 5’ ends) and that flank the target to be amplified, are used as primers. To bind the primers to the single strands it is necessary to reform the H-bonds and enable <span class="math notranslate nohighlight">\(\pi-\pi\)</span> stacking to occur which requires some cooling to the solution but there is a balance: cooling must not be too much otherwise the the single strands recombine. However, if there is no cooling there is too much energy and the H bonds and pi-stacking cannot occur, i.e. unless cooled the equilibrium is too far towards separated primer and single stranded DNA species. This step is called ‘annealing’ or ‘hybridisation’.</p>
+<p>The third stage is to convert the single strand with bound primer to form the new double stranded DNA and this is achieved by a DNA polymerase (protein) enzyme. This is called ‘extension’ or ‘elongation’. This should be done at the optimum temperature for the polymerase (<span class="math notranslate nohighlight">\(68-72\,^\text{o}\)</span>C). The most commonly used polymerase is the heat resistant enzyme initially isolated from the bacterium <em>Thermus aquaticus</em> (‘Taq Poly’) that lives in hot springs and can resist (<span class="math notranslate nohighlight">\(100\,^\text{o}\)</span>C).  Because DNA always pairs bases as G-C and A-T the DNA single strand makes a template on which to form an identical double stranded DNA using the nucleotides (i.e. base-sugar-phosphate molecules or dNTPs) present in solution.  The chain is completed when the new DNA is produced and fed-back in the denaturing step.</p>
+<p>After the first cycle, each target molecule of DNA has been copied twice thus the number of DNA copies is doubled, and after, for example <span class="math notranslate nohighlight">\(25\)</span> cycles there are <span class="math notranslate nohighlight">\(2^{25} \approx 33\cdot 10^6\)</span> copies. The mixture to perform the PCR, besides buffer, are the DNA fragments to be copied, the primer sequence, often artificially synthesised, the Taq polymerase and the nucleotide bases (dNTPs).</p>
+<p>To detect the DNA a fluorphore can be used, and this can have great sensitivity because single photons can easily be detected. There are several strategies, the simplest is to use a dye that is largely non-fluorescent when in solution but when intercalated into the DNA becomes highly fluorescent. Other methods use a dye-quencher molecule such that when it is bound the dye and quencher are separated and the fluorescence yield increases dramatically. Similarly to this two dyes may be linked in the same molecule and undergo Forster resonance energy transfer (FRET) when close to one another but not when kept apart.</p>
+<p><img alt="Drawing" src="chapter-7/num-methods-fig20c.png" /></p>
+<p>Figure 11a. Sketch of the PCR method. Redrawn from <a class="reference external" href="http://NobelPrize.org">NobelPrize.org</a>. Nobel Prize Outreach AB 2022.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="pcr-rate-equations">
+<h2>PCR rate equations<a class="headerlink" href="#pcr-rate-equations" title="Permalink to this headline">¶</a></h2>
+<p>The rate equations for a basic PCR are shown below using the notation, <span class="math notranslate nohighlight">\(D\)</span>, double strand DNA, <span class="math notranslate nohighlight">\(S\)</span> single strand DNA, <span class="math notranslate nohighlight">\(E\)</span> the Taq Poly enzyme and <span class="math notranslate nohighlight">\(P\)</span> the primer.  We implicitly assume that there are enough molecules that the rate equation is accurate, and that a Monte-Carlo method is not needed. The steps taken in order my varying the temperature are</p>
+<p>(A) Dissociation of DNA into two strands at the highest temperature <span class="math notranslate nohighlight">\(\approx 95^{o}\)</span>C</p>
+<p>(B) Primer sequence attaches to single stranded DNA at the lowest temperature <span class="math notranslate nohighlight">\(\approx 72^{o}\)</span>C</p>
+<p>(C) The Taq enzyme adds base pairs to primer-single stranded DNA to make new double stranded DNA. This extension phase assumes the Michaelis - Menten scheme and occiurs at <span class="math notranslate nohighlight">\(\approx 85^{o}\)</span>C.</p>
+<p>Each of these steps has to occur at a different temperature so this has to be closely controlled, being raised and lowered as necessary to move the reaction towards product. The order is <span class="math notranslate nohighlight">\(95 \to 72 \to 85\)</span> which is then repeated. To calculate this numerically the rate constants have to be temperature dependent. This is done in two ways, the enzyme reaction is very specific and so a Gaussian temperature profile is used. If the temperature is too high or too low the rate constant tends to zero, i.e. <span class="math notranslate nohighlight">\(k_2\)</span> (see below) varies as <span class="math notranslate nohighlight">\(k_2\exp(-(T_0-T)^2/\sigma)\)</span>. All the other rate constants <span class="math notranslate nohighlight">\(k_i\)</span> must have a value of zero below a critical temperature and so are given the sigmoidal form <span class="math notranslate nohighlight">\(k_i/(1+\exp(-(T_0-T)/\sigma_0)\)</span> which rises from zero below <span class="math notranslate nohighlight">\(\approx T_0\)</span> to a <em>constant</em> value <span class="math notranslate nohighlight">\(k_i\)</span> above: <span class="math notranslate nohighlight">\(\sigma_0\)</span> controls how fast the function rises, but should be only a few degrees. For simplicity the temperature profile was made sinusoidal (rather than stepwise) with a period of <span class="math notranslate nohighlight">\(60\)</span> seconds starting at the highest temperature. Such rapid cycling will be easier small device such as one using microchannels to contain the species as with a ‘lab-on-a-chip’.</p>
+<p>The reaction scheme is</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin{array}\\ 
+D &amp; \overset{{\large k_D}}{\underset{{\large k_{-D}}} \rightleftharpoons} &amp;  2S\qquad\qquad \qquad\qquad 95\mathrm{^{o} C,denaturing}\\
+S + P &amp;\overset{{\large k_{sp}}}{\underset{{\large k_{-sp}}} \rightleftharpoons}&amp; SP \qquad\qquad \qquad\qquad 72\mathrm{^{o}C, annealing}\\
+E + SP &amp;\overset{{\large k_{1}}}{\underset{{\large k_{-1}}} \rightleftharpoons}&amp; E\cdot SP \overset{k_2}\longrightarrow E+D\;\;\qquad 85\mathrm{^{o}C, extending}\\
+\end{array}\end{split}\]</div>
+<p>and we ignore the possibility that the enzyme <span class="math notranslate nohighlight">\(E\)</span> may also decompose at the higher temperatures as this is known to be small <span class="math notranslate nohighlight">\(\approx 0.1%\)</span> at each cycle.</p>
+<p>The scheme can be solved numerically and although the rate equations may look formidable they are easily formed from the scheme above and can be integrated either using an inbuilt Python integrator or a Euler method.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin{align}\frac{d[D]}{dt} &amp; = -k_D[D]+\frac{1}{2} k_{-D}[S]^2 + k_2[E\cdot SP]\\
+\frac{d[S]}{dt}  &amp; = +2k_D[D] - k_{-D}[S]^2-k_{sp}[S][P]+k_{-sp}[SP]\\
+\frac{d[P]}{dt} &amp;= -k_{sp}[S][P]+k_{-sp}[SP]\\
+\frac{d[SP]}{dt} &amp; = +k_{sp}[S][P] -k_{-sp}[SP] - k_1[E][SP] + k_{-1}[E\cdot SP]\\
+\frac{d[E\cdot SP]}{dt} &amp; = + k_1[E][SP] - (k_{-1}+k_2)[E\cdot SP]\\
+\frac{d[E]}{dt} &amp; = -k_1[E][SP]+(k_{-1}+k_2)[E\cdot SP]\\
+\end{align}\end{split}\]</div>
+<p>The result of integrating is shown in fig 11b assuming DNA segments of <span class="math notranslate nohighlight">\(b=200\)</span> base pairs. The concentration of the double stranded DNA (<span class="math notranslate nohighlight">\(D\)</span>, red), the single strand (<span class="math notranslate nohighlight">\(S\)</span>, green) and the complex (<span class="math notranslate nohighlight">\(E\cdot SP\)</span>, black) are shown. The initial amounts and rate constants are shown in the table (SI units are used as appropriate for first and second order reactions).</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin{array}\\
+k_D=3000/b, &amp; k_{-D}=10^6,&amp; k_{sp}=5\cdot10^5, &amp; k_{-sp}=10^{-4},&amp; k_1=10^8, &amp; k_{-1}=10, &amp; k_2=60\\
+D_0=10^{-15}, &amp;P_0=2\cdot10^{-7}, &amp; E_0=5\cdot 10^{-9},&amp; S_0=SP_0=E\cdot SP_0=0 &amp; \sigma=8 &amp; \sigma_0=2\\
+\end{array}\end{split}\]</div>
+<p>Notice that only a tiny amount of DNA need be present initially but that the primer is in vast excess over this and the enzyme <span class="math notranslate nohighlight">\(E\)</span>. This makes the annealing step pseudo-first order and <span class="math notranslate nohighlight">\(k_{sp}[P] \gg k_{-sp}\)</span>, but mainly the excess dose not limit the amount of <span class="math notranslate nohighlight">\(D\)</span> produced as <span class="math notranslate nohighlight">\(P\)</span> is consumed in the reaction. Of course there must be also sufficient nucleotides present to make the new DNA. The amount of all these concentrations depend on the particular situation but usually this is determined when the detection limit is exceeded by a suitable margin. Similarly to primer, increasing the amount of enzyme will also produce more DNA in a given time because <span class="math notranslate nohighlight">\(k_1[E][SP]\)</span> is increased.</p>
+<p>The unusual oscillatory behaviour is due to the temperature cycling which causes the rate constants to turn on and off. The decreasing region in <span class="math notranslate nohighlight">\(D\)</span> is due to the temperature increasing which starts DNA denaturing into two strands <span class="math notranslate nohighlight">\(S\)</span> which correspondingly increases (green). More double stranded DNA <span class="math notranslate nohighlight">\(D\)</span> is produced as the enzyme reaction <span class="math notranslate nohighlight">\(E+SP\)</span> starts and which stops when the temperature changes making <span class="math notranslate nohighlight">\([D]\)</span> constant. Recall that the temperature range is narrow over which this reaction occurs, i.e. <span class="math notranslate nohighlight">\(k \sim\exp(-(T_0-T)^2/\sigma)\)</span> as described above so the increase in <span class="math notranslate nohighlight">\(D\)</span> is short lived.</p>
+<p><img alt="Drawing" src="chapter-7/num-methods-fig20a.png" /></p>
+<p>Figure 11b. The populations of various species <em>vs</em>. time in the PCR reaction. See text for details.</p>
+<hr class="docutils" />
+<p>The pattern of populations in fig 11b is complex. Looking at the scheme shows that initially <span class="math notranslate nohighlight">\(D\)</span> is denatured and therefore <span class="math notranslate nohighlight">\(S\)</span> rises and in the last step where new <span class="math notranslate nohighlight">\(D\)</span> is formed the opposite occurs which suggests that plotting <span class="math notranslate nohighlight">\(D\)</span> vs. <span class="math notranslate nohighlight">\(S+SP\)</span> may show this behaviour. Figure 12c clearly shows exactly this and that the final <span class="math notranslate nohighlight">\(D\)</span> is increasing in each cycle.</p>
+<p><img alt="Drawing" src="chapter-7/num-methods-fig20d.png" /></p>
+<p>Figure 11c. Plot showing variation of D with S+SR. the increase and decrease of <span class="math notranslate nohighlight">\(D\)</span> is clear and clearly shows the amplification. The slight kink in the extension is the horizontal part of fig 11b.</p>
+<hr class="docutils" />
+<p>Although the amount of double stranded DNA is increasing it is hard to see by how much in fig 11b. By totaling <span class="math notranslate nohighlight">\([D]\)</span> into groups of periods, then the exponential increase is more obvious as shown in fig 11d. The doubling time in the upper part of the plot is <span class="math notranslate nohighlight">\(\approx 89\)</span> s. The doubling time is calculated assuming <span class="math notranslate nohighlight">\([D]=[D_0]e^{kt}\)</span> and using <span class="math notranslate nohighlight">\(t_2=\ln(2)/k\)</span> just as if a half-life were calculated.</p>
+<p><img alt="Drawing" src="chapter-7/num-methods-fig20b.png" /></p>
+<p>Figure 11d. The total amount of double stranded DNA, <span class="math notranslate nohighlight">\([D]\)</span> <em>vs</em>. time. The circles show the cycles. The dashed line is an exponential fit with a doubling time of <span class="math notranslate nohighlight">\(\approx 89\)</span> s.</p>
+</div>
+<div class="section" id="second-and-higher-order-differential-equations-the-numerov-algorithm-and-the-schroedinger-equation">
+<h2>5.3 Second and higher order differential equations. The Numerov algorithm and the Schroedinger equation.<a class="headerlink" href="#second-and-higher-order-differential-equations-the-numerov-algorithm-and-the-schroedinger-equation" title="Permalink to this headline">¶</a></h2>
+<p>The most important second order equation you will meet is most likely to be the Schroedinger equation. The numerical solution to find the energy (eigenvalues) of this is dealt with in section 9 of this chapter but the Numerov algorithm used to calculate the wavefunction is described below after the general solution of other second order equations  is described.</p>
+<p>Second and higher order equations can be easily reduced to a set of first-order equations and solved as coupled equations. Second-order equations can also be converted directly into difference equations for numerical evaluation and, in some cases, such as with the diffusion equation, this is the most convenient way to solve them.</p>
+<p>The equation</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle  \frac{d^2y}{dx^2}+3\frac{dy}{dx}+5y=0 \tag{34}\]</div>
+<p>is second order and can be solved algebraically making possible a comparison with a numerical method. Suppose that the initial conditions are <span class="math notranslate nohighlight">\(y_0 = 0\)</span> and <span class="math notranslate nohighlight">\(dy/dx|_0 = 1\)</span>. These mean that the value of <span class="math notranslate nohighlight">\(y\)</span> at <span class="math notranslate nohighlight">\(x = 0\)</span> is zero, and that the gradient, also at <span class="math notranslate nohighlight">\(x = 0\)</span>, is one. The strategy is to take the lowest derivative <span class="math notranslate nohighlight">\(dy/dx\)</span>, even if it is not explicitly present in the equation, and make this equal to a new variable <span class="math notranslate nohighlight">\(z\)</span>; for instance, <span class="math notranslate nohighlight">\(z = dy/dx\)</span>. The equation now becomes</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{dy}{dz}=z; \qquad \frac{dz}{dx}=-3z-5y \tag{35}\]</div>
+<p>As a check, by substitution the original equation is reformed. The equations, initial values, and the Euler method based on that in Algorithm 14 are written as:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dydx</span> <span class="o">=</span> <span class="k">lambda</span>   <span class="n">z</span><span class="p">:</span> <span class="n">z</span>
+<span class="n">dzdx</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">y</span><span class="p">,</span><span class="n">z</span><span class="p">:</span> <span class="o">-</span><span class="mi">3</span><span class="o">*</span><span class="n">z</span> <span class="o">-</span> <span class="mi">5</span><span class="o">*</span><span class="n">y</span> 
+<span class="n">y0</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">z0</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">x0</span> <span class="o">=</span> <span class="mi">0</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>and in the for loop the increments for <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> are similar to those used previously. The numerical result is shown in Fig. 12 with <span class="math notranslate nohighlight">\(200\)</span> points used in the numerical integration, together with the algebraic solution shown as the dashed line. A fairly good fit to the algebraic line is obtained, but to improve this, more points could be used in the integration or a better integration method used, such as illustrated in Algorithm 15. The algebraic solution can be found using SymPy, and has the form of an exponentially damped sine wave.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">C1</span><span class="p">,</span> <span class="n">C2</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x, y, C1, C2&#39;</span><span class="p">)</span>
+<span class="n">y</span>  <span class="o">=</span> <span class="n">Function</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">)</span>
+<span class="n">eq</span> <span class="o">=</span> <span class="n">diff</span><span class="p">(</span><span class="n">y</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="n">x</span><span class="p">,</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="mi">3</span><span class="o">*</span><span class="n">diff</span><span class="p">(</span><span class="n">y</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="n">x</span><span class="p">)</span><span class="o">+</span><span class="mi">5</span><span class="o">*</span><span class="n">y</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">ans</span><span class="o">=</span> <span class="n">dsolve</span><span class="p">(</span><span class="n">eq</span><span class="p">,</span><span class="n">y</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="n">ans</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/num-methods-C_12_01.png" src="../_images/num-methods-C_12_01.png" />
+</div>
+</div>
+<p>Including the initial condition <span class="math notranslate nohighlight">\(y(0)=0,\,x=0\)</span> produces <span class="math notranslate nohighlight">\(C_2=0\)</span>. The derivative is <span class="math notranslate nohighlight">\(1\)</span> at <span class="math notranslate nohighlight">\(x=0\)</span>,</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dydx</span> <span class="o">=</span> <span class="n">diff</span><span class="p">(</span> <span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="o">*</span><span class="n">x</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">C1</span><span class="o">*</span><span class="n">sin</span><span class="p">(</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span><span class="o">*</span><span class="n">x</span><span class="o">/</span><span class="mi">2</span><span class="p">),</span><span class="n">x</span><span class="p">)</span>
+<span class="n">simplify</span><span class="p">(</span><span class="n">dydx</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/num-methods-C_14_01.png" src="../_images/num-methods-C_14_01.png" />
+</div>
+</div>
+<p>and when <span class="math notranslate nohighlight">\(x=0,\;dy/dx=1=C_1\sqrt{11}/2\)</span> thus <span class="math notranslate nohighlight">\(\displaystyle y=\frac{2}{\sqrt{11}}e^{-3x/2}\sin\left(\frac{\sqrt{11}x}{2}\right)\)</span>.</p>
+<p><img alt="Drawing" src="chapter-7/num-methods-fig12.png" /></p>
+<p>Figure12 Numerical (solid line) and algebraic solution to equation 34.</p>
+<hr class="docutils" />
+<div class="section" id="higher-order-equations">
+<h3><strong>Higher order equations</strong><a class="headerlink" href="#higher-order-equations" title="Permalink to this headline">¶</a></h3>
+<p>The higher order equation</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle  \frac{d^3y}{dx^3}+a\frac{d^2y}{dx^2}-y=0 \]</div>
+<p>can similarly be reduced to a number of first-order equations by making substitutions. Two substitutions are needed here because of the third-order derivative. These can be</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle dy/dx=z,\; dz/dx=w,\; dw/dx=-aw+y\]</div>
+<p>and the substitutions have the following effect,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle dw/dx = d^2z/dx^2 = d^3y/dx^3\quad w = dz/dx = d^2y/dx^2\]</div>
+<p>The initial conditions must also be specified before a solution can be found. In this case, there are, in effect, three integration steps because of the third power of the derivative. The three initial conditions must specify, at the initial <span class="math notranslate nohighlight">\(x\)</span> chosen, a value of <span class="math notranslate nohighlight">\(y, \;dy/dt\)</span> and <span class="math notranslate nohighlight">\(d^2y/dt^2\)</span>.</p>
+</div>
+</div>
+<div class="section" id="the-numerov-method">
+<h2>5.4 The Numerov method<a class="headerlink" href="#the-numerov-method" title="Permalink to this headline">¶</a></h2>
+<p>The conventional Numerov method is used to solve second-order differential equations which do not have a first derivative and are of the form</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{d^2y}{dx^2} + f(x)y = s(x)  \tag{35a}\]</div>
+<p>and is therefore a suitable method to use for the numerical solution of the Schroedinger equation and of Poisson’s equation. The solution results in a recursive equation that is simple to implement, involves fewer function evaluations that does the Runge-Kutta method and has precision of <span class="math notranslate nohighlight">\(h^6\)</span>.</p>
+<p>The Schroedinger equation is solved next. There are methods that are described in other chapters such as the Shooting Method (section 9) and expansion in a basis set in the Quantum Matrices chapter 8.</p>
+<p>The  Schroedinger equation is normally written as</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle -\frac{\hbar^2}{2m}\frac{d^2\psi(x)}{dx} +  V(x)\psi(x) = E\psi(x)  \tag{35b} \]</div>
+<p>where  <span class="math notranslate nohighlight">\(V(x)\)</span> represents the potential energy, a quadratic, for example, in a harmonic oscillator. Rearranging this  gives</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle\frac{d^2\psi(x)}{dx} -\frac{2m}{\hbar^2}\left(V(x)-E\right)\psi(x)=0\]</div>
+<p>in which case when put in the form of equation 35a,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle f(x)=-\frac{2m}{\hbar^2}\left(V(x)-E\right),\quad s(x)=0\]</div>
+<p>Note that the each  energy eigenvalue <span class="math notranslate nohighlight">\(E\)</span> must be known before its wavefunction <span class="math notranslate nohighlight">\(\psi\)</span> can be calculated.  The Shooting method described in section 9 can be used to find these.</p>
+<p>The Poisson equation of electromagnetism also has the form of equation 35a, i.e.</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{d^2\varphi}{dx^2}=-4\pi\rho(x)\]</div>
+<p>where <span class="math notranslate nohighlight">\(\rho(x)\)</span> is charge density. In this case <span class="math notranslate nohighlight">\(f(x)=0;\; s=-4\pi\rho(x)\)</span>.</p>
+<p>The essential part of the Numerov algorithm is to produce a numerical version of <span class="math notranslate nohighlight">\(d^2y/dx^2\)</span> and this is done by expanding <span class="math notranslate nohighlight">\(y\)</span> as a Taylor series i.e. expand <span class="math notranslate nohighlight">\(y\)</span> about a point <span class="math notranslate nohighlight">\(x_0=x+h\)</span>, where <span class="math notranslate nohighlight">\(h\)</span>c is a small increment in <span class="math notranslate nohighlight">\(x\)</span>, and then about <span class="math notranslate nohighlight">\(x-h\)</span> and adding the two series. The result produces an expression in the second and fourth derivatives <span class="math notranslate nohighlight">\(y'',\; y'''' \)</span>. On rearranging the second derivative of obtained but it also contains the fourth derivative. This is next evaluated by acting on the original equation with the operator <span class="math notranslate nohighlight">\((1+d^2y/dx^2)\)</span>.</p>
+<p>The calculation is done over a grid  of points, just as in the Euler and Runge - Kutta methods and where <span class="math notranslate nohighlight">\(h\)</span> represents the increment in <span class="math notranslate nohighlight">\(x\)</span>. Instead of using <span class="math notranslate nohighlight">\(x+h\)</span> some authors use <span class="math notranslate nohighlight">\(x_n\)</span> to represent the <span class="math notranslate nohighlight">\(n^\text{th}\)</span> point; we convert to this notation at the end of the derivation.</p>
+<p>The Taylor expansion of a function <span class="math notranslate nohighlight">\(y\)</span> centered around <span class="math notranslate nohighlight">\(x_0\)</span> is (see chapter 5.6)</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle y(x)=y(x_0)+(x-x_0)y'+\frac{(x-x_0)^2}{2!}y''+\frac{(x-x_0)^3}{2!}y'''+\frac{(x-x_0)^4}{4!}y''''+\cdots + \frac{(x-x_0)^n}{n!}y^n+\cdots\]</div>
+<p>where the derivatives <span class="math notranslate nohighlight">\(y'\;y''\)</span> etc are each evaluated at <span class="math notranslate nohighlight">\(x_0\)</span>. When expanded about <span class="math notranslate nohighlight">\(h=x - x_0\)</span> where <span class="math notranslate nohighlight">\(h\)</span> is small compared to <span class="math notranslate nohighlight">\(x\)</span>  produces</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle y(x_0+h)=y(x_0)+hy'+\frac{h^2}{2!}y''+\frac{h^3}{2!}y'''+\frac{h^4}{4!}y''''+\cdots \]</div>
+<p>but for clarity as <span class="math notranslate nohighlight">\(x_0\)</span> can be any point <span class="math notranslate nohighlight">\(x\)</span> we make the notational change <span class="math notranslate nohighlight">\(x_0 \to x\)</span> so that the last equation becomes</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle y(x+h)=y(x)+hy'+\frac{h^2}{2!}y''+\frac{h^3}{2!}y'''+\frac{h^4}{4!}y''''+\cdots \]</div>
+<p>and similarly changing <span class="math notranslate nohighlight">\(h \to -h\)</span></p>
+<div class="math notranslate nohighlight">
+\[\displaystyle y(x-h)=y(x)-hy'+\frac{h^2}{2!}y''-\frac{h^3}{2!}y'''+\frac{h^4}{4!}y''''+\cdots \]</div>
+<p>Limiting the expansion to the fourth power and adding the last two equations produces</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle y(x+h)+y(x-h) =2y(x)+h^2y''+2\frac{h^4}{4!}y''''   +O(h^6)\tag{35c}\]</div>
+<p>which gives a recursive equation if  the two derivatives <span class="math notranslate nohighlight">\(y''\)</span> and <span class="math notranslate nohighlight">\( y''''\)</span> can be found. The second derivative is defined from the original equation and the fourth order derivative can be obtained by differentiating both sides of this equation (eqn 35a)</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{d^2y}{dx^2} \equiv y''=- f(x)y + s(x)\]</div>
+<p>twice and expanding terms as above, but only to second powers in <span class="math notranslate nohighlight">\(y\)</span>. As the differentiation will involve products, because both <span class="math notranslate nohighlight">\(f\)</span> and <span class="math notranslate nohighlight">\(y\)</span> are functions of <span class="math notranslate nohighlight">\(x\)</span>, it is simpler to define a new function <span class="math notranslate nohighlight">\(g(x) = -f(x)y(x)+s(x)\)</span>, making the original equation (35a) <span class="math notranslate nohighlight">\(y''=g(x)\)</span> and expand this just as was done above for <span class="math notranslate nohighlight">\(y\)</span> to find the second derivative. Doing this using in the same way that produced equation 35c but ignoring the forth power term gives</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle y'''' \equiv g'' = \frac{g(x+h) -2g(x)+  g(x-h)  }{ h^2} +O(h^2)\]</div>
+<p>This can now be substituted into the  equation 35c to produce</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle y(x+h) = 2y(x) -  y(x-h)  + h^2g(x) + \frac{h^4}{12}\left(\frac{g(x+h) -2g(x)+  g(x-h)  }{ h^2}\right) +O(h^6)\]</div>
+<p>Simplifying and replacing <span class="math notranslate nohighlight">\(g(x)\)</span> with  <span class="math notranslate nohighlight">\(-f(x)y(x)+s(x)\)</span> gives</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \qquad\qquad\begin{align}y(x+h)\left(1+\frac{h^2}{12}f(x+h)\right)&amp;= 2y(x)\left( 1-\frac{5h^2}{12}f(x) \right) \\&amp;-y(x-h)\left(1+\frac{h^2}{12}f(x-h)  \right) \\&amp;+\left( s(x+h)+10s(x) +s(x-h)\right )\frac{h^2}{12}\end{align} \qquad\qquad\qquad\text{(35d)}\end{split}\]</div>
+<p>In the specific case of the Schroedinger equation <span class="math notranslate nohighlight">\(s(x)=0\)</span> and then</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle y(x+h)\left(1+\frac{h^2}{12}f(x+h)\right)= 2y(x)\left( 1-\frac{5h^2}{12}f(x) \right) -y(x-h)\left(1+\frac{h^2}{12}f(x-h)  \right) \]</div>
+<p>Writing this in terms of indices as required in an algorithm means making the changes <span class="math notranslate nohighlight">\(y(x+h) \to y_{n+1},\; y(x) \to f_n,\; y(x-h) \to y_{n-1}\)</span></p>
+<div class="math notranslate nohighlight">
+\[\displaystyle y_{n+1}\left(1+\frac{h^2}{12}f_{n+1}\right)= 2y_n\left( 1-\frac{5h^2}{12}f_n \right) -y_{n-1}\left(1+\frac{h^2}{12}f_{n-1}  \right) \tag{ 35e}\]</div>
+<p>which means that <span class="math notranslate nohighlight">\(y\)</span> must be known at two points, <span class="math notranslate nohighlight">\(n\)</span> and <span class="math notranslate nohighlight">\(n+1\)</span> at the start of the calculation. Normally starting at large <span class="math notranslate nohighlight">\(x\)</span> values relative to the minimum of the potential means that here the wavefunctuon is zero and so initial values such as  <span class="math notranslate nohighlight">\(y_0 =0 ,\;y_1 = 0.001\)</span> can be used. The wavefunction can be normalised at the end of the calculation (<span class="math notranslate nohighlight">\(\int\psi dx=1\)</span>) so these values are not critical. The function <span class="math notranslate nohighlight">\(f\)</span> is known at all points via <span class="math notranslate nohighlight">\(V(x)\)</span>  but as noted the eigenvalue <span class="math notranslate nohighlight">\(E\)</span> must be known. Note also the sign of <span class="math notranslate nohighlight">\(f(x)\)</span> when using the Schroedinger equation <span class="math notranslate nohighlight">\(\displaystyle f(x)= -\frac{2m}{\hbar^2}\left(V(x)-E\right)\)</span>.</p>
+<p>As an example calculation, the wavefunction of a quantum harmonic oscillator with <span class="math notranslate nohighlight">\(V= (k/2)x^2\)</span> is calculated using  constants <span class="math notranslate nohighlight">\(\mu=1,\;\hbar = 1,\; k = 20 \)</span>. The eigenvalues are <span class="math notranslate nohighlight">\(\displaystyle E_n=\hbar \sqrt{\frac{k}{\mu} }\left(n+\frac{1}{2}\right)\)</span>. This method does not perform well when, for example, the potential has a double well and in conjunction with the shooting method because numerical precision becomes an issue. In this case more sophisticated algorithms are needed. These are usually the ones that are provided by the computer language you use, <span class="math notranslate nohighlight">\(\mathtt{odeint(\cdots)}\)</span> in Python/Scipy for example.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Algorithm 11.16a; Numerov method</span>
+
+<span class="k">def</span> <span class="nf">numerov</span><span class="p">(</span><span class="n">V</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">E0</span><span class="p">):</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>                                   <span class="c1"># number of data points</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">dtype</span> <span class="o">=</span> <span class="nb">float</span><span class="p">)</span>                <span class="c1"># make array for wavefunction y</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="o">-</span><span class="mf">2.0</span><span class="o">*</span><span class="n">mu</span><span class="o">/</span><span class="n">hbar</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">V</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">-</span> <span class="n">E0</span><span class="p">)</span>    <span class="c1"># calculate function f </span>
+    <span class="n">h</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>                              <span class="c1"># increment in x</span>
+
+    <span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.0</span>                                   <span class="c1"># guess two starting values </span>
+    <span class="n">y</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.001</span>
+    <span class="n">q</span> <span class="o">=</span> <span class="n">h</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="mf">12.0</span>                                <span class="c1"># define once outside loop</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">n</span><span class="p">):</span>
+        <span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span> <span class="mi">2</span><span class="o">*</span><span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="mi">5</span><span class="o">*</span><span class="n">q</span><span class="o">*</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]))</span> <span class="o">-</span> <span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">q</span><span class="o">*</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">2</span><span class="p">]))</span> <span class="p">)</span><span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">q</span><span class="o">*</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="p">)</span>  <span class="c1"># eqn 35e</span>
+    <span class="k">return</span> <span class="n">y</span>
+<span class="c1">#------------</span>
+
+<span class="n">num</span> <span class="o">=</span> <span class="mi">1001</span>                    <span class="c1"># number of data points, odd so that there is a point at x=0</span>
+<span class="n">xn</span>  <span class="o">=</span> <span class="mf">3.0</span>                     <span class="c1"># +- x extent of potential V</span>
+<span class="n">x</span>   <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="n">xn</span><span class="p">,</span><span class="n">xn</span><span class="p">,</span><span class="n">num</span><span class="p">)</span> <span class="c1"># make array of x values  </span>
+<span class="n">n</span>   <span class="o">=</span> <span class="mi">2</span>                       <span class="c1"># quantum number </span>
+<span class="n">k</span>   <span class="o">=</span> <span class="mf">20.0</span>                    <span class="c1"># force constant</span>
+<span class="n">hbar</span><span class="o">=</span> <span class="mf">1.0</span>                     <span class="c1"># define constants</span>
+<span class="n">mu</span>  <span class="o">=</span> <span class="mf">1.0</span>
+<span class="n">E0</span>  <span class="o">=</span> <span class="n">hbar</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">k</span><span class="o">/</span><span class="n">mu</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>   <span class="c1"># eigenvalue </span>
+
+<span class="n">V</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span> <span class="p">:</span><span class="mf">0.5</span><span class="o">*</span><span class="n">k</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span>      <span class="c1"># potentiual </span>
+
+<span class="n">y</span> <span class="o">=</span> <span class="n">numerov</span><span class="p">(</span><span class="n">V</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">E0</span><span class="p">)</span>           <span class="c1"># calculate wavefunction</span>
+
+<span class="c1">#plt.plot(x,y)</span>
+<span class="c1">#plt.show()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><img alt="Drawing" src="chapter-7/num-methods-fig11a.png" /></p>
+<p>figure 12a. Quantum harmonic potential  and the <span class="math notranslate nohighlight">\(n=2\)</span> wavefunction calculated using the Numerov method and the Schroedinger equation. The constants are arbitrary; force constant <span class="math notranslate nohighlight">\(k=20,\; \mu = 1,\; \hbar=1\)</span>.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./chapter-7"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Godfrey Beddard<br/>
+        
+            &copy; Copyright 2022.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

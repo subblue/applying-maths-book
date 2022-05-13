@@ -11,9 +11,9 @@
 # ### Q12 2D spin lattice
 # The two-dimensional lattice can be represented as an array of spins labelled from $0 \to n$, rather than as a two-dimensional array as in the example. If helical boundary conditions are applied, see Figure 20, then a saving in computer time can be achieved. Rewrite the algorithm to use a linear array to hold the spin state, and use helical boundary conditions.
 # 
-# ![Drawing](monte-carlo-fig20.png)
+# ![Drawing](monte-carlo-fig17.png)
 # 
-# Figure 20. Showing how helical boundary conditions are applied.
+# Figure 17. Showing how helical boundary conditions are applied.
 # _______
 # 
 # ### Q13 Random walk & Diffusion

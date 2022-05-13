@@ -768,7 +768,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-7/matrices-L.html">
-     15.7 Principal axes
+     Principal axes for Moments of Inertia
     </a>
    </li>
    <li class="toctree-l2">
@@ -1495,7 +1495,7 @@
     <span class="k">while</span> <span class="n">num</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
         <span class="n">rem</span> <span class="o">=</span> <span class="n">num</span> <span class="o">%</span> <span class="n">base</span>               <span class="c1"># modulus</span>
         <span class="k">if</span> <span class="n">rem</span> <span class="o">&gt;</span> <span class="mi">9</span><span class="p">:</span>
-            <span class="n">rem</span> <span class="o">=</span> <span class="nb">chr</span><span class="p">(</span><span class="mi">65</span> <span class="o">-</span> <span class="mi">10</span> <span class="o">+</span> <span class="n">rem</span><span class="p">)</span>   <span class="c1"># make into letter if &gt; 9, see ascii code numbers</span>
+            <span class="n">rem</span> <span class="o">=</span> <span class="nb">chr</span><span class="p">(</span><span class="mi">65</span> <span class="o">-</span> <span class="mi">10</span> <span class="o">+</span> <span class="n">rem</span><span class="p">)</span>   <span class="c1"># make into letter if &gt; 9, look up ascii code numbers</span>
         <span class="n">newn</span><span class="o">.</span><span class="n">append</span><span class="p">(</span> <span class="n">rem</span>  <span class="p">)</span>
         <span class="n">num</span> <span class="o">=</span> <span class="n">num</span> <span class="o">//</span> <span class="n">base</span>              <span class="c1"># integer division</span>
         <span class="k">pass</span>
@@ -1503,16 +1503,16 @@
 <span class="c1">#------------------------</span>
 
 <span class="n">base</span> <span class="o">=</span> <span class="mi">8</span>
-<span class="n">num</span>  <span class="o">=</span> <span class="mi">123</span>
+<span class="n">num</span>  <span class="o">=</span> <span class="mi">2130</span>
 
 <span class="n">ans</span> <span class="o">=</span> <span class="n">convert_base</span><span class="p">(</span><span class="n">base</span><span class="p">,</span><span class="n">num</span><span class="p">)</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Number in base &#39;</span><span class="p">,</span><span class="n">base</span><span class="p">,</span><span class="s1">&#39; is &#39;</span><span class="p">,</span> <span class="n">ans</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="p">)</span>  <span class="c1"># [::-1] reverses order </span>
+<span class="nb">print</span><span class="p">(</span><span class="n">num</span><span class="p">,</span><span class="s1">&#39; in base &#39;</span><span class="p">,</span><span class="n">base</span><span class="p">,</span><span class="s1">&#39; is &#39;</span><span class="p">,</span> <span class="n">ans</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="p">)</span>  <span class="c1"># [::-1] reverses order </span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number in base  8  is  [1, 7, 3]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2130  in base  8  is  [4, 1, 2, 2]
 </pre></div>
 </div>
 </div>

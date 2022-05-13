@@ -768,7 +768,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-7/matrices-L.html">
-     15.7 Principal axes
+     Principal axes for Moments of Inertia
     </a>
    </li>
    <li class="toctree-l2">
@@ -1453,133 +1453,142 @@ shown in the question. Because only G bases are important, only one check needs 
 random number ranges from <span class="math notranslate nohighlight">\(0 \to 4\)</span>, if it is greater than <span class="math notranslate nohighlight">\(3\)</span>, then this can be the G base. Eleven bases are then chosen at random, and placed in a list; the list is given the value <span class="math notranslate nohighlight">\(1\)</span> if the base is G, otherwise it contains zero. The sixth base, which is in the middle, is made into the dye. The position of a G in the list is converted into the distance from the dye, (in position 6), and the rate constant calculated using the equation for <span class="math notranslate nohighlight">\(k\)</span>. The absolute value of the distance from position 6 is calculated because the transfer distance must always be positive. The whole process is repeated, until you are satisfied that the average value of <span class="math notranslate nohighlight">\(k\)</span> is sufficiently accurate, say to 1 decimal place. The time is calculated using equation 13.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Algorithm: DNA bases</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Algorithm: DNA bases</span>
 
-<span class="n">beta</span><span class="o">=</span> <span class="mf">7.0</span>
-<span class="n">d</span>   <span class="o">=</span> <span class="mf">0.34</span>                                  <span class="c1"># base separation</span>
-<span class="n">kf</span>  <span class="o">=</span> <span class="mi">10</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">)</span><span class="o">/</span><span class="mf">380.0</span>
-<span class="n">k0</span>  <span class="o">=</span> <span class="mf">3.0</span>
-<span class="n">nb</span>  <span class="o">=</span> <span class="mi">12</span><span class="o">+</span><span class="mi">1</span>                                  <span class="c1"># number of bases + dye</span>
-<span class="n">dye</span> <span class="o">=</span><span class="p">(</span> <span class="n">nb</span><span class="o">-</span><span class="mi">1</span> <span class="p">)</span><span class="o">//</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span>                        <span class="c1"># put dye in middle</span>
-<span class="n">reps</span><span class="o">=</span> <span class="mi">50000</span>
-<span class="n">maxt</span><span class="o">=</span> <span class="mf">1000.0</span>
-<span class="n">bins</span><span class="o">=</span> <span class="mi">1000</span>
-<span class="n">DNA</span>   <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">nb</span><span class="p">,</span><span class="n">dtype</span><span class="o">=</span><span class="nb">int</span> <span class="p">)</span>
-<span class="n">Acount</span><span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">bins</span><span class="p">,</span><span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>            <span class="c1"># initial arrays zero</span>
-<span class="n">dtime</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">bins</span><span class="p">,</span><span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
-
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span> <span class="n">bins</span> <span class="p">):</span>                     <span class="c1"># set time</span>
-    <span class="n">dtime</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span> <span class="n">i</span><span class="o">*</span><span class="n">maxt</span><span class="o">/</span><span class="n">bins</span> 
-    <span class="k">pass</span>
-<span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">reps</span><span class="p">):</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nb</span><span class="p">):</span>                     <span class="c1"># G into DNA if rand &gt; 3 </span>
-        <span class="k">if</span> <span class="mi">4</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">ranf</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mi">3</span><span class="p">:</span>
-            <span class="n">DNA</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span> 
-        <span class="k">else</span><span class="p">:</span>
-            <span class="n">DNA</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>                      <span class="c1"># base G has value 1</span>
-        <span class="k">pass</span>
+<span class="k">def</span> <span class="nf">DNAbases</span><span class="p">():</span>
+    <span class="n">beta</span><span class="o">=</span> <span class="mf">7.0</span>
+    <span class="n">d</span>   <span class="o">=</span> <span class="mf">0.34</span>                                  <span class="c1"># base separation</span>
+    <span class="n">kf</span>  <span class="o">=</span> <span class="mi">10</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">)</span><span class="o">/</span><span class="mf">380.0</span>
+    <span class="n">k0</span>  <span class="o">=</span> <span class="mf">3.0</span>
+    <span class="n">nb</span>  <span class="o">=</span> <span class="mi">12</span><span class="o">+</span><span class="mi">1</span>                                  <span class="c1"># number of bases + dye</span>
+    <span class="n">dye</span> <span class="o">=</span><span class="p">(</span> <span class="n">nb</span><span class="o">-</span><span class="mi">1</span> <span class="p">)</span><span class="o">//</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span>                        <span class="c1"># put dye in middle</span>
+    <span class="n">reps</span><span class="o">=</span> <span class="mi">50000</span>
+    <span class="n">maxt</span><span class="o">=</span> <span class="mf">1000.0</span>
+    <span class="n">bins</span><span class="o">=</span> <span class="mi">1000</span>
+    <span class="n">DNA</span>   <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">nb</span><span class="p">,</span><span class="n">dtype</span><span class="o">=</span><span class="nb">int</span> <span class="p">)</span>
+    <span class="n">Acount</span><span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">bins</span><span class="p">,</span><span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>            <span class="c1"># initial arrays zero</span>
+    <span class="n">dtime</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">bins</span><span class="p">,</span><span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
     
-    <span class="n">a0</span> <span class="o">=</span> <span class="n">kf</span> 
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nb</span><span class="p">)</span> <span class="p">:</span>                    <span class="c1"># look for G, dye = 6 for 10 bases</span>
-        <span class="k">if</span> <span class="n">DNA</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">and</span> <span class="n">i</span> <span class="o">!=</span> <span class="n">dye</span> <span class="p">:</span>
-            <span class="n">a0</span> <span class="o">=</span> <span class="n">a0</span> <span class="o">+</span> <span class="n">k0</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">beta</span><span class="o">*</span><span class="nb">abs</span><span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="n">dye</span><span class="p">)</span><span class="o">*</span><span class="n">d</span><span class="p">)</span>  <span class="c1"># total rate</span>
-            <span class="k">pass</span> 
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span> <span class="n">bins</span> <span class="p">):</span>                     <span class="c1"># set time</span>
+        <span class="n">dtime</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span> <span class="n">i</span><span class="o">*</span><span class="n">maxt</span><span class="o">/</span><span class="n">bins</span> 
         <span class="k">pass</span>
-    <span class="n">t</span> <span class="o">=</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">ranf</span><span class="p">()</span> <span class="p">)</span><span class="o">/</span> <span class="n">a0</span>     <span class="c1"># equation 13</span>
-    <span class="n">indx</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">t</span><span class="o">*</span><span class="n">bins</span><span class="o">/</span><span class="n">maxt</span><span class="p">)</span> <span class="p">)</span>      <span class="c1"># make into index</span>
-               
-    <span class="k">if</span> <span class="n">indx</span> <span class="o">&lt;</span> <span class="n">bins</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
-        <span class="n">Acount</span><span class="p">[</span><span class="n">indx</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span><span class="o">=</span> <span class="n">Acount</span><span class="p">[</span><span class="n">indx</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span>  <span class="c1"># make histogram</span>
-        <span class="k">pass</span> 
-    <span class="k">pass</span>                                    <span class="c1"># end reps </span>
-
-<span class="c1">#print(&#39;finished&#39;)</span>
-<span class="c1">#Acount[0]=Acount[1]</span>
-<span class="c1">#plt.plot(dtime,Acount,color=&#39;red&#39;,linewidth=2)</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">reps</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nb</span><span class="p">):</span>                     <span class="c1"># G into DNA if rand &gt; 3 </span>
+            <span class="k">if</span> <span class="mi">4</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">ranf</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mi">3</span><span class="p">:</span>
+                <span class="n">DNA</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span> 
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">DNA</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>                      <span class="c1"># base G has value 1</span>
+            <span class="k">pass</span>
+        
+        <span class="n">a0</span> <span class="o">=</span> <span class="n">kf</span> 
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nb</span><span class="p">)</span> <span class="p">:</span>                    <span class="c1"># look for G, dye = 6 for 10 bases</span>
+            <span class="k">if</span> <span class="n">DNA</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">and</span> <span class="n">i</span> <span class="o">!=</span> <span class="n">dye</span> <span class="p">:</span>
+                <span class="n">a0</span> <span class="o">=</span> <span class="n">a0</span> <span class="o">+</span> <span class="n">k0</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">beta</span><span class="o">*</span><span class="nb">abs</span><span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="n">dye</span><span class="p">)</span><span class="o">*</span><span class="n">d</span><span class="p">)</span>  <span class="c1"># total rate</span>
+                <span class="k">pass</span> 
+            <span class="k">pass</span>
+        <span class="n">t</span> <span class="o">=</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">ranf</span><span class="p">()</span> <span class="p">)</span><span class="o">/</span> <span class="n">a0</span>     <span class="c1"># equation 13</span>
+        <span class="n">indx</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">t</span><span class="o">*</span><span class="n">bins</span><span class="o">/</span><span class="n">maxt</span><span class="p">)</span> <span class="p">)</span>      <span class="c1"># make into index</span>
+                   
+        <span class="k">if</span> <span class="n">indx</span> <span class="o">&lt;</span> <span class="n">bins</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+            <span class="n">Acount</span><span class="p">[</span><span class="n">indx</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span><span class="o">=</span> <span class="n">Acount</span><span class="p">[</span><span class="n">indx</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span>  <span class="c1"># make histogram</span>
+            <span class="k">pass</span> 
+        <span class="k">pass</span>                                    <span class="c1"># end reps </span>
+    <span class="k">return</span> <span class="n">dtime</span><span class="p">,</span><span class="n">Acount</span>
+    
+<span class="c1">#times,counts = DNAbases()                         # remove # to calculate </span>
+<span class="c1">#print(&#39;finished&#39;)                         </span>
+<span class="c1">#Acount[0] = Acount[1]</span>
+<span class="c1">#plt.plot(times,counts,color=&#39;red&#39;,linewidth=1)</span>
 <span class="c1">#plt.yscale(&#39;log&#39;)</span>
 <span class="c1">#plt.show()</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p><img alt="Drawing" src="../_images/monte-carlo-fig26.png" /></p>
-<p>Figure 26. Semi-log plot of the decay of the donor excited state calculated with equal amounts of each base. The highly non-exponential nature of the decay is clear. The calculation is of <span class="math notranslate nohighlight">\(500000\)</span> repeated calculations. The <span class="math notranslate nohighlight">\(1/e \)</span> time of the decay is <span class="math notranslate nohighlight">\(\approx 2\)</span> ps.</p>
+<p><img alt="Drawing" src="../_images/monte-carlo-fig35.png" /></p>
+<p>Figure 35. Semi-log plot of the decay of the donor excited state calculated with equal amounts of each base. The highly non-exponential nature of the decay is clear. The calculation is of <span class="math notranslate nohighlight">\(500000\)</span> repeated calculations. The <span class="math notranslate nohighlight">\(1/e \)</span> time of the decay is <span class="math notranslate nohighlight">\(\approx 2\)</span> ps.</p>
 <hr class="docutils" />
-<p>The calculation shows that the decay is initially very fast; only<span class="math notranslate nohighlight">\(\approx 2\)</span> ps and then slows dramatically as the more distant G bases quench. The very rapid decrease of the quenching rate constant with distance and the spatial dependence of the quenchers, as with donor - acceptor energy or electron transfer in solution, causes the non -exponential decay.</p>
+<p>The calculation shows that the decay is initially very fast; only <span class="math notranslate nohighlight">\(\approx 2\)</span> ps and then slows dramatically as the more distant G bases quench. The very rapid decrease of the quenching rate constant with distance and the spatial dependence of the quenchers, as with donor - acceptor energy or electron transfer in solution, causes the non - exponential decay.</p>
 </div>
 <div class="section" id="q16-answer">
 <h2>Q16 answer<a class="headerlink" href="#q16-answer" title="Permalink to this headline">¶</a></h2>
-<p>We define the array P to hold the information about each student. To generate a random number from <span class="math notranslate nohighlight">\(0 \to 1\)</span>, np.random.ranf()  but to generate a random integer in the range <span class="math notranslate nohighlight">\(0 \to n-1\)</span> it is convenient to use np.random.randint(0,n).  The algorithm is shown next</p>
+<p>We define the array P to hold the information about each student. To generate a random number from <span class="math notranslate nohighlight">\(0 \to 1\)</span>, <span class="math notranslate nohighlight">\(\mathtt{np.random.ranf()}\)</span>  but to generate a random integer in the range <span class="math notranslate nohighlight">\(0 \to n-1\)</span> it is convenient to use <span class="math notranslate nohighlight">\(\mathtt{np.random.randint(0,n)}\)</span>.  The algorithm is shown next</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Algorithm 18   Q12: SIR simulation</span>
 <span class="c1"># P[]= 0 = Immune, 1 = susceptible,  2= Infected.</span>
 
-<span class="n">nums</span>  <span class="o">=</span> <span class="mi">1000</span>                    <span class="c1"># number of people</span>
-<span class="n">fract</span> <span class="o">=</span> <span class="mf">0.01</span>                    <span class="c1"># initially immune</span>
-<span class="n">recovr</span><span class="o">=</span> <span class="mf">0.2</span>                     <span class="c1"># chance recovery / day</span>
-<span class="n">num_infect</span><span class="o">=</span><span class="mi">1</span>                    <span class="c1"># number infected / day</span>
-<span class="n">numd</span> <span class="o">=</span> <span class="mi">50</span>                       <span class="c1"># number of  days</span>
-<span class="n">reps</span> <span class="o">=</span> <span class="mi">40</span>
-
-<span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">numd</span><span class="p">,</span><span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span> <span class="c1"># array for infected</span>
-<span class="n">sdata</span><span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">numd</span><span class="p">,</span><span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span> <span class="c1"># array for susceptibles</span>
-<span class="n">P</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">nums</span><span class="p">,</span><span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>  <span class="c1"># student array to zero</span>
-
-<span class="n">remov</span> <span class="o">=</span> <span class="mi">0</span>                       <span class="c1"># number removed </span>
-<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span> <span class="n">reps</span><span class="p">):</span>          <span class="c1"># loop for repeat calc’n     </span>
-    <span class="c1">#set up P array with values 0,1 and 2</span>
+<span class="k">def</span> <span class="nf">SIR_mc</span><span class="p">():</span>
+    <span class="n">nums</span>  <span class="o">=</span> <span class="mi">1000</span>                    <span class="c1"># number of people</span>
+    <span class="n">fract</span> <span class="o">=</span> <span class="mf">0.01</span>                    <span class="c1"># initially immune</span>
+    <span class="n">recovr</span><span class="o">=</span> <span class="mf">0.2</span>                     <span class="c1"># chance recovery / day</span>
+    <span class="n">num_infect</span><span class="o">=</span><span class="mi">1</span>                    <span class="c1"># number infected / day</span>
+    <span class="n">numd</span> <span class="o">=</span> <span class="mi">50</span>                       <span class="c1"># number of  days</span>
+    <span class="n">reps</span> <span class="o">=</span> <span class="mi">40</span>
     
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nums</span><span class="p">):</span>
-        <span class="n">P</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>                        <span class="c1"># initially all susceptible</span>
-    <span class="n">fn</span><span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">fract</span><span class="o">*</span><span class="n">nums</span><span class="p">)</span> <span class="p">)</span>      <span class="c1"># make into integer</span>
-    <span class="n">n</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="k">while</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="n">fn</span><span class="p">:</span>                       <span class="c1"># exact fract*nums immune</span>
-        <span class="n">ra</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">nums</span><span class="p">)</span>  <span class="c1"># choose rand num= 0 to nums-1</span>
-        <span class="k">if</span> <span class="n">P</span><span class="p">[</span><span class="n">ra</span><span class="p">]</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
-            <span class="n">P</span><span class="p">[</span><span class="n">ra</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
-            <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span>
-            <span class="k">pass</span>
-        <span class="k">pass</span>
-    <span class="n">n</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="k">while</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>                        <span class="c1">#1 infected not one of immune</span>
-        <span class="n">ra</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">nums</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">P</span><span class="p">[</span><span class="n">ra</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-            <span class="n">P</span><span class="p">[</span><span class="n">ra</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span> 
-            <span class="n">n</span> <span class="o">=</span> <span class="mi">1</span>
-            <span class="k">pass</span>
-        <span class="k">pass</span>
-
-    <span class="c1"># The main part of the calculation follows </span>
-    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">numd</span><span class="p">):</span>                         <span class="c1"># loop over days </span>
-        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nums</span><span class="p">):</span>                     <span class="c1"># loop students </span>
-            <span class="k">if</span> <span class="n">P</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>                         <span class="c1"># spread infection</span>
-                <span class="k">for</span> <span class="n">ii</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_infect</span><span class="p">):</span>
-                    <span class="n">ra</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">nums</span><span class="p">)</span><span class="c1"># infect new stdnt</span>
-                    <span class="k">if</span> <span class="n">P</span><span class="p">[</span><span class="n">ra</span><span class="p">]</span><span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-                        <span class="n">P</span><span class="p">[</span><span class="n">ra</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span> 
-                        <span class="n">remov</span> <span class="o">=</span> <span class="n">remov</span> <span class="o">+</span> <span class="mi">1</span>
-                        <span class="k">pass</span>
-                    <span class="k">pass</span>                          <span class="c1"># end for ii</span>
-                <span class="k">pass</span>                              <span class="c1"># end if</span>
-            <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">ranf</span><span class="p">()</span> <span class="o">&lt;</span> <span class="n">recovr</span><span class="p">:</span>         <span class="c1"># chance of recovery</span>
-                <span class="n">ra</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">nums</span><span class="p">)</span>
-                <span class="k">if</span> <span class="n">P</span><span class="p">[</span><span class="n">ra</span><span class="p">]</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>  <span class="n">P</span><span class="p">[</span><span class="n">ra</span><span class="p">]</span><span class="o">=</span> <span class="mi">0</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">numd</span><span class="p">,</span><span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span> <span class="c1"># array for infected</span>
+    <span class="n">sdata</span><span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">numd</span><span class="p">,</span><span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span> <span class="c1"># array for susceptibles</span>
+    <span class="n">P</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">nums</span><span class="p">,</span><span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>  <span class="c1"># student array to zero</span>
+    
+    <span class="n">remov</span> <span class="o">=</span> <span class="mi">0</span>                       <span class="c1"># number removed </span>
+    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span> <span class="n">reps</span><span class="p">):</span>          <span class="c1"># loop for repeat calc’n     </span>
+        <span class="c1">#set up P array with values 0,1 and 2</span>
+        
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nums</span><span class="p">):</span>
+            <span class="n">P</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>                        <span class="c1"># initially all susceptible</span>
+        <span class="n">fn</span><span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">fract</span><span class="o">*</span><span class="n">nums</span><span class="p">)</span> <span class="p">)</span>      <span class="c1"># make into integer</span>
+        <span class="n">n</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">while</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="n">fn</span><span class="p">:</span>                       <span class="c1"># exact fract*nums immune</span>
+            <span class="n">ra</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">nums</span><span class="p">)</span>  <span class="c1"># choose rand num= 0 to nums-1</span>
+            <span class="k">if</span> <span class="n">P</span><span class="p">[</span><span class="n">ra</span><span class="p">]</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">P</span><span class="p">[</span><span class="n">ra</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+                <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span>
                 <span class="k">pass</span>
-            <span class="k">pass</span>                                  <span class="c1"># end for i</span>
-        <span class="n">c</span> <span class="o">=</span> <span class="mi">0</span> 
-        <span class="n">s</span> <span class="o">=</span> <span class="mi">0</span>
-        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nums</span><span class="p">):</span>                     <span class="c1"># find num infected </span>
-            <span class="k">if</span> <span class="n">P</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">==</span> <span class="mi">2</span><span class="p">:</span> <span class="n">c</span> <span class="o">=</span> <span class="n">c</span> <span class="o">+</span> <span class="mi">1</span>
-            <span class="k">if</span> <span class="n">P</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">==</span> <span class="mi">1</span><span class="p">:</span> <span class="n">s</span> <span class="o">=</span> <span class="n">s</span> <span class="o">+</span> <span class="mi">1</span>
             <span class="k">pass</span>
-        <span class="n">data</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">+</span> <span class="n">c</span>                      <span class="c1"># number infected </span>
-        <span class="n">sdata</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">=</span> <span class="n">sdata</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">+</span> <span class="n">s</span>                     <span class="c1"># number suscept</span>
-        <span class="k">pass</span>                                      <span class="c1"># end for j </span>
-    <span class="k">pass</span>                                          <span class="c1"># end for reps </span>
+        <span class="n">n</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">while</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>                        <span class="c1">#1 infected not one of immune</span>
+            <span class="n">ra</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">nums</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">P</span><span class="p">[</span><span class="n">ra</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="n">P</span><span class="p">[</span><span class="n">ra</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span> 
+                <span class="n">n</span> <span class="o">=</span> <span class="mi">1</span>
+                <span class="k">pass</span>
+            <span class="k">pass</span>
+    
+        <span class="c1"># The main part of the calculation follows </span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">numd</span><span class="p">):</span>                         <span class="c1"># loop over days </span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nums</span><span class="p">):</span>                     <span class="c1"># loop students </span>
+                <span class="k">if</span> <span class="n">P</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>                         <span class="c1"># spread infection</span>
+                    <span class="k">for</span> <span class="n">ii</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_infect</span><span class="p">):</span>
+                        <span class="n">ra</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">nums</span><span class="p">)</span><span class="c1"># infect new stdnt</span>
+                        <span class="k">if</span> <span class="n">P</span><span class="p">[</span><span class="n">ra</span><span class="p">]</span><span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+                            <span class="n">P</span><span class="p">[</span><span class="n">ra</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span> 
+                            <span class="n">remov</span> <span class="o">=</span> <span class="n">remov</span> <span class="o">+</span> <span class="mi">1</span>
+                            <span class="k">pass</span>
+                        <span class="k">pass</span>                          <span class="c1"># end for ii</span>
+                    <span class="k">pass</span>                              <span class="c1"># end if</span>
+                <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">ranf</span><span class="p">()</span> <span class="o">&lt;</span> <span class="n">recovr</span><span class="p">:</span>         <span class="c1"># chance of recovery</span>
+                    <span class="n">ra</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">nums</span><span class="p">)</span>
+                    <span class="k">if</span> <span class="n">P</span><span class="p">[</span><span class="n">ra</span><span class="p">]</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>  <span class="n">P</span><span class="p">[</span><span class="n">ra</span><span class="p">]</span><span class="o">=</span> <span class="mi">0</span>
+                    <span class="k">pass</span>
+                <span class="k">pass</span>                                  <span class="c1"># end for i</span>
+            <span class="n">c</span> <span class="o">=</span> <span class="mi">0</span> 
+            <span class="n">s</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nums</span><span class="p">):</span>                     <span class="c1"># find num infected </span>
+                <span class="k">if</span> <span class="n">P</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">==</span> <span class="mi">2</span><span class="p">:</span> <span class="n">c</span> <span class="o">=</span> <span class="n">c</span> <span class="o">+</span> <span class="mi">1</span>
+                <span class="k">if</span> <span class="n">P</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">==</span> <span class="mi">1</span><span class="p">:</span> <span class="n">s</span> <span class="o">=</span> <span class="n">s</span> <span class="o">+</span> <span class="mi">1</span>
+                <span class="k">pass</span>
+            <span class="n">data</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">+</span> <span class="n">c</span>                      <span class="c1"># number infected </span>
+            <span class="n">sdata</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">=</span> <span class="n">sdata</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">+</span> <span class="n">s</span>                     <span class="c1"># number suscept</span>
+            <span class="k">pass</span>                                      <span class="c1"># end for j </span>
+        <span class="k">pass</span>                                          <span class="c1"># end for reps </span>
+    
+    <span class="n">num_infected</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">remov</span><span class="o">/</span><span class="n">reps</span><span class="p">)</span>                    <span class="c1"># number infected</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;finished, num infected&#39;</span><span class="p">,</span><span class="n">num_infected</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">data</span><span class="p">,</span><span class="n">sdata</span>
 
-<span class="n">num_infected</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">remov</span><span class="o">/</span><span class="n">reps</span><span class="p">)</span>                    <span class="c1"># number infected</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;finished, num infected&#39;</span><span class="p">,</span><span class="n">num_infected</span><span class="p">)</span>
+<span class="n">data</span><span class="p">,</span> <span class="n">sdata</span> <span class="o">=</span> <span class="n">SIR_mc</span><span class="p">()</span>
+
 <span class="c1">#plt.plot(sdata,color=&#39;red&#39;)</span>
 <span class="c1">#plt.plot(data,color=&#39;blue&#39;)</span>
 <span class="c1">#plt.show()</span>
@@ -1587,15 +1596,15 @@ random number ranges from <span class="math notranslate nohighlight">\(0 \to 4\)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>finished, num infected 932
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>finished, num infected 908
 </pre></div>
 </div>
 </div>
 </div>
 <p>The results of a sample calculation are shown in Figure 27 where the infection rises rapidly and then ends as more people become immune. If no one became immune after having the illness, every one would be infected except those initially immune and the infected curve would rise to a constant value. Reducing the chance of recovery makes the illness persist with a long tail; increasing the chance of recovery, makes the curve more symmetrical. The number of people who are susceptible falls because, after becoming ill, they are now immune so enter the removed class. The number in the removed class is not shown, as it is the total number present less those susceptible and infected. The limited nature of the disease’s propagation is due to the reduction in the number of susceptible persons, not the number infected. In the outbreak almost everyone eventually becomes infected; typically <span class="math notranslate nohighlight">\(980\)</span> out of <span class="math notranslate nohighlight">\(1000\)</span>.</p>
 <p>Exercise: Repeat the calculation with different fractions of initially immune persons. What do you conclude about immunising populations against disease? Estimate what fraction of people needs to be immunised to prevent widespread disease.</p>
-<p><img alt="Drawing" src="../_images/monte-carlo-fig27.png" /></p>
-<p>Figure 27. Result of Monte-Carlo simulation of S-I-R disease spread. There were <span class="math notranslate nohighlight">\(1000\)</span> persons, only one of whom was initially infected and <span class="math notranslate nohighlight">\(1\)</span>% were immune to the disease. Almost everyone else catches the disease, <span class="math notranslate nohighlight">\(810\)</span> entering the removed class out of <span class="math notranslate nohighlight">\(1000\)</span> individuals.</p>
+<p><img alt="Drawing" src="../_images/monte-carlo-fig36.png" /></p>
+<p>Figure 36. Result of Monte-Carlo simulation of S-I-R disease spread. There were <span class="math notranslate nohighlight">\(1000\)</span> persons, only one of whom was initially infected and <span class="math notranslate nohighlight">\(1\)</span>% were immune to the disease. Almost everyone else catches the disease, <span class="math notranslate nohighlight">\(810\)</span> entering the removed class out of <span class="math notranslate nohighlight">\(1000\)</span> individuals.</p>
 </div>
 </div>
 

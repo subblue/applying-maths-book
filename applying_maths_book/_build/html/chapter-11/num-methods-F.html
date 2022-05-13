@@ -768,7 +768,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-7/matrices-L.html">
-     15.7 Principal axes
+     Principal axes for Moments of Inertia
     </a>
    </li>
    <li class="toctree-l2">
@@ -1355,7 +1355,7 @@
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#the-shooting-method-with-a-quadratic-potential">
-   10.1 The shooting method with a quadratic potential
+   10.1 The Shooting Method with a quadratic potential
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -1542,9 +1542,12 @@ alpha_0 -11.892761
 <p>Two boundary conditions <span class="math notranslate nohighlight">\(\psi(x) \to 0, (x \to R)\)</span> have to be translated into two initial values because the Schroedinger equation is second order. Suppose that one is <span class="math notranslate nohighlight">\(\beta\)</span>, the value the wavefunction has at some starting point, for example at <span class="math notranslate nohighlight">\(x = 0,\; \psi_0 = \beta\)</span>. The other value is the slope of the wavefunction at the same point; <span class="math notranslate nohighlight">\(d\psi/dx |_0 = \gamma\)</span>. The quantities <span class="math notranslate nohighlight">\(\beta\)</span> and <span class="math notranslate nohighlight">\(\gamma\)</span> are derived shortly.</p>
 <p>To integrate the equation, a shooting method can be used but in a slightly different manner to that described in Section 11.9. Because of the physics involved, the initial values of <span class="math notranslate nohighlight">\(\psi\)</span> and <span class="math notranslate nohighlight">\(d\psi/dx\)</span> can be fixed at the outset, and instead the calculation is performed by changing the values of <span class="math notranslate nohighlight">\(E\)</span> and the result checked to see if the boundary condition <span class="math notranslate nohighlight">\(\psi(x) \to 0, (x \to R)\)</span> is obtained at a given <span class="math notranslate nohighlight">\(E\)</span>. If it is not, which is generally the case, <span class="math notranslate nohighlight">\(E\)</span> is incremented by a small amount and the calculation repeated. When the wavefunction changes sign at the boundary point, it has passed through <span class="math notranslate nohighlight">\(\psi(x) = 0\)</span> and an approximate value for the eigenvalue is found as the average of the last two values of <span class="math notranslate nohighlight">\(E\)</span>, Figure 27. At this point the eigenvalue can be estimated more accurately if required, by bisecting the energy range between the last two calculations into smaller parts. When this first eigenvalue has been found, the energy <span class="math notranslate nohighlight">\(E\)</span> is then increased by a small amount and the next eigenvalue is sought, and so the eigenvalues are successively found with increasing energy. It is very important for an accurate determination of <span class="math notranslate nohighlight">\(E\)</span> that the precision with which the wavefunction approximates to zero at large <span class="math notranslate nohighlight">\(x\)</span> is very high. In the case of a double potential well, such as occurs in the ammonia inversion, if this is not the case energy levels that should be split by a small amount will, erroneously, have the same energy. Decreasing the value at which the bisection is terminated, therefore making the wavefunction closer to zero, will cure this. The stopping value <span class="math notranslate nohighlight">\(Q\)</span> may ultimately need to be as small as 10<sup>-8</sup>; see Algorithm 18.</p>
 <p>The calculation does not have to be carried out to <span class="math notranslate nohighlight">\(x = \infty\)</span>. Clearly this would be impossible, and an effective infinity is used instead. This is estimated from the shape of the potential; as a rule of thumb, extending the <span class="math notranslate nohighlight">\(x\)</span> value in the calculation to twice the width of the potential at the maximum energy to be calculated is usually sufficient. The exception is the particle in the box, where this extends only to the edge of the box.</p>
+<p><img alt="Drawing" src="../_images/num-methods-fig27.png" /></p>
+<p>Figure 27. A schematic of two wavefunctions at two energies neither of which is an eigenvalue. A wavefunction is the solution to the Schrödinger equation and if, at the boundary, <span class="math notranslate nohighlight">\(\psi(x) \to 0\)</span>, then <span class="math notranslate nohighlight">\(E\)</span> is an eigenvalue and the wavefunction an eigenfunction. The wavefunction calculated with energy <span class="math notranslate nohighlight">\(E_n\)</span> is positive and that with energy <span class="math notranslate nohighlight">\(E_{n+1}\)</span> negative; the true energy eigenvalue is between these two values and will produce the true wavefunction with its value of zero at the boundary.</p>
 </div>
+<hr class="docutils" />
 <div class="section" id="the-shooting-method-with-a-quadratic-potential">
-<h2>10.1 The shooting method with a quadratic potential<a class="headerlink" href="#the-shooting-method-with-a-quadratic-potential" title="Permalink to this headline">¶</a></h2>
+<h2>10.1 The Shooting Method with a quadratic potential<a class="headerlink" href="#the-shooting-method-with-a-quadratic-potential" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="eigenvalues-and-wavefunctions">
 <h3><strong>Eigenvalues and wavefunctions</strong><a class="headerlink" href="#eigenvalues-and-wavefunctions" title="Permalink to this headline">¶</a></h3>
 <p>In solving the Schroedinger equation is is necessary to re-write it into a more convenient form and also split it into to equations as done with previous examples of second order equations. Rearranging produces</p>
@@ -1612,7 +1615,6 @@ alpha_0 -11.892761
         
         <span class="n">y</span>  <span class="o">=</span> <span class="n">solve_SE</span><span class="p">(</span><span class="n">V</span><span class="p">,</span> <span class="n">y0</span><span class="p">,</span> <span class="n">dydx</span><span class="p">,</span>  <span class="n">En1</span><span class="p">)</span>              <span class="c1"># solve at energy En1</span>
         <span class="n">yN1</span><span class="o">=</span> <span class="n">y</span><span class="p">[</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>                                <span class="c1"># save point at boundary</span>
-        <span class="c1">#print(Qn,yN1,yN0)</span>
         <span class="k">if</span> <span class="n">yN1</span><span class="o">*</span><span class="n">yN0</span> <span class="o">&lt;</span> <span class="mf">0.0</span> <span class="p">:</span>                            <span class="c1"># check if zero crossed</span>
             <span class="c1"># ** start bisection method **</span>
             <span class="k">while</span> <span class="nb">abs</span><span class="p">(</span><span class="n">En1</span> <span class="o">-</span> <span class="n">En0</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">Q</span> <span class="p">:</span>                <span class="c1"># difference in energy&gt;Q</span>
@@ -1648,7 +1650,9 @@ alpha_0 -11.892761
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Q num,   eigenvalue  Q num,   eigenvalue
-    0       2.236068     1       6.708204
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    0       2.236068     1       6.708204
     2      11.180340     3      15.652476
     4      20.124612     5      24.596748
     6      29.068884     7      33.541021
@@ -1681,7 +1685,7 @@ n &amp; \text{numerical} &amp; \text{exact}\\
 \hline
 \end{array}\end{split}\]</div>
 <p>The code used the shooting method with Python/Scipy method ‘odeint’ to integrate the Schroedinger equation. For simplicity the mass and <span class="math notranslate nohighlight">\(\hbar = 1\)</span>. The calculation using atomic units is described in section 10.2.</p>
-<p><img alt="Drawing" src="../_images/num-methods-fig28a.png" />  <img alt="Drawing" src="../_images/num-methods-fig28b.png" /></p>
+<p><img alt="Drawing" src="../_images/num-methods-fig28.png" /></p>
 <p>Figure 28 Potential energy and eigenvalues. Left the harmonic potential <span class="math notranslate nohighlight">\(V(x) = 10x^2\)</span>. Right The double well potential <span class="math notranslate nohighlight">\(V(x) = x^4 - 13x^2 + 169/4\)</span>.</p>
 <hr class="docutils" />
 <p>The eigenvalues for the double well show a splitting below the barrier, as expected, because the two wells interact. However, the difference in energy is very small lower down in the well, and the levels are, in this particular potential, effectively accidentally degenerate. Only near the top of the barrier are two closely spaced levels visible in the plot, with quantum numbers <span class="math notranslate nohighlight">\(n = 12\)</span> and <span class="math notranslate nohighlight">\(13\)</span>. This is because the barrier is narrow here and there is more interaction between the two halves of the potential. Above the barrier, the potential is suddenly wider and the energy levels now become closer together. Crudely, this can be thought of in a similar way as an infinite square well or ‘particle in a box’. A wide well has energy levels closer together than a short one. As the potential energy increases, so does the separation between eigenvalues, just as happens in the square well.</p>

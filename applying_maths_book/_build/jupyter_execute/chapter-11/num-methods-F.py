@@ -176,8 +176,12 @@ print('{:s} {:f}'.format('alpha_0',alpha0) )
 # 
 # The calculation does not have to be carried out to $x = \infty$. Clearly this would be impossible, and an effective infinity is used instead. This is estimated from the shape of the potential; as a rule of thumb, extending the $x$ value in the calculation to twice the width of the potential at the maximum energy to be calculated is usually sufficient. The exception is the particle in the box, where this extends only to the edge of the box.
 # 
+# ![Drawing](num-methods-fig27.png)
 # 
-# ### 10.1 The shooting method with a quadratic potential
+# Figure 27. A schematic of two wavefunctions at two energies neither of which is an eigenvalue. A wavefunction is the solution to the Schrödinger equation and if, at the boundary, $\psi(x) \to 0$, then $E$ is an eigenvalue and the wavefunction an eigenfunction. The wavefunction calculated with energy $E_n$ is positive and that with energy $E_{n+1}$ negative; the true energy eigenvalue is between these two values and will produce the true wavefunction with its value of zero at the boundary.
+# __________
+# 
+# ### 10.1 The Shooting Method with a quadratic potential
 # 
 # #### **Eigenvalues and wavefunctions**
 # 
@@ -255,7 +259,6 @@ for indx in [0,1]:                                    # do odd-even values
         
         y  = solve_SE(V, y0, dydx,  En1)              # solve at energy En1
         yN1= y[n-1, 0]                                # save point at boundary
-        #print(Qn,yN1,yN0)
         if yN1*yN0 < 0.0 :                            # check if zero crossed
             # ** start bisection method **
             while abs(En1 - En0) > Q :                # difference in energy>Q
@@ -308,7 +311,7 @@ for i in range(s):
 # 
 # The code used the shooting method with Python/Scipy method 'odeint' to integrate the Schroedinger equation. For simplicity the mass and $\hbar = 1$. The calculation using atomic units is described in section 10.2.
 # 
-# ![Drawing](num-methods-fig28a.png)  ![Drawing](num-methods-fig28b.png) 
+# ![Drawing](num-methods-fig28.png) 
 # 
 # Figure 28 Potential energy and eigenvalues. Left the harmonic potential $V(x) = 10x^2$. Right The double well potential $V(x) = x^4 - 13x^2 + 169/4$.
 # _____

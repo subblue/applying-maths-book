@@ -768,7 +768,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-7/matrices-L.html">
-     15.7 Principal axes
+     Principal axes for Moments of Inertia
     </a>
    </li>
    <li class="toctree-l2">
@@ -1362,6 +1362,11 @@
      </strong>
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#table-of-summations">
+     Table of summations
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -1383,7 +1388,16 @@
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#ii-polymers">
-     (ii) Polymers
+     <strong>
+      (ii) Polymers
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#iii-sequence-repeats-in-dna">
+     <strong>
+      (iii) Sequence repeats in DNA
+     </strong>
     </a>
    </li>
   </ul>
@@ -1472,7 +1486,7 @@ summed to form a function. The power series</p>
 <p>If the summation starts at <span class="math notranslate nohighlight">\(m&lt;N\)</span> then</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \sum_{n=1}^N x^n=\frac{x^m-x^{N+1}}{1-x}\]</div>
-<p>The function  <span class="math notranslate nohighlight">\(f(x)  = 1/(1-x) \)</span> (eqn. 2) can be represented by the polynomial series equation (1), again this is only true if <span class="math notranslate nohighlight">\(-1\, x \,| \lt 1\)</span>. The polynomial is calculated as</p>
+<p>The function  <span class="math notranslate nohighlight">\(f(x)  = 1/(1-x) \)</span> (eqn. 2) can be represented by the polynomial series equation (1), again this is only true if <span class="math notranslate nohighlight">\(-1\, x \, \lt 1\)</span>. The polynomial is calculated as</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle f(0) = 1, \quad f(1/2) = 1 + 1/2 + 1/4 + 1/8 + \cdots\]</div>
 <p>which looks as though it will converge as terms are becoming increasingly smaller as the series grows. Convergence always needs to be checked. If <span class="math notranslate nohighlight">\(x\)</span> is greater than 1 then the series obviously increases to infinity, which is clear to see from</p>
@@ -1510,6 +1524,23 @@ summed to form a function. The power series</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \sum_{n=1}^\infty (-1)^n nx^{n-1} = \frac{1}{(1+x)^2}\]</div>
 <p>and the <span class="math notranslate nohighlight">\(\displaystyle (-1)^n\)</span> ensures that alternate terms are positive and negative.</p>
+</div>
+<div class="section" id="table-of-summations">
+<h3>Table of summations<a class="headerlink" href="#table-of-summations" title="Permalink to this headline">¶</a></h3>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin{array}{l|l|l}
+\hline
+\sum_0^\infty\limits x^n = \displaystyle\frac{1}{1-x},\quad |x|&lt;1&amp;
+\sum_0^\infty\limits (-x)^n = \displaystyle\frac{1}{1+x},\quad |x|&lt;1&amp;
+\sum_0^\infty\limits nx^n =\displaystyle\frac{x}{(1-x)^2},\quad |x|&lt;1\\
+\sum_0^\infty\limits nx(1-x)^n=\displaystyle \frac{1-x}{x},\quad |x-1|&lt;1&amp;
+\sum_0^\infty\limits x^n(1-x) =1,\quad |x|&lt;1&amp;
+\sum_0^\infty\limits nx^n(1-x) =\displaystyle\frac{x}{1-x},\quad |x|&lt;1\\
+\sum_0^\infty\limits nx(1-x)^{n-1} =\displaystyle\frac{1}{x},\quad |x-1|&lt;1&amp;
+\sum_0^\infty\limits x(1-x)^{n-1} =\displaystyle\frac{1}{1-x},\quad |x-1|&lt;1&amp;
+\sum_0^\infty\limits nx^{n-1}(1-x) =\displaystyle\frac{1}{1-x},\quad |x|&lt;1\\
+\hline
+\end{array}\end{split}\]</div>
 <p>Figure 1, below, shows the function of equation (3) and several approximations which are ever longer series with increasing powers of <span class="math notranslate nohighlight">\(x\)</span>. Expanding the series as far as <span class="math notranslate nohighlight">\(x^6\)</span> only matches the <span class="math notranslate nohighlight">\(f(x)\)</span> well up to about <span class="math notranslate nohighlight">\(x = 0.5\)</span> indicating the rather obvious fact that that many terms may be needed to accurately reproduce a function. The plot also shows haw a function may be approximated by its first couple of terms when the variable <span class="math notranslate nohighlight">\(x\)</span> is very small.  This is a very common procedure to account for a perturbation.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1587,7 +1618,7 @@ In the ratio test, the ratio of any term <span class="math notranslate nohighlig
 <div class="math notranslate nohighlight">
 \[\displaystyle \langle E \rangle = \frac{\sum Ep(E)}{\sum p(E)} \tag{8}\]</div>
 <p>where the summation covers all the energy states and <span class="math notranslate nohighlight">\(p(E)\)</span> is the distribution function, which is very often a thermal or Boltzmann distribution, <span class="math notranslate nohighlight">\(\displaystyle p(E) = e^{-E/k_BT}\)</span> with temperature <span class="math notranslate nohighlight">\(T\)</span> and Boltzmann’s constant <span class="math notranslate nohighlight">\(k_B\)</span>. In special situations this might be replaced by the Bose-Einstein or Fermi-Dirac distribution among others.</p>
-<p>If the lowest energy is zero and the largest infinity and <span class="math notranslate nohighlight">\(E\)</span> has discrete integer values, in units of $k_BT, the average energy is, by definition,</p>
+<p>If the lowest energy is zero and the largest infinity and <span class="math notranslate nohighlight">\(E\)</span> has discrete integer values, in units of <span class="math notranslate nohighlight">\(k_BT\)</span>, the average energy is, by definition,</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \langle E \rangle=\frac{\sum_{E=0}^\infty\limits Ee^{-E/k_BT}}{\sum_{E=0}^\infty\limits e^{-E/k_BT}}\tag{8a}\]</div>
 <p>The denominator is called the partition function (see Section 4) and using the property of exponentials <span class="math notranslate nohighlight">\(\displaystyle  e^{nx} = (e^x)^n\)</span> is written as</p>
@@ -1612,7 +1643,7 @@ In the ratio test, the ratio of any term <span class="math notranslate nohighlig
 <p>If rotational levels are considered typically several tens of levels are populated at room temperature and the summation therefore involves many terms, for example if the rotational constant <span class="math notranslate nohighlight">\(B=1\;\mathrm{cm^{-1}}\)</span>, <span class="math notranslate nohighlight">\(\approx 55 \)</span> levels are needed to produce a constant average energy of <span class="math notranslate nohighlight">\(\approx 14500\;\mathrm{cm^{-1}}\)</span>. A vibration of <span class="math notranslate nohighlight">\(1000\;\mathrm{cm^{-1}}\)</span> levels only to <span class="math notranslate nohighlight">\(n=2\)</span> are needed to produce four figure accuracy of <span class="math notranslate nohighlight">\(500.4 \; \mathrm{ cm^{-1}}\)</span>.</p>
 </div>
 <div class="section" id="ii-polymers">
-<h3>(ii) Polymers<a class="headerlink" href="#ii-polymers" title="Permalink to this headline">¶</a></h3>
+<h3><strong>(ii) Polymers</strong><a class="headerlink" href="#ii-polymers" title="Permalink to this headline">¶</a></h3>
 <p>In synthesizing polymers by radical or condensation polymerisation, the random nature of the chemistry that adds monomers to an already growing chain dictates that a range of polymer lengths is normally produced; the polymer is poly-disperse. Two different averages are frequently taken to characterize the polymer; one is the number average mass, the other the weight average mass.</p>
 <p>The number average mass <span class="math notranslate nohighlight">\(m_n\)</span> is</p>
 <div class="math notranslate nohighlight">
@@ -1628,6 +1659,19 @@ In the ratio test, the ratio of any term <span class="math notranslate nohighlig
 <div class="math notranslate nohighlight">
 \[\displaystyle \langle m_w\rangle = m_0 \frac{\sum_{k=1}\limits n_k^3e^{-an_k}}{\sum_{k=1}\limits n_k^2e^{-an_k}} = m_0\frac{4e^a+e^{2a}+1}{e^{2a}-1}\]</div>
 <p>which is clearly not the same as <span class="math notranslate nohighlight">\(\langle m_n \rangle\)</span>. The two averages are approximately linear, for <span class="math notranslate nohighlight">\(a&lt;1\)</span>, if plotted on a log-log plot and have a negative slope, with <span class="math notranslate nohighlight">\(\langle m_w\rangle \gt \langle m_n\rangle\)</span>. When <span class="math notranslate nohighlight">\(a \gt 1\)</span> the two curves converge to a limiting value of <span class="math notranslate nohighlight">\(m_0\)</span>.</p>
+</div>
+<div class="section" id="iii-sequence-repeats-in-dna">
+<h3><strong>(iii) Sequence repeats in DNA</strong><a class="headerlink" href="#iii-sequence-repeats-in-dna" title="Permalink to this headline">¶</a></h3>
+<p>Our DNA is packaged into <span class="math notranslate nohighlight">\(46\)</span> chromosomes (22 pairs and 2 sex chromosomes) but each chromosome is still too vast to analyse and so it is broken into more manageable pieces by mechanical or chemical or enzymatic means. If we want to identify a particular sequence, say of <span class="math notranslate nohighlight">\(n\)</span> base pairs  we will want to estimate what is the average separation of these is so that a suitable number of fragments are present containing the sequence.  It is assumed that the DNA is initially so long, <span class="math notranslate nohighlight">\(\sim 10^6\)</span> base pairs, that there are equal amounts of GCAT bases. If the sequence to identify is <span class="math notranslate nohighlight">\(n=8\)</span> bases long and is GGCATGGA then the chance of finding the first G is <span class="math notranslate nohighlight">\(1/4\)</span> and of the second adjacent G is <span class="math notranslate nohighlight">\( 1/16\)</span> and as each event is independent of any other the probabilities multiply to give <span class="math notranslate nohighlight">\(\displaystyle p=\frac{1}{4}\frac{1}{4}\frac{1}{4}\cdots= \frac{1}{4^n}\)</span>, thus for <span class="math notranslate nohighlight">\(n=8\)</span> the chance of finding any specified consecutive sequence is very small <span class="math notranslate nohighlight">\(1/4^8=1/65536\)</span>. This is true whatever the sequence is as long as the bases are in a fixed order. To detect an 8-mer the fragment will, of course, have to have on average at least these many bases since we do not know before hand if the sequence is present. What then is the average distance from one sequence to the next? The probability of <em>not</em> seeing the next sequence in <span class="math notranslate nohighlight">\(m\)</span> moves is <span class="math notranslate nohighlight">\((1-1/4^n)^{m-1} \)</span> and then seeing one in the next move is the product</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle p(m)=\left(1-\frac{1}{4^n}\right)^{m-1}\frac{1}{4^n}\]</div>
+<p>With the substitution <span class="math notranslate nohighlight">\(p=1/4^n\)</span> the average is therefore</p>
+<div class="math notranslate nohighlight">
+\[ \mu= \frac{\sum_{m=0}^\infty\limits m\left(1-p\right)^{m-1}p}{\sum_{m=0}^\infty\limits \left(1-p\right)^{m-1}p}\]</div>
+<p>The normalisation (denominator) is the sum <span class="math notranslate nohighlight">\(\displaystyle \frac{1}{1-p}\sum_{m=0}^\infty\limits \left(1-p\right)^{m}p=  \frac{1}{1-p}\to 1\)</span> because <span class="math notranslate nohighlight">\(p\lt\lt 1\)</span>. The numerator is <span class="math notranslate nohighlight">\(\displaystyle \frac{1}{1-p}\sum_{m=0}^\infty\limits mp\left(1-p\right)^m= \frac{1}{p}\)</span> so the average is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \mu = \frac{1}{p}=4^n\]</div>
+<p>which means that when the sequence is long a huge number of base pairs are needed, on average, if the sequence is to be present more than once. This is important in PCR where a sequence of perhaps <span class="math notranslate nohighlight">\(15 \to 30 \)</span> primer base pairs are used to identify and so amplify the DNA. This primer sequence is so long that the probability of this occurring by random is tiny in fragmented DNA with only a few thousand base pairs. This makes the PCR amplification very specific indeed, i.e if the target sequence is not there, amplification is highly unlikely to occur by random chance.</p>
 </div>
 </div>
 <div class="section" id="partition-functions">
@@ -1707,7 +1751,7 @@ In the ratio test, the ratio of any term <span class="math notranslate nohighlig
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/chapter-5-A_6_0.png" src="../_images/chapter-5-A_6_0.png" />
+<img alt="../_images/chapter-5-A_7_0.png" src="../_images/chapter-5-A_7_0.png" />
 </div>
 </div>
 <p>which can be simplified by dividing common factors</p>

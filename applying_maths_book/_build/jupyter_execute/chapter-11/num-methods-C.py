@@ -142,9 +142,9 @@ for i in range(1,n):
 
 # ### 5.2 The Polymerase Chain Reaction PCR. A real world example of coupled equations
 # 
-# The polymerase chain reaction (PCR) is a technique, that in a few hours at most, can vastly multiply the number of selected fragments of DNA by thousands to millions of times. The method has recently been widely used as a test for the presence of Covid-19 but has been used long before that to detect a whole range diseases caused by viruses, bacteria and parasites. Other methods can be used for many diseases but PCR has the advantage of being able to amplify minute amounts of DNA. This technique is also important as part of fingerprint detection. The technique was invented by K. Mullis in 1983. He subsequently shared the Nobel Prize in Chemistry in 1993 for his 'invention of the polymerase chain reaction (PCR) method' with M. Smith for his 'fundamental contributions to the establishment of oligonucleotide-based, site-directed mutagenesis and its development for protein studies'. 
+# The polymerase chain reaction (PCR) is a technique, that in a few hours at most, can vastly multiply the number of selected fragments of DNA by thousands to millions of times. The method has recently been widely used as a test for the presence of Covid-19 virus but has been used long before that to detect a whole range diseases caused by viruses, bacteria and parasites. Other methods can be used for many diseases but PCR has the advantage of being able to amplify minute amounts of DNA. This technique is also important as part of fingerprint detection. The technique was invented by K. Mullis in 1983. He subsequently shared the Nobel Prize in Chemistry in 1993 for his 'invention of the polymerase chain reaction (PCR) method' with M. Smith for his 'fundamental contributions to the establishment of oligonucleotide-based, site-directed mutagenesis and its development for protein studies'. 
 # 
-# The target a double-stranded DNA molecule, which has previously been split into segments of a few hundred to to a few thousand base pairs, is initially denatured by heating into two single strands. The denaturing is a cooperative effect and occurs over a narrow temperature range, $90-95\,^\text{o}$C, see Kittel and Bragg-Zimm zippers, chapters 1, 3.(ii) and Chapter 7,13.5 respectively. The denaturing is the first stage of the PCR cycle. The narrow temperature range of both denaturing and also subsequent steps, described shortly, mean that very precise and rapid temperature control is required.
+# The target, a double-stranded DNA molecule is initially denatured by heating into two single strands. This DNA had previously been split into segments of a few hundred to to a few thousand base pairs. The denaturing is a cooperative effect and occurs over a narrow temperature range, $90-95\,^\text{o}$C, see Kittel and Bragg-Zimm zippers, chapters 1, 3.(ii) and Chapter 7,13.5 respectively. The denaturing is the first stage of the PCR cycle. The narrow temperature range of both denaturing and also subsequent steps, described shortly, mean that very precise and rapid temperature control is required. Because of the cooperative nature of denaturing and extending DNA the Arrhenius equation does not generally apply when considering how rate constants change with temperature.
 # 
 # Two small oligonucleotides (typically $15-30$ base pairs) are chemically synthesised and that are complementary to sequences on opposite strands of the target DNA sequence (3' and 5' ends) and that flank the target to be amplified, are used as primers. To bind the primers to the single strands it is necessary to reform the H-bonds and enable $\pi-\pi$ stacking to occur which requires some cooling to the solution but there is a balance: cooling must not be too much otherwise the the single strands recombine. However, if there is no cooling there is too much energy and the H bonds and pi-stacking cannot occur, i.e. unless cooled the equilibrium is too far towards separated primer and single stranded DNA species. This step is called 'annealing' or 'hybridisation'.  
 # 
@@ -156,7 +156,7 @@ for i in range(1,n):
 # 
 # ![Drawing](num-methods-fig20c.png)
 # 
-# Figure 20c.Sketch of the PCR method. Redrawn from NobelPrize.org. Nobel Prize Outreach AB 2022.
+# Figure 11a. Sketch of the PCR method. Redrawn from NobelPrize.org. Nobel Prize Outreach AB 2022.
 # ________
 # 
 # ### PCR rate equations
@@ -174,9 +174,9 @@ for i in range(1,n):
 # The reaction scheme is 
 # 
 # $$\displaystyle \begin{array}\\ 
-# D & \overset{k_D}{\underset{k_{-D}} \rightleftharpoons} &  2S\qquad\qquad \qquad\qquad 95\mathrm{^{o} C,denaturing}\\
-# S + P &\overset{k_{sp}}{\underset{k_{-sp}} \rightleftharpoons}& SP \qquad\qquad \qquad\qquad 72\mathrm{^{o}C, annealing}\\
-# E + SP &\overset{k_{1}}{\underset{k_{-1}} \rightleftharpoons}& E\cdot SP \overset{k_2}\longrightarrow E+D\;\;\qquad 85\mathrm{^{o}C, extending}\\
+# D & \overset{{\large k_D}}{\underset{{\large k_{-D}}} \rightleftharpoons} &  2S\qquad\qquad \qquad\qquad 95\mathrm{^{o} C,denaturing}\\
+# S + P &\overset{{\large k_{sp}}}{\underset{{\large k_{-sp}}} \rightleftharpoons}& SP \qquad\qquad \qquad\qquad 72\mathrm{^{o}C, annealing}\\
+# E + SP &\overset{{\large k_{1}}}{\underset{{\large k_{-1}}} \rightleftharpoons}& E\cdot SP \overset{k_2}\longrightarrow E+D\;\;\qquad 85\mathrm{^{o}C, extending}\\
 # \end{array}$$
 # 
 # and we ignore the possibility that the enzyme $E$ may also decompose at the higher temperatures as this is known to be small $\approx 0.1%$ at each cycle. 
@@ -191,7 +191,7 @@ for i in range(1,n):
 # \frac{d[E]}{dt} & = -k_1[E][SP]+(k_{-1}+k_2)[E\cdot SP]\\
 # \end{align}$$
 # 
-# The result of integrating is shown in fig 21a assuming DNA segments of $b=200$ base pairs. The concentration of the double stranded DNA ($D$, red), the single strand ($S$, green) and the complex ($E\cdot SP$, black) are shown. The initial amounts and rate constants are shown in the table (SI units are used as appropriate for first and second order reactions).
+# The result of integrating is shown in fig 11b assuming DNA segments of $b=200$ base pairs. The concentration of the double stranded DNA ($D$, red), the single strand ($S$, green) and the complex ($E\cdot SP$, black) are shown. The initial amounts and rate constants are shown in the table (SI units are used as appropriate for first and second order reactions).
 # 
 # $$\displaystyle \begin{array}\\
 # k_D=3000/b, & k_{-D}=10^6,& k_{sp}=5\cdot10^5, & k_{-sp}=10^{-4},& k_1=10^8, & k_{-1}=10, & k_2=60\\
@@ -200,18 +200,25 @@ for i in range(1,n):
 # 
 # Notice that only a tiny amount of DNA need be present initially but that the primer is in vast excess over this and the enzyme $E$. This makes the annealing step pseudo-first order and $k_{sp}[P] \gg k_{-sp}$, but mainly the excess dose not limit the amount of $D$ produced as $P$ is consumed in the reaction. Of course there must be also sufficient nucleotides present to make the new DNA. The amount of all these concentrations depend on the particular situation but usually this is determined when the detection limit is exceeded by a suitable margin. Similarly to primer, increasing the amount of enzyme will also produce more DNA in a given time because $k_1[E][SP]$ is increased.
 # 
-# The unusual oscillatory behaviour is due to the temperature cycling which causes the rate constants to turn on and off. The decreasing region in $D$ is due to the temperature increasing which starts DNA denaturing into two strands $S$ which correspondingly increases (green). More double stranded DNA $D$ is produced as the enzyme reaction $E+SP$ starts and which stops when the temperature changes making $[D]$ constant. Recall that the temperature range is narrow over which this reaction occurs, i.e. $\exp(-(T_0-T)^2/\sigma)$ as described above so the increase in $D$ is short lived.
+# The unusual oscillatory behaviour is due to the temperature cycling which causes the rate constants to turn on and off. The decreasing region in $D$ is due to the temperature increasing which starts DNA denaturing into two strands $S$ which correspondingly increases (green). More double stranded DNA $D$ is produced as the enzyme reaction $E+SP$ starts and which stops when the temperature changes making $[D]$ constant. Recall that the temperature range is narrow over which this reaction occurs, i.e. $k \sim\exp(-(T_0-T)^2/\sigma)$ as described above so the increase in $D$ is short lived.
 # 
 # ![Drawing](num-methods-fig20a.png)
 # 
-# Figure 20a. The populations of various species *vs*. time in the PCR reaction. See text for details.
+# Figure 11b. The populations of various species *vs*. time in the PCR reaction. See text for details.
 # __________
 # 
-# Although the amount of double stranded DNA is increasing it is hard to see by how much in this plot. By totaling $[D]$ into groups of periods, then the exponential increase is more obvious as shown in fig 20b. The doubling time in the linear part of the plot is $\approx 89$ s. The doubling time is calculated assuming $[D]=[D_0]e^{kt}$ and using $t_2=\ln(2)/k$ just as if a half-life were calculated.
+# The pattern of populations in fig 11b is complex. Looking at the scheme shows that initially $D$ is denatured and therefore $S$ rises and in the last step where new $D$ is formed the opposite occurs which suggests that plotting $D$ vs. $S+SP$ may show this behaviour. Figure 11c clearly shows exactly this and that the final $D$ is increasing in each cycle.
+# 
+# ![Drawing](num-methods-fig20d.png)
+# 
+# Figure 11c. Plot showing variation of D with S+SR. the increase and decrease of $D$ is clear and clearly shows the amplification. The slight kink in the extension is the horizontal part of fig 11b.
+# _____
+# 
+# Although the amount of double stranded DNA is increasing it is hard to see by how much in fig 11b. By totaling $[D]$ into groups of periods, then the exponential increase is more obvious as shown in fig 11d. The doubling time in the upper part of the plot is $\approx 89$ s. The doubling time is calculated assuming $[D]=[D_0]e^{kt}$ and using $t_2=\ln(2)/k$ just as if a half-life were calculated.
 # 
 # ![Drawing](num-methods-fig20b.png)
 # 
-# Figure 20b. The total amount of double stranded DNA, $[D]$ *vs*. time. The circles show the cycles. The dashed line is an exponential fit with a doubling time of $\approx 89$ s.
+# Figure 11d. The total amount of double stranded DNA, $[D]$ *vs*. time. The circles show the cycles. The dashed line is an exponential fit with a doubling time of $\approx 89$ s.
 
 # ### 5.3 Second and higher order differential equations. The Numerov algorithm and the Schroedinger equation. 
 # 
