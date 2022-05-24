@@ -53,9 +53,9 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # When a solution of table sugar (sucrose) is heated it hydrolyzes to glucose(dextrose) and fructose and is catalysed by acid. The reaction can be easily followed by observing the rotation of plane polarised light with a polarimeter. The reaction is 
 # 
-# $$\begin{array} {c}\text{sucrose} & \overset{\text{H}^+}{\longrightarrow} & \text{glucose + sucrose}\end{array}$$
+# $$\begin{array} {c}\text{sucrose} & \overset{\text{H}^+}{\longrightarrow} & \text{glucose + fructose}\end{array}$$
 # 
-# The specific rotations$^*$ are $[\alpha]_s=+66.5, [\alpha]_g=+52.7,[\alpha]_s=-92.0$ degrees respectively. When the average specific rotation passes through zero the sugar is said to be 'inverted'. 
+# The specific rotations$^*$ are $[\alpha]_s=+66.5, [\alpha]_g=+52.7,[\alpha]_f=-92.0$ degrees respectively. When the average specific rotation passes through zero the sugar is said to be 'inverted'. 
 # 
 # The average specific rotation is
 # 
@@ -69,7 +69,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # and when $[\alpha]=0$ the solution is 'inverted' and the extent of reaction $\displaystyle \frac{x}{x_0}=\frac{[\alpha]_s}{[\alpha]_s-[\alpha]_g-[\alpha]_f}=0.629$ so that inversion occurs when $\approx 63$% of sucrose has been converted.
 # 
-# $^*$ The specific rotation $[\alpha ]_{\lambda }^{T}$ is defined as the optical rotation $\alpha$ at a path length $L$ of $1$ dm, a concentration $[C]= 1\;\mathrm{g/100\,mL}$, at temperature $T$ (typically $20^{\text{o}}$)C and at wavelength $\lambda$, usually the sodium D line at $589.3$ nm.
+# $^*$ The specific rotation $[\alpha ]_{\lambda }^{T}$ is defined as the optical rotation $\alpha$ at a path length $L$ of $1$ dm, a concentration $[C]= 1\;\mathrm{g/100\,mL}$, at temperature $T$ (typically $20^{\text{o}}$C) and at wavelength $\lambda$, usually the sodium D line at $589.3$ nm.
 # 
 # #### **(ii) Chain reactions. Mean Chain length**
 # 

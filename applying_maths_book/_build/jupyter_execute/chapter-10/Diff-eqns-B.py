@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## Integrating factors can solve differential equations
+# ## First order eqns & Integrating factors. Second order eqns, Newtons laws, equations of motion.
 
 # In[1]:
 
@@ -305,9 +305,38 @@ factor(ans)
 # 
 # Plots of $t$ vs $r$ are shown in fig 8b. Note that the inverse hyperbolic sine, $\sinh^{-1}(x)$, can also be written as 
 # 
-# $$\displaystyle \sinh^{-1}(x)=  \ln(x+\sqrt{x^2+1})$$ 
+# $$\displaystyle \sinh^{-1}(x)=  \ln(x+\sqrt{x^2+1})$$
 # 
-# #### **(ii) Hooke's Law and simple harmonic motion**
+# #### **(iii) Rockets again.  Conservation of Momentum**
+# 
+# The Law of Conservation of Momentum can be used to find the velocity of a rocket. Suppose that the rocket is moving at velocity $v$ (relative to some fixed coordinate system) and ejects fuel with velocity $-u$ relative to the rocket, therefore the mass of the rocket $M$ decreases with time as the fuel is used. We know that the rate of change of momentum is equal to the external force on a system of particles (i.e force is mass times acceleration and acceleration is the rate of change of momentum)
+# 
+# $$\displaystyle \frac{dp}{dt}=F$$
+# 
+# where $p$ is the total momentum of all particles in our case the rocket and ejected fuel. The external force $F$ could be air resistance or gravity for example. The momentum of rocket and exhaust produces
+# 
+# $$\displaystyle \frac{d}{dt}(Mv)-(v-u)\frac{dM}{dt}=F$$
+# 
+# The term on the left is the change in the rocket's momentum and the second term that of the ejected fuel. The minus sign appears because the momentum of the ejected fuel is in the opposite direction to the rocket's motion.  
+# Evaluating the first differential and simplifying gives
+# 
+# $$\displaystyle M\frac{dv}{dt}+u\frac{dM}{dt}=F$$
+# 
+# The term $udM/dt$ is called the thrust and is in the opposite direction to the exhaust velocity. If there is no external force the remaining equation describes conservation of momentum, viz, 
+# 
+# $$\displaystyle M\frac{dv}{dt} + u\frac{dM}{dt}=0$$
+# 
+# Multiplying the last equation by $dt/M$  and integrating by recalling that $M$ is a function of time produces,
+# 
+# $$\displaystyle \int_{v_0}^v dv = -u\int_{M_0}^M \frac{dM}{M}, \qquad  v - v_0 = u\ln\left(\frac{M_0}{M}\right)$$
+# 
+# were $v_0$ is the initial velocity, $M_0$ the initial total mass which is that of rocket plus fuel, and $M$ is the mass of the rocket and any remaining fuel when the velocity is $v$.
+# 
+# The rockets' speed only depends on the exhaust velocity and the fraction of the mass exhausted in that time interval needed to change the speed to $v$ from $v_0$. Notice also that the speed at any time does not depend on how quickly the fuel is used, this does not enter the calculation, but clearly the lower the rate of fuel consumption the longer it will take to reach a set velocity. 
+# 
+# If $m$ is the mass of the fuel and all is consumed then $M$ is the mass of the fuel empty rocket, $M_0=M+m$ and $v$ the maximum velocity, $\displaystyle v-v_0=u\ln\left(1+\frac{m}{M}\right)$. In a rocket it is therefore desirable to carry as much mass as fuel as possible so that $1+m/M)$ is large. Additionally, if the propellant is a cold gas, from the Kinetic Theory of Gases the r.m.s. speed of a gas decreases with atomic mass, i.e. $u$ is smaller for heavier than low atomic masses, so low atomic mass gases would seem to be preferred to make the final velocity as large as possible.  
+# 
+# #### **(iii) Hooke's Law and simple harmonic motion**
 # In the case of a force in a line towards the origin that is a fixed point, simple harmonic motion ensues if the force is described by Hooke's law $f (x) = -kx$ where $k$ is the force constant and $x$ the displacement from the origin. The minus sign indicates that the force is towards the origin; when $\displaystyle d^2x/dt^2$ is negative $x$ is positive and vice versa. The equation of motion is now
 # 
 # $$\displaystyle  \frac{d^2x}{dt^2}=-\frac{k}{m}x $$
@@ -393,7 +422,7 @@ simplify(ans)
 # __________
 # The figure shows the classical probability together with a harmonic potential such as for a diatomic molecule. The potential has a force constant of $172$ N/m and the first quantised energy level is shown at energy $E_1$. The square of the wavefunction is also shown. The classical probability extends only as far as the turning points at energy $E_1$. The difference between the probabilities is quite considerable not in their overall size but in their shape. The classical probability cannot extend past the turning point, but the quantised probability does so quite considerably. At large quantum numbers, e.g. $20$ the wavefunction has more probability close to the turning points, than in the middle of the potential and so resembles the classical behaviour a little more closely.
 # 
-# #### **(iii) Springs**
+# #### **(iv) Springs**
 # 
 # Problems with springs often state that the spring has a weight attached, which causes the spring to extend by a certain amount. It is then extended or compressed by a further amount and let go. The equation of motion is then sought.
 # 
@@ -408,7 +437,7 @@ simplify(ans)
 # 
 # If the initial displacement is above the equilibrium position $x_0 = -3$, therefore $x = -3\cos(\omega t)$. Finally, the frequency is found from Hooke's law. At equilibrium, $mg = ks$ and $s = 5$ is the displacement from equilibrium before the mass is moved. Therefore, the force constant $k = 2 \cdot 9.81/5\,\mathrm{ N \,m^{-1 }}$ and the frequency squared is $\omega^2 = k/m$ or $\omega = 1.4\,\mathrm{ rad\, s^{-1}}$. This corresponds to a natural frequency of $\nu = \omega /2\pi$ or $0.223\,\mathrm{ s^{-1}}$ and period $T = 1/\nu = 4.49$ seconds. The position of the mass at any time $t$ is found to be $x = -3 \cos(1.4t)$. Note that if the question stated that the _weight_ was 2 kg then this would correspond to $mg$ not $m$ and the mass to use would therefore be $2/9.81$ kg.
 # 
-# #### **(iv) Total energy**
+# #### **(v) Total energy**
 # 
 # The total energy is the sum of the kinetic and potential energy and is a constant if no external force acts on the system. The kinetic energy is that due to motion $mv^2/2$, and the potential energy can take several forms depending on how the motion is achieved. On extending a spring, the potential energy is force multiplied by distance displaced and the force is given by Hooke's law. If the potential energy is that due to displacing a mass in a gravitational field, as occurs with a pendulum, then the potential is $mgh$ where $h$ is the height change.
 # 
@@ -477,7 +506,7 @@ simplify(ans)
 # 
 # $$\displaystyle \frac{d^2x}{dt^2}=n^2x  \tag{22}$$
 # 
-# and $n$ is a constant. The horizontal component of the thrust outwards is $mgx/L$, provided _x) is small; the constant is therefore $n^2 = g/L$. The solution for angular position is
+# and $n$ is a constant. The horizontal component of the thrust outwards is $mgx/L$, provided $x$ is small; the constant is therefore $n^2 = g/L$. The solution for angular position is
 # 
 # $$\displaystyle \varphi = Ae^{nt}+Be^{-nt} \tag{23}$$
 # 

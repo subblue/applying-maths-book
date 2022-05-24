@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## Limits, l'Hopital's rule, max and min and Calculus of Variations 
+# ## Limits, l'Hopital's rule, Maximum, Minimum and Calculus of Variations 
 
 # ### 6  l' Hopital's rule
 # In many calculations limits are encountered. For example, in the theory of diffraction the function $\displaystyle \frac{\sin(x)}{x}$ is met which, when $x \to 0$, has the form $0/0$ and at first sight this ratio seem to be indeterminate. There are other forms similar to this such as $\infty/\infty,\, \infty/0,\, 0\times \infty,\, 0\times 0,\, \infty-\infty$ and l'Hopital's rule is a method, sometimes used with a little additional ingenuity, of determining these limits. This topic is discussed here, not only because it requires differentiation, but also because it will be needed in the next section. It seems that Johann Bernoulli first worked this out, but it is named after l'Hopital who was one of his pupils.
@@ -86,6 +86,59 @@
 # $$\displaystyle   y'=-\frac{2x}{(1+x^2)^2}, \qquad y''=\frac{6x^2-2}{(1+x^2)^3}$$
 # 
 # The first derivative is zero at $x=0$, and the second zero at $\displaystyle x=\pm\frac{1}{\sqrt{3}}$  and $\displaystyle y=\pm\frac{3}{4}$
+
+# #### **Luminescence from phosphors. An example with differentiation of an integral and numerically solving for a root**
+# 
+# Many non metallic compounds such as ZnS-Cu and zinc silicates-Mn, will show phosphorescence lasting many tens of seconds after excitation with UV light. Some phosphors also show luminescence on heating and this provides a method of dating minerals and clays directly or in man-made objects discovered by archaeologists. The cause of the luminescence is the recombination of electrons, liberated by the UV or heat, with relatively low energy impurity 'traps' and the excess energy is released as a photon. These impurity traps have an energy between the filled levels (ground state or valance band) and the empty ones at higher energy (excited state or conduction band). 
+# 
+# If there are $n$ electrons liberated their decay into a trap can be described by a first order scheme as,
+# 
+# $$\displaystyle \frac{dn}{dt}=-k_1n$$
+# 
+# where $k_1$ is the rate constant. This itself is given by an Arrhenius expression $k_1=k_0e^{-E/{k_BT}}$ where $E$ is the trap depth giving
+# 
+# $$\displaystyle \frac{dn}{dt}=-k_0e^{-E/{k_BT}}n\quad\text{or}\quad \frac{dn}{n}=-k_0e^{-E/{k_BT}}dt\tag{27a} $$
+# 
+# Integrating produces
+# 
+# $$\displaystyle n=n_0e^{-k_1t}\quad \text{or} \quad n=n_0 e^{\large -k_0te^{-E/k_BT}} \tag{27b}$$
+# 
+# with $n_0$ as the initial number of $n$. The intensity of luminescence (photons/sec) is the rate of being trapped, $-dn/dt$, or
+# 
+# $$\displaystyle k_1n =n_0k_0e^{-E/k_BT} e^{\large -k_0te^{-E/k_BT}}$$
+# 
+# Integrating over all time ($t=0\to \infty$) produces a total intensity of $n_0$, i.e. every $n$ has found a trap as is to be expected.  
+# 
+# In many experiments the temperature is increased as the luminescence is decaying and the total luminescence measured vs. temperature. The temperature is ramped so that $dT =\beta dt$ where $\beta$ is the rate of heating, in $\mathrm{degrees\,s^{-1}}$. 
+# 
+# Integrating the left-hand side of 27a and substituting for $dt$ into the right hand side and integrating gives,
+# 
+# $$\displaystyle \ln\left(\frac{n}{n_0}\right)=-\frac{k_0}{\beta}\int_0^Te^{-E/k_BT}dT,\qquad n=n_0\exp\left(-\frac{k_0}{\beta}\int_0^Te^{-E/k_BT}dT\right)$$
+# 
+# The luminescence intensity is proportional to the rate of supply of electrons to the traps and is thus proportional to $-dn/dt$ making the intensity at temperature $T$
+# 
+# $$\displaystyle I_T = n_0k_0e^{-E/k_BT} e^{-(k_0/\beta){\large\int_0^Te^{-E/k_BT}}dT}\tag{27c}$$
+# 
+# The intensity $I_T$ has units of photons/sec. If this is divided by the heating rate $\beta$  i.e. $I_T/\beta$ is then the number of photons liberated per degree and when integrated over all temperatures produces $n_0$ the total number of electrons present initially. Fig 13b shows plots of $I_T/\beta$ vs. temperature.
+# 
+# The intensity must always be positive, because negative intensity is not physically realistic, and also has a maximum. We can understand this directly without calculation.  At low temperatures no electrons have the energy to surmount the energy barrier making the luminescence zero. At very high temperatures all the electrons have enough energy to reach a trap and no more are left to luminesce and so again the intensity is zero.  This is important when this method is used to date pottery or other artefacts because heating sets the 'clock back to zero' by allowing all electrons to recombine with traps. Thermally and/or by exposure to light the electrons are released and so the material can luminesce again. This provides a way of dating.  
+# 
+# Mathematically, when $T\to\infty$ in the limit the integral in $T$ becomes $\infty$ and thus the exponential becomes $e^{-\infty}=0$ and the luminescence intensity is zero. When $T\to 0$ the first exponential becomes zero, $e^{-E/0}=e^{-\infty}=0$ and $I_T=0$.
+# 
+# To find the temperature of maximum luminescence the equation for the intensity is differentiated and set to zero. This will use some of the methods described so far, product rule and differentiating an integral (see 3.15), viz. $\displaystyle \frac{d}{dx}\int_a^x f(u)du =f(x)$ and so,
+# 
+# $$\displaystyle \frac{dI_T}{dT}=n_0k_0\frac{E}{k_BT^2}e^{-E/k_BT}\left( e^{-{\large\int_0^T\frac{k_0}{\beta}e^{-E/k_BT}}dT}\right)-n_0k_0e^{-E/k_BT}\left( e^{-{\large\int_0^T\frac{k_0}{\beta}e^{-E/k_BT}}dT} \right)\frac{k_0}{\beta}e^{-E/k_BT} =0$$
+# 
+# which greatly simplifies to
+# 
+# $$\displaystyle k_0k_BT_m^2e^{-E/(k_BT_m)}-E\beta=0$$
+# 
+# This result can only be solved numerically, such as by the Newton-Raphson method, to find the trap depth, $E$ when the maximum temperature $T_m$ is known from experiment. 
+# 
+# ![Drawing](differen-fig13b.png)
+# 
+# Figure 13b. Luminescence heating curves from eqn 27c for a crystal containing impurity traps of depth $E$. The intensity divided by the rate of heating is plotted. This means that the curves show the number of photons liberated at each temperature and so the area under each curve is $n_0$ the total number of electrons present initially. Recombination of electrons and traps produces a photon. The parameters user were $n_0=1000,\; k_0 = 3\cdot 10^9\,\mathrm{s^{-1}}$, $E = 5000\,\mathrm{cm^{-1}}$ the heating rate $\beta=0.5$ and $5.5$ degrees/second is shown on the plot. The temperature at the maximun luminescence intensity is $300.8$ and $331.3$ K respectively for the $\beta$ shown and were calculated using the Newton-Raphson method.
+# ________ 
 
 # ### 8 The Calculus of Variations
 # 

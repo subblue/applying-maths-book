@@ -165,7 +165,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # If you are unfamiliar with integration, it will help to know the basic rules; see Chapter 4. It is possible to differentiate integrals; well why not! Integration and differentiation are linked as shown in equation (1) and as given by the fundamental theorem of the calculus:
 # 
-# $$\displaystyle  \frac{d}{dx}\int_a^xf(u)dx=\frac{d}{dx}\left(F(x)-F(a)   \right)=f(x)  \tag{14}$$
+# $$\displaystyle  \frac{d}{dx}\int_a^xf(u)du=\frac{d}{dx}\left(F(x)-F(a)   \right)=f(x)  \tag{14}$$
 # 
 # $a$ being a constant and $F$ is the result of integration. The variable $u$ used in the integration is a dummy variable, any letter could be used instead, but it is better in this instance not to use $x$ as this can be confusing. In this formula at least one of the integration limits must be a function of $x$ as explained next.
 # 

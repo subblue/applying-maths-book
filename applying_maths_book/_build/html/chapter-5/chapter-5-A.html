@@ -260,7 +260,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-3/differen-F.html">
-     Limits, l’Hopital’s rule, max and min and Calculus of Variations
+     Limits, l’Hopital’s rule, Maximum, Minimum and Calculus of Variations
     </a>
    </li>
    <li class="toctree-l2">
@@ -974,7 +974,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-B.html">
-     Integrating factors can solve differential equations
+     First order eqns &amp; Integrating factors. Second order eqns, Newtons laws, equations of motion.
     </a>
    </li>
    <li class="toctree-l2">
@@ -1511,19 +1511,26 @@ summed to form a function. The power series</p>
 </div>
 <div class="section" id="making-new-series">
 <h3><strong>Making new series</strong><a class="headerlink" href="#making-new-series" title="Permalink to this headline">¶</a></h3>
-<p>New series can often be made from existing ones. Suppose each term in the series of <span class="math notranslate nohighlight">\(f(x)=1+x+x^2+\cdots\)</span> is differentiated, then using eqn 2,</p>
+<p>(i) New series can often be made from existing ones. Suppose each term in the series of <span class="math notranslate nohighlight">\(f(x)=1+x+x^2+\cdots\)</span> is differentiated, then using eqn 2,</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle f^′(x)= \frac{1}{(1 - x)^2} =1+2x+3x^2 +4x^3 +\cdots+nx^{n-1} +\cdots  \tag{3}\]</div>
 <p>and if <span class="math notranslate nohighlight">\(| \,x\, | \lt 1\)</span> this is the expansion of <span class="math notranslate nohighlight">\( 1/(1 - x)^2\)</span>, which can be written as</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \sum_{n=0}^{\infty}   nx^{n-1} = \frac{1}{(1 - x)^2}  \tag{4}\]</div>
-<p>Substituting <span class="math notranslate nohighlight">\(x \to -x \)</span> gives the series</p>
+<p>(ii) Substituting <span class="math notranslate nohighlight">\(x \to -x \)</span> gives the series</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \frac{1}{(1 + x)^2} =1-2x+3x^2-4x^3 +\cdots      \tag{5}\]</div>
 <p>The summation expression is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \sum_{n=1}^\infty (-1)^n nx^{n-1} = \frac{1}{(1+x)^2}\]</div>
 <p>and the <span class="math notranslate nohighlight">\(\displaystyle (-1)^n\)</span> ensures that alternate terms are positive and negative.</p>
+<p>(iii) The sum</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \sum_{n=0}^\infty (1-x)x^n = 1,\qquad |x|\lt 1\]</div>
+<p>and the new sum <span class="math notranslate nohighlight">\(\displaystyle \sum_{n=0}^\infty x(1-x)^n\)</span> can be found with this result by substituting <span class="math notranslate nohighlight">\(y=1-x\)</span> then</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \sum_{n=0}^\infty y(1-y)^n = 1,\qquad |y-1|\lt 1\]</div>
+<p>but notice that there are now new limits. We can of course change notation and replace <span class="math notranslate nohighlight">\(y\)</span> with <span class="math notranslate nohighlight">\(x\)</span> or <span class="math notranslate nohighlight">\(p\)</span> or any other symbol.</p>
 </div>
 <div class="section" id="table-of-summations">
 <h3>Table of summations<a class="headerlink" href="#table-of-summations" title="Permalink to this headline">¶</a></h3>
@@ -1534,11 +1541,11 @@ summed to form a function. The power series</p>
 \sum_0^\infty\limits (-x)^n = \displaystyle\frac{1}{1+x},\quad |x|&lt;1&amp;
 \sum_0^\infty\limits nx^n =\displaystyle\frac{x}{(1-x)^2},\quad |x|&lt;1\\
 \sum_0^\infty\limits nx(1-x)^n=\displaystyle \frac{1-x}{x},\quad |x-1|&lt;1&amp;
-\sum_0^\infty\limits x^n(1-x) =1,\quad |x|&lt;1&amp;
-\sum_0^\infty\limits nx^n(1-x) =\displaystyle\frac{x}{1-x},\quad |x|&lt;1\\
+\sum_0^\infty\limits (1-x)x^n =1,\quad |x|&lt;1&amp;
+\sum_0^\infty\limits n(1-x)x^n =\displaystyle\frac{x}{1-x},\quad |x|&lt;1\\
 \sum_0^\infty\limits nx(1-x)^{n-1} =\displaystyle\frac{1}{x},\quad |x-1|&lt;1&amp;
 \sum_0^\infty\limits x(1-x)^{n-1} =\displaystyle\frac{1}{1-x},\quad |x-1|&lt;1&amp;
-\sum_0^\infty\limits nx^{n-1}(1-x) =\displaystyle\frac{1}{1-x},\quad |x|&lt;1\\
+\sum_0^\infty\limits n(1-x)x^{n-1} =\displaystyle\frac{1}{1-x},\quad |x|&lt;1\\
 \hline
 \end{array}\end{split}\]</div>
 <p>Figure 1, below, shows the function of equation (3) and several approximations which are ever longer series with increasing powers of <span class="math notranslate nohighlight">\(x\)</span>. Expanding the series as far as <span class="math notranslate nohighlight">\(x^6\)</span> only matches the <span class="math notranslate nohighlight">\(f(x)\)</span> well up to about <span class="math notranslate nohighlight">\(x = 0.5\)</span> indicating the rather obvious fact that that many terms may be needed to accurately reproduce a function. The plot also shows haw a function may be approximated by its first couple of terms when the variable <span class="math notranslate nohighlight">\(x\)</span> is very small.  This is a very common procedure to account for a perturbation.</p>

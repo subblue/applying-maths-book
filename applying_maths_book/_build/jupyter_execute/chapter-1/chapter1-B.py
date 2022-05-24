@@ -301,19 +301,19 @@ asinh(x).rewrite('log')
 
 # ### 8 Factorials
 # 
-# The factorial function is the product of a set of positive integers from 1 up to n;
+# The factorial function is the product of a set of _positive integers_ from 1 up to n;
 # 
-# $$\displaystyle n! = n \times (n - 1) \times (n - 2) \times \cdot \times 2 \times 1 $$
+# $$\displaystyle n! = n \times (n - 1) \times (n - 2) \times \cdots \times 2 \times 1 $$
 # 
 # with the limits that
 # 
-# $$\displaystyle 0! = 1,\qquad (-n)! = \infty$$
+# $$\displaystyle 0! = 1,\qquad (-n)! \to \infty$$
 # 
 # The factorials can also be calculated recursively as 
 # 
 # $$\displaystyle (n + 1)! = (n + 1)n!$$
 # 
-# In Figure 19 notice how rapidly the factorials increase as $n$ increases. The plot is of $\ln(n!)$ vs $n$, which shows that $n!$ increases more rapidly than does $e^n$x, which would be a line of slope 1 on this graph.
+# In Figure 19 notice how rapidly the factorials increase as $n$ increases. The plot is of $\ln(n!)$ vs $n$, which shows that $n!$ increases more rapidly than does $e^{n}$, which would be a line of slope 1 on this graph.
 # 
 # Fractional, negative, and complex factorials are defined by the (complete) gamma function $\Gamma(n)$. Positive integer values of this function produce the factorials, and are related as 
 # 

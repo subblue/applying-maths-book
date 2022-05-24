@@ -466,14 +466,14 @@ for i in range(1,12):      # increase number if does not comverge
     pass
 
 
-# #### Boltzmann's Distribution
+# #### **Boltzmann's Distribution**
 # There are numerous examples of the exponential function in chemistry and physics. One of the most important is Boltzmann's equation, which relates the population of two energy levels, an upper one $n_2$ to that of a lower one $n_1$ and which are separated by energy $\Delta E$ at absolute temperature $T$,
 # 
 # $$\displaystyle \frac{n_2}{n_1}=e^{-\Delta E/(k_BT)} $$
 # 
 # Boltzmann's constant has the value $k_B = 1.38065 \times 10^{-23}\, \mathrm{J\, K^{-1}}$.
 # 
-# #### First order or exponential decay
+# #### **First order or exponential decay**
 # It is interesting to derive the first order rate expression to see why in theory, although not in practice, the decay continues to infinity. This was probably first derived by von Schweidler in 1905. First order processes occur in the radioactive decay of atoms, the decay of molecular and atomic excited states, such as by fluorescence, and in dissociation and cis/trans isomerisation of molecules.
 # 
 # The basic assumption is that the probability of reaction $p$ in a time interval $\Delta t$ is independent of past history and depends only on the length of the time interval $\Delta t$, and when this is sufficiently short the probability is _proportional_ to this interval as $p=k\Delta t$ where $k$ is the proportionality constant which depends on the particular atom of molecule. This will become the decay rate constant.
@@ -559,7 +559,7 @@ for i in range(1,12):      # increase number if does not comverge
 # \end{array}$$
 # 
 # 
-# #### First order reaction
+# #### **First order reaction**
 # The change in population of a chemical species $c(t)$ decaying by a first-order process follows an exponential law, 
 # 
 # $$\displaystyle c(t) = c_0e^{-kt}$$
@@ -570,7 +570,7 @@ for i in range(1,12):      # increase number if does not comverge
 # 
 # because a plot of the $\ln$ vs time  $t$ is a straight line of slope $-k$. Dividing the concentration $c(t)$ by that initially present $c_0$ makes the log dimensionless.
 # 
-# #### Entropy of volume change in a gas
+# #### **Entropy from a volume change in a gas**
 # When a gas expands at constant temperature (isothermally) there will be a change in entropy and a quantity of work done. If the change is carried out reversibly while the pressure changes this produces the maximum amount of work. Reversibility means that the pressure is continuously adjusted so slightly that equilibrium is maintained. The equation for the change in entropy when $n$ moles of an ideal gas goes from volume $V_1\to V_2$ is
 # 
 # $$\displaystyle \Delta S =nR\ln\left(\frac{V_2}{V_1} \right)$$
@@ -613,7 +613,7 @@ for i in range(1,12):      # increase number if does not comverge
 # ![drawing](chapter1-fig8.png)
 # 
 # Figure 8 Graph of exponential and log functions with the straight line $y = x$. The symmetry between $e^x$ and $\ln(x)$ is clear.
-
+# 
 # ### 4.5 Arguments to functions such as exponential, sine etc.  do not have units
 # 
 # In all functions, exponential, logs, cosine, sine, and so on the argument $p,\,L$ in $\ln(p),\sin(L)$ must always be dimensionless. This leads to confusion particularly with equilibrium constants and pressures. For example in an equilibrium in the gas phase such as between species $A_2$ and $A$

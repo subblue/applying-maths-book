@@ -37,9 +37,7 @@
 # (c) Find the variational energy of the ground state of the He atom. Compare it with the energy calculated assuming that $\zeta = Z$, and with your 'experimental' value.
 # 
 # ### Q76 Variational energy in Gaussian well 
-# Using the trial wavefunction $\displaystyle \psi = e^{-ax^2/2}$
-# 
-# calculate the variational energy of the lowest bound state of an electron if the potential has the form of a Gaussian well 
+# Using the trial wavefunction $\displaystyle \psi = e^{-ax^2/2}$ calculate the variational energy of the lowest bound state of an electron if the potential has the form of a Gaussian well 
 # 
 # $$\displaystyle V = 1 - e^{-\beta x^2}$$
 # 
@@ -47,7 +45,7 @@
 # 
 # $$\displaystyle \left( -\frac{1}{2}\frac{d^2}{dx^2}+V_x \right)\psi_x=E\psi_x$$
 # 
-# Compare the result with the numerical value of $0.5226$ when$\beta=1$ and $0.20473$ when $\beta=1/10$. See chapter 10 for details of numerical methods.
+# Compare the result with the numerical value of $0.5226$ when $\beta=1$ and $0.20473$ when $\beta=1/10$. See chapter 10 for details of numerical methods.
 # 
 # Comment of the results obtained.
 # 

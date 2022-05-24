@@ -86,7 +86,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # which is a series of spikes separated by $2\pi/\omega$, see fig. 21b chapter 9 (Fourier transforms). 
 # 
 # #### **Making new series**
-# New series can often be made from existing ones. Suppose each term in the series of $f(x)=1+x+x^2+\cdots$ is differentiated, then using eqn 2,
+# (i) New series can often be made from existing ones. Suppose each term in the series of $f(x)=1+x+x^2+\cdots$ is differentiated, then using eqn 2,
 #  
 # $$\displaystyle f^′(x)= \frac{1}{(1 - x)^2} =1+2x+3x^2 +4x^3 +\cdots+nx^{n-1} +\cdots  \tag{3}$$
 #          
@@ -94,7 +94,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # $$\displaystyle \sum_{n=0}^{\infty}   nx^{n-1} = \frac{1}{(1 - x)^2}  \tag{4}$$
 # 
-# Substituting $x \to -x $ gives the series
+# (ii) Substituting $x \to -x $ gives the series
 # 
 # $$\displaystyle \frac{1}{(1 + x)^2} =1-2x+3x^2-4x^3 +\cdots      \tag{5}$$
 # 
@@ -104,6 +104,16 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # and the $\displaystyle (-1)^n$ ensures that alternate terms are positive and negative.
 # 
+# (iii) The sum 
+# 
+# $$\displaystyle \sum_{n=0}^\infty (1-x)x^n = 1,\qquad |x|\lt 1$$
+# 
+# and the new sum $\displaystyle \sum_{n=0}^\infty x(1-x)^n$ can be found with this result by substituting $y=1-x$ then 
+# 
+# $$\displaystyle \sum_{n=0}^\infty y(1-y)^n = 1,\qquad |y-1|\lt 1$$
+# 
+# but notice that there are now new limits. We can of course change notation and replace $y$ with $x$ or $p$ or any other symbol.
+# 
 # #### Table of summations
 # 
 # $$\displaystyle \begin{array}{l|l|l}
@@ -112,11 +122,11 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # \sum_0^\infty\limits (-x)^n = \displaystyle\frac{1}{1+x},\quad |x|<1&
 # \sum_0^\infty\limits nx^n =\displaystyle\frac{x}{(1-x)^2},\quad |x|<1\\
 # \sum_0^\infty\limits nx(1-x)^n=\displaystyle \frac{1-x}{x},\quad |x-1|<1&
-# \sum_0^\infty\limits x^n(1-x) =1,\quad |x|<1&
-# \sum_0^\infty\limits nx^n(1-x) =\displaystyle\frac{x}{1-x},\quad |x|<1\\
+# \sum_0^\infty\limits (1-x)x^n =1,\quad |x|<1&
+# \sum_0^\infty\limits n(1-x)x^n =\displaystyle\frac{x}{1-x},\quad |x|<1\\
 # \sum_0^\infty\limits nx(1-x)^{n-1} =\displaystyle\frac{1}{x},\quad |x-1|<1&
 # \sum_0^\infty\limits x(1-x)^{n-1} =\displaystyle\frac{1}{1-x},\quad |x-1|<1&
-# \sum_0^\infty\limits nx^{n-1}(1-x) =\displaystyle\frac{1}{1-x},\quad |x|<1\\
+# \sum_0^\infty\limits n(1-x)x^{n-1} =\displaystyle\frac{1}{1-x},\quad |x|<1\\
 # \hline
 # \end{array}$$
 # 

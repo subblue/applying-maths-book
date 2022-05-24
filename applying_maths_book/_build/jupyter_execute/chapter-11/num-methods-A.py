@@ -202,17 +202,23 @@ for j in range(n):
 
 # Algorithm 2; Secant method
 
+#--------------------
+def Secant(f,x1,x2):
+    xm = 2*x2
+    xtol=1e-8
+    while abs(f(xm))  > xtol:
+        xm = x1 - f(x1)*(x2 - x1)/(f(x2) - f(x1))
+        x1 = x2
+        x2 = xm
+        pass
+    return xm
+#--------------------
+
 f  = lambda x: x**5 + x - 1      # function to solve
 x1 = 0.0  
 x2 = 0.5
-xm = 2*x2
-xtol=1e-8
-while abs(f(xm))  > xtol:
-    xm = x1 - f(x1)*(x2 - x1)/(f(x2) - f(x1))
-    x1 = x2
-    x2 = xm
-    pass
-print('{:s} {:12.8f}'.format('root = ', xm)   )
+ans= Secant(f,x1,x2)
+print('{:s} {:12.8f}'.format('root = ', ans)   )
 
 
 # If the starting points span the root, then the false position or Regula Falsi method is used. This method uses the same equation as the secant method but a slightly different algorithm is used to generate the next point. This ensures that the root is always straddled. The algorithm is
@@ -221,20 +227,25 @@ print('{:s} {:12.8f}'.format('root = ', xm)   )
 
 
 # Algorithm 3; Regula Falsi
+#--------------------------------
+def Regula_Falsi(f,x1,x2):
+    xm = 2*x2
+    xtol = 1e-8
+    while abs(f(xm))  > xtol:
+        xm = x1 - f(x1)*(x2 - x1)/(f(x2) - f(x1))
+        if f(x1) > f(x2) :
+            x1 = xm
+        else:
+            x2 = xm
+        pass
+    return xm
+#-------------------------------
 
 f  = lambda x: x**5 + x - 1
 x1 = 0.0
 x2 = 1.0
-xm = 2*x2
-xtol = 1e-8
-while abs(f(xm))  > xtol:
-    xm = x1 - f(x1)*(x2 - x1)/(f(x2) - f(x1))
-    if f(x1) > f(x2) :
-        x1 = xm
-    else:
-        x2 = xm
-    pass
-print('{:s} {:12.8f}'.format('root = ', xm)   )
+ans= Regula_Falsi(f,x1,x2)
+print('{:s} {:12.8f}'.format('root = ', ans)   )
 
 
 # The bisection method is the simplest and most robust method. The initial estimates must span the root; therefore, the function is calculated from some point until its sign is changed, if the whereabouts of the root is unknown. At this point, the bisection method is repeatedly used to divide the region into finer parts.  The while loop is also limited by the number of iterations to prevent this becoming infinite. One 'trick' that can sometimes be used in the secant and Regula Falsi method, should they fail, is to add a small number, $\lt 10^{-6}$, to the denominator, to prevent it accidentally becoming zero.
@@ -246,8 +257,7 @@ print('{:s} {:12.8f}'.format('root = ', xm)   )
 
 # Algorithm 4; Bisection Method
 
-f  = lambda x: x**5 + x - 1
-
+#-------------------------------
 def bisect(f,x1,x2):   
     xm   = 2*x2
     xtol = 1e-8
@@ -261,8 +271,12 @@ def bisect(f,x1,x2):
         pass
         n = n + 1
     return xm
+#---------------------------------
 
-ans = bisect(f,0.0,1.0)    # call bisect with initial values 0 and 1
+f  = lambda x: x**5 + x - 1
+x1 = 0.0
+x2 = 1.0
+ans = bisect(f,x1,x2)    # call bisect with initial values 0 and 1
 print('{:s}  {:12.8f}'.format('root = ', ans)   )
 
 
@@ -327,14 +341,15 @@ print('{:s}  {:12.8f}'.format('root = ', ans)   )
 
 # Algorithm 5; mid point integration method writtten as a subroutine or def
 #--------------------------
-def mid_point(f,a,b,N):    # define routine
+def mid_point(f,a,b,N):              # define routine
     h = (b - a)/N
     s = 0.0
-    for j in range(N):              # last value is N-1, first 0
+    for j in range(N):               # last value is N-1, first 0
         s = s +h*f( a+(j+0.5)*h )
     return s
 #---------------------------
-f = lambda x: np.exp(-x**2)     # define function
+
+f = lambda x: np.exp(-x**2)          # define function
 a = 0.0
 b = 1.0
 n = 20
@@ -357,19 +372,24 @@ print('{:s} {:6.5f}'.format('sum = ', mid_point(f,a,b,n)) )
 
 
 # Algorithm 6; Trapezoid rule
+#------------------------------
+def Tzoid(f,a,b,N):
+    h = (b - a)/(N)
+    s = 0.0
+    for j in range(N+1):              # last value is N, first 0
+        s = s + 2*f( a + j*h )
+        
+    ss= h*(s -(f(a) + f(b))  )/2.0
+    return ss
+#--------------------------------
 
 f = lambda x: np.exp(-x**2)     # define function
 
 a = 0.0
 b = 1.0
 N = 20
-h = (b - a)/(N)
-s = 0.0
-for j in range(N+1):              # last value is N, first 0
-    s = s + 2*f( a + j*h )
-    
-ss= h*(s -(f(a) + f(b))  )/2.0   
-print('{:s} {:6.5f}'.format('sum = ', ss) )
+ans= Tzoid(f,a,b,N)
+print('{:s} {:6.5f}'.format('sum = ', ans) )
 
 
 # ### 3.4 Simpson's rule integration
@@ -438,7 +458,7 @@ print('{:s} {:6.5f}'.format('sum = ', ss) )
 
 f = lambda x: np.exp(x)*x**(-4)                      # function to ingtegrate
 a = 2.0
-N = 100
+N = 200
 print('{:s}'.format('limit b    integral'))
 for k in range(3,30,5):                              # start 3 , end 30, step 5
     b = k

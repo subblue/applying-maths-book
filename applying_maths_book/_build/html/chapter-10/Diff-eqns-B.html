@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Integrating factors can solve differential equations &#8212; Applying Maths in the Chemical &amp; Biomolecular Sciences</title>
+    <title>First order eqns &amp; Integrating factors. Second order eqns, Newtons laws, equations of motion. &#8212; Applying Maths in the Chemical &amp; Biomolecular Sciences</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -260,7 +260,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-3/differen-F.html">
-     Limits, l’Hopital’s rule, max and min and Calculus of Variations
+     Limits, l’Hopital’s rule, Maximum, Minimum and Calculus of Variations
     </a>
    </li>
    <li class="toctree-l2">
@@ -974,7 +974,7 @@
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     Integrating factors can solve differential equations
+     First order eqns &amp; Integrating factors. Second order eqns, Newtons laws, equations of motion.
     </a>
    </li>
    <li class="toctree-l2">
@@ -1402,23 +1402,30 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#ii-hooke-s-law-and-simple-harmonic-motion">
+    <a class="reference internal nav-link" href="#iii-rockets-again-conservation-of-momentum">
      <strong>
-      (ii) Hooke’s Law and simple harmonic motion
+      (iii) Rockets again.  Conservation of Momentum
      </strong>
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#iii-springs">
+    <a class="reference internal nav-link" href="#iii-hooke-s-law-and-simple-harmonic-motion">
      <strong>
-      (iii) Springs
+      (iii) Hooke’s Law and simple harmonic motion
      </strong>
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#iv-total-energy">
+    <a class="reference internal nav-link" href="#iv-springs">
      <strong>
-      (iv) Total energy
+      (iv) Springs
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#v-total-energy">
+     <strong>
+      (v) Total energy
      </strong>
     </a>
    </li>
@@ -1465,8 +1472,8 @@
         
               <div>
                 
-  <div class="section" id="integrating-factors-can-solve-differential-equations">
-<h1>Integrating factors can solve differential equations<a class="headerlink" href="#integrating-factors-can-solve-differential-equations" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="first-order-eqns-integrating-factors-second-order-eqns-newtons-laws-equations-of-motion">
+<h1>First order eqns &amp; Integrating factors. Second order eqns, Newtons laws, equations of motion.<a class="headerlink" href="#first-order-eqns-integrating-factors-second-order-eqns-newtons-laws-equations-of-motion" title="Permalink to this headline">¶</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import all python add-ons etc that will be needed later on</span>
@@ -1708,8 +1715,30 @@
 <div class="math notranslate nohighlight">
 \[\displaystyle \sinh^{-1}(x)=  \ln(x+\sqrt{x^2+1})\]</div>
 </div>
-<div class="section" id="ii-hooke-s-law-and-simple-harmonic-motion">
-<h3><strong>(ii) Hooke’s Law and simple harmonic motion</strong><a class="headerlink" href="#ii-hooke-s-law-and-simple-harmonic-motion" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="iii-rockets-again-conservation-of-momentum">
+<h3><strong>(iii) Rockets again.  Conservation of Momentum</strong><a class="headerlink" href="#iii-rockets-again-conservation-of-momentum" title="Permalink to this headline">¶</a></h3>
+<p>The Law of Conservation of Momentum can be used to find the velocity of a rocket. Suppose that the rocket is moving at velocity <span class="math notranslate nohighlight">\(v\)</span> (relative to some fixed coordinate system) and ejects fuel with velocity <span class="math notranslate nohighlight">\(-u\)</span> relative to the rocket, therefore the mass of the rocket <span class="math notranslate nohighlight">\(M\)</span> decreases with time as the fuel is used. We know that the rate of change of momentum is equal to the external force on a system of particles (i.e force is mass times acceleration and acceleration is the rate of change of momentum)</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{dp}{dt}=F\]</div>
+<p>where <span class="math notranslate nohighlight">\(p\)</span> is the total momentum of all particles in our case the rocket and ejected fuel. The external force <span class="math notranslate nohighlight">\(F\)</span> could be air resistance or gravity for example. The momentum of rocket and exhaust produces</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{d}{dt}(Mv)-(v-u)\frac{dM}{dt}=F\]</div>
+<p>The term on the left is the change in the rocket’s momentum and the second term that of the ejected fuel. The minus sign appears because the momentum of the ejected fuel is in the opposite direction to the rocket’s motion.<br />
+Evaluating the first differential and simplifying gives</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle M\frac{dv}{dt}+u\frac{dM}{dt}=F\]</div>
+<p>The term <span class="math notranslate nohighlight">\(udM/dt\)</span> is called the thrust and is in the opposite direction to the exhaust velocity. If there is no external force the remaining equation describes conservation of momentum, viz,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle M\frac{dv}{dt} + u\frac{dM}{dt}=0\]</div>
+<p>Multiplying the last equation by <span class="math notranslate nohighlight">\(dt/M\)</span>  and integrating by recalling that <span class="math notranslate nohighlight">\(M\)</span> is a function of time produces,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \int_{v_0}^v dv = -u\int_{M_0}^M \frac{dM}{M}, \qquad  v - v_0 = u\ln\left(\frac{M_0}{M}\right)\]</div>
+<p>were <span class="math notranslate nohighlight">\(v_0\)</span> is the initial velocity, <span class="math notranslate nohighlight">\(M_0\)</span> the initial total mass which is that of rocket plus fuel, and <span class="math notranslate nohighlight">\(M\)</span> is the mass of the rocket and any remaining fuel when the velocity is <span class="math notranslate nohighlight">\(v\)</span>.</p>
+<p>The rockets’ speed only depends on the exhaust velocity and the fraction of the mass exhausted in that time interval needed to change the speed to <span class="math notranslate nohighlight">\(v\)</span> from <span class="math notranslate nohighlight">\(v_0\)</span>. Notice also that the speed at any time does not depend on how quickly the fuel is used, this does not enter the calculation, but clearly the lower the rate of fuel consumption the longer it will take to reach a set velocity.</p>
+<p>If <span class="math notranslate nohighlight">\(m\)</span> is the mass of the fuel and all is consumed then <span class="math notranslate nohighlight">\(M\)</span> is the mass of the fuel empty rocket, <span class="math notranslate nohighlight">\(M_0=M+m\)</span> and <span class="math notranslate nohighlight">\(v\)</span> the maximum velocity, <span class="math notranslate nohighlight">\(\displaystyle v-v_0=u\ln\left(1+\frac{m}{M}\right)\)</span>. In a rocket it is therefore desirable to carry as much mass as fuel as possible so that <span class="math notranslate nohighlight">\(1+m/M)\)</span> is large. Additionally, if the propellant is a cold gas, from the Kinetic Theory of Gases the r.m.s. speed of a gas decreases with atomic mass, i.e. <span class="math notranslate nohighlight">\(u\)</span> is smaller for heavier than low atomic masses, so low atomic mass gases would seem to be preferred to make the final velocity as large as possible.</p>
+</div>
+<div class="section" id="iii-hooke-s-law-and-simple-harmonic-motion">
+<h3><strong>(iii) Hooke’s Law and simple harmonic motion</strong><a class="headerlink" href="#iii-hooke-s-law-and-simple-harmonic-motion" title="Permalink to this headline">¶</a></h3>
 <p>In the case of a force in a line towards the origin that is a fixed point, simple harmonic motion ensues if the force is described by Hooke’s law <span class="math notranslate nohighlight">\(f (x) = -kx\)</span> where <span class="math notranslate nohighlight">\(k\)</span> is the force constant and <span class="math notranslate nohighlight">\(x\)</span> the displacement from the origin. The minus sign indicates that the force is towards the origin; when <span class="math notranslate nohighlight">\(\displaystyle d^2x/dt^2\)</span> is negative <span class="math notranslate nohighlight">\(x\)</span> is positive and vice versa. The equation of motion is now</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle  \frac{d^2x}{dt^2}=-\frac{k}{m}x \]</div>
@@ -1778,8 +1807,8 @@ If the initial velocity is <span class="math notranslate nohighlight">\(v_0\)</s
 <hr class="docutils" />
 <p>The figure shows the classical probability together with a harmonic potential such as for a diatomic molecule. The potential has a force constant of <span class="math notranslate nohighlight">\(172\)</span> N/m and the first quantised energy level is shown at energy <span class="math notranslate nohighlight">\(E_1\)</span>. The square of the wavefunction is also shown. The classical probability extends only as far as the turning points at energy <span class="math notranslate nohighlight">\(E_1\)</span>. The difference between the probabilities is quite considerable not in their overall size but in their shape. The classical probability cannot extend past the turning point, but the quantised probability does so quite considerably. At large quantum numbers, e.g. <span class="math notranslate nohighlight">\(20\)</span> the wavefunction has more probability close to the turning points, than in the middle of the potential and so resembles the classical behaviour a little more closely.</p>
 </div>
-<div class="section" id="iii-springs">
-<h3><strong>(iii) Springs</strong><a class="headerlink" href="#iii-springs" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="iv-springs">
+<h3><strong>(iv) Springs</strong><a class="headerlink" href="#iv-springs" title="Permalink to this headline">¶</a></h3>
 <p>Problems with springs often state that the spring has a weight attached, which causes the spring to extend by a certain amount. It is then extended or compressed by a further amount and let go. The equation of motion is then sought.</p>
 <p>As a specific example, suppose that a helical spring has a mass of <span class="math notranslate nohighlight">\(2\)</span> kg attached to it and this extends it by <span class="math notranslate nohighlight">\(5\)</span> cm. It is then displaced by <span class="math notranslate nohighlight">\(3\)</span> cm from its new equilibrium position and let go. At equilibrium, before the mass is moved, the tension in the spring due to Hooke’s law is balanced by the force of gravity; <span class="math notranslate nohighlight">\(mg = ks\)</span> where <span class="math notranslate nohighlight">\(s\)</span> is the displacement from equilibrium before the mass is moved. If the spring is now extended by <span class="math notranslate nohighlight">\(x\)</span> the tension <span class="math notranslate nohighlight">\(T\)</span> increases to <span class="math notranslate nohighlight">\(k(s + x)\)</span>. As the spring has no forces acting on it other than gravity, the force equation is</p>
 <div class="math notranslate nohighlight">
@@ -1790,8 +1819,8 @@ As <span class="math notranslate nohighlight">\(v_0 = 0\)</span>, when the mass 
 \[\displaystyle  x = x_0 \cos(\omega t)\]</div>
 <p>If the initial displacement is above the equilibrium position <span class="math notranslate nohighlight">\(x_0 = -3\)</span>, therefore <span class="math notranslate nohighlight">\(x = -3\cos(\omega t)\)</span>. Finally, the frequency is found from Hooke’s law. At equilibrium, <span class="math notranslate nohighlight">\(mg = ks\)</span> and <span class="math notranslate nohighlight">\(s = 5\)</span> is the displacement from equilibrium before the mass is moved. Therefore, the force constant <span class="math notranslate nohighlight">\(k = 2 \cdot 9.81/5\,\mathrm{ N \,m^{-1 }}\)</span> and the frequency squared is <span class="math notranslate nohighlight">\(\omega^2 = k/m\)</span> or <span class="math notranslate nohighlight">\(\omega = 1.4\,\mathrm{ rad\, s^{-1}}\)</span>. This corresponds to a natural frequency of <span class="math notranslate nohighlight">\(\nu = \omega /2\pi\)</span> or <span class="math notranslate nohighlight">\(0.223\,\mathrm{ s^{-1}}\)</span> and period <span class="math notranslate nohighlight">\(T = 1/\nu = 4.49\)</span> seconds. The position of the mass at any time <span class="math notranslate nohighlight">\(t\)</span> is found to be <span class="math notranslate nohighlight">\(x = -3 \cos(1.4t)\)</span>. Note that if the question stated that the <em>weight</em> was 2 kg then this would correspond to <span class="math notranslate nohighlight">\(mg\)</span> not <span class="math notranslate nohighlight">\(m\)</span> and the mass to use would therefore be <span class="math notranslate nohighlight">\(2/9.81\)</span> kg.</p>
 </div>
-<div class="section" id="iv-total-energy">
-<h3><strong>(iv) Total energy</strong><a class="headerlink" href="#iv-total-energy" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="v-total-energy">
+<h3><strong>(v) Total energy</strong><a class="headerlink" href="#v-total-energy" title="Permalink to this headline">¶</a></h3>
 <p>The total energy is the sum of the kinetic and potential energy and is a constant if no external force acts on the system. The kinetic energy is that due to motion <span class="math notranslate nohighlight">\(mv^2/2\)</span>, and the potential energy can take several forms depending on how the motion is achieved. On extending a spring, the potential energy is force multiplied by distance displaced and the force is given by Hooke’s law. If the potential energy is that due to displacing a mass in a gravitational field, as occurs with a pendulum, then the potential is <span class="math notranslate nohighlight">\(mgh\)</span> where <span class="math notranslate nohighlight">\(h\)</span> is the height change.</p>
 <p>If the displacement at time <span class="math notranslate nohighlight">\(t\)</span> is <span class="math notranslate nohighlight">\(x = A \sin(\omega t + B)\)</span>, then the kinetic energy is</p>
 <div class="math notranslate nohighlight">
@@ -1842,7 +1871,7 @@ As <span class="math notranslate nohighlight">\(v_0 = 0\)</span>, when the mass 
 <p>In the normal pendulum, acceleration is towards the vertical or origin of the motion. In the inverted pendulum with a rigid rod instead of a wire, acceleration is away from the vertical and the motion is unstable. The equation of motion for small displacements from the vertical, is similar to that of the pendulum but with a positive sign on the right-hand side of the equation,</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \frac{d^2x}{dt^2}=n^2x  \tag{22}\]</div>
-<p>and <span class="math notranslate nohighlight">\(n\)</span> is a constant. The horizontal component of the thrust outwards is <span class="math notranslate nohighlight">\(mgx/L\)</span>, provided _x) is small; the constant is therefore <span class="math notranslate nohighlight">\(n^2 = g/L\)</span>. The solution for angular position is</p>
+<p>and <span class="math notranslate nohighlight">\(n\)</span> is a constant. The horizontal component of the thrust outwards is <span class="math notranslate nohighlight">\(mgx/L\)</span>, provided <span class="math notranslate nohighlight">\(x\)</span> is small; the constant is therefore <span class="math notranslate nohighlight">\(n^2 = g/L\)</span>. The solution for angular position is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \varphi = Ae^{nt}+Be^{-nt} \tag{23}\]</div>
 <p>where <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> are constants determined by the initial conditions. The general method of solution is given in Section 4.3. If the initial position is <span class="math notranslate nohighlight">\(x_0\)</span> and velocity <span class="math notranslate nohighlight">\(\nu_0\)</span>, then <span class="math notranslate nohighlight">\(\varphi_0 = A + B\)</span> and <span class="math notranslate nohighlight">\(\nu_0 = n(A - B)\)</span>. Changing the exponentials into hyperbolic sinh and cosh and substituting for the constants gives</p>

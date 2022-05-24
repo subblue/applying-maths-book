@@ -260,7 +260,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-3/differen-F.html">
-     Limits, l’Hopital’s rule, max and min and Calculus of Variations
+     Limits, l’Hopital’s rule, Maximum, Minimum and Calculus of Variations
     </a>
    </li>
    <li class="toctree-l2">
@@ -974,7 +974,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="Diff-eqns-B.html">
-     Integrating factors can solve differential equations
+     First order eqns &amp; Integrating factors. Second order eqns, Newtons laws, equations of motion.
     </a>
    </li>
    <li class="toctree-l2">
@@ -1382,6 +1382,13 @@
      </strong>
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#iii-quenching-an-excited-state-electron-spin-can-affect-the-outcome">
+     <strong>
+      (iii) Quenching an excited state. Electron spin can affect the outcome
+     </strong>
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -1691,6 +1698,45 @@
 \[\displaystyle \varphi = \frac{\text{rate of emission}}{\text{rate of absorption}} =\frac{k_fS_1}{k_aG}=\frac{k_f}{k_f+k_S} \tag{5}\]</div>
 <p>and is the fraction of molecules that fluoresce. A molecule fluoresces with a rate constant that is the sum of all process destroying the excited state; therefore, if <span class="math notranslate nohighlight">\(k = k_f + k_S\)</span> and as the fluorescence lifetime is the reciprocal of <span class="math notranslate nohighlight">\(k\)</span> or <span class="math notranslate nohighlight">\(\tau = 1/k\)</span>, the yield becomes <span class="math notranslate nohighlight">\(\varphi = k_f \tau\)</span>.</p>
 </div>
+<div class="section" id="iii-quenching-an-excited-state-electron-spin-can-affect-the-outcome">
+<h3><strong>(iii) Quenching an excited state. Electron spin can affect the outcome</strong><a class="headerlink" href="#iii-quenching-an-excited-state-electron-spin-can-affect-the-outcome" title="Permalink to this headline">¶</a></h3>
+<p>The presence of paramagnetic species, such as O<span class="math notranslate nohighlight">\(_2\)</span>, or heavy atoms or ions, Xe, I<span class="math notranslate nohighlight">\(^-\)</span> dissolved in solution will quench the excited state. The quenching process are energy transfer and spin orbit coupling. Quenching here means shortening the lifetime of the excited states, both singlet and triplet. Using nanosecond pump-probe (flash photolysis), which first became available shortly after the discovery of Q-switching in lasers in the 1960’s, it was discovered that the singlet excited state of several types of aromatic molecules was quenched at diffusion controlled rate constant but that their triplet excited states were quenched at approximately one ninth of this. The values for anthracene quenched with molecular oxygen are, for the singlet, <span class="math notranslate nohighlight">\(k_q = 3.1\cdot 10 ^{10}\)</span> and for the triplet, <span class="math notranslate nohighlight">\(3.4\cdot 10^9\;\mathrm{dm^3 mol^{-1} s^{-1}}\)</span>.</p>
+<p>To understand this behaviour a model of the quenching is made by supposing that a short lived collision complex is formed between the excited molecule <span class="math notranslate nohighlight">\(M^*\)</span> and the quencher <span class="math notranslate nohighlight">\(Q\)</span>, i.e. <span class="math notranslate nohighlight">\((M^*\cdots Q)\)</span>. The scheme is quite simple and is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \qquad\qquad\qquad\qquad\begin{align} M^* + Q &amp;\underset{k_{-d}}{\stackrel {kd}{\rightleftharpoons}}  (M^*\cdots Q) \overset{k_R}\longrightarrow products \end{align}\qquad\qquad\qquad\qquad\qquad\text{(5a)}\]</div>
+<p>where <span class="math notranslate nohighlight">\(k_d\)</span> is the diffusion controlled rate constant for the approach of the molecules and <span class="math notranslate nohighlight">\(k_{-d}\)</span> and <span class="math notranslate nohighlight">\(k_R\)</span> the first-order rate constants for the break up of the complex to reactants and products respectively.</p>
+<p>The rate of change of the excited complex is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{[M^*\cdots Q]}{dt}= k_d[M^*][Q]-(k_{-d}+k_R)[M^*\cdots Q]\]</div>
+<p>We could include the decay of <span class="math notranslate nohighlight">\(M^*\)</span> by fluorescence or phosphorescence and solve the equation but it is necessary only to consider this at steady state in which case</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle [M^*\cdots Q]=\frac{k_d[M^*][Q]}{k_{-d}+k_R}\]</div>
+<p>The overall rate of reaction is by definition, <span class="math notranslate nohighlight">\(k_q[M^*][Q]\)</span>, where <span class="math notranslate nohighlight">\(k_q\)</span> is the experimentally measured rate constant, thus</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle k_R[M^* \cdots Q]= k_q[M^*][Q]\]</div>
+<p>and therefore by substituting</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle k_q= \frac{k_d}{k_{-d}+k_R}k_R\]</div>
+<p><strong>Reaction or Activation Control</strong>. When the reaction is <em>activation controlled</em> this means that the reaction rate constant <span class="math notranslate nohighlight">\(k_R\)</span> is small thus the reaction’s activation energy is high and many, possibly millions of collisions occur before reaction takes place <span class="math notranslate nohighlight">\(k_R \ll k_{-d}\)</span> and <span class="math notranslate nohighlight">\(\displaystyle k_q= \frac{k_d}{k_{-d}}k_R\)</span>.</p>
+<p><strong>Diffusion Control</strong>. When the reaction is diffusion controlled <span class="math notranslate nohighlight">\(k_q=k_d\)</span> and means that the reaction rate constant <span class="math notranslate nohighlight">\(k_R\)</span> is so large that reaction occurs essentially on first contact of the two species and then <span class="math notranslate nohighlight">\(k_R\gg k_{-d}\)</span>.</p>
+<p>The diffusion controlled rate constant has been calculated by Smoluchowski and combined with the Stokes-Einstein equation is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle k_d=\frac{8000RT}{3\eta}\qquad\qquad (\mathrm{ dm^3/mol/s})\]</div>
+<p>where <span class="math notranslate nohighlight">\(\eta\)</span> is the viscosity of the solution. In ethanol <span class="math notranslate nohighlight">\(k_d = 5.0\cdot 10^9\; \mathrm{dm^3 mol^{-1} s^{-1}}\)</span> where viscosity <span class="math notranslate nohighlight">\(\eta = 1.2\)</span> cP (cP = centiPoise = <span class="math notranslate nohighlight">\(10^{-3}\)</span> Pa s). In glycerol <span class="math notranslate nohighlight">\(k_d = 4.4\cdot 10^6 \mathrm{dm^3 mol^{-1} s^{-1}}\)</span> where <span class="math notranslate nohighlight">\(\eta = 14900\)</span> cP.</p>
+<p>The difference in quenching rate constant with molecular oxygen between singlet and triplet excited states can only be understood if the spin properties of quencher and excited state are examined.  The oxygen molecule is paramagnetic with a triplet ground state, the term symbol is <span class="math notranslate nohighlight">\(^3\Sigma_g^-\)</span>. There are two low lying excited states <span class="math notranslate nohighlight">\(^1\Delta\)</span> at <span class="math notranslate nohighlight">\(8000\;\mathrm{cm^{-1}}\)</span> (<span class="math notranslate nohighlight">\(\approx 1250\)</span> nm) and <span class="math notranslate nohighlight">\(^1\Sigma_g^+\)</span> at <span class="math notranslate nohighlight">\(13000\;\mathrm{cm^{-1}}\)</span> (<span class="math notranslate nohighlight">\(\approx 770\)</span> nm). Both the singlet and triplet excited state energies of the excited aromatic molecule are at least <span class="math notranslate nohighlight">\(10000\;\mathrm{cm^{-1}}\)</span> above that of the oxygen <span class="math notranslate nohighlight">\(^1\Sigma\)</span>.</p>
+<p>The spin angular momentum has to be conserved in any transition thus there are three pathways for quenching of the two triplet states. The initial states are the excited triplet state <span class="math notranslate nohighlight">\(T\)</span> and O<span class="math notranslate nohighlight">\(_2\)</span> ground state. The energy of the aromatic’s excited state must also be greater than any of the quencher states. (In the scheme <span class="math notranslate nohighlight">\(^1M_0\)</span> is the aromatic molecule’s ground state).</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin{align}T + \;^3O_2 &amp;\underset{k_{-d}}{\stackrel {kd}{\rightleftharpoons}}\; ^1(T\cdots O_2) \stackrel{k_e} \longrightarrow \; ^1M_0 + \; ^1O_2 \qquad (\text{energy transfer to  } \;^1\Delta \;; \; ^1\Sigma) \\
+&amp;\rightleftharpoons\; ^3(T\cdots O_2) \stackrel{k_{isc}}\longrightarrow \;^1M_0+ \;^3O_2 \qquad(\text{intersystem crossing to }\;^3\Sigma_g^-)\\
+&amp;\rightleftharpoons\; ^5(T\cdots O_2)\stackrel{k=0} \longrightarrow \qquad(\text{no product })\\
+\end{align}\end{split}\]</div>
+<p>The superscript number <span class="math notranslate nohighlight">\(1,3, 5\)</span> is the <em>spin multiplicity</em> of each type of complex. There are four electrons in the complex so the total spin is <span class="math notranslate nohighlight">\(2\)</span> but according to addition rules for quantum spin the other allowed values values are <span class="math notranslate nohighlight">\(2,1,0\)</span> via a Clebsh-Gordon series. The total number of types of complexes is given by the total multiplicity which is <span class="math notranslate nohighlight">\(9\)</span>. If  <span class="math notranslate nohighlight">\(S\)</span> is the total spin quantum number which is <span class="math notranslate nohighlight">\(0,1,2\)</span> for singlet, triplet and quartet complexes respectively the multiplicity of each is <span class="math notranslate nohighlight">\(2S+1\)</span> making a total of <span class="math notranslate nohighlight">\(9\)</span> types.</p>
+<p>Because the quintet complex can form no product as the triplet is an aromatic, the quenching rate constant is limited to <span class="math notranslate nohighlight">\(4/9\)</span> of its potential maximum, and has to be the sum of that due to energy transfer and intersystem crossing and this occurs via spin orbit coupling. The rate constant is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle k_q=\frac{3}{9}k_d\frac{k_{isc}}{k_{isc}+k_{-d}}+\frac{1}{9}k_d\frac{k_e}{k_e+k_{-d}} \]</div>
+<p>Experimentally as <span class="math notranslate nohighlight">\(k_q=k_d/9\)</span> this implies that <span class="math notranslate nohighlight">\(k_e\gg k_{-d} \gg k_{isc}\)</span>, and so the experimental data is understood by considering the spin quantum numbers. Recall that the spin quantum number of an electron is <span class="math notranslate nohighlight">\(1/2\)</span> with projection or azimuthal or magnetic quantum numbers <span class="math notranslate nohighlight">\(\pm 1/2\)</span>.</p>
+<p>Notice that this mechanism indicates that triplet-triplet annihilation is a spin allowed process provided the energy is sufficient, i.e. there must be enough energy to produce the singlet product, which means that energy conservation must always apply. Note also that when a singlet excited state is quenched by a triplet there is only one type of complex formed because the singlet has total spin of zero and multiplicity of <span class="math notranslate nohighlight">\(1\)</span> which means that quenching always occurs at its full value.</p>
+</div>
 </div>
 <div class="section" id="the-phase-portrait">
 <h2>2.2 The Phase Portrait<a class="headerlink" href="#the-phase-portrait" title="Permalink to this headline">¶</a></h2>
@@ -1748,7 +1794,7 @@
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>equation is 
 </pre></div>
 </div>
-<img alt="../_images/Diff-eqns-A_5_1.png" src="../_images/Diff-eqns-A_5_1.png" />
+<img alt="../_images/Diff-eqns-A_4_1.png" src="../_images/Diff-eqns-A_4_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1759,7 +1805,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Diff-eqns-A_6_0.png" src="../_images/Diff-eqns-A_6_0.png" />
+<img alt="../_images/Diff-eqns-A_5_0.png" src="../_images/Diff-eqns-A_5_0.png" />
 </div>
 </div>
 <p>Solving for <span class="math notranslate nohighlight">\(e^{aC_1}\)</span> with the initial conditions <span class="math notranslate nohighlight">\(n(0)= n_0 ; t=0\)</span> produces</p>

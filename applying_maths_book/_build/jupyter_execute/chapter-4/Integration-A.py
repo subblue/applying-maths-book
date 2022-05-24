@@ -182,7 +182,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # and so on; $c$ is an arbitrary constant.
 # 
-# ### 2.3 Integrating $1/x$ produces a logarithm
+# ### 2.3 Integrating $1/x$ and $1/(ax+b)$ produces a logarithm
 # 
 # The $\displaystyle \frac{x^{n+1}}{n + 1}$ rule is not going to work when $n = -1$ as this will produce $1/0$ which is infinity. In the case of reciprocal $x$ the integral is:
 # 
@@ -193,6 +193,20 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # Note that to produce a log, the denominator must be _linear_ in $x$, e.g. $2 + 3x$, but cannot contain anything like $x^2$ or $x^3$. The general formula is
 # 
 # $$\displaystyle \int\frac{1}{ax+b}dx=\frac{1}{a}\ln(ax+b) +const \tag{8}$$
+# 
+# #### Reaction on a surface
+# 
+# Suppose that there are a large number of sites on a surface that can accept and react with a molecule reaching this from solution. Any one of the sites can either be occupied or empty. If $p(t)$ is the chance of being occupied at time $t$, let $k_d \delta t$ be the chance of becoming unoccupied (desorbing) in the interval $\delta t$. The average fraction becoming unoccupied is then $k_d p(t)\delta t$ in the interval $t\to t+\delta t$. Similarly, let the chance becoming occupied in the same time be $k_ap(t)\delta t$ where $k_a$ is the adsorption rate constant. The fraction of sites occupied is then $k_ap(t)(1 - p(t))\delta t$ which is the chance of being occupied multiplied by the chance that there is an empty site. The total rate of change in the limit $\delta t\to dt$ is
+# 
+# $$\displaystyle \frac{dp}{dt}=k_a p(1-p) - k_d p, \qquad \int\frac{dp}{k_a p(1-p) - k_d p}=\int dt$$
+# 
+# Integrating this by hand and using the table in section 2.14 or by using Sympy produces, after some  simplification,
+# 
+# $$\displaystyle \ln\left(\frac{k_a(p-1)+k_d}{k_ap} \right)=(k_d-k_a)t +const$$
+# 
+# Note that as $p$ is a probability it is dimensionless, $k_a,k_d$ have units of s$^{-1}$.  The constant is determined by letting $p_0$ be the value of $p$ at $t=0$. 
+# 
+# This model has also been used to describe how populations of animals change when many different sites are available for them to occupy and also compete for; see Briton (2003). 
 # 
 # ### 2.4 Partial fractions
 # 

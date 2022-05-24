@@ -141,6 +141,60 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # and is the fraction of molecules that fluoresce. A molecule fluoresces with a rate constant that is the sum of all process destroying the excited state; therefore, if $k = k_f + k_S$ and as the fluorescence lifetime is the reciprocal of $k$ or $\tau = 1/k$, the yield becomes $\varphi = k_f \tau$.
 # 
+# #### **(iii) Quenching an excited state. Electron spin can affect the outcome**
+# 
+# The presence of paramagnetic species, such as O$_2$, or heavy atoms or ions, Xe, I$^-$ dissolved in solution will quench the excited state. The quenching process are energy transfer and spin orbit coupling. Quenching here means shortening the lifetime of the excited states, both singlet and triplet. Using nanosecond pump-probe (flash photolysis), which first became available shortly after the discovery of Q-switching in lasers in the 1960's, it was discovered that the singlet excited state of several types of aromatic molecules was quenched at diffusion controlled rate constant but that their triplet excited states were quenched at approximately one ninth of this. The values for anthracene quenched with molecular oxygen are, for the singlet, $k_q = 3.1\cdot 10 ^{10}$ and for the triplet, $3.4\cdot 10^9\;\mathrm{dm^3 mol^{-1} s^{-1}}$.
+# 
+# To understand this behaviour a model of the quenching is made by supposing that a short lived collision complex is formed between the excited molecule $M^*$ and the quencher $Q$, i.e. $(M^*\cdots Q)$. The scheme is quite simple and is
+# 
+# $$\displaystyle \qquad\qquad\qquad\qquad\begin{align} M^* + Q &\underset{k_{-d}}{\stackrel {kd}{\rightleftharpoons}}  (M^*\cdots Q) \overset{k_R}\longrightarrow products \end{align}\qquad\qquad\qquad\qquad\qquad\text{(5a)}$$
+# 
+# where $k_d$ is the diffusion controlled rate constant for the approach of the molecules and $k_{-d}$ and $k_R$ the first-order rate constants for the break up of the complex to reactants and products respectively.
+# 
+# The rate of change of the excited complex is 
+# 
+# $$\displaystyle \frac{[M^*\cdots Q]}{dt}= k_d[M^*][Q]-(k_{-d}+k_R)[M^*\cdots Q]$$
+# 
+# We could include the decay of $M^*$ by fluorescence or phosphorescence and solve the equation but it is necessary only to consider this at steady state in which case
+# 
+# $$\displaystyle [M^*\cdots Q]=\frac{k_d[M^*][Q]}{k_{-d}+k_R}$$
+# 
+# The overall rate of reaction is by definition, $k_q[M^*][Q]$, where $k_q$ is the experimentally measured rate constant, thus 
+# 
+# $$\displaystyle k_R[M^* \cdots Q]= k_q[M^*][Q]$$
+# 
+# and therefore by substituting 
+# 
+# $$\displaystyle k_q= \frac{k_d}{k_{-d}+k_R}k_R$$
+# 
+# **Reaction or Activation Control**. When the reaction is _activation controlled_ this means that the reaction rate constant $k_R$ is small thus the reaction's activation energy is high and many, possibly millions of collisions occur before reaction takes place $k_R \ll k_{-d}$ and $\displaystyle k_q= \frac{k_d}{k_{-d}}k_R$.
+# 
+# **Diffusion Control**. When the reaction is diffusion controlled $k_q=k_d$ and means that the reaction rate constant $k_R$ is so large that reaction occurs essentially on first contact of the two species and then $k_R\gg k_{-d}$. 
+# 
+# The diffusion controlled rate constant has been calculated by Smoluchowski and combined with the Stokes-Einstein equation is 
+# 
+# $$\displaystyle k_d=\frac{8000RT}{3\eta}\qquad\qquad (\mathrm{ dm^3/mol/s})$$ 
+# 
+# where $\eta$ is the viscosity of the solution. In ethanol $k_d = 5.0\cdot 10^9\; \mathrm{dm^3 mol^{-1} s^{-1}}$ where viscosity $\eta = 1.2$ cP (cP = centiPoise = $10^{-3}$ Pa s). In glycerol $k_d = 4.4\cdot 10^6 \mathrm{dm^3 mol^{-1} s^{-1}}$ where $\eta = 14900$ cP.
+# 
+# The difference in quenching rate constant with molecular oxygen between singlet and triplet excited states can only be understood if the spin properties of quencher and excited state are examined.  The oxygen molecule is paramagnetic with a triplet ground state, the term symbol is $^3\Sigma_g^-$. There are two low lying excited states $^1\Delta$ at $8000\;\mathrm{cm^{-1}}$ ($\approx 1250$ nm) and $^1\Sigma_g^+$ at $13000\;\mathrm{cm^{-1}}$ ($\approx 770$ nm). Both the singlet and triplet excited state energies of the excited aromatic molecule are at least $10000\;\mathrm{cm^{-1}}$ above that of the oxygen $^1\Sigma$.
+# 
+# The spin angular momentum has to be conserved in any transition thus there are three pathways for quenching of the two triplet states. The initial states are the excited triplet state $T$ and O$_2$ ground state. The energy of the aromatic's excited state must also be greater than any of the quencher states. (In the scheme $^1M_0$ is the aromatic molecule's ground state). 
+# 
+# $$\displaystyle \begin{align}T + \;^3O_2 &\underset{k_{-d}}{\stackrel {kd}{\rightleftharpoons}}\; ^1(T\cdots O_2) \stackrel{k_e} \longrightarrow \; ^1M_0 + \; ^1O_2 \qquad (\text{energy transfer to  } \;^1\Delta \;; \; ^1\Sigma) \\
+# &\rightleftharpoons\; ^3(T\cdots O_2) \stackrel{k_{isc}}\longrightarrow \;^1M_0+ \;^3O_2 \qquad(\text{intersystem crossing to }\;^3\Sigma_g^-)\\
+# &\rightleftharpoons\; ^5(T\cdots O_2)\stackrel{k=0} \longrightarrow \qquad(\text{no product })\\
+# \end{align}$$
+# 
+# The superscript number $1,3, 5$ is the _spin multiplicity_ of each type of complex. There are four electrons in the complex so the total spin is $2$ but according to addition rules for quantum spin the other allowed values values are $2,1,0$ via a Clebsh-Gordon series. The total number of types of complexes is given by the total multiplicity which is $9$. If  $S$ is the total spin quantum number which is $0,1,2$ for singlet, triplet and quartet complexes respectively the multiplicity of each is $2S+1$ making a total of $9$ types. 
+# 
+# Because the quintet complex can form no product as the triplet is an aromatic, the quenching rate constant is limited to $4/9$ of its potential maximum, and has to be the sum of that due to energy transfer and intersystem crossing and this occurs via spin orbit coupling. The rate constant is 
+# 
+# $$\displaystyle k_q=\frac{3}{9}k_d\frac{k_{isc}}{k_{isc}+k_{-d}}+\frac{1}{9}k_d\frac{k_e}{k_e+k_{-d}} $$
+# 
+# Experimentally as $k_q=k_d/9$ this implies that $k_e\gg k_{-d} \gg k_{isc}$, and so the experimental data is understood by considering the spin quantum numbers. Recall that the spin quantum number of an electron is $1/2$ with projection or azimuthal or magnetic quantum numbers $\pm 1/2$. 
+# 
+# Notice that this mechanism indicates that triplet-triplet annihilation is a spin allowed process provided the energy is sufficient, i.e. there must be enough energy to produce the singlet product, which means that energy conservation must always apply. Note also that when a singlet excited state is quenched by a triplet there is only one type of complex formed because the singlet has total spin of zero and multiplicity of $1$ which means that quenching always occurs at its full value.
 
 # ### 2.2 The Phase Portrait
 # 
@@ -156,7 +210,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # ____
 # 
 # If a problem is described by two coupled non-linear differential equations $dy/dx = f (x,y)$ and $dz/dx = g(x,y)$ then the phase portrait is not usually plotted but instead the phase plane in which is $y$ vs $z$ is plotted. Chapter 11 gives examples of using the phase plane. Strogatz (1994) discusses phase portraits and phase planes in detail and illustrates these with many interesting examples.
-
+# 
 # ### 3 Phase planes and solving equations by separating variables
 # 
 # #### **(i) Laser Gain** 

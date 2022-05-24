@@ -260,7 +260,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-3/differen-F.html">
-     Limits, l’Hopital’s rule, max and min and Calculus of Variations
+     Limits, l’Hopital’s rule, Maximum, Minimum and Calculus of Variations
     </a>
    </li>
    <li class="toctree-l2">
@@ -974,7 +974,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-B.html">
-     Integrating factors can solve differential equations
+     First order eqns &amp; Integrating factors. Second order eqns, Newtons laws, equations of motion.
     </a>
    </li>
    <li class="toctree-l2">
@@ -1413,13 +1413,24 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#integrating-1-x-produces-a-logarithm">
+  <a class="reference internal nav-link" href="#integrating-1-x-and-1-ax-b-produces-a-logarithm">
    2.3 Integrating
    <span class="math notranslate nohighlight">
     \(1/x\)
    </span>
+   and
+   <span class="math notranslate nohighlight">
+    \(1/(ax+b)\)
+   </span>
    produces a logarithm
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#reaction-on-a-surface">
+     Reaction on a surface
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#partial-fractions">
@@ -1629,8 +1640,8 @@ initial or starting value and the upper limit the final value no matter which is
 \[\begin{split}\displaystyle \begin{array}{lll} \int 1dx= \int dx=x+c  &amp; \int 2dx =2\int dx=2x+c \\[8px] \int d\ln(x) =\ln(x)+c &amp; \int d\sin(x) =\sin(x)+c\end{array}\end{split}\]</div>
 <p>and so on; <span class="math notranslate nohighlight">\(c\)</span> is an arbitrary constant.</p>
 </div>
-<div class="section" id="integrating-1-x-produces-a-logarithm">
-<h2>2.3 Integrating <span class="math notranslate nohighlight">\(1/x\)</span> produces a logarithm<a class="headerlink" href="#integrating-1-x-produces-a-logarithm" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="integrating-1-x-and-1-ax-b-produces-a-logarithm">
+<h2>2.3 Integrating <span class="math notranslate nohighlight">\(1/x\)</span> and <span class="math notranslate nohighlight">\(1/(ax+b)\)</span> produces a logarithm<a class="headerlink" href="#integrating-1-x-and-1-ax-b-produces-a-logarithm" title="Permalink to this headline">¶</a></h2>
 <p>The <span class="math notranslate nohighlight">\(\displaystyle \frac{x^{n+1}}{n + 1}\)</span> rule is not going to work when <span class="math notranslate nohighlight">\(n = -1\)</span> as this will produce <span class="math notranslate nohighlight">\(1/0\)</span> which is infinity. In the case of reciprocal <span class="math notranslate nohighlight">\(x\)</span> the integral is:</p>
 <div class="math notranslate nohighlight">
 \[\int \frac{dx}{x}= \ln(x)+c \qquad \int_a^b \frac{dx}{x}=\ln(b)-\ln(a)=\ln\left(\frac{b}{a}\right)  \tag{7}\]</div>
@@ -1638,6 +1649,17 @@ initial or starting value and the upper limit the final value no matter which is
 <p>Note that to produce a log, the denominator must be <em>linear</em> in <span class="math notranslate nohighlight">\(x\)</span>, e.g. <span class="math notranslate nohighlight">\(2 + 3x\)</span>, but cannot contain anything like <span class="math notranslate nohighlight">\(x^2\)</span> or <span class="math notranslate nohighlight">\(x^3\)</span>. The general formula is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \int\frac{1}{ax+b}dx=\frac{1}{a}\ln(ax+b) +const \tag{8}\]</div>
+<div class="section" id="reaction-on-a-surface">
+<h3>Reaction on a surface<a class="headerlink" href="#reaction-on-a-surface" title="Permalink to this headline">¶</a></h3>
+<p>Suppose that there are a large number of sites on a surface that can accept and react with a molecule reaching this from solution. Any one of the sites can either be occupied or empty. If <span class="math notranslate nohighlight">\(p(t)\)</span> is the chance of being occupied at time <span class="math notranslate nohighlight">\(t\)</span>, let <span class="math notranslate nohighlight">\(k_d \delta t\)</span> be the chance of becoming unoccupied (desorbing) in the interval <span class="math notranslate nohighlight">\(\delta t\)</span>. The average fraction becoming unoccupied is then <span class="math notranslate nohighlight">\(k_d p(t)\delta t\)</span> in the interval <span class="math notranslate nohighlight">\(t\to t+\delta t\)</span>. Similarly, let the chance becoming occupied in the same time be <span class="math notranslate nohighlight">\(k_ap(t)\delta t\)</span> where <span class="math notranslate nohighlight">\(k_a\)</span> is the adsorption rate constant. The fraction of sites occupied is then <span class="math notranslate nohighlight">\(k_ap(t)(1 - p(t))\delta t\)</span> which is the chance of being occupied multiplied by the chance that there is an empty site. The total rate of change in the limit <span class="math notranslate nohighlight">\(\delta t\to dt\)</span> is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{dp}{dt}=k_a p(1-p) - k_d p, \qquad \int\frac{dp}{k_a p(1-p) - k_d p}=\int dt\]</div>
+<p>Integrating this by hand and using the table in section 2.14 or by using Sympy produces, after some  simplification,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \ln\left(\frac{k_a(p-1)+k_d}{k_ap} \right)=(k_d-k_a)t +const\]</div>
+<p>Note that as <span class="math notranslate nohighlight">\(p\)</span> is a probability it is dimensionless, <span class="math notranslate nohighlight">\(k_a,k_d\)</span> have units of s<span class="math notranslate nohighlight">\(^{-1}\)</span>.  The constant is determined by letting <span class="math notranslate nohighlight">\(p_0\)</span> be the value of <span class="math notranslate nohighlight">\(p\)</span> at <span class="math notranslate nohighlight">\(t=0\)</span>.</p>
+<p>This model has also been used to describe how populations of animals change when many different sites are available for them to occupy and also compete for; see Briton (2003).</p>
+</div>
 </div>
 <div class="section" id="partial-fractions">
 <h2>2.4 Partial fractions<a class="headerlink" href="#partial-fractions" title="Permalink to this headline">¶</a></h2>
