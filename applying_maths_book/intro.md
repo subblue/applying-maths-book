@@ -18,4 +18,4 @@ This textbook is primarily intended for final year undergraduate and postgraduat
 
 I would like to thank Dr. David Salt RIP for reading and critically commenting on early drafts of several chapters, David Fogarty for the experimental data used in Chapter 13,  Marcelo de Miranda, Gavin Reid and Briony Yorke for their constructive comments on numerous topics, and to Tom Beddard for help with compiling this web book. I also thank the authors of the books and papers which have formed the basis of several questions and diagrams all of whom I have tried to acknowledge in the text. Finally I thank my family who have received much less of my time and attention than is their due and to whom this work is dedicated.
 
-Email Godfrey at subblue dot com
+Contact me via: <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#103;&#111;&#100;&#102;&#114;&#101;&#121;&#64;&#115;&#117;&#98;&#98;&#108;&#117;&#101;&#46;&#99;&#111;&#109;">&#103;&#111;&#100;&#102;&#114;&#101;&#121;&#64;&#115;&#117;&#98;&#98;&#108;&#117;&#101;&#46;&#99;&#111;&#109;</a>
