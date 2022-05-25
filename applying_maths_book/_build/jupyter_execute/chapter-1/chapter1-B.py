@@ -31,8 +31,8 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # There are very many relationships between the trig functions; some of the most commonly met are, for angles $x$ and $y$ are shown below
 # 
-# $$\displaystyle \textbf{Table of trig relationships}\quad\\
-# \begin{array}{lll}\\
+# $$\displaystyle \textbf{Table of trig relationships}$$
+# $$\displaystyle \begin{array}{lll}\\
 # \hline
 # \sin(-x) =-\sin(x) & \cos(-x)=\cos(x)\\[5pt]
 # \cos^2(x)+\sin^2(x)=1 & \cos^2(x)-\sin^2(x)=2\cos^2(x)-1 = \cos(2x) &\\[5pt]
