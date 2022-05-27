@@ -162,6 +162,7 @@ def lsq(xval,yval,w):
 #----------------------------------  end lsq 
 
 filename='test data.txt'
+# data is at end of book in 'Appendix, some basic Python instructions'
 xv = []                                   # arrays to hold intial data while being read in
 yv = []
 wv = []

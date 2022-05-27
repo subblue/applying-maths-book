@@ -1252,7 +1252,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../references/Python%20crib.html">
-   Some basic Python instructions with a few examples.
+   Appendix:  Some basic Python instructions with a few examples.
   </a>
  </li>
 </ul>
@@ -1517,13 +1517,14 @@ The important part here is to match the data points (<span class="math notransla
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># data extracted from website uk.gov </span>
-<span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;uk-total-covid19-deaths.txt&#39;</span>  <span class="c1"># data is cumulative</span>
-<span class="n">alldata</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span> <span class="k">as</span> <span class="n">ff</span><span class="p">:</span>                <span class="c1"># length not known so append new values</span>
+<span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;UK-covid-deaths.txt&#39;</span>  <span class="c1"># data is cumulative</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span> <span class="k">as</span> <span class="n">ff</span><span class="p">:</span>                
     <span class="n">i</span><span class="o">=</span><span class="mi">0</span>
     <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">ff</span><span class="p">:</span>
-        <span class="n">alldata</span><span class="o">.</span><span class="n">append</span><span class="p">(</span> <span class="nb">int</span><span class="p">(</span><span class="n">line</span> <span class="p">)</span> <span class="p">)</span>      <span class="c1"># save data as an integer</span>
+        <span class="n">temp</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>     <span class="c1"># data is comma separated</span>
 <span class="n">ff</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="n">alldata</span> <span class="o">=</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">temp</span><span class="p">]</span>     <span class="c1"># make list of integers</span>
 
 <span class="n">Lh</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">alldata</span><span class="p">)</span>
 <span class="n">day</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">Lh</span><span class="p">,</span><span class="n">Lh</span><span class="p">)</span>

@@ -143,13 +143,14 @@ print('{:s} {:6.4f} {:s} {:10.4g} {:s} {:f}'.format('k1 = ',k1,', k2= ', k2, ', 
 
 
 # data extracted from website uk.gov 
-filename = 'uk-total-covid19-deaths.txt'  # data is cumulative
-alldata = []
-with open(filename) as ff:                # length not known so append new values
+filename = 'UK-covid-deaths.txt'  # data is cumulative
+
+with open(filename) as ff:                
     i=0
     for line in ff:
-        alldata.append( int(line ) )      # save data as an integer
+        temp = line.split(',')     # data is comma separated
 ff.close()
+alldata = [int(i) for i in temp]     # make list of integers
 
 Lh = len(alldata)
 day = np.linspace(0,Lh,Lh)

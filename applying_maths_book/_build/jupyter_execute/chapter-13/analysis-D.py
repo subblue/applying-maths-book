@@ -124,7 +124,8 @@ def getdata(filename):
 
 # fitting model   y = c1.exp(-c2.x) + c3
 
-filename='exponential-data.txt'  # in rows x , y weighting
+filename='exponential-data.txt'  # in rows x , y weighting, 
+# data is at end of book in 'Appendix, some basic Python instructions'
 
 xval,yval,w = getdata(filename)
 
@@ -300,7 +301,8 @@ print('{:s} {:6.3f} {:s} {:6.3f}'.format('probability of getting chi-sqrd > ',ch
 
 # Algorithm Pricipal component analysis
 
-filename='PCA data.txt'                    # 3 sets of data 10 values each 
+filename='PCA data.txt'                    # 3 sets of data 10 values each
+# data is at end of book in 'Appendix, some basic Python instructions'
 
 xv = []
 yv = []
