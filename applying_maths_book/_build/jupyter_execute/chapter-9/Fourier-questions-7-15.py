@@ -90,3 +90,5 @@
 # (b) calculate the number of modes or waves to be added together in the laser to form this mode-locked pulse if the laser cavity is 1.5 m long. The photons fit into the cavity in integer numbers of half wavelengths.
 # 
 # **Strategy:** Take the wavelength spread to be the full width at half maximum (fwhm) of the frequency spread, which is calculated with a Fourier transform. The scaling has to be correct in this calculation. It will be useful to work in units of fs and wavenumbers.
+
+# 

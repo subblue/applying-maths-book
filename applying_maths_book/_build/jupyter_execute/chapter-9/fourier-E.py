@@ -534,6 +534,7 @@ plt.show()
 # Step (b) effectively maps the negative frequencies  onto the positive ones so simply doubles the positive signal.
 # 
 # The python code to do this is shown below. The function is that used in question 16, $x(t)=\cos(\omega t/a)e^{-(t/a)^2/2}$ with $a=5,\;\omega=10$.
+# 
 
 # In[5]:
 

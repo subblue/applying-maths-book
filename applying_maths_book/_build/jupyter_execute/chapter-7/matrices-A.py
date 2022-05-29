@@ -167,7 +167,7 @@ M.det()  # determinant produces a polynomial
 
 # #### **(i) Rotation matrix**
 # 
-# **(i)**  To work out the determinant of the matrix   $\displaystyle \begin{vmatrix}
+# To work out the determinant of the matrix  $\displaystyle \begin{vmatrix}
 # \cos(x) & \sin(x)\\
 # -\sin(x) &\cos(x)\\
 # \end{vmatrix} $
@@ -181,7 +181,7 @@ M.det()  # determinant produces a polynomial
 # 
 # and by the well-known trigonometric identity, $\cos^2(x) + \sin^2(x) = 1$. The determinant is therefore unity. This matrix is a rotation matrix and its use is described in Section 7. Because the determinant is one the matrix does not distort the object rotated.
 # 
-# #### **(ii) Polynomial **
+# #### **(ii) Polynomial**
 # The determinant $\displaystyle \begin{vmatrix} x & 1 & 1\\ 1 & x & 1 \\ 1 & 1 & x \\\end{vmatrix}=0$ is another way of writing a polynomial. Since there are three occurrences of x the determinant should produce a cubic equation. Expanding by using cofactors, as in equation (7.2), produces
 # 
 # $$\displaystyle \begin{vmatrix} x & 1 & 1\\ 1 & x & 1 \\ 1 & 1 & x \\\end{vmatrix}=x(x^2-1)-(x-1)+(1-x)=x^3-3x+2=0$$

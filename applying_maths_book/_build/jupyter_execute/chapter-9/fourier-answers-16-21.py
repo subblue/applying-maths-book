@@ -391,7 +391,7 @@ plt.show()
 # In[18]:
 
 
-# make some noisy data. The window has width m=3. This code generates the data shown in the text.
+#  make some noisy data. The window has width m=3. This code generates the data shown in the text.
 fig1= plt.figure(figsize=(5.0,5.0))
 n = 2**9
 noise = [ 0 for i in range(n)]

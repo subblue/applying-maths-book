@@ -282,9 +282,13 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # $$\displaystyle \begin{bmatrix} \pmb{A},\pmb{B} \end {bmatrix} = \pmb{AB}-\pmb{BA} \tag{8}$$
 # 
-# If the result is the null matrix $\pmb{0}$, which is full of zeros, $\pmb{A}$ and $\pmb{B}$ are said to *commute*: $[ \pmb{A},\pmb{B} ] = \pmb{AB}-\pmb{BA}=\pmb{0}$. 
+# If the result is the null matrix $\pmb{0}$, which is full of zeros, $\pmb{A}$ and $\pmb{B}$ are said to *commute*: 
 # 
-# Sometimes expressions such as $[\pmb{C},[\pmb{A,B}]]$ may be met. This means: work out the inside commutation first, then the commutation with each term that this produces: $[\pmb{C},[\pmb{A},\pmb{B}]] = [\pmb{C}, \pmb{AB} - \pmb{BA}] = [\pmb{C}, \pmb{AB}] - [\pmb{C}, -\pmb{BA}]$.
+# $$\displaystyle [ \pmb{A},\pmb{B} ] = \pmb{AB}-\pmb{BA}=\pmb{0}$$ 
+# 
+# Sometimes expressions such as $[\pmb{C},[\pmb{A,B}]]$ may be met. This means: work out the inside commutation first, then the commutation with each term that this produces: 
+# 
+# $$\displaystyle [\pmb{C},[\pmb{A},\pmb{B}]] = [\pmb{C}, \pmb{AB} - \pmb{BA}] = [\pmb{C}, \pmb{AB}] - [\pmb{C}, -\pmb{BA}]$$
 # 
 # Commutation is very important in quantum mechanics; only observables that commute can be observed simultaneously. Position and momentum, which do not commute, or those components of angular momentum, which also do not commute, have values that are restricted by an amount determined by the Heisenberg Uncertainty Principle when being observed simultaneously.
 # 

@@ -99,4 +99,10 @@
 # **Strategy:** Use the method described in Section 10.3. Decide how many data points to use, which will depend on the highest frequency of the pulse, and is determined by the Nyquist frequency, Section 9.2.
 # 
 # ### Q21 Moving average
-# Use the moving average method to write a recursive algorithm in Python to effect smoothing on a set of data of your choice as shown in Fig. 48. 
+# Use the moving average method to write a recursive algorithm in Python to effect smoothing on a set of data of your choice as shown in Fig. 48.
+
+# In[ ]:
+
+
+
+
