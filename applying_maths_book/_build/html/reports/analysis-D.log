@@ -57,8 +57,7 @@ for k in range(m):                         # calculate mean value
     means[:,k] = s/n  
     pass 
 X = data - means                           # subtract mean 
-C = np.transpose(X) @ X/(n-1)              # make covariance matrix ( @ is matrix multiply)
-
+C = (np.transpose(X) @ X)/(n-1)            # make covariance matrix ( @ is matrix multiply)
 (eigval,eigvec) = lina.eig(C)              # eigvals, eigvects of covariance. eigvects normalised
 
 indx = np.argsort(eigval)               
@@ -80,7 +79,7 @@ DR = np.transpose(V @ Y) + means           # DR is data on new axes
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mZeroDivisionError[0m                         Traceback (most recent call last)
-[0;32m/var/folders/gn/whk4pp2x4kz_ftg0b1ycmh340000gn/T/ipykernel_21779/3428373870.py[0m in [0;36m<module>[0;34m[0m
+[0;32m/var/folders/gn/whk4pp2x4kz_ftg0b1ycmh340000gn/T/ipykernel_26968/1748348589.py[0m in [0;36m<module>[0;34m[0m
 [1;32m     36[0m     [0;32mfor[0m [0mi[0m [0;32min[0m [0mrange[0m[0;34m([0m[0mn[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
 [1;32m     37[0m         [0ms[0m [0;34m=[0m [0ms[0m [0;34m+[0m [0mdata[0m[0;34m[[0m[0mi[0m[0;34m,[0m[0mk[0m[0;34m][0m[0;34m[0m[0;34m[0m[0m
 [0;32m---> 38[0;31m     [0mmeans[0m[0;34m[[0m[0;34m:[0m[0;34m,[0m[0mk[0m[0;34m][0m [0;34m=[0m [0ms[0m[0;34m/[0m[0mn[0m[0;34m[0m[0;34m[0m[0m

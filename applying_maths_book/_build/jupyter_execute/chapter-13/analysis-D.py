@@ -299,7 +299,7 @@ print('{:s} {:6.3f} {:s} {:6.3f}'.format('probability of getting chi-sqrd > ',ch
 # In[4]:
 
 
-# Algorithm Pricipal component analysis
+# Algorithm Pricipal component analysis 
 
 filename='PCA data.txt'                    # 3 sets of data 10 values each
 # data is at end of book in 'Appendix, some basic Python instructions'
@@ -339,8 +339,7 @@ for k in range(m):                         # calculate mean value
     means[:,k] = s/n  
     pass 
 X = data - means                           # subtract mean 
-C = np.transpose(X) @ X/(n-1)              # make covariance matrix ( @ is matrix multiply)
-
+C = (np.transpose(X) @ X)/(n-1)            # make covariance matrix ( @ is matrix multiply)
 (eigval,eigvec) = lina.eig(C)              # eigvals, eigvects of covariance. eigvects normalised
 
 indx = np.argsort(eigval)               
@@ -368,9 +367,3 @@ DR = np.transpose(V @ Y) + means           # DR is data on new axes
 # The figure shows the data (centred at zero by subtracting the mean values), and the three principal axes. The first eigenvector, (1) the major axis, is drawn in a red line. The lengths are arbitrary. The eigenvalues are $4.9, 0.11, 0.084$. On the right of the figure, two plots are superimposed. The light blue symbols are the data reconstructed from the first two eigenvectors using equations 53 and 54. The original data is flattened onto the plane of the first two principal axes because the third coordinate is ignored. The second set of data (red symbols) is reconstructed using only the first eigenvalue and is a set of points lying along the principal axis at their relative positions when projected from the other axes. If all three eigenvectors are used the original data is reformed exactly.
 # 
 # Related to PCA is the method of singular value decomposition (SVD). Formally, it is a technique in which one matrix is split into three, one of them is diagonal and the other two are row and column orthogonal as are eigenvector modal matrices (Prest et al. 1986). The reason for expanding a matrix in this way is that it can now be inverted even though it is close to being singular, i.e. inverting it would normally produce infinity or a number that approximates this, and normal inversion methods fail. This method could be used to invert the $A$ matrix in non-linear least squares, in the example given. The interest in SVD is however not primarily to do with the mathematics but in un-ravelling complex information just as in PCA. SVD can be used either directly on raw data, not the covariance as in PCA, or as a mathematical method to perform PCA (Jolliffe 2002).
-
-# In[ ]:
-
-
-
-

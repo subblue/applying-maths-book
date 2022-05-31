@@ -3,7 +3,7 @@
 
 # ## Questions 8 - 12
 
-# ### Q8
+# ### Q8 bra-ket
 # Using the bra-ket notation, work out the following matrix multiplications in the orthonormal basis of an s and two p orbitals $(|s\rangle,|p_x\rangle,|p_y\rangle)$, for the linear combination of wavefunctions
 # 
 # $$\displaystyle |\psi\rangle=c_s|s\rangle+c_x|px\rangle+c_y |p_y\rangle,\\ |\varphi\rangle=b_s|s\rangle+b_x|p_x\rangle+by |p_y\rangle$$
@@ -26,11 +26,11 @@
 # 
 # $$ \displaystyle |\psi\rangle =\begin{bmatrix} c_s\\c_x\\c_y\end{bmatrix};\quad |\varphi\rangle =\begin{bmatrix} b_s\\b_x\\b_y\end{bmatrix}$$
 # 
-# ### Q9
+# ### Q9 bra-Ket
 # Using $\psi$ and $\varphi$ defined in question 8, show that $\langle \psi|\varphi\rangle = \langle\varphi|\psi\rangle^*$ is a general statement for any bra-ket pair.
 #         
 #         
-# ### Q10
+# ### Q10 Proton NMR
 # In the NMR spectroscopy of a single $^1$H, with spin $1/2$ quantum number, a two element basis set can be defined as $(\alpha, \beta)$ to represent the spin state. The $\alpha$ spin state $(s = 1/2, m = 1/2)$ is represented as the column vector $\alpha =\begin{bmatrix} 1\\0\end{bmatrix}$ and as this is a basis element (basis ket) of the standard basis set it is zero except for one element which is unity. Similarly $\beta \equiv (s = 1/2, m = -1/2)$ is represented as the column vector $\beta =\begin{bmatrix} 0\\1\end{bmatrix}$.
 # 
 # The angular momentum operator $\pmb{I}$ has components in the $x-, y-, z$-directions and because it is an operator it is represented as a matrix. Angular momentum has units of $\hbar$ and the components of the angular momentum operators can be represented as the (Pauli) matrices,
@@ -51,7 +51,7 @@
 # 
 # (e) Using the operators $\pmb{I}^+ = \pmb{I}_x + i\pmb{I}_y$ and $\pmb{I}^- = \pmb{I}_x - i\pmb{I}_y$, show that these are raising or lowering operators which convert the eigenstate $\alpha$ or $\beta$ into the other.
 # 
-# ### Q11
+# ### Q11 Raising - lowering operators
 # Angular momentum raising and lowering (shift) operators $\pmb{L}$ move a system from one state to another. They have the property
 # 
 # $$\displaystyle \pmb{L}^+|L,m\rangle=\sqrt{L(L+1)-m(m+1)} |L,m+1\rangle \\\pmb{L}^-|L,m\rangle=\sqrt{L(L+1)-m(m-1)} |L,m-1\rangle $$
@@ -73,7 +73,7 @@
 # if $L = 3/2$. Define vectors so that they are orthonormal. (c) The raising and lowering operators form a block diagonal matrix. Individual blocks of which can be calculated as in (a) or a more extensive basis set formed and the whole matrix calculated. It may be useful to define a python/Sympy  function to work out terms in the operator according to the $\pmb{L}^+, \pmb{L}^-$ equations.
 # 
 # 
-# ### Q12
+# ### Q12 Raising - lowering operators
 # (a) Using the raising and lowering operator in the previous question produce equations 19, 20 starting from 
 # 
 # $$\displaystyle \pmb{L} = (\pmb{L}^+ + \pmb{L}^-)\,/\,2\quad\text{and}\quad \pmb{L} = (\pmb{L}^+ - \pmb{L}^-)\,/\,2i$$

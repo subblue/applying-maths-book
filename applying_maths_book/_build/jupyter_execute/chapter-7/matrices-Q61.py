@@ -16,7 +16,6 @@
 # ![Drawing](matrices-fig70.png)
 # 
 # Figure 70. A linear triatomic molecule.
-# _______
 # 
 
 # In[ ]:

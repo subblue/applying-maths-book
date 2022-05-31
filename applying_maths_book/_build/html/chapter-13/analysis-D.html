@@ -1632,7 +1632,7 @@ $<span class="math notranslate nohighlight">\(\displaystyle \boldsymbol X= \bold
 <p>A python PCA algorithm is detailed below</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Algorithm Pricipal component analysis</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Algorithm Pricipal component analysis </span>
 
 <span class="n">filename</span><span class="o">=</span><span class="s1">&#39;PCA data.txt&#39;</span>                    <span class="c1"># 3 sets of data 10 values each</span>
 <span class="c1"># data is at end of book in &#39;Appendix, some basic Python instructions&#39;</span>
@@ -1672,8 +1672,7 @@ $<span class="math notranslate nohighlight">\(\displaystyle \boldsymbol X= \bold
     <span class="n">means</span><span class="p">[:,</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">s</span><span class="o">/</span><span class="n">n</span>  
     <span class="k">pass</span> 
 <span class="n">X</span> <span class="o">=</span> <span class="n">data</span> <span class="o">-</span> <span class="n">means</span>                           <span class="c1"># subtract mean </span>
-<span class="n">C</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="n">X</span><span class="p">)</span> <span class="o">@</span> <span class="n">X</span><span class="o">/</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>              <span class="c1"># make covariance matrix ( @ is matrix multiply)</span>
-
+<span class="n">C</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="n">X</span><span class="p">)</span> <span class="o">@</span> <span class="n">X</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>            <span class="c1"># make covariance matrix ( @ is matrix multiply)</span>
 <span class="p">(</span><span class="n">eigval</span><span class="p">,</span><span class="n">eigvec</span><span class="p">)</span> <span class="o">=</span> <span class="n">lina</span><span class="o">.</span><span class="n">eig</span><span class="p">(</span><span class="n">C</span><span class="p">)</span>              <span class="c1"># eigvals, eigvects of covariance. eigvects normalised</span>
 
 <span class="n">indx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">eigval</span><span class="p">)</span>               
@@ -1695,16 +1694,10 @@ $<span class="math notranslate nohighlight">\(\displaystyle \boldsymbol X= \bold
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ZeroDivisionError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="n">gn</span><span class="o">/</span><span class="n">whk4pp2x4kz_ftg0b1ycmh340000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_21779</span><span class="o">/</span><span class="mf">3428373870.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">     </span><span class="mi">36</span>     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-<span class="g g-Whitespace">     </span><span class="mi">37</span>         <span class="n">s</span> <span class="o">=</span> <span class="n">s</span> <span class="o">+</span> <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">k</span><span class="p">]</span>
-<span class="ne">---&gt; </span><span class="mi">38</span>     <span class="n">means</span><span class="p">[:,</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">s</span><span class="o">/</span><span class="n">n</span>
-<span class="g g-Whitespace">     </span><span class="mi">39</span>     <span class="k">pass</span>
-<span class="g g-Whitespace">     </span><span class="mi">40</span> <span class="n">X</span> <span class="o">=</span> <span class="n">data</span> <span class="o">-</span> <span class="n">means</span>                           <span class="c1"># subtract mean</span>
-
-<span class="ne">ZeroDivisionError</span>: division by zero
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>eigenvalues and eigenvectors
+1 4.886993943985875 [ 0.28976365  0.9562666  -0.03989011]
+2 0.11490529483430316 [ 0.94367801 -0.2784974   0.17863651]
+3 0.08368965006871082 [-0.15971484  0.08940578  0.98310619]
 </pre></div>
 </div>
 </div>
