@@ -1347,6 +1347,15 @@
   <a class="reference internal nav-link" href="#l-hopital-s-rule">
    6  l’ Hopital’s rule
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#diffraction-intensity">
+     <strong>
+      Diffraction intensity
+     </strong>
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#beware-of-false-fractions">
@@ -1431,6 +1440,20 @@
 <div class="math notranslate nohighlight">
 \[\displaystyle   \lim_{x\to 0} \left(\frac{1}{x}-\frac{1}{\sin(x)}\right)= \lim_{x\to 0} \frac{\sin(x)-x}{x\sin(x)}\to \frac{\cos(x)-1}{x\cos(x)+\sin(x)}  \to \frac{-\sin(x)}{-x\sin(x)+2\cos(x)} \to 0\]</div>
 <p>In the last step substituting for <span class="math notranslate nohighlight">\(x=0\)</span> gives the ratio as <span class="math notranslate nohighlight">\(0/1\)</span> so  the limit is zero.</p>
+<div class="section" id="diffraction-intensity">
+<h3><strong>Diffraction intensity</strong><a class="headerlink" href="#diffraction-intensity" title="Permalink to this headline">¶</a></h3>
+<p>The intensity of line of <span class="math notranslate nohighlight">\(N\)</span> emitters, such as point sources that are also coherent as occurs in the theory of interference and diffraction, is given by</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle I=I_0\frac{\sin^2(N\delta/2)}{\sin^2(\delta/2)}\]</div>
+<p>where <span class="math notranslate nohighlight">\(I_0\)</span> is the initial intensity of each emitter and <span class="math notranslate nohighlight">\(I\)</span> the intensity when the phase difference between emitters is <span class="math notranslate nohighlight">\(\delta\)</span>. As each emitter radiates over all <span class="math notranslate nohighlight">\(4\pi\)</span> angles only at certain values of these angles do the waves add up, i.e. they are in phase and so form a maxima and the equation describes how the intensity changes with phase. See Chapters 9 &amp; 10 of ‘Optics’ by Hecht &amp; Zajac (1982).</p>
+<p>When <span class="math notranslate nohighlight">\(N=1, I=I_0\)</span> and when <span class="math notranslate nohighlight">\(N=2,I=4I_0\cos^2(\delta/2)\)</span>, but what is the maximum intensity for any <span class="math notranslate nohighlight">\(N\)</span>? To find this we can use l’Hopital’s rule with <span class="math notranslate nohighlight">\(\delta=2m\pi,\;m=0,\pm 1,\pm 2\cdots\)</span> meaning that the phase difference must be equivalent to a whole number of wavelengths for the intensity to be at a maximum. Simplifying gives</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{\sin^2(N\delta/2)}{\sin^2(\delta/2)} = \left(\frac{\sin(N\delta/2)}{\sin(\delta/2)}\right)^2\]</div>
+<p>thus we need only</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \lim_{\delta\to 0}\frac{\sin(N\delta/2)}{\sin(\delta/2)}\to\frac{N\cos(N\delta/2)/2}{\cos(\delta/2)/2}=N\]</div>
+<p>making the maximum intensity <span class="math notranslate nohighlight">\(I=N^2I_0\)</span> when <span class="math notranslate nohighlight">\(\delta=2\pi m\)</span> which makes the cosines <span class="math notranslate nohighlight">\(1\)</span>. See fig 15 in chapter 9, ‘Fourier Transforms’ for a figure of the sinc function where <span class="math notranslate nohighlight">\(\mathrm{sinc}(ax)=\sin(ax)/\sin(x)\)</span> function.</p>
+</div>
 </div>
 <div class="section" id="beware-of-false-fractions">
 <h2>6.1 Beware of ‘False fractions’<a class="headerlink" href="#beware-of-false-fractions" title="Permalink to this headline">¶</a></h2>

@@ -162,6 +162,8 @@
 # 
 # Harwit, M. & Sloane, N. J. A. (1979), Hadamard Transform Optics, Academic Press.
 # 
+# Hecht, E. & Zajac, A. (1982),Optics, Addison-Wesley Publishing Company.
+# 
 # Heck, A. (1996), Introduction to Maple, Springer. 
 # 
 # Herzberg, G. (1950), Spectra of Diatomic Molecules, 2nd edition, Van Nostrand Reinhold.

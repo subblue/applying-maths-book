@@ -48,6 +48,23 @@
 # 
 # In the last step substituting for $x=0$ gives the ratio as $0/1$ so  the limit is zero.
 # 
+# #### **Diffraction intensity**
+# The intensity of line of $N$ emitters, such as point sources that are also coherent as occurs in the theory of interference and diffraction, is given by
+# 
+# $$\displaystyle I=I_0\frac{\sin^2(N\delta/2)}{\sin^2(\delta/2)}$$
+# 
+# where $I_0$ is the initial intensity of each emitter and $I$ the intensity when the phase difference between emitters is $\delta$. As each emitter radiates over all $4\pi$ angles only at certain values of these angles do the waves add up, i.e. they are in phase and so form a maxima and the equation describes how the intensity changes with phase. See Chapters 9 & 10 of 'Optics' by Hecht & Zajac (1982).
+# 
+# When $N=1, I=I_0$ and when $N=2,I=4I_0\cos^2(\delta/2)$, but what is the maximum intensity for any $N$? To find this we can use l'Hopital's rule with $\delta=2m\pi,\;m=0,\pm 1,\pm 2\cdots$ meaning that the phase difference must be equivalent to a whole number of wavelengths for the intensity to be at a maximum. Simplifying gives 
+# 
+# $$\displaystyle \frac{\sin^2(N\delta/2)}{\sin^2(\delta/2)} = \left(\frac{\sin(N\delta/2)}{\sin(\delta/2)}\right)^2$$
+# 
+# thus we need only
+# 
+# $$\displaystyle \lim_{\delta\to 0}\frac{\sin(N\delta/2)}{\sin(\delta/2)}\to\frac{N\cos(N\delta/2)/2}{\cos(\delta/2)/2}=N$$
+# 
+# making the maximum intensity $I=N^2I_0$ when $\delta=2\pi m$ which makes the cosines $1$. See fig 15 in chapter 9, 'Fourier Transforms' for a figure of the sinc function where $\mathrm{sinc}(ax)=\sin(ax)/\sin(x)$ function.
+# 
 # ### 6.1 Beware of 'False fractions'
 # 
 # Sometimes a limit is required but the expression is not really a fraction, for example $\displaystyle \lim_{x\to 1} \frac{x^4-1}{x-1} $ which looks like a fraction but is simplified to $\displaystyle \lim_{x\to 1} \frac{(x-1)(x^3+x^2+x+1)}{(x-1)} $ and because the value $x = 1$ is never reached ( we are seeking the limit to not the value at $x = 1$) the $x-1$ terms can be cancelled out leaving $\lim_{x\to 1} (x^3+x^2+x+1)=4 $
