@@ -1,0 +1,1500 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Moments of Inertia &#8212; Applying Maths in the Chemical &amp; Biomolecular Sciences</title>
+    
+  <link href="../../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/togglebutton.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../../_static/book-cover.jpg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Applying Maths in the Chemical & Biomolecular Sciences</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../intro.html">
+   Applying Maths in the Chemical and Biomolecular Sciences.
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../chapter-1/chapter1-intro.html">
+   1. Numbers, Equations, Operators, and Algorithms.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-1/chapter1-A.html">
+     Numbers to Algorithms.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-1/chapter1-Q1-7.html">
+     Questions 1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-1/chapter1-B.html">
+     Trig, hyperbolic and inverse functions, waves, polar coordinates &amp; factorials
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-1/chapter1-Q8-16.html">
+     Questions 8 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-1/chapter1-C.html">
+     Sophisticated Counting.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-1/chapter1-Q17-34.html">
+     Questions 17 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-1/chapter1-D.html">
+     Modulo arithmetic,
+     <span class="math notranslate nohighlight">
+      \(\delta\)
+     </span>
+     functions, types of  series &amp;  estimating quantities
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-1/chapter1-Q35-39.html">
+     Questions 35 - 39
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-1/chapter1-answers-1-7.html">
+     Solutions Q1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-1/chapter1-answers-8-16.html">
+     Solutions Q8 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-1/chapter1-answers-17-34.html">
+     Solutions Q17 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-1/chapter1-answers-35-39.html">
+     Solutions Q35 - 39
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../chapter-2/chapter2-intro.html">
+   2. Complex numbers.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-2/chapter2-A.html">
+     Real, imaginary, conjugate and modulus
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-2/chapter2-Q-1-9.html">
+     Questions 1 - 9
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-2/chapter2-B.html">
+     De Moivre’s theorem and integer powers of complex numbers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-2/chapter2-Q-10-13.html">
+     Questions 10 -13
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-2/chapter2-C.html">
+     Euler’s theorem
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-2/chapter2-Q-14-27.html">
+     Questions 14 - 27
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-2/chapter2-answers.html">
+     Solutions Q1 - 27
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../chapter-3/differen-intro.html">
+   3. Differentiation.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-A.html">
+     Differentiation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-B.html">
+     Trig functions, logs, power, reciprocals and integrals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-C-Q-4-11.html">
+     Questions 1-11
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-D.html">
+     Product rule and function of function or chain rule.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-E-Q-12-42.html">
+     Questions 12-42
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-F.html">
+     Limits, l’Hopital’s rule, Maximum, Minimum and Calculus of Variations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-G-Q-43-73.html">
+     Questions 43 - 73
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-H.html">
+     Numerically finding the roots of an equation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-I-Q-74-85.html">
+     Questions 74 - 85
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-J.html">
+     Minimizing or maximizing with constraints: Lagrange Undetermined Multipliers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-K-Q-86-92.html">
+     Questions 86 - 92
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-L.html">
+     Partial differentiation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-M-Q-93-114.html">
+     Questions 93-114
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-M1.html">
+     Differentiation of vectors
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-N-answers-1-11.html">
+     Solutions Q 1-11
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-O-answers-12-42.html">
+     Solutions Q 12-42
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-P-answers-43-73.html">
+     Solutions Q 43 - 73
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-Q-answers-74-85.html">
+     Solutions Q 74 - 85
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-R-answers-86-92.html">
+     Solutions Q 86 - 94
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-S-answers-93-114.html">
+     Solutions Q 93-114
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../chapter-4/integration-intro.html">
+   4. Integration.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-A.html">
+     Integration basics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-Q1-14.html">
+     Questions 1-14
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-B.html">
+     Integration by substitution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-Q15-30.html">
+     Questions 15-30
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-C.html">
+     Using parametric equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-Q31-48.html">
+     Questions 31 - 48
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-D.html">
+     Calculating an Average Value.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-Q49-72.html">
+     Questions 49 - 72
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-E.html">
+     The Variational Method in Quantum Mechanics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-Q73-77.html">
+     Questions 73 - 77
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-F.html">
+     Multiple integrals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-Q78-86.html">
+     Questions 78 - 86
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-G.html">
+     Calculating the energy of a chemical bond using molecular orbitals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-H.html">
+     Line integrals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-Q87-96.html">
+     Questions 87 - 96
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-answers-1-14.html">
+     Solutions Q1 - 14
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-answers-15-30.html">
+     Solutions Q15 - 30
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-answers-31-48.html">
+     Solutions Q31 - 48
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-answers-49-72.html">
+     Solutions Q49 - 72
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-answers-73-96.html">
+     Solutions Q73 - 96
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../chapter-5/chapter-5-intro.html">
+   5. Summations, Series and expansion of Functions.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-5/chapter-5-A.html">
+     Series, averages, partition functions, DNA melting, atom entropy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-5/chapter-5-B-Q1-13.html">
+     Questions 1 - 13
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-5/chapter-5-E.html">
+     Maclaurin and Taylor series expansions. Paramagnetic spins. Euler-Maclaurin formula.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-5/chapter-5-F-Q14-34.html">
+     Questions 14 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-5/chapter-5-G-Q35-44.html">
+     Questions 35 - 44
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-5/chapter-5-perturbation-A.html">
+     Perturbation Theory
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-5/chapter-5-perturbation-B-Q45-48.html">
+     Questions 45 - 48
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-5/chapter-5-perturbation-C.html">
+     Quantum superposition and wavepackets.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-5/chapter-5-perturbation-D-Q49-52.html">
+     Questions 49 - 52
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-5/chapter-5-answers-1-7.html">
+     Solutions Q 1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-5/chapter-5-answers-8-13.html">
+     Solutions Q8 - 13
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-5/chapter-5-answers-14-26.html">
+     Solutions Q 14 - 26
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-5/chapter-5-answers-27-32.html">
+     Solutions Q27 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-5/chapter-5-answers-33-44.html">
+     Solutions Q33 - 44
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-5/chapter-5-answers-45-52.html">
+     Solutions Q45 - 52
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../chapter-6/vectors-intro.html">
+   6. Vectors.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-A.html">
+     Vector basics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-Q1-24.html">
+     Questions 1 - 24
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-B.html">
+     Projections and components
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-Q25-32.html">
+     Questions 25 - 32
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-C.html">
+     Axes need not be right-angled or of equal length
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-Q33-38.html">
+     Questions 33 - 38
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-D.html">
+     Basis sets with more than three dimensions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-Q39-46.html">
+     Questions 39 - 46
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-E.html">
+     Cross product or vector product
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-Q47-52.html">
+     Questions 47 - 52
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-F.html">
+     Torsion or dihedral angles
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-Q53-48.html">
+     Questions 53 - 48
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-G.html">
+     Torque and angular momentum
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-Q59-61.html">
+     Questions 59 - 61
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-answers-Q1-24.html">
+     Solutions Q1 - 24
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-answers-Q25-32.html">
+     Solutions Q25 - 32
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-answers-Q33-38.html">
+     Solutions Q33 - 38
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-answers-Q39-46.html">
+     Solutions Q39 - 46
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-answers-Q47-52.html">
+     Solutions Q47 - 52
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-answers-Q53-61.html">
+     Solutions Q53 - 61
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../chapter-7/matrices-intro.html">
+   7. Matrices
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-A.html">
+     Determinants
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-Q1-10.html">
+     Questions  1 - 10
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-B.html">
+     Matrices
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-Q11-16.html">
+     Questions  11 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-C.html">
+     Molecular Group Theory
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-Q17-30.html">
+     Questions  17 - 30
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-D.html">
+     Rotation matrices: moving molecules
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-Q31-34.html">
+     Questions 31 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-E.html">
+     Matrices in optics and designing laser cavities
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-Q35-39.html">
+     Questions 35 - 39
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-F.html">
+     Polarizing optics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-Q40-44.html">
+     Questions 40 - 44
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-G.html">
+     Solving equations using matrices. Eigenvectors &amp; Eigenvalues.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-Q45-50.html">
+     Questions 45 - 50
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-H.html">
+     Rate equations and Chemical Kinetics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-Q51-54.html">
+     Questions 51 - 54
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-I.html">
+     Molecular vibrations and pendulums
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-Q55-58.html">
+     Questions 55 - 58
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-J.html">
+     Moments of Inertia
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-Q59-60.html">
+     Questions 59 - 62
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-K.html">
+     Calculating a bond length using moments of inertia
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-Q61.html">
+     Question 61
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-L.html">
+     Principal axes for Moments of Inertia
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-Q62.html">
+     Question 62
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-answersQ1-10.html">
+     Solutions Q1 - 10
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-answersQ11-16.html">
+     Solutions Q11 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-answersQ17-30.html">
+     Solutions Q17 - 30
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-answersQ31-34.html">
+     Solutions Q31 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-answersQ35-39.html">
+     Solutions Q35 - 39
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-answersQ40-44.html">
+     Solutions Q40 - 44
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-answersQ45-50.html">
+     Solutions Q45 - 50
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-answersQ51-54.html">
+     Solutions Q51 - 54
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-answersQ55-58.html">
+     Solutions Q55 - 58
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-answersQ59-61.html">
+     Solutions Q59 - 61
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../chapter-8/matricesQM-intro.html">
+   8. Matrices in Quantum Mechanics
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-8/matricesQM-A.html">
+     Matrices in Quantum Mechanics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-8/matricesQM-Q1-7.html">
+     Questions 1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-8/matricesQM-B.html">
+     Basis sets and bra-ket algebra
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-8/matricesQM-Q8-12.html">
+     Questions 8 - 12
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-8/matricesQM-C.html">
+     Continuous basis sets
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-8/matricesQM-answers1-7.html">
+     Solutions Q1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-8/matricesQM-answers8-12.html">
+     Solutions Q8 - 12
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../chapter-9/Fourier-intro.html">
+   9. Fourier Series and Transforms.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-9/Fourier-A-B.html">
+     Fourier series, Gibbs phenomenon, generalised series.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-9/Fourier-questions-1-6.html">
+     Questions 1 - 6
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-9/Fourier-C.html">
+     Fourier Transforms
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-9/Fourier-questions-7-15.html">
+     Questions 7 - 15
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-9/Fourier-D.html">
+     Convolution and Autocorrelation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-9/Fourier-questions-16-21.html">
+     Questions 16 - 21
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-9/Fourier-E.html">
+     Discrete Fourier  (DFT)  and Fast Fourier transforms (FFT)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-9/Fourier-F.html">
+     The Hadamard Transform: Encoding and Decoding
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-9/Fourier-answers-1-6.html">
+     Solutions Q 1 - 6
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-9/Fourier-answers-7-15.html">
+     Solutions Q 7 - 15
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-9/Fourier-answers-16-21.html">
+     Solutions Q 16 - 21
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-9/Fourier-2D-Diffraction.html">
+     The Fourier transform in two dimensions: images and x-ray Diffraction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-9/Fourier-tomography.html">
+     Computed Tomography
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../chapter-10/Diff-eqns-intro.html">
+   10. Differential Equations.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-10/Diff-eqns-A.html">
+     Differential Equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-10/Diff-eqns-Q1-23.html">
+     Questions 1 - 23
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-10/Diff-eqns-B.html">
+     First order eqns &amp; Integrating factors. Second order eqns, Newtons laws, equations of motion.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-10/Diff-eqns-C.html">
+     The ‘D’ operator.  Solving linear differential equations with constant coefficients
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-10/Diff-eqns-D.html">
+     Simultaneous equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-10/Diff-eqns-Q24-37.html">
+     Questions 24 - 37
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-10/Diff-eqns-E.html">
+     Linear equations with variable coefficients
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-10/Diff-eqns-F.html">
+     Partial Differential Equations, PDE
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-10/Diff-eqns-G.html">
+     PDE examples continued
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-10/Diff-eqns-answers-1-21.html">
+     Solutions Q1 - 21
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-10/Diff-eqns-answers-22-37.html">
+     Solutions Q22 - 37
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../chapter-11/num-methods-intro.html">
+   11. Numerical Methods
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-A.html">
+     Numerical Methods
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-Q1-7.html">
+     Questions 1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-B.html">
+     Numerical solution of differential equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-Q8-12.html">
+     Questions 8 - 12
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-C.html">
+     Coupled equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-Q13-16.html">
+     Questions 13 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-D.html">
+     The phase plane, nullclines, and stable points
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-Q17-20.html">
+     Questions 17 - 20
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-E.html">
+     Reaction schemes with feedback
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-Q21-34.html">
+     Questions 21 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-F.html">
+     Boundary value problems.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-Q35-40.html">
+     Questions 35 - 40
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-answers1-7.html">
+     Solutions Q1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-answers8-12.html">
+     Solutions Q8 - 12
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-answers13-16.html">
+     Solutions Q13 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-answers17-20.html">
+     Solutions Q17 - 20
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-answers21-34.html">
+     Solutions Q21 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-answers35-40.html">
+     Solutions Q35 - 40
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../chapter-12/monte-carlo-intro.html">
+   12. Monte Carlo Methods
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+  <label for="toctree-checkbox-12">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-12/monte-carlo-A.html">
+     Monte - Carlo Methods
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-12/monte-carlo-Q1-6.html">
+     Questions 1 - 6
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-12/monte-carlo-B.html">
+     Solving rate equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-12/monte-carlo-Q7-10.html">
+     Questions 7 - 10
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-12/monte-carlo-CC.html">
+     Monte Carlo Simulations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-12/monte-carlo-C.html">
+     Energy transfer. Autocatalytic reaction and spreading of fires
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-12/monte-carlo-Q11-17.html">
+     Questions 11 - 17
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-12/monte-carlo-D.html">
+     The Metropolis algorithm
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-12/monte-carlo-answers1-6.html">
+     Solutions Q1 - 6
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-12/monte-carlo-answers7-10.html">
+     Solutions Q7 - 10
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-12/monte-carlo-answers11-17.html">
+     Solutions Q11 - 17
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../chapter-13/analysis-intro.html">
+   13. Data Analysis
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+  <label for="toctree-checkbox-13">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-13/analysis-A.html">
+     Characterizing experimental data. Accuracy, precision, mean and standard deviation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-13/analysis-Q1-3.html">
+     Questions 1 - 3
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-13/analysis-B.html">
+     Modelling data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-13/analysis-Q4-9.html">
+     Questions 4 - 9
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-13/analysis-C.html">
+     Modelling data is simpler using matrices
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-13/analysis-Q10-11.html">
+     Questions 10 - 13
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-13/analysis-D.html">
+     Non-linear least squares. Least absolute deviation. Principal component analysis
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-13/analysis-answers1-11.html">
+     Solutions Q1 -11
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../chapter-1/chapter1-E.html">
+   SI units, Rounding, converting units &amp; Glossary.
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../references/References.html">
+   References
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../references/Python%20crib.html">
+   Appendix:  Some basic Python instructions with a few examples.
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../../_sources/_build_/jupyter_execute/chapter-7/matrices-J.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/_build_/jupyter_execute/chapter-7/matrices-J.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-rotational-motion-of-molecules">
+   15.1 The rotational motion of molecules
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#angular-momentum-and-moment-of-inertia">
+   15.2 Angular momentum and moment of inertia
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#solid-bodies">
+   15.3 Solid bodies
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#discrete-bodies-molecules">
+   15.4 Discrete bodies: molecules
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="moments-of-inertia">
+<h1>Moments of Inertia<a class="headerlink" href="#moments-of-inertia" title="Permalink to this headline">¶</a></h1>
+<p>Angular momentum plays a central role in chemistry, but this is usually in the context of nuclear and electron spin; for example, nuclear spin gives rise to NMR and electron spin (EPR) spectroscopies, as well as being essential for the formation of the chemical bond. The rotation of whole molecules is a natural consequence of thermal motion and is observed with microwave, infrared, Terahertz, or Raman spectroscopy. These techniques are used to measure the spacing between a molecule’s rotational energy levels. This is described next, followed by a brief description of angular momentum and moments of inertia. Finally, the calculation of bond lengths is described.</p>
+<div class="section" id="the-rotational-motion-of-molecules">
+<h2>15.1 The rotational motion of molecules<a class="headerlink" href="#the-rotational-motion-of-molecules" title="Permalink to this headline">¶</a></h2>
+<p>The collision between molecules in the gas phase and at the prevailing temperature equilibrates the energy among translation, vibration, and rotational motions. A molecule can only have discrete values of vibrational or rotational energy. The lowest rotational energy is zero, and the energy levels become more widely spaced as the quantum number <span class="math notranslate nohighlight">\(J\)</span> is increased. The equation</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle E_j=\frac{\hbar^2}{2I}J(J+1)\]</div>
+<p>describes the rotational energy, in joules, of a (rigid rotor) diatomic or linear molecule, with quantum number <span class="math notranslate nohighlight">\(J = 0, 1, 2, \cdots\)</span>. The multiplicity and also degeneracy of a rotational level with quantum number <span class="math notranslate nohighlight">\(J\)</span>, is <span class="math notranslate nohighlight">\(g_J = 2J + 1\)</span>. The constant <span class="math notranslate nohighlight">\(I\)</span> is the moment of inertia, and is typically <span class="math notranslate nohighlight">\(\approx10^{-45}\;\mathrm{kg\,m^2}\)</span> for a molecule. It is this small, because a molecule’s mass is small, and its bond lengths short. An apple has a value <span class="math notranslate nohighlight">\(I \approx 10^{-4}\;\mathrm{kg\,m^2}\)</span> and a lorry’s wheel <span class="math notranslate nohighlight">\(\approx 10\;\mathrm{kg\,m^2}\)</span>. As we shall see the moment of inertia is related to a bond length.</p>
+<p>A rotational constant is defined as <span class="math notranslate nohighlight">\(B=\frac{\hbar^2}{2I}\)</span> making the energy <span class="math notranslate nohighlight">\(E_J=BJ(J+1)\)</span>. Remembering that a joule is a unit of energy with base units of mass <span class="math notranslate nohighlight">\(\times\)</span> velocity squared, the constant <span class="math notranslate nohighlight">\(B\)</span> has units</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle B=\frac{\hbar^2}{2I}\equiv \frac{\mathrm{J^2\,s^2}}{\mathrm{kg\,m^2}}=\frac{\mathrm{kg^2\,m^4\,s^{-4}s^2}}{\mathrm{kg\,m^2}}= \mathrm{kg\,m^2\,s^{-2}}=\mathrm{J}\]</div>
+<p>Usually, however, <span class="math notranslate nohighlight">\(B\)</span> is expressed in units of wavenumbers (cm<span class="math notranslate nohighlight">\(^{-1}\)</span>) produced by dividing <span class="math notranslate nohighlight">\(B\)</span> by <span class="math notranslate nohighlight">\(100hc\)</span>; the factor <span class="math notranslate nohighlight">\(100c\)</span> is used because <span class="math notranslate nohighlight">\(c\)</span> has units of m s<span class="math notranslate nohighlight">\(^{-1}\)</span> and we want units in cm<span class="math notranslate nohighlight">\(^{-1}\)</span>; <span class="math notranslate nohighlight">\(\displaystyle B=\frac{1}{100hc}\frac{\hbar^2}{2I}\)</span>.</p>
+<p>The rotational constant <span class="math notranslate nohighlight">\(B\)</span> has a value that is typically less than a wavenumber. Its largest value, <span class="math notranslate nohighlight">\(\approx 64 \;\mathrm{cm^{-1}}\)</span>, is for H<span class="math notranslate nohighlight">\(_2\)</span>, but clearly this is not typical, as this is the lightest molecule. Once the rotational spectrum is measured, it is easy to measure <span class="math notranslate nohighlight">\(B\)</span>, because the lines (in a diatomic ) are spaced by <span class="math notranslate nohighlight">\(2B\)</span>. In real molecules, things are more complex, because of centrifugal distortion in the rotating molecule, but this effect is small for low <span class="math notranslate nohighlight">\(J\)</span> quantum numbers and does not fundamentally change our analysis. The last step is to calculate the bond length from <span class="math notranslate nohighlight">\(I\)</span>. At one time, this was the main purpose of microwave spectroscopy, but nowadays, bond lengths of very many small molecules have been accurately measured. The technique is now more often used analytically, for example, to identify species in interstellar dust clouds, or to monitor the ethene produced by ripening fruit.</p>
+</div>
+<div class="section" id="angular-momentum-and-moment-of-inertia">
+<h2>15.2 Angular momentum and moment of inertia<a class="headerlink" href="#angular-momentum-and-moment-of-inertia" title="Permalink to this headline">¶</a></h2>
+<p>The angular momentum of a solid body is the momentum caused by virtue of its rotational motion and is a vector quantity. In an isolated molecule, this motion is about the centre of mass, also called the centre of gravity. The angular momentum produced has a fixed direction in space. In general, it is just as possible to cause the rotational motion of an object to be about its end as it is about its middle. A rod can be spun about its centre, along its axis, or about its end, and each angular momentum will be different. If the body rotates with angular frequency {, the angular momentum <span class="math notranslate nohighlight">\(\pmb{L}\)</span> is given by <span class="math notranslate nohighlight">\(\pmb{L} = \pmb{I\omega}\)</span>, where <span class="math notranslate nohighlight">\(\pmb{I}\)</span> is a matrix of moment of inertia values and <span class="math notranslate nohighlight">\(\pmb{L}\)</span> and { are one-dimensional matrices or vectors. The reason for the vector quantities is that a body can move in three dimensions and the motion can be split into components along three axes. The moment of inertia of (rigidly connected) masses, where each has mass <span class="math notranslate nohighlight">\(m_i\)</span>, is <span class="math notranslate nohighlight">\(I = \sum_i m_ir_i^2\)</span> where <span class="math notranslate nohighlight">\(r_i\)</span> is the <em>perpendicular</em> distance of mass <span class="math notranslate nohighlight">\(i\)</span> from an axis. In fact, we can choose the axes to be anywhere we want so the moment of inertia depends on where these axes are placed; it is therefore not a fundamental property of an object. This presents a problem if we are to try to calculate bond lengths, because different values would be obtained depending on where the axes are placed. The obvious place is to locate the axes at the centre of mass since a freely rotating object will rotate about this point. However, in what directions the axes point relative to the molecule has still to be chosen. Very often, we may choose to align the axes with some symmetry axis of the molecule. The molecule will always rotate about its own inertial axes and if these two sets of axes do not coincide, and they usually do not, the moments of inertia will have the form of a matrix with terms that depend on where an atom is with respect to any two axes, <span class="math notranslate nohighlight">\(I_{xy}, I_{yz}\)</span> etc. All is not lost, however, because there is a simple way to rotate our chosen axes onto the molecule’s inertial axes, making the moment of inertia matrix, diagonal. This will be described in Section 15.8.</p>
+<p>The total kinetic energy of a rigid body is that due to its linear plus rotational energy. The linear kinetic energy is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle E_{lin} = \frac{1}{2}mv^2\]</div>
+<p>and the rotational kinetic energy</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle E_{rot} = \frac{1}{2}I\omega^2\]</div>
+<p>thus, the moment of inertia <span class="math notranslate nohighlight">\(I\)</span>, takes the place of the mass used to describe linear motion and angular velocity <span class="math notranslate nohighlight">\(\omega\)</span> (radians s<span class="math notranslate nohighlight">\(^{-1}\)</span>), replaces linear velocity <span class="math notranslate nohighlight">\(\pmb{v}\)</span> in m s<span class="math notranslate nohighlight">\(^{-1}\)</span>. Similarly, linear momentum <span class="math notranslate nohighlight">\(\pmb{p}= m\pmb{v}\)</span>, is replaced by angular momentum <span class="math notranslate nohighlight">\(\pmb{L} = I\pmb{\omega}\)</span>, which is also vector quantity. The angular momentum relative to the centre of mass about an axis at the centre of a rigid disc of mass <span class="math notranslate nohighlight">\(m\)</span>, is shown in Figure 53 and is <span class="math notranslate nohighlight">\(\pmb{L}= m \pmb{r}\times \pmb{v}\)</span> where <span class="math notranslate nohighlight">\(\pmb{v}\)</span> is the velocity of the edge of the disc and <span class="math notranslate nohighlight">\(\pmb{r}\)</span> its radius vector. The angular momentum points in the direction away from you, if the disc rotates clockwise when you look at its underside.</p>
+<p>Angular velocity is, by definition, the rate of change of the angle <span class="math notranslate nohighlight">\(\theta\)</span> the rigid body moves through, and has units of radians / second. It can be shown that the velocity vector <span class="math notranslate nohighlight">\(\pmb{v}\)</span> in the centre-of-mass coordinate system is related to the angular velocity <span class="math notranslate nohighlight">\(\pmb{\omega}\)</span> as</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \pmb{v}=\pmb{\omega}\times\pmb{r}\]</div>
+<p>The angular momentum becomes <span class="math notranslate nohighlight">\(\pmb{L} = m\pmb{r} \times \pmb{\omega} \times\pmb{r}\)</span>, and evaluating the cross product the angular momentum is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \pmb{L}=\pmb{I\omega}\]</div>
+<p>where <span class="math notranslate nohighlight">\(I\pmb{ }\)</span>is a <span class="math notranslate nohighlight">\(3 \times 3\)</span> matrix of the moment of inertia components. The equation can be written as</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin{bmatrix}L_x\\L_y\\L_z \end{bmatrix}=\begin{bmatrix}I_{xx} &amp; I_{xy} &amp; I_{xz}\\ I_{xy} &amp; I_{yy} &amp; I_{yz}\\I_{xz} &amp; I_{yz} &amp; I_{zz}\\\end{bmatrix}\begin{bmatrix}\omega_x\\ \omega_y\\ \omega_z \end{bmatrix}\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(I_{xy}=I_{yx} \)</span> etc. Calculating each of these terms is described in Section 13.4. The angular momentum is always proportional to the angular velocity; the proportionality is the moment of inertia, and hence the emphasis falls on calculating this. Sometimes, the angular momentum matrix is called the angular momentum <em>tensor</em>.</p>
+<p>To summarize: A molecule or other solid object will rotate about its own inertial (principal) axes that are fixed in space. The geometrical axes we chose to place on the molecule need not be coincident with the inertial axes, in fact, they are usually not, and therefore the inertial matrix has off-diagonal elements. Should the inertial and geometrical axes coincide, only the diagonal values exist. By diagonalizing the inertial matrix, the two sets of axes are made coincident, and the diagonal moments of inertia of the principal or inertial axes can be calculated.</p>
+<p><img alt="Drawing" src="_build_/jupyter_execute/chapter-7/matrices-fig66.png" /></p>
+<p>Figure 66. The dashed lines represent the molecular axes,i.e. those axes which make sense when looking at the molecules structure; the solid lines the principal axes obtained after diagonalizing the moment of inertia matrix, the third axis of which is perpendicular to the page and shown as a circle. The ellipse represents a molecule.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="solid-bodies">
+<h2>15.3 Solid bodies<a class="headerlink" href="#solid-bodies" title="Permalink to this headline">¶</a></h2>
+<p>If the rotating body is not made of discrete parts such as a molecule is, then integration over the mass and distances must be done instead of summation. The summation is replaced by an integral; some examples are given in Chapter 4.8.2 and 4.10.1. The moments of inertia have been worked out for very many geometrical objects, cones, cylinders and so forth and lists can usually be found in engineering textbooks.</p>
+</div>
+<div class="section" id="discrete-bodies-molecules">
+<h2>15.4 Discrete bodies: molecules<a class="headerlink" href="#discrete-bodies-molecules" title="Permalink to this headline">¶</a></h2>
+<p>The moment of inertia is not an intrinsic property of a body but depends upon the axis about which the moment is taken. In chemical physics, it is usual to make this axis pass through the centre of mass. In engineering, the moment of inertia about some remote axis may be needed instead. By the <em>principle of parallel axes</em>; if the moment of inertia with reference to an axis through its centre of mass <span class="math notranslate nohighlight">\(I_{cm}\)</span> is known, it can easily be changed to a value about a parallel axis <span class="math notranslate nohighlight">\(I_p\)</span> if the parallel axis is a distance <span class="math notranslate nohighlight">\(d\)</span> away. The result is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle I_p=I_{cm}+Md^2 \tag{69}\]</div>
+<p>where <span class="math notranslate nohighlight">\(M\)</span> is the total mass.</p>
+<p>The moment of inertia of a collection of atoms is defined as the summation of the product of the mass and the distance squared from an axis <span class="math notranslate nohighlight">\(\alpha\)</span> through the centre of mass,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle I_\alpha= \sum_i m_ir_i^2 \tag{70}\]</div>
+<p>where <span class="math notranslate nohighlight">\(r_i\)</span> is the distance of mass <span class="math notranslate nohighlight">\(i\)</span> from the axis <span class="math notranslate nohighlight">\(\alpha\)</span> passing through the centre of mass. As the mass (atom) has coordinates <span class="math notranslate nohighlight">\((x, y, z)\)</span>, and <span class="math notranslate nohighlight">\(r\)</span> is the distance given by Pythagoras, for example, from the <span class="math notranslate nohighlight">\(x\)</span>-axis, <span class="math notranslate nohighlight">\(r =\sqrt{(z - z_{cm})^2 + (y - y_{cm})^2}\)</span> where <span class="math notranslate nohighlight">\(z_{cm}\)</span> and <span class="math notranslate nohighlight">\(y_{cm}\)</span> are the coordinate of the centre of mass, and similarly, for the <span class="math notranslate nohighlight">\(y\)</span>- and <span class="math notranslate nohighlight">\(z\)</span>-axes. The <em>centre of mass</em> of <span class="math notranslate nohighlight">\(i\)</span> masses is defined as</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle q_{cm}=\frac{\sum_im_iq_i}{\sum_i m_i}=\frac{\sum_im_iq_i}{M} \tag{71}\]</div>
+<p>where <span class="math notranslate nohighlight">\(q\)</span> can be <span class="math notranslate nohighlight">\(x, y\)</span>, or <span class="math notranslate nohighlight">\(z\)</span> and <span class="math notranslate nohighlight">\(M\)</span> is the total mass. The moment of inertia about the <span class="math notranslate nohighlight">\(x-, y-\)</span>, or <span class="math notranslate nohighlight">\(z\)</span>-axes whose origin is at the centre of mass, is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle I_x=\sum_i m_i(y_i^2+z_i^2)\qquad I_y=\sum_i m_i(x_i^2+z_i^2)\qquad I_z=\sum_i m_i(x_i^2+y_i^2)\]</div>
+<p>The total moment of inertia is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle I_x+I_y+I_z= 2\sum_i m_i(x_i^2+y_i^2+z_i^2)=2\sum_im_ir_i^2 \]</div>
+<p>where <span class="math notranslate nohighlight">\(r_i\)</span> is the distance of mass <span class="math notranslate nohighlight">\(m_i\)</span> from the centre of mass.</p>
+<p>A planar object, such as a sheet or loop of wire in the <span class="math notranslate nohighlight">\(x - y\)</span> plane, with <span class="math notranslate nohighlight">\(z\)</span> being perpendicular to these has moments</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle I_x=\sum_im_i,y_i^2,\quad I_y=\sum_im_ix_i^2,\quad I_z=\sum_im_i(x_i^2+y_i^2)\]</div>
+<p>therefore</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle I_z=I_x+I_y \tag{72}\]</div>
+<p>This is true only for planar bodies or uniform composition (lamina) and is called the <em>Perpendicular Axis Theorem</em>.</p>
+<p>The moment of inertia can also be defined as</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle I_\alpha= Mk^2 \tag{73}\]</div>
+<p>where <span class="math notranslate nohighlight">\(R_g=\sqrt{I_\alpha /M }\)</span>is called the <em>radius of gyration</em> of the body about axis <span class="math notranslate nohighlight">\(\alpha\)</span> and <span class="math notranslate nohighlight">\(k\)</span> is the root mean square radius from the axis.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./_build_/jupyter_execute/chapter-7"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Godfrey Beddard<br/>
+        
+            &copy; Copyright 2022.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

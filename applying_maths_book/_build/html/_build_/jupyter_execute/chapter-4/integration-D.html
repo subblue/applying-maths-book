@@ -1,0 +1,1860 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculating an Average Value. &#8212; Applying Maths in the Chemical &amp; Biomolecular Sciences</title>
+    
+  <link href="../../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/togglebutton.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../../_static/book-cover.jpg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Applying Maths in the Chemical & Biomolecular Sciences</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../intro.html">
+   Applying Maths in the Chemical and Biomolecular Sciences.
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../chapter-1/chapter1-intro.html">
+   1. Numbers, Equations, Operators, and Algorithms.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-1/chapter1-A.html">
+     Numbers to Algorithms.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-1/chapter1-Q1-7.html">
+     Questions 1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-1/chapter1-B.html">
+     Trig, hyperbolic and inverse functions, waves, polar coordinates &amp; factorials
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-1/chapter1-Q8-16.html">
+     Questions 8 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-1/chapter1-C.html">
+     Sophisticated Counting.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-1/chapter1-Q17-34.html">
+     Questions 17 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-1/chapter1-D.html">
+     Modulo arithmetic,
+     <span class="math notranslate nohighlight">
+      \(\delta\)
+     </span>
+     functions, types of  series &amp;  estimating quantities
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-1/chapter1-Q35-39.html">
+     Questions 35 - 39
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-1/chapter1-answers-1-7.html">
+     Solutions Q1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-1/chapter1-answers-8-16.html">
+     Solutions Q8 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-1/chapter1-answers-17-34.html">
+     Solutions Q17 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-1/chapter1-answers-35-39.html">
+     Solutions Q35 - 39
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../chapter-2/chapter2-intro.html">
+   2. Complex numbers.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-2/chapter2-A.html">
+     Real, imaginary, conjugate and modulus
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-2/chapter2-Q-1-9.html">
+     Questions 1 - 9
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-2/chapter2-B.html">
+     De Moivre’s theorem and integer powers of complex numbers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-2/chapter2-Q-10-13.html">
+     Questions 10 -13
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-2/chapter2-C.html">
+     Euler’s theorem
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-2/chapter2-Q-14-27.html">
+     Questions 14 - 27
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-2/chapter2-answers.html">
+     Solutions Q1 - 27
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../chapter-3/differen-intro.html">
+   3. Differentiation.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-A.html">
+     Differentiation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-B.html">
+     Trig functions, logs, power, reciprocals and integrals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-C-Q-4-11.html">
+     Questions 1-11
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-D.html">
+     Product rule and function of function or chain rule.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-E-Q-12-42.html">
+     Questions 12-42
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-F.html">
+     Limits, l’Hopital’s rule, Maximum, Minimum and Calculus of Variations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-G-Q-43-73.html">
+     Questions 43 - 73
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-H.html">
+     Numerically finding the roots of an equation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-I-Q-74-85.html">
+     Questions 74 - 85
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-J.html">
+     Minimizing or maximizing with constraints: Lagrange Undetermined Multipliers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-K-Q-86-92.html">
+     Questions 86 - 92
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-L.html">
+     Partial differentiation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-M-Q-93-114.html">
+     Questions 93-114
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-M1.html">
+     Differentiation of vectors
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-N-answers-1-11.html">
+     Solutions Q 1-11
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-O-answers-12-42.html">
+     Solutions Q 12-42
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-P-answers-43-73.html">
+     Solutions Q 43 - 73
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-Q-answers-74-85.html">
+     Solutions Q 74 - 85
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-R-answers-86-92.html">
+     Solutions Q 86 - 94
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-S-answers-93-114.html">
+     Solutions Q 93-114
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../chapter-4/integration-intro.html">
+   4. Integration.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-A.html">
+     Integration basics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-Q1-14.html">
+     Questions 1-14
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-B.html">
+     Integration by substitution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-Q15-30.html">
+     Questions 15-30
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-C.html">
+     Using parametric equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-Q31-48.html">
+     Questions 31 - 48
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-D.html">
+     Calculating an Average Value.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-Q49-72.html">
+     Questions 49 - 72
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-E.html">
+     The Variational Method in Quantum Mechanics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-Q73-77.html">
+     Questions 73 - 77
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-F.html">
+     Multiple integrals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-Q78-86.html">
+     Questions 78 - 86
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-G.html">
+     Calculating the energy of a chemical bond using molecular orbitals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-H.html">
+     Line integrals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-Q87-96.html">
+     Questions 87 - 96
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-answers-1-14.html">
+     Solutions Q1 - 14
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-answers-15-30.html">
+     Solutions Q15 - 30
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-answers-31-48.html">
+     Solutions Q31 - 48
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-answers-49-72.html">
+     Solutions Q49 - 72
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-answers-73-96.html">
+     Solutions Q73 - 96
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../chapter-5/chapter-5-intro.html">
+   5. Summations, Series and expansion of Functions.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-5/chapter-5-A.html">
+     Series, averages, partition functions, DNA melting, atom entropy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-5/chapter-5-B-Q1-13.html">
+     Questions 1 - 13
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-5/chapter-5-E.html">
+     Maclaurin and Taylor series expansions. Paramagnetic spins. Euler-Maclaurin formula.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-5/chapter-5-F-Q14-34.html">
+     Questions 14 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-5/chapter-5-G-Q35-44.html">
+     Questions 35 - 44
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-5/chapter-5-perturbation-A.html">
+     Perturbation Theory
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-5/chapter-5-perturbation-B-Q45-48.html">
+     Questions 45 - 48
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-5/chapter-5-perturbation-C.html">
+     Quantum superposition and wavepackets.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-5/chapter-5-perturbation-D-Q49-52.html">
+     Questions 49 - 52
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-5/chapter-5-answers-1-7.html">
+     Solutions Q 1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-5/chapter-5-answers-8-13.html">
+     Solutions Q8 - 13
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-5/chapter-5-answers-14-26.html">
+     Solutions Q 14 - 26
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-5/chapter-5-answers-27-32.html">
+     Solutions Q27 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-5/chapter-5-answers-33-44.html">
+     Solutions Q33 - 44
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-5/chapter-5-answers-45-52.html">
+     Solutions Q45 - 52
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../chapter-6/vectors-intro.html">
+   6. Vectors.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-A.html">
+     Vector basics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-Q1-24.html">
+     Questions 1 - 24
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-B.html">
+     Projections and components
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-Q25-32.html">
+     Questions 25 - 32
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-C.html">
+     Axes need not be right-angled or of equal length
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-Q33-38.html">
+     Questions 33 - 38
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-D.html">
+     Basis sets with more than three dimensions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-Q39-46.html">
+     Questions 39 - 46
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-E.html">
+     Cross product or vector product
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-Q47-52.html">
+     Questions 47 - 52
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-F.html">
+     Torsion or dihedral angles
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-Q53-48.html">
+     Questions 53 - 48
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-G.html">
+     Torque and angular momentum
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-Q59-61.html">
+     Questions 59 - 61
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-answers-Q1-24.html">
+     Solutions Q1 - 24
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-answers-Q25-32.html">
+     Solutions Q25 - 32
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-answers-Q33-38.html">
+     Solutions Q33 - 38
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-answers-Q39-46.html">
+     Solutions Q39 - 46
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-answers-Q47-52.html">
+     Solutions Q47 - 52
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-answers-Q53-61.html">
+     Solutions Q53 - 61
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../chapter-7/matrices-intro.html">
+   7. Matrices
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-A.html">
+     Determinants
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-Q1-10.html">
+     Questions  1 - 10
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-B.html">
+     Matrices
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-Q11-16.html">
+     Questions  11 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-C.html">
+     Molecular Group Theory
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-Q17-30.html">
+     Questions  17 - 30
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-D.html">
+     Rotation matrices: moving molecules
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-Q31-34.html">
+     Questions 31 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-E.html">
+     Matrices in optics and designing laser cavities
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-Q35-39.html">
+     Questions 35 - 39
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-F.html">
+     Polarizing optics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-Q40-44.html">
+     Questions 40 - 44
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-G.html">
+     Solving equations using matrices. Eigenvectors &amp; Eigenvalues.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-Q45-50.html">
+     Questions 45 - 50
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-H.html">
+     Rate equations and Chemical Kinetics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-Q51-54.html">
+     Questions 51 - 54
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-I.html">
+     Molecular vibrations and pendulums
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-Q55-58.html">
+     Questions 55 - 58
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-J.html">
+     Moments of Inertia
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-Q59-60.html">
+     Questions 59 - 62
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-K.html">
+     Calculating a bond length using moments of inertia
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-Q61.html">
+     Question 61
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-L.html">
+     Principal axes for Moments of Inertia
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-Q62.html">
+     Question 62
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-answersQ1-10.html">
+     Solutions Q1 - 10
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-answersQ11-16.html">
+     Solutions Q11 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-answersQ17-30.html">
+     Solutions Q17 - 30
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-answersQ31-34.html">
+     Solutions Q31 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-answersQ35-39.html">
+     Solutions Q35 - 39
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-answersQ40-44.html">
+     Solutions Q40 - 44
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-answersQ45-50.html">
+     Solutions Q45 - 50
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-answersQ51-54.html">
+     Solutions Q51 - 54
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-answersQ55-58.html">
+     Solutions Q55 - 58
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-answersQ59-61.html">
+     Solutions Q59 - 61
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../chapter-8/matricesQM-intro.html">
+   8. Matrices in Quantum Mechanics
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-8/matricesQM-A.html">
+     Matrices in Quantum Mechanics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-8/matricesQM-Q1-7.html">
+     Questions 1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-8/matricesQM-B.html">
+     Basis sets and bra-ket algebra
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-8/matricesQM-Q8-12.html">
+     Questions 8 - 12
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-8/matricesQM-C.html">
+     Continuous basis sets
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-8/matricesQM-answers1-7.html">
+     Solutions Q1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-8/matricesQM-answers8-12.html">
+     Solutions Q8 - 12
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../chapter-9/Fourier-intro.html">
+   9. Fourier Series and Transforms.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-9/Fourier-A-B.html">
+     Fourier series, Gibbs phenomenon, generalised series.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-9/Fourier-questions-1-6.html">
+     Questions 1 - 6
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-9/Fourier-C.html">
+     Fourier Transforms
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-9/Fourier-questions-7-15.html">
+     Questions 7 - 15
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-9/Fourier-D.html">
+     Convolution and Autocorrelation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-9/Fourier-questions-16-21.html">
+     Questions 16 - 21
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-9/Fourier-E.html">
+     Discrete Fourier  (DFT)  and Fast Fourier transforms (FFT)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-9/Fourier-F.html">
+     The Hadamard Transform: Encoding and Decoding
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-9/Fourier-answers-1-6.html">
+     Solutions Q 1 - 6
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-9/Fourier-answers-7-15.html">
+     Solutions Q 7 - 15
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-9/Fourier-answers-16-21.html">
+     Solutions Q 16 - 21
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-9/Fourier-2D-Diffraction.html">
+     The Fourier transform in two dimensions: images and x-ray Diffraction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-9/Fourier-tomography.html">
+     Computed Tomography
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../chapter-10/Diff-eqns-intro.html">
+   10. Differential Equations.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-10/Diff-eqns-A.html">
+     Differential Equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-10/Diff-eqns-Q1-23.html">
+     Questions 1 - 23
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-10/Diff-eqns-B.html">
+     First order eqns &amp; Integrating factors. Second order eqns, Newtons laws, equations of motion.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-10/Diff-eqns-C.html">
+     The ‘D’ operator.  Solving linear differential equations with constant coefficients
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-10/Diff-eqns-D.html">
+     Simultaneous equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-10/Diff-eqns-Q24-37.html">
+     Questions 24 - 37
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-10/Diff-eqns-E.html">
+     Linear equations with variable coefficients
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-10/Diff-eqns-F.html">
+     Partial Differential Equations, PDE
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-10/Diff-eqns-G.html">
+     PDE examples continued
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-10/Diff-eqns-answers-1-21.html">
+     Solutions Q1 - 21
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-10/Diff-eqns-answers-22-37.html">
+     Solutions Q22 - 37
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../chapter-11/num-methods-intro.html">
+   11. Numerical Methods
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-A.html">
+     Numerical Methods
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-Q1-7.html">
+     Questions 1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-B.html">
+     Numerical solution of differential equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-Q8-12.html">
+     Questions 8 - 12
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-C.html">
+     Coupled equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-Q13-16.html">
+     Questions 13 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-D.html">
+     The phase plane, nullclines, and stable points
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-Q17-20.html">
+     Questions 17 - 20
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-E.html">
+     Reaction schemes with feedback
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-Q21-34.html">
+     Questions 21 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-F.html">
+     Boundary value problems.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-Q35-40.html">
+     Questions 35 - 40
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-answers1-7.html">
+     Solutions Q1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-answers8-12.html">
+     Solutions Q8 - 12
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-answers13-16.html">
+     Solutions Q13 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-answers17-20.html">
+     Solutions Q17 - 20
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-answers21-34.html">
+     Solutions Q21 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-answers35-40.html">
+     Solutions Q35 - 40
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../chapter-12/monte-carlo-intro.html">
+   12. Monte Carlo Methods
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+  <label for="toctree-checkbox-12">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-12/monte-carlo-A.html">
+     Monte - Carlo Methods
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-12/monte-carlo-Q1-6.html">
+     Questions 1 - 6
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-12/monte-carlo-B.html">
+     Solving rate equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-12/monte-carlo-Q7-10.html">
+     Questions 7 - 10
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-12/monte-carlo-CC.html">
+     Monte Carlo Simulations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-12/monte-carlo-C.html">
+     Energy transfer. Autocatalytic reaction and spreading of fires
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-12/monte-carlo-Q11-17.html">
+     Questions 11 - 17
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-12/monte-carlo-D.html">
+     The Metropolis algorithm
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-12/monte-carlo-answers1-6.html">
+     Solutions Q1 - 6
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-12/monte-carlo-answers7-10.html">
+     Solutions Q7 - 10
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-12/monte-carlo-answers11-17.html">
+     Solutions Q11 - 17
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../chapter-13/analysis-intro.html">
+   13. Data Analysis
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+  <label for="toctree-checkbox-13">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-13/analysis-A.html">
+     Characterizing experimental data. Accuracy, precision, mean and standard deviation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-13/analysis-Q1-3.html">
+     Questions 1 - 3
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-13/analysis-B.html">
+     Modelling data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-13/analysis-Q4-9.html">
+     Questions 4 - 9
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-13/analysis-C.html">
+     Modelling data is simpler using matrices
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-13/analysis-Q10-11.html">
+     Questions 10 - 13
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-13/analysis-D.html">
+     Non-linear least squares. Least absolute deviation. Principal component analysis
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-13/analysis-answers1-11.html">
+     Solutions Q1 -11
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../chapter-1/chapter1-E.html">
+   SI units, Rounding, converting units &amp; Glossary.
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../references/References.html">
+   References
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../references/Python%20crib.html">
+   Appendix:  Some basic Python instructions with a few examples.
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../../_sources/_build_/jupyter_execute/chapter-4/integration-D.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/_build_/jupyter_execute/chapter-4/integration-D.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#average-value">
+   8 Average value.
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-average-as-a-summation">
+   8.1 The average as a summation
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#i-invert-sugar">
+     <strong>
+      (i) Invert sugar
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ii-chain-reactions-mean-chain-length">
+     <strong>
+      (ii) Chain reactions. Mean Chain length
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#iii-average-of-averages">
+     <strong>
+      (iii) Average of averages
+     </strong>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-average-as-an-integration">
+   8.2 The average as an integration
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#i-excited-states">
+     <strong>
+      (i) Excited states
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ii-infection-period">
+     <strong>
+      (ii) Infection period
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#iii-centroids">
+     <strong>
+      (iii) Centroids
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#iv-chromatography-average-value-and-width-of-eluted-profile">
+     <strong>
+      (iv) Chromatography. Average value and width of eluted profile
+     </strong>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#average-of-a-function">
+   8.3 Average of a function
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#expectation-values">
+   8.4 Expectation values
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#uncertainty-principle">
+   8.5 Uncertainty principle
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#i-harmonic-oscillator">
+     <strong>
+      (i) Harmonic oscillator
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ii-particle-in-a-box">
+     <strong>
+      (ii) particle in a box
+     </strong>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#higher-averages-moments-and-variance">
+   8.6 Higher averages: moments and variance
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="calculating-an-average-value">
+<h1>Calculating an Average Value.<a class="headerlink" href="#calculating-an-average-value" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import all python add-ons etc that will be needed later on</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="n">init_printing</span><span class="p">()</span>                      <span class="c1"># allows printing of SymPy results in typeset maths format</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;font.size&#39;</span><span class="p">:</span> <span class="mi">16</span><span class="p">})</span>  <span class="c1"># set font size for plots</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="average-value">
+<h2>8 Average value.<a class="headerlink" href="#average-value" title="Permalink to this headline">¶</a></h2>
+<p>You will be familiar with obtaining the average of a set of numbers obtained in an experiment by adding them all together and dividing by their number. The average value from some theoretical expression, for example, the energy of molecules, may be an important quantity with which to compare with an experimental measurement and therefore a general way of calculating averages is required. To do this, the probability distribution P of the quantity must be known.</p>
+</div>
+<div class="section" id="the-average-as-a-summation">
+<h2>8.1 The average as a summation<a class="headerlink" href="#the-average-as-a-summation" title="Permalink to this headline">¶</a></h2>
+<p>Suppose the numbers <span class="math notranslate nohighlight">\(q = 10,\, 13.5,\, 14, \,16.2\)</span> have been measured, then their average is clearly <span class="math notranslate nohighlight">\(\langle q \rangle  = (10 + 13.5 + 14 + 16.2)/4 = 53.7/4\)</span>. It has been implicitly assumed that each number is equally likely to have been measured, which is the familiar case because experiments are usually arranged in this way making them easier to do. It is not always true, however, that each value is equally probable, there is often a distribution of values that has to be taken into account, the Boltzmann distribution of energies or the degeneracy of rotational energy levels, for example.</p>
+<p>Replacing the numerical example above with a formula makes the calculation appear much more complicated when it is in fact just the same,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \langle q\rangle= \frac{\sum\limits_{i=1}^N q_iP(q_i)}{\sum\limits_{i=1}^N P(q_i)} \tag{25}\]</div>
+<p>In this equation the probability of observing the <span class="math notranslate nohighlight">\(i^{th}\)</span> observation of <span class="math notranslate nohighlight">\(q\)</span> is <span class="math notranslate nohighlight">\(P(q_i)\)</span> and if <span class="math notranslate nohighlight">\(P(q_i) = 1\)</span> then each measurement has an equal chance of occurring, which is 1, and the probability distribution is uniform or flat. If there are four measurements, then <span class="math notranslate nohighlight">\(N = 4\)</span>. Figure 16 shows two probability distributions. On the left is the uniform distribution, on the right a Gaussian one.</p>
+<p>To use equation 25, multiply each value <span class="math notranslate nohighlight">\(q_i\)</span> by the chance of observing it, which is <span class="math notranslate nohighlight">\(P(q_i)\)</span>, and then sum all the values together. The denominator tells us to add together all the probabilities. If the distribution is normalized this sum will be 1. Using the values for the numbers and <span class="math notranslate nohighlight">\(P\)</span>, then the average, or mean value of <span class="math notranslate nohighlight">\(q\)</span> is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \langle q\rangle= \frac{\sum\limits_{i=1}^4 q_iP(q_i)}{\sum\limits_{i=1}^4 P(q_i)} =\frac{10+13.5+14+16.2}{\sum\limits_1^4 1}=\frac{53.7}{4}\]</div>
+<p>The average of <span class="math notranslate nohighlight">\(q^2\)</span> can also be calculated using the related formula</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \langle q^2\rangle= \frac{\sum\limits_{i=1}^4 q_i^2 P(q_i)}{\sum\limits_{i=1}^4 P(q_i)} =\frac{10^2+13.5^2+14^2+16.2^2}{\sum\limits_1^4 1}=\frac{740.4}{4}\]</div>
+<p>The reason for wanting this quantity is that it is needed to calculate  the variance of the numbers.  The <em>variance</em> <span class="math notranslate nohighlight">\(\sigma^2\)</span> is a measure of the spread about the mean value. This spread is generally called the <em>dispersion</em> and often has a Gaussian or bell-shaped distribution. The variance of a set of numbers is defined as</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \sigma ^2 =\langle q^2\rangle -\langle q\rangle^2 =  \langle q^2\rangle- \mu \tag{26}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\mu\)</span> is the <em>population mean</em>, see chapter 13. The <em>standard deviation</em>, the square root of the variance, is also used as a measure of dispersion and with this particular set of numbers <span class="math notranslate nohighlight">\(\sigma = 2.22\)</span>.</p>
+<p>If the numbers q represent energy <span class="math notranslate nohighlight">\(E\)</span> then its standard deviation is <span class="math notranslate nohighlight">\(\sigma_E =\sqrt{\langle E^2\rangle -\langle E\rangle^2}\)</span>. When analysing sets of data, the average value of a set of repeated measurements is reported with the standard deviation. The result is quoted as a mean value<span class="math notranslate nohighlight">\(\mu\pm\sigma\)</span>. By blind chance, 68% of observations are to be expected to fall in the range <span class="math notranslate nohighlight">\(\mu+\sigma \to \mu-\sigma\)</span> and clearly 32% outside this range. Chapter 13 describes this in more detail.</p>
+<p>To calculate the average of higher powers of <span class="math notranslate nohighlight">\(q\)</span>, the <span class="math notranslate nohighlight">\(n^{th}\)</span>, for example, use</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \langle q^n\rangle= \frac{\sum\limits_{i=1}^N q_i^nP(q_i)}{\sum\limits_{i=1}^N P(q_i)} \tag{27}\]</div>
+<div class="section" id="i-invert-sugar">
+<h3><strong>(i) Invert sugar</strong><a class="headerlink" href="#i-invert-sugar" title="Permalink to this headline">¶</a></h3>
+<p>When a solution of table sugar (sucrose) is heated it hydrolyzes to glucose(dextrose) and fructose and is catalysed by acid. The reaction can be easily followed by observing the rotation of plane polarised light with a polarimeter. The reaction is</p>
+<div class="math notranslate nohighlight">
+\[\begin{array} {c}\text{sucrose} &amp; \overset{\text{H}^+}{\longrightarrow} &amp; \text{glucose + fructose}\end{array}\]</div>
+<p>The specific rotations<span class="math notranslate nohighlight">\(^*\)</span> are <span class="math notranslate nohighlight">\([\alpha]_s=+66.5, [\alpha]_g=+52.7,[\alpha]_f=-92.0\)</span> degrees respectively. When the average specific rotation passes through zero the sugar is said to be ‘inverted’.</p>
+<p>The average specific rotation is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle [\alpha] =\frac{\sum_i c_i[\alpha]_i}{\sum_i c_i}= \sum_i z_i [\alpha]_i\]</div>
+<p>where <span class="math notranslate nohighlight">\(z\)</span> is the mole fraction.</p>
+<p>Using this equation the inversion point can be calculated. Let <span class="math notranslate nohighlight">\(x_0\)</span> moles of sucrose be initially present then <span class="math notranslate nohighlight">\(x_0-x\)</span> reacts and <span class="math notranslate nohighlight">\(x\)</span> moles each of glucose and fructose are produced making the total <span class="math notranslate nohighlight">\(x_0+x\)</span> moles. The specific rotation at a time when <span class="math notranslate nohighlight">\(x\)</span> has reacted is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle [\alpha] =\frac{(x_0-x)[\alpha]_s+x[\alpha]_g+x[\alpha]_f }{x_0+x}\]</div>
+<p>and when <span class="math notranslate nohighlight">\([\alpha]=0\)</span> the solution is ‘inverted’ and the extent of reaction <span class="math notranslate nohighlight">\(\displaystyle \frac{x}{x_0}=\frac{[\alpha]_s}{[\alpha]_s-[\alpha]_g-[\alpha]_f}=0.629\)</span> so that inversion occurs when <span class="math notranslate nohighlight">\(\approx 63\)</span>% of sucrose has been converted.</p>
+<p><span class="math notranslate nohighlight">\(^*\)</span> The specific rotation <span class="math notranslate nohighlight">\([\alpha ]_{\lambda }^{T}\)</span> is defined as the optical rotation <span class="math notranslate nohighlight">\(\alpha\)</span> at a path length <span class="math notranslate nohighlight">\(L\)</span> of <span class="math notranslate nohighlight">\(1\)</span> dm, a concentration <span class="math notranslate nohighlight">\([C]= 1\;\mathrm{g/100\,mL}\)</span>, at temperature <span class="math notranslate nohighlight">\(T\)</span> (typically <span class="math notranslate nohighlight">\(20^{\text{o}}\)</span>C) and at wavelength <span class="math notranslate nohighlight">\(\lambda\)</span>, usually the sodium D line at <span class="math notranslate nohighlight">\(589.3\)</span> nm.</p>
+</div>
+<div class="section" id="ii-chain-reactions-mean-chain-length">
+<h3><strong>(ii) Chain reactions. Mean Chain length</strong><a class="headerlink" href="#ii-chain-reactions-mean-chain-length" title="Permalink to this headline">¶</a></h3>
+<p>In a chain reaction, in contrast to a ‘normal’ reaction, one of the products is the same species as a reactant, or can react in an equivalent way, and so the reaction propagates. Polymer formation and may gas phase reactions such as <span class="math notranslate nohighlight">\(\mathrm{O_2 + H_2}\)</span> are chain reactions. In gas phase reactions radical species, such as <span class="math notranslate nohighlight">\(\mathrm{H\cdot,\, OH\cdot}\)</span>,  are usually the chain carriers.</p>
+<p>The general scheme is shown in fig 17c. Species I is the initiator step, for example a thermal reaction that generates active molecules, A and C a product. As can be seen the species A is reformed and cycles around the reaction.</p>
+<p><img alt="Drawing" src="_build_/jupyter_execute/chapter-4/integration-fig17c.png" /></p>
+<p>figure 16a: Semenov’s scheme for a simple chain reaction.</p>
+<hr class="docutils" />
+<p>The probability of propagation is defined as that fraction of A which is used again <span class="math notranslate nohighlight">\(\displaystyle \alpha =\frac{v_1}{v_1+v_2}\)</span> where <span class="math notranslate nohighlight">\(v_1,\,v_2\)</span> are effective first order rate constants with <span class="math notranslate nohighlight">\(v_2\)</span> forming any species that undergoes no further reaction.  The rate of reaction is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle W =\frac{d[C]}{dt} = v_1[A]\]</div>
+<p>and A reacts as</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \qquad\qquad\qquad \begin{align}
+\frac{d[A]}{dt}&amp;= I- (v_1+v_2)[A]+v_1[A] \\&amp;= I-\frac{(1-\alpha)}{\alpha}v_1[A] \qquad\qquad\qquad\text{(27a)}\\
+&amp;= I-\frac{(1-\alpha)}{\alpha}W\end{align} \end{split}\]</div>
+<p>In the stationary phase of the reaction (steady state), then <span class="math notranslate nohighlight">\(\displaystyle d[A]/dt = 0\)</span> then defining  the chain length as <span class="math notranslate nohighlight">\(v=W/I\)</span> then <span class="math notranslate nohighlight">\(\displaystyle v=\frac{\alpha }{1-\alpha}\)</span>.</p>
+<p>If the chain has <span class="math notranslate nohighlight">\(s\)</span> links then it must have propagated with chance <span class="math notranslate nohighlight">\(\alpha,\; s\)</span> times  and not propagated with chance <span class="math notranslate nohighlight">\((1-\alpha)\)</span> once. Thus the probability of <span class="math notranslate nohighlight">\(s\)</span> links in a chain is <span class="math notranslate nohighlight">\(p_s=\alpha^s(1-\alpha)\)</span>.</p>
+<p>The average chain length is therefore</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \langle v \rangle =\frac{\sum_{s=0}^\infty\limits sp_s}{\sum_{s=0}^\infty\limits p_s}= \frac{\sum_{s=0}^\infty\limits \displaystyle s\frac{\alpha^s}{1-\alpha} } {\sum_{s=0}^\infty\limits \displaystyle \frac{\alpha^s}{1-\alpha}  }=\frac{\sum_{s=0}^\infty\limits \displaystyle s\alpha^s} {\sum_{s=0}^\infty\limits \displaystyle \alpha^s}\]</div>
+<p>Both the summation are standard ones since <span class="math notranslate nohighlight">\(|\alpha|&lt;1\)</span>, because it is a fraction, then</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \langle v \rangle = \frac{\alpha}{(1-\alpha)^2}\frac{(1-\alpha)}{1}= \frac{\alpha}{1-\alpha}\]</div>
+<p>and thus the average number of units in a chain is the same as the values calculated assuming steady state applies.</p>
+<p>Short chains are the most probable as may be seen by examining <span class="math notranslate nohighlight">\(P_s=\alpha^s(1-\alpha)\)</span> vs <span class="math notranslate nohighlight">\(s\)</span> at various <span class="math notranslate nohighlight">\(\alpha\)</span> values recalling that <span class="math notranslate nohighlight">\(0\lt \alpha \lt 1\)</span>. Plotting the normalised probability <span class="math notranslate nohighlight">\((\alpha^s)\)</span> shows that this is a maximum at  <span class="math notranslate nohighlight">\(s=0\)</span> and decreases uniformly as <span class="math notranslate nohighlight">\(s\)</span> increases.</p>
+</div>
+<div class="section" id="iii-average-of-averages">
+<h3><strong>(iii) Average of averages</strong><a class="headerlink" href="#iii-average-of-averages" title="Permalink to this headline">¶</a></h3>
+<p>In the situation where some averages are given and the combined value is needed then a weighting of each is required. In the simplest case of two averages with numbers <span class="math notranslate nohighlight">\(n\)</span>, <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(m\)</span> number <span class="math notranslate nohighlight">\(b\)</span></p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \langle a\rangle =\frac{\sum_i^n a_i}{n},\qquad \langle b\rangle=\frac{\sum_i^m b_i}{m}\]</div>
+<p>their average or average of averages, is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \langle ab\rangle =\frac{1}{2}\left(\frac{\sum_i^n a_i}{n}+\frac{\sum_i^m b_i}{m}\right)\]</div>
+<p>The average of the whole group taken as one is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \langle a+b\rangle=\frac{\sum_i^n a_i+\sum_i^m b_i}{n+m}\]</div>
+<p>and this is clearly not the same  when <span class="math notranslate nohighlight">\(n\ne m\)</span>.</p>
+<p>Suppose that there are instead many averages of groups of number <span class="math notranslate nohighlight">\(n_1,n_2,n_3\)</span> with an average value of <span class="math notranslate nohighlight">\(v_1,v_2,v_3\)</span> respectively, the correct average is then ‘weighted’ by the amount each group contributes, for example</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \langle nv\rangle=\frac{n_1}{\sum_i n_i}v_1+\frac{n_2}{\sum_i n_i}v_2+\frac{n_3}{\sum_i n_i}v_3 \]</div>
+<p>or</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \langle nv\rangle=\frac{\sum_i n_iv_i }{\sum_i n_i}\]</div>
+<p>which has the form of equation 25 but here the <span class="math notranslate nohighlight">\(v\)</span>’s are themselves averages.</p>
+</div>
+</div>
+<div class="section" id="the-average-as-an-integration">
+<h2>8.2 The average as an integration<a class="headerlink" href="#the-average-as-an-integration" title="Permalink to this headline">¶</a></h2>
+<p>The average quantity derived from a theoretical model of a chemical or physical process, and described by an equation, is always used to compare with the experimental value from a set of measurements. Rather than a set of numbers, a calculation similar to that described above is needed to calculate the theoretical average. However, if the function is continuous, then integration rather than summation must be used.</p>
+<p>Suppose that <span class="math notranslate nohighlight">\(x\)</span> is the quantity whose average is <span class="math notranslate nohighlight">\(\langle x\rangle\)</span>, then this is calculated as</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \langle x\rangle =\frac{\int xP(x)dx}{\int P(x)dx}    \tag{28}\]</div>
+<p>where <span class="math notranslate nohighlight">\(P(x)dx\)</span> is the probability distribution of <span class="math notranslate nohighlight">\(x\)</span> and is the equation that describes how <span class="math notranslate nohighlight">\(x\)</span> is distributed and, colloquially speaking, <span class="math notranslate nohighlight">\(P(x)\)</span> is its shape. In equation 28 the denominator is the normalization term but if the distribution is already normalized then <span class="math notranslate nohighlight">\(\int P(x)dx = 1\)</span> and there is no need to calculate this integral.</p>
+<p>The limits of the integration cover the whole range of the distribution, usually <span class="math notranslate nohighlight">\(0 \to \infty\)</span>, or <span class="math notranslate nohighlight">\(-\infty  \to \infty\)</span> but may be <span class="math notranslate nohighlight">\(0 \to 2\pi\)</span> or <span class="math notranslate nohighlight">\(0 \to \pi\)</span> if the calculation involves angular values, however, the integration limits used depend upon the particular problem.</p>
+<p><img alt="Drawing" src="_build_/jupyter_execute/chapter-4/integration-fig16.png" /></p>
+<p>Figure 16b. left: A constant or uniform distribution. Right: A Gaussian distribution. These distributions are not normalised as their area is not unity.</p>
+<hr class="docutils" />
+<div class="section" id="i-excited-states">
+<h3><strong>(i) Excited states</strong><a class="headerlink" href="#i-excited-states" title="Permalink to this headline">¶</a></h3>
+<p>It is observed experimentally that the electronically excited state of a molecule decays exponentially, which means that there is an exponential distribution of times during which the molecule remains excited. Radioactive decay also has this type of distribution. One question to ask is; what is the average time that the molecule remains excited? To answer this question, equation 28 is used with the quantity <span class="math notranslate nohighlight">\(x\)</span> = time and the distribution function is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle P(t)dt=e^{-t/\tau}dt\]</div>
+<p>which is the chance the molecule has of still being excited during a time interval <span class="math notranslate nohighlight">\(dt\)</span> from <span class="math notranslate nohighlight">\(t \to t + dt\)</span>, if <span class="math notranslate nohighlight">\(\tau\)</span> is its lifetime, and it was already excited at time <span class="math notranslate nohighlight">\(t\)</span>. The lifetime is defined as the time an ensemble of the excited molecules take to decay to <span class="math notranslate nohighlight">\(1/e\)</span>, or <span class="math notranslate nohighlight">\(\approx 37 \text{%}\)</span>  of their initial number. The reciprocal of the lifetime is the rate constant. The half-life is the time taken to halve an initial population but half-lives are nowadays rarely used except for radioactive species. Using equation 28,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \langle t\rangle =\frac{\int tP(t)dt}{\int P(t)t}   =\frac{\int_0^\infty te^{-t/\tau}dt}{\int_0^\infty e^{-t/\tau}dt} \tag{29}\]</div>
+<p>Note that the integration limits start at <span class="math notranslate nohighlight">\(t = 0\)</span> and extend to infinity. Both integrals are ones met before, and can be found using Section 2.13,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle  \int_0^\infty t e^{-t/\tau}dt=\tau^2  \qquad \int_0^\infty e^{-t/\tau}dt =\tau \]</div>
+<p>and their ratio produces <span class="math notranslate nohighlight">\(\langle t\rangle  = \tau\)</span> so that the average decay time is also the lifetime. Note that in this case the probability distribution is not normalized because the integral <span class="math notranslate nohighlight">\(\int P(t) = \tau\)</span> and not 1. Because it is often not known beforehand if a distribution is normalized, this is ensured in the calculation by dividing by <span class="math notranslate nohighlight">\(\int P(t)\)</span> as in equation 28.</p>
+<p>In the case of a difficult integral a useful ‘trick’ is to take the log of the integral and then differentiate the result, i.e. if there is a function that depends on <span class="math notranslate nohighlight">\(\alpha\)</span> and <span class="math notranslate nohighlight">\(x\)</span>, i.e. <span class="math notranslate nohighlight">\(f(\alpha,x)\)</span> then</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{\partial}{\partial \alpha}\ln\left( \int e^{-f(\alpha,x)}dx  \right)= \frac{\displaystyle \int \frac{df(\alpha,x)}{d\alpha}e^{-f(\alpha x)}dx}{\displaystyle\int e^{-f(\alpha,x)}dx}\]</div>
+<p>In this example <span class="math notranslate nohighlight">\(\alpha = 1/\tau\)</span> and <span class="math notranslate nohighlight">\(x=t\)</span> thus the integral is <span class="math notranslate nohighlight">\(\int_0^\infty e^{-t\tau}dt = \tau\)</span>. Then <span class="math notranslate nohighlight">\(\displaystyle \frac{d}{d(1/\tau)}\ln(\tau)=\tau\)</span> which is the same result as direct integration. Note that the differentiation is wrt. <span class="math notranslate nohighlight">\(\alpha\)</span> but in this case <span class="math notranslate nohighlight">\(\alpha =1/\tau\)</span> so differentiation is in <span class="math notranslate nohighlight">\(1/\tau\)</span>. In the calculation we used a relationship of the type <span class="math notranslate nohighlight">\(\displaystyle \frac{d\ln(y)}{dx}=\frac{1}{y}\frac{dy}{dx}\)</span>.</p>
+</div>
+<div class="section" id="ii-infection-period">
+<h3><strong>(ii) Infection period</strong><a class="headerlink" href="#ii-infection-period" title="Permalink to this headline">¶</a></h3>
+<p>This example is that of calculating the mean time that a person is infected with a disease. Suppose that you are infected at time <span class="math notranslate nohighlight">\(t\)</span>, and that the chance that you are no longer infected in the next small time interval <span class="math notranslate nohighlight">\(\delta t\)</span>, is <span class="math notranslate nohighlight">\(a\delta t\)</span>, where <span class="math notranslate nohighlight">\(a\)</span> is a constant depending on the type of disease. This is the rate constant with which the disease will die out. If <span class="math notranslate nohighlight">\(p(t)\)</span> is the chance that you were infected at time <span class="math notranslate nohighlight">\(t\)</span>, during the time <span class="math notranslate nohighlight">\(t + \delta t\)</span> this changes to <span class="math notranslate nohighlight">\(p(t + \delta t) = p(t)(1 - a\delta t) + O(\delta t^2)\)</span>, which is the chance of being infected at time <span class="math notranslate nohighlight">\(t\)</span> multiplied by the chance of remaining infected during the following time <span class="math notranslate nohighlight">\(\delta t\)</span>. The term <span class="math notranslate nohighlight">\(O(\delta t^2)\)</span> means that terms in <span class="math notranslate nohighlight">\(\delta t^2\)</span> and higher are ignored because they are so small (see Chapter 5 for ‘big O’ notation). Subtracting <span class="math notranslate nohighlight">\(p(t)\)</span> from both sides and dividing by <span class="math notranslate nohighlight">\(\delta t\)</span> gives</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{p(t+\delta t)-p(t)}{\delta t}=-ap(t)\]</div>
+<p>Forming the differential with the limit <span class="math notranslate nohighlight">\(\delta t \to 0\)</span> gives</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{dp(t)}{dt}=-ap(t)\]</div>
+<p>As only one individual was considered <span class="math notranslate nohighlight">\(p(0) = 1\)</span>, and when integrated, by separating variables, <span class="math notranslate nohighlight">\(p(t) = e^{-at}\)</span>. If <span class="math notranslate nohighlight">\(N\)</span> individuals were initially infected then <span class="math notranslate nohighlight">\(p(t) = Ne^{-at}\)</span>. The average or mean time of infected is therefore by 29,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \langle t\rangle   =\frac{\int_0^\infty te^{-at}dt}{\int_0^\infty e^{-at}dt} =\frac{1}{a}\]</div>
+<p>A related type of argument is followed to find the mean free path of gas molecules or atoms, but with the distance between collisions taking the place of time.</p>
+</div>
+<div class="section" id="iii-centroids">
+<h3><strong>(iii) Centroids</strong><a class="headerlink" href="#iii-centroids" title="Permalink to this headline">¶</a></h3>
+<p>In this example we find the position <span class="math notranslate nohighlight">\(\langle s\rangle\)</span> of the centre of gravity or mass of a body that has a weight distribution <span class="math notranslate nohighlight">\(w(s)\)</span>. The weight distribution describes how the mass resides in the object and therefore describes both its shape and how the mass varies across that shape. In general, there are three values of the centre of mass, one in each of the x-, y-, and z-axes, so it is necessary to specify which one is being considered. The centre of gravity is the average position according to its mass and therefore, for each axis, the appropriate equation to use has the form of equation 28,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \langle s\rangle = \frac{\int sw(s)}{\int w(s) }=\frac{M_s}{A}  \tag{30}\]</div>
+<p>and <span class="math notranslate nohighlight">\(s\)</span> can represent any one of the x-, y- or z-coordinates but for simplicity, we will consider only two-dimensional shapes and uniform density. If the body has uniform density the coordinates of the centre of mass is often called the <em>centroid</em>. The integral<span class="math notranslate nohighlight">\(\int sw(s)ds\)</span> is the <em>moment</em> <span class="math notranslate nohighlight">\(M_s\)</span> about an axis <span class="math notranslate nohighlight">\(s\)</span> and <span class="math notranslate nohighlight">\(\int w(s) ds\)</span> the area <span class="math notranslate nohighlight">\(A\)</span>. If the density is not uniform, then the function <span class="math notranslate nohighlight">\(w(s)\)</span> has to be multiplied by the density at <span class="math notranslate nohighlight">\(s\)</span>.</p>
+<p>Consider calculating the centroids of an area in the x-y plane, Figure 17. The method is to calculate the moment of a strip about each of the x- and y-axes in turn then divide the result by the total area of the object. In this case this is bounded above and below by functions <span class="math notranslate nohighlight">\(f\)</span> and <span class="math notranslate nohighlight">\(g\)</span> and by <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> along the x-axis. This area is called a lamina if it is of uniform density. The area is shown shaded in Figure 17.</p>
+<p>The small element between the two curves has an area <span class="math notranslate nohighlight">\(( f(x) - g(x))\delta x\)</span> and when multiplied by the density this would be its mass. The centre of gravity, or mean value of the strip, is at <span class="math notranslate nohighlight">\(y\)</span> value of <span class="math notranslate nohighlight">\((f (x) + g(x))/2\)</span> and the moment of the strip about the x-axis is the product of these two terms.</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \delta M_x= \frac{1}{2}\left( f(x)-g(x) \right)\left( f(x)+g(x) \right)\delta x\]</div>
+<p>Taking the limit to form a true differential, makes the change <span class="math notranslate nohighlight">\(\delta x \to 0\)</span> and then <span class="math notranslate nohighlight">\(d M_x /dx\)</span> is formed which when integrated to cover the whole area from <span class="math notranslate nohighlight">\(a \to b\)</span> gives the moment about the x-axis as</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle M_x=\frac{1}{2}\int_a^b f(x)^2-g(x)^2 dx  \tag{31}\]</div>
+<p>In the special case that the lower curve is the x-axis, then the function <span class="math notranslate nohighlight">\(g(x) =0\)</span> and</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle M_x=\frac{1}{2}\int_a^b f(x)^2 dx = \frac{1}{2}\int_a^b y^2 dx\tag{32}\]</div>
+<p>The similar calculation about the y-axis produces the moment</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \delta M_y=x\left(f(x)-g(x)\right)\delta x\]</div>
+<p>which produces</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle M_y= \int_a^b xf(x)-xg(x) dx\tag{33}\]</div>
+<p>and when <span class="math notranslate nohighlight">\(g\)</span> is the x-axis,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle M_y= \int_a^b xf(x) dx=\int_a^b xy dx \tag{34}\]</div>
+<p>The area <span class="math notranslate nohighlight">\(\displaystyle A=\int_a^bf(x)-g(x)dx \)</span> and the centroids are therefore</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \langle y\rangle =\frac{M_x}{A}, \qquad \langle x\rangle =\frac{M_y}{A}  \tag{35}\]</div>
+<p>Notice how the <span class="math notranslate nohighlight">\(y\)</span> centroid depends on <span class="math notranslate nohighlight">\(M_x\)</span> and vice versa.</p>
+<p><img alt="Drawing" src="_build_/jupyter_execute/chapter-4/integration-fig17-17b.png" /></p>
+<p>Figure 17. Left. Geometry for calculating centroids. Right centroid at <span class="math notranslate nohighlight">\((2/5,4/7)\)</span> (blue dot) of <span class="math notranslate nohighlight">\(x^{1/3}\)</span> with range <span class="math notranslate nohighlight">\(0 \to 1\)</span>.</p>
+<hr class="docutils" />
+<p>The centroid of the curve <span class="math notranslate nohighlight">\(y = x^{1/3}\)</span> from <span class="math notranslate nohighlight">\(0 \to 1\)</span> is obtained by first finding the area, which is the integral <span class="math notranslate nohighlight">\(\displaystyle A=\int_0^1x^{1/3}dx=\frac{3}{4}x^{4/3}\bigg|_0^1 =\frac{3}{4}\)</span>.</p>
+<p>The moment about the x-axis is <span class="math notranslate nohighlight">\(\displaystyle M_x =\frac{1}{2}\int_0^1 x^{2/3}dx=\frac{3}{10}\)</span> and the centroid is at <span class="math notranslate nohighlight">\(\langle y\rangle = M_x/A = 2/5\)</span>.</p>
+<p>The moment about the y-axis is <span class="math notranslate nohighlight">\(\displaystyle M_y =\frac{1}{2}\int_0^1 x^{4/3}dx=\frac{3}{7}\)</span> and the centroid is at <span class="math notranslate nohighlight">\(\langle x\rangle =M_y/A=4/7\)</span></p>
+</div>
+<div class="section" id="iv-chromatography-average-value-and-width-of-eluted-profile">
+<h3><strong>(iv) Chromatography. Average value and width of eluted profile</strong><a class="headerlink" href="#iv-chromatography-average-value-and-width-of-eluted-profile" title="Permalink to this headline">¶</a></h3>
+<p>In chapter 1 section 9.10 a probabilistic model was developed to describe the shape of a chromatogram the result was a distribution <span class="math notranslate nohighlight">\(P(n)\)</span> closely related to the Poisson distribution was found,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle P(n)= p\frac{(np)^{(N-1)}}{(N-1)!}e^{-np} \tag{35a}\]</div>
+<p>where <span class="math notranslate nohighlight">\(N\)</span> is the number of theoretical plates, <span class="math notranslate nohighlight">\(p\)</span> the probability related to the partition constant <span class="math notranslate nohighlight">\(K\)</span> the total volume of the mobile phase <span class="math notranslate nohighlight">\(V_m\)</span> and of <span class="math notranslate nohighlight">\(V_s\)</span> the stationary phase;</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle p=\left(1+K\frac{V_s}{V_m}\right)^{-1}\]</div>
+<p>Initially <span class="math notranslate nohighlight">\(m_0\)</span> moles are added and are distributed in the mobile and stationary phase as <span class="math notranslate nohighlight">\(p:(1-p)\)</span>. The variable <span class="math notranslate nohighlight">\(n\)</span> is the number of steps takes as the molecules move down the column and at each step <span class="math notranslate nohighlight">\(V_m/N\)</span> moles are elute.</p>
+<p>The average of the resulting distribution is <span class="math notranslate nohighlight">\(\sum_{n=0}^\infty nP(n)\)</span> which assuming that the sum can be replaced by an integral becomes <span class="math notranslate nohighlight">\(\langle n\rangle=\int nP(n)dn\)</span> and with some simplification</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle  \langle n\rangle =  \frac{1}{(N-1)!}\int_0^\infty (pn)^Ne^{-np}dn\]</div>
+<p>which needs the substitution <span class="math notranslate nohighlight">\(x=np\)</span>, or <span class="math notranslate nohighlight">\(dx=pdn\)</span> forms</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle  \langle n\rangle =  \frac{1}{p(N-1)!}\int_0^\infty x^Ne^{-x}dx\]</div>
+<p>This is clearly a complicated integral and after some searching (or by using Python/Sympy) one finds that it is a standard integral which produces the gamma function, therefore  <span class="math notranslate nohighlight">\(\displaystyle  \langle n\rangle =  \frac{\Gamma(N+1)}{p(N-1)!}\)</span>.  Since <span class="math notranslate nohighlight">\(\Gamma(N+1)=N!\)</span>, for integer <span class="math notranslate nohighlight">\(N\)</span>, which is the case here then</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle  \langle n\rangle =  \frac{N}{p}\tag{35b}\]</div>
+<p>The average eluted volume is therefore  <span class="math notranslate nohighlight">\( V_m /p\)</span> because <span class="math notranslate nohighlight">\(N/p\)</span> volumes each of <span class="math notranslate nohighlight">\(V_m/N\)</span> are eluted.  This quantity is not the maximum of the peak, because this profile is not symmetric, but is close to that value. Differentiating <span class="math notranslate nohighlight">\(P(n)\)</span> and setting the result to zero will find the peak at <span class="math notranslate nohighlight">\(n=(N-1)/p\)</span>.</p>
+<p>The average value is sometimes called the <em>first moment</em> and the <em>second moment</em> is is used to calculate the variance of a quantity. In this case we use this to find the width of the distribution which is <span class="math notranslate nohighlight">\(\sigma_n\)</span> where <span class="math notranslate nohighlight">\(\sigma_n^2=  \langle n^2\rangle - \langle n\rangle^2\)</span>.</p>
+<p>The integral needed is <span class="math notranslate nohighlight">\(\langle n^2\rangle=\int n^2P(n)dn\)</span></p>
+<div class="math notranslate nohighlight">
+\[\displaystyle  \langle n^2\rangle =  \frac{1}{p(N-1)!}\int_0^\infty n(pn)^Ne^{-np}dn=\frac{1}{p^2(N-1)!}\int_0^\infty (pn)^{(N+1)}e^{-np}dn\]</div>
+<p>and the integral is <span class="math notranslate nohighlight">\(\Gamma(N+2)\)</span> and substituting and simplifying gives</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle  \langle n^2\rangle =  \frac{(N+1)!}{p^2(N-1)!}=\frac{N(N+1)}{p^2}\]</div>
+<p>the width of the peak is  given by <span class="math notranslate nohighlight">\(\sigma_n\)</span> where</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \sigma_n^2=\displaystyle \frac{N(N+1)}{p^2}-\frac{N^2}{p^2}=\frac{N}{p^2}\tag{35c}\]</div>
+<p>This squared value only in terms of the number of steps <span class="math notranslate nohighlight">\(n\)</span> and we as measure the eluted volume this number should be multiplied by <span class="math notranslate nohighlight">\( (V_m/N)^2\)</span> and so the average width of the measured peak is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle  \sigma=\frac{V_m}{p\sqrt{N}}\]</div>
+<p>and similarly the mean volume becomes <span class="math notranslate nohighlight">\(\displaystyle \langle V_m\rangle=\langle n\rangle\frac{V_m}{N}=\frac{V_m}{p}\)</span> and <span class="math notranslate nohighlight">\(\displaystyle \sigma=\frac{\langle V_m\rangle}{\sqrt{N}} \)</span>.</p>
+<p>If the probability <span class="math notranslate nohighlight">\(P(n)\)</span> (eqn 35a) is plotted vs the number <span class="math notranslate nohighlight">\(n\)</span> this is proportional to plotting size of detected signal vs eluted volume because <span class="math notranslate nohighlight">\(P(n)\)</span> is the probability of eluting the <span class="math notranslate nohighlight">\(n^{th}\)</span> amount <span class="math notranslate nohighlight">\(V_m/N\)</span>. As the number of plates <span class="math notranslate nohighlight">\(N\)</span> increases the peak occurs at larger <span class="math notranslate nohighlight">\(N\)</span> values at a given <span class="math notranslate nohighlight">\(p\)</span>. If <span class="math notranslate nohighlight">\(p\)</span> is increased then the peaks occur at smaller <span class="math notranslate nohighlight">\(n\)</span>. However, as <span class="math notranslate nohighlight">\(n\)</span> increases the with of the profile gets larger but only as <span class="math notranslate nohighlight">\(\sqrt{N}\)</span> but so does the separation but in proportion to <span class="math notranslate nohighlight">\(N\)</span> so that the separation improves, i.e. peaks that would overlap at small <span class="math notranslate nohighlight">\(N\)</span> may no longer do so, see figure 17a.</p>
+<p><img alt="Drawing" src="_build_/jupyter_execute/chapter-4/integration-fig17a.png" /></p>
+<p>Figure 17a. Chromatography peaks with <span class="math notranslate nohighlight">\(p=0.1\)</span> left (grey) and <span class="math notranslate nohighlight">\(0.12\)</span> (blue) at two values of  theoretical plates <span class="math notranslate nohighlight">\(N\)</span>. Notice that as <span class="math notranslate nohighlight">\(N\)</span> increases so does the width of the peak but only as <span class="math notranslate nohighlight">\(\sqrt{N}\)</span> whereas the peaks separate as <span class="math notranslate nohighlight">\(N\)</span> so resolution increases with increasing <span class="math notranslate nohighlight">\(N\)</span> which can be obtained using longer columns.</p>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="average-of-a-function">
+<h2>8.3 Average of a function<a class="headerlink" href="#average-of-a-function" title="Permalink to this headline">¶</a></h2>
+<p>The average of a function of <span class="math notranslate nohighlight">\(x,\; f (x)\)</span>, is evaluated in a similar way as for a variable</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \langle f(x) \rangle = \frac{\int f(x)P(x)dx}{\int P(x)dx}  \tag{36}\]</div>
+<p>If the function is <span class="math notranslate nohighlight">\(f(x)=e^{-\alpha x}\)</span> and is distributed according to <span class="math notranslate nohighlight">\(P(x)=1/\cosh(\alpha x)\)</span> its average is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \langle f(x) \rangle = \frac{\int e^{-\alpha x}/\cosh(\alpha x)dx}{\int 1/\cosh(\alpha x)dx}  \]</div>
+<p>which looks rather complicated. However, <span class="math notranslate nohighlight">\(\cosh\)</span>, like many trig functions, can be represented in an exponential form as <span class="math notranslate nohighlight">\(2\cosh(x) = e^x + e^{-x}\)</span> and this makes this normalization (denominator)  integral simpler;</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \int_0^\infty \frac{1}{\cosh(\alpha x)}dx=\int_0^\infty \frac{2}{e^{\alpha x}+e^{-\alpha x}}dx\]</div>
+<p>Trying a substitution <span class="math notranslate nohighlight">\(u = e^{\alpha x}\)</span> , then <span class="math notranslate nohighlight">\(du = \alpha e^{\alpha x}dx = \alpha udx\)</span>  and changing the limits produces the result  <span class="math notranslate nohighlight">\(\displaystyle \frac{2}{\alpha}\tan^{-1}(u)\bigg|_1^\infty =\frac{\pi}{2\alpha}\)</span></p>
+<p>The numerator is <span class="math notranslate nohighlight">\(\displaystyle \int_0^\infty \frac{e^{-\alpha x}}{\cosh(\alpha x)}dx= \int_0^\infty \frac{2}{e^{2\alpha x}+1}dx\)</span>. Making a similar substitution let <span class="math notranslate nohighlight">\(u=e^{2\alpha x}\)</span>, and changing the limits,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \int_0^\infty \frac{2}{e^{2\alpha x}}dx=\frac{1}{\alpha}\int_1^\infty \frac{1}{u^2+u}dx = \frac{\ln(2)}{\alpha}\]</div>
+<p>making the average <span class="math notranslate nohighlight">\(\langle f(x)\rangle =2\ln(2)/\pi\)</span></p>
+</div>
+<div class="section" id="expectation-values">
+<h2>8.4 Expectation values<a class="headerlink" href="#expectation-values" title="Permalink to this headline">¶</a></h2>
+<p>In quantum mechanics, if <span class="math notranslate nohighlight">\(\psi\)</span> are the normalized wavefunctions and <span class="math notranslate nohighlight">\(x\)</span>, for example, is the displacement of an atom in a vibrating diatomic molecule from its equilibrium value, then its average position is in state <span class="math notranslate nohighlight">\(k\)</span></p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \langle x_k\rangle = \int_{-\infty}^\infty \psi_k^*\,x\,\psi_k dx \equiv \langle k|x|k\rangle \tag{37}\]</div>
+<p>Expressions of this form are called the expectation value of the operator, which is <span class="math notranslate nohighlight">\(x\)</span> in this case. The wavefunctions also depend on position <span class="math notranslate nohighlight">\(x\)</span> although this is not explicitly shown. The subscript <span class="math notranslate nohighlight">\(k\)</span> tells us that we are examining level <span class="math notranslate nohighlight">\(k\)</span>; the superscript * shows that this is the complex conjugate of the wavefunction. The <span class="math notranslate nohighlight">\(\langle\;\rangle\)</span>  around the <span class="math notranslate nohighlight">\(x\)</span> indicates an average value. Alternatively an average can be written with a bar as <span class="math notranslate nohighlight">\(\bar x\)</span>. To the right of the equation the compact and much clearer bra-ket, or Dirac, notation is used, which uses only the indices of the wavefunction; see Chapter 8. Formally, in equation 37, <span class="math notranslate nohighlight">\(x\)</span> is the <em>operator</em> and it is always placed between the two wavefunctions. In this particular instance it does not make any difference where <span class="math notranslate nohighlight">\(x\)</span> is, but if the operator was <span class="math notranslate nohighlight">\(d/dx\)</span> then this has to be followed by something to operate on and this is always <span class="math notranslate nohighlight">\(\psi\)</span> and is preceded by <span class="math notranslate nohighlight">\(\psi^*\)</span> the complex conjugate.</p>
+<p>Suppose that you are in the teaching lab and are asked to devise an experiment that attempts to measure <span class="math notranslate nohighlight">\(\langle x\rangle\)</span> for a harmonic oscillator at several different vibrational energies. Do you rush away and collect lots of equipment or sit down and think about the problem? The former is definitely more exciting -select a laser, several mirrors and lenses, vacuum pump, oscilloscope, detectors, and so forth - but ultimately futile. Thinking about the experiment first is always the better option; it saves you wasting time on pointless experimentation, leaving you time to tackle interesting problems. The resulting average displacement <span class="math notranslate nohighlight">\(\langle x\rangle\)</span>, as you will have realized for a harmonic oscillator, should be zero.</p>
+<p>Why is it concluded that the average displacement is zero just by looking at equation 37? Because the wavefunctions are the same, their product must be an <em>even function</em>; any normal function squared is an even function. Because any displacement such as <span class="math notranslate nohighlight">\(x\)</span>, is an odd function: <span class="math notranslate nohighlight">\(-x\)</span> is not the same as <span class="math notranslate nohighlight">\(+x\)</span>, the integral is odd overall and must integrate to zero, provided the integration range is symmetrical about zero; Section 4.1.3. This result corresponds to the common sense observation that in the harmonic potential, the bond extension is equal and opposite to the compression, making the average displacement zero for any value of the vibrational quantum number. Figure 38 (in solutions) shows a harmonic potential. It was worth simply thinking about measuring the average displacement first. An experiment will still be needed, although we now know what to expect; it is often a mistake <em>not</em> to do an experiment because you ‘know’ what the answer is. If the average displacement measured from different vibrational levels were different, what then might you conclude?</p>
+<p>The symmetry rules are:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{array}{ll}
+(odd \times odd) = even &amp; (even \times odd) \equiv (odd \times even) = odd \\
+(odd \times odd \times even) = even &amp;(even \times odd \times odd) = even
+\end{array}\end{split}\]</div>
+<p>If the product of the wavefunctions and operator <span class="math notranslate nohighlight">\(x\)</span> is even, there may still be enough symmetry left so that the integral is zero because the positive and negative parts can exactly cancel. With an odd function the integral is always zero.</p>
+<p>The odd/even classification is very simple; space is split into two parts. If it were split into four parts then, as you can appreciate, things would be more complicated. In general where functions are more complex, as the molecular orbitals or the vibrational normal modes of molecules can be, then group theory (Chapter 7) must be used to decide whether or not the direct product of the irreducible representations are, or are not, non-totally symmetric. The jargon makes this calculation sound difficult but, as with most jargon, it hides simple things.</p>
+<p>The general expectation value between levels with different quantum numbers <span class="math notranslate nohighlight">\(n\)</span> and <span class="math notranslate nohighlight">\(m\)</span> is always calculated as:</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \langle Q_{n,m}\rangle =\frac{ \int\psi_n^*\,Q\,\psi_m dx}{ \int \psi_n^*\psi_m dx} \tag{38}\]</div>
+<p>where <span class="math notranslate nohighlight">\(Q\)</span> is the operator acting on the wavefunction <span class="math notranslate nohighlight">\(\psi_m\)</span> for state <span class="math notranslate nohighlight">\(m\)</span>. The wavefunction is a function only of <span class="math notranslate nohighlight">\(x\)</span> in this example and that is implied by the fact that integration is only with respect to <span class="math notranslate nohighlight">\(x\)</span>. You should be aware, however, that it is common to use <span class="math notranslate nohighlight">\(\tau\)</span>, for example,  to represent general coordinates which may be <span class="math notranslate nohighlight">\(x, y\)</span>, or <span class="math notranslate nohighlight">\(z\)</span> or <span class="math notranslate nohighlight">\(r,\, \theta, \, \phi\)</span>, and then the integral would be a triple one. Note that if the wavefunctions are normalized then the denominator is unity and</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \langle Q_{n,m}\rangle = \int\psi_n^*\,Q\,\psi_m dx \tag{39}\]</div>
+</div>
+<div class="section" id="uncertainty-principle">
+<h2>8.5 Uncertainty principle<a class="headerlink" href="#uncertainty-principle" title="Permalink to this headline">¶</a></h2>
+<p>The Uncertainly Principle of Quantum Mechanics insist that the position and momentum of a quantum particle cannot be known simultaneously, the best that can be done is <span class="math notranslate nohighlight">\(\Delta x \Delta p \ge \hbar/2\)</span>.</p>
+<p>We define the uncertainty in the measurement of a quantity <span class="math notranslate nohighlight">\(x\)</span> as its root mean square value or the square root of the variance. The variance is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \sigma^2 =\sum_i{(x_i-\langle x\rangle )^2 }/(n-1)\]</div>
+<p>see chapter 13, Data Analysis. The standard deviation is <span class="math notranslate nohighlight">\(\sigma\)</span>. The summation indicates an average of the <span class="math notranslate nohighlight">\(x_i\)</span> is being taken and expanding out this equation it can be re-written as</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \sigma^2 =\langle (x-\langle x\rangle )^2 \rangle =\langle x^2\rangle-\langle x\rangle^2 \]</div>
+<p>since the terms <span class="math notranslate nohighlight">\(x_i\langle x\rangle \)</span> average to zero because <span class="math notranslate nohighlight">\(x_i\)</span> are randomly distributed about their mean value.</p>
+<p>The average position of a quantum particle is its expectation value,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle\langle x\rangle = \langle \psi^*|x|\psi\rangle =\int\psi^*(x)\,x\,\psi(x)dx\]</div>
+<p>and the square of the position we change <span class="math notranslate nohighlight">\(x\to x^2\)</span> thus,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle\langle x^2\rangle = \langle \psi^*|x^2|\psi\rangle =\int\psi^*(x)\,x^2\,\psi(x)dx\]</div>
+<p>The  the uncertainty in position is thus given by</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \Delta x = \sqrt{\langle x^2\rangle-\langle x\rangle^2 }\]</div>
+<p>and clearly depends on the nature of the wavefunctions.</p>
+<p>Similarly, the uncertainty in momentum <span class="math notranslate nohighlight">\(p\)</span> is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \Delta p = \sqrt{\langle p^2\rangle-\langle p\rangle^2 }\]</div>
+<p>where the operator for momentum in quantum mechanics is <span class="math notranslate nohighlight">\(\displaystyle -i\hbar\frac{d}{dx}\)</span></p>
+<p>To test what happens for different potentials the <span class="math notranslate nohighlight">\(\Delta x\Delta p\)</span> is calculated for the harmonic and infinite square well also called a particle in a box.</p>
+<div class="section" id="i-harmonic-oscillator">
+<h3><strong>(i) Harmonic oscillator</strong><a class="headerlink" href="#i-harmonic-oscillator" title="Permalink to this headline">¶</a></h3>
+<p>The wavefunction for the ground state, quantum number <span class="math notranslate nohighlight">\(n=0\)</span>, of an Harmonic oscillator is the first of a set of normalised Hermite polynomials and is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \psi_0=\left(\frac{\alpha}{\pi}\right)^{1/4} e^{-\alpha x^2/2} \]</div>
+<p>where <span class="math notranslate nohighlight">\(x\)</span> is the displacement from zero bond extension and <span class="math notranslate nohighlight">\(\displaystyle \alpha =\frac{\sqrt{\mu k}}{\hbar}\)</span> with <span class="math notranslate nohighlight">\(\mu\)</span> as reduced mass and <span class="math notranslate nohighlight">\(k\)</span> as the force constant. (See also Chapter 8.14).</p>
+<p>The average position is thus</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle\langle x\rangle = \int\psi^*(x)\,x\,\psi(x)dx= \sqrt{\frac{\alpha}{\pi}}\int_{-\infty}^\infty xe^{-\alpha x^2}=0\]</div>
+<p>and on inspection is zero as it is an odd function with symmetrical limits about zero. The square is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle\langle x^2\rangle = \int\psi^*(x)\,x^2\,\psi(x)dx= \sqrt{\frac{\alpha}{\pi}}\int_{-\infty}^\infty x^2e^{-\alpha x^2}\]</div>
+<p>which is not zero and is a standard integral (see table in section 2.13) having a value <span class="math notranslate nohighlight">\(1/2\alpha\)</span>, thus <span class="math notranslate nohighlight">\(\Delta x = \sqrt{ -1/2\alpha}\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">alpha</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">hbar</span> <span class="o">=</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;alpha,x,hbar&#39;</span><span class="p">,</span><span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">psi0</span> <span class="o">=</span> <span class="p">(</span><span class="n">alpha</span><span class="o">/</span><span class="n">pi</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">4</span><span class="p">)</span><span class="o">*</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">alpha</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">integrate</span><span class="p">(</span> <span class="n">psi0</span><span class="o">*</span><span class="n">x</span><span class="o">*</span><span class="n">x</span><span class="o">*</span><span class="n">psi0</span><span class="p">,(</span><span class="n">x</span><span class="p">,</span><span class="o">-</span><span class="n">oo</span><span class="p">,</span><span class="n">oo</span><span class="p">),</span> <span class="n">conds</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/integration-D_5_0.png" src="../../../_images/integration-D_5_0.png" />
+</div>
+</div>
+<p>The calculation for the momentum is a bit more involved as the derivative of <span class="math notranslate nohighlight">\(\psi\)</span> has to be taken first,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle -i\hbar\frac{d}{dx}\left(\frac{\alpha}{\pi}\right)^{1/4} e^{-\alpha x^2/2}= -i\hbar\left(\frac{\alpha}{\pi}\right)^{1/4}e^{-\alpha x^2/2}(-\alpha x)   \]</div>
+<p>and so the average <span class="math notranslate nohighlight">\(\langle p\rangle=0\)</span> because again the integral becomes an odd function via the term <span class="math notranslate nohighlight">\(\displaystyle xe^{-\alpha x^2}\)</span>.</p>
+<p>The square of the momentum operator is to differentiate twice over, or <span class="math notranslate nohighlight">\(\displaystyle -\hbar^2\frac{d^2\psi}{dx}\)</span> which produces <span class="math notranslate nohighlight">\(\displaystyle -\hbar^2\alpha^{5/4}(\alpha x^2-1)e^{-\alpha x^2/2}/\pi^{1/4}\)</span></p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \langle p^2\rangle  = -\hbar^2\int_{-\infty}^{\infty} \alpha^3\left(\frac{\alpha}{\pi}\right)^{1/2}(\alpha x^2-1)e^{-\alpha x^2}\]</div>
+<p>Using Sympy to do the integration (see below)  gives <span class="math notranslate nohighlight">\(\langle p^2\rangle = \alpha\hbar^2/2\)</span> and then <span class="math notranslate nohighlight">\(\langle p\rangle =-\sqrt{\alpha\hbar^2/2}\)</span>.</p>
+<p>The product is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \Delta x\Delta p = \sqrt{\frac{1}{2\alpha}\frac{\alpha\hbar^2}{2}  }=\frac{\hbar}{2}\]</div>
+<p>which shows that the lowest harmonic oscillator level has the smallest possible <span class="math notranslate nohighlight">\(\Delta x\Delta p\)</span> according to Heisenberg uncertainty. In general levels have values of <span class="math notranslate nohighlight">\((2n+1)\hbar/2\)</span> so all conform to being either equal to or greater that <span class="math notranslate nohighlight">\(\hbar/2\)</span>.</p>
+<p>(footnote: Squaring <span class="math notranslate nohighlight">\(-i\)</span> in the momentum operator is tricky, and is <span class="math notranslate nohighlight">\((-1\, i)(-1\, i)=1\, i\, i=-1\)</span>. Alternatively as <span class="math notranslate nohighlight">\(-i=1/i\)</span> then <span class="math notranslate nohighlight">\((1/i)^2=-1\)</span>).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">-</span><span class="n">hbar</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">integrate</span><span class="p">(</span> <span class="n">psi0</span><span class="o">*</span><span class="n">diff</span><span class="p">(</span><span class="n">psi0</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">x</span><span class="p">)</span> <span class="p">,(</span><span class="n">x</span><span class="p">,</span><span class="o">-</span><span class="n">oo</span><span class="p">,</span><span class="n">oo</span><span class="p">)</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/integration-D_7_0.png" src="../../../_images/integration-D_7_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="ii-particle-in-a-box">
+<h3><strong>(ii) particle in a box</strong><a class="headerlink" href="#ii-particle-in-a-box" title="Permalink to this headline">¶</a></h3>
+<p>Following the method outlined above the calculation for a particle in a box always produces <span class="math notranslate nohighlight">\(\Delta x\Delta p\gt\hbar/2\)</span>. If the box is of length <span class="math notranslate nohighlight">\(0\to a\)</span> ( and the integration is taken over this range ) and for the lowest energy level with quantum number <span class="math notranslate nohighlight">\(n=1\)</span>, <span class="math notranslate nohighlight">\( \displaystyle \Delta x\Delta p =\frac{\sqrt{3\pi^2-18}}{6}\hbar \)</span> which is greater than <span class="math notranslate nohighlight">\(\hbar/2\)</span> and consistent with the uncertainty principle. The similar result is found for all <span class="math notranslate nohighlight">\(n\)</span> where the values increase with <span class="math notranslate nohighlight">\(n\)</span>, for example when <span class="math notranslate nohighlight">\(n=2\)</span>, <span class="math notranslate nohighlight">\( \displaystyle \Delta x\Delta p=\frac{\sqrt{12\pi^2-18}}{6}\hbar \)</span>, thus we find that there is no requirement for <span class="math notranslate nohighlight">\(\Delta x\Delta p\)</span> to be equal to <span class="math notranslate nohighlight">\(\hbar/2\)</span> for any quantum number. The general trend is <span class="math notranslate nohighlight">\(\displaystyle \Delta x\Delta p= \sqrt{\frac{n^2\pi^2-6}{12}}\hbar\)</span> and the normalised wavefunction is <span class="math notranslate nohighlight">\(\displaystyle \psi=\sqrt{\frac{2}{a}}\sin\left(\frac{n\pi x}{a}\right)\)</span>.</p>
+</div>
+</div>
+<div class="section" id="higher-averages-moments-and-variance">
+<h2>8.6 Higher averages: moments and variance<a class="headerlink" href="#higher-averages-moments-and-variance" title="Permalink to this headline">¶</a></h2>
+<p>The average <span class="math notranslate nohighlight">\(\langle x\rangle\)</span> is also called the <em>first moment</em> of its distribution; <span class="math notranslate nohighlight">\(\langle x^2\rangle\)</span> the second moment and so on. The general relationships are, assuming that <span class="math notranslate nohighlight">\(P(x)\)</span> is a normalized distribution,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \langle m_k\rangle = \int x^kP(x)dx  \tag{41}\]</div>
+<p>thus</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle m_1 \equiv \langle m_1\rangle =\int xP(x)dx , \qquad  m_2 \equiv \langle m_2\rangle =\int x^2P(x)dx  \tag{42}\]</div>
+<p>The <em>variance</em> of a distribution is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \sigma_x^2 = \langle x^2\rangle - \langle x\rangle ^2 = \int (x-\langle x\rangle )^2P(x)dx  \tag{43}\]</div>
+<p>and <span class="math notranslate nohighlight">\(\sigma_x\)</span> is the standard deviation and is described in more detail in chapter 13.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./_build_/jupyter_execute/chapter-4"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Godfrey Beddard<br/>
+        
+            &copy; Copyright 2022.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

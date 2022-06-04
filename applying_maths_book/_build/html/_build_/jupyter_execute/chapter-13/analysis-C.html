@@ -1,0 +1,1890 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modelling data is simpler using matrices &#8212; Applying Maths in the Chemical &amp; Biomolecular Sciences</title>
+    
+  <link href="../../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/togglebutton.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../../_static/book-cover.jpg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Applying Maths in the Chemical & Biomolecular Sciences</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../intro.html">
+   Applying Maths in the Chemical and Biomolecular Sciences.
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../chapter-1/chapter1-intro.html">
+   1. Numbers, Equations, Operators, and Algorithms.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-1/chapter1-A.html">
+     Numbers to Algorithms.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-1/chapter1-Q1-7.html">
+     Questions 1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-1/chapter1-B.html">
+     Trig, hyperbolic and inverse functions, waves, polar coordinates &amp; factorials
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-1/chapter1-Q8-16.html">
+     Questions 8 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-1/chapter1-C.html">
+     Sophisticated Counting.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-1/chapter1-Q17-34.html">
+     Questions 17 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-1/chapter1-D.html">
+     Modulo arithmetic,
+     <span class="math notranslate nohighlight">
+      \(\delta\)
+     </span>
+     functions, types of  series &amp;  estimating quantities
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-1/chapter1-Q35-39.html">
+     Questions 35 - 39
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-1/chapter1-answers-1-7.html">
+     Solutions Q1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-1/chapter1-answers-8-16.html">
+     Solutions Q8 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-1/chapter1-answers-17-34.html">
+     Solutions Q17 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-1/chapter1-answers-35-39.html">
+     Solutions Q35 - 39
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../chapter-2/chapter2-intro.html">
+   2. Complex numbers.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-2/chapter2-A.html">
+     Real, imaginary, conjugate and modulus
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-2/chapter2-Q-1-9.html">
+     Questions 1 - 9
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-2/chapter2-B.html">
+     De Moivre’s theorem and integer powers of complex numbers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-2/chapter2-Q-10-13.html">
+     Questions 10 -13
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-2/chapter2-C.html">
+     Euler’s theorem
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-2/chapter2-Q-14-27.html">
+     Questions 14 - 27
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-2/chapter2-answers.html">
+     Solutions Q1 - 27
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../chapter-3/differen-intro.html">
+   3. Differentiation.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-A.html">
+     Differentiation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-B.html">
+     Trig functions, logs, power, reciprocals and integrals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-C-Q-4-11.html">
+     Questions 1-11
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-D.html">
+     Product rule and function of function or chain rule.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-E-Q-12-42.html">
+     Questions 12-42
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-F.html">
+     Limits, l’Hopital’s rule, Maximum, Minimum and Calculus of Variations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-G-Q-43-73.html">
+     Questions 43 - 73
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-H.html">
+     Numerically finding the roots of an equation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-I-Q-74-85.html">
+     Questions 74 - 85
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-J.html">
+     Minimizing or maximizing with constraints: Lagrange Undetermined Multipliers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-K-Q-86-92.html">
+     Questions 86 - 92
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-L.html">
+     Partial differentiation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-M-Q-93-114.html">
+     Questions 93-114
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-M1.html">
+     Differentiation of vectors
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-N-answers-1-11.html">
+     Solutions Q 1-11
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-O-answers-12-42.html">
+     Solutions Q 12-42
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-P-answers-43-73.html">
+     Solutions Q 43 - 73
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-Q-answers-74-85.html">
+     Solutions Q 74 - 85
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-R-answers-86-92.html">
+     Solutions Q 86 - 94
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-S-answers-93-114.html">
+     Solutions Q 93-114
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../chapter-4/integration-intro.html">
+   4. Integration.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-A.html">
+     Integration basics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-Q1-14.html">
+     Questions 1-14
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-B.html">
+     Integration by substitution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-Q15-30.html">
+     Questions 15-30
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-C.html">
+     Using parametric equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-Q31-48.html">
+     Questions 31 - 48
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-D.html">
+     Calculating an Average Value.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-Q49-72.html">
+     Questions 49 - 72
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-E.html">
+     The Variational Method in Quantum Mechanics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-Q73-77.html">
+     Questions 73 - 77
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-F.html">
+     Multiple integrals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-Q78-86.html">
+     Questions 78 - 86
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-G.html">
+     Calculating the energy of a chemical bond using molecular orbitals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-H.html">
+     Line integrals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-Q87-96.html">
+     Questions 87 - 96
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-answers-1-14.html">
+     Solutions Q1 - 14
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-answers-15-30.html">
+     Solutions Q15 - 30
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-answers-31-48.html">
+     Solutions Q31 - 48
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-answers-49-72.html">
+     Solutions Q49 - 72
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-answers-73-96.html">
+     Solutions Q73 - 96
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../chapter-5/chapter-5-intro.html">
+   5. Summations, Series and expansion of Functions.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-5/chapter-5-A.html">
+     Series, averages, partition functions, DNA melting, atom entropy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-5/chapter-5-B-Q1-13.html">
+     Questions 1 - 13
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-5/chapter-5-E.html">
+     Maclaurin and Taylor series expansions. Paramagnetic spins. Euler-Maclaurin formula.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-5/chapter-5-F-Q14-34.html">
+     Questions 14 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-5/chapter-5-G-Q35-44.html">
+     Questions 35 - 44
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-5/chapter-5-perturbation-A.html">
+     Perturbation Theory
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-5/chapter-5-perturbation-B-Q45-48.html">
+     Questions 45 - 48
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-5/chapter-5-perturbation-C.html">
+     Quantum superposition and wavepackets.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-5/chapter-5-perturbation-D-Q49-52.html">
+     Questions 49 - 52
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-5/chapter-5-answers-1-7.html">
+     Solutions Q 1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-5/chapter-5-answers-8-13.html">
+     Solutions Q8 - 13
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-5/chapter-5-answers-14-26.html">
+     Solutions Q 14 - 26
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-5/chapter-5-answers-27-32.html">
+     Solutions Q27 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-5/chapter-5-answers-33-44.html">
+     Solutions Q33 - 44
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-5/chapter-5-answers-45-52.html">
+     Solutions Q45 - 52
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../chapter-6/vectors-intro.html">
+   6. Vectors.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-A.html">
+     Vector basics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-Q1-24.html">
+     Questions 1 - 24
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-B.html">
+     Projections and components
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-Q25-32.html">
+     Questions 25 - 32
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-C.html">
+     Axes need not be right-angled or of equal length
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-Q33-38.html">
+     Questions 33 - 38
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-D.html">
+     Basis sets with more than three dimensions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-Q39-46.html">
+     Questions 39 - 46
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-E.html">
+     Cross product or vector product
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-Q47-52.html">
+     Questions 47 - 52
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-F.html">
+     Torsion or dihedral angles
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-Q53-48.html">
+     Questions 53 - 48
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-G.html">
+     Torque and angular momentum
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-Q59-61.html">
+     Questions 59 - 61
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-answers-Q1-24.html">
+     Solutions Q1 - 24
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-answers-Q25-32.html">
+     Solutions Q25 - 32
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-answers-Q33-38.html">
+     Solutions Q33 - 38
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-answers-Q39-46.html">
+     Solutions Q39 - 46
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-answers-Q47-52.html">
+     Solutions Q47 - 52
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-answers-Q53-61.html">
+     Solutions Q53 - 61
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../chapter-7/matrices-intro.html">
+   7. Matrices
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-A.html">
+     Determinants
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-Q1-10.html">
+     Questions  1 - 10
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-B.html">
+     Matrices
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-Q11-16.html">
+     Questions  11 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-C.html">
+     Molecular Group Theory
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-Q17-30.html">
+     Questions  17 - 30
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-D.html">
+     Rotation matrices: moving molecules
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-Q31-34.html">
+     Questions 31 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-E.html">
+     Matrices in optics and designing laser cavities
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-Q35-39.html">
+     Questions 35 - 39
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-F.html">
+     Polarizing optics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-Q40-44.html">
+     Questions 40 - 44
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-G.html">
+     Solving equations using matrices. Eigenvectors &amp; Eigenvalues.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-Q45-50.html">
+     Questions 45 - 50
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-H.html">
+     Rate equations and Chemical Kinetics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-Q51-54.html">
+     Questions 51 - 54
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-I.html">
+     Molecular vibrations and pendulums
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-Q55-58.html">
+     Questions 55 - 58
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-J.html">
+     Moments of Inertia
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-Q59-60.html">
+     Questions 59 - 62
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-K.html">
+     Calculating a bond length using moments of inertia
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-Q61.html">
+     Question 61
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-L.html">
+     Principal axes for Moments of Inertia
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-Q62.html">
+     Question 62
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-answersQ1-10.html">
+     Solutions Q1 - 10
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-answersQ11-16.html">
+     Solutions Q11 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-answersQ17-30.html">
+     Solutions Q17 - 30
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-answersQ31-34.html">
+     Solutions Q31 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-answersQ35-39.html">
+     Solutions Q35 - 39
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-answersQ40-44.html">
+     Solutions Q40 - 44
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-answersQ45-50.html">
+     Solutions Q45 - 50
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-answersQ51-54.html">
+     Solutions Q51 - 54
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-answersQ55-58.html">
+     Solutions Q55 - 58
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-answersQ59-61.html">
+     Solutions Q59 - 61
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../chapter-8/matricesQM-intro.html">
+   8. Matrices in Quantum Mechanics
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-8/matricesQM-A.html">
+     Matrices in Quantum Mechanics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-8/matricesQM-Q1-7.html">
+     Questions 1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-8/matricesQM-B.html">
+     Basis sets and bra-ket algebra
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-8/matricesQM-Q8-12.html">
+     Questions 8 - 12
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-8/matricesQM-C.html">
+     Continuous basis sets
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-8/matricesQM-answers1-7.html">
+     Solutions Q1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-8/matricesQM-answers8-12.html">
+     Solutions Q8 - 12
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../chapter-9/Fourier-intro.html">
+   9. Fourier Series and Transforms.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-9/Fourier-A-B.html">
+     Fourier series, Gibbs phenomenon, generalised series.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-9/Fourier-questions-1-6.html">
+     Questions 1 - 6
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-9/Fourier-C.html">
+     Fourier Transforms
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-9/Fourier-questions-7-15.html">
+     Questions 7 - 15
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-9/Fourier-D.html">
+     Convolution and Autocorrelation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-9/Fourier-questions-16-21.html">
+     Questions 16 - 21
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-9/Fourier-E.html">
+     Discrete Fourier  (DFT)  and Fast Fourier transforms (FFT)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-9/Fourier-F.html">
+     The Hadamard Transform: Encoding and Decoding
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-9/Fourier-answers-1-6.html">
+     Solutions Q 1 - 6
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-9/Fourier-answers-7-15.html">
+     Solutions Q 7 - 15
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-9/Fourier-answers-16-21.html">
+     Solutions Q 16 - 21
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-9/Fourier-2D-Diffraction.html">
+     The Fourier transform in two dimensions: images and x-ray Diffraction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-9/Fourier-tomography.html">
+     Computed Tomography
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../chapter-10/Diff-eqns-intro.html">
+   10. Differential Equations.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-10/Diff-eqns-A.html">
+     Differential Equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-10/Diff-eqns-Q1-23.html">
+     Questions 1 - 23
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-10/Diff-eqns-B.html">
+     First order eqns &amp; Integrating factors. Second order eqns, Newtons laws, equations of motion.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-10/Diff-eqns-C.html">
+     The ‘D’ operator.  Solving linear differential equations with constant coefficients
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-10/Diff-eqns-D.html">
+     Simultaneous equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-10/Diff-eqns-Q24-37.html">
+     Questions 24 - 37
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-10/Diff-eqns-E.html">
+     Linear equations with variable coefficients
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-10/Diff-eqns-F.html">
+     Partial Differential Equations, PDE
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-10/Diff-eqns-G.html">
+     PDE examples continued
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-10/Diff-eqns-answers-1-21.html">
+     Solutions Q1 - 21
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-10/Diff-eqns-answers-22-37.html">
+     Solutions Q22 - 37
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../chapter-11/num-methods-intro.html">
+   11. Numerical Methods
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-A.html">
+     Numerical Methods
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-Q1-7.html">
+     Questions 1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-B.html">
+     Numerical solution of differential equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-Q8-12.html">
+     Questions 8 - 12
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-C.html">
+     Coupled equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-Q13-16.html">
+     Questions 13 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-D.html">
+     The phase plane, nullclines, and stable points
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-Q17-20.html">
+     Questions 17 - 20
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-E.html">
+     Reaction schemes with feedback
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-Q21-34.html">
+     Questions 21 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-F.html">
+     Boundary value problems.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-Q35-40.html">
+     Questions 35 - 40
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-answers1-7.html">
+     Solutions Q1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-answers8-12.html">
+     Solutions Q8 - 12
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-answers13-16.html">
+     Solutions Q13 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-answers17-20.html">
+     Solutions Q17 - 20
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-answers21-34.html">
+     Solutions Q21 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-answers35-40.html">
+     Solutions Q35 - 40
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../chapter-12/monte-carlo-intro.html">
+   12. Monte Carlo Methods
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+  <label for="toctree-checkbox-12">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-12/monte-carlo-A.html">
+     Monte - Carlo Methods
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-12/monte-carlo-Q1-6.html">
+     Questions 1 - 6
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-12/monte-carlo-B.html">
+     Solving rate equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-12/monte-carlo-Q7-10.html">
+     Questions 7 - 10
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-12/monte-carlo-CC.html">
+     Monte Carlo Simulations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-12/monte-carlo-C.html">
+     Energy transfer. Autocatalytic reaction and spreading of fires
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-12/monte-carlo-Q11-17.html">
+     Questions 11 - 17
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-12/monte-carlo-D.html">
+     The Metropolis algorithm
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-12/monte-carlo-answers1-6.html">
+     Solutions Q1 - 6
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-12/monte-carlo-answers7-10.html">
+     Solutions Q7 - 10
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-12/monte-carlo-answers11-17.html">
+     Solutions Q11 - 17
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../chapter-13/analysis-intro.html">
+   13. Data Analysis
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+  <label for="toctree-checkbox-13">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-13/analysis-A.html">
+     Characterizing experimental data. Accuracy, precision, mean and standard deviation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-13/analysis-Q1-3.html">
+     Questions 1 - 3
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-13/analysis-B.html">
+     Modelling data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-13/analysis-Q4-9.html">
+     Questions 4 - 9
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-13/analysis-C.html">
+     Modelling data is simpler using matrices
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-13/analysis-Q10-11.html">
+     Questions 10 - 13
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-13/analysis-D.html">
+     Non-linear least squares. Least absolute deviation. Principal component analysis
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-13/analysis-answers1-11.html">
+     Solutions Q1 -11
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../chapter-1/chapter1-E.html">
+   SI units, Rounding, converting units &amp; Glossary.
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../references/References.html">
+   References
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../references/Python%20crib.html">
+   Appendix:  Some basic Python instructions with a few examples.
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../../_sources/_build_/jupyter_execute/chapter-13/analysis-C.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/_build_/jupyter_execute/chapter-13/analysis-C.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#least-squares-fit-to-a-plane">
+   6.1 Least squares fit to a plane
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#general-least-squares-method-for-a-polynomial">
+   6.1 General least squares method for a polynomial
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#example-of-a-polynomial-fit">
+   6.2 Example of a polynomial fit
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#discussion-of-results">
+   Discussion of results
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#confidence-limits">
+   6.3 Confidence limits
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#photon-and-particle-counting-and-the-poisson-distribution">
+   7 Photon and particle counting and the Poisson distribution
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#i-counting-photons">
+     <strong>
+      (i) Counting photons
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ii-still-counting-photons">
+     <strong>
+      (ii) Still counting photons
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#iii-ccd-detecting-photons">
+     <strong>
+      (iii) CCD detecting photons
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#iv-dna-cleavage">
+     <strong>
+      (iv) DNA cleavage
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#v-chance-of-winning-a-lottery">
+     <strong>
+      (v) Chance of winning a lottery
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cumulative-distribution">
+     <strong>
+      Cumulative distribution
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#weighting-the-poisson-data">
+     <strong>
+      Weighting the Poisson data
+     </strong>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#estimating-signals-buried-in-noise">
+   7.1 Estimating signals buried in noise
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="modelling-data-is-simpler-using-matrices">
+<h1>Modelling data is simpler using matrices<a class="headerlink" href="#modelling-data-is-simpler-using-matrices" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import all python add-ons etc that will be needed later on</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">linalg</span>
+<span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">quad</span><span class="p">,</span><span class="n">odeint</span>
+<span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">t</span><span class="p">,</span> <span class="n">norm</span><span class="p">,</span> <span class="n">chi2</span><span class="p">,</span> <span class="n">f</span>
+<span class="n">init_printing</span><span class="p">()</span>                      <span class="c1"># allows printing of SymPy results in typeset maths format</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;font.size&#39;</span><span class="p">:</span> <span class="mi">14</span><span class="p">})</span>  <span class="c1"># set font size for plots</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>While the equations for a linear equation are manageable as summations, the polynomial equations become impossibly complicated. However, as the main concern is not in the algebraic form of the equations <em>per se</em> , only in obtaining the solution to a problem, it is then simpler to convert the simultaneous normal equations into a matrix equation and to solve this for the constants.</p>
+<p>Fitting with the equation <span class="math notranslate nohighlight">\(y = \alpha_0 + \alpha_1x\)</span> has already been described in some detail; the polynomial <span class="math notranslate nohighlight">\(y = \alpha_0 + \alpha_1x + \alpha_2x^2\)</span> and exponential <span class="math notranslate nohighlight">\(y = \alpha_0e^{-\alpha_1x}\)</span> are also commonly found functions that describe data. The polynomial still belongs to the class of linear least squares because the normal equations can be solved exactly. The exponential equation will need a non-linear least squares method because the normal equations cannot be solved exactly and an iterative method is required. The method of choice is often the gradient expansion method, also called the Levenberg-Marquardt method, and this is discussed in Section 8. First, however, a matrix formulation of the linear least squares problem is presented and a solution obtained for a polynomial.</p>
+<div class="section" id="least-squares-fit-to-a-plane">
+<h2>6.1 Least squares fit to a plane<a class="headerlink" href="#least-squares-fit-to-a-plane" title="Permalink to this headline">¶</a></h2>
+<p>In a molecule such as heam in hemoglobin it is important to know the distance of the oxygen and histidine N atom from the plane of the molecule and from the Fe atom as these may not be the same. For example the N-Fe atom distances may not change by much during reaction but the Fe itself may move relative to the plane of the molecule.</p>
+<p>The equation of a plane is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle ax+by+c=z\]</div>
+<p>where <span class="math notranslate nohighlight">\(a,b,c\)</span> are constants. Using the least squares method we minimise the sum of the squares of the deviations <em>via</em> the function</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle S=\sum_i^n (ax_i+by_i+c-z_i)^2=0\]</div>
+<p>for <span class="math notranslate nohighlight">\(n\)</span> sets of data points <span class="math notranslate nohighlight">\((x_i,y_i,z_i)\)</span> which means taking the derivatives with respect to <span class="math notranslate nohighlight">\(a,b,c\)</span>. Thus</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \frac{\partial S}{\partial a}=2\sum_i x_i(ax_i+by_i+c-z_i)=0,\\ \frac{\partial S}{\partial b}=2\sum_i y_i(ax_i+by_i+c-z_i)=0,\\ \frac{\partial S}{\partial c}=2\sum_i (ax_i+by_i+c-z_i)=0\end{split}\]</div>
+<p>Using the notation as before <span class="math notranslate nohighlight">\(S_{xy} \equiv \sum_ix_iy_i\)</span> etc. and <span class="math notranslate nohighlight">\(S_1=\sum_i 1=n\)</span> for <span class="math notranslate nohighlight">\(n\)</span> data points. There are three  equations to solve in three unknowns;</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \qquad\qquad\begin{align}&amp;aS_{x^2}+bS_{xy}+cS_x=S_{xz}\\ &amp;aS_{xy}+bS_{y^2}+cS_y=S_{yz}\\ &amp;aS_x+bS_y+cS_1=S_z\end{align}\qquad\qquad\qquad\qquad\text{(42a)}\end{split}\]</div>
+<p>The simplest way to solve these using a computer is to convert to a matrix equation <span class="math notranslate nohighlight">\(\boldsymbol {AC}=\boldsymbol B \)</span> and solve this. The equations become</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \qquad\qquad\boldsymbol {AC}=\boldsymbol B\quad  \text{ or }\quad \begin{bmatrix}S_{x^2}&amp; S_{xy} &amp; S_x\\ S_{xy}&amp; S_{y^2}&amp; S_y    \\ S_x&amp; S_y&amp; n \end{bmatrix} \begin{bmatrix}a\\b\\c \end{bmatrix}= \begin{bmatrix}S_{xz}\\ S_{yz}\\S_z \end{bmatrix} \qquad\qquad\qquad\qquad\text{(42b)}\end{split}\]</div>
+<p>and as the coefficients we want <span class="math notranslate nohighlight">\((a,b,c)\)</span> are in column matrix <span class="math notranslate nohighlight">\(C\)</span>, the calculation  <span class="math notranslate nohighlight">\(\boldsymbol C = \boldsymbol {A}^{-1}\boldsymbol B\)</span> gives these values.</p>
+<p>The Fe atom is placed at (0,0,0) only because this is easier for plotting.  The equation of the plane is <span class="math notranslate nohighlight">\(z=0.64x+0.56y+0.42z\)</span> and is shown in figure 10a.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Algorithm: example fit to plane of heam Data pdb 1THB.</span>
+
+<span class="c1"># put Fe atom at x,y,z = 0 </span>
+
+<span class="n">Fe</span>   <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">6.591</span><span class="p">,</span> <span class="o">-</span><span class="mf">16.663</span><span class="p">,</span>  <span class="mf">12.091</span><span class="p">])</span>          <span class="c1"># HETATM .... HEM C 1 1THB3507</span>
+<span class="n">HisN</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">7.742</span><span class="p">,</span> <span class="o">-</span><span class="mf">15.655</span><span class="p">,</span>  <span class="mf">10.429</span><span class="p">])</span> <span class="o">-</span> <span class="n">Fe</span><span class="p">[:]</span>  <span class="c1"># Atom ... HIS 87 NE2 1THB3086</span>
+<span class="n">NA</span>   <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">7.559</span><span class="p">,</span> <span class="o">-</span><span class="mf">18.441</span><span class="p">,</span>  <span class="mf">12.096</span><span class="p">])</span> <span class="o">-</span> <span class="n">Fe</span><span class="p">[:]</span>
+<span class="n">NB</span>   <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">7.832</span><span class="p">,</span> <span class="o">-</span><span class="mf">16.106</span><span class="p">,</span>  <span class="mf">13.651</span><span class="p">])</span> <span class="o">-</span> <span class="n">Fe</span><span class="p">[:]</span>
+<span class="n">NC</span>   <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">5.405</span><span class="p">,</span> <span class="o">-</span><span class="mf">15.044</span><span class="p">,</span>  <span class="mf">12.620</span><span class="p">])</span> <span class="o">-</span> <span class="n">Fe</span><span class="p">[:]</span>
+<span class="n">ND</span>   <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">5.015</span><span class="p">,</span> <span class="o">-</span><span class="mf">17.506</span><span class="p">,</span>  <span class="mf">11.076</span><span class="p">])</span> <span class="o">-</span> <span class="n">Fe</span><span class="p">[:]</span>
+<span class="n">Ox1</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">5.558</span><span class="p">,</span> <span class="o">-</span><span class="mf">17.474</span><span class="p">,</span>  <span class="mf">13.668</span><span class="p">])</span> <span class="o">-</span> <span class="n">Fe</span><span class="p">[:]</span>
+<span class="n">Ox2</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">4.756</span><span class="p">,</span> <span class="o">-</span><span class="mf">17.191</span><span class="p">,</span>  <span class="mf">14.691</span><span class="p">])</span> <span class="o">-</span> <span class="n">Fe</span><span class="p">[:]</span> 
+<span class="n">Fe</span>   <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">NA</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">NB</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">NC</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">ND</span><span class="p">[</span><span class="mi">0</span><span class="p">]])</span>           <span class="c1"># rearrange into x, y, z</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">NA</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">NB</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">NC</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">ND</span><span class="p">[</span><span class="mi">1</span><span class="p">]])</span>
+<span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">NA</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span><span class="n">NB</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span><span class="n">NC</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span><span class="n">ND</span><span class="p">[</span><span class="mi">2</span><span class="p">]])</span>
+
+<span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>                                        <span class="c1"># n = sum(1) over all 4 atoms</span>
+<span class="n">sxx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>                                <span class="c1"># make all summations</span>
+<span class="n">syy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">y</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">sxy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">x</span><span class="o">*</span><span class="n">y</span><span class="p">)</span>
+<span class="n">sx</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">sy</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+<span class="n">sxz</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">x</span><span class="o">*</span><span class="n">z</span><span class="p">)</span>
+<span class="n">syz</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">y</span><span class="o">*</span><span class="n">z</span><span class="p">)</span>
+<span class="n">sz</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="n">sxx</span><span class="p">,</span><span class="n">sxy</span><span class="p">,</span><span class="n">sx</span><span class="p">],[</span><span class="n">sxy</span><span class="p">,</span><span class="n">syy</span><span class="p">,</span><span class="n">sy</span><span class="p">],[</span><span class="n">sx</span><span class="p">,</span><span class="n">sy</span><span class="p">,</span><span class="n">n</span><span class="p">]])</span> <span class="c1"># A matrix of S values.</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">sxz</span><span class="p">,</span><span class="n">syz</span><span class="p">,</span><span class="n">sz</span><span class="p">])</span> 
+
+<span class="n">fit</span> <span class="o">=</span> <span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">A</span><span class="p">)</span> <span class="o">@</span> <span class="n">b</span><span class="o">.</span><span class="n">T</span>                         <span class="c1"># @ is matrix multiply </span>
+                                                  <span class="c1"># b is a row matrix so transpose with .T</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:s}{:8.4g}{:s}{:8.4g}{:s}{:8.4g}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;a = &#39;</span><span class="p">,</span> <span class="n">fit</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="s1">&#39;, b = &#39;</span><span class="p">,</span><span class="n">fit</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="s1">&#39;, c = &#39;</span><span class="p">,</span><span class="n">fit</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a =   0.6358, b =    0.557, c =   0.4196
+</pre></div>
+</div>
+</div>
+</div>
+<p><img alt="Drawing" src="_build_/jupyter_execute/chapter-13/analysis-fig10a.png" /></p>
+<p>Figure 10a. The Fe atom is moved to be at zero in coordinates and other atoms moved accordingly. The fit is to the plane of the four N atoms and is the black rectangle shown almost edge on. The four N atoms in heam (blue) lie mostly in this plane. The data is used in Question 52 ‘Vectors’ and from pdb 1THB. The Fe atom can be seen to be just out of the plane of the four nitrogen atoms. The two oxygens (red) and the N atom in histidine (green) are also shown. THe sizes of the atoms does not represent their actual or relative radii and was chosen for clarity.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="general-least-squares-method-for-a-polynomial">
+<h2>6.1 General least squares method for a polynomial<a class="headerlink" href="#general-least-squares-method-for-a-polynomial" title="Permalink to this headline">¶</a></h2>
+<p>A general way of describing a fitting equation is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle Y=\sum_{i=1}^m \alpha_if_i(x) \tag{43}\]</div>
+<p>which means that that the model equation proposed to represent the data is the sum of m functions, <span class="math notranslate nohighlight">\(f_i(x)\)</span>, multiplied by constants <span class="math notranslate nohighlight">\(\alpha_i\)</span> whose values we seek, much as was done in a Fourier series. If the equation is a polynomial, then <span class="math notranslate nohighlight">\(f_1(x) = 1,\; f_2(x) = x,\; f_3(x) = x^2\)</span>, and so forth, and, if an exponential then <span class="math notranslate nohighlight">\(f_1(x) = e^{-\alpha_2x},\; f_2(x) = e^{-\alpha_4x}\)</span>, etc. It is clear why these last two equations are non-linear because the constants are intimate to the function itself and cannot be separated from it.</p>
+<p>The sum of the deviations is minimized just as in the case of the straight line, the equation is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle S=\sum_kw_k\left(y_k-\sum_i^m\alpha_if_i(x_k)\right)^2\]</div>
+<p>and the subscript on <span class="math notranslate nohighlight">\(x\)</span> is <span class="math notranslate nohighlight">\(k\)</span> because this is the <span class="math notranslate nohighlight">\(k^{th}\; x\)</span> value in the data and <span class="math notranslate nohighlight">\(k\)</span> has values <span class="math notranslate nohighlight">\(1\cdots n\)</span>. The subscript <span class="math notranslate nohighlight">\(i=1\cdots m\)</span> identifies the terms in the expansion of the model function of equation 43. Differentiating the <span class="math notranslate nohighlight">\(j^{th}\)</span> term in the <span class="math notranslate nohighlight">\(i^{th}\)</span> summation (<span class="math notranslate nohighlight">\(j\)</span> being anywhere in the list <span class="math notranslate nohighlight">\(i=1\cdots m\)</span>), to obtain the minimum, produces</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{\partial S}{\partial \alpha_j}=-2\sum_k w_kf_j(x_k)\left(y_k-\sum_i^m\alpha_if_i(x_k)\right)=0\tag{44}\]</div>
+<p>and the <span class="math notranslate nohighlight">\(f(x)\)</span> remains inside the summation because it depends on the <span class="math notranslate nohighlight">\(x_k\)</span>. Rearranging the terms in this equation gives a (complicated) set of simultaneous equations, because <span class="math notranslate nohighlight">\(j\)</span> can take any value in the range <span class="math notranslate nohighlight">\(1 \to m\)</span> for in the function expansion.</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \sum_k w_k f_j(x_k)y_k = \sum_k\left( w_kf_j(x_k)\sum_i\alpha_if_i(x_k) \right)\tag{45}\]</div>
+<p>the right-hand side of which is a sum of a sum. For example, the third term is</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \qquad\qquad\begin{align}\sum_kw_ky_kf_3(x_k)=&amp;\sum_k\sum_iw_kf_3(x_k)\alpha_if_i(x_k)\\ =&amp;\sum_k w_kf_3(x_k)\left(\alpha_if_i(x_k) +\alpha_2f_2(x_k)+\cdots + \alpha_mf_m(x_k)\;\right)\end{align}\qquad\qquad\text{(46)}\end{split}\]</div>
+<p>and all <span class="math notranslate nohighlight">\(m\)</span> of these equations can be solved to find the m constants, the <span class="math notranslate nohighlight">\(\alpha\)</span>’s, if the function is linear. A matrix method can be used to do this, but to convert the simultaneous equations into a matrix equation needs a little cunning. A matrix equation of the form</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \boldsymbol B=\boldsymbol{CA} \tag{47}\]</div>
+<p>can be made where <span class="math notranslate nohighlight">\(\boldsymbol C\)</span> contains the coefficients. The left-hand side of this equation is a row matrix with a sum over the <span class="math notranslate nohighlight">\(k\)</span> data points for each of <span class="math notranslate nohighlight">\(m\)</span> terms and is the left-hand side of equation 45,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin{align}\boldsymbol B=&amp;\begin{bmatrix} \sum_kw_ky_kf_1(x_k) &amp; \sum_kw_ky_kf_1(x_k) &amp;\cdots\end{bmatrix}\\
+\equiv&amp;\begin{bmatrix} S(wyf_1) &amp; S(wyf_2)&amp; \cdots\end{bmatrix}\end{align}\end{split}\]</div>
+<p>and, in the second line, the abbreviation, <span class="math notranslate nohighlight">\(S(\cdots )\)</span>, is used to indicate the summation over the <span class="math notranslate nohighlight">\(k\)</span> data points. The right-hand side of the normal equations (13.45) can be written as a square matrix A left multiplied by a row matrix C to make another row matrix thus making the right-hand side of the equation equal to the left. To form <span class="math notranslate nohighlight">\(\boldsymbol{CA}\)</span>, the right-hand side of 45 or 46 has to be split into a column and square matrix. It is clear that in each term <span class="math notranslate nohighlight">\(f\)</span> has indices in <span class="math notranslate nohighlight">\(i\)</span> and <span class="math notranslate nohighlight">\(k\)</span> so the term in row 1 column 2 in the <span class="math notranslate nohighlight">\(A\)</span> matrix can be written using the <span class="math notranslate nohighlight">\(S\)</span> abbreviation as <span class="math notranslate nohighlight">\(\displaystyle S(wf_1f_2)\equiv \sum_kw_kf_1(x_k)f_2(x_k)\)</span> and does not contain any <span class="math notranslate nohighlight">\(\alpha\)</span>, therefore</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \boldsymbol A=\begin{bmatrix} S(wf_1f_2)&amp; S(wf_1f_2) &amp; S(wf_1f_3)&amp;\cdots\\ S(wf_2f_1)&amp; S(wf_2f_2) &amp; S(wf_2f_3)&amp;\cdots\\ &amp;\vdots&amp; &amp;\ddots \end{bmatrix}\end{split}\]</div>
+<p>If the row matrix C contains only the coefficients, <span class="math notranslate nohighlight">\(\displaystyle \boldsymbol C=\begin{bmatrix} \alpha_1 &amp; \alpha_2 &amp; \cdots\end{bmatrix}\)</span> the right-hand side of matrix equation 47 is</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \boldsymbol{CA} = \begin{bmatrix} \alpha_1 &amp; \alpha_2 &amp; \cdots\end{bmatrix} \begin{bmatrix} S(wf_1f_2)&amp; S(wf_1f_2) &amp; S(wf_1f_3)&amp;\cdots\\ S(wf_2f_1)&amp; S(wf_2f_2) &amp; S(wf_2f_3)&amp;\cdots\\ &amp;\vdots&amp; &amp;\ddots \end{bmatrix}\end{split}\]</div>
+<p>Expanding out the third term produces</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \alpha_1S(wf_1f_3)+\alpha_2S(wf_2f_3)+\alpha_3S(wf_3f_3)+\cdots +\alpha_mS(wf_mf_3)\]</div>
+<p>which is the same as equation 46.</p>
+<p>The aim is to find the values in the <span class="math notranslate nohighlight">\(C\)</span> matrix and this can be achieved by the transformation</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \boldsymbol B=CA \to \boldsymbol{BA}^{-1} = \boldsymbol{CAA}^{-1} \to \boldsymbol C=\boldsymbol{BA}^{-1} \tag{48}\]</div>
+<p>Thus the inverse of <span class="math notranslate nohighlight">\(\boldsymbol A\)</span> is all that is needed to find the coefficients, furthermore this inverse is also the matrix of the variances and co-variances (Bevington 1969).</p>
+</div>
+<div class="section" id="example-of-a-polynomial-fit">
+<h2>6.2 Example of a polynomial fit<a class="headerlink" href="#example-of-a-polynomial-fit" title="Permalink to this headline">¶</a></h2>
+<p>As an example, the functional dependence of the vibrational energy levels of the <span class="math notranslate nohighlight">\(B (^3\sum _u^-)\)</span> excited state of the oxygen molecule, which has <span class="math notranslate nohighlight">\(D_{\infty h}\)</span> point group symmetry, will be found by analysing some data. The <span class="math notranslate nohighlight">\((^3\sum_u^-)\)</span> term symbol means that the molecule is in a triplet spin state and hence has two unpaired electrons, one in each of two orbitals, which together have zero orbital angular momentum, hence the symbol <span class="math notranslate nohighlight">\(\sigma\)</span>. The orbitals are ungerade (<span class="math notranslate nohighlight">\(u\)</span>) or odd, so that they do not have a centre of inversion and the minus sign means that the electronic state is symmetric to <span class="math notranslate nohighlight">\(C_2\; (180^\text{o})\)</span> rotation about the principal axis. The vibrational levels have been measured by observing the absorption spectrum in the ultraviolet starting just above <span class="math notranslate nohighlight">\(200\)</span> nm and the <span class="math notranslate nohighlight">\(n=0\)</span> level has energy of <span class="math notranslate nohighlight">\(49363\;\mathrm{cm^{-1}}\)</span> above the <span class="math notranslate nohighlight">\(n=0\)</span> of the ground state. The energies of the vibrational levels above the bottom of this potential well and their quantum numbers <span class="math notranslate nohighlight">\(n\)</span>, are shown in the table.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin{array}{ccccc}\\
+\hline
+G/\mathrm{cm^{-1}} &amp;352.3 &amp; 1039 &amp; 1705 &amp; 2340 &amp; 2961 &amp; 3553 &amp; 4113 &amp; 4652 \\
+n&amp; 0 &amp; 1 &amp; 2 &amp; 3 &amp; 4 &amp; 5 &amp; 6 &amp;7\\
+\hline
+G/\mathrm{cm^{-1}}&amp; 5153 &amp; 5613 &amp; 6040 &amp; 6433 &amp; 6780 &amp; 7083 &amp; 7335\\
+n&amp; 8 &amp; 9 &amp; 10 &amp; 11 &amp; 12 &amp; 13 &amp; 14\\
+\hline \end{array}\end{split}\]</div>
+<p>The weights for the data are unknown and hence <span class="math notranslate nohighlight">\(1\)</span> is used, as this produces an unbiased estimate of the coefficients. An anharmonic potential energy model will be tested. The Morse potential produces vibrational energies (in cm<span class="math notranslate nohighlight">\(^{-1}\)</span>);</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle G_2=v_e(n+1/2)-x_ev_e(n+1/2)^2\]</div>
+<p>and if this is not sufficient to describe the data, it is common to add another term empirical term</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle G_2=v_e(n+1/2)-x_ev_e(n+1/2)^2+y_ev_e(n+1/2)^3\]</div>
+<p>or</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle G_3=\left(\frac{1}{2}-\frac{x_e}{4}+\frac{y_e}{8} \right)v_e+ \left(1-x_e+\frac{3y_e}{4}\right)v_en+\left(\frac{3y_e}{2}-x_e\right)v_en^2+y_ev_en^3\tag{49}\]</div>
+<p>which is a cubic polynomial in <span class="math notranslate nohighlight">\(n\)</span>. The equilibrium frequency is <span class="math notranslate nohighlight">\(v_e\;\mathrm{ (cm^{-1})}\)</span> and the anharmonicity terms are <span class="math notranslate nohighlight">\(x_e\)</span> and <span class="math notranslate nohighlight">\(y_e\)</span>. In the Morse potential, <span class="math notranslate nohighlight">\(x_e = v_e/4D_e\)</span> where <span class="math notranslate nohighlight">\(D_e\)</span> is the dissociation energy in cm<span class="math notranslate nohighlight">\(^{-1}\)</span>, but <span class="math notranslate nohighlight">\(y_e\)</span> is empirical and the aim is to determine <span class="math notranslate nohighlight">\(x_e, y_e\)</span> and <span class="math notranslate nohighlight">\(v_e\)</span>. If the quantum number <span class="math notranslate nohighlight">\(n\)</span> is represented by <span class="math notranslate nohighlight">\(x\)</span>, and the constants by <span class="math notranslate nohighlight">\(c\)</span>, then the Morse model <span class="math notranslate nohighlight">\(G_2\)</span> is equivalent to a function <span class="math notranslate nohighlight">\(f=c_0 +c_1x+c_2x^2\)</span>  and the second model <span class="math notranslate nohighlight">\(f=c_0 +c_1x+c_2x^2 +c_3x^3\)</span>. The least squares model calculates these coefficients and these can then be related to the spectroscopic parameters <span class="math notranslate nohighlight">\(v_e, x_e\)</span> and <span class="math notranslate nohighlight">\(y_e\)</span>. The residuals and <span class="math notranslate nohighlight">\(\chi^2\)</span> will be used to test the fit to the data. (Note that different authors us different symbols to represent frequency, and this can be in units of cm<span class="math notranslate nohighlight">\(^{-1}\)</span>, s<span class="math notranslate nohighlight">\(^{-1}\)</span>, rad cm<span class="math notranslate nohighlight">\(^{-1}\)</span> or rad s<span class="math notranslate nohighlight">\(^{-1}\)</span>).</p>
+<p>The Python implementation is quite simple, compared to the derivation, and even compared to the linear case.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Algorithm: Least Squares  polynomial fit</span>
+
+<span class="n">yval</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">352.3</span><span class="p">,</span><span class="mi">1039</span><span class="p">,</span><span class="mi">1705</span><span class="p">,</span><span class="mi">2340</span><span class="p">,</span><span class="mi">2961</span><span class="p">,</span><span class="mi">3553</span><span class="p">,</span><span class="mi">4113</span><span class="p">,</span><span class="mi">4652</span><span class="p">,</span><span class="mi">5153</span><span class="p">,</span><span class="mi">5613</span><span class="p">,</span><span class="mi">6040</span><span class="p">,</span><span class="mi">6433</span><span class="p">,</span><span class="mi">6780</span><span class="p">,</span><span class="mi">7083</span><span class="p">,</span><span class="mi">7335</span><span class="p">])</span>
+<span class="n">n</span>    <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">yval</span><span class="p">)</span>
+<span class="n">xval</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)])</span>
+<span class="n">w</span>    <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)])</span>  <span class="c1"># weights unknown so use 1</span>
+
+<span class="n">m</span> <span class="o">=</span> <span class="mi">4</span>                                   <span class="c1"># 4 params; C[0] + C[1]*x + C[2]*x**2 + C[3]*x**3 </span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">m</span><span class="p">,</span><span class="n">m</span><span class="p">),</span><span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+<span class="n">B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">m</span><span class="p">,</span><span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+<span class="n">C</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">m</span><span class="p">,</span><span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">m</span><span class="p">):</span>
+    <span class="n">B</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">w</span><span class="o">*</span><span class="n">yval</span><span class="o">*</span><span class="n">xval</span><span class="o">**</span><span class="n">i</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">m</span><span class="p">):</span>
+        <span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">]</span><span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">w</span><span class="o">*</span><span class="n">xval</span><span class="o">**</span><span class="n">i</span><span class="o">*</span><span class="n">xval</span><span class="o">**</span><span class="n">j</span><span class="p">)</span>
+    <span class="k">pass</span>
+<span class="n">C</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="n">B</span><span class="p">)</span> <span class="o">@</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;least squares values &#39;</span><span class="p">,</span><span class="n">C</span><span class="p">)</span>
+
+<span class="n">line</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="nb">sum</span><span class="p">(</span> <span class="n">C</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">m</span><span class="p">)</span> <span class="p">)</span>    <span class="c1"># fit C[0] + C[1]*x + C[2]*x**2 + C[3]*x**3 </span>
+<span class="n">chisqr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span> <span class="n">w</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">yval</span><span class="o">-</span><span class="n">line</span><span class="p">(</span><span class="n">xval</span><span class="p">))</span><span class="o">**</span><span class="mi">2</span> <span class="p">)</span> <span class="o">/</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="n">m</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># reduced chi sqr</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:s}</span><span class="s1"> </span><span class="si">{:6.3f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;chi^2 = &#39;</span><span class="p">,</span><span class="n">chisqr</span><span class="p">)</span> <span class="p">)</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">n</span> <span class="o">-</span> <span class="n">m</span>                                             <span class="c1"># using chi squared function directly</span>
+<span class="n">fchi</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">**</span><span class="p">(</span><span class="n">df</span><span class="o">/</span><span class="mi">2</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="p">(</span><span class="n">df</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">gamma</span><span class="p">(</span><span class="n">df</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span>
+<span class="n">Q</span><span class="p">,</span><span class="n">err</span> <span class="o">=</span> <span class="n">quad</span><span class="p">(</span><span class="n">fchi</span> <span class="p">,</span><span class="n">chisqr</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">inf</span> <span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:s}</span><span class="s1"> </span><span class="si">{:6.3f}</span><span class="s1"> </span><span class="si">{:s}</span><span class="s1"> </span><span class="si">{:6.3g}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;probability of getting chi^2 &gt; &#39;</span><span class="p">,</span><span class="n">chisqr</span><span class="p">,</span><span class="s1">&#39; is&#39;</span><span class="p">,</span> <span class="n">Q</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>least squares values  [ 3.54563954e+02  6.91757746e+02 -8.54753465e+00 -3.74147394e-01]
+chi^2 =   8.917
+probability of getting chi^2 &gt;   8.917  is   0.63
+</pre></div>
+</div>
+</div>
+</div>
+<p><img alt="Drawing" src="_build_/jupyter_execute/chapter-13/analysis-fig11.png" /></p>
+<p>Figure 11. Experimental data points and the function <span class="math notranslate nohighlight">\(G_3\)</span> calculated by least squares. The residuals are shown on the top of the plot. Notice how small the residual scale is compared to that of the data.</p>
+<hr class="docutils" />
+<p>The error matrix is calculated as the inverse of <span class="math notranslate nohighlight">\(\boldsymbol A\)</span>. The off-diagonal terms are the covariances, notice that the matrix is symmetric about the diagonal. The covariances between <span class="math notranslate nohighlight">\(c_1\)</span> and <span class="math notranslate nohighlight">\(c_2\)</span> are quite large, <span class="math notranslate nohighlight">\(-0.34\)</span>, and these are expected to be the least accurate since one value may compensate for the other; the other covariances values are small.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cov</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>      <span class="c1"># invert matrix</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">m</span><span class="p">):</span>          <span class="c1"># pretty print matrix</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">m</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:6.3f}</span><span class="s1"> &#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">cov</span><span class="p">[</span><span class="n">j</span><span class="p">,</span><span class="n">i</span><span class="p">]</span> <span class="p">),</span> <span class="n">end</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span> <span class="p">)</span>        <span class="c1"># end=&#39;&#39; prevents line return </span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">coefficients and errors&#39;</span><span class="p">)</span>    
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">m</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:8.4g}</span><span class="s1"> </span><span class="si">{:s}</span><span class="s1"> </span><span class="si">{:6.1g}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span> <span class="n">C</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="s1">&#39; +/- &#39;</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">cov</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">i</span><span class="p">])</span> <span class="p">)</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 0.673 -0.344  0.047 -0.002 
+-0.344  0.276 -0.045  0.002 
+ 0.047 -0.045  0.008 -0.000 
+-0.002  0.002 -0.000  0.000 
+
+coefficients and errors
+   354.6  +/-     0.8
+   691.8  +/-     0.5
+  -8.548  +/-    0.09
+ -0.3741  +/-   0.004
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="discussion-of-results">
+<h2>Discussion of results<a class="headerlink" href="#discussion-of-results" title="Permalink to this headline">¶</a></h2>
+<p>To calculate the spectroscopic parameters, the constants have to be compared to the expansion of the <span class="math notranslate nohighlight">\(G_3\)</span> equation 49, which is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle G_3=\left(\frac{1}{2}-\frac{x_e}{4}+\frac{y_e}{8} \right)v_e+ \left(1-x_e+\frac{3y_e}{4}\right)v_en+\left(\frac{3y_e}{2}-x_e\right)v_en^2+y_ev_en^3\tag{49}\]</div>
+<p>The first term in this equation corresponds to <span class="math notranslate nohighlight">\(c_1\)</span> and is the zero point energy. The constants are</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle v_ey_e = -0.3741,\; v_ex_e = 7.98,\; v_e = 692\;\mathrm{ cm^{-1}}\]</div>
+<p>which compare well with the values given by Herzberg (1950, p. 559) which are</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle v_ey_e = -0.3753,\; v_ex_e = 8.00,\; v_e = 700.36\;\mathrm{ cm^{-1}}\]</div>
+<p>and the zero point energy is <span class="math notranslate nohighlight">\(348.13\)</span> cm<span class="math notranslate nohighlight">\(^{-1}\)</span>. Because the weighting is unknown, the <span class="math notranslate nohighlight">\(\chi^2\)</span> is only relative but the <span class="math notranslate nohighlight">\(Q\)</span> factor is large <span class="math notranslate nohighlight">\(0.63\)</span> meaning that there is a <span class="math notranslate nohighlight">\(63\)</span>% by chance of getting a lager value even for a correct model, i.e. at random we expect to see this <span class="math notranslate nohighlight">\(\chi^2\)</span> being exceeded which indicates that the model fits the data, because perfect fit would produce a probability of <span class="math notranslate nohighlight">\(50\)</span>% in this test. If the chance <span class="math notranslate nohighlight">\(Q\)</span> were very small and effectively zero the <span class="math notranslate nohighlight">\(\chi^2\)</span> could never be exceeded at random which would indicate a poor fit, i.e the <span class="math notranslate nohighlight">\(\chi^2\)</span> is so large that a larger value cannot be reached by random chance. This means that the <span class="math notranslate nohighlight">\(\chi^2\)</span> is far out in the wings of the distribution. A good fit is obvious from the residuals as well.</p>
+<p>The calculation with the Morse equation <span class="math notranslate nohighlight">\(G_2\)</span> is achieved by setting <span class="math notranslate nohighlight">\(m = 3\)</span> and making no other changes. The calculation produces a fit that looks virtually the same as shown in figure 12, but the residuals are about ten times larger and oscillate noticeably. The <span class="math notranslate nohighlight">\(\chi^2 = 737\)</span> and <span class="math notranslate nohighlight">\(Q \approx 10^{-150}\to 0\)</span> and this <span class="math notranslate nohighlight">\(\chi^2\)</span> is so big that it there is no chance of it being exceeded at random, which means that the chance that this model is correct is effectively zero. This demonstrates that <span class="math notranslate nohighlight">\(\chi^2\)</span> and the residuals are vital in determining the correct fit. If five terms are used in the calculation, the <span class="math notranslate nohighlight">\(\chi^2\)</span> is reduced only to <span class="math notranslate nohighlight">\(8.6\)</span>, compared to <span class="math notranslate nohighlight">\(8.9\)</span> for four terms, which is essentially the same value, therefore, five terms are rejected as not providing any significant improvement in fitting the data, i.e. the fifth term is unnecessary. Finally, if the fifth term is added a physical reason for doing this must be advanced and justified by the dynamics of the molecule.</p>
+<p><img alt="Drawing" src="_build_/jupyter_execute/chapter-13/analysis-fig12.png" /></p>
+<p>Figure 12. Data, fit and residuals for the <span class="math notranslate nohighlight">\(G_2\)</span> fitting equation showing oscillations because this model function does not describe the data well. Compare with fig 11.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="confidence-limits">
+<h2>6.3 Confidence limits<a class="headerlink" href="#confidence-limits" title="Permalink to this headline">¶</a></h2>
+<p>The confidence limits can be calculated in a similar manner to that for the straight line, using the value from the <span class="math notranslate nohighlight">\(t\)</span> distribution. The equations look slightly different because the matrix method is used. (See Hines &amp; Montgomery 1990, Chapters 14-15 for the details.) They calculate the mean square error <span class="math notranslate nohighlight">\(SSE /(n - m - 1)\)</span>, which is the same as the <span class="math notranslate nohighlight">\(\chi^2\)</span> on the whole data set, and give the formula which is equivalent to the one used here, where matrices <span class="math notranslate nohighlight">\(\boldsymbol{C}\)</span> and <span class="math notranslate nohighlight">\(\displaystyle{B}\)</span> are defined as in equations 47-48,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \chi^2=\frac{\sum_i y_i- \boldsymbol{C\cdot B}}{n-m-1}\tag{50}\]</div>
+<p>The confidence limits at <span class="math notranslate nohighlight">\(95\)</span>% are now</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle c_i\pm t_{0.025,n-m-1}\sqrt{\chi^2}\sqrt{ \boldsymbol A^{-1}_{ii}} \]</div>
+<p>where <span class="math notranslate nohighlight">\(\boldsymbol A^{-1}_{ii}\)</span> is the <span class="math notranslate nohighlight">\(i^{th}\)</span> diagonal value of the inverted A matrix and <span class="math notranslate nohighlight">\(c_i\)</span> is the <span class="math notranslate nohighlight">\(i^{th}\)</span> coefficient.</p>
+<p>If the row matrix <span class="math notranslate nohighlight">\(x_0 = \begin{bmatrix}1&amp; x&amp; x^2&amp; x^3\end{bmatrix}\)</span> is defined, limited to <span class="math notranslate nohighlight">\(x^3\)</span>, because the highest power of <span class="math notranslate nohighlight">\(x\)</span> used in the model function is <span class="math notranslate nohighlight">\(x^3\)</span>, then the <span class="math notranslate nohighlight">\(95\)</span>% confidence lines around the fitted curve (line(x)) are calculated as</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle line(x)= \pm t_{0.025,n-m-1}\sqrt{\chi^2}\sqrt{ \boldsymbol{x}_0\boldsymbol A^{-1}\boldsymbol{x}_0^T} \]</div>
+<p>This curve is not shown in figure 11 because it is almost identical to the fitted curve, and would not be clear on the graph. Note that the product of the three matrices is a function of <span class="math notranslate nohighlight">\(x\)</span> because matrix A consists only of numbers. See figure 7.7 (Matrices) for examples of matrix multiplication.</p>
+</div>
+<div class="section" id="photon-and-particle-counting-and-the-poisson-distribution">
+<h2>7 Photon and particle counting and the Poisson distribution<a class="headerlink" href="#photon-and-particle-counting-and-the-poisson-distribution" title="Permalink to this headline">¶</a></h2>
+<p>The Poisson distribution is formed by accumulating many events, <span class="math notranslate nohighlight">\(n\)</span>, and describes the situation where each event has a very small probability of occurring, <span class="math notranslate nohighlight">\(p\)</span>, but the product <span class="math notranslate nohighlight">\(np\)</span>, the mean number of events, is moderate. The distribution is asymmetric and skewed towards small numbers, Figure 13, because it is not possible to have a negative number of events. This distribution is observed when photons are counted or particles counted after a radioactive atom disintegrates, provided their decay time is long compared to the observation time. However, the distribution applies to many other types of events, such as the number of faulty CDs produced, the number of misprints on a printed page, or the number of students absent from a class in any week. One of the earliest examples was recorded over a twenty year period during the 1800’s, and was the number of deaths of infantrymen in the Prussian army after they were kicked by a horse.</p>
+<p>Suppose that a sample of molecules is continuously excited, and their fluorescence viewed through a small aperture or through filters to reduce the intensity so that photons are detected one at a time by a photodiode or photomultiplier. The number of electrical pulses from the detector for, say, <span class="math notranslate nohighlight">\(1000\)</span> time intervals each of <span class="math notranslate nohighlight">\(1\)</span> second duration is recorded. If a histogram of the number of events recorded in each time interval is made, then this should follow a Poisson distribution. If DNA is exposed to UV light, photo-damage can occur by base pairs forming dimers. If the DNA is spliced into pieces of equal length, the number of dimers in each piece can be recorded. If the pieces are each very small, 10 base pairs for example, most will not contain a dimer, a few will contain one and fewer still will contain two or more and so on. The distribution formed will have a large value for zero dimers and become smaller as the number of dimers increases. In a second experiment, suppose that <span class="math notranslate nohighlight">\(100\)</span> base pair long segments are examined. Now only a few segments have no dimer, some have one and many have two, three, or four but fewer segments will have five or more. This distribution is now peaked at a value of, say, <span class="math notranslate nohighlight">\(2.5\)</span>. Repeating the experiment with a larger segment will cause the distribution to peak at still larger values until it closely resembles a normal distribution. What has changed between the experiments is only the average number of dimers detected in each segment, thus the Poisson distribution is determined by only one parameter, the average number of ‘events’. A similar argument applies to the number of photons or particles detected in progressively longer time intervals.</p>
+<p>The Poisson distribution applies when the number of events <span class="math notranslate nohighlight">\(n\)</span> that are measured is very large, but the chance <span class="math notranslate nohighlight">\(p\)</span> of any one event occurring is very small. The product <span class="math notranslate nohighlight">\(\mu = np\)</span> is the mean or average number of events and is of moderate value. The distribution can be derived from first principles, see Hines &amp; Montgomery (1990, chapter 6.8) for this proof, or it can be obtained from the binomial distribution when <span class="math notranslate nohighlight">\(n\)</span> is large and <span class="math notranslate nohighlight">\(p\)</span> small.</p>
+<p>A Poisson process is that one that generates the distribution and assumes that each event randomly occurring is independent of all others and that each occurs in a non-overlapping time interval (i.e. its own). This means that in a time interval <span class="math notranslate nohighlight">\(\delta t\)</span> (a) the chance of only one event being recorded is <span class="math notranslate nohighlight">\(\lambda \delta t\)</span> where <span class="math notranslate nohighlight">\(\lambda\)</span> is a positive number, (b) The probability that zero events happen is then <span class="math notranslate nohighlight">\(1-\lambda\delta t\)</span> and (c) the probability that two or more events is zero. The constant <span class="math notranslate nohighlight">\(\lambda\)</span> is called the mean arrival rate and has units of 1/time.</p>
+<p>The chance of no event occurring at time <span class="math notranslate nohighlight">\(t\to t+\delta t\)</span> (where <span class="math notranslate nohighlight">\(t\)</span> is fixed) is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle p_0(t+\delta t)=(1-\lambda)\delta tp_0(t)\]</div>
+<p>which is the product of the chance of no events up to time <span class="math notranslate nohighlight">\(t\)</span> and of no events in time <span class="math notranslate nohighlight">\(t\to\delta t\)</span>. Rearranged this is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{p_0(t+\delta t)-p_0(t)}{\delta t}=-\lambda p_0(t)\]</div>
+<p>and in the limit of small time increment is the simple differential equation; <span class="math notranslate nohighlight">\(\displaystyle \frac{dp_0(t)}{dt}=-\lambda p_0(t)\)</span>.</p>
+<p>Integrating and multiplying by the number of molecules <span class="math notranslate nohighlight">\(N_0\)</span>, initially present that can react, fluoresce or decay radioactively give the familiar first order decay, <span class="math notranslate nohighlight">\(N=N_0e^{-\lambda t}\)</span> where <span class="math notranslate nohighlight">\(\lambda\)</span> is the rate constant for the process and its reciprocal the lifetime.</p>
+<p>When the number of events is not zero, the chance of <span class="math notranslate nohighlight">\(k\)</span> events in the same time interval is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle p_k(t+\delta t)= \lambda \delta t p_{k-1}(t) + (1-\lambda)\delta tp_k(t)\]</div>
+<p>The first term on the right is the chance of <span class="math notranslate nohighlight">\(k-1\)</span> events in up to time <span class="math notranslate nohighlight">\(t\)</span> then one event in time <span class="math notranslate nohighlight">\(\delta t\)</span>, the second the chance of all <span class="math notranslate nohighlight">\(k\)</span> events in time <span class="math notranslate nohighlight">\(t\)</span> and none in <span class="math notranslate nohighlight">\(\delta t\)</span>.</p>
+<p>Rearranging and taking the limit <span class="math notranslate nohighlight">\(\delta t \to 0\)</span> produces a second differential equation</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{dp_k(t)}{dt}=-\lambda p_k(t)+\lambda p_{k-1}(t)\]</div>
+<p>The two equations can be solved with</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle p_k(t)=\frac{(\lambda t)^ke^{-\lambda t}} {k!},\qquad k=0,1,2\cdots\tag{50a}\]</div>
+<p>At a given time <span class="math notranslate nohighlight">\(t\)</span> we let <span class="math notranslate nohighlight">\(\mu=\lambda t\)</span> and then The Poisson Distribution equation becomes</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle p(k,\mu)=\frac{\mu^ke^{-\mu}}{k!} \tag{50b}\]</div>
+<p>also called the Poisson frequency distribution or ‘density’ function. The integer number of events is <span class="math notranslate nohighlight">\(k\)</span> and the mean value of the distribution is <span class="math notranslate nohighlight">\(\mu\)</span> which is dimensionless and which is not an integer. The shape of the distribution is shown in Figure 13 for different mean values <span class="math notranslate nohighlight">\(\mu\)</span>. The plots show continuous values for <span class="math notranslate nohighlight">\(k\)</span> although the distribution is only valid for integer values.</p>
+<p>Notice that, when the mean is larger, the distribution resembles a normal distribution and is almost symmetrical. But at small <span class="math notranslate nohighlight">\(\mu\)</span>, the distribution is very asymmetrical with the mean always to larger <span class="math notranslate nohighlight">\(k\)</span> than the peak (the mode or most probable value) of the distribution. The standard deviation of the distribution is also shown and this is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \sigma=\sqrt{\mu}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\mu\)</span> is the average number of events detected; for instance, the number of photons detected in a given time period at a given wavelength. This is important as it means that <span class="math notranslate nohighlight">\(\sigma\)</span> is always known for any number of counts. This relationship also means that the weighting for analysing Poisson distributed data is for each point <span class="math notranslate nohighlight">\(i\)</span>, <span class="math notranslate nohighlight">\(w_i = 1/k_i\)</span>. The mean <span class="math notranslate nohighlight">\(\mu\)</span> and variance <span class="math notranslate nohighlight">\(\langle k^2\rangle\)</span> are</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle  \mu\equiv\langle k\rangle =\sum_{k=0}^n k\,p(k,\mu),\qquad \langle k^2\rangle=\sum_{k=0}^n k^2 p(k,\mu)\]</div>
+<p>and so as per definition <span class="math notranslate nohighlight">\(\sigma^2=\langle k^2\rangle-\langle k\rangle^2 \)</span> and both <span class="math notranslate nohighlight">\(\langle k\rangle\)</span> and the variance are equal to <span class="math notranslate nohighlight">\(\mu\)</span>, see Q10.</p>
+<p>The chance of no success, that is of not observing an ‘event’, is <span class="math notranslate nohighlight">\(e^{-\mu}\)</span>. The chance of observing one event <span class="math notranslate nohighlight">\(k = 1\)</span> is <span class="math notranslate nohighlight">\(\mu e^{-\mu}\)</span>, of two events <span class="math notranslate nohighlight">\(\mu^2e^{-\mu}/2!\)</span>, and of exactly <span class="math notranslate nohighlight">\(k\)</span> events is <span class="math notranslate nohighlight">\(p(k, \mu)\)</span>. The chance of observing more than one event is <span class="math notranslate nohighlight">\(1 - e^{-\mu}\)</span>. The sum to infinity is unity, and therefore the distribution is normalized.</p>
+<p><img alt="Drawing" src="_build_/jupyter_execute/chapter-13/analysis-fig13.png" /></p>
+<p>Figure 13 The Poisson distribution for different integer <span class="math notranslate nohighlight">\(k\)</span> values and various means values <span class="math notranslate nohighlight">\(\mu\)</span>. Although <span class="math notranslate nohighlight">\(k\)</span> is an integer, the lines are drawn as if it were continuous. The standard deviation <span class="math notranslate nohighlight">\(\sigma = \sqrt{\mu}\)</span>, is shown for <span class="math notranslate nohighlight">\(\mu = 2\)</span> and <span class="math notranslate nohighlight">\(12\)</span>. The distribution becomes more Normal as <span class="math notranslate nohighlight">\(\mu\)</span> increases.</p>
+<hr class="docutils" />
+<div class="section" id="i-counting-photons">
+<h3><strong>(i) Counting photons</strong><a class="headerlink" href="#i-counting-photons" title="Permalink to this headline">¶</a></h3>
+<p>A photomultiplier records photons at a constant rate of <span class="math notranslate nohighlight">\(\lambda =0.4\)</span> events per <span class="math notranslate nohighlight">\(100\)</span> nanoseconds.</p>
+<p><span class="math notranslate nohighlight">\(\quad\)</span> (a) What is the chance that no event is recorded in the first <span class="math notranslate nohighlight">\(200\)</span> ns and</p>
+<p><span class="math notranslate nohighlight">\(\quad\)</span> (b) what is the chance that no photon occurs in the next <span class="math notranslate nohighlight">\(100\)</span> ns if none are recorded in the first two?</p>
+<p><strong>Solution</strong>. The parameter <span class="math notranslate nohighlight">\(\mu =\lambda t =0.4\cdot 2\)</span> taking the time unit as <span class="math notranslate nohighlight">\(100\)</span> ns and <span class="math notranslate nohighlight">\(k=0\)</span> for no event so <span class="math notranslate nohighlight">\( p(k,\mu) = e^{-0.8} = 0.45 \)</span>. In (b) because the events are independent so probability of an event between time slot <span class="math notranslate nohighlight">\(2\to 3\)</span> is the same as that of <span class="math notranslate nohighlight">\(0\to 1\)</span>, thus <span class="math notranslate nohighlight">\(p(k,\mu)= e^{-0.4}=0.67\)</span>.</p>
+</div>
+<div class="section" id="ii-still-counting-photons">
+<h3><strong>(ii) Still counting photons</strong><a class="headerlink" href="#ii-still-counting-photons" title="Permalink to this headline">¶</a></h3>
+<p>Counting photons with a more fluorescent sample photons are recorded at a rate of <span class="math notranslate nohighlight">\(4\)</span> per <span class="math notranslate nohighlight">\(100\)</span> ns. What is the chance that</p>
+<p><span class="math notranslate nohighlight">\(\quad\)</span> (a) one has been detected in <span class="math notranslate nohighlight">\(50\)</span> ns and</p>
+<p><span class="math notranslate nohighlight">\(\quad\)</span> (b) a total of <span class="math notranslate nohighlight">\(5\)</span> in <span class="math notranslate nohighlight">\(250\)</span> ns?</p>
+<p><strong>Solution</strong>. Again taking the time unit as <span class="math notranslate nohighlight">\(100\)</span> ns <span class="math notranslate nohighlight">\(\mu=4\cdot 0.5\)</span> for the first photon (<span class="math notranslate nohighlight">\(k=1\)</span>) giving <span class="math notranslate nohighlight">\(p(k,\mu)=\mu e^{-\mu} = 2e^{-2} = 0.27\)</span>. (b) The probability of the total event is the product of the two, where each event is independent, there is one photon in the first period and <span class="math notranslate nohighlight">\(4\)</span> more in the extra period. For the extra period, <span class="math notranslate nohighlight">\(\mu=4\cdot 2\)</span> and the probability with <span class="math notranslate nohighlight">\(k=4\)</span> is <span class="math notranslate nohighlight">\(p(k,\mu)=8^4e^{-8}/4!=0.057\)</span> and combined is <span class="math notranslate nohighlight">\(0.0155\)</span>.</p>
+</div>
+<div class="section" id="iii-ccd-detecting-photons">
+<h3><strong>(iii) CCD detecting photons</strong><a class="headerlink" href="#iii-ccd-detecting-photons" title="Permalink to this headline">¶</a></h3>
+<p>There is a <span class="math notranslate nohighlight">\(2\)</span>% chance of a CCD detecting a photon / angstrom in the range 3500 to 3600 angstrom.</p>
+<p><span class="math notranslate nohighlight">\(\quad\)</span> What is the chance that at least two photons will be detected?</p>
+<p><strong>Solution</strong>. As two or more are detected we find the chance of not detecting zero or one photons, which is <span class="math notranslate nohighlight">\(1-p(0,\mu)-p(1,\mu)\)</span> and as <span class="math notranslate nohighlight">\(\mu= 0.02\cdot 100 = 2 \)</span> the chance is <span class="math notranslate nohighlight">\(1- 2^0e^{-2}/0!-2^1e^{-2}/1= 0.59\)</span>. As no time period is specified this period could take any value without changing the answer excepting that the probability would then be <span class="math notranslate nohighlight">\(0.59\)</span>/time period.</p>
+</div>
+<div class="section" id="iv-dna-cleavage">
+<h3><strong>(iv) DNA cleavage</strong><a class="headerlink" href="#iv-dna-cleavage" title="Permalink to this headline">¶</a></h3>
+<p>Poisson distributions arise in surprising situations. DNA can be cleaved in various ways, for example by special enzymes or in a simpler way by exciting with light a dye intercalated between base pairs or directly by ultra-violet light.</p>
+<p><span class="math notranslate nohighlight">\(\quad\)</span>If a piece of DNA containing <span class="math notranslate nohighlight">\(n = 12000\)</span> base pairs and with equal GCAT content is to be cleaved by an enzyme that recognises the sequence GGCGCC, what is the chance that there is failure to cleave?</p>
+<p><strong>Solution</strong>. As there are six bases to be recognised but only four types of bases in DNA (G,C,A,T) the chance of matching the sequence is <span class="math notranslate nohighlight">\(p=1/4^6=1/4096\)</span> with average of <span class="math notranslate nohighlight">\(\mu = np =12000/4096=2.93\)</span>. Using the Poisson distribution the chance of no cleavage (<span class="math notranslate nohighlight">\(k=0\)</span>) is <span class="math notranslate nohighlight">\(P(0,\mu)=\mu^0e^{-\mu}/0!= 0.053\)</span> or <span class="math notranslate nohighlight">\(5.3\)</span>% which means that <span class="math notranslate nohighlight">\(\approx 95\)</span>% are cleaved. In this calculation it is implicitly assumed that all small groups of sequences are equally likely, which is probably not an unreasonable assumption in a long piece of DNA.</p>
+<p>We can check the calculation by calculating the average number of target sequences expected and this should be greater than zero if it is to be cleaved. If we start at one end of the DNA and go through and look for a G then there are on average <span class="math notranslate nohighlight">\(12000/4=3000\)</span> of them, next look for GG then the number is <span class="math notranslate nohighlight">\(3000/4= 750\)</span>, and if we continue in this way we get GGC with <span class="math notranslate nohighlight">\(750/4\)</span>, GGCG with <span class="math notranslate nohighlight">\(750/16\)</span>, GGCGC with <span class="math notranslate nohighlight">\(750/64\)</span> and GGCGCC with <span class="math notranslate nohighlight">\(750/256 \approx 3\)</span> and this is <span class="math notranslate nohighlight">\(n/4^6\)</span> which means that on average we expect cleavage to happen.</p>
+</div>
+<div class="section" id="v-chance-of-winning-a-lottery">
+<h3><strong>(v) Chance of winning a lottery</strong><a class="headerlink" href="#v-chance-of-winning-a-lottery" title="Permalink to this headline">¶</a></h3>
+<p>In a lottery every player has to guess a sequence of <span class="math notranslate nohighlight">\(6\)</span> digits from <span class="math notranslate nohighlight">\(0\to 9\)</span>. If a million people play, what is the probability that there are two winners?</p>
+<p><strong>Solution</strong>. Each player has a one in a million chance of guessing the right number and each player guesses independently. The number of winners is then a Poisson random variable with <span class="math notranslate nohighlight">\(\mu=10^6\cdot 10^{-6}=1\)</span>. The chance is <span class="math notranslate nohighlight">\(p(2,1)= 1^2e^{-1}/2!\approx 0.18\)</span>.</p>
+</div>
+<div class="section" id="cumulative-distribution">
+<h3><strong>Cumulative distribution</strong><a class="headerlink" href="#cumulative-distribution" title="Permalink to this headline">¶</a></h3>
+<p>The cumulative distribution is found by summing to a given <span class="math notranslate nohighlight">\(k\)</span> value</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle CDF=\sum_{k=0}^np(k,\mu)=e^{-\mu}\left(1+\mu +\frac{\mu^2}{2!}+\frac{\mu^3}{3!}+\cdots +\frac{\mu^n}{n!}\right)\]</div>
+<p>The cumulative distribution is used to estimate the chance of having a value larger than say the 95% probability.</p>
+</div>
+<div class="section" id="weighting-the-poisson-data">
+<h3><strong>Weighting the Poisson data</strong><a class="headerlink" href="#weighting-the-poisson-data" title="Permalink to this headline">¶</a></h3>
+<p>Photon and particle counting experiments normally follow a Poisson distribution. The weighting to use is <span class="math notranslate nohighlight">\(w_i = 1/c_i\)</span> where <span class="math notranslate nohighlight">\(c_i\)</span> is the mean number of counts at the <span class="math notranslate nohighlight">\(i^{th}\)</span> data point in the data, thus, the weighting is always known. This does lead to a specific problem, viz., what happens when no counts are recorded in a particular channel, <span class="math notranslate nohighlight">\(c_i = 0\)</span>? This is quite possible at low light levels as occurs in single photon counting fluorescence decay experiments, or, when measuring fluorescence from single molecules through a confocal microscope. The advice to deal with this is to manipulate the data either by ignoring values below <span class="math notranslate nohighlight">\(10\)</span> counts, or to add <span class="math notranslate nohighlight">\(1\)</span> to every data point or to make each zero into <span class="math notranslate nohighlight">\(1\)</span> and leave all the rest alone. None of this is satisfactory because it will cause incorrect parameters to be produced to the fitted data, and must be avoided. By making these changes, both the data and residuals are changed similarly so the effect can be disguised. The solution (Turton et al. Anal. Chem. 2003) is to fit the data with a weighting of <span class="math notranslate nohighlight">\(1\)</span> and then the use values from the fitted curve as the weighting and refit the data. This has been shown to produce unbiased fits down to a very few counts in the total signal and contradicts the widespread assumption that least squares fitting of Poisson distributed data is invalid. One further point worth making is that when conducting counting experiments, it is not the maximum number of counts in any one channel that is important for data fitting but the total number of counts in the whole signal.</p>
+</div>
+</div>
+<div class="section" id="estimating-signals-buried-in-noise">
+<h2>7.1 Estimating signals buried in noise<a class="headerlink" href="#estimating-signals-buried-in-noise" title="Permalink to this headline">¶</a></h2>
+<p>A useful feature of Poisson distributed data is that their sum is also Poisson distributed. If <span class="math notranslate nohighlight">\(x_1, x_2, x_3 \cdots\)</span> are a set of Poisson distributed random numbers with means <span class="math notranslate nohighlight">\(\mu_1, \mu_2\cdots\)</span>, then their sum <span class="math notranslate nohighlight">\(\mu = \mu_1 + \mu_2 + \mu_2 + \cdots\)</span> is also Poisson distributed with mean <span class="math notranslate nohighlight">\(\mu\)</span> and standard deviation <span class="math notranslate nohighlight">\(\sqrt{\mu}\)</span>. Thus, data can be summed to improve its standard deviation. However, Poisson distributed data cannot be subtracted, because it would be quite possible to obtain negative numbers. This means that when a signal that is Poisson distributed has some background noise, this cannot be subtracted away but the model used to analyse the data has to contain a constant term to account for this, if the background is known to be constant, or a polynomial if it is not.</p>
+<p>All instruments produce noise unrelated to the signal and it is often necessary to decide if a signal is present in noise but summing (binning) data does not help because the noise is also summed. For example, a very weak light source may be obscured by thermally induced ‘dark’ noise from the detector (photomultiplier, photodiode, or CCD etc.) and subsequently amplified in other circuitry. Alternatively, the noise could be from other light close in wavelength to the one being detected or electrical noise added by amplifiers. To decide if a signal is present, data has to be taken with and without what is suspected to be the true signal being there.</p>
+<p>Distinguishing between signal and noise depends crucially only on their respective standard deviations. A large and constant background is not a problem; it is the <em>fluctuation</em> in the background that limits the signal to noise. To illustrate this, an argument presented by Parratt (1971, Chapter 5.8) based on the combination of errors equation, is described. If there are two sets of counts, <span class="math notranslate nohighlight">\(c_b\)</span> for the background and <span class="math notranslate nohighlight">\(c_{sb}\)</span> for signal and background, because a signal cannot be detected without background, then the difference in the population <em>means</em> is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \mu_s-\mu_{sb}=c_b-c_{sb}\pm \Delta s\]</div>
+<p>where <span class="math notranslate nohighlight">\(\Delta s\)</span> is the experimental standard deviation of the difference in counts. If there are many measurements, the central limit theorem predicts that this difference is normally distributed. Then, using the combination (propagation) of errors equation,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \Delta s=\sqrt{2\left(s_b^2+s_{sb}^2\right)}\]</div>
+<p>where <span class="math notranslate nohighlight">\(s_b\)</span> and <span class="math notranslate nohighlight">\(s_{sb}\)</span> are the standard deviations for background and signal plus background respectively. For single measurements of Poisson data the standard deviation is equal to the number of counts giving <span class="math notranslate nohighlight">\(\Delta s=\sqrt{2\left(c_b^2+c_{sb}^2\right)}\)</span>. If the two means <span class="math notranslate nohighlight">\(\mu_b\)</span> and <span class="math notranslate nohighlight">\(\mu_{sb}\)</span> are for the moment assumed to be the same then <span class="math notranslate nohighlight">\(c_b - c_{sb}\)</span> can be tested by comparing with <span class="math notranslate nohighlight">\(\Delta s\)</span> at, say, the <span class="math notranslate nohighlight">\(5\)</span>% probability level of a standard normal distribution to determine the chance whether or not <span class="math notranslate nohighlight">\(c_b = c_{sb}\)</span>. If the ratio <span class="math notranslate nohighlight">\(| c_b - c_{sb} |/\Delta s = 1\)</span>, then the probability that <span class="math notranslate nohighlight">\(c_b \ne c_{sb} = 0.32\)</span>, (or <span class="math notranslate nohighlight">\(32\)</span>%) which is the area of the normal curve <em>above</em> <span class="math notranslate nohighlight">\(x/\sigma = 1\)</span>, Figure 4 and this is too small to be considered very strong proof that the signal and noise are different. If the ratio <span class="math notranslate nohighlight">\(| c_b - c_{sb} |/\Delta s \ge 1.96\)</span> then chance that <span class="math notranslate nohighlight">\(c_b \ne c_{sb}\)</span> is measured at the <span class="math notranslate nohighlight">\(95\)</span> % level (see Table 1) and the signal would be distinguishable from background.</p>
+<p>Consider the case when the counts at a given wavelength in a spectrum are <span class="math notranslate nohighlight">\(c_{sb} = 105\)</span> and <span class="math notranslate nohighlight">\(c_b =100\)</span> , then <span class="math notranslate nohighlight">\(\Delta s=14.3\)</span> and <span class="math notranslate nohighlight">\(c_b -c_{sb} =5\)</span> and the ratio <span class="math notranslate nohighlight">\(| c_b - c_{sb} |/\Delta s = 0.35\)</span>. Using the cumulative distribution described in equation 9, the chance that <span class="math notranslate nohighlight">\(c_b \ne c_{sb}\)</span> is <span class="math notranslate nohighlight">\(\approx 27\)</span>%. Note that to use the two sided values the integration is multiplied by 2 and subtracting one makes it the chance <span class="math notranslate nohighlight">\(c_b \ne c_{sb}\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cb</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">csb</span><span class="o">=</span> <span class="mi">105</span>
+<span class="n">deltas</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">cb</span><span class="o">+</span><span class="n">csb</span><span class="p">))</span>
+<span class="n">ratio</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">cb</span><span class="o">-</span><span class="n">csb</span><span class="p">)</span><span class="o">/</span><span class="n">deltas</span>
+<span class="n">fnorm</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span> <span class="p">:</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>  <span class="c1"># normal distribution mu=0,sigma=1</span>
+<span class="n">ans</span><span class="p">,</span> <span class="n">err</span> <span class="o">=</span> <span class="n">quad</span><span class="p">(</span><span class="n">fnorm</span><span class="p">,</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">,</span><span class="n">ratio</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:s}</span><span class="s1"> </span><span class="si">{:6.1f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">% c</span><span class="s1">hance different&#39;</span><span class="p">,</span><span class="mi">100</span><span class="o">*</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">ans</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="p">)</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>% chance different   27.3
+</pre></div>
+</div>
+</div>
+</div>
+<p>which is so sufficiently that the two signals are indistinguishable. If the counts are <span class="math notranslate nohighlight">\(c_{sb} = 150\)</span> and <span class="math notranslate nohighlight">\(c_b = 100\)</span> then <span class="math notranslate nohighlight">\(\Delta_s = 15.8\)</span> and <span class="math notranslate nohighlight">\(c_{sb} - c_b = 50\)</span> and percentage chance that <span class="math notranslate nohighlight">\(c_b \ne c_{sb}\)</span>  is</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cb</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">csb</span><span class="o">=</span> <span class="mi">150</span>
+<span class="n">deltas</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">cb</span><span class="o">+</span><span class="n">csb</span><span class="p">))</span>
+<span class="n">ratio</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">cb</span><span class="o">-</span><span class="n">csb</span><span class="p">)</span><span class="o">/</span><span class="n">deltas</span>
+<span class="n">fnorm</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span> <span class="p">:</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
+<span class="n">ans</span><span class="p">,</span> <span class="n">err</span> <span class="o">=</span> <span class="n">quad</span><span class="p">(</span><span class="n">fnorm</span><span class="p">,</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">,</span><span class="n">ratio</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:s}</span><span class="s1"> </span><span class="si">{:6.1f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">% c</span><span class="s1">hance different&#39;</span><span class="p">,</span><span class="mi">100</span><span class="o">*</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">ans</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="p">)</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>% chance different   99.8
+</pre></div>
+</div>
+</div>
+</div>
+<p>Therefore, the signals can easily be distinguished above the noise at the <span class="math notranslate nohighlight">\(99.8\)</span>% confidence level, which means that the chance that the difference in means will exceed the standard deviation by pure chance alone is only <span class="math notranslate nohighlight">\(0.16\)</span> %.</p>
+<p>If the data is not Poisson distributed and/or data sets are added together, then</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \Delta s=\sqrt{\frac{s_b^2}{n_b}+\frac{s_{sb}^2}{n_{sb}}}\]</div>
+<p>for <span class="math notranslate nohighlight">\(n_{sb}\)</span> sets of signal measurements and <span class="math notranslate nohighlight">\(n_b\)</span> background.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./_build_/jupyter_execute/chapter-13"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Godfrey Beddard<br/>
+        
+            &copy; Copyright 2022.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

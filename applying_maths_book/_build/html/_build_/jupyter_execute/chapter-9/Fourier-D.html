@@ -1,0 +1,2062 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Convolution and Autocorrelation &#8212; Applying Maths in the Chemical &amp; Biomolecular Sciences</title>
+    
+  <link href="../../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/togglebutton.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../../_static/book-cover.jpg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Applying Maths in the Chemical & Biomolecular Sciences</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../intro.html">
+   Applying Maths in the Chemical and Biomolecular Sciences.
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../chapter-1/chapter1-intro.html">
+   1. Numbers, Equations, Operators, and Algorithms.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-1/chapter1-A.html">
+     Numbers to Algorithms.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-1/chapter1-Q1-7.html">
+     Questions 1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-1/chapter1-B.html">
+     Trig, hyperbolic and inverse functions, waves, polar coordinates &amp; factorials
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-1/chapter1-Q8-16.html">
+     Questions 8 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-1/chapter1-C.html">
+     Sophisticated Counting.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-1/chapter1-Q17-34.html">
+     Questions 17 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-1/chapter1-D.html">
+     Modulo arithmetic,
+     <span class="math notranslate nohighlight">
+      \(\delta\)
+     </span>
+     functions, types of  series &amp;  estimating quantities
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-1/chapter1-Q35-39.html">
+     Questions 35 - 39
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-1/chapter1-answers-1-7.html">
+     Solutions Q1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-1/chapter1-answers-8-16.html">
+     Solutions Q8 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-1/chapter1-answers-17-34.html">
+     Solutions Q17 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-1/chapter1-answers-35-39.html">
+     Solutions Q35 - 39
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../chapter-2/chapter2-intro.html">
+   2. Complex numbers.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-2/chapter2-A.html">
+     Real, imaginary, conjugate and modulus
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-2/chapter2-Q-1-9.html">
+     Questions 1 - 9
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-2/chapter2-B.html">
+     De Moivre’s theorem and integer powers of complex numbers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-2/chapter2-Q-10-13.html">
+     Questions 10 -13
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-2/chapter2-C.html">
+     Euler’s theorem
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-2/chapter2-Q-14-27.html">
+     Questions 14 - 27
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-2/chapter2-answers.html">
+     Solutions Q1 - 27
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../chapter-3/differen-intro.html">
+   3. Differentiation.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-A.html">
+     Differentiation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-B.html">
+     Trig functions, logs, power, reciprocals and integrals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-C-Q-4-11.html">
+     Questions 1-11
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-D.html">
+     Product rule and function of function or chain rule.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-E-Q-12-42.html">
+     Questions 12-42
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-F.html">
+     Limits, l’Hopital’s rule, Maximum, Minimum and Calculus of Variations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-G-Q-43-73.html">
+     Questions 43 - 73
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-H.html">
+     Numerically finding the roots of an equation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-I-Q-74-85.html">
+     Questions 74 - 85
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-J.html">
+     Minimizing or maximizing with constraints: Lagrange Undetermined Multipliers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-K-Q-86-92.html">
+     Questions 86 - 92
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-L.html">
+     Partial differentiation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-M-Q-93-114.html">
+     Questions 93-114
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-M1.html">
+     Differentiation of vectors
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-N-answers-1-11.html">
+     Solutions Q 1-11
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-O-answers-12-42.html">
+     Solutions Q 12-42
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-P-answers-43-73.html">
+     Solutions Q 43 - 73
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-Q-answers-74-85.html">
+     Solutions Q 74 - 85
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-R-answers-86-92.html">
+     Solutions Q 86 - 94
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-S-answers-93-114.html">
+     Solutions Q 93-114
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../chapter-4/integration-intro.html">
+   4. Integration.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-A.html">
+     Integration basics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-Q1-14.html">
+     Questions 1-14
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-B.html">
+     Integration by substitution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-Q15-30.html">
+     Questions 15-30
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-C.html">
+     Using parametric equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-Q31-48.html">
+     Questions 31 - 48
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-D.html">
+     Calculating an Average Value.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-Q49-72.html">
+     Questions 49 - 72
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-E.html">
+     The Variational Method in Quantum Mechanics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-Q73-77.html">
+     Questions 73 - 77
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-F.html">
+     Multiple integrals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-Q78-86.html">
+     Questions 78 - 86
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-G.html">
+     Calculating the energy of a chemical bond using molecular orbitals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-H.html">
+     Line integrals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-Q87-96.html">
+     Questions 87 - 96
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-answers-1-14.html">
+     Solutions Q1 - 14
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-answers-15-30.html">
+     Solutions Q15 - 30
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-answers-31-48.html">
+     Solutions Q31 - 48
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-answers-49-72.html">
+     Solutions Q49 - 72
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-answers-73-96.html">
+     Solutions Q73 - 96
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../chapter-5/chapter-5-intro.html">
+   5. Summations, Series and expansion of Functions.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-5/chapter-5-A.html">
+     Series, averages, partition functions, DNA melting, atom entropy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-5/chapter-5-B-Q1-13.html">
+     Questions 1 - 13
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-5/chapter-5-E.html">
+     Maclaurin and Taylor series expansions. Paramagnetic spins. Euler-Maclaurin formula.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-5/chapter-5-F-Q14-34.html">
+     Questions 14 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-5/chapter-5-G-Q35-44.html">
+     Questions 35 - 44
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-5/chapter-5-perturbation-A.html">
+     Perturbation Theory
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-5/chapter-5-perturbation-B-Q45-48.html">
+     Questions 45 - 48
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-5/chapter-5-perturbation-C.html">
+     Quantum superposition and wavepackets.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-5/chapter-5-perturbation-D-Q49-52.html">
+     Questions 49 - 52
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-5/chapter-5-answers-1-7.html">
+     Solutions Q 1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-5/chapter-5-answers-8-13.html">
+     Solutions Q8 - 13
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-5/chapter-5-answers-14-26.html">
+     Solutions Q 14 - 26
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-5/chapter-5-answers-27-32.html">
+     Solutions Q27 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-5/chapter-5-answers-33-44.html">
+     Solutions Q33 - 44
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-5/chapter-5-answers-45-52.html">
+     Solutions Q45 - 52
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../chapter-6/vectors-intro.html">
+   6. Vectors.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-A.html">
+     Vector basics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-Q1-24.html">
+     Questions 1 - 24
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-B.html">
+     Projections and components
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-Q25-32.html">
+     Questions 25 - 32
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-C.html">
+     Axes need not be right-angled or of equal length
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-Q33-38.html">
+     Questions 33 - 38
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-D.html">
+     Basis sets with more than three dimensions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-Q39-46.html">
+     Questions 39 - 46
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-E.html">
+     Cross product or vector product
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-Q47-52.html">
+     Questions 47 - 52
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-F.html">
+     Torsion or dihedral angles
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-Q53-48.html">
+     Questions 53 - 48
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-G.html">
+     Torque and angular momentum
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-Q59-61.html">
+     Questions 59 - 61
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-answers-Q1-24.html">
+     Solutions Q1 - 24
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-answers-Q25-32.html">
+     Solutions Q25 - 32
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-answers-Q33-38.html">
+     Solutions Q33 - 38
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-answers-Q39-46.html">
+     Solutions Q39 - 46
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-answers-Q47-52.html">
+     Solutions Q47 - 52
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-answers-Q53-61.html">
+     Solutions Q53 - 61
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../chapter-7/matrices-intro.html">
+   7. Matrices
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-A.html">
+     Determinants
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-Q1-10.html">
+     Questions  1 - 10
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-B.html">
+     Matrices
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-Q11-16.html">
+     Questions  11 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-C.html">
+     Molecular Group Theory
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-Q17-30.html">
+     Questions  17 - 30
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-D.html">
+     Rotation matrices: moving molecules
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-Q31-34.html">
+     Questions 31 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-E.html">
+     Matrices in optics and designing laser cavities
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-Q35-39.html">
+     Questions 35 - 39
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-F.html">
+     Polarizing optics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-Q40-44.html">
+     Questions 40 - 44
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-G.html">
+     Solving equations using matrices. Eigenvectors &amp; Eigenvalues.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-Q45-50.html">
+     Questions 45 - 50
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-H.html">
+     Rate equations and Chemical Kinetics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-Q51-54.html">
+     Questions 51 - 54
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-I.html">
+     Molecular vibrations and pendulums
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-Q55-58.html">
+     Questions 55 - 58
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-J.html">
+     Moments of Inertia
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-Q59-60.html">
+     Questions 59 - 62
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-K.html">
+     Calculating a bond length using moments of inertia
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-Q61.html">
+     Question 61
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-L.html">
+     Principal axes for Moments of Inertia
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-Q62.html">
+     Question 62
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-answersQ1-10.html">
+     Solutions Q1 - 10
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-answersQ11-16.html">
+     Solutions Q11 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-answersQ17-30.html">
+     Solutions Q17 - 30
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-answersQ31-34.html">
+     Solutions Q31 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-answersQ35-39.html">
+     Solutions Q35 - 39
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-answersQ40-44.html">
+     Solutions Q40 - 44
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-answersQ45-50.html">
+     Solutions Q45 - 50
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-answersQ51-54.html">
+     Solutions Q51 - 54
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-answersQ55-58.html">
+     Solutions Q55 - 58
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-answersQ59-61.html">
+     Solutions Q59 - 61
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../chapter-8/matricesQM-intro.html">
+   8. Matrices in Quantum Mechanics
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-8/matricesQM-A.html">
+     Matrices in Quantum Mechanics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-8/matricesQM-Q1-7.html">
+     Questions 1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-8/matricesQM-B.html">
+     Basis sets and bra-ket algebra
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-8/matricesQM-Q8-12.html">
+     Questions 8 - 12
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-8/matricesQM-C.html">
+     Continuous basis sets
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-8/matricesQM-answers1-7.html">
+     Solutions Q1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-8/matricesQM-answers8-12.html">
+     Solutions Q8 - 12
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../chapter-9/Fourier-intro.html">
+   9. Fourier Series and Transforms.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-9/Fourier-A-B.html">
+     Fourier series, Gibbs phenomenon, generalised series.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-9/Fourier-questions-1-6.html">
+     Questions 1 - 6
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-9/Fourier-C.html">
+     Fourier Transforms
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-9/Fourier-questions-7-15.html">
+     Questions 7 - 15
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-9/Fourier-D.html">
+     Convolution and Autocorrelation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-9/Fourier-questions-16-21.html">
+     Questions 16 - 21
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-9/Fourier-E.html">
+     Discrete Fourier  (DFT)  and Fast Fourier transforms (FFT)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-9/Fourier-F.html">
+     The Hadamard Transform: Encoding and Decoding
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-9/Fourier-answers-1-6.html">
+     Solutions Q 1 - 6
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-9/Fourier-answers-7-15.html">
+     Solutions Q 7 - 15
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-9/Fourier-answers-16-21.html">
+     Solutions Q 16 - 21
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-9/Fourier-2D-Diffraction.html">
+     The Fourier transform in two dimensions: images and x-ray Diffraction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-9/Fourier-tomography.html">
+     Computed Tomography
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../chapter-10/Diff-eqns-intro.html">
+   10. Differential Equations.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-10/Diff-eqns-A.html">
+     Differential Equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-10/Diff-eqns-Q1-23.html">
+     Questions 1 - 23
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-10/Diff-eqns-B.html">
+     First order eqns &amp; Integrating factors. Second order eqns, Newtons laws, equations of motion.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-10/Diff-eqns-C.html">
+     The ‘D’ operator.  Solving linear differential equations with constant coefficients
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-10/Diff-eqns-D.html">
+     Simultaneous equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-10/Diff-eqns-Q24-37.html">
+     Questions 24 - 37
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-10/Diff-eqns-E.html">
+     Linear equations with variable coefficients
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-10/Diff-eqns-F.html">
+     Partial Differential Equations, PDE
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-10/Diff-eqns-G.html">
+     PDE examples continued
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-10/Diff-eqns-answers-1-21.html">
+     Solutions Q1 - 21
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-10/Diff-eqns-answers-22-37.html">
+     Solutions Q22 - 37
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../chapter-11/num-methods-intro.html">
+   11. Numerical Methods
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-A.html">
+     Numerical Methods
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-Q1-7.html">
+     Questions 1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-B.html">
+     Numerical solution of differential equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-Q8-12.html">
+     Questions 8 - 12
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-C.html">
+     Coupled equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-Q13-16.html">
+     Questions 13 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-D.html">
+     The phase plane, nullclines, and stable points
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-Q17-20.html">
+     Questions 17 - 20
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-E.html">
+     Reaction schemes with feedback
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-Q21-34.html">
+     Questions 21 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-F.html">
+     Boundary value problems.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-Q35-40.html">
+     Questions 35 - 40
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-answers1-7.html">
+     Solutions Q1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-answers8-12.html">
+     Solutions Q8 - 12
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-answers13-16.html">
+     Solutions Q13 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-answers17-20.html">
+     Solutions Q17 - 20
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-answers21-34.html">
+     Solutions Q21 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-answers35-40.html">
+     Solutions Q35 - 40
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../chapter-12/monte-carlo-intro.html">
+   12. Monte Carlo Methods
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+  <label for="toctree-checkbox-12">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-12/monte-carlo-A.html">
+     Monte - Carlo Methods
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-12/monte-carlo-Q1-6.html">
+     Questions 1 - 6
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-12/monte-carlo-B.html">
+     Solving rate equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-12/monte-carlo-Q7-10.html">
+     Questions 7 - 10
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-12/monte-carlo-CC.html">
+     Monte Carlo Simulations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-12/monte-carlo-C.html">
+     Energy transfer. Autocatalytic reaction and spreading of fires
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-12/monte-carlo-Q11-17.html">
+     Questions 11 - 17
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-12/monte-carlo-D.html">
+     The Metropolis algorithm
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-12/monte-carlo-answers1-6.html">
+     Solutions Q1 - 6
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-12/monte-carlo-answers7-10.html">
+     Solutions Q7 - 10
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-12/monte-carlo-answers11-17.html">
+     Solutions Q11 - 17
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../chapter-13/analysis-intro.html">
+   13. Data Analysis
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+  <label for="toctree-checkbox-13">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-13/analysis-A.html">
+     Characterizing experimental data. Accuracy, precision, mean and standard deviation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-13/analysis-Q1-3.html">
+     Questions 1 - 3
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-13/analysis-B.html">
+     Modelling data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-13/analysis-Q4-9.html">
+     Questions 4 - 9
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-13/analysis-C.html">
+     Modelling data is simpler using matrices
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-13/analysis-Q10-11.html">
+     Questions 10 - 13
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-13/analysis-D.html">
+     Non-linear least squares. Least absolute deviation. Principal component analysis
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-13/analysis-answers1-11.html">
+     Solutions Q1 -11
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../chapter-1/chapter1-E.html">
+   SI units, Rounding, converting units &amp; Glossary.
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../references/References.html">
+   References
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../references/Python%20crib.html">
+   Appendix:  Some basic Python instructions with a few examples.
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../../_sources/_build_/jupyter_execute/chapter-9/Fourier-D.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/_build_/jupyter_execute/chapter-9/Fourier-D.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#motivation-and-concept">
+   Motivation and concept
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#examples">
+   7.1 Examples
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#how-convolution-works">
+   7.2 How convolution works
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#convolution-by-summation">
+   7.3 Convolution by summation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#convolution-by-fourier-transform">
+   7.4 Convolution by Fourier transform
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#proof-of-convolution-as-transform">
+     <strong>
+      Proof of convolution as transform
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#shifting-a-wavepacket-t-f-cdot-w-t-f-otimes-t-w-products-and-transforms">
+     <strong>
+      Shifting a wavepacket:
+      <span class="math notranslate nohighlight">
+       \(T(f\cdot w)=T(f)\otimes T(w)\)
+      </span>
+      :   Products and transforms
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#code-example-of-convolution-by-fourier-transform">
+     <strong>
+      Code example of convolution by fourier transform
+     </strong>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-warning-and-a-solution">
+   7.5 A warning and a Solution
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#autocorrelation-and-cross-correlation">
+   8 Autocorrelation and cross-correlation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#applications">
+   8.1 Applications
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#calculating-the-correlation">
+   8.2 Calculating the correlation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#comparison-with-convolution-and-a-fourier-transform">
+   8.3 Comparison with convolution and a fourier transform.
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   8.4 Examples
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#i-periodic-function">
+     <strong>
+      (i) Periodic function
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ii-aperiodic-function">
+     <strong>
+      (ii) aperiodic function
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#iii-laser-pulses">
+     <strong>
+      (iii) Laser pulses
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#iv-goodness-of-data-fitting">
+     <strong>
+      (iv) Goodness of data fitting
+     </strong>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#autocorrelation-of-fluctuating-and-noisy-signals">
+   8.5 Autocorrelation of fluctuating and noisy signals
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#wienerkhinchin-relations">
+   8.6 Wiener–Khinchin relations
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ftir-supplement">
+   8.7 FTIR supplement
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#spectral-resolution">
+   8.8 Spectral resolution
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="convolution-and-autocorrelation">
+<h1>Convolution and Autocorrelation<a class="headerlink" href="#convolution-and-autocorrelation" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import all python add-ons etc that will be needed later on</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">quad</span>
+<span class="n">init_printing</span><span class="p">()</span>                      <span class="c1"># allows printing of SymPy results in typeset maths format</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;font.size&#39;</span><span class="p">:</span> <span class="mi">14</span><span class="p">})</span>  <span class="c1"># set font size for plots</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="motivation-and-concept">
+<h2>Motivation and concept<a class="headerlink" href="#motivation-and-concept" title="Permalink to this headline">¶</a></h2>
+<p>Instruments measure everything: for example, mass, energy, number of particles, wavelength of light, voltage, current, and images. However, every instrument distorts the data to a greater or lesser extent, and obviously we try to make these distortions insignificant but this is not always possible. In cases when a detector may not respond quickly enough to an event, when very wide slits have to be used in a spectrometer to detect a weak signal, or an electronic circuit does not respond in a linear manner to the input voltage, a distortion to the data is unavoidable. The effect is to <em>convolute</em> the ideal response, as defined by the physics behind the experiment, with the instrumental response. Fortunately Fourier transforms can usually be used to unravel the effect of convolution, however, in some circumstances this may not be possible.</p>
+</div>
+<div class="section" id="examples">
+<h2>7.1 Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<p><strong>(i)</strong> To be specific, suppose that the lifetime of electronically excited atoms or molecules is to be measured by exciting them with a pulse of light and their fluorescence measured as it decays with time. This fluorescence could be observed with a photodiode or photomultiplier, whose output voltage is measured with an oscilloscope. Before doing this experiment, two questions have to be answered;</p>
+<p><strong>(a)</strong> Is the laser used to excite the molecules of short enough duration that the molecules or atoms can be excited quickly enough before any significant number can decay back to the ground state?</p>
+<p><strong>(b)</strong> Is the detection equipment (photodiode, oscilloscope) used able to respond quickly enough to measure the decaying fluorescence properly?</p>
+<p><img alt="Drawing" src="_build_/jupyter_execute/chapter-9/fourier-fig24.png" /></p>
+<p>Figure 24. Top: A signal representing the ideal response of an experiment to a sudden impulse. Middle: The actual stimulation used in the experiment represented as the instrument response. Bottom: The measured signal, the convolution of the two upper curves.</p>
+<hr class="docutils" />
+<p>If either one or both of these conditions cannot be met, then the data will be distorted by the relatively slow response of the instrument. The convolution curve in fig 24 shows how this distortion affects some data. In this figure, the top curve is the ideal decay of the excited state, but it could represent any ideal response. This behaviour would be observed if the molecules could be excited with an infinitesimally narrow laser pulse and measured with a photo-detector with an unlimited time response. The second curve is the actual shape of the laser pulse, and/or detector response, and is the ‘instrument response’ drawn on the same timescale. Clearly, this has a width and a rise and decay time that is not so very different to that of the ideal response. The lower curve is the convolution of the ideal response with the instrument response, and is what would be measured experimentally and clearly has characteristics of both curves. A log plot of the data would show that only at long times does the convoluted response have the same slope as the ideal one. It makes no difference if the instrument response consists of a slow ‘driving force’ for the experiment, in this case a long-lived light-pulse, or a slowly responding detector or both, because the effect producing the convolution is the same. Fortunately, convolution can be calculated easily and rapidly using Fourier transforms.</p>
+<p><img alt="Drawing" src="_build_/jupyter_execute/chapter-9/fourier-fig25.png" />
+Figure 25. The convolution of a narrow spectral line with a wide slit in a spectrometer.</p>
+<hr class="docutils" />
+<p><strong>(ii)</strong> As a second example, consider measuring the width or position of one particular spectral line, such as from a star or a sample of molecules in the lab. The spectrometer has slits on its entrance and exit and these, with the number of grooves in the grating, control the resolution of the spectrometer. Typically, this is <span class="math notranslate nohighlight">\(0.1\)</span> nm/mm of slit width for a moderately good spectrometer and 1 nm/mm for a general purpose one. If the slits cannot be closed to more than <span class="math notranslate nohighlight">\(0.1\)</span> mm, then the resolution of the general purpose instrument will be approximately 0.1 nm and a narrow spectral line will appear to have this value even it is many times narrower. This is because the grating is rotated while measuring the spectrum and the spectral line is swept across the slits. The effect is to sequentially place a spectral line at all possible points, and hence wavelengths, across the slit. A signal is recorded at all these wavelengths rather than being measured only at its proper one, and the response measured is the convolution of the ideal width of the spectral line with the instrument response, which is the finite width of the slit. In many instruments, a CCD camera measures all wavelengths simultaneously, and a slit is not needed nor is the grating scanned. However, the same reasoning applies because the individual elements of the camera have a finite width, which therefore act as individual slits.</p>
+<p><strong>(iii)</strong> A final use of convolution is to smooth data. Because convoluting one function with another involves integration, this has the effect of summing or averaging. The rolling or moving average method (Section 10.4) is in effect a convolution, and effectively smooths spiky data.</p>
+</div>
+<div class="section" id="how-convolution-works">
+<h2>7.2 How convolution works<a class="headerlink" href="#how-convolution-works" title="Permalink to this headline">¶</a></h2>
+<p>In the next sections, a convolution will be calculated by direct summation and by a Fourier transform. Convolution is related to the auto- and cross-correlations and these will also be described. How to go about estimating the true response from the convoluted response in real, that is experimental data, i.e. reversing the effects of convolution, is discussed in chapter 13 on numerical methods. This is usually done using iterative, non-linear least-squares methods, (See 13.6.7), because when using real data, which always contains noise, it is found that reverse transforming the convolution often results in a calculated ideal response that is so noisy as to be useless.</p>
+<p><img alt="Drawing" src="_build_/jupyter_execute/chapter-9/fourier-fig26.png" /></p>
+<p>Figure 26. Curves show the instrument response (red), made up as a series of impulses (dotted), which produce a response (<span class="math notranslate nohighlight">\(w\)</span>) at each point on its profile any a few of which are shown. These are then added together in this time delayed manner, to produce the convoluted response.</p>
+<hr class="docutils" />
+<p>To understand how convolution works, suppose that the overall instrument response is made up of a series of <span class="math notranslate nohighlight">\(\delta\)</span>-function impulses. These can be infinitesimally narrow light pulses that excite a molecule. Suppose these impulses are made at ever shorter time intervals, then the effect is that of smoothly exciting the molecule. Each of the impulses elicits an ideal response but because there are many of them, their responses must be added together. The result is the convolution; the effect is shown in Fig. 26. It is always assumed in the convolution that the response is linear with the impulse, which simply means that doubling the impulse doubles the response and so forth.</p>
+<p>The light pulses occur at each point in the dashed curve, Fig. 26. The response from each impulse is the decaying solid curve. To calculate the overall response at any given point along the x-axis, the effect of all previous impulses must be added into the calculation. Suppose that the pulse exciting the sample has a shape given by some function <span class="math notranslate nohighlight">\(f\)</span>, the ideal experimental response <span class="math notranslate nohighlight">\(w\)</span>, and the convolution <span class="math notranslate nohighlight">\(C\)</span>. The terms can be written down at each time if it is assumed, for the present, that the impulses are discrete and the data is represented as a series of points at times <span class="math notranslate nohighlight">\(1, 2, 3\)</span>, and so forth; <span class="math notranslate nohighlight">\(f\)</span>(6), for example, represents the value of <span class="math notranslate nohighlight">\(f\)</span> at the sixth time position. The first point of the impulse is <span class="math notranslate nohighlight">\(f\)</span>(1) and this produces the response</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle f (1)[w(1) + w(2) + w(3) + \cdots]\]</div>
+<p>The second and third impulses produce</p>
+<p><span class="math notranslate nohighlight">\(\displaystyle f(2)[w(1) + w(2) + w(3) + \cdots]\)</span> and <span class="math notranslate nohighlight">\(f(3)[w(1) + w(2) + w(3) + \cdots]\)</span>.</p>
+<p>The convolution is the sum of these terms at times 1, 2, 3, and so on therefore;</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle\begin{align}
+C(1)&amp; = f (1)w(1)\\
+C(2)&amp; = f (1)w(2) + f (2)w(1)\\
+C(3) &amp;= f (1)w(3) + f (2)w(2) + f (3)w(1)\\
+C(4)&amp; = f (1)w(4) + f (2)w(3) + f (3)w(2) + f (4)w(1)\\
+\end{align}\end{split}\]</div>
+<p>These sums are shown in Fig. 27 by adding the products of <span class="math notranslate nohighlight">\(f\)</span> and <span class="math notranslate nohighlight">\(w\)</span> vertically. Clearly, only where both <span class="math notranslate nohighlight">\(f\)</span> and <span class="math notranslate nohighlight">\(w\)</span> are not zero, will this product have a value. The symmetry in these sums soon becomes apparent, each being the product of one series running to the right, and the other to the left; for instance, look at <span class="math notranslate nohighlight">\(C\)</span>(4). The name convolution arises from just this effect; the word also means ‘folded’ and this is shown in the form of the series where each function is folded back onto the other. Convolution is also the distribution of one function in accordance with a ‘law’ specified by another function (Steward 1987) because the whole of one function <span class="math notranslate nohighlight">\(w\)</span>, is multiplied with each ordinate of the other <span class="math notranslate nohighlight">\(f\)</span>, and the results added. The ideal response (the ‘one function’) is distributed, i.e. spread out according to the law or shape of the driving function <span class="math notranslate nohighlight">\(f\)</span>.</p>
+<p><img alt="Drawing" src="_build_/jupyter_execute/chapter-9/fourier-fig27.png" /></p>
+<p>Figure 27. Diagram showing the notation used to calculate a convolution.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="convolution-by-summation">
+<h2>7.3 Convolution by summation<a class="headerlink" href="#convolution-by-summation" title="Permalink to this headline">¶</a></h2>
+<p>Written as a summation, the convolution at point <span class="math notranslate nohighlight">\(k\)</span> is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle C(k) = \sum_{i=0}^k f(i)w(k - i )   \tag{32}\]</div>
+<p>This sum evaluates just one point; to calculate the whole convolution, the index <span class="math notranslate nohighlight">\(k\)</span> must now be varied from 1 to <span class="math notranslate nohighlight">\(n\)</span>, which is the number of data points, making a double summation. One reason Fourier transforms are used to calculate convolutions is that the fast Fourier transform algorithm, FFT, is far quicker on the computer than calculating the convolution as a double summation, particularly for a large number of data points.</p>
+<p>The algorithm to calculate the summation has a double loop to calculate all values of <span class="math notranslate nohighlight">\(k\)</span> and to perform the summation in eqn. 32. The two functions used are those that produced Fig. 24, which are <span class="math notranslate nohighlight">\(\displaystyle f(t) = e^{-t/100}\)</span> and <span class="math notranslate nohighlight">\(\displaystyle w(t) = e^{-(t-100)^2/1000}\)</span>, and <span class="math notranslate nohighlight">\(2^{10}\)</span> points will be also be used to mimic the data produced by an instrument.</p>
+<p>First, because the data is discrete, arrays <span class="math notranslate nohighlight">\(f\)</span> and <span class="math notranslate nohighlight">\(w\)</span> are made; to hold the data points. Then two loops are made, one changes <span class="math notranslate nohighlight">\(k\)</span> from 1 to <span class="math notranslate nohighlight">\(n\)</span> the and inside one calculates <span class="math notranslate nohighlight">\(C(k)\)</span>. The indices are arranged as in equation 32. The variable <span class="math notranslate nohighlight">\(s\)</span> accumulates the sum as the inner do loop progresses. This is a relatively slow calculation because of the double loop.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># algorithm convolution by double summation</span>
+<span class="c1">#---------------------------</span>
+<span class="k">def</span> <span class="nf">do_convolution</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">w</span><span class="p">):</span>   <span class="c1"># f and w are arrays </span>
+    <span class="c1"># Sigma f(n-m)g(m) ;   c(0) = f(0)w(0),    c(1) =  f(0)w(1) + f(1)w(0)  etc </span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.0</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span>
+    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="mf">0.0</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">k</span><span class="p">):</span>
+            <span class="n">s</span> <span class="o">=</span> <span class="n">s</span> <span class="o">+</span> <span class="n">f</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="n">w</span><span class="p">[</span><span class="n">k</span><span class="o">-</span><span class="n">i</span><span class="p">]</span>
+            <span class="k">pass</span>
+        <span class="n">c</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">s</span>
+    <span class="k">return</span> <span class="n">c</span>
+<span class="c1">#---------------------------</span>
+
+<span class="n">n</span> <span class="o">=</span> <span class="mi">2</span><span class="o">**</span><span class="mi">10</span>
+<span class="n">f</span> <span class="o">=</span> <span class="p">[</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">i</span><span class="o">/</span><span class="mf">100.0</span><span class="p">)</span>  <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span>
+<span class="n">w</span> <span class="o">=</span> <span class="p">[</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="mi">100</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="mf">1e3</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span>
+<span class="n">t</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span>
+
+<span class="n">C</span> <span class="o">=</span> <span class="n">do_convolution</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">w</span><span class="p">)</span>
+<span class="n">mxc</span>  <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">C</span><span class="p">)</span>         <span class="c1"># use to normalse</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">C</span><span class="o">/</span><span class="n">mxc</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;C , convolution &#39;</span><span class="o">+</span><span class="sa">r</span><span class="s1">&#39;$f\otimes w$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">f</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;f(x)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">w</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;w(x)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="n">n</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/Fourier-D_3_0.png" src="../../../_images/Fourier-D_3_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="convolution-by-fourier-transform">
+<h2>7.4 Convolution by Fourier transform<a class="headerlink" href="#convolution-by-fourier-transform" title="Permalink to this headline">¶</a></h2>
+<p>The convolution can also become an integral, by supposing that the points are separated by an infinitesimal amount, and therefore, the change <span class="math notranslate nohighlight">\(sum \rightarrow \int \)</span>  is allowable. The integral form of the convolution at time <span class="math notranslate nohighlight">\(u\)</span>, is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle C(u)=\int_{-\infty}^\infty f(t)w(u-t)dt \tag{33}\]</div>
+<p>which represents the response at time <span class="math notranslate nohighlight">\(u\)</span> to an impulse delivered at time <span class="math notranslate nohighlight">\(t\)</span>. The limits to the integral are often represented as <span class="math notranslate nohighlight">\(\pm \infty\)</span>. If the signal is zero at times less than zero, then the lower limit can be made zero.</p>
+<p>The convolution integral is frequently written as,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle C(t) = f (t) \otimes w(t) \qquad  \text{ or } \qquad C = f \otimes w \tag{34} \]</div>
+<p>The convolution is performed by Fourier transforming functions <span class="math notranslate nohighlight">\(f\)</span> and <span class="math notranslate nohighlight">\(w\)</span> separately, multiplying the transforms together and then inverse transforming. The symbol <span class="math notranslate nohighlight">\(\otimes\)</span> represents all these calculations because the result is returned in the time domain. Sometimes, the convolution is written only as a conversion into the frequency domain as</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle f(t)\otimes w(t) = \sqrt{2\pi} F(\omega)W(\omega)\]</div>
+<p>where <span class="math notranslate nohighlight">\(F\)</span> and <span class="math notranslate nohighlight">\(W\)</span> are the respective fourier transforms of <span class="math notranslate nohighlight">\(f\)</span> and <span class="math notranslate nohighlight">\(w\)</span>, <span class="math notranslate nohighlight">\(\omega\)</span> being angular frequency. Thus convolution in ‘normal’ space is multiplication in ‘Fourier’ space.</p>
+<p>If <span class="math notranslate nohighlight">\(T\)</span> represents the Fourier transform and <span class="math notranslate nohighlight">\(T^{-1}[\cdots]\)</span> the inverse transform the convolution is formally written as</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle C = T^{-1}[\,T( f )T(w)\,]    \tag{35} \]</div>
+<p>which is the same as equation 34. If the equations describing <span class="math notranslate nohighlight">\(f\)</span> and <span class="math notranslate nohighlight">\(w\)</span> are known, an exponential and a Gaussian for example, then</p>
+<p><span class="math notranslate nohighlight">\(\quad\)</span>(a) the Fourier transform integral of each function is calculated as described in Section 6,</p>
+<p><span class="math notranslate nohighlight">\(\quad\)</span>(b) these are multiplied together and</p>
+<p><span class="math notranslate nohighlight">\(\quad\)</span>(c) the inverse transform integral calculated.</p>
+<p>The result of these three operations is the convolution of the two functions in other words</p>
+<p><span class="math notranslate nohighlight">\(\quad\)</span>(1) the convolution of two functions is the transform of the product of their individual transforms: <span class="math notranslate nohighlight">\(\displaystyle T[\,T( f )\cdot T(w)\,]   \)</span>.</p>
+<p>Other statements are also true</p>
+<p><span class="math notranslate nohighlight">\(\quad\)</span>(2) The transform of a convolution is the product of the transforms: <span class="math notranslate nohighlight">\(T^{-1}[f(t)\otimes w(t)]=T(f)\cdot T(w)\)</span>.</p>
+<p><span class="math notranslate nohighlight">\(\quad\)</span>(3) The transform of a product is the convolution of the transforms: <span class="math notranslate nohighlight">\(T(f\cdot w)=T(f)\otimes T(w)\)</span>.</p>
+<p><span class="math notranslate nohighlight">\(\quad\)</span>(4) The product of two functions is the reverse transform of the convolution of their transforms: <span class="math notranslate nohighlight">\(f\cdot w=T^{-1}[ T(f)\otimes T(w) ]\)</span>.</p>
+<div class="section" id="proof-of-convolution-as-transform">
+<h3><strong>Proof of convolution as transform</strong><a class="headerlink" href="#proof-of-convolution-as-transform" title="Permalink to this headline">¶</a></h3>
+<p>The proof that the convolution is a product of transforms starts with the definition in eqn 33 the transform is made and the order of integration is changed. (The limits are removed for clarity and are <span class="math notranslate nohighlight">\(u,t \pm \infty\)</span> and replaced with the variable). The first step is to convert <span class="math notranslate nohighlight">\(w\)</span> into its fourier transform, which introduces another integral</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \int_{u}\int_{t} f(t)w(u-t)\,dt \,e^{-i\omega u} du =\int_{t}f(t)\left[\int_{u} w(u-t)e^{-i\omega u} du \right]\,dt \]</div>
+<p>changing <span class="math notranslate nohighlight">\(s= u-t\)</span> and rearranging</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \int_{t}f(t)\left[\int_{s} w(s)e^{-i\omega (s+t)} ds\right]\,du =\int_{-\infty}^\infty f(t)e^{-i\omega t}dt\int_{-\infty}^\infty w(s)e^{-i\omega s} ds \equiv F(\omega)W(\omega)\]</div>
+<p>which shows that the convolution is the product of the fourier transforms in transform space. Note that the <span class="math notranslate nohighlight">\(t\)</span> and <span class="math notranslate nohighlight">\(u-t\)</span> in the convolution have both become frequency in the transformed equation. Note also that <span class="math notranslate nohighlight">\(s\)</span> is a dummy variable as it is the integration variable, any other symbol could be used, <span class="math notranslate nohighlight">\(t\)</span> for example as long as it does not conflict with another.</p>
+<p>As an example, consider convoluting a square pulse with two delta functions. Their convolution will produce two square pulses centred on the two delta functions, because, as the pulse is swept past the two deltas, only at their overlap will their product have a finite value. Three stages of the convolution are shown at the top of Fig. 28, and the result is shown below this.</p>
+<p><img alt="Drawing" src="_build_/jupyter_execute/chapter-9/fourier-fig28.png" /></p>
+<p>Figure 28. Convolution as Fourier transforms.</p>
+<hr class="docutils" />
+<p>Next, the convolution is evaluated using Fourier transforms. The transforms of the two delta functions and the pulse have already been calculated, and are shown in Fig. 29. This product of the two transforms is then reverse transformed and two square pulses are produced.</p>
+<p>This last convolution is, incidentally, another way of describing the interference due to a double slit, and if many delta functions are used then this describes the effect of a diffraction grating on light waves.</p>
+<p>The data needed in a convolution is frequently a list of numbers because it comes from an experiment and in this case a numerical method has to be used to do the transform, which is then called a Discrete Fourier Transform. This is described further in Section 9, but here is an example some code to illustrate convolution using discrete Fourier transforms.</p>
+<p><img alt="Drawing" src="_build_/jupyter_execute/chapter-9/fourier-fig29.png" /></p>
+<p>Figure 29. Left: The two waveforms are the Fourier transform of a square pulse (top) and two delta functions (lower). When these are multiplied together and reverse transformed two pulses are produced which is the convolution of the delta functions and the single square pulse. The same method has been used to make Fig. 24, even though the functions differ.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="shifting-a-wavepacket-t-f-cdot-w-t-f-otimes-t-w-products-and-transforms">
+<h3><strong>Shifting a wavepacket: <span class="math notranslate nohighlight">\(T(f\cdot w)=T(f)\otimes T(w)\)</span>:   Products and transforms</strong><a class="headerlink" href="#shifting-a-wavepacket-t-f-cdot-w-t-f-otimes-t-w-products-and-transforms" title="Permalink to this headline">¶</a></h3>
+<p>As an illustration that the transform of a product is the convolution of the transforms we examine a wavepacket which  has the form of a complex exponential modified by a gaussian envelope, fig 29a. A femtosecond laser pulse could have this time profile, a vibrational wavepacket this shape with bond extension <span class="math notranslate nohighlight">\(x\)</span>.  The wavepacket is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle f(t)= e^{ikx}e^{-x^2/2\sigma^2}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\sigma\)</span> is the variance of the envelope. You can see that this function is the product of an exponential and a Gaussian. Its fourier transform is therefore the convolution of the transform of these two functions. The exponential has the transform (see table 6.7) <span class="math notranslate nohighlight">\(\delta(k-k_0)\)</span> and the Gaussian  <span class="math notranslate nohighlight">\(\sigma e^{-\sigma^2k^2/2}\)</span>.</p>
+<p>The convolution and hence transform is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \int_{-\infty}^\infty  \sigma e^{-\sigma^2k^2/2}\delta(k-k_0) dk = \sigma e^{-\sigma^2(k-k_0)^2/2}\]</div>
+<p>and because the delta function is everywhere zero except at <span class="math notranslate nohighlight">\(k=k_0\)</span> the integral need not be performed as one value only is selected and the result written down. This shows that the transform is also a gaussian but shifted by an amount <span class="math notranslate nohighlight">\(k_0\)</span> as shown in figure 29a.</p>
+<p><img alt="Drawing" src="_build_/jupyter_execute/chapter-9/fourier-fig29a.png" /></p>
+<p>Figure 29a. A Gaussian wavepacket shifted by convolution with the <span class="math notranslate nohighlight">\(\delta\)</span> function <span class="math notranslate nohighlight">\(\delta(k-k_0)\)</span> in <span class="math notranslate nohighlight">\(k\)</span> space. The various widths are shown as red lines. The left hand panel shows the function in ‘real’ <span class="math notranslate nohighlight">\(x\)</span> space, the right hand one in transform <span class="math notranslate nohighlight">\(k\)</span> space. The constants used were <span class="math notranslate nohighlight">\(\sigma=1,k_0=10\)</span>.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="code-example-of-convolution-by-fourier-transform">
+<h3><strong>Code example of convolution by fourier transform</strong><a class="headerlink" href="#code-example-of-convolution-by-fourier-transform" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># convolution by fourier transform</span>
+
+<span class="n">n</span> <span class="o">=</span> <span class="mi">2</span><span class="o">**</span><span class="mi">10</span>
+<span class="n">f</span> <span class="o">=</span> <span class="p">[</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">i</span><span class="o">/</span><span class="mf">100.0</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span>
+<span class="n">w</span> <span class="o">=</span> <span class="p">[</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="mi">100</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="mf">1e3</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span>
+<span class="n">t</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span>
+
+<span class="n">F</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">rfft</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>        <span class="c1"># use rfft as input in only real </span>
+<span class="n">W</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">rfft</span><span class="p">(</span><span class="n">w</span><span class="p">)</span>
+<span class="n">C</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">irfft</span><span class="p">(</span><span class="n">F</span><span class="o">*</span><span class="n">W</span><span class="p">)</span>
+
+<span class="n">mxc</span>  <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">C</span><span class="p">)</span>         <span class="c1"># use to normalse</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">C</span><span class="o">/</span><span class="n">mxc</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;C , convolution &#39;</span><span class="o">+</span><span class="sa">r</span><span class="s1">&#39;$f\otimes w$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">f</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;f&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">w</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;w&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="n">n</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/Fourier-D_5_0.png" src="../../../_images/Fourier-D_5_0.png" />
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="a-warning-and-a-solution">
+<h2>7.5 A warning and a Solution<a class="headerlink" href="#a-warning-and-a-solution" title="Permalink to this headline">¶</a></h2>
+<p>Finally a warning about using Fourier transforms to perform convolution. The transform assumes that the function being transformed is periodic, this means that if the signal is not of the same size, such as zero,  at its start and end there is a frequency associated with changing from end to start so that this will appear as an artifact in the convolution. THis occurs because the transform assumes that the signal is periodic. This does not arise in the case of the summation method and even though this may be slower to calculate, it is more robust.  The difference is shown in the next figure 29b. On the left is shown the summation based convolution calculation using an exponential, with lifetime of 10000, and a Gaussian and on the right using the Fourier transform method. All is not lost, however, because by padding the data with zeros to double its length the correct result can be obtained.</p>
+<p><img alt="Drawing" src="_build_/jupyter_execute/chapter-9/fourier-fig29b.png" /></p>
+<p>Figure 29b. The figure shows the difference between the correct convolution done by summation ( red curve left ) and the artefact introduced by using the Fourier method ( red curve right ) this is produced when the functions are not the same size, preferably zero, at the start and end of the data.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="autocorrelation-and-cross-correlation">
+<h2>8 Autocorrelation and cross-correlation<a class="headerlink" href="#autocorrelation-and-cross-correlation" title="Permalink to this headline">¶</a></h2>
+<p>A correlation is a function that measures the similarity of one set of data to another. A cross-correlation is formed if the data are dissimilar, an autocorrelation if there is only one set of data. The data might be a voltage from a detector, it might be an image or residuals from fitting a set of data.  In Fig. 30 part of a noisy sinusoidal curve is shown in black and labelled 1. The second curve (2, red) is displaced only a little from the first and is clearly only slightly different; the third (3, grey) which is displaced by more is clearly different from the first as it is positive at large <span class="math notranslate nohighlight">\(x\)</span> when the first curve is negative. The right-hand figure shows the autocorrelation of the curve (1) shown on the left, and as this is an oscillating curve, the autocorrelation also oscillates but eventually reaches zero. The oscillation is a result of the fact that a sinusoidal curve is similar to itself after each period, and the autocorrelation measures this similarity by increasing and decreasing. The autocorrelation is also less noisy that the data because it involves summing or integrating over many data points.</p>
+<p>A random signal with an average of zero will have an autocorrelation that averages to zero at all points except the first, whereas the autocorrelation of an exponential and similar functions will be not be zero, but decay away in some manner. The autocorrelation is a likened to a measure of the ‘memory’ a function has, that is, how similar one part of the data is with an earlier or later part. A zero average random signal has no memory because it is random, and each point is independent of its predecessor; this is not true of any other signal. The correlation is therefore a process by which we can compare patterns in data. In data analysis, the residuals, which are the difference between the data and a fitted function, should be random if the fit is correct; the shape of the autocorrelation is therefore a way of testing this.</p>
+<p><img alt="Drawing" src="_build_/jupyter_execute/chapter-9/fourier-fig30.png" /></p>
+<p>Figure 30. A sketch showing the first <span class="math notranslate nohighlight">\(120\)</span> points of a set of noisy data of <span class="math notranslate nohighlight">\(250\)</span> points. The data is still somewhat similar to itself when displaced by only a few points but much less so, when displaced by many, dashed grey curve. The autocorrelation of all the data is shown on the right. Notice also how as autocorrelation integrates the data, the noise is reduced.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="applications">
+<h2>8.1 Applications<a class="headerlink" href="#applications" title="Permalink to this headline">¶</a></h2>
+<p>In ultra-fast (femtosecond) laser spectroscopy, autocorrelations are used to measure the length of the laser pulse because no electronic device is fast enough to do this, as they are limited to a time resolution of a few tens of picoseconds at best, but laser pulses can be less than <span class="math notranslate nohighlight">\(10\)</span> fs in duration. In single molecule spectroscopy, the correlation of the number of fluorescent photons detected in a given time interval is used to determine the diffusion coefficient of the molecules. In the study of the electronically excited states of molecules, the correlation of time resolved spectra, recorded as the molecule moves on its potential energy surface, is a measure of excited state and solvent dynamics.  Perhaps the most important application is in FTIR spectroscopy.</p>
+<p>The signal from an FTIR spectrometer is the autocorrelation of the infra-red radiation because in this instrument one arm of the (Michaelson) interferometer is moved relative to the other thus changing i.r. radiation’s pathlength. The two beams interfere on the detector forming the autocorrelation, see section 5.2 and figure 12. More details are given shortly in section XX.</p>
+<p>Two dimensional cross correlation is used in imaging for example to identify a particular feature by correlating two images. High spots in the correlation show where the images have similarities.</p>
+</div>
+<div class="section" id="calculating-the-correlation">
+<h2>8.2 Calculating the correlation<a class="headerlink" href="#calculating-the-correlation" title="Permalink to this headline">¶</a></h2>
+<p>The correlation function is similar to, but different from, convolution. The autocorrelation is always symmetrical about zero displacement or lag, the cross-correlation is not. In the convolution the two functions <span class="math notranslate nohighlight">\(f\)</span> and <span class="math notranslate nohighlight">\(w\)</span> are folded on one another, the first point of <span class="math notranslate nohighlight">\(f\)</span> multiplying the last of <span class="math notranslate nohighlight">\(w\)</span> and so on, until the last point of <span class="math notranslate nohighlight">\(f\)</span> multiplies the first of <span class="math notranslate nohighlight">\(w\)</span>, equation 31. In the auto- and cross-correlation, one function is also moved past the other and the sum of the product of each term is made but with the indices running in the <em>same direction</em>, both increasing.</p>
+<p>A cross-correlation is shown in Fig. 31 using a triangle <span class="math notranslate nohighlight">\(w\)</span> and a rectangle <span class="math notranslate nohighlight">\(f\)</span>, each with a base line, and for clarity, defined with only six points. The first term in auto- or cross-correlation <span class="math notranslate nohighlight">\(A\)</span> occurs when point <span class="math notranslate nohighlight">\(f\)</span>(6) overlaps with <span class="math notranslate nohighlight">\(w\)</span>(1), when <span class="math notranslate nohighlight">\(f\)</span> is to the far left of <span class="math notranslate nohighlight">\(w\)</span>. The position at <span class="math notranslate nohighlight">\(-5\)</span> to the left is shown in the figure as <span class="math notranslate nohighlight">\(A\)</span>(-5). The middle term in the correlation is at zero displacement, or lag, and there is total overlap of the two shapes and the correlation is at a maximum. The figure on the right shows the last overlap, consisting of just one point in common between the two shapes. There are six terms in the summation of <span class="math notranslate nohighlight">\(A\)</span>(0) down to one in each of <span class="math notranslate nohighlight">\(A\)</span>(-5) and <span class="math notranslate nohighlight">\(A\)</span>(5). The zero lag term is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle A(0) = f (1)w(1) + f (2)w(2) + \cdots + f (6)w(6)\]</div>
+<p>The next term has one point displacement between <span class="math notranslate nohighlight">\(f\)</span> and <span class="math notranslate nohighlight">\(w\)</span> and five terms are summed,</p>
+<div class="math notranslate nohighlight">
+\[A(1) = f (1)w(2) + f (2)w(3) + f (3)w(4) + f (4)w(5) + f (5)w(6)\]</div>
+<p>With two points displaced, there are four terms</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle A(2) = f (1)w(3) + f (2)w(4) + f (3)w(5) + f (4)w(6) \]</div>
+<p>and so forth for the other terms. The last overlap is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle A(5) = f (1)w(6)   \tag{36}\]</div>
+<p>On the negative side, the indices are interchanged, <span class="math notranslate nohighlight">\(f\)</span> for <span class="math notranslate nohighlight">\(w\)</span> and vice versa, and the first (far left) term is
+<span class="math notranslate nohighlight">\(A(-5) = f (6)w(1)\)</span> and similarly for the other terms. There are 11 terms in all or, in general <span class="math notranslate nohighlight">\(2n - 1\)</span>, for data of <span class="math notranslate nohighlight">\(n\)</span> points. In an autocorrelation, <span class="math notranslate nohighlight">\(f\)</span> and <span class="math notranslate nohighlight">\(w\)</span> are the same function and therefore the autocorrelation must be symmetrical and only terms from zero to five are needed, the others being known by symmetry.</p>
+<p><img alt="Drawing" src="_build_/jupyter_execute/chapter-9/fourier-fig31.png" /></p>
+<p>Figure 31. A pictorial description of cross-correlation of the signals (functions) <span class="math notranslate nohighlight">\(w\)</span> a traingle and <span class="math notranslate nohighlight">\(f\)</span> a ‘top-hat’ or rectangle.</p>
+<hr class="docutils" />
+<p>The formula for the autocorrelation for <span class="math notranslate nohighlight">\(n\)</span> data points is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle A_a(k)=\sum_{i=0}^{n-k}f(i)f(k+i) \qquad k=0,1,\cdots \rightarrow \cdots n   \tag{37}\]</div>
+<p>where the first value of the displacement <span class="math notranslate nohighlight">\(k\)</span> is zero, and the last <span class="math notranslate nohighlight">\(n\)</span>, and both functions are now labelled <span class="math notranslate nohighlight">\(f\)</span>. Very often the autocorrelation is normalized; this means dividing by <span class="math notranslate nohighlight">\(\sum f(i)^2\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle A_a(k)=\frac{\sum\limits_{i=0}^{n-k}f(i)f(k+i)}{\sum f(i)^2}   \tag{38}\]</div>
+<p>These last two formulae produce just half of the autocorrelation. To produce the full correlation, symmetrical about zero lag, the mirror image of equation (37) must be added as points <span class="math notranslate nohighlight">\(-n \to -1\)</span> to the left-hand part of the data.</p>
+<p>The cross-correlation uses a similar formula</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle A_c(k)=\sum\limits_{i=0}^{n-k} f(i)w(k+i) \qquad k=-n+1,\cdots 0, \cdots n-1  \tag{39}\]</div>
+<p>but now <span class="math notranslate nohighlight">\(k\)</span> always ranges from <span class="math notranslate nohighlight">\(-n + 1 \to n - 1\)</span>. This distinction is crucial, otherwise the whole of the cross-correlation is not calculated.</p>
+<p>In calculating a correlation as a summation with a computer, as with a convolution, each term in the correlation is a sum, so this means that two nested ‘loops’ are needed to calculate the whole function; one loop sums each individual term, the other calculates the sum, <span class="math notranslate nohighlight">\(A(k)\)</span>.</p>
+<p>Some authors define the correlation up to a maximum of <span class="math notranslate nohighlight">\(n\)</span> in the summation, not <span class="math notranslate nohighlight">\(n - k\)</span>. There is, however, a pitfall in doing this because, if the correlation is not zero above half the length of the data, then this folds round and what is calculated is the sum of the correlation plus its mirror image. The way to avoid this is to add <span class="math notranslate nohighlight">\(n\)</span> zeros to the data and the summation continued until <span class="math notranslate nohighlight">\(2n\)</span>. This should be done routinely if Fourier transforms are used to calculate the correlation.</p>
+<p>Correlations and convolution are not restricted to digitized data but apply also to normal functions. Written as an integral, the cross-correlation of a real, i.e. not complex, function is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle A_c(u) =\int_{-\infty}^{\infty}f(t)w(u+t)dt  \tag{40}\]</div>
+<p>and the autocorrelation of <span class="math notranslate nohighlight">\(f\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle A_a(u) =\int_{-\infty}^{\infty}f(t)f(u+t)dt  \tag{41}\]</div>
+<p>Notice that the sign in the second term is positive in the correlation but negative in a convolution, equation (33). Some authors multiply by a normalising term <span class="math notranslate nohighlight">\(1/\sqrt{2\pi}\)</span> to the autocorrelation but we shall ignore this constant as in most applications it is not usually necessary to know it. The autocorrelation is an even function thus</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle A_a(u)=A_a(-u)\]</div>
+<p>and if the function contains a complex number, then the conjugate is always placed on the left,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle A_a(u) =\int_{-\infty}^{\infty}f(t)^*f(u+t)dt  \tag{41}\]</div>
+<p>The normalised autocorrelation is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle G(u) = \frac{\int\limits_{-\infty}^{\infty}f(t)^*f(u+t)dt}{\int\limits_{-\infty}^{\infty}f(t)^2dt}  =\frac{\langle f(t)\,f(u+t)\rangle}{\langle f(t)^2\rangle}   \tag{42}\]</div>
+<p>and the bracket notation indicates that these are average value. The denominator is the normalization term and is also the value of the numerator with <span class="math notranslate nohighlight">\(u = 0\)</span>.</p>
+<p>If <span class="math notranslate nohighlight">\(f(x)\)</span> is complex then it is conventional to write</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle A_a(u)=\int_{-\infty}^\infty f(t)f^*(u-t)dt\qquad\text{or}\qquad \displaystyle A_a(u)=\int_{-\infty}^\infty f^*(t)f(u+t)dt \]</div>
+<p>where * indicates the complex conjugate.</p>
+</div>
+<div class="section" id="comparison-with-convolution-and-a-fourier-transform">
+<h2>8.3 Comparison with convolution and a fourier transform.<a class="headerlink" href="#comparison-with-convolution-and-a-fourier-transform" title="Permalink to this headline">¶</a></h2>
+<p>The convolution and correlation are very closely related , the convolution integral has the form</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle  C(u)= \int f(t)w(u-t)dt \qquad \text{convolution}\]</div>
+<p>whereas the correlation is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle A_c(u)=\int f(t)w(u+t)dt\qquad \text{correlation}\]</div>
+<p>and as with a convolution, an autocorrelation can be represented as a fourier transform. To show this start by  replacing <span class="math notranslate nohighlight">\(f\)</span> and <span class="math notranslate nohighlight">\(w\)</span> by their transforms which we call <span class="math notranslate nohighlight">\(g\)</span> and <span class="math notranslate nohighlight">\(h\)</span> respectively, and to be general suppose that <span class="math notranslate nohighlight">\(f\)</span> and <span class="math notranslate nohighlight">\(w\)</span> are complex then the change is <span class="math notranslate nohighlight">\(f\to f^*\)</span> which is its complex conjugate.</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle A_c(u)=\int_{-\infty}^\infty \left[\int_{-\infty}^\infty g^*(\omega)e^{i\omega t} d\omega\right]\left[ \int h(\omega' ) e^{-i\omega'(t+ u)}d\omega'\right]dt \]</div>
+<div class="math notranslate nohighlight">
+\[=\int_{-\infty}^\infty \int_{-\infty}^\infty \int_{-\infty}^\infty g^*(\omega)h(\omega')e^{i\omega t} e^{-i\omega'(t+ u)}dt  d\omega d\omega'\]</div>
+<div class="math notranslate nohighlight">
+\[=\int_{-\infty}^\infty \int_{-\infty}^\infty g^*(\omega)h(\omega')\int_{-\infty}^\infty e^{-i(\omega'-\omega) t}dt e^{-i\omega'u}  d\omega d\omega'\]</div>
+<p>the integral in <span class="math notranslate nohighlight">\(dt\)</span> is the delta function <span class="math notranslate nohighlight">\(\delta(\omega'-\omega)\)</span> which is zero unless <span class="math notranslate nohighlight">\(\omega=\omega'\)</span> which leaves one integral</p>
+<div class="math notranslate nohighlight">
+\[A_c(u)=\int_{-\infty}^\infty  g^*(\omega)h(\omega)e^{-i\omega u}  d\omega \]</div>
+<p>In the case of an autocorrelation <span class="math notranslate nohighlight">\(f=w\)</span> and</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle A_a(u)= \int_{-\infty}^\infty f(t)f(u+t)dt =\int_{-\infty}^\infty |g(\omega)|^2 e^{-i\omega u}  d\omega\]</div>
+<p>which is the Wiener-Khinchin Theorem described shortly. This shows us that the square of the absolute value of the fourier transform of <span class="math notranslate nohighlight">\(f\)</span> is its autocorrelation.</p>
+</div>
+<div class="section" id="id1">
+<h2>8.4 Examples<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="i-periodic-function">
+<h3><strong>(i) Periodic function</strong><a class="headerlink" href="#i-periodic-function" title="Permalink to this headline">¶</a></h3>
+<p>If the function is periodic then the integration limits should cover one period. The normalized autocorrelation of a cosine <span class="math notranslate nohighlight">\(A\cos(2\pi\nu t + \varphi)\)</span>, where the period is <span class="math notranslate nohighlight">\(T = 1/\nu\)</span> and <span class="math notranslate nohighlight">\(\varphi\)</span> is the phase, is calculated as</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle G(u) = \frac{\int\limits_0^T \cos(2\pi\nu t+\varphi)\cos(2\pi \nu (u+t)+\varphi)dt}{\int\limits_0^T \cos^2(2\pi \nu t+\varphi)dt}\]</div>
+<p>and the result will be independent of the phase. Note that we could also use <span class="math notranslate nohighlight">\(\omega =2\pi \nu\)</span> as the frequency, which to use is a matter of preference. The normalisation integral is a standard one and can be looked up or converted to an exponential form to simplify integration. The result is <span class="math notranslate nohighlight">\(\displaystyle \int_0^T \cos(2\pi t/T+\varphi)^2dt = T/2\)</span>. The other integral can similarly be calculated. Using SymPy, this is</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t</span><span class="p">,</span> <span class="n">phi</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">u</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;t, phi, T, u&#39;</span><span class="p">,</span><span class="n">positive</span> <span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">f01</span> <span class="o">=</span> <span class="n">cos</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">pi</span><span class="o">*</span><span class="n">t</span><span class="o">/</span><span class="n">T</span><span class="o">+</span><span class="n">phi</span><span class="p">)</span><span class="o">*</span><span class="n">cos</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">pi</span><span class="o">*</span><span class="n">t</span><span class="o">/</span><span class="n">T</span><span class="o">+</span><span class="n">phi</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="n">pi</span><span class="o">*</span><span class="n">u</span><span class="o">/</span><span class="n">T</span> <span class="p">)</span>
+
+<span class="n">G</span> <span class="o">=</span> <span class="n">integrate</span><span class="p">(</span><span class="n">f01</span><span class="p">,(</span><span class="n">t</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">T</span><span class="p">),</span><span class="n">conds</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">)</span>    <span class="c1"># slow calculation</span>
+<span class="n">simplify</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/Fourier-D_7_0.png" src="../../../_images/Fourier-D_7_0.png" />
+</div>
+</div>
+<p>from which it is seen that the normalised autocorrelation is also a cosine <span class="math notranslate nohighlight">\(\displaystyle G(u) = \cos\left(2\pi \frac{u}{T}\right)\)</span>. If the initial cosine is written as <span class="math notranslate nohighlight">\(\cos(\omega t + \varphi)\)</span> then the period is <span class="math notranslate nohighlight">\(T = 2\pi/\omega\)</span>.</p>
+<p>If the trigonometric function is a complex exponential <span class="math notranslate nohighlight">\(\displaystyle Ae^{-i(\omega t+\varphi)}\)</span> rather than a sine or cosine then the complex conjugate of the function is taken in both of the autocorrelation integrals. The normalization could not be simpler  <span class="math notranslate nohighlight">\(\int_0^Tdt = T\)</span>. The correlation is also a very straightforward integral;</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle G(u)=\frac{1}{T}\int\limits_0^T e^{-i\omega t+\varphi}e^{i\omega (u+t)+\varphi}dt =\frac{1}{T}\int\limits_0^T e^{i\omega u}dt=e^{i\omega u}\]</div>
+<p>Using the Euler relationship, <span class="math notranslate nohighlight">\(\displaystyle e^{-i\theta} = \cos(\theta) + i \sin(\theta)\)</span>, the real or imaginary parts of the function give the cosine or sine result respectively.</p>
+</div>
+<div class="section" id="ii-aperiodic-function">
+<h3><strong>(ii) aperiodic function</strong><a class="headerlink" href="#ii-aperiodic-function" title="Permalink to this headline">¶</a></h3>
+<p>If the function is not periodic, then the limits must be determined by the function being used. The normalized autocorrelation <span class="math notranslate nohighlight">\(A(u)\)</span> of the function <span class="math notranslate nohighlight">\(f(t) = e^{-at}\)</span>, when <span class="math notranslate nohighlight">\(t \ge 0\)</span> and <span class="math notranslate nohighlight">\(f (t) = 0\)</span> when <span class="math notranslate nohighlight">\(t \lt 0\)</span>, will be calculated, and also its full width at half-maximum, fwhm. The integration limits can be changed from those in equation (42) because the function is zero for <span class="math notranslate nohighlight">\(t \lt 0\)</span> and the lower limit can be zero. The normalization, using equation (42), is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \int_{-\infty}^{\infty} f(t)^2dt=\int_0^\infty e^{-2at}dt = \frac{1}{2a}\]</div>
+<p>and the autocorrelation</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \int_{-\infty}^{\infty} f(t)f(u+t)dt=\int_0^\infty e^{-at}e^{-a(u+t)}dt =e^{-au}\int_0^\infty e^{-2at}dt=\frac{e^{-au}}{2a}\]</div>
+<p>Importantly, the autocorrelation must be an even function because it is symmetrical thus it is <span class="math notranslate nohighlight">\(\displaystyle A(u) = \frac{e^{-a|u|}}{ 2a}\)</span> therefore, the value of <span class="math notranslate nohighlight">\(u\)</span> must always be positive. The normalised autocorrelation is <span class="math notranslate nohighlight">\(\displaystyle A(u)=e^{-a|u|}\)</span>. The <span class="math notranslate nohighlight">\(|u|\)</span> does not follow from the mathematics; it is imposed by our knowledge of symmetry of the function.</p>
+<p>As a check, at <span class="math notranslate nohighlight">\(u = 0,\, A(0) = 1\)</span>, which is correct and the function is even or symmetrical about its y-axis, or, <span class="math notranslate nohighlight">\(u = 0\)</span>. The <em>fwhm</em> is calculated when <span class="math notranslate nohighlight">\(\displaystyle A(u_h) = 0.5 = e^{-a|u_h|}\)</span> or <span class="math notranslate nohighlight">\(\displaystyle |u_h|=a^{-1}\ln(2)\)</span> and thus <em>fwhm</em> is <span class="math notranslate nohighlight">\(\displaystyle 2a^{-1}\ln(2)\)</span>. This is twice as wide in this instance as the initial function.</p>
+</div>
+<div class="section" id="iii-laser-pulses">
+<h3><strong>(iii) Laser pulses</strong><a class="headerlink" href="#iii-laser-pulses" title="Permalink to this headline">¶</a></h3>
+<p>The duration of a short laser pulse is often measured as an autocorrelation with an optical correlator. If the intensity profile <span class="math notranslate nohighlight">\(I\)</span> of the short laser pulse is a Gaussian centred at zero <span class="math notranslate nohighlight">\(\displaystyle I = e^{-2(t/a)^2}\)</span>, it is possible to calculate the width of its normalized autocorrelation. If the calculated autocorrelation shape is compared with an experimentally measured one, an estimation of the laser pulse’s duration can be made. The optical correlator to do this measurement is a Michelson interferometer; the path length in one arm is changed relative to the other so that one pulse is moved past the other in time. The pulses are combined in a frequency doubling crystal, and a u.v. signal is detected only when the pulses overlap.</p>
+<p>To achieve this, the doubled frequency, which is in the ultraviolet part of the spectrum, is separated from the fundamental wavelength by a filter. The size of the signal vs the distance the mirror moves, which is proportional to time, is the autocorrelation see Fig. 32.</p>
+<p><img alt="Drawing" src="_build_/jupyter_execute/chapter-9/fourier-fig32.png" /></p>
+<p>Figure 32. Schematic of an optical autocorrelator used to measure the duration of pico- and femtosecond laser pulses.</p>
+<hr class="docutils" />
+<p>The pulse is centred at zero delay and (theoretically) extends from <span class="math notranslate nohighlight">\(-\infty\)</span> to <span class="math notranslate nohighlight">\(\infty\)</span>, which are the integration limits of the autocorrelation, equation (42). The autocorrelation integral is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle A(u)=\int\limits_{-\infty}^{\infty} e^{-t^2/a^2}e^{-(u+t)^2/a^2}dt = a\sqrt{\frac{\pi}{2}} e^{-u^2/(2a^2)}\]</div>
+<p>and the calculation with SymPy is</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">a</span> <span class="o">=</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;t u a&#39;</span><span class="p">,</span><span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">f01</span><span class="o">=</span> <span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="n">t</span><span class="o">/</span><span class="n">a</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">((</span><span class="n">u</span><span class="o">+</span><span class="n">t</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="n">a</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">G</span><span class="o">=</span> <span class="n">simplify</span><span class="p">(</span><span class="n">integrate</span><span class="p">(</span><span class="n">f01</span><span class="p">,</span> <span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="o">-</span><span class="n">oo</span><span class="p">,</span><span class="n">oo</span><span class="p">),</span> <span class="n">conds</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">))</span>    <span class="c1"># oo is infinity</span>
+<span class="n">G</span><span class="o">.</span><span class="n">doit</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/Fourier-D_9_0.png" src="../../../_images/Fourier-D_9_0.png" />
+</div>
+</div>
+<p>The normalization integration can be looked up  but need not be worked out because it is the value of autocorrelation when <span class="math notranslate nohighlight">\(u\)</span> = 0. The normalization equation is therefore <span class="math notranslate nohighlight">\(\displaystyle \int e^{-2t^2/a^2}dt=a\sqrt{\pi /2}\)</span>. The normalized autocorrelation <span class="math notranslate nohighlight">\(G(u)\)</span> is also a Gaussian, with a value <span class="math notranslate nohighlight">\(\displaystyle G(u)=e^{-u^2/(2a^2)}\)</span>. The <em>fwhm</em> of this function is calculated when <span class="math notranslate nohighlight">\(G(u)=1/2\)</span> and is <span class="math notranslate nohighlight">\(a\sqrt{2\ln(2)}\)</span> and that of the original pulse is <span class="math notranslate nohighlight">\(a\sqrt{\ln(2)}\)</span> therefore, the autocorrelation is <span class="math notranslate nohighlight">\(\sqrt{2} \approx\)</span> 1.414 times wider than the pulse. Knowing this factor provides a convenient way of measuring the duration of a short laser pulse assuming it has a Gaussian profile.</p>
+</div>
+<div class="section" id="iv-goodness-of-data-fitting">
+<h3><strong>(iv) Goodness of data fitting</strong><a class="headerlink" href="#iv-goodness-of-data-fitting" title="Permalink to this headline">¶</a></h3>
+<p>The randomness or otherwise of the autocorrelation of the residuals obtained from fitting real data to a model (theory) is important when determining the ‘goodness of fit’. The function is now a set of data points not an equation. The data in Fig. 33 shows the autocorrelation of a random sequence of values where the mean is 0 (left) and <span class="math notranslate nohighlight">\(1/2\)</span> (right). When the mean is zero, only the first point has a value not essentially zero. When the mean is <span class="math notranslate nohighlight">\(1/2\)</span>, there is a correlation between each point, and this decreases as the separation between points increases. Since the mean is <span class="math notranslate nohighlight">\(1/2\)</span> (or any value not zero), this means that each point is related to all the others, because, besides random fluctuations, they all have the same underlying value. Their correlation becomes less the further they are separated.</p>
+<p>The normalized autocorrelation of any line <span class="math notranslate nohighlight">\(y\)</span> = constant, is a sloping straight line starting at <span class="math notranslate nohighlight">\(1\)</span> and ending at <span class="math notranslate nohighlight">\(0\)</span>. This is to be expected, because at zero displacement the line is overlapped with itself, whereas at the maximum displacement, only one term remains, see equation (36), and this value is small. In Fig. 33, the random noise has a large correlation at zero displacement because the whole trace must be perfectly correlated with itself; its value is 1 but only because the autocorrelation is normalized.</p>
+<p>In calculating the autocorrelation of residuals from a set of fitted data, the mean value of the data is always subtracted first to prevent this sloping effect on the autocorrelation shown on the right of Fig. 9.33. Of course, if after doing this the autocorrelation is still sloping, then it clearly is not equally distributed about zero and the model used to describe the data may not be correct.</p>
+<p>The autocorrelation calculation is shown below.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Algorithm: Autocorrelation</span>
+<span class="c1">#-----------------------</span>
+<span class="k">def</span> <span class="nf">do_autoc</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">w</span><span class="p">):</span>       <span class="c1"># Autocorrelation ac(k)= sum_i=0^{n-k} f(i)w(k+i) /norm</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">w</span><span class="p">)</span>
+    <span class="n">ac</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.0</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span>
+    <span class="n">sf</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">([</span><span class="n">f</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)])</span>
+    <span class="n">sw</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">([</span><span class="n">w</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)])</span>
+    <span class="n">normfw</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">sf</span><span class="o">*</span><span class="n">sw</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="mf">0.0</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="n">k</span><span class="p">):</span>
+            <span class="n">s</span> <span class="o">=</span> <span class="n">s</span> <span class="o">+</span> <span class="n">f</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="n">w</span><span class="p">[</span><span class="n">k</span><span class="o">+</span><span class="n">i</span><span class="p">]</span>
+        <span class="n">ac</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">s</span>
+    
+    <span class="k">return</span> <span class="n">ac</span><span class="o">/</span><span class="n">normfw</span>
+<span class="c1">#----------------------</span>
+
+<span class="n">fig1</span><span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mf">8.0</span><span class="p">,</span><span class="mf">4.0</span><span class="p">))</span>
+<span class="n">ax0</span> <span class="o">=</span> <span class="n">fig1</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">ax1</span> <span class="o">=</span> <span class="n">fig1</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="n">n</span> <span class="o">=</span> <span class="mi">250</span>
+<span class="n">s</span> <span class="o">=</span> <span class="p">[</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">()</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span>
+<span class="n">t0</span><span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span>
+
+<span class="n">ss</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="o">/</span><span class="n">n</span>                       <span class="c1"># get average </span>
+<span class="n">s0</span> <span class="o">=</span> <span class="p">[</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">ss</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span>  <span class="c1"># subtract average</span>
+
+<span class="n">ax0</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t0</span><span class="p">,</span> <span class="n">do_autoc</span><span class="p">(</span><span class="n">s0</span><span class="p">,</span><span class="n">s0</span><span class="p">),</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span> <span class="c1">#  (S0, S0) is autocorrelation  </span>
+<span class="n">ax0</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">ax0</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="n">ax0</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;autocorrelation, av = 0&#39;</span><span class="p">)</span>
+<span class="n">ax0</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">([</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+
+<span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t0</span><span class="p">,</span> <span class="n">do_autoc</span><span class="p">(</span><span class="n">s</span><span class="p">,</span><span class="n">s</span><span class="p">),</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;autocorrelation, av = 0.5&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">([</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/Fourier-D_11_0.png" src="../../../_images/Fourier-D_11_0.png" />
+</div>
+</div>
+<p>Fig. 33 Normalized autocorrelations of <span class="math notranslate nohighlight">\(250\)</span> random numbers with an average of <span class="math notranslate nohighlight">\(0\)</span> (left) and an average of <span class="math notranslate nohighlight">\(1/2\)</span> (right). Only the right-hand half of the autocorrelation is calculated and plotted. The left-hand part is the exact mirror image.</p>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="autocorrelation-of-fluctuating-and-noisy-signals">
+<h2>8.5 Autocorrelation of fluctuating and noisy signals<a class="headerlink" href="#autocorrelation-of-fluctuating-and-noisy-signals" title="Permalink to this headline">¶</a></h2>
+<p>The autocorrelation of noise is now considered, and in the next section this will lead to understanding the shape of a spectroscopic transition and this is illustrated with NMR. Any experimental measurement is accompanied by noise. When measuring the properties of single atoms, molecules, or photons, considerable fluctuations in their measured values are expected and many events have to be averaged to obtain a precise result. The measured property might be energy, velocity, the number of photons in a given period measured by a photodiode, or the current in a transistor or diode when this is so small that discrete charge events are recorded. This latter noise is called <em>shot noise</em>. If you could hear shot noise, the effect would be rather similar to the sound of heavy rain falling on a car’s roof.</p>
+<p>There is thermal noise in all resistors in electrical circuits that causes fluctuations in the current. These fluctuations are caused by the thermal motion of the many electrons as they pass through the inhomogeneous material forming the body of the resistor. The frequency of the noise measured on an oscilloscope is determined by the frequency with which the circuitry responds and therefore depends on the capacitance, resistance, and inductance. This generally produces noise with a spread of frequencies of about equal amplitude, except for multiples of mains frequency and those of switched-mode power supplies, and is called <em>white noise</em>. At low frequencies, the amplitude of the noise increases in direct proportion to <span class="math notranslate nohighlight">\(1/f\)</span> where <span class="math notranslate nohighlight">\(f\)</span> is frequency and is therefore called ‘<span class="math notranslate nohighlight">\(1/f\)</span>’ noise. The origin of <span class="math notranslate nohighlight">\(1/f\)</span> noise is not fully understood.</p>
+<p>On the macroscopic scale, random noise also accompanies experimental measurements. Measuring the amount of any of the many trace gases, such as CO<span class="math notranslate nohighlight">\(_2\)</span>, IO<span class="math notranslate nohighlight">\(_2\)</span>, and NOx, in the atmosphere using optical techniques is an inherently noisy process. This is due to the continuous and erratic motion of air packets along the line of sight during the measurement and from one measurement to another. The frequency of the noise is, however, mostly limited to the speed at which the air changes.</p>
+<p>In the laboratory, all sorts of noise sources can affect an experiment; mostly these are due to voltage or current ripple in DC power supplies. In sensitive laser experiments, noise can be caused by dust particles in the air, vibrations of the building and from the air flow coming from air conditioning units. Atomic force microscopes have in the past needed to be suspended inside a sound proof box by elastic bungee ropes, to avoid adding noise to the measurements from the vibrations of the building and from nearby traffic.</p>
+<p>In an attempt to reduce noise a Fourier transform and an autocorrelation of the signal will provide information about the frequencies present, and how quickly they change, or alternatively, how long the noise persists,  and hence the possible source. The transform can also be used to remove noise as illustrated in Section 10.</p>
+<p>Suppose that the noise on a measurement is represented by some fluctuating signal <span class="math notranslate nohighlight">\(f(t)\)</span>, the frequency of which is determined by the nature of the experiment and by the measuring apparatus. This signal will be represented by a general Fourier series similar to that in Section 1.1 but where <span class="math notranslate nohighlight">\(T\)</span> is the period over which a measurement is made and the summation starts from zero as this makes the resulting equations simpler,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle f(t)=\sum\limits_{n=0}^\infty a_n\cos \left(\frac{2\pi n t}{T}\right)+\sum\limits_{n=0}^\infty b_n\sin\left(\frac{2\pi n t}{T}\right)\]</div>
+<p>Following Davidson (1962, chapter 14), the time average of <span class="math notranslate nohighlight">\(f\)</span> and <span class="math notranslate nohighlight">\(f^2\)</span> is the respective integral divided by the time interval <span class="math notranslate nohighlight">\(T\)</span>. The average <span class="math notranslate nohighlight">\(\langle f \rangle\)</span> is zero because the noise is random, but the average of <span class="math notranslate nohighlight">\(f^2\)</span> is not; the integral is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \langle f^2 \rangle =\frac{1}{T}\int\limits_0^T\left [\sum\limits_{n=0}^\infty a_n\cos \left(\frac{2\pi n t}{T}\right)+\sum\limits_{n=0}^\infty b_n\sin\left(\frac{2\pi n t}{T}\right)    \right]^2 dt\]</div>
+<p>which simplifies considerably because of the orthogonality of the cosine integrals such as <span class="math notranslate nohighlight">\(\displaystyle \int \cos(2\pi \frac{nt}{T})\sin(2\pi \frac{mt}{T})dt=0\)</span>, <span class="math notranslate nohighlight">\(n\)</span> and <span class="math notranslate nohighlight">\(m\)</span> being integers, and the result is very simple;</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \langle f^2\rangle = \frac{1}{2}\sum_n(a_n^2+b_n^2)  \]</div>
+<p>This expression can also represent the average of many measurements if the coefficients <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> themselves represent average values. This means that the <em>ergodic hypothesis</em> (or ergodic condition) applies, i.e. for a stationary system each part comprising the ensemble (of particles) will pass through all values accessible to it, given a sufficiently long time. Thus the time average is the same for all parts of the ensemble. This also means that the time average is the equivalent to the ensemble average.  To explain further; the word ‘stationary’ means that there is no preferred origin for the measurement, thus any time period over which measurements are made is just as good as any other. The ensemble average is taken over all coordinates of a system at a fixed time. The time average considers just a part of the ensemble averaged over a sufficiently long time. If the ergodic hypothesis applies these averages are equal.</p>
+<p>The variance (the square of the standard deviation) on the signal is <span class="math notranslate nohighlight">\(\sigma^2=\langle f^2\rangle - \langle f\rangle^2 \)</span> and in this case the standard deviation is <span class="math notranslate nohighlight">\(\sqrt{\langle f^2\rangle}\)</span> and is the determined only by the amplitudes <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(b\)</span> of the noise. The energy in the noise is  <span class="math notranslate nohighlight">\(a^2 + b^2\)</span>.</p>
+<p>The autocorrelation of <span class="math notranslate nohighlight">\(f(x)\)</span> is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle A(u) =\langle f(t)f(u+t)\rangle =\frac{1}{T}\int_0^Tf(t)f(t+u)dt\]</div>
+<p>which looks quite complicated when the substitution for <span class="math notranslate nohighlight">\(f\)</span> is made. However, using the formulas for <span class="math notranslate nohighlight">\(\sin(A + B), \cos(A + B)\)</span> and the orthogonality rules, a remarkably simple result is produced:</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle A(u)=\frac{1}{2}\sum_n\left(a_n^2+b_n^2\right)\cos\left(\frac{2\pi nu}{T} \right)  \tag{43}\]</div>
+<p>which is an oscillating signal that will repeat itself with a period <span class="math notranslate nohighlight">\(T\)</span>.</p>
+</div>
+<div class="section" id="wienerkhinchin-relations">
+<h2>8.6 Wiener–Khinchin relations<a class="headerlink" href="#wienerkhinchin-relations" title="Permalink to this headline">¶</a></h2>
+<p>The autocorrelation (equation (43)) is related to the energy or power in a given signal. For example, with electromagnetic radiation the energy is the square of the amplitude <span class="math notranslate nohighlight">\(E\)</span> of the electric field, the field is given by the constants <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> thus <span class="math notranslate nohighlight">\(a^2 + b^2\)</span> represents the energy. This is also true of a sound wave in a fluid where the energy is proportional to the square of the oscillating pressure. There are other examples; the power dissipated in a resistor is proportional to the current squared and the kinetic energy of a molecule is proportional to the square of the velocity. Thus, in general if the signal is <span class="math notranslate nohighlight">\(f\)</span>, <span class="math notranslate nohighlight">\(\langle f^2\rangle\)</span> represents the average energy or power. The period <span class="math notranslate nohighlight">\(T\)</span> (equation (43)) is somewhat arbitrary and can reasonably take on any value; therefore, it is possible to define <span class="math notranslate nohighlight">\(n/T \equiv \nu_n\)</span> as a frequency. The amount of power <span class="math notranslate nohighlight">\(P\)</span> in a small frequency interval from <span class="math notranslate nohighlight">\(\nu\)</span> to <span class="math notranslate nohighlight">\(\nu + \nu + \delta \nu\)</span> is therefore <span class="math notranslate nohighlight">\(\displaystyle P(\nu)d\nu = \frac{1}{2}\left(a_\nu^2 + b_\nu^2\right)\)</span> and the autocorrelation can be written as an integral over frequencies rather than a summation over index <span class="math notranslate nohighlight">\(n\)</span>. This effectively means that there are so many terms in the sum that it can be changed into an integral without any significant error, and doing this produces the autocorrelation;</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle A(u)=\int_{v=0}^\infty P(\nu)\cos(2\pi\nu u)d\nu  \tag{44}\]</div>
+<p>Comparing this equation with a Fourier transform equation, the power spectrum is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle P(\nu) = 4\int_{u=0}^\infty A(u)\cos(2\pi\nu u)d\nu \tag{45}\]</div>
+<p>and these two equations are known as the <em>Wiener - Khinchin</em> relationships: the power spectrum <span class="math notranslate nohighlight">\(P(\nu)\)</span> and autocorrelation <span class="math notranslate nohighlight">\(A(u)\)</span> form a Fourier transform pair. Very often the transform pair involve time and frequency, in which case the changes <span class="math notranslate nohighlight">\(u\to t\)</span> and <span class="math notranslate nohighlight">\(P(\nu) \to J(\nu)\)</span> are commonly made. In NMR and other spectroscopies <span class="math notranslate nohighlight">\(J(\omega)\)</span> is called the spectral density.</p>
+<p>The power spectrum is proportional to what we would normally observe in a spectroscopic experiment, as the change in the signal vs frequency. The width of the signal is determined by the autocorrelation and this is determined by the noise. If the noise is due to a random process then it is often found that the autocorrelation decays exponentially as <span class="math notranslate nohighlight">\(\displaystyle e^{-t/\tau}\)</span> with rate constant <span class="math notranslate nohighlight">\(k=1/\tau\)</span>. In this case the power spectrum <span class="math notranslate nohighlight">\(J(\nu)\)</span> is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle J(\nu) =4\int_{u=0}^\infty e^{-u/\tau}\cos(2\pi \nu u)du = \frac{4\tau}{1+(2\pi\nu \tau)^2} \tag{46}\]</div>
+<p>and the integral is most easily evaluated by converting the cosine to its exponential form.</p>
+<p>The nature of the random processes contributing to the power spectrum is now considered using NMR as an example. The nuclear spin angular momentum in a molecule remains in fixed precessing motion governed by the external magnetic field, but the molecules themselves also undergo random rotational diffusion due to thermal agitation when in solution. This random motion causes the nuclear spin to experience a fluctuating magnetic field in addition to the applied external field. Therefore, those nuclei undergoing NMR transitions experience this fluctuating field and its effect is to return the nuclear spin population to equilibrium with a lifetime called T1 (Sanders &amp; Hunter 1987; Levitt 2001). The timescale of these fluctuations is of the order of tens of picoseconds because this is the timescale of molecular rotation. ( Translational diffusion is far slower ). The molecular rotation rate constant and hence frequency is similar to that of the NMR transition frequency (Larmor frequency) and therefore rotational diffusion can greatly influence the return to equilibrium of the nuclear spins and can dominate both the T1 and T2 decay processes. Loss of spin coherence is characterized by the lifetime T2.</p>
+<p>Molecular translational diffusion is far slower than rotation and so causes magnetic field fluctuations at a far lower frequency than the NMR transition and is therefore less important for T1 processes. Similarly, vibrational motion is too high to influence the NMR transition. Large molecules in a viscous solvent have a sluggish response and a small rotational diffusion coefficient, and long rotational relaxation times, and <em>vice versa</em>. However, while different solvents and molecules of different sizes will change the frequency of the random magnetic field fluctuations, the timescale remains comparable to that of the NMR transition. In proteins, while overall rotation can be slow, approximately tens of nanoseconds, faster local motion of residues called ‘wobbling in a cone’ motion still occurs.</p>
+<p>The autocorrelation of rotational diffusion can be shown to be an exponentially decaying function with a lifetime <span class="math notranslate nohighlight">\(\tau\)</span> proportional to the reciprocal of the rotational diffusion coefficient. Fig. 34 shows the spectral density calculated for different rotational relaxation times. The coupling of the magnetic field fluctuations is most effective when <span class="math notranslate nohighlight">\(1/2\pi\tau\)</span> is close to the Larmor frequency and therefore molecules of different sizes will be affected differently.</p>
+<p>When plotted on a linear scale the spectral density of a slowly decaying exponential autocorrelation, equation 46, is a narrow function centred at zero frequency, whereas the rapidly decaying autocorrelation has the same shape but is wide. Zero frequency here means the transition frequency, see fig 34. The line-width is a consequence of the time-energy or time-frequency uncertainty, causing a wide spectral line when processes are rapid and vice versa. When plotted on a linear - log scale the power spectrum is constant over a wide range of low frequencies, and this is called ‘white noise’. It rapidly decreases, centred about the frequency <span class="math notranslate nohighlight">\(1/2\pi\tau\)</span> as is shown in the figure. If the noise were completely random, the power spectrum would be constant at all frequencies.</p>
+<p>The Weiner - Khinchin theorem also shows that the autocorrelation of the signal <span class="math notranslate nohighlight">\(f\)</span> is the squared modulus of its Fourier transform <span class="math notranslate nohighlight">\(g(k)\)</span>. Apart from a constant of proportionality, this is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle A_a(u) =\int_{-\infty}^\infty f^*(t)f(u+t)dt = T[|g(t)|^2] \]</div>
+<p>Because the squared modulus of the Fourier transform is produced, the autocorrelation has lost all phase information so it is not possible to invert or reverse <span class="math notranslate nohighlight">\(g(k)\)</span> to produce the original function <span class="math notranslate nohighlight">\(f\)</span>. Thus, in the NMR case, it is not possible to measure the spectral density, which is proportional the shape of the NMR transition, and then work backwards to obtain the function that produced this shape. All that can be done is to generate a model of the interactions, such as rotational diffusion, and, for example, by a non-linear, least-squares method fit this theoretical model to the data.</p>
+<p><img alt="Drawing" src="_build_/jupyter_execute/chapter-9/fourier-fig34.png" /></p>
+<p>Figure 34. Left: Power spectra (or spectral density) vs. frequency for a signal that has an exponential autocorrelation function, the decay lifetimes of the exponentials are from <span class="math notranslate nohighlight">\(1 \to 100\)</span> ps. The density of the fluctuation in the noise is almost constant at lower frequencies and this is called ‘white noise’.</p>
+</div>
+<div class="section" id="ftir-supplement">
+<h2>8.7 FTIR supplement<a class="headerlink" href="#ftir-supplement" title="Permalink to this headline">¶</a></h2>
+<p>An overview of the FTIR spectrometer was given in section 5.2 and a schematic shown in figure 12. Here we discuss how the instrument measures the spectrum even though both beams pass through the sample and a single detector is used. This is unlike the situation in a uv-vis spectrophotometer where the light is split and passes separately through a sample and a reference cell and the signals from two detectors compared.</p>
+<p>Recall that the FTIR instrument is a Michelson interferometer in which the input beam is made parallel and has a round cross-section as it passes through the instrument. This beam contains all wavelengths, its amplitude is divided at the beam splitter, and finally recombined onto a single detector whose output produces ‘fringes’ as one arm moves relative to the other. If <span class="math notranslate nohighlight">\(d\)</span> is the difference in distance travelled by the beams they arrive at the detector at times separated by a delay of <span class="math notranslate nohighlight">\(\tau=d/c\)</span> seconds. The detector measures the <em>intensity</em> <span class="math notranslate nohighlight">\(I\)</span> which is the complex square of the amplitude of any wave <span class="math notranslate nohighlight">\(f^*f = |f|^2\)</span>. If the i.r. radiation is hypothetically monochromatic with frequency <span class="math notranslate nohighlight">\(\omega_0\)</span> as the mirror is translated the detector measures a sinusoidally varying signal as the pathlength <span class="math notranslate nohighlight">\(\tau\)</span> varies because the i.r. waves become in and out of phase with one another.</p>
+<p>The <em>amplitude</em> or field is <span class="math notranslate nohighlight">\(f=ae^{i\omega_0 t}\)</span> at frequency <span class="math notranslate nohighlight">\(\omega_0\)</span> (<span class="math notranslate nohighlight">\(\equiv 2\pi \nu_0\)</span>) and at the detector the fields at time <span class="math notranslate nohighlight">\(t\)</span> and <span class="math notranslate nohighlight">\(t+\tau\)</span> are recombined as</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle I(\tau)=\beta \int |f(t)+f(t+\tau)|^2dt \tag{46a}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\beta\)</span> is the product of reflectivity and transmission of the beam splitter. The signal is averaged at each time delay <span class="math notranslate nohighlight">\(\tau\)</span> for a small time <span class="math notranslate nohighlight">\(t_m\)</span>, say a second. Expanding out (and ignoring limits for clarity) gives</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin{align}I(\tau)/\beta &amp;= \int\; \Big(f^*(t)+f^*(t+\tau)\Big) \Big( f(t)+f(t+\tau) \Big)\;dt\\&amp;=\int f^*(t)f(t)dt+\int f^*(t)f(t+\tau)dt +\int f(t)f^*(t+\tau)dt +\int f^*(t+\tau)f(t+\tau)dt\end{align}\end{split}\]</div>
+<p>The first and last integrals are just the average intensity which is constant, for example</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \int_0^{t_m} f^*(t+\tau)f(t+\tau)dt=a^2\int_0^{t_m} e^{-i\omega_0((t+\tau)}e^{+i\omega_0((t+\tau)} dt=a^2t_m\]</div>
+<p>The other integrals are autocorrelations</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin{align}\int_0^{t_m} f^*(t)f(t+\tau)+ f(t)f^*(t+\tau) dt &amp;= a^2\int_0^{t_m}e^{-i\omega_0 t}e^{i\omega_0 (t+\tau)}+e^{+i\omega_0 t}e^{-i\omega_0 (t+\tau)}dt\\ &amp;=a^2t_m (e^{i\omega_0 \tau}+e^{-i\omega_0 \tau})\end{align}\end{split}\]</div>
+<p>making</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle I(\tau)= (2+e^{i\omega_0 \tau}+e^{-i\omega_0 \tau})C\]</div>
+<p>collecting the constants as <span class="math notranslate nohighlight">\(C=a^2\beta t_m\)</span>. As <span class="math notranslate nohighlight">\(\displaystyle 2\cos(\omega_0\tau)=e^{i\omega_0 \tau}+e^{-i\omega_0 \tau}\)</span>, then</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle I(\tau)=C (1+\cos(\omega_0\tau) )\]</div>
+<p>which shows the sinusoidal variation on top of a constant signal. Recall that as <span class="math notranslate nohighlight">\(\tau =d/c\)</span> the time delay is equivalent to a distance moved by the interferometer.</p>
+<p>Molecules naturally have many vibrational and rotational transitions, think of the HCl rotational/vibration spectrum for example, and therefore the field at the detector will be the sum of many different frequencies, we call this distribution <span class="math notranslate nohighlight">\(B(\omega)\)</span>, which is the spectrum we hope to measure, and therefore</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle I(\tau) =\int_0^\infty B(\omega)(1+\cos(\omega\tau) )d\omega\]</div>
+<p>where the constant is absorbed into <span class="math notranslate nohighlight">\(B\)</span> and the integral is added because the detector measures all frequencies <span class="math notranslate nohighlight">\(\omega\)</span> at the same time. At zero delay <span class="math notranslate nohighlight">\(\tau=0,\, I(0)=2\int B(\omega)d\omega\)</span> which is a constant and shows that at time zero twice the total signal is measured. After rearranging</p>
+<div class="math notranslate nohighlight">
+\[ I(\tau)- I(0)/2=\int_0^\infty B(\omega)\cos(\omega\tau) d \omega\]</div>
+<p>This is a fourier cosine transform and can be reverse transformed to give</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle B(\omega) = \int_0^\infty \left(I(\tau)-\frac{I(0)}{2}\right)\cos(\omega\tau)d\tau\tag{46b}\]</div>
+<p>which is the basic equation for FTIR and is the cosine fourier transform of <span class="math notranslate nohighlight">\((I(\tau)-I(0)/2) \)</span> where <span class="math notranslate nohighlight">\(I(\tau)\)</span> is the intensity the detector measures at delay time <span class="math notranslate nohighlight">\(\tau\)</span>. As <span class="math notranslate nohighlight">\(\tau\)</span> changes this function will oscillate up and down as the phase between the two arms changes due to both pathlength change and absorption in the sample. How the transform extracts a signal is explained earlier in the chapter, see 6.4. To see that this equation is a fourier transform recall that <span class="math notranslate nohighlight">\(\displaystyle 2\cos(\omega\tau)=e^{i\omega \tau}+e^{-i\omega \tau}\)</span>. The integration ranges from <span class="math notranslate nohighlight">\(0\to \infty\)</span> which in practice is the distance that becomes <span class="math notranslate nohighlight">\(\approx 500\to \approx 4000\; \mathrm{cm^{-1}}\)</span>. Note that for each frequency <span class="math notranslate nohighlight">\(\omega\)</span> the integration on the right has to be performed. Normally this will be done numerically using a fast four transform FFT.</p>
+<p>At very long times there can no longer be any correlation between the two arms and the signal remaining is due to that of the two separate arms, the constant terms from eqn 46a, making the long time value <span class="math notranslate nohighlight">\(I(0)/2\)</span>.</p>
+<p>So far we have tried to explain how the fourier transfer picks out transition <em>frequencies</em> but their <em>magnitudes</em> are also obtained and this is more subtle because both beams pass through the sample and contain the same frequencies. It is obvious that any absorption will affect the i.r. beam’s intensity, but both beams pass through the sample and are equally affected.  The reason that the absorption magnitude can be measured is that the <em>phase of the combined wave</em> (one from each arm) is determined by the relative magnitude of each transition. This happens because the absorption of amplitude <span class="math notranslate nohighlight">\(a_i\)</span> of a wave of frequency <span class="math notranslate nohighlight">\(\omega_i\)</span> contributes to the sum <span class="math notranslate nohighlight">\(\sum_i a_ie^{i\omega_i \tau}=a_0\sum_i e^{i\omega_i \tau+i\varphi_i}\)</span> and so the phase of the autocorrelation vs. <span class="math notranslate nohighlight">\(\tau\)</span> is changed. This is shown in figure 34a for two transitions, in the first row of panels, the lower frequency is of greater intensity, and in the lower panel they are swapped in intensity but still have the same frequencies. The left most column (A, and D) shows the two waves vs. mirror displacement <span class="math notranslate nohighlight">\(\tau\)</span> in the two cases. The yellow shading (around <span class="math notranslate nohighlight">\(\tau=90\)</span>) shows where the difference between them is most obvious, of course this repeats at each period. The centre panels  (B &amp; E; autocorrelations) shows the combined waves vs. displacement <span class="math notranslate nohighlight">\(\tau\)</span> and on the right the spectrum obtained by fourier transform of the autocorrelations.</p>
+<p><img alt="Drawing" src="_build_/jupyter_execute/chapter-9/fourier-fig34a.png" /></p>
+<p>Figure 34a. Left column shows individual amplitudes of the waves of frequency <span class="math notranslate nohighlight">\(\omega_0, \omega_1\)</span>. The centre column shows how the autocorrelations differ when the amplitudes are different even though the two frequencies are unchanged. The yellow mask shows a region of most noticeable change. The right most column shows the spectrum computed from its autocorrelation. After A.Lipson 2011.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="spectral-resolution">
+<h2>8.8 Spectral resolution<a class="headerlink" href="#spectral-resolution" title="Permalink to this headline">¶</a></h2>
+<p>In calculating the fourier transform. eqn 46b, the limits were taken to <span class="math notranslate nohighlight">\(0\to \infty\)</span> and of course in an instrument this is clearly impossible, where the delay to one arm may extend only to a centimetre or so a time delay of <span class="math notranslate nohighlight">\(\approx 0.033\)</span> ns. The limited range has the effect of convoluting a top-hat or rectangular shape with the delta function response of the ideal case when limits are <span class="math notranslate nohighlight">\(\pm \infty\)</span>. The result is a sinc function as shown in figures 15, i.e. a peak surrounded by many decreasing oscillations. In this respect the FTIR does distort the shape of the transition from its true Lorentzian shape, not that this matters in practice where only the frequency is important and the intensity only characterised as ‘weak’, to ‘strong’. More important is the resolution because the longer the maximum delay the narrower the peaks become and so finer features become distinguishable. The fwhm of the sinc function is <span class="math notranslate nohighlight">\(0.6035/d_m\)</span> where <span class="math notranslate nohighlight">\(d_m\)</span> is the maximum displacement of one arm of the interferometer vs. the other. If this distance is <span class="math notranslate nohighlight">\(1\)</span> cm then the resolution will be <span class="math notranslate nohighlight">\(0.6\;\mathrm{cm^{-1}}\)</span>. Typically this would involve a transform of <span class="math notranslate nohighlight">\(2^{13}=8192\)</span> points or a step of <span class="math notranslate nohighlight">\(1.2\;\mathrm{\mu m}\)</span>.</p>
+<p>The calculation is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{1}{\sqrt{2\pi}}\int_0^{d_m} e^{-i\omega L}dL=\frac{d_m}{\sqrt{2\pi}}\frac{\sin(2\pi\bar\nu d_m)}{2\pi\bar\nu d_m}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\omega=2\pi\bar \nu\)</span> and <span class="math notranslate nohighlight">\(\bar\nu\)</span> is in wavenumbers.</p>
+<p><img alt="Drawing" src="_build_/jupyter_execute/chapter-9/fourier-fig34b.png" /></p>
+<p>Figure 34b. The function <span class="math notranslate nohighlight">\(\text{sinc}(x)=\sin(\pi x)/(\pi x)\)</span>. Using <span class="math notranslate nohighlight">\(\pi x\)</span> makes the zeros of the function appear at integer <span class="math notranslate nohighlight">\(x\)</span> values and the fwhm is <span class="math notranslate nohighlight">\(1.207/2d_m\)</span> where <span class="math notranslate nohighlight">\(d_m\)</span> is the maximum path length difference.</p>
+<hr class="docutils" />
+<p>Because of the distorting effect of the oscillations in the sinc function the fourier transform is apodised, that is, it is multiplied by a function that decreases with <span class="math notranslate nohighlight">\(x\)</span>, there are several forms of these, they all damp-out the oscillations but at a cost of broadening the transition, there is therefore a play-off between removing oscillations and hence removing distortion and loss of resolution. Bracewell (1986) gives examples of these and other aspects of fourier transforms.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./_build_/jupyter_execute/chapter-9"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Godfrey Beddard<br/>
+        
+            &copy; Copyright 2022.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

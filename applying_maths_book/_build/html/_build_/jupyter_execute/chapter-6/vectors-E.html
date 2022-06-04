@@ -1,0 +1,1703 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cross product or vector product &#8212; Applying Maths in the Chemical &amp; Biomolecular Sciences</title>
+    
+  <link href="../../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/togglebutton.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../../_static/book-cover.jpg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Applying Maths in the Chemical & Biomolecular Sciences</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../intro.html">
+   Applying Maths in the Chemical and Biomolecular Sciences.
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../chapter-1/chapter1-intro.html">
+   1. Numbers, Equations, Operators, and Algorithms.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-1/chapter1-A.html">
+     Numbers to Algorithms.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-1/chapter1-Q1-7.html">
+     Questions 1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-1/chapter1-B.html">
+     Trig, hyperbolic and inverse functions, waves, polar coordinates &amp; factorials
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-1/chapter1-Q8-16.html">
+     Questions 8 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-1/chapter1-C.html">
+     Sophisticated Counting.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-1/chapter1-Q17-34.html">
+     Questions 17 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-1/chapter1-D.html">
+     Modulo arithmetic,
+     <span class="math notranslate nohighlight">
+      \(\delta\)
+     </span>
+     functions, types of  series &amp;  estimating quantities
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-1/chapter1-Q35-39.html">
+     Questions 35 - 39
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-1/chapter1-answers-1-7.html">
+     Solutions Q1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-1/chapter1-answers-8-16.html">
+     Solutions Q8 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-1/chapter1-answers-17-34.html">
+     Solutions Q17 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-1/chapter1-answers-35-39.html">
+     Solutions Q35 - 39
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../chapter-2/chapter2-intro.html">
+   2. Complex numbers.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-2/chapter2-A.html">
+     Real, imaginary, conjugate and modulus
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-2/chapter2-Q-1-9.html">
+     Questions 1 - 9
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-2/chapter2-B.html">
+     De Moivre’s theorem and integer powers of complex numbers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-2/chapter2-Q-10-13.html">
+     Questions 10 -13
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-2/chapter2-C.html">
+     Euler’s theorem
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-2/chapter2-Q-14-27.html">
+     Questions 14 - 27
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-2/chapter2-answers.html">
+     Solutions Q1 - 27
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../chapter-3/differen-intro.html">
+   3. Differentiation.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-A.html">
+     Differentiation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-B.html">
+     Trig functions, logs, power, reciprocals and integrals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-C-Q-4-11.html">
+     Questions 1-11
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-D.html">
+     Product rule and function of function or chain rule.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-E-Q-12-42.html">
+     Questions 12-42
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-F.html">
+     Limits, l’Hopital’s rule, Maximum, Minimum and Calculus of Variations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-G-Q-43-73.html">
+     Questions 43 - 73
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-H.html">
+     Numerically finding the roots of an equation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-I-Q-74-85.html">
+     Questions 74 - 85
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-J.html">
+     Minimizing or maximizing with constraints: Lagrange Undetermined Multipliers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-K-Q-86-92.html">
+     Questions 86 - 92
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-L.html">
+     Partial differentiation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-M-Q-93-114.html">
+     Questions 93-114
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-M1.html">
+     Differentiation of vectors
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-N-answers-1-11.html">
+     Solutions Q 1-11
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-O-answers-12-42.html">
+     Solutions Q 12-42
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-P-answers-43-73.html">
+     Solutions Q 43 - 73
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-Q-answers-74-85.html">
+     Solutions Q 74 - 85
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-R-answers-86-92.html">
+     Solutions Q 86 - 94
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-S-answers-93-114.html">
+     Solutions Q 93-114
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../chapter-4/integration-intro.html">
+   4. Integration.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-A.html">
+     Integration basics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-Q1-14.html">
+     Questions 1-14
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-B.html">
+     Integration by substitution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-Q15-30.html">
+     Questions 15-30
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-C.html">
+     Using parametric equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-Q31-48.html">
+     Questions 31 - 48
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-D.html">
+     Calculating an Average Value.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-Q49-72.html">
+     Questions 49 - 72
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-E.html">
+     The Variational Method in Quantum Mechanics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-Q73-77.html">
+     Questions 73 - 77
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-F.html">
+     Multiple integrals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-Q78-86.html">
+     Questions 78 - 86
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-G.html">
+     Calculating the energy of a chemical bond using molecular orbitals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-H.html">
+     Line integrals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-Q87-96.html">
+     Questions 87 - 96
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-answers-1-14.html">
+     Solutions Q1 - 14
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-answers-15-30.html">
+     Solutions Q15 - 30
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-answers-31-48.html">
+     Solutions Q31 - 48
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-answers-49-72.html">
+     Solutions Q49 - 72
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-answers-73-96.html">
+     Solutions Q73 - 96
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../chapter-5/chapter-5-intro.html">
+   5. Summations, Series and expansion of Functions.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-5/chapter-5-A.html">
+     Series, averages, partition functions, DNA melting, atom entropy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-5/chapter-5-B-Q1-13.html">
+     Questions 1 - 13
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-5/chapter-5-E.html">
+     Maclaurin and Taylor series expansions. Paramagnetic spins. Euler-Maclaurin formula.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-5/chapter-5-F-Q14-34.html">
+     Questions 14 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-5/chapter-5-G-Q35-44.html">
+     Questions 35 - 44
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-5/chapter-5-perturbation-A.html">
+     Perturbation Theory
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-5/chapter-5-perturbation-B-Q45-48.html">
+     Questions 45 - 48
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-5/chapter-5-perturbation-C.html">
+     Quantum superposition and wavepackets.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-5/chapter-5-perturbation-D-Q49-52.html">
+     Questions 49 - 52
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-5/chapter-5-answers-1-7.html">
+     Solutions Q 1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-5/chapter-5-answers-8-13.html">
+     Solutions Q8 - 13
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-5/chapter-5-answers-14-26.html">
+     Solutions Q 14 - 26
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-5/chapter-5-answers-27-32.html">
+     Solutions Q27 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-5/chapter-5-answers-33-44.html">
+     Solutions Q33 - 44
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-5/chapter-5-answers-45-52.html">
+     Solutions Q45 - 52
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../chapter-6/vectors-intro.html">
+   6. Vectors.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-A.html">
+     Vector basics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-Q1-24.html">
+     Questions 1 - 24
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-B.html">
+     Projections and components
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-Q25-32.html">
+     Questions 25 - 32
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-C.html">
+     Axes need not be right-angled or of equal length
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-Q33-38.html">
+     Questions 33 - 38
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-D.html">
+     Basis sets with more than three dimensions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-Q39-46.html">
+     Questions 39 - 46
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-E.html">
+     Cross product or vector product
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-Q47-52.html">
+     Questions 47 - 52
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-F.html">
+     Torsion or dihedral angles
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-Q53-48.html">
+     Questions 53 - 48
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-G.html">
+     Torque and angular momentum
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-Q59-61.html">
+     Questions 59 - 61
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-answers-Q1-24.html">
+     Solutions Q1 - 24
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-answers-Q25-32.html">
+     Solutions Q25 - 32
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-answers-Q33-38.html">
+     Solutions Q33 - 38
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-answers-Q39-46.html">
+     Solutions Q39 - 46
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-answers-Q47-52.html">
+     Solutions Q47 - 52
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-answers-Q53-61.html">
+     Solutions Q53 - 61
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../chapter-7/matrices-intro.html">
+   7. Matrices
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-A.html">
+     Determinants
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-Q1-10.html">
+     Questions  1 - 10
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-B.html">
+     Matrices
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-Q11-16.html">
+     Questions  11 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-C.html">
+     Molecular Group Theory
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-Q17-30.html">
+     Questions  17 - 30
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-D.html">
+     Rotation matrices: moving molecules
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-Q31-34.html">
+     Questions 31 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-E.html">
+     Matrices in optics and designing laser cavities
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-Q35-39.html">
+     Questions 35 - 39
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-F.html">
+     Polarizing optics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-Q40-44.html">
+     Questions 40 - 44
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-G.html">
+     Solving equations using matrices. Eigenvectors &amp; Eigenvalues.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-Q45-50.html">
+     Questions 45 - 50
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-H.html">
+     Rate equations and Chemical Kinetics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-Q51-54.html">
+     Questions 51 - 54
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-I.html">
+     Molecular vibrations and pendulums
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-Q55-58.html">
+     Questions 55 - 58
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-J.html">
+     Moments of Inertia
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-Q59-60.html">
+     Questions 59 - 62
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-K.html">
+     Calculating a bond length using moments of inertia
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-Q61.html">
+     Question 61
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-L.html">
+     Principal axes for Moments of Inertia
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-Q62.html">
+     Question 62
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-answersQ1-10.html">
+     Solutions Q1 - 10
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-answersQ11-16.html">
+     Solutions Q11 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-answersQ17-30.html">
+     Solutions Q17 - 30
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-answersQ31-34.html">
+     Solutions Q31 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-answersQ35-39.html">
+     Solutions Q35 - 39
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-answersQ40-44.html">
+     Solutions Q40 - 44
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-answersQ45-50.html">
+     Solutions Q45 - 50
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-answersQ51-54.html">
+     Solutions Q51 - 54
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-answersQ55-58.html">
+     Solutions Q55 - 58
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-answersQ59-61.html">
+     Solutions Q59 - 61
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../chapter-8/matricesQM-intro.html">
+   8. Matrices in Quantum Mechanics
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-8/matricesQM-A.html">
+     Matrices in Quantum Mechanics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-8/matricesQM-Q1-7.html">
+     Questions 1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-8/matricesQM-B.html">
+     Basis sets and bra-ket algebra
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-8/matricesQM-Q8-12.html">
+     Questions 8 - 12
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-8/matricesQM-C.html">
+     Continuous basis sets
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-8/matricesQM-answers1-7.html">
+     Solutions Q1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-8/matricesQM-answers8-12.html">
+     Solutions Q8 - 12
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../chapter-9/Fourier-intro.html">
+   9. Fourier Series and Transforms.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-9/Fourier-A-B.html">
+     Fourier series, Gibbs phenomenon, generalised series.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-9/Fourier-questions-1-6.html">
+     Questions 1 - 6
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-9/Fourier-C.html">
+     Fourier Transforms
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-9/Fourier-questions-7-15.html">
+     Questions 7 - 15
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-9/Fourier-D.html">
+     Convolution and Autocorrelation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-9/Fourier-questions-16-21.html">
+     Questions 16 - 21
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-9/Fourier-E.html">
+     Discrete Fourier  (DFT)  and Fast Fourier transforms (FFT)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-9/Fourier-F.html">
+     The Hadamard Transform: Encoding and Decoding
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-9/Fourier-answers-1-6.html">
+     Solutions Q 1 - 6
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-9/Fourier-answers-7-15.html">
+     Solutions Q 7 - 15
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-9/Fourier-answers-16-21.html">
+     Solutions Q 16 - 21
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-9/Fourier-2D-Diffraction.html">
+     The Fourier transform in two dimensions: images and x-ray Diffraction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-9/Fourier-tomography.html">
+     Computed Tomography
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../chapter-10/Diff-eqns-intro.html">
+   10. Differential Equations.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-10/Diff-eqns-A.html">
+     Differential Equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-10/Diff-eqns-Q1-23.html">
+     Questions 1 - 23
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-10/Diff-eqns-B.html">
+     First order eqns &amp; Integrating factors. Second order eqns, Newtons laws, equations of motion.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-10/Diff-eqns-C.html">
+     The ‘D’ operator.  Solving linear differential equations with constant coefficients
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-10/Diff-eqns-D.html">
+     Simultaneous equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-10/Diff-eqns-Q24-37.html">
+     Questions 24 - 37
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-10/Diff-eqns-E.html">
+     Linear equations with variable coefficients
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-10/Diff-eqns-F.html">
+     Partial Differential Equations, PDE
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-10/Diff-eqns-G.html">
+     PDE examples continued
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-10/Diff-eqns-answers-1-21.html">
+     Solutions Q1 - 21
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-10/Diff-eqns-answers-22-37.html">
+     Solutions Q22 - 37
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../chapter-11/num-methods-intro.html">
+   11. Numerical Methods
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-A.html">
+     Numerical Methods
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-Q1-7.html">
+     Questions 1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-B.html">
+     Numerical solution of differential equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-Q8-12.html">
+     Questions 8 - 12
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-C.html">
+     Coupled equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-Q13-16.html">
+     Questions 13 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-D.html">
+     The phase plane, nullclines, and stable points
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-Q17-20.html">
+     Questions 17 - 20
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-E.html">
+     Reaction schemes with feedback
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-Q21-34.html">
+     Questions 21 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-F.html">
+     Boundary value problems.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-Q35-40.html">
+     Questions 35 - 40
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-answers1-7.html">
+     Solutions Q1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-answers8-12.html">
+     Solutions Q8 - 12
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-answers13-16.html">
+     Solutions Q13 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-answers17-20.html">
+     Solutions Q17 - 20
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-answers21-34.html">
+     Solutions Q21 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-answers35-40.html">
+     Solutions Q35 - 40
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../chapter-12/monte-carlo-intro.html">
+   12. Monte Carlo Methods
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+  <label for="toctree-checkbox-12">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-12/monte-carlo-A.html">
+     Monte - Carlo Methods
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-12/monte-carlo-Q1-6.html">
+     Questions 1 - 6
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-12/monte-carlo-B.html">
+     Solving rate equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-12/monte-carlo-Q7-10.html">
+     Questions 7 - 10
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-12/monte-carlo-CC.html">
+     Monte Carlo Simulations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-12/monte-carlo-C.html">
+     Energy transfer. Autocatalytic reaction and spreading of fires
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-12/monte-carlo-Q11-17.html">
+     Questions 11 - 17
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-12/monte-carlo-D.html">
+     The Metropolis algorithm
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-12/monte-carlo-answers1-6.html">
+     Solutions Q1 - 6
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-12/monte-carlo-answers7-10.html">
+     Solutions Q7 - 10
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-12/monte-carlo-answers11-17.html">
+     Solutions Q11 - 17
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../chapter-13/analysis-intro.html">
+   13. Data Analysis
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+  <label for="toctree-checkbox-13">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-13/analysis-A.html">
+     Characterizing experimental data. Accuracy, precision, mean and standard deviation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-13/analysis-Q1-3.html">
+     Questions 1 - 3
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-13/analysis-B.html">
+     Modelling data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-13/analysis-Q4-9.html">
+     Questions 4 - 9
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-13/analysis-C.html">
+     Modelling data is simpler using matrices
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-13/analysis-Q10-11.html">
+     Questions 10 - 13
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-13/analysis-D.html">
+     Non-linear least squares. Least absolute deviation. Principal component analysis
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-13/analysis-answers1-11.html">
+     Solutions Q1 -11
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../chapter-1/chapter1-E.html">
+   SI units, Rounding, converting units &amp; Glossary.
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../references/References.html">
+   References
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../references/Python%20crib.html">
+   Appendix:  Some basic Python instructions with a few examples.
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../../_sources/_build_/jupyter_execute/chapter-6/vectors-E.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/_build_/jupyter_execute/chapter-6/vectors-E.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   16 Cross product or vector product
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#cross-products-using-the-i-j-k-basis-set">
+   16.1 Cross products using the
+   <span class="math notranslate nohighlight">
+    \(( i,  j,  k)\)
+   </span>
+   basis set
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#cross-product-with-a-vector-basis-set">
+   16.2 Cross product with a vector basis set
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#distance-from-a-point-to-a-line-and-between-two-skew-lines">
+   16.3 Distance from a point to a line and between two skew lines
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#equation-of-a-plane-and-distance-from-a-point-to-a-plane">
+   16.4 Equation of a plane and distance from a point to a plane
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#plane-defined-by-its-intercepts">
+   16.5 Plane defined by its intercepts
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#best-plane-through-a-set-of-points">
+   16.6 Best plane through a set of points
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#scalar-triple-products-are-numbers">
+   17 Scalar triple products are numbers
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#vector-triple-product">
+   18 Vector triple product
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="cross-product-or-vector-product">
+<h1>Cross product or vector product<a class="headerlink" href="#cross-product-or-vector-product" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import all python add-ons etc that will be needed later on</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="n">init_printing</span><span class="p">()</span>                      <span class="c1"># allows printing of SymPy results in typeset maths format</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;font.size&#39;</span><span class="p">:</span> <span class="mi">16</span><span class="p">})</span>  <span class="c1"># set font size for plots</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id1">
+<h2>16 Cross product or vector product<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>The cross product of two vectors produces a vector rather than a scalar. This vector is at right angles to the other two; consequently, the cross product is unique to vectors in three- dimensional space. The symbol <span class="math notranslate nohighlight">\(\times\)</span> is used to indicate a cross product; some authors use <span class="math notranslate nohighlight">\(\land \)</span> although this less is common nowadays.</p>
+<p>If <span class="math notranslate nohighlight">\(\vec u\)</span> and <span class="math notranslate nohighlight">\(\vec v\)</span> are two vectors at an angle <span class="math notranslate nohighlight">\(\theta\)</span> to one another, the cross product is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \vec u \times \vec v = |\vec u||\vec v|\sin(\theta)\;\vec n \tag{38}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\vec n\)</span> is a unit vector at right angles to <span class="math notranslate nohighlight">\(\vec u\)</span> and <span class="math notranslate nohighlight">\(\vec v\)</span>, and shows that the result is a vector. It is not at all obvious why the cross product produces a vector; the product <span class="math notranslate nohighlight">\(|\vec u||\vec v|\sin(\theta)\)</span> is a scalar quantity, i.e. a simple number possibly with units, but mathematically <span class="math notranslate nohighlight">\(\vec u \times \vec v\)</span> behaves like a vector perpendicular to the plane containing <span class="math notranslate nohighlight">\(\vec u\)</span> and <span class="math notranslate nohighlight">\(\vec v\)</span>, and hence we multiply by <span class="math notranslate nohighlight">\(\vec n\)</span>. It is easy to forget to do this. Because the cross product of a vector is perpendicular to either vector, the cross product of any vector with itself is always zero <span class="math notranslate nohighlight">\(\vec u \times \vec u = 0\)</span>.</p>
+<p>The <em>magnitude</em> or absolute value of the resultant vector is a scalar;</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle |\vec u \times \vec v|= |\vec u||\vec v|\sin(\theta)\tag{39}\]</div>
+<p>The cross product is <em>anti-commutative</em> , which means that</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \vec u \times \vec v = -\vec v \times \vec u \tag{40}\]</div>
+<p>and this is shown in figure 32 where the two resultant vectors point in opposite directions. Calculating the numerical value of a cross product can only be done by expanding the vectors in the basis set as components of unit vectors <span class="math notranslate nohighlight">\(i, j, k\)</span>, or a column or row vectors of the components.</p>
+<p>Relationships between combinations of dot and cross products can be calculated symbolically; for example, the expression <span class="math notranslate nohighlight">\(| \vec A \times \vec B |^2 + | \vec A\cdot \vec B |^2\)</span>  can be expanded using the definition of the cross and dot products.</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle |\vec A \times \vec B|^2 + |\vec A\cdot\vec B|^2 = |\vec A|^2|\vec B|^2\sin^2(\theta) + |\vec A|^2|\vec B|^2 \cos^2(\theta) = |\vec A|^2|\vec B|^2\]</div>
+<p>and in the last step <span class="math notranslate nohighlight">\(\sin^2(\theta) + \cos^2(\theta) = 1\)</span> is used. It is not surprising that this result is a number because the dot product is always a number and so is the absolute value of the cross product.</p>
+<p>As a second example let us calculate <span class="math notranslate nohighlight">\((\vec A + \vec B) \times  (\vec A - \vec B)\)</span> if A and B are vectors. Expanding the multiplication but keeping the order of the terms the same gives</p>
+<div class="math notranslate nohighlight">
+\[(\vec A + \vec B) \times  (\vec A - \vec B) = \vec A \times  \vec A - \vec A \times  \vec B + \vec B \times  \vec A - \vec B \times  \vec B\]</div>
+<p>and using the definition of cross products, <span class="math notranslate nohighlight">\(A \times  A = B \times  B = 0\)</span>, gives</p>
+<div class="math notranslate nohighlight">
+\[(\vec A + \vec B) \times  (\vec A - \vec B) = -\vec A \times  \vec B + \vec B \times  \vec A = 2(\vec B \times  \vec A) = -2(\vec A \times  \vec B)\]</div>
+<p>because <span class="math notranslate nohighlight">\(-\vec A \times  \vec B = \vec B \times  \vec A\)</span>.</p>
+<p><img alt="Drawing" src="_build_/jupyter_execute/chapter-6/vectors-fig32-33.png" /></p>
+<p>Left Figure 32. Right figure 33. Left. Definition of cross products <span class="math notranslate nohighlight">\(\vec u \times \vec v\)</span> and <span class="math notranslate nohighlight">\(\vec v \times \vec u\)</span>. Notice that <span class="math notranslate nohighlight">\(\vec u\)</span> and <span class="math notranslate nohighlight">\(\vec v\)</span> are in the same plane and that the two resultant vectors point in opposite directions. Notice also the relative orientation of the vectors. Right. Parallelogram.</p>
+<hr class="docutils" />
+<p>The area of the parallelogram with sides of length <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> is <span class="math notranslate nohighlight">\(AB\sin(\theta)\)</span>, where <span class="math notranslate nohighlight">\(\theta\)</span> is the enclosed angle. A parallelogram is shown in figure 33. The strategy used to prove this result is to calculate the area of the rectangle <span class="math notranslate nohighlight">\(abcd\)</span> and to convince yourself that this is the same as the area of the parallelogram by moving triangle <span class="math notranslate nohighlight">\( cdf\)</span> onto <span class="math notranslate nohighlight">\(abe\)</span>.</p>
+<p>By definition, <span class="math notranslate nohighlight">\(\sin(\theta) = opposite/hypotenuse\)</span>, therefore the height of the rectangle <span class="math notranslate nohighlight">\(h = |\vec A|\sin(\theta)\)</span> and, as the area of the rectangle is <span class="math notranslate nohighlight">\(h|\vec B|\)</span>, it follows that the area of the parallelogram is <span class="math notranslate nohighlight">\(| \vec A ||\vec B | \sin(\theta) \equiv | \vec A \times \vec B |\)</span> and the last identity follows by definition. The area of any triangle with sides <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> and enclosed angle <span class="math notranslate nohighlight">\(\theta\)</span> is therefore</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle area = \frac{1}{2}|\vec A||\vec B|\sin(\theta) = \frac{1}{2}|\vec A \times\vec B|\]</div>
+<p>This relationship can be understood by realizing that the area of triangle <span class="math notranslate nohighlight">\(bce\)</span> is half that of the rectangle. To calculate the area of a triangle we need to use a basis set and this is done next.</p>
+</div>
+<div class="section" id="cross-products-using-the-i-j-k-basis-set">
+<h2>16.1 Cross products using the <span class="math notranslate nohighlight">\(( i,  j,  k)\)</span> basis set<a class="headerlink" href="#cross-products-using-the-i-j-k-basis-set" title="Permalink to this headline">¶</a></h2>
+<p>Returning to equation 38 we can see that the cross product of two vectors can be zero; <span class="math notranslate nohighlight">\(\vec A \times \vec B = 0\)</span> even when neither <span class="math notranslate nohighlight">\(\vec A\)</span> nor <span class="math notranslate nohighlight">\(\vec B\)</span> are zero because the angle between them is zero. It is clear that, if <span class="math notranslate nohighlight">\(\vec A\)</span> and <span class="math notranslate nohighlight">\(\vec B\)</span> are parallel to one another the angle between them being zero, <span class="math notranslate nohighlight">\(\sin(0) = 0\)</span>; the same is true if the vectors are anti-parallel because <span class="math notranslate nohighlight">\(\sin(180^\text{o}) = 0\)</span>, see figure 32.</p>
+<p>In the description of dot products we used the right-angled unit vector (orthonormal) basis set <span class="math notranslate nohighlight">\((i, j, k)\)</span> to describe each vector, and found that in some circumstances calculations were more easily performed in this way. Naturally, we can do the same for the vectors here but we have to learn the rules for calculating cross products of the unit vectors.</p>
+<p>The rules are easy to remember as the <em>indices rotate</em> about the equations always being in the order,<span class="math notranslate nohighlight">\(i \to j \to k\)</span>;
+$<span class="math notranslate nohighlight">\(\displaystyle         \boldsymbol i \times \boldsymbol j = \boldsymbol k, \boldsymbol k \times \boldsymbol i = \boldsymbol j, \boldsymbol j \times \boldsymbol k = \boldsymbol i\)</span>$</p>
+<p>Additionally, we use the rule that the cross product of any vector with itself is zero, for example <span class="math notranslate nohighlight">\(\boldsymbol  \times \boldsymbol i = 0\)</span> because <span class="math notranslate nohighlight">\(\sin(0) = 0\)</span>. Notice also the effect of reversing the order, for example  <span class="math notranslate nohighlight">\(\boldsymbol j \times \boldsymbol k = -\boldsymbol k \times \boldsymbol j = \boldsymbol i\)</span> as the vectors are anti-commutative. With this in mind, if a vector is defined in the usual way as</p>
+<div class="math notranslate nohighlight">
+\[\vec u = u_x\boldsymbol i+u_y\boldsymbol j+u_z\boldsymbol k \]</div>
+<p>where <span class="math notranslate nohighlight">\(u_x, u_y, u_z\)</span> are the amounts of <span class="math notranslate nohighlight">\(\boldsymbol i, \boldsymbol j, \boldsymbol k\)</span> respectively in the vector, then</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin{align}\vec u \times \vec v =&amp; (u_x\boldsymbol i + u_y \boldsymbol j + u_z\boldsymbol k) \times (v_x\boldsymbol i + v_y\boldsymbol  j + v_z\boldsymbol k)\\
+=&amp; (u_yv_z - u_zv_y)\;\boldsymbol i + (u_zv_x - u_xv_z)\;\boldsymbol j + (u_xv_y - u_yv_x)\;\boldsymbol k\\
+=&amp;\begin{bmatrix}\boldsymbol i &amp;\boldsymbol j &amp; \boldsymbol k\\u_x &amp; u_y &amp; u_z\\
+v_x &amp; v_y &amp; v_z \end{bmatrix}\tag{41} \end{align}\end{split}\]</div>
+<p>where the last equality is a <em>determinant</em> and is by far the simplest way of remembering the cross product. Determinants are described in more detail in Chapter 7 and multiplication illustrated in Chapter 7.2.2. In the multiplication, notice that the second (middle) term</p>
+<p>is pre-multiplied by <span class="math notranslate nohighlight">\(-1\)</span> and the first term starts at the top left of the four terms to be multiplied.</p>
+<p><img alt="Drawing" src="_build_/jupyter_execute/chapter-6/vectors-crossprod.png" /></p>
+<div class="math notranslate nohighlight">
+\[\displaystyle = (u_yv_z - u_zv_y)\;\boldsymbol i\quad - (u_xv_z - u_zv_x)\;\boldsymbol j\quad + (u_xv_y - u_yv_x)\;\boldsymbol k \qquad\]</div>
+<p>The area of any triangle, such as in figure 33, can now be found. Suppose a triangle is enclosed by three vertices <span class="math notranslate nohighlight">\((2, -1, 6), (8, 3, 10), (10, -2, 16)\)</span>. To calculate the area, make the triangle’s sides into vectors and calculate half the absolute value of the cross product. The <span class="math notranslate nohighlight">\((i, j, k)\)</span> basis set should be used. Three vectors <span class="math notranslate nohighlight">\(\vec a, \vec b, \vec c\)</span> will form a triangle if <span class="math notranslate nohighlight">\(\vec a +\vec b + \vec c = 0\)</span>. Using the coordinates, let <span class="math notranslate nohighlight">\(\vec a\)</span> be the difference between the first and second <span class="math notranslate nohighlight">\(\vec a=(8-2)\boldsymbol i+(3+1)\boldsymbol j+(10-6)\boldsymbol k\)</span>, <span class="math notranslate nohighlight">\(\vec b\)</span> the difference between the first and third <span class="math notranslate nohighlight">\(\vec b=8\boldsymbol i-\boldsymbol j+10\boldsymbol k\)</span>, and then <span class="math notranslate nohighlight">\(\vec c = -14\boldsymbol i - 7\boldsymbol j - 14\boldsymbol k\)</span> although it is not needed. The vectors must form a triangle unless they lie on the same straight line, in which case the area would be zero. The cross product is</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \vec a\times\vec b=\begin{vmatrix}\boldsymbol i&amp; \boldsymbol j &amp; k\\
+6 &amp; 4 &amp; 4\\8 &amp; 3 &amp; 10\end{vmatrix} = 28\boldsymbol i - 28\boldsymbol j - 14\boldsymbol k\end{split}\]</div>
+<p>and the area is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{1}{2}\big|\vec a\times\vec b\big|= \frac{1}{2}\big|28\boldsymbol i - 28\boldsymbol j - 14\boldsymbol k\big|=\frac{1}{2}\sqrt{28^2 + 28^2 + 14^2} = 21\]</div>
+</div>
+<div class="section" id="cross-product-with-a-vector-basis-set">
+<h2>16.2 Cross product with a vector basis set<a class="headerlink" href="#cross-product-with-a-vector-basis-set" title="Permalink to this headline">¶</a></h2>
+<p>If a basis set of vectors such as <span class="math notranslate nohighlight">\((1, 0, 0), (0, 1, 0), (0, 0, 1)\)</span> is used instead of <span class="math notranslate nohighlight">\((i, j, k)\)</span> then the cross product is written slightly differently. If the vectors are <span class="math notranslate nohighlight">\(\vec v = \begin{bmatrix}3&amp; 2 &amp;5\end{bmatrix}\)</span> and <span class="math notranslate nohighlight">\(\vec u = \begin{bmatrix}4 &amp;3&amp; 6\end{bmatrix}\)</span> the cross product determinant gives the vector</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \vec u \times\vec v = \begin{vmatrix}1&amp;1&amp;1\\4&amp;3&amp;6\\3&amp;2&amp;5\end{vmatrix} = \begin{bmatrix}3 &amp; -2&amp; -1 \end{bmatrix}\end{split}\]</div>
+<p>where the determinant multiplication is performed in the normal way. The length of the vector is its absolute value, which is <span class="math notranslate nohighlight">\(14\)</span>.</p>
+</div>
+<div class="section" id="distance-from-a-point-to-a-line-and-between-two-skew-lines">
+<h2>16.3 Distance from a point to a line and between two skew lines<a class="headerlink" href="#distance-from-a-point-to-a-line-and-between-two-skew-lines" title="Permalink to this headline">¶</a></h2>
+<p>Cross products are useful in calculating the distance between a point and a line or plane and between two skew lines; a calculation that is very hard to do with coordinate geometry. If <span class="math notranslate nohighlight">\(p\)</span> is our victim point, figure 34, and a line goes from point <span class="math notranslate nohighlight">\(A \to B\)</span>, then the perpendicular (shortest) distance is <span class="math notranslate nohighlight">\(d\)</span>. The cross product of vector <span class="math notranslate nohighlight">\(\vec a\)</span> with <span class="math notranslate nohighlight">\(\vec b \)</span> is <span class="math notranslate nohighlight">\(\vec a \times \vec b = | \vec a || \vec b |\sin(\theta)\vec n\)</span>, where <span class="math notranslate nohighlight">\(\vec n\)</span> is a unit vector. The magnitude of this cross product is <span class="math notranslate nohighlight">\(|\vec a \times \vec b| = |\vec a||\vec b|\sin(\theta)\)</span> but by trigonometry, <span class="math notranslate nohighlight">\(\sin(\theta) = d/a\)</span> where <span class="math notranslate nohighlight">\(a\)</span> is the length of <span class="math notranslate nohighlight">\(\vec a\)</span> or <span class="math notranslate nohighlight">\(a = |\vec a|\)</span>, then</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle d=|\vec d|=\frac{|\vec a\times\vec b|}{|\vec b|}\tag{42}\]</div>
+<p>Notice that the length of the line AB, which is <span class="math notranslate nohighlight">\(b\)</span>, goes into the denominator.</p>
+<p><img alt="Drawing" src="_build_/jupyter_execute/chapter-6/vectors-fig34.png" /></p>
+<p>Figure 34. Left: Distance <span class="math notranslate nohighlight">\(d\)</span> of point <span class="math notranslate nohighlight">\(p\)</span> from line <span class="math notranslate nohighlight">\(A-B\)</span>. Right: Distance between two skew lines represented in three dimensions as vectors <span class="math notranslate nohighlight">\(\vec a\)</span> and <span class="math notranslate nohighlight">\(\vec b\)</span>.</p>
+<hr class="docutils" />
+<p>Suppose that two points on the same line have coordinates <span class="math notranslate nohighlight">\(A = (1, -2, 3), B = (4, 6, 0)\)</span> and another point <span class="math notranslate nohighlight">\(p\)</span>, which is not on the line, has coordinates <span class="math notranslate nohighlight">\(p = (1, 2, 3)\)</span>. The length <span class="math notranslate nohighlight">\(b\)</span> is <span class="math notranslate nohighlight">\(b=|\vec b|= 9+64+9 =\sqrt{82}\)</span> and is that of vector <span class="math notranslate nohighlight">\(\vec A\)</span> to <span class="math notranslate nohighlight">\(\vec B\)</span> making <span class="math notranslate nohighlight">\(\vec b=\begin{bmatrix}3&amp; 8 &amp;-3\end{bmatrix}\)</span>. Alternatively, <span class="math notranslate nohighlight">\(\vec b = 3\boldsymbol i + 8\boldsymbol j - 3\boldsymbol k\)</span>. The cross product of the vectors <span class="math notranslate nohighlight">\(\vec b\)</span> and <span class="math notranslate nohighlight">\(\vec a\)</span> is</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \vec a \times\vec b = \begin{vmatrix}\boldsymbol i&amp;\boldsymbol j&amp;\boldsymbol k\\0&amp;4&amp;0\\3&amp;8&amp;-3\end{vmatrix} = \begin{bmatrix}-12\boldsymbol i &amp; 0 \boldsymbol j&amp; -12\boldsymbol k \end{bmatrix}\end{split}\]</div>
+<p>and the magnitude of this vector is <span class="math notranslate nohighlight">\(12\sqrt{2}\)</span>. The distance of <span class="math notranslate nohighlight">\(p\)</span> from the line <span class="math notranslate nohighlight">\(AB\)</span> is therefore <span class="math notranslate nohighlight">\(\displaystyle \frac{12\sqrt{2}}{\sqrt{82}}=\frac{12}{\sqrt{41}}\)</span>. The calculation in python is shown below,</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Algorithm 6.2 Perpendicular distance from point p to line AB</span>
+
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
+<span class="n">B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">p</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">B</span> <span class="o">-</span> <span class="n">A</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">p</span> <span class="o">-</span> <span class="n">A</span>
+<span class="n">ab</span><span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cross</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)</span>
+<span class="n">d</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">ab</span><span class="p">,</span><span class="n">ab</span><span class="p">))</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">b</span><span class="p">,</span><span class="n">b</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:s}</span><span class="s1"> </span><span class="si">{:s}</span><span class="s1"> </span><span class="si">{:s}</span><span class="s1"> </span><span class="si">{:8.3f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;cross product=&#39;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">ab</span><span class="p">),</span><span class="s1">&#39; distance = &#39;</span><span class="p">,</span><span class="n">d</span><span class="p">)</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cross product= [-12   0 -12]  distance =     1.874
+</pre></div>
+</div>
+</div>
+</div>
+<p>Skew lines are straight lines in three dimensions that do not cross because they are displaced from one another. Aircraft trajectories generally follow skew lines, the closest distance of approach permitted is approximately 3 miles. This distance is the absolute value of the cross product of the two vectors defining the trajectories because the shortest approach vector is at right angles to both trajectories, as shown in figure 34.</p>
+</div>
+<div class="section" id="equation-of-a-plane-and-distance-from-a-point-to-a-plane">
+<h2>16.4 Equation of a plane and distance from a point to a plane<a class="headerlink" href="#equation-of-a-plane-and-distance-from-a-point-to-a-plane" title="Permalink to this headline">¶</a></h2>
+<p>Often when studying molecules, the distance of an atom to the bond formed by two other atoms, or to the plane formed by several others, is an important quantity; for example, to calculate the <span class="math notranslate nohighlight">\(\pi\pi\)</span> interaction between an atom and an aromatic ring or double bond. In X-ray crystallography, the distance from the origin to planes of atoms generating the diffraction pattern defines the distances used to make the reciprocal lattice.</p>
+<p>The calculation is in two parts. The plane has to be defined, then the distance above the plane to any point such as <span class="math notranslate nohighlight">\(P\)</span> has to be found. This distance is the projection of the positional vector <span class="math notranslate nohighlight">\(\vec p\)</span> on the vector <span class="math notranslate nohighlight">\(\vec n\)</span>, which is perpendicular to the plane. The points and vectors are shown in figure 35. Three points, such as <span class="math notranslate nohighlight">\(S, R\)</span>, and <span class="math notranslate nohighlight">\(Q\)</span>, define a plane, provided they are not on the same straight line, and the cross product of the two vectors <span class="math notranslate nohighlight">\(\vec s\)</span> and <span class="math notranslate nohighlight">\(\vec r\)</span> defines a vector <span class="math notranslate nohighlight">\(\vec n\)</span> that is perpendicular to the plane,</p>
+<p><img alt="Drawing" src="_build_/jupyter_execute/chapter-6/vectors-fig35.png" /></p>
+<p>Figure 35. vectors used in calculating the distance from a point <span class="math notranslate nohighlight">\(P\)</span> to a plane.</p>
+<hr class="docutils" />
+<div class="math notranslate nohighlight">
+\[\displaystyle \vec n=\vec s\times\vec r =a\boldsymbol i+b\boldsymbol j+c\boldsymbol k \tag{43}\]</div>
+<p>where <span class="math notranslate nohighlight">\(a, b, c\)</span> are the coefficients of <span class="math notranslate nohighlight">\(\vec n\)</span>. These are found by evaluating the cross product as a determinant. Point <span class="math notranslate nohighlight">\(T\)</span> is <em>any point in the plane</em> we choose with coordinates <span class="math notranslate nohighlight">\(T = (x_0, y_0, z_0)\)</span> and the equation of the plane is, by definition,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle a(x - x_0) + b(y - y_0) + c(z - z_0) = 0\]</div>
+<p>with <span class="math notranslate nohighlight">\(a, b\)</span>, and <span class="math notranslate nohighlight">\(c\)</span> being the coefficients of <span class="math notranslate nohighlight">\(\vec n\)</span> . Recasting this equation in vector form it becomes rather neat and is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \vec n\cdot (\vec X - \vec T) = 0 \tag{44}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\vec X\)</span> is the vector to any point <span class="math notranslate nohighlight">\((x, y, z)\)</span> and <span class="math notranslate nohighlight">\(\vec T\)</span> the vector to point <span class="math notranslate nohighlight">\(T\)</span> which must be in the plane. Because <span class="math notranslate nohighlight">\(T\)</span> is not unique, it can be any other point such as one of the points, <span class="math notranslate nohighlight">\(S, R\)</span>, or <span class="math notranslate nohighlight">\(Q\)</span> that define the plane, and is therefore known. The length of the projection <span class="math notranslate nohighlight">\(d\)</span> of the vector <span class="math notranslate nohighlight">\(\vec p\)</span> on to <span class="math notranslate nohighlight">\(\vec n\)</span> is from equation 15,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle d=\frac{\vec n\cdot (\vec p-\vec T)}{\sqrt{\vec n\cdot\vec n}} \tag{45}\]</div>
+<p>because the vector <span class="math notranslate nohighlight">\(\vec p\)</span> joins point <span class="math notranslate nohighlight">\(T\)</span> to <span class="math notranslate nohighlight">\(P\)</span>. This equation can be solved because the coefficients of <span class="math notranslate nohighlight">\(\vec n\)</span> are known via the cross product equation 43 and because points defining vectors <span class="math notranslate nohighlight">\(\vec s\)</span> and <span class="math notranslate nohighlight">\(\vec r\)</span> are known. Vector <span class="math notranslate nohighlight">\(\vec p\)</span> is known (see figure 35) because <span class="math notranslate nohighlight">\(T\)</span> can be any point such as <span class="math notranslate nohighlight">\(S, R,Q\)</span> and <span class="math notranslate nohighlight">\(P\)</span> is known because this is the point whose distance above the plane is sought. If point <span class="math notranslate nohighlight">\(P\)</span> has coordinates <span class="math notranslate nohighlight">\(p_x, p_y, p_z)\)</span> and <span class="math notranslate nohighlight">\(T\)</span> has <span class="math notranslate nohighlight">\((t_x, t_y, t_z)\)</span> substituting the values into equation 45 gives the formula for the distance of <span class="math notranslate nohighlight">\(P\)</span> from the plane.</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle d=\frac{a(p_x-t_x)+b(p_y-t_y)+c(p_x-t_x)}{\sqrt{a^2+b^2+c^2}}\tag{46}\]</div>
+<p>In the special case that  the point <span class="math notranslate nohighlight">\(T\)</span> is at the origin, then the plane passes through the origin and the perpendicular distance to <span class="math notranslate nohighlight">\(P\)</span> is therefore</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle d_0=\frac{ap_x+bp_y+cp_x}{\sqrt{a^2+b^2+c^2}}\tag{47}\]</div>
+<p>Conversely, point <span class="math notranslate nohighlight">\(P\)</span> could be placed at the origin and <span class="math notranslate nohighlight">\(p_x\)</span> etc. made zero. In either case, the resulting distance could be negative or positive; if you are not interested in whether the point is above or below the plane then the absolute value of the distance is what you will want. If you want to determine which side of a molecule another atom is, then the sign of the distance may help you determine this, but in this case there is no up or down so the sign on the distance really means the ‘same side’ or ‘opposite side’.</p>
+<p><img alt="Drawing" src="_build_/jupyter_execute/chapter-6/vectors-fig36.png" /></p>
+<p>Figure 36. Calculating the perpendicular distance from an atom to the plane.</p>
+<hr class="docutils" />
+<p>As an example, suppose that you need to know the distance from the oxygen on the phosphate to the plane of the ring defined as atoms C2, O4, and C3 in the ribose phosphate shown in figure 36. The coordinates are known from the crystal structure and are</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin{array}
+\hline
+atom &amp; x &amp; y &amp; z\\
+\hline
+O_2P &amp; 115.394&amp; 41.169&amp; 129.137\\
+O_4 &amp; 120.546&amp; 41.818&amp; 127.822\\
+C_3 &amp; 119.237&amp; 43.428&amp; 126.672\\
+C_2 &amp; 119.664&amp; 42.262&amp; 125.771\\
+\hline \end{array}\end{split}\]</div>
+<p>To use the method described above, let points <span class="math notranslate nohighlight">\(S, R\)</span>, and <span class="math notranslate nohighlight">\(Q\)</span> represent atoms <span class="math notranslate nohighlight">\(O_4, C_3\)</span>, and <span class="math notranslate nohighlight">\(C_2\)</span> respectively, which will define the plane, see figure 36. Let <span class="math notranslate nohighlight">\(P\)</span> be atom <span class="math notranslate nohighlight">\(O_2P\)</span> which is not in the plane and the vector <span class="math notranslate nohighlight">\(\vec n\)</span> is then <span class="math notranslate nohighlight">\(\vec n = (\vec S - \vec R) \times (\vec Q - \vec R)\)</span>. Any point in the plane can be chosen to be <span class="math notranslate nohighlight">\(T\)</span>, see figure 35,36, so it might as well be <span class="math notranslate nohighlight">\(C_3\)</span> or point <span class="math notranslate nohighlight">\(R\)</span>. The equation of the plane is then <span class="math notranslate nohighlight">\(\vec n\cdot(\vec X - \vec T)\)</span> where <span class="math notranslate nohighlight">\(\vec X\)</span> is any point <span class="math notranslate nohighlight">\((x, y, z)\)</span> and the result is an equation in <span class="math notranslate nohighlight">\(x, y\)</span> and <span class="math notranslate nohighlight">\(z\)</span>. Next, choose any point in the plane; <span class="math notranslate nohighlight">\(T\)</span> can be used again making length of the normal from the plane to <span class="math notranslate nohighlight">\(P\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle d=\left |\frac{\vec n\cdot(\vec P-\vec T)}{\sqrt{\vec n\cdot\vec n}}\right|\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Algorithm 3 Distance  from a point to a plane</span>
+<span class="n">P</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span> <span class="mf">115.394</span><span class="p">,</span> <span class="mf">41.169</span><span class="p">,</span> <span class="mf">129.137</span> <span class="p">])</span> <span class="c1"># O2P xyz coordinates in angstrom</span>
+<span class="n">S</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span> <span class="mf">120.546</span><span class="p">,</span> <span class="mf">41.818</span><span class="p">,</span> <span class="mf">127.822</span> <span class="p">])</span> <span class="c1"># O4 </span>
+<span class="n">R</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span> <span class="mf">119.237</span><span class="p">,</span> <span class="mf">43.428</span><span class="p">,</span> <span class="mf">126.672</span> <span class="p">])</span> <span class="c1"># C3 </span>
+<span class="n">Q</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span> <span class="mf">119.664</span><span class="p">,</span> <span class="mf">42.262</span><span class="p">,</span> <span class="mf">125.771</span> <span class="p">])</span> <span class="c1"># C2</span>
+
+<span class="n">n</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cross</span><span class="p">((</span><span class="n">S</span><span class="o">-</span><span class="n">R</span><span class="p">),(</span><span class="n">Q</span><span class="o">-</span><span class="n">R</span><span class="p">)</span> <span class="p">)</span>                 <span class="c1"># n is normal vector</span>
+<span class="n">T</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span> <span class="n">R</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">R</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">R</span><span class="p">[</span><span class="mi">2</span><span class="p">]])</span>          <span class="c1"># define a point in the plane, any will do </span>
+<span class="n">d</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">n</span><span class="p">,(</span><span class="n">P</span><span class="o">-</span><span class="n">T</span><span class="p">)))</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">n</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:s}</span><span class="s1"> </span><span class="si">{:s}</span><span class="se">\n</span><span class="s1"> </span><span class="si">{:s}</span><span class="s1"> </span><span class="si">{:6.3f}{:s}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39; normal vector n =&#39;</span><span class="p">,</span><span class="nb">str</span><span class="p">(</span><span class="n">n</span><span class="p">),</span>
+                                          <span class="s1">&#39;O2P distance to plane O4-C2-C3 = &#39;</span><span class="p">,</span><span class="n">d</span><span class="o">/</span><span class="mi">10</span><span class="p">,</span><span class="s1">&#39; nm&#39;</span><span class="p">)</span>     <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> normal vector n = [ 2.79151   1.670459 -0.838824]
+ O2P distance to plane O4-C2-C3 =   0.493 nm
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># now get eqn of plane using sympy</span>
+<span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x,y,z&#39;</span><span class="p">)</span> <span class="c1"># use sympy as x,y,z are symbolic</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span><span class="p">])</span>
+<span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">n</span><span class="p">,(</span><span class="n">X</span><span class="o">-</span><span class="n">T</span><span class="p">))</span>          <span class="c1"># equation of plane </span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/vectors-E_6_0.png" src="../../../_images/vectors-E_6_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="plane-defined-by-its-intercepts">
+<h2>16.5 Plane defined by its intercepts<a class="headerlink" href="#plane-defined-by-its-intercepts" title="Permalink to this headline">¶</a></h2>
+<p>The distance from the origin to a plane is given by equation 47 but in the special case that the intercepts <span class="math notranslate nohighlight">\(a, b, c\)</span> are known, and the plane goes through the points <span class="math notranslate nohighlight">\((a, 0 0), (0, b, 0),(0, 0, c)\)</span>, the equation is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{x}{a}+\frac{y}{b}+\frac{z}{c}=1\]</div>
+<p>The equation for the perpendicular (shortest) distance from the origin to the plane is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle d_0=\frac{abc}{\sqrt{(ab)^2+(bc)^2+(ac)^2}}=\frac{1}{\sqrt{(1/a)^2+(1/b)^2+(1/c)^2}}\tag{48}\]</div>
+<p>and <em>only</em> applies when the plane is defined by its intercepts; notice that the intercept values only are used. This equation is particularly useful in crystallography to calculate the reciprocal lattice distance from the origin, and hence the inter-lattice spacing of crystals with orthorhombic (orthogonal) axes.</p>
+</div>
+<div class="section" id="best-plane-through-a-set-of-points">
+<h2>16.6 Best plane through a set of points<a class="headerlink" href="#best-plane-through-a-set-of-points" title="Permalink to this headline">¶</a></h2>
+<p>In haemoglobin, the porphyrin has four N atoms roughly, but not exactly, in a plane surrounding the Fe, and similarly in chlorophyll-containing proteins found in photosynthetic organisms, the four N atoms surround the Mg. We often need to know how far an atom is from the plane of another molecule. A plane is determined by choosing three atoms not four. However, four atoms defining the plane would be more useful and, in this case, a best-fit plane to these four atoms is needed. This plane can be calculated using a matrix method similar to that used to determine moments of inertia, and this is described in Chapter 7.13 or by least squares, chapter 13. When this plane is found, the equations developed in Sections 16 can be used to find distances.</p>
+</div>
+<div class="section" id="scalar-triple-products-are-numbers">
+<h2>17 Scalar triple products are numbers<a class="headerlink" href="#scalar-triple-products-are-numbers" title="Permalink to this headline">¶</a></h2>
+<p>If <span class="math notranslate nohighlight">\(\vec u, \vec v\)</span>, and <span class="math notranslate nohighlight">\(\vec w\)</span> are vectors, the expression <span class="math notranslate nohighlight">\(\vec w\cdot (u \times \vec v)\)</span> or equivalently <span class="math notranslate nohighlight">\(\vec w\cdot (u \times \vec v)\)</span> or <span class="math notranslate nohighlight">\(\vec w\cdot u \times \vec v\)</span> etc. is a <em>triple product</em>  Using the results from 16.1 this equates to</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \qquad \begin{align}\vec w\cdot u \times \vec v&amp;=\begin{bmatrix}w_x\boldsymbol i+w_y\boldsymbol j+w_z\boldsymbol k\end{bmatrix}\cdot \begin{bmatrix}\boldsymbol i&amp;\boldsymbol j&amp;\boldsymbol k\\u_x&amp;u_y&amp;u_z\\v_x&amp;v_y&amp;v_z \end{bmatrix}\\&amp;= (w_x\boldsymbol i+w_y\boldsymbol j+w_z\boldsymbol k)\cdot((u_yv_z - u_zv_y)\boldsymbol i+(u_zv_x-u_xv_z)\boldsymbol j+(u_zv_y - u_yv_z)\boldsymbol k)\\&amp;= \begin{vmatrix}w_x &amp; w_y &amp; w_z\\ u_x  &amp;u_y &amp; u_z\\v_x &amp; v_y &amp; v_z\\ \end{vmatrix}\end{align}\qquad \text{(49)}\end{split}\]</div>
+<p>This result shows that the triple product is a number, hence the prefix ‘scalar’, because it is the determinant of the coefficients of the vectors and a determinant is equivalent to a number not a vector. It must follow that it does not matter in what order vectors occur in this triple product because the result is a number; <span class="math notranslate nohighlight">\(\vec w\cdot \vec u \times \vec v = \vec u\cdot \vec v \times \vec w\)</span> etc.</p>
+<p>One important application of this product is to calculate the volume of a solid body that has the shape of a parallelepiped; this is a prism whose faces are all parallelograms. If the body is <em>right angled</em> and with vectors <span class="math notranslate nohighlight">\(\vec a, \vec b, \vec c\)</span> along its edges, then the determinant is diagonal and its value is <span class="math notranslate nohighlight">\(|abc|\)</span>, which is equal to the volume. In figure 36 the area of the base is <span class="math notranslate nohighlight">\(\vec a\times \vec b\)</span> and the volume this area multiplied by the projection of <span class="math notranslate nohighlight">\(\vec c\)</span> into <span class="math notranslate nohighlight">\(\vec a\times\vec b\)</span> which is <span class="math notranslate nohighlight">\(|\vec c|\cos(\theta)\)</span>.</p>
+<p>If the axes are not orthogonal, such as the <span class="math notranslate nohighlight">\(a, b, c\)</span> unit cell vectors of crystals, then the dot products are neither one nor zero but have to be calculated as described in equation 34 for a monoclinic crystal. Note that the angle defined in the monoclinic crystal is different to that in figure 36a. In general, for a parallelepiped the volume = <span class="math notranslate nohighlight">\(| \vec w\cdot\vec u \times \vec v|\)</span> and the absolute value is used to ensure that this is positive.</p>
+<p><img alt="Drawing" src="_build_/jupyter_execute/chapter-6/vectors-fig36a.png" /></p>
+<p>figure 36a. Parallelepiped volume is <span class="math notranslate nohighlight">\( (\vec a \times \vec b)\cdot \vec c\)</span>.</p>
+<hr class="docutils" />
+<p>The triple scalar product is used in the formation of reciprocal lattices used in crystallography. In a crystal, the axes are represented as vectors labelled <span class="math notranslate nohighlight">\(a, b, c\)</span>, which need not necessarily be orthogonal; the reciprocal lattices are <span class="math notranslate nohighlight">\(a^*, b^*, c^*\)</span> and are defined so that</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \vec a\cdot \vec a^* =\vec b\cdot \vec b^*=\vec c\cdot \vec c^*=1\]</div>
+<p>whereas all of the ‘cross’ terms are zero, i.e. <span class="math notranslate nohighlight">\(\vec a\cdot\vec b^* = 0\)</span> and so forth. The new reciprocal vectors
+are</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \vec a^*=\frac{\vec b \times \vec c}{\vec a\cdot \vec b\times \vec c},\quad\vec b^*=\frac{\vec c \times \vec a}{\vec a\cdot \vec b\times \vec c},\quad\vec c^*=\frac{\vec a \times \vec b}{\vec a\cdot \vec b\times \vec c}\]</div>
+<p>and the triple product denominator is the volume of the unit cell. From these relationships it is easy to see that <span class="math notranslate nohighlight">\(\vec a \cdot \vec a^* = \vec b \cdot \vec b^* = \vec c \cdot \vec c^* = 1\)</span>. The vector <span class="math notranslate nohighlight">\(\vec a^*\)</span> is at right angles to the plane of <span class="math notranslate nohighlight">\(b\)</span> and <span class="math notranslate nohighlight">\(c\)</span> and similarly for the other reciprocal basis vectors.</p>
+<p>The meaning of a reciprocal lattice can be seen if <span class="math notranslate nohighlight">\(\vec a^*, \vec b^*, \vec c^*\)</span> are calculated for an orthogonal unit cell. The simplest way is to define a basis set in three dimensions and if the unit cell lengths are <span class="math notranslate nohighlight">\(a = 5/2, b = 3/2, c = 2\)</span> then the basis vectors are</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \vec a=\frac{5}{2}\begin{bmatrix}1&amp;0&amp;0 \end{bmatrix},\quad  \vec b=\frac{3}{2}\begin{bmatrix}0&amp;1&amp;0 \end{bmatrix},\quad \vec c=2\begin{bmatrix}0&amp;0&amp;1 \end{bmatrix}\]</div>
+<p>The triple product is the determinant</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \vec a\cdot \vec b\times\vec c =\begin{vmatrix}5/2&amp; 0&amp; 0\\0&amp;3/2&amp;0\\0&amp;0&amp;2\end{vmatrix} =\frac{15}{2}\end{split}\]</div>
+<p>To calculate <span class="math notranslate nohighlight">\(\vec b^*\)</span> the cross product needed is <span class="math notranslate nohighlight">\(\vec c\times \vec a=\begin{vmatrix}1&amp;1&amp;1\\0 &amp;0&amp;2 \\5/2&amp;0&amp;0 \end{vmatrix} =5\)</span> making <span class="math notranslate nohighlight">\(\vec b^*=2/3\)</span> which is the reciprocal of <span class="math notranslate nohighlight">\(b\)</span>. A similar result is found for <span class="math notranslate nohighlight">\(\vec a^*\)</span> and <span class="math notranslate nohighlight">\(\vec c^*\)</span>.</p>
+</div>
+<div class="section" id="vector-triple-product">
+<h2>18 Vector triple product<a class="headerlink" href="#vector-triple-product" title="Permalink to this headline">¶</a></h2>
+<p>The vector triple product is the identity</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \vec A \times (\vec B \times \vec C) = (\vec A\cdot\vec C)\vec B - (\vec A\cdot\vec B)\vec C \tag{50}\]</div>
+<p>which is the difference between two vectors <span class="math notranslate nohighlight">\(\vec B\)</span> and <span class="math notranslate nohighlight">\(\vec C\)</span> scaled with a dot product, which is a number. The triple product is therefore a vector, as its name implies. This vector is perpendicular to <span class="math notranslate nohighlight">\(\vec A\)</span> and to <span class="math notranslate nohighlight">\(\vec B \times\vec C\)</span>, which means that it lies in the plane of <span class="math notranslate nohighlight">\(\vec B\)</span> and <span class="math notranslate nohighlight">\(\vec C\)</span> and is a linear combination of these vectors.</p>
+<p>If the brackets are placed differently then a different vector is obtained <span class="math notranslate nohighlight">\((\vec A \times \vec B) \times \vec C = (\vec A\cdot\vec C)\vec B - (\vec B\cdot\vec C)\vec A\)</span>. There are other higher vector products, but you will only infrequently meet them.</p>
+<p>One use of the product is to make orthogonal axes. If <span class="math notranslate nohighlight">\(\vec a \equiv x\)</span> then the cross product with any vector <span class="math notranslate nohighlight">\(\vec b\)</span> is perpendicular to this making <span class="math notranslate nohighlight">\(y\equiv \vec a \times \vec b\)</span> and then <span class="math notranslate nohighlight">\(z\)</span> is the cross product with this result, <span class="math notranslate nohighlight">\(\vec a\times (\vec a\times \vec b)\)</span></p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./_build_/jupyter_execute/chapter-6"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Godfrey Beddard<br/>
+        
+            &copy; Copyright 2022.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

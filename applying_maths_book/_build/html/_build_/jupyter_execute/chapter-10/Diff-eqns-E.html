@@ -1,0 +1,1698 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Linear equations with variable coefficients &#8212; Applying Maths in the Chemical &amp; Biomolecular Sciences</title>
+    
+  <link href="../../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/togglebutton.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../../_static/book-cover.jpg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Applying Maths in the Chemical & Biomolecular Sciences</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../intro.html">
+   Applying Maths in the Chemical and Biomolecular Sciences.
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../chapter-1/chapter1-intro.html">
+   1. Numbers, Equations, Operators, and Algorithms.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-1/chapter1-A.html">
+     Numbers to Algorithms.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-1/chapter1-Q1-7.html">
+     Questions 1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-1/chapter1-B.html">
+     Trig, hyperbolic and inverse functions, waves, polar coordinates &amp; factorials
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-1/chapter1-Q8-16.html">
+     Questions 8 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-1/chapter1-C.html">
+     Sophisticated Counting.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-1/chapter1-Q17-34.html">
+     Questions 17 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-1/chapter1-D.html">
+     Modulo arithmetic,
+     <span class="math notranslate nohighlight">
+      \(\delta\)
+     </span>
+     functions, types of  series &amp;  estimating quantities
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-1/chapter1-Q35-39.html">
+     Questions 35 - 39
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-1/chapter1-answers-1-7.html">
+     Solutions Q1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-1/chapter1-answers-8-16.html">
+     Solutions Q8 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-1/chapter1-answers-17-34.html">
+     Solutions Q17 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-1/chapter1-answers-35-39.html">
+     Solutions Q35 - 39
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../chapter-2/chapter2-intro.html">
+   2. Complex numbers.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-2/chapter2-A.html">
+     Real, imaginary, conjugate and modulus
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-2/chapter2-Q-1-9.html">
+     Questions 1 - 9
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-2/chapter2-B.html">
+     De Moivre’s theorem and integer powers of complex numbers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-2/chapter2-Q-10-13.html">
+     Questions 10 -13
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-2/chapter2-C.html">
+     Euler’s theorem
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-2/chapter2-Q-14-27.html">
+     Questions 14 - 27
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-2/chapter2-answers.html">
+     Solutions Q1 - 27
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../chapter-3/differen-intro.html">
+   3. Differentiation.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-A.html">
+     Differentiation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-B.html">
+     Trig functions, logs, power, reciprocals and integrals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-C-Q-4-11.html">
+     Questions 1-11
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-D.html">
+     Product rule and function of function or chain rule.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-E-Q-12-42.html">
+     Questions 12-42
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-F.html">
+     Limits, l’Hopital’s rule, Maximum, Minimum and Calculus of Variations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-G-Q-43-73.html">
+     Questions 43 - 73
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-H.html">
+     Numerically finding the roots of an equation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-I-Q-74-85.html">
+     Questions 74 - 85
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-J.html">
+     Minimizing or maximizing with constraints: Lagrange Undetermined Multipliers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-K-Q-86-92.html">
+     Questions 86 - 92
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-L.html">
+     Partial differentiation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-M-Q-93-114.html">
+     Questions 93-114
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-M1.html">
+     Differentiation of vectors
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-N-answers-1-11.html">
+     Solutions Q 1-11
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-O-answers-12-42.html">
+     Solutions Q 12-42
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-P-answers-43-73.html">
+     Solutions Q 43 - 73
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-Q-answers-74-85.html">
+     Solutions Q 74 - 85
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-R-answers-86-92.html">
+     Solutions Q 86 - 94
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-S-answers-93-114.html">
+     Solutions Q 93-114
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../chapter-4/integration-intro.html">
+   4. Integration.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-A.html">
+     Integration basics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-Q1-14.html">
+     Questions 1-14
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-B.html">
+     Integration by substitution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-Q15-30.html">
+     Questions 15-30
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-C.html">
+     Using parametric equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-Q31-48.html">
+     Questions 31 - 48
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-D.html">
+     Calculating an Average Value.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-Q49-72.html">
+     Questions 49 - 72
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-E.html">
+     The Variational Method in Quantum Mechanics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-Q73-77.html">
+     Questions 73 - 77
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-F.html">
+     Multiple integrals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-Q78-86.html">
+     Questions 78 - 86
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-G.html">
+     Calculating the energy of a chemical bond using molecular orbitals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-H.html">
+     Line integrals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-Q87-96.html">
+     Questions 87 - 96
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-answers-1-14.html">
+     Solutions Q1 - 14
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-answers-15-30.html">
+     Solutions Q15 - 30
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-answers-31-48.html">
+     Solutions Q31 - 48
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-answers-49-72.html">
+     Solutions Q49 - 72
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-answers-73-96.html">
+     Solutions Q73 - 96
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../chapter-5/chapter-5-intro.html">
+   5. Summations, Series and expansion of Functions.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-5/chapter-5-A.html">
+     Series, averages, partition functions, DNA melting, atom entropy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-5/chapter-5-B-Q1-13.html">
+     Questions 1 - 13
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-5/chapter-5-E.html">
+     Maclaurin and Taylor series expansions. Paramagnetic spins. Euler-Maclaurin formula.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-5/chapter-5-F-Q14-34.html">
+     Questions 14 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-5/chapter-5-G-Q35-44.html">
+     Questions 35 - 44
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-5/chapter-5-perturbation-A.html">
+     Perturbation Theory
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-5/chapter-5-perturbation-B-Q45-48.html">
+     Questions 45 - 48
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-5/chapter-5-perturbation-C.html">
+     Quantum superposition and wavepackets.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-5/chapter-5-perturbation-D-Q49-52.html">
+     Questions 49 - 52
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-5/chapter-5-answers-1-7.html">
+     Solutions Q 1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-5/chapter-5-answers-8-13.html">
+     Solutions Q8 - 13
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-5/chapter-5-answers-14-26.html">
+     Solutions Q 14 - 26
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-5/chapter-5-answers-27-32.html">
+     Solutions Q27 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-5/chapter-5-answers-33-44.html">
+     Solutions Q33 - 44
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-5/chapter-5-answers-45-52.html">
+     Solutions Q45 - 52
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../chapter-6/vectors-intro.html">
+   6. Vectors.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-A.html">
+     Vector basics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-Q1-24.html">
+     Questions 1 - 24
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-B.html">
+     Projections and components
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-Q25-32.html">
+     Questions 25 - 32
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-C.html">
+     Axes need not be right-angled or of equal length
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-Q33-38.html">
+     Questions 33 - 38
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-D.html">
+     Basis sets with more than three dimensions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-Q39-46.html">
+     Questions 39 - 46
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-E.html">
+     Cross product or vector product
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-Q47-52.html">
+     Questions 47 - 52
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-F.html">
+     Torsion or dihedral angles
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-Q53-48.html">
+     Questions 53 - 48
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-G.html">
+     Torque and angular momentum
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-Q59-61.html">
+     Questions 59 - 61
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-answers-Q1-24.html">
+     Solutions Q1 - 24
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-answers-Q25-32.html">
+     Solutions Q25 - 32
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-answers-Q33-38.html">
+     Solutions Q33 - 38
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-answers-Q39-46.html">
+     Solutions Q39 - 46
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-answers-Q47-52.html">
+     Solutions Q47 - 52
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-answers-Q53-61.html">
+     Solutions Q53 - 61
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../chapter-7/matrices-intro.html">
+   7. Matrices
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-A.html">
+     Determinants
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-Q1-10.html">
+     Questions  1 - 10
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-B.html">
+     Matrices
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-Q11-16.html">
+     Questions  11 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-C.html">
+     Molecular Group Theory
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-Q17-30.html">
+     Questions  17 - 30
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-D.html">
+     Rotation matrices: moving molecules
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-Q31-34.html">
+     Questions 31 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-E.html">
+     Matrices in optics and designing laser cavities
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-Q35-39.html">
+     Questions 35 - 39
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-F.html">
+     Polarizing optics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-Q40-44.html">
+     Questions 40 - 44
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-G.html">
+     Solving equations using matrices. Eigenvectors &amp; Eigenvalues.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-Q45-50.html">
+     Questions 45 - 50
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-H.html">
+     Rate equations and Chemical Kinetics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-Q51-54.html">
+     Questions 51 - 54
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-I.html">
+     Molecular vibrations and pendulums
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-Q55-58.html">
+     Questions 55 - 58
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-J.html">
+     Moments of Inertia
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-Q59-60.html">
+     Questions 59 - 62
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-K.html">
+     Calculating a bond length using moments of inertia
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-Q61.html">
+     Question 61
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-L.html">
+     Principal axes for Moments of Inertia
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-Q62.html">
+     Question 62
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-answersQ1-10.html">
+     Solutions Q1 - 10
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-answersQ11-16.html">
+     Solutions Q11 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-answersQ17-30.html">
+     Solutions Q17 - 30
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-answersQ31-34.html">
+     Solutions Q31 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-answersQ35-39.html">
+     Solutions Q35 - 39
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-answersQ40-44.html">
+     Solutions Q40 - 44
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-answersQ45-50.html">
+     Solutions Q45 - 50
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-answersQ51-54.html">
+     Solutions Q51 - 54
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-answersQ55-58.html">
+     Solutions Q55 - 58
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-answersQ59-61.html">
+     Solutions Q59 - 61
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../chapter-8/matricesQM-intro.html">
+   8. Matrices in Quantum Mechanics
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-8/matricesQM-A.html">
+     Matrices in Quantum Mechanics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-8/matricesQM-Q1-7.html">
+     Questions 1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-8/matricesQM-B.html">
+     Basis sets and bra-ket algebra
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-8/matricesQM-Q8-12.html">
+     Questions 8 - 12
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-8/matricesQM-C.html">
+     Continuous basis sets
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-8/matricesQM-answers1-7.html">
+     Solutions Q1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-8/matricesQM-answers8-12.html">
+     Solutions Q8 - 12
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../chapter-9/Fourier-intro.html">
+   9. Fourier Series and Transforms.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-9/Fourier-A-B.html">
+     Fourier series, Gibbs phenomenon, generalised series.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-9/Fourier-questions-1-6.html">
+     Questions 1 - 6
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-9/Fourier-C.html">
+     Fourier Transforms
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-9/Fourier-questions-7-15.html">
+     Questions 7 - 15
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-9/Fourier-D.html">
+     Convolution and Autocorrelation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-9/Fourier-questions-16-21.html">
+     Questions 16 - 21
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-9/Fourier-E.html">
+     Discrete Fourier  (DFT)  and Fast Fourier transforms (FFT)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-9/Fourier-F.html">
+     The Hadamard Transform: Encoding and Decoding
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-9/Fourier-answers-1-6.html">
+     Solutions Q 1 - 6
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-9/Fourier-answers-7-15.html">
+     Solutions Q 7 - 15
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-9/Fourier-answers-16-21.html">
+     Solutions Q 16 - 21
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-9/Fourier-2D-Diffraction.html">
+     The Fourier transform in two dimensions: images and x-ray Diffraction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-9/Fourier-tomography.html">
+     Computed Tomography
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../chapter-10/Diff-eqns-intro.html">
+   10. Differential Equations.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-10/Diff-eqns-A.html">
+     Differential Equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-10/Diff-eqns-Q1-23.html">
+     Questions 1 - 23
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-10/Diff-eqns-B.html">
+     First order eqns &amp; Integrating factors. Second order eqns, Newtons laws, equations of motion.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-10/Diff-eqns-C.html">
+     The ‘D’ operator.  Solving linear differential equations with constant coefficients
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-10/Diff-eqns-D.html">
+     Simultaneous equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-10/Diff-eqns-Q24-37.html">
+     Questions 24 - 37
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-10/Diff-eqns-E.html">
+     Linear equations with variable coefficients
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-10/Diff-eqns-F.html">
+     Partial Differential Equations, PDE
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-10/Diff-eqns-G.html">
+     PDE examples continued
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-10/Diff-eqns-answers-1-21.html">
+     Solutions Q1 - 21
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-10/Diff-eqns-answers-22-37.html">
+     Solutions Q22 - 37
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../chapter-11/num-methods-intro.html">
+   11. Numerical Methods
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-A.html">
+     Numerical Methods
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-Q1-7.html">
+     Questions 1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-B.html">
+     Numerical solution of differential equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-Q8-12.html">
+     Questions 8 - 12
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-C.html">
+     Coupled equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-Q13-16.html">
+     Questions 13 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-D.html">
+     The phase plane, nullclines, and stable points
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-Q17-20.html">
+     Questions 17 - 20
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-E.html">
+     Reaction schemes with feedback
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-Q21-34.html">
+     Questions 21 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-F.html">
+     Boundary value problems.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-Q35-40.html">
+     Questions 35 - 40
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-answers1-7.html">
+     Solutions Q1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-answers8-12.html">
+     Solutions Q8 - 12
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-answers13-16.html">
+     Solutions Q13 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-answers17-20.html">
+     Solutions Q17 - 20
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-answers21-34.html">
+     Solutions Q21 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-answers35-40.html">
+     Solutions Q35 - 40
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../chapter-12/monte-carlo-intro.html">
+   12. Monte Carlo Methods
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+  <label for="toctree-checkbox-12">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-12/monte-carlo-A.html">
+     Monte - Carlo Methods
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-12/monte-carlo-Q1-6.html">
+     Questions 1 - 6
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-12/monte-carlo-B.html">
+     Solving rate equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-12/monte-carlo-Q7-10.html">
+     Questions 7 - 10
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-12/monte-carlo-CC.html">
+     Monte Carlo Simulations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-12/monte-carlo-C.html">
+     Energy transfer. Autocatalytic reaction and spreading of fires
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-12/monte-carlo-Q11-17.html">
+     Questions 11 - 17
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-12/monte-carlo-D.html">
+     The Metropolis algorithm
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-12/monte-carlo-answers1-6.html">
+     Solutions Q1 - 6
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-12/monte-carlo-answers7-10.html">
+     Solutions Q7 - 10
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-12/monte-carlo-answers11-17.html">
+     Solutions Q11 - 17
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../chapter-13/analysis-intro.html">
+   13. Data Analysis
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+  <label for="toctree-checkbox-13">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-13/analysis-A.html">
+     Characterizing experimental data. Accuracy, precision, mean and standard deviation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-13/analysis-Q1-3.html">
+     Questions 1 - 3
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-13/analysis-B.html">
+     Modelling data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-13/analysis-Q4-9.html">
+     Questions 4 - 9
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-13/analysis-C.html">
+     Modelling data is simpler using matrices
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-13/analysis-Q10-11.html">
+     Questions 10 - 13
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-13/analysis-D.html">
+     Non-linear least squares. Least absolute deviation. Principal component analysis
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-13/analysis-answers1-11.html">
+     Solutions Q1 -11
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../chapter-1/chapter1-E.html">
+   SI units, Rounding, converting units &amp; Glossary.
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../references/References.html">
+   References
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../references/Python%20crib.html">
+   Appendix:  Some basic Python instructions with a few examples.
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../../_sources/_build_/jupyter_execute/chapter-10/Diff-eqns-E.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/_build_/jupyter_execute/chapter-10/Diff-eqns-E.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   8.1 Linear equations with variable coefficients
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#reduction-to-simpler-forms-by-change-of-variable-and-substitution">
+   8.1 Reduction to simpler forms by change of variable and substitution
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#i-substitution">
+     <strong>
+      (i) Substitution
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ii-euler-or-cauchy-eqns">
+     <strong>
+      (ii)  Euler or Cauchy eqns.
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#iii-using-derivatives">
+     <strong>
+      (iii) Using derivatives
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#iv-special-form">
+     <strong>
+      (iv) Special form
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#v-special-form">
+     <strong>
+      (v) Special form
+     </strong>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#series-solution-of-differential-equations">
+   8.2 Series solution of differential equations
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#i-the-basic-series-method">
+     <strong>
+      (i) The basic series method
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ii-example">
+     <strong>
+      (ii) Example
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#iii-the-hermite-equation">
+     <strong>
+      (iii) The Hermite equation
+     </strong>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#checking-whether-a-series-solution-is-possible">
+   8.3 Checking whether a series solution is possible
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="linear-equations-with-variable-coefficients">
+<h1>Linear equations with variable coefficients<a class="headerlink" href="#linear-equations-with-variable-coefficients" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id1">
+<h2>8.1 Linear equations with variable coefficients<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>A more difficult equation to solve than those met previously is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle a(x)\frac{d^2y}{dx^2}+b(x)\frac{dy}{dx}+c(x)y=g(x)\]</div>
+<p>where the coefficients <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(b\)</span>, <span class="math notranslate nohighlight">\(c\)</span> are functions of <span class="math notranslate nohighlight">\(x\)</span>. This equation is usually put into the form</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{d^2y}{dx^2}+P(x)\frac{dy}{dx}+Q(x)y=f(x)\]</div>
+<p>by dividing through by <span class="math notranslate nohighlight">\(a(x)\)</span>. The general method to use is the <em>variation of parameters</em>, because this can be applied to all differential equations. However, it is quite complicated to use and specialized texts should be consulted (Jeffery 1990; Bronson 1994; Aratyn &amp; Rasinariu 2006). There are, however, at least two methods that can still be used: the main one is to solve the equation as a series expansion and the second reduces the equation to a simpler one, but this can be used only in certain cases.</p>
+</div>
+<div class="section" id="reduction-to-simpler-forms-by-change-of-variable-and-substitution">
+<h2>8.1 Reduction to simpler forms by change of variable and substitution<a class="headerlink" href="#reduction-to-simpler-forms-by-change-of-variable-and-substitution" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="i-substitution">
+<h3><strong>(i) Substitution</strong><a class="headerlink" href="#i-substitution" title="Permalink to this headline">¶</a></h3>
+<p>Sometimes a simple substitution can produce constant coefficients, but success in this depends very much on the exact form of the equation. The equation</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \cos(x)\frac{d^2y}{dx^2}+\sin(x)\frac{dy}{dx}+a\cos^3(x)y=0\]</div>
+<p>can be simplified with <span class="math notranslate nohighlight">\(u = \sin(x)\)</span>. The derivatives are <span class="math notranslate nohighlight">\(du/dx = \cos(x), \; d^2u/dx^2 = -\sin(x)\)</span> and as <span class="math notranslate nohighlight">\(\displaystyle \frac{dy}{dx}=\frac{dy}{du}\frac{du}{dx}\)</span> then <span class="math notranslate nohighlight">\(\displaystyle \frac{dy}{dx}=\cos(x)\frac{dy}{du}\)</span> and</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{d^2y}{dx^2}=-\sin(x)\frac{dy}{du}+\cos(x)\frac{d^2y}{du^2}\frac{du}{dx}=-\sin(x)\frac{dy}{du}+\cos^2(x)\frac{d^2y}{du^2}\]</div>
+<p>substituting into the differential equation produces <span class="math notranslate nohighlight">\(\displaystyle \frac{d^2y}{du^2}+ay=0\)</span> which is readily solved by standard methods to find <span class="math notranslate nohighlight">\(y\)</span> in terms of <span class="math notranslate nohighlight">\(u\)</span>. Notice that if the <span class="math notranslate nohighlight">\(\cos^3(x)y\)</span> term in the original equation was replaced by <span class="math notranslate nohighlight">\(\cos(x)y\)</span>, then the equation produced is not as simple and is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle (1-u^2)\frac{d^2y}{du^2}+ay=0\]</div>
+</div>
+<div class="section" id="ii-euler-or-cauchy-eqns">
+<h3><strong>(ii)  Euler or Cauchy eqns.</strong><a class="headerlink" href="#ii-euler-or-cauchy-eqns" title="Permalink to this headline">¶</a></h3>
+<p>Equations of the particular type <span class="math notranslate nohighlight">\(\displaystyle x^3\frac{d^3y}{dx^3}+ax^2\frac{d^2y}{dx^2}+bx\frac{dy}{dx}+cy=f(x)\)</span></p>
+<p>where terms in <span class="math notranslate nohighlight">\(x\)</span> have the same power as the differential are called Euler’s or Cauchy’s equation and can be simplified with the substitution <span class="math notranslate nohighlight">\(\displaystyle x = e^{-z}\)</span>. The derivative is <span class="math notranslate nohighlight">\(\displaystyle dz/dx = e^{−z}\)</span> and if <span class="math notranslate nohighlight">\(D \equiv d/dz\)</span> then</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{dy}{dx}=\frac{dy}{dz}\frac{dz}{dx}=e^{-z}Dy, \qquad \frac{d^2y}{dx^2}=\frac{d^2y}{dz^2}\left(\frac{dz}{dx}\right)^2+\frac{dy}{dz}\frac{d^2z}{dx^2}=e^{-2z}(D^2-D)y\]</div>
+<p>The last derivative here was obtained as <span class="math notranslate nohighlight">\(\displaystyle \frac{d^2y}{dx^2}=\frac{d}{dz}\left(\frac{dy}{dz}\frac{dz}{dx} \right)\frac{dz}{dx}\)</span></p>
+<p>and using the product rule and <span class="math notranslate nohighlight">\(\displaystyle \frac{d}{dx}\frac{dz}{dx}\equiv\frac{d}{dx}\)</span></p>
+<p>The different derivatives can be written down as</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle x\frac{dy}{dx}=Dy, \qquad x^2\frac{d^2y}{dx^2}=(D^2-D)y, \qquad x^3\frac{d^3y}{dx^3}=(D^3-3D^2+2D)y\]</div>
+<p>and used to simplify the differential equation. Note that the right-hand side has derivatives in <span class="math notranslate nohighlight">\(dy/dz\)</span>.</p>
+</div>
+<div class="section" id="iii-using-derivatives">
+<h3><strong>(iii) Using derivatives</strong><a class="headerlink" href="#iii-using-derivatives" title="Permalink to this headline">¶</a></h3>
+<p>To solve the equation <span class="math notranslate nohighlight">\(\displaystyle x^2\frac{d^2y}{dx^2}+2x\frac{dy}{dx}-y=0\)</span></p>
+<p>first simplify this to <span class="math notranslate nohighlight">\(\displaystyle (D^2+D-1)y=0\)</span> using the derivatives alone. The characteristic equation has roots <span class="math notranslate nohighlight">\(\displaystyle \frac{\sqrt{5}-1}{2},\;\frac{-\sqrt{5}-1}{2}\)</span>. However, the operator <span class="math notranslate nohighlight">\(D\)</span> is a function of <span class="math notranslate nohighlight">\(z\)</span> not of <span class="math notranslate nohighlight">\(x\)</span>, hence, the solution is a function of <span class="math notranslate nohighlight">\(z\)</span>, giving the solution</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle y=Ae^{(\sqrt{5}-1)z/2}+Be^{(-\sqrt{5}-1)z/2}\]</div>
+<p>where <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> are constants determined by the initial conditions. As <span class="math notranslate nohighlight">\(\displaystyle x = e^z\)</span> or <span class="math notranslate nohighlight">\(z = \ln(x)\)</span>, the solution becomes <span class="math notranslate nohighlight">\(\displaystyle y=Ae^{(\sqrt{5}-1)\ln(x)/2}+Be^{(-\sqrt{5}-1)\ln(x)/2}\)</span>  which can be simplified to</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle y=Ax^{\large{(-1+\sqrt(5))/2}}+Bx^{\large{(-1-\sqrt(5))/2}}\]</div>
+</div>
+<div class="section" id="iv-special-form">
+<h3><strong>(iv) Special form</strong><a class="headerlink" href="#iv-special-form" title="Permalink to this headline">¶</a></h3>
+<p>If the equation can be put into the form, <span class="math notranslate nohighlight">\(\displaystyle \frac{d^2y}{dx^2}+P(x)\frac{dy}{dx}+Q(x)y = 0 \)</span></p>
+<p>then it can be reduced by the transformation <span class="math notranslate nohighlight">\(y = uv\)</span> where</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle v = e^{-(1/2)\large{\int} pdx}\]</div>
+<p>The equation becomes</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{d^2u}{dx^2}-w(x)u=0, \qquad w(x)=\frac{dP}{dx}+\left(\frac{P}{Q}  \right)^2-Q\]</div>
+<p>and the final solution is <span class="math notranslate nohighlight">\(y=uv\)</span>.</p>
+</div>
+<div class="section" id="v-special-form">
+<h3><strong>(v) Special form</strong><a class="headerlink" href="#v-special-form" title="Permalink to this headline">¶</a></h3>
+<p>The equation <span class="math notranslate nohighlight">\(\displaystyle \frac{d^2 y}{dx^2}+x\frac{dy}{dx}+(x-1)y = 0\)</span></p>
+<p>can be solved with this method if <span class="math notranslate nohighlight">\(\displaystyle v=e^{-(1/2)\large{\int}xdx}= e^{-x^2/4}\)</span></p>
+<p>and <span class="math notranslate nohighlight">\(\displaystyle w=3/2+x^2/4-x\)</span> which produces the equation with which to find <span class="math notranslate nohighlight">\(u\)</span> and which is,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{d^2u}{dx^2}=\left(\frac{3}{2}+\frac{x^2}{4} -x \right)u = 0\]</div>
+</div>
+</div>
+<div class="section" id="series-solution-of-differential-equations">
+<h2>8.2 Series solution of differential equations<a class="headerlink" href="#series-solution-of-differential-equations" title="Permalink to this headline">¶</a></h2>
+<p>While many types of equations can be solved using the methods described so far, there are a number of problems whose equations can only be solved by a series expansion. These are often different forms of the Schroedinger equation, examples of which are the quantum harmonic oscillator and the radial and angular solutions to the hydrogen atom.</p>
+<p>While the series solution method will be described in general, in quantum mechanics and in some other problems, the equations often have a form whose solution is well known because the equation has a specific name. The harmonic oscillator is solved using Hermite’s differential equation and the hydrogen atom requires Legendre’s and Laguerre’s equations. Other commonly used equations are named after Helmholtz, Laplace, and Bessel.</p>
+<p>Many functions can be expanded as a power series that has the form</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle  y=a_0 +a_1x+a_2x^2 +a_3x^3 +\cdots+a_nx^n +\cdots \tag{38}\]</div>
+<p>with constants <span class="math notranslate nohighlight">\(a_0, a_1\)</span>, etc. as described in Chapter 5.</p>
+<p>By taking derivatives of <span class="math notranslate nohighlight">\(y\)</span> based on this expansion, the differential equation can be reconstructed in terms of the powers of <span class="math notranslate nohighlight">\(x\)</span> and these constants. To find the constants, the powers of <span class="math notranslate nohighlight">\(x\)</span> are collected together and the resulting group of constants solved assuming that each group of them is zero. What results is a recursion formula with which to calculate the constants and so the equation is solved without any formal integration. It is assumed that the solution can be found with this method, because this is ‘usually’ the case for problems in chemical physics. There is a simple way to check if a series solution is possible and if not, a related method due to Frobenius can be tried in these cases.</p>
+<div class="section" id="i-the-basic-series-method">
+<h3><strong>(i) The basic series method</strong><a class="headerlink" href="#i-the-basic-series-method" title="Permalink to this headline">¶</a></h3>
+<p>The basic series method is illustrated with the equation</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle  \frac{d^2y}{dx^2}+x\frac{dy}{dx}+y=0 \]</div>
+<p>and the solution is assumed to have the form of equation (38). The strategy is</p>
+<p><strong>(a)</strong><span class="math notranslate nohighlight">\(\quad\)</span> to differentiate the series solution, and substitute the results into the differential equation;</p>
+<p><strong>(b)</strong><span class="math notranslate nohighlight">\(\quad\)</span> collect together coefficients with the same power of <span class="math notranslate nohighlight">\(x\)</span> and set each result to zero;</p>
+<p><strong>(c)</strong><span class="math notranslate nohighlight">\(\quad\)</span> find a recursion equation in the coefficients <span class="math notranslate nohighlight">\(a_0,\; a_1, \cdots\)</span> using the initial conditions
+as the starting points.</p>
+<p><strong>step (a)</strong> The differential equation is formed out of the series solution by taking the derivatives. These are</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin{align}
+\frac{dy}{dx}&amp;=a_1+2a_2x+3a_3x^2+\cdots + (n-1)a_{n-1}x^{n-2} +na_nx^{n-1}+(n+1)a_{n+1}x^n\cdots \\
+\frac{d^2y}{dx^2}&amp;=2a_2+6a_3x+12a_4x^2 +\cdots +n(n-1)a_{n}x^{n-2}+n(n+1)a_{n+1}x^{n-1}\cdots \end{align} \end{split}\]</div>
+<p>and the <span class="math notranslate nohighlight">\(n\)</span> - 2, <span class="math notranslate nohighlight">\(n\)</span> - 1 and n<sup>th</sup> terms are tabulated below as these are needed later on. Notice that these derivatives are the <em>same for all differential equations</em> solved by the expansion in (38). These coefficients are shown in the table and terms that are useful in other equations are also shown.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin{array}{c|ccc}
+     &amp; x^{n-2}      &amp; x^{n-1} &amp; x^n \\
+\hline
+ y   &amp; a_{n-2}      &amp; a_{n-1} &amp; a_n \\ 
+ y'  &amp; (n-1)a_{n-1} &amp; na_{n}  &amp; (n+1)a_{n+1} \\ 
+ y'' &amp; n(n-1)a_{n}  &amp; n(n+1)a_{n+1} &amp; (n+1)(n+2)a_{n+2} \\
+ xy  &amp; a_{n-3}      &amp; a_{n-2}       &amp; a_{n-1} \\
+ xy' &amp; (n-2)a_{n-2} &amp; (n-1)a_{n-1}  &amp; na_n\\
+ \hline 
+ \end{array} \end{split}\]</div>
+<p><strong>step (b)</strong> The next step is to substitute these derivatives into the differential equation and then to group all the coefficients with <span class="math notranslate nohighlight">\(x^0,\; x^1,\; x^2,\; x^3 \cdots\)</span> together and make each group zero. The groups of coefficients for each power of <em>x</em> must be zero, as the differential equation is itself equal to zero. For this particular equation, substituting produces</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin{array}{lll}
+2a_2+6a_3x+12a_4x^2+&amp;\cdots  +(n+2)(n+1)a_{n+2}x^n+\cdots \\
++a_1x + 2a_2x^2 + 3a_3x^3+&amp;\cdots  +na_nx^n+\cdots \\
++a_0 +a_1x+\;a_2x^2 +a_3x^3 +&amp; +a_nx^n+\cdots=0 \end{array} \end{split}\]</div>
+<p>Grouping the coefficients gives</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin{array}{lc}
+  &amp; \text{coefficients}\\
+\hline
+ a_0 + 2a_2 = 0, &amp;x^0  \\
+ 6a_3 + 2a_1 = 0, &amp; x^1 \\
+12a_4 + 2a_2 + a_2 = 0, &amp;  x^2 \\
+ (n + 2)(n + 1)a_{n+2} + na_n + a_n = 0, &amp; x^n \\
+ \hline \end{array}\end{split}\]</div>
+<p><strong>step (c)</strong> The recursion formula for the <span class="math notranslate nohighlight">\(x^n\)</span> term is <span class="math notranslate nohighlight">\(\displaystyle a_{n+2} =-\frac{(n+1)a_n}{(n+1)(n+2)}\)</span>. The first two coefficients are <span class="math notranslate nohighlight">\(a_0,\;a_1\)</span> and the other coefficients are expressed in terms of these as</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle n=0:\; a_2=a_0/2, \quad n=1:\; a_3=a_1/3,\quad n=2:\; a_4=a_2/4=a_0/8,\quad n=3:\; a_5=a_1/15\]</div>
+<p>The solution is therefore,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle y = a_0\left(1-\frac{x^2}{2}+\frac{x^4}{8}-\frac{x^6}{48}  +\cdots \right)+a_1\left(-\frac{x}{3}+\frac{x^3}{15}-\frac{x^5}{105}  +\cdots \right) \]</div>
+<p>The two solutions are independent of one another, and the even powered series is the expansion of <span class="math notranslate nohighlight">\(\displaystyle e^{-x^2/2}\)</span>, while the odd series is not so easily identified. The coefficients are determined by the initial conditions and, if <span class="math notranslate nohighlight">\(y(0) = a_0\)</span> and <span class="math notranslate nohighlight">\(dy/dx \)</span>= 0 at <span class="math notranslate nohighlight">\(x\)</span> = 0, then the solution is <span class="math notranslate nohighlight">\(\displaystyle y = a_0e^{-x^2/2}\)</span>.</p>
+</div>
+<div class="section" id="ii-example">
+<h3><strong>(ii) Example</strong><a class="headerlink" href="#ii-example" title="Permalink to this headline">¶</a></h3>
+<p>The equation is <span class="math notranslate nohighlight">\(\displaystyle \frac{d^2y}{dx^2}+(\alpha-\beta x^2)y=0\)</span> and following the previous calculation, the recursion equation is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle a_{n+2}=\frac{\beta a_{n-2}-\alpha a_n}{(n+1)(n+2)}\]</div>
+<p>and is not valid when <span class="math notranslate nohighlight">\(n\)</span> is 0 or 1 because <span class="math notranslate nohighlight">\(a_{-2}\)</span> and <span class="math notranslate nohighlight">\(a_{-1}\)</span> are not defined. The coefficients of the
+first two terms in the expansion must then be examined. These are <span class="math notranslate nohighlight">\(\displaystyle 2a_2+\alpha a_0\)</span> and <span class="math notranslate nohighlight">\(\displaystyle 6a_3+\alpha a_1 =0\)</span> from which <span class="math notranslate nohighlight">\(a_2\)</span> and <span class="math notranslate nohighlight">\(a_3\)</span> can be found in terms of <span class="math notranslate nohighlight">\(a_0\)</span> and <span class="math notranslate nohighlight">\(a_1\)</span> and these then used as the starting points for the recursion formula. The series solution can be obtained using recursion. The first few terms are</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle  \begin{align}a_2&amp;=-\alpha a_0/2,  \quad a_3=-\alpha a_1/6,\\ \quad a_4&amp;=\alpha a_0/24+\beta a_0/12,\quad a_5=\alpha^2 a_1/120+\beta a_1/20 \end{align}\end{split}\]</div>
+<p>and the solution <span class="math notranslate nohighlight">\(\displaystyle y = a_0 + a_1x - \frac{1}{2}\alpha a_0x^2-\frac{1}{6}\alpha a_1x^3+\left( \frac{1}{24}\alpha^2a_0+\frac{1}{12}\beta a_0 \right)x^4+\cdots\)</span>.</p>
+<p>There are two series in the result; one with terms in <span class="math notranslate nohighlight">\(a_0\)</span> and the other in <span class="math notranslate nohighlight">\(a_1\)</span>. These are independent solutions.</p>
+</div>
+<div class="section" id="iii-the-hermite-equation">
+<h3><strong>(iii) The Hermite equation</strong><a class="headerlink" href="#iii-the-hermite-equation" title="Permalink to this headline">¶</a></h3>
+<p>The Hermite equation is important because it leads to the solution of the Schroedinger equation for the quantum mechanical harmonic oscillator. This is discussed at the end of this section but first a method of solution is determined. The equation has the form</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{d^2y}{dx^2}-2x\frac{dy}{dx}+2\gamma y=0  \tag{39}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\gamma\)</span> is a real number, Solving as a series leads to the coefficients</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin{align}2a_2+6a_3x+12a_4x^2+\cdots  \quad + (n+1)(n+2)a_{n+2}x^n&amp;+\cdots \\
+-2a_1x-4a_2x^2-\cdots \quad\qquad\qquad -2na_nx^n&amp;+\cdots\\
++2\gamma a_0+2\gamma a_1 x+2\gamma a_2x^2+\cdots \quad\qquad\qquad+2\gamma a_nx^n&amp;+\cdots =0\end{align}\end{split}\]</div>
+<p>The recursion is therefore</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle a_{n+2}=2\frac{n-\gamma}{(n+1)(n+2)}a_n\]</div>
+<p>and evaluating the coefficients gives the series</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin{align} y_\gamma &amp;=a_0\left(1-\gamma x^2 -\frac{(2-\gamma)\gamma}{6}x^4 -\frac{(4-\gamma)(2-\gamma)\gamma}{90}x^6 -\cdots \right) \\&amp;+a_1\left( x+\frac{1-\gamma}{3}x^3 +\frac{(3-\gamma)(1-\gamma)}{30}x^5+\cdots\right) +\end{align}\end{split}\]</div>
+<p>These series form the Hermite polynomials when <span class="math notranslate nohighlight">\(\gamma\)</span> is a positive integer. For example when <span class="math notranslate nohighlight">\(\gamma\)</span> = 3 the odd power series terminates to give <span class="math notranslate nohighlight">\(\displaystyle y_3=a_1\left(x-\frac{2}{3}x^3  \right)\)</span>  and when <span class="math notranslate nohighlight">\(\gamma\)</span> = 4 the even power series terminates and is <span class="math notranslate nohighlight">\(\displaystyle y_4=a_0\left(1-4x^2+\frac{4}{3}x^4  \right) \)</span>.</p>
+<p>Each series is limited to a few terms because of the way the coefficients are formed. The first few Hermite polynomials are</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin{array}{cc}
+H_0(x)=1 &amp; H_1(x)=x \\ H_2(x)=4x^2-2 &amp; H_3(x)=8x^3+12x \\H_4(x)=16x^4-48x^2+12 &amp; H_5(x)=32x^5-160x^3+120x\end{array}\end{split}\]</div>
+<p>and choosing the constants as</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle a_0=(-1)^{\gamma/2}\frac{\gamma!}{(\gamma/2)!}\]</div>
+<p>with <span class="math notranslate nohighlight">\(\gamma\)</span> as an even integer and</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle a_1=(-1)^{(\gamma +1)/2}\frac{(\gamma +1)!}{((\gamma +1)/2)!}\]</div>
+<p>with <span class="math notranslate nohighlight">\(\gamma\)</span> as an odd integer, converts the series solution to the differential equation into the sum of two Hermite polynomials.</p>
+<p>The general solution can then be written as</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle  y_{\gamma} = c_1H_{\gamma}(x)+ c_2H_{\gamma +1}(x)\]</div>
+<p>where <span class="math notranslate nohighlight">\(c_1\)</span> and <span class="math notranslate nohighlight">\(c_2\)</span> are two new constants that are determined by the initial conditions.</p>
+<p>The equation</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{d^2y}{dx^2}+(2\gamma-1-x^2)y=0 \tag{40}\]</div>
+<p>with <span class="math notranslate nohighlight">\(\gamma\)</span> as a constant is related to the Hermite equation if <span class="math notranslate nohighlight">\(\displaystyle y=ve^{-x^2/2}\)</span>, where <span class="math notranslate nohighlight">\(v\)</span> is a function of <span class="math notranslate nohighlight">\(x\)</span>, then the second derivative is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle  \frac{d^2y}{dx^2}=\left(\frac{d^2v}{dx^2}-2x\frac{dv}{dx}+(x^2-1)v  \right)e^{-x^2/2}\]</div>
+<p>and substituting this into eqn (40) and simplifying this  becomes <span class="math notranslate nohighlight">\(\displaystyle \frac{d^2v}{dx^2}-2x\frac{dv}{dx}+2\gamma v=0\)</span> which is identical to (39). The solutions of (40) are therefore Hermite polynomials multiplied by the Gaussian <span class="math notranslate nohighlight">\(\displaystyle e^{−x^2/2}\)</span>.</p>
+<p>The Schroedinger equation for the harmonic oscillator can be written as</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{d^2\psi}{dx^2}+\frac{2m}{\hbar^2}\left( E-\frac{k}{2}x^2 \right)\psi=0\]</div>
+<p>where <em>k</em> is the force constant related to the frequency as <span class="math notranslate nohighlight">\(\displaystyle \omega= \sqrt{k/m}\)</span>. The equation can be simplified to</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{d^2\psi}{dx^2}+(a-b^2x^2)\psi=0\]</div>
+<p>with the abbreviations <span class="math notranslate nohighlight">\(\displaystyle a = 2mE/\hbar^2\)</span> and <span class="math notranslate nohighlight">\(\displaystyle b^2 = mk/\hbar^2\)</span>. Next, the substitution <span class="math notranslate nohighlight">\(z =bx\)</span> is used to make the equation similar to (40).  The solutions are Hermite polynomials multiplied by <span class="math notranslate nohighlight">\(\displaystyle \exp(−z^2/2)\)</span> and these have the characteristic form of the harmonic oscillator wavefunctions. These decay exponentially to zero when <span class="math notranslate nohighlight">\(z\)</span> has a large positive or negative value but oscillate near to zero. The different wavefunctions are found by substituting <span class="math notranslate nohighlight">\(E = \hbar\omega(n + 1/2)\)</span> for each quantum number <span class="math notranslate nohighlight">\(n\)</span>. The next figure (19a) shows some wavefunctions for parameters corresponding to the iodine molecule, assuming that it has a harmonic potential. Of course any diatomic molecule does not have a harmonic potential since all real molecules must dissociate into their respective atoms if given enough energy, but the harmonic potential is a good approximation at low energy.</p>
+<p><img alt="Drawing" src="_build_/jupyter_execute/chapter-10/diffeqn-fig19a.png" /></p>
+<p>Figure 19a. harmonic oscillator wavefunctions assuming a harmonic potential. The frequency is 214.5 cm<span class="math notranslate nohighlight">\(^{-1}\)</span> and the force constant <span class="math notranslate nohighlight">\(172\)</span> N/m. The levels have quantum numbers <span class="math notranslate nohighlight">\(n=\)</span> 0, 1, 2,<span class="math notranslate nohighlight">\(\cdots\)</span>.</p>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="checking-whether-a-series-solution-is-possible">
+<h2>8.3 Checking whether a series solution is possible<a class="headerlink" href="#checking-whether-a-series-solution-is-possible" title="Permalink to this headline">¶</a></h2>
+<p>A solution is usually expanded as a series about <span class="math notranslate nohighlight">\(x\)</span> = 0; therefore, the first thing to check is whether the series method is applicable. This means examining the differential equation to ensure that <span class="math notranslate nohighlight">\(x\)</span> = 0 is analytic, hence not singular, which in turn means that <span class="math notranslate nohighlight">\(x\)</span> = 0 does not produce infinity when substituted into the equation.
+The general equation is</p>
+<div class="math notranslate nohighlight">
+\[ \displaystyle \frac{d^2y}{dx^2}+P(x)\frac{dy}{dx}+Q(x)y=f(x)\]</div>
+<p>If the equation is <span class="math notranslate nohighlight">\(\displaystyle \frac{d^2y}{dx^2}+\frac{dy}{dx}+y=0\)</span></p>
+<p>then this is analytic at <span class="math notranslate nohighlight">\(x\)</span> = 0, as <span class="math notranslate nohighlight">\(P\)</span> and <span class="math notranslate nohighlight">\(Q\)</span> are both 1.</p>
+<p>The equation <span class="math notranslate nohighlight">\(\displaystyle \frac{d^2y}{dx^2}+\frac{x}{x-1}\frac{dy}{dx}+\frac{1}{x-1}y=0\)</span></p>
+<p>is also analytic at <span class="math notranslate nohighlight">\(x\)</span> = 0, and an expansion about 0 is possible. The point <span class="math notranslate nohighlight">\(x\)</span> = 1 is singular, and the function <span class="math notranslate nohighlight">\(1/(x - 1)\)</span> is then not defined, so the series expansion will not be possible here and the series solution is valid only in the range -1 <span class="math notranslate nohighlight">\(\lt x \lt\)</span> 1. In contrast the equation</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{d^2y}{dx^2}+x(x-1)\frac{dy}{dx}+(x-1)y = 0\]</div>
+<p>can be expanded, because the <span class="math notranslate nohighlight">\(x(x - 1)\)</span> and <span class="math notranslate nohighlight">\((x - 1)\)</span> are polynomials and every point is normal.</p>
+<p>Bessel’s equation is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle x^2\frac{d^2y}{dx^2}+x\frac{dy}{dx}+(x^2-n^2)y=0\]</div>
+<p>where <span class="math notranslate nohighlight">\(n\)</span> is a constant and when rearranged is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{d^2y}{dx^2}+\frac{1}{x}\frac{dy}{dx}+\frac{(x^2-n^2)}{x^2}y=0\]</div>
+<p>so has a singular point at <span class="math notranslate nohighlight">\(x\)</span>=0. In this case, the equation can be shown to have solutions <span class="math notranslate nohighlight">\(\displaystyle y=x^m \sum \limits_{k=0}^\infty  a_kx^k\)</span> and where <span class="math notranslate nohighlight">\(a_0 \ne\)</span> 0. Using this series is often called Frobenius’ method and both the index <span class="math notranslate nohighlight">\(m\)</span> and coefficients <span class="math notranslate nohighlight">\(a_k\)</span> have to be determined. The method is very similar to that already described and is given in more advanced textbooks (Boas 1983; Jeffery 1990; Bronson 1994; Aratyn &amp; Rasinariu 2006).</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./_build_/jupyter_execute/chapter-10"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Godfrey Beddard<br/>
+        
+            &copy; Copyright 2022.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

@@ -1,0 +1,1943 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PDE examples continued &#8212; Applying Maths in the Chemical &amp; Biomolecular Sciences</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Solutions Q1 - 21" href="Diff-eqns-answers-1-21.html" />
+    <link rel="prev" title="Partial Differential Equations, PDE" href="Diff-eqns-F.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/book-cover.jpg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Applying Maths in the Chemical & Biomolecular Sciences</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Applying Maths in the Chemical and Biomolecular Sciences.
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-1/chapter1-intro.html">
+   1. Numbers, Equations, Operators, and Algorithms.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-A.html">
+     Numbers to Algorithms.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-Q1-7.html">
+     Questions 1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-B.html">
+     Trig, hyperbolic and inverse functions, waves, polar coordinates &amp; factorials
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-Q8-16.html">
+     Questions 8 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-C.html">
+     Sophisticated Counting.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-Q17-34.html">
+     Questions 17 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-D.html">
+     Modulo arithmetic,
+     <span class="math notranslate nohighlight">
+      \(\delta\)
+     </span>
+     functions, types of  series &amp;  estimating quantities
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-Q35-39.html">
+     Questions 35 - 39
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-answers-1-7.html">
+     Solutions Q1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-answers-8-16.html">
+     Solutions Q8 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-answers-17-34.html">
+     Solutions Q17 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-answers-35-39.html">
+     Solutions Q35 - 39
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-2/chapter2-intro.html">
+   2. Complex numbers.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2/chapter2-A.html">
+     Real, imaginary, conjugate and modulus
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2/chapter2-Q-1-9.html">
+     Questions 1 - 9
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2/chapter2-B.html">
+     De Moivre’s theorem and integer powers of complex numbers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2/chapter2-Q-10-13.html">
+     Questions 10 -13
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2/chapter2-C.html">
+     Euler’s theorem
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2/chapter2-Q-14-27.html">
+     Questions 14 - 27
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2/chapter2-answers.html">
+     Solutions Q1 - 27
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-3/differen-intro.html">
+   3. Differentiation.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-A.html">
+     Differentiation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-B.html">
+     Trig functions, logs, power, reciprocals and integrals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-C-Q-4-11.html">
+     Questions 1-11
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-D.html">
+     Product rule and function of function or chain rule.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-E-Q-12-42.html">
+     Questions 12-42
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-F.html">
+     Limits, l’Hopital’s rule, Maximum, Minimum and Calculus of Variations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-G-Q-43-73.html">
+     Questions 43 - 73
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-H.html">
+     Numerically finding the roots of an equation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-I-Q-74-85.html">
+     Questions 74 - 85
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-J.html">
+     Minimizing or maximizing with constraints: Lagrange Undetermined Multipliers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-K-Q-86-92.html">
+     Questions 86 - 92
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-L.html">
+     Partial differentiation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-M-Q-93-114.html">
+     Questions 93-114
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-M1.html">
+     Differentiation of vectors
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-N-answers-1-11.html">
+     Solutions Q 1-11
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-O-answers-12-42.html">
+     Solutions Q 12-42
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-P-answers-43-73.html">
+     Solutions Q 43 - 73
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-Q-answers-74-85.html">
+     Solutions Q 74 - 85
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-R-answers-86-92.html">
+     Solutions Q 86 - 94
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-S-answers-93-114.html">
+     Solutions Q 93-114
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-4/integration-intro.html">
+   4. Integration.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-A.html">
+     Integration basics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-Q1-14.html">
+     Questions 1-14
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-B.html">
+     Integration by substitution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-Q15-30.html">
+     Questions 15-30
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-C.html">
+     Using parametric equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-Q31-48.html">
+     Questions 31 - 48
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-D.html">
+     Calculating an Average Value.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-Q49-72.html">
+     Questions 49 - 72
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-E.html">
+     The Variational Method in Quantum Mechanics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-Q73-77.html">
+     Questions 73 - 77
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-F.html">
+     Multiple integrals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-Q78-86.html">
+     Questions 78 - 86
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-G.html">
+     Calculating the energy of a chemical bond using molecular orbitals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-H.html">
+     Line integrals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-Q87-96.html">
+     Questions 87 - 96
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-answers-1-14.html">
+     Solutions Q1 - 14
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-answers-15-30.html">
+     Solutions Q15 - 30
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-answers-31-48.html">
+     Solutions Q31 - 48
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-answers-49-72.html">
+     Solutions Q49 - 72
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-answers-73-96.html">
+     Solutions Q73 - 96
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-5/chapter-5-intro.html">
+   5. Summations, Series and expansion of Functions.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-A.html">
+     Series, averages, partition functions, DNA melting, atom entropy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-B-Q1-13.html">
+     Questions 1 - 13
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-E.html">
+     Maclaurin and Taylor series expansions. Paramagnetic spins. Euler-Maclaurin formula.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-F-Q14-34.html">
+     Questions 14 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-G-Q35-44.html">
+     Questions 35 - 44
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-perturbation-A.html">
+     Perturbation Theory
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-perturbation-B-Q45-48.html">
+     Questions 45 - 48
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-perturbation-C.html">
+     Quantum superposition and wavepackets.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-perturbation-D-Q49-52.html">
+     Questions 49 - 52
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-answers-1-7.html">
+     Solutions Q 1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-answers-8-13.html">
+     Solutions Q8 - 13
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-answers-14-26.html">
+     Solutions Q 14 - 26
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-answers-27-32.html">
+     Solutions Q27 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-answers-33-44.html">
+     Solutions Q33 - 44
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-answers-45-52.html">
+     Solutions Q45 - 52
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-6/vectors-intro.html">
+   6. Vectors.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-A.html">
+     Vector basics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-Q1-24.html">
+     Questions 1 - 24
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-B.html">
+     Projections and components
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-Q25-32.html">
+     Questions 25 - 32
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-C.html">
+     Axes need not be right-angled or of equal length
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-Q33-38.html">
+     Questions 33 - 38
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-D.html">
+     Basis sets with more than three dimensions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-Q39-46.html">
+     Questions 39 - 46
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-E.html">
+     Cross product or vector product
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-Q47-52.html">
+     Questions 47 - 52
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-F.html">
+     Torsion or dihedral angles
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-Q53-48.html">
+     Questions 53 - 48
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-G.html">
+     Torque and angular momentum
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-Q59-61.html">
+     Questions 59 - 61
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-answers-Q1-24.html">
+     Solutions Q1 - 24
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-answers-Q25-32.html">
+     Solutions Q25 - 32
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-answers-Q33-38.html">
+     Solutions Q33 - 38
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-answers-Q39-46.html">
+     Solutions Q39 - 46
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-answers-Q47-52.html">
+     Solutions Q47 - 52
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-answers-Q53-61.html">
+     Solutions Q53 - 61
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-7/matrices-intro.html">
+   7. Matrices
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-A.html">
+     Determinants
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q1-10.html">
+     Questions  1 - 10
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-B.html">
+     Matrices
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q11-16.html">
+     Questions  11 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-C.html">
+     Molecular Group Theory
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q17-30.html">
+     Questions  17 - 30
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-D.html">
+     Rotation matrices: moving molecules
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q31-34.html">
+     Questions 31 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-E.html">
+     Matrices in optics and designing laser cavities
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q35-39.html">
+     Questions 35 - 39
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-F.html">
+     Polarizing optics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q40-44.html">
+     Questions 40 - 44
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-G.html">
+     Solving equations using matrices. Eigenvectors &amp; Eigenvalues.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q45-50.html">
+     Questions 45 - 50
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-H.html">
+     Rate equations and Chemical Kinetics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q51-54.html">
+     Questions 51 - 54
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-I.html">
+     Molecular vibrations and pendulums
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q55-58.html">
+     Questions 55 - 58
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-J.html">
+     Moments of Inertia
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q59-60.html">
+     Questions 59 - 62
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-K.html">
+     Calculating a bond length using moments of inertia
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q61.html">
+     Question 61
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-L.html">
+     Principal axes for Moments of Inertia
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q62.html">
+     Question 62
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-answersQ1-10.html">
+     Solutions Q1 - 10
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-answersQ11-16.html">
+     Solutions Q11 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-answersQ17-30.html">
+     Solutions Q17 - 30
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-answersQ31-34.html">
+     Solutions Q31 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-answersQ35-39.html">
+     Solutions Q35 - 39
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-answersQ40-44.html">
+     Solutions Q40 - 44
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-answersQ45-50.html">
+     Solutions Q45 - 50
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-answersQ51-54.html">
+     Solutions Q51 - 54
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-answersQ55-58.html">
+     Solutions Q55 - 58
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-answersQ59-61.html">
+     Solutions Q59 - 61
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-8/matricesQM-intro.html">
+   8. Matrices in Quantum Mechanics
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-8/matricesQM-A.html">
+     Matrices in Quantum Mechanics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-8/matricesQM-Q1-7.html">
+     Questions 1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-8/matricesQM-B.html">
+     Basis sets and bra-ket algebra
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-8/matricesQM-Q8-12.html">
+     Questions 8 - 12
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-8/matricesQM-C.html">
+     Continuous basis sets
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-8/matricesQM-answers1-7.html">
+     Solutions Q1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-8/matricesQM-answers8-12.html">
+     Solutions Q8 - 12
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-9/Fourier-intro.html">
+   9. Fourier Series and Transforms.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-A-B.html">
+     Fourier series, Gibbs phenomenon, generalised series.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-questions-1-6.html">
+     Questions 1 - 6
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-C.html">
+     Fourier Transforms
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-questions-7-15.html">
+     Questions 7 - 15
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-D.html">
+     Convolution and Autocorrelation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-questions-16-21.html">
+     Questions 16 - 21
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-E.html">
+     Discrete Fourier  (DFT)  and Fast Fourier transforms (FFT)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-F.html">
+     The Hadamard Transform: Encoding and Decoding
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-answers-1-6.html">
+     Solutions Q 1 - 6
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-answers-7-15.html">
+     Solutions Q 7 - 15
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-answers-16-21.html">
+     Solutions Q 16 - 21
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-2D-Diffraction.html">
+     The Fourier transform in two dimensions: images and x-ray Diffraction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-tomography.html">
+     Computed Tomography
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="Diff-eqns-intro.html">
+   10. Differential Equations.
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="Diff-eqns-A.html">
+     Differential Equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Diff-eqns-Q1-23.html">
+     Questions 1 - 23
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Diff-eqns-B.html">
+     First order eqns &amp; Integrating factors. Second order eqns, Newtons laws, equations of motion.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Diff-eqns-C.html">
+     The ‘D’ operator.  Solving linear differential equations with constant coefficients
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Diff-eqns-D.html">
+     Simultaneous equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Diff-eqns-Q24-37.html">
+     Questions 24 - 37
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Diff-eqns-E.html">
+     Linear equations with variable coefficients
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Diff-eqns-F.html">
+     Partial Differential Equations, PDE
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     PDE examples continued
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Diff-eqns-answers-1-21.html">
+     Solutions Q1 - 21
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Diff-eqns-answers-22-37.html">
+     Solutions Q22 - 37
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-11/num-methods-intro.html">
+   11. Numerical Methods
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-A.html">
+     Numerical Methods
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-Q1-7.html">
+     Questions 1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-B.html">
+     Numerical solution of differential equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-Q8-12.html">
+     Questions 8 - 12
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-C.html">
+     Coupled equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-Q13-16.html">
+     Questions 13 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-D.html">
+     The phase plane, nullclines, and stable points
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-Q17-20.html">
+     Questions 17 - 20
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-E.html">
+     Reaction schemes with feedback
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-Q21-34.html">
+     Questions 21 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-F.html">
+     Boundary value problems.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-Q35-40.html">
+     Questions 35 - 40
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-answers1-7.html">
+     Solutions Q1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-answers8-12.html">
+     Solutions Q8 - 12
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-answers13-16.html">
+     Solutions Q13 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-answers17-20.html">
+     Solutions Q17 - 20
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-answers21-34.html">
+     Solutions Q21 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-answers35-40.html">
+     Solutions Q35 - 40
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-12/monte-carlo-intro.html">
+   12. Monte Carlo Methods
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+  <label for="toctree-checkbox-12">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-A.html">
+     Monte - Carlo Methods
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-Q1-6.html">
+     Questions 1 - 6
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-B.html">
+     Solving rate equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-Q7-10.html">
+     Questions 7 - 10
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-CC.html">
+     Monte Carlo Simulations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-C.html">
+     Energy transfer. Autocatalytic reaction and spreading of fires
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-Q11-17.html">
+     Questions 11 - 17
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-D.html">
+     The Metropolis algorithm
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-answers1-6.html">
+     Solutions Q1 - 6
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-answers7-10.html">
+     Solutions Q7 - 10
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-answers11-17.html">
+     Solutions Q11 - 17
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-13/analysis-intro.html">
+   13. Data Analysis
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+  <label for="toctree-checkbox-13">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-13/analysis-A.html">
+     Characterizing experimental data. Accuracy, precision, mean and standard deviation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-13/analysis-Q1-3.html">
+     Questions 1 - 3
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-13/analysis-B.html">
+     Modelling data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-13/analysis-Q4-9.html">
+     Questions 4 - 9
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-13/analysis-C.html">
+     Modelling data is simpler using matrices
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-13/analysis-Q10-11.html">
+     Questions 10 - 13
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-13/analysis-D.html">
+     Non-linear least squares. Least absolute deviation. Principal component analysis
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-13/analysis-answers1-11.html">
+     Solutions Q1 -11
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../chapter-1/chapter1-E.html">
+   SI units, Rounding, converting units &amp; Glossary.
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../references/References.html">
+   References
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../references/Python%20crib.html">
+   Appendix:  Some basic Python instructions with a few examples.
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/chapter-10/Diff-eqns-G.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/chapter-10/Diff-eqns-G.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   PDE examples continued
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ix-diffusion-across-an-interface-and-from-a-point">
+     <strong>
+      (ix) Diffusion across an interface and from a point
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#x-asymmetric-boundary-conditions-reaction-at-a-plane">
+     <strong>
+      (x) Asymmetric boundary conditions: reaction at a plane
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#xi-diffusion-into-or-out-of-a-sphere">
+     <strong>
+      (xi) Diffusion into or out of a sphere
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#xii-time-dependent-schroedinger-equation">
+     <strong>
+      (xii) Time-dependent Schroedinger equation
+     </strong>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-wave-equation">
+   9.3 The wave equation
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-fourier-transform-method">
+   10 The Fourier Transform method
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#i-the-airy-stokes-equation">
+     <strong>
+      (i) The Airy / Stokes equation
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ii-the-schroedinger-equation-for-a-particle-in-a-gravitational-potential-v-x-sim-x">
+     <strong>
+      (ii)  The Schroedinger equation for a particle in a gravitational potential:
+      <span class="math notranslate nohighlight">
+       \(V(x)\sim x\)
+      </span>
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#iii-time-dependent-schroedinger-equation-for-a-2d-square-well">
+     <strong>
+      (iii) Time dependent Schroedinger equation for a 2D square well
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#iv-diffusion-equation">
+     <strong>
+      (iv) Diffusion equation
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#transient-grating-experiments">
+     <strong>
+      Transient Grating Experiments
+     </strong>
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="pde-examples-continued">
+<h1>PDE examples continued<a class="headerlink" href="#pde-examples-continued" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import all python add-ons etc that will be needed later on</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">quad</span><span class="p">,</span><span class="n">odeint</span>
+<span class="n">init_printing</span><span class="p">()</span>                      <span class="c1"># allows printing of SymPy results in typeset maths format</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;font.size&#39;</span><span class="p">:</span> <span class="mi">14</span><span class="p">})</span>  <span class="c1"># set font size for plots</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="ix-diffusion-across-an-interface-and-from-a-point">
+<h2><strong>(ix) Diffusion across an interface and from a point</strong><a class="headerlink" href="#ix-diffusion-across-an-interface-and-from-a-point" title="Permalink to this headline">¶</a></h2>
+<p>Imagine that a very long, narrow tube is half filled with a dye solution and the other half contains pure solvent each half being separated by a partition. When partition is carefully removed, diffusion from either half into the other begins. The tube is so long (<span class="math notranslate nohighlight">\(x \to \infty\)</span>) that its ends do not affect the behaviour on an experimental time scale. Immediately on opening the partition the concentration at the interface is <span class="math notranslate nohighlight">\(c(x)= c_0\)</span> for <span class="math notranslate nohighlight">\(x \ge 0\)</span> and <span class="math notranslate nohighlight">\(c(x) = 0\)</span> for <span class="math notranslate nohighlight">\(x\lt 0\)</span> both conditions apply at <span class="math notranslate nohighlight">\(t = 0\)</span>. This initial condition is quite specific, and practical, but instead of keeping a constant value <span class="math notranslate nohighlight">\(c_0\)</span> when <span class="math notranslate nohighlight">\(x \ge 0\)</span> and <span class="math notranslate nohighlight">\(t = 0\)</span> the initial concentration can in general be a function of position, <span class="math notranslate nohighlight">\(f(x)\)</span> which may range over the whole range of <span class="math notranslate nohighlight">\(x\)</span>.</p>
+<p>To obtain a solution equation (52); <span class="math notranslate nohighlight">\(\displaystyle \frac{\partial^2c_x}{\partial x^2}=-c_xk^2\)</span> is solved in a general way using exponentials as</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle c_x=\alpha_ke^{ikx}+\beta_ke^{-ikx} \tag{57}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\alpha_k\)</span> and <span class="math notranslate nohighlight">\(\beta_k\)</span> are constants determined by the initial and boundary conditions. This solution may generally also be taken as</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle c_x=b_ke^{-ikx}\]</div>
+<p>if <span class="math notranslate nohighlight">\(k\)</span> is allowed to be positive or negative, the general solution can be written as the product of the time and spatial solutions and integrated,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle c=\int_{-\infty}^\infty b_ke^{-Dk^2t}e^{-ikx}dk \tag{58} \]</div>
+<p>The change into an integral, compared with the sum previously used (eqn. 55) is made because it is assumed that so many terms are needed in the summation it is equivalent to an integral. Using the initial condition that at <span class="math notranslate nohighlight">\(t\)</span> = 0 the concentration is <span class="math notranslate nohighlight">\(f(x)\)</span>, equation (58) produces</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle f(x)=\int_{-\infty}^\infty b_ke^{-ikx}dk\]</div>
+<p>and the constants <span class="math notranslate nohighlight">\(b_k\)</span> are found with the Fourier transform <span class="math notranslate nohighlight">\(\displaystyle b_k=\frac{1}{2\pi}\int_{-\infty}^\infty f(s)e^{iks}ds\)</span> where <span class="math notranslate nohighlight">\(s\)</span> is the integration variable. The complete solution is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle c=\frac{1}{2\pi}\int_{-\infty}^\infty \int_{-\infty}^\infty e^{-Dk^2t}e^{-ik(s-x)}dsdk\]</div>
+<p>Solving the integral in <span class="math notranslate nohighlight">\(k\)</span>, keeping <span class="math notranslate nohighlight">\(t\)</span> constant, gives the result for the concentration of the dye at position <span class="math notranslate nohighlight">\(x\)</span> and time <span class="math notranslate nohighlight">\(t\)</span> which is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle c(x,t)=\frac{1}{\sqrt{4\pi Dt}}\int_{-\infty}^\infty f(s)e^{-(s-x)^2/4DT}ds  \tag{59}\]</div>
+<p>where <span class="math notranslate nohighlight">\(f(s)\)</span> is the initial concentration profile. At zero time, this equation reduces to <span class="math notranslate nohighlight">\(f(x)\)</span>, the initial profile.</p>
+<p>We started with a step function in concentration as the initial condition. To use this means that <span class="math notranslate nohighlight">\(f(x) = c_0\)</span> when <span class="math notranslate nohighlight">\(x \ge\)</span> 0 and zero otherwise, and the last equation is changed by replacing <span class="math notranslate nohighlight">\(f(s)\)</span> by <span class="math notranslate nohighlight">\(c_0\)</span> and is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle c(x,t)=\frac{c_0}{\sqrt{4\pi Dt}}\int_{-\infty}^\infty e^{-(s-x)^2/4Dt}ds  \tag{60}\]</div>
+<p>because the function <span class="math notranslate nohighlight">\(f(x)\)</span> is zero at <span class="math notranslate nohighlight">\(x \lt 0\)</span> but no other conditions apply when <span class="math notranslate nohighlight">\(t \gt 0\)</span>. This integral cannot be evaluated in terms of a finite number of functions and must be calculated numerically as the <em>error function</em>. The error function is defined as</p>
+<div class="math notranslate nohighlight">
+\[erf(x)=\frac{2}{\sqrt{\pi}}\int_0^x e^{-s^2}ds\]</div>
+<p>and its value ranges from <span class="math notranslate nohighlight">\(0 \to 1\)</span>. It is also the area under fractions the normalised Gaussian or error curve. It is convenient to define also the complementary error function,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle erfc(x)=1-erf(x) = \frac{2}{\sqrt{\pi}}\int_x^\infty e^{-s^2}ds\]</div>
+<p>which with a transformation of variables has the form of our result. Notice that <span class="math notranslate nohighlight">\(x\)</span> appears as the argument of the function and as a limit in the integration. Letting <span class="math notranslate nohighlight">\(\displaystyle z=(s-x)/\sqrt{4Dt}\)</span> then <span class="math notranslate nohighlight">\(\displaystyle dz=ds/\sqrt{4Dt}\)</span> and</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle c(x,t)=\frac{c_0}{\sqrt{4\pi Dt}} \int_{s=0}^\infty e^{-(s-x)^2/4Dt}ds \\
+=\frac{c_0}{\sqrt{\pi} } \int_{-x/\sqrt{4Dt} }^\infty e^{-z^2}dz \\
+=\frac{c_0}{2}erfc\left( -\frac{x}{\sqrt{4Dt} } \right)\end{split}\]</div>
+<p>Some concentration profiles are shown in Fig. 27 at different values of the product <span class="math notranslate nohighlight">\(\displaystyle \sqrt{4Dt)}\)</span>, which has units of distance. The mean or average distance diffused in one dimension in time <span class="math notranslate nohighlight">\(t\)</span> is <span class="math notranslate nohighlight">\(\sqrt{2Dt}\)</span>. A typical diffusion coefficient for a small molecule in a normal solvent is <span class="math notranslate nohighlight">\(\approx 10^{-9}\,\mathrm{ m^2\, s^{-1}}\)</span>; if the mean distance diffused is a micron, i.e. <span class="math notranslate nohighlight">\(\sqrt{4Dt} = 10^{-6}\)</span> m then the time taken is  <span class="math notranslate nohighlight">\(t \approx 0.5\cdot 10^{-3}\)</span> s or half a millisecond. Proteins, typically, have diffusion coefficients <span class="math notranslate nohighlight">\(10\)</span> to <span class="math notranslate nohighlight">\(100\)</span> times smaller  say <span class="math notranslate nohighlight">\(10^{-11}\,\mathrm{ m^2\, s^{-1}}\)</span> and take correspondingly longer to diffuse. Diffusion is a very slow process indeed. In 3D the mean distance diffused is not much greater and is <span class="math notranslate nohighlight">\(\sqrt{6Dt}\)</span>.</p>
+<p><img alt="Drawing" src="../_images/diffeqn-fig27.png" /></p>
+<p>Fig. 27 Diffusion after a step change in concentration. The initial concentration is in the right hand portion of the plot and is shaded. The concentration vs. distance is shown at the times given assuming a diffusion coefficient similar to that of lysozyme, <span class="math notranslate nohighlight">\(D\)</span> = 11<span class="math notranslate nohighlight">\(\cdot\)</span> 10<sup>-2</sup> nm<sup>2</sup>ns<sup>-1</sup>. The black dots show the average distance diffused for each time except for the smallest.</p>
+<hr class="docutils" />
+<p>If the ‘source term’ <span class="math notranslate nohighlight">\(f(x)\)</span> is a delta function <span class="math notranslate nohighlight">\(\delta (x)\)</span>, then all the material is piled up at <span class="math notranslate nohighlight">\(x = 0\)</span> in the tube and the integral reduces to</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle c(x,t)=\frac{1}{\sqrt{4\pi Dt}} \int_{-\infty}^\infty \delta(s)e^{-(s-x)^2/4Dt}ds=\frac{1}{\sqrt{4\pi Dt}}e^{-x^2/4Dt}\]</div>
+<p>because <span class="math notranslate nohighlight">\(\delta(0) = 1\)</span> and is otherwise zero. This function is a Gaussian or bell-shaped curve (see Chapter 12.3.3.) as material spreads out from the initial point on the line, rather as illustrated in fig 25.</p>
+<p>The general solution (59) can now be thought of as the convolution of a function <span class="math notranslate nohighlight">\(f(x)\)</span> with a impulse <span class="math notranslate nohighlight">\(\delta\)</span> function in much the same way as described in Chapter 9.7 where fluorescence, equivalent to <span class="math notranslate nohighlight">\(f(x)\)</span>, is stimulated by a laser pulse which is equivalent to the exponential term in (59).</p>
+<p>One important application of equations similar to, but more complex than those described here is in the technique known as FRAP, which stands for <em>fluorescence recovery after photo-bleaching</em>. In this technique, a dye molecule is introduced into a biological membrane and then an intense laser is used to bleach the dye rapidly in the small circular spot of the focused laser. A second weaker laser stimulates the dye’s fluorescence and the intensity of this is measured as the dye molecules diffuse into the bleached area. The rate at which the fluorescence recovers can be used to determine the diffusion coefficient of the dye molecules or proteins to which the dye may be attached. Should the protein contains an intrinsic chromophore, as does the green fluorescent protein (GFP), this can be used directly.</p>
+</div>
+<div class="section" id="x-asymmetric-boundary-conditions-reaction-at-a-plane">
+<h2><strong>(x) Asymmetric boundary conditions: reaction at a plane</strong><a class="headerlink" href="#x-asymmetric-boundary-conditions-reaction-at-a-plane" title="Permalink to this headline">¶</a></h2>
+<p>In some problems, asymmetric boundary conditions apply. One such case is a (semi) infinite tube that is closed at one end and filled with a solution at a concentration of <span class="math notranslate nohighlight">\(c_0\)</span>. Diffusion is caused by the fast removal of material at the closed end, for instance by an electrode reaction that causes precipitation, see Fig. 28,28a. The concentration at <span class="math notranslate nohighlight">\(t\)</span> and <span class="math notranslate nohighlight">\(x\)</span> is found using the initial conditions</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle t = 0,\quad x \gt 0, \quad c = c_0\]</div>
+<p>which means that initially the concentration is <span class="math notranslate nohighlight">\(c_0\)</span> everywhere, and the boundary conditions are</p>
+<div class="math notranslate nohighlight">
+\[t=0,\quad x\to \infty, \quad c=c_0 \qquad \text{ and } \qquad t \gt 0, \quad x=0, \quad c=0\]</div>
+<p>Starting with the diffusion equation <span class="math notranslate nohighlight">\(\displaystyle \frac{\partial c}{\partial t}=D\frac{\partial^2 c}{\partial x^2}\)</span>, the variables are separated and the general solution obtained as was equation (57),</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle c(x,t)=\int_{-\infty}^{\infty} \alpha_ke^{-Dk^2t}e^{-ikx}+\beta+ke^{-Dk^2t}e^{ikx}dk\]</div>
+<p><img alt="Drawing" src="../_images/diffeqn-fig28a.png" /></p>
+<p>fig 28. Schematic of transient molecular concentration caused by precipitation in a tube.</p>
+<hr class="docutils" />
+<p>The general solution has this form because there are both initial and boundary conditions to satisfy. The initial condition is that at <span class="math notranslate nohighlight">\(t = 0\)</span> the concentration is <span class="math notranslate nohighlight">\(c_0\)</span> when <span class="math notranslate nohighlight">\(x \gt 0\)</span> and this gives</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle c_0=\int_{-\infty}^\infty \alpha e^{-ikx}+\beta_k e^{ikx}dk\]</div>
+<p>The boundary condition, <span class="math notranslate nohighlight">\(c = 0\)</span> at all times at <em>x</em> = 0 is used to find the constants <span class="math notranslate nohighlight">\(\alpha\)</span> and <span class="math notranslate nohighlight">\(\beta\)</span> . These conditions produce</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \int_{-\infty}^\infty \alpha_ke^{-Dk^2t}+\beta_k e^{-Dk^2t}dk=0\]</div>
+<p>and because <span class="math notranslate nohighlight">\(t\)</span> is a constant in this expression, the exponentials cancel out. It then follows that <span class="math notranslate nohighlight">\(\alpha_k=-\beta_k\)</span> and therefore</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle  c_0=\alpha_k\int_{-\infty}^\infty e^{-ikx}- e^{ikx}dk\]</div>
+<p>The constants <span class="math notranslate nohighlight">\(\alpha_k\)</span> can be found by Fourier transforming this equation to give</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \alpha_k=\frac{c_0}{2\pi}\int_{-\infty}^\infty e^{-ikx}- e^{ikx}dx\]</div>
+<p>Replacing <span class="math notranslate nohighlight">\(\alpha_k\)</span> into the general solution and changing the (dummy) integration variable in distance from <span class="math notranslate nohighlight">\(x\)</span> to <span class="math notranslate nohighlight">\(s\)</span> for clarity gives</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle c(x,t)=\frac{c_0}{2\pi}\int_{0}^\infty \int_{-\infty}^\infty e^{-Dk^2t}\left(e^{-ik(s+x)}-e^{ik(s-x)}\right) dkds\]</div>
+<p>This complicated integration produces the result</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{c}{c_0}=\text{erf}\left(\frac{x}{\sqrt{4Dt}}  \right) \]</div>
+<p>The concentration <span class="math notranslate nohighlight">\(c\)</span> vs <span class="math notranslate nohighlight">\(x\)</span> is plotted in Fig. 28 at several times with <span class="math notranslate nohighlight">\(D = 10^{-9}\,\mathrm{ m^2\, s^{-1}}\)</span> and as <span class="math notranslate nohighlight">\(c\)</span> vs. <span class="math notranslate nohighlight">\(t\)</span> at several distances. The flux, which is the concentration gradient at any point <span class="math notranslate nohighlight">\(x\)</span> at time <span class="math notranslate nohighlight">\(t\)</span>, is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{\partial c}{\partial x}=\frac{c_0}{\sqrt{\pi Dt}}e^{-x^2/(4Dt)}\]</div>
+<p>and this will tend to zero at <span class="math notranslate nohighlight">\(t \to \infty\)</span>.</p>
+<p><img alt="Drawing" src="../_images/diffeqn-fig28.png" /></p>
+<p>Fig. 28a Diffusion profiles where the concentration is zero at <span class="math notranslate nohighlight">\(x = 0\)</span>, such as may pertain on an electrode. Left: Concentration vs distance at the different times shown (in seconds). Right: Concentration vs. time at different distances (in metres). Note the logarithmic time scale. The diffusion coefficient used is <span class="math notranslate nohighlight">\(D = 10^{-9}\,\mathrm{ m^2\, s^{-1}}\)</span>.</p>
+<hr class="docutils" />
+<p>Diffusion to a plane can occur in an electrochemical cell. Initially, suppose that the concentration of oxidant <span class="math notranslate nohighlight">\(O_X\)</span> is <span class="math notranslate nohighlight">\(c_0\)</span> everywhere, and reductant <span class="math notranslate nohighlight">\(R_d\)</span> is zero. The potential is then suddenly changed and the reaction starts. The oxidant begins to be reduced at the electrode. The concentration vs. distance is shown in Fig. 28 (left) and as time increases the amount of oxidant decreases away from the electrode. For example, after <span class="math notranslate nohighlight">\(5000\)</span> s it is only about <span class="math notranslate nohighlight">\(40\)</span>% of its initial value, <span class="math notranslate nohighlight">\(2\)</span> mm from the electrode. The reductant concentration shows the opposite trend since at all times oxidant + reductant = <span class="math notranslate nohighlight">\(c_0\)</span>. This argument assumes that the oxidant and reductant have the same diffusion coefficient. If the reaction <span class="math notranslate nohighlight">\(O_X + ne \leftrightharpoons R_d\)</span> is reversible, then Nernst’s equation applies at the electrode surface and is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle E=E^{\mathrm{O}} -\frac{RT}{nF}\ln\left(\frac{R_d}{O_X}  \right) \]</div>
+<p>where <span class="math notranslate nohighlight">\(F\)</span> is the Faraday constant and <span class="math notranslate nohighlight">\(n\)</span> the number of electrons transferred in the reaction. For different values of <span class="math notranslate nohighlight">\(\Delta E = E - E^O\)</span> the ratio <span class="math notranslate nohighlight">\(s = O_X/R_d\)</span> can be plotted vs. distance from the electrodes. The expression <span class="math notranslate nohighlight">\(f_R = (1 - c(x, t))/(1 + s)\)</span> plots the fraction as reductant and <span class="math notranslate nohighlight">\(f_{O_X} = (s + c(x, t))/(1 + s)\)</span> the fraction oxidant, their sum being one. At oxidative, or positive, potentials the ratio <span class="math notranslate nohighlight">\(O_X/R_d\)</span> is large, and the electrode remains almost in equilibrium with the <span class="math notranslate nohighlight">\(O_X\)</span> concentration, being almost <span class="math notranslate nohighlight">\(c_0\)</span>. If the potential is negative, <span class="math notranslate nohighlight">\(O_X/R_d \lt 1\)</span>, and almost all of the oxidant in contact with the electrode reacts, eventually the region of reduced material expands away from the electrode, Fig. 29. The current measured in the electrochemical cell is initially large because the slope of concentration with distance is large, this is the flux, and the current is proportional to the flux. At longer times, the slope is smaller at the electrode, hence the flux is reduced and so is the current.</p>
+<p><img alt="Drawing" src="../_images/diffeqn-fig29.png" /></p>
+<p>Fig. 29 Left: Profile of fractional oxidant (solid line) and reductant (dashed) after <span class="math notranslate nohighlight">\(500\)</span> seconds vs. distance (m) away from an electrode at different ratios of <span class="math notranslate nohighlight">\(s = O_X/R_d\)</span>, hence different potentials. The potentials are <span class="math notranslate nohighlight">\(\Delta E = 0\)</span> mV, <span class="math notranslate nohighlight">\(s = 1,\, \Delta E = 59.5\)</span> mV, <span class="math notranslate nohighlight">\(s = 10\)</span>, and <span class="math notranslate nohighlight">\(\Delta E = -41.6\)</span> mV, <span class="math notranslate nohighlight">\(s = 1/5\)</span>, for <span class="math notranslate nohighlight">\(n = 1\)</span> and at <span class="math notranslate nohighlight">\(300\)</span> K. At longer times, the curves reach either zero or <span class="math notranslate nohighlight">\(c_0\)</span> as <span class="math notranslate nohighlight">\(x\)</span> increases. Right. The flux <span class="math notranslate nohighlight">\(\partial c/\partial x\)</span> is shown at different <span class="math notranslate nohighlight">\(x\)</span> (metres) vs. time (s) and shows how the current in a cell rapidly increases to some large value before slowly fading away.</p>
+</div>
+<div class="section" id="xi-diffusion-into-or-out-of-a-sphere">
+<h2><strong>(xi) Diffusion into or out of a sphere</strong><a class="headerlink" href="#xi-diffusion-into-or-out-of-a-sphere" title="Permalink to this headline">¶</a></h2>
+<p>When a substance diffuses into or out of a uniform sphere, the angular coordinates can normally be ignored as diffusion can occur equally well from any place on the sphere’s surface. Only the radial coordinate is important and then the diffusion equation is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{\partial c }{\partial t}=D\left( \frac{\partial^2 c}{\partial r^2}+\frac{2}{r}\frac{\partial c}{\partial r} \right)\]</div>
+<p>where <span class="math notranslate nohighlight">\(c\)</span> is concentration and <span class="math notranslate nohighlight">\(r\)</span> is the radial distance from the centre. Sometimes this equation is written as</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{\partial c }{\partial t} =\frac{1}{r^2}\frac{\partial}{\partial r}\left( Dr^2\frac{2}{r}\frac{\partial c}{\partial r} \right)\]</div>
+<p>The equation appears to be one of great complexity but can be solved with the substitution u = cr, which produces the familiar diffusion equation</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{\partial u}{\partial t}=D\frac{\partial^2 u}{\partial r^2} \]</div>
+<p>which is solved by separating variables and applying the boundary and initial conditions in the normal way. If the sphere has a radius <span class="math notranslate nohighlight">\(R\)</span>, then <span class="math notranslate nohighlight">\(0 \lt r \le R\)</span>, and we will assume that the concentration at the sphere’s surface is always held constant at <span class="math notranslate nohighlight">\(c_s\)</span>. The boundary conditions are</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle  t \gt 0,\quad  u=0 \;\mathrm{at} \; r=0, \; \mathrm{and} \;  u=Rc_s \;  \mathrm{at}\; r=R \]</div>
+<p>and the initial condition is <span class="math notranslate nohighlight">\(t = 0,\, u = rf(r)\)</span>, where <span class="math notranslate nohighlight">\(f(r)\)</span> is a function describing the initial concentration profile inside the sphere. Often this is taken to be constant. This problem is now very similar to that of equation (54), but the boundary conditions are slightly different, one condition is that the concentration is zero the other that it is a constant. It is these conditions that produce a very complicated solution that is the sum of the product of exponential and sine terms. The result is given by Crank (1979) and Carslaw &amp; Jaeger (1959), the latter also giving a detailed derivation.</p>
+</div>
+<div class="section" id="xii-time-dependent-schroedinger-equation">
+<h2><strong>(xii) Time-dependent Schroedinger equation</strong><a class="headerlink" href="#xii-time-dependent-schroedinger-equation" title="Permalink to this headline">¶</a></h2>
+<p>The time-dependent Schroedinger equation is a partial differential equation that can be solved by separating the variables. The equation is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle -\frac{\hbar^2}{2m}\frac{\partial \psi}{\partial x^2} + V(x)\psi=i\hbar\frac{\partial \phi}{\partial t} \tag{61}\]</div>
+<p>and the wavefunction is a function of both time <span class="math notranslate nohighlight">\(t\)</span> and position <span class="math notranslate nohighlight">\(x\)</span>. As an example, suppose that a particle has kinetic energy <span class="math notranslate nohighlight">\(E\)</span> but is free of any electric, magnetic, or gravitational fields; therefore <span class="math notranslate nohighlight">\(V(x) = 0\)</span>. There is no expression in both <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(t\)</span>, so separation of the wavefunction into the product <span class="math notranslate nohighlight">\(\displaystyle \psi(x, t) = \varphi(x)u(t)\)</span> is permitted and this allows two differential equations to be formed by substituting into
+equation (61). This gives</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle -\frac{\hbar^2}{2m}\frac{1}{\varphi}\frac{\partial \varphi}{\partial x^2} =i\hbar\frac{\partial \phi}{\partial t} \]</div>
+<p>and both terms must be equal to the same constant. The left-hand side of this equation is the Hamiltonian operator for the kinetic energy only, as <span class="math notranslate nohighlight">\(V\)</span> = 0, and this is equal the energy <span class="math notranslate nohighlight">\(E = \hbar\omega\)</span> . The energy equation becomes</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{\partial^2 \varphi}{\partial x^2}+\frac{2m\omega}{\hbar}\varphi=0, \quad \text{or} \quad \frac{\partial^2 \varphi}{\partial x^2}+k^2\varphi=0\]</div>
+<p>where <span class="math notranslate nohighlight">\(k\)</span> is a positive constant <span class="math notranslate nohighlight">\(\displaystyle k^2=\frac{2m\omega}{\hbar}\)</span> and the solution to this equation is the standard result,</p>
+<div class="math notranslate nohighlight">
+\[\varphi = Ae^{ikx}+Be^{-ikx}\]</div>
+<p>where <span class="math notranslate nohighlight">\(A\)</span> and $B4 are constants depending on the initial or boundary conditions.</p>
+<p>The time-dependent part is solved with <span class="math notranslate nohighlight">\(\displaystyle \frac{i\hbar}{u}\frac{\partial u}{\partial t}=\hbar\omega\)</span> from which <span class="math notranslate nohighlight">\(\displaystyle u(t) = e^{−i\omega t}\)</span>. The constants of integration need not be added here because these have
+been included in <span class="math notranslate nohighlight">\(\varphi\)</span>. The complete wavefunction is therefore</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \psi = Ae^{i(kx−ωt)} + Be^{−i(kx+ωt)}\]</div>
+<p>which is the equation of two plane waves travelling in opposite directions. The wave’s phase velocity is <span class="math notranslate nohighlight">\(v = \omega/k\)</span>. The probability of being position <span class="math notranslate nohighlight">\(x\)</span> is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \psi^*\psi = |A|^2 + |B|^2 + AB^*e^{2ikx} + BA^*e^{−2ikx}\]</div>
+<p>which demonstrates that the particle shows interference and is thus localized periodically. If the particle does not have any boundary condition imposed on it either <span class="math notranslate nohighlight">\(A\)</span> or <span class="math notranslate nohighlight">\(B\)</span> be can arbitrarily set to zero and then the particle travels either to the right or left and the wavefunction is <span class="math notranslate nohighlight">\(\displaystyle \psi = Ce^{i(kx−ωt)}\)</span>, where <span class="math notranslate nohighlight">\(\displaystyle \psi^*\psi = |C|^2\)</span> and <span class="math notranslate nohighlight">\(\sqrt{C}\)</span> is thus the normalization.</p>
+<p>The particle’s energy is <span class="math notranslate nohighlight">\(E = \hbar\omega\)</span> or <span class="math notranslate nohighlight">\(\displaystyle E = k^2\frac{\hbar^2}{2m}\)</span>, because momentum is <span class="math notranslate nohighlight">\(p = k\hbar \)</span> and we have defined <span class="math notranslate nohighlight">\(\displaystyle k^2 = \frac{2m\omega}{\hbar} \)</span>. The classical velocity of the particle is <span class="math notranslate nohighlight">\(v = p/m\)</span> or <span class="math notranslate nohighlight">\(v = k\hbar/m \)</span> and this is identical to the group velocity, <span class="math notranslate nohighlight">\(v_g = d\omega/dk\)</span>. The phase velocity is, by definition, <span class="math notranslate nohighlight">\(v_p = \omega/k\)</span>, and this velocity is also <span class="math notranslate nohighlight">\(E/p\)</span> because kinetic energy <span class="math notranslate nohighlight">\(E = p^2/2m\)</span>. The phase velocity is therefore <span class="math notranslate nohighlight">\(v/2\)</span> and half the classical and group velocity. See Flugge (1999) for more details of this problem and many other interesting one-dimensional problems.</p>
+</div>
+</div>
+<div class="section" id="the-wave-equation">
+<h1>9.3 The wave equation<a class="headerlink" href="#the-wave-equation" title="Permalink to this headline">¶</a></h1>
+<p>A <em>travelling wave</em> can be imagined as a disturbance that moves both in space and time. Its general form is <span class="math notranslate nohighlight">\(u(x, t) = f (x - ct)\)</span> where <span class="math notranslate nohighlight">\(f\)</span> is a function of one variable (Knobel 2000). The wave moves with a  speed <span class="math notranslate nohighlight">\(c\)</span>. The profile <span class="math notranslate nohighlight">\(f\)</span> of the travelling wave remains the same as time passes; one of many travelling waves is <span class="math notranslate nohighlight">\(\displaystyle y = e^{-(x-ct)^2}\)</span>.</p>
+<p>A <em>standing wave</em> varies in time and, although it appears to be fixed in space, it is the sum of two travelling waves moving in opposite directions. A taut wire when plucked will produce waves with the displacement depending upon its position <span class="math notranslate nohighlight">\(x\)</span> along the wire and on time <span class="math notranslate nohighlight">\(t\)</span>. The vibrational frequency of such a wire is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle v_n=\frac{n}{2L}\sqrt{\frac{T}{\sigma}}\]</div>
+<p>where <span class="math notranslate nohighlight">\(n \ge 1\)</span> defines the <em>normal mode</em> and is an integer. The length of the wire is <span class="math notranslate nohighlight">\(L\)</span> meters, tension <span class="math notranslate nohighlight">\(T\)</span> newton and density <span class="math notranslate nohighlight">\(\sigma\)</span> g/m.</p>
+<p>Plucking a <span class="math notranslate nohighlight">\(0.5\)</span> m long steel guitar string of density <span class="math notranslate nohighlight">\(\sigma = 0.5\)</span> g/m, with an applied force called tension <span class="math notranslate nohighlight">\(T\)</span> of <span class="math notranslate nohighlight">\(80\)</span> N will produce sine waves with frequencies of <span class="math notranslate nohighlight">\(n\)</span> multiples of <span class="math notranslate nohighlight">\(400\)</span> Hz. Sine waves are produced because the displacement of the guitar string is zero at both ends. Tuning the string to the required frequency is relatively easy as this is proportional to the square root of the tension. It is possible to appreciate why strings of different densities and lengths are used to cover the musical scales. (Overtones are also produced and it is these rather than the fundamental frequencies that give instruments their unique sounds).</p>
+<p>The general wave equation is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle  \frac{\partial^2 u }{\partial t^2}=c^2\frac{\partial^2 u}{\partial x^2}\]</div>
+<p>which has displacement <span class="math notranslate nohighlight">\(u\)</span> at time <span class="math notranslate nohighlight">\(t\)</span> and position <span class="math notranslate nohighlight">\(x\)</span>. It is interesting to compare this with the diffusion equation which has only the first derivative with respect to time.</p>
+<p>One general solution of the wave equation was indicated in the introduction. Here we solve this equation by separating variables in exactly the same manner as for the diffusion and other partial differential equations. The separation has the form <span class="math notranslate nohighlight">\(u(x, t) = w(t)v(x)\)</span> and dividing both sides by <span class="math notranslate nohighlight">\(u\)</span> gives</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle  \frac{1}{w}\frac{\partial^2 w }{\partial t^2}=\frac{c^2}{v}\frac{\partial^2 v}{\partial x^2} =k^2\]</div>
+<p>where <span class="math notranslate nohighlight">\(k^2\)</span> is the separation constant and different solutions are obtained depending on whether <span class="math notranslate nohighlight">\(k^2\)</span> is zero, positive or negative. The solutions are readily found; when <span class="math notranslate nohighlight">\(k = 0\)</span>, then <span class="math notranslate nohighlight">\(\displaystyle \frac{\partial^2 w}{\partial t^2}=0,\;\frac{\partial^2 v}{\partial x^2}=0 \)</span>. Integrating twice produces <span class="math notranslate nohighlight">\(w = A + Bt,\;t=C+Dx\)</span> where <span class="math notranslate nohighlight">\(A,\; B, \;C,\; D\)</span>, are constants determined by the initial and boundary conditions.</p>
+<p>The standing wave solution is <span class="math notranslate nohighlight">\(u = (A + Bt)(C + Dx)\)</span>.</p>
+<p>If <span class="math notranslate nohighlight">\(k^2 \gt 0\)</span> then the solutions are found from</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{\partial ^2 w}{\partial t^2}=k^2w,\quad \frac{\partial^2 v}{\partial x^2}=\left( \frac{k}{c} \right)^2v\]</div>
+<p>and which produce</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle u=\left(Ae^{-kt}+Be^{kt}  \right) \left(Ce^{-kx/c}+De^{kx/c}  \right) \]</div>
+<p>When <span class="math notranslate nohighlight">\(k^2\)</span> is changed to <span class="math notranslate nohighlight">\(-k^2\)</span>, the solutions are</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle u = \big(A\sin(kt)  +B\cos(kt)\big)\big(C\sin(kx/c)+D\cos(kx/c)\big)  \tag{62}\]</div>
+<p>Which of these general solutions should be used depends on the initial and boundary conditions, and just as with other partial differential equations, linear combinations of these solutions may form the standing wave solution to a particular problem.</p>
+<p>Returning to the guitar string, suppose that it has length <span class="math notranslate nohighlight">\(L\)</span> and as its ends are fixed in place; this determines two boundary conditions, which are</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle u(0, t) = 0;\quad u(L, t) = 0\]</div>
+<p>However, although the initial displacement or velocity of the string is not yet defined these partial boundary conditions will only permit some solutions. At one end of the string, the condition is <span class="math notranslate nohighlight">\(u(0, t) = 0\)</span>; therefore, <span class="math notranslate nohighlight">\(u(0, t) = w(t)v(0) = 0\)</span>, which means that either <span class="math notranslate nohighlight">\(v(0)\)</span> or <span class="math notranslate nohighlight">\(w(t)\)</span> must be zero for all <span class="math notranslate nohighlight">\(t\)</span>. A wave that does not vary in time is not considered to be a standing wave, and this means that <span class="math notranslate nohighlight">\(v(0) = 0\)</span> is a boundary condition. Similar reasoning with <span class="math notranslate nohighlight">\(u(L, t) = 0\)</span> indicates that the standing wave must satisfy</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle v(0) = 0; \quad v(L) = 0\]</div>
+<p>The only solution satisfying these two conditions is the sine/cosine solution (62). In this solution, only <span class="math notranslate nohighlight">\(\sin(kx/c)\)</span> is zero when <span class="math notranslate nohighlight">\(x = 0\)</span>, and <span class="math notranslate nohighlight">\(\sin(kL/c)\)</span> can be zero when <span class="math notranslate nohighlight">\(x = L\)</span> depending on the value of <span class="math notranslate nohighlight">\(k\)</span>. Picking a value <span class="math notranslate nohighlight">\(k = n\pi c/L\)</span> where <span class="math notranslate nohighlight">\(n\)</span> is an integer satisfies this condition making the general solution</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle u = C\left(A\sin\left( \frac{n\pi ct}{L}\right) + B \cos\left( \frac{n\pi ct}{L}\right)\right) \sin\left( \frac{n\pi x}{L}\right) \tag{63}\]</div>
+<p>This has the form of a standing wave as the amplitude of the <span class="math notranslate nohighlight">\(x\)</span> wave is changed in time by the term in square brackets. The different integer values of <span class="math notranslate nohighlight">\(n \gt 0\)</span> produce different normal modes of the vibrating string. The fundamental, or first harmonic, has <span class="math notranslate nohighlight">\(n = 1\)</span>; the second harmonic or first overtone <span class="math notranslate nohighlight">\(n = 2\)</span>, and so forth. Any particularly complicated vibration that is produced when a string is struck or plucked is always a linear combination of these normal modes, because these modes are the only elementary vibrations present.</p>
+<p>Suppose that the initial amplitude and velocity of the guitar string are defined by some new initial conditions. If the string is plucked, just before it is released it has some particular shape; this is defined as <span class="math notranslate nohighlight">\(f (x)\)</span>, but can be defined more precisely later on. Also, supposing that all points on the string are stationary at <span class="math notranslate nohighlight">\(t = 0\)</span>, the new conditions will therefore be</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle u(x, 0) = f (x);\quad \partial u(x, t)/\partial t = 0\]</div>
+<p>As this time derivative is zero at time zero, the sine term in <span class="math notranslate nohighlight">\(t\)</span> in the general solution must be zero, because its time derivative is a cosine which is not zero at <span class="math notranslate nohighlight">\(t = 0\)</span>. The general solution is therefore</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle u=\sum_{n=1}^\infty b_n\cos\left(\frac{n\pi ct}{L}  \right)\sin\left(\frac{n\pi x}{L}  \right)\]</div>
+<p>where it is assumed that it will be necessary to form a linear combination of solutions, hence the summation. The coefficient <span class="math notranslate nohighlight">\(b_n\)</span> are found as in other examples by a Fourier series, since initially</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle f(x)=\sum_{n=1}^\infty b_n\sin\left(\frac{n\pi x}{L}\right)\]</div>
+<p>and therefore</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle b_n=\frac{2}{L}\int_0^L f(x)\sin\left(\frac{n\pi x}{L}  \right)dx\]</div>
+<p>If the initial displacement has the form <span class="math notranslate nohighlight">\(\displaystyle f(x) = e^{-a|2x-L|} -e^{-aL}\)</span>, which is peaked at the centre of the string, the solution is found by separating the integration into two parts to overcome the absolute value in the integral. The first part is from <span class="math notranslate nohighlight">\(0 \to L/2\)</span>, and the second from <span class="math notranslate nohighlight">\(L/2 \to L\)</span>. If the guitar string’s length <span class="math notranslate nohighlight">\(L\)</span> = 1/2 m, which has been calculated to have a fundamental frequency of <span class="math notranslate nohighlight">\(\nu = 400\)</span> Hz, the wave velocity is <span class="math notranslate nohighlight">\(c = \lambda\nu\)</span> which is <span class="math notranslate nohighlight">\(100\,\mathrm{ m s^{-1}}\)</span> because the wavelength is <span class="math notranslate nohighlight">\(L/2\)</span>.</p>
+<p><img alt="Drawing" src="../_images/diffeqn-fig30.png" /></p>
+<p>Fig. 30. Waves formed by plucking a wire in its centre showing displacement (greatly exaggerated in amplitude) at different times as fractions of the period <span class="math notranslate nohighlight">\(T\)</span>. The arrows show how the wave appears as two travelling waves moving in opposite directions.The dashed curve next to <span class="math notranslate nohighlight">\(T\)</span> = 0 shows the initial function <span class="math notranslate nohighlight">\(f(x)\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># calculation of wave profile. You can &#39;prettyfy&#39; the plot as needed.</span>
+<span class="c1"># quad(...) is the numerical integrator</span>
+
+<span class="n">f</span>  <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="nb">abs</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="o">-</span><span class="n">L</span><span class="p">)</span><span class="o">*</span><span class="mi">5</span><span class="p">)</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">L</span><span class="o">*</span><span class="mi">5</span><span class="p">)</span>  <span class="c1"># initial function of plucked string</span>
+
+<span class="n">f01</span><span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span><span class="n">n</span> <span class="p">:</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">n</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">x</span><span class="o">/</span><span class="n">L</span><span class="p">)</span>   
+<span class="n">b</span>  <span class="o">=</span> <span class="k">lambda</span> <span class="n">n</span> <span class="p">:</span> <span class="p">(</span><span class="mi">2</span><span class="o">/</span><span class="n">L</span><span class="p">)</span><span class="o">*</span><span class="n">quad</span><span class="p">(</span> <span class="n">f01</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">L</span><span class="p">,</span><span class="n">args</span><span class="o">=</span><span class="n">n</span> <span class="p">)[</span><span class="mi">0</span><span class="p">]</span>      <span class="c1">#[0] means get just answer not error as well</span>
+
+<span class="n">u</span>  <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span><span class="n">t</span><span class="p">,</span> <span class="n">maxn</span> <span class="p">:</span> <span class="nb">sum</span><span class="p">(</span> <span class="p">[</span>  <span class="n">b</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">n</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">c</span><span class="o">*</span><span class="n">t</span><span class="o">/</span><span class="n">L</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">n</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">x</span><span class="o">/</span><span class="n">L</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">nmax</span><span class="p">)</span> <span class="p">]</span> <span class="p">)</span>
+
+<span class="n">L</span>  <span class="o">=</span>   <span class="mf">0.5</span>                     <span class="c1"># string length</span>
+<span class="n">c</span>  <span class="o">=</span>   <span class="mf">100.0</span>                   <span class="c1"># wave speed</span>
+<span class="n">T</span>  <span class="o">=</span>   <span class="mf">2.0</span><span class="o">*</span><span class="n">L</span><span class="o">/</span><span class="n">c</span>                 <span class="c1"># period</span>
+<span class="n">nmax</span> <span class="o">=</span> <span class="mi">20</span>                      <span class="c1"># sum to 20 terms</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">L</span><span class="p">,</span><span class="mi">200</span><span class="p">)</span>       <span class="c1"># define x values to do calculation over.</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">T</span><span class="o">/</span><span class="mi">12</span>                       <span class="c1"># choose time to plot curve</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span> <span class="n">x</span><span class="p">,</span> <span class="n">u</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">t</span><span class="p">,</span><span class="n">nmax</span><span class="p">),</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span> <span class="p">)</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">T</span><span class="o">/</span><span class="mi">2</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span> <span class="n">x</span><span class="p">,</span> <span class="n">u</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">t</span><span class="p">,</span><span class="n">nmax</span><span class="p">),</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span> <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;grey&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Diff-eqns-G_5_01.png" src="../_images/Diff-eqns-G_5_01.png" />
+</div>
+</div>
+<p>The figure shows the profile of the string at different times with twenty terms added in the series; (<span class="math notranslate nohighlight">\(\mathtt{nmax = 20}\)</span>). The displacement is clearly greatly exaggerated compared to the true value. It is clear that the wave is composed of waves moving in opposite directions as can be seen by the way that the peaks of the wave move with time in fig 30.</p>
+<p>In the case when the initial velocity is not zero but the displacement is zero, the initial conditions will be</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle  u(x, 0) = 0,\quad \partial u(x, t)/\partial t = f (x)\]</div>
+<p>Notice that the initial velocity is a function of position; i.e. this describes the initial velocity at each point along the wire. As the velocity is not zero, the sine term containing time in the general equation (63) is now used, as its derivative is a cosine which is not zero at <span class="math notranslate nohighlight">\(t = 0\)</span>. The general term is found by differentiating the general solution giving</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{\partial u}{\partial t}=\frac{n\pi c}{L}\sin\left( \frac{n\pi ct}{L}\right)\sin\left(\frac{n\pi x}{L} \right)=f(x)\]</div>
+<p>The coefficients are now <span class="math notranslate nohighlight">\(\displaystyle b_n=\frac{2}{L}\frac{L}{n\pi c}\int_0^L f(x)\sin\left( \frac{n\pi x}{L} \right)dx\)</span> and the general solution is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle  u =\sum_{n=1}^\infty b_n\sin\left( \frac{n\pi ct}{L}\right)\sin\left(\frac{n\pi x}{L} \right) \tag{64}\]</div>
+<p>As the initial displacement is zero, but the velocity is not zero, plotting the displacement with time shows that it initially increases; which is the opposite behaviour to that observed in Fig. 30.</p>
+<p>If both the displacement and velocity are some function of <span class="math notranslate nohighlight">\(x\)</span>, then both the sine and cosine terms containing time appear in the general solution.</p>
+</div>
+<div class="section" id="the-fourier-transform-method">
+<h1>10 The Fourier Transform method<a class="headerlink" href="#the-fourier-transform-method" title="Permalink to this headline">¶</a></h1>
+<p>Fourier transforming a differential equation, such as the Schroedinger or diffusion equations often leads to a simpler equation in transformed space and one that can be solved easily. To get at the complete solution this equation has to be transformed back into ‘real space’ and even though this is now only involves an integral this can sometimes be tricky. If an analytic solution is not possible a numerical transform can be used.</p>
+<p>The fourier transforms are described in detail in chapter 9 and are defined as</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle  g(k) = \frac{1}{\sqrt{2\pi}}\int_{-\infty}^\infty f(x)e^{-ikx}dx \quad\text{or}\quad F(f(x))=g(k)\quad\text{ forward transform}  \tag{9-23a}\]</div>
+<div class="math notranslate nohighlight">
+\[\displaystyle  f(x) = \frac{1}{\sqrt{2\pi}}\int_{-\infty}^\infty g(k)e^{+ikx}dk \quad\text{or}\quad F^{-1}(g(k))=f(x)\quad\text{ reverse transform}\tag{9-23b}\]</div>
+<p>There are two particular transforms that are very useful in this context and these are of a product <span class="math notranslate nohighlight">\(xy\)</span> and the derivative <span class="math notranslate nohighlight">\(F(df(x)/dt)\)</span>. These are  derived in chapter 9. (Fourier transforms).</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle  F\left(\frac{d}{dx}f(x)\right) = \int_{-\infty}^{\infty}f(x) e^{-ixk}dk = ik\,g(k),
+\qquad  F\left(\frac{d^2}{dx^2}f(x)\right)  = (ik)^2\,g(k) \tag{9-23c}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \qquad\qquad\begin{align}F\left(xf(x)\right)&amp;=\int_{-\infty}^{\infty} xf(x)e^{-ikx}dx =\int_{-\infty}^{\infty} f(x)\frac{d}{dk}\left(ie^{-ikx}\right) dx\\&amp;=i\frac{d}{dk}\int_{-\infty}^{\infty} f(x)e^{-ikx} dx=i\frac{d}{dk}g(k)\end{align}\qquad\qquad\qquad\text{(9-23d)}\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{\partial }{\partial t}f(x,t)=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^\infty \frac{\partial }{\partial t}f(k,t)e^{ikx}dk\tag{9-23e}\]</div>
+<div class="section" id="i-the-airy-stokes-equation">
+<h2><strong>(i) The Airy / Stokes equation</strong><a class="headerlink" href="#i-the-airy-stokes-equation" title="Permalink to this headline">¶</a></h2>
+<p>The equation</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{d^2y}{dx^2}=xy \tag{65}\]</div>
+<p>is called the Airy and/or the Stokes equation and is different to the Airy function describing Fraunhofer diffraction. The equation can be made into the Schroedinger equation for a particle in a gravitational field or one of linear force such as in an electric potential.</p>
+<p>Starting with eqn 65, let <span class="math notranslate nohighlight">\(f(x)\equiv y\)</span> and taking the fourier transform of each side and using the derivative formula above gives</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle -k^2g(k)= -i\frac{d}{dk}g(k)\]</div>
+<p>where <span class="math notranslate nohighlight">\(g(k)\)</span> is the transform. Integrating this gives as a first order equation gives</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle g(k)=g(0)e^{ik^3/3}\]</div>
+<p>where <span class="math notranslate nohighlight">\(g(0)\)</span> represents the initial conditions. This equation is in <span class="math notranslate nohighlight">\(k\)</span> space but we shall want it in real space, i.e. in terms of <span class="math notranslate nohighlight">\(x\)</span>. To do this we will assume that <span class="math notranslate nohighlight">\(g(0)\)</span> is a constant then transforming back to <span class="math notranslate nohighlight">\(x\)</span> gives</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle y(x)\equiv F^{-1}(g(k))=\frac{c}{\sqrt{2\pi}}\int_{-\infty}^\infty e^{ik^3/3}e^{+ikx}dk \]</div>
+<p>As <span class="math notranslate nohighlight">\(e^{i\theta}= \cos(\theta)+i\sin(\theta)\)</span> and using even/odd symmetry removes the sine term and produces</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle y(x)=\frac{2c}{\sqrt{2\pi}}\int_0^\infty \cos(k^3/3+kx)\,dk\]</div>
+<p>This now has to be integrated at each <span class="math notranslate nohighlight">\(x\)</span> and has the form of a standing wave and then an exponential decay, see figure 30a. The integration is numerically difficult because <span class="math notranslate nohighlight">\(k^3\)</span> becomes very large and the function is oscillatory about zero. The integral with <span class="math notranslate nohighlight">\(c=1\)</span> is called an <em>Airy function of the first kind</em> <span class="math notranslate nohighlight">\(Ai(x)\)</span> and is usually included as a special function in most computer languages. This is the solution when <span class="math notranslate nohighlight">\(y\to 0\)</span> when <span class="math notranslate nohighlight">\(x\to\infty\)</span>, and there is a second Airy function solution to this equation in the limit that <span class="math notranslate nohighlight">\(y\to\infty\)</span> (called <span class="math notranslate nohighlight">\(Bi(x)\)</span>) but we shall not be interested in this case.</p>
+</div>
+<div class="section" id="ii-the-schroedinger-equation-for-a-particle-in-a-gravitational-potential-v-x-sim-x">
+<h2><strong>(ii)  The Schroedinger equation for a particle in a gravitational potential: <span class="math notranslate nohighlight">\(V(x)\sim x\)</span></strong><a class="headerlink" href="#ii-the-schroedinger-equation-for-a-particle-in-a-gravitational-potential-v-x-sim-x" title="Permalink to this headline">¶</a></h2>
+<div class="math notranslate nohighlight">
+\[\displaystyle -\frac{\hbar^2}{2m}\frac{d^2\psi}{dx^2}+V(x)\psi=E\psi\]</div>
+<p>when the potential is linear, such as in a gravitational field, then</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle -\frac{d^2\psi}{dx^2}+\frac{2m}{\hbar^2}(mgx-E)\psi=0\tag{66}\]</div>
+<p>where  <span class="math notranslate nohighlight">\(m\)</span> is mass and <span class="math notranslate nohighlight">\(g\)</span> the force due to gravity. The boundary conditions or limits on the wavefunction are defined as <span class="math notranslate nohighlight">\(\psi(0)=0\)</span> and <span class="math notranslate nohighlight">\(\psi(\infty)\to 0\)</span> . This means that only positive values of <span class="math notranslate nohighlight">\(x\)</span> are possible, the potential is shown in figure 30a and is infinitely high at <span class="math notranslate nohighlight">\(x=0\)</span> so the wavefunction cannot penetrate this side of the barrier. The equation does not yet have the form of eqn. 65 and the most difficult part of the calculation is changing it into this form.</p>
+<p>We start by looking at the units of the constants</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{2m^2g}{\hbar^2}\equiv \mathrm{\frac{kg^2ms^{-2}}{kg^2m^4s^{-4}s^2}  }=\frac{1}{m^3}\]</div>
+<p>and so define a characteristic length <span class="math notranslate nohighlight">\(l\)</span> as</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle l=\left(\frac{\hbar^2}{2m^2g}\right)^{1/3}\]</div>
+<p>The distance becomes dimensionless by defining a new variable  <span class="math notranslate nohighlight">\(\chi=x/l\)</span>.</p>
+<p>The energy can be made dimensionless also by the calculation</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle E_0=\left(\frac{\hbar mg^2}{2}\right)^{1/3}\]</div>
+<p><span class="math notranslate nohighlight">\(\hbar mg^2\)</span> has dimensions of energy cubed and we define <span class="math notranslate nohighlight">\(\epsilon=E/E_0\)</span> where <span class="math notranslate nohighlight">\(\epsilon\)</span> is dimensionless or reduced energy. With these new values and defining</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \xi = \chi-\epsilon\]</div>
+<p>we can change the equation into a dimensionless form and one similar to eqn. 65</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{d^2\psi}{d\xi^2}-\xi\psi =0 \]</div>
+<p>with solutions that are the Airy function <span class="math notranslate nohighlight">\(\psi(\xi)=Ai(\xi)\)</span>. The limits are <span class="math notranslate nohighlight">\(\psi(-\epsilon)=0, \psi(\infty)\to 0\)</span> so classical motion is permitted only between turning points <span class="math notranslate nohighlight">\(\xi=-\epsilon\)</span> and <span class="math notranslate nohighlight">\(\xi=0\)</span> or <span class="math notranslate nohighlight">\(x=0\)</span> and <span class="math notranslate nohighlight">\(\epsilon\)</span>.</p>
+<p>When the wavefunction <span class="math notranslate nohighlight">\(Ai(x)=0\)</span> at <span class="math notranslate nohighlight">\(x=0\)</span> there must be a solution giving a discrete energy, and so a valid solution to the Schroedinger equation, because the wavefunction has to be zero at the boundary <span class="math notranslate nohighlight">\(x=0\)</span>. The Airy function is oscillatory and the zero crossings lead to energy levels with quantum numbers <span class="math notranslate nohighlight">\(n=1,2, \cdots\)</span>. When <span class="math notranslate nohighlight">\(\displaystyle Ai\left(-\epsilon_n\right)=0\)</span> (i.e. at <span class="math notranslate nohighlight">\(x=0\)</span>) the energy for the <span class="math notranslate nohighlight">\(n^{th}\)</span> level is <span class="math notranslate nohighlight">\(E_n=E_0\epsilon_n\)</span> where <span class="math notranslate nohighlight">\(\epsilon_n\)</span> is the value that makes <span class="math notranslate nohighlight">\(Ai=0\)</span>.</p>
+<p>The values where the Airy function is zero are tabulated, the first few are for <span class="math notranslate nohighlight">\(Ai(-\epsilon_n)=0\)</span> when <span class="math notranslate nohighlight">\(\epsilon_n=2.3381,  4.08795,  5.5206,  6.7867,  7.9441\)</span>. The characteristic length for an electron is <span class="math notranslate nohighlight">\(l=8.801\cdot 10^{-4}\)</span> m in Earth’s gravitational field and its characteristic energy <span class="math notranslate nohighlight">\(E_0=1.6654\cdot 10^{-21}\)</span> J which, for comparison, is a little smaller that thermal energy at room temperature <span class="math notranslate nohighlight">\(4.14 \cdot 10^{-21}\)</span> J.</p>
+<p><img alt="Drawing" src="../_images/diffeqn-fig30a.png" /></p>
+<p>Figure 30a. The wavefunctions, the Airy function <span class="math notranslate nohighlight">\(Ei(\xi)\)</span>, and energy levels for a particle in a linear potential. The plots show the data which is not scaled by <span class="math notranslate nohighlight">\(l\)</span> or <span class="math notranslate nohighlight">\(E_0\)</span> in the way described in the text and both have a value of <span class="math notranslate nohighlight">\(1\)</span>. The diagonal line shows the potential and the tunnelling to the right of this is clear. The quantum numbers are also shown.</p>
+<hr class="docutils" />
+<p>The shape of the wavefunctions is reminiscent of those for the harmonic oscillator but more like the anharmonic Morse potential being skewed at larger <span class="math notranslate nohighlight">\(x\)</span> because of the shape of the potential allowing tunnelling. The lowest level wavefunction has zero nodes, then <span class="math notranslate nohighlight">\(1,2\cdots\)</span> nodes as the energy increases. Tunnelling is apparent into the non-classical region at large <span class="math notranslate nohighlight">\(x\)</span> but not at <span class="math notranslate nohighlight">\(x=0\)</span> because here the potential is infinitely high. The gap between the energy levels decreases with increase in energy just as in the Morse potential and unlike the harmonic oscilator. (The symmetry in the HO prevents this from happening).</p>
+<p>The wavefunction shown in figure 30a, are the stationary state ones, they give only the probability of finding the particle at height <span class="math notranslate nohighlight">\(x\)</span> above ground level when in a given energy level. There is no motion in this. To see that the particle can ‘bounce’ two or more of these eigenstates must be excited at the same time. The time dependence of a wavefunction is obtained by multiplying by <span class="math notranslate nohighlight">\(e^{-iE_nt}\)</span> for energy <span class="math notranslate nohighlight">\(E_n\)</span> to make the wavefunction <span class="math notranslate nohighlight">\(\psi_{x,n,t}=\psi_{x,n}e^{-iE_nt}\)</span>. The probability of being at  position <span class="math notranslate nohighlight">\(x\)</span> is the product <span class="math notranslate nohighlight">\(\psi^*_{x,n}\psi_{x,n}\)</span> where * indicates the complex conjugate and so all time disappears. If, however, a superposition is made, i.e. a wavepacket with wavefunctions having different quantum numbers, then this will have a time dependence. The simplest case is to add two wavefunctions together, e.g.</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle S = \frac{1}{\sqrt{2}}(\psi_{x,n}e^{-iE_nt}+\psi_{x,m}e^{-iE_mt}),\quad n,m =1,2\cdots; n \ne m\]</div>
+<p>and then the probability at any time is</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}W&amp;= ((\psi_{x,n}e^{+iE_nt}+\psi_{x,m}e^{+iE_mt}))(\psi_{x,n}e^{-iE_nt}+\psi_{x,m}e^{-iE_mt})/2\\&amp;= (\psi_{x,n}^2+\psi_{x,m}^2+\psi_{x,n}\psi_{x,m}(e^{i(E_m-E_n)t}+e^{-i(E_m-E_n)t} ))/2\end{align}\end{split}\]</div>
+<p>which has a constant term plus a variable one that looks very similar to a cosine in <span class="math notranslate nohighlight">\((E_m-E_n)t\)</span>. The time dependence causes the wavepackect to move in the potential, and do so repeatedly with a period <span class="math notranslate nohighlight">\(2\pi/(|E_n-E_m|)\)</span>. This is shown in figure 30b for the sum of wavefunctions <span class="math notranslate nohighlight">\(n=5,m=6\)</span> and for fractions of the period, <span class="math notranslate nohighlight">\(0,0.2,\dots\)</span> as shown in each panel. The reinforcing and destructive interference are clear. With lower quantum numbers the extension is smaller and the period longer because the energy gaps are greater. Adding several levels together leads to lots of different periods with recursions at different times due to different combinations of <span class="math notranslate nohighlight">\(E_n,E_m,E_p,E_q\)</span> etc. produced.</p>
+<p><img alt="Drawing" src="../_images/diffeqn-fig30b.png" /></p>
+<p>Figure 30b. Wavepackets for the quantum numbers (<span class="math notranslate nohighlight">\(5,6\)</span>) at fractions of a period.</p>
+<hr class="docutils" />
+<p>To imagine the particle ‘bouncing’ the average distance can be computed. Again the wavepacket is needed, if just one wavefunction is used then a constant value is obtained for the average position as all time is removed via the complex conjugate.</p>
+<p>The average position is by definition</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \langle x\rangle =\int_0^\infty x\psi_{x,n}e^{iE_n t}\psi_{x,m}e^{-iE_mt}dx\]</div>
+<p>and the result at several times is shown in figure 30c. The sinusoidal motion is clear. The period of the wavepacket is maintained and the particle oscillates only between finite values and does not reach zero.</p>
+<p><img alt="Drawing" src="../_images/diffeqn-fig30c.png" /></p>
+<p>Figure 30c. Average motion of the wavepacket in figure 30b made with quantum numbers shown (<span class="math notranslate nohighlight">\(5,6\)</span>) vs time. The period is shown between vertical lines is the same as the wavepacket period.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="iii-time-dependent-schroedinger-equation-for-a-2d-square-well">
+<h2><strong>(iii) Time dependent Schroedinger equation for a 2D square well</strong><a class="headerlink" href="#iii-time-dependent-schroedinger-equation-for-a-2d-square-well" title="Permalink to this headline">¶</a></h2>
+<p>A particle is trapped in a 2D square well of infinite depth. The boundary conditions are <span class="math notranslate nohighlight">\(\psi(x)=0\)</span> at <span class="math notranslate nohighlight">\(x=0,L,y=0,L\)</span> and the potential in the well is zero.  The time dependent Schroedinger equation is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle -\frac{\hbar^2}{2m}\left(\frac{\partial^2}{\partial x^2}+\frac{\partial^2}{\partial y^2} \right)\psi(x,y,t)=i\hbar\frac{\partial}{\partial t}\psi(x,y,t) \tag{67}\]</div>
+<p>which can be recast as</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle -\frac{\hbar^2}{2m}\frac{\partial^2}{\partial \vec z^2}\psi(\vec z,t)=i\hbar\frac{\partial}{\partial t}\psi(\vec z,t) \]</div>
+<p>by making <span class="math notranslate nohighlight">\(z\)</span> a vector of <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span>.</p>
+<p>Taking the fourier transform of both sides using eqn’s 23d and 23e gives,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle -\frac{\hbar^2}{2m}k^2g(k,t)=-\hbar \frac{\partial }{\partial t}g(k,t)\]</div>
+<p>where <span class="math notranslate nohighlight">\(g(k,t)\)</span> is used to describe the transformed wavefunction and <span class="math notranslate nohighlight">\(k^2=k_x^2+k_y^2\)</span>. This equation is now a first order one and can be integrated to give</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle g(k,t)=g(k,0)e^{-i\hbar k^2t/2m}\tag{68}\]</div>
+<p>A wave of frequency <span class="math notranslate nohighlight">\(\omega\; (=2\pi\nu)\)</span> is described by <span class="math notranslate nohighlight">\(e^{-i\omega t}\)</span> and as, by definition, <span class="math notranslate nohighlight">\(E=\hbar\omega\)</span> then the energy levels are</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle E_k=\frac{\hbar^2k^2}{2m}\]</div>
+<p>which is in transformed or ‘<span class="math notranslate nohighlight">\(k\)</span> space’. The fourier transform uses the conjugate pairs (<span class="math notranslate nohighlight">\(x,k_x\)</span>), and (<span class="math notranslate nohighlight">\(y,k_y\)</span>) where <span class="math notranslate nohighlight">\(k_{x,y}=2\pi/\lambda_{x,y}\)</span> which are the wavenumbers in each direction. The box length is <span class="math notranslate nohighlight">\(L\)</span> and the lowest energy has a wavefunction with wavelength <span class="math notranslate nohighlight">\(\lambda = 2L\)</span> in other words the box is half a wavelength long in both <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span>. This wavelength is determined by the initial conditions which is that the wavefunction must be zero at the edges of the box which is only true at integer multiples of <span class="math notranslate nohighlight">\(L/2\)</span>, thus the wavelength of all the  wavefunctions are</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{\lambda}{2}= \frac{L}{1}, \frac{L}{2}, \frac{L}{3}\cdots \frac{L}{n},\qquad n=1,2,3\cdots\]</div>
+<p>where <span class="math notranslate nohighlight">\(n\)</span> is the quantum number. This true for both <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> so there are two quantum numbers that take values independently from <span class="math notranslate nohighlight">\(1 \)</span> upwards.</p>
+<p>Substituting for <span class="math notranslate nohighlight">\(k_x=2\pi/\lambda = n\pi/L\)</span> and similarly for <span class="math notranslate nohighlight">\(k_y\)</span> gives  <span class="math notranslate nohighlight">\(k^2=k_x^2+k_y^2=\pi^2(n^2+m^2)/L^2\)</span> the energy levels are</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle  E_{n,m}=\frac{\pi^2\hbar^2}{2mL^2}(n^2+m^2)\]</div>
+<p>which means that the energy levels are doubly degenerate but only as a consequence of the box being square.</p>
+<p>To satisfy the time independent Schroedinger equation the wavefunctions are</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \psi(x,y,0)=N\sin(n\pi x/L)\sin(m\pi y/L)\]</div>
+<p>where <span class="math notranslate nohighlight">\(N\)</span> is normalisation term <span class="math notranslate nohighlight">\(N^2\int \int \psi^*\psi dxdy = 1\)</span>.</p>
+</div>
+<div class="section" id="iv-diffusion-equation">
+<h2><strong>(iv) Diffusion equation</strong><a class="headerlink" href="#iv-diffusion-equation" title="Permalink to this headline">¶</a></h2>
+<p>The diffusion equation of a molecule in solution at concentration <span class="math notranslate nohighlight">\(c\)</span> at time <span class="math notranslate nohighlight">\(t\)</span> and position <span class="math notranslate nohighlight">\(x\)</span> is given by Fick’s second law</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{\partial c}{\partial t}=D\frac{\partial^2 c}{\partial x^2}\tag{69}\]</div>
+<p>where <span class="math notranslate nohighlight">\(D\)</span> is the diffusion coefficient. In aqueous solution this is typically <span class="math notranslate nohighlight">\(10^{-5}\,\mathrm{cm^2\,s^{-1}}\)</span> for a small molecule and far smaller for a protein. The same form of equation applies to heat transfer where <span class="math notranslate nohighlight">\(D\)</span> is replaced by thermal conductivity. The method used here is similar to that used earlier.</p>
+<p>We shall assume that the 1D solution is of infinite extent and that molecules are piled up in a very narrow region, i.e as a <span class="math notranslate nohighlight">\(\delta\)</span> function at <span class="math notranslate nohighlight">\(x=0\)</span>. Once the solution is found we can use convolution  to find the solution for different initial profiles of molecules or temperature.</p>
+<p>The transform in <span class="math notranslate nohighlight">\(x\)</span> is formally</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle F\left(\frac{\partial c}{\partial t}\right)=F\left(\frac{\partial^2 c}{\partial x^2}\right)\]</div>
+<p>then using eqn 23c-d equation 69 and letting <span class="math notranslate nohighlight">\(g\)</span> represent the transform gives</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{\partial g(k,t)}{\partial t}=-Dk^2 g(k,t)\]</div>
+<p>and integrating this produces</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle g(k,t)=g(k,0)e^{-Dk^2t}\tag{70}\]</div>
+<p>where the initial condition <span class="math notranslate nohighlight">\(g(k,0)\)</span> is in transform space. In ‘real’ space let this be <span class="math notranslate nohighlight">\(f(x,0)\)</span> with fourier transform</p>
+<div class="math notranslate nohighlight">
+\[g(k,0)=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^\infty f(x,0)e^{-ikx}dx \]</div>
+<p>but because we define <span class="math notranslate nohighlight">\(f(x,0)=\delta(x)\)</span> the delta function picks out just one value at <span class="math notranslate nohighlight">\(x=0\)</span> as its value is unity only at <span class="math notranslate nohighlight">\(x\)</span>, giving <span class="math notranslate nohighlight">\(\displaystyle g(k,0)=\frac{1}{\sqrt{2\pi}}\)</span>.</p>
+<p>Transforming back into ‘real’ space gives</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle c(x,t)=\frac{1}{2\pi}\int_{-\infty}^\infty e^{-Dk^2t}e^{ikx}dk=\frac{1}{\sqrt{4\pi Dt}}e^{-x^2/(4Dt)}\]</div>
+<p>where the integral is evaluated by completing the square, otherwise Sympy can be used. As can be seen this solution is only correct for <span class="math notranslate nohighlight">\(t&gt;0\)</span>. This equation produces a gaussian concentration profile because the fourier transfrom of a Gaussian is also a Gaussian. This equation essentially forms a kernel from which the efect of diffusion on other initial distributions can be based.</p>
+<p>Calculating the profiles shows that the concentration spreads out across space and in time as shown in the figure. From the values you can see that diffusion is a relatively slow process, but with a rapid initial phase. In 1D the root mean squared distance diffused in time <span class="math notranslate nohighlight">\(t\)</span> is <span class="math notranslate nohighlight">\(\sqrt{2Dt}\)</span>.</p>
+<p><img alt="Drawing" src="../_images/diffeqn-fig30d.png" /></p>
+<p>Figure 30d. Diffusion from the delta function initial distribution is represented by the vertical line at zero. The diffusion constant used was <span class="math notranslate nohighlight">\(10\cdot 10^{-6}\,\mathrm{cm^2\,s^{-1}}\)</span>. The left panel shows the concentration profile vs position at the times shown and the right panel the concentration at various positions vs time.</p>
+<hr class="docutils" />
+<p>If the function is to be situated at a different place other than zero this can most easily be done by using the shift property of fourier transforms.</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle F(f(x- x_0)) = \int_{-\infty}^{\infty} f(x- x_0)e^{-ik x}dx = \int_{-\infty}^{\infty} f(s)e^{-ik(s+ x_0)}ds = e^{-ik x_0} g(k)\]</div>
+<p>Thus to shift the centre of the concentration profile <span class="math notranslate nohighlight">\(c(x,t)\)</span> by a distance <span class="math notranslate nohighlight">\(x_0\)</span> the transform becomes</p>
+<div class="math notranslate nohighlight">
+\[g(k,0)=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^\infty f(x,0)e^{-ikx}e^{-ikx_0}dx \]</div>
+<p>which in the case of delta function initial condition results in a gaussian where <span class="math notranslate nohighlight">\(x\to x-x_0\)</span> or</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle c(x,t)=\frac{1}{\sqrt{4\pi Dt}}e^{-(x-x_0)^2/(4Dt)}\]</div>
+<p>As might be expected in some cases the transform cannot be easily reversed by integration and a numerical transform (FFT) is the only recourse.</p>
+<p>In a case that a function other than the delta function is needed then the result assuming a delta function, the kernel, can be convoluted with the new function.</p>
+<p>When the initial condition is not a delta function we have to reverse transform eqn. 70 to bing us back to ‘real space’, i.e. <span class="math notranslate nohighlight">\(x\)</span> and the equation to do this is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle c(x,t)= \frac{1}{\sqrt{2\pi}}\int_{-\infty}^\infty \left[\int_{-\infty}^\infty f(y,0)e^{-iky}dy\right]e^{-Dk^2t} e^{ikx} dk\]</div>
+<p>where <span class="math notranslate nohighlight">\(y\)</span> a dummy variable for the integration and <span class="math notranslate nohighlight">\(f(y,0)\)</span> the initial condition. Rearranging gives</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle c(x,t)= \frac{1}{\sqrt{2\pi}}\int_{-\infty}^\infty \left[\int_{-\infty}^\infty e^{ik(x-y)-Dk^2t}dk\right] f(y,0)dy\]</div>
+<p>In the case of a ‘top-hat’ function, i.e one that is constant between <span class="math notranslate nohighlight">\(x=a \to b\)</span> and zero elsewhere or many polynomials between two values, the integrations can be performed analytically but for other cases a numerical method will have to used. The outer integral limits are <span class="math notranslate nohighlight">\(y=\pm\infty\)</span> but usually the integral is split into parts, e.g <span class="math notranslate nohighlight">\(\int_{-\infty}^\infty [] -\int_{-\infty}^a []- \int_b^\infty []\)</span>  which can be simplified to <span class="math notranslate nohighlight">\(\int_a^b[]\)</span>. As an example the result of heating a series of strips is shown in figure 30e. The equation for a single strip is of amplitude <span class="math notranslate nohighlight">\(1\)</span> is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle c(x,t)= \frac{1}{\sqrt{2\pi}}\int_{-\infty}^\infty \left[\int_{-\infty}^\infty e^{ik(x-y)-Dk^2t}dk\right] dy=\int_a^b\frac{1}{\sqrt{4\pi Dt}}e^{-(x-x_0)^2/(4Dt)}dy\]</div>
+<p>which has the solution (<span class="math notranslate nohighlight">\(a&lt;b\)</span>)</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle c(x,t)=  \frac{1}{2}\mathrm{erf}{\left(\frac{b - x}{2 \sqrt{Dt}} \right)} - \frac{1}{2}\mathrm{erf}{\left(\frac{a - x}{2 \sqrt{Dt}} \right)} \]</div>
+<p>and other strips are positioned by changing <span class="math notranslate nohighlight">\(a,b\)</span>. The initial top-hat population is coloured grey. An rapid initial fall in population is clear which then slows is accord with the square root of time for the root mean square distance diffused, <span class="math notranslate nohighlight">\(\langle x\rangle =\sqrt{2Dt}\)</span> in one dimension.</p>
+<p><img alt="Drawing" src="../_images/diffeqn-fig30e.png" /></p>
+<p>Figure 30e. Population as an initial comb of top-hat regions (grey) and the effect of diffusion at the times shown assuming a diffusion coefficient of <span class="math notranslate nohighlight">\(D=10\cdot 10^{-6}\, \mathrm{cm^2\,s^{-1}}\)</span>. The horizontal axis is in <span class="math notranslate nohighlight">\(\mu m\)</span>.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="transient-grating-experiments">
+<h2><strong>Transient Grating Experiments</strong><a class="headerlink" href="#transient-grating-experiments" title="Permalink to this headline">¶</a></h2>
+<p>If a pump laser is split into two equal parts and recombined in a solution containing chromophores a set of fringes of the excited state molecules, sometimes called a population density grating (figure 30f), will be produced. If the solvent only is used a refractive index grating can be produced and probed in a similar way. The transient grating can diffract a probe laser.</p>
+<p>Excited molecules decay away via non-radiative processes and fluorescence but if lateral or rotational diffusion or energy/exciton transfer also destroys the fringes, this provides a way of measuring this property via the decrease in diffraction intensity of a probe laser. Similarly thermal gratings can be produced and probed. The weak probe laser can be at the same or a different wavelength to the pump and is aligned to be diffracted into a different spatial position to the pump so is easily identified. The technique varies a little depending upon what is measured but usually short pulse lasers are used, picosecond or femtosecond and in this case it is clearly essential that the arrive in the sample at the same time. As an example, if polarised light is used those molecules whose transition dipole is aligned with the polarisation of the pump (with a <span class="math notranslate nohighlight">\(\cos(\theta)\)</span> probability ) are preferentially excited. Subsequent rotational diffusion of the excited molecules can be measured because as the molecules rotate the polarised grating is diminished as the initially aligned transition moments are randomised and therefore the probe pulse has fewer molecule aligned with its polarisation to interact with. By measuring at different delay times, wrt the pump laser,  the probe pulse can map out the rotational diffusion in a pump-and-probe manner.</p>
+<p>The spatial period of the grating is given by <span class="math notranslate nohighlight">\(\Lambda =2\pi/|q|\)</span> (figure 30f) where <span class="math notranslate nohighlight">\(\vec k_B+\vec q=\vec k_A\)</span> and <span class="math notranslate nohighlight">\(\vec k_{A,B}\)</span> are the wavevectors of the pump beam of wavelength <span class="math notranslate nohighlight">\(\lambda_p\)</span>. From the diagram on the right of fig 30f <span class="math notranslate nohighlight">\(|q|\)</span> can be calculated, using right angled triangles, in terms of the angle <span class="math notranslate nohighlight">\(\theta\)</span> and knowing that a wavevector is defined as <span class="math notranslate nohighlight">\(k=2\pi/\lambda\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \Lambda =\frac{\lambda_p}{2\sin(\theta/2)}\]</div>
+<p>The grating has a period of only a few microns for visible pump light. The combined laser beams have electric field amplitude in the interference region</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle E=E_Ae^{+ikx}+E_Be^{-ikx}\]</div>
+<p>and the population of excited states in the grating is proportional to the intensity <span class="math notranslate nohighlight">\(I=E^*E\)</span> or</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle I= E_A^2+E_B^2+E_AE_B(e^{2ikx}+e^{-2ikx})=E_A^2+E_B^2+2E_AE_B\cos(2kx)\]</div>
+<p>which means that the modulation is governed by <span class="math notranslate nohighlight">\(E_AE_B\)</span> the product of the pump field strength. The diffracted light from the probe is in turn proportional the excited state population. The cosine describes the grating variation with <span class="math notranslate nohighlight">\(x\)</span> which is the direction across the grating as shown in fig 30f and as the grating decays away, by whatever means, such as diffusion or excited state decay, the diffracted signal similarly decreases.</p>
+<p><img alt="Drawing" src="../_images/diffeqn-fig30f.png" /></p>
+<p>Figure 30f. Left. Set up for transient grating experiment showing a first order of the diffracted probe. Right. Wavevectors from the pump beam, where <span class="math notranslate nohighlight">\(\vec k_A=\vec k_B +\vec q\)</span></p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./chapter-10"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="Diff-eqns-F.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Partial Differential Equations, PDE</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="Diff-eqns-answers-1-21.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Solutions Q1 - 21</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Godfrey Beddard<br/>
+        
+            &copy; Copyright 2022.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

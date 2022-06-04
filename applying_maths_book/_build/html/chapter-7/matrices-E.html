@@ -1,0 +1,1633 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Matrices in optics and designing laser cavities &#8212; Applying Maths in the Chemical &amp; Biomolecular Sciences</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Questions 35 - 39" href="matrices-Q35-39.html" />
+    <link rel="prev" title="Questions 31 - 34" href="matrices-Q31-34.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/book-cover.jpg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Applying Maths in the Chemical & Biomolecular Sciences</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Applying Maths in the Chemical and Biomolecular Sciences.
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-1/chapter1-intro.html">
+   1. Numbers, Equations, Operators, and Algorithms.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-A.html">
+     Numbers to Algorithms.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-Q1-7.html">
+     Questions 1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-B.html">
+     Trig, hyperbolic and inverse functions, waves, polar coordinates &amp; factorials
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-Q8-16.html">
+     Questions 8 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-C.html">
+     Sophisticated Counting.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-Q17-34.html">
+     Questions 17 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-D.html">
+     Modulo arithmetic,
+     <span class="math notranslate nohighlight">
+      \(\delta\)
+     </span>
+     functions, types of  series &amp;  estimating quantities
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-Q35-39.html">
+     Questions 35 - 39
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-answers-1-7.html">
+     Solutions Q1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-answers-8-16.html">
+     Solutions Q8 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-answers-17-34.html">
+     Solutions Q17 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-answers-35-39.html">
+     Solutions Q35 - 39
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-2/chapter2-intro.html">
+   2. Complex numbers.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2/chapter2-A.html">
+     Real, imaginary, conjugate and modulus
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2/chapter2-Q-1-9.html">
+     Questions 1 - 9
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2/chapter2-B.html">
+     De Moivre’s theorem and integer powers of complex numbers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2/chapter2-Q-10-13.html">
+     Questions 10 -13
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2/chapter2-C.html">
+     Euler’s theorem
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2/chapter2-Q-14-27.html">
+     Questions 14 - 27
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2/chapter2-answers.html">
+     Solutions Q1 - 27
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-3/differen-intro.html">
+   3. Differentiation.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-A.html">
+     Differentiation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-B.html">
+     Trig functions, logs, power, reciprocals and integrals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-C-Q-4-11.html">
+     Questions 1-11
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-D.html">
+     Product rule and function of function or chain rule.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-E-Q-12-42.html">
+     Questions 12-42
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-F.html">
+     Limits, l’Hopital’s rule, Maximum, Minimum and Calculus of Variations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-G-Q-43-73.html">
+     Questions 43 - 73
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-H.html">
+     Numerically finding the roots of an equation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-I-Q-74-85.html">
+     Questions 74 - 85
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-J.html">
+     Minimizing or maximizing with constraints: Lagrange Undetermined Multipliers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-K-Q-86-92.html">
+     Questions 86 - 92
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-L.html">
+     Partial differentiation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-M-Q-93-114.html">
+     Questions 93-114
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-M1.html">
+     Differentiation of vectors
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-N-answers-1-11.html">
+     Solutions Q 1-11
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-O-answers-12-42.html">
+     Solutions Q 12-42
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-P-answers-43-73.html">
+     Solutions Q 43 - 73
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-Q-answers-74-85.html">
+     Solutions Q 74 - 85
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-R-answers-86-92.html">
+     Solutions Q 86 - 94
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-S-answers-93-114.html">
+     Solutions Q 93-114
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-4/integration-intro.html">
+   4. Integration.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-A.html">
+     Integration basics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-Q1-14.html">
+     Questions 1-14
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-B.html">
+     Integration by substitution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-Q15-30.html">
+     Questions 15-30
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-C.html">
+     Using parametric equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-Q31-48.html">
+     Questions 31 - 48
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-D.html">
+     Calculating an Average Value.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-Q49-72.html">
+     Questions 49 - 72
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-E.html">
+     The Variational Method in Quantum Mechanics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-Q73-77.html">
+     Questions 73 - 77
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-F.html">
+     Multiple integrals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-Q78-86.html">
+     Questions 78 - 86
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-G.html">
+     Calculating the energy of a chemical bond using molecular orbitals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-H.html">
+     Line integrals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-Q87-96.html">
+     Questions 87 - 96
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-answers-1-14.html">
+     Solutions Q1 - 14
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-answers-15-30.html">
+     Solutions Q15 - 30
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-answers-31-48.html">
+     Solutions Q31 - 48
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-answers-49-72.html">
+     Solutions Q49 - 72
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-answers-73-96.html">
+     Solutions Q73 - 96
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-5/chapter-5-intro.html">
+   5. Summations, Series and expansion of Functions.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-A.html">
+     Series, averages, partition functions, DNA melting, atom entropy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-B-Q1-13.html">
+     Questions 1 - 13
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-E.html">
+     Maclaurin and Taylor series expansions. Paramagnetic spins. Euler-Maclaurin formula.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-F-Q14-34.html">
+     Questions 14 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-G-Q35-44.html">
+     Questions 35 - 44
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-perturbation-A.html">
+     Perturbation Theory
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-perturbation-B-Q45-48.html">
+     Questions 45 - 48
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-perturbation-C.html">
+     Quantum superposition and wavepackets.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-perturbation-D-Q49-52.html">
+     Questions 49 - 52
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-answers-1-7.html">
+     Solutions Q 1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-answers-8-13.html">
+     Solutions Q8 - 13
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-answers-14-26.html">
+     Solutions Q 14 - 26
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-answers-27-32.html">
+     Solutions Q27 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-answers-33-44.html">
+     Solutions Q33 - 44
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-answers-45-52.html">
+     Solutions Q45 - 52
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-6/vectors-intro.html">
+   6. Vectors.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-A.html">
+     Vector basics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-Q1-24.html">
+     Questions 1 - 24
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-B.html">
+     Projections and components
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-Q25-32.html">
+     Questions 25 - 32
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-C.html">
+     Axes need not be right-angled or of equal length
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-Q33-38.html">
+     Questions 33 - 38
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-D.html">
+     Basis sets with more than three dimensions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-Q39-46.html">
+     Questions 39 - 46
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-E.html">
+     Cross product or vector product
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-Q47-52.html">
+     Questions 47 - 52
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-F.html">
+     Torsion or dihedral angles
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-Q53-48.html">
+     Questions 53 - 48
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-G.html">
+     Torque and angular momentum
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-Q59-61.html">
+     Questions 59 - 61
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-answers-Q1-24.html">
+     Solutions Q1 - 24
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-answers-Q25-32.html">
+     Solutions Q25 - 32
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-answers-Q33-38.html">
+     Solutions Q33 - 38
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-answers-Q39-46.html">
+     Solutions Q39 - 46
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-answers-Q47-52.html">
+     Solutions Q47 - 52
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-answers-Q53-61.html">
+     Solutions Q53 - 61
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="matrices-intro.html">
+   7. Matrices
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-A.html">
+     Determinants
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-Q1-10.html">
+     Questions  1 - 10
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-B.html">
+     Matrices
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-Q11-16.html">
+     Questions  11 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-C.html">
+     Molecular Group Theory
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-Q17-30.html">
+     Questions  17 - 30
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-D.html">
+     Rotation matrices: moving molecules
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-Q31-34.html">
+     Questions 31 - 34
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Matrices in optics and designing laser cavities
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-Q35-39.html">
+     Questions 35 - 39
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-F.html">
+     Polarizing optics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-Q40-44.html">
+     Questions 40 - 44
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-G.html">
+     Solving equations using matrices. Eigenvectors &amp; Eigenvalues.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-Q45-50.html">
+     Questions 45 - 50
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-H.html">
+     Rate equations and Chemical Kinetics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-Q51-54.html">
+     Questions 51 - 54
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-I.html">
+     Molecular vibrations and pendulums
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-Q55-58.html">
+     Questions 55 - 58
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-J.html">
+     Moments of Inertia
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-Q59-60.html">
+     Questions 59 - 62
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-K.html">
+     Calculating a bond length using moments of inertia
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-Q61.html">
+     Question 61
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-L.html">
+     Principal axes for Moments of Inertia
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-Q62.html">
+     Question 62
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-answersQ1-10.html">
+     Solutions Q1 - 10
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-answersQ11-16.html">
+     Solutions Q11 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-answersQ17-30.html">
+     Solutions Q17 - 30
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-answersQ31-34.html">
+     Solutions Q31 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-answersQ35-39.html">
+     Solutions Q35 - 39
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-answersQ40-44.html">
+     Solutions Q40 - 44
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-answersQ45-50.html">
+     Solutions Q45 - 50
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-answersQ51-54.html">
+     Solutions Q51 - 54
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-answersQ55-58.html">
+     Solutions Q55 - 58
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-answersQ59-61.html">
+     Solutions Q59 - 61
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-8/matricesQM-intro.html">
+   8. Matrices in Quantum Mechanics
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-8/matricesQM-A.html">
+     Matrices in Quantum Mechanics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-8/matricesQM-Q1-7.html">
+     Questions 1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-8/matricesQM-B.html">
+     Basis sets and bra-ket algebra
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-8/matricesQM-Q8-12.html">
+     Questions 8 - 12
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-8/matricesQM-C.html">
+     Continuous basis sets
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-8/matricesQM-answers1-7.html">
+     Solutions Q1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-8/matricesQM-answers8-12.html">
+     Solutions Q8 - 12
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-9/Fourier-intro.html">
+   9. Fourier Series and Transforms.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-A-B.html">
+     Fourier series, Gibbs phenomenon, generalised series.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-questions-1-6.html">
+     Questions 1 - 6
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-C.html">
+     Fourier Transforms
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-questions-7-15.html">
+     Questions 7 - 15
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-D.html">
+     Convolution and Autocorrelation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-questions-16-21.html">
+     Questions 16 - 21
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-E.html">
+     Discrete Fourier  (DFT)  and Fast Fourier transforms (FFT)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-F.html">
+     The Hadamard Transform: Encoding and Decoding
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-answers-1-6.html">
+     Solutions Q 1 - 6
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-answers-7-15.html">
+     Solutions Q 7 - 15
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-answers-16-21.html">
+     Solutions Q 16 - 21
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-2D-Diffraction.html">
+     The Fourier transform in two dimensions: images and x-ray Diffraction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-tomography.html">
+     Computed Tomography
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-10/Diff-eqns-intro.html">
+   10. Differential Equations.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-A.html">
+     Differential Equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-Q1-23.html">
+     Questions 1 - 23
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-B.html">
+     First order eqns &amp; Integrating factors. Second order eqns, Newtons laws, equations of motion.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-C.html">
+     The ‘D’ operator.  Solving linear differential equations with constant coefficients
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-D.html">
+     Simultaneous equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-Q24-37.html">
+     Questions 24 - 37
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-E.html">
+     Linear equations with variable coefficients
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-F.html">
+     Partial Differential Equations, PDE
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-G.html">
+     PDE examples continued
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-answers-1-21.html">
+     Solutions Q1 - 21
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-answers-22-37.html">
+     Solutions Q22 - 37
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-11/num-methods-intro.html">
+   11. Numerical Methods
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-A.html">
+     Numerical Methods
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-Q1-7.html">
+     Questions 1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-B.html">
+     Numerical solution of differential equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-Q8-12.html">
+     Questions 8 - 12
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-C.html">
+     Coupled equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-Q13-16.html">
+     Questions 13 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-D.html">
+     The phase plane, nullclines, and stable points
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-Q17-20.html">
+     Questions 17 - 20
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-E.html">
+     Reaction schemes with feedback
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-Q21-34.html">
+     Questions 21 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-F.html">
+     Boundary value problems.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-Q35-40.html">
+     Questions 35 - 40
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-answers1-7.html">
+     Solutions Q1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-answers8-12.html">
+     Solutions Q8 - 12
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-answers13-16.html">
+     Solutions Q13 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-answers17-20.html">
+     Solutions Q17 - 20
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-answers21-34.html">
+     Solutions Q21 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-answers35-40.html">
+     Solutions Q35 - 40
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-12/monte-carlo-intro.html">
+   12. Monte Carlo Methods
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+  <label for="toctree-checkbox-12">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-A.html">
+     Monte - Carlo Methods
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-Q1-6.html">
+     Questions 1 - 6
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-B.html">
+     Solving rate equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-Q7-10.html">
+     Questions 7 - 10
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-CC.html">
+     Monte Carlo Simulations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-C.html">
+     Energy transfer. Autocatalytic reaction and spreading of fires
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-Q11-17.html">
+     Questions 11 - 17
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-D.html">
+     The Metropolis algorithm
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-answers1-6.html">
+     Solutions Q1 - 6
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-answers7-10.html">
+     Solutions Q7 - 10
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-answers11-17.html">
+     Solutions Q11 - 17
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-13/analysis-intro.html">
+   13. Data Analysis
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+  <label for="toctree-checkbox-13">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-13/analysis-A.html">
+     Characterizing experimental data. Accuracy, precision, mean and standard deviation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-13/analysis-Q1-3.html">
+     Questions 1 - 3
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-13/analysis-B.html">
+     Modelling data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-13/analysis-Q4-9.html">
+     Questions 4 - 9
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-13/analysis-C.html">
+     Modelling data is simpler using matrices
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-13/analysis-Q10-11.html">
+     Questions 10 - 13
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-13/analysis-D.html">
+     Non-linear least squares. Least absolute deviation. Principal component analysis
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-13/analysis-answers1-11.html">
+     Solutions Q1 -11
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../chapter-1/chapter1-E.html">
+   SI units, Rounding, converting units &amp; Glossary.
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../references/References.html">
+   References
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../references/Python%20crib.html">
+   Appendix:  Some basic Python instructions with a few examples.
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/chapter-7/matrices-E.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/chapter-7/matrices-E.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#abcd-matrices">
+   10 ABCD matrices.
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#understanding-the-abcd-matrix">
+   10.1 Understanding the
+   <span class="math notranslate nohighlight">
+    \(ABCD\)
+   </span>
+   matrix
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-laser-cavity">
+   10.2 The laser cavity
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="matrices-in-optics-and-designing-laser-cavities">
+<h1>Matrices in optics and designing laser cavities<a class="headerlink" href="#matrices-in-optics-and-designing-laser-cavities" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import all python add-ons etc that will be needed later on</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="n">init_printing</span><span class="p">()</span>                      <span class="c1"># allows printing of SymPy results in typeset maths format</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;font.size&#39;</span><span class="p">:</span> <span class="mi">14</span><span class="p">})</span>  <span class="c1"># set font size for plots</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="abcd-matrices">
+<h2>10 ABCD matrices.<a class="headerlink" href="#abcd-matrices" title="Permalink to this headline">¶</a></h2>
+<p>Chemists are among the largest group of laser users and it is not often appreciated that, nowadays, not only is nearly all spectroscopy performed with lasers, but also that most chemical kinetics measurements use lasers to initiate and follow reactions. Lasers are also widely used to produce fluorescence from dye molecules bound to DNA or proteins and to generate intrinsic fluorescence or Raman scattering from tryptophan and tyrosine residues in proteins. Ultra-short femtosecond duration lasers are used to probe the excited state reactions of the chromophores in photosynthetic antennas and reaction centres, to study the photo-isomerization in vision and in bacteriorhodopsin (a light-driven proton pump), and in other chromophore containing proteins such as photoactive yellow and green proteins. Fluorescence excited by femtosecond and picosecond duration lasers in single and two photon events is used to image living cells. Some basic knowledge of optics is now definitely required to do research in many areas of the chemical and bio-sciences. It is essential to be able to understand for example, how to build a stable laser, how much light to deliver as watts/cm<span class="math notranslate nohighlight">\(^2\)</span> into a sample, and to be able to work out what lenses or mirrors are needed to collect as much fluorescence as possible from a sample. And to this end, a very simple matrix method of analysing the behaviour of simple or complex optical systems has been developed and is described in this section. The books, Introduction to Matrix Methods in Optics (Gerrard &amp; Burch 1975) and Lasers (Siegman 1986) provide a detailed description of these methods and the latter book considerably more than this.</p>
+<p>The matrix method is based on following a two-component vector through an optical system. The first element of this vector represents the height of a light ray above the (optic) axis and the other element is the angle the ray makes to this axis. The optic axis is the direction the ray takes through the centre of all the optical elements. The angle the ray makes must be small enough, <span class="math notranslate nohighlight">\(\lt 6^\text{o}\)</span>, to allow the approximations <span class="math notranslate nohighlight">\(\tan(\theta) \approx \theta\)</span> and <span class="math notranslate nohighlight">\(\sin(\theta) \approx \theta\)</span> to be true, and this is good enough for most applications. This is known as the paraxial approximation. The basis set for the vector is <span class="math notranslate nohighlight">\((y, \theta)\)</span>}. The calculation is always contained between pairs of reference planes and you have to decide where to put these based on the problem at hand.</p>
+<p><img alt="Drawing" src="../_images/matrices-fig36.png" /></p>
+<p>Figure 36. Definitions of input and output rays and reference planes.</p>
+<hr class="docutils" />
+<p>The input ray enters at a height <span class="math notranslate nohighlight">\(y_1\)</span> above the optic axis at reference plane 1 and moves at angle <span class="math notranslate nohighlight">\(\theta_1\)</span> to the optic axis as shown in figure 36. Using the paraxial approximation, the output ray at reference plane 2 having passed through one or more optical elements is related by a linear transformation, hence a matrix, to the input ray at the input reference plane as</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \qquad\qquad\begin{bmatrix}y_2 \\ \theta_2 \end{bmatrix}=\begin{bmatrix} A &amp; B \\C &amp; D  \end{bmatrix}\begin{bmatrix}y_1 \\ \theta_1 \end{bmatrix}\qquad\qquad\qquad\qquad \text{(18)}\end{split}\]</div>
+<p>where the <span class="math notranslate nohighlight">\(ABCD\)</span> matrix is defined always to have a unit determinant</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \qquad\qquad\begin{vmatrix} A &amp; B \\C &amp; D  \end{vmatrix} =1 \qquad\qquad\qquad\qquad\text{(19)}\end{split}\]</div>
+<p>The values of the elements A, B, C, and D determine the optical properties of a single element, such as a thin lens, an air gap, or a curved surface. Although two reference planes determine where to start and end the calculation, when several optical elements are stacked together, additional reference planes can be added to determine where one ABCD matrix starts and the other finishes. When many elements are present, the ABCD matrices are multiplied together to produce a final 2 × 2 matrix whose ABCD values are those of the whole optical assembly. The form of the individual ABCD matrix is tabulated for various individual optical elements; see Gerrard &amp; Burch (1975) or Siegman (1986). The ABCD matrices for three optical elements are:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin{array}{ccc} 
+\begin{bmatrix} 1 &amp; 0   \\ -1/f &amp; 1  \end{bmatrix} &amp; 
+\begin{bmatrix} 1 &amp; d/n \\  0 &amp; 1    \end{bmatrix} &amp; 
+\begin{bmatrix} 1 &amp; 0   \\ -2n/r &amp; 1  \end{bmatrix} \\ 
+\text{thin lens} &amp; \text{gap d} &amp; \text{+ve mirror} \end{array}\end{split}\]</div>
+<p>The gap is just that: an air gap or a piece of glass of length <span class="math notranslate nohighlight">\(d\)</span> with refractive index <span class="math notranslate nohighlight">\(n\)</span>. The refractive index of air is practically 1, and can be taken to be 1 for the purpose of almost all calculations. The refractive index of different glasses depends on their composition but <span class="math notranslate nohighlight">\(\approx 1.52\)</span> is a typical value for crown glass. Quartz has a smaller value of <span class="math notranslate nohighlight">\(\approx 1.48\)</span> and glasses containing rare earth elements, values of <span class="math notranslate nohighlight">\(\approx 1.8\)</span>. Water has a refractive index of <span class="math notranslate nohighlight">\(1.33\)</span> at room temperature, and liquids with more polarizable atoms such as CCl<span class="math notranslate nohighlight">\(_4\)</span> have higher values <span class="math notranslate nohighlight">\(\approx 1.6\)</span>. The reflection matrix shown is for a positive, concave, or focusing mirror with radius of curvature <span class="math notranslate nohighlight">\(-r\)</span>. A positive radius of curvature <span class="math notranslate nohighlight">\(+r\)</span>, by convention, applies to a <em>negative</em> mirror, which is defined when the ray approaches from the left and meets a convex mirror surface. This is the convention shown in figure 37, where the surface is convex to the incoming ray starting at point Q. The radius <span class="math notranslate nohighlight">\(+r\)</span> is shown as the line SR, see also  figure 43. The focal length <span class="math notranslate nohighlight">\(f\)</span> of a mirror is half the radius of curvature and it is often easier to use this rather than <span class="math notranslate nohighlight">\(r\)</span>.</p>
+<p><img alt="Drawing" src="../_images/matrices-fig37.png" /></p>
+<p>Figure 37. Ray diagram showing refraction at a lens surface with a radius <span class="math notranslate nohighlight">\(r\)</span> made of glass with refractive index <span class="math notranslate nohighlight">\(n_2\)</span>; the medium outside the lens, say air, has a refractive index <span class="math notranslate nohighlight">\(n_1\)</span>. The angles and surface curvature are greatly exaggerated in the diagram. (Based on a figure in Gerrard &amp; Burch 1975.)</p>
+<hr class="docutils" />
+<p>The derivation of each ABCD matrix is not difficult, but it is unnecessary to know how this is done for every optical element. Therefore the principle is illustrated by calculating the matrix for a single lens surface, as shown in figure 37. For each optical element, such as a surface or air gap, one reference plane at some position on the x-axis is chosen at which the input beam must be defined, and a second reference plane positioned where the properties of the output beam are required. In the example below, these two planes, <span class="math notranslate nohighlight">\(rp_1, rp_2\)</span> are coincident at the lens surface.</p>
+<p>We aim to find equations describing <span class="math notranslate nohighlight">\(y_2\)</span> and angle <span class="math notranslate nohighlight">\(\theta_2\)</span> in terms of <span class="math notranslate nohighlight">\(y_1\)</span> and <span class="math notranslate nohighlight">\(\theta_1\)</span> and do so with a reference plane where the beam intersects the lens and follow the derivation in Gerrard &amp; Burch (1975).</p>
+<p>By Snell’s law of refraction</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle n_1\sin(i_1) = n_2\sin(i_2)\]</div>
+<p>where <span class="math notranslate nohighlight">\(i_1\)</span> and <span class="math notranslate nohighlight">\(i_2\)</span> are, respectively, the angles of incidence and refraction measured from the normal to the surface. At small angles, <span class="math notranslate nohighlight">\(n_1i_1 = n_2i_2\)</span>. The refractive indices are <span class="math notranslate nohighlight">\(n_1\)</span> outside the lens, and <span class="math notranslate nohighlight">\(n_2\)</span> for the lens’ glass. The angles of a triangle add up to <span class="math notranslate nohighlight">\(180^\text{o}\)</span>; therefore, by the external angle theorem on triangle <span class="math notranslate nohighlight">\(QRS\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle i_1=\theta_1+\alpha =\theta_1 +y_1/r\]</div>
+<p>and on triangle <span class="math notranslate nohighlight">\(PRS\)</span></p>
+<div class="math notranslate nohighlight">
+\[\displaystyle i_2=\theta_2+\alpha =\theta_2 +y_2/r\]</div>
+<p>Combining equations gives the equation for <span class="math notranslate nohighlight">\(y_1\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle n_1\theta_1+\frac{n_1y_1}{r} =n_2\theta_2+\frac{n_2y_1}{r} \qquad \text{or} \qquad y_1\frac{n_1-n_2}{r}=n_2\theta_2-n_1\theta_1\]</div>
+<p>and using the fact that at the surface  <span class="math notranslate nohighlight">\(y_2 = y_1\)</span> the matrix equation for the surface is</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \qquad\qquad\begin{bmatrix}y_2 \\n_2\theta_2 \end{bmatrix} = \begin{bmatrix}1 &amp; 0 \\ \displaystyle-\frac{(n_2-n_1)}{r}&amp;1  \end{bmatrix} \begin{bmatrix}y_1 \\n_1\theta_1 \end{bmatrix} \qquad \qquad\qquad\qquad\text{(21)}\end{split}\]</div>
+<p>Multiplying the angle by the refractive index <span class="math notranslate nohighlight">\(n\theta\)</span> in the vector makes all matrices unitary; often the notation <span class="math notranslate nohighlight">\(V = n\theta\)</span> is used and this is done because, by Snell’s law, <span class="math notranslate nohighlight">\(V\)</span> remains unchanged as the ray crosses a boundary from one medium to another. The <span class="math notranslate nohighlight">\(ABCD\)</span> matrix for a surface of radius <span class="math notranslate nohighlight">\(r\)</span> is</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin{bmatrix}1 &amp; 0 \\ \displaystyle-\frac{(n_2-n_1)}{r}&amp;1  \end{bmatrix}\end{split}\]</div>
+<p>with refractive index <span class="math notranslate nohighlight">\(n_1 \)</span> on the left of the surface and <span class="math notranslate nohighlight">\(n_2\)</span> on the right.</p>
+<p>If there are several optical elements, the effect of a ray passing through several of them is calculated by multiplying their <span class="math notranslate nohighlight">\(ABCD\)</span> matrices in order, as shown in figure 38. The reference planes are placed around each optical element but the first and last, which are often gaps, are determined by where the object (ray input) distance and image (ray output) distances are required to be. If a thick lens is present, three thin lens matrices would have to be used, which are those of two surfaces separated by a gap containing the glass. The multiplication order is always that in which the light passes through the elements; for example if <span class="math notranslate nohighlight">\(M_1\)</span> is the matrix next to the input reference plane (plane 1), it is the right-hand matrix in the multiplication; similarly, the output matrix is always placed on the left-hand side. In figure 38 the right-hand matrix is an air gap and the properties of the beam are those that exist at the reference plane, in this case some distance from the last lens. This might be the focal point of the lens arrangement if the light entering the first lens is parallel.</p>
+<p>The different properties of the <span class="math notranslate nohighlight">\(ABCD\)</span> elements, determine what optical properties we
+observe. This is explained in the next section.</p>
+<p><img alt="Drawing" src="../_images/matrices-fig38.png" /></p>
+<p>Figure 38. Matrices for lens-gap-lens-gap arrangement. The values <span class="math notranslate nohighlight">\((y_1,V_1)\)</span> are measured on the left of the diagram.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="understanding-the-abcd-matrix">
+<h2>10.1 Understanding the <span class="math notranslate nohighlight">\(ABCD\)</span> matrix<a class="headerlink" href="#understanding-the-abcd-matrix" title="Permalink to this headline">¶</a></h2>
+<p>The elements of the <span class="math notranslate nohighlight">\(ABCD\)</span> matrix have the following meaning when each in turn is made
+equal to zero. The other elements are unchanged.</p>
+<p><strong>(i)</strong> Making <span class="math notranslate nohighlight">\(D = 0\)</span> means that the first (left-most) reference plane must be at the focal point so that rays leave the optical elements parallel to one another.</p>
+<p><strong>(ii)</strong> Making <span class="math notranslate nohighlight">\(A = 0\)</span> puts the final reference plane at the focal point so the rays enter the optical arrangement parallel to one another.</p>
+<p><strong>(iii)</strong> If <span class="math notranslate nohighlight">\(B=0\)</span>, this produces the <em>object-image</em> relationship, figure 39. The object is magnified by the amount of element <span class="math notranslate nohighlight">\(A\)</span> and brought to a focus at the final reference plane. The number <span class="math notranslate nohighlight">\(1/D\)</span> is also the magnification.</p>
+<p><strong>(iv)</strong> Making <span class="math notranslate nohighlight">\(C = 0\)</span> ensures that both input and output rays are parallel but with angular magnification <span class="math notranslate nohighlight">\(D\)</span>. This is the telescopic relationship and the system is called <em>afocal</em>.</p>
+<p>As an example of using the matrix methods, the Lens Maker’s formula</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{1}{v}+\frac{1}{u}=\frac{1}{f}\]</div>
+<p>will be derived, where <span class="math notranslate nohighlight">\(u\)</span> is the object distance from a lens, <span class="math notranslate nohighlight">\(v\)</span> the image distance, and <span class="math notranslate nohighlight">\(f\)</span> the focal length.</p>
+<p>The <span class="math notranslate nohighlight">\(ABCD\)</span> matrix for a thin lens of focal length f is</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin{bmatrix} 1 &amp; 0 \\-1/f &amp; 1\end{bmatrix}\end{split}\]</div>
+<p>and for an air gap of  length <span class="math notranslate nohighlight">\(d\)</span> is</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin{bmatrix} 1 &amp; d \\ 0 &amp; 1\end{bmatrix}\end{split}\]</div>
+<p>The total <span class="math notranslate nohighlight">\(ABCD\)</span> matrix is calculated and, by making element <span class="math notranslate nohighlight">\(B = 0\)</span>, produces the thin lens (or lens maker’s) formula. A diagram of the arrangement is shown below.</p>
+<p>The matrices are written down in the order of rays passing through the elements and are in the reverse order to that drawn on the diagram; place the matrix of the first gap on the right, to its left that for the lens then final gap <span class="math notranslate nohighlight">\(v\)</span> making the <span class="math notranslate nohighlight">\(ABCD\)</span> matrix. The matrix with reference plane 1 is always placed on the right.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin{align}
+\pmb{ABCD} &amp; =\begin{bmatrix} 1&amp; v\\ 0 &amp; 1\end{bmatrix} \begin{bmatrix} 1&amp; 0\\ -1/f &amp; 1\end{bmatrix}\begin{bmatrix} 1&amp; u\\ 0 &amp; 1\end{bmatrix} \\
+ &amp;\quad\Tiny{\text{   gap after lens}\qquad\text{lens } \qquad \text{   gap before lens} } 
+\end{align}\end{split}\]</div>
+<p><img alt="Drawing" src="../_images/matrices-fig39.png" /></p>
+<p>Figure 39. Arrangement for calculating object-image relationship for a <em>thin</em> lens.</p>
+<hr class="docutils" />
+<p>Multiplying by hand gives</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \pmb{ABCD}  =\begin{bmatrix} 1&amp; v\\ 0 &amp; 1\end{bmatrix} \begin{bmatrix} 1&amp; u\\ -1/f &amp; -u/f+1\end{bmatrix}= \begin{bmatrix} 1-v/f&amp; u+v(1-u/f)\\ -1/f &amp; 1-u/f\end{bmatrix} \end{split}\]</div>
+<p>As a check, the determinant should be <span class="math notranslate nohighlight">\(1\)</span>. The calculation is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle (1 - u/f )(1 - v/f ) + u/f + v/f (1 - u/f ) = 1\]</div>
+<p>When <span class="math notranslate nohighlight">\(B = 0\)</span>, the object-image relationship applies, then <span class="math notranslate nohighlight">\(u + v - uv/f = 0\)</span> and rearranging produces the Lens Maker’s formula;</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{1}{v}+\frac{1}{u}=\frac{1}{f}\]</div>
+</div>
+<div class="section" id="the-laser-cavity">
+<h2>10.2 The laser cavity<a class="headerlink" href="#the-laser-cavity" title="Permalink to this headline">¶</a></h2>
+<p>A laser cavity consists of two or more mirrors with a gain medium sandwiched between them, Figure 40. Usually one of the end mirrors is <span class="math notranslate nohighlight">\(100\)</span>% reflecting and the other mirror, the output coupler, is partially transmitting. This is typically in the range of <span class="math notranslate nohighlight">\(1 \to 10\)</span>% transmitting depending on the type of laser. The gain medium can be a gas, a liquid containing a highly fluorescent dye, such as Rhodamine-6, or a solid, usually a glass doped with a small percentage of luminescent ions, such as Nd<span class="math notranslate nohighlight">\(^{3+}\)</span> or Ti<span class="math notranslate nohighlight">\(^+\)</span>. The gain medium is excited either electrically, forming a gas discharge, or from another laser or flash lamp. Most of the fluorescence is lost because it is emitted over all angles, but the laser’s cavity mirrors capture some of it, which is then fed back into the gain medium where amplification caused by stimulated emission occurs. For the laser to work, the photons have to pass back and forth in the cavity indefinitely and can only do so if they follow the same path. This is equivalent to saying that the wave-front reproduces itself at the mirrors after each round trip. The wave-front is the shape of the wave inside the cavity and it has the same curvature as that of the mirror as it reaches it because light must be reflected normally off any mirror if it is to return along the same path. The curvature changes inside the cavity to satisfy this normality condition at the end mirrors. As the beam waist is approached, the curved wavefront becomes a plane wave and then changes to the opposite curvature as it moves towards the other mirror. When the laser beam leaves the cavity, its longitudinal profile is that determined by the cavity and it continuously diverges. The transverse profile of the laser intensity is ideally Gaussian, although lasers with other profiles can be made.</p>
+<p>If the cavity is represented by an <span class="math notranslate nohighlight">\(ABCD\)</span> matrix <span class="math notranslate nohighlight">\(\pmb{M}\)</span>, and we will define exactly what this will be shortly, then, as the input and output rays must reproduce one another, we can suppose that the input and output can only be related by some constant factor. Furthermore, this value must be the same for one round trip as for <span class="math notranslate nohighlight">\(N\)</span> round trips of the cavity. For one round trip, from equation 18 <span class="math notranslate nohighlight">\(\displaystyle \begin{bmatrix} y_2 \\ \theta_2\end{bmatrix}=\pmb{M}\begin{bmatrix} y_1 \\ \theta_1\end{bmatrix}\)</span>. It is true that for <span class="math notranslate nohighlight">\(N\)</span> round trips</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin{bmatrix} y_N \\ \theta_N\end{bmatrix}=\pmb{M}^N\begin{bmatrix} y_1 \\ \theta_1\end{bmatrix}\end{split}\]</div>
+<p>therefore some way of finding the <span class="math notranslate nohighlight">\(N^{th}\)</span> power of the matrix has to be used. The method is to use a similarity matrix, which is described in Section 13.4 but before doing this a more physical method rather than a purely mathematical one is used.</p>
+<p>If the wavefront reproduces itself after one pass, then it is some multiple of the input, therefore</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin{bmatrix} y_2 \\ \theta_2\end{bmatrix}=\lambda\begin{bmatrix} y_1 \\ \theta_1\end{bmatrix}\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\lambda\)</span> is a number. For <span class="math notranslate nohighlight">\(N\)</span> round-trips, the number will be <span class="math notranslate nohighlight">\(\lambda^N\)</span>. Some conditions will have to be placed on <span class="math notranslate nohighlight">\(\lambda\)</span>, but first its values will be calculated. Combining the last equation with equation 18, gives</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \pmb{M}\begin{bmatrix} y_1 \\ \theta_1\end{bmatrix}=\lambda\begin{bmatrix} y_1 \\ \theta_1\end{bmatrix}\end{split}\]</div>
+<p>which has the form of an eigenvalue - eigenvector equation see section 12.13. Rearranging gives</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle (\pmb{M}-\lambda\pmb{I})\begin{bmatrix} y_1 \\ \theta_1\end{bmatrix}=0\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\pmb{I}\)</span> is the <span class="math notranslate nohighlight">\(2\times 2\)</span> unit or identity matrix. To find <span class="math notranslate nohighlight">\(\lambda\)</span> the determinant has to be solved;</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle |\pmb{M}-\lambda\pmb{I}|=0 \qquad \text{or} \qquad \begin{vmatrix} A-\lambda &amp; B \\C&amp; D-\lambda \end{vmatrix}=0\end{split}\]</div>
+<p>the characteristic equation <span class="math notranslate nohighlight">\((A-\lambda)(D-\lambda)-BC=0\)</span> or <span class="math notranslate nohighlight">\(\lambda^2 -(A+D)\lambda+1=0\)</span> because <span class="math notranslate nohighlight">\(AD-BC=1\)</span> therefore</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \lambda = \frac{A+D \pm\sqrt{(A+D)^2-4} }{2}\tag{23}\]</div>
+<p>Because the wavefronts must replicate themselves, <span class="math notranslate nohighlight">\(\lambda\)</span> cannot be a real number unless it is unity, which is a trivial result; therefore it follows that <span class="math notranslate nohighlight">\(\lambda\)</span> is purely imaginary. In this case <span class="math notranslate nohighlight">\((A + D)^2 \lt 4\)</span>, which means that</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \left| \frac{A+D}{2} \right| \lt 2 \tag{24}\]</div>
+<p>Now this is surprising; we do not need to know the values of <span class="math notranslate nohighlight">\(\lambda\)</span> because only equation 24 needs to be obeyed. If it is obeyed, the wavefronts in the cavity replicate themselves and the cavity is stable; if not it is unstable. To design a laser cavity, the first step is to calculate the values of <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(D\)</span> that make a cavity stable with the mirror radius of curvature that have been chosen and to plot a graph of the stable region. The next step is therefore to work out an <span class="math notranslate nohighlight">\(ABCD\)</span> matrix for a cavity.</p>
+<p>The simplest cavity has two mirrors, as shown in Figures 40 and 41. The cavity is split into several regions by defining a reference plane at each mirror, at the edges of each gap and in the gain medium, which is assumed to have flat surfaces, and can be treated as a gap with a different refractive index. The matrices must allow the photons to travel from the edge of the output coupler to the end mirror and back again, but note that the output
+mirror is only counted once. The scheme is shown in Figure 41. It is clear from this that the laser beam is not a parallel beam of radiation but is always diverging or converging depending where it is measured. The same beam profile is observed after focusing by a lens, only expanded or compressed depending on the type of lens.</p>
+<p><img alt="Drawing" src="../_images/matrices-fig40.png" /></p>
+<p>Figure 40. Basic laser cavity</p>
+<hr class="docutils" />
+<p><img alt="Drawing" src="../_images/matrices-fig41.png" /></p>
+<p>Figure 41 <span class="math notranslate nohighlight">\(ABCD\)</span> matrices for a two-mirror cavity.</p>
+<hr class="docutils" />
+<p>The <span class="math notranslate nohighlight">\(ABCD\)</span> matrix <span class="math notranslate nohighlight">\(\pmb{M}\)</span> is made by following a ray from the output mirror and back again;
+the sequence of matrices is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \pmb{M} = G_1G_2G_3M_2G_3G_2G_1M_1\]</div>
+<p>Notice that mirror 1 is on the right and that each mirror is included only once. The gaps are indicated by the <span class="math notranslate nohighlight">\(G\)</span> matrices. <span class="math notranslate nohighlight">\(G_2\)</span> is the gap produced by the gain medium. To make the calculation simpler, the three gaps can be combined into one. If their optical lengths are <span class="math notranslate nohighlight">\(d_1, d_2/n_2\)</span>, and <span class="math notranslate nohighlight">\(d_3\)</span>, the total optical length, assuming the refractive index of air is <span class="math notranslate nohighlight">\(1\)</span>, is <span class="math notranslate nohighlight">\(L = d + d /n + d\)</span> and the combined gap matrix  <span class="math notranslate nohighlight">\(\displaystyle \begin{bmatrix} 1 &amp; L \\ 0 &amp; 1 \end{bmatrix}\)</span>. This is the same as multiplying the three gap matrices together The matrices for a gap also commute so that <span class="math notranslate nohighlight">\(G_1G_2G_3 = G_3G_2G_1\)</span>. The overall matrix for the cavity is, therefore,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\pmb{M}= \begin{bmatrix} 1 &amp; L \\0 &amp; 1\end{bmatrix}\begin{bmatrix} 1 &amp; 0 \\-1/f_2 &amp; 1\end{bmatrix}\begin{bmatrix} 1 &amp; L \\0 &amp; 1\end{bmatrix} \begin{bmatrix} 1 &amp; 0 \\-1/f_1 &amp; 1\end{bmatrix} \end{split}\]</div>
+<p>where the focal length of the output coupler mirror is <span class="math notranslate nohighlight">\(f_1\)</span> and that of the high reflector <span class="math notranslate nohighlight">\(f_2\)</span>. This can easily be multiplied out by hand, but we will use python/Sympy.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">L</span><span class="p">,</span> <span class="n">f1</span><span class="p">,</span> <span class="n">f2</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;L, f1, f2&#39;</span><span class="p">)</span>
+
+<span class="n">G</span> <span class="o">=</span> <span class="n">Matrix</span><span class="p">(</span> <span class="p">[</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="n">L</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span>    <span class="mi">1</span><span class="p">]</span> <span class="p">]</span> <span class="p">)</span>
+<span class="n">M1</span><span class="o">=</span> <span class="n">Matrix</span><span class="p">(</span> <span class="p">[</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="n">f1</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="p">]</span> <span class="p">)</span>
+<span class="n">M2</span><span class="o">=</span> <span class="n">Matrix</span><span class="p">(</span> <span class="p">[</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="n">f2</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="p">]</span> <span class="p">)</span>
+
+<span class="n">M</span> <span class="o">=</span> <span class="n">G</span> <span class="o">*</span> <span class="n">M2</span> <span class="o">*</span> <span class="n">G</span> <span class="o">*</span> <span class="n">M1</span>
+<span class="n">simplify</span><span class="p">(</span><span class="n">M</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \left[\begin{matrix}\frac{- L f_{1} + L \left(L - 2 f_{2}\right) + f_{1} f_{2}}{f_{1} f_{2}} &amp; \frac{L \left(- L + 2 f_{2}\right)}{f_{2}}\\\frac{L - f_{1} - f_{2}}{f_{1} f_{2}} &amp; \frac{- L + f_{2}}{f_{2}}\end{matrix}\right]\end{split}\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">AplusD</span> <span class="o">=</span> <span class="n">simplify</span><span class="p">(</span><span class="n">M</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="n">M</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">AplusD</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/matrices-E_5_01.png" src="../_images/matrices-E_5_01.png" />
+</div>
+</div>
+<p>The stability occurs when <span class="math notranslate nohighlight">\(|A + D| \lt 2\)</span> and this can only be calculated when specific values are used. If the optical length of the cavity is <span class="math notranslate nohighlight">\(L = 0.5\)</span> m and the mirrors have focal lengths of <span class="math notranslate nohighlight">\(f_1 =0.1\)</span> and <span class="math notranslate nohighlight">\(f_2 =0.2\)</span>  m, then <span class="math notranslate nohighlight">\(A+D=-0.5\)</span>, which is clearly going to be a stable cavity. This can be appreciated if a sketch is made. If instead, the cavity is lengthened to 1<span class="math notranslate nohighlight">\( \)</span>m then <span class="math notranslate nohighlight">\(A+D=22\)</span>, which will prove not to be a stable cavity as a ray will work its way out of the cavity after a few round trips, thereby limiting any feedback. The boundary between the stable and unstable cavity occurs in the two-mirror cavity when the cavity length is the sum of the mirrors’ radii of curvature, which is twice the sum of their focal lengths. This can be seen from equation (7.25). A quick way to see if a cavity is stable and to work out where the beam waist is going to be is to draw two circles each with each mirror’s radius of curvature and with the centres of the circles separated by <span class="math notranslate nohighlight">\(L - r-1 - r_2\)</span>. The beam waist is where the two circles cross.</p>
+<p>The calculation of a value for <span class="math notranslate nohighlight">\(\lambda\)</span> was left unfinished; it is not necessary to know this to determine if the laser is stable but it is necessary if the position and value of the beam waist are needed, which they invariably are. We might want to place the gain medium at the beam waist to stand the best chance of getting the laser to work by maximizing the gain. However, this may not always be the best place because if the beam waist is too small the high intensity inside gain medium, which, for example, might be a titanium sapphire crystal may cause this to ‘burn’. A radiation intensity of <span class="math notranslate nohighlight">\(&gt;\gt 10^{10}\)</span> w cm<span class="math notranslate nohighlight">\({-}\)</span>2 can cause breakdown in the crystal or even drill a hole right through it.</p>
+<p>Returning to equation 23 and as equation 24 also has to be satisfied, then this is possible if the two eigenvalues <span class="math notranslate nohighlight">\(\lambda\)</span> are</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \lambda_{1,2}= e^{\pm i \theta} \tag{26}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\theta\)</span> is an angle such that <span class="math notranslate nohighlight">\(\cos(\theta) = (A + D)/2\)</span> will satisfy the eigenvalues <span class="math notranslate nohighlight">\(\lambda\)</span>.</p>
+<p>From a study of the Gaussian beam properties of laser cavities (Gerrard &amp; Burch 1975), the following properties are obtained:</p>
+<p><span class="math notranslate nohighlight">\(\qquad\)</span> Radius of curvature of laser beam at reference plane: <span class="math notranslate nohighlight">\(\displaystyle R=\frac{2B}{D-A}\)</span></p>
+<p><span class="math notranslate nohighlight">\(\qquad\)</span> Beam radius <span class="math notranslate nohighlight">\(\omega\)</span> at reference plane, (<span class="math notranslate nohighlight">\(\lambda\)</span> here is wavelength):  <span class="math notranslate nohighlight">\(\displaystyle \omega=\sqrt{\frac{\lambda B} {\pi\sin(\theta)} }\)</span></p>
+<p><span class="math notranslate nohighlight">\(\qquad\)</span> Location of neck to left of reference plane:  <span class="math notranslate nohighlight">\(\displaystyle z = \frac{(A - D)}{2C}\)</span></p>
+<p><span class="math notranslate nohighlight">\(\qquad\)</span> Beam waist at neck: <span class="math notranslate nohighlight">\(\displaystyle \omega_0=\sqrt{\pm\frac{\lambda\sin(\theta)} {\pi C} }\)</span></p>
+<p><span class="math notranslate nohighlight">\(\qquad\)</span> confocal beam length: <span class="math notranslate nohighlight">\(\displaystyle z_0=\frac{\pi \omega_0^2}{\lambda}\)</span></p>
+<p>The last parameter, the confocal beam length, is the length of the region over which the laser is focused in the sense that it is the length either side of the beam waist where the beam increases by <span class="math notranslate nohighlight">\(\approx\sqrt{2}\)</span> . The beam waist at <span class="math notranslate nohighlight">\(z\)</span>, a position either side of the focus, is given by</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \omega_z^2= \omega_0^2 \sqrt{1+\left( \frac{\lambda z}{\pi \omega_0^2}\right)^2} = \omega_0^2 \sqrt{1+\left( \frac{ z}{z_0}\right)^2} \]</div>
+<p>In calculating the beam radii <span class="math notranslate nohighlight">\(\omega_z\)</span> and <span class="math notranslate nohighlight">\(\omega_0\)</span> the <span class="math notranslate nohighlight">\(\pm\)</span> sign is chosen to ensure that the number is real. When cavities that are more complicated are used, it is necessary to use the complex beam parameter to determine the properties of the cavity. This is explained in specialized texts such as Siegman (1986); Gerrard &amp; Burch (1975); Svelto (1982) and Yariv (1975).</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./chapter-7"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="matrices-Q31-34.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Questions 31 - 34</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="matrices-Q35-39.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Questions 35 - 39</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Godfrey Beddard<br/>
+        
+            &copy; Copyright 2022.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

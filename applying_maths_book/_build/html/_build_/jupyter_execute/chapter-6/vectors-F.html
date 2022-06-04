@@ -1,0 +1,1560 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Torsion or dihedral angles &#8212; Applying Maths in the Chemical &amp; Biomolecular Sciences</title>
+    
+  <link href="../../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/togglebutton.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../../_static/book-cover.jpg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Applying Maths in the Chemical & Biomolecular Sciences</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../intro.html">
+   Applying Maths in the Chemical and Biomolecular Sciences.
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../chapter-1/chapter1-intro.html">
+   1. Numbers, Equations, Operators, and Algorithms.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-1/chapter1-A.html">
+     Numbers to Algorithms.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-1/chapter1-Q1-7.html">
+     Questions 1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-1/chapter1-B.html">
+     Trig, hyperbolic and inverse functions, waves, polar coordinates &amp; factorials
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-1/chapter1-Q8-16.html">
+     Questions 8 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-1/chapter1-C.html">
+     Sophisticated Counting.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-1/chapter1-Q17-34.html">
+     Questions 17 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-1/chapter1-D.html">
+     Modulo arithmetic,
+     <span class="math notranslate nohighlight">
+      \(\delta\)
+     </span>
+     functions, types of  series &amp;  estimating quantities
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-1/chapter1-Q35-39.html">
+     Questions 35 - 39
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-1/chapter1-answers-1-7.html">
+     Solutions Q1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-1/chapter1-answers-8-16.html">
+     Solutions Q8 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-1/chapter1-answers-17-34.html">
+     Solutions Q17 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-1/chapter1-answers-35-39.html">
+     Solutions Q35 - 39
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../chapter-2/chapter2-intro.html">
+   2. Complex numbers.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-2/chapter2-A.html">
+     Real, imaginary, conjugate and modulus
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-2/chapter2-Q-1-9.html">
+     Questions 1 - 9
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-2/chapter2-B.html">
+     De Moivre’s theorem and integer powers of complex numbers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-2/chapter2-Q-10-13.html">
+     Questions 10 -13
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-2/chapter2-C.html">
+     Euler’s theorem
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-2/chapter2-Q-14-27.html">
+     Questions 14 - 27
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-2/chapter2-answers.html">
+     Solutions Q1 - 27
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../chapter-3/differen-intro.html">
+   3. Differentiation.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-A.html">
+     Differentiation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-B.html">
+     Trig functions, logs, power, reciprocals and integrals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-C-Q-4-11.html">
+     Questions 1-11
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-D.html">
+     Product rule and function of function or chain rule.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-E-Q-12-42.html">
+     Questions 12-42
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-F.html">
+     Limits, l’Hopital’s rule, Maximum, Minimum and Calculus of Variations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-G-Q-43-73.html">
+     Questions 43 - 73
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-H.html">
+     Numerically finding the roots of an equation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-I-Q-74-85.html">
+     Questions 74 - 85
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-J.html">
+     Minimizing or maximizing with constraints: Lagrange Undetermined Multipliers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-K-Q-86-92.html">
+     Questions 86 - 92
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-L.html">
+     Partial differentiation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-M-Q-93-114.html">
+     Questions 93-114
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-M1.html">
+     Differentiation of vectors
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-N-answers-1-11.html">
+     Solutions Q 1-11
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-O-answers-12-42.html">
+     Solutions Q 12-42
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-P-answers-43-73.html">
+     Solutions Q 43 - 73
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-Q-answers-74-85.html">
+     Solutions Q 74 - 85
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-R-answers-86-92.html">
+     Solutions Q 86 - 94
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-S-answers-93-114.html">
+     Solutions Q 93-114
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../chapter-4/integration-intro.html">
+   4. Integration.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-A.html">
+     Integration basics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-Q1-14.html">
+     Questions 1-14
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-B.html">
+     Integration by substitution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-Q15-30.html">
+     Questions 15-30
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-C.html">
+     Using parametric equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-Q31-48.html">
+     Questions 31 - 48
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-D.html">
+     Calculating an Average Value.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-Q49-72.html">
+     Questions 49 - 72
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-E.html">
+     The Variational Method in Quantum Mechanics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-Q73-77.html">
+     Questions 73 - 77
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-F.html">
+     Multiple integrals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-Q78-86.html">
+     Questions 78 - 86
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-G.html">
+     Calculating the energy of a chemical bond using molecular orbitals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-H.html">
+     Line integrals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-Q87-96.html">
+     Questions 87 - 96
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-answers-1-14.html">
+     Solutions Q1 - 14
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-answers-15-30.html">
+     Solutions Q15 - 30
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-answers-31-48.html">
+     Solutions Q31 - 48
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-answers-49-72.html">
+     Solutions Q49 - 72
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-answers-73-96.html">
+     Solutions Q73 - 96
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../chapter-5/chapter-5-intro.html">
+   5. Summations, Series and expansion of Functions.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-5/chapter-5-A.html">
+     Series, averages, partition functions, DNA melting, atom entropy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-5/chapter-5-B-Q1-13.html">
+     Questions 1 - 13
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-5/chapter-5-E.html">
+     Maclaurin and Taylor series expansions. Paramagnetic spins. Euler-Maclaurin formula.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-5/chapter-5-F-Q14-34.html">
+     Questions 14 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-5/chapter-5-G-Q35-44.html">
+     Questions 35 - 44
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-5/chapter-5-perturbation-A.html">
+     Perturbation Theory
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-5/chapter-5-perturbation-B-Q45-48.html">
+     Questions 45 - 48
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-5/chapter-5-perturbation-C.html">
+     Quantum superposition and wavepackets.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-5/chapter-5-perturbation-D-Q49-52.html">
+     Questions 49 - 52
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-5/chapter-5-answers-1-7.html">
+     Solutions Q 1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-5/chapter-5-answers-8-13.html">
+     Solutions Q8 - 13
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-5/chapter-5-answers-14-26.html">
+     Solutions Q 14 - 26
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-5/chapter-5-answers-27-32.html">
+     Solutions Q27 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-5/chapter-5-answers-33-44.html">
+     Solutions Q33 - 44
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-5/chapter-5-answers-45-52.html">
+     Solutions Q45 - 52
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../chapter-6/vectors-intro.html">
+   6. Vectors.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-A.html">
+     Vector basics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-Q1-24.html">
+     Questions 1 - 24
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-B.html">
+     Projections and components
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-Q25-32.html">
+     Questions 25 - 32
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-C.html">
+     Axes need not be right-angled or of equal length
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-Q33-38.html">
+     Questions 33 - 38
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-D.html">
+     Basis sets with more than three dimensions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-Q39-46.html">
+     Questions 39 - 46
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-E.html">
+     Cross product or vector product
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-Q47-52.html">
+     Questions 47 - 52
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-F.html">
+     Torsion or dihedral angles
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-Q53-48.html">
+     Questions 53 - 48
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-G.html">
+     Torque and angular momentum
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-Q59-61.html">
+     Questions 59 - 61
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-answers-Q1-24.html">
+     Solutions Q1 - 24
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-answers-Q25-32.html">
+     Solutions Q25 - 32
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-answers-Q33-38.html">
+     Solutions Q33 - 38
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-answers-Q39-46.html">
+     Solutions Q39 - 46
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-answers-Q47-52.html">
+     Solutions Q47 - 52
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-answers-Q53-61.html">
+     Solutions Q53 - 61
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../chapter-7/matrices-intro.html">
+   7. Matrices
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-A.html">
+     Determinants
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-Q1-10.html">
+     Questions  1 - 10
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-B.html">
+     Matrices
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-Q11-16.html">
+     Questions  11 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-C.html">
+     Molecular Group Theory
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-Q17-30.html">
+     Questions  17 - 30
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-D.html">
+     Rotation matrices: moving molecules
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-Q31-34.html">
+     Questions 31 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-E.html">
+     Matrices in optics and designing laser cavities
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-Q35-39.html">
+     Questions 35 - 39
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-F.html">
+     Polarizing optics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-Q40-44.html">
+     Questions 40 - 44
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-G.html">
+     Solving equations using matrices. Eigenvectors &amp; Eigenvalues.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-Q45-50.html">
+     Questions 45 - 50
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-H.html">
+     Rate equations and Chemical Kinetics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-Q51-54.html">
+     Questions 51 - 54
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-I.html">
+     Molecular vibrations and pendulums
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-Q55-58.html">
+     Questions 55 - 58
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-J.html">
+     Moments of Inertia
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-Q59-60.html">
+     Questions 59 - 62
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-K.html">
+     Calculating a bond length using moments of inertia
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-Q61.html">
+     Question 61
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-L.html">
+     Principal axes for Moments of Inertia
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-Q62.html">
+     Question 62
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-answersQ1-10.html">
+     Solutions Q1 - 10
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-answersQ11-16.html">
+     Solutions Q11 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-answersQ17-30.html">
+     Solutions Q17 - 30
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-answersQ31-34.html">
+     Solutions Q31 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-answersQ35-39.html">
+     Solutions Q35 - 39
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-answersQ40-44.html">
+     Solutions Q40 - 44
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-answersQ45-50.html">
+     Solutions Q45 - 50
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-answersQ51-54.html">
+     Solutions Q51 - 54
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-answersQ55-58.html">
+     Solutions Q55 - 58
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-answersQ59-61.html">
+     Solutions Q59 - 61
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../chapter-8/matricesQM-intro.html">
+   8. Matrices in Quantum Mechanics
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-8/matricesQM-A.html">
+     Matrices in Quantum Mechanics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-8/matricesQM-Q1-7.html">
+     Questions 1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-8/matricesQM-B.html">
+     Basis sets and bra-ket algebra
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-8/matricesQM-Q8-12.html">
+     Questions 8 - 12
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-8/matricesQM-C.html">
+     Continuous basis sets
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-8/matricesQM-answers1-7.html">
+     Solutions Q1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-8/matricesQM-answers8-12.html">
+     Solutions Q8 - 12
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../chapter-9/Fourier-intro.html">
+   9. Fourier Series and Transforms.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-9/Fourier-A-B.html">
+     Fourier series, Gibbs phenomenon, generalised series.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-9/Fourier-questions-1-6.html">
+     Questions 1 - 6
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-9/Fourier-C.html">
+     Fourier Transforms
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-9/Fourier-questions-7-15.html">
+     Questions 7 - 15
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-9/Fourier-D.html">
+     Convolution and Autocorrelation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-9/Fourier-questions-16-21.html">
+     Questions 16 - 21
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-9/Fourier-E.html">
+     Discrete Fourier  (DFT)  and Fast Fourier transforms (FFT)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-9/Fourier-F.html">
+     The Hadamard Transform: Encoding and Decoding
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-9/Fourier-answers-1-6.html">
+     Solutions Q 1 - 6
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-9/Fourier-answers-7-15.html">
+     Solutions Q 7 - 15
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-9/Fourier-answers-16-21.html">
+     Solutions Q 16 - 21
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-9/Fourier-2D-Diffraction.html">
+     The Fourier transform in two dimensions: images and x-ray Diffraction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-9/Fourier-tomography.html">
+     Computed Tomography
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../chapter-10/Diff-eqns-intro.html">
+   10. Differential Equations.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-10/Diff-eqns-A.html">
+     Differential Equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-10/Diff-eqns-Q1-23.html">
+     Questions 1 - 23
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-10/Diff-eqns-B.html">
+     First order eqns &amp; Integrating factors. Second order eqns, Newtons laws, equations of motion.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-10/Diff-eqns-C.html">
+     The ‘D’ operator.  Solving linear differential equations with constant coefficients
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-10/Diff-eqns-D.html">
+     Simultaneous equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-10/Diff-eqns-Q24-37.html">
+     Questions 24 - 37
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-10/Diff-eqns-E.html">
+     Linear equations with variable coefficients
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-10/Diff-eqns-F.html">
+     Partial Differential Equations, PDE
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-10/Diff-eqns-G.html">
+     PDE examples continued
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-10/Diff-eqns-answers-1-21.html">
+     Solutions Q1 - 21
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-10/Diff-eqns-answers-22-37.html">
+     Solutions Q22 - 37
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../chapter-11/num-methods-intro.html">
+   11. Numerical Methods
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-A.html">
+     Numerical Methods
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-Q1-7.html">
+     Questions 1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-B.html">
+     Numerical solution of differential equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-Q8-12.html">
+     Questions 8 - 12
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-C.html">
+     Coupled equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-Q13-16.html">
+     Questions 13 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-D.html">
+     The phase plane, nullclines, and stable points
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-Q17-20.html">
+     Questions 17 - 20
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-E.html">
+     Reaction schemes with feedback
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-Q21-34.html">
+     Questions 21 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-F.html">
+     Boundary value problems.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-Q35-40.html">
+     Questions 35 - 40
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-answers1-7.html">
+     Solutions Q1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-answers8-12.html">
+     Solutions Q8 - 12
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-answers13-16.html">
+     Solutions Q13 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-answers17-20.html">
+     Solutions Q17 - 20
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-answers21-34.html">
+     Solutions Q21 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-answers35-40.html">
+     Solutions Q35 - 40
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../chapter-12/monte-carlo-intro.html">
+   12. Monte Carlo Methods
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+  <label for="toctree-checkbox-12">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-12/monte-carlo-A.html">
+     Monte - Carlo Methods
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-12/monte-carlo-Q1-6.html">
+     Questions 1 - 6
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-12/monte-carlo-B.html">
+     Solving rate equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-12/monte-carlo-Q7-10.html">
+     Questions 7 - 10
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-12/monte-carlo-CC.html">
+     Monte Carlo Simulations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-12/monte-carlo-C.html">
+     Energy transfer. Autocatalytic reaction and spreading of fires
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-12/monte-carlo-Q11-17.html">
+     Questions 11 - 17
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-12/monte-carlo-D.html">
+     The Metropolis algorithm
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-12/monte-carlo-answers1-6.html">
+     Solutions Q1 - 6
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-12/monte-carlo-answers7-10.html">
+     Solutions Q7 - 10
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-12/monte-carlo-answers11-17.html">
+     Solutions Q11 - 17
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../chapter-13/analysis-intro.html">
+   13. Data Analysis
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+  <label for="toctree-checkbox-13">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-13/analysis-A.html">
+     Characterizing experimental data. Accuracy, precision, mean and standard deviation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-13/analysis-Q1-3.html">
+     Questions 1 - 3
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-13/analysis-B.html">
+     Modelling data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-13/analysis-Q4-9.html">
+     Questions 4 - 9
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-13/analysis-C.html">
+     Modelling data is simpler using matrices
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-13/analysis-Q10-11.html">
+     Questions 10 - 13
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-13/analysis-D.html">
+     Non-linear least squares. Least absolute deviation. Principal component analysis
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-13/analysis-answers1-11.html">
+     Solutions Q1 -11
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../chapter-1/chapter1-E.html">
+   SI units, Rounding, converting units &amp; Glossary.
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../references/References.html">
+   References
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../references/Python%20crib.html">
+   Appendix:  Some basic Python instructions with a few examples.
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../../_sources/_build_/jupyter_execute/chapter-6/vectors-F.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/_build_/jupyter_execute/chapter-6/vectors-F.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dihedral-angles">
+   20 Dihedral  angles
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#torsion-angles-in-sugars-and-dna">
+   21 Torsion angles in sugars and DNA
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pseudo-rotation-angles">
+   21.1 Pseudo-rotation angles
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#reading-protein-data-bank-data">
+   21.2 Reading protein data bank data
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="torsion-or-dihedral-angles">
+<h1>Torsion or dihedral angles<a class="headerlink" href="#torsion-or-dihedral-angles" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import all python add-ons etc that will be needed later on</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="n">init_printing</span><span class="p">()</span>                      <span class="c1"># allows printing of SymPy results in typeset maths format</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;font.size&#39;</span><span class="p">:</span> <span class="mi">16</span><span class="p">})</span>  <span class="c1"># set font size for plots</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="dihedral-angles">
+<h2>20 Dihedral  angles<a class="headerlink" href="#dihedral-angles" title="Permalink to this headline">¶</a></h2>
+<p>The torsion or dihedral angle <span class="math notranslate nohighlight">\(\vec \psi\)</span> between two bonds is something we might want to calculate from a chemical structure. A dihedral angle is the angle between two planes, see figure 41. Two such angles, <span class="math notranslate nohighlight">\(\psi\)</span> and <span class="math notranslate nohighlight">\(\phi\)</span> in proteins are used to generate Ramachandran plots as shown in figure 38. A regular or ideal protein helix would have angles <span class="math notranslate nohighlight">\(\phi = -60^\text{o}\)</span> and <span class="math notranslate nohighlight">\(\psi = -50^\text{o}\)</span> and real proteins with a large amount of <span class="math notranslate nohighlight">\(\alpha\)</span>-helical character, such as bacteriorhodopsin, show clusters of points in this area. The other main feature of proteins is the <span class="math notranslate nohighlight">\(\beta\)</span>-sheet and this is a more loosely defined structure and exhibits angles in the top left corner bounded by approximately <span class="math notranslate nohighlight">\(\phi = -60^\text{o}\)</span> and <span class="math notranslate nohighlight">\(\psi = +40^\text{o}\)</span>. The exact areas describing the structure are limited by steric repulsion between the atoms as bonds rotate, and are described in most biochemistry, although few chemistry, textbooks. Ramachandran plots can be produced as part of the web interface of sites such as the RCSB Protein Data Bank (<a class="reference external" href="http://www.rcsb.org/pdb/">www.rcsb.org/pdb/</a>) as well as in textbooks. You could also write your own program that can read ‘.pdb’ or ‘.ent’ files and produce a plot.</p>
+<p><img alt="Drawing" src="_build_/jupyter_execute/chapter-6/vectors-fig38-38-1FBB.png" /></p>
+<p>Figure 38 Left: Ramachandran plot of the <span class="math notranslate nohighlight">\(\phi\)</span> and <span class="math notranslate nohighlight">\(\psi\)</span> torsion angles in the protein bacteriorhodopsin (pdb 1FBB), which contains extensive <span class="math notranslate nohighlight">\(\alpha\)</span>-helices. Most angles cluster around the values <span class="math notranslate nohighlight">\(\phi = -56^\text{o}, \psi = -53^\text{o}\)</span> typical of an <span class="math notranslate nohighlight">\(\alpha\)</span>-helix. A regular or ideal helix would have angles <span class="math notranslate nohighlight">\(-60^\text{o}\)</span> and <span class="math notranslate nohighlight">\(-50^\text{o}\)</span>. The area of <span class="math notranslate nohighlight">\(\beta\)</span>-sheet structure, of which there is very little in this protein, is in the top left corner bounded by approximately <span class="math notranslate nohighlight">\(-55\)</span> and <span class="math notranslate nohighlight">\(+60\)</span> degrees. Right: The structure of the protein shows extensive helical structure. The retinal chromophore, which is positioned in the centre of the column of helices, is shown also.</p>
+<hr class="docutils" />
+<p>Part of a peptide chain is shown in figure 39. The backbone forms a repeating sequence -C<span class="math notranslate nohighlight">\(_\alpha\)</span>-C-N-C<span class="math notranslate nohighlight">\(_\alpha\)</span>-C-N-. The peptide unit is the CONH part of the structure, linked together by C<span class="math notranslate nohighlight">\(_\alpha\)</span> atoms containing the amino acid side-chain R. The C<span class="math notranslate nohighlight">\(_\alpha\)</span>-C-O-(N-H) atoms lie in a plane, shown shaded in the top of the figure, as do the atoms O-C-(N-H)-C<span class="math notranslate nohighlight">\(_\alpha\)</span> shown shaded in the lower part. There are two main torsion angles, figure 39, which are <span class="math notranslate nohighlight">\(\phi\)</span>, the torsion angle of the planes containing the CN-C<span class="math notranslate nohighlight">\(_\alpha\)</span>C atoms which runs from the C=O to C=O groups, and <span class="math notranslate nohighlight">\(\psi\)</span>, the angle between planes containing the NC<span class="math notranslate nohighlight">\(_\alpha\)</span>-CN atoms which starts and ends on the nitrogen atoms. A third angle <span class="math notranslate nohighlight">\(\omega\)</span> is also defined as C<span class="math notranslate nohighlight">\(_\alpha\)</span>C-NC<span class="math notranslate nohighlight">\(_\alpha\)</span> but in a regular protein, this is very close to <span class="math notranslate nohighlight">\(180^\text{o}\)</span>. The peptide chain runs from the N terminal to the C. The N terminal of the protein occurs towards the end of the chain with the lowest indexed <span class="math notranslate nohighlight">\(\alpha\)</span>-carbon, therefore the angle <span class="math notranslate nohighlight">\(\phi\)</span> is towards the N terminal, the <span class="math notranslate nohighlight">\(\psi\)</span> towards the C. Torsion angles for side-chains can also be defined; these are given the symbol <span class="math notranslate nohighlight">\(\chi_1, \chi_2\)</span> etc. depending on the type of amino acid.</p>
+<p>The picture figure 40 shows that the N to N torsion angles <span class="math notranslate nohighlight">\(\psi\)</span> between planes containing N<span class="math notranslate nohighlight">\(_1\)</span> and N<span class="math notranslate nohighlight">\(_2\)</span>, and N<span class="math notranslate nohighlight">\(_2\)</span> and N<span class="math notranslate nohighlight">\(_3\)</span>, are both very small,<span class="math notranslate nohighlight">\(\psi_1 \approx -6,\;\psi_2 \approx -14^\text{o}\)</span>, which is the angle of the plane containing the bond N<span class="math notranslate nohighlight">\(_2\)</span>CA<span class="math notranslate nohighlight">\(_2\)</span> to that containing the bond C<span class="math notranslate nohighlight">\(_2\)</span>N<span class="math notranslate nohighlight">\(_3\)</span>. In this notation, which is similar to that in the .pdb data, CA is the alpha carbon. The <span class="math notranslate nohighlight">\(\phi_1\)</span> angle <span class="math notranslate nohighlight">\(\mathrm{C_1N_2-CA_2C_2}\)</span> is approximately <span class="math notranslate nohighlight">\(-90^\text{o}\)</span>; the <span class="math notranslate nohighlight">\(\phi_2\)</span> angle bond, <span class="math notranslate nohighlight">\(\mathrm{C_2N_3-CA_3C_3}\)</span>, is <span class="math notranslate nohighlight">\(-140^\text{o}\)</span> approximately. The angles defined for proteins must range from <span class="math notranslate nohighlight">\(-180 \to +180^\text{o}\)</span> and this means that the formula developed below has to have a condition applied to it and this is described at the end of this section. The calculation of the cosine of the dihedral (torsion) angle is developed next.</p>
+<p><img alt="Drawing" src="_build_/jupyter_execute/chapter-6/vectors-fig39-40.png" /></p>
+<p>Left Figure 39, Right Figure 40. Left: Part of a peptide chain. The four atoms defining the <span class="math notranslate nohighlight">\(\psi\)</span> (N to N) and <span class="math notranslate nohighlight">\(\phi\)</span> (CO to CO) torsion angles are shown on the right. As these chains are drawn as if completely extended, the angles are <span class="math notranslate nohighlight">\(180^\text{o}\)</span>. When the main chain atoms are eclipsed, the angles are zero. Right: Part of a <span class="math notranslate nohighlight">\(\beta\)</span>-sheet protein structure showing angles <span class="math notranslate nohighlight">\(\psi\)</span> of approximately zero (<span class="math notranslate nohighlight">\(\lt \pm 10^\text{o}\)</span>) and <span class="math notranslate nohighlight">\(\phi\)</span> angles of approx <span class="math notranslate nohighlight">\(-100^\text{o}\)</span>.</p>
+<hr class="docutils" />
+<p>The geometry of the dihedral or torsion angle <span class="math notranslate nohighlight">\(\psi\)</span> is shown in figure 41, where <span class="math notranslate nohighlight">\(A, B, C\)</span>, and <span class="math notranslate nohighlight">\(D\)</span> represent atoms. The angle is taken as the rotation of the AB bond (vector <span class="math notranslate nohighlight">\(\vec a\)</span>) needed to eclipse the CD bond (vector <span class="math notranslate nohighlight">\(\vec c\)</span>) when viewed down BC, vector <span class="math notranslate nohighlight">\(\vec b\)</span>. The angles <span class="math notranslate nohighlight">\(\alpha\)</span> and <span class="math notranslate nohighlight">\(\gamma\)</span> are in the planes, BCD and ABC respectively, and represent the bond angles, typically <span class="math notranslate nohighlight">\(100 \to 130^\text{o}\)</span> in molecules depending upon bonding type, sp<span class="math notranslate nohighlight">\(^2\)</span> or sp<span class="math notranslate nohighlight">\(^3\)</span>. However, these angles are unimportant because the torsion angle is between the planes that the atoms lie in.</p>
+<p><img alt="Drawing" src="_build_/jupyter_execute/chapter-6/vectors-fig41.png" /></p>
+<p>Figure 41. Left: Geometry showing the torsion or dihedral angle <span class="math notranslate nohighlight">\(\psi\)</span>. Right: End-view looking down B towards C and showing the positive dihedral angles <span class="math notranslate nohighlight">\(\psi\)</span> between the cross products <span class="math notranslate nohighlight">\(\vec n\)</span> and <span class="math notranslate nohighlight">\(\vec m\)</span> in the planes ABC and BCD. Lower right, two examples of molecules. Distances in pm.</p>
+<hr class="docutils" />
+<p>The torsion or dihedral angle <span class="math notranslate nohighlight">\(\psi\)</span> is defined as the angle between the plane ABC and the plane BCD. ABC has a vector <span class="math notranslate nohighlight">\(\vec m\)</span> normal (perpendicular) to <span class="math notranslate nohighlight">\(\vec a \times\vec b\)</span> and BCD has <span class="math notranslate nohighlight">\(\vec n\)</span> normal to <span class="math notranslate nohighlight">\(\vec b \times\vec c\)</span>; figure 41. The torsion angle must be independent of the size of the vectors, which means that in the final formula normalized vectors will be used. The angle between vectors <span class="math notranslate nohighlight">\(\vec m\)</span> and <span class="math notranslate nohighlight">\(\vec n\)</span>, the dihedral angle <span class="math notranslate nohighlight">\(\psi\)</span>, is found by first calculating their dot product,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \vec m\cdot\vec n = |\vec m||\vec n|\cos(\psi)\]</div>
+<p>Because the vectors <span class="math notranslate nohighlight">\(\vec m\)</span> and <span class="math notranslate nohighlight">\(\vec n\)</span> are perpendicular to <span class="math notranslate nohighlight">\(\vec a\)</span> and <span class="math notranslate nohighlight">\(\vec b\)</span> and to <span class="math notranslate nohighlight">\(\vec d\)</span> and <span class="math notranslate nohighlight">\(\vec c\)</span> respectively then,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \qquad \qquad \begin{align}\vec m &amp;= \vec a \times \vec b = |\vec a||\vec b|\sin(\gamma)\vec u_m, \\   \vec n &amp;= \vec b \times\vec c = |\vec b||\vec c|\sin(\alpha)\vec u_n \qquad \qquad\qquad \qquad\qquad \qquad \text{(51)}\end{align}\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\vec u_n\)</span> and <span class="math notranslate nohighlight">\(\vec u_m\)</span> are unit vectors along <span class="math notranslate nohighlight">\(\vec n\)</span> and <span class="math notranslate nohighlight">\(\vec m\)</span>; see equation 38. The order of vector multiplication is important here. The common vector <span class="math notranslate nohighlight">\(\vec b\)</span> between the two planes is in the middle. If the first vector points towards the join between planes, and the vectors <span class="math notranslate nohighlight">\(\vec a, \vec b, \vec c\)</span> form a head to tail chain, the order is</p>
+<div class="math notranslate nohighlight">
+\[\vec m\cdot \vec n = (\vec a \times \vec b)\cdot(\vec b \times \vec c)\tag{52}\]</div>
+<p>To ensure the correct vector directions, then <span class="math notranslate nohighlight">\(\vec a = \vec B - \vec A, \vec b = \vec C - \vec B, \vec c = \vec D - \vec C\)</span> if the atoms’ coordinates are the positional vectors <span class="math notranslate nohighlight">\(\vec A, \vec B, \vec C\)</span>, and <span class="math notranslate nohighlight">\(\vec D\)</span>. If this convention is not followed, the angle could be out by <span class="math notranslate nohighlight">\(180^\text{o}\)</span> and that is usually obvious in a small molecule, but would not be in a protein. Reversing the order of all the vectors leaves the torsion angle unchanged. The crucial dot product is</p>
+<div class="math notranslate nohighlight">
+\[\vec m\cdot\vec n = | \vec c || \vec b |^2| \vec a |\sin(\alpha)\sin(\gamma )\vec u_m\cdot\vec u_n  = |\vec  c || \vec b |^2| \vec a |\sin(\alpha)\sin(\gamma )\cos(\psi)\tag{53}\]</div>
+<p>and we have used <span class="math notranslate nohighlight">\(\cos(\psi) = \vec u_m\cdot\vec u_n\)</span> because the <span class="math notranslate nohighlight">\(\vec u\)</span>’s are unit vectors.
+Using equations 51 the magnitude (absolute value) of vector <span class="math notranslate nohighlight">\(\vec n\)</span> is <span class="math notranslate nohighlight">\(| n | = | \vec c | | \vec b |\sin(\alpha)\)</span>,
+and <span class="math notranslate nohighlight">\(|\vec m | = | \vec b | | \vec a |\sin(\gamma)\)</span>. This means that the dot product equation 53 can be rearranged to give the torsion angle as</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \cos(\psi)=\frac{\vec m\cdot\vec n}{|\vec m||\vec n|}= \frac{\vec m\cdot\vec n}{\sqrt{\vec m\cdot\vec m}\sqrt{\vec n\cdot\vec n}}\tag{54}\]</div>
+<p>To evaluate these equations each vector has to be defined in a basis set. The protein data bank crystallographic and NMR data use a basis set of (orthogonal) Cartesian <span class="math notranslate nohighlight">\(x, y, z\)</span> coordinates, as will those from a molecular dynamics simulation. The <span class="math notranslate nohighlight">\(\vec n\)</span> and <span class="math notranslate nohighlight">\(\vec m\)</span> vectors are defined as differences in these values, for example, in the <span class="math notranslate nohighlight">\((i, j, k)\)</span> basis set <span class="math notranslate nohighlight">\(\vec n = p_1\boldsymbol i + p_2\boldsymbol j + p_3\boldsymbol k\)</span> and <span class="math notranslate nohighlight">\(\vec m = q_1\boldsymbol i + q_2\boldsymbol j + q_3\boldsymbol k\)</span> where the <span class="math notranslate nohighlight">\(p\)</span>’s and <span class="math notranslate nohighlight">\(q\)</span>’s are coefficients or coordinates along each axis. In this case, the angle is calculated using</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \cos(\psi)=\frac{(p_1q_1+p_2q_2+p_3q_3)}{\sqrt{p_1^2+p_2^2+p_3^2}\sqrt{q_1^2+q_2^2+q_3^2}}\]</div>
+<p>In vector-matrix form where <span class="math notranslate nohighlight">\(\vec n = \begin{bmatrix}p_1 &amp; p_2 &amp; p_3\end{bmatrix}\)</span> and <span class="math notranslate nohighlight">\(\vec m = \begin{bmatrix}q_1 &amp; q_2 &amp; q_3\end{bmatrix}\)</span>, the equation becomes</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \cos(\psi)=\frac{\vec m\vec n^T}{\sqrt{\vec n\vec n^T}\sqrt{\vec m\vec m^T} }\]</div>
+<p>where the transpose (superscript <span class="math notranslate nohighlight">\(T\)</span>) changes the row vector into a column.</p>
+<p>In the special case of proteins, the angles are defined to be between <span class="math notranslate nohighlight">\(- 180^\text{o}\)</span> and <span class="math notranslate nohighlight">\(+180^\text{o}\)</span> and a check has to be made because the cosine can be positive between <span class="math notranslate nohighlight">\(-90^\text{o} \to 90^\text{o}\)</span> and negative between <span class="math notranslate nohighlight">\(-180^\text{o} \to 90^\text{o}\)</span> and again from <span class="math notranslate nohighlight">\(90^\text{o} \to 180^\text{o}\)</span> and one cannot tell from the
+cosine alone what the angle should be. For example, a cosine of <span class="math notranslate nohighlight">\(-0.77\)</span> could be <span class="math notranslate nohighlight">\(140^\text{o}\)</span> or <span class="math notranslate nohighlight">\(-140^\text{o}\)</span>. By calculating the sign of the dot product <span class="math notranslate nohighlight">\(\vec a\cdot\vec n\)</span>, the quadrant in which the cosine lies can be determined by multiplying the angle by this sign which is <span class="math notranslate nohighlight">\(-1\)</span> or <span class="math notranslate nohighlight">\(+1\)</span>. In Python there is a function to do determine the sign, which is np.sign(…).</p>
+<p>Figure 42 shows two residues of strand B of the structure of insulin (<a class="reference external" href="http://www.rcsb.org/">www.rcsb.org/</a> pdf/home.od 2INS.pdb). The torsion angle between the aromatic planes of the phenylalanine and tyrosine residues can be calculated since the coordinates of the atoms are known. It is necessary to choose which atoms are to be involved and to order them to form head to tail vectors. These are shown in the figure.</p>
+<p><img alt="Drawing" src="_build_/jupyter_execute/chapter-6/vectors-fig42.png" /></p>
+<p>Figure 42. Two residues of strand B of insulin.</p>
+<hr class="docutils" />
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \small\begin{array}
+\hline
+ &amp; &amp;   \quad x &amp; \;y &amp; \;z \\
+\hline
+\text{ATOM}&amp; 349 \text{CD1   PHE  B } 25 &amp;-7.497&amp; 20.877&amp; -0.865&amp; 1.00&amp; 45.00&amp; C\\
+\text{ATOM}&amp; 350 \text{CD2   PHE  B } 25 &amp;-5.644&amp; 21.663&amp; 0.493 &amp;1.00 &amp;23.22 &amp;C\\
+\text{ATOM}&amp; 360 \text{CD1   TYR  B } 26 &amp;-4.106&amp; 13.747&amp; 5.282 &amp;1.00 &amp;16.37 &amp;C\\
+\text{ATOM}&amp; 361 \text{CD2   TYR  B } 26 &amp;-1.869&amp; 14.466&amp; 4.723 &amp;1.00 &amp;12.17 &amp;C\\
+\hline \end{array}\end{split}\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Algorithm. Dihedral angles</span>
+<span class="n">phecd1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span> <span class="o">-</span><span class="mf">7.497</span><span class="p">,</span> <span class="mf">20.877</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.865</span><span class="p">])</span> <span class="c1"># xyz from 2INS.pdb   atoms 349-3590 and 360-361</span>
+<span class="n">phecd2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span> <span class="o">-</span><span class="mf">5.644</span><span class="p">,</span> <span class="mf">21.663</span><span class="p">,</span>  <span class="mf">0.493</span><span class="p">])</span>   
+<span class="n">tyrcd1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span> <span class="o">-</span><span class="mf">4.106</span><span class="p">,</span> <span class="mf">13.747</span><span class="p">,</span>  <span class="mf">5.282</span><span class="p">])</span>   
+<span class="n">tyrcd2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span> <span class="o">-</span><span class="mf">1.869</span><span class="p">,</span> <span class="mf">14.466</span><span class="p">,</span>  <span class="mf">4.723</span><span class="p">])</span>   
+<span class="n">vec_a</span> <span class="o">=</span> <span class="n">phecd2</span> <span class="o">-</span> <span class="n">phecd1</span> 
+<span class="n">vec_b</span> <span class="o">=</span> <span class="n">tyrcd1</span> <span class="o">-</span> <span class="n">phecd2</span>  
+<span class="n">vec_c</span> <span class="o">=</span> <span class="n">tyrcd2</span> <span class="o">-</span> <span class="n">tyrcd1</span> 
+
+<span class="n">m</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cross</span><span class="p">(</span><span class="n">vec_a</span><span class="p">,</span><span class="n">vec_b</span><span class="p">)</span>
+<span class="n">n</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cross</span><span class="p">(</span><span class="n">vec_b</span><span class="p">,</span><span class="n">vec_c</span><span class="p">)</span>
+<span class="n">psi</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sign</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">vec_a</span><span class="p">,</span><span class="n">n</span><span class="p">))</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">arccos</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">m</span><span class="p">)</span><span class="o">/</span><span class="p">(</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">n</span><span class="p">))</span> <span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">m</span><span class="p">,</span><span class="n">m</span><span class="p">))</span> <span class="p">)</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:s}{:6.2f}{:s}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;dihedral angle =&#39;</span><span class="p">,</span><span class="n">psi</span><span class="o">*</span><span class="mi">180</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span><span class="s1">&#39; degrees&#39;</span><span class="p">)</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dihedral angle =136.71 degrees
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="torsion-angles-in-sugars-and-dna">
+<h2>21 Torsion angles in sugars and DNA<a class="headerlink" href="#torsion-angles-in-sugars-and-dna" title="Permalink to this headline">¶</a></h2>
+<p>The flexibility of the sugar in DNA makes it possible for more than one type of DNA to exist; the A and B forms differ in the conformation of the sugars being <span class="math notranslate nohighlight">\(C'_3\)</span> endo in A-DNA and <span class="math notranslate nohighlight">\(C'_2\)</span> endo in B-DNA. The notation is shown in figure 43; <em>endo</em> is defined as being on the same side of the ring as the <span class="math notranslate nohighlight">\(C'_5\)</span> carbon, <em>exo</em> on the opposite side.</p>
+<p>A sugar (ribose, for example) is considered to have a twisted (<span class="math notranslate nohighlight">\(T\)</span>) conformation if three of its five ring atoms lie in one plane; these are the <span class="math notranslate nohighlight">\(C'_1, O'_4\)</span>, and <span class="math notranslate nohighlight">\(C'_4\)</span> atoms, as shown in figure 43, whereas the sugar has the envelope (E) form if four of its atoms are in a plane; the <span class="math notranslate nohighlight">\(C'_2\)</span> or <span class="math notranslate nohighlight">\(C'_3\)</span> carbon atom is then out of the plane.</p>
+<p>The conformation of the sugar is often represented in terms of its pseudo-rotation angle <span class="math notranslate nohighlight">\(P\)</span>, which is the torsion (dihedral) angle <span class="math notranslate nohighlight">\( v_2 = C'_1C'_2 - C'_3C'_4\)</span>. The configurations are shown on the far right-hand side of figure 43, showing very approximate angles; the configuration with <span class="math notranslate nohighlight">\(0 &lt; P &lt; 90\)</span> degrees are <span class="math notranslate nohighlight">\(C'_3\)</span> endo and <span class="math notranslate nohighlight">\(-90 &lt; P &lt; 0\)</span> degrees are <span class="math notranslate nohighlight">\(C'_2\)</span> endo. Configurations on the middle of the diagram, <span class="math notranslate nohighlight">\(C'_3\)</span> endo and <span class="math notranslate nohighlight">\(C'_2\)</span> exo, are called north (<span class="math notranslate nohighlight">\(N\)</span>), the others are south (<span class="math notranslate nohighlight">\(S\)</span>).</p>
+<p><img alt="Drawing" src="_build_/jupyter_execute/chapter-6/vectors-fig43-44.png" /></p>
+<p>Figure 43. Left. A <span class="math notranslate nohighlight">\(C3'\)</span> endo sugar. The <span class="math notranslate nohighlight">\(C_4'-O_4'-C_1'\)</span> are in one plane, the <span class="math notranslate nohighlight">\(C_3'\)</span> above the plane on the side of <span class="math notranslate nohighlight">\(C_5'\)</span> and <span class="math notranslate nohighlight">\(C_2'\)</span> below the plane. The cartoon structures on the right show this also. Right. Pseudo rotation angles.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="pseudo-rotation-angles">
+<h2>21.1 Pseudo-rotation angles<a class="headerlink" href="#pseudo-rotation-angles" title="Permalink to this headline">¶</a></h2>
+<p>The torsion angles for the phosphate and sugar in the DNA are shown below, Figure 44, 45; the torsion angle <span class="math notranslate nohighlight">\(\gamma\)</span> is calculated with atoms <span class="math notranslate nohighlight">\(O'_5C'_5-C'_4C'_3\)</span>, the pucker or pseudo-rotation angle <span class="math notranslate nohighlight">\(v_2 = C'_1C'_2 - C'_3C'_4\)</span>. The angle <span class="math notranslate nohighlight">\(\chi\)</span> is calculated with atoms <span class="math notranslate nohighlight">\(O'_4C'_1-N_9C_4\)</span> for purines,</p>
+<p>and <span class="math notranslate nohighlight">\(O'_4C'_1-N_1C_2\)</span> for pyrimidines. When <span class="math notranslate nohighlight">\(\chi=0\)</span>, the <span class="math notranslate nohighlight">\(O'_4-C'_1\)</span> bond is eclipsed with the <span class="math notranslate nohighlight">\(N_9-C_4\)</span> bond in purines and with the <span class="math notranslate nohighlight">\(N_1-C_2\)</span> bond in pyrimidines. The <span class="math notranslate nohighlight">\(C_4\)</span> atom in purines is the carbon next to the nitrogen and which joins both rings, and in pyrimidines, it is also next to the nitrogen but is attached to an oxygen atom. A <span class="math notranslate nohighlight">\(\chi\)</span> torsion angle of about <span class="math notranslate nohighlight">\(60^\text{o}\)</span> means that in the syn configuration the base lies symmetrically over the sugar and when <span class="math notranslate nohighlight">\(\chi = -120^\text{o}\)</span> the base points symmetrically away from the sugar in the anti configuration. The syn-anti configuration is defined as,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \text{syn}: \chi\le |90^\text{o}| \quad \text{anti}: \chi \ge |90^\text{o}| \text{ and } \lt |180^\text{o}|\]</div>
+<p>A and B type DNA have the torsion angle <span class="math notranslate nohighlight">\(\gamma\)</span> in the range <span class="math notranslate nohighlight">\(30 \to 90^\text{o}\)</span>, and angle <span class="math notranslate nohighlight">\(\chi \equiv\)</span> anti, which means that the base does not lie over the sugar. A-DNA has ring pucker with <span class="math notranslate nohighlight">\(C'_3\)</span> endo, and B-DNA, <span class="math notranslate nohighlight">\(C'_2\)</span> endo.</p>
+<p><img alt="Drawing" src="_build_/jupyter_execute/chapter-6/vectors-pseudo-rot.png" /></p>
+<p>Fig 44. Examples of torsion angles in different types of DNA</p>
+<hr class="docutils" />
+<p><img alt="Drawing" src="_build_/jupyter_execute/chapter-6/vectors-fig45.png" /></p>
+<p>Figure 45 Definition of some torsion angles in DNA. The N in the base is N<span class="math notranslate nohighlight">\(_9\)</span> (purines) or N<span class="math notranslate nohighlight">\(_1\)</span>.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="reading-protein-data-bank-data">
+<h2>21.2 Reading protein data bank data<a class="headerlink" href="#reading-protein-data-bank-data" title="Permalink to this headline">¶</a></h2>
+<p>A protein data bank listing contains many lines of introductory information, with prefixes such as TITLE, REMARK, or SEQRES; most of this self-explanatory. The data on the crystal’s space group is also to be found here. After these lines, the atom coordinates start with the word ATOM or HETATM if the atom does not belong to an amino acid, for example a porphyrin. The HETATM lines always follow the ATOM lines. At the end of the list, a TER termination statement occurs and either CONECT index numbers, to help drawing the structure or another ATOM line for the next amino acid chain. Details about the data format can be found on the protein data bank website, <a class="reference external" href="http://www.rcsb.org/pdb/home.do">www.rcsb.org/pdb/home.do</a>. A summary is given below once the coordinate data starts.</p>
+<p><img alt="Drawing" src="_build_/jupyter_execute/chapter-6/vectors-pdb-list.png" /></p>
+<p>The format of all the lines of ATOM and HETATM information is the same.</p>
+<p>Columns <span class="math notranslate nohighlight">\(1-6\)</span> identifies type as ATOM or HETATOM.</p>
+<p>Columns <span class="math notranslate nohighlight">\(8-11\)</span> contains the index number of the atom in the protein.</p>
+<p>Columns <span class="math notranslate nohighlight">\(4-16\)</span> is the atom type.</p>
+<p>CA is carbon alpha; C the backbone carbon attached to the oxygen labelled O, and N is the backbone nitrogen. Therefore, only atoms with these labels are important in calculating the <span class="math notranslate nohighlight">\(\phi\)</span> and <span class="math notranslate nohighlight">\(\psi\)</span> torsion angles. The amino acid side chain atoms are labelled CB, CD, CZ, NH1, O1, N1 etc. depending upon the amino acid.</p>
+<p>In DNA, the sugar atoms are identified by a star in the order O5*, C5*, C4*, O4*, C3*, O3*, C2*, C1*. The bases are listed next and are identified by unstarred atoms. Phosphorus P is next, followed by its two oxygen atoms O1P and O2P.</p>
+<p>Columns <span class="math notranslate nohighlight">\(18-20\)</span> is a three-letter code identifying the amino acid or HOH for water. In DNA just one letter identifies the base C, G, A or T.</p>
+<p>Column <span class="math notranslate nohighlight">\(22\)</span> gives the letter indicating the amino acid chain A, B, C etc. In DNA, one chain is listed first then the other.</p>
+<p>Columns 24–26 gives the number of the amino acid or nucleic acid base in the list.</p>
+<p>Columns <span class="math notranslate nohighlight">\(31-28, 39-46,47-54\)</span> are the x-, y-, and z-coordinates in angstrom. The x data starts on Column 31 and can be up to 8 characters including any minus sign and the decimal point. These values are usually less than <span class="math notranslate nohighlight">\(\pm 40 \;\overset{o}A\)</span> because of the relatively small size of proteins.</p>
+<p>Columns <span class="math notranslate nohighlight">\(55-70\)</span> can be ignored.</p>
+<p>Columns <span class="math notranslate nohighlight">\(70-80\)</span>. This varies but can be protein type or identification and/or data row number.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./_build_/jupyter_execute/chapter-6"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Godfrey Beddard<br/>
+        
+            &copy; Copyright 2022.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

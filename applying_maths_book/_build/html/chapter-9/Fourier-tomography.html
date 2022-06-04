@@ -1,0 +1,1703 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Computed Tomography &#8212; Applying Maths in the Chemical &amp; Biomolecular Sciences</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="10. Differential Equations." href="../chapter-10/Diff-eqns-intro.html" />
+    <link rel="prev" title="The Fourier transform in two dimensions: images and x-ray Diffraction" href="Fourier-2D-Diffraction.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/book-cover.jpg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Applying Maths in the Chemical & Biomolecular Sciences</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Applying Maths in the Chemical and Biomolecular Sciences.
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-1/chapter1-intro.html">
+   1. Numbers, Equations, Operators, and Algorithms.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-A.html">
+     Numbers to Algorithms.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-Q1-7.html">
+     Questions 1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-B.html">
+     Trig, hyperbolic and inverse functions, waves, polar coordinates &amp; factorials
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-Q8-16.html">
+     Questions 8 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-C.html">
+     Sophisticated Counting.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-Q17-34.html">
+     Questions 17 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-D.html">
+     Modulo arithmetic,
+     <span class="math notranslate nohighlight">
+      \(\delta\)
+     </span>
+     functions, types of  series &amp;  estimating quantities
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-Q35-39.html">
+     Questions 35 - 39
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-answers-1-7.html">
+     Solutions Q1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-answers-8-16.html">
+     Solutions Q8 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-answers-17-34.html">
+     Solutions Q17 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-answers-35-39.html">
+     Solutions Q35 - 39
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-2/chapter2-intro.html">
+   2. Complex numbers.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2/chapter2-A.html">
+     Real, imaginary, conjugate and modulus
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2/chapter2-Q-1-9.html">
+     Questions 1 - 9
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2/chapter2-B.html">
+     De Moivre’s theorem and integer powers of complex numbers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2/chapter2-Q-10-13.html">
+     Questions 10 -13
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2/chapter2-C.html">
+     Euler’s theorem
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2/chapter2-Q-14-27.html">
+     Questions 14 - 27
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2/chapter2-answers.html">
+     Solutions Q1 - 27
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-3/differen-intro.html">
+   3. Differentiation.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-A.html">
+     Differentiation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-B.html">
+     Trig functions, logs, power, reciprocals and integrals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-C-Q-4-11.html">
+     Questions 1-11
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-D.html">
+     Product rule and function of function or chain rule.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-E-Q-12-42.html">
+     Questions 12-42
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-F.html">
+     Limits, l’Hopital’s rule, Maximum, Minimum and Calculus of Variations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-G-Q-43-73.html">
+     Questions 43 - 73
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-H.html">
+     Numerically finding the roots of an equation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-I-Q-74-85.html">
+     Questions 74 - 85
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-J.html">
+     Minimizing or maximizing with constraints: Lagrange Undetermined Multipliers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-K-Q-86-92.html">
+     Questions 86 - 92
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-L.html">
+     Partial differentiation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-M-Q-93-114.html">
+     Questions 93-114
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-M1.html">
+     Differentiation of vectors
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-N-answers-1-11.html">
+     Solutions Q 1-11
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-O-answers-12-42.html">
+     Solutions Q 12-42
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-P-answers-43-73.html">
+     Solutions Q 43 - 73
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-Q-answers-74-85.html">
+     Solutions Q 74 - 85
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-R-answers-86-92.html">
+     Solutions Q 86 - 94
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-S-answers-93-114.html">
+     Solutions Q 93-114
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-4/integration-intro.html">
+   4. Integration.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-A.html">
+     Integration basics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-Q1-14.html">
+     Questions 1-14
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-B.html">
+     Integration by substitution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-Q15-30.html">
+     Questions 15-30
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-C.html">
+     Using parametric equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-Q31-48.html">
+     Questions 31 - 48
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-D.html">
+     Calculating an Average Value.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-Q49-72.html">
+     Questions 49 - 72
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-E.html">
+     The Variational Method in Quantum Mechanics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-Q73-77.html">
+     Questions 73 - 77
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-F.html">
+     Multiple integrals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-Q78-86.html">
+     Questions 78 - 86
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-G.html">
+     Calculating the energy of a chemical bond using molecular orbitals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-H.html">
+     Line integrals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-Q87-96.html">
+     Questions 87 - 96
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-answers-1-14.html">
+     Solutions Q1 - 14
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-answers-15-30.html">
+     Solutions Q15 - 30
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-answers-31-48.html">
+     Solutions Q31 - 48
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-answers-49-72.html">
+     Solutions Q49 - 72
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-answers-73-96.html">
+     Solutions Q73 - 96
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-5/chapter-5-intro.html">
+   5. Summations, Series and expansion of Functions.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-A.html">
+     Series, averages, partition functions, DNA melting, atom entropy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-B-Q1-13.html">
+     Questions 1 - 13
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-E.html">
+     Maclaurin and Taylor series expansions. Paramagnetic spins. Euler-Maclaurin formula.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-F-Q14-34.html">
+     Questions 14 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-G-Q35-44.html">
+     Questions 35 - 44
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-perturbation-A.html">
+     Perturbation Theory
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-perturbation-B-Q45-48.html">
+     Questions 45 - 48
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-perturbation-C.html">
+     Quantum superposition and wavepackets.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-perturbation-D-Q49-52.html">
+     Questions 49 - 52
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-answers-1-7.html">
+     Solutions Q 1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-answers-8-13.html">
+     Solutions Q8 - 13
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-answers-14-26.html">
+     Solutions Q 14 - 26
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-answers-27-32.html">
+     Solutions Q27 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-answers-33-44.html">
+     Solutions Q33 - 44
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-answers-45-52.html">
+     Solutions Q45 - 52
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-6/vectors-intro.html">
+   6. Vectors.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-A.html">
+     Vector basics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-Q1-24.html">
+     Questions 1 - 24
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-B.html">
+     Projections and components
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-Q25-32.html">
+     Questions 25 - 32
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-C.html">
+     Axes need not be right-angled or of equal length
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-Q33-38.html">
+     Questions 33 - 38
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-D.html">
+     Basis sets with more than three dimensions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-Q39-46.html">
+     Questions 39 - 46
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-E.html">
+     Cross product or vector product
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-Q47-52.html">
+     Questions 47 - 52
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-F.html">
+     Torsion or dihedral angles
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-Q53-48.html">
+     Questions 53 - 48
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-G.html">
+     Torque and angular momentum
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-Q59-61.html">
+     Questions 59 - 61
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-answers-Q1-24.html">
+     Solutions Q1 - 24
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-answers-Q25-32.html">
+     Solutions Q25 - 32
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-answers-Q33-38.html">
+     Solutions Q33 - 38
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-answers-Q39-46.html">
+     Solutions Q39 - 46
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-answers-Q47-52.html">
+     Solutions Q47 - 52
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-answers-Q53-61.html">
+     Solutions Q53 - 61
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-7/matrices-intro.html">
+   7. Matrices
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-A.html">
+     Determinants
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q1-10.html">
+     Questions  1 - 10
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-B.html">
+     Matrices
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q11-16.html">
+     Questions  11 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-C.html">
+     Molecular Group Theory
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q17-30.html">
+     Questions  17 - 30
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-D.html">
+     Rotation matrices: moving molecules
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q31-34.html">
+     Questions 31 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-E.html">
+     Matrices in optics and designing laser cavities
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q35-39.html">
+     Questions 35 - 39
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-F.html">
+     Polarizing optics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q40-44.html">
+     Questions 40 - 44
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-G.html">
+     Solving equations using matrices. Eigenvectors &amp; Eigenvalues.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q45-50.html">
+     Questions 45 - 50
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-H.html">
+     Rate equations and Chemical Kinetics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q51-54.html">
+     Questions 51 - 54
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-I.html">
+     Molecular vibrations and pendulums
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q55-58.html">
+     Questions 55 - 58
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-J.html">
+     Moments of Inertia
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q59-60.html">
+     Questions 59 - 62
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-K.html">
+     Calculating a bond length using moments of inertia
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q61.html">
+     Question 61
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-L.html">
+     Principal axes for Moments of Inertia
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q62.html">
+     Question 62
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-answersQ1-10.html">
+     Solutions Q1 - 10
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-answersQ11-16.html">
+     Solutions Q11 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-answersQ17-30.html">
+     Solutions Q17 - 30
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-answersQ31-34.html">
+     Solutions Q31 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-answersQ35-39.html">
+     Solutions Q35 - 39
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-answersQ40-44.html">
+     Solutions Q40 - 44
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-answersQ45-50.html">
+     Solutions Q45 - 50
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-answersQ51-54.html">
+     Solutions Q51 - 54
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-answersQ55-58.html">
+     Solutions Q55 - 58
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-answersQ59-61.html">
+     Solutions Q59 - 61
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-8/matricesQM-intro.html">
+   8. Matrices in Quantum Mechanics
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-8/matricesQM-A.html">
+     Matrices in Quantum Mechanics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-8/matricesQM-Q1-7.html">
+     Questions 1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-8/matricesQM-B.html">
+     Basis sets and bra-ket algebra
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-8/matricesQM-Q8-12.html">
+     Questions 8 - 12
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-8/matricesQM-C.html">
+     Continuous basis sets
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-8/matricesQM-answers1-7.html">
+     Solutions Q1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-8/matricesQM-answers8-12.html">
+     Solutions Q8 - 12
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="Fourier-intro.html">
+   9. Fourier Series and Transforms.
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="Fourier-A-B.html">
+     Fourier series, Gibbs phenomenon, generalised series.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Fourier-questions-1-6.html">
+     Questions 1 - 6
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Fourier-C.html">
+     Fourier Transforms
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Fourier-questions-7-15.html">
+     Questions 7 - 15
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Fourier-D.html">
+     Convolution and Autocorrelation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Fourier-questions-16-21.html">
+     Questions 16 - 21
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Fourier-E.html">
+     Discrete Fourier  (DFT)  and Fast Fourier transforms (FFT)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Fourier-F.html">
+     The Hadamard Transform: Encoding and Decoding
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Fourier-answers-1-6.html">
+     Solutions Q 1 - 6
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Fourier-answers-7-15.html">
+     Solutions Q 7 - 15
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Fourier-answers-16-21.html">
+     Solutions Q 16 - 21
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Fourier-2D-Diffraction.html">
+     The Fourier transform in two dimensions: images and x-ray Diffraction
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Computed Tomography
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-10/Diff-eqns-intro.html">
+   10. Differential Equations.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-A.html">
+     Differential Equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-Q1-23.html">
+     Questions 1 - 23
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-B.html">
+     First order eqns &amp; Integrating factors. Second order eqns, Newtons laws, equations of motion.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-C.html">
+     The ‘D’ operator.  Solving linear differential equations with constant coefficients
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-D.html">
+     Simultaneous equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-Q24-37.html">
+     Questions 24 - 37
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-E.html">
+     Linear equations with variable coefficients
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-F.html">
+     Partial Differential Equations, PDE
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-G.html">
+     PDE examples continued
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-answers-1-21.html">
+     Solutions Q1 - 21
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-answers-22-37.html">
+     Solutions Q22 - 37
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-11/num-methods-intro.html">
+   11. Numerical Methods
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-A.html">
+     Numerical Methods
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-Q1-7.html">
+     Questions 1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-B.html">
+     Numerical solution of differential equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-Q8-12.html">
+     Questions 8 - 12
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-C.html">
+     Coupled equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-Q13-16.html">
+     Questions 13 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-D.html">
+     The phase plane, nullclines, and stable points
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-Q17-20.html">
+     Questions 17 - 20
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-E.html">
+     Reaction schemes with feedback
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-Q21-34.html">
+     Questions 21 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-F.html">
+     Boundary value problems.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-Q35-40.html">
+     Questions 35 - 40
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-answers1-7.html">
+     Solutions Q1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-answers8-12.html">
+     Solutions Q8 - 12
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-answers13-16.html">
+     Solutions Q13 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-answers17-20.html">
+     Solutions Q17 - 20
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-answers21-34.html">
+     Solutions Q21 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-answers35-40.html">
+     Solutions Q35 - 40
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-12/monte-carlo-intro.html">
+   12. Monte Carlo Methods
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+  <label for="toctree-checkbox-12">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-A.html">
+     Monte - Carlo Methods
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-Q1-6.html">
+     Questions 1 - 6
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-B.html">
+     Solving rate equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-Q7-10.html">
+     Questions 7 - 10
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-CC.html">
+     Monte Carlo Simulations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-C.html">
+     Energy transfer. Autocatalytic reaction and spreading of fires
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-Q11-17.html">
+     Questions 11 - 17
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-D.html">
+     The Metropolis algorithm
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-answers1-6.html">
+     Solutions Q1 - 6
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-answers7-10.html">
+     Solutions Q7 - 10
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-answers11-17.html">
+     Solutions Q11 - 17
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-13/analysis-intro.html">
+   13. Data Analysis
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+  <label for="toctree-checkbox-13">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-13/analysis-A.html">
+     Characterizing experimental data. Accuracy, precision, mean and standard deviation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-13/analysis-Q1-3.html">
+     Questions 1 - 3
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-13/analysis-B.html">
+     Modelling data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-13/analysis-Q4-9.html">
+     Questions 4 - 9
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-13/analysis-C.html">
+     Modelling data is simpler using matrices
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-13/analysis-Q10-11.html">
+     Questions 10 - 13
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-13/analysis-D.html">
+     Non-linear least squares. Least absolute deviation. Principal component analysis
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-13/analysis-answers1-11.html">
+     Solutions Q1 -11
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../chapter-1/chapter1-E.html">
+   SI units, Rounding, converting units &amp; Glossary.
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../references/References.html">
+   References
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../references/Python%20crib.html">
+   Appendix:  Some basic Python instructions with a few examples.
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/chapter-9/Fourier-tomography.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/chapter-9/Fourier-tomography.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#motivation-and-concept">
+   Motivation and concept
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-radon-transform">
+   14.1 The Radon Transform
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sinograms">
+   14.2 Sinograms
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#basic-and-filtered-back-projection">
+   14.3 Basic and filtered back projection.
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#number-of-samples">
+   14.4 Number of samples
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-fourier-slice-theorem">
+   14.5 The Fourier Slice Theorem.
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#stages-in-the-filtered-back-projection">
+   14.6 Stages in the filtered back projection.
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="computed-tomography">
+<h1>Computed Tomography<a class="headerlink" href="#computed-tomography" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="motivation-and-concept">
+<h2>Motivation and concept<a class="headerlink" href="#motivation-and-concept" title="Permalink to this headline">¶</a></h2>
+<p>One important application of fourier transforms is x-ray Computed Tomography which, in medicine, is called a CAT scan and is used to observe soft tissue inside a person’s body. The method is quite general and can be used in diverse applications, for example, to measure the position and concentration of different chemical species in a combustion reaction (i.e. in a flame) or to examine the quality of steel inside steel-reinforced concrete. Waves, which could be electromagnetic or acoustic, are passed through an object and the absorption at many points along a line is measured and then this is repeated at each of many angles. After transforming, this data can reproduce an accurate image of the original object. Houndsfield and Cormack received the 1979 Nobel prize in Physiology or Medicine for discovering the technique of x-ray computed tomography.</p>
+<p>The method consists of two parts, first is the acquisition of the data the second is unscrambling this to form an image. The second part is purely mathematical and reconstructs the image on a grid of points, i.e. a 2D array or matrix, which we shall call the <em>image plane</em>. In a CAT scan a thin sheet of x-rays passes through the object and the intensity of the radiation emerging at each point across the x-ray sheet is measured relative to its initial value. Nowadays, a multi-element detector such as a CCD device could be used. Any difference in signal amplitude is due to absorption of the x-rays, but there must not be any significant refraction or scattering caused by different densities as this will mix up different spatial positions. In the next and subsequent steps both the source and detector are rotated by a small angle and the process repeated to cover a <span class="math notranslate nohighlight">\(180^\text{o}\)</span> range. (In practice the source and detector spin round the patient which is why the CAT scan machine is formed as a hollow cylinder). The signal at each angle is then fourier transformed, filtered as required, and back transformed and re-assembled in clockwise fashion to form an image. To get an idea of how this happens Figures 86 and 87 show the process in schematic form.</p>
+<p>The principle is shown in the next few figures; the necessity to rotate the source and detector to observe details is clear: at any given angle the <em>total absorption</em> along any ray is measured so any 2D information is integrated and only 1D information remains, see figure 86.</p>
+<p>The extent of absorption is given by Beer’s Law, which for the simple case of a solution in a cuvette in a spectrophotometer is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle  \frac{dI}{dx}=-I\epsilon_\lambda [C], \quad \to \quad   \ln\left(\frac{I}{I_0}\right)=-\epsilon_\lambda [C]l\tag{59}\]</div>
+<p>where <span class="math notranslate nohighlight">\(I_0\)</span> is the initial intensity at <span class="math notranslate nohighlight">\(x=0\)</span>, <span class="math notranslate nohighlight">\(\epsilon_\lambda\)</span> the extinction coefficient at wavelength <span class="math notranslate nohighlight">\(\lambda\)</span> and is a characteristic of the molecule and describes how strongly the molecule absorbs, the concentration is <span class="math notranslate nohighlight">\([C]\)</span> and integration is over path length from <span class="math notranslate nohighlight">\(x=0\to l\)</span>. We shall assume that the x-rays used in CAT scans are collimated, i.e. made up of pencil like rays, and sufficiently monochromatic that the absorption is equal across its spread of wavelengths.</p>
+<p><img alt="Drawing" src="../_images/fourier-radon-fig1.png" /></p>
+<p>Figure 86. Two views of the same object, illustrating the necessity to measure at many angles. The measured absorption on the right would suggest that only one object is present. Hundreds of angles are measured over a <span class="math notranslate nohighlight">\(180^\text{o}\)</span> range as source and detector rotate as a pair about the object.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="the-radon-transform">
+<h2>14.1 The Radon Transform<a class="headerlink" href="#the-radon-transform" title="Permalink to this headline">¶</a></h2>
+<p>In tomography we have to be far more general than in spectroscopy because absorption is not from one species at a fixed concentration. Additionally for each ray in the sheet of x-rays emerging from the source, the path length and absorption is normally different because these depend on the shape and nature of the object being measured. Thus, the Beer Lambert Law law is generalised and for <em>each</em> ray passing through the sample is at each angle is,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle p(\theta,x)=\ln\left(\frac{I_0}{I}\right)_\theta= \int_{-\infty}^\infty f(x,y)dy\big|_\theta \tag{60}\]</div>
+<p>where <span class="math notranslate nohighlight">\(f(x,y)\equiv \epsilon_\lambda [C]\)</span> at position <span class="math notranslate nohighlight">\((x,y)\)</span> and the integration is over the ray’s path, <span class="math notranslate nohighlight">\(y\)</span> at each angle <span class="math notranslate nohighlight">\(\theta\)</span>.  The function <span class="math notranslate nohighlight">\(p(\theta,x)\)</span> is the projection of the total (i.e. summed) absorption onto the detector along path <span class="math notranslate nohighlight">\(y\)</span> at each horizontal position <span class="math notranslate nohighlight">\(x\)</span>. In a spectrophotometer this would be called the optical density.</p>
+<p>Mathematically, it is convenient to let each ray be defined by a perpendicular distance <span class="math notranslate nohighlight">\(r\)</span> from the origin and at each angle <span class="math notranslate nohighlight">\(\theta\)</span>, see figure 87. The absorbance vs. position (see fig 86) clearly depends on the angle, but as the sample remains fixed in space there are two sets of coordinates to deal with. The first is the set belonging to the object being measured, the other that of the set of rays along with which absorbance is measured.  The coordinates used are shown in figure 87. The object is positioned in the <span class="math notranslate nohighlight">\((x,y)\)</span> axes and the x-ray beam in the <span class="math notranslate nohighlight">\((e_x,e_y)\)</span> axes, a general point is labelled <span class="math notranslate nohighlight">\((x',y')\)</span>. Integration along a typical ray occurs along the line <span class="math notranslate nohighlight">\(R \to R'\)</span>, starting at <span class="math notranslate nohighlight">\(I_0(\theta,x')\)</span> at perpendicular distance <span class="math notranslate nohighlight">\(x'\)</span> from the origin and angle <span class="math notranslate nohighlight">\(\theta\)</span> and this produces a single absorbance value at <span class="math notranslate nohighlight">\(p(\theta,x')\)</span>.</p>
+<p><img alt="Drawing" src="../_images/fourier-radon-fig2.png" /></p>
+<p>Figure 87. Details of the axes used. The total absorbance <span class="math notranslate nohighlight">\(p(\theta,x')\)</span> is that due to the whole path along <span class="math notranslate nohighlight">\(y'\)</span> at angle <span class="math notranslate nohighlight">\(\theta\)</span> and horizontal position <span class="math notranslate nohighlight">\( x'\)</span>. The function <span class="math notranslate nohighlight">\(p(\theta,x',y')\)</span> is the absorption up to point <span class="math notranslate nohighlight">\((x',y')\)</span> at angle <span class="math notranslate nohighlight">\(\theta\)</span>. A series of <span class="math notranslate nohighlight">\(P(\theta,x')\)</span> is recorded over a <span class="math notranslate nohighlight">\(180^\text{o}\)</span> range by rotating source and detector about the object being measured.</p>
+<hr class="docutils" />
+<p>As the sample and x-ray are on different axes (the sample is fixed but the x-ray source moves in an arc) it is necessary to represent the path taken by a ray with path <span class="math notranslate nohighlight">\((\theta,x')\)</span> in terms of <span class="math notranslate nohighlight">\((x,y)\)</span>. The way to do this is to find the equation of the line describing the path <span class="math notranslate nohighlight">\((\theta,x')\)</span>. A straight line has the equation <span class="math notranslate nohighlight">\(y=mx+c\)</span> which can also be written as <span class="math notranslate nohighlight">\(ax+by=r\)</span> as shown in figure 88, where <span class="math notranslate nohighlight">\(a=\cos(\theta),\;y=\sin(\theta)\)</span> and <span class="math notranslate nohighlight">\(r\)</span> the perpendicular distance from the origin which is length <span class="math notranslate nohighlight">\(x'\)</span> in fig 87. This form is in polar coordinates and is more convenient for our use.</p>
+<p>As the same straight line is followed when integrating then <span class="math notranslate nohighlight">\(p(\theta,x')\)</span> becomes</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle p(\theta,x')=\int_{-\infty}^\infty\int_{-\infty}^\infty f(x,y)\;\delta(\;x\cos(\theta)+y\sin(\theta)-x')dx dy\tag{62}\]</div>
+<p>and is a two dimensional integral because as we track along the line at the distance <span class="math notranslate nohighlight">\(x'\)</span> from the origin, both <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> vary. The <span class="math notranslate nohighlight">\(\delta\)</span> function picks out just the values that are zero, <span class="math notranslate nohighlight">\(x\cos(\theta) +y\sin(\theta) = x'\)</span>, i.e. <span class="math notranslate nohighlight">\(\delta(0)=1\)</span> else <span class="math notranslate nohighlight">\(\delta(\ne 0)=0\)</span> and thus follow the line with displacement <span class="math notranslate nohighlight">\(x'\)</span>. The <span class="math notranslate nohighlight">\(p(\theta,x')\)</span> is called the Radon Transform after J. Radon (1917. (Translated by P. Parks, in IEEE Transactions on Medical Imaging, 5(4): 170-176,1986).</p>
+<p>In the transformed coordinates the integral is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle p(\theta,x')=\int_{-\infty}^\infty f\big(x'\cos(\theta)-y'\sin(\theta),\; x'\sin(\theta)+y'\cos(\theta)\big)dy'\]</div>
+<p>The transformation comes from finding <span class="math notranslate nohighlight">\(x',y'\)</span> using the rotation matrix, i.e. inverting the <span class="math notranslate nohighlight">\(2 \times 2\)</span> matrix and multiplying out</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\qquad\qquad\qquad\begin{bmatrix}x\\y \end{bmatrix}=\begin{bmatrix}\cos(\theta) &amp;\sin(\theta)\\-\sin(\theta)&amp;\cos(\theta) \end{bmatrix}\begin{bmatrix} x'\\y'\end{bmatrix}  \qquad\qquad\qquad \qquad\qquad \qquad\text{(63)}\end{split}\]</div>
+<p><img alt="Drawing" src="../_images/fourier-radon-fig3.png" /></p>
+<p>figure 88. Definition of straight line as distance <span class="math notranslate nohighlight">\(r\)</span> from the origin and angle <span class="math notranslate nohighlight">\(\theta\)</span>. In effect this re-defines the line in polar coordinates <span class="math notranslate nohighlight">\((r,\theta)\)</span>.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="sinograms">
+<h2>14.2 Sinograms<a class="headerlink" href="#sinograms" title="Permalink to this headline">¶</a></h2>
+<p>When many sets of <span class="math notranslate nohighlight">\(p(\theta,x')\)</span> are accumulated the first step in unscrambling the data is usually to plot <span class="math notranslate nohighlight">\(p\)</span> vs. <span class="math notranslate nohighlight">\(\theta\)</span> as columns and using a grey-scale to indicate the magnitude of <span class="math notranslate nohighlight">\(p\)</span> and so form what is called <em>sinogram</em> which is the all the Radon transforms stacked one above the other. This name does not arise, as one might expect, from the shape of the image but from the fact that it was originally used to image the sinuses in the skull.</p>
+<p>To illustrate the sinogram, suppose that the object to be imaged consisted of just one point at <span class="math notranslate nohighlight">\(x_0,y_0\)</span> then <span class="math notranslate nohighlight">\(f(x_0,y_0)=\delta(x_0)\delta(y_0)\)</span> and so from eqn. 62</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle p(\theta,x')=\int_{-\infty}^\infty\int_{-\infty}^\infty \delta(x_0)\delta(y_0)\delta(\;x\cos(\theta)+y\sin(\theta)-x')dxdy \]</div>
+<div class="math notranslate nohighlight">
+\[\displaystyle =\delta(\;x_0\cos(\theta)+y_0\sin(\theta)-x')\qquad\qquad \qquad\tag{64}\]</div>
+<p>and for simplicity suppose that <span class="math notranslate nohighlight">\(y_0=0\)</span> then <span class="math notranslate nohighlight">\(p(\theta,x')=\delta(x_0\cos(\theta)-x')\)</span>, and this point traces out a sinusoidal curve in a plot of <span class="math notranslate nohighlight">\(\theta\)</span> and <span class="math notranslate nohighlight">\(x'\)</span>. In fig 89, two objects are used (left figure) and right a sinogram calculated. The image repeats itself after <span class="math notranslate nohighlight">\(360^\text{o}\)</span> but is continued in the figure to show this more clearly. In practice only <span class="math notranslate nohighlight">\(0\to 180\)</span> need be calculated as the other angles are found by symmetry.</p>
+<p>The two objects are centred at <span class="math notranslate nohighlight">\((90,100)\)</span> and <span class="math notranslate nohighlight">\((200,150)\)</span> and when <span class="math notranslate nohighlight">\(\theta =0\)</span> the <span class="math notranslate nohighlight">\(x'\)</span> values are the same as the <span class="math notranslate nohighlight">\(x\)</span> coordinate for each object as shown by the two small black dots. When the two sinusoids cross the angle is such that the objects are in line as in the right-hand image of figure 86. In this situation the <span class="math notranslate nohighlight">\(x'\)</span> axis is at right angles to the line between the two objects, and in this example, <span class="math notranslate nohighlight">\(\theta \approx 114^\text{o}\)</span> from the vertical and is shown by the red dots. The maximum <span class="math notranslate nohighlight">\(x'\)</span> happens when the angle places the detector surface parallel to the line between the two objects after accounting for their size and is at <span class="math notranslate nohighlight">\(\approx 30^\text{o}\)</span>.</p>
+<p><img alt="Drawing" src="../_images/fourier-radon-fig4.png" /></p>
+<p>Figure 89. Example of a sinogram generated by two small objects on a <span class="math notranslate nohighlight">\(256 \times 256\)</span> grid. Angle  <span class="math notranslate nohighlight">\(\theta\)</span> is defined in fig 87 vs. <span class="math notranslate nohighlight">\(x'\)</span>, the distance along the detector surface.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="basic-and-filtered-back-projection">
+<h2>14.3 Basic and filtered back projection.<a class="headerlink" href="#basic-and-filtered-back-projection" title="Permalink to this headline">¶</a></h2>
+<p>Once the sinogram is measured reconstruction is possible. The <em>back projection</em> method is currently very widely used to obtain the object’s image, see figures 90 &amp; 91.</p>
+<p>In back projection each row in the sinogram is in turn projected back (i.e. smeared, along the ray direction <span class="math notranslate nohighlight">\(\theta\)</span> that produced it) and then added to other projected rows rotated to their appropriate angle. What this means in practice is that a 2D square array is made with dimension of the number of pixels across the detector. The first row in the sinogram is (mathematically) smeared down this array, i.e. each row is made the same and the array rotated to the first angle in the sinogram and stored in another 2D array as the image plane. This process is repeated for each line in the sinogram and added to the stored image array.  This forms the back projected image. Figure 90 shows as a schematic an initial object with two and then four back projections. As more of these are added the object becomes more defined. Figure 91 shows the calculated back projection forming an image of the objects in figure 89. In the projection the signal where the lines cross becomes large, but remains small at the perimeter where images overlap less. However, because the lines are placed radially, near to the centre the summed signal becomes blurred as there are so many of them adjacent to one another and so they still partially overlap where there should be no image. This effect diminishes towards the perimeter and is called the <span class="math notranslate nohighlight">\(1/r\)</span> effect. This is a convolution of the transform of the true object <span class="math notranslate nohighlight">\(F(x,y)\)</span> with <span class="math notranslate nohighlight">\(1/r\)</span> where <span class="math notranslate nohighlight">\(r\)</span> is the radial distance from the centre of the image. By rearranging the way the back projection is handled this effect can be counteracted in the ‘filtered’ back projection method described shortly.</p>
+<p><img alt="Drawing" src="../_images/fourier-radon-fig6.png" /></p>
+<p>Figure 90. To make a basic back projection of an object two then four ‘back’ projections are rotated then added together. The image becomes more clearly defined as more projections are added, but is far from being correct with just four projections. In practice many are needed as shown in the next figure.</p>
+<hr class="docutils" />
+<p><img alt="Drawing" src="../_images/fourier-radon-fig7.png" /></p>
+<p>Figure 91. Calculated basic back projections using the image on the left of figure 89. Starting at the left the line of the sinogram at <span class="math notranslate nohighlight">\(0^\text{o}\)</span> is smeared along the whole of the image plane. In this example the image is <span class="math notranslate nohighlight">\(256 \times 256\)</span> pixels. The next image shows the smearing of this line added to a second at <span class="math notranslate nohighlight">\(90\)</span>, the other images corresponding to lines at <span class="math notranslate nohighlight">\(45\)</span> and then finally at <span class="math notranslate nohighlight">\(1\)</span> degree intervals. The image is clearly reconstructed but is fuzzy with a undesirable diffuse halo around each feature. The small arrow shows the  <span class="math notranslate nohighlight">\(100^\text{o}\)</span> object shown in fig 93, line B. (Rotating each 2D array is the most time consuming part of the calculation as it has to be done pixel by pixel unless an inbuilt function is used to do this. In python/scipy <span class="math notranslate nohighlight">\(\mathtt{ndimage.rotate()}\)</span> will do this rapidly.)</p>
+<hr class="docutils" />
+<p>To understand why the reconstructed image is fuzzy the back projected image of a single pixel is shown in profile in figure 92. Clearly there is blurring because this should be a single spike and as the same thing happens to every pixel that is not zero, we can understand why the raw back projection is blurred the way it is. In optics this single pixel profile would be called the <em>point spread function</em> and as the point that generates it is cylindrically symmetrical the function spreads out in <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> in the same way. In figure 92 (right) the same x-ray intensity passes through areas A and B. The area A is <span class="math notranslate nohighlight">\(r_1dr\delta\theta\)</span> and B, <span class="math notranslate nohighlight">\(r_2dr\delta\theta\)</span>. The intensity is energy/area or <span class="math notranslate nohighlight">\(E/r_1dr\delta\theta\)</span> and <span class="math notranslate nohighlight">\( E/r_2dr \delta \theta \)</span> which means in the general case that the intensity <span class="math notranslate nohighlight">\(I(x,y)\sim 1/r\)</span> as described above.</p>
+<p>Another way of thinking about the blurring is to imagine the image as made up of a series of spikes that is convoluted with the point spread function. In this case to obtain the true image the blurred image needs to be convoluted with the ‘inverse’ function of the point spread function. However, as convolution is the same as multiplication in fourier space it is quicker to transform the image and multiply by the transform of the correction to the point spread function. How this is done is described next.</p>
+<p><img alt="Drawing" src="../_images/fourier-radon-fig7a.png" /></p>
+<p>Figure 92. Left The raw back projected profile of a single pixel. Right. To show that the intensity profile is described as <span class="math notranslate nohighlight">\(I(x,y)\sim 1/r\)</span> where <span class="math notranslate nohighlight">\(r\)</span> is the radial distance. The centre of the image (point <span class="math notranslate nohighlight">\(128,128\)</span> in the images used here) is taken as <span class="math notranslate nohighlight">\(r=0\)</span>.</p>
+<hr class="docutils" />
+<p>While it can be appreciated by drawing pictures that the back projection will reform something that looks like the original object, at least approximately, it is important to check if this is always going to be the case or whether it may fail in certain circumstances.  We start by looking at the inverse 2D fourier transform of a general object <span class="math notranslate nohighlight">\(f(x,y)\)</span>, see equation 60, and finally arrive at the filtered back projection equation. In other words, by analysis a correction to the simple back projection is naturally produced.</p>
+<p>As a reminder the 2D function of value <span class="math notranslate nohighlight">\(f(x,y)\)</span> at position <span class="math notranslate nohighlight">\(x,y\)</span> is, in effect, an image. The position <span class="math notranslate nohighlight">\(x,y\)</span> in ‘normal’ space will be called <span class="math notranslate nohighlight">\(u,v\)</span> in transform space, and by analogy with 1D transforms, the 2D transform is,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle F(u,v)=\int_{-\infty}^\infty\int_{-\infty}^\infty f(x,y)e^{-2\pi i (ux+vy)}dxdy\tag{65}\]</div>
+<p>where <span class="math notranslate nohighlight">\(u,v\)</span> are the conjugate variables to <span class="math notranslate nohighlight">\(x,y\)</span>, i.e. if <span class="math notranslate nohighlight">\(x,y\)</span> are in distance <span class="math notranslate nohighlight">\(u,v\)</span> are in reciprocal distance and so may be called the ‘spatial frequency’ but in tomography is called the <em>projection</em>. The <span class="math notranslate nohighlight">\(1/\sqrt{\pi}\)</span> scaling of the transform can be ignored. Examples of other 2D transforms are given in section 12.</p>
+<p>The inverse 2D transform is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle f(x,y) = \int_{-\infty}^\infty \int_{-\infty}^\infty F(u,v) e^{+2\pi i(ux+vy)}dudv \tag{66}\]</div>
+<p>and we change this to polar coordinates i.e. to the (spatial) frequency domain with coordinates <span class="math notranslate nohighlight">\(\theta, \omega\)</span> where <span class="math notranslate nohighlight">\(u = \omega\cos(\theta),\;v=\omega\sin(\theta)\)</span>. To find <span class="math notranslate nohighlight">\(d\omega d\theta\)</span> a Jacobian is used</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin{vmatrix}\displaystyle\frac{du}{d\omega} &amp; \displaystyle\frac{du}{d\theta}\\ \displaystyle\frac{dv}{d\omega} &amp; \displaystyle\frac{dv}{d\theta} \end{vmatrix} =\begin{vmatrix}\cos(\theta) &amp; -\omega\sin(\theta)\\ \sin(\theta) &amp; \omega\cos(\theta) \end{vmatrix}=\omega\end{split}\]</div>
+<p>making <span class="math notranslate nohighlight">\(dudv=\omega d\omega d\theta\)</span> and equation 66 becomes</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle f(x,y) = \int_{0}^{2\pi} \int_{0}^\infty F\big(\omega\cos(\theta),\omega\sin(\theta)\big)e^{+2\pi i\omega (x\cos(\theta)+y\sin(\theta)\;)}\omega\; d\omega d\theta \tag{67}\]</div>
+<p>Using the Slice Theorem (details below) the 2D transform <span class="math notranslate nohighlight">\(F(u,v)\)</span> can be replaced by the 1D transform at <span class="math notranslate nohighlight">\(\theta\)</span> of the experimental data which is the projection, <span class="math notranslate nohighlight">\(P(\theta,\omega)\)</span> which is a line in the sinogram. This is what connects the measured projection data to the true object <span class="math notranslate nohighlight">\(f(x,y)\)</span></p>
+<div class="math notranslate nohighlight">
+\[\displaystyle f(x,y) = \int_{0}^{2\pi} \int_{0}^\infty P(\theta,\omega)e^{+2\pi i\omega (x\cos(\theta)+y\sin(\theta)\;)}\omega\; d\omega d\theta \]</div>
+<p>To get limits <span class="math notranslate nohighlight">\(0 \to 2\pi\)</span> the integral is split into two parts <span class="math notranslate nohighlight">\(0\to\pi\)</span> and <span class="math notranslate nohighlight">\(\pi\to 2\pi\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin{align} f(x,y) =&amp;\int_{0}^{\pi} \int_{0}^\infty P(\theta,\omega)e^{+2\pi i\omega (x\cos(\theta)+y\sin(\theta)\;)}\omega\; d\omega d\theta \\+
+&amp;\int_{\pi}^{2\pi} \int_{0}^\infty P_\theta(\omega)e^{+2\pi i\omega (x\cos(\theta+\pi)+y\sin(\theta+\pi)\;)}\omega\; d\omega d\theta \end{align}\end{split}\]</div>
+<p>which may be simplified because <span class="math notranslate nohighlight">\(\cos(\theta+\pi)=-\cos(\theta)\)</span> and similarly for sines which changes the sign in the exponential, consequently, <span class="math notranslate nohighlight">\(P(\theta+\pi,\omega)=P(\theta,-\omega)\)</span> and the result for filtered back projection is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle f(x,y) = \int_{0}^{\pi} \int_{0}^\infty |\omega| P(\theta,\omega)e^{+2\pi i\omega (x\cos(\theta)+y\sin(\theta)\;)} d\omega d\theta \]</div>
+<p>The <span class="math notranslate nohighlight">\(|\omega|\)</span> that arises in these last equations, as a result of changing to polar coordinates, is in effect a filter function and has a ‘V’ shape centred at the origin. It can account for the fact that there are too many points near to the origin compared to farther out, because the transform is arranged radially. The result of the radial arrangement is that the large values in frequency space, which correspond to small features (i.e fine details) in the image and not well resolved, therefore to improve resolution data at many angles are needed. This <span class="math notranslate nohighlight">\(1/r\)</span> blurring is removed by the filter <span class="math notranslate nohighlight">\(|\omega|\)</span>, in other words the transform of the <span class="math notranslate nohighlight">\(1/r\)</span> in ‘real’ space is is <span class="math notranslate nohighlight">\(|\omega|\)</span> in transform space, thus we can easily perform the convolution, via fourier transforms, to remove the distortion caused by simple back projection.</p>
+<p>Having measured the projections at all angles the filtered back projection method starts with the sinogram.</p>
+<p><span class="math notranslate nohighlight">\(\quad\)</span><strong>(a)</strong> Fourier transform the first line in the sinogram.</p>
+<p><span class="math notranslate nohighlight">\(\quad\)</span><strong>(b)</strong> Multiply this transform by the absolute value of the frequency (the filter function).</p>
+<p><span class="math notranslate nohighlight">\(\quad\)</span><strong>(c)</strong> Calculate the reverse transform.</p>
+<p><span class="math notranslate nohighlight">\(\quad\)</span><strong>(d)</strong> Continue to do this for all lines in the sinogram.</p>
+<p><span class="math notranslate nohighlight">\(\quad\)</span><strong>(e)</strong> Construct the image plane with the new sinogram just as in normal back projection.</p>
+<p>In practice the transforms have to be done numerically on a grid of data points and thus fast fourier transforms are used. The stages of the reconstruction are shown at the end of this section. Also the image can be constructed ‘on the fly’ rather than as suggested in (a)-(e) above. There are other concerns also, for example the filter <span class="math notranslate nohighlight">\(|\omega|\)</span> has to end at some finite value so has the form not of a V shape but more like an M and this introduces some extra frequencies as noise into the transform. Thus it is common to add some apodizing function by applying other filters (Gaussian, Hanning) to damping out these oscillations. Thus there is a trade-off between sharp edges to the image and some noise, vs. smoothing edges and less noise.</p>
+<p>The image below shows the effect of filtering when compared to the right-hand most image in figure 91 which is basic back projection. The sharp edges are clear. The plot below shows the profile at <span class="math notranslate nohighlight">\(100\)</span> and <span class="math notranslate nohighlight">\(150^\text{o}\)</span>. The wide blue line is the unfiltered back projection, and the increased precision by filtering is very clear. In this image only <span class="math notranslate nohighlight">\(180\)</span> projections were used and in the larger disc some of the remaining noise can be seen.</p>
+<p><img alt="Drawing" src="../_images/fourier-radon-fig8.png" /></p>
+<p>Figure 93. Left. Reconstruction of the object in figure 89 with basic back projection (left) compared with filtered back projection (Right). Middle, comparison of the profile along the line A (top) and along B (lower) for filtered, red, and basic back projection, blue.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="number-of-samples">
+<h2>14.4 Number of samples<a class="headerlink" href="#number-of-samples" title="Permalink to this headline">¶</a></h2>
+<p>In practice discrete sampling has to be performed, both in terms of the number of pixels on a camera and in the angular resolution that is possible. As an example of the number of samples required to reconstruct an object <span class="math notranslate nohighlight">\(f(x,y)\)</span> let the minimum sampling distance be <span class="math notranslate nohighlight">\(\Delta k_{max}\)</span> which is defined in terms of the extent of <span class="math notranslate nohighlight">\(f(x,y)\)</span> and if this is <span class="math notranslate nohighlight">\(\pm f_{max}\)</span> then <span class="math notranslate nohighlight">\(\displaystyle \Delta k_{max}=\frac{1}{2f_{max}}\)</span>, but <span class="math notranslate nohighlight">\(\Delta k_{max}\)</span> is also the product of the minimum angular separation and maximum spatial frequency as <span class="math notranslate nohighlight">\(\Delta k_{max}=\Delta\theta \omega_{max}\)</span>. The maximum spatial frequency is <span class="math notranslate nohighlight">\(\displaystyle \omega_{max}=\frac{1}{2\Delta x}\)</span> and therefore</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \displaystyle \Delta\theta \le \frac{\Delta x}{f_{max}}\]</div>
+<p>If there are <span class="math notranslate nohighlight">\(1024\)</span> pixels in the CCD detector then <span class="math notranslate nohighlight">\(2f_{max}=1024\Delta x\)</span> and so <span class="math notranslate nohighlight">\(\Delta \theta =1/512\)</span>. As the total angular spread is <span class="math notranslate nohighlight">\(180^\text{o}\)</span> then the number of projections needed for an image of <span class="math notranslate nohighlight">\(1024\times 1024\)</span> pixels is <span class="math notranslate nohighlight">\(N=\pi/\Delta\theta= 512\pi\approx 1600\)</span> projections or at <span class="math notranslate nohighlight">\(\approx 0.11^\text{o}\)</span> intervals.</p>
+</div>
+<div class="section" id="the-fourier-slice-theorem">
+<h2>14.5 The Fourier Slice Theorem.<a class="headerlink" href="#the-fourier-slice-theorem" title="Permalink to this headline">¶</a></h2>
+<p>The Fourier Slice theorem is used in the reconstruction as it allows the 2D image to be assembled from the 1D data. By transforming the projection <span class="math notranslate nohighlight">\(p(\theta, x')\)</span>, one line of the 2D transform of the image is produced at angle <span class="math notranslate nohighlight">\(\theta\)</span>. Repeating this at each angle and smearing and adding these 1D transforms forms the full 2D image as in back projection.</p>
+<p>The fourier transform <span class="math notranslate nohighlight">\(F(\cdots)\)</span> of any <span class="math notranslate nohighlight">\(p(\theta,x')\)</span> will produce a new function <span class="math notranslate nohighlight">\(P_\theta(\omega)\)</span> in coordinates in reciprocal <span class="math notranslate nohighlight">\(x'\)</span> which we will label <span class="math notranslate nohighlight">\(\omega\)</span> as it is a ‘spatial frequency’. As the absorption is at fixed <span class="math notranslate nohighlight">\(\theta\)</span> this is a constant in the equations below. Fourier transforming one line of data <span class="math notranslate nohighlight">\(p(\theta,x')\)</span> gives</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle F(p(\theta,x'))\equiv P_\theta(\omega)=\int_{-\infty}^\infty p(\theta,x')e^{-2\pi i \omega x'}dx'\tag{68}\]</div>
+<p>where the <span class="math notranslate nohighlight">\(1/\sqrt{2\pi}\)</span> scaling used in the definition of the transform (section 6) can be ignored. The next step is to relate this equation to the shape of the object <span class="math notranslate nohighlight">\(f(x,y)\)</span> and for this the Slice Theorem is used. ( As the fourier transform is used it is essential that the values at the limits of <span class="math notranslate nohighlight">\(x'\)</span> are zero, and this is because it is implicit in using the transform that the signal is repetitive and making values zero ensures that there is no sudden jump in values, which would present itself as as a artificial frequency. Zero padding would be used in practice  to eliminate this effect if the values are not zero).</p>
+<p>To illustrate the Slice Theorem and in its simplest form we start with the definition of the 2D fourier transform eqns. 65-66 but let <span class="math notranslate nohighlight">\(v=0\)</span> producing,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle F(u,0)=\int_{-\infty}^\infty\int_{-\infty}^\infty f(x,y)e^{-2\pi i (ux)}dxdy \tag{69}\]</div>
+<p>This integral can now be split into parts in <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span>, viz,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle F(u,0)=\int_{-\infty}^\infty\left[\int_{-\infty}^\infty f(x,y)dy\right] e^{-2\pi i (ux)}dx\tag{70}\]</div>
+<p>where the integral in the square brackets is the projection with <span class="math notranslate nohighlight">\(\theta = 0\)</span>, i.e. <span class="math notranslate nohighlight">\(p(0,x')\)</span>, from equation 62,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \qquad\qquad\qquad\qquad\begin{align} p(\theta,x')&amp; =\int_{-\infty}^\infty\int_{-\infty}^\infty f(x,y)\delta(\;x\cos(\theta)+y\sin(\theta)-x')dxdy \quad \overset{\theta\,=\,0\;x\,=\,x'} \longrightarrow  \\p(0,x)&amp; =\int_{-\infty}^\infty f(x,y)dy\end{align}\qquad\qquad\qquad\qquad\text{(72)}\end{split}\]</div>
+<p>where in the last step we changed <span class="math notranslate nohighlight">\(x' \to x\)</span> which is the projection at constant <span class="math notranslate nohighlight">\(x'\)</span>.  Substituting into eqn 66 or 67 we find</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle F(u,0)=\int_{-\infty}^\infty p(0,x') e^{-2\pi i (ux')}dx'\tag{73}\]</div>
+<p>and then recognize that the right-hand side is just the fourier transform of the projection at <span class="math notranslate nohighlight">\(\theta=0\)</span>. In our example <span class="math notranslate nohighlight">\(u\equiv\omega\)</span> so we can write</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle P_0(\omega)=\int_{-\infty}^\infty p(0,x') e^{-2\pi i (\omega x')}dx'\tag{74}\]</div>
+<p>which is eqn. 65 at <span class="math notranslate nohighlight">\(\theta=0\)</span>. Thus we find that the fourier transform of the projection is in fact just a slice of the 2D transform of <span class="math notranslate nohighlight">\(f(x,y)\)</span>, thus rotating each projection the 2D transform can be built up.</p>
+<p>In the general case at angle <span class="math notranslate nohighlight">\(\theta\)</span> starting with equation 62,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle p(\theta,\omega)=\int_{-\infty}^\infty\int_{-\infty}^\infty\int_{-\infty}^\infty f(x,y)\delta(\;x\cos(\theta)+y\sin(\theta)-x')e^{-2\pi i \omega x'}dxdydx'\tag{75}\]</div>
+<p>The delta function is <span class="math notranslate nohighlight">\(1\)</span> only when <span class="math notranslate nohighlight">\(x\cos(\theta)+y\sin(\theta)=x'\)</span> making it selective for certain values and the integral is simplified to</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle p(\theta,\omega)=\int_{-\infty}^\infty\int_{-\infty}^\infty\ f(x,y)e^{-2\pi i \omega (x\cos(\theta)+y\sin(\theta))}dxdy\tag{76}\]</div>
+<p>This now has the form of a 2D fourier transform as in eqn. 60, i.e. <span class="math notranslate nohighlight">\(\displaystyle \int_{-\infty}^\infty\int_{-\infty}^\infty f(x,y)e^{-2\pi i (ux+vy)}dudv\)</span>,</p>
+<p>and is the 1D fourier transform of that part of the image <span class="math notranslate nohighlight">\(f(x,y)\)</span> that lies on the line defined by <span class="math notranslate nohighlight">\(u=x\cos(\theta),v= y\sin(\theta))\)</span> and is the general form of the Slice Theorem.</p>
+</div>
+<div class="section" id="stages-in-the-filtered-back-projection">
+<h2>14.6 Stages in the filtered back projection.<a class="headerlink" href="#stages-in-the-filtered-back-projection" title="Permalink to this headline">¶</a></h2>
+<p>The figures show some data, starting with line 30 of the sonogram (length 256 pixels), which is at an angle of <span class="math notranslate nohighlight">\(42^\text{o}\)</span>. The second image (B) shows the fast fourier transform of A but rotated by half its length (128) to make the centre of the transform at the centre of the array. This is then multiplied by the filter <span class="math notranslate nohighlight">\(|\omega|\)</span> with frequency zero at the centre. You can see how this product changes the transform giving it an inverted look.  Finally the inverse /reverse or back fourier transform is made and again rotated so that it is at the centre of the data. By making the first and last points in the filter equal to zero adds a long period sine wave to the data as can be seen in frame E, but over all the angles the phase of this sine wave varies and eventually exactly cancels out.</p>
+<p><img alt="Drawing" src="../_images/fourier-radon-fig9.png" /></p>
+<p>Figure 94. Showing stages in the filter back projection method. A; the sinogram at line <span class="math notranslate nohighlight">\(30\)</span> which is at <span class="math notranslate nohighlight">\(42^{\text{o}}\)</span>. B; the real part of the fourier transform of A. C, the filter function <span class="math notranslate nohighlight">\(|\omega |\)</span>. Zero frequency must be at centre point (<span class="math notranslate nohighlight">\(128\)</span>). D; the real part of (filter <span class="math notranslate nohighlight">\(\times\)</span> B). E; the back transform of D.</p>
+<hr class="docutils" />
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">ndimage</span><span class="p">,</span> <span class="n">misc</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;font.size&#39;</span><span class="p">:</span> <span class="mi">16</span><span class="p">})</span>  <span class="c1"># set font size for plots</span>
+<span class="c1"># make the sonogram from the image call it p[ ..., ...], image is n by n.</span>
+<span class="c1"># e.g n = 2**m to make FFT fast, say say 256</span>
+<span class="c1"># This code is slow and not the most efficient but illustrates the method. </span>
+
+<span class="c1">#----------------------------</span>
+<span class="k">def</span> <span class="nf">makeimage</span><span class="p">():</span>
+    
+    <span class="n">image1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">n</span><span class="p">,</span><span class="n">n</span><span class="p">),</span><span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+    
+    <span class="n">x0a</span>  <span class="o">=</span> <span class="mi">200</span>  <span class="c1"># init values</span>
+    <span class="n">y0a</span>  <span class="o">=</span> <span class="mi">150</span>
+    <span class="n">rada</span> <span class="o">=</span> <span class="mi">30</span>
+    <span class="n">x0b</span>  <span class="o">=</span> <span class="mi">90</span>
+    <span class="n">y0b</span>  <span class="o">=</span> <span class="mi">100</span>
+    <span class="n">radb</span> <span class="o">=</span> <span class="mi">10</span>
+    
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+            <span class="n">image1</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">]</span><span class="o">=</span><span class="mi">0</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">j</span><span class="o">-</span><span class="n">x0a</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="n">y0a</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">&lt;=</span> <span class="n">rada</span><span class="o">**</span><span class="mi">2</span><span class="p">:</span>
+                <span class="n">image1</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="mi">20</span>    
+            <span class="k">if</span> <span class="p">(</span><span class="n">j</span><span class="o">-</span><span class="n">x0b</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="n">y0b</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">&lt;=</span> <span class="n">radb</span><span class="o">**</span><span class="mi">2</span><span class="p">:</span>
+                <span class="n">image1</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="mi">40</span>
+        <span class="k">pass</span>
+    <span class="k">return</span> <span class="n">image1</span>
+<span class="c1">#----------------------------</span>
+<span class="k">def</span> <span class="nf">sinog</span><span class="p">(</span><span class="n">image1</span><span class="p">,</span><span class="n">n</span><span class="p">):</span>                  <span class="c1"># make sinogram</span>
+    
+    <span class="n">p</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">n</span><span class="p">,</span><span class="n">n</span><span class="p">),</span><span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="mi">1</span><span class="p">):</span>
+        <span class="n">theta</span><span class="o">=</span> <span class="p">(</span><span class="n">i</span><span class="o">*</span><span class="mi">360</span><span class="o">/</span><span class="n">n</span><span class="p">)</span>                        <span class="c1"># angle degrees</span>
+        <span class="n">temp</span> <span class="o">=</span> <span class="n">ndimage</span><span class="o">.</span><span class="n">rotate</span><span class="p">(</span><span class="n">image1</span><span class="p">,</span> <span class="n">theta</span><span class="p">,</span> <span class="n">reshape</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+            <span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">temp</span><span class="p">[:,</span><span class="n">j</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">p</span>
+<span class="c1">#----------------------------</span>
+<span class="k">def</span> <span class="nf">filterproj</span><span class="p">(</span><span class="n">p</span><span class="p">):</span>
+    
+    <span class="n">imtest</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">n</span><span class="p">,</span><span class="n">n</span><span class="p">),</span><span class="n">dtype</span> <span class="o">=</span> <span class="nb">complex</span><span class="p">)</span>      <span class="c1"># image plane</span>
+    <span class="n">imk</span> <span class="o">=</span>    <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">n</span><span class="p">,</span><span class="n">n</span><span class="p">),</span><span class="n">dtype</span> <span class="o">=</span> <span class="nb">float</span><span class="p">)</span>        <span class="c1"># temporary storage</span>
+    <span class="n">temp</span><span class="o">=</span>    <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span> <span class="n">n</span><span class="p">,</span>   <span class="n">dtype</span> <span class="o">=</span> <span class="nb">complex</span><span class="p">)</span>      <span class="c1"># temporary</span>
+    <span class="n">omega</span> <span class="o">=</span>  <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span> <span class="n">n</span><span class="p">,</span>   <span class="n">dtype</span> <span class="o">=</span> <span class="nb">complex</span><span class="p">)</span>      <span class="c1"># filter</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="n">omega</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="n">nc</span><span class="p">)</span>                      <span class="c1"># make centre zero</span>
+    <span class="n">omega</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.0</span>
+    <span class="n">omega</span><span class="p">[</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.0</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">180</span><span class="p">,</span><span class="mi">1</span><span class="p">):</span>                      <span class="c1"># jth  row of p </span>
+        <span class="n">indx</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">j</span><span class="o">*</span><span class="n">n</span><span class="o">/</span><span class="mi">360</span><span class="p">)</span>
+        <span class="n">temp</span><span class="p">[:]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">fftshift</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">fft</span><span class="p">(</span> <span class="n">p</span><span class="p">[</span><span class="n">indx</span><span class="p">,:]</span> <span class="p">)</span> <span class="p">)</span>   <span class="c1"># transform and shift to centre</span>
+        <span class="n">temp</span><span class="p">[:]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">fftshift</span><span class="p">(</span><span class="n">temp</span><span class="p">[:]</span><span class="o">*</span><span class="n">omega</span><span class="p">[:]</span> <span class="p">)</span>          <span class="c1"># filter * transform, shift to edge</span>
+        <span class="n">temp</span><span class="p">[:]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">ifft</span><span class="p">(</span><span class="n">temp</span><span class="p">[:])</span>                        <span class="c1"># reverse transfer will auto shift back to centre</span>
+        <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>        
+            <span class="n">imk</span><span class="p">[</span><span class="n">k</span><span class="p">,:]</span> <span class="o">=</span>  <span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span> <span class="n">temp</span><span class="p">[:]</span>  <span class="p">)</span>
+        <span class="n">imtest</span> <span class="o">=</span> <span class="n">imtest</span> <span class="o">+</span> <span class="n">ndimage</span><span class="o">.</span><span class="n">rotate</span><span class="p">(</span><span class="n">imk</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">reshape</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>  <span class="c1"># ndimage.rotate is fast array rotation</span>
+    <span class="k">return</span> <span class="n">imtest</span>
+<span class="c1">#----------------------------</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,(</span><span class="n">ax1</span><span class="p">,</span><span class="n">ax2</span><span class="p">,</span><span class="n">ax3</span><span class="p">)</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span> <span class="n">nrows</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span> <span class="p">)</span>  <span class="c1"># define plots</span>
+
+<span class="n">n</span> <span class="o">=</span> <span class="mi">2</span><span class="o">**</span><span class="mi">8</span>                                          <span class="c1"># size of image to use</span>
+<span class="n">nc</span> <span class="o">=</span> <span class="n">n</span><span class="o">//</span><span class="mi">2</span>                                         <span class="c1"># integer division</span>
+
+<span class="n">imageA</span> <span class="o">=</span> <span class="n">makeimage</span><span class="p">()</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Original image&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">imageA</span><span class="p">,</span><span class="n">origin</span><span class="o">=</span><span class="s1">&#39;lower&#39;</span><span class="p">,</span><span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">)</span>     <span class="c1"># plot original image</span>
+
+<span class="n">p</span> <span class="o">=</span> <span class="n">sinog</span><span class="p">(</span><span class="n">imageA</span><span class="p">,</span><span class="n">n</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;sinogram&#39;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;nipy_spectral_r&#39;</span><span class="p">)</span>             <span class="c1"># plot sinogram</span>
+
+<span class="n">fimage</span> <span class="o">=</span> <span class="n">filterproj</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+<span class="n">ax3</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Reconstructed image&#39;</span><span class="p">)</span>
+<span class="n">ax3</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">fimage</span><span class="p">)</span> <span class="p">,</span><span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">)</span>          <span class="c1"># plot filtered back transform</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Fourier-tomography_6_01.png" src="../_images/Fourier-tomography_6_01.png" />
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./chapter-9"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="Fourier-2D-Diffraction.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">The Fourier transform in two dimensions: images and x-ray Diffraction</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../chapter-10/Diff-eqns-intro.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">10. Differential Equations.</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Godfrey Beddard<br/>
+        
+            &copy; Copyright 2022.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

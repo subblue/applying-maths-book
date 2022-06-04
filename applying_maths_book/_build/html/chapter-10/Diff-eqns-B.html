@@ -1,0 +1,2036 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>First order eqns &amp; Integrating factors. Second order eqns, Newtons laws, equations of motion. &#8212; Applying Maths in the Chemical &amp; Biomolecular Sciences</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="The ‘D’ operator. Solving linear differential equations with constant coefficients" href="Diff-eqns-C.html" />
+    <link rel="prev" title="Questions 1 - 23" href="Diff-eqns-Q1-23.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/book-cover.jpg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Applying Maths in the Chemical & Biomolecular Sciences</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Applying Maths in the Chemical and Biomolecular Sciences.
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-1/chapter1-intro.html">
+   1. Numbers, Equations, Operators, and Algorithms.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-A.html">
+     Numbers to Algorithms.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-Q1-7.html">
+     Questions 1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-B.html">
+     Trig, hyperbolic and inverse functions, waves, polar coordinates &amp; factorials
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-Q8-16.html">
+     Questions 8 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-C.html">
+     Sophisticated Counting.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-Q17-34.html">
+     Questions 17 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-D.html">
+     Modulo arithmetic,
+     <span class="math notranslate nohighlight">
+      \(\delta\)
+     </span>
+     functions, types of  series &amp;  estimating quantities
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-Q35-39.html">
+     Questions 35 - 39
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-answers-1-7.html">
+     Solutions Q1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-answers-8-16.html">
+     Solutions Q8 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-answers-17-34.html">
+     Solutions Q17 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-answers-35-39.html">
+     Solutions Q35 - 39
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-2/chapter2-intro.html">
+   2. Complex numbers.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2/chapter2-A.html">
+     Real, imaginary, conjugate and modulus
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2/chapter2-Q-1-9.html">
+     Questions 1 - 9
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2/chapter2-B.html">
+     De Moivre’s theorem and integer powers of complex numbers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2/chapter2-Q-10-13.html">
+     Questions 10 -13
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2/chapter2-C.html">
+     Euler’s theorem
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2/chapter2-Q-14-27.html">
+     Questions 14 - 27
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2/chapter2-answers.html">
+     Solutions Q1 - 27
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-3/differen-intro.html">
+   3. Differentiation.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-A.html">
+     Differentiation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-B.html">
+     Trig functions, logs, power, reciprocals and integrals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-C-Q-4-11.html">
+     Questions 1-11
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-D.html">
+     Product rule and function of function or chain rule.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-E-Q-12-42.html">
+     Questions 12-42
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-F.html">
+     Limits, l’Hopital’s rule, Maximum, Minimum and Calculus of Variations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-G-Q-43-73.html">
+     Questions 43 - 73
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-H.html">
+     Numerically finding the roots of an equation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-I-Q-74-85.html">
+     Questions 74 - 85
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-J.html">
+     Minimizing or maximizing with constraints: Lagrange Undetermined Multipliers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-K-Q-86-92.html">
+     Questions 86 - 92
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-L.html">
+     Partial differentiation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-M-Q-93-114.html">
+     Questions 93-114
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-M1.html">
+     Differentiation of vectors
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-N-answers-1-11.html">
+     Solutions Q 1-11
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-O-answers-12-42.html">
+     Solutions Q 12-42
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-P-answers-43-73.html">
+     Solutions Q 43 - 73
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-Q-answers-74-85.html">
+     Solutions Q 74 - 85
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-R-answers-86-92.html">
+     Solutions Q 86 - 94
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-S-answers-93-114.html">
+     Solutions Q 93-114
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-4/integration-intro.html">
+   4. Integration.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-A.html">
+     Integration basics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-Q1-14.html">
+     Questions 1-14
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-B.html">
+     Integration by substitution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-Q15-30.html">
+     Questions 15-30
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-C.html">
+     Using parametric equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-Q31-48.html">
+     Questions 31 - 48
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-D.html">
+     Calculating an Average Value.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-Q49-72.html">
+     Questions 49 - 72
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-E.html">
+     The Variational Method in Quantum Mechanics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-Q73-77.html">
+     Questions 73 - 77
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-F.html">
+     Multiple integrals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-Q78-86.html">
+     Questions 78 - 86
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-G.html">
+     Calculating the energy of a chemical bond using molecular orbitals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-H.html">
+     Line integrals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-Q87-96.html">
+     Questions 87 - 96
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-answers-1-14.html">
+     Solutions Q1 - 14
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-answers-15-30.html">
+     Solutions Q15 - 30
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-answers-31-48.html">
+     Solutions Q31 - 48
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-answers-49-72.html">
+     Solutions Q49 - 72
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-answers-73-96.html">
+     Solutions Q73 - 96
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-5/chapter-5-intro.html">
+   5. Summations, Series and expansion of Functions.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-A.html">
+     Series, averages, partition functions, DNA melting, atom entropy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-B-Q1-13.html">
+     Questions 1 - 13
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-E.html">
+     Maclaurin and Taylor series expansions. Paramagnetic spins. Euler-Maclaurin formula.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-F-Q14-34.html">
+     Questions 14 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-G-Q35-44.html">
+     Questions 35 - 44
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-perturbation-A.html">
+     Perturbation Theory
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-perturbation-B-Q45-48.html">
+     Questions 45 - 48
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-perturbation-C.html">
+     Quantum superposition and wavepackets.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-perturbation-D-Q49-52.html">
+     Questions 49 - 52
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-answers-1-7.html">
+     Solutions Q 1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-answers-8-13.html">
+     Solutions Q8 - 13
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-answers-14-26.html">
+     Solutions Q 14 - 26
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-answers-27-32.html">
+     Solutions Q27 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-answers-33-44.html">
+     Solutions Q33 - 44
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-answers-45-52.html">
+     Solutions Q45 - 52
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-6/vectors-intro.html">
+   6. Vectors.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-A.html">
+     Vector basics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-Q1-24.html">
+     Questions 1 - 24
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-B.html">
+     Projections and components
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-Q25-32.html">
+     Questions 25 - 32
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-C.html">
+     Axes need not be right-angled or of equal length
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-Q33-38.html">
+     Questions 33 - 38
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-D.html">
+     Basis sets with more than three dimensions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-Q39-46.html">
+     Questions 39 - 46
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-E.html">
+     Cross product or vector product
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-Q47-52.html">
+     Questions 47 - 52
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-F.html">
+     Torsion or dihedral angles
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-Q53-48.html">
+     Questions 53 - 48
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-G.html">
+     Torque and angular momentum
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-Q59-61.html">
+     Questions 59 - 61
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-answers-Q1-24.html">
+     Solutions Q1 - 24
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-answers-Q25-32.html">
+     Solutions Q25 - 32
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-answers-Q33-38.html">
+     Solutions Q33 - 38
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-answers-Q39-46.html">
+     Solutions Q39 - 46
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-answers-Q47-52.html">
+     Solutions Q47 - 52
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-answers-Q53-61.html">
+     Solutions Q53 - 61
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-7/matrices-intro.html">
+   7. Matrices
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-A.html">
+     Determinants
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q1-10.html">
+     Questions  1 - 10
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-B.html">
+     Matrices
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q11-16.html">
+     Questions  11 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-C.html">
+     Molecular Group Theory
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q17-30.html">
+     Questions  17 - 30
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-D.html">
+     Rotation matrices: moving molecules
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q31-34.html">
+     Questions 31 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-E.html">
+     Matrices in optics and designing laser cavities
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q35-39.html">
+     Questions 35 - 39
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-F.html">
+     Polarizing optics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q40-44.html">
+     Questions 40 - 44
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-G.html">
+     Solving equations using matrices. Eigenvectors &amp; Eigenvalues.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q45-50.html">
+     Questions 45 - 50
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-H.html">
+     Rate equations and Chemical Kinetics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q51-54.html">
+     Questions 51 - 54
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-I.html">
+     Molecular vibrations and pendulums
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q55-58.html">
+     Questions 55 - 58
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-J.html">
+     Moments of Inertia
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q59-60.html">
+     Questions 59 - 62
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-K.html">
+     Calculating a bond length using moments of inertia
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q61.html">
+     Question 61
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-L.html">
+     Principal axes for Moments of Inertia
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q62.html">
+     Question 62
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-answersQ1-10.html">
+     Solutions Q1 - 10
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-answersQ11-16.html">
+     Solutions Q11 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-answersQ17-30.html">
+     Solutions Q17 - 30
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-answersQ31-34.html">
+     Solutions Q31 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-answersQ35-39.html">
+     Solutions Q35 - 39
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-answersQ40-44.html">
+     Solutions Q40 - 44
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-answersQ45-50.html">
+     Solutions Q45 - 50
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-answersQ51-54.html">
+     Solutions Q51 - 54
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-answersQ55-58.html">
+     Solutions Q55 - 58
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-answersQ59-61.html">
+     Solutions Q59 - 61
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-8/matricesQM-intro.html">
+   8. Matrices in Quantum Mechanics
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-8/matricesQM-A.html">
+     Matrices in Quantum Mechanics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-8/matricesQM-Q1-7.html">
+     Questions 1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-8/matricesQM-B.html">
+     Basis sets and bra-ket algebra
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-8/matricesQM-Q8-12.html">
+     Questions 8 - 12
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-8/matricesQM-C.html">
+     Continuous basis sets
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-8/matricesQM-answers1-7.html">
+     Solutions Q1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-8/matricesQM-answers8-12.html">
+     Solutions Q8 - 12
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-9/Fourier-intro.html">
+   9. Fourier Series and Transforms.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-A-B.html">
+     Fourier series, Gibbs phenomenon, generalised series.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-questions-1-6.html">
+     Questions 1 - 6
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-C.html">
+     Fourier Transforms
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-questions-7-15.html">
+     Questions 7 - 15
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-D.html">
+     Convolution and Autocorrelation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-questions-16-21.html">
+     Questions 16 - 21
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-E.html">
+     Discrete Fourier  (DFT)  and Fast Fourier transforms (FFT)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-F.html">
+     The Hadamard Transform: Encoding and Decoding
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-answers-1-6.html">
+     Solutions Q 1 - 6
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-answers-7-15.html">
+     Solutions Q 7 - 15
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-answers-16-21.html">
+     Solutions Q 16 - 21
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-2D-Diffraction.html">
+     The Fourier transform in two dimensions: images and x-ray Diffraction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-tomography.html">
+     Computed Tomography
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="Diff-eqns-intro.html">
+   10. Differential Equations.
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="Diff-eqns-A.html">
+     Differential Equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Diff-eqns-Q1-23.html">
+     Questions 1 - 23
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     First order eqns &amp; Integrating factors. Second order eqns, Newtons laws, equations of motion.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Diff-eqns-C.html">
+     The ‘D’ operator.  Solving linear differential equations with constant coefficients
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Diff-eqns-D.html">
+     Simultaneous equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Diff-eqns-Q24-37.html">
+     Questions 24 - 37
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Diff-eqns-E.html">
+     Linear equations with variable coefficients
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Diff-eqns-F.html">
+     Partial Differential Equations, PDE
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Diff-eqns-G.html">
+     PDE examples continued
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Diff-eqns-answers-1-21.html">
+     Solutions Q1 - 21
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Diff-eqns-answers-22-37.html">
+     Solutions Q22 - 37
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-11/num-methods-intro.html">
+   11. Numerical Methods
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-A.html">
+     Numerical Methods
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-Q1-7.html">
+     Questions 1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-B.html">
+     Numerical solution of differential equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-Q8-12.html">
+     Questions 8 - 12
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-C.html">
+     Coupled equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-Q13-16.html">
+     Questions 13 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-D.html">
+     The phase plane, nullclines, and stable points
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-Q17-20.html">
+     Questions 17 - 20
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-E.html">
+     Reaction schemes with feedback
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-Q21-34.html">
+     Questions 21 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-F.html">
+     Boundary value problems.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-Q35-40.html">
+     Questions 35 - 40
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-answers1-7.html">
+     Solutions Q1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-answers8-12.html">
+     Solutions Q8 - 12
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-answers13-16.html">
+     Solutions Q13 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-answers17-20.html">
+     Solutions Q17 - 20
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-answers21-34.html">
+     Solutions Q21 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-answers35-40.html">
+     Solutions Q35 - 40
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-12/monte-carlo-intro.html">
+   12. Monte Carlo Methods
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+  <label for="toctree-checkbox-12">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-A.html">
+     Monte - Carlo Methods
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-Q1-6.html">
+     Questions 1 - 6
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-B.html">
+     Solving rate equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-Q7-10.html">
+     Questions 7 - 10
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-CC.html">
+     Monte Carlo Simulations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-C.html">
+     Energy transfer. Autocatalytic reaction and spreading of fires
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-Q11-17.html">
+     Questions 11 - 17
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-D.html">
+     The Metropolis algorithm
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-answers1-6.html">
+     Solutions Q1 - 6
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-answers7-10.html">
+     Solutions Q7 - 10
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-answers11-17.html">
+     Solutions Q11 - 17
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-13/analysis-intro.html">
+   13. Data Analysis
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+  <label for="toctree-checkbox-13">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-13/analysis-A.html">
+     Characterizing experimental data. Accuracy, precision, mean and standard deviation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-13/analysis-Q1-3.html">
+     Questions 1 - 3
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-13/analysis-B.html">
+     Modelling data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-13/analysis-Q4-9.html">
+     Questions 4 - 9
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-13/analysis-C.html">
+     Modelling data is simpler using matrices
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-13/analysis-Q10-11.html">
+     Questions 10 - 13
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-13/analysis-D.html">
+     Non-linear least squares. Least absolute deviation. Principal component analysis
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-13/analysis-answers1-11.html">
+     Solutions Q1 -11
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../chapter-1/chapter1-E.html">
+   SI units, Rounding, converting units &amp; Glossary.
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../references/References.html">
+   References
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../references/Python%20crib.html">
+   Appendix:  Some basic Python instructions with a few examples.
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/chapter-10/Diff-eqns-B.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/chapter-10/Diff-eqns-B.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#homogeneous-equations">
+   4.1 Homogeneous equations
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exact-equations">
+   4.2 Exact equations
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#linear-first-order-equations-and-integrating-factors">
+   4.3 Linear first-order equations and Integrating Factors
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#i-example">
+     <strong>
+      (i) Example
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ii-coupled-chemical-kinetic-equations">
+     <strong>
+      (ii) Coupled chemical kinetic equations
+     </strong>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-bernoulli-equation">
+   4.4 The Bernoulli Equation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#second-order-differential-equations">
+   5 Second-order differential equations
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#newton-s-laws-and-differential-equations-describing-motion">
+   5.1 Newton’s laws and differential equations describing motion
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#general-equation-of-motion-energy-equation-and-simple-harmonic-motion">
+   5.2 General Equation of Motion, Energy equation and Simple Harmonic Motion.
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#i-rockets">
+     <strong>
+      (i) Rockets
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#iii-rockets-again-conservation-of-momentum">
+     <strong>
+      (iii) Rockets again.  Conservation of Momentum
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#iii-hooke-s-law-and-simple-harmonic-motion">
+     <strong>
+      (iii) Hooke’s Law and simple harmonic motion
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#iv-springs">
+     <strong>
+      (iv) Springs
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#v-total-energy">
+     <strong>
+      (v) Total energy
+     </strong>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-simple-pendulum">
+   5.3 The simple pendulum
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-compound-pendulum-and-torsional-oscillations">
+   5.4 The compound pendulum and torsional oscillations
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#inverted-pendulum-unstable-equilibrium">
+   5.5 Inverted pendulum: unstable equilibrium
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#simple-harmonic-motion-with-a-constant-force">
+   5.6 Simple harmonic motion with a constant force
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#particle-in-a-one-dimensional-box">
+   5.7 Particle in a one-dimensional box
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-rigid-rotor-and-a-particle-on-a-ring">
+   5.8 The Rigid Rotor and a Particle on a Ring
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="first-order-eqns-integrating-factors-second-order-eqns-newtons-laws-equations-of-motion">
+<h1>First order eqns &amp; Integrating factors. Second order eqns, Newtons laws, equations of motion.<a class="headerlink" href="#first-order-eqns-integrating-factors-second-order-eqns-newtons-laws-equations-of-motion" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import all python add-ons etc that will be needed later on</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="n">init_printing</span><span class="p">()</span>                      <span class="c1"># allows printing of SymPy results in typeset maths format</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;font.size&#39;</span><span class="p">:</span> <span class="mi">14</span><span class="p">})</span>  <span class="c1"># set font size for plots</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="homogeneous-equations">
+<h2>4.1 Homogeneous equations<a class="headerlink" href="#homogeneous-equations" title="Permalink to this headline">¶</a></h2>
+<p>A homogeneous differential equation has the form</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle  Mdx + Ndy = 0\]</div>
+<p>if <span class="math notranslate nohighlight">\(M\)</span> and <span class="math notranslate nohighlight">\(N\)</span> are functions of the <em>same degree</em> in <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span>. This constraint means that <span class="math notranslate nohighlight">\(M/N\)</span> is a function of <span class="math notranslate nohighlight">\(y/x\)</span> and the homogeneous equation has the form</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{dy}{dx} = f\left(\frac{y}{x}\right)\]</div>
+<p>where <span class="math notranslate nohighlight">\(f\)</span> is the function of <span class="math notranslate nohighlight">\(y/x\)</span>. To solve this equation the substitution <span class="math notranslate nohighlight">\(y = ux\)</span> is used. The derivative is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{dy}{dx} = u + x\frac{du}{dx}\]</div>
+<p>then <span class="math notranslate nohighlight">\(\displaystyle u + x\frac{du}{dx} = f(u)\)</span> which can have its variables separated to produce</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{du}{f(u)-u}=\frac{dx}{x}  \tag{11}\]</div>
+<p>which is integrated to find the solution.</p>
+<p>The equation</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{dy}{dx}=\frac{2x^2+3y^2}{xy} \]</div>
+<p>satisfies the condition <span class="math notranslate nohighlight">\(Mdx + Ndy = 0\)</span> because the degree of <span class="math notranslate nohighlight">\(xy, \; x^2\)</span> and <span class="math notranslate nohighlight">\(y^2\)</span> is the same, and is 2, on both on the top and bottom of <span class="math notranslate nohighlight">\(\displaystyle \frac{2x^2 + 3y^2}{xy}\)</span>. The function <span class="math notranslate nohighlight">\(f(u)\)</span> then becomes</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle f(u) = \frac{2x^2 + 3u^2x^2}{ux^2} = \frac{2 + 3u^2}{u}\]</div>
+<p>and then the solution is found using equation (11) as</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \int\frac{u}{2(1+u^2)}du=\int\frac{dx}{x}\]</div>
+<p>and which is, with <span class="math notranslate nohighlight">\(\ln(c)\)</span> as the integration constant,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{1}{4}\ln(1 + u^2) = \ln(x) + \ln(c)\]</div>
+<p>and after substituting and rearranging, the general solution is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle  y = x\sqrt{c^4x^4-1}\]</div>
+<p>Using SymPy produces the similar answer.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x, y&#39;</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">Function</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">)</span>
+<span class="n">f01</span> <span class="o">=</span> <span class="n">diff</span><span class="p">(</span><span class="n">y</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="n">x</span><span class="p">)</span><span class="o">-</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span><span class="o">*</span><span class="n">y</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">x</span><span class="o">*</span><span class="n">y</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="p">)</span>  <span class="c1"># define equation , y is function of x </span>
+<span class="n">ans</span> <span class="o">=</span> <span class="n">dsolve</span><span class="p">(</span><span class="n">f01</span><span class="p">)</span>                                  <span class="c1"># solve then factor answer</span>
+<span class="n">factor</span><span class="p">(</span><span class="n">ans</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Diff-eqns-B_3_01.png" src="../_images/Diff-eqns-B_3_01.png" />
+</div>
+</div>
+</div>
+<div class="section" id="exact-equations">
+<h2>4.2 Exact equations<a class="headerlink" href="#exact-equations" title="Permalink to this headline">¶</a></h2>
+<p>The exact equation also has the form <span class="math notranslate nohighlight">\(Mdx + Ndy = 0\)</span> with the additional constraint that</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{\partial M}{\partial y} = \frac{\partial N}{\partial x}\]</div>
+<p>and this type of equation is frequently met in Thermodynamics, see Chapter 12.8.</p>
+<p>If a differential equation  <span class="math notranslate nohighlight">\(\displaystyle Mdx + Ndy = 0\)</span> , is multiplied throughout by a suitable term it can become exact; i.e. the equation is now</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle  (Mdx + Ndy)G(x, y) = 0\]</div>
+<p>The term <span class="math notranslate nohighlight">\(G(x, y)\)</span> is called an <em>integrating factor</em> which in general can be difficult to uncover except in the case of linear first-order equations that are described next.</p>
+</div>
+<div class="section" id="linear-first-order-equations-and-integrating-factors">
+<h2>4.3 Linear first-order equations and Integrating Factors<a class="headerlink" href="#linear-first-order-equations-and-integrating-factors" title="Permalink to this headline">¶</a></h2>
+<p>Linear first-order equations have the form,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle  \frac{dy}{dx} +Py = Q \]</div>
+<p>where <span class="math notranslate nohighlight">\(P\)</span> and <span class="math notranslate nohighlight">\(Q\)</span> are functions of <span class="math notranslate nohighlight">\(x\)</span> only. These equations can be integrated using integrating factors. First we consider the particular case when <span class="math notranslate nohighlight">\(Q = 0\)</span> or</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle  \frac{dy}{dx} +Py = 0  \tag{12} \]</div>
+<p>Writing the equation as <span class="math notranslate nohighlight">\(\displaystyle \frac{1}{y}dy +Pdx=0\)</span> and integrating gives</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle  \ln(y)+P\int dx=\ln(c)\]</div>
+<p>where the constant is <span class="math notranslate nohighlight">\(\ln(c)\)</span>. Simplifying gives</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle  ye^{\large{\int Pdx}} = c\]</div>
+<p>If this equation is differentiated, it produces <span class="math notranslate nohighlight">\(\displaystyle \frac{d}{dx}ye^{\int Pdx} = 0\)</span>. From this result, it can be shown that</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{d}{dx}ye^{\large{\int Pdx}}=e^{\large{\int Pdx}}\left(\frac{dy}{dx}+Py  \right) \]</div>
+<p>and the right-hand side is the starting equation (12), multiplied by the integrating factor</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle G(x) = e^{\large{\int Pdx}}\]</div>
+<p>It follows that the solution of the differential equation becomes the two integrals,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle ye^{\large{\int Pdx}}=\int Qe^{\large{\int Pdx}}dx +c\tag{12}\]</div>
+<div class="section" id="i-example">
+<h3><strong>(i) Example</strong><a class="headerlink" href="#i-example" title="Permalink to this headline">¶</a></h3>
+<p>The equation <span class="math notranslate nohighlight">\(\displaystyle \frac{dy}{dx} + \frac{y}{x}= 3\sin(x)\)</span> is solved.</p>
+<p>In this equation <span class="math notranslate nohighlight">\(P = 1/x\)</span> and <span class="math notranslate nohighlight">\(Q = 3\sin(x)\)</span>. The integrating factor is simple in this case and is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \int Pdx=\ln(x)\]</div>
+<p>and as <span class="math notranslate nohighlight">\(\displaystyle e^{\ln(x)}=x\)</span> then <span class="math notranslate nohighlight">\(yx = 3\int x\sin(x)dx +c \)</span>.</p>
+<p>Integrating this by parts and rearranging, produces</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle  y = \frac{3\sin(x)}{x} - 3\cos(x) + c\]</div>
+<p>and the constant is determined once the initial conditions are specified.</p>
+<p>While this method is very useful, it does have its limitations particularly when <span class="math notranslate nohighlight">\(Q \ne 0\)</span>; for instance the similar equation</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{dy}{dx} + xy = 3\sin(x)\]</div>
+<p>has the integrating factor <span class="math notranslate nohighlight">\(\displaystyle e^{\large{\int xdx}}=e^{x^2/2}\)</span>. The solution is,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle ye^{{x^2/2}}=3\int e^{{x^2/2}}\sin(x)dx+c\]</div>
+<p>and the remaining integral is now a difficult one with the answer involving the error function.</p>
+</div>
+<div class="section" id="ii-coupled-chemical-kinetic-equations">
+<h3><strong>(ii) Coupled chemical kinetic equations</strong><a class="headerlink" href="#ii-coupled-chemical-kinetic-equations" title="Permalink to this headline">¶</a></h3>
+<p>One particularly useful application of this method is to solve coupled kinetic equations. If a molecule reacts in a scheme</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle A \stackrel {k_1} \longrightarrow B \stackrel  {k_2}\longrightarrow  C\]</div>
+<p>the rate equations are easily written down,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin{align}
+\frac{dA}{dt} &amp;=-k_1A \\
+\frac{dB}{dt}&amp;=k_1A-k_2B \end{align}\end{split}\]</div>
+<p>If the initial amount of <span class="math notranslate nohighlight">\(A= A_0\)</span> and <span class="math notranslate nohighlight">\(B_0 = 0\)</span>, then integrating the first equation gives <span class="math notranslate nohighlight">\(\displaystyle A = A_0e^{-k_1t}\)</span> . Substituting this into the second and rearranging gives</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle  \frac{dB}{dt}+k_2B =k_1Ae^{-k_1t} \]</div>
+<p>which has the form <span class="math notranslate nohighlight">\(\displaystyle \frac{dB}{dt}+PB=Q\)</span> and can be solved using the integrating factor <span class="math notranslate nohighlight">\(\displaystyle e^{\large{\int Pdt}}=e^{k_2t}\)</span> with the solution,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle Be^{k_2t}=k_1A\int e^{k_2t-k_1t}dt+c\]</div>
+<p>which is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle Be^{k_2t}=\frac{k_1A_0}{k_2-k_1} e^{k_2t-k_1t}dt+c\]</div>
+<p>The initial conditions are <span class="math notranslate nohighlight">\(B = 0\)</span> when <span class="math notranslate nohighlight">\(t = 0\)</span> then</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle B=\frac{k_1A_0}{k_2-k_1}\left(e^{-k_1t}-e^{-k_2t} \right) \]</div>
+<p>and this has the expected form; it is zero when <span class="math notranslate nohighlight">\(t = 0\)</span> and again when <span class="math notranslate nohighlight">\(t = \infty\)</span> and passes through a maximum when <span class="math notranslate nohighlight">\(dB/dt = 0\)</span>.</p>
+</div>
+</div>
+<div class="section" id="the-bernoulli-equation">
+<h2>4.4 The Bernoulli Equation<a class="headerlink" href="#the-bernoulli-equation" title="Permalink to this headline">¶</a></h2>
+<p>The equation <span class="math notranslate nohighlight">\(\displaystyle \frac{dy}{dx} + Py = Qy^n \)</span>,</p>
+<p>where <span class="math notranslate nohighlight">\(P\)</span> and <span class="math notranslate nohighlight">\(Q\)</span> are functions of <span class="math notranslate nohighlight">\(x\)</span> alone, is called the Bernoulli equation. If the integer <span class="math notranslate nohighlight">\(n = 1\)</span> the equation is solved by separating variables in the usual way. If <span class="math notranslate nohighlight">\(n \ne 1\)</span> the equation can be solved with an integrating factor with the substitution <span class="math notranslate nohighlight">\(\displaystyle y^{1-n} = u \)</span>.</p>
+<p>Differentiating gives</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle  \frac{(1-n)}{y^n}\frac{dy}{dx}=\frac{du}{dx}\]</div>
+<p>and the equation becomes</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{du}{dx}+(1-n)Pu=(1-n)Q\]</div>
+<p>The complicated equation <span class="math notranslate nohighlight">\(\displaystyle x\frac{dy}{dx}+y=x^2e^xy^2\)</span> is seen to be of the Bernoulli form because if divided through by <span class="math notranslate nohighlight">\(x\)</span> it becomes</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{dy}{dx}+\frac{y}{x}=xe^xy^2\]</div>
+<p>Comparing with the Bernoulli equation, <span class="math notranslate nohighlight">\(n = 2\)</span> and with the substitution <span class="math notranslate nohighlight">\(u=1/y\)</span> then</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{du}{dx}-\frac{u}{x}=-xe^x\]</div>
+<p>The integrating factor is <span class="math notranslate nohighlight">\(\displaystyle e^{\large{\int Pdx}}=1/x\)</span> then</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{u}{x}=-\int e^xdx\quad \text{ or }\quad \displaystyle u=-x(e^x+c)\]</div>
+<p>Substituting back gives <span class="math notranslate nohighlight">\(\displaystyle y=-\frac{1}{x(e^x+c)} \)</span></p>
+</div>
+<div class="section" id="second-order-differential-equations">
+<h2>5 Second-order differential equations<a class="headerlink" href="#second-order-differential-equations" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="newton-s-laws-and-differential-equations-describing-motion">
+<h2>5.1 Newton’s laws and differential equations describing motion<a class="headerlink" href="#newton-s-laws-and-differential-equations-describing-motion" title="Permalink to this headline">¶</a></h2>
+<p>Differential equations dominate the study of the motion of the planets and of molecules. In single molecules or in ensembles of them, molecular dynamics calculations rely on solving many simultaneous equations according to Newton’s laws of motion, linked to potentials describing intermolecular interactions.</p>
+<p>Newton’s laws are</p>
+<p><strong>(i)</strong><span class="math notranslate nohighlight">\(\quad\)</span> Every particle remains either in a state of rest or of constant speed in a straight line unless acted on by a force to change that state.</p>
+<p><strong>(ii)</strong><span class="math notranslate nohighlight">\(\quad\)</span> The rate of change of the momentum of a particle is proportional to the force acting on it and is in the direction of the force.</p>
+<p><strong>(iii)</strong><span class="math notranslate nohighlight">\(\quad\)</span> Action and reaction are equal and opposite.</p>
+<p>The first law states that any acceleration experienced by a particle is caused by the action of an external force. The second law proposes that force <span class="math notranslate nohighlight">\(f\)</span> is equal to the product of mass and acceleration since momentum is the product of mass and velocity;</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle  f = m \frac{d^2x}{dt^2} = m\frac{dv}{dt}\]</div>
+<p>where <span class="math notranslate nohighlight">\(x\)</span> is position, <span class="math notranslate nohighlight">\(v\)</span> velocity, and <span class="math notranslate nohighlight">\(t\)</span> time. The second law includes the first, for if the force is zero then so is the acceleration and the body must remain unchanged.</p>
+<p>The third law asserts that if two particles exert forces on one another, the force exerted by the first on the second is equal to that exerted by the second on the first. This law can be used to define the mass of a particle.</p>
+<p>Newton’s law of gravity was formulated to understand the motion of the planets. It states that the force of attraction of two bodies is proportional to the product of their masses and the inverse square of their separation <span class="math notranslate nohighlight">\(r\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle  f = G\frac{m_1m_2}{ r^2}\]</div>
+<p>where <span class="math notranslate nohighlight">\(G\)</span> is the gravitational constant <span class="math notranslate nohighlight">\(6.673\cdot 10^{-11}\,\mathrm{N\, m^2\,kg^{-2}}\)</span>. This law of attraction takes a simpler form in the case of a small body falling to earth from heights that are small compared to its radius. In this case, <span class="math notranslate nohighlight">\(r\equiv R\)</span>, the radius of the earth,  is sensibly constant and the law becomes</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle f = mg\]</div>
+<p>where the acceleration due to gravity is <span class="math notranslate nohighlight">\(g=GM/R^2 = 9.81\,\mathrm{ m \,s^{-2}}\)</span> where <span class="math notranslate nohighlight">\(M\)</span> is the mass of the (spherical) earth. Clearly, <span class="math notranslate nohighlight">\(g\)</span> will be different on the moon to that on the earth. The differential equation for a body falling from a height <span class="math notranslate nohighlight">\(x\)</span> under gravity, is therefore</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle  \frac{d^2x}{dt^2} = g\]</div>
+<p>and is independent of the mass. The distance <span class="math notranslate nohighlight">\(x\)</span> is positive in the downwards direction. Positive upwards would change <span class="math notranslate nohighlight">\(g\)</span> into <span class="math notranslate nohighlight">\(-g\)</span>. If this equation is integrated once then</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle  \frac{dx}{dt} = gt + v_0 \]</div>
+<p>where the integration constant <span class="math notranslate nohighlight">\(v_0\)</span> is the initial velocity at <span class="math notranslate nohighlight">\(t\)</span> = 0, and <span class="math notranslate nohighlight">\(v = dx/dt\)</span> is the velocity at time <span class="math notranslate nohighlight">\(t\)</span> producing the familiar equation <span class="math notranslate nohighlight">\(v = v_0 + gt\)</span>.</p>
+<p>Integrating again produces the distance travelled after a time <span class="math notranslate nohighlight">\(t\)</span> from the starting or reference point <span class="math notranslate nohighlight">\(x_0\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle  x=\frac{gt^2}{2} +v_0t+x_0\]</div>
+<p>This equation contains all the information about a freely falling body.</p>
+</div>
+<div class="section" id="general-equation-of-motion-energy-equation-and-simple-harmonic-motion">
+<h2>5.2 General Equation of Motion, Energy equation and Simple Harmonic Motion.<a class="headerlink" href="#general-equation-of-motion-energy-equation-and-simple-harmonic-motion" title="Permalink to this headline">¶</a></h2>
+<p>If the force is represented by <span class="math notranslate nohighlight">\(f(x)\)</span> then different types of motion can be studied, for example motion under gravity or that due to extension of a spring which will lead to simple harmonic motion.</p>
+<p>The simple harmonic motion is the most important form of periodic motion. It describes the <em>small</em> angular oscillations of a pendulum as well as a good approximation to the vibrations of molecules, and this is called the harmonic oscillator model. A spring that hangs vertically with a mass attached to its end, a taut wire with a mass attached at it centre, or the oscillations of a ship or of a hydrometer, all follow simple harmonic motion, if the inertia of the spring, wire, or liquid is ignored. In this motion, the acceleration is proportional to the displacement of the particle from its central position.</p>
+<p>The general equation of motion is formed by equating force, as mass multiplied by acceleration, to the force <span class="math notranslate nohighlight">\(f(x)\)</span> on the particle, such as given by Hooke’s or some other law,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle  m\frac{d^2x}{dt^2} = f(x)   \tag{13} \]</div>
+<p>If the force is due to gravity, then <span class="math notranslate nohighlight">\(f (x) = mg\)</span>; if describing simple harmonic motion based on a small extension of a spring obeying Hooke’s law, then <span class="math notranslate nohighlight">\(f(x) = -kx\)</span> where <span class="math notranslate nohighlight">\(k\)</span> is the force constant and in molecules this has values of a few hundred newton metres sec<span class="math notranslate nohighlight">\(^{-1}\)</span> .</p>
+<p>This type of differential equation can be solved by multiplying both sides by <span class="math notranslate nohighlight">\(dx/dt\)</span> which produces</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle m\frac{dx}{dt}\frac{d^2x}{dt^2}= f(x)\frac{dx}{dt}\]</div>
+<p>and, although this does not look too promising, the left-hand terms are the derivative of <span class="math notranslate nohighlight">\(\displaystyle \left(\frac{1}{2}\frac{dx}{dt}\right)^2\)</span>, therefore integrating both sides gives</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle  \frac{m}{2}\left(\frac{dx}{dt}\right)^2=\int f(x)\frac{dx}{dt}dt+c =\int f(x)dx+c  \tag{14} \]</div>
+<p>where <span class="math notranslate nohighlight">\(c\)</span> is the constant of integration. This is the ‘<em>Equation of Energy</em>’; the left-hand side is the kinetic energy since <span class="math notranslate nohighlight">\(dx/dt\)</span> is velocity and the right hand side is the potential energy.</p>
+<p>The time to reach position <span class="math notranslate nohighlight">\(x\)</span> can also be found. First let <span class="math notranslate nohighlight">\(\displaystyle \int f(x)dx+c =F(x)\)</span>, then rearrange the energy equation to</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{dt}{dx}=\pm\sqrt{\frac{m}{2}}\frac{1}{\sqrt{F(x)}}\]</div>
+<p>and integrate,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle t=\pm\sqrt{\frac{m}{2}}\int \frac{dx}{\sqrt{F(x)}}+ c_1  \tag{15}\]</div>
+<p>This equation contains two arbitrary constants, <span class="math notranslate nohighlight">\(c_1\)</span> and <span class="math notranslate nohighlight">\(c\)</span>, of which <span class="math notranslate nohighlight">\(c\)</span> is already included in <span class="math notranslate nohighlight">\(F(x)\)</span>. Two constants are needed because the acceleration has to be integrated twice.</p>
+<p>The equation of energy can be obtained in a slightly different way if the velocity <span class="math notranslate nohighlight">\(v\)</span> is required. Taking <span class="math notranslate nohighlight">\(x\)</span> as the dependent variable and using</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{dv}{dx} = \frac{dv}{dt}\frac{ dt}{dx}\]</div>
+<p>equation (13) can be written as</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle  mv\frac{dv}{dx}=f(x)  \tag{16}\]</div>
+<p>Integrating produces <span class="math notranslate nohighlight">\(\displaystyle \frac{mv^2}{2}=\int f(x)dx+c\)</span> which is the same as equation 14.</p>
+<p>The calculation can be completed when different types of forces are assigned to <span class="math notranslate nohighlight">\(f(x)\)</span>. Two examples are given, one for the motion of a rocket, another for simple harmonic motion.</p>
+<div class="section" id="i-rockets">
+<h3><strong>(i) Rockets</strong><a class="headerlink" href="#i-rockets" title="Permalink to this headline">¶</a></h3>
+<p>At the end of section 3.5 the motion of a rocket launched vertically was examined. Figure 8b. shows plots of velocity and time vs distance away from the earth’s surface. To calculate the distance moved in a given time equation 15 can be used.</p>
+<p>The equation to use is <span class="math notranslate nohighlight">\(\displaystyle \frac{dv}{dt}\equiv v\frac{dv}{dr}=-\frac{gR^2}{r^2}\)</span> which leads to <span class="math notranslate nohighlight">\(\displaystyle F(r)= v_0^2 - 2gR+ \frac{2gR^2}{r}\)</span>.</p>
+<p>The integration is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle t=\int \frac{dr}{\sqrt{v_0^2 - 2gR+ 2gR^2/r} } +c\]</div>
+<p>With <span class="math notranslate nohighlight">\(r\)</span> as the variable the equation can be clarified if written as <span class="math notranslate nohighlight">\(\displaystyle \int \frac{ dr}{\sqrt{A+B/r}}\)</span> where <span class="math notranslate nohighlight">\(A=v_0^2-2gR\)</span> and <span class="math notranslate nohighlight">\(B=2gR^2\)</span> are constants in the integration. The result is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle t= \frac{1}{A}\left( \sqrt{Br}\sqrt{\frac{Ar}{B}+1 } -\frac{B}{\sqrt{A}}\sinh^{-1}\left( \sqrt{\frac{Ar}{B}} \right)  \right) +c\]</div>
+<p>and the constant <span class="math notranslate nohighlight">\(c\)</span> is evaluated as <span class="math notranslate nohighlight">\(r=R\)</span> at <span class="math notranslate nohighlight">\(t = 0\)</span>. When the initial velocity is the escape velocity</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle v_e=\sqrt{2gR}\]</div>
+<p>then</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle t=\frac{2}{3\sqrt{2gR^2}}\left( r^{3/2}-R^{3/2} \right)\]</div>
+<p>Plots of <span class="math notranslate nohighlight">\(t\)</span> vs <span class="math notranslate nohighlight">\(r\)</span> are shown in fig 8b. Note that the inverse hyperbolic sine, <span class="math notranslate nohighlight">\(\sinh^{-1}(x)\)</span>, can also be written as</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \sinh^{-1}(x)=  \ln(x+\sqrt{x^2+1})\]</div>
+</div>
+<div class="section" id="iii-rockets-again-conservation-of-momentum">
+<h3><strong>(iii) Rockets again.  Conservation of Momentum</strong><a class="headerlink" href="#iii-rockets-again-conservation-of-momentum" title="Permalink to this headline">¶</a></h3>
+<p>The Law of Conservation of Momentum can be used to find the velocity of a rocket. Suppose that the rocket is moving at velocity <span class="math notranslate nohighlight">\(v\)</span> (relative to some fixed coordinate system) and ejects fuel with velocity <span class="math notranslate nohighlight">\(-u\)</span> relative to the rocket, therefore the mass of the rocket <span class="math notranslate nohighlight">\(M\)</span> decreases with time as the fuel is used. We know that the rate of change of momentum is equal to the external force on a system of particles (i.e force is mass times acceleration and acceleration is the rate of change of momentum)</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{dp}{dt}=F\]</div>
+<p>where <span class="math notranslate nohighlight">\(p\)</span> is the total momentum of all particles in our case the rocket and ejected fuel. The external force <span class="math notranslate nohighlight">\(F\)</span> could be air resistance or gravity for example. The momentum of rocket and exhaust produces</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{d}{dt}(Mv)-(v-u)\frac{dM}{dt}=F\]</div>
+<p>The term on the left is the change in the rocket’s momentum and the second term that of the ejected fuel. The minus sign appears because the momentum of the ejected fuel is in the opposite direction to the rocket’s motion.<br />
+Evaluating the first differential and simplifying gives</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle M\frac{dv}{dt}+u\frac{dM}{dt}=F\]</div>
+<p>The term <span class="math notranslate nohighlight">\(udM/dt\)</span> is called the thrust and is in the opposite direction to the exhaust velocity. If there is no external force the remaining equation describes conservation of momentum, viz,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle M\frac{dv}{dt} + u\frac{dM}{dt}=0\]</div>
+<p>Multiplying the last equation by <span class="math notranslate nohighlight">\(dt/M\)</span>  and integrating by recalling that <span class="math notranslate nohighlight">\(M\)</span> is a function of time produces,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \int_{v_0}^v dv = -u\int_{M_0}^M \frac{dM}{M}, \qquad  v - v_0 = u\ln\left(\frac{M_0}{M}\right)\]</div>
+<p>were <span class="math notranslate nohighlight">\(v_0\)</span> is the initial velocity, <span class="math notranslate nohighlight">\(M_0\)</span> the initial total mass which is that of rocket plus fuel, and <span class="math notranslate nohighlight">\(M\)</span> is the mass of the rocket and any remaining fuel when the velocity is <span class="math notranslate nohighlight">\(v\)</span>.</p>
+<p>The rockets’ speed only depends on the exhaust velocity and the fraction of the mass exhausted in that time interval needed to change the speed to <span class="math notranslate nohighlight">\(v\)</span> from <span class="math notranslate nohighlight">\(v_0\)</span>. Notice also that the speed at any time does not depend on how quickly the fuel is used, this does not enter the calculation, but clearly the lower the rate of fuel consumption the longer it will take to reach a set velocity.</p>
+<p>If <span class="math notranslate nohighlight">\(m\)</span> is the mass of the fuel and all is consumed then <span class="math notranslate nohighlight">\(M\)</span> is the mass of the fuel empty rocket, <span class="math notranslate nohighlight">\(M_0=M+m\)</span> and <span class="math notranslate nohighlight">\(v\)</span> the maximum velocity, <span class="math notranslate nohighlight">\(\displaystyle v-v_0=u\ln\left(1+\frac{m}{M}\right)\)</span>. In a rocket it is therefore desirable to carry as much mass as fuel as possible so that <span class="math notranslate nohighlight">\(1+m/M)\)</span> is large. Additionally, if the propellant is a cold gas, from the Kinetic Theory of Gases the r.m.s. speed of a gas decreases with atomic mass, i.e. <span class="math notranslate nohighlight">\(u\)</span> is smaller for heavier than low atomic masses, so low atomic mass gases would seem to be preferred to make the final velocity as large as possible.</p>
+</div>
+<div class="section" id="iii-hooke-s-law-and-simple-harmonic-motion">
+<h3><strong>(iii) Hooke’s Law and simple harmonic motion</strong><a class="headerlink" href="#iii-hooke-s-law-and-simple-harmonic-motion" title="Permalink to this headline">¶</a></h3>
+<p>In the case of a force in a line towards the origin that is a fixed point, simple harmonic motion ensues if the force is described by Hooke’s law <span class="math notranslate nohighlight">\(f (x) = -kx\)</span> where <span class="math notranslate nohighlight">\(k\)</span> is the force constant and <span class="math notranslate nohighlight">\(x\)</span> the displacement from the origin. The minus sign indicates that the force is towards the origin; when <span class="math notranslate nohighlight">\(\displaystyle d^2x/dt^2\)</span> is negative <span class="math notranslate nohighlight">\(x\)</span> is positive and vice versa. The equation of motion is now</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle  \frac{d^2x}{dt^2}=-\frac{k}{m}x \]</div>
+<p>The frequency of vibration, or oscillation, is defined as <span class="math notranslate nohighlight">\(\displaystyle  \nu =\frac{1}{2\pi}\sqrt{\frac{k}{m}}\, \mathrm{s^{-1}}\)</span> or as <span class="math notranslate nohighlight">\(\displaystyle \omega=\sqrt{\frac{k}{m}}\)</span> and substituting this makes the equation of motion</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle  \displaystyle\frac{d^2x}{dt^2}=-\omega^2x \tag{17}\]</div>
+<p>which when integrated gives <span class="math notranslate nohighlight">\(\displaystyle \left(\frac{dx}{dt}\right)^2=-\omega ^2x^2+c^2\)</span> (see equation 14) and the constant is made <span class="math notranslate nohighlight">\(c^2\)</span> as this has to be positive because the velocity <span class="math notranslate nohighlight">\(dx/dt\)</span> must be a real not a complex number. Rearranging this equation to find the time gives</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle t=\int\frac{dx}{\sqrt{c^2-\omega^2x^2}}+c_1\]</div>
+<p>which is a standard integral giving <span class="math notranslate nohighlight">\(\displaystyle t=\frac{1}{\omega}\sin^{-1}\left( \frac{\omega x}{c} \right) +c_1\)</span>. Thus</p>
+<div class="math notranslate nohighlight">
+\[ x=\frac{c}{\omega}\sin(\omega t-\omega c_1) \]</div>
+<p>and the constants <span class="math notranslate nohighlight">\(c,\;c_1\)</span> are determined by the initial conditions and as they are constants this equation can just as correctly be written as</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle  x=A\sin(\omega t+B) \tag{18} \]</div>
+<p>be defining <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> as constants also fixed by the initial conditions. <span class="math notranslate nohighlight">\(B\)</span> is called the <em>phase angle</em> of the sine wave and <span class="math notranslate nohighlight">\(A\)</span> is the <em>amplitude</em>. Some authors give a cosine solution but this differs only by the phase from the sine; <span class="math notranslate nohighlight">\(\sin(x) = \cos(x \pm \pi/2)\)</span>. Furthermore, by the properties of sine and cosine functions, we can also write</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle  x=\alpha\sin(\omega t)+\beta\cos(\omega t) \tag{19}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\alpha\)</span> and <span class="math notranslate nohighlight">\(\beta\)</span> are new constants but still determined by the initial conditions.
+If the initial velocity is <span class="math notranslate nohighlight">\(v_0\)</span> and the position <span class="math notranslate nohighlight">\(x_0\)</span> at <span class="math notranslate nohighlight">\(t\)</span> = 0, then from (19) <span class="math notranslate nohighlight">\(x_0 = \beta\)</span> and</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle v=\frac{dx}{dt}=\alpha\omega\cos(\omega t)-\beta\omega\sin(\omega t) \]</div>
+<p>which produces <span class="math notranslate nohighlight">\(\nu_0=\alpha\omega\)</span>, thus</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle  x=\frac{v_0}{\omega}\sin(\omega t)+x_0\cos(\omega t) \tag{20}\]</div>
+<p>and is dimensionally correct since <span class="math notranslate nohighlight">\(v_0/\omega\)</span> has dimensions of distance. This equation completely describes simple harmonic motion.</p>
+<p>The average value of the displacement <span class="math notranslate nohighlight">\(x\)</span> over time of one or many whole vibrations should be zero. To prove this the equation needed is the displacement, such as eqn 18, and the time taken from zero to one period <span class="math notranslate nohighlight">\(t_0=1/v\)</span> where <span class="math notranslate nohighlight">\(v\)</span> is the frequency. Recall that <span class="math notranslate nohighlight">\(\omega =2\pi v\)</span> and <span class="math notranslate nohighlight">\(B\)</span> is a constant.</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \langle x\rangle =\frac{\displaystyle \int_0^{t_0} xdt}{\displaystyle\int_0^{t_0} dt}=v\int_0^{t_0} A\sin(\omega t+B)\]</div>
+<p>Evaluating the integral gives</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \langle x\rangle =-Av\cos(2\pi v t+B)\Big|_0^{1/v} = A(\cos(2\pi+B)-\cos(B) )=0\]</div>
+<p>because <span class="math notranslate nohighlight">\(\cos(2\pi+B)=\cos(2\pi)\cos(B)-\sin(2\pi)\sin(B)=\cos(B)\)</span>.</p>
+<p>The average of the square of the displacement is not zero and is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \langle x^2\rangle =\frac{\int_0^{1/v} x^2dt}{\int_0^{1/v} dt}=v\int_0^{1/v} A^2\sin^2(\omega t+B)dt=\frac{A^2v}{2}\int_0^{1/v} (1-\cos(4\pi v t+2B)dt=\frac{A^2}{2}\]</div>
+<p>using <span class="math notranslate nohighlight">\(\cos(2\theta)=1-2\sin^2(\theta)\)</span> to simplify the integration. The integral using python/Sympy is</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">A</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;t, v, B, A&#39;</span><span class="p">,</span> <span class="n">positive</span> <span class="o">=</span> <span class="kc">True</span> <span class="p">)</span>
+<span class="n">ans</span> <span class="o">=</span> <span class="n">integrate</span><span class="p">(</span><span class="n">A</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span> <span class="n">v</span><span class="o">*</span><span class="p">(</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">cos</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">pi</span><span class="o">*</span><span class="n">v</span><span class="o">*</span><span class="n">t</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="n">B</span>  <span class="p">)</span> <span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">,(</span><span class="n">t</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="o">/</span><span class="n">v</span><span class="p">)</span> <span class="p">)</span>
+<span class="n">simplify</span><span class="p">(</span><span class="n">ans</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Diff-eqns-B_6_01.png" src="../_images/Diff-eqns-B_6_01.png" />
+</div>
+</div>
+<p>The square displacement gives the (time averaged) average potential (or displacement) energy as <span class="math notranslate nohighlight">\(V=kA^2/4\)</span> obtained by integrating the force from Hook’s law <span class="math notranslate nohighlight">\(f(x)=-kx\)</span>. The (time averaged) average kinetic energy has the same value because the total energy is <span class="math notranslate nohighlight">\(E=kA^2/2\)</span> where <span class="math notranslate nohighlight">\(A\)</span> is the maximum displacement which is at the turning point.</p>
+<p>The probability of being at position <span class="math notranslate nohighlight">\(x\to x+dx\)</span> can be found from the total energy by representing this as the sum of kinetic and potential parts. At extension <span class="math notranslate nohighlight">\(x\)</span>  kinetic part is effectively <span class="math notranslate nohighlight">\(mv^2/2\)</span> for velocity <span class="math notranslate nohighlight">\(v\)</span> and the potential <span class="math notranslate nohighlight">\(kx^2/2\)</span>. Thus</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{m}{2}\left( \frac{dx}{dt}\right)^2+\frac{k}{2}x^2= \frac{k}{2}A^2\]</div>
+<p>Separating out the derivative produces</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{dx}{dt}=\sqrt{\frac{k}{m}\left(A^2-x^2 \right)}=2\pi v\sqrt{A^2-x^2}\]</div>
+<p>and isolating <span class="math notranslate nohighlight">\(dt\)</span> gives</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle dt=\frac{1}{2\pi v\sqrt{A^2-x^2}} dx \]</div>
+<p>which means that the time spent within limits <span class="math notranslate nohighlight">\(x\to x+dx\)</span> depends on <span class="math notranslate nohighlight">\(dx\)</span> of the range considered. The probability of being at position <span class="math notranslate nohighlight">\(x \to x+dx\)</span> is this value as a fraction of the period <span class="math notranslate nohighlight">\(1/v\)</span> this</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle pdx = \frac{1}{\pi \sqrt{A^2-x^2}} dx \]</div>
+<p>This means that as <span class="math notranslate nohighlight">\(x\to \pm A\)</span> the probability increases rapidly towards 1 but is small when <span class="math notranslate nohighlight">\(x&lt;A\)</span>. The oscillator is always confined within the potential. The probability has an approximately U shaped profile and contrasts sharply with that of the quantum harmonic oscillator.</p>
+<p><img alt="Drawing" src="../_images/diffeqn-fig11b.png" /></p>
+<p>Fig 11b Classical and quantised probability in a harmonic potential.</p>
+<hr class="docutils" />
+<p>The figure shows the classical probability together with a harmonic potential such as for a diatomic molecule. The potential has a force constant of <span class="math notranslate nohighlight">\(172\)</span> N/m and the first quantised energy level is shown at energy <span class="math notranslate nohighlight">\(E_1\)</span>. The square of the wavefunction is also shown. The classical probability extends only as far as the turning points at energy <span class="math notranslate nohighlight">\(E_1\)</span>. The difference between the probabilities is quite considerable not in their overall size but in their shape. The classical probability cannot extend past the turning point, but the quantised probability does so quite considerably. At large quantum numbers, e.g. <span class="math notranslate nohighlight">\(20\)</span> the wavefunction has more probability close to the turning points, than in the middle of the potential and so resembles the classical behaviour a little more closely.</p>
+</div>
+<div class="section" id="iv-springs">
+<h3><strong>(iv) Springs</strong><a class="headerlink" href="#iv-springs" title="Permalink to this headline">¶</a></h3>
+<p>Problems with springs often state that the spring has a weight attached, which causes the spring to extend by a certain amount. It is then extended or compressed by a further amount and let go. The equation of motion is then sought.</p>
+<p>As a specific example, suppose that a helical spring has a mass of <span class="math notranslate nohighlight">\(2\)</span> kg attached to it and this extends it by <span class="math notranslate nohighlight">\(5\)</span> cm. It is then displaced by <span class="math notranslate nohighlight">\(3\)</span> cm from its new equilibrium position and let go. At equilibrium, before the mass is moved, the tension in the spring due to Hooke’s law is balanced by the force of gravity; <span class="math notranslate nohighlight">\(mg = ks\)</span> where <span class="math notranslate nohighlight">\(s\)</span> is the displacement from equilibrium before the mass is moved. If the spring is now extended by <span class="math notranslate nohighlight">\(x\)</span> the tension <span class="math notranslate nohighlight">\(T\)</span> increases to <span class="math notranslate nohighlight">\(k(s + x)\)</span>. As the spring has no forces acting on it other than gravity, the force equation is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle m\frac{d^2x}{dt^2} = mg - T\]</div>
+<p>The tension is <span class="math notranslate nohighlight">\(T = k(x + s)\)</span> and as <span class="math notranslate nohighlight">\(mg = ks\)</span> then <span class="math notranslate nohighlight">\(\displaystyle m\frac{d^2x}{dt^2} = -kx\)</span>, which is the same as equation (17) and has the solution (20) when the frequency squared is substituted for <span class="math notranslate nohighlight">\(k/m\)</span>. To evaluate this equation, the oscillation frequency must be found, as must <span class="math notranslate nohighlight">\(x_0\)</span> and <span class="math notranslate nohighlight">\(v_0\)</span>, which are set by the initial conditions.
+As <span class="math notranslate nohighlight">\(v_0 = 0\)</span>, when the mass is let go (it is not pushed), then the solution is immediately given by</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle  x = x_0 \cos(\omega t)\]</div>
+<p>If the initial displacement is above the equilibrium position <span class="math notranslate nohighlight">\(x_0 = -3\)</span>, therefore <span class="math notranslate nohighlight">\(x = -3\cos(\omega t)\)</span>. Finally, the frequency is found from Hooke’s law. At equilibrium, <span class="math notranslate nohighlight">\(mg = ks\)</span> and <span class="math notranslate nohighlight">\(s = 5\)</span> is the displacement from equilibrium before the mass is moved. Therefore, the force constant <span class="math notranslate nohighlight">\(k = 2 \cdot 9.81/5\,\mathrm{ N \,m^{-1 }}\)</span> and the frequency squared is <span class="math notranslate nohighlight">\(\omega^2 = k/m\)</span> or <span class="math notranslate nohighlight">\(\omega = 1.4\,\mathrm{ rad\, s^{-1}}\)</span>. This corresponds to a natural frequency of <span class="math notranslate nohighlight">\(\nu = \omega /2\pi\)</span> or <span class="math notranslate nohighlight">\(0.223\,\mathrm{ s^{-1}}\)</span> and period <span class="math notranslate nohighlight">\(T = 1/\nu = 4.49\)</span> seconds. The position of the mass at any time <span class="math notranslate nohighlight">\(t\)</span> is found to be <span class="math notranslate nohighlight">\(x = -3 \cos(1.4t)\)</span>. Note that if the question stated that the <em>weight</em> was 2 kg then this would correspond to <span class="math notranslate nohighlight">\(mg\)</span> not <span class="math notranslate nohighlight">\(m\)</span> and the mass to use would therefore be <span class="math notranslate nohighlight">\(2/9.81\)</span> kg.</p>
+</div>
+<div class="section" id="v-total-energy">
+<h3><strong>(v) Total energy</strong><a class="headerlink" href="#v-total-energy" title="Permalink to this headline">¶</a></h3>
+<p>The total energy is the sum of the kinetic and potential energy and is a constant if no external force acts on the system. The kinetic energy is that due to motion <span class="math notranslate nohighlight">\(mv^2/2\)</span>, and the potential energy can take several forms depending on how the motion is achieved. On extending a spring, the potential energy is force multiplied by distance displaced and the force is given by Hooke’s law. If the potential energy is that due to displacing a mass in a gravitational field, as occurs with a pendulum, then the potential is <span class="math notranslate nohighlight">\(mgh\)</span> where <span class="math notranslate nohighlight">\(h\)</span> is the height change.</p>
+<p>If the displacement at time <span class="math notranslate nohighlight">\(t\)</span> is <span class="math notranslate nohighlight">\(x = A \sin(\omega t + B)\)</span>, then the kinetic energy is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle  KE=\frac{m}{2}\left(\frac{dx}{dt}  \right)^2=\frac{m}{2}A^2\omega^2\cos^2(\omega t+B) \]</div>
+<p>The potential energy determined by Hooke’s law force is linearly proportional to extension and is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle  V=k\int_0^x xdx=\frac{1}{2}kx^2=\frac{k}{2}A^2\sin^2(\omega t+B)\]</div>
+<p>As <span class="math notranslate nohighlight">\(\displaystyle \omega^2 = k/m\)</span> the total energy, the sum of the potential and kinetic terms, is <span class="math notranslate nohighlight">\(\displaystyle E=\frac{k}{2}A^2\)</span> which is a constant.</p>
+</div>
+</div>
+<div class="section" id="the-simple-pendulum">
+<h2>5.3 The simple pendulum<a class="headerlink" href="#the-simple-pendulum" title="Permalink to this headline">¶</a></h2>
+<p>The pendulum will consist of a light rigid rod with a mass <span class="math notranslate nohighlight">\(m\)</span> at its end; the pivot holding the pendulum is frictionless and no air or other resistance hinders the motion. The variable <span class="math notranslate nohighlight">\(\varphi\)</span> is the angle in radians away from the vertical; Fig. 11. It is found that the pendulum’s angular frequency is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \omega = \sqrt{g/L}\quad\mathrm{ rad \,s^{-1}}\]</div>
+<p>if <span class="math notranslate nohighlight">\(g\)</span> is the acceleration due to gravity and <span class="math notranslate nohighlight">\(L\)</span> the pendulum’s length. The mass of the pendulum <span class="math notranslate nohighlight">\(m\)</span> is used to calculate forces but cancels out in the result. The equation of motion can be derived in a number of different ways; here we make the inertial force of the moving pendulum equal to the applied force due to gravity, <span class="math notranslate nohighlight">\(F_{in} = F_{res}\)</span>.</p>
+<p>The inertial force <span class="math notranslate nohighlight">\(F_{in}\)</span> is found quite easily in terms of the angle <span class="math notranslate nohighlight">\(\varphi\)</span> as follows. The pendulum travels a distance <span class="math notranslate nohighlight">\((2\pi L)(\varphi/2\pi ) = L\varphi\)</span> around the circumference to reach an angle <span class="math notranslate nohighlight">\(\varphi\)</span>; its acceleration is therefore <span class="math notranslate nohighlight">\(\displaystyle L\frac{d^2\varphi}{dt^2} \)</span> and the inertial force <span class="math notranslate nohighlight">\(F_{in}\)</span>, is <span class="math notranslate nohighlight">\(m\)</span> times this since force is mass <span class="math notranslate nohighlight">\(\times\)</span> acceleration.</p>
+<p>The restoring force <span class="math notranslate nohighlight">\(F_{res}\)</span>, is the projection of the gravitational force, acting vertically down on the line of travel of the pendulum and is <span class="math notranslate nohighlight">\(-mg \sin(\varphi )\)</span>. The normal component of the force acts along the pendulum’s arm.</p>
+<p><img alt="Drawing" src="../_images/diffeqn-fig11.png" /></p>
+<p>Fig. 11 The geometry used to calculate the forces acting on the pendulum.</p>
+<hr class="docutils" />
+<p>Equating forces produces, <span class="math notranslate nohighlight">\(\displaystyle mL\frac{d^2\varphi }{dt^2}=-mg\sin(\varphi)\)</span> which, by cancelling the mass and substituting for <span class="math notranslate nohighlight">\(\omega\)</span>, produces the equation of motion</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle  \frac{d^2\varphi }{dt^2}=-\omega^2\sin(\varphi)\]</div>
+<p>It is worth noting in passing that mass, inertial and gravitational, cancels in this equation so that the period depends only on the length of the pendulum and the force of gravity. There appears to be no reason why the inertial mass has to be the same as gravitational mass, but it is. Galileo, it is thought, first realized this by dropping different masses of the same size from the leaning tower of Pisa and observing that they struck the ground at the same time. Einstein did not ignore the equality of the inertial and gravitational mass, but developed this into a theory of gravity known as the General Theory of Relativity.</p>
+<p>When the angular displacement is small, <span class="math notranslate nohighlight">\(\sin(\varphi) \to \varphi\)</span>, which means that <span class="math notranslate nohighlight">\(\varphi \lt 0.15\)</span> rad or <span class="math notranslate nohighlight">\(\approx 8^{\mathrm{o}}\)</span>, the pendulum’s motion becomes a simple harmonic oscillator of frequency <span class="math notranslate nohighlight">\(\omega\)</span>. The equation of motion is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac {d^2\varphi}{dt} = -\omega^2\varphi\]</div>
+<p>which has the general solution</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle  \varphi (t)=\varphi_0\cos(\omega t)+\frac{\nu_0}{\omega}\sin(\omega t)  \tag{21}\]</div>
+<p>as calculated in equation (20) but with <span class="math notranslate nohighlight">\(\varphi\)</span> (in radians) instead of <span class="math notranslate nohighlight">\(x\)</span> as displacement. The initial angle is <span class="math notranslate nohighlight">\(\varphi_0\)</span> from the vertical and initial velocity <span class="math notranslate nohighlight">\(\nu_0\)</span> rad s<span class="math notranslate nohighlight">\(^{-1}\)</span>.</p>
+<p>If the angular displacement is not small then the problem becomes rather more difficult, and after some effort (Arkfen 1970) an elliptical integral is produced with which the period can be calculated but which has to be evaluated numerically. The numerical integration of the pendulum’s equation of motion for any displacement is somewhat easier and is examined in Chapter 11.6.3.</p>
+</div>
+<div class="section" id="the-compound-pendulum-and-torsional-oscillations">
+<h2>5.4 The compound pendulum and torsional oscillations<a class="headerlink" href="#the-compound-pendulum-and-torsional-oscillations" title="Permalink to this headline">¶</a></h2>
+<p>The compound pendulum is a rigid body freely suspended from a point that is not its centre of gravity and allowed to oscillate. The equation of motion is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle I\frac{d^2\theta}{dt^2}=-mgh\sin(\theta)\]</div>
+<p>where <span class="math notranslate nohighlight">\(I\)</span> is the moment of inertia of the body about the axis of suspension, <span class="math notranslate nohighlight">\(m\)</span> its mass, and <span class="math notranslate nohighlight">\(h\)</span> the distance from the centre of gravity to the point of suspension. This is the same equation as for a simple pendulum of length <span class="math notranslate nohighlight">\(L \equiv I/(mh)\)</span>.</p>
+<p>If a disc is suspended by a wire attached to its centre and twisted in the horizontal plane, torsional oscillations occur. The elasticity of the wire produces resistance to twisting and provides the restoring force. An angular displacement of <span class="math notranslate nohighlight">\(\theta\)</span> radians produces a force of <span class="math notranslate nohighlight">\(k\theta /L\)</span> if the wire is of length <span class="math notranslate nohighlight">\(L\)</span>. The constant <span class="math notranslate nohighlight">\(k\)</span> is the <em>torsional modulus</em> of the wire. This can be related to the rigidity of the material comprising the wire and its geometry. The equation of motion is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle I \frac{d^2\theta}{dt^2} = - k\theta/L\]</div>
+<p>where <span class="math notranslate nohighlight">\(I\)</span> is the moment of inertia of the mass about its point of suspension. Henry Cavendish (Philosophical Transactions, 1798, v 17 p 469, Royal Society London) used a torsional pendulum in his famous experiment to measure the gravitational constant.</p>
+</div>
+<div class="section" id="inverted-pendulum-unstable-equilibrium">
+<h2>5.5 Inverted pendulum: unstable equilibrium<a class="headerlink" href="#inverted-pendulum-unstable-equilibrium" title="Permalink to this headline">¶</a></h2>
+<p>In the normal pendulum, acceleration is towards the vertical or origin of the motion. In the inverted pendulum with a rigid rod instead of a wire, acceleration is away from the vertical and the motion is unstable. The equation of motion for small displacements from the vertical, is similar to that of the pendulum but with a positive sign on the right-hand side of the equation,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{d^2x}{dt^2}=n^2x  \tag{22}\]</div>
+<p>and <span class="math notranslate nohighlight">\(n\)</span> is a constant. The horizontal component of the thrust outwards is <span class="math notranslate nohighlight">\(mgx/L\)</span>, provided <span class="math notranslate nohighlight">\(x\)</span> is small; the constant is therefore <span class="math notranslate nohighlight">\(n^2 = g/L\)</span>. The solution for angular position is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \varphi = Ae^{nt}+Be^{-nt} \tag{23}\]</div>
+<p>where <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> are constants determined by the initial conditions. The general method of solution is given in Section 4.3. If the initial position is <span class="math notranslate nohighlight">\(x_0\)</span> and velocity <span class="math notranslate nohighlight">\(\nu_0\)</span>, then <span class="math notranslate nohighlight">\(\varphi_0 = A + B\)</span> and <span class="math notranslate nohighlight">\(\nu_0 = n(A - B)\)</span>. Changing the exponentials into hyperbolic sinh and cosh and substituting for the constants gives</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \varphi=\varphi_0\cosh(nt)+\frac{\nu_0}{n}\sinh(nt)\]</div>
+<p>which may be compared with equation 21.</p>
+</div>
+<div class="section" id="simple-harmonic-motion-with-a-constant-force">
+<h2>5.6 Simple harmonic motion with a constant force<a class="headerlink" href="#simple-harmonic-motion-with-a-constant-force" title="Permalink to this headline">¶</a></h2>
+<p>If a particle is attracted to the origin of set of coordinates, and subject to a further constant force <span class="math notranslate nohighlight">\(W\)</span>, the equation of motion takes the form based on equation (13),</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle m\frac{d^2x}{dt^2}=f(x)+W\]</div>
+<p>If a spring is displaced, then the force is <span class="math notranslate nohighlight">\(f(x) = -kx\)</span> at extension <span class="math notranslate nohighlight">\(x\)</span>, and the equation of motion is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle  m\frac{d^2x}{dt^2}=-kx+W\]</div>
+<p>If this is re-written as <span class="math notranslate nohighlight">\(\displaystyle \frac{d^2x}{dt^2} = -\omega^2x+\frac{W}{m}\)</span> and then as,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle  \frac{d^2}{dt^2}\left(x-\frac{W}{m\omega^2}  \right) +\omega^2\left(x-\frac{W}{m\omega^2}  \right)=0\]</div>
+<p>then it has the form of (13) with a displacement about a new equilibrium position <span class="math notranslate nohighlight">\(W/(m\omega ^2)\)</span> rather than zero. This is understandable since a constant force is applied to the mass which must displace it by a constant average amount even though it is oscillating. The position at time <span class="math notranslate nohighlight">\(t\)</span> is therefore obtained directly from equation (20) as</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle x-\frac{W}{m\omega^2}=\frac{\nu_0}{\omega}\sin(\omega t)+x_0\cos(\omega t)\]</div>
+<p>if <span class="math notranslate nohighlight">\(x_0\)</span> and <span class="math notranslate nohighlight">\(\nu_0\)</span> are the initial position and velocity. The frequency <span class="math notranslate nohighlight">\(\omega\)</span> is the same whether the constant force is present or not.</p>
+</div>
+<div class="section" id="particle-in-a-one-dimensional-box">
+<h2>5.7 Particle in a one-dimensional box<a class="headerlink" href="#particle-in-a-one-dimensional-box" title="Permalink to this headline">¶</a></h2>
+<p>Two quantum mechanical problems that can easily be solved using the methods just described are a particle (electron, proton, C60) in a one-dimensional box and a particle on a ring. Both involve integrating the Schroedinger equation, as must always be the case in quantum mechanics, but because the potential energy is zero the equations are considerably simpler than, say, that for the hydrogen atom or the harmonic oscillator. The one-dimensional Schroedinger equation in its general form is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle -\frac{\hbar^2}{2m}\frac{d^2\psi}{dx^2}+V(x)\psi=E\psi \]</div>
+<p>where <span class="math notranslate nohighlight">\(V(x)\)</span> is the potential energy, <span class="math notranslate nohighlight">\(m\)</span> the mass of the particle and <span class="math notranslate nohighlight">\(E\)</span> the total energy. The length of the box is <span class="math notranslate nohighlight">\(L\)</span>. In the box, <span class="math notranslate nohighlight">\(V(x) = 0\)</span> and additionally the boundary conditions are that the wavefunction <span class="math notranslate nohighlight">\(\psi\)</span>, which is a function of position <span class="math notranslate nohighlight">\(x\)</span>, is zero, i.e. always  has a node at the ends of the box; the sides of the box are vertical and assumed to be infinitely high so the particle cannot tunnel into the walls. The equation to solve is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{d^2\psi}{dx^2}+\omega^2\psi=0, \qquad \omega^2=\frac{2mE}{\hbar^2} \]</div>
+<p>and the solution can be written down directly from equation (19) and is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle  \psi = \alpha \sin(\omega x) + \beta \cos(\omega x)\]</div>
+<p>where <span class="math notranslate nohighlight">\(\alpha\)</span> and <span class="math notranslate nohighlight">\(\beta\)</span> are constants.</p>
+<p>The boundary conditions are that <span class="math notranslate nohighlight">\(\psi = 0\)</span> at both <span class="math notranslate nohighlight">\(x\)</span> = 0 and at <span class="math notranslate nohighlight">\(x = L\)</span>, but these are not sufficient to enable both arbitrary constants in the problem to be calculated. To obtain both, the wavefunction has also to be normalized. First we simplify the general solution then normalise the wavefunction. When <span class="math notranslate nohighlight">\(x\)</span> = 0 then we must make <span class="math notranslate nohighlight">\(\beta = 0\)</span> and therefore <span class="math notranslate nohighlight">\(\psi = \alpha \sin(\omega x)\)</span> because the cosine would not have a node at the wall so is physically unacceptable. When <span class="math notranslate nohighlight">\(x = L\)</span>, then <span class="math notranslate nohighlight">\(\alpha \sin(\omega L) = 0\)</span> and as <span class="math notranslate nohighlight">\(\alpha\)</span> cannot be zero as well as <span class="math notranslate nohighlight">\(\beta = 0\)</span> (the wavefunctions would then always be zero), then it follows that <span class="math notranslate nohighlight">\(\omega L = n\pi \)</span> where <span class="math notranslate nohighlight">\(n\)</span> is an integer. The wavefunctions are therefore</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \psi_n = \alpha \sin\left(\frac{n\pi x}{L} \right)\]</div>
+<p>When <span class="math notranslate nohighlight">\(n\)</span> = 0 then <span class="math notranslate nohighlight">\(\psi = 0\)</span>, which is not a physically acceptable solution. Positive and negative integers <span class="math notranslate nohighlight">\(n\)</span> each produce acceptable solutions, but they are not independent of one another; therefore <span class="math notranslate nohighlight">\(n = 1, 2, 3, \cdots\)</span> are used to give unique solutions. As the sine function is periodic, increasing <span class="math notranslate nohighlight">\(n\)</span> means that waves with smaller periods can fit into the same box; the <span class="math notranslate nohighlight">\(n^{th}\)</span> wavefunction has <span class="math notranslate nohighlight">\(n\)</span> − 1 nodes between the walls, the lowest wavefunction having no nodes is just half a sine wave.</p>
+<p>The constant <span class="math notranslate nohighlight">\(\alpha\)</span> can be obtained by using the normalization condition <span class="math notranslate nohighlight">\(\displaystyle N^2\int_0^L \psi_n^*\psi_n dx = 1\)</span> and then <span class="math notranslate nohighlight">\(N = 2/L\)</span> . The normalized wavefunctions are</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \psi_n = \sqrt{  \frac{2}{L} } \sin\left(\frac{n\pi x}{L}\right)  \qquad n=1,2,3,\cdots  \tag{24}\]</div>
+<p>The energy of the <span class="math notranslate nohighlight">\(n^{th}\)</span> energy level is found by putting <span class="math notranslate nohighlight">\(\psi_n\)</span> back into the Schroedinger eqn. and is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle E_n=\frac{\hbar^2}{2m}\left( \frac{n\pi}{L} \right)^2  \qquad n=1,2,3,\cdots \tag{25}\]</div>
+<p>which has units of joules. This equation means that there are <span class="math notranslate nohighlight">\(n\)</span> energy levels, one for each wavefunction, and so <span class="math notranslate nohighlight">\(E\)</span> is labelled with this quantum number as <span class="math notranslate nohighlight">\(E_n\)</span>. Notice that the energy is never zero because there is a zero-point energy in accord with the Heisenberg uncertainty principle. The box is of finite length and the particle is thus in a restricted region of space. However, we cannot determine exactly where it is in this region and at the same time know its momentum; the condition is <span class="math notranslate nohighlight">\(\Delta x\Delta p \ge \hbar/2\)</span> where <span class="math notranslate nohighlight">\(\Delta x\)</span> is the uncertainty in position and <span class="math notranslate nohighlight">\(\Delta p\)</span> that in momentum. The uncertainty in position is given by its standard deviation</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \Delta x=\sqrt{\langle x^2\rangle-\langle x \rangle^2}\]</div>
+<p>and that in momentum</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \Delta x=\sqrt{\langle p^2\rangle-\langle p \rangle^2}\]</div>
+<p>The value <span class="math notranslate nohighlight">\(\langle x\rangle\)</span> is the <em>expectation</em> (or average value) of the operator <span class="math notranslate nohighlight">\(x\)</span>, and <span class="math notranslate nohighlight">\(\langle x^2\rangle\)</span> that for the operator <span class="math notranslate nohighlight">\(x^2\)</span>. The operator for momentum is <span class="math notranslate nohighlight">\(\displaystyle -i\hbar \frac{d}{dx}\)</span>.</p>
+<p>In general the expectation value of an operator <span class="math notranslate nohighlight">\(Q\)</span> is calculated as (see chapter 4.8).</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle Q=\frac{\int\psi^*Q\psi dx}{\int\psi^*\psi dx} \]</div>
+<p>Evaluating the integrals produces <span class="math notranslate nohighlight">\(\displaystyle \Delta x\Delta p =\frac{n\pi}{\sqrt{3}}\frac{\hbar}{2}\)</span> which is clearly greater than <span class="math notranslate nohighlight">\(\hbar/2\)</span> as <span class="math notranslate nohighlight">\(n&gt;0\)</span>.</p>
+<p><img alt="Drawing" src="../_images/diffeqn-fig11a.png" /></p>
+<p>Figure 11a. Energy levels and wavefunctions for a particle in a box. The mass used was that for an electron and the box is <span class="math notranslate nohighlight">\(1\)</span> nm in length. Notice how the energy levels move apart as <span class="math notranslate nohighlight">\(n\)</span> increases and how the number of nodes in the wavefunction also increases. A one dimensional box very approximately simulates a linear polyene, such as octatetraene.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="the-rigid-rotor-and-a-particle-on-a-ring">
+<h2>5.8 The Rigid Rotor and a Particle on a Ring<a class="headerlink" href="#the-rigid-rotor-and-a-particle-on-a-ring" title="Permalink to this headline">¶</a></h2>
+<p>If the distance between two atoms is fixed, or if a particle is constrained to move on a circle, then the Schroedinger equation takes a simple form and the equation is essentially the same as for a harmonic oscillator. To describe motion in more than one dimension, the Schroedinger equation has coordinates in <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> if two dimensional, or <span class="math notranslate nohighlight">\(x\)</span>, <span class="math notranslate nohighlight">\(y\)</span>, and <span class="math notranslate nohighlight">\(z\)</span> if the motion is three dimensional. Ratner &amp; Schatz (2001) give a clear description of this problem and others in quantum mechanics relevant to Chemistry.</p>
+<p>The equation for two-dimensional motion is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle -\frac{\hbar^2}{2m}\left(  \frac{\partial ^2\psi}{\partial x^2}+\frac{\partial ^2\psi}{\partial y^2}\right) +V(x,y)\psi=E\psi \]</div>
+<p>which is a partial differential equation and is clearly rather complicated. First, to simplify the calculation, the rigid rotor or particle on a ring have zero potential energy so <span class="math notranslate nohighlight">\(V= 0\)</span>. It only remains to simplify the derivatives and this is done with a change to plane polar coordinates using (see Chapter 1 section 7)</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle  x=r\cos(\theta) \qquad y=r\sin(\theta) \qquad r^2=x^2+y^2 \]</div>
+<p>The differential operator</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \nabla^2 =\frac{\partial^2}{\partial x^2}+\frac{\partial^2}{\partial y^2}\]</div>
+<p>is also changed into <span class="math notranslate nohighlight">\(r,\;\theta\)</span> coordinates which gives</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \nabla^2 =\frac{\partial^2}{\partial r^2}+\frac{1}{r}\frac{\partial}{\partial r}+\frac{1}{r^2}\frac{\partial^2}{\partial \theta^2}\]</div>
+<p>(see question 3.114). Substituting produces</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle -\frac{\hbar^2}{2m}\left(\frac{\partial^2}{\partial r^2}+\frac{1}{r}\frac{\partial}{\partial r}+\frac{1}{r^2}\frac{\partial^2}{\partial \theta^2}\right) \psi +V(r)\psi = E\psi \tag{26} \]</div>
+<p>The term in <span class="math notranslate nohighlight">\(\theta\)</span> describes the angular motion, and the other terms in <span class="math notranslate nohighlight">\(r\)</span>, the radial motion. In a rigid rotor or a particle on a ring, the radial part is constant which means that this part of the kinetic energy can be omitted, and as the potential energy <span class="math notranslate nohighlight">\(V\)</span> is only a function of <span class="math notranslate nohighlight">\(r\)</span> it is also a constant and can be ignored. Only the angular parts remain.</p>
+<p>There are two boundary conditions because the equation has second derivatives. Because the motion is circular, these conditions are (i) any wavefunction must have the same value after <span class="math notranslate nohighlight">\(2\pi\)</span> (360<span class="math notranslate nohighlight">\(^\mathrm{o}\)</span>) rotation, or multiples of this, and (ii) that it has the same slope at this point. This means that the wavefunction repeats itself without a discontinuity see Fig. 10.26. The equation is now simplified using <span class="math notranslate nohighlight">\(\varphi\)</span> to represent the angular part of the wavefunction and <span class="math notranslate nohighlight">\(k^2=2mr^2/\hbar^2\)</span> ,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle -\frac{\hbar^2}{2m}\frac{1}{r^2}\frac{\partial^2\varphi}{\partial \varphi^2}=E\varphi \qquad \text{ or } \qquad \frac{\partial^2\varphi}{\partial \varphi^2}=-k^2\varphi\]</div>
+<p>The distance <span class="math notranslate nohighlight">\(r\)</span> is a constant, by definition for the rigid rotor, and <span class="math notranslate nohighlight">\(mr^2\)</span> is the moment of inertia <span class="math notranslate nohighlight">\(I\)</span> making <span class="math notranslate nohighlight">\(k^2 = 2IE/\hbar^2\)</span> and the energy is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle E=\frac{\hbar^2k^2}{2I}\]</div>
+<p>The solution to the differential equation can be written down either as the sum of a sine and cosine or as exponentials. The latter is conventionally chosen making the solution</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \varphi =Ae^{ik\theta}+Be^{-ik\theta}\]</div>
+<p>The boundary conditions are that the wavefunction must reproduce itself exactly after <span class="math notranslate nohighlight">\(2\pi\)</span> radians, or <span class="math notranslate nohighlight">\(\varphi(\theta) = \varphi(2\pi + \theta)\)</span>. This condition means that</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle Ae^{ik\theta}+Be^{-ik\theta} =Ae^{ik(2\pi+\theta)}+Be^{-ik(2\pi +\theta)}\]</div>
+<p>which will be true for any <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> if <span class="math notranslate nohighlight">\(\displaystyle e^{ik\theta} = e^{−ik\theta} = 1\)</span>. This condition means that <span class="math notranslate nohighlight">\(k\)</span> must be an integer with values <span class="math notranslate nohighlight">\(k = 0,\,\pm 1, \,\pm\)</span> 2, <span class="math notranslate nohighlight">\(\cdots\)</span>. Conventionally the solution <span class="math notranslate nohighlight">\(\displaystyle \varphi =Ae^{ik\theta}\)</span> is chosen and using the normalizing condition <span class="math notranslate nohighlight">\(\displaystyle N^2\int_0^{2\pi}\varphi^*\varphi d\theta=1\)</span>, the wavefunction is;</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \varphi=\frac{1}{\sqrt{2\pi}}  e^{ik\theta} \tag{27}\]</div>
+<p>The quantum numbers are <span class="math notranslate nohighlight">\(k = 0, \pm 1, \pm 2, \cdots\)</span> and as the lowest value is zero, this means that the minimum energy is zero and the rotor is stationary. As <span class="math notranslate nohighlight">\(k \ne 0\)</span> can be positive or negative it indicates that the rotor moves to the right or left and that these levels are each doubly degenerate.</p>
+<p>As the lowest energy is zero it initially suggests that the Heisenberg uncertainty principle <span class="math notranslate nohighlight">\(\Delta \theta \Delta p \ge \hbar/2\)</span> is not obeyed. However, when <span class="math notranslate nohighlight">\(J = 0\)</span> the wavefunction is a constant, <span class="math notranslate nohighlight">\(1/ (2\pi)\)</span>, so we cannot know what angle the rotor has and this means that <span class="math notranslate nohighlight">\(\Delta \theta \Delta p  \ne 0\)</span>.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./chapter-10"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="Diff-eqns-Q1-23.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Questions 1 - 23</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="Diff-eqns-C.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">The ‘D’ operator.  Solving linear differential equations with constant coefficients</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Godfrey Beddard<br/>
+        
+            &copy; Copyright 2022.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

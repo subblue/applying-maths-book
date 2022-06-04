@@ -1,0 +1,1673 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Solving rate equations &#8212; Applying Maths in the Chemical &amp; Biomolecular Sciences</title>
+    
+  <link href="../../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/togglebutton.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../../_static/book-cover.jpg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Applying Maths in the Chemical & Biomolecular Sciences</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../intro.html">
+   Applying Maths in the Chemical and Biomolecular Sciences.
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../chapter-1/chapter1-intro.html">
+   1. Numbers, Equations, Operators, and Algorithms.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-1/chapter1-A.html">
+     Numbers to Algorithms.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-1/chapter1-Q1-7.html">
+     Questions 1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-1/chapter1-B.html">
+     Trig, hyperbolic and inverse functions, waves, polar coordinates &amp; factorials
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-1/chapter1-Q8-16.html">
+     Questions 8 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-1/chapter1-C.html">
+     Sophisticated Counting.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-1/chapter1-Q17-34.html">
+     Questions 17 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-1/chapter1-D.html">
+     Modulo arithmetic,
+     <span class="math notranslate nohighlight">
+      \(\delta\)
+     </span>
+     functions, types of  series &amp;  estimating quantities
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-1/chapter1-Q35-39.html">
+     Questions 35 - 39
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-1/chapter1-answers-1-7.html">
+     Solutions Q1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-1/chapter1-answers-8-16.html">
+     Solutions Q8 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-1/chapter1-answers-17-34.html">
+     Solutions Q17 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-1/chapter1-answers-35-39.html">
+     Solutions Q35 - 39
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../chapter-2/chapter2-intro.html">
+   2. Complex numbers.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-2/chapter2-A.html">
+     Real, imaginary, conjugate and modulus
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-2/chapter2-Q-1-9.html">
+     Questions 1 - 9
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-2/chapter2-B.html">
+     De Moivre’s theorem and integer powers of complex numbers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-2/chapter2-Q-10-13.html">
+     Questions 10 -13
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-2/chapter2-C.html">
+     Euler’s theorem
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-2/chapter2-Q-14-27.html">
+     Questions 14 - 27
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-2/chapter2-answers.html">
+     Solutions Q1 - 27
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../chapter-3/differen-intro.html">
+   3. Differentiation.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-A.html">
+     Differentiation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-B.html">
+     Trig functions, logs, power, reciprocals and integrals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-C-Q-4-11.html">
+     Questions 1-11
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-D.html">
+     Product rule and function of function or chain rule.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-E-Q-12-42.html">
+     Questions 12-42
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-F.html">
+     Limits, l’Hopital’s rule, Maximum, Minimum and Calculus of Variations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-G-Q-43-73.html">
+     Questions 43 - 73
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-H.html">
+     Numerically finding the roots of an equation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-I-Q-74-85.html">
+     Questions 74 - 85
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-J.html">
+     Minimizing or maximizing with constraints: Lagrange Undetermined Multipliers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-K-Q-86-92.html">
+     Questions 86 - 92
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-L.html">
+     Partial differentiation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-M-Q-93-114.html">
+     Questions 93-114
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-M1.html">
+     Differentiation of vectors
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-N-answers-1-11.html">
+     Solutions Q 1-11
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-O-answers-12-42.html">
+     Solutions Q 12-42
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-P-answers-43-73.html">
+     Solutions Q 43 - 73
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-Q-answers-74-85.html">
+     Solutions Q 74 - 85
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-R-answers-86-92.html">
+     Solutions Q 86 - 94
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-S-answers-93-114.html">
+     Solutions Q 93-114
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../chapter-4/integration-intro.html">
+   4. Integration.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-A.html">
+     Integration basics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-Q1-14.html">
+     Questions 1-14
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-B.html">
+     Integration by substitution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-Q15-30.html">
+     Questions 15-30
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-C.html">
+     Using parametric equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-Q31-48.html">
+     Questions 31 - 48
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-D.html">
+     Calculating an Average Value.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-Q49-72.html">
+     Questions 49 - 72
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-E.html">
+     The Variational Method in Quantum Mechanics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-Q73-77.html">
+     Questions 73 - 77
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-F.html">
+     Multiple integrals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-Q78-86.html">
+     Questions 78 - 86
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-G.html">
+     Calculating the energy of a chemical bond using molecular orbitals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-H.html">
+     Line integrals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-Q87-96.html">
+     Questions 87 - 96
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-answers-1-14.html">
+     Solutions Q1 - 14
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-answers-15-30.html">
+     Solutions Q15 - 30
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-answers-31-48.html">
+     Solutions Q31 - 48
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-answers-49-72.html">
+     Solutions Q49 - 72
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-answers-73-96.html">
+     Solutions Q73 - 96
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../chapter-5/chapter-5-intro.html">
+   5. Summations, Series and expansion of Functions.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-5/chapter-5-A.html">
+     Series, averages, partition functions, DNA melting, atom entropy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-5/chapter-5-B-Q1-13.html">
+     Questions 1 - 13
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-5/chapter-5-E.html">
+     Maclaurin and Taylor series expansions. Paramagnetic spins. Euler-Maclaurin formula.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-5/chapter-5-F-Q14-34.html">
+     Questions 14 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-5/chapter-5-G-Q35-44.html">
+     Questions 35 - 44
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-5/chapter-5-perturbation-A.html">
+     Perturbation Theory
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-5/chapter-5-perturbation-B-Q45-48.html">
+     Questions 45 - 48
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-5/chapter-5-perturbation-C.html">
+     Quantum superposition and wavepackets.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-5/chapter-5-perturbation-D-Q49-52.html">
+     Questions 49 - 52
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-5/chapter-5-answers-1-7.html">
+     Solutions Q 1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-5/chapter-5-answers-8-13.html">
+     Solutions Q8 - 13
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-5/chapter-5-answers-14-26.html">
+     Solutions Q 14 - 26
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-5/chapter-5-answers-27-32.html">
+     Solutions Q27 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-5/chapter-5-answers-33-44.html">
+     Solutions Q33 - 44
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-5/chapter-5-answers-45-52.html">
+     Solutions Q45 - 52
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../chapter-6/vectors-intro.html">
+   6. Vectors.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-A.html">
+     Vector basics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-Q1-24.html">
+     Questions 1 - 24
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-B.html">
+     Projections and components
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-Q25-32.html">
+     Questions 25 - 32
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-C.html">
+     Axes need not be right-angled or of equal length
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-Q33-38.html">
+     Questions 33 - 38
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-D.html">
+     Basis sets with more than three dimensions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-Q39-46.html">
+     Questions 39 - 46
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-E.html">
+     Cross product or vector product
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-Q47-52.html">
+     Questions 47 - 52
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-F.html">
+     Torsion or dihedral angles
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-Q53-48.html">
+     Questions 53 - 48
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-G.html">
+     Torque and angular momentum
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-Q59-61.html">
+     Questions 59 - 61
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-answers-Q1-24.html">
+     Solutions Q1 - 24
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-answers-Q25-32.html">
+     Solutions Q25 - 32
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-answers-Q33-38.html">
+     Solutions Q33 - 38
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-answers-Q39-46.html">
+     Solutions Q39 - 46
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-answers-Q47-52.html">
+     Solutions Q47 - 52
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-answers-Q53-61.html">
+     Solutions Q53 - 61
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../chapter-7/matrices-intro.html">
+   7. Matrices
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-A.html">
+     Determinants
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-Q1-10.html">
+     Questions  1 - 10
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-B.html">
+     Matrices
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-Q11-16.html">
+     Questions  11 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-C.html">
+     Molecular Group Theory
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-Q17-30.html">
+     Questions  17 - 30
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-D.html">
+     Rotation matrices: moving molecules
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-Q31-34.html">
+     Questions 31 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-E.html">
+     Matrices in optics and designing laser cavities
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-Q35-39.html">
+     Questions 35 - 39
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-F.html">
+     Polarizing optics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-Q40-44.html">
+     Questions 40 - 44
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-G.html">
+     Solving equations using matrices. Eigenvectors &amp; Eigenvalues.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-Q45-50.html">
+     Questions 45 - 50
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-H.html">
+     Rate equations and Chemical Kinetics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-Q51-54.html">
+     Questions 51 - 54
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-I.html">
+     Molecular vibrations and pendulums
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-Q55-58.html">
+     Questions 55 - 58
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-J.html">
+     Moments of Inertia
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-Q59-60.html">
+     Questions 59 - 62
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-K.html">
+     Calculating a bond length using moments of inertia
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-Q61.html">
+     Question 61
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-L.html">
+     Principal axes for Moments of Inertia
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-Q62.html">
+     Question 62
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-answersQ1-10.html">
+     Solutions Q1 - 10
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-answersQ11-16.html">
+     Solutions Q11 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-answersQ17-30.html">
+     Solutions Q17 - 30
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-answersQ31-34.html">
+     Solutions Q31 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-answersQ35-39.html">
+     Solutions Q35 - 39
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-answersQ40-44.html">
+     Solutions Q40 - 44
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-answersQ45-50.html">
+     Solutions Q45 - 50
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-answersQ51-54.html">
+     Solutions Q51 - 54
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-answersQ55-58.html">
+     Solutions Q55 - 58
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-answersQ59-61.html">
+     Solutions Q59 - 61
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../chapter-8/matricesQM-intro.html">
+   8. Matrices in Quantum Mechanics
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-8/matricesQM-A.html">
+     Matrices in Quantum Mechanics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-8/matricesQM-Q1-7.html">
+     Questions 1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-8/matricesQM-B.html">
+     Basis sets and bra-ket algebra
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-8/matricesQM-Q8-12.html">
+     Questions 8 - 12
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-8/matricesQM-C.html">
+     Continuous basis sets
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-8/matricesQM-answers1-7.html">
+     Solutions Q1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-8/matricesQM-answers8-12.html">
+     Solutions Q8 - 12
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../chapter-9/Fourier-intro.html">
+   9. Fourier Series and Transforms.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-9/Fourier-A-B.html">
+     Fourier series, Gibbs phenomenon, generalised series.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-9/Fourier-questions-1-6.html">
+     Questions 1 - 6
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-9/Fourier-C.html">
+     Fourier Transforms
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-9/Fourier-questions-7-15.html">
+     Questions 7 - 15
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-9/Fourier-D.html">
+     Convolution and Autocorrelation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-9/Fourier-questions-16-21.html">
+     Questions 16 - 21
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-9/Fourier-E.html">
+     Discrete Fourier  (DFT)  and Fast Fourier transforms (FFT)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-9/Fourier-F.html">
+     The Hadamard Transform: Encoding and Decoding
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-9/Fourier-answers-1-6.html">
+     Solutions Q 1 - 6
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-9/Fourier-answers-7-15.html">
+     Solutions Q 7 - 15
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-9/Fourier-answers-16-21.html">
+     Solutions Q 16 - 21
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-9/Fourier-2D-Diffraction.html">
+     The Fourier transform in two dimensions: images and x-ray Diffraction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-9/Fourier-tomography.html">
+     Computed Tomography
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../chapter-10/Diff-eqns-intro.html">
+   10. Differential Equations.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-10/Diff-eqns-A.html">
+     Differential Equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-10/Diff-eqns-Q1-23.html">
+     Questions 1 - 23
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-10/Diff-eqns-B.html">
+     First order eqns &amp; Integrating factors. Second order eqns, Newtons laws, equations of motion.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-10/Diff-eqns-C.html">
+     The ‘D’ operator.  Solving linear differential equations with constant coefficients
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-10/Diff-eqns-D.html">
+     Simultaneous equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-10/Diff-eqns-Q24-37.html">
+     Questions 24 - 37
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-10/Diff-eqns-E.html">
+     Linear equations with variable coefficients
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-10/Diff-eqns-F.html">
+     Partial Differential Equations, PDE
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-10/Diff-eqns-G.html">
+     PDE examples continued
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-10/Diff-eqns-answers-1-21.html">
+     Solutions Q1 - 21
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-10/Diff-eqns-answers-22-37.html">
+     Solutions Q22 - 37
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../chapter-11/num-methods-intro.html">
+   11. Numerical Methods
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-A.html">
+     Numerical Methods
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-Q1-7.html">
+     Questions 1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-B.html">
+     Numerical solution of differential equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-Q8-12.html">
+     Questions 8 - 12
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-C.html">
+     Coupled equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-Q13-16.html">
+     Questions 13 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-D.html">
+     The phase plane, nullclines, and stable points
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-Q17-20.html">
+     Questions 17 - 20
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-E.html">
+     Reaction schemes with feedback
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-Q21-34.html">
+     Questions 21 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-F.html">
+     Boundary value problems.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-Q35-40.html">
+     Questions 35 - 40
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-answers1-7.html">
+     Solutions Q1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-answers8-12.html">
+     Solutions Q8 - 12
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-answers13-16.html">
+     Solutions Q13 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-answers17-20.html">
+     Solutions Q17 - 20
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-answers21-34.html">
+     Solutions Q21 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-answers35-40.html">
+     Solutions Q35 - 40
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../chapter-12/monte-carlo-intro.html">
+   12. Monte Carlo Methods
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+  <label for="toctree-checkbox-12">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-12/monte-carlo-A.html">
+     Monte - Carlo Methods
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-12/monte-carlo-Q1-6.html">
+     Questions 1 - 6
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-12/monte-carlo-B.html">
+     Solving rate equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-12/monte-carlo-Q7-10.html">
+     Questions 7 - 10
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-12/monte-carlo-CC.html">
+     Monte Carlo Simulations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-12/monte-carlo-C.html">
+     Energy transfer. Autocatalytic reaction and spreading of fires
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-12/monte-carlo-Q11-17.html">
+     Questions 11 - 17
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-12/monte-carlo-D.html">
+     The Metropolis algorithm
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-12/monte-carlo-answers1-6.html">
+     Solutions Q1 - 6
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-12/monte-carlo-answers7-10.html">
+     Solutions Q7 - 10
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-12/monte-carlo-answers11-17.html">
+     Solutions Q11 - 17
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../chapter-13/analysis-intro.html">
+   13. Data Analysis
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+  <label for="toctree-checkbox-13">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-13/analysis-A.html">
+     Characterizing experimental data. Accuracy, precision, mean and standard deviation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-13/analysis-Q1-3.html">
+     Questions 1 - 3
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-13/analysis-B.html">
+     Modelling data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-13/analysis-Q4-9.html">
+     Questions 4 - 9
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-13/analysis-C.html">
+     Modelling data is simpler using matrices
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-13/analysis-Q10-11.html">
+     Questions 10 - 13
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-13/analysis-D.html">
+     Non-linear least squares. Least absolute deviation. Principal component analysis
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-13/analysis-answers1-11.html">
+     Solutions Q1 -11
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../chapter-1/chapter1-E.html">
+   SI units, Rounding, converting units &amp; Glossary.
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../references/References.html">
+   References
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../references/Python%20crib.html">
+   Appendix:  Some basic Python instructions with a few examples.
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../../_sources/_build_/jupyter_execute/chapter-12/monte-carlo-B.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/_build_/jupyter_execute/chapter-12/monte-carlo-B.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#concept-and-motivation">
+   2.1 Concept and motivation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-gillespie-method">
+   2.2 The Gillespie method
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#comment-on-validity">
+     <strong>
+      Comment  on validity
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#outline-of-method">
+     <strong>
+      Outline of method
+     </strong>
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="solving-rate-equations">
+<h1>Solving rate equations<a class="headerlink" href="#solving-rate-equations" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="n">init_printing</span><span class="p">()</span>                      <span class="c1"># allows printing of SymPy results in typeset maths format</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;font.size&#39;</span><span class="p">:</span> <span class="mi">16</span><span class="p">})</span>  <span class="c1"># set font size for plots</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="concept-and-motivation">
+<h2>2.1 Concept and motivation<a class="headerlink" href="#concept-and-motivation" title="Permalink to this headline">¶</a></h2>
+<p>A Monte Carlo method of solving differential equations has been developed by Gillespie (1977, 2007) and is just as applicable to chemical reactions as it is to describing S-I-R diseases or predator - prey populations. This method is equivalent to any other numerical method in the sense that it is purely mathematical, no science enters into the method of solution, that is all done when the rate equations are written down. In comparison, in Section 3, a heuristic way of solving problems will be described, and in this case, the science behind the processes involved is an essential part of the method.</p>
+<p>When considered at the level of individual molecules, any chemical reaction has relatively long time periods during which no reaction is possible followed by small time periods when reaction occurs. The Gillespie method calculates these two times and uses them as the basis of the method to solve the rate equations. Bimolecular chemical reactions rarely occur on first contact of the two reactants because there is usually an energy barrier, the activation energy, between reactants and products. Many millions and perhaps thousands of millions of collisions are needed before reaction occurs if the activation energy is much larger than thermal energy and this time is far longer than the time it takes to cross the reaction barrier. Even if a reaction occurs on first contact, there are periods during which no reaction is possible because the molecules are separated from one another. In a first-order, solution - phase reaction, such as a cis - trans isomerization, many collisions with solvent are needed to give the reactant molecule enough energy to surmount the energy barrier between reactant and product. Similar unreactive periods occur even in a molecule isolated from others in the gas phase. The molecule may have enough total energy to react but this is may be spread among all of its <span class="math notranslate nohighlight">\(3N - 6\)</span> vibrational modes. The energy must flow out of these modes and find its way into the reactive bond and this takes time.</p>
+<p>If the reacting molecules are considered individually, the various times that would be observed between reactions have a Poisson distribution, which is a distribution of many events with each having a low probability, see chapters 1 &amp; 13, the probability of a reaction is therefore also described by a Poisson distribution. Monte Carlo methods mimic the Poisson behaviour of molecules by considering the chance (probability) that no reaction will occur during a certain period of time, which is followed by another smaller time interval during which a reaction does occur. The method, therefore, involves working out these two probabilities and multiplying them together.</p>
+</div>
+<div class="section" id="the-gillespie-method">
+<h2>2.2 The Gillespie method<a class="headerlink" href="#the-gillespie-method" title="Permalink to this headline">¶</a></h2>
+<p>When two species <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> react, <span class="math notranslate nohighlight">\(A + B \to product\)</span>, the rate of reaction is <span class="math notranslate nohighlight">\(k\mathrm{[A][B]}\)</span> where <span class="math notranslate nohighlight">\(k\)</span> is the rate constant and <span class="math notranslate nohighlight">\(\mathrm{[A]}\)</span> and <span class="math notranslate nohighlight">\(k\mathrm{[B]}\)</span> the concentrations at any time during the reaction, which clearly change with time. To work out what happens in each small time interval means calculating the change in the number of reactant molecules in a given volume. Doing this means calculating two things. The first is the time at which any of possibly several reactions will occur, and the second is to decide which reaction this will be.
+In the reaction <span class="math notranslate nohighlight">\(A + B \to product\)</span>, there is only one type of reaction but there are very many schemes where there are two or more reactions; for example, the photo-dissociation of halocarbons with UV light and subsequent reactions to destroy ozone.</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \mathrm{CFCl_3} \overset{h\nu}\to \mathrm{CHCl_2  +Cl}\qquad \mathrm{Cl+O_3} \to \mathrm{ClO+O} \qquad \mathrm{ClO+O_2} \to \mathrm{Cl+O_2} \]</div>
+<p>Given such a reaction scheme, the first step is to decide what reaction will happen next given the current state of the reaction at time <span class="math notranslate nohighlight">\(t\)</span>. At the level of considering individual molecules, once the reaction has started, it does not follow sequentially as shown in the scheme. This only happens when a whole ensemble of molecules, typically as large as Avogadro’s number is examined, and then normal kinetic equations apply because of the averaging over the many events that occur. In any given time interval when considering molecules one at a time, it is not possible to predict exactly which reaction will happen next. It is quite possible, for instance, that several <span class="math notranslate nohighlight">\(\mathrm{Cl+O_3}\)</span> reactions may occur before either of the other two. The best that can be done is to guess the outcome, and repeat the calculation many times and this approach is now described.</p>
+<p>Suppose that the reactions are labelled with a number <span class="math notranslate nohighlight">\(R\)</span> that represents reaction 1 or 2 or 3 etc. The chance of a reaction of type <span class="math notranslate nohighlight">\(R\)</span> occurring will be defined as</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle prob(T + dT, R) \equiv a_RdT\]</div>
+<p>Specifically, this is the probability that a reaction of type <span class="math notranslate nohighlight">\(R\)</span> occurs in time interval <span class="math notranslate nohighlight">\(T\)</span> to <span class="math notranslate nohighlight">\(T + dT\)</span> in the reaction volume, given the current state of all reactions at an earlier time <span class="math notranslate nohighlight">\(t\)</span>. The values of <span class="math notranslate nohighlight">\(a_R\)</span> can be easily worked out, and this is shown later. What is now needed is the probability <span class="math notranslate nohighlight">\(P_0(T)\)</span> that no reaction of any type occurs up to time <span class="math notranslate nohighlight">\(T\)</span> past the present time <span class="math notranslate nohighlight">\(t\)</span>, multiplied by the probability that only a reaction of type <span class="math notranslate nohighlight">\(R\)</span> occurs in the small time interval <span class="math notranslate nohighlight">\(T \to T + dT\)</span>, which is defined as <span class="math notranslate nohighlight">\(a_RdT\)</span>. The probability of reaction type <span class="math notranslate nohighlight">\(R\)</span> happening is therefore</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle  P(R,T)= P_0(T)a_RdT\]</div>
+<p>and shown schematically in figure 4.</p>
+<p><img alt="Drawing" src="_build_/jupyter_execute/chapter-12/monte-carlo-fig4.png" /></p>
+<p>Figure 4. Calculation of reaction probability.</p>
+<hr class="docutils" />
+<p>To calculate the probability of no reaction occurring, consider any small interval <span class="math notranslate nohighlight">\(d\tau\)</span> after some arbitrary time <span class="math notranslate nohighlight">\(\tau\)</span>, making an interval <span class="math notranslate nohighlight">\(\tau \to \tau + d\tau\)</span>. The probability of no reaction is then</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle P_0(\tau+d\tau) =P_0(\tau)\left(1-\sum_{R=1}^n a_Rd\tau  \right)\]</div>
+<p>where the summation is over all <span class="math notranslate nohighlight">\(n\)</span> reaction types <span class="math notranslate nohighlight">\(R\)</span>. The summation is made because this gives the chance that any one of the <span class="math notranslate nohighlight">\(R\)</span> reactions will occur, and therefore one minus this number is the chance that no reaction occurs. Rearranged, this equation gives</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle  \frac{P_0(\tau+d\tau)-P_0(\tau)}{d\tau}=-\sum_{R=1}^n a_R\]</div>
+<p>and in the limit of a small time interval <span class="math notranslate nohighlight">\(d\tau\)</span>, it becomes the true derivative <span class="math notranslate nohighlight">\(\displaystyle \frac{dP_0}{d\tau}=-\sum_{R=1}^na_R\)</span>.</p>
+<p>For clarity only, a notational change is now made so that</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle a_0=\sum_{R=1}^n a_R \tag{8}\]</div>
+<p>and therefore <span class="math notranslate nohighlight">\(\displaystyle \frac{dP_0}{d\tau}=-a_0\)</span>.</p>
+<p>The chance of no reaction up to time <span class="math notranslate nohighlight">\(T\)</span> is found by integrating, and is <span class="math notranslate nohighlight">\(\displaystyle P_0(T)=e^{-a_0T}\)</span>.</p>
+<p>The final result for the probability of reaction <span class="math notranslate nohighlight">\(R\)</span> occurring at time <span class="math notranslate nohighlight">\(T\)</span> is the chance of no reaction up to <span class="math notranslate nohighlight">\(T \)</span> multiplied by the chance of reacting at <span class="math notranslate nohighlight">\(T\)</span>, which is <span class="math notranslate nohighlight">\(a_R\)</span>, giving</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle P(T,R) = a_Re^{-a_0T} \tag{9}\]</div>
+<p>an expression that shows that these times are Poisson distributed. Equation 9 is a joint probability density function, as it is the chance that reaction occurs in the time interval and that it will be reaction <span class="math notranslate nohighlight">\(R\)</span>.</p>
+<p>Two terms now remain undefined. The first is the individual <span class="math notranslate nohighlight">\(a_R\)</span> and their sum <span class="math notranslate nohighlight">\(a_0\)</span>, and the second determines which reaction happens next. Calculating <span class="math notranslate nohighlight">\(a_R\)</span> is very easy, as each <span class="math notranslate nohighlight">\(a_R\)</span> is the product of the number of molecules present in a reaction of type <span class="math notranslate nohighlight">\(R\)</span> multiplied with the rate constant per unit volume.</p>
+<p>If there is just a single reaction <span class="math notranslate nohighlight">\(\mathrm{A} \overset{k_1}\longrightarrow \mathrm{B}\)</span> then <span class="math notranslate nohighlight">\(a_1=k_1N_A\)</span> where <span class="math notranslate nohighlight">\(N_A\)</span> is the number of <span class="math notranslate nohighlight">\(A\)</span> molecules present at time <span class="math notranslate nohighlight">\(T\)</span>.</p>
+<p>If the reaction is <span class="math notranslate nohighlight">\(\mathrm{A+B} \overset{k_2} \longrightarrow \mathrm{C}\)</span> then <span class="math notranslate nohighlight">\(a_2=k_2N_aN_B\)</span> and if both reactions are present in the overall reaction scheme which would then be</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \mathrm{A} \overset{k_1}\longrightarrow \mathrm{B} \qquad \mathrm{A+B} \overset{k_2} \longrightarrow \mathrm{C} \qquad a_0=\sum a_R=a_1+a_2 \tag{10}\]</div>
+<p>In the special case where a reaction combines two identical molecules <span class="math notranslate nohighlight">\(\mathrm{A+A} \overset{k_2} \longrightarrow \)</span> the number of <em>indistinguishable combinations</em>, i.e. the number of distinct A-A pairs of the two species must be calculated and this makes</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle a = k_2\frac{N_A(N_A - 1)}{2!}\]</div>
+<p>Normally, in dealing with chemical kinetics, <span class="math notranslate nohighlight">\(N_A\)</span> is so vast that <span class="math notranslate nohighlight">\(\displaystyle a = k_2\frac{N_A^2}{2}\)</span>, but in the Monte Carlo simulations, <span class="math notranslate nohighlight">\(N_A\)</span> is small because individual molecules are dealt with, and the exact formula must be used. Thus, macroscopic, (kinetic), chemical equations are only valid when deviations from the Poisson distribution are negligible.</p>
+<hr class="docutils" />
+<div class="section" id="comment-on-validity">
+<h3><strong>Comment  on validity</strong><a class="headerlink" href="#comment-on-validity" title="Permalink to this headline">¶</a></h3>
+<p>The term</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle a = k_2\frac{N_A(N_A - 1)}{2!}\]</div>
+<p>implies that these numbers are averages in the reaction volume at time <span class="math notranslate nohighlight">\(t\)</span> and should be written as the average of the product, i.e. as</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{\langle N_a(t)\;(N_A(t)-1)\rangle }{2!}\]</div>
+<p>The question then arises as how to deal with this. Two approximations can be made; the first is to assume that <span class="math notranslate nohighlight">\(N_A\)</span> is large compared to 1 and so <span class="math notranslate nohighlight">\(\langle N_A(t)(N_A(t)-1)\rangle \rightarrow \langle N_A^2(t)\rangle \)</span>, which seems to be a reasonable and sensible approximation, the next step is more problematic and is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \langle N_A^2(t)\rangle \sim \langle N_A(t)\rangle^2\]</div>
+<p>This is a drastic step and assumes that the variance in the number of molecules is zero, i.e. that <span class="math notranslate nohighlight">\(N_A(t)=\langle N_A(t)\rangle\)</span> which means that <span class="math notranslate nohighlight">\(N_A\)</span> is a deterministic process, so that the random nature of the numbers of <span class="math notranslate nohighlight">\(N_A\)</span> entering into the reaction volume is always the same, which is not what was assumed at the outset. (To see that the variance is zero use the definition <span class="math notranslate nohighlight">\(\sigma^2_{N_A} = \langle N_A^2 \rangle -\langle N_A \rangle^2\)</span> where <span class="math notranslate nohighlight">\(\sigma\)</span> is the standard deviation)</p>
+<p>In any normal kinetic experiment the number of molecules is vast, <span class="math notranslate nohighlight">\(\langle N_A(t)\rangle \sim 10^{18}\)</span> would not be untypical, so that the fluctuations in the  number of molecules is tiny and the approximation made above becomes valid.</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle  \frac{\sigma_{N_A}}{\langle N_A \rangle} \sim \frac{\sqrt{\langle N_A \rangle}}{\langle N_A \rangle} \sim \frac{1}{\sqrt{\langle N_A \rangle}}\sim 10^{-9}\]</div>
+<p>Even if there are as few as <span class="math notranslate nohighlight">\(1000\)</span> molecules the relative fluctuation  is not too drastic but in experiments using small numbers of molecules, as in the case of many ‘single molecule’ experiments then clearly the rate equation approach needs to be modified.</p>
+<hr class="docutils" />
+<p>The final part of the calculation determines which particular reaction step is going to occur and at what time this is done by choosing pairs of numbers that have the distribution <span class="math notranslate nohighlight">\(P(T, R)\)</span> equation 9. Gillespie (1997, 2007) argues that <span class="math notranslate nohighlight">\(P(T, R)\)</span> is equivalent to two distributions, <span class="math notranslate nohighlight">\(P_1\)</span> and <span class="math notranslate nohighlight">\(P_2\)</span>;</p>
+<div class="math notranslate nohighlight">
+\[P(T,R)= P_1\cdot P_2 = \left(a_0e^{-a_0 T} \right)\left( \frac{a_R}{a_0}\right)\]</div>
+<p>and which can be determined by choosing two uniformly distributed random numbers, <span class="math notranslate nohighlight">\(r\)</span>, each in the range 0 to 1. The equation</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle T = -\frac{1}{a_0}\ln(r) \tag{11}\]</div>
+<p>generates a random number <span class="math notranslate nohighlight">\(T\)</span> according to the probability density function <span class="math notranslate nohighlight">\(\displaystyle P_1=a_0e^{-a_0 T}\)</span>.</p>
+<p>Equation 11 produces times that are Poisson distributed, and the time <span class="math notranslate nohighlight">\(T\)</span> is added to the current time of the reaction. The second distribution, <span class="math notranslate nohighlight">\(P_2\)</span>, is calculated by choosing a uniform random number according to the probability density function <span class="math notranslate nohighlight">\(a_R/a_0\)</span>. For example, the chance that reaction 1, (equation 10), occurs is <span class="math notranslate nohighlight">\(a_1/(a_1 + a_2)\)</span> and for reaction 2 this chance is <span class="math notranslate nohighlight">\(1 - a_1/(a_1 + a_2) = a_2/(a_1 + a_2)\)</span>. Which reaction occurs is determined by choosing a random number between 0 and 1 and seeing which of the two regions it falls into. If it falls between 0 and <span class="math notranslate nohighlight">\(a_1/(a_1 + a_2)\)</span>, reaction 1 occurs; otherwise, reaction 2 occurs. If reaction 1 occurs, <span class="math notranslate nohighlight">\(\mathrm{A} \to \mathrm{B}\)</span>, then 1 is subtracted from the original number of <span class="math notranslate nohighlight">\(A\)</span> molecules in each step of the reaction and 1 is added to the number of <span class="math notranslate nohighlight">\(B\)</span> molecules.</p>
+<p>If reaction 2 happens, <span class="math notranslate nohighlight">\(\mathrm{A+B} \overset{k_2} \to \mathrm{C}\)</span> then 1 molecule is removed from each of the numbers for <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span>. How many molecules are added and subtracted, of course, depends on the stoicheiometry of each particular reaction.</p>
+<p>In the case of a termolecular reaction <span class="math notranslate nohighlight">\(\mathrm{ A + B + C} \rightarrow \)</span> when the probability of three molecules simultaneously colliding is calculated the probability the chance that this occurs in  an infinitesimal time interval <span class="math notranslate nohighlight">\(d t\)</span> is proportional to <span class="math notranslate nohighlight">\(dt^2\)</span> so becomes vanishingly small and thus does not occur with any physical reality. It is often convenient, however, to consider a termolecular scheme as a simplified approximation to a scheme such as <span class="math notranslate nohighlight">\(N_A+N_B \leftrightharpoons X^*; \; X^* + N_C \longrightarrow\)</span></p>
+</div>
+<div class="section" id="outline-of-method">
+<h3><strong>Outline of method</strong><a class="headerlink" href="#outline-of-method" title="Permalink to this headline">¶</a></h3>
+<p>The outline plan for the Gillespie algorithm is actually quite simple</p>
+<p><strong>(1)</strong><span class="math notranslate nohighlight">\(\quad\)</span> Define the initial amounts of each species.</p>
+<p><span class="math notranslate nohighlight">\(\qquad\)</span>Define the arrays of data points to hold results.</p>
+<p><span class="math notranslate nohighlight">\(\qquad\)</span>Set the maximum time.</p>
+<p><span class="math notranslate nohighlight">\(\qquad\)</span>Set the time to zero, <span class="math notranslate nohighlight">\(t = 0\)</span>.</p>
+<p><strong>(2)</strong><span class="math notranslate nohighlight">\(\quad\)</span> Start a loop around the calculation until the time is up or no molecules are left.</p>
+<p><span class="math notranslate nohighlight">\(\qquad\)</span>Calculate <span class="math notranslate nohighlight">\(a_1,\;a_2,\;a_3\)</span> etc. and <span class="math notranslate nohighlight">\(a_0 =a_1 +a_2 +a_3 +\cdots\)</span></p>
+<p><span class="math notranslate nohighlight">\(\qquad\)</span>Calculate time <span class="math notranslate nohighlight">\(\displaystyle T = -\frac{1}{a_0}\ln(r)\)</span></p>
+<p><span class="math notranslate nohighlight">\(\qquad\)</span>Increment time <span class="math notranslate nohighlight">\(t = t + T\)</span><br></p>
+<p><span class="math notranslate nohighlight">\(\qquad\)</span>Calculate which reaction occurs: if a random number falls between 0 and <span class="math notranslate nohighlight">\(a_1/a_0\)</span>, reaction 1 occurs, and so forth for other reactions.</p>
+<p><span class="math notranslate nohighlight">\(\qquad\)</span>Add or subtract numbers of molecules from the totals, depending on which reaction has occurred and its stoicheiometry.</p>
+<p><span class="math notranslate nohighlight">\(\qquad\)</span>Store the results.</p>
+<p><strong>(3)</strong><span class="math notranslate nohighlight">\(\quad\)</span> Continue the loop until finished.</p>
+<p>The first calculation attempted is that of a simple isomerization, or the radioactive decay of an atom, or the decay of an excited state. The scheme is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \mathrm{A} \overset{k_1} \to  product\]</div>
+<p>The Gillespie method is illustrated in the next algorithm. Much of this is involved in checking that something has not gone wrong, such as a negative number of molecules, and in organizing the data to plot it. The method produces a series of times and the number of molecules of each species at each time; however, the times produced are randomly distributed and to plot them a histogram has to be made containing a number of time bins. In the calculation, <span class="math notranslate nohighlight">\(100\)</span> bins are chosen; the reaction rate constant is <span class="math notranslate nohighlight">\(1/20\)</span>, so the lifetime of the reaction is <span class="math notranslate nohighlight">\(20\)</span>, and a total time of <span class="math notranslate nohighlight">\(150\)</span> is chosen. You can, of course, change these numbers and a small amount of experimenting is usually necessary to get the calculation as you might want it. No time units are given. This is for you to decide, they could be seconds to picoseconds as appropriate to the reaction. The loop continues until either the time calculated, when converted into an index number for storing the data, has reached its maximum value, or the number of molecules has reached zero, in which case no more reaction is possible.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">##  Algorithm: Monte-Carlo Gillespie Method.</span>
+
+<span class="c1">#fig1= plt.figure(figsize=(6, 6))     # remove # symbol in each line to see plot</span>
+<span class="c1">#plt.rcParams.update({&#39;font.size&#39; : 16})</span>
+
+<span class="n">bins</span> <span class="o">=</span> <span class="mi">500</span>                <span class="c1"># number of bins</span>
+<span class="n">maxt</span> <span class="o">=</span> <span class="mf">150.0</span>              <span class="c1"># time in ns</span>
+<span class="n">kf</span>   <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="mf">20.0</span>             <span class="c1"># rate constnat 1/ns</span>
+<span class="n">A0</span>   <span class="o">=</span> <span class="mi">5000</span>               <span class="c1"># initial number of molecules </span>
+
+<span class="n">Acount</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">bins</span><span class="p">,</span><span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>    <span class="c1"># array to save values</span>
+<span class="n">dtime</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">bins</span><span class="p">,</span><span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>  
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">bins</span><span class="p">):</span>
+    <span class="n">dtime</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">maxt</span><span class="o">/</span><span class="n">bins</span>     <span class="c1"># generate time points</span>
+
+<span class="n">nA</span> <span class="o">=</span> <span class="n">A0</span>
+<span class="n">t</span>  <span class="o">=</span> <span class="mf">0.0</span>
+<span class="n">Acount</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">nA</span>                                    <span class="c1"># first data point</span>
+<span class="n">indx</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="n">indx</span> <span class="o">&lt;</span> <span class="n">bins</span> <span class="ow">and</span> <span class="n">nA</span> <span class="o">&gt;</span> <span class="mi">0</span>  <span class="p">:</span>
+    <span class="n">a0</span> <span class="o">=</span> <span class="n">kf</span><span class="o">*</span><span class="n">nA</span>                                    <span class="c1"># only 1 species so no sum </span>
+    <span class="n">t0</span> <span class="o">=</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random_sample</span><span class="p">())</span><span class="o">/</span><span class="n">a0</span>    <span class="c1"># calc time eqn 11     </span>
+    <span class="n">t</span>  <span class="o">=</span> <span class="n">t</span> <span class="o">+</span> <span class="n">t0</span>                                   <span class="c1"># increment</span>
+    <span class="n">indx</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">t</span><span class="o">*</span><span class="n">bins</span><span class="o">/</span><span class="n">maxt</span><span class="p">))</span>             <span class="c1"># work out bin number</span>
+     
+    <span class="k">if</span> <span class="n">indx</span> <span class="o">&lt;</span> <span class="n">bins</span><span class="p">:</span> 
+        <span class="n">nA</span> <span class="o">=</span> <span class="n">nA</span> <span class="o">-</span> <span class="mi">1</span>                               <span class="c1"># reduce by 1 molecule</span>
+        <span class="n">Acount</span><span class="p">[</span><span class="n">indx</span><span class="p">]</span> <span class="o">=</span> <span class="n">nA</span>                         <span class="c1"># save value</span>
+        <span class="k">pass</span>
+    <span class="k">pass</span>
+
+<span class="c1">#print( Acount[0] )</span>
+<span class="c1">#plt.scatter(dtime,Acount,color=&#39;blue&#39;,s=3)  # remove first symbols # to see plots</span>
+<span class="c1">#plt.yscale(&#39;log&#39;)</span>
+<span class="c1">#plt.ylim([1,2*A0])</span>
+<span class="c1">#plt.ylabel(&#39;count&#39;)</span>
+<span class="c1">#plt.xlabel(&#39;time /ns&#39;)</span>
+<span class="c1">#plt.tight_layout()</span>
+
+<span class="c1">#plt.show()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><img alt="Drawing" src="_build_/jupyter_execute/chapter-12/monte-carlo-fig5.png" /></p>
+<p>Figure 5. A calculated decay with <span class="math notranslate nohighlight">\(k_f = 1/20 \mathrm{ns}^{-1}\)</span> and a line from the analytical equation, also with the same lifetime to show that the Monte Carlo result is the same, within error. The ‘drop-outs’ at long times appear as missing data points.</p>
+<hr class="docutils" />
+<p>The result of a calculation is plotted in Figure 5; the line through the data is an exponential with a <span class="math notranslate nohighlight">\(\tau = 20\)</span> ns lifetime; <span class="math notranslate nohighlight">\(e^{-t/\tau}\)</span>. The ‘drop-outs’ in the data at long times (<span class="math notranslate nohighlight">\(\gt 100\)</span> ns) are due to there being too few simulations to fill properly all the time bins and are distinctly un-physical. They are most apparent in a log plot, but in this case only produce a small error that is hardly noticeable on a linear plot, and are an inevitable part of the method; if more time points are used then the drop-outs become more frequent. As they are so noticeable, and clearly unphysical, they can be ignored, if desired. However, they should really be eliminated by starting with more molecules; the only penalty is a longer calculation.</p>
+<p>At intermediate times, the limited number of events simulated is also seen as noise on the data, but it is clear that the simulated data is a good match with the theoretical line over about a thousand-fold range of counts. An improved calculation could be made, by starting with a larger initial number or averaging together several single calculations such as this one. The noise on this data is completely different to what would be observed experimentally and to that on Fig. 12.16, which is the result of a simulation of the process.</p>
+<p>As a second example, suppose an excited state of a molecule reacts as shown in Figure 6. The excited state decays to the triplet state by intersystem crossing and by fluorescence, to the ground state. The triplet is assumed to have a very long lifetime, so does not convert to the ground state during the time considered in this calculation. The rate constants are <span class="math notranslate nohighlight">\(k_{isc}\)</span> to the triplet and <span class="math notranslate nohighlight">\(k_f\)</span> to the ground state. The population of all three states involved will be calculated. The decay of the excited state is <span class="math notranslate nohighlight">\(\tau = 1/(k_f + k_{isc})\)</span> and this is the lifetime with which the triplet is formed and also that with which the ground state is formed; equivalently the rate constant is <span class="math notranslate nohighlight">\(k_1 = k_f + k_{isc}\)</span>. In fact, only two states need be calculated as the total number of all molecules is a constant number, but all state populations will be calculated by way of illustration.</p>
+<p>If the triplet or ground state populations are needed, then one molecule is added each time to these populations; initially these are zero. The chance (probability) of going to the triplet is the fraction or yield</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \varphi_T=k_{isc}/(k_f + k_{isc})\]</div>
+<p>and the chance of fluorescing and so returning to the ground state, is the fluorescence yield</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \varphi_f = k_f /(k_f + k_{isc})\]</div>
+<p>The sum of these yields is one. Which state the molecule ends up in is determined by casting a die in the form of a uniform random number in the range <span class="math notranslate nohighlight">\(0 \to 1\)</span>. If it is in the range zero to <span class="math notranslate nohighlight">\(\varphi_T\)</span> the triplet is produced; if not, the ground state results and the molecule has fluoresced.</p>
+<p>The calculation is shown below and is only slightly modified from that of the last example. The fluorescence rate constant is 1/(20 ns), and the intersystem crossing rate constant <span class="math notranslate nohighlight">\(1/(10\)</span> ns) makes the fluorescence yield <span class="math notranslate nohighlight">\(1/3\)</span>, so that <span class="math notranslate nohighlight">\(2/3\)</span> goes to the triplet. The prefix T is used for the triplet, such as Tcount or nT for number of triplets, G for ground state, and A the excited state. As before, a check is made in the ‘while..do’ statement to prevent the population of any state becoming negative. The triplet and ground state cannot become zero, because +1 is always added to their populations. The data is placed into <span class="math notranslate nohighlight">\(200\)</span> bins and is calculated for a total time of <span class="math notranslate nohighlight">\(100\)</span> ns with <span class="math notranslate nohighlight">\(20000\)</span> molecules, initially in the excited state. The units of nanoseconds (ns), need not be explicitly included if we work in these units.</p>
+<p><img alt="Drawing" src="_build_/jupyter_execute/chapter-12/monte-carlo-fig6.png" /></p>
+<p>Figure 6. Excited state pathways.</p>
+<hr class="docutils" />
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#  Algorithm: Gillespie method. </span>
+<span class="c1">#   Excited state decay to triplet and ground state. A* -&gt;G  kf , A* -&gt; T kisc</span>
+
+<span class="n">A0</span>   <span class="o">=</span> <span class="mi">20000</span>                        <span class="c1"># initial number A*</span>
+<span class="n">bins</span> <span class="o">=</span> <span class="mi">200</span>
+<span class="n">maxt</span> <span class="o">=</span> <span class="mf">100.0</span>                        <span class="c1"># time in ns</span>
+<span class="n">kf</span>   <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="mf">20.0</span>                       <span class="c1"># rate constant ns^(-1)</span>
+<span class="n">kisc</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="mf">10.0</span>
+
+<span class="n">k1</span> <span class="o">=</span> <span class="n">kf</span> <span class="o">+</span> <span class="n">kisc</span>
+<span class="n">phi</span><span class="o">=</span> <span class="n">kf</span><span class="o">/</span><span class="n">k1</span>                          <span class="c1"># fluorescence yield </span>
+
+<span class="n">Acount</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">bins</span><span class="p">,</span><span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>   <span class="c1"># arrays to save data</span>
+<span class="n">Tcount</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">bins</span><span class="p">,</span><span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>
+<span class="n">Gcount</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">bins</span><span class="p">,</span><span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>
+<span class="n">dtime</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">bins</span><span class="p">,</span><span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">bins</span><span class="p">):</span>               <span class="c1"># work out time bins</span>
+    <span class="n">dtime</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span> <span class="n">maxt</span><span class="o">*</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="n">bins</span>
+
+<span class="n">G0</span> <span class="o">=</span> <span class="mi">0</span>                              <span class="c1"># initial values ground state G</span>
+<span class="n">T0</span> <span class="o">=</span> <span class="mi">0</span>                              <span class="c1"># initial triplet</span>
+<span class="n">nA</span> <span class="o">=</span> <span class="n">A0</span>                             <span class="c1"># initial excited state</span>
+<span class="n">nG</span> <span class="o">=</span> <span class="n">G0</span>
+<span class="n">nT</span> <span class="o">=</span> <span class="n">T0</span>
+<span class="n">t</span>  <span class="o">=</span> <span class="mf">0.0</span>                            <span class="c1"># initial time</span>
+<span class="n">Acount</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">nA</span>
+<span class="n">Tcount</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">Gcount</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="n">indx</span> <span class="o">=</span> <span class="mi">0</span>                            <span class="c1"># index refers to histogram bin number</span>
+<span class="k">while</span> <span class="n">indx</span> <span class="o">&lt;</span> <span class="n">bins</span> <span class="ow">and</span> <span class="n">nA</span> <span class="o">&gt;</span> <span class="mi">0</span>  <span class="p">:</span>
+    <span class="n">a0</span> <span class="o">=</span> <span class="n">k1</span><span class="o">*</span><span class="n">nA</span>
+    <span class="n">t0</span> <span class="o">=</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random_sample</span><span class="p">())</span><span class="o">/</span><span class="n">a0</span>         <span class="c1"># guess new time eqn 11</span>
+    <span class="n">t</span>  <span class="o">=</span> <span class="n">t</span> <span class="o">+</span> <span class="n">t0</span>
+    <span class="n">indx</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">t</span><span class="o">*</span><span class="n">bins</span><span class="o">/</span><span class="n">maxt</span><span class="p">))</span>                  <span class="c1"># integer time bin </span>
+    <span class="k">if</span> <span class="n">indx</span> <span class="o">&lt;</span> <span class="n">bins</span><span class="p">:</span> 
+        <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random_sample</span><span class="p">()</span> <span class="o">&lt;</span> <span class="n">phi</span> <span class="p">:</span>           <span class="c1"># check what happens</span>
+            <span class="n">nG</span> <span class="o">=</span> <span class="n">nG</span> <span class="o">+</span> <span class="mi">1</span>                                <span class="c1"># ground state produced add 1</span>
+            <span class="n">Gcount</span><span class="p">[</span><span class="n">indx</span><span class="p">]</span> <span class="o">=</span> <span class="n">nG</span>
+        <span class="k">else</span> <span class="p">:</span>
+            <span class="n">nT</span> <span class="o">=</span> <span class="n">nT</span> <span class="o">+</span> <span class="mi">1</span>                                <span class="c1"># triplet produced add 1</span>
+            <span class="n">Tcount</span><span class="p">[</span><span class="n">indx</span><span class="p">]</span> <span class="o">=</span> <span class="n">nT</span>
+            <span class="k">pass</span>
+        <span class="n">nA</span> <span class="o">=</span> <span class="n">nA</span> <span class="o">-</span> <span class="mi">1</span>                                    <span class="c1"># remove 1 from excited state            </span>
+        <span class="n">Acount</span><span class="p">[</span><span class="n">indx</span><span class="p">]</span> <span class="o">=</span> <span class="n">nA</span>
+        <span class="k">pass</span>
+    <span class="k">pass</span>
+
+<span class="c1">## plot data etc.</span>
+<span class="c1">#plt.plot(dtime,Acount)</span>
+<span class="c1">#plt.plot(dtime,Gcount)</span>
+<span class="c1">#plt.plot(dtime,Tcount)</span>
+<span class="c1">#plt.show()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The results are shown in Figure 7, together with the analytic solution because these equations can be solved analytically. The triplet population increases as</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle [T]=A_0(1 - \varphi_f)(1 - e^{-k_1t})\]</div>
+<p>and that of the ground state similarly increases and matches that of the decay of the singlet <span class="math notranslate nohighlight">\(A_0e^{-k_1t}\)</span> but in proportion to the amount entering each state; 2/3 goes to the triplet. The analytic curves are also shown in Figure 7, and they match exactly, except for the ‘drop-outs’ at long times. Fewer drop-outs would be present with a larger initial number of molecules.</p>
+<p><img alt="Drawing" src="_build_/jupyter_execute/chapter-12/monte-carlo-fig7.png" /></p>
+<p>Figure 7. Monte Carlo simulation of the decay of an excited state and the appearance of triplet and ground state (circles) together with theoretical curves (dashed lines). The gaps (drop-outs) in the Monte Carlo data occur because of the limited number of trials; 20000 in this example.</p>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./_build_/jupyter_execute/chapter-12"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Godfrey Beddard<br/>
+        
+            &copy; Copyright 2022.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

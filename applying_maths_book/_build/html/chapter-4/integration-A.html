@@ -1,0 +1,1934 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Integration basics &#8212; Applying Maths in the Chemical &amp; Biomolecular Sciences</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Questions 1-14" href="integration-Q1-14.html" />
+    <link rel="prev" title="4. Integration." href="integration-intro.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/book-cover.jpg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Applying Maths in the Chemical & Biomolecular Sciences</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Applying Maths in the Chemical and Biomolecular Sciences.
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-1/chapter1-intro.html">
+   1. Numbers, Equations, Operators, and Algorithms.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-A.html">
+     Numbers to Algorithms.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-Q1-7.html">
+     Questions 1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-B.html">
+     Trig, hyperbolic and inverse functions, waves, polar coordinates &amp; factorials
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-Q8-16.html">
+     Questions 8 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-C.html">
+     Sophisticated Counting.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-Q17-34.html">
+     Questions 17 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-D.html">
+     Modulo arithmetic,
+     <span class="math notranslate nohighlight">
+      \(\delta\)
+     </span>
+     functions, types of  series &amp;  estimating quantities
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-Q35-39.html">
+     Questions 35 - 39
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-answers-1-7.html">
+     Solutions Q1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-answers-8-16.html">
+     Solutions Q8 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-answers-17-34.html">
+     Solutions Q17 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-answers-35-39.html">
+     Solutions Q35 - 39
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-2/chapter2-intro.html">
+   2. Complex numbers.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2/chapter2-A.html">
+     Real, imaginary, conjugate and modulus
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2/chapter2-Q-1-9.html">
+     Questions 1 - 9
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2/chapter2-B.html">
+     De Moivre’s theorem and integer powers of complex numbers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2/chapter2-Q-10-13.html">
+     Questions 10 -13
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2/chapter2-C.html">
+     Euler’s theorem
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2/chapter2-Q-14-27.html">
+     Questions 14 - 27
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2/chapter2-answers.html">
+     Solutions Q1 - 27
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-3/differen-intro.html">
+   3. Differentiation.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-A.html">
+     Differentiation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-B.html">
+     Trig functions, logs, power, reciprocals and integrals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-C-Q-4-11.html">
+     Questions 1-11
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-D.html">
+     Product rule and function of function or chain rule.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-E-Q-12-42.html">
+     Questions 12-42
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-F.html">
+     Limits, l’Hopital’s rule, Maximum, Minimum and Calculus of Variations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-G-Q-43-73.html">
+     Questions 43 - 73
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-H.html">
+     Numerically finding the roots of an equation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-I-Q-74-85.html">
+     Questions 74 - 85
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-J.html">
+     Minimizing or maximizing with constraints: Lagrange Undetermined Multipliers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-K-Q-86-92.html">
+     Questions 86 - 92
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-L.html">
+     Partial differentiation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-M-Q-93-114.html">
+     Questions 93-114
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-M1.html">
+     Differentiation of vectors
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-N-answers-1-11.html">
+     Solutions Q 1-11
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-O-answers-12-42.html">
+     Solutions Q 12-42
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-P-answers-43-73.html">
+     Solutions Q 43 - 73
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-Q-answers-74-85.html">
+     Solutions Q 74 - 85
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-R-answers-86-92.html">
+     Solutions Q 86 - 94
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-S-answers-93-114.html">
+     Solutions Q 93-114
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="integration-intro.html">
+   4. Integration.
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Integration basics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="integration-Q1-14.html">
+     Questions 1-14
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="integration-B.html">
+     Integration by substitution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="integration-Q15-30.html">
+     Questions 15-30
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="integration-C.html">
+     Using parametric equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="integration-Q31-48.html">
+     Questions 31 - 48
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="integration-D.html">
+     Calculating an Average Value.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="integration-Q49-72.html">
+     Questions 49 - 72
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="integration-E.html">
+     The Variational Method in Quantum Mechanics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="integration-Q73-77.html">
+     Questions 73 - 77
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="integration-F.html">
+     Multiple integrals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="integration-Q78-86.html">
+     Questions 78 - 86
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="integration-G.html">
+     Calculating the energy of a chemical bond using molecular orbitals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="integration-H.html">
+     Line integrals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="integration-Q87-96.html">
+     Questions 87 - 96
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="integration-answers-1-14.html">
+     Solutions Q1 - 14
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="integration-answers-15-30.html">
+     Solutions Q15 - 30
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="integration-answers-31-48.html">
+     Solutions Q31 - 48
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="integration-answers-49-72.html">
+     Solutions Q49 - 72
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="integration-answers-73-96.html">
+     Solutions Q73 - 96
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-5/chapter-5-intro.html">
+   5. Summations, Series and expansion of Functions.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-A.html">
+     Series, averages, partition functions, DNA melting, atom entropy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-B-Q1-13.html">
+     Questions 1 - 13
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-E.html">
+     Maclaurin and Taylor series expansions. Paramagnetic spins. Euler-Maclaurin formula.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-F-Q14-34.html">
+     Questions 14 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-G-Q35-44.html">
+     Questions 35 - 44
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-perturbation-A.html">
+     Perturbation Theory
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-perturbation-B-Q45-48.html">
+     Questions 45 - 48
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-perturbation-C.html">
+     Quantum superposition and wavepackets.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-perturbation-D-Q49-52.html">
+     Questions 49 - 52
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-answers-1-7.html">
+     Solutions Q 1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-answers-8-13.html">
+     Solutions Q8 - 13
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-answers-14-26.html">
+     Solutions Q 14 - 26
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-answers-27-32.html">
+     Solutions Q27 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-answers-33-44.html">
+     Solutions Q33 - 44
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-answers-45-52.html">
+     Solutions Q45 - 52
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-6/vectors-intro.html">
+   6. Vectors.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-A.html">
+     Vector basics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-Q1-24.html">
+     Questions 1 - 24
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-B.html">
+     Projections and components
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-Q25-32.html">
+     Questions 25 - 32
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-C.html">
+     Axes need not be right-angled or of equal length
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-Q33-38.html">
+     Questions 33 - 38
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-D.html">
+     Basis sets with more than three dimensions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-Q39-46.html">
+     Questions 39 - 46
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-E.html">
+     Cross product or vector product
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-Q47-52.html">
+     Questions 47 - 52
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-F.html">
+     Torsion or dihedral angles
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-Q53-48.html">
+     Questions 53 - 48
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-G.html">
+     Torque and angular momentum
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-Q59-61.html">
+     Questions 59 - 61
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-answers-Q1-24.html">
+     Solutions Q1 - 24
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-answers-Q25-32.html">
+     Solutions Q25 - 32
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-answers-Q33-38.html">
+     Solutions Q33 - 38
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-answers-Q39-46.html">
+     Solutions Q39 - 46
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-answers-Q47-52.html">
+     Solutions Q47 - 52
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-answers-Q53-61.html">
+     Solutions Q53 - 61
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-7/matrices-intro.html">
+   7. Matrices
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-A.html">
+     Determinants
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q1-10.html">
+     Questions  1 - 10
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-B.html">
+     Matrices
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q11-16.html">
+     Questions  11 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-C.html">
+     Molecular Group Theory
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q17-30.html">
+     Questions  17 - 30
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-D.html">
+     Rotation matrices: moving molecules
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q31-34.html">
+     Questions 31 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-E.html">
+     Matrices in optics and designing laser cavities
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q35-39.html">
+     Questions 35 - 39
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-F.html">
+     Polarizing optics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q40-44.html">
+     Questions 40 - 44
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-G.html">
+     Solving equations using matrices. Eigenvectors &amp; Eigenvalues.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q45-50.html">
+     Questions 45 - 50
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-H.html">
+     Rate equations and Chemical Kinetics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q51-54.html">
+     Questions 51 - 54
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-I.html">
+     Molecular vibrations and pendulums
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q55-58.html">
+     Questions 55 - 58
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-J.html">
+     Moments of Inertia
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q59-60.html">
+     Questions 59 - 62
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-K.html">
+     Calculating a bond length using moments of inertia
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q61.html">
+     Question 61
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-L.html">
+     Principal axes for Moments of Inertia
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q62.html">
+     Question 62
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-answersQ1-10.html">
+     Solutions Q1 - 10
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-answersQ11-16.html">
+     Solutions Q11 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-answersQ17-30.html">
+     Solutions Q17 - 30
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-answersQ31-34.html">
+     Solutions Q31 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-answersQ35-39.html">
+     Solutions Q35 - 39
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-answersQ40-44.html">
+     Solutions Q40 - 44
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-answersQ45-50.html">
+     Solutions Q45 - 50
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-answersQ51-54.html">
+     Solutions Q51 - 54
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-answersQ55-58.html">
+     Solutions Q55 - 58
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-answersQ59-61.html">
+     Solutions Q59 - 61
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-8/matricesQM-intro.html">
+   8. Matrices in Quantum Mechanics
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-8/matricesQM-A.html">
+     Matrices in Quantum Mechanics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-8/matricesQM-Q1-7.html">
+     Questions 1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-8/matricesQM-B.html">
+     Basis sets and bra-ket algebra
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-8/matricesQM-Q8-12.html">
+     Questions 8 - 12
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-8/matricesQM-C.html">
+     Continuous basis sets
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-8/matricesQM-answers1-7.html">
+     Solutions Q1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-8/matricesQM-answers8-12.html">
+     Solutions Q8 - 12
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-9/Fourier-intro.html">
+   9. Fourier Series and Transforms.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-A-B.html">
+     Fourier series, Gibbs phenomenon, generalised series.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-questions-1-6.html">
+     Questions 1 - 6
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-C.html">
+     Fourier Transforms
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-questions-7-15.html">
+     Questions 7 - 15
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-D.html">
+     Convolution and Autocorrelation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-questions-16-21.html">
+     Questions 16 - 21
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-E.html">
+     Discrete Fourier  (DFT)  and Fast Fourier transforms (FFT)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-F.html">
+     The Hadamard Transform: Encoding and Decoding
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-answers-1-6.html">
+     Solutions Q 1 - 6
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-answers-7-15.html">
+     Solutions Q 7 - 15
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-answers-16-21.html">
+     Solutions Q 16 - 21
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-2D-Diffraction.html">
+     The Fourier transform in two dimensions: images and x-ray Diffraction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-tomography.html">
+     Computed Tomography
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-10/Diff-eqns-intro.html">
+   10. Differential Equations.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-A.html">
+     Differential Equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-Q1-23.html">
+     Questions 1 - 23
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-B.html">
+     First order eqns &amp; Integrating factors. Second order eqns, Newtons laws, equations of motion.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-C.html">
+     The ‘D’ operator.  Solving linear differential equations with constant coefficients
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-D.html">
+     Simultaneous equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-Q24-37.html">
+     Questions 24 - 37
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-E.html">
+     Linear equations with variable coefficients
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-F.html">
+     Partial Differential Equations, PDE
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-G.html">
+     PDE examples continued
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-answers-1-21.html">
+     Solutions Q1 - 21
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-answers-22-37.html">
+     Solutions Q22 - 37
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-11/num-methods-intro.html">
+   11. Numerical Methods
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-A.html">
+     Numerical Methods
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-Q1-7.html">
+     Questions 1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-B.html">
+     Numerical solution of differential equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-Q8-12.html">
+     Questions 8 - 12
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-C.html">
+     Coupled equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-Q13-16.html">
+     Questions 13 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-D.html">
+     The phase plane, nullclines, and stable points
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-Q17-20.html">
+     Questions 17 - 20
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-E.html">
+     Reaction schemes with feedback
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-Q21-34.html">
+     Questions 21 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-F.html">
+     Boundary value problems.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-Q35-40.html">
+     Questions 35 - 40
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-answers1-7.html">
+     Solutions Q1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-answers8-12.html">
+     Solutions Q8 - 12
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-answers13-16.html">
+     Solutions Q13 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-answers17-20.html">
+     Solutions Q17 - 20
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-answers21-34.html">
+     Solutions Q21 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-answers35-40.html">
+     Solutions Q35 - 40
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-12/monte-carlo-intro.html">
+   12. Monte Carlo Methods
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+  <label for="toctree-checkbox-12">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-A.html">
+     Monte - Carlo Methods
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-Q1-6.html">
+     Questions 1 - 6
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-B.html">
+     Solving rate equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-Q7-10.html">
+     Questions 7 - 10
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-CC.html">
+     Monte Carlo Simulations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-C.html">
+     Energy transfer. Autocatalytic reaction and spreading of fires
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-Q11-17.html">
+     Questions 11 - 17
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-D.html">
+     The Metropolis algorithm
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-answers1-6.html">
+     Solutions Q1 - 6
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-answers7-10.html">
+     Solutions Q7 - 10
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-answers11-17.html">
+     Solutions Q11 - 17
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-13/analysis-intro.html">
+   13. Data Analysis
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+  <label for="toctree-checkbox-13">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-13/analysis-A.html">
+     Characterizing experimental data. Accuracy, precision, mean and standard deviation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-13/analysis-Q1-3.html">
+     Questions 1 - 3
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-13/analysis-B.html">
+     Modelling data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-13/analysis-Q4-9.html">
+     Questions 4 - 9
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-13/analysis-C.html">
+     Modelling data is simpler using matrices
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-13/analysis-Q10-11.html">
+     Questions 10 - 13
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-13/analysis-D.html">
+     Non-linear least squares. Least absolute deviation. Principal component analysis
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-13/analysis-answers1-11.html">
+     Solutions Q1 -11
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../chapter-1/chapter1-E.html">
+   SI units, Rounding, converting units &amp; Glossary.
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../references/References.html">
+   References
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../references/Python%20crib.html">
+   Appendix:  Some basic Python instructions with a few examples.
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/chapter-4/integration-A.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/chapter-4/integration-A.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#basic-concepts">
+   1 Basic concepts
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-note-on-notation">
+   1.1 A note on notation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#indefinite-and-definite-integrals">
+   1.2 Indefinite and Definite Integrals
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#work-done-by-gas">
+     <strong>
+      Work done by gas
+     </strong>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#changing-limits-odd-and-even-functions">
+   1.3 Changing limits, odd and even functions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#summary">
+   Summary
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#differential-equations">
+   1.4 Differential equations
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#mechanics-of-integration">
+   2 Mechanics of integration
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#powers-of-x-but-not-x-1">
+   2.1 Powers of
+   <span class="math notranslate nohighlight">
+    \(x\)
+   </span>
+   , but not
+   <span class="math notranslate nohighlight">
+    \(x^{-1}\)
+   </span>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#int-dx-int-d-ln-x-and-similar-expressions">
+   2.2
+   <span class="math notranslate nohighlight">
+    \(\int dx\)
+   </span>
+   ,
+   <span class="math notranslate nohighlight">
+    \(\int d\ln(x)\)
+   </span>
+   and similar expressions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#integrating-1-x-and-1-ax-b-produces-a-logarithm">
+   2.3 Integrating
+   <span class="math notranslate nohighlight">
+    \(1/x\)
+   </span>
+   and
+   <span class="math notranslate nohighlight">
+    \(1/(ax+b)\)
+   </span>
+   produces a logarithm
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#reaction-on-a-surface">
+     Reaction on a surface
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#partial-fractions">
+   2.4 Partial fractions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exponentials">
+   2.5 Exponentials
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sine-cosine-and-tangent">
+   2.6 Sine, cosine, and tangent
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exponential-form-of-trig-functions">
+   2.7 Exponential form of trig functions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#mean-value-theorem-for-integrals">
+   2.8 Mean value theorem for integrals
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#non-integrability">
+   2.9 Non-integrability
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#improper-and-undefined-integrals">
+   2.10 Improper and undefined integrals
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#integrals-with-infinite-limits">
+   2.11 Integrals with infinite limits
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#discontinuities">
+   2.12 Discontinuities
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-few-common-integrals-using-sympy">
+   2.13 A few common integrals using SymPy
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#table-of-integrals">
+   2.14 Table of integrals
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="integration-basics">
+<h1>Integration basics<a class="headerlink" href="#integration-basics" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import all python add-ons etc that will be needed later on</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="n">init_printing</span><span class="p">()</span>                      <span class="c1"># allows printing of SymPy results in typeset maths format</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;font.size&#39;</span><span class="p">:</span> <span class="mi">16</span><span class="p">})</span>  <span class="c1"># set font size for plots</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="basic-concepts">
+<h2>1 Basic concepts<a class="headerlink" href="#basic-concepts" title="Permalink to this headline">¶</a></h2>
+<p>Broadly speaking, integration is used to calculate the amount of some quantity. This might be the total concentration of a chemical product produced up to a certain time, the total amount of work done by a gas when expanding or that done in moving an object against gravity. Consider, for example, calculating the amount of oxygen in a tall column of still air. This is not simply the volume of the column times the gas density because gravity increases the O<span class="math notranslate nohighlight">\(_2\)</span> concentration close to ground level. To calculate the total amount of O<span class="math notranslate nohighlight">\(_2\)</span>, the change in density has to be allowed for by integrating from the ground upwards, which means knowing how the density varies with altitude. Bearing in mind that integration will give us the total amount of O<span class="math notranslate nohighlight">\(_2\)</span>, the obvious way would be to take the column and divide it into many thin horizontal slabs, work out the amount of O<span class="math notranslate nohighlight">\(_2\)</span> in each, and add them all up. The integral is the result that would be obtained when the slabs are made infinitesimally thin and, as with differentiation, the change is from a finite amount to an infinitesimal one, <span class="math notranslate nohighlight">\(\Delta x \to dx\)</span>. When this change is made the summation becomes an integral.</p>
+<p>Now consider a general curve described by some function <span class="math notranslate nohighlight">\(f(x)\)</span>, and further suppose that it can be integrated because not all functions can be. Imagine splitting the area under a graph of <span class="math notranslate nohighlight">\(f(x)\)</span> into <span class="math notranslate nohighlight">\(n\)</span> small rectangles over the range <span class="math notranslate nohighlight">\(x = a\)</span> to <span class="math notranslate nohighlight">\(x = b\)</span> some of which are shown in the sketch, Figure 1, where there are only four rectangles. The purpose of doing this is to find the total area under the curve as accurately as possible. The total area of all the rectangles is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle  A_{approx} = f(s_1)\Delta x_1 + f(s_2)\Delta x_2 + f(s_3)\Delta x_3 + f(s_4)\Delta x_4 =\sum_{i=1}^n f(s_1)\Delta x_i\]</div>
+<p>and the value of the function at position <span class="math notranslate nohighlight">\(s_1\)</span> is <span class="math notranslate nohighlight">\(f(s_1)\)</span> and so forth. You can see that the rectangles only very approximately follow the curve since only four are used and a poor approximation to the area under the curve is obtained.</p>
+<p>To increase the accuracy of the calculation, it is obvious that the rectangles have to be made narrower and more of them have to be used. When <span class="math notranslate nohighlight">\(\Delta x_i\)</span> is made infinitesimally small, in the limit <span class="math notranslate nohighlight">\(\Delta x \to 0\)</span> and <span class="math notranslate nohighlight">\(n \to \infty\)</span>, the summation <span class="math notranslate nohighlight">\(A_{approx}\)</span>, still over the range <span class="math notranslate nohighlight">\(a\)</span> to <span class="math notranslate nohighlight">\(b\)</span>, becomes the <em>definite</em> integral</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle A=\int_a^b f(x)dx\]</div>
+<p>which is, without approximation, exactly the area under the curve of <span class="math notranslate nohighlight">\(f(x)\)</span> from an <span class="math notranslate nohighlight">\(x\)</span> value of <span class="math notranslate nohighlight">\(a\)</span> to that at <span class="math notranslate nohighlight">\(b\)</span>. The integration range <span class="math notranslate nohighlight">\(a \to b\)</span> is often called the closed interval <span class="math notranslate nohighlight">\(a\)</span> to <span class="math notranslate nohighlight">\(b\)</span> and the definite integral is sometimes called the Riemann integral. The area under the curve <span class="math notranslate nohighlight">\(f(x)\)</span> is calculated even though the function depends only on <span class="math notranslate nohighlight">\(x\)</span>, and this is because <span class="math notranslate nohighlight">\(f(x)dx\)</span> is dimensionally the height <span class="math notranslate nohighlight">\(f(x)\)</span> times the width <span class="math notranslate nohighlight">\(dx\)</span>. In a general sense, integration increases the dimension of the calculation: a point to a line, a line to an area, an area to volume and so forth.</p>
+<p>Often, the curve falls entirely below the x-axis and integration will produce a negative result. Mathematically, there is nothing wrong with a negative area but sometimes this may present a problem in imagining the integration as an area belonging to something physical; however, work and energy can be positive or negative, so the context is all important in interpreting what the integration means. A result should be checked against intuition, by asking the question: ‘am I expecting a positive or a negative result?’ You might also want to ask ‘is the result going to be large or small?’.</p>
+<p><img alt="Drawing" src="../_images/integration-fig1.png" /></p>
+<p>Figure 1. Pictorial representation of the integral as area under a curve shown as a very approximate evaluation of an integral as the sum of a set of narrow rectangles. The width of each rectangle is made to approach zero, and their number increased to infinity, when the integration is performed.</p>
+</div>
+<div class="section" id="a-note-on-notation">
+<h2>1.1 A note on notation<a class="headerlink" href="#a-note-on-notation" title="Permalink to this headline">¶</a></h2>
+<p>The integration operation be written either as <span class="math notranslate nohighlight">\(\int f(x)dx\)</span> or <span class="math notranslate nohighlight">\(\int dx f(x)\)</span>. The latter is often used in physics texts particularly when <span class="math notranslate nohighlight">\(f(x)\)</span> is a long and complex expression. In this case the integration is always assumed to extend over the function immediately following <span class="math notranslate nohighlight">\(dx\)</span>. As an aside, the symbol <span class="math notranslate nohighlight">\(\int\)</span> was first introduced by Leibniz (1646 - 1716) is the stylized <span class="math notranslate nohighlight">\(S\)</span> from the Latin word <em>summa</em>, reminding us that integration and summation are intimately linked. Leibniz named the integral calculus, calculus <em>summatorius</em>. An integral is also sometimes called an anti-derivative.</p>
+</div>
+<div class="section" id="indefinite-and-definite-integrals">
+<h2>1.2 Indefinite and Definite Integrals<a class="headerlink" href="#indefinite-and-definite-integrals" title="Permalink to this headline">¶</a></h2>
+<p>Integrating a function, <span class="math notranslate nohighlight">\(f(x)\)</span>, called the <em>integrand</em>, produces a new function <span class="math notranslate nohighlight">\(g(x)\)</span>, the <em>integral</em>, when the integration operator <span class="math notranslate nohighlight">\(\int \cdots dx\)</span> is used; the notation is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle  \int f(x)dx = g(x) + constant. \tag{1}\]</div>
+<p>This result is an <em>indefinite integral</em> and a constant is always added to the answer because the starting and ending values of <span class="math notranslate nohighlight">\(x\)</span> were not defined. You can see from figure 2 that the result of integration is going to be different depending on where the integration starts and ends. The constant effectively allows this to be determined later. Recall that differentiating a constant produces zero, and therefore differentiating <span class="math notranslate nohighlight">\((g(x) + constant)\)</span> reproduces <span class="math notranslate nohighlight">\(f(x)\)</span> no matter what value the constant has, i.e. the constant is arbitrary, therefore</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{d}{dx}\left(\int f(x)dx \right)= \frac{d}{dx}\left(g(x)+const\right)=f(x)\]</div>
+<p>The integration symbol <span class="math notranslate nohighlight">\(\int\)</span> of equation 1 has no upper and lower limits on it, and this indicates that it is an <em>indefinite integral</em>. When the limits are added to an integration a definite integral results, and this is a number independent of the variable <span class="math notranslate nohighlight">\(x\)</span>, provided that the chosen limits <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> are not functions that themselves contain <span class="math notranslate nohighlight">\(x\)</span>;</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \int_a^b f(x)dx = g(x) \bigg|_a^b = g(b)-g(a)  \tag{2}\]</div>
+<p>The symbol <span class="math notranslate nohighlight">\( \bigg|_a^b\)</span> is the substitution symbol. Because neither <span class="math notranslate nohighlight">\(g(b)\)</span> nor <span class="math notranslate nohighlight">\(g(a)\)</span> are functions of <span class="math notranslate nohighlight">\(x\)</span>, <span class="math notranslate nohighlight">\(g(b) - g(a)\)</span> is a <em>number</em> and differentiating the result with respect to <span class="math notranslate nohighlight">\(x\)</span> would produce zero. The definite integral, equation 2, is sometimes called the <em>fundamental theorem of calculus</em>.</p>
+<p><img alt="Drawing" src="../_images/integration-fig2-3.png" /></p>
+<p>Figure 2 left, and 3 right. Left. The integral of <span class="math notranslate nohighlight">\(x^2\)</span> from <span class="math notranslate nohighlight">\(1 \to 4\)</span>, changing the limits changes the value of the integral. Right, integration limits <span class="math notranslate nohighlight">\(a, \, b \)</span> and <span class="math notranslate nohighlight">\(s\)</span>.</p>
+<hr class="docutils" />
+<div class="section" id="work-done-by-gas">
+<h3><strong>Work done by gas</strong><a class="headerlink" href="#work-done-by-gas" title="Permalink to this headline">¶</a></h3>
+<p>An example met early on in studying thermodynamics is to calculate the work <span class="math notranslate nohighlight">\(w\)</span> done on an ideal gas, as its volume changes. Work is force <span class="math notranslate nohighlight">\(\times\)</span> distance moved, pressure is force divided by area, so work is also the pressure <span class="math notranslate nohighlight">\(\times\)</span> change in volume. To account for a series of infinitesimal volume changes, <span class="math notranslate nohighlight">\(dV\)</span>, made under reversible conditions, the quantity <span class="math notranslate nohighlight">\(pdV\)</span> must be integrated. The integral is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle W_{rev}=-\int pdV \]</div>
+<p>and, by convention, the negative sign indicates that work is done on the gas. As it stands, this integral cannot yet be solved because we need to know how <span class="math notranslate nohighlight">\(p\)</span> and <span class="math notranslate nohighlight">\(V\)</span> are related. The next step is to use the ideal gas law, <span class="math notranslate nohighlight">\(pV = nRT\)</span>, to make an integral in <span class="math notranslate nohighlight">\(V\)</span> alone, giving</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle W_{rev}=-nRT\int \frac{1}{V}dV \]</div>
+<p>This equation tells us that the work done on the gas is linearly proportional to the number of moles <span class="math notranslate nohighlight">\(n\)</span> present and to the gas constant <span class="math notranslate nohighlight">\(R\)</span> times the temperature <span class="math notranslate nohighlight">\(T\)</span>. It also tells us that the work is the area under the curve of <span class="math notranslate nohighlight">\(1/V\)</span> as <span class="math notranslate nohighlight">\(V\)</span> is changed. Assuming that we already know how to do the integration, which is explained below, the result is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle w_{rev} = -nRT \ln(V ) + const\]</div>
+<p>The constant appears because no upper or lower limit on the volume was defined and so the value of the constant is unknown. Mathematically this equation is fine as it stands, but to add real numbers the log has to be dimensionless, however, volume has dimensions of m<span class="math notranslate nohighlight">\(^3\)</span> therefore <span class="math notranslate nohighlight">\(V\)</span> in the equation is made dimensionless by  simply taking its numerical value. Doing this is not strictly correct but as the constant is arbitrary until some values are added, the equation is better rewritten as</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle w_{rev} = -nRT \ln(V/V_c)\]</div>
+<p>where the constant is now changed to <span class="math notranslate nohighlight">\(\ln(V_c)\)</span>. <span class="math notranslate nohighlight">\(V_c\)</span> still does not have a value, that will depend on the actual case being studied, but now has units of volume, which reminds us that the log is dimensionless.</p>
+<p>In the case where the gas is not ideal the pressure will be given by some other function. One such was devised by van der Waals and has the form</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle p=\frac{nRT}{\left(V-b\right)}- \frac{an^2}{V^2}\]</div>
+<p>where <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> are constants depending on the particular gas.</p>
+</div>
+</div>
+<div class="section" id="changing-limits-odd-and-even-functions">
+<h2>1.3 Changing limits, odd and even functions<a class="headerlink" href="#changing-limits-odd-and-even-functions" title="Permalink to this headline">¶</a></h2>
+<p>A definite integral is the difference in value of the integral calculated at the two limits,
+equation 2, and changing their the order clearly produces -1 times the result,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \int_a^b f(x)dx= -\int_b^a f(x)dx \]</div>
+<p>Furthermore, if there is a point <span class="math notranslate nohighlight">\(s\)</span> between limits <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> then the integral can be split into two continuous parts. Using common sense, it is not surprising that the total is the sum of the parts by thinking of the result of integration as an area. Suppose the limits range from <span class="math notranslate nohighlight">\(a\)</span> to <span class="math notranslate nohighlight">\(s\)</span> and then <span class="math notranslate nohighlight">\(s\)</span> to <span class="math notranslate nohighlight">\(b\)</span>, then</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \int_a^b f(x)dx= \int_a^s f(x)dx +\int_s^b f(x)dx \tag{3}\]</div>
+<p>which is shown in figure 3 above.</p>
+<p>When the limits are <span class="math notranslate nohighlight">\(\pm a\)</span> and 0 the relationship</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \int_{-a}^0 f(x)dx= \int_0^a f(-x)dx  \tag{4}\]</div>
+<p>is sometimes useful. Does this make sense? Try it on equation 2 to convince yourself.</p>
+<p>An integral with symmetrical limits <span class="math notranslate nohighlight">\(-a \to a\)</span> can be written in different forms</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle I=\int_{-a}^a f(x)dx =\int_{-a}^0 f(x)dx+\int_0^{a} f(x)dx = \int_0^a f(-x)dx + \int_0^a f(x)dx\]</div>
+<p>and this is also very useful in determining whether the integral is zero or not.</p>
+<p>An <em>odd</em> function has the property <span class="math notranslate nohighlight">\(f(-x) = -f(x)\)</span>, and when integrated about the symmetrical limits <span class="math notranslate nohighlight">\(-a \to +a\)</span> the integral will always be zero. An <em>even</em> function has the property <span class="math notranslate nohighlight">\(f(-x) = f(x)\)</span>; the integral from <span class="math notranslate nohighlight">\(-a \to +a\)</span> may perhaps be small but is not exactly zero. Determining whether integrals are zero or not is important in the study of quantum mechanics and spectroscopy. However, the part of Group Theory dealing with Point Groups has to be used to examine more complex functions than is apparent from simple ‘odd-even’ behaviour. An introduction is given in chapter 7 Matrices.</p>
+<p>The left graph, figure 4, shows an odd function, <span class="math notranslate nohighlight">\(x^3 - x\)</span>. There are many others; for example, <span class="math notranslate nohighlight">\(\sin(x)\)</span> over the range <span class="math notranslate nohighlight">\(\pi \to \pi\)</span>, where the area from zero to <span class="math notranslate nohighlight">\(-x\)</span> is equal but opposite to that from <span class="math notranslate nohighlight">\(0 \to x\)</span> making zero in total. The integral</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \int_{-a}^a (x^3-x)dx =\frac{x^4}{4}-\frac{x^2}{2}\bigg|_{-a}^a=0\]</div>
+<p>and this is because because <span class="math notranslate nohighlight">\(a^4 = (-a)^4\)</span> and <span class="math notranslate nohighlight">\(a^2 = (-a)^2\)</span>. The right-hand graph shows an even function where the area is not zero but negative.</p>
+<p><img alt="Drawing" src="../_images/integration-fig4.png" /></p>
+<p>Figure 4. left. An odd function <span class="math notranslate nohighlight">\(x^3-x\)</span>. The symmetrical range of the integration is shaded, <span class="math notranslate nohighlight">\(a=3/4\)</span> and the integral is zero. Right. The even function <span class="math notranslate nohighlight">\(x^4-x^2\)</span> where the integral is not zero but is negative.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<p><span class="math notranslate nohighlight">\(\qquad\)</span> If <span class="math notranslate nohighlight">\(\displaystyle I=\int_{-a}^a f(x)dx\)</span>, and <span class="math notranslate nohighlight">\(f(x)\)</span> is odd, <span class="math notranslate nohighlight">\(f(-x) = -f(x)\)</span> and <span class="math notranslate nohighlight">\(I = 0\)</span>,</p>
+<p><span class="math notranslate nohighlight">\(\qquad\)</span> however, if <span class="math notranslate nohighlight">\(f(x)\)</span> is even, <span class="math notranslate nohighlight">\(f(-x) = f(x)\)</span>, then <span class="math notranslate nohighlight">\(I \ne 0\)</span>.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="differential-equations">
+<h2>1.4 Differential equations<a class="headerlink" href="#differential-equations" title="Permalink to this headline">¶</a></h2>
+<p>Despite their name, differential equations are solved by integration. The first-order equation</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle  \frac{dc}{dt}=\pm kc\]</div>
+<p>is used to describe many phenomena. Depending on the sign, <span class="math notranslate nohighlight">\(\pm\)</span>, these include radioactive decay, the decay of excited states, growth of bacteria, first-order chemical reactions, solubility of solutes, concentration in a centrifuge, and change of atmospheric pressure with height.</p>
+<p>If <span class="math notranslate nohighlight">\(c\)</span> is a concentration, the equation tells us that the rate of change of the concentration of species <span class="math notranslate nohighlight">\(c\)</span> is proportional to the amount of <span class="math notranslate nohighlight">\(c\)</span> present (and so unreacted) at any time <span class="math notranslate nohighlight">\(t\)</span>. The constant of proportionality being is the rate constant <span class="math notranslate nohighlight">\(k\)</span>. If the sign is negative, this indicates that <span class="math notranslate nohighlight">\(c\)</span> is being lost and is forming another species that is not specified in the rate equation such as A <span class="math notranslate nohighlight">\(\to B\)</span> This differential equation is solved by separating out the two variables <span class="math notranslate nohighlight">\(c\)</span> and <span class="math notranslate nohighlight">\(t\)</span> and integrating each side separately:</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \int\frac{1}{c}dc=-k\int dt\]</div>
+<p>This example shows that the integration takes us from describing the rate of a process to the actual quantity, in this case, from the rate of change of <span class="math notranslate nohighlight">\(c\)</span> with time, to the amount of <span class="math notranslate nohighlight">\(c\)</span> at any time: <span class="math notranslate nohighlight">\(\ln(c) = -kt + const\)</span>. To make sure that the log is dimensionless, the equation can again be rewritten in an equivalent form as <span class="math notranslate nohighlight">\(\ln(c/c_0) = -kt\)</span>, where <span class="math notranslate nohighlight">\(c_0\)</span> is a constant equal to the amount of <span class="math notranslate nohighlight">\(c\)</span> present at <span class="math notranslate nohighlight">\(t = 0\)</span>. Solving differential equations is described in detail in Chapter 10.</p>
+<p>To show how integration can solve many chemical and physical problems is one aim of this chapter, but first, the mechanics of performing integration must be understood.</p>
+</div>
+<div class="section" id="mechanics-of-integration">
+<h2>2 Mechanics of integration<a class="headerlink" href="#mechanics-of-integration" title="Permalink to this headline">¶</a></h2>
+<p>Integration is often a trial and error process, and some experimenting with different options is necessary even when using the computer. Start by simplifying expressions, perhaps by using partial fractions, then look for standard formulas and standard methods such as integration by parts. If none are found suitable, substitutions can be tried, then standard forms and methods looked for again because only with these can an integration be found. If all else fails, numerical methods have to be used; see Chapter 11.</p>
+<p>The integration formulae for various functions can be derived in a similar way to that for differentiation by taking small values of <span class="math notranslate nohighlight">\(dx\)</span> and <span class="math notranslate nohighlight">\(dy\)</span> and then calculating <span class="math notranslate nohighlight">\(x + dx\)</span> and <span class="math notranslate nohighlight">\(y + dy\)</span>. The method is now well established and most results are given below without derivation. Understanding the physical world is hard enough work without having to prove all of mathematics before we can use it!</p>
+<p>Several integrations are listed in Section 13, and Sympy can be used to do even more complex integrations. Why then, you might ask, should you bother to learn how to do integration? Calculations are done ‘by hand’ not only because it is often easier and quicker to do so, but also because it encourages a greater understanding of how the result was obtained. Additionally computer methods do not always work, and if you have an answer how will you know that it is correct if you have no understanding of the processes involved.</p>
+</div>
+<div class="section" id="powers-of-x-but-not-x-1">
+<h2>2.1 Powers of <span class="math notranslate nohighlight">\(x\)</span>, but not <span class="math notranslate nohighlight">\(x^{-1}\)</span><a class="headerlink" href="#powers-of-x-but-not-x-1" title="Permalink to this headline">¶</a></h2>
+<p>Integrating <span class="math notranslate nohighlight">\(x^2\)</span> produces <span class="math notranslate nohighlight">\(\displaystyle \int x^2dx=\frac{x^3}{3}+const\)</span>  as can be seen differentiation of the result. Similarly,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \int (x^3+x)dx=\frac{x^4}{4}+\frac{x^2}{2}+const\]</div>
+<p>The general rule for any power of <span class="math notranslate nohighlight">\(x\)</span>, other than <span class="math notranslate nohighlight">\(x^{-1}\)</span>, should be remembered and is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \int x^n dx=\frac{x^{n+1}}{n+1}+const \tag{6}\]</div>
+<p>Definite integrals have limits that are determined by the problem being solved, for example</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \int_1^4 x^2dx=\frac{x^3}{3}\bigg|_1^4=\frac{4^3}{3}-\frac{1^3}{3}=21\]</div>
+<p>and the definite integral is always evaluated by substituting the two limits into the algebraic result of the integration and therefore there is no constant term, as shown in figure 2. Notice the vertical line after the calculation and the limits top and bottom to the right of this. The top limit always comes first in the evaluation and the value of the integral with the second limit is always subtracted from the first. In integrations representing physical phenomena, such as the expansion or compression of a gas, the lower limit is always the
+initial or starting value and the upper limit the final value no matter which is larger.</p>
+</div>
+<div class="section" id="int-dx-int-d-ln-x-and-similar-expressions">
+<h2>2.2 <span class="math notranslate nohighlight">\(\int dx\)</span>, <span class="math notranslate nohighlight">\(\int d\ln(x)\)</span> and similar expressions<a class="headerlink" href="#int-dx-int-d-ln-x-and-similar-expressions" title="Permalink to this headline">¶</a></h2>
+<p>In chemistry and physics textbooks it is not uncommon to meet expressions such as <span class="math notranslate nohighlight">\(\int dx,\; \int d \ln(x)\)</span>, or <span class="math notranslate nohighlight">\(\int d \sin(x)\)</span>. These cases are the simplest to evaluate because the answer is given in the integral,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin{array}{lll} \int 1dx= \int dx=x+c  &amp; \int 2dx =2\int dx=2x+c \\[8px] \int d\ln(x) =\ln(x)+c &amp; \int d\sin(x) =\sin(x)+c\end{array}\end{split}\]</div>
+<p>and so on; <span class="math notranslate nohighlight">\(c\)</span> is an arbitrary constant.</p>
+</div>
+<div class="section" id="integrating-1-x-and-1-ax-b-produces-a-logarithm">
+<h2>2.3 Integrating <span class="math notranslate nohighlight">\(1/x\)</span> and <span class="math notranslate nohighlight">\(1/(ax+b)\)</span> produces a logarithm<a class="headerlink" href="#integrating-1-x-and-1-ax-b-produces-a-logarithm" title="Permalink to this headline">¶</a></h2>
+<p>The <span class="math notranslate nohighlight">\(\displaystyle \frac{x^{n+1}}{n + 1}\)</span> rule is not going to work when <span class="math notranslate nohighlight">\(n = -1\)</span> as this will produce <span class="math notranslate nohighlight">\(1/0\)</span> which is infinity. In the case of reciprocal <span class="math notranslate nohighlight">\(x\)</span> the integral is:</p>
+<div class="math notranslate nohighlight">
+\[\int \frac{dx}{x}= \ln(x)+c \qquad \int_a^b \frac{dx}{x}=\ln(b)-\ln(a)=\ln\left(\frac{b}{a}\right)  \tag{7}\]</div>
+<p>where the last result is only possible if <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b \gt 0\)</span>. If <span class="math notranslate nohighlight">\(a = 1\)</span>, for example, <span class="math notranslate nohighlight">\(\displaystyle \int_1^x \frac{dx}{x}=\ln(x)\)</span> because <span class="math notranslate nohighlight">\(\ln(1)=0\)</span>.</p>
+<p>Note that to produce a log, the denominator must be <em>linear</em> in <span class="math notranslate nohighlight">\(x\)</span>, e.g. <span class="math notranslate nohighlight">\(2 + 3x\)</span>, but cannot contain anything like <span class="math notranslate nohighlight">\(x^2\)</span> or <span class="math notranslate nohighlight">\(x^3\)</span>. The general formula is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \int\frac{1}{ax+b}dx=\frac{1}{a}\ln(ax+b) +const \tag{8}\]</div>
+<div class="section" id="reaction-on-a-surface">
+<h3>Reaction on a surface<a class="headerlink" href="#reaction-on-a-surface" title="Permalink to this headline">¶</a></h3>
+<p>Suppose that there are a large number of sites on a surface that can accept and react with a molecule reaching this from solution. Any one of the sites can either be occupied or empty. If <span class="math notranslate nohighlight">\(p(t)\)</span> is the chance of being occupied at time <span class="math notranslate nohighlight">\(t\)</span>, let <span class="math notranslate nohighlight">\(k_d \delta t\)</span> be the chance of becoming unoccupied (desorbing) in the interval <span class="math notranslate nohighlight">\(\delta t\)</span>. The average fraction becoming unoccupied is then <span class="math notranslate nohighlight">\(k_d p(t)\delta t\)</span> in the interval <span class="math notranslate nohighlight">\(t\to t+\delta t\)</span>. Similarly, let the chance becoming occupied in the same time be <span class="math notranslate nohighlight">\(k_ap(t)\delta t\)</span> where <span class="math notranslate nohighlight">\(k_a\)</span> is the adsorption rate constant. The fraction of sites occupied is then <span class="math notranslate nohighlight">\(k_ap(t)(1 - p(t))\delta t\)</span> which is the chance of being occupied multiplied by the chance that there is an empty site. The total rate of change in the limit <span class="math notranslate nohighlight">\(\delta t\to dt\)</span> is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{dp}{dt}=k_a p(1-p) - k_d p, \qquad \int\frac{dp}{k_a p(1-p) - k_d p}=\int dt\]</div>
+<p>Integrating this by hand and using the table in section 2.14 or by using Sympy produces, after some  simplification,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \ln\left(\frac{k_a(p-1)+k_d}{k_ap} \right)=(k_d-k_a)t +const\]</div>
+<p>Note that as <span class="math notranslate nohighlight">\(p\)</span> is a probability it is dimensionless, <span class="math notranslate nohighlight">\(k_a,k_d\)</span> have units of s<span class="math notranslate nohighlight">\(^{-1}\)</span>.  The constant is determined by letting <span class="math notranslate nohighlight">\(p_0\)</span> be the value of <span class="math notranslate nohighlight">\(p\)</span> at <span class="math notranslate nohighlight">\(t=0\)</span>.</p>
+<p>This model has also been used to describe how populations of animals change when many different sites are available for them to occupy and also compete for; see Briton (2003).</p>
+</div>
+</div>
+<div class="section" id="partial-fractions">
+<h2>2.4 Partial fractions<a class="headerlink" href="#partial-fractions" title="Permalink to this headline">¶</a></h2>
+<p>Integrations involving reciprocal powers of <span class="math notranslate nohighlight">\(x\)</span> can often be solved by expanding as partial fractions and then integrating each term as a log. The method of obtaining a partial fraction is systematic, as illustrated in the following example. Suppose the integration required is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \int\frac{x-3}{x^2-2x-15}dx \]</div>
+<p>and this has to be simplified; the hardest part is factoring the denominator. Some experimenting is often required, however, the SymPy <span class="math notranslate nohighlight">\(\mathtt{factor(\cdots)}\)</span> instruction can make this easier,</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="n">factor</span><span class="p">(</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span> <span class="o">-</span> <span class="mi">15</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/integration-A_4_01.png" src="../_images/integration-A_4_01.png" />
+</div>
+</div>
+<p>The function to integrate becomes</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle  \frac{x-3}{x^2-2x-15}=\frac{x-3}{(x+3)(x-5)}\]</div>
+<p>The next step is to write this in terms of two fractions with constants <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> that must be determined, hence we write</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle  \frac{x-3}{(x+3)(x-5)}=\frac{A}{x+3}+\frac{B}{x-5}=\frac{A(x-5)+B(x+3)}{(x+3)(x-5)} \]</div>
+<p>By equating the left- and right-hand expressions,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle  x - 3 = A(x - 5) + B(x + 3)\]</div>
+<p>which is true for all values of <span class="math notranslate nohighlight">\(x\)</span>. Therefore, if <span class="math notranslate nohighlight">\(x = -3\)</span> then <span class="math notranslate nohighlight">\(A = 6/8 = 3/4\)</span> and if <span class="math notranslate nohighlight">\(x = 5\)</span> then <span class="math notranslate nohighlight">\(B = 1/4\)</span>. The integration becomes</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \int\frac{x-3}{x^2-2x-15}dx =\int \frac{3}{4(x+3)}+\frac{1}{4(x-5)}=\frac{3}{4}\ln(x+3)+\frac{1}{4}\ln(x-5)+const\]</div>
+<p>Of course we could use Sympy to do the whole integration</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+
+<span class="n">eq</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="mi">3</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="o">-</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">integrate</span><span class="p">(</span><span class="n">eq</span><span class="p">,</span> <span class="n">x</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/integration-A_6_01.png" src="../_images/integration-A_6_01.png" />
+</div>
+</div>
+</div>
+<div class="section" id="exponentials">
+<h2>2.5 Exponentials<a class="headerlink" href="#exponentials" title="Permalink to this headline">¶</a></h2>
+<p>When differentiating an exponential, the exponential is returned but multiplied by the derivative of the function within the exponential. For example the derivative</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{d}{dx}e^{-ax+b}=-ae^{-ax+b}\]</div>
+<p>Integrating both sides gives</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \int\frac{d}{dx}e^{-ax+b}=-a\int e^{-ax+b}\]</div>
+<p>therefore the general form, after rearranging and with <span class="math notranslate nohighlight">\(c\)</span> as the constant, is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \int e^{-ax+b}= -\frac{1}{a}e^{-ax+b}+c  \tag{9}\]</div>
+<p>Note that this formula only applies when the argument to the exponential is to the first power of <span class="math notranslate nohighlight">\(x\)</span> and some constants. Integrating <span class="math notranslate nohighlight">\(e^{-x^2}\)</span>, for example, cannot be done this way.</p>
+<p>An example</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle  \int e^{3x-6}= \frac{1}{3}e^{3x-6}+c  \\ \int_{-1/3}^{1/3} e^{3x-6}= \frac{1}{3}e^{3x-6} \bigg|_{-1/3}^{1/3} = \frac{1}{3}(e^{-5}-e^{-7})\end{split}\]</div>
+<p><img alt="Drawing" src="../_images/integration-fig5.png" /></p>
+<p>Figure 5. The exponential <span class="math notranslate nohighlight">\(e^{3x-6}\)</span> and its integral from -1/3 to 1/3.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="sine-cosine-and-tangent">
+<h2>2.6 Sine, cosine, and tangent<a class="headerlink" href="#sine-cosine-and-tangent" title="Permalink to this headline">¶</a></h2>
+<p>Differentiating the sine or cosine produces one from another and so it should not come as
+a surprise that the same happens upon integration. For example,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{}{}\cos(3x+2)==-3\sin(3x+2)\]</div>
+<p>integrating both sides and rearranging produces, <span class="math notranslate nohighlight">\(\displaystyle \int\sin(3x+2)=-\frac{1}{3}\cos(3x+2)+c\)</span>. Similarly the general forms are</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \int\sin(ax+b)=-\frac{1}{a}\cos(ax+b)+c  \tag{10} \]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle  \int\cos(ax+b)=+\frac{1}{a}\sin(ax+b)+c  \tag{11} \]</div>
+<p>Note first the sign change between sine and cosine and also that these integrations are true only for first powers of <span class="math notranslate nohighlight">\(x\)</span>.</p>
+<p>The sine and cosine functions illustrate clearly that integration is the area under the curve. In figure 6 the cosine and sine curves are plotted. The area under the cosine curve when integrated from <span class="math notranslate nohighlight">\(0 \to x\)</span> is the cosine integral, which is the value of the sine curve at <span class="math notranslate nohighlight">\(x\)</span>, i.e. <span class="math notranslate nohighlight">\(\sin(x)\)</span>. Putting limits into the integration gives</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \int_a^x \cos(x)=\sin(a)\bigg|_a^x =\sin(x)-\sin(a)\]</div>
+<p>and when <span class="math notranslate nohighlight">\(a = 0\)</span> the integral is <span class="math notranslate nohighlight">\(\sin(x)\)</span>. When <span class="math notranslate nohighlight">\(x = 2\pi\)</span> there is as much of a positive as negative area shaded making the total area zero as is <span class="math notranslate nohighlight">\(\sin(2\pi\)</span>). The area under the cosine from <span class="math notranslate nohighlight">\(0 \to \pi\)</span> is also similarly zero and so is <span class="math notranslate nohighlight">\(\sin(\pi)\)</span>.</p>
+<p><img alt="Drawing" src="../_images/integration-fig6.png" /></p>
+<p>Figure 6. The shaded area under the cosine curve is zero from <span class="math notranslate nohighlight">\(0 \to 2\pi\)</span>; the integral from zero to <span class="math notranslate nohighlight">\(x\)</span> is the sine curve, which is also zero at <span class="math notranslate nohighlight">\(2\pi\)</span>. The integral is also zero at 0 and <span class="math notranslate nohighlight">\(\pi\)</span>.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="exponential-form-of-trig-functions">
+<h2>2.7 Exponential form of trig functions<a class="headerlink" href="#exponential-form-of-trig-functions" title="Permalink to this headline">¶</a></h2>
+<p>The sine, cosine, and tangent together with the other trig functions can be expressed as complex exponentials and in this form are easy to integrate as are the hyperbolic functions sinh, cosh, and tanh; see Chapter 1.</p>
+<p>The square of sines and cosines are also easily integrated using exponentials. For example, <span class="math notranslate nohighlight">\(\displaystyle \int \sin^2(x)dx\)</span> is converted into an exponential form using</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \sin(x)=\frac{e^{ix}-e^{-ix}}{2i}\]</div>
+<p>where <span class="math notranslate nohighlight">\(i=\sqrt{-1}\)</span>. The integral is</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle   \int \sin^2(x)dx =\int \left(\frac{e^{ix}-e^{-ix}}{2i}\right)^2dx=-\frac{1}{4}\int \left(e^{2ix}-2+e^{-2ix}\right) dx\\
+=-\frac{1}{4}\left(\frac{e^{2ix}}{2i}-2x-\frac{e^{-2ix}}{2i}  \right)=\frac{1}{4}\left(2x-\sin(2x)\right)\end{split}\]</div>
+<p>where the exponentials are converted back to a sine in the last step. Similarly integrations of the form <span class="math notranslate nohighlight">\(\int e^x\sin(x)dx,\; \int e^x \cosh(x)dx\)</span>, and so forth can be evaluated by converting to their exponential form first.</p>
+</div>
+<div class="section" id="mean-value-theorem-for-integrals">
+<h2>2.8 Mean value theorem for integrals<a class="headerlink" href="#mean-value-theorem-for-integrals" title="Permalink to this headline">¶</a></h2>
+<p>The <em>first mean value theorem</em> states that for a point <span class="math notranslate nohighlight">\(s\)</span> in the range of an integration, <span class="math notranslate nohighlight">\(a \le s \le b\)</span> then</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \int_a^b f(x)dx = (b-a) \overline{f(s)}\]</div>
+<p>where <span class="math notranslate nohighlight">\(s\)</span> is the value of <span class="math notranslate nohighlight">\(x\)</span> when <span class="math notranslate nohighlight">\(\overline{f(s)}\)</span> is the <em>average value</em> of <span class="math notranslate nohighlight">\(f\)</span>. This is a very convenient way of calculating averages and is described further in Section 8.</p>
+<p>This theorem also proves to be useful when performing numerical integrations with the Monte Carlo method, Chapter 12, where the equation is worked backwards, <span class="math notranslate nohighlight">\(f(s)\)</span> is calculated directly to produce the integral.</p>
+</div>
+<div class="section" id="non-integrability">
+<h2>2.9 Non-integrability<a class="headerlink" href="#non-integrability" title="Permalink to this headline">¶</a></h2>
+<p>There are several functions that look quite simple but for which there is no integral. These integrals usually have to be evaluated numerically even though they may be defined with a special function. These integrals include</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin{array}{ccc}
+\displaystyle\int \frac{\sin(x)}{x}dx, &amp; \displaystyle\int \frac{\cos(x)}{x}dx, &amp; \displaystyle\int \sin(x^2)dx\\
+\displaystyle\int \frac{e^x}{x}dx, &amp; \displaystyle\int \frac{1}{\ln(x)}dx, &amp; \displaystyle\int e^{-ax^2}dx \end{array}\end{split}\]</div>
+<p>When the limits are 0 and or <span class="math notranslate nohighlight">\(\pm \infty\)</span> a result does exist for some of these non-integrable integrals, but it is always a number. The last integral is probably the one you will meet most often for example in statistics and diffusion, and it is the ‘Gaussian’ or ‘bell’ shaped curve. It produces the error function when integrated,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \int e^{-ax^2}dx=\sqrt{\frac{\pi}{4a}}\mathrm{erf}(a\sqrt{x})\]</div>
+<p>The error function can only be calculated numerically. It is the area under the normalised bell shaped or gaussian curve from zero to <span class="math notranslate nohighlight">\(x\)</span>. The value is therefore is zero when <span class="math notranslate nohighlight">\(x\)</span> is zero and when <span class="math notranslate nohighlight">\(x\)</span> is large it rapidly approaches one the area under the curve being unity. Therefore,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \int_0^\infty e^{-ax^2}dx=\sqrt{\frac{\pi}{4a}}\]</div>
+<p>Other curves with finite integrals from <span class="math notranslate nohighlight">\(0 \to \infty\)</span> are <span class="math notranslate nohighlight">\(\displaystyle\int_0^\infty  \frac{\sin(x)}{x}dx=\frac{\pi}{2}\)</span> and <span class="math notranslate nohighlight">\(\displaystyle\int_0^\infty  \frac{\sin(x^2)}{x}dx=\frac{\sqrt{2\pi}}{4}\)</span>.  The other integrals listed above are either infinity or undefined.</p>
+</div>
+<div class="section" id="improper-and-undefined-integrals">
+<h2>2.10 Improper and undefined integrals<a class="headerlink" href="#improper-and-undefined-integrals" title="Permalink to this headline">¶</a></h2>
+<p>A number of functions when integrated produce infinity. These are conventionally called improper integrals, although there is nothing ‘improper’ about them, e.g. <span class="math notranslate nohighlight">\(\displaystyle \int_0^\infty \frac{e^x}{x}dx=\infty\)</span>.  The integrand <span class="math notranslate nohighlight">\(f(x)\)</span> usually has a point in the range of integration at which it becomes infinite. This can often be spotted, and surprisingly, only sometimes does this produce an infinite result. As an example, in the integral <span class="math notranslate nohighlight">\(\displaystyle \int_0^\infty \frac{1}{\sqrt{x}}dx\)</span>  the reciprocal of the square root becomes infinite at <span class="math notranslate nohighlight">\(x = 0\)</span>. Ignoring this for the moment, integrating using equation 6 then working out the limits produces a finite answer,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \int_0^\infty \frac{1}{\sqrt{x}}dx=2\sqrt{x}\bigg|_0^1=2\]</div>
+<p>This is unexpected because the function is infinite at exactly <span class="math notranslate nohighlight">\(x=0\)</span> so one would expect an infinite area from 0 to 1 but the area  is actually finite.</p>
+<p>Conversely the integrals of the form  <span class="math notranslate nohighlight">\(\displaystyle \int_0^\infty \frac{1}{x^2}dx\)</span> or <span class="math notranslate nohighlight">\(\displaystyle \int_0^\infty \frac{1}{x-1}dx\)</span> and many similar reciprocal functions produce infinity and so are undefined or improper. Infinity is a strange beast.  Not surprisingly, if the range of the integration is changed so that the integrand is not infinite in the range, the integrals behave normally and give a finite result.</p>
+</div>
+<div class="section" id="integrals-with-infinite-limits">
+<h2>2.11 Integrals with infinite limits<a class="headerlink" href="#integrals-with-infinite-limits" title="Permalink to this headline">¶</a></h2>
+<p>Even though the limit of an integral may extend to infinity, some integrals are nonetheless finite. One example of this was given in the previous section. Naturally, some may also become infinite: <span class="math notranslate nohighlight">\(\int_0^\infty xdx\)</span> is clearly going to be infinite as its result <span class="math notranslate nohighlight">\(x^2\)</span> will become infinite when <span class="math notranslate nohighlight">\(x\)</span> is infinity. It is probably true that most polynomial functions in which its largest power is positive will reach <span class="math notranslate nohighlight">\(\pm \infty\)</span> with limits 0 to infinity. If a function is odd, such as <span class="math notranslate nohighlight">\(xe^{-x^2}\)</span> and the limits extend equally far to the left and right even to infinity, then the integral is always zero, as discussed in Section 1.3.</p>
+<p>With reciprocal functions, or polynomials with negative powers, as the limit extends to infinity the function becomes smaller and smaller and so may converge to a finite value. For instance, integrating <span class="math notranslate nohighlight">\(1/x^2\)</span> from 1 to infinity produces a finite result:</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \int_1^\infty \frac{1}{x^2}=-\frac{1}{x}\bigg|_1^\infty = 1\]</div>
+<p>Integrating <span class="math notranslate nohighlight">\(1/x\)</span> over the same range produces infinity and you can appreciate this if you look at a graph of the log function because this increases for all <span class="math notranslate nohighlight">\(x \gt 1\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \int_1^\infty \frac{1}{x}=\ln(x)\bigg|_1^\infty = \infty\]</div>
+</div>
+<div class="section" id="discontinuities">
+<h2>2.12 Discontinuities<a class="headerlink" href="#discontinuities" title="Permalink to this headline">¶</a></h2>
+<p>Very occasionally a function has a discontinuity such as a vertical step. If this is at point <span class="math notranslate nohighlight">\(b\)</span> and the integration is from <span class="math notranslate nohighlight">\(a \to c\)</span> with <span class="math notranslate nohighlight">\(b\)</span> in between, the integral is split into two parts, one part from <span class="math notranslate nohighlight">\(a \to b\)</span> the other from <span class="math notranslate nohighlight">\(b \to c\)</span>; see Section 1.3.</p>
+</div>
+<div class="section" id="a-few-common-integrals-using-sympy">
+<h2>2.13 A few common integrals using SymPy<a class="headerlink" href="#a-few-common-integrals-using-sympy" title="Permalink to this headline">¶</a></h2>
+<p>Many integrals can be obtained using SymPy or other algebraic engines.</p>
+<p>Using Sympy the following method will work in most cases.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">,</span><span class="n">b</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x,b&#39;</span><span class="p">)</span>
+<span class="n">a</span><span class="p">,</span><span class="n">n</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;a,n&#39;</span><span class="p">,</span> <span class="n">nonzero</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+<span class="n">eqn</span> <span class="o">=</span> <span class="n">tan</span><span class="p">(</span> <span class="n">a</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="n">b</span><span class="p">)</span>
+<span class="n">ans</span> <span class="o">=</span> <span class="n">integrate</span><span class="p">(</span><span class="n">eqn</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span> <span class="n">ans</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>log(tan(a*x + b)**2 + 1)/(2*a)
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="table-of-integrals">
+<h2>2.14 Table of integrals<a class="headerlink" href="#table-of-integrals" title="Permalink to this headline">¶</a></h2>
+<p>Integration constants are not added</p>
+<p><span class="math notranslate nohighlight">\(\displaystyle \int_a^b x^{n}  =  \begin{cases}\displaystyle \frac{x^{n + 1}}{n + 1} &amp; \text{for}\: n \neq -1 \\\log{\left (x \right )} &amp; \text{otherwise} \end{cases} \)</span></p>
+<p><span class="math notranslate nohighlight">\(\displaystyle \int_a^b \frac{1}{a x}  =  \frac{\log{\left (x \right )}}{a} \)</span></p>
+<p><span class="math notranslate nohighlight">\(\displaystyle \int_a^b e^{a x + b}  =  \frac{e^{a x + b}}{a} \)</span></p>
+<p><span class="math notranslate nohighlight">\(\displaystyle \int_a^b \frac{1}{a x + b}  =  \frac{\log{\left (a x + b \right )}}{a} \)</span></p>
+<p><span class="math notranslate nohighlight">\(\displaystyle \int_a^b \sin{\left (a x + b \right )}  =  - \frac{\cos{\left (a x + b \right )}}{a} \)</span></p>
+<p><span class="math notranslate nohighlight">\(\displaystyle \int_a^b \cos{\left (a x + b \right )}  =  \frac{\sin{\left (a x + b \right )}}{a} \)</span></p>
+<p><span class="math notranslate nohighlight">\(\displaystyle \int_a^b \tan{\left (a x + b \right )}  =  \frac{\log{\left (\tan^{2}{\left (a x + b \right )} + 1 \right )}}{2 a} \)</span></p>
+<p><span class="math notranslate nohighlight">\(\displaystyle \int_a^b \sinh{\left (a x + b \right )}  =  \frac{\cosh{\left (a x + b \right )}}{a} \)</span></p>
+<p><span class="math notranslate nohighlight">\(\displaystyle \int_a^b \cosh{\left (a x + b \right )}  =  \frac{\sinh{\left (a x + b \right )}}{a} \)</span></p>
+<p><span class="math notranslate nohighlight">\(\displaystyle \int_a^b \tanh{\left (a x + b \right )}  =  x - \frac{\log{\left (\tanh{\left (a x + b \right )} + 1 \right )}}{a} \)</span></p>
+<p><span class="math notranslate nohighlight">\(\displaystyle \int_a^b \log{\left (a x + b \right )}  =  x \log{\left (a x + b \right )} - x + \frac{b \log{\left (a x + b \right )}}{a} \)</span></p>
+<p><span class="math notranslate nohighlight">\(\displaystyle \int_a^b \frac{1}{\left(a x + b\right)^{2}}  =  - \frac{1}{a \left(a x + b\right)} \)</span></p>
+<p><span class="math notranslate nohighlight">\(\displaystyle \int_a^b \frac{1}{a^{2} x^{2} + b^{2}}  =  \frac{i \left(- \log{\left (x - \frac{i b}{a} \right )} + \log{\left (x + \frac{i b}{a} \right )}\right)}{2 a b} \)</span></p>
+<p><span class="math notranslate nohighlight">\(\displaystyle \int_a^b \frac{1}{\sqrt{a^{2} x^{2} + b^{2}}}  =  \frac{\operatorname{asinh}{\left (\frac{x \left|{a}\right|}{b} \right )}}{\left|{a}\right|} \)</span></p>
+<p><span class="math notranslate nohighlight">\(\displaystyle \int_a^b \frac{1}{a^{2} x^{2} - b^{2}}  =  \frac{\log{\left (x - \frac{b}{a} \right )} - \log{\left (x + \frac{b}{a} \right )}}{2 a b} \)</span></p>
+<p><span class="math notranslate nohighlight">\(\displaystyle \int_a^b \frac{1}{\sqrt{a^{2} x^{2} - b^{2}}}  =  \begin{cases} \frac{\operatorname{acosh}{\left (\frac{x \left|{a}\right|}{b} \right )}}{\left|{a}\right|} &amp; \text{for}\: a^{2} \left|{\frac{x^{2}}{b^{2}}}\right| &gt; 1 \\- \frac{i \operatorname{asin}{\left (\frac{x \left|{a}\right|}{b} \right )}}{\left|{a}\right|} &amp; \text{otherwise} \end{cases} \)</span></p>
+<p><span class="math notranslate nohighlight">\(\displaystyle \int_a^b \sqrt{a x + b}  =  \frac{2 \left(a x + b\right)^{\frac{3}{2}}}{3 a} \)</span></p>
+<p><span class="math notranslate nohighlight">\(\displaystyle \int_a^b \frac{1}{\sqrt{a x + b}}  =  \frac{2 \sqrt{a x + b}}{a} \)</span></p>
+<p><span class="math notranslate nohighlight">\(\displaystyle \int_a^b x e^{- a x}  =  - \frac{\left(a x + 1\right) e^{- a x}}{a^{2}} \)</span></p>
+<p><span class="math notranslate nohighlight">\(\displaystyle \int_a^b x^{2} e^{- a x}  =  - \frac{\left(a^{2} x^{2} + 2 a x + 2\right) e^{- a x}}{a^{3}} \)</span></p>
+<p><span class="math notranslate nohighlight">\(\displaystyle \int_a^b e^{- a x^{2}}  =  \frac{\sqrt{\pi} \operatorname{erf}{\left (\sqrt{a} x \right )}}{2 \sqrt{a}} \)</span></p>
+<p><span class="math notranslate nohighlight">\(\displaystyle \int_a^b x^{2} e^{- a x^{2}}  =  - \frac{x e^{- a x^{2}}}{2 a} + \frac{\sqrt{\pi} \operatorname{erf}{\left (\sqrt{a} x \right )}}{4 a^{\frac{3}{2}}} \)</span></p>
+<p><span class="math notranslate nohighlight">\(\displaystyle \int_a^b x^{2} e^{- a x^{2}}  =  - \frac{x e^{- a x^{2}}}{2 a} + \frac{\sqrt{\pi} \operatorname{erf}{\left (\sqrt{a} x \right )}}{4 a^{\frac{3}{2}}} \)</span></p>
+<p>To make your own table make a list then loop over values printing output in markdown.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x,n,a,b,c&#39;</span><span class="p">,</span> <span class="n">positive</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>   <span class="c1"># use Sympy</span>
+<span class="n">eqns</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="o">**</span><span class="n">n</span><span class="p">,</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">a</span><span class="o">*</span><span class="n">x</span><span class="p">),</span> <span class="n">exp</span><span class="p">(</span><span class="n">a</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="n">b</span><span class="p">),</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">a</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="n">b</span><span class="p">)]</span>   <span class="c1"># list of integrals here </span>
+<span class="n">ans</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span>  <span class="n">i</span><span class="p">,</span> <span class="n">eqn</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">eqns</span><span class="p">):</span> 
+    <span class="n">ans</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">simplify</span><span class="p">(</span><span class="n">integrate</span><span class="p">(</span><span class="n">eqn</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span> <span class="p">)</span> <span class="p">)</span>       <span class="c1"># append make list of answers</span>
+    <span class="k">pass</span>
+<span class="n">ans</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/integration-A_10_01.png" src="../_images/integration-A_10_01.png" />
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./chapter-4"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="integration-intro.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">4. Integration.</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="integration-Q1-14.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Questions 1-14</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Godfrey Beddard<br/>
+        
+            &copy; Copyright 2022.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

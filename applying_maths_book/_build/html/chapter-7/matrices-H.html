@@ -1,0 +1,2023 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rate equations and Chemical Kinetics &#8212; Applying Maths in the Chemical &amp; Biomolecular Sciences</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Questions 51 - 54" href="matrices-Q51-54.html" />
+    <link rel="prev" title="Questions 45 - 50" href="matrices-Q45-50.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/book-cover.jpg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Applying Maths in the Chemical & Biomolecular Sciences</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Applying Maths in the Chemical and Biomolecular Sciences.
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-1/chapter1-intro.html">
+   1. Numbers, Equations, Operators, and Algorithms.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-A.html">
+     Numbers to Algorithms.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-Q1-7.html">
+     Questions 1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-B.html">
+     Trig, hyperbolic and inverse functions, waves, polar coordinates &amp; factorials
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-Q8-16.html">
+     Questions 8 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-C.html">
+     Sophisticated Counting.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-Q17-34.html">
+     Questions 17 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-D.html">
+     Modulo arithmetic,
+     <span class="math notranslate nohighlight">
+      \(\delta\)
+     </span>
+     functions, types of  series &amp;  estimating quantities
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-Q35-39.html">
+     Questions 35 - 39
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-answers-1-7.html">
+     Solutions Q1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-answers-8-16.html">
+     Solutions Q8 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-answers-17-34.html">
+     Solutions Q17 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-answers-35-39.html">
+     Solutions Q35 - 39
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-2/chapter2-intro.html">
+   2. Complex numbers.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2/chapter2-A.html">
+     Real, imaginary, conjugate and modulus
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2/chapter2-Q-1-9.html">
+     Questions 1 - 9
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2/chapter2-B.html">
+     De Moivre’s theorem and integer powers of complex numbers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2/chapter2-Q-10-13.html">
+     Questions 10 -13
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2/chapter2-C.html">
+     Euler’s theorem
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2/chapter2-Q-14-27.html">
+     Questions 14 - 27
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2/chapter2-answers.html">
+     Solutions Q1 - 27
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-3/differen-intro.html">
+   3. Differentiation.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-A.html">
+     Differentiation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-B.html">
+     Trig functions, logs, power, reciprocals and integrals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-C-Q-4-11.html">
+     Questions 1-11
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-D.html">
+     Product rule and function of function or chain rule.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-E-Q-12-42.html">
+     Questions 12-42
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-F.html">
+     Limits, l’Hopital’s rule, Maximum, Minimum and Calculus of Variations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-G-Q-43-73.html">
+     Questions 43 - 73
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-H.html">
+     Numerically finding the roots of an equation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-I-Q-74-85.html">
+     Questions 74 - 85
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-J.html">
+     Minimizing or maximizing with constraints: Lagrange Undetermined Multipliers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-K-Q-86-92.html">
+     Questions 86 - 92
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-L.html">
+     Partial differentiation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-M-Q-93-114.html">
+     Questions 93-114
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-M1.html">
+     Differentiation of vectors
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-N-answers-1-11.html">
+     Solutions Q 1-11
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-O-answers-12-42.html">
+     Solutions Q 12-42
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-P-answers-43-73.html">
+     Solutions Q 43 - 73
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-Q-answers-74-85.html">
+     Solutions Q 74 - 85
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-R-answers-86-92.html">
+     Solutions Q 86 - 94
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-S-answers-93-114.html">
+     Solutions Q 93-114
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-4/integration-intro.html">
+   4. Integration.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-A.html">
+     Integration basics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-Q1-14.html">
+     Questions 1-14
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-B.html">
+     Integration by substitution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-Q15-30.html">
+     Questions 15-30
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-C.html">
+     Using parametric equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-Q31-48.html">
+     Questions 31 - 48
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-D.html">
+     Calculating an Average Value.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-Q49-72.html">
+     Questions 49 - 72
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-E.html">
+     The Variational Method in Quantum Mechanics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-Q73-77.html">
+     Questions 73 - 77
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-F.html">
+     Multiple integrals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-Q78-86.html">
+     Questions 78 - 86
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-G.html">
+     Calculating the energy of a chemical bond using molecular orbitals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-H.html">
+     Line integrals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-Q87-96.html">
+     Questions 87 - 96
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-answers-1-14.html">
+     Solutions Q1 - 14
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-answers-15-30.html">
+     Solutions Q15 - 30
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-answers-31-48.html">
+     Solutions Q31 - 48
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-answers-49-72.html">
+     Solutions Q49 - 72
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-answers-73-96.html">
+     Solutions Q73 - 96
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-5/chapter-5-intro.html">
+   5. Summations, Series and expansion of Functions.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-A.html">
+     Series, averages, partition functions, DNA melting, atom entropy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-B-Q1-13.html">
+     Questions 1 - 13
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-E.html">
+     Maclaurin and Taylor series expansions. Paramagnetic spins. Euler-Maclaurin formula.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-F-Q14-34.html">
+     Questions 14 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-G-Q35-44.html">
+     Questions 35 - 44
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-perturbation-A.html">
+     Perturbation Theory
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-perturbation-B-Q45-48.html">
+     Questions 45 - 48
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-perturbation-C.html">
+     Quantum superposition and wavepackets.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-perturbation-D-Q49-52.html">
+     Questions 49 - 52
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-answers-1-7.html">
+     Solutions Q 1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-answers-8-13.html">
+     Solutions Q8 - 13
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-answers-14-26.html">
+     Solutions Q 14 - 26
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-answers-27-32.html">
+     Solutions Q27 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-answers-33-44.html">
+     Solutions Q33 - 44
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-answers-45-52.html">
+     Solutions Q45 - 52
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-6/vectors-intro.html">
+   6. Vectors.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-A.html">
+     Vector basics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-Q1-24.html">
+     Questions 1 - 24
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-B.html">
+     Projections and components
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-Q25-32.html">
+     Questions 25 - 32
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-C.html">
+     Axes need not be right-angled or of equal length
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-Q33-38.html">
+     Questions 33 - 38
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-D.html">
+     Basis sets with more than three dimensions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-Q39-46.html">
+     Questions 39 - 46
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-E.html">
+     Cross product or vector product
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-Q47-52.html">
+     Questions 47 - 52
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-F.html">
+     Torsion or dihedral angles
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-Q53-48.html">
+     Questions 53 - 48
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-G.html">
+     Torque and angular momentum
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-Q59-61.html">
+     Questions 59 - 61
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-answers-Q1-24.html">
+     Solutions Q1 - 24
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-answers-Q25-32.html">
+     Solutions Q25 - 32
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-answers-Q33-38.html">
+     Solutions Q33 - 38
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-answers-Q39-46.html">
+     Solutions Q39 - 46
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-answers-Q47-52.html">
+     Solutions Q47 - 52
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-answers-Q53-61.html">
+     Solutions Q53 - 61
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="matrices-intro.html">
+   7. Matrices
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-A.html">
+     Determinants
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-Q1-10.html">
+     Questions  1 - 10
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-B.html">
+     Matrices
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-Q11-16.html">
+     Questions  11 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-C.html">
+     Molecular Group Theory
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-Q17-30.html">
+     Questions  17 - 30
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-D.html">
+     Rotation matrices: moving molecules
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-Q31-34.html">
+     Questions 31 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-E.html">
+     Matrices in optics and designing laser cavities
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-Q35-39.html">
+     Questions 35 - 39
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-F.html">
+     Polarizing optics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-Q40-44.html">
+     Questions 40 - 44
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-G.html">
+     Solving equations using matrices. Eigenvectors &amp; Eigenvalues.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-Q45-50.html">
+     Questions 45 - 50
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Rate equations and Chemical Kinetics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-Q51-54.html">
+     Questions 51 - 54
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-I.html">
+     Molecular vibrations and pendulums
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-Q55-58.html">
+     Questions 55 - 58
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-J.html">
+     Moments of Inertia
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-Q59-60.html">
+     Questions 59 - 62
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-K.html">
+     Calculating a bond length using moments of inertia
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-Q61.html">
+     Question 61
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-L.html">
+     Principal axes for Moments of Inertia
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-Q62.html">
+     Question 62
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-answersQ1-10.html">
+     Solutions Q1 - 10
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-answersQ11-16.html">
+     Solutions Q11 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-answersQ17-30.html">
+     Solutions Q17 - 30
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-answersQ31-34.html">
+     Solutions Q31 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-answersQ35-39.html">
+     Solutions Q35 - 39
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-answersQ40-44.html">
+     Solutions Q40 - 44
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-answersQ45-50.html">
+     Solutions Q45 - 50
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-answersQ51-54.html">
+     Solutions Q51 - 54
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-answersQ55-58.html">
+     Solutions Q55 - 58
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-answersQ59-61.html">
+     Solutions Q59 - 61
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-8/matricesQM-intro.html">
+   8. Matrices in Quantum Mechanics
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-8/matricesQM-A.html">
+     Matrices in Quantum Mechanics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-8/matricesQM-Q1-7.html">
+     Questions 1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-8/matricesQM-B.html">
+     Basis sets and bra-ket algebra
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-8/matricesQM-Q8-12.html">
+     Questions 8 - 12
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-8/matricesQM-C.html">
+     Continuous basis sets
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-8/matricesQM-answers1-7.html">
+     Solutions Q1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-8/matricesQM-answers8-12.html">
+     Solutions Q8 - 12
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-9/Fourier-intro.html">
+   9. Fourier Series and Transforms.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-A-B.html">
+     Fourier series, Gibbs phenomenon, generalised series.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-questions-1-6.html">
+     Questions 1 - 6
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-C.html">
+     Fourier Transforms
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-questions-7-15.html">
+     Questions 7 - 15
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-D.html">
+     Convolution and Autocorrelation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-questions-16-21.html">
+     Questions 16 - 21
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-E.html">
+     Discrete Fourier  (DFT)  and Fast Fourier transforms (FFT)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-F.html">
+     The Hadamard Transform: Encoding and Decoding
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-answers-1-6.html">
+     Solutions Q 1 - 6
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-answers-7-15.html">
+     Solutions Q 7 - 15
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-answers-16-21.html">
+     Solutions Q 16 - 21
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-2D-Diffraction.html">
+     The Fourier transform in two dimensions: images and x-ray Diffraction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-tomography.html">
+     Computed Tomography
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-10/Diff-eqns-intro.html">
+   10. Differential Equations.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-A.html">
+     Differential Equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-Q1-23.html">
+     Questions 1 - 23
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-B.html">
+     First order eqns &amp; Integrating factors. Second order eqns, Newtons laws, equations of motion.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-C.html">
+     The ‘D’ operator.  Solving linear differential equations with constant coefficients
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-D.html">
+     Simultaneous equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-Q24-37.html">
+     Questions 24 - 37
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-E.html">
+     Linear equations with variable coefficients
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-F.html">
+     Partial Differential Equations, PDE
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-G.html">
+     PDE examples continued
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-answers-1-21.html">
+     Solutions Q1 - 21
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-answers-22-37.html">
+     Solutions Q22 - 37
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-11/num-methods-intro.html">
+   11. Numerical Methods
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-A.html">
+     Numerical Methods
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-Q1-7.html">
+     Questions 1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-B.html">
+     Numerical solution of differential equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-Q8-12.html">
+     Questions 8 - 12
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-C.html">
+     Coupled equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-Q13-16.html">
+     Questions 13 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-D.html">
+     The phase plane, nullclines, and stable points
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-Q17-20.html">
+     Questions 17 - 20
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-E.html">
+     Reaction schemes with feedback
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-Q21-34.html">
+     Questions 21 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-F.html">
+     Boundary value problems.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-Q35-40.html">
+     Questions 35 - 40
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-answers1-7.html">
+     Solutions Q1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-answers8-12.html">
+     Solutions Q8 - 12
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-answers13-16.html">
+     Solutions Q13 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-answers17-20.html">
+     Solutions Q17 - 20
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-answers21-34.html">
+     Solutions Q21 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-answers35-40.html">
+     Solutions Q35 - 40
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-12/monte-carlo-intro.html">
+   12. Monte Carlo Methods
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+  <label for="toctree-checkbox-12">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-A.html">
+     Monte - Carlo Methods
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-Q1-6.html">
+     Questions 1 - 6
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-B.html">
+     Solving rate equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-Q7-10.html">
+     Questions 7 - 10
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-CC.html">
+     Monte Carlo Simulations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-C.html">
+     Energy transfer. Autocatalytic reaction and spreading of fires
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-Q11-17.html">
+     Questions 11 - 17
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-D.html">
+     The Metropolis algorithm
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-answers1-6.html">
+     Solutions Q1 - 6
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-answers7-10.html">
+     Solutions Q7 - 10
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-answers11-17.html">
+     Solutions Q11 - 17
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-13/analysis-intro.html">
+   13. Data Analysis
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+  <label for="toctree-checkbox-13">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-13/analysis-A.html">
+     Characterizing experimental data. Accuracy, precision, mean and standard deviation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-13/analysis-Q1-3.html">
+     Questions 1 - 3
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-13/analysis-B.html">
+     Modelling data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-13/analysis-Q4-9.html">
+     Questions 4 - 9
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-13/analysis-C.html">
+     Modelling data is simpler using matrices
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-13/analysis-Q10-11.html">
+     Questions 10 - 13
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-13/analysis-D.html">
+     Non-linear least squares. Least absolute deviation. Principal component analysis
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-13/analysis-answers1-11.html">
+     Solutions Q1 -11
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../chapter-1/chapter1-E.html">
+   SI units, Rounding, converting units &amp; Glossary.
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../references/References.html">
+   References
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../references/Python%20crib.html">
+   Appendix:  Some basic Python instructions with a few examples.
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/chapter-7/matrices-H.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/chapter-7/matrices-H.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#linear-kinetic-schemes">
+   13.1 Linear kinetic schemes
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#matrix-solutions">
+   13.2 Matrix solutions
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#secular-determinant">
+     <strong>
+      Secular Determinant
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#time-profiles">
+     <strong>
+      Time profiles
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#algebraic-solution-of-a-to-b-to-c">
+     <strong>
+      Algebraic solution of
+      <span class="math notranslate nohighlight">
+       \(A \to B \to C\)
+      </span>
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#numerical-solution-of-a-leftrightharpoons-b-leftrightharpoons-c">
+     <strong>
+      Numerical solution of
+      <span class="math notranslate nohighlight">
+       \(A \leftrightharpoons B \leftrightharpoons C\)
+      </span>
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#circular-reaction-scheme">
+     <strong>
+      Circular reaction scheme
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#energy-transfer-on-a-polygon-circulant-determinants">
+     <strong>
+      Energy transfer on a Polygon. Circulant determinants
+     </strong>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#justification-for-the-matrix-method-to-solve-coupled-linear-differential-equations">
+   13.3 Justification for the matrix method to solve coupled linear differential equations
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#similarity-transforms">
+   13.4 Similarity Transforms
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-similarity-transform-used-to-evaluate-a-partition-function-the-helix-coil-transition">
+   13.5 A Similarity Transform used to evaluate a partition function.  The helix-coil transition
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="rate-equations-and-chemical-kinetics">
+<h1>Rate equations and Chemical Kinetics<a class="headerlink" href="#rate-equations-and-chemical-kinetics" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import all python add-ons etc that will be needed later on</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">linalg</span> <span class="k">as</span> <span class="n">LA</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="n">init_printing</span><span class="p">()</span>                         <span class="c1"># allows printing of SymPy results in typeset maths format</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;font.size&#39;</span><span class="p">:</span> <span class="mi">14</span><span class="p">})</span>  <span class="c1"># set font size for plots</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="linear-kinetic-schemes">
+<h2>13.1 Linear kinetic schemes<a class="headerlink" href="#linear-kinetic-schemes" title="Permalink to this headline">¶</a></h2>
+<p>The equations of chemical kinetics can quite easily become complicated even with simple schemes. The sequential scheme</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle A \overset{k_1}\to B \overset{k_2}\to C\]</div>
+<p>is quite difficult to solve by direct integration of the equations involved, and if a reversible step is introduced, such as</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle A \underset{k_{-1}}{\stackrel{k_1}{\leftrightharpoons}} B \overset{k_2} \to C\]</div>
+<p>then solving the rate equations becomes a difficult task. When performing transient kinetics experiments using, for instance, the stopped-flow, flash - photolysis, or femtosecond pump - probe methods, the time profiles of the species present have to be calculated, so that they can be fitted to data to obtain rate coefficients. The transient species present, such as B above, are identified both by their time profile and by spectra.</p>
+<p>A kinetic scheme is always written in terms of the rate of change of the species present; for example, the first-order decay of species <span class="math notranslate nohighlight">\(A\)</span> is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{dA}{dt}=-k_1 A\]</div>
+<p>with rate constant <span class="math notranslate nohighlight">\(k_1\)</span>, which is in units of s<span class="math notranslate nohighlight">\(^{-1}\)</span> is more properly called the <em>rate coefficient</em>.
+Conventionally we write the concentration of species <span class="math notranslate nohighlight">\(A\)</span> as <span class="math notranslate nohighlight">\([A]\)</span> but for clarity we use <span class="math notranslate nohighlight">\(A\)</span>. Note that <span class="math notranslate nohighlight">\(A\)</span> is a function of time, this is implied in the equations but almost never explicitly written down, which means that we rarely need to write <span class="math notranslate nohighlight">\(A(t)\)</span>.</p>
+<p>The first-order equation indicates that the rate of change of <span class="math notranslate nohighlight">\(A\)</span> is negative; therefore, <span class="math notranslate nohighlight">\(A\)</span> is decaying away and being changed into something else and it is doing so at a rate of <span class="math notranslate nohighlight">\(-k_1A\;\mathrm{ mol\,dm^{-3}\, s^{-1}}\)</span>. The rate at any time is thus proportional to how much of <span class="math notranslate nohighlight">\(A\)</span> remains unreacted.</p>
+<p>In the scheme,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \displaystyle A \overset{k_1}\to B \overset{k_2}\to C\]</div>
+<p>as <span class="math notranslate nohighlight">\(A\)</span> decays <span class="math notranslate nohighlight">\(B\)</span> is formed at rate <span class="math notranslate nohighlight">\(k_1A\)</span>, and as this decays with rate <span class="math notranslate nohighlight">\(k_2B\)</span>, <span class="math notranslate nohighlight">\(C\)</span> is formed. The whole
+scheme is</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \qquad\qquad\begin{align}\frac{dA}{dt}&amp;=-k_1A\\ \frac{dB}{dt}&amp;= k_1A-k_2B\\ \frac{dC}{dt}&amp;= k_2B \end{align}\qquad\qquad\qquad\qquad\text{(35)}\end{split}\]</div>
+<p>In solving these differential equations the initial conditions must always be defined. This means defining the concentration of all possible species present in the reaction scheme at time zero. Often it is assumed that only some amount of <span class="math notranslate nohighlight">\(A\)</span> present is present, say <span class="math notranslate nohighlight">\(A_0\)</span>, and that <span class="math notranslate nohighlight">\(B_0 = C_0 = 0\)</span>. You will notice that, since we cannot create or destroy atoms in a chemical process, the total amount of all species is constant at all time, so that <span class="math notranslate nohighlight">\(A_0 + B_0 + C_0 = A + B + C\)</span>, which means that C can always be calculated as the difference <span class="math notranslate nohighlight">\(C = A_0 + B_0 + C_0 - A - B\)</span> so there are really only two differential equations. However, if <span class="math notranslate nohighlight">\(C\)</span> decomposes with time to another species, we cannot use this last relationship.</p>
+<p>We know from direct integration that <span class="math notranslate nohighlight">\(\displaystyle A = A_0e^{-k_1t}\)</span>, and from the theory of coupled linear differential equations that the solution in general for all species are <em>sums of exponential</em> terms, see Chapter 10.7. If the initial concentration of <span class="math notranslate nohighlight">\(A = A_0\)</span> and initially <span class="math notranslate nohighlight">\(B = C =0\)</span>, then the concentration of <span class="math notranslate nohighlight">\(B\)</span> is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle B(t)=\frac{k_1}{k_1-k_2}A_0\left(e^{-k_2t}-e^{-k_1t} \right) \tag{36}\]</div>
+<p>which is of the form expected, with an exponential decay preceded by a grow-in, see Figure 55. Notice that <span class="math notranslate nohighlight">\(k_1\)</span> cannot have the same value as <span class="math notranslate nohighlight">\(k_2\)</span> as then the equation for the population would be <span class="math notranslate nohighlight">\(0/0\)</span>, which is undefined; but in fact there is no reason why these rate constants should not be equal, that is to say that <span class="math notranslate nohighlight">\(B\)</span> is formed with the same rate constant as it decays. This special case is dealt with in Chapter 10.7(ii).</p>
+<p>As an extension to this scheme, suppose that A has an extra form of decay and rather than just forming B it also forms D with a rate constant <span class="math notranslate nohighlight">\(k_3\)</span>. This might be another chemical species or if A is an excited state, then D could be the ground state and A has fluoresced. Either way the scheme is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \displaystyle A \overset{k_1}\to B \overset{k_2}\to C; \qquad A \overset{k_3}\to D\]</div>
+<p>and <span class="math notranslate nohighlight">\(\displaystyle \frac{dA}{dt}=-(k_1+k_3)A\)</span> but B is unchanged as <span class="math notranslate nohighlight">\(\displaystyle \frac{dB}{dt}= k_1A - k_2B\)</span>. Notice that although <span class="math notranslate nohighlight">\(dB/dt\)</span> is the same as in the scheme above B itself appears with rate constant <span class="math notranslate nohighlight">\(k_1+k_3\)</span> which is the decay of A but only the fraction <span class="math notranslate nohighlight">\(k_1/(k_1+k_3)\)</span> of A forms D. By inspecting the scheme, we can write down the decay of A and the appearance of D without any further calculation, giving</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle A = A_0e^{-(k_1+k_3)t},\quad D=\frac{k_3}{k_1+k_3}A_0\left(1-e^{-(k_1+k_3)t} \right)\]</div>
+<p>which shows that D appears as A decays. The change in B has to be calculated, and as expected the result is similar to that of eqn 36, i.e replace <span class="math notranslate nohighlight">\(k_1\)</span> with <span class="math notranslate nohighlight">\(k_1+k_3\)</span>,  and is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle B(t)=\frac{k_1}{k_1+k_3-k_2}A_0\left(e^{-(k_1+k_3)t}-e^{-k_2t} \right) \]</div>
+<p>and which shows that B appears or ‘grows-in’ with the rate constant <span class="math notranslate nohighlight">\(k_1+k_3\)</span>, i.e. just with the rate constant that A decays.</p>
+<p>The next section describes how this and many other complex schemes can be solved using matrix methods both algebraically and more often for complicated rate equations, numerically.</p>
+</div>
+<div class="section" id="matrix-solutions">
+<h2>13.2 Matrix solutions<a class="headerlink" href="#matrix-solutions" title="Permalink to this headline">¶</a></h2>
+<p>Using matrix methods changes the way the problem is solved into that of finding eigenvalues and eigenvectors, thereby avoiding the difficulty of integration, but it is only applicable to first order or linear equations; i.e. product terms such as <span class="math notranslate nohighlight">\(k_2AB\)</span> are not allowed. For very complex schemes, consisting of hundreds of equations, the master equation approach is used and is usually solved numerically. A master equation is defined as a phenomenological, first-order differential equation, describing the time evolution of the probability of a ‘system’ to occupy any one of a discrete set of states.</p>
+<p>The matrix method is described first and justified in the next section. Returning to the sequential scheme 35, the three equations can be reproduced in matrix form as</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{d\pmb{M}}{dt}=\pmb{KM}\]</div>
+<p>the solution of which is formally</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \pmb{M}=\pmb{M_0}e^{-\pmb{K}t} \tag{37}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\pmb{M}\)</span> is a column matrix of concentrations at time <span class="math notranslate nohighlight">\(t\)</span>, <span class="math notranslate nohighlight">\(\pmb{M}_0\)</span> the matrix of their initial values, and <span class="math notranslate nohighlight">\(\pmb K\)</span> is a square matrix of rate constants organised as in the rate equation. The rate equations 35 are rewritten in matrix form as</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \qquad\qquad\begin{bmatrix} \displaystyle\frac{dA}{dt}\\ \displaystyle\frac{dB}{dt}\\ \displaystyle\frac{dC}{dt}\end{bmatrix} =\begin{bmatrix} -k_1 &amp; 0 &amp; 0\\ k_1 &amp; -k_2 &amp; 0\\0 &amp; k_2 &amp; 0\\\end{bmatrix}\begin{bmatrix}A\\B\\C \end{bmatrix} \qquad\qquad\qquad\qquad\text{(38)}\end{split}\]</div>
+<p>Notice how the decay rate constant of each species is on the diagonal, and the grow-in or decay of species <span class="math notranslate nohighlight">\(C\)</span> from <span class="math notranslate nohighlight">\(B\)</span> and <span class="math notranslate nohighlight">\(B\)</span> from <span class="math notranslate nohighlight">\(A\)</span>, on the off-diagonal. Notice also that the matrix is not Hermitian, i.e. is not symmetrical, although each term is real. This means that when the equation is solved the eigenvectors <span class="math notranslate nohighlight">\(x\)</span> are not orthogonal.</p>
+<div class="section" id="secular-determinant">
+<h3><strong>Secular Determinant</strong><a class="headerlink" href="#secular-determinant" title="Permalink to this headline">¶</a></h3>
+<p>Solving the matrix equation 37 is done in two steps. First the eigenvalues <span class="math notranslate nohighlight">\(\lambda\)</span> are obtained from the secular determinant of the rate constants, then equation 39 is used to obtain the populations with time. The justification for this is given in the next section, 13.3; we use it first. The secular determinant of matrix <span class="math notranslate nohighlight">\(\pmb{k}\)</span> is</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin{vmatrix}-k_1-\lambda &amp; 0 &amp; 0\\ k_1&amp; -k_2-\lambda &amp; 0 \\ 0 &amp; k_2 &amp; -\lambda \end{vmatrix}=0\end{split}\]</div>
+<p>whose characteristic equation is <span class="math notranslate nohighlight">\((k_1 + \lambda)(k_2 + \lambda)\lambda = 0\)</span> and from which, by inspection, <span class="math notranslate nohighlight">\(λ_1 =-k_1,\; \lambda_2 =-k_2\)</span>,and <span class="math notranslate nohighlight">\(\lambda_3 =0\)</span>.</p>
+</div>
+<div class="section" id="time-profiles">
+<h3><strong>Time profiles</strong><a class="headerlink" href="#time-profiles" title="Permalink to this headline">¶</a></h3>
+<p>To calculate the populations, or concentrations, the matrix equation</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \pmb{M}(t)=\pmb{x}[\pmb{e}^{\lambda t}]\pmb{x}^{-1}\pmb{M}_0 \tag{39}\]</div>
+<p>is used. This produces a column vector <span class="math notranslate nohighlight">\(\pmb{M}(t)\)</span> of the populations of each species at time <span class="math notranslate nohighlight">\(t\)</span>, <span class="math notranslate nohighlight">\(\pmb{M}_0\)</span> being a column vector of the initial populations. The eigenvectors of matrix <span class="math notranslate nohighlight">\(\pmb{k}\)</span> are formed into a (modal) matrix <span class="math notranslate nohighlight">\(\pmb{x}\)</span> and <span class="math notranslate nohighlight">\(\pmb{x}^{-1}\)</span> is its inverse. The exponential matrix is the diagonal matrix of the exponential of eigenvalues multiplied by time:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \qquad\qquad e^{\lambda t} =\begin{bmatrix} e^{\lambda_1 t} &amp; 0 &amp; 0 &amp; \cdots \\ 0 &amp; e^{\lambda_2 t}   &amp; 0 &amp; \cdots \\ 0 &amp; 0 &amp; e^{\lambda_3 t} &amp; \cdots \\ \vdots &amp; \vdots &amp;\vdots &amp; \ddots \end{bmatrix}\qquad\qquad\qquad\qquad \text{(40)}\end{split}\]</div>
+<p>which in this particular example is <span class="math notranslate nohighlight">\(\displaystyle e^{\lambda t} =\begin{bmatrix} e^{-k_1 t} &amp; 0 &amp; 0  \\ 0 &amp; e^{-k_2 t}   &amp; 0  \\ 0 &amp; 0 &amp; 1   \end{bmatrix} \)</span></p>
+<p>The whole equation is, in diagrammatic form,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \qquad\qquad 
+\begin{bmatrix} M_1(t)\\ M_2(t)\\ \vdots \\ \vdots \end{bmatrix}=
+\begin{bmatrix} x_{11} &amp; x_{21}&amp; \cdots &amp; x_{n1}\\ x_{12} &amp;\cdots &amp; \cdots &amp; \vdots  \\
+\vdots &amp; \vdots &amp;\ddots &amp;\vdots \\
+\cdots &amp; \cdots &amp; \cdots &amp; x_{nn}
+\end{bmatrix} \begin{bmatrix} e^{\lambda_1 t} &amp; 0 &amp; 0 &amp; \cdots \\ 0 &amp; e^{\lambda_2 t}   &amp; 0 &amp; \cdots \\ 0 &amp; 0 &amp; e^{\lambda_3 t} &amp; \cdots \\ \vdots &amp; \vdots &amp;\vdots &amp; \ddots \end{bmatrix}\begin{bmatrix} x_{11} &amp; x_{21}&amp; \cdots &amp; x_{n1}\\ x_{12} &amp;\cdots &amp; \cdots &amp; \vdots  \\
+\vdots &amp; \vdots &amp;\ddots &amp;\vdots \\
+\cdots &amp; \cdots &amp; \cdots &amp; x_{nn}\end{bmatrix}^{\large{-1}}  \begin{bmatrix} M_{01}(t)\\ M_{02}(t)\\ \vdots \\ \vdots \end{bmatrix}\qquad\qquad\qquad\qquad \text{(41)}\end{split}\]</div>
+<p>where each eigenvector is a column in the <span class="math notranslate nohighlight">\(x\)</span> matrix and the notation <span class="math notranslate nohighlight">\(k_{12}\)</span> is the rate constant from species <span class="math notranslate nohighlight">\(1(a) \to 2(b)\)</span> etc.  The populations of each species are the rows of the <span class="math notranslate nohighlight">\(\pmb{M}(t)\)</span> column vector.</p>
+<p>The calculation, using python/Sympy, is shown below. The solution is found algebraically but in practice for complex kinetic schemes a purely numerical solution is the way to proceed because algebraic solution become impossibly complex.</p>
+</div>
+<div class="section" id="algebraic-solution-of-a-to-b-to-c">
+<h3><strong>Algebraic solution of <span class="math notranslate nohighlight">\(A \to B \to C\)</span></strong><a class="headerlink" href="#algebraic-solution-of-a-to-b-to-c" title="Permalink to this headline">¶</a></h3>
+<p>It is assumed that the rate constants are <span class="math notranslate nohighlight">\(k_1\)</span> and <span class="math notranslate nohighlight">\(k_2\)</span>, and that, at time zero, the amount of <span class="math notranslate nohighlight">\(A\)</span> present <span class="math notranslate nohighlight">\(A_0 = 1\)</span>, and that <span class="math notranslate nohighlight">\(B_0 = C_0 = 0\)</span>; This code will calculate any <span class="math notranslate nohighlight">\(A \leftrightharpoons B \leftrightharpoons C\)</span> when the <span class="math notranslate nohighlight">\(\pmb{k}\)</span> matrix is modified.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># algorithm: Kinetic scheme A -&gt; B -&gt; C . Using sympy for algeric result</span>
+
+<span class="n">t</span><span class="p">,</span> <span class="n">k1</span><span class="p">,</span> <span class="n">k2</span><span class="p">,</span> <span class="n">A0</span><span class="p">,</span> <span class="n">B0</span><span class="p">,</span> <span class="n">C0</span><span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;t, k1, k2, A0, B0, C0&#39;</span><span class="p">)</span>
+
+<span class="n">k_matrix</span> <span class="o">=</span> <span class="n">Matrix</span><span class="p">([</span> <span class="p">[</span><span class="o">-</span><span class="n">k1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="n">k1</span><span class="p">,</span><span class="o">-</span><span class="n">k2</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="n">k2</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>    <span class="p">])</span>  <span class="c1"># set up matrix </span>
+<span class="n">k_matrix</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \left[\begin{matrix}- k_{1} &amp; 0 &amp; 0\\k_{1} &amp; - k_{2} &amp; 0\\0 &amp; k_{2} &amp; 0\end{matrix}\right]\end{split}\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vec</span><span class="p">,</span> <span class="n">val</span> <span class="o">=</span> <span class="n">k_matrix</span><span class="o">.</span><span class="n">diagonalize</span><span class="p">()</span>        <span class="c1"># returns eigenvectors and eigenvalues</span>
+<span class="n">vec</span><span class="p">,</span><span class="n">val</span>                                  
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \left( \left[\begin{matrix}0 &amp; \frac{k_{1} - k_{2}}{k_{2}} &amp; 0\\0 &amp; - \frac{k_{1}}{k_{2}} &amp; -1\\1 &amp; 1 &amp; 1\end{matrix}\right], \  \left[\begin{matrix}0 &amp; 0 &amp; 0\\0 &amp; - k_{1} &amp; 0\\0 &amp; 0 &amp; - k_{2}\end{matrix}\right]\right)\end{split}\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">M0</span> <span class="o">=</span> <span class="n">Matrix</span><span class="p">([[</span><span class="n">A0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]])</span>
+<span class="n">exp_matrix</span> <span class="o">=</span> <span class="n">zeros</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>                  <span class="c1"># make matrix full of zeros</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+    <span class="n">exp_matrix</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">i</span><span class="p">]</span><span class="o">=</span> <span class="n">exp</span><span class="p">(</span><span class="n">val</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="n">t</span><span class="p">)</span>     <span class="c1"># fill diagonals </span>
+
+<span class="n">populations</span> <span class="o">=</span> <span class="n">vec</span> <span class="o">*</span> <span class="n">exp_matrix</span> <span class="o">*</span> <span class="n">vec</span><span class="o">.</span><span class="n">inv</span><span class="p">()</span> <span class="o">*</span> <span class="n">M0</span><span class="o">.</span><span class="n">transpose</span><span class="p">()</span> 
+<span class="n">populations</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \left[\begin{matrix}- \frac{A_{0} k_{1} \left(k_{1} - k_{2}\right) e^{- k_{1} t}}{k_{2} \left(- \frac{k_{1}^{2}}{k_{2}} + k_{1}\right)}\\A_{0} \left(\frac{k_{1}^{2} e^{- k_{1} t}}{k_{2} \left(- \frac{k_{1}^{2}}{k_{2}} + k_{1}\right)} + \frac{k_{1} e^{- k_{2} t}}{k_{1} - k_{2}}\right)\\A_{0} \left(- \frac{k_{1} e^{- k_{1} t}}{- \frac{k_{1}^{2}}{k_{2}} + k_{1}} - \frac{k_{1} e^{- k_{2} t}}{k_{1} - k_{2}} + 1\right)\end{matrix}\right]\end{split}\]</div>
+</div>
+</div>
+<p>The populations of the three species are shown in Fig. 7.55. Intuitively, they have the correct form: <span class="math notranslate nohighlight">\( A\)</span> decays to zero, <span class="math notranslate nohighlight">\(B\)</span> rises and falls also to zero, and <span class="math notranslate nohighlight">\(C\)</span> continuously rises to a constant value, which is <span class="math notranslate nohighlight">\(A_0\)</span>, as all molecules must eventually be converted into <span class="math notranslate nohighlight">\(C\)</span>. Notice, that even though <span class="math notranslate nohighlight">\(B\)</span> decays with a rate constant greater than it forms, it is still possible to see the population of <span class="math notranslate nohighlight">\(B\)</span>. You might like to calculate this figure and compare it with that when <span class="math notranslate nohighlight">\(k_1\)</span> and <span class="math notranslate nohighlight">\(k_2\)</span> are swapped in value.</p>
+<p><img alt="Drawing" src="../_images/matrices-fig55.png" /></p>
+<p>Figure 55. Populations of species <span class="math notranslate nohighlight">\(A, \;B\)</span>, and <span class="math notranslate nohighlight">\(C\)</span> with time when <span class="math notranslate nohighlight">\(k_1 = 1,\; k_2 = 1.5\)</span> with initial concentrations <span class="math notranslate nohighlight">\(A_0 =1,\;B_0 =C_0 =0\)</span>. The scheme is <span class="math notranslate nohighlight">\(\displaystyle A \overset{k_1}\to B \overset{k_2}\to C\)</span>.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="numerical-solution-of-a-leftrightharpoons-b-leftrightharpoons-c">
+<h3><strong>Numerical solution of <span class="math notranslate nohighlight">\(A \leftrightharpoons B \leftrightharpoons C\)</span></strong><a class="headerlink" href="#numerical-solution-of-a-leftrightharpoons-b-leftrightharpoons-c" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># numerical calculation using python/numpy</span>
+
+<span class="n">max_num</span> <span class="o">=</span> <span class="mi">200</span>
+<span class="n">t</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="n">max_num</span><span class="p">)</span>    <span class="c1"># range 0 to 10, 200 points </span>
+<span class="n">M0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span>            <span class="c1"># initial concentrations</span>
+<span class="n">n</span>  <span class="o">=</span> <span class="mi">3</span>                            <span class="c1"># number of equations</span>
+<span class="n">k1</span> <span class="o">=</span> <span class="mf">1.0</span>                          <span class="c1"># rate constnat</span>
+<span class="n">k2</span> <span class="o">=</span> <span class="mf">1.5</span>
+<span class="n">M</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span> <span class="p">[</span><span class="o">-</span><span class="n">k1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="n">k1</span><span class="p">,</span><span class="o">-</span><span class="n">k2</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="n">k2</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>    <span class="p">])</span>   <span class="c1"># rate constnat matrix</span>
+
+<span class="n">val</span><span class="p">,</span><span class="n">vec</span> <span class="o">=</span> <span class="n">LA</span><span class="o">.</span><span class="n">eig</span><span class="p">(</span><span class="n">M</span><span class="p">)</span>              <span class="c1"># eigenvalues;  eigenvectors</span>
+<span class="c1">#print(&#39;eigenval, eigenvec&#39;, val,&#39;\n&#39;, vec)</span>
+
+<span class="n">iv_vec</span> <span class="o">=</span> <span class="n">LA</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">vec</span><span class="p">)</span>                       <span class="c1"># invert once and save </span>
+<span class="n">f01</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">m</span><span class="p">,</span><span class="n">k</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span> <span class="n">val</span><span class="p">[</span><span class="n">m</span><span class="p">]</span><span class="o">*</span><span class="n">t</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="p">)</span>    <span class="c1"># define diagonal in matrix </span>
+<span class="n">exp_mat</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">n</span><span class="p">,</span><span class="n">n</span><span class="p">),</span><span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>      <span class="c1"># define matrix </span>
+
+<span class="n">pop</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">n</span><span class="p">,</span><span class="n">max_num</span><span class="p">),</span><span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>    <span class="c1"># define 2D array for results </span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">max_num</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="n">exp_mat</span><span class="p">[</span><span class="n">j</span><span class="p">,</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">f01</span><span class="p">(</span><span class="n">j</span><span class="p">,</span><span class="n">i</span><span class="p">)</span>
+    <span class="n">pop</span><span class="p">[:,</span><span class="n">i</span><span class="p">]</span><span class="o">=</span> <span class="n">vec</span> <span class="o">@</span> <span class="n">exp_mat</span> <span class="o">@</span> <span class="n">iv_vec</span> <span class="o">@</span> <span class="n">M0</span>  <span class="c1"># multiply, pop is all species at time t[i]</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">[:],</span><span class="n">pop</span><span class="p">[</span><span class="mi">1</span><span class="p">,:])</span>                    <span class="c1"># species B</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/matrices-H_7_01.png" src="../_images/matrices-H_7_01.png" />
+</div>
+</div>
+<p>Plotting the three curves of pop[…] will produce figure 55.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="circular-reaction-scheme">
+<h3><strong>Circular reaction scheme</strong><a class="headerlink" href="#circular-reaction-scheme" title="Permalink to this headline">¶</a></h3>
+<p>When the rate equations are more complex then a numerical solution is to be preferred simply because the equations can become impossibly complex. Consider a scheme (figure 55a) in which three species A, B, C are interconnected each with the others.</p>
+<p><img alt="Drawing" src="../_images/matrices-fig55a.png" /></p>
+<p>Figure 55a. Coupled kinetic scheme.</p>
+<hr class="docutils" />
+<p>The rate equations are</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin{align} \frac{da}{dt}&amp;= -(k_{12}+k_{13})a+k_{21}b+k_{31}c  \\ \frac{db}{dt}&amp;= k_{12}a-(k_{21}+k_{23})b+k_{32}c \\\frac{dc}{dt}&amp;= k_{13}a + k_{23}b-(k_{31}+k_{32})c \end{align} \end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(a,b,c\)</span> are the concentrations of each species and <span class="math notranslate nohighlight">\(k_{21}\)</span> is the rate constant from <span class="math notranslate nohighlight">\(b \to a\)</span> and similarly for the others. In matrix form these equations are, where the dot over a letter indicated the time derivative,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin{bmatrix}\dot a\\ \dot b\\ \dot c \end{bmatrix}=\begin{bmatrix}-(k_{12}+k_{13}) &amp; k_{21} &amp; k_{31}\\k_{12} &amp; -(k_{21}+k_{23}) &amp; k_{32} \\k_{13} &amp; k_{23} &amp; -(k_{32}+k_{31})  \\ \end{bmatrix}\begin{bmatrix}a\\b\\c\end{bmatrix}\end{split}\]</div>
+<p>The rate expression for <span class="math notranslate nohighlight">\(b\)</span> is <span class="math notranslate nohighlight">\(\displaystyle \frac{db}{dt}= -(k_{21}+k_{23})b + k_{12}a+k_{32}c\)</span></p>
+<p>In general this can be written as</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{db}{dt}= -\sum_i k_{2,i}(1-\delta_{2,i})b + k_{12}a+k_{32}c\]</div>
+<p>where the delta function removes the <span class="math notranslate nohighlight">\(k_{22}\)</span> term. The summation is along the last index, i.e. the columns of the (rate constant) matrix of <span class="math notranslate nohighlight">\(k_{i,j}\)</span> values in each case. Note that this <span class="math notranslate nohighlight">\(k\)</span> matrix is simply the matrix of rate constants  and not organized as rate equations as <span class="math notranslate nohighlight">\(\pmb K\)</span> is in eqn. 37. This means that the subscripts refer to the rate constants not to their index position in the matrix. As a check on the calculation the sum of the populations at any time must be equal to the total amount initially present.</p>
+<p>This method can be extended to schemes with many other species as in question 52. If, for instance, species <span class="math notranslate nohighlight">\(b\)</span> decays such as by fluorescence or phosphorescence then <span class="math notranslate nohighlight">\(-k_f b\)</span> is added to the summation term in the rate equation for that species. The limitation is that only first order, or pseudo first order, reactions are possible, i.e. the rate constant matrix must not involve and concentrations unless they have a constant value.</p>
+</div>
+<div class="section" id="energy-transfer-on-a-polygon-circulant-determinants">
+<h3><strong>Energy transfer on a Polygon. Circulant determinants</strong><a class="headerlink" href="#energy-transfer-on-a-polygon-circulant-determinants" title="Permalink to this headline">¶</a></h3>
+<p>In this example we consider energy transfer between molecules equally spaced apart on a polygon. The determinant produced is similar to the <span class="math notranslate nohighlight">\(\mathrm{H\overset{\cdot\cdot}uckel }\)</span> one described in section 2 although the problem is totally different.</p>
+<p>Forster transfer, which operates by dipole-dipole energy transfer, is commonly used as a spectroscopic ruler to determine distances between molecules tagged with fluorophores. The process between donor and acceptor is</p>
+<div class="math notranslate nohighlight">
+\[\mathrm{ D^* + A \to D + A^*}\]</div>
+<p>where the * indicates an electronically excited molecule. In fact the donor and acceptor can be the same type of molecule, e.g. chlorophyll among many others, when there is overlap of absorption and emission spectra. The overlap ensures that some energy levels of the donor are above those of the acceptor. Various very similar types of chlorohyll are the chromophores used the first step in the light gathering process of the ‘antenna’ in photosynthesis. The LH2 and LH1 light harvesting antenna of bacterial photosynthesis has 18 or so chromophores arranged in a loop, which could be described as a regular polygon perhaps just as accurately as a circle. (The energy is now understood to be localised over the antenna for the first few tens of femtoseconds after photon absorption but here for the purposes of example in this idealised model, we shall suppose that discrete transfer between pigments always occurs.)</p>
+<p>The rate constant is defined as</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle k =\chi^2 k_f\left(\frac{r}{R_0}\right)^6\]</div>
+<p>where <span class="math notranslate nohighlight">\(k_f\)</span> is the intrinsic excited state decay rate constant and <span class="math notranslate nohighlight">\(R_0\)</span> is a characteristic distance that depends on the overlap of the donor molecule’s emission spectrum and the acceptor’s absorption spectrum and is typically only a few nanometres. The orientation factor between the molecules dipoles is <span class="math notranslate nohighlight">\(\chi^2\)</span>. The molecules’ separation is <span class="math notranslate nohighlight">\(r\)</span> which, for Forster transfer to be valid, must be much greater than a molecule’s radius.</p>
+<p>If molecules are placed at the vertices of a regular polygon a set of first order rate equations can be written down to define the probability of finding excitation on any molecule at any given time. If the molecules are all of the same type and orientation, only one rate constant <span class="math notranslate nohighlight">\(k\)</span> is needed. As time passes the excitation spreads out among all the molecules and if we suppose that the intrinsic decay rate constant (reciprocal fluorescence or excited state lifetime) is far smaller than that for energy transfer the population will come to an equilibrium value with equal excitation on each molecule. For simplicity the normal decay of the excited state is ignored.</p>
+<p>Suppose that the molecules are on the corners of a square and for simplicity only near-neighbour transfer is allowed, then the rate equations are</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \qquad\qquad\begin{bmatrix}\dot p_0\\ \dot p_1\\ \dot p_2\\ \dot p_3 \end{bmatrix}=\begin{bmatrix} -2k &amp; k &amp; 0  &amp; k \\ k &amp; -2k &amp; k &amp; 0 \\0&amp; k &amp; -2k &amp; k \\k &amp; 0 &amp; k &amp; -2k\end{bmatrix}\begin{bmatrix}p_0(0)\\p_1(0)\\  p_2(0)\\ p_3(0) \end{bmatrix} \qquad\qquad\begin{matrix}  0 &amp;\cdots &amp; 1\\ \vdots &amp; &amp;\vdots\\ 3 &amp;\cdots&amp; 2\end{matrix}\qquad\qquad\qquad\qquad\text{(41a)}\end{split}\]</div>
+<p>The initial amounts excited are <span class="math notranslate nohighlight">\(p_i(0)\)</span> where <span class="math notranslate nohighlight">\(i=0,\cdots, 3\)</span> which we make zero except for <span class="math notranslate nohighlight">\(p_0(0)=1\)</span>. The first equation when written out in the usual way is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{dp_0(t)}{dt}= -k_{0\to 1}-k_{0\to 3} + k_{1\to 0} +k_{3\to  0}\]</div>
+<p>which means that species 0 decays to species 1 and 3 with a rate constant <span class="math notranslate nohighlight">\(k\)</span> and receives energy from species 1 and 3 each with rate constant <span class="math notranslate nohighlight">\(k\)</span>. Molecule 2 is not involved as it is not a near neighbour to molecule 0. All the rate constants are the same because we choose only to consider nearest neighbours and the molecules are equally spaced from one another.</p>
+<p>To solve these equations we can use the method outlined with the <span class="math notranslate nohighlight">\(\mathrm{H\overset{\cdot\cdot}uckel }\)</span> determinant with which this has great similarity. The determinant to solve for the characteristic equation is</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin{vmatrix} -2k &amp; k &amp; 0  &amp; k \\ k &amp; -2k &amp; k &amp; 0 \\0&amp; k &amp; -2k &amp; k \\k &amp; 0 &amp; k &amp; -2k\end{vmatrix}\end{split}\]</div>
+<p>and has a special form as it is <em>circulant</em>, which is to say that each row is the same as the others but rotated by one place, additionally each diagonal contains the same entry. <span class="math notranslate nohighlight">\(\mathrm{H\overset{\cdot\cdot}uckel }\)</span> determinants on benzene or other planar rings has the same form as this.</p>
+<p>If <span class="math notranslate nohighlight">\(\lambda\)</span> are the roots of the polynomial represented by the determinant then we write down the secular equation as</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin{vmatrix} -2k-\lambda &amp; k &amp; 0  &amp; k \\ k &amp; -2k-\lambda &amp; k &amp; 0 \\0&amp; k &amp; -2k-\lambda &amp; k \\k &amp; 0 &amp; k &amp; -2k-\lambda\end{vmatrix}=0\end{split}\]</div>
+<p>and solve for <span class="math notranslate nohighlight">\(\lambda\)</span> using the polynomial formed by expanding the determinant. Only because the determinant is circulant can we write down the solution directly, but first it helps to make a simple simplification as was done with Huckel determinants. This is to divide each term with <span class="math notranslate nohighlight">\(k\)</span> and let</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle x=-2-\lambda /k\]</div>
+<p>and then the determinant becomes</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin{vmatrix} x &amp; 1 &amp; 0  &amp; 1 \\ 1 &amp; x &amp; 1 &amp; 0 \\0&amp; 1 &amp; x &amp; 1 \\1 &amp; 0 &amp; 1 &amp; x\end{vmatrix}=0\end{split}\]</div>
+<p>As this determinant is quite small it is possible to expand it out by hand to form a polynomial, but of course this becomes virtually impossible for larger determinants and finding the roots even harder. This determinant, and other circulant ones,  is solved in section 2.5 where the Huckel method is described. Using the results from that section the four roots are <span class="math notranslate nohighlight">\(\displaystyle x_j= -2\cos(2\pi j/4)\)</span> or <span class="math notranslate nohighlight">\(x=-2,0,2,0\)</span> and thus substituting for <span class="math notranslate nohighlight">\(x\)</span> the eigenvalues are</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \lambda_j = -2k\left(1-\cos\left(\frac{2\pi j}{4}\right)\right),\qquad j=0,1,2,3\]</div>
+<p>or</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \lambda= 0,-2k,-4k,-2k\]</div>
+<p>In the general case when there are <span class="math notranslate nohighlight">\(n\)</span> coupled molecules the eigenvalues are</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \lambda_j = -2k\left(1-\cos\left(\frac{2\pi j}{n}\right)\right),\qquad j=0,1,2,\cdots, n-1\]</div>
+<p>The eigenvectors <span class="math notranslate nohighlight">\(v_j,\;(j=0,1,2,\cdots n-1)\)</span> for circulant matrices/determinants are always the list of the powers of the <span class="math notranslate nohighlight">\(n\)</span> roots of unity,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle v_j=\begin{bmatrix} w_j^0&amp; w_j^1&amp;w_j^2&amp; \cdots &amp;w_j^{n-1} \end{bmatrix}^T\]</div>
+<p>and are in our example</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin{array}{lll}v_0=\begin{bmatrix} 1 &amp; 1&amp;1&amp;1 \end{bmatrix}^T,&amp; v_1=\begin{bmatrix} 1 &amp; i&amp;-1&amp;-i \end{bmatrix}^T,\\ v_2=\begin{bmatrix} 1 &amp; -1&amp;1&amp;-1 \end{bmatrix}^T,&amp; v_3=\begin{bmatrix} 1 &amp; -i&amp;-1&amp;i \end{bmatrix}^T.\end{array}\end{split}\]</div>
+<p>The vectors are labelled as transpose <span class="math notranslate nohighlight">\([\cdots]^T\)</span> because they are column vectors. To evaluate the time profiles the matrix of eigenvectors <span class="math notranslate nohighlight">\(\pmb x\)</span> (eqn 39) is needed, and in the case of circulant matrices because the values are each one of the roots of units <span class="math notranslate nohighlight">\(w\)</span> so these values are repetative and can be written down directly. The elements are</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle x_{j,k}=w_n^{j\cdot k}=e^{2\pi i\cdot j\cdot k/n},\quad j=0,1,2,\cdots,n-1,\quad k=0,1,2,\cdots,n-1\]</div>
+<p>Each eigenvector is one column. Written out <span class="math notranslate nohighlight">\(\pmb x\)</span> is</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \pmb x_n=\begin{bmatrix}1 &amp; 1&amp; 1&amp; 1&amp;\cdots\\1&amp; w_n^1 &amp; w_n^2 &amp; w_n^3&amp;\cdots \\1 &amp; w_n^2 &amp; w_n^4 &amp; w_n^6 &amp;\cdots \\1 &amp; w_n^3 &amp; w_n^6 &amp; w_n^9&amp;\cdots \\  \vdots &amp; &amp; &amp;\vdots\\1 &amp; w_n^{(n-1)k} &amp; &amp; &amp; w_n^{(n-1)^2}\end{bmatrix}\end{split}\]</div>
+<p>and as <span class="math notranslate nohighlight">\(e^0 = 1\)</span> the entries in the first row and column are always <span class="math notranslate nohighlight">\(1\)</span>. The maximum product <span class="math notranslate nohighlight">\(jk=(n-1)^2\)</span>. In our example</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \pmb x_4=\begin{bmatrix}1 &amp; 1&amp; 1&amp; 1\\1&amp; i &amp; -1 &amp; -i \\1 &amp; -1 &amp; 1 &amp; -1 \\1 &amp; -i &amp; -1 &amp; i\end{bmatrix}\end{split}\]</div>
+<p>which means that we have all the information to calculate the populations on any molecule. The inverse of this type of eigenvector matrix is simply <span class="math notranslate nohighlight">\(\pmb x^*/n\)</span>, where * indicates the complex conjugate, so no calculation is required. The diagonal matrix is <span class="math notranslate nohighlight">\([e^{\lambda t}]\)</span> with the <span class="math notranslate nohighlight">\(\lambda\)</span> given above and the whole calculation e.g. eqn 39 is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \pmb x_t=\frac{1}{n}\pmb x[e^{\lambda t}]\pmb x^*\pmb M_0 \]</div>
+<p>Although the eigenvector matrix <span class="math notranslate nohighlight">\(\pmb x\)</span> is useful here, this is nothing compared to its general use which is that if <span class="math notranslate nohighlight">\(\vec v\)</span> is any vector then multiplying as <span class="math notranslate nohighlight">\(\pmb x \vec v\)</span> is the Discrete Fourier Transform (DFT) of vector <span class="math notranslate nohighlight">\(v\)</span>. This leads automatically to the Fast Fourier Transform (FFT) algorithms used universally in all sorts of signal analysis from music to CT scans. These are described in the Chapter 9 on Fourier Series and Transforms.</p>
+<p>Before doing the calculation there is an important feature about the time profiles we already know. The <span class="math notranslate nohighlight">\(\lambda\)</span> are scaled rate constants, i.e. they are the rate constant <span class="math notranslate nohighlight">\(k\)</span> multiplied by a negative number. When <span class="math notranslate nohighlight">\(j=0, \lambda = -2k(1-\cos(0))\)</span> which is zero meaning that there is always a constant term in the population <span class="math notranslate nohighlight">\(p\)</span> because <span class="math notranslate nohighlight">\(e^0 = 1\)</span> indicating that equilibrium will always be reached when the other terms have decayed away. (We are ignoring here the fact that the molecules themselves can decay by fluorescence, intersystem crossing or internal conversion but we shall assume that an excited state is long lived compared to energy transfer and so is effectively infinitely long lived). We also know that the time profiles have the form</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle p(t)=\frac{1}{n}\sum_{m=0}^{n-1}c_me^{+\lambda_m\,t}\]</div>
+<p>i.e. the sum/difference of exponential terms where <span class="math notranslate nohighlight">\(c\)</span> are the coefficients for each term. In the circulant matrices the <span class="math notranslate nohighlight">\(c\)</span>’s are always <span class="math notranslate nohighlight">\(\pm 1\)</span> and the <span class="math notranslate nohighlight">\(1/n\)</span> makes the initial population at time zero equal to <span class="math notranslate nohighlight">\(1\)</span> and the final population of all species <span class="math notranslate nohighlight">\(1/n\)</span> when the energy is evenly spread out.</p>
+<p>The calculation in python is shown below for the general case. The number of molecules is <span class="math notranslate nohighlight">\(6\)</span> and this shows that the population of <span class="math notranslate nohighlight">\(1\)</span> and <span class="math notranslate nohighlight">\(5\)</span> are equivalent and both rise and then fall as energy passes through them and that molecules further away from that one initially excited (molecule 0) take longer to reach equilibrium. If you try this with larger <span class="math notranslate nohighlight">\(n\)</span> you will see this behaviour is general and in line with what intuition would suggest.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Calculation of time profile when the secular equation is circulant</span>
+
+<span class="n">n</span>  <span class="o">=</span> <span class="mi">6</span>         <span class="c1"># number of molecules on the ring/ polygon</span>
+<span class="n">max_num</span> <span class="o">=</span> <span class="mi">200</span>  <span class="c1"># number of time points</span>
+<span class="n">maxt</span> <span class="o">=</span> <span class="mi">2</span>       <span class="c1"># maximum time</span>
+
+<span class="n">t</span>   <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">maxt</span><span class="p">,</span><span class="n">max_num</span><span class="p">)</span>      <span class="c1"># time range 0 to maxt, max_num points </span>
+<span class="n">M0</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">dtype</span> <span class="o">=</span> <span class="nb">complex</span><span class="p">)</span>      <span class="c1"># initial concentrations</span>
+<span class="n">lam</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">dtype</span> <span class="o">=</span> <span class="nb">complex</span><span class="p">)</span>      <span class="c1"># vector for eigenvalues</span>
+<span class="n">X</span>   <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">n</span><span class="p">,</span><span class="n">n</span><span class="p">),</span><span class="n">dtype</span> <span class="o">=</span> <span class="nb">complex</span><span class="p">)</span>  <span class="c1"># matrix for eigenvectors</span>
+<span class="n">exp_mat</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">n</span><span class="p">,</span><span class="n">n</span><span class="p">),</span><span class="n">dtype</span> <span class="o">=</span> <span class="nb">complex</span><span class="p">)</span>         <span class="c1"># define matrix for exp(lambda)</span>
+<span class="n">pop</span>     <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">n</span><span class="p">,</span><span class="n">max_num</span><span class="p">),</span><span class="n">dtype</span><span class="o">=</span><span class="nb">complex</span><span class="p">)</span>     <span class="c1"># define 2D array for results initially zero</span>
+
+<span class="n">M0</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="c1"># initial population</span>
+<span class="n">k</span> <span class="o">=</span> <span class="mf">1.0</span>     <span class="c1"># rate constant</span>
+
+<span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>                   <span class="c1"># calculate eigenvectors (X) and eigenvalues (lam)</span>
+    <span class="n">lam</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">k</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">j</span><span class="o">/</span><span class="n">n</span><span class="p">))</span>
+    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="n">X</span><span class="p">[</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">j</span><span class="o">*</span><span class="n">k</span><span class="o">/</span><span class="n">n</span><span class="p">)</span>
+
+<span class="n">iv_X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">conj</span><span class="p">(</span><span class="n">X</span><span class="p">)</span><span class="o">/</span><span class="n">n</span>       <span class="c1"># could use LA.inv(X) but not necessary if circulant, invert once and save </span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">max_num</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="n">exp_mat</span><span class="p">[</span><span class="n">j</span><span class="p">,</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span> <span class="n">lam</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">*</span><span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="p">)</span> <span class="c1"># diagonal  lambda*t   </span>
+    <span class="n">pop</span><span class="p">[:,</span><span class="n">i</span><span class="p">]</span><span class="o">=</span> <span class="n">X</span> <span class="o">@</span> <span class="n">exp_mat</span> <span class="o">@</span> <span class="n">iv_X</span> <span class="o">@</span> <span class="n">M0</span>    <span class="c1"># @ multiplies matrices, result is all species at time t[i]</span>
+    <span class="k">pass</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span> <span class="n">t</span><span class="p">[:],</span><span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">pop</span><span class="p">[</span><span class="n">i</span><span class="p">,:])</span> <span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;molec &#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>   <span class="c1"># plot only real part                   </span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mf">1.1</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">([</span><span class="o">-</span><span class="mf">0.01</span><span class="p">,</span><span class="n">maxt</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;population&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;time&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/matrices-H_10_01.png" src="../_images/matrices-H_10_01.png" />
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="justification-for-the-matrix-method-to-solve-coupled-linear-differential-equations">
+<h2>13.3 Justification for the matrix method to solve coupled linear differential equations<a class="headerlink" href="#justification-for-the-matrix-method-to-solve-coupled-linear-differential-equations" title="Permalink to this headline">¶</a></h2>
+<p>In using equation 38 to solve the scheme, the assumption is made that if <span class="math notranslate nohighlight">\(\pmb{M}\)</span> is a vector and <span class="math notranslate nohighlight">\(\pmb{k}\)</span> a matrix, we can write <span class="math notranslate nohighlight">\(d\pmb{M}/dt = \pmb{kM}\)</span> and that its solution is <span class="math notranslate nohighlight">\(\pmb{M} = \pmb{M}_0e^{\pmb{k}t}\)</span>. To show that this is valid, we work backwards and start with <span class="math notranslate nohighlight">\(\pmb{M}\)</span>, which is differentiated term by term, after first expanding the exponential as a series. In Section 5.5 it was shown that the exponential of a matrix can only be manipulated by first expanding;</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \frac{d\pmb{M}}{dt}=\pmb{M_0}\frac{e^{\pmb{k}t}}{dt}=\pmb{M_0}\frac{d}{dt}\left(1+\pmb{k}t+\frac{\pmb{k}^2}{2!}t^2++\frac{\pmb{k}^3}{3!}t^3+\cdots \right)\\=
+\pmb{M_0}\pmb{k}\left(1+\pmb{k}t +\frac{\pmb{k}^2}{2!}t^2+\cdots \right) =\pmb{kM_0}e^{\pmb{k}t}=\pmb{kM}\end{split}\]</div>
+<p>In the last two steps, <span class="math notranslate nohighlight">\(\pmb{k}\)</span> has been separated out, and the remaining series identified as the first few terms of the exponential expansion.</p>
+<p>The second equation, (39), used in the calculation, is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \pmb{M}(t) = \pmb{X}[e^{\lambda t}]\pmb{X}^{-1}\pmb{M}_0\]</div>
+<p>and the form of this needs explaining. First, each value in the column vector <span class="math notranslate nohighlight">\(\pmb{M}(t)\)</span> represents the concentration of each species at time <span class="math notranslate nohighlight">\(t\)</span>, the column vector <span class="math notranslate nohighlight">\(\pmb{M}_0\)</span> holds the initial concentrations
+of the same species. The equation we start with is <span class="math notranslate nohighlight">\(\pmb{M}(t) = \pmb{M}_0 e^{-\pmb{k}t}\)</span>. To solve this it has to be converted into <span class="math notranslate nohighlight">\(\pmb{M}(t) = \pmb{X}[e^{\lambda t}]\pmb{X}^{-1}\pmb{M}_0\)</span>, and to do this a <em>similarity transform</em> is needed.</p>
+</div>
+<div class="section" id="similarity-transforms">
+<h2>13.4 Similarity Transforms<a class="headerlink" href="#similarity-transforms" title="Permalink to this headline">¶</a></h2>
+<p>In our study of molecular group theory, similar matrices were introduced. However, <em>similar</em> matrices are used more generally. A square matrix <span class="math notranslate nohighlight">\(\pmb{W}\)</span> is described as being <em>similar or conjugate</em> to another square matrix <span class="math notranslate nohighlight">\(\pmb{N}\)</span>, if there exists a third, non-singular, square matrix <span class="math notranslate nohighlight">\(\pmb{X}\)</span> such that</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \pmb{W} = \pmb{X}^{-1}\pmb{NX} \tag{42}\]</div>
+<p>then <span class="math notranslate nohighlight">\(\pmb{X}^{-1}\pmb{NX}\)</span> is a similarity transform; <span class="math notranslate nohighlight">\(\pmb{X}\pmb{NX}^{-1}\)</span> is also a similarity transform. A similarity transform is equivalent to changing the basis set of one matrix into another basis; this might also be considered a coordinate transformation.</p>
+<p>If matrix <span class="math notranslate nohighlight">\(\pmb{W}\)</span> operates on an object, this is the equivalent of transforming the object (which could be a rotation), then operating on it by <span class="math notranslate nohighlight">\(\pmb{N}\)</span>, which stretches or alters the object in some way (but does not rotate), then undoing the initial transformation with a further transformation (rotation in the opposite direction) with <span class="math notranslate nohighlight">\(\pmb{X}^{-1}\)</span>. Thus, <span class="math notranslate nohighlight">\(\pmb{W}\)</span> performs the same operation as <span class="math notranslate nohighlight">\(\pmb{N}\)</span> but uses a different set of axes.</p>
+<p>The similarity transform is most useful in diagonalizing matrices, because, if a matrix <span class="math notranslate nohighlight">\(\pmb{W}\)</span> can be diagonalized and its matrix of eigenvectors <span class="math notranslate nohighlight">\(\pmb{X}\)</span> calculated, then <span class="math notranslate nohighlight">\(\pmb{W}\)</span> is <em>similar</em> to the diagonal matrix of its eigenvalues <span class="math notranslate nohighlight">\(\pmb{\Lambda}\)</span>, where the eigenvectors <span class="math notranslate nohighlight">\(\pmb{X}\)</span> act as the similarity matrices. The diagonal matrix is</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \pmb{\Lambda} =\begin{bmatrix} \lambda_1 &amp; 0 &amp; 0 &amp;\cdots \\ 0 &amp; \lambda_2   &amp; 0 &amp;\cdots  \\ 0 &amp; 0 &amp; \lambda_3 &amp;\cdots \\ \vdots &amp; \vdots &amp;\vdots &amp; \ddots   \end{bmatrix} \end{split}\]</div>
+<p>The equation relating eigenvalues and the diagonal matrix of eigenvectors <span class="math notranslate nohighlight">\(\pmb{\Lambda}\)</span> is <span class="math notranslate nohighlight">\(\pmb{WX} = \pmb{X\Lambda}\)</span>. If we left multiply by the inverse eigenvector matrix <span class="math notranslate nohighlight">\(\pmb{X}^{-1}\)</span> then</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \pmb{X}^{-1}\pmb{WX} = \pmb{\Lambda} \tag{43}\]</div>
+<p>which is a similarity transform. Of course, the inverse matrix <span class="math notranslate nohighlight">\(\pmb{X}^{-1}\)</span> must exist. In making a diagonal matrix, the original matrix has been ‘rotated’, as it were, so that all elements are zero except on the diagonal, the off-diagonal elements become incorporated into the diagonal ones. This ‘rotation’ or coordinate change analogy, is what is done when the principal axis are found when the moments of inertia of a body are calculated, see Section 15.2.</p>
+<p>In chemical kinetics, the diagonal matrix of the exponential values of the eigenvalues is used, i.e. eqn. 40,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle [e^{\lambda t}] =\begin{bmatrix} e^{\lambda_1 t} &amp; 0 &amp; 0 &amp; \cdots \\ 0 &amp; e^{\lambda_2 t}   &amp; 0 &amp; \cdots \\ 0 &amp; 0 &amp; e^{\lambda_3 t} &amp; \cdots \\ \vdots &amp; \vdots &amp;\vdots &amp; \ddots \end{bmatrix}\end{split}\]</div>
+<p>therefore, we need to show that we can use the similarity transform to make this matrix. Suppose there is a function of a matrix <span class="math notranslate nohighlight">\(\pmb{f}(\pmb{W})\)</span>, which is itself a matrix, then this can be expanded as a (Taylor) series with coefficients <span class="math notranslate nohighlight">\(a_i\)</span>, just as is done with an exponential or other normal function. A general power series is written as</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \pmb{f}(\pmb{W})= a_0\pmb{1}+a_1\pmb{W}+a_2\pmb{W}^2 +\cdots\]</div>
+<p>Because <span class="math notranslate nohighlight">\(\pmb{f}(\pmb{W})\)</span> must commute with <span class="math notranslate nohighlight">\(\pmb{W}\)</span>, then both matrices can be diagonalized simultaneously with a similarity transform. Using the eigenvector matrix <span class="math notranslate nohighlight">\(\pmb{X}\)</span> of matrix <span class="math notranslate nohighlight">\(\pmb{W}\)</span>, then the similarity transform is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \pmb{X}^{-1}\pmb{f}(\pmb{W})\pmb{X} = \pmb{f}\pmb{\Lambda} \tag{44}\]</div>
+<p>and <span class="math notranslate nohighlight">\(\pmb{f}(\pmb{\Lambda})\)</span> is a diagonal matrix of function <span class="math notranslate nohighlight">\(f\)</span>. For instance, if <span class="math notranslate nohighlight">\(\pmb{f}(\pmb{W}) = e^{\pmb{W}}\)</span>, then</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \pmb{X}^{-1}e^{\pmb{W}}\pmb{X} = e^{\pmb{\Lambda}}\]</div>
+<p>which is used to solve equations in chemical kinetics.</p>
+<p>Suppose that a matrix <span class="math notranslate nohighlight">\(\pmb{M}\)</span> is to be raised to its <span class="math notranslate nohighlight">\(n^{th}\)</span> power, the function <span class="math notranslate nohighlight">\(\pmb{f}(\pmb{W})\)</span> is then <span class="math notranslate nohighlight">\(\pmb{M}^n\)</span>. The similarity transform becomes <span class="math notranslate nohighlight">\(\pmb{X}^{-1}\pmb{M}^n\pmb{X} = \pmb{\Lambda}^n\)</span>, which can be rearranged to <span class="math notranslate nohighlight">\(\pmb{M}^n=\pmb{X}\pmb{\Lambda}^n\pmb{X}^{-1} \)</span> and so the equation can be used both ways round. This last expression is a very convenient way of raising a matrix to a large power, if <span class="math notranslate nohighlight">\(\pmb{M}\)</span> can be diagonalized and its eigenvalues <span class="math notranslate nohighlight">\(\pmb{X}\)</span> determined. The alternative method, is the repeated multiplication <span class="math notranslate nohighlight">\(\pmb{MMMM}\cdots\)</span>, which is impracticable should <span class="math notranslate nohighlight">\(n\)</span> be large, <span class="math notranslate nohighlight">\(100\)</span> for example.</p>
+<p>To show that a similarity transform on <span class="math notranslate nohighlight">\(\pmb{M}\)</span> produces a diagonal matrix of eigenvalues, consider the matrix</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \pmb{M}=\begin{bmatrix} -2 &amp; 10 \\ 2 &amp; -3\end{bmatrix}\end{split}\]</div>
+<p>The eigenvalues are obtained using the secular determinant</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin{bmatrix} -1-\lambda  &amp; 10 \\ 2 &amp; -3-\lambda \end{bmatrix}=0\end{split}\]</div>
+<p>and solving the characteristic equation, which is <span class="math notranslate nohighlight">\((\lambda + 2)(\lambda + 3) - 20 = 0\)</span>. This produces
+eigenvalues of <span class="math notranslate nohighlight">\(\lambda_1 = -7\)</span> and <span class="math notranslate nohighlight">\(\lambda_2 = 2\)</span>. The eigenvectors are</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \pmb{x}_1 =\begin{bmatrix}-2 \\1 \end{bmatrix} \qquad \pmb{x}_2 =\begin{bmatrix}5 \\2 \end{bmatrix}\end{split}\]</div>
+<p>The dot product of the eigenvectors is <span class="math notranslate nohighlight">\(-4\)</span> so they are not orthogonal, which is expected as the matrix is not Hermitian. The (modal) matrix of eigenvector column vectors is</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \pmb{x} =\begin{bmatrix}-2&amp; 5 \\1&amp;2 \end{bmatrix}\end{split}\]</div>
+<p>which has an inverse,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \pmb{x}^{-1} =\frac{1}{9}\begin{bmatrix}-2&amp; 5 \\1&amp;2 \end{bmatrix}\end{split}\]</div>
+<p>(The eigenvalues, eigenvectors, and inverse of any <span class="math notranslate nohighlight">\(2 \times 2\)</span> matrix are given in Section 5.6.) The similarity transform is therefore</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \pmb{\Lambda} =\pmb{x}^{-1}\pmb{Mx}=\frac{1}{9}\begin{bmatrix}-2&amp; 5 \\1&amp;2 \end{bmatrix}\begin{bmatrix} -2 &amp; 10 \\ 2 &amp; -3\end{bmatrix}\begin{bmatrix}-2&amp; 5 \\1&amp;2 \end{bmatrix} = \begin{bmatrix} -7 &amp; 0 \\ 0 &amp; 2\end{bmatrix}\end{split}\]</div>
+<p>and which proves equation 43 because the diagonal matrix of eigenvalues is obtained.</p>
+<p>To raise <span class="math notranslate nohighlight">\(\pmb{M}\)</span> to the <span class="math notranslate nohighlight">\(5^{th}\)</span> power the calculation is <span class="math notranslate nohighlight">\(\pmb{M}^5 = \pmb{x\Lambda}^5\pmb{x}^{-1}\)</span> or</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \pmb{M}^5=\frac{1}{9}\begin{bmatrix}-2&amp; 5 \\1&amp;2 \end{bmatrix}\begin{bmatrix} -7 &amp; 0 \\ 0 &amp; 2\end{bmatrix}^5\begin{bmatrix}-2&amp; 5 \\1&amp;2 \end{bmatrix}= \begin{bmatrix}-7452 &amp; 18710\\ 3472 &amp; -9323\end{bmatrix}\end{split}\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">M</span><span class="p">,</span> <span class="n">Lambda</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;M, Lambda&#39;</span><span class="p">)</span>
+<span class="n">M</span>  <span class="o">=</span> <span class="n">Matrix</span><span class="p">([[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">10</span><span class="p">],[</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">3</span><span class="p">]])</span>
+<span class="n">evecs</span><span class="p">,</span><span class="n">evals</span> <span class="o">=</span> <span class="n">M</span><span class="o">.</span><span class="n">diagonalize</span><span class="p">()</span>
+<span class="n">evecs</span><span class="p">,</span> <span class="n">evals</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \left( \left[\begin{matrix}-2 &amp; 5\\1 &amp; 2\end{matrix}\right], \  \left[\begin{matrix}-7 &amp; 0\\0 &amp; 2\end{matrix}\right]\right)\end{split}\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Lambda</span> <span class="o">=</span> <span class="n">evecs</span><span class="o">.</span><span class="n">inv</span><span class="p">()</span><span class="o">*</span> <span class="n">M</span> <span class="o">*</span><span class="n">evecs</span>    <span class="c1"># eigenvalues </span>
+<span class="n">Lambda</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \left[\begin{matrix}-7 &amp; 0\\0 &amp; 2\end{matrix}\right]\end{split}\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">M5</span> <span class="o">=</span> <span class="n">evecs</span><span class="o">*</span><span class="n">Lambda</span><span class="o">**</span><span class="mi">5</span><span class="o">*</span><span class="n">evecs</span><span class="o">.</span><span class="n">inv</span><span class="p">()</span>  <span class="c1"># M^5 </span>
+<span class="n">M5</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \left[\begin{matrix}-7452 &amp; 18710\\3742 &amp; -9323\end{matrix}\right]\end{split}\]</div>
+</div>
+</div>
+</div>
+<div class="section" id="a-similarity-transform-used-to-evaluate-a-partition-function-the-helix-coil-transition">
+<h2>13.5 A Similarity Transform used to evaluate a partition function.  The helix-coil transition<a class="headerlink" href="#a-similarity-transform-used-to-evaluate-a-partition-function-the-helix-coil-transition" title="Permalink to this headline">¶</a></h2>
+<p>A polypeptide or a protein can change from a helix to a random coil structure or vice versa, over a small range of temperatures. This sudden change is suggestive of a cooperative process and Zimm &amp; Bragg (1959) used a statistical model and calculated the partition function for a peptide chain consisting of two types of residues, either those that form a helix or those that do not. A section of protein will be described as having an unstructured coil if it has c type amino acids and h type if they are helix forming such as alanine. A portion of the chain could be <span class="math notranslate nohighlight">\(\cdots cchccchhhcchh\cdots\)</span> . The statistical weight of a <span class="math notranslate nohighlight">\(\cdots ch\)</span> boundary and of continuing to grow a helix <span class="math notranslate nohighlight">\(\cdots chhh\)</span> once formed is calculated and this statistical weight is the Boltzmann contribution to the partition function or <span class="math notranslate nohighlight">\(e^{-\Delta G/k_BT}\)</span>, where <span class="math notranslate nohighlight">\(\Delta G\)</span> is the change in free energy when the next residue is encountered along the chain. The model is successful despite the assumption of nearest neighbour interactions whereas a helix strictly involves interactions with residues that are not just nearest neighbours.</p>
+<p>The model has the following rules.</p>
+<p><strong>(i)</strong><span class="math notranslate nohighlight">\(\quad\)</span> The energy of the randomly coiled chain is taken as the baseline energy and it has a value of zero and a given a statistical weight of <span class="math notranslate nohighlight">\(1\)</span>.</p>
+<p><strong>(ii)</strong><span class="math notranslate nohighlight">\(\quad\)</span> A section of helix is energetically favourable as hydrogen bonds are formed. The statistical weight given to a helix forming residue is <span class="math notranslate nohighlight">\(s\)</span>, if the helix is already formed, i.e. this is the statistical weight to add an <span class="math notranslate nohighlight">\(h\)</span> if the preceding residue is also <span class="math notranslate nohighlight">\(h\)</span>. This is sometimes called a helix continuation parameter.</p>
+<p><strong>(iii)</strong><span class="math notranslate nohighlight">\(\quad\)</span> The first helix forming residue must be at a <span class="math notranslate nohighlight">\(\cdots ch\)</span> boundary. There is an entropy term <span class="math notranslate nohighlight">\(\sigma\)</span> due to restricting the rotational motion of the residue on forming a helix from a coil, making the statistical weight <span class="math notranslate nohighlight">\(s\sigma\)</span>. The value of <span class="math notranslate nohighlight">\(\sigma\)</span> is always less than 1.</p>
+<p>The results of the calculation show that there is cooperativity in the helix-coil transition. When <span class="math notranslate nohighlight">\(\sigma \ll 1\)</span> it is hard to form a helix, but once formed it is energetically favourable to continue to add only <span class="math notranslate nohighlight">\(h\)</span> residues and the helix-coil ‘phase transition’ is sharp. Conversely, when <span class="math notranslate nohighlight">\(\sigma \sim 1\)</span> there is no cooperativity in the transition and it occurs over a relatively wide range of temperature, which effectively means a large range of <span class="math notranslate nohighlight">\(s\)</span> because <span class="math notranslate nohighlight">\(s\)</span> is the Boltzmann contribution <span class="math notranslate nohighlight">\(e^{-\Delta G/k_BT}\)</span> to the partition function.</p>
+<p>Zimm &amp; Bragg (1959) presented a matrix method to calculate the partition function sum, and they showed that the equation <span class="math notranslate nohighlight">\(\pmb{A}_{n+1} = \pmb{MA}_n\)</span> can be used where <span class="math notranslate nohighlight">\(\pmb{M}\)</span> is a transition matrix and <span class="math notranslate nohighlight">\(\pmb{A}n\)</span> is a column vector containing two terms, one for adding a <span class="math notranslate nohighlight">\(c\)</span> residue and one for adding an <span class="math notranslate nohighlight">\(h\)</span> residue. The transition matrix represents the statistical weight of adding the next residue but also takes into account the weights of all the preceding ones. This matrix equation is</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin{bmatrix}A^c_{n+1}\\A^h_{n+1} \end{bmatrix}=\begin{bmatrix}1 &amp; 1\\s\sigma &amp; s \end{bmatrix}\begin{bmatrix}A^c_{n}\\A^h_{n} \end{bmatrix}\end{split}\]</div>
+<p>which can be split into two equations <span class="math notranslate nohighlight">\(A^c_{n+1} = A_n^h + A_n^c\)</span> and <span class="math notranslate nohighlight">\(A_n^h = s\sigma A_n^c + sA_n^h\)</span> and, written this way, the weights of the preceding residues is made clear.</p>
+<p>If <span class="math notranslate nohighlight">\(N\)</span> residues are considered, the transition equation becomes</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin{bmatrix}A^c_{n+1}\\A^h_{n+1} \end{bmatrix}=\begin{bmatrix}1 &amp; 1\\s\sigma &amp; s \end{bmatrix}^N\begin{bmatrix}A^c_0\\A^h_0 \end{bmatrix}\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(A^h_0\)</span> and <span class="math notranslate nohighlight">\(A^c_0\)</span> is the initial state of the protein. If this is a single c residue then the equation is</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin{bmatrix}A^c_{n+1}\\A^h_{n+1} \end{bmatrix}=\begin{bmatrix}1 &amp; 1\\s\sigma &amp; s \end{bmatrix}^N\begin{bmatrix}1\\0 \end{bmatrix}=\pmb{M}^N\begin{bmatrix}1\\0 \end{bmatrix}\end{split}\]</div>
+<p>The partition function is the <em>sum</em> of the two parts <span class="math notranslate nohighlight">\(A^h\)</span> and <span class="math notranslate nohighlight">\(A^c\)</span> and can be formed by left-multiplying by a unit row vector,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \pmb{Z}=\begin{bmatrix}1 &amp; 1 \end{bmatrix} \pmb{M}^N \begin{bmatrix} 0\\1 \end{bmatrix} \end{split}\]</div>
+<p>To complete the calculation the statistical weight matrix has to be solved using a similarity transform. The eigenvalues <span class="math notranslate nohighlight">\(\lambda_{1,2}\)</span>  are found by expanding the determinant of <span class="math notranslate nohighlight">\(\pmb{M}\)</span> in the usual way, and are the solution to the characteristic equation <span class="math notranslate nohighlight">\((1 - \lambda)(s - \lambda) - s\sigma = 0\)</span> which are</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \lambda_{1,2}= \frac{s-1\pm\sqrt{ (1-s)^2+4s\sigma } }{2} \]</div>
+<p>The eigenvector modal matrix is</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \pmb{X}=\begin{bmatrix}\displaystyle \frac{1}{\lambda_1-1} &amp;\displaystyle\frac{1}{\lambda_2-1}\\ 1&amp; 1 \end{bmatrix} \end{split}\]</div>
+<p>and its inverse</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \pmb{X}^{-1}=\frac{1}{\lambda_1-\lambda_2}\begin{bmatrix} -(\lambda_1-1)(\lambda_2-1) &amp; \lambda_1-1&amp;\\ (\lambda_1-1)(\lambda_2-1)&amp; 1-\lambda_2 \end{bmatrix} \end{split}\]</div>
+<p>The matrix is raised to the power <span class="math notranslate nohighlight">\(N\)</span>  and <span class="math notranslate nohighlight">\(Z=\begin{bmatrix}1 &amp; 1\end{bmatrix} M^N\begin{bmatrix}1\\0 \end{bmatrix}\)</span> completes the calculation.</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle Z=\frac{\lambda_1^{N+1}(1-\lambda_2)+\lambda_2^{N+1}(\lambda_1-1)}{\lambda_1-\lambda_2}\]</div>
+<p>The average number of helical residues can be calculated with</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \langle h \rangle = \frac{s}{Z}\frac{dZ}{ds}\]</div>
+<p>assuming <span class="math notranslate nohighlight">\(\sigma\)</span>  and <span class="math notranslate nohighlight">\(N\)</span> are constant, and the number of helical stretches with</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \langle \sigma\rangle =\frac{\sigma}{Z}\frac{dZ}{d\sigma}\]</div>
+<p>at constant <span class="math notranslate nohighlight">\(s\)</span> and <span class="math notranslate nohighlight">\(N\)</span>. Typical values of <span class="math notranslate nohighlight">\(s = 0 \to 3\)</span> and of <span class="math notranslate nohighlight">\(\sigma=10^{-3} \to 1/2\)</span>. <span class="math notranslate nohighlight">\(N\)</span> can range from <span class="math notranslate nohighlight">\(10 \to 1000\)</span>. For further details, see Daune (1999) or Jackson (2006).</p>
+<p>The steps are given in the next python/Sympy calculation.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span><span class="p">,</span> <span class="n">sigma</span><span class="p">,</span> <span class="n">lambda1</span><span class="p">,</span> <span class="n">lambda2</span><span class="p">,</span> <span class="n">N</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;s, sigma, lambda1, lambda2, N&#39;</span><span class="p">)</span>
+
+<span class="n">M</span> <span class="o">=</span> <span class="n">Matrix</span><span class="p">(</span> <span class="p">[</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="n">s</span><span class="o">*</span><span class="n">sigma</span><span class="p">,</span><span class="n">s</span><span class="p">]</span> <span class="p">]</span> <span class="p">)</span>
+<span class="n">evecs</span><span class="p">,</span><span class="n">evals</span>  <span class="o">=</span> <span class="n">M</span><span class="o">.</span><span class="n">diagonalize</span><span class="p">()</span>
+<span class="n">evecs</span><span class="p">,</span><span class="n">evals</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \left( \left[\begin{matrix}\frac{- s - \sqrt{s^{2} + 4 s \sigma - 2 s + 1} + 1}{2 s \sigma} &amp; \frac{- s + \sqrt{s^{2} + 4 s \sigma - 2 s + 1} + 1}{2 s \sigma}\\1 &amp; 1\end{matrix}\right], \  \left[\begin{matrix}\frac{s}{2} - \frac{\sqrt{s^{2} + 4 s \sigma - 2 s + 1}}{2} + \frac{1}{2} &amp; 0\\0 &amp; \frac{s}{2} + \frac{\sqrt{s^{2} + 4 s \sigma - 2 s + 1}}{2} + \frac{1}{2}\end{matrix}\right]\right)\end{split}\]</div>
+</div>
+</div>
+<p>Substituting for the eigenvalues and simplifying these matrices gives,</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Lambda</span> <span class="o">=</span>   <span class="n">Matrix</span><span class="p">(</span> <span class="p">[</span> <span class="p">[</span><span class="n">lambda1</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="n">lambda2</span><span class="p">]</span> <span class="p">]</span> <span class="p">)</span> 
+<span class="n">X</span> <span class="o">=</span> <span class="n">Matrix</span><span class="p">(</span> <span class="p">[</span> <span class="p">[</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">lambda1</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">lambda2</span><span class="o">-</span><span class="mi">1</span><span class="p">)],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="p">])</span>  <span class="c1"># X matrix, and its inverse </span>
+<span class="n">X</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \left[\begin{matrix}\frac{1}{\lambda_{1} - 1} &amp; \frac{1}{\lambda_{2} - 1}\\1 &amp; 1\end{matrix}\right]\end{split}\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># X.inv()    # invert matrix, remove hash to see this</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">MN</span> <span class="o">=</span> <span class="n">X</span> <span class="o">*</span> <span class="n">Lambda</span><span class="o">**</span><span class="n">N</span><span class="o">*</span> <span class="n">X</span><span class="o">.</span><span class="n">inv</span><span class="p">()</span>   <span class="c1"># raised to Nth power</span>
+<span class="n">simplify</span><span class="p">(</span><span class="n">MN</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \left[\begin{matrix}\frac{\lambda_{1} \lambda_{2}^{N} - \lambda_{1}^{N} \lambda_{2} + \lambda_{1}^{N} - \lambda_{2}^{N}}{\lambda_{1} - \lambda_{2}} &amp; \frac{\lambda_{1}^{N} - \lambda_{2}^{N}}{\lambda_{1} - \lambda_{2}}\\\frac{\lambda_{1}^{N} \left(- \lambda_{1} \lambda_{2} + \lambda_{1} + \lambda_{2} - 1\right) + \lambda_{2}^{N} \left(\lambda_{1} \lambda_{2} - \lambda_{1} - \lambda_{2} + 1\right)}{\lambda_{1} - \lambda_{2}} &amp; \frac{\lambda_{1}^{N} \left(\lambda_{1} - 1\right) + \lambda_{2}^{N} \left(1 - \lambda_{2}\right)}{\lambda_{1} - \lambda_{2}}\end{matrix}\right]\end{split}\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Z</span> <span class="o">=</span> <span class="n">Matrix</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]])</span><span class="o">*</span><span class="n">MN</span><span class="o">*</span><span class="n">Matrix</span><span class="p">([[</span><span class="mi">1</span><span class="p">],[</span><span class="mi">0</span><span class="p">]])</span>
+<span class="n">simplify</span><span class="p">(</span><span class="n">Z</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \left[\begin{matrix}\frac{\lambda_{1} \lambda_{2}^{N + 1} - \lambda_{1}^{N + 1} \lambda_{2} + \lambda_{1}^{N + 1} - \lambda_{2}^{N + 1}}{\lambda_{1} - \lambda_{2}}\end{matrix}\right]\]</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./chapter-7"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="matrices-Q45-50.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Questions 45 - 50</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="matrices-Q51-54.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Questions 51 - 54</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Godfrey Beddard<br/>
+        
+            &copy; Copyright 2022.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

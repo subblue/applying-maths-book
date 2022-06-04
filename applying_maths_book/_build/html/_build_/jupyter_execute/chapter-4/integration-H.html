@@ -1,0 +1,1707 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Line integrals &#8212; Applying Maths in the Chemical &amp; Biomolecular Sciences</title>
+    
+  <link href="../../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/togglebutton.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../../_static/book-cover.jpg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Applying Maths in the Chemical & Biomolecular Sciences</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../intro.html">
+   Applying Maths in the Chemical and Biomolecular Sciences.
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../chapter-1/chapter1-intro.html">
+   1. Numbers, Equations, Operators, and Algorithms.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-1/chapter1-A.html">
+     Numbers to Algorithms.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-1/chapter1-Q1-7.html">
+     Questions 1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-1/chapter1-B.html">
+     Trig, hyperbolic and inverse functions, waves, polar coordinates &amp; factorials
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-1/chapter1-Q8-16.html">
+     Questions 8 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-1/chapter1-C.html">
+     Sophisticated Counting.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-1/chapter1-Q17-34.html">
+     Questions 17 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-1/chapter1-D.html">
+     Modulo arithmetic,
+     <span class="math notranslate nohighlight">
+      \(\delta\)
+     </span>
+     functions, types of  series &amp;  estimating quantities
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-1/chapter1-Q35-39.html">
+     Questions 35 - 39
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-1/chapter1-answers-1-7.html">
+     Solutions Q1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-1/chapter1-answers-8-16.html">
+     Solutions Q8 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-1/chapter1-answers-17-34.html">
+     Solutions Q17 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-1/chapter1-answers-35-39.html">
+     Solutions Q35 - 39
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../chapter-2/chapter2-intro.html">
+   2. Complex numbers.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-2/chapter2-A.html">
+     Real, imaginary, conjugate and modulus
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-2/chapter2-Q-1-9.html">
+     Questions 1 - 9
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-2/chapter2-B.html">
+     De Moivre’s theorem and integer powers of complex numbers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-2/chapter2-Q-10-13.html">
+     Questions 10 -13
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-2/chapter2-C.html">
+     Euler’s theorem
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-2/chapter2-Q-14-27.html">
+     Questions 14 - 27
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-2/chapter2-answers.html">
+     Solutions Q1 - 27
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../chapter-3/differen-intro.html">
+   3. Differentiation.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-A.html">
+     Differentiation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-B.html">
+     Trig functions, logs, power, reciprocals and integrals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-C-Q-4-11.html">
+     Questions 1-11
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-D.html">
+     Product rule and function of function or chain rule.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-E-Q-12-42.html">
+     Questions 12-42
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-F.html">
+     Limits, l’Hopital’s rule, Maximum, Minimum and Calculus of Variations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-G-Q-43-73.html">
+     Questions 43 - 73
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-H.html">
+     Numerically finding the roots of an equation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-I-Q-74-85.html">
+     Questions 74 - 85
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-J.html">
+     Minimizing or maximizing with constraints: Lagrange Undetermined Multipliers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-K-Q-86-92.html">
+     Questions 86 - 92
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-L.html">
+     Partial differentiation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-M-Q-93-114.html">
+     Questions 93-114
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-M1.html">
+     Differentiation of vectors
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-N-answers-1-11.html">
+     Solutions Q 1-11
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-O-answers-12-42.html">
+     Solutions Q 12-42
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-P-answers-43-73.html">
+     Solutions Q 43 - 73
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-Q-answers-74-85.html">
+     Solutions Q 74 - 85
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-R-answers-86-92.html">
+     Solutions Q 86 - 94
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-3/differen-S-answers-93-114.html">
+     Solutions Q 93-114
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../chapter-4/integration-intro.html">
+   4. Integration.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-A.html">
+     Integration basics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-Q1-14.html">
+     Questions 1-14
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-B.html">
+     Integration by substitution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-Q15-30.html">
+     Questions 15-30
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-C.html">
+     Using parametric equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-Q31-48.html">
+     Questions 31 - 48
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-D.html">
+     Calculating an Average Value.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-Q49-72.html">
+     Questions 49 - 72
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-E.html">
+     The Variational Method in Quantum Mechanics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-Q73-77.html">
+     Questions 73 - 77
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-F.html">
+     Multiple integrals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-Q78-86.html">
+     Questions 78 - 86
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-G.html">
+     Calculating the energy of a chemical bond using molecular orbitals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-H.html">
+     Line integrals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-Q87-96.html">
+     Questions 87 - 96
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-answers-1-14.html">
+     Solutions Q1 - 14
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-answers-15-30.html">
+     Solutions Q15 - 30
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-answers-31-48.html">
+     Solutions Q31 - 48
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-answers-49-72.html">
+     Solutions Q49 - 72
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-4/integration-answers-73-96.html">
+     Solutions Q73 - 96
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../chapter-5/chapter-5-intro.html">
+   5. Summations, Series and expansion of Functions.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-5/chapter-5-A.html">
+     Series, averages, partition functions, DNA melting, atom entropy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-5/chapter-5-B-Q1-13.html">
+     Questions 1 - 13
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-5/chapter-5-E.html">
+     Maclaurin and Taylor series expansions. Paramagnetic spins. Euler-Maclaurin formula.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-5/chapter-5-F-Q14-34.html">
+     Questions 14 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-5/chapter-5-G-Q35-44.html">
+     Questions 35 - 44
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-5/chapter-5-perturbation-A.html">
+     Perturbation Theory
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-5/chapter-5-perturbation-B-Q45-48.html">
+     Questions 45 - 48
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-5/chapter-5-perturbation-C.html">
+     Quantum superposition and wavepackets.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-5/chapter-5-perturbation-D-Q49-52.html">
+     Questions 49 - 52
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-5/chapter-5-answers-1-7.html">
+     Solutions Q 1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-5/chapter-5-answers-8-13.html">
+     Solutions Q8 - 13
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-5/chapter-5-answers-14-26.html">
+     Solutions Q 14 - 26
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-5/chapter-5-answers-27-32.html">
+     Solutions Q27 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-5/chapter-5-answers-33-44.html">
+     Solutions Q33 - 44
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-5/chapter-5-answers-45-52.html">
+     Solutions Q45 - 52
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../chapter-6/vectors-intro.html">
+   6. Vectors.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-A.html">
+     Vector basics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-Q1-24.html">
+     Questions 1 - 24
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-B.html">
+     Projections and components
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-Q25-32.html">
+     Questions 25 - 32
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-C.html">
+     Axes need not be right-angled or of equal length
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-Q33-38.html">
+     Questions 33 - 38
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-D.html">
+     Basis sets with more than three dimensions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-Q39-46.html">
+     Questions 39 - 46
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-E.html">
+     Cross product or vector product
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-Q47-52.html">
+     Questions 47 - 52
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-F.html">
+     Torsion or dihedral angles
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-Q53-48.html">
+     Questions 53 - 48
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-G.html">
+     Torque and angular momentum
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-Q59-61.html">
+     Questions 59 - 61
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-answers-Q1-24.html">
+     Solutions Q1 - 24
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-answers-Q25-32.html">
+     Solutions Q25 - 32
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-answers-Q33-38.html">
+     Solutions Q33 - 38
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-answers-Q39-46.html">
+     Solutions Q39 - 46
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-answers-Q47-52.html">
+     Solutions Q47 - 52
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-6/vectors-answers-Q53-61.html">
+     Solutions Q53 - 61
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../chapter-7/matrices-intro.html">
+   7. Matrices
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-A.html">
+     Determinants
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-Q1-10.html">
+     Questions  1 - 10
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-B.html">
+     Matrices
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-Q11-16.html">
+     Questions  11 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-C.html">
+     Molecular Group Theory
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-Q17-30.html">
+     Questions  17 - 30
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-D.html">
+     Rotation matrices: moving molecules
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-Q31-34.html">
+     Questions 31 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-E.html">
+     Matrices in optics and designing laser cavities
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-Q35-39.html">
+     Questions 35 - 39
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-F.html">
+     Polarizing optics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-Q40-44.html">
+     Questions 40 - 44
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-G.html">
+     Solving equations using matrices. Eigenvectors &amp; Eigenvalues.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-Q45-50.html">
+     Questions 45 - 50
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-H.html">
+     Rate equations and Chemical Kinetics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-Q51-54.html">
+     Questions 51 - 54
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-I.html">
+     Molecular vibrations and pendulums
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-Q55-58.html">
+     Questions 55 - 58
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-J.html">
+     Moments of Inertia
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-Q59-60.html">
+     Questions 59 - 62
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-K.html">
+     Calculating a bond length using moments of inertia
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-Q61.html">
+     Question 61
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-L.html">
+     Principal axes for Moments of Inertia
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-Q62.html">
+     Question 62
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-answersQ1-10.html">
+     Solutions Q1 - 10
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-answersQ11-16.html">
+     Solutions Q11 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-answersQ17-30.html">
+     Solutions Q17 - 30
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-answersQ31-34.html">
+     Solutions Q31 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-answersQ35-39.html">
+     Solutions Q35 - 39
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-answersQ40-44.html">
+     Solutions Q40 - 44
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-answersQ45-50.html">
+     Solutions Q45 - 50
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-answersQ51-54.html">
+     Solutions Q51 - 54
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-answersQ55-58.html">
+     Solutions Q55 - 58
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-7/matrices-answersQ59-61.html">
+     Solutions Q59 - 61
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../chapter-8/matricesQM-intro.html">
+   8. Matrices in Quantum Mechanics
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-8/matricesQM-A.html">
+     Matrices in Quantum Mechanics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-8/matricesQM-Q1-7.html">
+     Questions 1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-8/matricesQM-B.html">
+     Basis sets and bra-ket algebra
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-8/matricesQM-Q8-12.html">
+     Questions 8 - 12
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-8/matricesQM-C.html">
+     Continuous basis sets
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-8/matricesQM-answers1-7.html">
+     Solutions Q1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-8/matricesQM-answers8-12.html">
+     Solutions Q8 - 12
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../chapter-9/Fourier-intro.html">
+   9. Fourier Series and Transforms.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-9/Fourier-A-B.html">
+     Fourier series, Gibbs phenomenon, generalised series.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-9/Fourier-questions-1-6.html">
+     Questions 1 - 6
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-9/Fourier-C.html">
+     Fourier Transforms
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-9/Fourier-questions-7-15.html">
+     Questions 7 - 15
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-9/Fourier-D.html">
+     Convolution and Autocorrelation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-9/Fourier-questions-16-21.html">
+     Questions 16 - 21
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-9/Fourier-E.html">
+     Discrete Fourier  (DFT)  and Fast Fourier transforms (FFT)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-9/Fourier-F.html">
+     The Hadamard Transform: Encoding and Decoding
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-9/Fourier-answers-1-6.html">
+     Solutions Q 1 - 6
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-9/Fourier-answers-7-15.html">
+     Solutions Q 7 - 15
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-9/Fourier-answers-16-21.html">
+     Solutions Q 16 - 21
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-9/Fourier-2D-Diffraction.html">
+     The Fourier transform in two dimensions: images and x-ray Diffraction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-9/Fourier-tomography.html">
+     Computed Tomography
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../chapter-10/Diff-eqns-intro.html">
+   10. Differential Equations.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-10/Diff-eqns-A.html">
+     Differential Equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-10/Diff-eqns-Q1-23.html">
+     Questions 1 - 23
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-10/Diff-eqns-B.html">
+     First order eqns &amp; Integrating factors. Second order eqns, Newtons laws, equations of motion.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-10/Diff-eqns-C.html">
+     The ‘D’ operator.  Solving linear differential equations with constant coefficients
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-10/Diff-eqns-D.html">
+     Simultaneous equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-10/Diff-eqns-Q24-37.html">
+     Questions 24 - 37
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-10/Diff-eqns-E.html">
+     Linear equations with variable coefficients
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-10/Diff-eqns-F.html">
+     Partial Differential Equations, PDE
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-10/Diff-eqns-G.html">
+     PDE examples continued
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-10/Diff-eqns-answers-1-21.html">
+     Solutions Q1 - 21
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-10/Diff-eqns-answers-22-37.html">
+     Solutions Q22 - 37
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../chapter-11/num-methods-intro.html">
+   11. Numerical Methods
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-A.html">
+     Numerical Methods
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-Q1-7.html">
+     Questions 1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-B.html">
+     Numerical solution of differential equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-Q8-12.html">
+     Questions 8 - 12
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-C.html">
+     Coupled equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-Q13-16.html">
+     Questions 13 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-D.html">
+     The phase plane, nullclines, and stable points
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-Q17-20.html">
+     Questions 17 - 20
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-E.html">
+     Reaction schemes with feedback
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-Q21-34.html">
+     Questions 21 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-F.html">
+     Boundary value problems.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-Q35-40.html">
+     Questions 35 - 40
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-answers1-7.html">
+     Solutions Q1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-answers8-12.html">
+     Solutions Q8 - 12
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-answers13-16.html">
+     Solutions Q13 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-answers17-20.html">
+     Solutions Q17 - 20
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-answers21-34.html">
+     Solutions Q21 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-11/num-methods-answers35-40.html">
+     Solutions Q35 - 40
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../chapter-12/monte-carlo-intro.html">
+   12. Monte Carlo Methods
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+  <label for="toctree-checkbox-12">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-12/monte-carlo-A.html">
+     Monte - Carlo Methods
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-12/monte-carlo-Q1-6.html">
+     Questions 1 - 6
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-12/monte-carlo-B.html">
+     Solving rate equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-12/monte-carlo-Q7-10.html">
+     Questions 7 - 10
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-12/monte-carlo-CC.html">
+     Monte Carlo Simulations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-12/monte-carlo-C.html">
+     Energy transfer. Autocatalytic reaction and spreading of fires
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-12/monte-carlo-Q11-17.html">
+     Questions 11 - 17
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-12/monte-carlo-D.html">
+     The Metropolis algorithm
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-12/monte-carlo-answers1-6.html">
+     Solutions Q1 - 6
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-12/monte-carlo-answers7-10.html">
+     Solutions Q7 - 10
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-12/monte-carlo-answers11-17.html">
+     Solutions Q11 - 17
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../chapter-13/analysis-intro.html">
+   13. Data Analysis
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+  <label for="toctree-checkbox-13">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-13/analysis-A.html">
+     Characterizing experimental data. Accuracy, precision, mean and standard deviation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-13/analysis-Q1-3.html">
+     Questions 1 - 3
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-13/analysis-B.html">
+     Modelling data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-13/analysis-Q4-9.html">
+     Questions 4 - 9
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-13/analysis-C.html">
+     Modelling data is simpler using matrices
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-13/analysis-Q10-11.html">
+     Questions 10 - 13
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-13/analysis-D.html">
+     Non-linear least squares. Least absolute deviation. Principal component analysis
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../chapter-13/analysis-answers1-11.html">
+     Solutions Q1 -11
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../chapter-1/chapter1-E.html">
+   SI units, Rounding, converting units &amp; Glossary.
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../references/References.html">
+   References
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../references/Python%20crib.html">
+   Appendix:  Some basic Python instructions with a few examples.
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../../_sources/_build_/jupyter_execute/chapter-4/integration-H.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/_build_/jupyter_execute/chapter-4/integration-H.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#definitions-of-some-different-forms-of-line-integrals">
+   13.1 Definitions of some different forms of line integrals
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#normal-i-e-continuous-and-single-valued-functions">
+   Normal, i.e. continuous and single valued functions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#parametric-forms">
+   Parametric forms
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#arc-length-on-a-surface-p-x-y">
+   13.3 Arc length on a surface
+   <span class="math notranslate nohighlight">
+    \(P(x,y)\)
+   </span>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#length-of-a-curve">
+   13.4 Length of a curve
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-surface-defined-by-two-functions">
+   13.5 A surface defined by two functions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#path-independent-integrals-and-state-functions">
+   13.6 Path independent integrals and State functions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#path-integrals-in-chemical-thermodynamics">
+   14 Path integrals in Chemical Thermodynamics
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#state-functions-do-not-depend-on-the-path">
+   14.1 State functions do not depend on the path
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#greens-function">
+   14.2 Green’s function
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="line-integrals">
+<h1>Line integrals<a class="headerlink" href="#line-integrals" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import all python add-ons etc that will be needed later on</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="n">init_printing</span><span class="p">()</span>                         <span class="c1"># allows printing of SymPy results</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;font.size&#39;</span><span class="p">:</span> <span class="mi">16</span><span class="p">})</span>  <span class="c1"># set font size for plots</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The integrals so far studied have the form <span class="math notranslate nohighlight">\(\displaystyle \int f(x)dx\)</span>, which means that integration proceeds uniformly along the x-axis. Now suppose instead that we wish to integrate along some other direction, such as any curved line that is in the <span class="math notranslate nohighlight">\(x-y\)</span> plane. This is not as obscure as it may sound. When you ride a bike, the force needed to keep you moving will obviously vary depending on which way or how fast you want to go. Similarly, the amount of energy you consume getting from one place to another depends on the path taken such as walking around a hill instead of over the top. In thermodynamics, line or path integrals are very important and explain why some integrals are represented as the difference between starting and ending values while other integrals have to be evaluated explicitly.</p>
+<p>Three things are needed to calculate a line integral:</p>
+<p>(a) The path to be followed, <span class="math notranslate nohighlight">\(C\)</span>.</p>
+<p>(b) Its starting and ending points, <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span>.</p>
+<p>(c) The ‘line’ or surface function itself, <span class="math notranslate nohighlight">\(P(x, y)\)</span>.</p>
+<p>The line is often a two-dimensional function of <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span>. A typical example would be to calculate the line integral of <span class="math notranslate nohighlight">\(P(x, y) = x + y\)</span> along a path or curve given by <span class="math notranslate nohighlight">\(y = x^2/2\)</span> from <span class="math notranslate nohighlight">\(x = 0 \to = 2\)</span>. This is written in the form</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \int_C (x+y)dx\quad\text{ where the path }\quad C \text{ is } y=x^2/2\quad \text{ and the limits } \quad x=0,2\]</div>
+<p>The <span class="math notranslate nohighlight">\(C\)</span> subscript on the integral is the conventional notation to indicate a line integral, although, unfortunately,  this is not usually used in thermodynamics. The integral <span class="math notranslate nohighlight">\(\displaystyle \int(x + y)dx\)</span> cannot be evaluated as it stands, because we do not yet know how <span class="math notranslate nohighlight">\(y\)</span> is related to <span class="math notranslate nohighlight">\(x\)</span> and integration is with respect to <span class="math notranslate nohighlight">\(x\)</span>. The path taken determines the relationship between <span class="math notranslate nohighlight">\(y\)</span> and <span class="math notranslate nohighlight">\(x\)</span> and mathematically, this can take almost any form we choose. In practice, of course, the specific problem being studied will determine this relationship. Therefore integration of <span class="math notranslate nohighlight">\(\displaystyle \int(x+y)dx\)</span> could just as easily be over the path <span class="math notranslate nohighlight">\(y=e^x\)</span> from <span class="math notranslate nohighlight">\(x=-2\to 2\)</span> or <span class="math notranslate nohighlight">\(y=\sin(3x)\)</span> from <span class="math notranslate nohighlight">\(0 \to \pi/2\)</span> and so forth and consequently there is no limit to the number of examples that can be devised even with a single surface.</p>
+<p>Figure 33 shows the path of a circle of radius 3 projected onto the surface <span class="math notranslate nohighlight">\(P(x, y) = x^3y+xy^3+50\)</span>. The line integral is the curtain-like area between the lower circle <span class="math notranslate nohighlight">\(C\)</span> in the <span class="math notranslate nohighlight">\(x-y\)</span> plane and its projection hugging the surface. If this seems rather esoteric, consider instead a prosaic example of finding the weight of a piece of wire. This is path <span class="math notranslate nohighlight">\(C\)</span> (Figure 33). Now suppose that the wire has a weight that varies with its length and the weight changes as described by <span class="math notranslate nohighlight">\(P(x, y)\)</span>. The total weight must be the integral along the length of the string each little element of which is accounted for in proportion to <span class="math notranslate nohighlight">\(P\)</span> by integrating. The weight at each point is the height of the line draped on <span class="math notranslate nohighlight">\(P\)</span> above the <span class="math notranslate nohighlight">\(x-y\)</span> plane as shown in Figure 33 and the whole weight is the area between curve <span class="math notranslate nohighlight">\(C\)</span> in the <span class="math notranslate nohighlight">\(x-y\)</span> plane and its projection on <span class="math notranslate nohighlight">\(P\)</span>.</p>
+<p><img alt="Drawing" src="_build_/jupyter_execute/chapter-4/integration-fig33.png" /></p>
+<p>Figure 33. The surface <span class="math notranslate nohighlight">\(P(x, y) = x^3y + xy^3 + 50\)</span> with the curve (circle) <span class="math notranslate nohighlight">\(C\)</span>, <span class="math notranslate nohighlight">\(x^2 + y^2 = 3^2\)</span>. The red line is the path of the circle projected onto the surface; the circle is shown below in blue. The line integral is the yellow shaded curtain-like area shown between the circle and its projection onto the surface.</p>
+<hr class="docutils" />
+<p>Returning to the original example, to calculate the integral is easier than it may seem. All that is necessary is to substitute <span class="math notranslate nohighlight">\(y\)</span> into the function <span class="math notranslate nohighlight">\(P = x + y\)</span> and integrate as normal. If the path <span class="math notranslate nohighlight">\(C\)</span> is <span class="math notranslate nohighlight">\(y = x^2/2\)</span> then</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle  \int_C (x+y)dx=\int_0^2(x+\frac{x^2}{2})dx=\frac{10}{3}\]</div>
+<p>and if path <span class="math notranslate nohighlight">\(C\)</span> is <span class="math notranslate nohighlight">\(y=e^x\)</span> from <span class="math notranslate nohighlight">\(x=-2\to 2\)</span> then <span class="math notranslate nohighlight">\(\displaystyle  \int_C (x+y)dx=\int_{-2}^2(x+e^x)dx=e^2+\frac{1}{e^2}\)</span>.</p>
+<p>More formally, the line <span class="math notranslate nohighlight">\(P(x, y)\)</span> is defined to be a surface or function of <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span>, and assumed to be single valued. <span class="math notranslate nohighlight">\(C\)</span> is the curve in the plane defined as <span class="math notranslate nohighlight">\(y = f(x)\)</span> going from points <span class="math notranslate nohighlight">\(A = (x_1, y_1)\)</span> to <span class="math notranslate nohighlight">\(B = (x_2, y_2)\)</span> as sketched in Figure 34. The integral could therefore be written as</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \int_C P(x,y)dx= \int_{x_1}^{x_2} P\big( x,f(x)\,\big) dx \tag{4.77}\]</div>
+<p>which does make the integral look rather ordinary.</p>
+<div class="section" id="definitions-of-some-different-forms-of-line-integrals">
+<h2>13.1 Definitions of some different forms of line integrals<a class="headerlink" href="#definitions-of-some-different-forms-of-line-integrals" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="normal-i-e-continuous-and-single-valued-functions">
+<h2>Normal, i.e. continuous and single valued functions<a class="headerlink" href="#normal-i-e-continuous-and-single-valued-functions" title="Permalink to this headline">¶</a></h2>
+<p>The line integral of a surface <span class="math notranslate nohighlight">\(P(x, y)\)</span> with curve <span class="math notranslate nohighlight">\(C \equiv f(x)\)</span> and limits <span class="math notranslate nohighlight">\(x_1 \to x_2\)</span> is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle  \int_C P(x,y)dx =  \int_{x_1}^{x_2} P\big( x,f(x)\,\big) dx \tag{4.78}\]</div>
+<p>A similar integral could be defined in terms of an integral in <span class="math notranslate nohighlight">\(y\)</span> instead of x; for example, if <span class="math notranslate nohighlight">\(Q(x, y)\)</span> is the line, then</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle  \int_C Q(x,y)dy =  \int_{x_1}^{x_2} Q\big( x,f(x)\,\big) \frac{dy}{dx}dx \tag{4.79}\]</div>
+<p>but note that it is necessary to multiply by <span class="math notranslate nohighlight">\(dy/dx\)</span> and integrate in <span class="math notranslate nohighlight">\(dx\)</span>.</p>
+</div>
+<div class="section" id="parametric-forms">
+<h2>Parametric forms<a class="headerlink" href="#parametric-forms" title="Permalink to this headline">¶</a></h2>
+<p>Parametric equations are very useful in defining complex curves; a circle of radius <span class="math notranslate nohighlight">\(2\)</span> about the origin has the form <span class="math notranslate nohighlight">\(x^2 + y^2 = 2^2\)</span> in Cartesian coordinates, and in parametric form, <span class="math notranslate nohighlight">\(x = 2\cos(t), y = 2\sin(t)\)</span>; see Section 6. A curve defined in parametric form is written as <span class="math notranslate nohighlight">\((x(t), y(t))\)</span>. Integration is obtained by substituting equation 78 for <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> in terms of <span class="math notranslate nohighlight">\(t\)</span> and integrating in <span class="math notranslate nohighlight">\(t\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle  \int_C P(x,y)dy =  \int_{x_1}^{x_2} P\big( x(t),y(t)\,\big) \frac{dx}{dt}dt \tag{4.80}\]</div>
+<p>If the line is again <span class="math notranslate nohighlight">\(x + y\)</span> and the integration is around the circle <span class="math notranslate nohighlight">\(x = 2\cos(t), y = 2\sin(t)\)</span>, choosing limits from <span class="math notranslate nohighlight">\(0 \to \pi\)</span> gives</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \int_C (x+y)dx=-4\int_0^\pi \big(\cos(t)+\sin(t)\big)\sin(t)dt =-2\pi\]</div>
+<p>Using Sympy to do the integral gives</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;t&#39;</span><span class="p">,</span><span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">eq</span> <span class="o">=</span> <span class="n">cos</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">*</span><span class="n">sin</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+<span class="n">integrate</span><span class="p">(</span><span class="n">eq</span><span class="p">,</span><span class="n">t</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/integration-H_3_0.png" src="../../../_images/integration-H_3_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">eq</span> <span class="o">=</span> <span class="n">sin</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
+<span class="n">integrate</span><span class="p">(</span><span class="n">eq</span><span class="p">,</span><span class="n">t</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/integration-H_4_0.png" src="../../../_images/integration-H_4_0.png" />
+</div>
+</div>
+<p><img alt="Drawing" src="_build_/jupyter_execute/chapter-4/integration-fig34-35.png" /></p>
+<p>Figure 34 (Left) &amp; 35. Right.  A line integral is made along curve <span class="math notranslate nohighlight">\(C\)</span>. Right. Calculating a small length of a curve <span class="math notranslate nohighlight">\(\delta s\)</span>.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="arc-length-on-a-surface-p-x-y">
+<h2>13.3 Arc length on a surface <span class="math notranslate nohighlight">\(P(x,y)\)</span><a class="headerlink" href="#arc-length-on-a-surface-p-x-y" title="Permalink to this headline">¶</a></h2>
+<p>Suppose that the length of a small section of the curve <span class="math notranslate nohighlight">\(C\)</span> is <span class="math notranslate nohighlight">\(ds\)</span> then a line integral can be defined in terms of this arc length. See the sketch, Fig. 4.35,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle S= \int_C P(x,y_ds= \int_{x_1}^{x_2} P(x,y)\frac{ds}{dx}dx \tag{81}\]</div>
+<p>By Pythagoras’s theorem, <span class="math notranslate nohighlight">\(\delta s^2 = \delta x^2 + \delta y^2\)</span>, rearranging and taking the limit to form the differential gives <span class="math notranslate nohighlight">\(\displaystyle \frac{ds}{dx}=\sqrt{1+\left( \frac{dy}{dx} \right)^2}\)</span> which produces the result for the arc length <span class="math notranslate nohighlight">\(S\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle S=\int_{x_1}^{x_2} P(x,y)\sqrt{1+\left( \frac{dy}{dx} \right)^2} dx  \tag{82}\]</div>
+<p>where <span class="math notranslate nohighlight">\(y = f (x)\)</span>.</p>
+<p>Suppose that the surface is <span class="math notranslate nohighlight">\(P(x, y) = x + y\)</span> then the arc length from <span class="math notranslate nohighlight">\(x = 0 \to 4\)</span> along a curve <span class="math notranslate nohighlight">\(C\)</span> that we choose to be the parabola <span class="math notranslate nohighlight">\(y=1+x^2\)</span> is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \int_C (x+y)ds=\int_{x_1}^{x_2}(x+y)\frac{ds}{dx}dx=\int_0^4(x+1+x^2)\sqrt{1+4x^2}dx=190.36\]</div>
+<p>If the equation is in parametric form then <span class="math notranslate nohighlight">\(ds/dt\)</span> is used instead of <span class="math notranslate nohighlight">\(ds/dx\)</span> in equation 82 where <span class="math notranslate nohighlight">\(\displaystyle \frac{ds}{dt}=\sqrt{\left(\frac{dx}{dt}\right)^2 +\left(\frac{dy}{dt}\right)^2}\)</span>.</p>
+</div>
+<div class="section" id="length-of-a-curve">
+<h2>13.4 Length of a curve<a class="headerlink" href="#length-of-a-curve" title="Permalink to this headline">¶</a></h2>
+<p>When only the length of a curve <span class="math notranslate nohighlight">\(C\)</span> is required, all that is necessary is to make <span class="math notranslate nohighlight">\(P(x, y) = 1\)</span> but still use the equation of the curve to define <span class="math notranslate nohighlight">\(dy/dx\)</span>;</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle S=\int_C ds=\int_{x_1}^{x_2} \frac{ds}{dx}dx=\int_{x_1}^{x_2} \sqrt{1+\left( \frac{dy}{dx} \right)^2} \tag{83}\]</div>
+<p>As an example, consider finding the length of the curve of the same parabola and limits as in Section 13.3. The integral is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle S=\int_C ds=\int_{x_1}^{x_2} \frac{ds}{dx}dx=\int_0^4\sqrt{1+4x^2}dx = \frac{x\sqrt{1+4x^2}}{2}+\frac{1}{4}\sinh^{-1}(2x)\bigg|_0^4 \approx 16.8\]</div>
+<p>If a curve is defined in plane polar coordinates, the arc length is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle S=\int_{x_1}^{x_2}\sqrt{\left(\frac{dx}{d\theta}\right)^2 +\left(\frac{dy}{d\theta}\right)^2}d\theta \]</div>
+<p>which after substituting for <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> becomes</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle  S=\int_{x_1}^{x_2}\sqrt{ r^2 +\left(\frac{dr}{d\theta}\right)^2 } d\theta  \tag{84}\]</div>
+<p>The Archimedian spiral has the form <span class="math notranslate nohighlight">\(r=a\theta\)</span> where <span class="math notranslate nohighlight">\(a\)</span> is a constant. The length of this curve is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \int_0^\theta \sqrt{1+\theta^2}d\theta\]</div>
+<p>over angles <span class="math notranslate nohighlight">\(\theta=0\to\theta\)</span>. Using Sympy produces <span class="math notranslate nohighlight">\(\displaystyle S=\frac{a}{2}\left(\theta\sqrt{1+\theta^2}+\sinh^{-1}(\theta)\right)\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">theta</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;theta&#39;</span><span class="p">,</span><span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">eq</span> <span class="o">=</span> <span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">theta</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">integrate</span><span class="p">(</span><span class="n">eq</span><span class="p">,</span> <span class="n">theta</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/integration-H_6_0.png" src="../../../_images/integration-H_6_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="a-surface-defined-by-two-functions">
+<h2>13.5 A surface defined by two functions<a class="headerlink" href="#a-surface-defined-by-two-functions" title="Permalink to this headline">¶</a></h2>
+<p>Suppose that the surface is represented by two functions <span class="math notranslate nohighlight">\(M\)</span> and <span class="math notranslate nohighlight">\(N\)</span>, which is often the case in thermodynamics, then the line integral can be written as two integrals in <span class="math notranslate nohighlight">\(dx\)</span> and <span class="math notranslate nohighlight">\(dy\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle f=\int_C M(x,y)dx+N(x,y)dy =\int_C \left(M(x,y)+N(x,y)\frac{dy}{dx} \right)dx \tag{85}\]</div>
+<p>As an example, the integral</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \int_C y^2 dx+2x^2y\,dy \tag{86}\]</div>
+<p>will be calculated over the upper half of the semicircle of a unit disc. The curve <span class="math notranslate nohighlight">\(C\)</span> is therefore the equation of a unit circle, <span class="math notranslate nohighlight">\(x^2 + y^2 = 1\)</span>, and the integration proceeds from <span class="math notranslate nohighlight">\((1, 0) \to (-1, 0)\)</span>, which is from the positive x-axis anticlockwise to the negative x-axis. The integral is, with the derivative in brackets,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \int_C y^2 dx+2x^2y\,dy =\int_1^{-1} 1-x^2+2x^2\sqrt{1-x^2}\left(\frac{-2x}{2\sqrt{1-x^2}}\right)dx=\int_1^{-1} 1-x^2+2x^3dx \]</div>
+</div>
+<div class="section" id="path-independent-integrals-and-state-functions">
+<h2>13.6 Path independent integrals and State functions<a class="headerlink" href="#path-independent-integrals-and-state-functions" title="Permalink to this headline">¶</a></h2>
+<p>As an example of an integral that is <em>independent of the path</em>, consider calculating the integral <span class="math notranslate nohighlight">\(\int_C xdx + ydy\)</span>  first along the sinusoidal path <span class="math notranslate nohighlight">\(y = \sin(x)\)</span> and then along the straight path <span class="math notranslate nohighlight">\(y = 2x/\pi\)</span> both from <span class="math notranslate nohighlight">\((0, 0) \to (0, \pi/2)\)</span>. Using equation 85 the first curve produces</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \int x+\sin(x)\cos(x) dx= \frac{1}{2}(x^2+\sin^2(x))\bigg|_0^{\pi/2}= \frac{\pi^2}{8}+\frac{1}{2}\]</div>
+<p>and the second</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \int_0^{\pi/2} x+x\frac{4}{\pi^2}dx = \frac{\pi^2}{8}+\frac{1}{2}\]</div>
+<p>which is the same result. Therefore, this integral is <em>independent</em> of the path provided both paths pass through the same end points.</p>
+<p>There are clearly many other curves that pass through the points <span class="math notranslate nohighlight">\((0, 0) \to (0, \pi/2)\)</span> and all of these will return the same value of the integral.</p>
+<p>The surface <span class="math notranslate nohighlight">\(x + y\)</span> would be called a state function if <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> had a meaning in thermodynamics. The value of a state function only depends on the starting and ending conditions and not on the means of getting from one to the other. The condition for the integral <span class="math notranslate nohighlight">\(f = \int M(x, y)dx + N(x, y)dy\)</span> to depend only on its end-points is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle  \frac{\partial N}{\partial x}=\frac{\partial M}{\partial y} \tag{87}\]</div>
+<p>a relationship which has been met before in the discussion on partial derivatives; see Chapter 3.12.</p>
+<p><img alt="Drawing" src="_build_/jupyter_execute/chapter-4/integration-fig36.png" /></p>
+<p>Figure 36. The integral of a <em>state function</em> is independent of path and depends only on starting and ending positions <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span>.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="path-integrals-in-chemical-thermodynamics">
+<h2>14 Path integrals in Chemical Thermodynamics<a class="headerlink" href="#path-integrals-in-chemical-thermodynamics" title="Permalink to this headline">¶</a></h2>
+<p>In thermodynamics, all the integrals you are likely to meet are line functions in 8-dimensional space - not a very appealing thought. Thermodynamics can consequently appear to be so very complicated because the choice of variables is so very large. Normally, ‘natural’ variables are chosen depending upon which can easily be measured, usually these are <span class="math notranslate nohighlight">\(p, V\)</span> and <span class="math notranslate nohighlight">\(T\)</span>. However, any two independent variables can be chosen from the eight state functions <span class="math notranslate nohighlight">\(p, V, A, T, H, U, G, S\)</span>.</p>
+<p>The first law, which is a law of the conservation of energy, states that the heat gained by a system <span class="math notranslate nohighlight">\(q\)</span> and the work done on the system <span class="math notranslate nohighlight">\(w\)</span>, define the change in internal energy <span class="math notranslate nohighlight">\(\Delta U\)</span>% as</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \Delta U = q + w\]</div>
+<p>or in differential form</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle dU = \delta q +\delta w\]</div>
+<p>The <span class="math notranslate nohighlight">\(\delta\)</span> notation reminds us that <span class="math notranslate nohighlight">\(q\)</span> and <span class="math notranslate nohighlight">\(w\)</span> are not state functions but depend on the path. The integral therefore has to be performed as per normal and not obtained from the difference in starting and ending values, as is the case for a state function such as <span class="math notranslate nohighlight">\(U\)</span>. The <span class="math notranslate nohighlight">\(\delta\)</span>  notation also means that <span class="math notranslate nohighlight">\(q\)</span> and <span class="math notranslate nohighlight">\(w\)</span> are not perfect differentials and are calculated by path integrals. Other authors just use <span class="math notranslate nohighlight">\(dU = dq + dw\)</span> and leave it for you to decide which the perfect differentials are.</p>
+<p>Recall that heat is energy in motion which means energy is being transported from one system to another and only occurs when there is a difference in temperature. Work means a gas is expanded with a  volume change of <span class="math notranslate nohighlight">\(\Delta V\)</span> against an external pressure <span class="math notranslate nohighlight">\(p\)</span>.  Suppose the heat absorbed on expansion of a gas is taken to be a function of internal energy <span class="math notranslate nohighlight">\(U\)</span> that changes from <span class="math notranslate nohighlight">\(U_0 \to U_1\)</span> and volume <span class="math notranslate nohighlight">\(V\)</span> that changes from <span class="math notranslate nohighlight">\(V_0 \to V_1\)</span>. Since <span class="math notranslate nohighlight">\(U\)</span> is a state function and work is not, integrating <span class="math notranslate nohighlight">\(q =\displaystyle  \int dq = \int dU - \int dw\)</span> and replacing work with <span class="math notranslate nohighlight">\(dw = -pdV\)</span> gives</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle q=U_1-U_0 +\int_{V_0}^{V_1} pdV\]</div>
+<p>It is implied by choosing <span class="math notranslate nohighlight">\(U\)</span> and <span class="math notranslate nohighlight">\(V\)</span> that <span class="math notranslate nohighlight">\(p\)</span> is a function of both, i.e. <span class="math notranslate nohighlight">\(p(U, V )\)</span>, but it is never written like that, it is assumed you know this.</p>
+<p>In a general thermodynamic system, it is unknown how the pressure depends on both the volume and internal energy, and how they vary along the path chosen. Therefore, the integral cannot be evaluated unless these relationships can be found. If the ideal gas law or van der Waals equation applies, then the relationship between <span class="math notranslate nohighlight">\(p\)</span> and <span class="math notranslate nohighlight">\(V\)</span> is known and the work integral can be calculated.</p>
+<p>Suppose now that <span class="math notranslate nohighlight">\(T\)</span> and <span class="math notranslate nohighlight">\(V\)</span> are chosen as independent variables, instead of <span class="math notranslate nohighlight">\(p\)</span> and <span class="math notranslate nohighlight">\(V\)</span>. By definition, the heat capacity  is the gradient of the heat vs temperature and if constant volume applies it is called <span class="math notranslate nohighlight">\(C_V\)</span> where the heat is replaced by the internal energy as no work can be done, <span class="math notranslate nohighlight">\(\displaystyle C_V=\left( \frac{\partial U}{\partial T} \right)_V \)</span> then <span class="math notranslate nohighlight">\(\displaystyle \int dU=\int C_V dT\)</span> and the heat change <span class="math notranslate nohighlight">\(\displaystyle q=\int dq=\int dU-\int dw\)</span> becomes</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle q=\int \left(C_VdT + T\left( \frac{\partial p}{\partial T} \right)_V dV\right)\]</div>
+<p>This can be evaluated because the heat capacity and change of pressure with temperature and volume can be measured. Similarly, if <span class="math notranslate nohighlight">\(p\)</span> and <span class="math notranslate nohighlight">\(V\)</span> are the independent variables, then</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle q=\int C_V\left( \frac{\partial T}{\partial p} \right)_Vdp + C_p\left( \frac{\partial T}{\partial V} \right)_p dV\]</div>
+<p>The constant pressure heat capacity is defined as <span class="math notranslate nohighlight">\(\displaystyle C_p=\left( \frac{\partial H}{\partial T} \right)_p \)</span> where <span class="math notranslate nohighlight">\(H=U+pV \)</span> is the enthalpy, internal energy plus work. If an ideal gas expansion is carried out at constant pressure, then the first term in the integration is zero; and the second term is zero if carried out at constant volume; if neither is the case then the path equation must be known and <span class="math notranslate nohighlight">\(dV/dp\)</span>  calculated to make the integral one in <span class="math notranslate nohighlight">\(p\)</span> or <span class="math notranslate nohighlight">\(V\)</span> alone.</p>
+<p>As an example of a thermodynamic calculation, consider calculating the entropy <span class="math notranslate nohighlight">\(S\)</span>, which is a state function and can be defined as</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle dS=\frac{C_p}{T}dT-\left( \frac{\partial V}{\partial T}\right)_pdp \tag{88}\]</div>
+<p>and in an integrated form</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle S=\int \frac{C_p}{T}dT-\int\left( \frac{\partial V}{\partial T}\right)_pdp \tag{89}\]</div>
+<p>if variables <span class="math notranslate nohighlight">\(T\)</span> and <span class="math notranslate nohighlight">\(p\)</span> are chosen. It has been stated that <span class="math notranslate nohighlight">\(S\)</span> is a state function: to prove that this is true, equation 87 must hold true for the derivatives in equation 88. To illustrate this, it will be necessary to relate <span class="math notranslate nohighlight">\(T, V\)</span>, and <span class="math notranslate nohighlight">\(p\)</span> and for which the ideal gas equation will be used. The first step is to form equation 87, which is done by looking at the ‘symmetry’ of the first of equations 85, <span class="math notranslate nohighlight">\(Mdx + Ndy\)</span> and comparing it with 87, <span class="math notranslate nohighlight">\(\displaystyle \frac{\partial N}{\partial x} = \frac{\partial M}{\partial y}\)</span>. In this equation <span class="math notranslate nohighlight">\(M\)</span> is a derivative with respect to <span class="math notranslate nohighlight">\(y\)</span>, and <span class="math notranslate nohighlight">\(N\)</span> to <span class="math notranslate nohighlight">\(x\)</span>. Therefore, choosing <span class="math notranslate nohighlight">\(M = C_p /T\)</span> and <span class="math notranslate nohighlight">\(N = (\partial V/\partial T)_P\)</span> these must be functions of the other variable used in equation 88 or 89. This means that equation 87 becomes</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{\partial }{\partial p}\left(\frac{C_p}{T}\right) =\frac{\partial}{\partial T}\left(\frac{\partial V}{\partial T}\right)_p \tag{90}\]</div>
+<p>Next, it is shown that this relationship is true. As the ideal gas law is <span class="math notranslate nohighlight">\(pV = RT\)</span> then <span class="math notranslate nohighlight">\((\partial V/\partial T)_p = R/p\)</span> and so</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{1 }{T}\frac{\partial C_p}{\partial p} =\frac{\partial}{\partial T}\left(\frac{R}{p}\right)_p \tag{91}\]</div>
+<p>The heat capacity is by definition, <span class="math notranslate nohighlight">\((dU/dT)_p\)</span> making the left-hand side of equation 91</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{1 }{T}\frac{\partial C_p}{\partial p} = \frac{1 }{T}\frac{\partial^2 U}{\partial p\partial T}=0\]</div>
+<p>because the internal energy <span class="math notranslate nohighlight">\(U\)</span> of an ideal gas depends only on the temperature. The right-hand side of equation 91 is also zero because <span class="math notranslate nohighlight">\(\displaystyle \frac{\partial }{\partial T}\left(  \frac{R}{p}\right)=0\)</span>, verifying that <span class="math notranslate nohighlight">\(S\)</span> is a state function.</p>
+</div>
+<div class="section" id="state-functions-do-not-depend-on-the-path">
+<h2>14.1 State functions do not depend on the path<a class="headerlink" href="#state-functions-do-not-depend-on-the-path" title="Permalink to this headline">¶</a></h2>
+<p>To show that <span class="math notranslate nohighlight">\(S\)</span> does not depend on the path, the entropy, <span class="math notranslate nohighlight">\(S\)</span>, of 1 mole of an ideal gas, expanded reversibly, will be calculated using equation 89. The starting pressure and temperature are <span class="math notranslate nohighlight">\((p_0, T_0)\)</span> (point A, Fig. 36) and ending <span class="math notranslate nohighlight">\((p_1, T_1)\)</span> (point B) and the calculation follows each of the two paths shown in (a) lines <span class="math notranslate nohighlight">\(C_1 + C_2\)</span> and (b) line <span class="math notranslate nohighlight">\(C_3\)</span>. The heat capacity is treated as a constant over the range <span class="math notranslate nohighlight">\(p_0\to p_1\)</span>.</p>
+<p>Path (a) consists of two straight lines <span class="math notranslate nohighlight">\(C_1\)</span> and <span class="math notranslate nohighlight">\(C_2\)</span> at right angles to one another. <span class="math notranslate nohighlight">\(C_1\)</span> is the path <span class="math notranslate nohighlight">\(P_0 \to P_1\)</span> at <span class="math notranslate nohighlight">\(T_0\)</span>, then <span class="math notranslate nohighlight">\(C_2\)</span> from <span class="math notranslate nohighlight">\(T_0 \to T_1\)</span> at <span class="math notranslate nohighlight">\(P_1\)</span> and path (b) is along a straight line <span class="math notranslate nohighlight">\(C_3\)</span> from start to finish.</p>
+<p>The method to follow is to:</p>
+<p><span class="math notranslate nohighlight">\(\quad\)</span><strong>(1)</strong> Substitute for any partial derivatives using (in this example) the ideal gas law to
+make an equation in <span class="math notranslate nohighlight">\(p\)</span> or <span class="math notranslate nohighlight">\(T\)</span> as necessary.</p>
+<p><span class="math notranslate nohighlight">\(\quad\)</span><strong>(2)</strong> Use equation 85 to make equations in <span class="math notranslate nohighlight">\(dp\)</span> and<span class="math notranslate nohighlight">\( dT\)</span>.</p>
+<p><span class="math notranslate nohighlight">\(\quad\)</span><strong>(3)</strong> Work out the remaining derivative <span class="math notranslate nohighlight">\(dp/dT\)</span> or <span class="math notranslate nohighlight">\(dT/dp\)</span> depending on the path taken.</p>
+<p><span class="math notranslate nohighlight">\(\quad\)</span><strong>(4)</strong> Integrate the resulting equation.</p>
+<p>In step (1), starting with equation 89, substituting the partial derivative using the ideal gas law produces</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle  S=\int \frac{C_p}{T}dT-\int\frac{R}{p}dp \tag{92}\]</div>
+<p>Step (2): making the integral a function of <span class="math notranslate nohighlight">\(p\)</span> and of <span class="math notranslate nohighlight">\(T\)</span> alone gives</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle  S_T=\int_{p_0}^{p_1} \left(\frac{C_p}{T}\frac{dT}{dp}-\frac{R}{p}\right) dp, \qquad S_p=\int_{T_1}^{T_2} \left(\frac{C_p}{T}-\frac{R}{p}\frac{dp}{dT}\right) dT \]</div>
+<p>as illustrated in equation 85.</p>
+<p>Steps (3) and (4): The first part of the path (a) is at constant <span class="math notranslate nohighlight">\(T=T_0\)</span>, and from <span class="math notranslate nohighlight">\(p_0 \to p_1\)</span>, therefore as <span class="math notranslate nohighlight">\(dT/dp=0\)</span></p>
+<div class="math notranslate nohighlight">
+\[\displaystyle  S_p=\int_{p_0}^p{_1}\frac{R}{p}dp = -R\ln\left( \frac{p_1}{p_0} \right) \]</div>
+<p>This is also obvious because <span class="math notranslate nohighlight">\(T\)</span> is constant along this part of path (a) and equation 92 could have been used directly. In the second step at constant <span class="math notranslate nohighlight">\(p_1\)</span> with the temperature changing from <span class="math notranslate nohighlight">\(T_0 \to T_1\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle  S_p=\int_{T_0}^{T_1} \frac{C_p}{T}dT =C_p\ln\left( \frac{T_1}{T_0} \right) \]</div>
+<p>and the total change in entropy is the sum of these last two integrals.</p>
+<p>The same method is used for path (b) along the line <span class="math notranslate nohighlight">\(C_3\)</span>. As this path goes directly from start to finish it is
+the equation of a straight line;</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle T= \frac{T_1-T_0}{p_1-p_0}(p-p_0)+T_0,\quad \text{with gradient}\quad \displaystyle \frac{dT}{dp}=\frac{T_1-T_0}{p_1-p_0}=m\]</div>
+<p>and substituting this and <span class="math notranslate nohighlight">\(T\)</span> into the equation for <span class="math notranslate nohighlight">\(S_T\)</span> and integrating gives</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle  S=\int_{p_0}^{p_1} C_p\left( \frac{m}{m(p-p_0)+T_0}-\frac{R}{p} \right)dp= C_p\ln\left( \frac{T_1}{T_0}\right) -R\ln\left( \frac{p_1}{p_0}\right)\]</div>
+<p>which is the same as along the path (a); therefore entropy is a state function. (The first part of the last integration is a standard one: <span class="math notranslate nohighlight">\(\int dx/(ax + b) = \ln(ax + b)/a\)</span>).</p>
+</div>
+<div class="section" id="greens-function">
+<h2>14.2 Green’s function<a class="headerlink" href="#greens-function" title="Permalink to this headline">¶</a></h2>
+<p>A line integral of two functions is by Green’s theorem equal to the surface integral around a <em>closed area</em>, or</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle  \int_CMdx+Ndy = \int\int \left( \frac{N}{dx}-\frac{M}{dy} \right)dxdy \tag{93}\]</div>
+<p>where integration is taken in an anticlockwise direction. It can be evaluated either as two or more line integrals, one for each part of the loop, or from the double integral depending which is easier, but is always around a closed area. The notation for this is often given as <span class="math notranslate nohighlight">\(\int_C Mdx + Ndy\)</span> . If the curve is given para metrically, the integral is <span class="math notranslate nohighlight">\(\displaystyle A= \frac{1}{2}\int \left( x\frac{N}{dt}-y\frac{M}{dt} \right)dt\)</span>.</p>
+<p>Consider equation 86, which was evaluated around the semicircle of a unit circle from <span class="math notranslate nohighlight">\(A\)</span> to <span class="math notranslate nohighlight">\(B\)</span>. The result was <span class="math notranslate nohighlight">\(\displaystyle \int_Cy^2dx+2x^2ydy=-\frac{4}{3}\)</span>.</p>
+<p>The second part of the calculation of the closed loop must also contain the line integral from <span class="math notranslate nohighlight">\(B\)</span> to <span class="math notranslate nohighlight">\(A\)</span>, the curve for this is <span class="math notranslate nohighlight">\(y = 0\)</span> and therefore the integral <span class="math notranslate nohighlight">\(B \to A\)</span> is zero because <span class="math notranslate nohighlight">\(y\)</span> is zero, in both limits of the integral. The total line integral from <span class="math notranslate nohighlight">\(A \to B\)</span> then straight to <span class="math notranslate nohighlight">\(A\)</span> again is therefore also <span class="math notranslate nohighlight">\(-4/3\)</span>.</p>
+<p>Now consider the Green’s function integral, equation 93 with <span class="math notranslate nohighlight">\(M \equiv y^2\)</span> and <span class="math notranslate nohighlight">\(N \equiv 2x^2y\)</span> then</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin{align}
+\displaystyle \int_Cy^2dx+2x^2ydy &amp;=\int\int \left( \frac{N}{dx}-\frac{M}{dy} \right)dxdy \\
+&amp;=\int_{-1}^1 \int_0^{\sqrt{1-x^2}} (4xy-2y)dydx =\int_{-1}^1 (2x-1)(1-x^2)dx=-\frac{4}{3} \end{align} \end{split}\]</div>
+<p>and note the change of order of integration in the second line which ensures that an integral in <span class="math notranslate nohighlight">\(x\)</span> with constants as limits is the final integration. The result is the same that obtained before.</p>
+<p><img alt="Drawing" src="_build_/jupyter_execute/chapter-4/integration-fig37.png" /></p>
+<p>Figure 37. Integrating around the curve <span class="math notranslate nohighlight">\(A \to B \to A\)</span>.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./_build_/jupyter_execute/chapter-4"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Godfrey Beddard<br/>
+        
+            &copy; Copyright 2022.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

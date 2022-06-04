@@ -1,0 +1,1963 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Series, averages, partition functions, DNA melting, atom entropy &#8212; Applying Maths in the Chemical &amp; Biomolecular Sciences</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Questions 1 - 13" href="chapter-5-B-Q1-13.html" />
+    <link rel="prev" title="5. Summations, Series and expansion of Functions." href="chapter-5-intro.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/book-cover.jpg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Applying Maths in the Chemical & Biomolecular Sciences</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Applying Maths in the Chemical and Biomolecular Sciences.
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-1/chapter1-intro.html">
+   1. Numbers, Equations, Operators, and Algorithms.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-A.html">
+     Numbers to Algorithms.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-Q1-7.html">
+     Questions 1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-B.html">
+     Trig, hyperbolic and inverse functions, waves, polar coordinates &amp; factorials
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-Q8-16.html">
+     Questions 8 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-C.html">
+     Sophisticated Counting.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-Q17-34.html">
+     Questions 17 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-D.html">
+     Modulo arithmetic,
+     <span class="math notranslate nohighlight">
+      \(\delta\)
+     </span>
+     functions, types of  series &amp;  estimating quantities
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-Q35-39.html">
+     Questions 35 - 39
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-answers-1-7.html">
+     Solutions Q1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-answers-8-16.html">
+     Solutions Q8 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-answers-17-34.html">
+     Solutions Q17 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-answers-35-39.html">
+     Solutions Q35 - 39
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-2/chapter2-intro.html">
+   2. Complex numbers.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2/chapter2-A.html">
+     Real, imaginary, conjugate and modulus
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2/chapter2-Q-1-9.html">
+     Questions 1 - 9
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2/chapter2-B.html">
+     De Moivre’s theorem and integer powers of complex numbers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2/chapter2-Q-10-13.html">
+     Questions 10 -13
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2/chapter2-C.html">
+     Euler’s theorem
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2/chapter2-Q-14-27.html">
+     Questions 14 - 27
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2/chapter2-answers.html">
+     Solutions Q1 - 27
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-3/differen-intro.html">
+   3. Differentiation.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-A.html">
+     Differentiation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-B.html">
+     Trig functions, logs, power, reciprocals and integrals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-C-Q-4-11.html">
+     Questions 1-11
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-D.html">
+     Product rule and function of function or chain rule.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-E-Q-12-42.html">
+     Questions 12-42
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-F.html">
+     Limits, l’Hopital’s rule, Maximum, Minimum and Calculus of Variations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-G-Q-43-73.html">
+     Questions 43 - 73
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-H.html">
+     Numerically finding the roots of an equation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-I-Q-74-85.html">
+     Questions 74 - 85
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-J.html">
+     Minimizing or maximizing with constraints: Lagrange Undetermined Multipliers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-K-Q-86-92.html">
+     Questions 86 - 92
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-L.html">
+     Partial differentiation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-M-Q-93-114.html">
+     Questions 93-114
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-M1.html">
+     Differentiation of vectors
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-N-answers-1-11.html">
+     Solutions Q 1-11
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-O-answers-12-42.html">
+     Solutions Q 12-42
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-P-answers-43-73.html">
+     Solutions Q 43 - 73
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-Q-answers-74-85.html">
+     Solutions Q 74 - 85
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-R-answers-86-92.html">
+     Solutions Q 86 - 94
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-S-answers-93-114.html">
+     Solutions Q 93-114
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-4/integration-intro.html">
+   4. Integration.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-A.html">
+     Integration basics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-Q1-14.html">
+     Questions 1-14
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-B.html">
+     Integration by substitution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-Q15-30.html">
+     Questions 15-30
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-C.html">
+     Using parametric equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-Q31-48.html">
+     Questions 31 - 48
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-D.html">
+     Calculating an Average Value.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-Q49-72.html">
+     Questions 49 - 72
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-E.html">
+     The Variational Method in Quantum Mechanics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-Q73-77.html">
+     Questions 73 - 77
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-F.html">
+     Multiple integrals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-Q78-86.html">
+     Questions 78 - 86
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-G.html">
+     Calculating the energy of a chemical bond using molecular orbitals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-H.html">
+     Line integrals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-Q87-96.html">
+     Questions 87 - 96
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-answers-1-14.html">
+     Solutions Q1 - 14
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-answers-15-30.html">
+     Solutions Q15 - 30
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-answers-31-48.html">
+     Solutions Q31 - 48
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-answers-49-72.html">
+     Solutions Q49 - 72
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-answers-73-96.html">
+     Solutions Q73 - 96
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="chapter-5-intro.html">
+   5. Summations, Series and expansion of Functions.
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Series, averages, partition functions, DNA melting, atom entropy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="chapter-5-B-Q1-13.html">
+     Questions 1 - 13
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="chapter-5-E.html">
+     Maclaurin and Taylor series expansions. Paramagnetic spins. Euler-Maclaurin formula.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="chapter-5-F-Q14-34.html">
+     Questions 14 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="chapter-5-G-Q35-44.html">
+     Questions 35 - 44
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="chapter-5-perturbation-A.html">
+     Perturbation Theory
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="chapter-5-perturbation-B-Q45-48.html">
+     Questions 45 - 48
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="chapter-5-perturbation-C.html">
+     Quantum superposition and wavepackets.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="chapter-5-perturbation-D-Q49-52.html">
+     Questions 49 - 52
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="chapter-5-answers-1-7.html">
+     Solutions Q 1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="chapter-5-answers-8-13.html">
+     Solutions Q8 - 13
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="chapter-5-answers-14-26.html">
+     Solutions Q 14 - 26
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="chapter-5-answers-27-32.html">
+     Solutions Q27 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="chapter-5-answers-33-44.html">
+     Solutions Q33 - 44
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="chapter-5-answers-45-52.html">
+     Solutions Q45 - 52
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-6/vectors-intro.html">
+   6. Vectors.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-A.html">
+     Vector basics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-Q1-24.html">
+     Questions 1 - 24
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-B.html">
+     Projections and components
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-Q25-32.html">
+     Questions 25 - 32
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-C.html">
+     Axes need not be right-angled or of equal length
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-Q33-38.html">
+     Questions 33 - 38
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-D.html">
+     Basis sets with more than three dimensions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-Q39-46.html">
+     Questions 39 - 46
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-E.html">
+     Cross product or vector product
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-Q47-52.html">
+     Questions 47 - 52
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-F.html">
+     Torsion or dihedral angles
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-Q53-48.html">
+     Questions 53 - 48
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-G.html">
+     Torque and angular momentum
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-Q59-61.html">
+     Questions 59 - 61
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-answers-Q1-24.html">
+     Solutions Q1 - 24
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-answers-Q25-32.html">
+     Solutions Q25 - 32
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-answers-Q33-38.html">
+     Solutions Q33 - 38
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-answers-Q39-46.html">
+     Solutions Q39 - 46
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-answers-Q47-52.html">
+     Solutions Q47 - 52
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-answers-Q53-61.html">
+     Solutions Q53 - 61
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-7/matrices-intro.html">
+   7. Matrices
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-A.html">
+     Determinants
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q1-10.html">
+     Questions  1 - 10
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-B.html">
+     Matrices
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q11-16.html">
+     Questions  11 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-C.html">
+     Molecular Group Theory
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q17-30.html">
+     Questions  17 - 30
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-D.html">
+     Rotation matrices: moving molecules
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q31-34.html">
+     Questions 31 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-E.html">
+     Matrices in optics and designing laser cavities
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q35-39.html">
+     Questions 35 - 39
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-F.html">
+     Polarizing optics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q40-44.html">
+     Questions 40 - 44
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-G.html">
+     Solving equations using matrices. Eigenvectors &amp; Eigenvalues.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q45-50.html">
+     Questions 45 - 50
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-H.html">
+     Rate equations and Chemical Kinetics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q51-54.html">
+     Questions 51 - 54
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-I.html">
+     Molecular vibrations and pendulums
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q55-58.html">
+     Questions 55 - 58
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-J.html">
+     Moments of Inertia
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q59-60.html">
+     Questions 59 - 62
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-K.html">
+     Calculating a bond length using moments of inertia
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q61.html">
+     Question 61
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-L.html">
+     Principal axes for Moments of Inertia
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q62.html">
+     Question 62
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-answersQ1-10.html">
+     Solutions Q1 - 10
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-answersQ11-16.html">
+     Solutions Q11 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-answersQ17-30.html">
+     Solutions Q17 - 30
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-answersQ31-34.html">
+     Solutions Q31 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-answersQ35-39.html">
+     Solutions Q35 - 39
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-answersQ40-44.html">
+     Solutions Q40 - 44
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-answersQ45-50.html">
+     Solutions Q45 - 50
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-answersQ51-54.html">
+     Solutions Q51 - 54
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-answersQ55-58.html">
+     Solutions Q55 - 58
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-answersQ59-61.html">
+     Solutions Q59 - 61
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-8/matricesQM-intro.html">
+   8. Matrices in Quantum Mechanics
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-8/matricesQM-A.html">
+     Matrices in Quantum Mechanics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-8/matricesQM-Q1-7.html">
+     Questions 1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-8/matricesQM-B.html">
+     Basis sets and bra-ket algebra
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-8/matricesQM-Q8-12.html">
+     Questions 8 - 12
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-8/matricesQM-C.html">
+     Continuous basis sets
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-8/matricesQM-answers1-7.html">
+     Solutions Q1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-8/matricesQM-answers8-12.html">
+     Solutions Q8 - 12
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-9/Fourier-intro.html">
+   9. Fourier Series and Transforms.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-A-B.html">
+     Fourier series, Gibbs phenomenon, generalised series.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-questions-1-6.html">
+     Questions 1 - 6
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-C.html">
+     Fourier Transforms
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-questions-7-15.html">
+     Questions 7 - 15
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-D.html">
+     Convolution and Autocorrelation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-questions-16-21.html">
+     Questions 16 - 21
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-E.html">
+     Discrete Fourier  (DFT)  and Fast Fourier transforms (FFT)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-F.html">
+     The Hadamard Transform: Encoding and Decoding
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-answers-1-6.html">
+     Solutions Q 1 - 6
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-answers-7-15.html">
+     Solutions Q 7 - 15
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-answers-16-21.html">
+     Solutions Q 16 - 21
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-2D-Diffraction.html">
+     The Fourier transform in two dimensions: images and x-ray Diffraction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-tomography.html">
+     Computed Tomography
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-10/Diff-eqns-intro.html">
+   10. Differential Equations.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-A.html">
+     Differential Equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-Q1-23.html">
+     Questions 1 - 23
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-B.html">
+     First order eqns &amp; Integrating factors. Second order eqns, Newtons laws, equations of motion.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-C.html">
+     The ‘D’ operator.  Solving linear differential equations with constant coefficients
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-D.html">
+     Simultaneous equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-Q24-37.html">
+     Questions 24 - 37
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-E.html">
+     Linear equations with variable coefficients
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-F.html">
+     Partial Differential Equations, PDE
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-G.html">
+     PDE examples continued
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-answers-1-21.html">
+     Solutions Q1 - 21
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-answers-22-37.html">
+     Solutions Q22 - 37
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-11/num-methods-intro.html">
+   11. Numerical Methods
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-A.html">
+     Numerical Methods
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-Q1-7.html">
+     Questions 1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-B.html">
+     Numerical solution of differential equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-Q8-12.html">
+     Questions 8 - 12
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-C.html">
+     Coupled equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-Q13-16.html">
+     Questions 13 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-D.html">
+     The phase plane, nullclines, and stable points
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-Q17-20.html">
+     Questions 17 - 20
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-E.html">
+     Reaction schemes with feedback
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-Q21-34.html">
+     Questions 21 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-F.html">
+     Boundary value problems.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-Q35-40.html">
+     Questions 35 - 40
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-answers1-7.html">
+     Solutions Q1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-answers8-12.html">
+     Solutions Q8 - 12
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-answers13-16.html">
+     Solutions Q13 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-answers17-20.html">
+     Solutions Q17 - 20
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-answers21-34.html">
+     Solutions Q21 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-answers35-40.html">
+     Solutions Q35 - 40
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-12/monte-carlo-intro.html">
+   12. Monte Carlo Methods
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+  <label for="toctree-checkbox-12">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-A.html">
+     Monte - Carlo Methods
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-Q1-6.html">
+     Questions 1 - 6
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-B.html">
+     Solving rate equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-Q7-10.html">
+     Questions 7 - 10
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-CC.html">
+     Monte Carlo Simulations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-C.html">
+     Energy transfer. Autocatalytic reaction and spreading of fires
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-Q11-17.html">
+     Questions 11 - 17
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-D.html">
+     The Metropolis algorithm
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-answers1-6.html">
+     Solutions Q1 - 6
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-answers7-10.html">
+     Solutions Q7 - 10
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-answers11-17.html">
+     Solutions Q11 - 17
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-13/analysis-intro.html">
+   13. Data Analysis
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+  <label for="toctree-checkbox-13">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-13/analysis-A.html">
+     Characterizing experimental data. Accuracy, precision, mean and standard deviation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-13/analysis-Q1-3.html">
+     Questions 1 - 3
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-13/analysis-B.html">
+     Modelling data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-13/analysis-Q4-9.html">
+     Questions 4 - 9
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-13/analysis-C.html">
+     Modelling data is simpler using matrices
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-13/analysis-Q10-11.html">
+     Questions 10 - 13
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-13/analysis-D.html">
+     Non-linear least squares. Least absolute deviation. Principal component analysis
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-13/analysis-answers1-11.html">
+     Solutions Q1 -11
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../chapter-1/chapter1-E.html">
+   SI units, Rounding, converting units &amp; Glossary.
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../references/References.html">
+   References
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../references/Python%20crib.html">
+   Appendix:  Some basic Python instructions with a few examples.
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/chapter-5/chapter-5-A.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/chapter-5/chapter-5-A.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#power-series">
+   Power series
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#summation-of-waves">
+     <strong>
+      Summation of waves
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#making-new-series">
+     <strong>
+      Making new series
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#table-of-summations">
+     Table of summations
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#convergence">
+   1.1 Convergence
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#average-quantities">
+   2 Average quantities
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#i-average-energy-of-a-molecule-or-atom">
+     <strong>
+      (i) Average energy of a molecule or atom
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ii-polymers">
+     <strong>
+      (ii) Polymers
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#iii-sequence-repeats-in-dna">
+     <strong>
+      (iii) Sequence repeats in DNA
+     </strong>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#partition-functions">
+   3 Partition Functions
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#i-bond-rotation">
+     <strong>
+      (i) Bond rotation
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ii-dna-melting-zipper-model">
+     <strong>
+      (ii) DNA melting: Zipper model
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#iii-entropy-of-atoms-and-molecules">
+     <strong>
+      (iii) Entropy of atoms and molecules
+     </strong>
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="series-averages-partition-functions-dna-melting-atom-entropy">
+<h1>Series, averages, partition functions, DNA melting, atom entropy<a class="headerlink" href="#series-averages-partition-functions-dna-melting-atom-entropy" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import all python add-ons etc that will be needed later on</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="n">init_printing</span><span class="p">()</span>                      <span class="c1"># allows printing of SymPy results in typeset maths format</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;font.size&#39;</span><span class="p">:</span> <span class="mi">14</span><span class="p">})</span>  <span class="c1"># set font size for plots</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="power-series">
+<h2>Power series<a class="headerlink" href="#power-series" title="Permalink to this headline">¶</a></h2>
+<p>The series expansions of exponential, sine, and cosine functions have been described in earlier chapters and there is nothing unusual or special about these. Any regular function can be expanded in a similar manner in powers of <span class="math notranslate nohighlight">\(x\)</span>, to produce its unique power series, which is in general</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle  f=a_0 +a_1x+a_2x^2 +a_3x^3 +\cdots = \sum_n a_nx^n \]</div>
+<p>where the <span class="math notranslate nohighlight">\(a\)</span>’s are positive or negative constants. The capital <span class="math notranslate nohighlight">\(\sum\)</span> is used to indicate a summation, with sub- and superscripts as necessary. In the reverse process, some series can be
+summed to form a function. The power series</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle 1+x+x^2 +x^3 +x^4 +\cdots+x^n + \]</div>
+<p>is a geometric series, as the ratio of consecutive terms is constant, and is summed to the algebraic expression,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{1}{1-x} =1+x+x^2 +x^3 +x^4 +\cdots+x^n +\cdots   \tag {1} \]</div>
+<p>provided that <span class="math notranslate nohighlight">\(| x | \lt 1\)</span> where <span class="math notranslate nohighlight">\(| x |\)</span> is the absolute values of <span class="math notranslate nohighlight">\(x\)</span>. If this condition is not true then the expansion tends to infinity and gives the wrong answer.</p>
+<p>The summation is easily found to a finite number of <span class="math notranslate nohighlight">\(N\)</span> terms, let</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle S_N=1+x+x^2 +x^3 +x^4 +\cdots+x^N \]</div>
+<p>multiply both sides by <span class="math notranslate nohighlight">\(x\)</span> and subtract the two expressions</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin{align}xS_N&amp; = x+x^2 +x^3 +x^4 +\cdots+x^{N+1}\\ 
+(1-x)S_n&amp;=(1+x+x^2 +x^3 +x^4 +\cdots+x^N)-(x+x^2 +x^3 +x^4 +\cdots+x^{N+1}) \\&amp;=(1-x^{N+1})\end{align}\end{split}\]</div>
+<p>and the summation is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \sum_{n=0}^N x^n=\frac{1-x^{N+1}}{1-x}\]</div>
+<p>Taken to infinity the summation becomes</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle\sum_{n=0}^\infty x^n = \frac{1}{1-x }  \tag{2} \]</div>
+<p>but only if <span class="math notranslate nohighlight">\(-1\lt x\lt 1\)</span>.</p>
+<p>If the summation starts at <span class="math notranslate nohighlight">\(m&lt;N\)</span> then</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \sum_{n=1}^N x^n=\frac{x^m-x^{N+1}}{1-x}\]</div>
+<p>The function  <span class="math notranslate nohighlight">\(f(x)  = 1/(1-x) \)</span> (eqn. 2) can be represented by the polynomial series equation (1), again this is only true if <span class="math notranslate nohighlight">\(-1\, x \, \lt 1\)</span>. The polynomial is calculated as</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle f(0) = 1, \quad f(1/2) = 1 + 1/2 + 1/4 + 1/8 + \cdots\]</div>
+<p>which looks as though it will converge as terms are becoming increasingly smaller as the series grows. Convergence always needs to be checked. If <span class="math notranslate nohighlight">\(x\)</span> is greater than 1 then the series obviously increases to infinity, which is clear to see from</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle f (2) = 1 + 2 + 4 + 8 + \cdots\]</div>
+<p>The expansion of <span class="math notranslate nohighlight">\(1/(1 + x)\)</span> and of <span class="math notranslate nohighlight">\(1/(1 + ax)\)</span>, for example, follows immediately by substitution of <span class="math notranslate nohighlight">\(x \rightarrow -x \)</span> and <span class="math notranslate nohighlight">\(x \rightarrow ax\)</span>  into the series of equation (1). In the latter case for the series to be valid <span class="math notranslate nohighlight">\(|\, ax \,| &lt; 1\)</span>, where <span class="math notranslate nohighlight">\(a\)</span> is a constant.</p>
+<div class="section" id="summation-of-waves">
+<h3><strong>Summation of waves</strong><a class="headerlink" href="#summation-of-waves" title="Permalink to this headline">¶</a></h3>
+<p>The summation of waves occurs in fourier analysis, a wave in its general form is <span class="math notranslate nohighlight">\(e^{-i\omega t}\)</span> which propagates at frequency <span class="math notranslate nohighlight">\(\omega\)</span> and time <span class="math notranslate nohighlight">\(t\)</span>. The sum of many waves of different frequency and in phase with one another produces a pulse, this is how a pulse is formed in a mode-locked laser. It is also how diffraction from an array of scatterers, (electrons in atoms) produces a spot in a x-ray diffraction pattern from a single crystal. The sum to <span class="math notranslate nohighlight">\(N\)</span> terms is formed from waves at frequencies <span class="math notranslate nohighlight">\(n\omega\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle S=\sum_{n=-N}^N e^{-in\omega t}\]</div>
+<p>where <span class="math notranslate nohighlight">\(i=\sqrt{-1}\)</span>. The limits here are <span class="math notranslate nohighlight">\(-N\to N\)</span> and this changes the summation to <span class="math notranslate nohighlight">\(\displaystyle \frac{-x^{N+1}+x^N}{1-x}\)</span> as may be worked out following the method above. Substituting <span class="math notranslate nohighlight">\(x\to e^{-i\omega t}\)</span> gives</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle S=\frac{-e^{i(N+1)\omega t}+e^{-iN\omega t}}{1-e^{i\omega t}}\]</div>
+<p>this can be further simplified by multiplying top and bottom of the fraction by <span class="math notranslate nohighlight">\(e^{-i\omega t/2}\)</span>, which is in effect multiplying by one.</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle S = \frac{e^{-i\omega(N+1/2) t} - e^{i\omega (N+1/2)t}}{e^{-i\omega t/2}-e^{+i\omega t/2}}\]</div>
+<p>and using the definition of a sine in terms of exponentials <span class="math notranslate nohighlight">\(\sin(x)=(e^{ix}-e^{-ix})/2i\)</span> gives</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle S=\frac{\sin((N+1/2)\omega t)}{\sin(\omega t/2)}\]</div>
+<p>which is a series of spikes separated by <span class="math notranslate nohighlight">\(2\pi/\omega\)</span>, see fig. 21b chapter 9 (Fourier transforms).</p>
+</div>
+<div class="section" id="making-new-series">
+<h3><strong>Making new series</strong><a class="headerlink" href="#making-new-series" title="Permalink to this headline">¶</a></h3>
+<p>(i) New series can often be made from existing ones. Suppose each term in the series of <span class="math notranslate nohighlight">\(f(x)=1+x+x^2+\cdots\)</span> is differentiated, then using eqn 2,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle f^′(x)= \frac{1}{(1 - x)^2} =1+2x+3x^2 +4x^3 +\cdots+nx^{n-1} +\cdots  \tag{3}\]</div>
+<p>and if <span class="math notranslate nohighlight">\(| \,x\, | \lt 1\)</span> this is the expansion of <span class="math notranslate nohighlight">\( 1/(1 - x)^2\)</span>, which can be written as</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \sum_{n=0}^{\infty}   nx^{n-1} = \frac{1}{(1 - x)^2}  \tag{4}\]</div>
+<p>(ii) Substituting <span class="math notranslate nohighlight">\(x \to -x \)</span> gives the series</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{1}{(1 + x)^2} =1-2x+3x^2-4x^3 +\cdots      \tag{5}\]</div>
+<p>The summation expression is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \sum_{n=1}^\infty (-1)^n nx^{n-1} = \frac{1}{(1+x)^2}\]</div>
+<p>and the <span class="math notranslate nohighlight">\(\displaystyle (-1)^n\)</span> ensures that alternate terms are positive and negative.</p>
+<p>(iii) The sum</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \sum_{n=0}^\infty (1-x)x^n = 1,\qquad |x|\lt 1\]</div>
+<p>and the new sum <span class="math notranslate nohighlight">\(\displaystyle \sum_{n=0}^\infty x(1-x)^n\)</span> can be found with this result by substituting <span class="math notranslate nohighlight">\(y=1-x\)</span> then</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \sum_{n=0}^\infty y(1-y)^n = 1,\qquad |y-1|\lt 1\]</div>
+<p>but notice that there are now new limits. We can of course change notation and replace <span class="math notranslate nohighlight">\(y\)</span> with <span class="math notranslate nohighlight">\(x\)</span> or <span class="math notranslate nohighlight">\(p\)</span> or any other symbol.</p>
+</div>
+<div class="section" id="table-of-summations">
+<h3>Table of summations<a class="headerlink" href="#table-of-summations" title="Permalink to this headline">¶</a></h3>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin{array}{l|l|l}
+\hline
+\sum_0^\infty\limits x^n = \displaystyle\frac{1}{1-x},\quad |x|&lt;1&amp;
+\sum_0^\infty\limits (-x)^n = \displaystyle\frac{1}{1+x},\quad |x|&lt;1&amp;
+\sum_0^\infty\limits nx^n =\displaystyle\frac{x}{(1-x)^2},\quad |x|&lt;1\\
+\sum_0^\infty\limits nx(1-x)^n=\displaystyle \frac{1-x}{x},\quad |x-1|&lt;1&amp;
+\sum_0^\infty\limits (1-x)x^n =1,\quad |x|&lt;1&amp;
+\sum_0^\infty\limits n(1-x)x^n =\displaystyle\frac{x}{1-x},\quad |x|&lt;1\\
+\sum_0^\infty\limits nx(1-x)^{n-1} =\displaystyle\frac{1}{x},\quad |x-1|&lt;1&amp;
+\sum_0^\infty\limits x(1-x)^{n-1} =\displaystyle\frac{1}{1-x},\quad |x-1|&lt;1&amp;
+\sum_0^\infty\limits n(1-x)x^{n-1} =\displaystyle\frac{1}{1-x},\quad |x|&lt;1\\
+\hline
+\end{array}\end{split}\]</div>
+<p>Figure 1, below, shows the function of equation (3) and several approximations which are ever longer series with increasing powers of <span class="math notranslate nohighlight">\(x\)</span>. Expanding the series as far as <span class="math notranslate nohighlight">\(x^6\)</span> only matches the <span class="math notranslate nohighlight">\(f(x)\)</span> well up to about <span class="math notranslate nohighlight">\(x = 0.5\)</span> indicating the rather obvious fact that that many terms may be needed to accurately reproduce a function. The plot also shows haw a function may be approximated by its first couple of terms when the variable <span class="math notranslate nohighlight">\(x\)</span> is very small.  This is a very common procedure to account for a perturbation.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># power series calculation</span>
+
+<span class="n">fig1</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;font.size&#39;</span><span class="p">:</span> <span class="mi">14</span><span class="p">})</span>  <span class="c1"># set font size for plots</span>
+
+<span class="n">m</span>    <span class="o">=</span> <span class="mi">8</span>                             <span class="c1"># maximum power of series is m</span>
+<span class="n">numx</span> <span class="o">=</span> <span class="mi">100</span>                           <span class="c1"># number of points to plot</span>
+<span class="n">maxy</span> <span class="o">=</span> <span class="mi">15</span>                            <span class="c1"># max y axis</span>
+<span class="n">s</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.0</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">numx</span><span class="p">)]</span>       <span class="c1"># make array of zeros</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.999</span><span class="p">,</span><span class="n">numx</span><span class="p">)</span>
+
+<span class="n">sers</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span><span class="n">j</span><span class="p">:</span> <span class="nb">sum</span><span class="p">(</span> <span class="n">n</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="p">)</span>  <span class="c1"># sum =1+2x+3x^2 + + nx^(n-1) ... 1/(1-x)^2</span>
+<span class="n">j</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="k">while</span> <span class="n">j</span> <span class="o">&lt;=</span> <span class="n">m</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">numx</span><span class="p">):</span>
+        <span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span> <span class="n">sers</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">j</span><span class="p">)</span>  
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">s</span><span class="p">)</span>
+    <span class="n">j</span> <span class="o">=</span> <span class="n">j</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="k">pass</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mf">1.0</span><span class="o">/</span><span class="p">(</span><span class="mf">1.0</span> <span class="o">-</span> <span class="n">x</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>            <span class="c1"># exact expression </span>
+
+<span class="n">txt</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">&#39; n = &#39;</span><span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">m</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="p">]</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">q</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">txt</span><span class="p">):</span>
+    <span class="n">yval</span> <span class="o">=</span> <span class="n">sers</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">numx</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">yval</span><span class="o">&lt;</span> <span class="n">maxy</span><span class="p">:</span> 
+        <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span><span class="n">yval</span><span class="p">,</span><span class="n">q</span><span class="p">,</span><span class="n">verticalalignment</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">)</span>
+    <span class="k">pass</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$f\;&#39;(x)=1+2x+3x^2+\cdots+nx^{n-1}+\cdots$&quot;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>  <span class="c1"># r&quot;$...$&quot; uses markdown</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$x$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$f\;&#39;(x)$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">([</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">1.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="n">maxy</span><span class="p">]</span> <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/chapter-5-A_3_01.png" src="../_images/chapter-5-A_3_01.png" />
+</div>
+</div>
+<p>Figure 1. The function <span class="math notranslate nohighlight">\(1/(1-x)^2 \)</span> (top black line) and its series approximations  <span class="math notranslate nohighlight">\(\Sigma_n nx^{n-1}\)</span> with <span class="math notranslate nohighlight">\(n\)</span> = 1, 2, <span class="math notranslate nohighlight">\(\cdots\)</span>.</p>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="convergence">
+<h2>1.1 Convergence<a class="headerlink" href="#convergence" title="Permalink to this headline">¶</a></h2>
+<p>In summing a series, it is important to ensure that it converges to some sensible expression such as <span class="math notranslate nohighlight">\(1/(1 - x)\)</span>, and is not going to be infinite or undefined. With many series, the summation is infinite and cannot therefore be expressed in a simple form. There are a number of convergence tests to ensure that a series has a finite result; many of these are complex, but a ratio test is a good way of determining if the series will be finite.
+In the ratio test, the ratio of any term <span class="math notranslate nohighlight">\(w\)</span> in the series to its preceding term is calculated</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle r=\lim_{n=+\infty} \left| \frac{w_{n+1}}{w^n} \right| \]</div>
+<p>and then the limit is taken as <span class="math notranslate nohighlight">\(n\)</span> tends to infinity. If the <span class="math notranslate nohighlight">\((n + 1)\)</span><sup>th</sup> term is smaller than the <span class="math notranslate nohighlight">\(n^th\)</span>, then the series is converging. The second step is to check whether <span class="math notranslate nohighlight">\(r \lt 1\)</span>, as <span class="math notranslate nohighlight">\(n\)</span> goes to infinity.</p>
+<p>In the series expansion of <span class="math notranslate nohighlight">\(\displaystyle (1 - x)^{-1} = 1 + x + x^2 \cdots\)</span> any individual term in the series is <span class="math notranslate nohighlight">\(x^n\)</span> so the ratio <span class="math notranslate nohighlight">\(\displaystyle r = \lim_{n \rightarrow \infty} \left| \frac{x^{n+1}}{x^n} \right | = |x|\)</span> is less than 1 only if <span class="math notranslate nohighlight">\(|x| \lt 1\)</span>; therefore when this is true the series converges. The interval of convergence for this sum is 0 <span class="math notranslate nohighlight">\(\le x \lt 1\)</span>, and the radius of convergence <span class="math notranslate nohighlight">\(s = 1\)</span>. For any other values this series diverges.</p>
+<p>Should the radius <span class="math notranslate nohighlight">\(s\)</span> be infinity the series is convergent for all values of <span class="math notranslate nohighlight">\(x\)</span>; for instance, the exponential series is convergent for all <span class="math notranslate nohighlight">\(x\)</span>. Testing for convergence properly is far more complicated than this example leads us to believe and a maths textbook should be consulted to understand how to do this rigorously.</p>
+<p>In general, a series converges if <span class="math notranslate nohighlight">\(x\)</span> is smaller than some number <span class="math notranslate nohighlight">\(s\)</span>, so that <span class="math notranslate nohighlight">\(|x_0 - x| \lt s\)</span> where <span class="math notranslate nohighlight">\(x_0\)</span> is a displacement about which the series converges; see Section 6 describing Taylor series for examples of this. The number <span class="math notranslate nohighlight">\(s\)</span> can be determined from the convergence test, Fig. 2. A useful property is that if a power series converges to some number and if each term of it is differentiated, the resulting series can be shown also to converge.</p>
+</div>
+<div class="section" id="average-quantities">
+<h2>2 Average quantities<a class="headerlink" href="#average-quantities" title="Permalink to this headline">¶</a></h2>
+<p>Any quantity, <span class="math notranslate nohighlight">\(x\)</span>, which is one of a set of measurements has an average value</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \langle x \rangle= \frac{\sum xp(x)}{\sum p(x)}      \tag{6}\]</div>
+<p>and this is also called the <em>first moment</em> of the distribution <span class="math notranslate nohighlight">\(p(x)\)</span>; the second moment is <span class="math notranslate nohighlight">\(\langle x^2 \rangle\)</span>, the fourth <span class="math notranslate nohighlight">\(\langle x^4 \rangle\)</span>, etc. The average of <span class="math notranslate nohighlight">\(x^2\)</span> is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle  \langle x^2 \rangle = \frac{\sum x^2p(x)}{\sum p(x)} \tag{7}\]</div>
+<p>The variance or standard deviation squared of <span class="math notranslate nohighlight">\(x\)</span> is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \sigma^2 =\langle x^2 \rangle -\langle x \rangle^2 \]</div>
+<p>A more meaningful description is that <span class="math notranslate nohighlight">\(\sigma\)</span> is the <em>dispersion</em> in the value of <span class="math notranslate nohighlight">\(x\)</span>, meaning it is the spread in its value; experimental values are often quoted as <span class="math notranslate nohighlight">\(\langle x \rangle \pm \sigma\)</span>. The chapter on integration has examples of averaging using integrals rather than summations, and variance is described in Chapter 13 Data analysis.</p>
+<div class="section" id="i-average-energy-of-a-molecule-or-atom">
+<h3><strong>(i) Average energy of a molecule or atom</strong><a class="headerlink" href="#i-average-energy-of-a-molecule-or-atom" title="Permalink to this headline">¶</a></h3>
+<p>The average energy is described by</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \langle E \rangle = \frac{\sum Ep(E)}{\sum p(E)} \tag{8}\]</div>
+<p>where the summation covers all the energy states and <span class="math notranslate nohighlight">\(p(E)\)</span> is the distribution function, which is very often a thermal or Boltzmann distribution, <span class="math notranslate nohighlight">\(\displaystyle p(E) = e^{-E/k_BT}\)</span> with temperature <span class="math notranslate nohighlight">\(T\)</span> and Boltzmann’s constant <span class="math notranslate nohighlight">\(k_B\)</span>. In special situations this might be replaced by the Bose-Einstein or Fermi-Dirac distribution among others.</p>
+<p>If the lowest energy is zero and the largest infinity and <span class="math notranslate nohighlight">\(E\)</span> has discrete integer values, in units of <span class="math notranslate nohighlight">\(k_BT\)</span>, the average energy is, by definition,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \langle E \rangle=\frac{\sum_{E=0}^\infty\limits Ee^{-E/k_BT}}{\sum_{E=0}^\infty\limits e^{-E/k_BT}}\tag{8a}\]</div>
+<p>The denominator is called the partition function (see Section 4) and using the property of exponentials <span class="math notranslate nohighlight">\(\displaystyle  e^{nx} = (e^x)^n\)</span> is written as</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle Z=\sum_{E=0}^\infty {\left(e^{-1/k_BT}\right)^E} =\frac{1}{1 - e^{-1/k_BT}}\tag{8b}\]</div>
+<p>based on the summation <span class="math notranslate nohighlight">\(\displaystyle \sum_{n=0}^\infty x^n = (1-x)^{-1}\)</span> and by substituting <span class="math notranslate nohighlight">\(\displaystyle x = e^{-1/k_BT}\)</span>.</p>
+<p>Some guile is now needed in writing the numerator, which becomes <span class="math notranslate nohighlight">\(\displaystyle e^{-1/k_BT} \sum_{E=0}^\infty E(e^{-1/k_BT})^{E-1}\)</span>. Notice that <span class="math notranslate nohighlight">\(\displaystyle e^{-1/k_BT}\)</span> is placed outside the summation to get the summation into the mathematical form <span class="math notranslate nohighlight">\(\displaystyle \sum_{E=0}^\infty Ex^{E-1}= (1-x)^{-2}\)</span>, see eqn. (4), which when <span class="math notranslate nohighlight">\(x\)</span> is substituted gives,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle  \sum_{E=0}^\infty Ee^{-E/k_BT}= \frac{e^{-1/k_BT}}{(1-e^{-1/k_BT})^2}\tag{8c}\]</div>
+<p>Dividing by the partition function <span class="math notranslate nohighlight">\(Z\)</span> produces the average energy</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle  \langle E \rangle = \frac{e^{-1/k_BT}}{1-e^{-1/k_BT}} = \frac{1}{e^{1/{k_BT}}-1}\]</div>
+<p>This result is interesting and evaluating by expanding the exponential assuming  <span class="math notranslate nohighlight">\(k_BT \gg 1\)</span> produces <span class="math notranslate nohighlight">\(k_BT\)</span> which is <span class="math notranslate nohighlight">\(\approx 208\;\mathrm{cm^{-1}}\)</span> at <span class="math notranslate nohighlight">\(300\)</span> K. This means that every molecule has the same total average energy when <span class="math notranslate nohighlight">\(k_BT \gg 1\)</span>. However, this is not the case if just individual energy levels are considered, such as vibrations or rotations. Rewriting the partition function to sum over an index rather than <span class="math notranslate nohighlight">\(E\)</span> which means that <span class="math notranslate nohighlight">\(E_i\)</span> has individual values depending on the particular type of energy level in the molecule or atom, making equation 8b,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle Z = \sum _i e^{-E_i/k_BT}\]</div>
+<p>and if differentiated with respect to <span class="math notranslate nohighlight">\(T\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{dZ}{dT}=\frac{d}{dT}\sum_i e^{-E_i/k_BT}=\frac{1}{k_BT^2} \sum_i E_ie^{-E_i/k_BT} \]</div>
+<p>which is related to the average energy from equation 8c; <span class="math notranslate nohighlight">\(\langle E\rangle = \sum_{i} E_ie^{-E_/k_BT}/Z\)</span> and therefore by substituting with the derivative and rearranging the average energy is</p>
+<div class="math notranslate nohighlight">
+\[ \displaystyle \langle E\rangle =k_BT^2\frac{1}{Z}\frac{dZ}{dT}=k_BT^2\frac{d\log(Z)}{dT}\tag{8d}\]</div>
+<p>If rotational levels are considered typically several tens of levels are populated at room temperature and the summation therefore involves many terms, for example if the rotational constant <span class="math notranslate nohighlight">\(B=1\;\mathrm{cm^{-1}}\)</span>, <span class="math notranslate nohighlight">\(\approx 55 \)</span> levels are needed to produce a constant average energy of <span class="math notranslate nohighlight">\(\approx 14500\;\mathrm{cm^{-1}}\)</span>. A vibration of <span class="math notranslate nohighlight">\(1000\;\mathrm{cm^{-1}}\)</span> levels only to <span class="math notranslate nohighlight">\(n=2\)</span> are needed to produce four figure accuracy of <span class="math notranslate nohighlight">\(500.4 \; \mathrm{ cm^{-1}}\)</span>.</p>
+</div>
+<div class="section" id="ii-polymers">
+<h3><strong>(ii) Polymers</strong><a class="headerlink" href="#ii-polymers" title="Permalink to this headline">¶</a></h3>
+<p>In synthesizing polymers by radical or condensation polymerisation, the random nature of the chemistry that adds monomers to an already growing chain dictates that a range of polymer lengths is normally produced; the polymer is poly-disperse. Two different averages are frequently taken to characterize the polymer; one is the number average mass, the other the weight average mass.</p>
+<p>The number average mass <span class="math notranslate nohighlight">\(m_n\)</span> is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \langle m_n \rangle = \frac{\sum_k m_kp(n_k)}{\sum_k p(n_k)} = \frac{n_1m_1+n_2m_2 +\cdots }{n_1+n_2+\cdots} \tag{5.9}\]</div>
+<p>where <span class="math notranslate nohighlight">\(p\)</span> is the distribution of the number of polymers of length <span class="math notranslate nohighlight">\(k\)</span> and <span class="math notranslate nohighlight">\(m_k\)</span> is the mass of each polymer <span class="math notranslate nohighlight">\(k\)</span>. The sum  <span class="math notranslate nohighlight">\(\sum p(n_k) = N\)</span>  the total number of molecules.</p>
+<p>The weight (mass)average mass is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \langle m_w \rangle = \frac{\sum_k \limits m_k\cdot m_kp(n_k)}{\sum_k\limits m_kp(n_k)} = \frac{n_1m_1^2+n_2m_2^2 +\cdots }{n_1m_1+n_2m_2+\cdots} \tag{5.10}\]</div>
+<p>If the number average and mass (weight) average is the same, the polymer is mono-disperse, however, this is not usually the case. To illustrate that these two averages are different, suppose the number distribution, which may not necessarily relate to a particular polymer but has approximately the right shape, is <span class="math notranslate nohighlight">\(\displaystyle p(n_k) = n_ke^{-an_k}\)</span> where <span class="math notranslate nohighlight">\(a\)</span> is a positive constant roughly describing the width of the distribution. If <span class="math notranslate nohighlight">\(n_k = k\)</span> then, by definition, the number of moles of polymers with length <span class="math notranslate nohighlight">\(1\)</span> is <span class="math notranslate nohighlight">\(1\)</span> and the number of length <span class="math notranslate nohighlight">\(2\)</span> is <span class="math notranslate nohighlight">\(2\)</span> and so forth. The mass of the polymer with <span class="math notranslate nohighlight">\(k\)</span> segments is <span class="math notranslate nohighlight">\(m_k = km_0\)</span>, if <span class="math notranslate nohighlight">\(m_0\)</span> is the mass of a mole of monomer units, then the number average, if <span class="math notranslate nohighlight">\(k\)</span> is taken to infinity, is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \langle m_n\rangle = m_0 \frac{\sum_{k=1}\limits n_k^2e^{-an_k}}{\sum_{k=1}\limits n_ke^{-an_k}} = m_0\frac{e^a+1}{e^a-1}\]</div>
+<p>In contrast the weight average is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \langle m_w\rangle = m_0 \frac{\sum_{k=1}\limits n_k^3e^{-an_k}}{\sum_{k=1}\limits n_k^2e^{-an_k}} = m_0\frac{4e^a+e^{2a}+1}{e^{2a}-1}\]</div>
+<p>which is clearly not the same as <span class="math notranslate nohighlight">\(\langle m_n \rangle\)</span>. The two averages are approximately linear, for <span class="math notranslate nohighlight">\(a&lt;1\)</span>, if plotted on a log-log plot and have a negative slope, with <span class="math notranslate nohighlight">\(\langle m_w\rangle \gt \langle m_n\rangle\)</span>. When <span class="math notranslate nohighlight">\(a \gt 1\)</span> the two curves converge to a limiting value of <span class="math notranslate nohighlight">\(m_0\)</span>.</p>
+</div>
+<div class="section" id="iii-sequence-repeats-in-dna">
+<h3><strong>(iii) Sequence repeats in DNA</strong><a class="headerlink" href="#iii-sequence-repeats-in-dna" title="Permalink to this headline">¶</a></h3>
+<p>Our DNA is packaged into <span class="math notranslate nohighlight">\(46\)</span> chromosomes (22 pairs and 2 sex chromosomes) but each chromosome is still too vast to analyse and so it is broken into more manageable pieces by mechanical or chemical or enzymatic means. If we want to identify a particular sequence, say of <span class="math notranslate nohighlight">\(n\)</span> base pairs  we will want to estimate what is the average separation of these is so that a suitable number of fragments are present containing the sequence.  It is assumed that the DNA is initially so long, <span class="math notranslate nohighlight">\(\sim 10^6\)</span> base pairs, that there are equal amounts of GCAT bases. If the sequence to identify is <span class="math notranslate nohighlight">\(n=8\)</span> bases long and is GGCATGGA then the chance of finding the first G is <span class="math notranslate nohighlight">\(1/4\)</span> and of the second adjacent G is <span class="math notranslate nohighlight">\( 1/16\)</span> and as each event is independent of any other the probabilities multiply to give <span class="math notranslate nohighlight">\(\displaystyle p=\frac{1}{4}\frac{1}{4}\frac{1}{4}\cdots= \frac{1}{4^n}\)</span>, thus for <span class="math notranslate nohighlight">\(n=8\)</span> the chance of finding any specified consecutive sequence is very small <span class="math notranslate nohighlight">\(1/4^8=1/65536\)</span>. This is true whatever the sequence is as long as the bases are in a fixed order. To detect an 8-mer the fragment will, of course, have to have on average at least these many bases since we do not know before hand if the sequence is present. What then is the average distance from one sequence to the next? The probability of <em>not</em> seeing the next sequence in <span class="math notranslate nohighlight">\(m\)</span> moves is <span class="math notranslate nohighlight">\((1-1/4^n)^{m-1} \)</span> and then seeing one in the next move is the product</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle p(m)=\left(1-\frac{1}{4^n}\right)^{m-1}\frac{1}{4^n}\]</div>
+<p>With the substitution <span class="math notranslate nohighlight">\(p=1/4^n\)</span> the average is therefore</p>
+<div class="math notranslate nohighlight">
+\[ \mu= \frac{\sum_{m=0}^\infty\limits m\left(1-p\right)^{m-1}p}{\sum_{m=0}^\infty\limits \left(1-p\right)^{m-1}p}\]</div>
+<p>The normalisation (denominator) is the sum <span class="math notranslate nohighlight">\(\displaystyle \frac{1}{1-p}\sum_{m=0}^\infty\limits \left(1-p\right)^{m}p=  \frac{1}{1-p}\to 1\)</span> because <span class="math notranslate nohighlight">\(p\lt\lt 1\)</span>. The numerator is <span class="math notranslate nohighlight">\(\displaystyle \frac{1}{1-p}\sum_{m=0}^\infty\limits mp\left(1-p\right)^m= \frac{1}{p}\)</span> so the average is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \mu = \frac{1}{p}=4^n\]</div>
+<p>which means that when the sequence is long a huge number of base pairs are needed, on average, if the sequence is to be present more than once. This is important in PCR where a sequence of perhaps <span class="math notranslate nohighlight">\(15 \to 30 \)</span> primer base pairs are used to identify and so amplify the DNA. This primer sequence is so long that the probability of this occurring by random is tiny in fragmented DNA with only a few thousand base pairs. This makes the PCR amplification very specific indeed, i.e if the target sequence is not there, amplification is highly unlikely to occur by random chance.</p>
+</div>
+</div>
+<div class="section" id="partition-functions">
+<h2>3 Partition Functions<a class="headerlink" href="#partition-functions" title="Permalink to this headline">¶</a></h2>
+<p>One of the commonest uses of the summation of a series of terms is in the calculation of the partition function. These are met formally in statistical mechanics but are also used in kinetic theory and in spectroscopy.</p>
+<p>The partition function is the <em>sum over states</em> of the distribution of energy levels usually assumed to follow Boltzmann’s exponential law (or distribution), which describes the probability</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle pdE = ge^{-E/k_BT}dE\]</div>
+<p>that an atom or molecule has energy in the range <span class="math notranslate nohighlight">\(E\)</span> to <span class="math notranslate nohighlight">\(E + dE\)</span> and where <span class="math notranslate nohighlight">\(g\)</span> is the degeneracy of the energy level, <span class="math notranslate nohighlight">\(k_B\)</span> is the Boltzmann constant  (<span class="math notranslate nohighlight">\(1.3805 \cdot 10^{-23}\,\mathrm{ J K^{-1} }\)</span>) and <span class="math notranslate nohighlight">\(T\)</span> the temperature. This distribution is obtained by considering the most probable way of arranging a fixed number of particles among all the available energy levels in a constant volume and with a constant total energy. Related distributions, but applicable only in certain circumstances, are the Fermi-Dirac and Bose-Einstein.</p>
+<p>The German word for the partition function, <em>Zustandssumme,</em>  translates as ‘sum over states’. In English, it is called the partition function because it describes how much energy is in one level compared to the total, i.e. how energy is partitioned when the system, an ensemble of molecules for example, is in contact with a heat bath. A distribution based on being in thermal equilibrium with a heat bath is also called a <em>canonical</em> distribution. Once the partition function is calculated all the various thermodynamic properties, such as heat capacity, entropy and free energy, can be calculated.</p>
+<p>The partition function is the summation over all the energy levels</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle Z = \sum_{i=0}^m g_ie^{-E_i/k_BT}  \tag{11}\]</div>
+<p>which extends over all energy levels from <span class="math notranslate nohighlight">\(i = 0 \cdots m\)</span>. The energy of the <span class="math notranslate nohighlight">\(i^th\)</span> level is <span class="math notranslate nohighlight">\(E_i\)</span>, its degeneracy <span class="math notranslate nohighlight">\(g_i\)</span>. A state is degenerate if it has more than one energy level, the number of these levels is called the <em>multiplicity.</em> The vibrational levels in molecules are singly or non-degenerate, the rotational levels are degenerate and have a multiplicity that increases with the quantum number and is <span class="math notranslate nohighlight">\(g_J = 2J + 1\)</span> where <span class="math notranslate nohighlight">\(J\)</span> is the quantum number. In some situations, such as the harmonic oscillator, there is an infinite number of levels to sum in the partition function and <span class="math notranslate nohighlight">\(m = \infty\)</span>; in others, such as when an atom is in a magnetic field, there is a finite number.</p>
+<p>The fractional population in any one level is the ratio</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle  f_i = \frac{n_i}{N}=\frac{g_ie^{-E_i/k_BT}}{\sum_{i=0}^m\limits g_ie^{E_i/k_BT}}  \tag{12}\]</div>
+<p>and the partition function normalizes the expression. <span class="math notranslate nohighlight">\(N\)</span> is the total number of particles. The partition function assumes that the energy is based on a thermal scale starting at zero, if this is not the case plausible answers can be obtained, which on scrutiny may prove to be wrong. The way to avoid this is always to make the energy scale start at zero; Q10 illustrates this effect.</p>
+<p>We can derive the fraction in another way. As the total probability that a ‘particle’ has to be in one of possibly many states must be one, <span class="math notranslate nohighlight">\(\sum_i p_i = 1\)</span> where <span class="math notranslate nohighlight">\(p_i\)</span> is the probability of being in state <span class="math notranslate nohighlight">\(i\)</span> and is proportional to the statistical weight from that state and hence</p>
+<div class="math notranslate nohighlight">
+\[p=\alpha g_i e^{-E_i/k_BT}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\alpha\)</span> is the normalisation constant. The total probability is therefore</p>
+<div class="math notranslate nohighlight">
+\[\sum_i p_i=\alpha \sum_i g_ie^{-E_i/k_BT}=1\]</div>
+<p>and therefore</p>
+<div class="math notranslate nohighlight">
+\[\alpha = \frac{1}{\sum_i g_ie^{-E_i/k_BT} }\]</div>
+<p>Conventionally we write <span class="math notranslate nohighlight">\(\alpha=1/Z\)</span> and the probability that the particle is in level <span class="math notranslate nohighlight">\(i\)</span> becomes</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle p_i = \frac{g_ie^{-E_i/k_BT}}{Z}\]</div>
+<p>which is equation 12. The partition function, <span class="math notranslate nohighlight">\(Z\)</span>, is the normalization term and determines what fraction of the total energy is in each level or how energy is partitioned among the various level</p>
+<div class="section" id="i-bond-rotation">
+<h3><strong>(i) Bond rotation</strong><a class="headerlink" href="#i-bond-rotation" title="Permalink to this headline">¶</a></h3>
+<p>The use of the word ‘particle’ is rather general, it might represent a molecule in a given vibrational or rotational energy level, a nuclear spin state in an NMR experiment, or the torsional energy of a restricted rotor as in the alkyl chain of hydrocarbons (Jackson 2006). In this example, consider butane, which has trans and gauche configurations as shown in figure 1a. These have different energies due to interactions between the protons on carbon <span class="math notranslate nohighlight">\(1\)</span> and <span class="math notranslate nohighlight">\(4\)</span> as bond C2 to C3 rotates.</p>
+<p><img alt="Drawing" src="../_images/series-fig2a.png" /></p>
+<p>Figure 1a Bond angles in butane. The angles, <span class="math notranslate nohighlight">\(0,120,240\)</span> represent the position of <span class="math notranslate nohighlight">\(C_4\)</span>.</p>
+<hr class="docutils" />
+<p>The energy of the trans state at <span class="math notranslate nohighlight">\(0^\text{o}\)</span> is taken as zero, <span class="math notranslate nohighlight">\(E_0 = 0\)</span>. The energy of the other two conformations, measured relative to this, have minima at <span class="math notranslate nohighlight">\(120^\text{o}\)</span> and <span class="math notranslate nohighlight">\(240^\text{o}\)</span> and are <span class="math notranslate nohighlight">\(E_{120}\)</span> and <span class="math notranslate nohighlight">\(E_{240}\)</span>. The partition function is <span class="math notranslate nohighlight">\(\displaystyle Z = 1 + e^{-E_{120}/ k_BT} + e^{-E_{240}/ k_BT}\)</span>. The probability of being in the trans state is <span class="math notranslate nohighlight">\(1/Z\)</span> and of being in the <span class="math notranslate nohighlight">\(120^\text{o}\)</span> gauche state is <span class="math notranslate nohighlight">\(\displaystyle e^{-E_{120}/k_BT}/Z\)</span> which is less than at <span class="math notranslate nohighlight">\(0^\text{o}\)</span> but changes with temperature. By symmetry, the energy of the <span class="math notranslate nohighlight">\(120\)</span> and <span class="math notranslate nohighlight">\(240\)</span> states are the same and the probability of being in either is <span class="math notranslate nohighlight">\(\displaystyle 2e^{-E_g / k_BT}/Z\)</span> where <span class="math notranslate nohighlight">\(E_g\)</span> is an abbreviation for <span class="math notranslate nohighlight">\(E_{120}\)</span> and <span class="math notranslate nohighlight">\(E_{240}\)</span>. These two levels are accidentally degenerate. Once the partition function has been found, the average energy follows easily because by definition <span class="math notranslate nohighlight">\(\langle E \rangle = \sum_i E_i p_i\)</span> then</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \langle E \rangle =\frac{2e_ge^{-E_g/k_BT}}{Z}\]</div>
+<p>because <span class="math notranslate nohighlight">\(E_0 = 0\)</span>. The average length and the average of the square of the length (which will lead to the standard deviation in the length for different conformers) are</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin{align}\langle L \rangle &amp;=\sum_i L_ip_i=\frac{1}{Z}\left(L_0e^{-E_0/k_BT} +2L_ge^{-E_g/k_BT}  \right),\\ \langle L^2 \rangle &amp;=\sum_i L_i^2p_i=\frac{1}{Z}\left(L_0^2e^{-E_0/k_BT} +2L_g^2e^{-E_g/k_BT}  \right)\end{align}\end{split}\]</div>
+<p>If the alkyl chain is longer then the probability of the final state being a trans or gauche configuration is multiplied by however many repeat units there are, the partition function becoming <span class="math notranslate nohighlight">\(Z^n\)</span> for <span class="math notranslate nohighlight">\(n\)</span> units.</p>
+<p>As an example, if <span class="math notranslate nohighlight">\(E_g /k_BT = 1\)</span>, which would be the case for a small barrier between trans to gauche or at a high temperature, then the partition function <span class="math notranslate nohighlight">\(Z = 1.736\)</span>. If there are <span class="math notranslate nohighlight">\(10\)</span> repeat units in an alkane then the chance of an all-trans chain is <span class="math notranslate nohighlight">\(1/Z^{10} = 0.004\)</span> compared to <span class="math notranslate nohighlight">\(0.58\)</span> for butane. If <span class="math notranslate nohighlight">\(E_g /k_BT\)</span> is larger, which it will be at a low temperature, then the probability of being in the all-trans state is almost one, even for a long alkyl chain because <span class="math notranslate nohighlight">\(Z \to 1\)</span> at a low temperature.</p>
+<p><img alt="Drawing" src="../_images/series-fig2b.png" /></p>
+<p>Figure 1b. Probability of an all trans chain vs the ratio <span class="math notranslate nohighlight">\(E_g/k_BT\)</span> for butane and then for a ten fold longer chain of butane like repeat units. Large <span class="math notranslate nohighlight">\(E_g/k_BT\)</span> corresponds to low temperature or small energy <span class="math notranslate nohighlight">\(E_g\)</span>.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="ii-dna-melting-zipper-model">
+<h3><strong>(ii) DNA melting: Zipper model</strong><a class="headerlink" href="#ii-dna-melting-zipper-model" title="Permalink to this headline">¶</a></h3>
+<p>DNA can melt if the temperature is raised a little above room temperature, <span class="math notranslate nohighlight">\(60 \to 70^\text{o}\)</span>C would be typical depending on the composition. As a very simple model(see sketch) suppose that as the double stranded molecule unfolds the separated residues become free to move about on the backbone, with degeneracy <span class="math notranslate nohighlight">\(g\)</span>, but linked residues remain fixed in place. One end of the double stranded molecule is fixed thus the molecule can only unfold from the other. Link <span class="math notranslate nohighlight">\(n\)</span> can only open if all those before it are already open, i.e. links <span class="math notranslate nohighlight">\(n=0,1,2,\cdots, N-1\)</span> and the energy to do this is <span class="math notranslate nohighlight">\(\epsilon\)</span> so that <span class="math notranslate nohighlight">\(n\)</span> open links have energy <span class="math notranslate nohighlight">\(n\epsilon\)</span>. Closed links have energy zero and the energy needed to open a link other than that next to already open ones is infinite.  This model was first examined by C. Kittel Am. J. Physics, v37, p917, 1969.</p>
+<p>To open <span class="math notranslate nohighlight">\(n\)</span> links requires energy <span class="math notranslate nohighlight">\(n\epsilon\)</span> and those open links have degeneracy <span class="math notranslate nohighlight">\(g^n\)</span>. The partition function (equation 11) is therefore</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle Z = \sum_{n=0}^{N-1} g^ne^{-n\epsilon/k_BT}  \]</div>
+<p>The limit extends to <span class="math notranslate nohighlight">\(N-1\)</span> as the last link remains intact. To evaluate this expression let <span class="math notranslate nohighlight">\(x\equiv e^{-\epsilon /k_BT} \)</span> then</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle Z=\sum_{n=0}^{N-1} (gx)^n\]</div>
+<p>which is the summation of a geometric series <span class="math notranslate nohighlight">\(\sum_{i=0}^n r^i= (1-r^{n+1})/(1-r)\)</span> thus the partition function evaluates to</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle Z=\frac{1-(ge^{-\epsilon/k_BT})^N}{1-ge^{-\epsilon/k_BT}}\tag{12 a}\]</div>
+<p>As the average energy is <span class="math notranslate nohighlight">\(\langle E\rangle = \epsilon \langle n\rangle\)</span> the number of open links can be found via <span class="math notranslate nohighlight">\(\langle e\rangle\)</span>. The relationship between average energy (in thermodynamic terms the internal energy <span class="math notranslate nohighlight">\(U\)</span>) and partition function is equation 8d, using <span class="math notranslate nohighlight">\(d\log(Z)\equiv dZ/Z\)</span></p>
+<div class="math notranslate nohighlight">
+\[ \displaystyle \langle E\rangle =\frac{k_BT^2}{Z} \frac{d Z}{dT}\]</div>
+<p>thus the average number of open links is</p>
+<div class="math notranslate nohighlight">
+\[ \displaystyle \langle n\rangle =\frac{k_BT^2}{\epsilon Z} \frac{d Z}{dT}\]</div>
+<p>Using python Sympy to do the algebra gives</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">g</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="n">epsilon</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">T</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;g, N, epsilon, k, T&#39;</span><span class="p">)</span>
+
+<span class="n">Z</span>   <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="p">(</span><span class="n">g</span><span class="o">**</span><span class="n">N</span><span class="o">*</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">N</span><span class="o">*</span><span class="n">epsilon</span><span class="o">/</span><span class="p">(</span><span class="n">k</span><span class="o">*</span><span class="n">T</span><span class="p">))))</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">g</span><span class="o">*</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">epsilon</span><span class="o">/</span><span class="p">(</span><span class="n">k</span><span class="o">*</span><span class="n">T</span><span class="p">)))</span> 
+<span class="n">avn</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">epsilon</span><span class="p">)</span><span class="o">*</span><span class="n">simplify</span><span class="p">(</span> <span class="p">(</span> <span class="n">k</span><span class="o">*</span><span class="n">T</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">diff</span><span class="p">(</span><span class="n">Z</span><span class="p">,</span><span class="n">T</span><span class="p">)</span><span class="o">/</span><span class="n">Z</span><span class="p">)</span> <span class="p">)</span>
+<span class="n">avn</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/chapter-5-A_7_01.png" src="../_images/chapter-5-A_7_01.png" />
+</div>
+</div>
+<p>which can be simplified by dividing common factors</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \langle n\rangle = \frac{Ng^N}{g^N-e^{N\epsilon/k_BT}} -\frac{g}{g-e^{\epsilon/k_BT}}=\frac{N}{1-(e^{\epsilon/k_BT}/g)^N} -\frac{1}{1-e^{\epsilon/k_BT}/g}\tag{12 b}\]</div>
+<p>whose behaviour is easier to see in a plot of <span class="math notranslate nohighlight">\(\langle n\rangle\)</span> <em>vs.</em> <span class="math notranslate nohighlight">\(\epsilon/k_BT\)</span>.</p>
+<p><img alt="Drawing" src="../_images/series-fig2c.png" /></p>
+<p>Figure 1c. Average length of free links in the zipper model <span class="math notranslate nohighlight">\(\langle n\rangle\)</span> <em>vs.</em> dimensionless energy <span class="math notranslate nohighlight">\(\epsilon/k_BT\)</span>. The vertical line is at <span class="math notranslate nohighlight">\(\ln(g)=\epsilon/k_BT\)</span>.</p>
+<hr class="docutils" />
+<p>At low values of <span class="math notranslate nohighlight">\(\epsilon/k_BT\)</span>, which means at high temperature or zero energy to unfold, almost the whole zipper is unfolded, as intuition would suggest Conversely at large <span class="math notranslate nohighlight">\(\epsilon/k_BT\)</span>, low temperature or large unfolding energy almost all bonds are intact. The transition between the two is quite sharp and occurs at <span class="math notranslate nohighlight">\(\ln(g)=\epsilon/k_BT\)</span> as can be seen in equation 12b. The heat capacity which is <span class="math notranslate nohighlight">\(d\langle E\rangle/dT\)</span> shows a sharp peak at this value. This overall behaviour  somewhat unexpected, the model does not immediately suggest that a ‘phase transition’ should occur. In effect it means that either the zipper is closed or it is fully open and hardly ever in between.</p>
+</div>
+<div class="section" id="iii-entropy-of-atoms-and-molecules">
+<h3><strong>(iii) Entropy of atoms and molecules</strong><a class="headerlink" href="#iii-entropy-of-atoms-and-molecules" title="Permalink to this headline">¶</a></h3>
+<p>In the gas phase the entropy of atoms can be calculated knowing the contribution from translation and electronic terms. The calculation is in two parts, first the partition function must be evaluated and then used to obtain the entropy.</p>
+<p>The electronic part of the entropy is not zero if there are low lying electronic states as there are in carbon atoms. These are populated according the the Boltzmann distribution and increasingly so with temperature increase. The partition function and therefore the entropy due to translational motion similarly increases as the temperature increases. This occurs because more energy levels become populated and thus there are more ways to arrange the available energy.</p>
+<p>To calculate the entropy we start with the partition function as in eqn. 11. The partition function for electronic energy levels is straightforward and is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle Z = \sum_J (2J+1)e^{-E_J/k_BT}\tag{12c}\]</div>
+<p>where <span class="math notranslate nohighlight">\(J\)</span> is the total angular momentum of the electrons consisting of both spin and orbital parts and the degeneracy is <span class="math notranslate nohighlight">\(g = 2J+1\)</span>. The term symbol contains the information and has the forms <span class="math notranslate nohighlight">\(\displaystyle ^{(2S+1)}A_J\)</span> where <span class="math notranslate nohighlight">\(S\)</span> is the total spin, so <span class="math notranslate nohighlight">\(2S+1\)</span> is the spin degeneracy as singlet (<span class="math notranslate nohighlight">\(S=0\)</span>), doublet (<span class="math notranslate nohighlight">\(S=1/2\)</span>), triplet (<span class="math notranslate nohighlight">\(S=1\)</span>) etc. The letter <span class="math notranslate nohighlight">\(A\)</span> indicates the orbital angular momentum <span class="math notranslate nohighlight">\(L\)</span> and if <span class="math notranslate nohighlight">\(L=0\)</span> then <span class="math notranslate nohighlight">\(A=S\)</span>, if <span class="math notranslate nohighlight">\(L=1\)</span>  <span class="math notranslate nohighlight">\(A=P\)</span> etc. and the subscript <span class="math notranslate nohighlight">\(J\)</span> is the total which ranges as <span class="math notranslate nohighlight">\(J=|L+S|\cdots \to \cdots |L-S|\)</span> in unit steps. Thus <span class="math notranslate nohighlight">\(^1D_2\)</span> is a state that has total spin <span class="math notranslate nohighlight">\(S=0\)</span>, orbital angular momentum <span class="math notranslate nohighlight">\(L=2\)</span> and total angular momentum <span class="math notranslate nohighlight">\(J=2\)</span>.</p>
+<p>The spectroscopic data for carbon atoms can be found on the NIST WebBook website and the lowest few levels in cm<span class="math notranslate nohighlight">\(^{-1}\)</span> are</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin{array}\\
+\hline
+\text{config} &amp; \text{term symbol} &amp; \text{energy } /\mathrm{cm^{-1}}\\
+\hline
+ 2s^2.2p^2&amp;	^3P_0&amp; 	  0.0000000 \\	
+ 2s^2.2p^2&amp; ^3P_1&amp; 	  16.4167130\\ 	
+ 2s^2.2p^2&amp; ^3P_2&amp; 	  43.4134567\\ 	
+ 2s^2.2p^2&amp; ^1D_2&amp; 	  10192.657 \\	
+ 2s^2.2p^2&amp; ^1S_0&amp; 	  21648.030 \\	
+ 2s^1.2p^3&amp;	^5S_2&amp; 	  33735.121 \\
+ \hline \end{array}\end{split}\]</div>
+<p>In calculating the partition function for ‘internal’ energy, the levels at several thousand wavenumbers above the ground state contribute very little to the summation due to the exponential becoming very small. At <span class="math notranslate nohighlight">\(300\)</span> K, <span class="math notranslate nohighlight">\(k_BT = 207\,\mathrm{cm^{-1}}\)</span> therefore the energy level at <span class="math notranslate nohighlight">\(10192.6\,\mathrm{cm^{-1}}\)</span>, and also those at higher energy, contributes insignificantly, e.g <span class="math notranslate nohighlight">\((2\times 2+1)e^{-10192.6/207} \approx 2\cdot 10^{-21} \)</span> so is utterly negligible. Only the first three terms need be included making the partition function <span class="math notranslate nohighlight">\(Z_{int}= 18.24\)</span>. This is a small value compared to the translational value.</p>
+<p>In a molecule, there are in addition to electronic states, vibrational and rotational energy levels and these, particularly the latter, can be very numerous. If there are <span class="math notranslate nohighlight">\(N\)</span> atoms there are <span class="math notranslate nohighlight">\(3N-6\)</span> vibrational normal modes if the molecule is non-linear and <span class="math notranslate nohighlight">\(3N-5\)</span> if it is. Each vibrational level has a stack of rotational levels these being <span class="math notranslate nohighlight">\(2J+1\)</span> degenerate with rigid rotor energy  <span class="math notranslate nohighlight">\(2B(J+1)\)</span> where <span class="math notranslate nohighlight">\(J\)</span> is the rotational quantum number. The rotational constant <span class="math notranslate nohighlight">\(B\)</span> is often small, just a fraction to a few a wavenumbers being typical. The vibrational frequency and rotational constant for I<span class="math notranslate nohighlight">\(_2\)</span> and CO molecules are respectively <span class="math notranslate nohighlight">\((214.57, 0.03735)\)</span> and  <span class="math notranslate nohighlight">\((2214.24,1.9313)\,\mathrm{cm^{-1}}\)</span>.</p>
+<p>The translational part of the partition function is found by examining the energy levels of a particle in a box. As there is no potential energy  these levels give the kinetic energy. The box has infinitely high walls with zero potential between them. We shall suppose that the atoms are in boxes whose size is very large compared to atomic dimensions so that the energy levels effectively become continuous. In a box these levels are</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \epsilon_x= \frac{h^2}{8m}\left(\frac{n_x}{a^2}+\frac{n_y}{b^2}+\frac{n_z}{c^2}\right)\]</div>
+<p>where <span class="math notranslate nohighlight">\(a,b,c\)</span> is the lengths of the sides, <span class="math notranslate nohighlight">\(m\)</span> the atom’s mass and <span class="math notranslate nohighlight">\(n_x=n_y=n_z =1,2,\cdots \)</span> are the quantum numbers.</p>
+<p>The partition function from eqn. 11 is the triple summation over the quantum numbers in <span class="math notranslate nohighlight">\(x,y,z\)</span></p>
+<div class="math notranslate nohighlight">
+\[\displaystyle Z=\sum_{n_x}^\infty\sum_{n_y}^\infty\sum_{n_z}^\infty \large {e^{-(h^2/8mk_BT)(n_x^2/a^2+n_y^2/b^2+n_z^2/c^2) }}\]</div>
+<p>which, because the summation in the exponential can be split into the product of three similar summations, form the product <span class="math notranslate nohighlight">\(Z=z_xz_yz_z\)</span> where</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle z_x=\sum_{n_x}^\infty e^{-(h^2/8mk_BT)(n_x^2/a^2) }\]</div>
+<p>and similarly for <span class="math notranslate nohighlight">\(z_y,z_z\)</span>. The energy levels in translational motion are too close together to be observable and thus the summation can be replaced with an integration (from zero) without introducing any significant error.  With the substitution <span class="math notranslate nohighlight">\(w=h^2/8ma^2k_BT \)</span> the change is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle z_x=\sum_{n_x}^\infty e^{-wn_x^2 } \qquad \longrightarrow \qquad  \int_0^\infty e^{-wn^2} dn=\frac{1}{2}\sqrt{\frac{\pi}{w}}\]</div>
+<p>The final partition function is the product of three similar terms and substituting back gives</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle Z= V\left(\frac{2\pi m k_BT}{h^2}\right)^{3/2}\tag{12d}\]</div>
+<p>where the volume is <span class="math notranslate nohighlight">\(V=abc\)</span>. Substituting in values for the partition function produces a very large number. The mass must be in kg, <span class="math notranslate nohighlight">\(k_B\)</span> in J/K and temperature in degrees Kelvin. The volume can be found using the ideal gas law with pressure for <span class="math notranslate nohighlight">\(1\)</span> atm. expressed in Pascals; <span class="math notranslate nohighlight">\(V=RT/p\)</span> where <span class="math notranslate nohighlight">\(p=101325\)</span> Pa.  The result for carbon atoms is <span class="math notranslate nohighlight">\(Z = 10^{30}\)</span>. As we shall see the entropy has terms in <span class="math notranslate nohighlight">\(\ln(Z)\)</span> so the difference in the electronic and translational partition functions is not so great as it first seems.</p>
+<p>The entropy calculated by Statistical Mechanics is, for an ideal monoatomic gas of <span class="math notranslate nohighlight">\(N\)</span> atoms,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle S= Nk_B\ln \left(\frac{Z}{N} \right)+ \frac{U}{T} + Nk_B \tag{12e}\]</div>
+<p>where <span class="math notranslate nohighlight">\(U\)</span> is the internal energy where</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle U = Nk_BT^2 \left(\frac{\partial \ln(Z)}{\partial T} \right)_V\tag{12f}\]</div>
+<p>Differentiating to obtain <span class="math notranslate nohighlight">\(U\)</span> gives</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle U= Nk_BT^2\frac{3}{2T}= \frac{3}{2}Nk_BT\]</div>
+<p>which is the same result as from the kinetic theory of gases for a monoatomic gas and at equilibrium produces energy of <span class="math notranslate nohighlight">\(k_BT/2\)</span> per degree of freedom.</p>
+<p>After substituting and some rearranging the entropy is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle S=Nk_B\left(\frac{3}{2}\ln(T)+ \ln\left(\frac{V}{N} \right)+\frac{3}{2}\ln\left(\frac{2\pi mk_B}{h^2} \right) +\frac{5}{2}\right)\tag{12g}\]</div>
+<p>and in terms of pressure substitute <span class="math notranslate nohighlight">\(V=Nk_BT/p\)</span>.</p>
+<p>If we take a mole of gas then <span class="math notranslate nohighlight">\(N\to N_A\)</span> Avogadro’s number and <span class="math notranslate nohighlight">\(Nk_B=R\)</span> the gas constant, then</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle S=R\left(\frac{5}{2}\ln(T)+ \ln\left(\frac{k_B}{p} \right)+\frac{3}{2}\ln\left(\frac{2\pi mk_B}{h^2} \right) +\frac{5}{2}\right)\tag{12h}\]</div>
+<p>The thermodynamic calculation gives the entropy as</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle S_{thermo}= \frac{3}{2}R\ln(T) +R\ln(V) +S_0\]</div>
+<p>which is the same as derived above but with the Statistical Mechanics calculation the constant <span class="math notranslate nohighlight">\(S_0\)</span> is now determined. Additionally the dependence on mass is explained. This dependence is because the energy levels in the particle in a box depend inversely on the mass. As the mass increases more energy levels are available to be filled at a given temperature which produces more ways of distributing the energy among these levels which increases the entropy.</p>
+<p>The translational entropy for carbon atoms is <span class="math notranslate nohighlight">\(S_{trans} = 139.8\)</span> J/mol/K.</p>
+<p>The calculation of the internal entropy, i.e. that due to energy levels within the atom or molecule is given by a related formula to 12e which is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle S= Nk_B\ln(Z)+ \frac{U}{T} \tag{12i}\]</div>
+<p>The internal energy (12f) is found most easily using <span class="math notranslate nohighlight">\(\displaystyle \frac{d \ln(Z)}{dT}=\frac{1}{Z}\frac{dZ}{dT}\)</span></p>
+<div class="math notranslate nohighlight">
+\[\displaystyle U = Nk_BT \frac{\sum_{J=0}^\infty\limits E_J(2J+1)e^{-E_J/k_BT}}{\sum_{J=0}^\infty\limits (2J+1)e^{-E_J/k_BT}} \]</div>
+<p>The ratio of summations has the form of an average, see eqn. 8. This is to be expected in hindsight as we assume thermal equilibrium and so the energy over many levels should be the average value.</p>
+<p>The entropy/mole becomes</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle S_{int}= R\ln\left(\sum_{J=0}^\infty (2J+1)e^{-E_J/k_BT}\right) + \frac{N_A}{T} \frac{\sum_{J=0}^\infty\limits E_J(2J+1)e^{-E_J/k_BT}}{\sum_{J=0}^\infty\limits (2J+1)e^{-E_J/k_BT}} \]</div>
+<p>which more concisely is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle S_{int}= R\ln(Z) + \frac{N_A}{T} \langle E\rangle \]</div>
+<p>The values for the electronic energies of C atoms are given above making the contribution to the entropy at <span class="math notranslate nohighlight">\(300\)</span> K from these states <span class="math notranslate nohighlight">\(S_{int}= 18.24\; \mathrm{J/mol/K} \)</span> and the total entropy is <span class="math notranslate nohighlight">\(S= 158.12\)</span> J/mol/K which is acceptably close to the experimental, calorimetric value of <span class="math notranslate nohighlight">\(158.10\)</span>. The calculation is shown below.</p>
+<p>The translational entropy of a molecule will increase only as <span class="math notranslate nohighlight">\(\ln(m)\)</span> eqn. 12h which is a relatively small change with increasing mass, however, the internal entropy changes by far more largely because of the many, possibly hundreds, of closely spaced rotational energy levels needed to be included in the calculation. In the case of CO the calculated and experimental values agree well, both at <span class="math notranslate nohighlight">\(197.6\)</span> J/mol/K, but the case of I<span class="math notranslate nohighlight">\(_2\)</span> where the internal entropy is <span class="math notranslate nohighlight">\(88.7\)</span> J/mol/K and the translational one <span class="math notranslate nohighlight">\(177.9\)</span> make the total <span class="math notranslate nohighlight">\(266.5\)</span>. This is quite a bit larger than the experimental value of <span class="math notranslate nohighlight">\(260.7\)</span> J/mol/K. Possibly this is due to the formulas describing the energy levels not being sufficiently accurate for higher vibrational and rotational levels, since the same trend also occurs with chlorine but to a smaller extent.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># entropy of atoms</span>
+<span class="n">h</span>   <span class="o">=</span> <span class="mf">6.62607e-34</span>  <span class="c1"># J s</span>
+<span class="n">N_A</span> <span class="o">=</span> <span class="mf">6.02214e23</span>   <span class="c1"># 1/mol</span>
+<span class="n">kB</span>  <span class="o">=</span> <span class="mf">1.38065e-23</span>  <span class="c1"># J/K</span>
+<span class="n">amu</span> <span class="o">=</span> <span class="mf">1.66054e-27</span>  <span class="c1"># kg</span>
+<span class="n">cmJ</span> <span class="o">=</span> <span class="mf">1.96e-23</span>     <span class="c1"># wavenumber to joules </span>
+<span class="n">p</span>   <span class="o">=</span> <span class="mf">101325.0</span>     <span class="c1"># pascal</span>
+<span class="n">R</span>   <span class="o">=</span> <span class="n">N_A</span><span class="o">*</span><span class="n">kB</span>       <span class="c1"># J/mol/K</span>
+
+<span class="n">T</span> <span class="o">=</span> <span class="mi">300</span>
+
+<span class="c1"># carbon from NIST WebBook</span>
+<span class="n">m</span> <span class="o">=</span> <span class="mf">12.011</span>
+<span class="n">En</span><span class="o">=</span> <span class="p">[</span><span class="mf">0.0000000</span> <span class="p">,</span><span class="mf">16.4167130</span><span class="p">,</span><span class="mf">43.4134567</span><span class="p">]</span>
+<span class="n">J</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span>
+
+<span class="n">V</span> <span class="o">=</span> <span class="n">R</span><span class="o">*</span><span class="n">T</span><span class="o">/</span><span class="n">p</span>
+<span class="n">Ztrans</span> <span class="o">=</span> <span class="n">V</span><span class="o">*</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">m</span><span class="o">*</span><span class="n">amu</span><span class="o">*</span><span class="n">kB</span><span class="o">*</span><span class="n">T</span><span class="o">/</span><span class="n">h</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+<span class="c1">#print(&#39;{:s}{:10.4g}&#39;.format(&#39;Z trans&#39;,Ztrans))</span>
+
+<span class="n">S_trans</span><span class="o">=</span> <span class="n">R</span><span class="o">*</span><span class="p">(</span><span class="mi">5</span><span class="o">/</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">T</span><span class="p">)</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">kB</span><span class="o">/</span><span class="n">p</span><span class="p">)</span> <span class="o">+</span> <span class="mi">3</span><span class="o">/</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">m</span><span class="o">*</span><span class="n">amu</span><span class="o">*</span><span class="n">kB</span><span class="o">/</span><span class="n">h</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>  <span class="o">+</span> <span class="mi">5</span><span class="o">/</span><span class="mi">2</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:s}</span><span class="s1"> </span><span class="si">{:8.4f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;S translation J/mol/K&#39;</span><span class="p">,</span> <span class="n">S_trans</span><span class="p">)</span> <span class="p">)</span>
+
+<span class="n">ZE</span> <span class="o">=</span> <span class="mf">0.0</span>
+<span class="n">Z</span>  <span class="o">=</span> <span class="mf">0.0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">J</span><span class="p">)):</span>
+    <span class="n">temp</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">J</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">En</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="n">cmJ</span><span class="o">/</span><span class="p">(</span><span class="n">kB</span><span class="o">*</span><span class="n">T</span><span class="p">))</span>
+    <span class="n">Z</span>  <span class="o">=</span> <span class="n">Z</span> <span class="o">+</span> <span class="n">temp</span>
+    <span class="n">ZE</span> <span class="o">=</span> <span class="n">ZE</span><span class="o">+</span> <span class="n">En</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="n">cmJ</span><span class="o">*</span><span class="n">temp</span>  <span class="c1"># average energy</span>
+
+<span class="n">S_int</span> <span class="o">=</span> <span class="n">R</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">Z</span><span class="p">)</span> <span class="o">+</span> <span class="n">N_A</span><span class="o">*</span><span class="n">ZE</span><span class="o">/</span><span class="p">(</span><span class="n">T</span><span class="o">*</span><span class="n">Z</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:s}</span><span class="s1"> </span><span class="si">{:8.4f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;S internal J/mol/K&#39;</span><span class="p">,</span> <span class="n">S_int</span><span class="p">)</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:s}</span><span class="s1"> </span><span class="si">{:8.4f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;S total  J/mol/K&#39;</span><span class="p">,</span> <span class="n">S_int</span><span class="o">+</span><span class="n">S_trans</span><span class="p">)</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>S translation J/mol/K 139.8770
+S internal J/mol/K  18.2438
+S total  J/mol/K 158.1208
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./chapter-5"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="chapter-5-intro.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">5. Summations, Series and expansion of Functions.</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="chapter-5-B-Q1-13.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Questions 1 - 13</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Godfrey Beddard<br/>
+        
+            &copy; Copyright 2022.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
