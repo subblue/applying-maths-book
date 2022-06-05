@@ -1307,6 +1307,22 @@
 
             <!-- Source interaction buttons -->
 
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/subblue/applying-maths-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/subblue/applying-maths-book/issues/new?title=Issue%20on%20page%20%2Fchapter-9/Fourier-A-B.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
             <!-- Full screen (wrap in <a> to have style consistency -->
 
 <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
@@ -1321,13 +1337,18 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/chapter-9/Fourier-A-B.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/subblue/applying-maths-book/main?urlpath=lab/tree/applying_maths_book/chapter-9/Fourier-A-B.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../_static/images/logo_binder.svg"
                     alt="Interact on binder">Binder</button></a>
         
         
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/subblue/applying-maths-book/blob/main/applying_maths_book/chapter-9/Fourier-A-B.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
         
         
     </div>
@@ -1571,7 +1592,7 @@ changed to <span class="math notranslate nohighlight">\(\pi x/L\)</span>. The se
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Fourier-A-B_5_01.png" src="../_images/Fourier-A-B_5_01.png" />
+<img alt="../_images/Fourier-A-B_5_0.png" src="../_images/Fourier-A-B_5_0.png" />
 </div>
 </div>
 <p>Adding the limits <span class="math notranslate nohighlight">\(\pm \pi\)</span> produces zero for the sine terms and the remaining cosine produces <span class="math notranslate nohighlight">\(\displaystyle a_n=(-1)^n\frac{4}{n^3}\)</span>. All the <span class="math notranslate nohighlight">\(b_n\)</span>=0 thus using eqn. 4. the Fourier series for <span class="math notranslate nohighlight">\(x^2\)</span> is</p>
@@ -1618,7 +1639,7 @@ changed to <span class="math notranslate nohighlight">\(\pi x/L\)</span>. The se
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Fourier-A-B_7_01.png" src="../_images/Fourier-A-B_7_01.png" />
+<img alt="../_images/Fourier-A-B_7_0.png" src="../_images/Fourier-A-B_7_0.png" />
 </div>
 </div>
 <p><strong>Figure 3</strong>. Left: Plot of <span class="math notranslate nohighlight">\(x^2\)</span> and its Fourier series to <span class="math notranslate nohighlight">\(n\)</span> = 3 showing a poor fit to the true function. More terms produce a better fit but only over the range <span class="math notranslate nohighlight">\(\pm \pi\)</span> as shown in the centre panel where 20 terms are included in the summation. This plot also shows how the fit is only over the range <span class="math notranslate nohighlight">\(\pm \pi\)</span> and then it repeats itself. On the right are shown the coefficients <span class="math notranslate nohighlight">\(a_n\)</span> and shows how rapidly their value decreases as <span class="math notranslate nohighlight">\(n\)</span> increases.</p>
@@ -1673,7 +1694,7 @@ changed to <span class="math notranslate nohighlight">\(\pi x/L\)</span>. The se
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Fourier-A-B_11_01.png" src="../_images/Fourier-A-B_11_01.png" />
+<img alt="../_images/Fourier-A-B_11_0.png" src="../_images/Fourier-A-B_11_0.png" />
 </div>
 </div>
 <p>As the sine terms are all zero and the cosines alternate 1 for even <span class="math notranslate nohighlight">\(n\)</span> or -1 for odd <span class="math notranslate nohighlight">\(n\)</span> in the limits <span class="math notranslate nohighlight">\(x=\pm n\pi\)</span> and with <span class="math notranslate nohighlight">\(n \gt\)</span> 0, the integral is <span class="math notranslate nohighlight">\(b_n=2(-1)^{n+1}(\pi^2/n - 6/n^3) \)</span>. The expansion of <span class="math notranslate nohighlight">\(x^3\)</span> is therefore,</p>
@@ -1747,7 +1768,7 @@ the <span class="math notranslate nohighlight">\(x^n\)</span> basis set of the e
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Fourier-A-B_14_01.png" src="../_images/Fourier-A-B_14_01.png" />
+<img alt="../_images/Fourier-A-B_14_0.png" src="../_images/Fourier-A-B_14_0.png" />
 </div>
 </div>
 <p><strong>Fig 7</strong>. The original function (thick golden line) and its Fourier series (blue). As can be seen the fit is not tremendously good although the series does follow the general shape of the function except at the end points <span class="math notranslate nohighlight">\(\pm 7\)</span>.</p>
@@ -1818,7 +1839,7 @@ the <span class="math notranslate nohighlight">\(x^n\)</span> basis set of the e
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Fourier-A-B_17_01.png" src="../_images/Fourier-A-B_17_01.png" />
+<img alt="../_images/Fourier-A-B_17_0.png" src="../_images/Fourier-A-B_17_0.png" />
 </div>
 </div>
 <p>Figure 9. The range of some functions, orthogonal polynomials and weighting factors.</p>
@@ -1887,7 +1908,7 @@ H( 8 ,x)  256*x**8 - 3584*x**6 + 13440*x**4 - 13440*x**2 + 1680
 H( 9 ,x)  512*x**9 - 9216*x**7 + 48384*x**5 - 80640*x**3 + 30240*x
 </pre></div>
 </div>
-<img alt="../_images/Fourier-A-B_20_11.png" src="../_images/Fourier-A-B_20_11.png" />
+<img alt="../_images/Fourier-A-B_20_1.png" src="../_images/Fourier-A-B_20_1.png" />
 </div>
 </div>
 <p>Figure 10. Some of the Hermite polynomials calculated using a generating function. The series produced is exact.</p>

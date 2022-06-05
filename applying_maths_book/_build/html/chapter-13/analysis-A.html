@@ -1307,6 +1307,22 @@
 
             <!-- Source interaction buttons -->
 
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/subblue/applying-maths-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/subblue/applying-maths-book/issues/new?title=Issue%20on%20page%20%2Fchapter-13/analysis-A.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
             <!-- Full screen (wrap in <a> to have style consistency -->
 
 <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
@@ -1321,13 +1337,18 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/chapter-13/analysis-A.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/subblue/applying-maths-book/main?urlpath=lab/tree/applying_maths_book/chapter-13/analysis-A.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../_static/images/logo_binder.svg"
                     alt="Interact on binder">Binder</button></a>
         
         
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/subblue/applying-maths-book/blob/main/applying_maths_book/chapter-13/analysis-A.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
         
         
     </div>
@@ -1735,7 +1756,7 @@ always necessary to check the equation being used, which unfortunately, is not a
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/analysis-A_5_01.png" src="../_images/analysis-A_5_01.png" />
+<img alt="../_images/analysis-A_5_0.png" src="../_images/analysis-A_5_0.png" />
 </div>
 </div>
 <p>The same integration can be done numerically using the ‘quad’ routine. Note that this routine returns two numbers, the integral’s value and the error, <span class="math notranslate nohighlight">\(\mathtt{err}\)</span>.</p>
@@ -1748,7 +1769,7 @@ always necessary to check the equation being used, which unfortunately, is not a
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/analysis-A_7_01.png" src="../_images/analysis-A_7_01.png" />
+<img alt="../_images/analysis-A_7_0.png" src="../_images/analysis-A_7_0.png" />
 </div>
 </div>
 <p>now using the built in cumulative distribution, where <span class="math notranslate nohighlight">\(\mathtt{norm}\)</span> is loaded as a library (from scipy.stats import norm, see top of page) and using <span class="math notranslate nohighlight">\(\mathtt{cdf()}\)</span> which is built in also, produces the same value.</p>
@@ -1760,7 +1781,7 @@ always necessary to check the equation being used, which unfortunately, is not a
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/analysis-A_9_01.png" src="../_images/analysis-A_9_01.png" />
+<img alt="../_images/analysis-A_9_0.png" src="../_images/analysis-A_9_0.png" />
 </div>
 </div>
 <p>To find the percentage chance we recall that the cumulative value is that from <span class="math notranslate nohighlight">\(-\infty\to x\)</span> (in this example <span class="math notranslate nohighlight">\(-\infty\to 0.5\)</span>) but that the remaining probability of that to the right of <span class="math notranslate nohighlight">\(x=1/2\)</span> which is <span class="math notranslate nohighlight">\((1-0.691)\)</span>. However the value we want is that in the middle of the curve, excluding both sides of the distribution, and is therefore <span class="math notranslate nohighlight">\(100(1-2(1- 0.691))=38.3\)</span>%, as in table 1. Using python this is</p>
@@ -1771,7 +1792,7 @@ always necessary to check the equation being used, which unfortunately, is not a
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/analysis-A_11_01.png" src="../_images/analysis-A_11_01.png" />
+<img alt="../_images/analysis-A_11_0.png" src="../_images/analysis-A_11_0.png" />
 </div>
 </div>
 <p>Working the other way round, i.e. starting with the area and finding the <span class="math notranslate nohighlight">\(x\)</span> value we use the quantile function which is called .ppf() and putting in the value from the cdf it returns the original value, <span class="math notranslate nohighlight">\(0.5\)</span> in this case.</p>
@@ -1784,7 +1805,7 @@ always necessary to check the equation being used, which unfortunately, is not a
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/analysis-A_13_01.png" src="../_images/analysis-A_13_01.png" />
+<img alt="../_images/analysis-A_13_0.png" src="../_images/analysis-A_13_0.png" />
 </div>
 </div>
 <p>In figure 4 the areas <span class="math notranslate nohighlight">\(\pm 1.96\sigma\)</span> are shaded. Calculating shows that the area from <span class="math notranslate nohighlight">\(-\infty \to 1.96\sigma = 0.975\)</span> Thus <span class="math notranslate nohighlight">\(0.025\)</span> is left and is the <span class="math notranslate nohighlight">\(2.5\)</span>% shown as shaded on the right of the figure. Accounting for both extreme regions gives the middle area as <span class="math notranslate nohighlight">\(1 - 2(1-0.975) = 0.95\)</span>, and is the chance shown in table 1. If the distribution is not normal, for instance the <span class="math notranslate nohighlight">\(t\)</span> or <span class="math notranslate nohighlight">\(\chi^2\)</span> distribution a similar calculation applies but, naturally, produces different percentages.</p>
@@ -1872,7 +1893,7 @@ v &amp; &amp; &amp;\\
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/analysis-A_15_01.png" src="../_images/analysis-A_15_01.png" />
+<img alt="../_images/analysis-A_15_0.png" src="../_images/analysis-A_15_0.png" />
 </div>
 </div>
 <p>Note that the 95% confidence level has <span class="math notranslate nohighlight">\(\alpha/2 = 0.025\)</span> which is <span class="math notranslate nohighlight">\(5/2\)</span>% because the table is for ‘two-tailed’ values on the distribution and <span class="math notranslate nohighlight">\(\alpha = 5\)</span>. The <span class="math notranslate nohighlight">\(t\)</span> value at <span class="math notranslate nohighlight">\(95\)</span>% and for seven points (or six degrees of freedom) is written as <span class="math notranslate nohighlight">\(t_{0.025,6}\)</span>. Figure 4 shows two-tailed values on the normal distribution.</p>
@@ -1887,7 +1908,7 @@ v &amp; &amp; &amp;\\
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/analysis-A_17_01.png" src="../_images/analysis-A_17_01.png" />
+<img alt="../_images/analysis-A_17_0.png" src="../_images/analysis-A_17_0.png" />
 </div>
 </div>
 <p>which is the value in the table under <span class="math notranslate nohighlight">\(95\)</span>% and <span class="math notranslate nohighlight">\(v=5\)</span>.</p>
@@ -2088,7 +2109,7 @@ retain point
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/analysis-A_21_01.png" src="../_images/analysis-A_21_01.png" />
+<img alt="../_images/analysis-A_21_0.png" src="../_images/analysis-A_21_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2100,7 +2121,7 @@ retain point
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/analysis-A_22_01.png" src="../_images/analysis-A_22_01.png" />
+<img alt="../_images/analysis-A_22_0.png" src="../_images/analysis-A_22_0.png" />
 </div>
 </div>
 </div>

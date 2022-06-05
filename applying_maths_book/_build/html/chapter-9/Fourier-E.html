@@ -1307,6 +1307,22 @@
 
             <!-- Source interaction buttons -->
 
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/subblue/applying-maths-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/subblue/applying-maths-book/issues/new?title=Issue%20on%20page%20%2Fchapter-9/Fourier-E.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
             <!-- Full screen (wrap in <a> to have style consistency -->
 
 <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
@@ -1321,13 +1337,18 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/chapter-9/Fourier-E.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/subblue/applying-maths-book/main?urlpath=lab/tree/applying_maths_book/chapter-9/Fourier-E.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../_static/images/logo_binder.svg"
                     alt="Interact on binder">Binder</button></a>
         
         
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/subblue/applying-maths-book/blob/main/applying_maths_book/chapter-9/Fourier-E.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
         
         
     </div>
@@ -1662,7 +1683,7 @@ g_0 = 0, \quad g_1 = -i+1, \quad g_2 = 0, \quad g_2 = i+1\]</div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Fourier-E_7_01.png" src="../_images/Fourier-E_7_01.png" />
+<img alt="../_images/Fourier-E_7_0.png" src="../_images/Fourier-E_7_0.png" />
 </div>
 </div>
 <p>Figures 41 &amp; 42 combined. Left: The time decaying FID, and next the real part of its discrete Fourier transform with frequencies of <span class="math notranslate nohighlight">\(1/35 = 0.0286\)</span> and <span class="math notranslate nohighlight">\(1/20\)</span> Hz. Only the first part of the spectrum is plotted; its mirror image at higher frequencies than the Nyquist limit of <span class="math notranslate nohighlight">\(1.024\)</span> Hz is not shown. Right: Imaginary and phase plot (far right) of the transformed data. The phase is in radians; <span class="math notranslate nohighlight">\(\pi\)</span> radians equals <span class="math notranslate nohighlight">\(180^\text{o}\)</span>. At larger frequencies, the phase approaches zero, reaching it at point <span class="math notranslate nohighlight">\(N/2\)</span> or <span class="math notranslate nohighlight">\(1.024\)</span> Hz, which is far to the right of the plotted range.</p>
@@ -1767,7 +1788,7 @@ Figure 47. Reconstructed data obtained by filtering the Fourier transform and re
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Fourier-E_11_01.png" src="../_images/Fourier-E_11_01.png" />
+<img alt="../_images/Fourier-E_11_0.png" src="../_images/Fourier-E_11_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1788,7 +1809,7 @@ Figure 47. Reconstructed data obtained by filtering the Fourier transform and re
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Fourier-E_12_01.png" src="../_images/Fourier-E_12_01.png" />
+<img alt="../_images/Fourier-E_12_0.png" src="../_images/Fourier-E_12_0.png" />
 </div>
 </div>
 <p>The filter function above removes all but a few non-zero data points. This is only possible because the spikes in the transform are very sharp because each is a single frequency. If the signal were an exponential decay instead of a sine wave, then this Fourier method would perform very badly. The exponential is not periodic and is not described by single frequency but by a range of them in the form of a Lorentzian; in this and many other circumstances it is not easy to isolate the data from the noise. If Fourier and other smoothing methods fail then least squares fitting to a line or polynomial may be acceptable as a last resort.</p>

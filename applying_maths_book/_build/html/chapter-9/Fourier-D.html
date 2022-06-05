@@ -1307,6 +1307,22 @@
 
             <!-- Source interaction buttons -->
 
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/subblue/applying-maths-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/subblue/applying-maths-book/issues/new?title=Issue%20on%20page%20%2Fchapter-9/Fourier-D.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
             <!-- Full screen (wrap in <a> to have style consistency -->
 
 <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
@@ -1321,13 +1337,18 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/chapter-9/Fourier-D.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/subblue/applying-maths-book/main?urlpath=lab/tree/applying_maths_book/chapter-9/Fourier-D.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../_static/images/logo_binder.svg"
                     alt="Interact on binder">Binder</button></a>
         
         
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/subblue/applying-maths-book/blob/main/applying_maths_book/chapter-9/Fourier-D.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
         
         
     </div>
@@ -1588,7 +1609,7 @@ C(4)&amp; = f (1)w(4) + f (2)w(3) + f (3)w(2) + f (4)w(1)\\
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Fourier-D_3_01.png" src="../_images/Fourier-D_3_01.png" />
+<img alt="../_images/Fourier-D_3_0.png" src="../_images/Fourier-D_3_0.png" />
 </div>
 </div>
 </div>
@@ -1680,7 +1701,7 @@ C(4)&amp; = f (1)w(4) + f (2)w(3) + f (3)w(2) + f (4)w(1)\\
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Fourier-D_5_01.png" src="../_images/Fourier-D_5_01.png" />
+<img alt="../_images/Fourier-D_5_0.png" src="../_images/Fourier-D_5_0.png" />
 </div>
 </div>
 </div>
@@ -1803,7 +1824,7 @@ C(4)&amp; = f (1)w(4) + f (2)w(3) + f (3)w(2) + f (4)w(1)\\
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Fourier-D_7_01.png" src="../_images/Fourier-D_7_01.png" />
+<img alt="../_images/Fourier-D_7_0.png" src="../_images/Fourier-D_7_0.png" />
 </div>
 </div>
 <p>from which it is seen that the normalised autocorrelation is also a cosine <span class="math notranslate nohighlight">\(\displaystyle G(u) = \cos\left(2\pi \frac{u}{T}\right)\)</span>. If the initial cosine is written as <span class="math notranslate nohighlight">\(\cos(\omega t + \varphi)\)</span> then the period is <span class="math notranslate nohighlight">\(T = 2\pi/\omega\)</span>.</p>
@@ -1844,7 +1865,7 @@ C(4)&amp; = f (1)w(4) + f (2)w(3) + f (3)w(2) + f (4)w(1)\\
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Fourier-D_9_01.png" src="../_images/Fourier-D_9_01.png" />
+<img alt="../_images/Fourier-D_9_0.png" src="../_images/Fourier-D_9_0.png" />
 </div>
 </div>
 <p>The normalization integration can be looked up  but need not be worked out because it is the value of autocorrelation when <span class="math notranslate nohighlight">\(u\)</span> = 0. The normalization equation is therefore <span class="math notranslate nohighlight">\(\displaystyle \int e^{-2t^2/a^2}dt=a\sqrt{\pi /2}\)</span>. The normalized autocorrelation <span class="math notranslate nohighlight">\(G(u)\)</span> is also a Gaussian, with a value <span class="math notranslate nohighlight">\(\displaystyle G(u)=e^{-u^2/(2a^2)}\)</span>. The <em>fwhm</em> of this function is calculated when <span class="math notranslate nohighlight">\(G(u)=1/2\)</span> and is <span class="math notranslate nohighlight">\(a\sqrt{2\ln(2)}\)</span> and that of the original pulse is <span class="math notranslate nohighlight">\(a\sqrt{\ln(2)}\)</span> therefore, the autocorrelation is <span class="math notranslate nohighlight">\(\sqrt{2} \approx\)</span> 1.414 times wider than the pulse. Knowing this factor provides a convenient way of measuring the duration of a short laser pulse assuming it has a Gaussian profile.</p>
@@ -1903,7 +1924,7 @@ C(4)&amp; = f (1)w(4) + f (2)w(3) + f (3)w(2) + f (4)w(1)\\
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Fourier-D_11_01.png" src="../_images/Fourier-D_11_01.png" />
+<img alt="../_images/Fourier-D_11_0.png" src="../_images/Fourier-D_11_0.png" />
 </div>
 </div>
 <p>Fig. 33 Normalized autocorrelations of <span class="math notranslate nohighlight">\(250\)</span> random numbers with an average of <span class="math notranslate nohighlight">\(0\)</span> (left) and an average of <span class="math notranslate nohighlight">\(1/2\)</span> (right). Only the right-hand half of the autocorrelation is calculated and plotted. The left-hand part is the exact mirror image.</p>
