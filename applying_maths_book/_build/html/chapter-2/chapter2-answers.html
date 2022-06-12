@@ -1499,6 +1499,11 @@
    Q27 answer
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#q28-answer">
+   Q28 answer
+  </a>
+ </li>
 </ul>
 
             </nav>
@@ -1833,8 +1838,8 @@ and imaginary parts <span class="math notranslate nohighlight">\(\sin(a + b) = \
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># code to plot fig 12</span>
 <span class="n">w</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">6000</span><span class="p">,</span><span class="mi">1000</span><span class="p">)</span>
-<span class="n">z1</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">R</span><span class="p">,</span><span class="n">C</span><span class="p">,</span><span class="n">w</span><span class="p">:</span> <span class="n">R</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="p">(</span><span class="n">R</span><span class="o">*</span><span class="n">C</span><span class="o">*</span><span class="n">w</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">z2</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">R</span><span class="p">,</span><span class="n">C</span><span class="p">,</span><span class="n">w</span><span class="p">:</span> <span class="n">R</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">C</span><span class="o">*</span><span class="n">w</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="p">(</span><span class="n">R</span><span class="o">*</span><span class="n">C</span><span class="o">*</span><span class="n">w</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">z1</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">R</span><span class="p">,</span><span class="n">C</span><span class="p">,</span><span class="n">w</span><span class="p">:</span> <span class="n">R</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="p">(</span><span class="n">R</span><span class="o">*</span><span class="n">C</span><span class="o">*</span><span class="n">w</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">z2</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">R</span><span class="p">,</span><span class="n">C</span><span class="p">,</span><span class="n">w</span><span class="p">:</span> <span class="n">R</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">C</span><span class="o">*</span><span class="n">w</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="p">(</span><span class="n">R</span><span class="o">*</span><span class="n">C</span><span class="o">*</span><span class="n">w</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
 <span class="n">R</span>  <span class="o">=</span> <span class="mi">5000</span>
 <span class="n">C</span>  <span class="o">=</span> <span class="mf">1e-6</span>
 <span class="c1">#plt.plot(z1(R,C,w),z2(R,C,w),color=&#39;red&#39;)   # fig 12</span>
@@ -1843,6 +1848,20 @@ and imaginary parts <span class="math notranslate nohighlight">\(\sin(a + b) = \
 </div>
 </div>
 </div>
+</div>
+<div class="section" id="q28-answer">
+<h2>Q28 answer<a class="headerlink" href="#q28-answer" title="Permalink to this headline">¶</a></h2>
+<p>One atom is at <span class="math notranslate nohighlight">\((0,0,0)\)</span> and the body centred one at <span class="math notranslate nohighlight">\((u,v,w)=(1/2,1/2,1/2)\)</span> as fractions of the cell axis lengths. Let <span class="math notranslate nohighlight">\(f_A,f_B\)</span> be the atomic scattering factors then from eqn. 21 the scattering factor is,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle F = f_Ae^{2i\pi(0)} + f_Be^{2i\pi(h/2+k/2+l/2)} = f_A+f_Be^{i\pi(h+k+l)}\]</div>
+<p>and the intensity is <span class="math notranslate nohighlight">\(F^*F\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin{align} I =&amp;(f_A+f_Be^{-i\pi(h+k+l)})(f_A+f_Be^{i\pi(h+k+l)})\\=&amp; f_A^2+f_B^2+f_Af_B(e^{-i\pi(h+k+l)}+e^{+i\pi(h+k+l)})\\=&amp; f_A^2+f_B^2+2f_Af_B\cos(\pi(h+k+l))\end{align}\end{split}\]</div>
+<p>(a) When the atoms are different, <span class="math notranslate nohighlight">\(F\)</span> is positive for all <span class="math notranslate nohighlight">\(h,k,l\)</span>. Physically the intensity can never be negative and is shown mathematically because <span class="math notranslate nohighlight">\(f_A^2+f_B^2 \gt 2f_Af_B\)</span> but the intensity will be smallest when the cosine is equal to <span class="math notranslate nohighlight">\(-1\)</span>, i.e. when <span class="math notranslate nohighlight">\(h+k+l\)</span> is an odd integer.</p>
+<p>(b) When <span class="math notranslate nohighlight">\(f_A=f_B=f\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle I=f^2(1+2\cos(\pi(h+k+l))\]</div>
+<p>which means that the intensity is zero when <span class="math notranslate nohighlight">\(h+k+l \)</span> is an odd integer and is typical for a body centred lattice.</p>
 </div>
 </div>
 

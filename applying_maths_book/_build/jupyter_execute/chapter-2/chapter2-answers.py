@@ -350,10 +350,33 @@ plt.show()
 
 # code to plot fig 12
 w  = np.linspace(0,6000,1000)
-z1 = lambda R,C,w: R/(1+(R*C*w)**2)
-z2 = lambda R,C,w: R**2*C*w/(1+(R*C*w)**2)
+z1 = lambda R,C,w: R/(1 + (R*C*w)**2)
+z2 = lambda R,C,w: R**2*C*w/(1 + (R*C*w)**2)
 R  = 5000
 C  = 1e-6
 #plt.plot(z1(R,C,w),z2(R,C,w),color='red')   # fig 12
 #plt.show()
+
+
+# ### Q28 answer
+# One atom is at $(0,0,0)$ and the body centred one at $(u,v,w)=(1/2,1/2,1/2)$ as fractions of the cell axis lengths. Let $f_A,f_B$ be the atomic scattering factors then from eqn. 21 the scattering factor is,
+# 
+# $$\displaystyle F = f_Ae^{2i\pi(0)} + f_Be^{2i\pi(h/2+k/2+l/2)} = f_A+f_Be^{i\pi(h+k+l)}$$
+# 
+# and the intensity is $F^*F$,
+# 
+# $$\displaystyle \begin{align} I =&(f_A+f_Be^{-i\pi(h+k+l)})(f_A+f_Be^{i\pi(h+k+l)})\\=& f_A^2+f_B^2+f_Af_B(e^{-i\pi(h+k+l)}+e^{+i\pi(h+k+l)})\\=& f_A^2+f_B^2+2f_Af_B\cos(\pi(h+k+l))\end{align}$$
+# 
+# (a) When the atoms are different, $F$ is positive for all $h,k,l$. Physically the intensity can never be negative and is shown mathematically because $f_A^2+f_B^2 \gt 2f_Af_B$ but the intensity will be smallest when the cosine is equal to $-1$, i.e. when $h+k+l$ is an odd integer.
+# 
+# (b) When $f_A=f_B=f$, 
+# 
+# $$\displaystyle I=f^2(1+2\cos(\pi(h+k+l))$$
+# 
+# which means that the intensity is zero when $h+k+l $ is an odd integer and is typical for a body centred lattice.
+
+# In[ ]:
+
+
+
 

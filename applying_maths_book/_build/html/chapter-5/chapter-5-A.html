@@ -1377,6 +1377,13 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#diffraction">
+     <strong>
+      Diffraction
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#making-new-series">
      <strong>
       Making new series
@@ -1530,22 +1537,64 @@ summed to form a function. The power series</p>
 \[\displaystyle S=\frac{\sin((N+1/2)\omega t)}{\sin(\omega t/2)}\]</div>
 <p>which is a series of spikes separated by <span class="math notranslate nohighlight">\(2\pi/\omega\)</span>, see fig. 21b chapter 9 (Fourier transforms).</p>
 </div>
+<div class="section" id="diffraction">
+<h3><strong>Diffraction</strong><a class="headerlink" href="#diffraction" title="Permalink to this headline">¶</a></h3>
+<p>Suppose that there is a line of identical oscillators each emitting waves in the arrangement of figure 0. These could be a row of slits in a transmission grating or reflective strips in a reflection grating but in either case the sources are all in phase and emit over all angles. Thy could also be water waves or scattered off atoms by x-rays. If we observe at some distant point, a distance many times larger than the grating period <span class="math notranslate nohighlight">\(d\)</span>, and at an angle <span class="math notranslate nohighlight">\(theta\)</span> we would like to know how the intensity of the summed waves varies as <span class="math notranslate nohighlight">\(theta\)</span> is changed. At some angles the waves will be in phase with one another and so produce a wave of maximum amplitude, less so at another angle and at yet other angles be completely out of phase. Thus we expect to repeatedly see bright and dark regions as the angle is changed.</p>
+<p>The calculation to do this means adding up the path lengths from each emitter and seeing what the total path is. The total number of wavelengths does not matter just what the surplus over a whole number of waves is, as this determines the phase and hence amplitude.</p>
+<p>Using figure 0, the difference in path-length between <span class="math notranslate nohighlight">\(r_1\)</span> and <span class="math notranslate nohighlight">\(r_0\)</span> is <span class="math notranslate nohighlight">\(r_1-r_0=\delta\)</span> and at the angle drawn <span class="math notranslate nohighlight">\(2\delta=\lambda \)</span>. The distance between <span class="math notranslate nohighlight">\(r_2-r_1=2\delta\)</span> and so on thus <span class="math notranslate nohighlight">\(n\delta=r_n-r_0\)</span>.</p>
+<p><img alt="Drawing" src="../_images/series-fig0.png" /></p>
+<p>Figure 0. An array of <span class="math notranslate nohighlight">\(N\)</span> coherent oscillators separated by spacing <span class="math notranslate nohighlight">\(d\)</span>. The path difference measured from the first oscillator is <span class="math notranslate nohighlight">\(n\delta\)</span> where <span class="math notranslate nohighlight">\(n=0,1\cdots N-1\)</span>. At the angle shown <span class="math notranslate nohighlight">\(2\delta =\lambda\)</span> where <span class="math notranslate nohighlight">\(\lambda\)</span> is the wavelength.</p>
+<hr class="docutils" />
+<p>The general form is a wave is <span class="math notranslate nohighlight">\(e^{i(kr-\omega t)}\)</span> where <span class="math notranslate nohighlight">\(\omega\)</span> is the frequency and <span class="math notranslate nohighlight">\(k=2\pi/\lambda\)</span> is the wavevector. If all the emitters have the same amplitude then the total wave is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle E=E_0\left(e^{i(kr_0-\omega t)}+e^{i(kr_1-\omega t)}+\cdots +e^{i(kr_{N-1}-\omega t)}\right)\]</div>
+<p>which is simplified by factoring out <span class="math notranslate nohighlight">\(e^{-i\omega t}\)</span> to give</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle E=E_0e^{-i\omega t}\left(e^{ikr_0}+e^{ikr_1}+\cdots +e^{ikr_{N-1}}\right)\]</div>
+<p>The term in brackets can be further simplified by factoring out the first term in <span class="math notranslate nohighlight">\(r_0\)</span> and using the definition of <span class="math notranslate nohighlight">\(\delta\)</span> worked out from figure 0. This produces</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle E=E_0e^{-i\omega t}e^{ikr_0}\left(1+e^{ik\delta}+e^{2ik\delta} +\cdots +e^{(N-1)ik\delta}\right)\]</div>
+<p>If we substitute <span class="math notranslate nohighlight">\(x=e^{ik\delta}\)</span>, this series becomes <span class="math notranslate nohighlight">\(\displaystyle \sum_{n=0}^{N-1} x^n=\frac{1-x^N}{1-x}\)</span> and by substituting back gives</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle E=E_0e^{-i\omega t}e^{ikr_0}\frac{e^{ik\delta N}-1}{e^{ik\delta}-1}\]</div>
+<p>The intensity measure on a detector, such as a CCD, is <span class="math notranslate nohighlight">\(I=E^*E\)</span> giving</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle I=I_0\left(\frac{e^{-ik\delta N}-1}{e^{-ik\delta}-1}\right)\left(\frac{e^{ik\delta N}-1}{e^{ik\delta}-1} \right) =I_0\frac{2-e^{-ik\delta N}-e^{ik\delta N}}{2-e^{-ik\delta}-e^{ik\delta }}\]</div>
+<p>Converting the exponential to cosines using <span class="math notranslate nohighlight">\(2\cos(x)=e^{-x}+e^{-ix}\)</span> gives</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle I=I_0\frac{1-\cos(k\delta N)}{1-\cos(k\delta)}\]</div>
+<p>The maximum intensity can be found when <span class="math notranslate nohighlight">\(\delta =0\)</span> because all the oscillators with be in phase at <span class="math notranslate nohighlight">\(\theta=0\)</span>. Differentiating w.r.t. <span class="math notranslate nohighlight">\(\delta\)</span>, putting <span class="math notranslate nohighlight">\(\delta =0\)</span> and using l’Hopital’s rule, where the top and bottom is differentiated separately until the ratio is not <span class="math notranslate nohighlight">\(0/0\)</span>, gives</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle I(max)\to \frac{N\sin(k\delta N)}{\sin(k\delta)} \to N^2\frac{\cos(k\delta N)}{\cos(k\delta)}\to N^2\]</div>
+<p>and the maximum intensity is <span class="math notranslate nohighlight">\(I_{max}=N^2I_0\)</span> as intuition would dictate for <span class="math notranslate nohighlight">\(N\)</span> identical oscillators. However, by the nature of cosines we expect the waves to come into phase each time the cosine has a value of <span class="math notranslate nohighlight">\(1\)</span> and this will happen when <span class="math notranslate nohighlight">\(k\delta =2\pi m\)</span> where <span class="math notranslate nohighlight">\(m=0,\pm 1,\pm 2\cdots\)</span> where <span class="math notranslate nohighlight">\(m\)</span> is a positive integer.</p>
+<p>The path length difference is related to the angle <span class="math notranslate nohighlight">\(\theta\)</span> as</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \delta = d\sin(\theta)\]</div>
+<p>then the intensity becomes</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle I=I_0\frac{1-\cos(Nkd\sin(\theta))}{1-\cos(kd\sin(\theta))}\]</div>
+<p>and has maxima at <span class="math notranslate nohighlight">\(\theta=0,\pm \pi, \pm 2\pi\cdots\)</span>.</p>
+<p>This last equation is more often put into a sine form using the identity <span class="math notranslate nohighlight">\(1-\cos(x)=2\sin^2(x/2)\)</span> which produces</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle I=I_0\frac{\sin^2(Nkd\sin(\theta)/2)}{\sin^2(kd\sin(\theta)/2)}\]</div>
+<p>which is a <em>sinc</em> function, i.e. a central lobe plus decreasing oscillations to either side.</p>
+</div>
 <div class="section" id="making-new-series">
 <h3><strong>Making new series</strong><a class="headerlink" href="#making-new-series" title="Permalink to this headline">¶</a></h3>
-<p>(i) New series can often be made from existing ones. Suppose each term in the series of <span class="math notranslate nohighlight">\(f(x)=1+x+x^2+\cdots\)</span> is differentiated, then using eqn 2,</p>
+<p><strong>(i)</strong> New series can often be made from existing ones. Suppose each term in the series of <span class="math notranslate nohighlight">\(f(x)=1+x+x^2+\cdots\)</span> is differentiated, then using eqn 2,</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle f^′(x)= \frac{1}{(1 - x)^2} =1+2x+3x^2 +4x^3 +\cdots+nx^{n-1} +\cdots  \tag{3}\]</div>
 <p>and if <span class="math notranslate nohighlight">\(| \,x\, | \lt 1\)</span> this is the expansion of <span class="math notranslate nohighlight">\( 1/(1 - x)^2\)</span>, which can be written as</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \sum_{n=0}^{\infty}   nx^{n-1} = \frac{1}{(1 - x)^2}  \tag{4}\]</div>
-<p>(ii) Substituting <span class="math notranslate nohighlight">\(x \to -x \)</span> gives the series</p>
+<p><strong>(ii)</strong> Substituting <span class="math notranslate nohighlight">\(x \to -x \)</span> gives the series</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \frac{1}{(1 + x)^2} =1-2x+3x^2-4x^3 +\cdots      \tag{5}\]</div>
 <p>The summation expression is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \sum_{n=1}^\infty (-1)^n nx^{n-1} = \frac{1}{(1+x)^2}\]</div>
 <p>and the <span class="math notranslate nohighlight">\(\displaystyle (-1)^n\)</span> ensures that alternate terms are positive and negative.</p>
-<p>(iii) The sum</p>
+<p><strong>(iii)</strong> The sum</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \sum_{n=0}^\infty (1-x)x^n = 1,\qquad |x|\lt 1\]</div>
 <p>and the new sum <span class="math notranslate nohighlight">\(\displaystyle \sum_{n=0}^\infty x(1-x)^n\)</span> can be found with this result by substituting <span class="math notranslate nohighlight">\(y=1-x\)</span> then</p>
@@ -1610,7 +1659,7 @@ summed to form a function. The power series</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/chapter-5-A_3_0.png" src="../_images/chapter-5-A_3_0.png" />
+<img alt="../_images/chapter-5-A_4_0.png" src="../_images/chapter-5-A_4_0.png" />
 </div>
 </div>
 <p>Figure 1. The function <span class="math notranslate nohighlight">\(1/(1-x)^2 \)</span> (top black line) and its series approximations  <span class="math notranslate nohighlight">\(\Sigma_n nx^{n-1}\)</span> with <span class="math notranslate nohighlight">\(n\)</span> = 1, 2, <span class="math notranslate nohighlight">\(\cdots\)</span>.</p>
@@ -1779,7 +1828,7 @@ In the ratio test, the ratio of any term <span class="math notranslate nohighlig
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/chapter-5-A_7_0.png" src="../_images/chapter-5-A_7_0.png" />
+<img alt="../_images/chapter-5-A_8_0.png" src="../_images/chapter-5-A_8_0.png" />
 </div>
 </div>
 <p>which can be simplified by dividing common factors</p>

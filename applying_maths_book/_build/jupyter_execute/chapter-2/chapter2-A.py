@@ -116,12 +116,12 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # $$\displaystyle r=+\sqrt{a^2 +b^2} \tag{4}$$
 # It is variously written as
 # 
-# $$\displaystyle r=|z|=|a+ib|=+ \sqrt{z*z}=|z*| \tag{5}$$
+# $$\displaystyle r=|z|=|a+ib|= \sqrt{z^*z}=|z^*| \tag{5}$$
 # 
 # 
 # The square of a complex number is the square of the modulus;
 # 
-# $$\displaystyle |a+ib|^2 =(a+ib)^*(a+ib)=(a-ib)(a+ib)=a^2 +b^2 =z*z=|z|^2$$
+# $$\displaystyle |a+ib|^2 =(a+ib)^*(a+ib)=(a-ib)(a+ib)=a^2 +b^2 =z^*z=|z|^2$$
 # 
 # and is always a positive number.
 # 
@@ -143,15 +143,17 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # ### 1.4 Summary
 # 
-# If the complex number is $z = a + ib = r\left(\cos(\theta) + i \sin(\theta)\right)$ where $a$ and $b$ are real numbers, then
+# If $a$ and $b$ are real numbers, then the complex number is 
+# 
+# $\qquad$ $z = a + ib = r\left(\cos(\theta) + i \sin(\theta)\right)$ 
 # 
 # $\qquad$ $a = Re(z)$ is the real part of $z$
 # 
 # $\qquad$ $b = Im(z)$ is the imaginary part of $z$
 # 
-# $\qquad$ $r =|z|= z*z$ is the modulus of $z$ ,or absolute value,  magnitude or norm.
+# $\qquad$ $r =|z|= \sqrt{z^*z}=\sqrt{a^2+b^2}$ is the _modulus_ of $z$, or *absolute value, magnitude* or *norm*.
 # 
-# $\qquad$ $\displaystyle \theta = \tan^{-1}\left(\frac{b}{a}\right)= \tan^{-1}\left( \frac{Im(z)}{Re(z)} \right)$ is the argument of $z$, also called the polar angle or phase. 
+# $\qquad$ $\displaystyle \theta = \tan^{-1}\left(\frac{b}{a}\right)= \tan^{-1}\left( \frac{Im(z)}{Re(z)} \right)$ is the argument of $z$, also called the _polar angle_ or *phase*. 
 # 
 # $\qquad$ $z^* = a - ib = r\left(\cos(\theta) - i \sin(\theta)\right)$ is the complex conjugate of $z$.
 # 
