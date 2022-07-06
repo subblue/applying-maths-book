@@ -208,7 +208,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-2/chapter2-C.html">
-     Euler’s theorem
+     Euler’s theorem, roots of unity, x-ray diffraction structure factor.
     </a>
    </li>
    <li class="toctree-l2">
@@ -1419,7 +1419,7 @@
 <hr class="docutils" />
 <div class="section" id="q14-answer">
 <h2>Q14 answer<a class="headerlink" href="#q14-answer" title="Permalink to this headline">¶</a></h2>
-<p>The code in the ‘for’ loop has to be changed to use the modified Euler equation (33). The derivatives are defined as</p>
+<p>(i) The code in the ‘for’ loop has to be changed to use the modified Euler equation (33). The derivatives are defined as</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dydt</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">t</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">y</span> <span class="p">:</span> <span class="o">-</span><span class="p">(</span><span class="n">kf</span><span class="o">+</span><span class="n">k2</span><span class="p">)</span><span class="o">*</span><span class="n">y</span><span class="o">+</span><span class="n">k1</span><span class="o">*</span><span class="n">x</span>
@@ -1430,7 +1430,84 @@
 </div>
 <p>and using the values given in the question the plot produced is</p>
 <p><img alt="Drawing" src="../_images/num-methods-fig34.png" /></p>
+<p>Figure 34. Plots of solution.</p>
+<hr class="docutils" />
 <p>The plot shows that initially <span class="math notranslate nohighlight">\(x\)</span> increases from zeros, because it is produced from <span class="math notranslate nohighlight">\(y\)</span>, then decays away with rate constant <span class="math notranslate nohighlight">\(k_e\)</span>. Equilibrium is beginning to be is set up between <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> but this does not last as both species decay with rate constants <span class="math notranslate nohighlight">\(k_f\)</span> and <span class="math notranslate nohighlight">\(k_e\)</span>.</p>
+<p>(ii) The rate equations are</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{dA}{dt}=-\frac{1}{2}\frac{dB}{dt}=-k_1A+k_2B^2\]</div>
+<p>the algorithm is shown below.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#--------------------------------</span>
+<span class="k">def</span> <span class="nf">EulerN</span><span class="p">(</span><span class="n">f0</span><span class="p">,</span> <span class="n">f1</span><span class="p">,</span> <span class="n">t0</span><span class="p">,</span> <span class="n">y0</span><span class="p">,</span> <span class="n">z0</span><span class="p">,</span> <span class="n">maxt</span><span class="p">,</span> <span class="n">N</span><span class="p">):</span>         <span class="c1"># Euler method, function two rate equations f </span>
+    
+    <span class="n">Eulery</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">N</span><span class="p">,</span><span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>   <span class="c1"># define arrays to hold results  y is molecule type A</span>
+    <span class="n">Eulerz</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">N</span><span class="p">,</span><span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>   <span class="c1"># z is moleculae type B </span>
+    <span class="n">dtime</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">N</span><span class="p">,</span><span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+    <span class="n">h</span> <span class="o">=</span> <span class="p">(</span><span class="n">maxt</span> <span class="o">-</span> <span class="n">t0</span><span class="p">)</span><span class="o">/</span><span class="n">N</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">y0</span>                             <span class="c1"># initial values</span>
+    <span class="n">z</span> <span class="o">=</span> <span class="n">z0</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="n">t0</span>
+    <span class="n">Eulery</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span> <span class="n">y0</span>
+    <span class="n">Eulerz</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span> <span class="n">z0</span>
+    <span class="n">dtime</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">t0</span>
+    <span class="k">for</span>  <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">N</span><span class="p">):</span>              <span class="c1"># loop starts</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="n">y</span> <span class="o">+</span> <span class="n">h</span><span class="o">*</span><span class="n">f0</span><span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="n">z</span><span class="p">)</span>              <span class="c1"># increment y</span>
+        <span class="n">z</span> <span class="o">=</span> <span class="n">z</span> <span class="o">+</span> <span class="n">h</span><span class="o">*</span><span class="n">f1</span><span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="n">z</span><span class="p">)</span>
+        <span class="n">t</span> <span class="o">=</span> <span class="n">t</span> <span class="o">+</span> <span class="n">h</span>                      <span class="c1"># time </span>
+        <span class="n">Eulery</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">y</span>                  <span class="c1"># save values</span>
+        <span class="n">Eulerz</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">z</span>
+        <span class="n">dtime</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>  <span class="o">=</span> <span class="n">t</span>
+        <span class="c1">#if i == N // 2:               # modification to add more B</span>
+        <span class="c1">#    z = z + 1*z/5</span>
+        <span class="k">pass</span>                           <span class="c1"># end of loop</span>
+    <span class="k">return</span> <span class="n">Eulery</span><span class="p">,</span><span class="n">Eulerz</span><span class="p">,</span><span class="n">dtime</span>
+<span class="c1">#---------------------------------</span>
+
+<span class="n">dAdt</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">A</span><span class="p">,</span><span class="n">B</span> <span class="p">:</span> <span class="o">-</span><span class="n">k1</span><span class="o">*</span><span class="n">A</span> <span class="o">+</span> <span class="n">k2</span><span class="o">*</span><span class="n">B</span><span class="o">**</span><span class="mi">2</span>    <span class="c1"># equation to integrate</span>
+<span class="n">dBdt</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">A</span><span class="p">,</span><span class="n">B</span> <span class="p">:</span>  <span class="n">k1</span><span class="o">*</span><span class="n">A</span> <span class="o">-</span> <span class="n">k2</span><span class="o">*</span><span class="n">B</span><span class="o">**</span><span class="mi">2</span>    <span class="c1"># equation to integrate</span>
+
+<span class="n">A_0</span> <span class="o">=</span> <span class="mf">2.0</span>    <span class="c1"># initial pressure</span>
+<span class="n">B_0</span> <span class="o">=</span> <span class="mf">0.0</span>
+<span class="n">k1</span>  <span class="o">=</span> <span class="mf">0.17</span>    <span class="c1"># values in units microseconds</span>
+<span class="n">k2</span>  <span class="o">=</span> <span class="mf">1.0</span>
+<span class="n">maxt</span><span class="o">=</span> <span class="mf">15.0</span>
+<span class="n">N</span>   <span class="o">=</span> <span class="mi">400</span>    <span class="c1"># number of points</span>
+<span class="n">t0</span>  <span class="o">=</span> <span class="mf">0.0</span>
+
+<span class="n">Avals</span><span class="p">,</span> <span class="n">Bvals</span><span class="p">,</span> <span class="n">atime</span> <span class="o">=</span> <span class="n">EulerN</span><span class="p">(</span><span class="n">dAdt</span><span class="p">,</span><span class="n">dBdt</span><span class="p">,</span><span class="n">t0</span><span class="p">,</span><span class="n">A_0</span><span class="p">,</span><span class="n">B_0</span><span class="p">,</span><span class="n">maxt</span><span class="p">,</span><span class="n">N</span><span class="p">)</span>   <span class="c1"># Call procedure, return values </span>
+
+<span class="c1">#fig = plt.figure(figsize=[5,4])        # remove # to plot </span>
+<span class="c1">#plt.plot(atime,Avals,color=&#39;blue&#39;)</span>
+<span class="c1">#plt.plot(atime,2*Bvals,color=&#39;red&#39;)</span>
+<span class="c1">#</span>
+<span class="c1">#Ke = k1/k2</span>
+<span class="c1">#Ae = ( 2*A_0+Ke  - np.sqrt( (2*A_0+Ke)**2 -4*A_0**2))/2  #  equilibrium amount </span>
+<span class="c1">#</span>
+<span class="c1">#plt.axhline(Ae,color=&#39;blue&#39;,linestyle=&#39;dashed&#39;,linewidth=1)</span>
+<span class="c1">#plt.axhline(2*(A_0-Ae),color=&#39;red&#39;,linestyle=&#39;dashed&#39;,linewidth=1 )</span>
+<span class="c1">#</span>
+<span class="c1">#plt.xlim([0,maxt])</span>
+<span class="c1">#plt.ylim([0,1.5])</span>
+<span class="c1">#plt.ylabel(&#39;concentration&#39;)</span>
+<span class="c1">#plt.xlabel(&#39;time&#39;)</span>
+<span class="c1">#plt.text( maxt-2,1.1*Ae,&#39;[A]&#39;)</span>
+<span class="c1">#plt.text( maxt-2,0.85*2*(A_0-Ae),&#39;[B]&#39;)</span>
+<span class="c1">#plt.tight_layout()</span>
+<span class="c1">#plt.show()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><img alt="Drawing" src="../_images/num-methods-fig34a.png" /></p>
+<p>Figure 34a. Left. Plot of concentration of species A and B vs. time showing how equilibrium is reached. The dashed lines show the algebraically calculated equilibrium. Right. Detail shows the effect of adding an amount amount of B when equilibrium has already been reached and its return to a new equilibrium position.  Time is in units of microseconds.</p>
+<hr class="docutils" />
+<p>(ii) The equilibrium amounts can be found by starting with <span class="math notranslate nohighlight">\(dA/dt\)</span> and as <span class="math notranslate nohighlight">\(A\to A_e\)</span>  at equilibrium,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{dA}{dt}= -k_1A_e+k_2(A_0-A_e)^2=0\]</div>
+<p>solving for <span class="math notranslate nohighlight">\(A_e\)</span>, with <span class="math notranslate nohighlight">\(K_e=k_1/k_2\)</span> as the equilibrium constant,  gives <span class="math notranslate nohighlight">\(\displaystyle A_e=\left(2A_0+K_e+\sqrt{(2A_0+K_e)^2-4A_0^2}\right)/2\)</span>, which is shown in the plot, and <span class="math notranslate nohighlight">\(B_e=2(A_0-A_e)\)</span>.</p>
+<p>(iii) If the amount of B is instantaneously increased then there are more molecules overall and both the amounts of B and A will have to increase compared to that before the change.  However, just after the change there is too little A for the amount of B now present (because the system was at equilibrium and is transiently not anymore) meaning more A will form from B and so B will decrease until equilibrium is re-established. This is shown in figure 34a. The transient approach to equilibrium has a lifetime of <span class="math notranslate nohighlight">\(\tau =1/(k_1+k_2[B_e])\)</span> or <span class="math notranslate nohighlight">\(0.86\;\mathrm{\mu\,s}\)</span></p>
 </div>
 <div class="section" id="q15-answer">
 <h2>Q15 answer<a class="headerlink" href="#q15-answer" title="Permalink to this headline">¶</a></h2>

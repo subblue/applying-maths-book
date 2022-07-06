@@ -10,8 +10,8 @@
 # 
 # and thus at small times the function should decay exponentially then become sinusoidal.
 # 
-# ### Q14 Euler algorithm
-# Change the Euler Algorithm to include the modified Euler or Runge - Kutta equations and then solve the system of equations
+# ### Q14 Reversible reactions. Euler algorithm
+# (a) Change the Euler Algorithm to include the modified Euler or Runge - Kutta equations and then solve the system of equations
 # 
 # $$\displaystyle \frac{dy}{dt} = -(k_f + k_2)y + k_1x,\qquad \frac{dx}{dt} = -(k_1 + k_e)x + k_2y$$
 # 
@@ -21,6 +21,23 @@
 # y &\overset{k_2} { \underset{k_1}{ \overset{\longrightarrow} \longleftarrow } } & x \\
 # \quad\downarrow k_f & & \quad \downarrow k_e
 # \end{array}$$
+# 
+# (b) The overall reaction between $\mathrm{N_2O_4}$ and $\mathrm{NO_2}$ can be written as  
+# 
+# $$\displaystyle A \;\overset{k_1}{ \underset{k_2}{ \overset{\longrightarrow} \longleftarrow } } \;2B $$
+# 
+# where $A\equiv \mathrm{N_2O_4}$ and $B\equiv \mathrm{NO_2}$. Experimentally measured rate constants at $25\;^\text{o}C$ are $k_1=1.7\cdot 10^5\,\mathrm{s^{-1}}$ and $k_2=1 \cdot 10^6\,\mathrm{atm\,s^{-1}}$ and $A_0= 2$ atm. (It should be noted that the actual mechanism follows a Lindemann 'Unimolecular reaction' scheme). 
+# 
+# (i) Write down and numerically solve the rate equations using the Euler method. Put the Euler algorithm into a subroutine or procedure called a 'def' in Python which is then called to start the calculation. Pass the functions representing the rate equations into this as variables.
+# 
+# (ii) Work out the equilibrium concentrations of A and B. 
+# 
+# (iii) When equilibrium is established describe the effect of adding a fraction of B to the reaction.
+# 
+# (iv) Now calculate the effect you describe assuming that the amount of B only is increased by $1/5$. Modify the Euler algorithm as necessary.
+# 
+# **Strategy** It is easier to work in units of microseconds.  In (iii) use le Chatelier's principle if necessary to predict what happens.
+# 
 # 
 # ### Q15 Michaelis - Menten scheme
 # The Michaelis - Menten scheme is the simplest description of an enzyme catalysed reaction. The enzyme E and substrate S come into equilibrium with an intermediate complex ES that breaks up into reactants or produces product P and the enzyme is returned to its functioning state having acted as a catalyst by converting S into P. The rate equations are derived from the scheme

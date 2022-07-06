@@ -208,7 +208,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-2/chapter2-C.html">
-     Euler’s theorem
+     Euler’s theorem, roots of unity, x-ray diffraction structure factor.
     </a>
    </li>
    <li class="toctree-l2">
@@ -1385,9 +1385,25 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#superposition-of-waves">
-   5.5 Superposition of waves.
+  <a class="reference internal nav-link" href="#superposition-of-waves-of-the-same-frequency">
+   5.5 Superposition of waves of the same frequency
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-from-xray-diffraction">
+     <strong>
+      Example from xray diffraction
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-with-two-waves">
+     <strong>
+      Example with two waves
+     </strong>
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#hyperbolic-functions">
@@ -1546,14 +1562,16 @@
 <p>Figure 13a. A standing wave. The amplitude changes in the way indicated by the arrows, then repeats in the opposite sense and so on  <em>ad infinitum</em>.</p>
 </div>
 <hr class="docutils" />
-<div class="section" id="superposition-of-waves">
-<h2>5.5 Superposition of waves.<a class="headerlink" href="#superposition-of-waves" title="Permalink to this headline">¶</a></h2>
-<p>A defining characteristic of waves is that they can form superpositions, which is to say that when added or subtracted a new waveform is produced. This leads to interference and diffraction phenomena. In quantum mechanics wavepackets are formed as superpositions of wavefunctions and are described in Chapter 5, (Summation and Series).</p>
+<div class="section" id="superposition-of-waves-of-the-same-frequency">
+<h2>5.5 Superposition of waves of the same frequency<a class="headerlink" href="#superposition-of-waves-of-the-same-frequency" title="Permalink to this headline">¶</a></h2>
+<p>A defining characteristic of waves is that they can form superpositions, which is to say that when added or subtracted a new waveform is produced. When the waves are of the same frequency (or wavelength) this leads to interference and diffraction phenomena. When waves of different frequency are added beats are produced as described above. In quantum mechanics wavepackets are formed as superpositions of wavefunctions and are described in Chapter 5, (Summation and Series).</p>
+<div class="section" id="example-from-xray-diffraction">
+<h3><strong>Example from xray diffraction</strong><a class="headerlink" href="#example-from-xray-diffraction" title="Permalink to this headline">¶</a></h3>
 <p>In x-ray diffraction the x-rays are scattered by the atoms that are present in regular and repeated positions in a crystal. The smallest set of repeated positions is called the unit cell. The Bragg equation <span class="math notranslate nohighlight">\(n\lambda = 2d\sin(\theta) \)</span> defines the angle <span class="math notranslate nohighlight">\(\theta\)</span> that the x-rays are diffracted off planes with a separation <span class="math notranslate nohighlight">\(d\)</span>. Only some angles cause diffraction because <span class="math notranslate nohighlight">\(n\)</span> is an integer and the values of <span class="math notranslate nohighlight">\(d\)</span> are determined by the limited number spacing between atoms. As the incident and diffracted angle are equal at <span class="math notranslate nohighlight">\(\theta\)</span> the diffracted rays can be considered to be reflected off the lattice planes. Only the diffracted (reflected) waves that interfere constructively with one another to produce light spots on the detector. Diffraction with crystals is described in more detail in Chapter 9, Fourier Transforms.</p>
 <p>A general wave of frequency <span class="math notranslate nohighlight">\(\omega\)</span> has the form</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \psi=a\cos(\omega t +\varphi)=a\cos(\omega t)\cos(\varphi)-a\sin(\omega t)\sin(\varphi)\]</div>
-<p>where <span class="math notranslate nohighlight">\(\varphi\)</span> is the phase and the expansion formula of <span class="math notranslate nohighlight">\(\cos(x+y)\)</span> was used, see section 5.1. As the phase varies from <span class="math notranslate nohighlight">\(0\to \pi\)</span> the  amplitude of the sine and cosine changes from <span class="math notranslate nohighlight">\(1\)</span> to <span class="math notranslate nohighlight">\(-1\)</span>. In x-ray diffraction the phase is proportional to the perpendicular distance <span class="math notranslate nohighlight">\(x_i\)</span> from the lattice plane to each atom and <span class="math notranslate nohighlight">\(\varphi_i=2\pi x_i/d\)</span></p>
+<p>where <span class="math notranslate nohighlight">\(\varphi\)</span> is the phase and the expansion formula of <span class="math notranslate nohighlight">\(\cos(x+y)\)</span> was used, see section 5.1. As the phase varies from <span class="math notranslate nohighlight">\(0\to \pi\)</span> the  amplitude of the sine and cosine changes from <span class="math notranslate nohighlight">\(1\)</span> to <span class="math notranslate nohighlight">\(-1\)</span>. The phase can only be in the range <span class="math notranslate nohighlight">\(0\to 2\pi\)</span> any other values simply return values in this range because of the periodic nature of sines and cosines. In x-ray diffraction the phase is proportional to the perpendicular distance <span class="math notranslate nohighlight">\(x_i\)</span> from the lattice plane to each atom and <span class="math notranslate nohighlight">\(\varphi_i=2\pi x_i/d\)</span></p>
 <p>The sum of waves from the <span class="math notranslate nohighlight">\(N\)</span> atoms in the unit cell is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \psi = \sum_{i=1}^N a_i\cos(\omega t)\cos(\varphi_i)-\sum_{i=1}^Na_i\sin(\omega t)\sin(\varphi_i) \]</div>
@@ -1568,13 +1586,25 @@
 \[\displaystyle \psi = a_s\cos(\omega t)\cos(\varphi_s) - a_s\sin(\omega t)\sin(\varphi_s) \]</div>
 <p>In detecting infra-red, visible light or even x-rays the intensity <span class="math notranslate nohighlight">\(I\)</span> is always measured, because of the nature of the interaction of electromagnetic radiation with the atoms and molecules in the detector. The <span class="math notranslate nohighlight">\(\omega t\)</span> terms cannot be measured as the frequency is far too high, and is averaged in the measuring process and can therefore be absorbed into the amplitude and so ignored. The intensity is the square of the wave’s amplitude <span class="math notranslate nohighlight">\(I=a_s^2\)</span> and adding the squares of <span class="math notranslate nohighlight">\(a_s\cos(\varphi_s)\)</span> and <span class="math notranslate nohighlight">\(a_s\sin(\varphi_s)\)</span> and using <span class="math notranslate nohighlight">\(\cos^2(\varphi_s)+\sin^2(\varphi_s)=1\)</span> we find that <span class="math notranslate nohighlight">\(a^2\)</span> is produced as</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle   I\equiv  a_s^2 = \left(\sum_{i=1}^N a_i\cos(\varphi_i)\right)^2+ \left(\sum_{i=1}^N a_i\sin(\varphi_i)\right)^2\]</div>
+\[\displaystyle   I\equiv  a_s^2 = \left(\sum_{i=1}^N a_i\cos(\varphi_i)\right)^2+ \left(\sum_{i=1}^N a_i\sin(\varphi_i)\right)^2 \tag{16a}\]</div>
 <p>with overall phase <span class="math notranslate nohighlight">\(\varphi_s\)</span> given by</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle  \tan(\varphi_s) =\frac{\sum_{i=1}^N a_i\sin(\varphi_i)}{\sum_{i=1}^N a_i\cos(\varphi_i)}\]</div>
 <p>A more general derivation of the superposition is given in chapter 9, Fourier Series and Transforms.</p>
 <p>To recap, the intensity <span class="math notranslate nohighlight">\(I\)</span> is that due to all atoms in the unit cell in proportion to their phase <span class="math notranslate nohighlight">\(\varphi_i\)</span> and is unique at each possible scattering angle <span class="math notranslate nohighlight">\(\theta\)</span>, thus in x-ray diffraction from crystals the positional information is contained in the intensity of the measured spots on the detector not their position.</p>
 </div>
+<div class="section" id="example-with-two-waves">
+<h3><strong>Example with two waves</strong><a class="headerlink" href="#example-with-two-waves" title="Permalink to this headline">¶</a></h3>
+<p>Suppose that there is a grating with small apertures separated by <span class="math notranslate nohighlight">\(d\)</span> and a second set also with separation <span class="math notranslate nohighlight">\(d\)</span> but displaced by <span class="math notranslate nohighlight">\(\alpha d\)</span> as shown in the figure below. We can consider these apertures as point emitters producing equal amplitude waves of the same frequency and in phase. They could be, for example, atoms scattering x-rays. At a certain angle the waves with spacing <span class="math notranslate nohighlight">\(d\)</span> have phase difference <span class="math notranslate nohighlight">\(2\pi n\)</span>, i.e. these waves combine constructively to give a line at order <span class="math notranslate nohighlight">\(n\)</span>. The other source has a phase difference relative to the first of <span class="math notranslate nohighlight">\(\varphi = 2\pi\alpha n\)</span>. On the detector the total wave intensity is observed at orders <span class="math notranslate nohighlight">\(n=0,\pm 1,\pm 2\cdots\)</span> and the phases are <span class="math notranslate nohighlight">\(\varphi_0 = 0,  \varphi_1=2\pi n \alpha\)</span> and from eqn. 16a and assuming the amplitudes are unity for simplicity, the intensity for a wave from each sets is,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle  \begin{align} I &amp;=  \left(\cos(0)+\cos(\varphi_1)\right)^2+ \left( \sin(0)+\sin(\varphi_1)\right)^2\\&amp;= (1+\cos(\varphi_1))^2+\sin^2(\varphi_1)\\
+&amp;=2\big(1+\cos(\varphi_1)\big)\end{align}\end{split}\]</div>
+<p>If <span class="math notranslate nohighlight">\(\cos(\varphi_1)+1=0\)</span> or <span class="math notranslate nohighlight">\(\cos(2\pi n\alpha)=-1\)</span> then a bright line will be missing at order <span class="math notranslate nohighlight">\(n\)</span> in the diffraction. This will happen when the cosine has a value of <span class="math notranslate nohighlight">\(-1\)</span> or <span class="math notranslate nohighlight">\(2\pi n\alpha = m\pi\)</span>, i.e. at all odd integer values <span class="math notranslate nohighlight">\(m=\pm 1,\pm 3\cdots \)</span> of <span class="math notranslate nohighlight">\(\pi\)</span>.</p>
+<p><img alt="Drawing" src="../_images/chapter1-fig13b.png" /></p>
+<p>Figure 13b. Two slits (blue dots) each separated by distance <span class="math notranslate nohighlight">\(d\)</span> but one pair is displaced by <span class="math notranslate nohighlight">\(\alpha d\)</span>. This displacement causes a phase shift <span class="math notranslate nohighlight">\(\varphi=2\pi n d\)</span> with respect to the other pair for diffracted order <span class="math notranslate nohighlight">\(n\)</span>.</p>
+</div>
+</div>
+<hr class="docutils" />
 <div class="section" id="hyperbolic-functions">
 <h2>5.6 Hyperbolic functions<a class="headerlink" href="#hyperbolic-functions" title="Permalink to this headline">¶</a></h2>
 <p>The hyperbolic functions are closely related to the circular functions, sine, cosine, etc. of trigonometry. The equation of a (unit) circle is <span class="math notranslate nohighlight">\(x^2 + y^2 = 1\)</span> and in parametric form <span class="math notranslate nohighlight">\(\cos(\theta) = x,\; \sin(\theta) = y\)</span> and any point has coordinates <span class="math notranslate nohighlight">\((\cos(\theta), \sin(\theta))\)</span> }. The equation for a hyperbola is <span class="math notranslate nohighlight">\(x^2 - y^2 = 1\)</span> or, in parametric form, <span class="math notranslate nohighlight">\(\cosh(t) = x,\; \sinh(t) = y\)</span>, but <span class="math notranslate nohighlight">\(t\)</span> is not a measure of angle. The two curves produced are shown in figure 14, and one point plotted on each, at a value of <span class="math notranslate nohighlight">\(\theta\)</span> and <span class="math notranslate nohighlight">\(t =2\pi/3\)</span>. The hyperbolic functions are often pronounced, ‘shine’, ‘cosh’ and ‘than’, with emphasis on the ‘th’.</p>

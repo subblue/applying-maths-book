@@ -3,6 +3,15 @@
 
 # ## Sophisticated Counting.
 
+# In[1]:
+
+
+get_ipython().run_line_magic('matplotlib', 'inline')
+import numpy as np
+import matplotlib.pyplot as plt
+from sympy import *
+
+
 # ### Permutations, Combinations and Probability.
 # 
 # The branch of mathematics dealing with permutations, combinations, and probability is perhaps that most closely related to everyday experience, particularly so if you play cards or do the lottery. There are different ways of counting the number of the arrangements of objects, such as molecules or footballs and these are permutations and combinations.
@@ -359,6 +368,33 @@
 # Now the chance of choosing to get $4$ events out of $12$ is needed. This is found using the binomial distribution $\displaystyle C_4^{12}=\binom{12}{4}=\frac{12!}{4!6!}= 495$ and so the chance of throwing a sequence of $12$ coins with $4$ heads is $495 /4096$. Of course, equation 25a could be used directly with $p=1/2, q=1-p=1/2, n=12, m=4$ or
 # 
 # $$\displaystyle p(12,4,1/2)=\binom{12}{4}\left(\frac{1}{2}\right)^4\left(\frac{1}{2}\right)^{12-4}=\frac{495}{4096}$$
+# 
+# #### **Similar random digits**
+# 
+# What is the probability of finding $20$ similar digits such as $0$, in $1000$ random digits. There are only $10$ types of digits, so using the binomial distribution the probability for $m$ similar digits gives (eqn. 25a)
+# 
+# $$\displaystyle p(1000,m,1/10) =\binom{1000}{m}\left(\frac{1}{10}\right)^m\left(1-\frac{1}{10}\right)^{(1000-m)}$$
+# 
+# and as $m=20$ the probability is $4.9\cdot 10^{-24}$, which seems quite silly. However, there are $10$ types of digits and $1000$ numbers so on average we expect $100$ of any type of digit in the total and if we calculate the chance of there being $100$ digits of any type it is $0.042$ or $4.2$%. What is surprising is how quickly the values fall either side of this number, as you can calculate for yourself.  The calculation is shown below using Sympy. The factorials are extremely large, and Sympy has a function that will calculate these and also handle very large numbers.
+
+# In[2]:
+
+
+n,m,q = symbols('n,m,q')  
+n = 1000
+m = 50
+q = 1/10
+prob = factorial(n)/(factorial(m)*factorial(n-m))*(q)**m*(1-q)**(n-m)
+prob
+
+
+# #### **How many fragments are there in a well in a 96 well plate?**
+# 
+# Labelled DNA fragments are randomly distributed into a $96$ well plate for fluorescence analysis. There are $100$ fragments, what is the chance of having more that one fragment in a well? Using the Binomial distribution  with $n=100, m, q=1/96$, gives the chance of $m$ fragments. Calculating the fraction with $m=0$ and $m=1$ and subtracting these from unity gives the probability. The calculation for $m$ present is
+# 
+# $$\displaystyle p(100,m,1/96) = \binom{100}{m}\left(\frac{1}{96}\right)^m\left(1-\frac{1}{96}\right)^{(100-m)}$$
+# 
+# which is $35.1$% empty wells and $36.9$% with one fragment and $28$% have more than one fragment.
 # 
 # #### **Red shifted Tryptophan fluorescence**
 # 

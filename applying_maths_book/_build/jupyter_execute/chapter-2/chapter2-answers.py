@@ -379,7 +379,7 @@ C  = 1e-6
 # 
 # The scattering factor is a complex number and converted to cosine / sine form is
 # 
-# $$\displaystyle F=\sum_i f_i\big( \cos(\pi (hu_i+kv_i+lw_i)) + i\sin(2\pi (\pi (hu_i+kv_i+lw_i))\big) $$
+# $$\displaystyle F=\sum_i f_i\big( \cos(\pi (hu_i+kv_i+lw_i)) + i\sin(\pi (hu_i+kv_i+lw_i)) \big) $$
 # 
 # which can be put into the form 
 # 
@@ -391,7 +391,7 @@ C  = 1e-6
 # 
 # When the change $h,k,l\to -h,-k,-l$ is made the structure factor becomes,
 # 
-# $$\displaystyle F=\sum_i f_i( \cos(\pi (-hu_i-kv_i-lw_i)) + i\sin(2\pi (\pi (-hu_i-kv_i-lw_i))) $$
+# $$\displaystyle F=\sum_i f_i\big( \cos(\pi (-hu_i-kv_i-lw_i) ) + i\sin(\pi(-hu_i-kv_i-lw_i) )\big) $$
 # 
 # and as $\cos(-x) = \cos(x)$ and $\sin(-x)=-\sin(x)$ becomes
 # 
@@ -401,7 +401,7 @@ C  = 1e-6
 # 
 # $$\displaystyle I=A^2+B^2$$
 # 
-# The identical result for $(h,k,l)$ and $(-h,-k,-l)$  known as Friedel's law. Thus the diffraction image is centro-symmetric, even if the crystal is not. 
+# The identical result for $(h,k,l)$ and $(-h,-k,-l)$  known as Friedel's law. Thus the diffraction image is centro-symmetric, even if the crystal is not. This is a manifestation of the phase problem in solving structures from x-ray diffraction experiments. The fact that intensity is measured and not the amplitude introduces ambiguity.
 # 
 
 # In[ ]:

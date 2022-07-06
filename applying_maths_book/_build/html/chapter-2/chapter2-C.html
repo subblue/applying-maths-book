@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Euler’s theorem &#8212; Applying Maths in the Chemical &amp; Biomolecular Sciences</title>
+    <title>Euler’s theorem, roots of unity, x-ray diffraction structure factor. &#8212; Applying Maths in the Chemical &amp; Biomolecular Sciences</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -208,7 +208,7 @@
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     Euler’s theorem
+     Euler’s theorem, roots of unity, x-ray diffraction structure factor.
     </a>
    </li>
    <li class="toctree-l2">
@@ -1366,7 +1366,7 @@
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#">
-   Euler’s theorem
+   Euler’s theorem, roots of unity, x-ray diffraction structure factor.
   </a>
  </li>
  <li class="toc-h1 nav-item toc-entry">
@@ -1383,7 +1383,9 @@
    </li>
    <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#useful-relationships">
-     Useful relationships
+     <strong>
+      Useful relationships
+     </strong>
     </a>
    </li>
   </ul>
@@ -1392,6 +1394,22 @@
   <a class="reference internal nav-link" href="#examples">
    4.2 Examples
   </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-phase-problem">
+     <strong>
+      The phase problem
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#orthorhombic-crystals">
+     <strong>
+      Orthorhombic crystals
+     </strong>
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -1404,8 +1422,8 @@
         
               <div>
                 
-  <div class="section" id="euler-s-theorem">
-<h1>Euler’s theorem<a class="headerlink" href="#euler-s-theorem" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="euler-s-theorem-roots-of-unity-x-ray-diffraction-structure-factor">
+<h1>Euler’s theorem, roots of unity, x-ray diffraction structure factor.<a class="headerlink" href="#euler-s-theorem-roots-of-unity-x-ray-diffraction-structure-factor" title="Permalink to this headline">¶</a></h1>
 <p>The exponential series is <span class="math notranslate nohighlight">\(\displaystyle e^x = 1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \cdots\)</span>, and similarly a series can be formed in the complex number <span class="math notranslate nohighlight">\(w\)</span>,</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle e^w = 1 + w + \frac{w^2}{2!} + \frac{w^3}{3!} + \cdots\]</div>
@@ -1471,7 +1489,7 @@ therefore, if <span class="math notranslate nohighlight">\(z\)</span> is a compl
 <p>As <span class="math notranslate nohighlight">\(e^{-i\pi} = -1\)</span> and the other term is <span class="math notranslate nohighlight">\(\pm 1\)</span> depending on whether <span class="math notranslate nohighlight">\(n\)</span> is odd or even therefore the product is always <span class="math notranslate nohighlight">\( 1\)</span> if <span class="math notranslate nohighlight">\(n\)</span> is even and <span class="math notranslate nohighlight">\(-1\)</span> if odd, i.e <span class="math notranslate nohighlight">\((-1)^n\)</span>.</p>
 </div>
 <div class="section" id="useful-relationships">
-<h2>Useful relationships<a class="headerlink" href="#useful-relationships" title="Permalink to this headline">¶</a></h2>
+<h2><strong>Useful relationships</strong><a class="headerlink" href="#useful-relationships" title="Permalink to this headline">¶</a></h2>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle \begin{array}\\
 e^{i\pi}&amp;=e^{3i\pi}&amp;=e^{5i\pi}\cdots &amp;= -1\\
@@ -1496,12 +1514,28 @@ and, since <span class="math notranslate nohighlight">\(r = 1\)</span> and <span
 <p><img alt="Drawing" src="../_images/chapter2-fig7.png" /></p>
 <p>Figure 7. Visualizations of the complex number <span class="math notranslate nohighlight">\(e^{i\theta} = \cos(\theta) + i \sin(\theta)\)</span> illustrate that it has a wavelike form.</p>
 <hr class="docutils" />
-<p><strong>(iv) x-ray scattering intensity. The Structure Factor</strong>
-In chapter 9, (Fourier Series and Transforms) and in section 13.6, x-ray diffraction by a single crystal is described. The scattering factor <span class="math notranslate nohighlight">\(F\)</span> described how the intensity of a given ‘reflection’ is related to the coordinates of the atoms in the unit cell <em>via</em> the Miller indices <span class="math notranslate nohighlight">\(( h k l )\)</span> of the planes of atoms. The Miller indices are integers that can be positive, zero or negative. The planes of atoms occur because the unit cell is repeated throughout the crystal to form a lattice of points. The unit cell is the smallest arrangement of atoms from which the whole crystal can be constructed.</p>
+<p><strong>(iv) x-ray diffraction intensity. The Structure Factor</strong>
+In chapter 9, (Fourier Series and Transforms) and in section 13.6, x-ray diffraction by a single crystal is described. The structure factor <span class="math notranslate nohighlight">\(F\)</span> described how the intensity of a given ‘reflection’ is related to the coordinates of the atoms in the unit cell <em>via</em> the Miller indices <span class="math notranslate nohighlight">\(( h k l )\)</span> of the planes of atoms. The Miller indices are integers that can be positive, zero or negative. The planes of atoms occur because the unit cell is repeated throughout the crystal to form a lattice of points. The unit cell is the smallest arrangement of atoms from which the whole crystal can be constructed.</p>
 <p>The fractional position of an atom is <span class="math notranslate nohighlight">\(u,v,w\)</span> making the scattering factor the straightforward formula</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle F= \sum_i f_i e^{i\pi(hu_i+kv_i+lw_i)}\tag{21}\]</div>
-<p>where subscript <span class="math notranslate nohighlight">\(i\)</span> refers to atoms <span class="math notranslate nohighlight">\(i\)</span> in the unit cell. The values <span class="math notranslate nohighlight">\(u, v, w\)</span> are the atom positions as <em>fractions</em> of the sides of the unit cell. The intensity of the diffracted spot is <span class="math notranslate nohighlight">\(I=|F|^2=F^*F\)</span>  which means that the series of terms in <span class="math notranslate nohighlight">\(F\)</span> has to be multiplied by its complex conjugate. The term <span class="math notranslate nohighlight">\(f_i\)</span> is the atomic scattering factor for each type of atom relative to that of a single electron. It is the electrons in an atom that predominantly scatter the x-rays and so <span class="math notranslate nohighlight">\(f_i\)</span> is proportional to the number of electrons, so is larger for heavy atoms than light ones. See Chapter 9-13.6 for details. Notice in particular that the structure factor <em>does not depend on the shape of size of the unit cell</em>, but on the fractional positions of the atoms.</p>
+<p>where subscript <span class="math notranslate nohighlight">\(i\)</span> refers to atoms <span class="math notranslate nohighlight">\(i\)</span> in the unit cell. The values <span class="math notranslate nohighlight">\(u, v, w\)</span> are the atom positions as <em>fractions</em> of the sides of the unit cell. The structure factor can also be put into a sine/cosine form</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle F=\sum_i f_i\big(\cos(\pi(hu_i+kv_i+lw_i))+i\sin(\pi(hu_i+kv_i+lw_i)) \big)\]</div>
+<p>but it is often easier to use as eqn 21.</p>
+<div class="section" id="the-phase-problem">
+<h2><strong>The phase problem</strong><a class="headerlink" href="#the-phase-problem" title="Permalink to this headline">¶</a></h2>
+<p>The intensity of the diffracted spot is <span class="math notranslate nohighlight">\(I=|F|^2=F^*F\)</span>  which means that the series of terms in <span class="math notranslate nohighlight">\(F\)</span> has to be multiplied by its complex conjugate. The term <span class="math notranslate nohighlight">\(f_i\)</span> is the atomic scattering factor for each type of atom relative to that of a single electron. It is the electrons in an atom that predominantly scatter the x-rays and so <span class="math notranslate nohighlight">\(f_i\)</span> is proportional to the number of electrons, so is larger for heavy atoms than light ones. See Chapter 9-13.6 for details. Notice in particular that the structure factor <em>does not depend on the shape or size of the unit cell</em>, but on the fractional positions of the atoms.</p>
+<p>The fact that the detector, e.g. CCD or photon counting array, always measures the intensity <span class="math notranslate nohighlight">\(F^*F\)</span> is the reason the <em>phase problem</em> exists which makes interpreting X-ray diffraction data somewhat complicated. To illustrate, if there are only two atoms then eqn. 21 becomes</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle F= f_0 e^{i\pi\beta_0}+f_1 e^{i\pi\beta_1}\]</div>
+<p>where we let <span class="math notranslate nohighlight">\(\beta_i=hu_i+kv_i+lw_i\)</span> for clarity. The intensity is therefore</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle I=f_0^2+f_1^2 + f_0 f_1\left(e^{i\pi(\beta_0-\beta_1)}+e^{-i\pi(\beta_0-\beta_1)} \right)=f_0^2+f_1^2 + 2f_0 f_1\cos(\beta_0-\beta_1)\]</div>
+<p>and we know <span class="math notranslate nohighlight">\(f_0\)</span> and <span class="math notranslate nohighlight">\(f_1\)</span> as these <em>atomic</em> structure factors can be calculated. However, with one measurement there are two unknowns in the difference term. The <span class="math notranslate nohighlight">\(hkl\)</span> values are known from the positions of the diffracted spots on the detector ( the image has been <em>indexed</em> ), and so a second measurement can be made with different <span class="math notranslate nohighlight">\(k,h,l\)</span>, producing say <span class="math notranslate nohighlight">\(\beta_1-\beta_2\)</span>, but the atomic positions are the same and this process can be continued producing a set of difference equations which can be solved until the structure is determined, i.e. the <span class="math notranslate nohighlight">\(u_i,v_i,w_i\)</span> are known. In particular cases some simplification is possible as shown next.</p>
+</div>
+<div class="section" id="orthorhombic-crystals">
+<h2><strong>Orthorhombic crystals</strong><a class="headerlink" href="#orthorhombic-crystals" title="Permalink to this headline">¶</a></h2>
 <p>In figure 7a (left) is shown a unit cell of an orthorhombic crystal, this means all angles are <span class="math notranslate nohighlight">\(90^\text{o}\)</span> and the sides are of unequal lengths <span class="math notranslate nohighlight">\(a, b, c\)</span>. An atom is at each corner and one atom in the base of the cell, (The second (top) atom is the base of the unit above). On the right is a body-centered unit cell.</p>
 <p><img alt="Drawing" src="../_images/chapter2-fig7a.png" /></p>
 <p>Figure 7a. (a) Base-centred and (b) body-centred orthorhombic unit cells.</p>
@@ -1510,7 +1544,10 @@ In chapter 9, (Fourier Series and Transforms) and in section 13.6, x-ray diffrac
 <p>The series for <span class="math notranslate nohighlight">\(F\)</span> has two terms which are</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle F=f(1 +e^{2i\pi(h/2+k/2+0)})\]</div>
-<p>Although we can form the complex conjugate and calculate <span class="math notranslate nohighlight">\(F^*F=f^2(1 +e^{-i\pi(h+k)})(1 +e^{+i\pi(h+k)})\)</span> in this case it is not necessary because <span class="math notranslate nohighlight">\(h, k, l\)</span> are integers and we know that <span class="math notranslate nohighlight">\(e^{n i\pi}=e^{-n i\pi}=(-1)^2\)</span>. Thus when <span class="math notranslate nohighlight">\(h+k\)</span> is an even number <span class="math notranslate nohighlight">\(F=2f\)</span> and when it is not <span class="math notranslate nohighlight">\(F=0\)</span>. The value of <span class="math notranslate nohighlight">\(l\)</span> has no effect thus refections from indices, for example, <span class="math notranslate nohighlight">\(131, 132, 133\)</span> etc. all have the same intensity, and similarly <span class="math notranslate nohighlight">\(122,123,124\)</span> etc. are all missing with zero structure factor.</p>
+<p>Although we can form the complex conjugate and calculate</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle F^*F=f^2(1 +e^{-i\pi(h+k)})(1 +e^{+i\pi(h+k)})\]</div>
+<p>in this case it is not necessary because <span class="math notranslate nohighlight">\(h, k, l\)</span> are integers and we know that <span class="math notranslate nohighlight">\(e^{n i\pi}=e^{-n i\pi}=(-1)^2\)</span>. Thus when <span class="math notranslate nohighlight">\(h+k\)</span> is an even number <span class="math notranslate nohighlight">\(F=2f\)</span> and when it is not <span class="math notranslate nohighlight">\(F=0\)</span>. The value of <span class="math notranslate nohighlight">\(l\)</span> has no effect thus refections from indices, for example, <span class="math notranslate nohighlight">\(131, 132, 133\)</span> etc. all have the same intensity, and similarly <span class="math notranslate nohighlight">\(122,123,124\)</span> etc. are all missing with zero structure factor.</p>
 <p>The direct calculation is</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle \begin{align}F^*F&amp;=f^2(1 +e^{-i\pi(h+k)})(1 +e^{+i\pi(h+k)})\\&amp;=f^2(2+e^{-i\pi(h+k)}+e^{+i\pi(h+k)})\\&amp;=2f^2\big(1+\cos(\,(h+k)\pi \,)\big)\end{align}\end{split}\]</div>
@@ -1532,6 +1569,7 @@ In chapter 9, (Fourier Series and Transforms) and in section 13.6, x-ray diffrac
 \[\displaystyle F=\left(1+e^{i\pi(h+k)}+e^{i\pi(h+l)}+e^{i\pi(k+l)} \right)\left(f_{Na}+f_{Cl}e^{i\pi(h+k+l)}\right)\]</div>
 <p>which will be zero if any two of the exponentials <span class="math notranslate nohighlight">\(e^{i\pi(h+k)}, e^{i\pi(h+l)}, e^{i\pi(k+l)}\)</span> is negative. This will be the case if any two of <span class="math notranslate nohighlight">\( h, k, l \)</span> is an odd number and the other even or vice versa, i.e. the integers are mixed odd and even.</p>
 <p>In the case that each <span class="math notranslate nohighlight">\(h, k, l\)</span> is even or each odd  then <span class="math notranslate nohighlight">\(1+e^{i\pi(h+k)}+e^{i\pi(h+l)}+e^{i\pi(k+l)}=4 \)</span> and then <span class="math notranslate nohighlight">\(F_{even}=4(f_{Na}+f_{Cl})\)</span> and if odd <span class="math notranslate nohighlight">\(F_{odd}=4(f_{Na}-f_{Cl})\)</span> and the intensity is then the square of these values. Notice that the ‘odd’ intensity may be quite small as it depends on the difference in atomic structure factors which is small if the atoms are close in atomic number and, of course, zero for the same type of atoms.</p>
+</div>
 </div>
 
     <script type="text/x-thebe-config">

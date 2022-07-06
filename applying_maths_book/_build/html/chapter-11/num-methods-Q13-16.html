@@ -208,7 +208,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-2/chapter2-C.html">
-     Euler’s theorem
+     Euler’s theorem, roots of unity, x-ray diffraction structure factor.
     </a>
    </li>
    <li class="toctree-l2">
@@ -1370,8 +1370,8 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#q14-euler-algorithm">
-   Q14 Euler algorithm
+  <a class="reference internal nav-link" href="#q14-reversible-reactions-euler-algorithm">
+   Q14 Reversible reactions. Euler algorithm
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -1404,9 +1404,9 @@
 \[y = \sin(t) + 2e^{-t} - 1\]</div>
 <p>and thus at small times the function should decay exponentially then become sinusoidal.</p>
 </div>
-<div class="section" id="q14-euler-algorithm">
-<h2>Q14 Euler algorithm<a class="headerlink" href="#q14-euler-algorithm" title="Permalink to this headline">¶</a></h2>
-<p>Change the Euler Algorithm to include the modified Euler or Runge - Kutta equations and then solve the system of equations</p>
+<div class="section" id="q14-reversible-reactions-euler-algorithm">
+<h2>Q14 Reversible reactions. Euler algorithm<a class="headerlink" href="#q14-reversible-reactions-euler-algorithm" title="Permalink to this headline">¶</a></h2>
+<p>(a) Change the Euler Algorithm to include the modified Euler or Runge - Kutta equations and then solve the system of equations</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \frac{dy}{dt} = -(k_f + k_2)y + k_1x,\qquad \frac{dx}{dt} = -(k_1 + k_e)x + k_2y\]</div>
 <p>over the range <span class="math notranslate nohighlight">\(0 \le t \le 1\)</span> with initial conditions <span class="math notranslate nohighlight">\(y_0 = 1,\; x_0 = 0\)</span> and with constants <span class="math notranslate nohighlight">\(k_f = 10,\; k_1 =2.5,\; k_2 = 2, k_e = 5\)</span>. These equations describe two coupled species as shown in the reaction scheme and are similar to the kinetics for excimers described in Q 10.30.</p>
@@ -1415,6 +1415,15 @@
 y &amp;\overset{k_2} { \underset{k_1}{ \overset{\longrightarrow} \longleftarrow } } &amp; x \\
 \quad\downarrow k_f &amp; &amp; \quad \downarrow k_e
 \end{array}\end{split}\]</div>
+<p>(b) The overall reaction between <span class="math notranslate nohighlight">\(\mathrm{N_2O_4}\)</span> and <span class="math notranslate nohighlight">\(\mathrm{NO_2}\)</span> can be written as</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle A \;\overset{k_1}{ \underset{k_2}{ \overset{\longrightarrow} \longleftarrow } } \;2B \]</div>
+<p>where <span class="math notranslate nohighlight">\(A\equiv \mathrm{N_2O_4}\)</span> and <span class="math notranslate nohighlight">\(B\equiv \mathrm{NO_2}\)</span>. Experimentally measured rate constants at <span class="math notranslate nohighlight">\(25\;^\text{o}C\)</span> are <span class="math notranslate nohighlight">\(k_1=1.7\cdot 10^5\,\mathrm{s^{-1}}\)</span> and <span class="math notranslate nohighlight">\(k_2=1 \cdot 10^6\,\mathrm{atm\,s^{-1}}\)</span> and <span class="math notranslate nohighlight">\(A_0= 2\)</span> atm. (It should be noted that the actual mechanism follows a Lindemann ‘Unimolecular reaction’ scheme).</p>
+<p>(i) Write down and numerically solve the rate equations using the Euler method. Put the Euler algorithm into a subroutine or procedure called a ‘def’ in Python which is then called to start the calculation. Pass the functions representing the rate equations into this as variables.</p>
+<p>(ii) Work out the equilibrium concentrations of A and B.</p>
+<p>(iii) When equilibrium is established describe the effect of adding a fraction of B to the reaction.</p>
+<p>(iv) Now calculate the effect you describe assuming that the amount of B only is increased by <span class="math notranslate nohighlight">\(1/5\)</span>. Modify the Euler algorithm as necessary.</p>
+<p><strong>Strategy</strong> It is easier to work in units of microseconds.  In (iii) use le Chatelier’s principle if necessary to predict what happens.</p>
 </div>
 <div class="section" id="q15-michaelis-menten-scheme">
 <h2>Q15 Michaelis - Menten scheme<a class="headerlink" href="#q15-michaelis-menten-scheme" title="Permalink to this headline">¶</a></h2>
