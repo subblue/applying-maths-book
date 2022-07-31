@@ -3,6 +3,9 @@
 
 # # References
 
+# 
+# ( Journal references follow as;  $\quad$  Author(s) (year), journal name, volume: page number) 
+# 
 # Abramowicz, M. & Stegun, I. (1965), Handbook of Mathematical Functions, Dover. 
 # 
 # Acheson, D. (1997), From Calculus to Chaos, Oxford University Press.
@@ -40,7 +43,7 @@
 # 
 # Bernal, J. D. (1973), The Extension of Man, Paladin.
 # 
-# Bernstein, R. B. (1982), Chemical Dynamics tia Molecular Beam and Laser Techniques, Oxford Science,
+# Bernstein, R. B. (1982), Chemical Dynamics via Molecular Beam and Laser Techniques, Oxford Science,
 # Clarendon Press.
 # 
 # Bertinotti, F. & Giacomello, G. (1956), 'The Structure of Heterocyclic Compounds Containing
@@ -88,6 +91,8 @@
 # 
 # Christie, M., Norrish, R., & Porter, G. (1952), 'The Recombination of Atoms. I. Iodine Atoms in the Rare Gases’, Proceedings of the Royal Society London 216A: 152.
 # 
+# Cochran, W., Crick, F., & Vand, V., (1952) Acta Crystallog. 5: 581.
+# 
 # Cohen, E. R., Cvitas, T., Frey, J. G., & Kuchitsu, K. (2007), Quantities, Units and Symbols in Physical Chemistry, 3rd edition, RSC Press. (Mills et al. 1993 is earlier edition.)
 # 
 # Cohen-Tannoudji, C., Diu, B., & Laloë, F. (1977), Quantum Mechanics, Wiley-Interscience.
@@ -98,6 +103,8 @@
 # Cotton, F. A. (1990), Chemical Applications of Group Theory, 3rd edition, Wiley.
 # 
 # Crank, J. (1979), The Mathematics of Diffusion, Oxford University Press.
+# 
+# Crouse, D., (2007) J. Chem. Educ., 84: 803.
 # 
 # Daune, M. (1999), Molecular Biophysics, Oxford University Press.
 # 
@@ -218,6 +225,8 @@
 # 
 # Lotka, A. (1925), Elements of physical biology, Williams and Wilkins (Reprinted 1956 by Dover as
 # Elements of mathematical biology).
+# 
+# Lucas, A., Ph. Lambin, Ph., Mairesse, R. and Mathot, M. (1999) J. Chem. Educ., 76: 378.  
 # 
 # Margenau, H. & Murphy, G. (1943), The Mathematics of Physics & Chemistry, Van Nostrand.
 # 
@@ -352,6 +361,8 @@
 # 
 # Swalen, J. & Ibers, J. J. (1962), 'Potential Function for the Inversion of Ammonia’, Chem. Phys. 36: 1914. Szabo, A. & Ostlund, N. (1982), Modern Quantum Chemistry, Dover.
 # 
+# Thompson, J., Braun, G., Tierney, D.,  Wessel L., &  Schmitzer, H., (2018) Am. J. Phys. 86: 95
+# 
 # Tronrud, D. E., Schmid, M. F., & Matthews, B. W. (1986), J. Mol. Biol. 188: 443.
 # 
 # Turro, N. (1978), Molecular Photochemistry, Benjamin-Cummings.
@@ -391,3 +402,9 @@
 # 
 # Zimm. B. H. & Bragg, J. K. J. (1959), 'Theory of the Phase Transition between Helix and Random Coil in
 # Polypeptide Chains’, Chem. Phys. 31: 526.
+
+# In[ ]:
+
+
+
+
