@@ -14,11 +14,11 @@
 # 
 # Alexander, R. M. (1996), Optima for Animals, Princeton University Press.
 # 
-# Allen, J. & Eberly, J. H. (1987), Optical Resonance and Two Letel Atoms, Dover.
+# Allen, J. & Eberly, J. H. (1987), Optical Resonance and Two Level Atoms, Dover.
 # 
 # Allen, M. P. & Tilldesley, D. J. (1987), Computer Simulation of Liquids, Oxford University Press. 
 # 
-# Altringham, J. (1996), Bats: Biology and Behatiour, Oxford University Press.
+# Altringham, J. (1996), Bats: Biology and Behaviour, Oxford University Press.
 # 
 # Aratyn, H. & Rasinariu, C. (2006), A Short Course in Mathematical Methods with Maple, World Scientific. 
 # 
@@ -87,7 +87,9 @@
 # 
 # Cherepanov, D. A. & Junge, W. (2001), 'Viscoelastic Dynamics of Actin Filaments Coupled to Rotary F- ATPase: Curvature as an Indicator of the Torque’, Biophys. J. 81: 1234.
 # 
-# Chandrasekhar, S. (1943) 'Stochastic problems in physics and astromomy', Rev. Mod. Phys. 15: 1.
+# Chandrasekhar, S. (1943) 'Stochastic problems in physics and astronomy', Rev. Mod. Phys. 15: 1.
+# 
+# Chandrasekhar, S. (1968) 'An Introduction to the Study of Stellar Structure', Dover.
 # 
 # Christie, M., Norrish, R., & Porter, G. (1952), 'The Recombination of Atoms. I. Iodine Atoms in the Rare Gases’, Proceedings of the Royal Society London 216A: 152.
 # 
@@ -133,7 +135,7 @@
 # Gerrard, A. & Burch, J. M. (1975), Introduction to Matrix Methods in Optics, Wiley.
 # 
 # Giacovazzo, C., Monaco, H. L., Viterbo, D., Scordari, F., Gilli, G., Zanotti, G., & Catti, M. (1992), IUCR
-# Texts on Crystallography: tol. 2 Fundamentals of Crystallography, edited by C. Giacovazzo, Oxford
+# Texts on Crystallography: vol. 2 Fundamentals of Crystallography, edited by C. Giacovazzo, Oxford
 # University Press.
 # 
 # Gibbons, C., Montgomery, M. G., Leslie, A. G. W., & Walker, J. E. (2000), 'The Structure of the Central
@@ -144,14 +146,14 @@
 # Gillespie, D. J. (1977), 'Exact Stochastic Simulation of Coupled Chemical Reactions’, Phys. Chem. 81:
 # 2340.
 # 
-# Gillespie, D. J. (2007), 'Stochastic Simulation of Chemical Kinetics’, Annual Retiews of Physical
+# Gillespie, D. J. (2007), 'Stochastic Simulation of Chemical Kinetics’, Annual Reviews of Physical
 # Chemistry 58: 35.
 # 
 # Goldberg, S. (1986), Probability, An Introduction, Dover.
 # 
 # Goldstein, H. (1980), Classical Mechanics, Addison-Wesley.
 # 
-# Gordy, W., Smith, W., & Trambarulo, R. (1953), Microwate Spectroscopy, Dover.
+# Gordy, W., Smith, W., & Trambarulo, R. (1953), Microwave Spectroscopy, Dover.
 # 
 # Gorry, P. A. (1990), 'General Least-Squares Smoothing and Differentiation by the Convolution
 # (Savitzky-Golay) Method’, Analytical Chemistry 63: 570.
@@ -187,6 +189,8 @@
 # 
 # James, J. F. (1995), A Student’s Guide to Fourier Transforms, Cambridge University Press.
 # 
+# Jeans, J. (1982) 'An Introduction to the Kinetic Theory of Gases' Cambridge University Press.
+# 
 # Jeffery, A. (1990), Linear Algebra and Ordinary Differential Equations, Blackwell Scientific.
 # 
 # Jolliffe, I. T. (2002), Principal Component Analysis, Springer.
@@ -194,7 +198,7 @@
 # Kermack, W. O. & McKendrick, A. G. (1927), 'A Contribution to the Mathematical Theory of
 # Epidemics’, Proceedings of the Royal Society London A 115: 700.
 # 
-# Knobel, P. (2000), An Introduction to the Mathematical Theory of Wates, American Mathematical
+# Knobel, P. (2000), An Introduction to the Mathematical Theory of Waves, American Mathematical
 # Society.
 # 
 # Koryta, J., Dvorak, J., & Kavan, L. (1993), Principles of Electrochemistry, Wiley.
@@ -244,7 +248,7 @@
 # 
 # May, R. & Oster, G. (1976), 'Bifurcations and Dynamic Complexity in Simple Ecological Models’, American Naturalist 110: 573.
 # 
-# Maynard Smith, J. (1995), The Theory of Etolution, Cambridge University Press.
+# Maynard Smith, J. (1995), The Theory of Evolution, Cambridge University Press.
 # 
 # McKie, D. & McKie, C. (1992), Essentials of Crystallography, Blackwell.
 # 
@@ -262,7 +266,7 @@
 # Molloy, K. (2004), Group Theory for Chemists, Horwood.
 # 
 # Morse, P. M. (1929), 'Diatomic Molecules According to the Wave Mechanics. II. Vibrational Levels’,
-# Physical Retiew 34: 57.
+# Physical Review 34: 57.
 # 
 # Murray, J. D. (2002), Mathematical Biology 1 An Introduction, Springer.
 # 
@@ -293,7 +297,7 @@
 # 
 # Pilling, M. J. & Seakins, P. (2005), Reaction Kinetics, Oxford University Press.
 # 
-# Polanyi, J. & Schreiber, J. (1977), 'The Reaction F + H 2®HF + H: A Case Study in Reaction Dynamics’,
+# Polanyi, J. & Schreiber, J. (1977), 'The Reaction $\mathrm{F + H_2 \to HF + H}$: A Case Study in Reaction Dynamics’,
 # Faraday Disc. Chem. Soc. 62: 267.
 # 
 # Porter, G. & Smith, J. (1961), 'The Recombination of Atoms. III. Temperature Coefficients of Iodine
@@ -316,7 +320,7 @@
 # Reif, M., Gautel, M., Oesterhelt, F., Fernandez, J. M., & Gaub, H. E. (1977), 'Reversible Unfolding of
 # Individual Titin Immunoglobulin Domains by AFM’, Science 276: 1109.
 # 
-# Richards, D. (2002), Adtanced Mathematical Method with Maple, Cambridge University Press.
+# Richards, D. (2002), Advanced Mathematical Method with Maple, Cambridge University Press.
 # 
 # Rigby, M., Smith, E. B., Wakenham, W. A., & Maitland, G. C. (1986), The Forces between Molecules,
 # Oxford Science Clarendon Press.
@@ -331,14 +335,14 @@
 # Sanders, J. K. M. & Hunter, B. K. (1987), Modern NMR Spectroscopy, A Guide for Chemists, Oxford
 # University Press.
 # 
-# Scott, S. K. (1995), Oscillations, Wates and Chaos in Chemical Kinetics, Oxford University Press.
+# Scott, S. K. (1995), Oscillations, Waves and Chaos in Chemical Kinetics, Oxford University Press.
 # 
-# Senent, M. L., Smeyers, Y. G., Dominquez-Gómes, R., & Villa, M. J. (2000), 'Ab Initio Determination of
+# Senent, M. L., Smeyers, Y. G., Dominquez-Gómes, R., & Villa, M. J. (2000), 'Ab initio Determination of
 # the Far Infrared Spectra of Some Isotopic Varieties of Ethanol’, Chem. Phys. 112: 5809.
 # 
 # Shey, H. (1993), Dit, Grad, Curl and All That, W. Norton.
 # 
-# Shingareva, I. & Lizarraga-Celaya, C. (2007), Maple and Mathematica: A Problem Solting Approach for
+# Shingareva, I. & Lizarraga-Celaya, C. (2007), Maple and Mathematica: A Problem Solving Approach for
 # Mathematics, Springer-Verlag.
 # 
 # Siegman, A. (1986), Lasers, University Science Books.
@@ -383,7 +387,7 @@
 # Molecular Wave Packet’, Physical Retiew 54: R37.
 # 
 # Waller, A. & Liddington, R. C. (1990), 'Refinement of a Partially Oxygenated T State Human
-# Haemoglobin at 1.5 Å Resolution’, Acta Crystallogr. B 46: 409.
+# Haemoglobin at 1.5 Å Resolution’, Acta Cryst. B 46: 409.
 # 
 # Weast, R. C. (ed.) CRC Handbook of Chemistry and Physics, Chemical Rubber Co. (Any edition will do.
 # This book is colloquially known as the 'Rubber Book’.)
@@ -402,6 +406,12 @@
 # 
 # Zimm. B. H. & Bragg, J. K. J. (1959), 'Theory of the Phase Transition between Helix and Random Coil in
 # Polypeptide Chains’, Chem. Phys. 31: 526.
+
+# In[ ]:
+
+
+
+
 
 # In[ ]:
 

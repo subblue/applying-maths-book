@@ -11,9 +11,6 @@ get_ipython().run_line_magic('matplotlib', 'inline')
 import numpy as np
 import matplotlib.pyplot as plt
 from sympy import *
-#from scipy.integrate import quad,odeint,solve_ivp
-#from scipy import linalg
-#from scipy.optimize import fsolve
 init_printing()                         # allows printing of SymPy results
 plt.rcParams.update({'font.size': 16})  # set font size for plots
 
@@ -264,6 +261,57 @@ simplify(integrate( integrate(eq,(u,1,oo))   ,(v,-1,1)   ) )          # Double i
 # 
 # which shows that the formation of a chemical bond always involves an increase in the  kinetic energy of all electrons and a decrease in potential energy.
 # 
+
+# ### 12.6 Footnote: The Viral Theorem
+# 
+# The general motion of a cloud of particles can be studied with the Virial Theorem. These 'particles' may be gaseous molecules, or dust or even stars, but in each case the whole assembly must not be subject to any external forces. Our derivation follows Chandrasekhar (1968) and Jeans (1982). Newton's equation, force equals mass times acceleration, is a starting point,
+# 
+# $$\displaystyle X=m\frac{d^2x}{dt^2}, \quad Y=m\frac{d^2y}{dt^2},\quad  Z=m\frac{d^2z}{dt^2}$$
+# 
+# where $x,y,x$ are the particle's position, which is a function of time, $t$ and $X,Y,Z$ are component forces along directions $x,y,z$. The kinetic and potential energy can be calculated by multiplying the force in each direction by $x,y,z$ as appropriate, viz,
+# 
+# $$\displaystyle xX+yY+zZ = m\left( x\frac{d^2x}{dt^2}+y\frac{d^2y}{dt^2}+z\frac{d^2z}{dt^2} \right)$$
+# 
+# Using the identity
+# 
+# $$\displaystyle \frac{d}{dt}\left( x\frac{dx}{dt} \right) = x\frac{d^2x}{dt^2}+\left( \frac{dx}{dt}\right)^2$$
+# 
+# the total expression becomes
+# 
+# $$\displaystyle \begin{align}xX+yY+zZ &=m\frac{d}{dt}\left( x\frac{dx}{dt}+y\frac{dy}{dt}+z\frac{dz}{dt} \right)-m\left( \left( \frac{dx}{dt}\right)^2+\left( \frac{dy}{dt}\right)^2+ \left( \frac{dz}{dt}\right)^2\right)\\
+# &=  \frac{m}{2}\frac{d}{dt}\left( \frac{d}{dt}(x^2+y^2+z^2) \right)- mv^2 \end{align}$$
+# 
+# and as $dx/dt$ is the velocity component along the $x$ axis, and similarly for $y$ and $z$, the second term on the right hand side is twice the total kinetic energy.  As time progresses the term $\frac{d}{dt}(x^2+y^2+z^2)$ fluctuates in value but has no tendency to increase or decrease, because no external forces act, thus the time average is zero and this term disappears. As $mx^2$ represents the component of angular momentum along the $x$ axis, if we define the distance from the origin as $r^2= x^2+y^2+z^2$ then $mr^2$ represents the angular momentum and if this does not change with time this term is zero. 
+# 
+# Summing over all the molecules gives, 
+# 
+# $$ \sum m v^2 = -\sum (xX+yY+zZ) $$
+# 
+# and the right hand term is called the 'Virial of Clausius' and represents the potential energy since $X,Y,Z$ are forces. The left hand term is twice the kinetic energy. This  equation is sometimes written as, for example,
+# 
+# $$\displaystyle 2\text{T}+\Omega =0$$
+# 
+# where $\text{T}$ is the kinetic energy and $\Omega$ the potential energy.
+# 
+# What form the Virial takes depends on the particular situation. If dealing with dust particles in space where the density is minute, gravity between particles is important because this is the only long range force, but if dealing with molecules intermolecular forces will dominate, or if an ideal gas is in a vessel then wall collisions define the Virial since for an ideal gas intermolecular forces are absent.
+# 
+# If the force between two molecules is of the form $\varphi(r)$ at distance apart $r$, where $r^2=(x-x')^2+(y-y')^2+(z-z')^2$ and the particles centres are at $x,y,z$ and $x',y',z'$ and $X,Y,Z$ and $X',Y',Z'$ components of the forces acting on them, then, 
+# 
+# $$\displaystyle X=\varphi(r)\frac{x-x'}{r},\quad X'=-X,\quad \text{etc.}$$
+# 
+# and the force between them is
+# 
+# $$\displaystyle xX+x'X'=\frac{\varphi(r)}{r}(x-x')^2$$
+# 
+# giving in total,
+# 
+# $$\displaystyle \frac{\varphi(r)}{r}\left((x-x')^2+(y-y')^2+(z-z')^2\right)=r\varphi(r)$$
+# 
+# In this case the virial is
+# 
+# $$\displaystyle \sum (xX+yY+zZ)=\sum\sum r\varphi(r)$$
+# 
+# where the sum is double and is now over all particles and $N(N-1)/2$ pairs pairs of particles. If the interaction is due to gravity then $\varphi(r)=-Gmm'/r^2$ for two masses $m,m'$ and $G$ is the gravitational constant. 
 
 # In[ ]:
 
