@@ -456,7 +456,7 @@ quant(x,n)
 # This means that the chance that $| x - \langle x \rangle |$ is numerically greater than $k\sigma$, is less than $1/k^2$, or, equivalently, that no more that $1/k^2$ data points should be more than $k$ standard deviations from the mean or, which is the same, that $1 - 1/k^2$ are within $k$ standard deviations. The value of $k \gt 1$ is for us to choose. The data described above in Section 3.4 for the $^{12}$C / $^{14}$N ratio has a mean of $50.22$ and a (sample) standard deviation of $s = 0.466$. If $k = 2$ is chosen then $1 - 1/4 = 0.75$ or $75$% of the values should fall in the range $50.22 \pm 2 \cdot 0.466$. If $k = 3$, then $89$% of values fall in the range $50.22 \pm 3 \cdot 0.466$ and for any points that do not fall in this range there is a sound reason for ignoring them.
 # 
 # #### **Chauvenet**
-# An alternative method of removing outliers has been given by Chauvenet and this considers both the number of data points and their value. We use this method to _reject a data point_ if its deviation from the mean have a probability of occurring that is _less than_ $1/(2n)$ for $n$ data points. 
+# An alternative method of removing outliers has been given by Chauvenet and this considers both the number of data points and their value. We use this method to _reject a data point_ if its deviation from the mean have a probability of occurring that is _less than_ $1/(2n)$ for $n$ data points. This method does not work well on small datasets.
 # 
 # In the set of data $89,\;120,\;94,\;110,\;105,\;108,\;85,\;83,\;101,\;95$ the largest value $120$ may be an outlier. This point is $21$ from the mean $\langle x\rangle = 99$ and  we check that the probability from $\langle x\rangle -21 \to \langle x\rangle +21$ is less that $1/2n$ which is $1/20$ as there are 10 points.
 # 
@@ -470,42 +470,43 @@ quant(x,n)
 # 
 # $$\displaystyle p=\frac{1}{2}\mathrm{erf}\left(\frac{x-\langle x\rangle }{\sqrt{2}\sigma}\right)\Bigg|_a^b $$
 # 
-# where erf is the error function. An example is shown below.
+# where erf is the error function. An example is shown below, and as the $1-p$ is greater than $1/(2n)$ we do not reject the data point. If the value were $130$ this method would indicate that it should be removed.
 
 # In[10]:
 
 
 # Algorithm: Chauvenet criterion to test for outliers
 
-c = np.array([89,120,94,110,105,108,85,83,101,95])  
+c = np.array([89,120,94,110,105,108,85,83,101,95])  # data assumed positive
+
+indx = 1           # point to check in the list. index starts at zero
 n = len(c)
 limit= 1/(2*n)
 xbar = np.sum(c)/n
-x0   = c[1]              # point 1 in the list 
-if x0 > xbar:
-    b = x0
-    a = xbar - np.abs(xbar-x0)
+x0   = c[indx]
+delta= np.abs(x0 - xbar)
+if x0 >= xbar:
+    b = xbar + delta
+    a = xbar - delta 
 else:
-    a = x0
-    b = xbar + np.abs(xbar-x0)
+    a = xbar - delta
+    b = xbar + delta  
 print('{:s}{:6.3f} {:6.3f}'.format('limits ', a,b))
 s = 0
 for i in range(n):
-    s = s+(c[i]-xbar)**2
+    s = s + (c[i] - xbar)**2
 sig = np.sqrt(s/(n-1))
 print('{:s}{:6.3f} {:6.3f}'.format('mean and std dev ',xbar,sig))   
 
-p = 0.5*(erf((b-xbar)/(sig*np.sqrt(2) )) - erf((a-xbar)/(sig*np.sqrt(2) )) )
+p = 0.5*(erf((b - xbar)/(sig*np.sqrt(2.0) )) - erf((a - xbar)/(sig*np.sqrt(2.0) )) )
 
-print('{:s} {:6.3f} {:s} {:6.3f}'.format('1-p =', 1-p, ', 1/(2n) =', 1/(2*n)))
+print('{:s} {:6.3g} {:s} {:6.3f}'.format('1-p =', 1.0-p, ', 1/(2n) =', 1/(2*n)))
 if 1 - p > 1/(2*n):
     print('retain point')
 else:
     print('remove point')
 
 
-# and as the $1-p$ is greater than $1/(2n)$ we do not reject the data point.
-# 
 # ### 3.7 Standard deviation in a single measurement
 # 
 # When only a single measurement has been made, as is often the case in an undergraduate laboratory, the question arises as to what standard deviation it should be given. In such laboratories, many other measurements will undoubtedly have been made so the mean and standard deviation for the experiment will be known. However, in the absence of such knowledge we can appeal to the Poisson distribution (see Section 6.4) to determine what value should be given to the standard deviation. It turns out that by calculating the maximum likelihood function that the standard deviation is the square root of the result itself. Thus if the result has a value $k$ then $\sigma_k =\sqrt{k}$.
