@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## Solving rate equations 
+# # Solving rate equations 
 
 # In[1]:
 
@@ -14,7 +14,7 @@ import matplotlib.pyplot as plt
 plt.rcParams.update({'font.size': 16})  # set font size for plots
 
 
-# ### 2.1 Concept and motivation
+# ## 2.1 Concept and motivation
 # 
 # A Monte Carlo method of solving differential equations has been developed by Gillespie (1977, 2007) and is just as applicable to chemical reactions as it is to describing S-I-R diseases or predator - prey populations. This method is equivalent to any other numerical method in the sense that it is purely mathematical, no science enters into the method of solution, that is all done when the rate equations are written down. In comparison, in Section 3, a heuristic way of solving problems will be described, and in this case, the science behind the processes involved is an essential part of the method.
 # 
@@ -22,7 +22,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # If the reacting molecules are considered individually, the various times that would be observed between reactions have a Poisson distribution, which is a distribution of many events with each having a low probability, see chapters 1 & 13, the probability of a reaction is therefore also described by a Poisson distribution. Monte Carlo methods mimic the Poisson behaviour of molecules by considering the chance (probability) that no reaction will occur during a certain period of time, which is followed by another smaller time interval during which a reaction does occur. The method, therefore, involves working out these two probabilities and multiplying them together.
 # 
-# ### 2.2 The Gillespie method
+# ## 2.2 The Gillespie method
 # 
 # When two species $A$ and $B$ react, $A + B \to product$, the rate of reaction is $k\mathrm{[A][B]}$ where $k$ is the rate constant and $\mathrm{[A]}$ and $k\mathrm{[B]}$ the concentrations at any time during the reaction, which clearly change with time. To work out what happens in each small time interval means calculating the change in the number of reactant molecules in a given volume. Doing this means calculating two things. The first is the time at which any of possibly several reactions will occur, and the second is to decide which reaction this will be.
 # In the reaction $A + B \to product$, there is only one type of reaction but there are very many schemes where there are two or more reactions; for example, the photo-dissociation of halocarbons with UV light and subsequent reactions to destroy ozone.
@@ -85,7 +85,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # Normally, in dealing with chemical kinetics, $N_A$ is so vast that $\displaystyle a = k_2\frac{N_A^2}{2}$, but in the Monte Carlo simulations, $N_A$ is small because individual molecules are dealt with, and the exact formula must be used. Thus, macroscopic, (kinetic), chemical equations are only valid when deviations from the Poisson distribution are negligible.
 # ____
 # 
-# #### **Comment  on validity**
+# ### **Comment  on validity**
 # 
 # The term 
 # 
@@ -124,7 +124,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # In the case of a termolecular reaction $\mathrm{ A + B + C} \rightarrow $ when the probability of three molecules simultaneously colliding is calculated the probability the chance that this occurs in  an infinitesimal time interval $d t$ is proportional to $dt^2$ so becomes vanishingly small and thus does not occur with any physical reality. It is often convenient, however, to consider a termolecular scheme as a simplified approximation to a scheme such as $N_A+N_B \leftrightharpoons X^*; \; X^* + N_C \longrightarrow$ 
 # 
-# #### **Outline of method**
+# ### **Outline of method**
 # 
 # The outline plan for the Gillespie algorithm is actually quite simple
 # 

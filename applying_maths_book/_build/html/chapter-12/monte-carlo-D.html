@@ -4,11 +4,13 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>The Metropolis algorithm &#8212; Applying Maths in the Chemical &amp; Biomolecular Sciences</title>
     
-  <link href="../_static/css/theme.css" rel="stylesheet">
-  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,40 +20,39 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Solutions Q1 - 6" href="monte-carlo-answers1-6.html" />
@@ -63,7 +64,21 @@
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -72,9 +87,10 @@
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -92,14 +108,15 @@
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../intro.html">
-   Applying Maths in the Chemical and Biomolecular Sciences.
-  </a>
- </li>
-</ul>
-<ul class="current nav bd-sidenav">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Applying Maths in the Chemical and Biomolecular Sciences.
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../chapter-1/chapter1-intro.html">
    1. Numbers, Equations, Operators, and Algorithms.
@@ -204,11 +221,6 @@
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-2/chapter2-Q-10-13.html">
      Questions 10 -13
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-2/chapter2-C.html">
-     Euler’s theorem, roots of unity, x-ray diffraction structure factor.
     </a>
    </li>
    <li class="toctree-l2">
@@ -337,7 +349,7 @@
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../chapter-4/integration-intro.html">
-   4. Integration.
+   4 Integration.
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
   <label for="toctree-checkbox-4">
@@ -377,7 +389,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-4/integration-D.html">
-     Calculating an Average Value.
+     Calculating an Average.
     </a>
    </li>
    <li class="toctree-l2">
@@ -407,7 +419,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-4/integration-G.html">
-     Calculating the energy of a chemical bond using molecular orbitals
+     Calculating the energy of a Chemical Bond using Molecular Orbitals
     </a>
    </li>
    <li class="toctree-l2">
@@ -688,7 +700,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-7/matrices-D.html">
-     Rotation matrices: moving molecules
+     Rotation matrices: moving molecules. Coordinate transform as rotation.
     </a>
    </li>
    <li class="toctree-l2">
@@ -757,23 +769,13 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-7/matrices-K.html">
-     Calculating a bond length using moments of inertia
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-7/matrices-Q61.html">
-     Question 61
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="../chapter-7/matrices-L.html">
      Principal axes for Moments of Inertia
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-7/matrices-Q62.html">
-     Question 62
+    <a class="reference internal" href="../chapter-7/matrices-Q61-62.html">
+     Question 61 - 62
     </a>
    </li>
    <li class="toctree-l2">
@@ -1004,7 +1006,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-G.html">
-     PDE examples continued
+     PDE Continued
     </a>
    </li>
    <li class="toctree-l2">
@@ -1096,7 +1098,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-11/num-methods-answers8-12.html">
-     Solutions Q8 - 12
+     Solutions Q 8 - 12
     </a>
    </li>
    <li class="toctree-l2">
@@ -1258,112 +1260,227 @@
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/chapter-12/monte-carlo-D.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/subblue/applying-maths-book"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/subblue/applying-maths-book/issues/new?title=Issue%20on%20page%20%2Fchapter-12/monte-carlo-D.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        
-    </div>
-</div>
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/subblue/applying-maths-book/main?urlpath=lab/tree/applying_maths_book/chapter-12/monte-carlo-D.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        <a class="colab-button" href="https://colab.research.google.com/github/subblue/applying-maths-book/blob/main/applying_maths_book/chapter-12/monte-carlo-D.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
-                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
-                    src="../_static/images/logo_colab.png"
-                    alt="Interact on Colab">Colab</button></a>
-        
-        
-    </div>
-</div>
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/subblue/applying-maths-book/main?urlpath=lab/tree/applying_maths_book/chapter-12/monte-carlo-D.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://colab.research.google.com/github/subblue/applying-maths-book/blob/main/applying_maths_book/chapter-12/monte-carlo-D.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/subblue/applying-maths-book"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/subblue/applying-maths-book/issues/new?title=Issue%20on%20page%20%2Fchapter-12/monte-carlo-D.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/chapter-12/monte-carlo-D.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#introduction-to-the-metropolis-algorithm">
    Introduction to the Metropolis algorithm
@@ -1435,17 +1552,104 @@
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>The Metropolis algorithm</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction-to-the-metropolis-algorithm">
+   Introduction to the Metropolis algorithm
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#basis-of-the-algorithm">
+   Basis of the Algorithm
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#average-energy-heat-capacity-and-displacement-of-a-harmonic-oscillator">
+   6.1 Average energy,  heat capacity  and displacement of a harmonic oscillator
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#maxwell-distribution">
+     <strong>
+      Maxwell distribution
+     </strong>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ising-spin-model">
+   6.2 Ising spin model
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#d-spin-model">
+   1D spin model
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#calculating-the-entropy">
+     <strong>
+      Calculating the Entropy
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#phase-change">
+     <strong>
+      Phase Change
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#magnetisation">
+     <strong>
+      Magnetisation
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#algebraic-calculation-of-1d-ising-spin-energy">
+     <strong>
+      Algebraic calculation of 1D Ising spin energy
+     </strong>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   2D Spin model
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
               <div>
                 
-  <div class="section" id="the-metropolis-algorithm">
-<h1>The Metropolis algorithm<a class="headerlink" href="#the-metropolis-algorithm" title="Permalink to this headline">¶</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="the-metropolis-algorithm">
+<h1>The Metropolis algorithm<a class="headerlink" href="#the-metropolis-algorithm" title="Permalink to this headline">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
@@ -1458,8 +1662,8 @@
 </div>
 </div>
 </div>
-<div class="section" id="introduction-to-the-metropolis-algorithm">
-<h2>Introduction to the Metropolis algorithm<a class="headerlink" href="#introduction-to-the-metropolis-algorithm" title="Permalink to this headline">¶</a></h2>
+<section id="introduction-to-the-metropolis-algorithm">
+<h2>Introduction to the Metropolis algorithm<a class="headerlink" href="#introduction-to-the-metropolis-algorithm" title="Permalink to this headline">#</a></h2>
 <p>This is a extremely important algorithm because it speeds up many calculations bringing them into the realm of possibilities. The algorithm calculates average properties by using Monte-Carlo methods to preferentially sample important contributions to the result and thus does not waste time on unimportant ones. In illustrating this algorithm examples from statistical thermodynamics and quantum mechanics are used.</p>
 <p>In statistical mechanics, if the partition function or ‘sum over states’ <span class="math notranslate nohighlight">\(Z\)</span> is calculated, all other thermodynamic properties such as internal energy, entropy or heat capacity, can be evaluated. For example, the internal energy <span class="math notranslate nohighlight">\(U\)</span> at constant volume is</p>
 <div class="math notranslate nohighlight">
@@ -1487,9 +1691,9 @@
 <div class="math notranslate nohighlight">
 \[\displaystyle  \langle Q \rangle =\frac{\sum_n Q_n e^{-E_n/k_BT}}{\sum_n e^{-E_n/k_BT}}=\frac{\sum_n Q_n e^{-E_n/k_BT}}{Z}\tag{13a}\]</div>
 <p>where <span class="math notranslate nohighlight">\(Z\)</span> is the partition function.</p>
-</div>
-<div class="section" id="basis-of-the-algorithm">
-<h2>Basis of the Algorithm<a class="headerlink" href="#basis-of-the-algorithm" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="basis-of-the-algorithm">
+<h2>Basis of the Algorithm<a class="headerlink" href="#basis-of-the-algorithm" title="Permalink to this headline">#</a></h2>
 <p>The Metropolis algorithm allows an estimation of the ratio of the two sums to be made in an efficient way. This avoids having to calculate <span class="math notranslate nohighlight">\(Z\)</span>, which, as we have seen, may be impossible. The algorithm overcomes the necessity to search all the ‘phase space’, as configurations are generically called, and biases the random guessing of which configuration to add to the total, by using the Boltzmann distribution of energies. In doing this, the algorithm tries to add to the estimate of <span class="math notranslate nohighlight">\(Q\)</span> only those configurations contributing significantly to its value and, in doing so, performs a random walk among the configurations; see Figure 12 for a picture of two configurations. This random walk is also called a <em>Markov process</em>. This is defined as a process whereby a ‘system’ goes from one state to another in a random fashion, but has no memory of its previous condition.</p>
 <p>To sample points in configuration space, according to the Boltzmann distribution, it is sufficient, but not necessary, to impose ‘detailed balance’ between any two configurations. This means that if <span class="math notranslate nohighlight">\(w_{12}\)</span> is the rate to go from configuration (or state) 1 with energy <span class="math notranslate nohighlight">\(E_1\)</span>, to a new state 2 with energy <span class="math notranslate nohighlight">\(E_2\)</span>, then the reverse transition <span class="math notranslate nohighlight">\(w_{21}\)</span> is related by</p>
 <div class="math notranslate nohighlight">
@@ -1528,9 +1732,9 @@ the new state and add <span class="math notranslate nohighlight">\(Q_2\)</span> 
 <p>As a particular example, the mean potential energy of a harmonic oscillator will be calculated; the quantity <span class="math notranslate nohighlight">\(Q\)</span> is the energy and can be calculated exactly and is <span class="math notranslate nohighlight">\(k_BT/2\)</span>. The mean square energy will also be found which can also be calculated exactly, and is <span class="math notranslate nohighlight">\(3(k_BT)^2/4\)</span>. The standard deviation of the energy is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \sqrt{\langle E^2\rangle - \langle E \rangle^2} = k_BT/\sqrt{2}  \]</div>
-</div>
-<div class="section" id="average-energy-heat-capacity-and-displacement-of-a-harmonic-oscillator">
-<h2>6.1 Average energy,  heat capacity  and displacement of a harmonic oscillator<a class="headerlink" href="#average-energy-heat-capacity-and-displacement-of-a-harmonic-oscillator" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="average-energy-heat-capacity-and-displacement-of-a-harmonic-oscillator">
+<h2>6.1 Average energy,  heat capacity  and displacement of a harmonic oscillator<a class="headerlink" href="#average-energy-heat-capacity-and-displacement-of-a-harmonic-oscillator" title="Permalink to this headline">#</a></h2>
 <p>In the next example, the harmonic oscillator, <span class="math notranslate nohighlight">\(k=2\)</span> and <span class="math notranslate nohighlight">\(k_BT = 0.1\)</span>. Random guesses of the values of <span class="math notranslate nohighlight">\(x\)</span>, (the configuration or state) are made, and the average energy calculated. The range of <span class="math notranslate nohighlight">\(x\)</span> must be large enough to allow <span class="math notranslate nohighlight">\(e^{-E/k_BT}\)</span> to be very small, <span class="math notranslate nohighlight">\(\approx10^{-7}\)</span> or less, to allow proper sampling of the distribution. In addition, the range of <span class="math notranslate nohighlight">\(x\)</span> must be positive as well as negative. The random number has 1/2 subtracted from it to ensure this. If this is not done, then microscopic reversibility is not achieved because not all the possible configurations, in this case bond extension, can be sampled. The calculation continues for <span class="math notranslate nohighlight">\(20000\)</span> samples.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1571,7 +1775,7 @@ the new state and add <span class="math notranslate nohighlight">\(Q_2\)</span> 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>av E= 2.08e-21 av e^2= 1.319e-41 Cv= 7.137e-24
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>av E= 2.061e-21 av e^2= 1.303e-41 Cv= 7.07e-24
 </pre></div>
 </div>
 </div>
@@ -1594,8 +1798,8 @@ C_V =k_BT/2 &amp;\text{J/K}&amp;0.69\cdot 10^{-23}  &amp; 0.67\cdot 10^{-23}\\
 <p>Figure 18. Metropolis estimation of potential energy vs. number of samples. The estimated energy is plotted as red circles. The horizontal line is the theoretical energy <span class="math notranslate nohighlight">\(k_BT/2\)</span> at 300 K. The solid lines are given by <span class="math notranslate nohighlight">\(\langle E\rangle \pm a /\sqrt{ N}\)</span> where <span class="math notranslate nohighlight">\(a=2.5\)</span> is a constant.</p>
 <hr class="docutils" />
 <p>The harmonic oscillator clearly also has kinetic energy. The calculation to estimate this is essentially the same as just described; however, the constants are interpreted in a different way. The constant <span class="math notranslate nohighlight">\(k\)</span> now represents the reduced mass, which is will become <span class="math notranslate nohighlight">\(10\)</span> amu, and displacement <span class="math notranslate nohighlight">\(x\)</span> now represents the velocity <span class="math notranslate nohighlight">\(v\)</span> in m s<sup>-1</sup> about the origin of coordinates taken as the center of gravity of the molecule. The velocity must range from at least <span class="math notranslate nohighlight">\(\pm 4000\, \mathrm{ m\, s^{-1}}\)</span> if the exponential <span class="math notranslate nohighlight">\(e^{-\Delta E/(k_BT)}\)</span> is to be <span class="math notranslate nohighlight">\(\approx 10^{-8}\)</span> or less at the largest speed. A typical value of the average kinetic energy (per molecule) is found to be <span class="math notranslate nohighlight">\(2.03 \pm 0.01 \cdot 10^{-21}\)</span> J, which is effectively the same result as for the previous Monte Carlo calculation of <span class="math notranslate nohighlight">\(\langle E \rangle\)</span>  and demonstrates the equipartition theorem.</p>
-<div class="section" id="maxwell-distribution">
-<h3><strong>Maxwell distribution</strong><a class="headerlink" href="#maxwell-distribution" title="Permalink to this headline">¶</a></h3>
+<section id="maxwell-distribution">
+<h3><strong>Maxwell distribution</strong><a class="headerlink" href="#maxwell-distribution" title="Permalink to this headline">#</a></h3>
 <p>Normally kinetic energy <span class="math notranslate nohighlight">\(mv^2/2\)</span> is interpreted as that due to molecules of a gas colliding with one another rather than that of the atoms of a harmonic oscillator. If this is the case then the Maxwell speed distribution can be constructed. To do this, the velocities that are accepted in the Metropolis step are stored as the calculation proceeds. Velocity is a vector but speed is not; consequently, the angles that a molecule has with respect to any axes are integrated away on calculating the speed distribution and no longer enter into the calculation. The result is that the speed distribution depends only on <span class="math notranslate nohighlight">\(v^2\)</span>, which is interpreted as a scalar equal to the speed squared. For example, the probability per unit speed of molecules with speed <span class="math notranslate nohighlight">\(s = |v|\)</span> is,</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle f(s) = \frac{4}{\sqrt{\pi}}\left(\frac{m}{2k_BT} \right)^{3/2}s^2e^{-ms^2/(2k_BT)}  \tag{13c}\]</div>
@@ -1662,20 +1866,20 @@ C_V =k_BT/2 &amp;\text{J/K}&amp;0.69\cdot 10^{-23}  &amp; 0.67\cdot 10^{-23}\\
 <p>The results are shown in figure 19, where the Metropolis data from <span class="math notranslate nohighlight">\(1000\)</span> samples is shown as red dots on top of the known distribution eqn 13c (wide grey line) using a mass of <span class="math notranslate nohighlight">\(14\)</span> amu at <span class="math notranslate nohighlight">\(300\)</span> K.  It is clear that the simulation matches the data remarkably well.</p>
 <p><img alt="Drawing" src="../_images/monte-carlo-fig19.png" /></p>
 <p>Figure 19. Maxwell speed distribution showing the distribution of sampled points. The thick grey curve is the theoretical line.</p>
-</div>
-</div>
+</section>
+</section>
 <hr class="docutils" />
-<div class="section" id="ising-spin-model">
-<h2>6.2 Ising spin model<a class="headerlink" href="#ising-spin-model" title="Permalink to this headline">¶</a></h2>
+<section id="ising-spin-model">
+<h2>6.2 Ising spin model<a class="headerlink" href="#ising-spin-model" title="Permalink to this headline">#</a></h2>
 <p>The next example is taken from statistical mechanics and is the Ising model of a ferromagnet. In a ferromagnet, the atomic spins are coupled to one another by the quantum mechanical exchange interaction <span class="math notranslate nohighlight">\(J\)</span> and can only have two energies corresponding to being ‘up’ or ‘down’. The coupling ensures that ‘up’ spins want to be next to other up spins and ‘down’ spins want to be next to other down spins. At zero temperature, the minimum energy configuration occurs when all the spins align in the same direction, and its energy is <span class="math notranslate nohighlight">\(-2JN\)</span> for <span class="math notranslate nohighlight">\(N\)</span> spins. The entropy of the spin system is zero, because all spins are aligned in perfect order, and so is the heat capacity <span class="math notranslate nohighlight">\(C_p\)</span>. The magnetization, which is the sum of the individual spin magnetic moments, is maximal.</p>
 <p>As the temperature rises, the energy absorbed induces thermal motion in the atoms. This disrupts the alignment of the spins and they start to flip over. The heat capacity, which is defined as the rate of change of the internal energy with temperature, increases as more spins gain energy and are flipped. However, destroying the spins’ alignment causes the magnetization to fall. At high temperatures, the spins are randomly aligned and because of this the total magnetization approaches zero. The heat capacity also falls, reaching zero at infinite temperature. This happens because the spins only have two energies corresponding to being up or down relative to a neighbour, and cannot absorb any more energy than when they are randomly aligned, which corresponds to infinite temperature. Between these two extremes, in a two dimensional arrangement of spins a surprising phase transition occurs where the heat capacity becomes infinite as the magnetization drops towards zero. The phase transition is observed if a two-dimensional plot is made of the spin state. Just past the transition, large areas of similar spin alignment dissolve and the spins on the lattice become considerably more disordered; Fig. 20.</p>
 <p>The phase transition can be understood in thermodynamic terms, by considering the free energy change <span class="math notranslate nohighlight">\(\Delta G = \Delta H - T\Delta S\)</span>. As only spins are considered there is no <span class="math notranslate nohighlight">\(pV\)</span> work; we are not considering a gas, therefore <span class="math notranslate nohighlight">\(\Delta H = \Delta U\)</span>, where <span class="math notranslate nohighlight">\(U\)</span> is the internal energy. This is determined by the exchange interaction energy <span class="math notranslate nohighlight">\(J\)</span>. At the temperature of the phase transition, the phases are at equilibrium and <span class="math notranslate nohighlight">\(\Delta U = T\Delta S\)</span>. At lower temperatures, the entropic term must be relatively small because T is small, and <span class="math notranslate nohighlight">\(\Delta S\)</span> is also small because the spins are more ordered. The free energy <span class="math notranslate nohighlight">\(\Delta G\)</span> is therefore overwhelmingly determined by the internal energy. As the temperature increases, the increasing entropic term will make <span class="math notranslate nohighlight">\(\Delta G\)</span> more negative. Additionally, as the entropy also increases with temperature, the change from internal energy to entropy determining the free energy is sudden in the sense that it occurs over a small temperature range. The heat capacity becomes infinite at the phase transition because the heat supplied does not go into raising the temperature, but in reorganizing the spin states, and that causes an increase in entropy.</p>
 <p><img alt="Drawing" src="../_images/monte-carlo-fig20.png" /></p>
 <p>Figure 20. Two examples of <span class="math notranslate nohighlight">\(2^{256}\)</span> or <span class="math notranslate nohighlight">\(\approx 10^{77}\)</span> possible configurations of spins in a <span class="math notranslate nohighlight">\(16 \times 16\)</span> Ising model with temperature <span class="math notranslate nohighlight">\(T = 2\)</span> (left) and <span class="math notranslate nohighlight">\(3\)</span> (right) showing how significantly the disorder increases after the phase transition at <span class="math notranslate nohighlight">\(T = 2.269\)</span>. The light squares represent spin = <span class="math notranslate nohighlight">\(1\)</span>, and the dark squares, spin = <span class="math notranslate nohighlight">\(-1\)</span>. The exchange coupling <span class="math notranslate nohighlight">\(J = 1\)</span>, and <span class="math notranslate nohighlight">\(k_B = 1\)</span>.</p>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="d-spin-model">
-<h2>1D spin model<a class="headerlink" href="#d-spin-model" title="Permalink to this headline">¶</a></h2>
+<section id="d-spin-model">
+<h2>1D spin model<a class="headerlink" href="#d-spin-model" title="Permalink to this headline">#</a></h2>
 <p>In the examples such as the Maxwell distribution  there is no interaction between particles. One of the simplest examples in which interaction is allowed is the one-dimensional (1-D) Ising spin model. This is realized in practice with some Fe(II)Cl<span class="math notranslate nohighlight">\(^-_3\)</span> compounds which, in the crystalline state, have chains of Fe<span class="math notranslate nohighlight">\(^{2+}\)</span> atoms held apart with dichloride bridges. Part of the crystal structure of trimethylammonium iron(II) trichloride hydrate, (FeTAC), <span class="math notranslate nohighlight">\(\mathrm{[(CH_3)_3NH]FeCl^-_3 \cdot 2H_2O}\)</span>, is shown in Figure 20. The coupling between different chains of molecules in the crystal is relatively weak, but the interaction along a chain is so strong that this compound behaves as a 1-D chain of interacting electron spins.</p>
 <p>A spin may flip because of its interaction with surrounding atoms and consequently neighboring spins are affected. These spins in turn affect their neighbors, and thus, one flip may propagate along the chain until all spins come to equilibrium with their surroundings. The electrons interact with one another by the exchange interaction of magnitude <span class="math notranslate nohighlight">\(J\)</span>. The number of electrons in each spin state, either ‘up’ or ‘down’, depends on the ratio of this interaction to the temperature. A small section of the spin state is shown in Figure 20. Parallel spin pairs have energy <span class="math notranslate nohighlight">\(-J\)</span> but <span class="math notranslate nohighlight">\(+J\)</span> if they are anti-parallel. If <span class="math notranslate nohighlight">\(J\)</span> is positive, the spin system is ferromagnetic and if negative, anti-ferromagnetic.</p>
 <p>The energy of a chain in the absence of an external magnetic field is given by</p>
@@ -1758,7 +1962,7 @@ The spin heat capacity at low temperatures is also close to zero, because there 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>av energy/site = -0.464848 Cv = 0.238397
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>av energy/site = -0.466297 Cv = 0.239433
 </pre></div>
 </div>
 </div>
@@ -1766,8 +1970,8 @@ The spin heat capacity at low temperatures is also close to zero, because there 
 <p><img alt="Drawing" src="../_images/monte-carlo-fig23.png" /></p>
 <p>Figure 23. Left: The red circles are the Monte Carlo calculated energy, <span class="math notranslate nohighlight">\(\langle E\rangle\)</span>, per spin; <span class="math notranslate nohighlight">\(\langle E\rangle/JN\)</span>. Right  The heat capacity per spin <span class="math notranslate nohighlight">\(\langle C_V\rangle /k_B\)</span> vs temperature (K), with <span class="math notranslate nohighlight">\(J/k_B = 1\)</span> K. One run of <span class="math notranslate nohighlight">\(4000\)</span> samples is shown for each point. The lines are from the analytical functions, see text.</p>
 <hr class="docutils" />
-<div class="section" id="calculating-the-entropy">
-<h3><strong>Calculating the Entropy</strong><a class="headerlink" href="#calculating-the-entropy" title="Permalink to this headline">¶</a></h3>
+<section id="calculating-the-entropy">
+<h3><strong>Calculating the Entropy</strong><a class="headerlink" href="#calculating-the-entropy" title="Permalink to this headline">#</a></h3>
 <p>Although the entropy at a given temperature <span class="math notranslate nohighlight">\(T\)</span> can be calculated by integrating <span class="math notranslate nohighlight">\(C_V/T\)</span>, it can also be calculated more fundamentally from the arrangement of the spins. Maps of the spin state at the end of a calculation indicate how the entropy changes with temperature, and three examples are shown in Figure 24.</p>
 <p>Informally, we may label a black group as ‘parallel spin up’ and a white one ‘parallel spin down’, although ‘up’ and ‘down’ should not be taken literally. Within any blocks of either color, the spins are parallel to one another; hence, the coupling is <span class="math notranslate nohighlight">\(-J\)</span> between adjacent spins. A color boundary thus indicates spin pairing and a coupling of <span class="math notranslate nohighlight">\(+ J\)</span> between these two spins; see Figure 22. At <span class="math notranslate nohighlight">\(T = 0\)</span> K, all spins are in the same state, which would mean that the whole strip would be of the same color. However, there are two ground states at <span class="math notranslate nohighlight">\(T = 0\)</span> and these could be colored either black or white. At low temperatures, for example, <span class="math notranslate nohighlight">\(T\)</span> = 1/2 or 1 K, (Figure 24) spins are grouped into a few large blocks of similar spin state. Although only one example is given in the figure, it is clear that if many calculations are performed here only a limited number of arrangements of these large blocks of spins will be possible. These configurations or arrangements determine the entropy. As the temperature is increased, the coupling between spins becomes relatively less important compared to the energy supplied by the surrounding heat bath. This reduces the size of the groups of similar spin state but increases their number, which leads to more of ways of arranging them, and hence, a larger entropy.</p>
 <p>The entropy of the equilibrium state is given by <span class="math notranslate nohighlight">\(S = k_B \ln(\Omega)\)</span> where <span class="math notranslate nohighlight">\(\Omega\)</span> is the number of arrangements that the spins can take. To calculate <span class="math notranslate nohighlight">\(\Omega\)</span>, the number of groups of spins p present at the end of the calculation and at a given temperature is counted; see Figure 24. This is done by searching the pattern of spins for the number of spin changes and adding one to the total. From the theory of statistics, the number of ways of choosing <span class="math notranslate nohighlight">\(N_p\)</span> distinguishable objects from a group of <span class="math notranslate nohighlight">\(N\)</span> distinguishable objects, where the order of choosing does not matter, is given by</p>
@@ -1807,13 +2011,13 @@ The spin heat capacity at low temperatures is also close to zero, because there 
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="phase-change">
-<h3><strong>Phase Change</strong><a class="headerlink" href="#phase-change" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="phase-change">
+<h3><strong>Phase Change</strong><a class="headerlink" href="#phase-change" title="Permalink to this headline">#</a></h3>
 <p>The gradual and continuous change in the heat capacity and entropy indicates that the phase transition between ordered and disordered spins is unlike the familiar first-order or ‘all-or-none’ phase transitions or even that in the two-dimensional Ising spin model, see below. Whereas the general change in <span class="math notranslate nohighlight">\(C_V\)</span> and <span class="math notranslate nohighlight">\(S\)</span> with temperature is similar to that of a normal substance (<span class="math notranslate nohighlight">\(\mathrm{O_2,\; H_2O}\)</span>, etc.), the detail is quite different. This is because in the 1-D spin case the heat capacity increases and decreases in a continuous manner with increasing temperature. Similarly, the entropy smoothly increases with temperature to reach its final value. In a normal substance, however, there is a step change both in CV and S at a phase boundary. The cause of the different behavior is because, energetically, it is more favorable for two regions of opposite spins to co-exist than it is for either one or the other to exist on its own. Interestingly, a similar behavior occurs with the co-existence of helix and coil regions in proteins.</p>
-</div>
-<div class="section" id="magnetisation">
-<h3><strong>Magnetisation</strong><a class="headerlink" href="#magnetisation" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="magnetisation">
+<h3><strong>Magnetisation</strong><a class="headerlink" href="#magnetisation" title="Permalink to this headline">#</a></h3>
 <p>The magnetisation <span class="math notranslate nohighlight">\(M\)</span> can also be calculated via <span class="math notranslate nohighlight">\(M=\sum_ks_k\)</span> and from this the susceptibility</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \chi = \frac{1}{k_BT}\left( \langle M^2\rangle - \langle M\rangle^2   \right)\]</div>
@@ -1822,10 +2026,10 @@ The spin heat capacity at low temperatures is also close to zero, because there 
 <p>Because <span class="math notranslate nohighlight">\(N\)</span> is vast, the total is effectively the same as when all spins are aligned. Consequently, at temperatures higher than <span class="math notranslate nohighlight">\(\approx J / Nk_B\)</span> , which is vanishingly small for large <span class="math notranslate nohighlight">\(N\)</span>, there is insufficient energy to stabilise the aligned spin state compared to disordered ones, and the overall magnetisation is close to zero.</p>
 <p><img alt="Drawing" src="../_images/monte-carlo-fig26.png" /></p>
 <p>figure 26. left: Magnetisation /spin vs temperature. Notice how rapidly this decreases with temperature to become approximately zero. This may also be seen in figure 24 where patterns of spins are shown. Right. The magnetic susceptibility vs temperature, <span class="math notranslate nohighlight">\(\displaystyle \chi = \frac{1}{k_BT}\left( \langle M^2\rangle - \langle M\rangle^2   \right)\)</span>.</p>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="algebraic-calculation-of-1d-ising-spin-energy">
-<h3><strong>Algebraic calculation of 1D Ising spin energy</strong><a class="headerlink" href="#algebraic-calculation-of-1d-ising-spin-energy" title="Permalink to this headline">¶</a></h3>
+<section id="algebraic-calculation-of-1d-ising-spin-energy">
+<h3><strong>Algebraic calculation of 1D Ising spin energy</strong><a class="headerlink" href="#algebraic-calculation-of-1d-ising-spin-energy" title="Permalink to this headline">#</a></h3>
 <p>The partition function is defined as <span class="math notranslate nohighlight">\(\displaystyle Z = \sum_\alpha e^{-E_\alpha /k_BT}\)</span></p>
 <p>for energy levels <span class="math notranslate nohighlight">\(E_\alpha\)</span>. In 1-D, the energy of the Ising spin state <span class="math notranslate nohighlight">\(\alpha\)</span> in the absence of a magnetic field, is</p>
 <div class="math notranslate nohighlight">
@@ -1854,10 +2058,10 @@ S&amp;=k_B\ln\left(e^{2J/k_BT}+1  \right) -\frac{2J}{T} \frac{e^{2J/k_BT}}{e^{2J
 <p>The thermodynamic functions can be obtained from the partition function (at constant volume) using</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle E=k_BT^2d\ln(Z)/dT,\quad  S=k_BT\ln(Z)+E/T, \quad  C_V= dE/dT\]</div>
-</div>
-</div>
-<div class="section" id="id1">
-<h2>2D Spin model<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="id1">
+<h2>2D Spin model<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
 <p>The energy of the 2D Ising spin system is given by</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle E=-J\sum^n_{\alpha,\beta}s_\alpha s_\beta -B\sum_\alpha^n s_\alpha\]</div>
@@ -1951,8 +2155,8 @@ amount of computer time will be spent just doing this. However, if,say,  <span c
 </div>
 </div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -1976,9 +2180,11 @@ amount of computer time will be spent just doing this. However, if,say,  <span c
 
               </div>
               
-        
-            <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="monte-carlo-Q11-17.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -1994,26 +2200,28 @@ amount of computer time will be spent just doing this. However, if,say,  <span c
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-        
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-    <div class="container">
-      <p>
-        
-          By Godfrey Beddard<br/>
-        
-            &copy; Copyright 2022.<br/>
-      </p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Godfrey Beddard<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
     </div>
-  </footer>
-</main>
+    
+</div>
 
 
       </div>
     </div>
   
-  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>

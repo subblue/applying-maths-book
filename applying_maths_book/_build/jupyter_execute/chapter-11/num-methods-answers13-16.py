@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## Solutions Q13 - 16
+# # Solutions Q13 - 16
 
 # In[1]:
 
@@ -15,7 +15,7 @@ init_printing()                      # allows printing of SymPy results in types
 plt.rcParams.update({'font.size': 16})  # set font size for plots
 
 
-# ### Q13 answer
+# ## Q13 answer
 # Using the algorithms in the text the following figure can be produced from which it is clear that both the Euler methods fail badly in this instance and even the Runge - Kutta fails when $t$ is large. If the number of integration points is increased to $1000$, the Euler methods improve slightly but still fail, however, the Runge - Kutta is essentially identical to the exact solution but only up to about $t=15$ when it starts to fail badly. This illustrates how difficult, and time consuming numerical calculations can be. Time consuming since very small steps may be needed to ensure accuracy.
 # 
 # ![Drawing](num-methods-fig33.png)
@@ -23,7 +23,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # Figure 33. Comparison of the Euler methods with the Runge - Kutta and the exact solution, red line.
 # ____
 # 
-# ### Q14 answer
+# ## Q14 answer
 # (i) The code in the 'for' loop has to be changed to use the modified Euler equation (33). The derivatives are defined as
 
 # In[2]:
@@ -124,7 +124,7 @@ Avals, Bvals, atime = EulerN(dAdt,dBdt,t0,A_0,B_0,maxt,N)   # Call procedure, re
 # (iii) If the amount of B is instantaneously increased then there are more molecules overall and both the amounts of B and A will have to increase compared to that before the change.  However, just after the change there is too little A for the amount of B now present (because the system was at equilibrium and is transiently not anymore) meaning more A will form from B and so B will decrease until equilibrium is re-established. This is shown in figure 34a. The transient approach to equilibrium has a lifetime of $\tau =1/(k_1+k_2[B_e])$ or $0.86\;\mathrm{\mu\,s}$
 # 
 # 
-# ### Q15 answer
+# ## Q15 answer
 # 
 # Four rate equations are needed and are,
 # 
@@ -166,7 +166,7 @@ dpdt=  lambda S,E,ES :  k2*ES
 # _______
 # In the figure we see that the product concentration $[P]$ rises to reach the same concentration as the substrate concentration $[S_0]$ and that the enzyme E after initially reacting returns to its initial concentration $ [E_0]$. The substrate concentration falls rapidly to begin with, then more slowly. This is due to establishing the equilibrium between S + E and ES and therefore ES initially rises rapidly and reached a maximum and falls because it is slowly lost to product. The steady state condition is  $d[ES]/dt = 0$ is only approximately satisfied with these rate constants after ES has reached its maximum and extends only to about two seconds. The calculation clearly shows the approximate nature of the steady state approximation, we assume that the gradient is zero but have to be satisfied that it is small. Notice also that the steady state conditions mean that the concentration of the species ES need not be small, just that its gradient with time is small. This is a common misconception in the steady state approach.
 # 
-# ### Q16 answer
+# ## Q16 answer
 # Using the substitution $z = dy/dx$, the equation becomes $dy/dx=z$ and $d^2z/dx^2=-xz-y-x$ which has to be split further using $w = dz/dx$ to give
 # 
 # $$\displaystyle  \frac{dy}{dx}=z,\quad \frac{dz}{dx}=w,\quad \frac{dw}{dx}=-xz-y+x=1 $$

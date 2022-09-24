@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## Multiple integrals 
+# # Multiple integrals 
 
 # In[1]:
 
@@ -15,6 +15,7 @@ init_printing()                         # allows printing of SymPy results
 plt.rcParams.update({'font.size': 16})  # set font size for plots
 
 
+# ## Introduction
 # Many functions contain two or more variables; for instance, the distance of the electron in a hydrogen atom depends on its x, y, and z-position from the nucleus. Any point on a plane is given by its x- and y-coordinates or on the earth by its latitude and longitude. To evaluate a double or triple integral, each integral is performed with the same rules as a single integral but care must be taken to sort out the integration limits. The use of multiple integrals quite often involves transforming variables, from Cartesian $x, y, z$ to different forms of polar or cylindrical coordinates depending on the problem. The only reason for doing this is to simplify the integration and the only difficulty is unfamiliarity with the new coordinates.
 # 
 # Integrating over a surface such as $f (x, y)$ with the double integral $\int\int f (x, y)dydx$ means integrating along the x- and y-axes to obtain the volume between the surface and the $x-y$ plane. The extent of the integration is determined by the limits to the integration in the $x-y$ plane. Figure 22 shows the case when the limits are constants and then the integral is written as
@@ -66,7 +67,7 @@ simplify( integrate(ansy,(x,-1,1) ) )
 
 # and this result can also be expressed using $\displaystyle 2\tanh^{-1}(x)=\frac{\ln(1+x)}{\ln(1-x)}$ as $\displaystyle \int_{-1}^1\int_{x^2}^{2-x^2}\ln(y)dydx=-\frac{64}{9}+\frac{16}{3}\tanh^{-1}\left(\frac{1}{\sqrt{2}} \right)$.
 # 
-# ### 10.1 Mean values, moments of inertia, and centroids
+# ## 10.1 Mean values, moments of inertia, and centroids
 # 
 # The double integral is useful in obtaining the mean value, centroids and moments of inertia of functions and is an alternative way to that described in Section 8.2. In these equations the order of integration is not necessarily implied by the way in which they are written. The integration order is unimportant if the integration limits are constants but is if they depend on x then the y integral must be done first as in equation 51.
 # 
@@ -129,7 +130,7 @@ print(Ix,';',Iy)
 
 # The moment of inertia about the x-axis is greater (by approximately $6$ times) than that about $y$ because the rotation about $x$ involves the whole body rotating around this axis whereas the body is symmetrically disposed about the y-axis and therefore the moment of inertia is smaller. The moments of inertia of molecules are described in Chapter 7.15.
 # 
-# ### 10.2 Triple integrals
+# ## 10.2 Triple integrals
 # 
 # Triple integrals are calculated in a similar way to double ones, but instead of producing a volume a density function is produced. This might literally be density if the mass/unit volume of a solid is known, but generally, density is taken to mean the amount of 'stuff' in a given volume such as electron density or probability of being at a certain position in an atomic orbital.
 # 
@@ -167,7 +168,7 @@ eq= r**4*(6-r/a0)**2*exp(-2*r/(3*a0))
 # 
 # and the sine integral was worked out by converting to the exponential form. Multiplying the two results and rearranging gives the normalization as $\displaystyle N=\frac{1}{81\sqrt{\pi}}\sqrt{\frac{1}{a_0^3}}$
 # 
-# ### 11 Change of variables in integrals: Jacobians
+# ## 11 Change of variables in integrals: Jacobians
 # 
 # In Section 3 the method of simplifying an integration by a change of variable was described. A commonly used change of variables in multiple integrals is from Cartesian either to plane polar or spherical polar coordinates. The (plane) polar coordinates are two dimensional and spherical polar are three dimensional; see Chapter 1.6.1. They are used only to simplify a calculation by using those coordinates that reflect the underlying symmetry of the problem being studied, thus the shapes of the s, p, d and other atomic wavefunctions (orbitals) are naturally described in terms of three-dimensional spherical polar coordinates with a radius $r$, a polar $\theta$, and an equatorial (azimuthal) angle $\phi$. However, many two or three or higher dimensional integrations can be simplified by a suitable algebraic substitution, which may also be thought of as a change of coordinates. Fortunately, there is a systematic way of doing this using a determinant of derivatives, called the Jacobian and these are described in this section. Determinants are described in Chapter 7.
 # 
@@ -246,7 +247,7 @@ eq= r**4*(6-r/a0)**2*exp(-2*r/(3*a0))
 
 # A few examples are now worked through.
 # 
-# #### **(i) A coordinate change can simplify**
+# ### **(i) A coordinate change may simplify**
 # A coordinate change will simplify the integral 
 # 
 # $$\displaystyle \int\int \frac{1}{\sqrt{(x-y)^2+2(x+y)+1}}dxdy$$
@@ -267,7 +268,7 @@ eq= r**4*(6-r/a0)**2*exp(-2*r/(3*a0))
 # 
 # $$\displaystyle  \int\int \frac{1}{\sqrt{(x-y)^2+2(x+y)+1}}dxdy=\int\int1 dudv=uv +c$$
 # 
-# #### **(ii) Covert to plane polar coordinates**
+# ### **(ii) Covert to plane polar coordinates**
 # The integral 
 # 
 # $$\displaystyle I=\int_0^1\int_0^\sqrt{1-x^2} x(1-xy^3)dydx$$
@@ -293,7 +294,7 @@ eq= r**2*cos(theta)-r**6*cos(theta)**2*sin(theta)**3
 integrate( eq,theta)
 
 
-# #### **(iii) Change to polar coordinates**
+# ### **(iii) Change to polar coordinates**
 # The following integral will be solved by transforming to polar coordinates 
 # 
 # $$\displaystyle I= \int_0^\infty\int_0^x x^2e^{-x^2-y^2}dxdy$$
@@ -325,7 +326,7 @@ trigsimp( expand(ans_r*ans_theta) )
 # 
 # Figure 27 Example (iv). Integration limits in the $\theta - r$ plane. 
 # _____
-# #### **Last example (iv)**
+# ### **(iv) A second polar coordinate example**
 # The integral $\displaystyle I = \int_0^3\int_0^1\frac{x^2}{(x^2+y^2)^{5/2}}dxdy$
 # 
 # can be solved by converting to polar coordinates first then changing the integration limits. Converting produces  

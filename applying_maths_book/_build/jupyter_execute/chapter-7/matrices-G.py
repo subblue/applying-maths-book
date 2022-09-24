@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## Solving equations using matrices. Eigenvectors & Eigenvalues. 
+# # Solving equations using matrices. Eigenvectors & Eigenvalues. 
 
 # In[1]:
 
@@ -16,7 +16,7 @@ init_printing()                         # allows printing of SymPy results in ty
 plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 
-# ### 12.1 Simultaneous equations
+# ## 12.1 Simultaneous equations
 # 
 # A matrix can be of great use in solving simultaneous equations provided that its inverse exists. We consider two types of equations. First is the general case
 # 
@@ -50,7 +50,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # $$ \frac{ \begin{vmatrix} 6 & 4 & 1 \\ -3 & -3 & 6 \\ 0 & -1 & 4 \\ \end{vmatrix}} {\begin{vmatrix} 3 & 4 & 1 \\ 1 & -3 & 6 \\ 2 & -1 & 4 \\ \end{vmatrix}}  =\frac{6(-12+6)-4(-12)+1(3)}{3(-12+6)-4(4-12)+1(-1+6)}= \frac{15}{19} $$
 # 
-# ### 12.2 A matrix method for solving simultaneous equations
+# ## 12.2 A matrix method for solving simultaneous equations
 # 
 # The formal matrix method to solve equation (28) is to invert the equation by multiplying both sides by $\pmb{M}^{-1}$ to form $\pmb{M}^{-1}\pmb{M} = \pmb{1}$ and therefore $\pmb{M}^{-1}\pmb{M}\vec x = \pmb{M}^{-1}\vec C$. The next step is to replace the $\pmb{M}^{-1}\pmb{M}$ by the unit matrix $\pmb{1}$, but this has no further effect because $\pmb{1}\vec x = \pmb{M}^{-1}\vec C$ is the same as
 # 
@@ -58,7 +58,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # The matrix method of solving simultaneous equations has therefore become that of finding the inverse of a matrix $\pmb{M}$, and performing a matrix multiplication with $\vec C$.
 # 
-# #### **(i) Solving simultaneous equations with the computer**
+# ### **(i) Solving simultaneous equations with the computer**
 # In practice, you will generally want to use the computer to solve simultaneous equations and this is illustrated in two ways below using Python. In the matrix method, $\vec C$ is a column matrix and $\pmb{M}$ has rows of the equation coefficients. Some methods are shown below. The first two using numpy, which gives a numerical answer, the second using Sympy which gives the result algebraically but can be converted to real numbers by multiplying by $1.0$. When using numpy the $\mathtt{linalg.inv(..)}$ produces the inverse of the matrix, the dot product $\mathtt{np.dot(..,..)}$ performs the matrix multiplication. 
 # 
 # The equation to be solved is eqn. 29 above. 
@@ -107,7 +107,7 @@ ans = solve((eq1,eq2,eq3))
 ans
 
 
-# #### **(ii) Mixing solutions**
+# ### **(ii) Mixing solutions**
 # 
 # It is quite easy to work out how to make a mixture of two components from standard solutions but what if three standards are needed ? The calculation becomes one of solving three simultaneous equations for which a matrix method is suitable. 
 # 
@@ -145,7 +145,7 @@ print('{:6.3f} {:6.3f} {:6.3f}'.format(ans[0],ans[1],ans[2] ) )
 # 
 # In the situation that the mixture needs three different species then the method can be extended, by having four or more columns and rows in the matrix but the new solution must lie within the volume contained by species $[X],[Y],[Z]$ rather than an area.  
 
-# #### **(iii) Rotational Spectroscopy**
+# ### **(iii) Rotational Spectroscopy**
 # 
 #  Raman spectroscopy has been used to measure the rotational energy levels of benzene vapour, which are then used to obtain accurate CH bond lengths. The rotational constants obtained from C$_6$H$_6$ and C$_6$D$_6$, are $B = 0.18960 \pm 0.00005$ and $B = 0.15681 \pm 0.00008 \;\mathrm{cm^{-1}}$, which describe the motion _perpendicular_ to benzene's sixfold axis. The bond lengths will be calculated assuming that the molecule has $D_{6h}$ symmetry, i.e. is a regular hexagon and behaves as a rigid rotor. This calculation shows how isotopic substitution makes it possible to calculate very accurate bond lengths even in large molecules; in fact, far more accurately than by X-ray crystallography.
 # 
@@ -189,7 +189,7 @@ for i in range(len(ans)):             # do this only to print clearly
 
 # The only physically meaningful roots of these equations are when both are positive, i.e. $r = 0.13973 $ nm for the CC bond length and $s = 0.10843$ nm for the CH bond length. The results are quoted to 5 figures, as this is the precision of the initial data.
 # 
-# #### **(iv) Balancing complex chemical equations**
+# ### **(iv) Balancing complex chemical equations**
 # 
 # **(a)** Balancing an equation such as 
 # 
@@ -273,7 +273,7 @@ test
 # 
 # an alternative is of many is $\displaystyle  \mathrm{5CO + CO_2 + 19H_2 \to 6CH_4 + 7H_2O}$.
 
-# ### 12.3 Eigenvalue - Eigenvector equations
+# ## 12.3 Eigenvalue - Eigenvector equations
 # 
 # A most important and interesting type of equation is the eigenvalue - eigenvector equation
 # which has the form
@@ -294,15 +294,15 @@ test
 # 
 # which is preferable, because it indicates that there is one column vector $\vec x_i$ for each eigenvalue $\lambda_i$. As the matrix is $n \times n$ there are $n$ eigenvalues and $n$ eigenvectors each of length $n$. The eigenvectors $x$, are usually considered to be column vectors and can be stacked into a square matrix (the modal matrix) and the eigenvalues are usually formed into the single column vector $\lambda$. When solving an eigenvalue - eigenvector equation, the values of all the eigenvectors and eigenvalues will be determined; for example in solving the Schroedinger equation, the Hamiltonian, the sum of kinetic and potential energy is defined by the problem at hand. Solving the equations produces not only the energy levels but also the wavefunctions. The difference in solving the eigenvalue equation is that unlike the previous examples of simultaneous equations (12.1 & 2), which have the form $\pmb A\vec x=b$ neither any $\vec x$ nor any $\lambda$ is known beforehand.
 # 
-# ### 12.4 Kinetics, dynamics, and quantum mechanics
+# ## 12.4 Kinetics, dynamics, and quantum mechanics
 # 
 # Before embarking on the details of solving eigenvalue equations, it is worth considering the difference and similarities in the types of problems that can be studied. We shall meet problems in quantum mechanics, chemical kinetics, and dynamics and although there are great differences, the language to describe various problems - that is the maths - follows the same path. In kinetics, eigenvalue equations are used when several _linear_ reactions have to be modelled. If there are five reactions, then a $5 \times 5$ matrix of rate constants is constructed to describe the inter-conversion of species. In quantum mechanics, the Schroedinger equation is solved by expanding the new, and so far unknown, wavefunctions in a basis set of other wavefunctions. Interactions are added between various states and these are usually called *couplings*; mathematically they take the place of the rate constants used in kinetics. The _order_ of the _basis set_ determines where the couplings between states occur in the matrix. Reordering the basis set moves these positions about in the matrix, but does not affect the outcome. In kinetics, basis sets are usually not talked about; the order of the species occurring in a reaction scheme is, in effect, the basis set. Reorder the scheme, and the rate constants appear in different places in the matrix, but the result is unchanged.
 # 
-# ### 12.5 Interpreting Eigenvalues and Eigenvectors
+# ## 12.5 Interpreting Eigenvalues and Eigenvectors
 # 
 # The eigenvalue and its associated eigenvector provide us with different kinds of information. Eigenvalues are numbers that produce energies, frequencies, and timescales; eigenvectors on the other hand give geometrical type properties, such as normal mode displacements or the composition of a wavefunction leading to the shape of a molecular orbital. Each eigenvalue is always associated with its eigenvector, which as a vector is a series of numbers.
 # 
-# ### 12.6 The Secular Equation and Determinant. The evaluation of Eigenvalues and Eigenvectors
+# ## 12.6 The Secular Equation and Determinant. The evaluation of Eigenvalues and Eigenvectors
 # 
 # In an eigenvalue - eigenvector equation, the operator $\pmb{A}$ is always an $n \times n$ square matrix and $\vec x$ is an, as yet, unknown vector (single column matrix), and similarly for the eigenvalues $\lambda$ which also form an unknown single column matrix. The first step in solving equation 31 is to find the eigenvalues $\lambda$. Rearranging equation 31 by subtracting the $\lambda$ from the diagonals only produces a singular matrix, and the essential property of a singular matrix is that its determinant is zero. Doing this produces what is called the *Secular Equation*, 
 # 
@@ -389,7 +389,7 @@ evals,evecs
 
 # but here the eigenvalues are presented differently, but can easily be normalised if required.
 # 
-# #### **(i) Calculating eigenvalues and eigenvectors by hand.**
+# ### **(i) Calculating eigenvalues and eigenvectors by hand.**
 # To illustrate the method, the eigenvalues $\lambda_1$ and $\lambda_2$ of $\displaystyle A=\begin{bmatrix} 2 & 4\\ 3 & 1\ \end{bmatrix}$ and the corresponding  eigenvectors will be found  by hand. 
 # 
 # Our strategy will be to convert the matrix to the form of equation 33, expand the secular determinant, and solve for $\lambda$. Equation 34 will be used to calculate the eigenvectors. The calculation is relatively simple for this small matrix. The equation to solve is 
@@ -433,7 +433,7 @@ evals,evecs
 # 
 # The same calculation using Python or Sympy is far easier and, in practice, you will always do the calculation in this way.
 
-# ### 12.7 Properties of eigenvalues and eigenvectors
+# ## 12.7 Properties of eigenvalues and eigenvectors
 # Some of the more important properties of eigenvalues and eigenvectors are listed here.
 # 
 # **(a)**$\quad$ Any scalar multiple of an eigenvector is also an eigenvector, because the operator $\pmb A$ is linear; e.g. if an eigenvector is $x$ then $3x$ is also an eigenvector. If the operator $\pmb A$ is raised to an integer power, $p = 0, \pm 1, \pm 2, \cdots$ then the eigenvalues are $\lambda^p$. The eigenvectors are the same as those of $\pmb A$.
@@ -457,7 +457,7 @@ evals,evecs
 # 
 # Substituting for $\pmb{A}v$ and $\pmb{A}^Tu$ gives the equations $v\cdot(\pmb{A}^Tu)=\lambda_uv\cdot v$ and $ u\cdot (\pmb{A}v)=\lambda_v u\cdot v$ and if they are equal then it must follow that $\lambda_uv\cdot u = \lambda_vu\cdot v$. The only way that this can be true, since $\lambda_u \ne \lambda_v$, is if $u\cdot v = 0$, hence the eigenvectors must be orthogonal.
 
-# ### 12.8 Basis sets: a reminder
+# ## 12.8 Basis sets: a reminder
 # 
 # To be able to solve an equation such as 31, it is essential to choose a basis set for the vectors. Normally, one would like to choose an orthonormal set, such as the standard basis, and in three dimensions we could use the set $(x, y, z)$ with the basis vectors $(i, j, k)$ (see Chapter 6) or equivalently in column matrix form
 # 
@@ -473,7 +473,7 @@ evals,evecs
 # 
 # $$ \displaystyle   \sum_{j=1}^n b_jx_j \equiv\begin{bmatrix} b_i & \cdots & b_n\end{bmatrix} ,\begin{bmatrix} x_1\\\vdots\\x_n \end{bmatrix}$$
 # 
-# ### 12.9 Interpreting the Secular Determinant
+# ## 12.9 Interpreting the Secular Determinant
 # 
 # The nature of the secular determinant, and hence the matrix from which it is generated, needs explaining particularly in quantum mechanical problems. In these problems, the secular determinant is always symmetrical and contains only real numbers; it is Hermitian. The order of the element in both rows and columns is the same as the ordering of the basis set. If the secular determinant is diagonal, that is contains only the diagonal elements, and all the rest are zero, then the eigenvalues are the diagonal terms and are the solutions to the Schroedinger equation. If there are non-zero, off-diagonal terms, then these mix the basis set wavefunctions and energies together when the matrix is diagonalized. The off-diagonal terms are often referred to as coupling terms, because they 'cause interaction' between the energy levels in the diagonal of that row and column in which that matrix element is present. The type of interaction, Coulombic or dipole-dipole for instance, varies depending on the problem at hand. In the context of chemical kinetics the terms in the matrix are combinations of rate constants linking molecules of different types as described in by the rate equations, see section 13.
 # 
@@ -488,7 +488,7 @@ evals,evecs
 # Figure 54. The diagonal matrix produces energy levels (left). The interactions 1-3 and 2-3 move the energy levels about as sketched (right).
 # ________________________
 # 
-# #### **Coupling between two spins. The secular determinant and block diagonal matrices**
+# ### **Coupling between two spins. The secular determinant and block diagonal matrices**
 # 
 # The coupling between two spins will be calculated. The magnetic moments of electrons and nuclei are coupled via the so-called _contact_ interaction, introduced by Fermi to account for the hyperfine interactions in atomic spectra. The nucleus has spin angular momentum $I$ and the electron $S$. The interaction represents the energy of the nuclear magnetic moment in the magnetic field at the nucleus, produced by the 'spinning' electrons. The coupling matrix with nuclear spin $S_n = 1/2$ and electron spin $S_e = 1/2$ produces a $4 \times 4$ matrix because terms arise from spin combinations $\alpha\alpha, \alpha\beta, \beta\alpha, \beta\beta$. The first letter describes the electron spin, the second nuclear spin. The label $\alpha$ represents either the electron or nuclear spin wavefunction with spin magnetic quantum number $m_s = 1/2$ and $\beta$ that with $m_s = -1/2$ ($m_s$ is also called the projection or azimuthal quantum number). With the basis set $(\alpha\alpha, \alpha\beta, \beta\alpha, \beta\beta)$ determining the order of terms in the rows and columns of the interaction matrix is
 # 

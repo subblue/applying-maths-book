@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## Rotation matrices: moving molecules
+# # Rotation matrices: moving molecules. Coordinate transform as rotation.
 
 # In[1]:
 
@@ -15,7 +15,7 @@ init_printing()                      # allows printing of SymPy results in types
 plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 
-# ### 7 Rotation
+# ## 7 Rotation
 # Rotating the image of a molecular structure viewed on the computer screen can be easily achieved with a matrix. In two dimensions, the rotation can be defined as moving the co- ordinates of the molecule about an axis perpendicular to the plane of the page (x-y plane) by $\theta$ radians, relative to the original axes as shown in Figure 29. Alternatively, the axes themselves can be rotated.
 # 
 # The atom $a$, on the benzene molecule is shown at $(x_1, y_1)$ relative to the initial axes labelled $x$ and $y$, but in the new axes (labelled $x_R$ and $y_R$) it is moved to coordinate $(x_{R1}, y_{R1})$ by rotating the axes anticlockwise by $\theta$. From the viewpoint of the new axes, seen by rotating them anticlockwise so that axis $x_{R1}$ appears horizontal, the molecule appears to have rotated clockwise by $\theta$ so that atoms $a$ and $b$ now appear to be horizontal. Alternatively, the axes can be fixed and the molecule rotated clockwise about the origin of the axes, as in the right-hand figure, which seems more natural.
@@ -213,7 +213,7 @@ plt.show()
 # _____
 # 
 # 
-# ### 8 Using Jacobians to calculate derivatives in polar coordinates
+# ## 8 Using Jacobians to calculate derivatives in polar coordinates
 # 
 # Another form of matrix 'rotation' is a coordinate transformation, and to do this the Jacobian, which was introduced in Chapter 4, can be used. In that chapter, it was used to simplify integrations by changing variables and a similar process can be followed when solving differential equations: it is often convenient to change from Cartesian coordinates to polar ones. For example, in two dimensions the Schroedinger equation for a particle on a ring, which is 
 # 

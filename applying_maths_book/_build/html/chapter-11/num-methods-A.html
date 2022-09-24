@@ -4,11 +4,13 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Numerical Methods &#8212; Applying Maths in the Chemical &amp; Biomolecular Sciences</title>
     
-  <link href="../_static/css/theme.css" rel="stylesheet">
-  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,40 +20,39 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Questions 1 - 7" href="num-methods-Q1-7.html" />
@@ -63,7 +64,21 @@
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -72,9 +87,10 @@
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -92,14 +108,15 @@
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../intro.html">
-   Applying Maths in the Chemical and Biomolecular Sciences.
-  </a>
- </li>
-</ul>
-<ul class="current nav bd-sidenav">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Applying Maths in the Chemical and Biomolecular Sciences.
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../chapter-1/chapter1-intro.html">
    1. Numbers, Equations, Operators, and Algorithms.
@@ -204,11 +221,6 @@
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-2/chapter2-Q-10-13.html">
      Questions 10 -13
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-2/chapter2-C.html">
-     Euler’s theorem, roots of unity, x-ray diffraction structure factor.
     </a>
    </li>
    <li class="toctree-l2">
@@ -337,7 +349,7 @@
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../chapter-4/integration-intro.html">
-   4. Integration.
+   4 Integration.
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
   <label for="toctree-checkbox-4">
@@ -377,7 +389,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-4/integration-D.html">
-     Calculating an Average Value.
+     Calculating an Average.
     </a>
    </li>
    <li class="toctree-l2">
@@ -407,7 +419,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-4/integration-G.html">
-     Calculating the energy of a chemical bond using molecular orbitals
+     Calculating the energy of a Chemical Bond using Molecular Orbitals
     </a>
    </li>
    <li class="toctree-l2">
@@ -688,7 +700,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-7/matrices-D.html">
-     Rotation matrices: moving molecules
+     Rotation matrices: moving molecules. Coordinate transform as rotation.
     </a>
    </li>
    <li class="toctree-l2">
@@ -757,23 +769,13 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-7/matrices-K.html">
-     Calculating a bond length using moments of inertia
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-7/matrices-Q61.html">
-     Question 61
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="../chapter-7/matrices-L.html">
      Principal axes for Moments of Inertia
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-7/matrices-Q62.html">
-     Question 62
+    <a class="reference internal" href="../chapter-7/matrices-Q61-62.html">
+     Question 61 - 62
     </a>
    </li>
    <li class="toctree-l2">
@@ -1004,7 +1006,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-G.html">
-     PDE examples continued
+     PDE Continued
     </a>
    </li>
    <li class="toctree-l2">
@@ -1096,7 +1098,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="num-methods-answers8-12.html">
-     Solutions Q8 - 12
+     Solutions Q 8 - 12
     </a>
    </li>
    <li class="toctree-l2">
@@ -1258,112 +1260,227 @@
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/chapter-11/num-methods-A.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/subblue/applying-maths-book"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/subblue/applying-maths-book/issues/new?title=Issue%20on%20page%20%2Fchapter-11/num-methods-A.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        
-    </div>
-</div>
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/subblue/applying-maths-book/main?urlpath=lab/tree/applying_maths_book/chapter-11/num-methods-A.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        <a class="colab-button" href="https://colab.research.google.com/github/subblue/applying-maths-book/blob/main/applying_maths_book/chapter-11/num-methods-A.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
-                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
-                    src="../_static/images/logo_colab.png"
-                    alt="Interact on Colab">Colab</button></a>
-        
-        
-    </div>
-</div>
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/subblue/applying-maths-book/main?urlpath=lab/tree/applying_maths_book/chapter-11/num-methods-A.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://colab.research.google.com/github/subblue/applying-maths-book/blob/main/applying_maths_book/chapter-11/num-methods-A.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/subblue/applying-maths-book"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/subblue/applying-maths-book/issues/new?title=Issue%20on%20page%20%2Fchapter-11/num-methods-A.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/chapter-11/num-methods-A.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#rounding-errors">
    1.1 Rounding errors
@@ -1465,17 +1582,134 @@
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Numerical Methods</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#rounding-errors">
+   1.1 Rounding errors
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#truncation-errors">
+   1.2 Truncation errors
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#unstable-recursion-magnification-of-errors">
+   1.3 Unstable recursion: magnification of errors
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#organized-chaos">
+   1.4 Organized Chaos
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#numerical-methods-used-to-find-the-roots-of-an-equation">
+   2 Numerical methods used to find the roots of an equation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#secant-method">
+   Secant method
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#numerical-integration">
+   3 Numerical integration
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#always-try-some-algebra-first">
+   3.1 Always try some algebra first
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#mid-point-rule-integration">
+   3.2 Mid-point rule integration
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#trapezoidal-rule-integration">
+   3.3 Trapezoidal rule integration
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#simpson-s-rule-integration">
+   3.4 Simpson’s rule integration
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-concentration-of-ion-pairs">
+     <strong>
+      Example. Concentration of ion pairs
+     </strong>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#integrating-data-from-an-experiment">
+   3.5 Integrating data from an experiment
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#atomic-and-molecular-beam-scattering">
+   3.6 Atomic and molecular beam scattering
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#background-and-derivation-of-formulae">
+   3.7 Background and derivation of formulae
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#scattering">
+   3.8 Scattering
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-coulomb-potential">
+   3.9 The  Coulomb potential
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-lennard-jones-potential">
+   3.10 The Lennard-Jones potential
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#analysis-of-results">
+   3.11 Analysis of results
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
               <div>
                 
-  <div class="section" id="numerical-methods">
-<h1>Numerical Methods<a class="headerlink" href="#numerical-methods" title="Permalink to this headline">¶</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="numerical-methods">
+<h1>Numerical Methods<a class="headerlink" href="#numerical-methods" title="Permalink to this headline">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import all python add-ons etc that will be needed later on</span>
@@ -1492,8 +1726,8 @@
 </div>
 </div>
 <p>To start this chapter, some details on numerical accuracy are reviewed; next simple integration methods are described with a few examples and problems. More difficult, and interesting, is the numerical integration of differential equations, some of which only have numerical solutions. The various methods used are explained. A different numerical approach is taken in the next chapter on Monte Carlo methods. Simple integration is rather slow by this method but integrating differential equations is very robust. Monte Carlo methods are very versatile at simulating physical processes, such as diffusion or fluorescence, and occasionally this is the only way to do the calculation. Simulation also provides a good way to understand the processes involved, some of which can be very complex and not always easily translated into differential equations.</p>
-<div class="section" id="rounding-errors">
-<h2>1.1 Rounding errors<a class="headerlink" href="#rounding-errors" title="Permalink to this headline">¶</a></h2>
+<section id="rounding-errors">
+<h2>1.1 Rounding errors<a class="headerlink" href="#rounding-errors" title="Permalink to this headline">#</a></h2>
 <p>In many calculations, the errors introduced by the computer due to the way its integers and real numbers are manipulated do not matter. Sometimes, the answer the computer returns may be precise and will be printed to many decimal places; however, it may not be accurate. To understand this, the expression <span class="math notranslate nohighlight">\((1 - x)^6\)</span> is expanded as the series <span class="math notranslate nohighlight">\(1-6x+15x^2 -20x^3 +15x4 -6x^5 +x^6\)</span> and this is plotted close to its minimum at <span class="math notranslate nohighlight">\(x\approx 1\)</span> in Fig.1. While the scale is small, <span class="math notranslate nohighlight">\(\approx 10^{-13}\)</span>, determining the exact root of the equation numerically is difficult. Of course, we know it is at <span class="math notranslate nohighlight">\(1\)</span>, but the computer will not give this answer even using a Newton-Raphson iterative scheme. The reason for the noisy plot is because the alternating positive and negative terms in the summation add up to almost zero, and the rounding error in the precision with which the numbers are calculated becomes important, and this limits the accuracy of the calculation.</p>
 <p>A real number is converted in the computer into a floating-point number represented as <span class="math notranslate nohighlight">\(x = \pm 0.d_1d_2d_3d_4 \cdot 10^y\)</span> which only approximately represents the number; i.e. it is only accurate to a certain number of decimal places. The mantissa, is the fraction <span class="math notranslate nohighlight">\(0.d_1d_2d_3d_4\)</span>, where <span class="math notranslate nohighlight">\(d_1\)</span> etc. are the digits <span class="math notranslate nohighlight">\(0\cdots 9\)</span>. A floating-point number is usually described as a single or double precision and the number of decimal places is typically <span class="math notranslate nohighlight">\(7\)</span> and <span class="math notranslate nohighlight">\(14\)</span> respectively; this depends on the type of computer being used. Normally nowadays double precision is standard for example <span class="math notranslate nohighlight">\(17\)</span> digits.</p>
 <p>However, as seen in Fig. 1, 17 digits are not good enough to find the root; <span class="math notranslate nohighlight">\(25\)</span> decimal places give a far more accurate result. The instruction Digits:= 25, sets <span class="math notranslate nohighlight">\(25\)</span> decimal place precision for floating point numbers.
@@ -1522,15 +1756,15 @@ Using the Newton-Raphson method (see Chapter 3.10), the root cannot be found acc
 <p>With typical double precision (<span class="math notranslate nohighlight">\(16\)</span> decimal places), the root found is <span class="math notranslate nohighlight">\(1.0030182818841857\)</span>, which is not even on the graph shown below, but furthermore it depends greatly on the starting value. If the function <span class="math notranslate nohighlight">\((1 - x)^6\)</span> is plotted directly without expanding, and hence without accumulating rounding errors, then the curve looks like that obtained with <span class="math notranslate nohighlight">\(25\)</span> digits precision. This illustrates the important point that in many cases a small amount of algebra can significantly improve numerical calculations; errors rapidly accumulate with the repeated adding and subtracting of similarly sized numbers, and once an error is present it contaminates all subsequent results.</p>
 <p><img alt="Drawing" src="../_images/num-methods-fig1.png" /></p>
 <p>Figure 1. Plots of the series expansion of <span class="math notranslate nohighlight">\((1 - x)^6\)</span> with two different values of floating point precision. (Notice the axes range.)</p>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="truncation-errors">
-<h2>1.2 Truncation errors<a class="headerlink" href="#truncation-errors" title="Permalink to this headline">¶</a></h2>
+<section id="truncation-errors">
+<h2>1.2 Truncation errors<a class="headerlink" href="#truncation-errors" title="Permalink to this headline">#</a></h2>
 <p>In summing a series, the number of terms to be added has to be decided in advance. This automatically leads to an error that is nothing to do with arithmetical precision. The calculation should be repeated with more terms until the number of decimal places you require is continuously obtained. Rounding errors must additionally be considered, especially if the series contains alternating positive and negative terms; the errors can accumulate as the summation continues but will not be the same for all values of <span class="math notranslate nohighlight">\(x\)</span>.</p>
 <p>Consider the series <span class="math notranslate nohighlight">\( \displaystyle \sin(x)=1-\frac{x^3}{3!}+\frac{x^5}{5!}-\cdots\)</span> which is valid for all <span class="math notranslate nohighlight">\(x\)</span>. If the series is summed up to the term <span class="math notranslate nohighlight">\(x^n/n!\)</span> with <span class="math notranslate nohighlight">\(x \gt 0\)</span>, the error is less than <span class="math notranslate nohighlight">\(\displaystyle \left| \frac{x^{n+2}}{(n+2)!}\right|\)</span>. The values of <span class="math notranslate nohighlight">\(\sin(0.5)\)</span> is <span class="math notranslate nohighlight">\(0.47942553\)</span> whether calculated directly using Python or as the summation up to the <span class="math notranslate nohighlight">\(x^7\)</span> term. If, however, <span class="math notranslate nohighlight">\(x\)</span> is large, for instance <span class="math notranslate nohighlight">\(x = 5.5\pi\)</span>, then we know by drawing a graph that  <span class="math notranslate nohighlight">\(\sin(x) = -1\)</span>, but by summation up to <span class="math notranslate nohighlight">\(x^7\)</span> the result is <span class="math notranslate nohighlight">\(-79258.34\)</span>: clearly this is ridiculous because <span class="math notranslate nohighlight">\(\sin(x) \le 1 \)</span> for all <span class="math notranslate nohighlight">\(x\)</span>. Only if the number of terms in the summation is increased to at least terms <span class="math notranslate nohighlight">\(\gt x^{59}\)</span>, and the numerical precision increased to <span class="math notranslate nohighlight">\(20\)</span> decimal places can an accurate result be obtained from the series approach. In this instance, we know that the answer from the small summation is incorrect because the properties of <span class="math notranslate nohighlight">\(\sin(x)\)</span> are well known, but if you are summing a series whose result is unknown, then great care is necessary.</p>
-</div>
-<div class="section" id="unstable-recursion-magnification-of-errors">
-<h2>1.3 Unstable recursion: magnification of errors<a class="headerlink" href="#unstable-recursion-magnification-of-errors" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="unstable-recursion-magnification-of-errors">
+<h2>1.3 Unstable recursion: magnification of errors<a class="headerlink" href="#unstable-recursion-magnification-of-errors" title="Permalink to this headline">#</a></h2>
 <p>In solving integrals, a recursion formula can often be found, particularly when the integration is done by parts. An example met before (Q4.22) is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle I_n=\int_0^1 x^ne^{x-1}dx = x^ne^{x-1} \bigg|_0^1 -n\int_0^1 x^{n-1}e^{x-1} dx =1 - nI_{n-1}\]</div>
@@ -1586,9 +1820,9 @@ Using the Newton-Raphson method (see Chapter 3.10), the root cannot be found acc
 </div>
 <p>The failure of both the Sympy integration and the recursion formula indicates how careful one needs to be with some apparently innocent numerical calculations. After about <span class="math notranslate nohighlight">\(n = 12\)</span> it is difficult to judge which calculation gives the most accurate result, and by <span class="math notranslate nohighlight">\(n = 18\)</span>, both are clearly wrong. If integer constants  are used then accurate results are obtained for the direct integration, but using integers will not always be an option.</p>
 <p>While this calculation is a little unusual, it is not uncommon. When calculating wavefunctions using Hermite or other polynomials, large powers of <span class="math notranslate nohighlight">\(x\)</span>, exponentials and recursion formulae are commonly used. Recursion and difference formulae are often used in the numerical integration of differential equations, see Section 11.3, consequently, their numerical integration is akin to an art rather than a science. However, you should not be too despondent or sceptical about numerical methods because with care, and sometimes cunning, accurate results can be obtained.</p>
-</div>
-<div class="section" id="organized-chaos">
-<h2>1.4 Organized Chaos<a class="headerlink" href="#organized-chaos" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="organized-chaos">
+<h2>1.4 Organized Chaos<a class="headerlink" href="#organized-chaos" title="Permalink to this headline">#</a></h2>
 <p>You need to be aware that recursion can sometimes lead to chaotic behaviour as a normal outcome of a calculation. This is a different sort of chaos to that just calculated; it is very much like ‘organized chaos’ and is not due to rounding or precision errors. Often this chaos is termed ‘deterministic’.</p>
 <p>There is an important distinction therefore to be made between different types of ‘Chaos’. In classical and quantum mechanics, in studying molecules for example, it is also observed that regular motion can suddenly become chaotic even though the underlying equations of motion do not indicate that this will necessarily happen. By ‘chaotic’ is meant that two starting conditions placed arbitrary close to one another in value, will lead to entirely different but <em>repeatable outcomes</em> at some later time. If the cause of the chaos is due to rounding errors, the outcome is not repeatable but unpredictable.</p>
 <p>We take a short diversion into this interesting topic via a well-known example of deterministic chaos, first described in detail by May (1974, 1987) and May &amp; Oster (1976), and called the <em>logistic map</em>. This arises from the recursive equation</p>
@@ -1658,12 +1892,12 @@ Using the Newton-Raphson method (see Chapter 3.10), the root cannot be found acc
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="numerical-methods-used-to-find-the-roots-of-an-equation">
-<h2>2 Numerical methods used to find the roots of an equation<a class="headerlink" href="#numerical-methods-used-to-find-the-roots-of-an-equation" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="secant-method">
-<h2>Secant method<a class="headerlink" href="#secant-method" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="numerical-methods-used-to-find-the-roots-of-an-equation">
+<h2>2 Numerical methods used to find the roots of an equation<a class="headerlink" href="#numerical-methods-used-to-find-the-roots-of-an-equation" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="secant-method">
+<h2>Secant method<a class="headerlink" href="#secant-method" title="Permalink to this headline">#</a></h2>
 <p>We now set aside the questions of numerical accuracy and chaos and look at some practical methods of numerically solving all sorts of equations. Sometimes in integration or in solving differential equations, the root of some function is required; three related numerical methods, the Secant, Regula Falsi, and bisection, are now described. The Newton - Raphson method has already been met in Chapter 3.10 and is used when the equation can be differentiated.</p>
 <p>The secant method is similar in idea to the Newton - Raphson method except that the derivative is expressed as a difference equation. If <span class="math notranslate nohighlight">\(f (x) = 0\)</span> is the equation whose roots or <span class="math notranslate nohighlight">\(x\)</span> values we want to find, then, in a recursive scheme, the next <span class="math notranslate nohighlight">\(x\)</span> value is given by Newton - Raphson as <span class="math notranslate nohighlight">\(x_{n+1} = x_n  f(x_n)/f'(x_n)\)</span> with <span class="math notranslate nohighlight">\(n = 0, 1, 2 \cdots\)</span> and <span class="math notranslate nohighlight">\(f'\)</span> is the derivative with respect to <span class="math notranslate nohighlight">\(x\)</span>. Notice how similar this equation is to the general form of the logistic map in the previous section, i.e <span class="math notranslate nohighlight">\(x_{n+1}=f(x_n)\)</span>.  The <span class="math notranslate nohighlight">\(x_0\)</span> value to start the calculation must be somewhere near to the root, and can be estimated by plotting the function. At the end of each step, the new value <span class="math notranslate nohighlight">\(x_{n+1}\)</span> is substituted into the right-hand side of the equation, and the process is repeated until the absolute value of the function becomes less than some preset tolerance or the number of iterations is exceeded.
 In the secant method, the derivative is approximated as</p>
@@ -1771,18 +2005,18 @@ In the secant method, the derivative is approximated as</p>
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="numerical-integration">
-<h2>3 Numerical integration<a class="headerlink" href="#numerical-integration" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="numerical-integration">
+<h2>3 Numerical integration<a class="headerlink" href="#numerical-integration" title="Permalink to this headline">#</a></h2>
 <p>Two methods of numerical integration have been briefly described in other chapters, one is the series expansion of a function and then a numerical evaluation of the terms; the other is the Euler - Maclaurin formula Chapter 5.7 and care needs to be exercised with both these methods. Three general and simpler methods are now outlined; these are the mid-point, the trapezoid, and Simpson’s rule. More sophisticated numerical methods than these are described in Numerical Recipes (Prest et al. 1986) and similar specialized texts.</p>
 <p>Each of these methods divides the function to be integrated into small strips at predetermined abscissas, which are then multiplied by a certain constant number depending on the method, and added together. The integration becomes a summation, Fig. 3, and the general name for such a numerical integration method is <em>quadrature</em>. These methods are similar to the basic way we think about integration as the limiting area of a summation of rectangular strips as the width of each strip tends to zero. If the strips are fine enough, the result is a good approximation to the true value. In general, however, we do not initially know how many strips will be needed and some experimentation with this number is always necessary.</p>
 <p>It should be remembered that whatever numerical method is used, a polynomial is being integrated and not the original equation, and thus the ability of this to describe the curve will affect the results. The more sophisticated the method becomes, the higher the order of the polynomial used.</p>
 <p><img alt="Drawing" src="../_images/num-methods-fig3.png" /></p>
 <p>Figure 3. The trapezoidal rule approximates an integral with straight lines between points <span class="math notranslate nohighlight">\(x_1,\, x_2,\, \cdots\)</span>, although not very well in this example, where the strips are too far apart to represent the function accurately. The mid-point method, on the other hand, evaluates the function half way between each point, three of which are shown by the vertical dotted lines.</p>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="always-try-some-algebra-first">
-<h2>3.1 Always try some algebra first<a class="headerlink" href="#always-try-some-algebra-first" title="Permalink to this headline">¶</a></h2>
+<section id="always-try-some-algebra-first">
+<h2>3.1 Always try some algebra first<a class="headerlink" href="#always-try-some-algebra-first" title="Permalink to this headline">#</a></h2>
 <p>There is always a tendency when using numerical methods to submit the equation directly to the computer. In many cases, however, performing some algebra first will help. This might mean simplifying the equation, removing constants to outside the integration, and, in particular, substitution of variables, which is done in standard integration. Consider the integral</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \int_0^\infty (1+x^2)^{-1}dx\]</div>
@@ -1798,9 +2032,9 @@ x &amp; 0.01 &amp; 0.1 &amp; 1 &amp; 10 &amp; 100 \\[0.25cm]
 \hline
 1/(1+x^2) &amp;0.9999000&amp; 0.9900990&amp;0.5 &amp; 0.0099009&amp; 0.000099\\
 \end{array}\end{split}\]</div>
-</div>
-<div class="section" id="mid-point-rule-integration">
-<h2>3.2 Mid-point rule integration<a class="headerlink" href="#mid-point-rule-integration" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="mid-point-rule-integration">
+<h2>3.2 Mid-point rule integration<a class="headerlink" href="#mid-point-rule-integration" title="Permalink to this headline">#</a></h2>
 <p>Mid-point integration assumes that the function is split equally into <span class="math notranslate nohighlight">\(N\)</span> points, and any point is connected by a straight line to the next, thus ignoring any curvature between these points. Clearly, for a rapidly oscillating or varying function, many determinations of N will be needed to obtain an accurate answer. The mid-point method, not surprisingly, sums the values of the <em>function</em> at the mid-point of each strip, <span class="math notranslate nohighlight">\(x_1^m \; x_2^m \cdots x_N^m \)</span> as</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle I_m=\int_a^b f(x)dx \approx \frac{b-a}{N}\left(f(x_1^m)+f(x_2^m)+\cdots + f(x_N^m)\right)\]</div>
@@ -1843,9 +2077,9 @@ x &amp; 0.01 &amp; 0.1 &amp; 1 &amp; 10 &amp; 100 \\[0.25cm]
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="trapezoidal-rule-integration">
-<h2>3.3 Trapezoidal rule integration<a class="headerlink" href="#trapezoidal-rule-integration" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="trapezoidal-rule-integration">
+<h2>3.3 Trapezoidal rule integration<a class="headerlink" href="#trapezoidal-rule-integration" title="Permalink to this headline">#</a></h2>
 <p>Trapezoidal integration is also straightforward. The equation to approximate the
 integral is</p>
 <div class="math notranslate nohighlight">
@@ -1882,9 +2116,9 @@ integral is</p>
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="simpson-s-rule-integration">
-<h2>3.4 Simpson’s rule integration<a class="headerlink" href="#simpson-s-rule-integration" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="simpson-s-rule-integration">
+<h2>3.4 Simpson’s rule integration<a class="headerlink" href="#simpson-s-rule-integration" title="Permalink to this headline">#</a></h2>
 <p>Simpson’s rule is slightly more sophisticated than the trapezoidal method, as it fits a
 quadratic function to data points rather than straight lines; the formula is</p>
 <div class="math notranslate nohighlight">
@@ -1928,8 +2162,8 @@ quadratic function to data points rather than straight lines; the formula is</p>
 </div>
 </div>
 <p>and as can be seen this result is much closer to the algebraic one that the other methods for the same number of points in the integration.</p>
-<div class="section" id="example-concentration-of-ion-pairs">
-<h3><strong>Example. Concentration of ion pairs</strong><a class="headerlink" href="#example-concentration-of-ion-pairs" title="Permalink to this headline">¶</a></h3>
+<section id="example-concentration-of-ion-pairs">
+<h3><strong>Example. Concentration of ion pairs</strong><a class="headerlink" href="#example-concentration-of-ion-pairs" title="Permalink to this headline">#</a></h3>
 <p>Bjerrum’s theory of ionic association in solution, the concentration of ion pairs is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle n_{1,2}=3n_1\left( \frac{e^2}{4\pi\epsilon_0k_BT} \right)^3\left( \frac{1}{\epsilon a_0} \right)^3\int_2^be^xx^{-4}dx\]</div>
@@ -1969,18 +2203,18 @@ quadratic function to data points rather than straight lines; the formula is</p>
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="integrating-data-from-an-experiment">
-<h2>3.5 Integrating data from an experiment<a class="headerlink" href="#integrating-data-from-an-experiment" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="integrating-data-from-an-experiment">
+<h2>3.5 Integrating data from an experiment<a class="headerlink" href="#integrating-data-from-an-experiment" title="Permalink to this headline">#</a></h2>
 <p>Integrating a curve formed from data points obtained from an experiment has to be done numerically. The safest method is to draw straight lines between the data points and calculate the area as rectangles and triangles, which is what the trapezoidal method does, and this works even if the data is not evenly spaced. You might in addition want to fit the data by a least squares method, which has the effect of smoothing the data, integrating the resulting equation and comparing the results. Alternatively, fitting a polynomial to the data and then integrating may give the required solution.</p>
-</div>
-<div class="section" id="atomic-and-molecular-beam-scattering">
-<h2>3.6 Atomic and molecular beam scattering<a class="headerlink" href="#atomic-and-molecular-beam-scattering" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="atomic-and-molecular-beam-scattering">
+<h2>3.6 Atomic and molecular beam scattering<a class="headerlink" href="#atomic-and-molecular-beam-scattering" title="Permalink to this headline">#</a></h2>
 <p>In this next extended example, more of a ‘real world’ rather than a purely mathematical calculation is described; it is the classical model of the elastic scattering of one particle, an atom or molecule, off another. The formulae are developed first, and then integrated using the Coulomb and Lennard-Jones 6-12 potentials, the latter being done numerically. In this example, the scattering angle is calculated. In a later example, the actual trajectory followed by a particle during elastic scattering is calculated and drawn.</p>
-</div>
-<div class="section" id="background-and-derivation-of-formulae">
-<h2>3.7 Background and derivation of formulae<a class="headerlink" href="#background-and-derivation-of-formulae" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="background-and-derivation-of-formulae">
+<h2>3.7 Background and derivation of formulae<a class="headerlink" href="#background-and-derivation-of-formulae" title="Permalink to this headline">#</a></h2>
 <p>Geiger and Marsden performed one of the most famous scattering experiments during the first decade of the twentieth century. Alpha particles were passed through a very thin Au foil and the positions of these particles detected by scintillation counting after scattering off the Au atoms. In 1910, while at Manchester University, Rutherford deduced that the mass of the atom was not distributed like that in a raisin pudding throughout its volume, but concentrated at its centre in a very small dense nucleus, thus confirming a ‘planetary’ model of the atom. This laid the foundation for the old quantum (Bohr) model of the atom.</p>
 <p>In the modern version of this experiment, the nature of the force between two particles, such as atoms, molecules, or ions, is sought. A cold beam of atoms or molecules (particles) can be made by passing its gas through a small conical shaped aperture (a skimmer) into a region of high vacuum, typically <span class="math notranslate nohighlight">\(\lt 10^{-6}\)</span> torr. If the particles in one beam strike those in a second beam made in the same way, but at right angles, the particles can scatter off one another elastically. This scattering is not exactly like that of one snooker or billiard ball bouncing off another, but depends on the intermolecular potential energy between the particles. This may be mainly Coulombic if the particles are charged, but if neutral, then a Lennard-Jones potential better describes the interaction; see Fig. 30 (in solutions) for a graph of the potential. The angular position of the scattered particles can be used to calculate the form of the interaction potential. Nowadays detection of the particles’ position is measured by a CCD camera with a scintillation plate in front of it. This converts a particle’s kinetic energy into a photon. Alternatively, if this is not sensitive enough a specially designed particle detector has to be made and this moved from place to place to record the complete scattering pattern.</p>
 <p>The geometry of the experiment is sketched in Fig. 4. The incident beam of particles, which has the shape of a cylindrical rod, is aimed towards the target atom. The potential energy between particles depends only on the separation of the particles; this is called a central force and the motion of the two particles about their centre of mass, can always be reduced to an equivalent one-particle problem, which means that the target can be considered to have infinite mass and therefore cannot move. If the incoming particles are initially off-axis they are deflected by the target and generally continue to travel away from their source but if they are more or less on axis they can be backscattered, orbit or sling-shot around the target.</p>
@@ -2013,9 +2247,9 @@ quadratic function to data points rather than straight lines; the formula is</p>
 <p>This equation is also conveniently rewritten as <span class="math notranslate nohighlight">\(\theta_0=\int g(r)dr\)</span> where</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle g(r)=\frac{b}{r^2}\frac{1}{\sqrt{1-U(r)/E_0-(b/r)^2}}  \tag{10}\]</div>
-</div>
-<div class="section" id="scattering">
-<h2>3.8 Scattering<a class="headerlink" href="#scattering" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="scattering">
+<h2>3.8 Scattering<a class="headerlink" href="#scattering" title="Permalink to this headline">#</a></h2>
 <p>The scattering by two different potentials, the Coulomb and the Lennard-Jones 6-12 will be illustrated. The first step in the calculation is to find the equation for the separation <span class="math notranslate nohighlight">\(r_0\)</span>. This is done by using conservation of energy and then knowing that the radial velocity <span class="math notranslate nohighlight">\(v\)</span> is zero at the turning point <span class="math notranslate nohighlight">\(r_0\)</span>. From eqn 6 with <span class="math notranslate nohighlight">\(v = 0\)</span> and <span class="math notranslate nohighlight">\(r = r_0\)</span>, the energy is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle E_0 = \frac{L^2}{2\mu r_0^2} + U(r_0)\]</div>
@@ -2030,9 +2264,9 @@ quadratic function to data points rather than straight lines; the formula is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \theta_0= \sin^{-1}\left(\frac{b}{d} \right)\]</div>
 <p>and so the scattering angle is <span class="math notranslate nohighlight">\(\displaystyle \chi=\pi- \sin^{-1}\left(\frac{b}{d} \right)\)</span> which is independent of the collision energy. This is shown in fig 5, where <span class="math notranslate nohighlight">\(x = b/d\)</span>.</p>
-</div>
-<div class="section" id="the-coulomb-potential">
-<h2>3.9 The  Coulomb potential<a class="headerlink" href="#the-coulomb-potential" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="the-coulomb-potential">
+<h2>3.9 The  Coulomb potential<a class="headerlink" href="#the-coulomb-potential" title="Permalink to this headline">#</a></h2>
 <p>The Coulomb potential energy between charges <span class="math notranslate nohighlight">\(q_1\)</span> and <span class="math notranslate nohighlight">\(q_2\)</span> at separation <span class="math notranslate nohighlight">\(r\)</span> is <span class="math notranslate nohighlight">\(U(r) = \alpha/r\)</span> where <span class="math notranslate nohighlight">\(\alpha = q_1q_2/4\pi \epsilon_0\)</span> in SI units. Depending on the charges, the Coulomb potential can be repulsive or attractive. This <span class="math notranslate nohighlight">\(1/r\)</span> form of potential also describes that due to gravity, where <span class="math notranslate nohighlight">\(\alpha = -Gm_1m_2\)</span>. For example, it will describe a comet being attracted to and flung around the sun or a planet, <span class="math notranslate nohighlight">\(G\)</span> being the gravitational constant and <span class="math notranslate nohighlight">\(m_1\)</span> and <span class="math notranslate nohighlight">\(m_2\)</span> the masses.</p>
 <p>Considering now the Coulomb potential, the smallest separation of the particles is found from equation 11, which is a quadratic in <span class="math notranslate nohighlight">\(r_0\)</span>. The result is</p>
 <div class="math notranslate nohighlight">
@@ -2058,10 +2292,10 @@ quadratic function to data points rather than straight lines; the formula is</p>
 <p>In coulomb scattering the quantity <span class="math notranslate nohighlight">\(\alpha/2E_0\)</span> has dimensions of distance because <span class="math notranslate nohighlight">\(\alpha = q_1q_2/4\pi\epsilon_0\)</span> and has units <span class="math notranslate nohighlight">\(\mathrm{C^2/(C^2J^{-1}m^{-1})}\)</span> where C is the Coulomb, and <span class="math notranslate nohighlight">\(\alpha/2E_0\)</span> is therefore the effective diameter of the target. In the Coulomb case, the potential spreads out as <span class="math notranslate nohighlight">\(1/r\)</span> and one particle influences the other and is the cause of the small angular deflection at large <span class="math notranslate nohighlight">\(x\)</span> values. At small <span class="math notranslate nohighlight">\(x\)</span>, which is close to a ‘head on’ collision, Coulomb scattering is similar to that of a hard sphere.</p>
 <p><img alt="Drawing" src="../_images/num-methods-fig5.png" /></p>
 <p>Figure 5. Scattering angle as fraction of <span class="math notranslate nohighlight">\(\pi\)</span> radians or <span class="math notranslate nohighlight">\(\chi/\pi\)</span> vs dimensionless parameter <span class="math notranslate nohighlight">\(x = b/d\)</span> for hard sphere and <span class="math notranslate nohighlight">\(x = 2E_0b/\alpha\)</span> for repulsive Coulomb potentials (see text). The inset diagrams show, schematically, Coulomb deflections with potential as diffuse filled circles). When the impact parameter <span class="math notranslate nohighlight">\(b\)</span> is greater than the sum of the radii <span class="math notranslate nohighlight">\(d\)</span> there is no scattering in the hard sphere collision, but this does occur with the coulomb potential as this has a finite, although decreasing value at large separation’s.</p>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="the-lennard-jones-potential">
-<h2>3.10 The Lennard-Jones potential<a class="headerlink" href="#the-lennard-jones-potential" title="Permalink to this headline">¶</a></h2>
+<section id="the-lennard-jones-potential">
+<h2>3.10 The Lennard-Jones potential<a class="headerlink" href="#the-lennard-jones-potential" title="Permalink to this headline">#</a></h2>
 <p>The LJ potential</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle U(r) = 4\epsilon\left[(\sigma/r)^{12} - (\sigma/r)^6\right]\]</div>
@@ -2163,14 +2397,14 @@ quadratic function to data points rather than straight lines; the formula is</p>
 <p>The angle <span class="math notranslate nohighlight">\(\chi\)</span> vs <span class="math notranslate nohighlight">\(b/\sigma\)</span> is plotted below for three values of the ratio <span class="math notranslate nohighlight">\(E/\epsilon\)</span>.</p>
 <p><img alt="Drawing" src="../_images/num-methods-fig6.png" /></p>
 <p>Figure 6. Scattering angles with the Lennard-Jones potential.</p>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="analysis-of-results">
-<h2>3.11 Analysis of results<a class="headerlink" href="#analysis-of-results" title="Permalink to this headline">¶</a></h2>
+<section id="analysis-of-results">
+<h2>3.11 Analysis of results<a class="headerlink" href="#analysis-of-results" title="Permalink to this headline">#</a></h2>
 <p>When the impact parameter <span class="math notranslate nohighlight">\(b\)</span> is small (<span class="math notranslate nohighlight">\(b/\sigma \lt 1\)</span>), the recoil angle <span class="math notranslate nohighlight">\(\chi\)</span> is large and positive and the repulsive part of the potential is dominant. When <span class="math notranslate nohighlight">\(b\)</span> increases, the overall deflection can become zero. This is called a ‘glory’ and the initial energy and values of <span class="math notranslate nohighlight">\(b\)</span> mean that the particles are initially attracted to one another, but the impact angle is glancing and, as the repulsive part of the potential is reached, just enough repulsion is present to return the particle on to its original path; the attractive and repulsive interactions exactly cancel. Rainbow scattering occurs when <span class="math notranslate nohighlight">\(d\chi/db = 0\)</span> at the minimum of the curve shown in Fig. 6. At some <span class="math notranslate nohighlight">\(b\)</span> values, the approaching particle can become captured, the angle increases past <span class="math notranslate nohighlight">\(-\pi\)</span> to <span class="math notranslate nohighlight">\(-\infty\)</span> and the particles orbit one another. This is seen with <span class="math notranslate nohighlight">\(E/\epsilon = 1/5\)</span> at <span class="math notranslate nohighlight">\(b/\sigma \approx 2.29\)</span>. The trajectories are shown in Fig. 10,  the algorithm with which to calculate them is also given.</p>
 <p>In actual experiments and in quantum calculations, interferences between the different paths the same particle can take are observed. These must be absent in any classical calculation. Scattering is observed experimentally by performing molecular beam experiments and the scattering is, fortunately, not always elastic and chemical reactions can occur and this is called <em>reactive scattering</em>. These experiments have provided lots of fundamental information about chemical reactions and there are a number of clear descriptions of this, see, for example, Rigby et al. (1986), Steinfeld et al. (1999), Bernstein (1982), Eyring et al. (1980), and Hirst (1990).</p>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -2194,9 +2428,11 @@ quadratic function to data points rather than straight lines; the formula is</p>
 
               </div>
               
-        
-            <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="num-methods-intro.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -2212,26 +2448,28 @@ quadratic function to data points rather than straight lines; the formula is</p>
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-        
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-    <div class="container">
-      <p>
-        
-          By Godfrey Beddard<br/>
-        
-            &copy; Copyright 2022.<br/>
-      </p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Godfrey Beddard<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
     </div>
-  </footer>
-</main>
+    
+</div>
 
 
       </div>
     </div>
   
-  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>

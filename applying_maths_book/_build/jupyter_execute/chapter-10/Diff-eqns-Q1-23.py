@@ -1,14 +1,14 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## Questions 1 - 23
+# # Questions 1 - 23
 
-# ### Q1 Phase portrait
+# ## Q1 Phase portrait
 # Calculate the phase portrait for $\displaystyle \frac{d^2x}{dx^2} - \omega^2x = 0$. 
 # 
 # Show by plotting some trajectories that the centre is a saddle point which means that the curvature along the x-axis is the opposite to that along $v = dx/dt$.
 # 
-# ### Q2 Solve
+# ## Q2 Solve
 # (a) $\displaystyle\frac{dy}{dx} = \frac{xy}{1-x^2}$ , 
 # 
 # (b) $\displaystyle\frac{dy}{dx} = e^x \tan(y)$, 
@@ -17,32 +17,32 @@
 # 
 # with the initial condition that $y_0 = c$ when $x=x_0$.
 # 
-# ### Q3  Solve $2A\to B$ 
+# ## Q3  Solve $2A\to B$ 
 # Find $A$ vs. $t$ for the reaction 2A $\to$ product.
 # 
-# ### Q4 Solve
+# ## Q4 Solve
 # (a) Solve equation (7). 
 # 
 # (b) Find the time for half the population to be infected if initially, only one individual is infected. 
 # 
 # **Strategy:**  (a) To integrate separate variables. The initial condition is $x = 1$ at $t = 0$ and the total population is $N$. (b) The time when $x = N/2$ is the half life.
 # 
-# ### Q5 X-ray scattering
+# ## Q5 X-ray scattering
 # Show that the fractional scattering of X-rays off a single electron is $\displaystyle I_s /I_0 = 4\pi\left (\frac{e^2}{mc^2}  \right)^2 $
 # 
-# ### Q6 Skydiver
+# ## Q6 Skydiver
 # When the skydiver's parachute opens we assume that the drag instantly becomes proportional to the velocity squared, i.e. $kv^2$ where $k$ is a constant. Calculate the terminal velocity.
 # 
-# ### Q7 Rate equation
+# ## Q7 Rate equation
 # If $x$ moles of a substance A reacts in time $t$ with another B, it is found that $x/(a-x) = akt$, where $a$ is the number of moles of A or B initially preset, $k$ is the rate constant and at $t = 0, \,x = 0$. Show that the rate equation for this reaction varies as $(a - x)^2$. What are the units of $k$?
 # 
-# ### Q8 Forming ice
+# ## Q8 Forming ice
 # A jar of water at $15^\text{o}$C is placed in a temperature of $-12^\text{o}$C and its temperature falls by $5^\text{o}$C in $8$ minutes. How many minutes will it be before ice could form?
 # 
-# ### Q9 Sublimation
+# ## Q9 Sublimation
 # A certain amount of crystalline iodine is dropped into a heated chamber at constant temperature and sublimes to form I$_2$ vapour. Suppose that the sublimation occurs at a rate that is proportional to the amount of crystalline iodine present at that time. Write down the rate equation for the disappearance of the solid and also the change in pressure $p$ caused by sublimation. Let $p_\infty$ be the final pressure when the entire solid has sublimed.
 # 
-# ### Q10 Fluorescence quenching
+# ## Q10 Fluorescence quenching
 # The Stern - Volmer equation describes the ratio of fluorescence in the presence and absence of a quencher at concentration $Q$. The excited states behave according to the scheme (4). The additional quenching step is S + Q $\displaystyle {\stackrel{k_q}\rightarrow }$ G + Q and the Stern - Volmer equation is 
 # 
 # $$\displaystyle \frac{\varphi}{\varphi_q}=1+k_{SV}[Q]$$
@@ -55,10 +55,10 @@
 # 
 # **Strategy:** Use steady state conditions to solve the equations.
 # 
-# ### Q11 Blood alcohol level
+# ## Q11 Blood alcohol level
 # In the reaction scheme, 
 # 
-# $\qquad\qquad$ A $\stackrel{k_1} \rightarrow $ B $\stackrel{k_0} \rightarrow $ C 
+# $$\displaystyle  A \stackrel{k_1} \rightarrow  B \stackrel{k_0} \rightarrow C$$ 
 # 
 # where $[A]_0 = a, \,[B]_0 = [C]_0 = 0$ suppose that species A decays to B in a first-order process, but B decays by zero order.
 # 
@@ -70,10 +70,10 @@
 # 
 # **Strategy:** The rate of change of a zero-order reaction is a constant and therefore does not depend on the change in concentration of any species. In the body when the alcohol level is high, it reacts at a rate that is independent of the alcohol or enzyme concentration and is therefore zero order. At low concentrations, and hence at long times, this is not true and the reaction scheme breaks down. ( At low alcohol concentration, $k_0$ can empirically be replaced by $k_0B/(k_0B + 5\cdot 10^{-5})$, which better represents its behaviour; see Barnes & Fulford 2002).
 # 
-# ### Q12 Poisoned catalyst
+# ## Q12 Poisoned catalyst
 # A catalytic pellet, made of Pt on an Al$_2$O$_3$ support, is poisoned by one of several sulfur compounds after this has diffused only a small way into its surface. The spherical pellet has a radius $r_0$, the diffusion coefficient in the pellet is $D$ and the poison has penetrated to a radius $r_p$. If the poison has a fixed concentration in solution of $c_0$, what is its concentration $c_p$ in the catalyst at radius $r_p$ if the flux into the pellet is equal to the rate of reaction $k\cdot c_p$?
 # 
-# ### Q13 Diffusion limited reaction
+# ## Q13 Diffusion limited reaction
 # The rate of reaction of hydroxyl and of ethyl radicals has been measured in solution, as have those of many other species, and found to be diffusion controlled. The quenching of a molecule M by a species Q had been found to have a rate constant equal to the diffusion controlled value $k_d$. The Smoluchowski model (Eyring, Lin & Lin 1980) supposes that reaction occurs at a radius $R_A$ around A, see sketch below. Inside this spherical surface, the concentration of Q is assumed to be zero. Show, assuming that steady state conditions apply and using Fick’s first law, that the diffusion controlled rate constant is $4\pi DR$ where $D$ is the sum of the diffusion coefficients of the two species.
 # 
 # **Strategy:** If M and Q are the concentrations of the species, then the rate of reaction is $k_2$MQ. This is equal to the total flux entering the spherical surface of radius $r$, which is $J = +4\pi r^2D dQ/dr$, multiplied by the concentration M. The initial condition is that $c_0$ = 0 at $r = R$. Calculate $J$ first then $k_2$.
@@ -81,7 +81,7 @@
 # ![Drawing](diffeqn-fig8.png)
 # ________
 # 
-# ### Q14 Chain-branching explosion
+# ## Q14 Chain-branching explosion
 # A gas phase chain-branching reaction is stable under some conditions, but can be explosive under others. Chain branching is the cause of the first explosion limit in the H$_2$/O$_2$ reaction. 
 # 
 # The general radical chain reaction scheme can be drawn pictorially, as shown in Fig. 9. The initial species M reacts to produce some chain carriers R, which can produce more of themselves, $\alpha$R and also the reaction product $P$. A chain carrier can also be deactivated by reacting with other species or with the walls of the reaction vessel, both of which lead to termination. The branching number $\alpha$, must be greater than unity if branching is to occur, because by definition the propagation step produces one radical as well as product, e.g. R + M $\to$ R + product.
@@ -98,7 +98,7 @@
 # Fig. 9 Chain branching; $P$ is the product; $R$ is the radical chain carrier.
 # _____
 
-# ### Q15 Iodine recombination
+# ## Q15 Iodine recombination
 # The recombination of iodine atoms after the photo-dissociation of molecular iodine in the presence of inert buffer gas, was one of the first reactions followed by Porter using the technique of flash photolysis he had invented and for which he won a share of the Nobel Prize in Chemistry (Porter 1967; Christie et al. 1952; Porter & Smith 1961; Phillips & Barber 2006). This technique uses a flash of light to initiate a reaction followed by a second weaker flash at a predetermined time to probe the species produced.
 # 
 # The first observation made was that the reciprocal pressure of iodine atoms increased linearly with time as they recombined at a constant buffer gas pressure and the second was that as the temperature was raised that the recombination rate constant decreased, i.e. the reaction had negative temperature dependence and hence the experimentally measured activation energy was _negative_. The scheme proposed was
@@ -113,7 +113,7 @@
 # 
 # **Strategy:**  Assume that IM is at steady state and use this to simplify and then integrate the rate equation.
 # 
-# ### Q16 Glucose mutarotation
+# ## Q16 Glucose mutarotation
 # The mutarotation of glucose in water or the racemisation of biphenyls are reversible unimolecular reactions with the scheme $\displaystyle A \underset {k_{-1}}{\stackrel{k_1} \rightleftharpoons} B$. Transitions in membrane proteins also follow this scheme if the transitions are induced by a voltage, and then A and B indicate states when the protein is open or closed to the passage of ions. If $a$ and $b$ are the initial amounts of A and B respectively and $x$ the amount of A reacted at time $t$,
 # 
 # (a) Calculate the change in A as equilibrium is reached.
@@ -132,7 +132,7 @@
 # 
 # **Strategy:** Let $x$ be the amount of A consumed at time $t$ and use this to calculate the loss in A and the increase in B.
 # 
-# ### Q17 Relaxation method
+# ## Q17 Relaxation method
 # In the relaxation methods of studying chemical kinetics, the reaction at equilibrium is perturbed by a small amount and the return to equilibrium under the new conditions followed. In one method, water is heated up to a few degrees above room temperature by an infrared laser pulse of nanosecond duration, and the equilibrium
 # 
 # $$\displaystyle \text{H}_2\text{O} \underset {k_{-1}}{\stackrel{k_1} \rightleftharpoons} \text{H}^+ + \text{OH}^- $$
@@ -141,7 +141,7 @@
 # 
 # **Strategy:** Let $x$ be the amount of water dissociated or ions produced, and write down $dx/dt$. Then to allow for a small change let $\Delta x = x - x_e$ where $x_e$ is the equilibrium concentration of ions, and substitute this into the rate equation to find $d\Delta x/dt$. Assume $\Delta x^2$ is small compared to $\Delta x$ and $x_e^2$.
 # 
-# ### Q18 Catalysis
+# ## Q18 Catalysis
 # There are many different classes of catalytic reactions. An important set of reactions is the Michaelis - Menten scheme S + E $\rightleftharpoons$ SE $\to$ P + E. The enzyme E catalyses the substrate S to form product P and is returned to its active state. The classic example is trypsin produced from trypsinogen. This scheme cannot be solved analytically, except at steady state, but is easily solved numerically, see Chapter 11.
 # 
 # Simpler catalytic reaction schemes are found between acetone and iodine in an acidic solution, or Ru$^{2+}$ oxidized by acidic bromate ions containing traces of BrO$_2$. The stoichiometry for the reaction of acetone is
@@ -156,7 +156,7 @@
 # 
 # (b) Sketch the phase portrait and characterize the equilibrium points as stable or unstable.
 # 
-# ### Q19 Population growth
+# ## Q19 Population growth
 # The Gompertz population growth law appears to be good at describing the growth of tumours (Strogatz 1994). The rate of change of the size $n$ of a tumour (as number of cells) is represented as
 # 
 # $$\displaystyle \frac{dn}{dt} = -kn \ln\left(\frac{n}{a}\right), \qquad n(0) = n_0,\qquad  k > 0 ,\qquad a > 0$$
@@ -179,7 +179,7 @@
 # 
 # **Strategy:** (a) try the substitution $\displaystyle n/a = e^u$.
 # 
-# ### Q20 Births & deaths
+# ## Q20 Births & deaths
 # Rate equations can be used to study populations of all sorts of animals, fish, or bacteria. Suppose that a number of creatures $N$ are born with a rate constant $k_1$ (time$^{-1}$) but die with a rate constant that has a value that is not only dependent on the rate of natural deaths $k_2$ but also on the number of animals $k_3N$. The units of $k_2$ are the same as $k_1$, and $k_3$ are number$^{-1}\,\mathrm{ time^{-1}}$. The factor $k_3N$ represents death caused by 'crowding' which is not meant literally, but is due to competition for resources or shelter and so forth. There are $N_0$ animals are present initially.
 # 
 # (a) Write down the rate equation and work out the steady state conditions. (The rate equation produced is called the _logistic_ equation and should not be taken too literally when describing animal populations, but used as a starting point; see Strogatz 1994).
@@ -194,7 +194,7 @@
 # 
 # **Strategy:** The rate of population change is the difference in that due to an increase and decrease in the population. The steady state conditions are found when the rate of change is zero. The phase portrait is the plot of $dN/dt$ vs $N$; see Section 1.6.
 # 
-# ### Q21 Triplet-Triplet annihilation
+# ## Q21 Triplet-Triplet annihilation
 # A solution of an aromatic molecule in its electronic ground state G is excited by a pulse of light, and its first excited singlet state S$_1$ is produced. Some of these molecules fluoresce while others form triplet states via intersystem crossing. The triplet excited state T, is far longer lived than the singlet, typically by 1000 times. In solution, the triplets can annihilate one another after diffusing together and this can make measuring the correct triplet lifetime difficult. The scheme is
 # 
 # $$\displaystyle \begin{align}
@@ -215,7 +215,7 @@
 # 
 # Plot T vs time if $k_a =10^9\,\mathrm{ dm^3\, mol^{-1}\, s^{-1}}$, and $k_T =10^2 \to 10^4\,\mathrm{ s^{-1}}$ and $T_0 = 10^{-4}\,\mathrm{ mol\, dm^{-3}}$. Show that at long times the decay is first-order and $k_T$ can be measured, and that at short times the decay is second order.
 # 
-# ### Q22 Continuous excitation
+# ## Q22 Continuous excitation
 # A solution of aromatic molecules is continuously excited by visible light at a rate $R$a and a small population $[S_1]$ of the molecule's its excited singlet state is produced. $R = I_{abs}\sigma[G]$ where $I_{abs}$ is the light intensity, $\sigma$ the absorption cross section, and [G] the ground state concentration. The state $S_1$ decays to a triplet state T in a process called intersystem crossing with rate constant $k_S$, and fluoresces with rate constant $k_f$. The triplet decays back to the ground state with rate constant $k_T$.
 # 
 # Solve the scheme for singlet ($S_1$) and triplet populations. The scheme is shown in the sketch, Fig. 10. The initial populations at $t$ = 0 are $S_1(0) = S_0, \, T(0) = 0$.
@@ -227,7 +227,7 @@
 # Fig.10 Singlet - triplet scheme.
 # ____
 # 
-# ### Q23 Laser pulse excitation
+# ## Q23 Laser pulse excitation
 # If a laser pulse of duration $I(t)$ initiates a reaction in a molecule A with rate constant $k_S$, then the rate of change of A can be written as $\displaystyle \frac{dA}{dt} = k_aI(t) - k_S A$. If the initial amount of A is $A_0$, solve this equation,
 # 
 # (a) when the pulse is so short it can be considered as a delta function $I(t) = I_0 \delta(t - t_0)$ where $I_0$ is the instantaneous intensity at time $t_0$, and

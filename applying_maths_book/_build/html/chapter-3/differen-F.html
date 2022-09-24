@@ -4,11 +4,13 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Limits, l’Hopital’s rule, Maximum, Minimum and Calculus of Variations &#8212; Applying Maths in the Chemical &amp; Biomolecular Sciences</title>
     
-  <link href="../_static/css/theme.css" rel="stylesheet">
-  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,40 +20,39 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Questions 43 - 73" href="differen-G-Q-43-73.html" />
@@ -63,7 +64,21 @@
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -72,9 +87,10 @@
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -92,14 +108,15 @@
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../intro.html">
-   Applying Maths in the Chemical and Biomolecular Sciences.
-  </a>
- </li>
-</ul>
-<ul class="current nav bd-sidenav">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Applying Maths in the Chemical and Biomolecular Sciences.
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../chapter-1/chapter1-intro.html">
    1. Numbers, Equations, Operators, and Algorithms.
@@ -204,11 +221,6 @@
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-2/chapter2-Q-10-13.html">
      Questions 10 -13
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-2/chapter2-C.html">
-     Euler’s theorem, roots of unity, x-ray diffraction structure factor.
     </a>
    </li>
    <li class="toctree-l2">
@@ -337,7 +349,7 @@
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../chapter-4/integration-intro.html">
-   4. Integration.
+   4 Integration.
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
   <label for="toctree-checkbox-4">
@@ -377,7 +389,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-4/integration-D.html">
-     Calculating an Average Value.
+     Calculating an Average.
     </a>
    </li>
    <li class="toctree-l2">
@@ -407,7 +419,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-4/integration-G.html">
-     Calculating the energy of a chemical bond using molecular orbitals
+     Calculating the energy of a Chemical Bond using Molecular Orbitals
     </a>
    </li>
    <li class="toctree-l2">
@@ -688,7 +700,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-7/matrices-D.html">
-     Rotation matrices: moving molecules
+     Rotation matrices: moving molecules. Coordinate transform as rotation.
     </a>
    </li>
    <li class="toctree-l2">
@@ -757,23 +769,13 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-7/matrices-K.html">
-     Calculating a bond length using moments of inertia
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-7/matrices-Q61.html">
-     Question 61
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="../chapter-7/matrices-L.html">
      Principal axes for Moments of Inertia
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-7/matrices-Q62.html">
-     Question 62
+    <a class="reference internal" href="../chapter-7/matrices-Q61-62.html">
+     Question 61 - 62
     </a>
    </li>
    <li class="toctree-l2">
@@ -1004,7 +1006,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-G.html">
-     PDE examples continued
+     PDE Continued
     </a>
    </li>
    <li class="toctree-l2">
@@ -1096,7 +1098,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-11/num-methods-answers8-12.html">
-     Solutions Q8 - 12
+     Solutions Q 8 - 12
     </a>
    </li>
    <li class="toctree-l2">
@@ -1258,117 +1260,239 @@
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/chapter-3/differen-F.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/subblue/applying-maths-book"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/subblue/applying-maths-book/issues/new?title=Issue%20on%20page%20%2Fchapter-3/differen-F.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        
-    </div>
-</div>
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/subblue/applying-maths-book/main?urlpath=lab/tree/applying_maths_book/chapter-3/differen-F.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        <a class="colab-button" href="https://colab.research.google.com/github/subblue/applying-maths-book/blob/main/applying_maths_book/chapter-3/differen-F.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
-                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
-                    src="../_static/images/logo_colab.png"
-                    alt="Interact on Colab">Colab</button></a>
-        
-        
-    </div>
-</div>
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/subblue/applying-maths-book/main?urlpath=lab/tree/applying_maths_book/chapter-3/differen-F.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://colab.research.google.com/github/subblue/applying-maths-book/blob/main/applying_maths_book/chapter-3/differen-F.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/subblue/applying-maths-book"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/subblue/applying-maths-book/issues/new?title=Issue%20on%20page%20%2Fchapter-3/differen-F.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/chapter-3/differen-F.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#l-hopital-s-rule">
    6  l’ Hopital’s rule
   </a>
   <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#chemical-equilibria">
+     <strong>
+      Chemical equilibria
+     </strong>
+    </a>
+   </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#diffraction-intensity">
      <strong>
@@ -1419,19 +1543,97 @@
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Limits, l’Hopital’s rule, Maximum, Minimum and Calculus of Variations</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#l-hopital-s-rule">
+   6  l’ Hopital’s rule
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#chemical-equilibria">
+     <strong>
+      Chemical equilibria
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#diffraction-intensity">
+     <strong>
+      Diffraction intensity
+     </strong>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#beware-of-false-fractions">
+   6.1 Beware of ‘False fractions’
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#extrema-maxima-minima-and-inflection-points">
+   7 Extrema: maxima, minima and inflection points
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#summary">
+   7.1 Summary
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#luminescence-from-phosphors-an-example-with-differentiation-of-an-integral-and-numerically-solving-for-a-root">
+     <strong>
+      Luminescence from phosphors. An example with differentiation of an integral and numerically solving for a root
+     </strong>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-calculus-of-variations">
+   8 The Calculus of Variations
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#calculating-the-shape-of-the-minimum-surface-of-revolution">
+   8.1 Calculating the shape of the minimum surface of revolution.
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-brachistochrone-the-tautochrone-and-the-cycloid">
+   8.2 The Brachistochrone, the Tautochrone and the Cycloid
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
               <div>
                 
-  <div class="section" id="limits-l-hopital-s-rule-maximum-minimum-and-calculus-of-variations">
-<h1>Limits, l’Hopital’s rule, Maximum, Minimum and Calculus of Variations<a class="headerlink" href="#limits-l-hopital-s-rule-maximum-minimum-and-calculus-of-variations" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="l-hopital-s-rule">
-<h2>6  l’ Hopital’s rule<a class="headerlink" href="#l-hopital-s-rule" title="Permalink to this headline">¶</a></h2>
+  <section class="tex2jax_ignore mathjax_ignore" id="limits-l-hopital-s-rule-maximum-minimum-and-calculus-of-variations">
+<h1>Limits, l’Hopital’s rule, Maximum, Minimum and Calculus of Variations<a class="headerlink" href="#limits-l-hopital-s-rule-maximum-minimum-and-calculus-of-variations" title="Permalink to this headline">#</a></h1>
+<section id="l-hopital-s-rule">
+<h2>6  l’ Hopital’s rule<a class="headerlink" href="#l-hopital-s-rule" title="Permalink to this headline">#</a></h2>
 <p>In many calculations limits are encountered. For example, in the theory of diffraction the function <span class="math notranslate nohighlight">\(\displaystyle \frac{\sin(x)}{x}\)</span> is met which, when <span class="math notranslate nohighlight">\(x \to 0\)</span>, has the form <span class="math notranslate nohighlight">\(0/0\)</span> and at first sight this ratio seem to be indeterminate. There are other forms similar to this such as <span class="math notranslate nohighlight">\(\infty/\infty,\, \infty/0,\, 0\times \infty,\, 0\times 0,\, \infty-\infty\)</span> and l’Hopital’s rule is a method, sometimes used with a little additional ingenuity, of determining these limits. This topic is discussed here, not only because it requires differentiation, but also because it will be needed in the next section. It seems that Johann Bernoulli first worked this out, but it is named after l’Hopital who was one of his pupils.</p>
 <p>The method is</p>
 <p>(a) Rearrange the limit required, if necessary, so that it becomes a ratio. This may require some cunning.</p>
@@ -1461,8 +1663,33 @@
 <div class="math notranslate nohighlight">
 \[\displaystyle   \lim_{x\to 0} \left(\frac{1}{x}-\frac{1}{\sin(x)}\right)= \lim_{x\to 0} \frac{\sin(x)-x}{x\sin(x)}\to \frac{\cos(x)-1}{x\cos(x)+\sin(x)}  \to \frac{-\sin(x)}{-x\sin(x)+2\cos(x)} \to 0\]</div>
 <p>In the last step substituting for <span class="math notranslate nohighlight">\(x=0\)</span> gives the ratio as <span class="math notranslate nohighlight">\(0/1\)</span> so  the limit is zero.</p>
-<div class="section" id="diffraction-intensity">
-<h3><strong>Diffraction intensity</strong><a class="headerlink" href="#diffraction-intensity" title="Permalink to this headline">¶</a></h3>
+<section id="chemical-equilibria">
+<h3><strong>Chemical equilibria</strong><a class="headerlink" href="#chemical-equilibria" title="Permalink to this headline">#</a></h3>
+<p>In a second order reaction of the form</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle A+B \overset{k_1}{\underset{k_{-1}} \rightleftharpoons } C+D\]</div>
+<p>the rate of change of <span class="math notranslate nohighlight">\(C\)</span> is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{dC}{dt}=k_1AB-k_{-1}CD\]</div>
+<p>where <span class="math notranslate nohighlight">\(C\equiv [C]\)</span> etc. for clarity. This can be re-written using <span class="math notranslate nohighlight">\(A_0-A=B_0-B=C_0+C=D_0+D\)</span>, where the subscript <span class="math notranslate nohighlight">\(0\)</span> indicates the initial amount, and if initially only <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> are present,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{dC}{dt} = k_1(A_0-C)(B_0-C) - k_{-1}C^2\]</div>
+<p>which can be integrated but we are interested in the equilibrium when the rate of change is zero. Letting <span class="math notranslate nohighlight">\(C_e\)</span> be the equilibrium amount gives</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle K_e = \frac{k_1}{k_{-1}}=\frac{C_e^2}{(A_0-C_e)(B_0-C_e)} \]</div>
+<p>and when <span class="math notranslate nohighlight">\(A_0 = B_0\)</span> this simplifies to</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle K_e = \frac{k_1}{k_{-1}}=\frac{C_e^2}{(A_0-C_e)^2} \]</div>
+<p>which has the solution</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle C_e=\frac{A_0(K_e-\sqrt{K_e})}{K_e-1}\]</div>
+<p>To find the concentration when <span class="math notranslate nohighlight">\(K_e=1\)</span> the fraction seems to be <span class="math notranslate nohighlight">\(0/\infty\)</span>. Using L’Hopital’s rule and differentiating with <span class="math notranslate nohighlight">\(K_e\)</span> gives</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{A_0(K_e-\sqrt{K_e})}{K_e-1}\to \frac{A_0(1-\frac{1}{2}K_e^{-1/2})}{1}=\frac{A_0}{2}\]</div>
+<p>which makes sense as there are equal moles initially of <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> so in total <span class="math notranslate nohighlight">\(2A_0\)</span> and equal concentrations for each species but only in this particular case.</p>
+</section>
+<section id="diffraction-intensity">
+<h3><strong>Diffraction intensity</strong><a class="headerlink" href="#diffraction-intensity" title="Permalink to this headline">#</a></h3>
 <p>The intensity of line of <span class="math notranslate nohighlight">\(N\)</span> emitters, such as point sources that are also coherent as occurs in the theory of interference and diffraction, is given by</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle I=I_0\frac{\sin^2(N\delta/2)}{\sin^2(\delta/2)}\]</div>
@@ -1473,25 +1700,25 @@
 <p>thus we need only</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \lim_{\delta\to 0}\frac{\sin(N\delta/2)}{\sin(\delta/2)}\to\frac{N\cos(N\delta/2)/2}{\cos(\delta/2)/2}=N\]</div>
-<p>making the maximum intensity <span class="math notranslate nohighlight">\(I=N^2I_0\)</span> when <span class="math notranslate nohighlight">\(\delta=2\pi m\)</span> which makes the cosines <span class="math notranslate nohighlight">\(1\)</span>. See fig 15 in chapter 9, ‘Fourier Transforms’ for a figure of the sinc function where <span class="math notranslate nohighlight">\(\mathrm{sinc}(ax)=\sin(ax)/\sin(x)\)</span> function.</p>
-</div>
-</div>
-<div class="section" id="beware-of-false-fractions">
-<h2>6.1 Beware of ‘False fractions’<a class="headerlink" href="#beware-of-false-fractions" title="Permalink to this headline">¶</a></h2>
+<p>making the maximum intensity <span class="math notranslate nohighlight">\(I=N^2I_0\)</span> when <span class="math notranslate nohighlight">\(\delta=2\pi m\)</span> which makes the cosines <span class="math notranslate nohighlight">\(1\)</span>. See fig 15 in chapter 9, ‘Fourier Transforms’ for a figure of the sinc function where <span class="math notranslate nohighlight">\(\mathrm{sinc}(ax)=\sin(ax)/\sin(x)\)</span>.</p>
+</section>
+</section>
+<section id="beware-of-false-fractions">
+<h2>6.1 Beware of ‘False fractions’<a class="headerlink" href="#beware-of-false-fractions" title="Permalink to this headline">#</a></h2>
 <p>Sometimes a limit is required but the expression is not really a fraction, for example <span class="math notranslate nohighlight">\(\displaystyle \lim_{x\to 1} \frac{x^4-1}{x-1} \)</span> which looks like a fraction but is simplified to <span class="math notranslate nohighlight">\(\displaystyle \lim_{x\to 1} \frac{(x-1)(x^3+x^2+x+1)}{(x-1)} \)</span> and because the value <span class="math notranslate nohighlight">\(x = 1\)</span> is never reached ( we are seeking the limit to not the value at <span class="math notranslate nohighlight">\(x = 1\)</span>) the <span class="math notranslate nohighlight">\(x-1\)</span> terms can be cancelled out leaving <span class="math notranslate nohighlight">\(\lim_{x\to 1} (x^3+x^2+x+1)=4 \)</span></p>
-</div>
-<div class="section" id="extrema-maxima-minima-and-inflection-points">
-<h2>7 Extrema: maxima, minima and inflection points<a class="headerlink" href="#extrema-maxima-minima-and-inflection-points" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="extrema-maxima-minima-and-inflection-points">
+<h2>7 Extrema: maxima, minima and inflection points<a class="headerlink" href="#extrema-maxima-minima-and-inflection-points" title="Permalink to this headline">#</a></h2>
 <p>One very useful property of derivatives is that they allow us to find the maxima and minima of functions; these are also called stationary points of the function. The extrema might be the maximum or minimum but can also be the limit where the function goes to <span class="math notranslate nohighlight">\(\pm \infty\)</span>.</p>
 <p>The maximum of a curve is a point in whose locality all surrounding points have smaller <span class="math notranslate nohighlight">\(y\)</span> values. The minimum is defined similarly but points adjacent to it have larger y values and in both case the gradient is exactly zero. In Fig. 12 it is clear that the gradient is zero at the maximum and again at the minimum of the curve. The graph shows the first <span class="math notranslate nohighlight">\(f'\)</span> and second <span class="math notranslate nohighlight">\(f''\)</span> derivatives. An inflexion point can occur when the gradient is zero but <span class="math notranslate nohighlight">\(y\)</span> is smaller on one side of the point than it is on the other. An inflexion can also occur when the gradient is not zero in which case the curvature of the line changes from concave to convex or vice versa.</p>
 <p>The first derivative is zero at <span class="math notranslate nohighlight">\(x\)</span> = 4/3 and 3, which are the maximum and minimum respectively. The second derivative, which is the straight line, is negative at the maximum and positive at the minimum, so that the maximum and minimum of a function can be found from knowledge of the first and second derivatives.</p>
 <p>The function shown in Fig. 12 is the equation <span class="math notranslate nohighlight">\(y = 2(x - 2)^3 - x^2 + 4\)</span>, which has three roots, where <span class="math notranslate nohighlight">\(x = 0\)</span> at <span class="math notranslate nohighlight">\(x \approx 0.8, 2\)</span>, and <span class="math notranslate nohighlight">\(\approx 3.7\)</span>. The first derivative is <span class="math notranslate nohighlight">\(y' = 6(x - 3)(x - 4/3)\)</span>, which has roots at <span class="math notranslate nohighlight">\(x = 4/3\)</span> and <span class="math notranslate nohighlight">\(3\)</span>, which from the graph (left) are the maximum and minimum. The second derivative <span class="math notranslate nohighlight">\(y'' = 12x - 26\)</span> is negative where <span class="math notranslate nohighlight">\(x \lt 13/6\)</span> (<span class="math notranslate nohighlight">\(\approx 2.2\)</span>) as can also be seen from the graph.</p>
 <p><img alt="Drawing" src="../_images/differen-fig12.png" /></p>
 <p>Figure 12. The curve <span class="math notranslate nohighlight">\(f(x) = 2(x - 2)^3 - x^2 + 4\)</span> showing its maximum and minimum, and its first <span class="math notranslate nohighlight">\(f'(x)\)</span> and second <span class="math notranslate nohighlight">\(f''(x)\)</span> derivatives. Notice how the first derivative is zero at the maximum and also the minimum and that the second derivative determines which is which in cases when a plot is not made.</p>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="summary">
-<h2>7.1 Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<section id="summary">
+<h2>7.1 Summary<a class="headerlink" href="#summary" title="Permalink to this headline">#</a></h2>
 <p>A function <span class="math notranslate nohighlight">\(f(x)\)</span> has a maximum or minimum when <span class="math notranslate nohighlight">\(\displaystyle \frac{d}{dx}f(x)=0 \tag{25}\)</span></p>
 <p>The maximum occurs when <span class="math notranslate nohighlight">\(\displaystyle \frac{d^2}{dx^2}f(x) \lt 0\tag{26}\)</span></p>
 <p>The minimum occurs when <span class="math notranslate nohighlight">\(\displaystyle \frac{d^2}{dx^2}f(x) \gt 0 \tag{27}\)</span></p>
@@ -1503,8 +1730,8 @@
 <div class="math notranslate nohighlight">
 \[\displaystyle   y'=-\frac{2x}{(1+x^2)^2}, \qquad y''=\frac{6x^2-2}{(1+x^2)^3}\]</div>
 <p>The first derivative is zero at <span class="math notranslate nohighlight">\(x=0\)</span>, and the second zero at <span class="math notranslate nohighlight">\(\displaystyle x=\pm\frac{1}{\sqrt{3}}\)</span>  and <span class="math notranslate nohighlight">\(\displaystyle y=\pm\frac{3}{4}\)</span></p>
-<div class="section" id="luminescence-from-phosphors-an-example-with-differentiation-of-an-integral-and-numerically-solving-for-a-root">
-<h3><strong>Luminescence from phosphors. An example with differentiation of an integral and numerically solving for a root</strong><a class="headerlink" href="#luminescence-from-phosphors-an-example-with-differentiation-of-an-integral-and-numerically-solving-for-a-root" title="Permalink to this headline">¶</a></h3>
+<section id="luminescence-from-phosphors-an-example-with-differentiation-of-an-integral-and-numerically-solving-for-a-root">
+<h3><strong>Luminescence from phosphors. An example with differentiation of an integral and numerically solving for a root</strong><a class="headerlink" href="#luminescence-from-phosphors-an-example-with-differentiation-of-an-integral-and-numerically-solving-for-a-root" title="Permalink to this headline">#</a></h3>
 <p>Many non metallic compounds such as ZnS-Cu and zinc silicates-Mn, will show phosphorescence lasting many tens of seconds after excitation with UV light. Some phosphors also show luminescence on heating and this provides a method of dating minerals and clays directly or in man-made objects discovered by archaeologists. The cause of the luminescence is the recombination of electrons, liberated by the UV or heat, with relatively low energy impurity ‘traps’ and the excess energy is released as a photon. These impurity traps have an energy between the filled levels (ground state or valance band) and the empty ones at higher energy (excited state or conduction band).</p>
 <p>If there are <span class="math notranslate nohighlight">\(n\)</span> electrons liberated their decay into a trap can be described by a first order scheme as,</p>
 <div class="math notranslate nohighlight">
@@ -1538,11 +1765,11 @@
 <p>This result can only be solved numerically, such as by the Newton-Raphson method, to find the trap depth, <span class="math notranslate nohighlight">\(E\)</span> when the maximum temperature <span class="math notranslate nohighlight">\(T_m\)</span> is known from experiment.</p>
 <p><img alt="Drawing" src="../_images/differen-fig13b.png" /></p>
 <p>Figure 13b. Luminescence heating curves from eqn 27c for a crystal containing impurity traps of depth <span class="math notranslate nohighlight">\(E\)</span>. The intensity divided by the rate of heating is plotted. This means that the curves show the number of photons liberated at each temperature and so the area under each curve is <span class="math notranslate nohighlight">\(n_0\)</span> the total number of electrons present initially. Recombination of electrons and traps produces a photon. The parameters user were <span class="math notranslate nohighlight">\(n_0=1000,\; k_0 = 3\cdot 10^9\,\mathrm{s^{-1}}\)</span>, <span class="math notranslate nohighlight">\(E = 5000\,\mathrm{cm^{-1}}\)</span> the heating rate <span class="math notranslate nohighlight">\(\beta=0.5\)</span> and <span class="math notranslate nohighlight">\(5.5\)</span> degrees/second is shown on the plot. The temperature at the maximun luminescence intensity is <span class="math notranslate nohighlight">\(300.8\)</span> and <span class="math notranslate nohighlight">\(331.3\)</span> K respectively for the <span class="math notranslate nohighlight">\(\beta\)</span> shown and were calculated using the Newton-Raphson method.</p>
-</div>
-</div>
+</section>
+</section>
 <hr class="docutils" />
-<div class="section" id="the-calculus-of-variations">
-<h2>8 The Calculus of Variations<a class="headerlink" href="#the-calculus-of-variations" title="Permalink to this headline">¶</a></h2>
+<section id="the-calculus-of-variations">
+<h2>8 The Calculus of Variations<a class="headerlink" href="#the-calculus-of-variations" title="Permalink to this headline">#</a></h2>
 <p>Instead of finding the maximum or minimum of a curve, consider finding the shortest distance between two points on the earth’s surface or on a cone, or finding the equation giving the minimum area of a surface, or the curve of fastest descent between two points. The <em>Calculus of Variations</em> allows us to work out solutions to problems of this type.</p>
 <p>You can imagine a graph that shows the many possible different curves that will fit between any two points. A practical example would be all the different routes by which you could travel from, say, Paris to Berlin.  The calculus of variations is so named because it varies any path by an amount <span class="math notranslate nohighlight">\(\delta y\)</span> and, as the variation, <span class="math notranslate nohighlight">\(\delta y \to 0\)</span>, the path along <span class="math notranslate nohighlight">\(y\)</span> becomes the same as that along <span class="math notranslate nohighlight">\(y + \delta y\)</span>. Because the whole path is sought, the problem is to find a function <span class="math notranslate nohighlight">\(f\)</span> that, provided that it exists, will make an <em>integral have a stationary</em> value, also called an <em>extremal</em>, which usually means that it has the smallest possible value. This condition is written as</p>
 <div class="math notranslate nohighlight">
@@ -1569,9 +1796,9 @@
 <div class="math notranslate nohighlight">
 \[\displaystyle  f-y_x\frac{\partial f}{\partial y_x} = const \tag{32}\]</div>
 <p>This is sometimes called the ‘Beltrami’ identity. The words ‘not explicit’ mean that <span class="math notranslate nohighlight">\(f\)</span> is a function of <span class="math notranslate nohighlight">\(y\)</span> or <span class="math notranslate nohighlight">\(dy/dx\)</span> such as <span class="math notranslate nohighlight">\( f = y^2 + dy/dx\)</span> which does <em>not</em> explicitly depend on <span class="math notranslate nohighlight">\(x\)</span>; the function <span class="math notranslate nohighlight">\(f = x^2\)</span> explicitly depends on <span class="math notranslate nohighlight">\(x\)</span>.</p>
-</div>
-<div class="section" id="calculating-the-shape-of-the-minimum-surface-of-revolution">
-<h2>8.1 Calculating the shape of the minimum surface of revolution.<a class="headerlink" href="#calculating-the-shape-of-the-minimum-surface-of-revolution" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="calculating-the-shape-of-the-minimum-surface-of-revolution">
+<h2>8.1 Calculating the shape of the minimum surface of revolution.<a class="headerlink" href="#calculating-the-shape-of-the-minimum-surface-of-revolution" title="Permalink to this headline">#</a></h2>
 <p>Using the Euler equation is actually not that difficult and as an example the minimum surface of revolution of all possible surfaces for a film suspended between two rings is calculated.  A surface of revolution is given by equation (29) but if the surface is to be a minimum then (30) or (32) must also apply. The latter equation is easier to use with <span class="math notranslate nohighlight">\(f =y \sqrt{1 + (dy/dx)^2}\)</span> because this does not explicitly contain <span class="math notranslate nohighlight">\(x\)</span>.</p>
 <p>Using the notation <span class="math notranslate nohighlight">\(\displaystyle y_x = \frac{dy}{dx}\)</span> then <span class="math notranslate nohighlight">\(f =y \sqrt{1 + y_x^2}\)</span> and the derivative in eqn 32 becomes,</p>
 <div class="math notranslate nohighlight">
@@ -1586,9 +1813,9 @@
 <div class="math notranslate nohighlight">
 \[\displaystyle y = a \cosh\left(\frac{x}{a} + b\right)\]</div>
 <p>where <span class="math notranslate nohighlight">\(b\)</span> is a constant of integration. The constant <span class="math notranslate nohighlight">\(b\)</span> sets the position of the minimum of the curve; <span class="math notranslate nohighlight">\(b = 0\)</span> sets the minimum at <span class="math notranslate nohighlight">\(x = 0\)</span>, whereas <span class="math notranslate nohighlight">\(a\)</span> determines the depth of the curve . This equation describes the Catenary or the curve describing the shape of the edge of the minimum surface of revolution as in a soap film supported on rings, see fig 13(b). It is also the shape produced by a flexible cable or chain hanging under its own weight i.e. under a constant uniform force such as gravity. The shape is very close to, but distinct from that of  parabola.</p>
-</div>
-<div class="section" id="the-brachistochrone-the-tautochrone-and-the-cycloid">
-<h2>8.2 The Brachistochrone, the Tautochrone and the Cycloid<a class="headerlink" href="#the-brachistochrone-the-tautochrone-and-the-cycloid" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="the-brachistochrone-the-tautochrone-and-the-cycloid">
+<h2>8.2 The Brachistochrone, the Tautochrone and the Cycloid<a class="headerlink" href="#the-brachistochrone-the-tautochrone-and-the-cycloid" title="Permalink to this headline">#</a></h2>
 <p>The Brachistochrone is the name of the curve a frictionless particle will travel along to pass between two points in the shortest time when acted on by a force such as gravity. The time taken is much less than that taken to move down a straight slope or, in fact, any other slope. The Tautochrone is the same curve but is used to describe the fact that a particle set in motion down the curve will arrive at the horizontal part at the same time irrespective of where it starts from. The inverted Brachistochrone is the cycloid, see question 53.</p>
 <p>As it will simplify the calculation, we will suppose that a particle of mass <span class="math notranslate nohighlight">\(m\)</span> travels downwards in the +<span class="math notranslate nohighlight">\(x\)</span> direction and moves to the right as the +<span class="math notranslate nohighlight">\(y\)</span> direction after starting at rest at the origin (Margenau &amp; Murphy, 1943). Using conservation of potential and kinetic energy,</p>
 <div class="math notranslate nohighlight">
@@ -1620,8 +1847,8 @@
 \[\displaystyle  y=\frac{\sin^{-1}\left(\sqrt{1-cx}\right)}{c}+\sqrt{\frac{x(1-cx)}{c}}+c_1\]</div>
 <p>where <span class="math notranslate nohighlight">\(c_1\)</span> is a second constant of integration. If the particle starts at the origin then <span class="math notranslate nohighlight">\(y = 0\)</span> when <span class="math notranslate nohighlight">\(x = 0\)</span> and therefore <span class="math notranslate nohighlight">\(c_1 = -\pi/2c\)</span>. This is the curve shown in fig. 14 but plotted with axes as shown and not in the conventional way.</p>
 <p>The solution to this problem was found independently by the Bernoulli brothers, and by Leibniz, Huygens and Newton towards the end of the seventeenth and beginning of the eighteenth centuries.</p>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -1645,9 +1872,11 @@
 
               </div>
               
-        
-            <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="differen-E-Q-12-42.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -1663,26 +1892,28 @@
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-        
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-    <div class="container">
-      <p>
-        
-          By Godfrey Beddard<br/>
-        
-            &copy; Copyright 2022.<br/>
-      </p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Godfrey Beddard<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
     </div>
-  </footer>
-</main>
+    
+</div>
 
 
       </div>
     </div>
   
-  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>

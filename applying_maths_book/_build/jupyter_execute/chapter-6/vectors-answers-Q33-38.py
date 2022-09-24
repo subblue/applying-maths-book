@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## Solutions Q33 - 38
+# # Solutions Q33 - 38
 
 # In[1]:
 
@@ -15,7 +15,7 @@ init_printing()                      # allows printing of SymPy results in types
 plt.rcParams.update({'font.size': 16})  # set font size for plots
 
 
-# ### Q33 answer
+# ## Q33 answer
 # It turns out that the determinant is the product of the diagonal terms only because of the position of the zeros. Consequently, only two multiplications are needed. Python/Sympy gives:
 
 # In[2]:
@@ -38,11 +38,11 @@ M.det()
 # 
 # $$\displaystyle V = abc\sqrt{1 - \cos^2(\beta)(1+ \cos^2(\gamma)) - \cos^2(\alpha) + 2\cos(\alpha) \cos(\beta) \cos(\gamma) }$$
 # 
-# ### Q34 answer
+# ## Q34 answer
 # $n_2$ is zero when $\cos(\alpha) - \cos(\gamma)\cos(\beta) = 0$ which occurs when $\alpha = \beta = \pi/2$ or $\alpha=\gamma =\pi/2$, which occurs in a monoclinic crystal, or when all three angles are $90^\text{o}$ as in cubic, tetragonal, or orthorhombic crystals.
 # 
 # 
-# ### Q35 answer
+# ## Q35 answer
 # Equation 21 is simplified when $\alpha=\gamma=\pi/2$ because the cosines of these angles are zero; therefore, 
 # 
 # $$\displaystyle v^2 = v_1^2a^2 + v_2^2b^2 + v_3^2c^2 + 2v_1v_3ac \cos(\beta)$$
@@ -88,7 +88,7 @@ simplify(expand(lengthsqrd))
 
 # which is the same as equation 21 when $\alpha=\gamma=\pi/2$.
 # 
-# ### Q36 answer
+# ## Q36 answer
 # (a) A simple basis set for the cubic ($a=b=c$) crystal (or orthorhombic $a\ne b\ne c$ or tetragonal ($a=b\ne c$) ) is 
 # 
 # $$\begin{bmatrix}a&0&0\end{bmatrix}, \begin{bmatrix} 0 & b & 0 \end{bmatrix}, \begin{bmatrix} 0 & 0 &c\end{bmatrix}$$
@@ -113,7 +113,7 @@ simplify(expand(lengthsqrd))
 # 
 # By a similar calculation, the length 1-3 is $2a\sqrt{7}$. The angle 2-1-3 ($\phi$) is found using the dot product of the two vectors 1-3 and 1-2 which is $\displaystyle 3a^2\begin{bmatrix}3/2& \sqrt{3}/2\end{bmatrix}\begin{bmatrix}4\\ 2\sqrt{3}\end{bmatrix}=27a^2$. Using $\cos(\phi)=27/(\sqrt{28}\sqrt{27})$ the angle is $10.9^\text{o}$. This can also be checked using geometry, because the angle 1-2-3 is a right angle and the length 1-3 is known. Point 4 has coordinates $(1, 4)$ and is at a distance $a\sqrt{21}$ from the origin. The angle 2-1-4 is $19.1^\text{o}$. The calculation with point 5 produces the same results as for point 4 because points 4 and 5 are symmetrical about point 2.
 # 
-# ### Q37 answer
+# ## Q37 answer
 # The Python code to calculate the C–N1 bond length (in angstrom) is somewhat simpler than described in the text. The components of the positional vectors are multiplied by $a, b$, and $c$ to put them into angstrom. A function is defined to calculate the bond length; equation 24. The absolute value of the square root is taken to ensure that it is always positive.  Notice that the dot product is calculated using equation 20 because the axes are not all at right angles.
 
 # In[8]:
@@ -132,7 +132,8 @@ alpha = np.pi/2
 beta  = 115.5*np.pi/180 
 gama  = np.pi/2
 
-bond_length = lambda delta : np.abs(np.sqrt( delta[0]**2 + delta[1]**2 + delta[2]**2                                         + 2*delta[0]*delta[2]*np.cos(beta ) ) )  # lambda function 
+bond_length = lambda delta : np.abs(np.sqrt( delta[0]**2 + delta[1]**2 + delta[2]**2\
+                                         + 2*delta[0]*delta[2]*np.cos(beta ) ) )  # lambda function 
 
 print('{:s}{:8.4f}'.format('length N1-C  /nm = ',bond_length(N1-C)/10 ) )
 print('{:s}{:8.4f}'.format('length N2-C  /nm = ',bond_length(N2-C)/10 ) )
@@ -148,7 +149,7 @@ print('{:s}{:8.4f}'.format('angle N3-N1-C  = ',angle(N1-N3,N1-C,beta)*180/np.pi 
 
 # The carbon between the two adjacent nitrogen atoms has a bond angle of $127.34^\text{o}$ and the N3-N1-C angle $116.24^\text{o}$; both substantially different to the nominal sp$^2$ hybrid angle of $120^\text{o}$.
 # 
-# ### Q38 answer
+# ## Q38 answer
 # The equations to use are 32 and 33. Using the data, and Python from the previous question to define the atom and crystal coordinates, the calculation proceeds as follows. Note that an atom's coordinates now lack multiplication by $a, b$ and $c$ because these are included in the matrix $M$. Angstrom units are used.
 
 # In[9]:

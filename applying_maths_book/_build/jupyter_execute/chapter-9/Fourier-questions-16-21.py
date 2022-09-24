@@ -1,9 +1,9 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## Questions 16 - 21 
+# # Questions 16 - 21 
 
-# ### Q16 Optical correlator
+# ## Q16 Optical correlator
 # In example (iii) of Section 8.4 describing the optical correlator, Fig. 32, a special case has been examined because the laser intensity was given as $\displaystyle e^{-(t/a)^2}$ which represents the envelope of the pulse and ignores the electric field itself. However, it is the amplitude of the laser's electric field $E$ that is important, the square of which is the intensity $I$. A _fringe-resolved_ autocorrelation is recorded if a fast responding photodiode is used to detect the signal; this has the shape of a pulse but with sinusoidal type oscillations within the pulse envelope. The amplitude of $E$ describes how the electric field of the light varies throughout the pulse. In a transform-limited pulse, the frequency is constant across the pulse duration. In a chirped pulse, the frequency varies, either increasing or decreasing as time progresses. If this could be heard, it would, as the name suggests, sound like a bird's chirp.
 # 
 # The amplitude profile of a transform limited pulse, can be written as $\displaystyle E(t) = \cos(\omega t/a)e^{-t^2/(2a^2)}$ where $a = \tau/\sqrt{2\ln(2)}$ and $\tau$ is the pulse fwhm and $\omega$ its central wavelength; Fig. 35 shows the pulse shape.
@@ -33,14 +33,14 @@
 # 
 # **Strategy:** As the pulse is real, calculating the absolute value has no special effect and the squares can be taken directly. To simplify the calculation, expand out the terms first and collect similar terms together. For example, the second order autocorrelation has terms $\displaystyle \int E(t)^4dt=\int E(u+t)^4dt$ and $\int E(t)E(u+t)^3dt = \int E(t)^3E(u+t)dt$. 
 # 
-# ### Q17 Femtosecond laser pulses
+# ## Q17 Femtosecond laser pulses
 # Femtosecond laser pulses have been assumed to have different shapes such as $\exp(-| x |/a)$ or sech$^2(x/a)$ where sech is the reciprocal of the hyperbolic cosine which is cosh, and $\cosh(x) = (e^x + e^{-x})/2$. The sech$^2$ function looks very much like a Gaussian.
 # 
 # Calculate the autocorrelation of these two pulse shapes, and work out the pulse-widths and fwhm from each autocorrelation and how much wider these are than the laser pulse that generated them. 
 # 
 # **Strategy:** Start with equation 42, but notice that the absolute value of $x$ is used. The integration is far simpler if it is assumed that $a$ is positive and that $x$ real and positive. There is a discontinuity in the sech$^2$ integral so care is needed here.
 # 
-# ### Q18 Bat acoustics
+# ## Q18 Bat acoustics
 # Bats produce a range of high frequency acoustic signals that they use for echolocation. In some species, this is a narrow-band constant frequency and in others, it is broadband and chirped in frequency. In yet other species both types  are used; the constant frequency when locating prey and the chirped signal when attacking, see Altringham (1996). 
 # 
 # A chirped pulse has a frequency that changes during its duration. As bats hunt where there are many other objects around besides insects, tree branches are an example, and being able to discriminate one object from another down
@@ -71,7 +71,7 @@
 # **Strategy:** Use previously used  code to calculate the autocorrelation which you may need to modify to make the maximum value of $t= 1$, and therefore the maximum time equal to $1$ ms which is $2\, \mu$s per point. To plot the summed signal up to a given time, convert time to distance with $12$ mm = $70\,\mu$s.
 # 
 # 
-# ### Q19 FID in NMR
+# ## Q19 FID in NMR
 # Use Python to create an FID, such as might be observed from an NMR experiment on two spin $1/2$ nuclei, and then calculate the absolute value of the spectrum using an exponential decay, with a lifetime of $300$ channels and frequencies of $10/48$ and $10/45$; assume the FID has the form
 # 
 # $$\displaystyle e^{-x/300}\left(\sin(2\pi x/4.8)+ \sin(2\pi x/4.5)  \right)$$
@@ -87,7 +87,7 @@
 # 
 # (d) Explain why the apodisation improves the signal to noise of the spectrum.
 # 
-# ### Q20 Chirped laser pulse
+# ## Q20 Chirped laser pulse
 # The shape of the electric field from a femtosecond laser is measured and found to be chirped but is noisy. The pulse follows the equation
 # 
 # $$\displaystyle f(t)= e^{-((t-1000)/200)^2}\sin(t^2/400^2)+noise$$
@@ -98,7 +98,7 @@
 # 
 # **Strategy:** Use the method described in Section 10.3. Decide how many data points to use, which will depend on the highest frequency of the pulse, and is determined by the Nyquist frequency, Section 9.2.
 # 
-# ### Q21 Moving average
+# ## Q21 Moving average
 # Use the moving average method to write a recursive algorithm in Python to effect smoothing on a set of data of your choice as shown in Fig. 48.
 
 # In[ ]:

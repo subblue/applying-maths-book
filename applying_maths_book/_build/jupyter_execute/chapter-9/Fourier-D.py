@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## Convolution and Autocorrelation
+# # Convolution and Autocorrelation
 
 # In[1]:
 
@@ -16,11 +16,11 @@ init_printing()                      # allows printing of SymPy results in types
 plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 
-# ### Motivation and concept
+# ## Motivation and concept
 # 
 # Instruments measure everything: for example, mass, energy, number of particles, wavelength of light, voltage, current, and images. However, every instrument distorts the data to a greater or lesser extent, and obviously we try to make these distortions insignificant but this is not always possible. In cases when a detector may not respond quickly enough to an event, when very wide slits have to be used in a spectrometer to detect a weak signal, or an electronic circuit does not respond in a linear manner to the input voltage, a distortion to the data is unavoidable. The effect is to _convolute_ the ideal response, as defined by the physics behind the experiment, with the instrumental response. Fortunately Fourier transforms can usually be used to unravel the effect of convolution, however, in some circumstances this may not be possible.
 # 
-# ### 7.1 Examples
+# ## 7.1 Examples
 # 
 # **(i)** To be specific, suppose that the lifetime of electronically excited atoms or molecules is to be measured by exciting them with a pulse of light and their fluorescence measured as it decays with time. This fluorescence could be observed with a photodiode or photomultiplier, whose output voltage is measured with an oscilloscope. Before doing this experiment, two questions have to be answered;
 # 
@@ -45,7 +45,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # **(iii)** A final use of convolution is to smooth data. Because convoluting one function with another involves integration, this has the effect of summing or averaging. The rolling or moving average method (Section 10.4) is in effect a convolution, and effectively smooths spiky data.
 # 
 # 
-# ### 7.2 How convolution works
+# ## 7.2 How convolution works
 # 
 # In the next sections, a convolution will be calculated by direct summation and by a Fourier transform. Convolution is related to the auto- and cross-correlations and these will also be described. How to go about estimating the true response from the convoluted response in real, that is experimental data, i.e. reversing the effects of convolution, is discussed in chapter 13 on numerical methods. This is usually done using iterative, non-linear least-squares methods, (See 13.6.7), because when using real data, which always contains noise, it is found that reverse transforming the convolution often results in a calculated ideal response that is so noisy as to be useless.
 # 
@@ -81,7 +81,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # ______
 # 
-# ### 7.3 Convolution by summation
+# ## 7.3 Convolution by summation
 # 
 # Written as a summation, the convolution at point $k$ is
 # 
@@ -126,7 +126,7 @@ plt.legend()
 plt.show()
 
 
-# ### 7.4 Convolution by Fourier transform
+# ## 7.4 Convolution by Fourier transform
 # 
 # The convolution can also become an integral, by supposing that the points are separated by an infinitesimal amount, and therefore, the change $sum \rightarrow \int $  is allowable. The integral form of the convolution at time $u$, is
 # 
@@ -169,7 +169,7 @@ plt.show()
 # $\quad$(4) The product of two functions is the reverse transform of the convolution of their transforms: $f\cdot w=T^{-1}[ T(f)\otimes T(w) ]$.
 # 
 # 
-# #### **Proof of convolution as transform**
+# ### **Proof of convolution as transform**
 # 
 # The proof that the convolution is a product of transforms starts with the definition in eqn 33 the transform is made and the order of integration is changed. (The limits are removed for clarity and are $u,t \pm \infty$ and replaced with the variable). The first step is to convert $w$ into its fourier transform, which introduces another integral
 # 
@@ -199,7 +199,7 @@ plt.show()
 # Figure 29. Left: The two waveforms are the Fourier transform of a square pulse (top) and two delta functions (lower). When these are multiplied together and reverse transformed two pulses are produced which is the convolution of the delta functions and the single square pulse. The same method has been used to make Fig. 24, even though the functions differ.
 # ______
 # 
-# #### **Shifting a wavepacket: $T(f\cdot w)=T(f)\otimes T(w)$:   Products and transforms**
+# ### **Shifting a wavepacket: $T(f\cdot w)=T(f)\otimes T(w)$:   Products and transforms**
 # 
 # As an illustration that the transform of a product is the convolution of the transforms we examine a wavepacket which  has the form of a complex exponential modified by a gaussian envelope, fig 29a. A femtosecond laser pulse could have this time profile, a vibrational wavepacket this shape with bond extension $x$.  The wavepacket is
 # 
@@ -218,7 +218,7 @@ plt.show()
 # Figure 29a. A Gaussian wavepacket shifted by convolution with the $\delta$ function $\delta(k-k_0)$ in $k$ space. The various widths are shown as red lines. The left hand panel shows the function in 'real' $x$ space, the right hand one in transform $k$ space. The constants used were $\sigma=1,k_0=10$.
 # ________
 # 
-# #### **Code example of convolution by fourier transform**
+# ### **Code example of convolution by fourier transform**
 
 # In[3]:
 
@@ -245,7 +245,7 @@ plt.legend()
 plt.show()
 
 
-# ### 7.5 A warning and a Solution
+# ## 7.5 A warning and a Solution
 # 
 # Finally a warning about using Fourier transforms to perform convolution. The transform assumes that the function being transformed is periodic, this means that if the signal is not of the same size, such as zero,  at its start and end there is a frequency associated with changing from end to start so that this will appear as an artifact in the convolution. THis occurs because the transform assumes that the signal is periodic. This does not arise in the case of the summation method and even though this may be slower to calculate, it is more robust.  The difference is shown in the next figure 29b. On the left is shown the summation based convolution calculation using an exponential, with lifetime of 10000, and a Gaussian and on the right using the Fourier transform method. All is not lost, however, because by padding the data with zeros to double its length the correct result can be obtained. 
 # 
@@ -254,7 +254,7 @@ plt.show()
 # Figure 29b. The figure shows the difference between the correct convolution done by summation ( red curve left ) and the artefact introduced by using the Fourier method ( red curve right ) this is produced when the functions are not the same size, preferably zero, at the start and end of the data.
 # ________
 # 
-# ### 8 Autocorrelation and cross-correlation
+# ## 8 Autocorrelation and cross-correlation
 # 
 # A correlation is a function that measures the similarity of one set of data to another. A cross-correlation is formed if the data are dissimilar, an autocorrelation if there is only one set of data. The data might be a voltage from a detector, it might be an image or residuals from fitting a set of data.  In Fig. 30 part of a noisy sinusoidal curve is shown in black and labelled 1. The second curve (2, red) is displaced only a little from the first and is clearly only slightly different; the third (3, grey) which is displaced by more is clearly different from the first as it is positive at large $x$ when the first curve is negative. The right-hand figure shows the autocorrelation of the curve (1) shown on the left, and as this is an oscillating curve, the autocorrelation also oscillates but eventually reaches zero. The oscillation is a result of the fact that a sinusoidal curve is similar to itself after each period, and the autocorrelation measures this similarity by increasing and decreasing. The autocorrelation is also less noisy that the data because it involves summing or integrating over many data points. 
 # 
@@ -265,7 +265,7 @@ plt.show()
 # Figure 30. A sketch showing the first $120$ points of a set of noisy data of $250$ points. The data is still somewhat similar to itself when displaced by only a few points but much less so, when displaced by many, dashed grey curve. The autocorrelation of all the data is shown on the right. Notice also how as autocorrelation integrates the data, the noise is reduced.
 # _________
 # 
-# ###  8.1 Applications 
+# ##  8.1 Applications 
 # 
 # In ultra-fast (femtosecond) laser spectroscopy, autocorrelations are used to measure the length of the laser pulse because no electronic device is fast enough to do this, as they are limited to a time resolution of a few tens of picoseconds at best, but laser pulses can be less than $10$ fs in duration. In single molecule spectroscopy, the correlation of the number of fluorescent photons detected in a given time interval is used to determine the diffusion coefficient of the molecules. In the study of the electronically excited states of molecules, the correlation of time resolved spectra, recorded as the molecule moves on its potential energy surface, is a measure of excited state and solvent dynamics.  Perhaps the most important application is in FTIR spectroscopy. 
 # 
@@ -273,7 +273,7 @@ plt.show()
 # 
 # Two dimensional cross correlation is used in imaging for example to identify a particular feature by correlating two images. High spots in the correlation show where the images have similarities.
 # 
-# ### 8.2 Calculating the correlation
+# ## 8.2 Calculating the correlation
 # 
 # The correlation function is similar to, but different from, convolution. The autocorrelation is always symmetrical about zero displacement or lag, the cross-correlation is not. In the convolution the two functions $f$ and $w$ are folded on one another, the first point of $f$ multiplying the last of $w$ and so on, until the last point of $f$ multiplies the first of $w$, equation 31. In the auto- and cross-correlation, one function is also moved past the other and the sum of the product of each term is made but with the indices running in the _same direction_, both increasing. 
 # 
@@ -349,7 +349,7 @@ plt.show()
 # 
 # where * indicates the complex conjugate.
 # 
-# ### 8.3 Comparison with convolution and a fourier transform.
+# ## 8.3 Comparison with convolution and a fourier transform.
 # 
 # The convolution and correlation are very closely related , the convolution integral has the form 
 # 
@@ -378,9 +378,9 @@ plt.show()
 # 
 # which is the Wiener-Khinchin Theorem described shortly. This shows us that the square of the absolute value of the fourier transform of $f$ is its autocorrelation.
 # 
-# ### 8.4 Examples
+# ## 8.4 Examples
 # 
-# #### **(i) Periodic function**
+# ### **(i) Periodic function**
 # If the function is periodic then the integration limits should cover one period. The normalized autocorrelation of a cosine $A\cos(2\pi\nu t + \varphi)$, where the period is $T = 1/\nu$ and $\varphi$ is the phase, is calculated as
 # 
 # $$\displaystyle G(u) = \frac{\int\limits_0^T \cos(2\pi\nu t+\varphi)\cos(2\pi \nu (u+t)+\varphi)dt}{\int\limits_0^T \cos^2(2\pi \nu t+\varphi)dt}$$
@@ -406,7 +406,7 @@ simplify(G)
 # 
 # Using the Euler relationship, $\displaystyle e^{-i\theta} = \cos(\theta) + i \sin(\theta)$, the real or imaginary parts of the function give the cosine or sine result respectively.
 # 
-# #### **(ii) aperiodic function**
+# ### **(ii) aperiodic function**
 # If the function is not periodic, then the limits must be determined by the function being used. The normalized autocorrelation $A(u)$ of the function $f(t) = e^{-at}$, when $t \ge 0$ and $f (t) = 0$ when $t \lt 0$, will be calculated, and also its full width at half-maximum, fwhm. The integration limits can be changed from those in equation (42) because the function is zero for $t \lt 0$ and the lower limit can be zero. The normalization, using equation (42), is
 # 
 # $$\displaystyle \int_{-\infty}^{\infty} f(t)^2dt=\int_0^\infty e^{-2at}dt = \frac{1}{2a}$$
@@ -419,7 +419,7 @@ simplify(G)
 # 
 # As a check, at $u = 0,\, A(0) = 1$, which is correct and the function is even or symmetrical about its y-axis, or, $u = 0$. The _fwhm_ is calculated when $\displaystyle A(u_h) = 0.5 = e^{-a|u_h|}$ or $\displaystyle |u_h|=a^{-1}\ln(2)$ and thus _fwhm_ is $\displaystyle 2a^{-1}\ln(2)$. This is twice as wide in this instance as the initial function.
 # 
-# #### **(iii) Laser pulses**
+# ### **(iii) Laser pulses**
 # The duration of a short laser pulse is often measured as an autocorrelation with an optical correlator. If the intensity profile $I$ of the short laser pulse is a Gaussian centred at zero $\displaystyle I = e^{-2(t/a)^2}$, it is possible to calculate the width of its normalized autocorrelation. If the calculated autocorrelation shape is compared with an experimentally measured one, an estimation of the laser pulse's duration can be made. The optical correlator to do this measurement is a Michelson interferometer; the path length in one arm is changed relative to the other so that one pulse is moved past the other in time. The pulses are combined in a frequency doubling crystal, and a u.v. signal is detected only when the pulses overlap. 
 # 
 # To achieve this, the doubled frequency, which is in the ultraviolet part of the spectrum, is separated from the fundamental wavelength by a filter. The size of the signal vs the distance the mirror moves, which is proportional to time, is the autocorrelation see Fig. 32. 
@@ -446,7 +446,7 @@ G.doit()
 
 # The normalization integration can be looked up  but need not be worked out because it is the value of autocorrelation when $u$ = 0. The normalization equation is therefore $\displaystyle \int e^{-2t^2/a^2}dt=a\sqrt{\pi /2}$. The normalized autocorrelation $G(u)$ is also a Gaussian, with a value $\displaystyle G(u)=e^{-u^2/(2a^2)}$. The _fwhm_ of this function is calculated when $G(u)=1/2$ and is $a\sqrt{2\ln(2)}$ and that of the original pulse is $a\sqrt{\ln(2)}$ therefore, the autocorrelation is $\sqrt{2} \approx$ 1.414 times wider than the pulse. Knowing this factor provides a convenient way of measuring the duration of a short laser pulse assuming it has a Gaussian profile.
 # 
-# #### **(iv) Goodness of data fitting**
+# ### **(iv) Goodness of data fitting**
 # The randomness or otherwise of the autocorrelation of the residuals obtained from fitting real data to a model (theory) is important when determining the 'goodness of fit'. The function is now a set of data points not an equation. The data in Fig. 33 shows the autocorrelation of a random sequence of values where the mean is 0 (left) and $1/2$ (right). When the mean is zero, only the first point has a value not essentially zero. When the mean is $1/2$, there is a correlation between each point, and this decreases as the separation between points increases. Since the mean is $1/2$ (or any value not zero), this means that each point is related to all the others, because, besides random fluctuations, they all have the same underlying value. Their correlation becomes less the further they are separated. 
 # 
 # The normalized autocorrelation of any line $y$ = constant, is a sloping straight line starting at $1$ and ending at $0$. This is to be expected, because at zero displacement the line is overlapped with itself, whereas at the maximum displacement, only one term remains, see equation (36), and this value is small. In Fig. 33, the random noise has a large correlation at zero displacement because the whole trace must be perfectly correlated with itself; its value is 1 but only because the autocorrelation is normalized.
@@ -506,7 +506,7 @@ plt.show()
 # 
 # _____
 # 
-# ### 8.5 Autocorrelation of fluctuating and noisy signals
+# ## 8.5 Autocorrelation of fluctuating and noisy signals
 # 
 # The autocorrelation of noise is now considered, and in the next section this will lead to understanding the shape of a spectroscopic transition and this is illustrated with NMR. Any experimental measurement is accompanied by noise. When measuring the properties of single atoms, molecules, or photons, considerable fluctuations in their measured values are expected and many events have to be averaged to obtain a precise result. The measured property might be energy, velocity, the number of photons in a given period measured by a photodiode, or the current in a transistor or diode when this is so small that discrete charge events are recorded. This latter noise is called _shot noise_. If you could hear shot noise, the effect would be rather similar to the sound of heavy rain falling on a car's roof. 
 # 
@@ -544,7 +544,7 @@ plt.show()
 # 
 # which is an oscillating signal that will repeat itself with a period $T$.
 # 
-# ### 8.6 Wiener–Khinchin relations
+# ## 8.6 Wiener–Khinchin relations
 # 
 # The autocorrelation (equation (43)) is related to the energy or power in a given signal. For example, with electromagnetic radiation the energy is the square of the amplitude $E$ of the electric field, the field is given by the constants $a$ and $b$ thus $a^2 + b^2$ represents the energy. This is also true of a sound wave in a fluid where the energy is proportional to the square of the oscillating pressure. There are other examples; the power dissipated in a resistor is proportional to the current squared and the kinetic energy of a molecule is proportional to the square of the velocity. Thus, in general if the signal is $f$, $\langle f^2\rangle$ represents the average energy or power. The period $T$ (equation (43)) is somewhat arbitrary and can reasonably take on any value; therefore, it is possible to define $n/T \equiv \nu_n$ as a frequency. The amount of power $P$ in a small frequency interval from $\nu$ to $\nu + \nu + \delta \nu$ is therefore $\displaystyle P(\nu)d\nu = \frac{1}{2}\left(a_\nu^2 + b_\nu^2\right)$ and the autocorrelation can be written as an integral over frequencies rather than a summation over index $n$. This effectively means that there are so many terms in the sum that it can be changed into an integral without any significant error, and doing this produces the autocorrelation;
 # 
@@ -580,7 +580,7 @@ plt.show()
 # 
 # Figure 34. Left: Power spectra (or spectral density) vs. frequency for a signal that has an exponential autocorrelation function, the decay lifetimes of the exponentials are from $1 \to 100$ ps. The density of the fluctuation in the noise is almost constant at lower frequencies and this is called 'white noise'. 
 
-# ### 8.7 FTIR supplement
+# ## 8.7 FTIR supplement
 # 
 # An overview of the FTIR spectrometer was given in section 5.2 and a schematic shown in figure 12. Here we discuss how the instrument measures the spectrum even though both beams pass through the sample and a single detector is used. This is unlike the situation in a uv-vis spectrophotometer where the light is split and passes separately through a sample and a reference cell and the signals from two detectors compared. 
 # 
@@ -635,7 +635,7 @@ plt.show()
 # Figure 34a. Left column shows individual amplitudes of the waves of frequency $\omega_0, \omega_1$. The centre column shows how the autocorrelations differ when the amplitudes are different even though the two frequencies are unchanged. The yellow mask shows a region of most noticeable change. The right most column shows the spectrum computed from its autocorrelation. After A.Lipson 2011.
 # ______
 # 
-# ### 8.8 Spectral resolution
+# ## 8.8 Spectral resolution
 # 
 # In calculating the fourier transform. eqn 46b, the limits were taken to $0\to \infty$ and of course in an instrument this is clearly impossible, where the delay to one arm may extend only to a centimetre or so a time delay of $\approx 0.033$ ns. The limited range has the effect of convoluting a top-hat or rectangular shape with the delta function response of the ideal case when limits are $\pm \infty$. The result is a sinc function as shown in figures 15, i.e. a peak surrounded by many decreasing oscillations. In this respect the FTIR does distort the shape of the transition from its true Lorentzian shape, not that this matters in practice where only the frequency is important and the intensity only characterised as 'weak', to 'strong'. More important is the resolution because the longer the maximum delay the narrower the peaks become and so finer features become distinguishable. The fwhm of the sinc function is $0.6035/d_m$ where $d_m$ is the maximum displacement of one arm of the interferometer vs. the other. If this distance is $1$ cm then the resolution will be $0.6\;\mathrm{cm^{-1}}$. Typically this would involve a transform of $2^{13}=8192$ points or a step of $1.2\;\mathrm{\mu m}$.  
 # 

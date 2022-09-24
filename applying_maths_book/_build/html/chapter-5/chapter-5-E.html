@@ -4,11 +4,13 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Maclaurin and Taylor series expansions. Paramagnetic spins. Euler-Maclaurin formula. &#8212; Applying Maths in the Chemical &amp; Biomolecular Sciences</title>
     
-  <link href="../_static/css/theme.css" rel="stylesheet">
-  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,40 +20,39 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Questions 14 - 34" href="chapter-5-F-Q14-34.html" />
@@ -63,7 +64,21 @@
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -72,9 +87,10 @@
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -92,14 +108,15 @@
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../intro.html">
-   Applying Maths in the Chemical and Biomolecular Sciences.
-  </a>
- </li>
-</ul>
-<ul class="current nav bd-sidenav">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Applying Maths in the Chemical and Biomolecular Sciences.
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../chapter-1/chapter1-intro.html">
    1. Numbers, Equations, Operators, and Algorithms.
@@ -204,11 +221,6 @@
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-2/chapter2-Q-10-13.html">
      Questions 10 -13
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-2/chapter2-C.html">
-     Euler’s theorem, roots of unity, x-ray diffraction structure factor.
     </a>
    </li>
    <li class="toctree-l2">
@@ -337,7 +349,7 @@
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../chapter-4/integration-intro.html">
-   4. Integration.
+   4 Integration.
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
   <label for="toctree-checkbox-4">
@@ -377,7 +389,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-4/integration-D.html">
-     Calculating an Average Value.
+     Calculating an Average.
     </a>
    </li>
    <li class="toctree-l2">
@@ -407,7 +419,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-4/integration-G.html">
-     Calculating the energy of a chemical bond using molecular orbitals
+     Calculating the energy of a Chemical Bond using Molecular Orbitals
     </a>
    </li>
    <li class="toctree-l2">
@@ -688,7 +700,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-7/matrices-D.html">
-     Rotation matrices: moving molecules
+     Rotation matrices: moving molecules. Coordinate transform as rotation.
     </a>
    </li>
    <li class="toctree-l2">
@@ -757,23 +769,13 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-7/matrices-K.html">
-     Calculating a bond length using moments of inertia
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-7/matrices-Q61.html">
-     Question 61
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="../chapter-7/matrices-L.html">
      Principal axes for Moments of Inertia
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-7/matrices-Q62.html">
-     Question 62
+    <a class="reference internal" href="../chapter-7/matrices-Q61-62.html">
+     Question 61 - 62
     </a>
    </li>
    <li class="toctree-l2">
@@ -1004,7 +1006,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-G.html">
-     PDE examples continued
+     PDE Continued
     </a>
    </li>
    <li class="toctree-l2">
@@ -1096,7 +1098,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-11/num-methods-answers8-12.html">
-     Solutions Q8 - 12
+     Solutions Q 8 - 12
     </a>
    </li>
    <li class="toctree-l2">
@@ -1258,112 +1260,227 @@
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/chapter-5/chapter-5-E.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/subblue/applying-maths-book"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/subblue/applying-maths-book/issues/new?title=Issue%20on%20page%20%2Fchapter-5/chapter-5-E.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        
-    </div>
-</div>
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/subblue/applying-maths-book/main?urlpath=lab/tree/applying_maths_book/chapter-5/chapter-5-E.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        <a class="colab-button" href="https://colab.research.google.com/github/subblue/applying-maths-book/blob/main/applying_maths_book/chapter-5/chapter-5-E.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
-                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
-                    src="../_static/images/logo_colab.png"
-                    alt="Interact on Colab">Colab</button></a>
-        
-        
-    </div>
-</div>
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/subblue/applying-maths-book/main?urlpath=lab/tree/applying_maths_book/chapter-5/chapter-5-E.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://colab.research.google.com/github/subblue/applying-maths-book/blob/main/applying_maths_book/chapter-5/chapter-5-E.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/subblue/applying-maths-book"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/subblue/applying-maths-book/issues/new?title=Issue%20on%20page%20%2Fchapter-5/chapter-5-E.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/chapter-5/chapter-5-E.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#maclaurin-and-taylor-series">
    6 Maclaurin and Taylor series
@@ -1468,17 +1585,137 @@
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Maclaurin and Taylor series expansions. Paramagnetic spins. Euler-Maclaurin formula.</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#maclaurin-and-taylor-series">
+   6 Maclaurin and Taylor series
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#maclaurin-series">
+   6.1 Maclaurin series
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taylor-series">
+   6.2 Taylor Series
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#o-x-and-sim-notations">
+   6.3
+   <span class="math notranslate nohighlight">
+    \(O(x)\)
+   </span>
+   and
+   <span class="math notranslate nohighlight">
+    \(\sim\)
+   </span>
+   notations
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#useful-series-expansion-formulae">
+   6.4 Useful series expansion formulae
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#trig-functions">
+   6.5 Trig functions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exponential-expansion">
+   6.6 Exponential expansion
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#log-expansion">
+   6.7 Log expansion
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#binomial-expansion-1-x-m">
+   6.8 Binomial expansion
+   <span class="math notranslate nohighlight">
+    \( (1+x)^m\)
+   </span>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-calculate-square-root">
+     <strong>
+      Example, calculate square root
+     </strong>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#derivatives-of-series">
+   6.9 Derivatives of series
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#paramagnetic-spins-example-using-partition-functions-expansions-and-limits">
+   6.10 Paramagnetic spins. Example using partition functions, expansions and limits
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-euler-maclaurin-formula">
+   7 The Euler - Maclaurin formula
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#i-the-series-for-k-2">
+     <strong>
+      (i) The series for
+      <span class="math notranslate nohighlight">
+       \(k^2\)
+      </span>
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ii-series-for-ln-k">
+     <strong>
+      (ii) series for
+      <span class="math notranslate nohighlight">
+       \(\ln(k)\)
+      </span>
+     </strong>
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
               <div>
                 
-  <div class="section" id="maclaurin-and-taylor-series-expansions-paramagnetic-spins-euler-maclaurin-formula">
-<h1>Maclaurin and Taylor series expansions. Paramagnetic spins. Euler-Maclaurin formula.<a class="headerlink" href="#maclaurin-and-taylor-series-expansions-paramagnetic-spins-euler-maclaurin-formula" title="Permalink to this headline">¶</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="maclaurin-and-taylor-series-expansions-paramagnetic-spins-euler-maclaurin-formula">
+<h1>Maclaurin and Taylor series expansions. Paramagnetic spins. Euler-Maclaurin formula.<a class="headerlink" href="#maclaurin-and-taylor-series-expansions-paramagnetic-spins-euler-maclaurin-formula" title="Permalink to this headline">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import all python add-ons etc that will be needed later on</span>
@@ -1492,16 +1729,16 @@
 </div>
 </div>
 </div>
-<div class="section" id="maclaurin-and-taylor-series">
-<h2>6 Maclaurin and Taylor series<a class="headerlink" href="#maclaurin-and-taylor-series" title="Permalink to this headline">¶</a></h2>
+<section id="maclaurin-and-taylor-series">
+<h2>6 Maclaurin and Taylor series<a class="headerlink" href="#maclaurin-and-taylor-series" title="Permalink to this headline">#</a></h2>
 <p>Many normal functions can be expanded into a series by the method devised by Maclaurin and by Taylor. Series are often used to simplify a function at some value of its argument, for example at small <span class="math notranslate nohighlight">\(x, \sin(x) \approx x\)</span>, and this may enable an equation to be solved, as in the case of a pendulum’s motion. The equation of motion is greatly simplified by assuming that the pendulum is restricted to move only to small angles from the vertical.</p>
 <p>The other use of a series expansion is to extrapolate from some simple law where dependence may be linear in <span class="math notranslate nohighlight">\(x\)</span>, into more realistic conditions by adding terms in <span class="math notranslate nohighlight">\(x^2\)</span> and <span class="math notranslate nohighlight">\(x^3\)</span> and so on. This approach extends our knowledge into unknown regions by using what is presently known about the behaviour of the equations, and assumes that they change only in a predictable and gradual way. This is the approach made when the virial coefficients of a real gas are calculated. The equation has the form</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \frac{pV}{nRT } = c_0 + c_1\frac{n}{V} + c_2\left(\frac{n}{V}\right)^2 + \cdots\]</div>
 <p>with virial coefficients <span class="math notranslate nohighlight">\(c_0, c_1\)</span> etc. and is clearly seen to be based on the ideal gas law.</p>
-</div>
-<div class="section" id="maclaurin-series">
-<h2>6.1 Maclaurin series<a class="headerlink" href="#maclaurin-series" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="maclaurin-series">
+<h2>6.1 Maclaurin series<a class="headerlink" href="#maclaurin-series" title="Permalink to this headline">#</a></h2>
 <p>A power series has the general form</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle f(x)=a_0 +a_1x+a_2x^2 +a_3x^3 +\cdots +a_nx^n +\cdots   \tag{13}\]</div>
@@ -1524,9 +1761,9 @@ f''''(x)&amp; = \cdots\, \mathrm {etc.}\end{align} \end{split}\]</div>
 <div class="math notranslate nohighlight">
 \[\displaystyle f(x) =f(0)+x\left( \frac{df}{dx} \right)_0 + \frac{x^2}{2!}\left( \frac{d^2f}{dx^2} \right)_0 \cdots +\frac{x^n}{n!}\left( \frac{d^nf}{dx^n} \right)_0+\cdots \tag{15} \]</div>
 <p>where the subscript <span class="math notranslate nohighlight">\(0\)</span> means evaluate the derivative at <span class="math notranslate nohighlight">\(x = 0\)</span>.</p>
-</div>
-<div class="section" id="taylor-series">
-<h2>6.2 Taylor Series<a class="headerlink" href="#taylor-series" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="taylor-series">
+<h2>6.2 Taylor Series<a class="headerlink" href="#taylor-series" title="Permalink to this headline">#</a></h2>
 <p>In the Maclaurin series, the derivative is calculated at <span class="math notranslate nohighlight">\(x = 0\)</span> and the function is described as having been ‘expanded about zero’. However, a function can be expanded about any other value of <span class="math notranslate nohighlight">\(x\)</span>, say <span class="math notranslate nohighlight">\(x_0\)</span>; this will generate the Taylor series which is the ‘expansion about <span class="math notranslate nohighlight">\(x_0\)</span>’. This series is</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle \qquad\qquad\begin{align}f(x) &amp;= f(x_0) + (x-x_0)f'(x_0) + \frac{(x-x_0)^2}{2!} f''(x_0) + \frac{(x-x_0)^3}{3!} f'''(x_0) +\\ &amp;\cdots + \frac{(x-x_0)^n}{n!} f^n(x_0) + \cdots \qquad\qquad\qquad \qquad\qquad\qquad \text{(16)} \end{align} \end{split}\]</div>
@@ -1535,14 +1772,14 @@ f''''(x)&amp; = \cdots\, \mathrm {etc.}\end{align} \end{split}\]</div>
 \[\begin{split}\displaystyle \qquad\qquad\begin{align}f(x) &amp;=f(x_0)+(x-x_0)\left( \frac{df}{dx} \right)_{x_0} + \frac{(x-x_0)^2}{2!}\left( \frac{d^2f}{dx^2} \right)_{x_0}\\ &amp;\cdots +\frac{(x-x_0)^n}{n!}\left( \frac{d^nf}{dx^n} \right)_{x_0}+\cdots \qquad\qquad\qquad \qquad\qquad\qquad \text{(17)}\end{align} \end{split}\]</div>
 <p>where the subscript <span class="math notranslate nohighlight">\(x_0\)</span> means evaluate the derivative at <span class="math notranslate nohighlight">\(x = x_0\)</span>: The Taylor series evaluated at zero is the Maclaurin series.</p>
 <p>These series are extremely useful, for example, to calculate <span class="math notranslate nohighlight">\(\sin(1.3), \;\cos(\pi/4),\; \ln(1 + x)\)</span>, and so forth if the function can be expanded as a Taylor series and the terms added until the required numerical accuracy is needed. This is tedious to do by hand, rather than being difficult, but is ideally suited for computer calculation where repetitive calculations are easily performed.</p>
-</div>
-<div class="section" id="o-x-and-sim-notations">
-<h2>6.3 <span class="math notranslate nohighlight">\(O(x)\)</span> and <span class="math notranslate nohighlight">\(\sim\)</span> notations<a class="headerlink" href="#o-x-and-sim-notations" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="o-x-and-sim-notations">
+<h2>6.3 <span class="math notranslate nohighlight">\(O(x)\)</span> and <span class="math notranslate nohighlight">\(\sim\)</span> notations<a class="headerlink" href="#o-x-and-sim-notations" title="Permalink to this headline">#</a></h2>
 <p>In a series expansion of a function <span class="math notranslate nohighlight">\(f(x)\)</span> it is often possible to state something general perhaps that that <span class="math notranslate nohighlight">\(f(x) \to \infty\)</span> as <span class="math notranslate nohighlight">\(x\to \infty\)</span>. This is, however, often too general and if a series is to be used only to a finite number of terms we would like to know how quickly the term after the last one used is varying as <span class="math notranslate nohighlight">\(x\)</span> changes; does it change as <span class="math notranslate nohighlight">\(x^2\)</span> or <span class="math notranslate nohighlight">\(e^x\)</span> for example?</p>
 <p>The ‘big-O’ notation, for example, <span class="math notranslate nohighlight">\(O(x^2),\; O(e^x)\)</span>, and so forth, is used for this purpose and means that the function whose series we are examining grows at a rate <span class="math notranslate nohighlight">\(x^2\)</span> or <span class="math notranslate nohighlight">\(e^x\)</span> at the point that the function is being evaluated. An example is the series <span class="math notranslate nohighlight">\(x^{-2} - x^{-4} + O(x^{-6})\)</span> when <span class="math notranslate nohighlight">\(x \gt 1\)</span> which means that the next term in the series is vastly smaller than the <span class="math notranslate nohighlight">\(x^{-4}\)</span> term and can be safely ignored. The symbol <span class="math notranslate nohighlight">\(\sim \)</span> is generally interpreted as meaning ‘is proportional to’ and as used in <span class="math notranslate nohighlight">\(\sin(x) \sim x\)</span> when <span class="math notranslate nohighlight">\(x \to\)</span> 0 means that the function grows at the same rate as <span class="math notranslate nohighlight">\(x\)</span>.</p>
-</div>
-<div class="section" id="useful-series-expansion-formulae">
-<h2>6.4 Useful series expansion formulae<a class="headerlink" href="#useful-series-expansion-formulae" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="useful-series-expansion-formulae">
+<h2>6.4 Useful series expansion formulae<a class="headerlink" href="#useful-series-expansion-formulae" title="Permalink to this headline">#</a></h2>
 <p>Several expansions are listed below. If you want to calculate, for example <span class="math notranslate nohighlight">\(1/(1 - ax)\)</span>, replace each <span class="math notranslate nohighlight">\(x\)</span> in the first series below with <span class="math notranslate nohighlight">\(-ax\)</span> and evaluate the result; <span class="math notranslate nohighlight">\((1 - ax)^{-1} = 1 + ax + (ax)^2 + (ax)^3 + \cdots\)</span>. This substitution can be performed with any series and means that fewer need to be remembered. The <span class="math notranslate nohighlight">\(O(x^6)\)</span> means that the next term in the series has power of order of <span class="math notranslate nohighlight">\(x^6\)</span>. You must check on the value of <span class="math notranslate nohighlight">\(x\)</span> used determine if this is an acceptable approximation.</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle \begin{align}
@@ -1557,9 +1794,9 @@ f''''(x)&amp; = \cdots\, \mathrm {etc.}\end{align} \end{split}\]</div>
 \exp{\left( x\right)} &amp;= 1 + x + \frac{x^{2} }{ 2!} + \frac{x^{3}}{ 3!} + \frac{x^{4}}{ 4!} + \frac{x^{5} }{ 5!} + \mathcal{O}\left(x^{6}\right)\\[0.25cm]
 (a+x)^n &amp;= a^n+\frac{a^n}{a}x+\frac{a^nn(n-1)}{a^2}x^2+\frac{a^nn(n-1)(n-2}{a^3}x^3 +\mathcal{O}\left(x^{6}\right)
 \end{align}\end{split}\]</div>
-</div>
-<div class="section" id="trig-functions">
-<h2>6.5 Trig functions<a class="headerlink" href="#trig-functions" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="trig-functions">
+<h2>6.5 Trig functions<a class="headerlink" href="#trig-functions" title="Permalink to this headline">#</a></h2>
 <p>The Maclaurin series of <span class="math notranslate nohighlight">\(f(x) = \sin(x)\)</span> is equivalent to a Taylor series expanded about zero.
 By definition the expansion is given by replacing <span class="math notranslate nohighlight">\(f(x)\)</span> in equation <span class="math notranslate nohighlight">\(15\)</span>,</p>
 <div class="math notranslate nohighlight">
@@ -1635,10 +1872,10 @@ By definition the expansion is given by replacing <span class="math notranslate 
 </div>
 </div>
 <p>Figure 3. Taylor expansion of <span class="math notranslate nohighlight">\(\sin(x)\)</span> up to <span class="math notranslate nohighlight">\(x^{23}\)</span> together with the function (black line).</p>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="exponential-expansion">
-<h2>6.6 Exponential expansion<a class="headerlink" href="#exponential-expansion" title="Permalink to this headline">¶</a></h2>
+<section id="exponential-expansion">
+<h2>6.6 Exponential expansion<a class="headerlink" href="#exponential-expansion" title="Permalink to this headline">#</a></h2>
 <p>The expansion of the exponential is easy to achieve with <span class="math notranslate nohighlight">\(\displaystyle f(x) = e^{ax}\)</span> and <span class="math notranslate nohighlight">\(a\)</span> as a constant. The
 derivatives are</p>
 <div class="math notranslate nohighlight">
@@ -1650,9 +1887,9 @@ derivatives are</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle e^{ax} \approx 1+ax \;\; e^{-ax} \approx 1-ax \]</div>
 <p>These approximations are perfectly acceptable provided that <span class="math notranslate nohighlight">\(|ax| \lt 1\)</span>, and therefore <span class="math notranslate nohighlight">\((ax)^2 \ll ax\)</span> and so forth. The indication of ‘less than’ means ten times less rather than just slightly less for this approximation to be a good one. You could investigate this for yourself.</p>
-</div>
-<div class="section" id="log-expansion">
-<h2>6.7 Log expansion<a class="headerlink" href="#log-expansion" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="log-expansion">
+<h2>6.7 Log expansion<a class="headerlink" href="#log-expansion" title="Permalink to this headline">#</a></h2>
 <p>Finding the expansion of log functions is also easy, but in this case it is restricted to the
 limits <span class="math notranslate nohighlight">\(-1 \lt x \le 1\)</span> when <span class="math notranslate nohighlight">\(f(x) = \ln(1 + x)\)</span>. Differentiating produces</p>
 <div class="math notranslate nohighlight">
@@ -1678,9 +1915,9 @@ limits <span class="math notranslate nohighlight">\(-1 \lt x \le 1\)</span> when
 \[\displaystyle \int _0^x \frac{dx}{1+x}= x-\frac{x^2}{2}+\frac{x^3}{3} -\cdots\]</div>
 <p>which is just the expansion for <span class="math notranslate nohighlight">\(\ln(1 + x)\)</span> as it should be.</p>
 <p>This series expansion method does give us a way of evaluating integrals numerically. The method is to keep on adding terms to the series until the answer does not vary to within a sufficiently large number of decimal places or the answer is considered accurate enough. An example is given below. There are several well known methods for numerical integration such as the Euler–Maclaurin method or Simpson’s rule and generally, these should be used. Numerical integration is described in Chapter 10 and Euler-Maclaurin in Section 7.</p>
-</div>
-<div class="section" id="binomial-expansion-1-x-m">
-<h2>6.8 Binomial expansion <span class="math notranslate nohighlight">\( (1+x)^m\)</span><a class="headerlink" href="#binomial-expansion-1-x-m" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="binomial-expansion-1-x-m">
+<h2>6.8 Binomial expansion <span class="math notranslate nohighlight">\( (1+x)^m\)</span><a class="headerlink" href="#binomial-expansion-1-x-m" title="Permalink to this headline">#</a></h2>
 <p>One of the most general formulas is obtained by expanding <span class="math notranslate nohighlight">\(f (x) = (1 + x)^m\)</span> where <span class="math notranslate nohighlight">\(m\)</span> can be positive, negative, an integer, or a fraction.</p>
 <p>Starting with the expansion formula</p>
 <div class="math notranslate nohighlight">
@@ -1707,13 +1944,13 @@ limits <span class="math notranslate nohighlight">\(-1 \lt x \le 1\)</span> when
 <p>and similarly</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle  (1+x)^{-1/2}=1-\frac{x}{2}+ \frac{x^2}{8}-\frac{x^3}{16}+\cdots  \tag{25}\]</div>
-<div class="section" id="example-calculate-square-root">
-<h3><strong>Example, calculate square root</strong><a class="headerlink" href="#example-calculate-square-root" title="Permalink to this headline">¶</a></h3>
+<section id="example-calculate-square-root">
+<h3><strong>Example, calculate square root</strong><a class="headerlink" href="#example-calculate-square-root" title="Permalink to this headline">#</a></h3>
 <p>Consider calculating <span class="math notranslate nohighlight">\(\sqrt{3/2}\)</span>, using equation (25). Letting <span class="math notranslate nohighlight">\(x\)</span> = 1/2 the series is <span class="math notranslate nohighlight">\((1+x)^{1/2}= 1+ 1/4 - 1/32 + 1/128 \cdots = 1.2265\)</span>. The correct answer to 4 decimal places is 1.2247 and the series has to be extended to nine terms, the highest power being <span class="math notranslate nohighlight">\(x^8\)</span> to reach this level of accuracy. Trying to calculate <span class="math notranslate nohighlight">\(\sqrt 3\)</span> using this series gives a divergent result; why is this? Try it for yourself. The ancient Algorithm 1.2 could, however, be used.</p>
-</div>
-</div>
-<div class="section" id="derivatives-of-series">
-<h2>6.9 Derivatives of series<a class="headerlink" href="#derivatives-of-series" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="derivatives-of-series">
+<h2>6.9 Derivatives of series<a class="headerlink" href="#derivatives-of-series" title="Permalink to this headline">#</a></h2>
 <p>Sometimes it is convenient to obtain a series by taking the derivative of each term in another known series rather than work out the series from scratch; for example, by differentiating term by term</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \frac{d}{dx}(1+x)^{1/2} = \frac{1}{2\sqrt{1+x}} = \frac{1}{2} -\frac{1}{4}x  +\frac{1}{16}x^2-\frac{1}{32}x^3 \cdots \]</div>
@@ -1723,9 +1960,9 @@ limits <span class="math notranslate nohighlight">\(-1 \lt x \le 1\)</span> when
 <p>Reversing the equation, the summation is <span class="math notranslate nohighlight">\(\sum_n x^n=x+x^2+x^3+x^4+\cdots = 1/(x-1)\)</span> and if differentiated is</p>
 <div class="math notranslate nohighlight">
 \[\sum_n nx^{n-1}= 1+2x+3x^2+4x^3+\cdots = \frac{1}{(1-x)^2} \]</div>
-</div>
-<div class="section" id="paramagnetic-spins-example-using-partition-functions-expansions-and-limits">
-<h2>6.10 Paramagnetic spins. Example using partition functions, expansions and limits<a class="headerlink" href="#paramagnetic-spins-example-using-partition-functions-expansions-and-limits" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="paramagnetic-spins-example-using-partition-functions-expansions-and-limits">
+<h2>6.10 Paramagnetic spins. Example using partition functions, expansions and limits<a class="headerlink" href="#paramagnetic-spins-example-using-partition-functions-expansions-and-limits" title="Permalink to this headline">#</a></h2>
 <p>As an illustration of using several of the methods described in this chapter the properties of magnetic ions in a crystal are examined. In a paramagnetic crystal such as chromium potassium alum, <span class="math notranslate nohighlight">\(\mathrm{Cu_2(SO_4)_3}\)</span> in <span class="math notranslate nohighlight">\(\mathrm{K_2(SO_4)24H_2O}\)</span> the paramagnetic Cr<span class="math notranslate nohighlight">\(^{3+}\)</span> ion is surrounded by 1 potassium, 2 sulfur, 20 oxygen and 24 hydrogen atoms, thus the paramagnetic ion is relatively dilute and are positioned so far apart that their unpaired electrons only suffer very weak interactions between one ion and another, rather like the atoms in a dilute gas have. This means (a) that the rest of the crystal can be thought of as an inert container for the magnetic ions and (b) that the standard method of statistical mechanics can be used to determine the magnetic properties since the paramagnetic electrons do not interact with one another. In effect this means that we can determine the partition function and therefore the <em>magnetization</em> , which is the total magnetic moment, and the entropy, internal energy and heat capacity.</p>
 <p>If an atom, molecule or ion possesses a resultant magnetic moment and it is sufficiently removed from its neighbours then this is only weakly influenced by them. The number of unpaired electrons <span class="math notranslate nohighlight">\(S\)</span> and orbital angular momentum <span class="math notranslate nohighlight">\(L\)</span> determines the multiplicity of the energy levels which are degenerate in the absence of other interactions. The total angular momentum is <span class="math notranslate nohighlight">\(J=L+S\)</span>. If the total spin is <span class="math notranslate nohighlight">\(S\)</span> the spin multiplicity is <span class="math notranslate nohighlight">\(2J+1\)</span>. Sometimes the ions such as Cr<span class="math notranslate nohighlight">\(^{3+}\)</span> and Fe<span class="math notranslate nohighlight">\(^{3+}\)</span> can have effectively zero orbital angular momentum this being ‘quenched’ by the fields from neighbouring ions, in this case <span class="math notranslate nohighlight">\(J=S\)</span>. If an external (or internal) magnetic field is present the degeneracy is lifted and the levels have quantum numbers <span class="math notranslate nohighlight">\(m_J\)</span> ranging in unit integral values from <span class="math notranslate nohighlight">\(-J,-J+1\cdots J-1,+J\)</span> or <span class="math notranslate nohighlight">\(2J+1\)</span> in total. For example for Cr<span class="math notranslate nohighlight">\(^{3+}, J=3/2\)</span>, thus <span class="math notranslate nohighlight">\(m_J\)</span> has <span class="math notranslate nohighlight">\(2(3/2)+1=4\)</span> values in the series <span class="math notranslate nohighlight">\(-3/2,-1/2,1/2,3/2\)</span>.</p>
 <p>A magnetic field gives rise to states whose energy is <span class="math notranslate nohighlight">\(E= \pm m_Jg\mu_BB\)</span> and <span class="math notranslate nohighlight">\(m_J\)</span> pairs of levels are separated by <span class="math notranslate nohighlight">\(\Delta E=2|m_J|g\mu_BB\)</span> where <span class="math notranslate nohighlight">\(B\)</span> is the magnetic field strength (in Tesla <span class="math notranslate nohighlight">\(T\)</span>) and <span class="math notranslate nohighlight">\(\mu_B=9.27401\cdot 10^{-24} \)</span> J/T is the Bohr magneton. The energy gaps in a <span class="math notranslate nohighlight">\(2\)</span> Tesla field, assuming <span class="math notranslate nohighlight">\(J=1/2\)</span> and Lande splitting factor <span class="math notranslate nohighlight">\(g=2\)</span> (described below) are <span class="math notranslate nohighlight">\(\displaystyle \cdot 9.27401\cdot 10^{-24}\cdot 2/hc \approx 1.9\; \mathrm{{cm}^{-1}} \)</span> whereas thermal energy at 300 K is <span class="math notranslate nohighlight">\(\approx 210\;\mathrm{{cm}^{-1}}\)</span> which means that at all but at very low temperature all levels are approximately evenly populated. To observe any effect, therefore, the temperature has to be extremely low and/or the field very large.</p>
@@ -1813,9 +2050,9 @@ limits <span class="math notranslate nohighlight">\(-1 \lt x \le 1\)</span> when
 \[\displaystyle U=-\frac{g\mu_B B}{2}\left((2J+1)\coth\left(\frac{g\mu_B B(2J+1)}{2k_BT} \right)-\coth\left( \frac{g\mu_B B}{2k_BT}\right) \right)\]</div>
 <p>and as <span class="math notranslate nohighlight">\(T\to 0\)</span> then <span class="math notranslate nohighlight">\(\displaystyle U \to -g\mu_B B J\)</span> because <span class="math notranslate nohighlight">\(\coth(\infty)\to 1\)</span>. As the temperature increases, or more properly <span class="math notranslate nohighlight">\(T/B\)</span> increases, the energy increases and reaches a maximum value because when the population of each level is equal no more energy can be added. The maximum value is zero because the initial energy is zero and levels rise and fall symmetrically (figure 4a) so must also be zero when all levels are equally populated.</p>
 <p>The heat capacity is the slope of the energy vs. temperature, so is zero when <span class="math notranslate nohighlight">\(T\to 0\)</span> and when <span class="math notranslate nohighlight">\(T\to \infty\)</span> and because heat capacity is always a positive quantity this must pass through a maximum at at some intermediate temperature. This is called the Schottky Anomaly, although no longer considered anomalous, as it is due to there being a finite number of different levels, i.e. <span class="math notranslate nohighlight">\(2J+1\)</span>. Initially <span class="math notranslate nohighlight">\(C_m=0\)</span> as the temperature is low enough to populate only the lowest level. At very high temperatures all levels are equally populated so no more energy can be added and so <span class="math notranslate nohighlight">\(C_M\to 0\)</span>. The entropy is initially zero as only one level is populated and as <span class="math notranslate nohighlight">\(S=k\ln(\omega)\)</span> where <span class="math notranslate nohighlight">\(\omega\)</span> is the number of arrangements of particles among energy levels. As there is only one arrangement when <span class="math notranslate nohighlight">\(T\to 0\)</span> the entropy is zero. At high temperature, all levels are equally filled and so the entropy becomes constant. The maximum value is <span class="math notranslate nohighlight">\(k\ln(2J+1)\)</span>which is shown as the dashed horizontal line in fig 4c.</p>
-</div>
-<div class="section" id="the-euler-maclaurin-formula">
-<h2>7 The Euler - Maclaurin formula<a class="headerlink" href="#the-euler-maclaurin-formula" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="the-euler-maclaurin-formula">
+<h2>7 The Euler - Maclaurin formula<a class="headerlink" href="#the-euler-maclaurin-formula" title="Permalink to this headline">#</a></h2>
 <p>Sometimes a series cannot be expanded to simple formulae but its integral can be evaluated. If the terms in a series can each be differentiated, the Euler-Maclaurin formula, first developed in 1732-3, connects the summation of a series with its integral and provides a series of correction terms to make one the same as the other.</p>
 <p>A common form of the Euler-Maclaurin equation puts the summation on the left-hand side starting at <span class="math notranslate nohighlight">\(k\)</span> = 1 and going to <span class="math notranslate nohighlight">\(n\)</span> - 1, which is an integer. On the right-hand side, the integral starts at zero and runs to <span class="math notranslate nohighlight">\(n\)</span> and the other terms are each evaluated at zero and <span class="math notranslate nohighlight">\(n\)</span>,</p>
 <div class="math notranslate nohighlight">
@@ -1828,15 +2065,15 @@ limits <span class="math notranslate nohighlight">\(-1 \lt x \le 1\)</span> when
 \[\displaystyle \sum\limits_{k=0}^m f(a+kh)=\frac{1}{h}\int\limits_a^b f(x)dx+ \frac{1}{2}(f(b)+f(a))+\sum\limits_{k=1}^\infty \frac{h^{2k-1}B_{2k}}{(2k)!}(f^{2k-1}(b)-f^{2k-1}(a))\]</div>
 <p>where <span class="math notranslate nohighlight">\(m\)</span> is an integer and <span class="math notranslate nohighlight">\(h\)</span> the element <span class="math notranslate nohighlight">\(h = (b - a)/m\)</span> and the summation goes from <span class="math notranslate nohighlight">\(f(a) \to f(b)\)</span> in <span class="math notranslate nohighlight">\(m\)</span> steps. The summation to infinity has only as many terms as necessary to obtain a convergence to the required number of decimal places. There is an error term associated with the summation in this form or that given in equation (27), but this is complicated to evaluate and is not given. It is not necessary to calculate it, however, because using the computer the results can be listed until sufficient precision is reached.</p>
 <p>To obtain equation (27) from the general equation the substitutions <span class="math notranslate nohighlight">\(n = m + 1\)</span>, and <span class="math notranslate nohighlight">\(b = n\)</span> and <span class="math notranslate nohighlight">\(a = h = 1\)</span> are used. The summation containing the Bernoulli numbers is usually limited to just a few terms because this eventually diverges becoming very large at large <span class="math notranslate nohighlight">\(k\)</span>, but converges for smaller <span class="math notranslate nohighlight">\(k\)</span>. It seems rather strange that it can be used when it has this property but it does give accurate results when just a few terms are used.</p>
-<div class="section" id="i-the-series-for-k-2">
-<h3><strong>(i) The series for <span class="math notranslate nohighlight">\(k^2\)</span></strong><a class="headerlink" href="#i-the-series-for-k-2" title="Permalink to this headline">¶</a></h3>
+<section id="i-the-series-for-k-2">
+<h3><strong>(i) The series for <span class="math notranslate nohighlight">\(k^2\)</span></strong><a class="headerlink" href="#i-the-series-for-k-2" title="Permalink to this headline">#</a></h3>
 <p>As only the first derivative is not zero the series is short,</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \sum\limits_{k=1}^n k^2 =\int\limits_0^n x^2dx+\frac{n^2}{2}+\frac{n}{6} = \frac{n^3}{3}+\frac{n^2}{2}+\frac{n}{6} \]</div>
 <p>and this result is the same as the series summation for <span class="math notranslate nohighlight">\(k^2\)</span> as may be confirmed using sympy.</p>
-</div>
-<div class="section" id="ii-series-for-ln-k">
-<h3><strong>(ii) series for <span class="math notranslate nohighlight">\(\ln(k)\)</span></strong><a class="headerlink" href="#ii-series-for-ln-k" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="ii-series-for-ln-k">
+<h3><strong>(ii) series for <span class="math notranslate nohighlight">\(\ln(k)\)</span></strong><a class="headerlink" href="#ii-series-for-ln-k" title="Permalink to this headline">#</a></h3>
 <p>The series for <span class="math notranslate nohighlight">\(\ln(k)\)</span> is</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{align}
@@ -1849,8 +2086,8 @@ limits <span class="math notranslate nohighlight">\(-1 \lt x \le 1\)</span> when
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Euler Maclaurin eqn. 27</span>
-<span class="c1">#for k in range(1,8):   </span>
-<span class="c1">#    print(&#39;{:s}{:d}{:s}{:s}&#39;.format(&#39;2k = &#39;,2*k,&#39; B/factrl &#39;, str(bernoulli(2*k)/factorial(2*k))))</span>
+<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">8</span><span class="p">):</span>   
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:s}{:d}{:s}{:s}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;2k = &#39;</span><span class="p">,</span><span class="mi">2</span><span class="o">*</span><span class="n">k</span><span class="p">,</span><span class="s1">&#39; B/factrl &#39;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">bernoulli</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">k</span><span class="p">)</span><span class="o">/</span><span class="n">factorial</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">k</span><span class="p">))))</span>
 
 <span class="n">k</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;k, x&#39;</span><span class="p">)</span>                   <span class="c1"># use sympy</span>
 <span class="n">m</span> <span class="o">=</span> <span class="mi">1</span>
@@ -1870,7 +2107,7 @@ limits <span class="math notranslate nohighlight">\(-1 \lt x \le 1\)</span> when
 
 <span class="n">s</span> <span class="o">=</span> <span class="p">(</span><span class="n">s1</span> <span class="o">+</span> <span class="n">s2</span> <span class="o">+</span> <span class="n">s3n</span> <span class="o">-</span> <span class="n">s3m</span><span class="p">)</span><span class="o">.</span><span class="n">evalf</span><span class="p">()</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:s}{:s}{:s}{:16.10g}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;Euler Maclaurin eqn. sum &#39;</span> <span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">f</span><span class="p">),</span><span class="s1">&#39; = &#39;</span><span class="p">,</span><span class="n">s</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="si">{:s}{:s}{:s}{:16.10g}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;Euler Maclaurin eqn. sum &#39;</span> <span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">f</span><span class="p">),</span><span class="s1">&#39; = &#39;</span><span class="p">,</span><span class="n">s</span><span class="p">))</span>
 
 <span class="n">sm</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span> <span class="p">[</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)]</span> <span class="p">)</span>          <span class="c1"># evaluate 50 terms by direct summation</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:s}{:16.10g}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;Direct sum  = &#39;</span><span class="p">,</span><span class="n">sm</span><span class="p">))</span>
@@ -1878,15 +2115,23 @@ limits <span class="math notranslate nohighlight">\(-1 \lt x \le 1\)</span> when
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Euler Maclaurin eqn. sum log(x) =      148.4772327
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2k = 2 B/factrl 1/12
+2k = 4 B/factrl -1/720
+2k = 6 B/factrl 1/30240
+2k = 8 B/factrl -1/1209600
+2k = 10 B/factrl 1/47900160
+2k = 12 B/factrl -691/1307674368000
+2k = 14 B/factrl 1/74724249600
+
+Euler Maclaurin eqn. sum log(x) =      148.4772327
 Direct sum  =       148.477767
 </pre></div>
 </div>
 </div>
 </div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -1910,9 +2155,11 @@ Direct sum  =       148.477767
 
               </div>
               
-        
-            <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="chapter-5-B-Q1-13.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -1928,26 +2175,28 @@ Direct sum  =       148.477767
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-        
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-    <div class="container">
-      <p>
-        
-          By Godfrey Beddard<br/>
-        
-            &copy; Copyright 2022.<br/>
-      </p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Godfrey Beddard<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
     </div>
-  </footer>
-</main>
+    
+</div>
 
 
       </div>
     </div>
   
-  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>

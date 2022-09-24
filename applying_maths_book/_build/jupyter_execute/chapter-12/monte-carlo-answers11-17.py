@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## Solutions Q11 - 17
+# # Solutions Q11 - 17
 
 # In[1]:
 
@@ -15,7 +15,7 @@ init_printing()                      # allows printing of SymPy results in types
 plt.rcParams.update({'font.size': 16})  # set font size for plots
 
 
-# ### Q13 answer
+# ## Q13 answer
 # The following code could be used.
 
 # In[2]:
@@ -40,7 +40,7 @@ plt.axhline(0,linewidth=1)
 plt.show()
 
 
-# ### Q14 answer
+# ## Q14 answer
 # The code to do this calculation is very similar to that given in the text but the calculation is easier because no histogram is needed.
 
 # In[3]:
@@ -64,7 +64,7 @@ plt.show()
 # 
 # As an exercise, make these into a histogram to convince you of this and a plot similar to Figure 11 (right) should result.
 # 
-# ### Q15 answer
+# ## Q15 answer
 # (a) The first step is to work out a numbering scheme for the position of the bases and then to select from a uniformly distributed random number, four possibilities to represent them. One such scheme is
 # shown in the question. Because only G bases are important, only one check needs to be made. For example, if a
 # random number ranges from $0 \to 4$, if it is greater than $3$, then this can be the G base. Eleven bases are then chosen at random, and placed in a list; the list is given the value $1$ if the base is G, otherwise it contains zero. The sixth base, which is in the middle, is made into the dye. The position of a G in the list is converted into the distance from the dye, (in position 6), and the rate constant calculated using the equation for $k$. The absolute value of the distance from position 6 is calculated because the transfer distance must always be positive. The whole process is repeated, until you are satisfied that the average value of $k$ is sufficiently accurate, say to 1 decimal place. The time is calculated using equation 13.
@@ -129,7 +129,7 @@ def DNAbases():
 # 
 # The calculation shows that the decay is initially very fast; only $\approx 2$ ps and then slows dramatically as the more distant G bases quench. The very rapid decrease of the quenching rate constant with distance and the spatial dependence of the quenchers, as with donor - acceptor energy or electron transfer in solution, causes the non - exponential decay.
 # 
-# ### Q16 answer
+# ## Q16 answer
 # We define the array P to hold the information about each student. To generate a random number from $0 \to 1$, $\mathtt{np.random.ranf()}$  but to generate a random integer in the range $0 \to n-1$ it is convenient to use $\mathtt{np.random.randint(0,n)}$.  The algorithm is shown next 
 
 # In[5]:

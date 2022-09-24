@@ -4,11 +4,13 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Matrices &#8212; Applying Maths in the Chemical &amp; Biomolecular Sciences</title>
     
-  <link href="../_static/css/theme.css" rel="stylesheet">
-  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,40 +20,39 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Questions 11 - 16" href="matrices-Q11-16.html" />
@@ -63,7 +64,21 @@
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -72,9 +87,10 @@
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -92,14 +108,15 @@
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../intro.html">
-   Applying Maths in the Chemical and Biomolecular Sciences.
-  </a>
- </li>
-</ul>
-<ul class="current nav bd-sidenav">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Applying Maths in the Chemical and Biomolecular Sciences.
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../chapter-1/chapter1-intro.html">
    1. Numbers, Equations, Operators, and Algorithms.
@@ -204,11 +221,6 @@
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-2/chapter2-Q-10-13.html">
      Questions 10 -13
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-2/chapter2-C.html">
-     Euler’s theorem, roots of unity, x-ray diffraction structure factor.
     </a>
    </li>
    <li class="toctree-l2">
@@ -337,7 +349,7 @@
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../chapter-4/integration-intro.html">
-   4. Integration.
+   4 Integration.
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
   <label for="toctree-checkbox-4">
@@ -377,7 +389,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-4/integration-D.html">
-     Calculating an Average Value.
+     Calculating an Average.
     </a>
    </li>
    <li class="toctree-l2">
@@ -407,7 +419,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-4/integration-G.html">
-     Calculating the energy of a chemical bond using molecular orbitals
+     Calculating the energy of a Chemical Bond using Molecular Orbitals
     </a>
    </li>
    <li class="toctree-l2">
@@ -688,7 +700,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="matrices-D.html">
-     Rotation matrices: moving molecules
+     Rotation matrices: moving molecules. Coordinate transform as rotation.
     </a>
    </li>
    <li class="toctree-l2">
@@ -757,23 +769,13 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="matrices-K.html">
-     Calculating a bond length using moments of inertia
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="matrices-Q61.html">
-     Question 61
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="matrices-L.html">
      Principal axes for Moments of Inertia
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="matrices-Q62.html">
-     Question 62
+    <a class="reference internal" href="matrices-Q61-62.html">
+     Question 61 - 62
     </a>
    </li>
    <li class="toctree-l2">
@@ -1004,7 +1006,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-G.html">
-     PDE examples continued
+     PDE Continued
     </a>
    </li>
    <li class="toctree-l2">
@@ -1096,7 +1098,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-11/num-methods-answers8-12.html">
-     Solutions Q8 - 12
+     Solutions Q 8 - 12
     </a>
    </li>
    <li class="toctree-l2">
@@ -1258,112 +1260,227 @@
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/chapter-7/matrices-B.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/subblue/applying-maths-book"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/subblue/applying-maths-book/issues/new?title=Issue%20on%20page%20%2Fchapter-7/matrices-B.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        
-    </div>
-</div>
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/subblue/applying-maths-book/main?urlpath=lab/tree/applying_maths_book/chapter-7/matrices-B.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        <a class="colab-button" href="https://colab.research.google.com/github/subblue/applying-maths-book/blob/main/applying_maths_book/chapter-7/matrices-B.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
-                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
-                    src="../_static/images/logo_colab.png"
-                    alt="Interact on Colab">Colab</button></a>
-        
-        
-    </div>
-</div>
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/subblue/applying-maths-book/main?urlpath=lab/tree/applying_maths_book/chapter-7/matrices-B.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://colab.research.google.com/github/subblue/applying-maths-book/blob/main/applying_maths_book/chapter-7/matrices-B.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/subblue/applying-maths-book"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/subblue/applying-maths-book/issues/new?title=Issue%20on%20page%20%2Fchapter-7/matrices-B.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/chapter-7/matrices-B.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#basic-properties-of-matrices">
    4 Basic properties of Matrices
@@ -1554,17 +1671,223 @@
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Matrices</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#basic-properties-of-matrices">
+   4 Basic properties of Matrices
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#addition-and-subtraction">
+     <strong>
+      Addition and subtraction
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#division">
+     <strong>
+      Division
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#multiplication">
+     <strong>
+      Multiplication
+     </strong>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-zero-or-null-matrix">
+   4.1 The zero or null matrix
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-unit-or-identity-matrix-pmb-1">
+   4.2 The unit or identity matrix
+   <span class="math notranslate nohighlight">
+    \(\pmb{1}\)
+   </span>
+   .
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#diagonal-matrix">
+   4.3 Diagonal matrix
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#trace-or-character-of-a-matrix">
+   4.4 Trace or character of a matrix
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#matrix-transpose-pmb-m-t">
+   4.5 Matrix transpose
+   <span class="math notranslate nohighlight">
+    \(\pmb{M}^T\)
+   </span>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#complex-conjugate-m">
+   4.6 Complex conjugate M*
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#adjoint-pmb-m-dagger">
+   4.7 Adjoint,
+   <span class="math notranslate nohighlight">
+    \(\pmb{M}^\dagger\)
+   </span>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#hermitian-or-self-adjoint-matrix-pmb-m-dagger-pmb-m">
+   4.8 Hermitian or self-adjoint matrix
+   <span class="math notranslate nohighlight">
+    \(\pmb{M}^\dagger=\pmb{M}\)
+   </span>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#inverse-of-a-square-matrix-pmb-m-1">
+   4.9 Inverse of a square matrix,
+   <span class="math notranslate nohighlight">
+    \(\pmb{M}^{-1}\)
+   </span>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#singular-matrix-determinant-pmb-m-0">
+   4.10 Singular matrix, determinant
+   <span class="math notranslate nohighlight">
+    \(|\pmb{M}|=0\)
+   </span>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#unitary-matrix-pmb-m-dagger-pmb-m-1-or-pmb-m-dagger-pmb-m-pmb-1-and-pmb-m-1">
+   4.11 Unitary matrix
+   <span class="math notranslate nohighlight">
+    \(\pmb M^\dagger = \pmb M^{-1}\)
+   </span>
+   or
+   <span class="math notranslate nohighlight">
+    \(\pmb {M}^\dagger \pmb{M} = \pmb{1}\)
+   </span>
+   and
+   <span class="math notranslate nohighlight">
+    \( |\pmb {M} | = 1\)
+   </span>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#orthogonal-matrices">
+   4.12 Orthogonal matrices
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#determinants">
+   4.13 Determinants
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#matrix-multiplication">
+   5 Matrix multiplication
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#matrix-sum">
+   5.1 Matrix sum
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bra-ket-notation">
+   5.2 bra-ket notation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#commutators">
+   5.3 Commutators
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#integral-powers-of-square-matrices">
+   5.4 Integral powers of square matrices
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#functions-of-matrices">
+   5.5 Functions of matrices
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#block-diagonal-matrices">
+   5.6 Block diagonal matrices
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-special-case-of-the-2-times-2-matrix">
+   5.7 The special case of the
+   <span class="math notranslate nohighlight">
+    \(2\times 2\)
+   </span>
+   matrix
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#using-python-and-sympy">
+   5.8 Using Python and Sympy.
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#a-symbolic-calculations-using-sympy">
+     <strong>
+      (a) Symbolic calculations using Sympy
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#b-using-numpy-for-numerical-calculation-note-that-the-notation-is-different-to-that-of-sympy">
+     <strong>
+      (B) Using numpy for numerical calculation.  Note that the notation is different to that of Sympy
+     </strong>
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
               <div>
                 
-  <div class="section" id="matrices">
-<h1>Matrices<a class="headerlink" href="#matrices" title="Permalink to this headline">¶</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="matrices">
+<h1>Matrices<a class="headerlink" href="#matrices" title="Permalink to this headline">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import all python add-ons etc that will be needed later on</span>
@@ -1578,8 +1901,8 @@
 </div>
 </div>
 </div>
-<div class="section" id="basic-properties-of-matrices">
-<h2>4 Basic properties of Matrices<a class="headerlink" href="#basic-properties-of-matrices" title="Permalink to this headline">¶</a></h2>
+<section id="basic-properties-of-matrices">
+<h2>4 Basic properties of Matrices<a class="headerlink" href="#basic-properties-of-matrices" title="Permalink to this headline">#</a></h2>
 <p>The rest of this chapter describes the properties and uses of matrices. The determinant described in the previous sections can be considered as one of the many properties of a matrix. In several places, reference is made to eigenvalues and eigenvectors before they have been fully explained, which is done in Section 12.3. The meaning of these words is outlined below but how they are obtained is left unanswered for the moment.
 The eigenvalue - eigenvector equation is met, for example, in solving problems in Quantum Mechanics and Chemical Kinetics and has the form,</p>
 <div class="math notranslate nohighlight">
@@ -1588,8 +1911,8 @@ The eigenvalue - eigenvector equation is met, for example, in solving problems i
 <div class="math notranslate nohighlight">
 \[\displaystyle \pmb{Ax}=\lambda \pmb{x}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\pmb A\)</span> is an <span class="math notranslate nohighlight">\(n \times n\)</span> square matrix, <span class="math notranslate nohighlight">\(\pmb x\)</span> is one of <span class="math notranslate nohighlight">\(n\)</span>, one-dimensional column matrices (column vectors) and each one is called an eigenvector, <span class="math notranslate nohighlight">\(\lambda\)</span>  represents one of <span class="math notranslate nohighlight">\(n\)</span> numbers, and each <span class="math notranslate nohighlight">\(\lambda\)</span> is called an eigenvalue.</p>
-<div class="section" id="addition-and-subtraction">
-<h3><strong>Addition and subtraction</strong><a class="headerlink" href="#addition-and-subtraction" title="Permalink to this headline">¶</a></h3>
+<section id="addition-and-subtraction">
+<h3><strong>Addition and subtraction</strong><a class="headerlink" href="#addition-and-subtraction" title="Permalink to this headline">#</a></h3>
 <p>To add or subtract two matrices they must have the same shape. To add or subtract a constant or another matrix their individual elements are added or subtracted. Similarly, to multiply or divide by a constant number (a scalar), each element is also multiplied or divided by this value. Multiplying two matrices together is more complicated and depends on the order with which this is done and the shapes of the two matrices; sometimes it is just not possible.</p>
 <p>The notation used, is that bold italic letters indicate a matrix and the numbers <span class="math notranslate nohighlight">\(\pmb 0\)</span> and <span class="math notranslate nohighlight">\(\pmb 1\)</span> for the null and unit matrix respectively.</p>
 <p>Suppose two matrices are <span class="math notranslate nohighlight">\(\displaystyle \pmb{A}=\begin{bmatrix} 2&amp;1&amp;5\\-5 &amp; 2 &amp; 6\end{bmatrix}\)</span> and <span class="math notranslate nohighlight">\(\displaystyle \pmb{B}=\begin{bmatrix} 1&amp;10&amp;8\\-3 &amp; 3 &amp; 9\end{bmatrix}\)</span> calculating</p>
@@ -1599,40 +1922,40 @@ The eigenvalue - eigenvector equation is met, for example, in solving problems i
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle \pmb{A}+\pmb{B}=\begin{bmatrix} 3&amp;11&amp;13\\-8 &amp; 5 &amp; 16\end{bmatrix}\end{split}\]</div>
 <p>and similarly for the other calculations.</p>
-</div>
-<div class="section" id="division">
-<h3><strong>Division</strong><a class="headerlink" href="#division" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="division">
+<h3><strong>Division</strong><a class="headerlink" href="#division" title="Permalink to this headline">#</a></h3>
 <p>One matrix <em>cannot</em> be divided by another; the inverse matrix of the divisor is formed instead and then these matrices are multiplied together. The inverse of a matrix <span class="math notranslate nohighlight">\(\pmb M\)</span> is always written as <span class="math notranslate nohighlight">\(\pmb{M}^{-1}\)</span>. Generating the inverse of a matrix is difficult unless the matrix is small, and one would normally use Python/Sympy to do this.</p>
-</div>
-<div class="section" id="multiplication">
-<h3><strong>Multiplication</strong><a class="headerlink" href="#multiplication" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="multiplication">
+<h3><strong>Multiplication</strong><a class="headerlink" href="#multiplication" title="Permalink to this headline">#</a></h3>
 <p>Matrices can be multiplied together. The multiplication order is always important; <span class="math notranslate nohighlight">\(\pmb{AB}\)</span> is not necessarily the same as <span class="math notranslate nohighlight">\(\pmb{BA}\)</span>. With three or more matrices <span class="math notranslate nohighlight">\(\pmb{ABC}\)</span>, the multiplication sequence does not matter as long as the ordering is the same. This is the associatite property</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \pmb{ABC}\equiv \pmb{A}(\pmb{BC})\equiv (\pmb{AB})\pmb{C}\]</div>
 <p>If <span class="math notranslate nohighlight">\(\pmb{BC}\)</span> are multiplied first, then the result left multiplied by <span class="math notranslate nohighlight">\(\pmb{A}\)</span>, this is the same as multiplying <span class="math notranslate nohighlight">\(\pmb{AB}\)</span> to form a new matrix, <span class="math notranslate nohighlight">\(\pmb{D}\)</span> for example, then performing the multiplication <span class="math notranslate nohighlight">\(\pmb{DC}\)</span>. Habitually, we start at the right and multiply the <span class="math notranslate nohighlight">\(\pmb{BC}\)</span> pair first then left multiply by <span class="math notranslate nohighlight">\(\pmb{A}\)</span>. The details are described in Section 5.</p>
 <p>There are a few special matrices and several types operations that can be performed on matrices and these are describe next.</p>
-</div>
-</div>
-<div class="section" id="the-zero-or-null-matrix">
-<h2>4.1 The zero or null matrix<a class="headerlink" href="#the-zero-or-null-matrix" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="the-zero-or-null-matrix">
+<h2>4.1 The zero or null matrix<a class="headerlink" href="#the-zero-or-null-matrix" title="Permalink to this headline">#</a></h2>
 <p>As you would expect it is possible to have a matrix of zeros; adding this to another matrix changes nothing, but multiplying by it annihilates the other matrix leaving only the zero matrix as you would expect.</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle \pmb{0}=\begin{bmatrix} 0 &amp; 0 &amp; \cdots \\0 &amp; 0 \cdots \\ \vdots &amp; \vdots &amp; \ddots \end{bmatrix} \qquad \pmb{A}+\pmb{0} =\pmb{A};\; \pmb{A0}=\pmb{0};\; \pmb{0A}=\pmb{0}\end{split}\]</div>
-</div>
-<div class="section" id="the-unit-or-identity-matrix-pmb-1">
-<h2>4.2 The unit or identity matrix  <span class="math notranslate nohighlight">\(\pmb{1}\)</span>.<a class="headerlink" href="#the-unit-or-identity-matrix-pmb-1" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="the-unit-or-identity-matrix-pmb-1">
+<h2>4.2 The unit or identity matrix  <span class="math notranslate nohighlight">\(\pmb{1}\)</span>.<a class="headerlink" href="#the-unit-or-identity-matrix-pmb-1" title="Permalink to this headline">#</a></h2>
 <p>This is a matrix of unit diagonals with all other elements being zero. The unit matrix is also called the <em>multiplicative identity</em>.</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle \pmb{1}=\begin{bmatrix} 1 &amp; 0 &amp; 0&amp; \cdots \\0 &amp; 1 &amp; 0 &amp;\cdots \\ 0 &amp; 0 &amp; 1 &amp; 0\\ \vdots  &amp; &amp; &amp;\ddots\end{bmatrix}\qquad \pmb{A1}=\pmb{A};\; \pmb{1A}=\pmb{A}\end{split}\]</div>
-</div>
-<div class="section" id="diagonal-matrix">
-<h2>4.3 Diagonal matrix<a class="headerlink" href="#diagonal-matrix" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="diagonal-matrix">
+<h2>4.3 Diagonal matrix<a class="headerlink" href="#diagonal-matrix" title="Permalink to this headline">#</a></h2>
 <p>This is a matrix whose diagonals can take any value, but all other elements are zero. The unit matrix is a special case. In general</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle \begin{bmatrix} a &amp; 0 &amp; 0&amp; \cdots \\0 &amp; b &amp; 0 &amp;\cdots \\ 0 &amp; 0 &amp; c &amp; 0\\ \vdots  &amp; &amp; &amp;\ddots\end{bmatrix}\end{split}\]</div>
-</div>
-<div class="section" id="trace-or-character-of-a-matrix">
-<h2>4.4 Trace or character of a matrix<a class="headerlink" href="#trace-or-character-of-a-matrix" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="trace-or-character-of-a-matrix">
+<h2>4.4 Trace or character of a matrix<a class="headerlink" href="#trace-or-character-of-a-matrix" title="Permalink to this headline">#</a></h2>
 <p>The trace, spur, or character of any matrix <span class="math notranslate nohighlight">\(\pmb M\)</span>, is the sum of its diagonal elements only,</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle Tr(\pmb{M})=\sum_{i=0}a_{i,i}\]</div>
@@ -1643,9 +1966,9 @@ The eigenvalue - eigenvector equation is met, for example, in solving problems i
 <div class="math notranslate nohighlight">
 \[Tr(\pmb{ABC}) = Tr(\pmb{CAB}) = Tr(\pmb{BCA})\]</div>
 <p>This fact is very useful in group theory because the trace of a matrix forms a <em>representation</em> of a molecule’s symmetry. Because of this rule, the trace, and hence representation, is independent of the basis set used to describe the symmetry.</p>
-</div>
-<div class="section" id="matrix-transpose-pmb-m-t">
-<h2>4.5 Matrix transpose <span class="math notranslate nohighlight">\(\pmb{M}^T\)</span><a class="headerlink" href="#matrix-transpose-pmb-m-t" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="matrix-transpose-pmb-m-t">
+<h2>4.5 Matrix transpose <span class="math notranslate nohighlight">\(\pmb{M}^T\)</span><a class="headerlink" href="#matrix-transpose-pmb-m-t" title="Permalink to this headline">#</a></h2>
 <p>The transpose operation replaces rows and columns with one another, and so  exchanges element <span class="math notranslate nohighlight">\((1, 2)\)</span> with <span class="math notranslate nohighlight">\((2, 1)\)</span>, and <span class="math notranslate nohighlight">\((1, 3)\)</span> with <span class="math notranslate nohighlight">\((3, 1)\)</span> and so on. For example;</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle\begin{bmatrix} a &amp; b &amp; c \\ d &amp; e &amp; f   \end{bmatrix}^T= \begin{bmatrix} a &amp; d \\b &amp; e\\ c &amp; f \end{bmatrix}\end{split}\]</div>
@@ -1665,36 +1988,36 @@ The eigenvalue - eigenvector equation is met, for example, in solving problems i
 <p>Performing the transpose then multiplying in reverse order gives the same result.</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle \pmb{b}^T\pmb{A}^T = \begin{bmatrix} 1 &amp; 3  \\ 2&amp; 4 \end{bmatrix}\begin{bmatrix} a &amp; c  \\ b&amp; d \end{bmatrix}=\begin{bmatrix} a +3b &amp; c+3d  \\ 2a+4b &amp; 2c+4d \end{bmatrix}\end{split}\]</div>
-</div>
-<div class="section" id="complex-conjugate-m">
-<h2>4.6 Complex conjugate M*<a class="headerlink" href="#complex-conjugate-m" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="complex-conjugate-m">
+<h2>4.6 Complex conjugate M*<a class="headerlink" href="#complex-conjugate-m" title="Permalink to this headline">#</a></h2>
 <p>This changes each matrix element with its complex conjugate, assuming there are complex numbers in the matrix; if not, it has no effect.</p>
 <p>The conjugate of a matrix <span class="math notranslate nohighlight">\(\pmb{M}\)</span> is labelled <span class="math notranslate nohighlight">\(\pmb{M}^*\)</span>. In making a complex conjugate each <span class="math notranslate nohighlight">\(i\)</span> is replaced by <span class="math notranslate nohighlight">\(-i\)</span> where <span class="math notranslate nohighlight">\(i =\sqrt{-1}\)</span>, for example <span class="math notranslate nohighlight">\([3\; i\;4]^* =[3\;-i \;4]\)</span>.
 Some properties are</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle \begin{align}&amp;(\pmb{M}^*)^* = \pmb{M}, \\&amp;(\pmb{AB})^* = \pmb{A}^*\pmb{B}^*, \\ &amp;|\pmb{M}^*|=|\pmb{M}|^*\end{align}\end{split}\]</div>
 <p>where the last property describes the effect on the determinant of the matrix.</p>
-</div>
-<div class="section" id="adjoint-pmb-m-dagger">
-<h2>4.7 Adjoint, <span class="math notranslate nohighlight">\(\pmb{M}^\dagger\)</span><a class="headerlink" href="#adjoint-pmb-m-dagger" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="adjoint-pmb-m-dagger">
+<h2>4.7 Adjoint, <span class="math notranslate nohighlight">\(\pmb{M}^\dagger\)</span><a class="headerlink" href="#adjoint-pmb-m-dagger" title="Permalink to this headline">#</a></h2>
 <p>This grand sounding name simply means</p>
 <p><span class="math notranslate nohighlight">\(\qquad\qquad\)</span><em>’Form the complex conjugate, then transpose the matrix or vice versa’</em></p>
 <p>The special symbol <span class="math notranslate nohighlight">\(\dagger\)</span> is conventionally used as a superscript. The effect of the adjoint operation is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \pmb{M}^\dagger = (\pmb{M}^*)^T=(\pmb{M}^T)^*\]</div>
 <p>In quantum mechanics, the adjoint is always used to convert a ‘ket’ into a ‘bra’ and vice versa, see Chapter 8.</p>
-</div>
-<div class="section" id="hermitian-or-self-adjoint-matrix-pmb-m-dagger-pmb-m">
-<h2>4.8 Hermitian or self-adjoint matrix <span class="math notranslate nohighlight">\(\pmb{M}^\dagger=\pmb{M}\)</span><a class="headerlink" href="#hermitian-or-self-adjoint-matrix-pmb-m-dagger-pmb-m" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="hermitian-or-self-adjoint-matrix-pmb-m-dagger-pmb-m">
+<h2>4.8 Hermitian or self-adjoint matrix <span class="math notranslate nohighlight">\(\pmb{M}^\dagger=\pmb{M}\)</span><a class="headerlink" href="#hermitian-or-self-adjoint-matrix-pmb-m-dagger-pmb-m" title="Permalink to this headline">#</a></h2>
 <p>In these matrices the diagonals are real and the off-diagonals <span class="math notranslate nohighlight">\(a_{i,j} = a_{j,i}^*\)</span>. The Pauli spin matrices of quantum mechanics are Hermitian; for example</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle \pmb{\sigma}_2=\begin{bmatrix} 0 &amp; i \\ -i &amp; 0\end{bmatrix}\end{split}\]</div>
 <p>Taking the transpose then the complex conjugate produces a matrix that is clearly the same as <span class="math notranslate nohighlight">\(\pmb{\sigma}_2\)</span>. If the Hermitian matrix is real, which means that it contains only real numbers, then it must be symmetric.</p>
 <p>In quantum mechanics, a matrix containing the integrals that evaluate to expectation values is always a real Hermitian matrix whose eigenvalues are real and eigenvectors orthogonal, but not necessarily normalized.</p>
 <p>An <em>anti-Hermitian</em> matrix is defined as <span class="math notranslate nohighlight">\(\pmb{M}^\dagger = -\pmb{M}\)</span>.</p>
-</div>
-<div class="section" id="inverse-of-a-square-matrix-pmb-m-1">
-<h2>4.9 Inverse of a square matrix, <span class="math notranslate nohighlight">\(\pmb{M}^{-1}\)</span><a class="headerlink" href="#inverse-of-a-square-matrix-pmb-m-1" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="inverse-of-a-square-matrix-pmb-m-1">
+<h2>4.9 Inverse of a square matrix, <span class="math notranslate nohighlight">\(\pmb{M}^{-1}\)</span><a class="headerlink" href="#inverse-of-a-square-matrix-pmb-m-1" title="Permalink to this headline">#</a></h2>
 <p>One matrix cannot be divided into another or into a constant so the operation <span class="math notranslate nohighlight">\(1/\pmb{M}\)</span> is not allowed; instead the matrix inverse must be formed. Furthermore the inverse is defined only for a square matrix and then only if its determinant is not zero, <span class="math notranslate nohighlight">\(|\pmb{M}| \ne 0\)</span>.</p>
 <p>The inverse is another matrix labelled <span class="math notranslate nohighlight">\(\pmb{M}^{-1}\)</span>, such that</p>
 <div class="math notranslate nohighlight">
@@ -1707,31 +2030,31 @@ Some properties are</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle\begin{bmatrix} a &amp; 0 &amp; 0 \\ 0 &amp; b &amp; 0 \\0 &amp; 0 &amp; c  \end{bmatrix}^{-1}= \begin{bmatrix} 1/a &amp; 0 &amp; 0\\0 &amp; 1/b &amp; 0\\ 0 &amp; 0 &amp; 1/c\end{bmatrix}\end{split}\]</div>
 <p>and this is used in the calculation of vibrational normal modes.</p>
-</div>
-<div class="section" id="singular-matrix-determinant-pmb-m-0">
-<h2>4.10 Singular matrix, determinant <span class="math notranslate nohighlight">\(|\pmb{M}|=0\)</span><a class="headerlink" href="#singular-matrix-determinant-pmb-m-0" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="singular-matrix-determinant-pmb-m-0">
+<h2>4.10 Singular matrix, determinant <span class="math notranslate nohighlight">\(|\pmb{M}|=0\)</span><a class="headerlink" href="#singular-matrix-determinant-pmb-m-0" title="Permalink to this headline">#</a></h2>
 <p>The determinant is zero and the matrix has no inverse. This is not the same as the null matrix, <span class="math notranslate nohighlight">\(\pmb{0}\)</span>. Odd sized <span class="math notranslate nohighlight">\(n \times n\)</span>, anti-symmetric matrices are singular, see section 4.6.</p>
-</div>
-<div class="section" id="unitary-matrix-pmb-m-dagger-pmb-m-1-or-pmb-m-dagger-pmb-m-pmb-1-and-pmb-m-1">
-<h2>4.11 Unitary matrix <span class="math notranslate nohighlight">\(\pmb M^\dagger = \pmb M^{-1}\)</span> or <span class="math notranslate nohighlight">\(\pmb {M}^\dagger \pmb{M} = \pmb{1}\)</span> and <span class="math notranslate nohighlight">\( |\pmb {M} | = 1\)</span><a class="headerlink" href="#unitary-matrix-pmb-m-dagger-pmb-m-1-or-pmb-m-dagger-pmb-m-pmb-1-and-pmb-m-1" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="unitary-matrix-pmb-m-dagger-pmb-m-1-or-pmb-m-dagger-pmb-m-pmb-1-and-pmb-m-1">
+<h2>4.11 Unitary matrix <span class="math notranslate nohighlight">\(\pmb M^\dagger = \pmb M^{-1}\)</span> or <span class="math notranslate nohighlight">\(\pmb {M}^\dagger \pmb{M} = \pmb{1}\)</span> and <span class="math notranslate nohighlight">\( |\pmb {M} | = 1\)</span><a class="headerlink" href="#unitary-matrix-pmb-m-dagger-pmb-m-1-or-pmb-m-dagger-pmb-m-pmb-1-and-pmb-m-1" title="Permalink to this headline">#</a></h2>
 <p>Two examples of unitary matrices are  <span class="math notranslate nohighlight">\(\displaystyle \quad\begin{bmatrix} 0 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 1\\1 &amp; 0 &amp; 0 \end{bmatrix}\)</span>,</p>
 <p>which has the determinant <span class="math notranslate nohighlight">\(0(0 - 1) - 1(0 - 1) + 0(0 - 0) = 1\)</span>,</p>
 <p>and the rotation matrix</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle \begin{bmatrix} \cos(\theta) &amp; \sin(\theta)  \\ -\sin(\theta) &amp; \cos(\theta)  \end{bmatrix} \qquad\qquad\text{(3)}\end{split}\]</div>
 <p>whose determinant is unity because <span class="math notranslate nohighlight">\(\sin^2(\theta)+\cos^2(\theta)=1\)</span>.</p>
-</div>
-<div class="section" id="orthogonal-matrices">
-<h2>4.12 Orthogonal matrices<a class="headerlink" href="#orthogonal-matrices" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="orthogonal-matrices">
+<h2>4.12 Orthogonal matrices<a class="headerlink" href="#orthogonal-matrices" title="Permalink to this headline">#</a></h2>
 <p>Orthogonal matrices are always square and have the properties that if <span class="math notranslate nohighlight">\(\pmb M\)</span> is a matrix then</p>
 <div class="math notranslate nohighlight">
 \[ \displaystyle \pmb{M}^T = \pmb{M}^{-1} \text{ or equivalently}\quad \pmb{M}^T\pmb{M} = \pmb 1\]</div>
 <p>which means that the matrix transpose is its inverse and when the matrix and its transpose are multiplied together a unit diagonal matrix results. The orthogonal matrix has a determinant that is <span class="math notranslate nohighlight">\(\pm 1\)</span>; the eigenvalues are all <span class="math notranslate nohighlight">\(+1\)</span>. However, a determinant of <span class="math notranslate nohighlight">\(\pm 1\)</span> does not mean that a matrix is orthogonal. The product of two orthogonal matrices is also an orthogonal matrix.</p>
 <p>The rotation matrix, equation 3, is orthogonal, as is the matrix <span class="math notranslate nohighlight">\(\displaystyle \frac{1}{\sqrt{2}}\begin{bmatrix} 1 &amp; 1  \\ 1 &amp; -1  \end{bmatrix}\)</span> which shows that a real orthogonal matrix is the same as a unitary matrix.</p>
 <p>In an orthogonal matrix, rows and columns form an <em>orthonormal basis</em> and each row has a length of one. When an orthogonal matrix operates on (linearly transforms) a vector or a matrix representing an object, such as a molecule, the molecule is unchanged, meaning that relative bond angles and lengths remain the same but the coordinate axes moved so the object appears to have been rotated when viewed on the computer screen. Orthogonal matrices are used to represent reflections, rotations, and inversions in molecular group theory. Matrix decomposition methods make use of orthogonal matrices. One matrix method called <em>singular value decomposition</em> is used in data analysis to separate out overlapping spectra into their constituent parts.</p>
-</div>
-<div class="section" id="determinants">
-<h2>4.13 Determinants<a class="headerlink" href="#determinants" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="determinants">
+<h2>4.13 Determinants<a class="headerlink" href="#determinants" title="Permalink to this headline">#</a></h2>
 <p>Evaluating determinants was described in Section 2. The determinants of different types of square matrices have the following properties that do not involve evaluating the determinant.</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle \qquad\qquad\begin{align} \big|\,\pmb{ABC}\,\big|&amp;=\big|\,\pmb{A}\,\big|\big|\,\pmb{B}\,\big|\big|\,\pmb{C}\,\big|\\
@@ -1739,9 +2062,9 @@ Some properties are</p>
 \big|\pmb{A} \big|^{-1} &amp;= \frac{1}{ \big|\pmb{A}\big| }\\
 \big|a\pmb{A}\big| &amp;= a^n\big|\pmb{A}\big|\end{align}\qquad\qquad\qquad\qquad\qquad\qquad\text{(4)}\end{split}\]</div>
 <p>where <span class="math notranslate nohighlight">\(n\)</span> is the length of the determinant’s row or column.</p>
-</div>
-<div class="section" id="matrix-multiplication">
-<h2>5 Matrix multiplication<a class="headerlink" href="#matrix-multiplication" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="matrix-multiplication">
+<h2>5 Matrix multiplication<a class="headerlink" href="#matrix-multiplication" title="Permalink to this headline">#</a></h2>
 <p>The <em>shape</em> of the matrices and their multiplication <em>order</em> must both be respected. If multiplication is possible, and it not always is, then, in general, multiplication <span class="math notranslate nohighlight">\(\pmb{AB}\)</span> does not give the same result as <span class="math notranslate nohighlight">\(\pmb{BA}\)</span>. The matrices</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle \pmb{A}=\begin{bmatrix} 2 &amp; 1 &amp; 5 \\ -5 &amp; 6 &amp; 2 \end{bmatrix} \; \text{  and  } \pmb{B}=\begin{bmatrix} 12 &amp; 11 &amp; 6 \\ -3 &amp; 3 &amp; 9 \end{bmatrix} \end{split}\]</div>
@@ -1779,22 +2102,22 @@ Some properties are</p>
 <hr class="docutils" />
 <p><img alt="Drawing" src="../_images/matrices-fig7c.png" /></p>
 <p>Figure 7. Pictorial representation of matrix multiplication. The bra-ket notation used in quantum mechanics is shown on the right.  The dot product is also called the <em>inner product</em>.</p>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="matrix-sum">
-<h2>5.1 Matrix sum<a class="headerlink" href="#matrix-sum" title="Permalink to this headline">¶</a></h2>
+<section id="matrix-sum">
+<h2>5.1 Matrix sum<a class="headerlink" href="#matrix-sum" title="Permalink to this headline">#</a></h2>
 <p>To sum the terms in a square matrix left-multiply by a unit row vector and right-multiply
 by a unit column vector. For example</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle \begin{bmatrix} 1 &amp; 1 \end{bmatrix}  \begin{bmatrix}a &amp; b \\ c &amp; b  \end{bmatrix}\begin{bmatrix} 1 \\ 1 \end{bmatrix} =a+b+c+d\end{split}\]</div>
-</div>
-<div class="section" id="bra-ket-notation">
-<h2>5.2 bra-ket notation<a class="headerlink" href="#bra-ket-notation" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="bra-ket-notation">
+<h2>5.2 bra-ket notation<a class="headerlink" href="#bra-ket-notation" title="Permalink to this headline">#</a></h2>
 <p>Often the bra-ket notation is used in quantum mechanics. The <em>ket</em> <span class="math notranslate nohighlight">\(|k\rangle\)</span>  is a single column matrix (a column vector) <span class="math notranslate nohighlight">\(\displaystyle | k\rangle =\begin{bmatrix} a \\ b \\ \vdots \end{bmatrix}\)</span> and the <em>bra</em>  is the single row matrix (or vector) and is always the complex conjugate of the ket. <span class="math notranslate nohighlight">\(\displaystyle \langle j|=\begin{bmatrix} a^* &amp; b^* &amp; \cdots \end{bmatrix}\)</span>. The <span class="math notranslate nohighlight">\(\langle j |k\rangle\)</span> is a scalar number, and <span class="math notranslate nohighlight">\(|k\rangle \langle j|\)</span> a square matrix.</p>
 <p>These objects are discussed in more detail in chapters 6 and are mentioned here as they provide a shorthand way of visualizing matrix multiplication; see Figure 7. There is no specific symbol for a scalar or a square matrix; they have to be represented by the bra-ket pair.</p>
-</div>
-<div class="section" id="commutators">
-<h2>5.3 Commutators<a class="headerlink" href="#commutators" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="commutators">
+<h2>5.3 Commutators<a class="headerlink" href="#commutators" title="Permalink to this headline">#</a></h2>
 <p>If matrices are not square then there is only one way to multiply them: the left-hand matrix’s number of columns must equal the right-hand matrix’s number of rows. When both matrices are square, to be multiplied they must be of the same size and we can then choose which is to be the left-hand and which the right-hand side of the multiplication, and now the <em>order</em> of multiplication does matter as illustrated on the previous page. Sometimes the result is the same, i.e. <span class="math notranslate nohighlight">\(\pmb{AB} = \pmb{BA}\)</span> then the matrices are said to <em>commute</em>, but generally they do not and, therefore, <span class="math notranslate nohighlight">\(\pmb{AB} \ne \pmb{BA}\)</span>.</p>
 <p>The commutator of two square matrices <span class="math notranslate nohighlight">\(\pmb{A}\)</span> and <span class="math notranslate nohighlight">\(\pmb{B}\)</span> is also a matrix and is defined as</p>
 <div class="math notranslate nohighlight">
@@ -1810,9 +2133,9 @@ by a unit column vector. For example</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle [\pmb{P},\pmb{Q}]f= \pmb{PQ}f - \pmb{QP}f\]</div>
 <p>and <span class="math notranslate nohighlight">\(f\)</span> can be any normal function, <span class="math notranslate nohighlight">\(\ln(x),\, \sin(x)\)</span>, and so on. In molecular group theory, the five types of operators that are the identity, rotation, reflection, inversion, and improper rotation (combined rotation and reflection) sometimes commute with one another although this depends on the point group. Section 6 describes these operations.</p>
-</div>
-<div class="section" id="integral-powers-of-square-matrices">
-<h2>5.4 Integral powers of square matrices<a class="headerlink" href="#integral-powers-of-square-matrices" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="integral-powers-of-square-matrices">
+<h2>5.4 Integral powers of square matrices<a class="headerlink" href="#integral-powers-of-square-matrices" title="Permalink to this headline">#</a></h2>
 <p>Only integral powers of matrices are defined and are calculated by repeated multiplication, for example,</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \pmb{M}^0=\pmb{1}, \quad \pmb{M}^1=\pmb{M}, \quad \pmb{M}^2=\pmb{MM}, \quad \pmb{M}^3=\pmb{MMM} \]</div>
@@ -1822,24 +2145,24 @@ by a unit column vector. For example</p>
 <p>The <em>similarity transform</em>, see Section 13.4, can be used to obtain high integer powers of matrices, however, if the matrix is diagonal then taking the power is easy because the diagonal elements are raised to the power. The power need not be positive; therefore, the inverse of a diagonal matrix is easily obtained.</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle \begin{bmatrix} a &amp; 0 &amp; 0 &amp; \cdots  \\ 0 &amp;b &amp; 0 &amp; \cdots   \\ 0&amp; \vdots &amp;\ddots\end{bmatrix}^{\,n}= \begin{bmatrix} a^n &amp; 0 &amp; 0 &amp; \cdots  \\ 0 &amp;b^n &amp; 0 &amp; \cdots   \\0&amp; \vdots &amp; \ddots\end{bmatrix}\end{split}\]</div>
-</div>
-<div class="section" id="functions-of-matrices">
-<h2>5.5 Functions of matrices<a class="headerlink" href="#functions-of-matrices" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="functions-of-matrices">
+<h2>5.5 Functions of matrices<a class="headerlink" href="#functions-of-matrices" title="Permalink to this headline">#</a></h2>
 <p>In the study of the theory of nuclear magnetic resonance, NMR, a quantum mechanical description of nuclear spin is essential. To explore the rotation of the magnetization as used in inversion recovery, spin-echo, or a complicated two-dimensional experiment, such as COSY, requires the exponentiation of matrices (Levitt 2001). Exponentiation can only be performed by expanding the exponential and evaluating the terms in the series one by one as</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle e^{\pmb{M}}=\pmb{1} + \pmb{M}+ \frac{\pmb{M}^2}{2!}+\cdots; \quad e^{-\pmb{M}}=\pmb{1} - \pmb{M}+ \frac{\pmb{M}^2}{2!}-\cdots\]</div>
 <p>and is <span class="math notranslate nohighlight">\(x\)</span> is a variable <span class="math notranslate nohighlight">\(\displaystyle e^{-x\pmb{M}}=\pmb{1} -x\pmb{M}+ x^2\frac{\pmb{M}^2}{2!}-\cdots\)</span></p>
 <p>The matrix <span class="math notranslate nohighlight">\(\pmb{1}\)</span> is a unit diagonal matrix. Similar expressions are formed with trig and log functions according to their expansion formula and with Taylor or Maclaurin series for other functions. The familiar relationship <span class="math notranslate nohighlight">\(e^Ae^B = e^{A+B}\)</span> is only true if the matrices <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> commute. In Section 13.2 and 13.3 a transformation is describe which enables the exponential of a matrix to be found.</p>
-</div>
-<div class="section" id="block-diagonal-matrices">
-<h2>5.6 Block diagonal matrices<a class="headerlink" href="#block-diagonal-matrices" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="block-diagonal-matrices">
+<h2>5.6 Block diagonal matrices<a class="headerlink" href="#block-diagonal-matrices" title="Permalink to this headline">#</a></h2>
 <p>In many instances, a matrix can be blocked into smaller ones symmetrically disposed along the diagonal. The result of this is that the problem reduces to the lesser one of solving several matrices where each is much smaller than the whole and is therefore more easily solved. Why should we bother with this if the computer can diagonalize any matrix we give it to do? The reason is that eigenvalues can more easily be identified within the basis set by doing the calculation this way. Recall that the basis set you choose to use, for example in a quantum problem, determines the ordering of elements in a matrix. Why does this matter? It matters because when the spectrum from a molecule is observed, which measures only the difference in energy levels, we would like to know what quantum numbers give rise to what spectral lines. If the matrix is a block diagonal one, then this is made somewhat easier because we know what parts of the basis set elements are involved because each block when diagonalized contains only that part of the basis set that was in it in the first place. If the whole matrix is diagonalized blind, as it were, and without thinking about the problem beforehand, this information can be lost because all the elements and hence eigenvalues can be mixed up. The elements in the basis set can be ordered in any way you want, and different basis sets can be chosen for the same problem. By trying different ordering, it is sometimes possible to discover a block diagonal form for a matrix and so aid its solution. In the study of group theory, blocking matrices proves to be a powerful way of determining the irreducible representation; see Section 6.</p>
 <p>The following matrix has a <span class="math notranslate nohighlight">\(2 \times 2\)</span>, a <span class="math notranslate nohighlight">\(3 \times 3\)</span>, and a <span class="math notranslate nohighlight">\(1 \times 1\)</span> block.</p>
 <p><img alt="Drawing" src="../_images/matrices-blockmatrix.png" /></p>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="the-special-case-of-the-2-times-2-matrix">
-<h2>5.7 The special case of the <span class="math notranslate nohighlight">\(2\times 2\)</span> matrix<a class="headerlink" href="#the-special-case-of-the-2-times-2-matrix" title="Permalink to this headline">¶</a></h2>
+<section id="the-special-case-of-the-2-times-2-matrix">
+<h2>5.7 The special case of the <span class="math notranslate nohighlight">\(2\times 2\)</span> matrix<a class="headerlink" href="#the-special-case-of-the-2-times-2-matrix" title="Permalink to this headline">#</a></h2>
 <p>The matrix is <span class="math notranslate nohighlight">\(\displaystyle \pmb{M}= \begin{bmatrix} A &amp; B \\C &amp; D \end{bmatrix}\)</span></p>
 <p>and has determinant <span class="math notranslate nohighlight">\(\displaystyle |\pmb{M}|=AD-BC\)</span></p>
 <p>trace <span class="math notranslate nohighlight">\( Tr(\pmb{M})=A+D\)</span></p>
@@ -1855,12 +2178,12 @@ by a unit column vector. For example</p>
 \[\displaystyle \lambda_{1,2}= \frac{A+D\pm \sqrt{(A+D)^2-4(AD-BC)}}{2}\]</div>
 <p>As a check <span class="math notranslate nohighlight">\(\lambda_1+\lambda_2=Tr(\pmb{M})\)</span> and <span class="math notranslate nohighlight">\(\lambda_1\lambda_2=|\pmb{M}|\)</span>.</p>
 <p>The eigenvectors are <span class="math notranslate nohighlight">\(\displaystyle v_1=k \begin{bmatrix} B\\\lambda_1-A \end{bmatrix}\)</span> and <span class="math notranslate nohighlight">\(\displaystyle v_2=k\begin{bmatrix} B\\\lambda_2-A \end{bmatrix}\)</span> where <span class="math notranslate nohighlight">\(k\)</span> is an arbitrary constant, for example to normalise the eigenvectors.</p>
-</div>
-<div class="section" id="using-python-and-sympy">
-<h2>5.8 Using Python and Sympy.<a class="headerlink" href="#using-python-and-sympy" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="using-python-and-sympy">
+<h2>5.8 Using Python and Sympy.<a class="headerlink" href="#using-python-and-sympy" title="Permalink to this headline">#</a></h2>
 <p>The is a distinction between doing numerical and symbolic calculations. Python/numpy is used for numerical work and Sympy for algebraic/symbolic calculations. The notation is slightly different depending on whether you use Sympy or numpy.</p>
-<div class="section" id="a-symbolic-calculations-using-sympy">
-<h3><strong>(a) Symbolic calculations using Sympy</strong><a class="headerlink" href="#a-symbolic-calculations-using-sympy" title="Permalink to this headline">¶</a></h3>
+<section id="a-symbolic-calculations-using-sympy">
+<h3><strong>(a) Symbolic calculations using Sympy</strong><a class="headerlink" href="#a-symbolic-calculations-using-sympy" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">M</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;M, N, a, b, c, d&#39;</span><span class="p">)</span>    <span class="c1"># define symbols to use        </span>
@@ -1964,9 +2287,9 @@ by a unit column vector. For example</p>
 \[\begin{split}\displaystyle \left[\begin{matrix}10 &amp; 8\\15 &amp; 12\end{matrix}\right]\end{split}\]</div>
 </div>
 </div>
-</div>
-<div class="section" id="b-using-numpy-for-numerical-calculation-note-that-the-notation-is-different-to-that-of-sympy">
-<h3><strong>(B) Using numpy for numerical calculation.  Note that the notation is different to that of Sympy</strong><a class="headerlink" href="#b-using-numpy-for-numerical-calculation-note-that-the-notation-is-different-to-that-of-sympy" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="b-using-numpy-for-numerical-calculation-note-that-the-notation-is-different-to-that-of-sympy">
+<h3><strong>(B) Using numpy for numerical calculation.  Note that the notation is different to that of Sympy</strong><a class="headerlink" href="#b-using-numpy-for-numerical-calculation-note-that-the-notation-is-different-to-that-of-sympy" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>  <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span>
@@ -2077,9 +2400,9 @@ by a unit column vector. For example</p>
 </div>
 </div>
 </div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -2103,9 +2426,11 @@ by a unit column vector. For example</p>
 
               </div>
               
-        
-            <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="matrices-Q1-10.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -2121,26 +2446,28 @@ by a unit column vector. For example</p>
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-        
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-    <div class="container">
-      <p>
-        
-          By Godfrey Beddard<br/>
-        
-            &copy; Copyright 2022.<br/>
-      </p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Godfrey Beddard<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
     </div>
-  </footer>
-</main>
+    
+</div>
 
 
       </div>
     </div>
   
-  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>

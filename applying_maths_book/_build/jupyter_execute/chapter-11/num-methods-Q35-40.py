@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## Questions 35 - 40
+# # Questions 35 - 40
 
 # ## Q35
 # Solve $d^2y/dx^2 = 1/(1 + y^2) + x^2$ 

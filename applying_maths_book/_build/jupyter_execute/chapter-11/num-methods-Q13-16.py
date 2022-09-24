@@ -1,16 +1,16 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## Questions 13 - 16
+# # Questions 13 - 16
 
-# ### Q13 Accurate numerical algorithms
+# ## Q13 Accurate numerical algorithms
 # This question illustrates the importance of using accurate numerical algorithms. Compare the Euler, modified Euler, and Runge - Kutta method to integrate the coupled equations (32) from $0 \to 20$ with initial values, $x_0 = 2,\; y_0 = 1$ at $t = 0$ and integration $500$ points. Plot $y$ vs time for the three methods. The exact solution for $y$ to the equation, which can be obtained by the methods of Chapter 10, is 
 # 
 # $$y = \sin(t) + 2e^{-t} - 1$$
 # 
 # and thus at small times the function should decay exponentially then become sinusoidal.
 # 
-# ### Q14 Reversible reactions. Euler algorithm
+# ## Q14 Reversible reactions. Euler algorithm
 # (a) Change the Euler Algorithm to include the modified Euler or Runge - Kutta equations and then solve the system of equations
 # 
 # $$\displaystyle \frac{dy}{dt} = -(k_f + k_2)y + k_1x,\qquad \frac{dx}{dt} = -(k_1 + k_e)x + k_2y$$
@@ -39,7 +39,7 @@
 # **Strategy** It is easier to work in units of microseconds.  In (iii) use le Chatelier's principle if necessary to predict what happens.
 # 
 # 
-# ### Q15 Michaelis - Menten scheme
+# ## Q15 Michaelis - Menten scheme
 # The Michaelis - Menten scheme is the simplest description of an enzyme catalysed reaction. The enzyme E and substrate S come into equilibrium with an intermediate complex ES that breaks up into reactants or produces product P and the enzyme is returned to its functioning state having acted as a catalyst by converting S into P. The rate equations are derived from the scheme
 # 
 # $$\displaystyle E+S \overset{k_1} {  \underset{k_{-1}}{ \overset{\longrightarrow} \longleftarrow } }   ES \overset{k_2}{\longrightarrow} P+E $$
@@ -67,7 +67,7 @@
 # 
 # as must the initial concentrations and the arrays to hold the concentrations of the four species.
 # 
-# ### Q16 Solve eqn.
+# ## Q16 Solve the equation
 # Solve the equation 
 # 
 # $$\displaystyle \frac{d^3y}{dx^3}+x\frac{dy}{dx}+y-x+1=0  \tag{36}$$ 

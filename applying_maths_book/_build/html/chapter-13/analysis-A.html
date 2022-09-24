@@ -4,11 +4,13 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Characterizing experimental data. Accuracy, precision, mean and standard deviation &#8212; Applying Maths in the Chemical &amp; Biomolecular Sciences</title>
     
-  <link href="../_static/css/theme.css" rel="stylesheet">
-  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,40 +20,39 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Questions 1 - 3" href="analysis-Q1-3.html" />
@@ -63,7 +64,21 @@
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -72,9 +87,10 @@
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -92,14 +108,15 @@
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../intro.html">
-   Applying Maths in the Chemical and Biomolecular Sciences.
-  </a>
- </li>
-</ul>
-<ul class="current nav bd-sidenav">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Applying Maths in the Chemical and Biomolecular Sciences.
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../chapter-1/chapter1-intro.html">
    1. Numbers, Equations, Operators, and Algorithms.
@@ -204,11 +221,6 @@
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-2/chapter2-Q-10-13.html">
      Questions 10 -13
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-2/chapter2-C.html">
-     Euler’s theorem, roots of unity, x-ray diffraction structure factor.
     </a>
    </li>
    <li class="toctree-l2">
@@ -337,7 +349,7 @@
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../chapter-4/integration-intro.html">
-   4. Integration.
+   4 Integration.
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
   <label for="toctree-checkbox-4">
@@ -377,7 +389,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-4/integration-D.html">
-     Calculating an Average Value.
+     Calculating an Average.
     </a>
    </li>
    <li class="toctree-l2">
@@ -407,7 +419,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-4/integration-G.html">
-     Calculating the energy of a chemical bond using molecular orbitals
+     Calculating the energy of a Chemical Bond using Molecular Orbitals
     </a>
    </li>
    <li class="toctree-l2">
@@ -688,7 +700,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-7/matrices-D.html">
-     Rotation matrices: moving molecules
+     Rotation matrices: moving molecules. Coordinate transform as rotation.
     </a>
    </li>
    <li class="toctree-l2">
@@ -757,23 +769,13 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-7/matrices-K.html">
-     Calculating a bond length using moments of inertia
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-7/matrices-Q61.html">
-     Question 61
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="../chapter-7/matrices-L.html">
      Principal axes for Moments of Inertia
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-7/matrices-Q62.html">
-     Question 62
+    <a class="reference internal" href="../chapter-7/matrices-Q61-62.html">
+     Question 61 - 62
     </a>
    </li>
    <li class="toctree-l2">
@@ -1004,7 +1006,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-G.html">
-     PDE examples continued
+     PDE Continued
     </a>
    </li>
    <li class="toctree-l2">
@@ -1096,7 +1098,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-11/num-methods-answers8-12.html">
-     Solutions Q8 - 12
+     Solutions Q 8 - 12
     </a>
    </li>
    <li class="toctree-l2">
@@ -1258,112 +1260,227 @@
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/chapter-13/analysis-A.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/subblue/applying-maths-book"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/subblue/applying-maths-book/issues/new?title=Issue%20on%20page%20%2Fchapter-13/analysis-A.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        
-    </div>
-</div>
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/subblue/applying-maths-book/main?urlpath=lab/tree/applying_maths_book/chapter-13/analysis-A.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        <a class="colab-button" href="https://colab.research.google.com/github/subblue/applying-maths-book/blob/main/applying_maths_book/chapter-13/analysis-A.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
-                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
-                    src="../_static/images/logo_colab.png"
-                    alt="Interact on Colab">Colab</button></a>
-        
-        
-    </div>
-</div>
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/subblue/applying-maths-book/main?urlpath=lab/tree/applying_maths_book/chapter-13/analysis-A.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://colab.research.google.com/github/subblue/applying-maths-book/blob/main/applying_maths_book/chapter-13/analysis-A.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/subblue/applying-maths-book"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/subblue/applying-maths-book/issues/new?title=Issue%20on%20page%20%2Fchapter-13/analysis-A.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/chapter-13/analysis-A.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#the-mean-or-average-value">
    1.1 The Mean or Average value
@@ -1562,17 +1679,231 @@
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Characterizing experimental data. Accuracy, precision, mean and standard deviation</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-mean-or-average-value">
+   1.1 The Mean or Average value
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sample-standard-deviation-and-parent-or-population-variance">
+   1.2 Sample Standard Deviation and parent or population Variance
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#standard-deviation-in-the-mean">
+   1.3 Standard Deviation in the Mean
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#central-limit-theorem">
+   2 Central Limit Theorem
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#confidence-intervals">
+   3 Confidence intervals
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#table-1-sigma-s">
+     <strong>
+      Table 1. sigma’s
+     </strong>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-normal-and-standard-normal-distribution">
+   3.1 The normal and standard normal distribution
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#i-estimate-k-content-of-glass">
+     <strong>
+      (i) Estimate K
+      <span class="math notranslate nohighlight">
+       \(^+\)
+      </span>
+      content of glass
+     </strong>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#small-sample-confidence-limits-students-t">
+   3.2 Small sample confidence limits: Student’s
+   <em>
+    t
+   </em>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#table-3-student-s-t-distribution">
+   Table 3 Student’s
+   <em>
+    t
+   </em>
+   distribution
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ii-response-times">
+     <strong>
+      (ii) Response times
+     </strong>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#critical-values-from-cumulative-student-s-t-distribution">
+   3.3 Critical values from cumulative Student’ s
+   <em>
+    t
+   </em>
+   distribution
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#hypothesis-testing">
+   3.4 Hypothesis testing
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#comparison-of-two-means">
+   3.5 Comparison of two means
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#iii-comparing-columns-yields-in-chromatography">
+     <strong>
+      (iii) Comparing columns yields in chromatography
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#iv-comparing-fluorescence-yields">
+     <strong>
+      (iv) Comparing fluorescence yields
+     </strong>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#chebychev-s-rule-chauvenet-s-criterion-and-outliers">
+   3.6 Chebychev’ s rule, Chauvenet’s criterion and outliers
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#chebychev">
+     <strong>
+      Chebychev
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#chauvenet">
+     <strong>
+      Chauvenet
+     </strong>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#standard-deviation-in-a-single-measurement">
+   3.7 Standard deviation in a single measurement
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#weighting">
+   3.8 Weighting
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#v-spectral-lines">
+     <strong>
+      (v) Spectral lines
+     </strong>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#propagation-or-combination-of-errors">
+   4 Propagation or combination of errors
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vi-gas-law">
+     <strong>
+      (vi) Gas law
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vii-vapour-pressure">
+     <strong>
+      (vii) Vapour pressure
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#viii-vapour-pressure-continued">
+     <strong>
+      (viii) Vapour pressure continued
+     </strong>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#table-of-some-error-propagation-formulae">
+   4.1 Table of some error propagation formulae
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#matrix-formulation">
+   4.2  Matrix formulation.
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#maximum-likelihood-method-parameter-estimation">
+   4.3 Maximum Likelihood Method. Parameter estimation:
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
               <div>
                 
-  <div class="section" id="characterizing-experimental-data-accuracy-precision-mean-and-standard-deviation">
-<h1>Characterizing experimental data. Accuracy, precision, mean and standard deviation<a class="headerlink" href="#characterizing-experimental-data-accuracy-precision-mean-and-standard-deviation" title="Permalink to this headline">¶</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="characterizing-experimental-data-accuracy-precision-mean-and-standard-deviation">
+<h1>Characterizing experimental data. Accuracy, precision, mean and standard deviation<a class="headerlink" href="#characterizing-experimental-data-accuracy-precision-mean-and-standard-deviation" title="Permalink to this headline">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import all python add-ons etc that will be needed later on</span>
@@ -1588,8 +1919,8 @@
 </div>
 </div>
 </div>
-<div class="section" id="the-mean-or-average-value">
-<h2>1.1 The Mean or Average value<a class="headerlink" href="#the-mean-or-average-value" title="Permalink to this headline">¶</a></h2>
+<section id="the-mean-or-average-value">
+<h2>1.1 The Mean or Average value<a class="headerlink" href="#the-mean-or-average-value" title="Permalink to this headline">#</a></h2>
 <p>If several readings have been taken of a quantity <span class="math notranslate nohighlight">\(x\)</span>, for example a titration is performed <span class="math notranslate nohighlight">\(N\)</span> times with identical solutions in an attempt to be precise, the titration’s end-point volume will be quoted as the arithmetic sample average <span class="math notranslate nohighlight">\(\langle x\rangle\)</span> of all the <span class="math notranslate nohighlight">\(n\)</span> measurements. This is sometimes also labelled <span class="math notranslate nohighlight">\(\bar x\)</span> (pronounced ‘x-bar’) and the word ‘mean’ is often used instead of average. The arithmetic average is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \langle x\rangle =\frac{1}{n}\sum_{i=1}^{i=n} x_i=\frac{1}{n}(x_1+x_2+x_3\cdots x_n)\tag{1}\]</div>
@@ -1598,9 +1929,9 @@
 <p>Figure 1. The experimental average value <span class="math notranslate nohighlight">\(\langle x\rangle\)</span>  tends towards the population or theoretical mean <span class="math notranslate nohighlight">\(\mu\)</span> as the number of samples increase. The sample standard deviation <span class="math notranslate nohighlight">\(s\)</span> is also shown and this tends to a constant value of 1/4 as <span class="math notranslate nohighlight">\(n\)</span> increases. (Note the logarithmic abscissa scale). The samples are taken from a Normal distribution with <span class="math notranslate nohighlight">\(\mu = 1/2\)</span> and <span class="math notranslate nohighlight">\(\sigma = 1/4\)</span>.</p>
 <hr class="docutils" />
 <p>One trajectory showing the way the mean value is approached as the number of experiments is increased is shown in figure 1; the sample standard deviation <span class="math notranslate nohighlight">\(s\)</span> (equation 2) is also shown. The samples at each <span class="math notranslate nohighlight">\(n\)</span> are from a new list of length <span class="math notranslate nohighlight">\(n\)</span> selected at random a normal distribution (figure 4) with a mean <span class="math notranslate nohighlight">\(1/2\)</span> and a standard deviation <span class="math notranslate nohighlight">\(1/4\)</span>. In many experiments, the inherent accuracy of each measurement may not be the same and then the mean and standard deviation have to be <em>weighted</em> to reflect this. This is described in Section 3.8.</p>
-</div>
-<div class="section" id="sample-standard-deviation-and-parent-or-population-variance">
-<h2>1.2 Sample Standard Deviation and parent or population Variance<a class="headerlink" href="#sample-standard-deviation-and-parent-or-population-variance" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="sample-standard-deviation-and-parent-or-population-variance">
+<h2>1.2 Sample Standard Deviation and parent or population Variance<a class="headerlink" href="#sample-standard-deviation-and-parent-or-population-variance" title="Permalink to this headline">#</a></h2>
 <p>A measure of the spread of the results is the sample standard deviation <span class="math notranslate nohighlight">\(s\)</span>. The square of the standard deviation is called the <em>variance</em> . The sample standard deviation is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle s=\sqrt{\frac{1}{n-1}\sum_{i=1}^n \big( x_i - \langle x\rangle \big)^2 } \tag{2}\]</div>
@@ -1624,9 +1955,9 @@
 <div class="math notranslate nohighlight">
 \[\displaystyle \sigma^2=\frac{n}{n-1}s^2\]</div>
 <p>which is an unbiased estimator of <span class="math notranslate nohighlight">\(\sigma^2\)</span>. Strictly speaking, the equality symbol = should be replaced by <span class="math notranslate nohighlight">\(\approx\)</span> ‘approximately’ because this is an estimation; however, equality is usually used. The factor <span class="math notranslate nohighlight">\(n/(n - 1)\)</span> enters because of an argument from statistical theory. The term reflects the degrees of freedom left with which to describe the data. Each parameter that is defined is considered to impose a restraint on the data and is, roughly speaking, equivalent to removing one data point. The more parameters that are measured the fewer data points there are left to describe the data (Parratt 1971).</p>
-</div>
-<div class="section" id="standard-deviation-in-the-mean">
-<h2>1.3 Standard Deviation in the Mean<a class="headerlink" href="#standard-deviation-in-the-mean" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="standard-deviation-in-the-mean">
+<h2>1.3 Standard Deviation in the Mean<a class="headerlink" href="#standard-deviation-in-the-mean" title="Permalink to this headline">#</a></h2>
 <p>If experimental measurements are repeated, slightly different values of the mean are expected because only a few of the possibly infinite number of values needed to define the true result can be measured. The difference between any two means would be expected to be less than the standard deviation in either set. The standard deviation of the means would then be written in the same way as equation 2 as</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle s_m=\sqrt{\frac{1}{n-1}\sum_{i=1}^n(m_i-\langle m \rangle)^2}\]</div>
@@ -1639,9 +1970,9 @@
 \[\displaystyle \sigma_m=\frac{\sigma}{\sqrt{N}}\]</div>
 <p>however, this is also called the standard error. Clearly, these names are not fixed so it is
 always necessary to check the equation being used, which unfortunately, is not always given.</p>
-</div>
-<div class="section" id="central-limit-theorem">
-<h2>2 Central Limit Theorem<a class="headerlink" href="#central-limit-theorem" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="central-limit-theorem">
+<h2>2 Central Limit Theorem<a class="headerlink" href="#central-limit-theorem" title="Permalink to this headline">#</a></h2>
 <p>The mean <span class="math notranslate nohighlight">\(\mu\)</span> and standard deviation <span class="math notranslate nohighlight">\(\sigma\)</span> are used assuming that data is distributed normally. But many quantities measured are not expected to have a normal distribution; for example, when counting photons or particles, a Poisson distribution is produced which is quite unlike a normal distribution at small <span class="math notranslate nohighlight">\(\mu\)</span>, see figure 13. The speed of a molecule follows a Maxwell - Boltzmann distribution (see chapter 3 Q54), which is clearly skewed or lopsided, again quite unlike a normal distribution. However, remarkably, if several measurements are taken of a given velocity, their distribution will be normal. This is what the central limit theorem predicts and although easy to demonstrate, it is harder to prove. It states that by taking many similar measurements from (almost) any type of continuous distribution, the result always approaches a normal (Gaussian) distribution. This population distribution has the theoretical form</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle p(x)=\frac{1}{\sqrt{2\pi \mu^2}}e^{\large{-\frac{(x-\mu)^2}{2\sigma^2}} }\tag{4}\]</div>
@@ -1688,9 +2019,9 @@ always necessary to check the equation being used, which unfortunately, is not a
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="confidence-intervals">
-<h2>3 Confidence intervals<a class="headerlink" href="#confidence-intervals" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="confidence-intervals">
+<h2>3 Confidence intervals<a class="headerlink" href="#confidence-intervals" title="Permalink to this headline">#</a></h2>
 <p>The central limit theorem shows that repeated measurements follow a normal distribution (see Section 3.1) with a mean <span class="math notranslate nohighlight">\(\mu\)</span> and variance <span class="math notranslate nohighlight">\(\sigma^2/n\)</span> for n separate measurements. The mean <span class="math notranslate nohighlight">\(\mu\)</span> may be known from theoretical considerations or from other experimental data. The properties of the normal distribution are used to provide estimates of the probability that, by chance alone, a measurement of the mean will fall inside or outside a certain value.</p>
 <p>The standard deviation of the mean is often referred to as the standard error on the mean and defined as <span class="math notranslate nohighlight">\(\sigma_m = \sigma/\sqrt{n}\)</span>. This confirms that measurements get more precise with the square root of the number of measurements. If a new statistic <span class="math notranslate nohighlight">\(Z\)</span> is defined as</p>
 <div class="math notranslate nohighlight">
@@ -1708,8 +2039,8 @@ always necessary to check the equation being used, which unfortunately, is not a
 <div class="math notranslate nohighlight">
 \[\displaystyle \langle x\rangle \pm 1.96\frac{s}{\sqrt{n}} \tag{6a}\]</div>
 <p>Confidence limits are not always used when quoting results and it is common to see <span class="math notranslate nohighlight">\(\langle x\rangle \pm \sigma\)</span> quoted instead. Unless this is qualified as being <span class="math notranslate nohighlight">\(1\sigma,\; 2\sigma\)</span> etc., what is implied by this is uncertain. If the error is <span class="math notranslate nohighlight">\(\pm\sigma\)</span> then <span class="math notranslate nohighlight">\(\approx 68\)</span>% of all measurements fall in this range. Table 1 gives other values.</p>
-<div class="section" id="table-1-sigma-s">
-<h3><strong>Table 1. sigma’s</strong><a class="headerlink" href="#table-1-sigma-s" title="Permalink to this headline">¶</a></h3>
+<section id="table-1-sigma-s">
+<h3><strong>Table 1. sigma’s</strong><a class="headerlink" href="#table-1-sigma-s" title="Permalink to this headline">#</a></h3>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle \begin{array}{l|l l}
 \hline
@@ -1726,10 +2057,10 @@ always necessary to check the equation being used, which unfortunately, is not a
 \hline \end{array}\end{split}\]</div>
 <p>Sometimes, a statement may be made along the lines that a measurement has produced a result that is more than ‘five sigma from the mean’. This means that the chance of this occurring is <span class="math notranslate nohighlight">\(1/25 \equiv 4\)</span>%, which would suggest that it does not belong to the same distribution as other measurements. However, if only a few data points have been taken then there would be less confidence in assuming this, as to opposed to perhaps <span class="math notranslate nohighlight">\(100\)</span> values in the data set with the mean and standard deviation properly established.</p>
 <p>However, the ‘five sigma’ statement can also be used with the normal distribution and this is far more common, particularly in particle physics. By integrating the distribution from <span class="math notranslate nohighlight">\(-\infty\to x\)</span> the cumulative distribution is obtained. Thus there is a <span class="math notranslate nohighlight">\(50\)</span>% chance of being within <span class="math notranslate nohighlight">\(0.675\sigma\)</span>, (this is sometimes called the probable error), a <span class="math notranslate nohighlight">\(68.5\)</span>% chance of being within <span class="math notranslate nohighlight">\(1\sigma\)</span> and a <span class="math notranslate nohighlight">\(95\)</span>% chance of being within <span class="math notranslate nohighlight">\(1.96\sigma\)</span>, and <span class="math notranslate nohighlight">\(95.45\)</span>% chance of being within <span class="math notranslate nohighlight">\(2\sigma\)</span> and so on. For <span class="math notranslate nohighlight">\(5\sigma\)</span> the chance is <span class="math notranslate nohighlight">\(99.9999\)</span>%, pretty much a ‘dead cert’.</p>
-</div>
-</div>
-<div class="section" id="the-normal-and-standard-normal-distribution">
-<h2>3.1 The normal and standard normal distribution<a class="headerlink" href="#the-normal-and-standard-normal-distribution" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="the-normal-and-standard-normal-distribution">
+<h2>3.1 The normal and standard normal distribution<a class="headerlink" href="#the-normal-and-standard-normal-distribution" title="Permalink to this headline">#</a></h2>
 <p>The normal (Gaussian) distribution with mean <span class="math notranslate nohighlight">\(\mu\)</span> and variance <span class="math notranslate nohighlight">\(\sigma^2\)</span> has the form</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle p(x)=\frac{1}{\sqrt{2\pi\sigma^2}}e^{-\large{ (x-\mu)^2/(2\sigma^2)} }\]</div>
@@ -1816,8 +2147,8 @@ always necessary to check the equation being used, which unfortunately, is not a
 <div class="math notranslate nohighlight">
 \[\displaystyle \langle x \rangle\pm Z_{\alpha/2}\frac{s}{\sqrt{n}}\tag{11}\]</div>
 <p>The term <span class="math notranslate nohighlight">\(Z_{\alpha/2}\)</span> is the percentage point of the standard normal distribution, i.e. the ‘% chance’ in table 1.</p>
-<div class="section" id="i-estimate-k-content-of-glass">
-<h3><strong>(i) Estimate K<span class="math notranslate nohighlight">\(^+\)</span> content of glass</strong><a class="headerlink" href="#i-estimate-k-content-of-glass" title="Permalink to this headline">¶</a></h3>
+<section id="i-estimate-k-content-of-glass">
+<h3><strong>(i) Estimate K<span class="math notranslate nohighlight">\(^+\)</span> content of glass</strong><a class="headerlink" href="#i-estimate-k-content-of-glass" title="Permalink to this headline">#</a></h3>
 <p>Two hundred samples taken at random were obtained for the K<span class="math notranslate nohighlight">\(^+\)</span> content of the glass used to make Pyrex flasks. The mean value was found to be <span class="math notranslate nohighlight">\(136.48\;\mathrm{\mu g}\)</span> with a sample standard deviation of <span class="math notranslate nohighlight">\(25.31\;\mathrm{\mu g}\)</span>. The calculation of <span class="math notranslate nohighlight">\(95\)</span>% and <span class="math notranslate nohighlight">\(99\)</span>% confidence limits about the mean mass follows directly from equation 11;</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle 95\text{ %  limits :  } 136.48 \pm 1.96\cdot 25.31/\sqrt{200} = 136.48 \pm 3.51 \;\mathrm{\mu g}\]</div>
@@ -1831,17 +2162,17 @@ always necessary to check the equation being used, which unfortunately, is not a
 95   &amp; &amp;1.96\\
 99 &amp; &amp;2.58\\
 \hline \end{array}\end{split}\]</div>
-</div>
-</div>
-<div class="section" id="small-sample-confidence-limits-students-t">
-<h2>3.2 Small sample confidence limits: Student’s <em>t</em><a class="headerlink" href="#small-sample-confidence-limits-students-t" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="small-sample-confidence-limits-students-t">
+<h2>3.2 Small sample confidence limits: Student’s <em>t</em><a class="headerlink" href="#small-sample-confidence-limits-students-t" title="Permalink to this headline">#</a></h2>
 <p>When the number of samples is small, s may not be a very good estimate of <span class="math notranslate nohighlight">\(\sigma\)</span> and, in this case, Student’s ‘<span class="math notranslate nohighlight">\(t\)</span>’ test is needed. The distribution is similar in shape to the normal distribution, but is wider in the wings. It is characterized by one parameter <span class="math notranslate nohighlight">\(t = n - 1\)</span> where <span class="math notranslate nohighlight">\(n\)</span> is the number of samples being averaged, and <span class="math notranslate nohighlight">\(t\)</span> is called its ‘degrees of freedom’. When the sample size increases, the t distribution approaches the normal one. Using a similar argument to that for the normal distribution, the <span class="math notranslate nohighlight">\(t\)</span> distribution produces confidence limits,</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \langle x \rangle\pm t_{\alpha/2}\frac{s}{\sqrt{n}}\tag{12}\]</div>
 <p>where <span class="math notranslate nohighlight">\(t_{\alpha/2}\)</span> is obtained by integrating the distribution, just as was done for the normal distribution. Only a few values are used regularly, some of which are listed in Table 3. (Notice that in the table that <span class="math notranslate nohighlight">\(t\)</span> is one less than the number of data points.)</p>
-</div>
-<div class="section" id="table-3-student-s-t-distribution">
-<h2>Table 3 Student’s <em>t</em> distribution<a class="headerlink" href="#table-3-student-s-t-distribution" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="table-3-student-s-t-distribution">
+<h2>Table 3 Student’s <em>t</em> distribution<a class="headerlink" href="#table-3-student-s-t-distribution" title="Permalink to this headline">#</a></h2>
 <div class="math notranslate nohighlight">
 \[\text{Student's } t, \text{two tailed confidence}\]</div>
 <div class="math notranslate nohighlight">
@@ -1866,8 +2197,8 @@ v &amp; &amp; &amp;\\
 <p><img alt="Drawing" src="../_images/analysis-fig5.png" /></p>
 <p>Figure 5. Student’s <span class="math notranslate nohighlight">\(t\)</span> distribution is wider in the wings than the normal distribution, which it approaches when <span class="math notranslate nohighlight">\(v\)</span> is larger that <span class="math notranslate nohighlight">\(\approx 15\)</span></p>
 <hr class="docutils" />
-<div class="section" id="ii-response-times">
-<h3><strong>(ii) Response times</strong><a class="headerlink" href="#ii-response-times" title="Permalink to this headline">¶</a></h3>
+<section id="ii-response-times">
+<h3><strong>(ii) Response times</strong><a class="headerlink" href="#ii-response-times" title="Permalink to this headline">#</a></h3>
 <p>Some typical response times of a certain commercial mass spectrometry service are</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle 8.21, \; 25.15,\; 11.20,\; 18.06,\; 22.55,\; 16.49 \text{ days} \]</div>
@@ -1878,10 +2209,10 @@ v &amp; &amp; &amp;\\
 <div class="math notranslate nohighlight">
 \[\displaystyle 16.94 \pm 2.571\cdot6.47/\sqrt{6} = 16.94 \pm 6.79 \text{ days}\]</div>
 <p>Rounding the answers gives <span class="math notranslate nohighlight">\(17 \pm 7\)</span> which is  <span class="math notranslate nohighlight">\(10 \to 24\)</span> days and is a very wide variation. It would certainly be worth considering changing your supplier!</p>
-</div>
-</div>
-<div class="section" id="critical-values-from-cumulative-student-s-t-distribution">
-<h2>3.3 Critical values from cumulative Student’ s <em>t</em> distribution<a class="headerlink" href="#critical-values-from-cumulative-student-s-t-distribution" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="critical-values-from-cumulative-student-s-t-distribution">
+<h2>3.3 Critical values from cumulative Student’ s <em>t</em> distribution<a class="headerlink" href="#critical-values-from-cumulative-student-s-t-distribution" title="Permalink to this headline">#</a></h2>
 <p>To use Python to find the <span class="math notranslate nohighlight">\(t\)</span> values for n points with <span class="math notranslate nohighlight">\(\alpha/2 = 0.025\)</span> we follow the method used for the normal distribution but now with the <span class="math notranslate nohighlight">\(t\)</span> distribution. This means loading the library as ‘from scipy.stats import t,norm’ as shown at the top of this page.  Looking at Table 3, with <span class="math notranslate nohighlight">\(v=5\)</span> and at <span class="math notranslate nohighlight">\(95\)</span>% the value is <span class="math notranslate nohighlight">\(2.571\)</span>. Using the t.cdf function produces <span class="math notranslate nohighlight">\(0.975\)</span> which is the value fro <span class="math notranslate nohighlight">\(-\infty\to 2.571\)</span> and so the two tailed value is <span class="math notranslate nohighlight">\(0.95\)</span> or <span class="math notranslate nohighlight">\(95\)</span>%.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1912,9 +2243,9 @@ v &amp; &amp; &amp;\\
 </div>
 </div>
 <p>which is the value in the table under <span class="math notranslate nohighlight">\(95\)</span>% and <span class="math notranslate nohighlight">\(v=5\)</span>.</p>
-</div>
-<div class="section" id="hypothesis-testing">
-<h2>3.4 Hypothesis testing<a class="headerlink" href="#hypothesis-testing" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="hypothesis-testing">
+<h2>3.4 Hypothesis testing<a class="headerlink" href="#hypothesis-testing" title="Permalink to this headline">#</a></h2>
 <p>Suppose that a micro-analytical laboratory has to be certified and one of the tests it has to perform is to determine the ratio of <span class="math notranslate nohighlight">\(^{12}\)</span>C / <span class="math notranslate nohighlight">\(^{14}\)</span>N on an unknown compound. The examiners know that the ratio should be <span class="math notranslate nohighlight">\(50\)</span> and a standard deviation of <span class="math notranslate nohighlight">\(1/2\)</span> is acceptable. The laboratory produces the following set of data,</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle 49.8,\;50.15,\; 50.6,\; 49.9,\; 50.7,\; 50.1,\; 50.9,\; 49.6 \]</div>
@@ -1929,9 +2260,9 @@ v &amp; &amp; &amp;\\
 <div class="math notranslate nohighlight">
 \[\displaystyle t_0=\frac{\langle x\rangle -\mu_0}{s/\sqrt{n}}\tag{15}\]</div>
 <p>Calculating again with <span class="math notranslate nohighlight">\(s = 0.466\)</span> gives <span class="math notranslate nohighlight">\(t_0 = 1.33\)</span> and from the <span class="math notranslate nohighlight">\(t\)</span> distribution, with seven degrees of freedom at the <span class="math notranslate nohighlight">\(95\)</span>% level, <span class="math notranslate nohighlight">\(t_{025,7} = 2.365\)</span>. As <span class="math notranslate nohighlight">\(t_0\)</span> is less than this and <span class="math notranslate nohighlight">\(z_0\)</span> is less than <span class="math notranslate nohighlight">\(1.96\)</span>, although this is a less critical test, the conclusion reached is that with <span class="math notranslate nohighlight">\(95\)</span>% confidence the data is consistent with a population mean of <span class="math notranslate nohighlight">\(50\)</span> and standard deviation of <span class="math notranslate nohighlight">\(1/2\)</span> and the lab is up to standard.</p>
-</div>
-<div class="section" id="comparison-of-two-means">
-<h2>3.5 Comparison of two means<a class="headerlink" href="#comparison-of-two-means" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="comparison-of-two-means">
+<h2>3.5 Comparison of two means<a class="headerlink" href="#comparison-of-two-means" title="Permalink to this headline">#</a></h2>
 <p>When a mean value has been obtained, to eliminate systematic errors it is necessary to compare this with another determination, perhaps done on another day, or to compare with a result from different apparatus or with a literature result. The two means are only samples from the true distribution and should not be very different from one another as they are supposedly measuring the same thing. The difference in means should therefore be normally distributed about the true difference <span class="math notranslate nohighlight">\(\mu_1 - \mu_2\)</span>, which in turn, should be zero. The simplest test is to use the propagation of errors formula, see Section 4, to compare the difference in the means <span class="math notranslate nohighlight">\(\langle x\rangle_1-\langle x\rangle_2\)</span> with the difference in standard deviation,</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle s_{1,2}=\sqrt{s_1^2+s_2^2}\]</div>
@@ -1945,8 +2276,8 @@ v &amp; &amp; &amp;\\
 <p>which is expected to follow a <span class="math notranslate nohighlight">\(t\)</span> distribution with <span class="math notranslate nohighlight">\(n_1 + n_2 - 2\)</span> degrees of freedom. If this <span class="math notranslate nohighlight">\(t_0\)</span> exceeds the critical value set by the percentage points of the <span class="math notranslate nohighlight">\(t\)</span> distribution, then it is clear that the means are not the same. Confidence intervals, at <span class="math notranslate nohighlight">\(95\)</span>%, for the difference between population means <span class="math notranslate nohighlight">\((\mu_1 - \mu_2)\)</span> may be obtained using</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \langle x\rangle_1-\langle x\rangle_2\pm t_{0.025,S_p}\sqrt{\frac{n_1+n_2}{n_1n_2}}\tag{17}\]</div>
-<div class="section" id="iii-comparing-columns-yields-in-chromatography">
-<h3><strong>(iii) Comparing columns yields in chromatography</strong><a class="headerlink" href="#iii-comparing-columns-yields-in-chromatography" title="Permalink to this headline">¶</a></h3>
+<section id="iii-comparing-columns-yields-in-chromatography">
+<h3><strong>(iii) Comparing columns yields in chromatography</strong><a class="headerlink" href="#iii-comparing-columns-yields-in-chromatography" title="Permalink to this headline">#</a></h3>
 <p>The yields of two nominally identical columns used for chromatographic separation have been measured. There are nine and eight experiments on each column under identical experimental conditions and the subsequent yield (mg) for each is as follows:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle \begin{array}\\
@@ -1962,9 +2293,9 @@ S_p=3.67,\quad t_0=2.49\]</div>
 <div class="math notranslate nohighlight">
 \[\displaystyle \langle x\rangle_1-\langle x\rangle_2\pm 3.8\]</div>
 <p>making the lower bound <span class="math notranslate nohighlight">\(4.47 - 3.8 = 0.65\)</span> mg and the upper bound <span class="math notranslate nohighlight">\(+8.2\)</span> mg. Thus, the difference in mean value at the <span class="math notranslate nohighlight">\(95\)</span>% level is <span class="math notranslate nohighlight">\(0.65 \le \langle x\rangle_1-\langle x\rangle_2 \ge 8.2\)</span> mg which means that it is possible to be <span class="math notranslate nohighlight">\(95\)</span>% confident that column 1 produces between <span class="math notranslate nohighlight">\(0.65 \to 8.2\)</span> mg more on average that column 2.</p>
-</div>
-<div class="section" id="iv-comparing-fluorescence-yields">
-<h3><strong>(iv) Comparing fluorescence yields</strong><a class="headerlink" href="#iv-comparing-fluorescence-yields" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="iv-comparing-fluorescence-yields">
+<h3><strong>(iv) Comparing fluorescence yields</strong><a class="headerlink" href="#iv-comparing-fluorescence-yields" title="Permalink to this headline">#</a></h3>
 <p>When repeated measurements are made on the same instrument they are likely to be correlated and therefore not independent of one another. In this example, the difference in the experimental values is examined using the <span class="math notranslate nohighlight">\(t\)</span> test rather than comparing the two means.</p>
 <p>Consider measuring fluorescence from the dye thionine, which is known to intercalate into calf thymus DNA. One sample is treated with protein and measured to see if this has an effect on the amount of fluorescence observed. The data (in arbitrary units) for the fluorescence intensity was as follows:</p>
 <div class="math notranslate nohighlight">
@@ -1975,21 +2306,21 @@ S_p=3.67,\quad t_0=2.49\]</div>
 \text{Control} &amp;88.6 &amp;71.3&amp; 79.8&amp; 60.3 &amp;70.2&amp; 92.7&amp; 65.0\\
 \hline\end{array}\end{split}\]</div>
 <p>The mean value of the <em>difference</em> is <span class="math notranslate nohighlight">\(-4.87\)</span> and the sample standard deviation <span class="math notranslate nohighlight">\(4.06\)</span>. The <span class="math notranslate nohighlight">\(t_0\)</span> statistic (equation 15) is <span class="math notranslate nohighlight">\(-3.18\)</span> with a population mean <span class="math notranslate nohighlight">\(\mu_0 = 0\)</span>. From the <span class="math notranslate nohighlight">\(t\)</span> distribution table with six degrees of freedom <span class="math notranslate nohighlight">\(t_{0.025,6} = 2.45\)</span> and as <span class="math notranslate nohighlight">\(|-3.18| \gt 2.45\)</span> the protein does have an effect at the <span class="math notranslate nohighlight">\(95\)</span>% level and the fluorescence intensity is different between the two sets of measurements.</p>
-</div>
-</div>
-<div class="section" id="chebychev-s-rule-chauvenet-s-criterion-and-outliers">
-<h2>3.6 Chebychev’ s rule, Chauvenet’s criterion and outliers<a class="headerlink" href="#chebychev-s-rule-chauvenet-s-criterion-and-outliers" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="chebychev-s-rule-chauvenet-s-criterion-and-outliers">
+<h2>3.6 Chebychev’ s rule, Chauvenet’s criterion and outliers<a class="headerlink" href="#chebychev-s-rule-chauvenet-s-criterion-and-outliers" title="Permalink to this headline">#</a></h2>
 <p>Sometimes data points seem to be too far from the trend exhibited by all the others and there is then a temptation to remove such points. This must always be resisted. One famous consequence of removing data led to the hole in the Antarctic ozone layer being missed. As the New Scientist (31 March 1988) put it, ‘So unexpected was the hole, that for several years computers analyzing ozone data had systematically thrown out the readings that should have pointed to its growth.’ However, it should be remembered that by the random statistical nature of noise adding to any measurement that deviations, often large ones, are to be expected. Note also that the process of smoothing data is akin to removing outliers and should be avoided, and in some settings, clinical ones for example, no data should ever be disregarded.</p>
-<div class="section" id="chebychev">
-<h3><strong>Chebychev</strong><a class="headerlink" href="#chebychev" title="Permalink to this headline">¶</a></h3>
+<section id="chebychev">
+<h3><strong>Chebychev</strong><a class="headerlink" href="#chebychev" title="Permalink to this headline">#</a></h3>
 <p>When outlying points are found in data, the obvious thing is to check that no numerical or transcriptional error has occurred, then go to the instrument used and check that a simple error has not been made, such as using the wrong solvent or a mistake in the concentration, or amplifier setting and so forth. The instrument could be checked out with a known reference but if everything turns out satisfactorily then it must be assumed that the data point is the result of random chance. Highly unlikely but not impossible. If the experiment cannot be repeated and the data still has to be dealt with, then the Chebychev rule may be useful.</p>
 <p>This gives a number to the probability that a random variable or the absolute value from a mean <span class="math notranslate nohighlight">\(| x - \langle x \rangle |\)</span> exceeds a given number. Suppose that this number is <span class="math notranslate nohighlight">\(k\sigma\)</span> where <span class="math notranslate nohighlight">\(k \gt 1\)</span> is an integer and <span class="math notranslate nohighlight">\(\sigma\)</span> is the standard deviation, then the condition is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle prob(| x - \langle x \rangle | \ge k\sigma) \le \frac{1}{k^2}\]</div>
 <p>This means that the chance that <span class="math notranslate nohighlight">\(| x - \langle x \rangle |\)</span> is numerically greater than <span class="math notranslate nohighlight">\(k\sigma\)</span>, is less than <span class="math notranslate nohighlight">\(1/k^2\)</span>, or, equivalently, that no more that <span class="math notranslate nohighlight">\(1/k^2\)</span> data points should be more than <span class="math notranslate nohighlight">\(k\)</span> standard deviations from the mean or, which is the same, that <span class="math notranslate nohighlight">\(1 - 1/k^2\)</span> are within <span class="math notranslate nohighlight">\(k\)</span> standard deviations. The value of <span class="math notranslate nohighlight">\(k \gt 1\)</span> is for us to choose. The data described above in Section 3.4 for the <span class="math notranslate nohighlight">\(^{12}\)</span>C / <span class="math notranslate nohighlight">\(^{14}\)</span>N ratio has a mean of <span class="math notranslate nohighlight">\(50.22\)</span> and a (sample) standard deviation of <span class="math notranslate nohighlight">\(s = 0.466\)</span>. If <span class="math notranslate nohighlight">\(k = 2\)</span> is chosen then <span class="math notranslate nohighlight">\(1 - 1/4 = 0.75\)</span> or <span class="math notranslate nohighlight">\(75\)</span>% of the values should fall in the range <span class="math notranslate nohighlight">\(50.22 \pm 2 \cdot 0.466\)</span>. If <span class="math notranslate nohighlight">\(k = 3\)</span>, then <span class="math notranslate nohighlight">\(89\)</span>% of values fall in the range <span class="math notranslate nohighlight">\(50.22 \pm 3 \cdot 0.466\)</span> and for any points that do not fall in this range there is a sound reason for ignoring them.</p>
-</div>
-<div class="section" id="chauvenet">
-<h3><strong>Chauvenet</strong><a class="headerlink" href="#chauvenet" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="chauvenet">
+<h3><strong>Chauvenet</strong><a class="headerlink" href="#chauvenet" title="Permalink to this headline">#</a></h3>
 <p>An alternative method of removing outliers has been given by Chauvenet and this considers both the number of data points and their value. We use this method to <em>reject a data point</em> if its deviation from the mean have a probability of occurring that is <em>less than</em> <span class="math notranslate nohighlight">\(1/(2n)\)</span> for <span class="math notranslate nohighlight">\(n\)</span> data points. This method does not work well on small datasets.</p>
 <p>In the set of data <span class="math notranslate nohighlight">\(89,\;120,\;94,\;110,\;105,\;108,\;85,\;83,\;101,\;95\)</span> the largest value <span class="math notranslate nohighlight">\(120\)</span> may be an outlier. This point is <span class="math notranslate nohighlight">\(21\)</span> from the mean <span class="math notranslate nohighlight">\(\langle x\rangle = 99\)</span> and  we check that the probability from <span class="math notranslate nohighlight">\(\langle x\rangle -21 \to \langle x\rangle +21\)</span> is less that <span class="math notranslate nohighlight">\(1/2n\)</span> which is <span class="math notranslate nohighlight">\(1/20\)</span> as there are 10 points.</p>
 <p>This value is obtained from the integral of the normal distribution, with limits <span class="math notranslate nohighlight">\(78\)</span> and <span class="math notranslate nohighlight">\(120\)</span> the probability of observing a value in this range is</p>
@@ -2044,14 +2375,14 @@ retain point
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="standard-deviation-in-a-single-measurement">
-<h2>3.7 Standard deviation in a single measurement<a class="headerlink" href="#standard-deviation-in-a-single-measurement" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="standard-deviation-in-a-single-measurement">
+<h2>3.7 Standard deviation in a single measurement<a class="headerlink" href="#standard-deviation-in-a-single-measurement" title="Permalink to this headline">#</a></h2>
 <p>When only a single measurement has been made, as is often the case in an undergraduate laboratory, the question arises as to what standard deviation it should be given. In such laboratories, many other measurements will undoubtedly have been made so the mean and standard deviation for the experiment will be known. However, in the absence of such knowledge we can appeal to the Poisson distribution (see Section 6.4) to determine what value should be given to the standard deviation. It turns out that by calculating the maximum likelihood function that the standard deviation is the square root of the result itself. Thus if the result has a value <span class="math notranslate nohighlight">\(k\)</span> then <span class="math notranslate nohighlight">\(\sigma_k =\sqrt{k}\)</span>.</p>
-</div>
-<div class="section" id="weighting">
-<h2>3.8 Weighting<a class="headerlink" href="#weighting" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="weighting">
+<h2>3.8 Weighting<a class="headerlink" href="#weighting" title="Permalink to this headline">#</a></h2>
 <p>In Chapter 1.9.13 the average energy and average length of trans and gauche butane molecules was calculated by weighting the individual values according to the Boltzmann distribution. Experimental measurements are similarly not always of equal precision and this may be inherent in the nature of the observation. When counting photons, for instance, the precision of each measurement is proportional to the number of counts. For example, the intensity of an emission spectrum varies with wavelength; the precision is therefore different at different wavelengths. Alternatively, it may be that one instrument has twice the resolution of another or simply it may be that one experimentalist is better than another; nevertheless, the average has to be taken.</p>
 <p>If two measurements of <span class="math notranslate nohighlight">\(x\)</span> are made and <span class="math notranslate nohighlight">\(x_1\)</span> is twice as precise as <span class="math notranslate nohighlight">\(x_2\)</span>, then the weighted average is made in the proportions, <span class="math notranslate nohighlight">\(\langle x\rangle = (2x_1 + x_2)/3\)</span>. In the general case, if <span class="math notranslate nohighlight">\(w_i\)</span> are the weights, then</p>
 <div class="math notranslate nohighlight">
@@ -2063,15 +2394,15 @@ retain point
 <div class="math notranslate nohighlight">
 \[\displaystyle \sigma^2= \frac{1}{\sum_i w_i}=\frac{1}{\sum_i/\sigma_i^2} \tag{19}\]</div>
 <p>Weightings ensure that more importance is given to the more precise measurement because the smaller the standard deviation is, the larger is the weighting given to it.</p>
-<div class="section" id="v-spectral-lines">
-<h3><strong>(v) Spectral lines</strong><a class="headerlink" href="#v-spectral-lines" title="Permalink to this headline">¶</a></h3>
+<section id="v-spectral-lines">
+<h3><strong>(v) Spectral lines</strong><a class="headerlink" href="#v-spectral-lines" title="Permalink to this headline">#</a></h3>
 <p>Suppose that on one instrument a line in the SO<span class="math notranslate nohighlight">\(_2\)</span> infrared spectrum is measured at <span class="math notranslate nohighlight">\(550\;\mathrm{ cm^{-1}}\)</span> with a standard deviation of <span class="math notranslate nohighlight">\(\sigma = 10\;\mathrm{ cm^{-1}}\)</span>; another instrument is then used with <span class="math notranslate nohighlight">\(\sigma = 5\;\mathrm{ cm^{-1}}\)</span> and produces <span class="math notranslate nohighlight">\(555\;\mathrm{ cm^{-1}}\)</span>. The unweighted average is <span class="math notranslate nohighlight">\(552.5\;\mathrm{ cm^{-1}}\)</span>, while the weighted average of the two measurements is <span class="math notranslate nohighlight">\(554\;\mathrm{ cm^{-1}}\)</span>, which is close to that of the higher resolution instrument as might be anticipated.</p>
 <p>If three measurements are made of a rate constant with values <span class="math notranslate nohighlight">\((3.16 \pm 0.03)\cdot 10^7, (3.21 \pm 0.05)\cdot 10^7\)</span>, and <span class="math notranslate nohighlight">\((3.14 \pm 0.02)\cdot 10^7\;\mathrm{ s^{-1}}\)</span>, the errors are then taken to be the standard deviations and equations 18,19 are used. The best combined rate constant is <span class="math notranslate nohighlight">\((3.15_2 \pm 0.014)\cdot 10^7\;\mathrm{ s^{-1}}\)</span>.</p>
 <p>In many experiments, the standard deviation can be found by looking at an instrument’s specification, where a resolution of a certain number of wavenumbers or millivolts, and so forth, is usually given. In other cases this may have to be estimated from the data itself and this can be difficult to do point by point. However, one case in which the standard deviation is known exactly is in a particle or photon counting experiment because the arrival of photons at the detector is Poisson distributed where <span class="math notranslate nohighlight">\(\sigma^2 = \mu\)</span> and then <span class="math notranslate nohighlight">\(w_i = 1/\mu_i\)</span> where <span class="math notranslate nohighlight">\(\mu_i\)</span> is the average number of counts in the <span class="math notranslate nohighlight">\(i^{th}\)</span> measurement. Fluorimeters often use photon counting to measure fluorescence and phosphorescence spectra, and the standard deviation can then be measure directly from the data.</p>
-</div>
-</div>
-<div class="section" id="propagation-or-combination-of-errors">
-<h2>4 Propagation or combination of errors<a class="headerlink" href="#propagation-or-combination-of-errors" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="propagation-or-combination-of-errors">
+<h2>4 Propagation or combination of errors<a class="headerlink" href="#propagation-or-combination-of-errors" title="Permalink to this headline">#</a></h2>
 <p>In many experimental situations, a measurement does not always produce the final result, which will be obtained from further calculations, and may also involve other experimental measurements. For example, the measured value and its associated error may have to be exponentiated and then multiplied by another quantity with its error.</p>
 <p>The formula for error propagation (or combination) can be determined by expanding the required function as a Taylor series about its mean value and substituting the result into the variance equation 3; see Bevington &amp; Robinson (2003) or Barlow (1989) for the proof. If the functional form is written as <span class="math notranslate nohighlight">\(y = f (u, v)\)</span>, then the variables that have been measured are <span class="math notranslate nohighlight">\(u\)</span> and <span class="math notranslate nohighlight">\(v\)</span> and their respective standard deviations <span class="math notranslate nohighlight">\(\sigma_u\)</span> and <span class="math notranslate nohighlight">\(\sigma_v\)</span>. The variance in the final result <span class="math notranslate nohighlight">\(y\)</span> is</p>
 <div class="math notranslate nohighlight">
@@ -2082,17 +2413,17 @@ retain point
 <p>If there are more than two variables, the extra terms are added in the same way;</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \sigma_y^2=\left(\frac{\partial y}{\partial u}\right)_{v,w}^2\sigma_u^2+\left(\frac{\partial y}{\partial v}\right)_{u,w}^2\sigma_v^2+\left(\frac{\partial y}{\partial w}\right)_{u,v}^2\sigma_w^2+\cdots\tag{21}\]</div>
-<div class="section" id="vi-gas-law">
-<h3><strong>(vi) Gas law</strong><a class="headerlink" href="#vi-gas-law" title="Permalink to this headline">¶</a></h3>
+<section id="vi-gas-law">
+<h3><strong>(vi) Gas law</strong><a class="headerlink" href="#vi-gas-law" title="Permalink to this headline">#</a></h3>
 <p>The gas law states that <span class="math notranslate nohighlight">\(p = nRT/V\)</span>, and the volume, temperature, and number of moles have been measured, each with their standard deviations. The standard deviation of the pressure is found by taking the partial derivatives of each variable in turn, while holding the others constant and substituting into equation 21. The variables are <span class="math notranslate nohighlight">\(n\equiv u,T\equiv v,V\equiv w\)</span>,</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle \sigma_p^2=\left(\frac{\partial p}{\partial n}\right)^2\sigma_n^2+\left(\frac{\partial p}{\partial T}\right)^2\sigma_T^2+\left(\frac{\partial p}{\partial V}\right)^2\sigma_V^2\\= \left(\frac{RT}{V}\right)^2\sigma_n^2+\left(\frac{nR}{V}\right)^2\sigma_T^2+\left(-\frac{nRT}{V^2}\right)^2\sigma_V^2\end{split}\]</div>
 <p>which can be simplified by factoring out <span class="math notranslate nohighlight">\((R/V)^2\)</span>. The relative or fractional uncertainty is found by dividing this result by <span class="math notranslate nohighlight">\(p^2\)</span> producing, in this case, the simpler result,</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \frac{\sigma_p^2}{p^2}= \frac{\sigma_n^2}{n^2}+\frac{\sigma_T^2}{T^2}+\frac{\sigma_V^2}{V^2}\]</div>
-</div>
-<div class="section" id="vii-vapour-pressure">
-<h3><strong>(vii) Vapour pressure</strong><a class="headerlink" href="#vii-vapour-pressure" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="vii-vapour-pressure">
+<h3><strong>(vii) Vapour pressure</strong><a class="headerlink" href="#vii-vapour-pressure" title="Permalink to this headline">#</a></h3>
 <p>The vapour pressure (in torr) of a certain organic liquid has the form <span class="math notranslate nohighlight">\(\ln(p) = mT + c\)</span> and the values of the constants <span class="math notranslate nohighlight">\(m\)</span> and <span class="math notranslate nohighlight">\(c\)</span> were obtained from a least squares analysis of a plot of log pressure <em>vs</em> <span class="math notranslate nohighlight">\(1/T\)</span>. The gradient produced <span class="math notranslate nohighlight">\(m = -5390 \pm 33\)</span> K and the intercept <span class="math notranslate nohighlight">\(c = 21.89 \pm 0.099\)</span>. To calculate the liquid’s normal boiling temperature, i.e. the boiling temperature when <span class="math notranslate nohighlight">\(p = 760\)</span> torr or <span class="math notranslate nohighlight">\(1\)</span> atm. pressure, the equation must be rearranged to,</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle T=\frac{m}{\ln(760/1)-c}\]</div>
@@ -2126,17 +2457,17 @@ retain point
 <img alt="../_images/analysis-A_22_0.png" src="../_images/analysis-A_22_0.png" />
 </div>
 </div>
-</div>
-<div class="section" id="viii-vapour-pressure-continued">
-<h3><strong>(viii) Vapour pressure continued</strong><a class="headerlink" href="#viii-vapour-pressure-continued" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="viii-vapour-pressure-continued">
+<h3><strong>(viii) Vapour pressure continued</strong><a class="headerlink" href="#viii-vapour-pressure-continued" title="Permalink to this headline">#</a></h3>
 <p>Continuing with the last example, suppose that the vapour pressure is required and that the temperature has been measured as <span class="math notranslate nohighlight">\(353 \pm 3\)</span> K, and again <span class="math notranslate nohighlight">\(m = -5390 \pm 33\)</span> K and <span class="math notranslate nohighlight">\(c = 21.89 \pm 0.099\)</span>. In this case, <span class="math notranslate nohighlight">\(p = e^{m/T +c}\)</span> and the derivatives produce</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \sigma_p^2=\left(\frac{m^2\sigma_T^2}{T^2}+\frac{\sigma_m^2}{T^2}+\sigma_c^2\right)p^2\]</div>
 <p>and working out the terms produces a standard deviation of <span class="math notranslate nohighlight">\(141\)</span> torr and a pressure of <span class="math notranslate nohighlight">\(750\)</span> torr. The resulting standard deviation might seem unusually large, but this is caused by the exponential nature of the pressure equation having a great sensitivity to temperature.</p>
-</div>
-</div>
-<div class="section" id="table-of-some-error-propagation-formulae">
-<h2>4.1 Table of some error propagation formulae<a class="headerlink" href="#table-of-some-error-propagation-formulae" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="table-of-some-error-propagation-formulae">
+<h2>4.1 Table of some error propagation formulae<a class="headerlink" href="#table-of-some-error-propagation-formulae" title="Permalink to this headline">#</a></h2>
 <p>The following table gives some examples of frequently met functions. The variances <span class="math notranslate nohighlight">\(\sigma_u^2\)</span> and <span class="math notranslate nohighlight">\(\sigma_v^22\)</span> are assumed to be known. The total variance <span class="math notranslate nohighlight">\(\sigma^2\)</span> is shown; remember to take the square root before using and note that σ 2 is always positive. The equation to use for many variables is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \sigma_y^2=\sum_i\left(\frac{\partial y}{\partial u_i}\right)^2\sigma_i^2\tag{22}\]</div>
@@ -2153,9 +2484,9 @@ e^{\pm a/x} &amp; \displaystyle \frac{a\sigma_x}{x^2}e^{\pm a/x} &amp;&amp; \dis
 \ln(ax) &amp;\displaystyle \frac{\sigma_x}{a}&amp;&amp; ue^{av} &amp; e^{av}\sqrt{a^{2} s_{v}^{2} u^{2} + s_{u}^{2} }\\
 \hline
 \end{array}\end{split}\]</div>
-</div>
-<div class="section" id="matrix-formulation">
-<h2>4.2  Matrix formulation.<a class="headerlink" href="#matrix-formulation" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="matrix-formulation">
+<h2>4.2  Matrix formulation.<a class="headerlink" href="#matrix-formulation" title="Permalink to this headline">#</a></h2>
 <p>Barlow (1989) demonstrates that equation 20 can be written in a matrix form, which does not immediately seem to offer any advantage, but this becomes clearer for problems that are more complex. The matrix equation is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle V=GV_\sigma^2G^T \tag{23}\]</div>
@@ -2171,9 +2502,9 @@ V=\begin{bmatrix}\displaystyle\frac{\partial T}{\partial m}&amp;\displaystyle\fr
 <p>and then</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle \sigma^2 =\begin{bmatrix} 1&amp;1\end{bmatrix}\begin{bmatrix} \left(\displaystyle\frac{\partial T}{\partial m}\right)^2\sigma_m^2 \\ \left(\displaystyle\frac{\partial T}{\partial c}\right)^2\sigma_c^2\end{bmatrix}= \left(\displaystyle\frac{\partial T}{\partial m}\right)^2\sigma_m^2+  \left(\frac{\partial T}{\partial c}\right)^2\sigma_c^2\end{split}\]</div>
-</div>
-<div class="section" id="maximum-likelihood-method-parameter-estimation">
-<h2>4.3 Maximum Likelihood Method. Parameter estimation:<a class="headerlink" href="#maximum-likelihood-method-parameter-estimation" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="maximum-likelihood-method-parameter-estimation">
+<h2>4.3 Maximum Likelihood Method. Parameter estimation:<a class="headerlink" href="#maximum-likelihood-method-parameter-estimation" title="Permalink to this headline">#</a></h2>
 <p>The variance and mean have been used in our calculations on the assumption that they were the ‘best estimation’ of these properties, which means that they are as close as possible to the true values for the underlying process given that only a limited number of measurements are taken. Using the Maximum Likelihood method these estimates, such as mean and variance, can be found in terms of the measured values which we call <span class="math notranslate nohighlight">\(x_i\)</span>.</p>
 <p>A series of measurements of the same thing will always have a probability distribution <span class="math notranslate nohighlight">\(f(x,\theta)\)</span> with measured values <span class="math notranslate nohighlight">\(x_1,x_2\cdots\)</span> and the distribution will always depend on some unknown parameter <span class="math notranslate nohighlight">\(\theta\)</span>, for example it could be the the mean. The likelihood function of observing a series of events is therefore the product of individual events, viz, <span class="math notranslate nohighlight">\(L(\theta) = f(x_1,\theta) f(x_2,\theta) f(x_3,\theta)\cdots f(x_n,\theta)\)</span>. What we want to know is what quantity best describes the quantity <span class="math notranslate nohighlight">\(\theta\)</span>, i.e what is the most likely value of this quantity.  This can be found by differentiating <span class="math notranslate nohighlight">\(L\)</span> with respect to this quantity which is often the mean or variance, then setting the value to zero in the usual way of finding a maximum.</p>
 <p>Suppose that the process measured follows a normal distribution but with an unknown mean <span class="math notranslate nohighlight">\(\mu\)</span> but known variance <span class="math notranslate nohighlight">\(\sigma^2\)</span>. The likelihood function is</p>
@@ -2199,8 +2530,8 @@ V=\begin{bmatrix}\displaystyle\frac{\partial T}{\partial m}&amp;\displaystyle\fr
 <div class="math notranslate nohighlight">
 \[\displaystyle \frac{d\ln\big(L(\mu)\big)}{d\mu}=-n+ \frac{\sum_i x_i}{\mu}=0\]</div>
 <p>then the mean value <span class="math notranslate nohighlight">\(\mu\)</span> is the best estimator if <span class="math notranslate nohighlight">\(\displaystyle \mu=\frac{1}{n}\sum_{i=0}^n x_i\)</span></p>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -2224,9 +2555,11 @@ V=\begin{bmatrix}\displaystyle\frac{\partial T}{\partial m}&amp;\displaystyle\fr
 
               </div>
               
-        
-            <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="analysis-intro.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -2242,26 +2575,28 @@ V=\begin{bmatrix}\displaystyle\frac{\partial T}{\partial m}&amp;\displaystyle\fr
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-        
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-    <div class="container">
-      <p>
-        
-          By Godfrey Beddard<br/>
-        
-            &copy; Copyright 2022.<br/>
-      </p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Godfrey Beddard<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
     </div>
-  </footer>
-</main>
+    
+</div>
 
 
       </div>
     </div>
   
-  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>

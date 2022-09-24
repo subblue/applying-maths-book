@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## Solutions Q40 - 44
+# # Solutions Q40 - 44
 
 # In[1]:
 
@@ -15,7 +15,7 @@ init_printing()                      # allows printing of SymPy results in types
 plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 
-# ### Q40 answer
+# ## Q40 answer
 # (a) From the table of polarizer matrices, that for a polarizer at zero degrees is 
 # 
 # $$\displaystyle \begin{bmatrix} 1 & 0 \\ 0 & 0 \end{bmatrix}$$
@@ -44,7 +44,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # and because the componets are equal equal amounts of light are transmitted and reflected.
 # 
-# ### Q41 answer
+# ## Q41 answer
 # With the wave-plate fast axis at some arbitrary angle $\varphi$ and using the matrix from the table, the matrix equation is
 # 
 # $$\displaystyle \begin{bmatrix} 2\cos^2(\theta)-1 & 2\sin(\theta)\cos(\theta)\\ 2\sin(\theta)\cos(\theta) & 1-2\cos^2(\theta) \end{bmatrix}\begin{bmatrix} V \\0\end{bmatrix} =V\begin{bmatrix} 2\cos^2(\theta)-1 \\2\sin(\theta)\cos(\theta)\end{bmatrix}$$
@@ -59,7 +59,8 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 
 theta, V = symbols('theta, V')   # notice way of writing a row and a column matrix
-Int = V**2 * Matrix([ [ 2*cos(theta)**2 -1, 2*sin(theta)*cos(theta)]  ] )           * Matrix([ [2*cos(theta)**2-1], [2*sin(theta)*cos(theta)]  ] )
+Int = V**2 * Matrix([ [ 2*cos(theta)**2 -1, 2*sin(theta)*cos(theta)]  ] )\
+           * Matrix([ [2*cos(theta)**2-1], [2*sin(theta)*cos(theta)]  ] )
 Int
 
 
@@ -83,7 +84,7 @@ simplify(2*sin(theta)*cos(theta)/(2*cos(theta)**2-1) )
 
 # or $\displaystyle \tan(\psi)=\tan(2\theta)$ or $ \psi=2\theta$ thus the rotation angle is then twice that rotated by the fast axis of the wave plate.
 # 
-# ### Q42 answer
+# ## Q42 answer
 # (a) The matrix equation for the quarter-wave plate with its fast axis at $0^\text{o}$ is $\displaystyle \begin{bmatrix} 1 & 0\\0 & -i\end{bmatrix} \begin{bmatrix} V\\0\end{bmatrix}=\begin{bmatrix} V\\0\end{bmatrix}$ an has no effect on the beam. The transmitted intensity remains at $V^2$.
 # 
 # (b) At $ \theta= 45^\text{o}\, \Delta=\pi/2$ and $e^{-i\Delta}=-i$ the related equation is 
@@ -110,7 +111,7 @@ simplify(2*sin(theta)*cos(theta)/(2*cos(theta)**2-1) )
 # 
 # proving that any ideal wave-plate does not alter the intensity of a beam passing through it. This calculation clearly ignores any reflection at the surfaces, due to changes in the refractive index between the wave-plate and air.
 # 
-# ### Q43 answer
+# ## Q43 answer
 # The experimental scheme is
 # 
 # ![Drawing](matrices-fig86.png)
@@ -139,7 +140,7 @@ simplify(2*sin(theta)*cos(theta)/(2*cos(theta)**2-1) )
 # is always real, so the light is linearly polarized and the angular direction of the polarization $\psi$ from the vertical, is given by the angle of the polarizer $\theta$ and is calculated using $\tan(\psi) = \sin(\theta)/\cos(\theta)$ or $\psi=\theta$. As the initial light is vertically polarized, no light is to be observed when the polarizer is at $90^\text{o}$, but some is still observed at $\lt 90^\text{o}$, according to the $\cos^2(\theta)$ distribution.
 # 
 # 
-# ### Q44 answer
+# ## Q44 answer
 # (a) We use particular matrices first and then use general ones in a second calculation.
 
 # In[5]:
@@ -207,7 +208,8 @@ beta  = pi/2
 alpha = 0
 delta = pi
 
-Wave_plate = Matrix([[cos(theta)**2+sin(theta)**2*exp(-1J*delta), cos(theta)*sin(theta)*(1-exp(-1J*delta))]                   ,[cos(theta)*sin(theta)*(1-exp(-1J*delta)), sin(theta)**2+cos(theta)**2*exp(-1J*delta)]])
+Wave_plate = Matrix([[cos(theta)**2+sin(theta)**2*exp(-1J*delta), cos(theta)*sin(theta)*(1-exp(-1J*delta))]\
+                   ,[cos(theta)*sin(theta)*(1-exp(-1J*delta)), sin(theta)**2+cos(theta)**2*exp(-1J*delta)]])
 Wave_plate
 
 

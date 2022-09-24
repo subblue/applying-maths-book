@@ -1,9 +1,9 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## Integration by substitution
+# # Integration by substitution
 
-# ### 3 Clever substitution can help to solve an integral
+# ## 3 Clever substitution can help to solve an integral
 # 
 # It may appear at first that if an integral is not in a standard form then it cannot be solved - not so! The purpose of substitution is to convert the integral into a standard and therefore simpler form whose solution is known. Choosing a substitution is rather an art and some trial and error is usually required. However, just as in football, a clever substitution can produce the required result.
 # 
@@ -41,7 +41,7 @@
 # $$4\int\sin^2(\theta)d\theta = 2\theta -2\sin(\theta)\cos(\theta)+c=2\sin^{-1}\left(\frac{x}{2}\right)-\frac{x}{2}\sqrt{4-x^2}+c$$
 # ____
 # 
-# ### Table 1 Trig. formulas
+# ## Table 1 Trig. formulas
 # 
 # ![Drawing](integration-table1.png)
 # 
@@ -52,7 +52,7 @@
 # \displaystyle \tan(\theta)=\frac{x}{\sqrt{a^2-x^2}} &\displaystyle \tan(\theta)=\frac{x}{a} &\displaystyle \tan(\theta)=\frac{\sqrt{x^2-a^2}}{a}\\
 # \hline \end{array}$$
 
-# ### 3.1 Definite integrals with substitution
+# ## 3.1 Definite integrals with substitution
 # 
 # When calculating a definite integral first evaluate the indefinite integral and then using the limits, work out the final value. If a substitution is made it is also _necessary to change the limits_, thus making it unnecessary to reverse the substitution to obtain the result.
 # 
@@ -64,7 +64,7 @@
 # 
 # $$\displaystyle \int\frac{3}{2u^2}du = -\frac{3}{2u} \equiv \frac{3}{2(1+2x))}\bigg|_2^{8}$$
 # 
-# ### 4 Three useful results with a function and its derivative 
+# ## 4 Three useful results with a function and its derivative 
 # 
 # Integrals where the function in the numerator is the derivative of the function in the
 # denominator, evaluate to logs. For example,
@@ -99,7 +99,7 @@
 #  
 #  where the function is $\cos(x)$. Of course, the integral in this particular case could have been written the other way round. The result would then be $\displaystyle \int\sin(x)\cos(x)dx=-\frac{1}{2}\sin^2(x) +c$ but because $\cos^2(x)+\sin^2(x)=1$ this is the same result if the $1$ is added to the arbitrary constant $c$.
 #  
-# ### 5 Integration by parts
+# ## 5 Integration by parts
 # 
 # Very often the products of two functions must be integrated and one way of doing this is to use 'integration by parts'. Integration by parts is a major tool to integrate seemingly difficult expressions.
 # 
@@ -123,7 +123,7 @@
 # 
 # A few examples should make this important method clearer.
 # 
-# #### **(i) $\displaystyle \int y\cos(y)dy$**
+# ### **(i) $\displaystyle \int y\cos(y)dy$**
 # To solve $\displaystyle \int y\cos(y)dy$ using equation 16
 # 
 # (i) Start by trying $u=y$ and $dv=\cos(y)dy$
@@ -136,7 +136,7 @@
 # 
 # $$\displaystyle \int y\cos(y)dy=y\sin(y)-\int \sin(y)dy = y\sin(y)+\cos(y)+c$$
 # 
-# #### **(ii) $\int x\ln(x)dx$**
+# ### **(ii) $\int x\ln(x)dx$**
 # The integral $\int x\ln(x)dx$ can be evaluated by parts if $u=\ln(x)$ and $dv=xdx$, producing
 # 
 # $$\displaystyle \int x\ln(x)=\ln(x)\frac{x^2}{2}-\frac{1}{2}\int\frac{1}{x}x^2dx =\ln(x)\frac{x^2}{2}-\frac{x^2}{4}+c$$
@@ -152,7 +152,7 @@
 # 
 # which is the same result as by the first method when both sides are divided by two.
 # 
-# #### **(iii) $\int e^x\sin(x)dx$**
+# ### **(iii) $\int e^x\sin(x)dx$**
 # Sometimes successive integration is necessary, as with $\int e^x\sin(x)dx$. To integrate this function let $u = e^x$ and $dv = \sin(x)dx$. This produces
 # 
 # $$\displaystyle \int e^x\sin(x)dx=-e^x\cos(x)+\int e^x\cos(x)dx $$
@@ -172,7 +172,7 @@
 # As a check, differentiate the result. Notice that the integral could more easily be solved by converting the sine to its exponential form. It is often, but not always the case, that more than one method could be used to solve an integral. Which you choose depends on your particular liking for one method over another.
 # 
 # 
-# ### 5.1 Small angle x-ray scattering: SAXS 
+# ## 5.1 Small angle x-ray scattering: SAXS 
 # 
 # A real example of integration by parts can be found when determining the scattering of x-rays by a molecule. In the technique of small angle scattering called SAXS the scattering is determined by the overall 'shape' of the electron distribution $\rho(r)$ at some point $r$ in a molecule and the wavevector $q$ of the scattering. 
 # 

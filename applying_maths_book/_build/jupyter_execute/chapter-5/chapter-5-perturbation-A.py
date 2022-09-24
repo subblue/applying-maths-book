@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## Perturbation Theory
+# # Perturbation Theory
 
 # In[1]:
 
@@ -16,7 +16,7 @@ init_printing()                      # allows printing of SymPy results in types
 plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 
-# ### 8 Perturbations
+# ## 8 Perturbations
 # 
 # Solving the Schroedinger for the energy levels of a molecule, using a model such as a harmonic oscillator or rigid rotor, allows us to predict the spectrum. These spectral lines may, however, only be close to the experimental values not exactly matching them because of small unsuspected interactions. To investigate how to improve our model to better understand the data, changes to the potential energy are necessary. The harmonic oscillator, for example, has the Hamiltonian,
 # 
@@ -26,7 +26,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # Our aim is to be able to express the perturbed energy levels $E_n$ in terms of the unperturbed energies $E_n^0$ and their wavefunctions $\psi _n^0$ both of which are assumed to be known from solving $H^0\psi^0 = E^0\psi^0$.
 # 
-# ### 8.1 Formal derivation.
+# ## 8.1 Formal derivation.
 # 
 # First, the formal derivation is presented in most of the important details and the rather simple results, equations (41) and (43), that describe the changes in energy and wavefunctions are produced. These equations are then applied to some examples. If you want to try the problems and are not interested in the derivation details, then these equations are the results you will need.
 # 
@@ -85,7 +85,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # The zeroth-order term is the initial unperturbed equation. Technically it is multiplied by $\lambda^0$ ($\lambda$ to power 0) but as this is $1$, it is not written explicitly.  When each term multiplied by $\lambda$ is added together  the sum is zero and thus each term in square brackets is itself zero.
 # 
-# #### **First order correction to the energy**
+# ### **First order correction to the energy**
 # 
 # To obtain the first-order correction to the energy it is assumed that $\lambda^2$ is smaller than $\lambda$ and similarly for higher powers and therefore these can be ignored. The first-order energy correction is obtained by extracting just the terms in $\lambda$ and is
 # 
@@ -133,7 +133,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # This equation tells us that to obtain the energy change to level $n$ caused by the small perturbation $V$, only the wavefunctions belonging to quantum level $n$ of the initial unperturbed Hamiltonian $H^0$, equation (31), need to be known. The energy change itself is the average of the perturbation potential $V$ with the unperturbed wavefunctions.
 
-# #### **New wavefunctions**
+# ### **New wavefunctions**
 # 
 # To calculate the correction to the wavefunction it is necessary to return to equation (38b) but this time left multiplying by $\psi_m^0$ and integrating. ( $\,\psi_n^0$ was used before) but now it is assumed that $m \ne n$.( When $n = m$ the calculation follows that above). The equation becomes 
 # 
@@ -185,7 +185,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # for each of the nearby states $k$ where $k \ne n$.
 # 
 
-# ### 8.2 Perturbation calculation of energy of a particle in a sloping box.
+# ## 8.2 Perturbation calculation of energy of a particle in a sloping box.
 # 
 # Consider now a particle in a one-dimensional box that is subjected to a small linear potential ramp; the potential is $bx$ where $b$ is a constant. Such a model might represent an electron in a deep quantum well experiencing an applied electric field. Using the perturbation method, the first-order correction to the energies and wavefunctions will be calculated. The validity of the result will also be checked according to equation (46), and finally the second-order correction to the lowest energy level will be found.
 # 

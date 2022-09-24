@@ -1,16 +1,16 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## Questions 1 - 6
+# # Questions 1 - 6
 
-# ### Q1 Area under curve
+# ## Q1 Area under curve
 # Calculate the area under the curve $\displaystyle e^{-x} \sin(x^2)$ 
 # 
 # in the range $0 \to 6$ using the mean-value method. 
 # 
 # **Strategy:** Use the algorithm in the text modified for the new function and limits.
 # 
-# ### Q2 Mean value method
+# ## Q2 Mean value method
 # Integrate $\displaystyle \int_0^2\int_0^1\int_0^{3/2}\sqrt{16-x^2-y^2-z^2}dxdydz$  
 # 
 # using the mean value, Monte Carlo method and accurate to two significant figures.
@@ -18,12 +18,12 @@
 # **Strategy:** Use equation 5 modified for three variables. Repeat the calculation until the answer becomes accurate enough for your needs.
 # 
 # 
-# ### Q3 Importance sampling
+# ## Q3 Importance sampling
 # Integrate $\displaystyle \int_o^\infty e^{-x}\sin(x^2)dx$ using importance sampling.
 # 
 # **Strategy:** The distribution function can be chosen as $e^{-x}$ and the importance sampling algorithm followed. This method also enables us to calculate from zero to infinity; however, a cut-off value has to be determined and $e^{-10}$ can be chosen because it is so small compared to $1$. The limits are therefore $a = 0 ,\; b = 10$.
 # 
-# ### Q4 Importance sampling
+# ## Q4 Importance sampling
 # Calculate the integral $\displaystyle \int_0^2 e^{-x^2}dx$
 # 
 # using importance sampling and the distribution function $p(x) = 1/(x^2 + 1/4)$, 
@@ -36,7 +36,7 @@
 # 
 # and the normalization is therefore $N = 2 \tan^{-1}(4)$. Working out the cumulative distribution and solving for $r$ produces $r = \tan^{-1}(2t)/\tan^{-1}(4)$. The variable $r$ is sampled from a uniform distribution in the range $0 \to 1$.
 # 
-# ### Q5 Accuracy
+# ## Q5 Accuracy
 # Apparently innocent functions, when calculated by simple Monte Carlo methods, can give incorrect results even when huge numbers of sampling points are taken. One example is the integral 
 # 
 # $$\displaystyle \gamma = \int_0^1x^\gamma dx=\frac{1}{1+\gamma}\quad\text{ when }\quad\gamma \gt 0$$
@@ -50,7 +50,7 @@
 # 
 # (c) Next, use the importance sampling method with the distribution $p(x) = x\lambda$ where $\gamma \lt \lambda \lt 0$, and obtain an accurate result.
 # 
-# ### Q6 Lennard Jones potential & virial coefficient
+# ## Q6 Lennard Jones potential & virial coefficient
 # The Virial Coefficients are used in the description of real gases. The compression factor $Z = 1$ for an ideal gas, but is expanded as a series for a real gas, 
 # 
 # $$\displaystyle  Z=\frac{pV}{nRT}=1+B_2\left(\frac{n}{V}  \right)+ B_3\left(\frac{n}{V}  \right)^2 +\cdots$$
@@ -77,18 +77,6 @@
 # 
 
 # In[28]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
 
 
 

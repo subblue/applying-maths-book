@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## Solutions Q 12-42
+# # Solutions Q 12-42
 
 # In[1]:
 
@@ -16,7 +16,7 @@ init_printing()               # allows printing of SymPy results in typeset math
 plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 
-# ### Q12 answer
+# ## Q12 answer
 # Results are mainly calculated as function of function and/or as products.
 # 
 # $\displaystyle \begin{array}{lll}\\
@@ -57,7 +57,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # (k) $\displaystyle \frac{d}{dq}(\sin^2(q)+q^2\cos(q))=2\sin(q)\cos(q)+2q\cos(q)-q^2\sin(q)$
 # 
-# ### Q13 answer
+# ## Q13 answer
 # (a) Taking logs gives $\ln(y)=y\ln(x)$ and differentiating 
 # 
 # $$\displaystyle \frac{1}{y}\frac{dy}{dx}=\frac{dy}{dx}\ln(x)+\frac{y}{x} \to \frac{dy}{dx}=\frac{y^2}{x(1-y\ln(x))}$$
@@ -66,7 +66,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # (c) $\ln(y)=x\ln(x)$ therefore $\displaystyle \frac{1}{y}\frac{dy}{dx}=\ln(x)+1$
 # 
-# ### Q14 answer
+# ## Q14 answer
 # Differentiating once by $a$ gives $\displaystyle \frac{d}{da}\int e^{ax}dx=\int\frac{\partial}{\partial a}e^{ax} dx=\int xe^{ax}dx$
 # 
 # and again $\displaystyle \frac{d}{da}\int xe^{ax}dx=\int\frac{\partial}{\partial a}xe^{ax} dx=\int x^2e^{ax}dx$
@@ -87,7 +87,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # $$\displaystyle \frac{d^n}{da^n}\left( \frac{\sin(ax)}{a}\right)=\int x^n\cos(ax)dx$$
 # 
-# ### Q15 answer
+# ## Q15 answer
 # (a) Although it is not too difficult to do the differentiation by hand, Python/SymPy is used not only for this but also to plot the equation. It is easier to make $x$ and $y$ functions of $t$ so that $t$ can be passed as a parameter; 
 
 # In[2]:
@@ -164,7 +164,7 @@ print(ans[0],ans[-1])
 print('coordinates',  x(ans[0]),y(ans[0]) )
 
 
-# ### Q16 answer
+# ## Q16 answer
 # (a) The gradient is, by equation(23), $\displaystyle \frac{dy}{dx}=-\frac{\cos(t)+\cos(2t)}{\sin(t)+\sin(2t)}$.
 # 
 # (b) The gradient (tangent) is zero when $\displaystyle \frac{dy}{dt}= 2\cos(t)+2\cos(2t)=0$.
@@ -211,18 +211,18 @@ for j,i in enumerate(ans):
     print((ans[j].evalf()))   # imag part is so small that numbers are real.
 
 
-# ### Q17 answer
+# ## Q17 answer
 # The differentiation variable is the same as for integration because the integrand has only one variable and $s$ is a dummy parameter. Using equation (15) gives
 # 
 # $$\displaystyle \frac{d}{dx}\int_{\ln(x)}^{x^2} e^{-s^2}ds = \left( \frac{d}{dx}x^2\right)e^{-x^4}-\left( \frac{d}{dx}\ln(x) \right)e^{-\ln(x)^2}=2xe^{-x^4}-\frac{e^{-\ln(x)^2}}{x}$$
 # 
-# ### Q18 answer
+# ## Q18 answer
 # 
 # $$\displaystyle \frac{dy}{du}=\frac{dy}{dx}\frac{dx}{dw}\frac{dw}{du}=2x\frac{(-\sin(u))}{2\sqrt{u}}=-\sin(u)$$
 # 
 # Substituting gives $y = \cos(u) + 2$ gives the result directly.
 # 
-# ### Q19 answer
+# ## Q19 answer
 # (a) As the function is raised to the power $x$, the best strategy is to first take logs of both sides of the equation then differentiate; for instance $\ln(y) = x \ln(\ln(x))$ and next, using the log differentiation formula and remembering that $\ln(\ln(x))$ is a function-of-function differentiation, obtain
 # 
 # $$\displaystyle \frac{1}{y}\frac{dy}{dx}=\ln(\ln(x))+x\frac{1}{x\ln(x)}$$
@@ -238,7 +238,7 @@ for j,i in enumerate(ans):
 # 
 # The derivative is the function $y$ itself, times a term in $\ln(\ln(x))$ and $1/\ln(x)$. When $x \lt 1$ the derivative is a complex number because it is multiplied by $y$ which here is the log of a negative number. At $x$ values just larger than $1$, the $1/\ln(x)$ term is large and the derivative is almost 1, but as $x$ increases that term becomes smaller, but only slowly. The other term $\ln(\ln(x))$ also increases only slowly with $x$ and now when combined these two terms are almost constant with a value slightly greater than 1, which is best seen by separately plotting these values. Therefore, the derivative closely follows the value of $y$ when $x$ is large.
 # 
-# ### Q20 answer
+# ## Q20 answer
 # It is easier to rewrite the function as $f = y(s)h(s)$ and then write the product rule, equation (19), as 
 # 
 # $$\displaystyle \frac{df}{ds}=y\frac{dh}{ds}+h\frac{dy}{ds}$$
@@ -264,7 +264,7 @@ ans = diff(f,s)
 simplify(ans)
 
 
-# ### Q21 answer
+# ## Q21 answer
 # (a) Differentiating using the product rule produces, 
 # 
 # $$\displaystyle y'\equiv \frac{dy}{dx}=nx^{n-1}\ln(x)+x^{n-1}$$
@@ -308,7 +308,7 @@ ans
 simplify(diff(ans,x) )               # second derivative
 
 
-# ### Q22 answer
+# ## Q22 answer
 # Velocity is distance per unit time and is defined as $\displaystyle \frac{dx}{dt}= v$ , and therefore $\displaystyle \frac{d^2x}{dt^2}=\frac{dv}{dt}$. 
 # 
 # To change the differentiation variable from $t$ to $x$ use the function of function method, equation, (22) written as $\displaystyle \frac{dv}{dt}=\frac{dv}{dx}\frac{dx}{dt}$.
@@ -327,7 +327,7 @@ simplify(diff(ans,x) )               # second derivative
 # 
 # an equation that is important in dynamics.
 # 
-# ### Q23 answer
+# ## Q23 answer
 # Differentiating both sides of the equation with respect to $x$ gives, 
 # 
 # $$\displaystyle 2(x^2+y^2)\left(2x+2y\frac{dy}{dx} \right)=a^2\left(2y\frac{dy}{dx}-2x  \right)$$
@@ -357,7 +357,7 @@ simplify(diff(ans,x) )               # second derivative
 # 
 # The maximum and minimum occur when the derivative is zero, which occurs at $\theta = 0^\text{o}$ or $180^\text{o}$ respectively. When $\theta$ is zero then $r = \pm a$, but $r$ is always positive, and so this gives the maximum, see Fig. 7. When $\theta = 45^\text{o}$, the curve has its minimum at the origin because $r = 0$. The maximum gradient of infinity, occurs when $dx/dy = 0$ which it does when $\theta = \pm \pi/3$ and $\theta = \pm 2\pi /3$.
 # 
-# ### Q24 answer
+# ## Q24 answer
 # (a) Differentiating once gives $\displaystyle \frac{d}{dx}e^{ax^2+x}=e^{ax^2+x}(2ax+1)$ 
 # 
 # and again produces 
@@ -372,7 +372,7 @@ simplify(diff(ans,x) )               # second derivative
 # 
 # which can clearly be simplified.
 # 
-# ### Q25 answer
+# ## Q25 answer
 # As $y=\sqrt{a^2-x^2}$, differentiating once and twice gives $\displaystyle \frac{dy}{dx}=-x(a^2-x^2)^{-1/2}$ and $\displaystyle \frac{d^2y}{dx^2}=-(a^2-x^2)^{-1/2}-x^2(a^2-x^2)^{-3/2}$.
 # 
 # By substituting and rearranging 
@@ -395,7 +395,7 @@ simplify(diff(ans,x) )               # second derivative
 # 
 # because the derivative of $y$ is $dy/dx$. Substituting for $y$ and rearranging produces the same answer.
 # 
-# ### Q26 answer
+# ## Q26 answer
 # Differentiating twice gives $\displaystyle \frac{d^2}{dx^2}f(x)=\frac{d}{dx}f(x)=f(x)$ and by induction therefore $\displaystyle \frac{d^n}{dx^n}f(x)=f(x)$. 
 # 
 # From the information given in the question it follows that $\displaystyle \frac{d^n}{dx^n}f(0)=f(0)=1$. As the Maclaurin expansion of $f$ is 
@@ -408,7 +408,7 @@ simplify(diff(ans,x) )               # second derivative
 # 
 # and the function is the exponential as you may have guessed from the question.
 # 
-# ### Q27 answer
+# ## Q27 answer
 # If $u=dx/dt$,differentiation with respect to $t$ gives $\displaystyle \frac{du}{dt}=\frac{d}{dt}\left( \frac{dx}{dt}\right) =\frac{d^2x}{dt^2}$.
 # 
 # On the left of the equation 
@@ -417,13 +417,13 @@ simplify(diff(ans,x) )               # second derivative
 # 
 # which is the same result, and the relationship is verified. Notice that in this last calculation $d/dx$ operates on$ dx/dt$ before the $dx$ are cancelled.
 # 
-# ### Q28 answer
+# ## Q28 answer
 # (a) Differentiating with respect to $q$, gives $\displaystyle (1-q^2)N\frac{d}{dq}f(qN)-2qf(qN)+N\ln(q)+N=0$
 # 
 # (b) and with respect to $N$ gives, $\displaystyle (1-q^2)N\frac{d}{dN}f(qN)+q\ln(q)=0$
 # 
 # 
-# ### Q29 answer
+# ## Q29 answer
 # (a) By direct differentiation $\displaystyle nx^{n-1} + ny^{n-1} \frac{dy}{dx} = 0$. Rearranging gives $\displaystyle \frac{dy}{dx}=-\frac{x^{n-1}}{y^{n-1}}$ which is the answer sought.
 # 
 # (b) If you cannot remember the differential of tan, convert it into $\sin()/\cos()$ then the equation becomes $\displaystyle \frac{\sin(y)}{\cos(y)} = \sinh(x)$.
@@ -434,7 +434,7 @@ simplify(diff(ans,x) )               # second derivative
 # 
 # The second derivative is $\displaystyle \frac{d^2y}{dx^2}=\sinh(x)\cos^2(y)-2\cosh(x)\cos(y)\sin(y)\frac{dy}{dx}$ which can be simplified a little further.
 # 
-# ### Q30 answer
+# ## Q30 answer
 # Both $V$ and $\psi$ are functions of $x$. Operating once with $D$ is formally 
 # 
 # $$-D(D^2\psi) + D(V\psi) = ED\psi$$
@@ -461,7 +461,7 @@ simplify(diff(ans,x) )               # second derivative
 # 
 # In common notation this last equation is $\displaystyle \frac{d}{dx}\left(  \psi^2\frac{dV}{dx}\right)=2\psi\frac{d\psi}{dx}\frac{dV}{dx}+\psi^2\frac{d^2V}{dx^2}$.
 # 
-# ### Q31 answer
+# ## Q31 answer
 # (a) The slope at point $T$ is $\displaystyle \frac{dy}{dx}=\frac{1}{t}$. The equation of the tangent line at any point is $y - 2at = (x - at^2)/t$.
 # 
 # (b) The point $P$ is at $y=0$ therefore is at $(at^2,0)$. Point F is at $(a,0)$ therefore the length PF is $a+at^2$. Point T has coordinates $(at^2 , 2at)$ and by Pythagoras' theorem the distance FT is 
@@ -472,7 +472,7 @@ simplify(diff(ans,x) )               # second derivative
 # 
 # This construction proves that all rays travelling parallel to the parabola's axis pass through the focus, because T could be any point on the parabola and FP and FT are always equal to one another. Because all rays originating at infinity are parallel to one another and parallel to the axis of the parabola, on entering the parabola they will each pass through the focus. If a mirror with a spherical surface is used, then not all rays pass through the same point and an aberrated focus will be formed.
 # 
-# ### Q32 answer
+# ## Q32 answer
 # (a) The units are number/mole $\cdot$ J s $\cdot\,\mathrm{ s^{-1}}$ which is energy/mole. The first term is the zero point energy because it is a constant and does not depend on the vibrational frequency.
 # 
 # (b, c) Differentiating $U$ with respect to $T$ is done inside the integral, because the integrand depends on $T$, and
@@ -503,7 +503,7 @@ simplify(diff(ans,x) )               # second derivative
 # Figure 41a. Heat capacity vs temperature with a Debye temperature $\theta$ for potassium of $41.5$ K . Also shown is the high and low temperature behaviour.
 # ________
 
-# ### Q33 answer
+# ## Q33 answer
 # Differentiating [B] by changing the proton concentration to pH via $\text{pH} = -\log_{10}(\text{[H}^+])$ is one approach but it is easier to use the product rule and write 
 # 
 # $$\displaystyle \beta=\frac{d[\text{B}]}{d[\text{H}^+]}\frac{d[\text{H}^+]}{d\text{pH}}$$
@@ -567,7 +567,7 @@ ans= fsolve(f01, 1.0e-7)
 print('{:s} {:6.3g} {:s} {:6.3g}'.format( 'Ka =', Ka,' H+ =', float(ans) ))  
 
 
-# ### Q34 answer
+# ## Q34 answer
 # (a) As velocity $v$ is distance/time, velocity $v(t)=dy/dt$ and as $y$ is expressed a a log it is convenient to use the general form 
 # 
 # $$\displaystyle \frac{d\ln(f(x))}{dt}\equiv\frac{1}{f(x)}\frac{df(x)}{dt}$$
@@ -591,7 +591,7 @@ print('{:s} {:6.3g} {:s} {:6.3g}'.format( 'Ka =', Ka,' H+ =', float(ans) ))
 # Figure 43. Velocity (m/s) vs time in seconds for the skydiver. The acceleration to terminal velocity is rather rapid and is reached in as little as $\approx 7$ seconds. The dashed line shows the terminal velocity.
 # _____
 # 
-# ### Q35 answer
+# ## Q35 answer
 # Differentiating $e^{\alpha x}$ once produces $\displaystyle \frac{d}{dx}e^{\alpha x}=\alpha e^{\alpha x}$ and so $n$ times over $\displaystyle \frac{d^n}{dx^n}e^{\alpha x}=\alpha ^ne^{\alpha x}$. Notice that the result has the characteristic form $H\psi = E\psi$, if the eigenvalue is $E = \alpha^n$ and the wavefunction $\psi=e^{\alpha x}$.
 # 
 # (b) Repeating the calculation with $\sin(\alpha x)$ produces 
@@ -612,7 +612,7 @@ print('{:s} {:6.3g} {:s} {:6.3g}'.format( 'Ka =', Ka,' H+ =', float(ans) ))
 # 
 # $$\displaystyle \frac{1}{2m}\left(-i\hbar\frac{d}{dx}  \right)^2=-\frac{\hbar^2}{2m}\frac{d^2}{dx^2}$$
 # 
-# ### Q36 answer
+# ## Q36 answer
 # Substituting for $E$ and after rearranging 
 # 
 # $$\displaystyle -\frac{\hbar^2}{2m}\psi^{''}+\left(\frac{kx^2}{2}-\frac{3}{2}\hbar\left( \frac{k}{\mu} \right)^{1/2} \right)\psi=0$$
@@ -663,7 +663,7 @@ eqn = ( (-hbar**2/(2*mu))*diff(psi(x),x,x) +((1/2)*k*x**2-E)*psi(x))
 simplify((eqn) )
 
 
-# ### Q37 answer
+# ## Q37 answer
 # Differentiation gives 
 # 
 # $$\displaystyle \frac{dE}{dn}=\hbar\omega_e -2\hbar x_e\omega_e(n+\frac{1}{2})$$
@@ -682,7 +682,7 @@ simplify((eqn) )
 # 
 # where $E$ is the energy in the potential well. In an optical experiment this is the energy of the photon $E_{h\nu} \equiv E_{\hbar\omega}$ less the zero point energy $E_0$ of the transition, therefore, $\omega^2 =\omega_e^2=4x_e\omega_e (E_{\hbar\omega}-E_0)$.
 # 
-# ### Q38 answer
+# ## Q38 answer
 # (a) $\displaystyle \frac{dV}{dx}=\pi x^2\tan^2(\alpha)$ where 0$\le x\le h$ and this is the surface area of the cone as it is proportional to $x^2$. When a volume is differentiated, an area is produced because the dimension is reduced. This function represents how the volume in the cone changes with height and would usually be described as the rate of change of volume with height.
 # 
 # (b) The rate of liquid loss is given as $5\,\mathrm{ cm^3\, min^{-1}}$ and this is $dV/dt$ where $V$ is the volume; however, only $dV/dx$ has been calculated. These two derivatives are connected with the 'function of a function' equation
@@ -691,7 +691,7 @@ simplify((eqn) )
 # 
 # where $dV/dt$ is the rate of decrease of the liquid's volume. Rearranging to $\displaystyle \frac{dx}{dt}=\frac{dV}{dt}/\frac{dV}{dx}$ and from the values given $\displaystyle \frac{dx}{dt}=\frac{5}{\pi x^2}\tan^2(\alpha)$ and when $x = 2$ and as $b$ = 3 and $h = 9$ cm, $\tan(\alpha) = 1/3$, and the rate of liquid level decrease is $3.6\,\mathrm{ cm \,min^{-1}}$ which clearly increases as $x$ decreases because the volume flow rate is a constant.
 # 
-# ### Q39 answer
+# ## Q39 answer
 # (a) Starting with the harmonic potential, the first derivative is $\displaystyle \frac{dV_{HO}}{dr}=2k(r-r_e)$ and the second derivative $\displaystyle \frac{d^2V_{HO}}{dr^2}=2k$. The radius of curvature is 
 # 
 # $$\displaystyle \rho=\frac{\left( 1+4k^2(r-r_e )\right)^{3/2}}{2k}$$
@@ -725,7 +725,7 @@ ans.subs(r,re)
 # 
 # The units of the force constant are N/m, the dissociation energy must be in J and $\beta$ is in $m^{-1}$ as the exponential in which it appears must be dimensionless. Therefore $k(N/m) = D_e (\text{J}) \beta^2 (\mathrm{m^{-2}}) \equiv \mathrm{J\,m^{-2}} = \mathrm{N\, m\, m^{-2}} =\mathrm{ N\, m^{-1}}$, which is dimensionally correct. A joule is a newton $\cdot$ metre because energy is force times distance.
 # 
-# ### Q40 answer
+# ## Q40 answer
 # As force is the derivative of the potential with extension and is also defined by Hooke's law as force constant $\cdot$ extension. Therefore, the force constant is the second derivative of potential with extension.
 # 
 # If the potential $V = ks^2/2$ with $s$ the extension then $\displaystyle \frac{d^2V}{ds^2}=k$. Differentiating the Morse potential with respect to $s$ produces the force, 
@@ -738,7 +738,7 @@ ans.subs(r,re)
 # 
 # and at the minimum $s=0$ giving $\displaystyle \frac{d^2V_m}{ds^2}=2\beta^2 D_e$.  This is therefore the Hooke's Law force constant if the two second derivatives of $V_m$ and $V$ are assumed equal. This answer is slightly different to that of the previous question as different assumptions were made in these two calculations. In that question, it was assumed, without justification, that the curvature was the same for the harmonic and Morse potential at the minimum; in this question, it is argued dimensionally that the force constant is the second derivative of the potential. 
 # 
-# ### Q41 answer
+# ## Q41 answer
 # (a) The internal energy is found by substituting for $Z$ and differentiating $\ln(Z)$ with $T$. The three lines below only involve simplification with no calculation;
 # 
 # $$\displaystyle \begin{align}
@@ -773,7 +773,7 @@ ans.subs(r,re)
 # Figure 44. Plots of internal energy and heat capacity in 'dimensionless' units. Internal energy is divided by $Nk_B\theta$ vs $T/\theta$ and the heat capacity is divided by $Nk_B$.
 # ____
 # 
-# ### Q42 answer
+# ## Q42 answer
 # The partition function is the sum of the Boltzmann factors for each energy level and is 
 # 
 # $$\displaystyle Z=e^{-\gamma \hbar B_0/k_B T} + 1+ e^{+\gamma \hbar B_0/k_B T}$$

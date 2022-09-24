@@ -1,14 +1,14 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## The Fourier transform in two dimensions: images and x-ray Diffraction
+# # The Fourier transform in two dimensions: images and x-ray Diffraction
 
 # 
-# ### Motivation and concept
+# ## Motivation and concept
 # 
 # The fourier transform can be extended to 2D and 3D. The 2D transform is important in image analysis, optics and 2D spectroscopies such as ultrafast infra-red and nmr analysis. The 3D transform is used to describe x-ray diffraction from crystals which is the definitive way of determining molecular structure and is of central importance in chemistry and biochemistry. We shall illustrate how x-ray diffraction leads to structure using 2D fourier transforms.
 # 
-# ### 12. 2D transforms.
+# ## 12. 2D transforms.
 # 
 # The 2D forward and inverse transform is written down easily by analogy with the 1D versions, but rather than use $k_x,k_y$ for the conjugate variables it is clearer instead to use $u,v$
 # 
@@ -43,7 +43,7 @@
 # If there is a rectangular hole of size $a x b$ then the similar calculation uses both finite limits and is
 # 
 # $$\displaystyle \begin{align} g(u,v)&=\int_{-a/2}^{a/2} e^{-ixu}dx \int_{-b/2}^
-# {b/2} e^{-iyv}dy\\ &=\frac{2\sin(au/2)}{u}\frac{2\sin(bv/2)}{v}\\&= ab\;\text{sinc}(au/2)\text{sinc}(bv/2)\end{align}$$
+# {b/2} e^{-iyv}dy\\ &=\frac{2}{u}\sin(au/2)\frac{2}{v}\sin(bv/2)\\&= ab\;\text{sinc}\left(\frac{au}{2}\right)\text{sinc}\left(\frac{bv}{2}\right)\end{align}$$
 # 
 # which are two sinc functions at right-angles to one another. The image is shown in fig 64. If diffraction occurred through such an aperture the absolute value would be obtained because detectors (and our eyes) measure the intensity which is the square of the light's amplitude. The image would look similar except that all the function would be positive rather than both positive and negative. Notice the similarity of this to the transform of four points arranged in a square, fig 63, (ignoring the rotation of the latter). The difference in the transforms occurs because when more than one object is present a cosine along each symmetry axis is also present. This may be understood as the image of two or more delta functions convoluted with the shape of the object itself; when more than one object is transformed the transform spreads out over transform space.
 # 
@@ -102,13 +102,13 @@
 # Figure 69. Left, a lattice of molecules, with the unit cell outlined ($a$=blue). Centre, the absolute value of the transform and the reciprocal unit cell ($a^*$=blue), and Right, the absolute value of the transform of the whole and the absolute value of transform of a single molecule superimposed. Note how in the transform the intensity of the spots changes and follows that of the single molecule's pattern.
 # ________
 
-# ### 13 X-ray Diffraction.
+# ## 13 X-ray Diffraction.
 # 
-# ### 13.1 Diffraction of x-rays
+# ## 13.1 Diffraction of x-rays
 # 
 # The structure of a molecule can be determined by detecting the x-rays diffracted by its crystal. The experiment consists of diffraction, detection and computational analysis which combined act as if a microscope was used. The explanation of how this works has two parts: (1) how is magnification achieved and (2) how does the measured data lead to the structure. The first part is quite straightforward, the second more involved.
 # 
-# #### **Magnification**
+# ### **Magnification**
 # The magnification can be explained by reference to Huygens' wavelets as in figure 70a. A plane wave arrives at the bottom of the figure and is diffracted by two slits shown as red dots, alternatively these represent sources in their own right, for example two atoms whose electrons re-radiate x-rays. By calculating where the circular wavelets overlap the position of the bright fringes on a detector can be predicted. To be accurate this has to be done in the 'far field', i.e. at a very great distance from the source of diffraction. Alternatively, by assuming that the path lengths are different by integer numbers of wavelengths produces $n\lambda = d \sin(\theta)$  where $d$ is the separation of the sources, $\lambda$ the wavelength and the integers are $n=0,\pm 1,\pm 2\cdots $. The angle $\theta$ can be obtained from the experiment, as shown in the figure where $\tan(\theta)=(d/2+x)/R$ and $x,R$ are measurements. These values are generally many centimetres where as $d,\lambda $ are millions of times smaller. This is made clearer when the angle $\theta$ is small, then $\tan(\theta)\approx \sin(\theta) \approx \theta $ making $\displaystyle \frac{x}{R} =\frac{n\lambda}{d}$ and as these are ratios the orders of magnitude difference in size cancel out and once $\lambda$ is known so is $d$. 
 # 
 # The deflection caused by diffraction is crucial here for this separates the diffracted beam from the initial one allowing it to be detected against a dark (zero) background and secondly the fact that the angle of detection depends on the separation $d$ means that many distances can be separately measured without overlapping one another. The ratio of distances automatically enables magnification once the beams have propagated far enough to allow accurate measurement of diffracted spot positions.
@@ -118,7 +118,7 @@
 # Fig. 70a. Huygens wavelets to explain magnification after x-ray diffraction.  The wavelength is $1/4$ of the separation $d$ making the first order diffracted beams appear at $\pm 14.5^\text{o}$ from the vertical. In practice $R \gt x\gg d$. The sketch on the right shows the calculation to determine the angle $\theta$ from measurements of $x$ and $R$.
 # __________
 # 
-# #### **Structure**
+# ### **Structure**
 # Before we can find the cell dimensions it is necessary to understand how the x-rays are diffracted off the repeated and regular structure of the crystal. Diffraction of x-rays occurs by interaction of the electrons with the x-rays which then re-radiate in all directions. Only those directions satisfying conservation of momentum produce a diffracted beam that can be recorded as a bright spot on a detector. This means the only waves detected are those whose path-length differs by an integer number of wavelengths and therefore add constructively and re-enforce one another, all other waves cancel to zero. The condition for diffraction is given most generally by the Laue equation or equivalently and more simply by the Bragg condition, fig. 70, 
 # 
 # $$\displaystyle n\lambda =2d\sin(\theta)\tag{54}$$
@@ -145,7 +145,7 @@
 # Figure 70. (A) The general Bragg condition. If the planes of atoms do not satisfy the Bragg condition at a certain angle no diffraction occurs. (B) Construction for the Bragg equation. The wavefronts emerging after diffraction are always in phase when the Bragg condition apples even though one beam has travelled a further distance and this extra distance is always a multiple of $2\pi$ radians. (C),(D) two particular cases of the same lattice but showing diffraction from different Miller indices. The crystal has to be rotated to satisfy the Bragg condition as normally the x-ray wavelength and direction are both fixed. The relative $d_{hkl}$ and angles are approximately correct for Cu K$_\alpha$,$\lambda = 0.154$ nm. The unit cell is shown as the red parallelogram.
 # ______
 
-# ### 13.2 Fourier Synthesis
+# ## 13.2 Fourier Synthesis
 # 
 # The transform of several images has been described but these only become properly interesting when considered in the context of x-ray diffraction from crystals. The nature of x-ray diffraction is discussed shortly as is the connection between the crystal structure, the experimentally measured fourier transform and the fourier _synthesis_ of the structure. To do this we shall have to understand the scattering of x-rays by the electrons in the planes of atoms that exist in a (perfect) crystal because of the repetitive nature of each atom's position. The approach so far has been to start off with a lattice of points as in fig 68, or 69 and form the diffraction pattern, which is the fourier transform, but in an experiment things are the other way round, the data is the diffraction pattern and we want to know each atom's position. The use of fast computers and new algorithms nowadays make most of the analysis automatic, nevertheless the fundamentals must be understood otherwise how would one know if the results of automatic analysis make sense? 
 # 
@@ -198,7 +198,7 @@
 # 
 # Leaving these problems aside for the present, the first step in determining the structure is to obtain the unit cell dimensions and this means understanding the Miller indices to describe planes of atoms.
 
-# ### 13.3 Unit Cell, Miller indices and planes of atoms
+# ## 13.3 Unit Cell, Miller indices and planes of atoms
 # 
 # The convention in describing crystals is that a _crystal structure_ consists of atoms, a _crystal lattice_ consists of points, and a _crystal system_ consists of axes usually described by vectors. In a crystal the _unit cell_ represents a repeated structure containing the atoms positions and is described by vectors $\bar a,\bar b, \bar c$, which need not be at right angles to one another. The unit cell is normally taken to have the minimum size needed to describe the repeating nature of the atoms. If a point in the unit cell is chosen to be the origin, a corner for example, this single position, when repeated over and over in the crystal, forms a lattice of points as in Fig 68. This lattice will belong to one of the $7$ crystal systems and $14$ Bravais lattices. The origin does not have to be the position of an atom but often is. The other atoms then form a similar lattice but displaced in a manner described by the atom's position relative to the origin, this is equivalent to imagining that the whole unit cell is replicated again and again to form the crystal. 
 # 
@@ -213,7 +213,7 @@
 # 
 # An alternative way to find the Miller indices is to look along the edges of the unit cell and count how many unit cells it takes to meet the line whose $(hkl)$ is required. These three numbers are then listed, e.g. $(3a,\infty b,2c)$. The reciprocal of the integers is taken to make $(1/3,0,1/2)$ and then the fractions cleared by multiplying by the common factor to give $(2,0,3)$. 
 
-# ### 13.4 Calculating the unit cell and indexing 
+# ## 13.4 Calculating the unit cell and indexing 
 # 
 # The unit cell dimensions can often be found using power diffraction, and you will probably have done such an experiment in a practical course. In this method the crystals are crushed and placed into a narrow glass capillary tube which is placed in the centre of the instrument. The detector moves in an arc round the sample and the diffracted x-ray  are recorded as a function of the angle. This arrangement is called a Debye - Scherrer camera. In the past the detector was a strip of photographic film that was darkened by the x-rays and older textbook show the images produced as arcs on this paper. Nowadays a particle counting or imaging detector is used but in either case a plot of angle vs. intensity is produced. The crystals are at random angles (in $\theta$ and $\phi$) but by Bragg's law the diffraction can occur only at certain $\theta$ angles of the planes of atoms to the x-ray beam (see fig72(A) but those planes can be anywhere around the x-ray beam at an angle $\phi$, i.e. there is cylindrical symmetry. Different $hkl$ planes diffract at different angles and so several cones are produced, see fig 73. As there are numerous crystals, all angles $\phi$ around the x-ray beam direction (at a given $2\theta$ ) will diffract and so the all cones will have many photons.  The detector will intercept only a few of these as it moves in an arc, see fig 74, and produce a series of lines with a characteristic pattern.
 # 
@@ -245,7 +245,7 @@
 # 
 # There are other methods such as visibly aligning a single crystal along a particular axis and using a rotation method to separate out different $hkl$ because the alignment fixes one of these values and these methods are detailed in specialist texts such as McKie & Mckie 'Essentials of Crystallography' publ. Blackwell, 1986. 
 
-# ### 13.5 Atomic Structure Factors
+# ## 13.5 Atomic Structure Factors
 # 
 # As the x-rays scatter off the electrons in an atom, clearly the more electrons there are the greater the scattering will be. Thus we expect, and observe, that heavy atoms produce much more intense bright spots on a detector than do lighter atoms. However, atoms are not point objects but have a real size with an electron 'cloud' radius that is only a little smaller than a bond length. Electron density is greater towards the atom's centre and less towards the perimeter.  
 # 
@@ -260,7 +260,7 @@
 # Figure 77. Calculated atomic scattering factors.
 # ________
 # 
-# ### 13.6 Fourier Synthesis
+# ## 13.6 Fourier Synthesis
 # 
 # To illustrate how fourier synthesis can work, suppose that there is a 'crystal' of only three diatomic molecules. Adding waves of different random frequencies but the same phase as shown in figure 1 of this chapter will always produce a complicated and repeating wave. By adding waves of *different amplitude*, _frequency_ and _phase_ it is possible to construct a total wave that is localised where the peaks are. Furthermore, relatively few waves are needed as shown in fig. 78. The left panel shows, at the top, the three molecules positioned face-on and the right-hand panel positioned edge-on, the summed wave is shown immediately below (brown) and the individual waves are numbered with their frequency. It is clear that with only a few waves their summed values can reproduce, quite well, the positions of the atoms. In an x-ray diffraction experiment the peaks would represent electron density and summing the waves is equivalent to calculating equation D1 given above. 
 # 
@@ -276,7 +276,7 @@
 # Figure 79. Contour plot combining total waves from fig. 78 and shown as contours. The two central contours have the largest values, with others decreasing outwards.
 # ______
 
-# ### 13.7   The Structure Factor $F_{hkl}$
+# ## 13.7   The Structure Factor $F_{hkl}$
 # 
 # The structure factor, $F_{hkl}$, measures the size of the scattering from each $hkl$ plane by taking into account where the atom is relative to the plane and the atomic scattering factor, $f_q$, for that particular atom. To do the calculation, waves from each atom in the unit cell have to be summed as they are in superposition. The result could be zero if the total, by symmetry adds up to this or could be positive or negative. A zero result is an example of systematic absences.  In chapter 1 the superposition of cosine waves of frequency $\omega$ and phase $\varphi$, such as $\psi=a\cos(\omega t +\varphi)$, was examined. The more general wave is written as a complex exponential, with $i=\sqrt{-1}$,
 # 
@@ -308,7 +308,7 @@
 # 
 # In some cases, particularly when the origin of the unit cell is centro-symmetric, (has a centre of inversion) the structure factor is always real and the phase angle can only be $0$ or $\pi$ so $e^{i\varphi} =\pm 1$. 
 # 
-# ### 13.8 Example of calculating the structure factors, TiO$_2$
+# ## 13.8 Example of calculating the structure factors, TiO$_2$
 # 
 # To calculate the structure factor and so spot intensity we use the coordinates for TiO$_2$ which has a tetragonal structure with $a = b = 4.653\, ,c=2.969$, $\alpha=\beta=\gamma=90^\text{o}$ with $a,b,c$ in Angstrom. Figure 80 shows the structure. The repeating unit consists of two Ti atoms and four oxygens. The central Titanium is octahedrally coordinated with respect the the oxygens and the other Ti atoms are at the corners of the square prism. The atom coordinates are 
 # 
@@ -330,7 +330,7 @@
 # Figure 80. The structure of Ti0$_2$. The Ti atoms are black the oxygen red and the numbered O atoms show the repeating unit containing the Ti atom at the lower left connected to oxygen 1 and the central one. The atoms are not shown at their real size, the O$^{2-}$ has a radius $\approx 1.23$ Angstrom and the Ti$^{4+}\approx 0.65$ Angstrom.
 # ______
 # 
-# #### **(100) reflexion**
+# ### **(100) reflexion**
 # 
 # In this and the other reflexions we will calculate the structure factor by examining individual waves rather than plugging values into eqn. D4. Of course in practice the equation would always be used but it is useful to gain an insight into what the equation means. 
 # 
@@ -345,7 +345,7 @@
 # Figure 81. Left. View down the $c$ axis showing the $(100)$ plane and the distance used in calculating the   structure factor $F_{100}$. The Ti ions are shown in black the oxygens in red. Right. Showing the waves belonging to each atom in this reflexion. Each wavelength is $d_{100}$. The sum of all waves is zero.
 # ______
 # 
-# #### **(200) reflexion**
+# ### **(200) reflexion**
 # 
 # Although the $(200)$ planes are parallel to $(100)$ the $(200)$ reflection is not zero. This can be seen in fig. 82, and is because the $d_{200}$ is half that of $d_{100}$. This means that Ti$_1$ and Ti$_2$ are now in phase with one another as each is on a $(200)$ plane and therefore each has zero phase. The phase contribution from the Ti ions is therefore $2f^{Ti}_{d_{200}}\cos(0)=2f^{Ti}_{d_{200}}\cos(0) = 16.02$ where the number is the value of the atomic scattering factor at $1/2d_{200}=0.214$. Pairs of oxygen atoms are in the same relative symmetry, $1 : 3$ and $2 : 4$ so only the phase of O$_2$ and O$_3$ need be calculated.  Oxygen 2 is at $y/b=0.8025$ so the structure factor is $F^O_{d_{200}}\cos( 2\pi h 0.8025)= -4.76$ where $k=l=0$ and $x/a=0.8025$. The same value is found for all the oxygen atoms making the total structure factor $F_{d_{200}}= 13$ and the intensity $169$.
 # 
@@ -354,7 +354,7 @@
 # Figure 82. Left. Same view as figure 81.  The $(200)$ planes are shown as lines. Right The waves from each atom and their sum is shown in red whose amplitude is moderate. By symmetry oxygens $1$ and $3$ contribute equally as do $2$ and $4$.
 # _______
 # 
-# #### **(110) reflexion**
+# ### **(110) reflexion**
 # 
 # The (110) reflection is strong, fig. 83. All the Ti atoms are in the (110) plane and so their phase is $0$ or $2\pi$ thus the cosine is unity and the amplitude of each is $f^{Ti}_{d_{110}}=16.95$ where $1/2d_{110}= 0.152$. Oxygens $1$ and $2$ are also in the plane and their phase is similarly $2\pi$ thus each amplitude is $f^O_{d_{110}}=6.96$. The other oxygens are at fractional distances of $d_{110}$. Oxygen 3 is at a distance $D_{O3}=2.003$ which is a phase angle of $2\pi 2.003/4.65\equiv 219^\text{o}$ with amplitude $f^O_{d_{110}}\cos(2\pi 0.43)=-5.39$. The fourth oxygen also has a phase angle of $-219^\text{o}$ but adds towards the total because $\cos(-\theta)=\cos(\theta)$. From all 6 atoms in the unit cell the total structure factor is $F_{110}=37$ so the intensity is $1369$ and should be seen as an intensely bright spot.
 # 
@@ -363,7 +363,7 @@
 # Figure 83. Left. Same view as figure 81 showing the (110) planes. Right The waves from each atom and their sum shown in red whose amplitude is large. By symmetry the oxygens $1$ and $2$ contribute identically as do $3$ and $4$. 
 # _______
 # 
-# ### 13.9 Fourier synthesis
+# ## 13.9 Fourier synthesis
 # 
 # Having obtained structure factors we can attempt to find the position of the atoms. All that has to be done is to use eqns D3 with D5. Of course we already know the answer but let us check that we can reproduce the positions of the atoms of fig 81 for example, and by looking down the $c$ axis calculate the projection of the structure onto the $a-b$ plane.  Figure 84 shows the result where the centroid of the contours are in the same relative positions as the original, fig 81. The most intense features arise from the Ti atoms as they contain most electrons. This figure was calculated by dividing the unit cell into a $40 \times 40\times 40$ grid and summing along the $c$ axis. Only $hkl$ values from $-5 \to +5$ were used showing that a reasonable reproduction of the structure is possible using a relatively limited range of. Using a larger range of $hkl$ reduces the spot sizes as smaller $d_{hkl}$ are used and so the resolution increases.
 # 
@@ -386,7 +386,7 @@
 # The absolute values used in $R$ just means that all $F$ are positive. An $R$ value of less that $\approx 0.2$ may be acceptable as an initial fit, but half this value or better is expected for a refined fit to the data. The $R$ factor between the two structures, fig. 85, is $0.26$ showing that the agreement between them is poor as is clear from the images of the projections. The bond lengths Ti to oxygen 1 (or 2) is only changed by 0.023 nm in a bond length of 0.20 nm and this shows how sensitive x-ray diffraction is to small changes in geometry. The bond length Ti to oxygen 3 (or 4) is similar to that for the other two oxygens and is $0.196$ nm but looks less because of the projection down the $c$ axis.
 # 
 
-# ### 13.10 Xray Diffraction from DNA
+# ## 13.10 Xray Diffraction from DNA
 # 
 # Figure 85a is a copy of the original figure from Rosalind Frankin and R. Gosling's 1953 paper (Nature, v.171, p.740, 1953) which showed for the first time the x-ray diffraction pattern from para-crystalline, calf thymus B-DNA fibres. In the same issue is the famous paper by Watson and Crick (Nature v.171, p.737, 1953) in which they speculate, with a sketch of the same, that the DNA is a double helix with base pairs inside the helices and the phosphates on the outside. They comment 'we have been stimulated by a knowledge of the general nature of the unpublished experimental results of Dr. M. H. F. Wilkins and Dr. R. E. Franklin' which brings us back to figure 85a. Three quarters of a century later, the quality of this image looks poor but recall that this was recorded on photographic plates and that transistors, and thus integrated circuits, had not been invented and neither had electronic detectors, such as ccd's, and computers were all but unknown. The fact that sensitivity was low by modern standards means that the only spots ('blobs') detected come from atoms with the most electrons which are the phosphorous atoms, or possibly the phosphate group, and knowing this greatly helps identification.  Naturally far better x-ray data was soon available but it is very interesting to see how the limited original data lead to a correct understanding of the structure.
 # 

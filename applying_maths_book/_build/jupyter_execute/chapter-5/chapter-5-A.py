@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## Series, averages, partition functions, DNA melting, atom entropy
+# # Series, averages, partition functions, DNA melting, atom entropy
 
 # In[1]:
 
@@ -15,7 +15,7 @@ init_printing()                      # allows printing of SymPy results in types
 plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 
-# ### Power series
+# ## Power series
 # 
 # The series expansions of exponential, sine, and cosine functions have been described in earlier chapters and there is nothing unusual or special about these. Any regular function can be expanded in a similar manner in powers of $x$, to produce its unique power series, which is in general
 # 
@@ -66,7 +66,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # The expansion of $1/(1 + x)$ and of $1/(1 + ax)$, for example, follows immediately by substitution of $x \rightarrow -x $ and $x \rightarrow ax$  into the series of equation (1). In the latter case for the series to be valid $|\, ax \,| < 1$, where $a$ is a constant.
 # 
-# #### **Summation of waves**
+# ### **Summation of waves**
 # The summation of waves occurs in fourier analysis, a wave in its general form is $e^{-i\omega t}$ which propagates at frequency $\omega$ and time $t$. The sum of many waves of different frequency and in phase with one another produces a pulse, this is how a pulse is formed in a mode-locked laser. It is also how diffraction from an array of scatterers, (electrons in atoms) produces a spot in a x-ray diffraction pattern from a single crystal. The sum to $N$ terms is formed from waves at frequencies $n\omega$, 
 # 
 # $$\displaystyle S=\sum_{n=-N}^N e^{-in\omega t}$$
@@ -85,7 +85,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # which is a series of spikes separated by $2\pi/\omega$, see fig. 21b chapter 9 (Fourier transforms). 
 # 
-# #### **Diffraction**
+# ### **Diffraction**
 # Suppose that there is a line of identical oscillators each emitting waves in the arrangement of figure 0. These could be a row of slits in a transmission grating or reflective strips in a reflection grating but in either case the sources are all in phase and emit over all angles. Thy could also be water waves or scattered off atoms by x-rays. If we observe at some distant point, a distance many times larger than the grating period $d$, and at an angle $theta$ we would like to know how the intensity of the summed waves varies as $theta$ is changed. At some angles the waves will be in phase with one another and so produce a wave of maximum amplitude, less so at another angle and at yet other angles be completely out of phase. Thus we expect to repeatedly see bright and dark regions as the angle is changed. 
 # 
 # The calculation to do this means adding up the path lengths from each emitter and seeing what the total path is. The total number of wavelengths does not matter just what the surplus over a whole number of waves is, as this determines the phase and hence amplitude.
@@ -143,7 +143,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # which is a _sinc_ function, i.e. a central lobe plus decreasing oscillations to either side.
 
-# #### **Making new series**
+# ### **Making new series**
 # **(i)** New series can often be made from existing ones. Suppose each term in the series of $f(x)=1+x+x^2+\cdots$ is differentiated, then using eqn 2,
 #  
 # $$\displaystyle f^′(x)= \frac{1}{(1 - x)^2} =1+2x+3x^2 +4x^3 +\cdots+nx^{n-1} +\cdots  \tag{3}$$
@@ -172,7 +172,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # but notice that there are now new limits. We can of course change notation and replace $y$ with $x$ or $p$ or any other symbol.
 # 
-# #### Table of summations
+# ### Table of summations
 # 
 # $$\displaystyle \begin{array}{l|l|l}
 # \hline
@@ -232,7 +232,7 @@ plt.show()
 # Figure 1. The function $1/(1-x)^2 $ (top black line) and its series approximations  $\Sigma_n nx^{n-1}$ with $n$ = 1, 2, $\cdots$. 
 # _____
 # 
-# ### 1.1 Convergence
+# ## 1.1 Convergence
 # 
 # In summing a series, it is important to ensure that it converges to some sensible expression such as $1/(1 - x)$, and is not going to be infinite or undefined. With many series, the summation is infinite and cannot therefore be expressed in a simple form. There are a number of convergence tests to ensure that a series has a finite result; many of these are complex, but a ratio test is a good way of determining if the series will be finite.
 # In the ratio test, the ratio of any term $w$ in the series to its preceding term is calculated
@@ -247,7 +247,7 @@ plt.show()
 # 
 # In general, a series converges if $x$ is smaller than some number $s$, so that $|x_0 - x| \lt s$ where $x_0$ is a displacement about which the series converges; see Section 6 describing Taylor series for examples of this. The number $s$ can be determined from the convergence test, Fig. 2. A useful property is that if a power series converges to some number and if each term of it is differentiated, the resulting series can be shown also to converge.
 # 
-# ### 2 Average quantities
+# ## 2 Average quantities
 # 
 # Any quantity, $x$, which is one of a set of measurements has an average value
 # 
@@ -263,7 +263,7 @@ plt.show()
 # 
 # A more meaningful description is that $\sigma$ is the _dispersion_ in the value of $x$, meaning it is the spread in its value; experimental values are often quoted as $\langle x \rangle \pm \sigma$. The chapter on integration has examples of averaging using integrals rather than summations, and variance is described in Chapter 13 Data analysis.
 # 
-# #### **(i) Average energy of a molecule or atom** 
+# ### **(i) Average energy of a molecule or atom** 
 # 
 # The average energy is described by
 # 
@@ -303,7 +303,7 @@ plt.show()
 # 
 # If rotational levels are considered typically several tens of levels are populated at room temperature and the summation therefore involves many terms, for example if the rotational constant $B=1\;\mathrm{cm^{-1}}$, $\approx 55 $ levels are needed to produce a constant average energy of $\approx 14500\;\mathrm{cm^{-1}}$. A vibration of $1000\;\mathrm{cm^{-1}}$ levels only to $n=2$ are needed to produce four figure accuracy of $500.4 \; \mathrm{ cm^{-1}}$.
 # 
-# #### **(ii) Polymers**
+# ### **(ii) Polymers**
 # In synthesizing polymers by radical or condensation polymerisation, the random nature of the chemistry that adds monomers to an already growing chain dictates that a range of polymer lengths is normally produced; the polymer is poly-disperse. Two different averages are frequently taken to characterize the polymer; one is the number average mass, the other the weight average mass. 
 # 
 # The number average mass $m_n$ is
@@ -326,7 +326,7 @@ plt.show()
 # 
 # which is clearly not the same as $\langle m_n \rangle$. The two averages are approximately linear, for $a<1$, if plotted on a log-log plot and have a negative slope, with $\langle m_w\rangle \gt \langle m_n\rangle$. When $a \gt 1$ the two curves converge to a limiting value of $m_0$.
 # 
-# #### **(iii) Sequence repeats in DNA**
+# ### **(iii) Sequence repeats in DNA**
 # 
 # Our DNA is packaged into $46$ chromosomes (22 pairs and 2 sex chromosomes) but each chromosome is still too vast to analyse and so it is broken into more manageable pieces by mechanical or chemical or enzymatic means. If we want to identify a particular sequence, say of $n$ base pairs  we will want to estimate what is the average separation of these is so that a suitable number of fragments are present containing the sequence.  It is assumed that the DNA is initially so long, $\sim 10^6$ base pairs, that there are equal amounts of GCAT bases. If the sequence to identify is $n=8$ bases long and is GGCATGGA then the chance of finding the first G is $1/4$ and of the second adjacent G is $ 1/16$ and as each event is independent of any other the probabilities multiply to give $\displaystyle p=\frac{1}{4}\frac{1}{4}\frac{1}{4}\cdots= \frac{1}{4^n}$, thus for $n=8$ the chance of finding any specified consecutive sequence is very small $1/4^8=1/65536$. This is true whatever the sequence is as long as the bases are in a fixed order. To detect an 8-mer the fragment will, of course, have to have on average at least these many bases since we do not know before hand if the sequence is present. What then is the average distance from one sequence to the next? The probability of _not_ seeing the next sequence in $m$ moves is $(1-1/4^n)^{m-1} $ and then seeing one in the next move is the product
 # 
@@ -344,7 +344,7 @@ plt.show()
 
 # 
 # 
-# ### 3 Partition Functions
+# ## 3 Partition Functions
 # 
 # One of the commonest uses of the summation of a series of terms is in the calculation of the partition function. These are met formally in statistical mechanics but are also used in kinetic theory and in spectroscopy.
 # 
@@ -386,7 +386,7 @@ plt.show()
 # 
 # which is equation 12. The partition function, $Z$, is the normalization term and determines what fraction of the total energy is in each level or how energy is partitioned among the various level
 
-# #### **(i) Bond rotation** 
+# ### **(i) Bond rotation** 
 # 
 # The use of the word 'particle' is rather general, it might represent a molecule in a given vibrational or rotational energy level, a nuclear spin state in an NMR experiment, or the torsional energy of a restricted rotor as in the alkyl chain of hydrocarbons (Jackson 2006). In this example, consider butane, which has trans and gauche configurations as shown in figure 1a. These have different energies due to interactions between the protons on carbon $1$ and $4$ as bond C2 to C3 rotates.
 # 
@@ -413,7 +413,7 @@ plt.show()
 # 
 # ___________________________
 # 
-# #### **(ii) DNA melting: Zipper model**  
+# ### **(ii) DNA melting: Zipper model**  
 # 
 # DNA can melt if the temperature is raised a little above room temperature, $60 \to 70^\text{o}$C would be typical depending on the composition. As a very simple model(see sketch) suppose that as the double stranded molecule unfolds the separated residues become free to move about on the backbone, with degeneracy $g$, but linked residues remain fixed in place. One end of the double stranded molecule is fixed thus the molecule can only unfold from the other. Link $n$ can only open if all those before it are already open, i.e. links $n=0,1,2,\cdots, N-1$ and the energy to do this is $\epsilon$ so that $n$ open links have energy $n\epsilon$. Closed links have energy zero and the energy needed to open a link other than that next to already open ones is infinite.  This model was first examined by C. Kittel Am. J. Physics, v37, p917, 1969.
 # 
@@ -463,7 +463,7 @@ avn
 # 
 # At low values of $\epsilon/k_BT$, which means at high temperature or zero energy to unfold, almost the whole zipper is unfolded, as intuition would suggest Conversely at large $\epsilon/k_BT$, low temperature or large unfolding energy almost all bonds are intact. The transition between the two is quite sharp and occurs at $\ln(g)=\epsilon/k_BT$ as can be seen in equation 12b. The heat capacity which is $d\langle E\rangle/dT$ shows a sharp peak at this value. This overall behaviour  somewhat unexpected, the model does not immediately suggest that a 'phase transition' should occur. In effect it means that either the zipper is closed or it is fully open and hardly ever in between. 
 
-# #### **(iii) Entropy of atoms and molecules**
+# ### **(iii) Entropy of atoms and molecules**
 # 
 # In the gas phase the entropy of atoms can be calculated knowing the contribution from translation and electronic terms. The calculation is in two parts, first the partition function must be evaluated and then used to obtain the entropy. 
 # 

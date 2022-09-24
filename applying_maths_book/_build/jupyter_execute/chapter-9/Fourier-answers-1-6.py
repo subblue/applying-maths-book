@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## Solutions Q 1 - 6
+# # Solutions Q 1 - 6
 
 # In[1]:
 
@@ -16,7 +16,7 @@ init_printing()                         # allows printing of SymPy results in ty
 plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 
-# ### Q1 answer 
+# ## Q1 answer 
 # To confirm the integrations involved in calculating $b_n$, the method of section 1.4, eq. 12 can be used. Each term in the series is multiplied by $\sin(mx)$, and then integrated over the range $\pm\pi$. The series $g(x)$ is given by eqn 1 and approximates $f(x)$ as 
 # 
 # $$\displaystyle  f(x) \approx g(x) = \frac{a_0}{2}+ \sum\limits_{n=1}^\infty a_n\cos(nx) + \sum\limits_{n=1}^\infty b_n\sin(nx)   $$
@@ -49,7 +49,7 @@ I0
 # 
 # $$\displaystyle   b_n= \frac{1}{\pi}\int\limits_{-\pi}^{+\pi}f(x)\sin(nx)dx \qquad  (n \gt 0)  $$
 # 
-# ### Q2 answer   
+# ## Q2 answer   
 # The sine function is odd therefore only $b$ terms are present and
 # 
 # $$\displaystyle b_n=\frac{1}{L}\int_{-L}^L \sin(x)\sin(n\pi x/L)dx $$
@@ -81,7 +81,8 @@ I0
 
 
 # plot fourier sine series   =  sum (bn sin(n.pi.x/L) n=1...) 
-fsin = lambda x, L ,k : 2*np.pi*np.sin(L)            *sum( (-1)**(n+1)*n*np.sin(n*np.pi*x/L)/(np.pi**2*n**2 - L**2) for n in range (1,k))
+fsin = lambda x, L ,k : 2*np.pi*np.sin(L)\
+            *sum( (-1)**(n+1)*n*np.sin(n*np.pi*x/L)/(np.pi**2*n**2 - L**2) for n in range (1,k))
 L = 10.0
 x = np.linspace(-L,L,500)
 
@@ -100,7 +101,7 @@ plt.show()
 
 # ________
 # 
-# ### Q3 answer
+# ## Q3 answer
 # (a) Using equations (1) to (3) for $a$ and $b$ gives
 # 
 # $$\displaystyle a_n = \frac{1}{\pi}\int_{-\pi}^\pi (\frac{\pi}{2}-x)\cos(nx)dx $$
@@ -149,7 +150,7 @@ plt.show()
 
 # Plot of $\pi$/2 - $x$ (dashed, straight line) and its Fourier series with  $n$ = 5 and 50, over the range $\pm \pi$. The series is zero at $x = \pm \pi$ and would repeat itself indefinitely if drawn to larger positive and negative $x$.
 # ________
-# ### Q4 answer
+# ## Q4 answer
 # 
 # (a) The result of the Hermite series summation using Algorithm in section 9.2 with appropriate changes, and with 20 terms in the series, is shown in the left-hand panel in Fig.3. This is a similar fit to the Fourier method for this particular function although it deviates at the extremities because the method assumes the function is periodic, which it is not. More terms in the summation improve the fit but numerical instability can become important due to the factorial and large powers involved.
 # 
@@ -242,7 +243,7 @@ plt.legend()
 plt.show()
 
 
-# ### Q5 answer
+# ## Q5 answer
 # (a) The generating function result can be obtained as described in the text, and SymPy is definitely an advantage here. Note that the series is expanded in $u$ and terms in $x$ collected.
 
 # In[8]:
@@ -300,7 +301,7 @@ for i in range(6):
     print('L(',i,',x)',simplify(Lag(i,x)))
 
 
-# ### Q6 answer
+# ## Q6 answer
 # The value of $m$ has to be decided first,as this is not iterated, then values of $l$ calculated. Choosing $m$ = 0 with $l = 0$ gives $P_m^m = P_0^0 = 1$ and when $l = 1$ then $P_{m+1}^m = P_1^0 = xP_0^0 = x$. The recursion equation (22) can now be used to find $P_2^0$ with $l=2$, which is
 # 
 # $$2P_2^0=3xP_1^0 - P_0^0= 3x^1-1$$

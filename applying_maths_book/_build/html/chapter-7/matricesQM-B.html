@@ -1,0 +1,1751 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Basis sets and bra-ket algebra &#8212; Applying Maths in the Chemical &amp; Biomolecular Sciences</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/book-cover.jpg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Applying Maths in the Chemical & Biomolecular Sciences</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Applying Maths in the Chemical and Biomolecular Sciences.
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-1/chapter1-intro.html">
+   1. Numbers, Equations, Operators, and Algorithms.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-A.html">
+     Numbers to Algorithms.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-Q1-7.html">
+     Questions 1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-B.html">
+     Trig, hyperbolic and inverse functions, waves, polar coordinates &amp; factorials
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-Q8-16.html">
+     Questions 8 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-C.html">
+     Sophisticated Counting.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-Q17-34.html">
+     Questions 17 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-D.html">
+     Modulo arithmetic,
+     <span class="math notranslate nohighlight">
+      \(\delta\)
+     </span>
+     functions, types of  series &amp;  estimating quantities
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-Q35-39.html">
+     Questions 35 - 39
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-answers-1-7.html">
+     Solutions Q1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-answers-8-16.html">
+     Solutions Q8 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-answers-17-34.html">
+     Solutions Q17 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-answers-35-39.html">
+     Solutions Q35 - 39
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-2/chapter2-intro.html">
+   2. Complex numbers.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2/chapter2-A.html">
+     Real, imaginary, conjugate and modulus
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2/chapter2-Q-1-9.html">
+     Questions 1 - 9
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2/chapter2-B.html">
+     De Moivre’s theorem and integer powers of complex numbers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2/chapter2-Q-10-13.html">
+     Questions 10 -13
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2/chapter2-Q-14-29.html">
+     Questions 14 - 29
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2/chapter2-answers.html">
+     Solutions Q1 - 27
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-3/differen-intro.html">
+   3. Differentiation.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-A.html">
+     Differentiation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-B.html">
+     Trig functions, logs, power, reciprocals and integrals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-C-Q-4-11.html">
+     Questions 1-11
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-D.html">
+     Product rule and function of function or chain rule.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-E-Q-12-42.html">
+     Questions 12-42
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-F.html">
+     Limits, l’Hopital’s rule, Maximum, Minimum and Calculus of Variations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-G-Q-43-73.html">
+     Questions 43 - 73
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-H.html">
+     Numerically finding the roots of an equation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-I-Q-74-85.html">
+     Questions 74 - 85
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-J.html">
+     Minimizing or maximizing with constraints: Lagrange Undetermined Multipliers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-K-Q-86-92.html">
+     Questions 86 - 92
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-L.html">
+     Partial differentiation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-M-Q-93-114.html">
+     Questions 93-114
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-M1.html">
+     Differentiation of vectors
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-N-answers-1-11.html">
+     Solutions Q 1-11
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-O-answers-12-42.html">
+     Solutions Q 12-42
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-P-answers-43-73.html">
+     Solutions Q 43 - 73
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-Q-answers-74-85.html">
+     Solutions Q 74 - 85
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-R-answers-86-92.html">
+     Solutions Q 86 - 94
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-S-answers-93-114.html">
+     Solutions Q 93-114
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-4/integration-intro.html">
+   4 Integration.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-A.html">
+     Integration basics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-Q1-14.html">
+     Questions 1-14
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-B.html">
+     Integration by substitution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-Q15-30.html">
+     Questions 15-30
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-C.html">
+     Using parametric equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-Q31-48.html">
+     Questions 31 - 48
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-D.html">
+     Calculating an Average.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-Q49-72.html">
+     Questions 49 - 72
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-E.html">
+     The Variational Method in Quantum Mechanics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-Q73-77.html">
+     Questions 73 - 77
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-F.html">
+     Multiple integrals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-Q78-86.html">
+     Questions 78 - 86
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-G.html">
+     Calculating the energy of a Chemical Bond using Molecular Orbitals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-H.html">
+     Line integrals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-Q87-96.html">
+     Questions 87 - 96
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-answers-1-14.html">
+     Solutions Q1 - 14
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-answers-15-30.html">
+     Solutions Q15 - 30
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-answers-31-48.html">
+     Solutions Q31 - 48
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-answers-49-72.html">
+     Solutions Q49 - 72
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-answers-73-96.html">
+     Solutions Q73 - 96
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-5/chapter-5-intro.html">
+   5. Summations, Series and expansion of Functions.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-A.html">
+     Series, averages, partition functions, DNA melting, atom entropy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-B-Q1-13.html">
+     Questions 1 - 13
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-E.html">
+     Maclaurin and Taylor series expansions. Paramagnetic spins. Euler-Maclaurin formula.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-F-Q14-34.html">
+     Questions 14 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-G-Q35-44.html">
+     Questions 35 - 44
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-perturbation-A.html">
+     Perturbation Theory
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-perturbation-B-Q45-48.html">
+     Questions 45 - 48
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-perturbation-C.html">
+     Quantum superposition and wavepackets.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-perturbation-D-Q49-52.html">
+     Questions 49 - 52
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-answers-1-7.html">
+     Solutions Q 1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-answers-8-13.html">
+     Solutions Q8 - 13
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-answers-14-26.html">
+     Solutions Q 14 - 26
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-answers-27-32.html">
+     Solutions Q27 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-answers-33-44.html">
+     Solutions Q33 - 44
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-answers-45-52.html">
+     Solutions Q45 - 52
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-6/vectors-intro.html">
+   6. Vectors.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-A.html">
+     Vector basics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-Q1-24.html">
+     Questions 1 - 24
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-B.html">
+     Projections and components
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-Q25-32.html">
+     Questions 25 - 32
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-C.html">
+     Axes need not be right-angled or of equal length
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-Q33-38.html">
+     Questions 33 - 38
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-D.html">
+     Basis sets with more than three dimensions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-Q39-46.html">
+     Questions 39 - 46
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-E.html">
+     Cross product or vector product
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-Q47-52.html">
+     Questions 47 - 52
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-F.html">
+     Torsion or dihedral angles
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-Q53-48.html">
+     Questions 53 - 48
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-G.html">
+     Torque and angular momentum
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-Q59-61.html">
+     Questions 59 - 61
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-answers-Q1-24.html">
+     Solutions Q1 - 24
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-answers-Q25-32.html">
+     Solutions Q25 - 32
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-answers-Q33-38.html">
+     Solutions Q33 - 38
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-answers-Q39-46.html">
+     Solutions Q39 - 46
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-answers-Q47-52.html">
+     Solutions Q47 - 52
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-answers-Q53-61.html">
+     Solutions Q53 - 61
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="matrices-intro.html">
+   7. Matrices
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-A.html">
+     Determinants
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-Q1-10.html">
+     Questions  1 - 10
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-B.html">
+     Matrices
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-Q11-16.html">
+     Questions  11 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-C.html">
+     Molecular Group Theory
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-Q17-30.html">
+     Questions  17 - 30
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-D.html">
+     Rotation matrices: moving molecules. Coordinate transform as rotation.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-Q31-34.html">
+     Questions 31 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-E.html">
+     Matrices in optics and designing laser cavities
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-Q35-39.html">
+     Questions 35 - 39
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-F.html">
+     Polarizing optics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-Q40-44.html">
+     Questions 40 - 44
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-G.html">
+     Solving equations using matrices. Eigenvectors &amp; Eigenvalues.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-Q45-50.html">
+     Questions 45 - 50
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-H.html">
+     Rate equations and Chemical Kinetics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-Q51-54.html">
+     Questions 51 - 54
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-I.html">
+     Molecular vibrations and pendulums
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-Q55-58.html">
+     Questions 55 - 58
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-J.html">
+     Moments of Inertia
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-Q59-60.html">
+     Questions 59 - 62
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-L.html">
+     Principal axes for Moments of Inertia
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-Q61-62.html">
+     Question 61 - 62
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-answersQ1-10.html">
+     Solutions Q1 - 10
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-answersQ11-16.html">
+     Solutions Q11 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-answersQ17-30.html">
+     Solutions Q17 - 30
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-answersQ31-34.html">
+     Solutions Q31 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-answersQ35-39.html">
+     Solutions Q35 - 39
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-answersQ40-44.html">
+     Solutions Q40 - 44
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-answersQ45-50.html">
+     Solutions Q45 - 50
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-answersQ51-54.html">
+     Solutions Q51 - 54
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-answersQ55-58.html">
+     Solutions Q55 - 58
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-answersQ59-61.html">
+     Solutions Q59 - 61
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-8/matricesQM-intro.html">
+   8. Matrices in Quantum Mechanics
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-8/matricesQM-A.html">
+     Matrices in Quantum Mechanics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-8/matricesQM-Q1-7.html">
+     Questions 1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-8/matricesQM-B.html">
+     Basis sets and bra-ket algebra
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-8/matricesQM-Q8-12.html">
+     Questions 8 - 12
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-8/matricesQM-C.html">
+     Continuous basis sets
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-8/matricesQM-answers1-7.html">
+     Solutions Q1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-8/matricesQM-answers8-12.html">
+     Solutions Q8 - 12
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-9/Fourier-intro.html">
+   9. Fourier Series and Transforms.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-A-B.html">
+     Fourier series, Gibbs phenomenon, generalised series.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-questions-1-6.html">
+     Questions 1 - 6
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-C.html">
+     Fourier Transforms
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-questions-7-15.html">
+     Questions 7 - 15
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-D.html">
+     Convolution and Autocorrelation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-questions-16-21.html">
+     Questions 16 - 21
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-E.html">
+     Discrete Fourier  (DFT)  and Fast Fourier transforms (FFT)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-F.html">
+     The Hadamard Transform: Encoding and Decoding
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-answers-1-6.html">
+     Solutions Q 1 - 6
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-answers-7-15.html">
+     Solutions Q 7 - 15
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-answers-16-21.html">
+     Solutions Q 16 - 21
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-2D-Diffraction.html">
+     The Fourier transform in two dimensions: images and x-ray Diffraction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-tomography.html">
+     Computed Tomography
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-10/Diff-eqns-intro.html">
+   10. Differential Equations.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-A.html">
+     Differential Equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-Q1-23.html">
+     Questions 1 - 23
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-B.html">
+     First order eqns &amp; Integrating factors. Second order eqns, Newtons laws, equations of motion.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-C.html">
+     The ‘D’ operator.  Solving linear differential equations with constant coefficients
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-D.html">
+     Simultaneous equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-Q24-37.html">
+     Questions 24 - 37
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-E.html">
+     Linear equations with variable coefficients
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-F.html">
+     Partial Differential Equations, PDE
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-G.html">
+     PDE examples continued
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-answers-1-21.html">
+     Solutions Q1 - 21
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-answers-22-37.html">
+     Solutions Q22 - 37
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-11/num-methods-intro.html">
+   11. Numerical Methods
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-A.html">
+     Numerical Methods
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-Q1-7.html">
+     Questions 1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-B.html">
+     Numerical solution of differential equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-Q8-12.html">
+     Questions 8 - 12
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-C.html">
+     Coupled equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-Q13-16.html">
+     Questions 13 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-D.html">
+     The phase plane, nullclines, and stable points
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-Q17-20.html">
+     Questions 17 - 20
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-E.html">
+     Reaction schemes with feedback
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-Q21-34.html">
+     Questions 21 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-F.html">
+     Boundary value problems.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-Q35-40.html">
+     Questions 35 - 40
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-answers1-7.html">
+     Solutions Q1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-answers8-12.html">
+     Solutions Q8 - 12
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-answers13-16.html">
+     Solutions Q13 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-answers17-20.html">
+     Solutions Q17 - 20
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-answers21-34.html">
+     Solutions Q21 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-answers35-40.html">
+     Solutions Q35 - 40
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-12/monte-carlo-intro.html">
+   12. Monte Carlo Methods
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+  <label for="toctree-checkbox-12">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-A.html">
+     Monte - Carlo Methods
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-Q1-6.html">
+     Questions 1 - 6
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-B.html">
+     Solving rate equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-Q7-10.html">
+     Questions 7 - 10
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-CC.html">
+     Monte Carlo Simulations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-C.html">
+     Energy transfer. Autocatalytic reaction and spreading of fires
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-Q11-17.html">
+     Questions 11 - 17
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-D.html">
+     The Metropolis algorithm
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-answers1-6.html">
+     Solutions Q1 - 6
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-answers7-10.html">
+     Solutions Q7 - 10
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-answers11-17.html">
+     Solutions Q11 - 17
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-13/analysis-intro.html">
+   13. Data Analysis
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+  <label for="toctree-checkbox-13">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-13/analysis-A.html">
+     Characterizing experimental data. Accuracy, precision, mean and standard deviation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-13/analysis-Q1-3.html">
+     Questions 1 - 3
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-13/analysis-B.html">
+     Modelling data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-13/analysis-Q4-9.html">
+     Questions 4 - 9
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-13/analysis-C.html">
+     Modelling data is simpler using matrices
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-13/analysis-Q10-11.html">
+     Questions 10 - 13
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-13/analysis-D.html">
+     Non-linear least squares. Least absolute deviation. Principal component analysis
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-13/analysis-answers1-11.html">
+     Solutions Q1 -11
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../chapter-1/chapter1-E.html">
+   SI units, Rounding, converting units &amp; Glossary.
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../references/References.html">
+   References
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../references/Python%20crib.html">
+   Appendix:  Some basic Python instructions with a few examples.
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/subblue/applying-maths-book/main?urlpath=lab/tree/applying_maths_book/chapter-7/matricesQM-B.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://colab.research.google.com/github/subblue/applying-maths-book/blob/main/applying_maths_book/chapter-7/matricesQM-B.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/subblue/applying-maths-book"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/subblue/applying-maths-book/issues/new?title=Issue%20on%20page%20%2Fchapter-7/matricesQM-B.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/chapter-7/matricesQM-B.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#to-each-ket-rangle-belongs-a-bra-langle">
+   4.1 To each ket
+   <span class="math notranslate nohighlight">
+    \(|\;\rangle\)
+   </span>
+   belongs a bra
+   <span class="math notranslate nohighlight">
+    \(\langle\;|\)
+   </span>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#discrete-basis-sets">
+   4.2 Discrete basis sets
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#inner-products-langle-alpha-beta-rangle">
+   4.3 Inner products
+   <span class="math notranslate nohighlight">
+    \(\langle\alpha |\beta\rangle\)
+   </span>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#outer-products-alpha-rangle-langle-beta-and-projection-operators-alpha-rangle-langle-alpha-are-matrices">
+   4.4 Outer products:
+   <span class="math notranslate nohighlight">
+    \(|\alpha\rangle\langle \beta|\)
+   </span>
+   and projection operators
+   <span class="math notranslate nohighlight">
+    \(|\alpha\rangle\langle\alpha|\)
+   </span>
+   are matrices
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Basis sets and bra-ket algebra</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#to-each-ket-rangle-belongs-a-bra-langle">
+   4.1 To each ket
+   <span class="math notranslate nohighlight">
+    \(|\;\rangle\)
+   </span>
+   belongs a bra
+   <span class="math notranslate nohighlight">
+    \(\langle\;|\)
+   </span>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#discrete-basis-sets">
+   4.2 Discrete basis sets
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#inner-products-langle-alpha-beta-rangle">
+   4.3 Inner products
+   <span class="math notranslate nohighlight">
+    \(\langle\alpha |\beta\rangle\)
+   </span>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#outer-products-alpha-rangle-langle-beta-and-projection-operators-alpha-rangle-langle-alpha-are-matrices">
+   4.4 Outer products:
+   <span class="math notranslate nohighlight">
+    \(|\alpha\rangle\langle \beta|\)
+   </span>
+   and projection operators
+   <span class="math notranslate nohighlight">
+    \(|\alpha\rangle\langle\alpha|\)
+   </span>
+   are matrices
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section id="basis-sets-and-bra-ket-algebra">
+<h1>Basis sets and bra-ket algebra<a class="headerlink" href="#basis-sets-and-bra-ket-algebra" title="Permalink to this headline">#</a></h1>
+<p>In this section, bra-ket algebra is described more fully together with basis sets and how they are intimately related to the bra and ket. Some algebra for manipulating the bra and ket is also described.</p>
+<section id="to-each-ket-rangle-belongs-a-bra-langle">
+<h2>4.1 To each ket <span class="math notranslate nohighlight">\(|\;\rangle\)</span> belongs a bra <span class="math notranslate nohighlight">\(\langle\;|\)</span><a class="headerlink" href="#to-each-ket-rangle-belongs-a-bra-langle" title="Permalink to this headline">#</a></h2>
+<p>In the Dirac notation, a ket is a column and a bra a row vector. The elements of the vector are those of the basis set used. Each ket always has a corresponding bra. The bra is formed as the <em>conjugate transpose</em> of the ket, which means converting column into row and then taking the complex conjugate of each term. Formally the ket is the Hermitian adjoint of the bra, see Chapter 7.4.8. For example, if the ket is</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} \displaystyle \qquad\qquad |v\rangle =\begin{bmatrix} a\\ b \\ c \end{bmatrix}\qquad\qquad  \text{(27)} \end{split}\]</div>
+<p>the bra is</p>
+<div class="math notranslate nohighlight">
+\[ \displaystyle \qquad\qquad \langle v| = \begin{bmatrix}a^*&amp; b^*&amp; c^*\end{bmatrix} \qquad\qquad \qquad\qquad   \text{(28)}\]</div>
+<p>where * indicates a complex conjugate. The <span class="math notranslate nohighlight">\(a, b, c\)</span> are the elements of the basis set being used. However, these are themselves only aliases or references to the actual properties. By manipulating these symbols, problems can be solved so that only at the end of the calculation do numbers have to be used. The bra and ket can be multiplied together in two ways, as an <em>inner product</em> (dot product) to produce a scalar number</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \qquad\qquad \langle A|B\rangle =\begin{bmatrix} a^*_1 &amp; a^*_2 &amp; a^*_3 \cdots\end{bmatrix}\begin{bmatrix} b_1\\b_2\\b_3\\\vdots\end{bmatrix} = \sum_i a^*_ib_i\qquad\qquad \qquad\qquad  \text{(29)}\end{split}\]</div>
+<p>and an <em>outer product</em> which is an <em>operator</em> and produces a matrix.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \qquad\qquad |B\rangle\langle A|= \begin{bmatrix} b_1\\b_2\\b_3\\\vdots\end{bmatrix}\begin{bmatrix} a^*_1 &amp; a^*_2 &amp; a^*_3 \cdots\end{bmatrix}=\begin{bmatrix}b_1a_1^* &amp; b_1a_2^* &amp; b_1a_3^*\cdots \\ b_2a_1^* &amp; b_2a_2^* &amp;\cdots \\ \vdots &amp; \vdots&amp; \ddots\end{bmatrix} \qquad\qquad \qquad\qquad \text{(30)}\end{split}\]</div>
+<p>which are the same rules for any matrix met in Chapter 7. The only difference in their usage in quantum mechanics is that the elements of the basis set must form an orthogonal set. If they are also normalised then they form an orthonormal set.</p>
+</section>
+<section id="discrete-basis-sets">
+<h2>4.2 Discrete basis sets<a class="headerlink" href="#discrete-basis-sets" title="Permalink to this headline">#</a></h2>
+<p>The bra and ket, equations 27 and 28 have terms <span class="math notranslate nohighlight">\(a,\, b,\, c\)</span> and these are the elements of the basis set chosen for the calculation. All quantum problems using bra-ket notation must have a basis set defined before the calculation starts. Unlike many calculations using vectors, the basis set does not usually represent spatial coordinates but is instead some other relevant property. The spin state of the proton, which is described next, is an example of this.</p>
+<p>The spin state of an atom or nucleus can be described with a spin quantum number <span class="math notranslate nohighlight">\(s\)</span> and magnetic (azimuthal) quantum numbers <span class="math notranslate nohighlight">\(m\)</span>, which, when <span class="math notranslate nohighlight">\(s = 1/2\)</span> has values <span class="math notranslate nohighlight">\(+1/2\)</span> or <span class="math notranslate nohighlight">\(-1/2\)</span>, or, in general, <span class="math notranslate nohighlight">\(m = +s, +s - 1, \cdots -s\)</span> and thus is a range of values from <span class="math notranslate nohighlight">\(s \to -s\)</span> each separated from one another by unity. Sometimes the magnetic quantum number is labelled <span class="math notranslate nohighlight">\(m_s\)</span> or <span class="math notranslate nohighlight">\(m_z\)</span>; the latter because it is the projection of angular momentum onto a unique axis normally labelled <span class="math notranslate nohighlight">\(z\)</span> when a unidirectional magnetic field is present, Fig. 4.  The magnitude(expectation value of the angular momentum is <span class="math notranslate nohighlight">\(\hbar\sqrt{ s(s+1)}\)</span>. Nuclear spin angular momentum is usually labelled with <span class="math notranslate nohighlight">\(I\)</span> instead of <span class="math notranslate nohighlight">\(s\)</span>. If a magnetic field <span class="math notranslate nohighlight">\(B\)</span> is along the <span class="math notranslate nohighlight">\(z\)</span>-axis, the energy of the spin depends on its orientation and is <span class="math notranslate nohighlight">\(E = -\gamma m_z\hbar B\)</span> where <span class="math notranslate nohighlight">\(\gamma\)</span> is the magnetogyric ratio with units of rad T<span class="math notranslate nohighlight">\({-1}\)</span> s<span class="math notranslate nohighlight">\(^{-1}\)</span>.</p>
+<p>The spin basis set for a spin half particle (electron, <span class="math notranslate nohighlight">\(^1\)</span>H, <span class="math notranslate nohighlight">\(^{13}\)</span>13C, etc.) can be constructed in terms of the two quantum numbers <span class="math notranslate nohighlight">\(s\)</span> and <span class="math notranslate nohighlight">\(m\)</span>, labelled with two indices as <span class="math notranslate nohighlight">\((s, m)\)</span>, and is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle (1/2,\, +1/2) (1/2,\, -1/2) \]</div>
+<p>where <span class="math notranslate nohighlight">\((1/2, +1/2)\)</span>, is a <em>label</em> describing one spin state, it has no mathematical significance, and the label <span class="math notranslate nohighlight">\((1/2, -1/2)\)</span> describes the other. In the case of spin half particles we conventionally reserve symbols <span class="math notranslate nohighlight">\(\alpha\)</span> to represent the state <span class="math notranslate nohighlight">\((1/2, +1/2)\)</span> and <span class="math notranslate nohighlight">\(\beta\)</span> to represent the state <span class="math notranslate nohighlight">\((1/2, -1/2)\)</span> and the basis set is now written as <span class="math notranslate nohighlight">\((\alpha\,\beta)\)</span> or as kets <span class="math notranslate nohighlight">\(|\alpha \rangle\)</span> and <span class="math notranslate nohighlight">\(|\beta\rangle\)</span> as <span class="math notranslate nohighlight">\((|\alpha\rangle \;|\beta\rangle)\)</span>. Both notations are common. In this two-dimensional basis, the <span class="math notranslate nohighlight">\(\alpha\)</span> spin state <span class="math notranslate nohighlight">\((s = 1/2, m = 1/2)\)</span> is represented as the column vector in the standard basis set as <span class="math notranslate nohighlight">\(\displaystyle |\alpha\rangle= \begin{bmatrix} 1 \\ 0 \end{bmatrix}\)</span>.</p>
+<p>As <span class="math notranslate nohighlight">\(\alpha\)</span> is a basis element (basis ket) of the standard basis set, it is zero everywhere except for one element representing its position in the basis set and which is given the value of unity. Similarly the <span class="math notranslate nohighlight">\(\beta\)</span> spin state <span class="math notranslate nohighlight">\((s = 1/2, m = -1/2)\)</span> is represented as as <span class="math notranslate nohighlight">\(\displaystyle |\beta\rangle= \begin{bmatrix} 0 \\ 1 \end{bmatrix}\)</span>, and the basis set could be written as</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle (\alpha, \beta) \equiv \left(\begin{bmatrix} 1 \\ 0 \end{bmatrix}\begin{bmatrix} 0 \\ 1 \end{bmatrix}\right) \end{split}\]</div>
+<p>The basis set can be ordered differently; for example, <span class="math notranslate nohighlight">\(\displaystyle (\beta,\alpha, ) \equiv \left(\begin{bmatrix} 0 \\ 1 \end{bmatrix}\begin{bmatrix} 1 \\ 0 \end{bmatrix}\right) \)</span> would be equally valid, it is only necessary to decide in which order the elements are placed and keep to it.</p>
+<p><img alt="Drawing" src="chapter-7/matricesQM-fig4.png" /></p>
+<p>Figure 4. Sketch describing spin quantum numbers and angular momentum for a <span class="math notranslate nohighlight">\(^1\)</span>H nucleus. The angular momentum vector <span class="math notranslate nohighlight">\(\pmb{I}\)</span> can be at any angle around the cone.</p>
+<hr class="docutils" />
+<p>If there are two electrons (or nuclei) each with spin quantum number <span class="math notranslate nohighlight">\(+1/2\)</span> then we have, depending on spin orientation, a total spin of <span class="math notranslate nohighlight">\(S = 1\)</span> or <span class="math notranslate nohighlight">\(0\)</span>, loosely speaking these correspond to spins being ‘parallel’ or ‘anti-parallel’ to one another. The complete set of quantum numbers is <span class="math notranslate nohighlight">\(S=0, m=0\)</span>, and <span class="math notranslate nohighlight">\(S=1\)</span> with <span class="math notranslate nohighlight">\(m=+1,0,-1\)</span>, making four states in all. A minimal basis set therefore has four terms</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle  (0,0) \;(1,-1) \;(1,0) \;(1,+1)  \]</div>
+<p>and four basis vectors. The vectors can be labelled with the quantum numbers <span class="math notranslate nohighlight">\((s, m)\)</span> as below, but any four unique symbols could be used, e.g. <span class="math notranslate nohighlight">\(\xi, \psi, x, y\)</span>. The basis set order is also arbitrary;</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \qquad\qquad|0,0\rangle =\begin{bmatrix}1\\0\\0\\0\end{bmatrix}\quad |1,-1\rangle =\begin{bmatrix}0\\1\\0\\0\end{bmatrix}\quad |1,0\rangle =\begin{bmatrix}0\\0\\1\\0\end{bmatrix}\quad |1,1\rangle =\begin{bmatrix}0\\0\\0\\1\end{bmatrix}\qquad\qquad\qquad\qquad\text{(31)}\end{split}\]</div>
+<p>It is important to realize that in <span class="math notranslate nohighlight">\(| 0, 0 \rangle\)</span> for example, the <span class="math notranslate nohighlight">\(0, 0\)</span> is just a label, it has no other meaning <em>per se</em> but the label tells us that this is state <span class="math notranslate nohighlight">\((0, 0)\)</span>; it does not enter into the maths. The basis set above is orthonormal as can be seen by calculating <span class="math notranslate nohighlight">\(\langle 0, 0 | 1, -1\rangle\)</span> or any of the other eleven combinations.</p>
+<p>To study d-orbitals a basis of five elements is needed. These can be characterized either by the wavefunction labels, <span class="math notranslate nohighlight">\(z^2, x^2 - y^2\)</span>, etc. or by the orbital angular momentum quantum numbers, <span class="math notranslate nohighlight">\(L\)</span>, which for d-orbitals has two units of angular momentum and <span class="math notranslate nohighlight">\(m\)</span> quantum numbers which take values from <span class="math notranslate nohighlight">\(-2 \to 2\)</span> in unit steps as <span class="math notranslate nohighlight">\(2, 1, 0, -1, -2\)</span>. The basis can be written using the names of the orbitals as shown on the left, or by using quantum numbers on the right,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle (\psi_{x^2-y^2}, \psi_{xz}, \psi_{z^2}, \psi_{yz}, \psi_{xy}) \equiv((2, -2)\; (2, -1)\; (2, 0)\; (2, +1)\; (2, +2))\]</div>
+<p>Either way, the <span class="math notranslate nohighlight">\(z^2\)</span> wavefunction is <span class="math notranslate nohighlight">\( \psi_{z^2}=\begin{bmatrix} 0\\0\\1\\0\\0 \end{bmatrix}\)</span> and similarly for the other wavefunctions.</p>
+<p>A state such as <span class="math notranslate nohighlight">\(\Psi=a\psi_{xy}+b\psi_{xz} = \begin{bmatrix} 0\\a\\0\\0\\b \end{bmatrix}\)</span>.</p>
+</section>
+<section id="inner-products-langle-alpha-beta-rangle">
+<h2>4.3 Inner products <span class="math notranslate nohighlight">\(\langle\alpha |\beta\rangle\)</span><a class="headerlink" href="#inner-products-langle-alpha-beta-rangle" title="Permalink to this headline">#</a></h2>
+<p>The <em>dot</em> or <em>inner product</em> of the two vectors is always a number, i.e. a scalar. Using the
+normalized and orthogonal (spin) states <span class="math notranslate nohighlight">\(\alpha,\beta\)</span></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \langle\alpha |\alpha\rangle =\begin{bmatrix}1&amp; 0\end{bmatrix}\begin{bmatrix}1\\ 0\end{bmatrix}=1 \quad \langle\beta |\beta\rangle =\begin{bmatrix}0&amp; 1\end{bmatrix}\begin{bmatrix}0\\ 1\end{bmatrix}=1\quad \langle\alpha |\beta\rangle =\langle\beta |\alpha\rangle =0\end{split}\]</div>
+<p>There is a somewhat peculiar situation with respect to spin angular momentum as opposed to orbital angular momentum, in that we do not know what the equations describing spin angular momentum are because they are not functions of space. However, this is, in fact, unimportant, because everything can be derived by simply defining the symbols for these states.</p>
+<p>Consider the state</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle |\varphi\rangle  = a|\alpha\rangle + b|\beta\rangle\]</div>
+<p>which is the linear combination of the <span class="math notranslate nohighlight">\(\alpha\)</span> and <span class="math notranslate nohighlight">\(\beta\)</span> basis spin states where <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> are numbers, often complex numbers. This new state can
+be represented as the column vector  <span class="math notranslate nohighlight">\(\displaystyle |\varphi\rangle =\begin{bmatrix}a\\b\end{bmatrix}\)</span>. To normalize the function <span class="math notranslate nohighlight">\(\varphi\)</span>, the same procedure as for any vector is followed. The inner or dot product <span class="math notranslate nohighlight">\(\langle\varphi |\varphi\rangle\)</span>  is calculated</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} \displaystyle \langle\varphi |\varphi\rangle=\begin{bmatrix}a^* &amp;b^*\end{bmatrix} \begin{bmatrix} a\\b\end{bmatrix} = a^*a+b^*b\end{split}\]</div>
+<p>and the normalization equation defined as <span class="math notranslate nohighlight">\(N^2\langle\varphi |\varphi\rangle = 1\)</span> with normalization constant <span class="math notranslate nohighlight">\(N\)</span>. Hence <span class="math notranslate nohighlight">\(N^2 = a*a + b*b\)</span> and normalized wavefunction is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle |\varphi\rangle =\frac{a|\alpha\rangle+b|\beta\rangle}{\sqrt{a^*a+b^*b} } \]</div>
+<p>If the constants are real numbers, the complex conjugates are not needed. If there are equal amounts of <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> in <span class="math notranslate nohighlight">\(\varphi\)</span>, then</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle |\varphi\rangle =\frac{|\alpha\rangle+|\beta\rangle}{\sqrt{2} } \]</div>
+<p>To find out how much of state <span class="math notranslate nohighlight">\(\alpha\)</span> is in the linear combination state <span class="math notranslate nohighlight">\(\varphi\)</span>, this is probed with the basis state <span class="math notranslate nohighlight">\(\alpha\)</span>. The calculation is</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} \displaystyle \langle\alpha |\varphi\rangle=\frac{1}{\sqrt{a^*a+b^*b}} \begin{bmatrix}1 &amp;0\end{bmatrix} \begin{bmatrix}a\\b \end{bmatrix} =\frac{a}{\sqrt{a^*a+b^*b}}\end{split}\]</div>
+<p>If the coefficients <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> are real and normalized to unity when forming <span class="math notranslate nohighlight">\(\varphi\)</span> so that <span class="math notranslate nohighlight">\(a^2 +b^2 =1\)</span>, then</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \langle \alpha|\varphi\rangle=a\langle \alpha|\alpha\rangle+b\langle \alpha|\beta\rangle=a\tag{32}\]</div>
+<p>but, in either case, this result is interpreted to be the probability amplitude for the state  <span class="math notranslate nohighlight">\(\varphi\)</span> to collapse into the state <span class="math notranslate nohighlight">\(\alpha\)</span> and the probability of this happening is <span class="math notranslate nohighlight">\(\langle|\varphi^2\)</span>. Similarly, acting on <span class="math notranslate nohighlight">\(\varphi\)</span> with <span class="math notranslate nohighlight">\(\beta\)</span> gives the probability amplitude <span class="math notranslate nohighlight">\(\langle\beta|\varphi\rangle =b\)</span>. As the product <span class="math notranslate nohighlight">\(\langle \alpha|\varphi\rangle\)</span> evaluates to  the coefficient <span class="math notranslate nohighlight">\(a\)</span>, we can write the odd looking equation</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle |\varphi\rangle=\langle\alpha|\varphi\rangle |\alpha\rangle + \langle\beta|\varphi\rangle |\beta\rangle\]</div>
+<p>Expanding this out produces</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle |\varphi\rangle= \begin{bmatrix}1 &amp; 0 \end{bmatrix}\begin{bmatrix}a\\b \end{bmatrix}\begin{bmatrix}1\\0 \end{bmatrix}+\begin{bmatrix}0 &amp; 1 \end{bmatrix}\begin{bmatrix}a\\b \end{bmatrix}\begin{bmatrix}0\\1 \end{bmatrix} =a|\alpha\rangle +b|\beta\rangle\end{split}\]</div>
+<p>Two kets in the basis <span class="math notranslate nohighlight">\((x, y, z, \cdots)\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle |A\rangle=a_1|x\rangle + a_2|y\rangle +  a_3|z\rangle+\cdots + \\
+|B\rangle=b_1|x\rangle + b_2|y\rangle +  b_3|z\rangle+\cdots +\end{split}\]</div>
+<p>form the dot or inner product as do any single column or row matrices or vectors</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \langle A|B\rangle = \begin{bmatrix} a^*_1\; a^*_2\;\cdots\end{bmatrix}\begin{bmatrix}b_1\\b_2\\\vdots\end{bmatrix}=\sum_i a^*_ib_i \end{split}\]</div>
+<p>If a continuous basis set is being used with a function such as <span class="math notranslate nohighlight">\(R(r)\)</span> or any wavefunction <span class="math notranslate nohighlight">\(\psi(x)\)</span> then the inner product becomes an integral. The basis set elements are so closely spaced that the summation of the finite basis is replaced by the integral, and then we have the familiar formula</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \langle\varphi|\psi\rangle =\int \varphi(x)\psi(x)dx\]</div>
+</section>
+<section id="outer-products-alpha-rangle-langle-beta-and-projection-operators-alpha-rangle-langle-alpha-are-matrices">
+<h2>4.4 Outer products:<span class="math notranslate nohighlight">\(|\alpha\rangle\langle \beta|\)</span> and projection operators <span class="math notranslate nohighlight">\(|\alpha\rangle\langle\alpha|\)</span> are matrices<a class="headerlink" href="#outer-products-alpha-rangle-langle-beta-and-projection-operators-alpha-rangle-langle-alpha-are-matrices" title="Permalink to this headline">#</a></h2>
+<p>Objects of the form <span class="math notranslate nohighlight">\(|\alpha\rangle\langle \alpha|\)</span>, <span class="math notranslate nohighlight">\(|\alpha\rangle\langle \beta|\)</span> or <span class="math notranslate nohighlight">\(|\psi_{z^2}\rangle\langle \psi_{xy}|\)</span> and so forth are always square matrices and correspond to <em>operators</em>. This means that when they are placed to the left of a ket they operate on this and a new ket is formed. Using the definitions above</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle|\alpha\rangle\langle\beta|=\begin{bmatrix} 1 \\ 0 \end{bmatrix} \begin{bmatrix} 1 &amp; 0 \end{bmatrix} = \begin{bmatrix} 0 &amp; 1\\ 0 &amp; 0\end{bmatrix}\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle|\psi_{z^2}\rangle\langle\psi_{xy}|=\begin{bmatrix}0 \\0 \\ 1 \\ 0 \\0  \end{bmatrix} \begin{bmatrix}0 &amp; 0 &amp; 0 &amp; 1 &amp; 0\end{bmatrix} = \begin{bmatrix} 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0\\ 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0\\ 0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 \\0 &amp; 0 &amp; 0 &amp; 0 &amp; 0\\ 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \end{bmatrix}\end{split}\]</div>
+<p>Operating on the ket</p>
+<div class="math notranslate nohighlight">
+\[|\varphi\rangle = a|\alpha\rangle + b|\beta\rangle\]</div>
+<p>with <span class="math notranslate nohighlight">\(|\alpha\rangle\langle\beta|\)</span> produces the new ket, <span class="math notranslate nohighlight">\(b|\alpha\rangle\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle (|\alpha\rangle\langle\beta|)|\varphi\rangle =|\alpha \rangle\;\langle\beta  |\varphi\rangle= \langle\beta|\varphi\rangle|\alpha\rangle=b|\alpha\rangle\]</div>
+<p>and the last step is made by identifying with <span class="math notranslate nohighlight">\(|\alpha\rangle\)</span>. The result of <span class="math notranslate nohighlight">\(|\alpha\rangle \langle \beta|\)</span> acting on the ket <span class="math notranslate nohighlight">\(|\varphi\rangle\)</span>, is to produce another ket which is <span class="math notranslate nohighlight">\(b|\alpha\rangle\)</span>, and hence, <span class="math notranslate nohighlight">\(|\alpha\rangle\langle \beta|\)</span> is an operator. The <span class="math notranslate nohighlight">\(2 \times 2\)</span> matrix produced is zero except for just one place; hence, it will extract just one value. The alternative calculation can be done by multiplying the two right-hand matrices first, operating with <span class="math notranslate nohighlight">\(\langle \beta|\)</span> on <span class="math notranslate nohighlight">\(|\varphi\rangle\)</span> and then multiplying the answer by <span class="math notranslate nohighlight">\(|\alpha\rangle\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle |\alpha\rangle\left(\langle\beta| \varphi \rangle \right) = \begin{bmatrix}1\\0\end{bmatrix}\left(\begin{bmatrix} 0&amp;1\end{bmatrix} \begin{bmatrix}a\\b\end{bmatrix}\right)=\begin{bmatrix}1\\0\end{bmatrix}b=b|\alpha\rangle\end{split}\]</div>
+<p>The operator <span class="math notranslate nohighlight">\(|\alpha\rangle\langle\alpha|\)</span> will project <span class="math notranslate nohighlight">\(a|\alpha\rangle\)</span> out of the ket <span class="math notranslate nohighlight">\(|\varphi\rangle\)</span>, and is therefore called a <em>projection operator</em>. The calculation is</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle |\alpha\rangle\langle\alpha||\varphi\rangle=\begin{bmatrix}1&amp; 0\\0 &amp; 0\end{bmatrix}|\varphi\rangle=\begin{bmatrix}1&amp; 0\\0 &amp; 0\end{bmatrix}\begin{bmatrix}a\\b\end{bmatrix} = a|\alpha\rangle\end{split}\]</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./chapter-7"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Godfrey Beddard<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

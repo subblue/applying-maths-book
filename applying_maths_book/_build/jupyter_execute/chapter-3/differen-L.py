@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## Partial differentiation
+# # Partial differentiation
 
 # In[1]:
 
@@ -15,7 +15,7 @@ init_printing()                      # allows printing of SymPy results in types
 plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 
-# ### 11.1 Differentiating equations in more than one variable
+# ## 11.1 Differentiating equations in more than one variable
 # 
 # When an equation depends on more than one variable, $x$ and $y$ perhaps, then it is possible to differentiate with respect to either $x$ or $y$ while keeping the other constant. The normal rules of differentiation apply; the only change is that the notation is a little different with a curly $\partial$ being used instead of a Roman $d$ and a subscript is used to indicate which variable is held constant. If the function will allow it, second and third partial derivatives can be calculated.
 # 
@@ -27,7 +27,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # As a second example $(\partial y/\partial x)_z$ is calculated where $(y + 1/z^2)(z - 1) = 3x$. Since it is indicated by the subscript that $z$ is a constant, differentiating gives $\displaystyle (z-1)\left(\frac{\partial y}{\partial x}  \right)_z=3$.
 # 
-# #### **ideal gas**
+# ### **ideal gas**
 # 
 # Differentiating the pressure in the ideal gas law $p = nRT/V$ to obtain the rate of change with respect to temperature is expressed as $(\partial p/\partial T)_{n,V}$ if the number of moles, $n$, and volume are held constant. The result is
 # 
@@ -47,7 +47,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # is not zero. The other two derivatives are constants, $\displaystyle  \left(  \frac{\partial}{\partial T}\left(\frac{\partial}{\partial T} \frac{nR}{V}   \right)  \right)_{n,V} = \left( \frac{\partial^2 p}{\partial V^2}  \right)_{n,V} = 0 $.
 # 
-# #### **van der Waals gas**
+# ### **van der Waals gas**
 # The van der Waals equation which, although empirical, describes real gases more accurately than does the ideal gas law. The equation is 
 # 
 # $$\displaystyle \left(p + \frac{a}{V^2}\right)\left(V - b\right) = RT$$
@@ -60,7 +60,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # $$\displaystyle \left( \frac{\partial p}{\partial V} \right)_T(V-b)+p=\frac{a}{V^2}-2\frac{ab}{V^3}$$
 # 
-# ### 11.2 Geometrical interpretation of partial derivatives
+# ## 11.2 Geometrical interpretation of partial derivatives
 # 
 # If a function can be differentiated with respect to either of two variables, $x$ and $y$, then it represents a surface. The derivatives then represent the _slope of the surface_ at any point but in a direction at a fixed $x$ or $y$ depending on which is held constant.
 # 
@@ -122,7 +122,7 @@ for  T0 in range(360,370,2):             # choose some temperatures
     pass
 
 
-# ### 11.3 Mixed derivatives
+# ## 11.3 Mixed derivatives
 # 
 # The new feature of partial differentiation is that it is possible to differentiate with one variable then do so again with another.
 # 
@@ -150,7 +150,7 @@ for  T0 in range(360,370,2):             # choose some temperatures
 # 
 # Repeating the process but in the opposite order gives $\displaystyle \left( \frac{\partial^2 p}{\partial T\partial V} \right)_{n}=-\frac{nR}{V^2}$.
 # 
-# ### 11.4 Chain rule
+# ## 11.4 Chain rule
 # 
 # The chain rule can also be used with partial derivatives. If $w$ is some complicated expression in $x,\; y$ and $z$ the familiar function-of-function rule can be used to calculate for example, $(\partial y/\partial x)_z$ with $z$ held constant. The result is
 # 
@@ -164,7 +164,7 @@ for  T0 in range(360,370,2):             # choose some temperatures
 # 
 # $$\displaystyle  \left( \frac{\partial y}{\partial z} \right)_x = \cos(azx^2+z^2)(ax^2+2z)$$
 # 
-# ### 11.5 Use in Thermodynamics ( see also section 11.8 )
+# ## 11.5 Use in Thermodynamics ( see also section 11.8 )
 # 
 # In thermodynamics, the chain rule is very often used to expand an expression in a new variable $w$ and this proves to be very useful. The reason for doing this is to change an unfamiliar derivative into two expressions each of which is related to something that can be measured.
 # 
@@ -184,7 +184,7 @@ for  T0 in range(360,370,2):             # choose some temperatures
 # 
 # at constant pressure, by measuring the heat capacity vs. temperature.
 # 
-# ### 11.6 Reciprocal derivatives
+# ## 11.6 Reciprocal derivatives
 # 
 # Reciprocal derivatives follow the same rules as for normal differentiation: take the reciprocal and flip the derivative, with a function $y$ in $x$ and $z$
 # 
@@ -192,7 +192,7 @@ for  T0 in range(360,370,2):             # choose some temperatures
 # 
 # For example if $y = azx^2 + z^2$ then differentiating with respect to $x$ produces $\displaystyle \left( \frac{\partial y}{\partial x}\right)_z = 2azx$ and differentiating with $y$ produces $\displaystyle 1=2azx\left(\frac{\partial x}{\partial y}  \right)_z$ which proves (40).
 # 
-# ### 11.7 Total derivatives
+# ## 11.7 Total derivatives
 # 
 # Total derivatives are probably used in thermodynamics more than elsewhere. It is common to see expressions such as
 # 
@@ -225,7 +225,7 @@ for  T0 in range(360,370,2):             # choose some temperatures
 # $$\displaystyle df=\left( \frac{\partial f}{\partial g} \right)_h dg + \left( \frac{\partial f}{\partial h} \right)_g dh \tag{43}$$
 # 
 
-# ### 11.8 The 'minus 1' rule or Euler's Chain Rule
+# ## 11.8 The 'minus 1' rule or Euler's Chain Rule
 # 
 # Euler's chain rule is a product of three derivatives that is very useful in thermodynamics and elsewhere. The pressure of a gas can be written as a function of temperature and pressure, $p = f(T,V)$. This can be expanded as a total derivative, equation (41), and if the pressure is kept constant $dp = 0$ then
 # 
@@ -264,7 +264,7 @@ for  T0 in range(360,370,2):             # choose some temperatures
 # 
 # which is equivalent to equation (44) but arrived at in a different way.
 # 
-# ### 11.9 Partial Derivatives in Thermodynamics
+# ## 11.9 Partial Derivatives in Thermodynamics
 # 
 # In the study of thermodynamics, partial, mixed, and total derivatives are commonly used; this adds to the complexity of the subject, particularly if these appear to be 'pulled out of fresh air'. Understanding how these relationships are produced really helps in understanding thermodynamics as it removes the mathematical burden, allowing the subject itself to be better understood. To this end, the parameters used in chemistry are $p,\; V,\; A,\; T,\; H,\; U, \;G,\; S$ and each one depends upon the others. Besides $p,\; V,\; T$ and $S$, the other parameters used are $U$ the internal energy, $H$ the enthalpy, $G$ the Gibbs free energy and $A$ the Helmholtz free energy.
 # 
@@ -299,7 +299,7 @@ for  T0 in range(360,370,2):             # choose some temperatures
 # $$\displaystyle \left(\frac{dG}{dT}  \right)_p=-S, \qquad  \left(\frac{dA}{dT}  \right)_V=-S$$
 # 
 
-# ### 11.10 Exact and non-exact differentials and state functions. Pfaffians.
+# ## 11.10 Exact and non-exact differentials and state functions. Pfaffians.
 # 
 # In an adiabatic change, no heat enters or leaves the thermodynamic system. The first law therefore asserts that
 # 

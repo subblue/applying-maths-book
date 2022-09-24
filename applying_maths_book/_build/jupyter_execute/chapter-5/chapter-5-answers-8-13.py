@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## Solutions Q8 - 13 
+# # Solutions Q8 - 13 
 
 # In[1]:
 
@@ -15,7 +15,7 @@ init_printing()                 # allows printing of SymPy results in typeset ma
 plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 
-# ### Q8 answer
+# ## Q8 answer
 # (a) There are six atoms in ethylene and therefore $3N - 6 = 12$ normal modes as the molecule is not linear. 
 # 
 # (b) You will need to consult a point group table, see www.molecule-viewer.com for tables and an explanation of the symmetry labels and elements. 
@@ -102,7 +102,7 @@ plt.title('f(x) vs x')
 plt.show()
 
 
-# ### Q9 answer
+# ## Q9 answer
 # (a) The average energy at temperature $T$ is $\displaystyle \langle E \rangle =\frac{e^{-1/k_BT}}{1-e^{-1/k_BT}} = \frac{1}{e^{+1/k_BT}-1}$
 # 
 # At high temperatures the exponential terms can be expanded as a series; 
@@ -203,7 +203,7 @@ CV
 
 # By inspection of the previous result, the variance is $\sigma_E^2 = k_BT^2C_V$. The heat capacity, see figure above, is the rate of change of the energy with temperature. At low temperature only the lowest level is populated, so the rate of change is zero. As the temperature is increased, more energy is added to the molecules, more levels become populated and $C_V$ rapidly increases because the rate of change of energy is large. At high temperature, most levels are now populated and the rate of increase is small, and $C_V$ levels off becoming almost constant.
 # 
-# ### Q10 answer
+# ## Q10 answer
 # (a) Because $m=\pm 1/2$ the energy levels are equally spaced around zero energy; the energy gap is $\Delta E = E_{-1/2} - E_{+1/2} = \gamma \hbar B$. Using the quantities given in part (d) of the question  $\Delta E = 2.8 \cdot 10^{_-25}$ J and is far smaller than the average thermal energy at room temperature, $k_BT = 4.14 \cdot 10^{-21}$ J.
 # 
 # ![Drawing](series-fig20.png)
@@ -229,7 +229,7 @@ CV
 # 
 # The reason for this subtle error is that the energy levels are symmetrically disposed about zero and, when the energy is squared, the $m = -1/2$ and $m = +1/2$ levels have the same positive value in the summation. Perhaps, as a result, the value for $\langle E \rangle$ is also wrong; at this point we don't know if this is the case, so this is re-evaluated with the lowest energy set to zero.
 # 
-# **Re-evaluation setting lowest level to zero energy**
+# ### **Re-evaluation setting lowest level to zero energy**
 # 
 # Suppose the energy zero is moved to $-\gamma \hbar B/2$, by adding minus this amount to both energies as shown on the right hand side of figure 20 means that the summation is from $0 \to \gamma\hbar B$. The average energy now becomes
 # 
@@ -282,7 +282,7 @@ plt.show()
 # ____
 # From the figure it is noticed that even at $2$ K an almost equal population of spins are present because the average energy is $\approx 0.5$ and only two levels are present. The small difference between the populations of the two levels means that NMR spectroscopy is a relatively insensitive technique. However, this insensitivity is ameliorated by the fact that the macroscopic polarization can be measured because the nuclear spins are excited coherently. The NMR signal is proportional to the _sum squared_ of the individual magnetic moments rather than the _squared sum_, i.e. the measured signal is the sum $(\mu_1 + \mu_2 + \mu_3 + \cdots )^2$ rather than the sum $(\mu_1^2 + \mu_2^2 + \mu_3^2 + \cdots)$  the former being far larger than the latter. Try it with some numbers! 
 # 
-# ### Q11 answer
+# ## Q11 answer
 # (a) The total degeneracy for the $J^\mathrm{th}$ ortho level is $g(g+1)(2J+1)/2$ or $3(2J+1)$ as the spin is $1/2$ and $g=(2S+1)$ but is only $(2J + 1)$ for the para levels. The figure illustrates this.
 # 
 # ![Drawing](series-fig22a.png)
@@ -427,7 +427,7 @@ plt.show()
 # 
 # **Exercise:** Repeat the calculation with $\mathrm{D_2}$ which has $S = 1$ nuclei. In this case, $g = 3$ and the nuclear spin states are symmetrical. This leads to an interchange of the $J = 0, 2, \cdots$ with $J = 1, 3, \cdots$ states in the summation of the partition functions compared to $\mathrm{H_2}$.
 # 
-# ### Q12 answer
+# ## Q12 answer
 # (a) $1/4^n$ is the chance (probability) that the word is read, and hence $1 - 1/4^n$ that it is not read and this happens $ L - 1$ times so the probability of not being read is raised to this power.
 # 
 # (b) If the distribution is normalized then $ \sum_{L=0}^\infty (1-1/4^n)^{L-1}(1/4^n)=1$ and if $x=1/4^n$ then the sum is $x\sum_{L=0}^\infty (1-x)^{L-1}$. As $x \lt 1$ the summation is valid as shown by SymPy
@@ -461,7 +461,7 @@ f01.doit()
 
 # therefore the average is $\displaystyle \langle L \rangle = \frac{1-x}{x}$. Because $x$ is small compared to unity then  $\langle L \rangle \approx 1/x = 4^n $ and the average length of cut DNA strands is therefore approximately $256, 4096$, or $65536$ base pairs long depending on whether the enzyme cuts out $n = 4, 6$, or $8$ base pairs.
 # 
-# ### Q13 answer
+# ## Q13 answer
 # Letting $c = 0$ makes the second solution infinity because $c$ is in the denominator. It is also in the numerator of the first term. The correct solution is to expand the exponential and look at the case when $c$ is small, i.e. in the limit when $ c \to  0$. This results in
 # 
 # $$\displaystyle y= \frac{hc^2+g(ct-(ct)^2/2 +(ct)^3/6 - \cdots )}{c^2}-\frac{gt}{c}$$

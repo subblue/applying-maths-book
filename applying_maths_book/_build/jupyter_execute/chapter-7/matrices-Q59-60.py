@@ -1,9 +1,9 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## Questions 59 - 62
+# # Questions 59 - 62
 
-# ### Q59 XeF$_4$ moments of inertia.
+# ## Q59 XeF$_4$ moments of inertia.
 # Calculate the moments of inertia of the planar molecule XeF$_4$ 
 # 
 # (a) about the C$_4$ symmetry axis and 
@@ -34,3 +34,9 @@
 # 
 # Figure 68 Rotation of a loop about different axes.
 # 
+
+# In[ ]:
+
+
+
+

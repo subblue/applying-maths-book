@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## Solutions Q27 - 34
+# # Solutions Q27 - 34
 
 # In[1]:
 
@@ -15,7 +15,7 @@ init_printing()                      # allows printing of SymPy results in types
 plt.rcParams.update({'font.size': 16})  # set font size for plots
 
 
-# ### Q27 answer 
+# ## Q27 answer 
 # The function is shown in the next figure. Its integral is expected to be small because there is almost as much positive as negative area. Start by calculating the series to see if a summation formula is obvious, which it appears not to be,
 
 # In[2]:
@@ -78,7 +78,7 @@ for i in range(len(ans)):
 # ____
 # In practice, although this method can be used for numerical integration, it is very slow and it is better to use more standard methods such as Simpson's rule or any of a number of related routines; Chapter 11. 
 # 
-# ### Q28 answer
+# ## Q28 answer
 # The function is $\displaystyle f(x) = (a + x)^{1/2}$ then follow the derivation given in equation (15), which is
 # 
 # $$\displaystyle f(x)= f(0)+x\left( \frac{df}{dx} \right)_0 + \frac{x^2}{2!}\left( \frac{d^2f}{dx^2} \right)_0  + \frac{x^n}{n!}\left( \frac{d^nf}{dx^n} \right)_0 + \cdots $$
@@ -89,7 +89,7 @@ for i in range(len(ans)):
 # 
 # and the series should be extended to  five terms. The values of $a$ and $x$ can be chosen freely but the arithmetic is simpler if $a = 4$ and $x = 1$ which gives $\sqrt{5} = 2 + 1/4 - 1/64 + 1/512 - 5/(128 \times 27) = 2.2360$  which is accurate to three decimal places.
 # 
-# ### Q29 answer 
+# ## Q29 answer 
 # Rewriting the factorial as a summation and using equation (27) or (28).
 # 
 # $$\displaystyle \ln(n!)=\sum_{k=1}^n \ln(k)= \int_1^ndx+\frac{\ln(n)+\ln(1)}{2}+\frac{1/n-1}{2}-\frac{2/n^3-2}{720} +\cdots \\= n\ln(n)-n+1+\frac{\ln(2)}{2}+\frac{1}{12n}-\frac{1}{12}-\frac{1}{360n^2}+\frac{1}{360}-\cdots$$
@@ -137,7 +137,7 @@ plt.show()
 
 # Figure 27. Log of the factorial function (upper line) and log of Stirling's approximation, which is accurate only at large $n$.
 # ____
-# ### Q30 answer
+# ## Q30 answer
 # (a) The rotational energy is $E_J = BJ(J + 1)$ and the partition function accounting for the 2$J$ + 1 multiplicity
 # of the levels is 
 # 
@@ -229,7 +229,7 @@ plt.show()
 
 # Fig. 28 Comparison of the partition function for a rigid rotor calculated using the integral, the summation and Euler–Maclaurin equation. The latter two are virtually identical.
 # ____
-# ### Q31 answer
+# ## Q31 answer
 # (a) By convention for any type of energy levels the lowest energy is always the more negative. The energy is $ E_{m_z} = -\gamma \hbar B_zm_z $ so that this is negative with positive $m_z$. The physical reason for there being two energies is that if the spin magnetic moment lies in the same direction as the applied magnetic field ($B_z$ along the $z$ direction), its energy will be lower than if it opposes the field, so $m_z$ must be positive. In some nuclei, for example, $^3H$ and $^{17}O,\, \gamma $ is negative and the order is then inverted.
 # 
 # (b) The number of nuclei (particles) in an upper level $\alpha$ is related by the Boltzmann distribution to those in a lower level $\beta$ by
@@ -248,7 +248,7 @@ plt.show()
 # 
 # $$\displaystyle  n_\beta -n_\alpha = \frac{N\gamma \hbar B_z}{2k_BT}$$
 # 
-# ### Q32 answer
+# ## Q32 answer
 # (a) Hooke’s law states that force is directly proportional to extension; $F = kx$ with force constant $k$. The force is also the derivative of _energy_ with extension.
 # 
 # (b) Differentiating the energy by $x$ produces the force, 

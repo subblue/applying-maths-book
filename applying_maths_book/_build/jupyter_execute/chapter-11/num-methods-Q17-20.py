@@ -1,14 +1,14 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## Questions 17 - 20
+# # Questions 17 - 20
 
-# ### Q17 SIR equations
+# ## Q17 SIR equations
 # Calculate Fig. 17, and confirm the numbers in the calculation.
 # 
 # **Strategy:** Use the code and parameters given in the text. Vary the rate constants to get an idea of the sensitivity of the fit to these values.
 # 
-# ### Q18 SIR equations
+# ## Q18 SIR equations
 # Use Python's 'solve' routine routine to integrate the SIR equations, or use your own Euler routine, using the data in Fig. 17, but automate the fitting by using a very simple, but inefficient, grid search to vary $k_2$ and $k_1$ with $10$ values each, incrementing each value and so find the optimum values. Use two do loops to do this, setting back to the initial values one of the rate constants after the inner loop is completed but allowing the other to vary. Estimate the 'goodness' of each fit by calculating the *residual* which is the sum of the square of the difference between each of  the calculated values and the corresponding data point; $\sum_i (calculated_{indx[i]} - data_i )^2$. The number of calculated and the number of data points differ greatly so to find the residual the calculated data has to be samples at exactly the time set by the data point, this is the meaning of the $indx[i]$.  Make a contour plot to determine the range where the best parameters fitting the data can be found.
 # 
 # The square of the difference is taken in the residual because some differences may be  negative. As smaller values of the residual are found, narrow the search area to 'home in' on the best estimates. The grid search is a slow but effective way of searching.
@@ -20,11 +20,11 @@
 # Figure 18. grid search.
 # _____
 # 
-# ### Q19 Recalculate eqn. 32
+# ## Q19 Recalculate eqn. 32
 # Recalculate equation 32 (section 5) but with initial values $x_0 = 2,\; y_0 = 1$, and $t_0 = 0$ over the range $0 \to 10$ and then with the modified Euler method. The result is unexpected, increase $N$ and the precision of the calculation. Try to explain why the calculation fails. Repeat with Python's built-in routine.
 # 
 # 
-# ### Q20 SIR
+# ## Q20 SIR
 # The data set 'UK-covid-deaths.txt' contains the cumulative deaths where the last number on the list is $2$  March $2020$. The data can be found at the end of the appendix 'Some basic Python instructions with a few examples' at the very end of this book. Note that the data is in reverse order so will need to be reversed before using. 
 # 
 # (a) Estimate the data for the first $180$ days of the pandemic using the SIR model.  The kinetic scheme will need to be modified to include deaths by assuming that some patients in the infected group $I$ die with rate constant  $k_d$, assume that $ k_d=9\cdot 10^{-4}$ and that two million people are initially susceptible. 

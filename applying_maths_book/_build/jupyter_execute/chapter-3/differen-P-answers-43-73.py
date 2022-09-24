@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## Solutions Q 43 - 73
+# # Solutions Q 43 - 73
 
 # In[1]:
 
@@ -16,7 +16,7 @@ init_printing()                      # allows printing of SymPy results in types
 plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 
-# ### Q43 answer
+# ## Q43 answer
 # Starting with $\displaystyle F_a =\left(\frac{\partial f }{\partial y}-\frac{d}{dx}\frac{\partial f}{\partial y_x}  \right)\frac{dy}{dx}$
 # 
 # multiplying and using the product rule gives, $\displaystyle \frac{ \partial f}{ \partial y}\frac{dy}{dx}-y_x\frac{d}{dx}\frac{\partial f}{\partial y_x}-\frac{\partial f}{\partial y_x}\frac{d}{dx}y_x$
@@ -29,7 +29,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # The expressions $F_a$ and $F_b$ are the same if the term $\displaystyle \frac{\partial^2 f}{\partial x\partial y_x}=0$ which will be the case if f does not explicitly depend on $x$ because this term will be zero when differentiated by $x$.
 # 
-# ### Q44 answer
+# ## Q44 answer
 # (a) Substituting produces $\displaystyle f = x^2 + (e^{x^2})^2 + (2xe^{x^2})^3$
 # 
 # then using the Chain Rule, $\displaystyle \frac{df}{dx}=2x+4xe^{2x^2}+3(2xe^{x^2})^2(2e^{x^2}+4x^2e^{x^2})$.
@@ -44,14 +44,14 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # Imagine that $y$ is any sensible function of $x$ then use the function-of-function or chain rule, then for example, $df/dy = 2e^{x^2}$ and similarly $df/dy_x = 3(2xe^{x^2})^2$.
 # 
-# ### Q45 answer
+# ## Q45 answer
 # Using equation (32), and because $x$ is not explicitly in the equation
 # 
 # $$\displaystyle \sqrt{1+y_x^2}-\frac{y_x^2}{\sqrt{1+y_x^2}}=const$$
 # 
 # Rearranging produces $\displaystyle \frac{1}{\sqrt{1+y_x^2}}=const$, and therefore $dy/dx = m$, where $m$ is a new constant. Integrating produces the equation of a straight line $y = mx + c$ and using the start and end points the gradient is $m = (y_1 - y_0)/(x_1 - x_0)$ and the intercept is calculated by using similar triangles between the two points and the intercept ($0, y$). This produces $\displaystyle y-y_0=\left(\frac{y_1-y_0}{x_1-x_0}\right)(x-x_0)$.
 # 
-# ### Q46 answer
+# ## Q46 answer
 # (a) The function is $\displaystyle f=\frac{\sqrt{1+y_x^2}}{x}$. Using the Euler equation where $\displaystyle \frac{\partial f}{\partial y}=0$ gives
 # 
 # $$\displaystyle -\frac{d}{dx}\frac{\partial f}{\partial y_x}=-\frac{d}{dx}\frac{y_x}{\sqrt{1+y_x^2}}=0$$
@@ -90,7 +90,7 @@ ans
 # 
 # (c) The function is $f = x\sqrt{ 1 + y_x^2}$, which produces, $\displaystyle -\frac{d}{dx}\frac{\partial f}{\partial y_x}=-\frac{d}{dx}\frac{xy_x}{\sqrt{}1+y_x^2}=0$. Integrating in $x$ gives $\displaystyle \frac{xy_x}{\sqrt{1+y_x^2}}=c$ and solving for $y_x$ gives $\displaystyle \frac{dy}{dx}=\frac{1}{\sqrt{x^2-c^2}}$. This integrates to $\displaystyle y=\ln\left(x+\sqrt{x^2-c^2}\right)+d$ where $4d$ is the second integration constant.
 # 
-# ### Q47 answer
+# ## Q47 answer
 # The arrow below indicates separate differentiation top and bottom using l'Hopital's rule, the = sign is there for rearrangement or substitution of the limit. Graphs of the functions can be sketched to confirm the limits.
 # 
 # (a) Nominally $1/0$; so Hopitals's rule does not apply as this is not an indeterminate form and the limit is infinity.
@@ -151,7 +151,7 @@ ans
 # 
 # $$\displaystyle \ln\left(\frac{n!^{1/n}}{n}\right) \approx \frac{n\ln(n!) - n\ln(n)}{n} \approx \frac{-n}{n}\to\ -1$$ 
 # 
-# ### Q48 answer
+# ## Q48 answer
 # (a) Using l’Hopital’s rule, Section 7, $\displaystyle \lim_{x\to 0}\frac{\sin(x)-x^2}{x}\to \frac{\cos(x)-2x}{1}\to 1$
 # 
 # (b) $\displaystyle \lim_{x\to 0}\frac{\left(\sin(x)+x\right)^2}{x}\to \frac{2(\sin(x)+x)(\cos(x)+1)}{1} =0$.
@@ -168,7 +168,7 @@ ans
 # 
 # (d) In this case, the multiplier is $x - \sqrt{x^2 + x}$  and the limit is infinity because the change in sign compared to (c) means that zero is produced in the denominator when $x$ is large.
 # 
-# ### Q49 answer
+# ## Q49 answer
 # (a) Looking up $\tanh$ and $\cosh$ (Chapter 1.5.5) or elsewhere gives $\displaystyle \tanh(x)=\frac{e^{2x}-1}{e^{2x}+1},\quad \cosh(x)=\frac{e^x+e^{-x}}{2}$.
 # 
 # Using l'Hopital's rule, the limit at long time is 
@@ -210,11 +210,11 @@ expand(ans2)
 
 # Using the expansion above, the limit $u\to 0$ is $\displaystyle \frac{gt^2}{2}$ and when $v_\infty \to\infty$, $\displaystyle x=\frac{gt^2}{2}$.
 # 
-# ### Q50 answer
+# ## Q50 answer
 # The limit is $\displaystyle \lim_{x\to\infty}\frac{x^n}{e^x}$ which, using l'Hopital's rule means finding the $n^{th}$ differentiation of $x^n$ before a constant is found on the numerator. This was worked out in Question 5 and is $n!$; the limit is therefore $\displaystyle \lim_{x\to\infty}\frac{x^n}{e^x}\to \frac{n!}{e^x}\to 0$ which shows that $e^x$ is always larger than any polynomial $x^n$ for any positive $n$.
 # 
 # 
-# ### Q51 answer
+# ## Q51 answer
 # The substitution makes the function $\displaystyle f=e^{-u^2}$ and its derivative 
 # 
 # $$\displaystyle \frac{df}{dx}=-2ue^{-u^2}\frac{du}{dx}=\frac{2u^3}{e^{u^2}}=2u^3f$$
@@ -231,7 +231,7 @@ expand(ans2)
 # 
 # and this will hold for any order of the derivative because, as shown in Q49, $\displaystyle \lim_{u\to\infty}\frac{u^n}{e^u}\to \frac{n!}{e^u}\to 0$ any polynomial in the numerator produced by differentiation will never be larger than $e^x$ and therefore the limit is always zero.
 # 
-# ### Q52 answer
+# ## Q52 answer
 # $\displaystyle \frac{dy}{dx}=2x(x-1)^3+3x^2(x-1)^2$ and when the gradient is zero $x$ has values $0, 1, 2/5$. The second derivative is $\displaystyle \frac{d^2y}{dx^2}=2(x-1)^3+12x(x-1)^2+6x^2(x-1)$. When $x = 0$, this derivative is negative, so the point $x$ = 0 is a maximum. When $x = 1$ then the second derivative is zero as well as the first, so this is a point of inflexion, and by elimination $x = 2/5$ should be a minimum. To prove this, the second derivative has the positive value $18/25$. The function is plotted below. As an exercise find the maximum and minima of (a) $y=|x^3|$ and (b) $x\ln(x)$ over the range $0 \to 1$.
 # 
 # ![Drawing](differen-fig47.png)
@@ -239,12 +239,12 @@ expand(ans2)
 # Figure 47. $ y=x^2(x-1)^3$
 # ____
 # 
-# ### Q53 answer
+# ## Q53 answer
 # Because the equation is given in parametric form, $\displaystyle \frac{dy}{dx} = \frac{dy}{dt}\frac{ dt}{dx}$ must be used to calculate the derivative unless $t$ is eliminated from the two parametric equations. This can be done but it produces a complicated result. The maximum occurs when $\displaystyle \frac{dy}{dx}=\frac{dy}{dt}\left(\frac{dx}{dt}\right)^{-1}=\frac{\sin(t)}{1-\cos(t)}=0$.
 # 
 # Solving this equation produces zero at integer multiples of $\pi$, or $t = 0, \pi, 2\pi$, etc. Drawing the curve, Fig. 16, clearly shows that the maximum is at $t = \pi$. The second derivative is $(\cos(t)-1)^{-1}$ which also confirms the maximum at $x = \pi,\; y = 2$ when $t=\pi$, assuming $a=1$.
 # 
-# ### Q54 answer
+# ## Q54 answer
 # (a) The derivative is $\displaystyle \frac{dy}{dx} = 2xe^{-ax^2} - 2ax^3e^{-ax^2}$ and should be set to zero to find any maxima or minima. The maximum and minimum $y$ are found from $\displaystyle xe^{-ax^2} =ax^3e^{-ax^2}$, which give $x=0,\; x\to\infty$ or $x=\pm 1\sqrt(a)$. To check that the last value is correctly chosen to be maximum value and not the minimum or a point of inflexion, the second derivative should be negative at this value. This derivative is 
 # 
 # $$\displaystyle \frac{d^2y}{dx^2}=(2-4ax-6ax^2-4a^2x^4)e^{-ax^2}$$
@@ -293,7 +293,7 @@ plt.show()
 # ____
 # (d) The distributions all have the same mathematical shape and the same area because the total probability, which is the area under the curve, must be 1. At higher temperatures, more molecules are moving faster than they do at lower temperatures, therefore fewer must be moving more slowly and the peak of the curve moves to higher speeds and is of smaller amplitude than at lower temperatures.
 # 
-# ### Q55 answer
+# ## Q55 answer
 # (a) Differentiating produces $dy/dx = -2a/x^3 + 4b/x^5$ and at the minimum the gradient is zero, $a/x^3 = 2b/x^5$ so that the one physically meaningful solution, if $x$ represented a distance, is $x = +\sqrt{ 2b/a}$. The other four solutions to the equation produce complex numbers, which cannot represent any physical distance.
 # 
 # (b) At the minimum energy, let the separation be $r_e$ and here the gradient of the potential energy is zero and so 
@@ -309,7 +309,7 @@ plt.show()
 # Figure 49. The Lennard-Jones potential with parameters $\sigma = 2.74 \cdot 10^{-10}$ m and $\epsilon = 3.1\cdot 10^{-3}$ eV. The minimum is at $r_e = 0.308$ nm.
 # ______
 # 
-# ### Q56  answer
+# ## Q56  answer
 # Let ON be the distance $x$ then as the area of a triangle is half the base times the height this is 
 # 
 # $$\displaystyle A=\frac{x}{2}\sqrt{\frac{(4-x)^3}{x}}=\frac{\sqrt{x(4-x)^3}}{2}$$
@@ -326,7 +326,7 @@ plt.show()
 # 
 # You may also notice that $x = 4$ is also a solution in which case the triangle is long and thin and produces the minimum area which must approach zero, see Fig. 17. To check the answer, sketch the change of area with $x$.
 # 
-# ### Q57 answer
+# ## Q57 answer
 # To find the optimum, $p$ has to be minimised with respect to $v$ thus 
 # 
 # $$\displaystyle \frac{dp}{dv}=-\frac{aw^2}{v^2}+3b^2v=0$$
@@ -339,7 +339,7 @@ plt.show()
 # 
 # is clearly positive, both $a$ and $b$ being positive, the calculation has produced the optimum speed.
 # 
-# ### Q58 answer
+# ## Q58 answer
 # The gradient (tangent) is 
 # 
 # $$\displaystyle 2b^2y\frac{dy}{dx}=3x^2(a-x)-x^3$$
@@ -350,7 +350,7 @@ plt.show()
 # 
 # which has solutions at $x = 0$, and $x = \pm 3a/4$. The gradient would appear to be infinite at $x = a$. 
 # 
-# ### Q59 answer
+# ## Q59 answer
 # (a) First derivative: rearrange the equation to $\sin(u) = p$, differentiating produces $\displaystyle \cos(u)\frac{du}{dp}=\frac{1}{\cos(u)}$. 
 # 
 # By differentiating again the second derivative is $\displaystyle -\sin(u)\left(\frac{du}{dp} \right)^2 +\cos(u) \frac{d^2u}{dp^2} = 0$,
@@ -373,7 +373,7 @@ plt.show()
 # 
 # $$\displaystyle \frac{d^2f}{du^2}\left(\frac{du}{dp}\right)^2+\frac{df}{du}\frac{d^2u}{dp^2}=0$$
 # 
-# ### Q60 answer
+# ## Q60 answer
 # Making the substitution $x=\sin(\theta)$ gives $\displaystyle R=\frac{v^2x\sqrt{1-x^2}}{g}\left( 1+\sqrt{1+\frac{2gh}{v^2x^2}} \right)$. 
 # 
 # The derivative is quite easily calculated by hand but is a long process; using SymPy it is,
@@ -406,7 +406,7 @@ xmax
 # Figure 50 Throwing a football. The contours show the distance the ball travels and are separated by $2.5$ m.
 # ____
 # 
-# ### Q61 answer
+# ## Q61 answer
 # The angle is obtained from the tangent to the slope, which is the gradient $dy/dx$. Differentiating both terms as a 'function of function' produces 
 # 
 # $$\displaystyle \frac{dy}{dx}=-\frac{ax}{a+\sqrt{a^2-x^2}}\left(\frac{a+\sqrt{a^2-x^2}}{x^2}+\frac{1}{\sqrt{a^2-x^2}}  \right) +\frac{x}{\sqrt{a^2-x^2}}$$
@@ -452,7 +452,7 @@ plt.show()
 # 
 # Plotting the function, since this equation is not solved easily, produces a very small value for $x \approx 3.3 \cdot 10^{-5}$ m, and so the distance travelled is $\approx 10.32$ m. The Newton - Raphson method; see Section 10 could also be used to solve the equation more exactly. The minimum work done to pull the dog if it is a dead weight of $25$ kg, is $10.32\cdot 25 \cdot g = 2.53$ kJ, where $g$ is the acceleration due to gravity.
 # 
-# ### Q62 answer
+# ## Q62 answer
 # (a) The mass/unit length of the bone is the mass of the bone plus that of the marrow; this is volume$\cdot$ density, $m = \pi r^2(1 - k^2)\rho + \pi r^2k^2\rho/2$. Rearranging and substituting for the radius in terms of the strength of the bone gives, 
 # 
 # $$\displaystyle  m=\left( 1-\frac{k^2}{2}\right)\pi \rho r^2=\left( 1-\frac{k^2}{2}\right)\pi\rho\left( \frac{M}{Y(1-k^4)} \right)^{2/3}$$
@@ -488,7 +488,7 @@ print('{:s} {:6.3f}'.format('k value at minumum =', ans[0]) )
 # 
 # A comparison of bone with metals, such as stainless steel or aluminium, shows that for the same weight per length, bone is stronger than these metals but not as strong as carbon fibre composites.
 # 
-# ### Q63 answer
+# ## Q63 answer
 # Differentiating produces $\displaystyle \frac{dI}{dJ}=2e^{-BJ(J+1)/k_BT}-\frac{(2J+1)^2B}{k_BT}e^{-BJ(J+1)/k_BT}=0$,
 # 
 # where $k_B$ is Boltzmann’s constant. After cancelling terms and rearranging $\displaystyle \frac{(2J+1)^2B}{k_BT}=2$ and solving gives 
@@ -509,7 +509,7 @@ print('{:s} {:6.3f}'.format('k value at minumum =', ans[0]) )
 # \hline
 # \end{array}$$
 # 
-# ### Q64  answer
+# ## Q64  answer
 # (a) A maximum (or minimum) occurs when the derivative is zero, hence, 
 # 
 # $$\displaystyle \frac{dg(\omega)}{d\omega}=\frac{2\tau^3}{\pi}\frac{\omega-\omega_0}{(1+\tau^2(\omega-\omega_0)^2)^2}=0$$
@@ -537,7 +537,7 @@ simplify(ans)
 # Figure 52 Lorenzian $g(\omega)$ and its derivative $g'(\omega)$(dashed line); $\tau = 1$ s, $\omega_0= 50$ MHz.
 # ______
 # 
-# ### Q65 answer
+# ## Q65 answer
 # (a) Differentiating $\rho$ with respect to $\lambda$ as a product and 'function of function' and setting the result to zero produces
 # 
 # $$\displaystyle \frac{d\rho}{d\lambda}=-5\frac{8\pi h c}{\lambda^6}\left(\frac{1}{e^{hc/\lambda k_BT}-1}  \right)+ \frac{8\pi h c}{\lambda^5}\left(\frac{1}{e^{hc/\lambda k_BT}-1}  \right)^2\left(\frac{hc}{\lambda^2 k_BT}  \right)e^{hc/\lambda k_BT}=0$$
@@ -552,7 +552,7 @@ simplify(ans)
 # 
 # (b) To justify this approximation,the exponential term must be made small compared to unity; for example if $hc/\lambda k_BT \ge 10$ then $e^{-10} \approx 4 \cdot 10^{-5}$ and thus $\lambda T$ needs to be smaller than $1.4\cdot 10^{-3}$. Using values for Planck's constant $h$, the speed of light $c$, and Boltzmann's constant $k_B$ then $hc/k_B = 0.01439$. The wavelength $\lambda$ for red light is around $600$ nm and suppose $T = 2000$ K, then $\lambda T = 1.2\cdot 10^{-3}$ and our condition is just satisfied for visible light and relatively low temperatures for the black body. If the full equation for $\lambda T$ is solved, then $4.965$ replaces the constant $5$ used in the approximate equation.
 # 
-# ### Q66 answer
+# ## Q66 answer
 # The probability of the nuclei being at separation $x$ is $\displaystyle \psi^2=\sqrt{\frac{\alpha}{4\pi} } (2\alpha x^2-1)^2e^{-\alpha x^2}$
 # 
 # and therefore the maximum or minimum if found from the derivative 
@@ -586,7 +586,7 @@ ans
 solve(ans,x)                   # solve equation
 
 
-# ### Q67 answer
+# ## Q67 answer
 # (a) Starting with $f$, the derivative is 
 # 
 # $$\displaystyle \frac{df}{dx}=\frac{k_BT}{pL_p}\left( \frac{1}{2(1-x)^3}+1 \right)$$
@@ -613,7 +613,7 @@ solve(ans,x)                   # solve equation
 # 
 # and  all the terms in this expression are known.
 # 
-# ### Q68 answer
+# ## Q68 answer
 # (a) $D_e$ is the dissociation energy, because when $r \to \infty$ the potential $V \to D_e$. The constant $\beta$ has units of 1/distance because the exponential must be dimensionless.
 # 
 # (b) The potential energy and force are shown in Fig. 54. The derivative $dV/dr$ equals force at any internuclear separation $r$ because energy = force $\times$ distance, therefore force is energy/distance or $dV/dr$,
@@ -635,7 +635,7 @@ solve(ans,x)                   # solve equation
 # Figure 54 The Morse potential for HCl, in units of $D_e$, the force, and the second derivative. By convention, zero energy is often placed when $r = \infty$ on the potential energy curve. The force and second derivative are divided by $\beta$ and $\beta^2$ respectively to give energy. The dot shows the maximum force at $r_{max_f} = r_e + \ln(2)/\beta$.
 # _____
 # 
-# ### Q69 answer
+# ## Q69 answer
 # (a,b) The maximum number of levels is found when the difference in energy levels approaches zero then 
 # 
 # $$\displaystyle \frac{dE_n}{dn}=\nu_e-2x_e\nu_e(n+1/2)=0\quad\text{or}\quad n=\frac{1}{2x_e}-\frac{1}{2}$$
@@ -665,7 +665,7 @@ print('{:s} {:d}{:s} {:8.2f}'.format('n_max =',n, ', D_e =', E(n)) )
 # Figure 55. Dissociation energy $D_0$ (from zero point) is the area under the curve of $\Delta E =E(n+1)-E(n)$ vs quantum number $n$.
 # _____
 # 
-# ### Q70 answer
+# ## Q70 answer
 # (a) The equilibrium occurs when $dG/d\xi =0$ and $G$ is a minimum. The equation is best differentiated in two parts, then combined and simplified. Taking the first term, 
 # 
 # $$\displaystyle \begin{align}
@@ -707,7 +707,7 @@ k_p   = 4*xi_eq**2/(1 - xi_eq**2)
 print('{:s} {:6.4f} {:s} {:6.3f} '.format('xi(eq) =', xi_eq ,', K_p = ',k_p) ) 
 
 
-# ### Q71 answer
+# ## Q71 answer
 # (a) The maximum $P(t)$ occurs when the rate of change of $P$ is zero. The derivative is 
 # 
 # $$\displaystyle \frac{dP(t)}{dt}=C_0\frac{k_c}{k_c-k_p}\left(-k_pe^{-k_pt}+k_ce^{-k_ct}  \right)=0$$
@@ -727,12 +727,12 @@ print('{:s} {:6.4f} {:s} {:6.3f} '.format('xi(eq) =', xi_eq ,', K_p = ',k_p) )
 # Figure 57. Time profiles of (BChl)<sub>2</sub> and BPh populations.
 # ______
 # 
-# ### Q72 answer
+# ## Q72 answer
 # (a) The minima are found by differentiating the potential with respect to angle and solving the resulting equation which means solving $4\theta^3 - 14.4\theta = 0$. Note that the equation is a cubic, but one power of $\theta$ can be cancelled and this gives us $\theta = 0$ as a solution leaving a quadratic, which is then easy to solve. This produces $\theta = 0$ and $\pm 1.897$ radians or $\pm 108.7^\text{o}$. The height of the barrier is the difference between the maximum and one of the minima, and by substituting for the angles, is $2008.8\,\mathrm{ cm^{-1}}$. Notice that as the barrier is of finite size, the energy levels on one half of the potential are influenced by the others, and vice versa, leading to a splitting of the levels.
 # 
 # (b) The (smallest) number of inversions/second is the same as the lowest frequency, which is $0.79\,\mathrm{ cm^{-1}} \cdot 2.9979 \cdot 10^{10}\, \mathrm{cm\, s^{-1}} = 2.37\cdot  10^{10}\,\mathrm{ s^{-1}}$ and is a period of $\approx 42$ ps.The energy gap of the lowest level is caused by inversion and this, therefore, is the inversion frequency of that level.
 # 
-# ### Q73  answer
+# ## Q73  answer
 # The minimum is found from the derivative $\displaystyle \frac{dE}{d\theta}=-2NS^2\left(-J_1\sin(\theta)-2J_2\sin(2\theta)\right)=0$.
 # 
 # This equation is satisfied if interactions (J's) between layers are zero, which they are not, or if $-J_1 \sin(\theta) = 2J_2 \sin(2\theta)$. There are therefore three solutions. The two most obvious ones are, $\theta = 0$, making the crystal a ferromagnet and $\theta = \pm \pi$, making it an anti-ferromagnet. 

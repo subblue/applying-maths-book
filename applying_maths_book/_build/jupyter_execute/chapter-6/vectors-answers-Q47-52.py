@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## Solutions Q47 - 52
+# # Solutions Q47 - 52
 
 # In[1]:
 
@@ -15,7 +15,7 @@ init_printing()                      # allows printing of SymPy results in types
 plt.rcParams.update({'font.size': 16})  # set font size for plots
 
 
-# ### Q47 answer
+# ## Q47 answer
 # Start by defining vectors in the $\boldsymbol i-\boldsymbol j$ plane as
 # 
 # $$\displaystyle \vec a = \cos(\alpha)\;\boldsymbol i + \sin(\alpha)\;\boldsymbol j,\quad  \vec b = \cos(\beta)\;\boldsymbol i + \sin(\beta)\;\boldsymbol j$$
@@ -32,7 +32,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # Secondly, as $\vec a\times \vec b=|\vec a||\vec b|\sin(\alpha -\beta)\;\boldsymbol k$ and as the magnitude $|\vec a| = |\vec b| = 1$ then $\vec a\times \vec b = \sin(\alpha -\beta)\;\boldsymbol k$. The vector $\boldsymbol k$ is present because vectors $\vec a$ and $\vec b$ are entirely in the $i-j$ plane and $\vec a\times \vec b$ is perpendicular to this plane. Comparing the two definitions of $\vec a\times \vec b$ proves the relationship.
 # 
-# ### Q48 answer
+# ## Q48 answer
 # By definition, $\vec A\times\vec B =ab\sin(\chi)$ and similarly for other sides, then 
 # 
 # $$\displaystyle ab\sin(\chi) = ca\sin(\beta) = bc\sin(\alpha)\quad\text{ or }\quad \displaystyle \frac{\sin(\alpha)}{a}=\frac{\sin(\beta)}{b}=\frac{\sin(\chi)}{c}$$
@@ -44,7 +44,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # Figure 76.
 # _______
 # 
-# ### Q49 answer
+# ## Q49 answer
 # If you want to do the calculation by hand,the basis set to use is the orthogonal set $(i, j, k)$. The vectors can be defined as $\vec A = a_1\;\boldsymbol i + a_2\;\boldsymbol j + a_3\;\boldsymbol k$ and a similar equation for $\vec B$ and $\vec C$ with coefficients $b_{1-3},\; c_{1-3}$. Alternatively matrices can be used. In Python/Sympy we need to specify the vectors as one-dimensional matrices. The calculation is simple as dot and cross products are pre-defined. 
 
 # In[2]:
@@ -62,7 +62,7 @@ f3 = C*(A.dot(B))               # C(A.B)
 simplify( f1 - f2 + f3 )
 
 
-# ### Q50 answer
+# ## Q50 answer
 # (a) In this calculation, the line is $Ap$, and the line $Bp$ is at an angle $\theta$ from $Ap$. Defining the vectors, as in the example in the text, the distance of $B$ from $Ap$ can be found as follows using Python to do this numerically, or by hand. The calculation is similar to that in the text.
 
 # In[3]:
@@ -81,7 +81,7 @@ d_B_Ap = np.sqrt( np.dot(ab,ab) )/np.sqrt( np.dot(b,b) )
 print('{:s}{:6.3f}'.format('dist B to Ap =',d_B_Ap) )
 
 
-# ### Q51 answer
+# ## Q51 answer
 # (a) Let $r$ be the length of each side. If point A is at the origin,
 # then C is at $(r,0,0)$ and B at $(r/2,r\sqrt{3}/2,0)$ as $\sin(60^\text{o})=\sqrt{3}/2$. The distance from $B$ to $AC$ is $\displaystyle |\vec d|=\frac{|\vec b \times \vec c|}{|\vec c|}$
 # 
@@ -126,7 +126,7 @@ f(1/4,1/8)
 
 # and the same answer $0.866=\sqrt(3)/2$ is obtained for other valid $x,\;y$ which confirms the value given in the question.
 # 
-# ### Q52 answer
+# ## Q52 answer
 # Using Python to do the arithmetic, calculate the bond distances first. It is not obvious from the data which O atom to take, so calculate both distances. A simple function 'length' is made to calculate the lengths to avoid retyping similar equations.
 
 # In[5]:

@@ -1,9 +1,9 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## Questions 35 - 39
+# # Questions 35 - 39
 
-# ### Q35 Rounding and errors
+# ## Q35 Rounding and errors
 # Rewrite and/or correct the following in the most appropriate form.
 # 
 # $$\begin{array}{l|l|l}
@@ -12,7 +12,7 @@
 # 9.36156 \pm 0.312 \,\mathrm{kJ/mole} & 123.34 \pm 20 \,\mathrm{K} & 101352 \pm 133.322 \,\mathrm{N\,m^{-2}}
 # \end{array}$$
 # 
-# ### Q36 Significant figures
+# ## Q36 Significant figures
 # Record the results of the following calculations to an appropriate number of significant figures.
 # 
 # $$\begin{align}
@@ -21,16 +21,16 @@
 # \log(1.001) &=\\
 # \end{align}$$
 # 
-# ### Q37 SI units
+# ## Q37 SI units
 # Convert voltage, resistance, and capacitance into base SI units.
 # 
-# ### Q38 Folding paper
+# ## Q38 Folding paper
 # (a) If a piece of paper is 0.1 mm thick, how many times will it have to be folded to reach the moon?
 # This is hardly realistic, nevertheless, suppose that it were possible.
 # 
 # (b) Graphene is a one carbon thick layer of atoms with the structure of graphite having sp$^2$ hybridized C-C bonds forming six membered rings. If a sheet of graphene were folded for the same number of times as the paper, how thick would it be?
 # 
-# ### Q39 Heat of evaporation
+# ## Q39 Heat of evaporation
 # In natural history programmes, it is common to see pictures of dried up lakes due to intense heat and lack of rainfall.
 # 
 # (a) Calculate how much energy is needed to evaporate the last one inch depth of each $1 \mathrm{ km}^2$ of a lake.

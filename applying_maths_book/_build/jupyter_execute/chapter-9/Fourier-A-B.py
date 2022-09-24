@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## Fourier series, Gibbs phenomenon, generalised series.
+# # Fourier series, Gibbs phenomenon, generalised series.
 
 # In[1]:
 
@@ -16,7 +16,7 @@ init_printing()                         # allows printing of SymPy results in ty
 plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 
-# ### Motivation and concept
+# ## Motivation and concept
 # 
 # The Taylor and Maclaurin series reconstruct functions as an infinite series in the powers $x^n$, and the coefficients needed to do this are the derivatives of the function. These series have rather tight restrictions placed upon them; the function must be differentiable $n$ times over and the remainder must approach zero. These are described in Chapter 5. In a Fourier series, the expansion is performed instead, as trigonometric series in sines and cosines, with two sets of coefficients, $a_n$ and $b_n$, to describe the $n^\text{th}$ term, and which are evaluated by integration. The series formally extends to infinity, but in practice, at most only a few tens of terms are needed to replicate most functions to an acceptable level of approximation. The advantage of using a Fourier rather than a Taylor/Maclaurin series is that a wide class of functions can be described by the series, including discontinuous ones. However, by their very nature, Fourier series can only represent _periodic functions_, and this must not be forgotten. Periodic means that the function repeats itself; the repeat interval is normally taken to be $-\pi$ to $+\pi$ but can be extended to the range $-L$ to $L$ and $L$ can even be made infinite.
 # 
@@ -27,7 +27,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # Figure 1. A complex and _periodic_ waveform or function is constructed out of the sum of sine and/or cosine waves. The complicated waveform, repeats itself with a period of 2$\pi$. In the Fourier series, the reconstruction of this waveform will require many more sine and cosine terms to reconstruct its form than are used to generate it, because the Fourier series only represents a function _exactly_ when an infinite number of terms are included in the summation. The phase and period shown with arrows relate only to the cosine (red waveform) with a period of $2\pi$. The phase is the distance the peak of the waveform is when measured from zero, and the amplitude the size of the wave at its maximum, measured from zero displacement which is the thin horizontal line.
 # _____
 
-# ### 1 The Fourier Series.
+# ## 1 The Fourier Series.
 # 
 # A Fourier series aims to reconstruct a function, such as a waveform, using the weighted sums of sine and cosine functions or their exponential representations. The great importance and usefulness of the Fourier series is that they represents the best fit, in a least-squares way, to a function $f(x)$ because 
 # 
@@ -56,7 +56,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # Before a worked example, it is worthwhile examining limits other than $\pm\pi$, describe the exponential form of the series and also simplifying some series using symmetry. The $a_n$ and $b_n$ constants are also derived.
 # 
-# ### 1.1 Series limits from -$L$ to $L$
+# ## 1.1 Series limits from -$L$ to $L$
 # 
 # Over the range $−L$ to $L$, the equations to use for $f(x)$ are similar to equations (1)–(3) but $x$ is
 # changed to $\pi x/L$. The series is
@@ -70,7 +70,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # Notice that the arguments, limits, and normalization are each changed compared to those when the range is $\pm \pi$. The integral now has limits $\pm L$ instead of $\pm \pi$, and normalization 1/$L$ rather than 1/$\pi$.
 # 
-# ### 1.2 Exponential representation
+# ## 1.2 Exponential representation
 # 
 # Because the sine and cosine functions can be represented as sums and differences of complex exponential terms, for example, $\displaystyle \cos(x) = (e^{ix} + e^{-ix})/2$, the most general way of describing the Fourier series is to use the complex exponential form;
 # 
@@ -82,7 +82,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # Note the change in sign and limits in the second exponential, and that $i=\sqrt{-1}$. The set of coefficients $c_n$, are sometimes called the _amplitude spectrum_ of the transform. Note also that for practical purposes the expansion $g(x)$, and the true function $f(x)$  are considered equivalent.
 
-# ### 1.3 Deriving the integral describing the $a$ and $b$ coefficients
+# ## 1.3 Deriving the integral describing the $a$ and $b$ coefficients
 # 
 # The integrals describing the coefficients $a_n$ are obtained by multiplying each term in the Fourier series by $\cos(mx)$, where $m$ is an integer, then integrating term by term using the orthogonality of sine and cosine integrals as necessary. The coefficients $b_n$ can be obtained similarly by multiplying the series by $\sin(mx)$ and integrating.
 # 
@@ -134,7 +134,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # Similar arguments lead to the calculation of $b_n$.
 # 
-# ### 1.4 Odd and even functions
+# ## 1.4 Odd and even functions
 # 
 # When functions are either even or odd, the Fourier series is simplified to cosine or sine series respectively. An even function has the property $f (-x) = f (x)$ and the sine integration (eqn. 6) producing the Fourier coefficient $b_n$ is odd and therefore $b_n$ = 0, but only because the integration limits are symmetrical. The cosine integral (eqn. 5) is not zero, and can be written as
 # 
@@ -216,7 +216,7 @@ plt.show()
 # **Figure 3**. Left: Plot of $x^2$ and its Fourier series to $n$ = 3 showing a poor fit to the true function. More terms produce a better fit but only over the range $\pm \pi$ as shown in the centre panel where 20 terms are included in the summation. This plot also shows how the fit is only over the range $\pm \pi$ and then it repeats itself. On the right are shown the coefficients $a_n$ and shows how rapidly their value decreases as $n$ increases.
 # ________
 # 
-# ### 1.5 Discontinuous functions
+# ## 1.5 Discontinuous functions
 # 
 # The square wave shown in Fig. 4, has a stepwise discontinuity. When $x \ge 0,\;  f(x) = 1$, and when $x \lt 0,  f (x) = -1$ and the wave repeats itself with a period of $2\pi$. This discontinuous function is sometimes called the _odd signum_ function, sgn($x$). It can be shown that, if the discontinuity occurs in the mid range $-\pi \to \pi$, each integral, $a_n$ and $b_n$, can be split into two, one being taken from $-\pi \to 0$ and the second from $0 \to \pi$. The Fourier series expansion now has coefficients
 # 
@@ -244,7 +244,7 @@ plt.show()
 # 
 # ____
 
-# ### 1.6 The Gibbs phenomenon
+# ## 1.6 The Gibbs phenomenon
 # 
 # The Fourier series of a square wave is shown in fig 4 (right) with a relatively large number of terms. Adding more will improve the fit to the function, but it will never be exact because an _infinite_ number of terms will be needed to follow the right-angled bends at the top and bottom of the wave. This angle effectively corresponds to an infinite sine frequency.
 # 
@@ -260,7 +260,7 @@ plt.show()
 # 
 # _______
 # 
-# ### 2 Integrating, differentiating and summing series
+# ## 2 Integrating, differentiating and summing series
 # 
 # If the series for a function $f(x)$ has been calculated then that for $\int f(x)dx$ can be easily calculated, providing that the integration can be performed. Similarly if $df(x)/dx$ is available the series for this can also be obtained. As an example, the series for $x^4$ can be obtained from the Fourier series for $x^3$ by integrating term by term; in addition, integration can lead to a better representation of a function with the same number of terms in the summation. The algebraic result will be different from that of a direct series for $x^4$, but should be just as good a representation. 
 # 
@@ -298,7 +298,7 @@ simplify(bn)
 # 
 # ______
 # 
-# ### 2.1 Summations 
+# ## 2.1 Summations 
 # 
 # The Fourier series can also be used to evaluate summations; for example the expansion of $x^2$ in the range $\pm \pi$, equation (15), gives
 # 
@@ -315,7 +315,7 @@ simplify(bn)
 # 
 # which converges more rapidly as all the terms have the same sign. Many other unusual summations can be achieved using different Fourier series; however, for us they are only curiosities.
 
-# ### 3 Some formal points about the Fourier series
+# ## 3 Some formal points about the Fourier series
 # 
 # The sine and cosines making up the Fourier series have two important properties: orthogonality and  completeness.
 # 
@@ -336,7 +336,7 @@ simplify(bn)
 # 
 # In modern mathematics, the term 'Fourier series' does not refer just to the original sine and cosine series, or their complex exponential representation, but to a series formed by other functions that form a complete orthogonal basis set. Often the term generalized Fourier series is used to describe these, but this is not universal. The sine or cosine functions are not unique in forming series and many other functions could be used provided that they can form an orthogonal set. Other such functions include the Hermite polynomials, used to describe the harmonic oscillator wavefunctions, and the Legendre and Chebychev polynomials. In Section 4 it is shown how these can also be used to form series that describe arbitrary target functions $f(x)$.
 # 
-# ### 3.1 A general method for numerically calculating a Fourier series
+# ## 3.1 A general method for numerically calculating a Fourier series
 # 
 # An algorithm is given below with which to calculate the Fourier series of a function and is fairly straightforward if equations (5) and (6) are used and care taken over the integration limits. The function is placed in the first line as and the range is from $\pm 7$, in this example. The target function is $\displaystyle f(x)= e^{-x/2}\sin^2(x)$. The equations (4 to 6) in section 1.2 are used. The series is calculated numerically.
 # 
@@ -358,7 +358,8 @@ fb = lambda x, n : f(x)*np.sin( n*np.pi*x/L )/L     #  function to give b_n afte
 numx = 1000                                         # number of data points to plot
 x = np.linspace(-L,L,numx)
 
-FS = lambda x: a0/2.0   + sum( quad(fa,-L,L,args=n)[0]*np.cos(n*np.pi*x/L) for n in range(1,m))                         + sum( quad(fb,-L,L,args=n)[0]*np.sin(n*np.pi*x/L) for n in range(1,m))
+FS = lambda x: a0/2.0   + sum( quad(fa,-L,L,args=n)[0]*np.cos(n*np.pi*x/L) for n in range(1,m)) \
+                        + sum( quad(fb,-L,L,args=n)[0]*np.sin(n*np.pi*x/L) for n in range(1,m))
                                                      # quad(...)[0] returns only the integral
 plt.plot(x,f(x), color ='gold',linestyle='solid',linewidth=10)
 plt.plot(x,FS(x),color ='blue',linewidth=1)
@@ -372,7 +373,7 @@ plt.show()
 # 
 # ______
 
-# ### 4 Generalized Fourier series with orthogonal polynomials
+# ## 4 Generalized Fourier series with orthogonal polynomials
 # 
 # The Fourier series expands a function in sine and cosines. In the language of vectors and matrices, the sine and cosines form a basis set in which the function f is expanded. The essential property that any basis set of functions must have is orthogonality. If $\varphi$ is such a function, then the basis set is the functions $\varphi_1, \varphi_2, \cdots$  and the condition for orthogonality is
 # 
@@ -469,7 +470,7 @@ plt.show()
 
 # $^1$ If the variable $x$ is actually an angle $\theta$ then the volume element for the integration has to be changed from $dx$ to $\sin(\theta)d\theta$ and in these cases $\sin(\theta)$ must multiply the weighting function.
 # 
-# ### 4.1 Generating Functions for orthogonal polynomials
+# ## 4.1 Generating Functions for orthogonal polynomials
 # 
 # The named orthogonal polynomials are the solutions of specific differential equations. They occur widely in Physics and Chemistry; the Hermite polynomials describe the harmonic oscillator wavefunctions; the Legendre electric charge distributions; and the associated Laguerre the electron distribution in the H atom. The spherical harmonic polynomials are based on the Legendre polynomials, with $x = \cos(\theta)$, and are used to describe the angular momentum in atoms and molecules; they define the shapes of atomic orbitals, the rotational motion of molecules, and the heat flow around spheres.
 # 

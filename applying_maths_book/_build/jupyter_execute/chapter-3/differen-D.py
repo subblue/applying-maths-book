@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## Product rule and function of function or chain rule.
+# # Product rule and function of function or chain rule.
 
 # In[1]:
 
@@ -20,7 +20,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # These are the *product rule*, which is used when there is a function that is a product or ratio of other functions e.g. $y = \sin(x)\cos(x)$, and the *function-of-function* rule or *chain rule* used when a function has a structure such that one function is inside another, e.g. $\displaystyle y = \sin(ax^2 + x^{-3})$ or $\displaystyle f(x) = e^{x^2+\sin(x)}$ or in general $f\big(g(h)\big)$ for any variable $h$.
 # 
-# ### 4.1 Function-of-a-function or Chain rule
+# ## 4.1 Function-of-a-function or Chain rule
 # 
 # The method when one function is a function of another is to
 # 
@@ -70,7 +70,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # which should be the same result as was obtained by using the first method but substitution and rearranging is necessary to show this.
 # 
-# ### 4.2 Function of a function general formula
+# ## 4.2 Function of a function general formula
 # 
 # The general equation on which to use the function-of-function or chain rule is $f[g(h)]$, which means that $f$ is a function of a second function $g$, with the generic variable here called $h$; $\sin(ax^2 + x^{-3})$ has this form with $f$ being $\sin(\cdots)$ and $g(x)$ being $ax^2 + x^{-3}$ and the generic variable $h$ is $x$ in this case.
 # 
@@ -86,7 +86,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # and these are examples of the chain rule used in a way that you may feel is back to front. The left-hand side is expanded to give the right, rather than starting with an explicit function, of say, $S$ in terms of $T$ and $p$. The functional form does exist but it is not needed for us to be able to write down the expression; the fact that it exists is enough for further calculations. The reason for using this approach is that the change of entropy $S$ with pressure can be converted into a measurement of entropy with temperature, and a measurement of the change of temperature with pressure. The entropy change with temperature can be accurately measured with an electrochemical cell.
 # 
-# ### 4.3 The Product Rule
+# ## 4.3 The Product Rule
 # 
 # When there are products or ratios of functions, differentiation is done in two steps;
 # 
@@ -99,7 +99,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # As a check, expand the brackets to $\displaystyle y = x^5 + (1 + a)x^3 + ax$ and then differentiate giving $\displaystyle \frac{dy}{dx} = 5x^4 + 3(1 + a)x^2 + a$, which is the same as the first result. This can be seen by expanding all the brackets in both results.
 # 
-# ### 4.4 General formula
+# ## 4.4 General formula
 # 
 # The general form of the product rule is:
 # 
@@ -123,7 +123,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # $$\displaystyle \frac{d}{dx}\frac{d }{dx}e^{f}= \frac{d}{dx}\left(e^f\frac{df}{dx}\right)=e^f\left(\frac{df}{dx}\right)^2 +e^f\frac{d^2f}{dx^2}$$
 # 
-# ### 4.5 Ratios of functions: Quotients
+# ## 4.5 Ratios of functions: Quotients
 # 
 # The product rule and function-of-function rule can be used to calculate quotients. If
 # $\displaystyle y = \frac{f (x)}{g(x)}$ then this can be represented as $\displaystyle y = f (x)g(x)^{−1}$ and the derivative is,
@@ -142,7 +142,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # $$\displaystyle  (b) \quad y=\tan(x)=\frac{\sin(x)}{\cos(x)}, \qquad \frac{dy}{dx}=\frac{\cos^2(x)+\sin^2(x)}{\cos^2(x)}=1+\tan^2(x)$$
 
-# ### 4.6 Differentiation with respect to a function
+# ## 4.6 Differentiation with respect to a function
 # 
 # Sometimes in thermodynamics, but also elsewhere, equations are put in the form $\displaystyle \frac{d}{d(1/x)}$ rather than $\displaystyle \frac{d}{dx}$. For example, at constant pressure the Gibbs - Helmholtz equation, the derivative of the change of (Gibbs) free energy $\Delta G$ with temperature, can be written as
 # $\displaystyle \frac{d(\Delta G/T)}{d(1/T)}$ rather than $\displaystyle \frac{d\Delta G}{dT}$. The reason for doing this is largely historical and relates to a time not so long ago when computers were not readily available, and so the equation was simplified making it easier to integrate or plot by hand on graph paper. 
@@ -181,7 +181,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # Therefore, a plot of the log of the equilibrium constant vs reciprocal temperature is a horizontal line of intercept $-\Delta H^{\text{o}}/R$. If the line is not constant, but sloping or varying, then $\Delta H^{\text{o}}$ depends on temperature.
 # 
-# ### 4.7 Implicit differentiation
+# ## 4.7 Implicit differentiation
 # 
 # Quite often, an equation we may want to differentiate contains powers or functions of $y$ as well as $x$. For example, $\displaystyle \sin(y) + x^2e^x = 1$, and cannot easily be put into the form $y = \cdots$. In this case implicit differentiation is necessary, which is just a grand sounding name for a rather simple procedure and one with which you are already familiar. All that is done is to differentiate any function of $y$ using the function-of-function or product rule or both, as appropriate, and remembering that the differential of $y$ is $dy/dx$.
 # 
@@ -211,7 +211,7 @@ ans = diff(f,x)             # define y as a function of x so that it will be dif
 simplify(ans)
 
 
-# ### 4.8 Parametric functions and their differentiation
+# ## 4.8 Parametric functions and their differentiation
 # 
 #   Sometimes it is easier to describe equations in parametric form as two functions with a common or dummy variable, rather than in the conventional way; there is no fundamental reason for doing so, just convenience. An example is the equation of a circle. If it has a radius $a$ and is centred at the origin,
 #   
@@ -292,7 +292,7 @@ print('y0 = ', 2*np.sin(ans**2))
 # 
 # and so forth for other tangents. The vertical tangent occurs at $dx/dt = 3t^2 - 1 = 0$ or $t = 1/\sqrt{3}$, with $x = \pm 0.385$ and $y = 0.654$, which are either side of the central loop in the curve.
 # 
-# #### **Calculating the Parametric Equation**
+# ### **Calculating the Parametric Equation**
 # 
 # As an example consider finding the parametric equations of an epicycloid. This is the curve formed when one disc rotates about another, such as two coins. In the (false) models of the solar system, such as proposed by Ptolemy, epicycloids were used to describe the motion of the planets. Initially these worked quite well but as time passes such models, based as they were on incorrect physics, became increasingly inaccurate.  If the epicycloid curve produced has one cusp it is called a cardioid due to its heart-like shape, those with two cusps are called nephroids after the shape of a kidney. Figure 6a shows two epicycloids, the number of cusps corresponds to the ratio of radii.
 # 
@@ -315,7 +315,7 @@ print('y0 = ', 2*np.sin(ans**2))
 # Figure 6b. Calculation of parametric equation for an epicycle.
 # ______
 # 
-# ### 4.9 Differentiation of vectors
+# ## 4.9 Differentiation of vectors
 # 
 # To differentiate any vector, each of its elements is treated separately. In the previous section, we saw how to represent a curve in parametric form. The two parametric equations can also be represented in vector form; for example, a parabola is represented by the equation $y^2 = 4ax$, but in parametric form this can be written as $\displaystyle x = at^2$ and $y = 2at$ and in row vector form as $\displaystyle t = [x y] \equiv [at^2 2at]$. Since all elements are treated separately,
 # 
@@ -323,7 +323,7 @@ print('y0 = ', 2*np.sin(ans**2))
 # 
 # Evaluating each term produces $\displaystyle \frac{dv}{dt} = [2at, 2a]$. The second derivative is $\displaystyle \frac{d^2v}{dt^2} = [2a, 0]$. Previously, equation (23), it was shown that the gradient was the ratio of the derivative of $y(t)$ over that of $x(t)$. Applying this produces $\displaystyle \frac{dy}{dx}=\frac{2a}{2at}=\frac{1}{t}$ so that the gradient is $\sqrt{a/x}$ which is the same as starting with $\displaystyle y^2=4ax$.
 # 
-# ### 4.10 Differentiating dot and cross products
+# ## 4.10 Differentiating dot and cross products
 # 
 # When differentiating dot and cross products, the normal differentiation and the normal vector rules apply. Suppose $\boldsymbol u$ and $\boldsymbol v$ are vectors in some variable $s$ then, as $\boldsymbol u\cdot \boldsymbol v$ is the dot product
 # 
@@ -335,17 +335,17 @@ print('y0 = ', 2*np.sin(ans**2))
 # 
 # Differentiating vectors is described in more detail in Section 13.
 # 
-# ### 5 Summary
+# ## 5 Summary
 # 
 # Notation $f'=d/dx,\; f(x),\; g(x) $ are general functions in $x$ such as $x^2$ or $\sin(x)e^x$ etc. but mostly written as $f$ and $g$ for clarity. Constants used are $a$ and $b$.
 # 
-# #### **Exponentials**
+# ### **Exponentials**
 # $$\displaystyle   y=e^{f(x)} \qquad \frac{dy}{dx}=f'(x)e^{f(x)}$$
 # _______
-# #### **Logarithms**
+# ### **Logarithms**
 # $$\displaystyle   y=\ln(f(x))\qquad \frac{d}{dx} \ln\left(  f(x) \right) =\frac{f'(x)}{f(x)} $$
 # _________
-# #### **Function of a Function or Chain Rule**
+# ### **Function of a Function or Chain Rule**
 # $$\displaystyle  \begin{align} \frac{d}{dx}f\left(g(x)  \right)&=\frac{df}{du}\frac{du}{dx} ;\quad \text{where } u=g(x)\\
 # \frac{d}{dx}f\left(g(x)  \right)&=f'g'\\
 # \frac{dy}{dx}&=\frac{dy}{dt}\frac{dt}{dx}
@@ -353,7 +353,7 @@ print('y0 = ', 2*np.sin(ans**2))
 # 
 # $$\displaystyle \text{e.g.}\qquad y=\sin(ax^2+x^{-3}) \quad \to\quad \frac{dy}{dx}=\cos(ax^2+x^{-3})(2ax-3x^{-4})$$
 # _________
-# #### **Product Rule**
+# ### **Product Rule**
 # $$\displaystyle   \frac{d}{dx}fg = g\frac{d}{dx}f+f\frac{d}{dx}g \equiv gf'+fg'$$
 # 
 # $\qquad$or explicitly
@@ -363,28 +363,28 @@ print('y0 = ', 2*np.sin(ans**2))
 # $$\displaystyle \text{e.g.}\qquad  y=x^2e^{-x} \qquad \to \qquad \frac{dy}{dx}=2xe^{-x}-x^2e^{-x}$$
 # _________
 # 
-# #### **Function of powers of $x$**
+# ### **Function of powers of $x$**
 # 
 # $$\displaystyle  y=a^x \qquad \text{ take logs }; \qquad \ln(y)=x\ln(a) \qquad \to \qquad \frac{1}{y}\frac{dy}{dx}=\ln(a)$$
 # __________
-# #### **Reciprocal Derivatives**
+# ### **Reciprocal Derivatives**
 # 
 # $$\displaystyle   \frac{dy}{dx}=\left(\frac{dx}{dy}  \right)^{-1}; \qquad \frac{d^2y}{dx^2}=-\frac{d^2x}{dy^2} \left( \frac{dx}{dy} \right)^{-3}$$
 # 
 # __________
-# #### **Changing Variables**
+# ### **Changing Variables**
 # 
 # $\qquad$If a function is expressed as $f(x)$ and you want it as $f(t)$ then; 
 # 
 # $$\displaystyle   \frac{df}{dt}=\frac{df}{dx}\frac{dx}{dt}$$
 # 
 # ________
-# #### **Parametric equations**
+# ### **Parametric equations**
 # 
 # $$\displaystyle  y=f(t),\qquad x=g(t); \qquad \frac{dy}{dx}=\frac{dy}{dt}\frac{dt}{dx}= \frac{dy}{dt}/\frac{dx}{dt}$$
 # 
 # _________
-# #### **Integrals**
+# ### **Integrals**
 # 
 # $$\displaystyle  \frac{d}{dx}\int f(u)du=f(x);\qquad \frac{d}{dx} \int_a^x f(u)du=f(x);\qquad \frac{d}{dx} \int_a^b f(u)du=0$$
 # 

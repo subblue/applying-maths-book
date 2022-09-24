@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## Energy transfer. Autocatalytic reaction and spreading of fires
+# # Energy transfer. Autocatalytic reaction and spreading of fires
 
 # In[1]:
 
@@ -14,7 +14,7 @@ import matplotlib.pyplot as plt
 plt.rcParams.update({'font.size': 16})  # set font size for plots
 
 
-# ### Forster or dipole-dipole energy transfer
+# ## Forster or dipole-dipole energy transfer
 # 
 # Forster, also called dipole - dipole or resonance energy transfer is a vital process in photosynthesis as it is the mechanism by which energy is transported in the antenna and then to the reaction centre. The same process is used in FRET, which is widely used in the biosciences as a 'spectroscopic ruler' to measure how close one molecule is to another. In this process an excited state of a molecule D* can, non-radiatively, transfer energy to a nearby acceptor molecule A, provided energy is conserved, which means that the donor's emission spectrum overlaps with the acceptor's absorption;
 # 
@@ -116,7 +116,7 @@ dtime = np.zeros(bins,dtype=float)
 # 
 # It is surprising at first to see that the decay is not exponential. The reason for this is, as explained above, that the few nearby acceptors quench the donor preferentially compared to the more distant ones, which although more numerous, quench with ever decreasing rate constants. Fluorescence and phosphorescence decays measured by many donor - acceptor pairs confirm this type of decay (Birks 1970; Lacowicz 2004).
 
-# ### 5 Autocatalytic reaction on a surface and the spreading of fires
+# ## 5 Autocatalytic reaction on a surface and the spreading of fires
 # 
 # The spatial arrangement of molecules or other objects can have a special effect on their behaviour. As a molecular example, suppose that a nanoscale device consisting of a small reactive surface of limited area is covered with a monolayer of type A molecules. A single reactive molecule B is now introduced, which can diffuse around and catalyse other molecules from type A to itself, the reactive form B; the reaction is autocatalytic, $\mathrm{A + B} \to \mathrm{2B}$. However, during the manufacturing process, the surface is poisoned by impurities and these displace type A molecules. These impurities clearly limit the ability of the catalyst to work but are difficult to control, and so it is important to discover what level of impurity can be tolerated. 
 # 

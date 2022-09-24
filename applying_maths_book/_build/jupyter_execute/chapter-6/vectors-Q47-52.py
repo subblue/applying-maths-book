@@ -1,32 +1,32 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ##  Questions 47 - 52
+# #  Questions 47 - 52
 
-# ### Q47 Cross product
+# ## Q47 Cross product
 # Show that $\sin(\alpha - \beta) = \sin(\alpha)\cos(\beta )- \cos(\alpha)\sin(\beta)$. See problem Q25.
 # 
 # **Strategy:** As the problem involves cosines we could try to solve it by calculating the cross product of a and b as two unit vectors which have an angle $\alpha - \beta$ between them. The cross product is
 # $\vec a \times\vec b = |\vec a||\vec b|\sin(\alpha - \beta)\;\boldsymbol k$ and we calculate this in two ways and compare the results.
 # 
-# ### Q48  'Law of sines'
+# ## Q48  'Law of sines'
 # If the sides of a triangle have lengths $a, b, c$ prove the 'law of sines' for plane triangles,
 # 
 # $$\displaystyle \frac{\sin(\alpha)}{a}=\frac{\sin(\beta)}{b}\frac{\sin(\chi)}{c}$$
 # 
 # **Strategy:** Half of the cross product of any two sides of a triangle, taken as vectors, is equal to half its area. Let the sides be described by vectors $\vec A, \vec B$ and $\vec C$ and calculate the cross products using different pairs of sides.
 # 
-# ### Q49  Cross product
+# ## Q49  Cross product
 # Show that $\vec A \times (\vec B \times\vec C) = \vec B(\vec A\cdot\vec C) - \vec C(\vec A\cdot\vec B)$ by defining vectors in a three-dimensional basis set. Use python/Sympy to show that one side of the equation is the same as the other as this is simpler than doing it by hand.
 # 
-# ### Q50  Distance point to line
+# ## Q50  Distance point to line
 # Using figure figure 34 (section 16.3) 
 # 
 # (a) calculate the distance of point $B$ from the line $A$p, and 
 # 
 # (b) the distance of $A$ from the line $pB$.
 # 
-# ### Q51  Equilateral triangle
+# ## Q51  Equilateral triangle
 # Show that 
 # 
 # (a) the length of any perpendicular inside an equilateral triangle, of side $r$, to any vertex is $(r/2)\sqrt{3}$ and 
@@ -35,7 +35,7 @@
 # 
 # **strategy:** All sides have the same length because the triangle is equilateral and the internal angles are $60^\text{o}$. (a) Determine the coordinates of the vertices then calculate one perpendicular distance. (b) choose a point $p$ inside the triangle with coordinates $(x, y, 0)$ and calculate the distance from $p$ to each side.
 # 
-# ### Q52  Fe-O2 bond length in Haem.
+# ## Q52  Fe-O2 bond length in Haem.
 # The protein haemoglobin binds molecular oxygen to the Fe atom of the porphyrin chromophore of which there are four in this protein. This chromophore gives blood its characteristic purple venous and red arterial colours in its deoxygenated and oxygenated forms respectively. The binding of O$_2$2 causes the iron atom's d-orbital electronic energy levels to shift, causing a change in the haemoglobin's visible absorption spectrum. These changes are sufficiently quantitative that they are used as a non-invasive, optical monitor of the extent of blood oxygenation of patients in hospital.
 # 
 # In the haem protein, the Fe is sixfold coordinated, and the sixth position is taken by a nearby histidine residue whose bonding to the Fe pulls it out of the plane of the porphyrin. When the Fe atom releases the oxygen molecule, the porphyrin changes shape which results in the Fe atom moving more into the plane of the ring. The resulting force on the histidine is sufficient to trigger a shape change in the protein allowing the O$_2$ molecule to escape.

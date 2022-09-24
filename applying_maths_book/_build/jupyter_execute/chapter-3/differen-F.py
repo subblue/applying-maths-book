@@ -1,9 +1,9 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## Limits, l'Hopital's rule, Maximum, Minimum and Calculus of Variations 
+# # Limits, l'Hopital's rule, Maximum, Minimum and Calculus of Variations 
 
-# ### 6  l' Hopital's rule
+# ## 6  l' Hopital's rule
 # In many calculations limits are encountered. For example, in the theory of diffraction the function $\displaystyle \frac{\sin(x)}{x}$ is met which, when $x \to 0$, has the form $0/0$ and at first sight this ratio seem to be indeterminate. There are other forms similar to this such as $\infty/\infty,\, \infty/0,\, 0\times \infty,\, 0\times 0,\, \infty-\infty$ and l'Hopital's rule is a method, sometimes used with a little additional ingenuity, of determining these limits. This topic is discussed here, not only because it requires differentiation, but also because it will be needed in the next section. It seems that Johann Bernoulli first worked this out, but it is named after l'Hopital who was one of his pupils.
 # 
 # The method is
@@ -48,7 +48,39 @@
 # 
 # In the last step substituting for $x=0$ gives the ratio as $0/1$ so  the limit is zero.
 # 
-# #### **Diffraction intensity**
+# ### **Chemical equilibria**
+# 
+# In a second order reaction of the form 
+# 
+# $$\displaystyle A+B \overset{k_1}{\underset{k_{-1}} \rightleftharpoons } C+D$$
+# 
+# the rate of change of $C$ is
+# 
+# $$\displaystyle \frac{dC}{dt}=k_1AB-k_{-1}CD$$
+# 
+# where $C\equiv [C]$ etc. for clarity. This can be re-written using $A_0-A=B_0-B=C_0+C=D_0+D$, where the subscript $0$ indicates the initial amount, and if initially only $A$ and $B$ are present,
+# 
+# $$\displaystyle \frac{dC}{dt} = k_1(A_0-C)(B_0-C) - k_{-1}C^2$$
+# 
+# which can be integrated but we are interested in the equilibrium when the rate of change is zero. Letting $C_e$ be the equilibrium amount gives
+# 
+# $$\displaystyle K_e = \frac{k_1}{k_{-1}}=\frac{C_e^2}{(A_0-C_e)(B_0-C_e)} $$
+# 
+# and when $A_0 = B_0$ this simplifies to
+# 
+# $$\displaystyle K_e = \frac{k_1}{k_{-1}}=\frac{C_e^2}{(A_0-C_e)^2} $$
+# 
+# which has the solution 
+# 
+# $$\displaystyle C_e=\frac{A_0(K_e-\sqrt{K_e})}{K_e-1}$$
+# 
+# To find the concentration when $K_e=1$ the fraction seems to be $0/\infty$. Using L'Hopital's rule and differentiating with $K_e$ gives
+# 
+# $$\displaystyle \frac{A_0(K_e-\sqrt{K_e})}{K_e-1}\to \frac{A_0(1-\frac{1}{2}K_e^{-1/2})}{1}=\frac{A_0}{2}$$
+# 
+# which makes sense as there are equal moles initially of $A$ and $B$ so in total $2A_0$ and equal concentrations for each species but only in this particular case.
+# 
+# ### **Diffraction intensity**
 # The intensity of line of $N$ emitters, such as point sources that are also coherent as occurs in the theory of interference and diffraction, is given by
 # 
 # $$\displaystyle I=I_0\frac{\sin^2(N\delta/2)}{\sin^2(\delta/2)}$$
@@ -63,13 +95,13 @@
 # 
 # $$\displaystyle \lim_{\delta\to 0}\frac{\sin(N\delta/2)}{\sin(\delta/2)}\to\frac{N\cos(N\delta/2)/2}{\cos(\delta/2)/2}=N$$
 # 
-# making the maximum intensity $I=N^2I_0$ when $\delta=2\pi m$ which makes the cosines $1$. See fig 15 in chapter 9, 'Fourier Transforms' for a figure of the sinc function where $\mathrm{sinc}(ax)=\sin(ax)/\sin(x)$ function.
+# making the maximum intensity $I=N^2I_0$ when $\delta=2\pi m$ which makes the cosines $1$. See fig 15 in chapter 9, 'Fourier Transforms' for a figure of the sinc function where $\mathrm{sinc}(ax)=\sin(ax)/\sin(x)$.
 # 
-# ### 6.1 Beware of 'False fractions'
+# ## 6.1 Beware of 'False fractions'
 # 
 # Sometimes a limit is required but the expression is not really a fraction, for example $\displaystyle \lim_{x\to 1} \frac{x^4-1}{x-1} $ which looks like a fraction but is simplified to $\displaystyle \lim_{x\to 1} \frac{(x-1)(x^3+x^2+x+1)}{(x-1)} $ and because the value $x = 1$ is never reached ( we are seeking the limit to not the value at $x = 1$) the $x-1$ terms can be cancelled out leaving $\lim_{x\to 1} (x^3+x^2+x+1)=4 $
 # 
-# ### 7 Extrema: maxima, minima and inflection points
+# ## 7 Extrema: maxima, minima and inflection points
 # 
 # One very useful property of derivatives is that they allow us to find the maxima and minima of functions; these are also called stationary points of the function. The extrema might be the maximum or minimum but can also be the limit where the function goes to $\pm \infty$.
 # 
@@ -84,7 +116,7 @@
 # Figure 12. The curve $f(x) = 2(x - 2)^3 - x^2 + 4$ showing its maximum and minimum, and its first $f'(x)$ and second $f''(x)$ derivatives. Notice how the first derivative is zero at the maximum and also the minimum and that the second derivative determines which is which in cases when a plot is not made.
 # _____
 
-# ### 7.1 Summary
+# ## 7.1 Summary
 # 
 # A function $f(x)$ has a maximum or minimum when $\displaystyle \frac{d}{dx}f(x)=0 \tag{25}$
 # 
@@ -104,7 +136,7 @@
 # 
 # The first derivative is zero at $x=0$, and the second zero at $\displaystyle x=\pm\frac{1}{\sqrt{3}}$  and $\displaystyle y=\pm\frac{3}{4}$
 
-# #### **Luminescence from phosphors. An example with differentiation of an integral and numerically solving for a root**
+# ### **Luminescence from phosphors. An example with differentiation of an integral and numerically solving for a root**
 # 
 # Many non metallic compounds such as ZnS-Cu and zinc silicates-Mn, will show phosphorescence lasting many tens of seconds after excitation with UV light. Some phosphors also show luminescence on heating and this provides a method of dating minerals and clays directly or in man-made objects discovered by archaeologists. The cause of the luminescence is the recombination of electrons, liberated by the UV or heat, with relatively low energy impurity 'traps' and the excess energy is released as a photon. These impurity traps have an energy between the filled levels (ground state or valance band) and the empty ones at higher energy (excited state or conduction band). 
 # 
@@ -157,7 +189,7 @@
 # Figure 13b. Luminescence heating curves from eqn 27c for a crystal containing impurity traps of depth $E$. The intensity divided by the rate of heating is plotted. This means that the curves show the number of photons liberated at each temperature and so the area under each curve is $n_0$ the total number of electrons present initially. Recombination of electrons and traps produces a photon. The parameters user were $n_0=1000,\; k_0 = 3\cdot 10^9\,\mathrm{s^{-1}}$, $E = 5000\,\mathrm{cm^{-1}}$ the heating rate $\beta=0.5$ and $5.5$ degrees/second is shown on the plot. The temperature at the maximun luminescence intensity is $300.8$ and $331.3$ K respectively for the $\beta$ shown and were calculated using the Newton-Raphson method.
 # ________ 
 
-# ### 8 The Calculus of Variations
+# ## 8 The Calculus of Variations
 # 
 # Instead of finding the maximum or minimum of a curve, consider finding the shortest distance between two points on the earth's surface or on a cone, or finding the equation giving the minimum area of a surface, or the curve of fastest descent between two points. The _Calculus of Variations_ allows us to work out solutions to problems of this type.
 # 
@@ -198,7 +230,7 @@
 # 
 # This is sometimes called the 'Beltrami' identity. The words 'not explicit' mean that $f$ is a function of $y$ or $dy/dx$ such as $ f = y^2 + dy/dx$ which does _not_ explicitly depend on $x$; the function $f = x^2$ explicitly depends on $x$.
 # 
-# ### 8.1 Calculating the shape of the minimum surface of revolution.
+# ## 8.1 Calculating the shape of the minimum surface of revolution.
 # 
 # Using the Euler equation is actually not that difficult and as an example the minimum surface of revolution of all possible surfaces for a film suspended between two rings is calculated.  A surface of revolution is given by equation (29) but if the surface is to be a minimum then (30) or (32) must also apply. The latter equation is easier to use with $f =y \sqrt{1 + (dy/dx)^2}$ because this does not explicitly contain $x$. 
 # 
@@ -220,7 +252,7 @@
 # 
 # where $b$ is a constant of integration. The constant $b$ sets the position of the minimum of the curve; $b = 0$ sets the minimum at $x = 0$, whereas $a$ determines the depth of the curve . This equation describes the Catenary or the curve describing the shape of the edge of the minimum surface of revolution as in a soap film supported on rings, see fig 13(b). It is also the shape produced by a flexible cable or chain hanging under its own weight i.e. under a constant uniform force such as gravity. The shape is very close to, but distinct from that of  parabola. 
 
-# ### 8.2 The Brachistochrone, the Tautochrone and the Cycloid
+# ## 8.2 The Brachistochrone, the Tautochrone and the Cycloid
 # 
 # The Brachistochrone is the name of the curve a frictionless particle will travel along to pass between two points in the shortest time when acted on by a force such as gravity. The time taken is much less than that taken to move down a straight slope or, in fact, any other slope. The Tautochrone is the same curve but is used to describe the fact that a particle set in motion down the curve will arrive at the horizontal part at the same time irrespective of where it starts from. The inverted Brachistochrone is the cycloid, see question 53.
 # 

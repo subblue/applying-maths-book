@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## Boundary value problems.
+# # Boundary value problems.
 
 # In[1]:
 
@@ -17,7 +17,7 @@ init_printing()                      # allows printing of SymPy results in types
 plt.rcParams.update({'font.size': 16})  # set font size for plots
 
 
-# ### Shooting method
+# ## Shooting method
 # 
 # The previous examples have been treated as initial value problems, but, in many cases, the equation being examined requires that the solution has predetermined value at two places, and a number of engineering and quantum mechanical problems have this restriction. Figure 25 illustrates, in a schematic way, the difference in the initial value and boundary conditions for a second-order equation; $d^2y/dx^2 = f (x,y)$. The top sketch shows the two initial conditions chosen at $x = 0$ to be $y = 1$ and $dy/dx|_0 = 2$; the gradient is shown as an arrow. The lower figure illustrates the situation if the boundary condition on $y$ is one when $x = 0$, and zero when $x = 2$, which is the limit of the calculation; $x$ can only range from $0 \to 2$.
 # 
@@ -56,7 +56,6 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # $\qquad$ Loop to (2)
 # 
 # **(3)**$\quad$ Print result and plot data
-# 
 # 
 # The $y$ value calculated at the last data point ($x = 2$ in this case) is the boundary value $y_{2\alpha}$ for each $\alpha$, and this has to be stored after each solution and compared with the boundary condition $y_2 = b$. A new value of $\alpha$ is now chosen, and the new $y_{2\alpha}$ compared with the boundary value; when the difference is small enough the calculation ends. Ideally, the difference between the estimated and true value is zero; therefore, this calculation is the same as numerically finding the root of an equation. The new value of $\alpha$ is the root that can be found by linear interpolation (e.g. secant method), using the last two values calculated. Choosing the initial value of $\alpha$ is quite an art. Some equations are 'forgiving' and a value close to $y_0$ will produce a converging solution at the boundary; in other equations some experimenting with different $\alpha$ values is needed before a solution is reached; the innocuous looking equation $d^2y/dx^2 = 1/(1 + y^2)$ is difficult to solve unless $\alpha$ starts close to zero and the next $\alpha$ value chosen is also very small.
 # 
@@ -150,7 +149,7 @@ print('{:s} {:f}'.format('alpha_0',alpha0) )
 # Figure 26. Solution to boundary problem equation 51. The initial values $y_0 = 1$ and $dy/dx|0 = -11.9$ were calculated and are consistent with boundary values $y_0 = 1$ and $y_2 = 0$.
 # ____
 # 
-# ### 10 Numerical integration of the Schroedinger equation
+# ## 10 Numerical integration of the Schroedinger equation
 # 
 # In one dimension, the Schroedinger equation for a particle of mass $m$ with an energy $E$ in a potential $V(x)$ is
 # 
@@ -178,12 +177,12 @@ print('{:s} {:f}'.format('alpha_0',alpha0) )
 # 
 # ![Drawing](num-methods-fig27.png)
 # 
-# Figure 27. A schematic of two wavefunctions at two energies neither of which is an eigenvalue. A wavefunction is the solution to the Schrödinger equation and if, at the boundary, $\psi(x) \to 0$, then $E$ is an eigenvalue and the wavefunction an eigenfunction. The wavefunction calculated with energy $E_n$ is positive and that with energy $E_{n+1}$ negative; the true energy eigenvalue is between these two values and will produce the true wavefunction with its value of zero at the boundary.
+# Figure 27. A schematic of two wavefunctions at two energies neither of which is an eigenvalue. A wavefunction is the solution to the Schroedinger equation and if, at the boundary, $\psi(x) \to 0$, then $E$ is an eigenvalue and the wavefunction an eigenfunction. The wavefunction calculated with energy $E_n$ is positive and that with energy $E_{n+1}$ negative; the true energy eigenvalue is between these two values and will produce the true wavefunction with its value of zero at the boundary.
 # __________
 # 
-# ### 10.1 The Shooting Method with a quadratic potential
+# ## 10.1 The Shooting Method with a quadratic potential
 # 
-# #### **Eigenvalues and wavefunctions**
+# ### **Eigenvalues and wavefunctions**
 # 
 # In solving the Schroedinger equation is is necessary to re-write it into a more convenient form and also split it into to equations as done with previous examples of second order equations. Rearranging produces
 # 
@@ -197,7 +196,7 @@ print('{:s} {:f}'.format('alpha_0',alpha0) )
 # 
 # The calculation starts by solving the Schroedinger equation for $\psi$ at zero energy and $x = 0$, which happens to be at the lowest point of the potential, and $E$ is incremented by a small amount and at each new value the *sign* of the wavefunction at the boundary is checked. The energy is incremented until $\psi$ changes sign. When this happens an eigenvalue has been passed and the energy $E$ of the eigenvalue is between these last two values. The bisection method is now used to find an accurate value of the eigenvalue. This is a very stable method but takes several steps to reach the minimum for a given level of precision; the slowness of this method is more than compensated for by its stability because the Newton - Raphson or secant methods are rather subject to instability and can miss eigenvalues. A new energy is now chosen just above the last one found and a new eigenvalue sought and so forth, until the maximum energy required has been reached. The energy increments must be small enough not to miss an eigenvalue but not so small that the calculation takes an inordinate length of time, so some knowledge of the likely energy spacing, based on your knowledge of the chemical physics involved, is going to be useful.
 # 
-# #### **Eigenvalues**
+# ### **Eigenvalues**
 # 
 # The solutions of the Schroedinger equation in a symmetrical potential have either an 'odd' or 'even' parity, meaning that the wavefunction is either symmetrical and has a mirror image about the y-axis, or non-symmetrical and has instead a centre of inversion. If the wavefunction is of even parity then $\psi(x) = \psi(-x)$ and is finite at the origin but has zero slope; the initial condition is therefore
 # 
@@ -320,7 +319,7 @@ for i in range(s):
 # 
 # The harmonic potential is unusual because as the energy increases so does the width of the well and it does so in such a way that the energy separation between adjacent levels is constant. In comparison in the infinite square well, adjacent levels separate by ever-increasing amounts as the energy increases. In a potential such as $|x^{3/2}|$, the level separation decreases with an increase in energy as they also do in the hydrogen atom, where the potential is proportional to $1/x$, or in the anharmonic oscillator with the Morse potential. The difference in the spacing between energy levels the harmonic and double well potentials is shown in Fig. 11.28. In the double well potential below an energy of $30$ units, the well is narrow, which means it effectively has a large force constant causing the energy levels to be widely spaced, compared to the harmonic potential which is wider, at the same energy, and therefore has a smaller force constant. Well above the barrier, the widths of the double and harmonic potential gradually become similar and the energy spacings are now also more similar to one another.
 # 
-# #### **Wavefunctions**
+# ### **Wavefunctions**
 # 
 # Once the eigenvalues are known the wavefunctions have also effectively been calculated, see Algorithm 11.18. Depending on the method used one half of the wavefunction can be calculated then its image used to form the other half or the whole may be calculated in one go. This is possible because in a symmetrical well the left half is either the mirror image or the inverse mirror image of the right half. Figure 11.29 shows some of the wavefunctions, eigenvalues, and the double well potential of Fig. 11.28. 
 # 
@@ -331,7 +330,7 @@ for i in range(s):
 # Figure 29. Eigenvalues and wavefunctions vs displacement $x$ for quantum number 8 to 15 superimposed on the double well potential of Figure 28. The eigenvalues with $n = 8$ and $9$ are too close to separate on this figure, as are $10$ and $11$.
 # _________
 # 
-# ### 10.2 Energy levels of the ammonia inversion normal mode calculated using atomic units
+# ## 10.2 Energy levels of the ammonia inversion normal mode calculated using atomic units
 # 
 # A more realistic example is to calculate the energy levels for ammonia; this also illustrates how to use atomic units to control the huge or tiny numbers present in quantum calculations.
 # 

@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## Solutions Q31 - 48
+# # Solutions Q31 - 48
 
 # In[1]:
 
@@ -15,7 +15,7 @@ init_printing()                      # allows printing of SymPy results in types
 plt.rcParams.update({'font.size': 16})  # set font size for plots
 
 
-# ### Q31 answer
+# ## Q31 answer
 # The three curves are shown in the polar plot below have $a = 1$ and are shown in the order (a) to (c). The centre plot also shows, as a dashed line, the curve when the phase is ignored. The right-hand figure is plotted with $n = 5$.
 # 
 # ![Drawing](integration-fig44.png)
@@ -56,7 +56,7 @@ simplify(integrate(eq,(theta,-pi/2,pi/2)))
 
 # however, as the sine and cosine terms are always zero if $n$ is a positive integer the equation simplifies to produce $a^2\pi(n^2 + 1)/4$ as the area with $n \gt 1$ and odd. When $n = 1$ the area is that of a circle $\pi a^2$ and can be obtained from the integration result by using l'Hopital's rule to obtain the limit since the denominator is zero when $n = 1$. The calculation is a straightforward but long one.
 # 
-# ### Q32 answer
+# ## Q32 answer
 # In the plot, curve(a) is on the left and the right-hand figure curve (b) has $n = 5$ and both are plotted with $a = 1$.
 # 
 # ![Drawing](integration-fig45.png)
@@ -97,7 +97,7 @@ simplify(integrate(eq,(theta,-pi/(2*n),pi/(2*n))))
 
 # which is clearly going to produce $3\pi a^2/4$ as the area between the five-leaved figure and the circle. If the calculation is repeated with different integer n values the same result is obtained when the limits are changed as appropriate to $\pm \pi/2n$. It does not look as if only one quarter of the area is filled by the loops in the curve, particularly if curves with $n = 200$ or other large numbers are potted. Even stranger is that in the limit $n \to \infty$ it appears that the unfilled area is still the same; an infinite number of loops is present but each of infinitesimal thickness and they do not fill all the space.
 # 
-# ### Q33 answer
+# ## Q33 answer
 # If OA = $\cosh(\theta)$ let the angle BOA be $\theta$, then by definition  $\tanh(\theta) = \sinh(\theta)/\cosh(\theta)$
 # 
 # and in a right-angled triangle, because $\tanh$ = opposite / adjacent, AB = $\sinh(\theta)$. Generalizing, because A can be at any distance along the axis, gives $x = \cosh(\theta)$ and as the equation of the curve is $x^2 - y^2 =1$ therefore $y^2 = x^2 -1 = \cosh^2(\theta)-1$. From the definitions of hyperbolic functions (Chapter 1.5.5) $\cosh^2(\theta) - \sinh^2(\theta) = 1$. This can easily be proved because by definition, 
@@ -120,7 +120,7 @@ simplify(integrate(eq,(theta,-pi/(2*n),pi/(2*n))))
 # 
 # which after changing to exponential form produces the area QAB = $\theta/2$.
 # 
-# ### Q34 answer
+# ## Q34 answer
 # First plot the function using polar coordinates with a $\mathtt{plt.polar(theta, r(theta) )}$ type of plot. To help calculate the limits plot $1 + 2\sin(x) = 0$ in Cartesian coordinates, shown below on the right. A root of this equation occurs at $\theta = -\pi/6$ and at $\theta = -5\pi/6$ and then at $\pm 2\pi$ intervals or $\theta=-\pi/6+2\pi,\theta=-5\pi/6+2\pi$ etc. as shown in the figure.
 # 
 # By plotting only between limits, it is found that the negative areas on the right-hand plot correspond to the smaller loop in the polar plot. Note that some graphics packages may put the smaller loop inside the larger one.
@@ -134,7 +134,7 @@ simplify(integrate(eq,(theta,-pi/(2*n),pi/(2*n))))
 # 
 # (c) The inner curve has an area with limits $\theta = -5\pi/6 \to θ = -\pi/6$ and as $\sin(\pi/6) = \sin(5\pi/6) = 1/2$ and $\cos(\pi /6) = -\cos(5\pi/6)=\sqrt{3}/2$, the integral has the value $\pi-3\sqrt{3/4}$.
 # 
-# ### Q35 answer
+# ## Q35 answer
 # The integration is $\displaystyle A=\frac{a^2}{2}\int_a^b(1+\cos(\theta))^2 d \theta$ 
 # 
 # where the limits are defined by which part of the figure is being calculated. Because the cardioid is symmetrical, limits of $\pi/2 \le \theta \le \pi$ can be used for the backward going signal and the result doubled. Similarly the total area is twice that with $0 \le \theta \le \pi$ this is 
@@ -143,7 +143,7 @@ simplify(integrate(eq,(theta,-pi/(2*n),pi/(2*n))))
 # 
 # The backward projecting signal is calculated from the same integral but with limits $\pi/2 \to \pi$ and has the value $a^2(3\pi -8)/4$. The ratio is $(3\pi-8)/(6\pi)$ which is $\approx 0.076$ so that only $7.6$ % of the signal is lost.
 # 
-# ### Q36 answer
+# ## Q36 answer
 # (a) The function is $f (t) = a$ which is a constant and by definition 
 # 
 # $$\displaystyle F(s) =\int_0^\infty f(t)e^{-st}dt$$
@@ -169,7 +169,7 @@ simplify(integrate(eq,(theta,-pi/(2*n),pi/(2*n))))
 # Figure 47. Two functions (left) and their Laplace transforms (right)
 # ____
 # 
-# ### Q37 answer
+# ## Q37 answer
 # The area is the integral $\displaystyle \int_{x_0}^\infty x^2e^{-\alpha x^2}dx$ and should be 
 # identified as one of the special integrals that are best looked up of solved using Sympy. It is not simple to do this by hand. 
 
@@ -187,7 +187,7 @@ simplify(integrate(eq,(x,x0,oo)))
 # 
 # and ranges from $0\to 1$. Notice that the variable $x$ is in the limit of the integration. The error function represents the area under the Gaussian, or bell shaped, normal distribution curve, and is therefore frequently met in statistics.
 # 
-# ### Q38 answer
+# ## Q38 answer
 # Integrating directly produces the general equation;
 
 # In[7]:
@@ -208,7 +208,7 @@ simplify(integrate(eq,(x,-oo,oo))  )
 # 
 # for integer $m$. The double factorial has the form $n!!=n(n-2)(n-4)\cdots $. The first few terms are $\Gamma(1/2)=\sqrt{\pi},\; \Gamma(3/2)= \sqrt{\pi}/2,\; \Gamma(3/2)=3\sqrt{\pi}/4$
 # 
-# ### Q39 answer
+# ## Q39 answer
 # 'By inspection' means 'evaluate without doing any numerical calculations', thus work out the answer logically. Because $e^{-x^2} =e^{-(-x)^2}$, all the parts of the wave functions are even. The terms $x^n$ where $n$ is odd, are 'odd' functions and vice versa, therefore the total wavefunction with even quantum numbers are 'even' functions, and those with odd quantum numbers are 'odd' functions. If you are still not convinced draw the wavefunctions; two of them $\psi_2$ and $\psi_3$, are shown using values for the vibration in CO with $x$ from $-30 \to 30$ pm. The vertical scales are arbitrary.
 # 
 # ![Drawing](integration-fig48.png)
@@ -216,7 +216,7 @@ simplify(integrate(eq,(x,-oo,oo))  )
 # Figure 48. Harmonic oscillator vibrational wavefunctions with parameters for CO; $n = 2$ is an even function, $n = 3$ an odd one.
 # ____
 # 
-# ### Q40 answer
+# ## Q40 answer
 # (a, b) The wavefunctions are 
 # 
 # $$\psi_0(x) = N_0e^{-\alpha x^2/2},\quad \psi_1(x) = \sqrt{2\alpha}N_0xe^{-\alpha x^2/2}$$
@@ -251,12 +251,12 @@ simplify(integrate(eq,x ))
 
 # Using the properties of the error function, $\mathrm{erf} (0) = 0,\; \mathrm{erf} (\pm\infty) = \pm 1$ the integral with limits is $\sqrt{\pi /\alpha}$ and therefore  $\displaystyle Q_0= \sqrt{\frac{\alpha}{\pi}}\sqrt{\frac{\pi}{\alpha}}=1$ and the wavefunction is normalised.
 # 
-# ### Q41 answer
+# ## Q41 answer
 # Substituting gives $\displaystyle e^{t\tau}=k_1N\int_0^\infty e^{r(t-\tau)}e^{-k_2t}dt=k_1Ne^{rt}\int_0^\infty e^{-(r+k_2)t}dt$ 
 # 
 # simplifying and integrating gives $\displaystyle 1=\frac{k_1N}{r+k_2}e^{-(r+k_2)t}\bigg|_0^\infty =\frac{k_1N}{r+k_2}$ producing $r=k_1N-k_2$.
 # 
-# ### Q42 answer
+# ## Q42 answer
 # (a) Orthogonality means that the integrals of the products of two wavefunctions have the behaviour 
 # 
 # $$\int\psi_i^*\psi_k dx=\delta_{i,j}$$
@@ -272,7 +272,7 @@ simplify(integrate(eq,x ))
 # 
 # In this question because $\mu x$ is always odd, it cannot belong to a totally symmetric representation. The integral eqn. 20 will be identically zero and the transition forbidden. In two photon transitions that can occur with high laser intensities, the transition dipole moment $\mu x$ would be squared inside the integral and therefore be an even quantity making such transitions allowed.
 # 
-# ### Q43 answer
+# ## Q43 answer
 # (a) Substituting for $\mu x$ into equation 20 and rearranging without doing any calculation produces
 # 
 # $$\displaystyle \begin{align}
@@ -313,7 +313,7 @@ simplify(integrate(eq,x ))
 # 
 # **Exercise:**(a) calculate $Q$ for the $1\to 2$ transition and (b) use Hermite polynomials for the general $n\to m $ transition.
 # 
-# ### Q44  answer
+# ## Q44  answer
 # (a) Starting with $\displaystyle J_{flux}=-D\left( \frac{zFc}{RT}\frac{dV}{dx}+\frac{dc}{dx}  \right)$,
 # 
 # where $D$ has units of $\mathrm{m^2\,s^{-1}}$, $c$ mole m$^{-3}$, $F$ Coulomb/mole, $V$ volts (J/C) , $x$ metres, $T$ temperature (K), $R$ the gas constant $\mathrm{J\,K^{-1}\,mole^{-1}}$, and $z$  is a number. The equation has units
@@ -389,7 +389,7 @@ simplify(integrate(eq,x ))
 # 
 # **Exercise:** Rationalize the size of the current when the temperature is very small and very large, i.e. tending to zero or infinity.Recall that the diffusion coefficient depends on temperature as $D = k_BT/f$ where $f$ is the constant friction imposed by the solvent in which the ion or molecule is diffusing. Consider separate cases when the voltage is positive and when negative.
 # 
-# ### Q45 answer
+# ## Q45 answer
 # (a) The ions are both singly charged so that $q_1$ and $q_2$ are $+e$ and $-e$ respectively where $e$ is the electronic charge. The ions move from infinity to $r$ , so the work done is the integral from infinity to $r_0$,
 # 
 # $$\displaystyle E=\frac{e^2}{4\pi\epsilon_0\epsilon}\int_\infty^{r_0} \frac{1}{r^2}dr= \frac{e^2}{4\pi\epsilon_0\epsilon}\left( \frac{-1}{r}\right)\bigg |_\infty^{r_0}=-\frac{e^2}{4\pi\epsilon_0\epsilon}\frac{1}{r_0}    $$
@@ -400,7 +400,7 @@ simplify(integrate(eq,x ))
 # 
 # (c) This energy is obviously greater because the dielectric constant is smaller and the ions are attracted to one another more strongly at any distance than at the same distance in water. A low dielectric medium does not attenuate an ion's electric field as much as a higher one would. This means that in water the attractive energy is comparable to thermal energy, which can therefore disrupt their interaction, and the ions can more or less move freely. In a solvent such as a liquid hydrocarbon, hexane, or benzene perhaps, which has a low dielectric constant, the attractive energy is so high compared to thermal energy at room temperature that the ions will largely remain in each other's vicinity, i.e. as an ion-pair. A general observation is that salts do not dissolve in hydrocarbons.
 # 
-# ### Q46 answer
+# ## Q46 answer
 # (a) Using the information in the question, the work done, or equivalently, the energy needed, is 
 # 
 # $$\displaystyle w=\int_0^q\frac{q}{C}dq=\frac{q^2}{4\pi\epsilon_0\epsilon \, r}$$
@@ -415,7 +415,7 @@ simplify(integrate(eq,x ))
 # 
 # (c) The rate constant can be estimated using Arrhenius' equation and even if the pre-exponential factor is $10^{12}\, \mathrm{s^{-1}}$, the rate is still $\approx 10^{-18}\mathrm{\, s^{-1}}$, which is staggeringly small and equivalent to occurring once in approximately $10^{11}$ years. This is why nature has to use membrane bound proteins to pass ions through membranes rather than relying on direct diffusion.
 # 
-# ### Q47 answer
+# ## Q47 answer
 # (a) The equation for $P(u)$ has the form met before which is, $x^2e^{-\alpha x^2}$. Either integrate this expression or substitute for $\alpha$ and multiply by the constants before the $u^2$ term, or use Sympy to recalculate the whole expression; $\alpha=m/(2k_BT)$
 # 
 # The equation for normalization is $\displaystyle \int_0^\infty p(u)du$
@@ -488,7 +488,7 @@ simplify(integrate(PE,(E,kBT,oo) ) )
 # Figure 51. The energy probability distribution for molecules at 100 (blue) and 500 K (red) together with the energies $k_BT$ which divide the areas so that 57% of the molecules have more than this energy at each temperature. The energy is in joules per molecule.
 # ____
 # 
-# ### Q48 answer
+# ## Q48 answer
 # (a) With an escape velocity of $2350 \,\mathrm{ms^{-1}}$ and a temperature of $380$ K the fraction $0.0653$ of He atoms and $6.2 \cdot 10^{-11}$ of N$_2$ molecules escape from the moon's gravity. Once a molecule has escaped, the remainder will re-equilibrate to a new temperature because a little of the initial energy has been lost. As bimolecular collisions between molecules are very rare there being no atmosphere, re-equilibration should be an exceptionally slow process but could occur instead via collisions with the moon's surface. Nevertheless, on the geological time scale of millions of years, re-equilibration would be rapid and so all the molecules would escape, although for N$_2$ this will take far longer to do so than for He.
 # 
 # (b) The similar calculation for the earth produces fractions that escape as $2.05 \cdot 10^{-9}$ for He and $1.6 \cdot 10^{-65}$ for N$_2$ assuming that the temperature is $1400$ K at $1000$ km. Both these fractions are small and the rate of escape by speed alone will depend on the re-equilibration rate due to collisions causing a steady state concentration gradient to be produced. The amount of He lost is small but on a geological time scale not much would remain if it were not continuously generated by radioactive decay in some rocks; the amount in the atmosphere is therefore a balance of loss and gain. The amount of nitrogen lost is so infinitesimal that even on a geological timescales of millions of years, it will not be lost to space and less so when multiplied by the fraction of all molecules present at that altitude as calculated in (c). For example, the atmosphere weighs $\approx 5 \cdot 10^{18}$ kg (Chapter 1.12) and contains $\approx 1.5 \cdots 10^{20}$ mol N$_2$, and $10^{-65}$ of this is still utterly minute.
@@ -503,7 +503,7 @@ simplify(integrate(PE,(E,kBT,oo) ) )
 # 
 # At high altitudes, molecules and atoms can be ionized by UV and shorter wavelength radiation and by charged particles from the sun and it seems likely that the earth's magnetic field will constrain most of these ions and return them to the poles where recombination can occur to produce neutral species. Whether this is a significant process is left for you to investigate.
 # 
-# On the moon, the acceleration due to gravity is $1.62\,\mathrm{ m \,s^{-2}}$, which is much reduced from that on earth by the ratio of their respective masses and radii squared. The fraction of He at $100$ km is $0.75$, and it is $0.24$ at $500$ km so we expect these gases to escape either when ionized, because the moon has no strong magnetic field, or as neutral species.
+# On the moon, the acceleration due to gravity is $1.62\,\mathrm{ m \,s^{-2}}$, which is much reduced from that on earth by the ratio of their respective masses and radii squared. The fraction of He at $100$ km is $0.75$, and it is $0.24$ at $500$ km so we expect these gases to escape either when ionized, because the moon has no strong magnetic field to deflect charges particles from the sun, or as neutral species.
 
 # In[ ]:
 

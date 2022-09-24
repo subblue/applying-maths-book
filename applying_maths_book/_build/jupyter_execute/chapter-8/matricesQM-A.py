@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## Matrices in Quantum Mechanics
+# # Matrices in Quantum Mechanics
 
 # In[1]:
 
@@ -16,7 +16,7 @@ init_printing()                      # allows printing of SymPy results in types
 plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 
-# ### 1 Concept and motivation
+# ## 1 Concept and motivation
 # 
 # The Schroedinger equation (1) can be solved, in principle, by integration in the same manner as other similar differential equations and the energies $E$ and wavefunctions $\varphi$ determined,
 # 
@@ -26,7 +26,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # This chapter has two parts, the first assumes some knowledge of basis sets and several problems are solved using them and in the second part, basis sets and _bra-ket_ algebra are described. How these objects are manipulated is illustrated. If you are unfamiliar with these topics, it may be worth looking at the second part first.
 # 
-# ### 1.1 Notation
+# ## 1.1 Notation
 # 
 # Writing the Schroedinger equation as $H\varphi = E\varphi$ is the conventional shorthand that represents the following set of simultaneous equations
 # 
@@ -42,7 +42,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # where $\delta$ is the Kronecker delta such that $\delta_{n,n} = \delta_{m,m} = 1$ and if $n \ne m$; $\delta=0$. The subscripts $i = 0, 1, 2, \cdots$ are used to label the whole set of energy levels but the subscripts $n$ and $m$ are reserved to represent individual levels should that be necessary and are also the quantum numbers. If the harmonic oscillator were being described, quantum number $i$ would extend to infinity. In contrast, spin only has a finite set of quantum numbers; two for the spin state of the electron $i = -1/2, 1/2$ and three for the nuclear spin state of $^{14}$N or $^2$H, $0, \pm 1$.
 # 
-# ### 2 Expectation Values
+# ## 2 Expectation Values
 # 
 # The expectation or average value for the lowest level $0$ is the energy $E_0$. It is calculated by left multiplying equation 2 by $\varphi^*_0$ and integrating over all space $x$,
 # 
@@ -93,7 +93,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # where $V^1$ is the new potential. Each integral $H_{nm}=\int\varphi^*_nH\varphi_m dx$ has to be solved first and the new matrix diagonalised. In some problems, such as the NMR nuclear spin example given below, the wavefunctions are never known, only their integrals with the angular momentum operator, which means that $H_{nm}$ is known directly. In problems that have a large number of states, such as an anharmonic oscillator, a huge matrix will be needed to calculate accurate values of the energies because there are many non-zero, off-diagonal terms. In this case, the larger the matrix is, the more accurate the answers become, provided numerical accuracy can be maintained. In examples involving electron or nuclear spin, the matrix has a finite size that completely determines the problem, and accurate results are obtained from small matrices. 
 
-# ### 2.1 The effect of new potential energy. Expanding in a basis set.
+# ## 2.1 The effect of new potential energy. Expanding in a basis set.
 # 
 # The energies and wavefunctions of the harmonic oscillator are well known, the Hamiltonian is
 # 
@@ -115,7 +115,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # The columns of eigenvectors are calculated as the eigenvalue-eigenvector equation 8 is solved.
 # 
 # 
-# ### Summary of the method
+# ## Summary of the method
 # 
 # **(i)**$\quad$ The wavefunctions $\psi$ are the solutions to Schroedinger's equation with Hamiltonian $H + V^1$, and $\varphi$ is the exact wavefunction to a simpler problem with Hamiltonian $H^0$, such as the harmonic oscillator or particle in a box. A linear combination of these known wavefunctions is is made to find $\psi$.
 # 
@@ -172,7 +172,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # In practice $L$ has to be slightly larger than the bond length because of the way the harmonic potential widens as $n$ increases. The equilibrium extension is at $L/2$. The potential energy on this scale is $V^1(x) = k(x - L/2)^2/2$ where $k$ is the bond force constant and $x$ the extension about the equilibrium position, $L/2$.
 
-# ### Summary of calculation
+# ## Summary of calculation
 # 
 # **(i)**$\quad$ Use the particle in a box wavefunctions to approximate the harmonic oscillator. The more of these wavefunctions that are added together to make $\psi$, the better is the approximation. The eigenvectors of the Hamiltonian matrix determine the amount of each ‘particle in a box’ wavefunction to add together; these are $v$'s of equation 11.
 # 
@@ -188,7 +188,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # The basis set index is chosen to start at $0$ because python/numpy will be used to diagonalize the matrix and its indices start at 0. The particle in a box quantum numbers start at $1$.
 # 
-# ### 2.2 Matrix elements
+# ## 2.2 Matrix elements
 # 
 # The individual matrix elements are $\langle n|H|m\rangle = \int \varphi^*_n H\varphi_mdx$ where 
 # 
@@ -340,7 +340,7 @@ def psi(qn,x):      # calculating the wavefunction, note that (i+1) is used as t
 # Figure 1. Approximate wavefunctions for $n = 0\to 8$ levels of HCl as a harmonic oscillator using the particle in a box basis set. The potential is also shown, and the energy is in units of $h\nu$ where $\nu$ is the transition frequency. The wavefunctions are scaled to a convenient amplitude for display and are essentially identical to those calculated using the equations derived directly from Schroedinger's equation, Fig. 48 in solutions to chapter 4.
 # __________
 # 
-# ### 3 NMR spectrum with two spins
+# ## 3 NMR spectrum with two spins
 # 
 # The pure nuclear Zeeman effect, which gives rise to the NMR spectrum will be calculated. In this calculation, and every other involving spin, the matrix element integrals $H_{nm}$ are evaluated directly from the properties of the angular momentum operators, and the spin wavefunctions can never be known. (Spin eigenfunctions unlike angular momentum do not depend on spatial coordinates; as a result, they do not have to satisfy a periodicity condition and can have half integer quantum numbers. Angular momentum, such as possessed by a rigid rotor molecule has integer quantum numbers.) 
 # 
@@ -495,7 +495,8 @@ def psi(qn,x):      # calculating the wavefunction, note that (i+1) is used as t
 # In[6]:
 
 
-Ix, Iy, Iz, sa, sb, ma, mb, hbar, qa, qb, m1, m11, m2, m22, Ixyz, J= symbols('Ix,Iy,Iz,sa,sb,ma,mb,hbar,qa,qb,m1,m11,m2,m22,Ixyz,J')
+Ix, Iy, Iz, sa, sb, ma, mb, hbar, qa, qb, m1, m11, m2, m22, Ixyz, J\
+= symbols('Ix,Iy,Iz,sa,sb,ma,mb,hbar,qa,qb,m1,m11,m2,m22,Ixyz,J')
 
 #------------------------------------------
 def Iz(sa,ma,sb,mb):
@@ -531,7 +532,9 @@ for i in range(n):
         m22= mb[k]
         Iaz= -qa/hbar*Iz(1/2,m1,1/2,m11)*delta(m2,m22)
         Ibz= -qb/hbar*Iz(1/2,m2,1/2,m22)*delta(m1,m11)
-        Ixyz=(J/hbar**2)*(Ix(1/2,m1,1/2,m11)*Ix(1/2,m2,1/2,m22)                         +Iy(1/2,m1,1/2,m11)*Iy(1/2,m2,1/2,m22)                         +Iz(1/2,m1,1/2,m11)*Iz(1/2,m2,1/2,m22) )
+        Ixyz=(J/hbar**2)*(Ix(1/2,m1,1/2,m11)*Ix(1/2,m2,1/2,m22)\
+                         +Iy(1/2,m1,1/2,m11)*Iy(1/2,m2,1/2,m22)\
+                         +Iz(1/2,m1,1/2,m11)*Iz(1/2,m2,1/2,m22) )
         H[i,k]=Iaz+Ibz+Ixyz
 H
 
@@ -562,7 +565,7 @@ for i in range(n):
 # Figure 2 Schematic of the four energy levels vs applied field $B_0$ and the NMR transitions for a two spin $1/2$ system at the same fixed value of the magnetic field and in the AX limit (dashed lines) where $J$ is small compared to the chemical shift. The number in brackets after the spin quantum numbers is the eigenvalue index. The energy when $J$ is small (dashed lines)  is not zero but $J/4$. In this figure the dashed lines are produced with $J$ as $1$% of the value used to calculate the other lines.
 # ________
 # 
-# ### 3.1 AX spectra
+# ## 3.1 AX spectra
 # 
 # If the coupling $J$ is small compared to the difference in chemical shift, the AX limit is produced. The condition is expressed as $J /2 \ll (q_a-q_b) \equiv \gamma_a(1 - \sigma_a) - \gamma_b (1 - \sigma_b)$, and some simplification of the equations is possible, for exammple 
 # 

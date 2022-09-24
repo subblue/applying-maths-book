@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## Solutions Q8 - 12
+# # Solutions Q8 - 12
 
 # In[1]:
 
@@ -16,7 +16,7 @@ init_printing()                      # allows printing of SymPy results in types
 plt.rcParams.update({'font.size': 16})  # set font size for plots
 
 
-# ### Q8 answer
+# ## Q8 answer
 # (a) $\langle s|s\rangle$; the left-hand icon is the bra, which is, in quantum mechanics, always the transpose and complex conjugate of the ket. (These two combined operations are called the *Hermitian adjoint*.) In this question, the entry in the matrix is a number so its conjugate is still 1. The result of any calculation of the form bra : ket or $\langle \cdots|\cdots \rangle$ is the dot or inner product,
 # 
 # $$\displaystyle \langle s|s\rangle=\begin{bmatrix}1 & 0 & 0\end{bmatrix}\begin{bmatrix}1 \\ 0 \\ 0\end{bmatrix}=1$$
@@ -58,7 +58,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # $$\displaystyle |\psi\rangle\langle\varphi|= \begin{bmatrix}b_s\\ b_x \\ b_y\end{bmatrix}\begin{bmatrix}c_s^* & c_x^* & c_y^*\end{bmatrix}=\begin{bmatrix}b_sc_s^*& b_sc_x^* &b_sc_y^* \\b_xc_s^*& b_xc_x^* &b_xc_y^* \\ b_yc_s^*& b_yc_x^* &b_yc_y^*\end{bmatrix} $$
 # 
-# ### Q9 answer
+# ## Q9 answer
 # Using the definition of the bra-ket, the right hand bra- ket is obtained by taking the complex conjugate of both vectors and noting that for any complex number $z$, taking the complex conjugate twice leaves it unchanged, $z = (z^*)^*$. Starting with the right hand side
 # 
 # $$\displaystyle \langle\varphi|\psi\rangle^* =\begin{bmatrix}b_s^*& b_x^* & b_y^*\end{bmatrix}^*\begin{bmatrix}c_s \\ c_x\\ c_y\end{bmatrix}^*=b_sc_s^*+b_xc_x^*+b_yc_y^*$$
@@ -69,7 +69,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # which is the same result so that $\langle\psi|\varphi\rangle =\langle\varphi|\psi\rangle^*$, and this is general because $c$ and $b$ are arbitrary constants. By induction, this result would be true no matter how long the vectors were.
 # 
-# ### Q10 answer
+# ## Q10 answer
 # (a) Starting with each component and making the square of the operator as the product,
 # 
 # $$\displaystyle \pmb{I}_x\pmb{I}_x=\frac{\hbar^2}{4}\begin{bmatrix}0 & 1\\1 & 0\end{bmatrix}\begin{bmatrix}0 & 1\\1 & 0\end{bmatrix}=\frac{\hbar^2}{4}\begin{bmatrix}1 & 0\\0 & 1\end{bmatrix}$$
@@ -131,7 +131,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # Similarly, lowering operators lower $\alpha$ to $\beta$ and will not lower $\beta$ any further.
 
-# ### Q11 answer
+# ## Q11 answer
 # (a) If the basis is represented as a set of matrices such as
 # 
 # $$\displaystyle \langle Lm|=\begin{bmatrix} 0\\0\\ \vdots\\1\\ \vdots\end{bmatrix} $$
@@ -208,7 +208,7 @@ commutator
 # ![Drawing](matricesQM-fig11.png)
 # _______
 # 
-# ### Q12 answer
+# ## Q12 answer
 # (a) Using the definition of the shifting operators
 # 
 # $$\displaystyle \pmb{L}_x\big|Lm\rangle =\frac{1}{2}\sqrt{L(L+1)-m(m+1)}\;\big|Lm+1\rangle + \frac{1}{2}\sqrt{L(L+1)-m(m-1)}\;\big|Lm-1\rangle $$

@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## Modelling data 
+# # Modelling data 
 
 # In[1]:
 
@@ -17,7 +17,7 @@ init_printing()                      # allows printing of SymPy results in types
 plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 
-# ### 5.1 Concept
+# ## 5.1 Concept
 # 
 # In many situations, the purpose of an investigation is to obtain an equation (regression model) that can be used to predict the value of one variable by knowledge of others. Probably the most useful and most applied method of doing this is the _least squares_ method. The basic idea is shown in figure 7, where the square of the $y$ displacement from the line to each data point, is minimized. The minimization is only along $y$ because it is assumed that the $x$ values are known exactly. By minimizing these displacements with an assumed model of the data, a straight line for example, the best fit to the data is obtained, and the calculation produces the slope and intercept of the best fitting line. Furthermore, the 'goodness' of fit can be made quantitative, allowing different theoretical models that might describe the data to be compared with one another. Different sets of data can also be compared. The least squares is a parametric method because a (parameterised) function is fitted to data, there are non-parametric methods, such as principal component analysis (section 13) that seek to understand the data without knowing the functional form.
 # 
@@ -34,7 +34,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # The final thing to look out for when using least squares is outliers. These are data points well away from the trend indicated by other points. It may be argued that these can be ignored as being due to faulty experimentation, but if this is not the case these points have to be dealt with and in Section 3.6 such a test was described. The least squares method is inherently very sensitive to these points, because the square of the deviation is used. It is often quite clear that the line does not fit the data and is pulled away from what one would expect to see as the fit; see figure 15. In this case, a more robust method such as _least absolute deviation_ is required, Section 6.8, without removing data points.
 # 
-# ### 5.2 The least squares calculation for a straight line 
+# ## 5.2 The least squares calculation for a straight line 
 # 
 # Suppose that the straight line
 # 
@@ -196,7 +196,7 @@ print('{:s} {:8.4g} {:s} {:8.4g}'.format('slope = ',slope,' intercept = ', inter
 # Figure 8. Least squares fit to $y = a + bx$ and $95$% confidence lines. These are projected to zero so that the large error on the intercept can be seen but the lines are only valid in the range of the data. The $95$% confidence limit lines are calculated using the function $\pm z$. Notice how the range becomes larger the further away from the data the lines are.
 # _____
 # 
-# ### 5.3 Residuals
+# ## 5.3 Residuals
 # 
 # After a fit has been obtained, the emphasis falls not on the plot of the data but on analysing the residuals, a plot of which shows the difference between the data and the fitted line. The residuals are calculated for each data point as
 # 
@@ -214,7 +214,7 @@ print('{:s} {:8.4g} {:s} {:8.4g}'.format('slope = ',slope,' intercept = ', inter
 # Figure 9. Normalized or reduced residual plot
 # ________
 # 
-# ### 5.4 Chi squared, $\chi^2$
+# ## 5.4 Chi squared, $\chi^2$
 # 
 # A good measure of the overall goodness of fit is the $\chi^2$ parameter. This measures the dispersion between the experimental data and the fitted function. If the data is normally distributed then the $\chi^2$ is expected to be equal to the number of degrees of freedom; this is the number of data points less the constraints, two in the case of a linear fit since there are two parameters. (The reduced $\chi^2$ is the same quantity as mean square error (mse) used in Algorithm 2). The reduced $\chi^2$ should have a value close to one if the data is fitted well, and the probability of obtaining this value is $50$% since half of the time the $\chi^2$ should exceed the norm. Values are often either very small, which can indicate that the weighting is too small because the standard deviations used are too big, or very large because the model does not fit the data. If the data is Poisson distributed, then the standard deviation is known exactly and the $\chi^2$ can be used quantitatively, otherwise, it can only be used loosely and a probability of $10$% or larger is usually acceptable.
 # 
@@ -294,7 +294,7 @@ print('{:s} {:6.3f} {:s} {:6.3f}'.format('probability of getting chi sqrd > ',ch
 # 
 # The covariance between the slope and intercept can also be calculated. If this is large then the slope and intercept are not independent of one another. The covariance for the data used above is $-5\cdot10^{-4}$ which is very small. When several parameters are being estimated such as in a polynomial or nonlinear, least squares calculation then the covariance between pairs of parameters should be examined and is often reported as a matrix of value. Ideally, each values should be small. The covariance for the linear least squares is $\mathrm{cov} = -\sigma_\epsilon^2\langle x \rangle/(S_{xx} /S_w)$ as may be seen on the code.
 # 
-# ### 5.5 Confidence intervals
+# ## 5.5 Confidence intervals
 # 
 # The confidence intervals about any data point, and hence the whole set, can be obtained from the data. The width of these lines at a given confidence level, 95% is typical, is a measure of the overall quality of fit to the data. As the errors $\epsilon_i$ are assumed to be normally distributed and independent of one another, then the slope has the confidence interval (Hines & Montgomery 1990)
 # 
@@ -313,7 +313,7 @@ print('{:s} {:6.3f} {:s} {:6.3f}'.format('probability of getting chi sqrd > ',ch
 # and these lines are shown in Figure 8. The two curves have a minimum width at $\langle x\rangle$ and widen either side of this. Strictly, they are not valid outside the range of the data. Prediction lines can be constructed to project confidence limits past the data and these lines are slightly wider than the confidence lines. The prediction lines are produced by replacing $1/S_w$ by $1 + 1/S_w$ in equation 42. This takes into account the error from the model and that associated with future observations. The two sets of curves are almost identical with the particular set of data used in figure 8.
 # 
 # 
-# ### 5.6 The analysis of variance (ANOVA) table
+# ## 5.6 The analysis of variance (ANOVA) table
 # 
 # When fitting models to data, it is common practice to test the fit to see how well the model equation used fits the data. This is done by partitioning the total variability in the calculated $Y$ into a sum that is 'explained' by the model and a 'residual' or error term unexplained by the regression as shown in the equations,
 # 
@@ -367,7 +367,7 @@ print('{:s} {:6.3f} {:s} {:6.3f}'.format('probability of getting chi sqrd > ',ch
 f.ppf(0.99,1,8)    # f is name of distribution, see top of page, from scipy.stats ....
 
 
-# ### 5.7 Correlation coefficients
+# ## 5.7 Correlation coefficients
 # 
 # The correlation coefficient $R$ is often listed among the parameters when a spreadsheet or graphing package is used to analyse a straight line fit. It represents the proportion of the variation (information) in $y$ that can be accounted for by its relationship with $x$. However, in the physical and many of the biological sciences, this is a not a useful quantity and _should be avoided_ as a measure of how well a straight line describes the data. 
 # 

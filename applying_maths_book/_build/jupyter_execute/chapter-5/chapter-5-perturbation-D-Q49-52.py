@@ -1,9 +1,9 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## Questions 49 - 52
+# # Questions 49 - 52
 
-# ### Q49 Superposition of wavefunctions
+# ## Q49 Superposition of wavefunctions
 # Make a superposition of the third and fourth wavefunctions of a particle in a one-dimensional box where the amount of $\psi_3$ is $1/2$ and $\psi_4$ is $2/5$. Use the wavefunctions  $\displaystyle \psi_n(x)=\sqrt{\frac{2}{L}}\sin\left(n\pi\frac{ x}{L}\right)$ where $n=1,2,3\cdots$ and L is the length of the box. The energy of the $n$<sup>th</sup> level is $\displaystyle E_n=\frac{1}{8m}\left(\frac{nh}{L}\right)^2$.
 # 
 # (a) Calculate the period of the oscillation.
@@ -12,7 +12,7 @@
 # 
 # (c) Check your results with python and plot the probability at several times over a period if the box is $1$ nm in length and $m$ is the mass of an electron.
 # 
-# ### Q50 Vibrational wavepacket
+# ## Q50 Vibrational wavepacket
 # A vibrational wavepacket is the coherent sum of many wavefunctions, and can be made by exciting a molecule into an excited state from the ground state with a laser pulse of femtosecond duration. If the pulse is short $\approx 10$ fs, it excites many of the vibrational energy levels at effectively the same time. The amount excited depends on the central wavelength, the wavelength spread of the laser pulse, and the Franck-Condon factors. As an electronic transition occurs in a time far shorter than a vibrational period, the molecules must be excited at a similar internuclear extension as determined by the uncertainty limit. The wavepacket is created coherently in two senses; all the molecules are excited at approximately the same time, limited by laser pulse duration, and at the same position on the potential.
 # 
 # The wavepacket $\Psi$ depends on $x$ the bond extension and time $t$. It depends on extension because the wavefunctions $\psi$ depend only on $x$ and on time because a non-stationary state is produced, which is not an eigenstate and this must evolve in time. The wavepacket is the summation of the amplitudes of each wavefunction multiplied by the time or phase factor, which is the exponential term, and is
@@ -30,7 +30,7 @@
 # 
 # **Strategy:** In (a) do not try to solve the wavepacket equation but show that it is the same at times $mT$ as it was at time zero. A good starting point would therefore seem to be to substitute for the energy and then time into equation (55) and rearrange the resulting equation.
 # 
-# ### Q51 Rydberg atom
+# ## Q51 Rydberg atom
 # As the energy of an H atom increases, the energy levels become closer together because $E_n = R/n^2$ where $R$ is the Rydberg constant and $n$ the principal quantum number. Exciting an H atom from the ground state into a level close to the dissociation limit with a picosecond laser excites many levels virtually simultaneously compared to the classical orbital period of these levels, and a wavepacket is produced. If the atom is optically excited from the ground state s orbital with $\ell = 0$, the wavepacket is a sum of the radial distributions of the p or $\ell = 1$ electronic wavefunctions with different principal quantum numbers. The electron is promoted to a higher energy orbital, which has a large orbital radius; the many similar wavefunctions add up to generate a wavepacket whose amplitude increases and decreases, and gives the appearance that the electron orbits the nucleus.
 # 
 # (a) Calculate and plot the radial distribution of the wavepacket produced as time vs position. 
@@ -42,7 +42,7 @@
 # 
 # **Strategy:** Look up the equations for the radial distribution functions of the H atom. The associated Laguerre polynomial is involved which can be calculated explicitly, but there is a built-in function in scipy/numpy/python,(scipy.special.eval_genlaguerre(n,$\alpha$,x)) which provides a rapid and accurate way of calculating this function.
 # 
-# ### Q52 Quantum beats
+# ## Q52 Quantum beats
 # When two or more atomic or molecular eigenstates are coherently excited into an electronically excited state, for example by a laser pulse, and their total emission to a common ground state measured, quantum beats may be observed as oscillations in the total fluorescence. In the experiment three states are involved, see Fig. 17. The beat frequencies directly measure the energy splitting $\Delta E$ in pairs of excited levels. This experiment is a very good way of measuring small energy gaps between levels, because small gaps produce long beat periods that are easily measured in a time-resolved experiment and this, therefore, can be a good way of doing high-resolution molecular spectroscopy.
 # 
 # ![Drawing](series-fig17.png)

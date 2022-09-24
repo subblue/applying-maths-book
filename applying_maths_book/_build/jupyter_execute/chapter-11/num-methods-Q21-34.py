@@ -1,12 +1,12 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## Questions 21 - 34
+# # Questions 21 - 34
 
-# ### Q21 Predator - prey
+# ## Q21 Predator - prey
 # The Lotka - Volterra equations show that the period varies with initial values of $X_0, \;Y_0$. Plot several population curves vs time and the corresponding phase planes to convince you of this. Use the Euler method to calculate the populations and values given in the text as starting points. Use $100$ points in the calculation.
 # 
-# ### Q22 Predator - prey
+# ## Q22 Predator - prey
 # Using the Lotka - Volterra equations 49,
 # 
 # (a)  Sketch what happens if the predators do not die by natural causes $k_3 = 0$ and confirm this by calculation.
@@ -16,11 +16,11 @@
 # **Strategy:** Consider the steady state or equilibrium populations. Plot the phase plane and nullclines, and compare these with the case when $k_{11}$ and $k_{22}$ are zero. Solve the equations using the Euler method with at least 500 points in the calculation. The text gives values $X_0 = 60,\; Y_0 = 100,\; k_1 = 1,\; k_2 = 0.01,\; k_3 = 0.5$.
 # 
 # 
-# ### Q23 Predator - prey
+# ## Q23 Predator - prey
 # Rewrite the predator - prey equations in reduced or dimensionless form by defining new parameters $x = X/X_e$ and $y = Y/Y_e$, thereby making the equilibrium point (1,1) on the x - y phase-plane. If the time is also redefined to be dimensionless as $\tau = k_1t$, then the equations can be written with only one parameter, which is the ratio of $k_3/k_1$. Recalculate the time profiles and phase plane for different ratios $k_3/k_1$. A series of closed curves should be seen one inside the other as if contours on a bowl.
 # 
 # 
-# ### Q24 Modify predator - prey
+# ## Q24 Modify predator - prey
 # A more realistic model for predator - prey interactions than equation 48 is to modify the equations to limit the prey population so that its numbers do not grow exponentially in the absence of predators. The numbers will be limited by the amount of food, irrespective of predation. One way to do this, starting with the basic predator - prey equations is to add a term to the prey equation that limits its population, depending on the square of its population: this is a term dependent on its 'density' and is called _density dependent growth_. This in chemical terms is a bimolecular process $-k_dY^2$ and the squared term represents two $Y$ species recombining to produce an inert product that takes no further part in the reaction. The equations are
 # 
 # $$\displaystyle \frac{dY}{dt}=k_1Y-k_2YX-k_dY^2, \qquad \frac{dX}{dt}=k_2YX - k_3X$$
@@ -28,10 +28,10 @@
 # Calculate the populations' time dependence and phase plane with $k_d = 0.002$ and use the values for other parameters given in the text and which are $X_0 = 60,\; Y_0 = 100,\; k_1 = 1,\; k_2 = 0.01,\; k_3 = 0.5$. Explain the results you obtain.
 # 
 # 
-# ### Q25 Nerve impulses
+# ## Q25 Nerve impulses
 # In the discussion of the Fitzhugh - Nagumo equation, it was stated that when the $v$ nullcline is raised sufficiently by a large value of $C$ the $w$ nullcline, which is a cubic, crosses it past its maximum, and this large value results in a new stable point being formed here rather than near to its lowest point and no oscillations occur. Show that phase plane plots similar to Fig. 11.22 are produced with different values of $C$ using other values given in the text.
 # 
-# ### Q26 Catalysis
+# ## Q26 Catalysis
 # A molecule $A$ reacts with another $C$ to reproduce itself under conditions where $C$ is kept at a constant concentration, i.e. is in vast excess or is continuously supplied. $A$ also produces $B$ which subsequently catalyses $A$'s destruction to an inert species $X$. $B$ decomposes by a first-order process also to an inert species $X$. The reaction scheme is
 # 
 # $$\displaystyle \qquad\qquad\begin{array}{cccc}\\
@@ -53,7 +53,7 @@
 # 
 # **Strategy:** The rate equations are calculated by working out the change in the number of species in the usual way. $A$ is gained in the first step and lost in the other two, while $B$ is produced in the second step, unchanged in the third and lost in the last. The equilibrium points are calculated at steady state,$ dA/dt = dB/dt = 0$ and the numerical solution is calculated using Euler's method.
 # 
-# ### Q27 Rigid pendulum
+# ## Q27 Rigid pendulum
 # In this question, the motion of a rigid pendulum is examined, see Section 6.3 for the equations to use and use $\omega  = 1$.
 # 
 # (a) Set the pendulum initially to $\varphi_0 = \pi$ but with zero velocity and observe what happens with the Euler, modified Euler, and Euler - Cromer methods. This is a test of how good the numerical algorithm is, because the pendulum should remain vertical forever. Repeat the calculation with the initial angle of $3.0$ radians.
@@ -63,14 +63,14 @@
 # 
 # **Strategy:** (a) Use $5000$ points in the calculation (b) $500$ points will suffice here and initial angles between $\pi$ and zero radians; the values $3, 1.5, 0.5$ and $0.25$ radians should work.
 # 
-# ### Q28 Damped pendulum
+# ## Q28 Damped pendulum
 # A damped pendulum can be made by having a pivot that has some resistance to motion or a bob that experiences air resistance. The equation of motion becomes
 # 
 # $$\displaystyle \frac{d^2\varphi}{dt^2}+f\frac{d\varphi}{dt}+\omega^2\sin(\varphi)=0$$
 # 
 # where $f$ is the friction coefficient with units of rad s$^{-1}$. Because of friction, the pendulum loses energy and will eventually become stationary. If $\omega = 1$ and $f = 0.25$, calculate the profile, angle vs time, with initial angle $8\pi/9$ and a zero initial velocity. Calculate the corresponding phase plane, which cannot easily be done algebraically.
 # 
-# ### Q29 Coupled oscillators
+# ## Q29 Coupled oscillators
 # Suppose that there are two coupled oscillators. In the limit that one of them has motion with a period far greater or smaller than the other, then the oscillators hardly affect one other. This decoupling always occurs when vastly different frequencies are involved is a universal types behaviour that is just as common in simple dynamical systems as it is in the complicated vibrational, rotational, and electronic behaviour of molecules.
 # 
 # This question shows how two different oscillators, a pendulum attached to a rotating shaft, can produce a complicated but understandable motion. The figure shows a rigid pendulum freely suspended beneath a rotating rod. The equation of motion is
@@ -86,7 +86,7 @@
 # Figure 24. A rigid pendulum attached to the base of a rotating rod.
 # _____
 
-# ### Q30 Rotating rigid- rod 
+# ## Q30 Rotating rigid- rod 
 # Starting with Q29 in which a rigid rod freely hangs from a rotating shaft and has the equation of motion 
 # 
 # $$\displaystyle \frac{d^2\varphi}{dt^2}+\left[\frac{\alpha}{L}-\omega^2\cos(\varphi)\right] \sin(\varphi)=0$$
@@ -101,7 +101,7 @@
 # 
 # **Strategy:** In (a) approximate the series expansion to small angles. In (b) Use a Taylor series expansion about $\varphi_0$, and take only the first two or three terms to approximate to small values. In (c) It will be useful to change the angle to $\varphi \to \varphi - \varphi_0$ in the equation of motion.
 # 
-# ### Q31 Vertical oscillations
+# ## Q31 Vertical oscillations
 # Suppose that a light, rigid pendulum of length $L$ has a heavy bob of mass $m$ at its end and its pivot is driven up and down at frequency $\omega$ by a piston which has a displacement $z = a \sin(\omega t)$. The pendulum's equation of motion is
 # 
 # $$\displaystyle \frac{d^2\varphi}{dt^2}+\sin(\varphi)\left(\omega_0^2+h\omega^2\cos(\omega t)\right) =0$$
@@ -113,7 +113,7 @@
 # **Strategy:** This calculation is *very* sensitive to the parameters used, using either the modified Euler method or an inbuilt Python/numpy solver. The values here will work, but if $h$ and $\varphi$ are increased by only a small amount, the calculation appears to become unstable. This may be partly overcome by adding a damping term $+cdy/dt$ to the left-hand side of the equation and where $c$ is a small constant $\approx 0.5$ or smaller. This interesting system and its regions of stability are described by Acheson (1997). See also Gould et al. (2007) for suggestions for parameters with which to study this system.
 # 
 # 
-# ### Q32 Quadrupole mass spectrometer
+# ## Q32 Quadrupole mass spectrometer
 # The Mathieu equation is found in a number of physical situations one of which is describing the motion of ions through a quadrupole mass spectrometer and in the related Paul ion trap. The equation has the form  
 # 
 # $$\displaystyle \frac{d^2\varphi}{dt^2}+\left(\frac{\omega_0^2}{\omega^2}+h\cos( t)\right)\varphi =0$$
@@ -138,7 +138,7 @@
 # Figure 24a: Rather crude stability diagram for the Matthieu equation. $\omega_a=(\omega/\omega_0)^2$. The stable region is shown in yellow.
 # ______
 # 
-# ### Q33 Oscillating chemical reaction
+# ## Q33 Oscillating chemical reaction
 # The chlorine dioxide - iodine - malonic acid reaction is known to be an oscillating chemical reaction; see Scott (1995). The reaction conditions are made in such a way that, initially, concentrations are far from equilibrium, as they must if any chemistry is going to happen. The concentration of I$^-$ and ClO$_2^-$ ions are observed to oscillate in time, but eventually this ends as the reaction reaches equilibrium. The free energy ($\Delta G$) of the reaction continuously decreases to its minimum value at equilibrium. If fresh reactants are continuously added to a stirred reactor, then the oscillations can be made to persist.
 # 
 # If MA is malonic acid, then the stoicheiometric reactions are
@@ -159,7 +159,7 @@
 # 
 # (b) Comment on the different behaviour of the two parameter sets.
 # 
-# ### Q34 Limits with Fitzhugh-Nagamo eqn.
+# ## Q34 Limits with Fitzhugh-Nagamo eqn.
 # Show that in the Fitzhugh - Nagumo equations, the oscillation period is always the same in a limit - cycle by repeating the calculation with different starting conditions $v_0, \; w_0$ using the parameters in the text.
 
 # In[ ]:

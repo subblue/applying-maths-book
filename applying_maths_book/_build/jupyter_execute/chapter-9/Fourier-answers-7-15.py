@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## Solutions Q 7 - 15 
+# # Solutions Q 7 - 15 
 
 # In[1]:
 
@@ -16,7 +16,7 @@ init_printing()                      # allows printing of SymPy results in types
 plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 
-# ### Q7 answer
+# ## Q7 answer
 # 
 # The transform equation is 
 # 
@@ -48,7 +48,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # The Heisenberg uncertainty principle arises because operators, such as position and momentum, do not commute, but in quantum mechanics time is not an operator, but an observable, therefore commutation does not apply. See Atkins & Friedmann (1997, p. 198) for a detailed discussion of the distinction between Heisenberg uncertainty and time-energy uncertainty.
 # 
-# ### Q8 answer
+# ## Q8 answer
 # (a) With the forward transform $\displaystyle g(\omega) =\frac{1}{\sqrt{2\pi}}\int_0^{t_0} e^{i\omega_0 t}e^{-i\omega t}dt$
 # 
 # which, being exponential, is easily integrated to 
@@ -76,7 +76,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # which must be zero at each of its minima. Multiplying out factors gives $\displaystyle (\omega_0-\omega)\sin((\omega_0-\omega)t_0)=2(1-\cos((\omega_0-\omega)t_0))$ which is solved when $t_0(\omega_0-\omega)=2\pi n$ because here the sine is zero, and when $\cos((\omega_0-\omega)t_0)=1$ which is when $n$ is an integer and $n=\pm 1$,  $\pm 2,\cdots$ or $\omega = \omega_0-2\pi n/t_0$ thus a series of zeros is expected. The pulse has a width of $0.1$ ps and zero's occur at $\omega=600\cdot 10^{12}\pm 2\pi n\cdot 10^{13}$ Hz and so the first zeros are at $\approx 662.8 \cdot 10^{12}$ Hz.
 
-# ### Q9 answer
+# ## Q9 answer
 # (a) As the pulse is square and of finite duration, it lasts only from time 0 to $\tau$, therefore its Fourier transform is 
 # 
 # $$\displaystyle g(\omega)=\frac{1}{\sqrt{2\pi}}\int_0^\tau ae^{-i\omega t}dt =\frac{-a}{\sqrt{2\pi}} \left. \frac{e^{i\omega t}}{i\omega}  \right|_0^\tau = \frac{a}{\sqrt{2\pi}} \left( \frac{1-e^{i\omega \tau}}{i\omega}  \right)$$
@@ -95,7 +95,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # The pulse has a frequency spread to the first minima of $2\pi/\tau$ which corresponds to $2\pi$ MHz for a $1\,\mu$s duration pulse. Suppose that only half this frequency range has useful intensity then this extends from $399.5 \to 400.5$ MHz in a $400$ MHz instrument. This gives a potential chemical shift of $\pm 50000/400 = 125$ ppm, which is large compared to most proton shifts which are typically $\lt 20$ ppm.
 # 
-# ### Q10 answer
+# ## Q10 answer
 # (a) The FID is caused,in a semi-classical interpretation of NMR, by the rotating magnetization cutting the wire
 # coil of the detector, and inducing the current that is subsequently detected. The two different classes of spins move with different frequencies due to their different chemical environments, and hence, experience slightly different magnetic fields. These are the two cosines mentioned in the question. The decay of magnetization is due to the interaction of the spins with one another, with other atoms in the molecule and with dipoles in the solvent. These interactions have the effect of transferring more spins from the upper spin level to the lower one, than in the opposite direction, and hence back towards equilibrium. These effects cause the population to decay with a lifetime T1, and the loss of the spin coherence determines the T2 lifetime. The $\tau = 100$ in the question represents both these decay processes. In a real experiment the decay time would be of the order of a few seconds and the frequencies in MHz. 
 # 
@@ -161,7 +161,7 @@ plt.tight_layout()
 plt.show()
 
 
-# ### Q11 answer
+# ## Q11 answer
 # 
 # (a) The transform is $\displaystyle g(k)=\frac{1}{\sqrt{2\pi}}\int_{-t_0}^{t_0}\sin(2\pi t/t_0 +\varphi)e^{-ikt}dt$
 # 
@@ -207,7 +207,7 @@ plt.axhline(0,linewidth=1,color='black')
 plt.show()
 
 
-# ### Q12 answer
+# ## Q12 answer
 # (a) The Fourier transform of the $\delta$-function is obtained directly by using its selecting property. For instance acting on a function $f$ gives, 
 # 
 # $$\displaystyle \int f(x)\delta(x-a)dx = f(a)$$
@@ -227,7 +227,7 @@ plt.show()
 # The transform is itself a Gaussian, but in transform or $k$-space, which is in this case reciprocal distance,
 # the products $kd$ and $ka$ are dimensionless. The scattering intensity is $\displaystyle P_k^*P_k = e^{-kd^2/2}$. As with the $\delta$  function the scattering is the same in all directions because the power density does not depend on $x$. However, the power density now depends on the width of the Gaussian, the more spread out it is, hence large $d$, the smaller is the scattering. In the limit that the Gaussian becomes very narrow, it approximates the $\delta$-function.
 # 
-# ### Q13 answer
+# ## Q13 answer
 # 
 # Using the result from Q12, the transform is $\displaystyle \frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}[\delta(x-a)+\delta(x+a)]e^{-ikx} dx = \frac{1}{\sqrt{2\pi}} (e^{-ika}+e^{+ika})$ 
 # 
@@ -235,7 +235,7 @@ plt.show()
 # 
 # The probability density is simply the square of this because $P$ is real, and shows that the scattering depends on the separation of the centres being maximal when $ka=\pi n$ if $n$ is an integer.
 # 
-# ### Q14 answer 
+# ## Q14 answer 
 # 
 # The delta function at  position $a$, is $\delta (x-a)$, hence at position 2$a$ is $\delta (x - 2a)$, and at any position $n$, is $\delta (x − na)$). The comb of atoms is represented by the equation $\displaystyle C(x)=\sum_{n=-\infty}^\infty \delta (x-na)$. The Fourier transform of one atom at position $n$ is (see Q12),
 # 
@@ -270,6 +270,7 @@ plt.show()
 # In[7]:
 
 
+fig3 = plt.figure(figsize=(5, 4))
 m0   = 10   # maximum m to plot
 nmax = 50   # summation max
 chi = lambda m: 1.0 + 2.0*sum( [ np.cos(2.0*np.pi*m*n) for n in range(1,nmax)] )
@@ -282,7 +283,7 @@ plt.xlabel(r'$m$')
 plt.show()
 
 
-# ### Q15 answer 
+# ## Q15 answer 
 # (a) The pulse has an absolute value of $x$, so it is symmetrical about zero. The fwhm is $2\ln$(2) and as the pulse is $\tau= 10$ fs long the scaling is $a = \ln(2)/\tau$ in units of fs$^{-1}$. The Fourier transform can be taken from zero to infinity with $\displaystyle e^{-ax}$, and from $-\infty \cdots 0$ with $\displaystyle e^{ax}$, and the results added and simplified.
 # 
 # The transform is 

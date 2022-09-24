@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## Molecular vibrations and pendulums
+# # Molecular vibrations and pendulums
 
 # In[1]:
 
@@ -16,14 +16,14 @@ init_printing()                   # allows printing of SymPy results in typeset 
 plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 
-# ### 14 Molecular vibrations
+# ## 14 Molecular vibrations
 # Matrix eigenvalue - eigenvector problems can also be used to solve a number of related problems such as molecular vibrations, coupled pendulums, and damped oscillators. When the displacements from equilibrium are small the equations produced are linear, and this is always assumed in solving these equations with matrix methods. The numerical methods of Chapter 11 allow the fully non-linear equations to be solved. In this section, the concept of normal modes is described first, then the motion of linked pendulums, and finally the vibrational motion of molecules is described and some examples worked through.
 # 
-# ### 14.1 Vibrational normal modes
+# ## 14.1 Vibrational normal modes
 # 
 # If the initial displacements made to the atoms of a molecule correspond to that expected of any one of the normal modes, Figure 23, then the oscillations of all atoms continue only in that normal mode. The first reason is because each atom is connected to all others via chemical bonds, and second because each normal mode is orthogonal to every other one. This means that, ideally, no energy flows from one normal mode to any other, and although this happens in practice, for example due to an harmonicity, it need not concern us here. If an arbitrary initial displacement is made that does not correspond to that expected of a normal mode, a complicated motion results. However, this can always be decomposed to a linear combination or sum of the normal modes, taken in various proportions as necessary to describe the motion. The overall motion, when many modes are simultaneously excited, causes beating; this is particularly clear in a coupled pendulum as the two pendulums come into and go out of phase with one another. This is seen when one of the pendulum bobs becomes stationary for an instance while its partner swings maximally; this then loses energy and becomes instantaneously stationary while the other has gained maximum displacement and which continues by swapping energy _ad infinitum_.
 # 
-# ### 14.2 Calculation of normal modes
+# ## 14.2 Calculation of normal modes
 # 
 # In a mechanical or molecular vibration, we usually try to find the equation relating forces. In simple harmonic motion, such as stretching a chemical bond, the potential energy is by Hooke's law, $V = ks^2/2$, where $k$ is the force constant and $s$ the amount the bond extends away from its equilibrium length. The force $f$ to stretch the bond, is obtained by differentiation of $\displaystyle f=-\frac{dV}{ds}=-ks$ and is also given by Newton's second law; force = mass $\times$ acceleration, $\displaystyle f=m\frac{d^2s}{dt^2}$ which provides the connection to time. Equating the two terms produces the equation of motion for small displacements from equilibrium, viz.
 # 
@@ -60,12 +60,12 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # which can be solved, based on equation 31, by writing it as $\pmb{ks} = \pmb{λs}$, where $\pmb{k}$ is the matrix of force constants, and $\pmb{s}$ the eigenvalues. Once the eigenvalues are obtained, they form a diagonal matrix and, term by term, are equal to the diagonal matrix of squared frequencies. If the eigenvectors are also obtained, their symmetry gives the pattern of displacements, by which is meant that, if all the values in an eigenvector are the same, the motion is all in one direction and, if different, then some masses are moving in one direction and other masses in other directions as determined by the sign.
 # 
-# #### **Summary:**
+# ### **Summary:**
 # The matrix of forces is constructed and made into an eigenvalue - eigenvector equation and this is diagonalized. The eigenvalues $\lambda$ are then equated to the squared frequencies of the normal modes. The eigenvectors indicate the pattern of normal mode displacements.
 # 
 # 
 # 
-# #### **Two pendulums**
+# ### **Two pendulums**
 # Using the matrix method to solve problems of this type is best described with an example. The most difficult part is always obtaining the equation for the energy and therefore forces. In this example, the motion of two identical pendulums will be calculated. They have length $L$ and mass $m$ at the end of rigid, mass-less rods, and the masses are coupled together with a spring with force constant $k$, Figure 59. The pendulums are initially at equilibrium separated by the un-extended length of the spring, and then energy is added by moving one or both of the individual pendulums by a very small amount so that Hooke's law for the spring is obeyed, and the change in potential, due to height, is directly proportional to the change in the vertical angle. There are two normal modes, see Figure 60. Either the pendulums swing together in phase both moving in the same direction at constant separation, or they move together and apart stretching and compressing the spring. These are clearly the only possible motions of the two pendulums for small angular motion and we shall want to find out their frequency (eigenvalues) and the normal mode displacements using the eigenvectors.
 # 
 # ![Drawing](matrices-fig59.png) 
@@ -160,7 +160,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # To isolate the other mode, set $Q_2$ = 0 then $s_2 = s_1$ and the displacements are always equal to one another during the oscillation, which corresponds to both bobs moving to the right by the same amount, and therefore, they move at the same frequency and with constant phase; this is the in-phase normal mode with frequency $\omega_1$. The motion is $s_1 =s_2 =u\cos(\omega_1 t+\varphi)$.
 
-# ### 14.3 How to calculate vibrational normal modes in a molecule.
+# ## 14.3 How to calculate vibrational normal modes in a molecule.
 # 
 # The basic premises are the same as for the pendulum just calculated.
 # 
@@ -249,11 +249,11 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # $$\displaystyle \pmb{s} = \pmb{GxQ} \tag{68}$$
 # 
-# #### **Summary**
+# ### **Summary**
 # 
 # $\pmb{G}$ is the diagonal matrix of $\sqrt{m}$ and $\pmb{F}$ is the matrix of force constants. The eigenvalues are the squared frequencies of the molecular normal modes $Q$, and are calculated from the secular determinant $\left| \pmb{GFG} - \omega^2\pmb{1} \right| = 0$. The normal mode and coordinate displacements are calculated using equations 67 and 68.
 # 
-# ### Vibrations of a linear triatomic.
+# ## Vibrations of a linear triatomic.
 # In calculating the normal modes it is normally assumed that the motion of the atoms is harmonic and we additionally assume that the only force constants are those between adjacent atoms. This is equivalent to assuming that the valence bond model describes the bonding. A molecular orbital model would consider forces constants between each atom and all the others.
 # 
 # In the case of a linear triatomic A-B-C the potential energy is the sum of terms for the stretching of each bond with force constants $k_1,k_2$ for the two bonds, and masses $m_1,m_2,m_3$, the potential energy is, 
@@ -274,7 +274,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # With this matrix the eigenvalues and eigenvectors can be calculated, but generally algebraic results are usually very complex and in any case numerical values are what is wanted to compare with experiment.  The simpler example of $\mathrm{CO_2}$ is examined next and follows from the equations just described. A numerical calculation is then given.
 # 
-# ### Stretching vibrations of CO$_2$.
+# ## Stretching vibrations of CO$_2$.
 # As this method is rather abstract it can be made less so by working through an example. The normal stretching modes of a linear triatomic molecule, such as CO$_2$, is calculated by considering just the motion along the line of atoms, as shown in Figure 61 and eqn 55a. A bent molecule such as H$_2$O or SO$_2$ can be calculated in a similar manner, but the algebra in calculating the potential is more complex. Herzberg (1964, vol II, Chapter 2) gives several examples including different possible models of the potentials that can be used.
 # 
 # ![Drawing](matrices-fig61.png)
@@ -309,7 +309,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # $$\displaystyle \lambda_1=\frac{-k}{m_o}; \qquad \lambda_2=\frac{-(2m_0+m_c)k}{m_om_c}; \qquad \lambda_3=0$$
 # 
-# #### **Frequencies**
+# ### **Frequencies**
 # The frequency of each vibration is $\omega^2 = -\lambda$ so the square of the normal mode frequencies are
 # 
 # $$\displaystyle \omega_1^2=\frac{k}{m_o}; \qquad \omega_2^2=\left(\frac{2m_0}{m_c}+1\right)\frac{k}{m_o}; \qquad \omega_3=0$$ 
@@ -322,7 +322,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # The symmetrical stretch has displacements proportional to $-\sqrt{M},0,+\sqrt{M}$. Notice that the eigenvectors do not depend on the force constants; this matrix is used to produce the geometry that is related to the symmetry of the vibrations, and cannot depend on the value of the force constants. The normal modes depend only on the geometry because the 'springs' connecting the atoms can only vibrate in certain patterns governed by the geometry or symmetry of the molecule; the frequency and size of extension depend on the force constants.
 # 
-# #### **Normal modes**
+# ### **Normal modes**
 # The normal mode coordinates are calculated using $\pmb{Q} = \pmb{x}^T\pmb{q}$ (equation 67) where $\pmb{x}^T$ is the transpose of the eigenvector matrix and $\pmb{q}$ the vector of mass weighted coordinates with $\pmb{q}=\pmb{s}\sqrt{m}$;
 # 
 # $$\displaystyle \begin{bmatrix} Q_1\\Q_2\\Q_3\end{bmatrix} =\frac{1}{\sqrt{2M}}\begin{bmatrix}-\sqrt{M}& 0 & \sqrt{M}\\ \sqrt{m_c}&-2\sqrt{m_o} & \sqrt{m_c}\\ \sqrt{2m_o} & \sqrt{2m_c}& \sqrt{2m_o}  \end{bmatrix}  \begin{bmatrix} s_1\sqrt{m_o} \\ s_2\sqrt{m_c} \\s_3\sqrt{m_o} \end{bmatrix}$$
@@ -351,7 +351,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # **(iii)** Finally, if $Q_2 = Q_3 = 0$ then the equations are solved when $s_2 = 0$ and $s_1 = -s_3$, which is the symmetric stretch $\omega_1$ with displacements $±Q_1/\sqrt{2m_o}$.
 # 
-# ### Bending motion
+# ## Bending motion
 # 
 # In the case of bending vibrations in a molecule with masses $m_{1,2,3}$ such as HCN the potential is written as 
 # 
@@ -387,7 +387,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # \hline
 # \end{array}$$
 # 
-# #### **Normal mode calculation**
+# ### **Normal mode calculation**
 # The full calculation for linear stretches using the $\pmb{G}$ and $\pmb{F}$ matrix method is given next. You can modify this method to solve many similar normal mode problems with different dimensions and geometries provided the potential energy equation can be worked out and the force constant matrix obtained. If you repeat this calculation the order of the eigenvalues may be different to those shown here, which means that the labels $Q_{1,2,3}$ may be different to those shown here.
 
 # In[2]:
@@ -447,8 +447,6 @@ Q
 
 
 # Notice the small value of the displacements which are a tiny fraction of bond lengths and also in the second mode, the value in $s_2$ is effectively zero. This is the symmetric stretch. Finally notice that the frequencies calculated only match one of those measured, 1337 (expt.) vs. 1345 which is a good match but 2349 (expt.) vs 2575 is a poor match. The reason appears to be that a rather simple potential is used and a more sophisticated one is needed. 
-
-# 
 
 # In[ ]:
 

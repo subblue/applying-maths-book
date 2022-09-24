@@ -1,9 +1,9 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## Minimizing or maximizing with constraints: Lagrange Undetermined Multipliers
+# # Minimizing or maximizing with constraints: Lagrange Undetermined Multipliers
 
-# ### 10 Lagrange Multipliers
+# ## 10 Lagrange Multipliers
 # 
 # Lagrange multipliers are used in statistical mechanics where they help in deriving the Boltzmann distribution; you may also come across them in minimizing the energy in a Hartree - Fock, self-consistent field (SCF) quantum chemistry calculation but they can be used in less exotic situations.
 # 
@@ -45,11 +45,11 @@
 # Fig. 30 The Gaussian curve $e^{-x^2}$ and the shortest distance from origin (radius) to the curve and the circle with this radius. The shortest distance to the curve is $\approx 0.92$.
 # ____
 # 
-# ### 10.2 Examples
+# ## 10.2 Examples
 # 
 # An example shows how this algorithm works. 
 # 
-# #### **(i) Distance to a point**
+# ### **(i) Distance to a point**
 # Suppose you are set the problem to find the shortest distance from any point $(x_0, y_0)$, which could be the origin $(0, 0)$, to the Gaussian curve $\displaystyle y = e^{-x^2}$, see fig 30.
 # 
 # **(a)** The Gaussian exponential defines the constraint, which means that the points we find must lie on this curve, and therefore $g$ is defined as
@@ -84,7 +84,7 @@
 # 
 # **(e)** The quantities $x_0$ and $y_0$ are constants in the last equation, which can be solved to find $x$ and then this substituted into our function $y = e^{-x^2}$ to obtain $y$. The distance from the origin with $x_0 = 0$ and $y_0 = 0$ to the curve is found by solving $\displaystyle -1+2e^{-2x^2}=0$ giving $\displaystyle x=\pm\sqrt{\frac{\ln(2)}{2}} =\pm 0.5887$ and $y=1/\sqrt{2}$ as the coordinates of the shortest distance, see Fig. 30. This distance itself is found by substituting into $f (x, y)$, equation (38), and is $(\ln(2) + 1)/2 \approx 0.92$.
 # 
-# #### **(ii) Object -  image distance in a thin lens**
+# ### **(ii) Object -  image distance in a thin lens**
 # In this second example, the closest distance an object can be to its image, when using a thin lens, is found. The lens has a focal length $f$, the object is at a distance $u$ before, and the image $v$, after the lens. 
 # 
 # The lens maker's formula 

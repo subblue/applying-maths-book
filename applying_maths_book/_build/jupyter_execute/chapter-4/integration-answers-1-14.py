@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## Solutions Q1 - 14
+# # Solutions Q1 - 14
 
 # In[1]:
 
@@ -15,7 +15,7 @@ init_printing()                      # allows printing of SymPy results in types
 plt.rcParams.update({'font.size': 16})  # set font size for plots
 
 
-# ### Q1 answer
+# ## Q1 answer
 # The kinetic energy is zero and the total energy $E$ is the same as the potential energy at the turning point, figure 38.
 # 
 # (a) By definition the energy is $E=\int k(r-r_e)dr$ and because $k$ and $r_e$ are constants, these can be taken outside the integral
@@ -37,7 +37,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # (c) The frequency in $\mathrm{s^{-1}}$ is calculated using $\displaystyle \nu = \frac{1}{2\pi}\sqrt{ \frac{k}{\mu} } =0.904\cdot 10^{14}\,\mathrm{s^{-1}}$ where $\mu$ is the reduced mass $35/36 \times 1.667 \cdot 10^{-27}$ kg and as $n = 1$, the total energy of this level is $0.89 \cdot 10^{-19}$ J which is the same as calculated above.
 # 
-# ### Q2 answer
+# ## Q2 answer
 # (a) Taking logs of both sides of the Arrhenius equation produces $\displaystyle \ln(k) = \ln(k_0) - \frac{E_a}{RT}$. 
 # 
 # Differentiating with respect to $T$ gives $\displaystyle \frac{d\ln(k)}{dT}=\frac{E_a}{RT^2}$ as in the question.
@@ -52,7 +52,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # This can be simplified to $\displaystyle \ln\left( \frac{k_2}{k_1} \right) = \frac{E_a}{R}\left(\frac{1}{T_1}-\frac{1}{T_2} \right)$ which can be further rearranged into the equation in the question.
 # 
-# ### Q3 answer
+# ## Q3 answer
 # Rearranging to separate variables produces $\displaystyle \int\frac{dc}{c}=-k\int dt$. 
 # 
 # Integrating both  sides separately gives $\ln(c)=-kt+q$ where $q$ is a constant. 
@@ -69,7 +69,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # which produces the same result.
 # 
-# ### Q4 answer
+# ## Q4 answer
 # (a) Rearranging the equation and adding limits gives $\displaystyle \int_{v_0}^v\frac{dv}{v}=-\frac{3\pi\delta\eta}{m}\int_0^t dt$ 
 # 
 # and integrating gives 
@@ -95,7 +95,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # which means that the direction of the initial movement is lost within about a picosecond, which is a very short time considering the relatively large size of a protein.
 # 
-# ### Q5 answer
+# ## Q5 answer
 # (a) In this case,the answer can be guessed to be something like $\ln(3x - 2)$ because of the reciprocal in $x$ in the function. Differentiating this guess gives $3/(3x-2) $ and therefore $\displaystyle \int\frac{dx}{3x-2}=\frac{1}{3}\ln(3x-2)$.
 # 
 # (b) Converting to exponentials gives 
@@ -118,14 +118,14 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # $$\displaystyle I=\frac{2}{3}(x-3)^{3/2}\bigg|_{-1}^1=\frac{2}{3}\left((-2)^{3/2}-(-4)^{3/2}\right)=\frac{4i}{3}\left(\sqrt{2}-4\right)$$
 # 
-# ### Q6 answer
+# ## Q6 answer
 # Converting to the exponential form gives  
 # 
 # $$\displaystyle \int_0^L \frac{1}{4}\left( 2-e^{2iLx}-e^{-2iLx} \right)dx = \frac{L}{2} -\frac{\sin(2L^2)}{4L} $$
 # 
 # The sine cannot be greater than $\pm 1$ so that when $L$ is large, for example $\gt 100$, this term becomes small because it is divided by $L$ and the limit approaches $L/2$.
-
-# ### Q7 answer
+# 
+# ## Q7 answer
 # Integrating to obtain the velocity gives 
 # 
 # $$\displaystyle \begin{align} \boldsymbol v &=\int_0^t (2\sin(\omega_0 t)\boldsymbol{i}+\cos(\omega_0 t)\boldsymbol{j}+t\boldsymbol{k})\; dt
@@ -138,14 +138,14 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # and at $t=0$, $\boldsymbol r = 0\boldsymbol i + 0\boldsymbol j + 0\boldsymbol k$.
 # 
-# ### Q8 answer
+# ## Q8 answer
 # Because of the term in $1/V$ this is a logarithmic integration; 
 # 
 # $$\displaystyle \int_{V_1}^{kV_1} pdV=\int_{V_1}^{kV_1}\frac{nRT}{V}dV=nRT\ln(V)\bigg|_{V_1}^{kV_1}=nRT\ln(k)$$
 # 
 # and in the last step $\ln(kV_1)-\ln(V_1)=\ln(kV_1/V_1)$ was used.
 # 
-# ### Q9 answer
+# ## Q9 answer
 # (a) If $V$ is the initial volume which is reduced to 10%, then the work done is calculated using equation 6 ($\displaystyle \int x^n dx$) with power $n=-\gamma$.
 # 
 # $$\displaystyle w=\int_V^{V/10}pdV=-\int_V^{V/10}\frac{k}{V^\gamma}dV=-\frac{kV^{1-\gamma}}{1-\gamma}\bigg|_V^{V/10}=\frac{kV^{1-\gamma}}{1-\gamma}(1-10^{\gamma-1})$$
@@ -161,7 +161,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # The bar notation $\bar dq$ and $\bar dw$ means that in the language of thermodynamics when integrated, they form _path integrals_, i.e. normal integrals to you or me, and their value depends on the way the heat changes or the work is done. Some authors instead use $\delta q$ and $\delta w$ to indicate a path integral. The internal energy $U$ is a state function and when integrated, its value depends only on the starting and ending values not on how the internal energy was obtained by the molecules for example $\displaystyle \int_{U_1}^{U_2} dU=U_2-U_1$
 # 
-# ### Q10 answer
+# ## Q10 answer
 # (a) If $V_0$ is the initial, $V_1$ the final volume then the work done is 
 # 
 # $$\displaystyle w=-\int_{V_0}^{V_1}pdV\quad\text{ where }\quad \displaystyle p=\frac{nRT}{V-nb}-\frac{an^2}{V^2}$$ 
@@ -180,7 +180,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # The energy need to compress the Cl$_2$ is less than that for ideal gas, that for O$_2$ about the same, and H$_2$ slightly greater. The difference is due to the interplay of the attractive potential term $a$ and the repulsive one $b$. If the attractive forces dominate as the gas is compressed the molecules will remain closer to one another for longer than if they were hard spheres. This reduces the effective pressure and so less work is needed. This is the case for the polarizable chlorine molecules. If repulsion dominates,then the molecules avoid one another effectively increasing the pressure and this is the case for H$_2$, which is weakly polarizable, compared to Cl$_2$. The energy to compress is larger. Oxygen molecules seem to have a balance of repulsion and attraction that makes them appear to behave as it they were ideal, but this is an accidental cancelling of two effects.
 # 
-# ### Q11 answer
+# ## Q11 answer
 # (a) The enthalpy change is 
 # 
 # $$\displaystyle H_T^\mathrm{o}-H_{298}^\mathrm{o}=\int_{298}^T a+bT+\frac{c}{T^2}dT=a(T-298)+\frac{b}{2}\left(T^2-298^2\right)-c\left(\frac{1}{T}-\frac{1}{298}  \right)$$
@@ -191,7 +191,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # (b) Using the values for the constants produce $H_T^\mathrm{o} - H_{298}^\mathrm{o} = 2.95$ kJ/mol and $S_T^\mathrm{o} - S_{298}^\mathrm{o} = 9.14$ J/mol/K.
 # 
-# ### Q12 answer
+# ## Q12 answer
 # (a) The Clapeyron equation for a change of phase such as melting or evaporation is 
 # 
 # $$\displaystyle \frac{dp}{dT}=\frac{\Delta S}{\Delta V}$$ 
@@ -222,7 +222,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # produces  $\displaystyle \ln\left(\frac{p_2}{p_1} \right) = -\frac{\Delta_{vap}H}{R}\left( \frac{1}{T_2}-\frac{1}{T_1} \right) $
 # 
-# ### Q13 answer
+# ## Q13 answer
 # The Clapeyron equation 
 # 
 # $$\displaystyle p_2-p_1=\frac{\Delta H}{\Delta V}\ln\left( \frac{T_2}{T_1} \right)$$
@@ -301,7 +301,7 @@ p_sol_liq= lambda T: p3 + DH_fus/DV_fus*(np.log(T)-np.log(T3))
 # \mathrm{solid\, density, g/cm^3 } & 0.917 & 1.032 \\
 # \hline \end{array}$$
 # 
-# ### Q14 answer
+# ## Q14 answer
 # (a) $\displaystyle \left( \frac{\partial q}{\partial p} \right)_S =V$ integrates, at constant entropy, to become 
 # 
 # $$\displaystyle \int_{q_0}^{q}dq=\int_{p_0}^pVdp=\int_{p_0}^p\left( \frac{C}{p} \right)^{1/\gamma}dp$$

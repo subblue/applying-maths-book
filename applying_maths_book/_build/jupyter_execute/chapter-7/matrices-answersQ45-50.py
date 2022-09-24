@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## Solutions Q45 - 50
+# # Solutions Q45 - 50
 
 # In[1]:
 
@@ -16,7 +16,7 @@ init_printing()                      # allows printing of SymPy results in types
 plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 
-# ### Q45 answer
+# ## Q45 answer
 # (a) $\displaystyle \begin{vmatrix} 4-\lambda & -i\\i & 2-\lambda  \end{vmatrix}=\lambda^2-6\lambda+7=0 $
 # 
 # is the characteristic equation from which $\lambda_1=3-\sqrt{2}; \;\lambda_2=3+\sqrt{2}$.  
@@ -39,14 +39,14 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # $$\displaystyle  x_1=\frac{1}{\sqrt{2}}\begin{bmatrix} -1 \\ 1 \end{bmatrix},\; x_2= \frac{1}{\sqrt{2}}\begin{bmatrix}1 \\ 1\end{bmatrix}  $$ 
 # 
-# ### Q46 answer
+# ## Q46 answer
 # The large matrix contains two $1 \times 1$ matrices and two $2\times 2$ matrices. Two eigenvalues can be found immediately, and are one and two. The other two matrices can be separated out and secular equations written, one of which is
 # 
 # $$\displaystyle \begin{bmatrix} 2-\lambda & 4 \\ 3 & 3-\lambda \end{bmatrix}=0$$
 # 
 # which has the characteristic equation $\lambda^2 - 5\lambda - 14 = 0$. The eigenvalues are $\lambda = -2$ and $7$. The other $2 \times 2$ matrix has two eigenvalues $\lambda= = 3 \pm 10$.
 # 
-# ### Q47 answer
+# ## Q47 answer
 # The characteristic equation is calculated from the determinant
 # 
 # $$\displaystyle \begin{vmatrix} -\lambda & -u & v\\u & -\lambda & 0 \\-v & 0 &-\lambda \end{vmatrix}=-\lambda^3-u^2\lambda+v^2\lambda=0 $$
@@ -85,7 +85,7 @@ simplify(ans[2][2][0] )
 # 
 # $$ \displaystyle x=\begin{bmatrix} -iz/v & iz/v & 0 \\ -u/v & -u/v & u/v\\ 1&1&1 \end{bmatrix}$$
 # 
-# ### Q48 answers
+# ## Q48 answers
 # The Hückel matrix $M$ is formed as in Section 2.5(iii) and using python/Sympy, the eigenvalues and eigenvectors are calculated as in the previous few examples. The eigenvectors are normalized by extracting a column vector from the matrix of eigenvectors and dividing by the square root of the dot product. If the vector is $x$, then the dot product $x^*\cdot x = |x|^2$, because $\cos(0) = 1$, therefore, the normalized vector is $x/\sqrt{x^*\cdot x}$. The coefficients are the individual values of the eigenvector matrix.  The algebraic solutions for the eigenvectors are complex, and for numerical answer at least one value in the matrix should be  made into a floating point (1.0).
 
 # In[6]:
@@ -175,7 +175,7 @@ for a in range(n):
 
 # Because the electron charge densities are all the same, the molecule cannot have a dipole.
 # 
-# ### Q49 answer
+# ## Q49 answer
 # The Huckel matrix for fulvalene is 
 # 
 # $$ \displaystyle x=\begin{bmatrix}
@@ -192,7 +192,8 @@ for a in range(n):
 
 
 n = 6
-M0 = np.array([ [0,1,0,0,0,0 ], [1,0,1,0,0,1], [0,1,0,1,0,0],                [0,0,1,0,1,0 ], [0,0,0,1,0,1], [0,1,0,0,1,0]])  # Huckel matrix x=0
+M0 = np.array([ [0,1,0,0,0,0 ], [1,0,1,0,0,1], [0,1,0,1,0,0],\
+                [0,0,1,0,1,0 ], [0,0,0,1,0,1], [0,1,0,0,1,0]])  # Huckel matrix x=0
 
 ans = LA.eigh(M0)        # using numpy linear algebra for numerical values
 for i in range(n):
@@ -246,11 +247,12 @@ for a in range(n):
 # In[15]:
 
 
-d_pi = (-(1-0.622) + 0*(1-1.047) + 2*(1-1.0923)*np.sin(36*np.pi/180)       + 2*(1-1.0730)*(np.sin(36*np.pi/180)+np.cos(18*np.pi/180)) )
+d_pi = (-(1-0.622) + 0*(1-1.047) + 2*(1-1.0923)*np.sin(36*np.pi/180) \
+      + 2*(1-1.0730)*(np.sin(36*np.pi/180)+np.cos(18*np.pi/180)) )
 print('{:s} {:6.3f}'.format(' dipole = ',d_pi) )
 
 
-# ### Q50 answer
+# ## Q50 answer
 # The eigenvalues and un-normalized eigenvectors are found using the calculation below;
 
 # In[16]:

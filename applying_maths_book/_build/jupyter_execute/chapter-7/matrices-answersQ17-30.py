@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## Solutions Q17 - 30
+# # Solutions Q17 - 30
 
 # In[1]:
 
@@ -15,7 +15,7 @@ init_printing()                      # allows printing of SymPy results in types
 plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 
-# ### Q17 answer
+# ## Q17 answer
 # The nitrogen in ammonia is sp$^3$ hybridized with a lone pair of electrons taking up the fourth position; if there were a proton on this position making NH$_4^+$ the point group would be tetrahedral. Two views of ammonia are shown in Fig. 7.78. In the left figure the third mirror plane is in line with the axis and not visible behind the other two.
 # 
 # From the right-hand view it is clear that the molecule has a threefold axis, the molecule can be rotated by $120^\text{o}$, a $C_3^+$ operation, or by $-120^\text{o}$ a $C_3^-$ operation, to become indistinguishable. There is no horizontal mirror plane or $C_2$ axes, but there are three vertical mirror planes.
@@ -50,7 +50,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 #  \end{array}$$
 # 
 # 
-# ### Q18 answer
+# ## Q18 answer
 # Making a sketch of ammonia, the bonds can be labelled $a, b, c$ to represent vectors along them. A $C_3^+$ rotation has the effect $abc \to cab$ which as a matrix equation is
 # 
 # $$\displaystyle \begin{bmatrix} c \\ a \\b \end{bmatrix}= C_3^+ \begin{bmatrix} a \\ b \\c \end{bmatrix}= \begin{bmatrix} 0 & 0 & 1 \\ 1 & 0 & 0 \\0 & 1 & 0 \end{bmatrix}\begin{bmatrix} a \\ b \\c \end{bmatrix}$$
@@ -95,7 +95,7 @@ for i in range(n):
     print('\n')
 
 
-# ### Q19 answer
+# ## Q19 answer
 # Multiplying gives
 # 
 # $$\displaystyle \begin{array}{l|lll}
@@ -123,7 +123,7 @@ for i in range(n):
 # B & B & C & E\\
 # C & C & E & B \end{array}$$
 # 
-# ### Q20 answer
+# ## Q20 answer
 # Using the matrices from the previous question the products are
 
 # In[3]:
@@ -142,7 +142,7 @@ A2
 
 # Looking at the matrices it follows that $A_1 = \sigma_V'$ and $A_2 = \sigma_V''$ or $\sigma_V' = \sigma_V^{-1}C_3^-\sigma_V$ and $\sigma_V'' = \sigma_V^{-1}C_3^+\sigma_V$.
 # 
-# ### Q21 answer
+# ## Q21 answer
 # The highest symmetry axis, the principal axis,is a $90^\text{o}$ rotation axis about the Xe atom, labelled $C_4$, and is perpendicular to the plane of the molecule. There is also a $C_2$ axis, a $180^\text{o}$ rotation about the same axis. The molecule has a centre of inversion.
 # 
 # There is a $C_2$ axis through each diagonal along the F-Xe-F bonds of the square and similarly bisecting adjacent F atoms. There is a horizontal mirror plane in the plane of the molecule; horizontal because it is perpendicular to the principal axis. This immediately suggests a $D$ point group. There are dihedral mirror planes bisecting adjacent F atoms as well as vertical mirror planes along the F-Xe-F atoms.
@@ -154,7 +154,7 @@ A2
 # Figure 80. XeF$_4$ and some of its rotation and reflection symmetry elements.
 # ______
 # 
-# ### Q22 answer
+# ## Q22 answer
 # Looking at figure 11 the reflection in the mirror plane labelled $\sigma_V'$ leaves the atoms unchanged. The symbolic equation is therefore,
 # 
 # $$\displaystyle [\sigma']=\begin{bmatrix} Cl \\O_a \\ O_b \end{bmatrix}=\begin{bmatrix} Cl \\O_a \\ O_b \end{bmatrix}$$
@@ -171,7 +171,7 @@ A2
 # 
 # $$\displaystyle [\sigma]=\begin{bmatrix} 1 & 0 & 0 \\0 & 0 & 1 \\ 0 & 1 & 0 \end{bmatrix}$$
 # 
-# ### Q23 answer
+# ## Q23 answer
 # (a) The rotation equation is 
 # 
 # $$\displaystyle [C_2]\begin{bmatrix} Cl \\O_a \\ O_b \end{bmatrix}=\begin{bmatrix} 1 & 0 & 0 \\0 & 0 & 1 \\ 0 & 1 & 0 \end{bmatrix}\begin{bmatrix} Cl \\O_a \\ O_b \end{bmatrix}=\begin{bmatrix} Cl \\O_b \\ O_a \end{bmatrix}$$
@@ -190,7 +190,7 @@ A2
 # 
 # (b) The fact that $[\sigma'][C_2]=[\sigma]$ and $[C_2][\sigma']=[\sigma]$ means that $[C_2,\sigma']=0$ and therefore these two commute.
 # 
-# ### Q24 answer
+# ## Q24 answer
 # The carbon atoms are on the principal axis so remain unchanged by any operation. The $C_2$ operation swaps $H_a$ with $H)b$ and $F_a$ with $F_b$ and leaves the two carbon atoms unchanged. The symbolic matrix is
 # 
 # $$\displaystyle [C_2]\begin{bmatrix} H_a \\H_b \\ C \\C \\F_a\\F_b \end{bmatrix}= \begin{bmatrix} H_b \\H_a \\ C \\C \\F_b\\F_a \end{bmatrix}$$
@@ -228,7 +228,7 @@ C2*M
 
 # If the ordering in the basis set is changed, say to $[Fb,C,Ha,C,Fa,Hb]$ and _provided the matrix is similarly changed_ then the same result is obtained.
 # 
-# ### Q25 answer
+# ## Q25 answer
 # The structure is shown below; the principal axis passes through the N atoms and equally distant from each of the H atoms.
 # 
 # ![Drawing](matrices-fig81.png)
@@ -243,7 +243,7 @@ C2*M
 # 
 # The matrix for the reflection shown above is simpler as only the H atoms change place $\displaystyle \sigma_V=\begin{bmatrix}  1 & 0 & 0  &0  \\  0 & 0 & 1  & 0 \\ 0 & 1 & 0 & 0   \\ 0& 0 & 0 & 1\\   \end{bmatrix}$.
 # 
-# ### Q26 answer
+# ## Q26 answer
 # (a) Rotation about the principal axis is by $2\pi/n$ for a $C_n$ axis then the matrix is (see text)
 # 
 # $$\displaystyle \sigma_V=\begin{bmatrix}  \cos(2\pi/n) & \sin(2\pi/n) & 0 \\  -\sin(2\pi/n) & \cos(2\pi/n) &  0 \\ 0 & 0 & 1     \end{bmatrix}$$
@@ -254,7 +254,7 @@ C2*M
 # 
 # (b) The trace is $T_{S_n}=2\cos(2\pi/n)-1$
 # 
-# ### Q27 answer
+# ## Q27 answer
 # (a) The principal axis is taken as the axis of highest symmetry, which is the threefold axis through the centre and perpendicular to the plane of the molecule. The plane of the molecule is therefore a horizontal mirror plane and there are three, twofold axes perpendicular to the principal axis as well as three vertical mirror planes. These elements are shown in the figure. Only one of the three vertical planes is shown for clarity.
 # 
 # ![Drawing](matrices-fig82.png)
@@ -298,7 +298,7 @@ C2*M
 # 
 # which can easily be visualised.
 # 
-# ### Q28 answer
+# ## Q28 answer
 # (a) The point group is $C_{2V}$. The mirror plane of the carbon atoms is lost because the orbital are $\pm$ or black/white above and below this plane. The principal and z-axis is perpendicular to the plane of the carbons.
 # 
 # (b) There are ten orbitals in the basis set;therefore,the character of $E = 10$. On rotation about the principal axis all the atoms are moved so the character of $C_2 = 0$. On reflection about the $x$ axis (carbons 9/10) eight orbitals are changed each of which counts zero and two are unchanged making the character of $\sigma(xz) = 2$. The other reflection plane swaps all atoms so counts zero. The reducible representation is therefore
@@ -318,7 +318,7 @@ C2*M
 # The reduced representation contains still contains ten orbitals but organized as $3A_1 + 2A_2 + 3B_1 + 2B_2$symmetry species.
 # 
 # 
-# ### Q29 answer
+# ## Q29 answer
 # Imagine vectors representing p orbitals with different phase above and below the plane of the molecule. Operate on these to form the reduced representation. (Recall that atoms moved count $0$, atoms unchanged $1$ and inverted $-1$.)
 # 
 # $$\displaystyle \begin{array}{c|cccccccc}
@@ -397,7 +397,7 @@ GramSchmidt([psi1,psi2,psi3],True)  # orthogonalise and normalise
 # 
 # The nine energies (for three degenerate wavefunctions) are placed into a $3 \times 3$ matrix and the eigenvalues found. The same procedure is followed for the other symmetry orbitals. This makes the calculation far smaller by than calculating a $10 \times 10$ matrix. The eigenvalues for the $A_u$ species are $(\pm 5 - 1)/2$.
 # 
-# ### Q30 answer
+# ## Q30 answer
 # The reducible representation is A1′+E′ and is worked out using the vectors in the diagram. This accounts for three of the normal modes. The other three are the in-plane and out-of-plane bending modes.
 # 
 # ![Drawing](matrices-fig83.png)

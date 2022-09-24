@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## Solutions Q8 - 16
+# # Solutions Q8 - 16
 
 # In[1]:
 
@@ -15,7 +15,7 @@ init_printing()                      # allows printing of SymPy results in types
 plt.rcParams.update({'font.size': 16})  # set font size for plots
 
 
-# ### Q8 answer
+# ## Q8 answer
 # (a) $A = 0.25$. 
 # 
 # (b) the angular frequency $\omega$ is $125 \,\mathrm{radians\,s^{-1}}$. Using $\omega = 2\pi\nu$ gives the frequency $\nu$ in $\mathrm{s^{-1}}$ (or Hz) and is $19.89 \mathrm{s^{-1}}$.
@@ -26,7 +26,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # (e) The velocity is $dy/dt$, which is $v = 125 \cos(125t - 3k + 0.6)/4 \mathrm{\;m\,s^{-1}}$ because the other terms are constant in time.
 # 
-# ### Q9 answer
+# ## Q9 answer
 # (a) The sum of the two waves is $\sin(\omega_1 t - kx)+ \sin(\omega_2t - kx)$ and we observe the frequency change in time. This means that the $-kx$ term represents a phase, and is fixed as we observe at a fixed point and it can be set to zero without changing the result as phase does not affect the frequency of a wave just where its amplitude is zero. As the waves' amplitudes are the same, we can choose them to be 1. The identity to start with from Section 5.1 is 
 # 
 # $$\displaystyle \sin(a - b) + \sin(a + b) = 2 \sin(a)\cos(b)$$
@@ -43,10 +43,10 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # (b) A wave period of $T$ has a frequency of $1/\nu$. In the figure, the longest wavelength has a period of $4$ s making the observed frequency $0.25 \,\mathrm{s^{-1} }$. The beat frequency is, by definition, twice the wave frequency hence this is $0.5 \,\mathrm{^{-1} }$.
 # 
-# ### Q10 answer
+# ## Q10 answer
 # $5 \times 51, 210, 1547/864$.
 # 
-# ### Q11 answer
+# ## Q11 answer
 # Because the factorials increase so rapidly, the answers can be obtained by direct multiplication using the recursion relationship $(n + 1)! = (n + 1)n!$
 # 
 # $$\displaystyle \begin{array}{lll}
@@ -68,7 +68,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 15& 1307674368000 & \text{first above } 10^{12}
 # \end{array}$$
 # 
-# ### Q12 answer
+# ## Q12 answer
 # When $n=0$ then $\displaystyle \frac{(x+0-1)!}{(x-1)!}=1$, and for other $n$
 # 
 # $$\displaystyle \begin{align}
@@ -78,7 +78,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # the general result ($n>0$) would seem to be $\prod_{i=1}^n (x+i-1)$.
 # 
-# ### Q13 answer
+# ## Q13 answer
 # Using the same method as Algorithm 6 with appropriate changes produces the results
 
 # In[2]:
@@ -117,7 +117,7 @@ for i in range(6):
 
 # The Chebychev series can also be obtained from the function $P_n(x) = \cos\left(n \cos^{-1}(x)\right)$ if $| x | \le 1$ and as $P_n(x) = \cosh\left(n \cosh^{-1}(x)\right)$ if $| x | > 1$.
 # 
-# ### Q14 answer
+# ## Q14 answer
 # The recursion algorithm sets the initial values and iterates around a loop to find the result. How many times this must occur depends on whether a result has converged to a constant value or not. This can be guessed at to begin with, but to reach an answer to a set number of decimal places, this will have to be checked. This is not done in the following calculation, however, after about twelve iterations the result is constant to approximately ten decimal places.
 
 # In[4]:
@@ -142,7 +142,7 @@ for i in range(2,20):          # recursion
     pass
 
 
-# ### Q15 answer
+# ## Q15 answer
 # (a & b) From the definition in the question, the recursion equation is $f_n = f_{n-1} + f_{n-2}$ and is applied where $n \ge 3$ and the first two terms are both 1. The algorithm can be written as shown below. The ratio is also printed as in part (b). The golden ratio is $1.618034$.
 
 # In[5]:
@@ -178,7 +178,7 @@ for i in range(2,20):
 
 # (d) The reverse series is $\cdots, -8,5,-3,2,-1,1,0,1,1,2,\cdots$
 # 
-# ### Q16 answer 
+# ## Q16 answer 
 # (a) The first few terms are
 # 
 # $$\displaystyle \begin{array}{cccccccccc}
@@ -228,10 +228,3 @@ binom(12)
 
 #  The coefficients are $1, 12, 66, 220, 495, 792, 924, 792, 495, 220, 66, 12, 1$.
 #  
-# 
-
-# In[ ]:
-
-
-
-

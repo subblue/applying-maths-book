@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## Solutions Q1 - 7
+# # Solutions Q1 - 7
 
 # In[1]:
 
@@ -15,7 +15,7 @@ init_printing()                      # allows printing of SymPy results in types
 plt.rcParams.update({'font.size': 16})  # set font size for plots
 
 
-# ### Q1 answer
+# ## Q1 answer
 # The energy gaps are given in wavenumbers, which are not SI units. To convert the units to frequency, multiply by the speed of light $c$ in cm s$^{-1}$, then by Planck's constant to produce the energy in joules. The smaller energy gap is typical of the rotational motion of a molecule and the larger one vibrational motion.
 # 
 # Using Python the results can be calculated as
@@ -44,7 +44,7 @@ print('{:8.3f}    {:8.3f} {:8.5g}'.format( deltaE, T, n1_n0(deltaE,T)) )
 # \end{array}$$
 # 
 # 
-# ### Q2 answer
+# ## Q2 answer
 # $$\displaystyle \begin{array}{l|llll}
 # (a) \log_{10}(100) = 2, \text{ as } 10^2 = 100 & (b) \log_{10}(10) = 1, \text{ as } 10^1 = 10. \\
 # (c) \log_e(e) = 1. & (d) \log_b(b) = 1 \\
@@ -54,19 +54,19 @@ print('{:8.3f}    {:8.3f} {:8.5g}'.format( deltaE, T, n1_n0(deltaE,T)) )
 # (i) \log_5(125)=n,; 5^n =125
 # \end{array}$$
 # 
-# ### Q3 answer
+# ## Q3 answer
 # $$\displaystyle \begin{array}{l|lll}
 # (a) \ln(3^x) = x \ln(3) &    (b) \ln(a^2/b)=2\ln(a)-\ln(b)\\
 # (c) \ln(a^{1/2}/b^3) = (1/2)\ln(a) - 3\ln(b) & (d) \ln(3^{1/(x+6)}) = (x + 6)^{-1}\ln(3)\\
 # (e)  \displaystyle \ln\left( \frac{x^{1/2} \sin(x) }{\ln(x^n)}  \right) = \frac{1}{2} \ln(x) + \ln(\sin(x)) - \ln\left(n \ln(x)\right)
 # \end{array}$$
 # 
-# ### Q4 answer
+# ## Q4 answer
 # $\displaystyle \ln\left(1 + s/a)^r\right) = r \ln(1 + s/a)$ which follows because $\displaystyle \ln(x^n) = n\ln(x)$. Converting to exponential form gives $\displaystyle x^n = e^{n\ln(x)}$ and therefore $\displaystyle (1 + s/a)^r = e^{r\ln(1+s/a)} $. 
 # 
 # More formally let $\displaystyle y=n^x$, taking logs produces $\displaystyle \ln(y) = x \ln(n)$ then 'exponentiating', $\displaystyle y = e^{x\ln(n)}$  produces the general form: $\displaystyle n^x = e^{x\ln(n)}$. Now  substitute $n \to 1 + s/a$  and $x \to r$, the result is $\displaystyle (1 + s/a)^r = e^{r\ln(1+s/a)} $.
 # 
-# ### Q5 answer
+# ## Q5 answer
 # $$\displaystyle \begin{array}{l|ll}
 # (a) \log_{10}(10^6)=6 &  (b) \log_e(e^5)=5 \\
 # (c) \ln(e^2)^3 = [2 \ln(e)]^3 = 2^3 = 8 & (d)\displaystyle \log_3(n^6) = \frac{6 \ln(n) }{\ln(3)}
@@ -79,12 +79,12 @@ print('{:8.3f}    {:8.3f} {:8.5g}'.format( deltaE, T, n1_n0(deltaE,T)) )
 # $$\displaystyle \log_3(n^6) = 6 \log_{10}(10)\log_{10}(n)\;/\;\log_{10}(3) = 6 \log_{10}(n)\;/\;\log_{10}(3)$$
 # 
 # 
-# ### Q6 answer
+# ## Q6 answer
 # He removes $\displaystyle b=V\left(1-\frac{1}{n}\right)$ of the beer on the first mouthful and then the volume is restored. The second mouthful removes the same volume, but removes only $\displaystyle bV\left(1-\frac{1}{n}\right)=V\left(1-\frac{1}{n}\right)^2$ of the beer because it has been diluted and only $V(1-1/n)$ is there initially.
 # 
 # By induction after $n$ mouthfuls the amount remaining is $\displaystyle V\left(1-\frac{1}{n}\right)^N$. As $n \to \infty$, this product is $V/e$, or $0.368V$, so surprisingly perhaps, he never drinks all his beer and $209$ of the $568$ ml remain.
 # 
-# ### Q7 answer
+# ## Q7 answer
 # The light transmitted after $n$ layers is to be found. If $I_0$ light is incident on a leaf, after 1 layer this transmits $\displaystyle I_1=I_0\left( 1-\frac{\alpha A}{n} \right)$ and after two layers $\displaystyle I_2=I_0\left( 1-\frac{\alpha A}{n} \right)^2$ and after $n$ layers $\displaystyle I_n=I_0\left( 1-\frac{\alpha A}{n} \right)^n$. 
 # 
 # As $n \to \infty$ , the limit produces the exponential $\displaystyle I_n = I_0e^{−\alpha A}$ which is

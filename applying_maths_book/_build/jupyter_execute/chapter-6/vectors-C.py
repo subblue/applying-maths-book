@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## Axes need not be right-angled or of equal length 
+# # Axes need not be right-angled or of equal length 
 
 # In[1]:
 
@@ -17,13 +17,13 @@ init_printing()                      # allows printing of SymPy results in types
 plt.rcParams.update({'font.size': 16})  # set font size for plots
 
 
-# ### 8.1 Basis set. 
+# ## 8.1 Basis set. 
 # 
 # In crystallography the coordinates of the unit cell are often reported in terms of the crystal type, monoclinic, triclinic, and so forth, whose axes are not mutually at right angles or always of the same length. The base vectors are no longer the orthonormal $\boldsymbol i, j, k$ set we have been using and are now labelled as $\vec a, \vec b, \vec c$ to indicate that they are non-orthogonal. By convention, the angle $\alpha$ lies between $b$ and $c$, $\beta$ between $a$ and $c$, and $\gamma$ between $a$ and $b$. This is shown in figure 20. Many authors use $\boldsymbol {a,b,c}$ instead of $\vec a, \vec b, \vec c$ but using arrows is here clearer.  
 # 
 # As the base vectors are not at $90^\text{o}$ to one another, when a dot product is calculated, the terms $\vec a\cdot \vec b, \vec a\cdot\vec c$, and $\vec c\cdot \vec b$ are not zero but the corresponding cross terms $\boldsymbol i\cdot k, \boldsymbol i\cdot j$, and $\boldsymbol j\cdot k$ in the right-angled basis set are. Additionally, the base vectors are often not of unit length, but have the length, and relative angles, of the unit cell, which means that they are not normalized and not orthogonal - just about as bad as it can get! However, the method to calculate a dot product is, in principle, no different to that already described. Although a, b, and c represent the length of the unit cell, these are not unit vectors; the 'unit' here refers to the minimum repeat distance in the crystal.
 # 
-# ### 8.2 Vectors
+# ## 8.2 Vectors
 # 
 # Suppose two vectors are $\vec V$ and $\vec W$ in the non-normalized, non-orthogonal $(\vec a, \vec b, \vec c)$ basis
 # then we can write
@@ -56,7 +56,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # Figure 20. Non-orthogonal axes and non-normalized base vectors $\vec a, \vec b$ and $\vec c$.
 # _________
 # 
-# ### 8.3 Calculating bond lengths
+# ## 8.3 Calculating bond lengths
 # 
 # In X-ray crystallography, an atom's coordinates are often given in terms of the unit cell
 # dimensions and these are not always at right angles to one another. Suppose that the
@@ -131,7 +131,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # Figure 22. A monoclinic crystal, the axes, and a sketch (right) of the projection of the tetrazine structure looking down the b axis. The plane of the s - tetrazine molecule lies in the $a - c$ plane. (Not all atoms are explicitly shown.)
 # ___________________
 
-# ### 9 Conversion from one basis set to another
+# ## 9 Conversion from one basis set to another
 # 
 # It is sometimes essential to be able to convert from one basis set to another, and if you were involved in computer graphics this would be something that you would have to do all the time as the viewing point and perspective of the scene changes. In this case, the basis set would probably be called a reference frame. In geography or astronomy, converting from earth-based coordinates to celestial ones is commonplace, in chemistry and physics converting rectangular to polar coordinates is often necessary when dealing with atomic or molecular orbitals. An X-ray crystallographic analysis of a molecule usually results in coordinates that are quoted in terms of the unit cell parameters the axes of which may be neither at right angles to one another nor of equal length. Although a molecule's bond lengths and angles can be calculated in these non-orthogonal coordinates, as illustrated in Section 8.3, it is often practical to convert to normal right-angled coordinates, particularly for drawing structures.
 # 
@@ -150,7 +150,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # Figure 23. Two sets of unit vectors; The set $\vec x\vec y \vec z$ are orthogonal but $\vec A\vec B\vec C$ are not. Vector $A$ lies along $\vec x$ and $\vec B$ is in the $x$y plane.
 # ________
 # 
-# ### 9.1 Converting axes
+# ## 9.1 Converting axes
 # 
 # We will assume that the $xyz$ basis set is orthogonal (just as are $\boldsymbol i, \boldsymbol j,\boldsymbol k$), as is the convention, therefore the basis vectors $\vec x, \vec y$, and $\vec z$ are orthogonal to one another, for instance, 
 # 
@@ -172,7 +172,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # The two sets of axes could be placed at any orientation with respect to one another but to make things easier, let vectors $A$ and $x$ coincide and let vector $B$ be in the $x-y$ plane, see figure 23. If this orientation is calculated in some other way then the basis set $(x\; y\; z)$ may need to be reordered to get everything correct. The way to check that everything is all right is to make all the angles $90^\text{o}$ then a diagonal matrix should result.
 # 
-# ### 9.2 Calculating the new coefficients
+# ## 9.2 Calculating the new coefficients
 # 
 # Vector $A$ lies along the $x$-axis, therefore its $y$ and $z$ components $k_2$ and $k_3$ are zero. The remaining component $k_1$ has a length $1$, which is the length of $\vec A$, therefore the first of equations 27 representing the vector $A$ in the $xyz$ basis set is simply;
 # 
@@ -227,9 +227,9 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # where $\boldsymbol{M}^{-1}$ is the inverse of $\boldsymbol{M}$, see Chapter 7. Finally, and as a check when all the angles are $90^\text{o}$, matrix $\boldsymbol{M}$ reduces to a diagonal matrix and this tells us that ordering the axes as $ABC$ gives the resulting order $xyz$.
 
-# ### 10 Transformation of basis vectors
+# ## 10 Transformation of basis vectors
 # 
-# ### 10.1 Calculating bond lengths and angles in non right-angled crystals
+# ## 10.1 Calculating bond lengths and angles in non right-angled crystals
 # 
 # Normally, we are not so interested in converting axes but wish to find an atom's coordinates in Cartesian ($xyz$) axes, but which are given in crystallographic tables in terms of the unit cell $abc$ axes. The convention in crystallographic tables is to quote the coordinates as fractions of the unit cell lengths in columns labelled as $x/a, y/b, z/c$, or even as $x, y, z$. This is initially confusing because $xyz$ axes are not involved.
 # 
@@ -353,7 +353,7 @@ print('{:s}{:6.1f}{:s}'.format('bond angle C123 =', bond_angle(C2,C1,C3),' degre
 print('{:s}{:6.1f}{:s}'.format('bond angle C12N =', bond_angle(C2,C1,N1),' degrees') )
 
 
-# ### 10.2 Unit cell volume
+# ## 10.2 Unit cell volume
 # 
 # The absolute value of the determinant of $\boldsymbol M$ is numerically equal to the volume of the unit cell, (Giacovazzo et al. 1992, p. 68). When all the angles are $90^\text{o}$ then this matrix reduces to a diagonal form, and the determinant is $abc$, which is equal to the volume. Consider a monoclinic crystal, such as benzoic acid, where only one crystal angle is not $90^\text{o}$, and where $a = 0.552, b = 0.514, c = 2.190$ nm and the angle $\beta= 97^\text{o}$. The volume of the crystal will only be a little smaller than that of a solid rectangle of sides $abc = 0.621\;\mathrm{ nm^3}$ because the angle $\beta$ is close to $90^\text{o}$. The $\boldsymbol M$ matrix for a monoclinic crystal where $\alpha = \gamma =90^\text{o}$ is
 # 

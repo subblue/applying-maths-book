@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## The Hadamard Transform: Encoding and Decoding 
+# # The Hadamard Transform: Encoding and Decoding 
 
 # In[1]:
 
@@ -16,17 +16,17 @@ init_printing()                      # allows printing of SymPy results in types
 plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 
-# ### Motivation and concept
+# ## Motivation and concept
 # 
 # To obtain the average value of a quantity, such as weight, individual measurements are usually made, then added together and divided by the number of measurements made. However, this is not the only way of obtaining the average. You may be familiar with the method of weighing several objects at a time and perhaps know also that doing this will reduce the error in the average value. This multiple weighing method is an example of using a _Hadamard transform_ and anything that can be measured in groups can be treated in the same way, for example, a spectrum or an image, thus the method is quite general. The reason that this multiple measuring method works is that the error is introduced by the balance not by the objects being weighed. A large weight therefore has the same error associated with its measurement as a smaller one does.
 # 
 # The reason for doing any transform experiment is always the same and either this is to achieve an improvement in signal to noise, or, a reduction in the time taken to do an experiment at a fixed signal to noise, which is effectively the same thing. Normally for $n$ measurements, the signal to noise increases only as $\sqrt{n}$ but in the Hadamard approach, the signal to noise achievable increases at least as $n/2$, which is a huge improvement if, for example, $n= 100$.
 # 
-# ### 11.1 The Hadamard Transform
+# ## 11.1 The Hadamard Transform
 # 
 # The Hadamard transform is a purely discrete transform and instead of forward and back transforming, as in the Fourier transform, the equivalent steps are encoding and decoding. The encoding is done by adding several measurements together according to a set of rules or algorithm. The rule is always written down as a matrix, two forms of which $\boldsymbol H$ and $\boldsymbol S$ can be used; in the first $\boldsymbol H$ is a matrix of ones and minus ones, the other $\boldsymbol S$, is a matrix of zeros and ones. We shall concentrate of the $\boldsymbol S$ matrix form; it is the most useful one to use experimentally because it involves making only one measurement at a time; the $\boldsymbol H$ matrix method involves making two measurements. Harwit & Sloane (1979) describe the Hadamard transform method in detail, but see Marshall (1978) for a brief description.
 # 
-# ### 11.2 Encoding and decoding with $\boldsymbol S$ matrices
+# ## 11.2 Encoding and decoding with $\boldsymbol S$ matrices
 # 
 # Suppose that there are three samples to be weighed of masses $x_{1,2,3}$ they could be grouped as $x_1 + x_2,\;   x_1 + x_3$ and $x_2 + x_3$ and weighed two at a time on a single pan balance. Written as equations where the $z$'s are the measured values then
 # 
@@ -74,7 +74,7 @@ S = Matrix([[1, 1, 0], [1, 0, 1], [0, 1,1]])
 S**(-1)
 
 
-# ### 11.3 Signal to Noise improvement
+# ## 11.3 Signal to Noise improvement
 # 
 # To see why this method works to improve signal to noise some error has to be added to each measurement. If each measurement has a standard deviation determined by the instrument (scales) used then a measurement of $x$ if done individually also has this error. When weighed in pairs, each pair of $x$'s has the same standard deviation $\sigma$ because this is a property of the scales not the weights. The mean square error between the true and estimated values $\psi$ is 
 # 
@@ -93,7 +93,7 @@ psi
 
 # subtracting each $m_i$ from each $\psi_i$ and summing produces $mse = 3\sigma^2/4$. The mean square error of any single measurement is $\sigma^2$ so that an improvement is obtained by measuring in groups, although it is small in this case. If $n$ measurements are made then mean square error is reduced by $\displaystyle (n + 1)^2/4n$ and the signal to noise improved by $\displaystyle (n+1)/\sqrt{4n} \approx\sqrt{n}/2$.
 # 
-# ### 11.4 Implementation
+# ## 11.4 Implementation
 # 
 # Instead of weights, suppose that a spectrum is to be measured. To do the experiment, the detector is placed at the focusing plane of a spectrometer, the exit slits of which are removed and then a mask consisting of strips of opaque (0) and transparent (1) regions is placed there instead, see Fig. 49. At the first position the total amount of light falling on the detector is measured, this is $z_1$ and corresponds to measuring at positions $1 + 2 + 3 + 5$. Next, the mask is moved by one position, $z_2$ is measured which corresponds to light transmitted by $2 + 3 + 4 + 6$, and so on until all measurements are taken, $7$ in this example. Each measurement corresponds to moving from one column to the next in the $\boldsymbol S$ matrix and the total light measured forms the $\boldsymbol z$ matrix. Once this encoded $\boldsymbol z$ matrix is established it is multiplied by $\boldsymbol S^{-1}$ and the signal $\boldsymbol x$  recovered. Experiments have been performed by physically moving a mask etched in glass but a programmable liquid crystal mask would be easier to use. If there are $n$ elements in the mask, then $n$ different wavelengths are measured at the end of the $n$ experiments. The resolution is determined by the width of the mask compared to the wavelength spread it covers.
 # 
@@ -114,7 +114,7 @@ psi
 # 
 # _______
 # 
-# ### 11.5 Constructing the $\boldsymbol S$ matrix
+# ## 11.5 Constructing the $\boldsymbol S$ matrix
 # 
 # Harwit & Sloane (1979) give several methods by which to construct the $\boldsymbol S$ matrix. The simplest is the Quadratic Residue method, which produces a sequence of ones and zeros of length $n$ but only if $n$ is a prime number satisfying the condition also that $4m + 3$ where $m$ is also an integer. Once $n$ is chosen, the numbers $i = 1, 4, 9, \cdots n^2 \cdots $ are divided by $n$ and the remainders are the indices in a sequence of numbers and these numbers have a value of one and the rest are zero. The $\boldsymbol S$ matrix is then made from this list by rotating each new column by one element compared to its neighbour in a cyclical manner. 
 # 

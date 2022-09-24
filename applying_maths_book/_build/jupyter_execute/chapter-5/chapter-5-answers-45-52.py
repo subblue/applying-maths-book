@@ -15,7 +15,7 @@ init_printing()                      # allows printing of SymPy results in types
 plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 
-# ### Q45 answer
+# ## Q45 answer
 # The potential has the value $V = 0.25x^2$. Using equation (41) the energy change to first order the $n6\text{th}$ level is given by 
 # 
 # $$\displaystyle E_n^{(1)}=\frac{1}{2L}\int\limits_0^L \sin\left(n\pi \frac{x}{L}\right)x^2\sin\left(n\pi \frac{x}{L}\right)dx$$ 
@@ -23,7 +23,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # The perturbation 'particle in a box' code used in the text can be simply modified to do the calculation. The energies in cm$^{-1}$ are 
 # $E_1^{(1)} = 410.86,\,   E_2^{(1)} = 888.65, \,  E_1^{(2)} = -9.53,  \,  E_2^{(2)} = -8.98$.
 # 
-# ### Q46 answer
+# ## Q46 answer
 # The orthogonality of the wavefunctions means that $\int \psi_n\psi_m dx = \delta_{nm}$ therefore only terms with $n = m$ are non-zero, and this condition produces the normal, unperturbed, energies. The first-order corrections to the energies are given by the equation 
 # 
 # $$\displaystyle E_n^{(1)} =\int\limits_\infty^\infty \psi(n,x)\,x\,\psi(n,x)dx$$
@@ -52,7 +52,8 @@ n, m, x,alpha,hbar,omega = symbols('n,m,x,alpha,hbar,omega',positive=True) #usin
 E = lambda n:hbar*omega*(n+1/2)
 #-------------------------------------
 def psi(n):     # wavefunction, factorial is an inbuilt  SymPy function
-    return 1/sqrt(2**n*factorial(n))*sqrt(sqrt(alpha/pi))*           hermite(n,x*sqrt(alpha))*exp(-(alpha*x**2)/2) 
+    return 1/sqrt(2**n*factorial(n))*sqrt(sqrt(alpha/pi))*\
+           hermite(n,x*sqrt(alpha))*exp(-(alpha*x**2)/2) 
 #-------------------------------------
 print('{:s}'.format('non-zero values;2nd order correction'))
 print('{:s}'.format('n,  sum(int(psi(n) * psi(m))**2)/(E(n)-E(m))' ) )
@@ -83,7 +84,7 @@ for i in range(5):
 # 
 # which shows that the potential is lowered by a constant amount, independent of the quantum number. Coincidentally, this perturbation result is the same as an exact calculation. The electric field simply lowers the potential energy. It does not change the spectrum because the shape of the potential, or equivalently the force constant, is unaffected and therefore the quantum number does not enter into the correction term. In SI units the constant $a$, is $Ee/4\pi \epsilon_0$ where $E$ is the electric field intensity, $e$ the electronic charge and $\epsilon_0$ the permittivity of free space.
 # 
-# ### Q47 answer
+# ## Q47 answer
 # The second-order correction to the energy is calculated in a similar way to the previous calculation but using $bx^3$ instead of $ax$. The corrections now involve levels $n=\pm$ 1, 3 and the corrections are 
 # 
 # $$\displaystyle E_0^{(2)} = -\frac{11}{8}\frac{b^2}{\alpha^3\hbar\omega}\quad\text{ and }\quad \displaystyle E_1^{(2)} = -\frac{71}{8}\frac{b^2}{\alpha^3\hbar\omega}$$  
@@ -96,7 +97,7 @@ for i in range(5):
 # 
 # **Exercise:** Repeat the calculation with a quartic potential term, $bx^4$, or both cubic and quartic.
 # 
-# ### Q48 answer
+# ## Q48 answer
 # (a) Solving the equation by differentiating the wavefunction produces the energy of level $n$ as $\displaystyle E_n=n^2\frac{\hbar^2}{2\mu}$. 
 # 
 # (b) Because $n = 0$ and the potential is not zero only from $\pm a \pi$ the first-order perturbation is the integral (equation (41)),
@@ -119,7 +120,7 @@ for i in range(5):
 # 
 # The total energy of the lowest level corrected to second order is $E=aV-E_n^{(2)}$. In the case that $a = 1/6$ the summation rapidly converges to $\approx 0.313$, because of the influence of the $k^{-4}$ term. As the potential is $V = 0.1E_1 = \hbar^2/20\mu$ the energy is $E = 0.01651\hbar^2/\mu$ which is very small compared to the energy $E_1-E_0$ energy gap of $0.5\hbar/\mu$.
 # 
-# ### Q49 answer
+# ## Q49 answer
 # (a) The frequency is calculated with $\Delta E =h\nu $ and $\omega = 2\pi\nu $ or $\omega=(E_4 - E_3)/\hbar $ radian/sec which is $\displaystyle \omega = 7\frac{2\pi h}{8mL^2} = 4\cdot 10^{15}\,\mathrm{ rad\, s^{-1}}$  and the period $2\pi/\omega = 1.57 \cdot 10^{-15}$s.
 # 
 # (b) The superposition is $\Psi=N(\psi_1/2+2\psi_2/3)$ where  $N=(1/4+4/9)^{-1/2}=6/5$ is the normalisation. Substituting into equation (54) produces,
@@ -148,7 +149,8 @@ E = lambda n: (h*n)**2/(8*m*L**2)    # energy J
 omega = (E(4)-E(3))*2*np.pi/h        # frequency s^(-1)
 period = 2*np.pi/omega               # s
 
-print('{:s} {:6.2f}\n{:s} {:10.4g}  {:10.4g}\n{:s} {:10.4g}\n{:s} {:10.4g}\n'.  format('normalisation', N, 'energy n= 3,4 ',E(3),E(4),'frequency 1/sec', omega,'period s', period))
+print('{:s} {:6.2f}\n{:s} {:10.4g}  {:10.4g}\n{:s} {:10.4g}\n{:s} {:10.4g}\n'.\
+  format('normalisation', N, 'energy n= 3,4 ',E(3),E(4),'frequency 1/sec', omega,'period s', period))
 
 psi = lambda x,n,t: np.sqrt(2/L)*np.sin(n*np.pi*x/L)*np.exp(-1j*2*np.pi*E(n)*t/h)  # wavefunction
  
@@ -172,7 +174,7 @@ plt.show()
 # Figure 34. Superposition of time dependent wavefunctions (probability) changing with time pictured in units of the oscillation period for the $3^{rd}$ and $4^{th}$ wavefunction for a particle in a box. (The probability is arbitrarily divided by $10^9$ to make a sensible scale and each x-axis is in nm).
 # ____
 # 
-# ### Q50 answer
+# ## Q50 answer
 # (a) Substituting for energy produces 
 # 
 # $$\displaystyle \Psi(x,t)=\sum\limits_n a_n\psi_n(x) e^{-iE_nt/\hbar} = \sum\limits_n a_n\psi_n(x)e^{-i\omega(n+1/2)t/\hbar}$$
@@ -231,7 +233,8 @@ V    = lambda x: 0.5*k*x**2/(h*c)    # potential energy in cm^(-1)
 Enrg = lambda n, nu: nu*(n+1/2)      # energy cm^(-1)
 avE  =  sum([Enrg(n,nu)*h*c for n in range(ni,nf,1)])/len(cn)
 
-psi  = lambda x, n, alpha: np.sqrt( 1/(2^n*fact(n)) * np.sqrt(alpha/np.pi) )*                np.exp(-alpha*x**2/2.0)*Hermite(n,x*np.sqrt(alpha))  # harmonic ascillator wavefunction
+psi  = lambda x, n, alpha: np.sqrt( 1/(2^n*fact(n)) * np.sqrt(alpha/np.pi) )*\
+                np.exp(-alpha*x**2/2.0)*Hermite(n,x*np.sqrt(alpha))  # harmonic ascillator wavefunction
 # wp adds up wavefunctions
 wp =   lambda x,tm: sum([ cn[n-ni]*psi(x,n,alpha)*np.exp(-1j*Enrg(n,nu)*c*tm) for  n in range(ni,nf)]  )  
     
@@ -256,7 +259,7 @@ plt.show()
 
 # Figure 35. Probabilities of a wavepacket made from five harmonic oscillator wavefunctions vs period $t$ and bond displacement $x$. The wavepacket consists of the $n = 0 \to 4$ vibrational levels of HI over two vibrational periods; a period is $14.4$ fs.
 # ____
-# ### Q51 answer
+# ## Q51 answer
 # The wavepacket is $\displaystyle \Psi(r,t)=\sum\limits_n a_n\psi_n(r)e^{-iRt/(n^2\hbar)}$ 
 # 
 # and the radial probability distribution is
@@ -291,7 +294,8 @@ def fact(n):           # factorial
         return n*fact(n - 1)
 #--------------  
 # radial function next
-Radl = lambda n, el, r:   np.sqrt( ( fact(n-el-1) * (2/(n*a0))**3)/(2*n*fact(n+el)) )                 * ( (2*r)/(n*a0))**el *np.exp(-r/(n*a0) )* GL( n-el-1,2*el+1,(2.0*r)/(n*a0) )   
+Radl = lambda n, el, r:   np.sqrt( ( fact(n-el-1) * (2/(n*a0))**3)/(2*n*fact(n+el)) )\
+                 * ( (2*r)/(n*a0))**el *np.exp(-r/(n*a0) )* GL( n-el-1,2*el+1,(2.0*r)/(n*a0) )   
 
 pm = 1e-12
 ps = 1e-12
@@ -375,7 +379,7 @@ plt.show()
 # 
 # which is a frequency of $\nu=\omega/2\pi$ per second or a period of $4.1$ ps. 
 # 
-# ### Q52 answer
+# ## Q52 answer
 # (a) Using information in the question the fluorescence signal is the square of the sum of the amplitudes of each path, $1\to 2$ and $1\to 3$, and using equation (56), 
 # 
 # $$\displaystyle f(t)=A\left| \int \varphi_3\mu [a_1\varphi_1e^{-iE_1t/\hbar -kt/2+}+a_2\varphi_1e^{-iE_2t/\hbar -kt/2+}]dq  \right |^2$$

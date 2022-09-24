@@ -1,22 +1,22 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## Questions 39 - 46
+# # Questions 39 - 46
 
-# ### Q39 Wavefunction
+# ## Q39 Wavefunction
 # The wavefunction in a 2-dimensional orthonormal vector basis set $(\varphi_1, \varphi_2)$ for a particular molecular orbital (eigenstate), is$\psi_1 = a_1\varphi_1 + a_2\varphi_2$, and for another is $\psi_2 = b_1\varphi_1 - b_2\varphi_2$. The amount of each basis set in each vector is $a_1, a_2$ and $b_1, b_2$.
 # 
 # (a) Calculate the dot product of $\psi_1$ and $\psi_2$ directly, using the summation formula and then using matrices.
 # 
 # (b) Normalise the wavefunctions.
 # 
-# ### Q40 Wavefunction
+# ## Q40 Wavefunction
 # Repeat the last example with $a_1 = 2, a_2 = 2, b_1 = 2a_1, b_2 = 2a_2$. Normalize the wavefunctions and calculate their dot product. What can you conclude about the wavefunctions?
 # 
-# ### Q41 Normalise orbitals
+# ## Q41 Normalise orbitals
 # In the s and p-orbital basis set are the vectors $\vec v_1 =\begin{bmatrix}2& 2 &2 & 2\end{bmatrix}$ and $\vec v_2 = \begin{bmatrix}1& 1 &-1 &-1\end{bmatrix}/2$ orthogonal? Check if they are normalized.
 # 
-# ### Q42 Huckel MO's
+# ## Q42 Huckel MO's
 # Solving the Huckel MO's for benzene produces the following un-normalized vectors in a 2p $\pi$ orbital basis:
 # 
 # $$\displaystyle \begin{array}{ll} 
@@ -29,7 +29,7 @@
 # 
 # (c) If $\pm$ signs represent orbitals phases, plot these new orbitals on a figure of benzene's structure.
 # 
-# ### Q43 Dipoles in a plane
+# ## Q43 Dipoles in a plane
 # Molecules without a centre of inversion possess a dipole. The dipole vector $\vec \mu$ is the difference in positive and negative charges $Q$ multiplied by their separation $a$. Therefore, the dipole magnitude is $|\vec \mu| = Qa$ which has units of coulomb metres. The coulomb is the SI unit of charge. (In figure 26, $Q = 2\delta$.)
 # 
 # ![Drawing](vectors-fig26.png)
@@ -67,7 +67,7 @@
 # Figure 28. Dipole pairs.
 # _________
 # 
-# ### Q44 Dipolar energy
+# ## Q44 Dipolar energy
 # In the previous question the two dipoles were constrained to lie in a plane, the dipoles would have to lie flat on a surface to do this. Now suppose that two dipoles have arbitrary angles, as is normally the case in solution, and are separated by a distance R. The dipolar energy can be written as
 # 
 # $$\displaystyle \begin{align}E&=\frac{1}{4\pi\epsilon_0}\left(\frac{\vec \mu_1\cdot\vec \mu_2}{R^3}-3\frac{(\vec\mu_1\cdot \vec R)\cdot(\vec\mu_2\cdot\vec R)}{R^5} \right)\\&= \frac{1}{4\pi\epsilon_0}\frac{\vec \mu_1\cdot\vec \mu_2}{R^3}\big( 2\cos(\theta_1)\cos(\theta_2)-\cos(\psi)\sin(\theta_1)\sin(\theta_2) \big)\end{align}$$
@@ -83,7 +83,7 @@
 # Figure 29. two dipoles at arbitrary angles.
 # _______
 # 
-# ### Q45 Anomeric effect 
+# ## Q45 Anomeric effect 
 # In substituted cyclohexanes among other molecules, equatorial substitution is preferred because steric repulsion is minimized. In saturated ring molecules containing an oxygen atom, e.g. substituted tetrahydropyrans, the axial position is favoured in what is called the _anomeric_ effect, which is an example of a stereoelectronic effect. The figure shows the most stable (preferred) geometry for each type of molecule.
 # 
 # ![Drawing](vectors-fig30.png)
@@ -100,7 +100,7 @@
 # 
 # **Strategy:** In (a) it serves to sketch the dipole directions. It is assumed that the non-bonding orbitals have dipoles along the normal bond directions; they could be combined vectorially into one dipole but this offers little advantage to us. In (b) the geometry of the molecule has to be determined, the bonds are tetrahedral, which means that if a carbon atom is at the centre of a cube its bonds end at $(1, 1, 1), (1, -1, -1), (-1, 1, -1), (-1, -1, 1)$. Assume that the O atom is sp$^3$ hybridized.
 # 
-# ### Q46 Dipole-dipole energy transfer
+# ## Q46 Dipole-dipole energy transfer
 # Excitation energy can be transferred from one molecule to another by the dipole - dipole mechanism as first described by Forster (Turro 1978). Schematically, the process is $D^* + A \to D + A^*$ where donor species $D$ is electronically excited by absorbing a photon and transfers its energy to acceptor $A$ which then becomes excited. The _rate constant_ $k$ for transfer varies as  
 # 
 # $$\displaystyle k=c\frac{\chi^2Q}{k_fR^6}$$

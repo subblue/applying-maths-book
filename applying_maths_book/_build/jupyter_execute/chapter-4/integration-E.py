@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## The Variational Method in Quantum Mechanics
+# # The Variational Method in Quantum Mechanics
 
 # In[1]:
 
@@ -15,12 +15,14 @@ init_printing()                         # allows printing of SymPy results
 plt.rcParams.update({'font.size': 16})  # set font size for plots
 
 
-# ### 9 The Variational Method
+# ## 9 The Variational Method
 # The variational method has been widely used in quantum chemistry to obtain the energy levels of polyatomic molecules and other similarly complicated problems. This method, also called the Rayleigh-Ritz method, is an approximate way of obtaining energies where no exact solution is possible. The result of the calculation is an energy that is always greater than the true, or exact energy, and this is extremely useful as better approximations can only become closer to the true energy. 
 # 
-# If an exact quantum calculation has ground state energy $E_0$ and wavefunction $\varphi_0$, the Schroedinger equation is $H\varphi_0 = E_0\varphi_0$. The variational theorem asserts, for any trial wavefunction $\psi$ that is perhaps related to, but is not $\varphi_0$, that
+# If an exact quantum calculation has ground state energy $E_0$ and wavefunction $\varphi_0$, the Schroedinger equation is $H\varphi_0 = E_0\varphi_0$.  The Variational Theorem asserts that for any trial wavefunction $\psi$ that is perhaps related to, but is not $\varphi_0$, the energy is always equal to or greater than its true value even though this may not be known. 
 # 
-# $$\displaystyle E_V=\frac{\int \psi^*H\psi d\tau}{\psi^*\psi d\tau} \ge E_0 \tag{47}$$
+# To obtain the energy $E_V$  we left multiply the Schroedinger equation with the trial wavefunction and integrate. The energy can be obtained by rearranging and is
+# 
+# $$\displaystyle E_V=\frac{\int \psi^*H\psi d\tau}{\int\psi^*\psi d\tau} \ge E_0 \tag{47}$$
 # 
 # This means that the energy $E_V$, calculated with any trial wavefunction $\psi$, cannot be lower that the ground state energy $E_0$, calculated with the same Hamiltonian $H$ using $H\varphi_0 = E_0\varphi_0$. The calculation to find $E_0$ may not be possible and this will be unknown, but $E_V$ can still be found as an approximation to $E_0$ even if the integration has to be done numerically. This is important, for in a complicated molecule with many nuclei and even more electrons, solving the Schroedinger equation exactly is not possible in principle even with enormous multiprocessor computers. The variational method, however, allows us to approximate the energy and most importantly, the approximate energy is never lower than the true one; this is what makes this method useful. Initially, the wavefunction $\psi$ is usually a guess based on intuition. Better guesses of $\psi$ will make the left-hand side of equation 47 closer to the true value $E_0$, which means in practice that a lower and lower value of the energy is calculated which asymptotically approaches, but never falls below, the true energy.
 # 
@@ -46,7 +48,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # **(e)** The value of $a$ found is put back into the equation for $E_V$ to obtain its minimum value. This will be the best approximation to the energy with the type of wavefunction chosen. Better or worse energies can be found with different wavefunctions.
 # 
-# ### 9.1 A 1D example
+# ## 9.1 A 1D example
 # As a one-dimensional example, suppose that an electron is subject to a delta function potential that exists only at the origin (Szabo & Ostlund 1982). This potential is simple to deal with mathematically, but it is somewhat unrealistic: it could perhaps approximate a defect in a nanowire or an oxygen atom in a chain of carbons. The Schroedinger equation in atomic units (see chapters 1.15.3 & 11.10.2) is
 # 
 # $$\displaystyle \left( -\frac{1}{2}\frac{d^2}{dx^2}-\delta (x) \right) \psi=E\psi  \tag{48}$$
@@ -97,7 +99,7 @@ integrate( eq, (x,-oo,oo) )
 # 
 # from which $a = 2/\pi$. Substituting into $E_V$ gives the energy as $-1/\pi  =-0.318$ fairly close to, but greater than, the true value of $-0.5$ and not so bad considering the simplicity of the potential.
 # 
-# ### 9.2 A semi-proof of the method
+# ## 9.2 A semi-proof of the method
 # 
 # A rigorous proof, which would be inappropriate here, rests on the mathematical foundation that an approximate solution to the Schroedinger equation can be written as a linear combination of the wavefunctions of an exact solution. To illustrate the method, and to show that the variational energy is always above the true energy, the starting point is the exact solution to the Schroedinger equation; $H\varphi_i = E_i^0\varphi_i$ for energy levels $i = 0, 1, 2, 3, \cdots$ The ground state energy is $E_0$. The problem to solve approximately, using the variational method, has the same Hamiltonian and is $H\psi_i = E_i\psi_i$. We start by guessing that the wavefunction $\psi = a\varphi_1 + b\varphi_2$ will be a good solution provided coefficients $a$ and $b$ are optimized. The wavefunction $\psi$ in this form is said to be 'expanded in the basis set' of just two normalized and orthogonal wavefunctions $\varphi$.
 # 

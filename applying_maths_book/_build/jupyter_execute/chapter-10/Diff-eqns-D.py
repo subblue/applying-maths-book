@@ -1,9 +1,9 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## Simultaneous equations 
+# # Simultaneous equations 
 
-# ### 7.1 Sequential chemical reactions
+# ## 7.1 Sequential chemical reactions
 # 
 # Complex chemical reactions can often be represented as a set of simultaneous reactions. The sequential scheme $\displaystyle A \stackrel{k_1} \longrightarrow B \stackrel{k_2}\longrightarrow C$ has already been solved with the integrating factor method in Section 2, and as an eigenvalue - eigenvector equation in Chapter 7.12.3. Here it is converted into a second-order equation and solved using the $D$ operator method. The rate equations are,
 # 
@@ -32,7 +32,7 @@
 # 
 # which is the same result as that from the integrating factor method.
 # 
-# ### 7.2 Sequential reactions with equal rate constants
+# ## 7.2 Sequential reactions with equal rate constants
 # 
 # There are important chemical examples of the case when the rate constants are all equal at $k$ in the scheme $A \to B \to C$, notably the mechanical unfolding of proteins and DNA using an atomic force microscope. The fact that all the rate constants are equal does not mean that the concentration of B is zero at all times, even though it is formed at the same rate as it decays. Taking the last result, it is not possible to make $k_1 = k_2$ because the concentration of B becomes undefined as 0/0, however, l'Hopital's rule could, in this case, be used to find the limit $k_2 - k_1 \to 0$, (see Chapter 3.8). Instead, we start with the combined rate equations as in section 7.1, 
 # 
@@ -108,7 +108,7 @@
 # Fig. 15b Highly schematic sketch of several parallel hydrogen bonds holding two strands of protein or two lengths of DNA together and being unzipped by an applied force.
 # ________
 # 
-# ### 7.3 Bloch equations and NMR
+# ## 7.3 Bloch equations and NMR
 # 
 # In an NMR experiment, the sample is placed in a large permanent magnetic field aligned along the $z$-axis. The magnetic field splits the energy of the relevant nuclear spin states and if circularly polarized RF radiation of the correct frequency is applied this will cause transitions between the nuclear spin energy levels. The time and spatial evolution of the magnetization (the vectorial sum of the spin magnetic moments/unit volume) is described by the Bloch equations, which are basic to NMR (Flygare 1978; Günther 1992; Levitt 2001). The magnetization $M$ has components in the $x, y$, and $z$ directions and decays with a lifetime of $T_1$, due to longitudinal or _population_ relaxation and by $T_2$ transverse, or _spin-spin_, relaxation due to loss of spin coherence. See figure 13 for a sketch of the geometry of an experiment.
 # 
@@ -158,7 +158,7 @@
 # Fig. 16 Magnetization vs. time when $T_1 = T_2/2 = 200$ (left) and when $T_1 = 2T_2 = 400$. The magnetization starts at at $x,\,y,\,z = 1, 1, 0$ which is at the end of the red line, (green dot). This line represents the initial magnetisation. The magnetisation vector ends on the z-axis at point $M_0 = 1$, red dot.
 # ________
 # 
-# ### 7.4 Second-order equations. Coupled springs
+# ## 7.4 Second-order equations. Coupled springs
 # 
 # Pairs of second-order equations can be solved using the operator method. In this example, the motion of a pair of masses and springs is calculated. This calculation is an alternative to the matrix method of Chapter 7.12.
 # 

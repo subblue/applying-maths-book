@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## The phase plane, nullclines, and stable points
+# # The phase plane, nullclines, and stable points
 
 # In[1]:
 
@@ -15,6 +15,7 @@ init_printing()                    # allows printing of SymPy results in typeset
 plt.rcParams.update({'font.size': 16})  # set font size for plots
 
 
+# ## Introduction
 # In the study of two-dimensional linear and non-linear differential equations, the phase plane, nullclines, and fixed points are very useful tools for analysing the equations before any numerical or algebraic calculation. The phase plane allows fixed points to be found, these are also called *steady state*, or *equilibrium* points and occur when $dy/dt = dx/dt = 0$. Some examples are also given in Chapter 10. *Closed orbits* and *limit-cycles* can also be observed in the phase plane and are described shortly.
 # 
 # Written generally, pairs of differential equations are
@@ -26,7 +27,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # $$ \frac{dy}{dt} = xy+x^2 -y^2, \qquad \frac{dy}{dt}=-\sin(x)+(y-1)^2$$
 # 
 # 
-# ### 6.1 The phase plane $^2$
+# ## 6.1 The phase plane $^2$
 # The phase plane is the plot of $y$ vs $x$ and is found by calculating $dy/dx$ by using the chain rule. In practice, this means dividing the equation for $y$ by that for $x$; therefore the phase plane does not explicitly contain time. If the resulting equation can be integrated, the family of curves produced can be plotted for different values of the integration constant, which means for different initial values of $y$ and $x$. If the integration cannot be done analytically, then a numerical solution of the two initial equations has to be found and, again, $y$ plotted vs $x$ at various times until the entire phase plane is produced.
 # 
 # For example, if the equations governing the motion of a particle in a particular double-well potential, Fig. 13, are
@@ -49,7 +50,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # $^2$ The name is historical and apparently was originally used in dynamics as the plane containing position $x$ and momentum $mdx/dt$ of a object as it moved under the influence of a force.
 # 
-# ### 6.2 Isoclines and nullclines
+# ## 6.2 Isoclines and nullclines
 # 
 # The equation produced when the rate of change is zero is sometimes called an isocline or nullcline. Just as on an incline we move up, or on a decline down, an isocline means that the gradient is always the same and must therefore be a constant number, and a contour path is followed in the phase plane. A nullcline occurs when this constant is zero The nullclines are $x - x^3 = 0$ and $y = 0$, which in this case are both straight lines. Isoclines are the lines when $x - x^3 = a$ and $y = a$ where $a$ is some constant. Assuming that $y$ is plotted vertically and $x$ horizontally, the 'flow' or vector showing the direction of change, is always horizontal at each point along the nullcline, $dy/dt = 0$, no matter what its curve is, and vertical on the nullcline $dx/dt = 0$. The nullclines also partition the phase plane into areas where the derivatives have different sign; exactly what these are depends upon the particular equations. Figure  shows the phase portrait with isoclines at different $c$ values and the nullclines, which are dotted. The figure-of-eight curve is the _separatrix_ and, in this example, is the point when the particle has just enough initial energy to cross the barrier separating the region of oscillation in one well from motion over the barrier, and hence, motion between both wells. When the particle is placed in the bottom of either well, it has zero potential and zero kinetic energy. If it is not pushed, it will remain in this stable state at ($\pm 1, 0$) which are the points on the axis marked with a red dot.
 # 
@@ -60,7 +61,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # Figure 13. Example of a phase - plane with a few contours (isoclines) making up the phase portrait. The potential energy profile  has barrier with a maximum energy of zero. The motion of a particle starting at different points is shown on the right. The $dy/dt = 0$ nullclines are shown dotted, the other nullcline, $dx/dt = y = 0$ is the x-axis. The arrows show the direction of motion around the phase plane. The separatrix is the light blue 'figure of eight' and passes through the origin.
 # _______
 # 
-# ### 6.3 Non-linear equations: the pendulum
+# ## 6.3 Non-linear equations: the pendulum
 # 
 # A rigid pendulum with a heavy bob at its end can move in two ways. When the energy is small, it will oscillate about the vertical in a good approximation to simple harmonic motion, and when the energy is large enough it will rotate continuously in the vertical plane. If the displacement from the vertical is not small, the motion is non-linear and the equation of motion has no exact analytical solution. If it is assumed that the pivot holding the pendulum is frictionless and that no air or other resistance hinders the motion, then the equation of motion is
 # 
@@ -142,7 +143,7 @@ dvdt  = lambda phi : -omega0**2*sin(phi)
 # Figure 15. Angle (radians) and velocity (radians/sec) vs time of the non-linear pendulum, with $\omega = 1,\;v_0=0$ and an initial angle of $8\pi/9$. Notice that the velocity is zero when the potential energy is a maximum. This is when its angle is greatest or smallest and vice versa.
 # _____
 # 
-# ### 6.4 Euler–Cromer equations
+# ## 6.4 Euler–Cromer equations
 # Although the Euler method will work well in all our examples, it is not necessarily the best method to use for oscillating systems, such as the pendulum, because energy is not conserved that well. By changing the algorithm as below then the error in the energy becomes proportional to $\Delta t^3$ which is a significant improvement over $\Delta t$ when the step size is small. The angle is calculated as $\mathtt{phi= phi + h*v}$ instead of $\mathtt{phi= phi + h*dphidt}$ as in the Euler method, Algorithm 14. See Gould et al. (2007) for more details of this and related methods.
 
 # In[4]:
@@ -176,7 +177,7 @@ def EulerCromer(dphidt, dvdt, phi0, t0, maxt, omega):
 #---------
 
 
-# ### 7 SIR model of the spread of diseases
+# ## 7 SIR model of the spread of diseases
 # 
 # A very interesting, and relatively straightforward example of coupled equations is the spread of an infectious disease, because, besides being intrinsically interesting, especially during the Covid19 epidemic, it allows a clear illustration of a number of features such as the phase plane and nullclines. 
 # 
@@ -190,7 +191,7 @@ def EulerCromer(dphidt, dvdt, phi0, t0, maxt, omega):
 # 
 # If S, I, and R were chemical species, the scheme above would represent a quadratic autocatalytic reaction where R is the product that takes no further part in the reaction. To start the reaction, some initial amount of species I has to be present.
 # 
-# ### 7.1 Rate equations
+# ## 7.1 Rate equations
 # 
 # The rate equations for scheme 40 are
 # 
@@ -215,7 +216,7 @@ def EulerCromer(dphidt, dvdt, phi0, t0, maxt, omega):
 # 
 # $^3$ Many texts call the reproductive ratio $R_0$, which is unfortunately confusing with $R_0$, the initial number in the removed class.
 
-# ### 7.2 The SIR phase plane
+# ## 7.2 The SIR phase plane
 # 
 # A graph of $I$ vs $S$ is the phase plane. The phase plane shows how the number of infectives $I$
 # and susceptibles $S$ change with time, even though time is only implicit on the graph. The relationship between I and S is found by using the chain rule $\displaystyle\frac{dI}{dt}=\frac{dI}{dS}\frac{dS}{dt}$ and then  integrating:
@@ -245,11 +246,11 @@ def EulerCromer(dphidt, dvdt, phi0, t0, maxt, omega):
 # 
 # Immunizing or vaccinating a population reduces those susceptible, reducing $S_0$ and the reproductive ratio $R_R$, and so making an epidemic less possible. To the right of $S_N^{max}$, Fig.16, an epidemic occurs, although it may not be severe if the initial value of $S_0/N$ is close to the maximum; to its left the infection dies out. The turnover from epidemic to no epidemic is the point where $S_N^{max}$ touches the diagonal. In the figure this occurs at $I_N^{max} = 1 - 1/3 = 0.66$, meaning that $66$% immunization is needed to prevent an epidemic, which is a low value. With an infectious disease such as mumps or German measles, this value has to be $\approx$ 0.85, meaning that 85% of the population has to be immunized to prevent an epidemic. Notice that not everyone needs to be immunized to prevent an epidemic; this is called *herd immunity*. A few individuals will by chance, never meet an infected person. An immunization/vaccination level of $85$% may be difficult to achieve in a population by voluntary mass vaccination. Should the level of immunization fall by only a small amount, the threshold at $S_N^{max}$ may be crossed and an epidemic could occur. The number of individuals being immunized can suddenly fall, as happened in the UK in the late 1990's and early in this century, due to poorly researched and inflammatory news media stories about the MMR vaccine for children. Some parents were reluctant to have their children vaccinated even though the risk of damage to health and even death were far greater than receiving the vaccine itself. Similar concerns have prevented many people from becoming vaccinated for Covid19 even though world-wide multiple millions of doses have been administered.
 # 
-# ### 7.3 Steady states, isoclines, and nullclines
+# ## 7.3 Steady states, isoclines, and nullclines
 # 
 # In a rate equation, a steady state is produced when the rate of change is zero. In the SIR model this means $dS/dt = 0$ and $dI/dt = 0$. When molecules, or species in general, interact more than one steady state can be present, and not all of these are necessarily stable. The nullclines on the phase plane of the SIR model are particularly simple and are $I = 0$, or along the S-axis, and $S = k_1/k_2$, which is the vertical line at $S_N^{max}$ and divides the region where the infected population increases from that where it decreases. The nullclines divide the phase plane into four areas, two areas are below the S-axis in this case, and, as negative number of individuals do not make any sense, only two of the four regions have any meaning. Assuming that I is plotted vertically and R horizontally, the 'flow' or vector, arrow Fig.16, showing the direction of change is always vertical at any point of the $I$ nullcline, (horizontal axis), no matter what its curve is, and horizontal on the $S$ nullcline when $dS/dt = 0$. A steady state point is found where the nullclines meet, in the SIR model this is in the $S$-axis at the point $[k_1/k_2, 0]$ which is the foot of the vertical line $S_N^{max}$.
 # 
-# ### 7.4 Threshold for an epidemic and maximum and total number infected
+# ## 7.4 Threshold for an epidemic and maximum and total number infected
 # 
 # The maximum fraction of infected individuals is found when $dI_N/dS_N = 0$, and this occurs
 # at the constant value $\displaystyle S_N=\frac{k_1}{k_2N}$ for any fixed $N$. When $dI_N/dS_N=0$ is reached, the infection has peaked and must start to decrease. The *maximum fraction* infected at any one time, is from 42
@@ -278,7 +279,7 @@ def EulerCromer(dphidt, dvdt, phi0, t0, maxt, omega):
 # 
 # or $N(1 - 0.0498)$ and this is the size of the infection, and in effect defines the total number of hospital beds needed over the course of the epidemic.
 # 
-# ### 7.5 Sensitivity to rate constant $k_2$
+# ## 7.5 Sensitivity to rate constant $k_2$
 # 
 # To understand some of the equations above, such as the maximum fraction infected, $I_N^{max}$ it is easier to draw some graphs. Suppose that there are ten thousand susceptible persons, and that the disease starts to spread after one person is infected. What is the effect of the different rate constants? The rate of infection $k_2$ here is key, i.e. the term $k_2SI$ (eqn. 41) has a dramatic effect. If $k_2$ is small, $10^{-5}$, top left, (see the graphs below), the overall the epidemic does not progress even up to $1000$ days. However, with $k_2=2\cdot 10^{-5}$ (top right) the epidemic starts and $\approx 1500$ persons are infected at the peak. Increasing $k_2$ again to $5\cdot 10^{-5}$  $\approx 4800$ are infected. This rapid increase is rather dramatic and shows the effect of feedback, i.e. $ S+I \overset{k_2}\longrightarrow 2I $;  Increasing $k_2$ above $10^{-4}$ has a smaller effect than when $k_2=10^{-5}$ simply because so many are already infected. This behaviour shows how important the reproductive ratio is because this is proportional to $k_2$. 
 # 
@@ -289,7 +290,7 @@ def EulerCromer(dphidt, dvdt, phi0, t0, maxt, omega):
 # Figure 16a. Populations of susceptibles S, (red line), infected I, (blue line) and recovered R, (green line) vs. time with different $k_2$ values using $k_1 =0.1$. The peaks of the infected curves are found using eqn. 43, $I_N^{max}N$.
 # _________
 # 
-# ### 7.6 Calculating the time profile of an epidemic
+# ## 7.6 Calculating the time profile of an epidemic
 # 
 # As an illustration of using the SIR model, suppose that you are presented with this specific problem: The following data for the incidence of influenza was recorded at a boys' boarding school. Starting on day zero, the number of boys infected each day was
 # 

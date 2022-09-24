@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## Solutions Q51 - 54
+# # Solutions Q51 - 54
 
 # In[1]:
 
@@ -16,7 +16,7 @@ init_printing()                      # allows printing of SymPy results in types
 plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 
-# ### Q51 answer
+# ## Q51 answer
 # The rate equations are
 # 
 # $$\displaystyle \frac{dA}{dt}=-k_{12}A+k_{21}B , \qquad \frac{dB}{dt}=k_{12}A-(k_2+k_{21})B,\quad \frac{dC}{dt}=k_2B-k_3C$$
@@ -33,7 +33,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # Figure 91. Scheme $A\rightleftharpoons B\to C\to$ with rate constants $k_{12} = 5, k_{21} = 6, k_2 =1,k_3 =0.2$.
 # __________
 
-# ### Q52 answer
+# ## Q52 answer
 # The rate equation for the fourth molecule is, with $C_1 \cdots C_7$ being the populations of the BChl molecules, and $k_f$ the fluorescence rate constant,
 # 
 # $$\displaystyle \begin{align}\frac{dC_4}{dt}=-k_fC_4&-(k_{41}+k_{42}+k_{43}+k_{45}+k_{46}+k_{47})C_4 \\&+k_{14}C_1+ k_{24}C_2 +k_{34}C_3 + k_{54}C_5  + k_{64}C_6 + k_{74}C_7 \end{align}$$
@@ -79,7 +79,13 @@ P0  = np.zeros(n,dtype=float)      # initial populations
 P0[6]= 1.0                         # molecule 7 populated (index 6)
 pop = np.zeros((n,maxn),dtype=float)   # define 2D array for results 
 
-xyz = np.array([[53.113 , 58.877 , 20.553]             ,[56.307 , 55.372 , 32.462]             ,[49.690 , 44.549 , 44.813]             ,[39.128 , 41.873 , 42.544]             ,[34.082 , 47.474 , 30.966]             ,[41.714 , 47.644 , 22.127]             ,[47.867 , 43.555 , 32.934] ])    # data in order x,y z 
+xyz = np.array([[53.113 , 58.877 , 20.553]\
+             ,[56.307 , 55.372 , 32.462]\
+             ,[49.690 , 44.549 , 44.813]\
+             ,[39.128 , 41.873 , 42.544]\
+             ,[34.082 , 47.474 , 30.966]\
+             ,[41.714 , 47.644 , 22.127]\
+             ,[47.867 , 43.555 , 32.934] ])    # data in order x,y z 
 
 for i in range(n):                  #  work out distance and rate constants
     for j in range(n):
@@ -138,7 +144,7 @@ print('{:s} {:8.5f}'.format('sum of population should be 1 only if kf = 0', sum(
 # (a) The wide range of rate constants $\approx 10^{12} \to 10^{10}\;\mathrm{ s^{-1}}$ is due to the $R^{-6}$ dependence of the transfer rate with inter molecular separation. The closeness of the molecules ensures very fast transfer, and equilibration occurs within about one picosecond, irrespective of which molecule is excited initially. The population does not decay to zero, because the fluorescence rate at $0.2\cdot 10^9\;\mathrm{ s^{-1}}$ is about $1000$ times slower than the energy transfer rate, and on the short times range plotted the population appears to be constant. When we add quenching, which could be caused by energy-transfer to a second nearby FMO protein or to a reaction centre, the population now falls to zero in about $20$ ps as energy is drained out of the antenna. As the energy - equilibration is so fast, it does not matter which molecule
 # is excited even when the quenching rate is $10^{12}\;\mathrm{ s^{-1}}$.
 # 
-# ### Q53 answer
+# ## Q53 answer
 # The equation relating diagonal eigenvalue matrix $\Lambda$, and the eigenvectors $\pmb{X}$, is $\pmb{MX} = \pmb{X}\Lambda$. If we left-multiply by eigenvector matrix $\pmb{X}^{-1}$ then $\pmb{X}^{-1}\pmb{MX} = \Lambda$, and then this can be raised to the $50^{th}$ power. As the matrix is diagonal, this is simply achieved by raising each term to the power.
 # 
 # The calculation using Sympy is
@@ -169,7 +175,7 @@ Mtob.det()
 
 # Simplifying this result and letting $b=50$ gives $\pmb{M}^{50}= 3^{50}a^{100}$. Notice that in the determinant, if it is assumed that 1 is small compared to $b^{50}$, which of course it is when $b=50$, and so removed from the calculation, then a serious error would be introduced, the answer would be zero: an error by a factor of $3^{50}$ or $\approx 10^{23}$ if a was $1$. This shows the importance of not approximating until the calculation is finished.
 # 
-# ### Q54 answer
+# ## Q54 answer
 # (a) If any of the plants are cross-fertilized without restriction, the following table of all possible types is produced in the first generation where the offspring's genetic make-up starts the rows and the parents head the columns. The total chance in each column is one, as this is the chance of parents having offspring.
 # 
 # $$\displaystyle \begin{array}{c|ccc|cc}

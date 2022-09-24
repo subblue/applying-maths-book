@@ -4,11 +4,13 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Axes need not be right-angled or of equal length &#8212; Applying Maths in the Chemical &amp; Biomolecular Sciences</title>
     
-  <link href="../_static/css/theme.css" rel="stylesheet">
-  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,40 +20,39 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Questions 33 - 38" href="vectors-Q33-38.html" />
@@ -63,7 +64,21 @@
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -72,9 +87,10 @@
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -92,14 +108,15 @@
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../intro.html">
-   Applying Maths in the Chemical and Biomolecular Sciences.
-  </a>
- </li>
-</ul>
-<ul class="current nav bd-sidenav">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Applying Maths in the Chemical and Biomolecular Sciences.
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../chapter-1/chapter1-intro.html">
    1. Numbers, Equations, Operators, and Algorithms.
@@ -204,11 +221,6 @@
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-2/chapter2-Q-10-13.html">
      Questions 10 -13
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-2/chapter2-C.html">
-     Euler’s theorem, roots of unity, x-ray diffraction structure factor.
     </a>
    </li>
    <li class="toctree-l2">
@@ -337,7 +349,7 @@
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../chapter-4/integration-intro.html">
-   4. Integration.
+   4 Integration.
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
   <label for="toctree-checkbox-4">
@@ -377,7 +389,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-4/integration-D.html">
-     Calculating an Average Value.
+     Calculating an Average.
     </a>
    </li>
    <li class="toctree-l2">
@@ -407,7 +419,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-4/integration-G.html">
-     Calculating the energy of a chemical bond using molecular orbitals
+     Calculating the energy of a Chemical Bond using Molecular Orbitals
     </a>
    </li>
    <li class="toctree-l2">
@@ -688,7 +700,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-7/matrices-D.html">
-     Rotation matrices: moving molecules
+     Rotation matrices: moving molecules. Coordinate transform as rotation.
     </a>
    </li>
    <li class="toctree-l2">
@@ -757,23 +769,13 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-7/matrices-K.html">
-     Calculating a bond length using moments of inertia
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-7/matrices-Q61.html">
-     Question 61
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="../chapter-7/matrices-L.html">
      Principal axes for Moments of Inertia
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-7/matrices-Q62.html">
-     Question 62
+    <a class="reference internal" href="../chapter-7/matrices-Q61-62.html">
+     Question 61 - 62
     </a>
    </li>
    <li class="toctree-l2">
@@ -1004,7 +1006,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-G.html">
-     PDE examples continued
+     PDE Continued
     </a>
    </li>
    <li class="toctree-l2">
@@ -1096,7 +1098,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-11/num-methods-answers8-12.html">
-     Solutions Q8 - 12
+     Solutions Q 8 - 12
     </a>
    </li>
    <li class="toctree-l2">
@@ -1258,112 +1260,227 @@
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/chapter-6/vectors-C.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/subblue/applying-maths-book"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/subblue/applying-maths-book/issues/new?title=Issue%20on%20page%20%2Fchapter-6/vectors-C.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        
-    </div>
-</div>
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/subblue/applying-maths-book/main?urlpath=lab/tree/applying_maths_book/chapter-6/vectors-C.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        <a class="colab-button" href="https://colab.research.google.com/github/subblue/applying-maths-book/blob/main/applying_maths_book/chapter-6/vectors-C.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
-                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
-                    src="../_static/images/logo_colab.png"
-                    alt="Interact on Colab">Colab</button></a>
-        
-        
-    </div>
-</div>
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/subblue/applying-maths-book/main?urlpath=lab/tree/applying_maths_book/chapter-6/vectors-C.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://colab.research.google.com/github/subblue/applying-maths-book/blob/main/applying_maths_book/chapter-6/vectors-C.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/subblue/applying-maths-book"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/subblue/applying-maths-book/issues/new?title=Issue%20on%20page%20%2Fchapter-6/vectors-C.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/chapter-6/vectors-C.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#basis-set">
    8.1 Basis set.
@@ -1411,17 +1528,80 @@
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Axes need not be right-angled or of equal length</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#basis-set">
+   8.1 Basis set.
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#vectors">
+   8.2 Vectors
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#calculating-bond-lengths">
+   8.3 Calculating bond lengths
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#conversion-from-one-basis-set-to-another">
+   9 Conversion from one basis set to another
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#converting-axes">
+   9.1 Converting axes
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#calculating-the-new-coefficients">
+   9.2 Calculating the new coefficients
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#transformation-of-basis-vectors">
+   10 Transformation of basis vectors
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#calculating-bond-lengths-and-angles-in-non-right-angled-crystals">
+   10.1 Calculating bond lengths and angles in non right-angled crystals
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#unit-cell-volume">
+   10.2 Unit cell volume
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
               <div>
                 
-  <div class="section" id="axes-need-not-be-right-angled-or-of-equal-length">
-<h1>Axes need not be right-angled or of equal length<a class="headerlink" href="#axes-need-not-be-right-angled-or-of-equal-length" title="Permalink to this headline">¶</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="axes-need-not-be-right-angled-or-of-equal-length">
+<h1>Axes need not be right-angled or of equal length<a class="headerlink" href="#axes-need-not-be-right-angled-or-of-equal-length" title="Permalink to this headline">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import all python add-ons etc that will be needed later on</span>
@@ -1437,13 +1617,13 @@
 </div>
 </div>
 </div>
-<div class="section" id="basis-set">
-<h2>8.1 Basis set.<a class="headerlink" href="#basis-set" title="Permalink to this headline">¶</a></h2>
+<section id="basis-set">
+<h2>8.1 Basis set.<a class="headerlink" href="#basis-set" title="Permalink to this headline">#</a></h2>
 <p>In crystallography the coordinates of the unit cell are often reported in terms of the crystal type, monoclinic, triclinic, and so forth, whose axes are not mutually at right angles or always of the same length. The base vectors are no longer the orthonormal <span class="math notranslate nohighlight">\(\boldsymbol i, j, k\)</span> set we have been using and are now labelled as <span class="math notranslate nohighlight">\(\vec a, \vec b, \vec c\)</span> to indicate that they are non-orthogonal. By convention, the angle <span class="math notranslate nohighlight">\(\alpha\)</span> lies between <span class="math notranslate nohighlight">\(b\)</span> and <span class="math notranslate nohighlight">\(c\)</span>, <span class="math notranslate nohighlight">\(\beta\)</span> between <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(c\)</span>, and <span class="math notranslate nohighlight">\(\gamma\)</span> between <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span>. This is shown in figure 20. Many authors use <span class="math notranslate nohighlight">\(\boldsymbol {a,b,c}\)</span> instead of <span class="math notranslate nohighlight">\(\vec a, \vec b, \vec c\)</span> but using arrows is here clearer.</p>
 <p>As the base vectors are not at <span class="math notranslate nohighlight">\(90^\text{o}\)</span> to one another, when a dot product is calculated, the terms <span class="math notranslate nohighlight">\(\vec a\cdot \vec b, \vec a\cdot\vec c\)</span>, and <span class="math notranslate nohighlight">\(\vec c\cdot \vec b\)</span> are not zero but the corresponding cross terms <span class="math notranslate nohighlight">\(\boldsymbol i\cdot k, \boldsymbol i\cdot j\)</span>, and <span class="math notranslate nohighlight">\(\boldsymbol j\cdot k\)</span> in the right-angled basis set are. Additionally, the base vectors are often not of unit length, but have the length, and relative angles, of the unit cell, which means that they are not normalized and not orthogonal - just about as bad as it can get! However, the method to calculate a dot product is, in principle, no different to that already described. Although a, b, and c represent the length of the unit cell, these are not unit vectors; the ‘unit’ here refers to the minimum repeat distance in the crystal.</p>
-</div>
-<div class="section" id="vectors">
-<h2>8.2 Vectors<a class="headerlink" href="#vectors" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="vectors">
+<h2>8.2 Vectors<a class="headerlink" href="#vectors" title="Permalink to this headline">#</a></h2>
 <p>Suppose two vectors are <span class="math notranslate nohighlight">\(\vec V\)</span> and <span class="math notranslate nohighlight">\(\vec W\)</span> in the non-normalized, non-orthogonal <span class="math notranslate nohighlight">\((\vec a, \vec b, \vec c)\)</span> basis
 then we can write</p>
 <div class="math notranslate nohighlight">
@@ -1466,10 +1646,10 @@ then we can write</p>
 <p>as is <span class="math notranslate nohighlight">\(|\vec W|\)</span> by substituting <span class="math notranslate nohighlight">\(w\)</span>’s for <span class="math notranslate nohighlight">\(v\)</span>’s.</p>
 <p><img alt="Drawing" src="../_images/vectors-fig20.png" /></p>
 <p>Figure 20. Non-orthogonal axes and non-normalized base vectors <span class="math notranslate nohighlight">\(\vec a, \vec b\)</span> and <span class="math notranslate nohighlight">\(\vec c\)</span>.</p>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="calculating-bond-lengths">
-<h2>8.3 Calculating bond lengths<a class="headerlink" href="#calculating-bond-lengths" title="Permalink to this headline">¶</a></h2>
+<section id="calculating-bond-lengths">
+<h2>8.3 Calculating bond lengths<a class="headerlink" href="#calculating-bond-lengths" title="Permalink to this headline">#</a></h2>
 <p>In X-ray crystallography, an atom’s coordinates are often given in terms of the unit cell
 dimensions and these are not always at right angles to one another. Suppose that the
 vector of atom C<span class="math notranslate nohighlight">\(_A\)</span>’s coordinates, given in unit cell dimensions, is A and that for atom C<span class="math notranslate nohighlight">\(_B\)</span> is AB. The bond length is calculated from the difference of two vectors <span class="math notranslate nohighlight">\(\vec V = \vec A - \vec B\)</span> and then by calculating the dot product of this vector with itself, equation 21.</p>
@@ -1525,10 +1705,10 @@ etc. Therefore</p>
 <p>The values <span class="math notranslate nohighlight">\(d_{CN_1}\)</span> and <span class="math notranslate nohighlight">\(d_{CN_2}\)</span> are the bond lengths and using the calculated bond lengths the <span class="math notranslate nohighlight">\(\mathrm{N_1-C-N_2}\)</span> angle is <span class="math notranslate nohighlight">\(114.5^\text{o}\)</span>. To make sure you understand the calculation, calculate the <span class="math notranslate nohighlight">\(\mathrm{C-N_2}\)</span> and <span class="math notranslate nohighlight">\(\mathrm{N_1-N_2}\)</span> bond lengths. You should find them to be <span class="math notranslate nohighlight">\(0.1323\)</span> and <span class="math notranslate nohighlight">\(0.1321\)</span> nm respectively.</p>
 <p><img alt="Drawing" src="../_images/vectors-fig22.png" /></p>
 <p>Figure 22. A monoclinic crystal, the axes, and a sketch (right) of the projection of the tetrazine structure looking down the b axis. The plane of the s - tetrazine molecule lies in the <span class="math notranslate nohighlight">\(a - c\)</span> plane. (Not all atoms are explicitly shown.)</p>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="conversion-from-one-basis-set-to-another">
-<h2>9 Conversion from one basis set to another<a class="headerlink" href="#conversion-from-one-basis-set-to-another" title="Permalink to this headline">¶</a></h2>
+<section id="conversion-from-one-basis-set-to-another">
+<h2>9 Conversion from one basis set to another<a class="headerlink" href="#conversion-from-one-basis-set-to-another" title="Permalink to this headline">#</a></h2>
 <p>It is sometimes essential to be able to convert from one basis set to another, and if you were involved in computer graphics this would be something that you would have to do all the time as the viewing point and perspective of the scene changes. In this case, the basis set would probably be called a reference frame. In geography or astronomy, converting from earth-based coordinates to celestial ones is commonplace, in chemistry and physics converting rectangular to polar coordinates is often necessary when dealing with atomic or molecular orbitals. An X-ray crystallographic analysis of a molecule usually results in coordinates that are quoted in terms of the unit cell parameters the axes of which may be neither at right angles to one another nor of equal length. Although a molecule’s bond lengths and angles can be calculated in these non-orthogonal coordinates, as illustrated in Section 8.3, it is often practical to convert to normal right-angled coordinates, particularly for drawing structures.</p>
 <p>The method of converting from triclinic to orthonormal coordinates is now described and is used to illustrate the general method of converting one basis set into another. We use triclinic coordinate axes because these axes are set at different angles to one another and are each of different length. This conversion will lead to a related but more useful method of calculating geometries from X-ray data than that of Section 8. The two sets of axes shown in figure 23 are the general triclinic <span class="math notranslate nohighlight">\(a, b, c\)</span> and the orthogonal or conventional Cartesian <span class="math notranslate nohighlight">\(x, y, z\)</span>.</p>
 <p>Any vector is unchanged by changing its basis set and therefore its coefficients must change between bases. If <span class="math notranslate nohighlight">\(\vec V\)</span> is any vector and <span class="math notranslate nohighlight">\(g_{x,y,z}\)</span> is the set of its coefficients in an <span class="math notranslate nohighlight">\(xyz\)</span> basis and <span class="math notranslate nohighlight">\(g_{A,B,C}\)</span> in another basis <span class="math notranslate nohighlight">\(ABC\)</span>, this equality is written as</p>
@@ -1538,10 +1718,10 @@ etc. Therefore</p>
 <p>To effect the conversion of a vector, the axes must be converted first, and then the vector’s new coefficients calculated. These coefficients will be calculated by expanding each of the <span class="math notranslate nohighlight">\(A, B, C\)</span> vectors, equations 26, in turn with equations like those of eqn. 27.</p>
 <p><img alt="Drawing" src="../_images/vectors-fig23.png" /></p>
 <p>Figure 23. Two sets of unit vectors; The set <span class="math notranslate nohighlight">\(\vec x\vec y \vec z\)</span> are orthogonal but <span class="math notranslate nohighlight">\(\vec A\vec B\vec C\)</span> are not. Vector <span class="math notranslate nohighlight">\(A\)</span> lies along <span class="math notranslate nohighlight">\(\vec x\)</span> and <span class="math notranslate nohighlight">\(\vec B\)</span> is in the <span class="math notranslate nohighlight">\(x\)</span>y plane.</p>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="converting-axes">
-<h2>9.1 Converting axes<a class="headerlink" href="#converting-axes" title="Permalink to this headline">¶</a></h2>
+<section id="converting-axes">
+<h2>9.1 Converting axes<a class="headerlink" href="#converting-axes" title="Permalink to this headline">#</a></h2>
 <p>We will assume that the <span class="math notranslate nohighlight">\(xyz\)</span> basis set is orthogonal (just as are <span class="math notranslate nohighlight">\(\boldsymbol i, \boldsymbol j,\boldsymbol k\)</span>), as is the convention, therefore the basis vectors <span class="math notranslate nohighlight">\(\vec x, \vec y\)</span>, and <span class="math notranslate nohighlight">\(\vec z\)</span> are orthogonal to one another, for instance,</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \vec x\cdot\vec y = \vec x\cdot\vec z = \vec z\cdot\vec y = 0\]</div>
@@ -1557,9 +1737,9 @@ etc. Therefore</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle \qquad\qquad\begin{bmatrix} A\\B\\C\end{bmatrix}=\begin{bmatrix}k_1 &amp; k_2 &amp; k_3\\m_1 &amp; m_2 &amp; m_3\\ n_1 &amp; n_2 &amp; n_3 \end{bmatrix} \begin{bmatrix}x\\y\\z\end{bmatrix}\qquad\qquad \qquad\qquad\text{(28)}\end{split}\]</div>
 <p>The two sets of axes could be placed at any orientation with respect to one another but to make things easier, let vectors <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(x\)</span> coincide and let vector <span class="math notranslate nohighlight">\(B\)</span> be in the <span class="math notranslate nohighlight">\(x-y\)</span> plane, see figure 23. If this orientation is calculated in some other way then the basis set <span class="math notranslate nohighlight">\((x\; y\; z)\)</span> may need to be reordered to get everything correct. The way to check that everything is all right is to make all the angles <span class="math notranslate nohighlight">\(90^\text{o}\)</span> then a diagonal matrix should result.</p>
-</div>
-<div class="section" id="calculating-the-new-coefficients">
-<h2>9.2 Calculating the new coefficients<a class="headerlink" href="#calculating-the-new-coefficients" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="calculating-the-new-coefficients">
+<h2>9.2 Calculating the new coefficients<a class="headerlink" href="#calculating-the-new-coefficients" title="Permalink to this headline">#</a></h2>
 <p>Vector <span class="math notranslate nohighlight">\(A\)</span> lies along the <span class="math notranslate nohighlight">\(x\)</span>-axis, therefore its <span class="math notranslate nohighlight">\(y\)</span> and <span class="math notranslate nohighlight">\(z\)</span> components <span class="math notranslate nohighlight">\(k_2\)</span> and <span class="math notranslate nohighlight">\(k_3\)</span> are zero. The remaining component <span class="math notranslate nohighlight">\(k_1\)</span> has a length <span class="math notranslate nohighlight">\(1\)</span>, which is the length of <span class="math notranslate nohighlight">\(\vec A\)</span>, therefore the first of equations 27 representing the vector <span class="math notranslate nohighlight">\(A\)</span> in the <span class="math notranslate nohighlight">\(xyz\)</span> basis set is simply;</p>
 <div class="math notranslate nohighlight">
 \[ \displaystyle \vec A=\vec x\]</div>
@@ -1599,12 +1779,12 @@ therefore</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \vec X=\boldsymbol{M}^{-1}\vec D\]</div>
 <p>where <span class="math notranslate nohighlight">\(\boldsymbol{M}^{-1}\)</span> is the inverse of <span class="math notranslate nohighlight">\(\boldsymbol{M}\)</span>, see Chapter 7. Finally, and as a check when all the angles are <span class="math notranslate nohighlight">\(90^\text{o}\)</span>, matrix <span class="math notranslate nohighlight">\(\boldsymbol{M}\)</span> reduces to a diagonal matrix and this tells us that ordering the axes as <span class="math notranslate nohighlight">\(ABC\)</span> gives the resulting order <span class="math notranslate nohighlight">\(xyz\)</span>.</p>
-</div>
-<div class="section" id="transformation-of-basis-vectors">
-<h2>10 Transformation of basis vectors<a class="headerlink" href="#transformation-of-basis-vectors" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="calculating-bond-lengths-and-angles-in-non-right-angled-crystals">
-<h2>10.1 Calculating bond lengths and angles in non right-angled crystals<a class="headerlink" href="#calculating-bond-lengths-and-angles-in-non-right-angled-crystals" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="transformation-of-basis-vectors">
+<h2>10 Transformation of basis vectors<a class="headerlink" href="#transformation-of-basis-vectors" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="calculating-bond-lengths-and-angles-in-non-right-angled-crystals">
+<h2>10.1 Calculating bond lengths and angles in non right-angled crystals<a class="headerlink" href="#calculating-bond-lengths-and-angles-in-non-right-angled-crystals" title="Permalink to this headline">#</a></h2>
 <p>Normally, we are not so interested in converting axes but wish to find an atom’s coordinates in Cartesian (<span class="math notranslate nohighlight">\(xyz\)</span>) axes, but which are given in crystallographic tables in terms of the unit cell <span class="math notranslate nohighlight">\(abc\)</span> axes. The convention in crystallographic tables is to quote the coordinates as fractions of the unit cell lengths in columns labelled as <span class="math notranslate nohighlight">\(x/a, y/b, z/c\)</span>, or even as <span class="math notranslate nohighlight">\(x, y, z\)</span>. This is initially confusing because <span class="math notranslate nohighlight">\(xyz\)</span> axes are not involved.</p>
 <p>The method now described is not limited to the specific example considered, but will apply to any two basis sets. The coordinates of an atom describe a vector from the origin and equation 26 is used to describe the vector. The same vector has coefficients <span class="math notranslate nohighlight">\(g_x, g_y, g_z\)</span> in the <span class="math notranslate nohighlight">\(xyz\)</span> basis set (axes) and <span class="math notranslate nohighlight">\(g_A, g_B, g_C\)</span> in the <span class="math notranslate nohighlight">\(abc\)</span> basis set. The right-hand side of equation 26 can be expanded by replacing the base vectors <span class="math notranslate nohighlight">\(\vec A, \vec B, \vec C\)</span> by equation 27, which gives</p>
 <div class="math notranslate nohighlight">
@@ -1733,15 +1913,15 @@ bond angle C12N = 121.1 degrees
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="unit-cell-volume">
-<h2>10.2 Unit cell volume<a class="headerlink" href="#unit-cell-volume" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="unit-cell-volume">
+<h2>10.2 Unit cell volume<a class="headerlink" href="#unit-cell-volume" title="Permalink to this headline">#</a></h2>
 <p>The absolute value of the determinant of <span class="math notranslate nohighlight">\(\boldsymbol M\)</span> is numerically equal to the volume of the unit cell, (Giacovazzo et al. 1992, p. 68). When all the angles are <span class="math notranslate nohighlight">\(90^\text{o}\)</span> then this matrix reduces to a diagonal form, and the determinant is <span class="math notranslate nohighlight">\(abc\)</span>, which is equal to the volume. Consider a monoclinic crystal, such as benzoic acid, where only one crystal angle is not <span class="math notranslate nohighlight">\(90^\text{o}\)</span>, and where <span class="math notranslate nohighlight">\(a = 0.552, b = 0.514, c = 2.190\)</span> nm and the angle <span class="math notranslate nohighlight">\(\beta= 97^\text{o}\)</span>. The volume of the crystal will only be a little smaller than that of a solid rectangle of sides <span class="math notranslate nohighlight">\(abc = 0.621\;\mathrm{ nm^3}\)</span> because the angle <span class="math notranslate nohighlight">\(\beta\)</span> is close to <span class="math notranslate nohighlight">\(90^\text{o}\)</span>. The <span class="math notranslate nohighlight">\(\boldsymbol M\)</span> matrix for a monoclinic crystal where <span class="math notranslate nohighlight">\(\alpha = \gamma =90^\text{o}\)</span> is</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle \qquad\qquad\begin{bmatrix}\vec a\\ \vec b\\ \vec c\end{bmatrix}=\begin{bmatrix}a&amp;0&amp;0\\0&amp;b&amp;0\\c\cos(\beta) &amp; 0 &amp; c\sin(\beta)\end{bmatrix}\begin{bmatrix}\vec x\\ \vec y\\ \vec z\end{bmatrix}\qquad\qquad\qquad\qquad \text{(34)}\end{split}\]</div>
 <p>The determinant is simple to do by hand in this particular example because the terms that are zero mean that the determinant is the product of the diagonal terms or <span class="math notranslate nohighlight">\(V=abc\sin(\beta)\)</span>. This result makes sense viewing the geometry of a monoclinic crystal, figure 22, which is that of a rectangular box pushed along one side. The term <span class="math notranslate nohighlight">\(\sin(\beta)\)</span> is the amount the height is reduced compared to a rectangular box. Using the cell parameters, the volume of the benzoic acid unit cell is <span class="math notranslate nohighlight">\(0.617\;\mathrm{ nm^3}\)</span>, which is slightly smaller than the rectangular <span class="math notranslate nohighlight">\(0.621\;\mathrm{nm^3}\)</span>.</p>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -1765,9 +1945,11 @@ bond angle C12N = 121.1 degrees
 
               </div>
               
-        
-            <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="vectors-Q25-32.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -1783,26 +1965,28 @@ bond angle C12N = 121.1 degrees
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-        
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-    <div class="container">
-      <p>
-        
-          By Godfrey Beddard<br/>
-        
-            &copy; Copyright 2022.<br/>
-      </p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Godfrey Beddard<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
     </div>
-  </footer>
-</main>
+    
+</div>
 
 
       </div>
     </div>
   
-  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>

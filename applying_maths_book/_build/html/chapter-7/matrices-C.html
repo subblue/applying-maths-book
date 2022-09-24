@@ -4,11 +4,13 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Molecular Group Theory &#8212; Applying Maths in the Chemical &amp; Biomolecular Sciences</title>
     
-  <link href="../_static/css/theme.css" rel="stylesheet">
-  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,40 +20,39 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Questions 17 - 30" href="matrices-Q17-30.html" />
@@ -63,7 +64,21 @@
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -72,9 +87,10 @@
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -92,14 +108,15 @@
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../intro.html">
-   Applying Maths in the Chemical and Biomolecular Sciences.
-  </a>
- </li>
-</ul>
-<ul class="current nav bd-sidenav">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Applying Maths in the Chemical and Biomolecular Sciences.
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../chapter-1/chapter1-intro.html">
    1. Numbers, Equations, Operators, and Algorithms.
@@ -204,11 +221,6 @@
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-2/chapter2-Q-10-13.html">
      Questions 10 -13
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-2/chapter2-C.html">
-     Euler’s theorem, roots of unity, x-ray diffraction structure factor.
     </a>
    </li>
    <li class="toctree-l2">
@@ -337,7 +349,7 @@
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../chapter-4/integration-intro.html">
-   4. Integration.
+   4 Integration.
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
   <label for="toctree-checkbox-4">
@@ -377,7 +389,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-4/integration-D.html">
-     Calculating an Average Value.
+     Calculating an Average.
     </a>
    </li>
    <li class="toctree-l2">
@@ -407,7 +419,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-4/integration-G.html">
-     Calculating the energy of a chemical bond using molecular orbitals
+     Calculating the energy of a Chemical Bond using Molecular Orbitals
     </a>
    </li>
    <li class="toctree-l2">
@@ -688,7 +700,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="matrices-D.html">
-     Rotation matrices: moving molecules
+     Rotation matrices: moving molecules. Coordinate transform as rotation.
     </a>
    </li>
    <li class="toctree-l2">
@@ -757,23 +769,13 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="matrices-K.html">
-     Calculating a bond length using moments of inertia
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="matrices-Q61.html">
-     Question 61
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="matrices-L.html">
      Principal axes for Moments of Inertia
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="matrices-Q62.html">
-     Question 62
+    <a class="reference internal" href="matrices-Q61-62.html">
+     Question 61 - 62
     </a>
    </li>
    <li class="toctree-l2">
@@ -1004,7 +1006,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-G.html">
-     PDE examples continued
+     PDE Continued
     </a>
    </li>
    <li class="toctree-l2">
@@ -1096,7 +1098,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-11/num-methods-answers8-12.html">
-     Solutions Q8 - 12
+     Solutions Q 8 - 12
     </a>
    </li>
    <li class="toctree-l2">
@@ -1258,112 +1260,227 @@
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/chapter-7/matrices-C.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/subblue/applying-maths-book"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/subblue/applying-maths-book/issues/new?title=Issue%20on%20page%20%2Fchapter-7/matrices-C.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        
-    </div>
-</div>
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/subblue/applying-maths-book/main?urlpath=lab/tree/applying_maths_book/chapter-7/matrices-C.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        <a class="colab-button" href="https://colab.research.google.com/github/subblue/applying-maths-book/blob/main/applying_maths_book/chapter-7/matrices-C.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
-                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
-                    src="../_static/images/logo_colab.png"
-                    alt="Interact on Colab">Colab</button></a>
-        
-        
-    </div>
-</div>
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/subblue/applying-maths-book/main?urlpath=lab/tree/applying_maths_book/chapter-7/matrices-C.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://colab.research.google.com/github/subblue/applying-maths-book/blob/main/applying_maths_book/chapter-7/matrices-C.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/subblue/applying-maths-book"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/subblue/applying-maths-book/issues/new?title=Issue%20on%20page%20%2Fchapter-7/matrices-C.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/chapter-7/matrices-C.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#motivation-and-concepts">
    6.1 Motivation and Concepts
@@ -1467,9 +1584,9 @@
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#el-sayed-rules">
+    <a class="reference internal nav-link" href="#el-sayed-rules-in-spectroscopy">
      <strong>
-      El-Sayed Rules
+      El-Sayed Rules in spectroscopy
      </strong>
     </a>
    </li>
@@ -1504,17 +1621,173 @@
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Molecular Group Theory</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#motivation-and-concepts">
+   6.1 Motivation and Concepts
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#essential-jargon">
+   6.2 Essential jargon
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#symmetry-operations-and-symmetry-elements">
+   6.3 Symmetry operations and Symmetry Elements
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#i-identity">
+     <strong>
+      (i) Identity
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ii-rotation">
+     <strong>
+      (ii) Rotation
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#iii-reflection">
+     <strong>
+      (iii) Reflection
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#iv-inversion">
+     <strong>
+      (iv) Inversion
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#v-rotation-reflection">
+     <strong>
+      (v) Rotation - reflection
+     </strong>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-strategy-to-identify-molecular-point-groups">
+   6.4 A strategy to identify molecular Point Groups
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#summary">
+   Summary
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#examples-of-point-groups">
+   6.5 Examples of Point Groups
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#products-of-operators">
+   6.6 Products of Operators
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pertinent-properties-of-a-mathematical-group">
+   6.7 Pertinent properties of a Mathematical Group
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#symmetry-operations-as-matrices">
+   6.8 Symmetry Operations as matrices
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#representations-based-on-matrices">
+   6.9 Representations based on matrices
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#similarity-and-classes">
+   6.10 Similarity and Classes
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#direct-products">
+   6.11 Direct Products
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#selection-rules">
+   6.12 Selection Rules
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#el-sayed-rules-in-spectroscopy">
+     <strong>
+      El-Sayed Rules in spectroscopy
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vibronic-transitions-and-herzberg-teller-coupling">
+     <strong>
+      Vibronic transitions and Herzberg - Teller coupling
+     </strong>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#reducible-representations">
+   6.13 Reducible Representations
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#normal-mode-vibrations">
+   6.14 Normal Mode vibrations
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#application-to-molecular-vibrations">
+   6.15 Application to molecular vibrations
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#determining-the-shapes-of-normal-mode-vibrations-and-molecular-orbitals-using-projection-operators">
+   6.16 Determining the shapes of Normal Mode vibrations and molecular orbitals using Projection Operators
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
               <div>
                 
-  <div class="section" id="molecular-group-theory">
-<h1>Molecular Group Theory<a class="headerlink" href="#molecular-group-theory" title="Permalink to this headline">¶</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="molecular-group-theory">
+<h1>Molecular Group Theory<a class="headerlink" href="#molecular-group-theory" title="Permalink to this headline">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import all python add-ons etc that will be needed later on</span>
@@ -1528,22 +1801,22 @@
 </div>
 </div>
 </div>
-<div class="section" id="motivation-and-concepts">
-<h2>6.1 Motivation and Concepts<a class="headerlink" href="#motivation-and-concepts" title="Permalink to this headline">¶</a></h2>
+<section id="motivation-and-concepts">
+<h2>6.1 Motivation and Concepts<a class="headerlink" href="#motivation-and-concepts" title="Permalink to this headline">#</a></h2>
 <p>When we learn to draw molecules and molecular orbitals their inherent symmetry becomes clear; benzene or perhaps tetrahedral methane spring to mind and possibly the geometry of sp<span class="math notranslate nohighlight">\(^2\)</span> and sp<span class="math notranslate nohighlight">\(^3\)</span> hybridizations. To characterize exactly what such symmetry means is the role of molecular group theory. This can also be used to determine the selection rules of spectroscopic transitions, to characterize the ‘shapes’ of normal mode vibrations and simplify molecular orbital calculations. In chemistry, the word ‘symmetry’, while retaining its colloquial meaning also has a technical meaning and this might appear to be rather abstract and divorced from other topics such as quantum mechanics and spectroscopy. Group theory’s jargon does not help in learning the subject mainly because it appears to be so abstract. In fact, it is quite the opposite: it is intensely practical, and expresses a complicated set of rules and ideas in a few symbols; <span class="math notranslate nohighlight">\(D_{6h}\)</span>, for example, encapsulates all the many symmetry properties of benzene. The jargon we shall have to understand will lead us to be able to distinguish between</p>
 <p><span class="math notranslate nohighlight">\(\qquad\)</span><em>symmetry elements, symmetry operations, irreducible</em> and <em>reducible representations, characters, classes</em>,</p>
 <p><span class="math notranslate nohighlight">\(\qquad\)</span><em>basis sets, similarity transforms</em>, and <em>Mulliken labels</em>.</p>
 <p>This section can only give a brief introduction to the subject to act as a basis for further
 study. There are many books on this topic, but Vincent (2001) follows a tutorial approach; Molloy (2004) has many molecular examples; Atkins &amp; Friedman (1997) has a chapter giving a thorough mathematical approach; and Cotton (1990) and Bishop (1993) discuss the subject fully.</p>
 <p>The organization of this section is as follows: first, the geometrical properties of symmetry elements and operators are introduced. These are then used to identify a point group. It is then shown how two combined operations lead to the formation of an operator multiplication table, and how a symmetry operation can be represented by a matrix. Next, the pertinent properties of a mathematical group are described, and it is demonstrated how symmetry operations can form such a group. The character table is described next, and it is shown how the symmetry operations can be represented by a row of numbers rather than as a matrix or a symmetry label. Understanding how to use the information presented in the point group to characterize molecular vibrations and orbitals is our ending point.</p>
-</div>
-<div class="section" id="essential-jargon">
-<h2>6.2 Essential jargon<a class="headerlink" href="#essential-jargon" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="essential-jargon">
+<h2>6.2 Essential jargon<a class="headerlink" href="#essential-jargon" title="Permalink to this headline">#</a></h2>
 <p>Symmetry is defined as the relationship between parts of an object or between groups of objects in space. To identify the <em>symmetry elements</em> inherent in a molecule, we look at those geometrical operations that can be performed that will make the molecule <em>indistinguishable</em> from its initial state. Rotations and reflections are two of five such operations and are described further in Section 6.3. Group theory shows how symmetry properties can be represented by a set of numbers, called <em>characters</em> when collected into a table called a <em>point group</em> or <em>character table</em>, see Fig. 15 for an example. It is quite remarkable that in the context of group theory, a symmetry operation such as rotating a molecule can be represented by a number, often <span class="math notranslate nohighlight">\(0\)</span> or <span class="math notranslate nohighlight">\(\pm 1\)</span> although other values, including complex numbers, are possible depending on the point group. These numbers are the <em>characters</em> of the point group and a <em>row of characters</em> is called an <em>irreducible representation</em> or ‘irrep’. The character table uniquely defines the symmetry of a molecule and properties, for example, how different molecular orbitals behave and whether visible, infrared, and Raman transitions can occur, and, if they do, the orientation of the transition dipoles in the molecule. All the symmetry operations belonging to each point group are listed along the top row of a point group table; see Fig. 7.15. The characters are in the body of the table. In the next paragraphs, these concepts are expanded upon.</p>
 <p>Most molecules contain very little symmetry, cholesterol or SOCl<span class="math notranslate nohighlight">\(_2\)</span> are examples, but water, ammonia, chlorobenzene, ferrocene, and particularly benzene each have many symmetry elements. The more ‘regular’ the molecular structure is, the larger the number of symmetry elements it contains, which increases the number of symmetry operations that can be performed on these elements. To work out what point group a molecule belongs to and to determine its properties, the victim molecule is subjected to a given set of symmetry operations about each of the symmetry elements that may be present. You look at the molecule and then decide, by intuition, experience, or trial and error, which symmetry elements are present. The point group is then identified by the set of operations that leaves the molecule indistinguishable from its starting condition. The starting point is thus to know what the symmetry elements and operations are, and then to learn how to determine which ones are present in a molecule. Usually a simple three-dimensional model will help when doing this; it is sometimes difficult to ‘see’ the symmetries present from a sketch even if it is in perspective. It is a skill that improves with practice, and, as with riding a bicycle, if it is not done for a while, you can be a bit ‘wobbly’ to begin with.</p>
-</div>
-<div class="section" id="symmetry-operations-and-symmetry-elements">
-<h2>6.3 Symmetry operations and Symmetry Elements<a class="headerlink" href="#symmetry-operations-and-symmetry-elements" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="symmetry-operations-and-symmetry-elements">
+<h2>6.3 Symmetry operations and Symmetry Elements<a class="headerlink" href="#symmetry-operations-and-symmetry-elements" title="Permalink to this headline">#</a></h2>
 <p>Symmetry operations act <em>via</em> those symmetry elements that the molecule contains, which may be an axis, mirror plane or centre of inversion. The operation moves the molecule in space to a new, perhaps indistinguishable position, but the symmetry elements remain fixed. The words ‘operation’ and ‘element’ are often used interchangeably, but technically the operation can only occur about a symmetry element. For example, with a water molecule which has the same symmetry as ClO<span class="math notranslate nohighlight">\(_2\)</span>, Fig. 11, you will usually see a mirror plane (the element) and the reflection (the operation) at the same time. The operations and elements are linked because certain operations can only act on certain elements. If an operation does not leave the molecule indistinguishable, then it is not present.</p>
 <p><img alt="Drawing" src="../_images/matrices-fig8.png" /></p>
 <p>Figure 8. Indistinguishable squares.</p>
@@ -1554,24 +1827,24 @@ study. There are many books on this topic, but Vincent (2001) follows a tutorial
 <p>Figure 9 Principal axes (dashed) and the rotation operators about this symmetry element (axis) that make the molecules indistinguishable.</p>
 <hr class="docutils" />
 <p>The operators are:</p>
-<div class="section" id="i-identity">
-<h3><strong>(i) Identity</strong><a class="headerlink" href="#i-identity" title="Permalink to this headline">¶</a></h3>
+<section id="i-identity">
+<h3><strong>(i) Identity</strong><a class="headerlink" href="#i-identity" title="Permalink to this headline">#</a></h3>
 <p>The identity id labelled <span class="math notranslate nohighlight">\(E\)</span>. No atoms change position with this operation and all molecules possess the Identity.</p>
-</div>
-<div class="section" id="ii-rotation">
-<h3><strong>(ii) Rotation</strong><a class="headerlink" href="#ii-rotation" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="ii-rotation">
+<h3><strong>(ii) Rotation</strong><a class="headerlink" href="#ii-rotation" title="Permalink to this headline">#</a></h3>
 <p>Rotation about an axis, labelled <span class="math notranslate nohighlight">\(C_n\)</span>. This symmetry element is an axis that often coincides with an x-, y-, or z-axis, but might be in any other direction depending upon the molecule. Rotation by <span class="math notranslate nohighlight">\(180^\text{o}\)</span> is labelled <span class="math notranslate nohighlight">\(C_2\)</span>, by <span class="math notranslate nohighlight">\(120^\text{o}\; C_3\)</span>, etc. The subscript defines how many times the operation that makes the molecule identical has to occur. A molecule may have rotation about more than one axis. The label <span class="math notranslate nohighlight">\(C\)</span> is a shorthand for cyclic.</p>
-</div>
-<div class="section" id="iii-reflection">
-<h3><strong>(iii) Reflection</strong><a class="headerlink" href="#iii-reflection" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="iii-reflection">
+<h3><strong>(iii) Reflection</strong><a class="headerlink" href="#iii-reflection" title="Permalink to this headline">#</a></h3>
 <p>Reflection in a mirror plane<span class="math notranslate nohighlight">\(^{**}\; \sigma\)</span> The symmetry element is a plane. There are three types of mirror planes: vertical if the mirror edge runs along the principal axis, horizontal if this axis is at <span class="math notranslate nohighlight">\(90^\text{o}\)</span> to the mirror, and dihedral if the mirror divides two axes; see figure 10. There may be more than one of each type of mirror plane in a molecule. For example, water or ClO<span class="math notranslate nohighlight">\(_2\)</span> has two vertical planes labelled <span class="math notranslate nohighlight">\(\sigma\)</span> and <span class="math notranslate nohighlight">\(\sigma'\)</span> or <span class="math notranslate nohighlight">\(\sigma_V\)</span> and <span class="math notranslate nohighlight">\(\sigma_V'\)</span> (or <span class="math notranslate nohighlight">\(\sigma(y,z)\)</span> and <span class="math notranslate nohighlight">\(\sigma(x,z)\)</span>), see Figure 11. A horizontal mirror plane is labelled <span class="math notranslate nohighlight">\(\sigma_h\)</span>, a dihedral plane <span class="math notranslate nohighlight">\(\sigma_d\)</span>. One or more superscript dashes ‘ are added if more than one of a type of mirror plane is present. In cases where a mirror plane falls on two axes this may alter- natively be labelled <span class="math notranslate nohighlight">\(\sigma(x, z)\)</span> etc.</p>
-</div>
-<div class="section" id="iv-inversion">
-<h3><strong>(iv) Inversion</strong><a class="headerlink" href="#iv-inversion" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="iv-inversion">
+<h3><strong>(iv) Inversion</strong><a class="headerlink" href="#iv-inversion" title="Permalink to this headline">#</a></h3>
 <p>Inversion through a centre <span class="math notranslate nohighlight">\(i\)</span>. The element is the centre of inversion the operation always changes coordinates from <span class="math notranslate nohighlight">\((x, y, z) \to (-x, -y, -z)\)</span> and <em>vice versa</em>. See figure 12. Only one inversion centre is possible.</p>
-</div>
-<div class="section" id="v-rotation-reflection">
-<h3><strong>(v) Rotation - reflection</strong><a class="headerlink" href="#v-rotation-reflection" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="v-rotation-reflection">
+<h3><strong>(v) Rotation - reflection</strong><a class="headerlink" href="#v-rotation-reflection" title="Permalink to this headline">#</a></h3>
 <p>A combined rotation - reflection operation, <span class="math notranslate nohighlight">\(S_n\)</span>, also called an <em>improper rotation</em>. There may be more than one of these. The axis subscript <span class="math notranslate nohighlight">\(n\)</span> is defined as in (ii). The operation is rotation followed by reflection in a plane perpendicular to the rotation, <span class="math notranslate nohighlight">\(\sigma_nC_n\)</span>. Figure 14 shows an example of an <span class="math notranslate nohighlight">\(S_4\)</span> operation (<span class="math notranslate nohighlight">\(S\)</span> is from the word <em>Sphenoidisch</em>).</p>
 <p><span class="math notranslate nohighlight">\(^*\)</span> An operation that ‘takes it into itself’ is used in some texts to mean indistinguishable.
 <span class="math notranslate nohighlight">\(^{**}\)</span> The Greek letter sigma, <span class="math notranslate nohighlight">\(\sigma\)</span> , is used to represent the initial letter of the word <em>Spiegelung</em> or reflection.</p>
@@ -1591,20 +1864,20 @@ study. There are many books on this topic, but Vincent (2001) follows a tutorial
 <p>Figure 13 Symmetry elements in naphthalene. The principal axis is out of plane along <span class="math notranslate nohighlight">\(z\)</span>.</p>
 <p><img alt="Drawing" src="../_images/matrices-fig14.png" /></p>
 <p>Figure 14. The <span class="math notranslate nohighlight">\(S_4\)</span> rotation-reflection operation applied to the tetrahedral molecule CCl<span class="math notranslate nohighlight">\(_4\)</span>. The atoms are labelled only to allow the operations to be followed they are otherwise identical.</p>
-</div>
-</div>
+</section>
+</section>
 <hr class="docutils" />
-<div class="section" id="a-strategy-to-identify-molecular-point-groups">
-<h2>6.4 A strategy to identify molecular Point Groups<a class="headerlink" href="#a-strategy-to-identify-molecular-point-groups" title="Permalink to this headline">¶</a></h2>
+<section id="a-strategy-to-identify-molecular-point-groups">
+<h2>6.4 A strategy to identify molecular Point Groups<a class="headerlink" href="#a-strategy-to-identify-molecular-point-groups" title="Permalink to this headline">#</a></h2>
 <p>The web site <a class="reference external" href="http://www.molecule-viewer.com">www.molecule-viewer.com</a> has <span class="math notranslate nohighlight">\(\approx 500\)</span> examples of molecules in all commonly used point groups. The 3D images are rotatable and planes and axes can be added as hints to test your ability to identify the point group.</p>
 <p>When trying to assign a point group, first see if the molecule is a ‘special case’, that is tetrahedral, octahedral, icosahedral (football shaped), or is ‘cylindrical/linear’ such as O<span class="math notranslate nohighlight">\(_2\)</span>, HCl or FCCF, FCCH, etc. and identify it on this basis alone; see Section 6.5 for examples. You can always check later to see if you have guessed correctly by comparing with the point group (character) table.</p>
 <p>Next, look for any obvious overall rotational symmetry; for example, benzene clearly has sixfold symmetry and pyridine twofold, and this often indicates the principal axis direction and the symmetry label for the highest rotation operator. If a centre of inversion is present, this severely limits the choices of point groups. Particular axes or mirror planes can now be hunted down. Usually these will be enough to restrict your search to one or two point groups. At this point, you will have a list of some rotations and mirror planes and perhaps an inversion. The next step could be to look at tables of point groups and to see how best to match them with your findings so far. The table you choose may suggest the presence of some feature that you have missed.</p>
 <p>If the highest (principal) axis is twofold symmetric, the point group will be restricted to those with a <span class="math notranslate nohighlight">\(2\)</span> in their subscript, <span class="math notranslate nohighlight">\(C_{2V}, D_{2h}\)</span>, etc. The groups with <span class="math notranslate nohighlight">\(C_2, C_3\)</span>, etc. labels are single axis groups, meaning that <em>only one rotation axis</em> is present. Molecules with more than one rotation axis are labelled <span class="math notranslate nohighlight">\(D\)</span>.</p>
 <p>Three groups have low symmetry and are <span class="math notranslate nohighlight">\(C_1\)</span>, fully asymmetric, <span class="math notranslate nohighlight">\(C_s\)</span>, e.g. SOCl<span class="math notranslate nohighlight">\(_2\)</span>, with only one mirror plane, and <span class="math notranslate nohighlight">\(C_i\)</span>, which only has  a centre of inversion. At the other end of the scale, the cubic groups, tetrahedral, octahedral, and icosahedral molecules, have very many symmetry elements and are easily identified.</p>
 <p>Better than guessing is to use a systematic way of finding the point group and a ‘route map’ algorithm is shown in figure 17. The route map follows roughly the same method as just outlined. Sometimes a shortcut can be made by using the point group labels because they contain a shorthand version of the symmetry operations. The <span class="math notranslate nohighlight">\(C\)</span> and <span class="math notranslate nohighlight">\(D\)</span> groups are very common and the meaning of the labels is shown in figure 16. Assigning point groups is a strange skill; you can become very proficient quite quickly, but lose this skill equally quickly if it is not practiced. However, with a little revision, this soon returns.</p>
-</div>
-<div class="section" id="summary">
-<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">#</a></h2>
 <p><strong>(i)</strong><span class="math notranslate nohighlight">\(\quad\)</span> Check for special cases; diatomic, octahedral and tetrahedral molecules.</p>
 <p><strong>(ii)</strong><span class="math notranslate nohighlight">\(\quad\)</span> Look for rotation axes; highest order axis is the principal axis, this gives the first subscript, <span class="math notranslate nohighlight">\(n\)</span>.</p>
 <p><strong>(iii)</strong><span class="math notranslate nohighlight">\(\quad\)</span> Determine orientation of any <span class="math notranslate nohighlight">\(C_2\)</span> axes perpendicular to principal axis. If none is perpendicular
@@ -1618,26 +1891,26 @@ then letter is <span class="math notranslate nohighlight">\(C\)</span> (or <span
 <p><img alt="Drawing" src="../_images/matrices-fig16a.png" />
 <img alt="Drawing" src="../_images/matrices-fig16b.png" /></p>
 <p>Figure 16. notation for <span class="math notranslate nohighlight">\(C\)</span> and <span class="math notranslate nohighlight">\(D\)</span> point groups</p>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="examples-of-point-groups">
-<h2>6.5 Examples of Point Groups<a class="headerlink" href="#examples-of-point-groups" title="Permalink to this headline">¶</a></h2>
+<section id="examples-of-point-groups">
+<h2>6.5 Examples of Point Groups<a class="headerlink" href="#examples-of-point-groups" title="Permalink to this headline">#</a></h2>
 <p>Most of the H atoms are not included in many structures. To make the figures clear the scale of the molecule is not the same in each figure.</p>
 <p><img alt="Drawing" src="../_images/matrices-pointgroup1.png" />
 <img alt="Drawing" src="../_images/matrices-pointgroup2.png" />
 <img alt="Drawing" src="../_images/matrices-pointgroup3.png" />
 <img alt="Drawing" src="../_images/matrices-pointgroup4.png" />
 <img alt="Drawing" src="../_images/matrices-pointgroup5.png" /></p>
-</div>
-<div class="section" id="products-of-operators">
-<h2>6.6 Products of Operators<a class="headerlink" href="#products-of-operators" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="products-of-operators">
+<h2>6.6 Products of Operators<a class="headerlink" href="#products-of-operators" title="Permalink to this headline">#</a></h2>
 <p>To determine what a group multiplication table is, it is necessary to examine the products of two or more symmetry operations. These are then compared with the properties of a mathematical group, and this set of operations may then be associated with a particular group. How this is done is explained in the next few sections.</p>
 <p>Using the symmetry operations shown in figures 11-16 and figure 19, or the matrix representation of the next section, the group multiplication table will be constructed for the <span class="math notranslate nohighlight">\(C_{2V}\)</span> point group. The operations are <span class="math notranslate nohighlight">\(E, C_2, \sigma_V, \sigma_V'\)</span> and a molecule of this point group is shown in figure 11. The product table is made by multiplying every operation by every other one, both ways round - for example, <span class="math notranslate nohighlight">\(\sigma_V C_2\)</span> and <span class="math notranslate nohighlight">\(C_2 \sigma_V\)</span> - and then determining if the product is also one of the operations, which it must be if <span class="math notranslate nohighlight">\(\sigma_V\)</span> and <span class="math notranslate nohighlight">\(C_2\)</span> both belong to the group. The rules of this ‘game’ are given in Section 6.7.</p>
 <p>Figure 19 shows one <span class="math notranslate nohighlight">\(C_2\)</span> rotation; two of them will make the molecule identical or <span class="math notranslate nohighlight">\(C_2C_2 = C_2 = E\)</span> and similarly using figure 11 shows that reflecting in either of the mirror planes twice each in succession, also produces an identical molecule; therefore, <span class="math notranslate nohighlight">\(\sigma^2 = E\)</span> and <span class="math notranslate nohighlight">\(\sigma '^{2} = E\)</span>. Multiplying an operator by itself produces the diagonal terms in figure 18. The identity multiplied by itself is still the identity; similarly, the identity multiplied by any other operator leaves the operator unchanged so this produces the left-hand column and top row. What remains are the other off-diagonal terms, such as <span class="math notranslate nohighlight">\(\sigma_VC_2\)</span> and <span class="math notranslate nohighlight">\(C_2\sigma_V\)</span> and these are left for you to confirm. The result for this point group is a symmetrical product table meaning, that in the <span class="math notranslate nohighlight">\(C_{2V}\)</span> point group all the operators commute with one another, which is called an <em>Abelian</em> group. This is not always true; for example, see the <span class="math notranslate nohighlight">\(C{3V}\)</span> table produced in Q 17.</p>
 <p>The <span class="math notranslate nohighlight">\(C_{2V}\)</span> table shows that the operations form a group, because they conform to the rules of a group as described in Section 6.7 and each row in the body of the table is therefore a representation of the group. It is not a very convenient representation however, because these can hardly be distinguished from the operators. Another representation can be imagined where all the entries in the table would be 1. This would follow the rules for forming a group but would be useless, as one operation could not be distinguished from another. The clever part was the development of a representation of each point group, such as <span class="math notranslate nohighlight">\(C_{2V}\)</span> or <span class="math notranslate nohighlight">\(D_{2h}\)</span>, in a meaningful and practically useful way, and to this end, matrices can be used.</p>
-</div>
-<div class="section" id="pertinent-properties-of-a-mathematical-group">
-<h2>6.7 Pertinent properties of a Mathematical Group<a class="headerlink" href="#pertinent-properties-of-a-mathematical-group" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="pertinent-properties-of-a-mathematical-group">
+<h2>6.7 Pertinent properties of a Mathematical Group<a class="headerlink" href="#pertinent-properties-of-a-mathematical-group" title="Permalink to this headline">#</a></h2>
 <p>The word ‘group’ in the context of molecular point groups has a precise mathematical definition. The group consists of a set of members that are the symmetry operations and follow four rules.</p>
 <p><strong>(i)</strong><span class="math notranslate nohighlight">\(\quad\)</span> There must be an identity operator that commutes with all others in the group and leaves them unchanged. The identity is always labelled <span class="math notranslate nohighlight">\(E\)</span>.</p>
 <p><strong>(ii)</strong><span class="math notranslate nohighlight">\(\quad\)</span> The product of two operators <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> is also an operator and member of the group, i.e. <span class="math notranslate nohighlight">\(AB\)</span> belongs to the group as does <span class="math notranslate nohighlight">\(AA\)</span> and <span class="math notranslate nohighlight">\(BB\)</span>.</p>
@@ -1646,9 +1919,9 @@ then letter is <span class="math notranslate nohighlight">\(C\)</span> (or <span
 <p><span class="math notranslate nohighlight">\(\qquad\)</span> Any operator <span class="math notranslate nohighlight">\(A\)</span> that operates on its inverse produces the identity <span class="math notranslate nohighlight">\(AA^{-1} = E\)</span>.</p>
 <p><span class="math notranslate nohighlight">\(\qquad\)</span> Therefore, by this rule, the operator <span class="math notranslate nohighlight">\(A^{-1}\)</span> must be a member of the group.</p>
 <p>The members of the <span class="math notranslate nohighlight">\(C_{2V}\)</span> group are <span class="math notranslate nohighlight">\(E, C_2, \sigma_V, \sigma_V'\)</span>. The multiplication table, figure 18, shows that rule (ii) is followed, because each of the entries in the table is a member of the group. In symmetry operations on molecules, it is common for the inverse and the operator to be identical, i.e. an operator can be its own inverse; for example, <span class="math notranslate nohighlight">\(C_2C_2 = C_2 = E\)</span> meaning that <span class="math notranslate nohighlight">\(C_2^{-1} = C_2\)</span>. This shows that rule (iv) is followed.</p>
-</div>
-<div class="section" id="symmetry-operations-as-matrices">
-<h2>6.8 Symmetry Operations as matrices<a class="headerlink" href="#symmetry-operations-as-matrices" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="symmetry-operations-as-matrices">
+<h2>6.8 Symmetry Operations as matrices<a class="headerlink" href="#symmetry-operations-as-matrices" title="Permalink to this headline">#</a></h2>
 <p>Although we can perform symmetry operations in a geometrical sense, as was done to produce the <span class="math notranslate nohighlight">\(C_{2V}\)</span> product table, these can be rather awkward to use. It turns out that a symmetry operation can be performed as a matrix multiplication using as a basis either a molecule’s atoms, or its orbitals or bonds. The <em>trace</em> of the matrix, the sum of its diagonal terms, will form a <em>representation of each operation</em> and so form a representation of the group. The matrix used for each symmetry operation used must be a unitary matrix, <span class="math notranslate nohighlight">\(| \pmb{M} | = 1\)</span>, because bond angles and lengths must be unchanged to maintain a molecule’s symmetry. As an example, the symmetry properties of chlorine dioxide <span class="math notranslate nohighlight">\(ClO_2\)</span> will be examined, using as a basis set the three atoms and with the oxygen atoms labelled <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> for convenience, this <em>basis</em> is <span class="math notranslate nohighlight">\((Cl, O_a, O_b)\)</span>, figure 19. The oxygen atoms are labelled only to keep track of them; they are otherwise identical. The identity operation is represented by the matrix equation where the vector containing the atoms does not change,</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle [E]\begin{bmatrix} Cl \\O_a\\ O_b \end{bmatrix}=\begin{bmatrix} Cl \\O_a\\ O_b \end{bmatrix}\end{split}\]</div>
@@ -1707,10 +1980,10 @@ C_{2V} &amp; E &amp; C_2 &amp; \sigma (x,z) &amp; \sigma '(y,z)\\
 <img alt="Drawing" src="../_images/matrices-fig20b.png" />
 <img alt="Drawing" src="../_images/matrices-fig20c.png" /></p>
 <p>Figure 20. Some molecules belonging to the <span class="math notranslate nohighlight">\(C_{2V}\)</span> point group. For clarity some H atoms are ignored. The structures are only approximately to scale relative to one another. Where the <span class="math notranslate nohighlight">\(C_2\)</span> axis is shown the orange sphere indicates the ‘centre of gravity’ of the molecule, i.e. the ‘point’ in the point group.</p>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="representations-based-on-matrices">
-<h2>6.9 Representations based on matrices<a class="headerlink" href="#representations-based-on-matrices" title="Permalink to this headline">¶</a></h2>
+<section id="representations-based-on-matrices">
+<h2>6.9 Representations based on matrices<a class="headerlink" href="#representations-based-on-matrices" title="Permalink to this headline">#</a></h2>
 <p>By trial and error we find that choosing a basis set of unit vectors along the x-, y-, and z-axes, and following the method used above, will produce three diagonal matrices for the <span class="math notranslate nohighlight">\(C_{2V}\)</span> point group. The vectors can be imagined along the axes shown in Figure 19. A reflection in the <span class="math notranslate nohighlight">\(z-y\)</span> plane will leave the <span class="math notranslate nohighlight">\(z\)</span> and <span class="math notranslate nohighlight">\(y\)</span> vectors unchanged, but invert the <span class="math notranslate nohighlight">\(x\)</span>, therefore the matrix equation is</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle \sigma '(y,z) \begin{bmatrix} -1&amp;0&amp;0\\ 0&amp;1&amp;0\\0&amp;0&amp;1\end{bmatrix}\begin{bmatrix} x\\ y\\z\end{bmatrix}=\begin{bmatrix} -x\\ y\\z\end{bmatrix} \end{split}\]</div>
@@ -1769,9 +2042,9 @@ column are the labels of the irreducible representations but usually these are c
 <em>symmetry species</em>.</p>
 <p>The top row has the one of the symbols <span class="math notranslate nohighlight">\(A, A', A_1, A_{1g}'\)</span> or <span class="math notranslate nohighlight">\(A_{1g}\)</span> depending on the point group but <span class="math notranslate nohighlight">\(\Sigma_g\)</span> for <span class="math notranslate nohighlight">\(C_{\infty V}\)</span>  and <span class="math notranslate nohighlight">\(\Sigma_g^+\)</span> for <span class="math notranslate nohighlight">\(D_{\infty h}\)</span> and is  always the totally symmetric representation; the lowest row is the ‘least symmetric’. The symmetry species <span class="math notranslate nohighlight">\(B_2\)</span> in the <span class="math notranslate nohighlight">\(C_{2V}\)</span> point group has the properties that it is unchanged by the identity <span class="math notranslate nohighlight">\(E\)</span>; is changed by <span class="math notranslate nohighlight">\(180^\text{o}\)</span> rotation about the <span class="math notranslate nohighlight">\(C_2\)</span> axis and by reflection in the mirror plane <span class="math notranslate nohighlight">\(\sigma\)</span>, but unchanged by reflection in mirror plane <span class="math notranslate nohighlight">\(\sigma'\)</span>.</p>
 <p>The diagram, figure 15, shows the various properties contained within the point group table, in this case for <span class="math notranslate nohighlight">\(C_{3V}\)</span>. The Mulliken label ‘<span class="math notranslate nohighlight">\(E\)</span>’ in the bottom left-hand column in the table means that this irreducible representation is doubly degenerate. This should not be confused with <span class="math notranslate nohighlight">\(E\)</span> the identity operation.</p>
-</div>
-<div class="section" id="similarity-and-classes">
-<h2>6.10 Similarity and Classes<a class="headerlink" href="#similarity-and-classes" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="similarity-and-classes">
+<h2>6.10 Similarity and Classes<a class="headerlink" href="#similarity-and-classes" title="Permalink to this headline">#</a></h2>
 <p>If symmetry elements in a group <span class="math notranslate nohighlight">\(C_3^+, C_3^-, \sigma\)</span>, etc. are equivalent they satisfy the <em>similarity transformation</em>. For example, if <span class="math notranslate nohighlight">\(A, B\)</span>, and <span class="math notranslate nohighlight">\(C\)</span> are elements of a group then <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> are equivalent, and are said to be <em>conjugate</em>, only if they satisfy the similarity transform</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \pmb{A}=\pmb{C}^{-1}\pmb{BC}\]</div>
@@ -1802,14 +2075,14 @@ column are the labels of the irreducible representations but usually these are c
 </div>
 </div>
 <p>The calculation indicates that <span class="math notranslate nohighlight">\(C_3^+\)</span> and <span class="math notranslate nohighlight">\(C_3^-\)</span> belong to the same class for all point groups that contain a <span class="math notranslate nohighlight">\(\sigma_V\)</span> mirror plane. In <span class="math notranslate nohighlight">\(C_{3V}\)</span> there is one column for <span class="math notranslate nohighlight">\(C_3\)</span> operations and has two members in its class, <span class="math notranslate nohighlight">\(C_3^+\)</span> and <span class="math notranslate nohighlight">\(C_3^-\)</span>. These are not usually expressed individually in the point group but instead <span class="math notranslate nohighlight">\(2C_3\)</span> is used a column heading because the characters are the same for both operators.</p>
-</div>
-<div class="section" id="direct-products">
-<h2>6.11 Direct Products<a class="headerlink" href="#direct-products" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="direct-products">
+<h2>6.11 Direct Products<a class="headerlink" href="#direct-products" title="Permalink to this headline">#</a></h2>
 <p>Using characters, it is simple to form a direct product of two or more symmetry species. If operators are <span class="math notranslate nohighlight">\(\pmb{A}\)</span> and <span class="math notranslate nohighlight">\(\pmb{B}\)</span>, the direct product is written as <span class="math notranslate nohighlight">\(\pmb{A} \otimes \pmb{B}\)</span>. The symbol <span class="math notranslate nohighlight">\(\otimes \)</span> means calculate the direct product by multiplying pairs of characters together column-wise. One of the other symmetry species of the point group must be produced. If either A or B is the totally symmetric representation, the top line in the table, the result is always the other symmetry species B or A respectively.</p>
 <p>In the <span class="math notranslate nohighlight">\(C_{2V}\)</span> table (see Section 6.9), the product <span class="math notranslate nohighlight">\(\pmb{B}_1 \otimes \pmb{B}_2 = \pmb{A}_2\)</span> as may be seen by multiplying the two elements of symmetry species <span class="math notranslate nohighlight">\(B_1\)</span> and <span class="math notranslate nohighlight">\(B_2\)</span> column by column and identifying the pattern of characters produced. If two species that are doubly or triply degenerate (<span class="math notranslate nohighlight">\(E\)</span> or <span class="math notranslate nohighlight">\(T\)</span> Mulliken labels) form a direct product, this has to be reduced in the normal way to a sum of irreducible representations. For example, in <span class="math notranslate nohighlight">\(C_{3V}\)</span>, figure 15, the direct product <span class="math notranslate nohighlight">\(\pmb{E}\otimes \pmb{E}\)</span> produces the result<span class="math notranslate nohighlight">\(\pmb{E}\otimes \pmb{E} = 4\pmb{E} \oplus \pmb{C}_3 \oplus 0\sigma_V\)</span>. The symbol <span class="math notranslate nohighlight">\(\oplus\)</span> means the symmetry species are added or, more properly, that <span class="math notranslate nohighlight">\(4E,\, C_3\)</span> but no <span class="math notranslate nohighlight">\(\sigma_V\)</span> are included in <span class="math notranslate nohighlight">\(\pmb{E}\otimes \pmb{E}\)</span>. It is common in many texts just to use + instead of <span class="math notranslate nohighlight">\(\oplus\)</span>. Reducing direct products is explained in Section 6.13, but first one important use of them is illustrated.</p>
-</div>
-<div class="section" id="selection-rules">
-<h2>6.12 Selection Rules<a class="headerlink" href="#selection-rules" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="selection-rules">
+<h2>6.12 Selection Rules<a class="headerlink" href="#selection-rules" title="Permalink to this headline">#</a></h2>
 <p>In the spectroscopy of molecules, symmetry and point group tables can be used to determine whether an electronic, vibrational, or rotational transition is going to appear in the spectrum. The probability of a transition <span class="math notranslate nohighlight">\(R\)</span> is proportional to the expectation value of the operator for that type of transition. This can be written for two wavefunctions for states <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> and a transition dipole operator <span class="math notranslate nohighlight">\(\pmb{\mu}\)</span> as</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle R = \displaystyle \int \psi^a\,\pmb{\mu}\,\psi^b d\tau\]</div>
@@ -1829,13 +2102,13 @@ column are the labels of the irreducible representations but usually these are c
 <div class="math notranslate nohighlight">
 \[\displaystyle \Gamma_{S_1}  \otimes \Gamma_\mu  \otimes \Gamma_{S_2} = B_2  \otimes B_1  \otimes B_1 = B_2\]</div>
 <p>The z-direction operator is also no good, producing an <span class="math notranslate nohighlight">\(A_2\)</span> direct product. There are, however,  allowed dipole transitions for example from state with symmetry species <span class="math notranslate nohighlight">\(\Gamma_{S_1}=\Gamma_{S_2} =A_1\)</span>, with an <span class="math notranslate nohighlight">\(z\)</span> direction dipole and also when <span class="math notranslate nohighlight">\(\Gamma_{S_1} =A_1,\, \Gamma_{S_1}=B_1\)</span> with a <span class="math notranslate nohighlight">\(x\)</span> direction dipole and <span class="math notranslate nohighlight">\(\Gamma_{S_1} =A_1,\, \Gamma_{S_1}=B_2\)</span> with a <span class="math notranslate nohighlight">\(y\)</span> direction dipole.</p>
-<div class="section" id="el-sayed-rules">
-<h3><strong>El-Sayed Rules</strong><a class="headerlink" href="#el-sayed-rules" title="Permalink to this headline">¶</a></h3>
+<section id="el-sayed-rules-in-spectroscopy">
+<h3><strong>El-Sayed Rules in spectroscopy</strong><a class="headerlink" href="#el-sayed-rules-in-spectroscopy" title="Permalink to this headline">#</a></h3>
 <p>This product of symmetry species approach can be extended to cover other transitions between state such as the non - radiative singlet - triplet (intersystem crossing) transition caused by spin-orbit coupling. This gives rise to the ‘El-Sayed’ rules i.e. ‘intersystem crossing is faster when there is a change of symmetry’ for example the rate of intersystem crossing <span class="math notranslate nohighlight">\(^1\pi\pi^* \to \,^3n\pi^*\gt\,^1\pi\pi^* \to\, ^3\pi\pi^*\)</span> and <span class="math notranslate nohighlight">\(^1n\pi^* \to \,^3\pi\pi^* \gt\, ^1n\pi^* \to\, ^3n\pi^*\)</span>.</p>
 <p>The spin-orbit operator transforms as <span class="math notranslate nohighlight">\(R_{x,y,z}\)</span> and appears in column 3 in the point group table.</p>
-</div>
-<div class="section" id="vibronic-transitions-and-herzberg-teller-coupling">
-<h3><strong>Vibronic transitions and Herzberg - Teller coupling</strong><a class="headerlink" href="#vibronic-transitions-and-herzberg-teller-coupling" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="vibronic-transitions-and-herzberg-teller-coupling">
+<h3><strong>Vibronic transitions and Herzberg - Teller coupling</strong><a class="headerlink" href="#vibronic-transitions-and-herzberg-teller-coupling" title="Permalink to this headline">#</a></h3>
 <p>When a vibration is involved in an electronic transition the transition is called <em>vibronic</em>. The transition moment changes a little to reflect this and becomes</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle R_{ev} =  \int \psi^a_e\psi_v^a\,\pmb{\mu}\,\psi^b_e\psi_v^b d\tau = \int \psi_v^a\,R_e\,\psi_v^b d\tau\tag{9a}\]</div>
@@ -1862,10 +2135,10 @@ column are the labels of the irreducible representations but usually these are c
 <div class="math notranslate nohighlight">
 \[\displaystyle R_{ev}=R_e^0\int \psi^a_v\psi^b_v d\tau+\sum_i\left( \frac{\partial R_e^0}{\partial Q_i}\right)_0\int \psi_v^a Q_i\psi_v^bdQ_i\]</div>
 <p>The first term is the same as eqn. 9a when Born-Oppenheimer applies and in benzene is zero by symmetry, but the second term is not and therefore some intensity is observed. Exactly how much depends on the slope of the electronic transition dipole with each vibrational mode, i.e. how much the molecular orbital’s symmetry is changed by a vibration and therefore a totally symmetric vibration cannot help break the symmetry. See J. M. Hollas, ‘Modern Spectroscopy’ 4th ed. publ. Wiley 2008 for a fuller description.</p>
-</div>
-</div>
-<div class="section" id="reducible-representations">
-<h2>6.13 Reducible Representations<a class="headerlink" href="#reducible-representations" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="reducible-representations">
+<h2>6.13 Reducible Representations<a class="headerlink" href="#reducible-representations" title="Permalink to this headline">#</a></h2>
 <p>When, for instance, the orbitals in a molecule are operated on with rotations or reflections, a reducible representation <span class="math notranslate nohighlight">\(\Gamma_R\)</span> is produced. This can be decomposed into some irreducible representations, which are the rows that appear in the character table. The effect that symmetry operations have, were calculated in Section 6.8 by setting up a matrix for each atom/orbital and working out the effect of each operation. A matrix has the following general form with unit Cartesian vectors, <span class="math notranslate nohighlight">\(x_1, y_1, z_2\)</span> and so forth on each atom.</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle C_2\begin{bmatrix} x_1\\ y_1\\z_1\\x_2\\y_2\\ \vdots \end{bmatrix}=\begin{bmatrix} 0&amp;0&amp;-1&amp;-\cdots\\ 0&amp;1\\0&amp; &amp; \ddots\\\vdots\\y_2\\ \vdots \end{bmatrix}\begin{bmatrix} x_1\\ y_1\\z_1\\x_2\\y_2\\ \vdots \end{bmatrix}\end{split}\]</div>
@@ -1927,20 +2200,20 @@ E   &amp; 8 &amp; -2 &amp;0  &amp; 6/6=1\\
 \hline
 \end{array} \end{split}\]</div>
 <p>Therefore the product <span class="math notranslate nohighlight">\(A_1 \otimes E \otimes E \equiv A_1 \otimes(A_1+A_2+E)=A_1+A_2+E\)</span>. The product <span class="math notranslate nohighlight">\(E\otimes E\)</span> therefore contains one of each of the other species in the point group so that the transition would be allowed because <span class="math notranslate nohighlight">\(A_1\)</span> is present.</p>
-</div>
-<div class="section" id="normal-mode-vibrations">
-<h2>6.14 Normal Mode vibrations<a class="headerlink" href="#normal-mode-vibrations" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="normal-mode-vibrations">
+<h2>6.14 Normal Mode vibrations<a class="headerlink" href="#normal-mode-vibrations" title="Permalink to this headline">#</a></h2>
 <p>A normal mode is one of a set of the elementary vibrations of any vibrating object and is fundamental to understanding vibrations of any kind, whether in the engine or suspension of a car, in a washing machine, in a guitar string or in a molecule. If you were able to see a molecule, other than a diatomic, and watch the motion of the atoms, they would appear to be moving rather chaotically. However, to a good approximation it is always possible to assume that the complicated vibrations of any body can be broken down into a set of normal modes and then each of the individual stretching and bending normal motions of a molecule would be apparent. Rather than concentrating on the motion of one atom at a time, the motion of several together is considered and if we get this right, the motion will be that of one of the normal modes. This would, in effect, be a transformation from viewing the molecule in lab <span class="math notranslate nohighlight">\(xyz\)</span> coordinates, to viewing internal coordinates based on the motions of these several atoms and there is, fortunately, a systematic way of finding them. In any molecule, all the atoms are coupled through their bonds and in a normal mode, all the atoms move with the same frequency, have fixed amplitude ratios and fixed phase relationships between them. Unless the normal mode is, by symmetry, degenerate with another, each normal mode has a unique frequency.</p>
 <p>The symmetry of a normal mode is described by one of the irreducible representations in the molecule’s point group. The fact that a symmetry label can be attached to a normal mode encapsulates the idea of collective synchronized motion; some examples are given below for a planar molecule such as HBF<span class="math notranslate nohighlight">\(_2\)</span>. Notice that it is possible to have different normal mode displacements, and consequently vibrational frequencies, but with the same
 overall symmetry.</p>
 <p>The first normal mode shown in figure 23 belongs to symmetry species <span class="math notranslate nohighlight">\(A_1\)</span> and each atom is moved in such a way as to stretch each bond in phase with the other. If the molecule were HBF<span class="math notranslate nohighlight">\(_2\)</span>, the centre of mass is below the atom labelled <span class="math notranslate nohighlight">\(x\)</span> on a line from <span class="math notranslate nohighlight">\(z \to x\)</span>. In the bottom right of the figure, the <span class="math notranslate nohighlight">\(B_1\)</span> mode has atoms moving together, but the central atom moves into the plane of the figure while the other three atoms move out, and vice versa.</p>
 <p>No external force can act on a molecule due solely to its vibrational motion; therefore, no extra displacement or rotation of the molecule can occur during normal mode vibrations and the centre of mass must remain in the same place. If there are N masses (atoms) connected by forces (chemical bonds), then there are <span class="math notranslate nohighlight">\(3N\)</span> modes in a three-dimensional object. However, because we want vibrational normal modes, we have to remove three modes due to translation and three for rotation (two if the molecule is linear) as we are not interested in the whole body’s rotation or translation. This leaves <span class="math notranslate nohighlight">\(3N - 6\)</span> vibrational normal modes for polyatomic molecules and <span class="math notranslate nohighlight">\(3N - 5\)</span> for linear ones.</p>
 <p><img alt="Drawing" src="../_images/matrices-fig23.png" /></p>
-<p>Fig. 23 Normal mode displacements for a planar molecule ZYZ<span class="math notranslate nohighlight">\(_2\)</span> (reproduced from Carter 1997). The arrows indicate the direction the atoms move in, but not relatively how far they move; <span class="math notranslate nohighlight">\(\pm\)</span> show motion out of the plane of the paper. Typical bond displacements at room temperature are 1% of the bond length. The symmetry labels are also shown and each mode has its own unique frequency <span class="math notranslate nohighlight">\(\nu_1,\, \nu_2\)</span> etc.</p>
-</div>
+<p>Figure 23 Normal mode displacements for a planar molecule ZXY<span class="math notranslate nohighlight">\(_2\)</span> (based on figure in Appendix C in Carter 1997). The arrows indicate the direction the atoms move in, but not relatively how far they move; <span class="math notranslate nohighlight">\(\pm\)</span> show motion out of the plane of the paper. Typical bond displacements at room temperature are 1% of the bond length. The symmetry labels are also shown and each mode has its own unique frequency <span class="math notranslate nohighlight">\(\nu_1,\, \nu_2\)</span> etc.</p>
+</section>
 <hr class="docutils" />
-<div class="section" id="application-to-molecular-vibrations">
-<h2>6.15 Application to molecular vibrations<a class="headerlink" href="#application-to-molecular-vibrations" title="Permalink to this headline">¶</a></h2>
+<section id="application-to-molecular-vibrations">
+<h2>6.15 Application to molecular vibrations<a class="headerlink" href="#application-to-molecular-vibrations" title="Permalink to this headline">#</a></h2>
 <p>Group theory plays an important part in working out what spectroscopic transitions can occur in a molecule, and this was outlined in Section 7.6.12. In addition, it can be used to work out what the normal mode symmetry species are going to be. Recall that a normal mode is the collective motion of the atoms in a molecule such that a constant phase relationship is maintained between them; see Figs 27, 78, and 79. Often these are characterized as symmetric stretch, asymmetric stretch, and bending vibrations, which is fine in a small molecule, such as SO<span class="math notranslate nohighlight">\(_2\)</span> or water. However, in larger molecule the vibrational motion becomes more complex and cannot be so simply described, but is instead characterized as a symmetry species of the molecule. The normal mode vibrations are given by the Mulliken labels listed in the left-hand column of the point group but usually with a lower case letter, e.g. <span class="math notranslate nohighlight">\(b_{2g}\)</span> rather than <span class="math notranslate nohighlight">\(B_{2g}\)</span>.</p>
 <p>The method outlined for working out orbital symmetry species can be adapted for use here. Again, a table is made up with a top row as the symmetry operations and entries filled in according to rules very similar for those for orbitals.</p>
 <p><strong>(a)</strong> Choose, either a set of three orthogonal vectors on each atom, or a single vector along each bond to be the basis set for the calculation. Which basis you choose will depend on the problem. The components of these vectors are added up to form the characters needed. This is be done with a set of rules.</p>
@@ -2021,10 +2294,10 @@ C_2 &amp; C_3 &amp; C_4 &amp; C_5 &amp; C_6 \\
 <hr class="docutils" />
 <p><img alt="Drawing" src="../_images/matrices-fig24a.png" /></p>
 <p>Figure 25a. Normal modes in CHCl<span class="math notranslate nohighlight">\(_3\)</span>. The arrows give the direction of simultaneous, in phase, motion of the atoms. Based on figure 91,  Herzberg (1964, vol II,  ‘Infrared and Raman Spectra’ publ van Nostrand 1964.)</p>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="determining-the-shapes-of-normal-mode-vibrations-and-molecular-orbitals-using-projection-operators">
-<h2>6.16 Determining the shapes of Normal Mode vibrations and molecular orbitals using Projection Operators<a class="headerlink" href="#determining-the-shapes-of-normal-mode-vibrations-and-molecular-orbitals-using-projection-operators" title="Permalink to this headline">¶</a></h2>
+<section id="determining-the-shapes-of-normal-mode-vibrations-and-molecular-orbitals-using-projection-operators">
+<h2>6.16 Determining the shapes of Normal Mode vibrations and molecular orbitals using Projection Operators<a class="headerlink" href="#determining-the-shapes-of-normal-mode-vibrations-and-molecular-orbitals-using-projection-operators" title="Permalink to this headline">#</a></h2>
 <p>Having obtained the symmetry species of vibrations or molecular orbitals it is natural to want to see what these look like and to do this projection operators are used. What these operators do is to extract the symmetry adapted functions from the basis functions used to form them and so produce a linear combination L of the basis functions. Many basis functions can be chosen, but the easiest to use are usually vectors pointing along bonds or those representing a <span class="math notranslate nohighlight">\(p\pi\)</span> orbital. To form a linear combination, a ‘victim’ vector is chosen and operated on with each symmetry operation in the point group, <span class="math notranslate nohighlight">\(C_2, \sigma(xz)\)</span>, etc. to find what vector this turns into. This vector’s name (the basis function) is then multiplied with the character from the point group corresponding to that symmetry operation and symmetry species. Finally, the names are added together by moving from one symmetry operation to the next along the top row of the point group. We expect the result to be the sum or difference of the displacement vectors for a molecular vibration, such as <span class="math notranslate nohighlight">\(2v_1 + v_2 - v_3 \cdots\)</span> and so forth. The same formula or algorithm is used if the combinations of atomic orbitals that make up molecular orbitals are sought.</p>
 <p>The equation to make a linear combination is</p>
 <div class="math notranslate nohighlight">
@@ -2078,8 +2351,8 @@ L_{A_1} &amp; v_3 &amp; v_4 &amp; v_3 &amp; v_4  &amp;2(v_3+v_4)\\
 \vdots &amp; \ddots &amp;\\ 
 &amp; &amp; \langle n|H|n\rangle \end{bmatrix}\end{split}\]</div>
 <p>which is solved to find the <span class="math notranslate nohighlight">\(n\)</span> eigenvalues, which are the energies, and the eigenvectors, see section 12.5.</p>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -2103,9 +2376,11 @@ L_{A_1} &amp; v_3 &amp; v_4 &amp; v_3 &amp; v_4  &amp;2(v_3+v_4)\\
 
               </div>
               
-        
-            <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="matrices-Q11-16.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -2121,26 +2396,28 @@ L_{A_1} &amp; v_3 &amp; v_4 &amp; v_3 &amp; v_4  &amp;2(v_3+v_4)\\
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-        
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-    <div class="container">
-      <p>
-        
-          By Godfrey Beddard<br/>
-        
-            &copy; Copyright 2022.<br/>
-      </p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Godfrey Beddard<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
     </div>
-  </footer>
-</main>
+    
+</div>
 
 
       </div>
     </div>
   
-  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>

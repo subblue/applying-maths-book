@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## Solutions Q49 - 72
+# # Solutions Q49 - 72
 
 # In[1]:
 
@@ -15,7 +15,7 @@ init_printing()                      # allows printing of SymPy results in types
 plt.rcParams.update({'font.size': 16})  # set font size for plots
 
 
-# ### Q49 answer
+# ## Q49 answer
 # (a) The centroid in this part has the x-axis as its lower limit hence $g(x)$ is zero. The limits of $x$ are $0 \to  r$ the radius.
 # 
 # $$\displaystyle M_x=\frac{1}{2}\int_0^r y^2 dx=\frac{1}{2}\int_0^r (r^2-x^2)dx=\frac{r^3}{3},\qquad M_y=\int_0^r xydx=\int_0^r x\sqrt{r^2-x^2}dx$$
@@ -34,7 +34,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # The area is the difference between the two curves, $\displaystyle \pi r^2/4-\int_0^r x^2dx =\pi r^2/4-r^3/3$ and the average $x$ and $y$ values then their centroids respectively divided by the area making the average values $\displaystyle \langle x \rangle = \frac{(4-3r)r}{3\pi-4r},\, \langle y \rangle = \frac{2(10-3r^2)r}{5(3\pi-4r)}$.
 # 
-# ### Q50 answer
+# ## Q50 answer
 # (a) The volume of a small circular disc of thickness $dx$ is $\pi r^2dx$ where $r$ is the radius of the disc at any position $x$. The mass of the element is therefore $\rho_0\pi r^2dx$ where $rho_0$ is the density (mass / unit volume) and the total mass of the lens is 
 # 
 # $$\displaystyle \pi\rho_0\int_0^h r^2 dx= a\pi\rho_0\int_0^h x dx = a\pi\rho_0 h^2/2$$
@@ -55,7 +55,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # This reduces to the previous result when $b = 0$ and if $b$ were very large, if such a material existed, then in the limit $\langle x\rangle = 4h/5$.
 # 
-# ### Q51 answer
+# ## Q51 answer
 # (a) The volume is $\displaystyle V=\pi \int_0^\infty y^2dx=\pi\int_0^\infty \frac{dx}{x^2}=\pi$. 
 # 
 # The surface area is given by $\displaystyle S=2\pi\int_a^b y\sqrt{1+y'^2}dx$, where $y'$ is the derivative. 
@@ -73,7 +73,7 @@ integrate( sqrt((x**2 - 1)/x**4), (x,1,oo) )
 # 
 # **Exercise:** Calculate the surface area of the parabolic lens described in the previous question.
 # 
-# ### Q52 answer
+# ## Q52 answer
 # (a) As $p$ is not a variable of the integration and if integration is done first then 
 # 
 # $$\displaystyle F=\frac{d}{dp}\int_a^b e^{-px}dx=-\frac{d}{dp}\left(\frac{e^{-px}}{p} \right)\bigg |_a^b=-\frac{d}{dp}\left(\frac{e^{-bp}-e^{-ap}}{p}\right)$$
@@ -94,14 +94,14 @@ integrate( sqrt((x**2 - 1)/x**4), (x,1,oo) )
 # 
 # Differentiating first gives $\displaystyle F= \frac{d}{dp} \ln\left( \int_a^b e^{-px}dx \right) =\frac{\int_a^b xe^{-px}dx}{\int_a^b e^{-px}dx}$ where the integral is treated as if it were any other function. This calculation shows that $F = -\langle x \rangle$  and the previous calculation gives its value. Normally limits of $0 \to \infty$ are used in distributions in which case $\langle x \rangle =1/p$ and $p$ must have units of $1/x$. 
 # 
-# ### Q53 answer
+# ## Q53 answer
 # If $E = \alpha x^2$ then the derivative/integral is the average with respect to $x^2$ and is
 # 
 # $$\frac{\partial}{\partial \alpha}\ln\left( \int e^{-E_{a,x}}dx  \right)= \frac{\int x^2e^{-\alpha x^2}dx}{\int e^{-\alpha x^2}dx}=-\frac{1}{2\alpha}$$
 # 
 # where the integrals are standard ones and the limits are $\pm \infty$. This result is not zero because the functions inside the integrals are even. As in the previous question this illustrates an alternative way of calculating integrals.
 # 
-# ### Q54 answer
+# ## Q54 answer
 # (a) The average value of $E$ is based on equation 28, 
 # 
 # $$\displaystyle \langle E\rangle = \frac{\int_0^\infty Ee^{-E/k_BT}dE}{\int_0^\infty e^{-E/k_BT}dE}$$
@@ -133,7 +133,7 @@ integrate(eq2,(E,0,oo)) /integrate(eq1,(E,0,oo))
 # 
 # Calculated in a slightly different way, the variance is related to the heat capacity as $\sigma_E^2 = k_BT^2C_V$ and therefore $\sigma_E \approx \sqrt{N}$ because the heat capacity is proportional to $N$. (In an ideal monatomic gas $C_V=3Nk_BT/2$). As the average energy $\langle E\rangle$ is proportional to $N$, then $\sigma_E/\langle E\rangle \approx 1/\sqrt{N}$ and this ratio becomes very small, even when $N$ is many orders of magnitude smaller than Avogadro's number.
 # 
-# ### Q55 answer 
+# ## Q55 answer 
 # (a) The variable to be differentiated with respect to is not the same as that for integration therefore the differentiation can be placed inside the integration as 
 # 
 # $$ \displaystyle \frac{d}{dT}\int f(x,T)dx=\int\frac{d}{dT}f(x,T)dx$$
@@ -171,7 +171,7 @@ eq1= (E - E0)*exp(-E/(kb*T))
 simplify( (integrate(eq2,(E,E0,oo)) )/ (integrate(eq1,(E,E0,oo)) ) )
 
 
-# ### Q56 answer
+# ## Q56 answer
 # (a) The average speed is by definition, 
 # 
 # $$\displaystyle \langle u\rangle =\frac{\int_0^\infty uP(u)du}{\int_0^\infty P(u)du} = \int_0^\infty uP(u)du$$
@@ -244,7 +244,7 @@ integrate(eq32,(E,0,oo))/integrate(eq12,(E,0,oo))
 # 
 # and the fractional standard deviation  $\displaystyle \frac{\sigma_E}{\langle E \rangle}=\sqrt{\frac{2}{3} }$.
 # 
-# ### Q57 answer
+# ## Q57 answer
 # (a) The displacement, not the energy, is calculated. The probability function to use is the Boltzmann distribution with the energy at position $x$. In the harmonic oscillator, it is intuitive that the average displacement is zero; this can also be appreciated from the equation 
 # 
 # $$\displaystyle \langle x \rangle =\frac{\int xe^{-kx^2/(2k_BT)}dx}{\int e^{-kx^2/(2k_BT)}dx}$$
@@ -265,7 +265,7 @@ integrate(eq32,(E,0,oo))/integrate(eq12,(E,0,oo))
 # 
 # This calculation implicitly assumes that the molecule's vibrations are not quantised (why is this?) therefore this result is only accurate if the vibrational energy level spacing is small compared to $k_BT$ when the molecule can be considered to behave classically. As iodine's vibrational frequency is $\approx 213 \mathrm{\,cm^{-1}}$ and at room temperature $k_BT \approx 208 \mathrm{\,cm^{-1}}$, even this heavy molecule, with its small vibrational frequency and energy spacing, should be described by quantum mechanics.
 # 
-# ### Q58 answer
+# ## Q58 answer
 # The motion is $x = x_0\cos(\omega t)$ where $\omega$ is the angular frequency and $x_0$ the maximum amplitude. The small distance $dx$ is proportional to $dt$ and by differentiation 
 # 
 # $$dx =\omega x_0 \sin(\omega t)dt$$
@@ -302,7 +302,7 @@ eq = x**2/(pi*sqrt(x0**2 - x**2) )
 integrate(eq,(x,-x0,x0 ))
 
 
-# ### Q59 answer
+# ## Q59 answer
 # (a) The probability distribution function is $\psi^*\psi dx$ making the integral $\displaystyle \langle x \rangle = \int_{-\infty}^\infty x\psi^2(x)dx$,
 # 
 # because $\psi$ is real not complex. First consider the wavefunction for the second quantum level $\psi_2$, which is an even function, and therefore $\psi_2^2$ is also even, but multiplying by $x$ makes $x\psi_2^2$ odd. Therefore this and all even quantum numbered wavefunctions produce $\langle x \rangle = 0$.
@@ -412,7 +412,7 @@ integrate(eq,(x,-oo,oo) )
 # 
 # $$ \sqrt{\langle x^2 \rangle \langle p^2 \rangle} \ge \frac{\hbar}{2}$$
 # 
-# ### Q60 answer
+# ## Q60 answer
 # (a) The distribution is the Poisson distribution multiplied by $\beta$; see Chapters 1 and 13 for details. The derivation of the distribution assumes many events occur each with a low probability. The energy $E$ is the expected oscillator energy in units of $\beta$, and $s-1$ is the number of oscillators with this energy making $P$ the probability of obtaining energy $E$ with $s-1$ oscillators.
 # 
 # The average oscillator energy is by definition 
@@ -461,7 +461,7 @@ simplify( integrate( avE, (E,0,oo) ) )
 # Figure 53. Two probability distributions for $s$ harmonic oscillators with total energy $E$ and assuming that the energy is a continuous variable, i.e. classical oscillators. The mean values are shown as dashed vertical lines  and $\sigma$ is shown in the $s=50$ curve.
 # ____
 # 
-# ### Q61 answer
+# ## Q61 answer
 # (a) The normalization is obtained by calculating the probability over all space, which has to be unity, i.e.
 # 
 # $$\displaystyle \int_0^L \psi_n^*(x)\psi_n(x)dx=1$$
@@ -495,7 +495,7 @@ simplify(integrate(eq1, (x,0,L)) )
 # 
 # _____
 # 
-# ### Q62 answers
+# ## Q62 answers
 # Collecting together the terms the equation to use for energy level $k$ is, 
 # 
 # $$\displaystyle \langle E_k\rangle =-\frac{\hbar^2}{2m}\int_0^L\psi_k^*(x)\frac{d^2}{dx^2}\psi_k(x)dx$$ 
@@ -521,7 +521,7 @@ psi = sqrt(2/L)*sin(k*pi*x/L)
 simplify(-hbar**2/(2*m)*integrate(psi*diff(psi,x,x),(x,0,L)) )
 
 
-# ### Q63 answer
+# ## Q63 answer
 # The transition probability can be found from equation 38 and the wavefunctions for the particle in a box, 
 # 
 # $$\displaystyle \psi_n(x)=\sqrt{2/L}\sin(2\pi x/L)$$
@@ -580,7 +580,7 @@ simplify(integrate(eq,(x,0,L)) )
 # Figure 55. Scaled energy levels in a particle in a box model of octatetraene proportional to $n^2$, i.e assuming $\hbar^2\pi^2/(2mL^2)=1$ The allowed optical (dipole) transitions from $n = 4$ are the  arrows, the forbidden transitions the dashed lines. The final state has quantum number label $k$.
 # ______
 # 
-# ### Q64 answer
+# ## Q64 answer
 # (a) If two wavefunctions are not orthogonal then $\displaystyle \int \psi_a^*\psi_b d\tau \ne 0$.
 # 
 # (b) Using the recursion formula  (see answer to Q59)
@@ -592,7 +592,6 @@ simplify(integrate(eq,(x,0,L)) )
 # (c) Starting with equation 44 define the wave functions, then calculate the FC factors. First, define the wavefunctions as function of quantum number $n$ and in terms of constant $\alpha$, coordinate $x $and internuclear separation $x_0$, and then list them with quantum numbers $0, \,1$, and $2$.
 
 # In[16]:
-
 
 
 alpha, x, x0, x_a, x_b, n, m = symbols('alpha, x, x0, x_a, x_b, n, m',positive = True) #from Q59
@@ -613,7 +612,8 @@ def aherm(n,x):                  #  Hermite polynomial recursion formula
         return 2*x*aherm(n-1,x) - 2*(n-1)*aherm(n-2,x)
 #-------------    
 def psi(n,x0):    
-    return 1/sqrt(2**n*afact(n))*sqrt(sqrt(alpha/pi))*    aherm(n,(x-x0)*sqrt(alpha) )*exp(-alpha*(x-x0)**2/2)
+    return 1/sqrt(2**n*afact(n))*sqrt(sqrt(alpha/pi))*\
+    aherm(n,(x-x0)*sqrt(alpha) )*exp(-alpha*(x-x0)**2/2)
 #--------------    
 
 nmax = 3    
@@ -685,7 +685,7 @@ FC
 # Figure 57. Simulation of the CO electronic spectrum based on calculated Franck-Condon factors from the $n = 0$ level of the ground state X to $m = 0 \to 10$ of the A upper state.
 # _____
 # 
-# ### Q65 answer
+# ## Q65 answer
 # When $c=0$ then the only way the donor can lose energy in our model is by fluorescing, hence $\phi_0 = 1$ because both numerator and denominator in the equation 45 defining $\phi$ are then the same.
 # 
 # When the concentration is $c$ then $\displaystyle \phi=\int_0^\infty e^{-k_ft-(c/c_0)\sqrt{\pi k_ft}} dt\big/\int_0^\infty e^{-k_ft} dt$.  
@@ -718,7 +718,7 @@ simplify(integrate(eq,(t,0,oo)) )
 # 
 # **Exercise:** Calculate the relative average fluorescence lifetime $\langle \tau \rangle / \langle \tau_0 \rangle$ vs concentration, see equation 29. Plot the result vs $x$ and compare the plot with that for the yield.
 
-# ### Q66 answer
+# ## Q66 answer
 # To use l'Hopital's rule the expression must be put as a fraction, thus 
 # 
 # $$\displaystyle \lim_{x\to\infty}=\frac{x\sqrt{\pi}(1-\text{erf}(x))}{e^{-x^2}}$$ 
@@ -737,7 +737,7 @@ simplify(integrate(eq,(t,0,oo)) )
 # 
 # and consequently the ratio $\phi/\phi_0 \to 0$.
 # 
-# ### Q67 answer 
+# ## Q67 answer 
 # The average depends on $\theta$ and $\phi$ and as there are no terms in both angles both integrals can each be separated into a product,
 # 
 # $$\displaystyle \langle \cos^2(\theta)\rangle=\frac{\int_0^\pi \cos^2(\theta)\sin(\theta)d\theta\int_0^{2\phi} d\phi}{\int_0^\pi \sin(\theta)d\theta\int_0^{2\phi} d\phi}  $$
@@ -760,7 +760,7 @@ numer/denom
 # 
 # and shows that direct dipole-dipole coupling cannot be measured in solution by using NMR. The spin-spin coupling measured in solution is the indirect dipole-dipole coupling (J coupling) of the nuclear spins mediated via the electrons.
 # 
-# ### Q68  answer
+# ## Q68  answer
 # (a) The first calculation is to show that the total wavefunction is normalized then by using the definition of
 # an average equation 28 calculate the answers to (b).
 # 
@@ -857,7 +857,7 @@ simplify(integrate(eq,(r,0,a_0)) )
 # Figure 59. The chance of an electron being within the Bohr radius $a_0$ for hydrogenic atoms of different nuclear charge $Z$.
 # ____
 # 
-# ### Q69 answer
+# ## Q69 answer
 # The total dipole contribution to the energy of each dipole in the field direction is rather daunting and is
 # 
 # $$\displaystyle \int_0^\pi E(\theta)p(\theta)d\theta =-\frac{\epsilon\mu N}{2}\int_0^\pi \cos(\theta)e^{\epsilon\mu \cos(\theta)/k_BT}\sin(\theta)d\theta$$
@@ -934,7 +934,7 @@ simplify( ans - 1/a)
 # terms dominate the other terms and then cancel, and
 # as $\epsilon\mu \gg k_BT$ it follows that, $\langle E^2\rangle = (\epsilon\mu)^2$. The variance is $\sigma^2 = (\epsilon\mu)^2 - (-\epsilon\mu)^2 = 0$ and the relative standard deviation is also zero therefore, when the field is very large the relative standard deviation of orientational energy is zero, i.e. the molecule are perfectly aligned.
 # 
-# ### Q70  answer
+# ## Q70  answer
 # The average quantum number is, by definition, 
 # 
 # $$\displaystyle \langle J\rangle =\frac{\int_0^\infty J(2J+1)e^{-BJ(J+1)/k_BT}}{\int_0^\infty (2J+1)e^{-BJ(J+1)/k_BT}}$$
@@ -970,7 +970,7 @@ simplify(integrate(eq,(J,0,oo)) )
 # Figure 61. Rotational distribution for Br$_2$, at $30, \,300$, and $600$ K, assuming $J$ is a continuous quantity. The maximum and average value of the rotational quantum number is shown on the graph at $600$ K. They differ because the distribution is not symmetrical.
 # ______
 # 
-# ### Q71 answer
+# ## Q71 answer
 # (a) Substituting for $g$ produces 
 # 
 # $$\displaystyle Z=\frac{4\pi\sqrt{2}Vm^{3/2}}{\hbar^3}\int_0^\infty \sqrt{\epsilon}\,e^{-\epsilon/k_BT}d\epsilon$$
@@ -991,7 +991,7 @@ eq = sqrt(epsilon)*exp(-epsilon/(k*T))
 simplify(integrate(eq,epsilon) )
 
 
-# ### Q72 answer
+# ## Q72 answer
 # (a) The expectation has the usual form  $\langle p_x \rangle=\int \psi^*p_x\psi dx\big/\int \psi^*\psi dx$.
 # 
 # The normalisation (denominator) is a constant equal to $\int dx$ but the numerator is 

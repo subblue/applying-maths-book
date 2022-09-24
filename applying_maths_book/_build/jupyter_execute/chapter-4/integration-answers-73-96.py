@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## Solutions Q73 - 96
+# # Solutions Q73 - 96
 
 # In[1]:
 
@@ -15,7 +15,7 @@ init_printing()                # allows printing of SymPy results in typeset mat
 plt.rcParams.update({'font.size': 16})  # set font size for plots
 
 
-# ### Q73 answer
+# ## Q73 answer
 # (a) Using $\psi = x(L - x)$ the denominator integral is 
 # 
 # $$\displaystyle \int \psi^*\psi d\tau=\int_0^L x^2(L-x)^2dx= \frac{L^5}{30}$$ 
@@ -61,7 +61,7 @@ simplify(EV/N)
 # Figure 61a. Particle in a finite well. The variational energy $E_V$ and true energy $E_0$ are shown for the only bound state in the well. The wavefunction shown is the variational one leading to $E_V$
 # _____
 
-# ### Q74 answer
+# ## Q74 answer
 # Using the formula equation 47,  the denominator is $\displaystyle \int\psi^*\psi dx=\int_{-\infty}^\infty \frac{\alpha}{\sqrt{\pi}} e^{-\alpha x^2}dx$ 
 # 
 # and because of the $e^{-\alpha x^2}$ term an error function is likely to be involved with the integral. To check this we can look up the integral or use Sympy;
@@ -92,7 +92,7 @@ simplify(Enrg)
 # 
 # which is a good approximation to the true energy of $\displaystyle 1.060 k^{1/3} \left( \frac{\hbar^2}{2m} \right)^{2/3}$.
 # 
-# ### Q75 answer
+# ## Q75 answer
 # (a, b) The H atom energy levels are $E_n = -RZ^2/n^2 \mathrm{\,cm^{-1}}$, where $R$ is the Rydberg and $n$ the principal quantum number. The energy is therefore $E_1(He) = -2RZ^2 = -8\times 109737 = -877 896 \mathrm{\,cm^{-1}}$ or $-108.8$ eV.
 # 
 # The energy to ionize He$^+$ is $E_1 = 4R$, or $54.4$ eV which is $4 \times 13.6$ eV the ionization of the H atom. The total experimental energy is $-(54.4 + 24.5) = -79$ eV and the crude theoretical value $-108.8$, which is considerably larger. In (a) it was supposed that the He atom was twice an H atom with no electron-electron interaction or electron-nuclear interaction between opposite atoms; clearly this is wrong. The terms missing are of the form of $\pm e^2/r_{12}$ where $r_{12}$ is the separation between the two electrons or electrons and nuclei.
@@ -115,7 +115,7 @@ simplify(Enrg)
 # 
 # As a check, using $Z=\zeta = 2$ instead of the variational value gives $\displaystyle E_{var}= -\frac{5}{4}\frac{e^2}{4\pi\epsilon_0a_0} =-34.06$ eV. The improvement in ground state energy due to the variational treatment is therefore from $-34.06$ eV to $-77.5$ eV producing a result close to the experimental value of $-79$ eV and quite a considerable improvement.
 # 
-# ### Q76 answer
+# ## Q76 answer
 # The expression to be evaluated with $\beta=1$ is 
 # 
 # $$\displaystyle E_V=-\frac{\displaystyle \int_{-\infty}^\infty \frac{1}{2}e^{-\alpha x^2/2}\frac{d^2}{dx^2}e^{-\alpha x^2/2} + (1-e^{- x^2})e^{-\alpha x^2/2} dx}{\displaystyle  \int_{-\infty}^\infty e^{-\alpha x^2}}dx$$ 
@@ -151,7 +151,7 @@ solve( (alpha**(3/2) + alpha**(1/2) )*( alpha +1 )**(1/2)-2,alpha )
 # 
 # When $\beta = 1/10$ the potential is wider and the levels lower; the variational value is $0.20522$, which is also a little higher than the numerical value of $0.20473$. Note that an analytical solution is not available, so we have estimated an unknown value but its accuracy is not known unless wavefunctions that are more complex are used and a lower energy obtained. When you look at how to calculate numerical solutions (Chapter 11) you will see how much simpler the variational method is. The numerical value is itself only approximate, but as it is lower than the variational value, we may surmise that it is more accurate. However, the numerical value could be below the true value, there is no guarantee that it is not, unlike the variational answer. Our calculated energies are close to one another, which suggest that both methods have produced reasonably accurate values.
 # 
-# ### Q77 answer
+# ## Q77 answer
 # Using equations 47 and 60, the denominator in $E_V$ is 
 # 
 # $$N=\displaystyle \int_0^\infty R(r)^2 r^2dr\int_0^\pi \sin(\theta)d\theta\int_0^{2\pi}d\varphi=4\pi\int_0^\infty r^2e^{-\alpha r^2}dr$$ 
@@ -178,7 +178,7 @@ simplify(EV)
 
 # Differentiating wrt $\alpha$ gives $\displaystyle \frac{dE_V}{d\alpha}= \frac{3}{4}-\frac{1}{\sqrt{\alpha\pi}}=0$ from which the minimum $\displaystyle \alpha = \frac{16}{9\pi}$ and the variational energy $\displaystyle -\frac{4}{3\pi}$.
 # 
-# ### Q78 answer
+# ## Q78 answer
 # The area is $\displaystyle A=\int_0^1\int_x^{2x} \sin(x+y)dydx$ 
 # 
 # which evaluates to 
@@ -210,14 +210,14 @@ Ix = integrate(integrate( eq, (y,x,2*x) ), (x,0,1.0) )
 print('{:8.4f}{:8.4f}'.format( Ix,Iy ) )
 
 
-# ### Q79 answer
+# ## Q79 answer
 # The radial part can be separated from the angular part as there is no function with terms such as $r\theta$ and the angular terms are independent of one another. The triple integral is therefore split into the product of three separate integrals. The angular integral between $\psi_{311}$ and $\psi_{310}$ is part 
 # 
 # $$\displaystyle \int_0^{2\pi}e^{-i\varphi}d\varphi \int_0^\pi \cos(\theta)\sin^2(\theta) d\theta$$
 # 
 # This can be evaluated by inspection, because the cosine has a value of $1$ at $\theta = 0$ and $-1$ at $\theta = \pi$ and is 'odd' over the region $0 \to \pi$ therefore the integral is zero. This can be confirmed by direct calculation.
 # 
-# ### Q80 answer
+# ## Q80 answer
 # The normalization is found using equation 56, and by substitution 
 # 
 # $$\displaystyle N^2\int_0^{2\pi}d\varphi\int_0^\pi\sin^5(\theta)d\theta=1$$
@@ -230,7 +230,7 @@ print('{:8.4f}{:8.4f}'.format( Ix,Iy ) )
 # 
 # because for even $n,\; e^{ni\pi} = 1$, therefore the wavefunctions are orthogonal.
 # 
-# ### Q81 answer
+# ## Q81 answer
 # Rearranging the integral produces $\displaystyle I^2 =\int_0^\infty\int_0^\infty e^{-y^2-x^2}dydx$. 
 # 
 # Changing the coordinates produces $\displaystyle I^2 =\int_0^{2\pi}\int_0^\infty e^{-r^2}r drd\theta$. 
@@ -239,7 +239,7 @@ print('{:8.4f}{:8.4f}'.format( Ix,Iy ) )
 # 
 # This integral has a standard form making $\displaystyle I=\sqrt{\frac{\pi}{4}}$.
 # 
-# ### Q82 answer
+# ## Q82 answer
 # (a) The integral will be $\displaystyle Z = \int_{n=1}^\infty e^{-E_n/k_BT}dn\equiv \int_{n=1}^\infty e^{-an^2}dn$ 
 # 
 # where the constant $a = h^2/(8mL^2k_BT)$. Using the method of the previous question, 
@@ -263,7 +263,7 @@ print('{:8.4f}{:8.4f}'.format( Ix,Iy ) )
 # Using Stirling's approximation $\ln(N!) \approx N\ln(N) - N$ and as the gas is ideal the volume $V = L^3$ should be equal to $Nk_BT/p$ and substituted for $V$ in $\alpha$. Substituting for the constants with the mass $m = 200.59 \,u $ kg ($u$ is the atomic mass unit) and $k_B$ Boltzmann's constant, the translational entropy at $1\,\mathrm{ bar}= 10^5$ Pa and 300K is $S\approx 175\, \mathrm{J\,K^{-1}\, mol^{-1}}$. The equation for $S$ is a version of the Sakur-Tetrode equation.
 # 
 
-# ### Q83 answer
+# ## Q83 answer
 # The Jacobian represents the same area or volume element in two different coordinate systems, in this case these are $(x, y)$ and $(u, t)$. A probability of a number being in a region in $(x, y)$ is found by transforming from the original linear coordinates, but because distributions are involved, the chance of being at a given place is changed because the areas enclosed are the same.
 # 
 # (a) the Jacobian determinant is 
@@ -286,7 +286,7 @@ print('{:8.4f}{:8.4f}'.format( Ix,Iy ) )
 # 
 # (b) If $(x-\mu)/\sigma$ and $(y-\mu)/\sigma$ are substituted for  $x$ and $y$ respectively and the transform repeated the distribution has the form $\displaystyle \frac{1}{\sqrt{2\pi\sigma} }e^{(x-\mu)^2/2\sigma^2}$ and similarly for $y$.
 # 
-# ### Q84 answer
+# ## Q84 answer
 # The Jacobian determinant is
 # 
 # $$\displaystyle \frac{\partial (u,v)}{\partial(\varphi,\theta)}=
@@ -312,7 +312,7 @@ print('{:8.4f}{:8.4f}'.format( Ix,Iy ) )
 # 
 # and where $\tan^{-1}(\infty) = \pi/2$ was used.
 # 
-# ### Q85 answer
+# ## Q85 answer
 # One way of doing the calculation is to differentiate the functions directly in a $3\times 3$ matrix then to calculate the determinant. The calculation is
 
 # In[9]:
@@ -340,7 +340,7 @@ simplify(Jac.det())
 
 # The volume element is therefore $dxdydz = a^3(v^2 - u^22)du dv d\theta$.
 # 
-# ### Q86 answer
+# ## Q86 answer
 # (a) Because the wavefunctions $\varphi$ are real there is no need to label them as complex conjugates. The calculation is
 # 
 # $$\displaystyle (a\varphi_{2s}e^{iEt/\hbar} +b\varphi_{2p_z}e^{iEt/\hbar} )(a\varphi_{2s}e^{-iEt/\hbar} +b\varphi_{2p_z}e^{-iEt/\hbar})= a^2\varphi_{2s}^2+2ab \varphi_{2s}\varphi_{2p_z}+b^2\varphi_{2p_z}^2$$
@@ -390,7 +390,7 @@ simplify(Jac.det())
 # Figure 62. The cross terms in the integral of a $1s + 2s$ and a $1s + 2p_{z}$ superposition calculated when the cosine term is $1$ and when $-1$. Only in the $1s + 2p_z$ transition is an oscillating dipole produced. ($a_0 = 0.529$ nm)
 # _____
 
-# ### Q87 answer
+# ## Q87 answer
 # (a) This integral is an overlap integral because the wavefunctions are not functions of the internuclear separation $R$, 
 # 
 # $$\displaystyle \int \varphi_1\frac{q^2}{R}\varphi_2 d\tau =\frac{q^2}{R} \int \varphi_1\varphi_2 d\tau=\frac{q^2}{R}S$$
@@ -456,7 +456,7 @@ plt.tight_layout()
 plt.show()
 
 
-# ### Q88 answer
+# ## Q88 answer
 # (a) A circle of unit radius $R$, has the polar equation $r=R$ then 
 # 
 # $$\displaystyle S=\int_0^{2\pi} Rd\theta=2\pi R$$
@@ -481,7 +481,7 @@ plt.show()
 # 
 # is a standard integral and evaluates to $21.26a$.
 # 
-# ### Q89 answer
+# ## Q89 answer
 # he ellipse has to be used to define the limits to the calculation. The maximum and minimum $y$ values are $\pm b\sqrt{1 - x^2/a^2}$ and the maximum and minimum $x$ are $\pm a$. Draw out the ellipse if you are not sure of this. The are is 
 # 
 # $$\displaystyle A=\int_{-a}^a\int_{-b\sqrt{1-x^2/a^2}}^{b\sqrt{1-x^2/a^2}}1dydx= 2b \int_{-a}^a \sqrt{1-\frac{x^2}{a^2} }=\pi ab$$
@@ -520,7 +520,7 @@ ans = simplify(2*b*integrate(eq,x ) )
 ans.subs(x,a)-ans.subs(x,-a)            # do limits manually 
 
 
-# ### Q90 answer
+# ## Q90 answer
 # The limits to the integration are the same as in the previous question;the area $A$ can be taken from this calculation also. The integration is therefore 
 # 
 # $$\displaystyle \langle r^2 \rangle=\frac{1}{A}\int_{-a}^a\int_{-b\sqrt{1-x^2/a^2}}^{-b\sqrt{1-x^2/a^2}} (x^2+y^2)dydx = \frac{a^2}{4}+\frac{b^2}{4}$$ 
@@ -537,7 +537,7 @@ simplify( ans0.subs(x,a)-ans0.subs(x,-a) )  # do limits manually
 
 # The mean value could represent some physical property such as density or electric field that varies quadratically, as $x^2 + y^2$, over the surface of the ellipse. In principle, any normal surface with any normal functional dependence, could be used; even if the integrals cannot be performed algebraically they can be done so numerically.
 # 
-# ### Q91 answer
+# ## Q91 answer
 # The curve follows the line $y=xb/a$ and the integral is 
 # 
 # $$\displaystyle \begin{align} \int_C e^x\sin(y)dx+e^x\cos(y)dy &=\int_C e^x\sin(y)dx+e^x\cos(y)\frac{dy}{dx}dx\\&=\int_0^a a^x\sin(bx/a)+\frac{b}{a}e^x\cos(bx/a)dx= e^a\sin(b)\end{align}$$
@@ -553,7 +553,7 @@ eq=  exp(x)*(sin(b*x/a) + b*cos(b*x/a)/a )
 integrate(eq,(x,0,a)   )
 
 
-# ### Q92 answer
+# ## Q92 answer
 # (a) In the parametric form the area under a curve is given by equation 80 or 
 # 
 # $$\displaystyle \int y(t)dx = \int y(t) \frac{dx}{dt} dt$$ 
@@ -574,14 +574,14 @@ integrate(eq,(x,0,a)   )
 # 
 # which is clearly a complicated integral which, unfortunately, Sympy completely fails to solve but the result is $8a$. The surprising result is that the point on the circumference travels a distance $8a$ while the wheel travels only the distance $2\pi a$ along the road.
 # 
-# ### Q93 answer
+# ## Q93 answer
 # (a) Using the equation $\displaystyle S =\int_{x_1}^{x_2}\sqrt{r^2+\left( \frac{dr}{d\theta}\right)^2}d\theta$ the length is $S=\int_0^{2\pi}d\theta=2\pi$, the circumference of a circle of unit radius. The equation $r=1$ defines a unit circle in polar coordinates.
 # 
 # (b) The integral is $\displaystyle S = \sqrt{2}\int_0^{2\pi} e^{-\theta}d\theta=\sqrt{2}(1-e^{-2\theta})$.
 # 
 # (c) $\displaystyle S=\int_{0}^{x_0}\sqrt{1+\sinh^2(x)}dx$. This is not an obvious integral until the relationship $\cosh^2(x) - \sinh^2(x) = 1$ is recalled, then $\displaystyle S=\int_{0}^{x_0}\cosh(x)dx=\sinh(x_0)$.
 # 
-# ### Q94 answer
+# ## Q94 answer
 # (a) The derivative is $\displaystyle \frac{df(x)}{dt}=\frac{2x}{2\sqrt{r^2-x^2}}$, substituting and simplifying gives $\displaystyle A=2\pi \int_{-r}^r rdx=4\pi r^2$
 # 
 # (b) The limits are from $x=r\cos(\theta) \to r$ where $\theta$ is $90$ - latitude and is $34^\mathrm{o}$ . The integral evaluates to  
@@ -595,7 +595,7 @@ integrate(eq,(x,0,a)   )
 # figure 63. Defining latitude.
 # _____
 # 
-# ### Q95 answer
+# ## Q95 answer
 # (a) Given the same set of conditions, a state variable has the same value and is independent of how those conditions were reached. A state variable is therefore a quantity whose value defines a thermodynamic state. Examples are temperature, pressure, potential energy, internal energy, and entropy.
 # 
 # (b) The first path has a constant temperature, and then constant pressure, the second is a straight-line from the start to the end. The line along which integration is performed is $pV = RT$. Putting the equation in the form of equation 85 gives at constant temperature, $w_T$ and pressure $w_p$,
@@ -620,7 +620,7 @@ integrate(eq,(x,0,a)   )
 # 
 # $$\displaystyle w = R(T_1 - T_0) - RT_0\ln\left(\frac{p_1}{p_0}\right)$$
 
-# ### Q 96 answer
+# ## Q96 answer
 # Starting with $\displaystyle S=\int \frac{C_p}{T}dT-\int\left( \frac{\partial V}{\partial T}\right)_pdp $ 
 # 
 # the first step is to calculate $dV/dT$. The simplest way is to calculate the inverse at constant $p$, which is 

@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## Solutions Q1 - 10
+# # Solutions Q1 - 10
 
 # In[1]:
 
@@ -18,17 +18,17 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 # 
 # 
-# ### Q1 answer
+# ## Q1 answer
 # Expanding the determinant produces 
 # 
 # $$\displaystyle  \frac{c}{\sqrt{c^2-v^2}}\left( 1-\frac{v^2}{c^2} \right) =\frac{1}{c\sqrt{c^2-v^2}}\left( c^2-v^2 \right)=\frac{\sqrt{c^2-v^2}}{c}=\sqrt{1-\frac{v^2}{c^2}} $$
 # 
-# ### Q2 answer
+# ## Q2 answer
 # The first term in the expansion element in the top left corner is zero hence only two terms appear in the result. The cofactor of $y$ in the top row is $\displaystyle -\begin{vmatrix} x & -z\\ x& 0 \end{vmatrix}=-xz$ and of $z$ is $\displaystyle \begin{vmatrix} x & 0\\ x& y \end{vmatrix}=xy$ hence 
 # 
 # $$\displaystyle  \qquad \begin{vmatrix} 0 & y & z \\ x & 0 &-z \\x & y & 0 \end{vmatrix}=-yxz+zxy=0$$
 # 
-# ### Q3 answer
+# ## Q3 answer
 # The characteristic polynomial is the polynomial resulting from expansion of the determinant and made equal to zero,
 # 
 # $$\displaystyle \quad \begin{vmatrix} x & a & b \\ a & x & b \\a & b & x \end{vmatrix}=x(x^2-b^2)-a(ax-ab)+b(ab-ax)=0$$
@@ -51,10 +51,10 @@ factor(char_eqn )
 solve(char_eqn,x)
 
 
-# ### Q4 answer
+# ## Q4 answer
 # The $(2,3)$ element is the element in row $2$, column $3$ and is $1$. The cofactor is the $2 \times 2$ determinant not including the second row or third column, $\displaystyle -\begin{vmatrix} a&b\\e&f\end{vmatrix}$. The minus sign is present because the first cofactor in a row or column if multiplied by $+1$ and the second by $-1$, the third by $+1$ in an alternating pattern. 
 # 
-# ### Q5 answer
+# ## Q5 answer
 # (a) As it is small construct the matrix directly and calculate the determinant as in the examples, section 2.5. The first calculation is a numerical evaluation using the numpy linear algebra package. The second used algebraic solution using SymPy. The numerical value is effectively zero being so small. 
 
 # In[4]:
@@ -91,7 +91,7 @@ print(LA.det(M))        # LA calls linear algebra package defined at top of docu
 
 # This is a numerical answer, as opposed to an algebraic one, meaning that an numerical algorithm was used to evaluate it. The answer is sufficiently small to assume that it is zero. 
 # 
-# ### Q6 answer
+# ## Q6 answer
 # The prime numbers have to be found first. The first prime is $2$.  The $\mathtt{def\; isprime(n)}$ checks only as far as the square root since, if it has a larger factor, it also has a smaller one.
 
 # In[7]:
@@ -133,7 +133,7 @@ for i in range(n):
 print( '{:s} {:8.2f}'.format('value = ', LA.det(M) ) )
 
 
-# ### Q7 answer
+# ## Q7 answer
 # The only change that has to be made in the case of benzene compared to the linear 1, 3, 5-hexatriene, is to add 1 to the matrix in the $(1, 6)$ and $(6, 1)$ positions, or $(1, n)$ and $(n, 1)$ generally. The calculation is the same as in Algorithm 1, but with $n=6$ because there are six carbon atoms each with one $\pi$ electron, and changes to the two extreme elements, top right, bottom left, to unity from zero, to make the benzene structure cyclic. This can be done with a line added outside and after the last end do; to link the first to last atoms.
 
 # In[8]:
@@ -172,7 +172,7 @@ factor(char_eqn)
 # Fig. 74 Benzene (left) and cyclo-octatetraene Huckel MO energies measured relative to energy $\alpha$. Note that the energy integral $\beta$ is a negative number.
 # _________
 # 
-# ### Q8 answer
+# ## Q8 answer
 # Starting with the matrix, using the method of Algorithm 1 with $n = 6$, modify the matrix to connect atom $2$ atom $6$ as in the structure; the atoms $2$ and $3$ 3 are connected already because adjacent atoms always connect in the numbering scheme. Adding the following line, as was done in the previous problem, links atoms $2$ and $6$,
 # 
 
@@ -220,7 +220,7 @@ for i,j in enumerate(solns):      # print out each solution in a table, j is sqr
 # Figure 75. Roots of the Fulvalene Huckel MO characteristic equation.
 # _______
 # 
-# ### Q9 answer
+# ## Q9 answer
 # (a) Using the notation $x = (\alpha - E)/\beta$ the Huckel determinant for the linear molecule is
 # 
 # $$\displaystyle \begin{vmatrix} x & 1 & 0 \\1 & x & 1 \\0 & 1 & x \end{vmatrix}=x(x^2-1)-x$$
@@ -248,7 +248,7 @@ for i,j in enumerate(solns):      # print out each solution in a table, j is sqr
 # Figure 76. Left. The energy of Na$_3$ as a function of bond angle assuming a simple exponential model of orbital overlap, and that the bond lengths remain constant as the angle increases, (right).
 # _______
 # 
-# ### Q10 answer
+# ## Q10 answer
 # (a) The first function with $n = 1$ is that of a single carbon atom and one p$\pi$ electron, therefore, $f_1(x) = x$. Ethylene with one double bond and two carbon atoms has the $2 \times 2$ determinant,
 # 
 # $$\displaystyle \begin{vmatrix} x & 1\\ 1& x\end{vmatrix}=x^2-1$$

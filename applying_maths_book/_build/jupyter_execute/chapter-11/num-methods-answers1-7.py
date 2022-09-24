@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## Solutions Q1 - 7
+# # Solutions Q1 - 7
 
 # In[1]:
 
@@ -16,10 +16,10 @@ init_printing()                      # allows printing of SymPy results in types
 plt.rcParams.update({'font.size': 16})  # set font size for plots
 
 
-# ### Q1 answer
+# ## Q1 answer
 # The only change that needs to be made is to replace the equation in Algorithm 1 by the new equations. The graphs are left for you to plot.
 # 
-# ### Q2 answer
+# ## Q2 answer
 # The method outlined in the example can be used for the Trapezoidal rule by changing the function definition and the limits. The integral with $20$ points is calculated as $1.635$, with $100$ points as $0.610$, and with $1000$ points as $0.6012$ which is just accurate to three decimal places. The Python integrator calculates $0.601125$ with an error of $7\cdot 10^{-10}$. Using the Simpson's rule, Algorithm 6, the answer obtained is $0.6011$ and the result is accurate to three decimal places after $300$ points; only one third as many evaluations as needed by the trapezoidal rule.
 
 # In[2]:
@@ -47,10 +47,10 @@ print('integration is ', trapz(f,a,b,n) )   # print result
 print('pythod quad integrator answer ',quad(f,0,10)[0]  )    # use Python built-in integrator
 
 
-# ### Q3 answer
+# ## Q3 answer
 # Using Python based on equation 2  the mid-point integration (algorithm 5) gives an answer about $-207$ but this depends on the _exact_ number of points in the integration not just how large that number is. Try several values different only by one and you will see this effect with answers grouped about about three values; $-202, -207$ and $-212$. The reason appears to be that close to one the points are or are not symmetrically positioned and so do not cancel out exactly in all cases. The true answer is $-207.54$. This illustrates just how careful one has to be in numerical integration even of simple functions. Calculating in two parts, from zero to just under one and then from just over one to three can help, but in this case as the asymptote is approached very large numbers are produced which are then subtracted from one another and so rounding errors now become important. All in all a tricky numerical integration. 
 # 
-# ### Q4 answer
+# ## Q4 answer
 # (a) Using the algorithms described in the text, and starting at a lower limit of $10^{-6}$, the results with $x_m = 0.38699$ are
 # 
 # Mid-point : $0.0166592$,
@@ -75,10 +75,10 @@ print('pythod quad integrator answer ',quad(f,0,10)[0]  )    # use Python built-
 # 
 # $$\displaystyle C_V=\frac{12\pi^4N_0k_BT}{5}\left( \frac{T}{h\nu_m} \right)^3$$
 # 
-# ### Q5 answer
+# ## Q5 answer
 # Using a mid-point integration with $200$ points, the integral is calculated as $1.570855$, which compares well with the algebraic value of $\pi /2 = 1.570796$. Graphing the curve first allows an estimate of the upper limit. Making this too large leads to numerical rounding errors. 
 # 
-# ### Q6 answer
+# ## Q6 answer
 # Using Simpson's rule with $100$ points in the integration, the results for a few ratios of energies are
 # 
 # $$\displaystyle \begin {array}{lll}
@@ -106,7 +106,7 @@ print('pythod quad integrator answer ',quad(f,0,10)[0]  )    # use Python built-
 # In[3]:
 
 
-b, r, d, C1 = symbols('b, r, d, C1', positive = True)
+b, r, d = symbols('b, r, d', positive = True)
 f = 1/(r*sqrt(r**2-b**2))
 integrate(f,r )
 

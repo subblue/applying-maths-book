@@ -4,11 +4,13 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Fourier series, Gibbs phenomenon, generalised series. &#8212; Applying Maths in the Chemical &amp; Biomolecular Sciences</title>
     
-  <link href="../_static/css/theme.css" rel="stylesheet">
-  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,40 +20,39 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Questions 1 - 6" href="Fourier-questions-1-6.html" />
@@ -63,7 +64,21 @@
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -72,9 +87,10 @@
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -92,14 +108,15 @@
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../intro.html">
-   Applying Maths in the Chemical and Biomolecular Sciences.
-  </a>
- </li>
-</ul>
-<ul class="current nav bd-sidenav">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Applying Maths in the Chemical and Biomolecular Sciences.
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../chapter-1/chapter1-intro.html">
    1. Numbers, Equations, Operators, and Algorithms.
@@ -204,11 +221,6 @@
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-2/chapter2-Q-10-13.html">
      Questions 10 -13
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-2/chapter2-C.html">
-     Euler’s theorem, roots of unity, x-ray diffraction structure factor.
     </a>
    </li>
    <li class="toctree-l2">
@@ -337,7 +349,7 @@
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../chapter-4/integration-intro.html">
-   4. Integration.
+   4 Integration.
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
   <label for="toctree-checkbox-4">
@@ -377,7 +389,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-4/integration-D.html">
-     Calculating an Average Value.
+     Calculating an Average.
     </a>
    </li>
    <li class="toctree-l2">
@@ -407,7 +419,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-4/integration-G.html">
-     Calculating the energy of a chemical bond using molecular orbitals
+     Calculating the energy of a Chemical Bond using Molecular Orbitals
     </a>
    </li>
    <li class="toctree-l2">
@@ -688,7 +700,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-7/matrices-D.html">
-     Rotation matrices: moving molecules
+     Rotation matrices: moving molecules. Coordinate transform as rotation.
     </a>
    </li>
    <li class="toctree-l2">
@@ -757,23 +769,13 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-7/matrices-K.html">
-     Calculating a bond length using moments of inertia
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-7/matrices-Q61.html">
-     Question 61
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="../chapter-7/matrices-L.html">
      Principal axes for Moments of Inertia
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-7/matrices-Q62.html">
-     Question 62
+    <a class="reference internal" href="../chapter-7/matrices-Q61-62.html">
+     Question 61 - 62
     </a>
    </li>
    <li class="toctree-l2">
@@ -1004,7 +1006,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-G.html">
-     PDE examples continued
+     PDE Continued
     </a>
    </li>
    <li class="toctree-l2">
@@ -1096,7 +1098,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-11/num-methods-answers8-12.html">
-     Solutions Q8 - 12
+     Solutions Q 8 - 12
     </a>
    </li>
    <li class="toctree-l2">
@@ -1258,112 +1260,227 @@
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/chapter-9/Fourier-A-B.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/subblue/applying-maths-book"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/subblue/applying-maths-book/issues/new?title=Issue%20on%20page%20%2Fchapter-9/Fourier-A-B.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        
-    </div>
-</div>
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/subblue/applying-maths-book/main?urlpath=lab/tree/applying_maths_book/chapter-9/Fourier-A-B.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        <a class="colab-button" href="https://colab.research.google.com/github/subblue/applying-maths-book/blob/main/applying_maths_book/chapter-9/Fourier-A-B.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
-                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
-                    src="../_static/images/logo_colab.png"
-                    alt="Interact on Colab">Colab</button></a>
-        
-        
-    </div>
-</div>
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/subblue/applying-maths-book/main?urlpath=lab/tree/applying_maths_book/chapter-9/Fourier-A-B.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://colab.research.google.com/github/subblue/applying-maths-book/blob/main/applying_maths_book/chapter-9/Fourier-A-B.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/subblue/applying-maths-book"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/subblue/applying-maths-book/issues/new?title=Issue%20on%20page%20%2Fchapter-9/Fourier-A-B.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/chapter-9/Fourier-A-B.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#motivation-and-concept">
    Motivation and concept
@@ -1451,17 +1568,120 @@
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Fourier series, Gibbs phenomenon, generalised series.</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#motivation-and-concept">
+   Motivation and concept
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-fourier-series">
+   1 The Fourier Series.
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#series-limits-from-l-to-l">
+   1.1 Series limits from -
+   <span class="math notranslate nohighlight">
+    \(L\)
+   </span>
+   to
+   <span class="math notranslate nohighlight">
+    \(L\)
+   </span>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exponential-representation">
+   1.2 Exponential representation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#deriving-the-integral-describing-the-a-and-b-coefficients">
+   1.3 Deriving the integral describing the
+   <span class="math notranslate nohighlight">
+    \(a\)
+   </span>
+   and
+   <span class="math notranslate nohighlight">
+    \(b\)
+   </span>
+   coefficients
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#odd-and-even-functions">
+   1.4 Odd and even functions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#discontinuous-functions">
+   1.5 Discontinuous functions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-gibbs-phenomenon">
+   1.6 The Gibbs phenomenon
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#integrating-differentiating-and-summing-series">
+   2 Integrating, differentiating and summing series
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#summations">
+   2.1 Summations
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#some-formal-points-about-the-fourier-series">
+   3 Some formal points about the Fourier series
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-general-method-for-numerically-calculating-a-fourier-series">
+   3.1 A general method for numerically calculating a Fourier series
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#generalized-fourier-series-with-orthogonal-polynomials">
+   4 Generalized Fourier series with orthogonal polynomials
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#generating-functions-for-orthogonal-polynomials">
+   4.1 Generating Functions for orthogonal polynomials
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
               <div>
                 
-  <div class="section" id="fourier-series-gibbs-phenomenon-generalised-series">
-<h1>Fourier series, Gibbs phenomenon, generalised series.<a class="headerlink" href="#fourier-series-gibbs-phenomenon-generalised-series" title="Permalink to this headline">¶</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="fourier-series-gibbs-phenomenon-generalised-series">
+<h1>Fourier series, Gibbs phenomenon, generalised series.<a class="headerlink" href="#fourier-series-gibbs-phenomenon-generalised-series" title="Permalink to this headline">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import all python add-ons etc that will be needed later on</span>
@@ -1476,16 +1696,16 @@
 </div>
 </div>
 </div>
-<div class="section" id="motivation-and-concept">
-<h2>Motivation and concept<a class="headerlink" href="#motivation-and-concept" title="Permalink to this headline">¶</a></h2>
+<section id="motivation-and-concept">
+<h2>Motivation and concept<a class="headerlink" href="#motivation-and-concept" title="Permalink to this headline">#</a></h2>
 <p>The Taylor and Maclaurin series reconstruct functions as an infinite series in the powers <span class="math notranslate nohighlight">\(x^n\)</span>, and the coefficients needed to do this are the derivatives of the function. These series have rather tight restrictions placed upon them; the function must be differentiable <span class="math notranslate nohighlight">\(n\)</span> times over and the remainder must approach zero. These are described in Chapter 5. In a Fourier series, the expansion is performed instead, as trigonometric series in sines and cosines, with two sets of coefficients, <span class="math notranslate nohighlight">\(a_n\)</span> and <span class="math notranslate nohighlight">\(b_n\)</span>, to describe the <span class="math notranslate nohighlight">\(n^\text{th}\)</span> term, and which are evaluated by integration. The series formally extends to infinity, but in practice, at most only a few tens of terms are needed to replicate most functions to an acceptable level of approximation. The advantage of using a Fourier rather than a Taylor/Maclaurin series is that a wide class of functions can be described by the series, including discontinuous ones. However, by their very nature, Fourier series can only represent <em>periodic functions</em>, and this must not be forgotten. Periodic means that the function repeats itself; the repeat interval is normally taken to be <span class="math notranslate nohighlight">\(-\pi\)</span> to <span class="math notranslate nohighlight">\(+\pi\)</span> but can be extended to the range <span class="math notranslate nohighlight">\(-L\)</span> to <span class="math notranslate nohighlight">\(L\)</span> and <span class="math notranslate nohighlight">\(L\)</span> can even be made infinite.</p>
 <p>To illustrate that it is possible to make an arbitrary shaped function by adding a number of sine and cosine waves, four such waves are shown in Fig.1. It is possible to imagine, without any difficulty, that waveforms that are more complex can be formed by using more sine or cosine terms. The lowest and most complicated waveform is simply the sum of the individual waves, and repeats itself with a period of 2<span class="math notranslate nohighlight">\(\pi\)</span>. This waveform could be the signal that is measured on an oscilloscope or spectrometer and recorded on a computer. It might alternatively, be part of an image that is formed from adjacent columns of different waveforms. Periodic components present in a signal represent information in the waveform or image can be retrieved by performing a Fourier transform. This unravelling process is discussed later on but now the Fourier series is considered.</p>
 <p><img alt="Display" src="../_images/fourier-fig1.png" /></p>
 <p>Figure 1. A complex and <em>periodic</em> waveform or function is constructed out of the sum of sine and/or cosine waves. The complicated waveform, repeats itself with a period of 2<span class="math notranslate nohighlight">\(\pi\)</span>. In the Fourier series, the reconstruction of this waveform will require many more sine and cosine terms to reconstruct its form than are used to generate it, because the Fourier series only represents a function <em>exactly</em> when an infinite number of terms are included in the summation. The phase and period shown with arrows relate only to the cosine (red waveform) with a period of <span class="math notranslate nohighlight">\(2\pi\)</span>. The phase is the distance the peak of the waveform is when measured from zero, and the amplitude the size of the wave at its maximum, measured from zero displacement which is the thin horizontal line.</p>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="the-fourier-series">
-<h2>1 The Fourier Series.<a class="headerlink" href="#the-fourier-series" title="Permalink to this headline">¶</a></h2>
+<section id="the-fourier-series">
+<h2>1 The Fourier Series.<a class="headerlink" href="#the-fourier-series" title="Permalink to this headline">#</a></h2>
 <p>A Fourier series aims to reconstruct a function, such as a waveform, using the weighted sums of sine and cosine functions or their exponential representations. The great importance and usefulness of the Fourier series is that they represents the best fit, in a least-squares way, to a function <span class="math notranslate nohighlight">\(f(x)\)</span> because</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \int_{-L}^{L}[f(x)-g(x)]^2dx\]</div>
@@ -1504,9 +1724,9 @@
 <p>When the number of terms in the series is large, then <span class="math notranslate nohighlight">\(g(x) \rightarrow f (x)\)</span>, and when infinite, <span class="math notranslate nohighlight">\(g(x) = f (x)\)</span>. At each value of <span class="math notranslate nohighlight">\(x\)</span>, the Fourier series consists of a constant term, <span class="math notranslate nohighlight">\(a_0\)</span>/2 plus the sum of an infinite number of oscillating terms in integer multiples of <span class="math notranslate nohighlight">\(x\)</span>. Notice, that the target function <span class="math notranslate nohighlight">\(f(x)\)</span> appears as part of the expansion coefficients only, and must, therefore, be capable of being integrated. The target function <span class="math notranslate nohighlight">\(f(x)\)</span> determines the weighting to be placed on each term in the expansion, and this is how information about the shape of <span class="math notranslate nohighlight">\(f(x)\)</span> is included in the expansion.</p>
 <p>If <span class="math notranslate nohighlight">\(f(x)\)</span> is periodic in time, then the variable <span class="math notranslate nohighlight">\(x\)</span> would normally be changed to <span class="math notranslate nohighlight">\(\omega t\)</span> where <span class="math notranslate nohighlight">\(\omega = 2\pi\nu\)</span> is the angular frequency in units of radian s<span class="math notranslate nohighlight">\(^{-1}\)</span>, and <span class="math notranslate nohighlight">\(\nu\)</span> is the frequency in s<span class="math notranslate nohighlight">\(^{-1}\)</span>. If the dimension is spatial, then <span class="math notranslate nohighlight">\(x\)</span> is often replaced with <span class="math notranslate nohighlight">\(2\pi x/L\)</span> of which <span class="math notranslate nohighlight">\(2\pi/L\)</span> can be interpreted as a spatial frequency, with units of radians m<span class="math notranslate nohighlight">\({-1}\)</span> by analogy with ‘normal’ frequencies. Often this spatial frequency is called the <em>wavevector</em> and given the symbol <span class="math notranslate nohighlight">\(k\)</span>.</p>
 <p>Before a worked example, it is worthwhile examining limits other than <span class="math notranslate nohighlight">\(\pm\pi\)</span>, describe the exponential form of the series and also simplifying some series using symmetry. The <span class="math notranslate nohighlight">\(a_n\)</span> and <span class="math notranslate nohighlight">\(b_n\)</span> constants are also derived.</p>
-</div>
-<div class="section" id="series-limits-from-l-to-l">
-<h2>1.1 Series limits from -<span class="math notranslate nohighlight">\(L\)</span> to <span class="math notranslate nohighlight">\(L\)</span><a class="headerlink" href="#series-limits-from-l-to-l" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="series-limits-from-l-to-l">
+<h2>1.1 Series limits from -<span class="math notranslate nohighlight">\(L\)</span> to <span class="math notranslate nohighlight">\(L\)</span><a class="headerlink" href="#series-limits-from-l-to-l" title="Permalink to this headline">#</a></h2>
 <p>Over the range <span class="math notranslate nohighlight">\(−L\)</span> to <span class="math notranslate nohighlight">\(L\)</span>, the equations to use for <span class="math notranslate nohighlight">\(f(x)\)</span> are similar to equations (1)–(3) but <span class="math notranslate nohighlight">\(x\)</span> is
 changed to <span class="math notranslate nohighlight">\(\pi x/L\)</span>. The series is</p>
 <div class="math notranslate nohighlight">
@@ -1517,9 +1737,9 @@ changed to <span class="math notranslate nohighlight">\(\pi x/L\)</span>. The se
 <div class="math notranslate nohighlight">
 \[\displaystyle   b_n= \frac{1}{L}\int\limits_{-L}^{L}f(x)\sin \left(\frac{n\pi x}{L}\right)dx \qquad  (n \gt 0) \tag{6} \]</div>
 <p>Notice that the arguments, limits, and normalization are each changed compared to those when the range is <span class="math notranslate nohighlight">\(\pm \pi\)</span>. The integral now has limits <span class="math notranslate nohighlight">\(\pm L\)</span> instead of <span class="math notranslate nohighlight">\(\pm \pi\)</span>, and normalization 1/<span class="math notranslate nohighlight">\(L\)</span> rather than 1/<span class="math notranslate nohighlight">\(\pi\)</span>.</p>
-</div>
-<div class="section" id="exponential-representation">
-<h2>1.2 Exponential representation<a class="headerlink" href="#exponential-representation" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="exponential-representation">
+<h2>1.2 Exponential representation<a class="headerlink" href="#exponential-representation" title="Permalink to this headline">#</a></h2>
 <p>Because the sine and cosine functions can be represented as sums and differences of complex exponential terms, for example, <span class="math notranslate nohighlight">\(\displaystyle \cos(x) = (e^{ix} + e^{-ix})/2\)</span>, the most general way of describing the Fourier series is to use the complex exponential form;</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle g(x) = \sum\limits_{n=-\infty}^\infty c_ne^{+i\, n\pi x/L}    \tag{7}\]</div>
@@ -1527,9 +1747,9 @@ changed to <span class="math notranslate nohighlight">\(\pi x/L\)</span>. The se
 <div class="math notranslate nohighlight">
 \[\displaystyle c_n=\frac{1}{2L}\int\limits_{-L}^L f(x)e^{-i\,n\pi x/L}dx    \tag{8} \]</div>
 <p>Note the change in sign and limits in the second exponential, and that <span class="math notranslate nohighlight">\(i=\sqrt{-1}\)</span>. The set of coefficients <span class="math notranslate nohighlight">\(c_n\)</span>, are sometimes called the <em>amplitude spectrum</em> of the transform. Note also that for practical purposes the expansion <span class="math notranslate nohighlight">\(g(x)\)</span>, and the true function <span class="math notranslate nohighlight">\(f(x)\)</span>  are considered equivalent.</p>
-</div>
-<div class="section" id="deriving-the-integral-describing-the-a-and-b-coefficients">
-<h2>1.3 Deriving the integral describing the <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> coefficients<a class="headerlink" href="#deriving-the-integral-describing-the-a-and-b-coefficients" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="deriving-the-integral-describing-the-a-and-b-coefficients">
+<h2>1.3 Deriving the integral describing the <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> coefficients<a class="headerlink" href="#deriving-the-integral-describing-the-a-and-b-coefficients" title="Permalink to this headline">#</a></h2>
 <p>The integrals describing the coefficients <span class="math notranslate nohighlight">\(a_n\)</span> are obtained by multiplying each term in the Fourier series by <span class="math notranslate nohighlight">\(\cos(mx)\)</span>, where <span class="math notranslate nohighlight">\(m\)</span> is an integer, then integrating term by term using the orthogonality of sine and cosine integrals as necessary. The coefficients <span class="math notranslate nohighlight">\(b_n\)</span> can be obtained similarly by multiplying the series by <span class="math notranslate nohighlight">\(\sin(mx)\)</span> and integrating.</p>
 <p>First, the form of the cosine integrals is examined. The integrals containing a product of sine and cosine are all zero for any <span class="math notranslate nohighlight">\(n\)</span> and <span class="math notranslate nohighlight">\(m\)</span> because the integral has ‘odd’ symmetry because of the sine, and the limits are symmetrical;</p>
 <div class="math notranslate nohighlight">
@@ -1564,9 +1784,9 @@ changed to <span class="math notranslate nohighlight">\(\pi x/L\)</span>. The se
 <div class="math notranslate nohighlight">
 \[\displaystyle a_0= \pi^{-1}\int\limits_{-\pi}^\pi f(x)dx\]</div>
 <p>Similar arguments lead to the calculation of <span class="math notranslate nohighlight">\(b_n\)</span>.</p>
-</div>
-<div class="section" id="odd-and-even-functions">
-<h2>1.4 Odd and even functions<a class="headerlink" href="#odd-and-even-functions" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="odd-and-even-functions">
+<h2>1.4 Odd and even functions<a class="headerlink" href="#odd-and-even-functions" title="Permalink to this headline">#</a></h2>
 <p>When functions are either even or odd, the Fourier series is simplified to cosine or sine series respectively. An even function has the property <span class="math notranslate nohighlight">\(f (-x) = f (x)\)</span> and the sine integration (eqn. 6) producing the Fourier coefficient <span class="math notranslate nohighlight">\(b_n\)</span> is odd and therefore <span class="math notranslate nohighlight">\(b_n\)</span> = 0, but only because the integration limits are symmetrical. The cosine integral (eqn. 5) is not zero, and can be written as</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle a_n=\frac{2}{\pi}\int\limits_0^\pi f(x)\cos(nx)dx   \tag{13}\]</div>
@@ -1643,10 +1863,10 @@ changed to <span class="math notranslate nohighlight">\(\pi x/L\)</span>. The se
 </div>
 </div>
 <p><strong>Figure 3</strong>. Left: Plot of <span class="math notranslate nohighlight">\(x^2\)</span> and its Fourier series to <span class="math notranslate nohighlight">\(n\)</span> = 3 showing a poor fit to the true function. More terms produce a better fit but only over the range <span class="math notranslate nohighlight">\(\pm \pi\)</span> as shown in the centre panel where 20 terms are included in the summation. This plot also shows how the fit is only over the range <span class="math notranslate nohighlight">\(\pm \pi\)</span> and then it repeats itself. On the right are shown the coefficients <span class="math notranslate nohighlight">\(a_n\)</span> and shows how rapidly their value decreases as <span class="math notranslate nohighlight">\(n\)</span> increases.</p>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="discontinuous-functions">
-<h2>1.5 Discontinuous functions<a class="headerlink" href="#discontinuous-functions" title="Permalink to this headline">¶</a></h2>
+<section id="discontinuous-functions">
+<h2>1.5 Discontinuous functions<a class="headerlink" href="#discontinuous-functions" title="Permalink to this headline">#</a></h2>
 <p>The square wave shown in Fig. 4, has a stepwise discontinuity. When <span class="math notranslate nohighlight">\(x \ge 0,\;  f(x) = 1\)</span>, and when <span class="math notranslate nohighlight">\(x \lt 0,  f (x) = -1\)</span> and the wave repeats itself with a period of <span class="math notranslate nohighlight">\(2\pi\)</span>. This discontinuous function is sometimes called the <em>odd signum</em> function, sgn(<span class="math notranslate nohighlight">\(x\)</span>). It can be shown that, if the discontinuity occurs in the mid range <span class="math notranslate nohighlight">\(-\pi \to \pi\)</span>, each integral, <span class="math notranslate nohighlight">\(a_n\)</span> and <span class="math notranslate nohighlight">\(b_n\)</span>, can be split into two, one being taken from <span class="math notranslate nohighlight">\(-\pi \to 0\)</span> and the second from <span class="math notranslate nohighlight">\(0 \to \pi\)</span>. The Fourier series expansion now has coefficients</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle a_n=\frac{1}{\pi}\int_{\pi}^0 (-1)\cos(nx)dx+\frac{1}{\pi}\int_0^{\pi} (+1)\cos(nx)dx \]</div>
@@ -1664,20 +1884,20 @@ changed to <span class="math notranslate nohighlight">\(\pi x/L\)</span>. The se
 \[\displaystyle g(x) = \sum\limits_{n\,=\,odd}b_n\sin(nx)=\frac{4}{\pi}\sum\limits_{n\,=\,odd}\frac{\sin(nx)}{n} \]</div>
 <p><img alt="Display" src="../_images/fourier-fig4.png" /></p>
 <p>Figure 4. A few cycles of a square wave, which is a discontinuous function. Left shows the function <span class="math notranslate nohighlight">\(f(x)\)</span> and right its Fourier reconstruction <span class="math notranslate nohighlight">\(g(x)\)</span> via a series of <span class="math notranslate nohighlight">\(n = 49\)</span> terms.  The over- and undershoot in the Fourier series as shown on the right hand plot is a phenomenon called the Gibbs phenomenon and is discussed next.</p>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="the-gibbs-phenomenon">
-<h2>1.6 The Gibbs phenomenon<a class="headerlink" href="#the-gibbs-phenomenon" title="Permalink to this headline">¶</a></h2>
+<section id="the-gibbs-phenomenon">
+<h2>1.6 The Gibbs phenomenon<a class="headerlink" href="#the-gibbs-phenomenon" title="Permalink to this headline">#</a></h2>
 <p>The Fourier series of a square wave is shown in fig 4 (right) with a relatively large number of terms. Adding more will improve the fit to the function, but it will never be exact because an <em>infinite</em> number of terms will be needed to follow the right-angled bends at the top and bottom of the wave. This angle effectively corresponds to an infinite sine frequency.</p>
 <p>The size of the overshoot remains the same independent of the number of terms; this is called the Gibbs’ phenomenon, after J. Willard Gibbs, of thermodynamics fame, who explained its cause as being due to the non-uniform convergence of the Fourier series in the vicinity of a discontinuity.</p>
 <p>It is difficult to prove, but may be seen quite easily graphically; plot the Fourier series approximation to the square wave, say, from <span class="math notranslate nohighlight">\(-0.2 \to +0.2\)</span> and with different numbers of terms in the series, and then observe the height of the overshoot. As more terms are added, this becomes closer to zero, but its amplitude above <span class="math notranslate nohighlight">\(1\)</span> and below <span class="math notranslate nohighlight">\(-1\)</span> remains the same, as shown in the next figure for <span class="math notranslate nohighlight">\(10\)</span> and <span class="math notranslate nohighlight">\(100\)</span> terms in the series.</p>
 <p>The Gibbs phenomenon was first observed by Michelson who is more famous for the interferometric Michelson - Morley experiment that determined that the speed of light was independent of the position of the earth and thus disproved the hypothesis of the aether. By 1898 Michelson had constructed a machine, called the Harmonic Integrator, that could calculate up to eighty terms in a Fourier series and present the results graphically. He noticed the overshoot and wrote to Gibbs for an explanation thinking his machine was in error. You can see a photograph of this machine in ‘A Student’s Guide to Fourier Transforms’ (James 1995). This book also contains a clear introduction to Fourier transforms.</p>
 <p><img alt="Display" src="../_images/fourier-fig5.png" /></p>
 <p>Figure 5. The Gibbs phenomenon where the over- and undershoot remain at the same size as more and more terms are added to the Fourier series.</p>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="integrating-differentiating-and-summing-series">
-<h2>2 Integrating, differentiating and summing series<a class="headerlink" href="#integrating-differentiating-and-summing-series" title="Permalink to this headline">¶</a></h2>
+<section id="integrating-differentiating-and-summing-series">
+<h2>2 Integrating, differentiating and summing series<a class="headerlink" href="#integrating-differentiating-and-summing-series" title="Permalink to this headline">#</a></h2>
 <p>If the series for a function <span class="math notranslate nohighlight">\(f(x)\)</span> has been calculated then that for <span class="math notranslate nohighlight">\(\int f(x)dx\)</span> can be easily calculated, providing that the integration can be performed. Similarly if <span class="math notranslate nohighlight">\(df(x)/dx\)</span> is available the series for this can also be obtained. As an example, the series for <span class="math notranslate nohighlight">\(x^4\)</span> can be obtained from the Fourier series for <span class="math notranslate nohighlight">\(x^3\)</span> by integrating term by term; in addition, integration can lead to a better representation of a function with the same number of terms in the summation. The algebraic result will be different from that of a direct series for <span class="math notranslate nohighlight">\(x^4\)</span>, but should be just as good a representation.</p>
 <p>The series for <span class="math notranslate nohighlight">\(x^3\)</span> is calculated first and as this is an odd function, all the even cosine terms are zero; therefore, all the <span class="math notranslate nohighlight">\(a\)</span> coefficients are zero and the series only contains sine or <span class="math notranslate nohighlight">\(b\)</span> terms of the form</p>
 <div class="math notranslate nohighlight">
@@ -1707,10 +1927,10 @@ changed to <span class="math notranslate nohighlight">\(\pi x/L\)</span>. The se
 <p>and the initial <span class="math notranslate nohighlight">\(8\)</span> arises because the integration of <span class="math notranslate nohighlight">\(x^3\)</span> is <span class="math notranslate nohighlight">\(x^4\)</span>/4 and <span class="math notranslate nohighlight">\(b_n\)</span> was evaluated for <span class="math notranslate nohighlight">\(x^3\)</span>. The curve for <span class="math notranslate nohighlight">\(x^4\)</span> and its Fourier series is shown in Fig.6. The fit is good up to the limit <span class="math notranslate nohighlight">\(\pm \pi\)</span>, the limit of the initial Fourier series. The <span class="math notranslate nohighlight">\(x^4\)</span> series <span class="math notranslate nohighlight">\(g(x^4)\)</span> is smoother than the <span class="math notranslate nohighlight">\(x^3\)</span> and also a better fit to the curve, and this may be attributed to the integration, which measures the area under a curve and has the effect of smoothing the function.</p>
 <p><img alt="Display" src="../_images/fourier-fig6.png" /></p>
 <p>Figure 6. The functions <span class="math notranslate nohighlight">\(x^3\)</span> and <span class="math notranslate nohighlight">\(x^4\)</span> are shown as dashed lines. The wiggly solid curve shows the result of having only 20 terms in the <span class="math notranslate nohighlight">\(x^3\)</span> summation. The underlying oscillation of the trigonometric terms is obvious, even though the series clearly approximates <span class="math notranslate nohighlight">\(x^3\)</span>. The <span class="math notranslate nohighlight">\(g(x^4)\)</span> series, after integrating the <span class="math notranslate nohighlight">\(x^3\)</span> Fourier series, is a considerably better fit than is  the fit to <span class="math notranslate nohighlight">\(x^3\)</span>.</p>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="summations">
-<h2>2.1 Summations<a class="headerlink" href="#summations" title="Permalink to this headline">¶</a></h2>
+<section id="summations">
+<h2>2.1 Summations<a class="headerlink" href="#summations" title="Permalink to this headline">#</a></h2>
 <p>The Fourier series can also be used to evaluate summations; for example the expansion of <span class="math notranslate nohighlight">\(x^2\)</span> in the range <span class="math notranslate nohighlight">\(\pm \pi\)</span>, equation (15), gives</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle  x^2= \frac{\pi^2}{3} - 4 \left ( \cos(x) - \cos(2x)/2^2 + \cos(3x)/3^2 -  \cdots \right ) \]</div>
@@ -1721,9 +1941,9 @@ changed to <span class="math notranslate nohighlight">\(\pi x/L\)</span>. The se
 <div class="math notranslate nohighlight">
 \[\displaystyle  \frac{\pi^2}{6}= 1+\frac{1}{4}+\frac{1}{9}+\frac{1}{16}+ \cdots \frac{1}{n^2}+\cdots \]</div>
 <p>which converges more rapidly as all the terms have the same sign. Many other unusual summations can be achieved using different Fourier series; however, for us they are only curiosities.</p>
-</div>
-<div class="section" id="some-formal-points-about-the-fourier-series">
-<h2>3 Some formal points about the Fourier series<a class="headerlink" href="#some-formal-points-about-the-fourier-series" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="some-formal-points-about-the-fourier-series">
+<h2>3 Some formal points about the Fourier series<a class="headerlink" href="#some-formal-points-about-the-fourier-series" title="Permalink to this headline">#</a></h2>
 <p>The sine and cosines making up the Fourier series have two important properties: orthogonality and  completeness.</p>
 <p>In the language of vectors, the sine and cosine functions represent a <em>complete orthogonal basis set</em> on which the target function, <span class="math notranslate nohighlight">\(f(x)\)</span>, is expanded as a sum of <span class="math notranslate nohighlight">\(N\)</span> terms. This basis set is of infinite length and is <span class="math notranslate nohighlight">\(\sin(x), \sin(2x), \cdots \sin(nx) \cdots\)</span>, where <span class="math notranslate nohighlight">\(n = 1, 2, \cdots\)</span>, and there is a similar set for the cosines with <span class="math notranslate nohighlight">\(n\)</span> <span class="math notranslate nohighlight">\(\ge\)</span> 0. Any desired accuracy can be achieved, provided that <span class="math notranslate nohighlight">\(N\)</span> is large enough. If the basis set functions are also normalized, the set is <em>orthonormal</em> rather than just orthogonal.</p>
 <p>Basis sets often seem rather abstract because we do not often need to use them explicitly. For example, although not normally described in this way, the exponential function <span class="math notranslate nohighlight">\(\displaystyle e^x = 1 + x + x^2/2! + x^3/3! \cdots \)</span>, is, by contrast, an expansion in the basis set of <span class="math notranslate nohighlight">\(x^n\)</span> and the coefficients are <span class="math notranslate nohighlight">\(1/0!, 1/1!, 1/2!, 1/3!, \cdots 1/n! \cdots\)</span>. This basis set is not orthogonal because the condition for this to apply is that the product of any two elements is zero when taken over the whole range of the set, <span class="math notranslate nohighlight">\(\pm \pi\)</span> for sine and cosine. The dot product of any two orthogonal vectors is zero, see Chapter on Vectors section 2.</p>
@@ -1735,9 +1955,9 @@ the <span class="math notranslate nohighlight">\(x^n\)</span> basis set of the e
 \[\displaystyle  g(x) = \sum\limits_{n=1}^\infty q_nS_n(x)  \tag{16}\]</div>
 <p><span class="math notranslate nohighlight">\(q_n\)</span> being constants that are related to the target function <span class="math notranslate nohighlight">\(f(x)\)</span>. If the <span class="math notranslate nohighlight">\(S\)</span> functions are orthonormal, then, when <span class="math notranslate nohighlight">\(n\)</span> and <span class="math notranslate nohighlight">\(m\)</span> are integers, <span class="math notranslate nohighlight">\(\displaystyle \int S_n^*(x)S_m(x) dx= \delta_{m,n}\)</span>.</p>
 <p>In modern mathematics, the term ‘Fourier series’ does not refer just to the original sine and cosine series, or their complex exponential representation, but to a series formed by other functions that form a complete orthogonal basis set. Often the term generalized Fourier series is used to describe these, but this is not universal. The sine or cosine functions are not unique in forming series and many other functions could be used provided that they can form an orthogonal set. Other such functions include the Hermite polynomials, used to describe the harmonic oscillator wavefunctions, and the Legendre and Chebychev polynomials. In Section 4 it is shown how these can also be used to form series that describe arbitrary target functions <span class="math notranslate nohighlight">\(f(x)\)</span>.</p>
-</div>
-<div class="section" id="a-general-method-for-numerically-calculating-a-fourier-series">
-<h2>3.1 A general method for numerically calculating a Fourier series<a class="headerlink" href="#a-general-method-for-numerically-calculating-a-fourier-series" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="a-general-method-for-numerically-calculating-a-fourier-series">
+<h2>3.1 A general method for numerically calculating a Fourier series<a class="headerlink" href="#a-general-method-for-numerically-calculating-a-fourier-series" title="Permalink to this headline">#</a></h2>
 <p>An algorithm is given below with which to calculate the Fourier series of a function and is fairly straightforward if equations (5) and (6) are used and care taken over the integration limits. The function is placed in the first line as and the range is from <span class="math notranslate nohighlight">\(\pm 7\)</span>, in this example. The target function is <span class="math notranslate nohighlight">\(\displaystyle f(x)= e^{-x/2}\sin^2(x)\)</span>. The equations (4 to 6) in section 1.2 are used. The series is calculated numerically.</p>
 <p>The result of the calculation is shown in Fig. 7 and is compared with the original function, and for most of the curve the fit is tolerably good but not excellent. The main discrepancy is the overshoot, which is the Gibbs phenomenon.</p>
 <div class="cell docutils container">
@@ -1772,10 +1992,10 @@ the <span class="math notranslate nohighlight">\(x^n\)</span> basis set of the e
 </div>
 </div>
 <p><strong>Fig 7</strong>. The original function (thick golden line) and its Fourier series (blue). As can be seen the fit is not tremendously good although the series does follow the general shape of the function except at the end points <span class="math notranslate nohighlight">\(\pm 7\)</span>.</p>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="generalized-fourier-series-with-orthogonal-polynomials">
-<h2>4 Generalized Fourier series with orthogonal polynomials<a class="headerlink" href="#generalized-fourier-series-with-orthogonal-polynomials" title="Permalink to this headline">¶</a></h2>
+<section id="generalized-fourier-series-with-orthogonal-polynomials">
+<h2>4 Generalized Fourier series with orthogonal polynomials<a class="headerlink" href="#generalized-fourier-series-with-orthogonal-polynomials" title="Permalink to this headline">#</a></h2>
 <p>The Fourier series expands a function in sine and cosines. In the language of vectors and matrices, the sine and cosines form a basis set in which the function f is expanded. The essential property that any basis set of functions must have is orthogonality. If <span class="math notranslate nohighlight">\(\varphi\)</span> is such a function, then the basis set is the functions <span class="math notranslate nohighlight">\(\varphi_1, \varphi_2, \cdots\)</span>  and the condition for orthogonality is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \int_a^b\varphi_m(x)^*\varphi_n(x)dx=c_m\delta_{m,n}    \tag{17}\]</div>
@@ -1859,9 +2079,9 @@ the <span class="math notranslate nohighlight">\(x^n\)</span> basis set of the e
 \hline
 \end{array}\end{split}\]</div>
 <p><span class="math notranslate nohighlight">\(^1\)</span> If the variable <span class="math notranslate nohighlight">\(x\)</span> is actually an angle <span class="math notranslate nohighlight">\(\theta\)</span> then the volume element for the integration has to be changed from <span class="math notranslate nohighlight">\(dx\)</span> to <span class="math notranslate nohighlight">\(\sin(\theta)d\theta\)</span> and in these cases <span class="math notranslate nohighlight">\(\sin(\theta)\)</span> must multiply the weighting function.</p>
-</div>
-<div class="section" id="generating-functions-for-orthogonal-polynomials">
-<h2>4.1 Generating Functions for orthogonal polynomials<a class="headerlink" href="#generating-functions-for-orthogonal-polynomials" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="generating-functions-for-orthogonal-polynomials">
+<h2>4.1 Generating Functions for orthogonal polynomials<a class="headerlink" href="#generating-functions-for-orthogonal-polynomials" title="Permalink to this headline">#</a></h2>
 <p>The named orthogonal polynomials are the solutions of specific differential equations. They occur widely in Physics and Chemistry; the Hermite polynomials describe the harmonic oscillator wavefunctions; the Legendre electric charge distributions; and the associated Laguerre the electron distribution in the H atom. The spherical harmonic polynomials are based on the Legendre polynomials, with <span class="math notranslate nohighlight">\(x = \cos(\theta)\)</span>, and are used to describe the angular momentum in atoms and molecules; they define the shapes of atomic orbitals, the rotational motion of molecules, and the heat flow around spheres.</p>
 <p>The orthogonal polynomials, such as the Legendre polynomial used in the previous section, can be produced from a series expansion of a generating function. These functions have two variables <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(u\)</span>; expansion is made in the powers of <span class="math notranslate nohighlight">\(u\)</span> and the polynomials are the factors belonging to the terms in <span class="math notranslate nohighlight">\(u^n\)</span> or <span class="math notranslate nohighlight">\(u^n/n!\)</span>. A typical series expansion producing polynomial <span class="math notranslate nohighlight">\(p_n(x)\)</span> is</p>
 <div class="math notranslate nohighlight">
@@ -1935,8 +2155,8 @@ H( 9 ,x)  512*x**9 - 9216*x**7 + 48384*x**5 - 80640*x**3 + 30240*x
 </div>
 </div>
 <p>Other generating functions can, for example, be used to work out the number of ways of selecting several items from a list, where the same item can be picked many times.</p>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -1960,9 +2180,11 @@ H( 9 ,x)  512*x**9 - 9216*x**7 + 48384*x**5 - 80640*x**3 + 30240*x
 
               </div>
               
-        
-            <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="Fourier-intro.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -1978,26 +2200,28 @@ H( 9 ,x)  512*x**9 - 9216*x**7 + 48384*x**5 - 80640*x**3 + 30240*x
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-        
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-    <div class="container">
-      <p>
-        
-          By Godfrey Beddard<br/>
-        
-            &copy; Copyright 2022.<br/>
-      </p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Godfrey Beddard<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
     </div>
-  </footer>
-</main>
+    
+</div>
 
 
       </div>
     </div>
   
-  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>

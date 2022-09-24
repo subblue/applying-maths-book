@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## Solutions Q55 - 58
+# # Solutions Q55 - 58
 
 # In[1]:
 
@@ -16,7 +16,7 @@ init_printing()                      # allows printing of SymPy results in types
 plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 
-# ### Q55 answer
+# ## Q55 answer
 # (a) The total potential energy $V$ is proportional to the amount the bobs are raised and is
 # 
 # $$\displaystyle V = (m_1 + m_2)gh_1 + m_2gh_2$$
@@ -75,7 +75,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # An interesting situation occurs if $(1+kL)\sqrt{M}=1$ because one vibrational frequency becomes zero. This means that the lower of the two weights moves rather like a piston up and down with no horizontal displacement with respect to the upper pendulum which moves with $\omega^2=2g/L$ or twice the frequency of a single pendulum of length $L$.
 # 
 
-# ### Q56 answer
+# ## Q56 answer
 # Hooke’s law is used to find the potential energy of each spring. Suppose that mass 1 is moved by $r$, and mass 2 by $s$, then spring 1 is displaced by $r$ and spring 3 by s and the middle spring by the difference $s - r$. The total energy is thus
 # 
 # $$\displaystyle V=\frac{1}{2}kr^2+\frac{1}{2}ks^2+\frac{1}{2}nk(s-r)^2$$
@@ -98,7 +98,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # These vectors indicate the normal mode geometries as they represent the displacements of the two masses. The normal mode frequencies are calculated using equation 54, producing $m\omega_1^2 =k$ and $m_2^2 =k(1+2n)$. The modes are that of two springs extending and one being compressed. The lower frequency mode $\omega_1$ occurs when both masses move in the same direction and by the same amount so that the central spring is not compressed. The higher frequency occurs when the two masses approach one another and the central spring is compressed and extended. This problem is very similar to the example of the two pendulums and a spring.
 # 
-# ### Q57 answer
+# ## Q57 answer
 # (a) The only normal mode in the plane of the figure is shown below, as only this arrangement of displacements leaves the centre of mass of the molecule unchanged and produces no overall rotation, i.e. the total angular momentum is unchanged.
 # 
 # ![Drawing](matrices-fig94.png)
@@ -127,7 +127,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # (c) The relative displacements in mode $Q_2$ are, as before, in the ratio $2m_O/m_C$. As the two bending vibrations are degenerate because of symmetry, they have a fixed phase with one another and the motion is in orthogonal directions. When both modes are considered together when they are exactly $90^\mathrm{o}$ out of phase with one another then the atoms' motion would appear to be circular. The outer atoms would rotate in the opposite sense to the middle one so that the total angular momentum is zero.
 # 
-# ### Q58 answer
+# ## Q58 answer
 # First,define the displacements $s_1 \to s_4$  along the x-axis,and calculate the potential energy as the sum of squared terms,
 # 
 # $$\displaystyle V=\frac{k_H}{2}(s_2-s_1)^2 +\frac{k_C}{2}(s_3-s_2)^2+\frac{k_H}{2}(s_4-s_3)^2 $$

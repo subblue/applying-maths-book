@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## Solutions Q 74 - 85
+# # Solutions Q 74 - 85
 
 # In[1]:
 
@@ -15,7 +15,7 @@ init_printing()                      # allows printing of SymPy results in types
 plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 
-# ### Q74 answer
+# ## Q74 answer
 # The equation is $x^5-5=0$ and the derivative is $f'(x)= 5x^4$. Using the algorithm below starting at $x = 2$ produces $1.3797$ which is accurate to four decimal places. The other four roots, making five in all, are complex (see Chapter 2).
 # 
 # **Exercise:** Write a general procedure to find any real $n^{th}$ real root of a number $m$ e.g. $\sqrt[n]{m}$.
@@ -39,7 +39,7 @@ for i in range(20):          # Newton-Raphson, assume 20 iterations is plenty
     print('iteration',i,x)
 
 
-# ### Q75 answer
+# ## Q75 answer
 # The function is $f(x) = 3 - 8x^2 + x^4$ and the derivative $f'(x) = -16x + 4x^3$. The Newton - Raphson algorithm produces one root, starting at $x =3$, of $2.7578$ and one of $0.6280$ starting at $x =1$. The roots are therefore $\pm 2.7578$ and $\pm 0.6280$ which are confirmed by plotting the graph, Fig. 23. SymPy produces the following exact results as integer constants are used. If real numbers were used, e.g. $3.0$ or $8.0$ the answers would be evaluated as floating point numbers.
 
 # In[3]:
@@ -57,7 +57,7 @@ ans
 ans[0].evalf()  # get number as floating point
 
 
-# ### Q76 answer
+# ## Q76 answer
 # The derivative with respect to frequency is 
 # 
 # $$\displaystyle \frac{d\rho(\nu)}{d\nu}=3\frac{8\pi h}{c^3}\nu^2\left(e^{h\nu /k_BT}-1 \right)^{-1}-\frac{8\pi h}{c^3}\nu^3\left( e^{h\nu /k_BT}-1 \right)^{-2}\frac{h}{k_BT}e^{h\nu /k_BT}=0$$
@@ -70,7 +70,7 @@ ans[0].evalf()  # get number as floating point
 # 
 # Notice that by starting at $x = 2$, the calculation will fail because the derivative $f'(2) = 0$; starting at a value lower than $x = 2$ produces a result that is effectively zero because the root $f (0) = 0$ is found; therefore some care is needed when looking for roots.
 # 
-# ### Q77 answer
+# ## Q77 answer
 # The equation, after substitution $\displaystyle x=\frac{hc}{\lambda_{max}k_BT}$ and rearranging, is $x=5(1-e^{-x})$ or 
 # 
 # $$f(x)= x-5(1-e^{-x})$$
@@ -79,7 +79,7 @@ ans[0].evalf()  # get number as floating point
 # 
 # Starting at $x = 4$ and using Newton-Raphson the result is $x = 4.96511$ making $\displaystyle \lambda_{max}T=\frac{hc}{4.96511k_B}$ which is the same result as given in Q65 but now calculated accurately.
 # 
-# ### Q78 answer
+# ## Q78 answer
 # (a) By differentiating $f$ and substituting into the compliance, gives 
 # 
 # $$\displaystyle h=\frac{1}{k_s}+\frac{2p}{3k_BT}$$
@@ -94,7 +94,7 @@ ans[0].evalf()  # get number as floating point
 # 
 # The initial value of $x_u$ has to be guessed; something larger than a bond length seems sensible, so try $0.5$ nm to begin with. Using the code given in the text to locate the root of the equation, at least $25$ iterations are necessary to converge to $x_u = 0.208$ nm. Plotting the equation first, it is seen that the true value is about $0.2$ nm and starting there far fewer iterations would be necessary.
 # 
-# ### Q79 answer
+# ## Q79 answer
 # The equation for material balance on species $A$ is
 # 
 # $$\displaystyle \mathrm{c_A +c_B = HA + A^- } \tag{i}$$
@@ -119,7 +119,7 @@ ans[0].evalf()  # get number as floating point
 # 
 # Rearranging leads to the Henderson-Hasselbalch equation; $\mathrm{pH}=\mathrm{p}K_A - \log_{10}(c_A/c_B)  $, which produces the same pH within $1$%.
 # 
-# ### Q80 answer
+# ## Q80 answer
 # The solution is $0.1$ M ammonia solution with $K_A= 10^{-9.25}$.  Had the base constant been given instead we could convert as $K_w=K_AK_B$ but we can start with  the full equation given in the previous question. This can be solved using the Newton-Raphson method but is not needed in this case.
 # 
 # As ammonia is a base we may suppose $c_a \approx 0$ then from equations in the previous question, 
@@ -138,7 +138,7 @@ ans[0].evalf()  # get number as floating point
 # 
 # rearranging produces $\mathrm{[OH^-]} \approx \sqrt{K_bc_b}$. The $p\text{H} = 11.25$, essentially the same as the accurate calculation.
 # 
-# ### Q81 answer
+# ## Q81 answer
 # The potential well has a depth of $V_0hc$, which is $2.44 \cdot 10^{-20}$ J. The constants conveniently make $\alpha = 1.00$ in part (a) and $12.0$ in part (b). 
 # 
 # (a) The solution is found by the Newton - Raphson method with the function defined as $\tan(\beta)-\sqrt{\alpha^2-\beta^2}/\beta$ for even parity levels and $1/\tan(\beta)+\sqrt{\alpha^2-\beta^2}/\beta$ for odd parity.  The derivatives  can be worked out using the product rule or using tables. A code snippet of the Newton - Raphson algorithm is shown next
@@ -191,7 +191,7 @@ print('{:s} {:f}'.format('beta = ',x) )
 # 
 # (b) The deeper well ($-12 V_0$) has three levels at $1801, 6963$ and $13976\,\mathrm{ cm^{-1}}$. The corresponding infinite well energies are at $3032, 12130$, and $27293\,\mathrm{ cm^{-1}}$. The spectrum of the finite quantum well has two lines, corresponding to transitions from $n = 1 \to 2$ at $5161$ and from $n = 2 \to 3$ at $7013\,\mathrm{ cm^{-1}}$, then a continuous absorption starting at approximately $784\,\mathrm{ cm^{-1}}$. The product of the symmetry of the wavefunctions and the transition moment limit transitions to those between odd-even levels only. The large energy gap between the first two levels means that at room temperature ($k_BT \approx 210\,\mathrm{ cm^{-1}}$ ) hardly any population will be in the second level.
 # 
-# ### 82 answer
+# ## 82 answer
 # (a) The radius  of the rings is fixed at unity as $y = 1$. The constant $r$ can found from the equation, $1 = r \cosh(x/r)$ which is transcendental and cannot be solved for $r$, other than numerically, but can be solved for $x$ with $r$ as the variable; the equation is $x = r \cosh^{-1}(1/r)$. The plot of this function is shown in Fig. 59. The maximum $x$ occurs when $dx/dr = 0$. Using Sympy, the derivative is
 
 # In[6]:
@@ -262,7 +262,7 @@ print('{:s}{:6.3f}{:s}{:6.3f}'.format('r =  ',r,' area = ', area(r,x0) ) )
 # 
 # The calculation shows that if the separation of the two rings is $\pm 0.4$, with ring radius of $1$, then the thick waist $r = 0.910$ is the stable form of the soap bubble because its area is smallest and the surface tension is proportional to the area so the energy needed to form this film is less than that of the other one. The film with the narrower waist has the larger surface area; this will spontaneously form one of the other two surfaces because it is in a metastable state. To get directly to the film with the smallest surface area is going to be difficult in practice. The transition has to be made faster than the film on each ring can be formed. This will depend on the physical properties of the liquid film forming the bubble. If the separation of the rings is greater than approximately $0.52$, the line previously of minimum area is now greater than 2$\pi$ and the wide waist of the film will be unstable as it no longer has the minimum area and it will spontaneously burst.
 # 
-# ### Q83 answer
+# ## Q83 answer
 # (a) The derivatives are 
 # 
 # $$ \displaystyle df /dx = mx^{m-1}\quad \text{ and }\quad d^2f/dx^2 = m(m - 1)x^{m-2}$$
@@ -296,7 +296,7 @@ for i in range(100):            # assume 100 iterations is plenty
 print('{:s} {:10.7f}'.format('x = ', x))
 
 
-# ### Q84 answer
+# ## Q84 answer
 # The number of days lapsed after perihelion (3 Jan) and to the vernal equinox March 20, 2019 is $t - t_0 = 31 + 29 + 20 - 3 = 77$. The method of using Halley's recursion formula is similar to that for Newton - Raphson except that the second derivative has to be calculated.
 
 # In[10]:

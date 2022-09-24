@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## Calculating the energy of a chemical bond using molecular orbitals
+# # Calculating the energy of a Chemical Bond using Molecular Orbitals
 
 # In[1]:
 
@@ -15,7 +15,7 @@ init_printing()                         # allows printing of SymPy results
 plt.rcParams.update({'font.size': 16})  # set font size for plots
 
 
-# ### 12.1 Molecular orbitals
+# ## 12.1 Molecular orbitals
 # Molecular orbitals (MO) are orbitals that extend over the whole molecule as opposed to being located on or between particular atoms. In $\mathrm{H_2^+}$, one of the simplest molecules, the MOs are formed by bringing the two lowest energy atomic orbitals (wavefunctions), $\varphi_{sA}$ and $\varphi_{sB}$ together. In the situation that the MO is $\varphi_{sA}+\varphi_{sB}$, the atomic orbitals are in phase and a bond is formed; constructive interference has occurred between the two wavefunctions. The other simple combination, $\varphi_{sA}-\varphi_{sB}$, leads to destructive interference and little electron density between the nuclei. Such a combination is known as an anti-bonding MO. The amplitude of the two MOs are shown in Figure 29.
 # 
 # The geometry of the $\mathrm{H_2^+}$ molecular ion is defined as a function of the separation $R$ of the protons, $N_1$ and $N_2$, and of the electron $M$ with each proton, Figure 30. One possible separation of the electron from the two protons is shown but the electron can occupy any position in space. The interaction between the electron and the proton is electrostatic and attractive while that between the two protons is repulsive. The electron has kinetic energy as do the nuclei, but to make the calculation easy we assume that the nuclei do not vibrate but have fixed positions on the z-axis and so have no kinetic energy. This approach is called the Born -Oppenheimer approximation and is a good approximation when nuclear motion is far slower than that of electrons. This is due to the difference in their masses; the ratio of mass is at least $m_p /m_e = 1836$.
@@ -89,7 +89,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # $$\displaystyle \varphi_1=\frac{1}{\sqrt{\pi a_0^3}}e^{-\rho_1}, \qquad \varphi_2=\frac{1}{\sqrt{\pi a_0^3}}e^{-\rho_2} \tag{46}$$
 # 
-# ### 12.2 Calculating the overlap integral S
+# ## 12.2 Calculating the overlap integral S
 # 
 # Substituting for the atomic wavefunctions with the reduced distances and simplifying gives
 # 
@@ -133,7 +133,7 @@ eq = (rho**3)* exp(-u*rho)*(u**2 - v**2) /4                # S overlap integral
 simplify(integrate( integrate(eq,(u,1,oo)), (v,-1,1)   ) ) # double integral
 
 
-# ### 12.3 Calculation of the self-energy integrals $H_{11}$ and $H_{22}$
+# ## 12.3 Calculation of the self-energy integrals $H_{11}$ and $H_{22}$
 # 
 # The self-energy $H_{11}$ or equivalently $H_{22}$ is the energy the electron and proton 1 will have as if they formed an atom whose energy is influenced by a nearby positive charge, which is that of the other proton. Most of the calculation of this energy is done before actually calculating an integral but is complicated by the fact that the momentum $\bar P$ is included in the Hamiltonian and this has to be dealt with. The equation is
 # 
@@ -184,7 +184,7 @@ simplify(integrate( integrate(eq,(u,1,oo))   ,(v,-1,1)   ) )          # Double i
 # Figure 30A. The integrals $S$ overlap, $A$ exchange and coulomb $C$ integrals vs, $\rho$. The Coulomb integral does eventually become zero but much more slowly than either $S$ or $A$. ($q$ and $a_0$ were each set to unity.)
 # _____
 # 
-# ### 12.4 Calculation of interaction energy integral $H_{12}$
+# ## 12.4 Calculation of interaction energy integral $H_{12}$
 # 
 # Integrals such as $H_{12}$ are said to 'cause' the interaction between the electron and each nucleus and lead to the formation of the bond. This is because this integral measures the interaction of the electron on one atom with the other atom and bonds can only be formed if electrons interact between atoms.
 # 
@@ -229,9 +229,9 @@ simplify(integrate( integrate(eq,(u,1,oo))   ,(v,-1,1)   ) )          # Double i
 # Figure 31. Energies $E_+ , E_-$ (dashed green line) vs reduced internuclear separation $\rho = a_0R$ and energy in units of ionization energy $E_I$. (In this plot $q=1, a_0=1$)
 # _____
 # 
-# ### 12.5 The origin of the Chemical Bond and the Virial Theorem.
+# ## 12.5 The origin of the Chemical Bond and the Virial Theorem.
 # 
-# #### **The chemical bond occurs due to a lowering of the electronic potential energy.**
+# ### **The chemical bond forms due to a lowering of the electronic potential energy.**
 # 
 # When the separation between the protons is reduced from a large value, the energy of their mutual (electrostatic) repulsion increases. The fact that the total energy of H$_2^+$ passes through a minimum as a bond forms means that the electronic energy decreases faster than the repulsion $q^2/R$ increases but at very short distances $R\to 0$ the nuclear repulsion dominates. At any bond length, the total energy $E$ has to be the sum of the electron's kinetic and potential energies, $E=\langle T\rangle + \langle V\rangle$, hence the question is: does the lowering of the electronic energy arise from a reduction in the electronic potential energy or a lowering of the kinetic energy or from both?
 # 
@@ -262,7 +262,7 @@ simplify(integrate( integrate(eq,(u,1,oo))   ,(v,-1,1)   ) )          # Double i
 # which shows that the formation of a chemical bond always involves an increase in the  kinetic energy of all electrons and a decrease in potential energy.
 # 
 
-# ### 12.6 Footnote: The Viral Theorem
+# ## 12.6 Footnote: The Viral Theorem
 # 
 # The general motion of a cloud of particles can be studied with the Virial Theorem. These 'particles' may be gaseous molecules, or dust or even stars, but in each case the whole assembly must not be subject to any external forces. Our derivation follows Chandrasekhar (1968) and Jeans (1982). Newton's equation, force equals mass times acceleration, is a starting point,
 # 

@@ -1,17 +1,17 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## Questions 4 - 9
-# 
-# ### Q4 Slope and variance for a line
+# # Questions 4 - 9
+
+# ## Q4 Slope and variance for a line
 # Calculate the equation for the slope and the variance for a weighted straight line fit through the origin.
 # 
 # **Strategy:** Generate, then solve, the normal equations for $y = bx$. Use the error propagation equation to calculate the variance and use $\sigma_i^2 = 1/w_i$ to simplify it.
 # 
-# ### Q5 Summation
+# ## Q5 Summation
 # Show that $\displaystyle S_{xx}=\sum_{i=1}^n x_iw_i -\frac{\left(\sum_{i=1}^nx_iw_i\right)^2}{\sum_{i=1}^n w_i}$
 # 
-# ### Q6 Error propagation
+# ## Q6 Error propagation
 # Starting with the error propagation formula calculate,
 # 
 # (a) the error in the slope equation 39; the slope is $b = S_{xy} /S_{xx}$.
@@ -22,7 +22,7 @@
 # 
 # **Strategy:** Differentiate with respect to $y_i=1,2,3,\cdot$  which will produce a series of terms. Square these, multiply by the variance for each $y_i$ which is $1/w_i$ and finally sum. Equation 22 is the general error propagation equation.
 # 
-# ### Q7 Graphite lattice spacing
+# ## Q7 Graphite lattice spacing
 # The following data were obtained in an experiment to determine the lattice spacing $d$ in graphite by electron diffraction. The sine of the diffracted angle vs $1/\sqrt{V}$ is given in the table where $V$ is the acceleration voltage applied to the electrons. The equation describing the lattice spacing is $\displaystyle d=\frac{h}{\sin(\theta)\sqrt{8emV}}$, see Q1. ($e$ is the charge on the electron, $m$ its mass and $h$ is Planck's constant.)
 # 
 # The $x$ data is in volts$^{-1/2}\cdot 10^4$ and $y$ is $\sin(\theta)\cdot 10^4$.
@@ -37,7 +37,7 @@
 # 
 # **(b)**$\quad$ Calculate the lattice spacing.
 # 
-# ### Q8 Stern-Volmer & fluorescence quenching
+# ## Q8 Stern-Volmer & fluorescence quenching
 # The Stern-Volmer equation is used to analyse the quenching behaviour of electronically excited molecules S*. The equation is derived from a steady state analysis of the rate equations given in Chapter 10.1.5 and Q10.10 and is
 # $\varphi/\varphi_Q=1+k_{SV}[Q]$ where $\varphi$ is the fluorescence yield in the absence of quenchers and $\varphi_Q$ that with quencher concentration $[Q]$. The quenching constant is $k_{SV} = k_Q\tau$ where $k_Q$ is the second-order rate constant for the step $S^*+Q\overset{k_Q}\to S+Q$ and $\tau$ the excited state lifetime in the absence of quencher $S^*\overset{1/\tau}\to S$.
 # 
@@ -53,7 +53,7 @@
 # 
 # (b)  Calculate the quenching rate constant if the excited state lifetime is $18 \pm 1$ ns.
 # 
-# ### Q9 HCl Vibration - rotation spectrum
+# ## Q9 HCl Vibration - rotation spectrum
 # A molecule may undergo simultaneous vibrational and rotational transitions leading to a spectrum with a characteristic shape, figure 10. A photon has one unit of angular momentum and this has to be conserved on absorption or emission. A pure vibrational transition therefore does not occur in a molecule because vibrational transitions do not involve angular momentum but instead both the rotational and vibrational energy of the molecule changes. These transitions occur in the infrared part of the spectrum and the rotational transitions occur to smaller (P branch) and to larger frequency (R branch) than the energy of the missing $n_{00}$ vibrational transition. Because the energies of vibrational and rotational transitions are very different, $100 \to 1000$'s cm$^{-1}$ compared to $0.01 \to 10$ cm$^{-1}$ respectively, to a first approximation, the vibrational and rotational energies of molecules can be regarded as independent, and their energies add.
 # 
 # $$\displaystyle E_{vib, rot} = E_{rot} + E_{vib}$$

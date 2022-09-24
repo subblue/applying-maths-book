@@ -1,9 +1,9 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## Questions 1 - 7
+# # Questions 1 - 7
 
-# ### Q1 Transition moments in NMR
+# ## Q1 Transition moments in NMR
 # (a) Using the $s, m_z$ basis set of the NMR example, work out the transition moment matrix needed to predict the intensities of the lines in the two-spin NMR spectrum.
 # 
 # (b) Using the energy levels calculated in the example show that the transitions form an AX spectrum as shown in Figure 3.
@@ -30,7 +30,7 @@
 # 
 # **Strategy:** The integrals $T_{ij}$ have to be calculated using the terms in the table for each of the combinations of $s$ and $m$, of which there are 16, but not as many as this need be calculated because the matrix is symmetrical. The subscripts $i,j$ give the position in the matrix; $i$ is the row, $j$ the column. The vital point is that radiation has one unit of angular momentum. This means that only changes of the $m$ quantum number by $\pm 1$ on one spin of the pair can be coupled by the radiation at any time and hence produce the spectrum. Recall that the wavefunctions of each individual spin are normalized and orthogonal; $\langle m_a | m_a\rangle = 1$ and $\langle m_a | m_b\rangle = 0$. Because the nuclear spin quantum number $s$ is the same for both nuclei the subscripts can be dropped for clarity.
 # 
-# ### Q2 H atom proton-electron spin coupling
+# ## Q2 H atom proton-electron spin coupling
 # In the ground state of a hydrogen atom, there is a hyperfine coupling which is caused by the coupling of the proton's spin with that of the electron and this causes a small change in the energy levels, the Hamiltonian has a term $a\pmb{S}\cdot \pmb{I}$ to account for this and $a = 1.42$ GHz. The energy levels in a hydrogen atom are also split in a magnetic field by the electron and nuclear Zeeman effect. If the field is in the
 # $z$ direction only, the Hamiltonian is
 # 
@@ -42,7 +42,7 @@
 # 
 # **Strategy:**  Modify the method used to calculate the NMR spectrum shown in the text. The matrix of expectation values can then be written down directly by analogy with equation 25. To convert to Hz and tesla, divide the constants by Planck's constant.
 # 
-# ### Q3 Three NMR nuclei
+# ## Q3 Three NMR nuclei
 # Write down the Hamiltonian for the interaction of three nuclei such as in an NMR experiment. Construct the matrix using the method outlined in the text or using python by adapting the code given in Algorithm 4. It is possible to decide which entries are zero by examining the basis set because the matrix only has entries $H_{i,j }$ when _both_ $m$ values change by $+1$ and $-1$ or vice versa, or $s$ and $m$ are the same see equations 19 to 21. The basis set has eight terms each with three spin states, $(\alpha, \alpha, \alpha), (\alpha, \alpha, \beta)$, and so forth. The matrix can be blocked into two $1\times 1$ matrices and two $3 \times 3$ matrices if the ordering is so arranged. However, finding the eigenvalues (using Python/numpy) for the $3 \times 3$ matrices produces an exceptionally complex set of equations, and if you want to look at the values, it is best to do so numerically.
 # 
 # **Strategy:** The three spins produce a matrix of order $2^3 = 8$. The three nuclei will have three chemical shifts but interact pair-wise with $J$ coupling terms, $J_{12}, J_{13}, J_{23}$. The wavefunction is the product of those for three spins but the operator for nucleus a can only work on a spin, not b or c, thus the generic form is
@@ -52,7 +52,7 @@
 # The non-zero terms in the matrix can be written down once the basis set ordering is decided on,
 # only those two entries where $m$ changes by $+1$ and $-1$ are non-zero; for example, the element between two pairs of basis set values $(\beta, \alpha, \beta) \to (\beta, \beta, \alpha)$ is non-zero.
 # 
-# ### Q4 Hindered rotation in a molecule
+# ## Q4 Hindered rotation in a molecule
 # In a molecule such as ethane the two methyl groups do not undergo free rotation but are hindered by one another. The free-rotor model of methyl group rotation is therefore not very accurate, and instead, the molecule moves in a sinusoidal, threefold potential, with eclipsed configurations having more energy than the staggered ones. Consider that the wavefunction for the rotation of the methyl groups is that of a free rotor but modified by a sinusoidal potential of the form
 # 
 # $$\displaystyle V=\frac{V_3}{2}\left(1-\cos(3\theta)\right)$$
@@ -86,13 +86,13 @@
 # 
 # The expectation values of operator $H^0$ produce only diagonal terms in the matrix, because, as the saying goes, '$H^0$ is diagonal in its own eigenstates'. This means that $H^0$ exactly solves the Schroedinger equation, $H^0\varphi = E_0\varphi$, and $E_0$ is the energy for each quantum level. In this example, $H^0$ would correspond to that for the rigid rotor with no internal rotation. The other operator $H^1$, has the effect of coupling energy levels and therefore, in calculating the expectation values, the two numbers $m$ and $m'$ are different.
 # 
-# ### Q5 Hindered rotation in $\mathrm{CH_3CH_2F}$
+# ## Q5 Hindered rotation in $\mathrm{CH_3CH_2F}$
 # The first three transitions observed in the hindered rotational spectrum of $\mathrm{CH_3CH_2F}$, are at $242.7, 225.5, 208.4$ and $177.0\,\mathrm{ cm^{-1}}$ (Sage & Klemperer 1963). Using the method of the previous question, and by fitting the observed energy difference to trial values, find the value of $A = \hbar^2/2I$ in $\mathrm{ cm^{-1}}$. The potential's magnitude is $V_3 = 1158\, \mathrm{ cm^{-1}}$.
 # 
 # By guessing some values and repeating the calculation with a sufficiently large basis set a value of
 # $A = 6.3\,\mathrm{ cm^{-1}}$ provides a fairly good fit to the data. Do you agree?
 # 
-# ### Q6 Hindered rotation trans, gauche, eclipsed
+# ## Q6 Hindered rotation trans, gauche, eclipsed
 # When there are trans and gauche as well as eclipsed forms, the potential has a more complicated shape with terms in $\theta$ as well as $3\theta$% and $6\theta$.
 # 
 # (a) In the free rotor basis used in previous questions, work out the expectation values for the potential
@@ -103,7 +103,7 @@
 # 
 # (c) If you feel confident, write a python/Sympy procedure to work out the eigenvalues.
 # 
-# ### Q7 Electron in a 2p orbital
+# ## Q7 Electron in a 2p orbital
 # An ion with an electron in one of the 2p orbitals is placed in a field with orthorhombic symmetry with a potential 
 # 
 # $$\displaystyle V = Ax^2 + By^2 + Cz^2$$

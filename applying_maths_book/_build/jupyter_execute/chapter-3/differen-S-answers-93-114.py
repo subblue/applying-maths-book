@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## Solutions Q 93-114
+# # Solutions Q 93-114
 
 # In[1]:
 
@@ -15,7 +15,7 @@ init_printing()                         # allows printing of SymPy results in ty
 plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 
-# ### Q93 answer
+# ## Q93 answer
 # Differentiating with respect to $x$ first 
 # 
 # $$\displaystyle \frac{\partial z}{\partial x}=2x\sin(y/x)-y\frac{(x^2+y^2)}{x^2}\cos(y/x)$$
@@ -40,7 +40,7 @@ z = (x**2 + y**2)*sin(y/x)
 simplify(diff(z,x,y) )
 
 
-# ### Q94 answer
+# ## Q94 answer
 # (a) Differentiating with $x$ twice produces $\displaystyle \frac{\partial z}{\partial x}=e^{x+cy}+\frac{1}{x-cy} \quad \text{ and }\quad \frac{\partial^2 z}{\partial x^2}=e^{x+cy}-\frac{1}{(x-cy)^2} $
 # 
 # and with $y$ also $\displaystyle \frac{\partial z}{\partial y}=ce^{x+cy}-\frac{1}{x-cy} \quad \text{ and }\quad \frac{\partial^2 z}{\partial x^2}=c^2e^{x+cy}-\frac{1}{(x-cy)^2} $
@@ -57,7 +57,7 @@ simplify(diff(z,x,y) )
 # 
 # then by comparing the second derivative in $y$ with that in $x$ multiplied by $c^2$ shows again that $\displaystyle \frac{\partial^2z}{\partial y^2}=c^2\frac{\partial^2z}{\partial x^2}$.
 # 
-# ### Q95 answer
+# ## Q95 answer
 # (a) By substitution $\displaystyle \frac{\partial c}{\partial t}=-\frac{\partial J}{\partial x}=-\frac{\partial}{\partial x}\left(-D  \frac{\partial c}{\partial x} \right)$, therefore $\displaystyle \frac{\partial c}{\partial t}=D\frac{\partial^2 c}{\partial x^2}$ which is Fick's second law.
 # 
 # (b) While the complete expression for $c$ can be differentiated, it is easier to remove the constants and simplify the expression first. Doing this produces 
@@ -96,7 +96,7 @@ else:
 # Figure 63 One-dimensional diffusion of molecules initially placed at $x = 0$ at $t = 0$ is shown at different times in microseconds. The diffusion constant is the similar to that of water, $\approx 2.5\cdot 10^{-9}\,\mathrm{ m^2\,s^{-1}}$. At time zero, the molecules form a $\delta$ function at $x = 0$.
 # _______
 # 
-# ### Q96 answer
+# ## Q96 answer
 # (a) Expanding $\displaystyle \left(p+\frac{a}{V^2}  \right)(V-b)=RT$ produces $pV+a/V-bp-ab/V^2=RT$. 
 # 
 # At constant $T$ and because $p$ is a function of $V$ 
@@ -143,12 +143,12 @@ ans = solve( (dpdv, dpdv2),(T, V) )  # answer solving simultanoeus eqns gives T 
 ans
 
 
-# ### Q97 answer
+# ## Q97 answer
 # Differentiating $H$ with temperature at constant pressure $p$ produces $\displaystyle \left( \frac{\partial H}{\partial T}\right)_p =  \left( \frac{\partial U}{\partial T}\right)_p +p \left( \frac{\partial V}{\partial T}\right)_p$
 # 
 # and from the definition of $C_p$ and rearranging gives the required expression $\displaystyle \left( \frac{\partial U}{\partial T}\right)_p=C_p - p \left( \frac{\partial V}{\partial T}\right)_p$
 # 
-# ### Q98 answer
+# ## Q98 answer
 # At constant pressure, differentiating $S$ with $T$ produces $\displaystyle \left( \frac{\partial S}{\partial T}\right)_p= n\frac{C_p}{T}$.
 # 
 # Because volume is not explicitly in the equation, the ideal gas law is used to substitute for pressure and so obtain an equation containing volume; 
@@ -170,7 +170,7 @@ ans
 # Figure 64. Contour plot of the entropy with pressure and temperature. ($C_p=5R/2$ and $S_0=0$). The contours are at constant entropy with values labelled in J/mol/K. The gradient $\partial S/\partial p$ at constant $T$ would be a vertical line, $\partial S/\partial T$ at constant $p$ is a horizontal line.
 # ______
 
-# ### Q99 answer
+# ## Q99 answer
 # (a) Using the ideal gas law $pV=RT$ therefore  $\displaystyle \left( \frac{\partial p}{\partial T}\right)_V=\frac{R}{V}$ and therefore $\displaystyle \left( \frac{\partial U}{\partial V}\right)_T=\frac{RT}{V}-p=0$. This result is expected because the ideal gas is defined as consisting of hard sphere point molecules with no interaction energy between them; therefore, at constant temperature, the internal energy does not depend upon the volume of the gas.
 # 
 # (b) The van der Waals gas is defined by $\displaystyle \left(p+\frac{a}{V^2}  \right)(V-b)=RT$. With $V$ as a constant a  $\displaystyle \left( \frac{\partial p}{\partial T} \right)_V =\frac{R}{V-b}$ . Using the equation in the question
@@ -183,7 +183,7 @@ ans
 # 
 # because the molecules rarely meet one another and the gas becomes 'ideal'.
 # 
-# ### Q100 answer
+# ## Q100 answer
 # (a) As $pV=nRT$ and $T$ is held constant in an isothermal process then $\displaystyle \left( \frac{\partial V}{\partial p} \right)_T =-\frac{nRT}{p^2}$. 
 # 
 # Substituting for $RT$ and dividing by $-V$ gives 
@@ -204,7 +204,7 @@ ans
 # 
 # As a check if $a$ and $b$ are both zero then the result for an ideal gas results; $\kappa = 1/p$.
 # 
-# ### Q101 answer
+# ## Q101 answer
 # (a) When $t = 0$ the concentration is $\displaystyle c=c_0e^{v(x-x_0)/2D}$. 
 # 
 # If also $x = x_0$ then the concentration is $c_0$ at zero time, and this is therefore the initial concentration and  $x_0$ is therefore the initial position. Clearly, the units of each term in the equation must be the same. On the left-hand side they are $\mathrm{dm^3\, mol^{-1}\,s^{-1}}$, and the first term on the right is $D\partial^2 c/\partial x^2$ which has units $D \cdot\,\mathrm{ dm^3\, mol^{-1}\, dm^{-2}}$. To make this $\mathrm{dm^3\, mol^{-1}\,s^{-1}}$, $D$ must have units of $\mathrm{dm^2\, s^{-1}}$ or distance$\mathrm{^2\, time^{-1}}$ (or area/time). In solution, large molecules typically have diffusion coefficients of $\approx 10^{-9}\,\mathrm{ m^2\, s^{-1}}$. 
@@ -227,7 +227,7 @@ ans
 # 
 # which is zero, proving what was required.
 
-# ### Q102 answer
+# ## Q102 answer
 # (a) The first law of thermodynamics states that,for an infinitesimal quasi-statical change of state, a condition often called 'reversible', the change in the internal energy $U$ of an object is the sum of the heat transferred to the object $Q$ and the work done on the object $W$,
 # 
 # $$\displaystyle dU=dQ+dW$$
@@ -274,7 +274,7 @@ ans
 # 
 # This is usually written as $\displaystyle C_P=\frac{d H}{d T} $ because the constant $p$ is implied with $C_p$.
 # 
-# ### Q103 answer
+# ## Q103 answer
 # (a) The quantities $dU$ and $dS$ are both functions of $T$ and $V$, and starting with $U$ the total derivative is,
 # 
 # $$\displaystyle dU=\left( \frac{\partial U}{\partial V}\right)_TdV+\left( \frac{\partial U}{\partial T}\right)_VdT$$
@@ -327,7 +327,7 @@ ans
 # 
 # which produces $S=S_0+C_p\ln(T)$ and assuming that $C_p$ is independent of temperature over the range of temperatures studied and $S_0$ is an integration constant.
 # 
-# ### Q104 answer
+# ## Q104 answer
 # Equation(50) states that  $\displaystyle\left( \frac{\partial U}{\partial V}\right)_T=T\left( \frac{\partial p}{\partial T}\right)_V-p$ 
 # 
 # and as the van der Waals equation is $\displaystyle \left(p+\frac{a}{V^2}\right)(V-b)=RT$, differentiating pressure wrt $T$ gives 
@@ -336,7 +336,7 @@ ans
 # 
 # therefore $\displaystyle\left( \frac{\partial U}{\partial V}\right)_T=\frac{a}{V^2}$.
 
-# ### Q105 answer
+# ## Q105 answer
 # Volume has the general form $V=f(p,V,E)$ and because $E$ is stated to be constant, its derivative is zero, giving 
 # 
 # $$\displaystyle  dV=\left( \frac{\partial V}{\partial p}\right)_Tdp+\left( \frac{\partial V}{\partial T}\right)_pdT$$
@@ -345,7 +345,7 @@ ans
 # 
 # $$\displaystyle \left( \frac{\partial V}{\partial T}\right)_E=\left( \frac{\partial V}{\partial p}\right)_T\left( \frac{\partial p}{\partial T}\right)_E+\left( \frac{\partial V}{\partial T}\right)_p$$
 # 
-# ### Q106 answer
+# ## Q106 answer
 # Rewriting to isolate $V$ gives $V=RT/p+B_T$ and differentiating produces 
 # 
 # $$\displaystyle \left( \frac{\partial V}{\partial p}\right)_T=-\frac{RT}{p^2}\quad\text{and}\quad\displaystyle \left( \frac{\partial V}{\partial T}\right)_p=\frac{R}{p}+\frac{dB_T}{dT}$$ 
@@ -356,7 +356,7 @@ ans
 # 
 # showing that they are perfect differentials.
 # 
-# ### Q107 answer
+# ## Q107 answer
 # By integrating the Maxwell equation, the entropy change between any two pressures $p_0$ and $p_1$ is
 # 
 # $$\displaystyle \Delta S_{p_0 \to p_1} =-\int_{p_0}^{P_1} \left(\frac{\partial V}{\partial T} \right)_pdp$$
@@ -405,7 +405,7 @@ ans
 # 
 # as the difference in entropy from 1 to $p$ bar. The equation is dimensionally correct; in the second term the temperature units cancel as do the pressure, leaving only $R$. The pressure should be represented as $p$/bar.
 # 
-# ### Q108 answer
+# ## Q108 answer
 # (a) Differentiating $dH=TdS+Vdp$  with $p$ at constant $T$ changes the differentials into partial ones and gives 
 # 
 # $$\displaystyle \left( \frac{\partial H }{\partial p} \right)_T =T \left( \frac{\partial S}{\partial p} \right)_T+V$$
@@ -438,7 +438,7 @@ ans
 # 
 # Note that the right-hand side of this equation has dimensions of energy/temperature, as does the heat capacity.
 # 
-# ### Q109 answer
+# ## Q109 answer
 # (a) by definition, $\displaystyle C_V=\left( \frac{\partial U}{\partial T} \right)_V$  and also as $H=U+pV$, and by definition 
 # 
 # $$\displaystyle C_p=\left( \frac{\partial H}{\partial T} \right)_p=\left( \frac{\partial U}{\partial T} \right)_p+ \left( \frac{\partial pV}{\partial T} \right)_p$$
@@ -471,7 +471,7 @@ ans
 # 
 # which reduces to $C_p=C_V+R$ for an ideal gas.
 
-# ### Q110 answer
+# ## Q110 answer
 # Differentiating the entropy and multiplying by $T$ produces $\displaystyle TdS=T\left( \frac{\partial S }{\partial T} \right)_VdT+T\left( \frac{\partial S}{\partial V} \right)_TdV$. 
 # 
 # By substituting Maxwell's equation 
@@ -482,7 +482,7 @@ ans
 # 
 # $$\displaystyle TdS=C_VdT+T\left( \frac{\partial p}{\partial V} \right)_VdV $$
 # 
-# ### Q 111 answer
+# ## Q 111 answer
 # (a) Differentiating the Helmholtz energy gives $\displaystyle \left( \frac{\partial A}{\partial V} \right)_T=\left( \frac{\partial U}{\partial V} \right)_T-T\left( \frac{\partial S}{\partial V} \right)_T$.
 # 
 # Next the derivatives need to be changed into terms that can be measured, which means those involving $T$ and $p$. With this in mind using the differential form $dA = \cdots$ The first derivative is 
@@ -509,7 +509,7 @@ ans
 # 
 # which has units $\mathrm{bar dm^3\,mol^{-1}}$. As pressure (bar) is force/area therefore the units are $\displaystyle \mathrm{\frac{kg\cdot m\cdot s^{-2}}{m^2}m^3=\frac{kg\cdot m^2}{s^2}=J}$.  The change in internal energy of $1$ mole of CO$_2$ expanding from $10 \to 20\,\mathrm{ dm^3}$ at constant temperature is therefore $0.183$ J.
 # 
-# ### Q112 answer
+# ## Q112 answer
 # (a) The integral is $\displaystyle \int\left(\frac{\partial U}{\partial V} \right)_TdV=\int\left[ T\left( \frac{\partial S}{\partial V} \right)_T-p \right]dV$ 
 # 
 # and this can be put in a more useful form with the Maxwell equation for $S$ and $V$ given in Q110 and then 
@@ -526,14 +526,14 @@ ans
 # 
 # where the first term is the kinetic energy obtained by using the eqi-partition  theorem and is in effect the internal energy if chlorine is assumed to be an ideal gas.
 # 
-# ### Q113 answer
+# ## Q113 answer
 # Rewriting gives $\displaystyle \ln(k)=\ln(A)-\frac{\Delta H}{RT}+\frac{\Delta S}{R} $ and differentiating at constant pressure 
 # 
 # $$\displaystyle \frac{1}{k}\left(\frac{\partial k }{\partial T}  \right)_p=\frac{1}{A}\left(\frac{\partial A }{\partial T}  \right)_p+\frac{\Delta H}{RT^2}-\frac{1}{RT}\left(\frac{\partial \Delta H}{\partial T }  \right)_p+\frac{1}{R}\left(\frac{\partial \Delta S}{\partial T}  \right)_p$$
 # 
 # Substituting the identity in the question and rearranging produces $\displaystyle \left(\frac{\partial k }{\partial T}  \right)_p=k\left[ \frac{1}{A}\left(\frac{\partial A }{\partial T}  \right)_p+\frac{\Delta H}{RT^2} \right]$.
 
-# ### Q114 answer
+# ## Q114 answer
 # (a) The partial derivative can be expressed directly as 
 # 
 # $$\displaystyle \frac{\partial z}{\partial x}=\frac{\partial z}{\partial r}\frac{\partial r}{\partial x}+\frac{\partial z}{\partial \theta }\frac{\partial \theta}{\partial x}$$

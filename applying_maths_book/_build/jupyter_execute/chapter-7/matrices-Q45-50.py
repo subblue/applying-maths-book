@@ -1,16 +1,16 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## Questions 45 - 50
+# # Questions 45 - 50
 
-# ### Q45 Eigenvectors & eigenvalues 
+# ## Q45 Eigenvectors & eigenvalues 
 # Write down the characteristic equations and find the eigenvectors and normalized eigenvalues of the following two matrices. Check whether the eigenvectors are orthogonal.
 # 
 # $$(a) \displaystyle \begin{bmatrix}4 & -i\\i & 2 \end{bmatrix} , \qquad (b) \begin{bmatrix} 1& -i\\ -i & 1 \end{bmatrix}$$
 # 
 # **Strategy:** Expand the determinants of the matrices to find the characteristic equations, then use Maple, as shown in the text, or, if you wish, do the calculation by hand. The normalization term is $\sqrt{v\cdot v}$. The numpy/Sympy instruction for a dot product is a.dot(b) 
 # 
-# ### Q46 Eigenvalues
+# ## Q46 Eigenvalues
 # Find the eigenvalues of the matrix by hand
 # 
 # $$\displaystyle \begin{bmatrix}
@@ -26,13 +26,13 @@
 # 
 # **Strategy:** This is a block diagonal matrix so use this property to make smaller matrices.
 # 
-# ### Q47 Solve equations
+# ## Q47 Solve equations
 # Find the characteristic equation, eigenvalues, and eigenvectors of $\displaystyle \begin{bmatrix}0 & -u & v\\u & 0 & 0 \\ -v & 0 & 0 \end{bmatrix}$ Simplify your
 # answers using $z^2 = u^2 + v^2$.
 # 
 # **Strategy:** Use python/Sympy to solve the characteristic equation. The pattern of cofactors are shown in eqn2.
 # 
-# ### Q48 Butadiene MO energies
+# ## Q48 Butadiene MO energies
 # In Section 2.5(iii) the MO energies of butadiene were calculated by the Huckel method, using as a basis set the atomic wavefunctions $(\psi_1, \psi_2, \psi_3, \psi_4)$, where the subscript labels the $n = 4$ atoms. The Huckel matrix is
 # 
 # $$\displaystyle \begin{bmatrix}
@@ -66,7 +66,7 @@
 # 
 # The full spatial dependence of the orbitals would involve calculating the $\psi$ in three dimensions; instead, and just as effectively, the coefficients $c$ are used to represent the $\pi$ electron density on each atom which allows us to find the MO's pattern and hence the number of nodes. The node pattern can be used to determine the energy ordering; as a rule of thumb, the larger the number of nodes the higher the energy.
 # 
-# ### Q49 Fulvalene MO energies
+# ## Q49 Fulvalene MO energies
 # Repeat the calculation of the previous question, (Q48), for fulvalene; see Q8 for the numbering of the atoms. Confirm that the dipole is $-0.711eL$ or $0.48$ D where $e$ is the charge on the electron (in Coulombs) and $L$ is the bond length, which is $\approx 140$ pm. The experimentally measured dipole is $0.4$ D. Take atom 2 to be at the origin ($x=y=0$) Confirm also that the $\pi$ bond order between atoms is as shown below:
 # 
 # $$\displaystyle \begin{array}{c|cc} 
@@ -80,7 +80,7 @@
 # 
 # The remainder of the bond orders follow by symmetry.
 # 
-# ### Q50 Benzene MO energies
+# ## Q50 Benzene MO energies
 # Repeat the Huckel MO calculation for benzene; the matrix is worked out in Q7. Calculate the eigenvectors and plot out the MO coefficients.
 # 
 # (a) Is the pattern what you expect? You should find that some MOs are simply rotations of others. What distinguishes these?

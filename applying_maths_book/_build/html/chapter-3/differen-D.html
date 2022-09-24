@@ -4,11 +4,13 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Product rule and function of function or chain rule. &#8212; Applying Maths in the Chemical &amp; Biomolecular Sciences</title>
     
-  <link href="../_static/css/theme.css" rel="stylesheet">
-  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,40 +20,39 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Questions 12-42" href="differen-E-Q-12-42.html" />
@@ -63,7 +64,21 @@
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -72,9 +87,10 @@
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -92,14 +108,15 @@
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../intro.html">
-   Applying Maths in the Chemical and Biomolecular Sciences.
-  </a>
- </li>
-</ul>
-<ul class="current nav bd-sidenav">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Applying Maths in the Chemical and Biomolecular Sciences.
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../chapter-1/chapter1-intro.html">
    1. Numbers, Equations, Operators, and Algorithms.
@@ -204,11 +221,6 @@
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-2/chapter2-Q-10-13.html">
      Questions 10 -13
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-2/chapter2-C.html">
-     Euler’s theorem, roots of unity, x-ray diffraction structure factor.
     </a>
    </li>
    <li class="toctree-l2">
@@ -337,7 +349,7 @@
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../chapter-4/integration-intro.html">
-   4. Integration.
+   4 Integration.
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
   <label for="toctree-checkbox-4">
@@ -377,7 +389,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-4/integration-D.html">
-     Calculating an Average Value.
+     Calculating an Average.
     </a>
    </li>
    <li class="toctree-l2">
@@ -407,7 +419,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-4/integration-G.html">
-     Calculating the energy of a chemical bond using molecular orbitals
+     Calculating the energy of a Chemical Bond using Molecular Orbitals
     </a>
    </li>
    <li class="toctree-l2">
@@ -688,7 +700,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-7/matrices-D.html">
-     Rotation matrices: moving molecules
+     Rotation matrices: moving molecules. Coordinate transform as rotation.
     </a>
    </li>
    <li class="toctree-l2">
@@ -757,23 +769,13 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-7/matrices-K.html">
-     Calculating a bond length using moments of inertia
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-7/matrices-Q61.html">
-     Question 61
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="../chapter-7/matrices-L.html">
      Principal axes for Moments of Inertia
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-7/matrices-Q62.html">
-     Question 62
+    <a class="reference internal" href="../chapter-7/matrices-Q61-62.html">
+     Question 61 - 62
     </a>
    </li>
    <li class="toctree-l2">
@@ -1004,7 +1006,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-G.html">
-     PDE examples continued
+     PDE Continued
     </a>
    </li>
    <li class="toctree-l2">
@@ -1096,7 +1098,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-11/num-methods-answers8-12.html">
-     Solutions Q8 - 12
+     Solutions Q 8 - 12
     </a>
    </li>
    <li class="toctree-l2">
@@ -1258,112 +1260,227 @@
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/chapter-3/differen-D.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/subblue/applying-maths-book"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/subblue/applying-maths-book/issues/new?title=Issue%20on%20page%20%2Fchapter-3/differen-D.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        
-    </div>
-</div>
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/subblue/applying-maths-book/main?urlpath=lab/tree/applying_maths_book/chapter-3/differen-D.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        <a class="colab-button" href="https://colab.research.google.com/github/subblue/applying-maths-book/blob/main/applying_maths_book/chapter-3/differen-D.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
-                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
-                    src="../_static/images/logo_colab.png"
-                    alt="Interact on Colab">Colab</button></a>
-        
-        
-    </div>
-</div>
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/subblue/applying-maths-book/main?urlpath=lab/tree/applying_maths_book/chapter-3/differen-D.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://colab.research.google.com/github/subblue/applying-maths-book/blob/main/applying_maths_book/chapter-3/differen-D.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/subblue/applying-maths-book"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/subblue/applying-maths-book/issues/new?title=Issue%20on%20page%20%2Fchapter-3/differen-D.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/chapter-3/differen-D.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#function-of-a-function-or-chain-rule">
    4.1 Function-of-a-function or Chain rule
@@ -1498,17 +1615,167 @@
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Product rule and function of function or chain rule.</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#function-of-a-function-or-chain-rule">
+   4.1 Function-of-a-function or Chain rule
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#function-of-a-function-general-formula">
+   4.2 Function of a function general formula
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-product-rule">
+   4.3 The Product Rule
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#general-formula">
+   4.4 General formula
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ratios-of-functions-quotients">
+   4.5 Ratios of functions: Quotients
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#differentiation-with-respect-to-a-function">
+   4.6 Differentiation with respect to a function
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#implicit-differentiation">
+   4.7 Implicit differentiation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#parametric-functions-and-their-differentiation">
+   4.8 Parametric functions and their differentiation
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#calculating-the-parametric-equation">
+     <strong>
+      Calculating the Parametric Equation
+     </strong>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#differentiation-of-vectors">
+   4.9 Differentiation of vectors
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#differentiating-dot-and-cross-products">
+   4.10 Differentiating dot and cross products
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#summary">
+   5 Summary
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exponentials">
+     <strong>
+      Exponentials
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#logarithms">
+     <strong>
+      Logarithms
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     <strong>
+      Function of a Function or Chain Rule
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#product-rule">
+     <strong>
+      Product Rule
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#function-of-powers-of-x">
+     <strong>
+      Function of powers of
+      <span class="math notranslate nohighlight">
+       \(x\)
+      </span>
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#reciprocal-derivatives">
+     <strong>
+      Reciprocal Derivatives
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#changing-variables">
+     <strong>
+      Changing Variables
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#parametric-equations">
+     <strong>
+      Parametric equations
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#integrals">
+     <strong>
+      Integrals
+     </strong>
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
               <div>
                 
-  <div class="section" id="product-rule-and-function-of-function-or-chain-rule">
-<h1>Product rule and function of function or chain rule.<a class="headerlink" href="#product-rule-and-function-of-function-or-chain-rule" title="Permalink to this headline">¶</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="product-rule-and-function-of-function-or-chain-rule">
+<h1>Product rule and function of function or chain rule.<a class="headerlink" href="#product-rule-and-function-of-function-or-chain-rule" title="Permalink to this headline">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import all python add-ons etc that will be needed later on</span>
@@ -1525,8 +1792,8 @@
 </div>
 <p>Many equations have the form where a power of <span class="math notranslate nohighlight">\(x\)</span> is multiplied by another, or by an exponential, a sine or cosine and so forth, and you must be able to handle these more complicated equations because they occur so frequently. A couple of simple rules allow us to do this quite easily.</p>
 <p>These are the <em>product rule</em>, which is used when there is a function that is a product or ratio of other functions e.g. <span class="math notranslate nohighlight">\(y = \sin(x)\cos(x)\)</span>, and the <em>function-of-function</em> rule or <em>chain rule</em> used when a function has a structure such that one function is inside another, e.g. <span class="math notranslate nohighlight">\(\displaystyle y = \sin(ax^2 + x^{-3})\)</span> or <span class="math notranslate nohighlight">\(\displaystyle f(x) = e^{x^2+\sin(x)}\)</span> or in general <span class="math notranslate nohighlight">\(f\big(g(h)\big)\)</span> for any variable <span class="math notranslate nohighlight">\(h\)</span>.</p>
-<div class="section" id="function-of-a-function-or-chain-rule">
-<h2>4.1 Function-of-a-function or Chain rule<a class="headerlink" href="#function-of-a-function-or-chain-rule" title="Permalink to this headline">¶</a></h2>
+<section id="function-of-a-function-or-chain-rule">
+<h2>4.1 Function-of-a-function or Chain rule<a class="headerlink" href="#function-of-a-function-or-chain-rule" title="Permalink to this headline">#</a></h2>
 <p>The method when one function is a function of another is to</p>
 <p><span class="math notranslate nohighlight">\(\qquad\qquad\)</span> differentiate the main or ‘outside function’,</p>
 <p><span class="math notranslate nohighlight">\(\qquad\qquad\)</span> then multiply this by the differential of the inside function.</p>
@@ -1559,9 +1826,9 @@
 <div class="math notranslate nohighlight">
 \[\displaystyle  \frac{dy}{dx}=\frac{1}{n}\left(\sin(ax^3)\right)^{(1-n)/n}3ax^2\cos(ax^3)\]</div>
 <p>which should be the same result as was obtained by using the first method but substitution and rearranging is necessary to show this.</p>
-</div>
-<div class="section" id="function-of-a-function-general-formula">
-<h2>4.2 Function of a function general formula<a class="headerlink" href="#function-of-a-function-general-formula" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="function-of-a-function-general-formula">
+<h2>4.2 Function of a function general formula<a class="headerlink" href="#function-of-a-function-general-formula" title="Permalink to this headline">#</a></h2>
 <p>The general equation on which to use the function-of-function or chain rule is <span class="math notranslate nohighlight">\(f[g(h)]\)</span>, which means that <span class="math notranslate nohighlight">\(f\)</span> is a function of a second function <span class="math notranslate nohighlight">\(g\)</span>, with the generic variable here called <span class="math notranslate nohighlight">\(h\)</span>; <span class="math notranslate nohighlight">\(\sin(ax^2 + x^{-3})\)</span> has this form with <span class="math notranslate nohighlight">\(f\)</span> being <span class="math notranslate nohighlight">\(\sin(\cdots)\)</span> and <span class="math notranslate nohighlight">\(g(x)\)</span> being <span class="math notranslate nohighlight">\(ax^2 + x^{-3}\)</span> and the generic variable <span class="math notranslate nohighlight">\(h\)</span> is <span class="math notranslate nohighlight">\(x\)</span> in this case.</p>
 <p>Differentiation is performed by letting <span class="math notranslate nohighlight">\(u = g(h)\)</span> giving</p>
 <div class="math notranslate nohighlight">
@@ -1571,9 +1838,9 @@
 <div class="math notranslate nohighlight">
 \[\displaystyle \frac{dp}{dV} = \frac{dp}{dT}\frac{ dT}{dV}\quad\text{ and }\quad \displaystyle \frac{dS}{dp} = \frac{dS}{dT} \frac{dT}{dp}\]</div>
 <p>and these are examples of the chain rule used in a way that you may feel is back to front. The left-hand side is expanded to give the right, rather than starting with an explicit function, of say, <span class="math notranslate nohighlight">\(S\)</span> in terms of <span class="math notranslate nohighlight">\(T\)</span> and <span class="math notranslate nohighlight">\(p\)</span>. The functional form does exist but it is not needed for us to be able to write down the expression; the fact that it exists is enough for further calculations. The reason for using this approach is that the change of entropy <span class="math notranslate nohighlight">\(S\)</span> with pressure can be converted into a measurement of entropy with temperature, and a measurement of the change of temperature with pressure. The entropy change with temperature can be accurately measured with an electrochemical cell.</p>
-</div>
-<div class="section" id="the-product-rule">
-<h2>4.3 The Product Rule<a class="headerlink" href="#the-product-rule" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="the-product-rule">
+<h2>4.3 The Product Rule<a class="headerlink" href="#the-product-rule" title="Permalink to this headline">#</a></h2>
 <p>When there are products or ratios of functions, differentiation is done in two steps;</p>
 <p><span class="math notranslate nohighlight">\(\qquad\)</span> First, differentiate one function leaving the other alone,<br />
 <span class="math notranslate nohighlight">\(\qquad\)</span> then add to this the result of differentiating the second, leaving the first alone.</p>
@@ -1581,9 +1848,9 @@
 <div class="math notranslate nohighlight">
 \[\displaystyle  \frac{dy}{dx}=2x(x^3+x)+(x^2+a)(3x^2+1)\]</div>
 <p>As a check, expand the brackets to <span class="math notranslate nohighlight">\(\displaystyle y = x^5 + (1 + a)x^3 + ax\)</span> and then differentiate giving <span class="math notranslate nohighlight">\(\displaystyle \frac{dy}{dx} = 5x^4 + 3(1 + a)x^2 + a\)</span>, which is the same as the first result. This can be seen by expanding all the brackets in both results.</p>
-</div>
-<div class="section" id="general-formula">
-<h2>4.4 General formula<a class="headerlink" href="#general-formula" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="general-formula">
+<h2>4.4 General formula<a class="headerlink" href="#general-formula" title="Permalink to this headline">#</a></h2>
 <p>The general form of the product rule is:</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle  \frac{d}{dx}fg=g\frac{df}{dx}+f\frac{dg}{dx}\equiv gf'+fg'  \tag{18} \]</div>
@@ -1600,9 +1867,9 @@
 <p>An example using the function of function and the product rule is to find <span class="math notranslate nohighlight">\(\displaystyle \frac{d^2}{dx^2} e^{f(x)}\)</span>, where <span class="math notranslate nohighlight">\(f\)</span> is a function of <span class="math notranslate nohighlight">\(x\)</span>. We can write the differentiation as <span class="math notranslate nohighlight">\(\displaystyle \frac{d}{dx}\frac{d }{dx}e^{f}\)</span> using <span class="math notranslate nohighlight">\(f\)</span> instead of <span class="math notranslate nohighlight">\(f(x)\)</span> for clarity,</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \frac{d}{dx}\frac{d }{dx}e^{f}= \frac{d}{dx}\left(e^f\frac{df}{dx}\right)=e^f\left(\frac{df}{dx}\right)^2 +e^f\frac{d^2f}{dx^2}\]</div>
-</div>
-<div class="section" id="ratios-of-functions-quotients">
-<h2>4.5 Ratios of functions: Quotients<a class="headerlink" href="#ratios-of-functions-quotients" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="ratios-of-functions-quotients">
+<h2>4.5 Ratios of functions: Quotients<a class="headerlink" href="#ratios-of-functions-quotients" title="Permalink to this headline">#</a></h2>
 <p>The product rule and function-of-function rule can be used to calculate quotients. If
 <span class="math notranslate nohighlight">\(\displaystyle y = \frac{f (x)}{g(x)}\)</span> then this can be represented as <span class="math notranslate nohighlight">\(\displaystyle y = f (x)g(x)^{−1}\)</span> and the derivative is,</p>
 <div class="math notranslate nohighlight">
@@ -1616,9 +1883,9 @@
 <p>and using eqn. 21</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle  (b) \quad y=\tan(x)=\frac{\sin(x)}{\cos(x)}, \qquad \frac{dy}{dx}=\frac{\cos^2(x)+\sin^2(x)}{\cos^2(x)}=1+\tan^2(x)\]</div>
-</div>
-<div class="section" id="differentiation-with-respect-to-a-function">
-<h2>4.6 Differentiation with respect to a function<a class="headerlink" href="#differentiation-with-respect-to-a-function" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="differentiation-with-respect-to-a-function">
+<h2>4.6 Differentiation with respect to a function<a class="headerlink" href="#differentiation-with-respect-to-a-function" title="Permalink to this headline">#</a></h2>
 <p>Sometimes in thermodynamics, but also elsewhere, equations are put in the form <span class="math notranslate nohighlight">\(\displaystyle \frac{d}{d(1/x)}\)</span> rather than <span class="math notranslate nohighlight">\(\displaystyle \frac{d}{dx}\)</span>. For example, at constant pressure the Gibbs - Helmholtz equation, the derivative of the change of (Gibbs) free energy <span class="math notranslate nohighlight">\(\Delta G\)</span> with temperature, can be written as
 <span class="math notranslate nohighlight">\(\displaystyle \frac{d(\Delta G/T)}{d(1/T)}\)</span> rather than <span class="math notranslate nohighlight">\(\displaystyle \frac{d\Delta G}{dT}\)</span>. The reason for doing this is largely historical and relates to a time not so long ago when computers were not readily available, and so the equation was simplified making it easier to integrate or plot by hand on graph paper.</p>
 <p>To calculate this double reciprocal derivative we start with the Gibbs - Helmholtz equation. To obtain this we start with the basic equation <span class="math notranslate nohighlight">\(dG = Vdp - SdT\)</span>. At constant pressure <span class="math notranslate nohighlight">\(dp = 0\)</span>, and taking the derivative gives</p>
@@ -1646,9 +1913,9 @@
 <div class="math notranslate nohighlight">
 \[\displaystyle  \frac{d\ln(K_p)}{d(1/T)}=-\frac{\Delta H^{\text{o}}}{R}\]</div>
 <p>Therefore, a plot of the log of the equilibrium constant vs reciprocal temperature is a horizontal line of intercept <span class="math notranslate nohighlight">\(-\Delta H^{\text{o}}/R\)</span>. If the line is not constant, but sloping or varying, then <span class="math notranslate nohighlight">\(\Delta H^{\text{o}}\)</span> depends on temperature.</p>
-</div>
-<div class="section" id="implicit-differentiation">
-<h2>4.7 Implicit differentiation<a class="headerlink" href="#implicit-differentiation" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="implicit-differentiation">
+<h2>4.7 Implicit differentiation<a class="headerlink" href="#implicit-differentiation" title="Permalink to this headline">#</a></h2>
 <p>Quite often, an equation we may want to differentiate contains powers or functions of <span class="math notranslate nohighlight">\(y\)</span> as well as <span class="math notranslate nohighlight">\(x\)</span>. For example, <span class="math notranslate nohighlight">\(\displaystyle \sin(y) + x^2e^x = 1\)</span>, and cannot easily be put into the form <span class="math notranslate nohighlight">\(y = \cdots\)</span>. In this case implicit differentiation is necessary, which is just a grand sounding name for a rather simple procedure and one with which you are already familiar. All that is done is to differentiate any function of <span class="math notranslate nohighlight">\(y\)</span> using the function-of-function or product rule or both, as appropriate, and remembering that the differential of <span class="math notranslate nohighlight">\(y\)</span> is <span class="math notranslate nohighlight">\(dy/dx\)</span>.</p>
 <p>Differentiating <span class="math notranslate nohighlight">\(\displaystyle \sin(y) + x^2e^x = 1\)</span> with respect to <span class="math notranslate nohighlight">\(x\)</span> produces</p>
 <div class="math notranslate nohighlight">
@@ -1675,9 +1942,9 @@
 <img alt="../_images/differen-D_4_0.png" src="../_images/differen-D_4_0.png" />
 </div>
 </div>
-</div>
-<div class="section" id="parametric-functions-and-their-differentiation">
-<h2>4.8 Parametric functions and their differentiation<a class="headerlink" href="#parametric-functions-and-their-differentiation" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="parametric-functions-and-their-differentiation">
+<h2>4.8 Parametric functions and their differentiation<a class="headerlink" href="#parametric-functions-and-their-differentiation" title="Permalink to this headline">#</a></h2>
 <p>Sometimes it is easier to describe equations in parametric form as two functions with a common or dummy variable, rather than in the conventional way; there is no fundamental reason for doing so, just convenience. An example is the equation of a circle. If it has a radius <span class="math notranslate nohighlight">\(a\)</span> and is centred at the origin,</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle  x^2 +y^2 =a^2\]</div>
@@ -1751,8 +2018,8 @@ t=\sqrt{\frac{\pi}{2}} &amp; \qquad [x,y]= \left[ \left( \frac{\pi}{2} \right)^{
 t=\sqrt{\frac{3\pi}{2}} &amp; \qquad [x,y]= \left[\frac{3\sqrt{6}}{4} \left( \pi \right)^{3/2} \mp \sqrt{\frac{3\pi}{2} },-2 \right]
 \end{align}\end{split}\]</div>
 <p>and so forth for other tangents. The vertical tangent occurs at <span class="math notranslate nohighlight">\(dx/dt = 3t^2 - 1 = 0\)</span> or <span class="math notranslate nohighlight">\(t = 1/\sqrt{3}\)</span>, with <span class="math notranslate nohighlight">\(x = \pm 0.385\)</span> and <span class="math notranslate nohighlight">\(y = 0.654\)</span>, which are either side of the central loop in the curve.</p>
-<div class="section" id="calculating-the-parametric-equation">
-<h3><strong>Calculating the Parametric Equation</strong><a class="headerlink" href="#calculating-the-parametric-equation" title="Permalink to this headline">¶</a></h3>
+<section id="calculating-the-parametric-equation">
+<h3><strong>Calculating the Parametric Equation</strong><a class="headerlink" href="#calculating-the-parametric-equation" title="Permalink to this headline">#</a></h3>
 <p>As an example consider finding the parametric equations of an epicycloid. This is the curve formed when one disc rotates about another, such as two coins. In the (false) models of the solar system, such as proposed by Ptolemy, epicycloids were used to describe the motion of the planets. Initially these worked quite well but as time passes such models, based as they were on incorrect physics, became increasingly inaccurate.  If the epicycloid curve produced has one cusp it is called a cardioid due to its heart-like shape, those with two cusps are called nephroids after the shape of a kidney. Figure 6a shows two epicycloids, the number of cusps corresponds to the ratio of radii.</p>
 <p><img alt="Drawing" src="../_images/differen-fig6a.png" /></p>
 <p>Figure 6a. Epicycloids. Left The cardioid is the black curve (radio of radii is 1) and right Nephroid (black ) with ratio 2.</p>
@@ -1764,18 +2031,18 @@ t=\sqrt{\frac{3\pi}{2}} &amp; \qquad [x,y]= \left[\frac{3\sqrt{6}}{4} \left( \pi
 <p>Finally, if there are two similar coins and if one rotates (without slipping) half way round the other what direction will it now point compared to that initially? The answer is that it will point in the same direction as that when it started. The distance travelled is <span class="math notranslate nohighlight">\(\pi r_a\)</span> which is a rotation by 180<sup>o</sup> but there is also the rotation added by the fixed coin making <span class="math notranslate nohighlight">\(360^\text{o}\)</span> in total.</p>
 <p><img alt="Drawing" src="../_images/differen-fig6b.png" /></p>
 <p>Figure 6b. Calculation of parametric equation for an epicycle.</p>
-</div>
-</div>
+</section>
+</section>
 <hr class="docutils" />
-<div class="section" id="differentiation-of-vectors">
-<h2>4.9 Differentiation of vectors<a class="headerlink" href="#differentiation-of-vectors" title="Permalink to this headline">¶</a></h2>
+<section id="differentiation-of-vectors">
+<h2>4.9 Differentiation of vectors<a class="headerlink" href="#differentiation-of-vectors" title="Permalink to this headline">#</a></h2>
 <p>To differentiate any vector, each of its elements is treated separately. In the previous section, we saw how to represent a curve in parametric form. The two parametric equations can also be represented in vector form; for example, a parabola is represented by the equation <span class="math notranslate nohighlight">\(y^2 = 4ax\)</span>, but in parametric form this can be written as <span class="math notranslate nohighlight">\(\displaystyle x = at^2\)</span> and <span class="math notranslate nohighlight">\(y = 2at\)</span> and in row vector form as <span class="math notranslate nohighlight">\(\displaystyle t = [x y] \equiv [at^2 2at]\)</span>. Since all elements are treated separately,</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle   \frac{dv}{dt}=\left[\frac{dx}{dt}\;\frac{dy}{dt}  \right] \]</div>
 <p>Evaluating each term produces <span class="math notranslate nohighlight">\(\displaystyle \frac{dv}{dt} = [2at, 2a]\)</span>. The second derivative is <span class="math notranslate nohighlight">\(\displaystyle \frac{d^2v}{dt^2} = [2a, 0]\)</span>. Previously, equation (23), it was shown that the gradient was the ratio of the derivative of <span class="math notranslate nohighlight">\(y(t)\)</span> over that of <span class="math notranslate nohighlight">\(x(t)\)</span>. Applying this produces <span class="math notranslate nohighlight">\(\displaystyle \frac{dy}{dx}=\frac{2a}{2at}=\frac{1}{t}\)</span> so that the gradient is <span class="math notranslate nohighlight">\(\sqrt{a/x}\)</span> which is the same as starting with <span class="math notranslate nohighlight">\(\displaystyle y^2=4ax\)</span>.</p>
-</div>
-<div class="section" id="differentiating-dot-and-cross-products">
-<h2>4.10 Differentiating dot and cross products<a class="headerlink" href="#differentiating-dot-and-cross-products" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="differentiating-dot-and-cross-products">
+<h2>4.10 Differentiating dot and cross products<a class="headerlink" href="#differentiating-dot-and-cross-products" title="Permalink to this headline">#</a></h2>
 <p>When differentiating dot and cross products, the normal differentiation and the normal vector rules apply. Suppose <span class="math notranslate nohighlight">\(\boldsymbol u\)</span> and <span class="math notranslate nohighlight">\(\boldsymbol v\)</span> are vectors in some variable <span class="math notranslate nohighlight">\(s\)</span> then, as <span class="math notranslate nohighlight">\(\boldsymbol u\cdot \boldsymbol v\)</span> is the dot product</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle   \frac{d}{ds}\boldsymbol u\cdot \boldsymbol v =\frac{d\boldsymbol u}{ds}\cdot \boldsymbol v+\boldsymbol u\cdot \frac{d\boldsymbol v}{ds}\]</div>
@@ -1783,24 +2050,24 @@ t=\sqrt{\frac{3\pi}{2}} &amp; \qquad [x,y]= \left[\frac{3\sqrt{6}}{4} \left( \pi
 <div class="math notranslate nohighlight">
 \[\displaystyle   \frac{d}{ds}\boldsymbol u\times \boldsymbol v =\frac{d\boldsymbol u}{ds}\times \boldsymbol v+\boldsymbol u\times \frac{d\boldsymbol v}{ds}\]</div>
 <p>Differentiating vectors is described in more detail in Section 13.</p>
-</div>
-<div class="section" id="summary">
-<h2>5 Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="summary">
+<h2>5 Summary<a class="headerlink" href="#summary" title="Permalink to this headline">#</a></h2>
 <p>Notation <span class="math notranslate nohighlight">\(f'=d/dx,\; f(x),\; g(x) \)</span> are general functions in <span class="math notranslate nohighlight">\(x\)</span> such as <span class="math notranslate nohighlight">\(x^2\)</span> or <span class="math notranslate nohighlight">\(\sin(x)e^x\)</span> etc. but mostly written as <span class="math notranslate nohighlight">\(f\)</span> and <span class="math notranslate nohighlight">\(g\)</span> for clarity. Constants used are <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span>.</p>
-<div class="section" id="exponentials">
-<h3><strong>Exponentials</strong><a class="headerlink" href="#exponentials" title="Permalink to this headline">¶</a></h3>
+<section id="exponentials">
+<h3><strong>Exponentials</strong><a class="headerlink" href="#exponentials" title="Permalink to this headline">#</a></h3>
 <div class="math notranslate nohighlight">
 \[\displaystyle   y=e^{f(x)} \qquad \frac{dy}{dx}=f'(x)e^{f(x)}\]</div>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="logarithms">
-<h3><strong>Logarithms</strong><a class="headerlink" href="#logarithms" title="Permalink to this headline">¶</a></h3>
+<section id="logarithms">
+<h3><strong>Logarithms</strong><a class="headerlink" href="#logarithms" title="Permalink to this headline">#</a></h3>
 <div class="math notranslate nohighlight">
 \[\displaystyle   y=\ln(f(x))\qquad \frac{d}{dx} \ln\left(  f(x) \right) =\frac{f'(x)}{f(x)} \]</div>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="id1">
-<h3><strong>Function of a Function or Chain Rule</strong><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<section id="id1">
+<h3><strong>Function of a Function or Chain Rule</strong><a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle  \begin{align} \frac{d}{dx}f\left(g(x)  \right)&amp;=\frac{df}{du}\frac{du}{dx} ;\quad \text{where } u=g(x)\\
 \frac{d}{dx}f\left(g(x)  \right)&amp;=f'g'\\
@@ -1808,10 +2075,10 @@ t=\sqrt{\frac{3\pi}{2}} &amp; \qquad [x,y]= \left[\frac{3\sqrt{6}}{4} \left( \pi
 \end{align}\end{split}\]</div>
 <div class="math notranslate nohighlight">
 \[\displaystyle \text{e.g.}\qquad y=\sin(ax^2+x^{-3}) \quad \to\quad \frac{dy}{dx}=\cos(ax^2+x^{-3})(2ax-3x^{-4})\]</div>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="product-rule">
-<h3><strong>Product Rule</strong><a class="headerlink" href="#product-rule" title="Permalink to this headline">¶</a></h3>
+<section id="product-rule">
+<h3><strong>Product Rule</strong><a class="headerlink" href="#product-rule" title="Permalink to this headline">#</a></h3>
 <div class="math notranslate nohighlight">
 \[\displaystyle   \frac{d}{dx}fg = g\frac{d}{dx}f+f\frac{d}{dx}g \equiv gf'+fg'\]</div>
 <p><span class="math notranslate nohighlight">\(\qquad\)</span>or explicitly</p>
@@ -1819,35 +2086,35 @@ t=\sqrt{\frac{3\pi}{2}} &amp; \qquad [x,y]= \left[\frac{3\sqrt{6}}{4} \left( \pi
 \[\displaystyle   \frac{d}{dx}f(x)g(x) = g(x)\frac{df(x)}{dx}+f(x)\frac{dg(x)}{dx}\]</div>
 <div class="math notranslate nohighlight">
 \[\displaystyle \text{e.g.}\qquad  y=x^2e^{-x} \qquad \to \qquad \frac{dy}{dx}=2xe^{-x}-x^2e^{-x}\]</div>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="function-of-powers-of-x">
-<h3><strong>Function of powers of <span class="math notranslate nohighlight">\(x\)</span></strong><a class="headerlink" href="#function-of-powers-of-x" title="Permalink to this headline">¶</a></h3>
+<section id="function-of-powers-of-x">
+<h3><strong>Function of powers of <span class="math notranslate nohighlight">\(x\)</span></strong><a class="headerlink" href="#function-of-powers-of-x" title="Permalink to this headline">#</a></h3>
 <div class="math notranslate nohighlight">
 \[\displaystyle  y=a^x \qquad \text{ take logs }; \qquad \ln(y)=x\ln(a) \qquad \to \qquad \frac{1}{y}\frac{dy}{dx}=\ln(a)\]</div>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="reciprocal-derivatives">
-<h3><strong>Reciprocal Derivatives</strong><a class="headerlink" href="#reciprocal-derivatives" title="Permalink to this headline">¶</a></h3>
+<section id="reciprocal-derivatives">
+<h3><strong>Reciprocal Derivatives</strong><a class="headerlink" href="#reciprocal-derivatives" title="Permalink to this headline">#</a></h3>
 <div class="math notranslate nohighlight">
 \[\displaystyle   \frac{dy}{dx}=\left(\frac{dx}{dy}  \right)^{-1}; \qquad \frac{d^2y}{dx^2}=-\frac{d^2x}{dy^2} \left( \frac{dx}{dy} \right)^{-3}\]</div>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="changing-variables">
-<h3><strong>Changing Variables</strong><a class="headerlink" href="#changing-variables" title="Permalink to this headline">¶</a></h3>
+<section id="changing-variables">
+<h3><strong>Changing Variables</strong><a class="headerlink" href="#changing-variables" title="Permalink to this headline">#</a></h3>
 <p><span class="math notranslate nohighlight">\(\qquad\)</span>If a function is expressed as <span class="math notranslate nohighlight">\(f(x)\)</span> and you want it as <span class="math notranslate nohighlight">\(f(t)\)</span> then;</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle   \frac{df}{dt}=\frac{df}{dx}\frac{dx}{dt}\]</div>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="parametric-equations">
-<h3><strong>Parametric equations</strong><a class="headerlink" href="#parametric-equations" title="Permalink to this headline">¶</a></h3>
+<section id="parametric-equations">
+<h3><strong>Parametric equations</strong><a class="headerlink" href="#parametric-equations" title="Permalink to this headline">#</a></h3>
 <div class="math notranslate nohighlight">
 \[\displaystyle  y=f(t),\qquad x=g(t); \qquad \frac{dy}{dx}=\frac{dy}{dt}\frac{dt}{dx}= \frac{dy}{dt}/\frac{dx}{dt}\]</div>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="integrals">
-<h3><strong>Integrals</strong><a class="headerlink" href="#integrals" title="Permalink to this headline">¶</a></h3>
+<section id="integrals">
+<h3><strong>Integrals</strong><a class="headerlink" href="#integrals" title="Permalink to this headline">#</a></h3>
 <div class="math notranslate nohighlight">
 \[\displaystyle  \frac{d}{dx}\int f(u)du=f(x);\qquad \frac{d}{dx} \int_a^x f(u)du=f(x);\qquad \frac{d}{dx} \int_a^b f(u)du=0\]</div>
 <p><span class="math notranslate nohighlight">\(\qquad\)</span>If the limits <span class="math notranslate nohighlight">\(u\)</span> and <span class="math notranslate nohighlight">\(v\)</span> are functions of <span class="math notranslate nohighlight">\(x\)</span> then use Leibniz’s rule</p>
@@ -1856,9 +2123,9 @@ t=\sqrt{\frac{3\pi}{2}} &amp; \qquad [x,y]= \left[\frac{3\sqrt{6}}{4} \left( \pi
 <p><span class="math notranslate nohighlight">\(\qquad\)</span>If the differentiation variable is not the integration variable</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle  \frac{d}{da}\int f(a,s)ds=\int\frac{\partial}{\partial a}f(a,s)ds\]</div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -1882,9 +2149,11 @@ t=\sqrt{\frac{3\pi}{2}} &amp; \qquad [x,y]= \left[\frac{3\sqrt{6}}{4} \left( \pi
 
               </div>
               
-        
-            <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="differen-C-Q-4-11.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -1900,26 +2169,28 @@ t=\sqrt{\frac{3\pi}{2}} &amp; \qquad [x,y]= \left[\frac{3\sqrt{6}}{4} \left( \pi
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-        
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-    <div class="container">
-      <p>
-        
-          By Godfrey Beddard<br/>
-        
-            &copy; Copyright 2022.<br/>
-      </p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Godfrey Beddard<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
     </div>
-  </footer>
-</main>
+    
+</div>
 
 
       </div>
     </div>
   
-  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>

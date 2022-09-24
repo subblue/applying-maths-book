@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## Solutions Q17 - 20
+# # Solutions Q17 - 20
 
 # In[1]:
 
@@ -16,10 +16,10 @@ init_printing()                         # allows printing of SymPy results in ty
 plt.rcParams.update({'font.size': 16})  # set font size for plots
 
 
-# ### Q17 answer
+# ## Q17 answer
 # The answer here is entirely up to you!
 # 
-# ### Q18 answer
+# ## Q18 answer
 # The grid search has the following form
 # (1) Set initial values of rate constants and increments in $k_1, k_2$.
 # (2) Outer loop 10 values. Inner loop 10 values.
@@ -121,12 +121,12 @@ print('{:s} {:6.4f} {:s} {:10.4g} {:s} {:f}'.format('k1 = ',k1,', k2= ', k2, ', 
 # Figure 37. The contours are formed from the gridded data which is the residual between the experimental data and that calculated by the SIR model. The circle shows the minimum value of all the contours.  The contour values are arbitrary.
 # ___________
 # 
-# ### Q19 answer 
+# ## Q19 answer 
 # Comparing with an accurate result produced by python's internal algorithms, the simple Euler method fails even with $5000$ points in the integration.
 # 
 # The reason is not therefore of rounding errors but that the approximation to each step of the integral is not good enough. Using the modified Euler method significantly improves the calculation but even this fails if $v$ is larger than $10$. Using a more sophisticated Runge - Kutta algorithm even that than given in the text improves the accuracy of the calculation.
 # 
-# ### Q20 answer 
+# ## Q20 answer 
 # Following the example in the text, the first thing is to estimate the parameters. Notice that $k_2$ and $S$ are always a product so that as $S_0$ is so large $k_2 $ will be very small. Then the algorithm of Q18 could be used, 
 # 
 # Modify the SIR code to include another array $\mathtt{EulerD}$ to hold the data for the number of deaths and modify the In data so that $\mathtt{k_1In \to (k_1+k_d)In}$ and add a term $\mathtt{D=D+hk_dD}$ etc. 
@@ -157,6 +157,18 @@ day = np.linspace(0,Lh,Lh)
 plt.scatter(day[:],alldata[::-1],s=2,color='red')
 
 plt.show()
+
+
+# In[ ]:
+
+
+
+
+
+# In[ ]:
+
+
+
 
 
 # In[ ]:

@@ -1,12 +1,12 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## Questions 53 - 48
+# # Questions 53 - 48
 
-# ### Q53 Normalise
+# ## Q53 Normalise
 # Show that in normalizing equation 51 the unit vectors disappear.
 # 
-# ### Q54 Cyclohexane bond lengths
+# ## Q54 Cyclohexane bond lengths
 # In the chair and boat form of cyclohexane $\mathrm{C_6H_{12}}$ calculate; 
 # 
 # (a) the coordinates of each of the atoms,
@@ -29,7 +29,7 @@
 # ________________
 # **Strategy:** (a-b) The C-C bonds are all the same length and the angles are also the same. The chair shaped molecule has a centre of symmetry and the boat has a mirror plane. Use vector notation in the x, y, z frame so that any vector representing a bond, is $a\boldsymbol i + b\boldsymbol j + c\boldsymbol k$ with coefficients $a, b, c$ which must be determined for each vector. Choose a right-angled axes set with the origin at the centre of inversion. The most difficult part of this problem is determining the coordinates of the atoms. The tetrahedral bond angles are given by $\cos(\theta) = -1/3$ with $\theta$ in radians, equivalent to $109.47^\text{o}$. All the bond lengths are $d$. (c-e) Dihedral or torsion angles are the angles between planes. The dihedral angle is given by equation (6.54). If the vectors $\vec n$ and $\vec m$ are normal to the two planes, the cross and dot product should have the order $\vec m\cdot\vec n = (d_1 \times d_2)\cdot(d_2 \times d_5)$. The vectors are all defined to be in the same direction as shown on the figure.
 # 
-# ### Q55 Torsion angles in a protein
+# ## Q55 Torsion angles in a protein
 # Figure 47 shows just the C, N, and O atoms of part of a peptide backbone from pdb entry 1VCR and some of the coordinates are listed below. Calculate the torsion angles $\psi$ and $\phi$ using Python to do so. Write a general procedure that accepts the four atoms coordinates as input. Does this part of the backbone forms an $\alpha$-helix or $\beta$-sheet?
 # 
 # **Strategy:** The first step is to determine which atoms are involved and this means consulting figure 39. The torsion $\psi$ belongs to the atoms including and between the N atoms, and is group $\mathrm{N_{11}-C_{12}-C_{13}-N_{16}}$. The angle $\phi$ starts and ends at the C=O groups and is grouping $\mathrm{C_8-N_{11}-C_{12}-C_{13} }$.
@@ -56,7 +56,7 @@
 # Figure 47. Part of the peptide backbone.
 # ________________
 # 
-# ### Q56 Angles in a protein
+# ## Q56 Angles in a protein
 # Triose phosphate (pdb 1TIM) has been studied by X-ray crystallography and has a $\beta$-barrel structure.
 # 
 # (a) Find the first $\psi$ torsion angle of the part of the $\beta$-sheet part of the structure shown, starting from N$_{36}$. Do this semi-automatically by searching along the data until you find the atoms you want. Look at Figure 39 to decide which type of atoms to use for each angle.
@@ -98,7 +98,7 @@
 # Figure 48. Small part of Triose phosphate 1TIM.pdb.
 # ________
 # 
-# ### Q57 Sugar phosphate in DNA
+# ## Q57 Sugar phosphate in DNA
 # The following data is that for ideal A type DNA, should such a molecule exist.
 # 
 # (a) Confirm that the data is consistent with A type DNA.
@@ -123,7 +123,7 @@
 # \hline\end{array}$$
 # 
 # 
-# ### Q58 Zinc finger protein
+# ## Q58 Zinc finger protein
 # Figure 49 shows part of the DNA found with the zinc finger protein (PDB entry 1AAY).
 # 
 # (a) What base is shown in Figure 49 and is this a purine or pyrimidine base?

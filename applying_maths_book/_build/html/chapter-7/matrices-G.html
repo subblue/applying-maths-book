@@ -4,11 +4,13 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Solving equations using matrices. Eigenvectors &amp; Eigenvalues. &#8212; Applying Maths in the Chemical &amp; Biomolecular Sciences</title>
     
-  <link href="../_static/css/theme.css" rel="stylesheet">
-  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,40 +20,39 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Questions 45 - 50" href="matrices-Q45-50.html" />
@@ -63,7 +64,21 @@
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -72,9 +87,10 @@
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -92,14 +108,15 @@
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../intro.html">
-   Applying Maths in the Chemical and Biomolecular Sciences.
-  </a>
- </li>
-</ul>
-<ul class="current nav bd-sidenav">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Applying Maths in the Chemical and Biomolecular Sciences.
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../chapter-1/chapter1-intro.html">
    1. Numbers, Equations, Operators, and Algorithms.
@@ -204,11 +221,6 @@
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-2/chapter2-Q-10-13.html">
      Questions 10 -13
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-2/chapter2-C.html">
-     Euler’s theorem, roots of unity, x-ray diffraction structure factor.
     </a>
    </li>
    <li class="toctree-l2">
@@ -337,7 +349,7 @@
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../chapter-4/integration-intro.html">
-   4. Integration.
+   4 Integration.
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
   <label for="toctree-checkbox-4">
@@ -377,7 +389,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-4/integration-D.html">
-     Calculating an Average Value.
+     Calculating an Average.
     </a>
    </li>
    <li class="toctree-l2">
@@ -407,7 +419,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-4/integration-G.html">
-     Calculating the energy of a chemical bond using molecular orbitals
+     Calculating the energy of a Chemical Bond using Molecular Orbitals
     </a>
    </li>
    <li class="toctree-l2">
@@ -688,7 +700,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="matrices-D.html">
-     Rotation matrices: moving molecules
+     Rotation matrices: moving molecules. Coordinate transform as rotation.
     </a>
    </li>
    <li class="toctree-l2">
@@ -757,23 +769,13 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="matrices-K.html">
-     Calculating a bond length using moments of inertia
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="matrices-Q61.html">
-     Question 61
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="matrices-L.html">
      Principal axes for Moments of Inertia
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="matrices-Q62.html">
-     Question 62
+    <a class="reference internal" href="matrices-Q61-62.html">
+     Question 61 - 62
     </a>
    </li>
    <li class="toctree-l2">
@@ -1004,7 +1006,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-G.html">
-     PDE examples continued
+     PDE Continued
     </a>
    </li>
    <li class="toctree-l2">
@@ -1096,7 +1098,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-11/num-methods-answers8-12.html">
-     Solutions Q8 - 12
+     Solutions Q 8 - 12
     </a>
    </li>
    <li class="toctree-l2">
@@ -1258,112 +1260,227 @@
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/chapter-7/matrices-G.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/subblue/applying-maths-book"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/subblue/applying-maths-book/issues/new?title=Issue%20on%20page%20%2Fchapter-7/matrices-G.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        
-    </div>
-</div>
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/subblue/applying-maths-book/main?urlpath=lab/tree/applying_maths_book/chapter-7/matrices-G.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        <a class="colab-button" href="https://colab.research.google.com/github/subblue/applying-maths-book/blob/main/applying_maths_book/chapter-7/matrices-G.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
-                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
-                    src="../_static/images/logo_colab.png"
-                    alt="Interact on Colab">Colab</button></a>
-        
-        
-    </div>
-</div>
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/subblue/applying-maths-book/main?urlpath=lab/tree/applying_maths_book/chapter-7/matrices-G.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://colab.research.google.com/github/subblue/applying-maths-book/blob/main/applying_maths_book/chapter-7/matrices-G.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/subblue/applying-maths-book"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/subblue/applying-maths-book/issues/new?title=Issue%20on%20page%20%2Fchapter-7/matrices-G.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/chapter-7/matrices-G.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#simultaneous-equations">
    12.1 Simultaneous equations
@@ -1459,17 +1576,128 @@
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Solving equations using matrices. Eigenvectors & Eigenvalues.</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#simultaneous-equations">
+   12.1 Simultaneous equations
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-matrix-method-for-solving-simultaneous-equations">
+   12.2 A matrix method for solving simultaneous equations
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#i-solving-simultaneous-equations-with-the-computer">
+     <strong>
+      (i) Solving simultaneous equations with the computer
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ii-mixing-solutions">
+     <strong>
+      (ii) Mixing solutions
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#iii-rotational-spectroscopy">
+     <strong>
+      (iii) Rotational Spectroscopy
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#iv-balancing-complex-chemical-equations">
+     <strong>
+      (iv) Balancing complex chemical equations
+     </strong>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#eigenvalue-eigenvector-equations">
+   12.3 Eigenvalue - Eigenvector equations
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#kinetics-dynamics-and-quantum-mechanics">
+   12.4 Kinetics, dynamics, and quantum mechanics
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#interpreting-eigenvalues-and-eigenvectors">
+   12.5 Interpreting Eigenvalues and Eigenvectors
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-secular-equation-and-determinant-the-evaluation-of-eigenvalues-and-eigenvectors">
+   12.6 The Secular Equation and Determinant. The evaluation of Eigenvalues and Eigenvectors
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#i-calculating-eigenvalues-and-eigenvectors-by-hand">
+     <strong>
+      (i) Calculating eigenvalues and eigenvectors by hand.
+     </strong>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#properties-of-eigenvalues-and-eigenvectors">
+   12.7 Properties of eigenvalues and eigenvectors
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#basis-sets-a-reminder">
+   12.8 Basis sets: a reminder
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#interpreting-the-secular-determinant">
+   12.9 Interpreting the Secular Determinant
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#coupling-between-two-spins-the-secular-determinant-and-block-diagonal-matrices">
+     <strong>
+      Coupling between two spins. The secular determinant and block diagonal matrices
+     </strong>
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
               <div>
                 
-  <div class="section" id="solving-equations-using-matrices-eigenvectors-eigenvalues">
-<h1>Solving equations using matrices. Eigenvectors &amp; Eigenvalues.<a class="headerlink" href="#solving-equations-using-matrices-eigenvectors-eigenvalues" title="Permalink to this headline">¶</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="solving-equations-using-matrices-eigenvectors-eigenvalues">
+<h1>Solving equations using matrices. Eigenvectors &amp; Eigenvalues.<a class="headerlink" href="#solving-equations-using-matrices-eigenvectors-eigenvalues" title="Permalink to this headline">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import all python add-ons etc that will be needed later on</span>
@@ -1484,8 +1712,8 @@
 </div>
 </div>
 </div>
-<div class="section" id="simultaneous-equations">
-<h2>12.1 Simultaneous equations<a class="headerlink" href="#simultaneous-equations" title="Permalink to this headline">¶</a></h2>
+<section id="simultaneous-equations">
+<h2>12.1 Simultaneous equations<a class="headerlink" href="#simultaneous-equations" title="Permalink to this headline">#</a></h2>
 <p>A matrix can be of great use in solving simultaneous equations provided that its inverse exists. We consider two types of equations. First is the general case</p>
 <div class="math notranslate nohighlight">
 \[\pmb{M}\vec x =  \vec C \tag{28} \]</div>
@@ -1508,15 +1736,15 @@
 component <span class="math notranslate nohighlight">\(i = 1\)</span> gives the unknown <span class="math notranslate nohighlight">\(x\)</span>, the second <span class="math notranslate nohighlight">\(y\)</span> the third <span class="math notranslate nohighlight">\(z\)</span>. The value of <span class="math notranslate nohighlight">\(x\)</span> is</p>
 <div class="math notranslate nohighlight">
 \[\begin{split} \frac{ \begin{vmatrix} 6 &amp; 4 &amp; 1 \\ -3 &amp; -3 &amp; 6 \\ 0 &amp; -1 &amp; 4 \\ \end{vmatrix}} {\begin{vmatrix} 3 &amp; 4 &amp; 1 \\ 1 &amp; -3 &amp; 6 \\ 2 &amp; -1 &amp; 4 \\ \end{vmatrix}}  =\frac{6(-12+6)-4(-12)+1(3)}{3(-12+6)-4(4-12)+1(-1+6)}= \frac{15}{19} \end{split}\]</div>
-</div>
-<div class="section" id="a-matrix-method-for-solving-simultaneous-equations">
-<h2>12.2 A matrix method for solving simultaneous equations<a class="headerlink" href="#a-matrix-method-for-solving-simultaneous-equations" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="a-matrix-method-for-solving-simultaneous-equations">
+<h2>12.2 A matrix method for solving simultaneous equations<a class="headerlink" href="#a-matrix-method-for-solving-simultaneous-equations" title="Permalink to this headline">#</a></h2>
 <p>The formal matrix method to solve equation (28) is to invert the equation by multiplying both sides by <span class="math notranslate nohighlight">\(\pmb{M}^{-1}\)</span> to form <span class="math notranslate nohighlight">\(\pmb{M}^{-1}\pmb{M} = \pmb{1}\)</span> and therefore <span class="math notranslate nohighlight">\(\pmb{M}^{-1}\pmb{M}\vec x = \pmb{M}^{-1}\vec C\)</span>. The next step is to replace the <span class="math notranslate nohighlight">\(\pmb{M}^{-1}\pmb{M}\)</span> by the unit matrix <span class="math notranslate nohighlight">\(\pmb{1}\)</span>, but this has no further effect because <span class="math notranslate nohighlight">\(\pmb{1}\vec x = \pmb{M}^{-1}\vec C\)</span> is the same as</p>
 <div class="math notranslate nohighlight">
 \[ \vec x=\pmb{M}^{-1}\vec C\tag{30}\]</div>
 <p>The matrix method of solving simultaneous equations has therefore become that of finding the inverse of a matrix <span class="math notranslate nohighlight">\(\pmb{M}\)</span>, and performing a matrix multiplication with <span class="math notranslate nohighlight">\(\vec C\)</span>.</p>
-<div class="section" id="i-solving-simultaneous-equations-with-the-computer">
-<h3><strong>(i) Solving simultaneous equations with the computer</strong><a class="headerlink" href="#i-solving-simultaneous-equations-with-the-computer" title="Permalink to this headline">¶</a></h3>
+<section id="i-solving-simultaneous-equations-with-the-computer">
+<h3><strong>(i) Solving simultaneous equations with the computer</strong><a class="headerlink" href="#i-solving-simultaneous-equations-with-the-computer" title="Permalink to this headline">#</a></h3>
 <p>In practice, you will generally want to use the computer to solve simultaneous equations and this is illustrated in two ways below using Python. In the matrix method, <span class="math notranslate nohighlight">\(\vec C\)</span> is a column matrix and <span class="math notranslate nohighlight">\(\pmb{M}\)</span> has rows of the equation coefficients. Some methods are shown below. The first two using numpy, which gives a numerical answer, the second using Sympy which gives the result algebraically but can be converted to real numbers by multiplying by <span class="math notranslate nohighlight">\(1.0\)</span>. When using numpy the <span class="math notranslate nohighlight">\(\mathtt{linalg.inv(..)}\)</span> produces the inverse of the matrix, the dot product <span class="math notranslate nohighlight">\(\mathtt{np.dot(..,..)}\)</span> performs the matrix multiplication.</p>
 <p>The equation to be solved is eqn. 29 above.</p>
 <div class="cell docutils container">
@@ -1581,9 +1809,9 @@ component <span class="math notranslate nohighlight">\(i = 1\)</span> gives the 
 <img alt="../_images/matrices-G_9_0.png" src="../_images/matrices-G_9_0.png" />
 </div>
 </div>
-</div>
-<div class="section" id="ii-mixing-solutions">
-<h3><strong>(ii) Mixing solutions</strong><a class="headerlink" href="#ii-mixing-solutions" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="ii-mixing-solutions">
+<h3><strong>(ii) Mixing solutions</strong><a class="headerlink" href="#ii-mixing-solutions" title="Permalink to this headline">#</a></h3>
 <p>It is quite easy to work out how to make a mixture of two components from standard solutions but what if three standards are needed ? The calculation becomes one of solving three simultaneous equations for which a matrix method is suitable.</p>
 <p>Consider mixing Martini which consists of various amounts of Gin and Vermouth. Different brands of Gin differ in their strength but typically it is about 40% alcohol by volume (abv) although Navy strength is <span class="math notranslate nohighlight">\(57\)</span>% abv! Vermouth is added (<span class="math notranslate nohighlight">\(19\)</span>% abv) in various proportions.  For the purposes of calculation we will assume that the Gin is <span class="math notranslate nohighlight">\(40\)</span>% V/V (volume/total aqueous volume) and Vermouth <span class="math notranslate nohighlight">\(19\)</span>% V/V. To make a classic Martini with a 3:1 ratio we look at the volume fraction <span class="math notranslate nohighlight">\(0\le v \le 1\)</span> of the Gin and therefore for the Vermouth is <span class="math notranslate nohighlight">\(1-v\)</span>. The 3:1 Martini has the fraction of Gin as <span class="math notranslate nohighlight">\(f=3/(3+1)\)</span> and so for Vermouth <span class="math notranslate nohighlight">\(1/4\)</span>. In this mixture the alcohol is present at <span class="math notranslate nohighlight">\(0.4f+0.19(1-f)= 0.4\cdot 0.75+ 0.25\cdot 0.19= 0.347\)</span> or <span class="math notranslate nohighlight">\(34.7\)</span>%. In this example the only percentages available are clearly only in the range <span class="math notranslate nohighlight">\(19 \to 40\)</span>%. In general if <span class="math notranslate nohighlight">\(v\)</span> is the volume fraction (<span class="math notranslate nohighlight">\(0\le f \le 1\)</span>) and <span class="math notranslate nohighlight">\(\vec a,\;\vec b\)</span> vectors describing concentration of stock solutions then the combination is <span class="math notranslate nohighlight">\(f\vec a+(1-f)\bar b\)</span>, for example <span class="math notranslate nohighlight">\(\vec b =\begin{bmatrix} 0&amp;19 \end{bmatrix}\)</span> for the Vermouth.</p>
 <p>If we wish in general to make solutions of species <span class="math notranslate nohighlight">\(X\)</span> and <span class="math notranslate nohighlight">\(Y\)</span> in various different proportions then three stock solutions are needed. These are shown in figure 52a in a plot of concentration of <span class="math notranslate nohighlight">\(Y\)</span> vs that of <span class="math notranslate nohighlight">\(X\)</span>. We wish to make a solution with <span class="math notranslate nohighlight">\(X,Y\)</span> with composition <span class="math notranslate nohighlight">\(d\)</span>. This can be done for any composition on or inside the shaded triangle, i.e. along any of the vectors <span class="math notranslate nohighlight">\(\vec a=\overline{AB},\;\vec b=\overline{BC},\;\vec c=\overline{CA}\)</span>. If a composition outside this area is needed then a fourth standard/stock solution is needed, fig 53b. Any point on a vector in the triangle can be made up of contributions to the three vectors, thus if these vectors are <span class="math notranslate nohighlight">\(\vec a, \vec b,\vec c\)</span> and the vector to point <span class="math notranslate nohighlight">\(d\)</span> is <span class="math notranslate nohighlight">\(\bar d\)</span> the equation is</p>
@@ -1615,9 +1843,9 @@ component <span class="math notranslate nohighlight">\(i = 1\)</span> gives the 
 <hr class="docutils" />
 <p>If there are four stock solutions then any new mixture must be within the shape of these four. However, any point will always be within a triangle formed by three of the four stock solutions so the method above can be used.</p>
 <p>In the situation that the mixture needs three different species then the method can be extended, by having four or more columns and rows in the matrix but the new solution must lie within the volume contained by species <span class="math notranslate nohighlight">\([X],[Y],[Z]\)</span> rather than an area.</p>
-</div>
-<div class="section" id="iii-rotational-spectroscopy">
-<h3><strong>(iii) Rotational Spectroscopy</strong><a class="headerlink" href="#iii-rotational-spectroscopy" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="iii-rotational-spectroscopy">
+<h3><strong>(iii) Rotational Spectroscopy</strong><a class="headerlink" href="#iii-rotational-spectroscopy" title="Permalink to this headline">#</a></h3>
 <p>Raman spectroscopy has been used to measure the rotational energy levels of benzene vapour, which are then used to obtain accurate CH bond lengths. The rotational constants obtained from C<span class="math notranslate nohighlight">\(_6\)</span>H<span class="math notranslate nohighlight">\(_6\)</span> and C<span class="math notranslate nohighlight">\(_6\)</span>D<span class="math notranslate nohighlight">\(_6\)</span>, are <span class="math notranslate nohighlight">\(B = 0.18960 \pm 0.00005\)</span> and <span class="math notranslate nohighlight">\(B = 0.15681 \pm 0.00008 \;\mathrm{cm^{-1}}\)</span>, which describe the motion <em>perpendicular</em> to benzene’s sixfold axis. The bond lengths will be calculated assuming that the molecule has <span class="math notranslate nohighlight">\(D_{6h}\)</span> symmetry, i.e. is a regular hexagon and behaves as a rigid rotor. This calculation shows how isotopic substitution makes it possible to calculate very accurate bond lengths even in large molecules; in fact, far more accurately than by X-ray crystallography.</p>
 <p>There does not initially appear to be enough information to do the calculation. However, the rotational constants are related to the moment of inertia of the molecule by <span class="math notranslate nohighlight">\(\displaystyle B=\frac{\hbar}{4\pi I}\;\mathrm{s^{-1}}\)</span> where <span class="math notranslate nohighlight">\(I\)</span> is the moment of inertia (kg m<span class="math notranslate nohighlight">\(^2\)</span>). The moment of inertia is related to bond lengths as <span class="math notranslate nohighlight">\(I =\Sigma_i m_i r_i^2\)</span> where the sum is taken over all the distances <span class="math notranslate nohighlight">\(r\)</span> the <span class="math notranslate nohighlight">\(i\)</span> atoms have from the rotation axis. The mass of atom <span class="math notranslate nohighlight">\(i\)</span> in kg is <span class="math notranslate nohighlight">\(m_i\)</span>. The rotational motion measured is perpendicular to the sixfold axis, which means that the rotation axis must pass through opposite carbon atoms, for instance, 1 and 4, Fig. 53. It is necessary to form two equations for the moments of inertia of the two molecules, and then to solve them simultaneously. Notice that the <span class="math notranslate nohighlight">\(B\)</span> values are in wavenumbers, so it is necessary also to change <span class="math notranslate nohighlight">\(B\)</span> to s<span class="math notranslate nohighlight">\(^{-1}\)</span> by multiplying by the speed of light in cm s<span class="math notranslate nohighlight">\(^{-1}\)</span>. Moment of inertia calculations are described more fully in Section 15.6.</p>
 <p><img alt="Drawing" src="../_images/matrices-fig53.png" /></p>
@@ -1661,9 +1889,9 @@ component <span class="math notranslate nohighlight">\(i = 1\)</span> gives the 
 </div>
 </div>
 <p>The only physically meaningful roots of these equations are when both are positive, i.e. <span class="math notranslate nohighlight">\(r = 0.13973 \)</span> nm for the CC bond length and <span class="math notranslate nohighlight">\(s = 0.10843\)</span> nm for the CH bond length. The results are quoted to 5 figures, as this is the precision of the initial data.</p>
-</div>
-<div class="section" id="iv-balancing-complex-chemical-equations">
-<h3><strong>(iv) Balancing complex chemical equations</strong><a class="headerlink" href="#iv-balancing-complex-chemical-equations" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="iv-balancing-complex-chemical-equations">
+<h3><strong>(iv) Balancing complex chemical equations</strong><a class="headerlink" href="#iv-balancing-complex-chemical-equations" title="Permalink to this headline">#</a></h3>
 <p><strong>(a)</strong> Balancing an equation such as</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \mathrm{FeS_2 + HNO_3 \to Fe_2(SO_4)_3+ H_2SO_4 + H_2O + NO }\]</div>
@@ -1758,10 +1986,10 @@ component <span class="math notranslate nohighlight">\(i = 1\)</span> gives the 
 </div>
 <p>making the coefficients <span class="math notranslate nohighlight">\(\begin{bmatrix} 1 &amp; 1 &amp; 7 &amp; 2 &amp; 3\end{bmatrix}\)</span> and <span class="math notranslate nohighlight">\(\displaystyle  \mathrm{CO + CO_2 + 7H_2 \to 2CH_4 + 3H_2O}\)</span></p>
 <p>an alternative is of many is <span class="math notranslate nohighlight">\(\displaystyle  \mathrm{5CO + CO_2 + 19H_2 \to 6CH_4 + 7H_2O}\)</span>.</p>
-</div>
-</div>
-<div class="section" id="eigenvalue-eigenvector-equations">
-<h2>12.3 Eigenvalue - Eigenvector equations<a class="headerlink" href="#eigenvalue-eigenvector-equations" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="eigenvalue-eigenvector-equations">
+<h2>12.3 Eigenvalue - Eigenvector equations<a class="headerlink" href="#eigenvalue-eigenvector-equations" title="Permalink to this headline">#</a></h2>
 <p>A most important and interesting type of equation is the eigenvalue - eigenvector equation
 which has the form</p>
 <div class="math notranslate nohighlight">
@@ -1775,17 +2003,17 @@ which has the form</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \pmb{A}\vec x_i =\lambda_i \vec x_i\]</div>
 <p>which is preferable, because it indicates that there is one column vector <span class="math notranslate nohighlight">\(\vec x_i\)</span> for each eigenvalue <span class="math notranslate nohighlight">\(\lambda_i\)</span>. As the matrix is <span class="math notranslate nohighlight">\(n \times n\)</span> there are <span class="math notranslate nohighlight">\(n\)</span> eigenvalues and <span class="math notranslate nohighlight">\(n\)</span> eigenvectors each of length <span class="math notranslate nohighlight">\(n\)</span>. The eigenvectors <span class="math notranslate nohighlight">\(x\)</span>, are usually considered to be column vectors and can be stacked into a square matrix (the modal matrix) and the eigenvalues are usually formed into the single column vector <span class="math notranslate nohighlight">\(\lambda\)</span>. When solving an eigenvalue - eigenvector equation, the values of all the eigenvectors and eigenvalues will be determined; for example in solving the Schroedinger equation, the Hamiltonian, the sum of kinetic and potential energy is defined by the problem at hand. Solving the equations produces not only the energy levels but also the wavefunctions. The difference in solving the eigenvalue equation is that unlike the previous examples of simultaneous equations (12.1 &amp; 2), which have the form <span class="math notranslate nohighlight">\(\pmb A\vec x=b\)</span> neither any <span class="math notranslate nohighlight">\(\vec x\)</span> nor any <span class="math notranslate nohighlight">\(\lambda\)</span> is known beforehand.</p>
-</div>
-<div class="section" id="kinetics-dynamics-and-quantum-mechanics">
-<h2>12.4 Kinetics, dynamics, and quantum mechanics<a class="headerlink" href="#kinetics-dynamics-and-quantum-mechanics" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="kinetics-dynamics-and-quantum-mechanics">
+<h2>12.4 Kinetics, dynamics, and quantum mechanics<a class="headerlink" href="#kinetics-dynamics-and-quantum-mechanics" title="Permalink to this headline">#</a></h2>
 <p>Before embarking on the details of solving eigenvalue equations, it is worth considering the difference and similarities in the types of problems that can be studied. We shall meet problems in quantum mechanics, chemical kinetics, and dynamics and although there are great differences, the language to describe various problems - that is the maths - follows the same path. In kinetics, eigenvalue equations are used when several <em>linear</em> reactions have to be modelled. If there are five reactions, then a <span class="math notranslate nohighlight">\(5 \times 5\)</span> matrix of rate constants is constructed to describe the inter-conversion of species. In quantum mechanics, the Schroedinger equation is solved by expanding the new, and so far unknown, wavefunctions in a basis set of other wavefunctions. Interactions are added between various states and these are usually called <em>couplings</em>; mathematically they take the place of the rate constants used in kinetics. The <em>order</em> of the <em>basis set</em> determines where the couplings between states occur in the matrix. Reordering the basis set moves these positions about in the matrix, but does not affect the outcome. In kinetics, basis sets are usually not talked about; the order of the species occurring in a reaction scheme is, in effect, the basis set. Reorder the scheme, and the rate constants appear in different places in the matrix, but the result is unchanged.</p>
-</div>
-<div class="section" id="interpreting-eigenvalues-and-eigenvectors">
-<h2>12.5 Interpreting Eigenvalues and Eigenvectors<a class="headerlink" href="#interpreting-eigenvalues-and-eigenvectors" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="interpreting-eigenvalues-and-eigenvectors">
+<h2>12.5 Interpreting Eigenvalues and Eigenvectors<a class="headerlink" href="#interpreting-eigenvalues-and-eigenvectors" title="Permalink to this headline">#</a></h2>
 <p>The eigenvalue and its associated eigenvector provide us with different kinds of information. Eigenvalues are numbers that produce energies, frequencies, and timescales; eigenvectors on the other hand give geometrical type properties, such as normal mode displacements or the composition of a wavefunction leading to the shape of a molecular orbital. Each eigenvalue is always associated with its eigenvector, which as a vector is a series of numbers.</p>
-</div>
-<div class="section" id="the-secular-equation-and-determinant-the-evaluation-of-eigenvalues-and-eigenvectors">
-<h2>12.6 The Secular Equation and Determinant. The evaluation of Eigenvalues and Eigenvectors<a class="headerlink" href="#the-secular-equation-and-determinant-the-evaluation-of-eigenvalues-and-eigenvectors" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="the-secular-equation-and-determinant-the-evaluation-of-eigenvalues-and-eigenvectors">
+<h2>12.6 The Secular Equation and Determinant. The evaluation of Eigenvalues and Eigenvectors<a class="headerlink" href="#the-secular-equation-and-determinant-the-evaluation-of-eigenvalues-and-eigenvectors" title="Permalink to this headline">#</a></h2>
 <p>In an eigenvalue - eigenvector equation, the operator <span class="math notranslate nohighlight">\(\pmb{A}\)</span> is always an <span class="math notranslate nohighlight">\(n \times n\)</span> square matrix and <span class="math notranslate nohighlight">\(\vec x\)</span> is an, as yet, unknown vector (single column matrix), and similarly for the eigenvalues <span class="math notranslate nohighlight">\(\lambda\)</span> which also form an unknown single column matrix. The first step in solving equation 31 is to find the eigenvalues <span class="math notranslate nohighlight">\(\lambda\)</span>. Rearranging equation 31 by subtracting the <span class="math notranslate nohighlight">\(\lambda\)</span> from the diagonals only produces a singular matrix, and the essential property of a singular matrix is that its determinant is zero. Doing this produces what is called the <em>Secular Equation</em>,</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle (\pmb{A} - \lambda \pmb{1})x = \pmb{0} \tag{32}\]</div>
@@ -1889,8 +2117,8 @@ normalised columns of eigenvectors
 </div>
 </div>
 <p>but here the eigenvalues are presented differently, but can easily be normalised if required.</p>
-<div class="section" id="i-calculating-eigenvalues-and-eigenvectors-by-hand">
-<h3><strong>(i) Calculating eigenvalues and eigenvectors by hand.</strong><a class="headerlink" href="#i-calculating-eigenvalues-and-eigenvectors-by-hand" title="Permalink to this headline">¶</a></h3>
+<section id="i-calculating-eigenvalues-and-eigenvectors-by-hand">
+<h3><strong>(i) Calculating eigenvalues and eigenvectors by hand.</strong><a class="headerlink" href="#i-calculating-eigenvalues-and-eigenvectors-by-hand" title="Permalink to this headline">#</a></h3>
 <p>To illustrate the method, the eigenvalues <span class="math notranslate nohighlight">\(\lambda_1\)</span> and <span class="math notranslate nohighlight">\(\lambda_2\)</span> of <span class="math notranslate nohighlight">\(\displaystyle A=\begin{bmatrix} 2 &amp; 4\\ 3 &amp; 1\ \end{bmatrix}\)</span> and the corresponding  eigenvectors will be found  by hand.</p>
 <p>Our strategy will be to convert the matrix to the form of equation 33, expand the secular determinant, and solve for <span class="math notranslate nohighlight">\(\lambda\)</span>. Equation 34 will be used to calculate the eigenvectors. The calculation is relatively simple for this small matrix. The equation to solve is</p>
 <div class="math notranslate nohighlight">
@@ -1921,10 +2149,10 @@ normalised columns of eigenvectors
 \[\begin{split} \pmb A x_2= \frac{1}{\sqrt{5}}\begin{bmatrix}2 &amp; 4 \\3 &amp; 1\end{bmatrix}\begin{bmatrix}4 \\3\end{bmatrix}=\frac{1}{\sqrt{5}}\begin{bmatrix}20 \\15\end{bmatrix}=5x_2\end{split}\]</div>
 <p>which is <span class="math notranslate nohighlight">\(\lambda_2 x_2\)</span>.</p>
 <p>The same calculation using Python or Sympy is far easier and, in practice, you will always do the calculation in this way.</p>
-</div>
-</div>
-<div class="section" id="properties-of-eigenvalues-and-eigenvectors">
-<h2>12.7 Properties of eigenvalues and eigenvectors<a class="headerlink" href="#properties-of-eigenvalues-and-eigenvectors" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="properties-of-eigenvalues-and-eigenvectors">
+<h2>12.7 Properties of eigenvalues and eigenvectors<a class="headerlink" href="#properties-of-eigenvalues-and-eigenvectors" title="Permalink to this headline">#</a></h2>
 <p>Some of the more important properties of eigenvalues and eigenvectors are listed here.</p>
 <p><strong>(a)</strong><span class="math notranslate nohighlight">\(\quad\)</span> Any scalar multiple of an eigenvector is also an eigenvector, because the operator <span class="math notranslate nohighlight">\(\pmb A\)</span> is linear; e.g. if an eigenvector is <span class="math notranslate nohighlight">\(x\)</span> then <span class="math notranslate nohighlight">\(3x\)</span> is also an eigenvector. If the operator <span class="math notranslate nohighlight">\(\pmb A\)</span> is raised to an integer power, <span class="math notranslate nohighlight">\(p = 0, \pm 1, \pm 2, \cdots\)</span> then the eigenvalues are <span class="math notranslate nohighlight">\(\lambda^p\)</span>. The eigenvectors are the same as those of <span class="math notranslate nohighlight">\(\pmb A\)</span>.</p>
 <p><strong>(b)</strong><span class="math notranslate nohighlight">\(\quad\)</span> Eigenvectors associated with different eigenvalues are <em>linearly independent</em>. If more than one linearly independent eigenvector belongs to the same eigenvalue, then the eigenvalue is degenerate.</p>
@@ -1937,9 +2165,9 @@ called the <em>eigenvalue spectrum</em>.</p>
 <p>In case (c), to determine whether or not the eigenvectors are orthogonal in a symmetrical matrix <span class="math notranslate nohighlight">\(\pmb A\)</span>, compare the two equations <span class="math notranslate nohighlight">\(\pmb{A}v = \lambda_vv\)</span> and <span class="math notranslate nohighlight">\(\pmb{A}^Tu = \lambda_uu\)</span>.</p>
 <p>The eigenvalues <span class="math notranslate nohighlight">\(\lambda_u\)</span> and <span class="math notranslate nohighlight">\(\lambda_v\)</span> must be different, but because the matrix is symmetrical <span class="math notranslate nohighlight">\(\pmb{A}^T = \pmb{A}\)</span> and there is a lemma that proposes that the dot product <span class="math notranslate nohighlight">\(v\cdot(\pmb{A}^Tu)\)</span> and <span class="math notranslate nohighlight">\(u\cdot(\pmb{A}v)\)</span> are equal.</p>
 <p>Substituting for <span class="math notranslate nohighlight">\(\pmb{A}v\)</span> and <span class="math notranslate nohighlight">\(\pmb{A}^Tu\)</span> gives the equations <span class="math notranslate nohighlight">\(v\cdot(\pmb{A}^Tu)=\lambda_uv\cdot v\)</span> and <span class="math notranslate nohighlight">\( u\cdot (\pmb{A}v)=\lambda_v u\cdot v\)</span> and if they are equal then it must follow that <span class="math notranslate nohighlight">\(\lambda_uv\cdot u = \lambda_vu\cdot v\)</span>. The only way that this can be true, since <span class="math notranslate nohighlight">\(\lambda_u \ne \lambda_v\)</span>, is if <span class="math notranslate nohighlight">\(u\cdot v = 0\)</span>, hence the eigenvectors must be orthogonal.</p>
-</div>
-<div class="section" id="basis-sets-a-reminder">
-<h2>12.8 Basis sets: a reminder<a class="headerlink" href="#basis-sets-a-reminder" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="basis-sets-a-reminder">
+<h2>12.8 Basis sets: a reminder<a class="headerlink" href="#basis-sets-a-reminder" title="Permalink to this headline">#</a></h2>
 <p>To be able to solve an equation such as 31, it is essential to choose a basis set for the vectors. Normally, one would like to choose an orthonormal set, such as the standard basis, and in three dimensions we could use the set <span class="math notranslate nohighlight">\((x, y, z)\)</span> with the basis vectors <span class="math notranslate nohighlight">\((i, j, k)\)</span> (see Chapter 6) or equivalently in column matrix form</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle  \left (\begin{bmatrix} 1\\0\\0 \end{bmatrix} ,\begin{bmatrix} 0\\1\\0 \end{bmatrix},\begin{bmatrix} 0\\0\\1 \end{bmatrix} \right)\end{split}\]</div>
@@ -1950,9 +2178,9 @@ called the <em>eigenvalue spectrum</em>.</p>
 <p>which gives <span class="math notranslate nohighlight">\(\begin{bmatrix} 1&amp;0&amp;0 \end{bmatrix}\begin{bmatrix} 2\\0\\0 \end{bmatrix}=2\)</span> for the first term of <span class="math notranslate nohighlight">\(V\)</span>. All three terms produce the vector <span class="math notranslate nohighlight">\(V=\begin{bmatrix} 2\\3\\-4 \end{bmatrix}\)</span>. This calculation has used the fact that the summation of the product of pairs of terms with the same index, is the same as the dot product of two vectors;</p>
 <div class="math notranslate nohighlight">
 \[\begin{split} \displaystyle   \sum_{j=1}^n b_jx_j \equiv\begin{bmatrix} b_i &amp; \cdots &amp; b_n\end{bmatrix} ,\begin{bmatrix} x_1\\\vdots\\x_n \end{bmatrix}\end{split}\]</div>
-</div>
-<div class="section" id="interpreting-the-secular-determinant">
-<h2>12.9 Interpreting the Secular Determinant<a class="headerlink" href="#interpreting-the-secular-determinant" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="interpreting-the-secular-determinant">
+<h2>12.9 Interpreting the Secular Determinant<a class="headerlink" href="#interpreting-the-secular-determinant" title="Permalink to this headline">#</a></h2>
 <p>The nature of the secular determinant, and hence the matrix from which it is generated, needs explaining particularly in quantum mechanical problems. In these problems, the secular determinant is always symmetrical and contains only real numbers; it is Hermitian. The order of the element in both rows and columns is the same as the ordering of the basis set. If the secular determinant is diagonal, that is contains only the diagonal elements, and all the rest are zero, then the eigenvalues are the diagonal terms and are the solutions to the Schroedinger equation. If there are non-zero, off-diagonal terms, then these mix the basis set wavefunctions and energies together when the matrix is diagonalized. The off-diagonal terms are often referred to as coupling terms, because they ‘cause interaction’ between the energy levels in the diagonal of that row and column in which that matrix element is present. The type of interaction, Coulombic or dipole-dipole for instance, varies depending on the problem at hand. In the context of chemical kinetics the terms in the matrix are combinations of rate constants linking molecules of different types as described in by the rate equations, see section 13.</p>
 <p>In the matrix below (left) the energies <span class="math notranslate nohighlight">\(E_{10}, E_{20}\)</span>, and so forth are the solutions to the Schroedinger equation <span class="math notranslate nohighlight">\(H^0\psi^0 = E^0\psi^0\)</span> because all the off-diagonal terms are zero. Suppose now that another potential energy term V is added to represent a new interaction, an electric field is applied for instance, this changes the Schroedinger equation to a new one <span class="math notranslate nohighlight">\((H^0 + V)\psi = E\psi\)</span> with different energies (eigenvalues) and wavefunctions (eigenvectors), which will be linear combinations of the basis set wavefunctions <span class="math notranslate nohighlight">\(\psi^0\)</span>.</p>
 <div class="math notranslate nohighlight">
@@ -1961,8 +2189,8 @@ called the <em>eigenvalue spectrum</em>.</p>
 <p><img alt="Drawing" src="../_images/matrices-fig54.png" /></p>
 <p>Figure 54. The diagonal matrix produces energy levels (left). The interactions 1-3 and 2-3 move the energy levels about as sketched (right).</p>
 <hr class="docutils" />
-<div class="section" id="coupling-between-two-spins-the-secular-determinant-and-block-diagonal-matrices">
-<h3><strong>Coupling between two spins. The secular determinant and block diagonal matrices</strong><a class="headerlink" href="#coupling-between-two-spins-the-secular-determinant-and-block-diagonal-matrices" title="Permalink to this headline">¶</a></h3>
+<section id="coupling-between-two-spins-the-secular-determinant-and-block-diagonal-matrices">
+<h3><strong>Coupling between two spins. The secular determinant and block diagonal matrices</strong><a class="headerlink" href="#coupling-between-two-spins-the-secular-determinant-and-block-diagonal-matrices" title="Permalink to this headline">#</a></h3>
 <p>The coupling between two spins will be calculated. The magnetic moments of electrons and nuclei are coupled via the so-called <em>contact</em> interaction, introduced by Fermi to account for the hyperfine interactions in atomic spectra. The nucleus has spin angular momentum <span class="math notranslate nohighlight">\(I\)</span> and the electron <span class="math notranslate nohighlight">\(S\)</span>. The interaction represents the energy of the nuclear magnetic moment in the magnetic field at the nucleus, produced by the ‘spinning’ electrons. The coupling matrix with nuclear spin <span class="math notranslate nohighlight">\(S_n = 1/2\)</span> and electron spin <span class="math notranslate nohighlight">\(S_e = 1/2\)</span> produces a <span class="math notranslate nohighlight">\(4 \times 4\)</span> matrix because terms arise from spin combinations <span class="math notranslate nohighlight">\(\alpha\alpha, \alpha\beta, \beta\alpha, \beta\beta\)</span>. The first letter describes the electron spin, the second nuclear spin. The label <span class="math notranslate nohighlight">\(\alpha\)</span> represents either the electron or nuclear spin wavefunction with spin magnetic quantum number <span class="math notranslate nohighlight">\(m_s = 1/2\)</span> and <span class="math notranslate nohighlight">\(\beta\)</span> that with <span class="math notranslate nohighlight">\(m_s = -1/2\)</span> (<span class="math notranslate nohighlight">\(m_s\)</span> is also called the projection or azimuthal quantum number). With the basis set <span class="math notranslate nohighlight">\((\alpha\alpha, \alpha\beta, \beta\alpha, \beta\beta)\)</span> determining the order of terms in the rows and columns of the interaction matrix is</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle I\cdot S= \frac{a}{4}\begin{bmatrix} 1 &amp; 0 &amp; 0 &amp; 0\\0 &amp; -1 &amp;2 &amp; 0\\0 &amp; 2 &amp; -1 &amp;0\\ 0 &amp; 0 &amp; 0 &amp; 1 \end{bmatrix}\end{split}\]</div>
@@ -2017,9 +2245,9 @@ called the <em>eigenvalue spectrum</em>.</p>
 \[\begin{split}\displaystyle \left( \left[\begin{matrix}0 &amp; 1 &amp; 0 &amp; 0\\-1 &amp; 0 &amp; 1 &amp; 0\\1 &amp; 0 &amp; 1 &amp; 0\\0 &amp; 0 &amp; 0 &amp; 1\end{matrix}\right], \  \left[\begin{matrix}-3 &amp; 0 &amp; 0 &amp; 0\\0 &amp; 1 &amp; 0 &amp; 0\\0 &amp; 0 &amp; 1 &amp; 0\\0 &amp; 0 &amp; 0 &amp; 1\end{matrix}\right]\right)\end{split}\]</div>
 </div>
 </div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -2043,9 +2271,11 @@ called the <em>eigenvalue spectrum</em>.</p>
 
               </div>
               
-        
-            <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="matrices-Q40-44.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -2061,26 +2291,28 @@ called the <em>eigenvalue spectrum</em>.</p>
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-        
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-    <div class="container">
-      <p>
-        
-          By Godfrey Beddard<br/>
-        
-            &copy; Copyright 2022.<br/>
-      </p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Godfrey Beddard<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
     </div>
-  </footer>
-</main>
+    
+</div>
 
 
       </div>
     </div>
   
-  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>

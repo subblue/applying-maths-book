@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## Solutions Q11 - 16
+# # Solutions Q11 - 16
 
 # In[1]:
 
@@ -15,10 +15,10 @@ init_printing()                      # allows printing of SymPy results in types
 plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 
-# ### Q11 Answer
+# ## Q11 Answer
 # The first product $\displaystyle \pmb{AB}=\begin{bmatrix} 19 & 22\\ 43 & 50 \end{bmatrix}$ and the second $\displaystyle \pmb{BA}=\begin{bmatrix} 23 & 34\\ 31 & 46 \end{bmatrix}$, and as $\pmb{AB} \ne \pmb{BA}$ the matrices do not commute. The commutator $[\pmb{A},\pmb{B}]=\pmb{AB}-\pmb{BA}$ is obtained by subtraction and is the matrix $\displaystyle [\pmb{A},\pmb{B}]=\begin{bmatrix} -4 & -12\\ 12 & 4 \end{bmatrix}$.
 # 
-# ### Q12 answer
+# ## Q12 answer
 # $\displaystyle \pmb{A}^2 = \begin{bmatrix} 1 & 1\\ 0 & 1 \end{bmatrix}\begin{bmatrix} 1 & 1\\ 0 & 1 \end{bmatrix}=\begin{bmatrix} 1 & 2\\ 0 & 1 \end{bmatrix}$,
 # 
 # $\displaystyle \pmb{B}^2 = \begin{bmatrix} 1 & 0\\ 1 & 1 \end{bmatrix}\begin{bmatrix} 1 & 0\\ 1 & 1 \end{bmatrix}=\begin{bmatrix} 1 & 0\\ 2 & 1 \end{bmatrix}$,
@@ -47,7 +47,7 @@ b = Matrix([[1,0],[1,1]])
 a*a*b-b*b*a
 
 
-# ### Q13 answer
+# ## Q13 answer
 # Starting with $\pmb{xQy}$, first calculate $\pmb{Qy}$ then left-multiply by $\pmb{x}$, this is possible because the number of columns in the left-hand matrix is the same as the number of rows in the right hand one,
 # 
 # $$\displaystyle \pmb{Qy}=\begin{bmatrix} 1 & -4\\ -9 & 16 \end{bmatrix}\begin{bmatrix} y_1\\ y_2 \end{bmatrix}=\begin{bmatrix} y_1-4y_2\\ -9y_1+16y_2 \end{bmatrix}$$
@@ -59,7 +59,7 @@ a*a*b-b*b*a
 # 
 # The second quantity $\displaystyle \pmb{yQx }=\begin{bmatrix} y_1\\ y_2 \end{bmatrix}\begin{bmatrix} y_1-4y_2\\ -9y_1+16y_2 \end{bmatrix}\begin{bmatrix} x_1 & x_2 \end{bmatrix}$ is *not defined*, since the columns and rows are not commensurate, and the product has no meaning.
 # 
-# ### Q14 answer
+# ## Q14 answer
 # (a) When a determinant of size $n$ is multiplied out, its value is the sum and difference of $n$ terms each of which are the product of $n$ numbers. This is why a constant multiplying a matrix is raised to the $n^{th}$ power when the determinant is calculated.
 # 
 # (b) The inverse $\displaystyle \pmb{A}^{-1}=\frac{1}{ad-bc}\begin{bmatrix} d & -b\\ -c & a \end{bmatrix}$ and has a determinant $\displaystyle |\pmb{A}^{-1}|$. THis can be worked out in two ways; either divide each term by $ad-bc$ and evaluate or use $\displaystyle |j\pmb{M}|=j^n|\pmb{M}$, where $j$ is a number and $\pmb{M}$ a square matrix of size $n$. Either way the result is $\displaystyle |\pmb{A}^{-1}|=\frac{1}{ad-bc}$.
@@ -80,7 +80,7 @@ M.det()
 (M.inv()).det()
 
 
-# ### Q15 answer
+# ## Q15 answer
 # (a) By definition $[\pmb{P},\pmb{Q}]=\pmb{PQ}-\pmb{QP}$, and also $[\pmb{Q},\pmb{P}]=\pmb{QP}-\pmb{PQ}$ which proves that $[\pmb{P},\pmb{Q}] = -[\pmb{Q},\pmb{P}]$. The same is true of square matrices, because only then are both $\pmb{PQ}$ and $\pmb{QP}$ defined.
 # 
 # (b) (i) $P$ and $Q$ can represent any operators in the commutator not only matrices. As $d/dx$ and $x$ are operators,
@@ -143,7 +143,7 @@ simplify(com1)
 # 
 # In the second term, the inversion (or negation) operator changes each $x \to -x$.
 # 
-# ### Q16 answer
+# ## Q16 answer
 # (a) Expanding the exponentials $\displaystyle e^{\pmb{B}}e^{\pmb{C}}=\left(\pmb{1}+\pmb{B}+\frac{\pmb{B}^2}{2!}+\cdots \right)\left(\pmb{1}+\pmb{C}+\frac{\pmb{C}^2}{2!}+\cdots \right)$ 
 # 
 # as $\pmb{B}$ and $\pmb{C }$ commute $\pmb{BC}=\pmb{CB}$ and $\pmb{1}^2 =\pmb{1}$ and $\pmb{1B}=\pmb{B}$ and so on, then expanding just a few terms and collecting together to find the pattern of terms gives

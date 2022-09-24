@@ -4,11 +4,13 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Series, averages, partition functions, DNA melting, atom entropy &#8212; Applying Maths in the Chemical &amp; Biomolecular Sciences</title>
     
-  <link href="../_static/css/theme.css" rel="stylesheet">
-  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,40 +20,39 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Questions 1 - 13" href="chapter-5-B-Q1-13.html" />
@@ -63,7 +64,21 @@
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -72,9 +87,10 @@
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -92,14 +108,15 @@
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../intro.html">
-   Applying Maths in the Chemical and Biomolecular Sciences.
-  </a>
- </li>
-</ul>
-<ul class="current nav bd-sidenav">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Applying Maths in the Chemical and Biomolecular Sciences.
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../chapter-1/chapter1-intro.html">
    1. Numbers, Equations, Operators, and Algorithms.
@@ -204,11 +221,6 @@
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-2/chapter2-Q-10-13.html">
      Questions 10 -13
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-2/chapter2-C.html">
-     Euler’s theorem, roots of unity, x-ray diffraction structure factor.
     </a>
    </li>
    <li class="toctree-l2">
@@ -337,7 +349,7 @@
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../chapter-4/integration-intro.html">
-   4. Integration.
+   4 Integration.
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
   <label for="toctree-checkbox-4">
@@ -377,7 +389,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-4/integration-D.html">
-     Calculating an Average Value.
+     Calculating an Average.
     </a>
    </li>
    <li class="toctree-l2">
@@ -407,7 +419,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-4/integration-G.html">
-     Calculating the energy of a chemical bond using molecular orbitals
+     Calculating the energy of a Chemical Bond using Molecular Orbitals
     </a>
    </li>
    <li class="toctree-l2">
@@ -688,7 +700,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-7/matrices-D.html">
-     Rotation matrices: moving molecules
+     Rotation matrices: moving molecules. Coordinate transform as rotation.
     </a>
    </li>
    <li class="toctree-l2">
@@ -757,23 +769,13 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-7/matrices-K.html">
-     Calculating a bond length using moments of inertia
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-7/matrices-Q61.html">
-     Question 61
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="../chapter-7/matrices-L.html">
      Principal axes for Moments of Inertia
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-7/matrices-Q62.html">
-     Question 62
+    <a class="reference internal" href="../chapter-7/matrices-Q61-62.html">
+     Question 61 - 62
     </a>
    </li>
    <li class="toctree-l2">
@@ -1004,7 +1006,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-G.html">
-     PDE examples continued
+     PDE Continued
     </a>
    </li>
    <li class="toctree-l2">
@@ -1096,7 +1098,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-11/num-methods-answers8-12.html">
-     Solutions Q8 - 12
+     Solutions Q 8 - 12
     </a>
    </li>
    <li class="toctree-l2">
@@ -1258,112 +1260,227 @@
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/chapter-5/chapter-5-A.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/subblue/applying-maths-book"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/subblue/applying-maths-book/issues/new?title=Issue%20on%20page%20%2Fchapter-5/chapter-5-A.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        
-    </div>
-</div>
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/subblue/applying-maths-book/main?urlpath=lab/tree/applying_maths_book/chapter-5/chapter-5-A.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        <a class="colab-button" href="https://colab.research.google.com/github/subblue/applying-maths-book/blob/main/applying_maths_book/chapter-5/chapter-5-A.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
-                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
-                    src="../_static/images/logo_colab.png"
-                    alt="Interact on Colab">Colab</button></a>
-        
-        
-    </div>
-</div>
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/subblue/applying-maths-book/main?urlpath=lab/tree/applying_maths_book/chapter-5/chapter-5-A.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://colab.research.google.com/github/subblue/applying-maths-book/blob/main/applying_maths_book/chapter-5/chapter-5-A.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/subblue/applying-maths-book"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/subblue/applying-maths-book/issues/new?title=Issue%20on%20page%20%2Fchapter-5/chapter-5-A.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/chapter-5/chapter-5-A.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#power-series">
    Power series
@@ -1460,17 +1577,129 @@
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Series, averages, partition functions, DNA melting, atom entropy</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#power-series">
+   Power series
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#summation-of-waves">
+     <strong>
+      Summation of waves
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#diffraction">
+     <strong>
+      Diffraction
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#making-new-series">
+     <strong>
+      Making new series
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#table-of-summations">
+     Table of summations
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#convergence">
+   1.1 Convergence
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#average-quantities">
+   2 Average quantities
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#i-average-energy-of-a-molecule-or-atom">
+     <strong>
+      (i) Average energy of a molecule or atom
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ii-polymers">
+     <strong>
+      (ii) Polymers
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#iii-sequence-repeats-in-dna">
+     <strong>
+      (iii) Sequence repeats in DNA
+     </strong>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#partition-functions">
+   3 Partition Functions
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#i-bond-rotation">
+     <strong>
+      (i) Bond rotation
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ii-dna-melting-zipper-model">
+     <strong>
+      (ii) DNA melting: Zipper model
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#iii-entropy-of-atoms-and-molecules">
+     <strong>
+      (iii) Entropy of atoms and molecules
+     </strong>
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
               <div>
                 
-  <div class="section" id="series-averages-partition-functions-dna-melting-atom-entropy">
-<h1>Series, averages, partition functions, DNA melting, atom entropy<a class="headerlink" href="#series-averages-partition-functions-dna-melting-atom-entropy" title="Permalink to this headline">¶</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="series-averages-partition-functions-dna-melting-atom-entropy">
+<h1>Series, averages, partition functions, DNA melting, atom entropy<a class="headerlink" href="#series-averages-partition-functions-dna-melting-atom-entropy" title="Permalink to this headline">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import all python add-ons etc that will be needed later on</span>
@@ -1484,8 +1713,8 @@
 </div>
 </div>
 </div>
-<div class="section" id="power-series">
-<h2>Power series<a class="headerlink" href="#power-series" title="Permalink to this headline">¶</a></h2>
+<section id="power-series">
+<h2>Power series<a class="headerlink" href="#power-series" title="Permalink to this headline">#</a></h2>
 <p>The series expansions of exponential, sine, and cosine functions have been described in earlier chapters and there is nothing unusual or special about these. Any regular function can be expanded in a similar manner in powers of <span class="math notranslate nohighlight">\(x\)</span>, to produce its unique power series, which is in general</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle  f=a_0 +a_1x+a_2x^2 +a_3x^3 +\cdots = \sum_n a_nx^n \]</div>
@@ -1521,8 +1750,8 @@ summed to form a function. The power series</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle f (2) = 1 + 2 + 4 + 8 + \cdots\]</div>
 <p>The expansion of <span class="math notranslate nohighlight">\(1/(1 + x)\)</span> and of <span class="math notranslate nohighlight">\(1/(1 + ax)\)</span>, for example, follows immediately by substitution of <span class="math notranslate nohighlight">\(x \rightarrow -x \)</span> and <span class="math notranslate nohighlight">\(x \rightarrow ax\)</span>  into the series of equation (1). In the latter case for the series to be valid <span class="math notranslate nohighlight">\(|\, ax \,| &lt; 1\)</span>, where <span class="math notranslate nohighlight">\(a\)</span> is a constant.</p>
-<div class="section" id="summation-of-waves">
-<h3><strong>Summation of waves</strong><a class="headerlink" href="#summation-of-waves" title="Permalink to this headline">¶</a></h3>
+<section id="summation-of-waves">
+<h3><strong>Summation of waves</strong><a class="headerlink" href="#summation-of-waves" title="Permalink to this headline">#</a></h3>
 <p>The summation of waves occurs in fourier analysis, a wave in its general form is <span class="math notranslate nohighlight">\(e^{-i\omega t}\)</span> which propagates at frequency <span class="math notranslate nohighlight">\(\omega\)</span> and time <span class="math notranslate nohighlight">\(t\)</span>. The sum of many waves of different frequency and in phase with one another produces a pulse, this is how a pulse is formed in a mode-locked laser. It is also how diffraction from an array of scatterers, (electrons in atoms) produces a spot in a x-ray diffraction pattern from a single crystal. The sum to <span class="math notranslate nohighlight">\(N\)</span> terms is formed from waves at frequencies <span class="math notranslate nohighlight">\(n\omega\)</span>,</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle S=\sum_{n=-N}^N e^{-in\omega t}\]</div>
@@ -1536,9 +1765,9 @@ summed to form a function. The power series</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle S=\frac{\sin((N+1/2)\omega t)}{\sin(\omega t/2)}\]</div>
 <p>which is a series of spikes separated by <span class="math notranslate nohighlight">\(2\pi/\omega\)</span>, see fig. 21b chapter 9 (Fourier transforms).</p>
-</div>
-<div class="section" id="diffraction">
-<h3><strong>Diffraction</strong><a class="headerlink" href="#diffraction" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="diffraction">
+<h3><strong>Diffraction</strong><a class="headerlink" href="#diffraction" title="Permalink to this headline">#</a></h3>
 <p>Suppose that there is a line of identical oscillators each emitting waves in the arrangement of figure 0. These could be a row of slits in a transmission grating or reflective strips in a reflection grating but in either case the sources are all in phase and emit over all angles. Thy could also be water waves or scattered off atoms by x-rays. If we observe at some distant point, a distance many times larger than the grating period <span class="math notranslate nohighlight">\(d\)</span>, and at an angle <span class="math notranslate nohighlight">\(theta\)</span> we would like to know how the intensity of the summed waves varies as <span class="math notranslate nohighlight">\(theta\)</span> is changed. At some angles the waves will be in phase with one another and so produce a wave of maximum amplitude, less so at another angle and at yet other angles be completely out of phase. Thus we expect to repeatedly see bright and dark regions as the angle is changed.</p>
 <p>The calculation to do this means adding up the path lengths from each emitter and seeing what the total path is. The total number of wavelengths does not matter just what the surplus over a whole number of waves is, as this determines the phase and hence amplitude.</p>
 <p>Using figure 0, the difference in path-length between <span class="math notranslate nohighlight">\(r_1\)</span> and <span class="math notranslate nohighlight">\(r_0\)</span> is <span class="math notranslate nohighlight">\(r_1-r_0=\delta\)</span> and at the angle drawn <span class="math notranslate nohighlight">\(2\delta=\lambda \)</span>. The distance between <span class="math notranslate nohighlight">\(r_2-r_1=2\delta\)</span> and so on thus <span class="math notranslate nohighlight">\(n\delta=r_n-r_0\)</span>.</p>
@@ -1578,9 +1807,9 @@ summed to form a function. The power series</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle I=I_0\frac{\sin^2(Nkd\sin(\theta)/2)}{\sin^2(kd\sin(\theta)/2)}\]</div>
 <p>which is a <em>sinc</em> function, i.e. a central lobe plus decreasing oscillations to either side.</p>
-</div>
-<div class="section" id="making-new-series">
-<h3><strong>Making new series</strong><a class="headerlink" href="#making-new-series" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="making-new-series">
+<h3><strong>Making new series</strong><a class="headerlink" href="#making-new-series" title="Permalink to this headline">#</a></h3>
 <p><strong>(i)</strong> New series can often be made from existing ones. Suppose each term in the series of <span class="math notranslate nohighlight">\(f(x)=1+x+x^2+\cdots\)</span> is differentiated, then using eqn 2,</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle f^′(x)= \frac{1}{(1 - x)^2} =1+2x+3x^2 +4x^3 +\cdots+nx^{n-1} +\cdots  \tag{3}\]</div>
@@ -1601,9 +1830,9 @@ summed to form a function. The power series</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \sum_{n=0}^\infty y(1-y)^n = 1,\qquad |y-1|\lt 1\]</div>
 <p>but notice that there are now new limits. We can of course change notation and replace <span class="math notranslate nohighlight">\(y\)</span> with <span class="math notranslate nohighlight">\(x\)</span> or <span class="math notranslate nohighlight">\(p\)</span> or any other symbol.</p>
-</div>
-<div class="section" id="table-of-summations">
-<h3>Table of summations<a class="headerlink" href="#table-of-summations" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="table-of-summations">
+<h3>Table of summations<a class="headerlink" href="#table-of-summations" title="Permalink to this headline">#</a></h3>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle \begin{array}{l|l|l}
 \hline
@@ -1663,11 +1892,11 @@ summed to form a function. The power series</p>
 </div>
 </div>
 <p>Figure 1. The function <span class="math notranslate nohighlight">\(1/(1-x)^2 \)</span> (top black line) and its series approximations  <span class="math notranslate nohighlight">\(\Sigma_n nx^{n-1}\)</span> with <span class="math notranslate nohighlight">\(n\)</span> = 1, 2, <span class="math notranslate nohighlight">\(\cdots\)</span>.</p>
-</div>
-</div>
+</section>
+</section>
 <hr class="docutils" />
-<div class="section" id="convergence">
-<h2>1.1 Convergence<a class="headerlink" href="#convergence" title="Permalink to this headline">¶</a></h2>
+<section id="convergence">
+<h2>1.1 Convergence<a class="headerlink" href="#convergence" title="Permalink to this headline">#</a></h2>
 <p>In summing a series, it is important to ensure that it converges to some sensible expression such as <span class="math notranslate nohighlight">\(1/(1 - x)\)</span>, and is not going to be infinite or undefined. With many series, the summation is infinite and cannot therefore be expressed in a simple form. There are a number of convergence tests to ensure that a series has a finite result; many of these are complex, but a ratio test is a good way of determining if the series will be finite.
 In the ratio test, the ratio of any term <span class="math notranslate nohighlight">\(w\)</span> in the series to its preceding term is calculated</p>
 <div class="math notranslate nohighlight">
@@ -1676,9 +1905,9 @@ In the ratio test, the ratio of any term <span class="math notranslate nohighlig
 <p>In the series expansion of <span class="math notranslate nohighlight">\(\displaystyle (1 - x)^{-1} = 1 + x + x^2 \cdots\)</span> any individual term in the series is <span class="math notranslate nohighlight">\(x^n\)</span> so the ratio <span class="math notranslate nohighlight">\(\displaystyle r = \lim_{n \rightarrow \infty} \left| \frac{x^{n+1}}{x^n} \right | = |x|\)</span> is less than 1 only if <span class="math notranslate nohighlight">\(|x| \lt 1\)</span>; therefore when this is true the series converges. The interval of convergence for this sum is 0 <span class="math notranslate nohighlight">\(\le x \lt 1\)</span>, and the radius of convergence <span class="math notranslate nohighlight">\(s = 1\)</span>. For any other values this series diverges.</p>
 <p>Should the radius <span class="math notranslate nohighlight">\(s\)</span> be infinity the series is convergent for all values of <span class="math notranslate nohighlight">\(x\)</span>; for instance, the exponential series is convergent for all <span class="math notranslate nohighlight">\(x\)</span>. Testing for convergence properly is far more complicated than this example leads us to believe and a maths textbook should be consulted to understand how to do this rigorously.</p>
 <p>In general, a series converges if <span class="math notranslate nohighlight">\(x\)</span> is smaller than some number <span class="math notranslate nohighlight">\(s\)</span>, so that <span class="math notranslate nohighlight">\(|x_0 - x| \lt s\)</span> where <span class="math notranslate nohighlight">\(x_0\)</span> is a displacement about which the series converges; see Section 6 describing Taylor series for examples of this. The number <span class="math notranslate nohighlight">\(s\)</span> can be determined from the convergence test, Fig. 2. A useful property is that if a power series converges to some number and if each term of it is differentiated, the resulting series can be shown also to converge.</p>
-</div>
-<div class="section" id="average-quantities">
-<h2>2 Average quantities<a class="headerlink" href="#average-quantities" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="average-quantities">
+<h2>2 Average quantities<a class="headerlink" href="#average-quantities" title="Permalink to this headline">#</a></h2>
 <p>Any quantity, <span class="math notranslate nohighlight">\(x\)</span>, which is one of a set of measurements has an average value</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \langle x \rangle= \frac{\sum xp(x)}{\sum p(x)}      \tag{6}\]</div>
@@ -1689,8 +1918,8 @@ In the ratio test, the ratio of any term <span class="math notranslate nohighlig
 <div class="math notranslate nohighlight">
 \[\displaystyle \sigma^2 =\langle x^2 \rangle -\langle x \rangle^2 \]</div>
 <p>A more meaningful description is that <span class="math notranslate nohighlight">\(\sigma\)</span> is the <em>dispersion</em> in the value of <span class="math notranslate nohighlight">\(x\)</span>, meaning it is the spread in its value; experimental values are often quoted as <span class="math notranslate nohighlight">\(\langle x \rangle \pm \sigma\)</span>. The chapter on integration has examples of averaging using integrals rather than summations, and variance is described in Chapter 13 Data analysis.</p>
-<div class="section" id="i-average-energy-of-a-molecule-or-atom">
-<h3><strong>(i) Average energy of a molecule or atom</strong><a class="headerlink" href="#i-average-energy-of-a-molecule-or-atom" title="Permalink to this headline">¶</a></h3>
+<section id="i-average-energy-of-a-molecule-or-atom">
+<h3><strong>(i) Average energy of a molecule or atom</strong><a class="headerlink" href="#i-average-energy-of-a-molecule-or-atom" title="Permalink to this headline">#</a></h3>
 <p>The average energy is described by</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \langle E \rangle = \frac{\sum Ep(E)}{\sum p(E)} \tag{8}\]</div>
@@ -1718,9 +1947,9 @@ In the ratio test, the ratio of any term <span class="math notranslate nohighlig
 <div class="math notranslate nohighlight">
 \[ \displaystyle \langle E\rangle =k_BT^2\frac{1}{Z}\frac{dZ}{dT}=k_BT^2\frac{d\log(Z)}{dT}\tag{8d}\]</div>
 <p>If rotational levels are considered typically several tens of levels are populated at room temperature and the summation therefore involves many terms, for example if the rotational constant <span class="math notranslate nohighlight">\(B=1\;\mathrm{cm^{-1}}\)</span>, <span class="math notranslate nohighlight">\(\approx 55 \)</span> levels are needed to produce a constant average energy of <span class="math notranslate nohighlight">\(\approx 14500\;\mathrm{cm^{-1}}\)</span>. A vibration of <span class="math notranslate nohighlight">\(1000\;\mathrm{cm^{-1}}\)</span> levels only to <span class="math notranslate nohighlight">\(n=2\)</span> are needed to produce four figure accuracy of <span class="math notranslate nohighlight">\(500.4 \; \mathrm{ cm^{-1}}\)</span>.</p>
-</div>
-<div class="section" id="ii-polymers">
-<h3><strong>(ii) Polymers</strong><a class="headerlink" href="#ii-polymers" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="ii-polymers">
+<h3><strong>(ii) Polymers</strong><a class="headerlink" href="#ii-polymers" title="Permalink to this headline">#</a></h3>
 <p>In synthesizing polymers by radical or condensation polymerisation, the random nature of the chemistry that adds monomers to an already growing chain dictates that a range of polymer lengths is normally produced; the polymer is poly-disperse. Two different averages are frequently taken to characterize the polymer; one is the number average mass, the other the weight average mass.</p>
 <p>The number average mass <span class="math notranslate nohighlight">\(m_n\)</span> is</p>
 <div class="math notranslate nohighlight">
@@ -1736,9 +1965,9 @@ In the ratio test, the ratio of any term <span class="math notranslate nohighlig
 <div class="math notranslate nohighlight">
 \[\displaystyle \langle m_w\rangle = m_0 \frac{\sum_{k=1}\limits n_k^3e^{-an_k}}{\sum_{k=1}\limits n_k^2e^{-an_k}} = m_0\frac{4e^a+e^{2a}+1}{e^{2a}-1}\]</div>
 <p>which is clearly not the same as <span class="math notranslate nohighlight">\(\langle m_n \rangle\)</span>. The two averages are approximately linear, for <span class="math notranslate nohighlight">\(a&lt;1\)</span>, if plotted on a log-log plot and have a negative slope, with <span class="math notranslate nohighlight">\(\langle m_w\rangle \gt \langle m_n\rangle\)</span>. When <span class="math notranslate nohighlight">\(a \gt 1\)</span> the two curves converge to a limiting value of <span class="math notranslate nohighlight">\(m_0\)</span>.</p>
-</div>
-<div class="section" id="iii-sequence-repeats-in-dna">
-<h3><strong>(iii) Sequence repeats in DNA</strong><a class="headerlink" href="#iii-sequence-repeats-in-dna" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="iii-sequence-repeats-in-dna">
+<h3><strong>(iii) Sequence repeats in DNA</strong><a class="headerlink" href="#iii-sequence-repeats-in-dna" title="Permalink to this headline">#</a></h3>
 <p>Our DNA is packaged into <span class="math notranslate nohighlight">\(46\)</span> chromosomes (22 pairs and 2 sex chromosomes) but each chromosome is still too vast to analyse and so it is broken into more manageable pieces by mechanical or chemical or enzymatic means. If we want to identify a particular sequence, say of <span class="math notranslate nohighlight">\(n\)</span> base pairs  we will want to estimate what is the average separation of these is so that a suitable number of fragments are present containing the sequence.  It is assumed that the DNA is initially so long, <span class="math notranslate nohighlight">\(\sim 10^6\)</span> base pairs, that there are equal amounts of GCAT bases. If the sequence to identify is <span class="math notranslate nohighlight">\(n=8\)</span> bases long and is GGCATGGA then the chance of finding the first G is <span class="math notranslate nohighlight">\(1/4\)</span> and of the second adjacent G is <span class="math notranslate nohighlight">\( 1/16\)</span> and as each event is independent of any other the probabilities multiply to give <span class="math notranslate nohighlight">\(\displaystyle p=\frac{1}{4}\frac{1}{4}\frac{1}{4}\cdots= \frac{1}{4^n}\)</span>, thus for <span class="math notranslate nohighlight">\(n=8\)</span> the chance of finding any specified consecutive sequence is very small <span class="math notranslate nohighlight">\(1/4^8=1/65536\)</span>. This is true whatever the sequence is as long as the bases are in a fixed order. To detect an 8-mer the fragment will, of course, have to have on average at least these many bases since we do not know before hand if the sequence is present. What then is the average distance from one sequence to the next? The probability of <em>not</em> seeing the next sequence in <span class="math notranslate nohighlight">\(m\)</span> moves is <span class="math notranslate nohighlight">\((1-1/4^n)^{m-1} \)</span> and then seeing one in the next move is the product</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle p(m)=\left(1-\frac{1}{4^n}\right)^{m-1}\frac{1}{4^n}\]</div>
@@ -1749,10 +1978,10 @@ In the ratio test, the ratio of any term <span class="math notranslate nohighlig
 <div class="math notranslate nohighlight">
 \[\displaystyle \mu = \frac{1}{p}=4^n\]</div>
 <p>which means that when the sequence is long a huge number of base pairs are needed, on average, if the sequence is to be present more than once. This is important in PCR where a sequence of perhaps <span class="math notranslate nohighlight">\(15 \to 30 \)</span> primer base pairs are used to identify and so amplify the DNA. This primer sequence is so long that the probability of this occurring by random is tiny in fragmented DNA with only a few thousand base pairs. This makes the PCR amplification very specific indeed, i.e if the target sequence is not there, amplification is highly unlikely to occur by random chance.</p>
-</div>
-</div>
-<div class="section" id="partition-functions">
-<h2>3 Partition Functions<a class="headerlink" href="#partition-functions" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="partition-functions">
+<h2>3 Partition Functions<a class="headerlink" href="#partition-functions" title="Permalink to this headline">#</a></h2>
 <p>One of the commonest uses of the summation of a series of terms is in the calculation of the partition function. These are met formally in statistical mechanics but are also used in kinetic theory and in spectroscopy.</p>
 <p>The partition function is the <em>sum over states</em> of the distribution of energy levels usually assumed to follow Boltzmann’s exponential law (or distribution), which describes the probability</p>
 <div class="math notranslate nohighlight">
@@ -1780,8 +2009,8 @@ In the ratio test, the ratio of any term <span class="math notranslate nohighlig
 <div class="math notranslate nohighlight">
 \[\displaystyle p_i = \frac{g_ie^{-E_i/k_BT}}{Z}\]</div>
 <p>which is equation 12. The partition function, <span class="math notranslate nohighlight">\(Z\)</span>, is the normalization term and determines what fraction of the total energy is in each level or how energy is partitioned among the various level</p>
-<div class="section" id="i-bond-rotation">
-<h3><strong>(i) Bond rotation</strong><a class="headerlink" href="#i-bond-rotation" title="Permalink to this headline">¶</a></h3>
+<section id="i-bond-rotation">
+<h3><strong>(i) Bond rotation</strong><a class="headerlink" href="#i-bond-rotation" title="Permalink to this headline">#</a></h3>
 <p>The use of the word ‘particle’ is rather general, it might represent a molecule in a given vibrational or rotational energy level, a nuclear spin state in an NMR experiment, or the torsional energy of a restricted rotor as in the alkyl chain of hydrocarbons (Jackson 2006). In this example, consider butane, which has trans and gauche configurations as shown in figure 1a. These have different energies due to interactions between the protons on carbon <span class="math notranslate nohighlight">\(1\)</span> and <span class="math notranslate nohighlight">\(4\)</span> as bond C2 to C3 rotates.</p>
 <p><img alt="Drawing" src="../_images/series-fig2a.png" /></p>
 <p>Figure 1a Bond angles in butane. The angles, <span class="math notranslate nohighlight">\(0,120,240\)</span> represent the position of <span class="math notranslate nohighlight">\(C_4\)</span>.</p>
@@ -1796,10 +2025,10 @@ In the ratio test, the ratio of any term <span class="math notranslate nohighlig
 <p>As an example, if <span class="math notranslate nohighlight">\(E_g /k_BT = 1\)</span>, which would be the case for a small barrier between trans to gauche or at a high temperature, then the partition function <span class="math notranslate nohighlight">\(Z = 1.736\)</span>. If there are <span class="math notranslate nohighlight">\(10\)</span> repeat units in an alkane then the chance of an all-trans chain is <span class="math notranslate nohighlight">\(1/Z^{10} = 0.004\)</span> compared to <span class="math notranslate nohighlight">\(0.58\)</span> for butane. If <span class="math notranslate nohighlight">\(E_g /k_BT\)</span> is larger, which it will be at a low temperature, then the probability of being in the all-trans state is almost one, even for a long alkyl chain because <span class="math notranslate nohighlight">\(Z \to 1\)</span> at a low temperature.</p>
 <p><img alt="Drawing" src="../_images/series-fig2b.png" /></p>
 <p>Figure 1b. Probability of an all trans chain vs the ratio <span class="math notranslate nohighlight">\(E_g/k_BT\)</span> for butane and then for a ten fold longer chain of butane like repeat units. Large <span class="math notranslate nohighlight">\(E_g/k_BT\)</span> corresponds to low temperature or small energy <span class="math notranslate nohighlight">\(E_g\)</span>.</p>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="ii-dna-melting-zipper-model">
-<h3><strong>(ii) DNA melting: Zipper model</strong><a class="headerlink" href="#ii-dna-melting-zipper-model" title="Permalink to this headline">¶</a></h3>
+<section id="ii-dna-melting-zipper-model">
+<h3><strong>(ii) DNA melting: Zipper model</strong><a class="headerlink" href="#ii-dna-melting-zipper-model" title="Permalink to this headline">#</a></h3>
 <p>DNA can melt if the temperature is raised a little above room temperature, <span class="math notranslate nohighlight">\(60 \to 70^\text{o}\)</span>C would be typical depending on the composition. As a very simple model(see sketch) suppose that as the double stranded molecule unfolds the separated residues become free to move about on the backbone, with degeneracy <span class="math notranslate nohighlight">\(g\)</span>, but linked residues remain fixed in place. One end of the double stranded molecule is fixed thus the molecule can only unfold from the other. Link <span class="math notranslate nohighlight">\(n\)</span> can only open if all those before it are already open, i.e. links <span class="math notranslate nohighlight">\(n=0,1,2,\cdots, N-1\)</span> and the energy to do this is <span class="math notranslate nohighlight">\(\epsilon\)</span> so that <span class="math notranslate nohighlight">\(n\)</span> open links have energy <span class="math notranslate nohighlight">\(n\epsilon\)</span>. Closed links have energy zero and the energy needed to open a link other than that next to already open ones is infinite.  This model was first examined by C. Kittel Am. J. Physics, v37, p917, 1969.</p>
 <p>To open <span class="math notranslate nohighlight">\(n\)</span> links requires energy <span class="math notranslate nohighlight">\(n\epsilon\)</span> and those open links have degeneracy <span class="math notranslate nohighlight">\(g^n\)</span>. The partition function (equation 11) is therefore</p>
 <div class="math notranslate nohighlight">
@@ -1839,9 +2068,9 @@ In the ratio test, the ratio of any term <span class="math notranslate nohighlig
 <p>Figure 1c. Average length of free links in the zipper model <span class="math notranslate nohighlight">\(\langle n\rangle\)</span> <em>vs.</em> dimensionless energy <span class="math notranslate nohighlight">\(\epsilon/k_BT\)</span>. The vertical line is at <span class="math notranslate nohighlight">\(\ln(g)=\epsilon/k_BT\)</span>.</p>
 <hr class="docutils" />
 <p>At low values of <span class="math notranslate nohighlight">\(\epsilon/k_BT\)</span>, which means at high temperature or zero energy to unfold, almost the whole zipper is unfolded, as intuition would suggest Conversely at large <span class="math notranslate nohighlight">\(\epsilon/k_BT\)</span>, low temperature or large unfolding energy almost all bonds are intact. The transition between the two is quite sharp and occurs at <span class="math notranslate nohighlight">\(\ln(g)=\epsilon/k_BT\)</span> as can be seen in equation 12b. The heat capacity which is <span class="math notranslate nohighlight">\(d\langle E\rangle/dT\)</span> shows a sharp peak at this value. This overall behaviour  somewhat unexpected, the model does not immediately suggest that a ‘phase transition’ should occur. In effect it means that either the zipper is closed or it is fully open and hardly ever in between.</p>
-</div>
-<div class="section" id="iii-entropy-of-atoms-and-molecules">
-<h3><strong>(iii) Entropy of atoms and molecules</strong><a class="headerlink" href="#iii-entropy-of-atoms-and-molecules" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="iii-entropy-of-atoms-and-molecules">
+<h3><strong>(iii) Entropy of atoms and molecules</strong><a class="headerlink" href="#iii-entropy-of-atoms-and-molecules" title="Permalink to this headline">#</a></h3>
 <p>In the gas phase the entropy of atoms can be calculated knowing the contribution from translation and electronic terms. The calculation is in two parts, first the partition function must be evaluated and then used to obtain the entropy.</p>
 <p>The electronic part of the entropy is not zero if there are low lying electronic states as there are in carbon atoms. These are populated according the the Boltzmann distribution and increasingly so with temperature increase. The partition function and therefore the entropy due to translational motion similarly increases as the temperature increases. This occurs because more energy levels become populated and thus there are more ways to arrange the available energy.</p>
 <p>To calculate the entropy we start with the partition function as in eqn. 11. The partition function for electronic energy levels is straightforward and is</p>
@@ -1964,9 +2193,9 @@ S total  J/mol/K 158.1208
 </div>
 </div>
 </div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -1990,9 +2219,11 @@ S total  J/mol/K 158.1208
 
               </div>
               
-        
-            <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="chapter-5-intro.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -2008,26 +2239,28 @@ S total  J/mol/K 158.1208
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-        
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-    <div class="container">
-      <p>
-        
-          By Godfrey Beddard<br/>
-        
-            &copy; Copyright 2022.<br/>
-      </p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Godfrey Beddard<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
     </div>
-  </footer>
-</main>
+    
+</div>
 
 
       </div>
     </div>
   
-  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>

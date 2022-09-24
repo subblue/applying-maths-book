@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## Solutions Q 14 - 26
+# # Solutions Q 14 - 26
 
 # In[1]:
 
@@ -15,7 +15,7 @@ init_printing()                      # allows printing of SymPy results in types
 plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 
-# ### Q14 answer
+# ## Q14 answer
 # The series expansion of $\tan(x)$ is obtained with repeated differentiation and then evaluating each term at $x = 0$,
 # 
 # $$\displaystyle \frac{d\tan(x)}{dx}=1+\tan^2(x), \quad \frac{d^2\tan(x)}{dx^2}=2\tan(x)(1+\tan^2(x)~)$$
@@ -43,7 +43,7 @@ s = expand(series( f01, x ))
 s
 
 
-# ### Q15 answer
+# ## Q15 answer
 # Rearranging produces $\displaystyle x\frac{(1+x)}{(x-1)^2}=x\frac{(1+x)}{(x-1)(x-1)}=x\frac{(1+x)}{(1-x)^2}$ 
 # 
 # where the  last term  is obtained by multiplying top and bottom by $(-1)$ twice. Using the series expansion formula for the denominator and then multiplying out gives
@@ -54,14 +54,14 @@ s
 # 
 # which produces the required result after some rearranging. As in the last question sympy can do this calculation directly.
 # 
-# ### Q16 answer
+# ## Q16 answer
 # Rearranging the equation and expanding produces,
 # 
 # $$\displaystyle \frac{E}{mc^2}=\left(1-\frac{v^2}{c^2}\right)^{-1/2} \approx 1+\frac{v}{2c}+\frac{3}{8}\frac{v^2}{c^2}+\cdots$$
 # 
 # and at low speeds when $v/c \lt 1$ then $(v/c)^2 < v/c$ therefore $E= mc^2(1+v/2c+\cdots)$ which becomes $E = mc^2$  when $v \ll 2c$.
 # 
-# ### Q17 answer 
+# ## Q17 answer 
 # Using the formula $\displaystyle x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}$ the square root can be expanded provided $4ac/b^2 \lt 1$ and re-writing as $\displaystyle x=\frac{ -b\pm b\sqrt{1-4ac/b^2} }{2a} $
 # 
 # allows the square-root to be expanded. The result is 
@@ -70,7 +70,7 @@ s
 # 
 # Because $b^2 \gg ac$, the terms in $b^4$ and higher powers will be small. Taking the positive root gives $x \approx c/b$, and as $b$ is larger than $c$ this root will be small. The negative root gives $x \approx b/a$ which is large.
 # 
-# ### Q18 answer 
+# ## Q18 answer 
 # Expanding the exponential as a ratio for small $x$ gives 
 # 
 # $$\displaystyle \frac{x}{e^x -1}=\frac{x}{x+x^2/2!+x^3/3!+\cdots }$$
@@ -81,7 +81,7 @@ s
 # 
 # and when $x \rightarrow 0$ this produces $1$ as the limit. Separately differentiating top and bottom of the original function according to l’Hopital’s rule (Chapter 3.8) produces $\displaystyle e^{-x}$ and in the limit $x \rightarrow 0$ this is $1$.
 # 
-# ### Q19 answer
+# ## Q19 answer
 # (a) The expansion is $\displaystyle \sum_{k=1} e^{ikx} = e^{ix} + e^{2ix} + e^{3ix} + e^{4ix} +\cdots $
 # 
 # Removing the first term and substituting $\displaystyle e^{inx} = w^n$ gives $\displaystyle \sum_{k=1}e^{ikx} =e^{ix}(1+w^2 +w^3 +w^4 +\cdots+)$
@@ -105,7 +105,7 @@ series( 1/(1-w),w )
 # 
 # $$\displaystyle i\int\frac{e^{ix}}{1-e^{ix}}dx = i\int\frac{1}{-1+e^{-ix} }dx=-\ln(1-e^{ix})$$
 
-# ### Q20 answer
+# ## Q20 answer
 # The expansion is 
 # 
 # $$\displaystyle \begin{align}\sum\limits_{k=1}^\infty (1-p)p^{k-1} &=(1-p)\sum\limits_{k=1}^\infty p^{k-1}\\ &=(1-p)(1+p+p^2 +p^3 +\cdots) =1+p+p^2 \cdots -p-p^2 -\cdots = 1\end{align}$$
@@ -138,7 +138,7 @@ simplify(s)
 
 # The standard deviation is $\displaystyle \sqrt{\langle k^2 \rangle - \langle k \rangle^2}  = \frac{\sqrt{p}}{p-1}$ which for large $p$ becomes smaller but only as as $1/\sqrt p$ as $p$ increases. This behaviour is similar to that of repeated measurements reducing standard deviation as $1/\sqrt N$.
 #     
-# ### Q21 answer
+# ## Q21 answer
 # The function is rewritten as $(\sin(x)/x)^2$ and expanding the $\sin(x)$ as a Taylor series about $x = 0$ and dividing by $x$ produces,
 # 
 # $$\displaystyle \frac{\sin(x)}{x}=1-\frac{x^2}{3!}+\frac{x^4}{5!}+ \cdots $$
@@ -172,7 +172,7 @@ plt.show()
 # Figure 24. Graph of $(\sin(x)/x)^2$. The vertical lines are at the zeros of the function that occur at $n\pm \pi$ where $n$ = 1, 2, $\cdots$.
 # ____
 # 
-# ### Q22 answer
+# ## Q22 answer
 # (a) The power series expansion has the form $\displaystyle f(s)=e^{-s^2}=1-sf^{'}(0)+\frac{s^2}{s!}f^{''}(0)+\cdots $ and the derivatives are 
 # 
 # $$\displaystyle  \begin{align}f'(s) &= -2sf(s),\quad f''(s) = -2f(s) - 2sf'(s) \\ f'''(s) &= -2f'(s) - 2f'(s) - 2sf''(s),\quad f^4(s) = -4f''(s) - 2f'''(s) - 2sf'''(s) \end{align}$$
@@ -202,7 +202,7 @@ for x in [0.1,0.5,0.8,1.0]:
 
 # which shows that the series approximation is quite good even up to $x = 1$ if not too much precision is required. Naturally increasing the number of terms in the series will improve the precision. 
 # 
-# ### Q23 answer
+# ## Q23 answer
 # The series expansion can be worked out from first principles or looked up and based on $\displaystyle \frac{1}{1-ax} =1+ax+(ax)^2 +(ax)^3 +\cdots$ with $a=1,\,x=t^2$ and provided that $t^2 \lt 1$ the expansion will be valid;
 # 
 # $$\displaystyle \frac{1}{1-t^2} \approx 1+t^2 +t^4 +t^6 +\cdots$$
@@ -220,7 +220,7 @@ print('{:s}{:f}{:s}{:f}'.format('tanh(',x,') summation ',atanh))
 print('{:s}{:f}{:s}{:f}'.format('tanh(',x,') direct    ',np.arctanh(x)))   
 
 
-# ### Q24 answer
+# ## Q24 answer
 # Expanding $\psi$ about some arbitrary point $x_0$ and then adding and subtracting $h$ from $x$ gives
 # 
 # $$\displaystyle \psi(x)=\psi(x_0)+(x-x_0)\left( \frac{d\psi}{dx} \right)_{x_0} +\frac{(x-x_0)^2}{2!}\left( \frac{d^2\psi}{dx^2}  \right)_{x_0} + \cdots$$
@@ -233,7 +233,7 @@ print('{:s}{:f}{:s}{:f}'.format('tanh(',x,') direct    ',np.arctanh(x)))
 # 
 # $$\displaystyle \begin{align}\psi(x + h) + \psi(x - h) - 2\psi(x)&=\frac{D^2\psi(x)}{2}[(x+h-x_0)^2 +(x-h-x_0)^2-2(x-x_0)^2]\\&=h^2D^2\psi(x)\end{align}$$
 # 
-# ### Q25 answer
+# ## Q25 answer
 # The expansion is closely related to a standard one; see table of series expansions, giving $\displaystyle (1+u^2)^{-1} =1-u^2 +u^4 -u^6 +\cdots$
 # 
 # Integrating produces 
@@ -255,7 +255,7 @@ print('{:s}{:20.16f}'.format('series  ', s))
 print('{:s}{:20.16f}'.format('accurate', np.pi))
 
 
-# ### Q26 answer
+# ## Q26 answer
 # Expanding the cosine inside the integral gives
 # 
 # $$\displaystyle \int_0^x \cos(x^3)dx = x - \frac{x^7}{7\cdot2!}+\frac{x^{13}}{13\cdot4!} -\frac{x^{19}}{19\cdot6!}+\cdots=\sum\limits_{n=0}^\infty\frac{(-1)^nx^{6n+1}}{(6n+1)(2n!)}$$
@@ -281,12 +281,13 @@ x    = 2.0
 val  = [0.0 for i in range(nmax)]
 s    = 0.0
 for n in range(nmax):
-    s = s + (-1)**n*x**(6*n + 1)/((6*n + 1)*(fact(2*n)))
+    s = s + (-1)**n*x**(6*n + 1)/( (6*n + 1)*(fact(2*n)) )
     val[n] = s
+    plt.scatter(n, val[n], s=50,color='blue',facecolor='white',zorder=10)
     #print('{:4d}{:16.10f}'.format(n,s))   # print each value if needed
     pass
 print('{:s} {:f} {:s} {:f}'.format('sum to ',x, ' is ',s ))
-plt.plot(val,marker='o',markersize=4,color='blue')
+plt.plot(val,color='blue',linewidth=1)
 plt.xlabel('n')
 plt.ylabel('summed value')
 plt.axhline(0,color='grey',linewidth=1)

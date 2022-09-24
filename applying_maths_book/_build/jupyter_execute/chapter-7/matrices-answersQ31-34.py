@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## Solutions Q31 - 34
+# # Solutions Q31 - 34
 
 # In[1]:
 
@@ -16,7 +16,7 @@ init_printing()                      # allows printing of SymPy results in types
 plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 
-# ### Q31 answer
+# ## Q31 answer
 # The coordinates of vector $V_1$ are $x_1 = r\cos(\alpha)$ and $y_1 = r\sin(\alpha)$ and the second vector is rotated by $\theta$ from the first, so that $V_2$ has x-coordinate 
 # 
 # $$\displaystyle x_2 = r\cos(\alpha-\theta) = r \cos(\alpha)\cos(\theta) + r \sin(\alpha)\sin(\theta)$$
@@ -29,18 +29,18 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # $$\displaystyle \begin{bmatrix} x_2 \\ y_2 \end{bmatrix} = \begin{bmatrix} \cos(\theta) & \sin(\theta)\\ -\sin(\theta) & \cos (\theta) \end{bmatrix} \begin{bmatrix} x_1 \\ y_1 \end{bmatrix}$$
 # 
-# ### Q32 answer
+# ## Q32 answer
 # The rotation matrix is $\displaystyle \pmb{R}_\theta = \begin{bmatrix} \cos(\theta) & \sin(\theta)\\ -\sin(\theta) & \cos (\theta) \end{bmatrix} $ and its square is 
 # 
 # $$\displaystyle \pmb{R}_\theta = \begin{bmatrix} \cos(\theta) & \sin(\theta) \\ -\sin(\theta) & \cos(\theta) \end{bmatrix} \begin{bmatrix} \cos(\theta) & \sin(\theta)\\ -\sin(\theta) & \cos (\theta) \end{bmatrix}= \begin{bmatrix} \cos^2(\theta)-\sin^2(\theta) & 2\sin(\theta)\cos(\theta)\\ -2\sin(\theta)\cos(\theta) & \cos^2 (\theta)-\sin^2(\theta) \end{bmatrix}$$
 # 
 # Substituting the double angle relationships into the last matrix shows that $R(2\theta) = R(\theta)^2$.
 # 
-# ### Q33 answer
+# ## Q33 answer
 # 
 # There is no set answer to this question.
 # 
-# ### Q34 answer
+# ## Q34 answer
 # As rotation only occurs about the z-axis and by $90^\text{o}$,the product of the three rotation matrices becomes
 # 
 # $$\displaystyle  \begin{bmatrix} \cos(\theta) & \sin(\theta) & 0\\ -\sin(\theta) & \cos (\theta) & 0 \\ 0 & 0 & 1 \end{bmatrix} =\begin{bmatrix} 0 & 1 & 0\\ -1 & 0 & 0 \\ 0& 0 & 1\end{bmatrix}$$

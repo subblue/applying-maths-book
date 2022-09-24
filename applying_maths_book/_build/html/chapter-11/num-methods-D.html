@@ -4,11 +4,13 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>The phase plane, nullclines, and stable points &#8212; Applying Maths in the Chemical &amp; Biomolecular Sciences</title>
     
-  <link href="../_static/css/theme.css" rel="stylesheet">
-  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,40 +20,39 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Questions 17 - 20" href="num-methods-Q17-20.html" />
@@ -63,7 +64,21 @@
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -72,9 +87,10 @@
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -92,14 +108,15 @@
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../intro.html">
-   Applying Maths in the Chemical and Biomolecular Sciences.
-  </a>
- </li>
-</ul>
-<ul class="current nav bd-sidenav">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Applying Maths in the Chemical and Biomolecular Sciences.
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../chapter-1/chapter1-intro.html">
    1. Numbers, Equations, Operators, and Algorithms.
@@ -204,11 +221,6 @@
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-2/chapter2-Q-10-13.html">
      Questions 10 -13
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-2/chapter2-C.html">
-     Euler’s theorem, roots of unity, x-ray diffraction structure factor.
     </a>
    </li>
    <li class="toctree-l2">
@@ -337,7 +349,7 @@
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../chapter-4/integration-intro.html">
-   4. Integration.
+   4 Integration.
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
   <label for="toctree-checkbox-4">
@@ -377,7 +389,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-4/integration-D.html">
-     Calculating an Average Value.
+     Calculating an Average.
     </a>
    </li>
    <li class="toctree-l2">
@@ -407,7 +419,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-4/integration-G.html">
-     Calculating the energy of a chemical bond using molecular orbitals
+     Calculating the energy of a Chemical Bond using Molecular Orbitals
     </a>
    </li>
    <li class="toctree-l2">
@@ -688,7 +700,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-7/matrices-D.html">
-     Rotation matrices: moving molecules
+     Rotation matrices: moving molecules. Coordinate transform as rotation.
     </a>
    </li>
    <li class="toctree-l2">
@@ -757,23 +769,13 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-7/matrices-K.html">
-     Calculating a bond length using moments of inertia
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-7/matrices-Q61.html">
-     Question 61
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="../chapter-7/matrices-L.html">
      Principal axes for Moments of Inertia
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-7/matrices-Q62.html">
-     Question 62
+    <a class="reference internal" href="../chapter-7/matrices-Q61-62.html">
+     Question 61 - 62
     </a>
    </li>
    <li class="toctree-l2">
@@ -1004,7 +1006,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-G.html">
-     PDE examples continued
+     PDE Continued
     </a>
    </li>
    <li class="toctree-l2">
@@ -1096,7 +1098,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="num-methods-answers8-12.html">
-     Solutions Q8 - 12
+     Solutions Q 8 - 12
     </a>
    </li>
    <li class="toctree-l2">
@@ -1258,112 +1260,232 @@
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/chapter-11/num-methods-D.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/subblue/applying-maths-book"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/subblue/applying-maths-book/issues/new?title=Issue%20on%20page%20%2Fchapter-11/num-methods-D.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        
-    </div>
-</div>
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/subblue/applying-maths-book/main?urlpath=lab/tree/applying_maths_book/chapter-11/num-methods-D.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        <a class="colab-button" href="https://colab.research.google.com/github/subblue/applying-maths-book/blob/main/applying_maths_book/chapter-11/num-methods-D.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
-                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
-                    src="../_static/images/logo_colab.png"
-                    alt="Interact on Colab">Colab</button></a>
-        
-        
-    </div>
-</div>
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/subblue/applying-maths-book/main?urlpath=lab/tree/applying_maths_book/chapter-11/num-methods-D.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://colab.research.google.com/github/subblue/applying-maths-book/blob/main/applying_maths_book/chapter-11/num-methods-D.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/subblue/applying-maths-book"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/subblue/applying-maths-book/issues/new?title=Issue%20on%20page%20%2Fchapter-11/num-methods-D.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/chapter-11/num-methods-D.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction">
+   Introduction
+  </a>
+ </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#the-phase-plane-2">
    6.1 The phase plane
@@ -1427,17 +1549,101 @@
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>The phase plane, nullclines, and stable points</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction">
+   Introduction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-phase-plane-2">
+   6.1 The phase plane
+   <span class="math notranslate nohighlight">
+    \(^2\)
+   </span>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#isoclines-and-nullclines">
+   6.2 Isoclines and nullclines
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#non-linear-equations-the-pendulum">
+   6.3 Non-linear equations: the pendulum
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#eulercromer-equations">
+   6.4 Euler–Cromer equations
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sir-model-of-the-spread-of-diseases">
+   7 SIR model of the spread of diseases
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#rate-equations">
+   7.1 Rate equations
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-sir-phase-plane">
+   7.2 The SIR phase plane
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#steady-states-isoclines-and-nullclines">
+   7.3 Steady states, isoclines, and nullclines
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#threshold-for-an-epidemic-and-maximum-and-total-number-infected">
+   7.4 Threshold for an epidemic and maximum and total number infected
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sensitivity-to-rate-constant-k-2">
+   7.5 Sensitivity to rate constant
+   <span class="math notranslate nohighlight">
+    \(k_2\)
+   </span>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#calculating-the-time-profile-of-an-epidemic">
+   7.6 Calculating the time profile of an epidemic
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
               <div>
                 
-  <div class="section" id="the-phase-plane-nullclines-and-stable-points">
-<h1>The phase plane, nullclines, and stable points<a class="headerlink" href="#the-phase-plane-nullclines-and-stable-points" title="Permalink to this headline">¶</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="the-phase-plane-nullclines-and-stable-points">
+<h1>The phase plane, nullclines, and stable points<a class="headerlink" href="#the-phase-plane-nullclines-and-stable-points" title="Permalink to this headline">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import all python add-ons etc that will be needed later on</span>
@@ -1451,6 +1657,8 @@
 </div>
 </div>
 </div>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h2>
 <p>In the study of two-dimensional linear and non-linear differential equations, the phase plane, nullclines, and fixed points are very useful tools for analysing the equations before any numerical or algebraic calculation. The phase plane allows fixed points to be found, these are also called <em>steady state</em>, or <em>equilibrium</em> points and occur when <span class="math notranslate nohighlight">\(dy/dt = dx/dt = 0\)</span>. Some examples are also given in Chapter 10. <em>Closed orbits</em> and <em>limit-cycles</em> can also be observed in the phase plane and are described shortly.</p>
 <p>Written generally, pairs of differential equations are</p>
 <div class="math notranslate nohighlight">
@@ -1458,8 +1666,9 @@
 <p>where the functions <span class="math notranslate nohighlight">\(f\)</span> and <span class="math notranslate nohighlight">\(g\)</span> may contain terms in <span class="math notranslate nohighlight">\(x,\; y\)</span> and perhaps <span class="math notranslate nohighlight">\(t\)</span>. For example,</p>
 <div class="math notranslate nohighlight">
 \[ \frac{dy}{dt} = xy+x^2 -y^2, \qquad \frac{dy}{dt}=-\sin(x)+(y-1)^2\]</div>
-<div class="section" id="the-phase-plane-2">
-<h2>6.1 The phase plane <span class="math notranslate nohighlight">\(^2\)</span><a class="headerlink" href="#the-phase-plane-2" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="the-phase-plane-2">
+<h2>6.1 The phase plane <span class="math notranslate nohighlight">\(^2\)</span><a class="headerlink" href="#the-phase-plane-2" title="Permalink to this headline">#</a></h2>
 <p>The phase plane is the plot of <span class="math notranslate nohighlight">\(y\)</span> vs <span class="math notranslate nohighlight">\(x\)</span> and is found by calculating <span class="math notranslate nohighlight">\(dy/dx\)</span> by using the chain rule. In practice, this means dividing the equation for <span class="math notranslate nohighlight">\(y\)</span> by that for <span class="math notranslate nohighlight">\(x\)</span>; therefore the phase plane does not explicitly contain time. If the resulting equation can be integrated, the family of curves produced can be plotted for different values of the integration constant, which means for different initial values of <span class="math notranslate nohighlight">\(y\)</span> and <span class="math notranslate nohighlight">\(x\)</span>. If the integration cannot be done analytically, then a numerical solution of the two initial equations has to be found and, again, <span class="math notranslate nohighlight">\(y\)</span> plotted vs <span class="math notranslate nohighlight">\(x\)</span> at various times until the entire phase plane is produced.</p>
 <p>For example, if the equations governing the motion of a particle in a particular double-well potential, Fig. 13, are</p>
 <div class="math notranslate nohighlight">
@@ -1474,17 +1683,17 @@
 <p>making fixed points at <span class="math notranslate nohighlight">\(x=0,\;y=0\)</span> and <span class="math notranslate nohighlight">\(x = \pm 1,\; y = 0\)</span>. A more detailed analysis of fixed points in general shows that they may be stable, unstable or saddle points, see Jeffrey (1990) and/or Strogatz (1994).</p>
 <p>A stable steady state has the property of returning to that state after a small perturbation to it is made, and clearly, the points (<span class="math notranslate nohighlight">\(\pm 1,\; 0\)</span>) are of this nature, Fig. 13 as they are at the bottom of the wells. The origin is a saddle point, and is not fully stable because moving in any direction from the origin the gradient is negative, except moving up or down the y-axis.</p>
 <p><span class="math notranslate nohighlight">\(^2\)</span> The name is historical and apparently was originally used in dynamics as the plane containing position <span class="math notranslate nohighlight">\(x\)</span> and momentum <span class="math notranslate nohighlight">\(mdx/dt\)</span> of a object as it moved under the influence of a force.</p>
-</div>
-<div class="section" id="isoclines-and-nullclines">
-<h2>6.2 Isoclines and nullclines<a class="headerlink" href="#isoclines-and-nullclines" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="isoclines-and-nullclines">
+<h2>6.2 Isoclines and nullclines<a class="headerlink" href="#isoclines-and-nullclines" title="Permalink to this headline">#</a></h2>
 <p>The equation produced when the rate of change is zero is sometimes called an isocline or nullcline. Just as on an incline we move up, or on a decline down, an isocline means that the gradient is always the same and must therefore be a constant number, and a contour path is followed in the phase plane. A nullcline occurs when this constant is zero The nullclines are <span class="math notranslate nohighlight">\(x - x^3 = 0\)</span> and <span class="math notranslate nohighlight">\(y = 0\)</span>, which in this case are both straight lines. Isoclines are the lines when <span class="math notranslate nohighlight">\(x - x^3 = a\)</span> and <span class="math notranslate nohighlight">\(y = a\)</span> where <span class="math notranslate nohighlight">\(a\)</span> is some constant. Assuming that <span class="math notranslate nohighlight">\(y\)</span> is plotted vertically and <span class="math notranslate nohighlight">\(x\)</span> horizontally, the ‘flow’ or vector showing the direction of change, is always horizontal at each point along the nullcline, <span class="math notranslate nohighlight">\(dy/dt = 0\)</span>, no matter what its curve is, and vertical on the nullcline <span class="math notranslate nohighlight">\(dx/dt = 0\)</span>. The nullclines also partition the phase plane into areas where the derivatives have different sign; exactly what these are depends upon the particular equations. Figure  shows the phase portrait with isoclines at different <span class="math notranslate nohighlight">\(c\)</span> values and the nullclines, which are dotted. The figure-of-eight curve is the <em>separatrix</em> and, in this example, is the point when the particle has just enough initial energy to cross the barrier separating the region of oscillation in one well from motion over the barrier, and hence, motion between both wells. When the particle is placed in the bottom of either well, it has zero potential and zero kinetic energy. If it is not pushed, it will remain in this stable state at (<span class="math notranslate nohighlight">\(\pm 1, 0\)</span>) which are the points on the axis marked with a red dot.</p>
 <p>Finally, in this short introduction to the phase plane, it must be remembered that although the phase plane equation 37 does not explicitly contain time, <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> are still functions of time and that time passing on the phase plane is not measured by equal <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> motion, but in a very non-linear manner. This can only really be observed by plotting pairs of <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> coordinates on the phase plane at various times after solving the coupled equations.</p>
 <p><img alt="Drawing" src="../_images/num-methods-fig13.png" /></p>
 <p>Figure 13. Example of a phase - plane with a few contours (isoclines) making up the phase portrait. The potential energy profile  has barrier with a maximum energy of zero. The motion of a particle starting at different points is shown on the right. The <span class="math notranslate nohighlight">\(dy/dt = 0\)</span> nullclines are shown dotted, the other nullcline, <span class="math notranslate nohighlight">\(dx/dt = y = 0\)</span> is the x-axis. The arrows show the direction of motion around the phase plane. The separatrix is the light blue ‘figure of eight’ and passes through the origin.</p>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="non-linear-equations-the-pendulum">
-<h2>6.3 Non-linear equations: the pendulum<a class="headerlink" href="#non-linear-equations-the-pendulum" title="Permalink to this headline">¶</a></h2>
+<section id="non-linear-equations-the-pendulum">
+<h2>6.3 Non-linear equations: the pendulum<a class="headerlink" href="#non-linear-equations-the-pendulum" title="Permalink to this headline">#</a></h2>
 <p>A rigid pendulum with a heavy bob at its end can move in two ways. When the energy is small, it will oscillate about the vertical in a good approximation to simple harmonic motion, and when the energy is large enough it will rotate continuously in the vertical plane. If the displacement from the vertical is not small, the motion is non-linear and the equation of motion has no exact analytical solution. If it is assumed that the pivot holding the pendulum is frictionless and that no air or other resistance hinders the motion, then the equation of motion is</p>
 <div class="math notranslate nohighlight">
 \[ \frac{d^2\varphi}{dt^2}+\omega^2\sin(\varphi)=0 \tag{38}\]</div>
@@ -1544,10 +1753,10 @@ velocity,</p>
 <p>An exact algebraic solution is only possible when the angle is small and <span class="math notranslate nohighlight">\(\sin(\varphi) \to \varphi\)</span>, which is the harmonic oscillator and has a frequency <span class="math notranslate nohighlight">\(\omega\)</span> and a period of 1/<span class="math notranslate nohighlight">\(\omega\)</span> seconds. When the starting angle is not small, the angular motion is not purely sinusoidal, as may be seen in the figure, but spends longer near to the turning points at the top of the swing.</p>
 <p><img alt="Drawing" src="../_images/num-methods-fig15.png" /></p>
 <p>Figure 15. Angle (radians) and velocity (radians/sec) vs time of the non-linear pendulum, with <span class="math notranslate nohighlight">\(\omega = 1,\;v_0=0\)</span> and an initial angle of <span class="math notranslate nohighlight">\(8\pi/9\)</span>. Notice that the velocity is zero when the potential energy is a maximum. This is when its angle is greatest or smallest and vice versa.</p>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="eulercromer-equations">
-<h2>6.4 Euler–Cromer equations<a class="headerlink" href="#eulercromer-equations" title="Permalink to this headline">¶</a></h2>
+<section id="eulercromer-equations">
+<h2>6.4 Euler–Cromer equations<a class="headerlink" href="#eulercromer-equations" title="Permalink to this headline">#</a></h2>
 <p>Although the Euler method will work well in all our examples, it is not necessarily the best method to use for oscillating systems, such as the pendulum, because energy is not conserved that well. By changing the algorithm as below then the error in the energy becomes proportional to <span class="math notranslate nohighlight">\(\Delta t^3\)</span> which is a significant improvement over <span class="math notranslate nohighlight">\(\Delta t\)</span> when the step size is small. The angle is calculated as <span class="math notranslate nohighlight">\(\mathtt{phi= phi + h*v}\)</span> instead of <span class="math notranslate nohighlight">\(\mathtt{phi= phi + h*dphidt}\)</span> as in the Euler method, Algorithm 14. See Gould et al. (2007) for more details of this and related methods.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1581,9 +1790,9 @@ velocity,</p>
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="sir-model-of-the-spread-of-diseases">
-<h2>7 SIR model of the spread of diseases<a class="headerlink" href="#sir-model-of-the-spread-of-diseases" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="sir-model-of-the-spread-of-diseases">
+<h2>7 SIR model of the spread of diseases<a class="headerlink" href="#sir-model-of-the-spread-of-diseases" title="Permalink to this headline">#</a></h2>
 <p>A very interesting, and relatively straightforward example of coupled equations is the spread of an infectious disease, because, besides being intrinsically interesting, especially during the Covid19 epidemic, it allows a clear illustration of a number of features such as the phase plane and nullclines.</p>
 <p>An epidemic is defined as the number of infected persons, increasing with time to a number above those initially infected. Kermack &amp; McKendrick (1927), were the first to describe a realistic disease model, which they used to study the spread of a plague on the island of Bombay in 1905/6. In the SIR model, one or more infected persons are introduced into a community where all are equally susceptible to the disease. The model assumes, first, that the disease spreads by contact one to another; each person runs the course of the disease and then cannot be re-infected; and, secondly, that the duration of the infection is short compared to an individual’s lifetime, so that the total number of people is constant. Finally, the number of individuals is fixed once the infection has begun; therefore this model only describes infection in a closed community and is called a compartmentalised model. This is called the S-I-R model, because individuals are either susceptible (S), infected (I), or removed (R). The scheme is</p>
 <div class="math notranslate nohighlight">
@@ -1591,9 +1800,9 @@ velocity,</p>
 <p>and the aim is to calculate how R, S, and I change with time. In doing so we shall set up a set of rate equations and suppose that the numbers of individuals involved is sufficiently large that the integration is valid. In the case of Covid-19 the numbers are so large that this should not present a problem.</p>
 <p>The first step describes the transmission of the infection, and the second, the recovery from infection, hence, the number infected I must reach zero at long times as the infection ends. The susceptible persons become infected by reacting with someone who is already infected with a rate constant <span class="math notranslate nohighlight">\(k_2\)</span>. In chemical terms, the rate of such a second-order reaction is <span class="math notranslate nohighlight">\(k_2[S][I]\)</span>, supposing that <span class="math notranslate nohighlight">\([S]\)</span> and <span class="math notranslate nohighlight">\([I]\)</span> are concentrations. The second step, infected to removed, has a rate constant <span class="math notranslate nohighlight">\(k_1\)</span>, the reciprocal of which is the average time that an individual once infected takes to move into the removed class; the rate for this is <span class="math notranslate nohighlight">\(k_1[I]\)</span>. Out of the constant total number of individuals, <span class="math notranslate nohighlight">\(N = S + I + R\)</span>; the number <span class="math notranslate nohighlight">\(R_0\)</span> before the infection starts are those that are immune and clearly at least one infected person has initially to be present. The second equation shows that given time, all individuals will end up in the removed class R, and play no further part in the infection, being immune, isolated, or dead. In this model, the epidemic is assumed to run its course without the intervention of medication, which, given at random times to different individuals, would prematurely cause its end.</p>
 <p>If S, I, and R were chemical species, the scheme above would represent a quadratic autocatalytic reaction where R is the product that takes no further part in the reaction. To start the reaction, some initial amount of species I has to be present.</p>
-</div>
-<div class="section" id="rate-equations">
-<h2>7.1 Rate equations<a class="headerlink" href="#rate-equations" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="rate-equations">
+<h2>7.1 Rate equations<a class="headerlink" href="#rate-equations" title="Permalink to this headline">#</a></h2>
 <p>The rate equations for scheme 40 are</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{align}\qquad\qquad
@@ -1610,9 +1819,9 @@ N &amp;= I + S + R
 <p>then <span class="math notranslate nohighlight">\(dS/dt \gt 0\)</span> and an epidemic will occur.</p>
 <p>Typical values for the reproductive ratio are smallpox = 4; mumps = 5; German measles (rubella) = 6; measles = 12; malaria <span class="math notranslate nohighlight">\(\approx\)</span>100, (see Britton 2003).</p>
 <p><span class="math notranslate nohighlight">\(^3\)</span> Many texts call the reproductive ratio <span class="math notranslate nohighlight">\(R_0\)</span>, which is unfortunately confusing with <span class="math notranslate nohighlight">\(R_0\)</span>, the initial number in the removed class.</p>
-</div>
-<div class="section" id="the-sir-phase-plane">
-<h2>7.2 The SIR phase plane<a class="headerlink" href="#the-sir-phase-plane" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="the-sir-phase-plane">
+<h2>7.2 The SIR phase plane<a class="headerlink" href="#the-sir-phase-plane" title="Permalink to this headline">#</a></h2>
 <p>A graph of <span class="math notranslate nohighlight">\(I\)</span> vs <span class="math notranslate nohighlight">\(S\)</span> is the phase plane. The phase plane shows how the number of infectives <span class="math notranslate nohighlight">\(I\)</span>
 and susceptibles <span class="math notranslate nohighlight">\(S\)</span> change with time, even though time is only implicit on the graph. The relationship between I and S is found by using the chain rule <span class="math notranslate nohighlight">\(\displaystyle\frac{dI}{dt}=\frac{dI}{dS}\frac{dS}{dt}\)</span> and then  integrating:</p>
 <div class="math notranslate nohighlight">
@@ -1632,13 +1841,13 @@ and susceptibles <span class="math notranslate nohighlight">\(S\)</span> change 
 <hr class="docutils" />
 <p>The definition of an epidemic is that the number of individuals infected increases above those infected initially. In Fig. 16, the initial number infected is found where a curve touches the diagonal line, this is 0.25 with <span class="math notranslate nohighlight">\(S_0/N = 0.75\)</span>, and <span class="math notranslate nohighlight">\(I_N\)</span> increases to <span class="math notranslate nohighlight">\(\approx 0.4\)</span> at its maximum and therefore, an epidemic may occur. Starting at <span class="math notranslate nohighlight">\(S_0/N = 0.25\)</span>, the number infected decreases continuously and therefore an epidemic cannot occur. This simple approach indicates the importance of immunization and vaccination.</p>
 <p>Immunizing or vaccinating a population reduces those susceptible, reducing <span class="math notranslate nohighlight">\(S_0\)</span> and the reproductive ratio <span class="math notranslate nohighlight">\(R_R\)</span>, and so making an epidemic less possible. To the right of <span class="math notranslate nohighlight">\(S_N^{max}\)</span>, Fig.16, an epidemic occurs, although it may not be severe if the initial value of <span class="math notranslate nohighlight">\(S_0/N\)</span> is close to the maximum; to its left the infection dies out. The turnover from epidemic to no epidemic is the point where <span class="math notranslate nohighlight">\(S_N^{max}\)</span> touches the diagonal. In the figure this occurs at <span class="math notranslate nohighlight">\(I_N^{max} = 1 - 1/3 = 0.66\)</span>, meaning that <span class="math notranslate nohighlight">\(66\)</span>% immunization is needed to prevent an epidemic, which is a low value. With an infectious disease such as mumps or German measles, this value has to be <span class="math notranslate nohighlight">\(\approx\)</span> 0.85, meaning that 85% of the population has to be immunized to prevent an epidemic. Notice that not everyone needs to be immunized to prevent an epidemic; this is called <em>herd immunity</em>. A few individuals will by chance, never meet an infected person. An immunization/vaccination level of <span class="math notranslate nohighlight">\(85\)</span>% may be difficult to achieve in a population by voluntary mass vaccination. Should the level of immunization fall by only a small amount, the threshold at <span class="math notranslate nohighlight">\(S_N^{max}\)</span> may be crossed and an epidemic could occur. The number of individuals being immunized can suddenly fall, as happened in the UK in the late 1990’s and early in this century, due to poorly researched and inflammatory news media stories about the MMR vaccine for children. Some parents were reluctant to have their children vaccinated even though the risk of damage to health and even death were far greater than receiving the vaccine itself. Similar concerns have prevented many people from becoming vaccinated for Covid19 even though world-wide multiple millions of doses have been administered.</p>
-</div>
-<div class="section" id="steady-states-isoclines-and-nullclines">
-<h2>7.3 Steady states, isoclines, and nullclines<a class="headerlink" href="#steady-states-isoclines-and-nullclines" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="steady-states-isoclines-and-nullclines">
+<h2>7.3 Steady states, isoclines, and nullclines<a class="headerlink" href="#steady-states-isoclines-and-nullclines" title="Permalink to this headline">#</a></h2>
 <p>In a rate equation, a steady state is produced when the rate of change is zero. In the SIR model this means <span class="math notranslate nohighlight">\(dS/dt = 0\)</span> and <span class="math notranslate nohighlight">\(dI/dt = 0\)</span>. When molecules, or species in general, interact more than one steady state can be present, and not all of these are necessarily stable. The nullclines on the phase plane of the SIR model are particularly simple and are <span class="math notranslate nohighlight">\(I = 0\)</span>, or along the S-axis, and <span class="math notranslate nohighlight">\(S = k_1/k_2\)</span>, which is the vertical line at <span class="math notranslate nohighlight">\(S_N^{max}\)</span> and divides the region where the infected population increases from that where it decreases. The nullclines divide the phase plane into four areas, two areas are below the S-axis in this case, and, as negative number of individuals do not make any sense, only two of the four regions have any meaning. Assuming that I is plotted vertically and R horizontally, the ‘flow’ or vector, arrow Fig.16, showing the direction of change is always vertical at any point of the <span class="math notranslate nohighlight">\(I\)</span> nullcline, (horizontal axis), no matter what its curve is, and horizontal on the <span class="math notranslate nohighlight">\(S\)</span> nullcline when <span class="math notranslate nohighlight">\(dS/dt = 0\)</span>. A steady state point is found where the nullclines meet, in the SIR model this is in the <span class="math notranslate nohighlight">\(S\)</span>-axis at the point <span class="math notranslate nohighlight">\([k_1/k_2, 0]\)</span> which is the foot of the vertical line <span class="math notranslate nohighlight">\(S_N^{max}\)</span>.</p>
-</div>
-<div class="section" id="threshold-for-an-epidemic-and-maximum-and-total-number-infected">
-<h2>7.4 Threshold for an epidemic and maximum and total number infected<a class="headerlink" href="#threshold-for-an-epidemic-and-maximum-and-total-number-infected" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="threshold-for-an-epidemic-and-maximum-and-total-number-infected">
+<h2>7.4 Threshold for an epidemic and maximum and total number infected<a class="headerlink" href="#threshold-for-an-epidemic-and-maximum-and-total-number-infected" title="Permalink to this headline">#</a></h2>
 <p>The maximum fraction of infected individuals is found when <span class="math notranslate nohighlight">\(dI_N/dS_N = 0\)</span>, and this occurs
 at the constant value <span class="math notranslate nohighlight">\(\displaystyle S_N=\frac{k_1}{k_2N}\)</span> for any fixed <span class="math notranslate nohighlight">\(N\)</span>. When <span class="math notranslate nohighlight">\(dI_N/dS_N=0\)</span> is reached, the infection has peaked and must start to decrease. The <em>maximum fraction</em> infected at any one time, is from 42</p>
 <div class="math notranslate nohighlight">
@@ -1658,17 +1867,17 @@ at the constant value <span class="math notranslate nohighlight">\(\displaystyle
 <div class="math notranslate nohighlight">
 \[I_{tot} \approx N-S_0e^{-k_2N/k_1} \tag{45}\]</div>
 <p>or <span class="math notranslate nohighlight">\(N(1 - 0.0498)\)</span> and this is the size of the infection, and in effect defines the total number of hospital beds needed over the course of the epidemic.</p>
-</div>
-<div class="section" id="sensitivity-to-rate-constant-k-2">
-<h2>7.5 Sensitivity to rate constant <span class="math notranslate nohighlight">\(k_2\)</span><a class="headerlink" href="#sensitivity-to-rate-constant-k-2" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="sensitivity-to-rate-constant-k-2">
+<h2>7.5 Sensitivity to rate constant <span class="math notranslate nohighlight">\(k_2\)</span><a class="headerlink" href="#sensitivity-to-rate-constant-k-2" title="Permalink to this headline">#</a></h2>
 <p>To understand some of the equations above, such as the maximum fraction infected, <span class="math notranslate nohighlight">\(I_N^{max}\)</span> it is easier to draw some graphs. Suppose that there are ten thousand susceptible persons, and that the disease starts to spread after one person is infected. What is the effect of the different rate constants? The rate of infection <span class="math notranslate nohighlight">\(k_2\)</span> here is key, i.e. the term <span class="math notranslate nohighlight">\(k_2SI\)</span> (eqn. 41) has a dramatic effect. If <span class="math notranslate nohighlight">\(k_2\)</span> is small, <span class="math notranslate nohighlight">\(10^{-5}\)</span>, top left, (see the graphs below), the overall the epidemic does not progress even up to <span class="math notranslate nohighlight">\(1000\)</span> days. However, with <span class="math notranslate nohighlight">\(k_2=2\cdot 10^{-5}\)</span> (top right) the epidemic starts and <span class="math notranslate nohighlight">\(\approx 1500\)</span> persons are infected at the peak. Increasing <span class="math notranslate nohighlight">\(k_2\)</span> again to <span class="math notranslate nohighlight">\(5\cdot 10^{-5}\)</span>  <span class="math notranslate nohighlight">\(\approx 4800\)</span> are infected. This rapid increase is rather dramatic and shows the effect of feedback, i.e. <span class="math notranslate nohighlight">\( S+I \overset{k_2}\longrightarrow 2I \)</span>;  Increasing <span class="math notranslate nohighlight">\(k_2\)</span> above <span class="math notranslate nohighlight">\(10^{-4}\)</span> has a smaller effect than when <span class="math notranslate nohighlight">\(k_2=10^{-5}\)</span> simply because so many are already infected. This behaviour shows how important the reproductive ratio is because this is proportional to <span class="math notranslate nohighlight">\(k_2\)</span>.</p>
 <p>Even with this simple model we can understand why wearing face masks is important because this effectively reduces <span class="math notranslate nohighlight">\(k_2\)</span>. Isolating individuals, or being vaccinated, reduces the spread of disease also because the number of those susceptible is reduced and therefore so is the product <span class="math notranslate nohighlight">\(k_2SI\)</span> in eqn. 40.</p>
 <p><img alt="Drawing" src="../_images/num-methods-fig16a.png" /></p>
 <p>Figure 16a. Populations of susceptibles S, (red line), infected I, (blue line) and recovered R, (green line) vs. time with different <span class="math notranslate nohighlight">\(k_2\)</span> values using <span class="math notranslate nohighlight">\(k_1 =0.1\)</span>. The peaks of the infected curves are found using eqn. 43, <span class="math notranslate nohighlight">\(I_N^{max}N\)</span>.</p>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="calculating-the-time-profile-of-an-epidemic">
-<h2>7.6 Calculating the time profile of an epidemic<a class="headerlink" href="#calculating-the-time-profile-of-an-epidemic" title="Permalink to this headline">¶</a></h2>
+<section id="calculating-the-time-profile-of-an-epidemic">
+<h2>7.6 Calculating the time profile of an epidemic<a class="headerlink" href="#calculating-the-time-profile-of-an-epidemic" title="Permalink to this headline">#</a></h2>
 <p>As an illustration of using the SIR model, suppose that you are presented with this specific problem: The following data for the incidence of influenza was recorded at a boys’ boarding school. Starting on day zero, the number of boys infected each day was</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \qquad\qquad 1, 3, 7, 25, 72, 222, 282, 256, 233, 189, 123, 70, 25, 11, 4\]</div>
@@ -1728,8 +1937,8 @@ The strategy is to work out what is already known from the data.</p>
 <p>Figure 17. SIR data calculated for boys infected with influenza with <span class="math notranslate nohighlight">\(k_2 = 0.0022\)</span>, day<span class="math notranslate nohighlight">\(^{-1}\)</span> and <span class="math notranslate nohighlight">\(k_1 = 0.451\)</span> day<span class="math notranslate nohighlight">\(^{-1}\)</span> with <span class="math notranslate nohighlight">\(763\)</span> boys one of whom was initially infected. The scheme is <span class="math notranslate nohighlight">\(\displaystyle  S+I \overset{k_2}\longrightarrow 2I ; \;   I \overset{k_1} \longrightarrow  R  \)</span>.</p>
 <hr class="docutils" />
 <p>After 2019 there is no shortage of data from covid-19 to illustrate the SIR type of epidemic, however, the real data only partly follows this scheme because of medical intervention, i.e. learning how best to deal with very ill patients means that the rate constants vary with time which complicates the calculation, as do the use of face masks and of course the availability, or otherwise, of vaccinations.</p>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -1753,9 +1962,11 @@ The strategy is to work out what is already known from the data.</p>
 
               </div>
               
-        
-            <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="num-methods-Q13-16.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -1771,26 +1982,28 @@ The strategy is to work out what is already known from the data.</p>
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-        
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-    <div class="container">
-      <p>
-        
-          By Godfrey Beddard<br/>
-        
-            &copy; Copyright 2022.<br/>
-      </p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Godfrey Beddard<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
     </div>
-  </footer>
-</main>
+    
+</div>
 
 
       </div>
     </div>
   
-  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>

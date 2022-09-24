@@ -1,9 +1,9 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## Questions 35 - 44
+# # Questions 35 - 44
 
-# ### Q35 Lennard-Jones potential
+# ## Q35 Lennard-Jones potential
 # The Lennard-Jones 6-12 potential, which describes the intermolecular energy between a pair of molecules, has a minimum at $\displaystyle r_e = 2^{1/6}\sigma$. The potential is
 # 
 # $$\displaystyle U(r)= -4\epsilon\left[\left (\frac{\sigma}{r}\right)^6 - \left (\frac{\sigma}{r}\right)^{12}  \right]$$
@@ -20,7 +20,7 @@
 # 
 # **Strategy:** (b) Use a Taylor expansion about the minimum separation $r_e$, and then ignore terms in higher powers of $(r - r_e)$ as the change from the equilibrium position is small. Because you have to take the derivative of the potential to find the force constant, expand the potential at least to quadratic terms.
 # 
-# ### Q36 Dipole - ion interaction
+# ## Q36 Dipole - ion interaction
 # A dipole $q^+ - q^-$ will interact with an ion in solution because the electric field of the ion will extend through the solution and so cause a force to exist between them. The electric field strength $E$ around a charge is the force / unit charge, or $E = f/q$. Because there is a force between the charges, energy is needed to place the dipole and ion at any given separation. Your textbook will state that this force varies as the inverse cube of the separation from the dipole when the separation is larger than the size of the dipole itself. However, two isolated point charges, $q_1\, q_2$, will interact with a _force_ given by the inverse square of their separation,
 # 
 # $$f=\frac{q_1q_2}{(4\pi\epsilon_0)}\frac{1}{\epsilon r^2}$$
@@ -42,7 +42,7 @@
 # 
 # **Strategy:** Calculate the electric field using charges +$q$ and $-q$ then calculate the energy. In electrostatic calculations the field and energy is always calculated as the sum of the individual contributions between each pair of charges. As the separation is large compared to the size of the ion or dipole expand the field in terms of the fractional separation. Using the diagram, the dipole has charges +$q$ and $-q$ and the ion +$z$. Note that $E$ is used to represent the electric field.
 # 
-# ### Q37 Dipole-dipole energy
+# ## Q37 Dipole-dipole energy
 # The energy of two interacting dipoles, with the geometry shown below,  is
 # 
 # $$ U=\frac{q^2}{(4\pi\epsilon_0)}\left[  \frac{1}{x}+\frac{1}{x+d_2-d_1}-\frac{1}{x-d_1}-\frac{1}{x+d_2} \right]$$
@@ -60,7 +60,7 @@
 # 
 # **Strategy:** Because the interaction is electrostatic (or Coulomb) in nature, the energy is always calculated by adding together the interaction between pairs of charges; one charge each end of the dipole on one molecule with each of the charges on the other. The energy is inversely proportional to the separation of each pair of charges so there are four terms to consider.
 # 
-# ### Q38 Doppler effect
+# ## Q38 Doppler effect
 # The pitch of an ambulance's siren sounds higher as it speeds towards us and lower as it recedes. This is caused by the Doppler effect. Because the source is moving, the separation between the sound waves becomes smaller as the source approaches and longer as it recedes. The Doppler effect is widely used for example in radar speed cameras, in flow measurements in pipes or blood flow in veins and arteries. The Mossbaauer effect in the $gamma$ ray region of the spectrum also relies on the Doppler effect by moving the sample it can come into resonance with the source and so transitions are detected by absorption.
 # 
 # In approaching you, the sound frequency appears to be up-shifted from $f_0$ to $\displaystyle f = f_0\left(\frac{v_s+v_0}{v_s-v} \right)$ where $v_s$ is the speed of sound in air, approximately $331\, \mathrm{m\,s^{-1}}$ or $740$ m.p.h., $f_0$ the true frequency of the siren is $440$ Hz and $v$ the velocity of the ambulance is $60$ m.p.h. and $v_0$ is your, the observers, speed. 
@@ -78,14 +78,14 @@
 # 
 # **Strategy:** (a) The frequency heard is higher than normal when the ambulance is approaching and coming directly towards us, but is at exactly frequency $f_0$ when it is right in front of us, and falls as it departs.  (b) If we were to assume that both $t_0$ and $t$ are small compared to $v_s$, the speed of sound in air, and simply ignore them, then $f = f_0$ and the frequency would not change. Experience tells us that the perceived frequency does change, so this assumption cannot be correct because it is too crude. Instead, rearrange the frequency equation into two parts, and ratio the speeds to produce terms such as $\displaystyle (1 - v/v_s)^{-1}$ and then expand into a series.
 
-# ### Q39 H atom Lyman-$\alpha$ line
+# ## Q39 H atom Lyman-$\alpha$ line
 # (a) The relativistic red shift observed in the H atom Lyman-$\alpha$ line from a star in a distant galaxy is $\displaystyle \frac{\Delta \lambda}{\lambda}= \sqrt{\frac{1+v/c}{1-v/c}}-1$ where $c$ is the speed of light and $v$ the relative velocity of the star.
 # 
 # (b) Show that for a small relative star velocity $\displaystyle \frac{\Delta \lambda}{\lambda}=\frac{v}{c}$.
 # 
 # (c) If the laboratory reference transition is $\Delta \lambda = 0.1$ nm wide, what is the smallest speed a star must be receding by to separate it from the reference line, assuming that a separation of $2\Delta \lambda$ is needed?
 # 
-# ### Q40 Coupled molecular energy levels
+# ## Q40 Coupled molecular energy levels
 # Two molecular energy levels of energy $E_1$ and $E_2$ and separation $\Delta E$ interact with a 'coupling energy' $V$. Perturbation theory applied to quantum mechanics allows us to calculate how these levels are shifted in energy as a result of this interaction. One level rises, the other falls and their new energies are,
 # 
 # $$E_\pm = \frac{E_1}{2}+\frac{E_2}{2}+\frac{1}{2}\sqrt{\Delta E^2+4V^2}$$
@@ -105,7 +105,7 @@
 # 
 # **Strategy:** In (b) when $V \ll \Delta E$ expand the square root in $E\pm$. Do this by rearranging to get a term in $\displaystyle \sqrt{1+4V^2/\Delta E^2}$.
 # 
-# ### Q41 Madelung constant
+# ## Q41 Madelung constant
 # Crystals of simple salts consist of ordered lattices of anions and cations where the forces are predominantly due to the Coulomb electrostatic interaction. As there are many ions, the total interaction acting upon any one of them is due to the effect of all the others. The energy between any two ions 1 and 2 separated by a distance $d$ is $\displaystyle U_{12}=\frac{q_1q_2}{(4\pi \epsilon_0)d}$ where the charge on an ion is $q=eZ$,and $e$ is the electronic charge $1.6022 \cdot 10^{-19}$ C. The charge number $Z$ can be positive or negative.
 # 
 # (a) Find the total energy of a positively charged ion in a linear chain of alternating positive and negatively charged ions with charges $Z$ and $-Z$. Find the Madelung constant $M$, which is the numerical factor that contributes to the energy and is due solely to the positions and charges of the ions. The total energy is $\displaystyle U_{12}=M\frac{q_1q_2}{(4\pi \epsilon_0)d}$. 
@@ -124,7 +124,7 @@
 # 
 # **Strategy:** The total energy of several charged species, of any sort, is always the sum of the individual pair-wise interactions, + to +, - to - and + to - as appropriate. For example, the interaction between any two ions 1 and 2 is $\displaystyle U_{12}=\frac{q_1q_2}{(4\pi \epsilon_0)}\frac{1}{d_1 - d_2}$ where $d_1 - d_2$ is their separation, and in a line or on grid, the nearest separation is always $d$. Consider only the interaction of any two species at a time, and if there are many charges these add up as pair-wise contributions ignoring any intervening or other nearby charges. 
 # 
-# ### Q42 Lennard-Jones potential
+# ## Q42 Lennard-Jones potential
 # The Lennard-Jones potential between a pair of atoms with separation $r$ is 
 # 
 # $$\displaystyle U=-4\epsilon \left[\left(\frac{\sigma}{r}\right)^6 -\left(\frac{\sigma}{r}\right)^{12}  \right]$$
@@ -146,7 +146,7 @@
 # Figure 10. A simple cubic structure with near neighbours (A), and some of the next near neighbours (B ) and (C ). Atoms in the other adjacent unit cells, which are not shown, will also contribute to the summation.
 # ____
 # 
-# ### Q43 Dipole selection rules
+# ## Q43 Dipole selection rules
 # The electric dipole selection rules for vibrational transitions in diatomic molecules are described by expanding the dipole moment in a Taylor series about the equilibrium bond length Re, and then evaluating the transition dipole moment, which is the integral 
 # 
 # $$\displaystyle M=\int \psi_f^*\mu \psi_i dx$$
@@ -167,7 +167,7 @@
 # 
 # The importance of integration 'odd' and 'even' functions is clear; if the function is odd the integral over all space is always zero, if even the integral generally is not zero. In the more general sense, group theory should be used to determine if the integral belongs to the totally symmetric representation of the point group of the molecule, which, if it does, the integral is finite. See Chapter 7 (Matrices) for a fuller discussion.
 # 
-# ### Q44 Hellmann - Feynman theorem
+# ## Q44 Hellmann - Feynman theorem
 # The Hellmann - Feynman theorem states that for a property $q$ the energy of a molecule $U$ and its Hamiltonian $H$ are related as $\displaystyle \frac{dU}{dq}=\left<\frac{dH}{dq}\right>$. The angle brackets indicate an average value is measured.
 # 
 # Suppose the property $q$ is an external electric field $E$ then $q \equiv E$, and in the presence of this field, the Hamiltonian is $\displaystyle H = -\bar\mu\cdot \bar E$ where $\bar\mu$, and $ \bar E$  are vector quantities. To simplify matters suppose that the field only exists along the z-axis then $H = -\mu_zE$.

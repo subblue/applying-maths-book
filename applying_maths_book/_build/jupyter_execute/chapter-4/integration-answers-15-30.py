@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## Solutions Q15 - 30
+# # Solutions Q15 - 30
 
 # In[1]:
 
@@ -15,7 +15,7 @@ init_printing()                      # allows printing of SymPy results in types
 plt.rcParams.update({'font.size': 16})  # set font size for plots
 
 
-# ### Q15 answer
+# ## Q15 answer
 # (a) $I=\int\cos^3(x)dx$. Trying $u=\sin(x)$, then $du=\cos(x) dx$ producing 
 # 
 # $$\displaystyle I=\int\cos^2(x)du=\int(1-u^2)du=u-u^3/3=\sin(x)-\sin^3(x)/2+c$$
@@ -51,7 +51,7 @@ integrate(cot(a*x),x)
 # 
 # (f) $I=\int e^{ax}(1-e^{ax})^{-1}dx$. This also has the form of equation 12 with the derivative as numerator therefore, $I=-\ln(1-e^{ax})/a$.
 # 
-# ### Q16 answer
+# ## Q16 answer
 # Using the substitution $x=a\sin(u)$ and $dx=a\cos(u)du$ gives 
 # 
 # $$\displaystyle I=\int\frac{1}{\sqrt{a^2-x^2}}dx=\int\frac{\cos(u)}{\sin(u)}du = u=\sin^{-1}\left( \frac{x}{a} \right)$$
@@ -63,7 +63,7 @@ integrate(cot(a*x),x)
 # Figure 41. Trig construction.
 # ____
 # 
-# ### Q17 answer
+# ## Q17 answer
 # (a) Let $u = x^2$ and thus $du = 2xdx$ the integral can pleasingly be simplified to 
 # 
 # $$\displaystyle I=\frac{1}{2}\int e^{-u}du =-\frac{1}{2}e^{-u}=-\frac{1}{2}e^{-x^2} +c$$
@@ -87,7 +87,7 @@ integrate(cot(a*x),x)
 # 
 # ![Drawing](integration-fig43.png)
 # 
-# ### Q18 answer
+# ## Q18 answer
 # Expanding the fraction gives two simpler integrals 
 # 
 # $$\displaystyle I=\int\frac{x-2}{x\sqrt{x+3}}dx=\int\frac{1}{\sqrt{x+3}}dx=-\int\frac{2}{x\sqrt{x+3}}dx$$
@@ -98,12 +98,12 @@ integrate(cot(a*x),x)
 # 
 # Some computer algebra calculations may give the $\tanh^{-1}()$ fraction upside down compared to this answer. In this case the two are related as $\tanh^{-1}(w)=\tanh^{-1}(-1/w)+\pi/2$.
 # 
-# ### Q19 answer
+# ## Q19 answer
 # Guessing at the substitution $u = x^3$ to get a term in $x^2dx$ as $du = 3x^2dx$. Changing the limits when $x = -1,\, u = -1$, and when $x = 2, \,u = 8$. The substituted integral can be solved by looking at the table of integrals (Section 2.13),
 # 
 # $$\displaystyle I=\frac{1}{3}\int_{-1}^8 \frac{1}{16+u^2}du=\frac{1}{12}\tan^{-1}\left(\frac{u}{4}\right)\bigg|_{-1}^8=\frac{1}{12}\left(\tan^{-1}(2)+\tan^{-1}\left(\frac{1}{4}\right) \right)$$
 # 
-# ### Q20 answer
+# ## Q20 answer
 # This integration does not look tractable, but try $u = \sin^{-1}(ax)$, and $dt = dx$ so that $t = x$. Evaluating gives 
 # 
 # $$\displaystyle I=\int\sin^{-1}(ax) dx=x\sin^{-1}(ax)-\int x\frac{d}{dx}\sin^{-1}(ax) dx$$
@@ -114,7 +114,7 @@ integrate(cot(a*x),x)
 # 
 # $$\displaystyle I=\sin^{-1}(ax) +\frac{\sqrt{1-a^2x^2}}{a}$$
 
-# ### Q21 answer
+# ## Q21 answer
 # (a) Changing the limits is described by equation 5, the general integral becomes 
 # 
 # $$\displaystyle \int_a^b f(x)dx=g(b)-g(a)=-\int_b^a f(x)dx$$
@@ -155,7 +155,7 @@ integrate(cot(a*x),x)
 # 
 # The instability for small $x$ arises because $\pm n!/x^{n+1}$ becomes larger and larger as $n$ increases and the sign alternates. This result shows how an algebraic formula, while correct, can give poor answers in a numerical calculation because of rounding errors; see Chapter 11. This is particularly true of summations with alternating positive and negative terms as in this case. Python/scipy  uses the built-in function $\mathtt{expi(x)}$ to numerically evaluate  this integral. (You need to add 'from scipy.special import expi' to import this function into a python worksheet).
 # 
-# ### Q22 answer
+# ## Q22 answer
 # (a) Recognize this as an integration by parts and use equation 16. If $u = x$ then $dv = e^{ax}dx$ and the formula gives  
 # 
 # $$\displaystyle \int xe^{ax}dx =x\frac{e^{ax}}{a}-\frac{1}{a}\int e^{ax} dx=\frac{(ax-1)}{a^2}e^{ax}$$
@@ -192,7 +192,7 @@ def Intn(n):
 simplify(Intn(5) )      #  integral x^5 exp(a*x)
 
 
-# ### Q23 answer
+# ## Q23 answer
 # (a) The integral for $n=1$ can be calculated between $0$ and infinity but the way to do this is a little cunning. The normal 'by parts' integral is $\displaystyle \int u dv = uv - \int vdu$. Now, suppose that $\displaystyle v=e^{-ax^2}$ therefore $dv=-2axe^{-ax^2}$ and also if $u=1$ then 
 # 
 # $$\displaystyle I_1=\frac{1}{2a}\int_0^\infty 1(-2axe^{-ax^2})dx$$
@@ -236,12 +236,12 @@ for n in range( 6):   # make list to see results
 ans
 
 
-# ### Q24 answer
+# ## Q24 answer
 # The strategy here is to recognize that $d\ln(x)=1/x$ or, equivalently, letting $w=\ln(x)$ (and $dw=dx/x$) the integral becomes
 # 
 # $$\displaystyle \int \frac{\cos(\ln(x))}{x}dx= \int \cos(\ln(x)) d\ln(x)\equiv\int\cos(w)dw=\sin(\ln(x))+c$$
 # 
-# ### Q25 answer
+# ## Q25 answer
 # The secant function is the reciprocal of cosine and its integral is a standard one, $\displaystyle \int \sec^2(x)dx = \tan(x)$. The square root is removed by substitution, therefore try $z=\sqrt{x}$ and $dz/dx=1/\sqrt{4x}=1/2z$ making the integral, 
 # 
 # $$\displaystyle \int\sec^2(\sqrt{x})dx=2\int z\sec^2(z)dz$$ 
@@ -252,7 +252,7 @@ ans
 # 
 # where $c$ is a constant of integration. Substitute back for $z$ to get the result.
 # 
-# ### Q26 answer
+# ## Q26 answer
 # (a) This integral can be evaluated by converting to the exponential form but can also be done rather easily by parts; 
 # 
 # $$\displaystyle \int \cosh(x)\sinh(x)dx=\sinh^2(x)-\int \cosh(x)\sinh(x)dx$$
@@ -261,7 +261,7 @@ ans
 # 
 # (b) Using the example in section 5 to evaluate the integrals gives $\displaystyle \int x\cos(x)dx=\frac{e^x}{2}\left( \sin(x)+\cos(x) \right)$
 # 
-# ### Q27 answer
+# ## Q27 answer
 # Converting to an exponential form gives 
 # 
 # $$\displaystyle I= \int \frac{dx}{\sin(ax)}=2i\int \frac{dx}{e^{iax}-e^{-iax}}$$
@@ -276,7 +276,7 @@ ans
 # 
 # Some texts may convert the answer into hyperbolic form using $\displaystyle \tanh^{-1}(z)=\frac{1}{2}\ln\left( \frac{1+z}{1-z} \right)$ where $z$ is defined above. In this case the result has to be real even though $z$ is complex, and even though the result may appear to be complex, the area under the curve, which is the integral, cannot be complex since $1/\sin(ax)$ is real.
 # 
-# ### Q28 answer
+# ## Q28 answer
 # (a) $\displaystyle \int_{-\pi}^\pi dx=x\bigg|_{-\pi}^\pi =2\pi$.
 # 
 # (b) Integrating and then changing the exponential to a sine using $2i\sin(x)=e^{ix}-e^{-ix}$ gives 
@@ -289,7 +289,7 @@ ans
 # 
 # Together these results show that $\displaystyle \int_{-\pi}^\pi e^{imx}e^{-inx}dx=2\pi\delta_{n,m}$.
 # 
-# ### Q29 answer
+# ## Q29 answer
 # Differentiating with respect to $\beta$ only involves the exponential and produces
 # 
 # $$\displaystyle \frac{d}{d\beta}\int_0^\infty \frac{e^{-\beta x}\sin(x)}{x}dx=\int_0^\infty e^{-\beta x}\sin(x)dx$$
@@ -302,7 +302,7 @@ ans
 # 
 # $$\displaystyle \int_0^\infty \frac{\sin(x)}{x}dx = \frac{\pi}{2}$$
 # 
-# ### Q30 answer
+# ## Q30 answer
 # Using the definition of the cosine in a right-angled triangle, and in the limit of small values, 
 # 
 # $$\displaystyle \cos(x)=\frac{dx}{\sqrt{dx^2+dy^2}}=\left(1+\left(\frac{dy}{dx} \right)^2 \right)^{-1/2}  $$

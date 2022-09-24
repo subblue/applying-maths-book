@@ -38,7 +38,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # Figure 72. Approximate location of the centre of mass together with two of the principal rotation axes. The third, describing rotational motion in the plane of the figure, is perpendicular to the other axes and points out of the plane of the figure. The molecule rotates about the centre of mass or gravity. This need not be situated on an atom.
 # ______
 
-# ### 15.8 Formal description of the method
+# ## 15.8 Formal description of the method
 # 
 # If all the atoms are rigidly connected together, the $k^{th}$ atom and its velocity vector $\pmb{v}_k$, are
 # related to the angular velocity of the molecule $\pmb{\omega}$ about the centre of mass as 

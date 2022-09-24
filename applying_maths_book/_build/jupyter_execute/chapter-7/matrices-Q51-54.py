@@ -1,9 +1,9 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## Questions 51 - 54
+# # Questions 51 - 54
 
-# ### Q51 A $\rightleftharpoons$ B $\to$ C- kinetics
+# ## Q51 Kinetic scheme $A \rightleftharpoons   B  \to  C\to$ 
 # Calculate the time profile of species A, B and C for the scheme
 # 
 # $$\displaystyle A \underset{k_{21}}{\overset{k_{12}}\rightleftharpoons} B \overset{k_2}\longrightarrow C \overset{k_3}\longrightarrow $$
@@ -12,7 +12,7 @@
 # 
 # **Strategy:** Write down the rate equations and then translate them into the matrix form. Use python to do the integration by the matrix method outlined in the text, Algorithm 7.6.
 # 
-# ### Q52 Energy transfer in photosynthesis
+# ## Q52 Energy transfer in photosynthesis
 # Overwhelmingly, life on earth depends upon photosynthesis. In this process, photons are captured in molecular_antennae_ that always consist of many pigments, which are usually, but not exclusively, chlorophyll held in a protein. The energy from the lowest excited state of these pigments is passed to a special pair in the _reaction centre_ where electron transfer occurs. The electrons are eventually used to reduce carbon dioxide to carbohydrates and eventually to biomass. The antenna, pigment-protein complex of Prosthecochloris aestuarii has seven bacteriochlorophyll (BChl) molecules between which Forster energy transfer occurs. The structure of this membrane bound protein has been determined by X-ray crystallography and is shown in Figure 57. The coordinates are in the Brookhaven data bank .pdb entry 3BCHL.
 # 
 # Energy transfer occurs from the excited state of one BChl molecule to another caused by the dipole - dipole interaction between the two molecules. However, energy can leave one molecule and be transferred to a third or back to the second or on to a fourth and so forth. In this way, the excitation energy diffuses around the antenna and the population of each pigment changes until (dynamic) equilibrium is established between the molecular excited states. Energy transfer to the special pair and fluorescence both compete with this process. The reaction centres, which quench the excited states, are found in another nearby protein and with this quenching and by fluorescence, the total excited state population is eventually lost but not until long after this equilibrium between excited states is established.
@@ -65,7 +65,7 @@
 # 
 # **Strategy:** Although this calculation looks as though it might be very difficult, it is just a bigger version of what was already done in the previous question. The hard part is defining the matrix, so remember that each molecule can transfer to any other. This means that each diagonal term has a rate constant for transfer to every other molecule as well as the rate of fluorescence decay. Each molecule also receives energy from every other one, which means that each off-diagonal has one rate constant from each molecule. First write down the rate equation for one molecule, and then use this as a template to work out the rates for the others. It will be easiest to label the rate constants $k_{12}, k_{34}$ and so on where the subscripts label the molecules, $k_{12}$ corresponding to transfer from 1 to 2. Unless you want dozens of pages of algebra, put numerical values into the matrix before calculating the eigenvalues and eigenvectors.
 # 
-# ### Q53 Matrix raised to power
+# ## Q53 Matrix raised to power
 # You are presented with a problem in which the matrix 
 # 
 # $$\displaystyle \pmb{M}=\begin{bmatrix} -2a & a\\a&-2a\end{bmatrix}$$
@@ -74,7 +74,7 @@
 # 
 # **Strategy:** A similarity transform is the method to use as this enables us to make a diagonal matrix $\Lambda$, via $\pmb{X}^{-1}\pmb{MX} = \pmb{\Lambda}$. This can then be manipulated to make $\pmb{M}^n$ with $\pmb{M}^{b} = \pmb{X\Lambda}^{b}\pmb{X}^{-1}$.
 # 
-# ### Q54 Inheritance
+# ## Q54 Inheritance
 # In autosomal inheritance, two genes are exchanged during reproduction, but these do not determine in the sex of the organism. Inheriting these genes could mean, in humans for example, producing brown eyes vs blue eyes or, in a flower, red petals vs blue. If an organism is autosomal dominant, a gene on one of the non-sex chromosomes is always expressed, even if only one copy is present. If the genes are AB with A being the dominant mutant, when offspring are produced with a BB partner, the result is as shown below in the left most column, Fig. 7.58. The makeup of offspring, by crossing two plants with AB or AA genes, is also shown in Figure 58, except for AA with AA and BB with BB that are unchanged.
 # 
 # ![Drawing](matrices-fig58.png)

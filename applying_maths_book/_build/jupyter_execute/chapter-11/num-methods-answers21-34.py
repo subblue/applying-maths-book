@@ -1,9 +1,9 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## Solutions Q21 - 34
+# # Solutions Q21 - 34
 
-# ### Q22 answer
+# ## Q22 answer
 # (a) Considering equations 49, if the predators $X$ do not die naturally then they will clearly consume all the prey $Y$ and the predator population will rise smoothly to a constant value and the prey uniformly fall to zero. The condition $k_3 \ll k_2Y$ ensures that the loss of the predator population $X$ is negligible.
 # 
 # (b) Adding new loss terms to both species gives
@@ -26,14 +26,14 @@
 # Figure 39. Populations of predator (red line) and prey when both are poisoned with rate constants $k_{11} = 0.9 ,\; k_{22} = 0.2$. The prey population is increased substantially over that when no poisoning occurs and the predator population (dashed line) is greatly reduced. The nullclines are shown on the phase plane. The point is at t = 2 is shown the initial point is $X_0, Y_0$.
 # _____
 # 
-# ### Q23 answer
+# ## Q23 answer
 # $\displaystyle Y_e= \frac{k_3}{k_2}, \; X_e=\frac{k_1}{k_2},\; \frac{dy}{dt}=k_1y(1-x),\; \frac{dx}{dt}=k_3x(y-1)$. Changing to reduced time produces
 # 
 # $$\displaystyle\frac{dy}{d\tau}=y(1-x), \qquad \frac{dx}{d\tau}=\frac{k_3}{k_1}x(y-1)$$
 # 
 # which can be solved as outlined in section 8.1.
 # 
-# ### Q24 answer
+# ## Q24 answer
 # The equilibrium points are the solutions to $(k_1-k_2X-k_dY)Y=0, \; (k_2Y-k_3)X=0$. Three sets of points are,
 # 
 # $$\displaystyle X_e=Y_e=0; \qquad X_e=0, \; Y_e= \frac{k_1}{k_d}; \qquad Y_e=\frac{k_3}{k_2}, \; X_e= \frac{k_1k_2-k_dk_3}{k_2^2}$$
@@ -53,7 +53,7 @@
 # 
 # In the actual situation, the predator eats the prey and the predator population increases and shortly after this, the prey population maximizes and then falls due to predation. The predator population also falls as prey becomes scare, because predators die by starvation. The prey population now begins to recover, predators being scarce for the time being; however, it can only increase somewhat because of the limited food. The predator then starts to catch more prey because they are now more numerous, and this limits the prey's population and the cycle repeats itself. However, the prey's population is also limited by the amount of food (energy) available and it cannot fully recover. This limits the predator also, for if there are less prey then more predators will starve. This 'damping' causes the oscillations in population to become smaller and eventually they become insignificant. They are damped out, effectively, by the limited food supply, and a dynamic steady-state is reached.
 
-# ### Q26 answer
+# ## Q26 answer
 # (a) The rate equations are 
 # 
 # $$\displaystyle\frac{dA}{dt}=k_1A-k_2A-k_3AB, \qquad \frac{dB}{dt}=k_2A-k_4B $$
@@ -73,7 +73,7 @@
 # 
 # **Exercise:** Investigate changing the rate constant $k_1$ and $k_4$.
 # 
-# ### Q27 answer
+# ## Q27 answer
 # (a) With the pendulum inverted the initial angle is $\pi$, it is only possible to continue until about $t = 30$ before the calculation fails using any of the the Euler methods. Failure is sudden and easily observed because the angle does not remain at $\pi$. Using a python/numpy built in integrator produces better results , but inevitably this also fails.
 # 
 # Starting at $\varphi_0 = 3.0$ rads, the Euler and Euler - Cromer methods continue to produce accurate data, similar to that in Figure 15, out to $t = 1000$. 
@@ -85,7 +85,7 @@
 # Figure 42. The velocity vs time of a pendulum with different starting angles in radians. The angles are 1, 2, 4, 6, 8 $\times \pi/9$.
 # ______
 # 
-# ### Q28 answer
+# ## Q28 answer
 # Reducing the equation of motion to two equations gives 
 # 
 # $$\displaystyle d\varphi/dt = v,\quad dv/dt = fv+\omega^2\sin(\varphi)=0$$
@@ -101,7 +101,7 @@
 # 
 # Figure 43. Left: The time profile of the angle (degrees) and angular velocity (dashed line), in rad s<sup>-1</sup>, of a damped pendulum. Right: The phase plane, angular velocity vs angle, with angle in radians.
 # ______
-# ### Q29 answer
+# ## Q29 answer
 # (a) The equation is split into two parts, one describing the (angular) velocity $v$, the other the rate of change of velocity or acceleration, and which are 
 # 
 # $$\frac{d\varphi}{dt}=v, \qquad \frac{dv}{dt}+\left[\frac{a}{L}-\omega^2\cos(\varphi)\right]\sin(\varphi)=0$$
@@ -133,7 +133,7 @@
 # 
 # On the left of figure 44, $a/L\omega^2 \to 0$ and is the situation when the rod is very long. In this limit, the motion is governed by the rotation of the shaft because the long rod, thought of as a pendulum has a very long oscillation period. The curve for which the initial angle is $\pi$ is the separatrix which only touches the horizontal axis when $\varphi = \pm (2n + 1)\pi$ where $n$ is an integer. This means that the rod is only instantaneously stationary in the vertical position. When the initial angle is $\pi /2$ (or 90<sup>o</sup>) a long rod does not oscillate up and down as it rotates, and its vertical velocity is zero. When the initial angle is smaller or larger than $\pi /2$, the rod suffers vertical oscillations as it rotates, and it does not matter whether it starts almost in a vertically up or down position, the motion is eventually the same: for example $\varphi_0 = 7\pi/8$ or $\pi/8$. The outer sinusoidal curve in the figure above corresponds to the rod freely rotating in the vertical plane as well as rotating about the shaft because it has an initial velocity of $1$ and an initial angle of $\pi/8$, which together, gives it enough energy to overcome the potential energy needed to invert the rod.
 
-# ### Q30 answer
+# ## Q30 answer
 # (a) When the angle of the rod from the vertical is small, then $\sin(\varphi) \to \varphi - \varphi^3/6$ and $\cos(\varphi) \to 1 -\varphi^2/2$. Because the angle is almost zero, the second terms are so small that they can be ignored making the equation of motion 
 # 
 # $$\displaystyle \frac{d^2\varphi}{dt^2}+\left(\frac{a}{L} -\omega^2 \right)\varphi = 0$$
@@ -170,7 +170,7 @@
 # 
 # which is the equation of a simple pendulum of frequency $\omega \sin(\varphi_0)$ oscillating about $\varphi_0$. If $\varphi_0 = \pi/2$, then the frequency is $\omega$, the same as that of the shaft; when $\varphi_0 = 0$, the frequency is zero because the pendulum is either vertically up or down.
 # 
-# ### Q31 answer
+# ## Q31 answer
 # Splitting the equation into two produces angular velocity and acceleration as 
 # 
 # $$\displaystyle \frac{d\varphi}{dt}=v, \; \frac{dv}{dt}+\left[ \omega_0^2+h\omega^2\cos(\omega t) \right]\sin(\varphi)=0$$
@@ -187,7 +187,7 @@
 # 
 # Figure 45. Left: The time profile of the pendulum's angle. The fast piston's motion is superimposed on that of the slow pendulum. Right: The phase plane.
 # 
-# ### Q32 answer
+# ## Q32 answer
 # Using the Runge - Kutta or modified Euler methods, two time profiles of the pendulum's angle are shown in Figure 46 with parameters from (a). Notice the difference in scale. An angle greater than $180 ^\text{o}$ means that the pendulum is rotating. The phase plane picture is that of an increasing spiral (bottom left). Notice the irregular but repeatable motion when the pendulum is stably swinging (top). The appearance of the phase plane shows whether the motion is stable. If it spirals outwards then the motion is unstable, one example of each is shown in the figures.
 # 
 # ![Drawing](num-methods-fig46a.png) ![Drawing](num-methods-fig46b.png)
@@ -195,7 +195,7 @@
 # Figure 46. Stable and unstable motion described by the Mathieu equation. The angle vs time is shown and two phase planes ($d\varphi/dt$, vs $\phi$) for stable motion (top) and unstable motion (bottom).
 # _____
 # 
-# ### Q33 answer
+# ## Q33 answer
 # The stable or steady-state points are calculated when the derivatives of $x$ and $y$ are zero; 
 # 
 # $$\displaystyle (a - x)(1 + x^2) - 4xy = 0,\quad \text{and}\quad bx\left(1-\frac{y}{1+x^2}  \right)=0$$

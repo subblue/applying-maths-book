@@ -1,9 +1,9 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## Questions 24 - 37
+# # Questions 24 - 37
 
-# ### Q24 Operator
+# ## Q24 Operator
 # If $H_n(x)$ represents the Hermite polynomial, show that the _operator_ 
 # 
 # $$\displaystyle \left(2x - \frac{d }{dx}\right)^n f = H_n(x)$$
@@ -16,17 +16,17 @@
 # 
 # **Strategy:** As $D \equiv d/dx$ is an operator the order of multiplication is vitally important; for example, if $a$ and $b$ are operators then $\displaystyle (a+b)^2 =aa+ab+ba+bb$ and $ab$ may  or may not be  the same as $ba$. The operator acts on the term to its right. An expression $\displaystyle D^2f$ is the same as $\displaystyle D(Df ) \equiv DDf \equiv d^2f/dx^2$.
 # 
-# ### Q25 SHM
+# ## Q25 SHM
 # If a simple harmonic motion is described by $x = A\sin(\omega t + B)$, and if the initial velocity is $v_0$ and position $x_0$ at $t = 0$, find the amplitude $A$ and phase $B$.
 # 
 # **Strategy:** $B$ is easier to find. Use the definitions of $\tan$ and $\cos^2(\cdots)+\sin^2(\cdots)=1$ to find $A$.
 # 
-# ### Q26 Bodybuilder
+# ## Q26 Bodybuilder
 # At the gym, a bodybuilder is lying on his back repeatedly pushing weights on a bar and doing so with a period of $1$ s. If the bar is _resting_ on his palms, what is the maximum amplitude displacement of the bar if it does not to leave his hands and assuming that the motion is simple harmonic?
 # 
-# ** Strategy:** If the weight is not to leave his hands, then the maximum acceleration moving the bar must be no greater than $g$, the acceleration due to gravity. The period $T$ is related to the angular frequency as $T = 2\pi/\omega$. Note that the weight lifted does not enter the final calculation.
+# **Strategy:** If the weight is not to leave his hands, then the maximum acceleration moving the bar must be no greater than $g$, the acceleration due to gravity. The period $T$ is related to the angular frequency as $T = 2\pi/\omega$. Note that the weight lifted does not enter the final calculation.
 # 
-# ### Q27 Skidding bowling ball
+# ## Q27 Skidding bowling ball
 # In a bowling alley, the ball and the surface of the alley are both smooth. This means that the ball can be made to skid until its speed slows enough that friction prevents this and the ball starts to roll and then does so at constant velocity (Lamb 1947). The ball has a mass $m$, radius $r$, and friction coefficient $\alpha$ between the point of contact of the ball and the surface. The initial linear velocity is $v_0$ and angular velocity $\omega_0$. When $v_0 \gt r\omega_0$ then skidding occurs and the frictional force $\alpha mg$ opposes the linear motion, but when $v_0 = r\omega_0$ the ball rolls.
 # 
 # (a) Write down two equations of motion for the linear and angular velocity assuming that the ball is skidding, and integrate them to find the linear and angular velocity. (It is convenient to use the moment of inertia as $I = k^2m$ where $k$ is the radius of gyration and write equations of motion as $mdv/dt = \cdots$ and $Id\omega /dt = \cdots$).
@@ -43,7 +43,7 @@
 # **Strategy:** 
 # Equate the linear force forwards with the negative value of the frictional force. Angular velocity is always calculated by using the moment of inertia instead of mass. The frictional force for the linear motion acts at the point of contact with the surface but with angular motion the frictional force is referenced to the centre of the ball so is a couple, i.e. the force times a distance, which in this case is the radius. The equations for linear and angular motion are independent of one another, and Euler discovered this in 1749 in connection with the motion of ships.
 # 
-# ### Q28 Inverse square force
+# ## Q28 Inverse square force
 # A particle is attracted with a force that varies inversely as the square of its distance from the origin.
 # 
 # (a) If $\alpha$ is its acceleration at unit distance, write down and solve the equation describing the velocity at distance $x$ from the origin of the force. Assume that the particle is initially stationary and starts at distance $R$.
@@ -63,7 +63,7 @@
 # Fig. 19 A small particle starts from rest at a distance $R$ from a massive body.
 # _____
 # 
-# ### Q29 Force inversely as distance
+# ## Q29 Force inversely as distance
 # A particle of mass $m$ is moving in a straight line because it is attracted to a point with a force that is inversely proportion to its distance $y$ from the point.
 # 
 # (a) Write down the differential equation for the force and integrate once to find the velocity $dy/dt$ using the method of multiplying both sides by $2dy/dt$. The constant of proportionality (force constant) is $k$. The particle is stationary at $y_0$ when $t = 0$.
@@ -72,7 +72,7 @@
 # 
 # **Strategy:** Use 'force equals mass times acceleration'. Find the time by inverting the velocity and integrating. The gamma function is defined as $\displaystyle \Gamma (\alpha)= \int_0^\infty x^{\alpha -1}e^{-x}dx$.
 # 
-# ### Q30 Excited dimers
+# ## Q30 Excited dimers
 # When ground state molecules M are excited to an excited electronic singlet state M$^*$, fluorescence may occur. If the solution is moderately concentrated, e.g. $\ge 10^{-3}\,\mathrm{ mol\, dm^{-3}}$, then a ground state molecule may diffuse sufficiently to collide with an excited state before the latter has had a chance to fluoresce. In this case, an _excimer_ or excited dimer can be formed and this species has an attractive potential well in its excited state (MM)$^*$ but is repulsive in its ground state (MM). The reaction is
 # 
 # $$\displaystyle  M + M^* \to (MM)^* $$
@@ -103,7 +103,19 @@
 # 
 # **Strategy:** Form a second-order rate equation from $M^*$ and $E^*$.
 
-# ### Q31 Electrical double layer
+# In[ ]:
+
+
+
+
+
+# In[ ]:
+
+
+
+
+
+# ## Q31 Electrical double layer
 # The simplest model of a diffuse electrical double layer formed at an interface between an electrolyte in solution and a metal, a bilayer membrane, a protein or a colloid, consists of an excess of ions and electrons at the surface and an equivalent amount of oppositely charged ions randomly distributed in solution. This means that the electric field decreases more rapidly when moving away from the surface than would be the case in a vacuum. 
 # 
 # The Poisson - Boltzmann equation describes the change in potential with distance and combines the Poisson equation of electrostatics with the Boltzmann distribution. In particular, the equation relates the time average of the space-charge density $\rho$ to the potential $\varphi$ at the interface. In one dimension, the equation has the form
@@ -126,12 +138,12 @@
 # 
 # on the left hand side. See equation 14.
 # 
-# ### Q32 Series method
+# ## Q32 Series method
 # Solve $\displaystyle (1-x^2)\frac{d^2y}{dt^2}-2y=0$ by the series method.
 # 
 # **Strategy:** Use the $n^{th}$ terms of the derivatives given in the text to work out the recursion equation.
 # 
-# ### Q33 Schroedinger eqn. & rectangular energy barrier
+# ## Q33 Schroedinger equation with a rectangular energy barrier
 # Particles with energy $E$, such as electrons, interact with a rectangular one-dimensional energy potential barrier which extends from 0 to +$a$, and has an energy height $V_0$ and is zero elsewhere. The particles have a certain chance of being transmitted through or reflected off the barrier, the sum of these being unity.
 # 
 # (a) Write down the Schroedinger equation for the region inside the potential barrier.
@@ -160,7 +172,7 @@
 # 
 # Use the two conditions given to remove the arbitrary constants in the solution. To plot $T$ vs reduced energy rearrange the transmission equation into terms in $E/V_0$ then plot using this ratio as abscissa. You are given that $\sqrt{2mV_0} a/\hbar = 5$.
 # 
-# ### Q34 Reaction and diffusion
+# ## Q34 Reaction and diffusion
 # In example (iv) of Section 6.2 the diffusion out of a slab was calculated. Repeat this calculation, but now suppose that a reaction takes place so that the term $-k_1c$ is added to the diffusion equation making it 
 # 
 # $$\displaystyle \frac{\partial c}{\partial t} = D\frac{\partial^2 c}{\partial x^2}-k_1c$$
@@ -169,7 +181,7 @@
 # 
 # **Strategy:** Use the separation of variables method and base the solution on that of example (iv).
 # 
-# ### Q35 1D diffusion
+# ## Q35 1D diffusion
 # While it is possible to calculate the concentration profile of diffusing molecules, this is not usually measured, but instead the amount of material diffused out of a region as a function of time is measured. This quantity is 
 # 
 # $$\displaystyle C_{ac}(t)=\frac{1}{L}\int_0^L c(x,t)dx$$
@@ -182,7 +194,7 @@
 # 
 # (b) Suggest how the diffusion coefficient might then be measured.
 # 
-# ### Q36 Waveforms in a wire
+# ## Q36 Waveforms in a wire
 # (a) Work out the waveforms produced if a taut piano wire of length $L$ is struck such that its initial displacement is zero but its initial velocity everywhere has the shape $f (x) = xL - x^2$.
 # 
 # (b) Show that the displacement is well approximated by $\displaystyle u = 4\left(\frac{L}{\pi} \right)^3\sin\left(\frac{\pi ct}{L}\right)\sin\left(\frac{\pi x}{L}\right)$.
@@ -193,7 +205,7 @@
 # 
 # as can also be worked out by converting to exponentials.
 # 
-# ### Q37 Solitons
+# ## Q37 Solitons
 # A wave that retains its shape is not dispersive, this means that its wavelength does not change with time or distance, and is called a soliton. In the 1830's, Russell published an account of his observation of a solitary wave travelling unaided along the Union Canal near Edinburgh. It was produced after a barge suddenly stopped but the mass of water it was moving did not. The same type of soliton wave is more famously observed as the Severn Bore. Solitons are also formed in some types of lasers and are important for communications, as the wave does not lengthen and one soliton can cross another unchanged. A soliton can also be formed in all-trans polyacetylene. In this case, it is an electron in a non-bonding orbital situated between regions of opposite double bond alternation. This electron density can migrate up and down the polyacetylene without spreading.
 # 
 # The Korteweg - deVries (KdV) equation 

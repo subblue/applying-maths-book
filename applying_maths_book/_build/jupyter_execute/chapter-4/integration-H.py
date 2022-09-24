@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## Line integrals
+# # Line integrals
 
 # In[1]:
 
@@ -15,6 +15,7 @@ init_printing()                         # allows printing of SymPy results
 plt.rcParams.update({'font.size': 16})  # set font size for plots
 
 
+# ## Introduction 
 # The integrals so far studied have the form $\displaystyle \int f(x)dx$, which means that integration proceeds uniformly along the x-axis. Now suppose instead that we wish to integrate along some other direction, such as any curved line that is in the $x-y$ plane. This is not as obscure as it may sound. When you ride a bike, the force needed to keep you moving will obviously vary depending on which way or how fast you want to go. Similarly, the amount of energy you consume getting from one place to another depends on the path taken such as walking around a hill instead of over the top. In thermodynamics, line or path integrals are very important and explain why some integrals are represented as the difference between starting and ending values while other integrals have to be evaluated explicitly.
 # 
 # Three things are needed to calculate a line integral: 
@@ -49,9 +50,9 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # which does make the integral look rather ordinary.
 # 
-# ### 13.1 Definitions of some different forms of line integrals 
+# ## 13.1 Definitions of some different forms of line integrals 
 # 
-# ###  Normal, i.e. continuous and single valued functions
+# ##  Normal, i.e. continuous and single valued functions
 # 
 # The line integral of a surface $P(x, y)$ with curve $C \equiv f(x)$ and limits $x_1 \to x_2$ is
 # 
@@ -64,7 +65,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # but note that it is necessary to multiply by $dy/dx$ and integrate in $dx$.
 # 
-# ### Parametric forms
+# ## Parametric forms
 # 
 # Parametric equations are very useful in defining complex curves; a circle of radius $2$ about the origin has the form $x^2 + y^2 = 2^2$ in Cartesian coordinates, and in parametric form, $x = 2\cos(t), y = 2\sin(t)$; see Section 6. A curve defined in parametric form is written as $(x(t), y(t))$. Integration is obtained by substituting equation 78 for $x$ and $y$ in terms of $t$ and integrating in $t$,
 # 
@@ -97,7 +98,7 @@ integrate(eq,t)
 # Figure 34 (Left) & 35. Right.  A line integral is made along curve $C$. Right. Calculating a small length of a curve $\delta s$.
 # _____
 # 
-# ### 13.3 Arc length on a surface $P(x,y)$
+# ## 13.3 Arc length on a surface $P(x,y)$
 # 
 # Suppose that the length of a small section of the curve $C$ is $ds$ then a line integral can be defined in terms of this arc length. See the sketch, Fig. 4.35, 
 # 
@@ -115,7 +116,7 @@ integrate(eq,t)
 # 
 # If the equation is in parametric form then $ds/dt$ is used instead of $ds/dx$ in equation 82 where $\displaystyle \frac{ds}{dt}=\sqrt{\left(\frac{dx}{dt}\right)^2 +\left(\frac{dy}{dt}\right)^2}$.
 # 
-# ### 13.4 Length of a curve
+# ## 13.4 Length of a curve
 # 
 # When only the length of a curve $C$ is required, all that is necessary is to make $P(x, y) = 1$ but still use the equation of the curve to define $dy/dx$;
 # 
@@ -147,7 +148,7 @@ eq = sqrt(1 + theta**2)
 integrate(eq, theta )
 
 
-# ### 13.5 A surface defined by two functions
+# ## 13.5 A surface defined by two functions
 # 
 # Suppose that the surface is represented by two functions $M$ and $N$, which is often the case in thermodynamics, then the line integral can be written as two integrals in $dx$ and $dy$,
 # 
@@ -161,7 +162,7 @@ integrate(eq, theta )
 # 
 # $$\displaystyle \int_C y^2 dx+2x^2y\,dy =\int_1^{-1} 1-x^2+2x^2\sqrt{1-x^2}\left(\frac{-2x}{2\sqrt{1-x^2}}\right)dx=\int_1^{-1} 1-x^2+2x^3dx $$
 # 
-# ### 13.6 Path independent integrals and State functions
+# ## 13.6 Path independent integrals and State functions
 # 
 # As an example of an integral that is _independent of the path_, consider calculating the integral $\int_C xdx + ydy$  first along the sinusoidal path $y = \sin(x)$ and then along the straight path $y = 2x/\pi$ both from $(0, 0) \to (0, \pi/2)$. Using equation 85 the first curve produces
 # 
@@ -186,7 +187,7 @@ integrate(eq, theta )
 # Figure 36. The integral of a _state function_ is independent of path and depends only on starting and ending positions $A$ and $B$.
 # _____
 # 
-# ### 14 Path integrals in Chemical Thermodynamics
+# ## 14 Path integrals in Chemical Thermodynamics
 # 
 # In thermodynamics, all the integrals you are likely to meet are line functions in 8-dimensional space - not a very appealing thought. Thermodynamics can consequently appear to be so very complicated because the choice of variables is so very large. Normally, 'natural' variables are chosen depending upon which can easily be measured, usually these are $p, V$ and $T$. However, any two independent variables can be chosen from the eight state functions $p, V, A, T, H, U, G, S$.
 # 
@@ -240,7 +241,7 @@ integrate(eq, theta )
 # 
 # because the internal energy $U$ of an ideal gas depends only on the temperature. The right-hand side of equation 91 is also zero because $\displaystyle \frac{\partial }{\partial T}\left(  \frac{R}{p}\right)=0$, verifying that $S$ is a state function.
 # 
-# ### 14.1 State functions do not depend on the path
+# ## 14.1 State functions do not depend on the path
 # 
 # To show that $S$ does not depend on the path, the entropy, $S$, of 1 mole of an ideal gas, expanded reversibly, will be calculated using equation 89. The starting pressure and temperature are $(p_0, T_0)$ (point A, Fig. 36) and ending $(p_1, T_1)$ (point B) and the calculation follows each of the two paths shown in (a) lines $C_1 + C_2$ and (b) line $C_3$. The heat capacity is treated as a constant over the range $p_0\to p_1$.
 # 
@@ -288,7 +289,7 @@ integrate(eq, theta )
 # 
 # which is the same as along the path (a); therefore entropy is a state function. (The first part of the last integration is a standard one: $\int dx/(ax + b) = \ln(ax + b)/a$).
 # 
-# ### 14.2 Green’s function
+# ## 14.2 Green’s function
 # 
 # A line integral of two functions is by Green's theorem equal to the surface integral around a _closed area_, or
 # 

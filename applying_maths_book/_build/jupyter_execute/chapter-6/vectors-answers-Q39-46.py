@@ -15,7 +15,7 @@ init_printing()                      # allows printing of SymPy results in types
 plt.rcParams.update({'font.size': 16})  # set font size for plots
 
 
-# ### Q39 answer
+# ## Q39 answer
 # (a) Taking the dot product
 # 
 # $$\displaystyle \vec\psi_1\cdot\vec \psi_2 = (a_1\vec\varphi_1 + a_2\vec\varphi_2)\cdot(b_2\vec\varphi_1-b_2\vec\varphi_2) = a_1b_1\vec\varphi_1\cdot\vec\varphi_1 -a_1b_2\vec\varphi_1\cdot\vec\varphi_2+ a_2b_1\vec\varphi_2\cdot\vec\varphi_1 - a_2b_2\vec\varphi_2\cdot\vec\varphi_2 $$
@@ -30,7 +30,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # $$\displaystyle \vec \psi_1=\frac{a_1\vec\varphi_1+a_2\vec\varphi_2}{\sqrt{a_1^2+a_2^2}},\quad \vec \psi_2=\frac{b_1\vec\varphi_1-b_2\vec\varphi_2}{\sqrt{b_1^2+b_2^2}}$$
 # 
-# ### Q40 answer
+# ## Q40 answer
 # The wavefunctions are $\vec \psi_1 = 2\vec\varphi_1 + 2\vec\varphi_2$, and $\vec\psi_2 = 4\vec\varphi_1 - 4\vec\varphi_2$ 
 # 
 # and when normalized are $\vec\psi \to \vec\psi/\sqrt{\vec\psi\cdot\vec\psi}$.
@@ -39,10 +39,10 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # and the then $\displaystyle \vec\psi_1= \frac{2}{\sqrt{8}}(\vec\varphi_1 + \vec\varphi_2)$ and similarly $\displaystyle \vec\psi_2= \frac{2}{\sqrt{8}}(\vec\varphi_1 - \vec\varphi_2)$. The dot product $\vec\psi_1\cdot\vec\psi_2=0$ because $\vec\varphi_1\cdot\vec\varphi_2=0$. We conclude that the wavefunctions are orthogonal and could therefore describe two eigenstates of the same quantum system. The wavefunctions could be describing H$^+_2$ and if so have the form of bonding and anti-bonding orbitals.
 # 
-# ### Q41 answer
+# ## Q41 answer
 # Yes, because the dot product is zero; $(1 + 1 - 1 - 1)/4 = 0$.
 # 
-# ### Q42 answer
+# ## Q42 answer
 # (a) The dot product is zero if the two orbitals are orthogonal. Choosing $\vec v_1$ and $\vec v_2$, their dot product is $(-1 + 1 + 0 -1 + 1 + 0)=0$, and with $\vec v_3$ and $\vec v_6$ produce $(-1+0-+1+0+1)=0$ and so on, except for $\vec v_3$ and $\vec v_2$. Their dot product is $\vec v_2\cdot\vec v_3 = (+1 +0 +0 +1 +0 +0) = 2$ so these vectors are not orthogonal to one another. Orbitals 5 and 6 are orthogonal with orbitals 1 to 4, but not with one another because their dot product produces $-2$ and not zero.
 # 
 # (b) One linear combination is $\vec v_2+\vec v_3=\begin{bmatrix}-2&1&1&-2&1&1\end{bmatrix}$, 
@@ -67,7 +67,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # (c) The orbitals are shown in Figures 89 and 90 in chapter 7, Matrices. Their shapes can also be obtained from a consideration of molecular group theory.
 # 
-# ### Q43 answer
+# ## Q43 answer
 # (a) The angles are $\alpha = 0,\; \beta= 0$; in calculating $\vec R\cdot\vec \mu_2$ use the angle $\beta$ to the right of dipole. The angle $\gamma$ between the dipoles is $180^\text{o}$ as they are parallel and in line, then 
 # 
 # $$\displaystyle \vec\mu_1\cdot\vec\mu_2=-|\vec\mu_1||\vec\mu_2|$$
@@ -126,7 +126,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # therefore $E = 0.045\;\mathrm{ D^2 nm^{-3}} \equiv 0.045 \cdot 10^{-23}$ J (notice that $\mathrm{D^2}\cdot10^{-27}/4\pi\epsilon_0 = 10^{-22}$). Thermal energy at 300 K is $4.142 \cdot 10^{-21} \equiv 414.2 \cdot 10^{-23}$ J, which is larger by $\approx 10^4$ times than the dipole - dipole interaction. Therefore, at this temperature the dipolar molecules cannot take up any preferred orientations with respect to one another because solvent molecules continuously jostle them and this has the effect of randomising their orientations.
 
-# ### Q44 answer
+# ## Q44 answer
 # Let $\vec R$ be a vector along the line between the centres of the two dipoles. The dot products with $\vec R$ are 
 # 
 # $$\displaystyle \vec\mu_1\cdot\vec R = \mu_1R\cos(\theta_1),\quad\vec\mu_2\cdot\vec R = \mu_2R\cos(\theta_2)$$
@@ -155,7 +155,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # which, when simplified, produces the equation in the question.
 # 
-# ### Q45 answer
+# ## Q45 answer
 # (a) The interaction between the dipoles is estimated by considering the distance between their positive and negative partial charges. The separation between the C and O atoms is constant, therefore so is their interaction, each atom's dipole here being slightly $\delta+$. The determining attraction is therefore between the negative ends of each dipole with the positive and negative parts of the other dipole.
 # 
 # In the molecule shown on the left of figure 74, the negative charges of the two dipoles are far apart between the two axial positions, so interact only slightly. The interaction between the axial $\vec\mu_x$ and equatorial $\vec\mu_O$ is larger, as the ends of the dipole are closer, and is more repulsive than the $a-a$ interaction.
@@ -235,7 +235,7 @@ energy_equat_axial
 # 
 # Exercise: Repeat the calculation, but correctly define $R$ as the vector between the centres of each pair of dipoles. $R$ will no longer have length $d$ and this will have to be calculated in each case.
 # 
-# ### Q46 answer
+# ## Q46 answer
 # (a) The Mg-Mg distance is calculated using positional vectors,say $p$ and $q$, from the origin, $\vec OO=\begin{bmatrix} 0& 0& 0\end{bmatrix}$ to each of the Mg atoms. The distance is then $|\vec p -\vec q|$.
 # 
 # Taking values from the data

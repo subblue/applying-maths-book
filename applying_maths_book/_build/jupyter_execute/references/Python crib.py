@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## Appendix:  Some basic Python instructions with a few examples.  
+# # Appendix:  Some basic Python instructions with a few examples.  
 
 # In[1]:
 
@@ -21,7 +21,7 @@ init_printing()                  # allows printing of SymPy results in typeset m
 plt.rcParams.update({'font.size': 14})  # set font size for plots, alter at will.
 
 
-# ### Basic syntax. Python 3 is assumed.
+# ## Basic syntax. Python 3 is assumed.
 # 
 # (1) The position an instruction starts on a line is important. Normally position zero starts a line but in loops or after conditional statements indented by 4 spaces or a tab. In general it seems that the spaces and tabs cannot be mixed. 
 # 
@@ -89,7 +89,7 @@ print(mylist[ : ])
 # 
 # 
 # 
-# ### Functions
+# ## Functions
 # 
 # There are two types of user defined functions, as in a multiline subroutine or procedure e.g. 
 
@@ -111,7 +111,7 @@ myfunc = lambda x : x*np.sin(x)     # use for one line functions
 print(myfunc(np.pi/3) )
 
 
-# ### Importing packages
+# ## Importing packages
 # 
 # It is necessary to import other packages for specific calculations, _numpy_ for fast numerical calculations, _scipy_ for special functions (such as error func), integrations, non-linear least squares etc. and _matplotlib_ for plotting. 
 # 
@@ -122,7 +122,7 @@ print(myfunc(np.pi/3) )
 # The other main different to python 2.7 is that 3/2 is treated as real division,i.e. 1.5. To get integer division use 3//2 = 1. This is important if the division is then to be used as an index as these can only be integers.
 # 
 
-# ### Simple statements,  printing formats 
+# ## Simple statements,  printing formats 
 
 # In[8]:
 
@@ -137,7 +137,7 @@ print('{:s}{:6.3f}{:s}{:6.5g}{:s}{:4d}'.format('The value of a is ', a , '\nThe 
 # \n causes a newline
 
 
-# ### Lists and List  comprehension
+# ## Lists and List  comprehension
 # 
 # Often a list (array in other languages) has _n_ values that can be addressed later on. In python these can be number or strings of letters etc. or a mixture of these. Strings are enclosed in parenthesis as  'a'.
 # 
@@ -179,7 +179,7 @@ for i in [0,3,4]:
     
 
 
-# ### Use list comprehension to make a double list
+# ## Use list comprehension to make a double list
 # 
 # Rather than use a double loop to put values into a double list this can be done in one go as follows.
 
@@ -195,7 +195,7 @@ print('printing b[4][1] will lead to an error e.g.')
 #print(b[4][1])       the error produced here will stop the notebook code cell from continuing until it is fixed.
 
 
-# ### Numerics are faster with numpy.
+# ## Numerics are much faster with numpy.
 # 
 # Import numpy (see top of page) to use mathematical functions and make arrays. The operation is orders of times faster than basic python.
 
@@ -213,7 +213,7 @@ print(myary[:,2])        # print all of column 2 which is 3rd as index starts at
 myary[:,:]
 
 
-# ### Append to a list
+# ## Append to a list
 # 
 # Appending one value at a time to a list is a very useful way of lengthening a list when the final length is unknown. Can be useful when reading datafile whose length is unknown. Start with an empty list then use a loop.
 
@@ -231,7 +231,7 @@ while i <= lim_value:
 print(mylist)
 
 
-# ### Using _loops_ and _if else_  to calculate stuff.  How to make sum of terms
+# ## Using _loops_ and _if else_  to calculate stuff.  How to make sum of terms
 
 # In[14]:
 
@@ -284,11 +284,11 @@ plt.show()                            # this must be last plotting instruction
 
 # If you want to plot two graphs together then it is a bit more complicated. First it is necessary to define a _figure_ and then define _axes_ on which to draw the data and add subplots as the two figures. This is shown below.
 
-# ### Functions.
+# ## Functions.
 # 
 # There are standard functions _sin, cos, exp_ etc. that we use numpy to call as _np.sin(x)_ etc. There are also two main types of user defined function that can take arguments.
 # 
-# ### Lambda functions.
+# ## Lambda functions.
 # 
 # These are single line functions and can be used for straightforward functions. They have the form
 # 
@@ -320,7 +320,7 @@ plt.title(r'$cos(x)+exp(-x/z)$')           # plot using mathjax , put r before '
 plt.show()
 
 
-# ### def functions
+# ## def functions
 # 
 # These are the more general type of user defined functions and allow for any sort of complicated function. They are the equivalent of subroutines in other languages. 
 # 
@@ -361,7 +361,7 @@ plt.legend()
 plt.show()
 
 
-# ### Recursive functions 
+# ## Recursive functions 
 # 
 # It is possible to make functions recursive, calcuating a factorial as n! = n.(n-1).(n-2)....1   is the commonly used example and is given below as is one to calculate Hermite polynomials used in determining harmonic oscillator wavefunctions.  
 
@@ -403,7 +403,7 @@ plt.grid()
 plt.show()
 
 
-# ### Using map( f(x),  alist )   or    [f(x) for x in list] 
+# ## Using map( f(x),  alist )   or    [ f(x) for x in list ] 
 # 
 # This is a way to perform an operation of a list of things without having to use a loop. The _map_ function has  two or more arguments _map( function, sequence )_. One simple use is to multiply all of a list by some number, you cannot do **[1,2,4,5]*2** for example, but have to use map or list comprehension as shown below.
 # 
@@ -437,7 +437,8 @@ print('\n',alpha)
 print("\nremove ' and , from output", str(alpha).replace("'",'').replace(',',''))  # remove ' and , 
 
 
-# ### Algebraic and numercal integration of a function
+
+# ## Algebraic and numercal integration of a function
 # 
 # Now we will do some integration, both algebraic and numerically; we have already imported integrate from scipy; see top of document.
 # 
@@ -479,7 +480,7 @@ plt.legend()
 plt.show()
 
 
-# ### Algebraic integration; example to find average distance
+# ## Algebraic integration; example to find average distance
 # The average distance given the distribution $w(r)$ is $\displaystyle \langle r \rangle = \int_0^\infty rw(r)dr$. The integral can be performed in the normal way but we use SymPy to illustrate this. THe steps are to define symbolic constants then do the integration. In SymPy infinity is oo (two lower case letter o). The _conds='none'_ removes any periodic conditions and so simplified the result. 
 
 # In[22]:
@@ -495,9 +496,9 @@ av
 
 # The result contains the gamma function, if you type $\mathtt{av.evalf()}$ you can evaluate the numerical parts and find that $\displaystyle \langle r \rangle = 0.55396n^{-1/3}$.
 # 
-# ### Numerical integration
+# ## Numerical integration
 # 
-# The same calcuation can be done numerically of course, but in that case _n_ has to be defined in each instance.
+# The same calculation can be done numerically of course, but in that case _n_ has to be defined in each instance.
 
 # In[23]:
 
@@ -528,7 +529,7 @@ else:
     print('{:s}{:g}'.format('error too large ',err))
 
 
-# ### Some other algebraic calculations, differentiation  and series
+# ## Some other algebraic calculations, differentiation  and series
 # 
 # Sympy can be used in the same way as Maple or Mathematica to perform algebra. It is quite easy but the manuals are very obscure ansd so a couple of examples are given below.
 # 
@@ -564,7 +565,7 @@ S = series(Q,r,0,15).removeO()   # expand Q (above) remove big O and then simpli
 simplify(S)
 
 
-# ### Drawing two or more plots
+# ## Drawing two or more plots
 # 
 # In this case it is necessary to define a figure and axes rather than using plt. as for just a single graph. Using a figure also allows the plot size to be defined rather than having to use the default.
 
@@ -614,7 +615,7 @@ plt.show()                       # last plot statement note that this is plt. no
 
 
 # 
-# ### Numerical integration of differential equations
+# ## Numerical integration of differential equations
 # 
 # As an example the scheme $A  \leftrightharpoons B \rightarrow C $ is integrated. This is then done algebraically using sympy in lower down in the document.
 # 
@@ -677,7 +678,7 @@ plt.legend()
 plt.show()
 
 
-# ### Algebraic solution using Sympy
+# ## Algebraic solution using Sympy
 # 
 # The equations are 
 # 
@@ -718,7 +719,8 @@ k2 = 3.0                                #  C does not decay only forms from B
 maxt= 5.0
 numt= 500                                       # number of time points
 t = np.linspace( 0, maxt,  numt )               # time as initial, final, then number of points in array
-f01= lambda t: -np.exp(t*(-k1 - k2 - km1 - np.sqrt(k1**2 - 2*k1*k2 + 2*k1*km1 + k2**2 + 2*k2*km1 + km1**2))/2)                +np.exp(t*(-k1 - k2 - km1 + np.sqrt(k1**2 - 2*k1*k2 + 2*k1*km1 + k2**2 + 2*k2*km1 + km1**2))/2)
+f01= lambda t: -np.exp(t*(-k1 - k2 - km1 - np.sqrt(k1**2 - 2*k1*k2 + 2*k1*km1 + k2**2 + 2*k2*km1 + km1**2))/2) \
+               +np.exp(t*(-k1 - k2 - km1 + np.sqrt(k1**2 - 2*k1*k2 + 2*k1*km1 + k2**2 + 2*k2*km1 + km1**2))/2)
     
 plt.plot(t,f01(t),color='red')
 plt.xlabel('time (t)')
@@ -728,7 +730,7 @@ plt.axis([0,5,0,0.5])
 plt.show()
 
 
-# ### Reading data from files and make a 3D plot from .sdf data
+# ## Reading data from files and make a 3D plot from .sdf data
 # 
 # Python has several different ways of reading data and numpy has even more sophisticated methods.
 # The best way to start with is to use the script **_with open() as f:_** as shown below as this aoutmatically closes the file . Use **f.readlines()** get the whole lot of the data. It reads a list so may be text numbers or a mixture; it is up to you to sort this out later on.  
@@ -819,7 +821,7 @@ plt.show()
 # if you use %matplotlib notebook instead of %matplotlib inline you can rotate image etc.
 
 
-# ### Reading pdb data 
+# ## Reading pdb data 
 # 
 # The code below finds the number of atoms and produces a list of coordinates. Put the .pdb into the same folder as this notebook
 
@@ -876,7 +878,7 @@ with open(dataname) as f:
     pass
 
 
-# ### fitting data using non-linear least squares
+# ## fitting data using non-linear least squares
 # 
 # In the example below some noisy data is read then, with a function that is supposed to fit the function, the data is analysed. Graphs are plotted. 
 
@@ -921,7 +923,8 @@ inits = [10.5, 1.0, 20.0, 10.0]                       # initial values, need not
 
 fitP, fitC = curve_fit(fit_func, tme, signal, p0 = inits)  # fitP are parameters, a,b,c,d , fitC are covariances
 
-print('{:s} {:6.3f} {:6.3f} {:6.3f} {:6.3f}'.      format('parameters are\n   a       b       c    d\n', fitP[0],fitP[1],fitP[2],fitP[3]))
+print('{:s} {:6.3f} {:6.3f} {:6.3f} {:6.3f}'.\
+      format('parameters are\n   a       b       c    d\n', fitP[0],fitP[1],fitP[2],fitP[3]))
 
 print('Covarience Matrix \n')
 for i in range(4):
@@ -990,7 +993,7 @@ plt.show()
 
 # ## Data needed for examples above
 # 
-# ### 'data-to-fit.txt' 
+# ## 'data-to-fit.txt' 
 # 
 # remove # after copying
 
@@ -1200,7 +1203,7 @@ plt.show()
 
 
 # 
-# ### 'cyclohexane.sdf'
+# ## 'cyclohexane.sdf'
 # 
 # copy and paste the parts needed but remove any # 
 # 
@@ -1254,7 +1257,7 @@ plt.show()
 
 # ## Chapter 11 Q20
 # 
-# ### 'UK-covid-deaths.txt'
+# ## 'UK-covid-deaths.txt'
 # 
 # This is a text file. Note that the data is in reverse order so will need to be reversed before using. If the data is read into $\mathtt{alldata[\,:\,]}$, then $\mathtt{revdata[\,:\,]=alldata[\,:\,:\,-1]}$ will reverse it.
 
@@ -1977,9 +1980,9 @@ plt.show()
 # 3,
 # 1
 
-# ## Chapter 13
+# # Chapter 13
 # 
-# ### 'test data.txt'
+# ## 'test data.txt'
 # 
 # remove # after copying
 
@@ -1998,7 +2001,7 @@ plt.show()
 #380, 80.1, 0.9
 
 
-# ### 'PCA data.txt'
+# ## 'PCA data.txt'
 # remove # after copying
 
 # In[38]:
@@ -2016,7 +2019,7 @@ plt.show()
 #1.21, 2.25, -0.61
 
 
-# ### 'exponential-data.txt'
+# ## 'exponential-data.txt'
 # remove # after copying
 
 # In[39]:

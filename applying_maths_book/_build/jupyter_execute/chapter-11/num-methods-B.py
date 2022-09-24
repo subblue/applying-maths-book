@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ##  Numerical solution of differential equations
+# #  Numerical solution of differential equations
 
 # In[1]:
 
@@ -16,11 +16,12 @@ init_printing()                         # print SymPy results in typeset maths f
 plt.rcParams.update({'font.size': 16})  # set font size for plots
 
 
+# ## Introduction
 # Although many differential equations can be explicitly integrated, as illustrated in Chapter 10, there are many others of interest, particularly in quantum mechanics, that have no such solution other than by a series expansion and even this may only be approximate. In these cases a numerical solution must be sought; however, this is always preceded by as much algebraic analysis of the problem as is possible.
 # 
 # As with any integration, a constant is produced for each integration step; two constants are necessary for an equation with derivative $d^2y/dx^2$ because two integrations are necessary to produce $y$. In differential equations, integration constants are found by using the initial values and/or the boundary values to $y$ and its derivatives, and these are determined by the particular problem being solved. These are described in Chapter 10.
 # 
-# ### 4.1 Euler's and other methods of numerical approximation
+# ## 4.1 Euler's and other methods of numerical approximation
 # 
 # The analytic or algebraic solution to an equation produces a function whose values are continuous in $x,\, y$, or $t$, and that allows us to calculate its value at any point we might choose, there being, effectively, an infinite number to choose from. A general feature of the numerical solution of a differential equation is that it is converted into recursive finite - difference equation and this is because a numerical solution can be obtained only at relatively few discrete values. The general first-order differential equation is
 # 
@@ -54,13 +55,13 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # Fig. 7. The grey area is calculated in the Euler method (left) only very approximately measures the true area under the curve. On the right the improved Euler method is shown and is clearly better. The notation is $f_n \equiv f(t_n,y_n)$. The smaller $h$ becomes the better the curve is approximated.
 # _______
 # 
-# ### 4. 2 Errors
+# ## 4. 2 Errors
 # 
 # Before carrying out the calculation, the error implicit in this method should be considered. There will always be an error associated with a numerical method because an approximation to the derivative has always to be made. The error takes two forms; the approximation to $dy/dx$ produces a truncation error; a better approximation could be made by expanding this as a series. The truncation errors can be _local_ or _global_, the local error is that produced in a single step, the global is that accumulated after many steps. Generally, a smaller value of $h$ reduces these errors; conversely, too large a value, which may not be realised beforehand, can lead to instability with the solution becoming erratic. Some small amount of experimenting is often required to fix $h$ to an appropriate value. There are complex ways of estimating the errors but, pragmatically, it is simpler to double the number of points repeatedly until no change in the calculated data is observed.
 # 
 # The second form of error is due to rounding. A small value of $h$ leads to many terms being summed, and depending on the particular form of $f(y, t)$ this may or may not be important; only a calculation will reveal this. However, it can mostly be prevented by increasing the precision of the calculation. Most programmes nowadays use double precision floating point arithmetic, but if problems persist this may need to be increased.  How this is done is clearly specific to the language used.
 # 
-# ### 4.3 Using Euler' s method
+# ## 4.3 Using Euler' s method
 # 
 # To illustrate the method, the equation 
 # 
@@ -136,11 +137,11 @@ soln0,time0 = Eulerf(dydt,t0,y0,maxt,N)  # return results as arrays
 # 
 # _____
 # 
-# ### 4.4 Improving on the Euler method
+# ## 4.4 Improving on the Euler method
 # 
 # Many of the examples used are not particularly sensitive to the integration method; however, some equations are generally exquisitely sensitive, while others are only so for some sets of initial conditions and not for others. It is not obvious beforehand whether this is going to be the case or not and because of this more sophisticated integration schemes are necessary. The two described here are an improvement on the Euler algorithm and the Runge -Kutta method.
 # 
-# #### **Modified Euler or Heun's method**
+# ### **Modified Euler or Heun's method**
 # 
 # The Euler method is rather crude but is easy to implement and is easily improved. Consider again equation 19. The updated $y$ value was calculated using 
 # 
@@ -200,7 +201,7 @@ N   = 50                               # number of points
 soln0,time0 = Mod_Eulerf(dydt, t0, y0, maxt, N)         # return results
 
 
-# #### **Runge - Kutta method**
+# ### **Runge - Kutta method**
 # 
 # There are other more sophisticated methods than the modified Euler of which the Runge-Kutta method is often the method of choice. The Runge-Kutta method uses the average of the gradient at the mid- and end-points of an interval to calculate the next $y$ value. This is an example of a *predictor - corrector* method, which as the name suggests, predicts the next value then makes a weighted correction to this (Prest et al. 1986). In this method, *four* quantities are required for each equation being solved. The equation being solved is as before $dy/dt = f(t, y)$ and $h$ is the increment in $t$.
 # 
@@ -254,7 +255,7 @@ soln0,time0 = Runge_Kutta(dydt,t0,y0,maxt,N)  # return results
 # You can use this method for any calculation for which the Euler or modified Euler method is appropriate; it will take slightly longer to calculate each step but should produce results that are more accurate with fewer data points. The method for coupled equations is described in Section 5. The relative errors in the Euler, modified Euler, and Runge - Kutta vary as $O(h^2),\; O(h^3)$  and $ O(h^5)$ respectively, where the local error is estimated as $| f(x) - f _{numeric}(x)|$ with $f$ as the true algebraic solution at some point $x$. Of course this error cannot generally be estimated.
 # 
 # 
-# ### 4.6 Verlet algorithm: calculating dynamics and performing MD simulations
+# ## 4.6 Verlet algorithm: calculating dynamics and performing MD simulations
 # 
 # An MD simulation is a technique to calculate equilibrium and transport properties of many body systems, such as proteins, DNAs, polymers, or simple liquids. The calculation is normally classical, and integrates Newton's equation of motion. As classical mechanics is used, quantum effects such as tunnelling are ignored. The speed and capacity of modern computers make MD a common tool for the study of bio-molecules in particular, and a vast literature exists.
 # The MD simulation proceeds by calculating the forces between pairs of particles and integrating them at some time t; this time is now incremented by a small amount $\Delta t$ and the process repeated. In a protein or DNA, the forces between the atoms will comprise those of individual chemical bonds, with their own particular force constants for bond stretching, bending, and rotating. Between non-bonded atoms, Lennard-Jones type potentials could be used and the Coulomb potential between charged groups. These interactions can be- come rather complicated and are usually parameterized and standard sets of values used.
@@ -318,11 +319,11 @@ soln0,time0 = Runge_Kutta(dydt,t0,y0,maxt,N)  # return results
 # 
 # Before an example is worked through, a couple of topics need a brief mention.
 
-# ### 4.7 Molecular dynamics simulations
+# ## 4.7 Molecular dynamics simulations
 # 
 # The Verlet is widely used in MD simulations because it is time symmetric and so conserves energy well. As it is less complicated, it works faster than other integration schemes. In an MD simulation, time steps are typically $10^{-15}$ s, when put into real units, because chemical bond vibrational periods are $\approx 10^{-14}$ s and several samples will be needed in each period. As with any numerical integration, the time step has to be short enough to allow an accurate calculation, but not so short that the calculation becomes unnecessarily long. The implementation of MD schemes is too long to discuss here; obviously many hundreds of atoms are present, the velocity and position of each has to be calculated in turn, subject to the interaction potential a molecules has with each of its neighbours. The way that coupled equations are dealt with is described in Section 5, the MD calculation takes this to extreme with thousands of equations but the basic idea is the same. Frenkel & Smit (1996) give basic algorithms, and detailed ones can be found in Allen & Tilldesley (1987).
 # 
-# ### 4.8 Other Verlet algorithms
+# ## 4.8 Other Verlet algorithms
 # 
 # There are other widely used versions of this algorithm, examples are the velocity Verlet and the Beeman algorithm, both of which give a better estimation of the velocities (see Frenkel & Smit 1996). This is because there is no subtraction of two large numbers as in equation 27, which is the main disadvantage of the basic Verlet algorithm.
 # 
@@ -340,7 +341,7 @@ soln0,time0 = Runge_Kutta(dydt,t0,y0,maxt,N)  # return results
 # 
 # $$\displaystyle v(t_0 + \Delta t) = v(t_0 + \Delta t/2) + f (t_0 + \Delta t)/2m \tag{30}$$
 # 
-# ### 4.9 Basic Verlet Algorithm
+# ## 4.9 Basic Verlet Algorithm
 # 
 # Consider calculating the position and velocity of a ball dropped from a height of $h = 30$ metres until it reaches the ground. The equation of motion is obtained by balancing forces and is $md^2y/dt^2 + mg = 0$ where $m$ is the mass of the ball, which cancels out, and $g$ the acceleration due to gravity $9.81\,\mathrm{ ms^{-2}}$. The time steps have to be determined by trial and error but the calculation is quite accurate with time steps of $0.005$ s.
 # 
@@ -392,7 +393,7 @@ for i in range(1,n):                 # Verlet loop
 # Fig. 9 Verlet calculation showing height and velocity vs time for a ball dropped under gravity. The velocity instantaneously becomes zero and remains so as the ball hits the ground.
 # _____
 # 
-# ### 4.10 The Verlet algorithm used to calculate atom scattering trajectories
+# ## 4.10 The Verlet algorithm used to calculate atom scattering trajectories
 # 
 # The trajectory, followed by the scattering by one particle off another, described in Section 3.6, will be calculated with a Lennard-Jones 6-12 (LJ6-12) potential. Fig. 4 shows the geometry, and the accompanying text describes the background to this problem. The LJ potential has a wide but shallow attractive well and a narrow and very steep repulsive wall at short range; its equation is 
 # 
@@ -494,7 +495,7 @@ for i,y0 in enumerate([j*0.15 for j in range(0,21)]):   # calculate range of val
 # The effect that the attractive and repulsive parts of the potential have is clear. At small impact parameter, the repulsive part of the potential acts not unlike a hard sphere and the approaching particle bounces almost straight off. As the impact parameter is increased, more of the attractive and less of the repulsive part of the potential is felt. Eventually the attractive potential only gradually draws the particle in only to force it to be violently repelled at a smaller separation. Then at an impact of about $2.27 \to 2.295$ the attraction almost exactly balances the kinetic energy and the incoming particle is trapped for a short period and performs a complete orbit or two before leaving. At still greater impact para- meter, all that the potential can now do is to bend the incoming particle from its initial course. The trajectory at $b = 1.65$ has almost zero displacement and is called a 'Glory', see also Fig. 6 which shows the scattering angle $\chi$ vs impact parameter.
 # 
 # 
-# ### 4.10a  Numerical solution of the Diffusion equation illustrated with transient grating decay.
+# ## 4.10a  Numerical solution of the Diffusion equation illustrated with transient grating decay.
 # 
 # Although the diffusion equation can be solved in many simple cases, often the geometry needed for a particular experiment is not simple and then a numerical solution is the only course of action. This is particularly the case for two and three dimensional problems. 
 # 
@@ -529,7 +530,7 @@ for i,y0 in enumerate([j*0.15 for j in range(0,21)]):   # calculate range of val
 # 
 # The condition for absolute stability depends on both the spatial and temporal steps and is $\displaystyle \frac{D\Delta t}{(\Delta x)^2} \le 1/2$ and  making $m$ bigger (more spatial grid points) is the only way to ensure absolute stability since the spatial extent is defined in the initial conditions pertaining to the problem at hand and $\Delta t$c depend on $\delta x$.
 # 
-# #### **Initial Conditions**
+# ### **Initial Conditions**
 # As with the solution of any differential equation  the calculation cannot be completed until the initial conditions have been specified. There are two types of these. The simplest to apply is to fix the value of $C$ at the edge of the grid to a constant value, the Dirichlet condition, the other is to make the gradient at the edge a constant value, Neumann condition. The former is more suitable for thermal calculations where the edges can be kept at a constant temperature. It would be hard to make a membrane that held the same chemical species at a higher concentration on one side than the other. 
 # 
 # The  Neumann initial condition is 
@@ -540,9 +541,9 @@ for i,y0 in enumerate([j*0.15 for j in range(0,21)]):   # calculate range of val
 # 
 # where $\alpha,\;\beta$ are constants. This condition ensures conservation of mass as no material can enter or leave and is enabled by making $C_0= C_1, C_m = C_{m-1}$ at each updating step.  The same condition when dealing with thermal diffusion corresponds to having an insulated block of material unable to exchange energy with its surroundings.
 # 
-# #### **Example Calculation: Decay of Transient Grating. (See also chapter 10.10.)** 
+# ### **Example Calculation: Decay of Transient Grating. (See also chapter 10.10.)** 
 # 
-# In the transsient grating experiment a laser pulse is split into two parts and recombined in a sample and so produces a grating from which a probe laser can be diffracted. The grating dies away depending on excited state lifetime and linear and rotational diffusion. See Chapter 10.10 for a digram and details.
+# In the transient grating experiment a laser pulse is split into two parts and recombined in a sample and so produces a grating from which a probe laser can be diffracted. The grating dies away depending on excited state lifetime and linear and rotational diffusion. See Chapter 10.10 for a digram and details.
 # 
 # an initial concentration of $C$ has to be present at zero time which means defining $C \gt 0$ and the form the concentration profile will take vs. position $x$.  For illustration we assume this profile is the function  $a+b\cos(kx)$. This has the form expected in a transient grating experiment, which can be used to measure the diffusion coefficient of electronically excited states.  In these type of experiments a polarised laser pulse is split into two parts and recombined in a solution containing molecules that will absorb this light. As the beams are from the same source they are 'in phase' and will interfere at the sample producing strips of excited molecules separated by strips of unexcited ones. This grating is 'transient' because molecules diffuse and also because the excited states decay away. A third probe laser is used to scatter light off the transient grating and measures how quickly this decays away. In fluid solution rotational diffusion of the molecules primarily washes out the grating, whereas if this is not possible linear diffusion will do this but on a much longer time scale. A thermal grating may also be present if absorption is into a solid substrate.  Figure 30f in chapter 10 ( differential equations section 10) shows a possible experimental set-up.
 # 
@@ -620,7 +621,7 @@ plt.show()
 
 
 
-# ### Crank-Nicholson Method
+# ## Crank-Nicholson Method
 # 
 # The best method to perform 1D diffusion type calculations, including reaction-diffusion, is, according to Prest (Numerical Recipes), the Crank-Nicholson approach as it is second order in time and space. This method is still subject to numerical instability as are all numerical methods. The method is computationally more complex than the approach above. The method uses the stencil shown below and is based on using the trapezoidal rule to perform the integration.
 # 
@@ -952,7 +953,7 @@ plt.tight_layout()
 plt.show()
 
 
-# ### 2D diffusion in a plate.
+# ## 2D diffusion in a plate.
 # 
 # Returning to using the simpler integration scheme described at the start of this section but now  in two dimensions. The reason for using the simpler scheme is because the 2D Crank-Nicholson scheme produces equations that are hard to solve and alternative, and complicated,  methods as described by Prest et al. (Numerical Recipes) are then used.  
 # 
@@ -1028,7 +1029,8 @@ def aring(r,cx,cy):                        # returns list of x and y coords of c
             
 #--------------------
 def update_step2D(u0):                     # Neumann conditions added at end
-    u[1:-1, 1:-1] = u0[1:-1, 1:-1] + alphax*(u0[2:, 1:-1] - 2*u0[1:-1, 1:-1] + u0[:-2, 1:-1])                                    + alphay*(u0[1:-1, 2:] - 2*u0[1:-1, 1:-1] + u0[1:-1, :-2]) 
+    u[1:-1, 1:-1] = u0[1:-1, 1:-1] + alphax*(u0[2:, 1:-1] - 2*u0[1:-1, 1:-1] + u0[:-2, 1:-1]) \
+                                   + alphay*(u0[1:-1, 2:] - 2*u0[1:-1, 1:-1] + u0[1:-1, :-2]) 
     u[0,1:ny-2]    = u[1,1:ny-2]           # Neumann limits
     u[nx-1,1:ny-2] = u[nx-2,1:ny-2]
     u[1:nx-2,0]    = u[1:nx-2,1]

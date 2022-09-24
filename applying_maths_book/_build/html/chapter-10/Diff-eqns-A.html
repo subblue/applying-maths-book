@@ -4,11 +4,13 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Differential Equations &#8212; Applying Maths in the Chemical &amp; Biomolecular Sciences</title>
     
-  <link href="../_static/css/theme.css" rel="stylesheet">
-  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,40 +20,39 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Questions 1 - 23" href="Diff-eqns-Q1-23.html" />
@@ -63,7 +64,21 @@
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -72,9 +87,10 @@
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -92,14 +108,15 @@
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../intro.html">
-   Applying Maths in the Chemical and Biomolecular Sciences.
-  </a>
- </li>
-</ul>
-<ul class="current nav bd-sidenav">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Applying Maths in the Chemical and Biomolecular Sciences.
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../chapter-1/chapter1-intro.html">
    1. Numbers, Equations, Operators, and Algorithms.
@@ -204,11 +221,6 @@
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-2/chapter2-Q-10-13.html">
      Questions 10 -13
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-2/chapter2-C.html">
-     Euler’s theorem, roots of unity, x-ray diffraction structure factor.
     </a>
    </li>
    <li class="toctree-l2">
@@ -337,7 +349,7 @@
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../chapter-4/integration-intro.html">
-   4. Integration.
+   4 Integration.
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
   <label for="toctree-checkbox-4">
@@ -377,7 +389,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-4/integration-D.html">
-     Calculating an Average Value.
+     Calculating an Average.
     </a>
    </li>
    <li class="toctree-l2">
@@ -407,7 +419,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-4/integration-G.html">
-     Calculating the energy of a chemical bond using molecular orbitals
+     Calculating the energy of a Chemical Bond using Molecular Orbitals
     </a>
    </li>
    <li class="toctree-l2">
@@ -688,7 +700,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-7/matrices-D.html">
-     Rotation matrices: moving molecules
+     Rotation matrices: moving molecules. Coordinate transform as rotation.
     </a>
    </li>
    <li class="toctree-l2">
@@ -757,23 +769,13 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-7/matrices-K.html">
-     Calculating a bond length using moments of inertia
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-7/matrices-Q61.html">
-     Question 61
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="../chapter-7/matrices-L.html">
      Principal axes for Moments of Inertia
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-7/matrices-Q62.html">
-     Question 62
+    <a class="reference internal" href="../chapter-7/matrices-Q61-62.html">
+     Question 61 - 62
     </a>
    </li>
    <li class="toctree-l2">
@@ -1004,7 +1006,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="Diff-eqns-G.html">
-     PDE examples continued
+     PDE Continued
     </a>
    </li>
    <li class="toctree-l2">
@@ -1096,7 +1098,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-11/num-methods-answers8-12.html">
-     Solutions Q8 - 12
+     Solutions Q 8 - 12
     </a>
    </li>
    <li class="toctree-l2">
@@ -1258,112 +1260,227 @@
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/chapter-10/Diff-eqns-A.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/subblue/applying-maths-book"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/subblue/applying-maths-book/issues/new?title=Issue%20on%20page%20%2Fchapter-10/Diff-eqns-A.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        
-    </div>
-</div>
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/subblue/applying-maths-book/main?urlpath=lab/tree/applying_maths_book/chapter-10/Diff-eqns-A.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        <a class="colab-button" href="https://colab.research.google.com/github/subblue/applying-maths-book/blob/main/applying_maths_book/chapter-10/Diff-eqns-A.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
-                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
-                    src="../_static/images/logo_colab.png"
-                    alt="Interact on Colab">Colab</button></a>
-        
-        
-    </div>
-</div>
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/subblue/applying-maths-book/main?urlpath=lab/tree/applying_maths_book/chapter-10/Diff-eqns-A.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://colab.research.google.com/github/subblue/applying-maths-book/blob/main/applying_maths_book/chapter-10/Diff-eqns-A.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/subblue/applying-maths-book"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/subblue/applying-maths-book/issues/new?title=Issue%20on%20page%20%2Fchapter-10/Diff-eqns-A.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/chapter-10/Diff-eqns-A.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id1">
    1.1 Differential equations
@@ -1390,9 +1507,9 @@
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#i-i-m-reaction">
+    <a class="reference internal nav-link" href="#i-iodine-recombination-i-m-reaction">
      <strong>
-      (i)  I + M reaction
+      (i)  Iodine recombination, I + M reaction
      </strong>
     </a>
    </li>
@@ -1599,17 +1716,268 @@
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Differential Equations</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   1.1 Differential equations
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#initial-value-problems-ivp">
+   1.2 Initial Value Problems (IVP)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#boundary-value-problems-bvp">
+   1.3 Boundary Value Problems (BVP)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#separable-variables">
+   2 Separable variables
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#steady-state">
+   2.1 Steady State
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#i-iodine-recombination-i-m-reaction">
+     <strong>
+      (i)  Iodine recombination, I + M reaction
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ii-fluorescence-yield">
+     <strong>
+      (ii) Fluorescence yield
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#iii-quenching-an-excited-state-electron-spin-can-affect-the-outcome">
+     <strong>
+      (iii) Quenching an excited state. Electron spin can affect the outcome
+     </strong>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-phase-portrait">
+   2.2 The Phase Portrait
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#phase-planes-and-solving-equations-by-separating-variables">
+   3 Phase planes and solving equations by separating variables
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#i-laser-gain">
+     <strong>
+      (i) Laser Gain
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ii-harmonic-oscillator">
+     <strong>
+      (ii) Harmonic  oscillator
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#iii-the-morse-anharmonic-oscillator">
+     <strong>
+      (iii) The Morse anharmonic oscillator
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#hamilton-s-equations-of-motion">
+     <strong>
+      Hamilton’s Equations of Motion
+     </strong>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#chemical-kinetics">
+   3.1 Chemical Kinetics
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#i-bimolecular-reactions">
+     <strong>
+      (i) Bimolecular reactions
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#iii-reversible-or-opposing-reactions-a-overset-k-1-underset-k-2-rightleftharpoons-b-c">
+     <strong>
+      (iii) Reversible or opposing reactions
+      <span class="math notranslate nohighlight">
+       \(A \overset{k_1}{\underset{k_2} \rightleftharpoons }B+C\)
+      </span>
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#iv-temperature-jump-a-perturbation-from-the-equilibrium-mathrm-h-2o-overset-k-1-underset-k-2-rightleftharpoons-mathrm-h-mathrm-oh">
+     <strong>
+      (iv) Temperature Jump; a perturbation from the equilibrium
+      <span class="math notranslate nohighlight">
+       \(\mathrm{H_2O}\overset{k_1}{\underset{k_2} \rightleftharpoons }\mathrm{H^+}+\mathrm{OH^-} \)
+      </span>
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#v-reversible-reactions-a-b-overset-k-1-underset-k-2-rightleftharpoons-c-d">
+     <strong>
+      (v) Reversible reactions
+      <span class="math notranslate nohighlight">
+       \(A + B \overset{k_1}{\underset{k_2} \rightleftharpoons } C + D\)
+      </span>
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vi-hydrogen-iodide-equilibrium">
+     <strong>
+      (vi) Hydrogen iodide equilibrium
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vii-kinetics-and-flow">
+     <strong>
+      (vii) Kinetics and flow
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#viii-dissolution-kinetics">
+     <strong>
+      (viii) Dissolution kinetics
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ix-mean-free-path-and-probability-of-obtaining-a-path-of-a-given-length">
+     <strong>
+      (ix) Mean free path and probability of obtaining a path of a given length
+     </strong>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#diffusion-of-heat-and-molecules">
+   3.2 Diffusion of heat and molecules
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#i-heat-loss">
+     <strong>
+      (i) Heat loss
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ii-ice-forming">
+     <strong>
+      (ii) Ice forming
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#iii-diffusion-through-a-cell-wall">
+     <strong>
+      (iii) Diffusion through a cell wall
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#iv-reaction-and-diffusion">
+     <strong>
+      (iv) Reaction and diffusion
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#v-cooling-and-heating-trommsdorff-norrish-effect">
+     <strong>
+      (v) Cooling and heating.  Trommsdorff - Norrish effect
+     </strong>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-centrifuge-forced-separation">
+   3.3 The Centrifuge: Forced separation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#absorption-of-photons-and-scattering-of-x-rays-and-electrons">
+   3.4 Absorption of photons and scattering of X-rays and electrons
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#velocity-and-acceleration">
+   3.5 Velocity and Acceleration
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#i-skydiving">
+     <strong>
+      (i) Skydiving
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ii-rockets">
+     <strong>
+      (ii) Rockets
+     </strong>
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
               <div>
                 
-  <div class="section" id="differential-equations">
-<h1>Differential Equations<a class="headerlink" href="#differential-equations" title="Permalink to this headline">¶</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="differential-equations">
+<h1>Differential Equations<a class="headerlink" href="#differential-equations" title="Permalink to this headline">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import all python add-ons etc that will be needed later on</span>
@@ -1623,8 +1991,8 @@
 </div>
 </div>
 </div>
-<div class="section" id="id1">
-<h2>1.1 Differential equations<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<section id="id1">
+<h2>1.1 Differential equations<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
 <p>Differential equations are characterized into <em>ordinary</em> and <em>partial</em> ones. Ordinary differential equations only involve one independent variable and so have ordinary (total) derivatives; for example, the equation for a damped harmonic oscillator is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle m\frac{d^2y}{dt^2} + a\frac{dy}{dt} + bx = 0\]</div>
@@ -1634,9 +2002,9 @@
 <p>have two or more independent derivatives, <span class="math notranslate nohighlight">\(t\)</span> and <span class="math notranslate nohighlight">\(x\)</span>.</p>
 <p>Differential equations are solved by integration and as with any integration, constants of integration are produced. These constants determine the exact solution of a differential equation and are determined by the <em>initial values</em> and/or the <em>boundary values</em> where <span class="math notranslate nohighlight">\(y\)</span> is given at some <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(t\)</span> values. Thus it <em>essential</em>  to determine the initial / boundary conditions when solving any differential equation. These initial and boundary conditions are determined by the physics/chemistry of the problem being studied, for example initial concentrations in a reaction or initial position of a pendulum.</p>
 <p>There are different notations used in differential equation <span class="math notranslate nohighlight">\(dy/dx \equiv y'\)</span> or <span class="math notranslate nohighlight">\(y'(x)\)</span>. The second derivative is written as <span class="math notranslate nohighlight">\(y''\)</span> and so on. An alternative notation is <span class="math notranslate nohighlight">\(\dot y\)</span> or <span class="math notranslate nohighlight">\( \ddot y \)</span> etc., especially if the derivative is with respect to time.</p>
-</div>
-<div class="section" id="initial-value-problems-ivp">
-<h2>1.2 Initial Value Problems (IVP)<a class="headerlink" href="#initial-value-problems-ivp" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="initial-value-problems-ivp">
+<h2>1.2 Initial Value Problems (IVP)<a class="headerlink" href="#initial-value-problems-ivp" title="Permalink to this headline">#</a></h2>
 <p>In these problems, the starting conditions only are specified. For example, with the equation <span class="math notranslate nohighlight">\(dy/dt = ay\)</span>, the initial condition (or initial value) could be <span class="math notranslate nohighlight">\(y(t_0)\)</span> = 2 where <span class="math notranslate nohighlight">\(t_0\)</span> is the initial time, which is often zero. There is one initial condition because only a single integration step is necessary to solve the equation; the constant of integration is satisfied if <span class="math notranslate nohighlight">\(y\)</span> is specified at one value of <span class="math notranslate nohighlight">\(t\)</span>. The initial value of <span class="math notranslate nohighlight">\(y\)</span> and <span class="math notranslate nohighlight">\(t_0\)</span> depends entirely on the problem being studied and is the equivalent of specifying the constant of integration in a normal integral.</p>
 <p>If the equation is of second or higher order, two, three, or more initial conditions apply. One condition is needed for each stage of integration. Suppose the equation</p>
 <div class="math notranslate nohighlight">
@@ -1646,14 +2014,14 @@
 <p>The first stage of integration leaves us with one constant of integration and an equation in <span class="math notranslate nohighlight">\(dy/dt\)</span> and therefore <span class="math notranslate nohighlight">\(dy/dt\)</span> is needed at <span class="math notranslate nohighlight">\(t_0\)</span> to find this constant. Integrating this equation produces a second constant; hence, two initial conditions are needed. In any initial value problem once the calculation is started, there is no telling what value <span class="math notranslate nohighlight">\(y\)</span> will have since only the initial value has been fixed. Because many potential initial conditions could apply, all trajectories could start at <span class="math notranslate nohighlight">\(t_0\)</span>, and have different <span class="math notranslate nohighlight">\(y(t_0)\)</span> and gradients or start at different <span class="math notranslate nohighlight">\(t_0\)</span> with the same gradient and so forth. These different starting conditions generate a <em>field</em> or <em>swarm</em> of solutions, or trajectories, Fig. 1. Solutions are sometimes represented on a graph by sets of arrows to indicate trends at different places and these are drawn as well as a particular solution.</p>
 <p><img alt="Drawing" src="../_images/diffeqn-fig1.png" /></p>
 <p>Fig. 1 Different initial conditions lead to different trajectories from the same equation.</p>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="boundary-value-problems-bvp">
-<h2>1.3 Boundary Value Problems (BVP)<a class="headerlink" href="#boundary-value-problems-bvp" title="Permalink to this headline">¶</a></h2>
+<section id="boundary-value-problems-bvp">
+<h2>1.3 Boundary Value Problems (BVP)<a class="headerlink" href="#boundary-value-problems-bvp" title="Permalink to this headline">#</a></h2>
 <p>The boundary value problem defines conditions at two places that have to be satisfied throughout the calculation, thereby constraining the solutions. The most familiar example is probably the Schroedinger equation describing the quantum mechanical particle in an infinitely high box. This is solved with boundary conditions that the wavefunction must always be zero at both sides of the box, because if this were not the case an infinite amount of energy would be needed. The Schroedinger equation equates the kinetic and potential energy, <span class="math notranslate nohighlight">\(V(x)\)</span>, with the total energy but as the potential is zero inside the box only the kinetic energy remains and <span class="math notranslate nohighlight">\(\displaystyle -\frac{\hbar ^2}{2m}\frac{d^2\psi}{dx^2} = E\psi\)</span>. The boundary conditions are <span class="math notranslate nohighlight">\(\psi(x_0) = 0\)</span> and <span class="math notranslate nohighlight">\(\psi(x_L) = 0\)</span> where <span class="math notranslate nohighlight">\(x_0\)</span> and <span class="math notranslate nohighlight">\(x_L\)</span> define the sides of the box.</p>
-</div>
-<div class="section" id="separable-variables">
-<h2>2 Separable variables<a class="headerlink" href="#separable-variables" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="separable-variables">
+<h2>2 Separable variables<a class="headerlink" href="#separable-variables" title="Permalink to this headline">#</a></h2>
 <p>The rate of a chemical reaction can always be written down because this is proportional to the rate of loss or gain of a molecule’s population. For example, in a first-order process <span class="math notranslate nohighlight">\(A \to B\)</span>, such as a cis-trans isomerisation or decay of a radioactive nucleus, the rate of change of species A is proportional to the amount of A left unreacted or</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \frac{d[A]}{dt}=-k_1[A]. \quad  [A_0]=A_0  \tag{1} \]</div>
@@ -1684,12 +2052,12 @@
 <div class="math notranslate nohighlight">
 \[\displaystyle \frac{dB}{dt}=k_1A_0e^{-k_1t}-k_2B \]</div>
 <p>but now the terms are not separable, and another method is needed, which is described in Section 4. Sets of equations for sequential and parallel reactions such as <span class="math notranslate nohighlight">\(dA/dt = \cdots\)</span>, and <span class="math notranslate nohighlight">\(dB/dt = \cdots\)</span> can alternatively be solved by eigenvalue methods described in Chapter 7 provided no terms with a product or ratio of concentrations is present, i.e. no A <span class="math notranslate nohighlight">\(\times\)</span> B terms, unless pseudo first-order conditions apply.</p>
-</div>
-<div class="section" id="steady-state">
-<h2>2.1 Steady State<a class="headerlink" href="#steady-state" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="steady-state">
+<h2>2.1 Steady State<a class="headerlink" href="#steady-state" title="Permalink to this headline">#</a></h2>
 <p>In many chemical schemes, after the reaction has started it enters a period where intermediate or transient species can be identified, and their rate of change is effectively zero. This does not mean, however, that their concentration has to be small but if the rate of change is zero, then most rate equations can be solved relatively easily. This is of great utility because the complete solution can be very complex and often only numerical solutions are available.</p>
-<div class="section" id="i-i-m-reaction">
-<h3><strong>(i)  I + M reaction</strong><a class="headerlink" href="#i-i-m-reaction" title="Permalink to this headline">¶</a></h3>
+<section id="i-iodine-recombination-i-m-reaction">
+<h3><strong>(i)  Iodine recombination, I + M reaction</strong><a class="headerlink" href="#i-iodine-recombination-i-m-reaction" title="Permalink to this headline">#</a></h3>
 <p>The scheme</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle  I+M  \underset{k_2}{\stackrel{k_1}{\rightleftharpoons}} IM \\
@@ -1702,9 +2070,9 @@
 <div class="math notranslate nohighlight">
 \[\displaystyle  k_2[I][IM]=\frac{k_1k_2[I]^2[M]}{k_{-1}+k_2[I]}\]</div>
 <p>which could be tested experimentally.</p>
-</div>
-<div class="section" id="ii-fluorescence-yield">
-<h3><strong>(ii) Fluorescence yield</strong><a class="headerlink" href="#ii-fluorescence-yield" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="ii-fluorescence-yield">
+<h3><strong>(ii) Fluorescence yield</strong><a class="headerlink" href="#ii-fluorescence-yield" title="Permalink to this headline">#</a></h3>
 <p>The fluorescence yield of a molecule <span class="math notranslate nohighlight">\(\varphi\)</span> is the ratio of molecules excited to those that emit a photon and is defined as</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle  \varphi = \frac{\text{rate of emission}}{\text{rate of absorption}} \]</div>
@@ -1718,9 +2086,9 @@
 <div class="math notranslate nohighlight">
 \[\displaystyle \varphi = \frac{\text{rate of emission}}{\text{rate of absorption}} =\frac{k_fS_1}{k_aG}=\frac{k_f}{k_f+k_S} \tag{5}\]</div>
 <p>and is the fraction of molecules that fluoresce. A molecule fluoresces with a rate constant that is the sum of all process destroying the excited state; therefore, if <span class="math notranslate nohighlight">\(k = k_f + k_S\)</span> and as the fluorescence lifetime is the reciprocal of <span class="math notranslate nohighlight">\(k\)</span> or <span class="math notranslate nohighlight">\(\tau = 1/k\)</span>, the yield becomes <span class="math notranslate nohighlight">\(\varphi = k_f \tau\)</span>.</p>
-</div>
-<div class="section" id="iii-quenching-an-excited-state-electron-spin-can-affect-the-outcome">
-<h3><strong>(iii) Quenching an excited state. Electron spin can affect the outcome</strong><a class="headerlink" href="#iii-quenching-an-excited-state-electron-spin-can-affect-the-outcome" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="iii-quenching-an-excited-state-electron-spin-can-affect-the-outcome">
+<h3><strong>(iii) Quenching an excited state. Electron spin can affect the outcome</strong><a class="headerlink" href="#iii-quenching-an-excited-state-electron-spin-can-affect-the-outcome" title="Permalink to this headline">#</a></h3>
 <p>The presence of paramagnetic species, such as O<span class="math notranslate nohighlight">\(_2\)</span>, or heavy atoms or ions, Xe, I<span class="math notranslate nohighlight">\(^-\)</span> dissolved in solution will quench the excited state. The quenching process are energy transfer and spin orbit coupling. Quenching here means shortening the lifetime of the excited states, both singlet and triplet. Using nanosecond pump-probe (flash photolysis), which first became available shortly after the discovery of Q-switching in lasers in the 1960’s, it was discovered that the singlet excited state of several types of aromatic molecules was quenched at diffusion controlled rate constant but that their triplet excited states were quenched at approximately one ninth of this. The values for anthracene quenched with molecular oxygen are, for the singlet, <span class="math notranslate nohighlight">\(k_q = 3.1\cdot 10 ^{10}\)</span> and for the triplet, <span class="math notranslate nohighlight">\(3.4\cdot 10^9\;\mathrm{dm^3 mol^{-1} s^{-1}}\)</span>.</p>
 <p>To understand this behaviour a model of the quenching is made by supposing that a short lived collision complex is formed between the excited molecule <span class="math notranslate nohighlight">\(M^*\)</span> and the quencher <span class="math notranslate nohighlight">\(Q\)</span>, i.e. <span class="math notranslate nohighlight">\((M^*\cdots Q)\)</span>. The scheme is quite simple and is</p>
 <div class="math notranslate nohighlight">
@@ -1757,10 +2125,10 @@
 \[\displaystyle k_q=\frac{3}{9}k_d\frac{k_{isc}}{k_{isc}+k_{-d}}+\frac{1}{9}k_d\frac{k_e}{k_e+k_{-d}} \]</div>
 <p>Experimentally as <span class="math notranslate nohighlight">\(k_q=k_d/9\)</span> this implies that <span class="math notranslate nohighlight">\(k_e\gg k_{-d} \gg k_{isc}\)</span>, and so the experimental data is understood by considering the spin quantum numbers. Recall that the spin quantum number of an electron is <span class="math notranslate nohighlight">\(1/2\)</span> with projection or azimuthal or magnetic quantum numbers <span class="math notranslate nohighlight">\(\pm 1/2\)</span>.</p>
 <p>Notice that this mechanism indicates that triplet-triplet annihilation is a spin allowed process provided the energy is sufficient, i.e. there must be enough energy to produce the singlet product, which means that energy conservation must always apply. Note also that when a singlet excited state is quenched by a triplet there is only one type of complex formed because the singlet has total spin of zero and multiplicity of <span class="math notranslate nohighlight">\(1\)</span> which means that quenching always occurs at its full value.</p>
-</div>
-</div>
-<div class="section" id="the-phase-portrait">
-<h2>2.2 The Phase Portrait<a class="headerlink" href="#the-phase-portrait" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="the-phase-portrait">
+<h2>2.2 The Phase Portrait<a class="headerlink" href="#the-phase-portrait" title="Permalink to this headline">#</a></h2>
 <p>The steady state is found when the gradient is zero, i.e. <span class="math notranslate nohighlight">\(dy/dx = 0\)</span>. In non-linear differential equations which have higher powers of <span class="math notranslate nohighlight">\(x\)</span>, such as <span class="math notranslate nohighlight">\(dy/dx = x + ax^2 + bx^3\)</span>, there are many ‘steady states’, which are also called <em>critical, fixed</em>, or <em>equilibrium points</em>, and it is now useful to see where these are by plotting <span class="math notranslate nohighlight">\(dy/dx\)</span> vs. <span class="math notranslate nohighlight">\(x\)</span>. This graph is called the <em>phase portrait</em>.</p>
 <p>The new feature is that some equilibrium points are stable and others not. If an initial value of <span class="math notranslate nohighlight">\(x\)</span> is chosen close to a stable equilibrium point, conditions will change as <span class="math notranslate nohighlight">\(x\)</span> changes so that this point will be reached; if it is an unstable point, conditions now change so that this point is avoided. This may or may not mean that another stable point will be found,see Figure 2, which shows a schematic phase portrait. Some steady state points therefore can also be called equilibrium points because once the system reaches one of these it will remain there.</p>
 <p>In Fig. 2 the arrows indicate the direction <span class="math notranslate nohighlight">\(x\)</span> will follow depending on its initial value; for example if 3 <span class="math notranslate nohighlight">\(\le\)</span> x <span class="math notranslate nohighlight">\(\lt\)</span> 2, then <span class="math notranslate nohighlight">\(x\)</span> will move towards, and end at, the stable point <span class="math notranslate nohighlight">\(x\)</span> = 3. The rule of thumb is that if the curve is above the <span class="math notranslate nohighlight">\(x\)</span>-axis the arrows move to the right, and they move to the left if the curve is below the line. A point starting in the range <span class="math notranslate nohighlight">\(0\to 1\)</span> or <span class="math notranslate nohighlight">\(1\to 2\)</span> moves to the stable point 1, and point 2 is unstable. Starting in the range <span class="math notranslate nohighlight">\(\gt 2\)</span>, moves to stable point <span class="math notranslate nohighlight">\(3\)</span>, but starting at zero or any negative value is unstable. A negative value of <span class="math notranslate nohighlight">\(d^2y/dx^2\)</span> at a steady state point also indicates stability.</p>
@@ -1768,11 +2136,11 @@
 <p>Fig. 2 The stable ( filled circles ) and unstable equilibrium points in a schematic of a phase portrait.</p>
 <hr class="docutils" />
 <p>If a problem is described by two coupled non-linear differential equations <span class="math notranslate nohighlight">\(dy/dx = f (x,y)\)</span> and <span class="math notranslate nohighlight">\(dz/dx = g(x,y)\)</span> then the phase portrait is not usually plotted but instead the phase plane in which is <span class="math notranslate nohighlight">\(y\)</span> vs <span class="math notranslate nohighlight">\(z\)</span> is plotted. Chapter 11 gives examples of using the phase plane. Strogatz (1994) discusses phase portraits and phase planes in detail and illustrates these with many interesting examples.</p>
-</div>
-<div class="section" id="phase-planes-and-solving-equations-by-separating-variables">
-<h2>3 Phase planes and solving equations by separating variables<a class="headerlink" href="#phase-planes-and-solving-equations-by-separating-variables" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="i-laser-gain">
-<h3><strong>(i) Laser Gain</strong><a class="headerlink" href="#i-laser-gain" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="phase-planes-and-solving-equations-by-separating-variables">
+<h2>3 Phase planes and solving equations by separating variables<a class="headerlink" href="#phase-planes-and-solving-equations-by-separating-variables" title="Permalink to this headline">#</a></h2>
+<section id="i-laser-gain">
+<h3><strong>(i) Laser Gain</strong><a class="headerlink" href="#i-laser-gain" title="Permalink to this headline">#</a></h3>
 <p>A laser has two basic forms, an amplifier and an oscillator. A laser amplifier is usually a single or double pass device in which an input laser is amplified by spontaneous emission in the gain material in which there is a population inversion. If the gain material contains atoms, ions, or molecules this inversion contains many more excited states than ground states and an incoming photon of the correct energy will stimulate an excited state to enter a lower state by releasing its energy as a new photon. The population of this lower state has to be kept close to zero if the laser is to work well, because the transition rate is proportional to the population difference. The initial inversion is produced by an external source, for example, by using another laser, flash lamps, or an electric current.</p>
 <p>In a laser oscillator, the gain material is placed between mirrors so that feedback of photons between these is possible. The lasing builds up to a steady state because a little of the spontaneous emission from the population inversion is captured by the mirrors and repeatedly passes back and forth through the gain material causing each photon to stimulate another every time it does so. The process is therefore non-linear. If you have tried to align a laser, you will have noticed that as soon as the alignment is correct, and the losses are therefore drastically reduced, the laser instantly lights up. A steady state is reached because there are losses in the cavity as well as gain and these balance one another.</p>
 <p><img alt="Drawing" src="../_images/diffeqn-fig3.png" /></p>
@@ -1837,9 +2205,9 @@
 <div class="math notranslate nohighlight">
 \[\displaystyle  \frac{n(t)}{n_0}=\frac{a'}{(a'-1)e^{-\tau}+1} \]</div>
 <p>The form of the rate equations describing the laser is mathematically the same as those for an autocatalytic reaction; this is not so very surprising because in a laser one photon stimulates another. In an autocatalytic reaction, one molecule produces a copy of itself: A + B <span class="math notranslate nohighlight">\(\to\)</span> P + 2B. An autocatalytic reaction is described in question Q18.</p>
-</div>
-<div class="section" id="ii-harmonic-oscillator">
-<h3><strong>(ii) Harmonic  oscillator</strong><a class="headerlink" href="#ii-harmonic-oscillator" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="ii-harmonic-oscillator">
+<h3><strong>(ii) Harmonic  oscillator</strong><a class="headerlink" href="#ii-harmonic-oscillator" title="Permalink to this headline">#</a></h3>
 <p>Simple harmonic motion is described by the generic equation <span class="math notranslate nohighlight">\(\displaystyle \frac{d^2x}{dt^2}+\omega^2x=0\)</span>,</p>
 <p>where <span class="math notranslate nohighlight">\(\omega\)</span> is the oscillator frequency, <span class="math notranslate nohighlight">\(x\)</span> position, and <span class="math notranslate nohighlight">\(t\)</span> time. As the phase portrait is a plot of <span class="math notranslate nohighlight">\(dx/dt\)</span> vs <span class="math notranslate nohighlight">\(x\)</span>, the equation has to be integrated once to get it into this form. This can be done by defining <span class="math notranslate nohighlight">\(v = dx/dt\)</span>, then</p>
 <div class="math notranslate nohighlight">
@@ -1869,9 +2237,9 @@
 <div class="math notranslate nohighlight">
 \[\displaystyle t= \frac{4}{\omega}\sin^{-1}(1) =\frac{2\pi}{\omega}\]</div>
 <p>which shows that the period <span class="math notranslate nohighlight">\(t\)</span> is independent of the quantum number, just as expected for the harmonic oscillator.</p>
-</div>
-<div class="section" id="iii-the-morse-anharmonic-oscillator">
-<h3><strong>(iii) The Morse anharmonic oscillator</strong><a class="headerlink" href="#iii-the-morse-anharmonic-oscillator" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="iii-the-morse-anharmonic-oscillator">
+<h3><strong>(iii) The Morse anharmonic oscillator</strong><a class="headerlink" href="#iii-the-morse-anharmonic-oscillator" title="Permalink to this headline">#</a></h3>
 <p>The Morse potential is often used as a model of a diatomic molecule as an anharmonic oscillator because not only does the potential allows the molecule to dissociate at high energy, unlike the harmonic oscillator so is inherently more realistic but also the Schroedinger can be solved analytically with this potential. The energy (eigenvalues) are</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle E_n=\omega_e(n+1/2) -x_e\omega_e(n+1/2)^2\]</div>
@@ -1893,9 +2261,9 @@
 <p>Figure 5b. Momentum vs. position for the Morse potential. The coloured lines are below the dissociation energy, the blue one at energy <span class="math notranslate nohighlight">\(D_e\)</span> (the <em>separatrix</em> ) and the grey ones above this energy.</p>
 <hr class="docutils" />
 <p>When there are very many levels in the potential, such as when <span class="math notranslate nohighlight">\(m\)</span> is large then it is possible to excite the molecule to very close to the dissociation limit. In this case molecules can have a huge size, many hundreds of nanometres if not larger. These can be called ‘Rydberg’ molecules.</p>
-</div>
-<div class="section" id="hamilton-s-equations-of-motion">
-<h3><strong>Hamilton’s Equations of Motion</strong><a class="headerlink" href="#hamilton-s-equations-of-motion" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="hamilton-s-equations-of-motion">
+<h3><strong>Hamilton’s Equations of Motion</strong><a class="headerlink" href="#hamilton-s-equations-of-motion" title="Permalink to this headline">#</a></h3>
 <p>The calculation of the period as was done with the harmonic oscillator is, in principle, just the same: the equation for the velocity is integrated by separating variables. However, in this case a very hard integral is produced and another and far more powerful approach can be used. Thus uses Hamilton’s formulation of mechanics and is in itself a very powerful method but is huge topic in itself and so only an brief example will be given here.</p>
 <p>The basis of the method we use is based on two equations connecting the total energy (in this example) with momentum and position. The total energy is called the Hamiltonian, <span class="math notranslate nohighlight">\(H\)</span> and position and momentum are conventionally labelled <span class="math notranslate nohighlight">\(q,\;p\)</span> respectively.</p>
 <p>Hamilton’s ‘canonical’ equations of motion are;</p>
@@ -1934,14 +2302,14 @@
 <p>As a check work out the dimension of this result; <span class="math notranslate nohighlight">\(a\)</span> has dimensions of m<span class="math notranslate nohighlight">\(^{-1}\)</span>, <span class="math notranslate nohighlight">\(D\)</span> of energy (kg (m/s)<span class="math notranslate nohighlight">\(^2\)</span>), thus <span class="math notranslate nohighlight">\(t\)</span> has units of time. As expected for an anharmonic oscillator, the period become bigger as the energy increases. The excursion the atoms make is also increased as may be seem in figure 5b. When <span class="math notranslate nohighlight">\(E_n=D\)</span> the period is infinity as here the molecule has dissociated. This trajectory is the blue line in fig 5b and is called a <em>separatrix</em> or the <em>homoclinic orbit</em> .</p>
 <p><img alt="Drawing" src="../_images/diffeqn-fig5c.png" /></p>
 <p>Figure 5c. The period of an anharmonic oscillator vs energy. The parameters are as used in figure 5b. The dissociation energy  <span class="math notranslate nohighlight">\(D=1\)</span>. The circles show the energy <span class="math notranslate nohighlight">\(E_n\)</span> for <span class="math notranslate nohighlight">\(n=0\cdots 9\)</span> the only bound energy levels in this particular potential.</p>
-</div>
-</div>
+</section>
+</section>
 <hr class="docutils" />
-<div class="section" id="chemical-kinetics">
-<h2>3.1 Chemical Kinetics<a class="headerlink" href="#chemical-kinetics" title="Permalink to this headline">¶</a></h2>
+<section id="chemical-kinetics">
+<h2>3.1 Chemical Kinetics<a class="headerlink" href="#chemical-kinetics" title="Permalink to this headline">#</a></h2>
 <p>Here we describe a few examples of chemical kinetics including those reaching equilibrium, reaction with flow,  and reaction and diffusion. In sections 9.2.iv,v and vi of this chapter and Chapter 11.4.10, 11.7 and 11.8 (Numerical methods) examples of more complex reactions with diffusion or multiple steps, which can generally only be solved numerically are examined.</p>
-<div class="section" id="i-bimolecular-reactions">
-<h3><strong>(i) Bimolecular reactions</strong><a class="headerlink" href="#i-bimolecular-reactions" title="Permalink to this headline">¶</a></h3>
+<section id="i-bimolecular-reactions">
+<h3><strong>(i) Bimolecular reactions</strong><a class="headerlink" href="#i-bimolecular-reactions" title="Permalink to this headline">#</a></h3>
 <p>In a bimolecular reaction, such as A + B <span class="math notranslate nohighlight">\(\rightarrow\)</span> C, the rate of reaction of A would normally be written as</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle  \frac{d[A]}{dt} = -k_2[A][B]\]</div>
@@ -1972,9 +2340,9 @@
 <div class="math notranslate nohighlight">
 \[\displaystyle \frac{d(a_0-x)}{dt}=2k_2(a_0-x)^2\]</div>
 <p>Integrating gives <span class="math notranslate nohighlight">\(\displaystyle \frac{x}{(a_0-x)}=2a_0k_2t\)</span> which on extracting <span class="math notranslate nohighlight">\(x\)</span> gives the equation above for <span class="math notranslate nohighlight">\(B\)</span>.</p>
-</div>
-<div class="section" id="iii-reversible-or-opposing-reactions-a-overset-k-1-underset-k-2-rightleftharpoons-b-c">
-<h3><strong>(iii) Reversible or opposing reactions <span class="math notranslate nohighlight">\(A \overset{k_1}{\underset{k_2} \rightleftharpoons }B+C\)</span></strong><a class="headerlink" href="#iii-reversible-or-opposing-reactions-a-overset-k-1-underset-k-2-rightleftharpoons-b-c" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="iii-reversible-or-opposing-reactions-a-overset-k-1-underset-k-2-rightleftharpoons-b-c">
+<h3><strong>(iii) Reversible or opposing reactions <span class="math notranslate nohighlight">\(A \overset{k_1}{\underset{k_2} \rightleftharpoons }B+C\)</span></strong><a class="headerlink" href="#iii-reversible-or-opposing-reactions-a-overset-k-1-underset-k-2-rightleftharpoons-b-c" title="Permalink to this headline">#</a></h3>
 <p>Suppose that the reaction <span class="math notranslate nohighlight">\(A \overset{k_1}{\underset{k_2} \rightleftharpoons }B+C\)</span> reaches equilibrium there being an amount <span class="math notranslate nohighlight">\(\mathrm{[A]_0}\)</span> initially and <span class="math notranslate nohighlight">\(\mathrm{[B]_0=[C]_0=0}\)</span>. The simplest way to integrate the equation is to let an amount <span class="math notranslate nohighlight">\(x\)</span> react then</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle a=a_0-x, \quad\text{where}\quad a=[A],\;b=[B],\;a_0=[A]_0,\;b_0=[B]_0\]</div>
@@ -1993,9 +2361,9 @@
 <div class="math notranslate nohighlight">
 \[\displaystyle \log\left(\frac{a_0x_e+x(a_0-x_e)}{a_0(x_e-x)} \right)=k_1\frac{2a_0-x_e}{x_e}t \tag{5b}\]</div>
 <p>and as <span class="math notranslate nohighlight">\(x,x_e,a_0\)</span> are all concentrations this is dimensionally correct.</p>
-</div>
-<div class="section" id="iv-temperature-jump-a-perturbation-from-the-equilibrium-mathrm-h-2o-overset-k-1-underset-k-2-rightleftharpoons-mathrm-h-mathrm-oh">
-<h3><strong>(iv) Temperature Jump; a perturbation from the equilibrium <span class="math notranslate nohighlight">\(\mathrm{H_2O}\overset{k_1}{\underset{k_2} \rightleftharpoons }\mathrm{H^+}+\mathrm{OH^-} \)</span></strong><a class="headerlink" href="#iv-temperature-jump-a-perturbation-from-the-equilibrium-mathrm-h-2o-overset-k-1-underset-k-2-rightleftharpoons-mathrm-h-mathrm-oh" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="iv-temperature-jump-a-perturbation-from-the-equilibrium-mathrm-h-2o-overset-k-1-underset-k-2-rightleftharpoons-mathrm-h-mathrm-oh">
+<h3><strong>(iv) Temperature Jump; a perturbation from the equilibrium <span class="math notranslate nohighlight">\(\mathrm{H_2O}\overset{k_1}{\underset{k_2} \rightleftharpoons }\mathrm{H^+}+\mathrm{OH^-} \)</span></strong><a class="headerlink" href="#iv-temperature-jump-a-perturbation-from-the-equilibrium-mathrm-h-2o-overset-k-1-underset-k-2-rightleftharpoons-mathrm-h-mathrm-oh" title="Permalink to this headline">#</a></h3>
 <p>Once a reaction has come to equilibrium, such as <span class="math notranslate nohighlight">\(\mathrm{H_2O}\overset{k_1}{\underset{k_2} \rightleftharpoons }\mathrm{H^+}+\mathrm{OH^-} \)</span>, a small perturbation can be used to measure the return to equilibrium which may take only a few microseconds and by so doing the individual rate constants can be obtained. The change in absorption can be measured as equilibrium is reestablished. Often the perturbation is in the form of rapid heating of the solvent by a degrees or so. In the past heating by passing an electric current was used but today this can be effected most easily by using a nanosecond duration laser tuned, for example, to water’s absorption in the infra red. An alternative is to add a dye with a low fluorescence yield to the solution, and use this to absorb visible light and so heat the solution as its excited state decays. Many enzyme’s equilibria have been studied using T-jump.</p>
 <p>Consider the general equilibrium <span class="math notranslate nohighlight">\(A = B + C\)</span> and let <span class="math notranslate nohighlight">\(a_e, b_e, c_e\)</span> be the equilibrium amounts of A, B and C respectively. An amount <span class="math notranslate nohighlight">\(x\)</span> is transferred to products as a result of heating the solution  and the concentration of <span class="math notranslate nohighlight">\(a\)</span> is <span class="math notranslate nohighlight">\(a=a_0-x\)</span>. In water <span class="math notranslate nohighlight">\(x\)</span> is the concentration of ions. The rate equation is then</p>
 <div class="math notranslate nohighlight">
@@ -2022,9 +2390,9 @@
 <div class="math notranslate nohighlight">
 \[\displaystyle k_D=\frac{8RT}{3\eta}\;\mathrm{ dm^3\,mol^{-1}\,s^{-1}}\]</div>
 <p>which gives a value of <span class="math notranslate nohighlight">\(6.6\cdot 10^9 \;\mathrm{ dm^3\,mol^{-1}\,s^{-1}}\)</span> in water with a viscosity <span class="math notranslate nohighlight">\(\eta=0.001\)</span> Pa S. This is clearly way-off the measured value, but the formula was derived for neutral species and therefore ignores the fact that ions are involved which in this case are attracted to one another. Adding a correction (Wilkinson, 1980) increases <span class="math notranslate nohighlight">\(k_2\)</span> by a factor of around twenty (depending on ion separation) bringing the value towards <span class="math notranslate nohighlight">\(10^{11}\)</span> much closer to the experimental measurement.</p>
-</div>
-<div class="section" id="v-reversible-reactions-a-b-overset-k-1-underset-k-2-rightleftharpoons-c-d">
-<h3><strong>(v) Reversible reactions <span class="math notranslate nohighlight">\(A + B \overset{k_1}{\underset{k_2} \rightleftharpoons } C + D\)</span></strong><a class="headerlink" href="#v-reversible-reactions-a-b-overset-k-1-underset-k-2-rightleftharpoons-c-d" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="v-reversible-reactions-a-b-overset-k-1-underset-k-2-rightleftharpoons-c-d">
+<h3><strong>(v) Reversible reactions <span class="math notranslate nohighlight">\(A + B \overset{k_1}{\underset{k_2} \rightleftharpoons } C + D\)</span></strong><a class="headerlink" href="#v-reversible-reactions-a-b-overset-k-1-underset-k-2-rightleftharpoons-c-d" title="Permalink to this headline">#</a></h3>
 <p>The gaseous decomposition of HCl follows follows the stoichiometry <span class="math notranslate nohighlight">\(\mathrm{2HCl \rightleftharpoons H_2 + Cl_2}\)</span> although the reaction is more complex involving radicals. This is a particular case of a reversible reaction <span class="math notranslate nohighlight">\(A+B=C+D\)</span>. The scheme general is, using the same notation as above,</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \frac{d[A]}{dt}=-k_1[A][B]+k_2[C][D], \qquad -\frac{dx}{dt}=-k_1(a_0-x)^2+k_2x^2 \]</div>
@@ -2045,9 +2413,9 @@
 <div class="math notranslate nohighlight">
 \[\displaystyle -\frac{dx}{dt}=-k_1(a_0-x)^2+k_2'\left(\frac{x}{2}\right)^2 \]</div>
 <p>is very similar to that of A+B=C+D and the equations become the same if we make <span class="math notranslate nohighlight">\(k_2'/4=k_2\)</span>.</p>
-</div>
-<div class="section" id="vi-hydrogen-iodide-equilibrium">
-<h3><strong>(vi) Hydrogen iodide equilibrium</strong><a class="headerlink" href="#vi-hydrogen-iodide-equilibrium" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="vi-hydrogen-iodide-equilibrium">
+<h3><strong>(vi) Hydrogen iodide equilibrium</strong><a class="headerlink" href="#vi-hydrogen-iodide-equilibrium" title="Permalink to this headline">#</a></h3>
 <p>One of the first reaction to be studied in the late 1800’s was the dissociation of hygrogen iodide vapour at high temperatures <span class="math notranslate nohighlight">\(\approx 450\)</span> K. It is interesting to derive the kinetic equations for <span class="math notranslate nohighlight">\(\mathrm{2HI \rightleftharpoons H_2 + I_2}\)</span>  from scratch.</p>
 <p>The rate equations are</p>
 <div class="math notranslate nohighlight">
@@ -2083,10 +2451,10 @@
 <p>The approach to equilibrium both starting with HI and with Hydrogen and iodine is shown in figure 5d. The data was recorded in 1899 by Bodenstein and are replotted below. The temperature was <span class="math notranslate nohighlight">\(448^\text{o}\)</span> C. The lines are fitted from the integrated equations. The quantity labelled as <span class="math notranslate nohighlight">\(x=[HI]/[HI]_0\)</span></p>
 <p><img alt="Drawing" src="../_images/diffeqn-fig5d.png" /></p>
 <p>Figure 5d. <span class="math notranslate nohighlight">\(\mathrm{2HI \rightleftharpoons H_2 + I_2}\)</span> reaching equilibrium starting at zero HI, rising points, and eqn 5g, and only HI, falling points, and eqn 5h. The equilibrium value <span class="math notranslate nohighlight">\(x_e=0.786\)</span> at <span class="math notranslate nohighlight">\(448^\text{o}\)</span> C. The curves show that the same equilibrium is reached starting either with products or reactants.</p>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="vii-kinetics-and-flow">
-<h3><strong>(vii) Kinetics and flow</strong><a class="headerlink" href="#vii-kinetics-and-flow" title="Permalink to this headline">¶</a></h3>
+<section id="vii-kinetics-and-flow">
+<h3><strong>(vii) Kinetics and flow</strong><a class="headerlink" href="#vii-kinetics-and-flow" title="Permalink to this headline">#</a></h3>
 <p>Water entering and leaving a tank, reaction vessel, or even a lake can be modelled by calculating the difference in the amount material flowing in and out, viz.,</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \text{Rate of change of material = rate in - rate out}\]</div>
@@ -2114,10 +2482,10 @@
 <p>Barnes &amp; Fulford (2002) discuss several similar models.</p>
 <p><img alt="Drawing" src="../_images/diffeqn-fig6.png" /></p>
 <p>Fig. 6. Left. The change in the ratio <span class="math notranslate nohighlight">\(x/x_0\)</span> vs. reduced flow <span class="math notranslate nohighlight">\(ft/V\)</span> for different <span class="math notranslate nohighlight">\(r_{in} = x_{in} /x_0\)</span> ratios, showing the range of curves obtainable with different starting conditions. Right. The same equation but rewritten with ratio <span class="math notranslate nohighlight">\(r_0=x_0/x_{in}\)</span>. The ratios in both plots are <span class="math notranslate nohighlight">\(0, 0.5, 1\)</span> and <span class="math notranslate nohighlight">\(1.5\)</span>.</p>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="viii-dissolution-kinetics">
-<h3><strong>(viii) Dissolution kinetics</strong><a class="headerlink" href="#viii-dissolution-kinetics" title="Permalink to this headline">¶</a></h3>
+<section id="viii-dissolution-kinetics">
+<h3><strong>(viii) Dissolution kinetics</strong><a class="headerlink" href="#viii-dissolution-kinetics" title="Permalink to this headline">#</a></h3>
 <p>When a solid solute is dissolved in a solvent, the rate equation is found by considering the change in the amount dissolved in solution during a short time period. In dissolving a solid, a saturated solution will eventually be formed and this limits how much solid will dissolve. If <span class="math notranslate nohighlight">\(x_0\)</span> is the initial amount of solid to be dissolved in <span class="math notranslate nohighlight">\(m\)</span> grams of solvent, <span class="math notranslate nohighlight">\(s_x /m\)</span> the saturated solution concentration, <span class="math notranslate nohighlight">\(k\)</span> the rate of dissolution (mass s<span class="math notranslate nohighlight">\(^{-1}\)</span>) and <span class="math notranslate nohighlight">\(x\)</span> the number of grams of solid remaining at time <span class="math notranslate nohighlight">\(t\)</span>, then</p>
 <p><span class="math notranslate nohighlight">\(\qquad\qquad\)</span> Amount of <span class="math notranslate nohighlight">\(x\)</span> dissolved in time <span class="math notranslate nohighlight">\(t + \delta t\)</span> = amount <span class="math notranslate nohighlight">\(x\)</span> at <span class="math notranslate nohighlight">\(t - \)</span> amount dissolved in <span class="math notranslate nohighlight">\(\delta t\)</span>.</p>
 <p>The amount dissolved in time <span class="math notranslate nohighlight">\(\delta t\)</span> is proportional to the amount of solid undissolved <span class="math notranslate nohighlight">\(x\)</span>, multiplied by the difference in concentration compared to that of a saturated solution, and this product is <span class="math notranslate nohighlight">\(\displaystyle kx\left( \frac{x_s}{m}-\frac{x_0-x}{m}\right)\delta t\)</span>.  The term <span class="math notranslate nohighlight">\((x_0 - x)/m\)</span> is the concentration dissolved, making the rate equation,</p>
@@ -2142,9 +2510,9 @@
 <p>where <span class="math notranslate nohighlight">\(k\)</span> is the rate of spreading the infection in units of number of individuals time<span class="math notranslate nohighlight">\(^{-1}\)</span>. Integrating gives</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle x=-\frac{1}{Nk}\log\left(\frac{x-N}{x} \right)+ const\]</div>
-</div>
-<div class="section" id="ix-mean-free-path-and-probability-of-obtaining-a-path-of-a-given-length">
-<h3><strong>(ix) Mean free path and probability of obtaining a path of a given length</strong><a class="headerlink" href="#ix-mean-free-path-and-probability-of-obtaining-a-path-of-a-given-length" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="ix-mean-free-path-and-probability-of-obtaining-a-path-of-a-given-length">
+<h3><strong>(ix) Mean free path and probability of obtaining a path of a given length</strong><a class="headerlink" href="#ix-mean-free-path-and-probability-of-obtaining-a-path-of-a-given-length" title="Permalink to this headline">#</a></h3>
 <p>If <span class="math notranslate nohighlight">\(\bar c\)</span> is the average velocity and there are <span class="math notranslate nohighlight">\(v\)</span> molecules in unit volume then the total distance covered is <span class="math notranslate nohighlight">\(\bar c v\)</span>. Let <span class="math notranslate nohighlight">\(\gamma\)</span> be the number of collisions that occur per unit volume per second and as each collision terminates two free paths, there are <span class="math notranslate nohighlight">\(2v\)</span> free paths in the same time. As the average distance travelled is <span class="math notranslate nohighlight">\(\bar c v\)</span> the average length of the free path <span class="math notranslate nohighlight">\(\lambda\)</span> is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \lambda = \frac{\bar c v}{2\gamma}\]</div>
@@ -2167,10 +2535,10 @@
 <div class="math notranslate nohighlight">
 \[\displaystyle \lambda = \frac{\int_0^\infty L\beta e^{-\beta L} dL}{\int_0^\infty \beta e^{-\beta L}dL}= \frac{1}{\beta}\]</div>
 <p>thus <span class="math notranslate nohighlight">\(\displaystyle p(L)=e^{- L/\lambda}=e^{- 2\gamma L/(v\bar c)}\)</span> and shows how rapidly the chance of mean free path <span class="math notranslate nohighlight">\(L\)</span> decreases at fixed <span class="math notranslate nohighlight">\(\gamma/v\)</span> and also as <span class="math notranslate nohighlight">\(\gamma/v\)</span> increases at fixed <span class="math notranslate nohighlight">\(L\)</span>.</p>
-</div>
-</div>
-<div class="section" id="diffusion-of-heat-and-molecules">
-<h2>3.2 Diffusion of heat and molecules<a class="headerlink" href="#diffusion-of-heat-and-molecules" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="diffusion-of-heat-and-molecules">
+<h2>3.2 Diffusion of heat and molecules<a class="headerlink" href="#diffusion-of-heat-and-molecules" title="Permalink to this headline">#</a></h2>
 <p>At steady state, the constant quantity of heat, or the heat flux, <span class="math notranslate nohighlight">\(Q\)</span> in watts ( J s<span class="math notranslate nohighlight">\(^{-1}\)</span> ) flowing through an area <span class="math notranslate nohighlight">\(A\)</span>, is proportional to the spatial rate of heat loss or</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle  Q=-kA\frac{d\theta}{dx} \tag{8}\]</div>
@@ -2178,17 +2546,17 @@
 <div class="math notranslate nohighlight">
 \[\displaystyle   J=-D\frac{dc}{dx}  \tag{9}\]</div>
 <p>where <span class="math notranslate nohighlight">\(J\)</span> is the flux, which is the amount of material diffused/unit area/unit time and this is a constant quantity. The diffusion coefficient is <span class="math notranslate nohighlight">\(D\)</span> (<span class="math notranslate nohighlight">\(\mathrm{m^2\,s^{-1}}\)</span>), <span class="math notranslate nohighlight">\(c\)</span> is the concentration, and <span class="math notranslate nohighlight">\(x\)</span> the distance over which diffusion occurs. If these last two ‘diffusion’ equations were to be rearranged, they would have the mathematical form of <em>zero-order</em> rate equations because the rate of change does not depend on <span class="math notranslate nohighlight">\(\theta\)</span> or <span class="math notranslate nohighlight">\(c\)</span>, but is a constant quantity for example, <span class="math notranslate nohighlight">\(\displaystyle \frac{ dc}{dx} = -\frac{J}{D}\)</span> . An example from chemical kinetics of a zero-order rate equation is <span class="math notranslate nohighlight">\(\displaystyle \frac{dc}{dt} = -k_0\)</span>.</p>
-<div class="section" id="i-heat-loss">
-<h3><strong>(i) Heat loss</strong><a class="headerlink" href="#i-heat-loss" title="Permalink to this headline">¶</a></h3>
+<section id="i-heat-loss">
+<h3><strong>(i) Heat loss</strong><a class="headerlink" href="#i-heat-loss" title="Permalink to this headline">#</a></h3>
 <p>The heat and diffusion equations can be used to solve a variety of different problems. For example, a fridge has a wall that is <span class="math notranslate nohighlight">\(5\)</span> cm thick, and is kept <span class="math notranslate nohighlight">\(20^\mathrm{o}\)</span>  cooler than the room. The thermal conductivity coefficient <span class="math notranslate nohighlight">\(k = 0.1 \mathrm{J\, s^{-1}\, m^{-1}\, K^{-1}}\)</span> ( or <span class="math notranslate nohighlight">\(0.1\)</span> watt/metre/ kelvin ), which is typical of good insulating materials, then the steady heat flow into the fridge is <span class="math notranslate nohighlight">\(Q = -kA\Delta\theta /\Delta x = -40\)</span> W for each m<span class="math notranslate nohighlight">\(^2\)</span> of surface area. Because the temperature change is fixed as is the wall thickness, then <span class="math notranslate nohighlight">\(d\theta /dx = \Delta \theta /\Delta x\)</span>.</p>
-</div>
-<div class="section" id="ii-ice-forming">
-<h3><strong>(ii) Ice forming</strong><a class="headerlink" href="#ii-ice-forming" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="ii-ice-forming">
+<h3><strong>(ii) Ice forming</strong><a class="headerlink" href="#ii-ice-forming" title="Permalink to this headline">#</a></h3>
 <p>The following example describes ice forming on a still lake. The ice layer increases in thickness with the square root of time when the water temperature is <span class="math notranslate nohighlight">\(0^\mathrm{o}\)</span> C and the air temperature is lower and constant. The ice acts to insulate the water from the colder air above. A quantity of heat, <span class="math notranslate nohighlight">\(dH\)</span>, is taken from the water to freeze it in time <span class="math notranslate nohighlight">\(dt\)</span>, and the rate of heat transfer is <span class="math notranslate nohighlight">\(dH/dt\)</span>. By Fourier’s law, equation (8) this is proportional to the temperature gradient <span class="math notranslate nohighlight">\(\Delta \theta/x \)</span> across the ice, therefore <span class="math notranslate nohighlight">\(dH/dt \propto \Delta\theta/x\)</span>. As the ice thickens, the temperature gradient decreases and so heat transfer is reduced per unit time, which must be proportional to the thickness <span class="math notranslate nohighlight">\(dH \propto dx\)</span>, hence <span class="math notranslate nohighlight">\(dx/dt = \alpha\Delta\theta/x\)</span> where <span class="math notranslate nohighlight">\(\alpha\)</span> is a constant of proportionality. When integrated, this equation shows that the ice thickness increases as the square root of time; <span class="math notranslate nohighlight">\(x \propto \sqrt{t}\)</span>. This, and the fact that ice is less dense that water means that lakes do not generally freeze solid; there are usually not enough cold days.</p>
 <p>An interesting consequence concerns the freezing of water droplets in the atmosphere. Non-linear freezing means that the outside of the liquid droplet freezes rapidly, forming a shell. This may become strained as it thickens, causing the ice to crack thus releasing a spurt of liquid water from the interior in the form of micro-droplets, which rapidly freeze in the cold air. Such a process may be important in cloud formation.</p>
-</div>
-<div class="section" id="iii-diffusion-through-a-cell-wall">
-<h3><strong>(iii) Diffusion through a cell wall</strong><a class="headerlink" href="#iii-diffusion-through-a-cell-wall" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="iii-diffusion-through-a-cell-wall">
+<h3><strong>(iii) Diffusion through a cell wall</strong><a class="headerlink" href="#iii-diffusion-through-a-cell-wall" title="Permalink to this headline">#</a></h3>
 <p>A third example concerns diffusion. A thin porous pipe of outer diameter <span class="math notranslate nohighlight">\(b\)</span> has gas at pressure <span class="math notranslate nohighlight">\(p_0\)</span> flowing inside it. The inside of the pipe has diameter of <span class="math notranslate nohighlight">\(a\)</span> and the concentration of gas outside the pipe is zero. If the diffusion coefficient through the pipe to the outside is <span class="math notranslate nohighlight">\(D\)</span>, the rate of gas loss can be calculated using Fick’s first law. The ‘pipe’ could be, for example, a capillary in the lungs containing O<span class="math notranslate nohighlight">\(_2\)</span> and CO<span class="math notranslate nohighlight">\(_2\)</span>.</p>
 <p>The flux (mass flow) per unit area/second through the pipe is a fixed quantity, which is given by <span class="math notranslate nohighlight">\(J = -D(dc/dr)\)</span>, where <span class="math notranslate nohighlight">\(r\)</span> is the radial distance from the centre of the pipe and <span class="math notranslate nohighlight">\(c\)</span> the concentration of the gas. The thickness of the pipe’s wall is <span class="math notranslate nohighlight">\(b - a\)</span> and the surface area is <span class="math notranslate nohighlight">\(2\pi r\)</span> per unit length, hence <span class="math notranslate nohighlight">\(J = -2\pi rD(dc/dr)\)</span> per unit length. Integrating through the wall of the pipe, from <span class="math notranslate nohighlight">\(a\)</span> to <span class="math notranslate nohighlight">\(b\)</span> gives</p>
 <div class="math notranslate nohighlight">
@@ -2203,9 +2571,9 @@
 <div class="math notranslate nohighlight">
 \[\displaystyle   J=c_0\frac{2\pi D}{\ln(b/a)}\]</div>
 <p>Does this make sense? Common sense would suggest that the flux of material is going to be large if the diffusion coefficient and initial concentration is large, and if the wall is thin. If the wall is very thin then <span class="math notranslate nohighlight">\(a \to b\)</span> and the log becomes small (<span class="math notranslate nohighlight">\(\ln(1) = 0\)</span>) and the flux increases rapidly as the wall becomes thinner. The effect is quite dramatic; if initially the pipe has <span class="math notranslate nohighlight">\(b/a = 2\)</span> and then this ratio is reduced to <span class="math notranslate nohighlight">\(1.25\)</span>, a reduction by a factor of <span class="math notranslate nohighlight">\(1.6\)</span> times, but the flux is <span class="math notranslate nohighlight">\(\approx 6.5\)</span> times greater. If two gases are in the pipe, the ratio of the amount of each transported outside is in the ratio of their diffusion coefficients and their concentrations. This is important for O<span class="math notranslate nohighlight">\(_2\)</span> /CO<span class="math notranslate nohighlight">\(_2\)</span> diffusion in the lungs.</p>
-</div>
-<div class="section" id="iv-reaction-and-diffusion">
-<h3><strong>(iv) Reaction and diffusion</strong><a class="headerlink" href="#iv-reaction-and-diffusion" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="iv-reaction-and-diffusion">
+<h3><strong>(iv) Reaction and diffusion</strong><a class="headerlink" href="#iv-reaction-and-diffusion" title="Permalink to this headline">#</a></h3>
 <p>In the presence of a chemical reaction where the molecule is also diffusing, the diffusion equation is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle   \frac{\partial c}{\partial t}=D\frac{\partial^2 c}{\partial x^2}-R\]</div>
@@ -2214,9 +2582,9 @@
 <div class="math notranslate nohighlight">
 \[\displaystyle   c=\frac{R}{D}\left (\frac{x^2}{2}-Lx \right) +c_0\]</div>
 <p>if at <span class="math notranslate nohighlight">\(x = 0,\, c = c_0\)</span>. At the end of the flagellum, the concentration is <span class="math notranslate nohighlight">\(\displaystyle c=c_0-\frac{RL^2}{2D}\)</span> which obviously cannot be negative; the limiting condition is, therefore, that <span class="math notranslate nohighlight">\(\displaystyle c_0 \ge \frac{RL^2}{2D}\)</span>. As a figure of merit, it is found that if <span class="math notranslate nohighlight">\(\displaystyle \frac{RL^2}{DC_0} \lt 1\)</span> diffusion is sufficient to supply enough ATP to the molecular motors or to supply O<span class="math notranslate nohighlight">\(_2\)</span> into cells. Using typical values, reaction can only take place within <span class="math notranslate nohighlight">\(10\)</span> microns at most from the boundary. More sophisticated reactions with, say, spherical geometry lead to similar conclusions. Thus, it is understandable why small insects, for example, have tracheal tubes to increase the O<span class="math notranslate nohighlight">\(_2\)</span> available to diffuse into their muscles and so maintain the high metabolic rate necessary for flight.</p>
-</div>
-<div class="section" id="v-cooling-and-heating-trommsdorff-norrish-effect">
-<h3><strong>(v) Cooling and heating.  Trommsdorff - Norrish effect</strong><a class="headerlink" href="#v-cooling-and-heating-trommsdorff-norrish-effect" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="v-cooling-and-heating-trommsdorff-norrish-effect">
+<h3><strong>(v) Cooling and heating.  Trommsdorff - Norrish effect</strong><a class="headerlink" href="#v-cooling-and-heating-trommsdorff-norrish-effect" title="Permalink to this headline">#</a></h3>
 <p>The time taken to cool a cup of coffee or tea follows Newton’s law of cooling. This law states that the <em>rate</em> of cooling depends on the difference in temperature compared to the surroundings and the form that the rate of heat transferred from one body is the same as that gained by another. This means that the rate is proportional to the temperature difference or</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle   \frac{d\theta}{dt}=k(\theta_s-\theta) \tag{10}  \]</div>
@@ -2224,10 +2592,10 @@
 <p>Note that Newton’s law of cooling has the same form as a first-order rate equation. The rate of change of temperature is proportional to the temperature of the body.</p>
 <p>Mammals cool themselves by evaporating water from their bodies, by sweating or panting. The heat balance equation must, therefore, have extra positive terms due to the chemical reactions keeping them alive (their metabolism) and negative terms due to evaporation. This last term could be incorporated into the constant <span class="math notranslate nohighlight">\(k\)</span>. Heat flow is also important in simple chemical reactions and exothermic reactions are usually cooled. If the heat loss from the reaction vessel is not sufficient, the heat generated by an exothermic reaction, such as fermentation, can result in spontaneous combustion as used to happen with hayricks.</p>
 <p>In radical polymerization reactions, as the reaction proceeds towards completion, the mixture must become very viscous. This means that the termination steps cannot occur and the rate of reaction increases because this is inversely proportional to the rate of termination. Secondly, the increased viscosity means that stirring can become ineffective and the only cooling mechanism is thus thermal diffusion to the vessel walls, which is slow. Consequently, if heat gain is too great, any gases or vapours trapped in the polymer may cause it to explode. This is called the <em>Trommsdorff - Norrish</em> effect and is an example of an auto-acceleration process or one with positive feedback. The rate of temperature change has an extra term for the heat generated and should have the generic form <span class="math notranslate nohighlight">\(\displaystyle \frac{d\theta}{dt}=k(\theta_s-\theta)+k_re^{-E_a/R\theta}\)</span> at temperature <span class="math notranslate nohighlight">\(\theta\)</span>. The activation energy is <span class="math notranslate nohighlight">\(E_a\)</span>, and <span class="math notranslate nohighlight">\(k_r\)</span> is a constant proportional to the pre-exponential term from the Arrhenius equation and the heat capacity of the reaction mixture.</p>
-</div>
-</div>
-<div class="section" id="the-centrifuge-forced-separation">
-<h2>3.3 The Centrifuge: Forced separation<a class="headerlink" href="#the-centrifuge-forced-separation" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="the-centrifuge-forced-separation">
+<h2>3.3 The Centrifuge: Forced separation<a class="headerlink" href="#the-centrifuge-forced-separation" title="Permalink to this headline">#</a></h2>
 <p>If a cylinder of radius <span class="math notranslate nohighlight">\(r\)</span> and width <span class="math notranslate nohighlight">\(h\)</span> is filled with a fluid, whose several components are to be separated, is spun about its axis at a speed of <span class="math notranslate nohighlight">\(\omega\, \mathrm{rad\, s^{-1}}\)</span>, the heavier components are forced to come to equilibrium further towards the outside of the cylinder than the lighter ones do. The balance is between <em>centripetal</em> forces acting towards the axis of rotation and the <em>centrifugal</em> forces acting in the opposite direction.</p>
 <p>A small cylindrical shell of fluid in the region <span class="math notranslate nohighlight">\(r\)</span> to <span class="math notranslate nohighlight">\(r + dr\)</span> from the rotation axis, experiences a net force inwards of <span class="math notranslate nohighlight">\(2\pi hr \cdot dP\)</span> where <span class="math notranslate nohighlight">\(P\)</span> is pressure (Margenau &amp; Murphy 1943). This is equal to the inwards centripetal force due to the rotational motion which is <span class="math notranslate nohighlight">\(2m\omega r\)</span>. As the mass of the cylindrical shell is <span class="math notranslate nohighlight">\(2\pi rh\rho \,dr \)</span>, with <span class="math notranslate nohighlight">\(\rho\)</span> being the density, equating  the forces produces <span class="math notranslate nohighlight">\(2\pi rh\cdot dP = 2\pi rh\cdot\rho \omega \cdot 2rdr\)</span> or</p>
 <div class="math notranslate nohighlight">
@@ -2243,10 +2611,10 @@
 <p>if the pressure is <span class="math notranslate nohighlight">\(P_0\)</span> at <span class="math notranslate nohighlight">\(r = 0\)</span>.</p>
 <p><img alt="Drawing" src="../_images/diffeqn-fig7.png" /></p>
 <p>Fig. 7 Horizontally spinning disc; the fluid level is shown by the dashed line.</p>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="absorption-of-photons-and-scattering-of-x-rays-and-electrons">
-<h2>3.4 Absorption of photons and scattering of X-rays and electrons<a class="headerlink" href="#absorption-of-photons-and-scattering-of-x-rays-and-electrons" title="Permalink to this headline">¶</a></h2>
+<section id="absorption-of-photons-and-scattering-of-x-rays-and-electrons">
+<h2>3.4 Absorption of photons and scattering of X-rays and electrons<a class="headerlink" href="#absorption-of-photons-and-scattering-of-x-rays-and-electrons" title="Permalink to this headline">#</a></h2>
 <p>Photons in the ultraviolet and visible part of the spectrum excite electrons from the HOMO to LUMO orbitals of molecules giving rise to the colours we see around us. Vibrational and rotational transitions are excited by infrared light. When photons are absorbed, if the cross section for absorption at a certain wavelength is <span class="math notranslate nohighlight">\(\sigma\)</span>, then <span class="math notranslate nohighlight">\(\sigma ndL\)</span> photons per second are absorbed by <span class="math notranslate nohighlight">\(n\)</span> molecules in a layer of thickness <span class="math notranslate nohighlight">\(dL\)</span>. The fractional decrease in intensity of the photons is then</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle   \frac{dI}{I}=-\sigma ndL\]</div>
@@ -2255,9 +2623,9 @@
 \[\displaystyle I=I_0e^{-\sigma nL}\]</div>
 <p>which is called the <em>Beer–Lambert law</em>. The absorbed light intensity is <span class="math notranslate nohighlight">\(\displaystyle I_{abs}=I_0(1-e^{-\sigma nL})\)</span> because the total number of photons is those absorbed plus those transmitted. In many instances, the quantity <span class="math notranslate nohighlight">\(\sigma nL\)</span>, the optical density, is replaced with <span class="math notranslate nohighlight">\(\epsilon [c]L\)</span> where <span class="math notranslate nohighlight">\(\epsilon\)</span> is the extinction coefficient, which depends on the wavelength and has units of <span class="math notranslate nohighlight">\(\mathrm{dm^3\,mol^{-1}\, cm^{-1}}\)</span>, <span class="math notranslate nohighlight">\([c]\)</span> is the solution concentration and <span class="math notranslate nohighlight">\(L\)</span> the path length.</p>
 <p>A beam of X-rays can be scattered by the electrons in a molecule’s atoms, rather than being absorbed. In a single crystal, parallel planes of atoms occur at regular intervals. The scattered intensity from the many planes similarly oriented to the X-ray beam can add in phase or cancel out, and this forms the basis of X-ray crystallography. The beam of X-rays has intensity <span class="math notranslate nohighlight">\(I\)</span>, and if a sample contains <span class="math notranslate nohighlight">\(n\)</span> electrons per unit volume, the first layer of thickness <span class="math notranslate nohighlight">\(dL\)</span> intercepts <span class="math notranslate nohighlight">\(ndL\)</span> photons, each electron presenting an area of <span class="math notranslate nohighlight">\(4\pi d^2\)</span> where <span class="math notranslate nohighlight">\(d = e^2/mc^2\)</span> and is approximately the closest approach distance of two electrons. An equation similar to the Beer-Lambert equation describes scattering but if this is small, and as <span class="math notranslate nohighlight">\(nL\)</span> is the number of scattering electrons in the sample, the fractional scattering of a single electron becomes <span class="math notranslate nohighlight">\(I_s/I_0 =4\pi d^2=4\pi(e^2/mc^2)^2\)</span>, see Q5.</p>
-</div>
-<div class="section" id="velocity-and-acceleration">
-<h2>3.5 Velocity and Acceleration<a class="headerlink" href="#velocity-and-acceleration" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="velocity-and-acceleration">
+<h2>3.5 Velocity and Acceleration<a class="headerlink" href="#velocity-and-acceleration" title="Permalink to this headline">#</a></h2>
 <p>A number of problems involving the motion of bodies can be solved by using Newton’s laws to equate forces, and separating the variables of the equation produced. Usually, the force acting downwards is gravity, and it is often convenient to choose the positive direction as downwards. By Newton’s second law of motion, the net force <span class="math notranslate nohighlight">\(f\)</span> acting on a body, is equal to the rate of change of momentum, or</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle   f=m\frac{dv}{dt}\]</div>
@@ -2265,8 +2633,8 @@
 <div class="math notranslate nohighlight">
 \[\displaystyle  f=m\frac{d^2x}{dt^2}\]</div>
 <p><span class="math notranslate nohighlight">\(x\)</span> being the position at time <span class="math notranslate nohighlight">\(t\)</span>. Both of these equations are of fundamental importance in solving problems in dynamics.</p>
-<div class="section" id="i-skydiving">
-<h3><strong>(i) Skydiving</strong><a class="headerlink" href="#i-skydiving" title="Permalink to this headline">¶</a></h3>
+<section id="i-skydiving">
+<h3><strong>(i) Skydiving</strong><a class="headerlink" href="#i-skydiving" title="Permalink to this headline">#</a></h3>
 <p>Consider now a skydiver who jumps from an aeroplane and falls under gravity, but with air resistance that is linearly proportional to velocity. Naturally, we shall want to work out how velocity increases with time, and if it will reach a constant, limiting value. After a certain time, the parachute must open, and the resistance to falling will increase so that it is now proportional to the square of velocity. At any time the forces due to gravity and air resistance are balanced, and therefore act in opposite directions and this is used to solve the problem. The force of gravity is <span class="math notranslate nohighlight">\(mg, \,g\)</span> being the acceleration due to gravity and <span class="math notranslate nohighlight">\(m\)</span> the mass in kg. The air resistance (drag) is <span class="math notranslate nohighlight">\(av\)</span> where <span class="math notranslate nohighlight">\(a\)</span> is a constant with units of kg s<span class="math notranslate nohighlight">\(^{-1}\)</span> and <span class="math notranslate nohighlight">\(v_0\)</span> is the initial downwards velocity which could be zero. The equation of motion in terms of force is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle  m\frac{dv}{dt}= mg - av, \qquad v(t_0) = v_0, \qquad t_0=0\]</div>
@@ -2322,9 +2690,9 @@ time to reach ground  58.83 seconds
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="ii-rockets">
-<h3><strong>(ii) Rockets</strong><a class="headerlink" href="#ii-rockets" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="ii-rockets">
+<h3><strong>(ii) Rockets</strong><a class="headerlink" href="#ii-rockets" title="Permalink to this headline">#</a></h3>
 <p>A rocket is fired vertically into the air with an initial velocity <span class="math notranslate nohighlight">\(v_0\)</span>. To find the speed at any height where it has travelled a distance <span class="math notranslate nohighlight">\(r\)</span> the equation to use is,</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle  \frac{dv}{dt}\equiv v\frac{dv}{dr}=-\frac{gR^2}{r^2}\]</div>
@@ -2340,9 +2708,9 @@ time to reach ground  58.83 seconds
 <p>To find the time to  travel a distance <span class="math notranslate nohighlight">\(r\)</span> the velocity equation is rearranged to isolate <span class="math notranslate nohighlight">\(r\)</span> and then <span class="math notranslate nohighlight">\(dv/dt\)</span> integrated. This is most easily done using the method shown in section 5.2. The result of this calculation is also shown in fig 8b.</p>
 <p><img alt="Drawing" src="../_images/diffeqn-fig8b.png" /></p>
 <p>Fig 8b. Rocket moving vertically and without air resistance. Left: velocity vs distance from earth’s surface (in units of earth’s mean radius <span class="math notranslate nohighlight">\(R = 6372\)</span> km). The initial rocket velocity on km/s is shown in the legend. The escape velocity curve is labelled with <span class="math notranslate nohighlight">\(v_e\)</span>. Right. Time taken to cover distance <span class="math notranslate nohighlight">\(r\)</span> when the initial velocity is the escape velocity (black) and at a greater speed of <span class="math notranslate nohighlight">\(12.5\)</span> km/s (orange).</p>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -2366,9 +2734,11 @@ time to reach ground  58.83 seconds
 
               </div>
               
-        
-            <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="Diff-eqns-intro.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -2384,26 +2754,28 @@ time to reach ground  58.83 seconds
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-        
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-    <div class="container">
-      <p>
-        
-          By Godfrey Beddard<br/>
-        
-            &copy; Copyright 2022.<br/>
-      </p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Godfrey Beddard<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
     </div>
-  </footer>
-</main>
+    
+</div>
 
 
       </div>
     </div>
   
-  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>

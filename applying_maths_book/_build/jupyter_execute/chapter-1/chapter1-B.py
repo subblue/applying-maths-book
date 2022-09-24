@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## Trig, hyperbolic and inverse functions, waves, polar coordinates & factorials
+# # Trig, hyperbolic and inverse functions, waves, polar coordinates & factorials
 
 # In[1]:
 
@@ -15,7 +15,7 @@ init_printing()                      # allows printing of SymPy results in types
 plt.rcParams.update({'font.size': 16})  # set font size for plots
 
 
-# ### 5.1 Trig functions
+# ## 5.1 Trig functions
 # 
 # The common trigonometric functions, sine and cosine, are circular functions because their values repeat as $x$ is increased. Together with the tangent, they are defined as ratios of the sides of a right-angled triangle and are illustrated in Figure 9.
 # 
@@ -63,7 +63,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # Figure 10 The tangent touches the curve at a point and defines the gradient at that point.
 # 
 
-# ### 5.2 Waves
+# ## 5.2 Waves
 # 
 # In electromagnetic radiation, such as X-rays or radio waves and, more familiarly, visible light, the periodic displacement of the electric and magnetic fields is described by a sine or cosine function. Similarly, sine and cosine describe the periodic displacement of molecules as a sound wave travels through a gas, liquid, or solid, and describe a molecule's internal vibrational normal modes. Any motion described by a single sine or cosine is called simple harmonic motion (SHM), for example, the motion of a pendulum. A spring is often called a harmonic oscillator and this term is also used to describe molecular vibrations. Mathematically, waves form the basis of the Fourier transforms and Fourier series method described in Chapter 9.
 # 
@@ -112,7 +112,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # Figure 13 Left: the two travelling waves of frequency $\upsilon = 5$ and $5.5$ quickly become out of step with one another. Right: the sum of the waves shows beating with a beat frequency of 0.5 Hz (red dashed line) and a higher frequency at the sum of the frequencies. (Note that different abscissa are used).
 # ____
 # 
-# ### 5.3 Phase and group velocity
+# ## 5.3 Phase and group velocity
 # 
 # A wave is defined with an angular frequency $\omega = 2\pi\nu$ and wavevector 
 # 
@@ -138,7 +138,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # is the group velocity.
 # 
-# ### 5.4 Standing waves
+# ## 5.4 Standing waves
 # 
 # The fundamental and overtone waves formed in a taut wire when it is struck, such as on a guitar or violin, or those in the quantum mechanical particle in a box, are standing waves. They rise and fall in time with their nodes remaining at the same place. Thus, sometimes they are completely zero everywhere, and at other times they are maximal. When two similar waves travelling in opposite directions are added, a standing wave is formed. This can be shown if the waves are written as $y_1 = \sin(k(x - v t))$, which means that the wave moves to the right along the x-axis with velocity $v$, and the wave $y_2 = A\sin(k(x + v t))$ moves to the left. With some manipulation the sum of these waves is $y = 2\cos(kvt)\sin(kx)$, which is a sine wave which remains fixed along $x$ but whose amplitude rises and falls in time with frequency $\omega = kv$. 
 # 
@@ -149,11 +149,11 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # Figure 13a. A standing wave. The amplitude changes in the way indicated by the arrows, then repeats in the opposite sense and so on  _ad infinitum_.
 # _____
 # 
-# ### 5.5 Superposition of waves of the same frequency
+# ## 5.5 Superposition of waves of the same frequency
 # 
 # A defining characteristic of waves is that they can form superpositions, which is to say that when added or subtracted a new waveform is produced. When the waves are of the same frequency (or wavelength) this leads to interference and diffraction phenomena. When waves of different frequency are added beats are produced as described above. In quantum mechanics wavepackets are formed as superpositions of wavefunctions and are described in Chapter 5, (Summation and Series). 
 # 
-# #### **Example from xray diffraction**
+# ### **Example from xray diffraction**
 # 
 # In x-ray diffraction the x-rays are scattered by the atoms that are present in regular and repeated positions in a crystal. The smallest set of repeated positions is called the unit cell. The Bragg equation $n\lambda = 2d\sin(\theta) $ defines the angle $\theta$ that the x-rays are diffracted off planes with a separation $d$. Only some angles cause diffraction because $n$ is an integer and the values of $d$ are determined by the limited number spacing between atoms. As the incident and diffracted angle are equal at $\theta$ the diffracted rays can be considered to be reflected off the lattice planes. Only the diffracted (reflected) waves that interfere constructively with one another to produce light spots on the detector. Diffraction with crystals is described in more detail in Chapter 9, Fourier Transforms.
 # 
@@ -191,7 +191,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # To recap, the intensity $I$ is that due to all atoms in the unit cell in proportion to their phase $\varphi_i$ and is unique at each possible scattering angle $\theta$, thus in x-ray diffraction from crystals the positional information is contained in the intensity of the measured spots on the detector not their position.
 # 
-# #### **Example with two waves**
+# ### **Example with two waves**
 # 
 # Suppose that there is a grating with small apertures separated by $d$ and a second set also with separation $d$ but displaced by $\alpha d$ as shown in the figure below. We can consider these apertures as point emitters producing equal amplitude waves of the same frequency and in phase. They could be, for example, atoms scattering x-rays. At a certain angle the waves with spacing $d$ have phase difference $2\pi n$, i.e. these waves combine constructively to give a line at order $n$. The other source has a phase difference relative to the first of $\varphi = 2\pi\alpha n$. On the detector the total wave intensity is observed at orders $n=0,\pm 1,\pm 2\cdots$ and the phases are $\varphi_0 = 0,  \varphi_1=2\pi n \alpha$ and from eqn. 16a and assuming the amplitudes are unity for simplicity, the intensity for a wave from each sets is,  
 # 
@@ -205,7 +205,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # Figure 13b. Two slits (blue dots) each separated by distance $d$ but one pair is displaced by $\alpha d$. This displacement causes a phase shift $\varphi=2\pi n d$ with respect to the other pair for diffracted order $n$.
 # ___________
 # 
-# ### 5.6 Hyperbolic functions
+# ## 5.6 Hyperbolic functions
 # 
 # The hyperbolic functions are closely related to the circular functions, sine, cosine, etc. of trigonometry. The equation of a (unit) circle is $x^2 + y^2 = 1$ and in parametric form $\cos(\theta) = x,\; \sin(\theta) = y$ and any point has coordinates $(\cos(\theta), \sin(\theta))$ }. The equation for a hyperbola is $x^2 - y^2 = 1$ or, in parametric form, $\cosh(t) = x,\; \sinh(t) = y$, but $t$ is not a measure of angle. The two curves produced are shown in figure 14, and one point plotted on each, at a value of $\theta$ and $t =2\pi/3$. The hyperbolic functions are often pronounced, 'shine', 'cosh' and 'than', with emphasis on the 'th'. 
 # 
@@ -248,7 +248,7 @@ simplify( cosh(x)**2 + sinh(x)**2 )
 # 
 # ________
 
-# ### 6 Inverse functions
+# ## 6 Inverse functions
 # 
 # The log and exponential functions are inverses of one another, and similarly $x^n$ and $x^{1/n}$ because when one is made a function of the other, the result is $x;\; \ln(e^x) = x$ and $(x^{1/n})^n = x$. If the function is written as $f(x)$ then the inverse is $f^{-1}(x)$, therefore
 # 
@@ -287,7 +287,7 @@ asinh(x).rewrite('log')
 # Figure 16. Inverse trig functions with $y$ limited to the range $\pm 2 \pi$. The $\tan^{-1}$ functions extend to $x = \pm\infty$ with a limit of integer multiples of $y = \pm \pi/2$.
 # _________
 # 
-# ### 7 Cartesian and polar coordinates
+# ## 7 Cartesian and polar coordinates
 # 
 # When drawing a graph a right-angled set of axes is normally used. The origin is the point (0, 0) and then any other point is represented by two numbers $(x,\; y)$ in the x-y plane. In three dimensions the coordinates are $(x,\; y,\; z)$. These coordinates are described as rectilinear when right-angled axes are used and as Cartesian when $(x,\; y,\; z)$ are used.
 # 
@@ -315,7 +315,7 @@ asinh(x).rewrite('log')
 # Figure 18. Plane polar coordinates.
 # _______
 
-# ### 8 Factorials
+# ## 8 Factorials
 # 
 # The factorial function is the product of a set of _positive integers_ from 1 up to n;
 # 
@@ -357,7 +357,7 @@ asinh(x).rewrite('log')
 # 
 # is sometimes given the symbol $(x)_n$ which is called the Pochhammer symbol, although this notation is not universal. Ratios of factorials similar to these occur in quantum mechanics, particularly when angular momentum quantum numbers are involved.
 # 
-# ####  **Stirling's formula**
+# ###  **Stirling's formula**
 # 
 # The log of the factorial is often used as a way of calculating factorials and Stirling's formula
 # 
@@ -378,7 +378,7 @@ asinh(x).rewrite('log')
 #  Figure 19. Left: $\ln(n!)$ vs $n$. The curve is not smooth because the factorials are integer numbers. Right: The gamma function (solid line) and the factorial (circles).
 #  _____
 #  
-# ### 8.1 Recursion. Calculating Factorials and Orthogonal Polynomials.
+# ## 8.1 Recursion. Calculating Factorials and Orthogonal Polynomials.
 # 
 # Recursion is a general method by which certain functions, such as a factorial or a polynomial, can be calculated by starting with one or two values and using these as a seed to generate further values. The recursion equations are sometimes also called difference equations. 
 # 

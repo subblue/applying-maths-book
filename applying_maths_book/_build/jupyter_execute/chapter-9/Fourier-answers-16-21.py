@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## Solutions Q 16 - 21 
+# # Solutions Q 16 - 21 
 
 # In[1]:
 
@@ -16,7 +16,7 @@ init_printing()                      # allows printing of SymPy results in types
 plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 
-# ### Q16 answer
+# ## Q16 answer
 # Using the ideas presented in the 'strategy' expanding the integral forms,
 # 
 # $$\displaystyle G^1(u)=2+\frac{2\int E(t)E(u+t)dt}{\int E(t)^2dt}$$
@@ -118,7 +118,7 @@ factor(norml4)
 # integration E(t) x E(t+u)^3 and vice versa
 ef13 = expand(ef01*ef02**3)
 term13 = integrate(ef13,(t,-oo,oo),conds='none')
-simplify(term13)
+factor(term13)
 
 
 # In[8]:
@@ -145,11 +145,16 @@ factor(term22)
 
 a = 5
 omega = 10
-anorm = lambda a, omega: np.sqrt(2*np.pi)*a/16*                   ( 3 + np.exp(-2*omega**2) + 4*np.exp(-0.5*omega**2) )
+anorm = lambda a, omega: np.sqrt(2*np.pi)*a/16*\
+                   ( 3 + np.exp(-2*omega**2) + 4*np.exp(-0.5*omega**2) )
 
-f13   = lambda u,a,omega: np.sqrt(2*np.pi)*a/32*(3*2*np.cos(omega*u/a) + np.exp(-2*omega**2)                      + 2*np.exp(-omega**2/2)*( np.cos(3*omega*u/(2*a))                    + 3*2*np.cos(omega*u/(2*a) )))*np.exp(-3*u**2/(8*a**2))
+f13   = lambda u,a,omega: np.sqrt(2*np.pi)*a/32*(3*2*np.cos(omega*u/a) + np.exp(-2*omega**2)\
+                      + 2*np.exp(-omega**2/2)*( np.cos(3*omega*u/(2*a))\
+                    + 3*2*np.cos(omega*u/(2*a) )))*np.exp(-3*u**2/(8*a**2))
 
-f22   = lambda u,a,omega :np.sqrt(2*np.pi)*a/32*                    (4+ 2*np.cos(2*omega*u/a)+2*np.exp(-2*omega**2)                      +4*2*np.cos(omega*u/a)*np.exp(-omega**2/2) ) *np.exp(-u**2/(2*a**2))
+f22   = lambda u,a,omega :np.sqrt(2*np.pi)*a/32*\
+                    (4+ 2*np.cos(2*omega*u/a)+2*np.exp(-2*omega**2) \
+                     +4*2*np.cos(omega*u/a)*np.exp(-omega**2/2) ) *np.exp(-u**2/(2*a**2))
 
 n = anorm(a,omega)
 G2 = lambda u, a, omega: 2   + 6*f22(u,a,omega)/n + 2*4*f13(u,a,omega)/n
@@ -172,7 +177,7 @@ plt.show()
 # Figure 57. Normalized fringe resolved autocorrelation $G^2(u)$ with the upper and lower bounds shown as solid lines. The frequency of the pulse is constant throughout its duration so this is a _transform-limited_ pulse with zero chirp. The constants are $a$ = 5 and $\omega$ = 10.
 # __________
 # 
-# **(b**) The outline pulse shape is found by ignoring the cosine term and integrating. The results is shown below. THe lower profile is found by subtracting the two exponentials, and has the effect only of changing the +4 term to -4.
+# **(c**) The outline pulse shape is found by ignoring the cosine term and integrating. The results is shown below. The lower profile is found by subtracting the two exponentials, and has the effect only of changing the +4 term to -4.
 
 # In[10]:
 
@@ -208,7 +213,7 @@ plt.plot()
 plt.show()
 
 
-# ### Q17 answer
+# ## Q17 answer
 # **(a)** The integration for the $\displaystyle e^{-|x|/a}$ pulse is $\displaystyle \int_{-\infty}^\infty e^{-|x|/a}e^{-|x+u|/a}dx$ which is simplified, as the autocorrelation is symmetric about zero, by doubling the integral from 0 to $\infty$, in which case the absolute values are not needed. The result is $\displaystyle 2\int_0^\infty e^{-2x/a}e^{-u/a}dx = ae^{-u/a}$. However, when plotting the absolute values must be replaced as $u$ can be negative. Thus $\displaystyle A(u) = ae^{-|u|/a}$.
 # 
 # At the fwhm let $u=\tau$ and $\displaystyle A(u)=1/2= ae^{-\tau/a}$ thus $\tau=2a\ln(2a)$. The laser pulse fwhm is $2a\ln(2)$ the autocorrelation is thus $\ln(2a)/\ln(2)$ wider.
@@ -242,7 +247,8 @@ factor(df)
 # Newton-Raphson
 # derivative of A(u) is df    # simplified function and derivative used 
 
-df = lambda u: -16*np.exp(2*u)*(2*u*np.exp(4*u)+8*u*np.exp(2*u)+2*u-3*np.exp(4*u) +3)                 /(np.exp(2*u) -1 )**4
+df = lambda u: -16*np.exp(2*u)*(2*u*np.exp(4*u)+8*u*np.exp(2*u)+2*u-3*np.exp(4*u) +3)\
+                 /(np.exp(2*u) -1 )**4
 
 # function A(u)-1/2  and find value when zero (root).
 
@@ -256,7 +262,7 @@ for i in range(6):       # 6 iterations are enough
 
 # which shows that the half width at half maximum (fwhm)  is 2$\cdot$ 1.64. In comparison the same value to the $\mathrm{sech}^2$ pulse is 2$\cdot$ 0.88 thus the autocorrelation is $\approx$ 1.86 times wider. 
 # 
-# ### Q18 answer
+# ## Q18 answer
 # The acoustic pulse, $S(t)$ with $a$ = 0 compared with $a$ = 60,shows that the frequency is higher at short times than at longer ones; a down chirp. see fig 58. The calculated autocorrelation of the chirped and un - chirped pulse, are shown in Fig. 59. The calculation is essentially the same as in section 5. 
 # 
 # ![Drawing](fourier-fig58.png)
@@ -279,7 +285,7 @@ for i in range(6):       # 6 iterations are enough
 # 
 # $\text{for  i  in  range( numt ): S0[i] = sum( [ abs( A0[ k ] ) for k in range( i ) ] )}$
 # 
-# ### Q19 answer
+# ## Q19 answer
 # The method to use similar to that used in the example. However, when the raw data is plotted the signal is buried in the noise, Fourier transforming produces an ambiguous result where it is not clear where to set the filter to extract the data. Apodising, by multiplying the data by an exponential decreases the noise in the longer part of the data and helps to identify the frequencies present. The initial FID and its Fourier transform is shown in the figure.
 # 
 # ![Drawing](fourier-fig60a.png)
@@ -304,7 +310,8 @@ nu1 = 1/4.8
 nu2 = 1/4.5
 sig = 2.0  # magnitude of noise use randn() to use normally distributed noise
 
-fid0 = [ np.exp(-x[i]/300.0)*(np.sin(2*np.pi*nu1*x[i]) + np.sin(2*np.pi*nu2*x[i]) )          + sig*np.random.randn() for i in range(n)]
+fid0 = [ np.exp(-x[i]/300.0)*(np.sin(2*np.pi*nu1*x[i]) + np.sin(2*np.pi*nu2*x[i]) ) \
+         + sig*np.random.randn() for i in range(n)]
 
 fft0 = np.fft.rfft(fid0).imag    # as FID contais sine waves FFT is imaginary.
 #.. plots shwon in the next figures
@@ -334,7 +341,7 @@ fft0 = np.fft.rfft(fid0).imag    # as FID contais sine waves FFT is imaginary.
 # 
 # ____
 # 
-# ### Q20 answer
+# ## Q20 answer
 # Plotting the data with and without noise, shows that the pulse lasts for about 2 ps, and examining this close to the maximum time, indicates that the smallest period is about 60 fs. Therefore, $n$ = 2<sup>12</sup> points will be more than adequate for the Fourier transforms.
 # 
 # The pulse has the form $\displaystyle \sin(x^2/200^2 )\exp(- (x-800.0)^2/200.0^2)$ and the noise, with an amplitude from $\pm$1, is added by including randn(). The plot shows the chirped pulse (pure pulse), and with the noise added, this forms the 'experimental' data. The pure pulse and the recovered data are shown in the second set of figures below. 
@@ -385,7 +392,7 @@ plt.title('pure (red dotted) and recovered signal')
 plt.show()
 
 
-# ### Q21 answer
+# ## Q21 answer
 # The recursive algorithm below is based on the equation in the text. The data is assumed to have been calculated elsewhere and put into array called data, the smoothed data is called sdata.
 
 # In[18]:

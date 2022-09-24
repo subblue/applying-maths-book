@@ -1,9 +1,9 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## Questions 7 - 10
+# # Questions 7 - 10
 
-# ### Q7 Singlet excited state decay
+# ## Q7 Singlet excited state decay
 # A singlet excited state decays to a triplet state by intersystem crossing with a rate constant, $k_{isc} = 2 \cdot 10^8\,\mathrm{ s^{-1}}$, as well as fluorescing to the ground state with rate constant $k_f = 1 \cdot 10^7\,\mathrm{ s^{-1}}$.
 # 
 # (a) What is the fluorescence lifetime and the fluorescence yield?
@@ -16,7 +16,7 @@
 # 
 # where S is the excited state, T the triplet and S$_0$ the ground state. The populations are calculated as in the Gillespie Algorithm for excited states modified for the decay of the triplet. This means that three checks need to be made as there are three possible transitions, excited singlet to triplet, excited singlet to ground state, and triplet to ground state. Work out the sum $a_0$ then the fraction of this that corresponds to each type of transition and compare this to a random guess as to which one will be chosen. 
 # 
-# ### Q8 Excited state blocking
+# ## Q8 Excited state blocking
 # We have assumed in previous calculations that the population of the final state does not affect the transition from other states, but, in fact, the rate of a transition is proportional to the difference in population between energy levels. Two common situations arise where the final state population can affect the transition from an upper level; one is a three or four level laser and the other is the phenomenon of band filling in semiconductors, where, because of the Pauli principle, only two electrons can fill any electronic energy level. A generic diagram is shown in Figure 8. It is assumed that state $T$ is full when it receives half the total population.
 # 
 # Calculate the decay of state A if $k_f = 1/(100\mathrm{ ns})$ and $k_{isc} = 1/(30\, \mathrm{ns})$. Assume that the probability of going into state $T$ is reduced in proportion to the fraction of the total number already in that state.
@@ -32,7 +32,7 @@
 # figure 8. A scheme where population difference becomes important.
 # ____
 # 
-# ### Q9 SIR model of disease
+# ## Q9 SIR model of disease
 # The S-I-R scheme describes the way an infection is passed among individuals and is described in detail in Chapter 11.7. The scheme is
 # 
 # $$\displaystyle  S+I \overset{k_{SI}}\longrightarrow 2I, \qquad I\overset{k_{IR}}\longrightarrow R $$
@@ -45,7 +45,7 @@
 # 
 # **Strategy:** The method to use is similar to that outlined in the examples. The question gives all the information needed except the number of bins to calculate the data over; 100 should be sufficient which is one data point every 5 hours. To improve the calculation, several runs may have to be calculated and averaged.
 # 
-# ### Q10 Predator - prey model
+# ## Q10 Predator - prey model
 # The Lotka - Volterra, predator - prey scheme is
 # 
 # $$\displaystyle  Y\overset{k_1}\longrightarrow Y+Y,\qquad Y+X \overset{k_2}\longrightarrow X+X, \qquad  X\overset{k_3}\longrightarrow  Q \tag{12}$$

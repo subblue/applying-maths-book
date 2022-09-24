@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## Rate equations and Chemical Kinetics
+# # Rate equations and Chemical Kinetics
 
 # In[1]:
 
@@ -16,7 +16,7 @@ init_printing()                         # allows printing of SymPy results in ty
 plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 
-# ### 13.1 Linear kinetic schemes
+# ## 13.1 Linear kinetic schemes
 # 
 # The equations of chemical kinetics can quite easily become complicated even with simple schemes. The sequential scheme 
 # 
@@ -70,7 +70,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # The next section describes how this and many other complex schemes can be solved using matrix methods both algebraically and more often for complicated rate equations, numerically.
 # 
-# ### 13.2 Matrix solutions
+# ## 13.2 Matrix solutions
 # 
 # Using matrix methods changes the way the problem is solved into that of finding eigenvalues and eigenvectors, thereby avoiding the difficulty of integration, but it is only applicable to first order or linear equations; i.e. product terms such as $k_2AB$ are not allowed. For very complex schemes, consisting of hundreds of equations, the master equation approach is used and is usually solved numerically. A master equation is defined as a phenomenological, first-order differential equation, describing the time evolution of the probability of a 'system' to occupy any one of a discrete set of states.
 # 
@@ -87,7 +87,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # Notice how the decay rate constant of each species is on the diagonal, and the grow-in or decay of species $C$ from $B$ and $B$ from $A$, on the off-diagonal. Notice also that the matrix is not Hermitian, i.e. is not symmetrical, although each term is real. This means that when the equation is solved the eigenvectors $x$ are not orthogonal.
 # 
-# #### **Secular Determinant**
+# ### **Secular Determinant**
 # 
 # Solving the matrix equation 37 is done in two steps. First the eigenvalues $\lambda$ are obtained from the secular determinant of the rate constants, then equation 39 is used to obtain the populations with time. The justification for this is given in the next section, 13.3; we use it first. The secular determinant of matrix $\pmb{k}$ is
 # 
@@ -95,7 +95,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # whose characteristic equation is $(k_1 + \lambda)(k_2 + \lambda)\lambda = 0$ and from which, by inspection, $λ_1 =-k_1,\; \lambda_2 =-k_2$,and $\lambda_3 =0$.
 # 
-# #### **Time profiles**
+# ### **Time profiles**
 # 
 # To calculate the populations, or concentrations, the matrix equation
 # 
@@ -122,7 +122,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # The calculation, using python/Sympy, is shown below. The solution is found algebraically but in practice for complex kinetic schemes a purely numerical solution is the way to proceed because algebraic solution become impossibly complex.
 # 
-# #### **Algebraic solution of $A \to B \to C$**
+# ### **Algebraic solution of $A \to B \to C$**
 # 
 # It is assumed that the rate constants are $k_1$ and $k_2$, and that, at time zero, the amount of $A$ present $A_0 = 1$, and that $B_0 = C_0 = 0$; This code will calculate any $A \leftrightharpoons B \leftrightharpoons C$ when the $\pmb{k}$ matrix is modified.
 
@@ -163,7 +163,7 @@ populations
 # Figure 55. Populations of species $A, \;B$, and $C$ with time when $k_1 = 1,\; k_2 = 1.5$ with initial concentrations $A_0 =1,\;B_0 =C_0 =0$. The scheme is $\displaystyle A \overset{k_1}\to B \overset{k_2}\to C$.
 # ________
 # 
-# #### **Numerical solution of $A \leftrightharpoons B \leftrightharpoons C$** 
+# ### **Numerical solution of $A \leftrightharpoons B \leftrightharpoons C$** 
 
 # In[5]:
 
@@ -199,7 +199,7 @@ plt.show()
 # Plotting the three curves of pop[...] will produce figure 55.
 # ____________
 # 
-# #### **Circular reaction scheme**
+# ### **Circular reaction scheme**
 # 
 # When the rate equations are more complex then a numerical solution is to be preferred simply because the equations can become impossibly complex. Consider a scheme (figure 55a) in which three species A, B, C are interconnected each with the others. 
 # 
@@ -225,7 +225,7 @@ plt.show()
 # 
 # This method can be extended to schemes with many other species as in question 52. If, for instance, species $b$ decays such as by fluorescence or phosphorescence then $-k_f b$ is added to the summation term in the rate equation for that species. The limitation is that only first order, or pseudo first order, reactions are possible, i.e. the rate constant matrix must not involve and concentrations unless they have a constant value.
 
-# #### **Energy transfer on a Polygon. Circulant determinants**
+# ### **Energy transfer on a Polygon. Circulant determinants**
 # 
 # In this example we consider energy transfer between molecules equally spaced apart on a polygon. The determinant produced is similar to the $\mathrm{H\overset{\cdot\cdot}uckel }$ one described in section 2 although the problem is totally different.
 # 
@@ -359,7 +359,7 @@ plt.legend()
 plt.show()
 
 
-# ### 13.3 Justification for the matrix method to solve coupled linear differential equations
+# ## 13.3 Justification for the matrix method to solve coupled linear differential equations
 # 
 # In using equation 38 to solve the scheme, the assumption is made that if $\pmb{M}$ is a vector and $\pmb{k}$ a matrix, we can write $d\pmb{M}/dt = \pmb{kM}$ and that its solution is $\pmb{M} = \pmb{M}_0e^{\pmb{k}t}$. To show that this is valid, we work backwards and start with $\pmb{M}$, which is differentiated term by term, after first expanding the exponential as a series. In Section 5.5 it was shown that the exponential of a matrix can only be manipulated by first expanding;
 # 
@@ -375,7 +375,7 @@ plt.show()
 # and the form of this needs explaining. First, each value in the column vector $\pmb{M}(t)$ represents the concentration of each species at time $t$, the column vector $\pmb{M}_0$ holds the initial concentrations
 # of the same species. The equation we start with is $\pmb{M}(t) = \pmb{M}_0 e^{-\pmb{k}t}$. To solve this it has to be converted into $\pmb{M}(t) = \pmb{X}[e^{\lambda t}]\pmb{X}^{-1}\pmb{M}_0$, and to do this a _similarity transform_ is needed.
 # 
-# ### 13.4 Similarity Transforms
+# ## 13.4 Similarity Transforms
 # 
 # In our study of molecular group theory, similar matrices were introduced. However, _similar_ matrices are used more generally. A square matrix $\pmb{W}$ is described as being _similar or conjugate_ to another square matrix $\pmb{N}$, if there exists a third, non-singular, square matrix $\pmb{X}$ such that
 # 
@@ -471,7 +471,7 @@ M5
 
 #  
 
-# ### 13.5 A Similarity Transform used to evaluate a partition function.  The helix-coil transition
+# ## 13.5 A Similarity Transform used to evaluate a partition function.  The helix-coil transition
 # A polypeptide or a protein can change from a helix to a random coil structure or vice versa, over a small range of temperatures. This sudden change is suggestive of a cooperative process and Zimm & Bragg (1959) used a statistical model and calculated the partition function for a peptide chain consisting of two types of residues, either those that form a helix or those that do not. A section of protein will be described as having an unstructured coil if it has c type amino acids and h type if they are helix forming such as alanine. A portion of the chain could be $\cdots cchccchhhcchh\cdots$ . The statistical weight of a $\cdots ch$ boundary and of continuing to grow a helix $\cdots chhh$ once formed is calculated and this statistical weight is the Boltzmann contribution to the partition function or $e^{-\Delta G/k_BT}$, where $\Delta G$ is the change in free energy when the next residue is encountered along the chain. The model is successful despite the assumption of nearest neighbour interactions whereas a helix strictly involves interactions with residues that are not just nearest neighbours.
 # 
 # The model has the following rules.

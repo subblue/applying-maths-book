@@ -1,13 +1,13 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## Differentiation of vectors 
+# # Differentiation of vectors 
 
-# ### 13.1 Del, div, grad, Laplacian, and curl
+# ## 13.1 Del, div, grad, Laplacian, and curl
 # 
-# There are four common vector operators involved in differentiation and the _del_ operator. They are widely used in describing the physics of electrostatics, magnetism, and flowing liquids, and in the properties of fields in general. They are only infrequently met in chemistry or the biosciences.  Only the briefest outline is given here; see a specialist text such as 'Div, Grad, Curl and All That' (Shey 1993) for more details. The _del_ symbol $\nabla$ is also called nabla.
+# There are four common vector operators involved in differentiation and the _del_ operator. They are widely used in describing the physics of electrostatics, magnetism, and flowing liquids, and in the properties of fields in general. They are only infrequently met in chemistry or the biosciences.  Only the briefest outline is given here; see a specialist text such as 'Div, Grad, Curl and All That' (Shey 1993) for more details. The _del_ symbol $\nabla$ is also called _nabla_.
 # 
-# ### 13.2 Del, $\nabla$
+# ## 13.2 Del, $\nabla$
 # The _vector operator 'del' is defined in the $(\pmb{i, j, k})$ basis as
 # 
 # $$\displaystyle \nabla =\frac{\partial}{\partial x}\pmb{ i}+\frac{\partial}{\partial y}\pmb{ j}+\frac{\partial}{\partial z}\pmb{ k}$$
@@ -16,7 +16,7 @@
 # 
 # $$\displaystyle\nabla f=\frac{\partial f}{\partial x}\pmb{ i}+\frac{\partial f}{\partial y}\pmb{ j}+\frac{\partial f}{\partial z}\pmb{ k}$$
 # 
-# ### 13.3 Grad $\nabla f$
+# ## 13.3 Grad $\nabla f$
 # 
 # The gradient is a vector that gives the maximum rate of change of a function f and its magnitude in a given direction. For example, if the function is $f = \sin(x)yz^2$ then the rate of change is the vector
 # 
@@ -24,7 +24,7 @@
 # 
 # which can be resolved into components along the base vector's $\pmb{i, j, k}$ directions. 
 # 
-# ### 13.4 Div, $\nabla \cdot v$
+# ## 13.4 Div, $\nabla \cdot v$
 # If a vector $v$ is represented in the $(\pmb{i, j, k})$ basis as $\pmb{v} = a\pmb{i} + b\pmb{j} + c\pmb{k}$ then the dot product with the vector $\nabla$ is called the _divergence_ and is a scalar defined as
 # 
 # $$\begin{align}
@@ -43,13 +43,13 @@
 # 
 # and lies in the direction given by $\nabla f = 0\pmb{i} + 9\pmb{j} + 12\pmb{k}$, and the maximum rate of change is the size of this vector which is $15$.
 # 
-# ### 13.5 Laplacian, $\nabla\cdot\nabla f$
+# ## 13.5 Laplacian, $\nabla\cdot\nabla f$
 # 
 # The dot product of the operator del with itself is a scalar function called the _Laplacian_, which is
 # 
 # $$\displaystyle \nabla ^2 f=\nabla\cdot(\nabla f)=\frac{\partial^2 f}{\partial x^2}+\frac{\partial^2 f}{\partial y^2}+\frac{\partial^2 f}{\partial z^2}$$
 # 
-# ### 13.6 Curl, $\nabla \times \pmb{v}$
+# ## 13.6 Curl, $\nabla \times \pmb{v}$
 # 
 # The cross product of del with a vector $v$ is a vector called the curl
 # 
@@ -60,3 +60,9 @@
 # \end{bmatrix}$$
 # 
 # This vector is best left as a determinant in which form it is easier to remember.
+
+# In[ ]:
+
+
+
+

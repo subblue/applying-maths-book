@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## Differentiation
+# # Differentiation
 
 # In[1]:
 
@@ -15,7 +15,7 @@ init_printing()                      # allows printing of SymPy results in types
 plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 
-# ### 1 Concepts
+# ## 1 Concepts
 # 
 # Differentiation allows us to obtain the 'slope', or gradient, of a function or the rate of change of some quantity with time. Integration allows us to obtain the area under a curve, and this is described fully in the next chapter. Differentiation and integration are shown in pictorial form below for any regular function $f(x)$. By regular is meant a well-behaved function without discontinuities at some value of $x$.
 # 
@@ -32,9 +32,9 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # Even if we assume that it will always be possible to differentiate our function $f(x)$ it will not always be possible to integrate it algebraically, although this can be done numerically. Integrating $df/dx$ is equivalent to solving a differential equation and these are met primarily in chemical kinetics, quantum mechanics, and dynamics. Before working out the details of differentiation, the effect that a small change in $x$ and $y$ has on an expression is examined, and this will lead naturally into differentiation.
 # 
-# ### 2 Differentiation
+# ## 2 Differentiation
 # 
-# ### 2.1 Gradient calculated from small changes in $x$ and $y$
+# ## 2.1 Gradient calculated from small changes in $x$ and $y$
 # 
 # A straight line with equation $y = mx + c$ has a constant slope $m$, which is the change in $y$ divided by change in $x$, or $\delta y/\delta x$ for any interval $\delta x$. However, most functions are more interesting than the straight line; a parabola for example, $y = mx^2 + c$, has a gradient that changes with $x$ and the value $\delta y/\delta x$ is now clearly going to depend upon how small $\delta x$ and $\delta y$ are and where $x$ is on the curve. If $\delta x$ is made infinitesimally small, the gradient exactly at position $x$ is obtained and this is what is achieved with differentiation.
 # 
@@ -69,7 +69,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # because $y\equiv f(x)$.
 
-# ### 3 The machinery of differentiation
+# ## 3 The machinery of differentiation
 # 
 # In the previous section, the effect a small change $\delta x$ on a quantity $x$ was calculated, now $\delta x$ is made infinitesimally small and the limit found when $\delta x \to  0$. The consequence of making the change $\delta x \to  0$ is profound and leads to differentiation, which is of universal application. If [C] is concentration, differentiation with time gives the _rate_ of a chemical reaction, or if $x$ is position, differentiation gives the speed of the body: rate of change of distance with time. A derivative in general describes the rate of change of one quantity with respect to another and 'rate of change' is commonly used not only to mean change with time, its original meaning, but also of any quantity with respect to another; $dy/dx$ for instance.
 # 
@@ -91,7 +91,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # Fig. 3 Left: Infinitesimal changes in $\delta x$ and $\delta y$ lead to the calculation of the slope at $x$ and to differentiation when $\delta x \to  0$. Right: The gradient and a line normal, i.e. at right angles, to the gradient.
 # _____
 # 
-# ### 3.1 Finding the limit when $\delta x \to 0$
+# ## 3.1 Finding the limit when $\delta x \to 0$
 # 
 # In finding the limit $\delta x \to  0$ although $f(x + \delta x) - f(x)$ and $\delta x$ tend to zero, their  ratio does not and is finite. Even though this may not seem to make sense, it is true also for many ordinary functions, such as $\sin(x)$, $x^2$, and so forth. For example, choosing two equations $y_1 = 3x$ and $y_2 =2x$ as $x\to  0$, both $y_1$ and $y_2$ tend to zero, but their ratio is $3x/2x=3/2$ for all values except exactly at $x  = 0$. The similar effect is seen in a triangle because the ratio of the length of the base to the perpendicular side is constant except at exactly $x  = 0$, fig. 4.
 # 
@@ -107,7 +107,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # Sometimes $d/dx$ is called the _differential operator_ because it operates on $x^2$ to form 2$x$, which is the gradient at any point $x$. Now that $x^2$ has been differentiated, returning to equation (2) an approximate gradient of $4.3$ was found for the parabola. The true value at $x  = 2$ is $4$ so our estimate was reasonable but still about $7$% out, however, it was more difficult to calculate than the exact value!
 # 
-# ### 3.2 Differentiating exponentials
+# ## 3.2 Differentiating exponentials
 # 
 # The exponential function is very important in science and arises in many situations. For example, in chemical kinetics when a molecule such as ICN dissociates, 
 # 
@@ -150,7 +150,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # If $\displaystyle y = e^x$, then the value of the gradient is the size of the function itself; $\displaystyle \frac{d}{dx}e^x=e^x$
 # 
-# ### 3.3 Powers of $x$
+# ## 3.3 Powers of $x$
 # 
 # The similar procedure making $\delta x \to  0$ can be followed for lots of different functions, but need not be carried through because the results and methods are well understood and the results will be quoted. The derivatives of $\displaystyle y = x^n$ where $n$ is any positive or negative number, including fractions, have the form
 # 
@@ -180,7 +180,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # Letting $\delta x \to 0$ produces the familiar formula $\displaystyle \frac{dy}{dx}=nx^{n-1}$.
 # 
 # 
-# ### 3.4 Powers of $y$
+# ## 3.4 Powers of $y$
 # 
 # The differential of $y$ is $dy$ ; that of $y^2$ is $2y dy$ where the power of $y$ is differentiated as if it
 # were $x$ then multiplied by the differential of $y$ itself. It is very important to remember to do this. An example is,
@@ -193,11 +193,11 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # $$ g(y)=f(x), \qquad \frac{d}{dy}g(y)\frac{dy}{dx}=\frac{d}{dx} f(x)\tag{6}$$
 # 
-# ### 3.5 Constants
+# ## 3.5 Constants
 # 
 # Constants always differentiate to zero because a graph of $y$ = constant has a zero gradient.
 # 
-# ### 3.6 Differentiating with Sympy
+# ## 3.6 Differentiating with Sympy
 
 # In[2]:
 
@@ -235,7 +235,7 @@ eq2 = y**3 - ln(x)
 diff(eq2, x)
 
 
-# ### 3.7 Repeated Differentiation
+# ## 3.7 Repeated Differentiation
 # 
 # The result of differentiation is often another function in $x$, so it is possible to differentiate
 # again. Performing the operation twice is written as $\displaystyle \frac{d^2}{dx^2} f(x)$, and the notation is similar even if you must differentiate three or more times. Sometimes the first derivative is written as $f'$, the second as $f''$, and so forth. The second derivative means perform the differentiation twice over, the third derivative three times etc.,
@@ -264,7 +264,7 @@ diff(eq2, x)
 # 
 # Incidentally, this last equation tells us that the solutions of this type of differential equation are exponentials; $n$ can be $1, 2, 3$, and so forth.
 # 
-# ### 3.8 Many variables and Partial Differentiation
+# ## 3.8 Many variables and Partial Differentiation
 # 
 # Some functions depend upon more than one variable, say $x$ and $z$, which is written as $y(x, z)$ or $f(x, z)$, it is now possible to differentiate with respect to $x$ then $z$ or vice versa. For example, if $ \displaystyle  y(x, z) = x^3z^4$, differentiating by $z$ but keeping $x$ constant produces
 # 
@@ -283,7 +283,7 @@ diff(eq2, x)
 # $$\displaystyle  \frac{d}{dz}\left(\frac{dy}{dx}\right)=\frac{d^2y}{dzdx}=12x^2z^3, \qquad \frac{d}{dx}\left(\frac{dy}{dz}\right)=\frac{d^2y}{dxdz}=12x^2z^3$$
 # 
 # 
-# #### **Change in enthalpy, entropy & heat capacity  from electrochemical potential $\epsilon$ vs. $T$**
+# ### **Change in enthalpy, entropy & heat capacity  from electrochemical potential $\epsilon$ vs. $T$**
 # 
 # In an electrochemical cell the enthalpy at constant pressure is given by 
 # 

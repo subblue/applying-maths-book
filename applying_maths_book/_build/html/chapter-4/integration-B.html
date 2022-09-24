@@ -4,11 +4,13 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Integration by substitution &#8212; Applying Maths in the Chemical &amp; Biomolecular Sciences</title>
     
-  <link href="../_static/css/theme.css" rel="stylesheet">
-  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,40 +20,39 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Questions 15-30" href="integration-Q15-30.html" />
@@ -63,7 +64,21 @@
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -72,9 +87,10 @@
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -92,14 +108,15 @@
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../intro.html">
-   Applying Maths in the Chemical and Biomolecular Sciences.
-  </a>
- </li>
-</ul>
-<ul class="current nav bd-sidenav">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Applying Maths in the Chemical and Biomolecular Sciences.
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../chapter-1/chapter1-intro.html">
    1. Numbers, Equations, Operators, and Algorithms.
@@ -204,11 +221,6 @@
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-2/chapter2-Q-10-13.html">
      Questions 10 -13
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-2/chapter2-C.html">
-     Euler’s theorem, roots of unity, x-ray diffraction structure factor.
     </a>
    </li>
    <li class="toctree-l2">
@@ -337,7 +349,7 @@
  </li>
  <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="integration-intro.html">
-   4. Integration.
+   4 Integration.
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
   <label for="toctree-checkbox-4">
@@ -377,7 +389,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="integration-D.html">
-     Calculating an Average Value.
+     Calculating an Average.
     </a>
    </li>
    <li class="toctree-l2">
@@ -407,7 +419,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="integration-G.html">
-     Calculating the energy of a chemical bond using molecular orbitals
+     Calculating the energy of a Chemical Bond using Molecular Orbitals
     </a>
    </li>
    <li class="toctree-l2">
@@ -688,7 +700,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-7/matrices-D.html">
-     Rotation matrices: moving molecules
+     Rotation matrices: moving molecules. Coordinate transform as rotation.
     </a>
    </li>
    <li class="toctree-l2">
@@ -757,23 +769,13 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-7/matrices-K.html">
-     Calculating a bond length using moments of inertia
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-7/matrices-Q61.html">
-     Question 61
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="../chapter-7/matrices-L.html">
      Principal axes for Moments of Inertia
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-7/matrices-Q62.html">
-     Question 62
+    <a class="reference internal" href="../chapter-7/matrices-Q61-62.html">
+     Question 61 - 62
     </a>
    </li>
    <li class="toctree-l2">
@@ -1004,7 +1006,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-G.html">
-     PDE examples continued
+     PDE Continued
     </a>
    </li>
    <li class="toctree-l2">
@@ -1096,7 +1098,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-11/num-methods-answers8-12.html">
-     Solutions Q8 - 12
+     Solutions Q 8 - 12
     </a>
    </li>
    <li class="toctree-l2">
@@ -1258,112 +1260,227 @@
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/chapter-4/integration-B.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/subblue/applying-maths-book"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/subblue/applying-maths-book/issues/new?title=Issue%20on%20page%20%2Fchapter-4/integration-B.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        
-    </div>
-</div>
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/subblue/applying-maths-book/main?urlpath=lab/tree/applying_maths_book/chapter-4/integration-B.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        <a class="colab-button" href="https://colab.research.google.com/github/subblue/applying-maths-book/blob/main/applying_maths_book/chapter-4/integration-B.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
-                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
-                    src="../_static/images/logo_colab.png"
-                    alt="Interact on Colab">Colab</button></a>
-        
-        
-    </div>
-</div>
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/subblue/applying-maths-book/main?urlpath=lab/tree/applying_maths_book/chapter-4/integration-B.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://colab.research.google.com/github/subblue/applying-maths-book/blob/main/applying_maths_book/chapter-4/integration-B.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/subblue/applying-maths-book"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/subblue/applying-maths-book/issues/new?title=Issue%20on%20page%20%2Fchapter-4/integration-B.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/chapter-4/integration-B.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#clever-substitution-can-help-to-solve-an-integral">
    3 Clever substitution can help to solve an integral
@@ -1428,19 +1545,99 @@
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Integration by substitution</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#clever-substitution-can-help-to-solve-an-integral">
+   3 Clever substitution can help to solve an integral
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#table-1-trig-formulas">
+   Table 1 Trig. formulas
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#definite-integrals-with-substitution">
+   3.1 Definite integrals with substitution
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#three-useful-results-with-a-function-and-its-derivative">
+   4 Three useful results with a function and its derivative
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#integration-by-parts">
+   5 Integration by parts
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#i-displaystyle-int-y-cos-y-dy">
+     <strong>
+      (i)
+      <span class="math notranslate nohighlight">
+       \(\displaystyle \int y\cos(y)dy\)
+      </span>
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ii-int-x-ln-x-dx">
+     <strong>
+      (ii)
+      <span class="math notranslate nohighlight">
+       \(\int x\ln(x)dx\)
+      </span>
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#iii-int-e-x-sin-x-dx">
+     <strong>
+      (iii)
+      <span class="math notranslate nohighlight">
+       \(\int e^x\sin(x)dx\)
+      </span>
+     </strong>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#small-angle-x-ray-scattering-saxs">
+   5.1 Small angle x-ray scattering: SAXS
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
               <div>
                 
-  <div class="section" id="integration-by-substitution">
-<h1>Integration by substitution<a class="headerlink" href="#integration-by-substitution" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="clever-substitution-can-help-to-solve-an-integral">
-<h2>3 Clever substitution can help to solve an integral<a class="headerlink" href="#clever-substitution-can-help-to-solve-an-integral" title="Permalink to this headline">¶</a></h2>
+  <section class="tex2jax_ignore mathjax_ignore" id="integration-by-substitution">
+<h1>Integration by substitution<a class="headerlink" href="#integration-by-substitution" title="Permalink to this headline">#</a></h1>
+<section id="clever-substitution-can-help-to-solve-an-integral">
+<h2>3 Clever substitution can help to solve an integral<a class="headerlink" href="#clever-substitution-can-help-to-solve-an-integral" title="Permalink to this headline">#</a></h2>
 <p>It may appear at first that if an integral is not in a standard form then it cannot be solved - not so! The purpose of substitution is to convert the integral into a standard and therefore simpler form whose solution is known. Choosing a substitution is rather an art and some trial and error is usually required. However, just as in football, a clever substitution can produce the required result.</p>
 <p>There are three parts to the method, which will be illustrated with <span class="math notranslate nohighlight">\(\displaystyle\int \sin^2(x)\cos(x)dx\)</span>.</p>
 <p><span class="math notranslate nohighlight">\(\quad\)</span><strong>(1)</strong> Change a complex expression in <span class="math notranslate nohighlight">\(x\)</span> into a simpler one in another variable <span class="math notranslate nohighlight">\(u\)</span> by a substitution,</p>
@@ -1462,10 +1659,10 @@
 <p>This is now a standard form and can be converted to an exponential form (or looked up in Section 4.2.13) and then converted back to <span class="math notranslate nohighlight">\(x\)</span> using trig functions.</p>
 <div class="math notranslate nohighlight">
 \[4\int\sin^2(\theta)d\theta = 2\theta -2\sin(\theta)\cos(\theta)+c=2\sin^{-1}\left(\frac{x}{2}\right)-\frac{x}{2}\sqrt{4-x^2}+c\]</div>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="table-1-trig-formulas">
-<h2>Table 1 Trig. formulas<a class="headerlink" href="#table-1-trig-formulas" title="Permalink to this headline">¶</a></h2>
+<section id="table-1-trig-formulas">
+<h2>Table 1 Trig. formulas<a class="headerlink" href="#table-1-trig-formulas" title="Permalink to this headline">#</a></h2>
 <p><img alt="Drawing" src="../_images/integration-table1.png" /></p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle \begin{array}{l|l|l}
@@ -1474,9 +1671,9 @@
 \displaystyle \cos(\theta)=\frac{\sqrt{x^2-a^2}}{a} &amp;\displaystyle \cos(\theta)=\frac{a}{\sqrt{a^2+x^2}} &amp; \displaystyle \cos(\theta)=\frac{a}{x} \\
 \displaystyle \tan(\theta)=\frac{x}{\sqrt{a^2-x^2}} &amp;\displaystyle \tan(\theta)=\frac{x}{a} &amp;\displaystyle \tan(\theta)=\frac{\sqrt{x^2-a^2}}{a}\\
 \hline \end{array}\end{split}\]</div>
-</div>
-<div class="section" id="definite-integrals-with-substitution">
-<h2>3.1 Definite integrals with substitution<a class="headerlink" href="#definite-integrals-with-substitution" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="definite-integrals-with-substitution">
+<h2>3.1 Definite integrals with substitution<a class="headerlink" href="#definite-integrals-with-substitution" title="Permalink to this headline">#</a></h2>
 <p>When calculating a definite integral first evaluate the indefinite integral and then using the limits, work out the final value. If a substitution is made it is also <em>necessary to change the limits</em>, thus making it unnecessary to reverse the substitution to obtain the result.</p>
 <p>Suppose the integral is <span class="math notranslate nohighlight">\(\displaystyle \int_2^8 \frac{3}{(1+2x)^3}dx\)</span>, trying the substitution <span class="math notranslate nohighlight">\(u = 1 + 2x\)</span> seems an obvious choice and therefore <span class="math notranslate nohighlight">\(dx = du/2\)</span>. The limits are <span class="math notranslate nohighlight">\(x = 2\)</span> and  8, which become <span class="math notranslate nohighlight">\(u = 5\)</span> and <span class="math notranslate nohighlight">\(17\)</span> in the new variable, making the integral</p>
 <div class="math notranslate nohighlight">
@@ -1484,9 +1681,9 @@
 <p>Alternatively, calculate the integral leaving out the limits to begin with, then convert back to <span class="math notranslate nohighlight">\(x\)</span> and then use the original limits;</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \int\frac{3}{2u^2}du = -\frac{3}{2u} \equiv \frac{3}{2(1+2x))}\bigg|_2^{8}\]</div>
-</div>
-<div class="section" id="three-useful-results-with-a-function-and-its-derivative">
-<h2>4 Three useful results with a function and its derivative<a class="headerlink" href="#three-useful-results-with-a-function-and-its-derivative" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="three-useful-results-with-a-function-and-its-derivative">
+<h2>4 Three useful results with a function and its derivative<a class="headerlink" href="#three-useful-results-with-a-function-and-its-derivative" title="Permalink to this headline">#</a></h2>
 <p>Integrals where the function in the numerator is the derivative of the function in the
 denominator, evaluate to logs. For example,</p>
 <div class="math notranslate nohighlight">
@@ -1510,9 +1707,9 @@ denominator, evaluate to logs. For example,</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \int \cos(x)\sin(x)dx=-\frac{1}{2}\cos^2(x) +c\]</div>
 <p>where the function is <span class="math notranslate nohighlight">\(\cos(x)\)</span>. Of course, the integral in this particular case could have been written the other way round. The result would then be <span class="math notranslate nohighlight">\(\displaystyle \int\sin(x)\cos(x)dx=-\frac{1}{2}\sin^2(x) +c\)</span> but because <span class="math notranslate nohighlight">\(\cos^2(x)+\sin^2(x)=1\)</span> this is the same result if the <span class="math notranslate nohighlight">\(1\)</span> is added to the arbitrary constant <span class="math notranslate nohighlight">\(c\)</span>.</p>
-</div>
-<div class="section" id="integration-by-parts">
-<h2>5 Integration by parts<a class="headerlink" href="#integration-by-parts" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="integration-by-parts">
+<h2>5 Integration by parts<a class="headerlink" href="#integration-by-parts" title="Permalink to this headline">#</a></h2>
 <p>Very often the products of two functions must be integrated and one way of doing this is to use ‘integration by parts’. Integration by parts is a major tool to integrate seemingly difficult expressions.</p>
 <p>In differentiating products of functions (Chapter 3.5.1), such as <span class="math notranslate nohighlight">\(u\)</span> and <span class="math notranslate nohighlight">\(v\)</span> where <em>each is itself a function of</em> <span class="math notranslate nohighlight">\(x\)</span>, we used the equation,</p>
 <div class="math notranslate nohighlight">
@@ -1527,8 +1724,8 @@ denominator, evaluate to logs. For example,</p>
 <p><span class="math notranslate nohighlight">\(\quad\)</span> <strong>The integral of <span class="math notranslate nohighlight">\(udv\)</span> is <span class="math notranslate nohighlight">\(u\)</span> times the integral of <span class="math notranslate nohighlight">\(dv\)</span>, which is <span class="math notranslate nohighlight">\(v\)</span> minus the integral of <span class="math notranslate nohighlight">\(v\)</span> times the derivative of <span class="math notranslate nohighlight">\(u\)</span></strong>.</p>
 <p>The trick is to find <span class="math notranslate nohighlight">\(u\)</span> that can be differentiated, which is usually easy, and <span class="math notranslate nohighlight">\(v\)</span> that can be integrated, which is sometimes much harder. It is worth exchanging <span class="math notranslate nohighlight">\(u\)</span> and <span class="math notranslate nohighlight">\(v\)</span> if the resulting integration gets more complicated.</p>
 <p>A few examples should make this important method clearer.</p>
-<div class="section" id="i-displaystyle-int-y-cos-y-dy">
-<h3><strong>(i) <span class="math notranslate nohighlight">\(\displaystyle \int y\cos(y)dy\)</span></strong><a class="headerlink" href="#i-displaystyle-int-y-cos-y-dy" title="Permalink to this headline">¶</a></h3>
+<section id="i-displaystyle-int-y-cos-y-dy">
+<h3><strong>(i) <span class="math notranslate nohighlight">\(\displaystyle \int y\cos(y)dy\)</span></strong><a class="headerlink" href="#i-displaystyle-int-y-cos-y-dy" title="Permalink to this headline">#</a></h3>
 <p>To solve <span class="math notranslate nohighlight">\(\displaystyle \int y\cos(y)dy\)</span> using equation 16</p>
 <p>(i) Start by trying <span class="math notranslate nohighlight">\(u=y\)</span> and <span class="math notranslate nohighlight">\(dv=\cos(y)dy\)</span></p>
 <p>(ii) To find <span class="math notranslate nohighlight">\(uv\)</span>, integrate <span class="math notranslate nohighlight">\(v=\cos(y)dy\)</span> to <span class="math notranslate nohighlight">\(v=\sin(y)\)</span> and then multiply this by <span class="math notranslate nohighlight">\(u\equiv y\)</span>.</p>
@@ -1536,9 +1733,9 @@ denominator, evaluate to logs. For example,</p>
 <p>(iv) Combining these terms gives</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \int y\cos(y)dy=y\sin(y)-\int \sin(y)dy = y\sin(y)+\cos(y)+c\]</div>
-</div>
-<div class="section" id="ii-int-x-ln-x-dx">
-<h3><strong>(ii) <span class="math notranslate nohighlight">\(\int x\ln(x)dx\)</span></strong><a class="headerlink" href="#ii-int-x-ln-x-dx" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="ii-int-x-ln-x-dx">
+<h3><strong>(ii) <span class="math notranslate nohighlight">\(\int x\ln(x)dx\)</span></strong><a class="headerlink" href="#ii-int-x-ln-x-dx" title="Permalink to this headline">#</a></h3>
 <p>The integral <span class="math notranslate nohighlight">\(\int x\ln(x)dx\)</span> can be evaluated by parts if <span class="math notranslate nohighlight">\(u=\ln(x)\)</span> and <span class="math notranslate nohighlight">\(dv=xdx\)</span>, producing</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \int x\ln(x)=\ln(x)\frac{x^2}{2}-\frac{1}{2}\int\frac{1}{x}x^2dx =\ln(x)\frac{x^2}{2}-\frac{x^2}{4}+c\]</div>
@@ -1550,9 +1747,9 @@ method recursive in this instance. Rearranging gives</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle 2\int x\ln(x)dx=x(x\ln(x)-x)+\int x dx= \ln(x)x^2-\frac{x^2}{2}+c\]</div>
 <p>which is the same result as by the first method when both sides are divided by two.</p>
-</div>
-<div class="section" id="iii-int-e-x-sin-x-dx">
-<h3><strong>(iii) <span class="math notranslate nohighlight">\(\int e^x\sin(x)dx\)</span></strong><a class="headerlink" href="#iii-int-e-x-sin-x-dx" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="iii-int-e-x-sin-x-dx">
+<h3><strong>(iii) <span class="math notranslate nohighlight">\(\int e^x\sin(x)dx\)</span></strong><a class="headerlink" href="#iii-int-e-x-sin-x-dx" title="Permalink to this headline">#</a></h3>
 <p>Sometimes successive integration is necessary, as with <span class="math notranslate nohighlight">\(\int e^x\sin(x)dx\)</span>. To integrate this function let <span class="math notranslate nohighlight">\(u = e^x\)</span> and <span class="math notranslate nohighlight">\(dv = \sin(x)dx\)</span>. This produces</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \int e^x\sin(x)dx=-e^x\cos(x)+\int e^x\cos(x)dx \]</div>
@@ -1566,10 +1763,10 @@ method recursive in this instance. Rearranging gives</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \int e^x\sin(x)dx=-e^x\frac{(\sin(x)-\cos(x))}{2}+c\]</div>
 <p>As a check, differentiate the result. Notice that the integral could more easily be solved by converting the sine to its exponential form. It is often, but not always the case, that more than one method could be used to solve an integral. Which you choose depends on your particular liking for one method over another.</p>
-</div>
-</div>
-<div class="section" id="small-angle-x-ray-scattering-saxs">
-<h2>5.1 Small angle x-ray scattering: SAXS<a class="headerlink" href="#small-angle-x-ray-scattering-saxs" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="small-angle-x-ray-scattering-saxs">
+<h2>5.1 Small angle x-ray scattering: SAXS<a class="headerlink" href="#small-angle-x-ray-scattering-saxs" title="Permalink to this headline">#</a></h2>
 <p>A real example of integration by parts can be found when determining the scattering of x-rays by a molecule. In the technique of small angle scattering called SAXS the scattering is determined by the overall ‘shape’ of the electron distribution <span class="math notranslate nohighlight">\(\rho(r)\)</span> at some point <span class="math notranslate nohighlight">\(r\)</span> in a molecule and the wavevector <span class="math notranslate nohighlight">\(q\)</span> of the scattering.</p>
 <p>The equation governing the scattering is</p>
 <div class="math notranslate nohighlight">
@@ -1587,8 +1784,8 @@ method recursive in this instance. Rearranging gives</p>
 <p>Only the absolute value of the scattering is measured in an experiment: negative numbers of photons do not make any sense. The zeros correspond to destructive interference between the incoming and scattered waves.</p>
 <p><img alt="Drawing" src="../_images/integration-fig7a.png" /></p>
 <p>Figure 7a. Calculated scattering profile as might be measure in a SAXS experiment with a square potential. The inset shows the vectors describing the incoming x-ray <span class="math notranslate nohighlight">\(k_0\)</span> and the scattered ray <span class="math notranslate nohighlight">\(k\)</span> with the wavevector <span class="math notranslate nohighlight">\(q\)</span>.</p>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -1612,9 +1809,11 @@ method recursive in this instance. Rearranging gives</p>
 
               </div>
               
-        
-            <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="integration-Q1-14.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -1630,26 +1829,28 @@ method recursive in this instance. Rearranging gives</p>
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-        
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-    <div class="container">
-      <p>
-        
-          By Godfrey Beddard<br/>
-        
-            &copy; Copyright 2022.<br/>
-      </p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Godfrey Beddard<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
     </div>
-  </footer>
-</main>
+    
+</div>
 
 
       </div>
     </div>
   
-  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>

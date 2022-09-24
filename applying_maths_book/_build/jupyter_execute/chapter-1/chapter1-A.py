@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## Numbers to Algorithms.
+# # Numbers to Algorithms.
 
 # In[1]:
 
@@ -16,15 +16,15 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 
 
 # 
-# ### 1 Symbols and basics
+# ## 1 Symbols and basics
 # 
 # When you learn mathematics, it is normal to use $x$ and $y$ to do most of the algebraic manipulations. In science, $x$ and $y$ are almost never used and this simple change can make a simple equation look complicated. This is something that you just have to get used to, but is made easier if you think what the variables mean; then perhaps you will be confident, say, to differentiate with respect to temperature $T$ rather than feeling that this can only be done with variable $x$. How ingrained using $x$ and $y$ are, is not, however, to be underestimated, for even experienced practitioners will on occasion revert to these when faced with a difficult calculation.
 # 
-# ### 1.1 Equations
+# ## 1.1 Equations
 # 
-# There is one fundamental rule for manipulating an equation and that is to make sure that whatever is done to one side is done to the other. The equality$^1$ sign = means that the left-hand side of any equation is always equal to the right; for example the ideal gas law equation
+# There is one fundamental rule for manipulating an equation and that is to make sure that whatever is done to one side is done to the other. The equality$^1$ sign = means that the left-hand side of any equation is always equal to the right; for example the Ideal Gas Law equation,
 # 
-# $$\displaystyle pV = nRT \tag{1}$$
+# $$\displaystyle  pV = nRT \tag{1} $$
 # 
 # means that the product of pressure $p$ and volume $V$ is always equal to the number of moles multiplied by the gas constant $R$ and the temperature $T$. To isolate the pressure on the left-hand side, both sides of the equation must be divided by the volume,
 # 
@@ -34,13 +34,13 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # $^1$ The = sign was probably first used by Robert Recorde in an algebra textbook of 1557.
 # 
-# ### 1.2 Multiplication and division
+# ## 1.2 Multiplication and division
 # 
 # Slightly different notations are used when mathematics is written by hand, printed in a book, or interpreted by a computer language. One instance is the different symbols used to indicate multiplication; for example, multiplying together three quantities can be written as $pqr,\; p \times q \times r,\; p \cdot q \cdot r$ or $p. q. r$. In the last two examples, the point could be confused with a decimal point if numbers were involved of if vectors as the dot product, see chapter 6. 
 # 
 # In most computer languages, including Python used in this text, multiplication is indicated by the symbol, *, for example, $\mathtt{a*b}$. Raising a number to a power is written as $\mathtt{p**3}$ or $\mathtt{p**(1/3)}$  for the cube root.
 # 
-# In mathematics, the brackets (), {}, [ ]  are each used to indicate multiplication, and if an equation dictates that brackets must be nested then different ones may be used for clarity. In a computer language, different brackets are usually used to indicate _different types_ of arrays or functions, but exactly which is used depends on the language.
+# In mathematics, the brackets (), {}, [ ]  are each used to indicate a group of terms to be multiplied or divided etc., and if an equation dictates that brackets must be nested then different ones may be used for clarity. In a computer language, different brackets are usually used to indicate _different types_ of arrays or functions, but exactly which is used depends on the language.
 # 
 # Each term inside a bracket, is multiplied by any terms outside; for example in mathematical notation, 
 # 
@@ -52,7 +52,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # In printed equations, division is sometimes ambiguous because it is not clear what is to be divided; for example, $a/bc$ can mean $\displaystyle \frac{a}{bc}$ or $\displaystyle \frac{a}{b} c$, which is $(a/b)c$; it depends on the convention being used as to which operation takes precedence. The safest way, although a little clumsy, is to write $a/(bc)$, making it clear that $a$ is divided by $bc$. In Python and other computer languages, $a/b*c$ means $(a/b)*c$, so adding brackets is essential to get the calculation you expect.
 
-# ### 1.3 Approximation: never do this in the middle of a calculation
+# ## 1.3 Approximation: never do this in the middle of a calculation
 # 
 # Truncating numbers in  the middle of a calculation is an easy way to introduce numerical errors, the final result only should be rounded and if it related to an experimental value then the extent of this will be determined by the standard deviation or uncertainty in the value. In some calculations a similar type of approximation can be made algebraically, but this is also risky.   
 # 
@@ -70,7 +70,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # and no comparison of the relative sizes of $x$ and $N$ is possible.
 # 
-# ### 1.4 Assignments in Python and other computer languages.
+# ## 1.4 Assignments in Python and other computer languages.
 # 
 # In Python when something has to be calculated, it can be typed directly for example, $\mathtt{2.5*6}$; or $\mathtt{np.sin( np.pi/6 )}$ where the prefix $\mathtt{np.}$ tells Python to use the numpy numerical library. (This has to be loaded initially, see the header to this page or the appendix on using Python ). The result can be see by printing to the screen as $\mathtt{print(np.sin( np.pi/6 ) )}$.  
 # 
@@ -80,7 +80,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # is acceptable but not $\mathtt{eqn1 = x**2 + 3*x = 2}$.  Details of Python syntax are given at the end of the book. Because many different symbols are used in maths, and some only infrequently, these are listed in the Glossary with their meanings, also at the end of the book
 # 
-# ### 1.5 Functions
+# ## 1.5 Functions
 # 
 # The equation $y = 1/x$ may be written in functional form as $f(x) = 1/x$, thus, if $x = 2$ the function has the value of 1/2, or $f(2) = 1/2$. The function operates on its argument $x$, which here is $2$, to produce its reciprocal. The $x$ in the function, either as its argument or in the body of the function is, however, simply a symbol, and is arbitrary; it is the algebraic expression or operation itself that determines what happens. Therefore, writing $f(w) = 1/w$ is entirely the same as $f(x) = 1/x$; if a function is evaluated with a series of numbers then it does not matter whether $w$ or $x$ was used to represent the mathematical operation; the result is the same. Similarly, as $x$ is only symbolic, it is possible to write a composite function where the argument is itself a function; e.g. $f (x^2) = 1/x^2$ or $f (e^x) = 1/e^x$, which means that the function $f$ _operates_ on $x^2$ or $e^x$ to produce its reciprocal. Formally, this would be written as $f[g(x)] = 1/g(x)$ where $g(x)$ is the 'inside' function.
 # 
@@ -93,7 +93,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # To summarize, a function transforms its argument into some other mathematical object, which can be of almost every possible type. The principle is the same whether the function produces the reciprocal, or square or an integral or a series and so forth. The function may also be called a transform, an operator, or a mapping of the argument ($x$) onto some other object.
 # 
 
-# ### 1.6 Functions in Python
+# ## 1.6 Functions in Python
 # 
 # In Python and other languages, a function has a particular syntax that is related to that used in mathematics, but with some important differences. A function is first defined using an assignment statement, then, when used it has a pair of brackets added to it. The function $f(x)= 2x+3x^2$ is defined in Python as
 # 
@@ -113,12 +113,12 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # $\mathtt{result= afunc(2,3) }$
 # 
-# ### 1.7 Algorithms
+# ## 1.7 Algorithms
 # 
 # There is no one definition of an algorithm. We can consider this as a logical, fixed set of rules for solving a problem that may or may not be mathematical. Starting with a known set of initial conditions, an algorithm proceeds to some other known set of conditions that ends the process and does so in a finite number of steps. A game could be considered to follow an algorithm in that it follows a fixed set of rules and starts and ends in a definite way. An algorithm could be the sequence of operations undergone to determine the rotation, reflection, and other symmetry properties of a molecule, or it could simply be the steps producing an algebraic or numerical calculation. This leads to a more restrictive and more common definition of an algorithm as a series of instruction with which to perform a calculation on a computer.
 # 
 # 
-# ### 1.8 Numbers
+# ## 1.8 Numbers
 # 
 # So familiar are numbers and counting that we hardly give them much thought and automatically use different types of numbers and ways of counting as the situation dictates. Integer numbers are either prime, when the number is only divisible by itself and 1, or composite and the product of two other integers. Besides the positive and negative integers, there are the rational numbers or fractions, generated from their ratios, $n/m$, such as $1/2,\, 2/3$, etc. A fraction is called proper when the numerator is less than the denominator, $2/3$ for instance, and a fraction improper if the numerator is greater.
 # 
@@ -134,7 +134,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # ![drawing](chapter1-fig0.png)
 
-# ### 2 Integers, real, and irrational numbers
+# ## 2 Integers, real, and irrational numbers
 # 
 # Integers are the numbers that are colloquially called whole numbers, $-2, 0, 3$, etc. and they extend from minus infinity to plus infinity; $-\infty$ to $+\infty$ and although there is an infinity of them they are what mathematicians call countable. Integers are clearly not the only numbers as we are familiar with the real numbers such as $1.2,\, 3.56$, and so on, of which there is also an infinite number, but many, many more than there are integers. If two different real numbers are chosen, an infinite number of others can be squeezed in between them simply by adding more decimal places; this and other interesting discussions on numbers and algorithms are explained clearly in 'The Emperor's New Mind' (R.Penrose publ. 1990 Vintage OUP). Surprisingly, real numbers can usually be reduced to a rational fraction which is a ratio of two integers, e.g. $0.751 = 326/533$, but, for some numbers, $\pi,\, e, \sqrt{2}$ there is no ratio of integers that will accurately form the number and they are called _irrational_, i.e. not being logical! You may recall that $\pi \approx 22/7$ , which would seem to contradict this statement, but $22/7$ is a very poor approximation to $\pi$, only accurate to three digits, $355/113$ is better but only to seven digits.
 # 
@@ -142,7 +142,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # We look next at some of the irrational numbers as their calculation has fascinated mathematicians over the centuries and they allow us to use some interesting geometry and to write some algorithms.
 # 
-# ### 2.1 Pi ($\pi$ ) and an algorithmic way of calculating its value
+# ## 2.1 Pi ($\pi$ ) and an algorithmic way of calculating its value
 # 
 # Whole books have been devoted to the number $\pi \approx 3.1415926$, such as The Joy of Pi (Blatner 1999), and calculations performed to study the pattern of its digits, which now extend to many thousands of millions of decimal places. As far as is known, the pattern of digits does not repeat itself; if they did it would mean that $\pi$ could be written as a fraction of two whole numbers and would no longer be an irrational number. $\pi$ is also a transcendental number, which is one that is not the solution (we say root) of any polynomial equation, and it is not considered to be algebraic; it transcends algebra and this guarantees that it is irrational.
 # 
@@ -169,7 +169,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # Figure 2. The angle at the centre is twice that at the circumference.
 # ______
 # 
-# Using this theorem also means that $\angle$ADB is a right angle, since if $2\theta = 180^\text{o}$ then $\theta = 90^\text{o}$ and $\angle$ACB is therefore also a right angle. You may also notice in Figure 1 that AD is parallel to OC, that $\angle$ADO is also $\theta$ and that OC and DB are at right angles since the arc DC = CB and therefore OC bisects DB.
+# Using this theorem also means that $\angle$ ADB (fig. 1) is a right angle, since if $2\theta = 180^\text{o}$ then $\theta = 90^\text{o}$ and $\angle$ACB is therefore also a right angle. You may also notice in Figure 1 that AD is parallel to OC, that $\angle$ADO is also $\theta$ and that OC and DB are at right angles since the arc DC = CB and therefore OC bisects DB.
 # 
 # Now we can start the calculation of $\pi$. Remember that we have to find $a_2$ in terms of $a_1$. To find $a_1$ we have to find the length of one side of a hexagon, BD. But in a hexagon, the total length of the six sides is easily found since each segment, such as ODB is an equilateral triangle, $2\theta = 60^\text{o}$, and if the circle has a radius of $1$, then OA and OB = $1$, since OC, OD and BD $\equiv a_1$ thus, $a_1 =1$.
 # 
@@ -179,13 +179,13 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # Next, convince yourself, for example by drawing them out, that the triangles ABC and ACZ are similar because their angles are similar. The angle ACB is $90^\text{o}$ because an angle at the circumference is half that at the centre; see Figure 2, and AZC is also a right angle. Therefore the ratio of the sides AZ/AC is the same as AC/AB or as an equation AZ/$x_2 = x_2$/AB from which
 # 
-# $$\displaystyle  x_2 =\mathrm{AZ \times AB} =2(1+\text{OZ}), \tag{2}$$
+# $$\begin{equation}\displaystyle  x_2 =\mathrm{AZ \times AB} =2(1+\text{OZ}) \end{equation}$$
 # 
 # the length AB being $2$ because the radius of the circle is $1$. Our task now is to find OZ. 
 # 
 # The angles in triangles AOY and OZC are the same, see Figure 1, and the triangles are also the same size as both have the radius as their hypotenuse, AO and OC. Notice also that $\angle$AOY = $90 -\theta$ and therefore bisects the angle $\angle$AOD making AY = YD and AY = $x_1/2$ = OZ. Substituting for OZ produces
 # 
-# $$\displaystyle x_2^2 = 2 + x_1\tag{3}$$ 
+# $$\begin{equation}\displaystyle x_2^2 = 2 + x_1\end{equation}$$ 
 # 
 # A relationship between the length $x_1$ or $x_2$ and $a_2$ has to be found. Triangle ADB is right angled and as the hypotenuse is 2 (the diameter), using Pythagoras's theorem is 
 # 
@@ -255,17 +255,16 @@ for i in range(m):
 # In these and many other formulae producing $\pi$, it is difficult to appreciate why $\pi$ appears; some are far more efficient at calculating than the method described, but do not have the appeal of the geometric approach.
 # 
 
-# ### 2.2 Square Roots
+# ## 2.2 Square Roots
 # 
 # The square root is familiar as the solution to an equation such as $n^2 = 3$. The square root is also the length of the diagonal of a square or rectangle and therefore has a geometric interpretation. The Pythagoreans discovered that the length of the diagonal of a square of unit side, i.e. length one, is $\sqrt{2}$; see Figure 4. Although it is hard to imagine this today, this calculation caused a scandal since this number was not 'pure' in the sense that it was not the ratio of two whole numbers. And the scandal still echoes down the centuries. Numbers that are not the ratio of two whole numbers are called irrational or 'un-ratio-able', the Latin word ratio coming from the Greek for 'logo' which means ratio. We use the word logic to symbolize reason and it is still a pejorative statement to describe someone as being irrational.
 # 
-# The right-angled triangle does not of itself produce the value of $\sqrt{2}$ very accurately, since the length of the line would have to be measured; it is more of a geometrical definition. The first calculation of a square root was made by the Babylonians (modern-day Iraqis), about four thousand years ago, and is inscribed in a clay tablet preserved at Yale University. A geometric method was used that could be converted into an algorithm. The result on the tablet was accurate to five decimal places and the calculation shows the Babylonians knew Pythagoras's theorem about a century before Pythagoras discovered it. This result is remarkable, and it is possible that a formula was used similar to what is now called Heron's method after the Alexandrian mathematician and engineer who lived about two thousand years ago; his dates vary from $150 \to 250 AD.
+# The right-angled triangle does not of itself produce the value of $\sqrt{2}$ very accurately, since the length of the line would have to be measured; it is more of a geometrical definition. The first calculation of a square root was made by the Babylonians (modern-day Iraqis), about four thousand years ago, and is inscribed in a clay tablet preserved at Yale University. A geometric method was used that could be converted into an algorithm. The result on the tablet was accurate to five decimal places and the calculation shows the Babylonians knew Pythagoras's theorem about a century before Pythagoras discovered it. This result is remarkable, and it is possible that a formula was used similar to what is now called Heron's method after the Alexandrian mathematician and engineer who lived about two thousand years ago; his dates vary from $150 \to 250$ AD.
 # 
 # ![drawing](chapter1-fig4.png)
 # 
 # Figure 4 Unit right-angled triangle.
 # ____
-# 
 # Suppose that $N$ is the number for which the square root is sought, then let $a$ be an estimate of this number and therefore we want an algorithm with which to find $a$. Suppose that $a_2$ differs from the true value $N$ by an error $\epsilon$; hence
 # 
 # $$\displaystyle \epsilon = N-a^2 \tag{4}$$
@@ -317,22 +316,55 @@ for i in range(m):                          # do iteration
 
 
 # If you try this algorithm with other values of $N$, you will soon realize that from a very wide range of initial values, convergence takes only a few iterations; it is far more efficient than the algorithm calculating $\pi$. You will need to increase $m$ a little to get more iterations with larger $N$.
+
+# ## 2.3 Average or mean values. Arithmetic, Geometric and Harmonic.
 # 
-# ### 2.3 Golden ratio 
+# **Arithmetic mean.** The common or arithmetic average is the sum of a set of numbers divided by their number,
 # 
-# The golden ratio $1.618033 \cdots$ was thought by the ancient Greeks to be the perfect ratio of width to the height of a picture, but to me it appears a little too wide for its height. The golden ratio has been written about extensively and has somewhat of a cult following. In _ca_ 300 BC Euclid divided the line below, figure 5, so that AC is to AB as AB is to BC. This is the ratio of the total length and of the larger section, to the ratio of the larger to small sections. As an equation  $\displaystyle \phi=\frac{AC}{AB}=\frac{AB}{BC}$ , then
+# $$\displaystyle \mu_A= \frac{(n_1+n_2+n_3 \cdots+n_m)}{m}=\frac{1}{m}\sum_{i=1}^m n_i$$
+# 
+# This mean is described in more detail in chapter 4.8 (integration), however, this is not the only type of average. 
+# 
+# **Geometric mean.** The Geometric mean $\mu_G$ is defined as
+# 
+# $$\displaystyle \mu_G = (n_1\cdot n_2 \cdots n_m)^{1/m}= \left(\prod_{i=1}^m\right)^{1/m}$$
+# 
+# which is the $m^{th}$ root of the product of the list of values and these values must all be positive. If there are just two values, e.g. $3$ and $6$ then $\mu_G=\sqrt{18}$ because $m=2$. The arithmetical average is the same as the geometric average if the values are the same and greater if not. If there are just two values this is expressed as 
+# 
+# $$\displaystyle \frac{a+b}{2} \ge \sqrt{a b}$$
+# 
+# and can be demonstrated geometrically as shown in fig. 4a. The circle has a diameter $a+b$ and the triangle, ABC has a height OB =$\sqrt{ab}$ which may be calculated using pythagoras' theorem for right angles triangles. The radius $(a+b)/2 \ge \sqrt{ab}$. 
+# 
+# ![Drawing](chapter1-fig4a.png)
+# 
+# Figure 4a. Showing that the arithmetic average is greater or equal to the geometric average. The diameter of the circle is $a+b$ and $\angle ABC$ is a right angle.
+# __________
+# 
+# This mean is useful when there are outliers in a data set as it produces a value closer to most number rather than being biased by the outlier. For example if the data is $(2,10,14, 50)$ the arithmetic mean is $39$ but the geometric mean is $10.88$ a much more reasonable value.
+# 
+# **Harmonic mean.** You may occasionally come across the Harmonic mean $\mu_H$ defined as
+# 
+# $$\displaystyle \frac{1}{\mu_H}=\frac{1}{m}\left(\frac{1}{n_1}+\frac{1}{n_2}+\cdots +\frac{1}{n_m} \right)$$
+# 
+# which can be put into the more complicated formula,
+# 
+# $$\displaystyle \mu_H=m\frac{1}{\sum_{i=1}^m\frac{1}{ a_i} }$$
+# 
+# This mean is used when the quantity $n_i$ is a ratio. The typical example is to work out an average speed when a journey is travelled at different speeds. The average speed is the total distance travelled divided by the total time. The total time for each leg is speed divided by distance. If the journey is to somewhere and back again by the same route, the distance is $2d$. If the first leg is travelled at $60$ mph and the return at $30$ the average is  $2d/(d/60 + d/30)=40$ mph not $45$ as a simple average would suggest. Resistors arranged in parallel also have an average value given by the Harmonic mean.
+
+# ## 2.4 Golden ratio 
+# 
+# The golden ratio $1.618033 \cdots$ was thought by the ancient Greeks to be the perfect ratio of width to the height of a picture, but to me it appears a little too wide for its height. The golden ratio has been written about extensively and has somewhat of a cult following. In *ca* 300 BC Euclid divided the line, figure 5, so that AC is to AB as AB is to BC. This is the ratio of the total length and of the larger section, to the ratio of the larger to small sections. As an equation  $\displaystyle \phi=\frac{AC}{AB}=\frac{AB}{BC}$ , then
 # 
 #  $$\displaystyle  \frac{\phi +1}{\phi} = \phi \tag{7}$$
 #  
 #  ![drawing](chapter1-fig5.png)
 #  
 #  Figure 5. Defining the golden ratio.
-#  
 #  ____
+# Rearranging produces $\phi^2-\phi-1=0$ which has the solution $\displaystyle \phi = \frac{1\pm \sqrt{5}}{2} = \pm 1.6180339\cdots$ and the Golden ratio $\phi$ is the positive root. Interestingly $1/\phi = 0.6180339\cdots$ and as $\phi$ is the solution to an algebraic equation it is an algebraic not a transcendental number.
 #  
-#  Rearranging produces $\phi^2-\phi-1=0$ which has the solution $\displaystyle \phi = \frac{1\pm \sqrt{5}}{2} = \pm 1.6180339\cdots$ and the Golden ratio $\phi$ is the positive root. Interestingly $1\phi = 0.6180339\cdots$ and as $\phi$ is the solution to an algebraic equation it is an algebraic not a transcendental number.
-#  
-# The golden ratio appears in unusual places, such as in rectangles and pentagons, as well as the coordinates of the edges of an icosahedron. These can be found from the values $(0, \pm 1, \pm \phi)$ and making a circular shift of the values and is formed only of triangles. Boron suboxide, $\mathrm{B_6O}$ forms particles of icosahedral symmetry.
+# The golden ratio appears in unusual places, such as in rectangles and pentagons, as well as the coordinates of the edges of an icosahedron. These can be found from the values $(0, \pm 1, \pm \phi)$ and making a circular shift of these values. The icosahedron is formed only of triangles, fig6. Boron suboxide, $\mathrm{B_6O}$ forms particles of icosahedral symmetry.
 # 
 # Fullerenes, such as $\mathrm{C_{60}}$, and soccer balls, have a truncated icosahedral structure in which the vertices of the icosahedron are cut away to reveal a regular solid with sides of pentagons and hexagons. The truncated icosahedron is one of the Archimedean solids. In both cases the coordinates of the vertices are related by the golden ratio. The C$_{60}$ is formed of hexagons and pentagons and also has vertices given in terms of the golden ratio.
 
@@ -340,7 +372,7 @@ for i in range(m):                          # do iteration
 # 
 # Figure 6. An icosahedron (left) and a truncated icosahedron (right) which is the shape of a football and C$_{60}$ molecules.
 # ____
-# 
+# ### **Golden Section searching**  
 # A practical use of the golden ratio is that it provides the most efficient way of dividing a curve when trying to find its minimum numerically. This can be used when trying to find the minimum difference between a set of data $y_{ expt}$ and its fit to a theoretical expression $y_{calc}$. The minimum difference thus produces the best fit of the theoretical model to the experimental data. Suppose that the function $y_{calc}$ describes the first-order decay of a chemical species with time $t$, the theoretical equation is $\displaystyle y_{calc} = e^{-kt}$ where $k$ is the rate constant for the reaction we want to determine by fitting to experimental data. 
 # 
 # The parameter whose minimum is sought is the square of the difference between the experimental data points and the theoretical equation calculated at the same $t$ values but with different values of $k$. This is called the _residual_ and is the sum $\displaystyle R_k = \sum_{i=0}^n (y_{expt_i} - y_{calc_i})^2$ where points are labelled with index $i$. The curve whose minimum values is sought is then $R$ vs $k$ for a range of $k$ values; recall that $y_{calc}$ depends on $k$. One tedious way would be to start with some very large or very small value of $k$, far away from the true value, and calculate $R_k$ by changing $k$ by small amounts and comparing values of $R$ until a larger value of the residual than its predecessor is found. This method is called an exhaustive search, and this would take a huge number of computations to complete.
@@ -348,9 +380,7 @@ for i in range(m):                          # do iteration
 # ![drawing](chapter1-fig7.png)
 # 
 # Figure 7. The first two steps in finding the minimum of a curve $R$ vs. $k$ using the golden ratio. The second step follows the labels in brackets.
-# 
 # ____
-# 
 # A smarter way, Figure 7, chooses two points A and B, known to straddle the true value of $k$, and places two new points in the interval A-B in the ratio $1/\phi$ and $1 - 1/\phi$ as a first step to determining where the minimum might lie. One point $k_a$ is therefore placed at $\approx 38$% along the interval, the point $k_b$ at $ 
 # \approx 62$%, and the values at $k_a$ and $k_b$ are compared. If, as is the case in Figure 7, the value at $k_a$ is smaller than $k_b$ the minimum is in the region A to $k_b$, otherwise it is in $k_a$ to B.
 # 
@@ -405,7 +435,7 @@ while abs(b-a)> Lmt and i < N-1 :
 # The table of results shows how the search range is reduced as iteration proceeds. The minimum of the function is known by differentiation, which is how we can check that the calculation is correct, and is at $x = 10/3 = 3.33 \cdots$ with a value $-18.519$; effectively the same as found by the Golden Section iteration.
 # 
 # 
-# ### 3 The exponential $e$ and $e^x$
+# ## 3 The exponential $e$ and $e^x$
 # 
 # The final number we consider is the exponential $e = 2.7182818284 \cdots$ familiar from Boltzmann's equation, the growth of populations of bacteria, or the decay of a compound by its first-order reaction. It also describes the largest rate of increase of compound interest achievable in your savings account or mortgage.
 # 
@@ -449,7 +479,7 @@ while abs(b-a)> Lmt and i < N-1 :
 # 
 # $$\displaystyle  e^xe^y= e^{x+y}; \qquad \text{and} \qquad e^xe^ye^z= e^{x+y+z}\tag{9}$$
 # 
-# You can try calculating the exponential series by hand and easily see how the accuracy improves term by term. A quick examination of the series shows that you can use a previous value to obtain the next; starting at the second term, the third is calculated by multiplying the second by $x/3$, the fourth by multiplying the third by $x/4$, and so on. This type of process is called _recursion_ and the calculation of $\pi$ and of square roots described in Sections 1 and 2 are both recursive. The Python code to calculate $e^x$ recursively is shown below; you can add more terms in the for loop to get a better answer, which is the sum of terms $s$.
+# **Recursive calculation of e.** You can try calculating the exponential series by hand and easily see how the accuracy improves term by term. A quick examination of the series shows that you can use a previous value to obtain the next; starting at the second term, the third is calculated by multiplying the second by $x/3$, the fourth by multiplying the third by $x/4$, and so on. This type of process is called _recursion_ and the calculation of $\pi$ and of square roots described in Sections 1 and 2 are both recursive. The Python code to calculate $e^x$ recursively is shown below; you can add more terms in the for loop to get a better answer, which is the sum of terms $s$.
 
 # In[5]:
 
@@ -466,17 +496,17 @@ for i in range(1,12):      # increase number if does not comverge
     pass
 
 
-# #### **Boltzmann's Distribution**
+# ### **Boltzmann's Distribution**
 # There are numerous examples of the exponential function in chemistry and physics. One of the most important is Boltzmann's equation, which relates the population of two energy levels, an upper one $n_2$ to that of a lower one $n_1$ and which are separated by energy $\Delta E$ at absolute temperature $T$,
 # 
 # $$\displaystyle \frac{n_2}{n_1}=e^{-\Delta E/(k_BT)} $$
 # 
 # Boltzmann's constant has the value $k_B = 1.38065 \times 10^{-23}\, \mathrm{J\, K^{-1}}$.
 # 
-# #### **First order or exponential decay**
+# ### **First order or exponential decay**
 # It is interesting to derive the first order rate expression to see why in theory, although not in practice, the decay continues to infinity. This was probably first derived by von Schweidler in 1905. First order processes occur in the radioactive decay of atoms, the decay of molecular and atomic excited states, such as by fluorescence, and in dissociation and cis/trans isomerisation of molecules.
 # 
-# The basic assumption is that the probability of reaction $p$ in a time interval $\Delta t$ is independent of past history and depends only on the length of the time interval $\Delta t$, and when this is sufficiently short the probability is _proportional_ to this interval as $p=k\Delta t$ where $k$ is the proportionality constant which depends on the particular atom of molecule. This will become the decay rate constant.
+# The basic assumption is that the probability of reaction $p$ in a time interval $\Delta t$ is independent of past history and depends only on the length of the time interval $\Delta t$, and when this is sufficiently short the probability is _proportional_ to this interval as $p=k\Delta t$ where $k$ is the proportionality constant which depends on the particular type of atom or molecule. This will become the decay rate constant.
 # 
 # The probability of no reaction in the short time interval $\Delta t$ is $1-p=1-k\Delta t$. If it survives this interval the probability of surviving the next interval is also $1-k\Delta t$ and so by the law of probabilities, the chance of surviving both intervals is the product $(1-k\Delta t)^2$ and so for $n$ such intervals the probability is $(1-k\Delta t)^n$. The total time is the sum of all time intervals, $t=n\Delta t$ and by substituting gives $(1-kt/n)^n$. 
 # 
@@ -492,7 +522,7 @@ for i in range(1,12):      # increase number if does not comverge
 # 
 # Even for a single molecule the probability of remaining unreacted can extend to infinity. In practice this is only a matter of sensitivity in an experiment. In time-resolved, single-photon counting, used to measure the decay by fluorescence of an excited state, the decay is routinely measured down to 5 orders of magnitude, transient absorption decay, remarkably, has been followed to at least 9 orders of magnitude decrease in intensity and 13 orders in time. But eventually either, no matter how many times the experiment is repeated or, how many molecules we start with the noise inherent in the experiment will dominate and we can go no further. Thus if the decay has a rate constant of 1/nanosecond the chance of waiting even as short a time as a microsecond without it decaying first is tiny, $p=e^{-10^{-6}\cdot 10^9}\approx 10^{-435}$! This is of course why we say that first order reactions come to a halt after a certain time, the chance of observing becomes so small any signal is lost in noise and, even if we started with a mole's worth of molecules, the probability of remaining unreacted is $\approx 10^{-435+23}$ which is still utterly minute.
 
-# ### 4 Logarithms
+# ## 4 Logarithms
 # 
 # The 'inverse' of the exponential is the logarithm, because if $y = e^x$ then a function, the logarithm, can be defined as $\ln(e^x) = x$, and therefore $\ln(y) = x$. More generally put, the logarithm of $x$ is the power by which a base number $b$ must be raised to give $x$. Normally we use base 10 or base $e$ and the use the symbols $\log(x)$ or $\log_{10}(x)$ for base 10 and $\ln(x)$ for base $e$ which are also called the natural logs.  Note, however, that this convention is not always followed in computer languages.
 # 
@@ -502,7 +532,7 @@ for i in range(1,12):      # increase number if does not comverge
 # 
 # The value of $x$ must be greater than zero for the log to be a real number. If $x\lt 0$,then a complex number is obtained, see Chapter 2.
 # 
-# A series of increasing powers of $2$, familiar in computing where $2$ kilobytes $\equiv 2048$ bytes, is shown on the top row of the table; the bottom row is the power with which to raise $2$ to obtain the number, e.g. $2^3 = 8$.
+# A series of increasing powers of $2$, familiar in computing where $2$ kilobytes $\equiv 2048$ bytes, is shown on the bottom row of the table; the top row is the power with which to raise $2$ to obtain the number, e.g. $2^3 = 8$.
 # 
 # $$\displaystyle \begin{array}{c|cc}
 # \hline
@@ -534,7 +564,7 @@ for i in range(1,12):      # increase number if does not comverge
 # 
 # Note that this rule does not apply to $\displaystyle \frac{\log(a)}{\log(b)}$  , which cannot be simplified.
 # 
-# When Napier invented logarithms in c.1614, he used bones inscribed with numbers. The old-fashioned slide rule uses the principle of addition and subtraction to do multiplication and division with lines marked on rulers that slide past one another. The slide rule is quite easy to use with practice, and not that much slower, but less accurate, than a hand calculator but no one ever uses one today.
+# When Napier invented logarithms in ca.1614, he used bones inscribed with numbers. The old-fashioned slide rule uses the principle of addition and subtraction to do multiplication and division with lines marked on rulers that slide past one another. The slide rule is quite easy to use with practice, and not that much slower, but less accurate, than a hand calculator but no one ever uses one today.
 # 
 # The 'third law' of logs is:
 # 
@@ -559,7 +589,7 @@ for i in range(1,12):      # increase number if does not comverge
 # \end{array}$$
 # 
 # 
-# #### **First order reaction**
+# ### **First order reaction**
 # The change in population of a chemical species $c(t)$ decaying by a first-order process follows an exponential law, 
 # 
 # $$\displaystyle c(t) = c_0e^{-kt}$$
@@ -570,7 +600,7 @@ for i in range(1,12):      # increase number if does not comverge
 # 
 # because a plot of the $\ln$ vs time  $t$ is a straight line of slope $-k$. Dividing the concentration $c(t)$ by that initially present $c_0$ makes the log dimensionless.
 # 
-# #### **Entropy from a volume change in a gas**
+# ### **Entropy from a volume change in a gas**
 # When a gas expands at constant temperature (isothermally) there will be a change in entropy and a quantity of work done. If the change is carried out reversibly while the pressure changes this produces the maximum amount of work. Reversibility means that the pressure is continuously adjusted so slightly that equilibrium is maintained. The equation for the change in entropy when $n$ moles of an ideal gas goes from volume $V_1\to V_2$ is
 # 
 # $$\displaystyle \Delta S =nR\ln\left(\frac{V_2}{V_1} \right)$$
@@ -595,13 +625,13 @@ for i in range(1,12):      # increase number if does not comverge
 # \hline
 # \end{array}$$
 #     
-# ### 4.3 Comparison of log and exponential 
+# ## 4.3 Comparison of log and exponential 
 # 
 # The graph in Figure 8 shows the exponential and log functions; $e^x,\; e^{-x}$, and $\ln(x)$. Notice how the exponential and log are symmetrical about the line $y = x$. The curve that would be symmetrical about $y=-x$ and $e^{-x}$ is $\ln(|x|)$ where $|x|$ means taking the absolute value, which if $x$ is real means changing $-x$ into $x$.
 # 
 # The log is normally defined only over the range of positive $x$ values $0 \lt x \lt \infty,\; \ln(1) = 0$ and $\ln(0) = -\infty$. The log with negative $x$ values is a complex number; see Chapter 2.8. The exponential is defined over all values of $x$ and has the values $e^0 = 1,\; e^{-\infty} = 0$ and $e^\infty = \infty$. 
 # 
-# ### 4.4 Log as a series 
+# ## 4.4 Log as a series 
 # 
 # Just as with the exponential, the log can be written as a series expansion, but only if $|x|\lt 1$:
 # 
@@ -614,9 +644,9 @@ for i in range(1,12):      # increase number if does not comverge
 # 
 # Figure 8 Graph of exponential and log functions with the straight line $y = x$. The symmetry between $e^x$ and $\ln(x)$ is clear.
 # 
-# ### 4.5 Arguments to functions such as exponential, sine etc.  do not have units
+# ## 4.5 Arguments to functions such as exponential, sine etc.  do not have units
 # 
-# In all functions, exponential, logs, cosine, sine, and so on the argument $p,\,L$ in $\ln(p),\sin(L)$ must always be dimensionless. This leads to confusion particularly with equilibrium constants and pressures. For example in an equilibrium in the gas phase such as between species $A_2$ and $A$
+# In all functions, exponential, logs, cosine, sine, and so on the argument $p$ in $\ln(p)$, $L$ in $\sin(L)$ etc. must always be dimensionless. This leads to confusion particularly with equilibrium constants and pressures. For example in an equilibrium in the gas phase such as between species $A_2$ and $A$
 # 
 # $$\displaystyle A_2\rightleftharpoons 2A$$
 # 
@@ -624,7 +654,7 @@ for i in range(1,12):      # increase number if does not comverge
 # 
 # $$\displaystyle \Delta G^\text{o}=-RT\ln(K_P)$$ 
 # 
-# causes problems: the log cannot have units.  The way round this is to divide $K_p$ by $1$ unit for example $1$ atm. or $1$ bar whatever units are being used.  However, care is needed because if your pressures are in Torr ($750$ torr =$1$ bar) then the conversion will be needed. As an example if the pressure is in torr and $K_P=2$ then $\Delta G=-RT\ln(2)$ but as we work in SI units with $RT$ then so must be the pressure producing $\displaystyle -RT\ln\left(\frac{2}{750}\frac{\text{bar}}{1\, \text{bar}}\right)$.
+# causes problems: the log cannot have units.  The way round this is to divide $K_p$ by $1$ unit for example $1$ atm. or $1$ bar, or whatever units are being used.  However, care is needed because if your pressures are in Torr ($750$ torr =$1$ bar) then the conversion will be needed. As an example if the pressure is in torr and $K_P=2$ then $\Delta G=-RT\ln(2)$ but as we work in SI units with $RT$ then so must be the pressure producing $\displaystyle -RT\ln\left(\frac{2}{750}\frac{\text{bar}}{1\, \text{bar}}\right)$.
 
 # In[ ]:
 

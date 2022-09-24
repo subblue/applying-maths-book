@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## Calculating an Average Value.
+# # Calculating an Average.
 
 # In[1]:
 
@@ -15,11 +15,11 @@ init_printing()                      # allows printing of SymPy results in types
 plt.rcParams.update({'font.size': 16})  # set font size for plots
 
 
-# ### 8 Average value.
+# ## 8 Average value.
 # 
 # You will be familiar with obtaining the average of a set of numbers obtained in an experiment by adding them all together and dividing by their number. The average value from some theoretical expression, for example, the energy of molecules, may be an important quantity with which to compare with an experimental measurement and therefore a general way of calculating averages is required. To do this, the probability distribution P of the quantity must be known.
 # 
-# ### 8.1 The average as a summation
+# ## 8.1 The average as a summation
 # 
 # Suppose the numbers $q = 10,\, 13.5,\, 14, \,16.2$ have been measured, then their average is clearly $\langle q \rangle  = (10 + 13.5 + 14 + 16.2)/4 = 53.7/4$. It has been implicitly assumed that each number is equally likely to have been measured, which is the familiar case because experiments are usually arranged in this way making them easier to do. It is not always true, however, that each value is equally probable, there is often a distribution of values that has to be taken into account, the Boltzmann distribution of energies or the degeneracy of rotational energy levels, for example.
 # 
@@ -49,7 +49,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # $$\displaystyle \langle q^n\rangle= \frac{\sum\limits_{i=1}^N q_i^nP(q_i)}{\sum\limits_{i=1}^N P(q_i)} \tag{27}$$
 # 
-# #### **(i) Invert sugar**
+# ### **(i) Invert sugar**
 # 
 # When a solution of table sugar (sucrose) is heated it hydrolyzes to glucose(dextrose) and fructose and is catalysed by acid. The reaction can be easily followed by observing the rotation of plane polarised light with a polarimeter. The reaction is 
 # 
@@ -71,7 +71,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # $^*$ The specific rotation $[\alpha ]_{\lambda }^{T}$ is defined as the optical rotation $\alpha$ at a path length $L$ of $1$ dm, a concentration $[C]= 1\;\mathrm{g/100\,mL}$, at temperature $T$ (typically $20^{\text{o}}$C) and at wavelength $\lambda$, usually the sodium D line at $589.3$ nm.
 # 
-# #### **(ii) Chain reactions. Mean Chain length**
+# ### **(ii) Chain reactions. Mean Chain length**
 # 
 # In a chain reaction, in contrast to a 'normal' reaction, one of the products is the same species as a reactant, or can react in an equivalent way, and so the reaction propagates. Polymer formation and may gas phase reactions such as $\mathrm{O_2 + H_2}$ are chain reactions. In gas phase reactions radical species, such as $\mathrm{H\cdot,\, OH\cdot}$,  are usually the chain carriers.
 # 
@@ -108,7 +108,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # Short chains are the most probable as may be seen by examining $P_s=\alpha^s(1-\alpha)$ vs $s$ at various $\alpha$ values recalling that $0\lt \alpha \lt 1$. Plotting the normalised probability $(\alpha^s)$ shows that this is a maximum at  $s=0$ and decreases uniformly as $s$ increases.
 # 
-# #### **(iii) Average of averages**
+# ### **(iii) Average of averages**
 # 
 # In the situation where some averages are given and the combined value is needed then a weighting of each is required. In the simplest case of two averages with numbers $n$, $a$ and $m$ number $b$
 # 
@@ -135,7 +135,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # which has the form of equation 25 but here the $v$'s are themselves averages.
 # 
 
-# ### 8.2 The average as an integration
+# ## 8.2 The average as an integration
 # 
 # The average quantity derived from a theoretical model of a chemical or physical process, and described by an equation, is always used to compare with the experimental value from a set of measurements. Rather than a set of numbers, a calculation similar to that described above is needed to calculate the theoretical average. However, if the function is continuous, then integration rather than summation must be used.
 # 
@@ -152,7 +152,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # Figure 16b. left: A constant or uniform distribution. Right: A Gaussian distribution. These distributions are not normalised as their area is not unity.
 # ____
 # 
-# #### **(i) Excited states**
+# ### **(i) Excited states**
 # 
 # It is observed experimentally that the electronically excited state of a molecule decays exponentially, which means that there is an exponential distribution of times during which the molecule remains excited. Radioactive decay also has this type of distribution. One question to ask is; what is the average time that the molecule remains excited? To answer this question, equation 28 is used with the quantity $x$ = time and the distribution function is
 # 
@@ -174,7 +174,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # In this example $\alpha = 1/\tau$ and $x=t$ thus the integral is $\int_0^\infty e^{-t\tau}dt = \tau$. Then $\displaystyle \frac{d}{d(1/\tau)}\ln(\tau)=\tau$ which is the same result as direct integration. Note that the differentiation is wrt. $\alpha$ but in this case $\alpha =1/\tau$ so differentiation is in $1/\tau$. In the calculation we used a relationship of the type $\displaystyle \frac{d\ln(y)}{dx}=\frac{1}{y}\frac{dy}{dx}$.
 # 
-# #### **(ii) Infection period**
+# ### **(ii) Infection period**
 # 
 # This example is that of calculating the mean time that a person is infected with a disease. Suppose that you are infected at time $t$, and that the chance that you are no longer infected in the next small time interval $\delta t$, is $a\delta t$, where $a$ is a constant depending on the type of disease. This is the rate constant with which the disease will die out. If $p(t)$ is the chance that you were infected at time $t$, during the time $t + \delta t$ this changes to $p(t + \delta t) = p(t)(1 - a\delta t) + O(\delta t^2)$, which is the chance of being infected at time $t$ multiplied by the chance of remaining infected during the following time $\delta t$. The term $O(\delta t^2)$ means that terms in $\delta t^2$ and higher are ignored because they are so small (see Chapter 5 for 'big O' notation). Subtracting $p(t)$ from both sides and dividing by $\delta t$ gives
 # 
@@ -190,7 +190,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # A related type of argument is followed to find the mean free path of gas molecules or atoms, but with the distance between collisions taking the place of time.
 # 
-# #### **(iii) Centroids** 
+# ### **(iii) Centroids** 
 # 
 # In this example we find the position $\langle s\rangle$ of the centre of gravity or mass of a body that has a weight distribution $w(s)$. The weight distribution describes how the mass resides in the object and therefore describes both its shape and how the mass varies across that shape. In general, there are three values of the centre of mass, one in each of the x-, y-, and z-axes, so it is necessary to specify which one is being considered. The centre of gravity is the average position according to its mass and therefore, for each axis, the appropriate equation to use has the form of equation 28,
 # 
@@ -241,7 +241,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # The moment about the y-axis is $\displaystyle M_y =\frac{1}{2}\int_0^1 x^{4/3}dx=\frac{3}{7}$ and the centroid is at $\langle x\rangle =M_y/A=4/7$
 # 
-# #### **(iv) Chromatography. Average value and width of eluted profile** 
+# ### **(iv) Chromatography. Average value and width of eluted profile** 
 # 
 # In chapter 1 section 9.10 a probabilistic model was developed to describe the shape of a chromatogram the result was a distribution $P(n)$ closely related to the Poisson distribution was found,  
 # 
@@ -294,7 +294,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # Figure 17a. Chromatography peaks with $p=0.1$ left (grey) and $0.12$ (blue) at two values of  theoretical plates $N$. Notice that as $N$ increases so does the width of the peak but only as $\sqrt{N}$ whereas the peaks separate as $N$ so resolution increases with increasing $N$ which can be obtained using longer columns.
 # ________
 
-# ### 8.3 Average of a function
+# ## 8.3 Average of a function
 # 
 # The average of a function of $x,\; f (x)$, is evaluated in a similar way as for a variable
 # 
@@ -316,7 +316,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # making the average $\langle f(x)\rangle =2\ln(2)/\pi$
 # 
-# ### 8.4 Expectation values
+# ## 8.4 Expectation values
 # 
 # In quantum mechanics, if $\psi$ are the normalized wavefunctions and $x$, for example, is the displacement of an atom in a vibrating diatomic molecule from its equilibrium value, then its average position is in state $k$ 
 # 
@@ -349,7 +349,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # $$\displaystyle \langle Q_{n,m}\rangle = \int\psi_n^*\,Q\,\psi_m dx \tag{39}$$
 # 
-# ### 8.5 Uncertainty principle  
+# ## 8.5 Uncertainty principle  
 # 
 # The Uncertainly Principle of Quantum Mechanics insist that the position and momentum of a quantum particle cannot be known simultaneously, the best that can be done is $\Delta x \Delta p \ge \hbar/2$. 
 # 
@@ -385,7 +385,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # To test what happens for different potentials the $\Delta x\Delta p$ is calculated for the harmonic and infinite square well also called a particle in a box.
 # 
-# #### **(i) Harmonic oscillator**
+# ### **(i) Harmonic oscillator**
 # The wavefunction for the ground state, quantum number $n=0$, of an Harmonic oscillator is the first of a set of normalised Hermite polynomials and is
 # 
 # $$\displaystyle \psi_0=\left(\frac{\alpha}{\pi}\right)^{1/4} e^{-\alpha x^2/2} $$
@@ -437,10 +437,10 @@ integrate( psi0*x*x*psi0,(x,-oo,oo), conds='none')
 -hbar**2*integrate( psi0*diff(psi0,x,x) ,(x,-oo,oo) )
 
 
-# #### **(ii) particle in a box**
+# ### **(ii) particle in a box**
 # Following the method outlined above the calculation for a particle in a box always produces $\Delta x\Delta p\gt\hbar/2$. If the box is of length $0\to a$ ( and the integration is taken over this range ) and for the lowest energy level with quantum number $n=1$, $ \displaystyle \Delta x\Delta p =\frac{\sqrt{3\pi^2-18}}{6}\hbar $ which is greater than $\hbar/2$ and consistent with the uncertainty principle. The similar result is found for all $n$ where the values increase with $n$, for example when $n=2$, $ \displaystyle \Delta x\Delta p=\frac{\sqrt{12\pi^2-18}}{6}\hbar $, thus we find that there is no requirement for $\Delta x\Delta p$ to be equal to $\hbar/2$ for any quantum number. The general trend is $\displaystyle \Delta x\Delta p= \sqrt{\frac{n^2\pi^2-6}{12}}\hbar$ and the normalised wavefunction is $\displaystyle \psi=\sqrt{\frac{2}{a}}\sin\left(\frac{n\pi x}{a}\right)$. 
 # 
-# ### 8.6 Higher averages: moments and variance
+# ## 8.6 Higher averages: moments and variance
 # 
 # The average $\langle x\rangle$ is also called the _first moment_ of its distribution; $\langle x^2\rangle$ the second moment and so on. The general relationships are, assuming that $P(x)$ is a normalized distribution,
 # 

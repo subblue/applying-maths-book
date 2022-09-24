@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## Quantum superposition and wavepackets.
+# # Quantum superposition and wavepackets.
 
 # In[1]:
 
@@ -15,7 +15,7 @@ init_printing()                      # allows printing of SymPy results in types
 plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 
-# ### 9 Wavepackets and superposition.
+# ## 9 Wavepackets and superposition.
 # 
 # In calculating the energy and wavefunctions of the harmonic oscillator, hydrogen atoms, the rigid rotor, and many similar problems, the time-independent Schroedinger equation, $H\psi = E\psi$, is used. However, many processes evolve in time and then a time-dependent form of the equation must be used and this is 
 # 
@@ -120,7 +120,8 @@ nf = 8
 
 V    = lambda x: 0.5*k*x**2/(h*c)    # potential energy in cm^(-1)
 Enrg = lambda n, nu: nu*(n+1/2)      # energy cm^(-1)
-psi  = lambda x, n, alpha: np.sqrt( 1/(2^n*fact(n)) * np.sqrt(alpha/np.pi) )*                          np.exp(-alpha*x**2/2.0)*Hermite(n,x*np.sqrt(alpha))  # harmonic ascillator wavefunction
+psi  = lambda x, n, alpha: np.sqrt( 1/(2^n*fact(n)) * np.sqrt(alpha/np.pi) )*\
+                          np.exp(-alpha*x**2/2.0)*Hermite(n,x*np.sqrt(alpha))  # harmonic ascillator wavefunction
 
 wp =   lambda x,tm: sum([ psi(x,n,alpha)*np.exp(-1j*Enrg(n,nu)*c*tm) for  n in range(ni,nf)]  )  # add up wavefunctions
     
@@ -170,7 +171,7 @@ plt.show()
 # 
 # When a pump-probe experiment is performed, it is possible to observe wavepacket motion, but not the wavepacket itself because there is no known microscope with which this could be done. What this method does is to excite the molecule and then probe the excited state later with a very short (femtosecond duration)  laser pulse and a signal is produced as the wavepacket moves through the time and wavelength (or energy) windows covered by the probe pulse (Atkins & de Paula 2006, pp. 892-3 and Zewail 1994). The experimental observation is a signal oscillating in time.
 
-# ### 9.1 Superposition of many wavefunctions
+# ## 9.1 Superposition of many wavefunctions
 # 
 # The general superposition where each stationary-state wavefunction is weighted with its contribution $\alpha$ or $\beta$ is $\displaystyle \Psi = \frac{\alpha\psi_1+\beta\psi_2}{\sqrt{\alpha^2+\beta^2}}$. This similar to equations just derived because
 # 

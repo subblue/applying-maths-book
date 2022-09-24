@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## Solutions Q 1 - 7
+# # Solutions Q 1 - 7
 
 # In[1]:
 
@@ -15,10 +15,10 @@ init_printing()                         # allows printing of SymPy results in ty
 plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 
-# ### Q1 answer
+# ## Q1 answer
 # The ratio test gives $\displaystyle r=\left|\frac{x^{n+1}n!}{(n+1)!x^n}\right|= \frac{|x|}{n} $ and in the limit when $n \rightarrow \infty$ then $r \rightarrow 0$ so the series is convergent for any value of $x$.
 # 
-# ### Q2 answer
+# ## Q2 answer
 # Starting with $1/(1+x)$, differentiating once produces $-1/(1 + x)^2$ and twice $2/(1 + x)^3$. Therefore, the expansion required can be found by differentiating the series expansion of $1/(1 + x)^2$. This was calculated in, equation (5.5), and produces the answer with the substitution $x \rightarrow ax$.
 # 
 # The expansion of $1/(1 + ax)^2$ is
@@ -44,7 +44,7 @@ f01 = (1/(1 + a*x)**3 )
 series(f01,x)
 
 
-# ### Q3 answer
+# ## Q3 answer
 # The average is found by using eqn. 6,  $\displaystyle \langle x \rangle= \sum xp(x)/\sum p(x)$ the quantity $x$ is the mass and $p$ the fraction of the isotope present. Because the _fractions_ add to unity, only the numerator need be evaluated.  The final number is rounded to 6 decimal places, the same as each value. 
 
 # In[3]:
@@ -63,7 +63,7 @@ print('{:s}{:12.6f}{:s}{:1.6f}'.format('average = ',av,', std dev = ',np.sqrt(av
 
 # The std deviation, $\sqrt{\langle x \rangle-\langle x^2\rangle}$, is large because the wide range of masses and their fractions. The data is not the result measuring the same thing many times, which is necessary in a statistical measurement, but the average of disparate things, in this case the different isotopes. The precision of the individual masses reflects the effect of many measurements. The std deviation should be rounded to $0.9$ making the average $207.2 \pm 0.9$. However, it would be acceptable to give the answer as $207 \pm 1$ to err on the cautious side and considering that the percentage abundance is only known to three figures.
 # 
-# ### Q4 answer 
+# ## Q4 answer 
 # A die has six sides and the chance of it falling on any side is equal, if it is a fair die. The average of the numbers produced is then the sum,
 # 
 # $$\displaystyle \langle x \rangle = 1/6 + 2/6 + 3/6 + 4/6 + 5/6 + 6/6 = 21/6 = 3.5$$
@@ -103,10 +103,10 @@ print('{:s}{:10.3f}{:s}{:10.3f}'.format('average = ',av_x,', std dev = ',np.sqrt
 
 # as expected the average is twice that for a single die, but the standard deviation is only $ \sqrt{2}$ bigger not double.
 # 
-# ### Q5 answer
+# ## Q5 answer
 # Using the formula from the previous answer, with $n = 10$ and modified to count from $0 \to 9$, ( not $1 \to 6$ ) the values for one die are $\langle x \rangle = 4.5,\,\langle x^2 \rangle = 57/2$, and $\sigma= 2.87$, and for two $\langle x \rangle = 9, \,\langle x^2 \rangle = 97.5$  and $\sigma = 4.06$.
 # 
-# ### Q6 answer 
+# ## Q6 answer 
 # (a) Writing down the partition function directly, equation (11), produces $\displaystyle Z = \sum_{n=0}^\infty e^{-E_n/k_BT} = \sum_{n=0}^\infty e^{-nh\nu/k_BT}$
 # 
 # Next substitute $e^{-h\nu/k_BT} = x $ and recognize the expression as being the same as the series $\sum_{n=0}^\infty x^n = (1-x)^{-1}$. Substituting back produces 
@@ -156,7 +156,7 @@ for i in range(nmax):
 print('\n{:s}{:f}{:s}{:f}'.format('total population N2 =  ', sum(pN), ' and I2 = ',sum(pI)))
 
 
-# ### Q7 answer 
+# ## Q7 answer 
 # (a) The probability distribution for energy $E_n$ is that of Boltzmann’s distribution $\displaystyle e^{-E_n/k_BT}$. The average number of photons $n$ with total energy $nh\nu$ is therefore
 # 
 # $$\displaystyle \langle n\rangle =\frac{\sum\limits_{n=0}^\infty ne^{-nh\nu/k_BT}}{ \sum\limits_{n=0}^\infty e^{-nh\nu/k_BT}}$$

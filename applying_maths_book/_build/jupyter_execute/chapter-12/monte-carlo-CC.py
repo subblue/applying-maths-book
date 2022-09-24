@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ##  Monte Carlo Simulations 
+# #  Monte Carlo Simulations 
 
 # In[1]:
 
@@ -14,13 +14,13 @@ init_printing()                         # allows printing of SymPy results in ty
 plt.rcParams.update({'font.size': 16})  # set font size for plots
 
 
-# ### 3.1 Concept and motivation
+# ## 3.1 Concept and motivation
 # 
 # In numerically integrating differential and other equations, a number of methods are available. Some Monte Carlo methods are described in earlier sections and other methods are described in Chapter 11. In this section simulations are described. A simulation uses the underlying physical laws and principles to control the calculation; no differential equations will be used. Usually processes, such as the decay of an excited state, the dispersal of a population of animals, or diffusion of molecules, can be simulated by taking a stochastic approach to the problem, repeating many calculations and slowly building up the results. This approach may seem rather odd; why not just solve the equations and be done with it? Well, sometimes this approach is simply pragmatic; a Monte Carlo approach is sometimes simpler and quicker to use. More often, it is the case that the equations describing some complex phenomenon cannot be solved algebraically or are simply not known because the process being studied is too complex. In these cases, we turn to the underlying physical laws and principles to control a simulation. Other examples of problems that can be studied are reaction kinetics, nuclear spins interacting with one another in a solid, ions moving through membrane pores, animals or people infecting one another, the spreading of forest fires, and oil moving through pores in rocks and so forth. Any computer simulation should be repeated many times to obtain an average value and then repeated again with many different initial values to explore the problem properly and to learn what are the important parameters that control behaviour.
 # 
 # Two classes of Monte Carlo calculations must be clearly distinguished. The class described in the last section uses a Monte Carlo method to solve rate equations or, in general, differential equations. The method now described is to *simulate* a physical process from first principles without explicitly solving equations. The algorithms to do these two types of calculations are, in many cases, rather similar, but the way they operate is fundamentally different.
 # 
-# ### 3.2 Simulating physical processes
+# ## 3.2 Simulating physical processes
 # 
 # As this is a very general approach, and in principle applies to almost any process, there are no fixed rules other than to understand the problem at a fundamental level and then decide how it can be broken down into individual steps. Random numbers are always used to decide what is going to happen next, and the result of many trial calculations summed to remove any bias set up by the random nature of the process. It is important to bear in mind that we do not try to simulate any actual physical process but rather use a sort of pseudo-dynamics to reach the result by taking one atom or molecule at a time and deciding what it might end up doing, and then repeating this numerous times until we are satisfied with the result according to some predetermined condition.
 # 
@@ -62,7 +62,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # \hline
 # \end{array}$$
 # 
-# ### 3.3 Simulation of one-dimensional diffusion
+# ## 3.3 Simulation of one-dimensional diffusion
 # 
 # In diffusion, time, and distance are linked by Fick's second law; Chapter 10.6.2 (iv). However, in a simulation, this equation is not used and the position where the walk ends after a fixed number of total jumps is calculated. This is repeated many times and a histogram made of the final positions. To make the walk last a longer time, a larger total number of jumps is taken because each jump is supposed to take an equal time. In the Monte Carlo simulation, the total number of steps, s, must be decided beforehand. The walk must start at only one place, say $x_0$, and as there is an equal chance of moving to the right or left, the starting place of the walk will also be the mean value $\langle x_0 \rangle$. The root mean square distance the walker moves in taking $s$ steps, is $\sqrt{s}$.
 # 
@@ -122,7 +122,7 @@ for i in range(n):
 # Figure 10. Left: The position vs time (as number of steps) of a random walker. Right: Five thousand simulations of a random walker forming a discrete distribution of 50 steps each and the distribution from walker following an unlimited number of steps and so forming a Gaussian distribution $p(x)$ with $\sigma = 50$ (blueline).
 # _____
 # 
-# ### 3.4 Reacting molecules.
+# ## 3.4 Reacting molecules.
 # 
 # Many molecules react by a first-order process; $A\overset{k}\to B$, e.g. $\mathrm{CH_3CN} \to \mathrm{CH_3NC}$ or a cis - trans isomerisation. A first-order decay was calculated by the Gillespie method in Section 2.2, but the method used there is very different to this one. 
 # 

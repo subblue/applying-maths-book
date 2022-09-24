@@ -4,11 +4,13 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Numbers to Algorithms. &#8212; Applying Maths in the Chemical &amp; Biomolecular Sciences</title>
     
-  <link href="../_static/css/theme.css" rel="stylesheet">
-  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,40 +20,39 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Questions 1 - 7" href="chapter1-Q1-7.html" />
@@ -63,7 +64,21 @@
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -72,9 +87,10 @@
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -92,14 +108,15 @@
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../intro.html">
-   Applying Maths in the Chemical and Biomolecular Sciences.
-  </a>
- </li>
-</ul>
-<ul class="current nav bd-sidenav">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Applying Maths in the Chemical and Biomolecular Sciences.
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
  <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="chapter1-intro.html">
    1. Numbers, Equations, Operators, and Algorithms.
@@ -204,11 +221,6 @@
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-2/chapter2-Q-10-13.html">
      Questions 10 -13
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-2/chapter2-C.html">
-     Euler’s theorem, roots of unity, x-ray diffraction structure factor.
     </a>
    </li>
    <li class="toctree-l2">
@@ -337,7 +349,7 @@
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../chapter-4/integration-intro.html">
-   4. Integration.
+   4 Integration.
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
   <label for="toctree-checkbox-4">
@@ -377,7 +389,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-4/integration-D.html">
-     Calculating an Average Value.
+     Calculating an Average.
     </a>
    </li>
    <li class="toctree-l2">
@@ -407,7 +419,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-4/integration-G.html">
-     Calculating the energy of a chemical bond using molecular orbitals
+     Calculating the energy of a Chemical Bond using Molecular Orbitals
     </a>
    </li>
    <li class="toctree-l2">
@@ -688,7 +700,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-7/matrices-D.html">
-     Rotation matrices: moving molecules
+     Rotation matrices: moving molecules. Coordinate transform as rotation.
     </a>
    </li>
    <li class="toctree-l2">
@@ -757,23 +769,13 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-7/matrices-K.html">
-     Calculating a bond length using moments of inertia
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-7/matrices-Q61.html">
-     Question 61
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="../chapter-7/matrices-L.html">
      Principal axes for Moments of Inertia
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-7/matrices-Q62.html">
-     Question 62
+    <a class="reference internal" href="../chapter-7/matrices-Q61-62.html">
+     Question 61 - 62
     </a>
    </li>
    <li class="toctree-l2">
@@ -1004,7 +1006,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-G.html">
-     PDE examples continued
+     PDE Continued
     </a>
    </li>
    <li class="toctree-l2">
@@ -1096,7 +1098,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-11/num-methods-answers8-12.html">
-     Solutions Q8 - 12
+     Solutions Q 8 - 12
     </a>
    </li>
    <li class="toctree-l2">
@@ -1258,112 +1260,227 @@
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/chapter-1/chapter1-A.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/subblue/applying-maths-book"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/subblue/applying-maths-book/issues/new?title=Issue%20on%20page%20%2Fchapter-1/chapter1-A.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        
-    </div>
-</div>
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/subblue/applying-maths-book/main?urlpath=lab/tree/applying_maths_book/chapter-1/chapter1-A.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        <a class="colab-button" href="https://colab.research.google.com/github/subblue/applying-maths-book/blob/main/applying_maths_book/chapter-1/chapter1-A.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
-                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
-                    src="../_static/images/logo_colab.png"
-                    alt="Interact on Colab">Colab</button></a>
-        
-        
-    </div>
-</div>
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/subblue/applying-maths-book/main?urlpath=lab/tree/applying_maths_book/chapter-1/chapter1-A.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://colab.research.google.com/github/subblue/applying-maths-book/blob/main/applying_maths_book/chapter-1/chapter1-A.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/subblue/applying-maths-book"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/subblue/applying-maths-book/issues/new?title=Issue%20on%20page%20%2Fchapter-1/chapter1-A.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/chapter-1/chapter1-A.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#symbols-and-basics">
    1 Symbols and basics
@@ -1429,9 +1546,23 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#golden-ratio">
-   2.3 Golden ratio
+  <a class="reference internal nav-link" href="#average-or-mean-values-arithmetic-geometric-and-harmonic">
+   2.3 Average or mean values. Arithmetic, Geometric and Harmonic.
   </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#golden-ratio">
+   2.4 Golden ratio
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#golden-section-searching">
+     <strong>
+      Golden Section searching
+     </strong>
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#the-exponential-e-and-e-x">
@@ -1480,15 +1611,15 @@
      </strong>
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#summary-of-logs-and-powers-definition-x-b-log-b-x">
+     4.2 Summary of logs and powers: definition
+     <span class="math notranslate nohighlight">
+      \(x=b^{\log_b(x)}\)
+     </span>
+    </a>
+   </li>
   </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#summary-of-logs-and-powers-definition-x-b-log-b-x">
-   4.2 Summary of logs and powers: definition
-   <span class="math notranslate nohighlight">
-    \(x=b^{\log_b(x)}\)
-   </span>
-  </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#comparison-of-log-and-exponential">
@@ -1507,17 +1638,190 @@
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Numbers to Algorithms.</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#symbols-and-basics">
+   1 Symbols and basics
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#equations">
+   1.1 Equations
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#multiplication-and-division">
+   1.2 Multiplication and division
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#approximation-never-do-this-in-the-middle-of-a-calculation">
+   1.3 Approximation: never do this in the middle of a calculation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#assignments-in-python-and-other-computer-languages">
+   1.4 Assignments in Python and other computer languages.
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#functions">
+   1.5 Functions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#functions-in-python">
+   1.6 Functions in Python
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#algorithms">
+   1.7 Algorithms
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#numbers">
+   1.8 Numbers
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#integers-real-and-irrational-numbers">
+   2 Integers, real, and irrational numbers
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pi-pi-and-an-algorithmic-way-of-calculating-its-value">
+   2.1 Pi (
+   <span class="math notranslate nohighlight">
+    \(\pi\)
+   </span>
+   ) and an algorithmic way of calculating its value
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#square-roots">
+   2.2 Square Roots
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#average-or-mean-values-arithmetic-geometric-and-harmonic">
+   2.3 Average or mean values. Arithmetic, Geometric and Harmonic.
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#golden-ratio">
+   2.4 Golden ratio
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#golden-section-searching">
+     <strong>
+      Golden Section searching
+     </strong>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-exponential-e-and-e-x">
+   3 The exponential
+   <span class="math notranslate nohighlight">
+    \(e\)
+   </span>
+   and
+   <span class="math notranslate nohighlight">
+    \(e^x\)
+   </span>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#boltzmann-s-distribution">
+     <strong>
+      Boltzmann’s Distribution
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#first-order-or-exponential-decay">
+     <strong>
+      First order or exponential decay
+     </strong>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#logarithms">
+   4 Logarithms
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#first-order-reaction">
+     <strong>
+      First order reaction
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#entropy-from-a-volume-change-in-a-gas">
+     <strong>
+      Entropy from a volume change in a gas
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#summary-of-logs-and-powers-definition-x-b-log-b-x">
+     4.2 Summary of logs and powers: definition
+     <span class="math notranslate nohighlight">
+      \(x=b^{\log_b(x)}\)
+     </span>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#comparison-of-log-and-exponential">
+   4.3 Comparison of log and exponential
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#log-as-a-series">
+   4.4 Log as a series
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#arguments-to-functions-such-as-exponential-sine-etc-do-not-have-units">
+   4.5 Arguments to functions such as exponential, sine etc.  do not have units
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
               <div>
                 
-  <div class="section" id="numbers-to-algorithms">
-<h1>Numbers to Algorithms.<a class="headerlink" href="#numbers-to-algorithms" title="Permalink to this headline">¶</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="numbers-to-algorithms">
+<h1>Numbers to Algorithms.<a class="headerlink" href="#numbers-to-algorithms" title="Permalink to this headline">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import all python add-ons etc that will be needed later on</span>
@@ -1531,35 +1835,35 @@
 </div>
 </div>
 </div>
-<div class="section" id="symbols-and-basics">
-<h2>1 Symbols and basics<a class="headerlink" href="#symbols-and-basics" title="Permalink to this headline">¶</a></h2>
+<section id="symbols-and-basics">
+<h2>1 Symbols and basics<a class="headerlink" href="#symbols-and-basics" title="Permalink to this headline">#</a></h2>
 <p>When you learn mathematics, it is normal to use <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> to do most of the algebraic manipulations. In science, <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> are almost never used and this simple change can make a simple equation look complicated. This is something that you just have to get used to, but is made easier if you think what the variables mean; then perhaps you will be confident, say, to differentiate with respect to temperature <span class="math notranslate nohighlight">\(T\)</span> rather than feeling that this can only be done with variable <span class="math notranslate nohighlight">\(x\)</span>. How ingrained using <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> are, is not, however, to be underestimated, for even experienced practitioners will on occasion revert to these when faced with a difficult calculation.</p>
-</div>
-<div class="section" id="equations">
-<h2>1.1 Equations<a class="headerlink" href="#equations" title="Permalink to this headline">¶</a></h2>
-<p>There is one fundamental rule for manipulating an equation and that is to make sure that whatever is done to one side is done to the other. The equality<span class="math notranslate nohighlight">\(^1\)</span> sign = means that the left-hand side of any equation is always equal to the right; for example the ideal gas law equation</p>
+</section>
+<section id="equations">
+<h2>1.1 Equations<a class="headerlink" href="#equations" title="Permalink to this headline">#</a></h2>
+<p>There is one fundamental rule for manipulating an equation and that is to make sure that whatever is done to one side is done to the other. The equality<span class="math notranslate nohighlight">\(^1\)</span> sign = means that the left-hand side of any equation is always equal to the right; for example the Ideal Gas Law equation,</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle pV = nRT \tag{1}\]</div>
+\[\displaystyle  pV = nRT \tag{1} \]</div>
 <p>means that the product of pressure <span class="math notranslate nohighlight">\(p\)</span> and volume <span class="math notranslate nohighlight">\(V\)</span> is always equal to the number of moles multiplied by the gas constant <span class="math notranslate nohighlight">\(R\)</span> and the temperature <span class="math notranslate nohighlight">\(T\)</span>. To isolate the pressure on the left-hand side, both sides of the equation must be divided by the volume,</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \frac{pV}{V} = \frac{nRT}{V}\]</div>
 <p>which is then canceled through on the left giving <span class="math notranslate nohighlight">\(p = nRT/V\)</span>. To avoid making mistakes, the best approach is to do any manipulations step by step even if they seem trivial. Repeating a calculation because a slip has been made in an earlier step takes far longer than it does being thorough at each stage.</p>
 <p><span class="math notranslate nohighlight">\(^1\)</span> The = sign was probably first used by Robert Recorde in an algebra textbook of 1557.</p>
-</div>
-<div class="section" id="multiplication-and-division">
-<h2>1.2 Multiplication and division<a class="headerlink" href="#multiplication-and-division" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="multiplication-and-division">
+<h2>1.2 Multiplication and division<a class="headerlink" href="#multiplication-and-division" title="Permalink to this headline">#</a></h2>
 <p>Slightly different notations are used when mathematics is written by hand, printed in a book, or interpreted by a computer language. One instance is the different symbols used to indicate multiplication; for example, multiplying together three quantities can be written as <span class="math notranslate nohighlight">\(pqr,\; p \times q \times r,\; p \cdot q \cdot r\)</span> or <span class="math notranslate nohighlight">\(p. q. r\)</span>. In the last two examples, the point could be confused with a decimal point if numbers were involved of if vectors as the dot product, see chapter 6.</p>
 <p>In most computer languages, including Python used in this text, multiplication is indicated by the symbol, *, for example, <span class="math notranslate nohighlight">\(\mathtt{a*b}\)</span>. Raising a number to a power is written as <span class="math notranslate nohighlight">\(\mathtt{p**3}\)</span> or <span class="math notranslate nohighlight">\(\mathtt{p**(1/3)}\)</span>  for the cube root.</p>
-<p>In mathematics, the brackets (), {}, [ ]  are each used to indicate multiplication, and if an equation dictates that brackets must be nested then different ones may be used for clarity. In a computer language, different brackets are usually used to indicate <em>different types</em> of arrays or functions, but exactly which is used depends on the language.</p>
+<p>In mathematics, the brackets (), {}, [ ]  are each used to indicate a group of terms to be multiplied or divided etc., and if an equation dictates that brackets must be nested then different ones may be used for clarity. In a computer language, different brackets are usually used to indicate <em>different types</em> of arrays or functions, but exactly which is used depends on the language.</p>
 <p>Each term inside a bracket, is multiplied by any terms outside; for example in mathematical notation,</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle a(b - c) = ab - ac \quad \text{and}\quad (a - d)(b - c) = ab - ac - db + dc\]</div>
 <p>If a bracketed expression is multiplied by itself then this is written as, for example, <span class="math notranslate nohighlight">\((a-d)^2 =(a-d)(a-d)=a^2 - 2ad  + d^2\)</span>.</p>
 <p>In Python and other languages, <span class="math notranslate nohighlight">\(a(b - c)\)</span> would be written as <span class="math notranslate nohighlight">\(\mathtt{a*(b - c)}\)</span>. The reason for the multiplication sign is that one or more letters, such as <span class="math notranslate nohighlight">\(a\)</span>, followed by a bracket could indicate a function, array, vector, or matrix. Which one depends on how the name, in this case, <span class="math notranslate nohighlight">\(a\)</span>, was defined.</p>
 <p>In printed equations, division is sometimes ambiguous because it is not clear what is to be divided; for example, <span class="math notranslate nohighlight">\(a/bc\)</span> can mean <span class="math notranslate nohighlight">\(\displaystyle \frac{a}{bc}\)</span> or <span class="math notranslate nohighlight">\(\displaystyle \frac{a}{b} c\)</span>, which is <span class="math notranslate nohighlight">\((a/b)c\)</span>; it depends on the convention being used as to which operation takes precedence. The safest way, although a little clumsy, is to write <span class="math notranslate nohighlight">\(a/(bc)\)</span>, making it clear that <span class="math notranslate nohighlight">\(a\)</span> is divided by <span class="math notranslate nohighlight">\(bc\)</span>. In Python and other computer languages, <span class="math notranslate nohighlight">\(a/b*c\)</span> means <span class="math notranslate nohighlight">\((a/b)*c\)</span>, so adding brackets is essential to get the calculation you expect.</p>
-</div>
-<div class="section" id="approximation-never-do-this-in-the-middle-of-a-calculation">
-<h2>1.3 Approximation: never do this in the middle of a calculation<a class="headerlink" href="#approximation-never-do-this-in-the-middle-of-a-calculation" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="approximation-never-do-this-in-the-middle-of-a-calculation">
+<h2>1.3 Approximation: never do this in the middle of a calculation<a class="headerlink" href="#approximation-never-do-this-in-the-middle-of-a-calculation" title="Permalink to this headline">#</a></h2>
 <p>Truncating numbers in  the middle of a calculation is an easy way to introduce numerical errors, the final result only should be rounded and if it related to an experimental value then the extent of this will be determined by the standard deviation or uncertainty in the value. In some calculations a similar type of approximation can be made algebraically, but this is also risky.</p>
 <p>Sometimes when one variable is small compared to another it can be ignored. The expansion of the exponential is one such case where this is legitimate;</p>
 <div class="math notranslate nohighlight">
@@ -1571,25 +1875,25 @@
 <div class="math notranslate nohighlight">
 \[\displaystyle y=\frac{1}{2}\left(  x+ \frac{N}{x}\right)\]</div>
 <p>and no comparison of the relative sizes of <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(N\)</span> is possible.</p>
-</div>
-<div class="section" id="assignments-in-python-and-other-computer-languages">
-<h2>1.4 Assignments in Python and other computer languages.<a class="headerlink" href="#assignments-in-python-and-other-computer-languages" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="assignments-in-python-and-other-computer-languages">
+<h2>1.4 Assignments in Python and other computer languages.<a class="headerlink" href="#assignments-in-python-and-other-computer-languages" title="Permalink to this headline">#</a></h2>
 <p>In Python when something has to be calculated, it can be typed directly for example, <span class="math notranslate nohighlight">\(\mathtt{2.5*6}\)</span>; or <span class="math notranslate nohighlight">\(\mathtt{np.sin( np.pi/6 )}\)</span> where the prefix <span class="math notranslate nohighlight">\(\mathtt{np.}\)</span> tells Python to use the numpy numerical library. (This has to be loaded initially, see the header to this page or the appendix on using Python ). The result can be see by printing to the screen as <span class="math notranslate nohighlight">\(\mathtt{print(np.sin( np.pi/6 ) )}\)</span>.</p>
 <p>However, if the result is needed later on, then the calculation must be assigned a name. This name could be almost anything but is usually a letter and numbers, <span class="math notranslate nohighlight">\(\mathtt{f01,\, result3}\)</span> and so forth, but not a name such as <span class="math notranslate nohighlight">\(sin,\, log\)</span> etc. as these are reserved names.  The assignment operation is the equal symbol = , so, <span class="math notranslate nohighlight">\(\mathtt{thesine= np.sin(np.pi/6)}\)</span> would produce <span class="math notranslate nohighlight">\(\mathrm{\sin(\pi/6)}\)</span> every time <span class="math notranslate nohighlight">\(\mathtt{thesine}\)</span> is typed; thus, <span class="math notranslate nohighlight">\(\mathtt{6*thesine}\)</span> is the same as <span class="math notranslate nohighlight">\(\mathrm{6 \sin(\pi /6)}\)</span>. The assignment does not produce an equation; it makes the <em>name</em> on the left of the = sign produce the calculation shown on the right. Thus a statement such as</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \mathtt{eqn1 = x**2 + 3*x - 2}\]</div>
 <p>is acceptable but not <span class="math notranslate nohighlight">\(\mathtt{eqn1 = x**2 + 3*x = 2}\)</span>.  Details of Python syntax are given at the end of the book. Because many different symbols are used in maths, and some only infrequently, these are listed in the Glossary with their meanings, also at the end of the book</p>
-</div>
-<div class="section" id="functions">
-<h2>1.5 Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="functions">
+<h2>1.5 Functions<a class="headerlink" href="#functions" title="Permalink to this headline">#</a></h2>
 <p>The equation <span class="math notranslate nohighlight">\(y = 1/x\)</span> may be written in functional form as <span class="math notranslate nohighlight">\(f(x) = 1/x\)</span>, thus, if <span class="math notranslate nohighlight">\(x = 2\)</span> the function has the value of 1/2, or <span class="math notranslate nohighlight">\(f(2) = 1/2\)</span>. The function operates on its argument <span class="math notranslate nohighlight">\(x\)</span>, which here is <span class="math notranslate nohighlight">\(2\)</span>, to produce its reciprocal. The <span class="math notranslate nohighlight">\(x\)</span> in the function, either as its argument or in the body of the function is, however, simply a symbol, and is arbitrary; it is the algebraic expression or operation itself that determines what happens. Therefore, writing <span class="math notranslate nohighlight">\(f(w) = 1/w\)</span> is entirely the same as <span class="math notranslate nohighlight">\(f(x) = 1/x\)</span>; if a function is evaluated with a series of numbers then it does not matter whether <span class="math notranslate nohighlight">\(w\)</span> or <span class="math notranslate nohighlight">\(x\)</span> was used to represent the mathematical operation; the result is the same. Similarly, as <span class="math notranslate nohighlight">\(x\)</span> is only symbolic, it is possible to write a composite function where the argument is itself a function; e.g. <span class="math notranslate nohighlight">\(f (x^2) = 1/x^2\)</span> or <span class="math notranslate nohighlight">\(f (e^x) = 1/e^x\)</span>, which means that the function <span class="math notranslate nohighlight">\(f\)</span> <em>operates</em> on <span class="math notranslate nohighlight">\(x^2\)</span> or <span class="math notranslate nohighlight">\(e^x\)</span> to produce its reciprocal. Formally, this would be written as <span class="math notranslate nohighlight">\(f[g(x)] = 1/g(x)\)</span> where <span class="math notranslate nohighlight">\(g(x)\)</span> is the ‘inside’ function.</p>
 <p>You can consider a function to be a <em>rule</em> that converts <span class="math notranslate nohighlight">\(x\)</span> or <span class="math notranslate nohighlight">\(w\)</span>, or whatever symbol is convenient to use, into some other mathematical form. You can also consider it as a <em>mapping</em> that transforms <span class="math notranslate nohighlight">\(x\)</span> into a new form. The function ‘log’ follows the rules to make the log of a number, and is written as <span class="math notranslate nohighlight">\(f(x) = \ln(x)\)</span>, and formally the range <span class="math notranslate nohighlight">\(x \ge 0\)</span> should be added, but usually this is assumed to be known. A different example is illustrated by the functions used to find the real and imaginary part of a complex number. Complex numbers <span class="math notranslate nohighlight">\(z\)</span> have two parts; the ‘real’ and the ‘imaginary’, which is multiplied by <span class="math notranslate nohighlight">\(i =\sqrt{-1}\)</span>; for example, <span class="math notranslate nohighlight">\(z = 2 + 3i\)</span>, see Chapter 2. The real function is written <span class="math notranslate nohighlight">\(f(z) = Re(z)\)</span> and the imaginary function <span class="math notranslate nohighlight">\(f (z) = Im(z)\)</span> and if <span class="math notranslate nohighlight">\(z = 2 + 3i\)</span> then <span class="math notranslate nohighlight">\(Re(z) = 2\)</span> and <span class="math notranslate nohighlight">\(Im(z) = 3\)</span>.</p>
 <p>While some functions are ‘even’ and others ‘odd’, many are neither. ‘Even’ functions have the property that they do not change sign when their argument changes sign, <span class="math notranslate nohighlight">\(f(x) = f (-x)\)</span>, but ‘odd’ functions do change sign <span class="math notranslate nohighlight">\(f (x) = -f(-x)\)</span>; <span class="math notranslate nohighlight">\(x^2\)</span> is an even, <span class="math notranslate nohighlight">\(x^3\)</span> an odd function. A function’s odd or even properties are very useful in evaluating integrals.</p>
 <p>Inverse functions also exist, which means that if a function <span class="math notranslate nohighlight">\(f(x)\)</span> changes <span class="math notranslate nohighlight">\(x\)</span> to something else then the inverse function <span class="math notranslate nohighlight">\(f^{-1}(x)\)</span> changes it back. Suppose that the function <span class="math notranslate nohighlight">\(T_F\)</span> changes temperature in degrees centigrade (<span class="math notranslate nohighlight">\(^{\text{o}}\)</span>C) to Fahrenheit (<span class="math notranslate nohighlight">\(^{\text{o}}\)</span>F), <span class="math notranslate nohighlight">\(T_F(C) = 9C/5 + 32\)</span>; the inverse, <span class="math notranslate nohighlight">\(T_C\)</span>, takes <span class="math notranslate nohighlight">\(^{\text{o}}\)</span>F and converts it into <span class="math notranslate nohighlight">\(^{\text{o}}\)</span>C as <span class="math notranslate nohighlight">\(T_C(F) = 5(F - 32)/9\)</span>. This last function could be written as <span class="math notranslate nohighlight">\(T_F^{-1}\)</span>(F) because it is the inverse function. Finding the inverse function can be quite involved and is described in Section 1.6.</p>
 <p>To summarize, a function transforms its argument into some other mathematical object, which can be of almost every possible type. The principle is the same whether the function produces the reciprocal, or square or an integral or a series and so forth. The function may also be called a transform, an operator, or a mapping of the argument (<span class="math notranslate nohighlight">\(x\)</span>) onto some other object.</p>
-</div>
-<div class="section" id="functions-in-python">
-<h2>1.6 Functions in Python<a class="headerlink" href="#functions-in-python" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="functions-in-python">
+<h2>1.6 Functions in Python<a class="headerlink" href="#functions-in-python" title="Permalink to this headline">#</a></h2>
 <p>In Python and other languages, a function has a particular syntax that is related to that used in mathematics, but with some important differences. A function is first defined using an assignment statement, then, when used it has a pair of brackets added to it. The function <span class="math notranslate nohighlight">\(f(x)= 2x+3x^2\)</span> is defined in Python as</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle f = \text{ lambda x}: 2*x+3*x**2\]</div>
@@ -1600,13 +1904,13 @@
 <p><span class="math notranslate nohighlight">\(\quad \mathtt{return\;\; a}\)</span></p>
 <p>and is used as</p>
 <p><span class="math notranslate nohighlight">\(\mathtt{result= afunc(2,3) }\)</span></p>
-</div>
-<div class="section" id="algorithms">
-<h2>1.7 Algorithms<a class="headerlink" href="#algorithms" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="algorithms">
+<h2>1.7 Algorithms<a class="headerlink" href="#algorithms" title="Permalink to this headline">#</a></h2>
 <p>There is no one definition of an algorithm. We can consider this as a logical, fixed set of rules for solving a problem that may or may not be mathematical. Starting with a known set of initial conditions, an algorithm proceeds to some other known set of conditions that ends the process and does so in a finite number of steps. A game could be considered to follow an algorithm in that it follows a fixed set of rules and starts and ends in a definite way. An algorithm could be the sequence of operations undergone to determine the rotation, reflection, and other symmetry properties of a molecule, or it could simply be the steps producing an algebraic or numerical calculation. This leads to a more restrictive and more common definition of an algorithm as a series of instruction with which to perform a calculation on a computer.</p>
-</div>
-<div class="section" id="numbers">
-<h2>1.8 Numbers<a class="headerlink" href="#numbers" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="numbers">
+<h2>1.8 Numbers<a class="headerlink" href="#numbers" title="Permalink to this headline">#</a></h2>
 <p>So familiar are numbers and counting that we hardly give them much thought and automatically use different types of numbers and ways of counting as the situation dictates. Integer numbers are either prime, when the number is only divisible by itself and 1, or composite and the product of two other integers. Besides the positive and negative integers, there are the rational numbers or fractions, generated from their ratios, <span class="math notranslate nohighlight">\(n/m\)</span>, such as <span class="math notranslate nohighlight">\(1/2,\, 2/3\)</span>, etc. A fraction is called proper when the numerator is less than the denominator, <span class="math notranslate nohighlight">\(2/3\)</span> for instance, and a fraction improper if the numerator is greater.</p>
 <p>It is common to express fractions as decimal expansions such as <span class="math notranslate nohighlight">\(0.500\)</span>, or <span class="math notranslate nohighlight">\(1.36348 \cdots\)</span> etc., which are called real numbers. In some countries, real numbers are expressed with a comma <span class="math notranslate nohighlight">\(0,500\)</span> or <span class="math notranslate nohighlight">\(1,36348\)</span> instead of a decimal point, and the comma is the international system of units (SI) recommended symbol, although it is never used in the English-speaking world.</p>
 <p>In fractions, such as <span class="math notranslate nohighlight">\(98/77\)</span>, there are repeats of the sequence of digits; this fraction has a <span class="math notranslate nohighlight">\(2\)</span> digit repeat and is <span class="math notranslate nohighlight">\(1.272727 \cdots\)</span> while <span class="math notranslate nohighlight">\(98/78 = 1.256410256410 \cdots\)</span> has a 6 digit repeat. The irrational fractions can also be expanded in decimal notation, <span class="math notranslate nohighlight">\(\sqrt{2} \approx 1.4142135 \cdots\)</span> , however, the sequence of digits does not repeat itself.</p>
@@ -1614,15 +1918,15 @@
 <p>Because computers are now so fast in performing calculations, it is almost never necessary to write code at the binary level, which is base two. Binary means calculating at the bit and byte level; the numbers used are <span class="math notranslate nohighlight">\(0\)</span> and <span class="math notranslate nohighlight">\(1\)</span> only. In octal, numbers based on <span class="math notranslate nohighlight">\(0\)</span> to <span class="math notranslate nohighlight">\(7\)</span> only are used and in hexadecimal numbers are on base <span class="math notranslate nohighlight">\(16\)</span>. These are chosen by convention to have the numbers and letters, <span class="math notranslate nohighlight">\(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E, F\)</span>. Thus <span class="math notranslate nohighlight">\(10\)</span> in decimal is <span class="math notranslate nohighlight">\(A\)</span> in hexadecimal, <span class="math notranslate nohighlight">\(15\)</span> in decimal is <span class="math notranslate nohighlight">\(F\)</span> in hex and <span class="math notranslate nohighlight">\(16\)</span> in decimal is <span class="math notranslate nohighlight">\(10\)</span>, pronounced as ‘1 zero’, in hex.</p>
 <p>It is not difficult to do arithmetic in hexadecimal, just awkward because we are so used to decimals and often change to decimal to do the calculation and convert back, this being easier than learning the hexadecimal multiplication table. Hexadecimal arithmetic is used only rarely now as programming a computer is usually done at a high level. Once ‘hex’ was necessary not only to get speed in a calculation on a computer using words <span class="math notranslate nohighlight">\(16\)</span> bits wide, but also to ‘talk’ to an external instrument via pulses generated by repeatedly sending a <span class="math notranslate nohighlight">\(1\)</span> or <span class="math notranslate nohighlight">\(0\)</span> to a certain address that is then mapped onto the pins of an output socket on the computer. The table shows a comparison of different number systems in the order top to bottom, decimal, octal, hexadecimal, and binary. In section 10 describing modulo arithmetic an algorithm for converting from decimal to other bases is described.</p>
 <p><img alt="drawing" src="../_images/chapter1-fig0.png" /></p>
-</div>
-<div class="section" id="integers-real-and-irrational-numbers">
-<h2>2 Integers, real, and irrational numbers<a class="headerlink" href="#integers-real-and-irrational-numbers" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="integers-real-and-irrational-numbers">
+<h2>2 Integers, real, and irrational numbers<a class="headerlink" href="#integers-real-and-irrational-numbers" title="Permalink to this headline">#</a></h2>
 <p>Integers are the numbers that are colloquially called whole numbers, <span class="math notranslate nohighlight">\(-2, 0, 3\)</span>, etc. and they extend from minus infinity to plus infinity; <span class="math notranslate nohighlight">\(-\infty\)</span> to <span class="math notranslate nohighlight">\(+\infty\)</span> and although there is an infinity of them they are what mathematicians call countable. Integers are clearly not the only numbers as we are familiar with the real numbers such as <span class="math notranslate nohighlight">\(1.2,\, 3.56\)</span>, and so on, of which there is also an infinite number, but many, many more than there are integers. If two different real numbers are chosen, an infinite number of others can be squeezed in between them simply by adding more decimal places; this and other interesting discussions on numbers and algorithms are explained clearly in ‘The Emperor’s New Mind’ (R.Penrose publ. 1990 Vintage OUP). Surprisingly, real numbers can usually be reduced to a rational fraction which is a ratio of two integers, e.g. <span class="math notranslate nohighlight">\(0.751 = 326/533\)</span>, but, for some numbers, <span class="math notranslate nohighlight">\(\pi,\, e, \sqrt{2}\)</span> there is no ratio of integers that will accurately form the number and they are called <em>irrational</em>, i.e. not being logical! You may recall that <span class="math notranslate nohighlight">\(\pi \approx 22/7\)</span> , which would seem to contradict this statement, but <span class="math notranslate nohighlight">\(22/7\)</span> is a very poor approximation to <span class="math notranslate nohighlight">\(\pi\)</span>, only accurate to three digits, <span class="math notranslate nohighlight">\(355/113\)</span> is better but only to seven digits.</p>
 <p>When you use a computer to perform calculations, a distinction is made whether a real or integer number is used. This is a common feature of programming languages and also in computer algebra, for example, the integer division <span class="math notranslate nohighlight">\(2//3\)</span> is exact and in Python (notice the //), it remains in the calculation as such. In other languages integer division can result in the answer <span class="math notranslate nohighlight">\(2/3 = 0\)</span> rather than <span class="math notranslate nohighlight">\(0.666^.\)</span> or remaining as an exact ratio so this has to be checked carefully.</p>
 <p>We look next at some of the irrational numbers as their calculation has fascinated mathematicians over the centuries and they allow us to use some interesting geometry and to write some algorithms.</p>
-</div>
-<div class="section" id="pi-pi-and-an-algorithmic-way-of-calculating-its-value">
-<h2>2.1 Pi (<span class="math notranslate nohighlight">\(\pi\)</span> ) and an algorithmic way of calculating its value<a class="headerlink" href="#pi-pi-and-an-algorithmic-way-of-calculating-its-value" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="pi-pi-and-an-algorithmic-way-of-calculating-its-value">
+<h2>2.1 Pi (<span class="math notranslate nohighlight">\(\pi\)</span> ) and an algorithmic way of calculating its value<a class="headerlink" href="#pi-pi-and-an-algorithmic-way-of-calculating-its-value" title="Permalink to this headline">#</a></h2>
 <p>Whole books have been devoted to the number <span class="math notranslate nohighlight">\(\pi \approx 3.1415926\)</span>, such as The Joy of Pi (Blatner 1999), and calculations performed to study the pattern of its digits, which now extend to many thousands of millions of decimal places. As far as is known, the pattern of digits does not repeat itself; if they did it would mean that <span class="math notranslate nohighlight">\(\pi\)</span> could be written as a fraction of two whole numbers and would no longer be an irrational number. <span class="math notranslate nohighlight">\(\pi\)</span> is also a transcendental number, which is one that is not the solution (we say root) of any polynomial equation, and it is not considered to be algebraic; it transcends algebra and this guarantees that it is irrational.</p>
 <p>Approximations to <span class="math notranslate nohighlight">\(\pi\)</span> are <span class="math notranslate nohighlight">\(22/7,\; 355/113, \; 52163/16604\)</span> and many others. The scientist James Jeans used a sentence to remember the first 15 terms; ‘How I want a drink, alcoholic of course, after heavy chapters involving quantum mechanics’ where the length of each word represents a digit.</p>
 <p><span class="math notranslate nohighlight">\(\pi\)</span> appears naturally in many algebraic formulae that have no obvious geometric interpretation. Some estimations involve summing series, others dropping needles across a square grid (Buffon, 1707-1788), and yet others, going back at least to Archimedes, measure either the length of one polygon that is just larger, or one that is just smaller, than a circle. The proof of this method is very elegant and leads us in a direction that is not obvious before coming to its conclusion. We shall follow it through and then write an algorithm with which to calculate <span class="math notranslate nohighlight">\(\pi\)</span>. We consider ourselves to be advanced and modern, but looking at the subtlety in this and other proofs, we soon realize how brilliant were those who initially worked them out.</p>
@@ -1636,17 +1940,17 @@
 <p><img alt="drawing" src="../_images/chapter1-fig2.png" /></p>
 <p>Figure 2. The angle at the centre is twice that at the circumference.</p>
 <hr class="docutils" />
-<p>Using this theorem also means that <span class="math notranslate nohighlight">\(\angle\)</span>ADB is a right angle, since if <span class="math notranslate nohighlight">\(2\theta = 180^\text{o}\)</span> then <span class="math notranslate nohighlight">\(\theta = 90^\text{o}\)</span> and <span class="math notranslate nohighlight">\(\angle\)</span>ACB is therefore also a right angle. You may also notice in Figure 1 that AD is parallel to OC, that <span class="math notranslate nohighlight">\(\angle\)</span>ADO is also <span class="math notranslate nohighlight">\(\theta\)</span> and that OC and DB are at right angles since the arc DC = CB and therefore OC bisects DB.</p>
+<p>Using this theorem also means that <span class="math notranslate nohighlight">\(\angle\)</span> ADB (fig. 1) is a right angle, since if <span class="math notranslate nohighlight">\(2\theta = 180^\text{o}\)</span> then <span class="math notranslate nohighlight">\(\theta = 90^\text{o}\)</span> and <span class="math notranslate nohighlight">\(\angle\)</span>ACB is therefore also a right angle. You may also notice in Figure 1 that AD is parallel to OC, that <span class="math notranslate nohighlight">\(\angle\)</span>ADO is also <span class="math notranslate nohighlight">\(\theta\)</span> and that OC and DB are at right angles since the arc DC = CB and therefore OC bisects DB.</p>
 <p>Now we can start the calculation of <span class="math notranslate nohighlight">\(\pi\)</span>. Remember that we have to find <span class="math notranslate nohighlight">\(a_2\)</span> in terms of <span class="math notranslate nohighlight">\(a_1\)</span>. To find <span class="math notranslate nohighlight">\(a_1\)</span> we have to find the length of one side of a hexagon, BD. But in a hexagon, the total length of the six sides is easily found since each segment, such as ODB is an equilateral triangle, <span class="math notranslate nohighlight">\(2\theta = 60^\text{o}\)</span>, and if the circle has a radius of <span class="math notranslate nohighlight">\(1\)</span>, then OA and OB = <span class="math notranslate nohighlight">\(1\)</span>, since OC, OD and BD <span class="math notranslate nohighlight">\(\equiv a_1\)</span> thus, <span class="math notranslate nohighlight">\(a_1 =1\)</span>.</p>
 <p>The total length of the hexagon, which approximates <span class="math notranslate nohighlight">\(2\pi\)</span> the circumference of the circle, is <span class="math notranslate nohighlight">\(6\)</span> which produces the rather unimpressive value <span class="math notranslate nohighlight">\(\pi = 3\)</span>; this can be vastly improved on. Al-Kashc’s brilliant reasoning is now outlined.</p>
 <p>His method was to find a relationship between <span class="math notranslate nohighlight">\(x_1\)</span> (which is AD) and <span class="math notranslate nohighlight">\(x_2\)</span> (AC), and use this to find <span class="math notranslate nohighlight">\(a_2\)</span> (CB) knowing that <span class="math notranslate nohighlight">\(a_1 = 1\)</span> and to repeat this process for polygons with progressively larger numbers of sides. To find <span class="math notranslate nohighlight">\(a_2\)</span>, two lines CZ and OY, are drawn that are, respectively, perpendicular to AB and AD as shown in Figure 3.</p>
 <p>Next, convince yourself, for example by drawing them out, that the triangles ABC and ACZ are similar because their angles are similar. The angle ACB is <span class="math notranslate nohighlight">\(90^\text{o}\)</span> because an angle at the circumference is half that at the centre; see Figure 2, and AZC is also a right angle. Therefore the ratio of the sides AZ/AC is the same as AC/AB or as an equation AZ/<span class="math notranslate nohighlight">\(x_2 = x_2\)</span>/AB from which</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle  x_2 =\mathrm{AZ \times AB} =2(1+\text{OZ}), \tag{2}\]</div>
+\[\begin{equation}\displaystyle  x_2 =\mathrm{AZ \times AB} =2(1+\text{OZ}) \end{equation}\]</div>
 <p>the length AB being <span class="math notranslate nohighlight">\(2\)</span> because the radius of the circle is <span class="math notranslate nohighlight">\(1\)</span>. Our task now is to find OZ.</p>
 <p>The angles in triangles AOY and OZC are the same, see Figure 1, and the triangles are also the same size as both have the radius as their hypotenuse, AO and OC. Notice also that <span class="math notranslate nohighlight">\(\angle\)</span>AOY = <span class="math notranslate nohighlight">\(90 -\theta\)</span> and therefore bisects the angle <span class="math notranslate nohighlight">\(\angle\)</span>AOD making AY = YD and AY = <span class="math notranslate nohighlight">\(x_1/2\)</span> = OZ. Substituting for OZ produces</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle x_2^2 = 2 + x_1\tag{3}\]</div>
+\[\begin{equation}\displaystyle x_2^2 = 2 + x_1\end{equation}\]</div>
 <p>A relationship between the length <span class="math notranslate nohighlight">\(x_1\)</span> or <span class="math notranslate nohighlight">\(x_2\)</span> and <span class="math notranslate nohighlight">\(a_2\)</span> has to be found. Triangle ADB is right angled and as the hypotenuse is 2 (the diameter), using Pythagoras’s theorem is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle  a_1^2 = 4 - x_1^2\]</div>
@@ -1722,11 +2026,11 @@
 <div class="math notranslate nohighlight">
 \[ e^{i\pi}=-1, \qquad \int_0^\infty \frac{\ln(x)^2}{1+x^2}=\left(\frac{\pi}{2} \right)^2 ,\qquad \frac{\pi^6}{6}=\frac{1}{1^2}+\frac{1}{2^2}+\frac{1}{3^2}\cdots=\sum_{n=1}^\infty\frac{1}{n^2}+\]</div>
 <p>In these and many other formulae producing <span class="math notranslate nohighlight">\(\pi\)</span>, it is difficult to appreciate why <span class="math notranslate nohighlight">\(\pi\)</span> appears; some are far more efficient at calculating than the method described, but do not have the appeal of the geometric approach.</p>
-</div>
-<div class="section" id="square-roots">
-<h2>2.2 Square Roots<a class="headerlink" href="#square-roots" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="square-roots">
+<h2>2.2 Square Roots<a class="headerlink" href="#square-roots" title="Permalink to this headline">#</a></h2>
 <p>The square root is familiar as the solution to an equation such as <span class="math notranslate nohighlight">\(n^2 = 3\)</span>. The square root is also the length of the diagonal of a square or rectangle and therefore has a geometric interpretation. The Pythagoreans discovered that the length of the diagonal of a square of unit side, i.e. length one, is <span class="math notranslate nohighlight">\(\sqrt{2}\)</span>; see Figure 4. Although it is hard to imagine this today, this calculation caused a scandal since this number was not ‘pure’ in the sense that it was not the ratio of two whole numbers. And the scandal still echoes down the centuries. Numbers that are not the ratio of two whole numbers are called irrational or ‘un-ratio-able’, the Latin word ratio coming from the Greek for ‘logo’ which means ratio. We use the word logic to symbolize reason and it is still a pejorative statement to describe someone as being irrational.</p>
-<p>The right-angled triangle does not of itself produce the value of <span class="math notranslate nohighlight">\(\sqrt{2}\)</span> very accurately, since the length of the line would have to be measured; it is more of a geometrical definition. The first calculation of a square root was made by the Babylonians (modern-day Iraqis), about four thousand years ago, and is inscribed in a clay tablet preserved at Yale University. A geometric method was used that could be converted into an algorithm. The result on the tablet was accurate to five decimal places and the calculation shows the Babylonians knew Pythagoras’s theorem about a century before Pythagoras discovered it. This result is remarkable, and it is possible that a formula was used similar to what is now called Heron’s method after the Alexandrian mathematician and engineer who lived about two thousand years ago; his dates vary from $150 \to 250 AD.</p>
+<p>The right-angled triangle does not of itself produce the value of <span class="math notranslate nohighlight">\(\sqrt{2}\)</span> very accurately, since the length of the line would have to be measured; it is more of a geometrical definition. The first calculation of a square root was made by the Babylonians (modern-day Iraqis), about four thousand years ago, and is inscribed in a clay tablet preserved at Yale University. A geometric method was used that could be converted into an algorithm. The result on the tablet was accurate to five decimal places and the calculation shows the Babylonians knew Pythagoras’s theorem about a century before Pythagoras discovered it. This result is remarkable, and it is possible that a formula was used similar to what is now called Heron’s method after the Alexandrian mathematician and engineer who lived about two thousand years ago; his dates vary from <span class="math notranslate nohighlight">\(150 \to 250\)</span> AD.</p>
 <p><img alt="drawing" src="../_images/chapter1-fig4.png" /></p>
 <p>Figure 4 Unit right-angled triangle.</p>
 <hr class="docutils" />
@@ -1786,21 +2090,48 @@ for <span class="math notranslate nohighlight">\(N - a^2\)</span> and rearrangin
 </div>
 </div>
 <p>If you try this algorithm with other values of <span class="math notranslate nohighlight">\(N\)</span>, you will soon realize that from a very wide range of initial values, convergence takes only a few iterations; it is far more efficient than the algorithm calculating <span class="math notranslate nohighlight">\(\pi\)</span>. You will need to increase <span class="math notranslate nohighlight">\(m\)</span> a little to get more iterations with larger <span class="math notranslate nohighlight">\(N\)</span>.</p>
-</div>
-<div class="section" id="golden-ratio">
-<h2>2.3 Golden ratio<a class="headerlink" href="#golden-ratio" title="Permalink to this headline">¶</a></h2>
-<p>The golden ratio <span class="math notranslate nohighlight">\(1.618033 \cdots\)</span> was thought by the ancient Greeks to be the perfect ratio of width to the height of a picture, but to me it appears a little too wide for its height. The golden ratio has been written about extensively and has somewhat of a cult following. In <em>ca</em> 300 BC Euclid divided the line below, figure 5, so that AC is to AB as AB is to BC. This is the ratio of the total length and of the larger section, to the ratio of the larger to small sections. As an equation  <span class="math notranslate nohighlight">\(\displaystyle \phi=\frac{AC}{AB}=\frac{AB}{BC}\)</span> , then</p>
+</section>
+<section id="average-or-mean-values-arithmetic-geometric-and-harmonic">
+<h2>2.3 Average or mean values. Arithmetic, Geometric and Harmonic.<a class="headerlink" href="#average-or-mean-values-arithmetic-geometric-and-harmonic" title="Permalink to this headline">#</a></h2>
+<p><strong>Arithmetic mean.</strong> The common or arithmetic average is the sum of a set of numbers divided by their number,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \mu_A= \frac{(n_1+n_2+n_3 \cdots+n_m)}{m}=\frac{1}{m}\sum_{i=1}^m n_i\]</div>
+<p>This mean is described in more detail in chapter 4.8 (integration), however, this is not the only type of average.</p>
+<p><strong>Geometric mean.</strong> The Geometric mean <span class="math notranslate nohighlight">\(\mu_G\)</span> is defined as</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \mu_G = (n_1\cdot n_2 \cdots n_m)^{1/m}= \left(\prod_{i=1}^m\right)^{1/m}\]</div>
+<p>which is the <span class="math notranslate nohighlight">\(m^{th}\)</span> root of the product of the list of values and these values must all be positive. If there are just two values, e.g. <span class="math notranslate nohighlight">\(3\)</span> and <span class="math notranslate nohighlight">\(6\)</span> then <span class="math notranslate nohighlight">\(\mu_G=\sqrt{18}\)</span> because <span class="math notranslate nohighlight">\(m=2\)</span>. The arithmetical average is the same as the geometric average if the values are the same and greater if not. If there are just two values this is expressed as</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{a+b}{2} \ge \sqrt{a b}\]</div>
+<p>and can be demonstrated geometrically as shown in fig. 4a. The circle has a diameter <span class="math notranslate nohighlight">\(a+b\)</span> and the triangle, ABC has a height OB =<span class="math notranslate nohighlight">\(\sqrt{ab}\)</span> which may be calculated using pythagoras’ theorem for right angles triangles. The radius <span class="math notranslate nohighlight">\((a+b)/2 \ge \sqrt{ab}\)</span>.</p>
+<p><img alt="Drawing" src="../_images/chapter1-fig4a.png" /></p>
+<p>Figure 4a. Showing that the arithmetic average is greater or equal to the geometric average. The diameter of the circle is <span class="math notranslate nohighlight">\(a+b\)</span> and <span class="math notranslate nohighlight">\(\angle ABC\)</span> is a right angle.</p>
+<hr class="docutils" />
+<p>This mean is useful when there are outliers in a data set as it produces a value closer to most number rather than being biased by the outlier. For example if the data is <span class="math notranslate nohighlight">\((2,10,14, 50)\)</span> the arithmetic mean is <span class="math notranslate nohighlight">\(39\)</span> but the geometric mean is <span class="math notranslate nohighlight">\(10.88\)</span> a much more reasonable value.</p>
+<p><strong>Harmonic mean.</strong> You may occasionally come across the Harmonic mean <span class="math notranslate nohighlight">\(\mu_H\)</span> defined as</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{1}{\mu_H}=\frac{1}{m}\left(\frac{1}{n_1}+\frac{1}{n_2}+\cdots +\frac{1}{n_m} \right)\]</div>
+<p>which can be put into the more complicated formula,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \mu_H=m\frac{1}{\sum_{i=1}^m\frac{1}{ a_i} }\]</div>
+<p>This mean is used when the quantity <span class="math notranslate nohighlight">\(n_i\)</span> is a ratio. The typical example is to work out an average speed when a journey is travelled at different speeds. The average speed is the total distance travelled divided by the total time. The total time for each leg is speed divided by distance. If the journey is to somewhere and back again by the same route, the distance is <span class="math notranslate nohighlight">\(2d\)</span>. If the first leg is travelled at <span class="math notranslate nohighlight">\(60\)</span> mph and the return at <span class="math notranslate nohighlight">\(30\)</span> the average is  <span class="math notranslate nohighlight">\(2d/(d/60 + d/30)=40\)</span> mph not <span class="math notranslate nohighlight">\(45\)</span> as a simple average would suggest. Resistors arranged in parallel also have an average value given by the Harmonic mean.</p>
+</section>
+<section id="golden-ratio">
+<h2>2.4 Golden ratio<a class="headerlink" href="#golden-ratio" title="Permalink to this headline">#</a></h2>
+<p>The golden ratio <span class="math notranslate nohighlight">\(1.618033 \cdots\)</span> was thought by the ancient Greeks to be the perfect ratio of width to the height of a picture, but to me it appears a little too wide for its height. The golden ratio has been written about extensively and has somewhat of a cult following. In <em>ca</em> 300 BC Euclid divided the line, figure 5, so that AC is to AB as AB is to BC. This is the ratio of the total length and of the larger section, to the ratio of the larger to small sections. As an equation  <span class="math notranslate nohighlight">\(\displaystyle \phi=\frac{AC}{AB}=\frac{AB}{BC}\)</span> , then</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle  \frac{\phi +1}{\phi} = \phi \tag{7}\]</div>
 <p><img alt="drawing" src="../_images/chapter1-fig5.png" /></p>
 <p>Figure 5. Defining the golden ratio.</p>
 <hr class="docutils" />
-<p>Rearranging produces <span class="math notranslate nohighlight">\(\phi^2-\phi-1=0\)</span> which has the solution <span class="math notranslate nohighlight">\(\displaystyle \phi = \frac{1\pm \sqrt{5}}{2} = \pm 1.6180339\cdots\)</span> and the Golden ratio <span class="math notranslate nohighlight">\(\phi\)</span> is the positive root. Interestingly <span class="math notranslate nohighlight">\(1\phi = 0.6180339\cdots\)</span> and as <span class="math notranslate nohighlight">\(\phi\)</span> is the solution to an algebraic equation it is an algebraic not a transcendental number.</p>
-<p>The golden ratio appears in unusual places, such as in rectangles and pentagons, as well as the coordinates of the edges of an icosahedron. These can be found from the values <span class="math notranslate nohighlight">\((0, \pm 1, \pm \phi)\)</span> and making a circular shift of the values and is formed only of triangles. Boron suboxide, <span class="math notranslate nohighlight">\(\mathrm{B_6O}\)</span> forms particles of icosahedral symmetry.</p>
+<p>Rearranging produces <span class="math notranslate nohighlight">\(\phi^2-\phi-1=0\)</span> which has the solution <span class="math notranslate nohighlight">\(\displaystyle \phi = \frac{1\pm \sqrt{5}}{2} = \pm 1.6180339\cdots\)</span> and the Golden ratio <span class="math notranslate nohighlight">\(\phi\)</span> is the positive root. Interestingly <span class="math notranslate nohighlight">\(1/\phi = 0.6180339\cdots\)</span> and as <span class="math notranslate nohighlight">\(\phi\)</span> is the solution to an algebraic equation it is an algebraic not a transcendental number.</p>
+<p>The golden ratio appears in unusual places, such as in rectangles and pentagons, as well as the coordinates of the edges of an icosahedron. These can be found from the values <span class="math notranslate nohighlight">\((0, \pm 1, \pm \phi)\)</span> and making a circular shift of these values. The icosahedron is formed only of triangles, fig6. Boron suboxide, <span class="math notranslate nohighlight">\(\mathrm{B_6O}\)</span> forms particles of icosahedral symmetry.</p>
 <p>Fullerenes, such as <span class="math notranslate nohighlight">\(\mathrm{C_{60}}\)</span>, and soccer balls, have a truncated icosahedral structure in which the vertices of the icosahedron are cut away to reveal a regular solid with sides of pentagons and hexagons. The truncated icosahedron is one of the Archimedean solids. In both cases the coordinates of the vertices are related by the golden ratio. The C<span class="math notranslate nohighlight">\(_{60}\)</span> is formed of hexagons and pentagons and also has vertices given in terms of the golden ratio.</p>
 <p><img alt="drawing" src="../_images/chapter1-fig6.png" /></p>
 <p>Figure 6. An icosahedron (left) and a truncated icosahedron (right) which is the shape of a football and C<span class="math notranslate nohighlight">\(_{60}\)</span> molecules.</p>
 <hr class="docutils" />
+<section id="golden-section-searching">
+<h3><strong>Golden Section searching</strong><a class="headerlink" href="#golden-section-searching" title="Permalink to this headline">#</a></h3>
 <p>A practical use of the golden ratio is that it provides the most efficient way of dividing a curve when trying to find its minimum numerically. This can be used when trying to find the minimum difference between a set of data <span class="math notranslate nohighlight">\(y_{ expt}\)</span> and its fit to a theoretical expression <span class="math notranslate nohighlight">\(y_{calc}\)</span>. The minimum difference thus produces the best fit of the theoretical model to the experimental data. Suppose that the function <span class="math notranslate nohighlight">\(y_{calc}\)</span> describes the first-order decay of a chemical species with time <span class="math notranslate nohighlight">\(t\)</span>, the theoretical equation is <span class="math notranslate nohighlight">\(\displaystyle y_{calc} = e^{-kt}\)</span> where <span class="math notranslate nohighlight">\(k\)</span> is the rate constant for the reaction we want to determine by fitting to experimental data.</p>
 <p>The parameter whose minimum is sought is the square of the difference between the experimental data points and the theoretical equation calculated at the same <span class="math notranslate nohighlight">\(t\)</span> values but with different values of <span class="math notranslate nohighlight">\(k\)</span>. This is called the <em>residual</em> and is the sum <span class="math notranslate nohighlight">\(\displaystyle R_k = \sum_{i=0}^n (y_{expt_i} - y_{calc_i})^2\)</span> where points are labelled with index <span class="math notranslate nohighlight">\(i\)</span>. The curve whose minimum values is sought is then <span class="math notranslate nohighlight">\(R\)</span> vs <span class="math notranslate nohighlight">\(k\)</span> for a range of <span class="math notranslate nohighlight">\(k\)</span> values; recall that <span class="math notranslate nohighlight">\(y_{calc}\)</span> depends on <span class="math notranslate nohighlight">\(k\)</span>. One tedious way would be to start with some very large or very small value of <span class="math notranslate nohighlight">\(k\)</span>, far away from the true value, and calculate <span class="math notranslate nohighlight">\(R_k\)</span> by changing <span class="math notranslate nohighlight">\(k\)</span> by small amounts and comparing values of <span class="math notranslate nohighlight">\(R\)</span> until a larger value of the residual than its predecessor is found. This method is called an exhaustive search, and this would take a huge number of computations to complete.</p>
 <p><img alt="drawing" src="../_images/chapter1-fig7.png" /></p>
@@ -1870,9 +2201,10 @@ for <span class="math notranslate nohighlight">\(N - a^2\)</span> and rearrangin
 </div>
 </div>
 <p>The table of results shows how the search range is reduced as iteration proceeds. The minimum of the function is known by differentiation, which is how we can check that the calculation is correct, and is at <span class="math notranslate nohighlight">\(x = 10/3 = 3.33 \cdots\)</span> with a value <span class="math notranslate nohighlight">\(-18.519\)</span>; effectively the same as found by the Golden Section iteration.</p>
-</div>
-<div class="section" id="the-exponential-e-and-e-x">
-<h2>3 The exponential <span class="math notranslate nohighlight">\(e\)</span> and <span class="math notranslate nohighlight">\(e^x\)</span><a class="headerlink" href="#the-exponential-e-and-e-x" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="the-exponential-e-and-e-x">
+<h2>3 The exponential <span class="math notranslate nohighlight">\(e\)</span> and <span class="math notranslate nohighlight">\(e^x\)</span><a class="headerlink" href="#the-exponential-e-and-e-x" title="Permalink to this headline">#</a></h2>
 <p>The final number we consider is the exponential <span class="math notranslate nohighlight">\(e = 2.7182818284 \cdots\)</span> familiar from Boltzmann’s equation, the growth of populations of bacteria, or the decay of a compound by its first-order reaction. It also describes the largest rate of increase of compound interest achievable in your savings account or mortgage.</p>
 <p>The number <span class="math notranslate nohighlight">\(e\)</span> is transcendental, just like <span class="math notranslate nohighlight">\(\pi\)</span> or <span class="math notranslate nohighlight">\(\sqrt{2}\)</span>, in that it cannot be expressed as the solution to an algebraic equation; it transcends algebra and its value is obtained by expanding an algebraic series or as a limit of the expression;</p>
 <div class="math notranslate nohighlight">
@@ -1905,7 +2237,7 @@ for <span class="math notranslate nohighlight">\(N - a^2\)</span> and rearrangin
 <p>By multiplying term by term and rearranging, it is found that <span class="math notranslate nohighlight">\(f(x)f(y) = f(x + y)\)</span> , which means that the familiar property, that powers of products of numbers add, has been confirmed because,</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle  e^xe^y= e^{x+y}; \qquad \text{and} \qquad e^xe^ye^z= e^{x+y+z}\tag{9}\]</div>
-<p>You can try calculating the exponential series by hand and easily see how the accuracy improves term by term. A quick examination of the series shows that you can use a previous value to obtain the next; starting at the second term, the third is calculated by multiplying the second by <span class="math notranslate nohighlight">\(x/3\)</span>, the fourth by multiplying the third by <span class="math notranslate nohighlight">\(x/4\)</span>, and so on. This type of process is called <em>recursion</em> and the calculation of <span class="math notranslate nohighlight">\(\pi\)</span> and of square roots described in Sections 1 and 2 are both recursive. The Python code to calculate <span class="math notranslate nohighlight">\(e^x\)</span> recursively is shown below; you can add more terms in the for loop to get a better answer, which is the sum of terms <span class="math notranslate nohighlight">\(s\)</span>.</p>
+<p><strong>Recursive calculation of e.</strong> You can try calculating the exponential series by hand and easily see how the accuracy improves term by term. A quick examination of the series shows that you can use a previous value to obtain the next; starting at the second term, the third is calculated by multiplying the second by <span class="math notranslate nohighlight">\(x/3\)</span>, the fourth by multiplying the third by <span class="math notranslate nohighlight">\(x/4\)</span>, and so on. This type of process is called <em>recursion</em> and the calculation of <span class="math notranslate nohighlight">\(\pi\)</span> and of square roots described in Sections 1 and 2 are both recursive. The Python code to calculate <span class="math notranslate nohighlight">\(e^x\)</span> recursively is shown below; you can add more terms in the for loop to get a better answer, which is the sum of terms <span class="math notranslate nohighlight">\(s\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Algorithm. Series (recursive) calculation of an exponetial exp(x).</span>
@@ -1937,17 +2269,17 @@ for <span class="math notranslate nohighlight">\(N - a^2\)</span> and rearrangin
 </div>
 </div>
 </div>
-<div class="section" id="boltzmann-s-distribution">
-<h3><strong>Boltzmann’s Distribution</strong><a class="headerlink" href="#boltzmann-s-distribution" title="Permalink to this headline">¶</a></h3>
+<section id="boltzmann-s-distribution">
+<h3><strong>Boltzmann’s Distribution</strong><a class="headerlink" href="#boltzmann-s-distribution" title="Permalink to this headline">#</a></h3>
 <p>There are numerous examples of the exponential function in chemistry and physics. One of the most important is Boltzmann’s equation, which relates the population of two energy levels, an upper one <span class="math notranslate nohighlight">\(n_2\)</span> to that of a lower one <span class="math notranslate nohighlight">\(n_1\)</span> and which are separated by energy <span class="math notranslate nohighlight">\(\Delta E\)</span> at absolute temperature <span class="math notranslate nohighlight">\(T\)</span>,</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \frac{n_2}{n_1}=e^{-\Delta E/(k_BT)} \]</div>
 <p>Boltzmann’s constant has the value <span class="math notranslate nohighlight">\(k_B = 1.38065 \times 10^{-23}\, \mathrm{J\, K^{-1}}\)</span>.</p>
-</div>
-<div class="section" id="first-order-or-exponential-decay">
-<h3><strong>First order or exponential decay</strong><a class="headerlink" href="#first-order-or-exponential-decay" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="first-order-or-exponential-decay">
+<h3><strong>First order or exponential decay</strong><a class="headerlink" href="#first-order-or-exponential-decay" title="Permalink to this headline">#</a></h3>
 <p>It is interesting to derive the first order rate expression to see why in theory, although not in practice, the decay continues to infinity. This was probably first derived by von Schweidler in 1905. First order processes occur in the radioactive decay of atoms, the decay of molecular and atomic excited states, such as by fluorescence, and in dissociation and cis/trans isomerisation of molecules.</p>
-<p>The basic assumption is that the probability of reaction <span class="math notranslate nohighlight">\(p\)</span> in a time interval <span class="math notranslate nohighlight">\(\Delta t\)</span> is independent of past history and depends only on the length of the time interval <span class="math notranslate nohighlight">\(\Delta t\)</span>, and when this is sufficiently short the probability is <em>proportional</em> to this interval as <span class="math notranslate nohighlight">\(p=k\Delta t\)</span> where <span class="math notranslate nohighlight">\(k\)</span> is the proportionality constant which depends on the particular atom of molecule. This will become the decay rate constant.</p>
+<p>The basic assumption is that the probability of reaction <span class="math notranslate nohighlight">\(p\)</span> in a time interval <span class="math notranslate nohighlight">\(\Delta t\)</span> is independent of past history and depends only on the length of the time interval <span class="math notranslate nohighlight">\(\Delta t\)</span>, and when this is sufficiently short the probability is <em>proportional</em> to this interval as <span class="math notranslate nohighlight">\(p=k\Delta t\)</span> where <span class="math notranslate nohighlight">\(k\)</span> is the proportionality constant which depends on the particular type of atom or molecule. This will become the decay rate constant.</p>
 <p>The probability of no reaction in the short time interval <span class="math notranslate nohighlight">\(\Delta t\)</span> is <span class="math notranslate nohighlight">\(1-p=1-k\Delta t\)</span>. If it survives this interval the probability of surviving the next interval is also <span class="math notranslate nohighlight">\(1-k\Delta t\)</span> and so by the law of probabilities, the chance of surviving both intervals is the product <span class="math notranslate nohighlight">\((1-k\Delta t)^2\)</span> and so for <span class="math notranslate nohighlight">\(n\)</span> such intervals the probability is <span class="math notranslate nohighlight">\((1-k\Delta t)^n\)</span>. The total time is the sum of all time intervals, <span class="math notranslate nohighlight">\(t=n\Delta t\)</span> and by substituting gives <span class="math notranslate nohighlight">\((1-kt/n)^n\)</span>.</p>
 <p>The chance that the molecule or atom will remain unchanged at time <span class="math notranslate nohighlight">\(t\)</span> is just that value when <span class="math notranslate nohighlight">\(\Delta t\)</span> tends to zero, i.e. is made infinitesimally small and then we can recognize that</p>
 <div class="math notranslate nohighlight">
@@ -1957,16 +2289,16 @@ for <span class="math notranslate nohighlight">\(N - a^2\)</span> and rearrangin
 \[\displaystyle \frac{N}{N_0}=e^{-kt}\]</div>
 <p>which is the familiar first order decay expression.</p>
 <p>Even for a single molecule the probability of remaining unreacted can extend to infinity. In practice this is only a matter of sensitivity in an experiment. In time-resolved, single-photon counting, used to measure the decay by fluorescence of an excited state, the decay is routinely measured down to 5 orders of magnitude, transient absorption decay, remarkably, has been followed to at least 9 orders of magnitude decrease in intensity and 13 orders in time. But eventually either, no matter how many times the experiment is repeated or, how many molecules we start with the noise inherent in the experiment will dominate and we can go no further. Thus if the decay has a rate constant of 1/nanosecond the chance of waiting even as short a time as a microsecond without it decaying first is tiny, <span class="math notranslate nohighlight">\(p=e^{-10^{-6}\cdot 10^9}\approx 10^{-435}\)</span>! This is of course why we say that first order reactions come to a halt after a certain time, the chance of observing becomes so small any signal is lost in noise and, even if we started with a mole’s worth of molecules, the probability of remaining unreacted is <span class="math notranslate nohighlight">\(\approx 10^{-435+23}\)</span> which is still utterly minute.</p>
-</div>
-</div>
-<div class="section" id="logarithms">
-<h2>4 Logarithms<a class="headerlink" href="#logarithms" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="logarithms">
+<h2>4 Logarithms<a class="headerlink" href="#logarithms" title="Permalink to this headline">#</a></h2>
 <p>The ‘inverse’ of the exponential is the logarithm, because if <span class="math notranslate nohighlight">\(y = e^x\)</span> then a function, the logarithm, can be defined as <span class="math notranslate nohighlight">\(\ln(e^x) = x\)</span>, and therefore <span class="math notranslate nohighlight">\(\ln(y) = x\)</span>. More generally put, the logarithm of <span class="math notranslate nohighlight">\(x\)</span> is the power by which a base number <span class="math notranslate nohighlight">\(b\)</span> must be raised to give <span class="math notranslate nohighlight">\(x\)</span>. Normally we use base 10 or base <span class="math notranslate nohighlight">\(e\)</span> and the use the symbols <span class="math notranslate nohighlight">\(\log(x)\)</span> or <span class="math notranslate nohighlight">\(\log_{10}(x)\)</span> for base 10 and <span class="math notranslate nohighlight">\(\ln(x)\)</span> for base <span class="math notranslate nohighlight">\(e\)</span> which are also called the natural logs.  Note, however, that this convention is not always followed in computer languages.</p>
 <p>As an equation logs are defined as</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle  x = b^{\log_b(x)}\]</div>
 <p>The value of <span class="math notranslate nohighlight">\(x\)</span> must be greater than zero for the log to be a real number. If <span class="math notranslate nohighlight">\(x\lt 0\)</span>,then a complex number is obtained, see Chapter 2.</p>
-<p>A series of increasing powers of <span class="math notranslate nohighlight">\(2\)</span>, familiar in computing where <span class="math notranslate nohighlight">\(2\)</span> kilobytes <span class="math notranslate nohighlight">\(\equiv 2048\)</span> bytes, is shown on the top row of the table; the bottom row is the power with which to raise <span class="math notranslate nohighlight">\(2\)</span> to obtain the number, e.g. <span class="math notranslate nohighlight">\(2^3 = 8\)</span>.</p>
+<p>A series of increasing powers of <span class="math notranslate nohighlight">\(2\)</span>, familiar in computing where <span class="math notranslate nohighlight">\(2\)</span> kilobytes <span class="math notranslate nohighlight">\(\equiv 2048\)</span> bytes, is shown on the bottom row of the table; the top row is the power with which to raise <span class="math notranslate nohighlight">\(2\)</span> to obtain the number, e.g. <span class="math notranslate nohighlight">\(2^3 = 8\)</span>.</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle \begin{array}{c|cc}
 \hline
@@ -1990,7 +2322,7 @@ n &amp; -2 &amp; -1 &amp; 0 &amp; 1 &amp; 2&amp; 3&amp; 4&amp; 5&amp; 6&amp; 7&a
 \[\displaystyle \log(a) - \log(b) = \log\left( \frac{a}{b}\right)  \tag{11}\]</div>
 <p>and these relationships are true no matter what the base is.</p>
 <p>Note that this rule does not apply to <span class="math notranslate nohighlight">\(\displaystyle \frac{\log(a)}{\log(b)}\)</span>  , which cannot be simplified.</p>
-<p>When Napier invented logarithms in c.1614, he used bones inscribed with numbers. The old-fashioned slide rule uses the principle of addition and subtraction to do multiplication and division with lines marked on rulers that slide past one another. The slide rule is quite easy to use with practice, and not that much slower, but less accurate, than a hand calculator but no one ever uses one today.</p>
+<p>When Napier invented logarithms in ca.1614, he used bones inscribed with numbers. The old-fashioned slide rule uses the principle of addition and subtraction to do multiplication and division with lines marked on rulers that slide past one another. The slide rule is quite easy to use with practice, and not that much slower, but less accurate, than a hand calculator but no one ever uses one today.</p>
 <p>The ‘third law’ of logs is:</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \log(x^n) = n \log(x)\tag{12}\]</div>
@@ -2009,8 +2341,8 @@ n &amp; -2 &amp; -1 &amp; 0 &amp; 1 &amp; 2&amp; 3&amp; 4\\
 e^n &amp; e^{-2}=0.135 &amp; 0.368 &amp; e^0=1 &amp; e^1=2.718 &amp; 7.389 &amp; 20.086 &amp; 54.598\\
 \hline
 \end{array}\end{split}\]</div>
-<div class="section" id="first-order-reaction">
-<h3><strong>First order reaction</strong><a class="headerlink" href="#first-order-reaction" title="Permalink to this headline">¶</a></h3>
+<section id="first-order-reaction">
+<h3><strong>First order reaction</strong><a class="headerlink" href="#first-order-reaction" title="Permalink to this headline">#</a></h3>
 <p>The change in population of a chemical species <span class="math notranslate nohighlight">\(c(t)\)</span> decaying by a first-order process follows an exponential law,</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle c(t) = c_0e^{-kt}\]</div>
@@ -2018,9 +2350,9 @@ e^n &amp; e^{-2}=0.135 &amp; 0.368 &amp; e^0=1 &amp; e^1=2.718 &amp; 7.389 &amp;
 <div class="math notranslate nohighlight">
 \[\displaystyle \ln\left(\frac{c(t)}{c_0}\right) = -kt\]</div>
 <p>because a plot of the <span class="math notranslate nohighlight">\(\ln\)</span> vs time  <span class="math notranslate nohighlight">\(t\)</span> is a straight line of slope <span class="math notranslate nohighlight">\(-k\)</span>. Dividing the concentration <span class="math notranslate nohighlight">\(c(t)\)</span> by that initially present <span class="math notranslate nohighlight">\(c_0\)</span> makes the log dimensionless.</p>
-</div>
-<div class="section" id="entropy-from-a-volume-change-in-a-gas">
-<h3><strong>Entropy from a volume change in a gas</strong><a class="headerlink" href="#entropy-from-a-volume-change-in-a-gas" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="entropy-from-a-volume-change-in-a-gas">
+<h3><strong>Entropy from a volume change in a gas</strong><a class="headerlink" href="#entropy-from-a-volume-change-in-a-gas" title="Permalink to this headline">#</a></h3>
 <p>When a gas expands at constant temperature (isothermally) there will be a change in entropy and a quantity of work done. If the change is carried out reversibly while the pressure changes this produces the maximum amount of work. Reversibility means that the pressure is continuously adjusted so slightly that equilibrium is maintained. The equation for the change in entropy when <span class="math notranslate nohighlight">\(n\)</span> moles of an ideal gas goes from volume <span class="math notranslate nohighlight">\(V_1\to V_2\)</span> is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \Delta S =nR\ln\left(\frac{V_2}{V_1} \right)\]</div>
@@ -2029,10 +2361,9 @@ e^n &amp; e^{-2}=0.135 &amp; 0.368 &amp; e^0=1 &amp; e^1=2.718 &amp; 7.389 &amp;
 <div class="math notranslate nohighlight">
 \[\displaystyle w =-nRT\ln\left(\frac{V_2}{V_1} \right)\]</div>
 <p>The derivation of these equations need a knowledge of calculus and can be found in any phys. chem. or specialist textbook.</p>
-</div>
-</div>
-<div class="section" id="summary-of-logs-and-powers-definition-x-b-log-b-x">
-<h2>4.2 Summary of logs and powers: definition <span class="math notranslate nohighlight">\(x=b^{\log_b(x)}\)</span><a class="headerlink" href="#summary-of-logs-and-powers-definition-x-b-log-b-x" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="summary-of-logs-and-powers-definition-x-b-log-b-x">
+<h3>4.2 Summary of logs and powers: definition <span class="math notranslate nohighlight">\(x=b^{\log_b(x)}\)</span><a class="headerlink" href="#summary-of-logs-and-powers-definition-x-b-log-b-x" title="Permalink to this headline">#</a></h3>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle \begin{array}{lll}\\
 \hline
@@ -2043,14 +2374,15 @@ a^{n-m}=a^na^{-m}=\displaystyle \frac{a^n}{a^m} &amp; \displaystyle \log(a)-\log
 \text{ change base } &amp;\log_a(x)=\log_a(b)\log_b(x)\\[10pt]
 \hline
 \end{array}\end{split}\]</div>
-</div>
-<div class="section" id="comparison-of-log-and-exponential">
-<h2>4.3 Comparison of log and exponential<a class="headerlink" href="#comparison-of-log-and-exponential" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="comparison-of-log-and-exponential">
+<h2>4.3 Comparison of log and exponential<a class="headerlink" href="#comparison-of-log-and-exponential" title="Permalink to this headline">#</a></h2>
 <p>The graph in Figure 8 shows the exponential and log functions; <span class="math notranslate nohighlight">\(e^x,\; e^{-x}\)</span>, and <span class="math notranslate nohighlight">\(\ln(x)\)</span>. Notice how the exponential and log are symmetrical about the line <span class="math notranslate nohighlight">\(y = x\)</span>. The curve that would be symmetrical about <span class="math notranslate nohighlight">\(y=-x\)</span> and <span class="math notranslate nohighlight">\(e^{-x}\)</span> is <span class="math notranslate nohighlight">\(\ln(|x|)\)</span> where <span class="math notranslate nohighlight">\(|x|\)</span> means taking the absolute value, which if <span class="math notranslate nohighlight">\(x\)</span> is real means changing <span class="math notranslate nohighlight">\(-x\)</span> into <span class="math notranslate nohighlight">\(x\)</span>.</p>
 <p>The log is normally defined only over the range of positive <span class="math notranslate nohighlight">\(x\)</span> values <span class="math notranslate nohighlight">\(0 \lt x \lt \infty,\; \ln(1) = 0\)</span> and <span class="math notranslate nohighlight">\(\ln(0) = -\infty\)</span>. The log with negative <span class="math notranslate nohighlight">\(x\)</span> values is a complex number; see Chapter 2.8. The exponential is defined over all values of <span class="math notranslate nohighlight">\(x\)</span> and has the values <span class="math notranslate nohighlight">\(e^0 = 1,\; e^{-\infty} = 0\)</span> and <span class="math notranslate nohighlight">\(e^\infty = \infty\)</span>.</p>
-</div>
-<div class="section" id="log-as-a-series">
-<h2>4.4 Log as a series<a class="headerlink" href="#log-as-a-series" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="log-as-a-series">
+<h2>4.4 Log as a series<a class="headerlink" href="#log-as-a-series" title="Permalink to this headline">#</a></h2>
 <p>Just as with the exponential, the log can be written as a series expansion, but only if <span class="math notranslate nohighlight">\(|x|\lt 1\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle \begin{align}\ln(1+x)&amp;=x-\frac{x^2}{2}+\frac{x^3}{3}-\frac{x^4}{4}+\cdots =\sum_{n=1}^\infty (-1)^{n+1}\frac{x^n}{n}  ,\\
@@ -2058,18 +2390,18 @@ a^{n-m}=a^na^{-m}=\displaystyle \frac{a^n}{a^m} &amp; \displaystyle \log(a)-\log
 <p>and where the <span class="math notranslate nohighlight">\((-1)^{n+1}\)</span>  makes the even-valued terms in <span class="math notranslate nohighlight">\(n\)</span> negative. If we want to calculate <span class="math notranslate nohighlight">\(\ln(q)\)</span>, we can make <span class="math notranslate nohighlight">\(q = 1 + x\)</span> and substitute <span class="math notranslate nohighlight">\(x = q - 1\)</span> into the series. This and other series are described in Chapter 5.</p>
 <p><img alt="drawing" src="../_images/chapter1-fig8.png" /></p>
 <p>Figure 8 Graph of exponential and log functions with the straight line <span class="math notranslate nohighlight">\(y = x\)</span>. The symmetry between <span class="math notranslate nohighlight">\(e^x\)</span> and <span class="math notranslate nohighlight">\(\ln(x)\)</span> is clear.</p>
-</div>
-<div class="section" id="arguments-to-functions-such-as-exponential-sine-etc-do-not-have-units">
-<h2>4.5 Arguments to functions such as exponential, sine etc.  do not have units<a class="headerlink" href="#arguments-to-functions-such-as-exponential-sine-etc-do-not-have-units" title="Permalink to this headline">¶</a></h2>
-<p>In all functions, exponential, logs, cosine, sine, and so on the argument <span class="math notranslate nohighlight">\(p,\,L\)</span> in <span class="math notranslate nohighlight">\(\ln(p),\sin(L)\)</span> must always be dimensionless. This leads to confusion particularly with equilibrium constants and pressures. For example in an equilibrium in the gas phase such as between species <span class="math notranslate nohighlight">\(A_2\)</span> and <span class="math notranslate nohighlight">\(A\)</span></p>
+</section>
+<section id="arguments-to-functions-such-as-exponential-sine-etc-do-not-have-units">
+<h2>4.5 Arguments to functions such as exponential, sine etc.  do not have units<a class="headerlink" href="#arguments-to-functions-such-as-exponential-sine-etc-do-not-have-units" title="Permalink to this headline">#</a></h2>
+<p>In all functions, exponential, logs, cosine, sine, and so on the argument <span class="math notranslate nohighlight">\(p\)</span> in <span class="math notranslate nohighlight">\(\ln(p)\)</span>, <span class="math notranslate nohighlight">\(L\)</span> in <span class="math notranslate nohighlight">\(\sin(L)\)</span> etc. must always be dimensionless. This leads to confusion particularly with equilibrium constants and pressures. For example in an equilibrium in the gas phase such as between species <span class="math notranslate nohighlight">\(A_2\)</span> and <span class="math notranslate nohighlight">\(A\)</span></p>
 <div class="math notranslate nohighlight">
 \[\displaystyle A_2\rightleftharpoons 2A\]</div>
 <p>the equilibrium constant in terms of partial pressures is <span class="math notranslate nohighlight">\(K_P=P_A^2/P_{A_2}\)</span>  which clearly has dimensions and when used to calculate the free energy</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \Delta G^\text{o}=-RT\ln(K_P)\]</div>
-<p>causes problems: the log cannot have units.  The way round this is to divide <span class="math notranslate nohighlight">\(K_p\)</span> by <span class="math notranslate nohighlight">\(1\)</span> unit for example <span class="math notranslate nohighlight">\(1\)</span> atm. or <span class="math notranslate nohighlight">\(1\)</span> bar whatever units are being used.  However, care is needed because if your pressures are in Torr (<span class="math notranslate nohighlight">\(750\)</span> torr =<span class="math notranslate nohighlight">\(1\)</span> bar) then the conversion will be needed. As an example if the pressure is in torr and <span class="math notranslate nohighlight">\(K_P=2\)</span> then <span class="math notranslate nohighlight">\(\Delta G=-RT\ln(2)\)</span> but as we work in SI units with <span class="math notranslate nohighlight">\(RT\)</span> then so must be the pressure producing <span class="math notranslate nohighlight">\(\displaystyle -RT\ln\left(\frac{2}{750}\frac{\text{bar}}{1\, \text{bar}}\right)\)</span>.</p>
-</div>
-</div>
+<p>causes problems: the log cannot have units.  The way round this is to divide <span class="math notranslate nohighlight">\(K_p\)</span> by <span class="math notranslate nohighlight">\(1\)</span> unit for example <span class="math notranslate nohighlight">\(1\)</span> atm. or <span class="math notranslate nohighlight">\(1\)</span> bar, or whatever units are being used.  However, care is needed because if your pressures are in Torr (<span class="math notranslate nohighlight">\(750\)</span> torr =<span class="math notranslate nohighlight">\(1\)</span> bar) then the conversion will be needed. As an example if the pressure is in torr and <span class="math notranslate nohighlight">\(K_P=2\)</span> then <span class="math notranslate nohighlight">\(\Delta G=-RT\ln(2)\)</span> but as we work in SI units with <span class="math notranslate nohighlight">\(RT\)</span> then so must be the pressure producing <span class="math notranslate nohighlight">\(\displaystyle -RT\ln\left(\frac{2}{750}\frac{\text{bar}}{1\, \text{bar}}\right)\)</span>.</p>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -2093,9 +2425,11 @@ a^{n-m}=a^na^{-m}=\displaystyle \frac{a^n}{a^m} &amp; \displaystyle \log(a)-\log
 
               </div>
               
-        
-            <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="chapter1-intro.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -2111,26 +2445,28 @@ a^{n-m}=a^na^{-m}=\displaystyle \frac{a^n}{a^m} &amp; \displaystyle \log(a)-\log
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-        
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-    <div class="container">
-      <p>
-        
-          By Godfrey Beddard<br/>
-        
-            &copy; Copyright 2022.<br/>
-      </p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Godfrey Beddard<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
     </div>
-  </footer>
-</main>
+    
+</div>
 
 
       </div>
     </div>
   
-  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>

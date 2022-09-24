@@ -1,14 +1,14 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## Questions 11 - 17
+# # Questions 11 - 17
 
-# ### Q11 Heat Capacity
+# ## Q11 Heat Capacity
 # (a) Calculate the heat capacity as in Figure 14. If you choose a bigger lattice, remember that the time for each calculation increases directly with the total number of sites not the size of the lattice side.
 # 
 # (b) Find the change in magnetization per step, and calculate the magnetization by modifying the code. Reproduce the graph. When making the total magnetization, add the absolute value of the change. Do this, because at low temperatures the whole spin state can invert back and forth several times during a calculation and a very small average magnetization can sometimes be calculated even though most of the time it is almost $+1$ or $-1$.
 # 
-# ### Q12 2D spin lattice
+# ## Q12 2D spin lattice
 # The two-dimensional lattice can be represented as an array of spins labelled from $0 \to n$, rather than as a two-dimensional array as in the example. If helical boundary conditions are applied, see Figure 20, then a saving in computer time can be achieved. Rewrite the algorithm to use a linear array to hold the spin state, and use helical boundary conditions.
 # 
 # ![Drawing](monte-carlo-fig17.png)
@@ -16,20 +16,20 @@
 # Figure 17. Showing how helical boundary conditions are applied.
 # _______
 # 
-# ### Q13 Random walk & Diffusion
+# ## Q13 Random walk & Diffusion
 # Modify the random walk diffusion example to produce a graph similar to that shown in the left panel
 # of Figure 10, but only for one walk at a time of length $50$, starting at position $0$.
 # 
 # **Strategy:** This is a simpler calculation than in the example; the value of $m$ the present position of the walker at a point in the calculation is stored in a new array and then this is plotted. The array xdata and the repeat loop, 'for L '  are not needed. The graph scale should be adjusted to see the data properly.
 # 
-# ### Q14 Photon counting
+# ## Q14 Photon counting
 # In a time-resolved, single-photon counting experiment (TRSPC), the time between excitation and the first photon to be detected, is measured by a time-to-amplitude converter (TAC). This works by charging a capacitor linearly in time; the charging is started before the excitation photon reaches the sample and stops when a fluorescence photon is detected by a photomultiplier or similar detector capable of detecting single photons. Besides the fixed dead time of the electronic circuitry, the time lag measured is the time a molecule remains in the excited state.
 # 
 # Simulate the arrival time of,say, $500$ photons, each one from a different excitation of the sample and plot a graph of the number of events on the x-axis and their arrival times on the y-axis. Assume that the molecule has a 10 ns lifetime. A plot similar to that of Figure 11 should result.
 # 
 # **Strategy:** This question is somewhat 'dressed up' but is quite straightforward. Repeatedly use the equation $t = -\tau \ln(r)$ , equation 13, to estimate times, and plot $t$ vs the number of the event. The number of molecules is 1 in each case because only one photon is detected each time, and the number of events is $500$. It is easier to work in units of nanoseconds, so make the lifetime 10. Remember to label the graph as time/ns.
 # 
-# ### Q15 Electron transfer in DNA
+# ## Q15 Electron transfer in DNA
 # A dye molecule D is intercalated into DNA and, when electronically excited, undergoes electron transfer, which competes with fluorescence and decreases the state's lifetime. Typically, D might be methylene blue whose excited state is oxidized by receiving an electron although only from a guanine base (G) and not from bases A, T, or C because their redox potential will not allow this to occur at a rate that will compete with fluorescence. The position that the dye intercalates is random, as is the DNA sequence; for example, one of possibly $4^{10}$ arrangements with $10$ base pairs could be
 # 
 # $$\displaystyle \begin{array}{llllll}
@@ -57,7 +57,7 @@
 # $k = k_0e^{-3\times 0.34\beta}$. However, a little reflection will tell you that there are many different positions for G relative to the dye, and a variable number of G's may also be present. If there are $10$ base pairs, then there are $4^{10} = 1048576$ possible ways of arranging the bases, which is a huge number of equations to solve. Instead, the decay rate constant can be estimated by the Monte Carlo method, by placing the G bases at random positions about the dye and repeating the calculation a few thousand times until the result is effectively constant. The decay of the dye is expected to be non-exponential, as previously shown in the problem of donors and acceptors at random, in solution.
 # 
 # 
-# ### Q16 SIR model of disease
+# ## Q16 SIR model of disease
 # One simple model of disease spreading is the S-I-R model, meaning individuals are Susceptible, Infected, or Removed. The scheme is
 # 
 # $$\displaystyle  \mathrm{S + I} \overset{k_2} \longrightarrow 2I \qquad  \mathrm{I}\overset{k_1}\longrightarrow \mathrm{ R}$$
@@ -93,7 +93,7 @@
 # 
 # (5) End the repeat loop.
 # 
-# ### Q17 Autocatalytic reaction
+# ## Q17 Autocatalytic reaction
 # Modify the algorithm in the autocatalytic reaction example (or fire spreading) to include the four nearest diagonal points as well as those along the same row and column. The relative rate should be $50$%, at a fraction $0.5694$ if a large grid is chosen. Allow trees to burn out during each cycle, so becoming gaps, and calculate the number burning as a fraction. Then do similar calculations on a triangular or hexagonal lattice, which is harder.
 
 # In[ ]:

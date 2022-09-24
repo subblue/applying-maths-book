@@ -1,9 +1,9 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## Solutions Q35 - 39
+# # Solutions Q35 - 39
 
-# ### Q35 answer
+# ## Q35 answer
 # The units are omitted unless necessary 
 # 
 # $5.6789 \cdot 10^{-7} \pm 4 \cdot 10^{-9} =(5.6789\pm 0.04)\cdot 10^{-7} \to (5.68 \pm 0.04) \cdot 10^{-7}$
@@ -19,11 +19,11 @@
 # 101352 \pm  133.322 &\to  101400 \pm  100 \text{ or } (0.1013_5 \pm  0.0001) \cdot  10^6\end{array}$
 # 
 # 
-# ### Q36 answer
+# ## Q36 answer
 # 
 # $ 30 + 2.167 = 32;\;  3.0004/12.2 = 0.246;\; \log(1.001) = 0.0004$
 # 
-# ### Q37 answer  
+# ## Q37 answer  
 # 
 # Voltage has units of $\mathrm{J \;C^{-1}}$ and a coulomb $ \mathrm{C = A\; s}$, therefore $\mathrm{V = kg\; m^2\, s^{-2}\, A^{-1}\, s^{-1} = kg\; m^2\, s^{-3}\, A^{-1}}$. 
 # 
@@ -31,14 +31,14 @@
 # 
 # Capacitance (farad), $\mathrm{ F = C\; V^{-1} = A\; s\; kg^{-1}\, m^{-2} \,s^3 \,A^1 = A^2\, s^4\, kg^{-1}\, m^{-2}}$.
 # 
-# ### Q38 answer
+# ## Q38 answer
 # (a) Each time the paper is folded the width doubles, so it is $0.2$ mm after the first fold, $0.4$ after the second, $0.8$ after the third, and so on. The series formed is $0.1 \times 2^{n-1}$ mm for $n$ folds. How far away is the moon? Typically $240000$ miles, which is $\approx 4 \cdot 10^{11}$ mm. Next try some values for $n$. When $n = 43$ a thickness greater than the distance to the moon is found. It does not seem impossible to be able to fold the same piece of paper $43$ times; try it. 
 # 
 # A piece of A4 paper can only be folded double $6$ or $7$ times,depending upon how determined you are, $8$ times is probably impossible. The area of the paper is reduced as $1/2^{n-1}$ so it has to be very big to start with.
 # 
 # (b) The thickness of graphene is approximately that of the extent of the carbon's non-bonded p orbitals, which is about the length of a C-C bond or $0.16$ nm. The thickness of $43$ folds is therefore $\approx 700$ m.
 # 
-# ### Q39 answer
+# ## Q39 answer
 # (a, b) We need to know the heat of evaporation/ condensation of water and the heat of combustion of petrol (as octane) both of which can be looked up. The heat of evaporation of water is $+45.1$ kJ/mol thus the number of moles of water has to be found. This is done via the volume of water and its molar volume. The volume of water is $ 1\cdot 10^6 \times 2.54/10^2 \approx 2.54\cdot 10^4\text{ m}^3$ which contains
 # 
 # $$ M = 2.5 \cdot 10^4\;\mathrm{ (m^3)} \times 1000 \;\mathrm{(kg m^{-3})}\,/\,0.018\, \text{ (kg/ mol) } =1.4\cdot 10^9\text{ moles}$$  

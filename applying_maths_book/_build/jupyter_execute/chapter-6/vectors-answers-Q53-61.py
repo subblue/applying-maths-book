@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## Solutions Q53 - 61
+# # Solutions Q53 - 61
 
 # In[1]:
 
@@ -15,13 +15,13 @@ init_printing()                      # allows printing of SymPy results in types
 plt.rcParams.update({'font.size': 16})  # set font size for plots
 
 
-# ### Q53 answer
+# ## Q53 answer
 # Normalizing $\vec n=\vec b\times\vec c=|\vec b||\vec c|\sin(\alpha)\vec u_n$ gives
 # $\vec n\cdot\vec n = |\vec b |^2|\vec c |^2\sin^2(\alpha)\vec u_n\cdot\vec u_n$. 
 # 
 # The dot product of two equal unit vectors is $\vec u_n\cdot\vec u_n =1$, therefore equation $\vec u_n\cdot\vec u_n=|\vec b|^2|\vec c|^2\sin^2(\alpha)$ and the unit vectors are not present. A similar equation applies for $m$.
 # 
-# ### Q54 answer
+# ## Q54 answer
 # (a) To define the plane $C_1-C_2-C_6$ the vectors can be chosen to be $\vec d_1$ and $\vec d_2$, and for the other plane $\vec d_2$ and $\vec d_5$, see figure 46. The fact that $\vec d_5$ does not join the end of $\vec d_2$ does not matter because it is still in the $C_1-C_2-C_6$ plane and points in the correct direction. Any other vector in this plane would do. Calculating the vectors as coordinates means defining an origin and basis set.
 # 
 # The coordinates of only three atoms need to be found in this particular molecule because, by symmetry, the others follow. Starting with atom $C_2$, this is positioned at $x = -d/2$, because the length of any side is $d$ and it is positioned midway along $C_2-C_6$ in the positive y direction. The $z$ coordinate is zero because the atom is in the $x-y$ plane, as are $C_3, C_5$ and $C_6$. The length $C_2-C_6$ is, by using the cosine rule on triangle $C_2-C_1-C_6$, $\sqrt{2d^2-2d^2\cos(\theta)}=d\sqrt{8/3}$ because $\cos(\theta)=-1/3$. The atom $C_2$ therefore, has half this length as its $y$ coordinates and $C_2 = (-d/2,d\sqrt{2/3},0)$ and by symmetry
@@ -127,7 +127,7 @@ print('{:s}{:8.2f}'.format('dihedral angle = ',  psi*180/np.pi ))
 # 
 # In this last calculation, if the $C_4$ atom from the chair form was used the calculated dihedral angle would have been $180^\text{o}$ because the two planes involved are parallel.
 # 
-# ### Q55 answer
+# ## Q55 answer
 # The bond N11-C12 lies between the two planes whose torsion (dihedral) angle $\psi$ is to be calculated. Vectors $\vec m$ and $\vec n$ are therefore
 # 
 # $$\displaystyle \vec m = \overrightarrow{(C11-C8)} \times \overrightarrow{(C12-N11)},\quad \vec n = \overrightarrow{(C12-N11)} \times \overrightarrow{(C13-C12)}$$
@@ -163,7 +163,7 @@ print('{:s}{:8.2f}'.format(' torsion angle =', phi) )
 
 # Consulting a Ramachandran plot, such as figure 38, suggests that this small part of the structure belongs to an $\alpha$ -helix.
 # 
-# ### Q56 answer
+# ## Q56 answer
 # The Python code to read the pdb is shown below. The order of atoms is always N-CA-C-O followed by the atoms in the residue. These atoms have indices 0,1,2,3 in the lists resA, resB, resC below. The next residue has the same pattern and so on. Three sequential residues are identified and read in in one pass of the data. Residue 35 is needed for part (b). The results are stored and then the torsion angle calculated. There are two chains in this protein so it is necessary to identify which one is to be used.  The residue number to is are given in the question. 
 
 # In[8]:
@@ -211,7 +211,7 @@ print('{:s}{:6.3f}'.format('torsion angle = ',torsion_angle(resA[0],resA[1],resA
 print('{:s}{:6.3f}'.format('torsion angle = ',torsion_angle(resC[2],resA[0],resA[1],resA[2]) ) )
 
 
-# ### Q57 answer
+# ## Q57 answer
 # The torsion angle $v_2$ should be C$_3'$ endo for A-type DNA, and therefore have an angle from $0 \to 90^\text{o}$. We can use the torsion_angle(...) code above
 
 # In[10]:
@@ -252,7 +252,7 @@ print('{:s}{:6.3f}'.format('to C5 d = ',d ) )
 
 # Because the distance to C$_5'$ has the same sign as that to C$_3'$, these atoms must be on the same side of the sugar ring, making C$_3'$ _endo_ and C$_2'$ _exo_ because it has the opposite sign. The configuration has therefore been determined independently, without having to know what the range of torsion angles is supposed to be for a particular configuration.
 # 
-# ### Q58 answer
+# ## Q58 answer
 # (a) The base shown is guanine which is a purine base. (b) Using the torsion_angle(...) code developed earlier, the calculation becomes very easy. All that is necessary is to put the coordinates into vector form.
 
 # In[13]:
@@ -276,7 +276,7 @@ print('{:s}{:6.3f}'.format('chi    = ',torsion_angle(O4,C1,N9,C4B)) )
 # 
 # **Exercise:** Write a procedure to do a calculation to determine the DNA type given only the coordinate vectors. Calculate the $\gamma, chi$ and $v_2$ angles and the absolute configuration, by calculating the distance of the C$_2'$ and C$_3'$ atoms above the $\mathrm{C_4'-O_4'-C_1'}$ plane. Print out a statement of the DNA type as well as C$_3'$ exo, or endo etc and the angles and distances. Test your algorithm on the PDB entry 1AAY and on other DNA structures in the database.
 # 
-# ### Q59 answer
+# ## Q59 answer
 # Using the definitions given in the question, the result is 
 # 
 # $$\displaystyle \frac{d\vec L}{dt}=m\vec r\times \frac{d^2\vec r}{dt^2}+\frac{d\vec r}{dt}\times \frac{d\vec r}{dt}$$
@@ -285,12 +285,12 @@ print('{:s}{:6.3f}'.format('chi    = ',torsion_angle(O4,C1,N9,C4B)) )
 # 
 # $$\displaystyle \frac{d\vec L}{dt}=m\vec r\times \frac{d^2\vec r}{dt^2}$$
 # 
-# ### Q60 answer
+# ## Q60 answer
 # The expansion of the triple product (see Section 17) gives $\displaystyle \vec a=\vec\omega \times(\vec\omega \times \vec r)=(\vec\omega\cdot \vec r)\vec\omega-(\vec\omega\cdot \vec\omega)\vec r$
 # 
 # Since $\vec r$ and $\vec\omega$ are perpendicular, their dot product is zero, hence $\vec a = -(\vec\omega\cdot \vec\omega)\vec r$ and the magnitude of $a$ is $|\vec a| = a -\omega^2r = -v^2/r$. As the sign is negative this centripetal acceleration is towards the centre of the orbit.
 # 
-# ### Q61 answer
+# ## Q61 answer
 # There is no $k$ component, as motion is only in the $x-y$ or $i-j$ plane. The angular velocity, by definition, is perpendicular to this plane, and has a component only in the $z$ or $\vec k$ direction where $\vec\omega = \alpha\vec \omega k$ or $|\vec \omega |=\alpha$.
 # 
 # The cross product of $\vec \omega$ and $\vec r$  is

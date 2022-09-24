@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## Discrete Fourier  (DFT)  and Fast Fourier transforms (FFT)
+# # Discrete Fourier  (DFT)  and Fast Fourier transforms (FFT)
 
 # In[1]:
 
@@ -15,11 +15,11 @@ init_printing()                      # allows printing of SymPy results in types
 plt.rcParams.update({'font.size': 16})  # set font size for plots
 
 
-# ### Concept
+# ## Concept
 # 
 # Data is normally produced by an instrument as a series of numbers measured at equal intervals, and not as an equation; therefore, any Fourier transform has to be calculated numerically. The sampling intervals could be time, distance, or some other quantity depending on the experiment. Time will be used in the following examples. The numerical transform is usually called a discrete Fourier Transform (DFT) and the algorithm used is called the fast Fourier Transform FFT. A frequently used algorithm was devised by Cooley and Tukey (1965) ( Bracewell 1986, p. 370 ). It is not necessary to devise one of these transforms, because the method is very well established and fast operating code has been written and checked. Explanations of its working can be found in texts such as Numerical Recipes (Prest et al. 1986). Python/Sympy, Maple and Mathematica each have built in discrete Fourier transform routines as do numerical packages such as python/numpy, MathCad, Matlab, IDL, IGOR and Origin. These routines can be used as black boxes, nevertheless a clear understanding of the discrete transform is essential to avoid making mistakes. Some examples of Fourier transforms are shown schematically in Fig. 36.
 # 
-# ### 9.1 DFT equations
+# ## 9.1 DFT equations
 # 
 # The cosine transform produces two delta functions at frequencies $\pm 1/p$ in the top figure, and $\pm 2/p$ in the second figure. Because the cosine period is halved, the frequency is doubled. The 'typical data', row (C), is supposed to represent some experimental data and if ideally transformed, with an infinite number of sampled points, will give the schematic spectrum on the right, which is shown only as its real part. If the transform is complex then the 'imaginary' or absolute parts may also contain useful information. The data has a large number of low frequencies in it but few high frequencies, which is why the transform tails off as the frequency increases. The maximum frequency present in the data is found to be $\nu_m$. In row (D), the function is sampled at times starting at zero and separated by $\Delta$, and a discrete transform is calculated. The highest frequency present in the transformed data can only be $1/\Delta$; the lowest frequency is $1/T$ where $T$ is the length of the data. To correctly sample the data $1/(2\Delta) \equiv \nu_c \gt \nu_m$; this is known as the Nyquist condition and is explained further below. 
 # 
@@ -80,7 +80,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # Figure 39. The transform of Fig. 38 rotated by $N/2$ points, and clearly showing its symmetrical nature.
 # ______
 
-# ### 9.2 A four point DFT.
+# ## 9.2 A four point DFT.
 # 
 # As an example, suppose that we have four samples $f_4=a_0,a_1,a_2,a_3$ at points $n=0,1,2,3$ and use the notation of equation 44'. The first thing to note is that the exponential term is always one of the the complex roots of unity, i.e. satisfying $z^N=1$. Let the $k^{th}$ root of the $N^{th}$ power be $w_N^k$ (as was done in section 2.5 in Matrices), then
 # 
@@ -105,7 +105,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # Looking at the individual terms of $g$ you can perhaps see that matrix of $w$ terms with different powers could be extracted and also a vector of the set of $a$ values. In the next section we show how the matrix form leads to a great simplification but doing the matrix-vector calculation in this form is very slow, however, by rearranging the matrices a fast algorithm, the Fast Fourier Transform is achieved. 
 
-# ### 9.3 The DFT via a Circulant Matrix.
+# ## 9.3 The DFT via a Circulant Matrix.
 # 
 # The DFT equation (eqn. 44) requires a great deal of computation, the sum is over $N$ points in time ($t=0\to N-1$ and then this is repeated at each of the $N$ frequencies $\nu$. This results in $N^2$ terms to be multiplied together which produces a slow calculation when $N$ is large. The important feature is the exponential which is $e^{-2\pi i/N(t/\nu)}$ and as such is one of the roots of unity, i.e. one of the $N$ solutions of the equation $z^N=1$, where $z$ is a complex number and $w$ a root which is also a complex number as just described in the four point example. Extracting a matrix from the $w$ values in this example forms a Circulant Matrix.
 # 
@@ -155,7 +155,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # Simplifying the matrix this way may not seem like much but if $N$ is large say $8000$ then only these many exponentials have to be calculated instead of $64$ million. However, matrix multiplication is rather slow in practice, and several methods of speeding up the calculation have been developed. The most commonly used method is a 'divide and rule' approach by Cooley and Tukey. This Fast Fourier Transform (FFT) algorithm works by computing the DFT for small subsets of the overall problem and then combining the results. For this reason it works fastest when $N$ is a power of $2$ and takes a time  $\approx n\log_2(n)$ to complete the calculation vs. $n^2$ for the direct DFT as shown above. This effect is actually rather dramatic, if $n=2^{12}=4096$ then by FFT the calculation takes $\approx 50000$ multiplications whereas a direct calculation $N^2\approx 17\cdot 10^6$, hundreds of times less. A lot of image analysis is done using FFT, noise removal etc., which would otherwise simply not be possible, an image containing $1064\times 1064$ pixels would need $\sim 10^{12}$ operations, which is impossible,  vs. $\sim 2\cdot 10^7$ which is easy.  
 
-# ### 9.4 Fast fourier transform (FFT) calculation
+# ## 9.4 Fast fourier transform (FFT) calculation
 # 
 # The fast fourier transform idea works by dividing the data into two halves and then combining the result. The reason for doing this is that this will take $2(N/2)^2=N^2/2$ operations which is only half as many as the direct DFT on $N$ points. If the data is split in half again and then again and so on there is a similar reduction in the number of operations leading to the number $\approx N\log_2(N)$ for large $N$. The algorithm does not involve any new maths but rearranging the contents of the DFT matrix and the order of the data points. There are several variations on algorithms to do this but all involve repeatedly dividing the data into two equal parts and using recursion. For this reason the calculation is fastest when $N$ is a power of $2$ but even if it is not zero padding to reach this condition is still worth it.
 # 
@@ -207,7 +207,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # Having explained all this in practice you should never need to write an FFT code, unless you crave the challenge,  but will always use built-in routines.
 
-# ### 9.5 Nyquist Critical Frequency and Shannon Sampling Theorem
+# ## 9.5 Nyquist Critical Frequency and Shannon Sampling Theorem
 # 
 # The Nyquist critical frequency has been mentioned in passing, but now it is explained more fully. An experimental set of data is band-limited (bandwidth limited), if its maximum frequency has essentially zero amplitude, as sketch (C) shows in Fig. 36. Because the signal's frequency has a maximum, this means that any feature in the signal cannot change faster than the reciprocal of this frequency. If the signal were conveying information, then anything changing faster than this frequency would be lost. The maximum sinusoidal wave that can be extracted or recovered from data by a discrete (Fourier) transform is given by the Nyquist critical frequency $\nu_c$ = 1/2$\Delta$, where $\Delta$ is the (time) interval between any two consecutive data points. Consider a set of experimental data points represented by a series of equally spaced points on the time axis separated by $\Delta$. The highest frequency in the data, is clearly when consecutive points have the opposite sign,
 # 
@@ -242,7 +242,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # ______
 # 
-# ### 9.6 Numerically calculating a ( DFT)  using the FFT algorithm
+# ## 9.6 Numerically calculating a ( DFT)  using the FFT algorithm
 #              
 # The DFT can easily be calculated using matrix multiplication as in equation 44a but its is very slow and instead a Fast Fourier Transform algorithm is universally used and built into most computer languages. As an illustration of numerically obtaining a discrete transform, some data will be synthesized and then transformed. Each data point is in principle a complex number, and therefore can be displayed in different forms: as the real and imaginary parts, as the absolute value, and as the phase. If $Z$ is a complex number, recall that the absolute value, which is also called the modulus or magnitude, is $| Z^*Z|^{1/2}$. The square of this, when plotted against frequency, is called the _power spectrum_. The  _phase_ of the signal, in radians, is defined as $\displaystyle \theta =\tan^{-1}\left(Im(Z)/Re(Z)  \right)$.
 # 
@@ -305,7 +305,7 @@ plt.show()
 # Figures 41 & 42 combined. Left: The time decaying FID, and next the real part of its discrete Fourier transform with frequencies of $1/35 = 0.0286$ and $1/20$ Hz. Only the first part of the spectrum is plotted; its mirror image at higher frequencies than the Nyquist limit of $1.024$ Hz is not shown. Right: Imaginary and phase plot (far right) of the transformed data. The phase is in radians; $\pi$ radians equals $180^\text{o}$. At larger frequencies, the phase approaches zero, reaching it at point $N/2$ or $1.024$ Hz, which is far to the right of the plotted range.
 # _____
 
-# ### 9.7 Aliasing
+# ## 9.7 Aliasing
 # 
 # Under-sampling means sampling at less than twice the highest frequency component in the data. This means that adjacent sampling points do not have a small enough separation to represent the highest frequency feature. The consequence of under-sampling a signal is erroneously to fold high frequency parts into the lower frequency parts of the Fourier transform; the effect is called _aliasing_.
 # 
@@ -343,13 +343,13 @@ plt.show()
 # Figure 45. Calculations showing proper sampling, left-hand column, and under-sampling, (right), that produces the effect of aliasing. The transforms are plotted as a fraction of the total points. The inset has its $x$ axis multiplied by $10$.
 # _________
 # 
-# ### 9.8 Zero filling
+# ## 9.8 Zero filling
 # 
 # To increase resolution without increasing acquisition time, the data can be zero filled by adding enough zeros to the data to double its length, which means adding points to both the real and imaginary parts of the data, but only if the data has decayed to quasi-zero at the end of the acquisition period $T$. If the data has 2$N$ points, this means that another 2$N$ can be added to the end of the FID before Fourier transforming. The number of points in the real part of the spectrum is increased from the usual 2$N -1$ to 2$N$. With a computer, it is easy to add sets of 2$N$ points repeatedly to the end of the data. However, this does not increase resolution but in effect interpolates between data points. The effect is superficial; no extra information is obtained by adding a second and subsequent zero fills, but it does give nice smooth graphs.
 
-# ### 10 Using Fourier transforms for filtering, smoothing, and noise reduction on data
+# ## 10 Using Fourier transforms for filtering, smoothing, and noise reduction on data
 # 
-# ### 10.1 Motivation
+# ## 10.1 Motivation
 # 
 # To the experimentalist, noisy data always presents a problem. The best option is always to go and do more experiments, but this is not always possible for any number of reasons. One option to improve the data is smoothing. Although it is rarely thought of as smoothing, one way of doing this on data showing a trend, is to perform a least-squares analysis. The parameters obtained, for example, the slope and gradient of a straight line with their associated standard deviations, provide a description of the data. If the data is not a straight line, then a polynomial fit may be used, and, if an exponential or other complex function, then a non-linear, least-squares may be necessary. However, smoothing data is often done independently and before any fitting is performed in an attempt to reduce the noise. 
 # 
@@ -367,11 +367,11 @@ plt.show()
 # 
 # However, smoothing data is always a risky procedure because some of the data may inadvertently be removed with some of the noise, without you realizing it. Thus, the advice is always: _do not smooth the data if it can be avoided_. Having said this, a noisy signal must sometimes be 'cleaned up' to extract the signal from the noise, and a Fourier transform is a good way to do this. This approach is a little different to other smoothing methods, because by transforming the data it is possible to be very specific about what noise is removed. If the data to be improved is a one-dimensional time profile or a noisy image, the method is essentially the same: make a Fourier transform, look for the signal, remove unwanted frequencies and transform back again. If the noise is 'white' that is to say equally spread over all frequencies, and the signal wanted is a slowly varying periodic function or the converse then a Fourier transform may be what is needed.
 # 
-# ### 10.2 Filtering and apodising
+# ## 10.2 Filtering and apodising
 # 
 # To filter the data first transform it, then remove some of the frequencies with a filter function. This filter will probably have to be chosen by hand, and will involve some trial and error. Finally, reverse the transform to obtain the smoothed data. There are a number of functions that can be used as filters; they are designed to extract the data and not to add unwanted frequencies back into it after the calculation. Filtering is similar to apodising the data. Apodising means multiplying the signal by an exponential, Gaussian, or other function, before transforming. The apodising filters are designed to remove extra oscillations at the foot of the signal, hence their name, but they do have the effect of broadening any features. The Connes filter is commonly used in FTIR spectroscopy; it has the form $(1 - (x - x_0)^2/a^2)^2$ where $x = \nu/N$ which ranges from 0 to 1, and $a$ is a parameter that the user can vary to optimize the signal, and $x_0$ is the position of the signal to be enhanced. This function looks very like the Gaussian bell-shaped curve. See Bracewell (1986) for several other filters.
 # 
-# ### 10.3 Filtering a transform to remove noise
+# ## 10.3 Filtering a transform to remove noise
 # 
 # The example of filtering described next uses a square filter function, but the method is quite general. It is
 # 
@@ -452,7 +452,7 @@ plt.show()
 
 # The filter function above removes all but a few non-zero data points. This is only possible because the spikes in the transform are very sharp because each is a single frequency. If the signal were an exponential decay instead of a sine wave, then this Fourier method would perform very badly. The exponential is not periodic and is not described by single frequency but by a range of them in the form of a Lorentzian; in this and many other circumstances it is not easy to isolate the data from the noise. If Fourier and other smoothing methods fail then least squares fitting to a line or polynomial may be acceptable as a last resort.
 # 
-# ### Rolling or moving average    
+# ## Rolling or moving average    
 # 
 # This method is widely used in the financial sector to smooth out fluctuations in the price of stocks and shares in an attempt to predict trends, it is also used to predict trends in data such as the number of infections and deaths in pandemics such as due to Covid-9. It is also a particularly good method of removing unwanted noise spikes in experimental data. These are not part of the noise normally expected on data but occur nevertheless because someone switches on an instrument elsewhere in the lab or there is a glitch in the mains power and so forth. Such spikes can completely ruin data so some way of removing them is necessary. The moving average method starts at the beginning of the data, and averages over a small odd number of the next few data points and this average is recorded. This averaging 'window' is moved by one point along the data and the new average recorded and so on. This process weights in some future and past data into any point and so if a spike is preset it is averaged away by the normal data on either side of it, see Fig. 48.
 # 
@@ -475,7 +475,7 @@ plt.show()
 # Figure 48 . Left. Illustrating the moving averaging smoothing to remove spikes in noise. A filter with $n$ = 3 was used which is a window of 7 points.  The original data is grey, the smoothed data, red. Right.  Daily deaths  due to Covid19 in the USA for a few weeks after March 4, 2020. The original data is grey, the rolling average data, red. A 5 day average was used. 
 # __________
 
-# ### The Hilbert Transform and the Analytic Signal
+# ## The Hilbert Transform and the Analytic Signal
 # 
 # In some cases it is desirable to find the envelope of a signal, such as an FID or that of a pulse such as figure 35 in question 16. To do this the Hilbert transform is needed and with it the *analytic signal*. The analytic signal is defined as
 # 

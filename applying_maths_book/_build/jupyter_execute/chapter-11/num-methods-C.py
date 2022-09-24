@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## Coupled equations
+# # Coupled equations
 
 # In[1]:
 
@@ -15,6 +15,7 @@ init_printing()                      # allows printing of SymPy results in types
 plt.rcParams.update({'font.size': 16})  # set font size for plots
 
 
+# ## Introduction
 # Similar numerical methods to those used for single equations can be used to solve coupled or simultaneous ones. Coupled reactions are commonly found in chemical kinetics, MD simulations, enzyme kinetics, and catalysis; also in the decay of radioactive atoms as well as in the spread of diseases and the predator - prey type behaviour of animals. In each case, species interact or convert into one another and at least two differential equations are needed to describe this. In many cases, these sets of equations cannot be solved algebraically and a numerical method has therefore to be used. As an example, we deliberately start with a pair of equations that can be solved analytically, and this will allow comparison of the numerical solution with the algebraic one. The equations are
 # 
 # $$\displaystyle \frac{dy}{dt}=\cos(t)-x \qquad \frac{dx}{dt}=\sin(t)-1-y  \tag{32}$$
@@ -67,7 +68,7 @@ for i in range(1,n):
     pass
 
 
-# ### 5.1 Modified Euler and Runge - Kutta equations
+# ## 5.1 Modified Euler and Runge - Kutta equations
 # 
 # The Euler method for coupled equations can be improved in the same way as for equation (23). The resulting equations with which to calculate $dy/dt = f (t, x, y)$ and $dx/dt = g(t, x, y)$ are changed from
 # 
@@ -140,7 +141,7 @@ for i in range(1,n):
     pass
 
 
-# ### 5.2 The Polymerase Chain Reaction PCR. A real world example of coupled equations
+# ## 5.2 The Polymerase Chain Reaction PCR. A real world example of coupled equations
 # 
 # The polymerase chain reaction (PCR) is a technique, that in a few hours at most, can vastly multiply the number of selected fragments of DNA by thousands to millions of times. The method has recently been widely used as a test for the presence of Covid-19 virus but has been used long before that to detect a whole range diseases caused by viruses, bacteria and parasites. Other methods can be used for many diseases but PCR has the advantage of being able to amplify minute amounts of DNA. This technique is also important as part of fingerprint detection. The technique was invented by K. Mullis in 1983. He subsequently shared the Nobel Prize in Chemistry in 1993 for his 'invention of the polymerase chain reaction (PCR) method' with M. Smith for his 'fundamental contributions to the establishment of oligonucleotide-based, site-directed mutagenesis and its development for protein studies'. 
 # 
@@ -159,7 +160,7 @@ for i in range(1,n):
 # Figure 11a. Sketch of the PCR method. Redrawn from NobelPrize.org. Nobel Prize Outreach AB 2022.
 # ________
 # 
-# ### PCR rate equations
+# ## PCR rate equations
 # 
 # The rate equations for a basic PCR are shown below using the notation, $D$, double strand DNA, $S$ single strand DNA, $E$ the Taq Poly enzyme and $P$ the primer.  We implicitly assume that there are enough molecules that the rate equation is accurate, and that a Monte-Carlo method is not needed. The steps taken in order my varying the temperature are
 # 
@@ -220,7 +221,7 @@ for i in range(1,n):
 # 
 # Figure 11d. The total amount of double stranded DNA, $[D]$ *vs*. time. The circles show the cycles. The dashed line is an exponential fit with a doubling time of $\approx 89$ s.
 
-# ### 5.3 Second and higher order differential equations. The Numerov algorithm and the Schroedinger equation. 
+# ## 5.3 Second and higher order differential equations. The Numerov algorithm and the Schroedinger equation. 
 # 
 # The most important second order equation you will meet is most likely to be the Schroedinger equation. The numerical solution to find the energy (eigenvalues) of this is dealt with in section 9 of this chapter but the Numerov algorithm used to calculate the wavefunction is described below after the general solution of other second order equations  is described.
 # 
@@ -274,7 +275,7 @@ simplify(dydx)
 # Figure12 Numerical (solid line) and algebraic solution to equation 34.
 # _____
 # 
-# #### **Higher order equations**
+# ### **Higher order equations**
 # 
 # The higher order equation
 # 
@@ -291,7 +292,7 @@ simplify(dydx)
 # The initial conditions must also be specified before a solution can be found. In this case, there are, in effect, three integration steps because of the third power of the derivative. The three initial conditions must specify, at the initial $x$ chosen, a value of $y, \;dy/dt$ and $d^2y/dt^2$.
 # 
 # 
-# ### 5.4 The Numerov method
+# ## 5.4 The Numerov method
 # 
 # The conventional Numerov method is used to solve second-order differential equations which do not have a first derivative and are of the form 
 # 

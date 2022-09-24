@@ -1,0 +1,2153 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Matrices in Quantum Mechanics &#8212; Applying Maths in the Chemical &amp; Biomolecular Sciences</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/book-cover.jpg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Applying Maths in the Chemical & Biomolecular Sciences</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Applying Maths in the Chemical and Biomolecular Sciences.
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-1/chapter1-intro.html">
+   1. Numbers, Equations, Operators, and Algorithms.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-A.html">
+     Numbers to Algorithms.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-Q1-7.html">
+     Questions 1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-B.html">
+     Trig, hyperbolic and inverse functions, waves, polar coordinates &amp; factorials
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-Q8-16.html">
+     Questions 8 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-C.html">
+     Sophisticated Counting.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-Q17-34.html">
+     Questions 17 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-D.html">
+     Modulo arithmetic,
+     <span class="math notranslate nohighlight">
+      \(\delta\)
+     </span>
+     functions, types of  series &amp;  estimating quantities
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-Q35-39.html">
+     Questions 35 - 39
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-answers-1-7.html">
+     Solutions Q1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-answers-8-16.html">
+     Solutions Q8 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-answers-17-34.html">
+     Solutions Q17 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-answers-35-39.html">
+     Solutions Q35 - 39
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-2/chapter2-intro.html">
+   2. Complex numbers.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2/chapter2-A.html">
+     Real, imaginary, conjugate and modulus
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2/chapter2-Q-1-9.html">
+     Questions 1 - 9
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2/chapter2-B.html">
+     De Moivre’s theorem and integer powers of complex numbers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2/chapter2-Q-10-13.html">
+     Questions 10 -13
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2/chapter2-Q-14-29.html">
+     Questions 14 - 29
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2/chapter2-answers.html">
+     Solutions Q1 - 27
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-3/differen-intro.html">
+   3. Differentiation.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-A.html">
+     Differentiation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-B.html">
+     Trig functions, logs, power, reciprocals and integrals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-C-Q-4-11.html">
+     Questions 1-11
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-D.html">
+     Product rule and function of function or chain rule.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-E-Q-12-42.html">
+     Questions 12-42
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-F.html">
+     Limits, l’Hopital’s rule, Maximum, Minimum and Calculus of Variations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-G-Q-43-73.html">
+     Questions 43 - 73
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-H.html">
+     Numerically finding the roots of an equation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-I-Q-74-85.html">
+     Questions 74 - 85
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-J.html">
+     Minimizing or maximizing with constraints: Lagrange Undetermined Multipliers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-K-Q-86-92.html">
+     Questions 86 - 92
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-L.html">
+     Partial differentiation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-M-Q-93-114.html">
+     Questions 93-114
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-M1.html">
+     Differentiation of vectors
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-N-answers-1-11.html">
+     Solutions Q 1-11
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-O-answers-12-42.html">
+     Solutions Q 12-42
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-P-answers-43-73.html">
+     Solutions Q 43 - 73
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-Q-answers-74-85.html">
+     Solutions Q 74 - 85
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-R-answers-86-92.html">
+     Solutions Q 86 - 94
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-S-answers-93-114.html">
+     Solutions Q 93-114
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-4/integration-intro.html">
+   4 Integration.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-A.html">
+     Integration basics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-Q1-14.html">
+     Questions 1-14
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-B.html">
+     Integration by substitution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-Q15-30.html">
+     Questions 15-30
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-C.html">
+     Using parametric equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-Q31-48.html">
+     Questions 31 - 48
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-D.html">
+     Calculating an Average.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-Q49-72.html">
+     Questions 49 - 72
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-E.html">
+     The Variational Method in Quantum Mechanics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-Q73-77.html">
+     Questions 73 - 77
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-F.html">
+     Multiple integrals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-Q78-86.html">
+     Questions 78 - 86
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-G.html">
+     Calculating the energy of a Chemical Bond using Molecular Orbitals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-H.html">
+     Line integrals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-Q87-96.html">
+     Questions 87 - 96
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-answers-1-14.html">
+     Solutions Q1 - 14
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-answers-15-30.html">
+     Solutions Q15 - 30
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-answers-31-48.html">
+     Solutions Q31 - 48
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-answers-49-72.html">
+     Solutions Q49 - 72
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-answers-73-96.html">
+     Solutions Q73 - 96
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-5/chapter-5-intro.html">
+   5. Summations, Series and expansion of Functions.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-A.html">
+     Series, averages, partition functions, DNA melting, atom entropy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-B-Q1-13.html">
+     Questions 1 - 13
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-E.html">
+     Maclaurin and Taylor series expansions. Paramagnetic spins. Euler-Maclaurin formula.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-F-Q14-34.html">
+     Questions 14 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-G-Q35-44.html">
+     Questions 35 - 44
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-perturbation-A.html">
+     Perturbation Theory
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-perturbation-B-Q45-48.html">
+     Questions 45 - 48
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-perturbation-C.html">
+     Quantum superposition and wavepackets.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-perturbation-D-Q49-52.html">
+     Questions 49 - 52
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-answers-1-7.html">
+     Solutions Q 1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-answers-8-13.html">
+     Solutions Q8 - 13
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-answers-14-26.html">
+     Solutions Q 14 - 26
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-answers-27-32.html">
+     Solutions Q27 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-answers-33-44.html">
+     Solutions Q33 - 44
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-answers-45-52.html">
+     Solutions Q45 - 52
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-6/vectors-intro.html">
+   6. Vectors.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-A.html">
+     Vector basics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-Q1-24.html">
+     Questions 1 - 24
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-B.html">
+     Projections and components
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-Q25-32.html">
+     Questions 25 - 32
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-C.html">
+     Axes need not be right-angled or of equal length
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-Q33-38.html">
+     Questions 33 - 38
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-D.html">
+     Basis sets with more than three dimensions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-Q39-46.html">
+     Questions 39 - 46
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-E.html">
+     Cross product or vector product
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-Q47-52.html">
+     Questions 47 - 52
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-F.html">
+     Torsion or dihedral angles
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-Q53-48.html">
+     Questions 53 - 48
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-G.html">
+     Torque and angular momentum
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-Q59-61.html">
+     Questions 59 - 61
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-answers-Q1-24.html">
+     Solutions Q1 - 24
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-answers-Q25-32.html">
+     Solutions Q25 - 32
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-answers-Q33-38.html">
+     Solutions Q33 - 38
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-answers-Q39-46.html">
+     Solutions Q39 - 46
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-answers-Q47-52.html">
+     Solutions Q47 - 52
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-answers-Q53-61.html">
+     Solutions Q53 - 61
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="matrices-intro.html">
+   7. Matrices
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-A.html">
+     Determinants
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-Q1-10.html">
+     Questions  1 - 10
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-B.html">
+     Matrices
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-Q11-16.html">
+     Questions  11 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-C.html">
+     Molecular Group Theory
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-Q17-30.html">
+     Questions  17 - 30
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-D.html">
+     Rotation matrices: moving molecules. Coordinate transform as rotation.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-Q31-34.html">
+     Questions 31 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-E.html">
+     Matrices in optics and designing laser cavities
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-Q35-39.html">
+     Questions 35 - 39
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-F.html">
+     Polarizing optics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-Q40-44.html">
+     Questions 40 - 44
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-G.html">
+     Solving equations using matrices. Eigenvectors &amp; Eigenvalues.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-Q45-50.html">
+     Questions 45 - 50
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-H.html">
+     Rate equations and Chemical Kinetics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-Q51-54.html">
+     Questions 51 - 54
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-I.html">
+     Molecular vibrations and pendulums
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-Q55-58.html">
+     Questions 55 - 58
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-J.html">
+     Moments of Inertia
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-Q59-60.html">
+     Questions 59 - 62
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-L.html">
+     Principal axes for Moments of Inertia
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-Q61-62.html">
+     Question 61 - 62
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-answersQ1-10.html">
+     Solutions Q1 - 10
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-answersQ11-16.html">
+     Solutions Q11 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-answersQ17-30.html">
+     Solutions Q17 - 30
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-answersQ31-34.html">
+     Solutions Q31 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-answersQ35-39.html">
+     Solutions Q35 - 39
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-answersQ40-44.html">
+     Solutions Q40 - 44
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-answersQ45-50.html">
+     Solutions Q45 - 50
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-answersQ51-54.html">
+     Solutions Q51 - 54
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-answersQ55-58.html">
+     Solutions Q55 - 58
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-answersQ59-61.html">
+     Solutions Q59 - 61
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-8/matricesQM-intro.html">
+   8. Matrices in Quantum Mechanics
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-8/matricesQM-A.html">
+     Matrices in Quantum Mechanics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-8/matricesQM-Q1-7.html">
+     Questions 1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-8/matricesQM-B.html">
+     Basis sets and bra-ket algebra
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-8/matricesQM-Q8-12.html">
+     Questions 8 - 12
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-8/matricesQM-C.html">
+     Continuous basis sets
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-8/matricesQM-answers1-7.html">
+     Solutions Q1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-8/matricesQM-answers8-12.html">
+     Solutions Q8 - 12
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-9/Fourier-intro.html">
+   9. Fourier Series and Transforms.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-A-B.html">
+     Fourier series, Gibbs phenomenon, generalised series.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-questions-1-6.html">
+     Questions 1 - 6
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-C.html">
+     Fourier Transforms
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-questions-7-15.html">
+     Questions 7 - 15
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-D.html">
+     Convolution and Autocorrelation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-questions-16-21.html">
+     Questions 16 - 21
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-E.html">
+     Discrete Fourier  (DFT)  and Fast Fourier transforms (FFT)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-F.html">
+     The Hadamard Transform: Encoding and Decoding
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-answers-1-6.html">
+     Solutions Q 1 - 6
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-answers-7-15.html">
+     Solutions Q 7 - 15
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-answers-16-21.html">
+     Solutions Q 16 - 21
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-2D-Diffraction.html">
+     The Fourier transform in two dimensions: images and x-ray Diffraction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-tomography.html">
+     Computed Tomography
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-10/Diff-eqns-intro.html">
+   10. Differential Equations.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-A.html">
+     Differential Equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-Q1-23.html">
+     Questions 1 - 23
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-B.html">
+     First order eqns &amp; Integrating factors. Second order eqns, Newtons laws, equations of motion.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-C.html">
+     The ‘D’ operator.  Solving linear differential equations with constant coefficients
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-D.html">
+     Simultaneous equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-Q24-37.html">
+     Questions 24 - 37
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-E.html">
+     Linear equations with variable coefficients
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-F.html">
+     Partial Differential Equations, PDE
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-G.html">
+     PDE examples continued
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-answers-1-21.html">
+     Solutions Q1 - 21
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-answers-22-37.html">
+     Solutions Q22 - 37
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-11/num-methods-intro.html">
+   11. Numerical Methods
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-A.html">
+     Numerical Methods
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-Q1-7.html">
+     Questions 1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-B.html">
+     Numerical solution of differential equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-Q8-12.html">
+     Questions 8 - 12
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-C.html">
+     Coupled equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-Q13-16.html">
+     Questions 13 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-D.html">
+     The phase plane, nullclines, and stable points
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-Q17-20.html">
+     Questions 17 - 20
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-E.html">
+     Reaction schemes with feedback
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-Q21-34.html">
+     Questions 21 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-F.html">
+     Boundary value problems.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-Q35-40.html">
+     Questions 35 - 40
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-answers1-7.html">
+     Solutions Q1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-answers8-12.html">
+     Solutions Q8 - 12
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-answers13-16.html">
+     Solutions Q13 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-answers17-20.html">
+     Solutions Q17 - 20
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-answers21-34.html">
+     Solutions Q21 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-answers35-40.html">
+     Solutions Q35 - 40
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-12/monte-carlo-intro.html">
+   12. Monte Carlo Methods
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+  <label for="toctree-checkbox-12">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-A.html">
+     Monte - Carlo Methods
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-Q1-6.html">
+     Questions 1 - 6
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-B.html">
+     Solving rate equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-Q7-10.html">
+     Questions 7 - 10
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-CC.html">
+     Monte Carlo Simulations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-C.html">
+     Energy transfer. Autocatalytic reaction and spreading of fires
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-Q11-17.html">
+     Questions 11 - 17
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-D.html">
+     The Metropolis algorithm
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-answers1-6.html">
+     Solutions Q1 - 6
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-answers7-10.html">
+     Solutions Q7 - 10
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-answers11-17.html">
+     Solutions Q11 - 17
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-13/analysis-intro.html">
+   13. Data Analysis
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+  <label for="toctree-checkbox-13">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-13/analysis-A.html">
+     Characterizing experimental data. Accuracy, precision, mean and standard deviation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-13/analysis-Q1-3.html">
+     Questions 1 - 3
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-13/analysis-B.html">
+     Modelling data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-13/analysis-Q4-9.html">
+     Questions 4 - 9
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-13/analysis-C.html">
+     Modelling data is simpler using matrices
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-13/analysis-Q10-11.html">
+     Questions 10 - 13
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-13/analysis-D.html">
+     Non-linear least squares. Least absolute deviation. Principal component analysis
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-13/analysis-answers1-11.html">
+     Solutions Q1 -11
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../chapter-1/chapter1-E.html">
+   SI units, Rounding, converting units &amp; Glossary.
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../references/References.html">
+   References
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../references/Python%20crib.html">
+   Appendix:  Some basic Python instructions with a few examples.
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/subblue/applying-maths-book/main?urlpath=lab/tree/applying_maths_book/chapter-7/matricesQM-A.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://colab.research.google.com/github/subblue/applying-maths-book/blob/main/applying_maths_book/chapter-7/matricesQM-A.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/subblue/applying-maths-book"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/subblue/applying-maths-book/issues/new?title=Issue%20on%20page%20%2Fchapter-7/matricesQM-A.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/chapter-7/matricesQM-A.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#concept-and-motivation">
+   1 Concept and motivation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#notation">
+   1.1 Notation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#expectation-values">
+   2 Expectation Values
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-effect-of-new-potential-energy-expanding-in-a-basis-set">
+   2.1 The effect of new potential energy. Expanding in a basis set.
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#summary-of-the-method">
+   Summary of the method
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#summary-of-calculation">
+   Summary of calculation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#matrix-elements">
+   2.2 Matrix elements
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#nmr-spectrum-with-two-spins">
+   3 NMR spectrum with two spins
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ax-spectra">
+   3.1 AX spectra
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Matrices in Quantum Mechanics</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#concept-and-motivation">
+   1 Concept and motivation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#notation">
+   1.1 Notation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#expectation-values">
+   2 Expectation Values
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-effect-of-new-potential-energy-expanding-in-a-basis-set">
+   2.1 The effect of new potential energy. Expanding in a basis set.
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#summary-of-the-method">
+   Summary of the method
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#summary-of-calculation">
+   Summary of calculation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#matrix-elements">
+   2.2 Matrix elements
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#nmr-spectrum-with-two-spins">
+   3 NMR spectrum with two spins
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ax-spectra">
+   3.1 AX spectra
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section id="matrices-in-quantum-mechanics">
+<h1>Matrices in Quantum Mechanics<a class="headerlink" href="#matrices-in-quantum-mechanics" title="Permalink to this headline">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import all python add-ons etc that will be needed later on</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">linalg</span> <span class="k">as</span> <span class="n">LA</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="n">init_printing</span><span class="p">()</span>                      <span class="c1"># allows printing of SymPy results in typeset maths format</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;font.size&#39;</span><span class="p">:</span> <span class="mi">14</span><span class="p">})</span>  <span class="c1"># set font size for plots</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="concept-and-motivation">
+<h2>1 Concept and motivation<a class="headerlink" href="#concept-and-motivation" title="Permalink to this headline">#</a></h2>
+<p>The Schroedinger equation (1) can be solved, in principle, by integration in the same manner as other similar differential equations and the energies <span class="math notranslate nohighlight">\(E\)</span> and wavefunctions <span class="math notranslate nohighlight">\(\varphi\)</span> determined,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \left(-\frac{\hbar^2}{2m}\frac{d^2}{dx^2}+V(x)\right)\varphi=E\varphi \tag{1}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\varphi\)</span> is a function of <span class="math notranslate nohighlight">\(x\)</span>, although this is often not explicitly stated. Unfortunately an algebraic solution turns out to be possible only for a few potentials <span class="math notranslate nohighlight">\(V(x)\)</span>. Luckily, among these are the rather useful ones, the harmonic and Morse oscillator, the particle in a box or on a ring, the rigid rotor and the hydrogenic type atoms with a single electron. Flugge (1999) gives several more one dimensional examples. For other problems, for example, to predict an NMR spectrum or that of a non-rigid rotor the equation is solved by recasting it in a basis set and using the properties of eigenvalue - eigenvector matrices. This is in essence an algebraic method although numerical values can be calculated. The Schroedinger equation can also be solved numerically for an arbitrary potential, by using one of several integration methods; see Chapter 11. However, numerical integration does not easily lend itself to predicting trends and identifying important parameters and limits, which an algebraic solution does.</p>
+<p>This chapter has two parts, the first assumes some knowledge of basis sets and several problems are solved using them and in the second part, basis sets and <em>bra-ket</em> algebra are described. How these objects are manipulated is illustrated. If you are unfamiliar with these topics, it may be worth looking at the second part first.</p>
+</section>
+<section id="notation">
+<h2>1.1 Notation<a class="headerlink" href="#notation" title="Permalink to this headline">#</a></h2>
+<p>Writing the Schroedinger equation as <span class="math notranslate nohighlight">\(H\varphi = E\varphi\)</span> is the conventional shorthand that represents the following set of simultaneous equations</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle H^0\varphi_0=E_0\varphi_0, \qquad H^0\varphi_1=E_1\varphi_1, \qquad\cdots \qquad H^0\varphi_i=E_i\varphi_i\tag{2}\]</div>
+<p>one for each of the possibly infinite number of energy levels. The superscript zero, e.g. <span class="math notranslate nohighlight">\(H^0\)</span> indicates that this operator exactly solves the Schroedinger equation with wavefunctions <span class="math notranslate nohighlight">\(\varphi_i\)</span>. These wavefunctions <span class="math notranslate nohighlight">\(\varphi_i\)</span> are orthogonal to one another because each describes an eigenstate of the particular potential used and are assumed to have been normalized. The orthonormality condition is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \int\varphi_n^*\varphi_mdx=\delta_{n,m}\]</div>
+<p>The superscript * represents the complex conjugate, which means that if the wavefunction is complex replace <span class="math notranslate nohighlight">\(i\)</span> with <span class="math notranslate nohighlight">\(-i\)</span> and vice versa. If it is not complex, i.e. ‘normal’ the complex conjugate changes nothing. In Dirac ‘bra-ket’ notation the orthogonality and normalization of the wavefunctions is written as</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \langle\varphi_n | \varphi_m \rangle = \delta_{n,m}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\delta\)</span> is the Kronecker delta such that <span class="math notranslate nohighlight">\(\delta_{n,n} = \delta_{m,m} = 1\)</span> and if <span class="math notranslate nohighlight">\(n \ne m\)</span>; <span class="math notranslate nohighlight">\(\delta=0\)</span>. The subscripts <span class="math notranslate nohighlight">\(i = 0, 1, 2, \cdots\)</span> are used to label the whole set of energy levels but the subscripts <span class="math notranslate nohighlight">\(n\)</span> and <span class="math notranslate nohighlight">\(m\)</span> are reserved to represent individual levels should that be necessary and are also the quantum numbers. If the harmonic oscillator were being described, quantum number <span class="math notranslate nohighlight">\(i\)</span> would extend to infinity. In contrast, spin only has a finite set of quantum numbers; two for the spin state of the electron <span class="math notranslate nohighlight">\(i = -1/2, 1/2\)</span> and three for the nuclear spin state of <span class="math notranslate nohighlight">\(^{14}\)</span>N or <span class="math notranslate nohighlight">\(^2\)</span>H, <span class="math notranslate nohighlight">\(0, \pm 1\)</span>.</p>
+</section>
+<section id="expectation-values">
+<h2>2 Expectation Values<a class="headerlink" href="#expectation-values" title="Permalink to this headline">#</a></h2>
+<p>The expectation or average value for the lowest level <span class="math notranslate nohighlight">\(0\)</span> is the energy <span class="math notranslate nohighlight">\(E_0\)</span>. It is calculated by left multiplying equation 2 by <span class="math notranslate nohighlight">\(\varphi^*_0\)</span> and integrating over all space <span class="math notranslate nohighlight">\(x\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle E_0=\frac{\int_{-\infty}^\infty \varphi_0^*H^0\varphi_0 dx}{\int_{-\infty}^\infty \varphi_0^*\varphi_0 dx} =\int_{-\infty}^\infty \varphi_0^*H^0\varphi_0 dx \tag{3}\]</div>
+<p>and because the wavefunction is normalized, <span class="math notranslate nohighlight">\(\int_{-\infty}^\infty \varphi_0^*\varphi_0 dx=1\)</span>. The same procedure can be followed for every other level to calculate <span class="math notranslate nohighlight">\(E_n\)</span>. Any energy can be written in equivalent ways as</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle E_n=\int_{-\infty}^\infty \varphi_n^*H^0\varphi_n dx\equiv \langle \varphi_n^*|H^0|\varphi_n\rangle = \langle n|H^0|n\rangle \tag{4}\]</div>
+<p>the latter two expressions being in Dirac’s bra-ket notation, explained in Section 4 together with basis sets. Note that the bra <span class="math notranslate nohighlight">\(\langle \varphi^*_n|\)</span> is always the complex conjugate of the wavefunction <span class="math notranslate nohighlight">\(\varphi\)</span>, but it is not common to label it as such, therefore the bra can be written as <span class="math notranslate nohighlight">\(\langle \varphi_n|\)</span>. The ket is <span class="math notranslate nohighlight">\(|\varphi_n\rangle\)</span>. In general, if <span class="math notranslate nohighlight">\(S\)</span> is an operator, its expectation is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle S_{n,n}=\int_{-\infty}^\infty \varphi_n^*S\varphi_n dx\equiv \langle \varphi_n^*|S|\varphi_n\rangle=\langle n|S|n\rangle \tag{5}\]</div>
+<p>If the operator <span class="math notranslate nohighlight">\(S\)</span> is position <span class="math notranslate nohighlight">\(x\)</span>, the expectation value is the average position, if momentum, whose operator is <span class="math notranslate nohighlight">\(-i\hbar (d/dx)\)</span>, then <span class="math notranslate nohighlight">\(S\)</span> is the average momentum and so forth. When two different states <span class="math notranslate nohighlight">\(n\)</span> and <span class="math notranslate nohighlight">\(m\)</span> interact under the action of the operator <span class="math notranslate nohighlight">\(S\)</span>, the notation used is similar</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle S_{n,m}=\int_{-\infty}^\infty \varphi_n^*S\varphi_m dx\equiv \langle \varphi_n^*|S|\varphi_m\rangle=\langle n|S|m\rangle \tag{5}\]</div>
+<p>Interactions between different levels <span class="math notranslate nohighlight">\(n\)</span> and <span class="math notranslate nohighlight">\(m\)</span> lead to interesting effects, and this chapter describes how these may be calculated. No interaction occurs if <span class="math notranslate nohighlight">\(S = H^0\)</span> because <span class="math notranslate nohighlight">\(H^0\)</span> exactly solves the Schroedinger equation with wavefunctions <span class="math notranslate nohighlight">\(\varphi_i\)</span>, which are orthogonal,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle H_{nm}=\int \varphi_n^*H^0\varphi_mdx=E_0\int\varphi_n^*\varphi_mdx=0\qquad n\ne m\tag{7}\]</div>
+<p>Expectation values are also called matrix elements and these are explained next. Suppose that the (quantum) harmonic oscillator is to be solved. The wavefunction is a function of position, the bond extension, and the operator is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle H^0\equiv -\frac{\hbar^2}{2m}\frac{d^2}{dx^2}+V(x)\]</div>
+<p>and, for the harmonic oscillator, <span class="math notranslate nohighlight">\(V(x) = kx^2/2\)</span>. To obtain the energy, <span class="math notranslate nohighlight">\(H^0\)</span> operates on <span class="math notranslate nohighlight">\(\varphi(x)\)</span>, the result is then multiplied by <span class="math notranslate nohighlight">\(\varphi^*(x)\)</span> and this result integrated. The matrix element describing the interaction of one state <span class="math notranslate nohighlight">\(n\)</span> to another <span class="math notranslate nohighlight">\(m\)</span> based on equation 6, has the form</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle H_{nm} = \int\varphi^*_nH^\varphi_m dx\]</div>
+<p>where <span class="math notranslate nohighlight">\(H_{nm}\)</span> is an energy. Because the quantum numbers are discrete, a secular equation can be formed and eigenvalue - eigenvector methods used to solve for the energies. See Chapter 12 for the method. The general equation is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \pmb{Av}=\pmb{\lambda v}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\pmb{A}\)</span> is a matrix, <span class="math notranslate nohighlight">\(\pmb{v}\)</span> the eigenvectors and <span class="math notranslate nohighlight">\(\pmb{\lambda} \)</span> the eigenvalues. In this context, the matrix <span class="math notranslate nohighlight">\(\pmb{A}\)</span> is the matrix of expectation values <span class="math notranslate nohighlight">\(H_{nm}\)</span>, the eigenvector’s elements are the wavefunctions <span class="math notranslate nohighlight">\(\varphi_n\)</span> and eigenvalues <span class="math notranslate nohighlight">\(\lambda_n\)</span> are the energies <span class="math notranslate nohighlight">\(E_n\)</span>. Rewriting in this way produces</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \qquad\qquad\begin{bmatrix}H_{00} &amp; H_{01} &amp; H_{0,2} &amp; \cdots \\H_{10} &amp; H_{11} &amp; H_{12}&amp; \cdots  \\H_{20}&amp;\vdots &amp; \ddots &amp;\cdots &amp; \\ \vdots &amp; \vdots &amp; \vdots &amp; H_{nn}\\ \end{bmatrix} \begin{bmatrix}\varphi_0 \\\varphi_2\\ \vdots \\ \varphi_n \end{bmatrix}=\begin{bmatrix}E_0\\E_1\\ \vdots \\E_n \end{bmatrix}\begin{bmatrix}\varphi_0 \\\varphi_2\\ \vdots \\ \varphi_n \end{bmatrix} \qquad\qquad\qquad\qquad\text{(8)}\end{split}\]</div>
+<p>but because each <span class="math notranslate nohighlight">\(\varphi\)</span> is an exact solution to the Schroedinger equation the <span class="math notranslate nohighlight">\(\varphi\)</span> are orthogonal to one another and all values that are non-diagonal with <span class="math notranslate nohighlight">\(n \ne m\)</span> equation 7 are zero, giving</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \qquad\qquad\begin{bmatrix}H_{00} &amp;0 &amp; 0 &amp; \cdots \\0 &amp; H_{11} &amp; 0&amp; \cdots  \\0&amp;\vdots &amp; \ddots &amp;\cdots &amp; \\ \vdots &amp; \vdots &amp; \vdots &amp; H_{nn}\\ \end{bmatrix} \begin{bmatrix}\varphi_0 \\\varphi_2\\ \vdots \\ \varphi_n \end{bmatrix}=\begin{bmatrix}E_0\\E_1\\ \vdots \\E_n \end{bmatrix}\begin{bmatrix}\varphi_0 \\\varphi_2\\ \vdots \\ \varphi_n \end{bmatrix}\qquad\qquad\qquad\qquad \text{(9)}\end{split}\]</div>
+<p>and therefore a set of equations, such as 4 is obtained, one for each quantum number <span class="math notranslate nohighlight">\(n\)</span>. The matrix 9 is already diagonalized, therefore <span class="math notranslate nohighlight">\(E_0 = H_{00}, E_1 = H_{11}\)</span>, and so forth and these are the eigenvalues or energies. Clearly, to do any of these calculations the wavefunctions <span class="math notranslate nohighlight">\(\varphi\)</span> have to be known.</p>
+<p>The effect of using a different potential is calculated next. Hamiltonian <span class="math notranslate nohighlight">\(H\)</span> has a new term in the potential energy, and this manifests itself as off-diagonal terms in the <span class="math notranslate nohighlight">\(H_{nm}\)</span> matrix equation 8. The hamiltonian can be written as</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle H= -\frac{\hbar^2}{2m}\frac{d^2}{dx^2}+V^1(x)\]</div>
+<p>where <span class="math notranslate nohighlight">\(V^1\)</span> is the new potential. Each integral <span class="math notranslate nohighlight">\(H_{nm}=\int\varphi^*_nH\varphi_m dx\)</span> has to be solved first and the new matrix diagonalised. In some problems, such as the NMR nuclear spin example given below, the wavefunctions are never known, only their integrals with the angular momentum operator, which means that <span class="math notranslate nohighlight">\(H_{nm}\)</span> is known directly. In problems that have a large number of states, such as an anharmonic oscillator, a huge matrix will be needed to calculate accurate values of the energies because there are many non-zero, off-diagonal terms. In this case, the larger the matrix is, the more accurate the answers become, provided numerical accuracy can be maintained. In examples involving electron or nuclear spin, the matrix has a finite size that completely determines the problem, and accurate results are obtained from small matrices.</p>
+</section>
+<section id="the-effect-of-new-potential-energy-expanding-in-a-basis-set">
+<h2>2.1 The effect of new potential energy. Expanding in a basis set.<a class="headerlink" href="#the-effect-of-new-potential-energy-expanding-in-a-basis-set" title="Permalink to this headline">#</a></h2>
+<p>The energies and wavefunctions of the harmonic oscillator are well known, the Hamiltonian is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle H^0= -\frac{\hbar^2}{2m}\frac{d^2}{dx^2}+\frac{1}{2}kx^2\equiv H^k+V\]</div>
+<p>Suppose that to make the potential more like that of a real molecule, a term <span class="math notranslate nohighlight">\(V^1\)</span> replaces the potential energy making it quartic, i.e. <span class="math notranslate nohighlight">\(V^1 = k'x^4/2\)</span>, but any similar potential, such as the Morse potential, could be used. The harmonic oscillator wavefunctions <span class="math notranslate nohighlight">\(\varphi\)</span> would no longer be ‘diagonal in the eigenstates’ meaning that the wavefunctions <span class="math notranslate nohighlight">\(\varphi\)</span> that are solutions with <span class="math notranslate nohighlight">\(H^0\)</span> are not solutions of the Schroedinger equation with the new potential. With the new potential, some, if not all of the off-diagonal expectation values (matrix elements) <span class="math notranslate nohighlight">\(H_{23}, H_{53}\)</span> for example will no longer be zero. The new energies are no longer given by the diagonal elements of the matrix but by an equation of the form of equation 8, which has to be diagonalized.</p>
+<p>The wavefunctions of the quartic oscillator will be labelled <span class="math notranslate nohighlight">\(\psi\)</span>, however, the Schroedinger equation cannot yet be solved with this potential because the equation <span class="math notranslate nohighlight">\(H_{nm} = \int \psi^*_nH\psi_mdx\)</span> cannot be worked out because the <span class="math notranslate nohighlight">\(\psi\)</span> are unknown. One solution to this problem is to solve the Schroedinger equation with the quartic potential, <span class="math notranslate nohighlight">\(V^1\)</span>, using the harmonic wavefunctions <span class="math notranslate nohighlight">\(\varphi\)</span> as a basis, and so obtain the quartic eigenvalues (energies) and eigenvectors in terms of these <span class="math notranslate nohighlight">\(\varphi\)</span>. The eigenvectors <span class="math notranslate nohighlight">\(v\)</span> are used to <em>expand</em> the unknown wavefunctions <span class="math notranslate nohighlight">\(\psi\)</span> in terms of the known ones <span class="math notranslate nohighlight">\(\varphi\)</span>. A basis set to describe the new wavefunctions has to be constructed. This basis set has to be orthogonal and although it does not need be normalized, it is usually easier to use if it is. A basis set is used because <em>any</em> vector can be described as a <em>linear combination of basis vectors</em> (Chapter 6) and it is proposed that any wavefunction can be described as a weighted sum of basis wavefunctions. The basis set used is the set of harmonic oscillator wavefunctions (eigenvectors) <span class="math notranslate nohighlight">\(\varphi\)</span> which solve the equation <span class="math notranslate nohighlight">\(H^0\varphi = E\varphi\)</span>. The new wavefunctions then have the form</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \psi=a_1\varphi_1 +a_2\varphi_2 +a_3\varphi_3 +\cdots \tag{10}\]</div>
+<p>where <span class="math notranslate nohighlight">\(a_1, a_2\)</span> and so forth, are the amounts of each <span class="math notranslate nohighlight">\(\varphi\)</span> needed to make the <span class="math notranslate nohighlight">\(\psi\)</span> that solves -  which means, will diagonalize - the Schroedinger equation <span class="math notranslate nohighlight">\((H^k + V^1)\psi = E\psi\)</span>. As there are
+many levels <span class="math notranslate nohighlight">\(0 \to n\)</span>, each <span class="math notranslate nohighlight">\(\psi\)</span> has its own expansion and there are, therefore, <span class="math notranslate nohighlight">\(n^2\)</span> coefficients in
+total. Each wavefunction has its own set of coefficients and it is better to give them two
+subscripts and label the coefficients <span class="math notranslate nohighlight">\(v_{1k}, v_{2k}, \cdots\)</span> as they are elements of the <span class="math notranslate nohighlight">\(k^{th}\)</span> (column) eigenvector of the matrix of <span class="math notranslate nohighlight">\(v\)</span>’s. The <span class="math notranslate nohighlight">\(k^{th}\)</span> of a total of <span class="math notranslate nohighlight">\(n\)</span> wavefunctions is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \psi_k = v_{1k}\varphi_1 + v_{2k}\varphi_2 + \cdots + v_{nk}\varphi_n \tag{11}\]</div>
+<p>The columns of eigenvectors are calculated as the eigenvalue-eigenvector equation 8 is solved.</p>
+</section>
+<section id="summary-of-the-method">
+<h2>Summary of the method<a class="headerlink" href="#summary-of-the-method" title="Permalink to this headline">#</a></h2>
+<p><strong>(i)</strong><span class="math notranslate nohighlight">\(\quad\)</span> The wavefunctions <span class="math notranslate nohighlight">\(\psi\)</span> are the solutions to Schroedinger’s equation with Hamiltonian <span class="math notranslate nohighlight">\(H + V^1\)</span>, and <span class="math notranslate nohighlight">\(\varphi\)</span> is the exact wavefunction to a simpler problem with Hamiltonian <span class="math notranslate nohighlight">\(H^0\)</span>, such as the harmonic oscillator or particle in a box. A linear combination of these known wavefunctions is is made to find <span class="math notranslate nohighlight">\(\psi\)</span>.</p>
+<p><strong>(ii)</strong><span class="math notranslate nohighlight">\(\quad\)</span> The <span class="math notranslate nohighlight">\(\varphi\)</span> are orthogonal to one another; to form the complete basis set they must be and it is simpler to start with each <span class="math notranslate nohighlight">\(\varphi\)</span> normalized.</p>
+<p><strong>(iii)</strong><span class="math notranslate nohighlight">\(\quad\)</span> If the number of levels is infinite then clearly the calculation cannot be completed exactly. In this case, the <span class="math notranslate nohighlight">\(\psi\)</span> and the corresponding energies are approximate but improve as more energy levels are added. This improvement occurs because the energy levels are coupled one to another and including more of them allow more couplings to be added.</p>
+<p><strong>(iv)</strong><span class="math notranslate nohighlight">\(\quad\)</span> If the number of levels is finite as in spin problems such as NMR, then the result is exact.</p>
+<p><strong>(v)</strong><span class="math notranslate nohighlight">\(\quad\)</span> A basis set of any orthogonal set of functions could be chosen for the functions <span class="math notranslate nohighlight">\(\varphi\)</span> as shown in the generalized Fourier method, Chapter 9.4. However, it is natural to try to choose a set of basis functions that have a similar shape to those the new wavefunctions are expected to look like. A good guess will make the off-diagonal terms relatively small, and when diagonalized, which has the effect of mixing all the matrix elements together, the resulting diagonal terms will only be slightly different from the un-diagonalized ones.</p>
+<p><strong>(vi)</strong><span class="math notranslate nohighlight">\(\quad\)</span> This is not a perturbation method; the more terms that are added, the more accurate the result becomes.</p>
+<hr class="docutils" />
+<p>Returning to the quartic oscillator, using the basis set wavefunctions <span class="math notranslate nohighlight">\(\varphi\)</span> the matrix of the eigenvalue equation now has the form</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \qquad\qquad\begin{align} &amp;\text{ordering of basis set} \to \\&amp; \qquad b_1\; \quad b_2 \;\quad b_3 \cdots \\ &amp;\begin{matrix} b_1\\b_2\\b_3\\ \vdots \end{matrix} \begin{bmatrix}H_{00} &amp; H_{01} &amp; H_{0,2} &amp; \cdots \\H_{10} &amp; H_{11} &amp; H_{12}&amp; \cdots  \\H_{20}&amp;\vdots &amp; \ddots &amp;\cdots &amp; \\ \vdots &amp; \vdots &amp; \vdots &amp; H_{nn}\\ \end{bmatrix} \end{align}\qquad\qquad\qquad\qquad\text{(12)}\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(b_1, b_2\)</span> are only the <em>indices</em> of the basis set; for the vibrational oscillator they are labelled <span class="math notranslate nohighlight">\(1, 2, 3, 4, \cdots\)</span>. The matrix elements, the integrals <span class="math notranslate nohighlight">\(H_{01}, H_{32}\)</span>, etc. are in the form of equations 5 and 6. The basis set indices can be put in any order but this must be the same in each row and column. To simplify the calculation, the Hamiltonian operator is split into <span class="math notranslate nohighlight">\(H\)</span> and a potential term <span class="math notranslate nohighlight">\(H^1\)</span>, as</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle H = H^0 + H^1\tag{13}\]</div>
+<p>and <span class="math notranslate nohighlight">\(H^1 = V^1 = k'x^4/2\)</span> if the new potential were quartic.</p>
+<p>The matrix elements formed in the new basis set have the form</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle H_{nm}=\int \varphi^*_nH\varphi_m dx=\int \varphi^*_nH^0\varphi_m dx+\int \varphi^*_nH^1\varphi_m dx=\int \varphi^*_nH^1\varphi_m dx\]</div>
+<p>which is not necessarily zero because the operator has been changed to <span class="math notranslate nohighlight">\(H^1\)</span>. Notice that the wavefunctions are <span class="math notranslate nohighlight">\(\varphi_n, \varphi_m\)</span> and are those of the chosen basis set and not the wavefunctions <span class="math notranslate nohighlight">\(\psi\)</span> that will solve the new Schroedinger equation; these are not known yet.</p>
+<p>Diagonalizing the matrix produces the eigenvalues that are the energies. The eigenvectors <span class="math notranslate nohighlight">\(\pmb{v}\)</span> are also obtained and from these the wavefunctions that approximate to the true ones can be calculated using equation 11. Eigenvectors are usually formed into a matrix; each column is the eigenvector <span class="math notranslate nohighlight">\(\pmb{v}\)</span> for a wavefunction and the order of the columns is the same as the order of the eigenvalues. This means that if <span class="math notranslate nohighlight">\(v_1, v_2, v_3\)</span> are the first three entries for the <em>column</em> eigenvector of eigenvalue 1, then the wavefunction is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \psi_1 \approx v_{11}\varphi_1 + v_{21}\varphi_2 + \cdots + v_{n1}\varphi_n\]</div>
+<p>and <span class="math notranslate nohighlight">\(\approx\)</span> is used as the basis set is finite so this is an approximation, albeit a very good one, if an accurate calculation has been performed with a sufficiently large basis set. The second wavefunction might be <span class="math notranslate nohighlight">\( \psi_2 \approx v_{12}\varphi_1 + v_{22}\varphi_2 +\cdots + v_{n2}\varphi_n\)</span> where the <span class="math notranslate nohighlight">\(n\)</span>’s are the elements of the second column of eigenvectors.</p>
+<p>Finally, note that this matrix/basis set method is an entirely different approach to solving the Schroedinger equation compared to other numerical methods. In those methods (see chapter 10) the equation is solved on a large grid of points using recursive equations that approximate the integral. In the matrix method, the amounts of each of the basis wavefunctions only are calculated. A grid of points is needed only to plot the wavefunction not to do numerical calculation.</p>
+<p>Although the example described is a harmonic oscillator becoming a quartic oscillator, it is simpler mathematically as an illustration of this method, to calculate the vibrational energy levels and wavefunctions of a harmonic oscillator, using the values for the HCl molecule and the basis set of the ‘particle in a box’ wavefunctions. The length of the box will be <span class="math notranslate nohighlight">\(L\)</span>, where (arbitrarily) <span class="math notranslate nohighlight">\(L/2 = 0.128\)</span> nm, the HCl bond length. The reduced mass <span class="math notranslate nohighlight">\(\mu= 35/36\cdot 10^{-27}\)</span> kg, and force constant <span class="math notranslate nohighlight">\(k=516\)</span> N/m. The Schroedinger equation is <span class="math notranslate nohighlight">\(H\psi=E\psi\)</span> where</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle H =-\frac{\hbar^2}{2\mu}\frac{d^2}{dx^2}+\frac{1}{2}kx^2\]</div>
+<p>and the basis set <span class="math notranslate nohighlight">\(\varphi\)</span> are solutions of <span class="math notranslate nohighlight">\(H^0\varphi=E^0\varphi\)</span> where <span class="math notranslate nohighlight">\(\displaystyle H^0=-\frac{\hbar^2}{2\mu}\frac{d^2}{dx^2}\)</span> because the potential is zero for a particle in a box. The extra potential in the harmonic oscillator is <span class="math notranslate nohighlight">\(H^1=kx^2/2\)</span></p>
+<p>The particle in a box wavefunctions are sine functions and are similar in shape to the wavefunctions of the harmonic oscillator, which oscillate in a sort of damped sinusoidal manner. Gaussian functions <span class="math notranslate nohighlight">\(e^{-\alpha (x-x_i)^2}\)</span> might also do quite well, if one were displaced from another by an amount <span class="math notranslate nohighlight">\(x_i\)</span>, and positioned along the bond extension of the molecule. Choosing <span class="math notranslate nohighlight">\(\exp(-\alpha x)\)</span> as the basis functions with different <span class="math notranslate nohighlight">\(\alpha\)</span> would be a poor choice since adding exponential functions to make an oscillating wavefunction is always going to be difficult. Note that, although we use single functions as the basis set, each element could be several functions added together; you can decide what you want to do, but the basis set functions must be made orthogonal. The Gram - Schmidt method (Arkfen 1970) can be used to do this.</p>
+<p>The chosen basis set is the set of ‘particle in a box’ wavefunctions which are</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \varphi_n = \sqrt{\frac{2}{L}}\sin\left(n\pi\frac{x}{L} \right) \tag{14}\]</div>
+<p>with <span class="math notranslate nohighlight">\(n = 1, 2, 3, \cdots\)</span> and are defined over the range <span class="math notranslate nohighlight">\(0 \to L\)</span>, and are zero elsewhere. These wavefunctions are normalized and orthogonal, the first few members of the basis set are</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle [\sqrt{\frac{2}{L}}\sin\left(\pi\frac{x}{L} \right),\sqrt{\frac{2}{L}}\sin\left(2\pi\frac{x}{L} \right),\sqrt{\frac{2}{L}}\sin\left(3\pi\frac{x}{L} \right),\cdots]\]</div>
+<p>In practice <span class="math notranslate nohighlight">\(L\)</span> has to be slightly larger than the bond length because of the way the harmonic potential widens as <span class="math notranslate nohighlight">\(n\)</span> increases. The equilibrium extension is at <span class="math notranslate nohighlight">\(L/2\)</span>. The potential energy on this scale is <span class="math notranslate nohighlight">\(V^1(x) = k(x - L/2)^2/2\)</span> where <span class="math notranslate nohighlight">\(k\)</span> is the bond force constant and <span class="math notranslate nohighlight">\(x\)</span> the extension about the equilibrium position, <span class="math notranslate nohighlight">\(L/2\)</span>.</p>
+</section>
+<section id="summary-of-calculation">
+<h2>Summary of calculation<a class="headerlink" href="#summary-of-calculation" title="Permalink to this headline">#</a></h2>
+<p><strong>(i)</strong><span class="math notranslate nohighlight">\(\quad\)</span> Use the particle in a box wavefunctions to approximate the harmonic oscillator. The more of these wavefunctions that are added together to make <span class="math notranslate nohighlight">\(\psi\)</span>, the better is the approximation. The eigenvectors of the Hamiltonian matrix determine the amount of each ‘particle in a box’ wavefunction to add together; these are <span class="math notranslate nohighlight">\(v\)</span>’s of equation 11.</p>
+<p><strong>(ii)</strong><span class="math notranslate nohighlight">\(\quad\)</span> The expectation values (matrix elements) are formed into a matrix that will be diagonalized.</p>
+<p><strong>(ii)</strong><span class="math notranslate nohighlight">\(\quad\)</span> To form the matrix the order of the basis set is the same order as the elements in the matrix.</p>
+<p><strong>(iv)</strong><span class="math notranslate nohighlight">\(\quad\)</span> The wavefunctions <span class="math notranslate nohighlight">\(\varphi\)</span>, have indices <span class="math notranslate nohighlight">\( 1, 2, 3,\cdots\)</span>, which form the order of the rows and columns. Element <span class="math notranslate nohighlight">\(H_{34} = \langle \varphi_3 | H | \varphi_4\rangle\)</span>  for example, appears at row 3 column 4 in the matrix. The matrix could be ordered with basis set elements as <span class="math notranslate nohighlight">\(3, 1, 2, 5, 4, 10, \cdots\)</span> etc.; it would not make any difference as long as rows and columns are ordered in the same way and the matrix element entered at the correct position according to the indices. The ordering of the basis set and hence the matrix and corresponding quantum numbers is direct and is</p>
+<p>Basis set index <span class="math notranslate nohighlight">\( 0, 1, 2, 3, 4, 5, \cdots\)</span>  row/column order in matrix</p>
+<p>Quantum number <span class="math notranslate nohighlight">\(1, 2, 3, 4, 5, \cdots\)</span>  (for particle in a box)</p>
+<p>The basis set index is chosen to start at <span class="math notranslate nohighlight">\(0\)</span> because python/numpy will be used to diagonalize the matrix and its indices start at 0. The particle in a box quantum numbers start at <span class="math notranslate nohighlight">\(1\)</span>.</p>
+</section>
+<section id="matrix-elements">
+<h2>2.2 Matrix elements<a class="headerlink" href="#matrix-elements" title="Permalink to this headline">#</a></h2>
+<p>The individual matrix elements are <span class="math notranslate nohighlight">\(\langle n|H|m\rangle = \int \varphi^*_n H\varphi_mdx\)</span> where</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin{align}\langle n|H|m\rangle&amp;=\langle n|H^0|m\rangle+\langle n|H^1|m\rangle\\
+&amp;= \int_0^L\varphi^*_n\left(-\frac{\hbar^2}{2\mu}\frac{d^2}{dx^2}\varphi_m+\frac{k}{2}\left(x-\frac{L}{2}\right)^2\varphi_m \right)dx \\
+&amp;=-\frac{\hbar^2}{2\mu} \int_0^L\varphi^*_n\frac{d^2}{dx^2}\varphi_m dx +\frac{k}{2}\int_0^L\varphi^*_n\left(x-\frac{L}{2}\right)^2\varphi_m dx \end{align}\qquad\qquad\qquad\qquad\text{(15)}\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\mu\)</span> is the reduced mass and <span class="math notranslate nohighlight">\(n\)</span> and <span class="math notranslate nohighlight">\(m\)</span> the quantum numbers. This equation can be simplified because the basis set functions <span class="math notranslate nohighlight">\(\varphi\)</span> are the known solutions to the particle in a box problem. In a particle in a box, the potential is everywhere zero except at <span class="math notranslate nohighlight">\(0\)</span> and <span class="math notranslate nohighlight">\(L\)</span>, where it is infinite. In the first of the two integrals in equation 15, the diagonal terms, when <span class="math notranslate nohighlight">\(n = m\)</span>, have the values</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \langle n|H^0|n\rangle=-\frac{\hbar^2}{2\mu} \int_0^L\varphi^*_n\frac{d^2}{dx^2}\varphi_n dx=\frac{\hbar^2}{2\mu}\left(\frac{n\pi}{L}\right)^2\]</div>
+<p>With the same reasoning (and shown by direct calculation), when <span class="math notranslate nohighlight">\(n\ne m\)</span> these integrals are all zero, they correspond to ‘off-diagonal’ terms in the matrix.</p>
+<p>The second integral is</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin{align}\langle n|H^1|m\rangle&amp;=\frac{k}{L}\int_0^L\left(x-\frac{L}{2}\right)^2\sin\left(n\pi\frac{x}{L}\right)^2 dx \\&amp;=(n^2\pi^2-6)\frac{kL^2}{24n^2\pi^2}\end{align}\end{split}\]</div>
+<p>which gives the diagonal terms as</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \langle n|H|n\rangle=\frac{\hbar^2}{2\mu}\left(\frac{n\pi}{L}\right)^2+(n^2\pi^2-6)\frac{kL^2}{24n^2\pi^2}\]</div>
+<p>and the off-diagonal terms remain as</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{k}{2}\int_0^L\varphi^*_n\left(x-\frac{L}{2}\right)^2\varphi_m dx=\frac{2 L^{2} k m n \left(\left(-1\right)^{m} \left(-1\right)^{n} + 1\right)}{\pi^{2} \left(m - n\right)^{2} \left(m + n\right)^{2}}\]</div>
+<p>and individual cases have be evaluated.</p>
+<p>Using sympy to calculate these integrals gives</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span><span class="p">,</span> <span class="n">m</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;n, m&#39;</span><span class="p">,</span> <span class="n">integer</span> <span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">x</span><span class="p">,</span><span class="n">L</span><span class="p">,</span><span class="n">k</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x,L,k&#39;</span><span class="p">)</span>
+
+<span class="n">psi_n</span> <span class="o">=</span> <span class="n">sin</span><span class="p">(</span><span class="n">n</span><span class="o">*</span><span class="n">pi</span><span class="o">*</span><span class="n">x</span><span class="o">/</span><span class="n">L</span><span class="p">)</span>
+<span class="n">psi_m</span> <span class="o">=</span> <span class="n">sin</span><span class="p">(</span><span class="n">m</span><span class="o">*</span><span class="n">pi</span><span class="o">*</span><span class="n">x</span><span class="o">/</span><span class="n">L</span><span class="p">)</span>
+
+<span class="n">Hnn</span><span class="o">=</span><span class="n">integrate</span><span class="p">((</span><span class="n">k</span><span class="o">/</span><span class="n">L</span><span class="p">)</span><span class="o">*</span> <span class="n">psi_n</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">L</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">L</span><span class="p">)</span> <span class="p">,</span> <span class="n">conds</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">)</span>
+<span class="n">factor</span><span class="p">(</span><span class="n">Hnn</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/matricesQM-A_5_0.png" src="../_images/matricesQM-A_5_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Hnm</span> <span class="o">=</span> <span class="n">integrate</span><span class="p">((</span><span class="n">k</span><span class="o">/</span><span class="n">L</span><span class="p">)</span><span class="o">*</span> <span class="n">psi_n</span><span class="o">*</span><span class="n">psi_m</span><span class="o">*</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">L</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">L</span><span class="p">)</span> <span class="p">,</span> <span class="n">conds</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">)</span>
+<span class="n">factor</span><span class="p">(</span><span class="n">Hnm</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/matricesQM-A_6_0.png" src="../_images/matricesQM-A_6_0.png" />
+</div>
+</div>
+<hr class="docutils" />
+<p>Constructing the matrix, equation 12, using results from these integrals, starting with <span class="math notranslate nohighlight">\(m=1;n=1\)</span>  and adding just a few of the terms produces</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \small{\begin{bmatrix}\displaystyle  \frac{\hbar^2}{2\mu}\left(\frac{\pi}{L}\right)^2+(\pi^2-6)\frac{kL^2}{24\pi^2} &amp; 0 &amp; \displaystyle\frac{3k L^{2}}{16\pi^2} &amp; 0  \\
+0 &amp;  \displaystyle  \frac{\hbar^2}{2\mu}\left(\frac{2\pi}{L}\right)^2+(4\pi^2-6)\frac{kL^2}{2^2\cdot 24\pi^2} &amp; 0 &amp; \displaystyle\frac{2k L^{2}}{3^2\pi^2}  \\ 
+\displaystyle\frac{3k L^{2}}{16\pi^2} &amp; 0 &amp; \displaystyle  \frac{\hbar^2}{2\mu}\left(\frac{3\pi}{L}\right)^2+(3^2\pi^2-6)\frac{kL^2}{3^2\cdot 24\pi^2} &amp; 0 \\
+0 &amp; \displaystyle\frac{2k L^{2}}{3^2\pi^2} &amp; 0 &amp; \displaystyle  \frac{\hbar^2}{2\mu}\left(\frac{4\pi}{L}\right)^2+(16\pi^2-6)\frac{kL^2}{4^2\cdot 24\pi^2} \end{bmatrix} }\end{split}\]</div>
+<p>Notice that the matrix is Hermitian, real, and symmetrical about the diagonal. The units of each term are the same and those of energy, i.e. joules. Although the matrix looks rather complicated, it can be split into two parts just as was done with <span class="math notranslate nohighlight">\(H\)</span>, equation 13. The first part contains the diagonal terms, the second the couplings between states introduced by the new potential energy terms,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \frac{\hbar^2}{2\mu} \begin{bmatrix}\displaystyle\left(\frac{\pi}{L}\right)^2 &amp; 0 &amp; 0 &amp;\cdots\\ 0 &amp; \displaystyle\left(\frac{2\pi}{L}\right)^2 &amp; 0&amp; \cdots \\ \vdots &amp; \vdots &amp; &amp; \\ \end{bmatrix} + k\left(\frac{L}{\pi}\right)^2  \begin{bmatrix}\displaystyle\frac{6-\pi^2}{24} &amp; 0 &amp; \displaystyle\frac{3}{16} &amp; 0 &amp; \cdots \\ 0 &amp; \displaystyle\frac{6-4\pi^2}{2^2\cdot 24} &amp; 0 &amp; \displaystyle\frac{2}{9}\\ \displaystyle\frac{3}{16}&amp; 0 &amp;\displaystyle\frac{6-9\pi^2}{3^2\cdot 24} \end{bmatrix} \end{split}\]</div>
+<p>Clearly a matrix as complex as this will not be easy to diagonalise algebraically, but in any case the equations produced are not of any great interest, where as the shape of the wavefunctions and energies are, thus a numerical approach is preferred.</p>
+<p>The matrix is built first then the eigenvalues and eigenvectors calculated. The eigenvalues are sorted  so that each can be associated with its quantum number, since the energies increase in order with quantum number starting at zero.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Algorithm Harmonic oscillator built from particle in a box wavefunctions</span>
+
+<span class="c1">#-----------------------------------</span>
+<span class="k">def</span> <span class="nf">Hintegrals</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">m</span><span class="p">):</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span>                            <span class="c1"># add 1 as python array index start at zero </span>
+    <span class="n">m</span> <span class="o">=</span> <span class="n">m</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="n">m</span><span class="p">:</span>
+        <span class="n">f01</span> <span class="o">=</span> <span class="n">Hbarsq2m</span> <span class="o">*</span> <span class="n">piLsq</span> <span class="o">*</span> <span class="n">n</span><span class="o">**</span><span class="mi">2</span>
+        <span class="n">f02</span> <span class="o">=</span> <span class="p">(</span><span class="n">n</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">**</span><span class="mi">2</span><span class="o">-</span><span class="mi">6</span><span class="p">)</span><span class="o">*</span><span class="n">k</span><span class="o">/</span><span class="p">(</span><span class="mi">24</span><span class="o">*</span><span class="n">n</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">piLsq</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">f01</span> <span class="o">+</span> <span class="n">f02</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">(</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">k</span><span class="o">*</span><span class="n">n</span><span class="o">*</span><span class="n">m</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">**</span><span class="n">m</span> <span class="o">*</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">**</span><span class="n">n</span><span class="p">)</span> <span class="p">)</span><span class="o">/</span> <span class="p">(</span><span class="n">piLsq</span><span class="o">*</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="n">m</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="n">m</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="p">)</span>    
+<span class="c1">#------------------------------------</span>
+
+<span class="n">hbar</span> <span class="o">=</span> <span class="mf">1.054e-34</span>                    <span class="c1"># J.s constants etc </span>
+<span class="n">L</span>    <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="mf">128.0e-12</span>                  <span class="c1"># m</span>
+<span class="n">mu</span>   <span class="o">=</span> <span class="mi">35</span><span class="o">/</span><span class="mi">36</span><span class="o">*</span><span class="mf">1.67e-27</span>               <span class="c1"># kg</span>
+<span class="n">k</span>    <span class="o">=</span> <span class="mf">516.0</span>                        <span class="c1"># N / m</span>
+<span class="n">num</span>  <span class="o">=</span> <span class="mi">45</span>                           <span class="c1"># size of matrix</span>
+
+<span class="n">Hbarsq2m</span> <span class="o">=</span>  <span class="n">hbar</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">mu</span><span class="p">)</span>          <span class="c1"># constant for calculation</span>
+<span class="n">piLsq</span>    <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="n">L</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>             <span class="c1"># &quot;&quot;   &quot;&quot;</span>
+
+<span class="n">Hnm</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span> <span class="p">(</span><span class="n">num</span><span class="p">,</span><span class="n">num</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span> <span class="p">)</span>
+
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
+        <span class="n">Hnm</span><span class="p">[</span><span class="n">n</span><span class="p">,</span><span class="n">m</span><span class="p">]</span><span class="o">=</span> <span class="n">Hintegrals</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">m</span><span class="p">)</span> 
+        
+<span class="n">vals</span><span class="p">,</span><span class="n">vecs</span> <span class="o">=</span> <span class="n">LA</span><span class="o">.</span><span class="n">eigh</span><span class="p">(</span><span class="n">Hnm</span><span class="p">)</span>  
+
+<span class="n">indx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">vals</span><span class="p">)</span>              <span class="c1"># find index of sorted array</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:s}</span><span class="s1"> </span><span class="si">{:d}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;   n  matrix/J   exact/J. Matrix size = &#39;</span><span class="p">,</span><span class="n">num</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">2</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:4d}</span><span class="s1"> </span><span class="si">{:8.4g}</span><span class="s1">  </span><span class="si">{:8.4g}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">vals</span><span class="p">[</span><span class="n">indx</span><span class="p">[</span><span class="n">i</span><span class="p">]],</span> <span class="n">hbar</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">k</span><span class="o">/</span><span class="n">mu</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="p">)</span>  <span class="p">)</span> <span class="c1"># sorted energies</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   n  matrix/J   exact/J. Matrix size =  45
+   0 2.971e-20  2.971e-20
+   2 1.485e-19  1.485e-19
+   4 2.674e-19  2.674e-19
+   6 3.862e-19  3.862e-19
+   8 5.051e-19  5.051e-19
+  10 6.239e-19  6.239e-19
+  12 7.428e-19  7.427e-19
+  14 8.624e-19  8.616e-19
+  16 9.855e-19  9.804e-19
+  18 1.118e-18  1.099e-18
+</pre></div>
+</div>
+</div>
+</div>
+<p>The exact values are <span class="math notranslate nohighlight">\(E_n=\hbar\sqrt{k/\mu}(n+1/2)\)</span> which is the normal equation fro the Harmonic oscillator. With a small matrix the calculated values are</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{array}{ccc}
+n  &amp; \text{ matrix} \times 10^{20}{/ J}   &amp;   \text{exact}\times 10^{20}{/ J}\\
+   0  &amp; 18.79 &amp;  2.971\\
+   1  &amp; 51.44  &amp; 8.913\\
+   2  &amp; 168.4  &amp; 14.85\\
+   3  &amp; 204.6  &amp;  20.8 \end{array}\end{split}\]</div>
+<p>but with a larger matrix <span class="math notranslate nohighlight">\(n=45\)</span> much more accurate results are obtained, to <span class="math notranslate nohighlight">\(n=12\)</span>;</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{array}{ccc}
+n  &amp; \text{ matrix} \times 10^{20}{/ J}   &amp;   \text{exact}\times 10^{20}{/ J}\\
+   0  &amp;  2.971 &amp;   2.971\\
+   2  &amp;  14.85 &amp;   14.85\\
+   4  &amp;  26.74 &amp;   26.74\\
+   6  &amp;  38.62 &amp;   38.62\\
+   8  &amp;  50.51 &amp;   50.51\\
+  10  &amp;  62.39 &amp;   62.39\\
+  12  &amp;  74.28 &amp;   74.27\\
+  14  &amp;  86.24 &amp;   86.16\\
+  16  &amp;  98.55 &amp;   98.04\\
+  18  &amp;  111.8 &amp;   109.9\\ \end{array}\end{split}\]</div>
+<p>Figure 1 shows the approximate wavefunctions built out of a particle in a box basis set using the procedure psi(qn,x)shown below. The wavefunction may be negative; this will depend on the sign of eigenvectors that are only defined to within <span class="math notranslate nohighlight">\(\pm 1\)</span>. Negative values are just as correct as positive ones. The wavefunction <span class="math notranslate nohighlight">\(\psi\)</span> is constructed according to equation 11; the eigenvector values are the constants <span class="math notranslate nohighlight">\(v\)</span>. The wavefunctions are very close to the true ones as may be seen by looking at Figure 4.48 in the solutions. The reason that the match between the basis set expansion and the true values is better with a bigger basis set is because there are more sine functions and more variables <span class="math notranslate nohighlight">\(v\)</span> to match to the harmonic oscillator wavefunctions. The same is true for a series expansion; the more terms the better the expansion will match the function.</p>
+<p>You may wish to try adding a quartic term to the quadratic potential, still using the particle in a box wavefunctions. The integrations will have to be recalculated using Maple, the ‘force constant’ <span class="math notranslate nohighlight">\(k_Q\)</span> will have to be about <span class="math notranslate nohighlight">\(10^{24}\)</span> in <span class="math notranslate nohighlight">\(k_Q(x - L/2)^4\)</span>, and at least <span class="math notranslate nohighlight">\(60\)</span> terms will be needed in the matrix. The potential becomes steeper and therefore the energy levels are farther apart.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#-------------------</span>
+<span class="k">def</span> <span class="nf">psi</span><span class="p">(</span><span class="n">qn</span><span class="p">,</span><span class="n">x</span><span class="p">):</span>      <span class="c1"># calculating the wavefunction, note that (i+1) is used as the lowest valid </span>
+                    <span class="c1"># particle in a box quantum number is 1</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="mf">0.0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="n">s</span> <span class="o">+</span> <span class="n">vecs</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">indx</span><span class="p">[</span><span class="n">qn</span><span class="p">]]</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="o">/</span><span class="n">L</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">((</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">x</span><span class="o">/</span><span class="n">L</span> <span class="p">)</span>   <span class="c1"># +1 as pib starts at 1   </span>
+    <span class="k">return</span> <span class="n">s</span>
+<span class="c1">#-------------------</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><img alt="Drawing" src="chapter-7/matricesQm-fig1.png" /></p>
+<p>Figure 1. Approximate wavefunctions for <span class="math notranslate nohighlight">\(n = 0\to 8\)</span> levels of HCl as a harmonic oscillator using the particle in a box basis set. The potential is also shown, and the energy is in units of <span class="math notranslate nohighlight">\(h\nu\)</span> where <span class="math notranslate nohighlight">\(\nu\)</span> is the transition frequency. The wavefunctions are scaled to a convenient amplitude for display and are essentially identical to those calculated using the equations derived directly from Schroedinger’s equation, Fig. 48 in solutions to chapter 4.</p>
+</section>
+<hr class="docutils" />
+<section id="nmr-spectrum-with-two-spins">
+<h2>3 NMR spectrum with two spins<a class="headerlink" href="#nmr-spectrum-with-two-spins" title="Permalink to this headline">#</a></h2>
+<p>The pure nuclear Zeeman effect, which gives rise to the NMR spectrum will be calculated. In this calculation, and every other involving spin, the matrix element integrals <span class="math notranslate nohighlight">\(H_{nm}\)</span> are evaluated directly from the properties of the angular momentum operators, and the spin wavefunctions can never be known. (Spin eigenfunctions unlike angular momentum do not depend on spatial coordinates; as a result, they do not have to satisfy a periodicity condition and can have half integer quantum numbers. Angular momentum, such as possessed by a rigid rotor molecule has integer quantum numbers.)</p>
+<p>NMR is extremely widely used in chemistry and biochemistry because the spectrum is a measure of the structure of the (diamagnetic) molecule. The many lines in the typical NMR spectrum have two main origins. One is caused by the local magnetic field of the molecule’s electrons shielding the nuclei from the external field and is called the <em>chemical shift</em>. The other, <span class="math notranslate nohighlight">\(J\)</span> coupling, is due to the local field caused by indirect <em>spin-spin</em> or indirect <em>dipole - dipole</em> interaction mediated by the electrons in the chemical bond. Because both effects are local this enables the structure to be determined. Generally, enough detailed information is generally present to allow this, but not so much that the spectrum is too complicated to be interpreted.</p>
+<p>The Hamiltonian <span class="math notranslate nohighlight">\(S\)</span> describing the interactions between <span class="math notranslate nohighlight">\(i\)</span> nuclei in the strong external magnetic field <span class="math notranslate nohighlight">\(B\)</span> and with the local induced fields, is,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle S=-\frac{1}{\hbar}\sum_i\gamma_i(1-\sigma_i)\pmb{I}_i\cdot \pmb{B}+\frac{1}{\hbar^2}\sum_{i&gt;j}\sum_j J_{ij}\pmb{I}_i\cdot \pmb{I}_j \tag{16}\]</div>
+<p>The applied magnetic field is always in the z-direction with a magnitude <span class="math notranslate nohighlight">\(B_0\)</span> tesla, and is zero in other directions. <span class="math notranslate nohighlight">\(\pmb{I}\)</span> is the nuclear spin angular momentum vector with components in the <span class="math notranslate nohighlight">\(x\)</span>-, <span class="math notranslate nohighlight">\(y\)</span>-, and <span class="math notranslate nohighlight">\(z\)</span>-directions of <span class="math notranslate nohighlight">\(I_x, I_y\)</span>, and <span class="math notranslate nohighlight">\(I_z\)</span> respectively. Angular momentum has the same units as <span class="math notranslate nohighlight">\(\hbar\)</span>; J s rad<span class="math notranslate nohighlight">\(^{-1}\)</span>. The constant <span class="math notranslate nohighlight">\(\gamma\)</span> is the magnetogyric ratio (rad T<span class="math notranslate nohighlight">\(^{-1}\)</span> s<span class="math notranslate nohighlight">\(^{-1}\)</span>) of each atom <span class="math notranslate nohighlight">\(i, \sigma_i\)</span>
+the shielding constant (dimensionless) leading to the chemical shift and <span class="math notranslate nohighlight">\(J_{ij}\)</span> the spin-spin coupling constant (rad s<span class="math notranslate nohighlight">\(^{-1}\)</span>) between any two atoms <span class="math notranslate nohighlight">\(i\)</span> and <span class="math notranslate nohighlight">\(j\)</span>.</p>
+<p>Spin is described by two quantum numbers <span class="math notranslate nohighlight">\(s\)</span> and <span class="math notranslate nohighlight">\(m_z\)</span> and for protons <span class="math notranslate nohighlight">\(s = 1/2\)</span> and <span class="math notranslate nohighlight">\(m_z = \pm 1/2\)</span>. The latter is the quantum number associated with the projection of the spin angular momentum on the unique z-axis. The magnetic field <span class="math notranslate nohighlight">\(B\)</span> along the z-direction breaks the threefold degeneracy of the angular momentum by making it unique along <span class="math notranslate nohighlight">\(z\)</span>, but it remains degenerate in <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span>. From now on, and only for clarity, <span class="math notranslate nohighlight">\(m\)</span> will replace <span class="math notranslate nohighlight">\(m_z\)</span>. The wavefunction is written symbolically as <span class="math notranslate nohighlight">\(\psi_{sm} \equiv |sm\rangle\)</span> and the <span class="math notranslate nohighlight">\(s-m\)</span> basis set will be used. This is a basis set made up of the spin wavefunctions but labelled with the two spin quantum numbers. As there are two spins, each with quantum numbers <span class="math notranslate nohighlight">\(s = 1/2; m_z = \pm 1/2\)</span>, this basis set has only four elements. It is described in detail shortly. The spin wavefunctions are, by definition, orthonormal, which means that in general for spin <span class="math notranslate nohighlight">\(j\)</span> and <span class="math notranslate nohighlight">\(k\)</span>, the integral</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \langle s_jm_j|s_km_k\rangle=\delta_{s_js_k}\delta_{m_jm_k}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\delta\)</span> is the Kronecker delta, which is <span class="math notranslate nohighlight">\(1\)</span> if the subscripts are the same, and <span class="math notranslate nohighlight">\(0\)</span> otherwise. The subscripts are the quantum numbers of the two spins. As both spins are protons, <span class="math notranslate nohighlight">\(s_j = s_k = 1/2\)</span>, and each spin has an m quantum number that can be <span class="math notranslate nohighlight">\(\pm 1/2\)</span>. The wavefunction for a system of two spins labelled <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span>, is made up in the usual way as a basis set of (spin) wavefunctions <span class="math notranslate nohighlight">\(\psi\)</span>, multiplied by coefficients <span class="math notranslate nohighlight">\(c\)</span>;</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \psi=\sum_{m_1}\sum_{m_2} c_{m_1m_2}\psi_a(s_1m_1)\psi_b(s_2m_2) \tag{17}\]</div>
+<p>Because there are two spins, the expectation value integrals are the product of the spin wavefunctions and the operator. For example,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle H_{12}= \langle \psi_a(s_1m_1)\psi_b(s_1m_1)|S|\psi_a(s_2m_2)\psi_b(s_2m_2)\rangle\]</div>
+<p>is the first row and second column expectation value of the Hamiltonian matrix equation 12. In such equations, <span class="math notranslate nohighlight">\(S\)</span> is the (spin) operator, <span class="math notranslate nohighlight">\(\psi_a\)</span> and <span class="math notranslate nohighlight">\(\psi_b\)</span> are the spin wavefunctions on atom <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> respectively, and <span class="math notranslate nohighlight">\(s\)</span> and <span class="math notranslate nohighlight">\(m\)</span> are the spin quantum numbers. The subscript numbers refer to the indices of the matrix and are also the indices of the basis set. The ordering used here is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle (m_a,m_b)=(1/2,1/2)\quad(1/2,-1/2)\quad(1/2,1/2)\quad(-1/2,1/2)\quad(-1/2,-1/2)\]</div>
+<p>and is shown in equation 24. The numbers <span class="math notranslate nohighlight">\(\pm 1/2\)</span> are only <em>symbols</em>, <span class="math notranslate nohighlight">\(\alpha\)</span> and <span class="math notranslate nohighlight">\(\beta\)</span> or any other symbols could be used instead.</p>
+<p>A clear notation is obviously of great help in this type of problem. Each nucleus is identified with subscript <span class="math notranslate nohighlight">\(a\)</span> or <span class="math notranslate nohighlight">\(b\)</span> and the position in the matrix with a number <span class="math notranslate nohighlight">\(1 \to 4\)</span>. The matrix element <span class="math notranslate nohighlight">\(H_{12}\)</span> can be written with its indices alone; there is no need to write <span class="math notranslate nohighlight">\(\psi\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle H_{12}= \langle s_{a1}m_{a1}s_{b1}m_{b1} |S|s_{a2}m_{a2}s_{b2}m_{b2} \rangle \]</div>
+<p>and furthermore, as the nuclear spin quantum number is the same on each nucleus, the
+subscripts on quantum number s can be dropped in the calculation. This produces</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle H_{12}= \langle sm_{a1}sm_{b1} |S|sm_{a2}sm_{b2} \rangle \]</div>
+<p>and is used from now on. The spin quantum number s should not be removed from the notation, as it is needed when the matrix elements are worked out. The matrix of expectation values has next to be constructed and diagonalized. To work out the expectation values, the interactions between two spins and between a spin and the external magnetic field have to be examined, equation (8.16). These calculations are done in the following steps.</p>
+<p><strong>(i)</strong><span class="math notranslate nohighlight">\(\quad\)</span> The spin angular momentum I can be treated as if it were a three-dimensional vector with components in the <span class="math notranslate nohighlight">\(x-, y-, z\)</span> -directions. In the Hamiltonian <span class="math notranslate nohighlight">\(S\)</span>, the terms <span class="math notranslate nohighlight">\(\pmb{I}\cdot\pmb{B}\)</span> and</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle I_a\cdot I_b = I_{ax}I_{bx} + I_{ay}I_{by} + I_{az}I_{bz}\]</div>
+<p>for spins <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> have to be evaluated. The magnetic field <span class="math notranslate nohighlight">\(B\)</span> only has a <span class="math notranslate nohighlight">\(z\)</span> component by definition, and in practice in the NMR machine, so that <span class="math notranslate nohighlight">\(\pmb{I}\cdot\pmb{B} = I_z B_0\)</span></p>
+<p><strong>(ii)</strong><span class="math notranslate nohighlight">\(\quad\)</span> Decide on the <span class="math notranslate nohighlight">\(s-m\)</span> basis set order and then fill out the Hamiltonian matrix; see equation 12.</p>
+<p><strong>(iii)</strong><span class="math notranslate nohighlight">\(\quad\)</span> Evaluate each of the elements of the <span class="math notranslate nohighlight">\(4 \times 4\)</span> matrix using the operator equations given below, and calculate the energy levels algebraically by diagonalising. Python/Sympy will be used to do this.</p>
+<p><strong>(iv)</strong><span class="math notranslate nohighlight">\(\quad\)</span> The energy levels will be found in the limit that the spin-spin coupling <span class="math notranslate nohighlight">\(J\)</span> is small compared to the chemical shift; this is called the AX limit.</p>
+<p>The integrals between states with angular momentum operators are well known, and  can be rigorously derived using the properties of the spherical harmonic functions; see Atkins &amp; Friedmann (1997) or Flygare (1978) for a derivation. The angular momentum operator is conventionally labelled <span class="math notranslate nohighlight">\(L\)</span>, and the operators are <span class="math notranslate nohighlight">\(L^2, L_x, L_y L_z\)</span>. The shorthand notation of labelling the states with their quantum numbers rather than with a symbol for the wavefunction and its associated quantum numbers is the convention. The operators have the following properties:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin{array}{lll}\\
+\displaystyle \langle sm|L^2|sm\rangle =\hbar^2s(s+1) &amp; &amp; &amp; &amp;\text{(18)}\\
+\displaystyle \langle sm+1|L_x|sm\rangle =\frac{\hbar}{2}\sqrt{s(s+1)-m(m+1) } &amp; &amp; &amp; &amp;\\
+\displaystyle \langle sm-1|L_x|sm\rangle =\frac{\hbar}{2}\sqrt{s(s+1)-m(m-1) }&amp; &amp; &amp; &amp;\text{(19)}\\
+\displaystyle \langle sm+1|L_y|sm\rangle =\frac{\hbar}{2i}\sqrt{s(s+1)-m(m+1) } \\
+\displaystyle \langle sm+1|L_y|sm\rangle =-\frac{\hbar}{2i}\sqrt{s(s+1)-m(m-1) }&amp; &amp; &amp; &amp;\text{(20)}\\
+\displaystyle \langle sm|L_z|sm\rangle =\hbar m &amp; &amp; &amp; &amp; \text{(21)} \end{array}\end{split}\]</div>
+<p>and all other combinations of <span class="math notranslate nohighlight">\(s\)</span> and <span class="math notranslate nohighlight">\(m\)</span> have zero valued integrals. Note that only states in which the m quantum number changes by <span class="math notranslate nohighlight">\(0,\pm1\)</span>  are not zero. It is assumed also that <span class="math notranslate nohighlight">\(sm\)</span> refers to the same spin <span class="math notranslate nohighlight">\(a\)</span> or <span class="math notranslate nohighlight">\(b\)</span> on both sides of the bra-ket, if not the result is zero. The integral of the product of the wavefunctions is</p>
+<div class="math notranslate nohighlight">
+\[ \displaystyle \langle sm_a |sm_a\rangle = \langle sm_b |sm_b\rangle = 1,\quad \langle sm_a |sm_b\rangle =\langle sm_b |sm_a\rangle = 0\]</div>
+<p>which means that the wavefunctions are normalized and orthogonal. (The <span class="math notranslate nohighlight">\(L_x, L_y\)</span> are derived from the raising and lowering operators, see Q11.)</p>
+<p>In the particular situation of nuclear spin, the angular momentum is labelled <span class="math notranslate nohighlight">\(\pmb{I}\)</span> and this will be used from now on. It is vital to realize that the spin operator <span class="math notranslate nohighlight">\(\pmb{I}_b\)</span> only works on nucleus <span class="math notranslate nohighlight">\(b\)</span>, and <span class="math notranslate nohighlight">\(\pmb{I}_a\)</span> only on nucleus <span class="math notranslate nohighlight">\(a\)</span>. The operator <span class="math notranslate nohighlight">\(\pmb{I}_b\)</span> will therefore treat all the wavefunctions <span class="math notranslate nohighlight">\(sm_a\)</span> as constants and <em>vice versa</em>. The calculation proceeds as follows:</p>
+<p><strong>(i)</strong> The summation in equation 16 is the double summation <span class="math notranslate nohighlight">\(\sum_{i=1}\sum_{j=1}J_{ij}\pmb{I}_i\cdot\pmb{I}_j\)</span> with the restriction that <span class="math notranslate nohighlight">\(i&gt;j\)</span> for <span class="math notranslate nohighlight">\(i\)</span> and <span class="math notranslate nohighlight">\(j=a,b\)</span> .</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \sum_{i=1}\sum_{j=1}J_{ij}\pmb{I}_i\cdot\pmb{I}_j=J_{aa}\pmb{I}_a\cdot\pmb{I}_a+J_{ab}\pmb{I}_a\cdot\pmb{I}_b+J_{ba}\pmb{I}_b\cdot\pmb{I}_a+J_{bb}\pmb{I}_b\cdot\pmb{I}_b\]</div>
+<p>but only <span class="math notranslate nohighlight">\(J_{ba}\pmb{I}_b\cdot\pmb{I}_a\)</span> remains when the restriction <span class="math notranslate nohighlight">\(i &gt; j\)</span> if <span class="math notranslate nohighlight">\(b &gt; a\)</span> is applied. The dot product is clearer when written in matrix form and is</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} \displaystyle \pmb{I}_a\cdot\pmb{I}_b=\begin{bmatrix} I_{ax}\;I_{ay}\;I_{az}\end{bmatrix}\begin{bmatrix}I_{bx}\\I_{by}\\ I_{bz}\end{bmatrix}=I_{ax}I_{bz}+I_{ay}I_{by}+I_{az}I_{bz} \end{split}\]</div>
+<p>and this is the same result as <span class="math notranslate nohighlight">\(\pmb{I}_b\cdot\pmb{I}_a\)</span> because operators with an <span class="math notranslate nohighlight">\(a\)</span> subscript only act on spin <span class="math notranslate nohighlight">\(a\)</span>, and <span class="math notranslate nohighlight">\(\pmb{I}_b\)</span> only on spin <span class="math notranslate nohighlight">\(b\)</span>, therefore, operating on wavefuntions in the order <span class="math notranslate nohighlight">\(I_{ax}I_{bx}\)</span> produces the same result as operating <span class="math notranslate nohighlight">\(I_{bx} I_{ax}\)</span>.</p>
+<p><strong>(ii)</strong> Using this last result, equation 16 simplifies to</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle S=-\frac{q_aI_{az}}{\hbar} -\frac{q_bI_{bz} }{\hbar}+\frac{J}{\hbar^2}(I_{ax}I_{bz}+I_{ay}I_{by}+I_{az}I_{bz}) \tag{22}\]</div>
+<p>with the abbreviation <span class="math notranslate nohighlight">\(q = \gamma (1 -\sigma)B_0\)</span> for each nuclei <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span>. The first two terms contain only the <span class="math notranslate nohighlight">\(z\)</span> component of the angular momentum, because the magnetic field of the NMR spectrometer points only in the z direction. Planck’s constant is present in the equation to give <span class="math notranslate nohighlight">\(S\)</span> units of radian s<span class="math notranslate nohighlight">\(^{-1}\)</span>, matrix elements are in radian s<span class="math notranslate nohighlight">\(^{-1}\)</span> also. The magnetogyric ratio <span class="math notranslate nohighlight">\(\gamma\)</span> has units of radian tesla<span class="math notranslate nohighlight">\(^{-1}\)</span> s<span class="math notranslate nohighlight">\(^{-1}\)</span> and <span class="math notranslate nohighlight">\(B_0\)</span> has units of tesla, <span class="math notranslate nohighlight">\(\pmb{I}\)</span> has the same units as <span class="math notranslate nohighlight">\(\hbar \equiv\)</span> joule second radian<span class="math notranslate nohighlight">\(^{-1}\)</span>, and <span class="math notranslate nohighlight">\(\sigma\)</span> is dimensionless. Overall the units of <span class="math notranslate nohighlight">\(S\)</span> are rad s<span class="math notranslate nohighlight">\(^{-1}\)</span> or angular frequency. The constant <span class="math notranslate nohighlight">\(J\)</span> also has units of rad s<span class="math notranslate nohighlight">\(^{-1}\)</span>.</p>
+<p><strong>(iii)</strong> A basis set of four vectors can be used, however, the numbers are to be treated as symbols to represent the spin state; no arithmetic is done with them.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \left( \begin{bmatrix} s_a \\ m_a \\ s_b \\ m_b \end{bmatrix}\right)\equiv \left( \begin{bmatrix} 1/2\\1/2\\1/2\\1/2\end{bmatrix},\begin{bmatrix} 1/2\\-1/2\\1/2\\1/2\end{bmatrix},\begin{bmatrix} 1/2\\1/2\\1/2\\-1/2\end{bmatrix},\begin{bmatrix} 1/2\\-1/2\\1/2\\-1/2\end{bmatrix}\right)\qquad\qquad\qquad\qquad  \text{(23)}\end{split}\]</div>
+<p>Symbols could have been chosen instead of numbers. For example, if <span class="math notranslate nohighlight">\(\alpha = 1/2, \beta = -1/2\)</span> then the basis set would be</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \left( \begin{bmatrix} s_a \\ m_a \\ s_b \\ m_b \end{bmatrix}\right)\equiv \left( \begin{bmatrix} \alpha\\\alpha\\\alpha\\\alpha\end{bmatrix},\begin{bmatrix} \alpha\\\beta\\\alpha\\\alpha\end{bmatrix},\begin{bmatrix} \alpha\\\alpha\\\alpha\\\beta\end{bmatrix},\begin{bmatrix} \alpha\\\beta\\\alpha\\\beta\end{bmatrix}\right) \end{split}\]</div>
+<p>which may be preferable. The matrix of the expectation values is a <span class="math notranslate nohighlight">\(4 \times 4\)</span> matrix with rows and columns determined only by the <span class="math notranslate nohighlight">\(s\)</span> and <span class="math notranslate nohighlight">\(m\)</span> combinations, the two m values are listed along the top and down the side. The <span class="math notranslate nohighlight">\(s_a\)</span> and <span class="math notranslate nohighlight">\(s_b\)</span> quantum numbers in the basis set are not listed because they are always <span class="math notranslate nohighlight">\(1/\)</span>2. The top row and left-hand column show the matrix indices and the indices for the basis set. The Hamiltonian <span class="math notranslate nohighlight">\(S\)</span> is</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin{array}{c|c c} \begin{matrix} &amp; &amp; \\ &amp; &amp; m_a\\&amp; m_a &amp; m_b \end{matrix} &amp;
+\begin{matrix}  1&amp; 2&amp; 3 &amp; 4 \\  1/2 &amp; 1/2 &amp; -1/2 &amp; -1/2 \\    1/2 &amp; -1/2 &amp; 1/2 &amp; -1/2\end{matrix}  \\ \hline\begin{matrix} 1 &amp; 1/2 &amp; 1/2 \\2 &amp; 1/2 &amp; -1/2 \\3 &amp; -1/2 &amp; 1/2 \\4&amp; -1/2 &amp; -1/2 \end{matrix} &amp;
+\begin{bmatrix}H_{11} &amp; H_{12} &amp;H_{13}&amp; H_{14}\\H_{12} &amp; &amp; &amp; \\ \vdots &amp; &amp; &amp; \\\vdots &amp; &amp; &amp; \\ \end{bmatrix} \end{array}\qquad\qquad\qquad\qquad \text{(24)}\end{split}\]</div>
+<p>The matrix element <span class="math notranslate nohighlight">\(H_{ij}\)</span> integral written in terms of the quantum numbers is <span class="math notranslate nohighlight">\(H_{ij} =\langle sm_{ai}sm_{bi}|S|sm_{aj}sm_{bj}\rangle\)</span>, where the subscript <span class="math notranslate nohighlight">\(i\)</span> refers to rows and <span class="math notranslate nohighlight">\(j\)</span> to columns. Looking at the matrix, <span class="math notranslate nohighlight">\(m_{a1} = 1/2,\, m_{b2} =-1/2\)</span>, and <span class="math notranslate nohighlight">\(\pmb{S}\)</span> is the operator equation 22. Recall that operating on nucleus <span class="math notranslate nohighlight">\(a\)</span> with an ‘a’ nuclear operator does not affect nucleus <span class="math notranslate nohighlight">\(b\)</span> and vice versa, and this is why it is necessary to label <span class="math notranslate nohighlight">\(m\)</span> with nucleus <span class="math notranslate nohighlight">\(a\)</span> or <span class="math notranslate nohighlight">\(b\)</span>. (One could remember that the second entry is always nucleus <span class="math notranslate nohighlight">\(b\)</span>, which makes the equations less messy, but the risk of making an error is far greater.)</p>
+<p>The two nuclei form a basis set of four elements so that there are 16 integrals to evaluate, but looking at the integrals, equations 18 to 21, only those with the same <span class="math notranslate nohighlight">\(s\)</span> and <span class="math notranslate nohighlight">\(m\)</span> or those with one <span class="math notranslate nohighlight">\(m\)</span> changing by <span class="math notranslate nohighlight">\(+1\)</span>, the other by <span class="math notranslate nohighlight">\(-1\)</span>, are not zero. This means that most of the matrix contains zero. The matrix, when all terms are evaluated, is</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin{array}{c|c c} \begin{matrix} &amp; &amp; \\ &amp; &amp; m_a\\&amp; m_a &amp; m_b \end{matrix} &amp;
+\begin{matrix}  1&amp;\qquad &amp;\qquad 2&amp;\qquad  &amp;\qquad 3&amp;\qquad &amp;\quad 4 \\  1/2&amp;\qquad &amp;\qquad 1/2 &amp;\qquad&amp; \qquad -1/2 &amp;\qquad&amp; \qquad -1/2 \\    1/2 &amp;\qquad&amp;\qquad -1/2 &amp;\qquad&amp;\qquad 1/2 &amp;\qquad&amp;\qquad -1/2\end{matrix}  \\ 
+\hline\begin{matrix} 1 &amp; 1/2 &amp; 1/2 \\2 &amp; 1/2 &amp; -1/2 \\3 &amp; -1/2 &amp; 1/2 \\4&amp; -1/2 &amp; -1/2 \end{matrix} &amp;
+\begin{bmatrix}-q_a/2-q_b/2+J/4 &amp; 0 &amp;0&amp; 0\\0&amp;-q_a/2+q_b/2-J/4  &amp;J/2 &amp;0 \\ 0 &amp;J/2 &amp;q_a/2-q_b/2-J/4 &amp;0 \\0 &amp; 0&amp;0 &amp;q_a/2+q_b/2+J/4 \\ \end{bmatrix} \end{array} \qquad\text{(25)}\end{split}\]</div>
+<p>This matrix shows how the states <span class="math notranslate nohighlight">\(| 1/2, -1/2\rangle\)</span> and <span class="math notranslate nohighlight">\(| -1/2, 1/2\rangle\)</span> are mixed by the <span class="math notranslate nohighlight">\(J\)</span> spin-spin interaction because these are the only states with off-diagonal terms. The matrix can be diagonalized by blocking it into two <span class="math notranslate nohighlight">\(1 \times 1\)</span> matrices and a <span class="math notranslate nohighlight">\(2\times 2\)</span> matrix; therefore, two of the energies can be read directly from the matrix.</p>
+<p>The terms are calculated as follows: the first integral is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle H_{11}= \langle sm_{a1},sm_{b1}\big|-\frac{q_aI_{az}}{\hbar}-\frac{q_bI_{bz}}{\hbar}+\frac{J}{\hbar^2}(I_{ax}I_{bz}+I_{ay}I_{by}+I_{az}I_{bz}) \big|sm_{a1},sm_{b1}\rangle \tag{26}\]</div>
+<p>which has five terms each with quantum numbers <span class="math notranslate nohighlight">\(s_{a1} = 1/2, s_{b1} = 1/2, m_{a1} = 1/2, m_{b1} = 1/2\)</span>. The <span class="math notranslate nohighlight">\(s\)</span> and <span class="math notranslate nohighlight">\(m\)</span> quantum numbers only operate on spins on the same nuclei, i.e. <span class="math notranslate nohighlight">\(a\)</span> with a and <span class="math notranslate nohighlight">\(b\)</span> with b. The first term in equation 26 with operator <span class="math notranslate nohighlight">\(\pmb{I}_{az}\)</span> can be factored into two terms because it does not operate on nucleus b.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin{align} -\frac{q_a}{\hbar}\langle sm_{a1},sm_{b1}\big|I_{az} |sm_{a1},sm_{b1}\rangle &amp; =-\frac{q_a}{\hbar}\langle sm_{a1}\big|I_{az} |sm_{a1}\rangle\langle sm_{b1}\big|sm_{b1}\rangle\\&amp;=-\frac{q_a}{\hbar}\langle sm_{a1}\big|I_{az} |sm_{a1}\rangle \end{align}\end{split}\]</div>
+<p>because the second integral is <span class="math notranslate nohighlight">\(1\)</span> as the wavefunctions are normalised.</p>
+<p>The angular momentum operator <span class="math notranslate nohighlight">\(I_{az}\)</span> acts on nucleus a only, the integral has the form <span class="math notranslate nohighlight">\(\langle sm | I_z | sm\rangle = m\hbar\)</span>, equation 21, and as <span class="math notranslate nohighlight">\(m_a = 1/2\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[ \displaystyle \langle sm_{a1}\big|I_{az} |sm_{a1}\rangle=\frac{\hbar}{2}\]</div>
+<p>and the second terms acts in a similar way to produce <span class="math notranslate nohighlight">\(-\hbar/2\)</span></p>
+<p>The third to fifth terms involve two spin terms, such as <span class="math notranslate nohighlight">\(I_xI_x\)</span>, which are evaluated as the product of two terms, one for spin <span class="math notranslate nohighlight">\(a\)</span> the other for spin <span class="math notranslate nohighlight">\(b\)</span>, giving for the <span class="math notranslate nohighlight">\(z\)</span> terms by equation 21,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{J}{\hbar^2}\langle sm_{a1},sm_{b1}\big|I_{az}I_{bz} |sm_{a1},sm_{b1}\rangle=\frac{J}{\hbar^2}\langle sm_{a1}\big|I_{az} |sm_{a1}\rangle \langle sm_{b1}\big|I_{bz} |sm_{b1}\rangle=\frac{J}{4}\]</div>
+<p>The <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> components <span class="math notranslate nohighlight">\(I_x\)</span> and <span class="math notranslate nohighlight">\(I_y\)</span> are zero because <span class="math notranslate nohighlight">\(m_a = m_b = 1/2\)</span>, as required by equations 19 and 20; all diagonal terms in the matrix are zero for <span class="math notranslate nohighlight">\(I_x\)</span> and <span class="math notranslate nohighlight">\(I_y\)</span> operators for the same reason. The first diagonal term is therefore <span class="math notranslate nohighlight">\(H_{11} = -q_a/2 - q_b/2 + J/4\)</span>. The other diagonal terms in the matrix equation 25 are evaluated in a similar manner, the sign changes being due to the different signs that <span class="math notranslate nohighlight">\(m\)</span> has.</p>
+<p>The two non-zero off-diagonal terms are <span class="math notranslate nohighlight">\(H_{32}\)</span> and <span class="math notranslate nohighlight">\(H_{23}\)</span>, (column 2, row 3), has <span class="math notranslate nohighlight">\(m_a\)</span> decreasing by one and <span class="math notranslate nohighlight">\(m_b\)</span> increasing by one. On the off-diagonal, <span class="math notranslate nohighlight">\(m\)</span> changes therefore each of the <span class="math notranslate nohighlight">\(I_z\)</span> terms in the integral are zero, see equation 21. The remaining two integrals with <span class="math notranslate nohighlight">\(I_x\)</span> and <span class="math notranslate nohighlight">\(I_y\)</span> are factored into two pairs in <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> as follows</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin{align} &amp;\langle sm_{a2},sm_{b2} \big| I_{ax}I_{bx}+I_{ay}I_{by}\big|sm_{a3},sm_{b3}\rangle \\ &amp;= \langle sm_{a2} \big| I_{ax}\big|sm_{a3}\rangle\langle sm_{b2} \big| I_{bx}\big|sm_{b3}\rangle 
++ \langle sm_{a2} \big| I_{ay}\big|sm_{a3}\rangle\langle sm_{b2} \big| I_{by}\big|sm_{b3}\rangle \end{align}\end{split}\]</div>
+<p>Each of these four integrals is tackled separately. The first is <span class="math notranslate nohighlight">\(\langle sm_{a2}|I_{ax}|sm_{a3}\rangle\)</span> and
+equation 19 is used to evaluate it. Looking at the matrix, 24, the <span class="math notranslate nohighlight">\(m_a\)</span> value in row 2 is <span class="math notranslate nohighlight">\(m_{a2} = m_{a3} + 1\)</span>, with <span class="math notranslate nohighlight">\(m_{a3}\)</span> in column 3, therefore substituting values,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \langle sm_{a2}|I_{ax}|sm_{a3}\rangle=\langle sm_{a3}+1|I_{ax}|sm_{a3}\rangle=\frac{\hbar}{2}\sqrt{\frac{1}{2}\frac{3}{2}+\frac{1}{2}\frac{1}{2}}=\frac{\hbar}{2}\]</div>
+<p>The other integrals are evaluated in a similar manner, and even though the<span class="math notranslate nohighlight">\(y\)</span> component is a complex number a real result is produced, as must be the case.</p>
+<p>In total the <span class="math notranslate nohighlight">\(H_{23}\)</span> term has a matrix entry of <span class="math notranslate nohighlight">\(J/2\)</span>. Since the matrix is Hermitian, as are all quantum matrices, it is real and symmetrical and therefore, <span class="math notranslate nohighlight">\(H_{23} = H_{32}\)</span>.</p>
+<p>You can see how tricky it is to evaluate these integrals, but only because the notation is very complicated. Python/Sympy can help with the notation and do the calculation. First, define the integrals, which are called Ix, Iy, and Iz, and are equations 19 to 21.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Ix</span><span class="p">,</span> <span class="n">Iy</span><span class="p">,</span> <span class="n">Iz</span><span class="p">,</span> <span class="n">sa</span><span class="p">,</span> <span class="n">sb</span><span class="p">,</span> <span class="n">ma</span><span class="p">,</span> <span class="n">mb</span><span class="p">,</span> <span class="n">hbar</span><span class="p">,</span> <span class="n">qa</span><span class="p">,</span> <span class="n">qb</span><span class="p">,</span> <span class="n">m1</span><span class="p">,</span> <span class="n">m11</span><span class="p">,</span> <span class="n">m2</span><span class="p">,</span> <span class="n">m22</span><span class="p">,</span> <span class="n">Ixyz</span><span class="p">,</span> <span class="n">J</span>\
+<span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;Ix,Iy,Iz,sa,sb,ma,mb,hbar,qa,qb,m1,m11,m2,m22,Ixyz,J&#39;</span><span class="p">)</span>
+
+<span class="c1">#------------------------------------------</span>
+<span class="k">def</span> <span class="nf">Iz</span><span class="p">(</span><span class="n">sa</span><span class="p">,</span><span class="n">ma</span><span class="p">,</span><span class="n">sb</span><span class="p">,</span><span class="n">mb</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">ma</span> <span class="o">==</span> <span class="n">mb</span><span class="p">:</span> <span class="k">return</span> <span class="n">hbar</span><span class="o">*</span><span class="n">ma</span>   <span class="c1"># &lt;sm|Iz|sm&gt;</span>
+    <span class="k">else</span><span class="p">:</span>        <span class="k">return</span> <span class="mi">0</span>
+<span class="c1">#---------------------------------</span>
+<span class="k">def</span> <span class="nf">Iy</span><span class="p">(</span><span class="n">sa</span><span class="p">,</span><span class="n">ma</span><span class="p">,</span><span class="n">sb</span><span class="p">,</span><span class="n">mb</span><span class="p">):</span>  <span class="c1"># -i&lt;sm|Iy|sm +1/-1 &gt;</span>
+    <span class="k">if</span> <span class="n">mb</span> <span class="o">==</span> <span class="n">ma</span><span class="o">+</span><span class="mi">1</span><span class="p">:</span>    <span class="k">return</span> <span class="p">(</span> <span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">hbar</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">sqrt</span><span class="p">(</span><span class="n">sa</span><span class="o">*</span><span class="p">(</span><span class="n">sa</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">-</span><span class="n">ma</span><span class="o">*</span><span class="p">(</span><span class="n">ma</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="p">)</span>
+    <span class="k">elif</span> <span class="n">mb</span> <span class="o">==</span> <span class="n">ma</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span>  <span class="k">return</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">hbar</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">sqrt</span><span class="p">(</span><span class="n">sa</span><span class="o">*</span><span class="p">(</span><span class="n">sa</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">-</span><span class="n">ma</span><span class="o">*</span><span class="p">(</span><span class="n">ma</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span> <span class="k">return</span> <span class="mi">0</span>
+<span class="c1">#---------------------------------    </span>
+<span class="k">def</span> <span class="nf">Ix</span><span class="p">(</span><span class="n">sa</span><span class="p">,</span><span class="n">ma</span><span class="p">,</span><span class="n">sb</span><span class="p">,</span><span class="n">mb</span><span class="p">):</span>  <span class="c1"># &lt;sm|Ix|sm +1/-1 &gt;</span>
+    <span class="k">if</span> <span class="n">mb</span> <span class="o">==</span> <span class="n">ma</span><span class="o">+</span><span class="mi">1</span><span class="p">:</span>    <span class="k">return</span> <span class="p">(</span> <span class="n">hbar</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">sqrt</span><span class="p">(</span><span class="n">sa</span><span class="o">*</span><span class="p">(</span><span class="n">sa</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">-</span><span class="n">ma</span><span class="o">*</span><span class="p">(</span><span class="n">ma</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="p">)</span>
+    <span class="k">elif</span> <span class="n">mb</span> <span class="o">==</span> <span class="n">ma</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span>  <span class="k">return</span> <span class="p">(</span> <span class="n">hbar</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">sqrt</span><span class="p">(</span><span class="n">sa</span><span class="o">*</span><span class="p">(</span><span class="n">sa</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">-</span><span class="n">ma</span><span class="o">*</span><span class="p">(</span><span class="n">ma</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span> <span class="k">return</span> <span class="mi">0</span>
+<span class="c1">#---------------------------------</span>
+<span class="k">def</span> <span class="nf">delta</span><span class="p">(</span><span class="n">p</span><span class="p">,</span><span class="n">q</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">p</span> <span class="o">==</span> <span class="n">q</span><span class="p">:</span> <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span> <span class="k">return</span> <span class="mi">0</span>
+<span class="c1">#---------------------------------    </span>
+    
+<span class="n">n</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="n">H</span> <span class="o">=</span> <span class="n">Matrix</span><span class="p">([</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="p">]</span> <span class="p">)</span>  <span class="c1"># define zero matrix</span>
+
+<span class="n">ma</span> <span class="o">=</span> <span class="n">Matrix</span><span class="p">([</span> <span class="p">[</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">]</span> <span class="p">])</span>
+<span class="n">mb</span> <span class="o">=</span> <span class="n">Matrix</span><span class="p">([</span> <span class="p">[</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">]</span> <span class="p">])</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span> 
+        <span class="n">m1</span> <span class="o">=</span> <span class="n">ma</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="n">m11</span><span class="o">=</span> <span class="n">ma</span><span class="p">[</span><span class="n">k</span><span class="p">]</span>
+        <span class="n">m2</span> <span class="o">=</span> <span class="n">mb</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="n">m22</span><span class="o">=</span> <span class="n">mb</span><span class="p">[</span><span class="n">k</span><span class="p">]</span>
+        <span class="n">Iaz</span><span class="o">=</span> <span class="o">-</span><span class="n">qa</span><span class="o">/</span><span class="n">hbar</span><span class="o">*</span><span class="n">Iz</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="n">m1</span><span class="p">,</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="n">m11</span><span class="p">)</span><span class="o">*</span><span class="n">delta</span><span class="p">(</span><span class="n">m2</span><span class="p">,</span><span class="n">m22</span><span class="p">)</span>
+        <span class="n">Ibz</span><span class="o">=</span> <span class="o">-</span><span class="n">qb</span><span class="o">/</span><span class="n">hbar</span><span class="o">*</span><span class="n">Iz</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="n">m2</span><span class="p">,</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="n">m22</span><span class="p">)</span><span class="o">*</span><span class="n">delta</span><span class="p">(</span><span class="n">m1</span><span class="p">,</span><span class="n">m11</span><span class="p">)</span>
+        <span class="n">Ixyz</span><span class="o">=</span><span class="p">(</span><span class="n">J</span><span class="o">/</span><span class="n">hbar</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">Ix</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="n">m1</span><span class="p">,</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="n">m11</span><span class="p">)</span><span class="o">*</span><span class="n">Ix</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="n">m2</span><span class="p">,</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="n">m22</span><span class="p">)</span>\
+                         <span class="o">+</span><span class="n">Iy</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="n">m1</span><span class="p">,</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="n">m11</span><span class="p">)</span><span class="o">*</span><span class="n">Iy</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="n">m2</span><span class="p">,</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="n">m22</span><span class="p">)</span>\
+                         <span class="o">+</span><span class="n">Iz</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="n">m1</span><span class="p">,</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="n">m11</span><span class="p">)</span><span class="o">*</span><span class="n">Iz</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="n">m2</span><span class="p">,</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="n">m22</span><span class="p">)</span> <span class="p">)</span>
+        <span class="n">H</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">k</span><span class="p">]</span><span class="o">=</span><span class="n">Iaz</span><span class="o">+</span><span class="n">Ibz</span><span class="o">+</span><span class="n">Ixyz</span>
+<span class="n">H</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \left[\begin{matrix}0.25 J - 0.5 qa - 0.5 qb &amp; 0 &amp; 0 &amp; 0\\0 &amp; - 0.25 J - 0.5 qa + 0.5 qb &amp; 0.5 J &amp; 0\\0 &amp; 0.5 J &amp; - 0.25 J + 0.5 qa - 0.5 qb &amp; 0\\0 &amp; 0 &amp; 0 &amp; 0.25 J + 0.5 qa + 0.5 qb\end{matrix}\right]\end{split}\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">eigvals</span> <span class="o">=</span> <span class="n">H</span><span class="o">.</span><span class="n">eigenvals</span><span class="p">()</span>   <span class="c1"># calculate eigenvalues: H.eigenevcts() gets eigenvectors and eigenvalues</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span> 
+    <span class="nb">print</span><span class="p">(</span> <span class="p">(</span><span class="nb">list</span><span class="p">(</span> <span class="n">eigvals</span><span class="o">.</span><span class="n">keys</span><span class="p">())[</span><span class="n">i</span><span class="p">]</span> <span class="p">)</span> <span class="p">)</span>  <span class="c1"># print values</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.5*(0.5*J - 1.0*qa - 1.0*qb)
+-0.25*J - 0.707106781186548*sqrt(0.5*J**2 + 0.5*qa**2 - 1.0*qa*qb + 0.5*qb**2)
+-0.25*J + 0.707106781186548*sqrt(0.5*J**2 + 0.5*qa**2 - 1.0*qa*qb + 0.5*qb**2)
+0.5*(0.5*J + 1.0*qa + 1.0*qb)
+</pre></div>
+</div>
+</div>
+</div>
+<p>The eigenvalues are</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin{align}E_1&amp;= -\frac{q_a+q_b}{2}+\frac{J}{4}\\ E_2&amp;=\frac{q_a+q_b}{2}+\frac{J}{4}\\
+E_3&amp;=\frac{\sqrt{J^2+(q_a-q_b)^2}}{2}-\frac{J}{4} \\ E_4&amp;=-\frac{\sqrt{J^2-(q_a-q_b)^2}}{2}-\frac{J}{4}\end{align} \end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(q=(1-\sigma)B_0\)</span>. These results show how the energy levels (in units of Hz) depend on the applied magnetic field <span class="math notranslate nohighlight">\(B_0\)</span> in tesla. The corresponding eigenvectors are</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin{bmatrix}1\\0\\0\\0 \end{bmatrix},\quad \begin{bmatrix}0\\0\\0\\1 \end{bmatrix}, \quad\begin{bmatrix}0\\c_1\\1\\0 \end{bmatrix},\quad \begin{bmatrix}0\\c_2\\1\\0 \end{bmatrix} \end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(c_1\)</span> and <span class="math notranslate nohighlight">\(c_2\)</span> are complicated terms in <span class="math notranslate nohighlight">\(q_a, q_b\)</span>, and <span class="math notranslate nohighlight">\(J\)</span>. The eigenvectors are orthogonal because, when evaluated it is found that <span class="math notranslate nohighlight">\(c_1c_2 + 1 = 0\)</span>.</p>
+<p>Examining the basis set and the eigenvectors, the first eigenvector with 1 as its first element and energy <span class="math notranslate nohighlight">\(E_1\)</span> corresponds to state <span class="math notranslate nohighlight">\((1/2\; 1/2\; 1/2 \;1/2)\)</span> with <span class="math notranslate nohighlight">\(m_a =m_b =1/2\)</span>, the second to <span class="math notranslate nohighlight">\(m_a =m_b =-1/2\)</span>. The other two eigenvectors correspond to states with <span class="math notranslate nohighlight">\(m_a = 1/2\)</span> or <span class="math notranslate nohighlight">\(m_b = -1/2\)</span> and <em>vice versa</em>. The NMR transition is allowed only if <span class="math notranslate nohighlight">\(\Delta m = \pm 1\)</span>; therefore, the transition can occur only between levels <span class="math notranslate nohighlight">\(4-2,\; 4-1\)</span> and <span class="math notranslate nohighlight">\(2-3,\; 1-3\)</span>. ( If you repeat the calculation, your computer may produce a different eigenvalue and eigenvector pair ordering, but the eigenvalues and vectors are always paired up in the correct way.)</p>
+<p><img alt="Drawing" src="chapter-7/matricesQM-fig2.png" /></p>
+<p>Figure 2 Schematic of the four energy levels vs applied field <span class="math notranslate nohighlight">\(B_0\)</span> and the NMR transitions for a two spin <span class="math notranslate nohighlight">\(1/2\)</span> system at the same fixed value of the magnetic field and in the AX limit (dashed lines) where <span class="math notranslate nohighlight">\(J\)</span> is small compared to the chemical shift. The number in brackets after the spin quantum numbers is the eigenvalue index. The energy when <span class="math notranslate nohighlight">\(J\)</span> is small (dashed lines)  is not zero but <span class="math notranslate nohighlight">\(J/4\)</span>. In this figure the dashed lines are produced with <span class="math notranslate nohighlight">\(J\)</span> as <span class="math notranslate nohighlight">\(1\)</span>% of the value used to calculate the other lines.</p>
+</section>
+<hr class="docutils" />
+<section id="ax-spectra">
+<h2>3.1 AX spectra<a class="headerlink" href="#ax-spectra" title="Permalink to this headline">#</a></h2>
+<p>If the coupling <span class="math notranslate nohighlight">\(J\)</span> is small compared to the difference in chemical shift, the AX limit is produced. The condition is expressed as <span class="math notranslate nohighlight">\(J /2 \ll (q_a-q_b) \equiv \gamma_a(1 - \sigma_a) - \gamma_b (1 - \sigma_b)\)</span>, and some simplification of the equations is possible, for exammple</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle E_4=-\frac{J}{4}- \frac{(q_a-q_b)}{2}, \qquad E_4=-\frac{J}{4}+ \frac{(q_a-q_b)}{2}\]</div>
+<p>where <span class="math notranslate nohighlight">\(q=(1-\sigma)B_0\)</span> and the other levels are unchanged. This arrangement of levels produces the familiar four level structure and two double peaked NMR spectra, the smaller spacing being the spin-spin coupling <span class="math notranslate nohighlight">\(J\)</span>. Although the equation for the exact energy has been simplified, by looking at the matrix equation 25, the same result is obtained if the off-diagonal terms are ignored.</p>
+<p><img alt="Drawing" src="chapter-7/matricesQM-fig3.png" /></p>
+<p>Figure 3. AX type spectrum. The spin-spin coupling is smaller than the difference in chemical shift. <span class="math notranslate nohighlight">\(q=(1-\sigma)B_0\)</span></p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./chapter-7"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Godfrey Beddard<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

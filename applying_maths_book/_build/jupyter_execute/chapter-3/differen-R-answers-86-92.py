@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## Solutions Q 86 - 94
+# # Solutions Q 86 - 94
 
 # In[1]:
 
@@ -16,7 +16,7 @@ init_printing()                      # allows printing of SymPy results in types
 plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 
-# ### Q85 answer
+# ## Q85 answer
 # When $\omega = 0$, the function has the value nominally $0/0$ and l'Hopital's rule can be used to find its true value. This gives
 # 
 # $$\displaystyle \lim_{\omega \to 0}\frac{\sin(\omega \tau)}{\omega\tau}\to \frac{\cos(\omega \tau)}{\tau} = 1$$
@@ -45,7 +45,7 @@ print(w)
 # 
 # Figure 60. $H(\omega)=\omega\sqrt{\pi/2}-\sin(\omega\tau)$ with $\tau =3$.
 # ____
-# ### Q86 answer
+# ## Q86 answer
 # The equations to use are (37), 
 # 
 # $$\displaystyle \frac{df(x,y)}{dx}+\lambda\frac{dg(x,y)}{dx}=0\quad \text{ and } \quad \frac{df(x,y)}{dy}+\lambda\frac{dg(x,y)}{dy}=0$$
@@ -72,7 +72,7 @@ print(fsolve(f,1))     # 1 is initial guess
 # Figure 61. The line of closest approach of the point ($2, 2$) to the exponential $\exp(-x)$ is shown. The circle has its centre at ($2, 2$) and radius of $1.84$.
 # ____
 # 
-# ### Q87 answer
+# ## Q87 answer
 # The function to minimize is $f(x, y) =\sqrt{ x^2 + y^2}$ and the constraint is $g(x, y) = y -\sqrt{ (4 - x)^3/x}$. Taking the derivatives and putting values into eqn. (37) gives 
 # 
 # $$\displaystyle -\frac{x}{f}+\frac{\lambda}{2y}\left( -\frac{3(4-x)^2}{x}-\frac{(4-x)^3}{x^2}  \right)=0$$
@@ -120,7 +120,7 @@ simplify(ans)
 # Note that the symbolic computer result has a different from to that worked out by hand but produces the same result as it has been factored to a greater extent than that done by hand.
 # 
 # 
-# ### Q88 answer
+# ## Q88 answer
 # Using the Lagrange undetermined multiplier method, eqn (37), the function is $f (a, b) = ab$ and constraint $g(a, b) = a^2 + b^2 - 1$. Differentiating with respect to $a$ then $b$ respectively produces the two equations $b+2a\lambda =0$ and $a+2b\lambda =0$.
 # 
 # From these last two equations, the product $ab = (2abλ)^2$, therefore $ab = 1/4\lambda$. Also, from the two equations, $a^2 + b^2 = 4λ^2(a^2 + b^2)$ and therefore $\lambda = 1/2$. Since $ab = 1/4\lambda$ the answer to the question is $ab = 1/2$.
@@ -132,7 +132,7 @@ simplify(ans)
 # Figure 62 Plot showing that $ab = 1/2$ is a maximum if constrained by $a^2 +b^2 =1$.
 # ____
 # 
-# ### Q89 answer
+# ## Q89 answer
 # The  time for a photon to go from A to B is distance/ speed (see fig 32). The speed of light in the medium is $c/n_a$ for the top medium and $c/n_b$ for the other. The distance AO is, by trigonometry, $a/\cos(\theta_a)$ and similarly OB is $b/\cos(\theta_b)$. The total time taken to get from A to B is therefore 
 # 
 # $$\displaystyle  t=\frac{an_a}{c\cos(\theta_a)}+\frac{bn_b}{c\cos(\theta_b)}$$
@@ -149,7 +149,7 @@ simplify(ans)
 # 
 # which proves Snell's Law usually written as $n_a\sin(\theta_a) = n_b\sin(\theta_b)$.
 
-# ### Q90 answer
+# ## Q90 answer
 # When there are $n$ species, the sum of the mole fractions must still make unity making the constraint $\sum_{i=1}^n x_i = 1$ and the function is the entropy 
 # 
 # $$S=-k_B\sum_{i=1}^nx_i\ln(x_i)$$
@@ -172,7 +172,7 @@ simplify(ans)
 # 
 # Recall that $\ln(1/n)=-\ln(n)$ and that $\sum_{i=1}^n 1 =n$.
 # 
-# ### Q91 answer
+# ## Q91 answer
 # The minimisation function is 
 # 
 # $$Q=-\sum_{v=0}^n x_v\ln(x_v)+\lambda\sum_{v=0}^n x_v=-\sum_{v=0}^n (x_v\ln(x_v)-\lambda x_v)$$
@@ -192,7 +192,7 @@ simplify(ans)
 # In the question, this last sum is also $1$, then substituting for the exponential $x_v = e^{\lambda-1}$ gives $x_v = 1/n$ where $n$ is the total number of levels populated. The distribution $x_v = 1/n$ is uniform because each vibrational level has an equal chance of being populated, and we conclude that when the vibrational level populations are distributed for maximum entropy, then this uniform distribution is expected. This is easy to observe experimentally, however, in this particular reaction a non-uniform vibrational distribution was observed because energy can also be placed into rotational levels. The experimental data can be seen in Polanyi & Schreiber (1977).
 # 
 # 
-# ### Q92 answer
+# ## Q92 answer
 # Call the constraints 
 # 
 # $$g(x,y,z)=x+y+z-1=0\quad \text{ and }\quad h(x,y,z)=x^2 +z^2 -1=0$$

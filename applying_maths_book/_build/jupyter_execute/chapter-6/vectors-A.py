@@ -1,22 +1,23 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## Vector basics 
+# # Vector basics 
 
+# ## Introduction
 # Although vectors, such as force or velocity, have two 'dimensions' - magnitude and direction - mathematically, they can have any number of dimensions. A vector's components need not be objects in any physical space; this is not as bizarre as it sounds, for example, your car can be described by its make, colour, manufacture date, engine-capacity, and model. These values can form a vector such as (Ford, yellow, 2005, 1900 cc, estate). However, a vector is more than just a list; it is constructed from a basis set. The basis set contains the primitive components and the vector is constructed as a linear combination of these elements; more of this later. The basis set is not always apparent, for example, when drawing arrows on a graph, but in all cases, including topics as diverse as quantum mechanics and geometry, the basis set must be explicitly defined before a calculation is started. However, in apparent contradiction to this, many vector properties and formulae can be obtained by symbolically, which means algebraically, $\boldsymbol{ A} + \boldsymbol{B}$, etc., without a thought about the basis set, and some of these calculations are described in Section 6.2. As an aside, W. Hamilton, of Hamiltonian fame, first seems to have used the word 'vector'. J. Willard Gibbs who developed much of thermodynamics also largely developed vector analysis. 
 # 
 # 
-# ### 1.1 Notation
+# ## 1.1 Notation
 # It is important to distinguish vectors from scalars. Scalars are printed in normal typeface, 1, 2, 3, etc. Symbols with an arrow $\vec A, \vec B$, and so forth will represent vectors. Square brackets $[1\;3\;-4]$ are used to represent a vector's components 1, 3, and -4, so a vector is written as $A= [1\; 3\; -4]$. If $A$ ends at a point on a graph,it is defined to have a basis set ( $x, y, z$ ) which, when it is necessary to be explicitly stated, will have round brackets as will coordinates of a point in space (4, 0, 2). Some authors put a line above a letter, e.g. $\bar B$, to indicate a vector, we will place an arrow over the letters, for example vector $A$ to $B$ is written as $\vec {AB}$. The vector's magnitude or length is enclosed in a pair of vertical lines as $| A|$; however, vertical lines are also used to indicate the absolute value of a quantity and represent a determinant, but the context should make the meaning clear.
 # 
 # 
-# ### 1.2 Basis sets 
+# ## 1.2 Basis sets 
 # In describing many phenomena, such as the static magnetic field in an NMR machine, right-angled (rectilinear) or Cartesian axes are used. A vector can be represented in this space as a linear combination or multiples of three vectors of *unit length* each one pointing from the origin along each of the x-, y-, or z-axes. These three *unit vectors* form the basis set, and in three dimensions are normally labelled $\vec {i}, \vec{j}$, and $\vec k $. In quantum mechanics, for instance, the basis set needed is not always that of spatial coordinates, and often comprises the set of quantum numbers a given atom or molecule possesses. The basis set for a car with the description, yellow Ford estate, 1900 cc, 2005 could be $\text{(make, colour, manufacturing date, engine size, model)}$ making $\begin{bmatrix}Ford & yellow& 2005& 1900 & estate\end{bmatrix}$.
 # 
 # Before basis sets are considered, some general vector properties are defined, which still apply whether we specifically use them in the form of the components of a basis set or not. 
 # 
 # 
-# ### 1.3 Position vectors 
+# ## 1.3 Position vectors 
 # Conventionally, positional vectors are drawn as arrows to indicate which way they point, and a set of axes is not usually shown. Some of the infinite number that could be drawn is shown in Fig. 6.1. Notice that in the top left of the figure, vectors $\vec R$ and $\vec S$ are the same even though they are displaced from one another because they have the same length and direction. Consequently, on the top right, $\vec {R} \ne \vec{ S}$ because their directions differ even though their lengths are identical. The coordinate origin of each vector is always at its base, so $\vec R$ and $\vec S$ have their own local coordinate origin whether or not they are equal to one another. To add two vectors, form a triangle; to add three, form a rectangle; and form a polygon if there are more, so that the sum of all the vectors is zero. 
 # 
 # In Fig. 6.1 (iii), the vectors $\vec {A},\vec{ B}$, and $\vec C$ are added by placing the head (or tip) of one to the tail of the other and completing the triangle, the equation is therefore 
@@ -51,7 +52,7 @@
 # Figure 2. Two- and three-dimensional Cartesian coordinates. Right: A vector $\vec V$ is shown pointing from the origin to point $(x_1, y_1, z_)$.
 # ________
 
-# #### **Surface and Interfacial Tension**
+# ### **Surface and Interfacial Tension**
 # The surface tension of a liquid is a property of the intermolecular forces that exist in a liquid. Mainly these forces are directed into the liquid at the surface with air (or with the liquid's vapour) and not out of the surface. The energy of molecules at the surface is greater than that of the bulk and consequently it takes energy to increase the surface area. In thermodynamic terms the surface tension $\gamma$ is the rate of change of Gibbs energy with increase in area, $dG=\gamma dA$ thus $\gamma$ has units of force/length. The values of $\gamma$ are in the range $20-30$ mN/m for common liquids such as acetone, benzene or ethanol, but are larger for water ($72.8$) because hydrogen bonds are broken and in liquid metals such as mercury where $\gamma =485$ mN/m the surface tension values are large due to the coulomb attraction to be overcome by bringing an ion from the interior to the surface.
 # 
 # ![Drawing](vectors-fig2a1.png)
@@ -85,7 +86,7 @@
 # 
 # $$\displaystyle S=\gamma_{wa}-\gamma_{oa}-\gamma_{w0}$$
 # 
-# #### **Newton Diagrams, molecular beams and reactive scattering**
+# ### **Newton Diagrams, molecular beams and reactive scattering**
 # 
 # An important example of vector addition is found in Newton Diagrams which are used to describe the kinematics of  crossed molecular beams. In these experiments two gaseous species are cooled by expansion into a vacuum chamber and the atoms and molecules are made to collide into one another and the direction and energy of the scattered species is measured. Although the atoms or molecules are cooled they still have considerable velocity, a few hundred metres per second is not uncommon. If no reaction takes place the collision is called _elastic_ (Ar + Ne and Kr +HCl for example) and _inelastic_ if there is a chemical reaction such as $\mathrm{K+CH_3I} \to \mathrm{KI +CH_3}$ or $\mathrm{H+I_2}\to \mathrm{I+HI}$ and here the difference in velocity provides the kinetic energy to overcome any reaction barrier. 
 # 
@@ -173,7 +174,7 @@
 # 
 # A third possibility exists which is that the species form a complex instead of immediately scattering. If this complex is long-lived compared to the time it takes to reach the detector, a few milliseconds, then the only product to be observed will be in the direction determined by the centre of mass vector. If the complex is short lived, say a few rotational periods then the products will be sprayed out in all directions as it rotates making analysis very hard. See Bernstein (1982) and Steinfeld (1999) for a full explanation of reaction dynamics. 
 
-# ### 2 Vector multiplication: dot, cross, and triple products
+# ## 2 Vector multiplication: dot, cross, and triple products
 # 
 # Multiplying two vectors together can be done in _two_ ways; the result is either a scalar (number), or a vector.
 # 
@@ -183,7 +184,7 @@
 # 
 # Triple products, as you would imagine, are more complicated, and can form a vector $\vec{A} \times (\vec{B} \times \vec C )$ or a scalar $\vec{A}\cdot \vec B \times \vec C$. They are described in Sections 17 and 18.
 # 
-# ### 2.1 Dot product
+# ## 2.1 Dot product
 # 
 # The dot product of two vectors $\vec{A}$ and $\vec{B}$ is a number and is defined as
 # 
@@ -207,7 +208,7 @@
 # 
 # because the scattering is elastic $|\vec v_r|=|\vec v_r'|$ and $\vec v_r =\vec v_1-\vec v_2$ which are the original velocities of species 1 and 2. However, without knowing what the vectors are in terms of numbers, i.e. in a basis set, the angle $\chi$ cannot be found.
 # 
-# ### 2.2 Cross product
+# ## 2.2 Cross product
 # 
 # The dot product is not the only way we can multiply two vectors, this can be done so that
 # a vector rather than the scalar is produced. The cross product is
@@ -216,7 +217,7 @@
 # 
 # where $\vec n$ is a unit vector perpendicular to vectors $A$ and $B$. More details are given in Section 16. This product vector is at right angles to the other two, consequently the cross product is unique to vectors in a three-dimensional space. The cross product, also called the _vector product_ , is used to simplify geometric calculations, such as calculating torsion angles between bonds in proteins or other molecules, or the distance of an atom from the plane of a molecule; for instance, an oxygen molecule above the plane of the haem in haemoglobin, see Q 52. Cross products have other geometric uses, such as calculating the torque when tightening a screw thread, or the angular momentum and velocity of rotating bodies. Cross products also enable us to calculate the area of a triangle or parallelogram.
 # 
-# ### 2.3 Perpendicular vectors
+# ## 2.3 Perpendicular vectors
 # 
 # If the angle $\theta$ between two vectors is $90^{\text{o}}$, then the dot product is zero 
 # 
@@ -227,7 +228,7 @@
 # The cross product of two perpendicular, three-dimensional vectors is not zero, but $\displaystyle \vec A\times \vec B=|\vec A||\vec B|$ and the unit vector $\vec n$ is perpendicular to both vectors $A$ and $B$.
 # 
 # 
-# ### 2.4 Parallel vectors
+# ## 2.4 Parallel vectors
 # If two vectors are parallel, $\displaystyle \vec A\cdot \vec B=|\vec A||\vec A|\cos(0) =|\vec A||\vec B|$, because the angle between them is zero. Therefore, the dot product of a vector with itself is the square of its magnitude, $\displaystyle \vec A\cdot \vec A=|\vec A|^2$ and this is a convenient way of calculating its length.  The cross product of two three-dimensional vectors is zero $\displaystyle \vec A\times \vec B=|\vec A||\vec B|\sin(0)\vec n=0$.
 # 
 # ![Drawing](vectors-fig3.png)
@@ -235,7 +236,7 @@
 # Figure 3. Left: Vector $\vec A$ with components $a$ and $b$ on the $x$- and $y$- axes; $a = |\vec A|\cos(\theta), b = |\vec A\sin(\theta)$. Middle and right: Projection of vector $A$ on $B$ which is $|\vec A|\cos(\theta)$ and of $B$ on $A$ which is $|\vec B|\cos(\theta)$.
 # _______
 
-# ### 2.5 Basis sets
+# ## 2.5 Basis sets
 # 
 # Once we define a basis set then specific, rather than general calculation can be performed. For example, if vectors $A$ and $B$ of figure 3 are given magnitudes we cannot tell what the angle between them is because we do not know how $A$ and $B$ relate to one another. A basis set provides the scaffold, as it were, on which the vectors are fixed. It is possible to choose different basis sets to solve the same problem and to convert between one set and another. The following three properties of vectors and basis sets are important:
 # 
@@ -265,11 +266,11 @@
 # 
 # The elements of basis set can be numbers, or they could be a vector, a matrix, or a function or a set of functions. Some examples are considered more fully after some basic properties have been described. Using functions as a basis set is described in Chapter 9. For the present, we shall assume that a suitable basis set always exists and perform some calculations.
 # 
-# ### 2.6 Origin
+# ## 2.6 Origin
 # 
 # If it is not otherwise specified, it is assumed that the origin of a vector is at the centre of the coordinates, i.e. at $(0, 0, 0)$. If this is not the case and the origin is at some other place, $(a, b, c)$ then we must subtract $a, b$, and $c$ from each of the three components and use $(x-a,\;  y-b,\; z-c)$  as our vector. This has the effect of moving the origin to the base of our vector. In addition, when subtracting two sets of coordinates to make a vector, its base is now at the origin of the new set of coordinates, i.e. the origin has again been shifted. This is important; a vector always starts at the origin of its own local coordinates, which may not be the same as initially drawn on a diagram, so some care is needed; vectors are only a direction and length in space; they carry around their own coordinate system or basis set with them but this is hardly ever drawn.
 # 
-# ### 2.7 Magnitude
+# ## 2.7 Magnitude
 # 
 # The magnitude of a vector $A$, which may be imagined as its length, is used as $|\vec{A}|$. If $\vec{A} = [a b c]$ where $A$ has components $a, b, c$ in the 3-dimensional basis set $(x, y, z)$, then
 # 
@@ -286,7 +287,7 @@
 # Figure 4. The orthogonal and normalized base vectors $(i, j, k )$.
 # _______
 # 
-# ### 2.8 Vector addition and subtraction
+# ## 2.8 Vector addition and subtraction
 # 
 # Addition follows the familiar rules, _except_ that each element in the vector adds separately;
 # for example, the three-dimensional vectors represented by the two sets of coordinates is
@@ -311,7 +312,7 @@
 # 
 # which means that vectors can be added or subtracted in any order.
 # 
-# ### 2.9 Dot Products or Inner Products in matrix-vector form
+# ## 2.9 Dot Products or Inner Products in matrix-vector form
 # 
 # The dot product using vectors in a three-dimensional basis set is calculated by defining the vectors as one-dimensional matrices, multiplying element by element and summing the result. See chapter 7 for matrix multiplication. The result is
 # 
@@ -330,7 +331,7 @@
 # The normalization terms on the bottom of this equation are just the length of each vector as calculated by Pythagoras' theorem. The angle between two vectors $\vec A = [3\quad 2\quad 1]$ and $\vec B=[-1\quad  0 \quad 1]$ is calculated as follows: the length of each vector is $|\vec A|= \sqrt{9+4+1} =\sqrt{14}$ and $|\vec B|= \sqrt{1+0+1} =\sqrt 2$, and the dot product is $\displaystyle \begin{bmatrix} 3&2&1 \end{bmatrix}\begin{bmatrix} -1\\0\\1  \end{bmatrix}=-2$ and the angle $\cos(\theta)= -2/(\sqrt 14\sqrt 2)$ which is $112.2^\text{o} $.
 # 
 # 
-# #### **(i) Colliding molecules**
+# ### **(i) Colliding molecules**
 # Newton diagrams describing elastic scattering are given above. The angles  and vectors are shown in figure 2c. Suppose the initial speeds in an experiment colliding $\mathrm{Kr+HI}$ are $800$ and $250$ m/s respectively. The masses are $84$ and $128$ amu and the scattering angle is  $\chi =25^\text{o}$ in the c.o.m. frame, see fig 2b. We want to calculate the angle $\Theta$, the detector angle in the lab frame and also the angle $\delta$ which is used in the transformation from lab to centre of mass coordinates. It is necessary, therefore, to calculate $\vec v_1'$ (see figure 2c) and to do this $\vec w_1$ and $\vec w_1'$ are needed.
 # 
 # The initial vectors are $\vec v_1 =\begin{bmatrix} 800 & 0\end{bmatrix}, \quad \vec v_2 =\begin{bmatrix} 0 & 250\end{bmatrix}$, thus $\vec v_r=\vec v_1-\vec v_2=\begin{bmatrix} 800 & -250\end{bmatrix}$ with magnitude $|v_r|=\sqrt{800^2+250^2}$. 
@@ -368,14 +369,14 @@
 # 
 # The calculation starting with $\Theta$ and finding $\chi$ is a little different. Once $\vec w_1$ is found the vector $\vec w_1'$ will lie on a circle of radius $|\vec w_1|$ with its centre at the centre of mass. The vector $\vec v_1'$ will intersect this at two points and then $\vec w_1'$ can be found by substituting $y=x\tan(\Theta)$ into the equation for the circle described.
 # 
-# #### **(ii) ISBN number**
+# ### **(ii) ISBN number**
 # An unexpected application of the dot product of a large vector is that used to check the ISBN number of a book. This code is unique to a book and also to each edition. A typical code is $978-0-19-923091-4$ where the last digit is the check digit used to determine if the rest of the code is correct. This is clearly useful when a book is ordered, for example, if the check digit is not $4$ a simple swapping of two digits may have occurred.
 # 
 # The calculation to produce the check digit ($4$) is
 # 
 # $$\displaystyle 10-\left(\begin{bmatrix}1&3&1&3&1&3&1&3&1&3&1&3\end{bmatrix}\cdot \begin{bmatrix}9&7&8&0&1&9&2&3&0&9&1\end{bmatrix}^T\right)\text{mod}(10)=4$$
 # 
-# ### 2.10 Unit vectors and normalizing vectors
+# ## 2.10 Unit vectors and normalizing vectors
 # 
 #  Unit vectors, as their name suggests, have a length of $1$. A vector can be made into a unit vector by dividing by its length. If a vector is $\vec v = [a\quad b\quad c\quad d]$ the normalizing condition is
 #  
@@ -395,7 +396,7 @@
 # 
 # $$\displaystyle \cos(\theta) =\vec v_n \cdot \vec w_n \tag{10}$$
 
-# ### 3 The orthonormal $\boldsymbol i, \boldsymbol j,\boldsymbol k$ base vectors
+# ## 3 The orthonormal $\boldsymbol i, \boldsymbol j,\boldsymbol k$ base vectors
 # 
 # A general method for describing a three-vector is to express it in terms of vectors along a set of axes. If the mutually perpendicular set of $x$-, $y$-, and $z$-axes is chosen, the basis set is orthogonal set. If the base vectors are also normalized to $1$, each base vector is a unit vector and the set is orthonormal. Conventionally, orthonormal base vectors are labelled $\boldsymbol i,\boldsymbol j,\boldsymbol k$ and any vector in this basis is written as,
 # 
@@ -452,9 +453,9 @@
 # 
 # so $|\vec A|=\sqrt{13}$. Similarly $|\vec B|=\sqrt{34}$ making $\cos(\theta)=9/(\sqrt{13}\sqrt{34})\sim 65^\text{o}$
 # 
-# ### 4 Summary
+# ## 4 Summary
 # 
-# #### **Dot Product**
+# ### **Dot Product**
 # $\displaystyle \qquad \vec A \cdot \vec B= |\vec A||\vec B|\cos(\theta)$  
 # 
 # The magnitude of $\vec A$ is $\displaystyle |\vec A|=\sqrt{\vec A \cdot \vec A}$
@@ -467,7 +468,7 @@
 # 
 # $$\displaystyle \vec A\cdot \vec B = (a\boldsymbol i + b\boldsymbol j + c\boldsymbol k)\cdot(c\boldsymbol i + d\boldsymbol j + e\boldsymbol k) = ac + bd + ce$$
 # 
-# #### **The Cross Product exists only in three dimensions**
+# ### **The Cross Product exists only in three dimensions**
 # 
 # $$\displaystyle \vec A \times \vec B=|\vec A||\vec B|\sin(\theta)\vec n $$
 # 

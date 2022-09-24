@@ -1,16 +1,16 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## Questions 49 - 72
+# # Questions 49 - 72
 
-# ### Q49 Centroid
+# ## Q49 Centroid
 # (a) Find the coordinates of the centroid $M_x$ and $M_y$ and average $x$ and $y$ of the first quadrant of a circle whose equation is $r^2 = x^2 + y^2$, $r$ being the radius.
 # 
 # (b) Find the centroids of the enclosed area between the circle in (a) and $g = x^2$.
 # 
 # **Strategy:** Use equations 31 and 33 to calculate the centroids; the averages are given by equation 35.
 # 
-# ### Q50 Centre of gravity
+# ## Q50 Centre of gravity
 # (a) Find the mass and centre of gravity measured from the flat side of a quartz 'fish-eye' lens of uniform density $\rho_0$ which has a parabolic profile on one side and is plain on the other. The equation of the parabola is $y = \sqrt{ax}$ where $a$ is a constant and the lens is $h$ cm thick.
 # 
 # (b) Subsequent experiments show that better results are obtained if the lens is next made from gradient index glass with density changing as $\rho(x) = \rho_0(1 + bx^2)$, where $b$ is a constant. What effect does this have on the centre of gravity?
@@ -20,7 +20,7 @@
 # Figure 18. Sketch for Q50.
 # _______
 # 
-# ### Q51 Surface area
+# ## Q51 Surface area
 # Calculate the volume and surface area formed from the hyperbola $y = 1/x$ from $x = 1 \to \infty$. The shape of the volume produced is sometimes called Gabriel's horn. The volume is obtained by calculating the area of a disc and integrating along $x$. The surface area S is obtained by calculating the circumference of a circle $2\pi y$ at position $x$ then integrating along the whole arc, which has a length element 
 # 
 # $$\displaystyle ds =\sqrt{1+y'^2}dx, \quad S=\int_a^b2\pi y ds $$
@@ -32,7 +32,7 @@
 # Figure 19. The arc length $ds$ is, by Pythagoras' theorem, $ds^2 = dx^2 + dy^2$, which by dividing by $dx^2$ can be rearranged into $ds =\sqrt{1 + y'^2}dx$.
 # ________
 # 
-# ### Q52 DNA Base pairs
+# ## Q52 DNA Base pairs
 # In the study of the sequence of base pairs in DNA (Perkus 2001), the occurrence of overlapping sequences of base pairs (clones) can be estimated statistically. The probability of a clone starting at a given site is $p$ and $x$ is its position along the DNA chain, taken to be a continuous variable.
 # 
 # (a) Evaluate 
@@ -49,12 +49,12 @@
 # 
 # **Strategy:** Note that, by the way the equations are written, the parameter $p$ is not a variable of the integration and is therefore a constant. In (b) treat the integral as you would any other function.
 # 
-# ### Q53
+# ## Q53
 # Evaluate $\displaystyle \frac{\partial}{\partial \alpha}\ln\left(\int e^{-E_{\alpha,x}}dx \right)$ where $E_{\alpha x}=\alpha x^2$
 # 
 # **Strategy:** The integral is a function of $x$, but contains $\alpha$ so differentiate first. This is very similar to part (b) of the previous question. Sympy is helpful in obtaining the individual integrals that are also standard.
 # 
-# ### Q54 Probability of given energy
+# ## Q54 Probability of given energy
 # The probability distribution (or probability density) describing the chance that a molecule has energy in range $E \to E + dE$ is given by the Boltzmann equation 
 # 
 # $$\displaystyle P(E)dE=e^{-E/k_BT}dE$$
@@ -69,7 +69,7 @@
 # 
 # and comment on the size of the ratio $\sigma_E/\langle E\rangle$.
 # 
-# ### Q55 Rate constant, collision theory
+# ## Q55 Rate constant, collision theory
 # (a) Calculate $\displaystyle \frac{d}{dT}\int f(x,T)dx$.
 # 
 # (b) The slope of the log of the rate constant $k(T)$ vs. $1/T$ is used to measure the activation energy $E_a$ of a chemical reaction. The slope is 
@@ -86,7 +86,7 @@
 # 
 # (d) Calculate $E_a$ if the cross-section varies as predicted by the line of centres geometrical model of collisions where $\sigma (E) = \pi d^2(1 - E_0/E)$ above the threshold energy $E_0$ and is zero below this. The sum of molecular radii on collision is $d$. While the integration is straightforward, use Sympy to obtain the result and make $E_0$ the lower range of the integration.
 # 
-# ### Q56 Average speed of molecules
+# ## Q56 Average speed of molecules
 # In Q47, a plot of the Maxwell-Boltzmann distribution was used to illustrate the probability $P(u)$ of a gaseous molecule having a speed $u \to u + du$ where,
 # 
 # $$P(u)du=4\pi \left(\frac{m}{2\pi k_BT} \right)^{3/2}u^2 e^{-mu^2/2k_BT} du$$
@@ -101,14 +101,14 @@
 # 
 # **Strategy:** This is the type of question that requires direct application of the formulas; use Sympy when integration involves square roots and/or terms with $e^{-x^2}$.
 # 
-# ### Q57 Harmonic oscillator
+# ## Q57 Harmonic oscillator
 # A harmonic oscillator, such as a vibrating spring or a diatomic molecule, has potential energy given by $E_x = 0.5kx^2$ where $x$ is the extension from the equilibrium length at $x = 0$ and therefore $x$ can be both positive and negative; see Figure 38 (see  solutions). The average energy is $k_BT$.
 # 
 # (a) Calculate the average$\langle x \rangle$ and  mean square displacement $\langle x^2 \rangle$. Calculate the variance in position. Explain what you understand by $\sqrt{\langle x^2 \rangle}$.
 # 
 # (b) The frequency $\nu$ of a molecule's vibration (in s$^{-1}$) is related to the reduced mass $\mu$ and the force constant $k$ by $\displaystyle \nu=\frac{1}{2\pi}\sqrt{\frac{k}{\mu}}$. The force constant for $\mathrm{I_2}$ is $173\,\mathrm{ N \,m^{-1}}$ and the equilibrium bond length 267 pm. The vibrational frequency is $\approx 213 \,\mathrm{cm^{-1}}$.  Calculate and comment on the magnitude of the root mean square displacement, $\sqrt{\langle x^2 \rangle}$ vs. the equilibrium bond length.
 # 
-# ### Q58 Classical harmonic oscillator
+# ## Q58 Classical harmonic oscillator
 # The displacement at time $t$ of a classical harmonic oscillator is $x = x_0 \cos(\omega t)$ where $\omega$ is the frequency and $x_0$ the maximum amplitude.
 # 
 # (a) Find the probability $P(x)dx$ of being at position $x \to x + dx$ during the motion, this being proportional to the time taken to move by $dx$.
@@ -119,7 +119,7 @@
 # 
 # **Strategy:** Assume that the time to move a distance $dx$ is proportional to the time $dt$ taken to do so. Therefore find $dx/dt$ and convert the sine (using Pythagoras) into a function in $x$. The period of oscillation is $T = 1/\nu = 2\pi/\omega$.
 # 
-# ### Q59 Quantum harmonic oscillator
+# ## Q59 Quantum harmonic oscillator
 # In the previous problem $\langle x \rangle$ and $\langle x^2 \rangle$ were calculated for a classical harmonic oscillator. In this problem, the same calculation is done quantum mechanically. The vibrational wavefunction of a harmonic oscillator for the $n = 0, 1, 2$, and 3 quantum numbers are given in Q39. The probability distribution of the nuclei being at a position between $x$ and $x + dx$ is $\psi^*\psi dx$.
 # 
 # (a) Determine the equations and then calculate $\langle x \rangle$ and $\langle x^2 \rangle$ for each vibrational level.
@@ -140,7 +140,7 @@
 # 
 # In calculating $\langle x \rangle$ it is sufficient to look up the equations for the wavefunctions and study their odd or even symmetry. Determine which ones are even $\psi (-x) = \psi(x)$ and which odd $\psi(-x) = -\psi(x)$. No integration is needed. The wavefunctions are normalized, therefore the denominator in the equations 28 and 38 is unity. (You may need to multiply the wavefunction by a very small number to be able to plot on the same scale as the potential.)
 # 
-# ### Q60 Molecular vibrations
+# ## Q60 Molecular vibrations
 # The vibrational properties of a molecule can be described by several classical harmonic oscillators. If the zero of energy is placed at the zero-point energy, then the probability distribution of $s$ independent classical harmonic oscillators having total energy $E$ distributed among them is given by 
 # 
 # $$\displaystyle P(E)dE=\frac{\beta}{(s-1)!}\left(\beta E \right)^{s-1}e^{-\beta E}dE$$
@@ -155,7 +155,7 @@
 # 
 # **Strategy:** Equation 28 gives the formula for an average. Use Sympy to perform the calculation or use the table for the general integration result. A gamma function is produced in the result. It is useful to know that if $s$ is a positive integer $\Gamma(s + 1) = s!$ See chapter 13 for the distribution.
 # 
-# ### Q61 Particle in a box (i)
+# ## Q61 Particle in a box (i)
 # The particle in a box wavefunction is 
 # 
 # $$\displaystyle \psi_n(x) = N_n \sin(n\pi x/L)$$
@@ -166,7 +166,7 @@
 # 
 # (b) calculate $\langle x \rangle,\; \langle x^2 \rangle,\;\sigma_x^2$ for different $n$ where $\sigma_x^2 = \langle x^2 \rangle - \langle x \rangle^2$.
 # 
-# ### Q62 Particle in a box (ii)
+# ## Q62 Particle in a box (ii)
 # Calculate the values of the electronic energy levels of a molecule represented as a particle in a box of length $L$ using the wavefunctions from the previous example. The Hamiltonian operator contains only the kinetic energy part as the potential energy is zero. The kinetic energy operator is 
 # 
 # $$\displaystyle -\frac{\hbar^2}{2m}\frac{d^2}{dx^2}$$
@@ -175,7 +175,7 @@
 # 
 # **Strategy:** Use equation 38 and place the operator after the first wavefunction. Differentiate twice and then integrate. The wavefunctions are normalized so that the denominator in 38 is units and can be ignored and the equation becomes 39.
 # 
-# ### Q63 particle in abox (iii)
+# ## Q63 particle in abox (iii)
 # Using the normalized particle in a box wavefunctions in the previous problem, calculate the intensity of each of the four electronic absorption transitions in octatetraene originating from the HOMO orbital. Assume that the octatetraene's energy levels can be described by such a simple model and that the transition dipole leading to absorption is $\mu = q(x - L/2)$ where $q$ is the charge on the electron. The absorption probability is $|\langle \mu \rangle |^2$ , which is the square of the absolute value of the expectation value $\mu$. The intensity of the transition between the lower level with quantum number $n$ and an upper level with number $k$ is 
 # 
 # $$\displaystyle A_{n,k}=\beta \nu_{n,k} |\langle \mu \rangle |^2 \, \mathrm{dm^2\,mol^{-1}\,cm^{-1}} $$
@@ -185,7 +185,7 @@
 # **Strategy:** Draw out the energy levels using the energy from the previous question if you want to do this accurately. Octatetraene has eight $\pi$ electrons and eight orbitals are required. The lowest energy transition must be from $n = 4 \to 5$ and the others to levels $6, \,7$, and $8$. The expectation value is equation 38 with operator $Q \equiv \mu = q(x - L/2)$. As the wavefunctions are normalized the denominator in this equation is unity and there is no need to calculate it. A particular transition frequency can be calculated from the difference in energy levels.
 # 
 
-# ### Q64 Wavefunctions & Frank-Condon factor
+# ## Q64 Wavefunctions & Frank-Condon factor
 # In electronic spectroscopy an electron is excited from the ground state to one of several excited states but often only to the lowest. These transitions produce the familiar colours we see from the artificial dyes used in our clothes and paints, natural dyes in food and the green colour of leaves (chlorophyll) and varied colours of flowers. Franck - Condon (FC) factors determine the intensity of the vibrational part of these electronic spectra and hence largely their colour, and are the square of the absolute amount by which two vibrational wavefunctions overlap with one another.
 # The probability of absorbing a photon is proportional to the Franck-Condon integral
 # 
@@ -204,7 +204,7 @@
 # (b) Use Sympy or otherwise to calculate the first few Hermite polynomials and check a few wavefunctions with
 # those in Q39.
 # 
-# (c) Calculate the Franck - Condon factors originating from the $n = 0$ state of a diatomic molecule to the $m^{th}$ vibrational level of one of its excited electronic states. Use Sympy to perform the integrations and show by induction, i.e. by trying several values of $m$ and generalizing the result, that 
+# (c) Calculate the Franck - Condon (FC) factors originating from the $n = 0$ state of a diatomic molecule to the $m^{th}$ vibrational level of one of its excited electronic states. Use Sympy to perform the integrations and show by induction, i.e. by trying several values of $m$ and generalizing the result, that 
 # 
 # $$\displaystyle F_{0,m}=\bigg|\langle 0 |m\rangle \bigg|^2 = \frac{X^m}{2^mM!}e^{-X/2}$$
 # 
@@ -214,9 +214,9 @@
 # 
 # (e) Using values for CO ground state of $x_a =112.81$ pm , $\nu_a = 2170.2\,\mathrm{ cm^{-1}}$ and the $X$ electronic excited state $x_b =1.23.5$ pm, $\nu_b = 1515.6\,\mathrm{ cm^{-1}}$ calculate the spectrum from the $n = 0$ level of the ground state. The $n = 0 \to m = 0$ electronic energy gap is $64746.5 \,\mathrm{ cm^{-1}}$. You only need to go to $m = 10$ in the excited state.
 # 
-# **Strategy:** (a) Look up how to define Hermite polynomials, and generate some using well known recursion formulae.(b) Use the equation given for the wavefunction and list it with $n = 0$ and $m = 0, \,1,\, 2$, and so forth. Before calculating a FC factor simplify the calculation by removing the constants to outside the integration and substituting for the $n = 0$ wavefunction. Calculate the remaining integral and construct the FC factors by multiplying with the constants. (c) Use the numerical values given to calculate actual values for the Franck–Condon factors. Plot a stick graph where the x values are the transition energies and y values are the Franck–Condon factors.
+# **Strategy:** (a) Look up how to define Hermite polynomials, and generate some using well known recursion formulae.(b) Use the equation given for the wavefunction and list it with $n = 0$ and $m = 0, \,1,\, 2$, and so forth. Before calculating a FC factor simplify the calculation by removing the constants to outside the integration and substituting for the $n = 0$ wavefunction. Calculate the remaining integral and construct the FC factors by multiplying with the constants. (c) Use the numerical values given to calculate actual values for the FC factors. Plot a stick graph where the x values are the transition energies and y values are the FC factors.
 # 
-# ### Q65 Energy transfer
+# ## Q65 Energy transfer
 # The process of Forster or dipole-dipole energy transfer from an excited donor D* to an acceptor A is described by the equation $\mathrm {D^* + A}\overset{k_R}\to \mathrm{D + A^*}$. The donor excited state is quenched and its fluorescence is reduced in intensity; conversely the acceptor emission is stimulated. The acceptor emission is usually fluorescence but could be phosphorescence if A is a triplet state of a molecule. The Forster transfer process forms the basis of the FRET techniques now widely used in the biosciences to estimate distances between pairs of chromophores on proteins, DNA or membranes. FRET is a mnemonic for fluorescence, resonance energy transfer. This energy transfer competes with fluorescence; $\mathrm{D^*}\underset{kf}{\stackrel{h\nu}\longrightarrow } \mathrm{D}$  which has a rate constant $k_f$.
 # 
 # In solution, the rate constant of energy transfer is not constant but varies with time. This happens because of the $R^{-6}$ dependence of the transfer rate upon separation, $R$, of the donor to its surrounding and randomly positioned acceptors. Integrating over all these distances, the intensity of the fluorescence emitted by a donor molecule is given by 
@@ -231,27 +231,27 @@
 # 
 # where the denominator is the total emission when the quencher concentration is zero.
 # 
-# ### Q66 Limit of fluorescence yield
+# ## Q66 Limit of fluorescence yield
 # In Q65 the following expression is found and has to be evaluated when $x$ is large, 
 # 
 # $$\displaystyle \frac{\phi}{\phi_0}=1-x\sqrt{\pi}\left( 1-\mathrm{erf}(x) \right)e^{x^2}$$
 # 
 # Use L'Hopital's rule to evaluate this when $x \to \infty$ and show that it tends to zero.
 # 
-# ### Q67 Spin-spin coupling in NMR
+# ## Q67 Spin-spin coupling in NMR
 # Direct spin-spin coupling is observed in solid-state NMR spectroscopy but not in solution. The direct spin-spin coupling between two nuclear spin magnetic moments is dependent on the square of the cosine of the angle between them, the effect being proportional to $\displaystyle \frac{3\cos^2(\theta)-1}{r^3}$ where $r$ is the separation of the spins. Show that the effect of averaging over all angles due to the rotational motion
 # in solution makes the effective coupling zero, i.e. that $\displaystyle \frac{3\cos^2(\theta)-1}{r^3}=0$.
 # 
 # **Strategy:** If the coupling is zero then it must follow that after averaging over both polar and azimuthal angles $\langle \cos^2(\theta)\rangle = 1/3$ because then $ \langle 3\cos^2(\theta) -1\rangle \equiv \langle 3\cos^2(\theta) \rangle-1=0$. To average over angles the area element $\sin(\theta)d\theta d\phi$ is used and the average is not only over the polar angle $\theta$ but also 'around the equator' with the azimuthal angle $\phi$ to allow for all possible motions. Again use equation 28. It is always necessary in three-dimensional problems such as this, to average over both angles defining a point, i.e. the polar and azimuthal, even though only one is present in the formula. This is a three-dimensional problem because the molecule whose NMR spectrum is measured will undergo rotational diffusion in solution.
 # 
-# ### Q68 H atom wavefunction
+# ## Q68 H atom wavefunction
 # The wavefunction of the 1s state of a hydrogenic atom in spherical polar coordinates is 
 # 
 # $$\displaystyle \psi(r,\theta,\phi)=\frac{1}{\sqrt{\pi}}\left(\frac{Z}{a_0}\right)^{3/2}e^{-Zr/a_0}$$
 # 
-# where $r$ is the radial distance from the nucleus, $a_0$ is the Bohr radius, 52.9 pm, and $Z$ is the atomic number of the hydrogenic atom, 1 for H, 2 for He$^{+}$, 3 for Li$^{2+}$, and so forth.
+# where $r$ is the radial distance from the nucleus, $a_0$ is the Bohr radius, 52.9 pm, and $Z$ is the atomic number of the hydrogenic atom, 1 for H, 2 for He$^{+}$, 3 for Li$^{2+}$ and so forth.
 # 
-# (a) Show that the radial distribution of this 1s wavefunction is normalized. (It is necessary to
+# (a) Show that the radial distribution of this $1s$ wavefunction is normalized. (It is necessary to
 # integrate over all angles as well as $r$.)
 # 
 # (b) Show that $\langle 1/r \rangle  = Z/a_0$ and then calculate $\langle 1/r^2\rangle ,\,\langle 1/r^3 \rangle,\, \langle 1 \rangle,\, \langle  r \rangle $, and $\langle r^2\rangle $. Next use Sympy to find
@@ -272,7 +272,7 @@
 # 
 # In part (b) of the question the average  is the same as $\langle 1 \rangle= \langle  r^0 \rangle $ and is just the normalization term.
 # 
-# ### Q69 Molecular dipole
+# ## Q69 Molecular dipole
 # A solution of molecules each of which has a dipole $\mu$ is placed in a cuvette across which an electric field of strength $\epsilon$ is applied. Each molecule experiences a torque tending to align it with the direction of the field. However, the alignment is far from complete, because random thermal (Brownian) motion causes the solvent molecules to collide with the dipolar ones and randomizes their orientation.
 # 
 # The interaction energy of a dipole with the electric field is $E_\theta = -\epsilon\mu\cos(\theta)$ where $\theta$ is the angle between the dipole and the field. The Boltzmann distribution of orientational energies is 
@@ -302,7 +302,7 @@
 # 
 # **Strategy:** Use the standard equation where the variable for integration is the angle $\theta$. You are given the fraction or probability in the question. The denominator in equation 28 is not unity.
 # 
-# ### Q70 Rotational energy
+# ## Q70 Rotational energy
 # The rotational energy $E_J$ of a molecule assumed to behave as a rigid rotor depends upon the quantum number $J$ as $E_J = BJ(J + 1)$. $B$ is the rotational constant and $J$ has values $0, \,1,\, 2, \,3, \cdots$ The rotational constant depends upon the  average bond length $r$ of the molecule and its reduced mass $\mu$ as 
 # 
 # $$\displaystyle B=\frac{\hbar^2}{2\mu r^2}=\frac{\hbar^2}{2I}$$
@@ -319,7 +319,7 @@
 # 
 # Note that the rotational constant is more properly defined as $\displaystyle B=\frac{\hbar^2}{2\mu}\left\langle \frac{1}{r^2}\right\rangle$ than $\displaystyle B=\frac{\hbar^2}{2\mu r^2}$. Why is this?
 # 
-# ### Q71 Partition function
+# ## Q71 Partition function
 # The partition function $Z$ of an atomic or molecular ensemble is the sum of the terms in a Boltzmann distribution and is used to calculate the fraction of the total number of particles in any given energy level $i$, which is $n_i /Z$. The translational quanta for a molecule are so small that the summation can be replaced by integration. If $g(\epsilon)$ is the degeneracy of the energy levels at energy $\epsilon$ then
 # 
 # $$Z=\sum_{\epsilon =0}^\infty g(\epsilon)e^{-\epsilon /k_BT} \to \int_0^\infty g(\epsilon)e^{-\epsilon /k_BT}d\epsilon$$
@@ -328,7 +328,7 @@
 # 
 # **Strategy:** Integrations with exponentials multiplied by fractional powers of $x$ are usually not able to be integrated directly, but produce instead a result that is another function such as the error function. In these cases, use Sympy.
 # 
-# ### Q72 Expectation value.
+# ## Q72 Expectation value.
 # A free particle is one that is not influenced by a potential. If it is travelling in the x-direction with momentum $p_x$ it has the wavefunction $\psi = e^{-xp_x/\hbar}$.
 # 
 # (a) Find the expectation $\langle p_x \rangle$ for the operator $p_x = -i\hbar \partial/\partial x$. 
@@ -338,3 +338,9 @@
 # (c) Is $\psi$ an eigenfunction of both operators $p_x$ and $p_x^2$?
 # 
 # **Strategy:** The limits to the integration are not given, so it is unlikely that they will be needed. Eigenfunctions of the same operator commute; see Chapter 7.5.3.
+
+# In[ ]:
+
+
+
+

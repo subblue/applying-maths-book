@@ -4,11 +4,13 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Rate equations and Chemical Kinetics &#8212; Applying Maths in the Chemical &amp; Biomolecular Sciences</title>
     
-  <link href="../_static/css/theme.css" rel="stylesheet">
-  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,40 +20,39 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Questions 51 - 54" href="matrices-Q51-54.html" />
@@ -63,7 +64,21 @@
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -72,9 +87,10 @@
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -92,14 +108,15 @@
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../intro.html">
-   Applying Maths in the Chemical and Biomolecular Sciences.
-  </a>
- </li>
-</ul>
-<ul class="current nav bd-sidenav">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Applying Maths in the Chemical and Biomolecular Sciences.
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../chapter-1/chapter1-intro.html">
    1. Numbers, Equations, Operators, and Algorithms.
@@ -204,11 +221,6 @@
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-2/chapter2-Q-10-13.html">
      Questions 10 -13
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-2/chapter2-C.html">
-     Euler’s theorem, roots of unity, x-ray diffraction structure factor.
     </a>
    </li>
    <li class="toctree-l2">
@@ -337,7 +349,7 @@
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../chapter-4/integration-intro.html">
-   4. Integration.
+   4 Integration.
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
   <label for="toctree-checkbox-4">
@@ -377,7 +389,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-4/integration-D.html">
-     Calculating an Average Value.
+     Calculating an Average.
     </a>
    </li>
    <li class="toctree-l2">
@@ -407,7 +419,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-4/integration-G.html">
-     Calculating the energy of a chemical bond using molecular orbitals
+     Calculating the energy of a Chemical Bond using Molecular Orbitals
     </a>
    </li>
    <li class="toctree-l2">
@@ -688,7 +700,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="matrices-D.html">
-     Rotation matrices: moving molecules
+     Rotation matrices: moving molecules. Coordinate transform as rotation.
     </a>
    </li>
    <li class="toctree-l2">
@@ -757,23 +769,13 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="matrices-K.html">
-     Calculating a bond length using moments of inertia
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="matrices-Q61.html">
-     Question 61
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="matrices-L.html">
      Principal axes for Moments of Inertia
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="matrices-Q62.html">
-     Question 62
+    <a class="reference internal" href="matrices-Q61-62.html">
+     Question 61 - 62
     </a>
    </li>
    <li class="toctree-l2">
@@ -1004,7 +1006,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-G.html">
-     PDE examples continued
+     PDE Continued
     </a>
    </li>
    <li class="toctree-l2">
@@ -1096,7 +1098,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-11/num-methods-answers8-12.html">
-     Solutions Q8 - 12
+     Solutions Q 8 - 12
     </a>
    </li>
    <li class="toctree-l2">
@@ -1258,112 +1260,227 @@
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/chapter-7/matrices-H.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/subblue/applying-maths-book"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/subblue/applying-maths-book/issues/new?title=Issue%20on%20page%20%2Fchapter-7/matrices-H.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        
-    </div>
-</div>
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/subblue/applying-maths-book/main?urlpath=lab/tree/applying_maths_book/chapter-7/matrices-H.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        <a class="colab-button" href="https://colab.research.google.com/github/subblue/applying-maths-book/blob/main/applying_maths_book/chapter-7/matrices-H.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
-                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
-                    src="../_static/images/logo_colab.png"
-                    alt="Interact on Colab">Colab</button></a>
-        
-        
-    </div>
-</div>
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/subblue/applying-maths-book/main?urlpath=lab/tree/applying_maths_book/chapter-7/matrices-H.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://colab.research.google.com/github/subblue/applying-maths-book/blob/main/applying_maths_book/chapter-7/matrices-H.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/subblue/applying-maths-book"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/subblue/applying-maths-book/issues/new?title=Issue%20on%20page%20%2Fchapter-7/matrices-H.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/chapter-7/matrices-H.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#linear-kinetic-schemes">
    13.1 Linear kinetic schemes
@@ -1441,17 +1558,110 @@
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Rate equations and Chemical Kinetics</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#linear-kinetic-schemes">
+   13.1 Linear kinetic schemes
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#matrix-solutions">
+   13.2 Matrix solutions
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#secular-determinant">
+     <strong>
+      Secular Determinant
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#time-profiles">
+     <strong>
+      Time profiles
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#algebraic-solution-of-a-to-b-to-c">
+     <strong>
+      Algebraic solution of
+      <span class="math notranslate nohighlight">
+       \(A \to B \to C\)
+      </span>
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#numerical-solution-of-a-leftrightharpoons-b-leftrightharpoons-c">
+     <strong>
+      Numerical solution of
+      <span class="math notranslate nohighlight">
+       \(A \leftrightharpoons B \leftrightharpoons C\)
+      </span>
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#circular-reaction-scheme">
+     <strong>
+      Circular reaction scheme
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#energy-transfer-on-a-polygon-circulant-determinants">
+     <strong>
+      Energy transfer on a Polygon. Circulant determinants
+     </strong>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#justification-for-the-matrix-method-to-solve-coupled-linear-differential-equations">
+   13.3 Justification for the matrix method to solve coupled linear differential equations
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#similarity-transforms">
+   13.4 Similarity Transforms
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-similarity-transform-used-to-evaluate-a-partition-function-the-helix-coil-transition">
+   13.5 A Similarity Transform used to evaluate a partition function.  The helix-coil transition
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
               <div>
                 
-  <div class="section" id="rate-equations-and-chemical-kinetics">
-<h1>Rate equations and Chemical Kinetics<a class="headerlink" href="#rate-equations-and-chemical-kinetics" title="Permalink to this headline">¶</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="rate-equations-and-chemical-kinetics">
+<h1>Rate equations and Chemical Kinetics<a class="headerlink" href="#rate-equations-and-chemical-kinetics" title="Permalink to this headline">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import all python add-ons etc that will be needed later on</span>
@@ -1466,8 +1676,8 @@
 </div>
 </div>
 </div>
-<div class="section" id="linear-kinetic-schemes">
-<h2>13.1 Linear kinetic schemes<a class="headerlink" href="#linear-kinetic-schemes" title="Permalink to this headline">¶</a></h2>
+<section id="linear-kinetic-schemes">
+<h2>13.1 Linear kinetic schemes<a class="headerlink" href="#linear-kinetic-schemes" title="Permalink to this headline">#</a></h2>
 <p>The equations of chemical kinetics can quite easily become complicated even with simple schemes. The sequential scheme</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle A \overset{k_1}\to B \overset{k_2}\to C\]</div>
@@ -1504,9 +1714,9 @@ scheme is</p>
 \[\displaystyle B(t)=\frac{k_1}{k_1+k_3-k_2}A_0\left(e^{-(k_1+k_3)t}-e^{-k_2t} \right) \]</div>
 <p>and which shows that B appears or ‘grows-in’ with the rate constant <span class="math notranslate nohighlight">\(k_1+k_3\)</span>, i.e. just with the rate constant that A decays.</p>
 <p>The next section describes how this and many other complex schemes can be solved using matrix methods both algebraically and more often for complicated rate equations, numerically.</p>
-</div>
-<div class="section" id="matrix-solutions">
-<h2>13.2 Matrix solutions<a class="headerlink" href="#matrix-solutions" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="matrix-solutions">
+<h2>13.2 Matrix solutions<a class="headerlink" href="#matrix-solutions" title="Permalink to this headline">#</a></h2>
 <p>Using matrix methods changes the way the problem is solved into that of finding eigenvalues and eigenvectors, thereby avoiding the difficulty of integration, but it is only applicable to first order or linear equations; i.e. product terms such as <span class="math notranslate nohighlight">\(k_2AB\)</span> are not allowed. For very complex schemes, consisting of hundreds of equations, the master equation approach is used and is usually solved numerically. A master equation is defined as a phenomenological, first-order differential equation, describing the time evolution of the probability of a ‘system’ to occupy any one of a discrete set of states.</p>
 <p>The matrix method is described first and justified in the next section. Returning to the sequential scheme 35, the three equations can be reproduced in matrix form as</p>
 <div class="math notranslate nohighlight">
@@ -1518,15 +1728,15 @@ scheme is</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle \qquad\qquad\begin{bmatrix} \displaystyle\frac{dA}{dt}\\ \displaystyle\frac{dB}{dt}\\ \displaystyle\frac{dC}{dt}\end{bmatrix} =\begin{bmatrix} -k_1 &amp; 0 &amp; 0\\ k_1 &amp; -k_2 &amp; 0\\0 &amp; k_2 &amp; 0\\\end{bmatrix}\begin{bmatrix}A\\B\\C \end{bmatrix} \qquad\qquad\qquad\qquad\text{(38)}\end{split}\]</div>
 <p>Notice how the decay rate constant of each species is on the diagonal, and the grow-in or decay of species <span class="math notranslate nohighlight">\(C\)</span> from <span class="math notranslate nohighlight">\(B\)</span> and <span class="math notranslate nohighlight">\(B\)</span> from <span class="math notranslate nohighlight">\(A\)</span>, on the off-diagonal. Notice also that the matrix is not Hermitian, i.e. is not symmetrical, although each term is real. This means that when the equation is solved the eigenvectors <span class="math notranslate nohighlight">\(x\)</span> are not orthogonal.</p>
-<div class="section" id="secular-determinant">
-<h3><strong>Secular Determinant</strong><a class="headerlink" href="#secular-determinant" title="Permalink to this headline">¶</a></h3>
+<section id="secular-determinant">
+<h3><strong>Secular Determinant</strong><a class="headerlink" href="#secular-determinant" title="Permalink to this headline">#</a></h3>
 <p>Solving the matrix equation 37 is done in two steps. First the eigenvalues <span class="math notranslate nohighlight">\(\lambda\)</span> are obtained from the secular determinant of the rate constants, then equation 39 is used to obtain the populations with time. The justification for this is given in the next section, 13.3; we use it first. The secular determinant of matrix <span class="math notranslate nohighlight">\(\pmb{k}\)</span> is</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle \begin{vmatrix}-k_1-\lambda &amp; 0 &amp; 0\\ k_1&amp; -k_2-\lambda &amp; 0 \\ 0 &amp; k_2 &amp; -\lambda \end{vmatrix}=0\end{split}\]</div>
 <p>whose characteristic equation is <span class="math notranslate nohighlight">\((k_1 + \lambda)(k_2 + \lambda)\lambda = 0\)</span> and from which, by inspection, <span class="math notranslate nohighlight">\(λ_1 =-k_1,\; \lambda_2 =-k_2\)</span>,and <span class="math notranslate nohighlight">\(\lambda_3 =0\)</span>.</p>
-</div>
-<div class="section" id="time-profiles">
-<h3><strong>Time profiles</strong><a class="headerlink" href="#time-profiles" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="time-profiles">
+<h3><strong>Time profiles</strong><a class="headerlink" href="#time-profiles" title="Permalink to this headline">#</a></h3>
 <p>To calculate the populations, or concentrations, the matrix equation</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \pmb{M}(t)=\pmb{x}[\pmb{e}^{\lambda t}]\pmb{x}^{-1}\pmb{M}_0 \tag{39}\]</div>
@@ -1546,9 +1756,9 @@ scheme is</p>
 \cdots &amp; \cdots &amp; \cdots &amp; x_{nn}\end{bmatrix}^{\large{-1}}  \begin{bmatrix} M_{01}(t)\\ M_{02}(t)\\ \vdots \\ \vdots \end{bmatrix}\qquad\qquad\qquad\qquad \text{(41)}\end{split}\]</div>
 <p>where each eigenvector is a column in the <span class="math notranslate nohighlight">\(x\)</span> matrix and the notation <span class="math notranslate nohighlight">\(k_{12}\)</span> is the rate constant from species <span class="math notranslate nohighlight">\(1(a) \to 2(b)\)</span> etc.  The populations of each species are the rows of the <span class="math notranslate nohighlight">\(\pmb{M}(t)\)</span> column vector.</p>
 <p>The calculation, using python/Sympy, is shown below. The solution is found algebraically but in practice for complex kinetic schemes a purely numerical solution is the way to proceed because algebraic solution become impossibly complex.</p>
-</div>
-<div class="section" id="algebraic-solution-of-a-to-b-to-c">
-<h3><strong>Algebraic solution of <span class="math notranslate nohighlight">\(A \to B \to C\)</span></strong><a class="headerlink" href="#algebraic-solution-of-a-to-b-to-c" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="algebraic-solution-of-a-to-b-to-c">
+<h3><strong>Algebraic solution of <span class="math notranslate nohighlight">\(A \to B \to C\)</span></strong><a class="headerlink" href="#algebraic-solution-of-a-to-b-to-c" title="Permalink to this headline">#</a></h3>
 <p>It is assumed that the rate constants are <span class="math notranslate nohighlight">\(k_1\)</span> and <span class="math notranslate nohighlight">\(k_2\)</span>, and that, at time zero, the amount of <span class="math notranslate nohighlight">\(A\)</span> present <span class="math notranslate nohighlight">\(A_0 = 1\)</span>, and that <span class="math notranslate nohighlight">\(B_0 = C_0 = 0\)</span>; This code will calculate any <span class="math notranslate nohighlight">\(A \leftrightharpoons B \leftrightharpoons C\)</span> when the <span class="math notranslate nohighlight">\(\pmb{k}\)</span> matrix is modified.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1598,10 +1808,10 @@ scheme is</p>
 <p>The populations of the three species are shown in Fig. 7.55. Intuitively, they have the correct form: <span class="math notranslate nohighlight">\( A\)</span> decays to zero, <span class="math notranslate nohighlight">\(B\)</span> rises and falls also to zero, and <span class="math notranslate nohighlight">\(C\)</span> continuously rises to a constant value, which is <span class="math notranslate nohighlight">\(A_0\)</span>, as all molecules must eventually be converted into <span class="math notranslate nohighlight">\(C\)</span>. Notice, that even though <span class="math notranslate nohighlight">\(B\)</span> decays with a rate constant greater than it forms, it is still possible to see the population of <span class="math notranslate nohighlight">\(B\)</span>. You might like to calculate this figure and compare it with that when <span class="math notranslate nohighlight">\(k_1\)</span> and <span class="math notranslate nohighlight">\(k_2\)</span> are swapped in value.</p>
 <p><img alt="Drawing" src="../_images/matrices-fig55.png" /></p>
 <p>Figure 55. Populations of species <span class="math notranslate nohighlight">\(A, \;B\)</span>, and <span class="math notranslate nohighlight">\(C\)</span> with time when <span class="math notranslate nohighlight">\(k_1 = 1,\; k_2 = 1.5\)</span> with initial concentrations <span class="math notranslate nohighlight">\(A_0 =1,\;B_0 =C_0 =0\)</span>. The scheme is <span class="math notranslate nohighlight">\(\displaystyle A \overset{k_1}\to B \overset{k_2}\to C\)</span>.</p>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="numerical-solution-of-a-leftrightharpoons-b-leftrightharpoons-c">
-<h3><strong>Numerical solution of <span class="math notranslate nohighlight">\(A \leftrightharpoons B \leftrightharpoons C\)</span></strong><a class="headerlink" href="#numerical-solution-of-a-leftrightharpoons-b-leftrightharpoons-c" title="Permalink to this headline">¶</a></h3>
+<section id="numerical-solution-of-a-leftrightharpoons-b-leftrightharpoons-c">
+<h3><strong>Numerical solution of <span class="math notranslate nohighlight">\(A \leftrightharpoons B \leftrightharpoons C\)</span></strong><a class="headerlink" href="#numerical-solution-of-a-leftrightharpoons-b-leftrightharpoons-c" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># numerical calculation using python/numpy</span>
@@ -1638,10 +1848,10 @@ scheme is</p>
 </div>
 </div>
 <p>Plotting the three curves of pop[…] will produce figure 55.</p>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="circular-reaction-scheme">
-<h3><strong>Circular reaction scheme</strong><a class="headerlink" href="#circular-reaction-scheme" title="Permalink to this headline">¶</a></h3>
+<section id="circular-reaction-scheme">
+<h3><strong>Circular reaction scheme</strong><a class="headerlink" href="#circular-reaction-scheme" title="Permalink to this headline">#</a></h3>
 <p>When the rate equations are more complex then a numerical solution is to be preferred simply because the equations can become impossibly complex. Consider a scheme (figure 55a) in which three species A, B, C are interconnected each with the others.</p>
 <p><img alt="Drawing" src="../_images/matrices-fig55a.png" /></p>
 <p>Figure 55a. Coupled kinetic scheme.</p>
@@ -1658,9 +1868,9 @@ scheme is</p>
 \[\displaystyle \frac{db}{dt}= -\sum_i k_{2,i}(1-\delta_{2,i})b + k_{12}a+k_{32}c\]</div>
 <p>where the delta function removes the <span class="math notranslate nohighlight">\(k_{22}\)</span> term. The summation is along the last index, i.e. the columns of the (rate constant) matrix of <span class="math notranslate nohighlight">\(k_{i,j}\)</span> values in each case. Note that this <span class="math notranslate nohighlight">\(k\)</span> matrix is simply the matrix of rate constants  and not organized as rate equations as <span class="math notranslate nohighlight">\(\pmb K\)</span> is in eqn. 37. This means that the subscripts refer to the rate constants not to their index position in the matrix. As a check on the calculation the sum of the populations at any time must be equal to the total amount initially present.</p>
 <p>This method can be extended to schemes with many other species as in question 52. If, for instance, species <span class="math notranslate nohighlight">\(b\)</span> decays such as by fluorescence or phosphorescence then <span class="math notranslate nohighlight">\(-k_f b\)</span> is added to the summation term in the rate equation for that species. The limitation is that only first order, or pseudo first order, reactions are possible, i.e. the rate constant matrix must not involve and concentrations unless they have a constant value.</p>
-</div>
-<div class="section" id="energy-transfer-on-a-polygon-circulant-determinants">
-<h3><strong>Energy transfer on a Polygon. Circulant determinants</strong><a class="headerlink" href="#energy-transfer-on-a-polygon-circulant-determinants" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="energy-transfer-on-a-polygon-circulant-determinants">
+<h3><strong>Energy transfer on a Polygon. Circulant determinants</strong><a class="headerlink" href="#energy-transfer-on-a-polygon-circulant-determinants" title="Permalink to this headline">#</a></h3>
 <p>In this example we consider energy transfer between molecules equally spaced apart on a polygon. The determinant produced is similar to the <span class="math notranslate nohighlight">\(\mathrm{H\overset{\cdot\cdot}uckel }\)</span> one described in section 2 although the problem is totally different.</p>
 <p>Forster transfer, which operates by dipole-dipole energy transfer, is commonly used as a spectroscopic ruler to determine distances between molecules tagged with fluorophores. The process between donor and acceptor is</p>
 <div class="math notranslate nohighlight">
@@ -1770,10 +1980,10 @@ scheme is</p>
 <img alt="../_images/matrices-H_10_0.png" src="../_images/matrices-H_10_0.png" />
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="justification-for-the-matrix-method-to-solve-coupled-linear-differential-equations">
-<h2>13.3 Justification for the matrix method to solve coupled linear differential equations<a class="headerlink" href="#justification-for-the-matrix-method-to-solve-coupled-linear-differential-equations" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="justification-for-the-matrix-method-to-solve-coupled-linear-differential-equations">
+<h2>13.3 Justification for the matrix method to solve coupled linear differential equations<a class="headerlink" href="#justification-for-the-matrix-method-to-solve-coupled-linear-differential-equations" title="Permalink to this headline">#</a></h2>
 <p>In using equation 38 to solve the scheme, the assumption is made that if <span class="math notranslate nohighlight">\(\pmb{M}\)</span> is a vector and <span class="math notranslate nohighlight">\(\pmb{k}\)</span> a matrix, we can write <span class="math notranslate nohighlight">\(d\pmb{M}/dt = \pmb{kM}\)</span> and that its solution is <span class="math notranslate nohighlight">\(\pmb{M} = \pmb{M}_0e^{\pmb{k}t}\)</span>. To show that this is valid, we work backwards and start with <span class="math notranslate nohighlight">\(\pmb{M}\)</span>, which is differentiated term by term, after first expanding the exponential as a series. In Section 5.5 it was shown that the exponential of a matrix can only be manipulated by first expanding;</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle \frac{d\pmb{M}}{dt}=\pmb{M_0}\frac{e^{\pmb{k}t}}{dt}=\pmb{M_0}\frac{d}{dt}\left(1+\pmb{k}t+\frac{\pmb{k}^2}{2!}t^2++\frac{\pmb{k}^3}{3!}t^3+\cdots \right)\\=
@@ -1784,9 +1994,9 @@ scheme is</p>
 \[\displaystyle \pmb{M}(t) = \pmb{X}[e^{\lambda t}]\pmb{X}^{-1}\pmb{M}_0\]</div>
 <p>and the form of this needs explaining. First, each value in the column vector <span class="math notranslate nohighlight">\(\pmb{M}(t)\)</span> represents the concentration of each species at time <span class="math notranslate nohighlight">\(t\)</span>, the column vector <span class="math notranslate nohighlight">\(\pmb{M}_0\)</span> holds the initial concentrations
 of the same species. The equation we start with is <span class="math notranslate nohighlight">\(\pmb{M}(t) = \pmb{M}_0 e^{-\pmb{k}t}\)</span>. To solve this it has to be converted into <span class="math notranslate nohighlight">\(\pmb{M}(t) = \pmb{X}[e^{\lambda t}]\pmb{X}^{-1}\pmb{M}_0\)</span>, and to do this a <em>similarity transform</em> is needed.</p>
-</div>
-<div class="section" id="similarity-transforms">
-<h2>13.4 Similarity Transforms<a class="headerlink" href="#similarity-transforms" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="similarity-transforms">
+<h2>13.4 Similarity Transforms<a class="headerlink" href="#similarity-transforms" title="Permalink to this headline">#</a></h2>
 <p>In our study of molecular group theory, similar matrices were introduced. However, <em>similar</em> matrices are used more generally. A square matrix <span class="math notranslate nohighlight">\(\pmb{W}\)</span> is described as being <em>similar or conjugate</em> to another square matrix <span class="math notranslate nohighlight">\(\pmb{N}\)</span>, if there exists a third, non-singular, square matrix <span class="math notranslate nohighlight">\(\pmb{X}\)</span> such that</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \pmb{W} = \pmb{X}^{-1}\pmb{NX} \tag{42}\]</div>
@@ -1874,9 +2084,9 @@ eigenvalues of <span class="math notranslate nohighlight">\(\lambda_1 = -7\)</sp
 \[\begin{split}\displaystyle \left[\begin{matrix}-7452 &amp; 18710\\3742 &amp; -9323\end{matrix}\right]\end{split}\]</div>
 </div>
 </div>
-</div>
-<div class="section" id="a-similarity-transform-used-to-evaluate-a-partition-function-the-helix-coil-transition">
-<h2>13.5 A Similarity Transform used to evaluate a partition function.  The helix-coil transition<a class="headerlink" href="#a-similarity-transform-used-to-evaluate-a-partition-function-the-helix-coil-transition" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="a-similarity-transform-used-to-evaluate-a-partition-function-the-helix-coil-transition">
+<h2>13.5 A Similarity Transform used to evaluate a partition function.  The helix-coil transition<a class="headerlink" href="#a-similarity-transform-used-to-evaluate-a-partition-function-the-helix-coil-transition" title="Permalink to this headline">#</a></h2>
 <p>A polypeptide or a protein can change from a helix to a random coil structure or vice versa, over a small range of temperatures. This sudden change is suggestive of a cooperative process and Zimm &amp; Bragg (1959) used a statistical model and calculated the partition function for a peptide chain consisting of two types of residues, either those that form a helix or those that do not. A section of protein will be described as having an unstructured coil if it has c type amino acids and h type if they are helix forming such as alanine. A portion of the chain could be <span class="math notranslate nohighlight">\(\cdots cchccchhhcchh\cdots\)</span> . The statistical weight of a <span class="math notranslate nohighlight">\(\cdots ch\)</span> boundary and of continuing to grow a helix <span class="math notranslate nohighlight">\(\cdots chhh\)</span> once formed is calculated and this statistical weight is the Boltzmann contribution to the partition function or <span class="math notranslate nohighlight">\(e^{-\Delta G/k_BT}\)</span>, where <span class="math notranslate nohighlight">\(\Delta G\)</span> is the change in free energy when the next residue is encountered along the chain. The model is successful despite the assumption of nearest neighbour interactions whereas a helix strictly involves interactions with residues that are not just nearest neighbours.</p>
 <p>The model has the following rules.</p>
 <p><strong>(i)</strong><span class="math notranslate nohighlight">\(\quad\)</span> The energy of the randomly coiled chain is taken as the baseline energy and it has a value of zero and a given a statistical weight of <span class="math notranslate nohighlight">\(1\)</span>.</p>
@@ -1976,8 +2186,8 @@ eigenvalues of <span class="math notranslate nohighlight">\(\lambda_1 = -7\)</sp
 \[\displaystyle \left[\begin{matrix}\frac{\lambda_{1} \lambda_{2}^{N + 1} - \lambda_{1}^{N + 1} \lambda_{2} + \lambda_{1}^{N + 1} - \lambda_{2}^{N + 1}}{\lambda_{1} - \lambda_{2}}\end{matrix}\right]\]</div>
 </div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -2001,9 +2211,11 @@ eigenvalues of <span class="math notranslate nohighlight">\(\lambda_1 = -7\)</sp
 
               </div>
               
-        
-            <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="matrices-Q45-50.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -2019,26 +2231,28 @@ eigenvalues of <span class="math notranslate nohighlight">\(\lambda_1 = -7\)</sp
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-        
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-    <div class="container">
-      <p>
-        
-          By Godfrey Beddard<br/>
-        
-            &copy; Copyright 2022.<br/>
-      </p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Godfrey Beddard<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
     </div>
-  </footer>
-</main>
+    
+</div>
 
 
       </div>
     </div>
   
-  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>

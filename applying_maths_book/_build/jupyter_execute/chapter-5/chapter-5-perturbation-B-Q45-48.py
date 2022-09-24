@@ -1,12 +1,12 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## Questions 45 - 48
+# # Questions 45 - 48
 
-# ### Q45 Particle in sloping box
+# ## Q45 Particle in sloping box
 # Repeat the particle in box example calculation and with a perturbing potential of the form $V = b(x-L/2)^2$ making it zero in  the centre of the box. The constant is $b = 1/4$. Use python, based on the code in the example or otherwise, to calculate some of the energy corrections $E(1),\;E(2)$ etc.
 # 
-# ### Q46 Diatomic molecule in electric filed
+# ## Q46 Diatomic molecule in electric filed
 # A heteronuclear diatomic molecule, which can be adequately described as a harmonic oscillator, is placed in an electric field aligned with the molecule's long axis and so experiences an additional and linear potential of magnitude $ax$. Calculate the change in the energy levels and the resulting spectrum. The harmonic oscillator has vibrational frequency $\omega$ and reduced mass $\mu$ and orthonormal wavefunctions,
 # 
 # $$\displaystyle \psi(x,n) = \frac{1}{\sqrt{2^n n!}}\left(\frac{\alpha}{\pi}\right)^{1/4}H_n(x\sqrt{\alpha}) e^{-ax^2/2}$$
@@ -15,10 +15,10 @@
 # 
 # **Strategy:** Use the perturbation method to calculate the change in energy. In each case use the harmonic oscillator wavefunctions. The Hamiltonian is $H = H^0 + ax$ where $H^0$ solves the normal harmonic oscillator with energy $\displaystyle E_n = \hbar \omega (n + 1/2)$.
 # 
-# ### Q47 Perturbed harmonic oscillator
+# ## Q47 Perturbed harmonic oscillator
 # Suppose that a harmonic potential is modified by a perturbing cubic term of magnitude $bx^3$, the oscillator now becomes anharmonic. Calculate the energy levels and spectrum.
 # 
-# ### Q48 Particle on a ring with potential
+# ## Q48 Particle on a ring with potential
 # The particle on a ring can approximate the energy levels of a cyclic polyene. The potential energy is zero and the Schroedinger equation 
 # 
 # $$\displaystyle -\frac{\hbar^2}{2\mu}\frac{d^2\psi}{d\varphi^2}=E\psi$$

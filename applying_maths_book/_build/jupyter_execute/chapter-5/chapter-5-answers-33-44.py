@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## Solutions Q33 - 44
+# # Solutions Q33 - 44
 
 # In[1]:
 
@@ -15,7 +15,7 @@ init_printing()             # allows printing of SymPy results in typeset maths 
 plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 
-# ### Q33 answer
+# ## Q33 answer
 # (a) This expansion needed is $\displaystyle (1-\alpha)^{-2} = 1=2\alpha +\frac{6}{2!}\alpha ^2 +\frac{12}{3!}\alpha ^3 +\cdots $ and therefore keeping terms only as far as $\alpha^2$ produces
 # 
 # $$\displaystyle F \approx \frac{k_BT}{p}\left ( \frac{1}{4} +\frac{\alpha}{2} + \frac{3\alpha^2}{4}  \cdots -\frac{1}{4}+\alpha  \right)$$
@@ -34,7 +34,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # The correct energy could be calculated by integrating the force over the extension using the full worm-like-chain equation given above, but this is unhelpful because the force goes to infinity, in a similar manner to that shown in Fig. 29, at full extension. Therefore, we have to assume somewhat arbitrarily, a value of the extension where the protein or DNA unfolds. Experiment shows that this is about $95$ % of full extension.
 # 
-# ### Q34 answer
+# ## Q34 answer
 # (a) When $L/p$ is large,the exponential term tends to zero, so that $\displaystyle 1-e^{-L/p} \to$ 1 then $\langle r^2 \rangle \approx 2p(L-p)$. When the polymer contour length is far greater than the persistence length $\langle r^2 \rangle \approx 2pL$.
 # 
 # (b) When the contour length is smaller than the persistence length, $L/p \lt$ 1 expanding the exponential gives,
@@ -43,7 +43,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # This makes sense as the polymer must be rigid if $p \gt L$.
 # 
-# ### Q35 answer
+# ## Q35 answer
 # The Taylor series expansion, equation (17), is made about the separation $r_e$ at minimum energy. The series produced is
 # 
 # $$\displaystyle U(r_e)=U(r_e) +(r-r_e)U'(r_e)+ \frac{(r-r_e)^2}{2!}U''(r_e)+\cdots $$
@@ -101,7 +101,7 @@ plt.show()
 
 # Figure 30. The Lennard-Jones 6-12 potential for Xe (solid) and the harmonic approximation about $r_e$ (dotted).
 # ____
-# ### Q36 answer
+# ## Q36 answer
 #  The sketch, Fig.5, shows that the charges are separated at $x + d$ for the negative end of the dipole and $x - d$ for the other. The electric field $E$ at the ion a distance $x$ away from the dipole, is force / charge and using equation (29) this is
 #  
 # $$\displaystyle E=q\beta_0\left( -\frac{1}{(x+d)^2} + \frac{1}{(x-d)^2}  \right)$$
@@ -158,7 +158,7 @@ plt.show()
 
 # Figure 31. The ion - dipole interaction field $E$ (in units of $q\beta/d^2$) vs reduced separation $x/d$, top line shows the exact formula, the lower (dash) line shows the approximation $(x/d)^3$ which can be seen only to be good when $x/d \gt 1$ which in this case means greater than about $3$.
 # ____
-# ### Q37 answer
+# ## Q37 answer
 # (a) The attractive terms between opposite charges are proportional to $-(x-d_1)^{-1} - (x-d_2)^{-1}$ and the repulsive terms $x^{-1} +(x+d_2-d_1)^{-1}$. This leads directly to the equation given in the question, when scaled with the constants needed to put the energy into SI units.
 # 
 # (b) As $x \gg d$ each term can be expanded using a Taylor series, but to be able to do this properly, each term must be put into the form $x(1 + d/x)$ and then the condition for series expansion, $d/x \ll 1$, is produced. The energy is expressed as the sum of attraction and repulsion terms, and after simplifying a little gives,
@@ -176,7 +176,7 @@ plt.show()
 # 
 # **Exercise:** Repeat the calculation, supposing that the two dipoles are facing one another parallel and then anti-parallel. A much harder calculation is to calculate the effect of averaging over all angles.
 # 
-# ### Q38 answer
+# ## Q38 answer
 # (a) The frequency change is shown in the next figure calculated as if the vehicle passes us when standing one metre from the kerb and is traveling at $60$ mph. Notice that the frequency change is greatest as the vehicle approaches compared to when it moves away. i.e. the curve is not symmetrical.
 # 
 # The relative velocity is calculated by first finding the angle $\theta$ from the vehicle at $x$ to the observer at position at $x_0$, and  $\tan(\theta) = x_0/x$, then finding the projection of this length onto the vehicle's path via $\cos(\theta)$.
@@ -238,7 +238,7 @@ plt.show()
 # 
 # In our example, the perceived frequency is constant at $1.08f_0$ as the ambulance approaches us, but because we are, hopefully, on the roadside and not in the middle of the road, our angle to the vehicle changes as it is moving. Consequently, we hear the frequency decrease in proportion to the apparent velocity of the vehicle and the angle between the direction of travel and ourselves. This means that the frequency decreases imperceptibly slowly when the vehicle is a long way off but more rapidly as it approaches. It is exactly $f_0$ just at the instant it passes, and then falls further as it recedes to a final value of $0.92f_0$. Different vehicle and sound speeds and your position will of course, give different perceived frequencies.
 # 
-# ### Q39 answer
+# ## Q39 answer
 # (a If the star is moving slowly relative to us then $v/c \ll 1$ and letting $v/c = x$ then expanding the square roots as $(1 + x)^{1/2}(1 - x)^{-1/2}$, which avoids dividing the expansions produces,
 # 
 # $$\displaystyle (1 + x)^{1/2}(1 - x)^{-1/2} =\left(1 + \frac{x}{2}- \frac{x^2}{8} + \frac{x^3}{16}-\cdots  \right)\left(1 + \frac{x}{2}+ 3\frac{x^2}{8} + 5\frac{x^3}{16}\cdots  \right) $$
@@ -247,7 +247,7 @@ plt.show()
 # 
 # (c) As the reference transition is 0.1 nm wide then using the wavelength for the Lyman-$\alpha$ line $4 \cdot 10^7/3R = 121.5$ nm, the star velocity is $v = 3R\Delta \lambda c/(4 \cdot 10^7$) and the minimum velocity is half this because of the resolution limit and is $\approx 1.23  \cdot 10^5\,\mathrm{ m\, s^{-1}}$; very approximately four thousandths of the speed of light.
 # 
-# ### Q40 answer
+# ## Q40 answer
 # (a) When $V$ = 0 the levels must be $E_1$ and $E_2$ as nothing has perturbed them. With the perturbation present $V \ne 0$ and the total energy is, with $\Delta E = E_2 - E_1$,
 # 
 # $$\displaystyle  E_+ + E_- = \frac{E_1}{2} +\frac{E_2}{2} +\frac{\sqrt{\Delta E^2 +4V^2}}{2}+\frac{E_1}{2} +\frac{E_2}{2} -\frac{\sqrt{\Delta E^2 +4V^2}}{2} = E_1+E_2$$
@@ -311,7 +311,7 @@ plt.show()
 # ____
 # The interaction energy $V$ is often a fixed quantity in a molecule as it depends upon the shape of the potential energy surface. However, $V$ can be made to change if, for example, an electric or magnetic field is present. The former leads to the Stark effect, the latter would represent the Zeeman effect. The Nuclear Zeeman effect, which alters the energy of nuclear spin states, leads to NMR spectroscopy.
 # 
-# ### Q41 answer
+# ## Q41 answer
 # Suppose that the ions are alternately charged, $q=\pm eZ$ and the energy is the sum of all the terms. As each ion has an equal but opposite charge, the charge number can be taken out of any calculation and the result multiplied by $Z$. The smallest separation between two charges is $d$, the next $2d$, then $3d$ and so on. Therefore, choosing a victim positively charged ion, shown in the top part of Fig.9,  its Coulomb energy is the sum of that due to pairs of ions at separation $d$, $2d$, $3d$ ignoring the ions in between any particular pair. It does not matter which ion you start with because the chain is infinitely long. If it were of a fixed length, it still would not matter as long as each interaction is only counted once. 
 # 
 # The total energy of half of our infinite chain is the series
@@ -401,7 +401,7 @@ print(sm)
 # 
 # The three-dimensional version can be realized by extending this calculation, but convergence is so slow that it will take an inordinately long time to calculate an accurate result. In practice, different formulae are needed for accurate summation in this calculation because the series converges so slowly that _rounding errors_, caused by adding and subtracting similar valued numbers, may accumulate giving incorrect answers.
 # 
-# ### Q42 answer
+# ## Q42 answer
 # Using the figure there are six face-centred atoms of type A, twelve edge-centred of type B and eight corner atoms of type C. The summation of these atoms is 
 # 
 # $$\displaystyle  \frac{1}{\alpha_{ij}^6}= 6 +\frac{12}{2^3}+\frac{8}{3^3}+\cdots = 7.97 \\  \frac{1}{\alpha_{ij}^{12}}= 6 +\frac{12}{2^6}+\frac{8}{3^6}+\cdots = 6.19$$ 
@@ -434,7 +434,7 @@ for p in [6,12]:         # calculate for both alpha^ 6 and 12
 # 
 # **Exercise:** Calculate the lattice sums for body centred and face centred cubes by adding or removing selected lattice points.
 # 
-# ### Q43 answer
+# ## Q43 answer
 # Expanding the dipole $\mu$ as a Taylor series in the extension $x$ produces
 # 
 # $$\displaystyle \mu = \mu_0 + x\left( \frac{d\mu}{dx} \right)_0 +x^2\left( \frac{d^2\mu}{dx^2} \right)_0+\cdots$$
@@ -461,7 +461,7 @@ for p in [6,12]:         # calculate for both alpha^ 6 and 12
 # 
 # in which the second integral is zero if $f=\pm i+2$. In practice $d^2\mu/dx^2|_0$ is small and the transitions with $\Delta \nu -f-i =\pm 2$ are only weakly observed and are called the _first overtone_ or _second harmonic_ transitions.
 # 
-# ### Q44 answer 
+# ## Q44 answer 
 # (a) In this particular example $\displaystyle \frac{dU}{dE}= \left<\frac{dH}{dE} \right>$, therefore, the derivative is easily calculated and is from the equations in the question, $\displaystyle dU/dE = -\langle \mu_z \rangle $.
 # 
 # (b) Expanding the energy as a Taylor series in electric field $E$, by definition,

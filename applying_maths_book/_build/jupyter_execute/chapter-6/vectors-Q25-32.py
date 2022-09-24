@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## Questions 25 - 32
+# # Questions 25 - 32
 
 # In[1]:
 
@@ -13,7 +13,7 @@ import numpy as np
 plt.rcParams.update({'font.size': 16})         # set font size for plots
 
 
-# ### Q25 Unit vectors
+# ## Q25 Unit vectors
 # Two unit vectors, $\vec a$ and $\vec b$ in the $x-y$ plane, make angles $\alpha$ and $\beta$ with the x-axis respectively.
 # 
 # (a) Show that $\vec a = \cos(\alpha)\boldsymbol i + \sin(\alpha)\boldsymbol j$  and $\vec b = \cos(\beta )\boldsymbol i + \sin(\beta)\boldsymbol j$ and then by calculating $\vec a\cdot\vec b$ find the trigonometric formulae for $\cos(\alpha - \beta)$.
@@ -26,7 +26,7 @@ plt.rcParams.update({'font.size': 16})         # set font size for plots
 # 
 # **Strategy:** Draw out the vector diagram using only the first quadrant, as this makes the calculation easier. Label the diagram and add the projections on to the axes. Calculate the dot product in two ways, one in terms of vector components and the other from the angle between the vectors.
 # 
-# ### Q26 Orbitals
+# ## Q26 Orbitals
 # The 2s and three 2p orbitals in a one electron atom, such as hydrogen, are degenerate in energy if
 # all angular momentum is ignored. The basis set orbitals for the angular component of the 2p wavefunctions are, $\psi_{2p_{-1}},\psi_{2p_0},\psi_{2p_{+1}}$ where the $0$ and $\pm 1$ represent the $m$ quantum numbers. These orbitals are orthogonal because they are the eigenvectors of the Schroedinger equation and we assume that they are normalized. Mathematically, these orbitals are spherical harmonic polynomials. 
 # 
@@ -68,7 +68,6 @@ plt.rcParams.update({'font.size': 16})         # set font size for plots
 # In[2]:
 
 
-
 fig = plt.figure(figsize = plt.figaspect(1))   # Square figure
 ax0 = fig.add_subplot(111, projection='3d')    # get  3d plotting
 
@@ -88,12 +87,12 @@ ax0.plot_surface(X,Y,Z, rstride=2,cstride=2 ,cmap = 'jet')
 plt.show()
 
 
-# ### Q27 Angle between orbitals
+# ## Q27 Angle between orbitals
 # Show that (a) the orbitals represented by $\displaystyle \psi_1 = \frac{1}{2}(\psi_s + \psi_{px} + \psi_{py} + \psi_{pz})$ and $\displaystyle \frac{1}{2}(\psi_s + \psi_{px} - \psi_{py} - \psi_{pz})$ are orthogonal and (b) the angle between the orbitals is $\approx 109^\text{o}$. Assume that the $s, px, py$, and $pz$ orbitals are orthogonal.
 # 
 # **Strategy:** If the vectors are three dimensional, the cosine of the angle found from the dot product has some meaning. In four or higher dimensional vectors, the dot product still produces the cosine of an angle although this angle does not have any geometric meaning; instead, if the cosine is zero the vectors are orthogonal and one if parallel. Because the s orbital is spherically symmetrical, it cannot contribute to the orbital's direction and can be ignored. Form a basis set out of the four s and p orbitals, as they are orthogonal.
 # 
-# ### Q28 Hybrid orbital
+# ## Q28 Hybrid orbital
 # An $sp^n$ hybrid orbital may be written as a linear combination of atomic orbitals (LCAO)
 # $\displaystyle \psi = a\psi_s + b\psi_{px} + c\psi_{py} + d\psi_{pz}$ where, $a, b, c, d$ are the amounts of the respective s and p atomic orbitals $\psi_s$ and $\psi_p$, and $n$ can be $1, 2$, or $3$ depending upon the type of hybrid.
 # 
@@ -111,7 +110,7 @@ plt.show()
 # 
 # **Strategy:** Think about the geometry of the s and p orbitals and more particularly the directions in which they can point. Relate $\psi$ to $\psi_1$ and $\psi_2$ using the $\boldsymbol{i, j, k}$ basis set vectors.
 # 
-# ### Q29 Body and face centred unit cells
+# ## Q29 Body and face centred unit cells
 # Some atoms are shown in Fig. 6.19 positioned in the arrangement of the body-centred and face-centred unit cells. The length of one side of the unit cell is $q$.
 # 
 # (a) Using the vectors shown, calculate the distances from atom $a$ to $b, c, d$, and $e$ and the angles
@@ -128,9 +127,9 @@ plt.show()
 # ________                                                             
 #                                                              
 # 
-# ### Q30 Derive equation 17.
+# ## Q30 Derive equation 17.
 # 
-# ### Q31 Vector calculation
+# ## Q31 Vector calculation
 # Find $\vec A + \vec B, | \vec A |, | \vec B |, \vec A\cdot \vec B$ and $\cos(\theta)$ for the following vectors:
 # 
 # (a) $\vec A=\boldsymbol{i}-\boldsymbol{j}+\boldsymbol{k} \quad  \vec B=\boldsymbol{i} +3\boldsymbol{j} +5\boldsymbol{k}$
@@ -139,7 +138,7 @@ plt.show()
 # 
 # (c) $\vec A=\boldsymbol{i}+\boldsymbol{j} \quad  \vec B=\boldsymbol{i} +\boldsymbol{k}$
 # 
-# ### Q32 Dipole moments
+# ## Q32 Dipole moments
 # The dipole moments of a molecule may be constructed, at least approximately, from the vectorial sum of individual bond dipole moments which are tabulated. Using the values in the table, calculate the dipole moments for (a) meta-dichloro-benzene, (b) methylene chloride, and (c) chloroform.
 # 
 # $$\displaystyle \begin{array}{cccc}

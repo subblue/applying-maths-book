@@ -1,14 +1,14 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## Questions 78 - 86
+# # Questions 78 - 86
 
-# ### Q78 Center of mass
+# ## Q78 Center of mass
 # The mass of a flat plate varies as $f=\sigma \sin(x+y)$ and the plate is cut by the straight lines $g=x$ and $h = 2x$ and with $x = 0 \to 1$, which makes a triangular area in the x-y plane. Calculate the centre of mass and the moments of inertia.
 # 
 # **Strategy:** Use equations 54 to calculate the centre of mass and 55 for the moments of inertia.
 # 
-# ### Q79 Orthogonal orbitals (i)
+# ## Q79 Orthogonal orbitals (i)
 # Another 3p orbital is 
 # 
 # $$\displaystyle \psi_{310} = N \frac{r}{a+0}\left( 6 - \frac{r}{a_0}\right) e^{-r/3a_0} \cos(\theta)$$
@@ -17,17 +17,17 @@
 # 
 # **Strategy:** If two orbitals $\psi_a$, and $\psi_{b}$ are orthogonal then $\displaystyle \int_0^{2\pi}\int_0^\pi\int_0^\infty\psi_a^*\psi_b\sin(\theta)dr d\theta d\varphi=0$. Normalisation is determined by equation 56.
 # 
-# ### Q80 Orthogonal orbitals (ii)
+# ## Q80 Orthogonal orbitals (ii)
 # The angular part of the $d_{x^2-y^2}$ wavefunction is $N \sin^2(\theta)e^{2i\varphi}$ and that of the $d_{xy}$ is the complex conjugate of this. Find the normalization $N$ and show that these two orbitals are orthogonal.
 # 
-# ### Q81 Using polar coordinates
+# ## Q81 Using polar coordinates
 # The integral $\displaystyle I = \int_0^\infty e^{-x^2}dx$ cannot be evaluated in this form. Show that it can be evaluated by forming 
 # 
 # $$\displaystyle I^2 = \int_0^\infty e^{-x^2}dx \int_0^\infty e^{-y^2}dy$$
 # 
 # and converting to polar coordinates.
 # 
-# ### Q82 Translational partition function
+# ## Q82 Translational partition function
 # The translational partition function in one dimension is $\displaystyle Z = \sum_{n=1}^\infty e^{-E_n /K_BT}$
 # 
 # where $E_n = n^2h^2/(8mL^2)$ in a box of length $L$. As the energy levels are so closely spaced they may effectively be considered as being continuous and the sum changed into an integral.
@@ -45,7 +45,7 @@
 # Estimate $S$ for a mole of mercury vapour at $300$ K and $1$ bar assuming that this behaves as an ideal gas.
 # 
 # 
-# ### Q83 Box-Muller transform &  random numbers
+# ## Q83 Box-Muller transform &  random numbers
 # It is sometimes necessary to produce a two-dimensional Gaussian (or normal) distribution of random numbers from a uniform distribution. A commonly used method is the Box - Muller transform. If $u$ and $v$ are two uniformly distributed random numbers between $0 \to 1$, the transform is 
 # 
 # $$x = \sqrt{-2\ln(u)} \cos(2\pi v), \quad\text{and}\quad y = \sqrt{-2\ln(u)}\sin(2\pi v)$$
@@ -57,13 +57,13 @@
 # 
 # (b) Change the transform equations to produce a distribution with mean $\mu$ and standard deviation $\sigma$.
 # 
-# ### Q84 Jacobian
+# ## Q84 Jacobian
 # Show that the integral $\displaystyle \int_0^{\pi/2}\int_0^{\pi/2}\sqrt{\frac{\sin(\varphi)}{\cos(\theta)}}d\varphi d\theta = \pi$ using the substitution $u = \sin(\varphi)\cos(\theta), v = \sin(\varphi)\sin(\theta)$.
 # 
 # **Strategy:** Notice that the new coordinates $u , v$ are defined as functions of the old, not the other way around as in the examples. The Jacobian is normally defined as $\displaystyle \frac{\partial(old)}{\partial(new)}$ but it is most convenient to calculate this the other way round as $\displaystyle \frac{\partial(u, v)}{\partial(\varphi, \theta)}$ and then invert the result because just as with normal derivatives, inverting the differentiation order inverts the result or $\displaystyle \frac{\partial(u,v)}{\partial(\varphi,\theta)}\frac{\partial(\varphi,\theta)}{\partial(u,v)}=1$
 # 
 # 
-# ### Q85 Jacobian
+# ## Q85 Jacobian
 # Using Sympy or otherwise, calculate the Jacobian $\partial(x, y, z)/\partial(u, v, \theta)$ for the confocal elliptical coordinates called 'prolate spheroidal' coordinates. The coordinate transformations are, with $\alpha$ as a constant, 
 # 
 # $$x=\alpha\sqrt{(u^2-1)(1-v^2)}\cos(\theta), \qquad y=\alpha\sqrt{(u^2-1)(1-v^2)}\sin(\theta),\qquad z=\alpha uv$$
@@ -72,7 +72,7 @@
 # 
 # The shape produced by these coordinates is similar to that of a rugby ball, with the z-axis being the long one. As the coordinates are elliptical there are two origins on the z-axis at $(0, 0, \pm\alpha )$ . These coordinates are important in quantum calculations of diatomic molecules because each atom can be placed at an origin.
 # 
-# ### Q86 Schroedinger equation & expectation values
+# ## Q86 Schroedinger equation & expectation values
 # When the energies of an atom or molecule are calculated using the Schroedinger equation, the solutions are stationary states and do not change with time; once an atom or molecule is in that state it will remain there unless something happens to perturb it. If an optical transition between two electronic states is to occur, an oscillating electric dipole must exist in the atom or molecule. This will interact with the oscillating electric field of the radiation and absorption (or stimulated emission) can occur if the radiation's energy matches that of the two atomic or molecular orbitals. One unit of angular momentum is also transferred between the radiation and the atom or molecule. 
 # 
 # The expectation value of a transition with linearly polarized radiation in the z-direction is 

@@ -4,11 +4,13 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>First order eqns &amp; Integrating factors. Second order eqns, Newtons laws, equations of motion. &#8212; Applying Maths in the Chemical &amp; Biomolecular Sciences</title>
     
-  <link href="../_static/css/theme.css" rel="stylesheet">
-  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,40 +20,39 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="The ‘D’ operator. Solving linear differential equations with constant coefficients" href="Diff-eqns-C.html" />
@@ -63,7 +64,21 @@
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -72,9 +87,10 @@
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -92,14 +108,15 @@
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../intro.html">
-   Applying Maths in the Chemical and Biomolecular Sciences.
-  </a>
- </li>
-</ul>
-<ul class="current nav bd-sidenav">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Applying Maths in the Chemical and Biomolecular Sciences.
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../chapter-1/chapter1-intro.html">
    1. Numbers, Equations, Operators, and Algorithms.
@@ -204,11 +221,6 @@
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-2/chapter2-Q-10-13.html">
      Questions 10 -13
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-2/chapter2-C.html">
-     Euler’s theorem, roots of unity, x-ray diffraction structure factor.
     </a>
    </li>
    <li class="toctree-l2">
@@ -337,7 +349,7 @@
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../chapter-4/integration-intro.html">
-   4. Integration.
+   4 Integration.
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
   <label for="toctree-checkbox-4">
@@ -377,7 +389,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-4/integration-D.html">
-     Calculating an Average Value.
+     Calculating an Average.
     </a>
    </li>
    <li class="toctree-l2">
@@ -407,7 +419,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-4/integration-G.html">
-     Calculating the energy of a chemical bond using molecular orbitals
+     Calculating the energy of a Chemical Bond using Molecular Orbitals
     </a>
    </li>
    <li class="toctree-l2">
@@ -688,7 +700,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-7/matrices-D.html">
-     Rotation matrices: moving molecules
+     Rotation matrices: moving molecules. Coordinate transform as rotation.
     </a>
    </li>
    <li class="toctree-l2">
@@ -757,23 +769,13 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-7/matrices-K.html">
-     Calculating a bond length using moments of inertia
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-7/matrices-Q61.html">
-     Question 61
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="../chapter-7/matrices-L.html">
      Principal axes for Moments of Inertia
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-7/matrices-Q62.html">
-     Question 62
+    <a class="reference internal" href="../chapter-7/matrices-Q61-62.html">
+     Question 61 - 62
     </a>
    </li>
    <li class="toctree-l2">
@@ -1004,7 +1006,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="Diff-eqns-G.html">
-     PDE examples continued
+     PDE Continued
     </a>
    </li>
    <li class="toctree-l2">
@@ -1096,7 +1098,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-11/num-methods-answers8-12.html">
-     Solutions Q8 - 12
+     Solutions Q 8 - 12
     </a>
    </li>
    <li class="toctree-l2">
@@ -1258,112 +1260,227 @@
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/chapter-10/Diff-eqns-B.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/subblue/applying-maths-book"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/subblue/applying-maths-book/issues/new?title=Issue%20on%20page%20%2Fchapter-10/Diff-eqns-B.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        
-    </div>
-</div>
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/subblue/applying-maths-book/main?urlpath=lab/tree/applying_maths_book/chapter-10/Diff-eqns-B.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        <a class="colab-button" href="https://colab.research.google.com/github/subblue/applying-maths-book/blob/main/applying_maths_book/chapter-10/Diff-eqns-B.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
-                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
-                    src="../_static/images/logo_colab.png"
-                    alt="Interact on Colab">Colab</button></a>
-        
-        
-    </div>
-</div>
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/subblue/applying-maths-book/main?urlpath=lab/tree/applying_maths_book/chapter-10/Diff-eqns-B.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://colab.research.google.com/github/subblue/applying-maths-book/blob/main/applying_maths_book/chapter-10/Diff-eqns-B.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/subblue/applying-maths-book"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/subblue/applying-maths-book/issues/new?title=Issue%20on%20page%20%2Fchapter-10/Diff-eqns-B.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/chapter-10/Diff-eqns-B.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#homogeneous-equations">
    4.1 Homogeneous equations
@@ -1423,9 +1540,9 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#iii-rockets-again-conservation-of-momentum">
+    <a class="reference internal nav-link" href="#iii-rockets-and-conservation-of-momentum">
      <strong>
-      (iii) Rockets again.  Conservation of Momentum
+      (iii) Rockets and conservation of momentum
      </strong>
     </a>
    </li>
@@ -1484,17 +1601,153 @@
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>First order eqns & Integrating factors. Second order eqns, Newtons laws, equations of motion.</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#homogeneous-equations">
+   4.1 Homogeneous equations
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exact-equations">
+   4.2 Exact equations
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#linear-first-order-equations-and-integrating-factors">
+   4.3 Linear first-order equations and Integrating Factors
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#i-example">
+     <strong>
+      (i) Example
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ii-coupled-chemical-kinetic-equations">
+     <strong>
+      (ii) Coupled chemical kinetic equations
+     </strong>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-bernoulli-equation">
+   4.4 The Bernoulli Equation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#second-order-differential-equations">
+   5 Second-order differential equations
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#newton-s-laws-and-differential-equations-describing-motion">
+   5.1 Newton’s laws and differential equations describing motion
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#general-equation-of-motion-energy-equation-and-simple-harmonic-motion">
+   5.2 General Equation of Motion, Energy equation and Simple Harmonic Motion.
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#i-rockets">
+     <strong>
+      (i) Rockets
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#iii-rockets-and-conservation-of-momentum">
+     <strong>
+      (iii) Rockets and conservation of momentum
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#iii-hooke-s-law-and-simple-harmonic-motion">
+     <strong>
+      (iii) Hooke’s Law and simple harmonic motion
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#iv-springs">
+     <strong>
+      (iv) Springs
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#v-total-energy">
+     <strong>
+      (v) Total energy
+     </strong>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-simple-pendulum">
+   5.3 The simple pendulum
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-compound-pendulum-and-torsional-oscillations">
+   5.4 The compound pendulum and torsional oscillations
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#inverted-pendulum-unstable-equilibrium">
+   5.5 Inverted pendulum: unstable equilibrium
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#simple-harmonic-motion-with-a-constant-force">
+   5.6 Simple harmonic motion with a constant force
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#particle-in-a-one-dimensional-box">
+   5.7 Particle in a one-dimensional box
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-rigid-rotor-and-a-particle-on-a-ring">
+   5.8 The Rigid Rotor and a Particle on a Ring
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
               <div>
                 
-  <div class="section" id="first-order-eqns-integrating-factors-second-order-eqns-newtons-laws-equations-of-motion">
-<h1>First order eqns &amp; Integrating factors. Second order eqns, Newtons laws, equations of motion.<a class="headerlink" href="#first-order-eqns-integrating-factors-second-order-eqns-newtons-laws-equations-of-motion" title="Permalink to this headline">¶</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="first-order-eqns-integrating-factors-second-order-eqns-newtons-laws-equations-of-motion">
+<h1>First order eqns &amp; Integrating factors. Second order eqns, Newtons laws, equations of motion.<a class="headerlink" href="#first-order-eqns-integrating-factors-second-order-eqns-newtons-laws-equations-of-motion" title="Permalink to this headline">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import all python add-ons etc that will be needed later on</span>
@@ -1508,8 +1761,8 @@
 </div>
 </div>
 </div>
-<div class="section" id="homogeneous-equations">
-<h2>4.1 Homogeneous equations<a class="headerlink" href="#homogeneous-equations" title="Permalink to this headline">¶</a></h2>
+<section id="homogeneous-equations">
+<h2>4.1 Homogeneous equations<a class="headerlink" href="#homogeneous-equations" title="Permalink to this headline">#</a></h2>
 <p>A homogeneous differential equation has the form</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle  Mdx + Ndy = 0\]</div>
@@ -1553,9 +1806,9 @@
 <img alt="../_images/Diff-eqns-B_3_0.png" src="../_images/Diff-eqns-B_3_0.png" />
 </div>
 </div>
-</div>
-<div class="section" id="exact-equations">
-<h2>4.2 Exact equations<a class="headerlink" href="#exact-equations" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="exact-equations">
+<h2>4.2 Exact equations<a class="headerlink" href="#exact-equations" title="Permalink to this headline">#</a></h2>
 <p>The exact equation also has the form <span class="math notranslate nohighlight">\(Mdx + Ndy = 0\)</span> with the additional constraint that</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \frac{\partial M}{\partial y} = \frac{\partial N}{\partial x}\]</div>
@@ -1564,9 +1817,9 @@
 <div class="math notranslate nohighlight">
 \[\displaystyle  (Mdx + Ndy)G(x, y) = 0\]</div>
 <p>The term <span class="math notranslate nohighlight">\(G(x, y)\)</span> is called an <em>integrating factor</em> which in general can be difficult to uncover except in the case of linear first-order equations that are described next.</p>
-</div>
-<div class="section" id="linear-first-order-equations-and-integrating-factors">
-<h2>4.3 Linear first-order equations and Integrating Factors<a class="headerlink" href="#linear-first-order-equations-and-integrating-factors" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="linear-first-order-equations-and-integrating-factors">
+<h2>4.3 Linear first-order equations and Integrating Factors<a class="headerlink" href="#linear-first-order-equations-and-integrating-factors" title="Permalink to this headline">#</a></h2>
 <p>Linear first-order equations have the form,</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle  \frac{dy}{dx} +Py = Q \]</div>
@@ -1588,8 +1841,8 @@
 <p>It follows that the solution of the differential equation becomes the two integrals,</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle ye^{\large{\int Pdx}}=\int Qe^{\large{\int Pdx}}dx +c\tag{12}\]</div>
-<div class="section" id="i-example">
-<h3><strong>(i) Example</strong><a class="headerlink" href="#i-example" title="Permalink to this headline">¶</a></h3>
+<section id="i-example">
+<h3><strong>(i) Example</strong><a class="headerlink" href="#i-example" title="Permalink to this headline">#</a></h3>
 <p>The equation <span class="math notranslate nohighlight">\(\displaystyle \frac{dy}{dx} + \frac{y}{x}= 3\sin(x)\)</span> is solved.</p>
 <p>In this equation <span class="math notranslate nohighlight">\(P = 1/x\)</span> and <span class="math notranslate nohighlight">\(Q = 3\sin(x)\)</span>. The integrating factor is simple in this case and is</p>
 <div class="math notranslate nohighlight">
@@ -1606,9 +1859,9 @@
 <div class="math notranslate nohighlight">
 \[\displaystyle ye^{{x^2/2}}=3\int e^{{x^2/2}}\sin(x)dx+c\]</div>
 <p>and the remaining integral is now a difficult one with the answer involving the error function.</p>
-</div>
-<div class="section" id="ii-coupled-chemical-kinetic-equations">
-<h3><strong>(ii) Coupled chemical kinetic equations</strong><a class="headerlink" href="#ii-coupled-chemical-kinetic-equations" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="ii-coupled-chemical-kinetic-equations">
+<h3><strong>(ii) Coupled chemical kinetic equations</strong><a class="headerlink" href="#ii-coupled-chemical-kinetic-equations" title="Permalink to this headline">#</a></h3>
 <p>One particularly useful application of this method is to solve coupled kinetic equations. If a molecule reacts in a scheme</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle A \stackrel {k_1} \longrightarrow B \stackrel  {k_2}\longrightarrow  C\]</div>
@@ -1630,10 +1883,10 @@
 <div class="math notranslate nohighlight">
 \[\displaystyle B=\frac{k_1A_0}{k_2-k_1}\left(e^{-k_1t}-e^{-k_2t} \right) \]</div>
 <p>and this has the expected form; it is zero when <span class="math notranslate nohighlight">\(t = 0\)</span> and again when <span class="math notranslate nohighlight">\(t = \infty\)</span> and passes through a maximum when <span class="math notranslate nohighlight">\(dB/dt = 0\)</span>.</p>
-</div>
-</div>
-<div class="section" id="the-bernoulli-equation">
-<h2>4.4 The Bernoulli Equation<a class="headerlink" href="#the-bernoulli-equation" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="the-bernoulli-equation">
+<h2>4.4 The Bernoulli Equation<a class="headerlink" href="#the-bernoulli-equation" title="Permalink to this headline">#</a></h2>
 <p>The equation <span class="math notranslate nohighlight">\(\displaystyle \frac{dy}{dx} + Py = Qy^n \)</span>,</p>
 <p>where <span class="math notranslate nohighlight">\(P\)</span> and <span class="math notranslate nohighlight">\(Q\)</span> are functions of <span class="math notranslate nohighlight">\(x\)</span> alone, is called the Bernoulli equation. If the integer <span class="math notranslate nohighlight">\(n = 1\)</span> the equation is solved by separating variables in the usual way. If <span class="math notranslate nohighlight">\(n \ne 1\)</span> the equation can be solved with an integrating factor with the substitution <span class="math notranslate nohighlight">\(\displaystyle y^{1-n} = u \)</span>.</p>
 <p>Differentiating gives</p>
@@ -1652,12 +1905,12 @@
 <div class="math notranslate nohighlight">
 \[\displaystyle \frac{u}{x}=-\int e^xdx\quad \text{ or }\quad \displaystyle u=-x(e^x+c)\]</div>
 <p>Substituting back gives <span class="math notranslate nohighlight">\(\displaystyle y=-\frac{1}{x(e^x+c)} \)</span></p>
-</div>
-<div class="section" id="second-order-differential-equations">
-<h2>5 Second-order differential equations<a class="headerlink" href="#second-order-differential-equations" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="newton-s-laws-and-differential-equations-describing-motion">
-<h2>5.1 Newton’s laws and differential equations describing motion<a class="headerlink" href="#newton-s-laws-and-differential-equations-describing-motion" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="second-order-differential-equations">
+<h2>5 Second-order differential equations<a class="headerlink" href="#second-order-differential-equations" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="newton-s-laws-and-differential-equations-describing-motion">
+<h2>5.1 Newton’s laws and differential equations describing motion<a class="headerlink" href="#newton-s-laws-and-differential-equations-describing-motion" title="Permalink to this headline">#</a></h2>
 <p>Differential equations dominate the study of the motion of the planets and of molecules. In single molecules or in ensembles of them, molecular dynamics calculations rely on solving many simultaneous equations according to Newton’s laws of motion, linked to potentials describing intermolecular interactions.</p>
 <p>Newton’s laws are</p>
 <p><strong>(i)</strong><span class="math notranslate nohighlight">\(\quad\)</span> Every particle remains either in a state of rest or of constant speed in a straight line unless acted on by a force to change that state.</p>
@@ -1685,9 +1938,9 @@
 <div class="math notranslate nohighlight">
 \[\displaystyle  x=\frac{gt^2}{2} +v_0t+x_0\]</div>
 <p>This equation contains all the information about a freely falling body.</p>
-</div>
-<div class="section" id="general-equation-of-motion-energy-equation-and-simple-harmonic-motion">
-<h2>5.2 General Equation of Motion, Energy equation and Simple Harmonic Motion.<a class="headerlink" href="#general-equation-of-motion-energy-equation-and-simple-harmonic-motion" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="general-equation-of-motion-energy-equation-and-simple-harmonic-motion">
+<h2>5.2 General Equation of Motion, Energy equation and Simple Harmonic Motion.<a class="headerlink" href="#general-equation-of-motion-energy-equation-and-simple-harmonic-motion" title="Permalink to this headline">#</a></h2>
 <p>If the force is represented by <span class="math notranslate nohighlight">\(f(x)\)</span> then different types of motion can be studied, for example motion under gravity or that due to extension of a spring which will lead to simple harmonic motion.</p>
 <p>The simple harmonic motion is the most important form of periodic motion. It describes the <em>small</em> angular oscillations of a pendulum as well as a good approximation to the vibrations of molecules, and this is called the harmonic oscillator model. A spring that hangs vertically with a mass attached to its end, a taut wire with a mass attached at it centre, or the oscillations of a ship or of a hydrometer, all follow simple harmonic motion, if the inertia of the spring, wire, or liquid is ignored. In this motion, the acceleration is proportional to the displacement of the particle from its central position.</p>
 <p>The general equation of motion is formed by equating force, as mass multiplied by acceleration, to the force <span class="math notranslate nohighlight">\(f(x)\)</span> on the particle, such as given by Hooke’s or some other law,</p>
@@ -1716,8 +1969,8 @@
 \[\displaystyle  mv\frac{dv}{dx}=f(x)  \tag{16}\]</div>
 <p>Integrating produces <span class="math notranslate nohighlight">\(\displaystyle \frac{mv^2}{2}=\int f(x)dx+c\)</span> which is the same as equation 14.</p>
 <p>The calculation can be completed when different types of forces are assigned to <span class="math notranslate nohighlight">\(f(x)\)</span>. Two examples are given, one for the motion of a rocket, another for simple harmonic motion.</p>
-<div class="section" id="i-rockets">
-<h3><strong>(i) Rockets</strong><a class="headerlink" href="#i-rockets" title="Permalink to this headline">¶</a></h3>
+<section id="i-rockets">
+<h3><strong>(i) Rockets</strong><a class="headerlink" href="#i-rockets" title="Permalink to this headline">#</a></h3>
 <p>At the end of section 3.5 the motion of a rocket launched vertically was examined. Figure 8b. shows plots of velocity and time vs distance away from the earth’s surface. To calculate the distance moved in a given time equation 15 can be used.</p>
 <p>The equation to use is <span class="math notranslate nohighlight">\(\displaystyle \frac{dv}{dt}\equiv v\frac{dv}{dr}=-\frac{gR^2}{r^2}\)</span> which leads to <span class="math notranslate nohighlight">\(\displaystyle F(r)= v_0^2 - 2gR+ \frac{2gR^2}{r}\)</span>.</p>
 <p>The integration is</p>
@@ -1735,9 +1988,9 @@
 <p>Plots of <span class="math notranslate nohighlight">\(t\)</span> vs <span class="math notranslate nohighlight">\(r\)</span> are shown in fig 8b. Note that the inverse hyperbolic sine, <span class="math notranslate nohighlight">\(\sinh^{-1}(x)\)</span>, can also be written as</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \sinh^{-1}(x)=  \ln(x+\sqrt{x^2+1})\]</div>
-</div>
-<div class="section" id="iii-rockets-again-conservation-of-momentum">
-<h3><strong>(iii) Rockets again.  Conservation of Momentum</strong><a class="headerlink" href="#iii-rockets-again-conservation-of-momentum" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="iii-rockets-and-conservation-of-momentum">
+<h3><strong>(iii) Rockets and conservation of momentum</strong><a class="headerlink" href="#iii-rockets-and-conservation-of-momentum" title="Permalink to this headline">#</a></h3>
 <p>The Law of Conservation of Momentum can be used to find the velocity of a rocket. Suppose that the rocket is moving at velocity <span class="math notranslate nohighlight">\(v\)</span> (relative to some fixed coordinate system) and ejects fuel with velocity <span class="math notranslate nohighlight">\(-u\)</span> relative to the rocket, therefore the mass of the rocket <span class="math notranslate nohighlight">\(M\)</span> decreases with time as the fuel is used. We know that the rate of change of momentum is equal to the external force on a system of particles (i.e force is mass times acceleration and acceleration is the rate of change of momentum)</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \frac{dp}{dt}=F\]</div>
@@ -1757,9 +2010,9 @@ Evaluating the first differential and simplifying gives</p>
 <p>were <span class="math notranslate nohighlight">\(v_0\)</span> is the initial velocity, <span class="math notranslate nohighlight">\(M_0\)</span> the initial total mass which is that of rocket plus fuel, and <span class="math notranslate nohighlight">\(M\)</span> is the mass of the rocket and any remaining fuel when the velocity is <span class="math notranslate nohighlight">\(v\)</span>.</p>
 <p>The rockets’ speed only depends on the exhaust velocity and the fraction of the mass exhausted in that time interval needed to change the speed to <span class="math notranslate nohighlight">\(v\)</span> from <span class="math notranslate nohighlight">\(v_0\)</span>. Notice also that the speed at any time does not depend on how quickly the fuel is used, this does not enter the calculation, but clearly the lower the rate of fuel consumption the longer it will take to reach a set velocity.</p>
 <p>If <span class="math notranslate nohighlight">\(m\)</span> is the mass of the fuel and all is consumed then <span class="math notranslate nohighlight">\(M\)</span> is the mass of the fuel empty rocket, <span class="math notranslate nohighlight">\(M_0=M+m\)</span> and <span class="math notranslate nohighlight">\(v\)</span> the maximum velocity, <span class="math notranslate nohighlight">\(\displaystyle v-v_0=u\ln\left(1+\frac{m}{M}\right)\)</span>. In a rocket it is therefore desirable to carry as much mass as fuel as possible so that <span class="math notranslate nohighlight">\(1+m/M)\)</span> is large. Additionally, if the propellant is a cold gas, from the Kinetic Theory of Gases the r.m.s. speed of a gas decreases with atomic mass, i.e. <span class="math notranslate nohighlight">\(u\)</span> is smaller for heavier than low atomic masses, so low atomic mass gases would seem to be preferred to make the final velocity as large as possible.</p>
-</div>
-<div class="section" id="iii-hooke-s-law-and-simple-harmonic-motion">
-<h3><strong>(iii) Hooke’s Law and simple harmonic motion</strong><a class="headerlink" href="#iii-hooke-s-law-and-simple-harmonic-motion" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="iii-hooke-s-law-and-simple-harmonic-motion">
+<h3><strong>(iii) Hooke’s Law and simple harmonic motion</strong><a class="headerlink" href="#iii-hooke-s-law-and-simple-harmonic-motion" title="Permalink to this headline">#</a></h3>
 <p>In the case of a force in a line towards the origin that is a fixed point, simple harmonic motion ensues if the force is described by Hooke’s law <span class="math notranslate nohighlight">\(f (x) = -kx\)</span> where <span class="math notranslate nohighlight">\(k\)</span> is the force constant and <span class="math notranslate nohighlight">\(x\)</span> the displacement from the origin. The minus sign indicates that the force is towards the origin; when <span class="math notranslate nohighlight">\(\displaystyle d^2x/dt^2\)</span> is negative <span class="math notranslate nohighlight">\(x\)</span> is positive and vice versa. The equation of motion is now</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle  \frac{d^2x}{dt^2}=-\frac{k}{m}x \]</div>
@@ -1827,9 +2080,9 @@ If the initial velocity is <span class="math notranslate nohighlight">\(v_0\)</s
 <p>Fig 11b Classical and quantised probability in a harmonic potential.</p>
 <hr class="docutils" />
 <p>The figure shows the classical probability together with a harmonic potential such as for a diatomic molecule. The potential has a force constant of <span class="math notranslate nohighlight">\(172\)</span> N/m and the first quantised energy level is shown at energy <span class="math notranslate nohighlight">\(E_1\)</span>. The square of the wavefunction is also shown. The classical probability extends only as far as the turning points at energy <span class="math notranslate nohighlight">\(E_1\)</span>. The difference between the probabilities is quite considerable not in their overall size but in their shape. The classical probability cannot extend past the turning point, but the quantised probability does so quite considerably. At large quantum numbers, e.g. <span class="math notranslate nohighlight">\(20\)</span> the wavefunction has more probability close to the turning points, than in the middle of the potential and so resembles the classical behaviour a little more closely.</p>
-</div>
-<div class="section" id="iv-springs">
-<h3><strong>(iv) Springs</strong><a class="headerlink" href="#iv-springs" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="iv-springs">
+<h3><strong>(iv) Springs</strong><a class="headerlink" href="#iv-springs" title="Permalink to this headline">#</a></h3>
 <p>Problems with springs often state that the spring has a weight attached, which causes the spring to extend by a certain amount. It is then extended or compressed by a further amount and let go. The equation of motion is then sought.</p>
 <p>As a specific example, suppose that a helical spring has a mass of <span class="math notranslate nohighlight">\(2\)</span> kg attached to it and this extends it by <span class="math notranslate nohighlight">\(5\)</span> cm. It is then displaced by <span class="math notranslate nohighlight">\(3\)</span> cm from its new equilibrium position and let go. At equilibrium, before the mass is moved, the tension in the spring due to Hooke’s law is balanced by the force of gravity; <span class="math notranslate nohighlight">\(mg = ks\)</span> where <span class="math notranslate nohighlight">\(s\)</span> is the displacement from equilibrium before the mass is moved. If the spring is now extended by <span class="math notranslate nohighlight">\(x\)</span> the tension <span class="math notranslate nohighlight">\(T\)</span> increases to <span class="math notranslate nohighlight">\(k(s + x)\)</span>. As the spring has no forces acting on it other than gravity, the force equation is</p>
 <div class="math notranslate nohighlight">
@@ -1839,9 +2092,9 @@ As <span class="math notranslate nohighlight">\(v_0 = 0\)</span>, when the mass 
 <div class="math notranslate nohighlight">
 \[\displaystyle  x = x_0 \cos(\omega t)\]</div>
 <p>If the initial displacement is above the equilibrium position <span class="math notranslate nohighlight">\(x_0 = -3\)</span>, therefore <span class="math notranslate nohighlight">\(x = -3\cos(\omega t)\)</span>. Finally, the frequency is found from Hooke’s law. At equilibrium, <span class="math notranslate nohighlight">\(mg = ks\)</span> and <span class="math notranslate nohighlight">\(s = 5\)</span> is the displacement from equilibrium before the mass is moved. Therefore, the force constant <span class="math notranslate nohighlight">\(k = 2 \cdot 9.81/5\,\mathrm{ N \,m^{-1 }}\)</span> and the frequency squared is <span class="math notranslate nohighlight">\(\omega^2 = k/m\)</span> or <span class="math notranslate nohighlight">\(\omega = 1.4\,\mathrm{ rad\, s^{-1}}\)</span>. This corresponds to a natural frequency of <span class="math notranslate nohighlight">\(\nu = \omega /2\pi\)</span> or <span class="math notranslate nohighlight">\(0.223\,\mathrm{ s^{-1}}\)</span> and period <span class="math notranslate nohighlight">\(T = 1/\nu = 4.49\)</span> seconds. The position of the mass at any time <span class="math notranslate nohighlight">\(t\)</span> is found to be <span class="math notranslate nohighlight">\(x = -3 \cos(1.4t)\)</span>. Note that if the question stated that the <em>weight</em> was 2 kg then this would correspond to <span class="math notranslate nohighlight">\(mg\)</span> not <span class="math notranslate nohighlight">\(m\)</span> and the mass to use would therefore be <span class="math notranslate nohighlight">\(2/9.81\)</span> kg.</p>
-</div>
-<div class="section" id="v-total-energy">
-<h3><strong>(v) Total energy</strong><a class="headerlink" href="#v-total-energy" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="v-total-energy">
+<h3><strong>(v) Total energy</strong><a class="headerlink" href="#v-total-energy" title="Permalink to this headline">#</a></h3>
 <p>The total energy is the sum of the kinetic and potential energy and is a constant if no external force acts on the system. The kinetic energy is that due to motion <span class="math notranslate nohighlight">\(mv^2/2\)</span>, and the potential energy can take several forms depending on how the motion is achieved. On extending a spring, the potential energy is force multiplied by distance displaced and the force is given by Hooke’s law. If the potential energy is that due to displacing a mass in a gravitational field, as occurs with a pendulum, then the potential is <span class="math notranslate nohighlight">\(mgh\)</span> where <span class="math notranslate nohighlight">\(h\)</span> is the height change.</p>
 <p>If the displacement at time <span class="math notranslate nohighlight">\(t\)</span> is <span class="math notranslate nohighlight">\(x = A \sin(\omega t + B)\)</span>, then the kinetic energy is</p>
 <div class="math notranslate nohighlight">
@@ -1850,10 +2103,10 @@ As <span class="math notranslate nohighlight">\(v_0 = 0\)</span>, when the mass 
 <div class="math notranslate nohighlight">
 \[\displaystyle  V=k\int_0^x xdx=\frac{1}{2}kx^2=\frac{k}{2}A^2\sin^2(\omega t+B)\]</div>
 <p>As <span class="math notranslate nohighlight">\(\displaystyle \omega^2 = k/m\)</span> the total energy, the sum of the potential and kinetic terms, is <span class="math notranslate nohighlight">\(\displaystyle E=\frac{k}{2}A^2\)</span> which is a constant.</p>
-</div>
-</div>
-<div class="section" id="the-simple-pendulum">
-<h2>5.3 The simple pendulum<a class="headerlink" href="#the-simple-pendulum" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="the-simple-pendulum">
+<h2>5.3 The simple pendulum<a class="headerlink" href="#the-simple-pendulum" title="Permalink to this headline">#</a></h2>
 <p>The pendulum will consist of a light rigid rod with a mass <span class="math notranslate nohighlight">\(m\)</span> at its end; the pivot holding the pendulum is frictionless and no air or other resistance hinders the motion. The variable <span class="math notranslate nohighlight">\(\varphi\)</span> is the angle in radians away from the vertical; Fig. 11. It is found that the pendulum’s angular frequency is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \omega = \sqrt{g/L}\quad\mathrm{ rad \,s^{-1}}\]</div>
@@ -1875,9 +2128,9 @@ As <span class="math notranslate nohighlight">\(v_0 = 0\)</span>, when the mass 
 \[\displaystyle  \varphi (t)=\varphi_0\cos(\omega t)+\frac{\nu_0}{\omega}\sin(\omega t)  \tag{21}\]</div>
 <p>as calculated in equation (20) but with <span class="math notranslate nohighlight">\(\varphi\)</span> (in radians) instead of <span class="math notranslate nohighlight">\(x\)</span> as displacement. The initial angle is <span class="math notranslate nohighlight">\(\varphi_0\)</span> from the vertical and initial velocity <span class="math notranslate nohighlight">\(\nu_0\)</span> rad s<span class="math notranslate nohighlight">\(^{-1}\)</span>.</p>
 <p>If the angular displacement is not small then the problem becomes rather more difficult, and after some effort (Arkfen 1970) an elliptical integral is produced with which the period can be calculated but which has to be evaluated numerically. The numerical integration of the pendulum’s equation of motion for any displacement is somewhat easier and is examined in Chapter 11.6.3.</p>
-</div>
-<div class="section" id="the-compound-pendulum-and-torsional-oscillations">
-<h2>5.4 The compound pendulum and torsional oscillations<a class="headerlink" href="#the-compound-pendulum-and-torsional-oscillations" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="the-compound-pendulum-and-torsional-oscillations">
+<h2>5.4 The compound pendulum and torsional oscillations<a class="headerlink" href="#the-compound-pendulum-and-torsional-oscillations" title="Permalink to this headline">#</a></h2>
 <p>The compound pendulum is a rigid body freely suspended from a point that is not its centre of gravity and allowed to oscillate. The equation of motion is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle I\frac{d^2\theta}{dt^2}=-mgh\sin(\theta)\]</div>
@@ -1886,9 +2139,9 @@ As <span class="math notranslate nohighlight">\(v_0 = 0\)</span>, when the mass 
 <div class="math notranslate nohighlight">
 \[\displaystyle I \frac{d^2\theta}{dt^2} = - k\theta/L\]</div>
 <p>where <span class="math notranslate nohighlight">\(I\)</span> is the moment of inertia of the mass about its point of suspension. Henry Cavendish (Philosophical Transactions, 1798, v 17 p 469, Royal Society London) used a torsional pendulum in his famous experiment to measure the gravitational constant.</p>
-</div>
-<div class="section" id="inverted-pendulum-unstable-equilibrium">
-<h2>5.5 Inverted pendulum: unstable equilibrium<a class="headerlink" href="#inverted-pendulum-unstable-equilibrium" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="inverted-pendulum-unstable-equilibrium">
+<h2>5.5 Inverted pendulum: unstable equilibrium<a class="headerlink" href="#inverted-pendulum-unstable-equilibrium" title="Permalink to this headline">#</a></h2>
 <p>In the normal pendulum, acceleration is towards the vertical or origin of the motion. In the inverted pendulum with a rigid rod instead of a wire, acceleration is away from the vertical and the motion is unstable. The equation of motion for small displacements from the vertical, is similar to that of the pendulum but with a positive sign on the right-hand side of the equation,</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \frac{d^2x}{dt^2}=n^2x  \tag{22}\]</div>
@@ -1899,9 +2152,9 @@ As <span class="math notranslate nohighlight">\(v_0 = 0\)</span>, when the mass 
 <div class="math notranslate nohighlight">
 \[\displaystyle \varphi=\varphi_0\cosh(nt)+\frac{\nu_0}{n}\sinh(nt)\]</div>
 <p>which may be compared with equation 21.</p>
-</div>
-<div class="section" id="simple-harmonic-motion-with-a-constant-force">
-<h2>5.6 Simple harmonic motion with a constant force<a class="headerlink" href="#simple-harmonic-motion-with-a-constant-force" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="simple-harmonic-motion-with-a-constant-force">
+<h2>5.6 Simple harmonic motion with a constant force<a class="headerlink" href="#simple-harmonic-motion-with-a-constant-force" title="Permalink to this headline">#</a></h2>
 <p>If a particle is attracted to the origin of set of coordinates, and subject to a further constant force <span class="math notranslate nohighlight">\(W\)</span>, the equation of motion takes the form based on equation (13),</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle m\frac{d^2x}{dt^2}=f(x)+W\]</div>
@@ -1915,9 +2168,9 @@ As <span class="math notranslate nohighlight">\(v_0 = 0\)</span>, when the mass 
 <div class="math notranslate nohighlight">
 \[\displaystyle x-\frac{W}{m\omega^2}=\frac{\nu_0}{\omega}\sin(\omega t)+x_0\cos(\omega t)\]</div>
 <p>if <span class="math notranslate nohighlight">\(x_0\)</span> and <span class="math notranslate nohighlight">\(\nu_0\)</span> are the initial position and velocity. The frequency <span class="math notranslate nohighlight">\(\omega\)</span> is the same whether the constant force is present or not.</p>
-</div>
-<div class="section" id="particle-in-a-one-dimensional-box">
-<h2>5.7 Particle in a one-dimensional box<a class="headerlink" href="#particle-in-a-one-dimensional-box" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="particle-in-a-one-dimensional-box">
+<h2>5.7 Particle in a one-dimensional box<a class="headerlink" href="#particle-in-a-one-dimensional-box" title="Permalink to this headline">#</a></h2>
 <p>Two quantum mechanical problems that can easily be solved using the methods just described are a particle (electron, proton, C60) in a one-dimensional box and a particle on a ring. Both involve integrating the Schroedinger equation, as must always be the case in quantum mechanics, but because the potential energy is zero the equations are considerably simpler than, say, that for the hydrogen atom or the harmonic oscillator. The one-dimensional Schroedinger equation in its general form is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle -\frac{\hbar^2}{2m}\frac{d^2\psi}{dx^2}+V(x)\psi=E\psi \]</div>
@@ -1951,10 +2204,10 @@ As <span class="math notranslate nohighlight">\(v_0 = 0\)</span>, when the mass 
 <p>Evaluating the integrals produces <span class="math notranslate nohighlight">\(\displaystyle \Delta x\Delta p =\frac{n\pi}{\sqrt{3}}\frac{\hbar}{2}\)</span> which is clearly greater than <span class="math notranslate nohighlight">\(\hbar/2\)</span> as <span class="math notranslate nohighlight">\(n&gt;0\)</span>.</p>
 <p><img alt="Drawing" src="../_images/diffeqn-fig11a.png" /></p>
 <p>Figure 11a. Energy levels and wavefunctions for a particle in a box. The mass used was that for an electron and the box is <span class="math notranslate nohighlight">\(1\)</span> nm in length. Notice how the energy levels move apart as <span class="math notranslate nohighlight">\(n\)</span> increases and how the number of nodes in the wavefunction also increases. A one dimensional box very approximately simulates a linear polyene, such as octatetraene.</p>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="the-rigid-rotor-and-a-particle-on-a-ring">
-<h2>5.8 The Rigid Rotor and a Particle on a Ring<a class="headerlink" href="#the-rigid-rotor-and-a-particle-on-a-ring" title="Permalink to this headline">¶</a></h2>
+<section id="the-rigid-rotor-and-a-particle-on-a-ring">
+<h2>5.8 The Rigid Rotor and a Particle on a Ring<a class="headerlink" href="#the-rigid-rotor-and-a-particle-on-a-ring" title="Permalink to this headline">#</a></h2>
 <p>If the distance between two atoms is fixed, or if a particle is constrained to move on a circle, then the Schroedinger equation takes a simple form and the equation is essentially the same as for a harmonic oscillator. To describe motion in more than one dimension, the Schroedinger equation has coordinates in <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> if two dimensional, or <span class="math notranslate nohighlight">\(x\)</span>, <span class="math notranslate nohighlight">\(y\)</span>, and <span class="math notranslate nohighlight">\(z\)</span> if the motion is three dimensional. Ratner &amp; Schatz (2001) give a clear description of this problem and others in quantum mechanics relevant to Chemistry.</p>
 <p>The equation for two-dimensional motion is</p>
 <div class="math notranslate nohighlight">
@@ -1989,8 +2242,8 @@ As <span class="math notranslate nohighlight">\(v_0 = 0\)</span>, when the mass 
 \[\displaystyle \varphi=\frac{1}{\sqrt{2\pi}}  e^{ik\theta} \tag{27}\]</div>
 <p>The quantum numbers are <span class="math notranslate nohighlight">\(k = 0, \pm 1, \pm 2, \cdots\)</span> and as the lowest value is zero, this means that the minimum energy is zero and the rotor is stationary. As <span class="math notranslate nohighlight">\(k \ne 0\)</span> can be positive or negative it indicates that the rotor moves to the right or left and that these levels are each doubly degenerate.</p>
 <p>As the lowest energy is zero it initially suggests that the Heisenberg uncertainty principle <span class="math notranslate nohighlight">\(\Delta \theta \Delta p \ge \hbar/2\)</span> is not obeyed. However, when <span class="math notranslate nohighlight">\(J = 0\)</span> the wavefunction is a constant, <span class="math notranslate nohighlight">\(1/ (2\pi)\)</span>, so we cannot know what angle the rotor has and this means that <span class="math notranslate nohighlight">\(\Delta \theta \Delta p  \ne 0\)</span>.</p>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -2014,9 +2267,11 @@ As <span class="math notranslate nohighlight">\(v_0 = 0\)</span>, when the mass 
 
               </div>
               
-        
-            <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="Diff-eqns-Q1-23.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -2032,26 +2287,28 @@ As <span class="math notranslate nohighlight">\(v_0 = 0\)</span>, when the mass 
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-        
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-    <div class="container">
-      <p>
-        
-          By Godfrey Beddard<br/>
-        
-            &copy; Copyright 2022.<br/>
-      </p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Godfrey Beddard<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
     </div>
-  </footer>
-</main>
+    
+</div>
 
 
       </div>
     </div>
   
-  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>

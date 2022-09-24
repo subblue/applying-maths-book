@@ -1,9 +1,9 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## Questions 74 - 85
+# # Questions 74 - 85
 
-# ### Q74 Newton-Raphson
+# ## Q74 Newton-Raphson
 # One use of the Newton - Raphson formula is to calculate square, cube, or $n^{th}$ roots of numbers. 
 # 
 # (a) Calculate $\sqrt[5]{5}$.
@@ -14,12 +14,12 @@
 # 
 # **Exercise:** Write a general Python  procedure to find any real $n^{\text{th}}$ real root of a number $m$, e.g. $\sqrt[n]{m}$.
 # 
-# ### Q75 Finding roots
+# ## Q75 Finding roots
 # Look at Fig. 23 and find the roots of $3 - 8x^2 + x^4 = 0$. Compare with the algebraic  solutions calculated with Sympy.
 # 
 # **Strategy:** Look at the plot of the function and start close to one of the roots to make sure you get the right one. The function is even and replacing $x$ by $-x$ produces the same value; therefore, only two of the roots need to be calculated because the other two will be $-1$ times these.
 # 
-# ### Q76 Blackbody radiation law
+# ## Q76 Blackbody radiation law
 # Planck's black-body radiation distribution law is derived as the product of the average energy of the (Bose - Einstein) photons of frequency $\nu$, which is 
 # 
 # $$\displaystyle \langle E\rangle = h\nu\left(e^{h\nu/k_BT} - 1\right)^{-1}$$
@@ -34,14 +34,14 @@
 # 
 # **Strategy:** Because the distribution $\rho(\nu)$ is never negative, the maximum clearly occurs when $\displaystyle d\rho(\nu )/d\nu = 0$ and this equation can be solved using the Newton - Raphson method. If temperature and frequency have a fixed ratio when the maximum condition is satisfied, the frequency and temperature should be present only as their ratio $\nu/T$.
 # 
-# ### Q77 Blackbody radiation law & Newton-Raphson
+# ## Q77 Blackbody radiation law & Newton-Raphson
 # In problem 65 we found that the maximum of the Planck radiation distribution is given by 
 # 
 # $$\displaystyle \lambda_{max}T=\frac{hc}{5k_B}\left(1-e^{-hc/(\lambda_{max}k_BT)}  \right)^{-1}$$
 # 
 # and made an approximation to find $\lambda_{max}T$. Use the Newton - Raphson method to find an accurate value.
 # 
-# ### Q78 Protein forced unfolding
+# ## Q78 Protein forced unfolding
 # In experiments to measure the unfolding of a protein by pulling on one end with the tip of an AFM, the following equation was used to calculate the force $f$ at a given retraction speed $v$ of the AFM tip,
 # 
 # $$ -\frac{x_u}{k_BT}-\frac{d}{df}\ln(h)+\frac{kh}{v}e^{fx_u/(k_BT)}=0$$
@@ -56,7 +56,7 @@
 # 
 # **Strategy:** Use the Newton - Raphson method to calculate $x_u$ since this is defined in an equation that has no algebraic solution.
 # 
-# ### Q79 Solution pH
+# ## Q79 Solution pH
 # (a) Show that the concentration of $\mathrm{H_3O^{+}}$ in a solution of $c_A\,\mathrm{ mol \,dm^{-3}}$ of the acid HA and $c_B$ of the salt NaA, is given by
 # 
 # $$\frac{x}{K_A}=\frac{c_A-x+K_w/x}{c_B+x-K_w/x}$$
@@ -67,13 +67,13 @@
 # 
 # **Strategy:** Write down all four equations for mass and charge balance and  equilibrium constants. Use these to eliminate all species other than $\mathrm{H_3O^+}$, because the equation you need only contains $\mathrm{H_3O^+}$. In (b) use the Newton - Raphson method to solve for numerical values. Recall that, by definition, $k_W = 10^{-14}$ at $25^\mathrm{o}$ C.
 # 
-# ### Q80 pH
+# ## Q80 pH
 # What is the pH of an $c = 0.1$ M solution of ammonia, given that $\mathrm{p}K_A(\mathrm{NH_4^+}) = 9.25$ and $\mathrm{p}K_W = 14$?
 # 
 # **Strategy:** The species present must be protons, hydroxyl ions, ammonia, and ammonium ions. The equations are determined by mass and charge balance, and the equations defining the equilibrium between protons and $\mathrm{OH^-}$ and $\displaystyle \mathrm{NH_3/NH_4^+}$. Recall that if $K$ is an equilibrium constant $\mathrm{p}K = -\log_{10}(K)$ and similarly $\mathrm {pH} = -\log_{10}([\mathrm{H^+}])$.
 # 
-# ### Q81 Energy in a well
-# The energy levels of a particle in a box of finite height, or a well of finite depth, cannot be calculated algebraically because the energy is contained within a transcendental equation. The calculation proceeds by specifying three regions, the central one of length $2L$ where the potential is $-V_0$, and two outer regions where the potential is zero. The Schroedinger equation is solved in each of these three regions and the wavefunction made continuous between them. The wavefunctions have even and odd parity, i.e. the odd wavefunctions have a centre of inversion where as the even ones are symmetrical about the centre of the potential. The reason for this is that the potential is symmetric, $V(-x) = V(x)$. The wavefunction for the lowest potential is even the next odd and so on. 
+# ## Q81 Energy in a well
+# The energy levels of a particle in a box of finite height, or a well of finite depth, cannot be calculated algebraically because the energy is contained within a transcendental equation. The calculation proceeds by specifying three regions, the central one of length $2L$ where the potential is zero, and two outer regions where the potential is $V_0$. The Schroedinger equation is solved in each of these three regions and the wavefunction made continuous between them. The wavefunctions have even and odd parity, i.e. the odd wavefunctions have a centre of inversion where as the even ones are symmetrical about the centre of the potential. The reason for this is that the potential is symmetric, $V(-x) = V(x)$. The wavefunction for the lowest potential is even the next odd and so on. 
 # 
 # The equation containing the energy, for even parity wavefunctions, $E$ can be written as $ \beta\tan(\beta)=\sqrt{\alpha^2-\beta^2}$ and for odd parity $\beta/\tan(\beta)=-\sqrt{\alpha^2-\beta^2}$ where $\beta^2 = 2m( V_0-E)L^2/\hbar^2$ and $\alpha^2 = 2mV_0L^2/\hbar^2$. 
 # 
@@ -94,7 +94,7 @@
 # figure 26. A finite depth well.
 # ______
 # 
-# ### Q82 Soap bubble surface shape
+# ## Q82 Soap bubble surface shape
 # Adding a surfactant and also increasing the viscosity of water by adding one of many compounds such as glycerol lowers its surface tension and makes bubble formation easy. The surface produced has considerable elasticity; the intermolecular forces present must be of longer range than in pure water.  
 # 
 # A soap bubble is formed between two wire hoops of radius 1 positioned at $\pm x$, see Fig. 27. It turns out that there are two possible surfaces for a stable film, one with a wide and one with a narrow waist. The equation describing the line the bubble takes between opposite points on the rings placed at (-$x$, 1) and ($x$, 1), is $y = r \cosh(x/r)$ where $r$ is the radius of the bubble's waist where $x$ = 0. The _surface_ produced is called a *catenoid*, and the lowest energy surface is a surface of minimum area. At a given size of the wire rings - in this question their radius is unity - there is a maximum value of $x = x_0$ at which the bubble can exist between the rings. The corresponding waist is $r_0$.
@@ -111,7 +111,7 @@
 # Figure 27. The soap film is maximally stretched between two rings of radius $r = 1$, the surface of which is described as a catenoid has a minimal surface area and a waist radius of $0.5524$. The rings are positioned at $x_0 = \pm 0.6627$. The curve $y = r\cosh(x/r)$ is also shown.
 # ______
 # 
-# ### Q83 Halley's method
+# ## Q83 Halley's method
 # Halley's method is an alternative to Newton - Raphson and supposedly has the advantage of converging faster than this method and of tripling in accuracy at each iteration. The recursion equation contains both the first $f'$ and second derivatives $f''$ and is
 # 
 # $$x_{n+1}=x_n-\frac{2f'(x_n)f(x_n)}{2f'(x_n)^2-f''(x_n)f(x_n)} $$
@@ -122,7 +122,7 @@
 # 
 # **Strategy:** To calculate $79^{1/9}$ let $c = 79$ and $m = 9$,and find the root when $x^m - c = 0$.
 #  
-# ### Q84 Planets motion
+# ## Q84 Planets motion
 # The planets move in elliptical orbits around the sun. An ellipse has semi-major and semi-minor axes that are the maximum and minimum radii respectively, measured from the centre of the ellipse to its circumference. If $a$ is the semi-major axis, then the semi-minor axis is $b = \epsilon a$ where $\epsilon$ is the _eccentricity_ of the orbit; $0 \lt \epsilon \le 1$. For the earth $\epsilon = 0.01671$, for Mercury $0.2056$, Pluto $0.2288$ and Halley's comet $0.9761$. (An eccentricity of $\ge 1$ produces a hyperbolic path, such as followed by the extra-solar system object ʻOumuamua with a value $1.1995$).
 # 
 # An important problem in celestial mechanics is to know where a planet or its moon was at a given time in the past or will be in the future, when its current position is known. Kepler solved this problem with the equation
@@ -150,7 +150,7 @@
 # 
 # ______
 # 
-# ### Q85 Full width of pulse.
+# ## Q85 Full width of pulse.
 # The Fourier transform of a square pulse has the form $\displaystyle g(\omega) = \frac{(1 - e^{- i\omega \tau})}{i\omega}$ where $\tau$ is the pulse's duration.
 # 
 # (a) Calculate the half-width at half maximum (_hwhm_) of the real part of the transform which is $\displaystyle f(\omega)\equiv Re[g(\omega)]=\frac{\tau}{\sqrt{2\pi}}\frac{\sin(\omega \tau )}{\omega \tau}$

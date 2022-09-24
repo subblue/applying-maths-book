@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## Solutions Q1 - 21
+# # Solutions Q1 - 21
 
 # In[1]:
 
@@ -16,14 +16,14 @@ init_printing()                      # allows printing of SymPy results in types
 plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 
-# ### Q1 answer
+# ## Q1 answer
 # Following the example of the harmonic oscillator, the equation becomes $v^2 - \omega^2x^2 = c$. This is the equation of hyperbolae and has a saddle point at $\omega\cdot x$ = 0. The plot is of $v\equiv dx/dt$ vs $\omega x$ with arbitrary values of $\omega$ and $c$ that we can choose. The figure shows the plot by choosing $\omega = c = 1$. Different values alters the 'look' of the plot, extending in one direction or the other but it always has the same form.
 # 
 # ![Drawing](diffeqn-fig31.png)
 # 
 # Fig. 31 Phase portrait for $d^2x/dt^2 - \omega^2x = 0. \quad \omega = c = 1$.
 # 
-# ### Q2 answer
+# ## Q2 answer
 # (a) $\displaystyle \frac{dy}{dx}=\frac{xy}{1-x^2}$ or $\displaystyle \int\frac{dy}{y}=\int\frac{x}{1-x^2}dx$. 
 # 
 # Integrating produces $\ln(y)=-\ln(x^2-1)/2+c$. When $y_0=c,\; x = x_0$ 
@@ -40,7 +40,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # $$\displaystyle e^y-1=\left[\sin(x)-\cos(x)\right]\frac{e^x}{2}+\frac{1}{2}$$
 # 
-# ### Q3 answer
+# ## Q3 answer
 # In a bimolecular reaction,when both species have the same initial concentration or the scheme is 2$A$ $\to$ product, then the rate equation is 
 # 
 # $$\displaystyle dA/dt = -k_2A^2$$
@@ -59,7 +59,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # producing $\displaystyle \qquad\frac{1}{a-x}-\frac{1}{a}=k_2t$.
 # 
-# ### Q4 answer
+# ## Q4 answer
 # (a) The integration produces 
 # 
 # $$\displaystyle \int\frac{dx}{x(N-x)}=kt, \quad \ln\left( \frac{x}{x-N} \right) =NkT+c$$
@@ -105,14 +105,14 @@ simplify( ans.rhs.subs(C1, c1_s[0] ) )  # substitute and simplify
 # Fig 31-B Example plots of how the number of infected individuals increases with time for different rate constants, $k$.
 # _____
 # 
-# ### Q5 answer
+# ## Q5 answer
 # Scattering takes the place of absorption in the case of X-rays. According to the text, Section 1.11, the scattering cross section for each of $n$ electrons is $\sigma = 4\pi e^2/mc^2$. Following reasoning in the text leading to the Beer-Lambert law, 
 # 
 # $$\displaystyle I_s = I_0(1 - e^{-\sigma nL})$$
 # 
 # and when the scattering is small the exponential can be approximated giving $I_s/I_0 = \sigma nL$. For one electron, the amount scattered is $nL$ times less giving the required answer.
 # 
-# ### Q6 answer
+# ## Q6 answer
 # The force downwards is $mg - kv^2$ and the equation of motion is 
 # 
 # $$\displaystyle  m\frac{dv}{dt} = mg - kv^2, \quad v(t_0) = v_0, \quad t_0 = 0 $$
@@ -133,7 +133,7 @@ simplify( ans.rhs.subs(C1, c1_s[0] ) )  # substitute and simplify
 # 
 # At long times, the limiting velocity is $v_{term} = 1/b = \sqrt{gm/k}$. The larger $k$ is, the smaller the velocity on reaching the ground; a typical value would be $1000$ kg/m making a terminal velocity for a $70$ kg skydiver $\approx $ 0.8 m/s.
 # 
-# ### Q7 answer
+# ## Q7 answer
 # Differentiating both sides with respect to $t$ gives, $\displaystyle \frac{dx}{dt}\left(\frac{1}{a-x}+\frac{1}{(a-x)^2}  \right)=ak$, 
 # 
 # which simplifies to $\displaystyle \frac{dx}{dt} = k(a - x)^2$. This means that the rate equation has the form of $da/dt=ka^2$ because a moles of A and B are present and $x$ moles react at time $t$. As a check, if the scheme is
@@ -145,7 +145,7 @@ simplify( ans.rhs.subs(C1, c1_s[0] ) )  # substitute and simplify
 # 
 # the rate equation is $d(a - x)/dt = -k(a - x)^2$ which is the same equation as just obtained. The rate constant $k$ has second order units, $\mathrm{dm^3\, mol^{-1}\, s^{-1}}$.
 # 
-# ### Q8 answer
+# ## Q8 answer
 # Newton's law of cooling is 
 # 
 # $$\displaystyle \frac{d\theta }{dt}=k(\theta_s-\theta)$$
@@ -160,7 +160,7 @@ simplify( ans.rhs.subs(C1, c1_s[0] ) )  # substitute and simplify
 # 
 # To form ice the temperature must be zero ($\theta_T = 0$) or lower, so that $\displaystyle t=\ln(27/12)/k = 31.7$  mins.
 # 
-# ### Q9 answer
+# ## Q9 answer
 # The process is solid $\to$ vapour and is first order because it is proportional to the amount of solid remaining at any time. If $s$ is the amount of solid I$_2$ then the rate equation is $\displaystyle \frac{ds}{dt} = -ks$ which integrates to $\displaystyle s = s_0e^{-kt}$ if $s_0$ is the initial amount of iodine. The rate equation for the amount of iodine vapour is 
 # 
 # $$\displaystyle \frac{ds_V}{dt}=+ks=ks_0e^{-kt}$$
@@ -169,7 +169,7 @@ simplify( ans.rhs.subs(C1, c1_s[0] ) )  # substitute and simplify
 # 
 # The pressure is related to the concentration and using the ideal gas law gives $s_V = pV/RT, \; s_0 = p_\infty V/RT$  and therefore the pressure increases as $\displaystyle p = p_\infty(1 - e^{-kt})$.
 # 
-# ### Q10 answer
+# ## Q10 answer
 # (a) The fluorescence yield is the rate of emission divided by the rate of absorption. This is $\varphi = k_f /(k_f + k_S)$, equation (5). With quencher the scheme is, 
 # 
 # $$\displaystyle \begin{array}{ccc}\\
@@ -193,7 +193,7 @@ simplify( ans.rhs.subs(C1, c1_s[0] ) )  # substitute and simplify
 # 
 # $$\displaystyle  \frac{\tau}{\tau_q}=\frac{k_f+k_S+k_qQ}{k_f+k_S}=1+k_{\mathrm{sv}}Q$$
 # 
-# ### Q11 answer
+# ## Q11 answer
 # The rate equations are 
 # 
 # $$\displaystyle \frac{dA}{dt}=-k_AA, \; \frac{dB}{dt}=+k_1A-k_0$$
@@ -245,7 +245,7 @@ print('{:s} {:f} {:s} {:f} {:f} '.format('times at conc', Bc, 'are ',roots[0],ro
 # 
 # When no alcohol remains the residual level is zero, and this occurs $6$ hours $8$ minutes after starting to drink. The graph of the time profile of alcohol in the blood is shown in Fig. 32. Because the amount of alcohol decreases linearly with time, at least when the amount is moderate, this can easily be used to back calculate how much alcohol was present at an earlier time. You can see how the model fails when B is small; it predicts a negative B will occur. At very low alcohol levels the reaction is no longer zero order but bimolecular and the concentration does not become negative.
 # 
-# ### Q12 answer
+# ## Q12 answer
 # The total flux into the pellet is, $\displaystyle J=+4\pi r^2D\frac{dc}{dr}$ 
 # 
 # and is positive as diffusion is into the pellet with a surface area of $4\pi r^2$. Defined as total flux, $J$ has units of mole s<sup>-1</sup>. As the catalyst poisons to radius $r_p$, then its concentration is given by
@@ -267,7 +267,7 @@ print('{:s} {:f} {:s} {:f} {:f} '.format('times at conc', Bc, 'are ',roots[0],ro
 # Fig. 33 Relative or fractional concentration of the poison vs. the fraction of the pellet's radius at two different values of $\alpha$. The value $x$ = 0 means that $r_p = r_0$ and $x$ = 1 means that $r_p$ = 0.
 # _____
 # 
-# ### Q13 answer
+# ## Q13 answer
 # As M and Q react, the rate is $\displaystyle k_2MQ = JM = +4πr^2DM \frac{dQ}{dr}$. 
 # 
 # To find $J$ the last two terms are integrated from $r = R$ to infinity,
@@ -276,7 +276,7 @@ print('{:s} {:f} {:s} {:f} {:f} '.format('times at conc', Bc, 'are ',roots[0],ro
 # 
 # which gives $J=4\pi DRQ$. Equating this to the rate produces the diffusion controlled rate constant $k_2=4\pi DR$.
 # 
-# ### Q14 answer
+# ## Q14 answer
 # The rate equation is $\displaystyle \frac{dR}{dt} = k_IM + (\alpha - 1)k_BR + k_pR - k_pR - k_TR$  
 # 
 # and the propagation step cancels out because in this step, one radical is produced for each one consumed. The branching step has the term $\alpha$ - 1 because one radical is lost accounting for propagation. The integral equation from a radical concentration of zero at zero time is
@@ -287,7 +287,7 @@ print('{:s} {:f} {:s} {:f} {:f} '.format('times at conc', Bc, 'are ',roots[0],ro
 # 
 # When $\gamma \gt 0$, this means that the branching rate is larger than the termination rate, and an explosion may occur because the term $\gamma t$ in the exponential is positive. The radical population increases towards infinity and hence the rate of reaction increases rapidly. Reaction is stable when $\gamma \lt 0$ and reaches steady state at long times; $R_\infty = k_I M/\gamma$. When $\gamma = 0$ the reaction is on the border between stability and explosion and radical concentration increases linearly with time as $k_IMt$.
 # 
-# ### Q15 answer
+# ## Q15 answer
 # (a) Equilibrium is rapidly established with the complex IM and its rate of change can be taken to be at steady state, hence 
 # 
 # $$\displaystyle \frac{d[IM]}{dt} = k_1[I][M] - k_{-1}[IM] - k_2[IM][I] = 0$$
@@ -304,7 +304,7 @@ print('{:s} {:f} {:s} {:f} {:f} '.format('times at conc', Bc, 'are ',roots[0],ro
 # 
 # (b) If each of the rate constants follows an Arrhenius type expression $\displaystyle k_a = k_0e^{-E_a/RT}$ with activation energy $E_a$, then, from the rate expression the term $k_2k_{-1}/k_1$ gives the overall reaction an activation energy $E_2 + E_{-1} - E_1$. If $E_1$ is greater than the other two, then the experimentally measured activation energy is negative even though each step has a positive or zero activation energy as must always be the case.
 # 
-# ### Q16 answer
+# ## Q16 answer
 # (a) The scheme is solvable if $x$ is the amount consumed at time $t$,
 # 
 # $$\displaystyle \begin{array}{ccc}
@@ -358,7 +358,7 @@ print('{:s} {:f} {:s} {:f} {:f} '.format('times at conc', Bc, 'are ',roots[0],ro
 # The $\pm V/2$ arises because the potential is zero in the centre of the membrane and is therefore $-V/2$ on one side and $+V/2$ at the other. When $V = 0$, the rate constant $\displaystyle k = 2k_0e^{-E_0 /RT}$ and this is its minimum value as $\cosh(x)$ has an approximately parabolic shape. Using the value $V = 0.1$ eV given in the question, produces $\cosh(9.6/(2RT)) \approx 3.5$.
 # 
 # 
-# ### Q17 answer
+# ## Q17 answer
 # Let $x$ be the amount of H+ and OH- ions and $a$ the concentration of water, then the rate equation is 
 # 
 # $$\displaystyle \frac{dx}{dt} = -k_1(a - x) - k_2x^2$$
@@ -381,7 +381,7 @@ print('{:s} {:f} {:s} {:f} {:f} '.format('times at conc', Bc, 'are ',roots[0],ro
 # 
 # where $x_0$ is the initial change recorded in the experiment and $k = k_1 + k_2x_e$. It does not matter what units $\Delta x$ is measured in, because it can always be written as the ratio $\Delta x/\Delta x_0$ when solving for the rate constant.
 # 
-# ### Q18 answer
+# ## Q18 answer
 # (a) If $x$ is the acetone concentration (species A), the rate equation is, 
 # 
 # $$\displaystyle \frac{dx}{dt}=-kxb=-kx(a_0+b_0-x)\quad\text{or}\quad \displaystyle \int\frac{dx}{(a_0+b_0-x)x}=-kt+c$$
@@ -407,7 +407,7 @@ print('{:s} {:f} {:s} {:f} {:f} '.format('times at conc', Bc, 'are ',roots[0],ro
 # Fig. 34 Autocatalysis. Initially species A decreases slowly as the concentration of B is small. As the reaction proceeds, more B is produced and although A is reduced overall, the rate increases and A is consumed even more rapidly. At longer times, the concentration of A becomes so small that even though that of B is large the reaction rate is slow. The phase portrait is shown on the right.
 # ________
 # 
-# ### Q19 answer
+# ## Q19 answer
 # (a) Rearranging gives 
 # 
 # $$\displaystyle \int\frac{dn}{n\ln(n/a)}=-kt+c$$
@@ -447,7 +447,7 @@ print('{:s} {:f} {:s} {:f} {:f} '.format('times at conc', Bc, 'are ',roots[0],ro
 # 
 # (d) In this model of a tumour, $k_2 = 1$, if $B_0$ is the initial rate of tumour growth, $k_1$ the regression constant and $A_0$ the number of cells initially present. At long times, $A \to A_0e^{B_0 /k_1}$ and if the tumour is to shrink then, $B_0/k_1 \lt 1$ making the exponential less than $1$.
 # 
-# ### Q20 answer
+# ## Q20 answer
 # (a) The rate of births is $k_1N$ and of deaths $(k_2 + k_3N)N$, thus the rate equation is 
 # 
 # $$\displaystyle \frac{dN}{dt}=k_1N-k_2N-k_3N^2 =[k_1-k_2-k_3N]N $$ 
@@ -513,7 +513,7 @@ n_t
 # Fig. 37 Phase portraits for the two population models. The lower curve (blue) corresponds to the model with harvesting. The circles indicate the steady state values; the arrows indicate how the population changes with time depending on its initial value.
 # _____
 # 
-# ### Q21 answer
+# ## Q21 answer
 # (a) The singlet states decay by fluorescence and crossing to the triplets and formed by triplet annihilation.
 # 
 # $$\displaystyle \begin{align} \frac{dS}{dt} &= -(k_f + k_s)S + \frac{k_aT^2}{2} \\

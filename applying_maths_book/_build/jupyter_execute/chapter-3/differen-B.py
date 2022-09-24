@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## Trig functions, logs, power, reciprocals and integrals
+# # Trig functions, logs, power, reciprocals and integrals
 
 # In[1]:
 
@@ -15,7 +15,7 @@ init_printing()                      # allows printing of SymPy results in types
 plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 
-# ### 3.9 Sine and cosine
+# ## 3.9 Sine and cosine
 # 
 # Sine and cosine functions are almost mirror images of one another when differentiated,
 # 
@@ -36,7 +36,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # Figure 5. Sine and cosine over two periods.
 # ______
 # 
-# ### 3.10 Other trig functions, tan, sec  and hyperbolic functions sinh, cosh and their inverse.
+# ## 3.10 Other trig functions, tan, sec  and hyperbolic functions sinh, cosh and their inverse.
 # 
 # There are many other trigonometric and closely related hyperbolic functions besides sine and cosine, and most can be treated by the differentiation methods described in the next few sections based on basic differentiation. One useful way is to convert to the exponential form first. Sine and cosine can easily be differentiated this way, then converted back to a trig form. A tangent, for example, is the ratio of sine/cosine and is treated as a ratio. Others functions such as sec(x) which is 1/cos(x) can be treated as a function of a function, Section 5.1, either in the trig or exponential form. The hyperbolic functions cosh, sinh, and tanh also have exponential representations. 
 # 
@@ -54,7 +54,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # The Pythagoras right-angled triangle can also be used to convert between trig functions. See Chapter 1.5 and a table of many functions is given in section 4.17.
 # 
-# ### 3.12 Logarithms
+# ## 3.12 Logarithms
 # 
 # Differentiating logarithms always has the form: 'derivative divided by the function'.
 # 
@@ -97,11 +97,11 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # where $C$ is a constant. The reason $C$ is there is that this is the general form and is simplified from the derivative of a log, since $\displaystyle \frac{d}{dx}\ln(Cx)=\frac{1}{x}$. 
 # 
 # 
-# ### 3.13 $x$ as a power: 
+# ## 3.13 $x$ as a power: 
 # 
 # Expressions such as $y=a^x,\;y=x^{1/x},\; y= x^x $ etc. can be differentiated quite easily with a little care.
 # 
-# #### **(i) $a^x$**
+# ### **(i) $a^x$**
 # In cases where there are powers of $x$ it is best to take logs of both sides first. For example,
 # if $y = a^x$, taking logs of both sides gives $\ln(y) = x \ln(a)$ and differentiating produces
 # 
@@ -114,7 +114,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # In the special case that $a = e$ ($e$ is the exponential constant), then the exponential derivative is retrieved because $\ln(e)  = 1$.
 # 
 # 
-# #### **(ii) Which is larger $e^\pi$ or $\pi^e$ ?**
+# ### **(ii) Which is larger $e^\pi$ or $\pi^e$ ?**
 # As a second example we differentiate $x^{1/x}$ and from this we can determine which is larger $e^\pi$ or $\pi^e$.
 # 
 # First take logs giving $\displaystyle \ln(y)=\frac{1}{x}\ln(x)$ and then differentiate and using eqn. 11 to simplify gives
@@ -123,7 +123,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # To determine which is bigger by dividing $e^\pi $ and $ \pi^e$ by $e$ and $\pi$ means that we should compare  $e^{1/e}$  and $\pi^{1/\pi}$. The thing to realize here is that if we find the maximum of the derivative of $x^{1/x}$ we can then check which of our two terms is bigger. To find the minimum/maximum is very simple (see section 9) and is found by setting the derivative to zero, then $\ln(x)=1$ so that $x=e$ is the _global maximum_ and this means that $e^{1/e}$ is the maximum possible value and so $e^\pi\; \gt\; \pi^e$.
 # 
-# #### **(iii) Factorials** 
+# ### **(iii) Factorials** 
 # A factorial is defined as $x!=x\cdot(x-1)\cdot (x-2)\cdots 2\cdot 1$ where $x$ is an integer, thus this function cannot be differentiated. Factorials occur most commonly in evaluating probabilities such as the binomial coefficients 
 # 
 # $$\displaystyle \binom{n}{x}=\frac{n!}{x!(n-x)!}$$
@@ -152,7 +152,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # and the maximum (or minimum) is found when the derivative is zero which can only be when $\ln(x)=\ln(n-x)$ or $x=n/2$. This can only be a maximum because the distribution is always positive and can be confirmed by direct calculation or plotting values. See Pascal's triangle and Binomial distribution in Chapters 1 and 12.
 # 
 # 
-# ### 3.14 Reciprocal derivatives
+# ## 3.14 Reciprocal derivatives
 # 
 # Occasionally it is necessary, or simpler, to find $dx/dy$ rather than invert the equation to put it in terms of $y = \cdots$ and calculate $dy/dx$. The derivatives are related as double reciprocals;
 # 
@@ -161,7 +161,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # As an example, suppose that $\displaystyle \sin(y^2) = x$, differentiating by $y$ gives the result $\displaystyle dx/dy = 2y \cos(y^2)$. Differentiating by $x$ could mean that a rearrangement must first be done to form $\displaystyle y = \sqrt{\sin^{-1}(x)}$ and then this differentiated, which is quite involved. Instead using equation (6), the result is obtained directly $\displaystyle 2y \cos(y^2)dy/dx = 1$ and these two results show that equation (13) is true.
 # 
 # 
-# ### 3.15 Differentiating integrals
+# ## 3.15 Differentiating integrals
 # 
 # If you are unfamiliar with integration, it will help to know the basic rules; see Chapter 4. It is possible to differentiate integrals; well why not! Integration and differentiation are linked as shown in equation (1) and as given by the fundamental theorem of the calculus:
 # 
@@ -183,7 +183,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # The aim in differentiating integrals is not to work out the integral first, which might not be possible anyway, and then differentiate the result, but to use equation (15), which avoids doing this.
 # 
-# #### **Nearest Neighbour Distribution**
+# ### **Nearest Neighbour Distribution**
 # 
 # One interesting, but rather sophisticated example of differentiating integrals occurs when finding the distribution of nearest (closest or first) neighbour molecules in a solution, Chandrasekhar(1943).
 # 
@@ -213,7 +213,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # Figure 5a. Probability of a nearest neighbour $w(r)$ at various concentrations.
 # _____
 # 
-# #### **Functions of two variables**
+# ### **Functions of two variables**
 # 
 # A different case, and one to be aware of, involves function in _two_ variables, say $x$ and $y$.
 # In this example, notice the variable of the integration is $y$, that of differentiation $x$, and therefore the differentiation is first performed inside the integration.
@@ -232,13 +232,13 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # where differentiation is with respect to $a$ and not $x$. The partial derivative symbol $\partial$ is used
 # inside the integration sign to specify that only $a$ in this case is to be differentiated.
 # 
-# ### 3.16 Fractional derivatives
+# ## 3.16 Fractional derivatives
 # 
 # While it is possible to repeatedly take derivatives of many functions, for instance $\displaystyle \frac{d^3}{dx^3}\sin(x)$, what about the $1/3$ or $1/2$ or $-1$ derivative? What would such a thing mean? In the case of $1/2$ derivatives we can say that if the function is $x^n$ then the half derivative is such that $\displaystyle \frac{d^{1/2}}{dx^{1/2}}\frac{d^{1/2}}{dx^{1/2}}x^n\equiv nx^{n-1}$. In other words differentiating, or operating twice on $x^n$ with $d^{1/2}/dx^{1/2}$, is the same as differentiating once with $dy/dx$. 
 # 
 # The general result for the $n^{th}$ derivative of $x^m$ is $\displaystyle \frac{d^ny}{dx^n}=\frac{m!}{(m-n)!}x^{m-n}$ which can be generalised if $n$ is a fraction by changing the factorials to gamma functions as $n!=\Gamma (n+1)$ thus $\displaystyle \frac{d^ny}{dx^n}=\frac{\Gamma (m+1)}{\Gamma(m-n+1)}x^{m-n}$. As many functions can be expressed as power series it is possible to fractionally differentiate these. However, these unusual derivatives need not have more than a curiosity interest for us; they appear in Morse's paper on the anharmonic oscillator (P. Morse, Physical Review, 34, 57, 1929) and hardly anywhere else.
 
-# ### 3.17 Table of the differentials of some common functions.
+# ## 3.17 Table of the differentials of some common functions.
 # 
 # $a,\;,b,\;$ and $n$ are treated as constants.
 # 

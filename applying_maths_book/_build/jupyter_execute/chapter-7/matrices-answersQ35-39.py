@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## Solutions Q35 - 39
+# # Solutions Q35 - 39
 
 # In[1]:
 
@@ -15,7 +15,7 @@ init_printing()                      # allows printing of SymPy results in types
 plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 
-# ### Q35 answer
+# ## Q35 answer
 # Using the notation that G is the matrix for a gap, and L for a lens, then the matrices are multiplied in the order: $G(x)L(f_2)G(d)L(f_1)G(u)$
 # 
 # $$\displaystyle ABCD = \begin{bmatrix}1 & x \\ 0 & 1 \end{bmatrix}\begin{bmatrix}1 & 0 \\ -1/f_2 & 1 \end{bmatrix}\begin{bmatrix}1 & d \\ 0 & 1 \end{bmatrix}\begin{bmatrix}1 & 0 \\ -1/f_1 & 1 \end{bmatrix}\begin{bmatrix}1 & u \\ 0 & 1 \end{bmatrix}$$
@@ -64,7 +64,7 @@ mag
 
 # The image is formed at $x= 0.175/0.625=0.28$ m from the second lens, is inverted, because the magnification is negative, and magnified by 1.6 times. This algorithm can be used to calculate the properties of any two lenses separated by any amount and the input and output at any distances. Any imaginary (complex) numbers for the distances means that what you are trying to determine is not possible with the values of focal lengths chosen.
 # 
-# ### Q36 answer
+# ## Q36 answer
 # Write down the sequence of matrices, remembering to divide the gap matrices by the refractive index of the material, taking air to be 1. The multiplication order is:
 # 
 # $$\displaystyle \text{[gap( x ) from lens to focus]} \times \text{[lens surface  2]}
@@ -96,7 +96,7 @@ print('{:s} {:6.3f}'.format('magnification ',1/ABCD[1,1]) )
 
 # Solving element $ABCD[1,1]=0$, is equivalent to making $A = 0$, because this produces a focal length for a parallel input beam. The focal point is $\approx 154$ mm from the right-hand surface of the lens.
 # 
-# ### Q37 answer
+# ## Q37 answer
 # Use python/Sympy and equations in the text with $M$ as the $ABCD$ matrix. The position of the waist is at $z$ to the left of the output mirror, which is taken to be at the reference planes.
 
 # In[7]:
@@ -142,7 +142,7 @@ omega = lambda z: ( omega0*np.sqrt(1 + ( wavel*z/(np.pi*omega0**2) )**2)  )  # r
 # Figure 85. Calculation of a laser beam in a cavity with $L = 0.5, f_1 = 0.1, f_2 = 0.2$ metres. The beam radius is multiplied by $100$ for clarity. The mirror surfaces are drawn as thick grey arcs. The confocal range is shown in red as is the position of beam waist.
 # __________
 
-# ### Q38 answer
+# ## Q38 answer
 # (a) The matrix for a gap is $\displaystyle \begin{bmatrix} 1 & d \\ 0 & 1 \end{bmatrix}$ then two gaps $d_1$ and $d_2$ form the matrix 
 # 
 # $$\displaystyle \pmb{G_{12}}=\begin{bmatrix} 1 & d_1 \\ 0 & 1 \end{bmatrix}\begin{bmatrix} 1 & d_2 \\ 0 & 1 \end{bmatrix}=\begin{bmatrix} 1 & d_1+d_2 \\ 0 & 1 \end{bmatrix}$$
@@ -192,7 +192,7 @@ G
 G.subs(A*D - B*C,1)  # substitute with value from determinant
 
 
-# ### Q39 answer
+# ## Q39 answer
 # The matrix for the cavity is $\displaystyle \pmb{M} = (G_1M_2G_2M_3G_3)\,M_4\,(G_3M_3G_2M_2G_1)\,M_1 $.
 # 
 # and the brackets are added to define the elements between the end mirrors. Using python/numpy, the matrices are defined as functions of the gaps and focal length so that several similar matrices do not have to be typed in. We are only interested in numerical results so numpy is used instead of Sympy.  Instead of making $DBCA$ directly as done below, it can also be calculated by exchanging the indices or using multiplication as in question 38;

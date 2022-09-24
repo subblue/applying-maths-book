@@ -1,11 +1,11 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## Basis sets and bra-ket algebra
+# # Basis sets and bra-ket algebra
 
 # In this section, bra-ket algebra is described more fully together with basis sets and how they are intimately related to the bra and ket. Some algebra for manipulating the bra and ket is also described.
 # 
-# ### 4.1 To each ket $|\;\rangle$ belongs a bra $\langle\;|$
+# ## 4.1 To each ket $|\;\rangle$ belongs a bra $\langle\;|$
 # In the Dirac notation, a ket is a column and a bra a row vector. The elements of the vector are those of the basis set used. Each ket always has a corresponding bra. The bra is formed as the _conjugate transpose_ of the ket, which means converting column into row and then taking the complex conjugate of each term. Formally the ket is the Hermitian adjoint of the bra, see Chapter 7.4.8. For example, if the ket is
 # 
 # $$ \displaystyle \qquad\qquad |v\rangle =\begin{bmatrix} a\\ b \\ c \end{bmatrix}\qquad\qquad  \text{(27)} $$
@@ -24,7 +24,7 @@
 # 
 # which are the same rules for any matrix met in Chapter 7. The only difference in their usage in quantum mechanics is that the elements of the basis set must form an orthogonal set. If they are also normalised then they form an orthonormal set.
 # 
-# ### 4.2 Discrete basis sets
+# ## 4.2 Discrete basis sets
 # 
 # The bra and ket, equations 27 and 28 have terms $a,\, b,\, c$ and these are the elements of the basis set chosen for the calculation. All quantum problems using bra-ket notation must have a basis set defined before the calculation starts. Unlike many calculations using vectors, the basis set does not usually represent spatial coordinates but is instead some other relevant property. The spin state of the proton, which is described next, is an example of this.
 # 
@@ -64,7 +64,7 @@
 # 
 # A state such as $\Psi=a\psi_{xy}+b\psi_{xz} = \begin{bmatrix} 0\\a\\0\\0\\b \end{bmatrix}$.
 
-# ### 4.3 Inner products $\langle\alpha |\beta\rangle$
+# ## 4.3 Inner products $\langle\alpha |\beta\rangle$
 # 
 # The _dot_ or _inner product_ of the two vectors is always a number, i.e. a scalar. Using the
 # normalized and orthogonal (spin) states $\alpha,\beta$
@@ -120,7 +120,7 @@
 # $$\displaystyle \langle\varphi|\psi\rangle =\int \varphi(x)\psi(x)dx$$
 # 
 # 
-# ### 4.4 Outer products:$|\alpha\rangle\langle \beta|$ and projection operators $|\alpha\rangle\langle\alpha|$ are matrices
+# ## 4.4 Outer products:$|\alpha\rangle\langle \beta|$ and projection operators $|\alpha\rangle\langle\alpha|$ are matrices
 # Objects of the form $|\alpha\rangle\langle \alpha|$, $|\alpha\rangle\langle \beta|$ or $|\psi_{z^2}\rangle\langle \psi_{xy}|$ and so forth are always square matrices and correspond to *operators*. This means that when they are placed to the left of a ket they operate on this and a new ket is formed. Using the definitions above
 # 
 # $$\displaystyle|\alpha\rangle\langle\beta|=\begin{bmatrix} 1 \\ 0 \end{bmatrix} \begin{bmatrix} 1 & 0 \end{bmatrix} = \begin{bmatrix} 0 & 1\\ 0 & 0\end{bmatrix}$$

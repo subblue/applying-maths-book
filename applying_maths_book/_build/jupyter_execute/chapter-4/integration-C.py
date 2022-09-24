@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## Using parametric equations
+# # Using parametric equations
 
 # In[1]:
 
@@ -15,7 +15,7 @@ init_printing()                      # allows printing of SymPy results in types
 plt.rcParams.update({'font.size': 16})  # set font size for plots
 
 
-# ### 6 Parametric equations
+# ## 6 Parametric equations
 # Parametric equations are used because many complex equations do not simplify to something that can be readily integrated and it is simply easier to use the parametric form.
 # 
 # Complex curves are often given as a pair of parametric equations. The ellipse $\displaystyle \frac{x^2}{a^2} + \frac{y^2}{b^2} = 1$ , for instance, is represented also as the pair of equations in the parametric variable $t$ as
@@ -58,7 +58,7 @@ ans
 # Figure 9. The area of the quadrant is $\pi ab/4$.
 # _________
 # 
-# ### 7 Plane polar coordinates
+# ## 7 Plane polar coordinates
 # 
 # Sometimes equations are simpler and calculations easier when not done in Cartesian (rectilinear) coordinates but in polar or one of several other coordinate systems. Using Cartesian coordinates to integrate closed curves, such as circles or cardioids and so forth, can also lead to some pitfalls. The equation of a circle of radius 1 and centred at the origin $(0, 0)$ is $x^2 + y^2 = 1$. When integrated, because exactly half the area is above the x-axis, this part should have a positive area and the half below a negative one making the total zero, whereas the area is clearly $\pi$. Rearranging to find $y$ and integrating gives $\int_{-1}^{1}\sqrt{1-x^2}dx=\pi/2$ and although the integration was across the diameter $x = -1$ to $1$, only half of the area has been evaluated. This is because, by convention, only the positive part of the square root was used, and although it appears that we have integrated over the whole area in fact only half of the area has been covered. If $-\int_{-1}^{1}\sqrt{1-x^2}dx$ is added to account for the other half, the result is zero. The area of the cardioid shown in Fig. 11 would similarly be zero because there is as much negative area below the x-axis as there is positive above it. A common way round this problem of false zero areas is to identify a symmetrical curve, calculate part of it and multiply the result according to symmetry, to obtain the whole area.
 # 
@@ -96,7 +96,7 @@ ans
 # _________
 # 
 # 
-# ### 7.1 Limits when the pole is inside the curve
+# ## 7.1 Limits when the pole is inside the curve
 # 
 # When the origin of the curve, i.e. the pole, is inside the curve, as it is in the peanut curve, integration is always from $0 \to 2\pi$. Integrating around this curve, Figure 11, which has the polar equation $r = 1/4 + \sin^2(\theta + \pi/4)$, is done with limits of $0 \to 2\pi$ and its area is
 # 
@@ -104,7 +104,7 @@ ans
 # 
 # The calculation can be done by changing the sine to exponential form and expanding the brackets. If you are not convinced of the simplicity produced by using polar coordinates, try doing this calculation in Cartesian coordinates by changing back using equation 18.
 # 
-# ### 7.2 Limits when the pole is on the circumference or outside the curve
+# ## 7.2 Limits when the pole is on the circumference or outside the curve
 # 
 # When the pole is on the curve itself or outside the curve, then the integration limits have to be calculated for each particular curve. The circle with its origin on the circumference, Figure 12, has the equation $r = 2a\cos(\theta)$ and the area is
 # 

@@ -4,11 +4,13 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PDE examples continued &#8212; Applying Maths in the Chemical &amp; Biomolecular Sciences</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>PDE Continued &#8212; Applying Maths in the Chemical &amp; Biomolecular Sciences</title>
     
-  <link href="../_static/css/theme.css" rel="stylesheet">
-  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,40 +20,39 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Solutions Q1 - 21" href="Diff-eqns-answers-1-21.html" />
@@ -63,7 +64,21 @@
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -72,9 +87,10 @@
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -92,14 +108,15 @@
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../intro.html">
-   Applying Maths in the Chemical and Biomolecular Sciences.
-  </a>
- </li>
-</ul>
-<ul class="current nav bd-sidenav">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Applying Maths in the Chemical and Biomolecular Sciences.
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../chapter-1/chapter1-intro.html">
    1. Numbers, Equations, Operators, and Algorithms.
@@ -204,11 +221,6 @@
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-2/chapter2-Q-10-13.html">
      Questions 10 -13
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-2/chapter2-C.html">
-     Euler’s theorem, roots of unity, x-ray diffraction structure factor.
     </a>
    </li>
    <li class="toctree-l2">
@@ -337,7 +349,7 @@
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../chapter-4/integration-intro.html">
-   4. Integration.
+   4 Integration.
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
   <label for="toctree-checkbox-4">
@@ -377,7 +389,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-4/integration-D.html">
-     Calculating an Average Value.
+     Calculating an Average.
     </a>
    </li>
    <li class="toctree-l2">
@@ -407,7 +419,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-4/integration-G.html">
-     Calculating the energy of a chemical bond using molecular orbitals
+     Calculating the energy of a Chemical Bond using Molecular Orbitals
     </a>
    </li>
    <li class="toctree-l2">
@@ -688,7 +700,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-7/matrices-D.html">
-     Rotation matrices: moving molecules
+     Rotation matrices: moving molecules. Coordinate transform as rotation.
     </a>
    </li>
    <li class="toctree-l2">
@@ -757,23 +769,13 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-7/matrices-K.html">
-     Calculating a bond length using moments of inertia
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-7/matrices-Q61.html">
-     Question 61
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="../chapter-7/matrices-L.html">
      Principal axes for Moments of Inertia
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-7/matrices-Q62.html">
-     Question 62
+    <a class="reference internal" href="../chapter-7/matrices-Q61-62.html">
+     Question 61 - 62
     </a>
    </li>
    <li class="toctree-l2">
@@ -1004,7 +1006,7 @@
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     PDE examples continued
+     PDE Continued
     </a>
    </li>
    <li class="toctree-l2">
@@ -1096,7 +1098,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-11/num-methods-answers8-12.html">
-     Solutions Q8 - 12
+     Solutions Q 8 - 12
     </a>
    </li>
    <li class="toctree-l2">
@@ -1258,139 +1260,254 @@
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/chapter-10/Diff-eqns-G.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/subblue/applying-maths-book"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/subblue/applying-maths-book/issues/new?title=Issue%20on%20page%20%2Fchapter-10/Diff-eqns-G.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        
-    </div>
-</div>
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/subblue/applying-maths-book/main?urlpath=lab/tree/applying_maths_book/chapter-10/Diff-eqns-G.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        <a class="colab-button" href="https://colab.research.google.com/github/subblue/applying-maths-book/blob/main/applying_maths_book/chapter-10/Diff-eqns-G.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
-                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
-                    src="../_static/images/logo_colab.png"
-                    alt="Interact on Colab">Colab</button></a>
-        
-        
-    </div>
-</div>
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   PDE examples continued
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/subblue/applying-maths-book/main?urlpath=lab/tree/applying_maths_book/chapter-10/Diff-eqns-G.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://colab.research.google.com/github/subblue/applying-maths-book/blob/main/applying_maths_book/chapter-10/Diff-eqns-G.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/subblue/applying-maths-book"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/subblue/applying-maths-book/issues/new?title=Issue%20on%20page%20%2Fchapter-10/Diff-eqns-G.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/chapter-10/Diff-eqns-G.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#examples-continued">
+   Examples continued.
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#ix-diffusion-across-an-interface-and-from-a-point">
      <strong>
       (ix) Diffusion across an interface and from a point
      </strong>
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#x-asymmetric-boundary-conditions-reaction-at-a-plane">
      <strong>
       (x) Asymmetric boundary conditions: reaction at a plane
      </strong>
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#xi-diffusion-into-or-out-of-a-sphere">
      <strong>
       (xi) Diffusion into or out of a sphere
      </strong>
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#xii-time-dependent-schroedinger-equation">
      <strong>
       (xii) Time-dependent Schroedinger equation
@@ -1399,24 +1516,24 @@
    </li>
   </ul>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#the-wave-equation">
    9.3 The wave equation
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#the-fourier-transform-method">
    10 The Fourier Transform method
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#i-the-airy-stokes-equation">
      <strong>
       (i) The Airy / Stokes equation
      </strong>
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#ii-the-schroedinger-equation-for-a-particle-in-a-gravitational-potential-v-x-sim-x">
      <strong>
       (ii)  The Schroedinger equation for a particle in a gravitational potential:
@@ -1426,21 +1543,21 @@
      </strong>
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#iii-time-dependent-schroedinger-equation-for-a-2d-square-well">
      <strong>
       (iii) Time dependent Schroedinger equation for a 2D square well
      </strong>
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#iv-diffusion-equation">
      <strong>
       (iv) Diffusion equation
      </strong>
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#transient-grating-experiments">
      <strong>
       Transient Grating Experiments
@@ -1451,17 +1568,120 @@
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>PDE Continued</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#examples-continued">
+   Examples continued.
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ix-diffusion-across-an-interface-and-from-a-point">
+     <strong>
+      (ix) Diffusion across an interface and from a point
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#x-asymmetric-boundary-conditions-reaction-at-a-plane">
+     <strong>
+      (x) Asymmetric boundary conditions: reaction at a plane
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#xi-diffusion-into-or-out-of-a-sphere">
+     <strong>
+      (xi) Diffusion into or out of a sphere
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#xii-time-dependent-schroedinger-equation">
+     <strong>
+      (xii) Time-dependent Schroedinger equation
+     </strong>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-wave-equation">
+   9.3 The wave equation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-fourier-transform-method">
+   10 The Fourier Transform method
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#i-the-airy-stokes-equation">
+     <strong>
+      (i) The Airy / Stokes equation
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ii-the-schroedinger-equation-for-a-particle-in-a-gravitational-potential-v-x-sim-x">
+     <strong>
+      (ii)  The Schroedinger equation for a particle in a gravitational potential:
+      <span class="math notranslate nohighlight">
+       \(V(x)\sim x\)
+      </span>
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#iii-time-dependent-schroedinger-equation-for-a-2d-square-well">
+     <strong>
+      (iii) Time dependent Schroedinger equation for a 2D square well
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#iv-diffusion-equation">
+     <strong>
+      (iv) Diffusion equation
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#transient-grating-experiments">
+     <strong>
+      Transient Grating Experiments
+     </strong>
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
               <div>
                 
-  <div class="section" id="pde-examples-continued">
-<h1>PDE examples continued<a class="headerlink" href="#pde-examples-continued" title="Permalink to this headline">¶</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="pde-continued">
+<h1>PDE Continued<a class="headerlink" href="#pde-continued" title="Permalink to this headline">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import all python add-ons etc that will be needed later on</span>
@@ -1476,8 +1696,10 @@
 </div>
 </div>
 </div>
-<div class="section" id="ix-diffusion-across-an-interface-and-from-a-point">
-<h2><strong>(ix) Diffusion across an interface and from a point</strong><a class="headerlink" href="#ix-diffusion-across-an-interface-and-from-a-point" title="Permalink to this headline">¶</a></h2>
+<section id="examples-continued">
+<h2>Examples continued.<a class="headerlink" href="#examples-continued" title="Permalink to this headline">#</a></h2>
+<section id="ix-diffusion-across-an-interface-and-from-a-point">
+<h3><strong>(ix) Diffusion across an interface and from a point</strong><a class="headerlink" href="#ix-diffusion-across-an-interface-and-from-a-point" title="Permalink to this headline">#</a></h3>
 <p>Imagine that a very long, narrow tube is half filled with a dye solution and the other half contains pure solvent each half being separated by a partition. When partition is carefully removed, diffusion from either half into the other begins. The tube is so long (<span class="math notranslate nohighlight">\(x \to \infty\)</span>) that its ends do not affect the behaviour on an experimental time scale. Immediately on opening the partition the concentration at the interface is <span class="math notranslate nohighlight">\(c(x)= c_0\)</span> for <span class="math notranslate nohighlight">\(x \ge 0\)</span> and <span class="math notranslate nohighlight">\(c(x) = 0\)</span> for <span class="math notranslate nohighlight">\(x\lt 0\)</span> both conditions apply at <span class="math notranslate nohighlight">\(t = 0\)</span>. This initial condition is quite specific, and practical, but instead of keeping a constant value <span class="math notranslate nohighlight">\(c_0\)</span> when <span class="math notranslate nohighlight">\(x \ge 0\)</span> and <span class="math notranslate nohighlight">\(t = 0\)</span> the initial concentration can in general be a function of position, <span class="math notranslate nohighlight">\(f(x)\)</span> which may range over the whole range of <span class="math notranslate nohighlight">\(x\)</span>.</p>
 <p>To obtain a solution equation (52); <span class="math notranslate nohighlight">\(\displaystyle \frac{\partial^2c_x}{\partial x^2}=-c_xk^2\)</span> is solved in a general way using exponentials as</p>
 <div class="math notranslate nohighlight">
@@ -1522,9 +1744,9 @@
 <p>because <span class="math notranslate nohighlight">\(\delta(0) = 1\)</span> and is otherwise zero. This function is a Gaussian or bell-shaped curve (see Chapter 12.3.3.) as material spreads out from the initial point on the line, rather as illustrated in fig 25.</p>
 <p>The general solution (59) can now be thought of as the convolution of a function <span class="math notranslate nohighlight">\(f(x)\)</span> with a impulse <span class="math notranslate nohighlight">\(\delta\)</span> function in much the same way as described in Chapter 9.7 where fluorescence, equivalent to <span class="math notranslate nohighlight">\(f(x)\)</span>, is stimulated by a laser pulse which is equivalent to the exponential term in (59).</p>
 <p>One important application of equations similar to, but more complex than those described here is in the technique known as FRAP, which stands for <em>fluorescence recovery after photo-bleaching</em>. In this technique, a dye molecule is introduced into a biological membrane and then an intense laser is used to bleach the dye rapidly in the small circular spot of the focused laser. A second weaker laser stimulates the dye’s fluorescence and the intensity of this is measured as the dye molecules diffuse into the bleached area. The rate at which the fluorescence recovers can be used to determine the diffusion coefficient of the dye molecules or proteins to which the dye may be attached. Should the protein contains an intrinsic chromophore, as does the green fluorescent protein (GFP), this can be used directly.</p>
-</div>
-<div class="section" id="x-asymmetric-boundary-conditions-reaction-at-a-plane">
-<h2><strong>(x) Asymmetric boundary conditions: reaction at a plane</strong><a class="headerlink" href="#x-asymmetric-boundary-conditions-reaction-at-a-plane" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="x-asymmetric-boundary-conditions-reaction-at-a-plane">
+<h3><strong>(x) Asymmetric boundary conditions: reaction at a plane</strong><a class="headerlink" href="#x-asymmetric-boundary-conditions-reaction-at-a-plane" title="Permalink to this headline">#</a></h3>
 <p>In some problems, asymmetric boundary conditions apply. One such case is a (semi) infinite tube that is closed at one end and filled with a solution at a concentration of <span class="math notranslate nohighlight">\(c_0\)</span>. Diffusion is caused by the fast removal of material at the closed end, for instance by an electrode reaction that causes precipitation, see Fig. 28,28a. The concentration at <span class="math notranslate nohighlight">\(t\)</span> and <span class="math notranslate nohighlight">\(x\)</span> is found using the initial conditions</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle t = 0,\quad x \gt 0, \quad c = c_0\]</div>
@@ -1568,9 +1790,9 @@
 <p>where <span class="math notranslate nohighlight">\(F\)</span> is the Faraday constant and <span class="math notranslate nohighlight">\(n\)</span> the number of electrons transferred in the reaction. For different values of <span class="math notranslate nohighlight">\(\Delta E = E - E^O\)</span> the ratio <span class="math notranslate nohighlight">\(s = O_X/R_d\)</span> can be plotted vs. distance from the electrodes. The expression <span class="math notranslate nohighlight">\(f_R = (1 - c(x, t))/(1 + s)\)</span> plots the fraction as reductant and <span class="math notranslate nohighlight">\(f_{O_X} = (s + c(x, t))/(1 + s)\)</span> the fraction oxidant, their sum being one. At oxidative, or positive, potentials the ratio <span class="math notranslate nohighlight">\(O_X/R_d\)</span> is large, and the electrode remains almost in equilibrium with the <span class="math notranslate nohighlight">\(O_X\)</span> concentration, being almost <span class="math notranslate nohighlight">\(c_0\)</span>. If the potential is negative, <span class="math notranslate nohighlight">\(O_X/R_d \lt 1\)</span>, and almost all of the oxidant in contact with the electrode reacts, eventually the region of reduced material expands away from the electrode, Fig. 29. The current measured in the electrochemical cell is initially large because the slope of concentration with distance is large, this is the flux, and the current is proportional to the flux. At longer times, the slope is smaller at the electrode, hence the flux is reduced and so is the current.</p>
 <p><img alt="Drawing" src="../_images/diffeqn-fig29.png" /></p>
 <p>Fig. 29 Left: Profile of fractional oxidant (solid line) and reductant (dashed) after <span class="math notranslate nohighlight">\(500\)</span> seconds vs. distance (m) away from an electrode at different ratios of <span class="math notranslate nohighlight">\(s = O_X/R_d\)</span>, hence different potentials. The potentials are <span class="math notranslate nohighlight">\(\Delta E = 0\)</span> mV, <span class="math notranslate nohighlight">\(s = 1,\, \Delta E = 59.5\)</span> mV, <span class="math notranslate nohighlight">\(s = 10\)</span>, and <span class="math notranslate nohighlight">\(\Delta E = -41.6\)</span> mV, <span class="math notranslate nohighlight">\(s = 1/5\)</span>, for <span class="math notranslate nohighlight">\(n = 1\)</span> and at <span class="math notranslate nohighlight">\(300\)</span> K. At longer times, the curves reach either zero or <span class="math notranslate nohighlight">\(c_0\)</span> as <span class="math notranslate nohighlight">\(x\)</span> increases. Right. The flux <span class="math notranslate nohighlight">\(\partial c/\partial x\)</span> is shown at different <span class="math notranslate nohighlight">\(x\)</span> (metres) vs. time (s) and shows how the current in a cell rapidly increases to some large value before slowly fading away.</p>
-</div>
-<div class="section" id="xi-diffusion-into-or-out-of-a-sphere">
-<h2><strong>(xi) Diffusion into or out of a sphere</strong><a class="headerlink" href="#xi-diffusion-into-or-out-of-a-sphere" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="xi-diffusion-into-or-out-of-a-sphere">
+<h3><strong>(xi) Diffusion into or out of a sphere</strong><a class="headerlink" href="#xi-diffusion-into-or-out-of-a-sphere" title="Permalink to this headline">#</a></h3>
 <p>When a substance diffuses into or out of a uniform sphere, the angular coordinates can normally be ignored as diffusion can occur equally well from any place on the sphere’s surface. Only the radial coordinate is important and then the diffusion equation is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \frac{\partial c }{\partial t}=D\left( \frac{\partial^2 c}{\partial r^2}+\frac{2}{r}\frac{\partial c}{\partial r} \right)\]</div>
@@ -1584,9 +1806,9 @@
 <div class="math notranslate nohighlight">
 \[\displaystyle  t \gt 0,\quad  u=0 \;\mathrm{at} \; r=0, \; \mathrm{and} \;  u=Rc_s \;  \mathrm{at}\; r=R \]</div>
 <p>and the initial condition is <span class="math notranslate nohighlight">\(t = 0,\, u = rf(r)\)</span>, where <span class="math notranslate nohighlight">\(f(r)\)</span> is a function describing the initial concentration profile inside the sphere. Often this is taken to be constant. This problem is now very similar to that of equation (54), but the boundary conditions are slightly different, one condition is that the concentration is zero the other that it is a constant. It is these conditions that produce a very complicated solution that is the sum of the product of exponential and sine terms. The result is given by Crank (1979) and Carslaw &amp; Jaeger (1959), the latter also giving a detailed derivation.</p>
-</div>
-<div class="section" id="xii-time-dependent-schroedinger-equation">
-<h2><strong>(xii) Time-dependent Schroedinger equation</strong><a class="headerlink" href="#xii-time-dependent-schroedinger-equation" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="xii-time-dependent-schroedinger-equation">
+<h3><strong>(xii) Time-dependent Schroedinger equation</strong><a class="headerlink" href="#xii-time-dependent-schroedinger-equation" title="Permalink to this headline">#</a></h3>
 <p>The time-dependent Schroedinger equation is a partial differential equation that can be solved by separating the variables. The equation is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle -\frac{\hbar^2}{2m}\frac{\partial \psi}{\partial x^2} + V(x)\psi=i\hbar\frac{\partial \phi}{\partial t} \tag{61}\]</div>
@@ -1610,10 +1832,10 @@ been included in <span class="math notranslate nohighlight">\(\varphi\)</span>. 
 \[\displaystyle \psi^*\psi = |A|^2 + |B|^2 + AB^*e^{2ikx} + BA^*e^{−2ikx}\]</div>
 <p>which demonstrates that the particle shows interference and is thus localized periodically. If the particle does not have any boundary condition imposed on it either <span class="math notranslate nohighlight">\(A\)</span> or <span class="math notranslate nohighlight">\(B\)</span> be can arbitrarily set to zero and then the particle travels either to the right or left and the wavefunction is <span class="math notranslate nohighlight">\(\displaystyle \psi = Ce^{i(kx−ωt)}\)</span>, where <span class="math notranslate nohighlight">\(\displaystyle \psi^*\psi = |C|^2\)</span> and <span class="math notranslate nohighlight">\(\sqrt{C}\)</span> is thus the normalization.</p>
 <p>The particle’s energy is <span class="math notranslate nohighlight">\(E = \hbar\omega\)</span> or <span class="math notranslate nohighlight">\(\displaystyle E = k^2\frac{\hbar^2}{2m}\)</span>, because momentum is <span class="math notranslate nohighlight">\(p = k\hbar \)</span> and we have defined <span class="math notranslate nohighlight">\(\displaystyle k^2 = \frac{2m\omega}{\hbar} \)</span>. The classical velocity of the particle is <span class="math notranslate nohighlight">\(v = p/m\)</span> or <span class="math notranslate nohighlight">\(v = k\hbar/m \)</span> and this is identical to the group velocity, <span class="math notranslate nohighlight">\(v_g = d\omega/dk\)</span>. The phase velocity is, by definition, <span class="math notranslate nohighlight">\(v_p = \omega/k\)</span>, and this velocity is also <span class="math notranslate nohighlight">\(E/p\)</span> because kinetic energy <span class="math notranslate nohighlight">\(E = p^2/2m\)</span>. The phase velocity is therefore <span class="math notranslate nohighlight">\(v/2\)</span> and half the classical and group velocity. See Flugge (1999) for more details of this problem and many other interesting one-dimensional problems.</p>
-</div>
-</div>
-<div class="section" id="the-wave-equation">
-<h1>9.3 The wave equation<a class="headerlink" href="#the-wave-equation" title="Permalink to this headline">¶</a></h1>
+</section>
+</section>
+<section id="the-wave-equation">
+<h2>9.3 The wave equation<a class="headerlink" href="#the-wave-equation" title="Permalink to this headline">#</a></h2>
 <p>A <em>travelling wave</em> can be imagined as a disturbance that moves both in space and time. Its general form is <span class="math notranslate nohighlight">\(u(x, t) = f (x - ct)\)</span> where <span class="math notranslate nohighlight">\(f\)</span> is a function of one variable (Knobel 2000). The wave moves with a  speed <span class="math notranslate nohighlight">\(c\)</span>. The profile <span class="math notranslate nohighlight">\(f\)</span> of the travelling wave remains the same as time passes; one of many travelling waves is <span class="math notranslate nohighlight">\(\displaystyle y = e^{-(x-ct)^2}\)</span>.</p>
 <p>A <em>standing wave</em> varies in time and, although it appears to be fixed in space, it is the sum of two travelling waves moving in opposite directions. A taut wire when plucked will produce waves with the displacement depending upon its position <span class="math notranslate nohighlight">\(x\)</span> along the wire and on time <span class="math notranslate nohighlight">\(t\)</span>. The vibrational frequency of such a wire is</p>
 <div class="math notranslate nohighlight">
@@ -1706,9 +1928,9 @@ been included in <span class="math notranslate nohighlight">\(\varphi\)</span>. 
 \[\displaystyle  u =\sum_{n=1}^\infty b_n\sin\left( \frac{n\pi ct}{L}\right)\sin\left(\frac{n\pi x}{L} \right) \tag{64}\]</div>
 <p>As the initial displacement is zero, but the velocity is not zero, plotting the displacement with time shows that it initially increases; which is the opposite behaviour to that observed in Fig. 30.</p>
 <p>If both the displacement and velocity are some function of <span class="math notranslate nohighlight">\(x\)</span>, then both the sine and cosine terms containing time appear in the general solution.</p>
-</div>
-<div class="section" id="the-fourier-transform-method">
-<h1>10 The Fourier Transform method<a class="headerlink" href="#the-fourier-transform-method" title="Permalink to this headline">¶</a></h1>
+</section>
+<section id="the-fourier-transform-method">
+<h2>10 The Fourier Transform method<a class="headerlink" href="#the-fourier-transform-method" title="Permalink to this headline">#</a></h2>
 <p>Fourier transforming a differential equation, such as the Schroedinger or diffusion equations often leads to a simpler equation in transformed space and one that can be solved easily. To get at the complete solution this equation has to be transformed back into ‘real space’ and even though this is now only involves an integral this can sometimes be tricky. If an analytic solution is not possible a numerical transform can be used.</p>
 <p>The fourier transforms are described in detail in chapter 9 and are defined as</p>
 <div class="math notranslate nohighlight">
@@ -1723,8 +1945,8 @@ been included in <span class="math notranslate nohighlight">\(\varphi\)</span>. 
 \[\begin{split}\displaystyle \qquad\qquad\begin{align}F\left(xf(x)\right)&amp;=\int_{-\infty}^{\infty} xf(x)e^{-ikx}dx =\int_{-\infty}^{\infty} f(x)\frac{d}{dk}\left(ie^{-ikx}\right) dx\\&amp;=i\frac{d}{dk}\int_{-\infty}^{\infty} f(x)e^{-ikx} dx=i\frac{d}{dk}g(k)\end{align}\qquad\qquad\qquad\text{(9-23d)}\end{split}\]</div>
 <div class="math notranslate nohighlight">
 \[\displaystyle \frac{\partial }{\partial t}f(x,t)=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^\infty \frac{\partial }{\partial t}f(k,t)e^{ikx}dk\tag{9-23e}\]</div>
-<div class="section" id="i-the-airy-stokes-equation">
-<h2><strong>(i) The Airy / Stokes equation</strong><a class="headerlink" href="#i-the-airy-stokes-equation" title="Permalink to this headline">¶</a></h2>
+<section id="i-the-airy-stokes-equation">
+<h3><strong>(i) The Airy / Stokes equation</strong><a class="headerlink" href="#i-the-airy-stokes-equation" title="Permalink to this headline">#</a></h3>
 <p>The equation</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \frac{d^2y}{dx^2}=xy \tag{65}\]</div>
@@ -1742,9 +1964,9 @@ been included in <span class="math notranslate nohighlight">\(\varphi\)</span>. 
 <div class="math notranslate nohighlight">
 \[\displaystyle y(x)=\frac{2c}{\sqrt{2\pi}}\int_0^\infty \cos(k^3/3+kx)\,dk\]</div>
 <p>This now has to be integrated at each <span class="math notranslate nohighlight">\(x\)</span> and has the form of a standing wave and then an exponential decay, see figure 30a. The integration is numerically difficult because <span class="math notranslate nohighlight">\(k^3\)</span> becomes very large and the function is oscillatory about zero. The integral with <span class="math notranslate nohighlight">\(c=1\)</span> is called an <em>Airy function of the first kind</em> <span class="math notranslate nohighlight">\(Ai(x)\)</span> and is usually included as a special function in most computer languages. This is the solution when <span class="math notranslate nohighlight">\(y\to 0\)</span> when <span class="math notranslate nohighlight">\(x\to\infty\)</span>, and there is a second Airy function solution to this equation in the limit that <span class="math notranslate nohighlight">\(y\to\infty\)</span> (called <span class="math notranslate nohighlight">\(Bi(x)\)</span>) but we shall not be interested in this case.</p>
-</div>
-<div class="section" id="ii-the-schroedinger-equation-for-a-particle-in-a-gravitational-potential-v-x-sim-x">
-<h2><strong>(ii)  The Schroedinger equation for a particle in a gravitational potential: <span class="math notranslate nohighlight">\(V(x)\sim x\)</span></strong><a class="headerlink" href="#ii-the-schroedinger-equation-for-a-particle-in-a-gravitational-potential-v-x-sim-x" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="ii-the-schroedinger-equation-for-a-particle-in-a-gravitational-potential-v-x-sim-x">
+<h3><strong>(ii)  The Schroedinger equation for a particle in a gravitational potential: <span class="math notranslate nohighlight">\(V(x)\sim x\)</span></strong><a class="headerlink" href="#ii-the-schroedinger-equation-for-a-particle-in-a-gravitational-potential-v-x-sim-x" title="Permalink to this headline">#</a></h3>
 <div class="math notranslate nohighlight">
 \[\displaystyle -\frac{\hbar^2}{2m}\frac{d^2\psi}{dx^2}+V(x)\psi=E\psi\]</div>
 <p>when the potential is linear, such as in a gravitational field, then</p>
@@ -1791,10 +2013,10 @@ been included in <span class="math notranslate nohighlight">\(\varphi\)</span>. 
 <p>and the result at several times is shown in figure 30c. The sinusoidal motion is clear. The period of the wavepacket is maintained and the particle oscillates only between finite values and does not reach zero.</p>
 <p><img alt="Drawing" src="../_images/diffeqn-fig30c.png" /></p>
 <p>Figure 30c. Average motion of the wavepacket in figure 30b made with quantum numbers shown (<span class="math notranslate nohighlight">\(5,6\)</span>) vs time. The period is shown between vertical lines is the same as the wavepacket period.</p>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="iii-time-dependent-schroedinger-equation-for-a-2d-square-well">
-<h2><strong>(iii) Time dependent Schroedinger equation for a 2D square well</strong><a class="headerlink" href="#iii-time-dependent-schroedinger-equation-for-a-2d-square-well" title="Permalink to this headline">¶</a></h2>
+<section id="iii-time-dependent-schroedinger-equation-for-a-2d-square-well">
+<h3><strong>(iii) Time dependent Schroedinger equation for a 2D square well</strong><a class="headerlink" href="#iii-time-dependent-schroedinger-equation-for-a-2d-square-well" title="Permalink to this headline">#</a></h3>
 <p>A particle is trapped in a 2D square well of infinite depth. The boundary conditions are <span class="math notranslate nohighlight">\(\psi(x)=0\)</span> at <span class="math notranslate nohighlight">\(x=0,L,y=0,L\)</span> and the potential in the well is zero.  The time dependent Schroedinger equation is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle -\frac{\hbar^2}{2m}\left(\frac{\partial^2}{\partial x^2}+\frac{\partial^2}{\partial y^2} \right)\psi(x,y,t)=i\hbar\frac{\partial}{\partial t}\psi(x,y,t) \tag{67}\]</div>
@@ -1823,9 +2045,9 @@ been included in <span class="math notranslate nohighlight">\(\varphi\)</span>. 
 <div class="math notranslate nohighlight">
 \[\displaystyle \psi(x,y,0)=N\sin(n\pi x/L)\sin(m\pi y/L)\]</div>
 <p>where <span class="math notranslate nohighlight">\(N\)</span> is normalisation term <span class="math notranslate nohighlight">\(N^2\int \int \psi^*\psi dxdy = 1\)</span>.</p>
-</div>
-<div class="section" id="iv-diffusion-equation">
-<h2><strong>(iv) Diffusion equation</strong><a class="headerlink" href="#iv-diffusion-equation" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="iv-diffusion-equation">
+<h3><strong>(iv) Diffusion equation</strong><a class="headerlink" href="#iv-diffusion-equation" title="Permalink to this headline">#</a></h3>
 <p>The diffusion equation of a molecule in solution at concentration <span class="math notranslate nohighlight">\(c\)</span> at time <span class="math notranslate nohighlight">\(t\)</span> and position <span class="math notranslate nohighlight">\(x\)</span> is given by Fick’s second law</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \frac{\partial c}{\partial t}=D\frac{\partial^2 c}{\partial x^2}\tag{69}\]</div>
@@ -1878,10 +2100,10 @@ been included in <span class="math notranslate nohighlight">\(\varphi\)</span>. 
 <p>and other strips are positioned by changing <span class="math notranslate nohighlight">\(a,b\)</span>. The initial top-hat population is coloured grey. An rapid initial fall in population is clear which then slows is accord with the square root of time for the root mean square distance diffused, <span class="math notranslate nohighlight">\(\langle x\rangle =\sqrt{2Dt}\)</span> in one dimension.</p>
 <p><img alt="Drawing" src="../_images/diffeqn-fig30e.png" /></p>
 <p>Figure 30e. Population as an initial comb of top-hat regions (grey) and the effect of diffusion at the times shown assuming a diffusion coefficient of <span class="math notranslate nohighlight">\(D=10\cdot 10^{-6}\, \mathrm{cm^2\,s^{-1}}\)</span>. The horizontal axis is in <span class="math notranslate nohighlight">\(\mu m\)</span>.</p>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="transient-grating-experiments">
-<h2><strong>Transient Grating Experiments</strong><a class="headerlink" href="#transient-grating-experiments" title="Permalink to this headline">¶</a></h2>
+<section id="transient-grating-experiments">
+<h3><strong>Transient Grating Experiments</strong><a class="headerlink" href="#transient-grating-experiments" title="Permalink to this headline">#</a></h3>
 <p>If a pump laser is split into two equal parts and recombined in a solution containing chromophores a set of fringes of the excited state molecules, sometimes called a population density grating (figure 30f), will be produced. If the solvent only is used a refractive index grating can be produced and probed in a similar way. The transient grating can diffract a probe laser.</p>
 <p>Excited molecules decay away via non-radiative processes and fluorescence but if lateral or rotational diffusion or energy/exciton transfer also destroys the fringes, this provides a way of measuring this property via the decrease in diffraction intensity of a probe laser. Similarly thermal gratings can be produced and probed. The weak probe laser can be at the same or a different wavelength to the pump and is aligned to be diffracted into a different spatial position to the pump so is easily identified. The technique varies a little depending upon what is measured but usually short pulse lasers are used, picosecond or femtosecond and in this case it is clearly essential that the arrive in the sample at the same time. As an example, if polarised light is used those molecules whose transition dipole is aligned with the polarisation of the pump (with a <span class="math notranslate nohighlight">\(\cos(\theta)\)</span> probability ) are preferentially excited. Subsequent rotational diffusion of the excited molecules can be measured because as the molecules rotate the polarised grating is diminished as the initially aligned transition moments are randomised and therefore the probe pulse has fewer molecule aligned with its polarisation to interact with. By measuring at different delay times, wrt the pump laser,  the probe pulse can map out the rotational diffusion in a pump-and-probe manner.</p>
 <p>The spatial period of the grating is given by <span class="math notranslate nohighlight">\(\Lambda =2\pi/|q|\)</span> (figure 30f) where <span class="math notranslate nohighlight">\(\vec k_B+\vec q=\vec k_A\)</span> and <span class="math notranslate nohighlight">\(\vec k_{A,B}\)</span> are the wavevectors of the pump beam of wavelength <span class="math notranslate nohighlight">\(\lambda_p\)</span>. From the diagram on the right of fig 30f <span class="math notranslate nohighlight">\(|q|\)</span> can be calculated, using right angled triangles, in terms of the angle <span class="math notranslate nohighlight">\(\theta\)</span> and knowing that a wavevector is defined as <span class="math notranslate nohighlight">\(k=2\pi/\lambda\)</span>,</p>
@@ -1896,8 +2118,9 @@ been included in <span class="math notranslate nohighlight">\(\varphi\)</span>. 
 <p>which means that the modulation is governed by <span class="math notranslate nohighlight">\(E_AE_B\)</span> the product of the pump field strength. The diffracted light from the probe is in turn proportional the excited state population. The cosine describes the grating variation with <span class="math notranslate nohighlight">\(x\)</span> which is the direction across the grating as shown in fig 30f and as the grating decays away, by whatever means, such as diffusion or excited state decay, the diffracted signal similarly decreases.</p>
 <p><img alt="Drawing" src="../_images/diffeqn-fig30f.png" /></p>
 <p>Figure 30f. Left. Set up for transient grating experiment showing a first order of the diffracted probe. Right. Wavevectors from the pump beam, where <span class="math notranslate nohighlight">\(\vec k_A=\vec k_B +\vec q\)</span></p>
-</div>
-</div>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -1921,9 +2144,11 @@ been included in <span class="math notranslate nohighlight">\(\varphi\)</span>. 
 
               </div>
               
-        
-            <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="Diff-eqns-F.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -1939,26 +2164,28 @@ been included in <span class="math notranslate nohighlight">\(\varphi\)</span>. 
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-        
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-    <div class="container">
-      <p>
-        
-          By Godfrey Beddard<br/>
-        
-            &copy; Copyright 2022.<br/>
-      </p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Godfrey Beddard<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
     </div>
-  </footer>
-</main>
+    
+</div>
 
 
       </div>
     </div>
   
-  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>

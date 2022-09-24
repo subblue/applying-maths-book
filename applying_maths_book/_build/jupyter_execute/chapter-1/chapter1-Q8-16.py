@@ -1,9 +1,9 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## Questions 8 - 16
+# # Questions 8 - 16
 
-# ### Q8 Waves
+# ## Q8 Waves
 # The particles in a wave have displacement defined as $y = 0.25\sin(125t - 3x + 0.6)$ metres. 
 # What is 
 # 
@@ -19,23 +19,23 @@
 # 
 # You will need to know how to differentiate to do part (e).
 # 
-# ### Q9 Beating sound waves
+# ## Q9 Beating sound waves
 # (a) If two sound waves of equal amplitude and phase and of frequency $\omega_1$ and $\omega_2$ are travelling in the same direction, show that the frequencies of the resulting waves are $\omega_1 \pm \omega_2$ and hence exhibit beating as shown in figure 13 when observed at some position $x$.
 # 
 # (b) In this figure convince yourself that the beat frequency is 0.5 Hz.
 # 
 # **Strategy:** Use the appropriate trigonometric identity from Section 5. The beat frequency is the difference of the two frequencies but the lower frequency of the summed wave is half the difference in frequency. Because the beating occurs in time, the term $-kx$ and phase $\phi$ can be ignored in the general wave equation 16.
 # 
-# ### Q10 Factorials
+# ## Q10 Factorials
 # Calculate $\displaystyle \frac{52!}{50!},\;\frac{10!}{6!4!},\;\frac{52!}{10!48!}$
 # 
-# ### Q11 Factorials
+# ## Q11 Factorials
 # For what $n$ does $n!$ first exceed $100,\; 10^3,\; 10^6,\; 10^9,\; 10^{12}$?
 # 
-# ### Q12 Polynomial
+# ## Q12 Polynomial
 # Calculate the polynomial functions given by equation 17 when $n = 0, 1, 2$ and $3$.
 # 
-# ### Q13 Recursion formula
+# ## Q13 Recursion formula
 # The recursion equation for the Legendre polynomials is
 # 
 # $$\displaystyle (n + 1)P_{n+1}(x) = (2n + 1)xP_n(x) - nP_{n-1}(x), \qquad \text{where} \qquad P_0(x) = 1,\; P_1( x) = x$$
@@ -46,7 +46,7 @@
 # 
 # Calculate the first six polynomials in each case. 
 # 
-# ### Q14 An ancient calculation
+# ## Q14 An ancient calculation
 # An ancient way to calculate the square root of a number $N$ is to use the recursion formula
 # 
 # $$\displaystyle  r_i=2kr_{i-1}+(N-k^2)r_{i-2}$$
@@ -55,7 +55,7 @@
 # 
 # Calculate $\sqrt{23}$. The initial two $r$ values can be chosen to be $0$ and $1$.
 # 
-# ### Q15 Fibonacci series
+# ## Q15 Fibonacci series
 # (a) Use a recursion equation and Python if you wish, to calculate the Fibonacci series whose first two values are 1 and all other values are the sum of the previous two.
 # 
 # (b) Show numerically that the ratio of two adjacent Fibonacci numbers tends to the golden ratio.
@@ -68,7 +68,7 @@
 # 
 # **Strategy:** Define an array to hold the values $f_n, f_{n-1}$, etc. define the first two values then use a loop to increment values.
 # 
-# ### Q16 Pascal's Triangle and AX nmr spectra
+# ## Q16 Pascal's Triangle and AX nmr spectra
 # Pascal's triangle is a mnemonic for binomial coefficients. If a pyramidal triangle is made, the coefficients are placed in rows one above the other and any value is found by adding together the numbers one to the left and one to the right from the row above. If a right-angled triangle is made, then the numbers added are the one above and the one to the left. 
 # 
 # The binomial coefficients also form the pattern of splitting, in simple AX type, NMR spectra showing the $n : n + 1$ rule. For example, a CH$_2$ next to CH$_3$ has four lines of intensity $1:3:3:1$.

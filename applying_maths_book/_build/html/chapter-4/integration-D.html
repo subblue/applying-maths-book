@@ -4,11 +4,13 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Calculating an Average Value. &#8212; Applying Maths in the Chemical &amp; Biomolecular Sciences</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Calculating an Average. &#8212; Applying Maths in the Chemical &amp; Biomolecular Sciences</title>
     
-  <link href="../_static/css/theme.css" rel="stylesheet">
-  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,40 +20,39 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Questions 49 - 72" href="integration-Q49-72.html" />
@@ -63,7 +64,21 @@
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -72,9 +87,10 @@
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -92,14 +108,15 @@
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../intro.html">
-   Applying Maths in the Chemical and Biomolecular Sciences.
-  </a>
- </li>
-</ul>
-<ul class="current nav bd-sidenav">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Applying Maths in the Chemical and Biomolecular Sciences.
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../chapter-1/chapter1-intro.html">
    1. Numbers, Equations, Operators, and Algorithms.
@@ -204,11 +221,6 @@
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-2/chapter2-Q-10-13.html">
      Questions 10 -13
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-2/chapter2-C.html">
-     Euler’s theorem, roots of unity, x-ray diffraction structure factor.
     </a>
    </li>
    <li class="toctree-l2">
@@ -337,7 +349,7 @@
  </li>
  <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="integration-intro.html">
-   4. Integration.
+   4 Integration.
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
   <label for="toctree-checkbox-4">
@@ -377,7 +389,7 @@
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     Calculating an Average Value.
+     Calculating an Average.
     </a>
    </li>
    <li class="toctree-l2">
@@ -407,7 +419,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="integration-G.html">
-     Calculating the energy of a chemical bond using molecular orbitals
+     Calculating the energy of a Chemical Bond using Molecular Orbitals
     </a>
    </li>
    <li class="toctree-l2">
@@ -688,7 +700,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-7/matrices-D.html">
-     Rotation matrices: moving molecules
+     Rotation matrices: moving molecules. Coordinate transform as rotation.
     </a>
    </li>
    <li class="toctree-l2">
@@ -757,23 +769,13 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-7/matrices-K.html">
-     Calculating a bond length using moments of inertia
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-7/matrices-Q61.html">
-     Question 61
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="../chapter-7/matrices-L.html">
      Principal axes for Moments of Inertia
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-7/matrices-Q62.html">
-     Question 62
+    <a class="reference internal" href="../chapter-7/matrices-Q61-62.html">
+     Question 61 - 62
     </a>
    </li>
    <li class="toctree-l2">
@@ -1004,7 +1006,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-G.html">
-     PDE examples continued
+     PDE Continued
     </a>
    </li>
    <li class="toctree-l2">
@@ -1096,7 +1098,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-11/num-methods-answers8-12.html">
-     Solutions Q8 - 12
+     Solutions Q 8 - 12
     </a>
    </li>
    <li class="toctree-l2">
@@ -1258,112 +1260,227 @@
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/chapter-4/integration-D.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/subblue/applying-maths-book"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/subblue/applying-maths-book/issues/new?title=Issue%20on%20page%20%2Fchapter-4/integration-D.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        
-    </div>
-</div>
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/subblue/applying-maths-book/main?urlpath=lab/tree/applying_maths_book/chapter-4/integration-D.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        <a class="colab-button" href="https://colab.research.google.com/github/subblue/applying-maths-book/blob/main/applying_maths_book/chapter-4/integration-D.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
-                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
-                    src="../_static/images/logo_colab.png"
-                    alt="Interact on Colab">Colab</button></a>
-        
-        
-    </div>
-</div>
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/subblue/applying-maths-book/main?urlpath=lab/tree/applying_maths_book/chapter-4/integration-D.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://colab.research.google.com/github/subblue/applying-maths-book/blob/main/applying_maths_book/chapter-4/integration-D.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/subblue/applying-maths-book"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/subblue/applying-maths-book/issues/new?title=Issue%20on%20page%20%2Fchapter-4/integration-D.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/chapter-4/integration-D.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#average-value">
    8 Average value.
@@ -1470,17 +1587,139 @@
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Calculating an Average.</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#average-value">
+   8 Average value.
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-average-as-a-summation">
+   8.1 The average as a summation
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#i-invert-sugar">
+     <strong>
+      (i) Invert sugar
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ii-chain-reactions-mean-chain-length">
+     <strong>
+      (ii) Chain reactions. Mean Chain length
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#iii-average-of-averages">
+     <strong>
+      (iii) Average of averages
+     </strong>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-average-as-an-integration">
+   8.2 The average as an integration
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#i-excited-states">
+     <strong>
+      (i) Excited states
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ii-infection-period">
+     <strong>
+      (ii) Infection period
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#iii-centroids">
+     <strong>
+      (iii) Centroids
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#iv-chromatography-average-value-and-width-of-eluted-profile">
+     <strong>
+      (iv) Chromatography. Average value and width of eluted profile
+     </strong>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#average-of-a-function">
+   8.3 Average of a function
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#expectation-values">
+   8.4 Expectation values
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#uncertainty-principle">
+   8.5 Uncertainty principle
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#i-harmonic-oscillator">
+     <strong>
+      (i) Harmonic oscillator
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ii-particle-in-a-box">
+     <strong>
+      (ii) particle in a box
+     </strong>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#higher-averages-moments-and-variance">
+   8.6 Higher averages: moments and variance
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
               <div>
                 
-  <div class="section" id="calculating-an-average-value">
-<h1>Calculating an Average Value.<a class="headerlink" href="#calculating-an-average-value" title="Permalink to this headline">¶</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="calculating-an-average">
+<h1>Calculating an Average.<a class="headerlink" href="#calculating-an-average" title="Permalink to this headline">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import all python add-ons etc that will be needed later on</span>
@@ -1494,12 +1733,12 @@
 </div>
 </div>
 </div>
-<div class="section" id="average-value">
-<h2>8 Average value.<a class="headerlink" href="#average-value" title="Permalink to this headline">¶</a></h2>
+<section id="average-value">
+<h2>8 Average value.<a class="headerlink" href="#average-value" title="Permalink to this headline">#</a></h2>
 <p>You will be familiar with obtaining the average of a set of numbers obtained in an experiment by adding them all together and dividing by their number. The average value from some theoretical expression, for example, the energy of molecules, may be an important quantity with which to compare with an experimental measurement and therefore a general way of calculating averages is required. To do this, the probability distribution P of the quantity must be known.</p>
-</div>
-<div class="section" id="the-average-as-a-summation">
-<h2>8.1 The average as a summation<a class="headerlink" href="#the-average-as-a-summation" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="the-average-as-a-summation">
+<h2>8.1 The average as a summation<a class="headerlink" href="#the-average-as-a-summation" title="Permalink to this headline">#</a></h2>
 <p>Suppose the numbers <span class="math notranslate nohighlight">\(q = 10,\, 13.5,\, 14, \,16.2\)</span> have been measured, then their average is clearly <span class="math notranslate nohighlight">\(\langle q \rangle  = (10 + 13.5 + 14 + 16.2)/4 = 53.7/4\)</span>. It has been implicitly assumed that each number is equally likely to have been measured, which is the familiar case because experiments are usually arranged in this way making them easier to do. It is not always true, however, that each value is equally probable, there is often a distribution of values that has to be taken into account, the Boltzmann distribution of energies or the degeneracy of rotational energy levels, for example.</p>
 <p>Replacing the numerical example above with a formula makes the calculation appear much more complicated when it is in fact just the same,</p>
 <div class="math notranslate nohighlight">
@@ -1519,8 +1758,8 @@
 <p>To calculate the average of higher powers of <span class="math notranslate nohighlight">\(q\)</span>, the <span class="math notranslate nohighlight">\(n^{th}\)</span>, for example, use</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \langle q^n\rangle= \frac{\sum\limits_{i=1}^N q_i^nP(q_i)}{\sum\limits_{i=1}^N P(q_i)} \tag{27}\]</div>
-<div class="section" id="i-invert-sugar">
-<h3><strong>(i) Invert sugar</strong><a class="headerlink" href="#i-invert-sugar" title="Permalink to this headline">¶</a></h3>
+<section id="i-invert-sugar">
+<h3><strong>(i) Invert sugar</strong><a class="headerlink" href="#i-invert-sugar" title="Permalink to this headline">#</a></h3>
 <p>When a solution of table sugar (sucrose) is heated it hydrolyzes to glucose(dextrose) and fructose and is catalysed by acid. The reaction can be easily followed by observing the rotation of plane polarised light with a polarimeter. The reaction is</p>
 <div class="math notranslate nohighlight">
 \[\begin{array} {c}\text{sucrose} &amp; \overset{\text{H}^+}{\longrightarrow} &amp; \text{glucose + fructose}\end{array}\]</div>
@@ -1534,9 +1773,9 @@
 \[\displaystyle [\alpha] =\frac{(x_0-x)[\alpha]_s+x[\alpha]_g+x[\alpha]_f }{x_0+x}\]</div>
 <p>and when <span class="math notranslate nohighlight">\([\alpha]=0\)</span> the solution is ‘inverted’ and the extent of reaction <span class="math notranslate nohighlight">\(\displaystyle \frac{x}{x_0}=\frac{[\alpha]_s}{[\alpha]_s-[\alpha]_g-[\alpha]_f}=0.629\)</span> so that inversion occurs when <span class="math notranslate nohighlight">\(\approx 63\)</span>% of sucrose has been converted.</p>
 <p><span class="math notranslate nohighlight">\(^*\)</span> The specific rotation <span class="math notranslate nohighlight">\([\alpha ]_{\lambda }^{T}\)</span> is defined as the optical rotation <span class="math notranslate nohighlight">\(\alpha\)</span> at a path length <span class="math notranslate nohighlight">\(L\)</span> of <span class="math notranslate nohighlight">\(1\)</span> dm, a concentration <span class="math notranslate nohighlight">\([C]= 1\;\mathrm{g/100\,mL}\)</span>, at temperature <span class="math notranslate nohighlight">\(T\)</span> (typically <span class="math notranslate nohighlight">\(20^{\text{o}}\)</span>C) and at wavelength <span class="math notranslate nohighlight">\(\lambda\)</span>, usually the sodium D line at <span class="math notranslate nohighlight">\(589.3\)</span> nm.</p>
-</div>
-<div class="section" id="ii-chain-reactions-mean-chain-length">
-<h3><strong>(ii) Chain reactions. Mean Chain length</strong><a class="headerlink" href="#ii-chain-reactions-mean-chain-length" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="ii-chain-reactions-mean-chain-length">
+<h3><strong>(ii) Chain reactions. Mean Chain length</strong><a class="headerlink" href="#ii-chain-reactions-mean-chain-length" title="Permalink to this headline">#</a></h3>
 <p>In a chain reaction, in contrast to a ‘normal’ reaction, one of the products is the same species as a reactant, or can react in an equivalent way, and so the reaction propagates. Polymer formation and may gas phase reactions such as <span class="math notranslate nohighlight">\(\mathrm{O_2 + H_2}\)</span> are chain reactions. In gas phase reactions radical species, such as <span class="math notranslate nohighlight">\(\mathrm{H\cdot,\, OH\cdot}\)</span>,  are usually the chain carriers.</p>
 <p>The general scheme is shown in fig 17c. Species I is the initiator step, for example a thermal reaction that generates active molecules, A and C a product. As can be seen the species A is reformed and cycles around the reaction.</p>
 <p><img alt="Drawing" src="../_images/integration-fig17c.png" /></p>
@@ -1560,9 +1799,9 @@
 \[\displaystyle \langle v \rangle = \frac{\alpha}{(1-\alpha)^2}\frac{(1-\alpha)}{1}= \frac{\alpha}{1-\alpha}\]</div>
 <p>and thus the average number of units in a chain is the same as the values calculated assuming steady state applies.</p>
 <p>Short chains are the most probable as may be seen by examining <span class="math notranslate nohighlight">\(P_s=\alpha^s(1-\alpha)\)</span> vs <span class="math notranslate nohighlight">\(s\)</span> at various <span class="math notranslate nohighlight">\(\alpha\)</span> values recalling that <span class="math notranslate nohighlight">\(0\lt \alpha \lt 1\)</span>. Plotting the normalised probability <span class="math notranslate nohighlight">\((\alpha^s)\)</span> shows that this is a maximum at  <span class="math notranslate nohighlight">\(s=0\)</span> and decreases uniformly as <span class="math notranslate nohighlight">\(s\)</span> increases.</p>
-</div>
-<div class="section" id="iii-average-of-averages">
-<h3><strong>(iii) Average of averages</strong><a class="headerlink" href="#iii-average-of-averages" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="iii-average-of-averages">
+<h3><strong>(iii) Average of averages</strong><a class="headerlink" href="#iii-average-of-averages" title="Permalink to this headline">#</a></h3>
 <p>In the situation where some averages are given and the combined value is needed then a weighting of each is required. In the simplest case of two averages with numbers <span class="math notranslate nohighlight">\(n\)</span>, <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(m\)</span> number <span class="math notranslate nohighlight">\(b\)</span></p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \langle a\rangle =\frac{\sum_i^n a_i}{n},\qquad \langle b\rangle=\frac{\sum_i^m b_i}{m}\]</div>
@@ -1580,10 +1819,10 @@
 <div class="math notranslate nohighlight">
 \[\displaystyle \langle nv\rangle=\frac{\sum_i n_iv_i }{\sum_i n_i}\]</div>
 <p>which has the form of equation 25 but here the <span class="math notranslate nohighlight">\(v\)</span>’s are themselves averages.</p>
-</div>
-</div>
-<div class="section" id="the-average-as-an-integration">
-<h2>8.2 The average as an integration<a class="headerlink" href="#the-average-as-an-integration" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="the-average-as-an-integration">
+<h2>8.2 The average as an integration<a class="headerlink" href="#the-average-as-an-integration" title="Permalink to this headline">#</a></h2>
 <p>The average quantity derived from a theoretical model of a chemical or physical process, and described by an equation, is always used to compare with the experimental value from a set of measurements. Rather than a set of numbers, a calculation similar to that described above is needed to calculate the theoretical average. However, if the function is continuous, then integration rather than summation must be used.</p>
 <p>Suppose that <span class="math notranslate nohighlight">\(x\)</span> is the quantity whose average is <span class="math notranslate nohighlight">\(\langle x\rangle\)</span>, then this is calculated as</p>
 <div class="math notranslate nohighlight">
@@ -1593,8 +1832,8 @@
 <p><img alt="Drawing" src="../_images/integration-fig16.png" /></p>
 <p>Figure 16b. left: A constant or uniform distribution. Right: A Gaussian distribution. These distributions are not normalised as their area is not unity.</p>
 <hr class="docutils" />
-<div class="section" id="i-excited-states">
-<h3><strong>(i) Excited states</strong><a class="headerlink" href="#i-excited-states" title="Permalink to this headline">¶</a></h3>
+<section id="i-excited-states">
+<h3><strong>(i) Excited states</strong><a class="headerlink" href="#i-excited-states" title="Permalink to this headline">#</a></h3>
 <p>It is observed experimentally that the electronically excited state of a molecule decays exponentially, which means that there is an exponential distribution of times during which the molecule remains excited. Radioactive decay also has this type of distribution. One question to ask is; what is the average time that the molecule remains excited? To answer this question, equation 28 is used with the quantity <span class="math notranslate nohighlight">\(x\)</span> = time and the distribution function is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle P(t)dt=e^{-t/\tau}dt\]</div>
@@ -1609,9 +1848,9 @@
 <div class="math notranslate nohighlight">
 \[\displaystyle \frac{\partial}{\partial \alpha}\ln\left( \int e^{-f(\alpha,x)}dx  \right)= \frac{\displaystyle \int \frac{df(\alpha,x)}{d\alpha}e^{-f(\alpha x)}dx}{\displaystyle\int e^{-f(\alpha,x)}dx}\]</div>
 <p>In this example <span class="math notranslate nohighlight">\(\alpha = 1/\tau\)</span> and <span class="math notranslate nohighlight">\(x=t\)</span> thus the integral is <span class="math notranslate nohighlight">\(\int_0^\infty e^{-t\tau}dt = \tau\)</span>. Then <span class="math notranslate nohighlight">\(\displaystyle \frac{d}{d(1/\tau)}\ln(\tau)=\tau\)</span> which is the same result as direct integration. Note that the differentiation is wrt. <span class="math notranslate nohighlight">\(\alpha\)</span> but in this case <span class="math notranslate nohighlight">\(\alpha =1/\tau\)</span> so differentiation is in <span class="math notranslate nohighlight">\(1/\tau\)</span>. In the calculation we used a relationship of the type <span class="math notranslate nohighlight">\(\displaystyle \frac{d\ln(y)}{dx}=\frac{1}{y}\frac{dy}{dx}\)</span>.</p>
-</div>
-<div class="section" id="ii-infection-period">
-<h3><strong>(ii) Infection period</strong><a class="headerlink" href="#ii-infection-period" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="ii-infection-period">
+<h3><strong>(ii) Infection period</strong><a class="headerlink" href="#ii-infection-period" title="Permalink to this headline">#</a></h3>
 <p>This example is that of calculating the mean time that a person is infected with a disease. Suppose that you are infected at time <span class="math notranslate nohighlight">\(t\)</span>, and that the chance that you are no longer infected in the next small time interval <span class="math notranslate nohighlight">\(\delta t\)</span>, is <span class="math notranslate nohighlight">\(a\delta t\)</span>, where <span class="math notranslate nohighlight">\(a\)</span> is a constant depending on the type of disease. This is the rate constant with which the disease will die out. If <span class="math notranslate nohighlight">\(p(t)\)</span> is the chance that you were infected at time <span class="math notranslate nohighlight">\(t\)</span>, during the time <span class="math notranslate nohighlight">\(t + \delta t\)</span> this changes to <span class="math notranslate nohighlight">\(p(t + \delta t) = p(t)(1 - a\delta t) + O(\delta t^2)\)</span>, which is the chance of being infected at time <span class="math notranslate nohighlight">\(t\)</span> multiplied by the chance of remaining infected during the following time <span class="math notranslate nohighlight">\(\delta t\)</span>. The term <span class="math notranslate nohighlight">\(O(\delta t^2)\)</span> means that terms in <span class="math notranslate nohighlight">\(\delta t^2\)</span> and higher are ignored because they are so small (see Chapter 5 for ‘big O’ notation). Subtracting <span class="math notranslate nohighlight">\(p(t)\)</span> from both sides and dividing by <span class="math notranslate nohighlight">\(\delta t\)</span> gives</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \frac{p(t+\delta t)-p(t)}{\delta t}=-ap(t)\]</div>
@@ -1622,9 +1861,9 @@
 <div class="math notranslate nohighlight">
 \[\displaystyle \langle t\rangle   =\frac{\int_0^\infty te^{-at}dt}{\int_0^\infty e^{-at}dt} =\frac{1}{a}\]</div>
 <p>A related type of argument is followed to find the mean free path of gas molecules or atoms, but with the distance between collisions taking the place of time.</p>
-</div>
-<div class="section" id="iii-centroids">
-<h3><strong>(iii) Centroids</strong><a class="headerlink" href="#iii-centroids" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="iii-centroids">
+<h3><strong>(iii) Centroids</strong><a class="headerlink" href="#iii-centroids" title="Permalink to this headline">#</a></h3>
 <p>In this example we find the position <span class="math notranslate nohighlight">\(\langle s\rangle\)</span> of the centre of gravity or mass of a body that has a weight distribution <span class="math notranslate nohighlight">\(w(s)\)</span>. The weight distribution describes how the mass resides in the object and therefore describes both its shape and how the mass varies across that shape. In general, there are three values of the centre of mass, one in each of the x-, y-, and z-axes, so it is necessary to specify which one is being considered. The centre of gravity is the average position according to its mass and therefore, for each axis, the appropriate equation to use has the form of equation 28,</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \langle s\rangle = \frac{\int sw(s)}{\int w(s) }=\frac{M_s}{A}  \tag{30}\]</div>
@@ -1658,9 +1897,9 @@
 <p>The centroid of the curve <span class="math notranslate nohighlight">\(y = x^{1/3}\)</span> from <span class="math notranslate nohighlight">\(0 \to 1\)</span> is obtained by first finding the area, which is the integral <span class="math notranslate nohighlight">\(\displaystyle A=\int_0^1x^{1/3}dx=\frac{3}{4}x^{4/3}\bigg|_0^1 =\frac{3}{4}\)</span>.</p>
 <p>The moment about the x-axis is <span class="math notranslate nohighlight">\(\displaystyle M_x =\frac{1}{2}\int_0^1 x^{2/3}dx=\frac{3}{10}\)</span> and the centroid is at <span class="math notranslate nohighlight">\(\langle y\rangle = M_x/A = 2/5\)</span>.</p>
 <p>The moment about the y-axis is <span class="math notranslate nohighlight">\(\displaystyle M_y =\frac{1}{2}\int_0^1 x^{4/3}dx=\frac{3}{7}\)</span> and the centroid is at <span class="math notranslate nohighlight">\(\langle x\rangle =M_y/A=4/7\)</span></p>
-</div>
-<div class="section" id="iv-chromatography-average-value-and-width-of-eluted-profile">
-<h3><strong>(iv) Chromatography. Average value and width of eluted profile</strong><a class="headerlink" href="#iv-chromatography-average-value-and-width-of-eluted-profile" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="iv-chromatography-average-value-and-width-of-eluted-profile">
+<h3><strong>(iv) Chromatography. Average value and width of eluted profile</strong><a class="headerlink" href="#iv-chromatography-average-value-and-width-of-eluted-profile" title="Permalink to this headline">#</a></h3>
 <p>In chapter 1 section 9.10 a probabilistic model was developed to describe the shape of a chromatogram the result was a distribution <span class="math notranslate nohighlight">\(P(n)\)</span> closely related to the Poisson distribution was found,</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle P(n)= p\frac{(np)^{(N-1)}}{(N-1)!}e^{-np} \tag{35a}\]</div>
@@ -1695,11 +1934,11 @@
 <p>If the probability <span class="math notranslate nohighlight">\(P(n)\)</span> (eqn 35a) is plotted vs the number <span class="math notranslate nohighlight">\(n\)</span> this is proportional to plotting size of detected signal vs eluted volume because <span class="math notranslate nohighlight">\(P(n)\)</span> is the probability of eluting the <span class="math notranslate nohighlight">\(n^{th}\)</span> amount <span class="math notranslate nohighlight">\(V_m/N\)</span>. As the number of plates <span class="math notranslate nohighlight">\(N\)</span> increases the peak occurs at larger <span class="math notranslate nohighlight">\(N\)</span> values at a given <span class="math notranslate nohighlight">\(p\)</span>. If <span class="math notranslate nohighlight">\(p\)</span> is increased then the peaks occur at smaller <span class="math notranslate nohighlight">\(n\)</span>. However, as <span class="math notranslate nohighlight">\(n\)</span> increases the with of the profile gets larger but only as <span class="math notranslate nohighlight">\(\sqrt{N}\)</span> but so does the separation but in proportion to <span class="math notranslate nohighlight">\(N\)</span> so that the separation improves, i.e. peaks that would overlap at small <span class="math notranslate nohighlight">\(N\)</span> may no longer do so, see figure 17a.</p>
 <p><img alt="Drawing" src="../_images/integration-fig17a.png" /></p>
 <p>Figure 17a. Chromatography peaks with <span class="math notranslate nohighlight">\(p=0.1\)</span> left (grey) and <span class="math notranslate nohighlight">\(0.12\)</span> (blue) at two values of  theoretical plates <span class="math notranslate nohighlight">\(N\)</span>. Notice that as <span class="math notranslate nohighlight">\(N\)</span> increases so does the width of the peak but only as <span class="math notranslate nohighlight">\(\sqrt{N}\)</span> whereas the peaks separate as <span class="math notranslate nohighlight">\(N\)</span> so resolution increases with increasing <span class="math notranslate nohighlight">\(N\)</span> which can be obtained using longer columns.</p>
-</div>
-</div>
+</section>
+</section>
 <hr class="docutils" />
-<div class="section" id="average-of-a-function">
-<h2>8.3 Average of a function<a class="headerlink" href="#average-of-a-function" title="Permalink to this headline">¶</a></h2>
+<section id="average-of-a-function">
+<h2>8.3 Average of a function<a class="headerlink" href="#average-of-a-function" title="Permalink to this headline">#</a></h2>
 <p>The average of a function of <span class="math notranslate nohighlight">\(x,\; f (x)\)</span>, is evaluated in a similar way as for a variable</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \langle f(x) \rangle = \frac{\int f(x)P(x)dx}{\int P(x)dx}  \tag{36}\]</div>
@@ -1714,9 +1953,9 @@
 <div class="math notranslate nohighlight">
 \[\displaystyle \int_0^\infty \frac{2}{e^{2\alpha x}}dx=\frac{1}{\alpha}\int_1^\infty \frac{1}{u^2+u}dx = \frac{\ln(2)}{\alpha}\]</div>
 <p>making the average <span class="math notranslate nohighlight">\(\langle f(x)\rangle =2\ln(2)/\pi\)</span></p>
-</div>
-<div class="section" id="expectation-values">
-<h2>8.4 Expectation values<a class="headerlink" href="#expectation-values" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="expectation-values">
+<h2>8.4 Expectation values<a class="headerlink" href="#expectation-values" title="Permalink to this headline">#</a></h2>
 <p>In quantum mechanics, if <span class="math notranslate nohighlight">\(\psi\)</span> are the normalized wavefunctions and <span class="math notranslate nohighlight">\(x\)</span>, for example, is the displacement of an atom in a vibrating diatomic molecule from its equilibrium value, then its average position is in state <span class="math notranslate nohighlight">\(k\)</span></p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \langle x_k\rangle = \int_{-\infty}^\infty \psi_k^*\,x\,\psi_k dx \equiv \langle k|x|k\rangle \tag{37}\]</div>
@@ -1737,9 +1976,9 @@
 <p>where <span class="math notranslate nohighlight">\(Q\)</span> is the operator acting on the wavefunction <span class="math notranslate nohighlight">\(\psi_m\)</span> for state <span class="math notranslate nohighlight">\(m\)</span>. The wavefunction is a function only of <span class="math notranslate nohighlight">\(x\)</span> in this example and that is implied by the fact that integration is only with respect to <span class="math notranslate nohighlight">\(x\)</span>. You should be aware, however, that it is common to use <span class="math notranslate nohighlight">\(\tau\)</span>, for example,  to represent general coordinates which may be <span class="math notranslate nohighlight">\(x, y\)</span>, or <span class="math notranslate nohighlight">\(z\)</span> or <span class="math notranslate nohighlight">\(r,\, \theta, \, \phi\)</span>, and then the integral would be a triple one. Note that if the wavefunctions are normalized then the denominator is unity and</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \langle Q_{n,m}\rangle = \int\psi_n^*\,Q\,\psi_m dx \tag{39}\]</div>
-</div>
-<div class="section" id="uncertainty-principle">
-<h2>8.5 Uncertainty principle<a class="headerlink" href="#uncertainty-principle" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="uncertainty-principle">
+<h2>8.5 Uncertainty principle<a class="headerlink" href="#uncertainty-principle" title="Permalink to this headline">#</a></h2>
 <p>The Uncertainly Principle of Quantum Mechanics insist that the position and momentum of a quantum particle cannot be known simultaneously, the best that can be done is <span class="math notranslate nohighlight">\(\Delta x \Delta p \ge \hbar/2\)</span>.</p>
 <p>We define the uncertainty in the measurement of a quantity <span class="math notranslate nohighlight">\(x\)</span> as its root mean square value or the square root of the variance. The variance is</p>
 <div class="math notranslate nohighlight">
@@ -1763,8 +2002,8 @@
 \[\displaystyle \Delta p = \sqrt{\langle p^2\rangle-\langle p\rangle^2 }\]</div>
 <p>where the operator for momentum in quantum mechanics is <span class="math notranslate nohighlight">\(\displaystyle -i\hbar\frac{d}{dx}\)</span></p>
 <p>To test what happens for different potentials the <span class="math notranslate nohighlight">\(\Delta x\Delta p\)</span> is calculated for the harmonic and infinite square well also called a particle in a box.</p>
-<div class="section" id="i-harmonic-oscillator">
-<h3><strong>(i) Harmonic oscillator</strong><a class="headerlink" href="#i-harmonic-oscillator" title="Permalink to this headline">¶</a></h3>
+<section id="i-harmonic-oscillator">
+<h3><strong>(i) Harmonic oscillator</strong><a class="headerlink" href="#i-harmonic-oscillator" title="Permalink to this headline">#</a></h3>
 <p>The wavefunction for the ground state, quantum number <span class="math notranslate nohighlight">\(n=0\)</span>, of an Harmonic oscillator is the first of a set of normalised Hermite polynomials and is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \psi_0=\left(\frac{\alpha}{\pi}\right)^{1/4} e^{-\alpha x^2/2} \]</div>
@@ -1811,14 +2050,14 @@
 <img alt="../_images/integration-D_7_0.png" src="../_images/integration-D_7_0.png" />
 </div>
 </div>
-</div>
-<div class="section" id="ii-particle-in-a-box">
-<h3><strong>(ii) particle in a box</strong><a class="headerlink" href="#ii-particle-in-a-box" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="ii-particle-in-a-box">
+<h3><strong>(ii) particle in a box</strong><a class="headerlink" href="#ii-particle-in-a-box" title="Permalink to this headline">#</a></h3>
 <p>Following the method outlined above the calculation for a particle in a box always produces <span class="math notranslate nohighlight">\(\Delta x\Delta p\gt\hbar/2\)</span>. If the box is of length <span class="math notranslate nohighlight">\(0\to a\)</span> ( and the integration is taken over this range ) and for the lowest energy level with quantum number <span class="math notranslate nohighlight">\(n=1\)</span>, <span class="math notranslate nohighlight">\( \displaystyle \Delta x\Delta p =\frac{\sqrt{3\pi^2-18}}{6}\hbar \)</span> which is greater than <span class="math notranslate nohighlight">\(\hbar/2\)</span> and consistent with the uncertainty principle. The similar result is found for all <span class="math notranslate nohighlight">\(n\)</span> where the values increase with <span class="math notranslate nohighlight">\(n\)</span>, for example when <span class="math notranslate nohighlight">\(n=2\)</span>, <span class="math notranslate nohighlight">\( \displaystyle \Delta x\Delta p=\frac{\sqrt{12\pi^2-18}}{6}\hbar \)</span>, thus we find that there is no requirement for <span class="math notranslate nohighlight">\(\Delta x\Delta p\)</span> to be equal to <span class="math notranslate nohighlight">\(\hbar/2\)</span> for any quantum number. The general trend is <span class="math notranslate nohighlight">\(\displaystyle \Delta x\Delta p= \sqrt{\frac{n^2\pi^2-6}{12}}\hbar\)</span> and the normalised wavefunction is <span class="math notranslate nohighlight">\(\displaystyle \psi=\sqrt{\frac{2}{a}}\sin\left(\frac{n\pi x}{a}\right)\)</span>.</p>
-</div>
-</div>
-<div class="section" id="higher-averages-moments-and-variance">
-<h2>8.6 Higher averages: moments and variance<a class="headerlink" href="#higher-averages-moments-and-variance" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="higher-averages-moments-and-variance">
+<h2>8.6 Higher averages: moments and variance<a class="headerlink" href="#higher-averages-moments-and-variance" title="Permalink to this headline">#</a></h2>
 <p>The average <span class="math notranslate nohighlight">\(\langle x\rangle\)</span> is also called the <em>first moment</em> of its distribution; <span class="math notranslate nohighlight">\(\langle x^2\rangle\)</span> the second moment and so on. The general relationships are, assuming that <span class="math notranslate nohighlight">\(P(x)\)</span> is a normalized distribution,</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \langle m_k\rangle = \int x^kP(x)dx  \tag{41}\]</div>
@@ -1829,8 +2068,8 @@
 <div class="math notranslate nohighlight">
 \[\displaystyle \sigma_x^2 = \langle x^2\rangle - \langle x\rangle ^2 = \int (x-\langle x\rangle )^2P(x)dx  \tag{43}\]</div>
 <p>and <span class="math notranslate nohighlight">\(\sigma_x\)</span> is the standard deviation and is described in more detail in chapter 13.</p>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -1854,9 +2093,11 @@
 
               </div>
               
-        
-            <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="integration-Q31-48.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -1872,26 +2113,28 @@
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-        
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-    <div class="container">
-      <p>
-        
-          By Godfrey Beddard<br/>
-        
-            &copy; Copyright 2022.<br/>
-      </p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Godfrey Beddard<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
     </div>
-  </footer>
-</main>
+    
+</div>
 
 
       </div>
     </div>
   
-  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>

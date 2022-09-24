@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## Solutions Q1 - 27
+# # Solutions Q1 - 27
 
 # In[1]:
 
@@ -15,7 +15,7 @@ init_printing()                      # allows printing of SymPy results in types
 plt.rcParams.update({'font.size': 16})  # set font size for plots
 
 
-# ### Q1 answer
+# ## Q1 answer
 # An example of two complex numbers are shown in Figure 1. 
 # 
 # (a) their sum is $z=1-0.5i $ and<br> 
@@ -25,7 +25,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # (c) $-iz_1z_2 =i(2+i)(1+3i/2)=2i+3i^2 +i^2 +3i^3/2=-4+i/2$.
 # 
-# ### Q2 answer
+# ## Q2 answer
 # (a) Multiplying $i^2$ by $i$ produces $i^3 = -i$ and $i^4 = 1$ because $(-1)^2 =1$. Similarly $i^5 = i$ and $i^6 = i^2 =-1$.
 # 
 # (b) From these results, starting at $n=0$ the integer powers of $i$ are repeated in a series of four terms:
@@ -38,10 +38,10 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # The $n^\mathrm{th}$th power of $i$ can be represented as $i^{(n\, mod\, 4)}$ where $n\,mod\, 4$ returns the remainder of the integer division of $n$ by 4 and therefore when  $n = 4$, it returns $0$ so repeats on a cycle of $4$. The numbers on the clock face are $n\,mod\, 12$ so a time of $13:00$ is the same as $1:00$.  
 # 
-# ### Q3 answer
+# ## Q3 answer
 # Using results from the previous calculation, $i^3z=i^3(a-ib)=ai^3 -b=-b-ia$.
 # 
-# ### Q4 answer
+# ## Q4 answer
 # By multiplication $z^2 =(3+4i)(3+4i)=9+24i+16i^2$ and this can be simplified further using $i^2 = -1$ to give $z^2 = -7 + 24i$.  
 # 
 # The modulus is 
@@ -54,21 +54,21 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # Figure 8. Squaring a complex number.
 # ____
-# ### Q5 answer
+# ## Q5 answer
 # Multiplying produces $z = 6 - 10i - 5i^2 = 11 - 10i$. 
 # 
 # The modulus is $\sqrt{z^*z}= \sqrt{(11+10i)(11-10i)} = \sqrt{221}$ 
 # 
 # and the argument $\theta = \tan^{-1}(b/a) = \tan^{-1}(-10/11) \equiv 42.27^\mathrm{o}$.
 # 
-# ### Q6 answer
+# ## Q6 answer
 # Dividing complex numbers is achieved using the complex conjugate to make the denominator a real number. By multiplying the top and bottom by the same number, effectively multiplying by $1$, the complex conjugate of the denominator becomes
 # 
 # $$\displaystyle z=\frac{5-i}{2-3i}=\frac{5-i}{2-3i}\cdot \frac{2+3i}{2+3i} = \frac{10+13i+3}{4+9}=1+i$$
 # 
 # which has the form $z = a + ib$. The modulus of this number $|z|= \sqrt{z^*z}= \sqrt{(1+i)(1-i)}$ is   2 and the amplitude (argument) $\theta = \tan^{-1}(1)$ which is $45^\mathrm{o}$. This is expected because the real and imaginary parts are equal in size.
 # 
-# ### Q7 answer
+# ## Q7 answer
 # Multiplying produces $\displaystyle z=\frac{(2-5i)(3+i)}{3-i}= \frac{11 - 13i}{3-i}$
 # 
 # and to divide, the top and bottom are multiplied by the complex conjugate of the denominator which gives 
@@ -91,7 +91,7 @@ print('modulus =', expand( sqrt(conjugate(z)*z ))  )
 print('argument (degrees) = ',atan( im(z)/re(z) )*180/np.pi   )
 
 
-# ### Q8 answer
+# ## Q8 answer
 # The modulus squared is $|a+ib|^2 =z^*z=a^2 +b^2$. Therefore in 
 # 
 # (a) $\displaystyle |a+b|^2=\cos^2(\theta)+\sin^2(\theta) =1$ and if the argument is called $\alpha$ then $\displaystyle \alpha = \tan^{-1}(-b/a)= \tan^{-1}(-\tan(\theta))=-\theta$
@@ -102,10 +102,10 @@ print('argument (degrees) = ',atan( im(z)/re(z) )*180/np.pi   )
 # 
 # and the argument $\displaystyle \alpha = \tan^{-1}(-\tan(\theta)) = -\theta$.
 # 
-# ### Q9 answer
+# ## Q9 answer
 # Multiplying $z^2$ and equating the result with $w$ produces $u + it = x^2 - y^2 + 2xyi$. Comparing the real and imaginary parts on either side of the equation it follows that $u = x^2 - y^2$ and $t = 2xy$.
 # 
-# ### Q10 answer
+# ## Q10 answer
 # Using equation 14, $\displaystyle w=(-3)^{1/4}=3^{1/3}\cos\left( \frac{\theta+2k\pi}{4} \right) +3^{1/4}i\sin\left( \frac{\theta+2k\pi}{4} \right)$
 # 
 # and $k = 0,\, 1,\, 2,\, 3$. To calculate $\theta$, equation 12 is used, and as $-3 = 3\cos(\pi)$, therefore $\theta = \pi$. The argument $\theta = \tan^{-1}(3/0) = \pi$ could also have been used.
@@ -127,7 +127,7 @@ print('argument (degrees) = ',atan( im(z)/re(z) )*180/np.pi   )
 # 
 # Figure 9. Argand diagrams showing left, the four roots of $(-3)^{1/4}$, question 10. Right, $\pm\sqrt{i}$, see question Q 11.
 # ____
-# ### Q11 answer
+# ## Q11 answer
 # The general equation is $w^n =z$ with $n=2$ and $z=i$ in this question. Using equation 14, the roots $w$ are
 # 
 # $$\displaystyle w=R^{1/n}\left( \cos\left( \frac{\theta+2\pi m}{n} \right) +i\sin\left( \frac{\theta+2\pi m}{n} \right)  \right) $$
@@ -144,7 +144,7 @@ print('argument (degrees) = ',atan( im(z)/re(z) )*180/np.pi   )
 # 
 # The modulus is $\sqrt{w^*w}=\sqrt{(1-i)(1+i)/2}=1$. See figure 9.
 # 
-# ### Q12 answer
+# ## Q12 answer
 # The general equation is $w^n =z$ with $n=4$ and $z=16$. Using equation 14,
 # 
 # $$\displaystyle w=2\left( \cos\left( \frac{\theta+2\pi k}{4} \right) +i\sin\left( \frac{\theta+2\pi k}{4} \right)  \right) $$
@@ -156,7 +156,7 @@ print('argument (degrees) = ',atan( im(z)/re(z) )*180/np.pi   )
 # $$\displaystyle \begin{array}{lll}  w=2,&  w= 2(\cos(\pi/2)+i\sin(\pi/2)) =2i \\
 # w= 2(\cos(\pi)+i\sin(\pi)) =-2,&  w= 2(3\cos(\pi/2)+i\sin(3\pi/2)) =-2i \end{array}$$ 
 # 
-# ### Q13 answer
+# ## Q13 answer
 # The modulus of a complex number $z=a+ib$, is $a^2 +b^2$ which in this case is $\sqrt{2+9}= \sqrt{13}$ and argument $\theta = \tan^{-1}(b/a)$ which is $\theta = \tan^{-1}(3/2)$.
 # 
 # The equation to solve is $w^2 = 2 + 3i$ which has the general form $w^n =z$. Writing 
@@ -173,10 +173,10 @@ print('argument (degrees) = ',atan( im(z)/re(z) )*180/np.pi   )
 # 
 # which have values $w=1.67+0.896i$ and $w=-1.67-0.896i$. The roots lie on a circle of radius $13^{1/4} = 1.898$ at angles of $\tan^{-1}(0.896/1.67)$ or $28.15^\mathrm{o}$ and $180 + 28.15^\mathrm{o}$.
 
-# ### Q14 answer
+# ## Q14 answer
 # As $e^{i\theta}=\cos(\theta)+i\sin(\theta)$ andb from the question the angle $\theta = 1$, therefore $e^i = \cos(1) + i \sin(1) = 0.540 + 0.841i$. Remember that the number $1$ is in radians where $\pi$ radians = $180^\mathrm{o}$.
 # 
-# ### Q15 answer
+# ## Q15 answer
 # (a) Using Euler's equation, $ie^{ix} = i\cos(x) - \sin(x)$ and the real part is $-\sin(x)$ and the imaginary $\cos(x)$.
 # 
 # (b) $n$ can take any integer value, positive, negative, and zero. If $n$ is positive, then 
@@ -191,12 +191,12 @@ print('argument (degrees) = ',atan( im(z)/re(z) )*180/np.pi   )
 # n=0,4,8,12 \cdots & e^2i\pi =1; & n=\pm1,5,9\cdots & e^{\pm i\pi/2} =\pm i \\
 # n=\pm 2,6,10\cdots & e^{\pm i\pi} =-1; & n=\pm3,7,11\cdots & e^{\pm 3i\pi/2} =\mp 1\\ \end{array}$$
 # 
-# ### Q16 answer
+# ## Q16 answer
 # (a) Raising to powers of $e$ gives $i^i = e^{i\ln(i)}$ and using the result $\ln(i)=i\pi/2$ (see example 3 in section 8) then $i^i=e^{-\pi/2} \approx 0.2079$. It is somewhat surprising that this is a real number. 
 # 
 # (b) Similarly, $i^{1/i} = e^{\ln(i)/i}$ and therefore, from part (a), $i^{1/i} = e^{\pi/2}$. Alternatively $i^{1/i}$ can be written as $i^{1/i} = i^{-i}$ because $i = -1/i$ and so it is the reciprocal of the answer in part (a).
 # 
-# ### Q17 answer
+# ## Q17 answer
 # To solve $\displaystyle x=\frac{e^{iy}+e^{-iy}}{2}$, multiply both sides by $2e^{iy}$ to obtain 
 # 
 # $$\displaystyle 2xe^{iy}=e^{2iy}+1,\quad \text{ or }\quad (e^{iy})^2-2xe^{iy}+1=0$$
@@ -209,20 +209,20 @@ print('argument (degrees) = ',atan( im(z)/re(z) )*180/np.pi   )
 # 
 # As $\cos(y)=x$ then $\cos^{-1}(x)=-i\ln(x\pm\sqrt{x^2-1})$ where the negative sign before the square root is taken if $|x|\gt 1$.
 # 
-# ### Q18 answer
+# ## Q18 answer
 # Expanding the left-hand side and using $\cos^2(x) + \sin^2(x) = 1$ gives $2 \cos(x)\sin(x) = \sin(2x)$. Looking up the trig conversions to exponential form and expanding gives
 # 
 # $$\displaystyle 2\cos(x)\sin(x)=\frac{1}{2i}\left( e^x+e^{-x} \right)\left( e^x-e^{-x} \right) = \frac{1}{2i}\left( e^{2x}+e^{-2x} \right) $$
 # 
 # Using the definition of the sine, $\displaystyle \sin(2x) =\frac{e^{2x}-e^{-2x}}{2i}$ proves the identity.
 # 
-# ### Q19 answer
+# ## Q19 answer
 # Expanding the function as in the previous question gives
 # 
 # $$\displaystyle \begin{align}2\sin\left(\frac{a+b}{2}\right)\cos\left(\frac{a-b}{2}\right)&=2\left(\frac{e^{(a+b)/2} -e^{-(a+b)/2}}{i}\right)\left(e^{(a-b)/2}+e^{-(a-b)/2} \right)\\
 # &=-2i\left( e^a-e^{-a}-e^{-b}+e^{-b} \right)\\&=\frac{e^a-e^{-a}}{2i}+\frac{e^b-e^{-b}}{2i}\\&=\sin(a)+\sin(b)\end{align}$$
 # 
-# ### Q20 answer
+# ## Q20 answer
 # The theorem is 
 # 
 # $$\displaystyle e^{i\theta} = \cos(\theta) + i \sin(\theta)$$
@@ -235,7 +235,7 @@ print('argument (degrees) = ',atan( im(z)/re(z) )*180/np.pi   )
 # Comparing the real parts in the two equations above gives $\cos(a + b) = \cos(a)\cos(b) - \sin(a)\sin(b)$
 # and imaginary parts $\sin(a + b) = \sin(a)\cos(b) + \cos(a)\sin(b)$.
 # 
-# ### Q21 answer
+# ## Q21 answer
 # Using Euler's formula, convert the equation to the exponential form using 
 # 
 # $$\displaystyle e^{\pm i\theta} = \cos(\theta)\pm i \sin(\theta)$$
@@ -253,17 +253,17 @@ print('argument (degrees) = ',atan( im(z)/re(z) )*180/np.pi   )
 # 
 # Figure 10.  Plot of $|\sin(ix)|$ and $|\sin(x)|$ .The sine function repeats in the range $0 \to 1$; the complex sine is the function $\sinh(x)$ and tends to infinity at large $| x |$.
 # 
-# ### Q22 answer
+# ## Q22 answer
 # (a) You may need to consult the chapters on differentiation or integration if you are not familiar with these. Differentiating produces $\displaystyle \frac{dz}{dx}=-\sin(x)+i\cos(x)$ and substituting for $z$ produces $\displaystyle \frac{dz}{dx}=iz$.
 # 
 # (b) Integrating $\displaystyle \int\frac{dz}{z}=i\int dx$ gives $\ln(z)=ix+c$. To evaluate the constant $c$, suppose that $x = 0$, therefore, $\ln(z)=c$. However, when $x=0,\,z=1$ and because $\ln(1)=0$, therefore $c = 0$. Rearranging $\ln(z) = ix$ gives $z = e^{ix}$ or $e^{ix} = \cos(x) + i \sin(x)$ which is Euler's Theorem.
 # 
-# ### Q23 answer
+# ## Q23 answer
 # Multiply top and bottom by $-i\omega$ to eliminate the complex number on the denominator, then use Euler's equation to replace the exponential.
 # 
 # $$\displaystyle \frac{1-e^{-i\omega t}}{i\omega}\cdot\frac{-i\omega}{-i\omega}=\frac{-i}{\omega}\left( 1-\cos(\omega t)+i\sin(\omega t) \right) =\frac{\sin(\omega t)}{\omega}- \frac{i}{\omega }(1-\cos(\omega t))   $$
 # 
-# ### Q24 answer
+# ## Q24 answer
 # (a) If there were only one term in the sum then
 # 
 # $$\displaystyle s(t) = ae^{i\omega t-t/\tau} = ae^{i\omega t}e^{-t/\tau} = ae^{-t/\tau}(\cos(\omega t) + i \sin(\omega t))$$
@@ -308,7 +308,7 @@ plt.show()
 # 
 # and the real part is $e^{-t/\tau}(\cos(\omega_2t) - \sin(\omega_1t))$. The imaginary part is the sine minus the\cosine terms.
 # 
-# ### Q25 answer
+# ## Q25 answer
 # (a) By examining the initial equation, because $\sin^2(\theta)$ is present the result has no imaginary number in it ($i^2 = -1$), therefore the result cannot contain a sine. Substituting, expanding and collecting terms gives
 # 
 # $$\displaystyle \begin{align}4\cos(\theta)\sin^2(\theta) =& -(e^{i\theta} + e^{-i\theta} )(e^{i\theta} - e^{-i\theta} )(e^{i\theta} - e^{-i\theta} )/2 \\ =&-(e^{2i\theta} -e^{-2i\theta})(e^{i\theta} -e^{-i\theta})/2\\
@@ -316,7 +316,7 @@ plt.show()
 # 
 # (b) A similar substitution generates the result for the other identity.
 # 
-# ### Q26 answer
+# ## Q26 answer
 # The series are $C = \cos(x) + \cos(2x)/2! + \cos(3x)/3! + \cdots $ and $S = \sin(x) + \sin(2x)/2! + \sin(3x)/3! + \cdots$ then
 # 
 # $$\displaystyle \begin{align} C + iS =&\; \cos(x) + \cos(2x)/2! + \cos(3x)/3!
@@ -332,7 +332,7 @@ plt.show()
 # 
 # from which equating the real part of both sides of the equation gives $C = e^{\cos(x)} \cos(\sin(x)) - 1$. When plotted this function produces a regular series of spikes.
 # 
-# ### Q27 answer
+# ## Q27 answer
 # Multiplying by the complex conjugate gives
 # 
 # $$\displaystyle Z=\frac{1}{R^{-1}+i\omega C}=\frac{1}{R^{-1}+i\omega C}\cdot\frac{R^{-1}-i\omega C}{R^{-1}-i\omega C}\\=\frac{R}{1+(\omega CR)^2}-i\frac{(\omega CR)^2}{1+(\omega CR)^2}$$
@@ -358,7 +358,7 @@ C  = 1e-6
 #plt.show()
 
 
-# ### Q28 answer
+# ## Q28 answer
 # One atom is at $(0,0,0)$ and the body centred one at $(u,v,w)=(1/2,1/2,1/2)$ as fractions of the cell axis lengths. Let $f_A,f_B$ be the atomic scattering factors then from eqn. 21 the scattering factor is,
 # 
 # $$\displaystyle F = f_Ae^{2i\pi(0)} + f_Be^{2i\pi(h/2+k/2+l/2)} = f_A+f_Be^{i\pi(h+k+l)}$$
@@ -375,7 +375,7 @@ C  = 1e-6
 # 
 # which means that the intensity is zero when $h+k+l $ is an odd integer and is typical for a body centred lattice.
 # 
-# ### Q29 Answer
+# ## Q29 Answer
 # 
 # The scattering factor is a complex number and converted to cosine / sine form is
 # 

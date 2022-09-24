@@ -1,18 +1,18 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## Questions 1 - 13 
-# 
+# # Questions 1 - 13 
+
 #    
-# ### Q1 Exponential series
+# ## Q1 Exponential series
 # The exponential series is $\displaystyle e^x = 1+x + x^2/2!+x^3/3! + \cdots $, find the values of $x$ for which this series is convergent
 # 
-# ### Q2 Expansion
+# ## Q2 Expansion
 # What is the expansion of $1/(1+ax)^3$ ?  
 # 
 # **Strategy:** start with an expression for which a series is known and repeatedly differentiate if necessary to make the function required).
 # 
-# ### Q3 Atomic weight
+# ## Q3 Atomic weight
 # Calculate the atomic weight of lead and its standard deviation using the data below, which is taken from the NIST data handbook ( www.physics.nist.gov/PhysRefData ).
 # 
 # $$\displaystyle  \begin{matrix}
@@ -24,17 +24,17 @@
 # \end{matrix}\,
 # $$
 # 
-# ### Q4 Averages of dice
+# ## Q4 Averages of dice
 # If, in one experiment, a die is repeatedly thrown and then in another experiment two are repeatedly thrown, calculate the expected (average) value of the number on the die face $\langle x \rangle$, and also $\langle x^2 \rangle$ and $\sigma$ in both experiments. 
 # 
 # (a) Compare the averages and standard deviations in both cases. 
 # 
 # (b) In the second case, write down in mathematical notation a summation formula for $\langle x \rangle$ and calculate its value. (Using a computer algebra programme makes this much easier).
 # 
-# ### Q5 Averages
+# ## Q5 Averages
 # Repeat the previous calculation for ten-sided dice with numbers $0 \to 9$. This is effectively estimating the average value of a random digit.
 # 
-# ### Q6 Partition function (i)
+# ## Q6 Partition function (i)
 # Assuming that Boltzmann’s distribution applies, calculate the partition function $Z$,
 # 
 # (a) for a beam of $n$ photons of frequency $\nu \, \mathrm{s^{-1}}$ and energy $E_n = nh\nu$.
@@ -43,7 +43,7 @@
 # 
 # (c) Calculate the relative population of the first five levels for N$_2$ and I$_2$ given that the vibrational temperatures $\theta = hν/k_B$ are $3394.6$ and $308.7$ K respectively. Assume $T = 300$ K.
 # 
-# ### Q7 Partition function (ii)
+# ## Q7 Partition function (ii)
 # Using the data in the previous question, work out at a given temperature
 # 
 # (a) The average number of photons $\langle n \rangle $.
@@ -59,7 +59,7 @@
 # Figure 2. Vibrational energy levels for N$_2$ and I$_2$ harmonic oscillators
 # _____
 # 
-# ### Q8 Find ethylene's missing vibrational frequency
+# ## Q8 Find ethylene's missing vibrational frequency
 # In this question, an unknown vibrational frequency $\nu_4$ will be found by combining spectroscopic and thermodynamic data. 
 # 
 # The classical energy of a molecule comprises at term $k_BT/2$ for each 'squared' or quadratic term in the calculation of the energy; this is known as the equipartition theorem. Therefore, for translation in each of the $x-,\; y-$ or $z-$directions and each of the rotations about these axes and amount $k_BT/2$ is added to the energy. (Note that a linear molecule only has moments of inertia about 2 axes.) This limit is true provided the temperature $T \ge h\nu/k_B$ where $\nu$ is the quantum and $k_B$ is Boltzmann’s constant, and applies to translations at all temperatures and rotations for most molecules above $\approx 10$ K. 
@@ -98,7 +98,7 @@
 # 
 # **Strategy:** Find $C_V$ for the vibrations and add terms for the rotations and translations at their classical limit. Look up how $C_V$ and $C_p$ differ. Compare the calculated $C_p$ with the experimental value. Work out the summation, then isolate the term due to the unknown vibrational frequency and solve this equation for the A$_u$ frequency.
 # 
-# ### Q9 Ensemble average
+# ## Q9 Ensemble average
 # The average energy of an ensemble (i.e. group) of molecules is given by $\langle E \rangle$. Each molecule is in an energy level with value $E$ and these levels are discrete because the molecules obey the laws of quantum mechanics. The energies are $E = 0, 1, 2, \cdot, \;\infty$.
 # 
 # (a) Calculate $\langle E \rangle$ and show that at low temperatures it has a value of zero but at high temperatures $\langle E \rangle = k_BT$. What is a high temperature in this context?
@@ -113,7 +113,7 @@
 # 
 # **Strategy:** This is a long question, so split it into smaller parts. Start by writing down the formulae needed and look up the summations in the table, or use computer algebra (SymPy or Maple) to do them for you. The answer to part of the first question is given in the text.
 # 
-# ### Q10 Where is energy zero ?
+# ## Q10 Where is energy zero ?
 # A sample of CHCl$_3$ is placed in an NMR spectrometer with a magnetic field of intensity $B$ tesla. The energy (in joules) of the $^1$H nuclei is given by $E_m = -\gamma m\hbar B$ where $\gamma$ is the magneto-gyric ratio, which is positive and describes how strongly the nuclei interact with the field, and $m$ is the spin quantum number along the direction of the magnetic field which, for a spin $1/2$ nucleus, has only the values
 # $m = \pm 1/2$. The lowest energy state is that which aligns itself with the magnetic field and has $m = 1/2$ and is the state in which the molecule is more likely to be found.
 # 
@@ -125,7 +125,7 @@
 # 
 # (c) Calculate also exact values at $10$ K and $300$ K using the values $\gamma = 26.7 \cdot 10^7\,\mathrm{ rad \, T^{-1}\, s^{-1}}$ ( value for the $^1$H nuclei ) and $B = 10$ T (SI unit T = tesla) and room temperature.
 # 
-# ### Q11 Nuclear spin and rotational spectrum
+# ## Q11 Nuclear spin and rotational spectrum
 # In a homonuclear diatomic molecule, nuclear spin plays an important part in determining which molecular rotational energy levels are present because the nuclei are indistinguishable. Because of this indistinguishability, the nuclear wavefunctions must consist of linear combinations of individual wavefunctions that are either symmetric or antisymmetric to exchange of coordinates. If the nuclear spin is an integer or zero, the nuclear wavefunction has symmetrical nuclear states and the molecule is therefore a boson. However, the total wavefunction must be asymmetrical overall (Pauli Principle) since it is the product of nuclear spin and rotational parts. If the nuclear spin has a half-integer value the molecule is a fermion and the total wavefunction must be asymmetrical to exchange.
 # 
 # Molecular hydrogen H$_2$ has two protons each with nuclear spin quantum number of $1/2$ and exists as two forms; ortho- and para - hydrogen. In ortho-hydrogen molecules, the nuclear spins are parallel, giving total spin quantum number of $S = 1$ and magnetic spin numbers of $1, 0, -1$. Because the total quantum number is one, there are $2S + 1 = 3$ symmetric nuclear spin combinations and the molecule therefore only exists in anti-symmetric rotational states, such as those with odd $J$ quantum numbers. The three nuclear levels are degenerate so the molecule exists in three ground states.
@@ -149,7 +149,7 @@
 # 
 # **Strategy:** Calculate the ortho- and para- series separately but with only alternate odd or even terms. At equilibrium the fraction of ortho-hydrogen present is $Z_{ortho} /(Z_{ortho} + Z_{para})$. The heat capacity is the rate of change of internal energy with temperature, so it is necessary to find the relationship between the partition function and internal energy. Look this up in your textbook.
 # 
-# ### Q12 Enzymes cutting up DNA
+# ## Q12 Enzymes cutting up DNA
 # Type II restriction enzymes are used by bacteria to inactivate viral DNA by identifying then cutting out specific sequences usually $n = 4, 6$, or $8$ base pairs long; these are called 'words'. The bacteria's own DNA is protected from this enzyme by methylation. The resulting distribution of shorter segments of DNA can be used as a DNA fingerprint if the fragments are cloned so that there is enough material to be characterized, for example, by gel electrophoresis.
 # 
 # Assuming that the four base pairs occur with equal probability, the fraction $1/4n$ is the probability of reading the correct $n$ letter word that leads to DNA scission. The enzyme then moves along the DNA to read the next word.
@@ -164,7 +164,7 @@
 # 
 # **Strategy:** Think about the chance that one word is read and then not read and recall that probabilities multiply.
 # 
-# ### Q13 Falling ball
+# ## Q13 Falling ball
 # A ball that is initially stationary is dropped from a height $h$. Its position $y$ at time $ t$ is $\displaystyle y = -gt^2/2 + h$ if its motion is not impeded by friction due to the viscosity of the air. The mass of the ball is $m,\, g$ the acceleration due to gravity, and $h$ the initial height. The equation describing the balance of forces is 
 # 
 # $$\displaystyle m\frac{d^2y}{dt^2} + mg = 0$$ 

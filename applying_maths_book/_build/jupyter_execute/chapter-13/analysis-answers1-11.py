@@ -1,16 +1,16 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## Solutions Q1 -11
+# # Solutions Q1 -11
 
-# ### Q1 answer
+# ## Q1 answer
 # Differentiating produces 
 # 
 # $$\displaystyle \sigma_d^4=\frac{\cos^4(\theta)}{\sin^4(\theta)}\frac{h^2}{8emV}\sigma_\theta^2+\frac{1}{4V^3}\frac{h^2}{\sin^2(\theta)8em}\sigma_V^2$$
 # 
 # Substituting for $d$ gives $\displaystyle \sigma_d^2=d^2\left(\frac{1}{\tan^2(\theta)}\sigma_\theta^2+\frac{1}{4V}\sigma_V^2\right)$.
 # 
-# ### Q2 answer
+# ## Q2 answer
 # (a) Rearranging and defining $Q$ as the ratio, produces $\displaystyle Q\equiv \frac{a_{red}}{a_{ox}}e^{-(E-E^\ominus)nF/RT}$ and differentiating with respect to $E$ and $T$ produces with W=
 # 
 # $$\displaystyle \begin{align}\sigma_Q^2=&\left(-\frac{nF}{RT}e^{-(E-E^\ominus)nF/RT}\right)^2\sigma_E^2+\left(\frac{nF(E-E^\ominus}{RT^2}e^{-(E-E^\ominus)nF/RT}\right)^2\sigma_T^2\\
@@ -23,7 +23,7 @@
 # 
 # (b) The error is smallest at the midpoint when $Q=1$ or $a_{red} = a_{ox}$ because the log is zero.
 # 
-# ### Q3 answer
+# ## Q3 answer
 # 
 # 
 # $$\displaystyle \boldsymbol G =\begin{bmatrix}\frac{ \partial x}{\partial  r}& \frac{\partial x}{\partial \theta} \\ \frac{\partial y}{ \partial r}& \frac{\partial y}{\partial\theta} \end{bmatrix} =\begin{bmatrix}\cos(\theta) &-r\sin(\theta)\\ \sin(\theta)& r\cos(\theta)\end{bmatrix}$$
@@ -42,7 +42,7 @@
 # 
 # which can be converted to terms in $x$ and $y$. The errors increase generally with $r$ and the $x$ and $y$ errors are  The angular terms are zero at $n\pi/4$, if $n$ is an integer, and at radius $r = \sigma_r /\sigma_\theta$.
 # 
-# ### Q4 answer
+# ## Q4 answer
 # Starting, as in the text, the normal equations are produced by minimizing the $\chi^2$.
 # 
 # $$\displaystyle \frac{\partial}{\partial b}\sum_i^nw_i(y_i-bx_i)^2=-2\sum_i^nw_ix_i(y_i-bx_i)=0\\
@@ -56,7 +56,7 @@
 # 
 # $$\displaystyle \sigma_b^2=\frac{1}{\left(\sum_i^nw_ix_i^2\right)^2} \sum_i^n(w_ix_i)^2/{w_i} =\frac{1}{\sum_i^nw_ix_i^2}$$
 # 
-# ### Q5 answer
+# ## Q5 answer
 # Expanding out the left-hand term gives
 # 
 # $$\displaystyle S_{xx}=\sum_i^nw_i(x_i-\langle x\rangle)^2=\sum_i^n w_i(x_i^2-2x_i\langle x\rangle+\langle x\rangle^2)\\
@@ -67,7 +67,7 @@
 # $$\displaystyle S_{xx}=\sum w_ix_i^2 -2\frac{\sum w_ix_i}{\sum w_i}\sum w_ix_i+\left(\frac{\sum w_ix_i}{\sum w_i}\right)^2\sum w_i\\
 # =\sum w_ix_i^2-\frac{\left(\sum w_ix_i\right)^2}{\sum w_i}$$
 # 
-# ### Q6 answer
+# ## Q6 answer
 # (a) The slope is $b = S_{xy} /S_{xx}$ but only the numerator depends on y so it is easier work with $S_{xy}=\sum_i^nw_iy_i(x_i-\langle x\rangle)$ to begin with. Differentiating with $y_i$ gives,
 # 
 # $$\displaystyle \frac{\partial S_{xy}}{\partial y_i}=w_i(x_i-\langle x\rangle)$$
@@ -88,7 +88,7 @@
 # 
 # Combining both variances gives $\displaystyle \sigma^2=\frac{1}{\sum_i w_i}+\frac{\langle x\rangle^2}{S_{xx}}$  which can be simplified to $\displaystyle \sigma^2=\frac{\sum_i w_ix_i^2}{S_{xx}\sum_i w_i}$.
 # 
-# ### Q7 answer
+# ## Q7 answer
 # (a) Using the algorithm with unit weights, since none is given with the data, produces
 # 
 # Slope = $4.55 \pm 0.24$ Intercept = $0.0021 \pm 0.0046$ 
@@ -104,7 +104,7 @@
 # 
 # (b) The slope is $s = h/(d\sqrt{8em})$ and lattice spacing is therefore $d = h/(s\sqrt{8em}) = 0.135$ nm. The error on the spacing is calculated using equation 20 and is $\displaystyle \sigma_d=\frac{h\sigma_s}{s^2\sqrt{8em}}=0.007$ nm.
 # 
-# ### Q8 answer
+# ## Q8 answer
 # (a) Using weighted least squares with $w=1/\sigma^2$,the slope and intercept at the $95\,%$ level are
 # 
 # slope = $200 \pm 17$ and intercept =$ 0.998 \pm 0.06$.
@@ -117,7 +117,7 @@
 # 
 # which produces $\sigma=0.074\cdot 10^{10} \;\mathrm{ dm^3 mol^{-1} s^{-1}  }$ and being cautious, could be rounded down to $\sigma=0.07\cdot 10^{10} \;\mathrm{ dm^3 mol^{-1} s^{-1}  }$ as the rate constant is only given to two decimal places.
 # 
-# ### Q9 answer
+# ## Q9 answer
 # (a) The P branch occurs below about $2880\;\mathrm{ cm^{-1} }$and the R branch above this. The first P line is the $J'' = 1 \to J' = 0$ transition and is at $\approx 2860\;\mathrm{ cm^{-1} }$ and the first R branch line $J''=0\to j'=1$ is at $\approx 2900\;\mathrm{ cm^{-1} }$. The lines converge in the R branch and diverge in the P because the average bond length is greater in the upper vibrational level than in the lower one.
 # 
 # (b) The double lines are due to the presence of the two isotopes of chlorine, 35 and 37. This is confirmed because the less intense line is always at smaller wavenumber than the more intense one and is in a constant ratio. If the lines are due to two different types of molecules and not isotopes, it is most unlikely that the vibrational frequency could be almost the same. However, given that this has occurred, the spectrum is then most likely to be more symmetrical, that is the less intense lines would be at smaller wavenumber one side of the spectrum and longer on the other or vice versa because the two molecules would have different bond lengths and hence rotational constants. Additionally, the very small spacing between each pair of lines would be expected to differ across the spectrum because two different molecules are unlikely to have exactly the same shaped potential.
@@ -181,7 +181,7 @@
 # 
 # The two value for the force constant differ by slightly more than their respective errors, and this is is most likely (a) underestimation of the true error and so accuracy of the spectral lines wavenumbers and, or (b) due to the model used not containing terms describing small anharmonic interactions.
 # 
-# ### Q10 answer
+# ## Q10 answer
 # if normalised $\sum_{k=0}^\infty  p(k,\mu)=1$, hence the sum is
 # 
 # $$\displaystyle e^{-\mu}\sum_{k=0}^\infty\frac{\mu^k}{k!}=e^{-\mu}e^{\mu}=1$$
@@ -210,7 +210,7 @@
 # 
 # The variance is $\sigma^2 = \langle k^2\rangle -\langle k\rangle^2 =\mu^2+\mu-\mu^2=\mu$
 # 
-# ### Q11 answer
+# ## Q11 answer
 # Plotting the data and fitting by hand with the Poisson distribution gave the plot below in which the fit to the data appears to be good.
 # 
 # ![Drawing](analysis-fig19.png)
@@ -220,7 +220,7 @@
 # ____
 # The weighting for the $\chi^2$ is $w_i=1/y_i$ where $y_i$ is the observed number of cavalry units. However, some of these are zero so that this would cause division by zero, therefore either the zero values should be ignored of the calculated values from the Poisson distribution used instead. Ignoring two points gives $\chi^2=0.71$ and using the calculated values gives $0.79$ so very similar. The chance of obtaining this or a higher value is $1$ which means that the model describes the data. 
 # 
-# ### Q12 answer
+# ## Q12 answer
 # There are $24\times 24$ squares of 1/4 square km. The plot of the numbe rof squares hit vs the number of hits fits to a poisson distribution see the figure. This means that there was no targeting of any particular area.
 # 
 # ![Drawing](analysis-fig20.png)
@@ -230,7 +230,7 @@
 # 
 # The weighting is $1/y_i$ ($y$=number of areas) assuming that the data is Poisson distributed. $\chi^2=1.15$ giving a probability of obtaining this or a higher number as $0.95$ which means that the Poisson model fits the data. 
 # 
-# ### Q13 answer
+# ## Q13 answer
 # In wavenumbers $G(n)=v_e(n+1/2)-x_ev_e(n+1/2)^2+y_ev_e(n+1/2)^3$ and the difference $n\to n+1$
 # 
 # $$\displaystyle \Delta G=v_e(1 +13y_e/4-2x_e+2(3y_e-x_e)n+3y_en^2 )$$

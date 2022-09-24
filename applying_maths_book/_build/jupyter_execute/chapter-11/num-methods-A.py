@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## Numerical Methods
+# # Numerical Methods
 
 # In[1]:
 
@@ -20,7 +20,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # To start this chapter, some details on numerical accuracy are reviewed; next simple integration methods are described with a few examples and problems. More difficult, and interesting, is the numerical integration of differential equations, some of which only have numerical solutions. The various methods used are explained. A different numerical approach is taken in the next chapter on Monte Carlo methods. Simple integration is rather slow by this method but integrating differential equations is very robust. Monte Carlo methods are very versatile at simulating physical processes, such as diffusion or fluorescence, and occasionally this is the only way to do the calculation. Simulation also provides a good way to understand the processes involved, some of which can be very complex and not always easily translated into differential equations.
 # 
 # 
-# ### 1.1 Rounding errors
+# ## 1.1 Rounding errors
 # 
 # In many calculations, the errors introduced by the computer due to the way its integers and real numbers are manipulated do not matter. Sometimes, the answer the computer returns may be precise and will be printed to many decimal places; however, it may not be accurate. To understand this, the expression $(1 - x)^6$ is expanded as the series $1-6x+15x^2 -20x^3 +15x4 -6x^5 +x^6$ and this is plotted close to its minimum at $x\approx 1$ in Fig.1. While the scale is small, $\approx 10^{-13}$, determining the exact root of the equation numerically is difficult. Of course, we know it is at $1$, but the computer will not give this answer even using a Newton-Raphson iterative scheme. The reason for the noisy plot is because the alternating positive and negative terms in the summation add up to almost zero, and the rounding error in the precision with which the numbers are calculated becomes important, and this limits the accuracy of the calculation.
 # 
@@ -51,13 +51,13 @@ print(s)
 # Figure 1. Plots of the series expansion of $(1 - x)^6$ with two different values of floating point precision. (Notice the axes range.)
 # _____
 # 
-# ### 1.2 Truncation errors
+# ## 1.2 Truncation errors
 # 
 # In summing a series, the number of terms to be added has to be decided in advance. This automatically leads to an error that is nothing to do with arithmetical precision. The calculation should be repeated with more terms until the number of decimal places you require is continuously obtained. Rounding errors must additionally be considered, especially if the series contains alternating positive and negative terms; the errors can accumulate as the summation continues but will not be the same for all values of $x$.
 # 
 # Consider the series $ \displaystyle \sin(x)=1-\frac{x^3}{3!}+\frac{x^5}{5!}-\cdots$ which is valid for all $x$. If the series is summed up to the term $x^n/n!$ with $x \gt 0$, the error is less than $\displaystyle \left| \frac{x^{n+2}}{(n+2)!}\right|$. The values of $\sin(0.5)$ is $0.47942553$ whether calculated directly using Python or as the summation up to the $x^7$ term. If, however, $x$ is large, for instance $x = 5.5\pi$, then we know by drawing a graph that  $\sin(x) = -1$, but by summation up to $x^7$ the result is $-79258.34$: clearly this is ridiculous because $\sin(x) \le 1 $ for all $x$. Only if the number of terms in the summation is increased to at least terms $\gt x^{59}$, and the numerical precision increased to $20$ decimal places can an accurate result be obtained from the series approach. In this instance, we know that the answer from the small summation is incorrect because the properties of $\sin(x)$ are well known, but if you are summing a series whose result is unknown, then great care is necessary.
 # 
-# ### 1.3 Unstable recursion: magnification of errors
+# ## 1.3 Unstable recursion: magnification of errors
 # 
 # In solving integrals, a recursion formula can often be found, particularly when the integration is done by parts. An example met before (Q4.22) is
 # 
@@ -90,7 +90,7 @@ for i in range(len(ans_s)):
 # 
 # While this calculation is a little unusual, it is not uncommon. When calculating wavefunctions using Hermite or other polynomials, large powers of $x$, exponentials and recursion formulae are commonly used. Recursion and difference formulae are often used in the numerical integration of differential equations, see Section 11.3, consequently, their numerical integration is akin to an art rather than a science. However, you should not be too despondent or sceptical about numerical methods because with care, and sometimes cunning, accurate results can be obtained.
 # 
-# ### 1.4 Organized Chaos
+# ## 1.4 Organized Chaos
 # 
 # You need to be aware that recursion can sometimes lead to chaotic behaviour as a normal outcome of a calculation. This is a different sort of chaos to that just calculated; it is very much like 'organized chaos' and is not due to rounding or precision errors. Often this chaos is termed 'deterministic'. 
 # 
@@ -178,9 +178,9 @@ for j in range(n):
 #plt.show()
 
 
-# ### 2 Numerical methods used to find the roots of an equation
+# ## 2 Numerical methods used to find the roots of an equation
 # 
-# ### Secant method
+# ## Secant method
 # 
 # We now set aside the questions of numerical accuracy and chaos and look at some practical methods of numerically solving all sorts of equations. Sometimes in integration or in solving differential equations, the root of some function is required; three related numerical methods, the Secant, Regula Falsi, and bisection, are now described. The Newton - Raphson method has already been met in Chapter 3.10 and is used when the equation can be differentiated.
 # 
@@ -280,7 +280,7 @@ ans = bisect(f,x1,x2)    # call bisect with initial values 0 and 1
 print('{:s}  {:12.8f}'.format('root = ', ans)   )
 
 
-# ### 3 Numerical integration
+# ## 3 Numerical integration
 # Two methods of numerical integration have been briefly described in other chapters, one is the series expansion of a function and then a numerical evaluation of the terms; the other is the Euler - Maclaurin formula Chapter 5.7 and care needs to be exercised with both these methods. Three general and simpler methods are now outlined; these are the mid-point, the trapezoid, and Simpson's rule. More sophisticated numerical methods than these are described in Numerical Recipes (Prest et al. 1986) and similar specialized texts.
 # 
 # Each of these methods divides the function to be integrated into small strips at predetermined abscissas, which are then multiplied by a certain constant number depending on the method, and added together. The integration becomes a summation, Fig. 3, and the general name for such a numerical integration method is *quadrature*. These methods are similar to the basic way we think about integration as the limiting area of a summation of rectangular strips as the width of each strip tends to zero. If the strips are fine enough, the result is a good approximation to the true value. In general, however, we do not initially know how many strips will be needed and some experimentation with this number is always necessary.
@@ -291,7 +291,7 @@ print('{:s}  {:12.8f}'.format('root = ', ans)   )
 # 
 # Figure 3. The trapezoidal rule approximates an integral with straight lines between points $x_1,\, x_2,\, \cdots$, although not very well in this example, where the strips are too far apart to represent the function accurately. The mid-point method, on the other hand, evaluates the function half way between each point, three of which are shown by the vertical dotted lines.
 # ______
-# ### 3.1 Always try some algebra first
+# ## 3.1 Always try some algebra first
 # There is always a tendency when using numerical methods to submit the equation directly to the computer. In many cases, however, performing some algebra first will help. This might mean simplifying the equation, removing constants to outside the integration, and, in particular, substitution of variables, which is done in standard integration. Consider the integral 
 # 
 # $$\displaystyle \int_0^\infty (1+x^2)^{-1}dx$$
@@ -312,7 +312,7 @@ print('{:s}  {:12.8f}'.format('root = ', ans)   )
 # 1/(1+x^2) &0.9999000& 0.9900990&0.5 & 0.0099009& 0.000099\\
 # \end{array}$$
 
-# ### 3.2 Mid-point rule integration
+# ## 3.2 Mid-point rule integration
 # 
 # Mid-point integration assumes that the function is split equally into $N$ points, and any point is connected by a straight line to the next, thus ignoring any curvature between these points. Clearly, for a rapidly oscillating or varying function, many determinations of N will be needed to obtain an accurate answer. The mid-point method, not surprisingly, sums the values of the _function_ at the mid-point of each strip, $x_1^m \; x_2^m \cdots x_N^m $ as
 # 
@@ -357,7 +357,7 @@ n = 20
 print('{:s} {:6.5f}'.format('sum = ', mid_point(f,a,b,n)) )
 
 
-# ### 3.3 Trapezoidal rule integration
+# ## 3.3 Trapezoidal rule integration
 # 
 # Trapezoidal integration is also straightforward. The equation to approximate the
 # integral is
@@ -392,7 +392,7 @@ ans= Tzoid(f,a,b,N)
 print('{:s} {:6.5f}'.format('sum = ', ans) )
 
 
-# ### 3.4 Simpson's rule integration
+# ## 3.4 Simpson's rule integration
 # 
 # Simpson's rule is slightly more sophisticated than the trapezoidal method, as it fits a
 # quadratic function to data points rather than straight lines; the formula is
@@ -434,7 +434,7 @@ print('{:s} {:6.5f}'.format('sum = ', ss) )
 
 # and as can be seen this result is much closer to the algebraic one that the other methods for the same number of points in the integration.
 # 
-# #### **Example. Concentration of ion pairs**
+# ### **Example. Concentration of ion pairs**
 # Bjerrum's theory of ionic association in solution, the concentration of ion pairs is
 # 
 # $$\displaystyle n_{1,2}=3n_1\left( \frac{e^2}{4\pi\epsilon_0k_BT} \right)^3\left( \frac{1}{\epsilon a_0} \right)^3\int_2^be^xx^{-4}dx$$
@@ -467,15 +467,15 @@ for k in range(3,30,5):                              # start 3 , end 30, step 5
     pass
 
 
-# ### 3.5 Integrating data from an experiment
+# ## 3.5 Integrating data from an experiment
 # 
 # Integrating a curve formed from data points obtained from an experiment has to be done numerically. The safest method is to draw straight lines between the data points and calculate the area as rectangles and triangles, which is what the trapezoidal method does, and this works even if the data is not evenly spaced. You might in addition want to fit the data by a least squares method, which has the effect of smoothing the data, integrating the resulting equation and comparing the results. Alternatively, fitting a polynomial to the data and then integrating may give the required solution.
 # 
-# ### 3.6 Atomic and molecular beam scattering
+# ## 3.6 Atomic and molecular beam scattering
 # 
 # In this next extended example, more of a 'real world' rather than a purely mathematical calculation is described; it is the classical model of the elastic scattering of one particle, an atom or molecule, off another. The formulae are developed first, and then integrated using the Coulomb and Lennard-Jones 6-12 potentials, the latter being done numerically. In this example, the scattering angle is calculated. In a later example, the actual trajectory followed by a particle during elastic scattering is calculated and drawn.
 # 
-# ### 3.7 Background and derivation of formulae
+# ## 3.7 Background and derivation of formulae
 # 
 # Geiger and Marsden performed one of the most famous scattering experiments during the first decade of the twentieth century. Alpha particles were passed through a very thin Au foil and the positions of these particles detected by scintillation counting after scattering off the Au atoms. In 1910, while at Manchester University, Rutherford deduced that the mass of the atom was not distributed like that in a raisin pudding throughout its volume, but concentrated at its centre in a very small dense nucleus, thus confirming a 'planetary' model of the atom. This laid the foundation for the old quantum (Bohr) model of the atom.
 # 
@@ -523,7 +523,7 @@ for k in range(3,30,5):                              # start 3 , end 30, step 5
 # 
 # $$\displaystyle g(r)=\frac{b}{r^2}\frac{1}{\sqrt{1-U(r)/E_0-(b/r)^2}}  \tag{10}$$
 # 
-# ### 3.8 Scattering
+# ## 3.8 Scattering
 # 
 # The scattering by two different potentials, the Coulomb and the Lennard-Jones 6-12 will be illustrated. The first step in the calculation is to find the equation for the separation $r_0$. This is done by using conservation of energy and then knowing that the radial velocity $v$ is zero at the turning point $r_0$. From eqn 6 with $v = 0$ and $r = r_0$, the energy is
 # 
@@ -545,7 +545,7 @@ for k in range(3,30,5):                              # start 3 , end 30, step 5
 # 
 # and so the scattering angle is $\displaystyle \chi=\pi- \sin^{-1}\left(\frac{b}{d} \right)$ which is independent of the collision energy. This is shown in fig 5, where $x = b/d$.
 # 
-# ### 3.9 The  Coulomb potential
+# ## 3.9 The  Coulomb potential
 # 
 # The Coulomb potential energy between charges $q_1$ and $q_2$ at separation $r$ is $U(r) = \alpha/r$ where $\alpha = q_1q_2/4\pi \epsilon_0$ in SI units. Depending on the charges, the Coulomb potential can be repulsive or attractive. This $1/r$ form of potential also describes that due to gravity, where $\alpha = -Gm_1m_2$. For example, it will describe a comet being attracted to and flung around the sun or a planet, $G$ being the gravitational constant and $m_1$ and $m_2$ the masses.
 # 
@@ -588,7 +588,7 @@ for k in range(3,30,5):                              # start 3 , end 30, step 5
 # Figure 5. Scattering angle as fraction of $\pi$ radians or $\chi/\pi$ vs dimensionless parameter $x = b/d$ for hard sphere and $x = 2E_0b/\alpha$ for repulsive Coulomb potentials (see text). The inset diagrams show, schematically, Coulomb deflections with potential as diffuse filled circles). When the impact parameter $b$ is greater than the sum of the radii $d$ there is no scattering in the hard sphere collision, but this does occur with the coulomb potential as this has a finite, although decreasing value at large separation's.
 # _____
 # 
-# ### 3.10 The Lennard-Jones potential
+# ## 3.10 The Lennard-Jones potential
 # 
 # The LJ potential 
 # 
@@ -713,7 +713,7 @@ for i,eps in enumerate([E0*5,E0,E0/5]):     # calculate for 3 values
 # Figure 6. Scattering angles with the Lennard-Jones potential.
 # _____
 # 
-# ### 3.11 Analysis of results
+# ## 3.11 Analysis of results
 # 
 # When the impact parameter $b$ is small ($b/\sigma \lt 1$), the recoil angle $\chi$ is large and positive and the repulsive part of the potential is dominant. When $b$ increases, the overall deflection can become zero. This is called a 'glory' and the initial energy and values of $b$ mean that the particles are initially attracted to one another, but the impact angle is glancing and, as the repulsive part of the potential is reached, just enough repulsion is present to return the particle on to its original path; the attractive and repulsive interactions exactly cancel. Rainbow scattering occurs when $d\chi/db = 0$ at the minimum of the curve shown in Fig. 6. At some $b$ values, the approaching particle can become captured, the angle increases past $-\pi$ to $-\infty$ and the particles orbit one another. This is seen with $E/\epsilon = 1/5$ at $b/\sigma \approx 2.29$. The trajectories are shown in Fig. 10,  the algorithm with which to calculate them is also given.
 # 

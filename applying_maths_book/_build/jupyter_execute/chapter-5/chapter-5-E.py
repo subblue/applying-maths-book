@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## Maclaurin and Taylor series expansions. Paramagnetic spins. Euler-Maclaurin formula.
+# # Maclaurin and Taylor series expansions. Paramagnetic spins. Euler-Maclaurin formula.
 
 # In[1]:
 
@@ -15,7 +15,7 @@ init_printing()                      # allows printing of SymPy results in types
 plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 
-# ### 6 Maclaurin and Taylor series
+# ## 6 Maclaurin and Taylor series
 # 
 # Many normal functions can be expanded into a series by the method devised by Maclaurin and by Taylor. Series are often used to simplify a function at some value of its argument, for example at small $x, \sin(x) \approx x$, and this may enable an equation to be solved, as in the case of a pendulum's motion. The equation of motion is greatly simplified by assuming that the pendulum is restricted to move only to small angles from the vertical. 
 # 
@@ -25,7 +25,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # with virial coefficients $c_0, c_1$ etc. and is clearly seen to be based on the ideal gas law.
 # 
-# ### 6.1 Maclaurin series
+# ## 6.1 Maclaurin series
 # 
 # A power series has the general form
 # 
@@ -58,7 +58,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # where the subscript $0$ means evaluate the derivative at $x = 0$.
 # 
 # 
-# ### 6.2 Taylor Series
+# ## 6.2 Taylor Series
 # 
 # In the Maclaurin series, the derivative is calculated at $x = 0$ and the function is described as having been 'expanded about zero'. However, a function can be expanded about any other value of $x$, say $x_0$; this will generate the Taylor series which is the 'expansion about $x_0$'. This series is
 # 
@@ -72,13 +72,13 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # These series are extremely useful, for example, to calculate $\sin(1.3), \;\cos(\pi/4),\; \ln(1 + x)$, and so forth if the function can be expanded as a Taylor series and the terms added until the required numerical accuracy is needed. This is tedious to do by hand, rather than being difficult, but is ideally suited for computer calculation where repetitive calculations are easily performed.
 # 
-# ### 6.3 $O(x)$ and $\sim$ notations
+# ## 6.3 $O(x)$ and $\sim$ notations
 # 
 # In a series expansion of a function $f(x)$ it is often possible to state something general perhaps that that $f(x) \to \infty$ as $x\to \infty$. This is, however, often too general and if a series is to be used only to a finite number of terms we would like to know how quickly the term after the last one used is varying as $x$ changes; does it change as $x^2$ or $e^x$ for example? 
 # 
 # The 'big-O' notation, for example, $O(x^2),\; O(e^x)$, and so forth, is used for this purpose and means that the function whose series we are examining grows at a rate $x^2$ or $e^x$ at the point that the function is being evaluated. An example is the series $x^{-2} - x^{-4} + O(x^{-6})$ when $x \gt 1$ which means that the next term in the series is vastly smaller than the $x^{-4}$ term and can be safely ignored. The symbol $\sim $ is generally interpreted as meaning 'is proportional to' and as used in $\sin(x) \sim x$ when $x \to$ 0 means that the function grows at the same rate as $x$.
 # 
-# ### 6.4 Useful series expansion formulae
+# ## 6.4 Useful series expansion formulae
 # 
 # Several expansions are listed below. If you want to calculate, for example $1/(1 - ax)$, replace each $x$ in the first series below with $-ax$ and evaluate the result; $(1 - ax)^{-1} = 1 + ax + (ax)^2 + (ax)^3 + \cdots$. This substitution can be performed with any series and means that fewer need to be remembered. The $O(x^6)$ means that the next term in the series has power of order of $x^6$. You must check on the value of $x$ used determine if this is an acceptable approximation.
 # 
@@ -95,7 +95,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # (a+x)^n &= a^n+\frac{a^n}{a}x+\frac{a^nn(n-1)}{a^2}x^2+\frac{a^nn(n-1)(n-2}{a^3}x^3 +\mathcal{O}\left(x^{6}\right)
 # \end{align}$$
 
-# ### 6.5 Trig functions
+# ## 6.5 Trig functions
 # 
 # The Maclaurin series of $f(x) = \sin(x)$ is equivalent to a Taylor series expanded about zero.
 # By definition the expansion is given by replacing $f(x)$ in equation $15$,
@@ -177,7 +177,7 @@ plt.show()
 # Figure 3. Taylor expansion of $\sin(x)$ up to $x^{23}$ together with the function (black line).
 # ____
 # 
-# ### 6.6 Exponential expansion
+# ## 6.6 Exponential expansion
 # 
 # The expansion of the exponential is easy to achieve with $\displaystyle f(x) = e^{ax}$ and $a$ as a constant. The
 # derivatives are
@@ -194,7 +194,7 @@ plt.show()
 # 
 # These approximations are perfectly acceptable provided that $|ax| \lt 1$, and therefore $(ax)^2 \ll ax$ and so forth. The indication of 'less than' means ten times less rather than just slightly less for this approximation to be a good one. You could investigate this for yourself.
 # 
-# ### 6.7 Log expansion
+# ## 6.7 Log expansion
 # 
 # Finding the expansion of log functions is also easy, but in this case it is restricted to the
 # limits $-1 \lt x \le 1$ when $f(x) = \ln(1 + x)$. Differentiating produces
@@ -233,7 +233,7 @@ plt.show()
 # 
 # This series expansion method does give us a way of evaluating integrals numerically. The method is to keep on adding terms to the series until the answer does not vary to within a sufficiently large number of decimal places or the answer is considered accurate enough. An example is given below. There are several well known methods for numerical integration such as the Euler–Maclaurin method or Simpson's rule and generally, these should be used. Numerical integration is described in Chapter 10 and Euler-Maclaurin in Section 7.
 
-# ### 6.8 Binomial expansion $ (1+x)^m$
+# ## 6.8 Binomial expansion $ (1+x)^m$
 # 
 # One of the most general formulas is obtained by expanding $f (x) = (1 + x)^m$ where $m$ can be positive, negative, an integer, or a fraction. 
 # 
@@ -271,10 +271,10 @@ plt.show()
 # 
 # $$\displaystyle  (1+x)^{-1/2}=1-\frac{x}{2}+ \frac{x^2}{8}-\frac{x^3}{16}+\cdots  \tag{25}$$
 # 
-# #### **Example, calculate square root**
+# ### **Example, calculate square root**
 # Consider calculating $\sqrt{3/2}$, using equation (25). Letting $x$ = 1/2 the series is $(1+x)^{1/2}= 1+ 1/4 - 1/32 + 1/128 \cdots = 1.2265$. The correct answer to 4 decimal places is 1.2247 and the series has to be extended to nine terms, the highest power being $x^8$ to reach this level of accuracy. Trying to calculate $\sqrt 3$ using this series gives a divergent result; why is this? Try it for yourself. The ancient Algorithm 1.2 could, however, be used.
 # 
-# ### 6.9 Derivatives of series
+# ## 6.9 Derivatives of series
 # 
 # Sometimes it is convenient to obtain a series by taking the derivative of each term in another known series rather than work out the series from scratch; for example, by differentiating term by term
 # 
@@ -288,7 +288,7 @@ plt.show()
 # 
 # $$\sum_n nx^{n-1}= 1+2x+3x^2+4x^3+\cdots = \frac{1}{(1-x)^2} $$
 
-# ### 6.10 Paramagnetic spins. Example using partition functions, expansions and limits
+# ## 6.10 Paramagnetic spins. Example using partition functions, expansions and limits
 # 
 # As an illustration of using several of the methods described in this chapter the properties of magnetic ions in a crystal are examined. In a paramagnetic crystal such as chromium potassium alum, $\mathrm{Cu_2(SO_4)_3}$ in $\mathrm{K_2(SO_4)24H_2O}$ the paramagnetic Cr$^{3+}$ ion is surrounded by 1 potassium, 2 sulfur, 20 oxygen and 24 hydrogen atoms, thus the paramagnetic ion is relatively dilute and are positioned so far apart that their unpaired electrons only suffer very weak interactions between one ion and another, rather like the atoms in a dilute gas have. This means (a) that the rest of the crystal can be thought of as an inert container for the magnetic ions and (b) that the standard method of statistical mechanics can be used to determine the magnetic properties since the paramagnetic electrons do not interact with one another. In effect this means that we can determine the partition function and therefore the _magnetization_ , which is the total magnetic moment, and the entropy, internal energy and heat capacity. 
 # 
@@ -417,7 +417,7 @@ plt.show()
 # 
 # The heat capacity is the slope of the energy vs. temperature, so is zero when $T\to 0$ and when $T\to \infty$ and because heat capacity is always a positive quantity this must pass through a maximum at at some intermediate temperature. This is called the Schottky Anomaly, although no longer considered anomalous, as it is due to there being a finite number of different levels, i.e. $2J+1$. Initially $C_m=0$ as the temperature is low enough to populate only the lowest level. At very high temperatures all levels are equally populated so no more energy can be added and so $C_M\to 0$. The entropy is initially zero as only one level is populated and as $S=k\ln(\omega)$ where $\omega$ is the number of arrangements of particles among energy levels. As there is only one arrangement when $T\to 0$ the entropy is zero. At high temperature, all levels are equally filled and so the entropy becomes constant. The maximum value is $k\ln(2J+1)$which is shown as the dashed horizontal line in fig 4c.  
 
-# ### 7 The Euler - Maclaurin formula
+# ## 7 The Euler - Maclaurin formula
 # 
 # Sometimes a series cannot be expanded to simple formulae but its integral can be evaluated. If the terms in a series can each be differentiated, the Euler-Maclaurin formula, first developed in 1732-3, connects the summation of a series with its integral and provides a series of correction terms to make one the same as the other.
 # 
@@ -437,14 +437,14 @@ plt.show()
 # 
 # To obtain equation (27) from the general equation the substitutions $n = m + 1$, and $b = n$ and $a = h = 1$ are used. The summation containing the Bernoulli numbers is usually limited to just a few terms because this eventually diverges becoming very large at large $k$, but converges for smaller $k$. It seems rather strange that it can be used when it has this property but it does give accurate results when just a few terms are used.
 # 
-# #### **(i) The series for $k^2$**
+# ### **(i) The series for $k^2$**
 # As only the first derivative is not zero the series is short,
 # 
 # $$\displaystyle \sum\limits_{k=1}^n k^2 =\int\limits_0^n x^2dx+\frac{n^2}{2}+\frac{n}{6} = \frac{n^3}{3}+\frac{n^2}{2}+\frac{n}{6} $$
 # 
 # and this result is the same as the series summation for $k^2$ as may be confirmed using sympy.
 # 
-# #### **(ii) series for $\ln(k)$**
+# ### **(ii) series for $\ln(k)$**
 # The series for $\ln(k)$ is
 # 
 # $$\begin{align}
@@ -460,8 +460,8 @@ plt.show()
 
 
 # Euler Maclaurin eqn. 27
-#for k in range(1,8):   
-#    print('{:s}{:d}{:s}{:s}'.format('2k = ',2*k,' B/factrl ', str(bernoulli(2*k)/factorial(2*k))))
+for k in range(1,8):   
+    print('{:s}{:d}{:s}{:s}'.format('2k = ',2*k,' B/factrl ', str(bernoulli(2*k)/factorial(2*k))))
 
 k, x = symbols('k, x')                   # use sympy
 m = 1
@@ -481,7 +481,7 @@ s3m = s3.subs({x:m})
 
 s = (s1 + s2 + s3n - s3m).evalf()
 
-print('{:s}{:s}{:s}{:16.10g}'.format('Euler Maclaurin eqn. sum ' , str(f),' = ',s))
+print('\n{:s}{:s}{:s}{:16.10g}'.format('Euler Maclaurin eqn. sum ' , str(f),' = ',s))
 
 sm = sum( [ np.log(i) for i in range(1,n+1)] )          # evaluate 50 terms by direct summation
 print('{:s}{:16.10g}'.format('Direct sum  = ',sm))

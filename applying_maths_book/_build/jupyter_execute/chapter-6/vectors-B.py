@@ -1,9 +1,9 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## Projections and components
+# # Projections and components
 
-# ### 6 Projections
+# ## 6 Projections
 # To find the projection or component of a vector $\vec A$ that lies along an axis, the dot product with one of the vector's orthonormal base vectors is calculated. For example, to calculate the component along the x-axis the base vector $\boldsymbol i$ is used;
 # 
 # $$\displaystyle \boldsymbol i\cdot \vec A = \boldsymbol i\cdot(a\boldsymbol i + b\boldsymbol j + c\boldsymbol k) = a\boldsymbol i\cdot\boldsymbol i = a. \tag{13}$$
@@ -49,7 +49,7 @@
 # Figure 17. The projection of vector $\vec w$ onto $\vec v$. Even if $\vec w$ and $\vec v$ are separated, they can be translated to meet at one point O and the projection is unchanged. The projection is vector $\vec P$.
 # ______
 
-# #### **(i) Work done**
+# ### **(i) Work done**
 # Consider the work done, $W$, on moving an object. This is force $\times$ distance, but if the force is not applied in the direction that the object is moved, but at an angle $\theta$, then only a component of the force is effective. The total work done is $W = |F||d|\cos(\theta) = \vec F\cdot\vec d$, which is a scalar number. If force is given by the vector $\vec F=\begin{bmatrix}5 & -3& 1\end{bmatrix}$ and the direction of motion by $\vec d=\begin{bmatrix}2&3 &4\end{bmatrix}$, then the work done is,
 # 
 # $$\displaystyle  W=\vec F\cdot \vec d = (5\boldsymbol i-3\boldsymbol j+\boldsymbol k)\cdot (2\boldsymbol i+3\boldsymbol j+4\boldsymbol k)=10-9+5 =5$$
@@ -74,7 +74,7 @@
 # 
 # The dot product $\vec w\cdot \vec v=100$. Therefore the projection $\vec P_{w\to v}=\begin{bmatrix}2& 4& 6& 8\end{bmatrix}(5/6)$ and the length o f the projection $50/\sqrt{30}$. The projection of $\vec v$ onto  $\vec w$ is $\begin{bmatrix}1& 3& 5& 7\end{bmatrix}(25/21)$ with length $50/\sqrt{21}$.
 # 
-# #### **(ii) Distance on a sphere**
+# ### **(ii) Distance on a sphere**
 # Calculating the distance from one point to another on the surface of a sphere is easily achieved using vectors. Figure 17a shows two points $P$ ans $Q$ are a distance $d$ apart on the great circle which is the shortest path on the surface. The spherical polar angles are $\theta$ the polar angles and $\phi$ the azimuthal angle. If the distance $d$ was on the Earth then a slightly different notation would be used because the latitude is the angle upwards from the equator in other words $90-\theta$. The longitude is the angle from the $x$ axis, (the azimuthal angle) and on earth the prime meridian is at zero longitude and passes through Greenwich in London. 
 # 
 # To make the calculation simpler the points $P,Q$ can be rotated as a pair so that $P$ lies on the x-axis, the angle $\phi$ is then the difference in longitude to point $Q$. The second simplification is to define the radius of the sphere as unity. The distance can always be multiplied by the radius at the end of the calculation. In figure 17a (right) if the radius is $1$ as drawn then $d$ the arc length is numerically equal to $\omega$, i.e. $d=\omega$ because  $\omega/2\pi = d/2\pi R$ on a sphere of radius $R$. The chord length $c$ is clearly not the same as the arc length $d$. The dot product,
@@ -118,7 +118,7 @@
 # Figure 17a. Calculating the shortest distance (a Great Circle) between two points on the surface of a sphere using the dot product and spherical polar coordinates.
 # ______
 
-# ### 6.1 Direction cosines
+# ## 6.1 Direction cosines
 # 
 # A three-dimensional vector is often defined as $\vec V = a\boldsymbol i + b\boldsymbol j + c\boldsymbol k$. However, the vector can equally well be described by the angles it makes to the $x, y$ and $z$-axes, when these angles are $\alpha, \beta,  \gamma$, as shown in figure 18, where the angles are measured away from the axes to the vector.
 # The vector $v$ is now described by

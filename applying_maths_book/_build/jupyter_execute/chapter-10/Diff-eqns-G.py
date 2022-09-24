@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ### PDE examples continued
+# # PDE Continued
 
 # In[1]:
 
@@ -16,7 +16,9 @@ init_printing()                      # allows printing of SymPy results in types
 plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 
-# #### **(ix) Diffusion across an interface and from a point**
+# ## Examples continued.
+# 
+# ### **(ix) Diffusion across an interface and from a point**
 # 
 # Imagine that a very long, narrow tube is half filled with a dye solution and the other half contains pure solvent each half being separated by a partition. When partition is carefully removed, diffusion from either half into the other begins. The tube is so long ($x \to \infty$) that its ends do not affect the behaviour on an experimental time scale. Immediately on opening the partition the concentration at the interface is $c(x)= c_0$ for $x \ge 0$ and $c(x) = 0$ for $x\lt 0$ both conditions apply at $t = 0$. This initial condition is quite specific, and practical, but instead of keeping a constant value $c_0$ when $x \ge 0$ and $t = 0$ the initial concentration can in general be a function of position, $f(x)$ which may range over the whole range of $x$.
 # 
@@ -83,7 +85,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # One important application of equations similar to, but more complex than those described here is in the technique known as FRAP, which stands for _fluorescence recovery after photo-bleaching_. In this technique, a dye molecule is introduced into a biological membrane and then an intense laser is used to bleach the dye rapidly in the small circular spot of the focused laser. A second weaker laser stimulates the dye's fluorescence and the intensity of this is measured as the dye molecules diffuse into the bleached area. The rate at which the fluorescence recovers can be used to determine the diffusion coefficient of the dye molecules or proteins to which the dye may be attached. Should the protein contains an intrinsic chromophore, as does the green fluorescent protein (GFP), this can be used directly.
 # 
 
-# #### **(x) Asymmetric boundary conditions: reaction at a plane**
+# ### **(x) Asymmetric boundary conditions: reaction at a plane**
 # 
 # In some problems, asymmetric boundary conditions apply. One such case is a (semi) infinite tube that is closed at one end and filled with a solution at a concentration of $c_0$. Diffusion is caused by the fast removal of material at the closed end, for instance by an electrode reaction that causes precipitation, see Fig. 28,28a. The concentration at $t$ and $x$ is found using the initial conditions
 # 
@@ -147,7 +149,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # Fig. 29 Left: Profile of fractional oxidant (solid line) and reductant (dashed) after $500$ seconds vs. distance (m) away from an electrode at different ratios of $s = O_X/R_d$, hence different potentials. The potentials are $\Delta E = 0$ mV, $s = 1,\, \Delta E = 59.5$ mV, $s = 10$, and $\Delta E = -41.6$ mV, $s = 1/5$, for $n = 1$ and at $300$ K. At longer times, the curves reach either zero or $c_0$ as $x$ increases. Right. The flux $\partial c/\partial x$ is shown at different $x$ (metres) vs. time (s) and shows how the current in a cell rapidly increases to some large value before slowly fading away.
 # 
-# #### **(xi) Diffusion into or out of a sphere**
+# ### **(xi) Diffusion into or out of a sphere**
 # 
 # When a substance diffuses into or out of a uniform sphere, the angular coordinates can normally be ignored as diffusion can occur equally well from any place on the sphere's surface. Only the radial coordinate is important and then the diffusion equation is
 # 
@@ -167,7 +169,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # and the initial condition is $t = 0,\, u = rf(r)$, where $f(r)$ is a function describing the initial concentration profile inside the sphere. Often this is taken to be constant. This problem is now very similar to that of equation (54), but the boundary conditions are slightly different, one condition is that the concentration is zero the other that it is a constant. It is these conditions that produce a very complicated solution that is the sum of the product of exponential and sine terms. The result is given by Crank (1979) and Carslaw & Jaeger (1959), the latter also giving a detailed derivation.
 # 
-# #### **(xii) Time-dependent Schroedinger equation**
+# ### **(xii) Time-dependent Schroedinger equation**
 # 
 # The time-dependent Schroedinger equation is a partial differential equation that can be solved by separating the variables. The equation is
 # 
@@ -201,7 +203,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # The particle’s energy is $E = \hbar\omega$ or $\displaystyle E = k^2\frac{\hbar^2}{2m}$, because momentum is $p = k\hbar $ and we have defined $\displaystyle k^2 = \frac{2m\omega}{\hbar} $. The classical velocity of the particle is $v = p/m$ or $v = k\hbar/m $ and this is identical to the group velocity, $v_g = d\omega/dk$. The phase velocity is, by definition, $v_p = \omega/k$, and this velocity is also $E/p$ because kinetic energy $E = p^2/2m$. The phase velocity is therefore $v/2$ and half the classical and group velocity. See Flugge (1999) for more details of this problem and many other interesting one-dimensional problems.
 
-# ### 9.3 The wave equation
+# ## 9.3 The wave equation
 # 
 # A _travelling wave_ can be imagined as a disturbance that moves both in space and time. Its general form is $u(x, t) = f (x - ct)$ where $f$ is a function of one variable (Knobel 2000). The wave moves with a  speed $c$. The profile $f$ of the travelling wave remains the same as time passes; one of many travelling waves is $\displaystyle y = e^{-(x-ct)^2}$.
 # 
@@ -321,7 +323,7 @@ plt.show()
 # 
 # If both the displacement and velocity are some function of $x$, then both the sine and cosine terms containing time appear in the general solution.
 # 
-# ### 10 The Fourier Transform method
+# ## 10 The Fourier Transform method
 # 
 # Fourier transforming a differential equation, such as the Schroedinger or diffusion equations often leads to a simpler equation in transformed space and one that can be solved easily. To get at the complete solution this equation has to be transformed back into 'real space' and even though this is now only involves an integral this can sometimes be tricky. If an analytic solution is not possible a numerical transform can be used.
 # 
@@ -341,7 +343,7 @@ plt.show()
 # 
 # $$\displaystyle \frac{\partial }{\partial t}f(x,t)=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^\infty \frac{\partial }{\partial t}f(k,t)e^{ikx}dk\tag{9-23e}$$
 # 
-# #### **(i) The Airy / Stokes equation**
+# ### **(i) The Airy / Stokes equation**
 # 
 # The equation
 # 
@@ -367,7 +369,7 @@ plt.show()
 # 
 # This now has to be integrated at each $x$ and has the form of a standing wave and then an exponential decay, see figure 30a. The integration is numerically difficult because $k^3$ becomes very large and the function is oscillatory about zero. The integral with $c=1$ is called an _Airy function of the first kind_ $Ai(x)$ and is usually included as a special function in most computer languages. This is the solution when $y\to 0$ when $x\to\infty$, and there is a second Airy function solution to this equation in the limit that $y\to\infty$ (called $Bi(x)$) but we shall not be interested in this case.
 
-# #### **(ii)  The Schroedinger equation for a particle in a gravitational potential: $V(x)\sim x$** 
+# ### **(ii)  The Schroedinger equation for a particle in a gravitational potential: $V(x)\sim x$** 
 # 
 # $$\displaystyle -\frac{\hbar^2}{2m}\frac{d^2\psi}{dx^2}+V(x)\psi=E\psi$$
 # 
@@ -439,7 +441,7 @@ plt.show()
 # Figure 30c. Average motion of the wavepacket in figure 30b made with quantum numbers shown ($5,6$) vs time. The period is shown between vertical lines is the same as the wavepacket period.
 # _______
 
-# #### **(iii) Time dependent Schroedinger equation for a 2D square well**
+# ### **(iii) Time dependent Schroedinger equation for a 2D square well**
 # 
 # A particle is trapped in a 2D square well of infinite depth. The boundary conditions are $\psi(x)=0$ at $x=0,L,y=0,L$ and the potential in the well is zero.  The time dependent Schroedinger equation is
 # 
@@ -482,7 +484,7 @@ plt.show()
 # where $N$ is normalisation term $N^2\int \int \psi^*\psi dxdy = 1$. 
 # 
 
-# #### **(iv) Diffusion equation**
+# ### **(iv) Diffusion equation**
 # 
 # The diffusion equation of a molecule in solution at concentration $c$ at time $t$ and position $x$ is given by Fick's second law
 # 
@@ -563,7 +565,7 @@ plt.show()
 # Figure 30e. Population as an initial comb of top-hat regions (grey) and the effect of diffusion at the times shown assuming a diffusion coefficient of $D=10\cdot 10^{-6}\, \mathrm{cm^2\,s^{-1}}$. The horizontal axis is in $\mu m$.
 # _______
 # 
-# #### **Transient Grating Experiments**
+# ### **Transient Grating Experiments**
 # 
 # If a pump laser is split into two equal parts and recombined in a solution containing chromophores a set of fringes of the excited state molecules, sometimes called a population density grating (figure 30f), will be produced. If the solvent only is used a refractive index grating can be produced and probed in a similar way. The transient grating can diffract a probe laser. 
 # 

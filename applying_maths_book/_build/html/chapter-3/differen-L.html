@@ -4,11 +4,13 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Partial differentiation &#8212; Applying Maths in the Chemical &amp; Biomolecular Sciences</title>
     
-  <link href="../_static/css/theme.css" rel="stylesheet">
-  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,40 +20,39 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Questions 93-114" href="differen-M-Q-93-114.html" />
@@ -63,7 +64,21 @@
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -72,9 +87,10 @@
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -92,14 +108,15 @@
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../intro.html">
-   Applying Maths in the Chemical and Biomolecular Sciences.
-  </a>
- </li>
-</ul>
-<ul class="current nav bd-sidenav">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Applying Maths in the Chemical and Biomolecular Sciences.
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../chapter-1/chapter1-intro.html">
    1. Numbers, Equations, Operators, and Algorithms.
@@ -204,11 +221,6 @@
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-2/chapter2-Q-10-13.html">
      Questions 10 -13
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-2/chapter2-C.html">
-     Euler’s theorem, roots of unity, x-ray diffraction structure factor.
     </a>
    </li>
    <li class="toctree-l2">
@@ -337,7 +349,7 @@
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../chapter-4/integration-intro.html">
-   4. Integration.
+   4 Integration.
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
   <label for="toctree-checkbox-4">
@@ -377,7 +389,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-4/integration-D.html">
-     Calculating an Average Value.
+     Calculating an Average.
     </a>
    </li>
    <li class="toctree-l2">
@@ -407,7 +419,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-4/integration-G.html">
-     Calculating the energy of a chemical bond using molecular orbitals
+     Calculating the energy of a Chemical Bond using Molecular Orbitals
     </a>
    </li>
    <li class="toctree-l2">
@@ -688,7 +700,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-7/matrices-D.html">
-     Rotation matrices: moving molecules
+     Rotation matrices: moving molecules. Coordinate transform as rotation.
     </a>
    </li>
    <li class="toctree-l2">
@@ -757,23 +769,13 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-7/matrices-K.html">
-     Calculating a bond length using moments of inertia
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-7/matrices-Q61.html">
-     Question 61
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="../chapter-7/matrices-L.html">
      Principal axes for Moments of Inertia
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-7/matrices-Q62.html">
-     Question 62
+    <a class="reference internal" href="../chapter-7/matrices-Q61-62.html">
+     Question 61 - 62
     </a>
    </li>
    <li class="toctree-l2">
@@ -1004,7 +1006,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-G.html">
-     PDE examples continued
+     PDE Continued
     </a>
    </li>
    <li class="toctree-l2">
@@ -1096,7 +1098,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-11/num-methods-answers8-12.html">
-     Solutions Q8 - 12
+     Solutions Q 8 - 12
     </a>
    </li>
    <li class="toctree-l2">
@@ -1258,112 +1260,227 @@
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/chapter-3/differen-L.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/subblue/applying-maths-book"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/subblue/applying-maths-book/issues/new?title=Issue%20on%20page%20%2Fchapter-3/differen-L.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        
-    </div>
-</div>
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/subblue/applying-maths-book/main?urlpath=lab/tree/applying_maths_book/chapter-3/differen-L.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        <a class="colab-button" href="https://colab.research.google.com/github/subblue/applying-maths-book/blob/main/applying_maths_book/chapter-3/differen-L.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
-                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
-                    src="../_static/images/logo_colab.png"
-                    alt="Interact on Colab">Colab</button></a>
-        
-        
-    </div>
-</div>
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/subblue/applying-maths-book/main?urlpath=lab/tree/applying_maths_book/chapter-3/differen-L.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://colab.research.google.com/github/subblue/applying-maths-book/blob/main/applying_maths_book/chapter-3/differen-L.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/subblue/applying-maths-book"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/subblue/applying-maths-book/issues/new?title=Issue%20on%20page%20%2Fchapter-3/differen-L.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/chapter-3/differen-L.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#differentiating-equations-in-more-than-one-variable">
    11.1 Differentiating equations in more than one variable
@@ -1432,17 +1549,101 @@
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Partial differentiation</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#differentiating-equations-in-more-than-one-variable">
+   11.1 Differentiating equations in more than one variable
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ideal-gas">
+     <strong>
+      ideal gas
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#van-der-waals-gas">
+     <strong>
+      van der Waals gas
+     </strong>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#geometrical-interpretation-of-partial-derivatives">
+   11.2 Geometrical interpretation of partial derivatives
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#mixed-derivatives">
+   11.3 Mixed derivatives
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#chain-rule">
+   11.4 Chain rule
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#use-in-thermodynamics-see-also-section-11-8">
+   11.5 Use in Thermodynamics ( see also section 11.8 )
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#reciprocal-derivatives">
+   11.6 Reciprocal derivatives
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#total-derivatives">
+   11.7 Total derivatives
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-minus-1-rule-or-euler-s-chain-rule">
+   11.8 The ‘minus 1’ rule or Euler’s Chain Rule
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#partial-derivatives-in-thermodynamics">
+   11.9 Partial Derivatives in Thermodynamics
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exact-and-non-exact-differentials-and-state-functions-pfaffians">
+   11.10 Exact and non-exact differentials and state functions. Pfaffians.
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
               <div>
                 
-  <div class="section" id="partial-differentiation">
-<h1>Partial differentiation<a class="headerlink" href="#partial-differentiation" title="Permalink to this headline">¶</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="partial-differentiation">
+<h1>Partial differentiation<a class="headerlink" href="#partial-differentiation" title="Permalink to this headline">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import all python add-ons etc that will be needed later on</span>
@@ -1456,16 +1657,16 @@
 </div>
 </div>
 </div>
-<div class="section" id="differentiating-equations-in-more-than-one-variable">
-<h2>11.1 Differentiating equations in more than one variable<a class="headerlink" href="#differentiating-equations-in-more-than-one-variable" title="Permalink to this headline">¶</a></h2>
+<section id="differentiating-equations-in-more-than-one-variable">
+<h2>11.1 Differentiating equations in more than one variable<a class="headerlink" href="#differentiating-equations-in-more-than-one-variable" title="Permalink to this headline">#</a></h2>
 <p>When an equation depends on more than one variable, <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> perhaps, then it is possible to differentiate with respect to either <span class="math notranslate nohighlight">\(x\)</span> or <span class="math notranslate nohighlight">\(y\)</span> while keeping the other constant. The normal rules of differentiation apply; the only change is that the notation is a little different with a curly <span class="math notranslate nohighlight">\(\partial\)</span> being used instead of a Roman <span class="math notranslate nohighlight">\(d\)</span> and a subscript is used to indicate which variable is held constant. If the function will allow it, second and third partial derivatives can be calculated.</p>
 <p>Suppose that <span class="math notranslate nohighlight">\(z = x^2y + y^3(x + 1)\)</span>, then the <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> partial derivatives are</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \left(\frac{\partial y}{\partial x} \right)_y = 2xy+y^3, \qquad  \left(\frac{\partial y}{\partial y} \right)_x=x^2+3y^2(x+1)\]</div>
 <p>The second partial derivatives are <span class="math notranslate nohighlight">\(\displaystyle \left(\frac{\partial^2 y}{\partial x^2} \right)_y=2y,\quad \left(\frac{\partial^2 y}{\partial y^2} \right)_x =6y(x+1)\)</span>.</p>
 <p>As a second example <span class="math notranslate nohighlight">\((\partial y/\partial x)_z\)</span> is calculated where <span class="math notranslate nohighlight">\((y + 1/z^2)(z - 1) = 3x\)</span>. Since it is indicated by the subscript that <span class="math notranslate nohighlight">\(z\)</span> is a constant, differentiating gives <span class="math notranslate nohighlight">\(\displaystyle (z-1)\left(\frac{\partial y}{\partial x}  \right)_z=3\)</span>.</p>
-<div class="section" id="ideal-gas">
-<h3><strong>ideal gas</strong><a class="headerlink" href="#ideal-gas" title="Permalink to this headline">¶</a></h3>
+<section id="ideal-gas">
+<h3><strong>ideal gas</strong><a class="headerlink" href="#ideal-gas" title="Permalink to this headline">#</a></h3>
 <p>Differentiating the pressure in the ideal gas law <span class="math notranslate nohighlight">\(p = nRT/V\)</span> to obtain the rate of change with respect to temperature is expressed as <span class="math notranslate nohighlight">\((\partial p/\partial T)_{n,V}\)</span> if the number of moles, <span class="math notranslate nohighlight">\(n\)</span>, and volume are held constant. The result is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \left( \frac{\partial p}{\partial T} \right)_{n,V}= \frac{nR}{V}\]</div>
@@ -1479,9 +1680,9 @@
 <div class="math notranslate nohighlight">
 \[\displaystyle \left( \frac{\partial^2 p}{\partial V^2} \right)_{n,T}= 2\frac{nRT}{V^3}\]</div>
 <p>is not zero. The other two derivatives are constants, <span class="math notranslate nohighlight">\(\displaystyle  \left(  \frac{\partial}{\partial T}\left(\frac{\partial}{\partial T} \frac{nR}{V}   \right)  \right)_{n,V} = \left( \frac{\partial^2 p}{\partial V^2}  \right)_{n,V} = 0 \)</span>.</p>
-</div>
-<div class="section" id="van-der-waals-gas">
-<h3><strong>van der Waals gas</strong><a class="headerlink" href="#van-der-waals-gas" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="van-der-waals-gas">
+<h3><strong>van der Waals gas</strong><a class="headerlink" href="#van-der-waals-gas" title="Permalink to this headline">#</a></h3>
 <p>The van der Waals equation which, although empirical, describes real gases more accurately than does the ideal gas law. The equation is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \left(p + \frac{a}{V^2}\right)\left(V - b\right) = RT\]</div>
@@ -1491,10 +1692,10 @@
 <p>Now find <span class="math notranslate nohighlight">\((\partial p/\partial V)_T\)</span>. Differentiating with respect to <span class="math notranslate nohighlight">\(V\)</span> at constant <span class="math notranslate nohighlight">\(T\)</span> is easier if the equation is expanded first as <span class="math notranslate nohighlight">\(\displaystyle p(V-b)=-\frac{a}{V}+\frac{ab}{V^2}+RT\)</span>, then differentiating as a product produces,</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \left( \frac{\partial p}{\partial V} \right)_T(V-b)+p=\frac{a}{V^2}-2\frac{ab}{V^3}\]</div>
-</div>
-</div>
-<div class="section" id="geometrical-interpretation-of-partial-derivatives">
-<h2>11.2 Geometrical interpretation of partial derivatives<a class="headerlink" href="#geometrical-interpretation-of-partial-derivatives" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="geometrical-interpretation-of-partial-derivatives">
+<h2>11.2 Geometrical interpretation of partial derivatives<a class="headerlink" href="#geometrical-interpretation-of-partial-derivatives" title="Permalink to this headline">#</a></h2>
 <p>If a function can be differentiated with respect to either of two variables, <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span>, then it represents a surface. The derivatives then represent the <em>slope of the surface</em> at any point but in a direction at a fixed <span class="math notranslate nohighlight">\(x\)</span> or <span class="math notranslate nohighlight">\(y\)</span> depending on which is held constant.</p>
 <p>The Sackur - Tetrode equation for the translational entropy <span class="math notranslate nohighlight">\(S\)</span> of a perfect gas is</p>
 <div class="math notranslate nohighlight">
@@ -1545,18 +1746,18 @@
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Temp  V1        V2  dm^3/mol
 360  0.196093  0.568952 
 362  0.198959  0.550496 
+364  0.202042  0.532266 
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>364  0.202042  0.532266 
-366  0.205378  0.514211 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>366  0.205378  0.514211 
 368  0.209012  0.496269 
 </pre></div>
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="mixed-derivatives">
-<h2>11.3 Mixed derivatives<a class="headerlink" href="#mixed-derivatives" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="mixed-derivatives">
+<h2>11.3 Mixed derivatives<a class="headerlink" href="#mixed-derivatives" title="Permalink to this headline">#</a></h2>
 <p>The new feature of partial differentiation is that it is possible to differentiate with one variable then do so again with another.</p>
 <p>Using the first example, where <span class="math notranslate nohighlight">\(z = x^2y + y^3(x + 1)\)</span>, and differentiating <span class="math notranslate nohighlight">\((\partial z/\partial x)_y = 2xy + y^3\)</span> with <span class="math notranslate nohighlight">\(y\)</span> produces</p>
 <div class="math notranslate nohighlight">
@@ -1575,9 +1776,9 @@
 <div class="math notranslate nohighlight">
 \[\displaystyle \left( \frac{\partial^2 p}{\partial V\partial T} \right)_{n}=-\frac{nR}{V^2}\]</div>
 <p>Repeating the process but in the opposite order gives <span class="math notranslate nohighlight">\(\displaystyle \left( \frac{\partial^2 p}{\partial T\partial V} \right)_{n}=-\frac{nR}{V^2}\)</span>.</p>
-</div>
-<div class="section" id="chain-rule">
-<h2>11.4 Chain rule<a class="headerlink" href="#chain-rule" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="chain-rule">
+<h2>11.4 Chain rule<a class="headerlink" href="#chain-rule" title="Permalink to this headline">#</a></h2>
 <p>The chain rule can also be used with partial derivatives. If <span class="math notranslate nohighlight">\(w\)</span> is some complicated expression in <span class="math notranslate nohighlight">\(x,\; y\)</span> and <span class="math notranslate nohighlight">\(z\)</span> the familiar function-of-function rule can be used to calculate for example, <span class="math notranslate nohighlight">\((\partial y/\partial x)_z\)</span> with <span class="math notranslate nohighlight">\(z\)</span> held constant. The result is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \left( \frac{\partial y}{\partial x} \right)_z= \left( \frac{\partial y}{\partial w} \right)_z \left(\frac{\partial w}{\partial x}  \right)_z\]</div>
@@ -1587,9 +1788,9 @@
 <p>where <span class="math notranslate nohighlight">\(\displaystyle \left( \frac{\partial y}{\partial w} \right)_z = \cos(azx^2+z^2)\)</span>. The other derivative is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle  \left( \frac{\partial y}{\partial z} \right)_x = \cos(azx^2+z^2)(ax^2+2z)\]</div>
-</div>
-<div class="section" id="use-in-thermodynamics-see-also-section-11-8">
-<h2>11.5 Use in Thermodynamics ( see also section 11.8 )<a class="headerlink" href="#use-in-thermodynamics-see-also-section-11-8" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="use-in-thermodynamics-see-also-section-11-8">
+<h2>11.5 Use in Thermodynamics ( see also section 11.8 )<a class="headerlink" href="#use-in-thermodynamics-see-also-section-11-8" title="Permalink to this headline">#</a></h2>
 <p>In thermodynamics, the chain rule is very often used to expand an expression in a new variable <span class="math notranslate nohighlight">\(w\)</span> and this proves to be very useful. The reason for doing this is to change an unfamiliar derivative into two expressions each of which is related to something that can be measured.</p>
 <p>For example, suppose that the change in enthalpy with temperature at constant pressure is required this is <span class="math notranslate nohighlight">\((\partial H/\partial T)_p\)</span>, and is the constant pressure heat capacity <span class="math notranslate nohighlight">\(C_p\)</span>, but, for the moment, assume that we do not know this. To find out what this derivative is, expand it in some other thermodynamic variable, entropy for example, then</p>
 <div class="math notranslate nohighlight">
@@ -1602,16 +1803,16 @@
 <div class="math notranslate nohighlight">
 \[\displaystyle S=\int\frac{C_p}{T}dT\]</div>
 <p>at constant pressure, by measuring the heat capacity vs. temperature.</p>
-</div>
-<div class="section" id="reciprocal-derivatives">
-<h2>11.6 Reciprocal derivatives<a class="headerlink" href="#reciprocal-derivatives" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="reciprocal-derivatives">
+<h2>11.6 Reciprocal derivatives<a class="headerlink" href="#reciprocal-derivatives" title="Permalink to this headline">#</a></h2>
 <p>Reciprocal derivatives follow the same rules as for normal differentiation: take the reciprocal and flip the derivative, with a function <span class="math notranslate nohighlight">\(y\)</span> in <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(z\)</span></p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \left(\frac{\partial x}{\partial y}  \right)_z=1\bigg/\left(\frac{\partial y }{\partial x} \right)_z \tag{40}\]</div>
 <p>For example if <span class="math notranslate nohighlight">\(y = azx^2 + z^2\)</span> then differentiating with respect to <span class="math notranslate nohighlight">\(x\)</span> produces <span class="math notranslate nohighlight">\(\displaystyle \left( \frac{\partial y}{\partial x}\right)_z = 2azx\)</span> and differentiating with <span class="math notranslate nohighlight">\(y\)</span> produces <span class="math notranslate nohighlight">\(\displaystyle 1=2azx\left(\frac{\partial x}{\partial y}  \right)_z\)</span> which proves (40).</p>
-</div>
-<div class="section" id="total-derivatives">
-<h2>11.7 Total derivatives<a class="headerlink" href="#total-derivatives" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="total-derivatives">
+<h2>11.7 Total derivatives<a class="headerlink" href="#total-derivatives" title="Permalink to this headline">#</a></h2>
 <p>Total derivatives are probably used in thermodynamics more than elsewhere. It is common to see expressions such as</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle dp=\left(  \frac{\partial p}{\partial T} \right)_VdT  + \left(  \frac{\partial p}{\partial V} \right)_TdV  \tag{41}\]</div>
@@ -1633,9 +1834,9 @@
 <p>and again notice the symmetry in the expression. This derivation is quite general: if a function <span class="math notranslate nohighlight">\(f\)</span> depends on variables <span class="math notranslate nohighlight">\(g\)</span> and <span class="math notranslate nohighlight">\(h\)</span>, i.e. <span class="math notranslate nohighlight">\(f(g, h)\)</span>, then it is always possible to write;</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle df=\left( \frac{\partial f}{\partial g} \right)_h dg + \left( \frac{\partial f}{\partial h} \right)_g dh \tag{43}\]</div>
-</div>
-<div class="section" id="the-minus-1-rule-or-euler-s-chain-rule">
-<h2>11.8 The ‘minus 1’ rule or Euler’s Chain Rule<a class="headerlink" href="#the-minus-1-rule-or-euler-s-chain-rule" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="the-minus-1-rule-or-euler-s-chain-rule">
+<h2>11.8 The ‘minus 1’ rule or Euler’s Chain Rule<a class="headerlink" href="#the-minus-1-rule-or-euler-s-chain-rule" title="Permalink to this headline">#</a></h2>
 <p>Euler’s chain rule is a product of three derivatives that is very useful in thermodynamics and elsewhere. The pressure of a gas can be written as a function of temperature and pressure, <span class="math notranslate nohighlight">\(p = f(T,V)\)</span>. This can be expanded as a total derivative, equation (41), and if the pressure is kept constant <span class="math notranslate nohighlight">\(dp = 0\)</span> then</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \left(\frac{\partial p}{\partial T} \right)_VdT + \left( \frac{\partial p}{\partial V} \right)_TdV=0\]</div>
@@ -1662,9 +1863,9 @@
 <div class="math notranslate nohighlight">
 \[\displaystyle \left(\frac{\partial V }{\partial T}\right)_{p}=-\frac{\left(\frac{\partial f }{\partial T}\right)\left(\frac{\partial p }{\partial f}\right) }{\left(\frac{\partial f }{\partial V}\right)\left(\frac{\partial p }{\partial f}\right)}=-\left(\frac{\partial p }{\partial T}\right)_V / \left(\frac{\partial p }{\partial V}\right)_T\]</div>
 <p>which is equivalent to equation (44) but arrived at in a different way.</p>
-</div>
-<div class="section" id="partial-derivatives-in-thermodynamics">
-<h2>11.9 Partial Derivatives in Thermodynamics<a class="headerlink" href="#partial-derivatives-in-thermodynamics" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="partial-derivatives-in-thermodynamics">
+<h2>11.9 Partial Derivatives in Thermodynamics<a class="headerlink" href="#partial-derivatives-in-thermodynamics" title="Permalink to this headline">#</a></h2>
 <p>In the study of thermodynamics, partial, mixed, and total derivatives are commonly used; this adds to the complexity of the subject, particularly if these appear to be ‘pulled out of fresh air’. Understanding how these relationships are produced really helps in understanding thermodynamics as it removes the mathematical burden, allowing the subject itself to be better understood. To this end, the parameters used in chemistry are <span class="math notranslate nohighlight">\(p,\; V,\; A,\; T,\; H,\; U, \;G,\; S\)</span> and each one depends upon the others. Besides <span class="math notranslate nohighlight">\(p,\; V,\; T\)</span> and <span class="math notranslate nohighlight">\(S\)</span>, the other parameters used are <span class="math notranslate nohighlight">\(U\)</span> the internal energy, <span class="math notranslate nohighlight">\(H\)</span> the enthalpy, <span class="math notranslate nohighlight">\(G\)</span> the Gibbs free energy and <span class="math notranslate nohighlight">\(A\)</span> the Helmholtz free energy.</p>
 <p>When one quantity is to be determined, for instance the entropy <span class="math notranslate nohighlight">\(S\)</span>, then it is defined provided it can be calculated as a function of <em>any other two parameters</em>. The two parameters chosen are normally determined by what can be measured experimentally; however, it can be shown that there are natural variables for each parameter; for the internal energy <span class="math notranslate nohighlight">\(U\)</span> these are volume <span class="math notranslate nohighlight">\(V\)</span> and entropy <span class="math notranslate nohighlight">\(S\)</span>. The defining equations for <span class="math notranslate nohighlight">\(H, \;U,\; G\)</span>, and <span class="math notranslate nohighlight">\(A\)</span> in terms of natural variables are shown in table 1. When constructing equations involving thermodynamic derivatives as a rule of thumb, <span class="math notranslate nohighlight">\('x'\)</span> values are usually <span class="math notranslate nohighlight">\(T,\; V,\; p\)</span>, and <span class="math notranslate nohighlight">\(S\)</span> and <span class="math notranslate nohighlight">\('y'\)</span> values <span class="math notranslate nohighlight">\(H,\; U,\; G,\; S\)</span>, and <span class="math notranslate nohighlight">\(A\)</span>.</p>
 <p>As an <em>aide memoir</em>, the diagram below the table can be used to remember these equations. It is first necessary to remember the phrase ‘Good Pupils Have Studied Under Very Able Teachers’ with the first letter being the thermodynamic quantity. The rule is that to calculate <span class="math notranslate nohighlight">\(dG,\;dH,\;dU\)</span> or <span class="math notranslate nohighlight">\(dA\)</span> move to the two closest symbols and add + before the symbol if the move is to the right or up and negative otherwise. The other symbols are added according to the normal pairs. An example makes this clearer. To calculate <span class="math notranslate nohighlight">\(dA\)</span> start with <span class="math notranslate nohighlight">\(dA= -?dV -?dT\)</span> then as variables are always in pairs <span class="math notranslate nohighlight">\(p:V\)</span>, <span class="math notranslate nohighlight">\(S:T\)</span> etc., then <span class="math notranslate nohighlight">\(dA=-pdV-SdT\)</span></p>
@@ -1691,9 +1892,9 @@
 <p>and then derivatives with temperature</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \left(\frac{dG}{dT}  \right)_p=-S, \qquad  \left(\frac{dA}{dT}  \right)_V=-S\]</div>
-</div>
-<div class="section" id="exact-and-non-exact-differentials-and-state-functions-pfaffians">
-<h2>11.10 Exact and non-exact differentials and state functions. Pfaffians.<a class="headerlink" href="#exact-and-non-exact-differentials-and-state-functions-pfaffians" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="exact-and-non-exact-differentials-and-state-functions-pfaffians">
+<h2>11.10 Exact and non-exact differentials and state functions. Pfaffians.<a class="headerlink" href="#exact-and-non-exact-differentials-and-state-functions-pfaffians" title="Permalink to this headline">#</a></h2>
 <p>In an adiabatic change, no heat enters or leaves the thermodynamic system. The first law therefore asserts that</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle dQ = dU + pdV = 0 \tag{45}\]</div>
@@ -1741,8 +1942,8 @@
 <div class="math notranslate nohighlight">
 \[\displaystyle \left(\frac{\partial U}{\partial V}\right)_T=T\left(\frac{\partial p }{\partial T}\right)_V-p  \tag{50}\]</div>
 <p>which must be true if we believe that the original differential is exact. To confirm that this is the case, consider an ideal gas where the internal energy depends only on the temperature, then <span class="math notranslate nohighlight">\(dU/dV = 0\)</span>, and as <span class="math notranslate nohighlight">\(pV = nRT\)</span>, then <span class="math notranslate nohighlight">\(\displaystyle \left( \frac{\partial p}{\partial T}\right)_V=\frac{nR}{V}\)</span>. As a check, substituting into equation (50) gives <span class="math notranslate nohighlight">\(\displaystyle 0=\frac{nRT}{V}-\frac{nRT}{V}\)</span> which shows that equation (50) is correct and so is (49).</p>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -1766,9 +1967,11 @@
 
               </div>
               
-        
-            <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="differen-K-Q-86-92.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -1784,26 +1987,28 @@
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-        
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-    <div class="container">
-      <p>
-        
-          By Godfrey Beddard<br/>
-        
-            &copy; Copyright 2022.<br/>
-      </p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Godfrey Beddard<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
     </div>
-  </footer>
-</main>
+    
+</div>
 
 
       </div>
     </div>
   
-  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>

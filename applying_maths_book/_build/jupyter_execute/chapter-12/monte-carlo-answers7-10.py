@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## Solutions Q7 - 10
+# # Solutions Q7 - 10
 
 # In[1]:
 
@@ -14,7 +14,7 @@ init_printing()                      # allows printing of SymPy results in types
 plt.rcParams.update({'font.size': 16})  # set font size for plots
 
 
-# ### Q7 answer
+# ## Q7 answer
 # (a) The fluorescence lifetime is $\tau = 1/(1 \cdot 10^7 + 2 \cdot 10^8) =4.76$ ns. The yield is $\varphi =k_f/(k_f +k_{isc})=k_f\tau =0.0476$, which is very small. The triplet state rises at the same rate as the singlet decays, i.e. in $1/(4.76$ ns), not at the rate given by the intersystem crossing rate constant $2 \cdot 10^8\,\mathrm{ s^{-1}}$. It is important to appreciate this.
 # 
 # (b) Algorithm 5 needs slight modification. The rate constants are different and the timescale needs to be changed to $100$ ns, which is a guess, and may need to be changed later on. Because there are two reacting species, the excited state and the triplet, a check has to be made to make sure that the numbers in any of the states do not go below zero. Try the simulation with A0 = $1000$ initial molecules in nA and increase these numbers as necessary. Eventually, the number of triplet states becomes zero and the calculation must end when this occurs because there are no more molecules left to react. At this point, the number in the ground state is equal to the initial number, and this is checked for in the 'while nG $\lt$ A0 do:' step at the beginning of the loop.
@@ -90,7 +90,7 @@ while indx < bins and nG < A0 :   # check no negative counts
 # plot time vs A , T and G populations
 
 
-# ### Q8 answer
+# ## Q8 answer
 # Modify the code for question 7. After setting the initial values inside the loop, the following changes can be made to account for the filling of state $T$. The value of $k_{isc}$ as it changes, is now called knT.
 
 # In[3]:
@@ -117,7 +117,7 @@ while indx < bins and nA > 0:
 # Figure 32. $\log_{10}$ of the number of counts in the fluorescence signal (A), with the number of particles on the state T being restricted, and (B), with no restriction, giving the decay $\exp(-(k_f + k_{isc})t )$. The dotted line following the data has a lifetime of $1/k_f = 100$ ns, and the fluorescence reaches this value when state T is full.
 # _____
 # 
-# ### Q9 answer
+# ## Q9 answer
 # The following modification to the Gillespie algorithm could be used. The whole calculation will need to be repeated, say, 100 times and the results averaged. This is because of the small number of individuals who could catch the disease and hence only a small number of trials are possible. 
 # 
 # The average of the profiles calculated follows the expected pattern, although each time the calculation is done, it is a little different because of its random nature. The infected numbers rise and then fall; those susceptible to infection fall as they become infected and then immune, and enter the R or removed group.
@@ -163,7 +163,7 @@ while indx < bins :
 # Figure 33.  A Monte Carlo calculation of susceptible (S) and infected (I ) population in an S-I-R infection. The parameters used are given in the question and are $ k_2 = 2.18\cdot 10^{-3},\; k_1 = 0.452, \; S_0 = 762, \; I_0 = 1$.
 # ____
 # 
-# ### Q10 answer
+# ## Q10 answer
 # Modifying algorithm in the text produces the following:
 
 # In[5]:

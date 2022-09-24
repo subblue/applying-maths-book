@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## Solutions Q25 - 32
+# # Solutions Q25 - 32
 
 # In[1]:
 
@@ -15,7 +15,7 @@ init_printing()                      # allows printing of SymPy results in types
 plt.rcParams.update({'font.size': 16})  # set font size for plots
 
 
-# ### Q25 answer
+# ## Q25 answer
 # (a) The vector $\vec a$ and its projections onto the $x$- and $y$-axes are shown in figure 68. If $\boldsymbol i$ and $\boldsymbol j$ are unit vectors along the $x$- and $y$-axes, and as $\vec a$ is described in the question as a unit vector, its length must be $| \vec a | = 1$.
 # 
 # By definition, vector $\vec a$ has components which are multiples of the base vectors $\boldsymbol i$ and  $\boldsymbol j$, and is therefore,
@@ -53,7 +53,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # $$\displaystyle \vec a\cdot\vec b= \begin{bmatrix}\cos(\alpha)& \sin(\alpha)\end{bmatrix}\begin{bmatrix}\cos(\beta)\\ \sin(\beta)\end{bmatrix}=\cos(\alpha)\cos(\beta) + \sin(\alpha)\sin(\beta)$$
 # 
-# ### Q26 answer
+# ## Q26 answer
 # (a) Adding together base vectors to form the $x$ and $y$ orbitals, and forming the dot product in matrix vector form, gives
 # 
 # $$\displaystyle \vec \psi_{2p_x}\cdot \vec \psi_{2p_y}=\frac{1}{2}\begin{bmatrix}0&1&1\end{bmatrix} \begin{bmatrix} 0\\-1\\1\end{bmatrix} = 0$$
@@ -111,12 +111,12 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # and the same integration occurs for $p{-1}$ as the $\varphi$ term disappears with the complex conjugate. The $\theta$ integral can be simplified by converting to the exponential form, or by using $\sin^3(\theta) = (3\sin(\theta) - \sin(3\theta))/4$.
 
-# ### Q27 answer
+# ## Q27 answer
 # (a) The dot product is $\displaystyle\begin{bmatrix} 1&1&1&1\end{bmatrix}\begin{bmatrix} 1\\1\\-1\\-1\end{bmatrix}=0$ that the vectors are orthogonal.
 # 
 # (b) The $s$ orbital has spherical symmetry; the dot product of the $p$ orbitals is $\displaystyle \frac{1}{3}\begin{bmatrix} 1&1&1\end{bmatrix}\begin{bmatrix} 1\\-1\\-1\end{bmatrix}=-\frac{1}{3}$ where the $3$ normalises.  From this result $\cos(\theta) = -1/3$, making the angle $109.47^\text{o}$.
 # 
-# ### Q28 answer
+# ## Q28 answer
 # In this example, the s-orbital $\psi_s$ is spherically symmetric and cannot affect in which direction the hybrid orbitals point and we need not include it in the calculation. Comparing the orbital coefficients $b=-1/\sqrt{6},\quad c=\sqrt{3}/\sqrt{ 6}=1/\sqrt{2};\quad d=0$ because there is no $\psi_{p_z}$ wavefunction included in $\psi_1$, and for $\psi_2$, $b=-1/\sqrt{6},\quad c=-1/\sqrt{2};\quad d=0$.
 # 
 # With these coefficients, two vectors can be made, 
@@ -154,7 +154,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # \hline\end{array}$$
 # 
 # 
-# ### Q29 answer
+# ## Q29 answer
 # (a) The body-centred cell: assuming,for simplicity,that the cube has length $1$, then by inspecting the body-centred cube the vectors to the points are
 # 
 # $$ \displaystyle \begin{align}\vec{oa} =& \boldsymbol i/2 + \boldsymbol j/2 + \boldsymbol k/2, \quad \vec{ob}  = k,\quad \vec{oc} = \boldsymbol i\\
@@ -210,21 +210,21 @@ print('{:s}{:8.2f}{:s}'.format('angle ab-ad ',get_angle(ab,ad) ,' degrees') )
 print('{:s}{:8.2f}{:s}'.format('angle ab-ae ',get_angle(ab,ae) ,' degrees') )
 
 
-# ### Q30 answer
+# ## Q30 answer
 # Starting with the definition $\vec v = |\vec v|(\cos(\alpha)\;\boldsymbol i + \cos(\beta)\;\boldsymbol j+ \cos(\gamma)\;\boldsymbol k)$, 
 # 
 # the dot product of $\vec v$ with itself is $\vec v\cdot\vec v = |\vec v|^2(\cos^2(\alpha) + \cos^2(\beta) + \cos^2(\gamma))$ 
 # 
 # where the rules $\boldsymbol i\cdot\;\boldsymbol i = 1$, and $\boldsymbol i\cdot\;\boldsymbol j = 0$ and so forth, were used. However, a vector is parallel to itself, therefore by definition, $\vec v\cdot\vec v = |\vec v |^2\cos(0)$ and as $\cos(0) = 1$ then $\cos^2(\alpha) + \cos^2(\beta) + \cos^2(\gamma) = 1$.
 # 
-# ### Q31 answer
+# ## Q31 answer
 # (a) $\vec A+\vec B=2\;\boldsymbol i+2\;\boldsymbol j+6\;\boldsymbol k$,  $|\vec A|=\sqrt{3}$, $|\vec B|= \sqrt{35}$,  $\vec A\cdot\vec B=3$,  $\cos(\theta)=\sqrt{3/35}$.
 # 
 # (b) $\vec A+\vec B=5\;\boldsymbol i- 4\;\boldsymbol j+7\;\boldsymbol k$,  $|\vec A|=\sqrt{26}$,  $|\vec B|=\sqrt{38}$,  $\vec A\cdot\vec B=13$,  $\cos(\theta) = 13/\sqrt{26\cdot 38} = 0.4135$.
 # 
 # (c) $\vec A+\vec B=2\;\boldsymbol i+\;\boldsymbol j+\;\boldsymbol k$,  $|\vec A|=|\vec B|\sqrt{2}$,  $\vec A\cdot\vec B=1$,  $\cos(\theta)=1/2$.
 # 
-# ### Q32 answer
+# ## Q32 answer
 # Assume ideal geometries for the molecules,and use symmetry where possible to simplify the calculation, and then add all the vectorial components together. The resultant dipole could point in any direction, so it is necessary to define axes on the molecules, and calculate dipoles along each axis and then form the total. This definition based on symmetry, is effectively a principal axes transformation; see Chapter 7.13.8.
 # 
 # (a) This molecule is flat,and if the $z-y$ plane is chosen to be the plane of the molecule, there is no z component. In benzene derivatives, each bond dipole is at $60^\text{o}$ to the next one. If one chlorine atom is at position 1, the angle to the other atom in position 3, is $120^\text{o}$. Drawing the molecule, shows that if atom 2 is along the y-axis, the molecule has $C_{2V}$ symmetry (has two mirror planes and a $C_2$ rotation axis) about this axis, which means that only half the bond dipoles need to be calculated, the total being twice this sum.

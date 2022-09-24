@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## Solutions Q 1-11
+# # Solutions Q 1-11
 
 # In[1]:
 
@@ -15,7 +15,7 @@ init_printing()            # allows printing of SymPy results in typeset maths f
 plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 
-# ### Q1 answer
+# ## Q1 answer
 # Rearranging the equation produces $V=1000/p $ and then a new function for the increased volume is produced by adding the small quantities $\delta V$ and 
 # 
 # $$\displaystyle \delta p, \;(V + \delta V) = \frac{1000}{ p + \delta p}$$
@@ -26,7 +26,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # The change in volume when the pressure changes from $1 \to 1.1$ bar is $-1000 \cdot 0.1/1.1 = -90.91\,\mathrm{ m^3}$ and is negative because the pressure has increased.
 # 
-# ### Q2 answer
+# ## Q2 answer
 # (a) The new frequency is lower when $μ$ is increased, because $\nu$ and $\mu$ are in a reciprocal relationship. Therefore 
 # 
 # $$\displaystyle \nu- \delta \nu=\frac{1}{2\pi}\sqrt{\frac{k}{\mu+\delta\mu}}$$
@@ -61,7 +61,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # The problem could perhaps more usefully have been posed the opposite way round; by knowing that the resolution of a spectrometer is $\nu \pm \delta \nu$ will it be possible to observe a line from two isotopic species whose mass differ by $1$%?
 # 
-# ### Q3 answer
+# ## Q3 answer
 # The change in volume is $\displaystyle V-V_0 =\delta V = V_0\beta \delta T $
 # 
 # and so the change in length of the column of liquid is $\displaystyle \delta L =\frac{V_0}{\pi r^2}\beta\delta T$
@@ -72,7 +72,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # With Hg this corresponds to a sensitivity of $16\,\mathrm{ mm\, K^{-1}}$ and with ethanol $95.5\,\mathrm{ mm\, K^{-1}}$. A fine capillary over a bulb of mercury is used in medical thermometers to make the readings very sensitive around body temperature. The capillary is so thin that violent shaking of the thermometer is necessary to overcome the capillary forces to return the mercury to its reservoir after use.
 # 
-# ### Q4 answer
+# ## Q4 answer
 # 
 # $\displaystyle \begin{array}{lll}\\
 # \hline
@@ -93,7 +93,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # The identity $\cos(ax) = \sin(ax + n\pi/2)$ is now needed and this changes the odd numbered results into sines, for example $d^5y/dx^5 = a^5 \sin(ax + 5\pi/2)$. The result follows by inspection $d^ny/dx^n = a^n \sin(ax + n\pi/2)$ with $n \ge$ 1.
 # 
-# ### Q5
+# ## Q5
 # Using the rules for differentiating $x^n$, start by differentiating once, twice, and so on to obtain
 # 
 # $$\displaystyle \frac{d}{dx}x^n=nx^{n-1},\quad \frac{d^2}{dx^n}x^n=n(n-1)x^{n-2},\quad \frac{d^3}{dx^3}x^n=n(n-1)(n-2)x^{n-3}$$
@@ -124,14 +124,14 @@ factor(ans)
 print(ans.subs(n,5),factorial(5) )  # substitute into ans and check answer is a factorial
 
 
-# ### Q6 answer
+# ## Q6 answer
 # As $\displaystyle \frac{dy}{dx}=-ae^{-ax}=-ay,\; \frac{d^2y}{dx^2}=a^2e^{-ax}=a^2y,\; \frac{d^3y}{dx^3}=-a^3y $
 # 
 # by induction the $n^{th}$ term is going to be $\displaystyle \frac{d^ny}{dx^n}=(-1)^na^ny$,
 # 
 # where $(-1)^n$ makes the sign of the differential negative for odd $n$ and positive for even $n$; for example $(-1)^{(-1)} = 1$.
 # 
-# ### Q7 answer
+# ## Q7 answer
 # (a) As $pV=nRT$ for $n$ moles of gas, then $p=nRT/V$. Differentiating with respect to $V$ produces 
 # 
 # $$\displaystyle \frac{dp}{dV}=-\frac{nRT}{V^2}$$
@@ -144,10 +144,10 @@ print(ans.subs(n,5),factorial(5) )  # substitute into ans and check answer is a 
 # 
 # This latter result is in fact quite general and $\displaystyle \frac{dy}{dx}=\left( \frac{dx}{dy}\right)^{-1}$.
 # 
-# ### Q8 answer
+# ## Q8 answer
 # Velocity is distance travelled per unit of time and therefore differentiating with respect to time produces the velocity at time $t$, $\displaystyle \frac{ds}{dt}\equiv v=u+at$.Differentiating again, produces $d^2s/dt^2 = a$, so that $a$ must be the acceleration as this is defined as distance/time<sup>2</sup>.
 # 
-# ### Q9 answer
+# ## Q9 answer
 # (a) The first two derivatives with $t$ are 
 # 
 # $$\displaystyle \frac{dE}{dt}=i\omega Ae^{i(\omega t-kx+\varphi)}=i\omega E\qquad \frac{d^2E}{dt^2}=i\omega \frac{dE}{dt}= (i\omega)^2E$$
@@ -170,7 +170,7 @@ print(ans.subs(n,5),factorial(5) )  # substitute into ans and check answer is a 
 # 
 # $$\displaystyle \frac{d^nE}{dx^n}=(-ik)^n E \qquad \frac{d^nE}{dt^n}=(i\omega)^n E$$
 # 
-# ### Q10 answer
+# ## Q10 answer
 # (a) Starting with the first equation, simplifying, and using $d\ln(c) = dc/c $ gives 
 # 
 # $$\displaystyle D_F\frac{dc}{dx}=CD\frac{d\ln(c\gamma)}{dx}=cD\left[\frac{d\ln(c)}{dx}+\frac{d\ln(\gamma)}{dx} \right] =D\frac{dc}{dx}+cD\frac{d\ln(\gamma)}{dx}$$
@@ -194,7 +194,7 @@ ans = diff(lngamma,c)
 simplify(ans*c)                   # don't forget to multiply by c after differentiating
 
 
-# ### Q11 answer
+# ## Q11 answer
 # Use equation(15) with $v(x)$ = 0 and $u(x)=a/x$ gives
 # 
 # $$\displaystyle \frac{d}{dx}\int_0^{a/x}\frac{x^2}{e^{-x}-1}dx =\left(\frac{a^2}{x^2}\frac{1}{e^{-a/x}-1}\right)\left(\frac{-a}{x^2}\right)=\left( \frac{a^3}{x^4}\right)\frac{1}{1-e^{-a/x}}  $$

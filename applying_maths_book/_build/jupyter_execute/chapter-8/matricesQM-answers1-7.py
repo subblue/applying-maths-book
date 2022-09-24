@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## Solutions Q1 - 7
+# # Solutions Q1 - 7
 
 # In[1]:
 
@@ -16,7 +16,7 @@ init_printing()                      # allows printing of SymPy results in types
 plt.rcParams.update({'font.size': 16})  # set font size for plots
 
 
-# ### Q1 answer
+# ## Q1 answer
 # There is no linearly polarized light present so none can cause transitions. If it were present, however, the $μ\mu_z$ components of the dipole operator would be used and have the selection rules $\Delta s=0, \Delta m=0$ or $s_1 =s_2$ and $m_1 =m_2$.  However, all of these terms will be zero because $m$ must change in any transition to conserve angular momentum. Therefore, all parts of the transition matrix containing $\mu_z$ are zero. In other words, electric dipole transitions do not couple to spin angular momentum.
 # 
 # The magnetic dipole transitions have the $\Delta m = \pm 1$ selection rule. To find out what transitions are to be expected start with the ordering of quantum numbers $m_a, m_b$ in the $sm$ basis chosen. This ordering is
@@ -69,7 +69,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # **Exercise:** Write some Python/Sympy code to do this calculation.
 # 
-# ### Q2 answer
+# ## Q2 answer
 # By analogy with equation 22,the Hamiltonian is 
 # 
 # $$\displaystyle H = g \beta S_zB − g_Nβ_NI_zB + a(S_xI_x + S_yI_y + S_zI_z)$$
@@ -109,7 +109,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # Figure 6. The Zeeman effect on the hyperfine structure ground state of hydrogen atoms, (1s $^2\mathrm{S_{1/2}}$ state) vs field strength $B$ in Tesla.
 # ______
 # 
-# ### Q3 answer
+# ## Q3 answer
 # Because the nuclei interact pair-wise the Hamiltonian has the form 
 # 
 # $$\displaystyle H_S=-q_aI_{az}-q_bI_{bz}-q_cI_{cz}-J_{ab}\pmb{I}_a\cdot\pmb{I}_b +J_{ac}\pmb{I}_a\cdot\pmb{I}_c+ J_{bc}\pmb{I}_b\cdot\pmb{I}_c $$
@@ -138,7 +138,8 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # In[2]:
 
 
-i,k,ma,mb,n,Ix,Iy,Iz,qa,qb,qc,hbar,Jab,Jbc,Jac           = symbols('i,k,ma,mb,n,Ix,Iy,Iz,qa,qb,qc,hbar,Jab,Jbc,Jac')
+i,k,ma,mb,n,Ix,Iy,Iz,qa,qb,qc,hbar,Jab,Jbc,Jac\
+           = symbols('i,k,ma,mb,n,Ix,Iy,Iz,qa,qb,qc,hbar,Jab,Jbc,Jac')
 
 #------------------------------
 def Iz(sa, ma, sb, mb):
@@ -177,11 +178,17 @@ for i in range(n):
         Ibz=-qb*hbar*Iz(1/2,m2,1/2,m22)*delta(m1,m11)*delta(m3,m33) 
         Icz=-qc*hbar*Iz(1/2,m3,1/2,m33)*delta(m1,m11)*delta(m2,m22)
         
-        Iabxyz=(Jab/hbar**2)*( Ix(1/2,m1,1/2,m11)*Ix(1/2,m2,1/2,m22)                              +Iy(1/2,m1,1/2,m11)*Iy(1/2,m2,1/2,m22)                              +Iz(1/2,m1,1/2,m11)*Iz(1/2,m2,1/2,m22) )*delta(m3,m33)
+        Iabxyz=(Jab/hbar**2)*( Ix(1/2,m1,1/2,m11)*Ix(1/2,m2,1/2,m22)\
+                              +Iy(1/2,m1,1/2,m11)*Iy(1/2,m2,1/2,m22)\
+                              +Iz(1/2,m1,1/2,m11)*Iz(1/2,m2,1/2,m22) )*delta(m3,m33)
         
-        Iacxyz=(Jac/hbar**2)*(Ix(1/2,m1,1/2,m11)*Ix(1/2,m3,1/2,m33)                              +Iy(1/2,m1,1/2,m11)*Iy(1/2,m3,1/2,m33)                              +Iz(1/2,m1,1/2,m11)*Iz(1/2,m3,1/2,m33) )*delta(m2,m22)
+        Iacxyz=(Jac/hbar**2)*(Ix(1/2,m1,1/2,m11)*Ix(1/2,m3,1/2,m33)\
+                              +Iy(1/2,m1,1/2,m11)*Iy(1/2,m3,1/2,m33)\
+                              +Iz(1/2,m1,1/2,m11)*Iz(1/2,m3,1/2,m33) )*delta(m2,m22)
         
-        Ibcxyz=(Jbc/hbar**2)*(Ix(1/2,m2,1/2,m22)*Ix(1/2,m3,1/2,m33)                              +Iy(1/2,m2,1/2,m22)*Iy(1/2,m3,1/2,m33)                              +Iz(1/2,m2,1/2,m22)*Iz(1/2,m3,1/2,m33) )*delta(m1,m11)
+        Ibcxyz=(Jbc/hbar**2)*(Ix(1/2,m2,1/2,m22)*Ix(1/2,m3,1/2,m33)\
+                              +Iy(1/2,m2,1/2,m22)*Iy(1/2,m3,1/2,m33)\
+                              +Iz(1/2,m2,1/2,m22)*Iz(1/2,m3,1/2,m33) )*delta(m1,m11)
         
         H[i,k]=Iaz+Ibz+Icz+Iabxyz+Iacxyz+Ibcxyz
         pass
@@ -189,7 +196,7 @@ for i in range(n):
 H
 
 
-# ### Q4 answer
+# ## Q4 answer
 # (a) Differentiating $\varphi$ twice and forming the Schroedinger equation gives after some simplification
 # 
 # $$\displaystyle -\frac{\hbar^2}{2I}\frac{d^2\varphi_m}{d\theta^2}=\frac{\hbar^2}{2I}m^2\varphi_m$$
@@ -316,7 +323,7 @@ for i in range(13):
 # ### Q5 answer
 # The recommended values in the question do produce quite a good fit to the data; the lowest transition is about 1 wavenumber out as is the second but the third and fourth by $2-3$ wavenumbers. Still a small error , less that 1%. The calculation is very sensitive the the value of $A$  and it seems that a better fit will be hard to obtain, primarily because the assumed potential is not exactly correct. Other sinusoidal functions could be tried but would then have to be justified by some physical explanation as to why they are used. With some arbitrary function, with many parameters a better fit could certainly be found, but this would have no physical meaning and would not explain the spectrum. 
 # 
-# ### Q6 answer
+# ## Q6 answer
 # The free rotor and $3\theta$ terms are given in the previous question and are 
 # 
 # $$\displaystyle H^0_{m,m}=\frac{\hbar^2}{2I}m^2; H^1_{m,m'}=\frac{V_3}{2}\delta_{m,m'}-\frac{V_3}{4}\delta_{m,m\pm 3}$$
@@ -341,7 +348,7 @@ for i in range(13):
 # 
 # With three parameters $V_1, V_3$ and $V_6$ as variables, it should be possible to fit the most complicated restricted rotor spectra.
 # 
-# ### Q7 answer
+# ## Q7 answer
 # The radial parts of the wavefunction can be ignored because $r$ factors out of the equation and will integrate to a constant. 
 # 
 # Changing to spherical polar coordinates, the potential becomes

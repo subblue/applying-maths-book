@@ -4,11 +4,13 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Solutions Q1 - 21 &#8212; Applying Maths in the Chemical &amp; Biomolecular Sciences</title>
     
-  <link href="../_static/css/theme.css" rel="stylesheet">
-  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,44 +20,43 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Solutions Q22 - 37" href="Diff-eqns-answers-22-37.html" />
-    <link rel="prev" title="PDE examples continued" href="Diff-eqns-G.html" />
+    <link rel="prev" title="PDE Continued" href="Diff-eqns-G.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -63,7 +64,21 @@
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -72,9 +87,10 @@
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -92,14 +108,15 @@
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../intro.html">
-   Applying Maths in the Chemical and Biomolecular Sciences.
-  </a>
- </li>
-</ul>
-<ul class="current nav bd-sidenav">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Applying Maths in the Chemical and Biomolecular Sciences.
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../chapter-1/chapter1-intro.html">
    1. Numbers, Equations, Operators, and Algorithms.
@@ -204,11 +221,6 @@
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-2/chapter2-Q-10-13.html">
      Questions 10 -13
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-2/chapter2-C.html">
-     Euler’s theorem, roots of unity, x-ray diffraction structure factor.
     </a>
    </li>
    <li class="toctree-l2">
@@ -337,7 +349,7 @@
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../chapter-4/integration-intro.html">
-   4. Integration.
+   4 Integration.
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
   <label for="toctree-checkbox-4">
@@ -377,7 +389,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-4/integration-D.html">
-     Calculating an Average Value.
+     Calculating an Average.
     </a>
    </li>
    <li class="toctree-l2">
@@ -407,7 +419,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-4/integration-G.html">
-     Calculating the energy of a chemical bond using molecular orbitals
+     Calculating the energy of a Chemical Bond using Molecular Orbitals
     </a>
    </li>
    <li class="toctree-l2">
@@ -688,7 +700,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-7/matrices-D.html">
-     Rotation matrices: moving molecules
+     Rotation matrices: moving molecules. Coordinate transform as rotation.
     </a>
    </li>
    <li class="toctree-l2">
@@ -757,23 +769,13 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-7/matrices-K.html">
-     Calculating a bond length using moments of inertia
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-7/matrices-Q61.html">
-     Question 61
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="../chapter-7/matrices-L.html">
      Principal axes for Moments of Inertia
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-7/matrices-Q62.html">
-     Question 62
+    <a class="reference internal" href="../chapter-7/matrices-Q61-62.html">
+     Question 61 - 62
     </a>
    </li>
    <li class="toctree-l2">
@@ -1004,7 +1006,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="Diff-eqns-G.html">
-     PDE examples continued
+     PDE Continued
     </a>
    </li>
    <li class="toctree-l2 current active">
@@ -1096,7 +1098,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-11/num-methods-answers8-12.html">
-     Solutions Q8 - 12
+     Solutions Q 8 - 12
     </a>
    </li>
    <li class="toctree-l2">
@@ -1258,112 +1260,227 @@
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/chapter-10/Diff-eqns-answers-1-21.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/subblue/applying-maths-book"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/subblue/applying-maths-book/issues/new?title=Issue%20on%20page%20%2Fchapter-10/Diff-eqns-answers-1-21.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        
-    </div>
-</div>
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/subblue/applying-maths-book/main?urlpath=lab/tree/applying_maths_book/chapter-10/Diff-eqns-answers-1-21.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        <a class="colab-button" href="https://colab.research.google.com/github/subblue/applying-maths-book/blob/main/applying_maths_book/chapter-10/Diff-eqns-answers-1-21.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
-                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
-                    src="../_static/images/logo_colab.png"
-                    alt="Interact on Colab">Colab</button></a>
-        
-        
-    </div>
-</div>
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/subblue/applying-maths-book/main?urlpath=lab/tree/applying_maths_book/chapter-10/Diff-eqns-answers-1-21.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://colab.research.google.com/github/subblue/applying-maths-book/blob/main/applying_maths_book/chapter-10/Diff-eqns-answers-1-21.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/subblue/applying-maths-book"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/subblue/applying-maths-book/issues/new?title=Issue%20on%20page%20%2Fchapter-10/Diff-eqns-answers-1-21.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/chapter-10/Diff-eqns-answers-1-21.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#q1-answer">
    Q1 answer
@@ -1471,17 +1588,140 @@
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Solutions Q1 - 21</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#q1-answer">
+   Q1 answer
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#q2-answer">
+   Q2 answer
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#q3-answer">
+   Q3 answer
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#q4-answer">
+   Q4 answer
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#q5-answer">
+   Q5 answer
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#q6-answer">
+   Q6 answer
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#q7-answer">
+   Q7 answer
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#q8-answer">
+   Q8 answer
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#q9-answer">
+   Q9 answer
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#q10-answer">
+   Q10 answer
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#q11-answer">
+   Q11 answer
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#q12-answer">
+   Q12 answer
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#q13-answer">
+   Q13 answer
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#q14-answer">
+   Q14 answer
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#q15-answer">
+   Q15 answer
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#q16-answer">
+   Q16 answer
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#q17-answer">
+   Q17 answer
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#q18-answer">
+   Q18 answer
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#q19-answer">
+   Q19 answer
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#q20-answer">
+   Q20 answer
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#q21-answer">
+   Q21 answer
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
               <div>
                 
-  <div class="section" id="solutions-q1-21">
-<h1>Solutions Q1 - 21<a class="headerlink" href="#solutions-q1-21" title="Permalink to this headline">¶</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="solutions-q1-21">
+<h1>Solutions Q1 - 21<a class="headerlink" href="#solutions-q1-21" title="Permalink to this headline">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import all python add-ons etc that will be needed later on</span>
@@ -1496,14 +1736,14 @@
 </div>
 </div>
 </div>
-<div class="section" id="q1-answer">
-<h2>Q1 answer<a class="headerlink" href="#q1-answer" title="Permalink to this headline">¶</a></h2>
+<section id="q1-answer">
+<h2>Q1 answer<a class="headerlink" href="#q1-answer" title="Permalink to this headline">#</a></h2>
 <p>Following the example of the harmonic oscillator, the equation becomes <span class="math notranslate nohighlight">\(v^2 - \omega^2x^2 = c\)</span>. This is the equation of hyperbolae and has a saddle point at <span class="math notranslate nohighlight">\(\omega\cdot x\)</span> = 0. The plot is of <span class="math notranslate nohighlight">\(v\equiv dx/dt\)</span> vs <span class="math notranslate nohighlight">\(\omega x\)</span> with arbitrary values of <span class="math notranslate nohighlight">\(\omega\)</span> and <span class="math notranslate nohighlight">\(c\)</span> that we can choose. The figure shows the plot by choosing <span class="math notranslate nohighlight">\(\omega = c = 1\)</span>. Different values alters the ‘look’ of the plot, extending in one direction or the other but it always has the same form.</p>
 <p><img alt="Drawing" src="../_images/diffeqn-fig31.png" /></p>
 <p>Fig. 31 Phase portrait for <span class="math notranslate nohighlight">\(d^2x/dt^2 - \omega^2x = 0. \quad \omega = c = 1\)</span>.</p>
-</div>
-<div class="section" id="q2-answer">
-<h2>Q2 answer<a class="headerlink" href="#q2-answer" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="q2-answer">
+<h2>Q2 answer<a class="headerlink" href="#q2-answer" title="Permalink to this headline">#</a></h2>
 <p>(a) <span class="math notranslate nohighlight">\(\displaystyle \frac{dy}{dx}=\frac{xy}{1-x^2}\)</span> or <span class="math notranslate nohighlight">\(\displaystyle \int\frac{dy}{y}=\int\frac{x}{1-x^2}dx\)</span>.</p>
 <p>Integrating produces <span class="math notranslate nohighlight">\(\ln(y)=-\ln(x^2-1)/2+c\)</span>. When <span class="math notranslate nohighlight">\(y_0=c,\; x = x_0\)</span></p>
 <p>and then <span class="math notranslate nohighlight">\(\displaystyle \ln\left(\frac{y}{y_0}\right)= \ln\left(\frac{x_0^2-1}{x^2-1}\right)/2\)</span></p>
@@ -1513,9 +1753,9 @@
 <p>(c) Rearranging and integrating gives <span class="math notranslate nohighlight">\(\displaystyle \int_0^ye^ydy=\int_0^x e^x\sin(x)dx\)</span>, where the limits are included in the integral. The right-hand side can be integrated by parts; the final result is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle e^y-1=\left[\sin(x)-\cos(x)\right]\frac{e^x}{2}+\frac{1}{2}\]</div>
-</div>
-<div class="section" id="q3-answer">
-<h2>Q3 answer<a class="headerlink" href="#q3-answer" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="q3-answer">
+<h2>Q3 answer<a class="headerlink" href="#q3-answer" title="Permalink to this headline">#</a></h2>
 <p>In a bimolecular reaction,when both species have the same initial concentration or the scheme is 2<span class="math notranslate nohighlight">\(A\)</span> <span class="math notranslate nohighlight">\(\to\)</span> product, then the rate equation is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle dA/dt = -k_2A^2\]</div>
@@ -1529,9 +1769,9 @@
 <div class="math notranslate nohighlight">
 \[\displaystyle \frac{d(a-x)}{dt}=-k_2(a-x)^2,\quad\text{or}\quad \displaystyle \int\frac{dx}{(a-x)^2}=k_2t+c\]</div>
 <p>producing <span class="math notranslate nohighlight">\(\displaystyle \qquad\frac{1}{a-x}-\frac{1}{a}=k_2t\)</span>.</p>
-</div>
-<div class="section" id="q4-answer">
-<h2>Q4 answer<a class="headerlink" href="#q4-answer" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="q4-answer">
+<h2>Q4 answer<a class="headerlink" href="#q4-answer" title="Permalink to this headline">#</a></h2>
 <p>(a) The integration produces</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \int\frac{dx}{x(N-x)}=kt, \quad \ln\left( \frac{x}{x-N} \right) =NkT+c\]</div>
@@ -1586,17 +1826,17 @@
 <p>(b) The time for half the population to be infected occurs when <span class="math notranslate nohighlight">\(x = N/2\)</span> giving <span class="math notranslate nohighlight">\(t_{1/2} = \ln(N − 1)/Nk\)</span>. This makes sense if <span class="math notranslate nohighlight">\(k\)</span> is small then the spreading of the disease is slow and <span class="math notranslate nohighlight">\(t_{1/2}\)</span> large, and if the population is large it also takes some time for half of them to become infected.</p>
 <p><img alt="Drawing" src="../_images/diffeqn-fig31b.png" /></p>
 <p>Fig 31-B Example plots of how the number of infected individuals increases with time for different rate constants, <span class="math notranslate nohighlight">\(k\)</span>.</p>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="q5-answer">
-<h2>Q5 answer<a class="headerlink" href="#q5-answer" title="Permalink to this headline">¶</a></h2>
+<section id="q5-answer">
+<h2>Q5 answer<a class="headerlink" href="#q5-answer" title="Permalink to this headline">#</a></h2>
 <p>Scattering takes the place of absorption in the case of X-rays. According to the text, Section 1.11, the scattering cross section for each of <span class="math notranslate nohighlight">\(n\)</span> electrons is <span class="math notranslate nohighlight">\(\sigma = 4\pi e^2/mc^2\)</span>. Following reasoning in the text leading to the Beer-Lambert law,</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle I_s = I_0(1 - e^{-\sigma nL})\]</div>
 <p>and when the scattering is small the exponential can be approximated giving <span class="math notranslate nohighlight">\(I_s/I_0 = \sigma nL\)</span>. For one electron, the amount scattered is <span class="math notranslate nohighlight">\(nL\)</span> times less giving the required answer.</p>
-</div>
-<div class="section" id="q6-answer">
-<h2>Q6 answer<a class="headerlink" href="#q6-answer" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="q6-answer">
+<h2>Q6 answer<a class="headerlink" href="#q6-answer" title="Permalink to this headline">#</a></h2>
 <p>The force downwards is <span class="math notranslate nohighlight">\(mg - kv^2\)</span> and the equation of motion is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle  m\frac{dv}{dt} = mg - kv^2, \quad v(t_0) = v_0, \quad t_0 = 0 \]</div>
@@ -1611,9 +1851,9 @@
 <div class="math notranslate nohighlight">
 \[\displaystyle v=\frac{1}{b}\left(\frac{e^{2b(t+c)}-1}{e^{2b(t+c)}+1} \right) \]</div>
 <p>At long times, the limiting velocity is <span class="math notranslate nohighlight">\(v_{term} = 1/b = \sqrt{gm/k}\)</span>. The larger <span class="math notranslate nohighlight">\(k\)</span> is, the smaller the velocity on reaching the ground; a typical value would be <span class="math notranslate nohighlight">\(1000\)</span> kg/m making a terminal velocity for a <span class="math notranslate nohighlight">\(70\)</span> kg skydiver <span class="math notranslate nohighlight">\(\approx \)</span> 0.8 m/s.</p>
-</div>
-<div class="section" id="q7-answer">
-<h2>Q7 answer<a class="headerlink" href="#q7-answer" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="q7-answer">
+<h2>Q7 answer<a class="headerlink" href="#q7-answer" title="Permalink to this headline">#</a></h2>
 <p>Differentiating both sides with respect to <span class="math notranslate nohighlight">\(t\)</span> gives, <span class="math notranslate nohighlight">\(\displaystyle \frac{dx}{dt}\left(\frac{1}{a-x}+\frac{1}{(a-x)^2}  \right)=ak\)</span>,</p>
 <p>which simplifies to <span class="math notranslate nohighlight">\(\displaystyle \frac{dx}{dt} = k(a - x)^2\)</span>. This means that the rate equation has the form of <span class="math notranslate nohighlight">\(da/dt=ka^2\)</span> because a moles of A and B are present and <span class="math notranslate nohighlight">\(x\)</span> moles react at time <span class="math notranslate nohighlight">\(t\)</span>. As a check, if the scheme is</p>
 <div class="math notranslate nohighlight">
@@ -1622,9 +1862,9 @@
 (a-x)&amp; &amp; (a-x)&amp;  &amp;x
 \end{array}\end{split}\]</div>
 <p>the rate equation is <span class="math notranslate nohighlight">\(d(a - x)/dt = -k(a - x)^2\)</span> which is the same equation as just obtained. The rate constant <span class="math notranslate nohighlight">\(k\)</span> has second order units, <span class="math notranslate nohighlight">\(\mathrm{dm^3\, mol^{-1}\, s^{-1}}\)</span>.</p>
-</div>
-<div class="section" id="q8-answer">
-<h2>Q8 answer<a class="headerlink" href="#q8-answer" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="q8-answer">
+<h2>Q8 answer<a class="headerlink" href="#q8-answer" title="Permalink to this headline">#</a></h2>
 <p>Newton’s law of cooling is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \frac{d\theta }{dt}=k(\theta_s-\theta)\]</div>
@@ -1635,17 +1875,17 @@
 <div class="math notranslate nohighlight">
 \[\displaystyle k=\frac{1}{t}\ln\left(\frac{\theta_0-\theta_s}{\theta_T-\theta_s} \right) = 0.0256\,\mathrm{ min^{-1}}\]</div>
 <p>To form ice the temperature must be zero (<span class="math notranslate nohighlight">\(\theta_T = 0\)</span>) or lower, so that <span class="math notranslate nohighlight">\(\displaystyle t=\ln(27/12)/k = 31.7\)</span>  mins.</p>
-</div>
-<div class="section" id="q9-answer">
-<h2>Q9 answer<a class="headerlink" href="#q9-answer" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="q9-answer">
+<h2>Q9 answer<a class="headerlink" href="#q9-answer" title="Permalink to this headline">#</a></h2>
 <p>The process is solid <span class="math notranslate nohighlight">\(\to\)</span> vapour and is first order because it is proportional to the amount of solid remaining at any time. If <span class="math notranslate nohighlight">\(s\)</span> is the amount of solid I<span class="math notranslate nohighlight">\(_2\)</span> then the rate equation is <span class="math notranslate nohighlight">\(\displaystyle \frac{ds}{dt} = -ks\)</span> which integrates to <span class="math notranslate nohighlight">\(\displaystyle s = s_0e^{-kt}\)</span> if <span class="math notranslate nohighlight">\(s_0\)</span> is the initial amount of iodine. The rate equation for the amount of iodine vapour is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \frac{ds_V}{dt}=+ks=ks_0e^{-kt}\]</div>
 <p>and integrating with <span class="math notranslate nohighlight">\(s_V=0\)</span> initially produces <span class="math notranslate nohighlight">\(\displaystyle s_V=s_0(1-e^{-kt})\)</span>.</p>
 <p>The pressure is related to the concentration and using the ideal gas law gives <span class="math notranslate nohighlight">\(s_V = pV/RT, \; s_0 = p_\infty V/RT\)</span>  and therefore the pressure increases as <span class="math notranslate nohighlight">\(\displaystyle p = p_\infty(1 - e^{-kt})\)</span>.</p>
-</div>
-<div class="section" id="q10-answer">
-<h2>Q10 answer<a class="headerlink" href="#q10-answer" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="q10-answer">
+<h2>Q10 answer<a class="headerlink" href="#q10-answer" title="Permalink to this headline">#</a></h2>
 <p>(a) The fluorescence yield is the rate of emission divided by the rate of absorption. This is <span class="math notranslate nohighlight">\(\varphi = k_f /(k_f + k_S)\)</span>, equation (5). With quencher the scheme is,</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle \begin{array}{ccc}\\
@@ -1664,9 +1904,9 @@
 <p><strong>(b)</strong> The fluorescence lifetime is by definition the reciprocal of the sum all rate processes destroying the excited state, therefore <span class="math notranslate nohighlight">\(\tau_q=(k_f+k_S+k_qQ)^{-1}\)</span> and in the absence of quencher, <span class="math notranslate nohighlight">\(\tau=(k_f+k_S)^{-1}\)</span>. The ratio of these two lifetimes gives a second Stern - Volmer equation</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle  \frac{\tau}{\tau_q}=\frac{k_f+k_S+k_qQ}{k_f+k_S}=1+k_{\mathrm{sv}}Q\]</div>
-</div>
-<div class="section" id="q11-answer">
-<h2>Q11 answer<a class="headerlink" href="#q11-answer" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="q11-answer">
+<h2>Q11 answer<a class="headerlink" href="#q11-answer" title="Permalink to this headline">#</a></h2>
 <p>The rate equations are</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \frac{dA}{dt}=-k_AA, \; \frac{dB}{dt}=+k_1A-k_0\]</div>
@@ -1712,9 +1952,9 @@
 <p>Fig32. The equation <span class="math notranslate nohighlight">\(\displaystyle B=A_0(1-e^{-k_1t})-k_0t\)</span> plotted with values given in the question. The concentration is in mg/dm<span class="math notranslate nohighlight">\(^3\)</span> thus a line at <span class="math notranslate nohighlight">\(0.8\)</span> is equivalent to <span class="math notranslate nohighlight">\(80\)</span> mg/ml blood alcohol (dashed horizontal line). In Scotland the legal limit is lower than England and is <span class="math notranslate nohighlight">\(50\)</span> mg/ml blood alcohol (dotted line) , meaning that one would be ‘over the limit’ by far more and for far longer than in England.</p>
 <hr class="docutils" />
 <p>When no alcohol remains the residual level is zero, and this occurs <span class="math notranslate nohighlight">\(6\)</span> hours <span class="math notranslate nohighlight">\(8\)</span> minutes after starting to drink. The graph of the time profile of alcohol in the blood is shown in Fig. 32. Because the amount of alcohol decreases linearly with time, at least when the amount is moderate, this can easily be used to back calculate how much alcohol was present at an earlier time. You can see how the model fails when B is small; it predicts a negative B will occur. At very low alcohol levels the reaction is no longer zero order but bimolecular and the concentration does not become negative.</p>
-</div>
-<div class="section" id="q12-answer">
-<h2>Q12 answer<a class="headerlink" href="#q12-answer" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="q12-answer">
+<h2>Q12 answer<a class="headerlink" href="#q12-answer" title="Permalink to this headline">#</a></h2>
 <p>The total flux into the pellet is, <span class="math notranslate nohighlight">\(\displaystyle J=+4\pi r^2D\frac{dc}{dr}\)</span></p>
 <p>and is positive as diffusion is into the pellet with a surface area of <span class="math notranslate nohighlight">\(4\pi r^2\)</span>. Defined as total flux, <span class="math notranslate nohighlight">\(J\)</span> has units of mole s<sup>-1</sup>. As the catalyst poisons to radius <span class="math notranslate nohighlight">\(r_p\)</span>, then its concentration is given by</p>
 <div class="math notranslate nohighlight">
@@ -1728,27 +1968,27 @@
 <p>where <span class="math notranslate nohighlight">\(x\)</span> is a fraction of the radius <span class="math notranslate nohighlight">\(r_p=(1-x)r_0\)</span> and <span class="math notranslate nohighlight">\(\alpha= k/(4\pi Dr_0)\)</span>. Two curves are shown in Fig. 33 when <span class="math notranslate nohighlight">\(\alpha \gt 1\)</span> and when <span class="math notranslate nohighlight">\(\lt 1\)</span>. When <span class="math notranslate nohighlight">\(\alpha \lt  1\)</span>, this means that the diffusion coefficient is large or the rate constant <span class="math notranslate nohighlight">\(k\)</span> small. The concentration of the poison in the pellet is more than 50% almost over the whole volume of the pellet. When diffusion is slow, or the rate constant is large, the concentration of the poison decreases rapidly away from the surface and more than <span class="math notranslate nohighlight">\(50\)</span>% poisoning only occurs within about 10% of the surface.</p>
 <p><img alt="Drawing" src="../_images/diffeqn-fig33.png" /></p>
 <p>Fig. 33 Relative or fractional concentration of the poison vs. the fraction of the pellet’s radius at two different values of <span class="math notranslate nohighlight">\(\alpha\)</span>. The value <span class="math notranslate nohighlight">\(x\)</span> = 0 means that <span class="math notranslate nohighlight">\(r_p = r_0\)</span> and <span class="math notranslate nohighlight">\(x\)</span> = 1 means that <span class="math notranslate nohighlight">\(r_p\)</span> = 0.</p>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="q13-answer">
-<h2>Q13 answer<a class="headerlink" href="#q13-answer" title="Permalink to this headline">¶</a></h2>
+<section id="q13-answer">
+<h2>Q13 answer<a class="headerlink" href="#q13-answer" title="Permalink to this headline">#</a></h2>
 <p>As M and Q react, the rate is <span class="math notranslate nohighlight">\(\displaystyle k_2MQ = JM = +4πr^2DM \frac{dQ}{dr}\)</span>.</p>
 <p>To find <span class="math notranslate nohighlight">\(J\)</span> the last two terms are integrated from <span class="math notranslate nohighlight">\(r = R\)</span> to infinity,</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle  \frac{J}{4\pi D}\int_R^\infty\frac{dr}{r^2}=\int_0^QdQ\]</div>
 <p>which gives <span class="math notranslate nohighlight">\(J=4\pi DRQ\)</span>. Equating this to the rate produces the diffusion controlled rate constant <span class="math notranslate nohighlight">\(k_2=4\pi DR\)</span>.</p>
-</div>
-<div class="section" id="q14-answer">
-<h2>Q14 answer<a class="headerlink" href="#q14-answer" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="q14-answer">
+<h2>Q14 answer<a class="headerlink" href="#q14-answer" title="Permalink to this headline">#</a></h2>
 <p>The rate equation is <span class="math notranslate nohighlight">\(\displaystyle \frac{dR}{dt} = k_IM + (\alpha - 1)k_BR + k_pR - k_pR - k_TR\)</span></p>
 <p>and the propagation step cancels out because in this step, one radical is produced for each one consumed. The branching step has the term <span class="math notranslate nohighlight">\(\alpha\)</span> - 1 because one radical is lost accounting for propagation. The integral equation from a radical concentration of zero at zero time is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \int_0^R\frac{1}{k_IM+\gamma R}dR=\int_0^tdt\]</div>
 <p>where for clarity <span class="math notranslate nohighlight">\(\gamma = (\alpha - 1)k_B - k_T\)</span>. Integrating produces <span class="math notranslate nohighlight">\(\displaystyle \ln\left(1+\frac{\gamma R}{k_IM} \right)=\gamma t\)</span> which is more conveniently written as <span class="math notranslate nohighlight">\(\displaystyle R = k_IM(e^{\gamma t} - 1)/\gamma\)</span>.</p>
 <p>When <span class="math notranslate nohighlight">\(\gamma \gt 0\)</span>, this means that the branching rate is larger than the termination rate, and an explosion may occur because the term <span class="math notranslate nohighlight">\(\gamma t\)</span> in the exponential is positive. The radical population increases towards infinity and hence the rate of reaction increases rapidly. Reaction is stable when <span class="math notranslate nohighlight">\(\gamma \lt 0\)</span> and reaches steady state at long times; <span class="math notranslate nohighlight">\(R_\infty = k_I M/\gamma\)</span>. When <span class="math notranslate nohighlight">\(\gamma = 0\)</span> the reaction is on the border between stability and explosion and radical concentration increases linearly with time as <span class="math notranslate nohighlight">\(k_IMt\)</span>.</p>
-</div>
-<div class="section" id="q15-answer">
-<h2>Q15 answer<a class="headerlink" href="#q15-answer" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="q15-answer">
+<h2>Q15 answer<a class="headerlink" href="#q15-answer" title="Permalink to this headline">#</a></h2>
 <p>(a) Equilibrium is rapidly established with the complex IM and its rate of change can be taken to be at steady state, hence</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \frac{d[IM]}{dt} = k_1[I][M] - k_{-1}[IM] - k_2[IM][I] = 0\]</div>
@@ -1760,9 +2000,9 @@
 \[\displaystyle  \frac{1}{[I]}-\frac{1}{[I]_0}=k_2\frac{k_{-1}}{k_1}[M]t\]</div>
 <p>which explains the linear dependence of <span class="math notranslate nohighlight">\(1/[I]\)</span> with time.</p>
 <p>(b) If each of the rate constants follows an Arrhenius type expression <span class="math notranslate nohighlight">\(\displaystyle k_a = k_0e^{-E_a/RT}\)</span> with activation energy <span class="math notranslate nohighlight">\(E_a\)</span>, then, from the rate expression the term <span class="math notranslate nohighlight">\(k_2k_{-1}/k_1\)</span> gives the overall reaction an activation energy <span class="math notranslate nohighlight">\(E_2 + E_{-1} - E_1\)</span>. If <span class="math notranslate nohighlight">\(E_1\)</span> is greater than the other two, then the experimentally measured activation energy is negative even though each step has a positive or zero activation energy as must always be the case.</p>
-</div>
-<div class="section" id="q16-answer">
-<h2>Q16 answer<a class="headerlink" href="#q16-answer" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="q16-answer">
+<h2>Q16 answer<a class="headerlink" href="#q16-answer" title="Permalink to this headline">#</a></h2>
 <p>(a) The scheme is solvable if <span class="math notranslate nohighlight">\(x\)</span> is the amount consumed at time <span class="math notranslate nohighlight">\(t\)</span>,</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle \begin{array}{ccc}
@@ -1801,9 +2041,9 @@ a-x &amp; &amp; b+x
 <div class="math notranslate nohighlight">
 \[\displaystyle k=k_1+k_{-1}=k_0e^{-E_0/RT}\left( e^{-V/2RT}+e^{+V/2RT}   \right)=k_0e^{-E_0/RT}\cosh\left(\frac{V}{2RT}  \right)\]</div>
 <p>The <span class="math notranslate nohighlight">\(\pm V/2\)</span> arises because the potential is zero in the centre of the membrane and is therefore <span class="math notranslate nohighlight">\(-V/2\)</span> on one side and <span class="math notranslate nohighlight">\(+V/2\)</span> at the other. When <span class="math notranslate nohighlight">\(V = 0\)</span>, the rate constant <span class="math notranslate nohighlight">\(\displaystyle k = 2k_0e^{-E_0 /RT}\)</span> and this is its minimum value as <span class="math notranslate nohighlight">\(\cosh(x)\)</span> has an approximately parabolic shape. Using the value <span class="math notranslate nohighlight">\(V = 0.1\)</span> eV given in the question, produces <span class="math notranslate nohighlight">\(\cosh(9.6/(2RT)) \approx 3.5\)</span>.</p>
-</div>
-<div class="section" id="q17-answer">
-<h2>Q17 answer<a class="headerlink" href="#q17-answer" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="q17-answer">
+<h2>Q17 answer<a class="headerlink" href="#q17-answer" title="Permalink to this headline">#</a></h2>
 <p>Let <span class="math notranslate nohighlight">\(x\)</span> be the amount of H+ and OH- ions and <span class="math notranslate nohighlight">\(a\)</span> the concentration of water, then the rate equation is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \frac{dx}{dt} = -k_1(a - x) - k_2x^2\]</div>
@@ -1820,9 +2060,9 @@ a-x &amp; &amp; b+x
 <div class="math notranslate nohighlight">
 \[\displaystyle \Delta x = \Delta x_0e^{-kt}\]</div>
 <p>where <span class="math notranslate nohighlight">\(x_0\)</span> is the initial change recorded in the experiment and <span class="math notranslate nohighlight">\(k = k_1 + k_2x_e\)</span>. It does not matter what units <span class="math notranslate nohighlight">\(\Delta x\)</span> is measured in, because it can always be written as the ratio <span class="math notranslate nohighlight">\(\Delta x/\Delta x_0\)</span> when solving for the rate constant.</p>
-</div>
-<div class="section" id="q18-answer">
-<h2>Q18 answer<a class="headerlink" href="#q18-answer" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="q18-answer">
+<h2>Q18 answer<a class="headerlink" href="#q18-answer" title="Permalink to this headline">#</a></h2>
 <p>(a) If <span class="math notranslate nohighlight">\(x\)</span> is the acetone concentration (species A), the rate equation is,</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \frac{dx}{dt}=-kxb=-kx(a_0+b_0-x)\quad\text{or}\quad \displaystyle \int\frac{dx}{(a_0+b_0-x)x}=-kt+c\]</div>
@@ -1839,10 +2079,10 @@ a-x &amp; &amp; b+x
 <p>(b) The phase portrait is an inverted parabola; see Fig.34, Right. The right-hand equilibrium point is unstable, so that from any starting value, <span class="math notranslate nohighlight">\(x\)</span> will end up at zero which means complete reaction occurs. The stability is determined by <span class="math notranslate nohighlight">\(d^2x/dt^2\)</span> and is positive at <span class="math notranslate nohighlight">\(x = a_0 + b_0\)</span>, so this point is unstable and negative at <span class="math notranslate nohighlight">\(x = 0\)</span> which is a stable point.</p>
 <p><img alt="Drawing" src="../_images/diffeqn-fig34.png" /></p>
 <p>Fig. 34 Autocatalysis. Initially species A decreases slowly as the concentration of B is small. As the reaction proceeds, more B is produced and although A is reduced overall, the rate increases and A is consumed even more rapidly. At longer times, the concentration of A becomes so small that even though that of B is large the reaction rate is slow. The phase portrait is shown on the right.</p>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="q19-answer">
-<h2>Q19 answer<a class="headerlink" href="#q19-answer" title="Permalink to this headline">¶</a></h2>
+<section id="q19-answer">
+<h2>Q19 answer<a class="headerlink" href="#q19-answer" title="Permalink to this headline">#</a></h2>
 <p>(a) Rearranging gives</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \int\frac{dn}{n\ln(n/a)}=-kt+c\]</div>
@@ -1868,9 +2108,9 @@ a-x &amp; &amp; b+x
 <p>with the solution <span class="math notranslate nohighlight">\(\displaystyle \ln\left(\frac{A}{A_0}\right)=\frac{k_2B_0}{k_1}\left( 1-e^{-k_1t} \right) \)</span>.</p>
 <p>This has the form of the Gompertz equation, i.e., <span class="math notranslate nohighlight">\(\displaystyle A = A_0e^{\left((k_2B_0/k_1)(1-e^{-k_1t})\right)}\)</span>.</p>
 <p>(d) In this model of a tumour, <span class="math notranslate nohighlight">\(k_2 = 1\)</span>, if <span class="math notranslate nohighlight">\(B_0\)</span> is the initial rate of tumour growth, <span class="math notranslate nohighlight">\(k_1\)</span> the regression constant and <span class="math notranslate nohighlight">\(A_0\)</span> the number of cells initially present. At long times, <span class="math notranslate nohighlight">\(A \to A_0e^{B_0 /k_1}\)</span> and if the tumour is to shrink then, <span class="math notranslate nohighlight">\(B_0/k_1 \lt 1\)</span> making the exponential less than <span class="math notranslate nohighlight">\(1\)</span>.</p>
-</div>
-<div class="section" id="q20-answer">
-<h2>Q20 answer<a class="headerlink" href="#q20-answer" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="q20-answer">
+<h2>Q20 answer<a class="headerlink" href="#q20-answer" title="Permalink to this headline">#</a></h2>
 <p>(a) The rate of births is <span class="math notranslate nohighlight">\(k_1N\)</span> and of deaths <span class="math notranslate nohighlight">\((k_2 + k_3N)N\)</span>, thus the rate equation is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \frac{dN}{dt}=k_1N-k_2N-k_3N^2 =[k_1-k_2-k_3N]N \]</div>
@@ -1933,10 +2173,10 @@ a-x &amp; &amp; b+x
 time passes, harvesting may destroy the population and then it becomes negative! The phase portrait allows this to be visualized, Fig. 37. If the initial population is less than the lower critical point, at <span class="math notranslate nohighlight">\(N = 276\)</span> the population moves towards zero because this point is unstable. If the initial population is above this then the second stable point is reached at <span class="math notranslate nohighlight">\(N = 723\)</span> as this point is stable. Thus, to determine whether the population will crash for a given set of parameters, the rate equation does not have to be solved but only the phase portrait examined. However, if you want to know how long it will take the population to crash or to recover, then the rate equation has to be solved.</p>
 <p><img alt="Drawing" src="../_images/diffeqn-fig37.png" /></p>
 <p>Fig. 37 Phase portraits for the two population models. The lower curve (blue) corresponds to the model with harvesting. The circles indicate the steady state values; the arrows indicate how the population changes with time depending on its initial value.</p>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="q21-answer">
-<h2>Q21 answer<a class="headerlink" href="#q21-answer" title="Permalink to this headline">¶</a></h2>
+<section id="q21-answer">
+<h2>Q21 answer<a class="headerlink" href="#q21-answer" title="Permalink to this headline">#</a></h2>
 <p>(a) The singlet states decay by fluorescence and crossing to the triplets and formed by triplet annihilation.</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle \begin{align} \frac{dS}{dt} &amp;= -(k_f + k_s)S + \frac{k_aT^2}{2} \\
@@ -1962,8 +2202,8 @@ time passes, harvesting may destroy the population and then it becomes negative!
 <p>Notice that any <em>delayed fluorescence</em> will decay as <span class="math notranslate nohighlight">\(\displaystyle \approx e^{-2k_Tt}\)</span>, which is twice as fast as the triplets do, because of the <span class="math notranslate nohighlight">\(T^2\)</span> term in its rate expression.</p>
 <p><img alt="Drawing" src="../_images/diffeqn-fig38.png" /></p>
 <p>Fig. 38 The decay of the triplet population <span class="math notranslate nohighlight">\(T\)</span> (in <span class="math notranslate nohighlight">\(\mathrm{dm^3\,mol^{-1}\,s^{-1}}\)</span>) vs. time. The effect of T-T annihilation on the T population for different triplet rate constants, <span class="math notranslate nohighlight">\(k_T\)</span> (s<span class="math notranslate nohighlight">\(^{-1}\)</span>) is shown with <span class="math notranslate nohighlight">\(k_a=10^9\,\mathrm{ dm^3\,mol^{-1}\,s^{-1}}\)</span>. The initial triplet population is <span class="math notranslate nohighlight">\(10^{-4} \,\mathrm{ dm^3\,mol^{-1}\,s^{-1}}\)</span>.</p>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -1987,14 +2227,16 @@ time passes, harvesting may destroy the population and then it becomes negative!
 
               </div>
               
-        
-            <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="Diff-eqns-G.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">PDE examples continued</p>
+            <p class="prev-next-title">PDE Continued</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="Diff-eqns-answers-22-37.html" title="next page">
@@ -2005,26 +2247,28 @@ time passes, harvesting may destroy the population and then it becomes negative!
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-        
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-    <div class="container">
-      <p>
-        
-          By Godfrey Beddard<br/>
-        
-            &copy; Copyright 2022.<br/>
-      </p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Godfrey Beddard<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
     </div>
-  </footer>
-</main>
+    
+</div>
 
 
       </div>
     </div>
   
-  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>

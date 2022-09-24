@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## Characterizing experimental data. Accuracy, precision, mean and standard deviation
+# # Characterizing experimental data. Accuracy, precision, mean and standard deviation
 
 # In[1]:
 
@@ -17,7 +17,7 @@ init_printing()                     # allows printing of SymPy results in typese
 plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 
-# ### 1.1 The Mean or Average value
+# ## 1.1 The Mean or Average value
 # 
 # If several readings have been taken of a quantity $x$, for example a titration is performed $N$ times with identical solutions in an attempt to be precise, the titration's end-point volume will be quoted as the arithmetic sample average $\langle x\rangle$ of all the $n$ measurements. This is sometimes also labelled $\bar x$ (pronounced 'x-bar') and the word 'mean' is often used instead of average. The arithmetic average is
 # 
@@ -32,7 +32,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # One trajectory showing the way the mean value is approached as the number of experiments is increased is shown in figure 1; the sample standard deviation $s$ (equation 2) is also shown. The samples at each $n$ are from a new list of length $n$ selected at random a normal distribution (figure 4) with a mean $1/2$ and a standard deviation $1/4$. In many experiments, the inherent accuracy of each measurement may not be the same and then the mean and standard deviation have to be _weighted_ to reflect this. This is described in Section 3.8.
 # 
-# ### 1.2 Sample Standard Deviation and parent or population Variance
+# ## 1.2 Sample Standard Deviation and parent or population Variance
 # 
 # A measure of the spread of the results is the sample standard deviation $s$. The square of the standard deviation is called the _variance_ . The sample standard deviation is
 # 
@@ -68,7 +68,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # which is an unbiased estimator of $\sigma^2$. Strictly speaking, the equality symbol = should be replaced by $\approx$ 'approximately' because this is an estimation; however, equality is usually used. The factor $n/(n - 1)$ enters because of an argument from statistical theory. The term reflects the degrees of freedom left with which to describe the data. Each parameter that is defined is considered to impose a restraint on the data and is, roughly speaking, equivalent to removing one data point. The more parameters that are measured the fewer data points there are left to describe the data (Parratt 1971).
 # 
-# ### 1.3 Standard Deviation in the Mean
+# ## 1.3 Standard Deviation in the Mean
 # 
 # If experimental measurements are repeated, slightly different values of the mean are expected because only a few of the possibly infinite number of values needed to define the true result can be measured. The difference between any two means would be expected to be less than the standard deviation in either set. The standard deviation of the means would then be written in the same way as equation 2 as 
 # 
@@ -87,7 +87,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # however, this is also called the standard error. Clearly, these names are not fixed so it is
 # always necessary to check the equation being used, which unfortunately, is not always given.
 # 
-# ### 2 Central Limit Theorem
+# ## 2 Central Limit Theorem
 # 
 # The mean $\mu$ and standard deviation $\sigma$ are used assuming that data is distributed normally. But many quantities measured are not expected to have a normal distribution; for example, when counting photons or particles, a Poisson distribution is produced which is quite unlike a normal distribution at small $\mu$, see figure 13. The speed of a molecule follows a Maxwell - Boltzmann distribution (see chapter 3 Q54), which is clearly skewed or lopsided, again quite unlike a normal distribution. However, remarkably, if several measurements are taken of a given velocity, their distribution will be normal. This is what the central limit theorem predicts and although easy to demonstrate, it is harder to prove. It states that by taking many similar measurements from (almost) any type of continuous distribution, the result always approaches a normal (Gaussian) distribution. This population distribution has the theoretical form
 # 
@@ -144,7 +144,7 @@ gaus = lambda x,sig: np.exp(-(x-av_x)**2/(2*sig**2/n))/np.sqrt(2*np.pi*sig**2/n)
 #plt.show()
 
 
-# ### 3 Confidence intervals
+# ## 3 Confidence intervals
 # 
 # The central limit theorem shows that repeated measurements follow a normal distribution (see Section 3.1) with a mean $\mu$ and variance $\sigma^2/n$ for n separate measurements. The mean $\mu$ may be known from theoretical considerations or from other experimental data. The properties of the normal distribution are used to provide estimates of the probability that, by chance alone, a measurement of the mean will fall inside or outside a certain value.
 # 
@@ -170,7 +170,7 @@ gaus = lambda x,sig: np.exp(-(x-av_x)**2/(2*sig**2/n))/np.sqrt(2*np.pi*sig**2/n)
 # 
 # Confidence limits are not always used when quoting results and it is common to see $\langle x\rangle \pm \sigma$ quoted instead. Unless this is qualified as being $1\sigma,\; 2\sigma$ etc., what is implied by this is uncertain. If the error is $\pm\sigma$ then $\approx 68$% of all measurements fall in this range. Table 1 gives other values.
 # 
-# #### **Table 1. sigma's** 
+# ### **Table 1. sigma's** 
 # $$\displaystyle \begin{array}{l|l l}
 # \hline
 # \text{% chance} & &\text{dispersion index} \\
@@ -189,7 +189,7 @@ gaus = lambda x,sig: np.exp(-(x-av_x)**2/(2*sig**2/n))/np.sqrt(2*np.pi*sig**2/n)
 # 
 # However, the 'five sigma' statement can also be used with the normal distribution and this is far more common, particularly in particle physics. By integrating the distribution from $-\infty\to x$ the cumulative distribution is obtained. Thus there is a $50$% chance of being within $0.675\sigma$, (this is sometimes called the probable error), a $68.5$% chance of being within $1\sigma$ and a $95$% chance of being within $1.96\sigma$, and $95.45$% chance of being within $2\sigma$ and so on. For $5\sigma$ the chance is $99.9999$%, pretty much a 'dead cert'. 
 # 
-# ### 3.1 The normal and standard normal distribution
+# ## 3.1 The normal and standard normal distribution
 # 
 # The normal (Gaussian) distribution with mean $\mu$ and variance $\sigma^2$ has the form
 # 
@@ -273,7 +273,7 @@ qtile(0.69146246 )
 # 
 # The term $Z_{\alpha/2}$ is the percentage point of the standard normal distribution, i.e. the '% chance' in table 1.
 # 
-# #### **(i) Estimate K$^+$ content of glass**
+# ### **(i) Estimate K$^+$ content of glass**
 # Two hundred samples taken at random were obtained for the K$^+$ content of the glass used to make Pyrex flasks. The mean value was found to be $136.48\;\mathrm{\mu g}$ with a sample standard deviation of $25.31\;\mathrm{\mu g}$. The calculation of $95$% and $99$% confidence limits about the mean mass follows directly from equation 11;
 # 
 # $$\displaystyle 95\text{ %  limits :  } 136.48 \pm 1.96\cdot 25.31/\sqrt{200} = 136.48 \pm 3.51 \;\mathrm{\mu g}$$
@@ -289,7 +289,7 @@ qtile(0.69146246 )
 # 99 & &2.58\\
 # \hline \end{array}$$
 # 
-# ### 3.2 Small sample confidence limits: Student’s *t*
+# ## 3.2 Small sample confidence limits: Student’s *t*
 # 
 # When the number of samples is small, s may not be a very good estimate of $\sigma$ and, in this case, Student's '$t$' test is needed. The distribution is similar in shape to the normal distribution, but is wider in the wings. It is characterized by one parameter $t = n - 1$ where $n$ is the number of samples being averaged, and $t$ is called its 'degrees of freedom'. When the sample size increases, the t distribution approaches the normal one. Using a similar argument to that for the normal distribution, the $t$ distribution produces confidence limits,
 # 
@@ -297,7 +297,7 @@ qtile(0.69146246 )
 # 
 # where $t_{\alpha/2}$ is obtained by integrating the distribution, just as was done for the normal distribution. Only a few values are used regularly, some of which are listed in Table 3. (Notice that in the table that $t$ is one less than the number of data points.)
 # 
-# ### Table 3 Student's *t* distribution
+# ## Table 3 Student's *t* distribution
 # $$\text{Student's } t, \text{two tailed confidence}$$
 # $$\displaystyle \begin{array}{cccc|c|ccc}
 # \hline
@@ -323,7 +323,7 @@ qtile(0.69146246 )
 # Figure 5. Student's $t$ distribution is wider in the wings than the normal distribution, which it approaches when $v$ is larger that $\approx 15$
 # ___________
 # 
-# #### **(ii) Response times**
+# ### **(ii) Response times**
 # Some typical response times of a certain commercial mass spectrometry service are
 # 
 # $$\displaystyle 8.21, \; 25.15,\; 11.20,\; 18.06,\; 22.55,\; 16.49 \text{ days} $$
@@ -338,7 +338,7 @@ qtile(0.69146246 )
 # 
 # Rounding the answers gives $17 \pm 7$ which is  $10 \to 24$ days and is a very wide variation. It would certainly be worth considering changing your supplier!
 # 
-# ### 3.3 Critical values from cumulative Student’ s *t* distribution
+# ## 3.3 Critical values from cumulative Student’ s *t* distribution
 # 
 # To use Python to find the $t$ values for n points with $\alpha/2 = 0.025$ we follow the method used for the normal distribution but now with the $t$ distribution. This means loading the library as 'from scipy.stats import t,norm' as shown at the top of this page.  Looking at Table 3, with $v=5$ and at $95$% the value is $2.571$. Using the t.cdf function produces $0.975$ which is the value fro $-\infty\to 2.571$ and so the two tailed value is $0.95$ or $95$%.
 
@@ -366,7 +366,7 @@ quant(x,n)
 
 # which is the value in the table under $95$% and $v=5$.
 # 
-# ### 3.4 Hypothesis testing
+# ## 3.4 Hypothesis testing
 # 
 # Suppose that a micro-analytical laboratory has to be certified and one of the tests it has to perform is to determine the ratio of $^{12}$C / $^{14}$N on an unknown compound. The examiners know that the ratio should be $50$ and a standard deviation of $1/2$ is acceptable. The laboratory produces the following set of data,
 # 
@@ -388,7 +388,7 @@ quant(x,n)
 # 
 # Calculating again with $s = 0.466$ gives $t_0 = 1.33$ and from the $t$ distribution, with seven degrees of freedom at the $95$% level, $t_{025,7} = 2.365$. As $t_0$ is less than this and $z_0$ is less than $1.96$, although this is a less critical test, the conclusion reached is that with $95$% confidence the data is consistent with a population mean of $50$ and standard deviation of $1/2$ and the lab is up to standard.
 # 
-# ### 3.5 Comparison of two means
+# ## 3.5 Comparison of two means
 # 
 # When a mean value has been obtained, to eliminate systematic errors it is necessary to compare this with another determination, perhaps done on another day, or to compare with a result from different apparatus or with a literature result. The two means are only samples from the true distribution and should not be very different from one another as they are supposedly measuring the same thing. The difference in means should therefore be normally distributed about the true difference $\mu_1 - \mu_2$, which in turn, should be zero. The simplest test is to use the propagation of errors formula, see Section 4, to compare the difference in the means $\langle x\rangle_1-\langle x\rangle_2$ with the difference in standard deviation,
 # 
@@ -408,7 +408,7 @@ quant(x,n)
 # 
 # $$\displaystyle \langle x\rangle_1-\langle x\rangle_2\pm t_{0.025,S_p}\sqrt{\frac{n_1+n_2}{n_1n_2}}\tag{17}$$
 # 
-# #### **(iii) Comparing columns yields in chromatography**
+# ### **(iii) Comparing columns yields in chromatography**
 # The yields of two nominally identical columns used for chromatographic separation have been measured. There are nine and eight experiments on each column under identical experimental conditions and the subsequent yield (mg) for each is as follows:
 # 
 #  $$\displaystyle \begin{array}\\
@@ -428,7 +428,7 @@ quant(x,n)
 # 
 # making the lower bound $4.47 - 3.8 = 0.65$ mg and the upper bound $+8.2$ mg. Thus, the difference in mean value at the $95$% level is $0.65 \le \langle x\rangle_1-\langle x\rangle_2 \ge 8.2$ mg which means that it is possible to be $95$% confident that column 1 produces between $0.65 \to 8.2$ mg more on average that column 2.
 # 
-# #### **(iv) Comparing fluorescence yields**
+# ### **(iv) Comparing fluorescence yields**
 # When repeated measurements are made on the same instrument they are likely to be correlated and therefore not independent of one another. In this example, the difference in the experimental values is examined using the $t$ test rather than comparing the two means.
 # 
 # Consider measuring fluorescence from the dye thionine, which is known to intercalate into calf thymus DNA. One sample is treated with protein and measured to see if this has an effect on the amount of fluorescence observed. The data (in arbitrary units) for the fluorescence intensity was as follows:
@@ -442,11 +442,11 @@ quant(x,n)
 # 
 # The mean value of the _difference_ is $-4.87$ and the sample standard deviation $4.06$. The $t_0$ statistic (equation 15) is $-3.18$ with a population mean $\mu_0 = 0$. From the $t$ distribution table with six degrees of freedom $t_{0.025,6} = 2.45$ and as $|-3.18| \gt 2.45$ the protein does have an effect at the $95$% level and the fluorescence intensity is different between the two sets of measurements.
 # 
-# ### 3.6 Chebychev’ s rule, Chauvenet's criterion and outliers
+# ## 3.6 Chebychev’ s rule, Chauvenet's criterion and outliers
 # 
 # Sometimes data points seem to be too far from the trend exhibited by all the others and there is then a temptation to remove such points. This must always be resisted. One famous consequence of removing data led to the hole in the Antarctic ozone layer being missed. As the New Scientist (31 March 1988) put it, 'So unexpected was the hole, that for several years computers analyzing ozone data had systematically thrown out the readings that should have pointed to its growth.' However, it should be remembered that by the random statistical nature of noise adding to any measurement that deviations, often large ones, are to be expected. Note also that the process of smoothing data is akin to removing outliers and should be avoided, and in some settings, clinical ones for example, no data should ever be disregarded.
 # 
-# #### **Chebychev**
+# ### **Chebychev**
 # When outlying points are found in data, the obvious thing is to check that no numerical or transcriptional error has occurred, then go to the instrument used and check that a simple error has not been made, such as using the wrong solvent or a mistake in the concentration, or amplifier setting and so forth. The instrument could be checked out with a known reference but if everything turns out satisfactorily then it must be assumed that the data point is the result of random chance. Highly unlikely but not impossible. If the experiment cannot be repeated and the data still has to be dealt with, then the Chebychev rule may be useful. 
 # 
 # This gives a number to the probability that a random variable or the absolute value from a mean $| x - \langle x \rangle |$ exceeds a given number. Suppose that this number is $k\sigma$ where $k \gt 1$ is an integer and $\sigma$ is the standard deviation, then the condition is
@@ -455,7 +455,7 @@ quant(x,n)
 # 
 # This means that the chance that $| x - \langle x \rangle |$ is numerically greater than $k\sigma$, is less than $1/k^2$, or, equivalently, that no more that $1/k^2$ data points should be more than $k$ standard deviations from the mean or, which is the same, that $1 - 1/k^2$ are within $k$ standard deviations. The value of $k \gt 1$ is for us to choose. The data described above in Section 3.4 for the $^{12}$C / $^{14}$N ratio has a mean of $50.22$ and a (sample) standard deviation of $s = 0.466$. If $k = 2$ is chosen then $1 - 1/4 = 0.75$ or $75$% of the values should fall in the range $50.22 \pm 2 \cdot 0.466$. If $k = 3$, then $89$% of values fall in the range $50.22 \pm 3 \cdot 0.466$ and for any points that do not fall in this range there is a sound reason for ignoring them.
 # 
-# #### **Chauvenet**
+# ### **Chauvenet**
 # An alternative method of removing outliers has been given by Chauvenet and this considers both the number of data points and their value. We use this method to _reject a data point_ if its deviation from the mean have a probability of occurring that is _less than_ $1/(2n)$ for $n$ data points. This method does not work well on small datasets.
 # 
 # In the set of data $89,\;120,\;94,\;110,\;105,\;108,\;85,\;83,\;101,\;95$ the largest value $120$ may be an outlier. This point is $21$ from the mean $\langle x\rangle = 99$ and  we check that the probability from $\langle x\rangle -21 \to \langle x\rangle +21$ is less that $1/2n$ which is $1/20$ as there are 10 points.
@@ -507,11 +507,11 @@ else:
     print('remove point')
 
 
-# ### 3.7 Standard deviation in a single measurement
+# ## 3.7 Standard deviation in a single measurement
 # 
 # When only a single measurement has been made, as is often the case in an undergraduate laboratory, the question arises as to what standard deviation it should be given. In such laboratories, many other measurements will undoubtedly have been made so the mean and standard deviation for the experiment will be known. However, in the absence of such knowledge we can appeal to the Poisson distribution (see Section 6.4) to determine what value should be given to the standard deviation. It turns out that by calculating the maximum likelihood function that the standard deviation is the square root of the result itself. Thus if the result has a value $k$ then $\sigma_k =\sqrt{k}$.
 # 
-# ### 3.8 Weighting
+# ## 3.8 Weighting
 # 
 # In Chapter 1.9.13 the average energy and average length of trans and gauche butane molecules was calculated by weighting the individual values according to the Boltzmann distribution. Experimental measurements are similarly not always of equal precision and this may be inherent in the nature of the observation. When counting photons, for instance, the precision of each measurement is proportional to the number of counts. For example, the intensity of an emission spectrum varies with wavelength; the precision is therefore different at different wavelengths. Alternatively, it may be that one instrument has twice the resolution of another or simply it may be that one experimentalist is better than another; nevertheless, the average has to be taken. 
 # 
@@ -529,14 +529,14 @@ else:
 # 
 # Weightings ensure that more importance is given to the more precise measurement because the smaller the standard deviation is, the larger is the weighting given to it.
 # 
-# #### **(v) Spectral lines**
+# ### **(v) Spectral lines**
 # Suppose that on one instrument a line in the SO$_2$ infrared spectrum is measured at $550\;\mathrm{ cm^{-1}}$ with a standard deviation of $\sigma = 10\;\mathrm{ cm^{-1}}$; another instrument is then used with $\sigma = 5\;\mathrm{ cm^{-1}}$ and produces $555\;\mathrm{ cm^{-1}}$. The unweighted average is $552.5\;\mathrm{ cm^{-1}}$, while the weighted average of the two measurements is $554\;\mathrm{ cm^{-1}}$, which is close to that of the higher resolution instrument as might be anticipated. 
 # 
 # If three measurements are made of a rate constant with values $(3.16 \pm 0.03)\cdot 10^7, (3.21 \pm 0.05)\cdot 10^7$, and $(3.14 \pm 0.02)\cdot 10^7\;\mathrm{ s^{-1}}$, the errors are then taken to be the standard deviations and equations 18,19 are used. The best combined rate constant is $(3.15_2 \pm 0.014)\cdot 10^7\;\mathrm{ s^{-1}}$.
 # 
 # In many experiments, the standard deviation can be found by looking at an instrument's specification, where a resolution of a certain number of wavenumbers or millivolts, and so forth, is usually given. In other cases this may have to be estimated from the data itself and this can be difficult to do point by point. However, one case in which the standard deviation is known exactly is in a particle or photon counting experiment because the arrival of photons at the detector is Poisson distributed where $\sigma^2 = \mu$ and then $w_i = 1/\mu_i$ where $\mu_i$ is the average number of counts in the $i^{th}$ measurement. Fluorimeters often use photon counting to measure fluorescence and phosphorescence spectra, and the standard deviation can then be measure directly from the data.
 # 
-# ### 4 Propagation or combination of errors
+# ## 4 Propagation or combination of errors
 # 
 # In many experimental situations, a measurement does not always produce the final result, which will be obtained from further calculations, and may also involve other experimental measurements. For example, the measured value and its associated error may have to be exponentiated and then multiplied by another quantity with its error.
 # 
@@ -552,7 +552,7 @@ else:
 # 
 # $$\displaystyle \sigma_y^2=\left(\frac{\partial y}{\partial u}\right)_{v,w}^2\sigma_u^2+\left(\frac{\partial y}{\partial v}\right)_{u,w}^2\sigma_v^2+\left(\frac{\partial y}{\partial w}\right)_{u,v}^2\sigma_w^2+\cdots\tag{21}$$
 # 
-# #### **(vi) Gas law**
+# ### **(vi) Gas law**
 # The gas law states that $p = nRT/V$, and the volume, temperature, and number of moles have been measured, each with their standard deviations. The standard deviation of the pressure is found by taking the partial derivatives of each variable in turn, while holding the others constant and substituting into equation 21. The variables are $n\equiv u,T\equiv v,V\equiv w$,
 # 
 # $$\displaystyle \sigma_p^2=\left(\frac{\partial p}{\partial n}\right)^2\sigma_n^2+\left(\frac{\partial p}{\partial T}\right)^2\sigma_T^2+\left(\frac{\partial p}{\partial V}\right)^2\sigma_V^2\\= \left(\frac{RT}{V}\right)^2\sigma_n^2+\left(\frac{nR}{V}\right)^2\sigma_T^2+\left(-\frac{nRT}{V^2}\right)^2\sigma_V^2$$
@@ -561,7 +561,7 @@ else:
 # 
 # $$\displaystyle \frac{\sigma_p^2}{p^2}= \frac{\sigma_n^2}{n^2}+\frac{\sigma_T^2}{T^2}+\frac{\sigma_V^2}{V^2}$$
 # 
-# #### **(vii) Vapour pressure**
+# ### **(vii) Vapour pressure**
 # The vapour pressure (in torr) of a certain organic liquid has the form $\ln(p) = mT + c$ and the values of the constants $m$ and $c$ were obtained from a least squares analysis of a plot of log pressure _vs_ $1/T$. The gradient produced $m = -5390 \pm 33$ K and the intercept $c = 21.89 \pm 0.099$. To calculate the liquid's normal boiling temperature, i.e. the boiling temperature when $p = 760$ torr or $1$ atm. pressure, the equation must be rearranged to,
 # 
 # $$\displaystyle T=\frac{m}{\ln(760/1)-c}$$
@@ -590,14 +590,14 @@ sigT = sig.subs(p,760).subs(m,-5390).subs(c,21.89).subs(sm,33).subs(sc, 0.099)
 sigT.evalf(3)
 
 
-# #### **(viii) Vapour pressure continued**
+# ### **(viii) Vapour pressure continued**
 # Continuing with the last example, suppose that the vapour pressure is required and that the temperature has been measured as $353 \pm 3$ K, and again $m = -5390 \pm 33$ K and $c = 21.89 \pm 0.099$. In this case, $p = e^{m/T +c}$ and the derivatives produce
 # 
 # $$\displaystyle \sigma_p^2=\left(\frac{m^2\sigma_T^2}{T^2}+\frac{\sigma_m^2}{T^2}+\sigma_c^2\right)p^2$$
 # 
 # and working out the terms produces a standard deviation of $141$ torr and a pressure of $750$ torr. The resulting standard deviation might seem unusually large, but this is caused by the exponential nature of the pressure equation having a great sensitivity to temperature.
 # 
-# ### 4.1 Table of some error propagation formulae
+# ## 4.1 Table of some error propagation formulae
 # 
 # The following table gives some examples of frequently met functions. The variances $\sigma_u^2$ and $\sigma_v^22$ are assumed to be known. The total variance $\sigma^2$ is shown; remember to take the square root before using and note that σ 2 is always positive. The equation to use for many variables is
 # 
@@ -616,7 +616,7 @@ sigT.evalf(3)
 # \hline
 # \end{array}$$
 # 
-# ### 4.2  Matrix formulation.
+# ## 4.2  Matrix formulation.
 # Barlow (1989) demonstrates that equation 20 can be written in a matrix form, which does not immediately seem to offer any advantage, but this becomes clearer for problems that are more complex. The matrix equation is
 # 
 # $$\displaystyle V=GV_\sigma^2G^T \tag{23}$$
@@ -636,7 +636,7 @@ sigT.evalf(3)
 # 
 # $$\displaystyle \sigma^2 =\begin{bmatrix} 1&1\end{bmatrix}\begin{bmatrix} \left(\displaystyle\frac{\partial T}{\partial m}\right)^2\sigma_m^2 \\ \left(\displaystyle\frac{\partial T}{\partial c}\right)^2\sigma_c^2\end{bmatrix}= \left(\displaystyle\frac{\partial T}{\partial m}\right)^2\sigma_m^2+  \left(\frac{\partial T}{\partial c}\right)^2\sigma_c^2$$
 # 
-# ### 4.3 Maximum Likelihood Method. Parameter estimation: 
+# ## 4.3 Maximum Likelihood Method. Parameter estimation: 
 # 
 # The variance and mean have been used in our calculations on the assumption that they were the 'best estimation' of these properties, which means that they are as close as possible to the true values for the underlying process given that only a limited number of measurements are taken. Using the Maximum Likelihood method these estimates, such as mean and variance, can be found in terms of the measured values which we call $x_i$.
 # 

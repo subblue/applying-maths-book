@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## The Metropolis algorithm
+# # The Metropolis algorithm
 
 # In[1]:
 
@@ -14,7 +14,7 @@ init_printing()                         # allows printing of SymPy results in ty
 plt.rcParams.update({'font.size': 16})  # set font size for plots
 
 
-# ### Introduction to the Metropolis algorithm
+# ## Introduction to the Metropolis algorithm
 # 
 # This is a extremely important algorithm because it speeds up many calculations bringing them into the realm of possibilities. The algorithm calculates average properties by using Monte-Carlo methods to preferentially sample important contributions to the result and thus does not waste time on unimportant ones. In illustrating this algorithm examples from statistical thermodynamics and quantum mechanics are used. 
 # 
@@ -62,7 +62,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # where $Z$ is the partition function. 
 # 
 # 
-# ### Basis of the Algorithm
+# ## Basis of the Algorithm
 # 
 # The Metropolis algorithm allows an estimation of the ratio of the two sums to be made in an efficient way. This avoids having to calculate $Z$, which, as we have seen, may be impossible. The algorithm overcomes the necessity to search all the 'phase space', as configurations are generically called, and biases the random guessing of which configuration to add to the total, by using the Boltzmann distribution of energies. In doing this, the algorithm tries to add to the estimate of $Q$ only those configurations contributing significantly to its value and, in doing so, performs a random walk among the configurations; see Figure 12 for a picture of two configurations. This random walk is also called a _Markov process_. This is defined as a process whereby a 'system' goes from one state to another in a random fashion, but has no memory of its previous condition.
 # 
@@ -129,7 +129,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # $$\displaystyle \sqrt{\langle E^2\rangle - \langle E \rangle^2} = k_BT/\sqrt{2}  $$
 # 
-# ### 6.1 Average energy,  heat capacity  and displacement of a harmonic oscillator
+# ## 6.1 Average energy,  heat capacity  and displacement of a harmonic oscillator
 # 
 # In the next example, the harmonic oscillator, $k=2$ and $k_BT = 0.1$. Random guesses of the values of $x$, (the configuration or state) are made, and the average energy calculated. The range of $x$ must be large enough to allow $e^{-E/k_BT}$ to be very small, $\approx10^{-7}$ or less, to allow proper sampling of the distribution. In addition, the range of $x$ must be positive as well as negative. The random number has 1/2 subtracted from it to ensure this. If this is not done, then microscopic reversibility is not achieved because not all the possible configurations, in this case bond extension, can be sampled. The calculation continues for $20000$ samples.
 
@@ -194,7 +194,7 @@ print('{:s} {:8.4g} {:s} {:8.4g} {:s} {:8.4g}'.format('av E=',Eav, 'av e^2=',E2a
 # 
 # The harmonic oscillator clearly also has kinetic energy. The calculation to estimate this is essentially the same as just described; however, the constants are interpreted in a different way. The constant $k$ now represents the reduced mass, which is will become $10$ amu, and displacement $x$ now represents the velocity $v$ in m s<sup>-1</sup> about the origin of coordinates taken as the center of gravity of the molecule. The velocity must range from at least $\pm 4000\, \mathrm{ m\, s^{-1}}$ if the exponential $e^{-\Delta E/(k_BT)}$ is to be $\approx 10^{-8}$ or less at the largest speed. A typical value of the average kinetic energy (per molecule) is found to be $2.03 \pm 0.01 \cdot 10^{-21}$ J, which is effectively the same result as for the previous Monte Carlo calculation of $\langle E \rangle$  and demonstrates the equipartition theorem.
 # 
-# #### **Maxwell distribution**
+# ### **Maxwell distribution**
 # 
 # Normally kinetic energy $mv^2/2$ is interpreted as that due to molecules of a gas colliding with one another rather than that of the atoms of a harmonic oscillator. If this is the case then the Maxwell speed distribution can be constructed. To do this, the velocities that are accepted in the Metropolis step are stored as the calculation proceeds. Velocity is a vector but speed is not; consequently, the angles that a molecule has with respect to any axes are integrated away on calculating the speed distribution and no longer enter into the calculation. The result is that the speed distribution depends only on $v^2$, which is interpreted as a scalar equal to the speed squared. For example, the probability per unit speed of molecules with speed $s = |v|$ is,
 # 
@@ -267,7 +267,7 @@ CV     = (E2av - Eav**2)/(kB*T**2)
 # Figure 19. Maxwell speed distribution showing the distribution of sampled points. The thick grey curve is the theoretical line.
 # _________
 # 
-# ### 6.2 Ising spin model
+# ## 6.2 Ising spin model
 # 
 # The next example is taken from statistical mechanics and is the Ising model of a ferromagnet. In a ferromagnet, the atomic spins are coupled to one another by the quantum mechanical exchange interaction $J$ and can only have two energies corresponding to being 'up' or 'down'. The coupling ensures that 'up' spins want to be next to other up spins and 'down' spins want to be next to other down spins. At zero temperature, the minimum energy configuration occurs when all the spins align in the same direction, and its energy is $-2JN$ for $N$ spins. The entropy of the spin system is zero, because all spins are aligned in perfect order, and so is the heat capacity $C_p$. The magnetization, which is the sum of the individual spin magnetic moments, is maximal.
 # 
@@ -280,7 +280,7 @@ CV     = (E2av - Eav**2)/(kB*T**2)
 # Figure 20. Two examples of $2^{256}$ or $\approx 10^{77}$ possible configurations of spins in a $16 \times 16$ Ising model with temperature $T = 2$ (left) and $3$ (right) showing how significantly the disorder increases after the phase transition at $T = 2.269$. The light squares represent spin = $1$, and the dark squares, spin = $-1$. The exchange coupling $J = 1$, and $k_B = 1$.
 # ______
 
-#  ### 1D spin model
+#  ## 1D spin model
 #  
 #  In the examples such as the Maxwell distribution  there is no interaction between particles. One of the simplest examples in which interaction is allowed is the one-dimensional (1-D) Ising spin model. This is realized in practice with some Fe(II)Cl$^-_3$ compounds which, in the crystalline state, have chains of Fe$^{2+}$ atoms held apart with dichloride bridges. Part of the crystal structure of trimethylammonium iron(II) trichloride hydrate, (FeTAC), $\mathrm{[(CH_3)_3NH]FeCl^-_3 \cdot 2H_2O}$, is shown in Figure 20. The coupling between different chains of molecules in the crystal is relatively weak, but the interaction along a chain is so strong that this compound behaves as a 1-D chain of interacting electron spins. 
 #  
@@ -382,7 +382,7 @@ print('{:s} {:f} {:s} {:f}'.format('av energy/site =',avE/L, 'Cv =',Cv) )
 # Figure 23. Left: The red circles are the Monte Carlo calculated energy, $\langle E\rangle$, per spin; $\langle E\rangle/JN$. Right  The heat capacity per spin $\langle C_V\rangle /k_B$ vs temperature (K), with $J/k_B = 1$ K. One run of $4000$ samples is shown for each point. The lines are from the analytical functions, see text.
 # _________
 # 
-# #### **Calculating the Entropy**
+# ### **Calculating the Entropy**
 # Although the entropy at a given temperature $T$ can be calculated by integrating $C_V/T$, it can also be calculated more fundamentally from the arrangement of the spins. Maps of the spin state at the end of a calculation indicate how the entropy changes with temperature, and three examples are shown in Figure 24. 
 # 
 # Informally, we may label a black group as 'parallel spin up' and a white one 'parallel spin down', although 'up' and 'down' should not be taken literally. Within any blocks of either color, the spins are parallel to one another; hence, the coupling is $-J$ between adjacent spins. A color boundary thus indicates spin pairing and a coupling of $+ J$ between these two spins; see Figure 22. At $T = 0$ K, all spins are in the same state, which would mean that the whole strip would be of the same color. However, there are two ground states at $T = 0$ and these could be colored either black or white. At low temperatures, for example, $T$ = 1/2 or 1 K, (Figure 24) spins are grouped into a few large blocks of similar spin state. Although only one example is given in the figure, it is clear that if many calculations are performed here only a limited number of arrangements of these large blocks of spins will be possible. These configurations or arrangements determine the entropy. As the temperature is increased, the coupling between spins becomes relatively less important compared to the energy supplied by the surrounding heat bath. This reduces the size of the groups of similar spin state but increases their number, which leads to more of ways of arranging them, and hence, a larger entropy.
@@ -433,11 +433,11 @@ def get_entropy(spin):
 #-------------
 
 
-# #### **Phase Change**
+# ### **Phase Change**
 # 
 # The gradual and continuous change in the heat capacity and entropy indicates that the phase transition between ordered and disordered spins is unlike the familiar first-order or 'all-or-none' phase transitions or even that in the two-dimensional Ising spin model, see below. Whereas the general change in $C_V$ and $S$ with temperature is similar to that of a normal substance ($\mathrm{O_2,\; H_2O}$, etc.), the detail is quite different. This is because in the 1-D spin case the heat capacity increases and decreases in a continuous manner with increasing temperature. Similarly, the entropy smoothly increases with temperature to reach its final value. In a normal substance, however, there is a step change both in CV and S at a phase boundary. The cause of the different behavior is because, energetically, it is more favorable for two regions of opposite spins to co-exist than it is for either one or the other to exist on its own. Interestingly, a similar behavior occurs with the co-existence of helix and coil regions in proteins.
 # 
-# #### **Magnetisation** 
+# ### **Magnetisation** 
 # 
 # The magnetisation $M$ can also be calculated via $M=\sum_ks_k$ and from this the susceptibility 
 # 
@@ -454,7 +454,7 @@ def get_entropy(spin):
 # figure 26. left: Magnetisation /spin vs temperature. Notice how rapidly this decreases with temperature to become approximately zero. This may also be seen in figure 24 where patterns of spins are shown. Right. The magnetic susceptibility vs temperature, $\displaystyle \chi = \frac{1}{k_BT}\left( \langle M^2\rangle - \langle M\rangle^2   \right)$. 
 # _____
 # 
-# #### **Algebraic calculation of 1D Ising spin energy**
+# ### **Algebraic calculation of 1D Ising spin energy**
 # 
 # The partition function is defined as $\displaystyle Z = \sum_\alpha e^{-E_\alpha /k_BT}$ 
 # 
@@ -492,7 +492,7 @@ def get_entropy(spin):
 # 
 # $$\displaystyle E=k_BT^2d\ln(Z)/dT,\quad  S=k_BT\ln(Z)+E/T, \quad  C_V= dE/dT$$
 
-# ### 2D Spin model
+# ## 2D Spin model
 # 
 # The energy of the 2D Ising spin system is given by 
 # 

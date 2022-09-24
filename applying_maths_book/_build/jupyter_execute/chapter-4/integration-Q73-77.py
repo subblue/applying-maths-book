@@ -1,9 +1,9 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## Questions 73 - 77
+# # Questions 73 - 77
 
-# ### Q73 1D box  variational energy
+# ## Q73 1D box  variational energy
 # (a) For the particle in a one-dimensional box, calculate the variational energy if the trial wavefunction is $\psi= x(L - x)$ where $L$ is the length of the box for which the potential energy $V = 0$. Compare your result with the true energy for the lowest level which is $\displaystyle \frac{h^2}{8mL^2}$. The Schroedinger equation is 
 # 
 # $$\displaystyle -\frac{\hbar^2}{2m}\frac{d^2}{dx^2}\psi=E\psi$$
@@ -12,12 +12,12 @@
 # 
 # **Strategy:** (a) Calculate the two integrals in equation 47 separately; remember that $H$ acts on the wavefunction to its right and the result is then multiplied by $\psi$ before the integration is evaluated. (b) Calculate the integrals using Sympy, doing so in three parts, $-\infty \to -1; -1\to 1; 1\to \infty$. When trying to find the optimal value of $\alpha$ the LamberW function is encountered. At this point go back a step substitute the numerical value and recalculate. 
 # 
-# ### Q74 Quartic oscillator
+# ## Q74 Quartic oscillator
 # Suppose that in the quartic oscillator $V(x) = kx^4$, the trial wavefunction is chosen to be $\displaystyle  \sqrt{\frac{\alpha}{\sqrt{\pi}} }e^{-\alpha x^2/2}$ where $\alpha$ is the variable parameter. Calculate the minimum variational energy and compare your result with the numerical solution 
 # 
 # $$\displaystyle E_0=1.060k^{1/3}\left( \frac{\hbar^2}{2m}  \right)^{2/3}$$
 # 
-# ### Q75 He atom variational energy
+# ## Q75 He atom variational energy
 # The variational treatment can be used to approximate the ground state energy of the He atom. The energy cannot be calculated exactly because there are three particles, the nucleus and two electrons. Try to find a solution using the normalized wavefunction 
 # 
 # $$\displaystyle \varphi=\frac{1}{\pi}\left(\frac{\zeta}{a_0} \right)^3 e^{-\zeta(r_1-r_2)/a_0}$$
@@ -36,7 +36,7 @@
 # 
 # (c) Find the variational energy of the ground state of the He atom. Compare it with the energy calculated assuming that $\zeta = Z$, and with your 'experimental' value.
 # 
-# ### Q76 Variational energy in Gaussian well 
+# ## Q76 Variational energy in Gaussian well 
 # Using the trial wavefunction $\displaystyle \psi = e^{-ax^2/2}$ calculate the variational energy of the lowest bound state of an electron if the potential has the form of a Gaussian well 
 # 
 # $$\displaystyle V = 1 - e^{-\beta x^2}$$
@@ -52,7 +52,7 @@
 # **Strategy:** The potential is anharmonic with a value of $1$ at large values of $\pm x$ and zero at the origin. The expansion of the potential at small $x$ is $1-e^{-\beta x^2}\approx \beta x^2-\beta^2x^4/2\cdots$, and therefore the Gaussian wavefunction suggested as a trial wavefunction should be a good approximation as this is the form of the lowest wavefunction for a harmonic potential. 
 # 
 # 
-# ### Q77 H atom energy with trial wavefunction
+# ## Q77 H atom energy with trial wavefunction
 # Using atomic units (see Chapter 1.14.3), the Schroedinger equation for the hydrogen atom is 
 # 
 # $$\displaystyle -\frac{1}{2}\nabla^2\psi-\frac{\psi}{r}=E\psi$$

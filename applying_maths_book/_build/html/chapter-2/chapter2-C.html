@@ -4,11 +4,13 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Euler’s theorem, roots of unity, x-ray diffraction structure factor. &#8212; Applying Maths in the Chemical &amp; Biomolecular Sciences</title>
     
-  <link href="../_static/css/theme.css" rel="stylesheet">
-  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,40 +20,39 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Questions 14 - 29" href="chapter2-Q-14-29.html" />
@@ -63,7 +64,21 @@
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -72,9 +87,10 @@
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -92,14 +108,15 @@
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../intro.html">
-   Applying Maths in the Chemical and Biomolecular Sciences.
-  </a>
- </li>
-</ul>
-<ul class="current nav bd-sidenav">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Applying Maths in the Chemical and Biomolecular Sciences.
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../chapter-1/chapter1-intro.html">
    1. Numbers, Equations, Operators, and Algorithms.
@@ -1258,112 +1275,227 @@
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/chapter-2/chapter2-C.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/subblue/applying-maths-book"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/subblue/applying-maths-book/issues/new?title=Issue%20on%20page%20%2Fchapter-2/chapter2-C.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        
-    </div>
-</div>
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/subblue/applying-maths-book/main?urlpath=lab/tree/applying_maths_book/chapter-2/chapter2-C.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        <a class="colab-button" href="https://colab.research.google.com/github/subblue/applying-maths-book/blob/main/applying_maths_book/chapter-2/chapter2-C.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
-                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
-                    src="../_static/images/logo_colab.png"
-                    alt="Interact on Colab">Colab</button></a>
-        
-        
-    </div>
-</div>
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/subblue/applying-maths-book/main?urlpath=lab/tree/applying_maths_book/chapter-2/chapter2-C.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://colab.research.google.com/github/subblue/applying-maths-book/blob/main/applying_maths_book/chapter-2/chapter2-C.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/subblue/applying-maths-book"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/subblue/applying-maths-book/issues/new?title=Issue%20on%20page%20%2Fchapter-2/chapter2-C.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/chapter-2/chapter2-C.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#">
    Euler’s theorem, roots of unity, x-ray diffraction structure factor.
@@ -1413,17 +1545,82 @@
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Euler’s theorem, roots of unity, x-ray diffraction structure factor.</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Euler’s theorem, roots of unity, x-ray diffraction structure factor.
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#roots-of-unity-continued">
+   4.1 Roots of unity - continued
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sum-and-product-of-the-roots-of-unity">
+     <strong>
+      Sum and product of the roots of unity
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#useful-relationships">
+     <strong>
+      Useful relationships
+     </strong>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#examples">
+   4.2 Examples
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-phase-problem">
+     <strong>
+      The phase problem
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#orthorhombic-crystals">
+     <strong>
+      Orthorhombic crystals
+     </strong>
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
               <div>
                 
-  <div class="section" id="euler-s-theorem-roots-of-unity-x-ray-diffraction-structure-factor">
-<h1>Euler’s theorem, roots of unity, x-ray diffraction structure factor.<a class="headerlink" href="#euler-s-theorem-roots-of-unity-x-ray-diffraction-structure-factor" title="Permalink to this headline">¶</a></h1>
+  <section id="euler-s-theorem-roots-of-unity-x-ray-diffraction-structure-factor">
+<h1>Euler’s theorem, roots of unity, x-ray diffraction structure factor.<a class="headerlink" href="#euler-s-theorem-roots-of-unity-x-ray-diffraction-structure-factor" title="Permalink to this headline">#</a></h1>
 <p>The exponential series is <span class="math notranslate nohighlight">\(\displaystyle e^x = 1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \cdots\)</span>, and similarly a series can be formed in the complex number <span class="math notranslate nohighlight">\(w\)</span>,</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle e^w = 1 + w + \frac{w^2}{2!} + \frac{w^3}{3!} + \cdots\]</div>
@@ -1454,9 +1651,9 @@ therefore, if <span class="math notranslate nohighlight">\(z\)</span> is a compl
 <div class="math notranslate nohighlight">
 \[\displaystyle  e^{i\pi} =-1 \qquad  \text{ or } \qquad  e^{i\pi} +1=0 \tag{19}\]</div>
 <p>which some consider the most beautiful equation in mathematics, as it connects the most important numbers of mathematics <span class="math notranslate nohighlight">\((0, 1, i, e\)</span>, and <span class="math notranslate nohighlight">\(\pi)\)</span> and uses the most important operations (multiplication, exponentiation, negation, and addition). Furthermore, an integer is produced by raising an irrational number <span class="math notranslate nohighlight">\(\pi\)</span> times the imaginary unit <span class="math notranslate nohighlight">\(i\)</span> to the power of another irrational number, <span class="math notranslate nohighlight">\(e\)</span>. It is not at all obvious why this connection exists from an arithmetical standpoint, but from a geometrical one it is clearer. Consider a circle of unit radius on an Argand diagram; as the angle <span class="math notranslate nohighlight">\(\theta\)</span> increases from <span class="math notranslate nohighlight">\(0 \to 2\pi\)</span>, the modulus (radius) is <span class="math notranslate nohighlight">\(1\)</span> when <span class="math notranslate nohighlight">\(\theta = 0\)</span>, and is <span class="math notranslate nohighlight">\(i\)</span> when <span class="math notranslate nohighlight">\(\theta = \pi/2\)</span>, and <span class="math notranslate nohighlight">\(-1\)</span> when the angle is <span class="math notranslate nohighlight">\(\pi\)</span> and so on; see figure 4.</p>
-</div>
-<div class="section" id="roots-of-unity-continued">
-<h1>4.1 Roots of unity - continued<a class="headerlink" href="#roots-of-unity-continued" title="Permalink to this headline">¶</a></h1>
+</section>
+<section id="roots-of-unity-continued">
+<h1>4.1 Roots of unity - continued<a class="headerlink" href="#roots-of-unity-continued" title="Permalink to this headline">#</a></h1>
 <p>The <span class="math notranslate nohighlight">\(n\)</span> complex roots of unity are also easily calculated by defining</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle w_n=e^{2\pi i /n}\tag{20}\]</div>
@@ -1467,8 +1664,8 @@ therefore, if <span class="math notranslate nohighlight">\(z\)</span> is a compl
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{align}w_4^0=&amp;\;1,\\ w_4^1 = &amp; \;\cos(\pi/2)+i\sin(\pi/2)=i,\\w_4^2 = &amp; \;\cos(\pi)+i\sin(\pi)=-1,\\ w_4^3 = &amp; \;\cos(3\pi/2)+i\sin(3\pi/2) = -i  \end{align}\end{split}\]</div>
 <p>With the definition of eqn 20, <span class="math notranslate nohighlight">\((w_n)^n\equiv w_n^n=e^{2\pi i}=1 =w_n^0\)</span>. if we add <span class="math notranslate nohighlight">\(n\)</span> to any of the roots for example <span class="math notranslate nohighlight">\(w_n^{j+n}\)</span> then  <span class="math notranslate nohighlight">\(w_n^{j+n}=w_n^nw_n^j=w_n^j\)</span> which shows that the roots are cyclic <span class="math notranslate nohighlight">\(j\)</span> being an integer and have a period of <span class="math notranslate nohighlight">\(n\)</span>.</p>
-<div class="section" id="sum-and-product-of-the-roots-of-unity">
-<h2><strong>Sum and product of the roots of unity</strong><a class="headerlink" href="#sum-and-product-of-the-roots-of-unity" title="Permalink to this headline">¶</a></h2>
+<section id="sum-and-product-of-the-roots-of-unity">
+<h2><strong>Sum and product of the roots of unity</strong><a class="headerlink" href="#sum-and-product-of-the-roots-of-unity" title="Permalink to this headline">#</a></h2>
 <p>Figure 5 shows the five roots of unity. The sum of these roots, provide there are two or more, is zero, which can be intuitively seen by looking at the image. A geometric argument is that each root can be considered as a vector based at <span class="math notranslate nohighlight">\((0,0i)\)</span> and their sum will be zero as each is equally spaced from its neighbour.</p>
 <p>The sum is</p>
 <div class="math notranslate nohighlight">
@@ -1487,9 +1684,9 @@ therefore, if <span class="math notranslate nohighlight">\(z\)</span> is a compl
 <div class="math notranslate nohighlight">
 \[\displaystyle e^{2\pi i (n-1)/2}=e^{i\pi n}e^{-i\pi}\]</div>
 <p>As <span class="math notranslate nohighlight">\(e^{-i\pi} = -1\)</span> and the other term is <span class="math notranslate nohighlight">\(\pm 1\)</span> depending on whether <span class="math notranslate nohighlight">\(n\)</span> is odd or even therefore the product is always <span class="math notranslate nohighlight">\( 1\)</span> if <span class="math notranslate nohighlight">\(n\)</span> is even and <span class="math notranslate nohighlight">\(-1\)</span> if odd, i.e <span class="math notranslate nohighlight">\((-1)^n\)</span>.</p>
-</div>
-<div class="section" id="useful-relationships">
-<h2><strong>Useful relationships</strong><a class="headerlink" href="#useful-relationships" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="useful-relationships">
+<h2><strong>Useful relationships</strong><a class="headerlink" href="#useful-relationships" title="Permalink to this headline">#</a></h2>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle \begin{array}\\
 e^{i\pi}&amp;=e^{3i\pi}&amp;=e^{5i\pi}\cdots &amp;= -1\\
@@ -1497,10 +1694,10 @@ e^{2i\pi}&amp;=e^{4i\pi}&amp;=e^{6i\pi}\cdots &amp;= +1\\
 e^{ni\pi}&amp;=e^{-ni\pi}&amp;=(-1)^n&amp; n\text{ is any integer}\\
 e^{i\theta}+e^{- i\theta}&amp;=2\cos(\theta) \\
 e^{i\theta}-e^{- i\theta}&amp;=2i\sin(\theta) \end{array}\end{split}\]</div>
-</div>
-</div>
-<div class="section" id="examples">
-<h1>4.2 Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h1>
+</section>
+</section>
+<section id="examples">
+<h1>4.2 Examples<a class="headerlink" href="#examples" title="Permalink to this headline">#</a></h1>
 <p>Euler’s formula is important in science, because it permits the description of a sinusoidally varying real quantity by means of complex exponentials as in Fourier Transforms described in Chapter 9. This change simplifies equations, because it is far easier to manipulate exponentials than trig functions. For example, the general form of a sinusoidally varying quantity, such as a plane wave, is <span class="math notranslate nohighlight">\(f (t) = a_0\cos(\omega t - \theta)\)</span>, where <span class="math notranslate nohighlight">\(a_0\)</span> is the amplitude, <span class="math notranslate nohighlight">\(\omega\)</span> the frequency, and <span class="math notranslate nohighlight">\(\theta\)</span> the phase. These are all constants, and <span class="math notranslate nohighlight">\(t\)</span> is time and is a real variable. The equivalent complex function is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle g(t) = a_0e^{i(\theta-\omega t)} = a_0\left(\cos(\omega t - \theta) - i \sin(\omega t - \theta)\right)\]</div>
@@ -1523,8 +1720,8 @@ In chapter 9, (Fourier Series and Transforms) and in section 13.6, x-ray diffrac
 <div class="math notranslate nohighlight">
 \[\displaystyle F=\sum_i f_i\big(\cos(\pi(hu_i+kv_i+lw_i))+i\sin(\pi(hu_i+kv_i+lw_i)) \big)\]</div>
 <p>but it is often easier to use as eqn 21.</p>
-<div class="section" id="the-phase-problem">
-<h2><strong>The phase problem</strong><a class="headerlink" href="#the-phase-problem" title="Permalink to this headline">¶</a></h2>
+<section id="the-phase-problem">
+<h2><strong>The phase problem</strong><a class="headerlink" href="#the-phase-problem" title="Permalink to this headline">#</a></h2>
 <p>The intensity of the diffracted spot is <span class="math notranslate nohighlight">\(I=|F|^2=F^*F\)</span>  which means that the series of terms in <span class="math notranslate nohighlight">\(F\)</span> has to be multiplied by its complex conjugate. The term <span class="math notranslate nohighlight">\(f_i\)</span> is the atomic scattering factor for each type of atom relative to that of a single electron. It is the electrons in an atom that predominantly scatter the x-rays and so <span class="math notranslate nohighlight">\(f_i\)</span> is proportional to the number of electrons, so is larger for heavy atoms than light ones. See Chapter 9-13.6 for details. Notice in particular that the structure factor <em>does not depend on the shape or size of the unit cell</em>, but on the fractional positions of the atoms.</p>
 <p>The fact that the detector, e.g. CCD or photon counting array, always measures the intensity <span class="math notranslate nohighlight">\(F^*F\)</span> is the reason the <em>phase problem</em> exists which makes interpreting X-ray diffraction data somewhat complicated. To illustrate, if there are only two atoms then eqn. 21 becomes</p>
 <div class="math notranslate nohighlight">
@@ -1533,9 +1730,9 @@ In chapter 9, (Fourier Series and Transforms) and in section 13.6, x-ray diffrac
 <div class="math notranslate nohighlight">
 \[\displaystyle I=f_0^2+f_1^2 + f_0 f_1\left(e^{i\pi(\beta_0-\beta_1)}+e^{-i\pi(\beta_0-\beta_1)} \right)=f_0^2+f_1^2 + 2f_0 f_1\cos(\beta_0-\beta_1)\]</div>
 <p>and we know <span class="math notranslate nohighlight">\(f_0\)</span> and <span class="math notranslate nohighlight">\(f_1\)</span> as these <em>atomic</em> structure factors can be calculated. However, with one measurement there are two unknowns in the difference term. The <span class="math notranslate nohighlight">\(hkl\)</span> values are known from the positions of the diffracted spots on the detector ( the image has been <em>indexed</em> ), and so a second measurement can be made with different <span class="math notranslate nohighlight">\(k,h,l\)</span>, producing say <span class="math notranslate nohighlight">\(\beta_1-\beta_2\)</span>, but the atomic positions are the same and this process can be continued producing a set of difference equations which can be solved until the structure is determined, i.e. the <span class="math notranslate nohighlight">\(u_i,v_i,w_i\)</span> are known. In particular cases some simplification is possible as shown next.</p>
-</div>
-<div class="section" id="orthorhombic-crystals">
-<h2><strong>Orthorhombic crystals</strong><a class="headerlink" href="#orthorhombic-crystals" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="orthorhombic-crystals">
+<h2><strong>Orthorhombic crystals</strong><a class="headerlink" href="#orthorhombic-crystals" title="Permalink to this headline">#</a></h2>
 <p>In figure 7a (left) is shown a unit cell of an orthorhombic crystal, this means all angles are <span class="math notranslate nohighlight">\(90^\text{o}\)</span> and the sides are of unequal lengths <span class="math notranslate nohighlight">\(a, b, c\)</span>. An atom is at each corner and one atom in the base of the cell, (The second (top) atom is the base of the unit above). On the right is a body-centered unit cell.</p>
 <p><img alt="Drawing" src="../_images/chapter2-fig7a.png" /></p>
 <p>Figure 7a. (a) Base-centred and (b) body-centred orthorhombic unit cells.</p>
@@ -1569,8 +1766,8 @@ In chapter 9, (Fourier Series and Transforms) and in section 13.6, x-ray diffrac
 \[\displaystyle F=\left(1+e^{i\pi(h+k)}+e^{i\pi(h+l)}+e^{i\pi(k+l)} \right)\left(f_{Na}+f_{Cl}e^{i\pi(h+k+l)}\right)\]</div>
 <p>which will be zero if any two of the exponentials <span class="math notranslate nohighlight">\(e^{i\pi(h+k)}, e^{i\pi(h+l)}, e^{i\pi(k+l)}\)</span> is negative. This will be the case if any two of <span class="math notranslate nohighlight">\( h, k, l \)</span> is an odd number and the other even or vice versa, i.e. the integers are mixed odd and even.</p>
 <p>In the case that each <span class="math notranslate nohighlight">\(h, k, l\)</span> is even or each odd  then <span class="math notranslate nohighlight">\(1+e^{i\pi(h+k)}+e^{i\pi(h+l)}+e^{i\pi(k+l)}=4 \)</span> and then <span class="math notranslate nohighlight">\(F_{even}=4(f_{Na}+f_{Cl})\)</span> and if odd <span class="math notranslate nohighlight">\(F_{odd}=4(f_{Na}-f_{Cl})\)</span> and the intensity is then the square of these values. Notice that the ‘odd’ intensity may be quite small as it depends on the difference in atomic structure factors which is small if the atoms are close in atomic number and, of course, zero for the same type of atoms.</p>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -1594,9 +1791,11 @@ In chapter 9, (Fourier Series and Transforms) and in section 13.6, x-ray diffrac
 
               </div>
               
-        
-            <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="chapter2-Q-10-13.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -1612,26 +1811,28 @@ In chapter 9, (Fourier Series and Transforms) and in section 13.6, x-ray diffrac
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-        
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-    <div class="container">
-      <p>
-        
-          By Godfrey Beddard<br/>
-        
-            &copy; Copyright 2022.<br/>
-      </p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Godfrey Beddard<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
     </div>
-  </footer>
-</main>
+    
+</div>
 
 
       </div>
     </div>
   
-  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>

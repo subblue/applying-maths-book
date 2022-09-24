@@ -1,17 +1,17 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## SI units, Rounding, converting units & Glossary.
+# # SI units, Rounding, converting units & Glossary.
 
-# ### SI units and prefixes
+# ## SI units and prefixes
 # 
 # The International System of Units (SI) is nowadays used in all textbooks and much of the scientific literature. See Mills et al. (1993) or Cohen et al. (2007) for a full description of all units. The SI system is based on a set of defined units so that a quantity either has one of these units, or is derived from them. There is also a set of named prefixes for numerical values and these are shown below.
 # 
-# ### SI Defined units
+# ## SI Defined units
 # 
 # The defined units are the metre (m), the kilogram (kg), the second (s), the kelvin, the unit of thermodynamics temperature (K), the ampere (A), the mole (mol), and the candela, which is luminous intensity (cd).
 # 
-# ### SI Derived units
+# ## SI Derived units
 # 
 # All other units we use, such as the joule, are derived from these base units. The joule (J) measures energy and $1 \,J = 1 \mathrm{\,kg\, m^2 \,s^{-2} }$. The SI unit for force, the newton (N) is derived from SI base units using the relationship:
 # 
@@ -61,7 +61,7 @@
 # of which the final form is becoming common. The angstrom $\overset{\lower 2pt\text{o}}{\mathrm{A}}$ is $10^{-10}$ m and although not an SI unit, is still very frequently used. This bond length is $1.2745 =\overset{\lower 2pt\text{o}}{\mathrm{A}}$.
 # 
 # 
-# ###  Atomic units
+# ##  Atomic units
 # 
 # When working at quantum problems, it is sometimes easier to use atomic units. In these units the electron charge $e$ is taken to be 1 unit of charge and its mass $m_e$ also 1 unit of mass. The energies are always electrostatic and hence proportional to $e^2/(4\pi\epsilon_0)$ where $\epsilon_0$ is the permittivity of free space and has units $\mathrm{F \,m^{-1} = C^2\,J^{-1}\, m^{-1}}$. This quantity in SI units is $\mathrm{C^2/(C^2\,J^{-1}\, m^{-1}) = J\,m}$ and therefore has dimensions mass $\times$ length$^3 \times$ time$^{-2}$. Planck's constant squared has units of $\mathrm{(J s)^2 = mass^2 \times length^2 \times time^{-1}}$ and using these quantities can now define a length as
 # 
@@ -73,7 +73,7 @@
 # 
 # and is twice the absolute value of the energy of the 1s electron in hydrogen or twice the ionization energy. The unit of time in atomic units is $\hbar/E_h = 2.41888 \cdot 10^{-17}$ s.
 # 
-# ###  Converting a number to different units
+# ##  Converting a number to different units
 # 
 # It is often necessary to convert between different sets of units. All non-SI units have a definition in terms of the corresponding SI units. An example conversion table for pressure is
 # 
@@ -92,13 +92,13 @@
 # 
 # To convert pressure data from the units of Torr to the SI unit of $\mathrm{N\,m^{-2}}$ (or Pa), one of two methods can be used
 # 
-# #### **Method 1; Direct Substitution**
+# ### **Method 1; Direct Substitution**
 # 
 # Substitute the value of $1$ torr for its equivalent in $\mathrm{N\,m^{-2}}$ as if 'torr' were a variable in the equation:
 # 
 # $$\displaystyle p = 760\, \mathrm{torr} = 760 \times(133.322\, \mathrm{N\, m^{-2}}) = 101325\, \mathrm{N\,m^{-2}}$$ 
 # 
-# #### **Method 2; Multiply by 1**
+# ### **Method 2; Multiply by 1**
 # 
 # This is the most reliable method to use. The equation is multiplied by $1$ by using a unit conversion so that the unit to remove is on the denominator. For example from the definition of a torr,
 # 
@@ -123,7 +123,7 @@
 # 
 # making $\hbar = 5.3 \mathrm{\,cm}^{-1}$ fs.
 # 
-# ### Conversion table: Energy units and related quantities
+# ## Conversion table: Energy units and related quantities
 # 
 # $$\displaystyle \begin{array}{c|ccccc1 }
 # \hline\\
@@ -146,7 +146,7 @@
 # 
 # $$\displaystyle  1.381\cdot10^{-23} (\mathrm{J/K}) \times300 \,\mathrm{K} \equiv (1.381\cdot10^{-23} \times 300) \,\mathrm{J} \times \frac{5.034\cdot 10^{22} \mathrm{cm^{-1}}}{1\,\mathrm{J}} = 208.5 \,\mathrm{cm^{-1}}$$ 
 # 
-# ### Table of Scientific Constants
+# ## Table of Scientific Constants
 # 
 # Values mainly from CODATA 2018, and NIST SP961 2019.
 # 
@@ -181,7 +181,7 @@
 # 
 #  ** The molar mass of $^{12}$C is $11.9999999958(36)$ g.
 # 
-# ### Some common and non SI unit conversions.
+# ## Some common and non SI unit conversions.
 # 
 # $$\displaystyle \begin{array}{lll}
 # \hline
@@ -204,7 +204,7 @@
 # \hline \end{array}$$
 #   
 
-# ###  Significant figures and rounding numbers
+# ##  Significant figures and rounding numbers
 # 
 # A measurement always has two parts: a numerical value and its associated units. It is essential to report numbers to the appropriate number of decimal places. This is done either according to what is possible from the experimental conditions, or from the precision of numbers used in a calculation; and therefore some adjustment, called rounding, of the number is necessary.
 # 
@@ -264,7 +264,7 @@
 # 10^{12.5} &= 3.16 \cdot 10^{12} &
 # \end{array}$$
 
-# ### Experimental results with experimental uncertainties or errors
+# ## Experimental results with experimental uncertainties or errors
 # 
 # There are only a few instances is chemistry where a value you are trying to measure or calculate is an integer, for example a quantum number or the number of atoms in a unit cell of a crystal but in most cases the result will be a real number. The number of significant figures quoted indicates how precise you consider the number to be. As an example a mass of $2.3457$ g measured on an analytical balance must be assumed to be somewhere in the range $2.34565 \to 2.34575$, i.e an _absolute error bound_ of $0.00005$ g which is half the last significant figure. 
 # 
@@ -287,7 +287,7 @@
 # Figure 26. Illustrating the error of $\pm 30$ on the number $-6051.78$. The red dot is the original number, the blue dot the rounded one, and the red line the error. 
 # ________
 
-# ### Glossary of Selected Mathematical Symbols
+# ## Glossary of Selected Mathematical Symbols
 # 
 # $$\begin{array}{lll}
 # \hline

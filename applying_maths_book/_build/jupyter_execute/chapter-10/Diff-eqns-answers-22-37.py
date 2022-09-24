@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## Solutions Q22 - 37
+# # Solutions Q22 - 37
 
 # In[1]:
 
@@ -15,7 +15,7 @@ init_printing()                      # allows printing of SymPy results in types
 plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 
-# ### Q22 answer 
+# ## Q22 answer 
 # 
 # If $S$ is the excited singlet state concentration and $T$ that of the triplet, then the rate equations are
 # 
@@ -50,7 +50,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # Figure 38a. The singlet and triplet populations under different illumination conditions showing approach to steady state as shown by dashed lines.
 # _____
-# ### Q23 answer
+# ## Q23 answer
 # (a) The rate equation becomes $\displaystyle \frac{dA}{dt} + k_sA = k_aI_0\delta(t - t_0)$ 
 # 
 # which, using the integrating factor, has the solution 
@@ -90,7 +90,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # **Exercise:**  A more commonly used pulse shape is a Gaussian, $\displaystyle \exp(-(t - t_0)^2/b) $. The resulting equation can only be solved numerically in terms of an error function, and shows that the population rises to a maximum as the pulse is absorbed. The population would remain constant if the molecule did not react, but as it does, it goes through a maximum. Solve the rate equation and choose some values to illustrate this behaviour. Make sure that the Gaussian is displaced so that its value is essentially zero at zero time.
 # 
-# ### Q24 answer
+# ## Q24 answer
 # The first two terms are straightforward; when $n = 0$ then $(2x-D)^0 f = f$,
 # 
 # and when $n = 1$ then $(2x-D)^1 f =2xf - Df$ which produce 2$x$ and zero respectively when $f = 1$.
@@ -107,7 +107,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # where the final expression is obtained using $f = 1$ and this is $H_3(x)$. The remaining terms can be obtained by the same procedure.
 # 
-# ### Q25 answer
+# ## Q25 answer
 # The constants are found from $x_0 = A\sin(B)$, and as 
 # 
 # $$dx/dt = v = A\omega \cos(\omega t + B)$$
@@ -116,7 +116,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # $$\displaystyle A=\sqrt{\frac{v_0^2}{\omega^2}+x_0^2}$$
 # 
-# ### Q26 answer
+# ## Q26 answer
 # The simple harmonic equation of motion is $\displaystyle x = \frac{v_0}{\omega} \sin(\omega t) + x_0\cos(\omega t)$, (see equation (20)) 
 # 
 # and if the weight is not to leave his hands when his arms are fully extended, then the acceleration upwards must be no greater than $g$. The acceleration is 
@@ -129,7 +129,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 #  
 # The weight does not enter this calculation but is important nevertheless, not least to the body builder; for the greater the mass that is moved, the greater is the work that he has to do, as this is force multiplied by distance.
 # 
-# ### Q27 answer
+# ## Q27 answer
 # (a) The force equation for skidding is calculated by equating the linear force with the negative value of friction since this acts as a drag on the motion while the ball skids. The friction will aid the angular motion and is present as a couple because it can only act through the centre of mass or rotation axis. This is the hardest part of the question; the equations are
 # 
 # $$\displaystyle  m\frac{dv}{dt}=-\alpha mg, \qquad I\frac{d\omega}{dt}=\alpha mgr$$
@@ -156,7 +156,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # The energy loss does not depend on the friction coefficient $\alpha$ because the velocity is independent of this.
 # 
-# ### Q28 answer
+# ## Q28 answer
 # (a) If $v$ is velocity, the equation of motion is $\displaystyle mv\frac{dv}{dx} = -\frac{m\alpha}{x^2}$, 
 # 
 # which is integrated to $\displaystyle \frac{v^2}{2}=\frac{\alpha}{x}+c$
@@ -181,7 +181,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # (b) Arriving at the earth's surface from a great distance, means that $R$ is very great compared to the radius of the earth, and, without any great error from part (a) $\displaystyle v^2=\frac{2\alpha}{x}$ and substituting for $\alpha$ gives the velocity arriving at the earth's surface as$v=\sqrt{2gr}$ when $x = r$. This has the value of $11.18$ km/s, which therefore is also the escape velocity.
 
-# ### Q29 answer
+# ## Q29 answer
 # (a) The force equation is $\displaystyle m\frac{d^2y}{dt^2}=-\frac{k}{y}$ 
 # 
 # and the proportionality constant $k$ has units $\mathrm{kg\, m^2\,s^{-2}}$. Multiplying by $2dy/dt$ gives 
@@ -208,7 +208,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # This integral describes the gamma function, $\Gamma(1/2)$, and has a value $\approx 1.77$. The transit time is thus lengthened for a large mass and reduced for a large attractive force constant. Checking the dimensions gives $\sqrt{m/k} = \mathrm{kg^{1/2}\, m^{-1}\, kg^{-1/2}\, s} = \mathrm{m^{-1}\,s}$ and therefore the integral has units of distance. This may also be inferred from the original integral in $dy$ because the log is dimensionless.
 # 
-# ### Q30 answer
+# ## Q30 answer
 # Using $k_2 \equiv k_dM$ clarifies the rate equations which are 
 # 
 # $$\displaystyle \frac{dM^*}{dt}=-(k_f + k_2)M^* + k_1E^*\\
@@ -252,7 +252,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # Fig. 39. Populations of excited $M^*$ (blue) and excimer $E^*$ on a log scale vs. time in ns. The non-single exponential decay is obvious.
 # _____
 # 
-# ### Q31 answer
+# ## Q31 answer
 # As the solution only has electrolytes with similar and opposite charges, and therefore similar and opposite numbers, the change density is simplified to 
 # 
 # $$\displaystyle \rho = e_0zN\left[ \exp\left(\frac{ze_0\varphi}{k_BT} \right) -\exp\left(-\frac{ze_0\varphi}{k_BT} \right) \right]$$
@@ -298,7 +298,7 @@ factor(ans)
 # 
 # because both $\beta\varphi$ and $\beta\varphi_0 \ll 1$. The constants are $\displaystyle 2\alpha\beta\equiv \kappa = \sqrt{\frac{8\pi N z^2e_0^2}{\epsilon k_BT}}$. The value $1/\kappa$ is referred to as the double layer thickness.
 # 
-# ### Q32 answer
+# ## Q32 answer
 # The terms in $x^n$ for the $d^2y/dx^2$ term are 
 # 
 # $$\displaystyle (n + 1)(n + 2)a_{n+2}x^n + n(n - 1)a_nx^{n-2}x^2$$
@@ -331,7 +331,7 @@ for n in range(n0-2):
     pass
 
 
-# ### Q33 answer
+# ## Q33 answer
 # (a) The Schroedinger equation inside the barrier is $\displaystyle -\frac{\hbar^2}{2m}\frac{d^2\varphi}{dx^2}+V_0\varphi=E\varphi$ 
 # 
 # where $x$ ranges from $0 \to a$.
@@ -415,7 +415,7 @@ ans5
 # 
 # **Exercise**: Calculate the effect of a negative energy barrier, $V_0 \lt 0$ on the transmission.
 # 
-# ### Q34 answer
+# ## Q34 answer
 # Separating variables as $c=c_xc_t$ produces $\displaystyle \frac{1}{Dc_t}\frac{\partial c_t}{\partial t}=\frac{1}{c_x}\frac{\partial^2 c}{\partial x^2}-\frac{k_1}{D}$. 
 # 
 # Each side of this equation must a constant which we will call $-k^2$, then $\displaystyle \frac{\partial c_t}{\partial t}=-Dk^2c_t$ which has the solution $\displaystyle c_t=e^{-Dk^2t}$. 
@@ -430,7 +430,7 @@ ans5
 # 
 # This result shows that the concentration disappears at a rate independent of diffusion, as it should, because the rate constant is independent of position. When the reaction rate constant is very large, the concentration is greatly reduced before much diffusion occurs, but if it is very small then the concentration is much the same as if no reaction had occurred.
 # 
-# ### Q35 answer
+# ## Q35 answer
 # (a) The ratio to calculate is simplified to $c_{av} /c_0$ because, in this example, $c_f = 0$ and $c_i = c_0$. Using the result of the calculation equation (56),
 # 
 # $$\displaystyle  r=\frac{2}{\pi L}\int_0^L \sum_{n=1}^\infty (1-(-1)^n)\frac{e^{-Dt(n\pi/L)^2}}{n}\sin\left( \frac{n\pi x}{L} \right)dx$$
@@ -450,7 +450,7 @@ ans5
 # Fig 40a. The ratio $r$ plotted with several terms (blue) and with just the first term (red) showing the highly non-single exponential decay due to increasing size of $n^2$ in the exponential terms as the summation proceeds. Measurement of the slope at long times would be sufficient to determine the diffusion coefficient.
 # ____
 # 
-# ### Q36 answer
+# ## Q36 answer
 # (a) The solution is given directly by equation (64); $\displaystyle u =\sum_{n=1}^\infty b_n\sin\left( \frac{n\pi ct}{L}\right)\sin\left(\frac{n\pi x}{L} \right)$. 
 # 
 # The $b_n$ coefficients are calculated with the integral $\displaystyle b_n=\frac{2}{\pi c n}\int_0^L (xL-x^2)\sin\left(\frac{n\pi x}{L}\right)$.
@@ -476,7 +476,7 @@ simplify(ans)
 # 
 # (b) The displacement can be very well approximated by the first term, the second being nine times smaller and the third even smaller.
 
-# ### Q37 answer
+# ## Q37 answer
 # It is easier to convert to the exponential form before attempting the differentiations. The calculation has many terms rather than being intrinsically difficult. SymPy will perform the differentiation very easily if the function is defined first.
 
 # In[8]:

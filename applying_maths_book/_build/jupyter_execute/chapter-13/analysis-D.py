@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## Non-linear least squares. Least absolute deviation. Principal component analysis
+# # Non-linear least squares. Least absolute deviation. Principal component analysis
 
 # In[1]:
 
@@ -18,7 +18,7 @@ init_printing()                      # allows printing of SymPy results in types
 plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 
-# ### Non-linear  least squares
+# ## Non-linear  least squares
 # 
 # In the least squares method, the derivative of the $\chi^2$ is taken with respect to each parameter $\alpha_i$ and minimized. The normal equations of linear least squares analysis (equations 28,44), have terms only in $a_ix$ or $a_ix^2$ etc., and can be solved exactly. In non-linear least squares, the normal equations cannot be solved exactly. The function 
 # 
@@ -214,7 +214,7 @@ print('{:s} {:6.3f} {:s} {:6.3f}'.format('probability of getting chi-sqrd > ',ch
 # 
 # The calculation produces a $\chi^2= 0.9$ and that corresponds to a probability of $63$% which is near perfect; a perfect value of $1$ produces a $50$% chance. The model curve clearly fits the data as shown in Figure 14. The total counts predicted by the model are almost the same as in the data itself, also indicating a close fit. The normalized residuals are calculated as $(y_i - Y_i)/y_i$.
 # 
-# ### 8.1 Least absolute deviation
+# ## 8.1 Least absolute deviation
 # 
 # Any least squares method is very sensitive to outliers in the data; see figure 15. You can 'eyeball' data and see roughly where a straight line should go through the majority of the data points; however, the least squares line will generally not follow this trend because it is pulled off by the outliers. In such cases, the function to minimize is the absolute value of the deviation rather than the $\chi^2$ and for an unweighted straight-line fit is the sum
 # 
@@ -227,7 +227,7 @@ print('{:s} {:6.3f} {:s} {:6.3f}'.format('probability of getting chi-sqrd > ',ch
 # Figure 15. Outliers produce a least squares fit that does not reflect the trend exhibited by most of the data points. The line passing mainly through the data is the least absolute deviation LAD line.
 # ______
 # 
-# ### 9 Principal component analysis (PCA)
+# ## 9 Principal component analysis (PCA)
 # 
 # In the life sciences, the experimental techniques of chemical physics, for instance, NMR, FTIR, mass spectrometry, and various chromatographic methods are widely used and they produce large quantities of data. The data may consist of hundreds of data sets each containing data from thousands of proteins and metabolites and from which the presence of a few target molecules may be sought. For example, NMR spectra taken on blood plasma will contain signals from thousands of compounds. If samples are taken from a group of patients with a particular disease and a similar group without the disease, the two sets of NMRs can be compared in an attempt to identify markers that may be used to target the disease, either in an attempt either to cure it, or act as an assay to identify its early stages. However, these spectra will be different due to normal variability, will be highly congested and contain numerous overlapping signals from proteins, lipids, sugars, and DNA not involved in the disease. The task is to find the species that are either present or are missing in the diseased group. The problem is that there is an abundance of data but no results.
 # 

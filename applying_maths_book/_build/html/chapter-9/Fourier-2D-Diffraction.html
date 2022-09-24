@@ -4,11 +4,13 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>The Fourier transform in two dimensions: images and x-ray Diffraction &#8212; Applying Maths in the Chemical &amp; Biomolecular Sciences</title>
     
-  <link href="../_static/css/theme.css" rel="stylesheet">
-  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,40 +20,39 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Computed Tomography" href="Fourier-tomography.html" />
@@ -63,7 +64,21 @@
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -72,9 +87,10 @@
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -92,14 +108,15 @@
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../intro.html">
-   Applying Maths in the Chemical and Biomolecular Sciences.
-  </a>
- </li>
-</ul>
-<ul class="current nav bd-sidenav">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Applying Maths in the Chemical and Biomolecular Sciences.
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../chapter-1/chapter1-intro.html">
    1. Numbers, Equations, Operators, and Algorithms.
@@ -204,11 +221,6 @@
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-2/chapter2-Q-10-13.html">
      Questions 10 -13
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-2/chapter2-C.html">
-     Euler’s theorem, roots of unity, x-ray diffraction structure factor.
     </a>
    </li>
    <li class="toctree-l2">
@@ -337,7 +349,7 @@
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../chapter-4/integration-intro.html">
-   4. Integration.
+   4 Integration.
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
   <label for="toctree-checkbox-4">
@@ -377,7 +389,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-4/integration-D.html">
-     Calculating an Average Value.
+     Calculating an Average.
     </a>
    </li>
    <li class="toctree-l2">
@@ -407,7 +419,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-4/integration-G.html">
-     Calculating the energy of a chemical bond using molecular orbitals
+     Calculating the energy of a Chemical Bond using Molecular Orbitals
     </a>
    </li>
    <li class="toctree-l2">
@@ -688,7 +700,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-7/matrices-D.html">
-     Rotation matrices: moving molecules
+     Rotation matrices: moving molecules. Coordinate transform as rotation.
     </a>
    </li>
    <li class="toctree-l2">
@@ -757,23 +769,13 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-7/matrices-K.html">
-     Calculating a bond length using moments of inertia
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-7/matrices-Q61.html">
-     Question 61
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="../chapter-7/matrices-L.html">
      Principal axes for Moments of Inertia
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-7/matrices-Q62.html">
-     Question 62
+    <a class="reference internal" href="../chapter-7/matrices-Q61-62.html">
+     Question 61 - 62
     </a>
    </li>
    <li class="toctree-l2">
@@ -1004,7 +1006,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-G.html">
-     PDE examples continued
+     PDE Continued
     </a>
    </li>
    <li class="toctree-l2">
@@ -1096,7 +1098,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-11/num-methods-answers8-12.html">
-     Solutions Q8 - 12
+     Solutions Q 8 - 12
     </a>
    </li>
    <li class="toctree-l2">
@@ -1258,112 +1260,227 @@
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/chapter-9/Fourier-2D-Diffraction.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/subblue/applying-maths-book"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/subblue/applying-maths-book/issues/new?title=Issue%20on%20page%20%2Fchapter-9/Fourier-2D-Diffraction.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        
-    </div>
-</div>
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/subblue/applying-maths-book/main?urlpath=lab/tree/applying_maths_book/chapter-9/Fourier-2D-Diffraction.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        <a class="colab-button" href="https://colab.research.google.com/github/subblue/applying-maths-book/blob/main/applying_maths_book/chapter-9/Fourier-2D-Diffraction.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
-                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
-                    src="../_static/images/logo_colab.png"
-                    alt="Interact on Colab">Colab</button></a>
-        
-        
-    </div>
-</div>
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/subblue/applying-maths-book/main?urlpath=lab/tree/applying_maths_book/chapter-9/Fourier-2D-Diffraction.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://colab.research.google.com/github/subblue/applying-maths-book/blob/main/applying_maths_book/chapter-9/Fourier-2D-Diffraction.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/subblue/applying-maths-book"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/subblue/applying-maths-book/issues/new?title=Issue%20on%20page%20%2Fchapter-9/Fourier-2D-Diffraction.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/chapter-9/Fourier-2D-Diffraction.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#motivation-and-concept">
    Motivation and concept
@@ -1476,23 +1593,151 @@
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>The Fourier transform in two dimensions: images and x-ray Diffraction</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#motivation-and-concept">
+   Motivation and concept
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#d-transforms">
+   12. 2D transforms.
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#x-ray-diffraction">
+   13 X-ray Diffraction.
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#diffraction-of-x-rays">
+   13.1 Diffraction of x-rays
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#magnification">
+     <strong>
+      Magnification
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#structure">
+     <strong>
+      Structure
+     </strong>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#fourier-synthesis">
+   13.2 Fourier Synthesis
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#unit-cell-miller-indices-and-planes-of-atoms">
+   13.3 Unit Cell, Miller indices and planes of atoms
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#calculating-the-unit-cell-and-indexing">
+   13.4 Calculating the unit cell and indexing
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#atomic-structure-factors">
+   13.5 Atomic Structure Factors
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   13.6 Fourier Synthesis
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-structure-factor-f-hkl">
+   13.7   The Structure Factor
+   <span class="math notranslate nohighlight">
+    \(F_{hkl}\)
+   </span>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#example-of-calculating-the-structure-factors-tio-2">
+   13.8 Example of calculating the structure factors, TiO
+   <span class="math notranslate nohighlight">
+    \(_2\)
+   </span>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#reflexion">
+     <strong>
+      (100) reflexion
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     <strong>
+      (200) reflexion
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     <strong>
+      (110) reflexion
+     </strong>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id4">
+   13.9 Fourier synthesis
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#xray-diffraction-from-dna">
+   13.10 Xray Diffraction from DNA
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
               <div>
                 
-  <div class="section" id="the-fourier-transform-in-two-dimensions-images-and-x-ray-diffraction">
-<h1>The Fourier transform in two dimensions: images and x-ray Diffraction<a class="headerlink" href="#the-fourier-transform-in-two-dimensions-images-and-x-ray-diffraction" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="motivation-and-concept">
-<h2>Motivation and concept<a class="headerlink" href="#motivation-and-concept" title="Permalink to this headline">¶</a></h2>
+  <section class="tex2jax_ignore mathjax_ignore" id="the-fourier-transform-in-two-dimensions-images-and-x-ray-diffraction">
+<h1>The Fourier transform in two dimensions: images and x-ray Diffraction<a class="headerlink" href="#the-fourier-transform-in-two-dimensions-images-and-x-ray-diffraction" title="Permalink to this headline">#</a></h1>
+<section id="motivation-and-concept">
+<h2>Motivation and concept<a class="headerlink" href="#motivation-and-concept" title="Permalink to this headline">#</a></h2>
 <p>The fourier transform can be extended to 2D and 3D. The 2D transform is important in image analysis, optics and 2D spectroscopies such as ultrafast infra-red and nmr analysis. The 3D transform is used to describe x-ray diffraction from crystals which is the definitive way of determining molecular structure and is of central importance in chemistry and biochemistry. We shall illustrate how x-ray diffraction leads to structure using 2D fourier transforms.</p>
-</div>
-<div class="section" id="d-transforms">
-<h2>12. 2D transforms.<a class="headerlink" href="#d-transforms" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="d-transforms">
+<h2>12. 2D transforms.<a class="headerlink" href="#d-transforms" title="Permalink to this headline">#</a></h2>
 <p>The 2D forward and inverse transform is written down easily by analogy with the 1D versions, but rather than use <span class="math notranslate nohighlight">\(k_x,k_y\)</span> for the conjugate variables it is clearer instead to use <span class="math notranslate nohighlight">\(u,v\)</span></p>
 <div class="math notranslate nohighlight">
 \[\displaystyle g(u,v)=\int_{-\infty}^\infty\int_{-\infty}^\infty f(x,y)e^{-i(xu+yv)}dxdy\]</div>
@@ -1517,7 +1762,7 @@
 <p>If there is a rectangular hole of size <span class="math notranslate nohighlight">\(a x b\)</span> then the similar calculation uses both finite limits and is</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle \begin{align} g(u,v)&amp;=\int_{-a/2}^{a/2} e^{-ixu}dx \int_{-b/2}^
-{b/2} e^{-iyv}dy\\ &amp;=\frac{2\sin(au/2)}{u}\frac{2\sin(bv/2)}{v}\\&amp;= ab\;\text{sinc}(au/2)\text{sinc}(bv/2)\end{align}\end{split}\]</div>
+{b/2} e^{-iyv}dy\\ &amp;=\frac{2}{u}\sin(au/2)\frac{2}{v}\sin(bv/2)\\&amp;= ab\;\text{sinc}\left(\frac{au}{2}\right)\text{sinc}\left(\frac{bv}{2}\right)\end{align}\end{split}\]</div>
 <p>which are two sinc functions at right-angles to one another. The image is shown in fig 64. If diffraction occurred through such an aperture the absolute value would be obtained because detectors (and our eyes) measure the intensity which is the square of the light’s amplitude. The image would look similar except that all the function would be positive rather than both positive and negative. Notice the similarity of this to the transform of four points arranged in a square, fig 63, (ignoring the rotation of the latter). The difference in the transforms occurs because when more than one object is present a cosine along each symmetry axis is also present. This may be understood as the image of two or more delta functions convoluted with the shape of the object itself; when more than one object is transformed the transform spreads out over transform space.</p>
 <p><img alt="Drawing" src="../_images/fourier-fig64.png" /></p>
 <p>Figure 64. The transform of a rectangular aperture. <span class="math notranslate nohighlight">\(\displaystyle g(u,v)=4\sin(au/2)\sin(bv/2)/uv\)</span> where <span class="math notranslate nohighlight">\(b/a=2\)</span> The dotted lines show the negative part of the transform. Yellow represents large values. The straight horizontal and vertical lines are where the transform is exactly zero and shows that the image is dissected by the zero’s of the function in both vertical and horizontal directions. The vertical lines are separated horizontally by <span class="math notranslate nohighlight">\(2\pi/a\)</span>, the horizontal by <span class="math notranslate nohighlight">\(2\pi/b\)</span> except for the centres which are separated by twice these amounts. A horizontal or vertical cut through the centre lines will produce a plot of the sinc function as in figure 15.</p>
@@ -1549,24 +1794,24 @@
 <p>The image of molecules on a lattice, the transform and the transform with the superimposed transform of a single molecule is shown in fig 69. We can think of the transform as the convolution of a single molecule with a lattice of points.</p>
 <p><img alt="Drawing" src="../_images/fourier-fig69.png" /></p>
 <p>Figure 69. Left, a lattice of molecules, with the unit cell outlined (<span class="math notranslate nohighlight">\(a\)</span>=blue). Centre, the absolute value of the transform and the reciprocal unit cell (<span class="math notranslate nohighlight">\(a^*\)</span>=blue), and Right, the absolute value of the transform of the whole and the absolute value of transform of a single molecule superimposed. Note how in the transform the intensity of the spots changes and follows that of the single molecule’s pattern.</p>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="x-ray-diffraction">
-<h2>13 X-ray Diffraction.<a class="headerlink" href="#x-ray-diffraction" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="diffraction-of-x-rays">
-<h2>13.1 Diffraction of x-rays<a class="headerlink" href="#diffraction-of-x-rays" title="Permalink to this headline">¶</a></h2>
+<section id="x-ray-diffraction">
+<h2>13 X-ray Diffraction.<a class="headerlink" href="#x-ray-diffraction" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="diffraction-of-x-rays">
+<h2>13.1 Diffraction of x-rays<a class="headerlink" href="#diffraction-of-x-rays" title="Permalink to this headline">#</a></h2>
 <p>The structure of a molecule can be determined by detecting the x-rays diffracted by its crystal. The experiment consists of diffraction, detection and computational analysis which combined act as if a microscope was used. The explanation of how this works has two parts: (1) how is magnification achieved and (2) how does the measured data lead to the structure. The first part is quite straightforward, the second more involved.</p>
-<div class="section" id="magnification">
-<h3><strong>Magnification</strong><a class="headerlink" href="#magnification" title="Permalink to this headline">¶</a></h3>
+<section id="magnification">
+<h3><strong>Magnification</strong><a class="headerlink" href="#magnification" title="Permalink to this headline">#</a></h3>
 <p>The magnification can be explained by reference to Huygens’ wavelets as in figure 70a. A plane wave arrives at the bottom of the figure and is diffracted by two slits shown as red dots, alternatively these represent sources in their own right, for example two atoms whose electrons re-radiate x-rays. By calculating where the circular wavelets overlap the position of the bright fringes on a detector can be predicted. To be accurate this has to be done in the ‘far field’, i.e. at a very great distance from the source of diffraction. Alternatively, by assuming that the path lengths are different by integer numbers of wavelengths produces <span class="math notranslate nohighlight">\(n\lambda = d \sin(\theta)\)</span>  where <span class="math notranslate nohighlight">\(d\)</span> is the separation of the sources, <span class="math notranslate nohighlight">\(\lambda\)</span> the wavelength and the integers are <span class="math notranslate nohighlight">\(n=0,\pm 1,\pm 2\cdots \)</span>. The angle <span class="math notranslate nohighlight">\(\theta\)</span> can be obtained from the experiment, as shown in the figure where <span class="math notranslate nohighlight">\(\tan(\theta)=(d/2+x)/R\)</span> and <span class="math notranslate nohighlight">\(x,R\)</span> are measurements. These values are generally many centimetres where as <span class="math notranslate nohighlight">\(d,\lambda \)</span> are millions of times smaller. This is made clearer when the angle <span class="math notranslate nohighlight">\(\theta\)</span> is small, then <span class="math notranslate nohighlight">\(\tan(\theta)\approx \sin(\theta) \approx \theta \)</span> making <span class="math notranslate nohighlight">\(\displaystyle \frac{x}{R} =\frac{n\lambda}{d}\)</span> and as these are ratios the orders of magnitude difference in size cancel out and once <span class="math notranslate nohighlight">\(\lambda\)</span> is known so is <span class="math notranslate nohighlight">\(d\)</span>.</p>
 <p>The deflection caused by diffraction is crucial here for this separates the diffracted beam from the initial one allowing it to be detected against a dark (zero) background and secondly the fact that the angle of detection depends on the separation <span class="math notranslate nohighlight">\(d\)</span> means that many distances can be separately measured without overlapping one another. The ratio of distances automatically enables magnification once the beams have propagated far enough to allow accurate measurement of diffracted spot positions.</p>
 <p><img alt="Drawing" src="../_images/fourier-fig71a.png" /></p>
 <p>Fig. 70a. Huygens wavelets to explain magnification after x-ray diffraction.  The wavelength is <span class="math notranslate nohighlight">\(1/4\)</span> of the separation <span class="math notranslate nohighlight">\(d\)</span> making the first order diffracted beams appear at <span class="math notranslate nohighlight">\(\pm 14.5^\text{o}\)</span> from the vertical. In practice <span class="math notranslate nohighlight">\(R \gt x\gg d\)</span>. The sketch on the right shows the calculation to determine the angle <span class="math notranslate nohighlight">\(\theta\)</span> from measurements of <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(R\)</span>.</p>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="structure">
-<h3><strong>Structure</strong><a class="headerlink" href="#structure" title="Permalink to this headline">¶</a></h3>
+<section id="structure">
+<h3><strong>Structure</strong><a class="headerlink" href="#structure" title="Permalink to this headline">#</a></h3>
 <p>Before we can find the cell dimensions it is necessary to understand how the x-rays are diffracted off the repeated and regular structure of the crystal. Diffraction of x-rays occurs by interaction of the electrons with the x-rays which then re-radiate in all directions. Only those directions satisfying conservation of momentum produce a diffracted beam that can be recorded as a bright spot on a detector. This means the only waves detected are those whose path-length differs by an integer number of wavelengths and therefore add constructively and re-enforce one another, all other waves cancel to zero. The condition for diffraction is given most generally by the Laue equation or equivalently and more simply by the Bragg condition, fig. 70,</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle n\lambda =2d\sin(\theta)\tag{54}\]</div>
@@ -1583,11 +1828,11 @@
 <p><img alt="Drawing" src="../_images/fourier-fig72-top.png" />
 <img alt="Drawing" src="../_images/fourier-fig72-btm.png" /></p>
 <p>Figure 70. (A) The general Bragg condition. If the planes of atoms do not satisfy the Bragg condition at a certain angle no diffraction occurs. (B) Construction for the Bragg equation. The wavefronts emerging after diffraction are always in phase when the Bragg condition apples even though one beam has travelled a further distance and this extra distance is always a multiple of <span class="math notranslate nohighlight">\(2\pi\)</span> radians. (C),(D) two particular cases of the same lattice but showing diffraction from different Miller indices. The crystal has to be rotated to satisfy the Bragg condition as normally the x-ray wavelength and direction are both fixed. The relative <span class="math notranslate nohighlight">\(d_{hkl}\)</span> and angles are approximately correct for Cu K<span class="math notranslate nohighlight">\(_\alpha\)</span>,<span class="math notranslate nohighlight">\(\lambda = 0.154\)</span> nm. The unit cell is shown as the red parallelogram.</p>
-</div>
-</div>
+</section>
+</section>
 <hr class="docutils" />
-<div class="section" id="fourier-synthesis">
-<h2>13.2 Fourier Synthesis<a class="headerlink" href="#fourier-synthesis" title="Permalink to this headline">¶</a></h2>
+<section id="fourier-synthesis">
+<h2>13.2 Fourier Synthesis<a class="headerlink" href="#fourier-synthesis" title="Permalink to this headline">#</a></h2>
 <p>The transform of several images has been described but these only become properly interesting when considered in the context of x-ray diffraction from crystals. The nature of x-ray diffraction is discussed shortly as is the connection between the crystal structure, the experimentally measured fourier transform and the fourier <em>synthesis</em> of the structure. To do this we shall have to understand the scattering of x-rays by the electrons in the planes of atoms that exist in a (perfect) crystal because of the repetitive nature of each atom’s position. The approach so far has been to start off with a lattice of points as in fig 68, or 69 and form the diffraction pattern, which is the fourier transform, but in an experiment things are the other way round, the data is the diffraction pattern and we want to know each atom’s position. The use of fast computers and new algorithms nowadays make most of the analysis automatic, nevertheless the fundamentals must be understood otherwise how would one know if the results of automatic analysis make sense?</p>
 <p>The experimental data available is the position and intensity of the spots on the diffraction image. Because all detectors measure the intensity of the x-ray, which is its amplitude squared, and not its amplitude which is proportional to the electron density of an atom, the image cannot be directly transformed back into a structure. However, there is also an excess of information, for example, a molecule consisting of <span class="math notranslate nohighlight">\(10\)</span> atoms needs <span class="math notranslate nohighlight">\(30\)</span> values to determine its coordinates but there may be <span class="math notranslate nohighlight">\(n=1000\)</span> or so reflexions recorded so that there will be many redundant observations which can also be used. The problem is therefore given the intensities, how can we work backwards and determine the atomic coordinates? Bragg proposed a method, which is to let the intensities be found by a fourier <em>series</em>, this process is called fourier <em>synthesis</em> (section 1.1) rather than the fourier <em>analysis</em> described in section 6. Variants of fourier synthesis form the basis of almost all crystal structure determinations.</p>
 <p>The equation for fourier synthesis in one dimension is</p>
@@ -1621,9 +1866,9 @@
 \[\displaystyle |F(hkl)|^2=(A-iB)(A+iB)= A^2+B^2\]</div>
 <p>and where the  <span class="math notranslate nohighlight">\(h,k,l\)</span> is dropped for clarity, so only the sum is produced and <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> are not known. In fact there is an infinite number of possibilities to make up any given <span class="math notranslate nohighlight">\(|F|^2\)</span>.</p>
 <p>Leaving these problems aside for the present, the first step in determining the structure is to obtain the unit cell dimensions and this means understanding the Miller indices to describe planes of atoms.</p>
-</div>
-<div class="section" id="unit-cell-miller-indices-and-planes-of-atoms">
-<h2>13.3 Unit Cell, Miller indices and planes of atoms<a class="headerlink" href="#unit-cell-miller-indices-and-planes-of-atoms" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="unit-cell-miller-indices-and-planes-of-atoms">
+<h2>13.3 Unit Cell, Miller indices and planes of atoms<a class="headerlink" href="#unit-cell-miller-indices-and-planes-of-atoms" title="Permalink to this headline">#</a></h2>
 <p>The convention in describing crystals is that a <em>crystal structure</em> consists of atoms, a <em>crystal lattice</em> consists of points, and a <em>crystal system</em> consists of axes usually described by vectors. In a crystal the <em>unit cell</em> represents a repeated structure containing the atoms positions and is described by vectors <span class="math notranslate nohighlight">\(\bar a,\bar b, \bar c\)</span>, which need not be at right angles to one another. The unit cell is normally taken to have the minimum size needed to describe the repeating nature of the atoms. If a point in the unit cell is chosen to be the origin, a corner for example, this single position, when repeated over and over in the crystal, forms a lattice of points as in Fig 68. This lattice will belong to one of the <span class="math notranslate nohighlight">\(7\)</span> crystal systems and <span class="math notranslate nohighlight">\(14\)</span> Bravais lattices. The origin does not have to be the position of an atom but often is. The other atoms then form a similar lattice but displaced in a manner described by the atom’s position relative to the origin, this is equivalent to imagining that the whole unit cell is replicated again and again to form the crystal.</p>
 <p>The 3D lattice based on the atom at the origin is then imagined to be divided into stacks of similar planes of atoms all in the same position relative in their unit cell, see fig 72. These planes (shown edge-on as lines in fig 72) are given indices (<span class="math notranslate nohighlight">\(h k l\)</span>) which are called Miller Indices where <span class="math notranslate nohighlight">\(h,k,l\)</span> are positive or negative integers including zero. Although there are numerous parallel planes we refer to them collectively using only their unique <span class="math notranslate nohighlight">\(h,k,l\)</span> values such as (<span class="math notranslate nohighlight">\(3\;14\;\bar 1\)</span>), where the bar indicates a negative direction.  Via the Bragg diffraction equation (eqn. D4) each set of planes, and thus each <span class="math notranslate nohighlight">\(hkl\)</span>, produce one bright spot on the detector.</p>
 <p>To work out the Miller indices for any set of planes start by moving along the unit cell in the <span class="math notranslate nohighlight">\(\bar a\)</span> direction and count how many pieces <span class="math notranslate nohighlight">\(a\)</span> is divided into by the planes, i.e. the number of spaces crossed, then repeat this for sides <span class="math notranslate nohighlight">\(b\)</span> and <span class="math notranslate nohighlight">\(c\)</span>, the integers produced are the Miller indices.</p>
@@ -1631,9 +1876,9 @@
 <p>Figure 72. Labelling planes with Miller indices. The lattice is the same in both parts of the figure, only the <span class="math notranslate nohighlight">\(a-b\)</span> plane is shown.</p>
 <hr class="docutils" />
 <p>An alternative way to find the Miller indices is to look along the edges of the unit cell and count how many unit cells it takes to meet the line whose <span class="math notranslate nohighlight">\((hkl)\)</span> is required. These three numbers are then listed, e.g. <span class="math notranslate nohighlight">\((3a,\infty b,2c)\)</span>. The reciprocal of the integers is taken to make <span class="math notranslate nohighlight">\((1/3,0,1/2)\)</span> and then the fractions cleared by multiplying by the common factor to give <span class="math notranslate nohighlight">\((2,0,3)\)</span>.</p>
-</div>
-<div class="section" id="calculating-the-unit-cell-and-indexing">
-<h2>13.4 Calculating the unit cell and indexing<a class="headerlink" href="#calculating-the-unit-cell-and-indexing" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="calculating-the-unit-cell-and-indexing">
+<h2>13.4 Calculating the unit cell and indexing<a class="headerlink" href="#calculating-the-unit-cell-and-indexing" title="Permalink to this headline">#</a></h2>
 <p>The unit cell dimensions can often be found using power diffraction, and you will probably have done such an experiment in a practical course. In this method the crystals are crushed and placed into a narrow glass capillary tube which is placed in the centre of the instrument. The detector moves in an arc round the sample and the diffracted x-ray  are recorded as a function of the angle. This arrangement is called a Debye - Scherrer camera. In the past the detector was a strip of photographic film that was darkened by the x-rays and older textbook show the images produced as arcs on this paper. Nowadays a particle counting or imaging detector is used but in either case a plot of angle vs. intensity is produced. The crystals are at random angles (in <span class="math notranslate nohighlight">\(\theta\)</span> and <span class="math notranslate nohighlight">\(\phi\)</span>) but by Bragg’s law the diffraction can occur only at certain <span class="math notranslate nohighlight">\(\theta\)</span> angles of the planes of atoms to the x-ray beam (see fig72(A) but those planes can be anywhere around the x-ray beam at an angle <span class="math notranslate nohighlight">\(\phi\)</span>, i.e. there is cylindrical symmetry. Different <span class="math notranslate nohighlight">\(hkl\)</span> planes diffract at different angles and so several cones are produced, see fig 73. As there are numerous crystals, all angles <span class="math notranslate nohighlight">\(\phi\)</span> around the x-ray beam direction (at a given <span class="math notranslate nohighlight">\(2\theta\)</span> ) will diffract and so the all cones will have many photons.  The detector will intercept only a few of these as it moves in an arc, see fig 74, and produce a series of lines with a characteristic pattern.</p>
 <p><img alt="Drawing" src="../_images/fourier-fig73.png" /></p>
 <p>Fig. 73. The powdered crystals have random orientations (<span class="math notranslate nohighlight">\(\theta\)</span> and <span class="math notranslate nohighlight">\(\phi\)</span>) and diffract along cones. The dots show that if there are just a few crystals only a few spots would be produced.</p>
@@ -1653,9 +1898,9 @@ fig 75. Simulated powder diffraction pattern from a cubic unit cell. The x-rays 
 <p>Fig 76. Estimating the unit cell dimension <span class="math notranslate nohighlight">\(a\)</span> for a cubic crystal. Each horizontal line has the value <span class="math notranslate nohighlight">\(\sin^2(\theta)\)</span>. By trying values, the slope of the straight line when each pair of the the horizontal and vertical lines cross, is <span class="math notranslate nohighlight">\(\left(\lambda/2a\right)^2\)</span> from which <span class="math notranslate nohighlight">\(a\)</span> can be calculated.</p>
 <hr class="docutils" />
 <p>There are other methods such as visibly aligning a single crystal along a particular axis and using a rotation method to separate out different <span class="math notranslate nohighlight">\(hkl\)</span> because the alignment fixes one of these values and these methods are detailed in specialist texts such as McKie &amp; Mckie ‘Essentials of Crystallography’ publ. Blackwell, 1986.</p>
-</div>
-<div class="section" id="atomic-structure-factors">
-<h2>13.5 Atomic Structure Factors<a class="headerlink" href="#atomic-structure-factors" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="atomic-structure-factors">
+<h2>13.5 Atomic Structure Factors<a class="headerlink" href="#atomic-structure-factors" title="Permalink to this headline">#</a></h2>
 <p>As the x-rays scatter off the electrons in an atom, clearly the more electrons there are the greater the scattering will be. Thus we expect, and observe, that heavy atoms produce much more intense bright spots on a detector than do lighter atoms. However, atoms are not point objects but have a real size with an electron ‘cloud’ radius that is only a little smaller than a bond length. Electron density is greater towards the atom’s centre and less towards the perimeter.</p>
 <p>Assuming a largely spherical electron distribution, when x-rays are scattered and detected at an angle away from incoming the x-ray’s direction, there will be a path-length difference between one side of the atom and the other and this leads to scattered waves becoming out of phase, and hence of reduced intensity and increasingly so as the scattering angle increases. As the atoms in a molecule are always close to one another, so are electrons on different atoms and this proximity potentially leads to a great computational complication. However, this is easily overcome by assuming that atoms are point objects and using a function, the <em>atomic scattering factor</em>, on each atom to allow for the scattering from its different parts. The atomic scattering factor is a decaying function of the scattering angle. At zero angle it is the atomic number <span class="math notranslate nohighlight">\(Z\)</span> (plus or minus the number of charges for ions) and decreases to a constant value in terms of <span class="math notranslate nohighlight">\(\sin(\theta)\lambda=1/(2d_{hkl})\)</span>.  The scattering factor can be accurately calculated using quantum chemistry methods, Hartree-Fock for example, and in some cases measured, and are known accurately. The calculated function can conveniently be described by the sum of four Gaussians, e.g.</p>
 <div class="math notranslate nohighlight">
@@ -1663,10 +1908,10 @@ fig 75. Simulated powder diffraction pattern from a cubic unit cell. The x-rays 
 <p>with constants <span class="math notranslate nohighlight">\(b_i\)</span> and <span class="math notranslate nohighlight">\(c\)</span> tabulated for each atom and its ions. Later on, clarity, we label the atomic scattering factor <span class="math notranslate nohighlight">\(f_j^{hkl}\)</span> for atom <span class="math notranslate nohighlight">\(j\)</span> and Miller indices <span class="math notranslate nohighlight">\({hkl}\)</span>. Typical examples are shown in fig 77.</p>
 <p><img alt="Drawing" src="../_images/fourier-fig77.png" /></p>
 <p>Figure 77. Calculated atomic scattering factors.</p>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="id1">
-<h2>13.6 Fourier Synthesis<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<section id="id1">
+<h2>13.6 Fourier Synthesis<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
 <p>To illustrate how fourier synthesis can work, suppose that there is a ‘crystal’ of only three diatomic molecules. Adding waves of different random frequencies but the same phase as shown in figure 1 of this chapter will always produce a complicated and repeating wave. By adding waves of <em>different amplitude</em>, <em>frequency</em> and <em>phase</em> it is possible to construct a total wave that is localised where the peaks are. Furthermore, relatively few waves are needed as shown in fig. 78. The left panel shows, at the top, the three molecules positioned face-on and the right-hand panel positioned edge-on, the summed wave is shown immediately below (brown) and the individual waves are numbered with their frequency. It is clear that with only a few waves their summed values can reproduce, quite well, the positions of the atoms. In an x-ray diffraction experiment the peaks would represent electron density and summing the waves is equivalent to calculating equation D1 given above.</p>
 <p><img alt="Drawing" src="../_images/Fourier-fig78.png" /></p>
 <p>Figure 78. Fourier synthesis of atomic positions. Left face on in x-y plane and right end on in the y-z plane. The waves forming the total are shown numbered below. Notice that the waves have different amplitudes and phases. (After J. Waser J. Chem. Educ. p446,v45,1968).</p>
@@ -1674,10 +1919,10 @@ fig 75. Simulated powder diffraction pattern from a cubic unit cell. The x-rays 
 <p>The right hand figure shows each molecule end on so has only one peak. Combining both figures can better reproduce the molecule if plotted as contours, and such a plot is shown in fig. 79, where the location of the atoms is clear. In this calculation the amplitude and phase of the waves was chosen by trial and error until a reasonable result was produced. This is equivalent to knowing the geometric structure factors <span class="math notranslate nohighlight">\(F_{hkl}\)</span> and an example of finding these is given next where the general formula is introduced.</p>
 <p><img alt="Drawing" src="../_images/fourier-fig79.png" /></p>
 <p>Figure 79. Contour plot combining total waves from fig. 78 and shown as contours. The two central contours have the largest values, with others decreasing outwards.</p>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="the-structure-factor-f-hkl">
-<h2>13.7   The Structure Factor <span class="math notranslate nohighlight">\(F_{hkl}\)</span><a class="headerlink" href="#the-structure-factor-f-hkl" title="Permalink to this headline">¶</a></h2>
+<section id="the-structure-factor-f-hkl">
+<h2>13.7   The Structure Factor <span class="math notranslate nohighlight">\(F_{hkl}\)</span><a class="headerlink" href="#the-structure-factor-f-hkl" title="Permalink to this headline">#</a></h2>
 <p>The structure factor, <span class="math notranslate nohighlight">\(F_{hkl}\)</span>, measures the size of the scattering from each <span class="math notranslate nohighlight">\(hkl\)</span> plane by taking into account where the atom is relative to the plane and the atomic scattering factor, <span class="math notranslate nohighlight">\(f_q\)</span>, for that particular atom. To do the calculation, waves from each atom in the unit cell have to be summed as they are in superposition. The result could be zero if the total, by symmetry adds up to this or could be positive or negative. A zero result is an example of systematic absences.  In chapter 1 the superposition of cosine waves of frequency <span class="math notranslate nohighlight">\(\omega\)</span> and phase <span class="math notranslate nohighlight">\(\varphi\)</span>, such as <span class="math notranslate nohighlight">\(\psi=a\cos(\omega t +\varphi)\)</span>, was examined. The more general wave is written as a complex exponential, with <span class="math notranslate nohighlight">\(i=\sqrt{-1}\)</span>,</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \psi = |a| e^{i(\omega t +\varphi)} = |a|e^{i\varphi}e^{i\omega t}=ae^{i\omega t}\]</div>
@@ -1701,9 +1946,9 @@ fig 75. Simulated powder diffraction pattern from a cubic unit cell. The x-rays 
 <p>and this is true for all crystals whatever their symmetry. Whenever there is a centre of symmetry, such as in Rutile (TiO<span class="math notranslate nohighlight">\(_2\)</span>), the sine terms in the aggregate evaluate to zero and this is because for each angle <span class="math notranslate nohighlight">\(\theta\)</span> there is one at <span class="math notranslate nohighlight">\(-\theta\)</span> and <span class="math notranslate nohighlight">\(-\sin(\theta)=\sin(-\theta)\)</span>.</p>
 <p>The diffraction itself produces scattering of amplitude <span class="math notranslate nohighlight">\(F_{hkl}\)</span> which brings us back to eqn 53 which shows how the electron density is related to the structure factor.  The measurement changes the data by effectively measuring the absolute value <span class="math notranslate nohighlight">\(|F_{hkl}|\)</span> and the sign of <span class="math notranslate nohighlight">\(F\)</span> is therefore lost and there is no experimental method with which to determine it. Using fourier synthesis is the option mainly used, effectively guessing a structure based on starting with as much information as is available about the molecules and its crystal and proceeding by least squares type fitting until an acceptable ‘model’ of the molecules is reached.</p>
 <p>In some cases, particularly when the origin of the unit cell is centro-symmetric, (has a centre of inversion) the structure factor is always real and the phase angle can only be <span class="math notranslate nohighlight">\(0\)</span> or <span class="math notranslate nohighlight">\(\pi\)</span> so <span class="math notranslate nohighlight">\(e^{i\varphi} =\pm 1\)</span>.</p>
-</div>
-<div class="section" id="example-of-calculating-the-structure-factors-tio-2">
-<h2>13.8 Example of calculating the structure factors, TiO<span class="math notranslate nohighlight">\(_2\)</span><a class="headerlink" href="#example-of-calculating-the-structure-factors-tio-2" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="example-of-calculating-the-structure-factors-tio-2">
+<h2>13.8 Example of calculating the structure factors, TiO<span class="math notranslate nohighlight">\(_2\)</span><a class="headerlink" href="#example-of-calculating-the-structure-factors-tio-2" title="Permalink to this headline">#</a></h2>
 <p>To calculate the structure factor and so spot intensity we use the coordinates for TiO<span class="math notranslate nohighlight">\(_2\)</span> which has a tetragonal structure with <span class="math notranslate nohighlight">\(a = b = 4.653\, ,c=2.969\)</span>, <span class="math notranslate nohighlight">\(\alpha=\beta=\gamma=90^\text{o}\)</span> with <span class="math notranslate nohighlight">\(a,b,c\)</span> in Angstrom. Figure 80 shows the structure. The repeating unit consists of two Ti atoms and four oxygens. The central Titanium is octahedrally coordinated with respect the the oxygens and the other Ti atoms are at the corners of the square prism. The atom coordinates are</p>
 <p><span class="math notranslate nohighlight">\(\begin{array}{lll}
 \text{Ti0} &amp; [0.5000&amp; 0.5000&amp;  0.0000] &amp;
@@ -1719,33 +1964,33 @@ fig 75. Simulated powder diffraction pattern from a cubic unit cell. The x-rays 
 <p><img alt="Drawing" src="../_images/fourier-fig80.png" /></p>
 <p>Figure 80. The structure of Ti0<span class="math notranslate nohighlight">\(_2\)</span>. The Ti atoms are black the oxygen red and the numbered O atoms show the repeating unit containing the Ti atom at the lower left connected to oxygen 1 and the central one. The atoms are not shown at their real size, the O<span class="math notranslate nohighlight">\(^{2-}\)</span> has a radius <span class="math notranslate nohighlight">\(\approx 1.23\)</span> Angstrom and the Ti<span class="math notranslate nohighlight">\(^{4+}\approx 0.65\)</span> Angstrom.</p>
 <hr class="docutils" />
-<div class="section" id="reflexion">
-<h3><strong>(100) reflexion</strong><a class="headerlink" href="#reflexion" title="Permalink to this headline">¶</a></h3>
+<section id="reflexion">
+<h3><strong>(100) reflexion</strong><a class="headerlink" href="#reflexion" title="Permalink to this headline">#</a></h3>
 <p>In this and the other reflexions we will calculate the structure factor by examining individual waves rather than plugging values into eqn. D4. Of course in practice the equation would always be used but it is useful to gain an insight into what the equation means.</p>
 <p>The set of (100) planes is shown in the figure 100F by looking down the <span class="math notranslate nohighlight">\(c\)</span> axis. The symmetry of the structure can be easily seen. The waves produced by the distance <span class="math notranslate nohighlight">\(d_{100}\)</span> are shown on the right. In this case the diffracted intensity is zero when summed over the two Ti and four oxygen atoms.</p>
 <p>As shown in fig. 70, if an atom is at a distance <span class="math notranslate nohighlight">\(D\)</span> from a plane it is at a fraction <span class="math notranslate nohighlight">\(D/d_{hkl}\)</span> of the inter-planar distance with a phase of <span class="math notranslate nohighlight">\(2\pi D/d_{hkl}\)</span> and contributes <span class="math notranslate nohighlight">\(f_{d_{hkl}}\cos(2\pi D/d_{hkl} )\)</span> to the total intensity where <span class="math notranslate nohighlight">\(f_{d_{hkl}}\)</span> is the atomic scattering factor for the atom at distance <span class="math notranslate nohighlight">\(D\)</span> with coordinate <span class="math notranslate nohighlight">\({xyz}\)</span>, see fig. 77. When the phase is zero or <span class="math notranslate nohighlight">\( 2\pi\)</span> then the cosine is <span class="math notranslate nohighlight">\(1\)</span> because <span class="math notranslate nohighlight">\(\cos(0)=\cos(2\pi) = 1\)</span>. Similarly if the phase difference is <span class="math notranslate nohighlight">\(\pi/2\)</span> or <span class="math notranslate nohighlight">\(90^\text{0}\)</span> the phase is zero; <span class="math notranslate nohighlight">\(\cos(\pi/2)=0\)</span>. The opposite is the case for phase based on sine waves but as the TiO<span class="math notranslate nohighlight">\(_2\)</span> has a centre of symmetry at the origin, the sine terms always add up to zero and need not be calculated.</p>
 <p>Looking down the <span class="math notranslate nohighlight">\(c\)</span> axis in fig. 80, i.e. showing the edges of the (110) planes, seen as horizontal lines, produces fig. 81; the Ti<span class="math notranslate nohighlight">\(_2\)</span> ion is at half the <span class="math notranslate nohighlight">\(d_{100}\)</span> distance and so has phase <span class="math notranslate nohighlight">\(\cos(2\pi/2)=-1\)</span> where as the Ti<span class="math notranslate nohighlight">\(_1\)</span> ion is at zero and so has phase(<span class="math notranslate nohighlight">\(\cos(0)=+1\)</span> so the waves from each of these ions are completely out of phase and so add to zero. Similarly the oxygen atoms <span class="math notranslate nohighlight">\(1\)</span> and <span class="math notranslate nohighlight">\(3\)</span> are separated by <span class="math notranslate nohighlight">\(D=d_{100}/2\)</span> so are also completely out of phase with one another and for the same reason so are O atoms <span class="math notranslate nohighlight">\(2\)</span> and <span class="math notranslate nohighlight">\(4\)</span>. Thus each atom is paired with another similar one exactly out of phase with it and diffraction from the <span class="math notranslate nohighlight">\((100)\)</span> plane is expected to have a   structure factor of zero; <span class="math notranslate nohighlight">\(F_{100}=0\)</span> as is confirmed by experiment.</p>
 <p><img alt="Drawing" src="../_images/fourier-fig81.png" /></p>
 <p>Figure 81. Left. View down the <span class="math notranslate nohighlight">\(c\)</span> axis showing the <span class="math notranslate nohighlight">\((100)\)</span> plane and the distance used in calculating the   structure factor <span class="math notranslate nohighlight">\(F_{100}\)</span>. The Ti ions are shown in black the oxygens in red. Right. Showing the waves belonging to each atom in this reflexion. Each wavelength is <span class="math notranslate nohighlight">\(d_{100}\)</span>. The sum of all waves is zero.</p>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="id2">
-<h3><strong>(200) reflexion</strong><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<section id="id2">
+<h3><strong>(200) reflexion</strong><a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
 <p>Although the <span class="math notranslate nohighlight">\((200)\)</span> planes are parallel to <span class="math notranslate nohighlight">\((100)\)</span> the <span class="math notranslate nohighlight">\((200)\)</span> reflection is not zero. This can be seen in fig. 82, and is because the <span class="math notranslate nohighlight">\(d_{200}\)</span> is half that of <span class="math notranslate nohighlight">\(d_{100}\)</span>. This means that Ti<span class="math notranslate nohighlight">\(_1\)</span> and Ti<span class="math notranslate nohighlight">\(_2\)</span> are now in phase with one another as each is on a <span class="math notranslate nohighlight">\((200)\)</span> plane and therefore each has zero phase. The phase contribution from the Ti ions is therefore <span class="math notranslate nohighlight">\(2f^{Ti}_{d_{200}}\cos(0)=2f^{Ti}_{d_{200}}\cos(0) = 16.02\)</span> where the number is the value of the atomic scattering factor at <span class="math notranslate nohighlight">\(1/2d_{200}=0.214\)</span>. Pairs of oxygen atoms are in the same relative symmetry, <span class="math notranslate nohighlight">\(1 : 3\)</span> and <span class="math notranslate nohighlight">\(2 : 4\)</span> so only the phase of O<span class="math notranslate nohighlight">\(_2\)</span> and O<span class="math notranslate nohighlight">\(_3\)</span> need be calculated.  Oxygen 2 is at <span class="math notranslate nohighlight">\(y/b=0.8025\)</span> so the structure factor is <span class="math notranslate nohighlight">\(F^O_{d_{200}}\cos( 2\pi h 0.8025)= -4.76\)</span> where <span class="math notranslate nohighlight">\(k=l=0\)</span> and <span class="math notranslate nohighlight">\(x/a=0.8025\)</span>. The same value is found for all the oxygen atoms making the total structure factor <span class="math notranslate nohighlight">\(F_{d_{200}}= 13\)</span> and the intensity <span class="math notranslate nohighlight">\(169\)</span>.</p>
 <p><img alt="Drawing" src="../_images/fourier-fig82.png" /></p>
 <p>Figure 82. Left. Same view as figure 81.  The <span class="math notranslate nohighlight">\((200)\)</span> planes are shown as lines. Right The waves from each atom and their sum is shown in red whose amplitude is moderate. By symmetry oxygens <span class="math notranslate nohighlight">\(1\)</span> and <span class="math notranslate nohighlight">\(3\)</span> contribute equally as do <span class="math notranslate nohighlight">\(2\)</span> and <span class="math notranslate nohighlight">\(4\)</span>.</p>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="id3">
-<h3><strong>(110) reflexion</strong><a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<section id="id3">
+<h3><strong>(110) reflexion</strong><a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h3>
 <p>The (110) reflection is strong, fig. 83. All the Ti atoms are in the (110) plane and so their phase is <span class="math notranslate nohighlight">\(0\)</span> or <span class="math notranslate nohighlight">\(2\pi\)</span> thus the cosine is unity and the amplitude of each is <span class="math notranslate nohighlight">\(f^{Ti}_{d_{110}}=16.95\)</span> where <span class="math notranslate nohighlight">\(1/2d_{110}= 0.152\)</span>. Oxygens <span class="math notranslate nohighlight">\(1\)</span> and <span class="math notranslate nohighlight">\(2\)</span> are also in the plane and their phase is similarly <span class="math notranslate nohighlight">\(2\pi\)</span> thus each amplitude is <span class="math notranslate nohighlight">\(f^O_{d_{110}}=6.96\)</span>. The other oxygens are at fractional distances of <span class="math notranslate nohighlight">\(d_{110}\)</span>. Oxygen 3 is at a distance <span class="math notranslate nohighlight">\(D_{O3}=2.003\)</span> which is a phase angle of <span class="math notranslate nohighlight">\(2\pi 2.003/4.65\equiv 219^\text{o}\)</span> with amplitude <span class="math notranslate nohighlight">\(f^O_{d_{110}}\cos(2\pi 0.43)=-5.39\)</span>. The fourth oxygen also has a phase angle of <span class="math notranslate nohighlight">\(-219^\text{o}\)</span> but adds towards the total because <span class="math notranslate nohighlight">\(\cos(-\theta)=\cos(\theta)\)</span>. From all 6 atoms in the unit cell the total structure factor is <span class="math notranslate nohighlight">\(F_{110}=37\)</span> so the intensity is <span class="math notranslate nohighlight">\(1369\)</span> and should be seen as an intensely bright spot.</p>
 <p><img alt="Drawing" src="../_images/fourier-fig83.png" /></p>
 <p>Figure 83. Left. Same view as figure 81 showing the (110) planes. Right The waves from each atom and their sum shown in red whose amplitude is large. By symmetry the oxygens <span class="math notranslate nohighlight">\(1\)</span> and <span class="math notranslate nohighlight">\(2\)</span> contribute identically as do <span class="math notranslate nohighlight">\(3\)</span> and <span class="math notranslate nohighlight">\(4\)</span>.</p>
-</div>
-</div>
+</section>
+</section>
 <hr class="docutils" />
-<div class="section" id="id4">
-<h2>13.9 Fourier synthesis<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<section id="id4">
+<h2>13.9 Fourier synthesis<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h2>
 <p>Having obtained structure factors we can attempt to find the position of the atoms. All that has to be done is to use eqns D3 with D5. Of course we already know the answer but let us check that we can reproduce the positions of the atoms of fig 81 for example, and by looking down the <span class="math notranslate nohighlight">\(c\)</span> axis calculate the projection of the structure onto the <span class="math notranslate nohighlight">\(a-b\)</span> plane.  Figure 84 shows the result where the centroid of the contours are in the same relative positions as the original, fig 81. The most intense features arise from the Ti atoms as they contain most electrons. This figure was calculated by dividing the unit cell into a <span class="math notranslate nohighlight">\(40 \times 40\times 40\)</span> grid and summing along the <span class="math notranslate nohighlight">\(c\)</span> axis. Only <span class="math notranslate nohighlight">\(hkl\)</span> values from <span class="math notranslate nohighlight">\(-5 \to +5\)</span> were used showing that a reasonable reproduction of the structure is possible using a relatively limited range of. Using a larger range of <span class="math notranslate nohighlight">\(hkl\)</span> reduces the spot sizes as smaller <span class="math notranslate nohighlight">\(d_{hkl}\)</span> are used and so the resolution increases.</p>
 <p><img alt="Drawing" src="../_images/fourier-fig84.png" /></p>
 <p>Figure 84. The calculated projection onto the <span class="math notranslate nohighlight">\(a-b\)</span> plane, i.e. looking down the <span class="math notranslate nohighlight">\(c\)</span>-axis. The unit cell is outlined and a few extra atoms are also shown. The Ti scatter with the greater intensity than the oxygen. The maximum contour is limited and consequently the Ti atoms are white at their most intense position. This calculated projection structure is the same as in fig 80 and 81.</p>
@@ -1758,9 +2003,9 @@ fig 75. Simulated powder diffraction pattern from a cubic unit cell. The x-rays 
 <div class="math notranslate nohighlight">
 \[\displaystyle R=\frac{\sum|\;|F_{expt}|-|F_{calc}|\;|}{\sum|F_{expt}|}\tag{58}\]</div>
 <p>The absolute values used in <span class="math notranslate nohighlight">\(R\)</span> just means that all <span class="math notranslate nohighlight">\(F\)</span> are positive. An <span class="math notranslate nohighlight">\(R\)</span> value of less that <span class="math notranslate nohighlight">\(\approx 0.2\)</span> may be acceptable as an initial fit, but half this value or better is expected for a refined fit to the data. The <span class="math notranslate nohighlight">\(R\)</span> factor between the two structures, fig. 85, is <span class="math notranslate nohighlight">\(0.26\)</span> showing that the agreement between them is poor as is clear from the images of the projections. The bond lengths Ti to oxygen 1 (or 2) is only changed by 0.023 nm in a bond length of 0.20 nm and this shows how sensitive x-ray diffraction is to small changes in geometry. The bond length Ti to oxygen 3 (or 4) is similar to that for the other two oxygens and is <span class="math notranslate nohighlight">\(0.196\)</span> nm but looks less because of the projection down the <span class="math notranslate nohighlight">\(c\)</span> axis.</p>
-</div>
-<div class="section" id="xray-diffraction-from-dna">
-<h2>13.10 Xray Diffraction from DNA<a class="headerlink" href="#xray-diffraction-from-dna" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="xray-diffraction-from-dna">
+<h2>13.10 Xray Diffraction from DNA<a class="headerlink" href="#xray-diffraction-from-dna" title="Permalink to this headline">#</a></h2>
 <p>Figure 85a is a copy of the original figure from Rosalind Frankin and R. Gosling’s 1953 paper (Nature, v.171, p.740, 1953) which showed for the first time the x-ray diffraction pattern from para-crystalline, calf thymus B-DNA fibres. In the same issue is the famous paper by Watson and Crick (Nature v.171, p.737, 1953) in which they speculate, with a sketch of the same, that the DNA is a double helix with base pairs inside the helices and the phosphates on the outside. They comment ‘we have been stimulated by a knowledge of the general nature of the unpublished experimental results of Dr. M. H. F. Wilkins and Dr. R. E. Franklin’ which brings us back to figure 85a. Three quarters of a century later, the quality of this image looks poor but recall that this was recorded on photographic plates and that transistors, and thus integrated circuits, had not been invented and neither had electronic detectors, such as ccd’s, and computers were all but unknown. The fact that sensitivity was low by modern standards means that the only spots (‘blobs’) detected come from atoms with the most electrons which are the phosphorous atoms, or possibly the phosphate group, and knowing this greatly helps identification.  Naturally far better x-ray data was soon available but it is very interesting to see how the limited original data lead to a correct understanding of the structure.</p>
 <p>The image contains a great deal of information that is accessible without any detailed calculation. The X or cross shape on the overall image is clear as are the split horizontal lines. The generally broad size of each ‘blob’ is due to the fact that the sample was para-crystalline, i.e. it was pulled out of a viscous aqueous solution of the sodium salt. The DNA filaments are kept apart by the water and counterions (Na<span class="math notranslate nohighlight">\(^+\)</span>) and in this state the DNA is kept more or less parallel along the fibre pulling direction but randomly distributed otherwise, probably rather like a nematic liquid crystal. This disorder also means that the spot sizes (‘blobs’ or ‘smears’) are large.</p>
 <p>The cross or x-shape indicated that the structure is a helix such as produced from a straight linear polymer. The structure factor for helices producing this unique signature has previously been worked out by Cochran et al. (1952), so that it must have been obvious on seeing the x-ray image that a helix was present. This form of an image is only observed because the x-ray is at right angles to the fibre pulling direction, and so the DNA helices are seen side on. Had this not been the case and the DNA’s were aligned in the same direction as the x-ray (sideways to pulling direction) then an image similar to that of fig 63 (bottom row) would have been formed but with twenty fold symmetry.</p>
@@ -1777,8 +2022,8 @@ fig 75. Simulated powder diffraction pattern from a cubic unit cell. The x-rays 
 <p>A simulated result is shown in figure 85c where the scattered peaks are shown as contours, red being the most intense and blue the least. The white areas have too little scattering and are below the threshold set to make a clear image. The connection with the experimental x-ray image is clear. Note that layer line <span class="math notranslate nohighlight">\(4\)</span> is missing and layer line 1 is less intense than line 2.</p>
 <p><img alt="Drawing" src="../_images/fourier-fig85c.png" /></p>
 <p>Figure 85c. Simulation of experimental diffraction data from DNA based on just the phosphate groups shown as circles on the helices shown in figure 85a. This 2D model is fourier transformed to produce the image. The model shows the general features observed in the experiment including the missing <span class="math notranslate nohighlight">\(4^{th}\)</span> layer line. The contours show the absolute value of the fourier transform.</p>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -1802,9 +2047,11 @@ fig 75. Simulated powder diffraction pattern from a cubic unit cell. The x-rays 
 
               </div>
               
-        
-            <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="Fourier-answers-16-21.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -1820,26 +2067,28 @@ fig 75. Simulated powder diffraction pattern from a cubic unit cell. The x-rays 
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-        
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-    <div class="container">
-      <p>
-        
-          By Godfrey Beddard<br/>
-        
-            &copy; Copyright 2022.<br/>
-      </p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Godfrey Beddard<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
     </div>
-  </footer>
-</main>
+    
+</div>
 
 
       </div>
     </div>
   
-  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>

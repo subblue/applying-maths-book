@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## Numerically finding the roots of an equation
+# # Numerically finding the roots of an equation
 
 # In[1]:
 
@@ -15,7 +15,7 @@ init_printing()                      # allows printing of SymPy results in types
 plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 
-# ### 9 The Newton - Raphson algorithm: 
+# ## 9 The Newton - Raphson algorithm: 
 # 
 # Two numerical methods are now described for solving equations, which means finding their roots, i.e. the values of $x$ when $y = 0$. The Newton - Raphson method uses the derivatives of a function to determine ever-closer approximations to the root of an equation; the related secant and Regula-Falsi (false-position) methods can be used on real experimental data whose equation is unknown. These methods work by making successive approximations.
 # 
@@ -26,7 +26,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # Figure 23. Left: Graph of the polynomial $y = 3 - 8x^2 + x^4$ showing roots at approximately $\pm 0.6$ and $\pm  2.7$. Right: The single root of the transcendental equation $-2x + e^{-x^2} - 2 = 0$ is at $x \approx -0.7$.
 # ______
 # 
-# ### 9.1 Derivation of the Newton - Raphson algorithm
+# ## 9.1 Derivation of the Newton - Raphson algorithm
 # 
 # An equation for which a solution is sought is be represented as $f(x) = 0$ and its value is made equal to zero because this is where the root will be found, i.e. its $y$ value is zero. In the derivation of differentiation the equation
 # 
@@ -75,7 +75,7 @@ for i in range(6):                      # guess number of interations needed
     print(i,x)
 
 
-# ### 9.2 Where the Newton - Raphson method fails
+# ## 9.2 Where the Newton - Raphson method fails
 # 
 # The Newton - Raphson method will fail when the derivative is zero, but more often it can fail when the next iteration occurs at a point having a gradient that has the _opposite sign_ to that of any previous points. This occurs after a maximum or minimum in the curve is exceeded. Figure 25 explains this more simply. The gradient at point $x_1$, moves the next point crossing the x-axis away from the root sought, which means that it is usually sensible to plot the function first, and then decide where to put the initial point. For the function shown in the sketch starting closer to the root will keep the iterations between the maximum and minimum in the curve.
 # 
@@ -84,7 +84,7 @@ for i in range(6):                      # guess number of interations needed
 # Figure 25. A case where the Newton - Raphson method fails; the gradient at $x_0$ and $x_1$ have opposite signs.
 # ______
 # 
-# ### 9.3 The Secant Method 
+# ## 9.3 The Secant Method 
 # 
 # The secant method is effectively a discrete version of the Newton - Raphson method where the gradient is calculated with small but finite differences and is useful when dealing with experimental data. The changes are $\displaystyle f'(x)\to \frac{\Delta f(x)}{\Delta x} =\frac{f(x_i)-f(x_{i+1})}{x_i-x_{i+1}}$. The algorithm is 
 # 
