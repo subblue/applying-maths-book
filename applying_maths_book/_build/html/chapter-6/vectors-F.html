@@ -770,7 +770,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-7/matrices-L.html">
-     Principal axes for Moments of Inertia
+     Principal axes of Moments of Inertia
     </a>
    </li>
    <li class="toctree-l2">
@@ -1588,15 +1588,15 @@ title="Print to PDF"
 \[\begin{split}\displaystyle \qquad \qquad \begin{align}\vec m &amp;= \vec a \times \vec b = |\vec a||\vec b|\sin(\gamma)\vec u_m, \\   \vec n &amp;= \vec b \times\vec c = |\vec b||\vec c|\sin(\alpha)\vec u_n \qquad \qquad\qquad \qquad\qquad \qquad \text{(51)}\end{align}\end{split}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\vec u_n\)</span> and <span class="math notranslate nohighlight">\(\vec u_m\)</span> are unit vectors along <span class="math notranslate nohighlight">\(\vec n\)</span> and <span class="math notranslate nohighlight">\(\vec m\)</span>; see equation 38. The order of vector multiplication is important here. The common vector <span class="math notranslate nohighlight">\(\vec b\)</span> between the two planes is in the middle. If the first vector points towards the join between planes, and the vectors <span class="math notranslate nohighlight">\(\vec a, \vec b, \vec c\)</span> form a head to tail chain, the order is</p>
 <div class="math notranslate nohighlight">
-\[\vec m\cdot \vec n = (\vec a \times \vec b)\cdot(\vec b \times \vec c)\tag{52}\]</div>
+\[\vec m\cdot \vec n = (\vec a \times \vec b)\cdot(\vec b \times \vec c)\qquad\tag{52}\]</div>
 <p>To ensure the correct vector directions, then <span class="math notranslate nohighlight">\(\vec a = \vec B - \vec A, \vec b = \vec C - \vec B, \vec c = \vec D - \vec C\)</span> if the atoms’ coordinates are the positional vectors <span class="math notranslate nohighlight">\(\vec A, \vec B, \vec C\)</span>, and <span class="math notranslate nohighlight">\(\vec D\)</span>. If this convention is not followed, the angle could be out by <span class="math notranslate nohighlight">\(180^\text{o}\)</span> and that is usually obvious in a small molecule, but would not be in a protein. Reversing the order of all the vectors leaves the torsion angle unchanged. The crucial dot product is</p>
 <div class="math notranslate nohighlight">
-\[\vec m\cdot\vec n = | \vec c || \vec b |^2| \vec a |\sin(\alpha)\sin(\gamma )\vec u_m\cdot\vec u_n  = |\vec  c || \vec b |^2| \vec a |\sin(\alpha)\sin(\gamma )\cos(\psi)\tag{53}\]</div>
+\[\vec m\cdot\vec n = | \vec c || \vec b |^2| \vec a |\sin(\alpha)\sin(\gamma )\vec u_m\cdot\vec u_n  = |\vec  c || \vec b |^2| \vec a |\sin(\alpha)\sin(\gamma )\cos(\psi)\qquad\tag{53}\]</div>
 <p>and we have used <span class="math notranslate nohighlight">\(\cos(\psi) = \vec u_m\cdot\vec u_n\)</span> because the <span class="math notranslate nohighlight">\(\vec u\)</span>’s are unit vectors.
 Using equations 51 the magnitude (absolute value) of vector <span class="math notranslate nohighlight">\(\vec n\)</span> is <span class="math notranslate nohighlight">\(| n | = | \vec c | | \vec b |\sin(\alpha)\)</span>,
 and <span class="math notranslate nohighlight">\(|\vec m | = | \vec b | | \vec a |\sin(\gamma)\)</span>. This means that the dot product equation 53 can be rearranged to give the torsion angle as</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle \cos(\psi)=\frac{\vec m\cdot\vec n}{|\vec m||\vec n|}= \frac{\vec m\cdot\vec n}{\sqrt{\vec m\cdot\vec m}\sqrt{\vec n\cdot\vec n}}\tag{54}\]</div>
+\[\displaystyle \cos(\psi)=\frac{\vec m\cdot\vec n}{|\vec m||\vec n|}= \frac{\vec m\cdot\vec n}{\sqrt{\vec m\cdot\vec m}\sqrt{\vec n\cdot\vec n}}\qquad\tag{54}\]</div>
 <p>To evaluate these equations each vector has to be defined in a basis set. The protein data bank crystallographic and NMR data use a basis set of (orthogonal) Cartesian <span class="math notranslate nohighlight">\(x, y, z\)</span> coordinates, as will those from a molecular dynamics simulation. The <span class="math notranslate nohighlight">\(\vec n\)</span> and <span class="math notranslate nohighlight">\(\vec m\)</span> vectors are defined as differences in these values, for example, in the <span class="math notranslate nohighlight">\((i, j, k)\)</span> basis set <span class="math notranslate nohighlight">\(\vec n = p_1\boldsymbol i + p_2\boldsymbol j + p_3\boldsymbol k\)</span> and <span class="math notranslate nohighlight">\(\vec m = q_1\boldsymbol i + q_2\boldsymbol j + q_3\boldsymbol k\)</span> where the <span class="math notranslate nohighlight">\(p\)</span>’s and <span class="math notranslate nohighlight">\(q\)</span>’s are coefficients or coordinates along each axis. In this case, the angle is calculated using</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \cos(\psi)=\frac{(p_1q_1+p_2q_2+p_3q_3)}{\sqrt{p_1^2+p_2^2+p_3^2}\sqrt{q_1^2+q_2^2+q_3^2}}\]</div>

@@ -770,7 +770,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-7/matrices-L.html">
-     Principal axes for Moments of Inertia
+     Principal axes of Moments of Inertia
     </a>
    </li>
    <li class="toctree-l2">
@@ -1662,7 +1662,7 @@ title="Print to PDF"
 <p>and if path <span class="math notranslate nohighlight">\(C\)</span> is <span class="math notranslate nohighlight">\(y=e^x\)</span> from <span class="math notranslate nohighlight">\(x=-2\to 2\)</span> then <span class="math notranslate nohighlight">\(\displaystyle  \int_C (x+y)dx=\int_{-2}^2(x+e^x)dx=e^2+\frac{1}{e^2}\)</span>.</p>
 <p>More formally, the line <span class="math notranslate nohighlight">\(P(x, y)\)</span> is defined to be a surface or function of <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span>, and assumed to be single valued. <span class="math notranslate nohighlight">\(C\)</span> is the curve in the plane defined as <span class="math notranslate nohighlight">\(y = f(x)\)</span> going from points <span class="math notranslate nohighlight">\(A = (x_1, y_1)\)</span> to <span class="math notranslate nohighlight">\(B = (x_2, y_2)\)</span> as sketched in Figure 34. The integral could therefore be written as</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle \int_C P(x,y)dx= \int_{x_1}^{x_2} P\big( x,f(x)\,\big) dx \tag{4.77}\]</div>
+\[\displaystyle \int_C P(x,y)dx= \int_{x_1}^{x_2} P\big( x,f(x)\,\big) dx \qquad\tag{77}\]</div>
 <p>which does make the integral look rather ordinary.</p>
 </section>
 <section id="definitions-of-some-different-forms-of-line-integrals">
@@ -1672,17 +1672,17 @@ title="Print to PDF"
 <h2>Normal, i.e. continuous and single valued functions<a class="headerlink" href="#normal-i-e-continuous-and-single-valued-functions" title="Permalink to this headline">#</a></h2>
 <p>The line integral of a surface <span class="math notranslate nohighlight">\(P(x, y)\)</span> with curve <span class="math notranslate nohighlight">\(C \equiv f(x)\)</span> and limits <span class="math notranslate nohighlight">\(x_1 \to x_2\)</span> is</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle  \int_C P(x,y)dx =  \int_{x_1}^{x_2} P\big( x,f(x)\,\big) dx \tag{4.78}\]</div>
+\[\displaystyle  \int_C P(x,y)dx =  \int_{x_1}^{x_2} P\big( x,f(x)\,\big) dx \qquad\tag{78}\]</div>
 <p>A similar integral could be defined in terms of an integral in <span class="math notranslate nohighlight">\(y\)</span> instead of x; for example, if <span class="math notranslate nohighlight">\(Q(x, y)\)</span> is the line, then</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle  \int_C Q(x,y)dy =  \int_{x_1}^{x_2} Q\big( x,f(x)\,\big) \frac{dy}{dx}dx \tag{4.79}\]</div>
+\[\displaystyle  \int_C Q(x,y)dy =  \int_{x_1}^{x_2} Q\big( x,f(x)\,\big) \frac{dy}{dx}dx \qquad\tag{79}\]</div>
 <p>but note that it is necessary to multiply by <span class="math notranslate nohighlight">\(dy/dx\)</span> and integrate in <span class="math notranslate nohighlight">\(dx\)</span>.</p>
 </section>
 <section id="parametric-forms">
 <h2>Parametric forms<a class="headerlink" href="#parametric-forms" title="Permalink to this headline">#</a></h2>
 <p>Parametric equations are very useful in defining complex curves; a circle of radius <span class="math notranslate nohighlight">\(2\)</span> about the origin has the form <span class="math notranslate nohighlight">\(x^2 + y^2 = 2^2\)</span> in Cartesian coordinates, and in parametric form, <span class="math notranslate nohighlight">\(x = 2\cos(t), y = 2\sin(t)\)</span>; see Section 6. A curve defined in parametric form is written as <span class="math notranslate nohighlight">\((x(t), y(t))\)</span>. Integration is obtained by substituting equation 78 for <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> in terms of <span class="math notranslate nohighlight">\(t\)</span> and integrating in <span class="math notranslate nohighlight">\(t\)</span>,</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle  \int_C P(x,y)dy =  \int_{x_1}^{x_2} P\big( x(t),y(t)\,\big) \frac{dx}{dt}dt \tag{4.80}\]</div>
+\[\displaystyle  \int_C P(x,y)dy =  \int_{x_1}^{x_2} P\big( x(t),y(t)\,\big) \frac{dx}{dt}dt \qquad\tag{80}\]</div>
 <p>If the line is again <span class="math notranslate nohighlight">\(x + y\)</span> and the integration is around the circle <span class="math notranslate nohighlight">\(x = 2\cos(t), y = 2\sin(t)\)</span>, choosing limits from <span class="math notranslate nohighlight">\(0 \to \pi\)</span> gives</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \int_C (x+y)dx=-4\int_0^\pi \big(\cos(t)+\sin(t)\big)\sin(t)dt =-2\pi\]</div>
@@ -1718,10 +1718,10 @@ title="Print to PDF"
 <h2>13.3 Arc length on a surface <span class="math notranslate nohighlight">\(P(x,y)\)</span><a class="headerlink" href="#arc-length-on-a-surface-p-x-y" title="Permalink to this headline">#</a></h2>
 <p>Suppose that the length of a small section of the curve <span class="math notranslate nohighlight">\(C\)</span> is <span class="math notranslate nohighlight">\(ds\)</span> then a line integral can be defined in terms of this arc length. See the sketch, Fig. 4.35,</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle S= \int_C P(x,y_ds= \int_{x_1}^{x_2} P(x,y)\frac{ds}{dx}dx \tag{81}\]</div>
+\[\displaystyle S= \int_C P(x,y_ds= \int_{x_1}^{x_2} P(x,y)\frac{ds}{dx}dx \qquad\tag{81}\]</div>
 <p>By Pythagoras’s theorem, <span class="math notranslate nohighlight">\(\delta s^2 = \delta x^2 + \delta y^2\)</span>, rearranging and taking the limit to form the differential gives <span class="math notranslate nohighlight">\(\displaystyle \frac{ds}{dx}=\sqrt{1+\left( \frac{dy}{dx} \right)^2}\)</span> which produces the result for the arc length <span class="math notranslate nohighlight">\(S\)</span>,</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle S=\int_{x_1}^{x_2} P(x,y)\sqrt{1+\left( \frac{dy}{dx} \right)^2} dx  \tag{82}\]</div>
+\[\displaystyle S=\int_{x_1}^{x_2} P(x,y)\sqrt{1+\left( \frac{dy}{dx} \right)^2} dx  \qquad\tag{82}\]</div>
 <p>where <span class="math notranslate nohighlight">\(y = f (x)\)</span>.</p>
 <p>Suppose that the surface is <span class="math notranslate nohighlight">\(P(x, y) = x + y\)</span> then the arc length from <span class="math notranslate nohighlight">\(x = 0 \to 4\)</span> along a curve <span class="math notranslate nohighlight">\(C\)</span> that we choose to be the parabola <span class="math notranslate nohighlight">\(y=1+x^2\)</span> is</p>
 <div class="math notranslate nohighlight">
@@ -1732,7 +1732,7 @@ title="Print to PDF"
 <h2>13.4 Length of a curve<a class="headerlink" href="#length-of-a-curve" title="Permalink to this headline">#</a></h2>
 <p>When only the length of a curve <span class="math notranslate nohighlight">\(C\)</span> is required, all that is necessary is to make <span class="math notranslate nohighlight">\(P(x, y) = 1\)</span> but still use the equation of the curve to define <span class="math notranslate nohighlight">\(dy/dx\)</span>;</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle S=\int_C ds=\int_{x_1}^{x_2} \frac{ds}{dx}dx=\int_{x_1}^{x_2} \sqrt{1+\left( \frac{dy}{dx} \right)^2} \tag{83}\]</div>
+\[\displaystyle S=\int_C ds=\int_{x_1}^{x_2} \frac{ds}{dx}dx=\int_{x_1}^{x_2} \sqrt{1+\left( \frac{dy}{dx} \right)^2} \qquad\tag{83}\]</div>
 <p>As an example, consider finding the length of the curve of the same parabola and limits as in Section 13.3. The integral is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle S=\int_C ds=\int_{x_1}^{x_2} \frac{ds}{dx}dx=\int_0^4\sqrt{1+4x^2}dx = \frac{x\sqrt{1+4x^2}}{2}+\frac{1}{4}\sinh^{-1}(2x)\bigg|_0^4 \approx 16.8\]</div>
@@ -1741,7 +1741,7 @@ title="Print to PDF"
 \[\displaystyle S=\int_{x_1}^{x_2}\sqrt{\left(\frac{dx}{d\theta}\right)^2 +\left(\frac{dy}{d\theta}\right)^2}d\theta \]</div>
 <p>which after substituting for <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> becomes</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle  S=\int_{x_1}^{x_2}\sqrt{ r^2 +\left(\frac{dr}{d\theta}\right)^2 } d\theta  \tag{84}\]</div>
+\[\displaystyle  S=\int_{x_1}^{x_2}\sqrt{ r^2 +\left(\frac{dr}{d\theta}\right)^2 } d\theta  \qquad\tag{84}\]</div>
 <p>The Archimedian spiral has the form <span class="math notranslate nohighlight">\(r=a\theta\)</span> where <span class="math notranslate nohighlight">\(a\)</span> is a constant. The length of this curve is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \int_0^\theta \sqrt{1+\theta^2}d\theta\]</div>
@@ -1763,10 +1763,10 @@ title="Print to PDF"
 <h2>13.5 A surface defined by two functions<a class="headerlink" href="#a-surface-defined-by-two-functions" title="Permalink to this headline">#</a></h2>
 <p>Suppose that the surface is represented by two functions <span class="math notranslate nohighlight">\(M\)</span> and <span class="math notranslate nohighlight">\(N\)</span>, which is often the case in thermodynamics, then the line integral can be written as two integrals in <span class="math notranslate nohighlight">\(dx\)</span> and <span class="math notranslate nohighlight">\(dy\)</span>,</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle f=\int_C M(x,y)dx+N(x,y)dy =\int_C \left(M(x,y)+N(x,y)\frac{dy}{dx} \right)dx \tag{85}\]</div>
+\[\displaystyle f=\int_C M(x,y)dx+N(x,y)dy =\int_C \left(M(x,y)+N(x,y)\frac{dy}{dx} \right)dx \qquad\tag{85}\]</div>
 <p>As an example, the integral</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle \int_C y^2 dx+2x^2y\,dy \tag{86}\]</div>
+\[\displaystyle \int_C y^2 dx+2x^2y\,dy \qquad\tag{86}\]</div>
 <p>will be calculated over the upper half of the semicircle of a unit disc. The curve <span class="math notranslate nohighlight">\(C\)</span> is therefore the equation of a unit circle, <span class="math notranslate nohighlight">\(x^2 + y^2 = 1\)</span>, and the integration proceeds from <span class="math notranslate nohighlight">\((1, 0) \to (-1, 0)\)</span>, which is from the positive x-axis anticlockwise to the negative x-axis. The integral is, with the derivative in brackets,</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \int_C y^2 dx+2x^2y\,dy =\int_1^{-1} 1-x^2+2x^2\sqrt{1-x^2}\left(\frac{-2x}{2\sqrt{1-x^2}}\right)dx=\int_1^{-1} 1-x^2+2x^3dx \]</div>
@@ -1783,7 +1783,7 @@ title="Print to PDF"
 <p>There are clearly many other curves that pass through the points <span class="math notranslate nohighlight">\((0, 0) \to (0, \pi/2)\)</span> and all of these will return the same value of the integral.</p>
 <p>The surface <span class="math notranslate nohighlight">\(x + y\)</span> would be called a state function if <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> had a meaning in thermodynamics. The value of a state function only depends on the starting and ending conditions and not on the means of getting from one to the other. The condition for the integral <span class="math notranslate nohighlight">\(f = \int M(x, y)dx + N(x, y)dy\)</span> to depend only on its end-points is</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle  \frac{\partial N}{\partial x}=\frac{\partial M}{\partial y} \tag{87}\]</div>
+\[\displaystyle  \frac{\partial N}{\partial x}=\frac{\partial M}{\partial y} \qquad\tag{87}\]</div>
 <p>a relationship which has been met before in the discussion on partial derivatives; see Chapter 3.12.</p>
 <p><img alt="Drawing" src="../_images/integration-fig36.png" /></p>
 <p>Figure 36. The integral of a <em>state function</em> is independent of path and depends only on starting and ending positions <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span>.</p>
@@ -1813,16 +1813,16 @@ title="Print to PDF"
 <p>The constant pressure heat capacity is defined as <span class="math notranslate nohighlight">\(\displaystyle C_p=\left( \frac{\partial H}{\partial T} \right)_p \)</span> where <span class="math notranslate nohighlight">\(H=U+pV \)</span> is the enthalpy, internal energy plus work. If an ideal gas expansion is carried out at constant pressure, then the first term in the integration is zero; and the second term is zero if carried out at constant volume; if neither is the case then the path equation must be known and <span class="math notranslate nohighlight">\(dV/dp\)</span>  calculated to make the integral one in <span class="math notranslate nohighlight">\(p\)</span> or <span class="math notranslate nohighlight">\(V\)</span> alone.</p>
 <p>As an example of a thermodynamic calculation, consider calculating the entropy <span class="math notranslate nohighlight">\(S\)</span>, which is a state function and can be defined as</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle dS=\frac{C_p}{T}dT-\left( \frac{\partial V}{\partial T}\right)_pdp \tag{88}\]</div>
+\[\displaystyle dS=\frac{C_p}{T}dT-\left( \frac{\partial V}{\partial T}\right)_pdp \qquad\tag{88}\]</div>
 <p>and in an integrated form</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle S=\int \frac{C_p}{T}dT-\int\left( \frac{\partial V}{\partial T}\right)_pdp \tag{89}\]</div>
+\[\displaystyle S=\int \frac{C_p}{T}dT-\int\left( \frac{\partial V}{\partial T}\right)_pdp \qquad\tag{89}\]</div>
 <p>if variables <span class="math notranslate nohighlight">\(T\)</span> and <span class="math notranslate nohighlight">\(p\)</span> are chosen. It has been stated that <span class="math notranslate nohighlight">\(S\)</span> is a state function: to prove that this is true, equation 87 must hold true for the derivatives in equation 88. To illustrate this, it will be necessary to relate <span class="math notranslate nohighlight">\(T, V\)</span>, and <span class="math notranslate nohighlight">\(p\)</span> and for which the ideal gas equation will be used. The first step is to form equation 87, which is done by looking at the ‘symmetry’ of the first of equations 85, <span class="math notranslate nohighlight">\(Mdx + Ndy\)</span> and comparing it with 87, <span class="math notranslate nohighlight">\(\displaystyle \frac{\partial N}{\partial x} = \frac{\partial M}{\partial y}\)</span>. In this equation <span class="math notranslate nohighlight">\(M\)</span> is a derivative with respect to <span class="math notranslate nohighlight">\(y\)</span>, and <span class="math notranslate nohighlight">\(N\)</span> to <span class="math notranslate nohighlight">\(x\)</span>. Therefore, choosing <span class="math notranslate nohighlight">\(M = C_p /T\)</span> and <span class="math notranslate nohighlight">\(N = (\partial V/\partial T)_P\)</span> these must be functions of the other variable used in equation 88 or 89. This means that equation 87 becomes</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle \frac{\partial }{\partial p}\left(\frac{C_p}{T}\right) =\frac{\partial}{\partial T}\left(\frac{\partial V}{\partial T}\right)_p \tag{90}\]</div>
+\[\displaystyle \frac{\partial }{\partial p}\left(\frac{C_p}{T}\right) =\frac{\partial}{\partial T}\left(\frac{\partial V}{\partial T}\right)_p \qquad\tag{90}\]</div>
 <p>Next, it is shown that this relationship is true. As the ideal gas law is <span class="math notranslate nohighlight">\(pV = RT\)</span> then <span class="math notranslate nohighlight">\((\partial V/\partial T)_p = R/p\)</span> and so</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle \frac{1 }{T}\frac{\partial C_p}{\partial p} =\frac{\partial}{\partial T}\left(\frac{R}{p}\right)_p \tag{91}\]</div>
+\[\displaystyle \frac{1 }{T}\frac{\partial C_p}{\partial p} =\frac{\partial}{\partial T}\left(\frac{R}{p}\right)_p \qquad\tag{91}\]</div>
 <p>The heat capacity is by definition, <span class="math notranslate nohighlight">\((dU/dT)_p\)</span> making the left-hand side of equation 91</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \frac{1 }{T}\frac{\partial C_p}{\partial p} = \frac{1 }{T}\frac{\partial^2 U}{\partial p\partial T}=0\]</div>
@@ -1840,7 +1840,7 @@ make an equation in <span class="math notranslate nohighlight">\(p\)</span> or <
 <p><span class="math notranslate nohighlight">\(\quad\)</span><strong>(4)</strong> Integrate the resulting equation.</p>
 <p>In step (1), starting with equation 89, substituting the partial derivative using the ideal gas law produces</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle  S=\int \frac{C_p}{T}dT-\int\frac{R}{p}dp \tag{92}\]</div>
+\[\displaystyle  S=\int \frac{C_p}{T}dT-\int\frac{R}{p}dp \qquad\tag{92}\]</div>
 <p>Step (2): making the integral a function of <span class="math notranslate nohighlight">\(p\)</span> and of <span class="math notranslate nohighlight">\(T\)</span> alone gives</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle  S_T=\int_{p_0}^{p_1} \left(\frac{C_p}{T}\frac{dT}{dp}-\frac{R}{p}\right) dp, \qquad S_p=\int_{T_1}^{T_2} \left(\frac{C_p}{T}-\frac{R}{p}\frac{dp}{dT}\right) dT \]</div>
@@ -1865,7 +1865,7 @@ the equation of a straight line;</p>
 <h2>14.2 Green’s function<a class="headerlink" href="#greens-function" title="Permalink to this headline">#</a></h2>
 <p>A line integral of two functions is by Green’s theorem equal to the surface integral around a <em>closed area</em>, or</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle  \int_CMdx+Ndy = \int\int \left( \frac{N}{dx}-\frac{M}{dy} \right)dxdy \tag{93}\]</div>
+\[\displaystyle  \int_CMdx+Ndy = \int\int \left( \frac{N}{dx}-\frac{M}{dy} \right)dxdy \qquad\tag{93}\]</div>
 <p>where integration is taken in an anticlockwise direction. It can be evaluated either as two or more line integrals, one for each part of the loop, or from the double integral depending which is easier, but is always around a closed area. The notation for this is often given as <span class="math notranslate nohighlight">\(\int_C Mdx + Ndy\)</span> . If the curve is given para metrically, the integral is <span class="math notranslate nohighlight">\(\displaystyle A= \frac{1}{2}\int \left( x\frac{N}{dt}-y\frac{M}{dt} \right)dt\)</span>.</p>
 <p>Consider equation 86, which was evaluated around the semicircle of a unit circle from <span class="math notranslate nohighlight">\(A\)</span> to <span class="math notranslate nohighlight">\(B\)</span>. The result was <span class="math notranslate nohighlight">\(\displaystyle \int_Cy^2dx+2x^2ydy=-\frac{4}{3}\)</span>.</p>
 <p>The second part of the calculation of the closed loop must also contain the line integral from <span class="math notranslate nohighlight">\(B\)</span> to <span class="math notranslate nohighlight">\(A\)</span>, the curve for this is <span class="math notranslate nohighlight">\(y = 0\)</span> and therefore the integral <span class="math notranslate nohighlight">\(B \to A\)</span> is zero because <span class="math notranslate nohighlight">\(y\)</span> is zero, in both limits of the integral. The total line integral from <span class="math notranslate nohighlight">\(A \to B\)</span> then straight to <span class="math notranslate nohighlight">\(A\)</span> again is therefore also <span class="math notranslate nohighlight">\(-4/3\)</span>.</p>

@@ -770,7 +770,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="matrices-L.html">
-     Principal axes for Moments of Inertia
+     Principal axes of Moments of Inertia
     </a>
    </li>
    <li class="toctree-l2">
@@ -1716,7 +1716,7 @@ title="Print to PDF"
 <h2>12.1 Simultaneous equations<a class="headerlink" href="#simultaneous-equations" title="Permalink to this headline">#</a></h2>
 <p>A matrix can be of great use in solving simultaneous equations provided that its inverse exists. We consider two types of equations. First is the general case</p>
 <div class="math notranslate nohighlight">
-\[\pmb{M}\vec x =  \vec C \tag{28} \]</div>
+\[\pmb{M}\vec x =  \vec C \qquad\tag{28} \]</div>
 <p>where <span class="math notranslate nohighlight">\(\pmb M\)</span> is a matrix and <span class="math notranslate nohighlight">\(\vec x\)</span> and <span class="math notranslate nohighlight">\(\vec C\)</span> are column vectors (one-dimensional matrices). Later on, we consider eigenvalue - eigenvector equations, which are more important and useful to us. In this section matrices are given bold letters, a vector is indicated by an arrow.</p>
 <p>A set of simultaneous equations can conventionally be written as shown below, but the matrix equation is equivalent and clearer.</p>
 <div class="math notranslate nohighlight">
@@ -1741,7 +1741,7 @@ component <span class="math notranslate nohighlight">\(i = 1\)</span> gives the 
 <h2>12.2 A matrix method for solving simultaneous equations<a class="headerlink" href="#a-matrix-method-for-solving-simultaneous-equations" title="Permalink to this headline">#</a></h2>
 <p>The formal matrix method to solve equation (28) is to invert the equation by multiplying both sides by <span class="math notranslate nohighlight">\(\pmb{M}^{-1}\)</span> to form <span class="math notranslate nohighlight">\(\pmb{M}^{-1}\pmb{M} = \pmb{1}\)</span> and therefore <span class="math notranslate nohighlight">\(\pmb{M}^{-1}\pmb{M}\vec x = \pmb{M}^{-1}\vec C\)</span>. The next step is to replace the <span class="math notranslate nohighlight">\(\pmb{M}^{-1}\pmb{M}\)</span> by the unit matrix <span class="math notranslate nohighlight">\(\pmb{1}\)</span>, but this has no further effect because <span class="math notranslate nohighlight">\(\pmb{1}\vec x = \pmb{M}^{-1}\vec C\)</span> is the same as</p>
 <div class="math notranslate nohighlight">
-\[ \vec x=\pmb{M}^{-1}\vec C\tag{30}\]</div>
+\[ \vec x=\pmb{M}^{-1}\vec C\qquad\tag{30}\]</div>
 <p>The matrix method of solving simultaneous equations has therefore become that of finding the inverse of a matrix <span class="math notranslate nohighlight">\(\pmb{M}\)</span>, and performing a matrix multiplication with <span class="math notranslate nohighlight">\(\vec C\)</span>.</p>
 <section id="i-solving-simultaneous-equations-with-the-computer">
 <h3><strong>(i) Solving simultaneous equations with the computer</strong><a class="headerlink" href="#i-solving-simultaneous-equations-with-the-computer" title="Permalink to this headline">#</a></h3>
@@ -1997,7 +1997,7 @@ which has the form</p>
 <p>provided the function is not zero. The Schroedinger equation <span class="math notranslate nohighlight">\(H\psi = E\psi\)</span> is of this type, and is most familiar to use when used to calculate a molecules vibrational and rotational spectrum but is used in virtually all other aspects of molecular quantum mechanics. In this equation, <span class="math notranslate nohighlight">\( H\)</span> is the Hamiltonian operator; <span class="math notranslate nohighlight">\(\psi\)</span> is the wavefunction and <span class="math notranslate nohighlight">\(E\)</span> the energy. In this section, we will deal with operators that are matrices and functions that are vectors.</p>
 <p>In matrix form, an eigenvector - eigenvalue equation is the special type of matrix-vector product where,</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle  \pmb{A} \vec x = \lambda \vec x\tag{31}\]</div>
+\[\displaystyle  \pmb{A} \vec x = \lambda \vec x\qquad\tag{31}\]</div>
 <p>The operator <span class="math notranslate nohighlight">\(\pmb A\)</span> must be a square matrix, and alters column vector, <span class="math notranslate nohighlight">\( x\)</span> to produce itself multiplied by a constant <span class="math notranslate nohighlight">\(\lambda\)</span>. The constant <span class="math notranslate nohighlight">\(\lambda\)</span> is called either an <em>eigenvalue</em>, a <em>proper value</em>, or a <em>characteristic value</em>. The eigenvector is <span class="math notranslate nohighlight">\(x\)</span>. The action of the operator is to magnify or reduce the eigenvector <span class="math notranslate nohighlight">\( x\)</span> by an amount <span class="math notranslate nohighlight">\(\lambda\)</span> but other wise leaves it unchanged, i.e it ‘points’ in the same direction. In contrast, operators, such as rotation matrices, or those used in group theory, would leave the vector <span class="math notranslate nohighlight">\(x\)</span> unchanged in length but pointing in another direction. The eigenvalues can be real numbers, positive, negative or zero or complex numbers or a mixture these.</p>
 <p>Equation 31 can be written as</p>
 <div class="math notranslate nohighlight">
@@ -2016,7 +2016,7 @@ which has the form</p>
 <h2>12.6 The Secular Equation and Determinant. The evaluation of Eigenvalues and Eigenvectors<a class="headerlink" href="#the-secular-equation-and-determinant-the-evaluation-of-eigenvalues-and-eigenvectors" title="Permalink to this headline">#</a></h2>
 <p>In an eigenvalue - eigenvector equation, the operator <span class="math notranslate nohighlight">\(\pmb{A}\)</span> is always an <span class="math notranslate nohighlight">\(n \times n\)</span> square matrix and <span class="math notranslate nohighlight">\(\vec x\)</span> is an, as yet, unknown vector (single column matrix), and similarly for the eigenvalues <span class="math notranslate nohighlight">\(\lambda\)</span> which also form an unknown single column matrix. The first step in solving equation 31 is to find the eigenvalues <span class="math notranslate nohighlight">\(\lambda\)</span>. Rearranging equation 31 by subtracting the <span class="math notranslate nohighlight">\(\lambda\)</span> from the diagonals only produces a singular matrix, and the essential property of a singular matrix is that its determinant is zero. Doing this produces what is called the <em>Secular Equation</em>,</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle (\pmb{A} - \lambda \pmb{1})x = \pmb{0} \tag{32}\]</div>
+\[\displaystyle (\pmb{A} - \lambda \pmb{1})x = \pmb{0} \qquad\tag{32}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\pmb{1}\)</span> is the unit (diagonal) matrix and <span class="math notranslate nohighlight">\(\pmb 0\)</span> is the null matrix. This equation is, in fact, just a set of simultaneous equations in <span class="math notranslate nohighlight">\(n\)</span> unknowns, because there are <span class="math notranslate nohighlight">\(n\)</span> rows and columns. The eigenvalues are calculated from the secular determinant by setting it to zero</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle |\pmb{A} - \lambda \pmb{1}| = \pmb{0}\]</div>
@@ -2033,7 +2033,7 @@ a_{n1}&amp; a_{n2} &amp; a_{n3} &amp;\cdots &amp; a_{nn}-\lambda \\ \end{bmatrix
 <p>and the determinant is the product of the eigenvalues <span class="math notranslate nohighlight">\(|\pmb A|=\prod_i \lambda_i\)</span>.</p>
 <p>Now that the eigenvalues are known the <span class="math notranslate nohighlight">\(n\)</span> eigenvectors, <span class="math notranslate nohighlight">\(x_1 \to x_n\)</span>, each of length <span class="math notranslate nohighlight">\(n\)</span>, can be found. To each of these eigenvectors, belongs an eigenvalue, <span class="math notranslate nohighlight">\(\lambda_i\)</span>. Each eigenvalue in turn is substituted back into the secular equation and this is then solved for each <span class="math notranslate nohighlight">\(\vec x\)</span>. The <span class="math notranslate nohighlight">\(j^{th}\)</span> solution, for example, is obtained using <span class="math notranslate nohighlight">\((\pmb{A} - \lambda_j\pmb{1})x_j = 0\)</span>, and this is the part that takes the computer (or you) most time to evaluate. This is done by computing the <span class="math notranslate nohighlight">\(i^{th}\)</span> component of the <span class="math notranslate nohighlight">\(j^{th}\)</span> eigenvector, <span class="math notranslate nohighlight">\(x_j\)</span>, which is a multiple of</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle  x_{ij}=(-1)^{i+k}|(\pmb{A}-\lambda_j\pmb{1})_{kj}|  \tag{34}\]</div>
+\[\displaystyle  x_{ij}=(-1)^{i+k}|(\pmb{A}-\lambda_j\pmb{1})_{kj}|  \qquad\tag{34}\]</div>
 <p>where <span class="math notranslate nohighlight">\( (-1)^{i+k}|(\pmb{A}-\lambda_j\pmb{1})_{kj}| \)</span> is the <em>cofactor</em> of the matrix of element <span class="math notranslate nohighlight">\(ki\)</span>; note that <span class="math notranslate nohighlight">\(j\)</span> is the index of the eigenvalue and <span class="math notranslate nohighlight">\(k\)</span> the index of a column.</p>
 <p>Collecting all the eigenvectors together, they can be placed into a matrix, each <em>column</em> of which is an eigenvector, the first column belonging to the first eigenvalue and so forth; this is why <span class="math notranslate nohighlight">\(x\)</span> in equation 34 has two subscripts; the second <span class="math notranslate nohighlight">\(j\)</span> identifies the eigenvalue. The matrix of eigenvectors a sometimes called the <em>modal</em> matrix.</p>
 <p>We can use Python with Numpy (for fast numerical solutions) or Sympy (for algebraic solutions) to do most of the matrix diagonalization. When the matrix is formed both eigenvectors and eigenvalues can be produced together. The position of any eigenvalue - eigenvector pair that the computer produces is arbitrary, and this order does not, unless accidentally, correspond to the ordering of the basis set, but the eigenvalue and its corresponding eigenvector are always produced in the same relative positions. Note that the syntax is different for Numpy and for Sympy. It is assumed that these libraries are already loaded.</p>
@@ -2218,7 +2218,7 @@ called the <em>eigenvalue spectrum</em>.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/matrices-G_35_0.png" src="../_images/matrices-G_35_0.png" />
+<img alt="../_images/matrices-G_34_0.png" src="../_images/matrices-G_34_0.png" />
 </div>
 </div>
 <div class="cell docutils container">

@@ -85,7 +85,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # Written as a summation, the convolution at point $k$ is
 # 
-# $$\displaystyle C(k) = \sum_{i=0}^k f(i)w(k - i )   \tag{32}$$
+# $$\displaystyle C(k) = \sum_{i=0}^k f(i)w(k - i )   \qquad\tag{32}$$
 # 
 # This sum evaluates just one point; to calculate the whole convolution, the index $k$ must now be varied from 1 to $n$, which is the number of data points, making a double summation. One reason Fourier transforms are used to calculate convolutions is that the fast Fourier transform algorithm, FFT, is far quicker on the computer than calculating the convolution as a double summation, particularly for a large number of data points.
 # 
@@ -130,13 +130,13 @@ plt.show()
 # 
 # The convolution can also become an integral, by supposing that the points are separated by an infinitesimal amount, and therefore, the change $sum \rightarrow \int $  is allowable. The integral form of the convolution at time $u$, is
 # 
-# $$\displaystyle C(u)=\int_{-\infty}^\infty f(t)w(u-t)dt \tag{33}$$
+# $$\displaystyle C(u)=\int_{-\infty}^\infty f(t)w(u-t)dt \qquad\tag{33}$$
 # 
 # which represents the response at time $u$ to an impulse delivered at time $t$. The limits to the integral are often represented as $\pm \infty$. If the signal is zero at times less than zero, then the lower limit can be made zero. 
 # 
 # The convolution integral is frequently written as,
 # 
-# $$\displaystyle C(t) = f (t) \otimes w(t) \qquad  \text{ or } \qquad C = f \otimes w \tag{34} $$
+# $$\displaystyle C(t) = f (t) \otimes w(t) \qquad  \text{ or } \qquad C = f \otimes w \qquad\tag{34} $$
 # 
 # The convolution is performed by Fourier transforming functions $f$ and $w$ separately, multiplying the transforms together and then inverse transforming. The symbol $\otimes$ represents all these calculations because the result is returned in the time domain. Sometimes, the convolution is written only as a conversion into the frequency domain as
 # 
@@ -146,7 +146,7 @@ plt.show()
 # 
 # If $T$ represents the Fourier transform and $T^{-1}[\cdots]$ the inverse transform the convolution is formally written as
 # 
-# $$\displaystyle C = T^{-1}[\,T( f )T(w)\,]    \tag{35} $$
+# $$\displaystyle C = T^{-1}[\,T( f )T(w)\,]    \qquad\tag{35} $$
 # 
 # which is the same as equation 34. If the equations describing $f$ and $w$ are known, an exponential and a Gaussian for example, then 
 # 
@@ -291,7 +291,7 @@ plt.show()
 # 
 # and so forth for the other terms. The last overlap is
 # 
-# $$\displaystyle A(5) = f (1)w(6)   \tag{36}$$
+# $$\displaystyle A(5) = f (1)w(6)   \qquad\tag{36}$$
 # 
 # On the negative side, the indices are interchanged, $f$ for $w$ and vice versa, and the first (far left) term is
 # $A(-5) = f (6)w(1)$ and similarly for the other terms. There are 11 terms in all or, in general $2n - 1$, for data of $n$ points. In an autocorrelation, $f$ and $w$ are the same function and therefore the autocorrelation must be symmetrical and only terms from zero to five are needed, the others being known by symmetry.
@@ -303,17 +303,17 @@ plt.show()
 # 
 # The formula for the autocorrelation for $n$ data points is
 # 
-# $$\displaystyle A_a(k)=\sum_{i=0}^{n-k}f(i)f(k+i) \qquad k=0,1,\cdots \rightarrow \cdots n   \tag{37}$$
+# $$\displaystyle A_a(k)=\sum_{i=0}^{n-k}f(i)f(k+i) \qquad k=0,1,\cdots \rightarrow \cdots n   \qquad\tag{37}$$
 # 
 # where the first value of the displacement $k$ is zero, and the last $n$, and both functions are now labelled $f$. Very often the autocorrelation is normalized; this means dividing by $\sum f(i)^2$, 
 # 
-# $$\displaystyle A_a(k)=\frac{\sum\limits_{i=0}^{n-k}f(i)f(k+i)}{\sum f(i)^2}   \tag{38}$$
+# $$\displaystyle A_a(k)=\frac{\sum\limits_{i=0}^{n-k}f(i)f(k+i)}{\sum f(i)^2}   \qquad\tag{38}$$
 # 
 # These last two formulae produce just half of the autocorrelation. To produce the full correlation, symmetrical about zero lag, the mirror image of equation (37) must be added as points $-n \to -1$ to the left-hand part of the data.
 # 
 # The cross-correlation uses a similar formula
 # 
-# $$\displaystyle A_c(k)=\sum\limits_{i=0}^{n-k} f(i)w(k+i) \qquad k=-n+1,\cdots 0, \cdots n-1  \tag{39}$$
+# $$\displaystyle A_c(k)=\sum\limits_{i=0}^{n-k} f(i)w(k+i) \qquad k=-n+1,\cdots 0, \cdots n-1  \qquad\tag{39}$$
 # 
 # but now $k$ always ranges from $-n + 1 \to n - 1$. This distinction is crucial, otherwise the whole of the cross-correlation is not calculated.
 # 
@@ -323,11 +323,11 @@ plt.show()
 # 
 # Correlations and convolution are not restricted to digitized data but apply also to normal functions. Written as an integral, the cross-correlation of a real, i.e. not complex, function is
 # 
-# $$\displaystyle A_c(u) =\int_{-\infty}^{\infty}f(t)w(u+t)dt  \tag{40}$$
+# $$\displaystyle A_c(u) =\int_{-\infty}^{\infty}f(t)w(u+t)dt  \qquad\tag{40}$$
 # 
 # and the autocorrelation of $f$,
 # 
-# $$\displaystyle A_a(u) =\int_{-\infty}^{\infty}f(t)f(u+t)dt  \tag{41}$$
+# $$\displaystyle A_a(u) =\int_{-\infty}^{\infty}f(t)f(u+t)dt  \qquad\tag{41}$$
 # 
 # Notice that the sign in the second term is positive in the correlation but negative in a convolution, equation (33). Some authors multiply by a normalising term $1/\sqrt{2\pi}$ to the autocorrelation but we shall ignore this constant as in most applications it is not usually necessary to know it. The autocorrelation is an even function thus
 # 
@@ -335,11 +335,11 @@ plt.show()
 # 
 # and if the function contains a complex number, then the conjugate is always placed on the left,
 # 
-# $$\displaystyle A_a(u) =\int_{-\infty}^{\infty}f(t)^*f(u+t)dt  \tag{41}$$
+# $$\displaystyle A_a(u) =\int_{-\infty}^{\infty}f(t)^*f(u+t)dt  \qquad\tag{41}$$
 # 
 # The normalised autocorrelation is 
 # 
-# $$\displaystyle G(u) = \frac{\int\limits_{-\infty}^{\infty}f(t)^*f(u+t)dt}{\int\limits_{-\infty}^{\infty}f(t)^2dt}  =\frac{\langle f(t)\,f(u+t)\rangle}{\langle f(t)^2\rangle}   \tag{42}$$
+# $$\displaystyle G(u) = \frac{\int\limits_{-\infty}^{\infty}f(t)^*f(u+t)dt}{\int\limits_{-\infty}^{\infty}f(t)^2dt}  =\frac{\langle f(t)\,f(u+t)\rangle}{\langle f(t)^2\rangle}   \qquad\tag{42}$$
 # 
 # and the bracket notation indicates that these are average value. The denominator is the normalization term and is also the value of the numerator with $u = 0$.
 # 
@@ -540,7 +540,7 @@ plt.show()
 # 
 # which looks quite complicated when the substitution for $f$ is made. However, using the formulas for $\sin(A + B), \cos(A + B)$ and the orthogonality rules, a remarkably simple result is produced:
 # 
-# $$\displaystyle A(u)=\frac{1}{2}\sum_n\left(a_n^2+b_n^2\right)\cos\left(\frac{2\pi nu}{T} \right)  \tag{43}$$
+# $$\displaystyle A(u)=\frac{1}{2}\sum_n\left(a_n^2+b_n^2\right)\cos\left(\frac{2\pi nu}{T} \right)  \qquad\tag{43}$$
 # 
 # which is an oscillating signal that will repeat itself with a period $T$.
 # 
@@ -548,17 +548,17 @@ plt.show()
 # 
 # The autocorrelation (equation (43)) is related to the energy or power in a given signal. For example, with electromagnetic radiation the energy is the square of the amplitude $E$ of the electric field, the field is given by the constants $a$ and $b$ thus $a^2 + b^2$ represents the energy. This is also true of a sound wave in a fluid where the energy is proportional to the square of the oscillating pressure. There are other examples; the power dissipated in a resistor is proportional to the current squared and the kinetic energy of a molecule is proportional to the square of the velocity. Thus, in general if the signal is $f$, $\langle f^2\rangle$ represents the average energy or power. The period $T$ (equation (43)) is somewhat arbitrary and can reasonably take on any value; therefore, it is possible to define $n/T \equiv \nu_n$ as a frequency. The amount of power $P$ in a small frequency interval from $\nu$ to $\nu + \nu + \delta \nu$ is therefore $\displaystyle P(\nu)d\nu = \frac{1}{2}\left(a_\nu^2 + b_\nu^2\right)$ and the autocorrelation can be written as an integral over frequencies rather than a summation over index $n$. This effectively means that there are so many terms in the sum that it can be changed into an integral without any significant error, and doing this produces the autocorrelation;
 # 
-# $$\displaystyle A(u)=\int_{v=0}^\infty P(\nu)\cos(2\pi\nu u)d\nu  \tag{44}$$
+# $$\displaystyle A(u)=\int_{v=0}^\infty P(\nu)\cos(2\pi\nu u)d\nu  \qquad\tag{44}$$
 # 
 # Comparing this equation with a Fourier transform equation, the power spectrum is
 # 
-# $$\displaystyle P(\nu) = 4\int_{u=0}^\infty A(u)\cos(2\pi\nu u)d\nu \tag{45}$$
+# $$\displaystyle P(\nu) = 4\int_{u=0}^\infty A(u)\cos(2\pi\nu u)d\nu \qquad\tag{45}$$
 # 
 # and these two equations are known as the _Wiener - Khinchin_ relationships: the power spectrum $P(\nu)$ and autocorrelation $A(u)$ form a Fourier transform pair. Very often the transform pair involve time and frequency, in which case the changes $u\to t$ and $P(\nu) \to J(\nu)$ are commonly made. In NMR and other spectroscopies $J(\omega)$ is called the spectral density.
 # 
 # The power spectrum is proportional to what we would normally observe in a spectroscopic experiment, as the change in the signal vs frequency. The width of the signal is determined by the autocorrelation and this is determined by the noise. If the noise is due to a random process then it is often found that the autocorrelation decays exponentially as $\displaystyle e^{-t/\tau}$ with rate constant $k=1/\tau$. In this case the power spectrum $J(\nu)$ is
 # 
-# $$\displaystyle J(\nu) =4\int_{u=0}^\infty e^{-u/\tau}\cos(2\pi \nu u)du = \frac{4\tau}{1+(2\pi\nu \tau)^2} \tag{46}$$
+# $$\displaystyle J(\nu) =4\int_{u=0}^\infty e^{-u/\tau}\cos(2\pi \nu u)du = \frac{4\tau}{1+(2\pi\nu \tau)^2} \qquad\tag{46}$$
 # 
 # and the integral is most easily evaluated by converting the cosine to its exponential form. 
 # 
@@ -588,7 +588,7 @@ plt.show()
 # 
 # The _amplitude_ or field is $f=ae^{i\omega_0 t}$ at frequency $\omega_0$ ($\equiv 2\pi \nu_0$) and at the detector the fields at time $t$ and $t+\tau$ are recombined as
 # 
-# $$\displaystyle I(\tau)=\beta \int |f(t)+f(t+\tau)|^2dt \tag{46a}$$
+# $$\displaystyle I(\tau)=\beta \int |f(t)+f(t+\tau)|^2dt \qquad\tag{46a}$$
 # 
 # where $\beta$ is the product of reflectivity and transmission of the beam splitter. The signal is averaged at each time delay $\tau$ for a small time $t_m$, say a second. Expanding out (and ignoring limits for clarity) gives
 # 
@@ -622,7 +622,7 @@ plt.show()
 # 
 # This is a fourier cosine transform and can be reverse transformed to give
 # 
-# $$\displaystyle B(\omega) = \int_0^\infty \left(I(\tau)-\frac{I(0)}{2}\right)\cos(\omega\tau)d\tau\tag{46b}$$
+# $$\displaystyle B(\omega) = \int_0^\infty \left(I(\tau)-\frac{I(0)}{2}\right)\cos(\omega\tau)d\tau\qquad\tag{46b}$$
 # 
 # which is the basic equation for FTIR and is the cosine fourier transform of $(I(\tau)-I(0)/2) $ where $I(\tau)$ is the intensity the detector measures at delay time $\tau$. As $\tau$ changes this function will oscillate up and down as the phase between the two arms changes due to both pathlength change and absorption in the sample. How the transform extracts a signal is explained earlier in the chapter, see 6.4. To see that this equation is a fourier transform recall that $\displaystyle 2\cos(\omega\tau)=e^{i\omega \tau}+e^{-i\omega \tau}$. The integration ranges from $0\to \infty$ which in practice is the distance that becomes $\approx 500\to \approx 4000\; \mathrm{cm^{-1}}$. Note that for each frequency $\omega$ the integration on the right has to be performed. Normally this will be done numerically using a fast four transform FFT.
 # 

@@ -19,7 +19,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # Sine and cosine functions are almost mirror images of one another when differentiated,
 # 
-# $$\displaystyle \frac{d}{dx}\sin(x)=\cos(x) \qquad \frac{d}{dx}\cos(x)=-\sin(x)   \tag{9}$$
+# $$\displaystyle \frac{d}{dx}\sin(x)=\cos(x) \qquad \frac{d}{dx}\cos(x)=-\sin(x)   \qquad\tag{9}$$
 # 
 # which makes sense if one inspects a graph of these functions, see Fig. 5. The value of the cosine at any point is the gradient of the sine at that point and the gradient of the cosine is $-1$ times the value of the sine. When the sine has its maximum or minimum, where the gradient is zero, the value of the cosine is also zero. Furthermore, when the gradient of the sine is positive, $x/\pi = 0 \to 1/2$ and also $3/2 \to 2$, the value of the cosine, which is the derivative, is positive. When the gradient of the sine is negative, the value of the cosine is negative. It is therefore not surprising that on differentiating these functions again they turn into one another but with a change of sign depending upon how many times this is done.
 # 
@@ -58,7 +58,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # Differentiating logarithms always has the form: 'derivative divided by the function'.
 # 
-# $$\displaystyle \frac{d}{dx}\ln\left( f(x) \right)=\frac{f'(x)}{f(x)} \quad \text{where }\quad f' =\frac{d}{dx} \tag{10} $$
+# $$\displaystyle \frac{d}{dx}\ln\left( f(x) \right)=\frac{f'(x)}{f(x)} \quad \text{where }\quad f' =\frac{d}{dx} \qquad\tag{10} $$
 # 
 # for example,
 # 
@@ -66,7 +66,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # Differentiating $\ln(y)$ with respect to $x$ produces a most useful form, which is worth remembering
 # 
-# $$\displaystyle \frac{d}{dx}\ln(y)=\frac{1}{y}\frac{dy}{dx} \tag{11}$$
+# $$\displaystyle \frac{d}{dx}\ln(y)=\frac{1}{y}\frac{dy}{dx} \qquad\tag{11}$$
 # 
 # The van't Hoff equation of chemical thermodynamics has this last form, 
 # 
@@ -105,7 +105,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # In cases where there are powers of $x$ it is best to take logs of both sides first. For example,
 # if $y = a^x$, taking logs of both sides gives $\ln(y) = x \ln(a)$ and differentiating produces
 # 
-# $$\displaystyle \frac{1}{y}\frac{dy}{dx}=\ln(a)  \tag{12}$$
+# $$\displaystyle \frac{1}{y}\frac{dy}{dx}=\ln(a)  \qquad\tag{12}$$
 # 
 # and simplifying produces 
 # 
@@ -156,7 +156,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # Occasionally it is necessary, or simpler, to find $dx/dy$ rather than invert the equation to put it in terms of $y = \cdots$ and calculate $dy/dx$. The derivatives are related as double reciprocals;
 # 
-# $$\displaystyle \frac{dy}{dx}=1\big/ \frac{dx}{dy}  \tag{13}$$
+# $$\displaystyle \frac{dy}{dx}=1\big/ \frac{dx}{dy}  \qquad\tag{13}$$
 # 
 # As an example, suppose that $\displaystyle \sin(y^2) = x$, differentiating by $y$ gives the result $\displaystyle dx/dy = 2y \cos(y^2)$. Differentiating by $x$ could mean that a rearrangement must first be done to form $\displaystyle y = \sqrt{\sin^{-1}(x)}$ and then this differentiated, which is quite involved. Instead using equation (6), the result is obtained directly $\displaystyle 2y \cos(y^2)dy/dx = 1$ and these two results show that equation (13) is true.
 # 
@@ -165,7 +165,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # If you are unfamiliar with integration, it will help to know the basic rules; see Chapter 4. It is possible to differentiate integrals; well why not! Integration and differentiation are linked as shown in equation (1) and as given by the fundamental theorem of the calculus:
 # 
-# $$\displaystyle  \frac{d}{dx}\int_a^xf(u)du=\frac{d}{dx}\left(F(x)-F(a)   \right)=f(x)  \tag{14}$$
+# $$\displaystyle  \frac{d}{dx}\int_a^xf(u)du=\frac{d}{dx}\left(F(x)-F(a)   \right)=f(x)  \qquad\tag{14}$$
 # 
 # $a$ being a constant and $F$ is the result of integration. The variable $u$ used in the integration is a dummy variable, any letter could be used instead, but it is better in this instance not to use $x$ as this can be confusing. In this formula at least one of the integration limits must be a function of $x$ as explained next.
 # 
@@ -175,7 +175,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # In the more complex and general cases, where the limits $u$ and $v$ are themselves functions of $x$, the function of function rule is used (Section 5.1),
 # 
-# $$\displaystyle  \frac{d}{dx}\int_{v(x)}^{u(x)}f(s)ds=f(u)\frac{du}{dx}-f(v)\frac{dv}{dx}  \tag{15}  $$
+# $$\displaystyle  \frac{d}{dx}\int_{v(x)}^{u(x)}f(s)ds=f(u)\frac{du}{dx}-f(v)\frac{dv}{dx}  \qquad\tag{15}  $$
 # 
 # which is also called Leibniz's Rule. An example where $x^2$ is one of the limits is,
 # 
@@ -189,13 +189,13 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # Let $w(r)$ be the probability that the nearest neighbour occurs between distance  $r$ and $r + dr$. This must be the probability than no molecules exist up to $r$ and that the next molecule exists in the shell $r \to r + dr$. Thus, 
 # 
-# $$\displaystyle  w(r)=\left(  1-\int_0^r w(r)dr \right)4\pi r^2 n \tag{15a}$$
+# $$\displaystyle  w(r)=\left(  1-\int_0^r w(r)dr \right)4\pi r^2 n \qquad\tag{15a}$$
 # 
 # where $n$ is the average number of molecules / unit volume. ($1 \mathrm{\,mol\,m^{-3}} \equiv 10^3 N_A/10^{27} = 0.6023 $ molecules / nm$^3$). The term in brackets is 1-probability that a molecule exists, i.e. that it does not exist in $0 \to r$ and the integral is the probability that it exists in $0 \to r$. The $4\pi r^2 n$ is the number of molecules in the shell $\delta r$.
 # 
 # This looks hard to solve because $w(r)$ is also inside the integration, so it is necessary to isolate the integral first (by dividing both sides by $4\pi r^2 n$) and then differentiating both sides to find 
 # 
-# $$\displaystyle  \frac{d}{dr}\left(\frac{w(r)}{4\pi r^2 n}\right)= \frac{d}{dr}\left(1-\int w(r)dr\right) = -w(r)\tag{15b}$$
+# $$\displaystyle  \frac{d}{dr}\left(\frac{w(r)}{4\pi r^2 n}\right)= \frac{d}{dr}\left(1-\int w(r)dr\right) = -w(r)\qquad\tag{15b}$$
 # 
 # 
 # In the next step we multiply the rhs. by one by multiplying top and bottom by the same term, 

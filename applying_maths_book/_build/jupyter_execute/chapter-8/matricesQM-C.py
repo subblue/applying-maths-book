@@ -49,11 +49,11 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # At this point, however, it becomes unnecessary and rather complicated to continue with the bra-ket form and it is simpler to revert to normal functions but still holding onto the idea of basis sets. The basis set could comprise almost any set of functions provided that they can be made orthogonal over the range of values needed, alternatively the known orthogonal polynomials, Legendre, Hermite, Chebychev, etc. could be used. A function $f(x)$ can be expanded as a linear combination of orthogonal functions and if these from a set of wavefunctions $\psi$ then
 # 
-# $$\displaystyle f(x)= c_0\psi_0(x)  +c_1\psi_1(x) +\cdots +\tag{33}$$
+# $$\displaystyle f(x)= c_0\psi_0(x)  +c_1\psi_1(x) +\cdots +\qquad\tag{33}$$
 # 
 # with coefficients $c_n$. The wavefunction need not be specified yet, but whatever it is it must be orthogonal given different quantum numbers. This is exactly what is done in the general Fourier series described in Chapter 9. There it is shown that the coefficients are 
 # 
-# $$\displaystyle c_n=\int\psi_n(x)f(x)dx \tag{34}$$
+# $$\displaystyle c_n=\int\psi_n(x)f(x)dx \qquad\tag{34}$$
 # 
 # If the function $f$ is represented as the ket $| f\rangle$, suppose that left multiplying by the bra $\langle n |$ will extract the coefficient $c_n$ in the same manner as for a discrete basis set. However, in a continuous basis the bra-ket represents an integral, thus $\langle n | f\rangle \equiv \int \psi_n(x)f(x)dx$ . Equation (34) provides a method of calculating the coefficients of the expansion provided $f$ has the same range as the wavefunction. To illustrate this, particle in a box wavefunctions are used to form the target function 
 # 

@@ -100,7 +100,7 @@ print('{:s}{:8.4g}{:s}{:8.4g}{:s}{:8.4g}'.format('a = ', fit[0],', b = ',fit[1],
 # 
 # A general way of describing a fitting equation is
 # 
-# $$\displaystyle Y=\sum_{i=1}^m \alpha_if_i(x) \tag{43}$$
+# $$\displaystyle Y=\sum_{i=1}^m \alpha_if_i(x) \qquad\tag{43}$$
 # 
 # which means that that the model equation proposed to represent the data is the sum of m functions, $f_i(x)$, multiplied by constants $\alpha_i$ whose values we seek, much as was done in a Fourier series. If the equation is a polynomial, then $f_1(x) = 1,\; f_2(x) = x,\; f_3(x) = x^2$, and so forth, and, if an exponential then $f_1(x) = e^{-\alpha_2x},\; f_2(x) = e^{-\alpha_4x}$, etc. It is clear why these last two equations are non-linear because the constants are intimate to the function itself and cannot be separated from it.
 # 
@@ -110,11 +110,11 @@ print('{:s}{:8.4g}{:s}{:8.4g}{:s}{:8.4g}'.format('a = ', fit[0],', b = ',fit[1],
 # 
 # and the subscript on $x$ is $k$ because this is the $k^{th}\; x$ value in the data and $k$ has values $1\cdots n$. The subscript $i=1\cdots m$ identifies the terms in the expansion of the model function of equation 43. Differentiating the $j^{th}$ term in the $i^{th}$ summation ($j$ being anywhere in the list $i=1\cdots m$), to obtain the minimum, produces
 # 
-# $$\displaystyle \frac{\partial S}{\partial \alpha_j}=-2\sum_k w_kf_j(x_k)\left(y_k-\sum_i^m\alpha_if_i(x_k)\right)=0\tag{44}$$
+# $$\displaystyle \frac{\partial S}{\partial \alpha_j}=-2\sum_k w_kf_j(x_k)\left(y_k-\sum_i^m\alpha_if_i(x_k)\right)=0\qquad\tag{44}$$
 # 
 # and the $f(x)$ remains inside the summation because it depends on the $x_k$. Rearranging the terms in this equation gives a (complicated) set of simultaneous equations, because $j$ can take any value in the range $1 \to m$ for in the function expansion.
 # 
-# $$\displaystyle \sum_k w_k f_j(x_k)y_k = \sum_k\left( w_kf_j(x_k)\sum_i\alpha_if_i(x_k) \right)\tag{45}$$
+# $$\displaystyle \sum_k w_k f_j(x_k)y_k = \sum_k\left( w_kf_j(x_k)\sum_i\alpha_if_i(x_k) \right)\qquad\tag{45}$$
 # 
 # the right-hand side of which is a sum of a sum. For example, the third term is
 # 
@@ -122,7 +122,7 @@ print('{:s}{:8.4g}{:s}{:8.4g}{:s}{:8.4g}'.format('a = ', fit[0],', b = ',fit[1],
 # 
 # and all $m$ of these equations can be solved to find the m constants, the $\alpha$'s, if the function is linear. A matrix method can be used to do this, but to convert the simultaneous equations into a matrix equation needs a little cunning. A matrix equation of the form
 # 
-# $$\displaystyle \boldsymbol B=\boldsymbol{CA} \tag{47}$$
+# $$\displaystyle \boldsymbol B=\boldsymbol{CA} \qquad\tag{47}$$
 # 
 # can be made where $\boldsymbol C$ contains the coefficients. The left-hand side of this equation is a row matrix with a sum over the $k$ data points for each of $m$ terms and is the left-hand side of equation 45,
 # 
@@ -146,7 +146,7 @@ print('{:s}{:8.4g}{:s}{:8.4g}{:s}{:8.4g}'.format('a = ', fit[0],', b = ',fit[1],
 # 
 # The aim is to find the values in the $C$ matrix and this can be achieved by the transformation
 # 
-# $$\displaystyle \boldsymbol B=CA \to \boldsymbol{BA}^{-1} = \boldsymbol{CAA}^{-1} \to \boldsymbol C=\boldsymbol{BA}^{-1} \tag{48}$$ 
+# $$\displaystyle \boldsymbol B=CA \to \boldsymbol{BA}^{-1} = \boldsymbol{CAA}^{-1} \to \boldsymbol C=\boldsymbol{BA}^{-1} \qquad\tag{48}$$ 
 # 
 # Thus the inverse of $\boldsymbol A$ is all that is needed to find the coefficients, furthermore this inverse is also the matrix of the variances and co-variances (Bevington 1969).
 # 
@@ -174,7 +174,7 @@ print('{:s}{:8.4g}{:s}{:8.4g}{:s}{:8.4g}'.format('a = ', fit[0],', b = ',fit[1],
 # 
 # or 
 # 
-# $$\displaystyle G_3=\left(\frac{1}{2}-\frac{x_e}{4}+\frac{y_e}{8} \right)v_e+ \left(1-x_e+\frac{3y_e}{4}\right)v_en+\left(\frac{3y_e}{2}-x_e\right)v_en^2+y_ev_en^3\tag{49}$$
+# $$\displaystyle G_3=\left(\frac{1}{2}-\frac{x_e}{4}+\frac{y_e}{8} \right)v_e+ \left(1-x_e+\frac{3y_e}{4}\right)v_en+\left(\frac{3y_e}{2}-x_e\right)v_en^2+y_ev_en^3\qquad\tag{49}$$
 # 
 # which is a cubic polynomial in $n$. The equilibrium frequency is $v_e\;\mathrm{ (cm^{-1})}$ and the anharmonicity terms are $x_e$ and $y_e$. In the Morse potential, $x_e = v_e/4D_e$ where $D_e$ is the dissociation energy in cm$^{-1}$, but $y_e$ is empirical and the aim is to determine $x_e, y_e$ and $v_e$. If the quantum number $n$ is represented by $x$, and the constants by $c$, then the Morse model $G_2$ is equivalent to a function $f=c_0 +c_1x+c_2x^2$  and the second model $f=c_0 +c_1x+c_2x^2 +c_3x^3$. The least squares model calculates these coefficients and these can then be related to the spectroscopic parameters $v_e, x_e$ and $y_e$. The residuals and $\chi^2$ will be used to test the fit to the data. (Note that different authors us different symbols to represent frequency, and this can be in units of cm$^{-1}$, s$^{-1}$, rad cm$^{-1}$ or rad s$^{-1}$).
 # 
@@ -240,7 +240,7 @@ for i in range(m):
 # 
 # To calculate the spectroscopic parameters, the constants have to be compared to the expansion of the $G_3$ equation 49, which is
 # 
-# $$\displaystyle G_3=\left(\frac{1}{2}-\frac{x_e}{4}+\frac{y_e}{8} \right)v_e+ \left(1-x_e+\frac{3y_e}{4}\right)v_en+\left(\frac{3y_e}{2}-x_e\right)v_en^2+y_ev_en^3\tag{49}$$
+# $$\displaystyle G_3=\left(\frac{1}{2}-\frac{x_e}{4}+\frac{y_e}{8} \right)v_e+ \left(1-x_e+\frac{3y_e}{4}\right)v_en+\left(\frac{3y_e}{2}-x_e\right)v_en^2+y_ev_en^3\qquad\tag{49}$$
 # 
 # The first term in this equation corresponds to $c_1$ and is the zero point energy. The constants are 
 # 
@@ -263,7 +263,7 @@ for i in range(m):
 # 
 # The confidence limits can be calculated in a similar manner to that for the straight line, using the value from the $t$ distribution. The equations look slightly different because the matrix method is used. (See Hines & Montgomery 1990, Chapters 14-15 for the details.) They calculate the mean square error $SSE /(n - m - 1)$, which is the same as the $\chi^2$ on the whole data set, and give the formula which is equivalent to the one used here, where matrices $\boldsymbol{C}$ and $\displaystyle{B}$ are defined as in equations 47-48,
 # 
-# $$\displaystyle \chi^2=\frac{\sum_i y_i- \boldsymbol{C\cdot B}}{n-m-1}\tag{50}$$
+# $$\displaystyle \chi^2=\frac{\sum_i y_i- \boldsymbol{C\cdot B}}{n-m-1}\qquad\tag{50}$$
 # 
 # The confidence limits at $95$% are now
 # 
@@ -312,11 +312,11 @@ for i in range(m):
 # 
 # The two equations can be solved with
 # 
-# $$\displaystyle p_k(t)=\frac{(\lambda t)^ke^{-\lambda t}} {k!},\qquad k=0,1,2\cdots\tag{50a}$$
+# $$\displaystyle p_k(t)=\frac{(\lambda t)^ke^{-\lambda t}} {k!},\qquad k=0,1,2\cdots\qquad\tag{50a}$$
 # 
 # At a given time $t$ we let $\mu=\lambda t$ and then The Poisson Distribution equation becomes 
 # 
-# $$\displaystyle p(k,\mu)=\frac{\mu^ke^{-\mu}}{k!} \tag{50b}$$
+# $$\displaystyle p(k,\mu)=\frac{\mu^ke^{-\mu}}{k!} \qquad\tag{50b}$$
 # 
 # also called the Poisson frequency distribution or 'density' function. The integer number of events is $k$ and the mean value of the distribution is $\mu$ which is dimensionless and which is not an integer. The shape of the distribution is shown in Figure 13 for different mean values $\mu$. The plots show continuous values for $k$ although the distribution is only valid for integer values.  
 # 

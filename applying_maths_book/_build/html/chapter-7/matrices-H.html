@@ -770,7 +770,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="matrices-L.html">
-     Principal axes for Moments of Inertia
+     Principal axes of Moments of Inertia
     </a>
    </li>
    <li class="toctree-l2">
@@ -1701,7 +1701,7 @@ scheme is</p>
 <p>In solving these differential equations the initial conditions must always be defined. This means defining the concentration of all possible species present in the reaction scheme at time zero. Often it is assumed that only some amount of <span class="math notranslate nohighlight">\(A\)</span> present is present, say <span class="math notranslate nohighlight">\(A_0\)</span>, and that <span class="math notranslate nohighlight">\(B_0 = C_0 = 0\)</span>. You will notice that, since we cannot create or destroy atoms in a chemical process, the total amount of all species is constant at all time, so that <span class="math notranslate nohighlight">\(A_0 + B_0 + C_0 = A + B + C\)</span>, which means that C can always be calculated as the difference <span class="math notranslate nohighlight">\(C = A_0 + B_0 + C_0 - A - B\)</span> so there are really only two differential equations. However, if <span class="math notranslate nohighlight">\(C\)</span> decomposes with time to another species, we cannot use this last relationship.</p>
 <p>We know from direct integration that <span class="math notranslate nohighlight">\(\displaystyle A = A_0e^{-k_1t}\)</span>, and from the theory of coupled linear differential equations that the solution in general for all species are <em>sums of exponential</em> terms, see Chapter 10.7. If the initial concentration of <span class="math notranslate nohighlight">\(A = A_0\)</span> and initially <span class="math notranslate nohighlight">\(B = C =0\)</span>, then the concentration of <span class="math notranslate nohighlight">\(B\)</span> is</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle B(t)=\frac{k_1}{k_1-k_2}A_0\left(e^{-k_2t}-e^{-k_1t} \right) \tag{36}\]</div>
+\[\displaystyle B(t)=\frac{k_1}{k_1-k_2}A_0\left(e^{-k_2t}-e^{-k_1t} \right) \qquad\tag{36}\]</div>
 <p>which is of the form expected, with an exponential decay preceded by a grow-in, see Figure 55. Notice that <span class="math notranslate nohighlight">\(k_1\)</span> cannot have the same value as <span class="math notranslate nohighlight">\(k_2\)</span> as then the equation for the population would be <span class="math notranslate nohighlight">\(0/0\)</span>, which is undefined; but in fact there is no reason why these rate constants should not be equal, that is to say that <span class="math notranslate nohighlight">\(B\)</span> is formed with the same rate constant as it decays. This special case is dealt with in Chapter 10.7(ii).</p>
 <p>As an extension to this scheme, suppose that A has an extra form of decay and rather than just forming B it also forms D with a rate constant <span class="math notranslate nohighlight">\(k_3\)</span>. This might be another chemical species or if A is an excited state, then D could be the ground state and A has fluoresced. Either way the scheme is</p>
 <div class="math notranslate nohighlight">
@@ -1723,7 +1723,7 @@ scheme is</p>
 \[\displaystyle \frac{d\pmb{M}}{dt}=\pmb{KM}\]</div>
 <p>the solution of which is formally</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle \pmb{M}=\pmb{M_0}e^{-\pmb{K}t} \tag{37}\]</div>
+\[\displaystyle \pmb{M}=\pmb{M_0}e^{-\pmb{K}t} \qquad\tag{37}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\pmb{M}\)</span> is a column matrix of concentrations at time <span class="math notranslate nohighlight">\(t\)</span>, <span class="math notranslate nohighlight">\(\pmb{M}_0\)</span> the matrix of their initial values, and <span class="math notranslate nohighlight">\(\pmb K\)</span> is a square matrix of rate constants organised as in the rate equation. The rate equations 35 are rewritten in matrix form as</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle \qquad\qquad\begin{bmatrix} \displaystyle\frac{dA}{dt}\\ \displaystyle\frac{dB}{dt}\\ \displaystyle\frac{dC}{dt}\end{bmatrix} =\begin{bmatrix} -k_1 &amp; 0 &amp; 0\\ k_1 &amp; -k_2 &amp; 0\\0 &amp; k_2 &amp; 0\\\end{bmatrix}\begin{bmatrix}A\\B\\C \end{bmatrix} \qquad\qquad\qquad\qquad\text{(38)}\end{split}\]</div>
@@ -1739,7 +1739,7 @@ scheme is</p>
 <h3><strong>Time profiles</strong><a class="headerlink" href="#time-profiles" title="Permalink to this headline">#</a></h3>
 <p>To calculate the populations, or concentrations, the matrix equation</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle \pmb{M}(t)=\pmb{x}[\pmb{e}^{\lambda t}]\pmb{x}^{-1}\pmb{M}_0 \tag{39}\]</div>
+\[\displaystyle \pmb{M}(t)=\pmb{x}[\pmb{e}^{\lambda t}]\pmb{x}^{-1}\pmb{M}_0 \qquad\tag{39}\]</div>
 <p>is used. This produces a column vector <span class="math notranslate nohighlight">\(\pmb{M}(t)\)</span> of the populations of each species at time <span class="math notranslate nohighlight">\(t\)</span>, <span class="math notranslate nohighlight">\(\pmb{M}_0\)</span> being a column vector of the initial populations. The eigenvectors of matrix <span class="math notranslate nohighlight">\(\pmb{k}\)</span> are formed into a (modal) matrix <span class="math notranslate nohighlight">\(\pmb{x}\)</span> and <span class="math notranslate nohighlight">\(\pmb{x}^{-1}\)</span> is its inverse. The exponential matrix is the diagonal matrix of the exponential of eigenvalues multiplied by time:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle \qquad\qquad e^{\lambda t} =\begin{bmatrix} e^{\lambda_1 t} &amp; 0 &amp; 0 &amp; \cdots \\ 0 &amp; e^{\lambda_2 t}   &amp; 0 &amp; \cdots \\ 0 &amp; 0 &amp; e^{\lambda_3 t} &amp; \cdots \\ \vdots &amp; \vdots &amp;\vdots &amp; \ddots \end{bmatrix}\qquad\qquad\qquad\qquad \text{(40)}\end{split}\]</div>
@@ -1999,7 +1999,7 @@ of the same species. The equation we start with is <span class="math notranslate
 <h2>13.4 Similarity Transforms<a class="headerlink" href="#similarity-transforms" title="Permalink to this headline">#</a></h2>
 <p>In our study of molecular group theory, similar matrices were introduced. However, <em>similar</em> matrices are used more generally. A square matrix <span class="math notranslate nohighlight">\(\pmb{W}\)</span> is described as being <em>similar or conjugate</em> to another square matrix <span class="math notranslate nohighlight">\(\pmb{N}\)</span>, if there exists a third, non-singular, square matrix <span class="math notranslate nohighlight">\(\pmb{X}\)</span> such that</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle \pmb{W} = \pmb{X}^{-1}\pmb{NX} \tag{42}\]</div>
+\[\displaystyle \pmb{W} = \pmb{X}^{-1}\pmb{NX} \qquad\tag{42}\]</div>
 <p>then <span class="math notranslate nohighlight">\(\pmb{X}^{-1}\pmb{NX}\)</span> is a similarity transform; <span class="math notranslate nohighlight">\(\pmb{X}\pmb{NX}^{-1}\)</span> is also a similarity transform. A similarity transform is equivalent to changing the basis set of one matrix into another basis; this might also be considered a coordinate transformation.</p>
 <p>If matrix <span class="math notranslate nohighlight">\(\pmb{W}\)</span> operates on an object, this is the equivalent of transforming the object (which could be a rotation), then operating on it by <span class="math notranslate nohighlight">\(\pmb{N}\)</span>, which stretches or alters the object in some way (but does not rotate), then undoing the initial transformation with a further transformation (rotation in the opposite direction) with <span class="math notranslate nohighlight">\(\pmb{X}^{-1}\)</span>. Thus, <span class="math notranslate nohighlight">\(\pmb{W}\)</span> performs the same operation as <span class="math notranslate nohighlight">\(\pmb{N}\)</span> but uses a different set of axes.</p>
 <p>The similarity transform is most useful in diagonalizing matrices, because, if a matrix <span class="math notranslate nohighlight">\(\pmb{W}\)</span> can be diagonalized and its matrix of eigenvectors <span class="math notranslate nohighlight">\(\pmb{X}\)</span> calculated, then <span class="math notranslate nohighlight">\(\pmb{W}\)</span> is <em>similar</em> to the diagonal matrix of its eigenvalues <span class="math notranslate nohighlight">\(\pmb{\Lambda}\)</span>, where the eigenvectors <span class="math notranslate nohighlight">\(\pmb{X}\)</span> act as the similarity matrices. The diagonal matrix is</p>
@@ -2007,7 +2007,7 @@ of the same species. The equation we start with is <span class="math notranslate
 \[\begin{split}\displaystyle \pmb{\Lambda} =\begin{bmatrix} \lambda_1 &amp; 0 &amp; 0 &amp;\cdots \\ 0 &amp; \lambda_2   &amp; 0 &amp;\cdots  \\ 0 &amp; 0 &amp; \lambda_3 &amp;\cdots \\ \vdots &amp; \vdots &amp;\vdots &amp; \ddots   \end{bmatrix} \end{split}\]</div>
 <p>The equation relating eigenvalues and the diagonal matrix of eigenvectors <span class="math notranslate nohighlight">\(\pmb{\Lambda}\)</span> is <span class="math notranslate nohighlight">\(\pmb{WX} = \pmb{X\Lambda}\)</span>. If we left multiply by the inverse eigenvector matrix <span class="math notranslate nohighlight">\(\pmb{X}^{-1}\)</span> then</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle \pmb{X}^{-1}\pmb{WX} = \pmb{\Lambda} \tag{43}\]</div>
+\[\displaystyle \pmb{X}^{-1}\pmb{WX} = \pmb{\Lambda} \qquad\tag{43}\]</div>
 <p>which is a similarity transform. Of course, the inverse matrix <span class="math notranslate nohighlight">\(\pmb{X}^{-1}\)</span> must exist. In making a diagonal matrix, the original matrix has been ‘rotated’, as it were, so that all elements are zero except on the diagonal, the off-diagonal elements become incorporated into the diagonal ones. This ‘rotation’ or coordinate change analogy, is what is done when the principal axis are found when the moments of inertia of a body are calculated, see Section 15.2.</p>
 <p>In chemical kinetics, the diagonal matrix of the exponential values of the eigenvalues is used, i.e. eqn. 40,</p>
 <div class="math notranslate nohighlight">
@@ -2017,7 +2017,7 @@ of the same species. The equation we start with is <span class="math notranslate
 \[\displaystyle \pmb{f}(\pmb{W})= a_0\pmb{1}+a_1\pmb{W}+a_2\pmb{W}^2 +\cdots\]</div>
 <p>Because <span class="math notranslate nohighlight">\(\pmb{f}(\pmb{W})\)</span> must commute with <span class="math notranslate nohighlight">\(\pmb{W}\)</span>, then both matrices can be diagonalized simultaneously with a similarity transform. Using the eigenvector matrix <span class="math notranslate nohighlight">\(\pmb{X}\)</span> of matrix <span class="math notranslate nohighlight">\(\pmb{W}\)</span>, then the similarity transform is</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle \pmb{X}^{-1}\pmb{f}(\pmb{W})\pmb{X} = \pmb{f}\pmb{\Lambda} \tag{44}\]</div>
+\[\displaystyle \pmb{X}^{-1}\pmb{f}(\pmb{W})\pmb{X} = \pmb{f}\pmb{\Lambda} \qquad\tag{44}\]</div>
 <p>and <span class="math notranslate nohighlight">\(\pmb{f}(\pmb{\Lambda})\)</span> is a diagonal matrix of function <span class="math notranslate nohighlight">\(f\)</span>. For instance, if <span class="math notranslate nohighlight">\(\pmb{f}(\pmb{W}) = e^{\pmb{W}}\)</span>, then</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \pmb{X}^{-1}e^{\pmb{W}}\pmb{X} = e^{\pmb{\Lambda}}\]</div>

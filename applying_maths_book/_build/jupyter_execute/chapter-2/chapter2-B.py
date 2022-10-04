@@ -13,11 +13,11 @@
 # 
 # The trigonometric part can be shown to have the simple form,
 # 
-# $$\displaystyle \left(\;\cos(\theta) + i \sin(\theta)\;\right)^n = \cos(n\theta) + i \sin(n\theta) \tag{8}$$
+# $$\displaystyle \left(\;\cos(\theta) + i \sin(\theta)\;\right)^n = \cos(n\theta) + i \sin(n\theta) \qquad\tag{8}$$
 # 
 # therefore 
 # 
-# $$\displaystyle z^n = r^n\left(\cos(n\theta) + i \sin(n\theta) \right)\tag{9}$$
+# $$\displaystyle z^n = r^n\left(\cos(n\theta) + i \sin(n\theta) \right)\qquad\tag{9}$$
 # 
 # which is called De Moivre's theorem and is essential to calculating powers of complex numbers. One of the unexpected things that can be done is to find the $n^\mathrm{th}$ root of $1,\, i, \,-3$ or any other number for that matter.
 # 
@@ -37,7 +37,7 @@
 # 
 # The product $z_1z_2$ and quotient $z_1/z_2$ of two complex numbers are written in this form as
 # 
-# $$\displaystyle z_1z_2 = r_1r_2\big(\cos(\theta_1 + \theta_2) + i \sin(\theta_1 + \theta_2)\big) \tag{10}$$
+# $$\displaystyle z_1z_2 = r_1r_2\big(\cos(\theta_1 + \theta_2) + i \sin(\theta_1 + \theta_2)\big) \qquad\tag{10}$$
 # 
 # where the angles add, and provided that $z_2 \ne 0$,
 # 
@@ -69,23 +69,23 @@
 # 
 # We will let both sides of this equation be different complex numbers. Expressing the left-hand side in angular form using De Moivre's theorem with a polar angle $\varphi$ gives
 # 
-# $$\displaystyle w^n = R^n(\cos(n\varphi) + i \sin(n\varphi)) \tag{11}$$ 
+# $$\displaystyle w^n = R^n(\cos(n\varphi) + i \sin(n\varphi)) \qquad\tag{11}$$ 
 # 
 # The right-hand side of the equation is
 # 
-# $$\displaystyle z = r(\cos(\theta) + i \sin(\theta)) \tag{12}$$
+# $$\displaystyle z = r(\cos(\theta) + i \sin(\theta)) \qquad\tag{12}$$
 # 
 # since any complex number can be written in this way. Therefore, $R^n = r$ where both $R$ and $r$ are real numbers. The angles $\varphi$ and $\theta$ are related in the most general way as
 # 
-# $$\displaystyle n\varphi = \theta + 2\pi k \tag{13}$$
+# $$\displaystyle n\varphi = \theta + 2\pi k \qquad\tag{13}$$
 # 
 # where $k = 0,\, 1,\, 2, \cdots n - 1$ because sine and cosine are cyclic functions; $\sin(\theta) = \sin(\theta + 2\pi) = \sin(\theta + 4\pi)$ and so forth, therefore there will be more than one root to the equation. Using $n\varphi = \theta$ only allows one root to be found. Using equations 11 and 13, gives
 # 
-# $$\displaystyle w=R^{1/n}\left( \cos\left( \frac{\theta+2\pi k}{n} \right) +i\sin\left( \frac{\theta+2\pi k}{n} \right)  \right) \tag{14}$$
+# $$\displaystyle w=R^{1/n}\left( \cos\left( \frac{\theta+2\pi k}{n} \right) +i\sin\left( \frac{\theta+2\pi k}{n} \right)  \right) \qquad\tag{14}$$
 #  
 # In the special case of calculating the $n^\mathrm{th}$ root of unity, $w^n = 1$ and $z = 1$, then from equation 12, $r = 1,\; \theta = 0$ and therefore, 
 # 
-# $$\displaystyle w= \cos\left( \frac{2\pi k}{n} \right) +i\sin\left( \frac{2\pi k}{n} \right)   \tag{15}$$
+# $$\displaystyle w= \cos\left( \frac{2\pi k}{n} \right) +i\sin\left( \frac{2\pi k}{n} \right)   \qquad\tag{15}$$
 #  
 # There is always one real root and the other roots fall on the vertices of a polygon which is formed inside a circle of unit radius and touches the circle only at its vertices.
 # 
@@ -125,7 +125,7 @@
 # The real and imaginary parts are expansions of the cosine and sine functions respectively,
 # therefore, if $z$ is a complex number
 # 
-# $$\displaystyle z = e^{i\theta} = \cos(\theta) + i \sin(\theta)\tag{16}$$
+# $$\displaystyle z = e^{i\theta} = \cos(\theta) + i \sin(\theta)\qquad\tag{16}$$
 # 
 # Figure 4 shows the relationship in diagrammatic form. This equation was discovered in 1748 by the Swiss mathematician Euler, and is extremely important as it crops up everywhere from quantum mechanics to X-ray diffraction in crystals and other phenomena connected with waves.
 # 
@@ -139,7 +139,7 @@
 # 
 # De Moivre's theorem can be derived from these equations: the power of a complex number $w$ is
 # 
-# $$\displaystyle w^n = r^ne^{in\theta} = r^n\left(\cos(n\theta) + i \sin(n\theta)\right) \tag{18}$$
+# $$\displaystyle w^n = r^ne^{in\theta} = r^n\left(\cos(n\theta) + i \sin(n\theta)\right) \qquad\tag{18}$$
 # 
 # Adding and subtracting $\displaystyle e^{\pm i\theta}$ gives
 # 
@@ -147,7 +147,7 @@
 # 
 # Calculating $\displaystyle e^{i\theta}$ with $\theta = \pi$ and $r = 1$ produces 
 # 
-# $$\displaystyle  e^{i\pi} =-1 \qquad  \text{ or } \qquad  e^{i\pi} +1=0 \tag{19}$$
+# $$\displaystyle  e^{i\pi} =-1 \qquad  \text{ or } \qquad  e^{i\pi} +1=0 \qquad\tag{19}$$
 # 
 # which some consider the most beautiful equation in mathematics, as it connects the most important numbers of mathematics $(0, 1, i, e$, and $\pi)$ and uses the most important operations (multiplication, exponentiation, negation, and addition). Furthermore, an integer is produced by raising an irrational number $\pi$ times the imaginary unit $i$ to the power of another irrational number, $e$. It is not at all obvious why this connection exists from an arithmetical standpoint, but from a geometrical one it is clearer. Consider a circle of unit radius on an Argand diagram; as the angle $\theta$ increases from $0 \to 2\pi$, the modulus (radius) is $1$ when $\theta = 0$, and is $i$ when $\theta = \pi/2$, and $-1$ when the angle is $\pi$ and so on; see figure 4.
 # 
@@ -155,7 +155,7 @@
 # 
 # The $n$ complex roots of unity are also easily calculated by defining
 # 
-# $$\displaystyle w_n=e^{2\pi i /n}\tag{20}$$
+# $$\displaystyle w_n=e^{2\pi i /n}\qquad\tag{20}$$
 # 
 # and the roots are obtained by raising this to integer powers $(w_n^j\equiv (w_n)^j)$
 # 
@@ -232,7 +232,7 @@
 # 
 # The fractional position of an atom is $u,v,w$ making the scattering factor the straightforward formula 
 # 
-# $$\displaystyle F= \sum_i f_i e^{i\pi(hu_i+kv_i+lw_i)}\tag{21}$$
+# $$\displaystyle F= \sum_i f_i e^{i\pi(hu_i+kv_i+lw_i)}\qquad\tag{21}$$
 # 
 # where subscript $i$ refers to atoms $i$ in the unit cell. The values $u, v, w$ are the atom positions as *fractions* of the sides of the unit cell. The structure factor can also be put into a sine/cosine form
 # 

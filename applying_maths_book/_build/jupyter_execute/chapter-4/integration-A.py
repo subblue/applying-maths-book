@@ -45,7 +45,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # Integrating a function, $f(x)$, called the _integrand_, produces a new function $g(x)$, the _integral_, when the integration operator $\int \cdots dx$ is used; the notation is
 # 
-# $$\displaystyle  \int f(x)dx = g(x) + constant. \tag{1}$$
+# $$\displaystyle  \int f(x)dx = g(x) + constant. \qquad\tag{1}$$
 # 
 # This result is an _indefinite integral_ and a constant is always added to the answer because the starting and ending values of $x$ were not defined. You can see from figure 2 that the result of integration is going to be different depending on where the integration starts and ends. The constant effectively allows this to be determined later. Recall that differentiating a constant produces zero, and therefore differentiating $(g(x) + constant)$ reproduces $f(x)$ no matter what value the constant has, i.e. the constant is arbitrary, therefore
 # 
@@ -54,7 +54,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # The integration symbol $\int$ of equation 1 has no upper and lower limits on it, and this indicates that it is an _indefinite integral_. When the limits are added to an integration a definite integral results, and this is a number independent of the variable $x$, provided that the chosen limits $a$ and $b$ are not functions that themselves contain $x$;
 # 
 # 
-# $$\displaystyle \int_a^b f(x)dx = g(x) \bigg|_a^b = g(b)-g(a)  \tag{2}$$
+# $$\displaystyle \int_a^b f(x)dx = g(x) \bigg|_a^b = g(b)-g(a)  \qquad\tag{2}$$
 # 
 # The symbol $ \bigg|_a^b$ is the substitution symbol. Because neither $g(b)$ nor $g(a)$ are functions of $x$, $g(b) - g(a)$ is a _number_ and differentiating the result with respect to $x$ would produce zero. The definite integral, equation 2, is sometimes called the _fundamental theorem of calculus_.
 # 
@@ -98,13 +98,13 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # Furthermore, if there is a point $s$ between limits $a$ and $b$ then the integral can be split into two continuous parts. Using common sense, it is not surprising that the total is the sum of the parts by thinking of the result of integration as an area. Suppose the limits range from $a$ to $s$ and then $s$ to $b$, then
 # 
-# $$\displaystyle \int_a^b f(x)dx= \int_a^s f(x)dx +\int_s^b f(x)dx \tag{3}$$
+# $$\displaystyle \int_a^b f(x)dx= \int_a^s f(x)dx +\int_s^b f(x)dx \qquad\tag{3}$$
 # 
 # which is shown in figure 3 above.
 # 
 # When the limits are $\pm a$ and 0 the relationship 
 # 
-# $$\displaystyle \int_{-a}^0 f(x)dx= \int_0^a f(-x)dx  \tag{4}$$
+# $$\displaystyle \int_{-a}^0 f(x)dx= \int_0^a f(-x)dx  \qquad\tag{4}$$
 # 
 # is sometimes useful. Does this make sense? Try it on equation 2 to convince yourself.
 # 
@@ -165,7 +165,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # The general rule for any power of $x$, other than $x^{-1}$, should be remembered and is
 # 
-# $$\displaystyle \int x^n dx=\frac{x^{n+1}}{n+1}+const \tag{6}$$
+# $$\displaystyle \int x^n dx=\frac{x^{n+1}}{n+1}+const \qquad\tag{6}$$
 # 
 # Definite integrals have limits that are determined by the problem being solved, for example
 # 
@@ -186,13 +186,13 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # The $\displaystyle \frac{x^{n+1}}{n + 1}$ rule is not going to work when $n = -1$ as this will produce $1/0$ which is infinity. In the case of reciprocal $x$ the integral is:
 # 
-# $$\int \frac{dx}{x}= \ln(x)+c \qquad \int_a^b \frac{dx}{x}=\ln(b)-\ln(a)=\ln\left(\frac{b}{a}\right)  \tag{7}$$
+# $$\int \frac{dx}{x}= \ln(x)+c \qquad \int_a^b \frac{dx}{x}=\ln(b)-\ln(a)=\ln\left(\frac{b}{a}\right)  \qquad\tag{7}$$
 # 
 # where the last result is only possible if $a$ and $b \gt 0$. If $a = 1$, for example, $\displaystyle \int_1^x \frac{dx}{x}=\ln(x)$ because $\ln(1)=0$.
 # 
 # Note that to produce a log, the denominator must be _linear_ in $x$, e.g. $2 + 3x$, but cannot contain anything like $x^2$ or $x^3$. The general formula is
 # 
-# $$\displaystyle \int\frac{1}{ax+b}dx=\frac{1}{a}\ln(ax+b) +const \tag{8}$$
+# $$\displaystyle \int\frac{1}{ax+b}dx=\frac{1}{a}\ln(ax+b) +const \qquad\tag{8}$$
 # 
 # ### Reaction on a surface
 # 
@@ -262,7 +262,7 @@ integrate(eq, x )
 # 
 # therefore the general form, after rearranging and with $c$ as the constant, is
 # 
-# $$\displaystyle \int e^{-ax+b}= -\frac{1}{a}e^{-ax+b}+c  \tag{9}$$
+# $$\displaystyle \int e^{-ax+b}= -\frac{1}{a}e^{-ax+b}+c  \qquad\tag{9}$$
 # 
 # Note that this formula only applies when the argument to the exponential is to the first power of $x$ and some constants. Integrating $e^{-x^2}$, for example, cannot be done this way.
 # 
@@ -284,11 +284,11 @@ integrate(eq, x )
 # 
 # integrating both sides and rearranging produces, $\displaystyle \int\sin(3x+2)=-\frac{1}{3}\cos(3x+2)+c$. Similarly the general forms are 
 # 
-# $$\displaystyle \int\sin(ax+b)=-\frac{1}{a}\cos(ax+b)+c  \tag{10} $$
+# $$\displaystyle \int\sin(ax+b)=-\frac{1}{a}\cos(ax+b)+c  \qquad\tag{10} $$
 # 
 # and
 # 
-# $$\displaystyle  \int\cos(ax+b)=+\frac{1}{a}\sin(ax+b)+c  \tag{11} $$
+# $$\displaystyle  \int\cos(ax+b)=+\frac{1}{a}\sin(ax+b)+c  \qquad\tag{11} $$
 # 
 # Note first the sign change between sine and cosine and also that these integrations are true only for first powers of $x$.
 # 

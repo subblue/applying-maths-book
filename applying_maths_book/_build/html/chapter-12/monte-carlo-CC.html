@@ -770,7 +770,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-7/matrices-L.html">
-     Principal axes for Moments of Inertia
+     Principal axes of Moments of Inertia
     </a>
    </li>
    <li class="toctree-l2">
@@ -1662,7 +1662,7 @@ In the simulation of a random walk, only discrete steps can be taken <span class
 <p>Imagine instantly starting a reaction and then being able to observe each molecule individually and record the instant <span class="math notranslate nohighlight">\(t\)</span> that each reacts. Each molecule follows a first-order process, the probability of not having reacted up to time <span class="math notranslate nohighlight">\(t\)</span> is <span class="math notranslate nohighlight">\(p = e^{-kt}\)</span>, where <span class="math notranslate nohighlight">\(k\)</span> is the rate constant and the lifetime <span class="math notranslate nohighlight">\(\tau\)</span> for the reaction is <span class="math notranslate nohighlight">\(\tau = 1/k\)</span>. Observing these times for different molecules allows the probability distribution to be made and the reaction rate constant or lifetime calculated. The lifetimes of excited states and of first-order reactions have a huge range from <span class="math notranslate nohighlight">\(\approx 10^{-13}\)</span> to <span class="math notranslate nohighlight">\(\gt 10\)</span> s. The lifetimes of radioactive nuclei range from a few seconds to thousands of years.</p>
 <p>When we simulate the population of a species, the distribution of reaction times has to be known. This can be achieved by inverting the exponential equation to produce the time and guessing the probability <span class="math notranslate nohighlight">\(p\)</span>, from a uniform distribution between zero and one. The list of times produced by repeatedly doing this are then made into a histogram and displayed, and, if enough events are recorded, a decay similar to one that could be observed experimentally will be produced. The time <span class="math notranslate nohighlight">\(t\)</span> that a molecule reacts, not having reacted up to that time, is</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle  t=-\frac{1}{k}\ln(p)\tag{13}\]</div>
+\[\displaystyle  t=-\frac{1}{k}\ln(p)\qquad\tag{13}\]</div>
 <p>and <span class="math notranslate nohighlight">\(p\)</span> is guessed from a uniform distribution in the range <span class="math notranslate nohighlight">\(0 \to 1\)</span>.</p>
 <p>One way of doing the calculation is shown below. A histogram of time intervals is made by making the time into an integer index of an array and then adding up the number of times this index occurs. The array is called <span class="math notranslate nohighlight">\(\mathtt{fcount}\)</span>; the maximum time is <span class="math notranslate nohighlight">\(\mathtt{maxt}\)</span> and the number of bins in the histogram, ‘bins’. The method is:</p>
 <p><strong>(1)</strong><span class="math notranslate nohighlight">\(\quad\)</span> Define parameters; set arrays to initial values;</p>

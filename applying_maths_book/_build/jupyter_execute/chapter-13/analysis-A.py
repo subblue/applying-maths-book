@@ -21,7 +21,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # If several readings have been taken of a quantity $x$, for example a titration is performed $N$ times with identical solutions in an attempt to be precise, the titration's end-point volume will be quoted as the arithmetic sample average $\langle x\rangle$ of all the $n$ measurements. This is sometimes also labelled $\bar x$ (pronounced 'x-bar') and the word 'mean' is often used instead of average. The arithmetic average is
 # 
-# $$\displaystyle \langle x\rangle =\frac{1}{n}\sum_{i=1}^{i=n} x_i=\frac{1}{n}(x_1+x_2+x_3\cdots x_n)\tag{1}$$
+# $$\displaystyle \langle x\rangle =\frac{1}{n}\sum_{i=1}^{i=n} x_i=\frac{1}{n}(x_1+x_2+x_3\cdots x_n)\qquad\tag{1}$$
 # 
 # where $x_1+x_2+x_3\cdots x_n$ are the measurements. This average value will probably not be the same as any individual value and these will always be spread either side of the mean. The sum of the difference between each point and the average, is always zero; $\sum_i(x_i-\langle x\rangle)=0$.
 # 
@@ -36,7 +36,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # A measure of the spread of the results is the sample standard deviation $s$. The square of the standard deviation is called the _variance_ . The sample standard deviation is
 # 
-# $$\displaystyle s=\sqrt{\frac{1}{n-1}\sum_{i=1}^n \big( x_i - \langle x\rangle \big)^2 } \tag{2}$$
+# $$\displaystyle s=\sqrt{\frac{1}{n-1}\sum_{i=1}^n \big( x_i - \langle x\rangle \big)^2 } \qquad\tag{2}$$
 # 
 # and is sometimes called the root mean square (or *rms*) deviation. This formula produces an unbiased estimate of $s$, but note that some authors define the standard deviation by dividing by $n$ rather than $n - 1$; there is not a single definition of $s$; see Barlow (1989, p. 11). The standard deviation is one of a class of measures called _dispersion indices_ ; range, quantile, skew, and kurtosis (peakedness) are others.
 # 
@@ -60,7 +60,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # The standard deviation and variance can also be defined with reference to the parent distribution and then this _population_ or _parent variance_ $\sigma^2$ is
 # 
-# $$\displaystyle \sigma^2=\frac{1}{n}\sum_{i=1}^n(x_i-\mu)^2 \tag{3}$$
+# $$\displaystyle \sigma^2=\frac{1}{n}\sum_{i=1}^n(x_i-\mu)^2 \qquad\tag{3}$$
 # 
 # which assumes that $\mu$ is known, whereas $s$, equation 2, is obtained only from the data itself. The variance is the single most important parameter when describing the parent population. To calculate $\sigma^2,\; \mu$ has to be known, but $\mu$ can never be exactly known in any set of measurements. The best estimate of this has to be used instead and is obtained from the set of measurements; this is usually taken to be
 # 
@@ -91,7 +91,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # The mean $\mu$ and standard deviation $\sigma$ are used assuming that data is distributed normally. But many quantities measured are not expected to have a normal distribution; for example, when counting photons or particles, a Poisson distribution is produced which is quite unlike a normal distribution at small $\mu$, see figure 13. The speed of a molecule follows a Maxwell - Boltzmann distribution (see chapter 3 Q54), which is clearly skewed or lopsided, again quite unlike a normal distribution. However, remarkably, if several measurements are taken of a given velocity, their distribution will be normal. This is what the central limit theorem predicts and although easy to demonstrate, it is harder to prove. It states that by taking many similar measurements from (almost) any type of continuous distribution, the result always approaches a normal (Gaussian) distribution. This population distribution has the theoretical form
 # 
-# $$\displaystyle p(x)=\frac{1}{\sqrt{2\pi \mu^2}}e^{\large{-\frac{(x-\mu)^2}{2\sigma^2}} }\tag{4}$$
+# $$\displaystyle p(x)=\frac{1}{\sqrt{2\pi \mu^2}}e^{\large{-\frac{(x-\mu)^2}{2\sigma^2}} }\qquad\tag{4}$$
 # 
 # where $\mu$ is the mean of the distribution and $\sigma$ the standard deviation. The central limit theorem forms the basis by which the standard deviation of a normal distribution is used to characterize data.
 # 
@@ -150,7 +150,7 @@ gaus = lambda x,sig: np.exp(-(x-av_x)**2/(2*sig**2/n))/np.sqrt(2*np.pi*sig**2/n)
 # 
 # The standard deviation of the mean is often referred to as the standard error on the mean and defined as $\sigma_m = \sigma/\sqrt{n}$. This confirms that measurements get more precise with the square root of the number of measurements. If a new statistic $Z$ is defined as
 # 
-# $$\displaystyle Z=\frac{\langle x\rangle -\mu}{\sigma/\sqrt{n}}\tag{5}$$
+# $$\displaystyle Z=\frac{\langle x\rangle -\mu}{\sigma/\sqrt{n}}\qquad\tag{5}$$
 # 
 # this is distributed as the standard normal distribution with a mean of zero and a standard deviation of one. Notice that $Z$ increases as $\sqrt{n}$. Because $\langle x\rangle$, the experimental or sample mean value, is unlikely to be equal to $\mu$, there is a need for a measure of the confidence that we have in $\langle x\rangle$. From the properties of the normal distribution (see next section), there is a $95$% chance that $Z$ falls within the range $\pm 1.96$. This is written as
 # 
@@ -162,11 +162,11 @@ gaus = lambda x,sig: np.exp(-(x-av_x)**2/(2*sig**2/n))/np.sqrt(2*np.pi*sig**2/n)
 # 
 # This is interpreted to mean that there is $95$% confidence that the population mean will fall in the interval $\displaystyle \pm 1.96\frac{\sigma}{\sqrt{n}}$ and is written as
 # 
-# $$\displaystyle \langle x\rangle \pm 1.96\frac{\sigma}{\sqrt{n}} \tag{6}$$
+# $$\displaystyle \langle x\rangle \pm 1.96\frac{\sigma}{\sqrt{n}} \qquad\tag{6}$$
 # 
 # In practice, the standard deviation is almost never known and if the number of samples is large, typically $\gt 25$, then $\sigma$ can be replaced by $s$ the sample standard deviation, and then
 # 
-# $$\displaystyle \langle x\rangle \pm 1.96\frac{s}{\sqrt{n}} \tag{6a}$$
+# $$\displaystyle \langle x\rangle \pm 1.96\frac{s}{\sqrt{n}} \qquad\tag{6a}$$
 # 
 # Confidence limits are not always used when quoting results and it is common to see $\langle x\rangle \pm \sigma$ quoted instead. Unless this is qualified as being $1\sigma,\; 2\sigma$ etc., what is implied by this is uncertain. If the error is $\pm\sigma$ then $\approx 68$% of all measurements fall in this range. Table 1 gives other values.
 # 
@@ -203,11 +203,11 @@ gaus = lambda x,sig: np.exp(-(x-av_x)**2/(2*sig**2/n))/np.sqrt(2*np.pi*sig**2/n)
 # 
 # The _standard normal distribution_ describes a Gaussian (bell-shaped) curve with a mean of zero and a standard deviation of one, viz.,
 # 
-# $$\displaystyle p(x)=\frac{1}{\sqrt{2\pi}}e^{-\large{ (x-\mu)^2/2} }\tag{7}$$
+# $$\displaystyle p(x)=\frac{1}{\sqrt{2\pi}}e^{-\large{ (x-\mu)^2/2} }\qquad\tag{7}$$
 # 
 # The total area under the curve is one and the area between symmetrically placed $x$ values gives the probability of falling within that area. The area $p(x)$ is the probability of an observation being between $\pm x$;
 # 
-# $$\displaystyle p(x)=\int_{-x}^x e^{-x^2/2}dx=\mathrm{erf}\left(\frac{x}{\sqrt{2}}\right)\tag{8}$$
+# $$\displaystyle p(x)=\int_{-x}^x e^{-x^2/2}dx=\mathrm{erf}\left(\frac{x}{\sqrt{2}}\right)\qquad\tag{8}$$
 # 
 # The area within limits $\pm 1.96$ is $\mathrm{erf}(1.96/\sqrt{2}) = 0.950$; hence this is the $95$% chance as described by equation 6. In figure 4, the total area in yellow adds up to $5$% of the total, meaning that a value that differs from the mean should exceed $\pm 1.96$ by pure chance only on $5$% of all measurements.
 # 
@@ -265,11 +265,11 @@ qtile(0.69146246 )
 # 
 # The general form for a $(100 -\alpha)$% confidence limit when the population standard deviation $\sigma$ is known is
 # 
-# $$\displaystyle \langle x \rangle\pm Z_{\alpha/2}\frac{\sigma}{\sqrt{n}}\tag{10}$$
+# $$\displaystyle \langle x \rangle\pm Z_{\alpha/2}\frac{\sigma}{\sqrt{n}}\qquad\tag{10}$$
 # 
 # and when $\sigma$ is unknown, the sample standard deviation is used
 # 
-# $$\displaystyle \langle x \rangle\pm Z_{\alpha/2}\frac{s}{\sqrt{n}}\tag{11}$$
+# $$\displaystyle \langle x \rangle\pm Z_{\alpha/2}\frac{s}{\sqrt{n}}\qquad\tag{11}$$
 # 
 # The term $Z_{\alpha/2}$ is the percentage point of the standard normal distribution, i.e. the '% chance' in table 1.
 # 
@@ -293,7 +293,7 @@ qtile(0.69146246 )
 # 
 # When the number of samples is small, s may not be a very good estimate of $\sigma$ and, in this case, Student's '$t$' test is needed. The distribution is similar in shape to the normal distribution, but is wider in the wings. It is characterized by one parameter $t = n - 1$ where $n$ is the number of samples being averaged, and $t$ is called its 'degrees of freedom'. When the sample size increases, the t distribution approaches the normal one. Using a similar argument to that for the normal distribution, the $t$ distribution produces confidence limits,
 # 
-# $$\displaystyle \langle x \rangle\pm t_{\alpha/2}\frac{s}{\sqrt{n}}\tag{12}$$
+# $$\displaystyle \langle x \rangle\pm t_{\alpha/2}\frac{s}{\sqrt{n}}\qquad\tag{12}$$
 # 
 # where $t_{\alpha/2}$ is obtained by integrating the distribution, just as was done for the normal distribution. Only a few values are used regularly, some of which are listed in Table 3. (Notice that in the table that $t$ is one less than the number of data points.)
 # 
@@ -330,7 +330,7 @@ qtile(0.69146246 )
 # 
 # and $95$% confidence limits need to be placed on the population mean $\mu$. To calculate how many days on average it will be necessary to wait to be $95$% sure of obtaining the results of an analysis, use equation 12 with the $t$ value taken from Table 3. As $\sigma$ (population mean) is unknown and the sample is small then
 # 
-# $$\displaystyle \langle x\rangle \pm t_{0.025}\frac{s}{\sqrt{n}}\tag{13}$$
+# $$\displaystyle \langle x\rangle \pm t_{0.025}\frac{s}{\sqrt{n}}\qquad\tag{13}$$
 # 
 # The sample size $n = 6$ so there are $t = n - 1 = 5$ degrees of freedom, and from $t$ distribution table $t_{0.025} = 2.571$ for $95$% confidence. The $0.025$ is used because this is the two sided value, the limit being $2.5$% to the far right and far left of the $t$-distribution, in the same way as that shown for the normal distribution in figure 4. The sample mean $\langle x\rangle = 16.94$ days and the sample standard deviation $s = 6.47$ days. Therefore, a $95$% confidence interval for $\mu$ is given by
 # 
@@ -376,7 +376,7 @@ quant(x,n)
 # 
 # To solve this problem, a slightly different approach has to be taken and this involves using a common approach to testing data by forming hypotheses. This means testing whether or not there is confidence in a given mean value. Some criterion or test statistic is computed and used to make a decision. When using these tests, it is always assumed that the underlying parent distribution is normal and that the samples are independent of one another. Two related statistics are needed. When the population standard deviation $\sigma$ is known (it is $1/2$ in the problem), the following statistic can be used;
 # 
-# $$\displaystyle z_0=\frac{\langle x\rangle -\mu_0}{\sigma/\sqrt{n}}\tag{14}$$
+# $$\displaystyle z_0=\frac{\langle x\rangle -\mu_0}{\sigma/\sqrt{n}}\qquad\tag{14}$$
 # 
 # This statistic should follow a normal distribution, and if the experimental mean is going to converge on $\mu_0$, if sufficient samples could be taken, then it would be expected that $z_0$ is 'close' to zero because $\langle x\rangle\to \mu_0$. The problem is to find critical values with which to test, with a certain confidence, how approximate the statement $\langle x\rangle\approx \mu_0$ actually is. For example, if $z_0$ is greater than $\pm 1.96$ then with $95$% certainty $\langle x\rangle\ne \mu_0$; however, we would still expect to observe $\langle x\rangle\approx \mu_0$ on $5$% of occasions. Thus, large values of $z_0$ means that the experimental mean is probably not the same as the population mean. The data produces
 # 
@@ -384,7 +384,7 @@ quant(x,n)
 # 
 # This is less than $1.96$ which is the value needed for $95$% acceptance with a normal distribution, so the conclusion would be that the lab had produced an acceptable set of data. However, the number of samples is small and this last calculation assumes that many measurements have been taken. The statistic would be more discriminating if a second test were used based on the $t$ distribution. In this case, the sample standard deviation $s$ is used rather than $\sigma$, making the statistic subtly different
 # 
-# $$\displaystyle t_0=\frac{\langle x\rangle -\mu_0}{s/\sqrt{n}}\tag{15}$$
+# $$\displaystyle t_0=\frac{\langle x\rangle -\mu_0}{s/\sqrt{n}}\qquad\tag{15}$$
 # 
 # Calculating again with $s = 0.466$ gives $t_0 = 1.33$ and from the $t$ distribution, with seven degrees of freedom at the $95$% level, $t_{025,7} = 2.365$. As $t_0$ is less than this and $z_0$ is less than $1.96$, although this is a less critical test, the conclusion reached is that with $95$% confidence the data is consistent with a population mean of $50$ and standard deviation of $1/2$ and the lab is up to standard.
 # 
@@ -402,11 +402,11 @@ quant(x,n)
 # 
 # where data set 1 with mean $\langle x \rangle_1$ is the average of $n_1$ measurements and similarly for set 2. This variance has $n_1 + n_2 - 2$ degrees of freedom. The $t$ test statistic is
 # 
-# $$\displaystyle t_0= \frac{\langle x\rangle_1+\langle x\rangle_2}{s_p}\sqrt{\frac{n_1n_2}{n_1+n_2}} \tag{16}$$
+# $$\displaystyle t_0= \frac{\langle x\rangle_1+\langle x\rangle_2}{s_p}\sqrt{\frac{n_1n_2}{n_1+n_2}} \qquad\tag{16}$$
 # 
 # which is expected to follow a $t$ distribution with $n_1 + n_2 - 2$ degrees of freedom. If this $t_0$ exceeds the critical value set by the percentage points of the $t$ distribution, then it is clear that the means are not the same. Confidence intervals, at $95$%, for the difference between population means $(\mu_1 - \mu_2)$ may be obtained using
 # 
-# $$\displaystyle \langle x\rangle_1-\langle x\rangle_2\pm t_{0.025,S_p}\sqrt{\frac{n_1+n_2}{n_1n_2}}\tag{17}$$
+# $$\displaystyle \langle x\rangle_1-\langle x\rangle_2\pm t_{0.025,S_p}\sqrt{\frac{n_1+n_2}{n_1n_2}}\qquad\tag{17}$$
 # 
 # ### **(iii) Comparing columns yields in chromatography**
 # The yields of two nominally identical columns used for chromatographic separation have been measured. There are nine and eight experiments on each column under identical experimental conditions and the subsequent yield (mg) for each is as follows:
@@ -517,7 +517,7 @@ else:
 # 
 # If two measurements of $x$ are made and $x_1$ is twice as precise as $x_2$, then the weighted average is made in the proportions, $\langle x\rangle = (2x_1 + x_2)/3$. In the general case, if $w_i$ are the weights, then
 # 
-# $$\displaystyle \langle x\rangle=\frac{\sum\limits_i w_ix_i}{\sum\limits_i w_i} \tag{18}$$
+# $$\displaystyle \langle x\rangle=\frac{\sum\limits_i w_ix_i}{\sum\limits_i w_i} \qquad\tag{18}$$
 # 
 # This equation means that the contribution of each measurement to the average is in proportion to $w$ unweighted measurements. This formula has been used in several other guises in other chapters to estimate an expectation value, when $w_i$ was called the distribution of $x_i$ rather than a weighting. The weighted standard deviation is
 # 
@@ -525,7 +525,7 @@ else:
 # 
 # For experimental measurements, weighting is optimal if it is the reciprocal of the variance, $w_i=1/\sigma_i^2$ and $\sigma_i$ must be determined for each of the $i$ observations. In many cases the $\sigma$ will be equal to one another, then  $\displaystyle \langle x \rangle =\frac{1}{N}\sum_ix_i$, which is the unweighted mean of $x$. The variance of the weighted average is
 # 
-# $$\displaystyle \sigma^2= \frac{1}{\sum_i w_i}=\frac{1}{\sum_i/\sigma_i^2} \tag{19}$$
+# $$\displaystyle \sigma^2= \frac{1}{\sum_i w_i}=\frac{1}{\sum_i/\sigma_i^2} \qquad\tag{19}$$
 # 
 # Weightings ensure that more importance is given to the more precise measurement because the smaller the standard deviation is, the larger is the weighting given to it.
 # 
@@ -546,11 +546,11 @@ else:
 # 
 # where $\sigma_{uv}^2$ is the covariance between the two variables. This is always assumed to be zero, i.e. the result of one measurement is not influenced by the other; therefore, the result to use is
 # 
-# $$\displaystyle \sigma_y^2=\left(\frac{\partial y}{\partial u}\right)_v^2\sigma_u^2+\left(\frac{\partial y}{\partial v}\right)_u^2\sigma_v^2\tag{20}$$
+# $$\displaystyle \sigma_y^2=\left(\frac{\partial y}{\partial u}\right)_v^2\sigma_u^2+\left(\frac{\partial y}{\partial v}\right)_u^2\sigma_v^2\qquad\tag{20}$$
 # 
 # If there are more than two variables, the extra terms are added in the same way;
 # 
-# $$\displaystyle \sigma_y^2=\left(\frac{\partial y}{\partial u}\right)_{v,w}^2\sigma_u^2+\left(\frac{\partial y}{\partial v}\right)_{u,w}^2\sigma_v^2+\left(\frac{\partial y}{\partial w}\right)_{u,v}^2\sigma_w^2+\cdots\tag{21}$$
+# $$\displaystyle \sigma_y^2=\left(\frac{\partial y}{\partial u}\right)_{v,w}^2\sigma_u^2+\left(\frac{\partial y}{\partial v}\right)_{u,w}^2\sigma_v^2+\left(\frac{\partial y}{\partial w}\right)_{u,v}^2\sigma_w^2+\cdots\qquad\tag{21}$$
 # 
 # ### **(vi) Gas law**
 # The gas law states that $p = nRT/V$, and the volume, temperature, and number of moles have been measured, each with their standard deviations. The standard deviation of the pressure is found by taking the partial derivatives of each variable in turn, while holding the others constant and substituting into equation 21. The variables are $n\equiv u,T\equiv v,V\equiv w$,
@@ -601,7 +601,7 @@ sigT.evalf(3)
 # 
 # The following table gives some examples of frequently met functions. The variances $\sigma_u^2$ and $\sigma_v^22$ are assumed to be known. The total variance $\sigma^2$ is shown; remember to take the square root before using and note that σ 2 is always positive. The equation to use for many variables is
 # 
-# $$\displaystyle \sigma_y^2=\sum_i\left(\frac{\partial y}{\partial u_i}\right)^2\sigma_i^2\tag{22}$$
+# $$\displaystyle \sigma_y^2=\sum_i\left(\frac{\partial y}{\partial u_i}\right)^2\sigma_i^2\qquad\tag{22}$$
 # 
 # $$\displaystyle \begin{array}{l|ll|l}
 # \hline
@@ -619,11 +619,11 @@ sigT.evalf(3)
 # ## 4.2  Matrix formulation.
 # Barlow (1989) demonstrates that equation 20 can be written in a matrix form, which does not immediately seem to offer any advantage, but this becomes clearer for problems that are more complex. The matrix equation is
 # 
-# $$\displaystyle V=GV_\sigma^2G^T \tag{23}$$
+# $$\displaystyle V=GV_\sigma^2G^T \qquad\tag{23}$$
 # 
 # where $V_\sigma^2$ is a square matrix of variances and $G$ a (Jacobian) matrix of partial derivatives. $V$ is the matrix of the variances for each variable. The total variance is the sum of the terms in $V$, which may be calculated as
 # 
-# $$\displaystyle \sigma^2=UV\tag{24}$$
+# $$\displaystyle \sigma^2=UV\qquad\tag{24}$$
 # 
 # where $U$ is a row matrix where each term is one. In example (vii) the matrix equation is written as
 # 

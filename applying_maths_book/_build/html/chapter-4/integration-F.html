@@ -770,7 +770,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-7/matrices-L.html">
-     Principal axes for Moments of Inertia
+     Principal axes of Moments of Inertia
     </a>
    </li>
    <li class="toctree-l2">
@@ -1677,19 +1677,19 @@ title="Print to PDF"
 <p>The double integral is useful in obtaining the mean value, centroids and moments of inertia of functions and is an alternative way to that described in Section 8.2. In these equations the order of integration is not necessarily implied by the way in which they are written. The integration order is unimportant if the integration limits are constants but is if they depend on x then the y integral must be done first as in equation 51.</p>
 <p>The integral</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle A=\int\int 1\,dxdy \tag{52}\]</div>
+\[\displaystyle A=\int\int 1\,dxdy \qquad\tag{52}\]</div>
 <p>is a <em>volume</em> of unit thickness. The result <span class="math notranslate nohighlight">\(A\)</span> is also called a <em>lamina</em>, which is a sheet of unit but uniform thickness.</p>
 <p>The <em>x-centroid</em>, the average position of the x-coordinate of the function is</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle \langle x\rangle =\frac{1}{A}\int\int x\,dxdy \tag{53}\]</div>
+\[\displaystyle \langle x\rangle =\frac{1}{A}\int\int x\,dxdy \qquad\tag{53}\]</div>
 <p>and similarly for the y-coordinate <span class="math notranslate nohighlight">\(\displaystyle \langle y\rangle =\frac{1}{A}\int\int y\,dxdy\)</span>.</p>
 <p>If the density is not constant but is described by a function <span class="math notranslate nohighlight">\(f(x, y)\)</span> then the formulae are changed to;</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle  \langle x\rangle =\frac{1}{A}\int\int xf(x,y)\,dxdy,\quad \langle y\rangle =\frac{1}{A}\int\int yf(x,y)\,dxdy,\quad A=\int\int f(x,y)\,dxdy \tag{54}\]</div>
+\[\displaystyle  \langle x\rangle =\frac{1}{A}\int\int xf(x,y)\,dxdy,\quad \langle y\rangle =\frac{1}{A}\int\int yf(x,y)\,dxdy,\quad A=\int\int f(x,y)\,dxdy \qquad\tag{54}\]</div>
 <p>which is essentially equation 28. The position of the centroids is often called the <em>centre of gravity</em> of the object.</p>
 <p>By definition, the moment of inertia of an object about an axis is the product of the distance squared from the axis times the mass; <span class="math notranslate nohighlight">\(I = mL^2\)</span>. If the body is extended, then the integration must be performed over the entire shape. Should the mass is distributed as <span class="math notranslate nohighlight">\(f (x, y)\)</span> then the x-direction moment of inertia depends on the distance from the y-axis and is</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle  I_x=\int\int y^2f(x,y)dydx \tag{55}\]</div>
+\[\displaystyle  I_x=\int\int y^2f(x,y)dydx \qquad\tag{55}\]</div>
 <p>The y-direction moment is calculated similarly using <span class="math notranslate nohighlight">\(x^2\)</span>,</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle I_y=\int\int x^2f(x,y)dxdy \]</div>
@@ -1729,14 +1729,14 @@ title="Print to PDF"
 <p>Triple integrals are calculated in a similar way to double ones, but instead of producing a volume a density function is produced. This might literally be density if the mass/unit volume of a solid is known, but generally, density is taken to mean the amount of ‘stuff’ in a given volume such as electron density or probability of being at a certain position in an atomic orbital.</p>
 <p>One commonly met triple integral is the normalization of a wavefunction <span class="math notranslate nohighlight">\(\psi(r, \theta, \phi)\)</span>; when integrated over all space the product <span class="math notranslate nohighlight">\(\psi^* \psi\)</span> must be unity. This means that</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle \int_0^{2\pi}\int_0^\pi\int_0^\infty \psi(r, \theta, \phi)^* \psi(r, \theta, \phi) r^2\sin(\theta)drd\theta d\phi =1 \tag{56}\]</div>
+\[\displaystyle \int_0^{2\pi}\int_0^\pi\int_0^\infty \psi(r, \theta, \phi)^* \psi(r, \theta, \phi) r^2\sin(\theta)drd\theta d\phi =1 \qquad\tag{56}\]</div>
 <p>where the superscript * indicates a complex conjugate. The <span class="math notranslate nohighlight">\(r^2\sin(\theta)drd\theta d\phi\)</span> term comes from converting the volume element <span class="math notranslate nohighlight">\(dxdydz\)</span> in Cartesian to spherical polar coordinates; see Section 11 where the calculation of this conversion is described. The limits are almost invariably the same for quantum problems. The polar angle <span class="math notranslate nohighlight">\(\theta\)</span> ranges from north to south and can only have values from <span class="math notranslate nohighlight">\(0 \to \pi\)</span>. The azimuthal (equatorial) angle <span class="math notranslate nohighlight">\(\phi\)</span> moves around the equator so ranges from <span class="math notranslate nohighlight">\(0 \to 2\pi\)</span>.</p>
 <p>One of the <span class="math notranslate nohighlight">\(3\)</span>p atomic orbitals has quantum numbers <span class="math notranslate nohighlight">\(n = 3,\, s = 1, \, m = 1\)</span>, and is</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle \psi_{311}=N\frac{r}{a_0}\left( 6-\frac{r}{a_0} \right)e^{-r/3a_0}\sin(\theta)e^{i\phi} \tag{57}\]</div>
+\[\displaystyle \psi_{311}=N\frac{r}{a_0}\left( 6-\frac{r}{a_0} \right)e^{-r/3a_0}\sin(\theta)e^{i\phi} \qquad\tag{57}\]</div>
 <p>where <span class="math notranslate nohighlight">\(N\)</span> is the normalization constant we want to find. Because <span class="math notranslate nohighlight">\(r, \,\theta, \, \phi\)</span> are separate there being no term in a product such as  <span class="math notranslate nohighlight">\(\theta\phi\)</span> when calculating equation (4.56), the integrals in <span class="math notranslate nohighlight">\(r,\, \theta\)</span>, and <span class="math notranslate nohighlight">\(\phi\)</span> can be treated separately. The integral of <span class="math notranslate nohighlight">\(\psi^*\psi\)</span> just in <span class="math notranslate nohighlight">\(r\)</span> is</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle  \frac{N^2}{a_0^2}\int_0^\infty r^2\left( 6-\frac{r}{a_0} \right)^2e^{-2r/3a_0}r^2= \frac{19683}{8}a_0N^4 \tag{58}\]</div>
+\[\displaystyle  \frac{N^2}{a_0^2}\int_0^\infty r^2\left( 6-\frac{r}{a_0} \right)^2e^{-2r/3a_0}r^2= \frac{19683}{8}a_0N^4 \qquad\tag{58}\]</div>
 <p>where the second <span class="math notranslate nohighlight">\(r^2\)</span> comes from the volume element, eqn 56. This integral has a standard form, (two terms of the type <span class="math notranslate nohighlight">\(x^ne^{-ax}\)</span>) which can be integrated by parts; see (2.13). Using Sympy, because the calculation while straightforward is involved, gives for the radial part equation 58</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1812,7 +1812,7 @@ and changing to the conventional notation this is the determinant of the partial
     \end{vmatrix}  =r^2\sin(\theta)\end{split}\]</div>
 <p>The volume element conversion is then written as</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle dxdydx=r^2\sin(\theta)dr d\theta d\varphi \tag{60}\]</div>
+\[\displaystyle dxdydx=r^2\sin(\theta)dr d\theta d\varphi \qquad\tag{60}\]</div>
 <p>In some cases, the determinant may produce a negative answer depending on the order of calculating the derivatives; however, the Jacobian represents an area or volume element so the positive result may legitimately be taken in such cases.</p>
 <p>A few examples are now worked through.</p>
 <section id="i-a-coordinate-change-may-simplify">

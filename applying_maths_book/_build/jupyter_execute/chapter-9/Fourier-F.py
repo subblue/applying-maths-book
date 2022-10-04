@@ -30,7 +30,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # Suppose that there are three samples to be weighed of masses $x_{1,2,3}$ they could be grouped as $x_1 + x_2,\;   x_1 + x_3$ and $x_2 + x_3$ and weighed two at a time on a single pan balance. Written as equations where the $z$'s are the measured values then
 # 
-# $$\displaystyle  z_1 = x_1 +x_2 +0 \tag{47}$$
+# $$\displaystyle  z_1 = x_1 +x_2 +0 \qquad\tag{47}$$
 # $$\displaystyle z_2 = x_1 +0+x_3 \\
 # z_3 = 0+x_2 +x_3 $$
 # 
@@ -50,7 +50,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # and to solve for (column) vector $\boldsymbol x$, (column) vector $\boldsymbol z$ is multiplied by the inverse of
 # matrix $\boldsymbol S$ and the result is
 # 
-# $$\displaystyle  \boldsymbol x = \boldsymbol S ^{-1} \boldsymbol z  \tag{48}$$
+# $$\displaystyle  \boldsymbol x = \boldsymbol S ^{-1} \boldsymbol z  \qquad\tag{48}$$
 # 
 # To show that this works, suppose that the $\boldsymbol x$ values are $12, 5$, and $2$, then the individual $\boldsymbol z$ values are $x_1 +x_2 =17$, $z_2 =14$ ,and $z_3 =7$ and the calculation $\boldsymbol S^{-1}\boldsymbol z$ is
 # 

@@ -36,7 +36,7 @@ from sympy import *
 # 
 # When only some of the objects are chosen, the permutations will be fewer. Suppose that either $p$ objects at a time are chosen out of $n$, or that $p$ objects are placed into $n$ boxes so that no more than one is in any box, then the number of ways of doing this _'p from n'_ calculation is
 # 
-# $$\displaystyle P(n, p) = n(n - 1)(n - 2) \cdots (n - p + 1) =\frac{n!}{(n-p)!}\tag{19}$$
+# $$\displaystyle P(n, p) = n(n - 1)(n - 2) \cdots (n - p + 1) =\frac{n!}{(n-p)!}\qquad\tag{19}$$
 # 
 # Choosing any two letters, $p = 2$, from three, $n = 3$ produces 3!/1! = 6 permutations. For example, if the letters are ABC, then the six choices are AB, BA, AC, CA, BC, CB. Because each permutation is distinct, if we were to place them into groups or 'boxes' then only one arrangement goes into each box. When $n = p$, because $0! = 1$ this equation equals $P(n, n) = n!$. If each of the permutations is equally likely, then the probability of any one occurring is $1/P(n, p)$. Note also that the notation $P(n, p)$ is not universal and $_nP_p,\; ^nP_p$ or $P_p^n$ are also commonly used.
 # 
@@ -70,11 +70,11 @@ from sympy import *
 # 
 # In a permutation, there are $n!$ ways of choosing (if all the objects are different) and a combination must be less than this because the ordering of similar objects does not matter, and is less by the factorial of the number chosen, which is $p!$. Four objects A B C D produce $4! = 24$ permutations. If any three ($p = 3$) are chosen at a time, the four combinations $C(4, 3)$ are ABC, ACD, ABD, BCD. Each of these groups has $p! = 3! = 6$ permutations making $4 \times 6 = 24$ permutations in total. Thus the number of combinations $C$ is
 # 
-# $$\displaystyle C(n,p)=\frac{p(n,p)}{p!} \tag{20}$$
+# $$\displaystyle C(n,p)=\frac{p(n,p)}{p!}\qquad \tag{20}$$
 # 
 # Therefore, using equation 19, the number of ways of choosing $p$ objects at a time out of a total of $n$, is
 # 
-# $$\displaystyle C(n,p)=\frac{n!}{p!(n-p)!}=\binom{n}{p} \tag{21}$$
+# $$\displaystyle C(n,p)=\frac{n!}{p!(n-p)!}=\binom{n}{p}\qquad \tag{21}$$
 # 
 # The second notation, 'n over p', is that used for the coefficients in the binomial expansion. As for permutations, the notations $_nC_p,\; ^nC_p,\; C_p^n$ are also commonly used. This number gives the coefficients in the binomial expansion and in the Binomial Probability distribution, see section 9.10.
 # 
@@ -111,7 +111,7 @@ from sympy import *
 # 
 # The cards in a pack of playing cards are clearly distinguishable; it would be pointless if they were not. White tennis balls are generally indistinguishable from one another and so would golf balls be if they were not numbered after manufacture to enable players to identify one from another. Atoms or photons are truly indistinguishable; we cannot label them to tell one from another. The number of ways of placing (distributing) $n$ indistinguishable objects into $p$ distinguishable boxes with $p \ge n$ and with any number of objects being allowed in any one box is,
 # 
-# $$\displaystyle C(n+p-1,n)=\frac{(n+p-1)!}{n!(p-1)!}\tag{22}$$
+# $$\displaystyle C(n+p-1,n)=\frac{(n+p-1)!}{n!(p-1)!}\qquad \tag{22}$$
 # 
 # The proof is involved and given in Margenau & Murphy (1943). We note here only that there are $(n + p - 1)!$ permutations when the $n$ objects are placed in $p - 1$ boxes. Using only $p - 1$ boxes is correct because if there is just one box then there are $n!$ permutations if we suppose, for the moment, that the objects are distinguishable. However, if the objects are indistinguishable, the number of permutations has to be divided by $n!$. (There is only one permutation of $n$ indistinguishable objects in one box.) Finally, there are $(p - 1)!$ permutations of the (distinguishable) boxes for a given configuration and therefore equation 22 follows. If there are $n = 2$ objects and $p = 3$ boxes in which to place them, then there
 # should be 4!/2!2! = 6 arrangements. Labelling both objects $x$ these are
@@ -200,7 +200,7 @@ from sympy import *
 # 
 # The area $n(A)$ and $n(B)$ is the whole of their respective ellipses, $n(A + B)$ is the total area less the overlap $n(AB)$. When divided by the number of arrangements in the sample space these numbers become probabilities. The inclusive probability, either $A$ or $B$ or both, is the probability that $A$ occurs, plus, the chance that $B$ occurs minus the chance that both occur or
 # 
-# $$\displaystyle p(inclusive) = p(A) + p(B) - p(AB) \tag{23}$$
+# $$\displaystyle p(inclusive) = p(A) + p(B) - p(AB)\qquad \qquad\tag{23}$$
 # 
 # **(vii)** A mutually exclusive event is one whose outcome prevents any others occurring. The two events $A$ and $B$, are mutually exclusive if there is no intersection or overlap of $A$ and $B$, $p(AB) = 0$, therefore the probability of the occurrence of at least one out of two possible events is the sum of the individual probabilities,
 # 
@@ -210,7 +210,7 @@ from sympy import *
 # 
 # **(viii)** The sample space in tossing a coin is heads and tails, (H, T); in tossing a die this is $(1 \cdots 6)$, in one set of playing cards $(1 \cdots 52)$, and so forth. If three coins are used, the sample space contains $2^3$ elements, HHH, HHT, etc. If $n_S$ represents the number of arrangements in the whole sample space, $n_A$ the subset that is the number of ways of arranging events in a successful outcome, $A$ and $n_{NA}$ the subset that is not $A$ then, clearly, $n_S = n_A + n_{NA}$. The probability of outcome $A$ is therefore
 # 
-# $$\displaystyle p=\frac{n_A}{n_s}=1-\frac{n_{NA}}{n_s}  \tag{24}$$
+# $$\displaystyle p=\frac{n_A}{n_s}=1-\frac{n_{NA}}{n_s}\qquad \tag{24}$$
 # 
 # **(ix)** If $p$ is the chance that an event occurs, then $1-p$ is the chance that it will not, 
 # 
@@ -291,7 +291,7 @@ from sympy import *
 # 
 # and each has a chance of $1/8$ of being produced in three throws. The first outcome (A) is the chance of having at least two tails and by direct counting this is $p(A) = 4/8$. The chance of having a head as the first coin is $p(B) = 4/8$. The chance that both conditions apply, is calculated $p(A, B) = 1/8$ by inspecting the sequence of coins. The conditional probability $p(A | B)$, is the chance that both conditions apply divided by the chance that condition B applies, and this is
 # 
-# $$\displaystyle p(A|B)=\frac{p(A,B)}{p(B)} \tag{25}$$
+# $$\displaystyle p(A|B)=\frac{p(A,B)}{p(B)}\qquad \tag{25}$$
 # 
 # which is $1/4$. This means that the added knowledge that the first coin to fall must be a head, has reduced the odds of obtaining two tails, which is not unexpected since insisting on a head as the first coin reduces the choices available. The equation is 'symmetrical' and can be rearranged to
 # 
@@ -319,11 +319,11 @@ from sympy import *
 # 
 # If there are two boxes, the probabilities are distributed in the same manner as tossing two coins. The coins land as HH, HT, TH, TT and each has a $50$% chance of being H or T, therefore the probabilities are $(1/2)^2,\; 2(1/2)(1/2)$, and $(1/2)^2$ or $1/4, 1/2$, and $1/4$. (HT being the same as TH). Choosing white and black balls from two boxes has the equivalent probability $p^2,\; 2pq,\; q^2$. Choosing $m$ white balls from $n$ specified boxes, and $n - m$ black ones from the rest, has the probability $q^mp^{n-m}$, but there are a combinatorial number of ways $C^n_m$ of choosing $m$ boxes from the total of $n$. Therefore, the total probability of choosing $m$ balls from $n$ boxes, is
 # 
-# $$\displaystyle P(n,m,q)=\frac{n!}{m!(n-m)!}q^m p^{n-m} \tag{25a}$$
+# $$\displaystyle P(n,m,q)=\frac{n!}{m!(n-m)!}q^m p^{n-m}\qquad\tag{25a}$$
 # 
 # where $\displaystyle C^n_m=\binom{n}{m}=\frac{n!}{m!(n-m)!}$ and $p = 1 - q$, and is called the Binomial Distribution because the binomial expansion is
 # 
-# $$\displaystyle (p+q)^n= \sum_{m=0}^n\frac{n!}{m!(n-m)!}q^mp^{n-m}\tag{25b}$$
+# $$\displaystyle (p+q)^n= \sum_{m=0}^n\frac{n!}{m!(n-m)!}q^mp^{n-m}\qquad\tag{25b}$$
 # 
 # and the coefficients in this distribution are the probability $P(n, m)$. This distribution is normalized $\sum_{m=0}^n P(n,m,q)=1$ because $p+q=1$ and $(p+q)^n =1$. The maximum of the  distribution is at $nq$ which is also its or average mean value. The binomial distribution, and the Gaussian and Poisson distributions which are derived from it, are examined in more detail in Chapter 13 where descriptive statistics are discussed.
 # 
@@ -347,7 +347,7 @@ from sympy import *
 # 
 # $$\displaystyle \sum_{m=0}^n\frac{n!}{m!(n-m)!}=2^n$$
 # 
-# The sum is found by supposing that we select balls from $1:1$ mixture of a huge number of them the chance of selecting a red or white must always be $1/2$. The probability of selecting two white balls in succession is $(1/2)^2 $ and of selecting $20$ in succession the minute chance $(1/2)^{20}$. The chance of selecting any given sequence of length $n$ is just $(1/2)^n$. The number of configurations is simply the inverse of this, thus the sum of the coefficients is $2^n$, i.e. $2^3=1+3+3+1$ as can be checked in the Pascal triangle.
+# The sum is found by supposing that we select balls from $1:1$ mixture of a huge number of them then the chance of selecting a red or white must always be $1/2$. The probability of selecting two white balls in succession is $(1/2)^2 $ and of selecting $20$ in succession the minute chance $(1/2)^{20}$. The chance of selecting any given sequence of length $n$ is just $(1/2)^n$. The number of configurations is simply the inverse of this, thus the sum of the coefficients is $2^n$, i.e. $2^3=1+3+3+1$ as can be checked in the Pascal triangle.
 # 
 # To see how the combination terms represent the probability think of $m$ of the $n$ total number of objects.  Suppose that the first of these chosen is of type $w$ and has a probability of being chosen (or measured) as $q$. The second chosen of type $w$ then has a probability $q^2$ and if all chosen are of type $w$ the probability is $q^m$. If exactly $m$ are of type $w$ then $n-m$ are of another type and this probability is $(1-q)^{n-m}$, thus out of our particular choice of $m$ objects the probability that they are all of type $w$ is  $q^m(1-q)^{n-m}$. As this choice is not the only one, because the first $m$ objects can clearly be chosen in another way, in fact $n$ different ways for the first item  and $n-1$ for the second and so on leading to $n-m+1$ in total. The product of these ways of choosing is $\displaystyle n(n-1)(n-2)(n-3)\cdots = \frac{n!}{(n-m)!}$. However, this number is too large because it counts choices that differ only in the _order_ of choosing the $m$ objects ($m_1m_2\cdots$ is the same as $m_2m_1\cdots$ ) and so should be divided by the number of permutations of these $m$ which is $m!$ making the final multiplier $\displaystyle \frac{n!}{m!(n-m)!}$, which is the term in equation 25a.
 # 
@@ -390,7 +390,7 @@ prob
 
 # ### **How many fragments are there in a well in a 96 well plate?**
 # 
-# Labelled DNA fragments are randomly distributed into a $96$ well plate for fluorescence analysis. There are $100$ fragments, what is the chance of having more that one fragment in a well? Using the Binomial distribution  with $n=100, m, q=1/96$, gives the chance of $m$ fragments. Calculating the fraction with $m=0$ and $m=1$ and subtracting these from unity gives the probability. The calculation for $m$ present is
+# Labelled DNA fragments are randomly distributed into a $96$ well plate for fluorescence analysis. There are $100$ fragments, what is the chance of having more that one fragment in a well? Using the Binomial distribution  with $p(n=100, m, q=1/96)$, gives the chance of $m$ fragments. Calculating the fraction with $m=0$ and $m=1$ and subtracting these from unity gives the probability. The calculation for $m$ present is
 # 
 # $$\displaystyle p(100,m,1/96) = \binom{100}{m}\left(\frac{1}{96}\right)^m\left(1-\frac{1}{96}\right)^{(100-m)}$$
 # 
@@ -473,21 +473,23 @@ prob
 # 
 # Evaluating the factorials can be tricky for large numbers and care is needed when computing them, for example $100! \approx 9.3\cdot 10^{157}$ and larger factorials for relatively small numbers, e.g. 200, can easily exceed the floating point capabilities of a computer. For numbers greater than about $20$ the Stirling approximation is very good. There are several forms of this but the most common is written as
 # 
-# $$\displaystyle n!=n^ne^n\qquad \text{or}\qquad \ln(n!)=n\ln(n)+n$$
+# $$\displaystyle n!\approx \sqrt{2\pi n}\,n^ne^{-n}\qquad \text{or more commonly as}\qquad \ln(n!)\approx n\ln(n)-n$$
 # 
 # producing  $m\approx 1\cdot 10^{29}$. This means that the balls must be shaken on average of $10^{29}$ times before a particular arrangement of the balls is found. At one per second this would take $\approx 10^{21}$ years, compared to the age of the universe $1.38\cdot 10^{10}$ years; this is a long, long time even for a small number of particles. The chance of recovering the initial arrangement of layers of white and red balls is effectively zero. 
 # 
-# Evaluating $m$ when there are an equal number of balls or molecules produces 
+# Evaluating $m$ via the accurate Sterling approximation (above left) and when there are an equal number of balls or molecules produces 
 # 
-# $$\displaystyle m=\frac{n_0!}{(n_0/2)!)^2}\approx 2^{n_0}\sqrt{\frac{2}{n_0\pi}}=\sqrt{\frac{2}{\pi}}2^{n_0-\ln(n_0)/2\ln(2)}$$
+# $$\displaystyle m=\frac{n_0!}{((n_0/2)!)^2}\approx 2^{n_0}\sqrt{\frac{2}{n_0\pi}}=\sqrt{\frac{2}{\pi}}2^{n_0-\ln(n_0)/2\ln(2)}$$
 # 
 # for $n_0$ in total. Thus for half a mole each of He and Ne, $n_0=6\cdot 10^{23}$ so that the number of configurations is so vast it is impossible to comprehend; $m=2^{6\cdot 10^{23}}$. This vast number is why it has never been observed, and never will be, that the atoms or molecules of a gas are found in just one part of a bottle, i.e. a vacuum will never spontaneously form in a room. However, if the number of atoms is small, say 10, it may be possible to observe behaviour never seen with larger numbers. Such 'single molecule' experiments are now quite common. As will be calculate later, the chance that the gas will fill only $99%$ of any volume and not $100$% is also vanishingly small.
 # 
+# The probability of observing _exactly_ $50$% is $\displaystyle p = \frac{m}{2^{n_0}} \sim \frac{1}{\sqrt{ n_0}}$ which tends to zero as $n_0\to \infty$ which is not what we would expect. However, 'exactly' is a very restrictive condition and if the distribution of probabilities with different ratios is calculated, as is done next, we find that the $50$% probability is always greater than any other and that the probability is sharply peaked at $50$% chance.
+
 # So far we have considered just a $50:50$ ratio but of course we need not have chosen equal numbers of red and white balls, the argument is quite general and in doing that we arrive at the general binomial coefficient rather than just a specific term. As other possibilities arise, say $49$ white $51$ red producing $\displaystyle 100!/(49!51!)$ and so on the number of configurations increases and the total for all cases is $\displaystyle \sum_{k=0}^n\frac{n!}{k!(n-k)!}=2^n$ which is proved in relation to the Pascal triangle above. When $n=100,\; m=2^n= 1.26\cdot 10^{30}$ roughly 12 times larger than $100!/(50!)^2$. 
 # 
-# The probability of obtaining a ratio with a number $k$ of type of ball (or molecule) out of a total on $n$ is 
+# The probability of obtaining a ratio with a number $k$ of one type of ball (or molecule) out of a total of $n$ is 
 # 
-# $$\displaystyle p=\frac{n!}{k!(n-k)!}\frac{1}{2^n} \tag{25c}$$ 
+# $$\displaystyle p=\frac{n!}{k!(n-k)!}\frac{1}{2^n} \qquad \tag{25c}$$ 
 # 
 # This distribution is a maximum when $k=n/2$. This can be seen with a straightforward argument. The factorial terms are symmetric, $k!(n-k)!=(n-k)!k!$ and always positive.  When $k=0$ or $k=n$ the probability is very small tending to zero; i.e $1/2^n$ is small so there must be a maximum somewhere in the range $0\to n$. The symmetric nature ensures that this will be at $k = n/2$. This can also be determined by differentiation. It is not possible to differentiate a factorial, as $n$ is discrete, but replacing $n!$ with the Sterling approximation $(n!=n^ne^n)$ and setting the derivative in $n$ to zero allows the maximum to be found. 
 # 
@@ -518,11 +520,11 @@ prob
 # 
 # meaning that 
 # 
-# $$\displaystyle \frac{m_2}{m_1}=\left(\frac{V_2}{V_1}\right)^n \tag{25d}$$
+# $$\displaystyle \frac{m_2}{m_1}=\left(\frac{V_2}{V_1}\right)^n\qquad \tag{25d}$$
 # 
 # To connect this with the entropy, this is derived from classical thermodynamics. The change in entropy $S_2-S_1$ upon expanding an ideal gas irreversibly from volume $V_1\to V_2$with no addition of heat and without doing work is calculated using 
 # 
-# $$\displaystyle S_2-S_1=\int_{V_1}^{V_2}\frac{dQ_{rev}}{T}\tag{25e}$$
+# $$\displaystyle S_2-S_1=\int_{V_1}^{V_2}\frac{dQ_{rev}}{T}\qquad\tag{25e}$$
 # 
 # Entropy is always calculated using $\int Q_{rev}$ so a reversible pathway is needed. As no heat or work is exchanged with the surroundings the change in internal energy is zero (for a perfect gas), $\Delta U=0$ and the temperature $T$ is unchanged. To find a reversible path suppose that the gas is in a cylinder with a movable piston connected to a heat reservoir at constant temperature $T$ and this arrangement allows the volume to change  from $T_1V_1\to T_2V_2$. As the piston moves reversibly the pressure is always constant. Using the first law with $\Delta U=0$ and  $dW_{rev}=-pdV$ gives 
 # 
@@ -538,7 +540,7 @@ prob
 # 
 # The ratio $R/n$ has a special meaning when $n$ is the Avogadro number when it becomes the Boltzmann constant $k_B$. It is normal to choose some reference state for the entropy, just as we choose (mean) sea level as the zero of height on a map, thus the entropy is defined as
 # 
-# $$\displaystyle S=k_B\ln(m)\tag{25f}$$
+# $$\displaystyle S=k_B\ln(m)\qquad\tag{25f}$$
 # 
 # which is the form of equation first derived by Boltzmann. The most natural state to choose as the zero of entropy is a pure substance (e.g. a perfect crystal) at 0 K, where the substance is in perfect arrangement so that $m = 1$ and $S_0=0$. Glasses and solid solutions will not have zero entropy at 0 K neither do some molecules such as CO because of orientational variation.
 # 
@@ -560,7 +562,7 @@ prob
 # 
 # The Poisson distribution applies when the number of events $k$ that are measured is very large, but the chance $p$ of any one event occurring is very small. The product $\mu = kp$ is the mean or average number of events and is of moderate value. The distribution can be derived from first principles, see Hines & Montgomery (1990, 6.8) for this proof, or it can be obtained from the binomial distribution when $k$ is large and $p$ small. The Poisson distribution is
 # 
-# $$\displaystyle P(k,\mu)=\frac{\mu^ke^{-\mu}}{k!} \tag{25g}$$
+# $$\displaystyle P(k,\mu)=\frac{\mu^ke^{-\mu}}{k!} \qquad\tag{25g}$$
 # 
 # also is also called the Poisson frequency distribution or 'density' function. The integer number of events is $k$ and the mean value is $\mu$, which is not an integer. The shape of the distribution is shown below and also in Chapter 13, figure 13, for different mean values $\mu$.
 # 
@@ -625,7 +627,7 @@ prob
 # 
 # The binomial distribution is concerned with selecting between two classes: success and failure; but the choices need not be restricted to two classes. We have already calculated the chance of observing groups of objects or events, such as the chance of 3 GLY, 3 ILE, etc. in the protein sequence in Section 9.2. When there are several choices the multinomial distribution is required and is
 # 
-# $$\displaystyle P_{mG}=\frac{n!}{\prod_{i=1}^r m_i!}\prod_{i=1}^rp_i^{m_i} \tag{26}$$
+# $$\displaystyle P_{mG}=\frac{n!}{\prod_{i=1}^r m_i!}\prod_{i=1}^rp_i^{m_i} \qquad\tag{26}$$
 # 
 # where $p_i$ is the probability of choosing any object from the $n$ boxes and $m_i$ are the numbers in each of $r$ groups. 
 # 

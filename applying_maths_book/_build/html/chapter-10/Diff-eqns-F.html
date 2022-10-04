@@ -770,7 +770,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-7/matrices-L.html">
-     Principal axes for Moments of Inertia
+     Principal axes of Moments of Inertia
     </a>
    </li>
    <li class="toctree-l2">
@@ -1761,7 +1761,7 @@ title="Print to PDF"
 <h3><strong>(i) Particle in a two-dimensional box</strong><a class="headerlink" href="#i-particle-in-a-two-dimensional-box" title="Permalink to this headline">#</a></h3>
 <p>The energy and wavefunctions of a particle in a two-dimensional box with sides of length <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> are calculated from the Schroedinger equation</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle -\frac{\hbar^2}{2m}\left(\frac{\partial^2 \varphi }{\partial x^2 }  +\frac{\partial ^2\varphi}{\partial y^2} \right) =E\varphi \tag{41} \]</div>
+\[\displaystyle -\frac{\hbar^2}{2m}\left(\frac{\partial^2 \varphi }{\partial x^2 }  +\frac{\partial ^2\varphi}{\partial y^2} \right) =E\varphi \qquad\tag{41} \]</div>
 <p>which is a partial differential equation in <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span>. The separation of variables assumes that the wavefunction <span class="math notranslate nohighlight">\(\varphi\)</span> which is a function of <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span>, is also the product of two wavefunctions, one in <span class="math notranslate nohighlight">\(x\)</span> and the other in <span class="math notranslate nohighlight">\(y\)</span>, thus</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \varphi(x,y) = \psi(x)\psi(y) \equiv \psi_x\psi_y\]</div>
@@ -1769,13 +1769,13 @@ title="Print to PDF"
 <p>and rearranging <span class="math notranslate nohighlight">\(\displaystyle -\frac{\hbar^2}{2m}\left(\frac{1}{\psi_x}\frac{\partial^2 \psi_x }{\partial x^2 }  +\frac{1}{\psi_y}\frac{\partial ^2\psi_y}{\partial y^2} \right) =E\)</span></p>
 <p>The next step is essential to the method of separating variables and this is that each of the terms on the left of the equation must be equal to a constant. This is true because the two terms are variables of either <span class="math notranslate nohighlight">\(x\)</span> or <span class="math notranslate nohighlight">\(y\)</span>. If <span class="math notranslate nohighlight">\(x\)</span> is varied, only the first term of the equation changes, the other is a constant as is the energy <span class="math notranslate nohighlight">\(E\)</span>. However, for the whole equation to be satisfied, the derivative in <span class="math notranslate nohighlight">\(x\)</span> must be equal to a constant, and this is labelled as <span class="math notranslate nohighlight">\(E_x\)</span>, and is called a separation constant;</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle \displaystyle -\frac{\hbar^2}{2m}\frac{1}{\psi_x}\frac{\partial^2 \psi_x }{\partial x^2 }=E_x  \tag{42}\]</div>
+\[\displaystyle \displaystyle -\frac{\hbar^2}{2m}\frac{1}{\psi_x}\frac{\partial^2 \psi_x }{\partial x^2 }=E_x  \qquad\tag{42}\]</div>
 <p>Similarly for changes in <span class="math notranslate nohighlight">\(y\)</span>, with <span class="math notranslate nohighlight">\(x\)</span> constant,</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle \displaystyle -\frac{\hbar^2}{2m}\frac{1}{\psi_y}\frac{\partial^2 \psi_y }{\partial y^2 }=E_y  \tag{43}\]</div>
+\[\displaystyle \displaystyle -\frac{\hbar^2}{2m}\frac{1}{\psi_y}\frac{\partial^2 \psi_y }{\partial y^2 }=E_y  \qquad\tag{43}\]</div>
 <p>and then</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle  E_x + E_y = E  \tag{44}\]</div>
+\[\displaystyle  E_x + E_y = E  \qquad\tag{44}\]</div>
 <p>The two equations in <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> can now be solved in the usual way. For example <span class="math notranslate nohighlight">\(\displaystyle \frac{\partial^2 \psi_x}{\partial x^2}+k^2\psi_x=0\)</span> with <span class="math notranslate nohighlight">\(\displaystyle k^2 = 2mE/\hbar^2\)</span> which produces the solutions to the problem of a particle in a one-dimensional box, see 3.8. Combining the equations gives for a box of dimensions <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span>,</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \varphi =\sqrt{\frac{4}{ab}}\sin\left( \frac{n_x\pi x}{a}\right)\sin\left(\frac{n_y\pi x}{b} \right)\]</div>
@@ -1790,20 +1790,20 @@ title="Print to PDF"
 <p>There are two boundary conditions. One ensures that the angular solutions repeat themselves around the circumference and the gradients match at the same point, just as for a particle on a ring. The other ensures that the radial part of the wavefunction is zero at the edge of the disc, just as is the case for a particle in a box at its edges.
 The wave equation starts out as (41) but for a disc has to be written in plane polar coordinates to be solvable and is</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle -\frac{\hbar^2}{2m}\left( \frac{\partial^2}{\partial r^2}+ \frac{1}{r}\frac{\partial^2}{\partial r^2}+\frac{1}{r^2}\frac{\partial^2}{\partial \theta^2} \right)\psi+V(r)\psi=E\psi  \tag{45} \]</div>
+\[\displaystyle -\frac{\hbar^2}{2m}\left( \frac{\partial^2}{\partial r^2}+ \frac{1}{r}\frac{\partial^2}{\partial r^2}+\frac{1}{r^2}\frac{\partial^2}{\partial \theta^2} \right)\psi+V(r)\psi=E\psi  \qquad\tag{45} \]</div>
 <p>and the potential energy <span class="math notranslate nohighlight">\(V\)</span> is zero and <span class="math notranslate nohighlight">\(\psi \)</span> is a function of <span class="math notranslate nohighlight">\(r\)</span> and <span class="math notranslate nohighlight">\(\theta\)</span>. The disc has a radius of <span class="math notranslate nohighlight">\(a\)</span>. (See Section 5.9 for the conversion equations to polar coordinates.) With the abbreviation <span class="math notranslate nohighlight">\(k^2 = 2mE/\hbar^2\)</span> (units of <span class="math notranslate nohighlight">\(k\)</span> are m<span class="math notranslate nohighlight">\(^{-1}\)</span>) the equation can be rewritten as</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle \left( \frac{\partial^2}{\partial r^2}+ \frac{1}{r}\frac{\partial^2}{\partial r^2}+\frac{1}{r^2}\frac{\partial^2}{\partial \theta^2} \right)\psi+k^2\psi = 0  \tag{46}\]</div>
+\[\displaystyle \left( \frac{\partial^2}{\partial r^2}+ \frac{1}{r}\frac{\partial^2}{\partial r^2}+\frac{1}{r^2}\frac{\partial^2}{\partial \theta^2} \right)\psi+k^2\psi = 0  \qquad\tag{46}\]</div>
 <p>Separating variables into <span class="math notranslate nohighlight">\(r\)</span> and <span class="math notranslate nohighlight">\(\theta\)</span> <em>assumes</em> that the solution has the form <span class="math notranslate nohighlight">\(\psi = R(r)\varphi(\theta)\)</span>. Substituting for <span class="math notranslate nohighlight">\(\psi\)</span>, then dividing by <span class="math notranslate nohighlight">\(R\varphi\)</span> and multiplying by <span class="math notranslate nohighlight">\(r^2\)</span> gives</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle  \frac{r^2}{R}\frac{\partial^2}{\partial R^2}+ \frac{r}{R}\frac{\partial^2R}{\partial r^2}+\frac{1}{\varphi}\frac{\partial^2\varphi}{\partial \theta^2} +r^2\psi=0  \tag{46}\]</div>
+\[\displaystyle  \frac{r^2}{R}\frac{\partial^2}{\partial R^2}+ \frac{r}{R}\frac{\partial^2R}{\partial r^2}+\frac{1}{\varphi}\frac{\partial^2\varphi}{\partial \theta^2} +r^2\psi=0  \qquad\tag{46}\]</div>
 <p>and each term must be equal to a constant and is therefore independent of <span class="math notranslate nohighlight">\(r\)</span> and <span class="math notranslate nohighlight">\(\theta\)</span>. The right-hand side of this equation is zero hence if we choose the separation constant to be <span class="math notranslate nohighlight">\(n^2\)</span> this is <span class="math notranslate nohighlight">\(-n^2\)</span> for one equation and <span class="math notranslate nohighlight">\(+n^2\)</span> for the other.</p>
 </section>
 <section id="angular-solution">
 <h3><strong>Angular solution</strong><a class="headerlink" href="#angular-solution" title="Permalink to this headline">#</a></h3>
 <p>The <span class="math notranslate nohighlight">\(\theta\)</span> equation is <span class="math notranslate nohighlight">\(\displaystyle \frac{1}{\varphi}\frac{\partial^2\varphi}{\partial \theta^2}=const\)</span> and using the separation constant <span class="math notranslate nohighlight">\(-n^2\)</span> this can be written as</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle  \frac{\partial^2\varphi}{\partial \theta^2}+n^2\varphi = 0  \tag{47}\]</div>
+\[\displaystyle  \frac{\partial^2\varphi}{\partial \theta^2}+n^2\varphi = 0  \qquad\tag{47}\]</div>
 <p>and its solution is given by equation (27) and is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \varphi=\frac{1}{\sqrt{2\pi}}e^{\large{in\theta}}\]</div>
@@ -1813,7 +1813,7 @@ The wave equation starts out as (41) but for a disc has to be written in plane p
 <p>The angular boundary conditions make the wavefunction <span class="math notranslate nohighlight">\(\varphi\)</span> repeat itself after each <span class="math notranslate nohighlight">\(2\pi \)</span>n radians where <span class="math notranslate nohighlight">\(n\)</span> has values <span class="math notranslate nohighlight">\(n = 0,  \pm 1, \pm 2, \cdots\)</span>.</p>
 <p>The radial equation</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle  \frac{r^2}{R}\frac{\partial^2}{\partial R^2}+ \frac{r}{R}\frac{\partial^2R}{\partial r^2} +r^2k^2=n^2  \tag{48}\]</div>
+\[\displaystyle  \frac{r^2}{R}\frac{\partial^2}{\partial R^2}+ \frac{r}{R}\frac{\partial^2R}{\partial r^2} +r^2k^2=n^2  \qquad\tag{48}\]</div>
 <p>is more difficult to solve but, with the substitution <span class="math notranslate nohighlight">\(x = kr\)</span>, has the form of Bessel’s equation,</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle  x^2\frac{d^2R}{dx^2}+x\frac{dR}{dx}+(x^2-n^2)R=0\]</div>
@@ -1879,7 +1879,7 @@ y=0,\; V=0,&amp; y=L,\; V=0\\
 x=0,\; V=f(y),&amp; x=\infty,\; V=0 \end{array}\end{split}\]</div>
 <p>The value <span class="math notranslate nohighlight">\(f(y)\)</span> is any normal function that specifies how <span class="math notranslate nohighlight">\(V\)</span> varies with position <span class="math notranslate nohighlight">\(y\)</span>. The four solutions are written without the integration constants because these are realized when the boundary conditions are applied and are</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle V=e^{+kx}\sin(ky)=e^{-kx}\sin(ky)=e^{+kx}\cos(ky)=e^{-kx}\cos(ky)  \tag{49}\]</div>
+\[\displaystyle V=e^{+kx}\sin(ky)=e^{-kx}\sin(ky)=e^{+kx}\cos(ky)=e^{-kx}\cos(ky)  \qquad\tag{49}\]</div>
 <p>When <span class="math notranslate nohighlight">\(x = \infty\)</span>, the solution cannot contain <span class="math notranslate nohighlight">\(\displaystyle e^{+kx}\)</span> because the temperature is zero not infinity, so <span class="math notranslate nohighlight">\(\displaystyle e^{+kx} \sin(ky)\)</span> and <span class="math notranslate nohighlight">\(\displaystyle e^{+kx} \cos(ky)\)</span> are not solutions. At <span class="math notranslate nohighlight">\(y = 0\)</span>, the temperature is zero and so the solution cannot be <span class="math notranslate nohighlight">\(\displaystyle e^{-kx}\cos(ky)\)</span> because <span class="math notranslate nohighlight">\(\cos(0)\)</span> is not zero. This leaves the solution as</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle V = e^{-kx}\sin(ky)\]</div>
@@ -1889,13 +1889,13 @@ be for all <span class="math notranslate nohighlight">\(k = n\pi/L\)</span> if <
 \[\displaystyle V=e^{-n\pi x/L}\sin(n\pi y/L)\]</div>
 <p>However, this does not satisfy the condition that at <span class="math notranslate nohighlight">\(x\)</span> = 0 the temperature is some arbitrary but normal function <span class="math notranslate nohighlight">\(f(y)\)</span> which could be some constant value, say <span class="math notranslate nohighlight">\(T\)</span>. To obtain a solution, a sum of all possible solutions is tried and this produces</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle V=\sum_{n=1}^{\infty} b_ne^{-n\pi x/L}\sin(n\pi y/L)  \tag{50}\]</div>
+\[\displaystyle V=\sum_{n=1}^{\infty} b_ne^{-n\pi x/L}\sin(n\pi y/L)  \qquad\tag{50}\]</div>
 <p>as a <em>formal solution</em> where <span class="math notranslate nohighlight">\(b_n\)</span> are the amounts of each term to be included in the sum. When <span class="math notranslate nohighlight">\(x\)</span> = 0 the temperature is <span class="math notranslate nohighlight">\(f(y)\)</span>, thus,</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle f(y)=\sum_{n=1}^{\infty} b_n\sin(n\pi y/L)\]</div>
 <p>This relationship is a Fourier series of sines, therefore, we can find the coefficients <span class="math notranslate nohighlight">\(b_n\)</span> as if they are Fourier coefficients (see Chapter 9.1.7) using</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle b_n=\frac{2}{L}\int_0^L f(y)\sin\left(\frac{n\pi y}{L} \right)dy  \tag{51}\]</div>
+\[\displaystyle b_n=\frac{2}{L}\int_0^L f(y)\sin\left(\frac{n\pi y}{L} \right)dy  \qquad\tag{51}\]</div>
 <p>If, for example, the temperature function <span class="math notranslate nohighlight">\(f(y) = T\)</span> and <span class="math notranslate nohighlight">\(L = \pi\)</span>, then the coefficients are <span class="math notranslate nohighlight">\(\displaystyle b_n=\frac{}{}\int_0^\pi \sin(n y)dy\)</span> , which evaluate to <span class="math notranslate nohighlight">\(\displaystyle \frac{4T}{\pi},\; \frac{4T}{3\pi},\;\frac{4T}{5\pi},\cdots\)</span> and the temperature profile is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle V=\frac{4T}{\pi}\left(e^{-x}\sin(y)+ e^{-3x}\frac{\sin(3y)}{3}+e^{-5x}\frac{\sin(5y)}{5}+\cdots  \right) \]</div>
@@ -1938,13 +1938,13 @@ be for all <span class="math notranslate nohighlight">\(k = n\pi/L\)</span> if <
 \[\displaystyle \frac{1}{Dc_t}\frac{\partial c_t}{\partial t}=\frac{1}{c_x}\frac{\partial ^2c_x}{\partial x^2} \]</div>
 <p>As each term must be constant, for example <span class="math notranslate nohighlight">\(-k^2\)</span>, two equations are produced</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle \frac{\partial c_t}{\partial t}=-Dk^2c_t, \qquad \text{and} \qquad \frac{\partial^2 c_x}{\partial x^2}=-k^2c_x \tag{52}\]</div>
+\[\displaystyle \frac{\partial c_t}{\partial t}=-Dk^2c_t, \qquad \text{and} \qquad \frac{\partial^2 c_x}{\partial x^2}=-k^2c_x \qquad\tag{52}\]</div>
 <p>The time dependence has the solution <span class="math notranslate nohighlight">\(\displaystyle c = e^{-Dk^2t}\)</span> and the spatial dependence is <span class="math notranslate nohighlight">\(\displaystyle c_x = \sin(kx)\)</span> and <span class="math notranslate nohighlight">\(c_x = \cos(kx)\)</span>; by hypothesis the solutions are either</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle c=e^{-Dk^2t}\sin(kx), \qquad \text{or} \qquad c=e^{-Dk^2t}\cos(kx) \tag{53}\]</div>
+\[\displaystyle c=e^{-Dk^2t}\sin(kx), \qquad \text{or} \qquad c=e^{-Dk^2t}\cos(kx) \qquad\tag{53}\]</div>
 <p>or the sum of both terms</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle c=e^{-Dk^2t}[A\sin(kx)+B\cos(kx)] \tag{54}\]</div>
+\[\displaystyle c=e^{-Dk^2t}[A\sin(kx)+B\cos(kx)] \qquad\tag{54}\]</div>
 <p>with <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> as arbitrary constants that are found from the initial and boundary conditions. The constant is chosen to be <span class="math notranslate nohighlight">\(-k^2\)</span>, and is negative because the concentration might fall, but could not increase to infinity, which it would do if <span class="math notranslate nohighlight">\(+k^2\)</span> were used. The constant is squared only to simplify the resulting equations.</p>
 <p>The actual solution is determined by the initial and boundary conditions for the problem at hand. Consider, for example, the diffusion from a thin layer at the top of a slab and then into it. The slab has a  thickness <span class="math notranslate nohighlight">\(L\)</span> with the external faces being kept at a concentration of zero for <span class="math notranslate nohighlight">\(t \gt 0\)</span>. Initially the concentration in the layer at the top of the slab is some normal function of <span class="math notranslate nohighlight">\(x\)</span> such as <span class="math notranslate nohighlight">\(f(x)\)</span> but which would normally be constant. The boundary conditions are:</p>
 <div class="math notranslate nohighlight">
@@ -1953,11 +1953,11 @@ t=0,\; c=f(x)  &amp; \text{and} &amp; 0 \lt x \lt L \\
 t \gt 0, c=0\; \text{at}\; x=0 &amp; \text{and} &amp; c=0 \; \text{at} \; x=L \end{array}\end{split}\]</div>
 <p>Considering the boundary conditions, as for the previous example, the solution is based on <span class="math notranslate nohighlight">\(\displaystyle c = e^{−Dk^2t}\sin(kx)\)</span> with <span class="math notranslate nohighlight">\(k = n\pi /L\)</span>, and the general form of the solution is based on equation (50) and is</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle c=\sum_{n=1}^\infty b_ne^{\large{-Dn^2\pi^2t/L^2}}\sin\left( \frac{n\pi x}{L} \right), \qquad b_n=\frac{2}{L}\int_0^L f(x)\sin\left( \frac{n\pi x}{L} \right)dx \tag{55}\]</div>
+\[\displaystyle c=\sum_{n=1}^\infty b_ne^{\large{-Dn^2\pi^2t/L^2}}\sin\left( \frac{n\pi x}{L} \right), \qquad b_n=\frac{2}{L}\int_0^L f(x)\sin\left( \frac{n\pi x}{L} \right)dx \qquad\tag{55}\]</div>
 <p>If the initial concentration in the slab is a constant, then <span class="math notranslate nohighlight">\(f(x) = c_0\)</span> and the integral in <span class="math notranslate nohighlight">\(b\)</span> becomes <span class="math notranslate nohighlight">\(\displaystyle b_n=\frac{2c_0}{L}\int_0^L \sin\left( \frac{n\pi x}{L} \right)dx=\frac{2c_0}{n\pi}(1-(-1)^n)\)</span>
 which means that when <span class="math notranslate nohighlight">\(n\)</span> is even, <span class="math notranslate nohighlight">\(b_n\)</span> = 0. The concentration profile is</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle c=\frac{2c_0}{\pi}\sum_{n=1}^\infty \frac{(1-(-1)^n)}{n}e^{\large{-Dn^2\pi^2 t/L^2}}\sin\left(\frac{n\pi x}{L}  \right) \tag{56}\]</div>
+\[\displaystyle c=\frac{2c_0}{\pi}\sum_{n=1}^\infty \frac{(1-(-1)^n)}{n}e^{\large{-Dn^2\pi^2 t/L^2}}\sin\left(\frac{n\pi x}{L}  \right) \qquad\tag{56}\]</div>
 <p>A calculation is shown in fig 24 where molecules are all initially at the top of the slab and subsequently diffuse out. The concentration at the edges of the slab is kept at zero which might be done by washing the molecules away. The initial concentration is arbitrarily set at <span class="math notranslate nohighlight">\(10\)</span>.</p>
 <p><img alt="Drawing" src="../_images/diffeqn-fig24.png" /></p>
 <p>Fig. 24 Concentration profiles vs. position at different times inside the slab. Molecules are diffusing out from the top and the edges of the slab are kept at zero concentration, for example, by washing material away. The diffusion coefficient used is similar to that of lysozyme <span class="math notranslate nohighlight">\(11\cdot 10^{-11}\,\mathrm{m^2\, s^{-1}}\)</span>, the initial concentration <span class="math notranslate nohighlight">\(10\)</span> mM. The width of the slab is <span class="math notranslate nohighlight">\(10\)</span> nm. The times are given next to the lines and are in nanoseconds. The oscillating grey line at the top of the figure is set at <span class="math notranslate nohighlight">\(0.01\)</span> ns and shows that close to zero time the sine functions almost but not exactly cancel out one another even with <span class="math notranslate nohighlight">\(100\)</span> terms in the summation.  The plot also shows how slow diffusion is as it takes <span class="math notranslate nohighlight">\(\approx 600\)</span> ns for the molecules to be removed and the concentration to approach zero.</p>
@@ -1967,11 +1967,11 @@ which means that when <span class="math notranslate nohighlight">\(n\)</span> is
 <h3><strong>(v) Diffusion and chemical reactions</strong><a class="headerlink" href="#v-diffusion-and-chemical-reactions" title="Permalink to this headline">#</a></h3>
 <p>When diffusion and reaction compete it is possible that explosive growth of a product occurs. Starting with Fick’s First Law a term is added to allow for first order reaction to form product and is</p>
 <div class="math notranslate nohighlight">
-\[\frac{\partial c}{\partial t}=D\frac{\partial ^2c}{\partial x^2} +kc \tag{56a}\]</div>
+\[\frac{\partial c}{\partial t}=D\frac{\partial ^2c}{\partial x^2} +kc \qquad\tag{56a}\]</div>
 <p>where <span class="math notranslate nohighlight">\(k\)</span> is the first order rate constant for production of species <span class="math notranslate nohighlight">\(c\)</span> which is a function of position <span class="math notranslate nohighlight">\(x\)</span> and time <span class="math notranslate nohighlight">\(t\)</span>, i.e. <span class="math notranslate nohighlight">\(c(x,t)\)</span>. We will assume that the calculation takes place along a length <span class="math notranslate nohighlight">\( 0\le x \le L\)</span> and that the length is so long that the concentration of product <span class="math notranslate nohighlight">\(c\)</span> is zero at either end at all times, <span class="math notranslate nohighlight">\(c(0,t)=c{L,t}=0\)</span>.</p>
 <p>This differential equation look awkward to solve but if a new variable is defined as</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle y(x,t)=c(x,t)e^{-kt}\tag{57b}\]</div>
+\[\displaystyle y(x,t)=c(x,t)e^{-kt}\qquad\tag{57b}\]</div>
 <p>and this differentiated and substituted into the starting equation a familiar equation is produced.</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \frac{\partial y}{\partial t}=\frac{\partial c}{\partial t}e^{-kt}-cke^{-kt}, \qquad  \frac{\partial^2 y}{\partial t^2}=\frac{\partial^2 c}{\partial t^2}e^{-kt}\]</div>
@@ -1980,7 +1980,7 @@ which means that when <span class="math notranslate nohighlight">\(n\)</span> is
 \[\displaystyle \frac{\partial y}{\partial t}=D\frac{\partial^2 y}{\partial t^2}\]</div>
 <p>which is just the diffusion equation but in variable <span class="math notranslate nohighlight">\(y\)</span> instead of <span class="math notranslate nohighlight">\(c\)</span>. The answer can be written down as it is the same as eqn 55 and after substituting for <span class="math notranslate nohighlight">\(c\)</span> gives</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle c=\sum_{n=1}^\infty b_ne^{kt}e^{\large{-Dn^2\pi^2t/L^2}}\sin\left( \frac{n\pi x}{L} \right), \qquad b_n=\frac{2}{L}\int_0^L f(x)\sin\left( \frac{n\pi x}{L} \right)dx \tag{55'}\]</div>
+\[\displaystyle c=\sum_{n=1}^\infty b_ne^{kt}e^{\large{-Dn^2\pi^2t/L^2}}\sin\left( \frac{n\pi x}{L} \right), \qquad b_n=\frac{2}{L}\int_0^L f(x)\sin\left( \frac{n\pi x}{L} \right)dx \qquad\tag{55'}\]</div>
 <p>where <span class="math notranslate nohighlight">\(f(x)\)</span> is the concentration profile in the tube at <span class="math notranslate nohighlight">\(t=0\)</span>. Notice that this is exactly the same as equation 55, i.e when no reaction occurs, but now multiplied by <span class="math notranslate nohighlight">\(\displaystyle e^{kt}\)</span> to allow for reaction.</p>
 <p>As an example suppose that an initial amount is placed as a very small drop in the centre of the long tube, i.e mathematically we will allow this to be a Kronecker delta function, i.e. <span class="math notranslate nohighlight">\(f(x)=\delta(x-L/2)\)</span> and follow what happens in time. The integrals <span class="math notranslate nohighlight">\(b\)</span> are</p>
 <div class="math notranslate nohighlight">
@@ -2023,7 +2023,7 @@ which means that when <span class="math notranslate nohighlight">\(n\)</span> is
 \[\frac{\partial c}{\partial t}=-\frac{\partial J}{\partial x}\]</div>
 <p>Rather than use the flux it is easier to split this into <span class="math notranslate nohighlight">\(J \equiv vc\)</span> and so</p>
 <div class="math notranslate nohighlight">
-\[\frac{\partial c}{\partial t}=-v\frac{\partial c}{\partial x}  \tag{ 56a}\]</div>
+\[\frac{\partial c}{\partial t}=-v\frac{\partial c}{\partial x}  \qquad\tag{ 56a}\]</div>
 <p>where <span class="math notranslate nohighlight">\(v = flow/area \)</span> is the velocity of the flow. As chemical reaction can also occur this rate equation is modified to</p>
 <div class="math notranslate nohighlight">
 \[\frac{\partial c}{\partial t}=-v\frac{\partial c}{\partial x}-kc\]</div>

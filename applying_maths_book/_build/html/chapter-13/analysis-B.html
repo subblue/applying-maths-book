@@ -770,7 +770,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-7/matrices-L.html">
-     Principal axes for Moments of Inertia
+     Principal axes of Moments of Inertia
     </a>
    </li>
    <li class="toctree-l2">
@@ -1625,7 +1625,7 @@ title="Print to PDF"
 <p>where <span class="math notranslate nohighlight">\(\epsilon\)</span> is a random error with a mean of zero and standard deviation of <span class="math notranslate nohighlight">\(\sigma\)</span>. The least squares method produces the best constants <span class="math notranslate nohighlight">\(a_0\)</span> and <span class="math notranslate nohighlight">\(b_0\)</span> that describe the data, in the sense that the <span class="math notranslate nohighlight">\(Y\)</span> values calculated are the most probable values of the observations. This is based on the assumption that the data are Gaussian (normally) distributed as is expected to be the case from the central limit theorem.</p>
 <p>What the least squares method does is to minimize the square of the displacement between the values calculated from a ‘model’ function and the experimental data points <span class="math notranslate nohighlight">\(y\)</span>. Figure 7 shows the displacement for one point and a Gaussian distribution from which that point could have been produced. The statistic used to assess the goodness of fit is called ‘chi squared’ <span class="math notranslate nohighlight">\(\chi^2\)</span> and is defined as</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle \chi^2=\sum_{i=1}^nw_i(y_i-Y_i)^2\tag{25}\]</div>
+\[\displaystyle \chi^2=\sum_{i=1}^nw_i(y_i-Y_i)^2\qquad\tag{25}\]</div>
 <p>where <span class="math notranslate nohighlight">\(y\)</span> is the experimental data, <span class="math notranslate nohighlight">\(Y\)</span> the model set of estimated data, and <span class="math notranslate nohighlight">\(w\)</span> the weighting. The ideal weighting is <span class="math notranslate nohighlight">\(w_i = 1/\sigma_i^2\)</span> . The <span class="math notranslate nohighlight">\(\chi^2\)</span> forms a distribution and the chance that a certain value can be obtained is calculated in a similar way as for the normal or <span class="math notranslate nohighlight">\(t\)</span> distributions, see Section 5.4.</p>
 <p>On the basis that the deviation of each experimental data point from its true mean value is normally distributed, the probability of observing the <span class="math notranslate nohighlight">\(y_i\)</span> data points is the product of individual normal distributions, which can be written as</p>
 <div class="math notranslate nohighlight">
@@ -1633,12 +1633,12 @@ title="Print to PDF"
 <p>(<span class="math notranslate nohighlight">\(h=1/\sqrt{2\sigma^2}\)</span>) The most likely values are obtained when this probability is at its maximum, and this is found when <span class="math notranslate nohighlight">\(\sum_{i=1}^nw_i(y_i-Y_i)^2\)</span> has a minimum. This is the same as minimizing the <span class="math notranslate nohighlight">\(\chi^2\)</span> therefore this is used as a measure of the ‘goodness of fit’ of the model function to the data. The minimum <span class="math notranslate nohighlight">\(\chi^2\)</span> is found by differentiating this with respect to each of the parameters in the model function. This approach is quite general and is called a Maximum Likelihood method.</p>
 <p>To fit the straight-line model <span class="math notranslate nohighlight">\(Y = a_0 + b_0\)</span>x to experimental data <span class="math notranslate nohighlight">\(y_i\)</span>, the values a and b obtained will be the best estimates of <span class="math notranslate nohighlight">\(a_0\)</span> and <span class="math notranslate nohighlight">\(b_0\)</span> and therefore these are replaced with <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> in the equations. To find the minima, the derivatives <span class="math notranslate nohighlight">\(\partial \chi^2/\partial a\)</span> and <span class="math notranslate nohighlight">\(\partial \chi^2/\partial b\)</span> are calculated,</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle \frac{\partial }{\partial a} \sum_{i=1}^n (y_i-a-bx_i)^2w_i=-2\sum_{i=1}^n (y_i-a-bx_i)w_i=0\tag{26}\]</div>
+\[\displaystyle \frac{\partial }{\partial a} \sum_{i=1}^n (y_i-a-bx_i)^2w_i=-2\sum_{i=1}^n (y_i-a-bx_i)w_i=0\qquad\tag{26}\]</div>
 <div class="math notranslate nohighlight">
-\[\displaystyle \frac{\partial }{\partial b} \sum_{i=1}^n (y_i-a-bx_i)^2w_i=-2\sum_{i=1}^n (y_i-a-bx_i)w_ix_i=0\tag{27}\]</div>
+\[\displaystyle \frac{\partial }{\partial b} \sum_{i=1}^n (y_i-a-bx_i)^2w_i=-2\sum_{i=1}^n (y_i-a-bx_i)w_ix_i=0\qquad\tag{27}\]</div>
 <p>which produce two equations and two unknowns; these simultaneous equations are known as the <em>normal equations</em> ;</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle a\sum_{i=1}^n w_i+b\sum_{i=1}^n x_iw_i=\sum_{i=1}^n y_iw_i, \qquad a\sum_{i=1}^n x_iw_i+b\sum_{i=1}^n x_i^2w_i=\sum_{i=1}^n y_ix_iw_i \tag{28}\]</div>
+\[\displaystyle a\sum_{i=1}^n w_i+b\sum_{i=1}^n x_iw_i=\sum_{i=1}^n y_iw_i, \qquad a\sum_{i=1}^n x_iw_i+b\sum_{i=1}^n x_i^2w_i=\sum_{i=1}^n y_ix_iw_i \qquad\tag{28}\]</div>
 <p>These simultaneous equations can be solved for <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> using the matrix method outlined in chapter 7. The determinant is</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle \Delta =\begin{vmatrix}\sum w_i  &amp; \sum w_ix_i \\\sum w_ix_i &amp; \sum w_ix_i^2 \\ \end{vmatrix}\end{split}\]</div>
@@ -1649,22 +1649,22 @@ title="Print to PDF"
 \[\begin{split}b=\frac{1}{\Delta}\begin{vmatrix}\sum w_i  &amp; \sum w_iy_i \\\sum w_ix_i &amp; \sum w_ix_iy_i \\ \end{vmatrix}\end{split}\]</div>
 <p>The best estimate of the slope <span class="math notranslate nohighlight">\(b\)</span> can be rewritten in a form more convenient for calculation as</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle b=\frac{S_{xy}}{S_{xx}}\tag{29}\]</div>
+\[\displaystyle b=\frac{S_{xy}}{S_{xx}}\qquad\tag{29}\]</div>
 <p>where</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle S_{xy}=\sum_{i=1}^n x_iy_iw_i-\frac{\sum_{i=1}^n x_iw_i\sum_{i=1}^n y_iw_i}{\sum_{i=1}^n w_i}\qquad S_{xx}=\sum_{i=1}^n x_iw_i -\frac{\left(\sum_{i=1}^nx_iw_i\right)^2}{\sum_{i=1}^n w_i}\tag{30}\]</div>
+\[\displaystyle S_{xy}=\sum_{i=1}^n x_iy_iw_i-\frac{\sum_{i=1}^n x_iw_i\sum_{i=1}^n y_iw_i}{\sum_{i=1}^n w_i}\qquad S_{xx}=\sum_{i=1}^n x_iw_i -\frac{\left(\sum_{i=1}^nx_iw_i\right)^2}{\sum_{i=1}^n w_i}\qquad\tag{30}\]</div>
 <div class="math notranslate nohighlight">
-\[\displaystyle S_w=\sum_{i=1}^n w_i\tag{31}\]</div>
+\[\displaystyle S_w=\sum_{i=1}^n w_i\qquad\tag{31}\]</div>
 <p>The best estimate of the intercept a is</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle a=\langle y\rangle- b\langle x\rangle \tag{32}\]</div>
+\[\displaystyle a=\langle y\rangle- b\langle x\rangle \qquad\tag{32}\]</div>
 <p>where the averages are</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \langle x\rangle= \frac{\sum_{i=1}^n x_iw_i}{\sum_{i=1}^n w_i},\qquad \langle y\rangle =\frac{\sum_{i=1}^n y_iw_i}{\sum_{i=1}^n w_i}\]</div>
 <p>This means that the line goes through the ‘centre of gravity’ of the data.</p>
 <p>The intercept is also found by expanding the matrices above,</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle a= \frac{\sum_{i=1}^n w_ix_i^2\sum_{i=1}^n w_iy_i-\sum_{i=1}^nw_ix_i\sum_{i=1}^nw_ix_iy_i}{S_wS_{xx}} \tag{33}\]</div>
+\[\displaystyle a= \frac{\sum_{i=1}^n w_ix_i^2\sum_{i=1}^n w_iy_i-\sum_{i=1}^nw_ix_i\sum_{i=1}^nw_ix_iy_i}{S_wS_{xx}} \qquad\tag{33}\]</div>
 <p>Most graphing packages and languages now have least squares fitting routines, but the calculation is also made easy by direct calculation and then weighting can be incorporated and confidence curves drawn. Because the differences between two large sums often occur in calculating terms such as <span class="math notranslate nohighlight">\(S_{xy}\)</span> and <span class="math notranslate nohighlight">\(S_{xx}\)</span>, the possibility of rounding errors can be significant. It is always advisable if possible to use a higher precision calculation than would normally be used.</p>
 <p>The following data is analysed,</p>
 <div class="math notranslate nohighlight">
@@ -1769,7 +1769,7 @@ x &amp; y &amp; \sigma\\
 <p>where <span class="math notranslate nohighlight">\(Y_i\)</span> is the value of the calculated line at the <span class="math notranslate nohighlight">\(i^{th}\; x\)</span> value. The reduced or normalized
 residuals</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle r_i = (y_i - Y_i)/Y_i \tag{34}\]</div>
+\[\displaystyle r_i = (y_i - Y_i)/Y_i \qquad\tag{34}\]</div>
 <p>are often the best to use, particularly if the data varies in size, as may be the case for exponential data. The reduced residuals between the calculated line and the data are shown in figure 9 and should be randomly distributed about zero if the fit is good, which it would appear to be.</p>
 <p><img alt="Drawing" src="../_images/analysis-fig9.png" /></p>
 <p>Figure 9. Normalized or reduced residual plot</p>
@@ -1798,7 +1798,7 @@ residuals</p>
 \[ \displaystyle f_{\chi^2}(x,n)=\frac{2^{n/2}}{\Gamma(n/2)}x^{n/2-1}e^{-x/2} \]</div>
 <p>where <span class="math notranslate nohighlight">\(\Gamma\)</span> is the gamma function. Because the distribution cannot be less than zero, it is not symmetrical and has a shape skewed towards small values. The integral to find the probability is</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle Q= \int_{\chi^2}^\infty f_{\chi^2}(x,n) dx \tag{35}\]</div>
+\[\displaystyle Q= \int_{\chi^2}^\infty f_{\chi^2}(x,n) dx \qquad\tag{35}\]</div>
 <p>which is done numerically below using the <span class="math notranslate nohighlight">\(\mathtt{quad()}\)</span> integrator.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1828,20 +1828,20 @@ residuals</p>
 \[\displaystyle S_{xy}=\sum_{i=1}^n w_iy_i(x_i-\langle x\rangle),\quad  S_{xx}=\sum_{i=1}^n w_i(x_i-\langle x\rangle)^2\]</div>
 <p>Hines &amp; Montgomery (Probability &amp; Statistics in Engineering &amp; Management Sciences, pub Wiley 1990) give the variance for slope <span class="math notranslate nohighlight">\(b\)</span> as</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle \sigma_b^2=\frac{\sigma^2}{S_{xx}} \tag{36}\]</div>
+\[\displaystyle \sigma_b^2=\frac{\sigma^2}{S_{xx}} \qquad\tag{36}\]</div>
 <p>and for the intercept <span class="math notranslate nohighlight">\(a\)</span></p>
 <div class="math notranslate nohighlight">
-\[\displaystyle \sigma_a^2=\sigma^2\left(\frac{1}{S_w}+\frac{\langle x\rangle}{S_{xx}}\right)\tag{37}\]</div>
+\[\displaystyle \sigma_a^2=\sigma^2\left(\frac{1}{S_w}+\frac{\langle x\rangle}{S_{xx}}\right)\qquad\tag{37}\]</div>
 <p>To use these equations it is necessary to obtain an estimate of the variance <span class="math notranslate nohighlight">\(\sigma^2\)</span>. For the simple linear model an unbiased estimate of the variance of the error <span class="math notranslate nohighlight">\(\epsilon_i\)</span> is given by the reduced <span class="math notranslate nohighlight">\(\chi^2\)</span> as <span class="math notranslate nohighlight">\(\sigma_\epsilon^2\equiv \chi^2/(n-2)\)</span>. THis can be written in terms of quantities already calculated (Hines &amp; Montgomery 1990)  and is called the mean square error, <em>mse</em> used in algorithm 2. Then,</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \sigma_\epsilon^2=\frac{S_{yy}-bS_{xy}}{n-2}\]</div>
 <p>and</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle \sigma_b^2=\frac{\sigma_\epsilon^2}{S_{xx}}, \quad \sigma_a^2=\sigma_\epsilon^2\left(\frac{1}{S_w}+\frac{\langle x\rangle}{S_{xx}}\right)\tag{38}\]</div>
+\[\displaystyle \sigma_b^2=\frac{\sigma_\epsilon^2}{S_{xx}}, \quad \sigma_a^2=\sigma_\epsilon^2\left(\frac{1}{S_w}+\frac{\langle x\rangle}{S_{xx}}\right)\qquad\tag{38}\]</div>
 <p>with values <span class="math notranslate nohighlight">\(0.0056\)</span> and <span class="math notranslate nohighlight">\(1.54\)</span> for the data in figure 8.</p>
 <p>Alternative estimates of the variance in the coefficients are quoted by Bevington &amp; Robinson (2003),</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle \sigma_a^2=\frac{\sum_iw_ix_i^2}{S_wS{_{xx}}},\quad \sigma_b^2= \frac{1}{S_{xx}}\tag{39}\]</div>
+\[\displaystyle \sigma_a^2=\frac{\sum_iw_ix_i^2}{S_wS{_{xx}}},\quad \sigma_b^2= \frac{1}{S_{xx}}\qquad\tag{39}\]</div>
 <p>These variances are calculated by using the equation for error propagation, equation 20, differentiating with respect to each <span class="math notranslate nohighlight">\(y_i\)</span>. However, these equations should not be used unless the weightings are known, which they are for photon counting experiments. If weightings are unknown and a constant weighting used instead, incorrect results are obtained because both expressions 39 now depend only on <span class="math notranslate nohighlight">\(x\)</span>.</p>
 <p>The covariance between the slope and intercept can also be calculated. If this is large then the slope and intercept are not independent of one another. The covariance for the data used above is <span class="math notranslate nohighlight">\(-5\cdot10^{-4}\)</span> which is very small. When several parameters are being estimated such as in a polynomial or nonlinear, least squares calculation then the covariance between pairs of parameters should be examined and is often reported as a matrix of value. Ideally, each values should be small. The covariance for the linear least squares is <span class="math notranslate nohighlight">\(\mathrm{cov} = -\sigma_\epsilon^2\langle x \rangle/(S_{xx} /S_w)\)</span> as may be seen on the code.</p>
 </section>
@@ -1849,14 +1849,14 @@ residuals</p>
 <h2>5.5 Confidence intervals<a class="headerlink" href="#confidence-intervals" title="Permalink to this headline">#</a></h2>
 <p>The confidence intervals about any data point, and hence the whole set, can be obtained from the data. The width of these lines at a given confidence level, 95% is typical, is a measure of the overall quality of fit to the data. As the errors <span class="math notranslate nohighlight">\(\epsilon_i\)</span> are assumed to be normally distributed and independent of one another, then the slope has the confidence interval (Hines &amp; Montgomery 1990)</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle b_0=b\pm t_{\alpha/2}\sqrt{\frac{\sigma_\epsilon^2}{S_{xx}}}\tag{40}\]</div>
+\[\displaystyle b_0=b\pm t_{\alpha/2}\sqrt{\frac{\sigma_\epsilon^2}{S_{xx}}}\qquad\tag{40}\]</div>
 <p>giving <span class="math notranslate nohighlight">\(b_0=0.234\pm 0.0128\)</span> and for the intercept where <span class="math notranslate nohighlight">\(S_w=\sum w_i\)</span>,</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle a_0=a\pm t_{\alpha/2}\sqrt{ \sigma_\epsilon^2\left(\frac{1}{S_w}+\frac{\langle x\rangle^2}{S_{xx}} \right) }\tag{41}\]</div>
+\[\displaystyle a_0=a\pm t_{\alpha/2}\sqrt{ \sigma_\epsilon^2\left(\frac{1}{S_w}+\frac{\langle x\rangle^2}{S_{xx}} \right) }\qquad\tag{41}\]</div>
 <p>which has a value <span class="math notranslate nohighlight">\(a_0=-9.27\pm 3.55\)</span> or better <span class="math notranslate nohighlight">\(a=-9\pm 4\)</span>, see figure 8.</p>
 <p>The confidence for the mean point can be constructed and this is also called the confidence line <span class="math notranslate nohighlight">\(z\)</span> for the regression curve. It has the following form (Hines &amp; Montgomery 1990)</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle z=y\pm t_{\alpha/2}\sqrt{ \sigma_\epsilon^2\left(\frac{1}{S_w}+\frac{(x-\langle x\rangle)^2}{S_{xx}} \right) }\tag{42}\]</div>
+\[\displaystyle z=y\pm t_{\alpha/2}\sqrt{ \sigma_\epsilon^2\left(\frac{1}{S_w}+\frac{(x-\langle x\rangle)^2}{S_{xx}} \right) }\qquad\tag{42}\]</div>
 <p>and these lines are shown in Figure 8. The two curves have a minimum width at <span class="math notranslate nohighlight">\(\langle x\rangle\)</span> and widen either side of this. Strictly, they are not valid outside the range of the data. Prediction lines can be constructed to project confidence limits past the data and these lines are slightly wider than the confidence lines. The prediction lines are produced by replacing <span class="math notranslate nohighlight">\(1/S_w\)</span> by <span class="math notranslate nohighlight">\(1 + 1/S_w\)</span> in equation 42. This takes into account the error from the model and that associated with future observations. The two sets of curves are almost identical with the particular set of data used in figure 8.</p>
 </section>
 <section id="the-analysis-of-variance-anova-table">

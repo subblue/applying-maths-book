@@ -76,7 +76,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # Differentiation is performed by letting $u = g(h)$ giving
 # 
-# $$\displaystyle  \frac{d}{dh}f\left(g(h)\right)=\frac{df}{du}\frac{du}{dh} \tag{17}$$
+# $$\displaystyle  \frac{d}{dh}f\left(g(h)\right)=\frac{df}{du}\frac{du}{dh} \qquad\tag{17}$$
 # 
 # and this formally expressed, is what was done in our previous examples. Notice how $du$ is on the bottom of the derivative on the left, and on the top on the right. To differentiate the equation using the formal equation is harder than following the rule 'differentiate the outside and then the inside', but can be done. Suppose that $f = (a + x^2)^3$ is to be differentiated with respect to $x$. Letting $x=h$ and $u=1+x^2$ gives $du/dx=2x$ and as $f=u^3$,then $df/du = 3(u)^2$ and the result is $df/du = 6x(1 + x^2)^2$.
 # 
@@ -103,7 +103,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # The general form of the product rule is:
 # 
-# $$\displaystyle  \frac{d}{dx}fg=g\frac{df}{dx}+f\frac{dg}{dx}\equiv gf'+fg'  \tag{18} $$
+# $$\displaystyle  \frac{d}{dx}fg=g\frac{df}{dx}+f\frac{dg}{dx}\equiv gf'+fg'  \qquad\tag{18} $$
 # 
 # where $f'$ is the derivative $df/dx$ and the functions $f$ and $g$ are actually functions of variable $x$ and should more properly be written as $f(x)$ and $g(x)$. The formula can be understood by defining $y = fg$ and in full notation, this is written as $y(x) = f(x)g(x)$. First, taking logs gives 
 # 
@@ -111,7 +111,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # then differentiating gives
 # 
-# $$\displaystyle  \frac{1}{y}\frac{dy}{dx}=\frac{1}{f}\frac{df}{dx}+\frac{1}{g}\frac{dg}{dx} \tag{19}$$
+# $$\displaystyle  \frac{1}{y}\frac{dy}{dx}=\frac{1}{f}\frac{df}{dx}+\frac{1}{g}\frac{dg}{dx} \qquad\tag{19}$$
 # 
 # and multiplying out gives equation 18.
 # 
@@ -128,11 +128,11 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # The product rule and function-of-function rule can be used to calculate quotients. If
 # $\displaystyle y = \frac{f (x)}{g(x)}$ then this can be represented as $\displaystyle y = f (x)g(x)^{−1}$ and the derivative is,
 # 
-# $$\displaystyle   \frac{d}{dx}f(x)g(x)^{-1} =\frac{1}{g(x)}f'(x)+\frac{f(x)}{g(x)^2}g'(x) \tag{20}$$
+# $$\displaystyle   \frac{d}{dx}f(x)g(x)^{-1} =\frac{1}{g(x)}f'(x)+\frac{f(x)}{g(x)^2}g'(x) \qquad\tag{20}$$
 # 
 # which, if simplified, becomes
 # 
-# $$\displaystyle  \frac{d}{dx}\left(\frac{f}{g}\right)=\frac{gf'-fg'}{g^2}  \tag{21}$$
+# $$\displaystyle  \frac{d}{dx}\left(\frac{f}{g}\right)=\frac{gf'-fg'}{g^2}  \qquad\tag{21}$$
 # 
 # where the brackets and $x$ are suppressed for clarity.  For example using eqn. (20)
 # 
@@ -153,7 +153,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # But as $G = H - TS$ we obtain the equation as is now normally written for a change in $G$,
 # 
-# $$\displaystyle  \left( \frac{\partial \Delta G}{\partial T} \right)_p=\frac{\Delta G-\Delta H}{T} \tag{22}$$
+# $$\displaystyle  \left( \frac{\partial \Delta G}{\partial T} \right)_p=\frac{\Delta G-\Delta H}{T} \qquad\tag{22}$$
 # 
 # where $\Delta H$ is enthalpy and $T$ temperature. The curly $\partial$ indicates a partial derivative, which means only that $\Delta G$, depends on something other than $T$ alone, which here is $p$, but is otherwise just the same as any other derivative. The $p$ subscript indicates constant pressure, but we will drop this now for clarity. To calculate $d(\Delta G/T)/dT$: the function-of- function method of eqn. 20 is used knowing that $\Delta G$ is a function of $T$,
 # 
@@ -229,7 +229,7 @@ simplify(ans)
 # 
 # To differentiate the parametric form use the function-of-function approach and write
 # 
-# $$\displaystyle  \frac{dy}{dx}=\frac{dy}{dt}\frac{dt}{dx}=\frac{dy}{dt}/\frac{dx}{dt};  \quad \text{provided}\quad\frac{dx}{dt} \ne 0\tag{23}$$
+# $$\displaystyle  \frac{dy}{dx}=\frac{dy}{dt}\frac{dt}{dx}=\frac{dy}{dt}/\frac{dx}{dt};  \quad \text{provided}\quad\frac{dx}{dt} \ne 0\qquad\tag{23}$$
 # 
 # Therefore, $dy/dx$ is always the ratio of the two derivatives with respect to $t$, the parametric variable. 
 # 

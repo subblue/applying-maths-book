@@ -27,7 +27,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # As a second example $(\partial y/\partial x)_z$ is calculated where $(y + 1/z^2)(z - 1) = 3x$. Since it is indicated by the subscript that $z$ is a constant, differentiating gives $\displaystyle (z-1)\left(\frac{\partial y}{\partial x}  \right)_z=3$.
 # 
-# ### **ideal gas**
+# ### **Ideal gas**
 # 
 # Differentiating the pressure in the ideal gas law $p = nRT/V$ to obtain the rate of change with respect to temperature is expressed as $(\partial p/\partial T)_{n,V}$ if the number of moles, $n$, and volume are held constant. The result is
 # 
@@ -132,7 +132,7 @@ for  T0 in range(360,370,2):             # choose some temperatures
 # 
 # Next differentiating $(\partial z/\partial y)_x = x^2 + 3y^2(x + 1)$ with $x$ produces $\displaystyle \frac{\partial^2 z}{\partial x\partial y} = 2x + 3y^2$ which is the same result. The order of carrying out the differentiation is immaterial, and there is a mathematical theorem that guarantees this. In general for any well behaved function $f (x, y)$, 
 # 
-# $$\displaystyle  \frac{\partial^2f}{\partial x\partial y}=\frac{\partial^2f}{\partial y\partial x} \tag{39}$$
+# $$\displaystyle  \frac{\partial^2f}{\partial x\partial y}=\frac{\partial^2f}{\partial y\partial x} \qquad\tag{39}$$
 # 
 # This is also sometimes written in a more formal form. The left side of the equation tells us to differentiate with $y$ keeping $x$ constant, and then differentiate the result with $x$, keeping $y$ constant,
 # 
@@ -188,7 +188,7 @@ for  T0 in range(360,370,2):             # choose some temperatures
 # 
 # Reciprocal derivatives follow the same rules as for normal differentiation: take the reciprocal and flip the derivative, with a function $y$ in $x$ and $z$
 # 
-# $$\displaystyle \left(\frac{\partial x}{\partial y}  \right)_z=1\bigg/\left(\frac{\partial y }{\partial x} \right)_z \tag{40}$$
+# $$\displaystyle \left(\frac{\partial x}{\partial y}  \right)_z=1\bigg/\left(\frac{\partial y }{\partial x} \right)_z \qquad\tag{40}$$
 # 
 # For example if $y = azx^2 + z^2$ then differentiating with respect to $x$ produces $\displaystyle \left( \frac{\partial y}{\partial x}\right)_z = 2azx$ and differentiating with $y$ produces $\displaystyle 1=2azx\left(\frac{\partial x}{\partial y}  \right)_z$ which proves (40).
 # 
@@ -196,7 +196,7 @@ for  T0 in range(360,370,2):             # choose some temperatures
 # 
 # Total derivatives are probably used in thermodynamics more than elsewhere. It is common to see expressions such as
 # 
-# $$\displaystyle dp=\left(  \frac{\partial p}{\partial T} \right)_VdT  + \left(  \frac{\partial p}{\partial V} \right)_TdV  \tag{41}$$
+# $$\displaystyle dp=\left(  \frac{\partial p}{\partial T} \right)_VdT  + \left(  \frac{\partial p}{\partial V} \right)_TdV  \qquad\tag{41}$$
 # 
 # The notation here is different to that used so far because $dp,\; dT$, and $dV$ exist as entities in themselves, rather than as a ratio, such as $dp/dV$.
 # 
@@ -218,11 +218,11 @@ for  T0 in range(360,370,2):             # choose some temperatures
 # 
 # In the first square brackets only $T$ changes; increasing to $T + \Delta T$, the volume is unchanged at $V + \Delta V$ and in the second term, only $V$ changes. Now take the limits $\Delta T \to$ 0 and $\Delta V \to$ 0 to form the differential
 # 
-# $$\displaystyle dp=\left( \frac{\partial p}{\partial T} \right)_V dT + \left( \frac{\partial p}{\partial V} \right)_T dV \tag{42}$$
+# $$\displaystyle dp=\left( \frac{\partial p}{\partial T} \right)_V dT + \left( \frac{\partial p}{\partial V} \right)_T dV \qquad\tag{42}$$
 # 
 # and again notice the symmetry in the expression. This derivation is quite general: if a function $f$ depends on variables $g$ and $h$, i.e. $f(g, h)$, then it is always possible to write;
 # 
-# $$\displaystyle df=\left( \frac{\partial f}{\partial g} \right)_h dg + \left( \frac{\partial f}{\partial h} \right)_g dh \tag{43}$$
+# $$\displaystyle df=\left( \frac{\partial f}{\partial g} \right)_h dg + \left( \frac{\partial f}{\partial h} \right)_g dh \qquad\tag{43}$$
 # 
 
 # ## 11.8 The 'minus 1' rule or Euler's Chain Rule
@@ -241,7 +241,7 @@ for  T0 in range(360,370,2):             # choose some temperatures
 # 
 # then
 # 
-# $$\left(\frac{\partial T }{\partial p}\right)_V\left(\frac{\partial p }{\partial V}\right)_T\left(\frac{\partial V }{\partial T}\right)_p=-1 \tag{44}$$
+# $$\left(\frac{\partial T }{\partial p}\right)_V\left(\frac{\partial p }{\partial V}\right)_T\left(\frac{\partial V }{\partial T}\right)_p=-1 \qquad\tag{44}$$
 # 
 # Notice the 'symmetry' in the expression; each derivative involves all three parameters in a cyclic fashion. This type of equation is quite general; if a function has the form $f(x, y, z) = 0$ then
 # 
@@ -303,7 +303,7 @@ for  T0 in range(360,370,2):             # choose some temperatures
 # 
 # In an adiabatic change, no heat enters or leaves the thermodynamic system. The first law therefore asserts that
 # 
-# $$\displaystyle dQ = dU + pdV = 0 \tag{45}$$
+# $$\displaystyle dQ = dU + pdV = 0 \qquad\tag{45}$$
 # 
 # Now, if $U\equiv U(V,T)$ then 
 # 
@@ -311,15 +311,15 @@ for  T0 in range(360,370,2):             # choose some temperatures
 # 
 # and combining this with the first law produces
 # 
-# $$\displaystyle dQ=\left( \frac{\partial U}{\partial V}+p \right)dV+\frac{\partial U}{\partial T}dT=0\tag{46}$$
+# $$\displaystyle dQ=\left( \frac{\partial U}{\partial V}+p \right)dV+\frac{\partial U}{\partial T}dT=0\qquad\tag{46}$$
 # 
 # This differential expression is in two variables and has the same form as the differential the mathematicians call a _Pfaffian_:
 # 
-# $$\displaystyle dQ=A(x,y)dx+B(x,y)dy \tag{47}$$
+# $$\displaystyle dQ=A(x,y)dx+B(x,y)dy \qquad\tag{47}$$
 # 
 # where $A(x, y)$ and $B(x, y)$ are two functions of $x$ and $y$. If the derivative of each of these two functions is now taken, but with respect to the other variable, only if $\partial A/\partial y$ and $\partial B/\partial x$ are then found to be equal is the differential said to be exact or perfect;
 # 
-# $$\displaystyle \frac{\partial A}{\partial y}=\frac{\partial Q}{\partial x\partial y}=\frac{\partial B}{\partial x} \tag{48}$$
+# $$\displaystyle \frac{\partial A}{\partial y}=\frac{\partial Q}{\partial x\partial y}=\frac{\partial B}{\partial x} \qquad\tag{48}$$
 # 
 # The importance of this condition is understood only when equation (47) is integrated to find $Q$. If the differential is exact, then, provided $Q$ exists,
 # 
@@ -333,7 +333,7 @@ for  T0 in range(360,370,2):             # choose some temperatures
 # 
 # The equivalence between the derivatives in equation (48) may not be true in all cases and then the differential is not exact. The integration now depends upon the path taken from $1 \to 2$ and the integration must be explicitly performed. Suppose that $\theta$ is an expression that depends on $x$ or $y$, then it can be shown that the differential equation (47) can be made exact by dividing the expression by the factor $Q$,
 # 
-# $$\displaystyle \frac{dQ}{Q}=\frac{1}{Q}\left[ A(x,y)dx+B(x,y)dy \right]  \tag{49}$$
+# $$\displaystyle \frac{dQ}{Q}=\frac{1}{Q}\left[ A(x,y)dx+B(x,y)dy \right]  \qquad\tag{49}$$
 # 
 # As an example, let us start with equation (46) or (47) and calculate (48) to see if the two derivatives are the same. If, in equation (46) we let
 # 
@@ -363,7 +363,7 @@ for  T0 in range(360,370,2):             # choose some temperatures
 # 
 # If the derivatives of $A$ and $B$ are equal, then with some rearranging the following relationship results
 # 
-# $$\displaystyle \left(\frac{\partial U}{\partial V}\right)_T=T\left(\frac{\partial p }{\partial T}\right)_V-p  \tag{50}$$
+# $$\displaystyle \left(\frac{\partial U}{\partial V}\right)_T=T\left(\frac{\partial p }{\partial T}\right)_V-p  \qquad\tag{50}$$
 # 
 # which must be true if we believe that the original differential is exact. To confirm that this is the case, consider an ideal gas where the internal energy depends only on the temperature, then $dU/dV = 0$, and as $pV = nRT$, then $\displaystyle \left( \frac{\partial p}{\partial T}\right)_V=\frac{nR}{V}$. As a check, substituting into equation (50) gives $\displaystyle 0=\frac{nRT}{V}-\frac{nRT}{V}$ which shows that equation (50) is correct and so is (49).
 

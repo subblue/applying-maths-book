@@ -770,7 +770,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-7/matrices-L.html">
-     Principal axes for Moments of Inertia
+     Principal axes of Moments of Inertia
     </a>
    </li>
    <li class="toctree-l2">
@@ -1607,7 +1607,7 @@ title="Print to PDF"
 <h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h2>
 <p>Similar numerical methods to those used for single equations can be used to solve coupled or simultaneous ones. Coupled reactions are commonly found in chemical kinetics, MD simulations, enzyme kinetics, and catalysis; also in the decay of radioactive atoms as well as in the spread of diseases and the predator - prey type behaviour of animals. In each case, species interact or convert into one another and at least two differential equations are needed to describe this. In many cases, these sets of equations cannot be solved algebraically and a numerical method has therefore to be used. As an example, we deliberately start with a pair of equations that can be solved analytically, and this will allow comparison of the numerical solution with the algebraic one. The equations are</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle \frac{dy}{dt}=\cos(t)-x \qquad \frac{dx}{dt}=\sin(t)-1-y  \tag{32}\]</div>
+\[\displaystyle \frac{dy}{dt}=\cos(t)-x \qquad \frac{dx}{dt}=\sin(t)-1-y  \qquad\tag{32}\]</div>
 <p>subject to the initial condition <span class="math notranslate nohighlight">\(x(t_0) = 1,\; y(t_0) = -3\)</span> when <span class="math notranslate nohighlight">\(t_0 = 0\)</span>. Notice that the first equation <span class="math notranslate nohighlight">\(dy/dt = \cdots\)</span> is a function of <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(t\)</span> and the second a function of <span class="math notranslate nohighlight">\(y\)</span> and <span class="math notranslate nohighlight">\(t\)</span> but in general <span class="math notranslate nohighlight">\(dy/dt\)</span> and <span class="math notranslate nohighlight">\(dx/dt\)</span> could be functions of <span class="math notranslate nohighlight">\(x\)</span>, <span class="math notranslate nohighlight">\(y\)</span>, and <span class="math notranslate nohighlight">\(t\)</span>. These equations can be solved algebraically using the method of operators (Chapter 10.4) by making a second-order equation out of the pair and the solutions are</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle y = \sin(t) - \sinh(t) - 1 - 2 \cosh(t)\quad\text{and}\quad x = \cosh(t) + 2 \sinh(t)\]</div>
@@ -1785,10 +1785,10 @@ D_0=10^{-15}, &amp;P_0=2\cdot10^{-7}, &amp; E_0=5\cdot 10^{-9},&amp; S_0=SP_0=E\
 <p>Second and higher order equations can be easily reduced to a set of first-order equations and solved as coupled equations. Second-order equations can also be converted directly into difference equations for numerical evaluation and, in some cases, such as with the diffusion equation, this is the most convenient way to solve them.</p>
 <p>The equation</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle  \frac{d^2y}{dx^2}+3\frac{dy}{dx}+5y=0 \tag{34}\]</div>
+\[\displaystyle  \frac{d^2y}{dx^2}+3\frac{dy}{dx}+5y=0 \qquad\tag{34}\]</div>
 <p>is second order and can be solved algebraically making possible a comparison with a numerical method. Suppose that the initial conditions are <span class="math notranslate nohighlight">\(y_0 = 0\)</span> and <span class="math notranslate nohighlight">\(dy/dx|_0 = 1\)</span>. These mean that the value of <span class="math notranslate nohighlight">\(y\)</span> at <span class="math notranslate nohighlight">\(x = 0\)</span> is zero, and that the gradient, also at <span class="math notranslate nohighlight">\(x = 0\)</span>, is one. The strategy is to take the lowest derivative <span class="math notranslate nohighlight">\(dy/dx\)</span>, even if it is not explicitly present in the equation, and make this equal to a new variable <span class="math notranslate nohighlight">\(z\)</span>; for instance, <span class="math notranslate nohighlight">\(z = dy/dx\)</span>. The equation now becomes</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle \frac{dy}{dz}=z; \qquad \frac{dz}{dx}=-3z-5y \tag{35}\]</div>
+\[\displaystyle \frac{dy}{dz}=z; \qquad \frac{dz}{dx}=-3z-5y \qquad\tag{35}\]</div>
 <p>As a check, by substitution the original equation is reformed. The equations, initial values, and the Euler method based on that in Algorithm 14 are written as:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1850,12 +1850,12 @@ D_0=10^{-15}, &amp;P_0=2\cdot10^{-7}, &amp; E_0=5\cdot 10^{-9},&amp; S_0=SP_0=E\
 <h2>5.4 The Numerov method<a class="headerlink" href="#the-numerov-method" title="Permalink to this headline">#</a></h2>
 <p>The conventional Numerov method is used to solve second-order differential equations which do not have a first derivative and are of the form</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle \frac{d^2y}{dx^2} + f(x)y = s(x)  \tag{35a}\]</div>
+\[\displaystyle \frac{d^2y}{dx^2} + f(x)y = s(x)  \qquad\tag{35a}\]</div>
 <p>and is therefore a suitable method to use for the numerical solution of the Schroedinger equation and of Poisson’s equation. The solution results in a recursive equation that is simple to implement, involves fewer function evaluations that does the Runge-Kutta method and has precision of <span class="math notranslate nohighlight">\(h^6\)</span>.</p>
 <p>The Schroedinger equation is solved next. There are methods that are described in other chapters such as the Shooting Method (section 9) and expansion in a basis set in the Quantum Matrices chapter 8.</p>
 <p>The  Schroedinger equation is normally written as</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle -\frac{\hbar^2}{2m}\frac{d^2\psi(x)}{dx} +  V(x)\psi(x) = E\psi(x)  \tag{35b} \]</div>
+\[\displaystyle -\frac{\hbar^2}{2m}\frac{d^2\psi(x)}{dx} +  V(x)\psi(x) = E\psi(x)  \qquad\tag{35b} \]</div>
 <p>where  <span class="math notranslate nohighlight">\(V(x)\)</span> represents the potential energy, a quadratic, for example, in a harmonic oscillator. Rearranging this  gives</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle\frac{d^2\psi(x)}{dx} -\frac{2m}{\hbar^2}\left(V(x)-E\right)\psi(x)=0\]</div>
@@ -1883,7 +1883,7 @@ D_0=10^{-15}, &amp;P_0=2\cdot10^{-7}, &amp; E_0=5\cdot 10^{-9},&amp; S_0=SP_0=E\
 \[\displaystyle y(x-h)=y(x)-hy'+\frac{h^2}{2!}y''-\frac{h^3}{2!}y'''+\frac{h^4}{4!}y''''+\cdots \]</div>
 <p>Limiting the expansion to the fourth power and adding the last two equations produces</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle y(x+h)+y(x-h) =2y(x)+h^2y''+2\frac{h^4}{4!}y''''   +O(h^6)\tag{35c}\]</div>
+\[\displaystyle y(x+h)+y(x-h) =2y(x)+h^2y''+2\frac{h^4}{4!}y''''   +O(h^6)\qquad\tag{35c}\]</div>
 <p>which gives a recursive equation if  the two derivatives <span class="math notranslate nohighlight">\(y''\)</span> and <span class="math notranslate nohighlight">\( y''''\)</span> can be found. The second derivative is defined from the original equation and the fourth order derivative can be obtained by differentiating both sides of this equation (eqn 35a)</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \frac{d^2y}{dx^2} \equiv y''=- f(x)y + s(x)\]</div>
@@ -1901,7 +1901,7 @@ D_0=10^{-15}, &amp;P_0=2\cdot10^{-7}, &amp; E_0=5\cdot 10^{-9},&amp; S_0=SP_0=E\
 \[\displaystyle y(x+h)\left(1+\frac{h^2}{12}f(x+h)\right)= 2y(x)\left( 1-\frac{5h^2}{12}f(x) \right) -y(x-h)\left(1+\frac{h^2}{12}f(x-h)  \right) \]</div>
 <p>Writing this in terms of indices as required in an algorithm means making the changes <span class="math notranslate nohighlight">\(y(x+h) \to y_{n+1},\; y(x) \to f_n,\; y(x-h) \to y_{n-1}\)</span></p>
 <div class="math notranslate nohighlight">
-\[\displaystyle y_{n+1}\left(1+\frac{h^2}{12}f_{n+1}\right)= 2y_n\left( 1-\frac{5h^2}{12}f_n \right) -y_{n-1}\left(1+\frac{h^2}{12}f_{n-1}  \right) \tag{ 35e}\]</div>
+\[\displaystyle y_{n+1}\left(1+\frac{h^2}{12}f_{n+1}\right)= 2y_n\left( 1-\frac{5h^2}{12}f_n \right) -y_{n-1}\left(1+\frac{h^2}{12}f_{n-1}  \right) \qquad\tag{ 35e}\]</div>
 <p>which means that <span class="math notranslate nohighlight">\(y\)</span> must be known at two points, <span class="math notranslate nohighlight">\(n\)</span> and <span class="math notranslate nohighlight">\(n+1\)</span> at the start of the calculation. Normally starting at large <span class="math notranslate nohighlight">\(x\)</span> values relative to the minimum of the potential means that here the wavefunctuon is zero and so initial values such as  <span class="math notranslate nohighlight">\(y_0 =0 ,\;y_1 = 0.001\)</span> can be used. The wavefunction can be normalised at the end of the calculation (<span class="math notranslate nohighlight">\(\int\psi dx=1\)</span>) so these values are not critical. The function <span class="math notranslate nohighlight">\(f\)</span> is known at all points via <span class="math notranslate nohighlight">\(V(x)\)</span>  but as noted the eigenvalue <span class="math notranslate nohighlight">\(E\)</span> must be known. Note also the sign of <span class="math notranslate nohighlight">\(f(x)\)</span> when using the Schroedinger equation <span class="math notranslate nohighlight">\(\displaystyle f(x)= -\frac{2m}{\hbar^2}\left(V(x)-E\right)\)</span>.</p>
 <p>As an example calculation, the wavefunction of a quantum harmonic oscillator with <span class="math notranslate nohighlight">\(V= (k/2)x^2\)</span> is calculated using  constants <span class="math notranslate nohighlight">\(\mu=1,\;\hbar = 1,\; k = 20 \)</span>. The eigenvalues are <span class="math notranslate nohighlight">\(\displaystyle E_n=\hbar \sqrt{\frac{k}{\mu} }\left(n+\frac{1}{2}\right)\)</span>. This method does not perform well when, for example, the potential has a double well and in conjunction with the shooting method because numerical precision becomes an issue. In this case more sophisticated algorithms are needed. These are usually the ones that are provided by the computer language you use, <span class="math notranslate nohighlight">\(\mathtt{odeint(\cdots)}\)</span> in Python/Scipy for example.</p>
 <div class="cell docutils container">

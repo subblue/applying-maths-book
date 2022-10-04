@@ -58,7 +58,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # For clarity only, a notational change is now made so that
 # 
-# $$\displaystyle a_0=\sum_{R=1}^n a_R \tag{8}$$
+# $$\displaystyle a_0=\sum_{R=1}^n a_R \qquad\tag{8}$$
 # 
 # and therefore $\displaystyle \frac{dP_0}{d\tau}=-a_0$.
 # 
@@ -66,7 +66,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # The final result for the probability of reaction $R$ occurring at time $T$ is the chance of no reaction up to $T $ multiplied by the chance of reacting at $T$, which is $a_R$, giving
 # 
-# $$\displaystyle P(T,R) = a_Re^{-a_0T} \tag{9}$$
+# $$\displaystyle P(T,R) = a_Re^{-a_0T} \qquad\tag{9}$$
 # 
 # an expression that shows that these times are Poisson distributed. Equation 9 is a joint probability density function, as it is the chance that reaction occurs in the time interval and that it will be reaction $R$.
 # 
@@ -76,7 +76,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # If the reaction is $\mathrm{A+B} \overset{k_2} \longrightarrow \mathrm{C}$ then $a_2=k_2N_aN_B$ and if both reactions are present in the overall reaction scheme which would then be
 # 
-# $$\displaystyle \mathrm{A} \overset{k_1}\longrightarrow \mathrm{B} \qquad \mathrm{A+B} \overset{k_2} \longrightarrow \mathrm{C} \qquad a_0=\sum a_R=a_1+a_2 \tag{10}$$
+# $$\displaystyle \mathrm{A} \overset{k_1}\longrightarrow \mathrm{B} \qquad \mathrm{A+B} \overset{k_2} \longrightarrow \mathrm{C} \qquad a_0=\sum a_R=a_1+a_2 \qquad\tag{10}$$
 # 
 # In the special case where a reaction combines two identical molecules $\mathrm{A+A} \overset{k_2} \longrightarrow $ the number of _indistinguishable combinations_, i.e. the number of distinct A-A pairs of the two species must be calculated and this makes 
 # 
@@ -114,7 +114,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # and which can be determined by choosing two uniformly distributed random numbers, $r$, each in the range 0 to 1. The equation
 # 
-# $$\displaystyle T = -\frac{1}{a_0}\ln(r) \tag{11}$$
+# $$\displaystyle T = -\frac{1}{a_0}\ln(r) \qquad\tag{11}$$
 # 
 # generates a random number $T$ according to the probability density function $\displaystyle P_1=a_0e^{-a_0 T}$. 
 # 

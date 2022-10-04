@@ -57,13 +57,13 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # To find the energies of the H$_2^+$ ion equation 61 is used. From the variational
 # calculation (see Section 9) the bonding $E_+$ and anti-bonding energies $E_-$ are
 # 
-# $$\displaystyle  E_+=\frac{H_{11}+H_{12}}{1+S}, \qquad E_- = \frac{H_{11}-H_{12}}{1-S} \tag{61}$$
+# $$\displaystyle  E_+=\frac{H_{11}+H_{12}}{1+S}, \qquad E_- = \frac{H_{11}-H_{12}}{1-S} \qquad\tag{61}$$
 # 
 # where $S$ is the overlap integral, and $H_{11},\, H_{12}$ are the energy expectation value integrals. These are calculated next. These energies are functions of the internuclear separation. This may seem contradictory, as it was stated that $R$ was constant; however, this is only for the purpose of calculating the energy in the Born -Oppenheimer approximation. In this calculation, the electrons are allowed to move to find their minimum energy at any inter-nuclear separation $R$. This is then changed and the energy recalculated. This makes the energy a function of nuclear position $R$, but not the electron's position $r$, and thereby the potential energy curve is obtained. If the motion of the electrons and nuclei could not be separated then it would not be possible to draw a potential energy curve because the energy would depend on both $r$ and $R$.
 # 
 # In calculating the energy, equation 61, three integrals have to be evaluated. The overlap integral $S$ is easy to understand, its name describes what it is, which is the extent to which the two atomic orbitals occupy the same region of space: In symbolic form this is
 # 
-# $$\displaystyle  S=\int\varphi_1^*\varphi_2d\tau= \int\varphi_2^*\varphi_1d\tau \tag{62}$$
+# $$\displaystyle  S=\int\varphi_1^*\varphi_2d\tau= \int\varphi_2^*\varphi_1d\tau \qquad\tag{62}$$
 # 
 # and from now on, the complex conjugate will be ignored because the wavefunctions are real. Thinking of the integral in simple terms as an area, the 'area' is that of the product of the two wavefunctions and is obviously large only where they overlap. Integration here is written with symbolic coordinates $d\tau$ that represents a volume element of three-dimensional space. When the coordinates are included properly, $S$ becomes a triple integral and $d\tau$ given properly.
 # 
@@ -74,7 +74,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # The $H_{11}, H_{22}$, and $H_{12}=H_{21}$ integrals are different as they contain the energy (Hamiltonian) operator $H.$ In symbolic form these integrals are
 # 
-# $$\displaystyle  H_{11}=\int\varphi_1\,H\,\varphi_1 d\tau \tag{63}$$
+# $$\displaystyle  H_{11}=\int\varphi_1\,H\,\varphi_1 d\tau \qquad\tag{63}$$
 # 
 # $$\displaystyle H=\frac{\bar p^2}{2m}+V_{en}+V_{nn}=\frac{\bar p^2}{2m}-\frac{q^2}{r_1}-\frac{q^2}{r_2}+\frac{q^2}{R}$$
 # 
@@ -83,17 +83,17 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # The calculation now involves evaluating these integrals and to calculate the energies $E_+$ and $E_-$ and plot them vs internuclear separation $R$. To make the equations simpler, two things are done. First, the coordinates are changed to prolate spheroidal ones, second, reduced distances are used, and these are defined in terms of $a_0$ the Bohr radius:
 # 
-# $$\displaystyle \rho_1=r_1/a_0,\qquad \rho_2=r_2/a_0,\qquad \rho=R/a_0 \tag{64}$$
+# $$\displaystyle \rho_1=r_1/a_0,\qquad \rho_2=r_2/a_0,\qquad \rho=R/a_0 \qquad\tag{64}$$
 # 
 # The wavefunctions become 
 # 
-# $$\displaystyle \varphi_1=\frac{1}{\sqrt{\pi a_0^3}}e^{-\rho_1}, \qquad \varphi_2=\frac{1}{\sqrt{\pi a_0^3}}e^{-\rho_2} \tag{46}$$
+# $$\displaystyle \varphi_1=\frac{1}{\sqrt{\pi a_0^3}}e^{-\rho_1}, \qquad \varphi_2=\frac{1}{\sqrt{\pi a_0^3}}e^{-\rho_2} \qquad\tag{46}$$
 # 
 # ## 12.2 Calculating the overlap integral S
 # 
 # Substituting for the atomic wavefunctions with the reduced distances and simplifying gives
 # 
-# $$\displaystyle S= \frac{1}{\pi a_0^3}\int e^{-\rho_1-\rho_2}d\tau \tag{66}$$
+# $$\displaystyle S= \frac{1}{\pi a_0^3}\int e^{-\rho_1-\rho_2}d\tau \qquad\tag{66}$$
 # 
 # To integrate over all coordinates $d\tau$ we must know how this and $\rho_1$ and $\rho_2$ are related. The protons and electron are in real space so that $d\tau$ is a volume element,
 # 
@@ -101,11 +101,11 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # and therefore the integral is three dimensional; a triple integral. The integral has coordinates in distances $r_1, r_2$ and $R$ which are presently in Cartesian $(x, y, z)$ coordinates which makes the calculation very difficult. Fortunately, in this problem the maths works out far easier if elliptic coordinates are used, which means transforming $(x, y, z) \to (u, v, \theta)$. The angle $\theta$ is that around the z-axis. These new coordinates are used because they have an origin on each atom, see Figure 30. In this new coordinate system the volume element, or the Jacobian is,
 # 
-# $$\displaystyle d\tau=dxdydz=\frac{\rho^3a_0^3}{8}(u^2-v^2)dudvd\theta \tag{67}$$
+# $$\displaystyle d\tau=dxdydz=\frac{\rho^3a_0^3}{8}(u^2-v^2)dudvd\theta \qquad\tag{67}$$
 # 
 # and the distances $\rho_{1,2}$1 are defined in terms of $u$ and $v$ as,
 # 
-# $$\displaystyle  \rho_1=\frac{u+v}{2}\rho, \qquad \rho_2=\frac{u-v}{2}\rho \tag{68}$$
+# $$\displaystyle  \rho_1=\frac{u+v}{2}\rho, \qquad \rho_2=\frac{u-v}{2}\rho \qquad\tag{68}$$
 # 
 # All the elements with which to calculate the solution are assembled; To calculate the integral, first substitute for $d\tau$ into the $S$ integral equation 66 and then substitute for $\rho_1$ and $\rho_2$ to give
 # 
@@ -121,7 +121,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # This is a standard integral and using Sympy produces 
 # 
-# $$\displaystyle  S=\left(1+\rho+ \frac{\rho^2}{3} \right)e^{-\rho} \tag{68a}$$
+# $$\displaystyle  S=\left(1+\rho+ \frac{\rho^2}{3} \right)e^{-\rho} \qquad\tag{68a}$$
 # 
 # where $\rho = R/a_0$. The result shows that the overlap decreases with separation of the nuclei because the exponential decreases more rapidly than $\rho^2$ increases.
 
@@ -151,11 +151,11 @@ simplify(integrate( integrate(eq,(u,1,oo)), (v,-1,1)   ) ) # double integral
 # 
 # So far the integral is 
 # 
-# $$\displaystyle H_{11}= -E_I+\frac{e^2}{R}-C \tag{70}$$
+# $$\displaystyle H_{11}= -E_I+\frac{e^2}{R}-C \qquad\tag{70}$$
 # 
 # where the third integral $C$ is called the _Coulomb Integral_ and is 
 # 
-# $$\displaystyle C=\int \varphi_1 \frac{q^2}{r_2}\varphi_2 d\tau \tag{71}$$
+# $$\displaystyle C=\int \varphi_1 \frac{q^2}{r_2}\varphi_2 d\tau \qquad\tag{71}$$
 # 
 # This is calculated in a similar manner to the overlap integral. The Coulomb integral describes the electrostatic potential energy between proton 2 and the charge distribution of the electron when it is associated with the 1s orbital around proton 1. Substituting for the wavefunctions gives
 # 
@@ -167,7 +167,7 @@ simplify(integrate( integrate(eq,(u,1,oo)), (v,-1,1)   ) ) # double integral
 # 
 # where the integral over $\theta$ was evaluated in the last step. Again using Sympy gives
 # 
-# $$\displaystyle C= \frac{q^2}{a_0}\frac{e^{-2\rho}(e^{2\rho}-\rho-1)}{\rho}  \tag{71a}$$
+# $$\displaystyle C= \frac{q^2}{a_0}\frac{e^{-2\rho}(e^{2\rho}-\rho-1)}{\rho}  \qquad\tag{71a}$$
 
 # In[3]:
 
@@ -210,7 +210,7 @@ simplify(integrate( integrate(eq,(u,1,oo))   ,(v,-1,1)   ) )          # Double i
 # 
 # The second integral of $H_{12}$ has the form
 # 
-# $$\displaystyle A=\int \varphi_1\frac{q^2}{r_1}\varphi_2d\tau \tag{73}$$
+# $$\displaystyle A=\int \varphi_1\frac{q^2}{r_1}\varphi_2d\tau \qquad\tag{73}$$
 # 
 # and is called the _resonance_ or _exchange integral_ and is not zero. It expresses the possibility of the electron moving from the neighbourhood of one proton to that of the other and is a purely quantum effect: it has no classical counterpart. The variation of $A$ with separation $\rho$ is shown in figure 30A. Question 87 suggests how to calculate the exchange integral $A$.
 # 
@@ -218,7 +218,7 @@ simplify(integrate( integrate(eq,(u,1,oo))   ,(v,-1,1)   ) )          # Double i
 # 
 # The total integral is therefore
 # 
-# $$\displaystyle H_{12} = -E_IS +\frac{q^2S}{R}-A \tag{74}$$
+# $$\displaystyle H_{12} = -E_IS +\frac{q^2S}{R}-A \qquad\tag{74}$$
 # 
 # where $R$ is the internuclear separation. If the energy $H_{12}$ is plotted it has a minimum energy at a distance somewhat shorter than that measured for the chemical bond, and is zero at large internuclear separation. It is zero because the overlap integral is zero at large $\rho$ as is the resonance integral, see Q 87 for further calculations.
 # 
@@ -241,9 +241,9 @@ simplify(integrate( integrate(eq,(u,1,oo))   ,(v,-1,1)   ) )          # Double i
 # 
 # In the H$_2^+$ molecule the kinetic and potential energy can be determined rigorously. To do this the variation of the total energy $E$, with respect to the positions of the nuclei must be known. In the special case of a diatomic molecule the kinetic energy of the electron $\langle T_e\rangle$ and the potential energy $\langle V\rangle$ are given by (C. Cohen-Tannoudji, B. Du, F. Laloe, 'Quantum Mechanics' vol 2) 
 # 
-# $$\displaystyle  \langle T_e\rangle = -E - R\frac{dE}{dR}  \tag{75}$$
+# $$\displaystyle  \langle T_e\rangle = -E - R\frac{dE}{dR}  \qquad\tag{75}$$
 # 
-# $$\displaystyle  \langle V\rangle = 2E + R\frac{dE}{dR}  \tag{76}$$
+# $$\displaystyle  \langle V\rangle = 2E + R\frac{dE}{dR}  \qquad\tag{76}$$
 # 
 # Using results already calculated, Figure 32 shows that both the kinetic and potential energy have a minimum in the region of the bond but that the decrease in kinetic energy is very small compared to that in the potential energy. The minimum in total energy when the bond is formed is at $\rho \approx 2.5$, see dotted line in Figure 32, and is $E_+$, see Figure 31. The decrease in potential energy when the two nuclei come together therefore dominates the stabilization of the chemical bond because the kinetic energy is rising slightly at the bond minimum but the potential energy is falling rapidly. If the kinetic and potential contributions to the energy of the anti-bonding orbital $E_-$ are calculated, the potential energy still shows a small minimum but this is dominated by a large positive kinetic energy contribution, leading to no overall minimum in the energy.
 # 

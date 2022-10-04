@@ -770,7 +770,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-7/matrices-L.html">
-     Principal axes for Moments of Inertia
+     Principal axes of Moments of Inertia
     </a>
    </li>
    <li class="toctree-l2">
@@ -1718,7 +1718,7 @@ title="Print to PDF"
 <hr class="docutils" />
 <p>The relationship between differentiation, <span class="math notranslate nohighlight">\(\displaystyle \frac{df}{dx}\)</span>, and integration,  <span class="math notranslate nohighlight">\(\displaystyle \int_a^b f(x)dx\)</span>, of an expression <span class="math notranslate nohighlight">\(f(x)\)</span> is shown below: moving to the left is differentiation; to the right integration.</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle \frac{df}{dx}  \underset {always}{\stackrel {sometimes} {\Large{\rightleftharpoons} }}f(x) \underset {always}{\stackrel {sometimes} {\Large{\rightleftharpoons} }} \int_a^b f(x)dx  \tag{1}\]</div>
+\[\displaystyle \frac{df}{dx}  \underset {always}{\stackrel {sometimes} {\Large{\rightleftharpoons} }}f(x) \underset {always}{\stackrel {sometimes} {\Large{\rightleftharpoons} }} \int_a^b f(x)dx  \qquad\tag{1}\]</div>
 <p>Even if we assume that it will always be possible to differentiate our function <span class="math notranslate nohighlight">\(f(x)\)</span> it will not always be possible to integrate it algebraically, although this can be done numerically. Integrating <span class="math notranslate nohighlight">\(df/dx\)</span> is equivalent to solving a differential equation and these are met primarily in chemical kinetics, quantum mechanics, and dynamics. Before working out the details of differentiation, the effect that a small change in <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> has on an expression is examined, and this will lead naturally into differentiation.</p>
 </section>
 <section id="id1">
@@ -1729,7 +1729,7 @@ title="Print to PDF"
 <p>A straight line with equation <span class="math notranslate nohighlight">\(y = mx + c\)</span> has a constant slope <span class="math notranslate nohighlight">\(m\)</span>, which is the change in <span class="math notranslate nohighlight">\(y\)</span> divided by change in <span class="math notranslate nohighlight">\(x\)</span>, or <span class="math notranslate nohighlight">\(\delta y/\delta x\)</span> for any interval <span class="math notranslate nohighlight">\(\delta x\)</span>. However, most functions are more interesting than the straight line; a parabola for example, <span class="math notranslate nohighlight">\(y = mx^2 + c\)</span>, has a gradient that changes with <span class="math notranslate nohighlight">\(x\)</span> and the value <span class="math notranslate nohighlight">\(\delta y/\delta x\)</span> is now clearly going to depend upon how small <span class="math notranslate nohighlight">\(\delta x\)</span> and <span class="math notranslate nohighlight">\(\delta y\)</span> are and where <span class="math notranslate nohighlight">\(x\)</span> is on the curve. If <span class="math notranslate nohighlight">\(\delta x\)</span> is made infinitesimally small, the gradient exactly at position <span class="math notranslate nohighlight">\(x\)</span> is obtained and this is what is achieved with differentiation.</p>
 <p>In Fig. 2, the curve is a parabola with the equation <span class="math notranslate nohighlight">\(y = x^2 + 1\)</span>. The slope in the region P to Q is <span class="math notranslate nohighlight">\(\delta y/\delta x\)</span>. The point P has coordinates <span class="math notranslate nohighlight">\((2, 5)\)</span> and if <span class="math notranslate nohighlight">\(\delta x = 0.3\)</span> then the point Q is <span class="math notranslate nohighlight">\((x, y) = (2.3, 2.32 + 1)\)</span>, making <span class="math notranslate nohighlight">\(\delta y = 1.29\)</span> and <span class="math notranslate nohighlight">\(\delta y/\delta x = 4.3\)</span>. Similarly, the slope can be calculated starting at any other point on the curve. As <span class="math notranslate nohighlight">\(\delta x\)</span> is small but finite, the gradient is the average over the range <span class="math notranslate nohighlight">\(\delta x\)</span>, and if <span class="math notranslate nohighlight">\(f(x)\)</span> is any (normal) function such as <span class="math notranslate nohighlight">\(x^2 + 1\)</span>, then its slope is given by</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle \frac{\delta y}{\delta x}=\frac{f(x+\delta x)-f(x)}{\delta x} \tag{2}\]</div>
+\[\displaystyle \frac{\delta y}{\delta x}=\frac{f(x+\delta x)-f(x)}{\delta x} \qquad\tag{2}\]</div>
 <p>but this only approximately measures the true slope, which is obtained when <span class="math notranslate nohighlight">\(\delta x \to 0\)</span>.</p>
 <p><img alt="Drawing" src="../_images/differen-fig2.png" /></p>
 <p>Figure 2. Construction of a gradient on a curve.</p>
@@ -1745,7 +1745,7 @@ title="Print to PDF"
 <p>which can sometimes be useful, see chapter 10 (differential equations) section 3.1(viii).</p>
 <p>Note that eqn 2 could is also written as</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle \frac{\delta f(x)}{\delta x}=\frac{f(x+\delta x)-f(x)}{\delta x} \tag{2a}\]</div>
+\[\displaystyle \frac{\delta f(x)}{\delta x}=\frac{f(x+\delta x)-f(x)}{\delta x} \qquad\tag{2a}\]</div>
 <p>because <span class="math notranslate nohighlight">\(y\equiv f(x)\)</span>.</p>
 </section>
 <section id="the-machinery-of-differentiation">
@@ -1812,7 +1812,7 @@ argument of the exponential. Far simpler when put as an equation</p>
 <h2>3.3 Powers of <span class="math notranslate nohighlight">\(x\)</span><a class="headerlink" href="#powers-of-x" title="Permalink to this headline">#</a></h2>
 <p>The similar procedure making <span class="math notranslate nohighlight">\(\delta x \to  0\)</span> can be followed for lots of different functions, but need not be carried through because the results and methods are well understood and the results will be quoted. The derivatives of <span class="math notranslate nohighlight">\(\displaystyle y = x^n\)</span> where <span class="math notranslate nohighlight">\(n\)</span> is any positive or negative number, including fractions, have the form</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle \frac{dy}{dx}=nx^{n-1} \tag{5}\]</div>
+\[\displaystyle \frac{dy}{dx}=nx^{n-1} \qquad\tag{5}\]</div>
 <p>some examples are <span class="math notranslate nohighlight">\(\displaystyle \frac{d}{dx}x^4=4x^3 \qquad  \frac{d}{dx}x^{-3}=-3x^{-4} \qquad \frac{d}{dx}x^{-3/2}=-\frac{3}{2}x^{-5/2}\)</span></p>
 <p>As <span class="math notranslate nohighlight">\(3/2\)</span> is a fraction <span class="math notranslate nohighlight">\(n\)</span> is not restricted to be an integer.</p>
 <p>The calculate the result for a general power <span class="math notranslate nohighlight">\(n\)</span> i.e. differentiate <span class="math notranslate nohighlight">\(f(x)=x^n\)</span> we have to calculate the function at some small increment <span class="math notranslate nohighlight">\(\delta x\)</span> to <span class="math notranslate nohighlight">\(x\)</span> and then divide by <span class="math notranslate nohighlight">\(\delta x\)</span>. Thus <span class="math notranslate nohighlight">\(f(x+\delta x) = (x+\delta x)^n\)</span> and now we need to use the binomial theorem to expand the power. This is</p>
@@ -1839,7 +1839,7 @@ were <span class="math notranslate nohighlight">\(x\)</span> then multiplied by 
 <p>The equation could also have been written as, <span class="math notranslate nohighlight">\(\displaystyle y=x^{4/3}\)</span> producing <span class="math notranslate nohighlight">\(\displaystyle \frac{dy}{dx}=\frac{4}{3}x^{1/2}\)</span> which is the same when worked through. Try it if you are not convinced.</p>
 <p>If <span class="math notranslate nohighlight">\(g\)</span> is a function of <span class="math notranslate nohighlight">\(y\)</span> such as <span class="math notranslate nohighlight">\(y^3\)</span> then, formally,</p>
 <div class="math notranslate nohighlight">
-\[ g(y)=f(x), \qquad \frac{d}{dy}g(y)\frac{dy}{dx}=\frac{d}{dx} f(x)\tag{6}\]</div>
+\[ g(y)=f(x), \qquad \frac{d}{dy}g(y)\frac{dy}{dx}=\frac{d}{dx} f(x)\qquad\tag{6}\]</div>
 </section>
 <section id="constants">
 <h2>3.5 Constants<a class="headerlink" href="#constants" title="Permalink to this headline">#</a></h2>
@@ -1909,7 +1909,7 @@ were <span class="math notranslate nohighlight">\(x\)</span> then multiplied by 
 <p>The result of differentiation is often another function in <span class="math notranslate nohighlight">\(x\)</span>, so it is possible to differentiate
 again. Performing the operation twice is written as <span class="math notranslate nohighlight">\(\displaystyle \frac{d^2}{dx^2} f(x)\)</span>, and the notation is similar even if you must differentiate three or more times. Sometimes the first derivative is written as <span class="math notranslate nohighlight">\(f'\)</span>, the second as <span class="math notranslate nohighlight">\(f''\)</span>, and so forth. The second derivative means perform the differentiation twice over, the third derivative three times etc.,</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle  \frac{d^2}{dx^2} f(x) = \frac{d}{dx} \left( \frac{d}{dx}f(x)  \right)  \tag{7}\]</div>
+\[\displaystyle  \frac{d^2}{dx^2} f(x) = \frac{d}{dx} \left( \frac{d}{dx}f(x)  \right)  \qquad\tag{7}\]</div>
 <p>For example, if <span class="math notranslate nohighlight">\(y = ax^2\)</span>, differentiating once produces <span class="math notranslate nohighlight">\(dy/dx= 2ax\)</span> and differentiating this result gives</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle  \frac{d^2y}{dx^2}  = \frac{dy}{dx}2ax = 2a\]</div>
@@ -1920,7 +1920,7 @@ again. Performing the operation twice is written as <span class="math notranslat
 <p>a result that was first obtained by Euler in 1730. The factorials arrive by simplifying the product <span class="math notranslate nohighlight">\(m(m-1)(m-2)((m-1)\cdots\)</span> into a ratio of factorials.</p>
 <p>For exponentials repeated differentiation never produces zero.</p>
 <div class="math notranslate nohighlight">
-\[ y=e^{-ax}, \qquad \frac{dy}{dx}=-ay, \qquad \frac{d^2y}{dx^2}=-\frac{d}{dx}ae^{-ax}=a^2y   \tag{8}\]</div>
+\[ y=e^{-ax}, \qquad \frac{dy}{dx}=-ay, \qquad \frac{d^2y}{dx^2}=-\frac{d}{dx}ae^{-ax}=a^2y   \qquad\tag{8}\]</div>
 <p>Continuing the differentiation, the powers of <span class="math notranslate nohighlight">\(a\)</span> increase and the sign alternates being positive for even powers and negative for odd ones. Therefore the <span class="math notranslate nohighlight">\(n^{th}\)</span> derivative is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \frac{d^n}{dx^n}e^{-ax}=(-1)^na^ne^{-ax}, \qquad \frac{d^n}{dx^n}e^{-ax}=(-1)^na^ny\]</div>
@@ -1944,13 +1944,13 @@ again. Performing the operation twice is written as <span class="math notranslat
 <h3><strong>Change in enthalpy, entropy &amp; heat capacity  from electrochemical potential <span class="math notranslate nohighlight">\(\epsilon\)</span> vs. <span class="math notranslate nohighlight">\(T\)</span></strong><a class="headerlink" href="#change-in-enthalpy-entropy-heat-capacity-from-electrochemical-potential-epsilon-vs-t" title="Permalink to this headline">#</a></h3>
 <p>In an electrochemical cell the enthalpy at constant pressure is given by</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle \Delta H =-nF\left(\epsilon-T\left(\frac{\partial \epsilon}{\partial T}\right)_p\right) \tag{8a}\]</div>
+\[\displaystyle \Delta H =-nF\left(\epsilon-T\left(\frac{\partial \epsilon}{\partial T}\right)_p\right) \qquad\tag{8a}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\epsilon\)</span> is the measured voltage (potential), <span class="math notranslate nohighlight">\(n\)</span> the number of electrons transferred in the reaction and <span class="math notranslate nohighlight">\(F\)</span> the Faraday constant. The entropy change is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \Delta S =nF\left(\frac{\partial \epsilon}{\partial T}\right)_p\]</div>
 <p>and the change in heat capacity</p>
 <div class="math notranslate nohighlight">
-\[\Delta C_p = nFT\left(\frac{\partial^2 \epsilon}{\partial^2 T}\right)_p \tag{8b}\]</div>
+\[\Delta C_p = nFT\left(\frac{\partial^2 \epsilon}{\partial^2 T}\right)_p \qquad\tag{8b}\]</div>
 <p>In the reaction between hydrogen and silver chloride the change of cell potential <span class="math notranslate nohighlight">\(\epsilon\)</span> with temperature has been measured with great accuracy over the range <span class="math notranslate nohighlight">\(0\to 90^\text{o}\)</span> C in 0.1 M HCl solution. The reaction is</p>
 <div class="math notranslate nohighlight">
 \[\frac{1}{2}\mathrm{H_2(g) + AgCl(s) =Ag(s)+H^+(aq)+Cl^-(aq)}\]</div>

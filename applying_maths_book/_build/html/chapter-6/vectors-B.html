@@ -770,7 +770,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-7/matrices-L.html">
-     Principal axes for Moments of Inertia
+     Principal axes of Moments of Inertia
     </a>
    </li>
    <li class="toctree-l2">
@@ -1568,7 +1568,7 @@ title="Print to PDF"
 <h2>6 Projections<a class="headerlink" href="#projections" title="Permalink to this headline">#</a></h2>
 <p>To find the projection or component of a vector <span class="math notranslate nohighlight">\(\vec A\)</span> that lies along an axis, the dot product with one of the vector’s orthonormal base vectors is calculated. For example, to calculate the component along the x-axis the base vector <span class="math notranslate nohighlight">\(\boldsymbol i\)</span> is used;</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle \boldsymbol i\cdot \vec A = \boldsymbol i\cdot(a\boldsymbol i + b\boldsymbol j + c\boldsymbol k) = a\boldsymbol i\cdot\boldsymbol i = a. \tag{13}\]</div>
+\[\displaystyle \boldsymbol i\cdot \vec A = \boldsymbol i\cdot(a\boldsymbol i + b\boldsymbol j + c\boldsymbol k) = a\boldsymbol i\cdot\boldsymbol i = a. \qquad\tag{13}\]</div>
 <p>This shows that only the <span class="math notranslate nohighlight">\(x\)</span> component is extracted and you can see how to obtain the <span class="math notranslate nohighlight">\(b\)</span> and <span class="math notranslate nohighlight">\(c\)</span> components using <span class="math notranslate nohighlight">\(\boldsymbol j\)</span> and <span class="math notranslate nohighlight">\(\boldsymbol k\)</span> instead of <span class="math notranslate nohighlight">\(\boldsymbol i\)</span>. More usefully, since the dot product can be written as</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \boldsymbol i \cdot\vec A=|\boldsymbol i||\vec A|\cos(\theta)=|\vec A|\cos(\theta)\]</div>
@@ -1586,10 +1586,10 @@ the direction of <span class="math notranslate nohighlight">\(\vec v\)</span>.</
 <p>Steps (a) and (b): the normalized dot product of the two vectors is <span class="math notranslate nohighlight">\(\displaystyle \frac{\vec w \cdot \vec v}{|\vec w||\vec v|}\)</span>, where <span class="math notranslate nohighlight">\(|\vec w|\)</span> is the length of vector <span class="math notranslate nohighlight">\(w\)</span> and similarly for vector <span class="math notranslate nohighlight">\(v\)</span>.</p>
 <p>In step (c) multiplying by the length of <span class="math notranslate nohighlight">\(\vec w\)</span> and by the unit vector <span class="math notranslate nohighlight">\(\vec v/|\vec v|\)</span> produces the projection of <span class="math notranslate nohighlight">\(\vec w\)</span> onto <span class="math notranslate nohighlight">\(\vec v\)</span></p>
 <div class="math notranslate nohighlight">
-\[\displaystyle P_{\vec w\to \vec v}=\left(|\vec w|\frac{\vec w \cdot \vec v}{|\vec w||\vec v|}\right)\frac{\vec v}{|\vec v|} = (\vec w \cdot \vec v)\frac{\vec v}{|\vec v|^2} \tag{14}\]</div>
+\[\displaystyle P_{\vec w\to \vec v}=\left(|\vec w|\frac{\vec w \cdot \vec v}{|\vec w||\vec v|}\right)\frac{\vec v}{|\vec v|} = (\vec w \cdot \vec v)\frac{\vec v}{|\vec v|^2} \qquad\tag{14}\]</div>
 <p>The length of the projection is</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle L=\frac{|\vec w\cdot \vec v|}{|\vec v|}\tag{15}\]</div>
+\[\displaystyle L=\frac{|\vec w\cdot \vec v|}{|\vec v|}\qquad\tag{15}\]</div>
 <p>and where the absolute values make the length positive.</p>
 <p>You can see, perhaps, that the projection of <span class="math notranslate nohighlight">\(\vec v\)</span> onto <span class="math notranslate nohighlight">\(\vec w\)</span> is not the same as <span class="math notranslate nohighlight">\(\vec w\)</span> onto <span class="math notranslate nohighlight">\(\vec v\)</span>. If the matrix-vector notation is used, then the projection of <span class="math notranslate nohighlight">\(n\)</span>-dimensional vectors onto one another can be worked out and this type of calculation is common in quantum mechanics.</p>
 <p><img alt="Drawing" src="../_images/vectors-fig17.png" /></p>
@@ -1633,14 +1633,14 @@ the direction of <span class="math notranslate nohighlight">\(\vec v\)</span>.</
 <p>and since <span class="math notranslate nohighlight">\(\omega \equiv d\)</span> the distance can be easily calculated.</p>
 <p>If we were calculating the distance between two locations on Earth then an equivalent formula is used. First as latitude is defined as the angle towards the north pole from the equation or <span class="math notranslate nohighlight">\(\chi=\pi/2-\theta\)</span> cosine and sine in <span class="math notranslate nohighlight">\(\theta\)</span> are swapped, and secondly the latitude is usually written as the difference in longitude or <span class="math notranslate nohighlight">\(\Delta \lambda\)</span> instead of <span class="math notranslate nohighlight">\(\phi\)</span> and with these changes <span class="math notranslate nohighlight">\(\psi \to\Delta \lambda\)</span> and replacing the angle with <span class="math notranslate nohighlight">\(d/R\)</span> produces</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle \cos(d/R)= \cos(\chi_1)\cos(\chi_2)\cos(\Delta \lambda)+\sin(\chi_1)\sin(\chi_2)\tag{15a}\]</div>
+\[\displaystyle \cos(d/R)= \cos(\chi_1)\cos(\chi_2)\cos(\Delta \lambda)+\sin(\chi_1)\sin(\chi_2)\qquad\tag{15a}\]</div>
 <p>While this equation is exact, it had difficulties in the past when computer precision was limited and still does if the numerical precision of the calculator is limited, i.e. not 64 bit or double precision. This is because for small distances <span class="math notranslate nohighlight">\(\Delta \lambda\to 0\)</span> and its cosine becomes very, very close to 1 and the equation returns a distance of zero because also <span class="math notranslate nohighlight">\(\chi_1 \approx \chi_2\)</span>. In geographical terms this means a distance of <span class="math notranslate nohighlight">\(\approx 3\)</span> km or less will produce an inaccurate, i.e wrong value.  This can be appreciated when <span class="math notranslate nohighlight">\(\Delta \lambda\)</span> is small because then <span class="math notranslate nohighlight">\(\cos(\Delta \lambda)\to 1\)</span>. This changes</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \cos(\omega) \to \cos(\chi_1)\cos(\chi_2)+\sin(\chi_1)\sin(\chi_2)\to 1\]</div>
 <p>and so <span class="math notranslate nohighlight">\(\omega\equiv d\to 0\)</span>.</p>
 <p>To correct for this numerical inaccuracy two approaches are made. First use the identity <span class="math notranslate nohighlight">\(2\sin^2(x/2)=(1-\cos(x))\)</span> to convert the cosine to sine and secondly simplify with <span class="math notranslate nohighlight">\(\cos(x_2-x_1)=\cos(x_2)\cos(x_1)+\sin(x_2)\sin(x_1)\)</span> and after some manipulation produces the Haversine formula historically used for accurate determination of distances.</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle d=2R\sin^{-1}\left(\sqrt{\sin^2\left(\frac{\Delta \chi}{2}\right)+\cos(\chi_1)\cos(\chi_2)\sin^2\left(\frac{\Delta \lambda}{2}\right)} \right)\tag{15b}\]</div>
+\[\displaystyle d=2R\sin^{-1}\left(\sqrt{\sin^2\left(\frac{\Delta \chi}{2}\right)+\cos(\chi_1)\cos(\chi_2)\sin^2\left(\frac{\Delta \lambda}{2}\right)} \right)\qquad\tag{15b}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\Delta \chi\)</span> is the difference in latitude (in radians) and <span class="math notranslate nohighlight">\(\Delta \lambda\)</span> the difference in longitude also in radians.</p>
 <p><img alt="Drawing" src="../_images/vectors-fig17a.png" /></p>
 <p>Figure 17a. Calculating the shortest distance (a Great Circle) between two points on the surface of a sphere using the dot product and spherical polar coordinates.</p>
@@ -1652,7 +1652,7 @@ the direction of <span class="math notranslate nohighlight">\(\vec v\)</span>.</
 <p>A three-dimensional vector is often defined as <span class="math notranslate nohighlight">\(\vec V = a\boldsymbol i + b\boldsymbol j + c\boldsymbol k\)</span>. However, the vector can equally well be described by the angles it makes to the <span class="math notranslate nohighlight">\(x, y\)</span> and <span class="math notranslate nohighlight">\(z\)</span>-axes, when these angles are <span class="math notranslate nohighlight">\(\alpha, \beta,  \gamma\)</span>, as shown in figure 18, where the angles are measured away from the axes to the vector.
 The vector <span class="math notranslate nohighlight">\(v\)</span> is now described by</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle \vec v = |\vec v|\left(\cos(\alpha)\boldsymbol i + \cos(\beta)\boldsymbol j + \cos(\gamma )\boldsymbol k\right) \tag{16}\]</div>
+\[\displaystyle \vec v = |\vec v|\left(\cos(\alpha)\boldsymbol i + \cos(\beta)\boldsymbol j + \cos(\gamma )\boldsymbol k\right) \qquad\tag{16}\]</div>
 <p>and the components <span class="math notranslate nohighlight">\(\cos(\alpha), \cos(\beta), \cos(\gamma )\)</span> are each <em>direction cosines</em> . The direction cosines are, therefore, the projections the normalized vector <span class="math notranslate nohighlight">\(v\)</span> makes onto each of the <span class="math notranslate nohighlight">\(x-, y-\)</span> and <span class="math notranslate nohighlight">\(z-\)</span> axes. They are also the dot product of vector <span class="math notranslate nohighlight">\(v\)</span> with each base vector <span class="math notranslate nohighlight">\(\boldsymbol i, \boldsymbol j , \boldsymbol k\)</span> in turn. Taking the dot product with base vector <span class="math notranslate nohighlight">\(\boldsymbol i\)</span> gives</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \vec v\cdot \boldsymbol i=|\vec v|\cos(\alpha), \quad \cos(\alpha)=\frac{\vec v\cdot \boldsymbol i}{|\vec v|}\]</div>
@@ -1665,7 +1665,7 @@ The vector <span class="math notranslate nohighlight">\(v\)</span> is now descri
 <p>which is the same result as <span class="math notranslate nohighlight">\(|\vec v|=\sqrt{\vec v\cdot \vec v}=\sqrt{a^2+b^2+c^2}\)</span></p>
 <p>Taking the dot product of <span class="math notranslate nohighlight">\(\vec v\)</span> with itself, then the sum rule for direction cosines is found,</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle \cos^2(\alpha)+\cos^2(\beta)+\cos^2(\gamma)=1 \tag{17}\]</div>
+\[\displaystyle \cos^2(\alpha)+\cos^2(\beta)+\cos^2(\gamma)=1 \qquad\tag{17}\]</div>
 <p>This equation shows that the angles are not independent because knowing two of them determines the third. Note that direction cosines describe the vector by angles rather than components of <span class="math notranslate nohighlight">\((x, y, z)\)</span> and hence can be used to find these angles; alternatively, if the angles are given, they can be used to find the <span class="math notranslate nohighlight">\(x, y, z\)</span> components.</p>
 <p>As an example, let us find the angles that the vector <span class="math notranslate nohighlight">\(\vec R = 3\boldsymbol i + 6\boldsymbol j - 2\boldsymbol k\)</span> makes with the x-axis and calculate the direction cosines for this vector. First, assume that the angles are <span class="math notranslate nohighlight">\(\alpha, \beta\)</span>, and <span class="math notranslate nohighlight">\(\gamma\)</span> with respect to the positive <span class="math notranslate nohighlight">\(x-, y-\)</span>, and <span class="math notranslate nohighlight">\(z-\)</span>axes, as in figure 18, as this is the convention. The dot product with unit vector <span class="math notranslate nohighlight">\(\boldsymbol i\)</span> produces</p>
 <div class="math notranslate nohighlight">

@@ -27,7 +27,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # In a mechanical or molecular vibration, we usually try to find the equation relating forces. In simple harmonic motion, such as stretching a chemical bond, the potential energy is by Hooke's law, $V = ks^2/2$, where $k$ is the force constant and $s$ the amount the bond extends away from its equilibrium length. The force $f$ to stretch the bond, is obtained by differentiation of $\displaystyle f=-\frac{dV}{ds}=-ks$ and is also given by Newton's second law; force = mass $\times$ acceleration, $\displaystyle f=m\frac{d^2s}{dt^2}$ which provides the connection to time. Equating the two terms produces the equation of motion for small displacements from equilibrium, viz.
 # 
-# $$\displaystyle \frac{d^2s}{dt^2}+\frac{k}{m}s=0 \tag{46}$$
+# $$\displaystyle \frac{d^2s}{dt^2}+\frac{k}{m}s=0 \qquad\tag{46}$$
 # 
 # The next step is to find out what $k/m$ represents. By knowing that the motion of the pendulum is periodic, we may assume that the displacement at any time is described by $s = u\cos(\omega t + \varphi)$, where $\omega$ is an angular frequency, $\varphi$ is the phase, $t$ is time, and $u$ is the amplitude of the motion. The phase is arbitrary, and can be set to zero. Differentiating $s$ twice by time and multiplying by $m$ to obtain the force gives
 # 
@@ -80,7 +80,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # The first step is to work out the potential energy $V$, which is the sum of the increase in height as each bob swings and the energy stored due to the change in length of the spring. The potential due to a pendulum's height change is $mgh$, where $h$ is the vertical displacement when the pendulum swings, defined in the right-hand pane of Figure 59 and $g$ is the acceleration due to gravity and $m$ is mass. Next, the energy due to compressing or extending the spring is found then, using the total potential energy, the forces are calculated. The potential energy of extending a spring of force constant $k$ by distance $s$, is $ks$. As the restoring force is always equal to the negative derivative of the potential and is also mass times acceleration, then,
 # 
-# $$\displaystyle force = -\frac{d}{ds}V=m\frac{d^2s}{dt^2} \tag{49}$$
+# $$\displaystyle force = -\frac{d}{ds}V=m\frac{d^2s}{dt^2} \qquad\tag{49}$$
 # 
 # It remains, therefore, to calculate the potential $V$ in terms of the displacement, and to solve the resulting eigenvalue - eigenvector equations.
 # 
@@ -98,11 +98,11 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # The force on pendulum one is, by definition, mass $\times$ acceleration 
 # 
-# $$\displaystyle m\frac{d^2s_1}{dt^2}=-\frac{\partial V}{\partial s_1}=-\frac{mgs_1}{L}+k(s_2-s_1)  \tag{50}$$
+# $$\displaystyle m\frac{d^2s_1}{dt^2}=-\frac{\partial V}{\partial s_1}=-\frac{mgs_1}{L}+k(s_2-s_1)  \qquad\tag{50}$$
 # 
 # and on pendulum two, similarly
 # 
-# $$\displaystyle m\frac{d^2s_2}{dt^2}=-\frac{\partial V}{\partial s_2}=-\frac{mgs_2}{L}+k(s_2-s_1)  \tag{51}$$
+# $$\displaystyle m\frac{d^2s_2}{dt^2}=-\frac{\partial V}{\partial s_2}=-\frac{mgs_2}{L}+k(s_2-s_1)  \qquad\tag{51}$$
 # 
 # As a check, the force on the pendulums should be due to gravity alone, and not depend on the force constant, $k$, viz,
 # 
@@ -170,17 +170,17 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # If a molecule has potential energy $V$, then this energy can be expressed as a Maclaurin expansion about the minimum, or equilibrium, configuration, using displacements of each of the atoms in each of $x$-, $y$- and $z$- directions. Clearly, this is going to be a complicated function. If there are $n$ atoms with $3n$ coordinates, the displacement from equilibrium is $s_i$ for atom coordinate $i$. The potential energy is
 # 
-# $$\displaystyle V=V_0+\sum_{i=1}^{3n} \left( \frac{\partial V}{\partial s_i}\right)_0s_i+\frac{1}{2}\sum_{i=1}^{3n} \sum_{j=1}^{3n} \left(\frac{\partial ^2 V}{\partial s_i\partial s_j} \right)_0s_is_j+\cdots \tag{54}$$
+# $$\displaystyle V=V_0+\sum_{i=1}^{3n} \left( \frac{\partial V}{\partial s_i}\right)_0s_i+\frac{1}{2}\sum_{i=1}^{3n} \sum_{j=1}^{3n} \left(\frac{\partial ^2 V}{\partial s_i\partial s_j} \right)_0s_is_j+\cdots \qquad\tag{54}$$
 # 
 # The zero subscripts mean that the gradient is evaluated about the equilibrium position at each coordinate, where the extension $s_i = 0$. The summation index covers all coordinates $1 \to 3n$. The indexing is up to us to choose, but could be 1 for atom ones's x-coordinate, 2 for $y$, 3 for $z$, then 4 for atom 2's x-coordinate, 5 for $y$ and so on. The second derivative has two summations and contains $(3n)^2$ terms. The reason for all these terms is easiest to see with just two dimensions. Imagine the potential is shaped like a bowl; the height is $V$ and $x$ and $y$ are the two displacements, $s$. The first derivative $dV/dx$ gives the slope (force) in the x-direction at constant $y$, and similarly $dV/dy$ the force in the y-direction at constant $x$. When $i = j$ the second derivative $d^2V/dx^2$ describes how the force varies along the x-axis at constant $y$. The 'cross terms', when $i \ne j$, measures these values between the axes.
 # 
 # The origin of the potential has a value $V_0$, which is arbitrary, and because potential energy is a relative measure, $V_0$ can be set to zero. The first derivative of the potential is the force, and as this is expanding about the equilibrium position, it is zero. The potential is therefore,
 # 
-# $$\displaystyle V \approx\frac{1}{2}\sum_{i=1}^{3n} \sum_{j=1}^{3n} \left(\frac{\partial ^2 V}{\partial s_i\partial s_j} \right)_0s_is_j \tag{55}$$
+# $$\displaystyle V \approx\frac{1}{2}\sum_{i=1}^{3n} \sum_{j=1}^{3n} \left(\frac{\partial ^2 V}{\partial s_i\partial s_j} \right)_0s_is_j \qquad\tag{55}$$
 # 
 # which is analogous to the quadratic potential based on Hooke's law. The kinetic energy is by definition $mv^2/2$ for each mass or
 # 
-# $$\displaystyle T=\frac{1}{2}\sum_i^{3n}m_i\left(\frac{ds_i}{dt} \right)^2 \tag{56}$$
+# $$\displaystyle T=\frac{1}{2}\sum_i^{3n}m_i\left(\frac{ds_i}{dt} \right)^2 \qquad\tag{56}$$
 # 
 # for all masses. We now have to assume a great deal and jump almost to the answer by using Lagrange's formulation of Newton's laws of motion. Furthermore, we are going straight to the matrix form by defining
 # 
@@ -188,27 +188,27 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # which is a matrix of force constants $k$. Next, a matrix $\pmb{M}$ is defined whose inverse is the matrix of second derivatives of the kinetic energy with respect to velocities $\dot s$, in which terms are of the form $\displaystyle \frac{\partial^2T}{\partial \dot s_i \partial \dot s_j}$ and this turns out to be a diagonal matrix of the masses,
 # 
-# $$\displaystyle \pmb{M}^{-1} =diagonal(m_1,m_2,\cdots,m_n) \tag{57}$$
+# $$\displaystyle \pmb{M}^{-1} =diagonal(m_1,m_2,\cdots,m_n) \qquad\tag{57}$$
 # 
 # and therefore
 # 
-# $$\displaystyle \pmb{M} =diagonal(1/m_1,1/m_2,\cdots,1/m_n) \tag{58}$$
+# $$\displaystyle \pmb{M} =diagonal(1/m_1,1/m_2,\cdots,1/m_n) \qquad\tag{58}$$
 # 
 # is the diagonal matrix of _reciprocal_ masses; see Section 4.10.
 # 
 # Writing out the Lagrange equation gives
 # 
-# $$\displaystyle \pmb{M}^{-1} \frac{ d^2\pmb{s} }{dt^2} +\pmb{Fs}=0; \qquad \text{or} \qquad \frac{d^2\pmb{s}}{dt^2}+\pmb{MFs}=0 \tag{59}$$
+# $$\displaystyle \pmb{M}^{-1} \frac{ d^2\pmb{s} }{dt^2} +\pmb{Fs}=0; \qquad \text{or} \qquad \frac{d^2\pmb{s}}{dt^2}+\pmb{MFs}=0 \qquad\tag{59}$$
 # 
 # The second of these equations looks rather like that for a single oscillator, equation 47, if we identify $\pmb{MF}$ with $k/m$, which, dimensionally, is correct.
 # 
 # To solve these simultaneous equations, it is necessary to show that it can be turned into an eigenvalue - eigenvector equation. Supposing that the motion is harmonic with frequency $\omega$, a solution for the $i^{th}$ atom is $s_i = a_i\cos(\omega t + \varphi)$ and by differentiating this displacement twice with time, it is seen that this is a solution of equation 59 because the result is
 # 
-# $$\displaystyle \frac{d^2\pmb{s}}{dt^2}+\omega^2\pmb{s} =0 \tag{60}$$
+# $$\displaystyle \frac{d^2\pmb{s}}{dt^2}+\omega^2\pmb{s} =0 \qquad\tag{60}$$
 # 
 # Combining the equations 59 and 60 produces the eigenvalue - eigenvector equation
 # 
-# $$\displaystyle \pmb{MFs}=\omega^2\pmb{s}; \qquad \text{or} \qquad \left[\pmb{MF}- \omega^2\pmb{I}\right]\pmb{s}=\pmb{0} \tag{61}$$
+# $$\displaystyle \pmb{MFs}=\omega^2\pmb{s}; \qquad \text{or} \qquad \left[\pmb{MF}- \omega^2\pmb{I}\right]\pmb{s}=\pmb{0} \qquad\tag{61}$$
 # 
 # with eigenvalues $\omega^2$ as roots of the secular determinant $\left|\pmb{MF}- \omega^2\pmb{I}\right| = 0$. 
 # 
@@ -220,15 +220,15 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # and define the displacement in terms of _reduced_ mass
 # 
-# $$\displaystyle \pmb{q}=\pmb{G}^{-1}\pmb{s} \tag{63}$$
+# $$\displaystyle \pmb{q}=\pmb{G}^{-1}\pmb{s} \qquad\tag{63}$$
 # 
 # therefore, each $q$ matrix element takes the form $q_i =s_i\sqrt{m_i}$. With these changes equation 76 becomes
 # 
-# $$\displaystyle \pmb{GFGq}=\omega^2\pmb{q} \tag{64}$$
+# $$\displaystyle \pmb{GFGq}=\omega^2\pmb{q} \qquad\tag{64}$$
 # 
 # and the secular determinant 
 # 
-# $$\displaystyle \left|\pmb{GFG}-\omega^2\pmb{I}\right|=0 \tag{65}$$
+# $$\displaystyle \left|\pmb{GFG}-\omega^2\pmb{I}\right|=0 \qquad\tag{65}$$
 # 
 # The $\pmb{F}$ matrix is that of the force constants;
 # 
@@ -243,11 +243,11 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # A fuller analysis of the problem leads to the conclusion that the eigenvectors $\pmb x$ are the displacements of each atom which can be used to produce the normal mode displacements $Q$ via
 # 
-# $$\displaystyle \pmb{Q} = \pmb{x}^T\pmb{q} \tag{67}$$
+# $$\displaystyle \pmb{Q} = \pmb{x}^T\pmb{q} \qquad\tag{67}$$
 # 
 # where $\pmb{q}=\pmb{G}^{-1}\pmb{s}$ so that each element is $q_i= s_i\sqrt{m_i}$, and the coordinate displacements $s$ are given by
 # 
-# $$\displaystyle \pmb{s} = \pmb{GxQ} \tag{68}$$
+# $$\displaystyle \pmb{s} = \pmb{GxQ} \qquad\tag{68}$$
 # 
 # ### **Summary**
 # 
@@ -258,7 +258,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # In the case of a linear triatomic A-B-C the potential energy is the sum of terms for the stretching of each bond with force constants $k_1,k_2$ for the two bonds, and masses $m_1,m_2,m_3$, the potential energy is, 
 # 
-# $$\displaystyle V(s_1,s_2,s_3)=\frac{k_1}{2}(s_1-s_2)^2+\frac{k_2}{2}(s_2-s_3)^2 \tag{55a}$$
+# $$\displaystyle V(s_1,s_2,s_3)=\frac{k_1}{2}(s_1-s_2)^2+\frac{k_2}{2}(s_2-s_3)^2 \qquad\tag{55a}$$
 # 
 # The forces are the negative derivatives with respect to the displacements
 # 

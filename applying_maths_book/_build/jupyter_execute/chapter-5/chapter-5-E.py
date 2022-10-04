@@ -29,7 +29,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # A power series has the general form
 # 
-# $$\displaystyle f(x)=a_0 +a_1x+a_2x^2 +a_3x^3 +\cdots +a_nx^n +\cdots   \tag{13}$$
+# $$\displaystyle f(x)=a_0 +a_1x+a_2x^2 +a_3x^3 +\cdots +a_nx^n +\cdots   \qquad\tag{13}$$
 # 
 # where the coefficients $a_0, a_1$, etc. are independent of the parameter $x$. We shall clearly want to be able to find these coefficients and doing this relies on the fact that by differentiating a _converging_ power series the resulting series can be shown also to converge.
 # 
@@ -49,11 +49,11 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # By reassembling the parts, the Maclaurin series for $f(x)$ is produced:
 # 
-# $$\displaystyle f(x) = f(0) + xf'(0) + \frac{x^2}{2!} f''(0) + \frac{x^3}{3!} f'''(0) + \cdots + \frac{x^n}{n!} f^n(0) + \cdots  \tag{14}  $$
+# $$\displaystyle f(x) = f(0) + xf'(0) + \frac{x^2}{2!} f''(0) + \frac{x^3}{3!} f'''(0) + \cdots + \frac{x^n}{n!} f^n(0) + \cdots  \qquad\tag{14}  $$
 # 
 # Sometimes the equation is written in the equivalent form;
 # 
-# $$\displaystyle f(x) =f(0)+x\left( \frac{df}{dx} \right)_0 + \frac{x^2}{2!}\left( \frac{d^2f}{dx^2} \right)_0 \cdots +\frac{x^n}{n!}\left( \frac{d^nf}{dx^n} \right)_0+\cdots \tag{15} $$
+# $$\displaystyle f(x) =f(0)+x\left( \frac{df}{dx} \right)_0 + \frac{x^2}{2!}\left( \frac{d^2f}{dx^2} \right)_0 \cdots +\frac{x^n}{n!}\left( \frac{d^nf}{dx^n} \right)_0+\cdots \qquad\tag{15} $$
 # 
 # where the subscript $0$ means evaluate the derivative at $x = 0$.
 # 
@@ -112,7 +112,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # where each even power derivative is zero and the odd power derivatives alternate between $1$ and $-1$. With this in mind, the expansion for $\sin(x)$, which must contain only odd powers of $x$, is
 # 
-# $$\displaystyle \sin(x) = x-\frac{x^3}{3!}+\frac{x^5}{5!}-\frac{x^7}{7!} +\cdots = \sum \limits _{n=0}^{\infty} (-1)^n \frac{x^{2n+1}}{(2n+1)!}  \tag{18}$$
+# $$\displaystyle \sin(x) = x-\frac{x^3}{3!}+\frac{x^5}{5!}-\frac{x^7}{7!} +\cdots = \sum \limits _{n=0}^{\infty} (-1)^n \frac{x^{2n+1}}{(2n+1)!}  \qquad\tag{18}$$
 # 
 # The summation formula on the right was obtained 'by inspection', which in practice can involve quite a bit of trial and error to get correct. For example the $(-1)^n$ ensures that terms are negative when $n$ is odd, $n$ being the position of a term in the series. The first, $x$, is at position zero.
 # 
@@ -251,25 +251,25 @@ plt.show()
 # 
 # The general series is
 # 
-# $$\displaystyle (1+x)^m = 1 +mx+\frac{m(m-1)}{2!}x^2 + \frac{m(m-1)(m-2)}{3!}x^3+\cdots    \tag{22} $$
+# $$\displaystyle (1+x)^m = 1 +mx+\frac{m(m-1)}{2!}x^2 + \frac{m(m-1)(m-2)}{3!}x^3+\cdots    \qquad\tag{22} $$
 # 
 # After some trial and error this can also be written as,
 # 
-# $$\displaystyle (1+x)^m = \sum\limits_{n=0}^\infty \frac{m!}{n!(m-n)!}x^n   \tag{23}$$
+# $$\displaystyle (1+x)^m = \sum\limits_{n=0}^\infty \frac{m!}{n!(m-n)!}x^n   \qquad\tag{23}$$
 # 
 # and is valid only when $| x | \lt 1$. In common with other expansions when $x \ll 1$,higher powers of $x$ are even smaller and the series can be truncated at the second term.
 # 
-# The binomial coefficients are often written as $\displaystyle \frac{m!}{n!(m-n)!} = \binom{m}{n}    \tag{24} $
+# The binomial coefficients are often written as $\displaystyle \frac{m!}{n!(m-n)!} = \binom{m}{n}    \qquad\tag{24} $
 # 
 # This ratio is usually used to describe the number of ways of placing $n$ objects into one of two bins if there are a total number of $m$ objects.
 # 
 # Provided that $| x | \lt 1$ the expansion of $(1 + x)^{1/2}$ is
 # 
-# $$\displaystyle  (1+x)^{1/2}=1+\frac{x}{2}- \frac{x^2}{8}+\frac{x^3}{16}-\cdots  \tag{25}$$
+# $$\displaystyle  (1+x)^{1/2}=1+\frac{x}{2}- \frac{x^2}{8}+\frac{x^3}{16}-\cdots  \qquad\tag{25}$$
 # 
 # and similarly
 # 
-# $$\displaystyle  (1+x)^{-1/2}=1-\frac{x}{2}+ \frac{x^2}{8}-\frac{x^3}{16}+\cdots  \tag{25}$$
+# $$\displaystyle  (1+x)^{-1/2}=1-\frac{x}{2}+ \frac{x^2}{8}-\frac{x^3}{16}+\cdots  \qquad\tag{25}$$
 # 
 # ### **Example, calculate square root**
 # Consider calculating $\sqrt{3/2}$, using equation (25). Letting $x$ = 1/2 the series is $(1+x)^{1/2}= 1+ 1/4 - 1/32 + 1/128 \cdots = 1.2265$. The correct answer to 4 decimal places is 1.2247 and the series has to be extended to nine terms, the highest power being $x^8$ to reach this level of accuracy. Trying to calculate $\sqrt 3$ using this series gives a divergent result; why is this? Try it for yourself. The ancient Algorithm 1.2 could, however, be used.
@@ -339,7 +339,7 @@ plt.show()
 # 
 # Substituting gives $\displaystyle \ln(Z)= \ln(e^{-aJ} - e^{a(J+1)})-\ln(1-e^a)$  using the definition $\displaystyle \frac{d \ln(f(x)}{dx}=\frac{f'(x)}{f(x)}$ gives
 # 
-# $$M=2\mu_b\left(\frac{ -Je^{-aJ}-(J+1)e^{a(J+1)}  }{e^{-aJ} - e^{a(J+1)}}+\frac{e^a}{1-e^a}\right)\tag{25a}$$
+# $$M=2\mu_b\left(\frac{ -Je^{-aJ}-(J+1)e^{a(J+1)}  }{e^{-aJ} - e^{a(J+1)}}+\frac{e^a}{1-e^a}\right)\qquad\tag{25a}$$
 # 
 # and the change in magnetization with magnetic field is shown in figure 5a for different values of $J$.
 # 

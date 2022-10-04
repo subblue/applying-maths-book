@@ -770,7 +770,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-7/matrices-L.html">
-     Principal axes for Moments of Inertia
+     Principal axes of Moments of Inertia
     </a>
    </li>
    <li class="toctree-l2">
@@ -1603,7 +1603,7 @@ title="Print to PDF"
 <p>Because the negative square root cannot be evaluated, as no ordinary number can be negative when squared, a new number conventionally called <span class="math notranslate nohighlight">\(i\)</span> (although engineers call this <span class="math notranslate nohighlight">\(j\)</span>) was invented with the property <span class="math notranslate nohighlight">\(i^2 = -1\)</span>  or <span class="math notranslate nohighlight">\(i = \sqrt{-1}\)</span>. The solution to the equation becomes <span class="math notranslate nohighlight">\(x = 1/2 \pm i\)</span>.</p>
 <p>This new number is one of a new class called <em>complex numbers</em>. These are not numbers in the elementary sense used in counting or measuring, but constitute new mathematical objects and have an existence of their own. These numbers are called ‘complex’ only because they contain two parts and can always be written in the form</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle z=a+ ib \tag{1}\]</div>
+\[\displaystyle z=a+ ib \qquad\tag{1}\]</div>
 <p>where <span class="math notranslate nohighlight">\(a\)</span> is called the <em>real</em> (Re) part and <span class="math notranslate nohighlight">\(b\)</span> the <em>imaginary</em> (Im) part of the number. The complex number <span class="math notranslate nohighlight">\(z = i\)</span>, if written in the form of equation 1, has a real part <span class="math notranslate nohighlight">\(a = 0\)</span> and an imaginary part <span class="math notranslate nohighlight">\(b = 1\)</span>. The latter is rather a misnomer as <span class="math notranslate nohighlight">\(b\)</span> is just as ‘real’ as is <span class="math notranslate nohighlight">\(a\)</span>; it is just a number and perhaps, therefore, the best way to view a complex number is to consider it a number in two dimensions with amounts <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> in each of these dimensions. In that case, a complex number can be represented as a point on a graph rather than being a point on a line, as a normal number may be considered to be. The graph is called an Argand diagram, if drawn with the real part <span class="math notranslate nohighlight">\(a\)</span> along the conventional x-axis and <span class="math notranslate nohighlight">\(b\)</span> along the y-axis; the area defined by <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> is also called the Argand or Gauss plane. The imaginary number <span class="math notranslate nohighlight">\(i\)</span> has a real part that is 0 and an imaginary part that is 1, and is represented by the point (0, 1) on the y-axis of an Argand diagram, see figure 1.</p>
 <p><img alt="Drawing" src="../_images/chapter2-fig1.png" /></p>
 <p>Figure 1. The Argand diagram showing two complex numbers in the form <span class="math notranslate nohighlight">\(z = a + ib\)</span>, <span class="math notranslate nohighlight">\(r\)</span> is the modulus of the complex number <span class="math notranslate nohighlight">\(z\)</span> and <span class="math notranslate nohighlight">\(\theta\)</span> the argument measured anticlockwise from the real axis.</p>
@@ -1622,10 +1622,10 @@ title="Print to PDF"
 <h2>1 Complex conjugate<a class="headerlink" href="#complex-conjugate" title="Permalink to this headline">#</a></h2>
 <p>Complex numbers possess a new property compared to real numbers and this is the complex conjugate. If <span class="math notranslate nohighlight">\(z = a + ib\)</span> then the complex conjugate is defined as</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle z^* = a - ib, \tag{2}\]</div>
+\[\displaystyle z^* = a - ib, \qquad\tag{2}\]</div>
 <p>where, by convention, an asterisk is added and every <span class="math notranslate nohighlight">\(i\)</span> is replaced with <span class="math notranslate nohighlight">\(-i\)</span>; the result is that <span class="math notranslate nohighlight">\(z^*z\)</span> is always a real number;</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle z*z=(a+ib)^*(a+ib)=(a-ib)(a+ib)=a^2 +b^2. \tag{3}\]</div>
+\[\displaystyle z*z=(a+ib)^*(a+ib)=(a-ib)(a+ib)=a^2 +b^2. \qquad\tag{3}\]</div>
 <p>In geometrical terms, forming the complex conjugate is equivalent to a reflection in the real axis because only the imaginary part is inverted.</p>
 <p>In quantum mechanics, the wavefunction is often found to be a complex quantity and, therefore, the complex conjugate is always used to calculate expectation or average values such as <span class="math notranslate nohighlight">\(\langle x \rangle = \int\psi_i^* x\psi_f dx\)</span> and probabilities <span class="math notranslate nohighlight">\(p = \int \psi^*\psi dx\)</span> because only a mathematically real quantity is measured in an experiment, not an imaginary one.</p>
 <p>The quantity <span class="math notranslate nohighlight">\(z + z^*\)</span> is always a real number equal to <span class="math notranslate nohighlight">\(2Re(z)\)</span> or <span class="math notranslate nohighlight">\(2Re(z^*)\)</span> which is the same. It is worth remembering the rules</p>
@@ -1667,24 +1667,24 @@ title="Print to PDF"
 <p>The second new property held by complex numbers is variously called the modulus, magnitude, absolute value, or norm of the complex number. This is calculated in a similar way to that of a vector and is the length of the complex number measured from the origin, Figs 1,4.</p>
 <p>The modulus <span class="math notranslate nohighlight">\(r\)</span> of the complex number <span class="math notranslate nohighlight">\(z = a + ib\)</span> is</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle r=+\sqrt{a^2 +b^2} \tag{4}\]</div>
+\[\displaystyle r=+\sqrt{a^2 +b^2} \qquad\tag{4}\]</div>
 <p>It is variously written as</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle r=|z|=|a+ib|= \sqrt{z^*z}=|z^*| \tag{5}\]</div>
+\[\displaystyle r=|z|=|a+ib|= \sqrt{z^*z}=|z^*| \qquad\tag{5}\]</div>
 <p>The square of a complex number is the square of the modulus;</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle |a+ib|^2 =(a+ib)^*(a+ib)=(a-ib)(a+ib)=a^2 +b^2 =z^*z=|z|^2\]</div>
 <p>and is always a positive number.</p>
 <p>In figures 1 and 4 the line from the origin to the complex number is at an angle <span class="math notranslate nohighlight">\(\theta\)</span>  given by</p>
 <div class="math notranslate nohighlight">
-\[ \tan(\theta) = \frac{b}{a},\qquad \theta = \tan^{-1}\left(\frac{b}{a}\right) =\tan^{-1}\left( \frac{Im(z)}{Re(z)} \right) \tag{2.6}\]</div>
+\[ \tan(\theta) = \frac{b}{a},\qquad \theta = \tan^{-1}\left(\frac{b}{a}\right) =\tan^{-1}\left( \frac{Im(z)}{Re(z)} \right) \qquad\tag{2.6}\]</div>
 <p>measured anticlockwise from the real axis. This angle <span class="math notranslate nohighlight">\(\theta\)</span> is variously called the <em>argument, amplitude, polar angle</em>, or <em>phase</em> of the complex number and is measured in radians, a full circle being <span class="math notranslate nohighlight">\(2\pi\)</span> radians. The use of the word ‘amplitude’ to mean an angle is very confusing, and should probably be avoided.</p>
 <p>The location of any complex number is <span class="math notranslate nohighlight">\((a,\; b)\)</span> in Cartesian type coordinates, or alternatively, in polar type coordinates is <span class="math notranslate nohighlight">\((r,\; \theta )\)</span>. The complex number is then described as</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle z = r\left(\cos(\theta) + i \sin(\theta)\right)\]</div>
 <p>This interpretation is also illustrated in figure 1 for a point <span class="math notranslate nohighlight">\(z = a + ib\)</span> where <span class="math notranslate nohighlight">\(r\)</span> is the distance of the point from the origin. The distance along the real axis is <span class="math notranslate nohighlight">\(a = r \cos(\theta)\)</span> and along the imaginary axis, <span class="math notranslate nohighlight">\(b = r \sin(\theta)\)</span>. Equating the real and imaginary parts gives</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle z = a + ib = r\left(\cos(\theta) + i \sin(\theta)\right) \tag{7}\]</div>
+\[\displaystyle z = a + ib = r\left(\cos(\theta) + i \sin(\theta)\right) \qquad\tag{7}\]</div>
 <p>For example, if the complex number is <span class="math notranslate nohighlight">\(z = i\)</span>, it has a real part that is <span class="math notranslate nohighlight">\(0\)</span> and an imaginary part of <span class="math notranslate nohighlight">\(1\)</span>, and is represented by a point <span class="math notranslate nohighlight">\((0, 1)\)</span> which is on the imaginary axis. Its modulus is <span class="math notranslate nohighlight">\(1\)</span> and its argument (angle/phase)  <span class="math notranslate nohighlight">\(\pi/2\)</span>. If the number is <span class="math notranslate nohighlight">\(z = -1 - i\)</span> then the point is found at <span class="math notranslate nohighlight">\((-1, -1)\)</span> on the Argand diagram. Its argument is <span class="math notranslate nohighlight">\(-5\pi/4\)</span> (225<span class="math notranslate nohighlight">\(^\mathrm{o}\)</span>) and its modulus <span class="math notranslate nohighlight">\(\sqrt{(-1 - i)(-1 + i)} = \sqrt{2}\)</span>.</p>
 </section>
 <section id="summary">

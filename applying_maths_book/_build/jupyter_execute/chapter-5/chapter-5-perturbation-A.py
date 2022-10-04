@@ -32,18 +32,18 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # The Schroedinger equation whose solutions are known, is defined as, 
 # 
-# $$\displaystyle  H^0\psi_n^0 = E_n^0\psi_n^0   \tag{31}$$
+# $$\displaystyle  H^0\psi_n^0 = E_n^0\psi_n^0   \qquad\tag{31}$$
 # 
 # The superscript 0 indicate that the wavefunctions and energies are known for every quantum number $n$ = 0, 1, 2, $\cdots$. Later on we use the notation $\psi^{(2)}$ etc., explained further below, in which the brackets indicate the second derivative not the square. However when the supescript is zero we do not add brackets as it is unambiguous. 
 # 
 # The wavefunctions form an _orthonormal set_ so that 
 # 
-# $$\displaystyle \int \psi^{0*}_n\psi_m^0 d\tau = \delta_{nm}  \tag{32}$$
+# $$\displaystyle \int \psi^{0*}_n\psi_m^0 d\tau = \delta_{nm}  \qquad\tag{32}$$
 # 
 # and formally the equation is solved by left multiplying equation (31) by a wavefunction
 # and integrating. The result is
 # 
-# $$\displaystyle \int \psi^{0*}_nH^0\psi_m^0 d\tau =E_n^0\int \psi_n^{0*}\psi_m^0 d\tau = \delta_{nm}E_n^0  \tag{33}$$
+# $$\displaystyle \int \psi^{0*}_nH^0\psi_m^0 d\tau =E_n^0\int \psi_n^{0*}\psi_m^0 d\tau = \delta_{nm}E_n^0  \qquad\tag{33}$$
 # 
 # where $\delta_{nm}$ is the Kronecker delta function which is zero unless $n = m$ when it is unity. (Note that $n$ and $m$ are both dummy indices labelling energy levels, it does not matter if they are exchanged; i.e. equation (31) could be labelled with $m$'s rather than $n$'s.) 
 # 
@@ -55,7 +55,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # The perturbed Schroedinger equation is
 # 
-# $$\displaystyle  H\varphi_n = E_n\varphi_n \quad \mathrm{ or } \quad \left(H^0 + \lambda V\right)=\varphi_n=E_n\varphi_n  \tag{35}$$
+# $$\displaystyle  H\varphi_n = E_n\varphi_n \quad \mathrm{ or } \quad \left(H^0 + \lambda V\right)=\varphi_n=E_n\varphi_n  \qquad\tag{35}$$
 # 
 # where all the new wavefunctions $\varphi_n$ and energies $E_n$ are unknown so far. Both the wavefunction $\varphi$ and energy are functions of the parameter $\lambda$. Our aim is to be able to express the perturbed energy levels $E_n$ in terms of the unperturbed energies $E_n^0$ and their wavefunctions $\psi_n^0$ both of which are already known.
 # The assumption is now made that perturbed energies and wavefunctions can be expanded as Taylor series in $\lambda$; see equation (15). This assumption is justified by the validity of the final result. Expanding $E$ and $\varphi$ gives
@@ -70,9 +70,9 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # therefore
 # 
-# $$\displaystyle E_n = E_n^0 + \lambda E_n^{(1)} + \lambda ^2E_n^{(2)} + \cdots  \tag{36} $$
+# $$\displaystyle E_n = E_n^0 + \lambda E_n^{(1)} + \lambda ^2E_n^{(2)} + \cdots  \qquad\tag{36} $$
 # 
-# $$\displaystyle \varphi_n = \psi_n^0 + \lambda \varphi_n^{(1)} + \lambda^2\varphi_n^{(2)} + \cdots  \tag{37}$$
+# $$\displaystyle \varphi_n = \psi_n^0 + \lambda \varphi_n^{(1)} + \lambda^2\varphi_n^{(2)} + \cdots  \qquad\tag{37}$$
 # 
 # Notice that $E(0) \equiv E^0$ is the unperturbed energy and $\varphi(0) \equiv \psi^0$ the unperturbed wave-
 # function. Next, $E$ and $\varphi$ are substituted into the perturbed Schroedinger equation (35) and an apparently very complicated equation results;
@@ -89,11 +89,11 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # To obtain the first-order correction to the energy it is assumed that $\lambda^2$ is smaller than $\lambda$ and similarly for higher powers and therefore these can be ignored. The first-order energy correction is obtained by extracting just the terms in $\lambda$ and is
 # 
-# $$\displaystyle   \left(V-E_n^{(1)}\right)\psi_n^0 + \left(H^0-E_n^{(0)}\right)\varphi_n^{(1)} =0 \tag{38b} $$
+# $$\displaystyle   \left(V-E_n^{(1)}\right)\psi_n^0 + \left(H^0-E_n^{(0)}\right)\varphi_n^{(1)} =0 \qquad\tag{38b} $$
 # 
 # The perturbed energies $E_n^{(1)}$ are calculated from this last equation by left multiplying it by the complex conjugate of $\psi_n^0$ and integrating. This is what is always done to form the expectation value to calculate the energy, see equation (33) and recall that $H^0$ is an operator and must always act on terms to its right. It cannot be removed from the integration as can the energy, which is a constant. Integrating as indicated produces the result
 # 
-# $$\displaystyle   \int \psi_n^{0*}\left(V-E_n^{(1)}\right)\psi_n^0d\tau + \int \psi_n^{0*}\left(H^0-E_n^{(0)}\right)\varphi_n^{(1)}d\tau =0 \tag{38c}$$
+# $$\displaystyle   \int \psi_n^{0*}\left(V-E_n^{(1)}\right)\psi_n^0d\tau + \int \psi_n^{0*}\left(H^0-E_n^{(0)}\right)\varphi_n^{(1)}d\tau =0 \qquad\tag{38c}$$
 
 # Expanding the brackets gives
 # 
@@ -101,13 +101,13 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # Using the fact that the wavefunctions are orthogonal and normalized allows a little simplification to the second term giving
 # 
-# $$\displaystyle \int \psi_n^{0*}V\psi_n^0d\tau- E_n^{(1)}+\int \psi_n^{0*}H^0\varphi_n^{(1)}d\tau -E_n^{(0)}\int \psi_n^{0*}\varphi_n^{(1)}d\tau =0  \tag{39}$$
+# $$\displaystyle \int \psi_n^{0*}V\psi_n^0d\tau- E_n^{(1)}+\int \psi_n^{0*}H^0\varphi_n^{(1)}d\tau -E_n^{(0)}\int \psi_n^{0*}\varphi_n^{(1)}d\tau =0  \qquad\tag{39}$$
 # 
 # At this point we can go no further because we do not know how to deal with the $\varphi_n^{(1)}$ wavefunctions; they are unknown. 
 # 
 # An important step is now taken and this is to expand the unknown wavefunctions $\varphi$ in the _basis set of our original watefunctions_ $\psi^0$ because these are a complete orthonormal set; this is a standard mathematical procedure taken from a study of linear algebra and often used in quantum mechanics (see chapters 6 and 8). Using the basis set $\psi$, the wavefunctions $\varphi^{(1)}$ are defined by, and expanded in, an infinite series as
 # 
-# $$\displaystyle \varphi_n^{(1)}=\sum\limits_k a_k\psi_k^0   \tag{40}$$
+# $$\displaystyle \varphi_n^{(1)}=\sum\limits_k a_k\psi_k^0   \qquad\tag{40}$$
 # 
 # where $a_k$ are the expansion coefficients. These have to be calculated if the new wavefunction is required but do not enter into the final equation for the perturbed energy. By substitution for $\varphi$ the integrals in equation (39) become expressible in known wavefunctions and coefficients $a$. The result is clearly going to be complicated but will simplify greatly if each term is examined separately. The complete equation is
 # 
@@ -119,17 +119,17 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # However, because the $\psi$’s are orthonormal (equation (32)), only the $n$<sup>th</sup> term remains after integration and all the others are zero. An individual $n$ to $k$ integral is
 # 
-# $$\displaystyle \int\psi_n^{0*}H^0\psi_k^0d\tau = E_n^0\int\psi_n^{0*}\psi_k^0d\tau =\delta_{kn}E_n^0    \tag{40a}$$
+# $$\displaystyle \int\psi_n^{0*}H^0\psi_k^0d\tau = E_n^0\int\psi_n^{0*}\psi_k^0d\tau =\delta_{kn}E_n^0    \qquad\tag{40a}$$
 # 
 # (see equation (33)); therefore only the term with index $n$ remains producing $\displaystyle E_n^0 \int\psi_n^{0*} \psi_n^0 d\tau = E_n^0$
 # 
 # Using the same procedure and arguments, the second of the two summations evaluates to $E_n^0$ and therefore the sum of these two integrals is zero. The outcome is a simple and elegant equation for the first-order energy correction;
 # 
-# $$\displaystyle  E_n^{(1)} = \int\psi_n^{0*}V\psi_n^0d\tau    \tag{41}$$
+# $$\displaystyle  E_n^{(1)} = \int\psi_n^{0*}V\psi_n^0d\tau    \qquad\tag{41}$$
 # 
 # and the total energy is 
 # 
-# $$\displaystyle   E_n \approx E_n^0 + E_n^{(1)} = E_n^0 +  \int\psi_n^{0*}V\psi_n^0d\tau    \tag{42}$$
+# $$\displaystyle   E_n \approx E_n^0 + E_n^{(1)} = E_n^0 +  \int\psi_n^{0*}V\psi_n^0d\tau    \qquad\tag{42}$$
 # 
 # This equation tells us that to obtain the energy change to level $n$ caused by the small perturbation $V$, only the wavefunctions belonging to quantum level $n$ of the initial unperturbed Hamiltonian $H^0$, equation (31), need to be known. The energy change itself is the average of the perturbation potential $V$ with the unperturbed wavefunctions.
 
@@ -137,7 +137,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # To calculate the correction to the wavefunction it is necessary to return to equation (38b) but this time left multiplying by $\psi_m^0$ and integrating. ( $\,\psi_n^0$ was used before) but now it is assumed that $m \ne n$.( When $n = m$ the calculation follows that above). The equation becomes 
 # 
-# $$\displaystyle   \int \psi_m^{0*}(V-E_n^{(1)})\psi_n^0d\tau + \int \psi_m^{0*}(H^0-E_n^{(0)})\varphi_n^{(1)}d\tau =0 \tag{42b}$$
+# $$\displaystyle   \int \psi_m^{0*}(V-E_n^{(1)})\psi_n^0d\tau + \int \psi_m^{0*}(H^0-E_n^{(0)})\varphi_n^{(1)}d\tau =0 \qquad\tag{42b}$$
 # 
 # and substituting for $\varphi$ from equations (40) and using (40a) and  $\int\psi_m^*\psi_nd\tau = \delta_{nm}$ gives,
 # 
@@ -153,7 +153,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # which gives the coefficients $a$ and therefore the _perturbed_ part of the wavefunction for the $n^{th}$ level is,
 # 
-# $$\displaystyle  \varphi_n^{(1)}=\sum\limits_{n \ne k} a_k\psi_k^0 = \sum\limits_{n \ne k} \frac{\int\psi_k^{0*}V\psi_n^0d\tau}{E_n^0-E_k^0}\psi_k^0  \tag{43}$$
+# $$\displaystyle  \varphi_n^{(1)}=\sum\limits_{n \ne k} a_k\psi_k^0 = \sum\limits_{n \ne k} \frac{\int\psi_k^{0*}V\psi_n^0d\tau}{E_n^0-E_k^0}\psi_k^0  \qquad\tag{43}$$
 # 
 # The correction to wavefunctions for each level are the summation of the basis set wavefunctions $\psi_0$ weighted by the ratio of the perturbed energy to energy gap. The  wavefunction to first order is $\displaystyle \varphi_n \approx \varphi_n^{(0)}+ \varphi_n^{(1)} =\psi_n^0+ \varphi_n^{(1)}$. Notice also that $\varphi$ is a function of coordinates, $\tau$ in this example, in one dimension this would be $x$ and that the $n = k$ term is removed; otherwise this would lead to division by zero. The series forming $a$ is then one of terms that are zero or progressively diminishing as the difference in energy of the $n$ and $k$ levels increases. Generally this means that $\varphi$ does not differ greatly from $\psi$.
 # 
@@ -172,15 +172,15 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # The calculation can be repeated for the second-order perturbation and so on; the general observation is that if the wavefunction to order $m$ is known then the energy to order 2$m$ +1 can be calculated. The zeroth-order states $\psi_0$ therefore allow us to find the first order energy correction and so forth. Extending the calculation to second order produces the energy correction, (see Atkins & Friedmann 1997 for details),
 # 
-# $$\displaystyle E_n^{(2)}=\sum\limits_{n\ne k}\frac{|\langle \psi_k^0|V|\psi_n^0  \rangle |^2}{E_n^0 - E_k^0}   \tag{44}$$
+# $$\displaystyle E_n^{(2)}=\sum\limits_{n\ne k}\frac{|\langle \psi_k^0|V|\psi_n^0  \rangle |^2}{E_n^0 - E_k^0}   \qquad\tag{44}$$
 # 
 # This term is usually negative for the lowest energy because the energy for quantum numbers larger than $n$ is usually greater than that for $n$ itself. The total energy to second order is therefore 
 # 
-# $$\displaystyle E_n = E_n^0 + E_n^{(1)} + E_n^{(2)} \tag{45}$$
+# $$\displaystyle E_n = E_n^0 + E_n^{(1)} + E_n^{(2)} \qquad\tag{45}$$
 # 
 # When calculating the perturbed energy how do we know that our calculation is valid? The potential added $V$ might be too big for this method to work. Fortunately, this has also been worked out; the result is that the expectation values divided by the energy gap must be much less that 1. This means checking terms with indices $k = n \pm 1$ because the denominator is usually smallest in this case. The limiting condition for our victim state $n$ is thus
 # 
-# $$\displaystyle \left | \frac{\langle \psi_k^0|V|\psi_n^0  \rangle }{E_n^0 - E_k^0} \right | \ll 1  \tag{46}$$
+# $$\displaystyle \left | \frac{\langle \psi_k^0|V|\psi_n^0  \rangle }{E_n^0 - E_k^0} \right | \ll 1  \qquad\tag{46}$$
 # 
 # for each of the nearby states $k$ where $k \ne n$.
 # 
@@ -202,7 +202,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # The complex conjugate is not indicated because the wavefunctions are real. The wavefunctions are normalized so that $\displaystyle \int \psi_n(x)\psi_n(x)dx$ = 1 and the unperturbed energies after substituting for the wavefunctions and performing the differentiation and integration are
 # 
-# $$\displaystyle  E_n =\frac{\hbar^2}{mL}\frac{(n\pi)^2}{L^2}\int\limits_0^L \sin\left(n\pi\frac{ x}{L}\right)^2dx= \frac{\hbar^2}{2m}\left(\frac{n\pi}{L}\right)^2  \tag{47}$$
+# $$\displaystyle  E_n =\frac{\hbar^2}{mL}\frac{(n\pi)^2}{L^2}\int\limits_0^L \sin\left(n\pi\frac{ x}{L}\right)^2dx= \frac{\hbar^2}{2m}\left(\frac{n\pi}{L}\right)^2  \qquad\tag{47}$$
 # 
 # If the mass is that of the electron and the box has a length of $1$ nm, the energies of the levels with quantum number $n$ are $6.023 \cdot 10^{-20} n^2$  J or $3032 n^2\,\mathrm{ cm^{-1}}$.
 # 

@@ -770,7 +770,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-7/matrices-L.html">
-     Principal axes for Moments of Inertia
+     Principal axes of Moments of Inertia
     </a>
    </li>
    <li class="toctree-l2">
@@ -1741,7 +1741,7 @@ title="Print to PDF"
 <h2>6.1 Maclaurin series<a class="headerlink" href="#maclaurin-series" title="Permalink to this headline">#</a></h2>
 <p>A power series has the general form</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle f(x)=a_0 +a_1x+a_2x^2 +a_3x^3 +\cdots +a_nx^n +\cdots   \tag{13}\]</div>
+\[\displaystyle f(x)=a_0 +a_1x+a_2x^2 +a_3x^3 +\cdots +a_nx^n +\cdots   \qquad\tag{13}\]</div>
 <p>where the coefficients <span class="math notranslate nohighlight">\(a_0, a_1\)</span>, etc. are independent of the parameter <span class="math notranslate nohighlight">\(x\)</span>. We shall clearly want to be able to find these coefficients and doing this relies on the fact that by differentiating a <em>converging</em> power series the resulting series can be shown also to converge.</p>
 <p>The coefficients are calculated by repeatedly differentiating <span class="math notranslate nohighlight">\(f(x)\)</span> and then substituting <span class="math notranslate nohighlight">\(x\)</span> = 0. This will lead to the Maclaurin series. It is implicitly assumed that the function can be differentiated, functions such as <span class="math notranslate nohighlight">\(| x |\)</span> generally have no series as the differential is undetermined at <span class="math notranslate nohighlight">\(x = 0\)</span>. If the notation <span class="math notranslate nohighlight">\(f'(x)\)</span> represents the first derivative, <span class="math notranslate nohighlight">\(f′′(x)\)</span> the second, etc., the derivatives of <span class="math notranslate nohighlight">\(f(x)\)</span> are</p>
 <div class="math notranslate nohighlight">
@@ -1756,10 +1756,10 @@ f''''(x)&amp; = \cdots\, \mathrm {etc.}\end{align} \end{split}\]</div>
 <p>and the <span class="math notranslate nohighlight">\(n^\mathrm{th}\)</span> is <span class="math notranslate nohighlight">\(a_n = f^n(0)/n!\)</span>.</p>
 <p>By reassembling the parts, the Maclaurin series for <span class="math notranslate nohighlight">\(f(x)\)</span> is produced:</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle f(x) = f(0) + xf'(0) + \frac{x^2}{2!} f''(0) + \frac{x^3}{3!} f'''(0) + \cdots + \frac{x^n}{n!} f^n(0) + \cdots  \tag{14}  \]</div>
+\[\displaystyle f(x) = f(0) + xf'(0) + \frac{x^2}{2!} f''(0) + \frac{x^3}{3!} f'''(0) + \cdots + \frac{x^n}{n!} f^n(0) + \cdots  \qquad\tag{14}  \]</div>
 <p>Sometimes the equation is written in the equivalent form;</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle f(x) =f(0)+x\left( \frac{df}{dx} \right)_0 + \frac{x^2}{2!}\left( \frac{d^2f}{dx^2} \right)_0 \cdots +\frac{x^n}{n!}\left( \frac{d^nf}{dx^n} \right)_0+\cdots \tag{15} \]</div>
+\[\displaystyle f(x) =f(0)+x\left( \frac{df}{dx} \right)_0 + \frac{x^2}{2!}\left( \frac{d^2f}{dx^2} \right)_0 \cdots +\frac{x^n}{n!}\left( \frac{d^nf}{dx^n} \right)_0+\cdots \qquad\tag{15} \]</div>
 <p>where the subscript <span class="math notranslate nohighlight">\(0\)</span> means evaluate the derivative at <span class="math notranslate nohighlight">\(x = 0\)</span>.</p>
 </section>
 <section id="taylor-series">
@@ -1809,7 +1809,7 @@ By definition the expansion is given by replacing <span class="math notranslate 
 \[\displaystyle  f'(x) = 1, \quad f''(x) = 0,\quad f'''(x) = -1,\quad f^4(x) = 0,\quad f ^5(x) = 1 \]</div>
 <p>where each even power derivative is zero and the odd power derivatives alternate between <span class="math notranslate nohighlight">\(1\)</span> and <span class="math notranslate nohighlight">\(-1\)</span>. With this in mind, the expansion for <span class="math notranslate nohighlight">\(\sin(x)\)</span>, which must contain only odd powers of <span class="math notranslate nohighlight">\(x\)</span>, is</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle \sin(x) = x-\frac{x^3}{3!}+\frac{x^5}{5!}-\frac{x^7}{7!} +\cdots = \sum \limits _{n=0}^{\infty} (-1)^n \frac{x^{2n+1}}{(2n+1)!}  \tag{18}\]</div>
+\[\displaystyle \sin(x) = x-\frac{x^3}{3!}+\frac{x^5}{5!}-\frac{x^7}{7!} +\cdots = \sum \limits _{n=0}^{\infty} (-1)^n \frac{x^{2n+1}}{(2n+1)!}  \qquad\tag{18}\]</div>
 <p>The summation formula on the right was obtained ‘by inspection’, which in practice can involve quite a bit of trial and error to get correct. For example the <span class="math notranslate nohighlight">\((-1)^n\)</span> ensures that terms are negative when <span class="math notranslate nohighlight">\(n\)</span> is odd, <span class="math notranslate nohighlight">\(n\)</span> being the position of a term in the series. The first, <span class="math notranslate nohighlight">\(x\)</span>, is at position zero.</p>
 <p>The series for <span class="math notranslate nohighlight">\(\cos(x)\)</span> can be found by differentiating the series for <span class="math notranslate nohighlight">\(\sin(x)\)</span> because <span class="math notranslate nohighlight">\(f′(\sin(x)) = \cos(x)\)</span>, therefore the series only contains even powers of <span class="math notranslate nohighlight">\(x\)</span> and is,</p>
 <div class="math notranslate nohighlight">
@@ -1931,19 +1931,19 @@ limits <span class="math notranslate nohighlight">\(-1 \lt x \le 1\)</span> when
 \end{array} \end{split}\]</div>
 <p>The general series is</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle (1+x)^m = 1 +mx+\frac{m(m-1)}{2!}x^2 + \frac{m(m-1)(m-2)}{3!}x^3+\cdots    \tag{22} \]</div>
+\[\displaystyle (1+x)^m = 1 +mx+\frac{m(m-1)}{2!}x^2 + \frac{m(m-1)(m-2)}{3!}x^3+\cdots    \qquad\tag{22} \]</div>
 <p>After some trial and error this can also be written as,</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle (1+x)^m = \sum\limits_{n=0}^\infty \frac{m!}{n!(m-n)!}x^n   \tag{23}\]</div>
+\[\displaystyle (1+x)^m = \sum\limits_{n=0}^\infty \frac{m!}{n!(m-n)!}x^n   \qquad\tag{23}\]</div>
 <p>and is valid only when <span class="math notranslate nohighlight">\(| x | \lt 1\)</span>. In common with other expansions when <span class="math notranslate nohighlight">\(x \ll 1\)</span>,higher powers of <span class="math notranslate nohighlight">\(x\)</span> are even smaller and the series can be truncated at the second term.</p>
-<p>The binomial coefficients are often written as <span class="math notranslate nohighlight">\(\displaystyle \frac{m!}{n!(m-n)!} = \binom{m}{n}    \tag{24} \)</span></p>
+<p>The binomial coefficients are often written as <span class="math notranslate nohighlight">\(\displaystyle \frac{m!}{n!(m-n)!} = \binom{m}{n}    \qquad\tag{24} \)</span></p>
 <p>This ratio is usually used to describe the number of ways of placing <span class="math notranslate nohighlight">\(n\)</span> objects into one of two bins if there are a total number of <span class="math notranslate nohighlight">\(m\)</span> objects.</p>
 <p>Provided that <span class="math notranslate nohighlight">\(| x | \lt 1\)</span> the expansion of <span class="math notranslate nohighlight">\((1 + x)^{1/2}\)</span> is</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle  (1+x)^{1/2}=1+\frac{x}{2}- \frac{x^2}{8}+\frac{x^3}{16}-\cdots  \tag{25}\]</div>
+\[\displaystyle  (1+x)^{1/2}=1+\frac{x}{2}- \frac{x^2}{8}+\frac{x^3}{16}-\cdots  \qquad\tag{25}\]</div>
 <p>and similarly</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle  (1+x)^{-1/2}=1-\frac{x}{2}+ \frac{x^2}{8}-\frac{x^3}{16}+\cdots  \tag{25}\]</div>
+\[\displaystyle  (1+x)^{-1/2}=1-\frac{x}{2}+ \frac{x^2}{8}-\frac{x^3}{16}+\cdots  \qquad\tag{25}\]</div>
 <section id="example-calculate-square-root">
 <h3><strong>Example, calculate square root</strong><a class="headerlink" href="#example-calculate-square-root" title="Permalink to this headline">#</a></h3>
 <p>Consider calculating <span class="math notranslate nohighlight">\(\sqrt{3/2}\)</span>, using equation (25). Letting <span class="math notranslate nohighlight">\(x\)</span> = 1/2 the series is <span class="math notranslate nohighlight">\((1+x)^{1/2}= 1+ 1/4 - 1/32 + 1/128 \cdots = 1.2265\)</span>. The correct answer to 4 decimal places is 1.2247 and the series has to be extended to nine terms, the highest power being <span class="math notranslate nohighlight">\(x^8\)</span> to reach this level of accuracy. Trying to calculate <span class="math notranslate nohighlight">\(\sqrt 3\)</span> using this series gives a divergent result; why is this? Try it for yourself. The ancient Algorithm 1.2 could, however, be used.</p>
@@ -1997,7 +1997,7 @@ limits <span class="math notranslate nohighlight">\(-1 \lt x \le 1\)</span> when
 <p>where we have used <span class="math notranslate nohighlight">\(dB/d a=k_BT/g\mu_B\)</span>.</p>
 <p>Substituting gives <span class="math notranslate nohighlight">\(\displaystyle \ln(Z)= \ln(e^{-aJ} - e^{a(J+1)})-\ln(1-e^a)\)</span>  using the definition <span class="math notranslate nohighlight">\(\displaystyle \frac{d \ln(f(x)}{dx}=\frac{f'(x)}{f(x)}\)</span> gives</p>
 <div class="math notranslate nohighlight">
-\[M=2\mu_b\left(\frac{ -Je^{-aJ}-(J+1)e^{a(J+1)}  }{e^{-aJ} - e^{a(J+1)}}+\frac{e^a}{1-e^a}\right)\tag{25a}\]</div>
+\[M=2\mu_b\left(\frac{ -Je^{-aJ}-(J+1)e^{a(J+1)}  }{e^{-aJ} - e^{a(J+1)}}+\frac{e^a}{1-e^a}\right)\qquad\tag{25a}\]</div>
 <p>and the change in magnetization with magnetic field is shown in figure 5a for different values of <span class="math notranslate nohighlight">\(J\)</span>.</p>
 <p>At large <span class="math notranslate nohighlight">\(a\)</span>, effectively at large <span class="math notranslate nohighlight">\(B/T\)</span> the values become constant, and the effect is saturated as the levels are now well separated so that only lower levels are populated. The limit is found from eqn. 25a When <span class="math notranslate nohighlight">\(a\)</span> is large <span class="math notranslate nohighlight">\(e^{aJ} &gt;&gt;1 &gt;&gt; e^{-aJ}\)</span> and the latter can be ignored, therefore</p>
 <div class="math notranslate nohighlight">

@@ -6,7 +6,7 @@
 # ## 6 Projections
 # To find the projection or component of a vector $\vec A$ that lies along an axis, the dot product with one of the vector's orthonormal base vectors is calculated. For example, to calculate the component along the x-axis the base vector $\boldsymbol i$ is used;
 # 
-# $$\displaystyle \boldsymbol i\cdot \vec A = \boldsymbol i\cdot(a\boldsymbol i + b\boldsymbol j + c\boldsymbol k) = a\boldsymbol i\cdot\boldsymbol i = a. \tag{13}$$
+# $$\displaystyle \boldsymbol i\cdot \vec A = \boldsymbol i\cdot(a\boldsymbol i + b\boldsymbol j + c\boldsymbol k) = a\boldsymbol i\cdot\boldsymbol i = a. \qquad\tag{13}$$
 # 
 # This shows that only the $x$ component is extracted and you can see how to obtain the $b$ and $c$ components using $\boldsymbol j$ and $\boldsymbol k$ instead of $\boldsymbol i$. More usefully, since the dot product can be written as
 # 
@@ -34,11 +34,11 @@
 # 
 # In step (c) multiplying by the length of $\vec w$ and by the unit vector $\vec v/|\vec v|$ produces the projection of $\vec w$ onto $\vec v$
 # 
-# $$\displaystyle P_{\vec w\to \vec v}=\left(|\vec w|\frac{\vec w \cdot \vec v}{|\vec w||\vec v|}\right)\frac{\vec v}{|\vec v|} = (\vec w \cdot \vec v)\frac{\vec v}{|\vec v|^2} \tag{14}$$
+# $$\displaystyle P_{\vec w\to \vec v}=\left(|\vec w|\frac{\vec w \cdot \vec v}{|\vec w||\vec v|}\right)\frac{\vec v}{|\vec v|} = (\vec w \cdot \vec v)\frac{\vec v}{|\vec v|^2} \qquad\tag{14}$$
 # 
 # The length of the projection is
 # 
-# $$\displaystyle L=\frac{|\vec w\cdot \vec v|}{|\vec v|}\tag{15}$$
+# $$\displaystyle L=\frac{|\vec w\cdot \vec v|}{|\vec v|}\qquad\tag{15}$$
 # 
 # and where the absolute values make the length positive.
 # 
@@ -99,7 +99,7 @@
 # 
 # If we were calculating the distance between two locations on Earth then an equivalent formula is used. First as latitude is defined as the angle towards the north pole from the equation or $\chi=\pi/2-\theta$ cosine and sine in $\theta$ are swapped, and secondly the latitude is usually written as the difference in longitude or $\Delta \lambda$ instead of $\phi$ and with these changes $\psi \to\Delta \lambda$ and replacing the angle with $d/R$ produces
 # 
-# $$\displaystyle \cos(d/R)= \cos(\chi_1)\cos(\chi_2)\cos(\Delta \lambda)+\sin(\chi_1)\sin(\chi_2)\tag{15a}$$
+# $$\displaystyle \cos(d/R)= \cos(\chi_1)\cos(\chi_2)\cos(\Delta \lambda)+\sin(\chi_1)\sin(\chi_2)\qquad\tag{15a}$$
 # 
 # While this equation is exact, it had difficulties in the past when computer precision was limited and still does if the numerical precision of the calculator is limited, i.e. not 64 bit or double precision. This is because for small distances $\Delta \lambda\to 0$ and its cosine becomes very, very close to 1 and the equation returns a distance of zero because also $\chi_1 \approx \chi_2$. In geographical terms this means a distance of $\approx 3$ km or less will produce an inaccurate, i.e wrong value.  This can be appreciated when $\Delta \lambda$ is small because then $\cos(\Delta \lambda)\to 1$. This changes 
 # 
@@ -109,7 +109,7 @@
 # 
 # To correct for this numerical inaccuracy two approaches are made. First use the identity $2\sin^2(x/2)=(1-\cos(x))$ to convert the cosine to sine and secondly simplify with $\cos(x_2-x_1)=\cos(x_2)\cos(x_1)+\sin(x_2)\sin(x_1)$ and after some manipulation produces the Haversine formula historically used for accurate determination of distances.
 # 
-# $$\displaystyle d=2R\sin^{-1}\left(\sqrt{\sin^2\left(\frac{\Delta \chi}{2}\right)+\cos(\chi_1)\cos(\chi_2)\sin^2\left(\frac{\Delta \lambda}{2}\right)} \right)\tag{15b}$$
+# $$\displaystyle d=2R\sin^{-1}\left(\sqrt{\sin^2\left(\frac{\Delta \chi}{2}\right)+\cos(\chi_1)\cos(\chi_2)\sin^2\left(\frac{\Delta \lambda}{2}\right)} \right)\qquad\tag{15b}$$
 # 
 # where $\Delta \chi$ is the difference in latitude (in radians) and $\Delta \lambda$ the difference in longitude also in radians.
 # 
@@ -123,7 +123,7 @@
 # A three-dimensional vector is often defined as $\vec V = a\boldsymbol i + b\boldsymbol j + c\boldsymbol k$. However, the vector can equally well be described by the angles it makes to the $x, y$ and $z$-axes, when these angles are $\alpha, \beta,  \gamma$, as shown in figure 18, where the angles are measured away from the axes to the vector.
 # The vector $v$ is now described by
 # 
-# $$\displaystyle \vec v = |\vec v|\left(\cos(\alpha)\boldsymbol i + \cos(\beta)\boldsymbol j + \cos(\gamma )\boldsymbol k\right) \tag{16}$$
+# $$\displaystyle \vec v = |\vec v|\left(\cos(\alpha)\boldsymbol i + \cos(\beta)\boldsymbol j + \cos(\gamma )\boldsymbol k\right) \qquad\tag{16}$$
 # 
 # and the components $\cos(\alpha), \cos(\beta), \cos(\gamma )$ are each _direction cosines_ . The direction cosines are, therefore, the projections the normalized vector $v$ makes onto each of the $x-, y-$ and $z-$ axes. They are also the dot product of vector $v$ with each base vector $\boldsymbol i, \boldsymbol j , \boldsymbol k$ in turn. Taking the dot product with base vector $\boldsymbol i$ gives
 # 
@@ -141,7 +141,7 @@
 # 
 # Taking the dot product of $\vec v$ with itself, then the sum rule for direction cosines is found,
 # 
-# $$\displaystyle \cos^2(\alpha)+\cos^2(\beta)+\cos^2(\gamma)=1 \tag{17}$$
+# $$\displaystyle \cos^2(\alpha)+\cos^2(\beta)+\cos^2(\gamma)=1 \qquad\tag{17}$$
 # 
 # This equation shows that the angles are not independent because knowing two of them determines the third. Note that direction cosines describe the vector by angles rather than components of $(x, y, z)$ and hence can be used to find these angles; alternatively, if the angles are given, they can be used to find the $x, y, z$ components.
 # 

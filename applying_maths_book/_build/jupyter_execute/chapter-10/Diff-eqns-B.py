@@ -31,7 +31,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # then $\displaystyle u + x\frac{du}{dx} = f(u)$ which can have its variables separated to produce
 # 
-# $$\displaystyle \frac{du}{f(u)-u}=\frac{dx}{x}  \tag{11}$$
+# $$\displaystyle \frac{du}{f(u)-u}=\frac{dx}{x}  \qquad\tag{11}$$
 # 
 # which is integrated to find the solution. 
 # 
@@ -89,7 +89,7 @@ factor(ans)
 # 
 # where $P$ and $Q$ are functions of $x$ only. These equations can be integrated using integrating factors. First we consider the particular case when $Q = 0$ or
 # 
-# $$\displaystyle  \frac{dy}{dx} +Py = 0  \tag{12} $$
+# $$\displaystyle  \frac{dy}{dx} +Py = 0  \qquad\tag{12} $$
 # 
 # Writing the equation as $\displaystyle \frac{1}{y}dy +Pdx=0$ and integrating gives 
 # 
@@ -109,7 +109,7 @@ factor(ans)
 # 
 # It follows that the solution of the differential equation becomes the two integrals,
 # 
-# $$\displaystyle ye^{\large{\int Pdx}}=\int Qe^{\large{\int Pdx}}dx +c\tag{12}$$
+# $$\displaystyle ye^{\large{\int Pdx}}=\int Qe^{\large{\int Pdx}}dx +c\qquad\tag{12}$$
 # 
 # ### **(i) Example**
 # The equation $\displaystyle \frac{dy}{dx} + \frac{y}{x}= 3\sin(x)$ is solved. 
@@ -246,7 +246,7 @@ factor(ans)
 # 
 # The general equation of motion is formed by equating force, as mass multiplied by acceleration, to the force $f(x)$ on the particle, such as given by Hooke's or some other law,
 # 
-# $$\displaystyle  m\frac{d^2x}{dt^2} = f(x)   \tag{13} $$
+# $$\displaystyle  m\frac{d^2x}{dt^2} = f(x)   \qquad\tag{13} $$
 # 
 # If the force is due to gravity, then $f (x) = mg$; if describing simple harmonic motion based on a small extension of a spring obeying Hooke's law, then $f(x) = -kx$ where $k$ is the force constant and in molecules this has values of a few hundred newton metres sec$^{-1}$ . 
 # 
@@ -256,7 +256,7 @@ factor(ans)
 # 
 # and, although this does not look too promising, the left-hand terms are the derivative of $\displaystyle \left(\frac{1}{2}\frac{dx}{dt}\right)^2$, therefore integrating both sides gives
 # 
-# $$\displaystyle  \frac{m}{2}\left(\frac{dx}{dt}\right)^2=\int f(x)\frac{dx}{dt}dt+c =\int f(x)dx+c  \tag{14} $$
+# $$\displaystyle  \frac{m}{2}\left(\frac{dx}{dt}\right)^2=\int f(x)\frac{dx}{dt}dt+c =\int f(x)dx+c  \qquad\tag{14} $$
 # 
 # where $c$ is the constant of integration. This is the '_Equation of Energy_'; the left-hand side is the kinetic energy since $dx/dt$ is velocity and the right hand side is the potential energy. 
 # 
@@ -266,7 +266,7 @@ factor(ans)
 # 
 # and integrate,
 # 
-# $$\displaystyle t=\pm\sqrt{\frac{m}{2}}\int \frac{dx}{\sqrt{F(x)}}+ c_1  \tag{15}$$
+# $$\displaystyle t=\pm\sqrt{\frac{m}{2}}\int \frac{dx}{\sqrt{F(x)}}+ c_1  \qquad\tag{15}$$
 # 
 # This equation contains two arbitrary constants, $c_1$ and $c$, of which $c$ is already included in $F(x)$. Two constants are needed because the acceleration has to be integrated twice.
 # 
@@ -276,7 +276,7 @@ factor(ans)
 # 
 # equation (13) can be written as
 # 
-# $$\displaystyle  mv\frac{dv}{dx}=f(x)  \tag{16}$$
+# $$\displaystyle  mv\frac{dv}{dx}=f(x)  \qquad\tag{16}$$
 # 
 # Integrating produces $\displaystyle \frac{mv^2}{2}=\int f(x)dx+c$ which is the same as equation 14.
 # 
@@ -343,7 +343,7 @@ factor(ans)
 # 
 # The frequency of vibration, or oscillation, is defined as $\displaystyle  \nu =\frac{1}{2\pi}\sqrt{\frac{k}{m}}\, \mathrm{s^{-1}}$ or as $\displaystyle \omega=\sqrt{\frac{k}{m}}$ and substituting this makes the equation of motion
 # 
-# $$\displaystyle  \displaystyle\frac{d^2x}{dt^2}=-\omega^2x \tag{17}$$
+# $$\displaystyle  \displaystyle\frac{d^2x}{dt^2}=-\omega^2x \qquad\tag{17}$$
 # 
 # which when integrated gives $\displaystyle \left(\frac{dx}{dt}\right)^2=-\omega ^2x^2+c^2$ (see equation 14) and the constant is made $c^2$ as this has to be positive because the velocity $dx/dt$ must be a real not a complex number. Rearranging this equation to find the time gives
 # 
@@ -355,11 +355,11 @@ factor(ans)
 # 
 # and the constants $c,\;c_1$ are determined by the initial conditions and as they are constants this equation can just as correctly be written as
 # 
-# $$\displaystyle  x=A\sin(\omega t+B) \tag{18} $$
+# $$\displaystyle  x=A\sin(\omega t+B) \qquad\tag{18} $$
 # 
 # be defining $A$ and $B$ as constants also fixed by the initial conditions. $B$ is called the _phase angle_ of the sine wave and $A$ is the _amplitude_. Some authors give a cosine solution but this differs only by the phase from the sine; $\sin(x) = \cos(x \pm \pi/2)$. Furthermore, by the properties of sine and cosine functions, we can also write
 # 
-# $$\displaystyle  x=\alpha\sin(\omega t)+\beta\cos(\omega t) \tag{19}$$
+# $$\displaystyle  x=\alpha\sin(\omega t)+\beta\cos(\omega t) \qquad\tag{19}$$
 # 
 # where $\alpha$ and $\beta$ are new constants but still determined by the initial conditions.
 # If the initial velocity is $v_0$ and the position $x_0$ at $t$ = 0, then from (19) $x_0 = \beta$ and
@@ -368,7 +368,7 @@ factor(ans)
 # 
 # which produces $\nu_0=\alpha\omega$, thus 
 # 
-# $$\displaystyle  x=\frac{v_0}{\omega}\sin(\omega t)+x_0\cos(\omega t) \tag{20}$$
+# $$\displaystyle  x=\frac{v_0}{\omega}\sin(\omega t)+x_0\cos(\omega t) \qquad\tag{20}$$
 # 
 # and is dimensionally correct since $v_0/\omega$ has dimensions of distance. This equation completely describes simple harmonic motion.
 # 
@@ -480,7 +480,7 @@ simplify(ans)
 # 
 # which has the general solution
 # 
-# $$\displaystyle  \varphi (t)=\varphi_0\cos(\omega t)+\frac{\nu_0}{\omega}\sin(\omega t)  \tag{21}$$
+# $$\displaystyle  \varphi (t)=\varphi_0\cos(\omega t)+\frac{\nu_0}{\omega}\sin(\omega t)  \qquad\tag{21}$$
 # 
 # as calculated in equation (20) but with $\varphi$ (in radians) instead of $x$ as displacement. The initial angle is $\varphi_0$ from the vertical and initial velocity $\nu_0$ rad s$^{-1}$.
 # 
@@ -504,11 +504,11 @@ simplify(ans)
 # 
 # In the normal pendulum, acceleration is towards the vertical or origin of the motion. In the inverted pendulum with a rigid rod instead of a wire, acceleration is away from the vertical and the motion is unstable. The equation of motion for small displacements from the vertical, is similar to that of the pendulum but with a positive sign on the right-hand side of the equation,
 # 
-# $$\displaystyle \frac{d^2x}{dt^2}=n^2x  \tag{22}$$
+# $$\displaystyle \frac{d^2x}{dt^2}=n^2x  \qquad\tag{22}$$
 # 
 # and $n$ is a constant. The horizontal component of the thrust outwards is $mgx/L$, provided $x$ is small; the constant is therefore $n^2 = g/L$. The solution for angular position is
 # 
-# $$\displaystyle \varphi = Ae^{nt}+Be^{-nt} \tag{23}$$
+# $$\displaystyle \varphi = Ae^{nt}+Be^{-nt} \qquad\tag{23}$$
 # 
 # where $A$ and $B$ are constants determined by the initial conditions. The general method of solution is given in Section 4.3. If the initial position is $x_0$ and velocity $\nu_0$, then $\varphi_0 = A + B$ and $\nu_0 = n(A - B)$. Changing the exponentials into hyperbolic sinh and cosh and substituting for the constants gives 
 # 
@@ -560,11 +560,11 @@ simplify(ans)
 # 
 # The constant $\alpha$ can be obtained by using the normalization condition $\displaystyle N^2\int_0^L \psi_n^*\psi_n dx = 1$ and then $N = 2/L$ . The normalized wavefunctions are
 # 
-# $$\displaystyle \psi_n = \sqrt{  \frac{2}{L} } \sin\left(\frac{n\pi x}{L}\right)  \qquad n=1,2,3,\cdots  \tag{24}$$
+# $$\displaystyle \psi_n = \sqrt{  \frac{2}{L} } \sin\left(\frac{n\pi x}{L}\right)  \qquad n=1,2,3,\cdots  \qquad\tag{24}$$
 # 
 # The energy of the $n^{th}$ energy level is found by putting $\psi_n$ back into the Schroedinger eqn. and is
 # 
-# $$\displaystyle E_n=\frac{\hbar^2}{2m}\left( \frac{n\pi}{L} \right)^2  \qquad n=1,2,3,\cdots \tag{25}$$
+# $$\displaystyle E_n=\frac{\hbar^2}{2m}\left( \frac{n\pi}{L} \right)^2  \qquad n=1,2,3,\cdots \qquad\tag{25}$$
 # 
 # which has units of joules. This equation means that there are $n$ energy levels, one for each wavefunction, and so $E$ is labelled with this quantum number as $E_n$. Notice that the energy is never zero because there is a zero-point energy in accord with the Heisenberg uncertainty principle. The box is of finite length and the particle is thus in a restricted region of space. However, we cannot determine exactly where it is in this region and at the same time know its momentum; the condition is $\Delta x\Delta p \ge \hbar/2$ where $\Delta x$ is the uncertainty in position and $\Delta p$ that in momentum. The uncertainty in position is given by its standard deviation 
 # 
@@ -609,7 +609,7 @@ simplify(ans)
 # 
 # (see question 3.114). Substituting produces
 # 
-# $$\displaystyle -\frac{\hbar^2}{2m}\left(\frac{\partial^2}{\partial r^2}+\frac{1}{r}\frac{\partial}{\partial r}+\frac{1}{r^2}\frac{\partial^2}{\partial \theta^2}\right) \psi +V(r)\psi = E\psi \tag{26} $$
+# $$\displaystyle -\frac{\hbar^2}{2m}\left(\frac{\partial^2}{\partial r^2}+\frac{1}{r}\frac{\partial}{\partial r}+\frac{1}{r^2}\frac{\partial^2}{\partial \theta^2}\right) \psi +V(r)\psi = E\psi \qquad\tag{26} $$
 # 
 # The term in $\theta$ describes the angular motion, and the other terms in $r$, the radial motion. In a rigid rotor or a particle on a ring, the radial part is constant which means that this part of the kinetic energy can be omitted, and as the potential energy $V$ is only a function of $r$ it is also a constant and can be ignored. Only the angular parts remain. 
 # 
@@ -631,7 +631,7 @@ simplify(ans)
 # 
 # which will be true for any $A$ and $B$ if $\displaystyle e^{ik\theta} = e^{−ik\theta} = 1$. This condition means that $k$ must be an integer with values $k = 0,\,\pm 1, \,\pm$ 2, $\cdots$. Conventionally the solution $\displaystyle \varphi =Ae^{ik\theta}$ is chosen and using the normalizing condition $\displaystyle N^2\int_0^{2\pi}\varphi^*\varphi d\theta=1$, the wavefunction is;
 # 
-# $$\displaystyle \varphi=\frac{1}{\sqrt{2\pi}}  e^{ik\theta} \tag{27}$$
+# $$\displaystyle \varphi=\frac{1}{\sqrt{2\pi}}  e^{ik\theta} \qquad\tag{27}$$
 # 
 # The quantum numbers are $k = 0, \pm 1, \pm 2, \cdots$ and as the lowest value is zero, this means that the minimum energy is zero and the rotor is stationary. As $k \ne 0$ can be positive or negative it indicates that the rotor moves to the right or left and that these levels are each doubly degenerate. 
 # 

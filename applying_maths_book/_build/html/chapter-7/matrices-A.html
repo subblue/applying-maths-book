@@ -770,7 +770,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="matrices-L.html">
-     Principal axes for Moments of Inertia
+     Principal axes of Moments of Inertia
     </a>
    </li>
    <li class="toctree-l2">
@@ -1817,7 +1817,7 @@ a_{31} &amp; a_{32} &amp; a_{33}\\
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/matrices-A_7_0.png" src="../_images/matrices-A_7_0.png" />
+<img alt="../_images/matrices-A_6_0.png" src="../_images/matrices-A_6_0.png" />
 </div>
 </div>
 <section id="i-rotation-matrix">
@@ -1849,7 +1849,7 @@ a_{31} &amp; a_{32} &amp; a_{33}\\
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/matrices-A_9_0.png" src="../_images/matrices-A_9_0.png" />
+<img alt="../_images/matrices-A_8_0.png" src="../_images/matrices-A_8_0.png" />
 </div>
 </div>
 </section>
@@ -1915,7 +1915,7 @@ x &amp; 1 &amp; 0 &amp; 0 \\
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/matrices-A_12_0.png" src="../_images/matrices-A_12_0.png" />
+<img alt="../_images/matrices-A_11_0.png" src="../_images/matrices-A_11_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1925,7 +1925,7 @@ x &amp; 1 &amp; 0 &amp; 0 \\
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/matrices-A_13_0.png" src="../_images/matrices-A_13_0.png" />
+<img alt="../_images/matrices-A_12_0.png" src="../_images/matrices-A_12_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1935,7 +1935,7 @@ x &amp; 1 &amp; 0 &amp; 0 \\
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/matrices-A_14_0.png" src="../_images/matrices-A_14_0.png" />
+<img alt="../_images/matrices-A_13_0.png" src="../_images/matrices-A_13_0.png" />
 </div>
 </div>
 <p>The solutions give each of the values of <span class="math notranslate nohighlight">\(x\)</span> and as <span class="math notranslate nohighlight">\(\displaystyle x=\frac{\alpha-\beta}{\beta}\)</span> the four energies given by <span class="math notranslate nohighlight">\(E=\alpha-\beta x\)</span> and are,</p>
@@ -2002,7 +2002,7 @@ x &amp; 1 &amp; 0 &amp; 1 \\
 \[\displaystyle E_j = \alpha - 2\beta\cos\left(\frac{2\pi j}{4}\right),\qquad j=0,1,2,3,\; n=4\]</div>
 <p>The general case is simply</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle E_j = \alpha-2\beta\cos\left(\frac{2\pi j}{n}\right), \qquad j=0,1,2\cdots n-1\tag{1e}\]</div>
+\[\displaystyle E_j = \alpha-2\beta\cos\left(\frac{2\pi j}{n}\right), \qquad j=0,1,2\cdots n-1\qquad\tag{1e}\]</div>
 <p>so that the energies of any ring can be found. Technically the solutions are called the eigenvalues.</p>
 <p>In benzene the first row of the matrix equivalent to eqn. 1d is <span class="math notranslate nohighlight">\(\begin{bmatrix}x &amp; 1&amp; 0&amp;0&amp;0&amp;1\end{bmatrix}\)</span> which produces energies <span class="math notranslate nohighlight">\(\displaystyle E_j = \alpha-2\beta\cos\left(\frac{2\pi j}{6}\right),\; j=0,1,2\cdots 6\)</span> which are in increasing order</p>
 <div class="math notranslate nohighlight">
@@ -2036,14 +2036,14 @@ x &amp; 1 &amp; 0 &amp; 1 \\
 <p>The electronic Hamiltonian <span class="math notranslate nohighlight">\(H\)</span> in the Schroedinger equation consists of terms in the kinetic energy of each electron <span class="math notranslate nohighlight">\(-\hbar^2/(2m)d^2/dr^2\)</span> and the potential energy of interaction of each electron (<span class="math notranslate nohighlight">\(i\)</span>) with every other one (<span class="math notranslate nohighlight">\(j\)</span>) which is <span class="math notranslate nohighlight">\(+e^2/r_{i,j}\)</span> and with each nucleus <span class="math notranslate nohighlight">\(-Z_ae/r_{a,j}\)</span> and the total energy must also include a term <span class="math notranslate nohighlight">\(Z_aZ_b/R_{ab}\)</span> for nuclear-nuclear repulsion. The equation is <span class="math notranslate nohighlight">\(H_{elec}\phi=\epsilon_{elec}\phi\)</span> where <span class="math notranslate nohighlight">\(\phi\)</span> is the electronic wavefunction whose value depends on the vector describing the electrons positions <span class="math notranslate nohighlight">\(\bar r \equiv x,y,z\)</span> and parametrically on the nuclear positions <span class="math notranslate nohighlight">\(R\)</span>.</p>
 <p>The Hamiltonian describing the motion of <span class="math notranslate nohighlight">\(N\)</span> electrons in the field of <span class="math notranslate nohighlight">\(M\)</span> nuclei, written in atomic units (see chapter 1) is</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle H_{elec}=-\sum_{i=1}^N\frac{1}{2}\nabla_i^2 -\sum_{i=1}^N\sum_{a=1}^M \frac{Z_a}{r_{i,a}}+\sum_{i=1}^N\sum_{j=1}^N \frac{1}{r_{i,j}}\tag{1f}\]</div>
+\[\displaystyle H_{elec}=-\sum_{i=1}^N\frac{1}{2}\nabla_i^2 -\sum_{i=1}^N\sum_{a=1}^M \frac{Z_a}{r_{i,a}}+\sum_{i=1}^N\sum_{j=1}^N \frac{1}{r_{i,j}}\qquad\tag{1f}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\nabla^2\)</span> is the second derivative w.r.t. <span class="math notranslate nohighlight">\(x, y\)</span> and <span class="math notranslate nohighlight">\(z\)</span>. The summations mean that very many integrals of the form energy <span class="math notranslate nohighlight">\(\epsilon= \int\phi H\phi\)</span> have to be calculated. However, we do not know beforehand what the wavefunctions <span class="math notranslate nohighlight">\(\phi\)</span> for a molecule may be. We might suppose that atomic orbitals could be used but these will be distorted by the charges on nearby atoms so are of limited use alone. What is done in practice is to use a <em>set of orthogonal functions</em> which may be like 1s orbitals but more often, for technical/mathematical reasons, are Gaussian functions. An orthonormal set of functions <span class="math notranslate nohighlight">\(\psi\)</span> is defined by having the property</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \int \psi_i^*(\bar r)\psi_j(\bar r)d\bar r=\delta_{i,j}\]</div>
 <p>where the delta function <span class="math notranslate nohighlight">\(\delta_{i=j}=1 \)</span> or else is zero and a bar over the letter, e.g. <span class="math notranslate nohighlight">\(\bar r\)</span> indicates position in three dimensions from the origin, i.e. <span class="math notranslate nohighlight">\(r,\theta, \phi\)</span>.</p>
 <p>A normal, arbitrary function <span class="math notranslate nohighlight">\(f(\bar r)\)</span>, which could be a wavefunction, can be always described by a Fourier series of orthonormal functions whose summation has coefficients <span class="math notranslate nohighlight">\(a_i\)</span>. This function is written very straightforwardly as</p>
 <div class="math notranslate nohighlight">
-\[ f(\bar r) = \sum_{i=1}^\infty a_i\psi_i(\bar r)\tag{1g}\]</div>
+\[ f(\bar r) = \sum_{i=1}^\infty a_i\psi_i(\bar r)\qquad\tag{1g}\]</div>
 <p>and as the <em>basis set</em> functions <span class="math notranslate nohighlight">\(\psi\)</span> are known the <span class="math notranslate nohighlight">\(a_i\)</span> coefficients have to be found. This equation is exact if the summation can be taken to infinity which is not possible in practice, so the function is only approximated if there are <span class="math notranslate nohighlight">\(K\)</span> terms, <span class="math notranslate nohighlight">\( f(\bar r) \approx \sum_{i=1}^K a_i\psi_i(\bar r)\)</span>. How good this approximation is depends on how many terms you choose to be included or that can be included in the summation and that effectively means how big or fast your computer is.</p>
 <p>The basis set functions are either exponential functions, of the form <span class="math notranslate nohighlight">\(4r^ne^{-br}Y(\theta,\phi)\)</span> or more often nowadays Gaussians. The function <span class="math notranslate nohighlight">\(Y\)</span> is a spherical harmonic and is understood to be present, rather than being specifically included,when <span class="math notranslate nohighlight">\(\bar r\)</span> notation is used. These Gaussian functions, are labelled as Slater Type, STO-nG where <span class="math notranslate nohighlight">\(n = 1,2,3\)</span> are sums of <span class="math notranslate nohighlight">\(1, 2\)</span> or <span class="math notranslate nohighlight">\(3\)</span> of Gaussian functions of the form <span class="math notranslate nohighlight">\((\sum_i a_ie^{-b_ir^2}) Y(\theta,\phi) \)</span>  where <span class="math notranslate nohighlight">\(a_i,b_i\)</span> are optimised to match atomic orbitals.  The reason for using Gaussians, even though they do not fit the atomic orbital particularly well, is that it may be necessary to perform many thousands of integrations and as the product of two Gaussians is also a Gaussian the result can be found algebraically and this greatly speeds up the calculation.</p>
 <p>We define an orbital as a wavefunction that can contain either zero or one electron. A electron has spin so this also has to be accounted for and so a <em>spin orbital</em> still only contains one electron but may have spin labelled as <span class="math notranslate nohighlight">\(\alpha\)</span> or <span class="math notranslate nohighlight">\(\beta\)</span> as well as depending on spatial coordinates <span class="math notranslate nohighlight">\(\bar r\)</span>. This orbital has the form</p>
@@ -2054,7 +2054,7 @@ x &amp; 1 &amp; 0 &amp; 1 \\
 \[\int \alpha^*(s)\alpha(s)ds =1,\; \int \alpha^*(s)\beta(s)ds = 0\]</div>
 <p>The set of spin orbitals follows the pattern <span class="math notranslate nohighlight">\(\alpha,\,\beta,\, \alpha\)</span> etc. so can be written as</p>
 <div class="math notranslate nohighlight">
-\[\varphi_{2i-1}=\psi(\bar r)\alpha(s),\qquad \varphi_{2i}=\psi(\bar r)\beta(s), \quad i=1,2,\cdots K\tag{1h}\]</div>
+\[\varphi_{2i-1}=\psi(\bar r)\alpha(s),\qquad \varphi_{2i}=\psi(\bar r)\beta(s), \quad i=1,2,\cdots K\qquad\tag{1h}\]</div>
 <p>If the spatial orbitals are orthonormal, then so are the spin orbitals and this means that we can forget about the spin because, as we shall see, this is automatically accounted for when a Slater Determinant is formed.</p>
 <p>Molecules contain many electrons, therefore wavefunctions for a collection of electrons are needed. Because the Hamiltonian is the sum of one electron Hamiltonians, the molecular wavefunction, which depends on the coordinates of all electrons is the <em>product</em> of spin functions and the total energy the <em>sum</em> of the spin orbital energies.</p>
 <div class="math notranslate nohighlight">
@@ -2068,7 +2068,7 @@ x &amp; 1 &amp; 0 &amp; 1 \\
 <p>where, for clarity, the numbers label the electron’s coordinates.</p>
 <p>To ensure that antisymmetry applies to the product wavefunction <span class="math notranslate nohighlight">\(\Psi\)</span> a linear combination is made. Using two wavefunctions functions <span class="math notranslate nohighlight">\(i\)</span> and <span class="math notranslate nohighlight">\(j\)</span> with electrons <span class="math notranslate nohighlight">\(1\)</span> and <span class="math notranslate nohighlight">\(2\)</span> this is</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle \Psi_A(\bar x_1,\bar x_2)= \frac{1}{\sqrt{2!}}\left(\varphi_i(\bar x_1)\varphi_j(\bar x_2))-\varphi_i(\bar x_2)\varphi_j(\bar x_1)\right)\tag{1i}\]</div>
+\[\displaystyle \Psi_A(\bar x_1,\bar x_2)= \frac{1}{\sqrt{2!}}\left(\varphi_i(\bar x_1)\varphi_j(\bar x_2))-\varphi_i(\bar x_2)\varphi_j(\bar x_1)\right)\qquad\tag{1i}\]</div>
 <p>and has the required property <span class="math notranslate nohighlight">\(\Psi_A(\bar x_1,\bar x_2)= -\Psi_A(\bar x_2,\bar x_1)\)</span>.</p>
 <p>This wavefunction has the form of a determinant, called a Slater Determinant,</p>
 <div class="math notranslate nohighlight">

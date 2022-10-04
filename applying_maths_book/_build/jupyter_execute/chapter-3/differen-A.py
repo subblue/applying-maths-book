@@ -28,7 +28,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # The relationship between differentiation, $\displaystyle \frac{df}{dx}$, and integration,  $\displaystyle \int_a^b f(x)dx$, of an expression $f(x)$ is shown below: moving to the left is differentiation; to the right integration.
 # 
-# $$\displaystyle \frac{df}{dx}  \underset {always}{\stackrel {sometimes} {\Large{\rightleftharpoons} }}f(x) \underset {always}{\stackrel {sometimes} {\Large{\rightleftharpoons} }} \int_a^b f(x)dx  \tag{1}$$
+# $$\displaystyle \frac{df}{dx}  \underset {always}{\stackrel {sometimes} {\Large{\rightleftharpoons} }}f(x) \underset {always}{\stackrel {sometimes} {\Large{\rightleftharpoons} }} \int_a^b f(x)dx  \qquad\tag{1}$$
 # 
 # Even if we assume that it will always be possible to differentiate our function $f(x)$ it will not always be possible to integrate it algebraically, although this can be done numerically. Integrating $df/dx$ is equivalent to solving a differential equation and these are met primarily in chemical kinetics, quantum mechanics, and dynamics. Before working out the details of differentiation, the effect that a small change in $x$ and $y$ has on an expression is examined, and this will lead naturally into differentiation.
 # 
@@ -40,7 +40,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # In Fig. 2, the curve is a parabola with the equation $y = x^2 + 1$. The slope in the region P to Q is $\delta y/\delta x$. The point P has coordinates $(2, 5)$ and if $\delta x = 0.3$ then the point Q is $(x, y) = (2.3, 2.32 + 1)$, making $\delta y = 1.29$ and $\delta y/\delta x = 4.3$. Similarly, the slope can be calculated starting at any other point on the curve. As $\delta x$ is small but finite, the gradient is the average over the range $\delta x$, and if $f(x)$ is any (normal) function such as $x^2 + 1$, then its slope is given by
 # 
-# $$\displaystyle \frac{\delta y}{\delta x}=\frac{f(x+\delta x)-f(x)}{\delta x} \tag{2}$$
+# $$\displaystyle \frac{\delta y}{\delta x}=\frac{f(x+\delta x)-f(x)}{\delta x} \qquad\tag{2}$$
 # 
 # but this only approximately measures the true slope, which is obtained when $\delta x \to 0$. 
 # 
@@ -65,7 +65,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # Note that eqn 2 could is also written as 
 # 
-# $$\displaystyle \frac{\delta f(x)}{\delta x}=\frac{f(x+\delta x)-f(x)}{\delta x} \tag{2a}$$
+# $$\displaystyle \frac{\delta f(x)}{\delta x}=\frac{f(x+\delta x)-f(x)}{\delta x} \qquad\tag{2a}$$
 # 
 # because $y\equiv f(x)$.
 
@@ -154,7 +154,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # The similar procedure making $\delta x \to  0$ can be followed for lots of different functions, but need not be carried through because the results and methods are well understood and the results will be quoted. The derivatives of $\displaystyle y = x^n$ where $n$ is any positive or negative number, including fractions, have the form
 # 
-# $$\displaystyle \frac{dy}{dx}=nx^{n-1} \tag{5}$$
+# $$\displaystyle \frac{dy}{dx}=nx^{n-1} \qquad\tag{5}$$
 # 
 # some examples are $\displaystyle \frac{d}{dx}x^4=4x^3 \qquad  \frac{d}{dx}x^{-3}=-3x^{-4} \qquad \frac{d}{dx}x^{-3/2}=-\frac{3}{2}x^{-5/2}$
 # 
@@ -191,7 +191,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # If $g$ is a function of $y$ such as $y^3$ then, formally,
 # 
-# $$ g(y)=f(x), \qquad \frac{d}{dy}g(y)\frac{dy}{dx}=\frac{d}{dx} f(x)\tag{6}$$
+# $$ g(y)=f(x), \qquad \frac{d}{dy}g(y)\frac{dy}{dx}=\frac{d}{dx} f(x)\qquad\tag{6}$$
 # 
 # ## 3.5 Constants
 # 
@@ -240,7 +240,7 @@ diff(eq2, x)
 # The result of differentiation is often another function in $x$, so it is possible to differentiate
 # again. Performing the operation twice is written as $\displaystyle \frac{d^2}{dx^2} f(x)$, and the notation is similar even if you must differentiate three or more times. Sometimes the first derivative is written as $f'$, the second as $f''$, and so forth. The second derivative means perform the differentiation twice over, the third derivative three times etc.,
 # 
-# $$\displaystyle  \frac{d^2}{dx^2} f(x) = \frac{d}{dx} \left( \frac{d}{dx}f(x)  \right)  \tag{7}$$
+# $$\displaystyle  \frac{d^2}{dx^2} f(x) = \frac{d}{dx} \left( \frac{d}{dx}f(x)  \right)  \qquad\tag{7}$$
 # 
 # For example, if $y = ax^2$, differentiating once produces $dy/dx= 2ax$ and differentiating this result gives
 # 
@@ -256,7 +256,7 @@ diff(eq2, x)
 # 
 # For exponentials repeated differentiation never produces zero. 
 # 
-# $$ y=e^{-ax}, \qquad \frac{dy}{dx}=-ay, \qquad \frac{d^2y}{dx^2}=-\frac{d}{dx}ae^{-ax}=a^2y   \tag{8}$$
+# $$ y=e^{-ax}, \qquad \frac{dy}{dx}=-ay, \qquad \frac{d^2y}{dx^2}=-\frac{d}{dx}ae^{-ax}=a^2y   \qquad\tag{8}$$
 # 
 # Continuing the differentiation, the powers of $a$ increase and the sign alternates being positive for even powers and negative for odd ones. Therefore the $n^{th}$ derivative is
 # 
@@ -287,7 +287,7 @@ diff(eq2, x)
 # 
 # In an electrochemical cell the enthalpy at constant pressure is given by 
 # 
-# $$\displaystyle \Delta H =-nF\left(\epsilon-T\left(\frac{\partial \epsilon}{\partial T}\right)_p\right) \tag{8a}$$
+# $$\displaystyle \Delta H =-nF\left(\epsilon-T\left(\frac{\partial \epsilon}{\partial T}\right)_p\right) \qquad\tag{8a}$$
 # 
 # where $\epsilon$ is the measured voltage (potential), $n$ the number of electrons transferred in the reaction and $F$ the Faraday constant. The entropy change is 
 # 
@@ -295,7 +295,7 @@ diff(eq2, x)
 # 
 # and the change in heat capacity
 # 
-# $$\Delta C_p = nFT\left(\frac{\partial^2 \epsilon}{\partial^2 T}\right)_p \tag{8b}$$
+# $$\Delta C_p = nFT\left(\frac{\partial^2 \epsilon}{\partial^2 T}\right)_p \qquad\tag{8b}$$
 # 
 # In the reaction between hydrogen and silver chloride the change of cell potential $\epsilon$ with temperature has been measured with great accuracy over the range $0\to 90^\text{o}$ C in 0.1 M HCl solution. The reaction is 
 # 

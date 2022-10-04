@@ -78,7 +78,7 @@
 # 
 # Starting with the general formula for $n$ terms, the expansion can be simplified by moving the summation to the front of the calculation, which gives after some lengthy but not difficult algebra,
 # 
-# $$\displaystyle \vec W\cdot \vec V= \sum_{p=1}^n\sum_{q=1}^n w_pv_q\vec x_p\cdot \vec x_q = \sum_{p=1}^n\sum_{q=1}^nw_pv_q\delta_{p,q}  \tag{36}$$
+# $$\displaystyle \vec W\cdot \vec V= \sum_{p=1}^n\sum_{q=1}^n w_pv_q\vec x_p\cdot \vec x_q = \sum_{p=1}^n\sum_{q=1}^nw_pv_q\delta_{p,q}  \qquad\tag{36}$$
 # 
 # if $n=3$ the expansion is
 # 

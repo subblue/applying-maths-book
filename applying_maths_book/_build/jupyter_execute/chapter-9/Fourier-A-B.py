@@ -41,12 +41,12 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # Suppose that, over the range $\pm\pi$, a Fourier series $g(x)$ approximates a 'victim' or target function $f(x)$, which might be $x^3$ or $\displaystyle (e^{-x} - 1)^2$ or any 'normal' function, then the Fourier series $g(x)$ that approximates the true function $f(x)$ can be written down in general and in quite a straightforward manner and is
 # 
-# $$\displaystyle  g(x) = \frac{a_0}{2}+ \sum\limits_{n=1}^\infty a_n\cos(nx) + \sum\limits_{n=1}^\infty b_n\sin(nx)   \tag{1}$$
+# $$\displaystyle  g(x) = \frac{a_0}{2}+ \sum\limits_{n=1}^\infty a_n\cos(nx) + \sum\limits_{n=1}^\infty b_n\sin(nx)   \qquad\tag{1}$$
 # 
 # where $g(x)$ approximates $f(x)$. The summations start at index $n$ = 1, and $n$ is a positive integer. The $a_n$ and $b_n$ coefficients are the integrals
 # 
-# $$\displaystyle   a_n= \frac{1}{\pi}\int\limits_{-\pi}^{+\pi}f(x)\cos(nx)dx \qquad  (n \ge 0) \tag{2} $$
-# $$\displaystyle   b_n= \frac{1}{\pi}\int\limits_{-\pi}^{+\pi}f(x)\sin(nx)dx \qquad  (n \gt 0) \tag{3} $$
+# $$\displaystyle   a_n= \frac{1}{\pi}\int\limits_{-\pi}^{+\pi}f(x)\cos(nx)dx \qquad  (n \ge 0) \qquad\tag{2} $$
+# $$\displaystyle   b_n= \frac{1}{\pi}\int\limits_{-\pi}^{+\pi}f(x)\sin(nx)dx \qquad  (n \gt 0) \qquad\tag{3} $$
 # 
 # which are normalized by 1/$\pi$. 
 # 
@@ -61,12 +61,12 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # Over the range $−L$ to $L$, the equations to use for $f(x)$ are similar to equations (1)–(3) but $x$ is
 # changed to $\pi x/L$. The series is
 # 
-# $$\displaystyle  g(x) = \frac{a_0}{2}+ \sum\limits_{n=1}^\infty a_n\cos \left(\frac{n\pi x}{L}\right) + \sum\limits_{n=1}^\infty b_n\sin\left(\frac{n\pi x}{L}\right)   \tag{4}$$
+# $$\displaystyle  g(x) = \frac{a_0}{2}+ \sum\limits_{n=1}^\infty a_n\cos \left(\frac{n\pi x}{L}\right) + \sum\limits_{n=1}^\infty b_n\sin\left(\frac{n\pi x}{L}\right)   \qquad\tag{4}$$
 # 
 # and the coefficients are changed similarly,
 # 
-# $$\displaystyle   a_n= \frac{1}{L}\int\limits_{-L}^{L}f(x)\cos \left(\frac{n\pi x}{L}\right)dx \qquad  (n \ge 0) \tag{5} $$
-# $$\displaystyle   b_n= \frac{1}{L}\int\limits_{-L}^{L}f(x)\sin \left(\frac{n\pi x}{L}\right)dx \qquad  (n \gt 0) \tag{6} $$
+# $$\displaystyle   a_n= \frac{1}{L}\int\limits_{-L}^{L}f(x)\cos \left(\frac{n\pi x}{L}\right)dx \qquad  (n \ge 0) \qquad\tag{5} $$
+# $$\displaystyle   b_n= \frac{1}{L}\int\limits_{-L}^{L}f(x)\sin \left(\frac{n\pi x}{L}\right)dx \qquad  (n \gt 0) \qquad\tag{6} $$
 # 
 # Notice that the arguments, limits, and normalization are each changed compared to those when the range is $\pm \pi$. The integral now has limits $\pm L$ instead of $\pm \pi$, and normalization 1/$L$ rather than 1/$\pi$.
 # 
@@ -74,11 +74,11 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # Because the sine and cosine functions can be represented as sums and differences of complex exponential terms, for example, $\displaystyle \cos(x) = (e^{ix} + e^{-ix})/2$, the most general way of describing the Fourier series is to use the complex exponential form;
 # 
-# $$\displaystyle g(x) = \sum\limits_{n=-\infty}^\infty c_ne^{+i\, n\pi x/L}    \tag{7}$$
+# $$\displaystyle g(x) = \sum\limits_{n=-\infty}^\infty c_ne^{+i\, n\pi x/L}    \qquad\tag{7}$$
 # 
 # and the coefficients become
 # 
-# $$\displaystyle c_n=\frac{1}{2L}\int\limits_{-L}^L f(x)e^{-i\,n\pi x/L}dx    \tag{8} $$
+# $$\displaystyle c_n=\frac{1}{2L}\int\limits_{-L}^L f(x)e^{-i\,n\pi x/L}dx    \qquad\tag{8} $$
 # 
 # Note the change in sign and limits in the second exponential, and that $i=\sqrt{-1}$. The set of coefficients $c_n$, are sometimes called the _amplitude spectrum_ of the transform. Note also that for practical purposes the expansion $g(x)$, and the true function $f(x)$  are considered equivalent.
 
@@ -88,7 +88,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # First, the form of the cosine integrals is examined. The integrals containing a product of sine and cosine are all zero for any $n$ and $m$ because the integral has 'odd' symmetry because of the sine, and the limits are symmetrical;
 # 
-# $$\displaystyle  \int\limits_{-\infty}^{+\infty}\cos(mx)\sin(nx)dx = 0  \tag{9}$$
+# $$\displaystyle  \int\limits_{-\infty}^{+\infty}\cos(mx)\sin(nx)dx = 0  \qquad\tag{9}$$
 # 
 # To convince you that the symmetry makes the integral zero, which is the area under the curve, a curve is plotted below, see figure 2. The curve, while complicated, is inverted about $x$ = 0 so that the area $\gt$ 0 is equal and opposite to that $\lt$ 0. More details on odd and even functions is given in the next section.
 # 
@@ -100,17 +100,17 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # The product of two cosines makes the integral
 # 
-# $$\displaystyle \int\limits_{-\pi}^\pi \cos(mx)\cos(nx)dx = \pi\delta_{n,m}   \tag{10}$$
+# $$\displaystyle \int\limits_{-\pi}^\pi \cos(mx)\cos(nx)dx = \pi\delta_{n,m}   \qquad\tag{10}$$
 # 
 # where $m$ and $n$ are integers and the (Kronecker) delta function $\delta_{n,m}$ is zero only if $n \ne m$, and is $1$ if $n = m$.
 # 
 # To calculate the $a_n$ coefficients, $f(x)$ is represented as the Fourier series $g(x)$
 # 
-# $$\displaystyle  f(x) \approx g(x) = \frac{a_0}{2}+ \sum\limits_{n=1}^\infty a_n\cos(nx) + \sum\limits_{n=1}^\infty b_n\sin(nx) \tag{11}$$
+# $$\displaystyle  f(x) \approx g(x) = \frac{a_0}{2}+ \sum\limits_{n=1}^\infty a_n\cos(nx) + \sum\limits_{n=1}^\infty b_n\sin(nx) \qquad\tag{11}$$
 # 
 # and this is now  multiplied by $\cos(mx)$ and integrated. The cosine integrals with $m\gt$ 0 are,
 # 
-# $$\displaystyle \int\limits_{-\pi}^\pi f(x) \cos(mx)dx = \frac{a_0}{2}\int\limits_{-\pi}^\pi \cos(mx)dx +\int\limits_{-\pi}^\pi \left [\sum\limits_{n=1} a_n\cos(nx)+ \sum\limits_{n=1} b_n\sin(nx ) \right] \cos(mx)dx \tag{12}$$
+# $$\displaystyle \int\limits_{-\pi}^\pi f(x) \cos(mx)dx = \frac{a_0}{2}\int\limits_{-\pi}^\pi \cos(mx)dx +\int\limits_{-\pi}^\pi \left [\sum\limits_{n=1} a_n\cos(nx)+ \sum\limits_{n=1} b_n\sin(nx ) \right] \cos(mx)dx \qquad\tag{12}$$
 # 
 # These integrals can be easily evaluated: The first is zero by symmetry, and by direct integration, 
 # 
@@ -138,11 +138,11 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # When functions are either even or odd, the Fourier series is simplified to cosine or sine series respectively. An even function has the property $f (-x) = f (x)$ and the sine integration (eqn. 6) producing the Fourier coefficient $b_n$ is odd and therefore $b_n$ = 0, but only because the integration limits are symmetrical. The cosine integral (eqn. 5) is not zero, and can be written as
 # 
-# $$\displaystyle a_n=\frac{2}{\pi}\int\limits_0^\pi f(x)\cos(nx)dx   \tag{13}$$
+# $$\displaystyle a_n=\frac{2}{\pi}\int\limits_0^\pi f(x)\cos(nx)dx   \qquad\tag{13}$$
 # 
 # When $f(x)$ is odd $f(-x) = -f(x)$, the opposite situation arises; $a_n$ = 0 and only the sine terms remain;
 # 
-# $$\displaystyle b_n=\frac{2}{\pi}\int\limits_0^\pi f(x)\sin(nx)dx   \tag{14}$$
+# $$\displaystyle b_n=\frac{2}{\pi}\int\limits_0^\pi f(x)\sin(nx)dx   \qquad\tag{14}$$
 # 
 # In cases when $f(x)$ is neither odd nor even, for example $f(x) = \pi/2 - x$, both coefficients have to be evaluated.
 # 
@@ -168,7 +168,7 @@ a_n
 
 # Adding the limits $\pm \pi$ produces zero for the sine terms and the remaining cosine produces $\displaystyle a_n=(-1)^n\frac{4}{n^3}$. All the $b_n$=0 thus using eqn. 4. the Fourier series for $x^2$ is
 # 
-# $$\displaystyle  x^2 \approx g(x)= \frac{\pi^2}{3}-4\cos(x)+\cos(2x)-\frac{4}{9}\cos(3x) \cdots \ = \frac{\pi^2}{3}+4\sum\limits_{n=1}^\infty \frac{(-1)^n}{n^2}\cos(nx)     \tag{15} $$
+# $$\displaystyle  x^2 \approx g(x)= \frac{\pi^2}{3}-4\cos(x)+\cos(2x)-\frac{4}{9}\cos(3x) \cdots \ = \frac{\pi^2}{3}+4\sum\limits_{n=1}^\infty \frac{(-1)^n}{n^2}\cos(nx)   \qquad\tag{15} $$
 # 
 # which, as shown in the next figure, is a good representation of $x^2$. The following Python code is included as an example of a Fourier series calculation
 
@@ -330,7 +330,7 @@ simplify(bn)
 # 
 # A given set of functions, $S_n(x)$ is said to be complete if some other arbitrary function $f(x)$ can be expanded in the set of the $S$ functions. If they have the same boundary conditions, this makes the functions _complete and orthogonal_ in a given range, and in the case of the sine and cosine Fourier series, this range is -$\pi$ to $\pi$. The general series describing $f(x)$, is
 # 
-# $$\displaystyle  g(x) = \sum\limits_{n=1}^\infty q_nS_n(x)  \tag{16}$$
+# $$\displaystyle  g(x) = \sum\limits_{n=1}^\infty q_nS_n(x)  \qquad\tag{16}$$
 # 
 # $q_n$ being constants that are related to the target function $f(x)$. If the $S$ functions are orthonormal, then, when $n$ and $m$ are integers, $\displaystyle \int S_n^*(x)S_m(x) dx= \delta_{m,n}$.
 # 
@@ -377,15 +377,15 @@ plt.show()
 # 
 # The Fourier series expands a function in sine and cosines. In the language of vectors and matrices, the sine and cosines form a basis set in which the function f is expanded. The essential property that any basis set of functions must have is orthogonality. If $\varphi$ is such a function, then the basis set is the functions $\varphi_1, \varphi_2, \cdots$  and the condition for orthogonality is
 # 
-# $$\displaystyle \int_a^b\varphi_m(x)^*\varphi_n(x)dx=c_m\delta_{m,n}    \tag{17}$$
+# $$\displaystyle \int_a^b\varphi_m(x)^*\varphi_n(x)dx=c_m\delta_{m,n}    \qquad\tag{17}$$
 # 
 # where $c$ is a constant and $\delta$ is the delta function and is zero if $n \ne m$ otherwise it is unity. The asterisk indicates the complex conjugate if the function $\varphi$ is complex. If the functions are normalized as well as being orthogonal, then $c_m  = 1$. The range of the integral, $a$ to $b$, depends on the type of function which might be $\pm 1$ or $\pm \infty$. Some orthogonal polynomials, such as the Hermite polynomials, are so defined that a weighting function $w$, is needed to make them orthogonal. In this case, equation (17) is redefined as
 # 
-# $$\displaystyle \int_a^b\varphi_m(x)^*\varphi_n(x)w(x)dx=c_m\delta_{m,n}    \tag{18}$$
+# $$\displaystyle \int_a^b\varphi_m(x)^*\varphi_n(x)w(x)dx=c_m\delta_{m,n}    \qquad\tag{18}$$
 # 
 # Suppose $f(x)$ is the function we want to expand as a series in the $\varphi$'s. The generalized Fourier series is defined in a simpler way than the normal sine/cosine series, because only one function is involved; hence
 # 
-# $$ f(x)=\sum\limits_{n=0}^\infty a_n\varphi_n  \tag{19}$$
+# $$ f(x)=\sum\limits_{n=0}^\infty a_n\varphi_n  \qquad\tag{19}$$
 # 
 # The next task is to find the coefficients $a_n$, and this is done by multiplying both sides of (19) by $\varphi$ and any weighting $w$, and integrating;
 # 
@@ -393,7 +393,7 @@ plt.show()
 # 
 # The summation is taken outside the integral in the second step, because it depends on $n$ not $x$, and the orthogonality (18) is used to solve the integral. The summation disappears in the last step because of the property of the $\delta$ function. The coefficients $a_n$ are therefore,
 # 
-# $$\displaystyle  a_n=\frac{1}{c_n}\int_a^bf(x)\varphi_n(x)w(x)dx  \tag{20} $$
+# $$\displaystyle  a_n=\frac{1}{c_n}\int_a^bf(x)\varphi_n(x)w(x)dx  \qquad\tag{20} $$
 # 
 # and this equation and (19) form the equations for the generalized Fourier transform. The only way that information about the function $f(x)$ enters the calculation, is _via_ the coefficients $a_n$.
 # 

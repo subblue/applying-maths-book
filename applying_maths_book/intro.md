@@ -20,6 +20,6 @@ I would like to thank Dr. David Salt RIP for reading and critically commenting o
 
 Contact me via: <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#103;&#111;&#100;&#102;&#114;&#101;&#121;&#64;&#115;&#117;&#98;&#98;&#108;&#117;&#101;&#46;&#99;&#111;&#109;">&#103;&#111;&#100;&#102;&#114;&#101;&#121;&#64;&#115;&#117;&#98;&#98;&#108;&#117;&#101;&#46;&#99;&#111;&#109;</a>
 
-18ix22.
+29ix22.
 
 Currently the equation numbering is not being rendered properly. For reasons that are not clear the markdown  \tag{..} is being ingored. Hopefully this is a bug that will be corrected infuture versions of Jupyter-book.

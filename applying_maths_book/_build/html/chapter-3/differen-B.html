@@ -770,7 +770,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-7/matrices-L.html">
-     Principal axes for Moments of Inertia
+     Principal axes of Moments of Inertia
     </a>
    </li>
    <li class="toctree-l2">
@@ -1717,7 +1717,7 @@ title="Print to PDF"
 <h2>3.9 Sine and cosine<a class="headerlink" href="#sine-and-cosine" title="Permalink to this headline">#</a></h2>
 <p>Sine and cosine functions are almost mirror images of one another when differentiated,</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle \frac{d}{dx}\sin(x)=\cos(x) \qquad \frac{d}{dx}\cos(x)=-\sin(x)   \tag{9}\]</div>
+\[\displaystyle \frac{d}{dx}\sin(x)=\cos(x) \qquad \frac{d}{dx}\cos(x)=-\sin(x)   \qquad\tag{9}\]</div>
 <p>which makes sense if one inspects a graph of these functions, see Fig. 5. The value of the cosine at any point is the gradient of the sine at that point and the gradient of the cosine is <span class="math notranslate nohighlight">\(-1\)</span> times the value of the sine. When the sine has its maximum or minimum, where the gradient is zero, the value of the cosine is also zero. Furthermore, when the gradient of the sine is positive, <span class="math notranslate nohighlight">\(x/\pi = 0 \to 1/2\)</span> and also <span class="math notranslate nohighlight">\(3/2 \to 2\)</span>, the value of the cosine, which is the derivative, is positive. When the gradient of the sine is negative, the value of the cosine is negative. It is therefore not surprising that on differentiating these functions again they turn into one another but with a change of sign depending upon how many times this is done.</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle \begin{align} \frac{d}{dx}\sin(ax)&amp;=a\cos(a)\\
@@ -1748,13 +1748,13 @@ title="Print to PDF"
 <h2>3.12 Logarithms<a class="headerlink" href="#logarithms" title="Permalink to this headline">#</a></h2>
 <p>Differentiating logarithms always has the form: ‘derivative divided by the function’.</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle \frac{d}{dx}\ln\left( f(x) \right)=\frac{f'(x)}{f(x)} \quad \text{where }\quad f' =\frac{d}{dx} \tag{10} \]</div>
+\[\displaystyle \frac{d}{dx}\ln\left( f(x) \right)=\frac{f'(x)}{f(x)} \quad \text{where }\quad f' =\frac{d}{dx} \qquad\tag{10} \]</div>
 <p>for example,</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle \begin{align}\frac{d}{dx}\ln(x)&amp;=\frac{1}{x}\\ \frac{d}{dx}\ln\left(\sin(x)\right)&amp;=\frac{\cos(x)}{\sin(x)}=\frac{1}{\tan(x)}\end{align}\end{split}\]</div>
 <p>Differentiating <span class="math notranslate nohighlight">\(\ln(y)\)</span> with respect to <span class="math notranslate nohighlight">\(x\)</span> produces a most useful form, which is worth remembering</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle \frac{d}{dx}\ln(y)=\frac{1}{y}\frac{dy}{dx} \tag{11}\]</div>
+\[\displaystyle \frac{d}{dx}\ln(y)=\frac{1}{y}\frac{dy}{dx} \qquad\tag{11}\]</div>
 <p>The van’t Hoff equation of chemical thermodynamics has this last form,</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \frac{d\ln(K_p)}{dT}=\frac{\Delta_rH^{\mathrm{o}}}{RT^2}\]</div>
@@ -1784,7 +1784,7 @@ title="Print to PDF"
 <p>In cases where there are powers of <span class="math notranslate nohighlight">\(x\)</span> it is best to take logs of both sides first. For example,
 if <span class="math notranslate nohighlight">\(y = a^x\)</span>, taking logs of both sides gives <span class="math notranslate nohighlight">\(\ln(y) = x \ln(a)\)</span> and differentiating produces</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle \frac{1}{y}\frac{dy}{dx}=\ln(a)  \tag{12}\]</div>
+\[\displaystyle \frac{1}{y}\frac{dy}{dx}=\ln(a)  \qquad\tag{12}\]</div>
 <p>and simplifying produces</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \frac{dy}{dx}=y\ln(a)=a^x\ln(a)\]</div>
@@ -1825,21 +1825,21 @@ if <span class="math notranslate nohighlight">\(y = a^x\)</span>, taking logs of
 <h2>3.14 Reciprocal derivatives<a class="headerlink" href="#reciprocal-derivatives" title="Permalink to this headline">#</a></h2>
 <p>Occasionally it is necessary, or simpler, to find <span class="math notranslate nohighlight">\(dx/dy\)</span> rather than invert the equation to put it in terms of <span class="math notranslate nohighlight">\(y = \cdots\)</span> and calculate <span class="math notranslate nohighlight">\(dy/dx\)</span>. The derivatives are related as double reciprocals;</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle \frac{dy}{dx}=1\big/ \frac{dx}{dy}  \tag{13}\]</div>
+\[\displaystyle \frac{dy}{dx}=1\big/ \frac{dx}{dy}  \qquad\tag{13}\]</div>
 <p>As an example, suppose that <span class="math notranslate nohighlight">\(\displaystyle \sin(y^2) = x\)</span>, differentiating by <span class="math notranslate nohighlight">\(y\)</span> gives the result <span class="math notranslate nohighlight">\(\displaystyle dx/dy = 2y \cos(y^2)\)</span>. Differentiating by <span class="math notranslate nohighlight">\(x\)</span> could mean that a rearrangement must first be done to form <span class="math notranslate nohighlight">\(\displaystyle y = \sqrt{\sin^{-1}(x)}\)</span> and then this differentiated, which is quite involved. Instead using equation (6), the result is obtained directly <span class="math notranslate nohighlight">\(\displaystyle 2y \cos(y^2)dy/dx = 1\)</span> and these two results show that equation (13) is true.</p>
 </section>
 <section id="differentiating-integrals">
 <h2>3.15 Differentiating integrals<a class="headerlink" href="#differentiating-integrals" title="Permalink to this headline">#</a></h2>
 <p>If you are unfamiliar with integration, it will help to know the basic rules; see Chapter 4. It is possible to differentiate integrals; well why not! Integration and differentiation are linked as shown in equation (1) and as given by the fundamental theorem of the calculus:</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle  \frac{d}{dx}\int_a^xf(u)du=\frac{d}{dx}\left(F(x)-F(a)   \right)=f(x)  \tag{14}\]</div>
+\[\displaystyle  \frac{d}{dx}\int_a^xf(u)du=\frac{d}{dx}\left(F(x)-F(a)   \right)=f(x)  \qquad\tag{14}\]</div>
 <p><span class="math notranslate nohighlight">\(a\)</span> being a constant and <span class="math notranslate nohighlight">\(F\)</span> is the result of integration. The variable <span class="math notranslate nohighlight">\(u\)</span> used in the integration is a dummy variable, any letter could be used instead, but it is better in this instance not to use <span class="math notranslate nohighlight">\(x\)</span> as this can be confusing. In this formula at least one of the integration limits must be a function of <span class="math notranslate nohighlight">\(x\)</span> as explained next.</p>
 <p>Differentiating the integral with two limits both of which are constants, i.e. simply numbers <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span>, produces a result of 0, because integration with such limits produces a number, e.g. the area under the curve from <span class="math notranslate nohighlight">\(a\)</span> to <span class="math notranslate nohighlight">\(b\)</span>, see Fig. 1, and the differential of a constant is zero,</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle  \frac{d}{dx}\int_a^bf(u)dx=0\]</div>
 <p>In the more complex and general cases, where the limits <span class="math notranslate nohighlight">\(u\)</span> and <span class="math notranslate nohighlight">\(v\)</span> are themselves functions of <span class="math notranslate nohighlight">\(x\)</span>, the function of function rule is used (Section 5.1),</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle  \frac{d}{dx}\int_{v(x)}^{u(x)}f(s)ds=f(u)\frac{du}{dx}-f(v)\frac{dv}{dx}  \tag{15}  \]</div>
+\[\displaystyle  \frac{d}{dx}\int_{v(x)}^{u(x)}f(s)ds=f(u)\frac{du}{dx}-f(v)\frac{dv}{dx}  \qquad\tag{15}  \]</div>
 <p>which is also called Leibniz’s Rule. An example where <span class="math notranslate nohighlight">\(x^2\)</span> is one of the limits is,</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle  \frac{d}{dx}\int_a^{x^2} e^{-az^2}dz=2xe^{-ax^2}\]</div>
@@ -1849,11 +1849,11 @@ if <span class="math notranslate nohighlight">\(y = a^x\)</span>, taking logs of
 <p>One interesting, but rather sophisticated example of differentiating integrals occurs when finding the distribution of nearest (closest or first) neighbour molecules in a solution, Chandrasekhar(1943).</p>
 <p>Let <span class="math notranslate nohighlight">\(w(r)\)</span> be the probability that the nearest neighbour occurs between distance  <span class="math notranslate nohighlight">\(r\)</span> and <span class="math notranslate nohighlight">\(r + dr\)</span>. This must be the probability than no molecules exist up to <span class="math notranslate nohighlight">\(r\)</span> and that the next molecule exists in the shell <span class="math notranslate nohighlight">\(r \to r + dr\)</span>. Thus,</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle  w(r)=\left(  1-\int_0^r w(r)dr \right)4\pi r^2 n \tag{15a}\]</div>
+\[\displaystyle  w(r)=\left(  1-\int_0^r w(r)dr \right)4\pi r^2 n \qquad\tag{15a}\]</div>
 <p>where <span class="math notranslate nohighlight">\(n\)</span> is the average number of molecules / unit volume. (<span class="math notranslate nohighlight">\(1 \mathrm{\,mol\,m^{-3}} \equiv 10^3 N_A/10^{27} = 0.6023 \)</span> molecules / nm<span class="math notranslate nohighlight">\(^3\)</span>). The term in brackets is 1-probability that a molecule exists, i.e. that it does not exist in <span class="math notranslate nohighlight">\(0 \to r\)</span> and the integral is the probability that it exists in <span class="math notranslate nohighlight">\(0 \to r\)</span>. The <span class="math notranslate nohighlight">\(4\pi r^2 n\)</span> is the number of molecules in the shell <span class="math notranslate nohighlight">\(\delta r\)</span>.</p>
 <p>This looks hard to solve because <span class="math notranslate nohighlight">\(w(r)\)</span> is also inside the integration, so it is necessary to isolate the integral first (by dividing both sides by <span class="math notranslate nohighlight">\(4\pi r^2 n\)</span>) and then differentiating both sides to find</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle  \frac{d}{dr}\left(\frac{w(r)}{4\pi r^2 n}\right)= \frac{d}{dr}\left(1-\int w(r)dr\right) = -w(r)\tag{15b}\]</div>
+\[\displaystyle  \frac{d}{dr}\left(\frac{w(r)}{4\pi r^2 n}\right)= \frac{d}{dr}\left(1-\int w(r)dr\right) = -w(r)\qquad\tag{15b}\]</div>
 <p>In the next step we multiply the rhs. by one by multiplying top and bottom by the same term,</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \frac{d}{dr}\left(\frac{w(r)}{4\pi r^2 n}\right)=-4\pi r^2 n \left(\frac{w(r)}{4\pi r^2 n}\right)\]</div>

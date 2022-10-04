@@ -188,13 +188,13 @@
 # 
 # The dot product of two vectors $\vec{A}$ and $\vec{B}$ is a number and is defined as
 # 
-# $$\displaystyle \vec A\cdot \vec B=|\vec A||\vec B|\cos(\theta) \tag{1}$$
+# $$\displaystyle \vec A\cdot \vec B=|\vec A||\vec B|\cos(\theta) \qquad\tag{1}$$
 # 
 # where $|\vec A|$ is the absolute value of the vector $A$, which is its length, and $\theta$ is the angle between the vectors. Figure 3 shows a two-dimensional vector. The dot product is a number not a vector because the absolute values $|\vec A||\vec B|$ are numbers and as shown in figure 3, it is the length of $A$ times $|\vec A|\cos(\theta)$, which is the same as the length of $B$ times $|\vec A|\cos(\theta)$.
 # 
 # We can find the angle between any two vectors by rearranging equation 1;
 # 
-# $$\displaystyle \cos(\theta)=\frac{\vec A \cdot \vec B}{|\vec A||\vec B|} \tag{2}$$
+# $$\displaystyle \cos(\theta)=\frac{\vec A \cdot \vec B}{|\vec A||\vec B|} \qquad\tag{2}$$
 # 
 # Before this equation can be evaluated, the vectors $A$ and $B$ have to be represented in a basis set, that is, as components of basis vectors. Usually, and for simplicity, we choose a basis set that runs along the $x$-, $y$-, and $z$-axis. This is described in section 2.5.
 # 
@@ -213,7 +213,7 @@
 # The dot product is not the only way we can multiply two vectors, this can be done so that
 # a vector rather than the scalar is produced. The cross product is
 # 
-# $$\displaystyle \vec A\times \vec B=|\vec A||\vec B|\sin(\theta)\vec n \tag{3}$$
+# $$\displaystyle \vec A\times \vec B=|\vec A||\vec B|\sin(\theta)\vec n \qquad\tag{3}$$
 # 
 # where $\vec n$ is a unit vector perpendicular to vectors $A$ and $B$. More details are given in Section 16. This product vector is at right angles to the other two, consequently the cross product is unique to vectors in a three-dimensional space. The cross product, also called the _vector product_ , is used to simplify geometric calculations, such as calculating torsion angles between bonds in proteins or other molecules, or the distance of an atom from the plane of a molecule; for instance, an oxygen molecule above the plane of the haem in haemoglobin, see Q 52. Cross products have other geometric uses, such as calculating the torque when tightening a screw thread, or the angular momentum and velocity of rotating bodies. Cross products also enable us to calculate the area of a triangle or parallelogram.
 # 
@@ -274,11 +274,11 @@
 # 
 # The magnitude of a vector $A$, which may be imagined as its length, is used as $|\vec{A}|$. If $\vec{A} = [a b c]$ where $A$ has components $a, b, c$ in the 3-dimensional basis set $(x, y, z)$, then
 # 
-# $$\displaystyle |\vec A|\sqrt{a^2+b^2+c^2} \tag{3}$$
+# $$\displaystyle |\vec A|\sqrt{a^2+b^2+c^2} \qquad\tag{3}$$
 # 
 # but we can equivalently calculate 
 # 
-# $$\displaystyle |\vec{A}|=\sqrt{\vec A\cdot \vec A} \tag{4}$$
+# $$\displaystyle |\vec{A}|=\sqrt{\vec A\cdot \vec A} \qquad\tag{4}$$
 # 
 # because any vector is parallel to itself and therefore $\theta = 0$ in the dot product. This latter equation is very useful indeed when using the computer to do calculations because the dot product is usually a in-built function.
 # 
@@ -326,7 +326,7 @@
 # 
 # The angle between two vectors is $\cos(\theta) = (\vec A\cdot \vec B )/|\vec{A}||\vec{B}|$, equation 2, which can be expanded in the basis set giving
 # 
-# $$\displaystyle \cos(\theta)=\frac{ad+be+cf}{\sqrt{a^2+b^2+c^2}\sqrt{d^2+e^2+f^2}} \tag{6}$$
+# $$\displaystyle \cos(\theta)=\frac{ad+be+cf}{\sqrt{a^2+b^2+c^2}\sqrt{d^2+e^2+f^2}} \qquad\tag{6}$$
 # 
 # The normalization terms on the bottom of this equation are just the length of each vector as calculated by Pythagoras' theorem. The angle between two vectors $\vec A = [3\quad 2\quad 1]$ and $\vec B=[-1\quad  0 \quad 1]$ is calculated as follows: the length of each vector is $|\vec A|= \sqrt{9+4+1} =\sqrt{14}$ and $|\vec B|= \sqrt{1+0+1} =\sqrt 2$, and the dot product is $\displaystyle \begin{bmatrix} 3&2&1 \end{bmatrix}\begin{bmatrix} -1\\0\\1  \end{bmatrix}=-2$ and the angle $\cos(\theta)= -2/(\sqrt 14\sqrt 2)$ which is $112.2^\text{o} $.
 # 
@@ -380,21 +380,21 @@
 # 
 #  Unit vectors, as their name suggests, have a length of $1$. A vector can be made into a unit vector by dividing by its length. If a vector is $\vec v = [a\quad b\quad c\quad d]$ the normalizing condition is
 #  
-# $$\displaystyle N^2(a^2 +b^2 +c^2 +d^2)=1 \tag{7}$$
+# $$\displaystyle N^2(a^2 +b^2 +c^2 +d^2)=1 \qquad\tag{7}$$
 # 
 # where $N$ is the normalization constant. If, for example, $a = 2, b = -4, c = 5, d = 1$, then $N^2(4+16+25+1)=1$ or $N=1/\sqrt{46}$ and the normalized or unit vector is $[0.295\quad 0.589\quad 0.737\quad 0.147]$.
 # 
 # A second method is to use the dot product formula on the same vector, $\vec v \cdot \vec v$, and because these must be parallel, $\cos(\theta) = 1$, then,
 # 
-# $$\displaystyle \vec v_n =\frac{\vec v}{|\vec v |}=\frac{\vec v}{\sqrt{\vec v \cdot \vec v} }  \tag{8}$$
+# $$\displaystyle \vec v_n =\frac{\vec v}{|\vec v |}=\frac{\vec v}{\sqrt{\vec v \cdot \vec v} }  \qquad\tag{8}$$
 # 
 # where $|\vec v|$ is the absolute value of length of the vector
 # 
-# $$\displaystyle |\vec v|=\sqrt{\vec v \cdot \vec v} =\sqrt{a^2+b^2+c^2+d^2} \tag{9}$$
+# $$\displaystyle |\vec v|=\sqrt{\vec v \cdot \vec v} =\sqrt{a^2+b^2+c^2+d^2} \qquad\tag{9}$$
 # 
 # The angle $\theta$ between and  two _normalised_ vectors $\vec v_n\; \vec w_n$ is found using 
 # 
-# $$\displaystyle \cos(\theta) =\vec v_n \cdot \vec w_n \tag{10}$$
+# $$\displaystyle \cos(\theta) =\vec v_n \cdot \vec w_n \qquad\tag{10}$$
 
 # ## 3 The orthonormal $\boldsymbol i, \boldsymbol j,\boldsymbol k$ base vectors
 # 
@@ -420,9 +420,9 @@
 # 
 # because any vector is clearly parallel to itself and $\cos(0) = 1$. Secondly, the base vectors $\boldsymbol i,\boldsymbol j$, and $\boldsymbol k$ are orthogonal, because they lie along axes mutually set at $90^\text{o}$; therefore $\boldsymbol{i\cdot j} =\boldsymbol{ j\cdot k} = \boldsymbol{i\cdot k} = 0$. We can calculate a dot product fairly simply with the following rules:
 # 
-# $$\displaystyle \boldsymbol{i\cdot i} = \boldsymbol{j\cdot j} = \boldsymbol{k\cdot k} = 1, \tag{11}$$ 
+# $$\displaystyle \boldsymbol{i\cdot i} = \boldsymbol{j\cdot j} = \boldsymbol{k\cdot k} = 1, \qquad\tag{11}$$ 
 # 
-# $$\displaystyle \boldsymbol{i\cdot j} = \boldsymbol{j\cdot k} = \boldsymbol{i\cdot k} = 0 \tag{12}$$
+# $$\displaystyle \boldsymbol{i\cdot j} = \boldsymbol{j\cdot k} = \boldsymbol{i\cdot k} = 0 \qquad\tag{12}$$
 # 
 # Stated in words:
 # 

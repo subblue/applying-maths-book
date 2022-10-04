@@ -770,7 +770,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-7/matrices-L.html">
-     Principal axes for Moments of Inertia
+     Principal axes of Moments of Inertia
     </a>
    </li>
    <li class="toctree-l2">
@@ -1789,23 +1789,23 @@ title="Print to PDF"
 <h2>6.1 General least squares method for a polynomial<a class="headerlink" href="#general-least-squares-method-for-a-polynomial" title="Permalink to this headline">#</a></h2>
 <p>A general way of describing a fitting equation is</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle Y=\sum_{i=1}^m \alpha_if_i(x) \tag{43}\]</div>
+\[\displaystyle Y=\sum_{i=1}^m \alpha_if_i(x) \qquad\tag{43}\]</div>
 <p>which means that that the model equation proposed to represent the data is the sum of m functions, <span class="math notranslate nohighlight">\(f_i(x)\)</span>, multiplied by constants <span class="math notranslate nohighlight">\(\alpha_i\)</span> whose values we seek, much as was done in a Fourier series. If the equation is a polynomial, then <span class="math notranslate nohighlight">\(f_1(x) = 1,\; f_2(x) = x,\; f_3(x) = x^2\)</span>, and so forth, and, if an exponential then <span class="math notranslate nohighlight">\(f_1(x) = e^{-\alpha_2x},\; f_2(x) = e^{-\alpha_4x}\)</span>, etc. It is clear why these last two equations are non-linear because the constants are intimate to the function itself and cannot be separated from it.</p>
 <p>The sum of the deviations is minimized just as in the case of the straight line, the equation is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle S=\sum_kw_k\left(y_k-\sum_i^m\alpha_if_i(x_k)\right)^2\]</div>
 <p>and the subscript on <span class="math notranslate nohighlight">\(x\)</span> is <span class="math notranslate nohighlight">\(k\)</span> because this is the <span class="math notranslate nohighlight">\(k^{th}\; x\)</span> value in the data and <span class="math notranslate nohighlight">\(k\)</span> has values <span class="math notranslate nohighlight">\(1\cdots n\)</span>. The subscript <span class="math notranslate nohighlight">\(i=1\cdots m\)</span> identifies the terms in the expansion of the model function of equation 43. Differentiating the <span class="math notranslate nohighlight">\(j^{th}\)</span> term in the <span class="math notranslate nohighlight">\(i^{th}\)</span> summation (<span class="math notranslate nohighlight">\(j\)</span> being anywhere in the list <span class="math notranslate nohighlight">\(i=1\cdots m\)</span>), to obtain the minimum, produces</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle \frac{\partial S}{\partial \alpha_j}=-2\sum_k w_kf_j(x_k)\left(y_k-\sum_i^m\alpha_if_i(x_k)\right)=0\tag{44}\]</div>
+\[\displaystyle \frac{\partial S}{\partial \alpha_j}=-2\sum_k w_kf_j(x_k)\left(y_k-\sum_i^m\alpha_if_i(x_k)\right)=0\qquad\tag{44}\]</div>
 <p>and the <span class="math notranslate nohighlight">\(f(x)\)</span> remains inside the summation because it depends on the <span class="math notranslate nohighlight">\(x_k\)</span>. Rearranging the terms in this equation gives a (complicated) set of simultaneous equations, because <span class="math notranslate nohighlight">\(j\)</span> can take any value in the range <span class="math notranslate nohighlight">\(1 \to m\)</span> for in the function expansion.</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle \sum_k w_k f_j(x_k)y_k = \sum_k\left( w_kf_j(x_k)\sum_i\alpha_if_i(x_k) \right)\tag{45}\]</div>
+\[\displaystyle \sum_k w_k f_j(x_k)y_k = \sum_k\left( w_kf_j(x_k)\sum_i\alpha_if_i(x_k) \right)\qquad\tag{45}\]</div>
 <p>the right-hand side of which is a sum of a sum. For example, the third term is</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle \qquad\qquad\begin{align}\sum_kw_ky_kf_3(x_k)=&amp;\sum_k\sum_iw_kf_3(x_k)\alpha_if_i(x_k)\\ =&amp;\sum_k w_kf_3(x_k)\left(\alpha_if_i(x_k) +\alpha_2f_2(x_k)+\cdots + \alpha_mf_m(x_k)\;\right)\end{align}\qquad\qquad\text{(46)}\end{split}\]</div>
 <p>and all <span class="math notranslate nohighlight">\(m\)</span> of these equations can be solved to find the m constants, the <span class="math notranslate nohighlight">\(\alpha\)</span>’s, if the function is linear. A matrix method can be used to do this, but to convert the simultaneous equations into a matrix equation needs a little cunning. A matrix equation of the form</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle \boldsymbol B=\boldsymbol{CA} \tag{47}\]</div>
+\[\displaystyle \boldsymbol B=\boldsymbol{CA} \qquad\tag{47}\]</div>
 <p>can be made where <span class="math notranslate nohighlight">\(\boldsymbol C\)</span> contains the coefficients. The left-hand side of this equation is a row matrix with a sum over the <span class="math notranslate nohighlight">\(k\)</span> data points for each of <span class="math notranslate nohighlight">\(m\)</span> terms and is the left-hand side of equation 45,</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle \begin{align}\boldsymbol B=&amp;\begin{bmatrix} \sum_kw_ky_kf_1(x_k) &amp; \sum_kw_ky_kf_1(x_k) &amp;\cdots\end{bmatrix}\\
@@ -1822,7 +1822,7 @@ title="Print to PDF"
 <p>which is the same as equation 46.</p>
 <p>The aim is to find the values in the <span class="math notranslate nohighlight">\(C\)</span> matrix and this can be achieved by the transformation</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle \boldsymbol B=CA \to \boldsymbol{BA}^{-1} = \boldsymbol{CAA}^{-1} \to \boldsymbol C=\boldsymbol{BA}^{-1} \tag{48}\]</div>
+\[\displaystyle \boldsymbol B=CA \to \boldsymbol{BA}^{-1} = \boldsymbol{CAA}^{-1} \to \boldsymbol C=\boldsymbol{BA}^{-1} \qquad\tag{48}\]</div>
 <p>Thus the inverse of <span class="math notranslate nohighlight">\(\boldsymbol A\)</span> is all that is needed to find the coefficients, furthermore this inverse is also the matrix of the variances and co-variances (Bevington 1969).</p>
 </section>
 <section id="example-of-a-polynomial-fit">
@@ -1845,7 +1845,7 @@ n&amp; 8 &amp; 9 &amp; 10 &amp; 11 &amp; 12 &amp; 13 &amp; 14\\
 \[\displaystyle G_2=v_e(n+1/2)-x_ev_e(n+1/2)^2+y_ev_e(n+1/2)^3\]</div>
 <p>or</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle G_3=\left(\frac{1}{2}-\frac{x_e}{4}+\frac{y_e}{8} \right)v_e+ \left(1-x_e+\frac{3y_e}{4}\right)v_en+\left(\frac{3y_e}{2}-x_e\right)v_en^2+y_ev_en^3\tag{49}\]</div>
+\[\displaystyle G_3=\left(\frac{1}{2}-\frac{x_e}{4}+\frac{y_e}{8} \right)v_e+ \left(1-x_e+\frac{3y_e}{4}\right)v_en+\left(\frac{3y_e}{2}-x_e\right)v_en^2+y_ev_en^3\qquad\tag{49}\]</div>
 <p>which is a cubic polynomial in <span class="math notranslate nohighlight">\(n\)</span>. The equilibrium frequency is <span class="math notranslate nohighlight">\(v_e\;\mathrm{ (cm^{-1})}\)</span> and the anharmonicity terms are <span class="math notranslate nohighlight">\(x_e\)</span> and <span class="math notranslate nohighlight">\(y_e\)</span>. In the Morse potential, <span class="math notranslate nohighlight">\(x_e = v_e/4D_e\)</span> where <span class="math notranslate nohighlight">\(D_e\)</span> is the dissociation energy in cm<span class="math notranslate nohighlight">\(^{-1}\)</span>, but <span class="math notranslate nohighlight">\(y_e\)</span> is empirical and the aim is to determine <span class="math notranslate nohighlight">\(x_e, y_e\)</span> and <span class="math notranslate nohighlight">\(v_e\)</span>. If the quantum number <span class="math notranslate nohighlight">\(n\)</span> is represented by <span class="math notranslate nohighlight">\(x\)</span>, and the constants by <span class="math notranslate nohighlight">\(c\)</span>, then the Morse model <span class="math notranslate nohighlight">\(G_2\)</span> is equivalent to a function <span class="math notranslate nohighlight">\(f=c_0 +c_1x+c_2x^2\)</span>  and the second model <span class="math notranslate nohighlight">\(f=c_0 +c_1x+c_2x^2 +c_3x^3\)</span>. The least squares model calculates these coefficients and these can then be related to the spectroscopic parameters <span class="math notranslate nohighlight">\(v_e, x_e\)</span> and <span class="math notranslate nohighlight">\(y_e\)</span>. The residuals and <span class="math notranslate nohighlight">\(\chi^2\)</span> will be used to test the fit to the data. (Note that different authors us different symbols to represent frequency, and this can be in units of cm<span class="math notranslate nohighlight">\(^{-1}\)</span>, s<span class="math notranslate nohighlight">\(^{-1}\)</span>, rad cm<span class="math notranslate nohighlight">\(^{-1}\)</span> or rad s<span class="math notranslate nohighlight">\(^{-1}\)</span>).</p>
 <p>The Python implementation is quite simple, compared to the derivation, and even compared to the linear case.</p>
 <div class="cell docutils container">
@@ -1929,7 +1929,7 @@ coefficients and errors
 <h2>Discussion of results<a class="headerlink" href="#discussion-of-results" title="Permalink to this headline">#</a></h2>
 <p>To calculate the spectroscopic parameters, the constants have to be compared to the expansion of the <span class="math notranslate nohighlight">\(G_3\)</span> equation 49, which is</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle G_3=\left(\frac{1}{2}-\frac{x_e}{4}+\frac{y_e}{8} \right)v_e+ \left(1-x_e+\frac{3y_e}{4}\right)v_en+\left(\frac{3y_e}{2}-x_e\right)v_en^2+y_ev_en^3\tag{49}\]</div>
+\[\displaystyle G_3=\left(\frac{1}{2}-\frac{x_e}{4}+\frac{y_e}{8} \right)v_e+ \left(1-x_e+\frac{3y_e}{4}\right)v_en+\left(\frac{3y_e}{2}-x_e\right)v_en^2+y_ev_en^3\qquad\tag{49}\]</div>
 <p>The first term in this equation corresponds to <span class="math notranslate nohighlight">\(c_1\)</span> and is the zero point energy. The constants are</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle v_ey_e = -0.3741,\; v_ex_e = 7.98,\; v_e = 692\;\mathrm{ cm^{-1}}\]</div>
@@ -1946,7 +1946,7 @@ coefficients and errors
 <h2>6.3 Confidence limits<a class="headerlink" href="#confidence-limits" title="Permalink to this headline">#</a></h2>
 <p>The confidence limits can be calculated in a similar manner to that for the straight line, using the value from the <span class="math notranslate nohighlight">\(t\)</span> distribution. The equations look slightly different because the matrix method is used. (See Hines &amp; Montgomery 1990, Chapters 14-15 for the details.) They calculate the mean square error <span class="math notranslate nohighlight">\(SSE /(n - m - 1)\)</span>, which is the same as the <span class="math notranslate nohighlight">\(\chi^2\)</span> on the whole data set, and give the formula which is equivalent to the one used here, where matrices <span class="math notranslate nohighlight">\(\boldsymbol{C}\)</span> and <span class="math notranslate nohighlight">\(\displaystyle{B}\)</span> are defined as in equations 47-48,</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle \chi^2=\frac{\sum_i y_i- \boldsymbol{C\cdot B}}{n-m-1}\tag{50}\]</div>
+\[\displaystyle \chi^2=\frac{\sum_i y_i- \boldsymbol{C\cdot B}}{n-m-1}\qquad\tag{50}\]</div>
 <p>The confidence limits at <span class="math notranslate nohighlight">\(95\)</span>% are now</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle c_i\pm t_{0.025,n-m-1}\sqrt{\chi^2}\sqrt{ \boldsymbol A^{-1}_{ii}} \]</div>
@@ -1979,10 +1979,10 @@ coefficients and errors
 \[\displaystyle \frac{dp_k(t)}{dt}=-\lambda p_k(t)+\lambda p_{k-1}(t)\]</div>
 <p>The two equations can be solved with</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle p_k(t)=\frac{(\lambda t)^ke^{-\lambda t}} {k!},\qquad k=0,1,2\cdots\tag{50a}\]</div>
+\[\displaystyle p_k(t)=\frac{(\lambda t)^ke^{-\lambda t}} {k!},\qquad k=0,1,2\cdots\qquad\tag{50a}\]</div>
 <p>At a given time <span class="math notranslate nohighlight">\(t\)</span> we let <span class="math notranslate nohighlight">\(\mu=\lambda t\)</span> and then The Poisson Distribution equation becomes</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle p(k,\mu)=\frac{\mu^ke^{-\mu}}{k!} \tag{50b}\]</div>
+\[\displaystyle p(k,\mu)=\frac{\mu^ke^{-\mu}}{k!} \qquad\tag{50b}\]</div>
 <p>also called the Poisson frequency distribution or ‘density’ function. The integer number of events is <span class="math notranslate nohighlight">\(k\)</span> and the mean value of the distribution is <span class="math notranslate nohighlight">\(\mu\)</span> which is dimensionless and which is not an integer. The shape of the distribution is shown in Figure 13 for different mean values <span class="math notranslate nohighlight">\(\mu\)</span>. The plots show continuous values for <span class="math notranslate nohighlight">\(k\)</span> although the distribution is only valid for integer values.</p>
 <p>Notice that, when the mean is larger, the distribution resembles a normal distribution and is almost symmetrical. But at small <span class="math notranslate nohighlight">\(\mu\)</span>, the distribution is very asymmetrical with the mean always to larger <span class="math notranslate nohighlight">\(k\)</span> than the peak (the mode or most probable value) of the distribution. The standard deviation of the distribution is also shown and this is</p>
 <div class="math notranslate nohighlight">

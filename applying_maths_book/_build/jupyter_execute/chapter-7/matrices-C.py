@@ -408,7 +408,7 @@ A
 # ### **Vibronic transitions and Herzberg - Teller coupling**
 # When a vibration is involved in an electronic transition the transition is called *vibronic*. The transition moment changes a little to reflect this and becomes
 # 
-# $$\displaystyle R_{ev} =  \int \psi^a_e\psi_v^a\,\pmb{\mu}\,\psi^b_e\psi_v^b d\tau = \int \psi_v^a\,R_e\,\psi_v^b d\tau\tag{9a}$$
+# $$\displaystyle R_{ev} =  \int \psi^a_e\psi_v^a\,\pmb{\mu}\,\psi^b_e\psi_v^b d\tau = \int \psi_v^a\,R_e\,\psi_v^b d\tau\qquad\tag{9a}$$
 # 
 # where $R_e$ is the electronic term. Normally the vibrational part is separated out as by the Born Oppenheimer principle the electrons move far more rapidly than do the nuclei.
 # 
@@ -538,7 +538,7 @@ A
 # 
 # ![Drawing](matrices-fig23.png)
 # 
-# Figure 23 Normal mode displacements for a planar molecule ZXY$_2$ (based on figure in Appendix C in Carter 1997). The arrows indicate the direction the atoms move in, but not relatively how far they move; $\pm$ show motion out of the plane of the paper. Typical bond displacements at room temperature are 1% of the bond length. The symmetry labels are also shown and each mode has its own unique frequency $\nu_1,\, \nu_2$ etc.
+# Figure 23 Normal mode displacements for a planar molecule ZXY$_2$ (based on a figure in Appendix C, Carter 1997). The arrows indicate the direction the atoms move in, but not relatively how far they move; $\pm$ show motion out of the plane of the paper. Typical bond displacements at room temperature are 1% of the bond length. The symmetry labels are also shown and each mode has its own unique frequency $\nu_1,\, \nu_2$ etc.
 # _____
 # 
 # ## 6.15 Application to molecular vibrations

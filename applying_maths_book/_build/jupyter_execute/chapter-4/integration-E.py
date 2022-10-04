@@ -22,7 +22,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # To obtain the energy $E_V$  we left multiply the Schroedinger equation with the trial wavefunction and integrate. The energy can be obtained by rearranging and is
 # 
-# $$\displaystyle E_V=\frac{\int \psi^*H\psi d\tau}{\int\psi^*\psi d\tau} \ge E_0 \tag{47}$$
+# $$\displaystyle E_V=\frac{\int \psi^*H\psi d\tau}{\int\psi^*\psi d\tau} \ge E_0 \qquad\tag{47}$$
 # 
 # This means that the energy $E_V$, calculated with any trial wavefunction $\psi$, cannot be lower that the ground state energy $E_0$, calculated with the same Hamiltonian $H$ using $H\varphi_0 = E_0\varphi_0$. The calculation to find $E_0$ may not be possible and this will be unknown, but $E_V$ can still be found as an approximation to $E_0$ even if the integration has to be done numerically. This is important, for in a complicated molecule with many nuclei and even more electrons, solving the Schroedinger equation exactly is not possible in principle even with enormous multiprocessor computers. The variational method, however, allows us to approximate the energy and most importantly, the approximate energy is never lower than the true one; this is what makes this method useful. Initially, the wavefunction $\psi$ is usually a guess based on intuition. Better guesses of $\psi$ will make the left-hand side of equation 47 closer to the true value $E_0$, which means in practice that a lower and lower value of the energy is calculated which asymptotically approaches, but never falls below, the true energy.
 # 
@@ -51,7 +51,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # ## 9.1 A 1D example
 # As a one-dimensional example, suppose that an electron is subject to a delta function potential that exists only at the origin (Szabo & Ostlund 1982). This potential is simple to deal with mathematically, but it is somewhat unrealistic: it could perhaps approximate a defect in a nanowire or an oxygen atom in a chain of carbons. The Schroedinger equation in atomic units (see chapters 1.15.3 & 11.10.2) is
 # 
-# $$\displaystyle \left( -\frac{1}{2}\frac{d^2}{dx^2}-\delta (x) \right) \psi=E\psi  \tag{48}$$
+# $$\displaystyle \left( -\frac{1}{2}\frac{d^2}{dx^2}-\delta (x) \right) \psi=E\psi  \qquad\tag{48}$$
 # 
 # and the delta function has the property that it is unity only when $x$ is zero but is zero elsewhere. This simplifies the integration considerably because for any normal function $f$, 
 # 

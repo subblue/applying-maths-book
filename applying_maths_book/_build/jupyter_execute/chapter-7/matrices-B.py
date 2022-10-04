@@ -26,7 +26,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # $$\displaystyle \pmb{Ax}=\lambda \pmb{x}$$
 # 
-# where $\pmb A$ is an $n \times n$ square matrix, $\pmb x$ is one of $n$, one-dimensional column matrices (column vectors) and each one is called an eigenvector, $\lambda$  represents one of $n$ numbers, and each $\lambda$ is called an eigenvalue.
+# where $\pmb A$ is an $n \times n$ square matrix, $\pmb x$ is one of possibly $n$, one-dimensional column matrices (column vectors) each of length $n$ and each one is called an *eigenvector*, $\lambda$  represents one of $n$ numbers, and each $\lambda$ is called an *eigenvalue*. What this equation shows us is that the operator (matrix $\pmb A$) changes a vector $\pmb x$ by stretching or contracting it by an amount $\lambda$ but leaves it pointing in the same direction.
 # 
 # ### **Addition and subtraction**
 # 
@@ -233,7 +233,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # and it is useful to look at the pattern of elements where you can see the $\pmb{A}$ matrix in the pattern of $a$'s and columns in $\pmb{B}$ appear as rows in the sums. If the matrices are not square, multiplying a $n \times  m$ matrix by a $m \times r$ one results in a $n \times r$ matrix as shown above. The equation with which to calculate the (row - column) $ij^{th}$ element of any matrix multiplication is
 # 
-# $$\displaystyle C_{ij}=\sum_{k=1}^m a_{ik}b_{kj} \tag{5}$$
+# $$\displaystyle C_{ij}=\sum_{k=1}^m a_{ik}b_{kj} \qquad\tag{5}$$
 # 
 # where the sum index $k$ runs from $1 \to m$, the number of columns in matrix $\pmb{A}$ or rows in $\pmb{B}$ and $i$ takes values $1 \to n$ and j from $1 \to r$. Multiplying a $2 \times 3$  matrix with a $3 \times 2$ one, the number of columns in the left matrix is the same as the number of rows in the right-hand one and therefore the result is a $2 \times 2$ square matrix,
 # 
@@ -280,7 +280,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # The commutator of two square matrices $\pmb{A}$ and $\pmb{B}$ is also a matrix and is defined as
 # 
-# $$\displaystyle \begin{bmatrix} \pmb{A},\pmb{B} \end {bmatrix} = \pmb{AB}-\pmb{BA} \tag{8}$$
+# $$\displaystyle \begin{bmatrix} \pmb{A},\pmb{B} \end {bmatrix} = \pmb{AB}-\pmb{BA} \qquad\tag{8}$$
 # 
 # If the result is the null matrix $\pmb{0}$, which is full of zeros, $\pmb{A}$ and $\pmb{B}$ are said to *commute*: 
 # 

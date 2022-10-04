@@ -13,11 +13,11 @@
 # The 2D forward and inverse transform is written down easily by analogy with the 1D versions, but rather than use $k_x,k_y$ for the conjugate variables it is clearer instead to use $u,v$
 # 
 # $$\displaystyle g(u,v)=\int_{-\infty}^\infty\int_{-\infty}^\infty f(x,y)e^{-i(xu+yv)}dxdy$$
-# $$\displaystyle f(x,y)=\int_{-\infty}^\infty\int_{-\infty}^\infty g(u,v)e^{+i(xu+yv)}dudv\tag{49}$$
+# $$\displaystyle f(x,y)=\int_{-\infty}^\infty\int_{-\infty}^\infty g(u,v)e^{+i(xu+yv)}dudv\qquad\tag{49}$$
 # 
 # and, clearly, if the function $f(x,y)$ can be written as the product $f(x)f(y)$, which means no terms such as $xy$ are present then the 2D transform is the product of 1D ones, which is a great simplification,
 # 
-# $$\displaystyle g(u,v)=\int_{-\infty}^\infty f(x)e^{-ixu}dx\int_{-\infty}^\infty f(y)e^{-iyv}dy\tag{50}$$
+# $$\displaystyle g(u,v)=\int_{-\infty}^\infty f(x)e^{-ixu}dx\int_{-\infty}^\infty f(y)e^{-iyv}dy\qquad\tag{50}$$
 # 
 # The symmetry properties of the function $f$ are important and show themselves clearly in the transform, which is most easily viewed as an image. If $f(x,y)$ is real, which it will be in an experiment, then $g(u,v)=g^{*}(-u,-v)$ and then $|g(u,v|^2$ is centrosymmetric, i.e. has a centre of inversion. If the function does not change after rotation about the origin by $(360/n)^\text{o}$, i.e. is indistinguishable after $n$-fold rotation, then the transform behaves similarly. If $f$ is real and $n$ is odd then $|g(u,v|^2$ has $n$-fold symmetry but is also centrosymmetric so that $2n$-fold symmetry is apparent in the transform, i.e. $5$-fold symmetry appears as $10$-fold, see figure 63. Mirror planes behave similarly, $f(x,y)=\pm f(-x,y)$ produce $g(-u,v)=\pm g(u,v)$ and $|g(u,v|^2$ has mirror plane symmetry. Besides these symmetry properties the basic inverse relationship between a function and its transform still exists, but now in both $x$ and $y$, i.e. the further apart the features in the function are the closer they will be in the transform and *vice versa*.
 # 
@@ -121,7 +121,7 @@
 # ### **Structure**
 # Before we can find the cell dimensions it is necessary to understand how the x-rays are diffracted off the repeated and regular structure of the crystal. Diffraction of x-rays occurs by interaction of the electrons with the x-rays which then re-radiate in all directions. Only those directions satisfying conservation of momentum produce a diffracted beam that can be recorded as a bright spot on a detector. This means the only waves detected are those whose path-length differs by an integer number of wavelengths and therefore add constructively and re-enforce one another, all other waves cancel to zero. The condition for diffraction is given most generally by the Laue equation or equivalently and more simply by the Bragg condition, fig. 70, 
 # 
-# $$\displaystyle n\lambda =2d\sin(\theta)\tag{54}$$
+# $$\displaystyle n\lambda =2d\sin(\theta)\qquad\tag{54}$$
 # 
 # where $d$ is the _perpendicular_ spacing between similar planes of atoms and $\theta$ is the angle the incoming x-ray makes to the plane of atoms. The diffracted beam is also at $\theta$ to the plane so the diffracted angle is $2\theta$ from the incoming beam. The diffraction order is $n$ and $\lambda$ the x-ray wavelength, for example 0.1542 nm for Cu$K_{1\alpha}$ or $0.178892$ nm for Co$K_{1\alpha}$.
 # 
@@ -154,7 +154,7 @@
 # The equation for fourier synthesis in one dimension is 
 # 
 # $$\displaystyle F(x)=A_0+A_1\cos\big(2\pi (x/a+\varphi_1)\big)+A_2\cos\big(2\pi (2x/a+\varphi_2)\big) +\cdots$$
-# $$\displaystyle =\sum_{n=0}^\infty A_n\cos\big(2\pi (nx/a+\varphi_n)\big) \tag{51}$$
+# $$\displaystyle =\sum_{n=0}^\infty A_n\cos\big(2\pi (nx/a+\varphi_n)\big) \qquad\tag{51}$$
 # 
 # where $a$ is the repeat distance, i.e. the length of one side of the unit cell, $\varphi$ the phase and $A$ the amplitude which ultimately depends on the type of atom. The greater the number electrons an atom has, the greater the scattering. The phase depends on how far an atom is from the origin of the unit cell in the direction of a particular $(hkl)$ plane. This is sketched in fig 71.
 # 
@@ -166,11 +166,11 @@
 # 
 # In three dimensions the same form of equation is found, now with directions $x,y,z$, summation with the integers $h,k,l$ and with unit cell dimensions $a,b,c$. The property measured is the electron density $\rho$, which has units of number of electrons/nm$^3$, 
 # 
-# $$\displaystyle \rho(x,y,z)=\sum_{h=-\infty}^\infty\sum_{k=-\infty}^\infty\sum_{l=-\infty}^\infty A_{hkl}\cos\big(2\pi (hx/a+ky/b+lz/c)\big) \tag{52}$$
+# $$\displaystyle \rho(x,y,z)=\sum_{h=-\infty}^\infty\sum_{k=-\infty}^\infty\sum_{l=-\infty}^\infty A_{hkl}\cos\big(2\pi (hx/a+ky/b+lz/c)\big) \qquad\tag{52}$$
 # 
 # which can also be put into the more general exponential form
 # 
-# $$\displaystyle \rho(x,y,z)=V^{-1}\sum_{h=-\infty}^\infty\sum_{k=-\infty}^\infty\sum_{l=-\infty}^\infty F_{hkl}\exp\big(-2\pi i( hx/a+ky/b+lz/c)\big) \tag{53}$$
+# $$\displaystyle \rho(x,y,z)=V^{-1}\sum_{h=-\infty}^\infty\sum_{k=-\infty}^\infty\sum_{l=-\infty}^\infty F_{hkl}\exp\big(-2\pi i( hx/a+ky/b+lz/c)\big) \qquad\tag{53}$$
 # 
 # The amplitudes $A_{hkl}$ are related to the structure factors $F_{hkl}$, described shortly, where $A_{hkl}=F_{hkl}/V$ and $V$ is the volume of the unit cell. The structure factors $F_{hkl}$ are functions of the unit cell dimensions $a,b,c$, the atom's position e.g. $x_j,y_j,z_j$ for atom $j$ at each reflection plane $h,k,l$ whereas in eqn. 53 the $x,y,z$ are any coordinates in the unit cell used locate the electron density. Normally the unit cell $x/a,y/b,z/c$ would be split in to a grid of, say, 25 points in each direction.  
 # 
@@ -178,7 +178,7 @@
 # 
 # Often the atom coordinates are given as fractions of the unit cell dimensions, i.e. $x/a$ instead of $x$ etc. and then eqn. 53 becomes
 # 
-# $$\displaystyle \rho(x,y,z)=V^{-1}\sum_{h=-\infty}^\infty\sum_{k=-\infty}^\infty\sum_{l=-\infty}^\infty F_{hkl}\exp\big(-2\pi i( hx+ky+lz)\big) \tag{53'}$$
+# $$\displaystyle \rho(x,y,z)=V^{-1}\sum_{h=-\infty}^\infty\sum_{k=-\infty}^\infty\sum_{l=-\infty}^\infty F_{hkl}\exp\big(-2\pi i( hx+ky+lz)\big) \qquad\tag{53'}$$
 # 
 # so it is important to check what convention is used. Some authors also prefer to use vector notation so that $hx+ky+lz\equiv \vec H \cdot \vec X$ where $\vec H=[h,k,l],\; \vec X=[x,y,z]$ and $\vec H \cdot \vec X$ is the dot product.
 # 
@@ -251,7 +251,7 @@
 # 
 # Assuming a largely spherical electron distribution, when x-rays are scattered and detected at an angle away from incoming the x-ray's direction, there will be a path-length difference between one side of the atom and the other and this leads to scattered waves becoming out of phase, and hence of reduced intensity and increasingly so as the scattering angle increases. As the atoms in a molecule are always close to one another, so are electrons on different atoms and this proximity potentially leads to a great computational complication. However, this is easily overcome by assuming that atoms are point objects and using a function, the *atomic scattering factor*, on each atom to allow for the scattering from its different parts. The atomic scattering factor is a decaying function of the scattering angle. At zero angle it is the atomic number $Z$ (plus or minus the number of charges for ions) and decreases to a constant value in terms of $\sin(\theta)\lambda=1/(2d_{hkl})$.  The scattering factor can be accurately calculated using quantum chemistry methods, Hartree-Fock for example, and in some cases measured, and are known accurately. The calculated function can conveniently be described by the sum of four Gaussians, e.g. 
 # 
-# $$\displaystyle f_{q}= \sum_i^4 a_i e^{\large -b_i\left(q/4\pi\right)^2}+c,\qquad q=\sin(\theta)/\lambda=1/2d_{hkl}\tag{55}$$
+# $$\displaystyle f_{q}= \sum_i^4 a_i e^{\large -b_i\left(q/4\pi\right)^2}+c,\qquad q=\sin(\theta)/\lambda=1/2d_{hkl}\qquad\tag{55}$$
 # 
 # with constants $b_i$ and $c$ tabulated for each atom and its ions. Later on, clarity, we label the atomic scattering factor $f_j^{hkl}$ for atom $j$ and Miller indices ${hkl}$. Typical examples are shown in fig 77.
 # 
@@ -286,21 +286,21 @@
 # 
 # The amplitude of several waves is the sum of amplitudes and becomes
 # 
-# $$\displaystyle a_s=\sum_j^N a_j= \sum_j^N |a_j|e^{i\varphi_j} \tag{56}$$ 
+# $$\displaystyle a_s=\sum_j^N a_j= \sum_j^N |a_j|e^{i\varphi_j} \qquad\tag{56}$$ 
 # $$\displaystyle \qquad\qquad\qquad =\sum_j^N|a_j|\cos(\varphi_j)+i\sum_j^N|a_j|\sin(\varphi_j)$$ 
 # 
 # where De-Moivre's theorem was used. The (square law) detector always measure the intensity not the amplitude, i.e. $a_s^*a_s$ and so the result of a measurement is
 # 
-# $$\displaystyle I=\sum_j^N |a_j|e^{-i\varphi_j}\sum_j^N |a_i|e^{i\varphi_j}=\left(\sum_j^N|a_j|\cos(\varphi_j)\right)^2+\left(\sum_j^N|a_j|\sin(\varphi_j)\right)^2\tag{57}$$
+# $$\displaystyle I=\sum_j^N |a_j|e^{-i\varphi_j}\sum_j^N |a_i|e^{i\varphi_j}=\left(\sum_j^N|a_j|\cos(\varphi_j)\right)^2+\left(\sum_j^N|a_j|\sin(\varphi_j)\right)^2\qquad\tag{57}$$
 # 
 # In x-ray crystallography the amplitude is given by the atomic structure factor of atom $j$ at each $hkl$,  $f_j^{hkl}$ and the phase $\varphi=2\pi(hx_j+ky_j+kz_j)$. The summation is only over the number of atoms $N$ in the unit cell and the $x_j,y_j,z_j$ are the atom coordinates as _fractions_ of the unit cell dimensions. 
 # 
 # $$\displaystyle F_{hkl} = \sum_j^N f_j^{hkl}e^{2\pi i(hx_j+ky_j+lz_j)}\qquad\qquad\qquad\qquad\qquad\qquad$$ 
-# $$\displaystyle \qquad\qquad\qquad =\sum_j^Nf_j^{hkl}\cos\big(2\pi(hx_j+ky_j+lz_j)\big) + i\sum_i^Nf_j^{hkl} \sin\big(2\pi(hx_j+ky_j+lz_j)\big) \tag{57}$$
+# $$\displaystyle \qquad\qquad\qquad =\sum_j^Nf_j^{hkl}\cos\big(2\pi(hx_j+ky_j+lz_j)\big) + i\sum_i^Nf_j^{hkl} \sin\big(2\pi(hx_j+ky_j+lz_j)\big) \qquad\tag{57}$$
 # 
 # The cosine and sine terms are sometimes called the _geometric structure factors_ because they are functions of coordinates $x_j,y_j,z_j$ of the $j^{th}$ atom in the unit cell. Notice that $F_{hkl}$ can be zero, positive, negative, real or complex. The detector measures an $hkl$ reflexion as
 # 
-# $$\displaystyle I_{hkl}=|F_{hkl}|^2=\left(\sum_j^Nf_j^{hkl}\cos\big(2\pi(hx_j+ky_j+lz_j)\big)\right)^2+\left(\sum_i^Nf_j^{hkl}\sin\big(2\pi(hx_j+ky_j+lz_j)\big)\right)^2\tag{58}$$
+# $$\displaystyle I_{hkl}=|F_{hkl}|^2=\left(\sum_j^Nf_j^{hkl}\cos\big(2\pi(hx_j+ky_j+lz_j)\big)\right)^2+\left(\sum_i^Nf_j^{hkl}\sin\big(2\pi(hx_j+ky_j+lz_j)\big)\right)^2\qquad\tag{58}$$
 # 
 # and this is true for all crystals whatever their symmetry. Whenever there is a centre of symmetry, such as in Rutile (TiO$_2$), the sine terms in the aggregate evaluate to zero and this is because for each angle $\theta$ there is one at $-\theta$ and $-\sin(\theta)=\sin(-\theta)$.  
 # 
@@ -381,12 +381,12 @@
 # 
 # The reliability or $R$ factor is used to measure the goodness of fit between the structure factor using experimental data and that calculated and has the form;
 # 
-# $$\displaystyle R=\frac{\sum|\;|F_{expt}|-|F_{calc}|\;|}{\sum|F_{expt}|}\tag{58}$$
+# $$\displaystyle R=\frac{\sum|\;|F_{expt}|-|F_{calc}|\;|}{\sum|F_{expt}|}\qquad\tag{58}$$
 # 
 # The absolute values used in $R$ just means that all $F$ are positive. An $R$ value of less that $\approx 0.2$ may be acceptable as an initial fit, but half this value or better is expected for a refined fit to the data. The $R$ factor between the two structures, fig. 85, is $0.26$ showing that the agreement between them is poor as is clear from the images of the projections. The bond lengths Ti to oxygen 1 (or 2) is only changed by 0.023 nm in a bond length of 0.20 nm and this shows how sensitive x-ray diffraction is to small changes in geometry. The bond length Ti to oxygen 3 (or 4) is similar to that for the other two oxygens and is $0.196$ nm but looks less because of the projection down the $c$ axis.
 # 
 
-# ## 13.10 Xray Diffraction from DNA
+# ## 13.10 X ray Diffraction from DNA
 # 
 # Figure 85a is a copy of the original figure from Rosalind Frankin and R. Gosling's 1953 paper (Nature, v.171, p.740, 1953) which showed for the first time the x-ray diffraction pattern from para-crystalline, calf thymus B-DNA fibres. In the same issue is the famous paper by Watson and Crick (Nature v.171, p.737, 1953) in which they speculate, with a sketch of the same, that the DNA is a double helix with base pairs inside the helices and the phosphates on the outside. They comment 'we have been stimulated by a knowledge of the general nature of the unpublished experimental results of Dr. M. H. F. Wilkins and Dr. R. E. Franklin' which brings us back to figure 85a. Three quarters of a century later, the quality of this image looks poor but recall that this was recorded on photographic plates and that transistors, and thus integrated circuits, had not been invented and neither had electronic detectors, such as ccd's, and computers were all but unknown. The fact that sensitivity was low by modern standards means that the only spots ('blobs') detected come from atoms with the most electrons which are the phosphorous atoms, or possibly the phosphate group, and knowing this greatly helps identification.  Naturally far better x-ray data was soon available but it is very interesting to see how the limited original data lead to a correct understanding of the structure.
 # 

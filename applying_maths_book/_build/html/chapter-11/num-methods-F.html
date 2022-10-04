@@ -770,7 +770,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-7/matrices-L.html">
-     Principal axes for Moments of Inertia
+     Principal axes of Moments of Inertia
     </a>
    </li>
    <li class="toctree-l2">
@@ -1622,7 +1622,7 @@ title="Print to PDF"
 <hr class="docutils" />
 <p>Suppose the equation we want to solve is the one examined before in Section 5.2,</p>
 <div class="math notranslate nohighlight">
-\[ \frac{d^y}{dx^2}+3\frac{dy}{dx}+5y=0   \tag{51}\]</div>
+\[ \frac{d^y}{dx^2}+3\frac{dy}{dx}+5y=0   \qquad\tag{51}\]</div>
 <p>but now with boundary conditions <span class="math notranslate nohighlight">\(y_0 = 1\)</span> and <span class="math notranslate nohighlight">\(y_2 = 0\)</span>. This last condition means that the value of <span class="math notranslate nohighlight">\(y\)</span> is fixed at zero when <span class="math notranslate nohighlight">\(x = 2\)</span>. Because this equation can only be solved with initial conditions, the condition <span class="math notranslate nohighlight">\(y_2 = 0\)</span> must be replaced with <span class="math notranslate nohighlight">\(dy/dx |_0 = \alpha\)</span>, and <span class="math notranslate nohighlight">\(\alpha\)</span> must be found so that when the equation is solved, <span class="math notranslate nohighlight">\(y_2 = 0\)</span>. The method to be used is a kind of trial and error techniques called shooting.</p>
 <p>An outline shooting algorithm, using the particular initial conditions <span class="math notranslate nohighlight">\(y_0 = a\)</span> and <span class="math notranslate nohighlight">\(y_2 = b\)</span> is;</p>
 <p><strong>(1)</strong><span class="math notranslate nohighlight">\(\quad\)</span> Set  <span class="math notranslate nohighlight">\(y_0 = a\)</span>.  Guess  initial  <span class="math notranslate nohighlight">\(\alpha\)</span></p>
@@ -1762,10 +1762,10 @@ alpha_0 -11.892761
 <h3><strong>Eigenvalues</strong><a class="headerlink" href="#eigenvalues" title="Permalink to this headline">#</a></h3>
 <p>The solutions of the Schroedinger equation in a symmetrical potential have either an ‘odd’ or ‘even’ parity, meaning that the wavefunction is either symmetrical and has a mirror image about the y-axis, or non-symmetrical and has instead a centre of inversion. If the wavefunction is of even parity then <span class="math notranslate nohighlight">\(\psi(x) = \psi(-x)\)</span> and is finite at the origin but has zero slope; the initial condition is therefore</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle  \psi(0)=1, \qquad \frac{d\psi}{dx}\bigg|_0=0  \tag{52}\]</div>
+\[\displaystyle  \psi(0)=1, \qquad \frac{d\psi}{dx}\bigg|_0=0  \qquad\tag{52}\]</div>
 <p>If the wavefunction is odd, then <span class="math notranslate nohighlight">\(\psi(x) = -\psi(-x)\)</span> and its value at the origin <span class="math notranslate nohighlight">\(x = 0\)</span> must be zero, but its gradient has constant value; therefore</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle  \psi(0)=0, \qquad \frac{d\psi}{dx}\bigg|_0=1  \tag{53}\]</div>
+\[\displaystyle  \psi(0)=0, \qquad \frac{d\psi}{dx}\bigg|_0=1  \qquad\tag{53}\]</div>
 <p>The number 1 is used in these initial values as it only defines the size of the wavefunction. As <span class="math notranslate nohighlight">\(\psi\)</span> can be normalized at the end of the calculation these values are not critical. The zeros reflect the odd - even parity and are essential.</p>
 <p>For simplicity, Planck’s constant and the reduced mass are set equal to unity, see later how to use atomic unit. If the harmonic potential is <span class="math notranslate nohighlight">\(V(x) = 10x^2\)</span>, the force constant <span class="math notranslate nohighlight">\(k =20\)</span> and with quantum numbers <span class="math notranslate nohighlight">\(n = 0, 1, 2 \cdots\)</span> , the eigenvalues are <span class="math notranslate nohighlight">\(\sqrt{20}(n + 1/2)\)</span>, which allows an easy comparison with the calculated values. The accuracy of the integration depends not only on the number of steps taken, as with all other integrations, but also on having an accurate integration method. In this example the Numerov method was used, algorithm 16a. Because any method is going to be called several times in the calculation it is placed into its own procedure. The potential to be used is passed into the procedure so this can be used for other symmetric potentials.</p>
 <p>The code used is shown below.  Using this code, even and odd eigenfunctions are calculated. To calculate odd numbered ones, the initial value <span class="math notranslate nohighlight">\(y_0\)</span> has to be changed 0 and <span class="math notranslate nohighlight">\(dy/dx = 1\)</span>, see equation 53. Note also that this code will only work properly if the potential is positive; if it is negative then a constant should be added to make its lowest value zero and then subtracted from the final eigenvalues.</p>

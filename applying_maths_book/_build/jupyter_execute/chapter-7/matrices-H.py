@@ -50,7 +50,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # We know from direct integration that $\displaystyle A = A_0e^{-k_1t}$, and from the theory of coupled linear differential equations that the solution in general for all species are _sums of exponential_ terms, see Chapter 10.7. If the initial concentration of $A = A_0$ and initially $B = C =0$, then the concentration of $B$ is
 # 
-# $$\displaystyle B(t)=\frac{k_1}{k_1-k_2}A_0\left(e^{-k_2t}-e^{-k_1t} \right) \tag{36}$$
+# $$\displaystyle B(t)=\frac{k_1}{k_1-k_2}A_0\left(e^{-k_2t}-e^{-k_1t} \right) \qquad\tag{36}$$
 # 
 # which is of the form expected, with an exponential decay preceded by a grow-in, see Figure 55. Notice that $k_1$ cannot have the same value as $k_2$ as then the equation for the population would be $0/0$, which is undefined; but in fact there is no reason why these rate constants should not be equal, that is to say that $B$ is formed with the same rate constant as it decays. This special case is dealt with in Chapter 10.7(ii).
 # 
@@ -79,7 +79,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # $$\displaystyle \frac{d\pmb{M}}{dt}=\pmb{KM}$$
 # the solution of which is formally
 # 
-# $$\displaystyle \pmb{M}=\pmb{M_0}e^{-\pmb{K}t} \tag{37}$$
+# $$\displaystyle \pmb{M}=\pmb{M_0}e^{-\pmb{K}t} \qquad\tag{37}$$
 # 
 # where $\pmb{M}$ is a column matrix of concentrations at time $t$, $\pmb{M}_0$ the matrix of their initial values, and $\pmb K$ is a square matrix of rate constants organised as in the rate equation. The rate equations 35 are rewritten in matrix form as
 # 
@@ -99,7 +99,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # To calculate the populations, or concentrations, the matrix equation
 # 
-# $$\displaystyle \pmb{M}(t)=\pmb{x}[\pmb{e}^{\lambda t}]\pmb{x}^{-1}\pmb{M}_0 \tag{39}$$
+# $$\displaystyle \pmb{M}(t)=\pmb{x}[\pmb{e}^{\lambda t}]\pmb{x}^{-1}\pmb{M}_0 \qquad\tag{39}$$
 # 
 # is used. This produces a column vector $\pmb{M}(t)$ of the populations of each species at time $t$, $\pmb{M}_0$ being a column vector of the initial populations. The eigenvectors of matrix $\pmb{k}$ are formed into a (modal) matrix $\pmb{x}$ and $\pmb{x}^{-1}$ is its inverse. The exponential matrix is the diagonal matrix of the exponential of eigenvalues multiplied by time:
 # 
@@ -379,7 +379,7 @@ plt.show()
 # 
 # In our study of molecular group theory, similar matrices were introduced. However, _similar_ matrices are used more generally. A square matrix $\pmb{W}$ is described as being _similar or conjugate_ to another square matrix $\pmb{N}$, if there exists a third, non-singular, square matrix $\pmb{X}$ such that
 # 
-# $$\displaystyle \pmb{W} = \pmb{X}^{-1}\pmb{NX} \tag{42}$$
+# $$\displaystyle \pmb{W} = \pmb{X}^{-1}\pmb{NX} \qquad\tag{42}$$
 # 
 # then $\pmb{X}^{-1}\pmb{NX}$ is a similarity transform; $\pmb{X}\pmb{NX}^{-1}$ is also a similarity transform. A similarity transform is equivalent to changing the basis set of one matrix into another basis; this might also be considered a coordinate transformation. 
 # 
@@ -391,7 +391,7 @@ plt.show()
 # 
 # The equation relating eigenvalues and the diagonal matrix of eigenvectors $\pmb{\Lambda}$ is $\pmb{WX} = \pmb{X\Lambda}$. If we left multiply by the inverse eigenvector matrix $\pmb{X}^{-1}$ then
 # 
-# $$\displaystyle \pmb{X}^{-1}\pmb{WX} = \pmb{\Lambda} \tag{43}$$
+# $$\displaystyle \pmb{X}^{-1}\pmb{WX} = \pmb{\Lambda} \qquad\tag{43}$$
 # 
 # which is a similarity transform. Of course, the inverse matrix $\pmb{X}^{-1}$ must exist. In making a diagonal matrix, the original matrix has been 'rotated', as it were, so that all elements are zero except on the diagonal, the off-diagonal elements become incorporated into the diagonal ones. This 'rotation' or coordinate change analogy, is what is done when the principal axis are found when the moments of inertia of a body are calculated, see Section 15.2.
 # 
@@ -405,7 +405,7 @@ plt.show()
 # 
 # Because $\pmb{f}(\pmb{W})$ must commute with $\pmb{W}$, then both matrices can be diagonalized simultaneously with a similarity transform. Using the eigenvector matrix $\pmb{X}$ of matrix $\pmb{W}$, then the similarity transform is
 # 
-# $$\displaystyle \pmb{X}^{-1}\pmb{f}(\pmb{W})\pmb{X} = \pmb{f}\pmb{\Lambda} \tag{44}$$
+# $$\displaystyle \pmb{X}^{-1}\pmb{f}(\pmb{W})\pmb{X} = \pmb{f}\pmb{\Lambda} \qquad\tag{44}$$
 # 
 # and $\pmb{f}(\pmb{\Lambda})$ is a diagonal matrix of function $f$. For instance, if $\pmb{f}(\pmb{W}) = e^{\pmb{W}}$, then
 # 

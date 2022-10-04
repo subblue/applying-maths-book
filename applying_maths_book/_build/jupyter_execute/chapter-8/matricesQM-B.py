@@ -12,7 +12,7 @@
 # 
 # the bra is 
 # 
-# $$ \displaystyle \qquad\qquad \langle v| = \begin{bmatrix}a^*& b^*& c^*\end{bmatrix} \qquad\qquad \qquad\qquad   \text{(28)}$$
+# $$ \displaystyle \qquad\qquad \langle v| = \begin{bmatrix}a^*& b^*& c^*\end{bmatrix} \qquad   \tag{28}$$
 # 
 # where * indicates a complex conjugate. The $a, b, c$ are the elements of the basis set being used. However, these are themselves only aliases or references to the actual properties. By manipulating these symbols, problems can be solved so that only at the end of the calculation do numbers have to be used. The bra and ket can be multiplied together in two ways, as an _inner product_ (dot product) to produce a scalar number
 # 
@@ -96,7 +96,7 @@
 # 
 # If the coefficients $a$ and $b$ are real and normalized to unity when forming $\varphi$ so that $a^2 +b^2 =1$, then 
 # 
-# $$\displaystyle \langle \alpha|\varphi\rangle=a\langle \alpha|\alpha\rangle+b\langle \alpha|\beta\rangle=a\tag{32}$$
+# $$\displaystyle \langle \alpha|\varphi\rangle=a\langle \alpha|\alpha\rangle+b\langle \alpha|\beta\rangle=a\qquad\tag{32}$$
 # 
 # but, in either case, this result is interpreted to be the probability amplitude for the state  $\varphi$ to collapse into the state $\alpha$ and the probability of this happening is $\langle|\varphi^2$. Similarly, acting on $\varphi$ with $\beta$ gives the probability amplitude $\langle\beta|\varphi\rangle =b$. As the product $\langle \alpha|\varphi\rangle$ evaluates to  the coefficient $a$, we can write the odd looking equation
 # 

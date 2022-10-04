@@ -46,7 +46,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # More formally, the line $P(x, y)$ is defined to be a surface or function of $x$ and $y$, and assumed to be single valued. $C$ is the curve in the plane defined as $y = f(x)$ going from points $A = (x_1, y_1)$ to $B = (x_2, y_2)$ as sketched in Figure 34. The integral could therefore be written as
 # 
-# $$\displaystyle \int_C P(x,y)dx= \int_{x_1}^{x_2} P\big( x,f(x)\,\big) dx \tag{4.77}$$
+# $$\displaystyle \int_C P(x,y)dx= \int_{x_1}^{x_2} P\big( x,f(x)\,\big) dx \qquad\tag{77}$$
 # 
 # which does make the integral look rather ordinary.
 # 
@@ -56,12 +56,12 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # The line integral of a surface $P(x, y)$ with curve $C \equiv f(x)$ and limits $x_1 \to x_2$ is
 # 
-# $$\displaystyle  \int_C P(x,y)dx =  \int_{x_1}^{x_2} P\big( x,f(x)\,\big) dx \tag{4.78}$$
+# $$\displaystyle  \int_C P(x,y)dx =  \int_{x_1}^{x_2} P\big( x,f(x)\,\big) dx \qquad\tag{78}$$
 # 
 # A similar integral could be defined in terms of an integral in $y$ instead of x; for example, if $Q(x, y)$ is the line, then
 # 
 # 
-# $$\displaystyle  \int_C Q(x,y)dy =  \int_{x_1}^{x_2} Q\big( x,f(x)\,\big) \frac{dy}{dx}dx \tag{4.79}$$
+# $$\displaystyle  \int_C Q(x,y)dy =  \int_{x_1}^{x_2} Q\big( x,f(x)\,\big) \frac{dy}{dx}dx \qquad\tag{79}$$
 # 
 # but note that it is necessary to multiply by $dy/dx$ and integrate in $dx$.
 # 
@@ -69,7 +69,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # Parametric equations are very useful in defining complex curves; a circle of radius $2$ about the origin has the form $x^2 + y^2 = 2^2$ in Cartesian coordinates, and in parametric form, $x = 2\cos(t), y = 2\sin(t)$; see Section 6. A curve defined in parametric form is written as $(x(t), y(t))$. Integration is obtained by substituting equation 78 for $x$ and $y$ in terms of $t$ and integrating in $t$,
 # 
-# $$\displaystyle  \int_C P(x,y)dy =  \int_{x_1}^{x_2} P\big( x(t),y(t)\,\big) \frac{dx}{dt}dt \tag{4.80}$$
+# $$\displaystyle  \int_C P(x,y)dy =  \int_{x_1}^{x_2} P\big( x(t),y(t)\,\big) \frac{dx}{dt}dt \qquad\tag{80}$$
 # 
 # If the line is again $x + y$ and the integration is around the circle $x = 2\cos(t), y = 2\sin(t)$, choosing limits from $0 \to \pi$ gives
 # 
@@ -102,11 +102,11 @@ integrate(eq,t)
 # 
 # Suppose that the length of a small section of the curve $C$ is $ds$ then a line integral can be defined in terms of this arc length. See the sketch, Fig. 4.35, 
 # 
-# $$\displaystyle S= \int_C P(x,y_ds= \int_{x_1}^{x_2} P(x,y)\frac{ds}{dx}dx \tag{81}$$
+# $$\displaystyle S= \int_C P(x,y_ds= \int_{x_1}^{x_2} P(x,y)\frac{ds}{dx}dx \qquad\tag{81}$$
 # 
 # By Pythagoras's theorem, $\delta s^2 = \delta x^2 + \delta y^2$, rearranging and taking the limit to form the differential gives $\displaystyle \frac{ds}{dx}=\sqrt{1+\left( \frac{dy}{dx} \right)^2}$ which produces the result for the arc length $S$,
 # 
-# $$\displaystyle S=\int_{x_1}^{x_2} P(x,y)\sqrt{1+\left( \frac{dy}{dx} \right)^2} dx  \tag{82}$$
+# $$\displaystyle S=\int_{x_1}^{x_2} P(x,y)\sqrt{1+\left( \frac{dy}{dx} \right)^2} dx  \qquad\tag{82}$$
 # 
 # where $y = f (x)$. 
 # 
@@ -120,7 +120,7 @@ integrate(eq,t)
 # 
 # When only the length of a curve $C$ is required, all that is necessary is to make $P(x, y) = 1$ but still use the equation of the curve to define $dy/dx$;
 # 
-# $$\displaystyle S=\int_C ds=\int_{x_1}^{x_2} \frac{ds}{dx}dx=\int_{x_1}^{x_2} \sqrt{1+\left( \frac{dy}{dx} \right)^2} \tag{83}$$
+# $$\displaystyle S=\int_C ds=\int_{x_1}^{x_2} \frac{ds}{dx}dx=\int_{x_1}^{x_2} \sqrt{1+\left( \frac{dy}{dx} \right)^2} \qquad\tag{83}$$
 # 
 # As an example, consider finding the length of the curve of the same parabola and limits as in Section 13.3. The integral is
 # 
@@ -132,7 +132,7 @@ integrate(eq,t)
 # 
 # which after substituting for $x$ and $y$ becomes
 # 
-# $$\displaystyle  S=\int_{x_1}^{x_2}\sqrt{ r^2 +\left(\frac{dr}{d\theta}\right)^2 } d\theta  \tag{84}$$
+# $$\displaystyle  S=\int_{x_1}^{x_2}\sqrt{ r^2 +\left(\frac{dr}{d\theta}\right)^2 } d\theta  \qquad\tag{84}$$
 # 
 # The Archimedian spiral has the form $r=a\theta$ where $a$ is a constant. The length of this curve is 
 # 
@@ -152,11 +152,11 @@ integrate(eq, theta )
 # 
 # Suppose that the surface is represented by two functions $M$ and $N$, which is often the case in thermodynamics, then the line integral can be written as two integrals in $dx$ and $dy$,
 # 
-# $$\displaystyle f=\int_C M(x,y)dx+N(x,y)dy =\int_C \left(M(x,y)+N(x,y)\frac{dy}{dx} \right)dx \tag{85}$$
+# $$\displaystyle f=\int_C M(x,y)dx+N(x,y)dy =\int_C \left(M(x,y)+N(x,y)\frac{dy}{dx} \right)dx \qquad\tag{85}$$
 # 
 # As an example, the integral
 # 
-# $$\displaystyle \int_C y^2 dx+2x^2y\,dy \tag{86}$$
+# $$\displaystyle \int_C y^2 dx+2x^2y\,dy \qquad\tag{86}$$
 # 
 # will be calculated over the upper half of the semicircle of a unit disc. The curve $C$ is therefore the equation of a unit circle, $x^2 + y^2 = 1$, and the integration proceeds from $(1, 0) \to (-1, 0)$, which is from the positive x-axis anticlockwise to the negative x-axis. The integral is, with the derivative in brackets,
 # 
@@ -178,7 +178,7 @@ integrate(eq, theta )
 # 
 # The surface $x + y$ would be called a state function if $x$ and $y$ had a meaning in thermodynamics. The value of a state function only depends on the starting and ending conditions and not on the means of getting from one to the other. The condition for the integral $f = \int M(x, y)dx + N(x, y)dy$ to depend only on its end-points is
 # 
-# $$\displaystyle  \frac{\partial N}{\partial x}=\frac{\partial M}{\partial y} \tag{87}$$
+# $$\displaystyle  \frac{\partial N}{\partial x}=\frac{\partial M}{\partial y} \qquad\tag{87}$$
 # 
 # a relationship which has been met before in the discussion on partial derivatives; see Chapter 3.12.
 # 
@@ -221,19 +221,19 @@ integrate(eq, theta )
 # 
 # As an example of a thermodynamic calculation, consider calculating the entropy $S$, which is a state function and can be defined as
 # 
-# $$\displaystyle dS=\frac{C_p}{T}dT-\left( \frac{\partial V}{\partial T}\right)_pdp \tag{88}$$
+# $$\displaystyle dS=\frac{C_p}{T}dT-\left( \frac{\partial V}{\partial T}\right)_pdp \qquad\tag{88}$$
 # 
 # and in an integrated form
 # 
-# $$\displaystyle S=\int \frac{C_p}{T}dT-\int\left( \frac{\partial V}{\partial T}\right)_pdp \tag{89}$$
+# $$\displaystyle S=\int \frac{C_p}{T}dT-\int\left( \frac{\partial V}{\partial T}\right)_pdp \qquad\tag{89}$$
 # 
 # if variables $T$ and $p$ are chosen. It has been stated that $S$ is a state function: to prove that this is true, equation 87 must hold true for the derivatives in equation 88. To illustrate this, it will be necessary to relate $T, V$, and $p$ and for which the ideal gas equation will be used. The first step is to form equation 87, which is done by looking at the 'symmetry' of the first of equations 85, $Mdx + Ndy$ and comparing it with 87, $\displaystyle \frac{\partial N}{\partial x} = \frac{\partial M}{\partial y}$. In this equation $M$ is a derivative with respect to $y$, and $N$ to $x$. Therefore, choosing $M = C_p /T$ and $N = (\partial V/\partial T)_P$ these must be functions of the other variable used in equation 88 or 89. This means that equation 87 becomes
 # 
-# $$\displaystyle \frac{\partial }{\partial p}\left(\frac{C_p}{T}\right) =\frac{\partial}{\partial T}\left(\frac{\partial V}{\partial T}\right)_p \tag{90}$$
+# $$\displaystyle \frac{\partial }{\partial p}\left(\frac{C_p}{T}\right) =\frac{\partial}{\partial T}\left(\frac{\partial V}{\partial T}\right)_p \qquad\tag{90}$$
 # 
 # Next, it is shown that this relationship is true. As the ideal gas law is $pV = RT$ then $(\partial V/\partial T)_p = R/p$ and so
 # 
-# $$\displaystyle \frac{1 }{T}\frac{\partial C_p}{\partial p} =\frac{\partial}{\partial T}\left(\frac{R}{p}\right)_p \tag{91}$$
+# $$\displaystyle \frac{1 }{T}\frac{\partial C_p}{\partial p} =\frac{\partial}{\partial T}\left(\frac{R}{p}\right)_p \qquad\tag{91}$$
 # 
 # The heat capacity is by definition, $(dU/dT)_p$ making the left-hand side of equation 91
 # 
@@ -260,7 +260,7 @@ integrate(eq, theta )
 # 
 # In step (1), starting with equation 89, substituting the partial derivative using the ideal gas law produces
 # 
-# $$\displaystyle  S=\int \frac{C_p}{T}dT-\int\frac{R}{p}dp \tag{92}$$
+# $$\displaystyle  S=\int \frac{C_p}{T}dT-\int\frac{R}{p}dp \qquad\tag{92}$$
 # 
 # Step (2): making the integral a function of $p$ and of $T$ alone gives
 # 
@@ -293,7 +293,7 @@ integrate(eq, theta )
 # 
 # A line integral of two functions is by Green's theorem equal to the surface integral around a _closed area_, or
 # 
-# $$\displaystyle  \int_CMdx+Ndy = \int\int \left( \frac{N}{dx}-\frac{M}{dy} \right)dxdy \tag{93}$$
+# $$\displaystyle  \int_CMdx+Ndy = \int\int \left( \frac{N}{dx}-\frac{M}{dy} \right)dxdy \qquad\tag{93}$$
 # 
 # where integration is taken in an anticlockwise direction. It can be evaluated either as two or more line integrals, one for each part of the loop, or from the double integral depending which is easier, but is always around a closed area. The notation for this is often given as $\int_C Mdx + Ndy$ . If the curve is given para metrically, the integral is $\displaystyle A= \frac{1}{2}\int \left( x\frac{N}{dt}-y\frac{M}{dt} \right)dt$.
 # 

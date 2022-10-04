@@ -130,7 +130,7 @@ for i in range(n):
 # 
 # When we simulate the population of a species, the distribution of reaction times has to be known. This can be achieved by inverting the exponential equation to produce the time and guessing the probability $p$, from a uniform distribution between zero and one. The list of times produced by repeatedly doing this are then made into a histogram and displayed, and, if enough events are recorded, a decay similar to one that could be observed experimentally will be produced. The time $t$ that a molecule reacts, not having reacted up to that time, is
 # 
-# $$\displaystyle  t=-\frac{1}{k}\ln(p)\tag{13}$$
+# $$\displaystyle  t=-\frac{1}{k}\ln(p)\qquad\tag{13}$$
 # 
 # and $p$ is guessed from a uniform distribution in the range $0 \to 1$.
 # 

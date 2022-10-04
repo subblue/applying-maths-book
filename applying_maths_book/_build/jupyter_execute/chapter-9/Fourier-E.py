@@ -29,11 +29,11 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # The discrete transform $g(\nu)$ of a signal $f(t)$ _sampled at discrete points_ $t$, is defined as
 # 
-# $$\displaystyle g(\nu)=\frac{1}{\sqrt{N}}\sum\limits_{t=0}^{N-1} f(t)e^{-2\pi i\, t\, \nu/N)  }  \tag{44}$$
+# $$\displaystyle g(\nu)=\frac{1}{\sqrt{N}}\sum\limits_{t=0}^{N-1} f(t)e^{-2\pi i\, t\, \nu/N)  }  \qquad\tag{44}$$
 # 
 # where $N$ is the integer number of data points and $\nu$ and $t$ are also integers which means that $f(t)$ is a vector of data points at $t=0,1,2\cdots$.  As $g$ and $f$ are vectors it is common write these with subscripts, for example $\nu$ and $n$ meaning that the equation becomes
 # 
-# $$\displaystyle g_\nu=\frac{1}{\sqrt{N}}\sum\limits_{n=0}^{N-1} f_ne^{-2\pi i\, n\, \nu/N)  }\tag{44'}  $$
+# $$\displaystyle g_\nu=\frac{1}{\sqrt{N}}\sum\limits_{n=0}^{N-1} f_ne^{-2\pi i\, n\, \nu/N)  }\qquad\tag{44'}  $$
 # 
 # and this form is often how the transform is expressed. Notice that the exponential contains the product of two parameters $n\nu$ divided by the length of the data $N$.
 # 
@@ -165,7 +165,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # rearranging this gives
 # 
-# $$\displaystyle g_\nu = \sum_{m=0}^{N/2-1}f_{2m}e^{-2\pi i\nu (2m)/N}+e^{-2\pi i\nu/N}\sum_{m=0}^{N/2-1}f_{2m+1}e^{-2\pi i\nu (2m)/N}\tag{44b}$$
+# $$\displaystyle g_\nu = \sum_{m=0}^{N/2-1}f_{2m}e^{-2\pi i\nu (2m)/N}+e^{-2\pi i\nu/N}\sum_{m=0}^{N/2-1}f_{2m+1}e^{-2\pi i\nu (2m)/N}\qquad\tag{44b}$$
 # 
 # and it can be seen that only $N/2$ summations are needed for each summation. The exponentials in the summations are the same in both halves and can be calculated before hand and saved. Furthermore, each summation can be further split into two parts and the odd and even _indices_ of each part treated in the same way. Thus each part is recursive and can continue until just two terms remain in each summation. 
 # 
@@ -222,7 +222,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # The highest frequency in the data $\omega_{max}$ occurs when $\displaystyle e^{in\omega_{max}}=e^{i\pi n/\Delta}$ or when $\omega_{max}=\pi/\Delta $ and as $\omega = 2\pi\nu$ the
 # 
-# $$\displaystyle  \text{Nyquist critical frequency (in Hz) is}\; \nu_c=\frac{1}{2\Delta}  \tag{45}$$
+# $$\displaystyle  \text{Nyquist critical frequency (in Hz) is}\; \nu_c=\frac{1}{2\Delta}  \qquad\tag{45}$$
 # 
 # or two points per cycle. The lowest frequency is zero when all the points have the same value and sign; $[+1 +1 +1 +1 +1 \cdots ]$. A general digitized waveform therefore has frequencies that can range from 0 to the Nyquist critical frequency; the data may contain higher frequencies than this, but these cannot be measured if they are higher than the critical frequency. Therefore, if twice as many data points than before are sampled in a given time period, the Nyquist frequency increases, because $\Delta$ is then smaller and higher frequencies in the data can be transformed properly. Conversely, if $\Delta$ is too large, not enough sampling occurs and the data is not properly described, but this begs the question; how many points are too many and how many too few? The Shannon sampling theorem dictates exactly the minimum number of data points needed to ensure that data of a certain frequency is properly sampled. This theorem states that, 
 # 
@@ -230,7 +230,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # which means that the sampling frequency must be greater than twice the highest frequency in the signal
 # 
-# $$\displaystyle  \text{Shannon theorem} \quad \nu_{sample} \ge 2\nu_{max}   \tag{46}$$
+# $$\displaystyle  \text{Shannon theorem} \quad \nu_{sample} \ge 2\nu_{max}   \qquad\tag{46}$$
 # 
 # Whether the Nyquist or Shannon condition applies depends on your particular situation. If you have some data, and for an instrumental reason can sample no higher than a certain value, any frequencies higher than the Nyquist will be under-sampled and not be measured properly. If on the other hand you can sample as often as you wish, no more samples than those predicted by the Shannon limit are needed. However, this sampling rate must apply to all the data even though its value is dictated only by the highest frequency present. If the data is not sampled frequently enough, then aliasing occurs and extra false signals are observed in the Fourier transform. This effect is described after a discrete transform has been calculated.
 # 

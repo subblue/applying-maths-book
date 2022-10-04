@@ -75,7 +75,7 @@ ans
 # 
 # The energy and wavefunctions of a particle in a two-dimensional box with sides of length $a$ and $b$ are calculated from the Schroedinger equation
 # 
-# $$\displaystyle -\frac{\hbar^2}{2m}\left(\frac{\partial^2 \varphi }{\partial x^2 }  +\frac{\partial ^2\varphi}{\partial y^2} \right) =E\varphi \tag{41} $$
+# $$\displaystyle -\frac{\hbar^2}{2m}\left(\frac{\partial^2 \varphi }{\partial x^2 }  +\frac{\partial ^2\varphi}{\partial y^2} \right) =E\varphi \qquad\tag{41} $$
 # 
 # which is a partial differential equation in $x$ and $y$. The separation of variables assumes that the wavefunction $\varphi$ which is a function of $x$ and $y$, is also the product of two wavefunctions, one in $x$ and the other in $y$, thus
 # 
@@ -87,15 +87,15 @@ ans
 # 
 # The next step is essential to the method of separating variables and this is that each of the terms on the left of the equation must be equal to a constant. This is true because the two terms are variables of either $x$ or $y$. If $x$ is varied, only the first term of the equation changes, the other is a constant as is the energy $E$. However, for the whole equation to be satisfied, the derivative in $x$ must be equal to a constant, and this is labelled as $E_x$, and is called a separation constant;
 # 
-# $$\displaystyle \displaystyle -\frac{\hbar^2}{2m}\frac{1}{\psi_x}\frac{\partial^2 \psi_x }{\partial x^2 }=E_x  \tag{42}$$
+# $$\displaystyle \displaystyle -\frac{\hbar^2}{2m}\frac{1}{\psi_x}\frac{\partial^2 \psi_x }{\partial x^2 }=E_x  \qquad\tag{42}$$
 # 
 # Similarly for changes in $y$, with $x$ constant,
 # 
-# $$\displaystyle \displaystyle -\frac{\hbar^2}{2m}\frac{1}{\psi_y}\frac{\partial^2 \psi_y }{\partial y^2 }=E_y  \tag{43}$$
+# $$\displaystyle \displaystyle -\frac{\hbar^2}{2m}\frac{1}{\psi_y}\frac{\partial^2 \psi_y }{\partial y^2 }=E_y  \qquad\tag{43}$$
 # 
 # and then 
 # 
-# $$\displaystyle  E_x + E_y = E  \tag{44}$$
+# $$\displaystyle  E_x + E_y = E  \qquad\tag{44}$$
 # 
 # The two equations in $x$ and $y$ can now be solved in the usual way. For example $\displaystyle \frac{\partial^2 \psi_x}{\partial x^2}+k^2\psi_x=0$ with $\displaystyle k^2 = 2mE/\hbar^2$ which produces the solutions to the problem of a particle in a one-dimensional box, see 3.8. Combining the equations gives for a box of dimensions $a$ and $b$,
 # 
@@ -115,15 +115,15 @@ ans
 # There are two boundary conditions. One ensures that the angular solutions repeat themselves around the circumference and the gradients match at the same point, just as for a particle on a ring. The other ensures that the radial part of the wavefunction is zero at the edge of the disc, just as is the case for a particle in a box at its edges.
 # The wave equation starts out as (41) but for a disc has to be written in plane polar coordinates to be solvable and is
 # 
-# $$\displaystyle -\frac{\hbar^2}{2m}\left( \frac{\partial^2}{\partial r^2}+ \frac{1}{r}\frac{\partial^2}{\partial r^2}+\frac{1}{r^2}\frac{\partial^2}{\partial \theta^2} \right)\psi+V(r)\psi=E\psi  \tag{45} $$
+# $$\displaystyle -\frac{\hbar^2}{2m}\left( \frac{\partial^2}{\partial r^2}+ \frac{1}{r}\frac{\partial^2}{\partial r^2}+\frac{1}{r^2}\frac{\partial^2}{\partial \theta^2} \right)\psi+V(r)\psi=E\psi  \qquad\tag{45} $$
 # 
 # and the potential energy $V$ is zero and $\psi $ is a function of $r$ and $\theta$. The disc has a radius of $a$. (See Section 5.9 for the conversion equations to polar coordinates.) With the abbreviation $k^2 = 2mE/\hbar^2$ (units of $k$ are m$^{-1}$) the equation can be rewritten as
 # 
-# $$\displaystyle \left( \frac{\partial^2}{\partial r^2}+ \frac{1}{r}\frac{\partial^2}{\partial r^2}+\frac{1}{r^2}\frac{\partial^2}{\partial \theta^2} \right)\psi+k^2\psi = 0  \tag{46}$$
+# $$\displaystyle \left( \frac{\partial^2}{\partial r^2}+ \frac{1}{r}\frac{\partial^2}{\partial r^2}+\frac{1}{r^2}\frac{\partial^2}{\partial \theta^2} \right)\psi+k^2\psi = 0  \qquad\tag{46}$$
 # 
 # Separating variables into $r$ and $\theta$ _assumes_ that the solution has the form $\psi = R(r)\varphi(\theta)$. Substituting for $\psi$, then dividing by $R\varphi$ and multiplying by $r^2$ gives
 # 
-# $$\displaystyle  \frac{r^2}{R}\frac{\partial^2}{\partial R^2}+ \frac{r}{R}\frac{\partial^2R}{\partial r^2}+\frac{1}{\varphi}\frac{\partial^2\varphi}{\partial \theta^2} +r^2\psi=0  \tag{46}$$
+# $$\displaystyle  \frac{r^2}{R}\frac{\partial^2}{\partial R^2}+ \frac{r}{R}\frac{\partial^2R}{\partial r^2}+\frac{1}{\varphi}\frac{\partial^2\varphi}{\partial \theta^2} +r^2\psi=0  \qquad\tag{46}$$
 # 
 # and each term must be equal to a constant and is therefore independent of $r$ and $\theta$. The right-hand side of this equation is zero hence if we choose the separation constant to be $n^2$ this is $-n^2$ for one equation and $+n^2$ for the other. 
 # 
@@ -131,7 +131,7 @@ ans
 # 
 # The $\theta$ equation is $\displaystyle \frac{1}{\varphi}\frac{\partial^2\varphi}{\partial \theta^2}=const$ and using the separation constant $-n^2$ this can be written as
 # 
-# $$\displaystyle  \frac{\partial^2\varphi}{\partial \theta^2}+n^2\varphi = 0  \tag{47}$$
+# $$\displaystyle  \frac{\partial^2\varphi}{\partial \theta^2}+n^2\varphi = 0  \qquad\tag{47}$$
 # 
 # and its solution is given by equation (27) and is 
 # 
@@ -143,7 +143,7 @@ ans
 # 
 # The radial equation 
 # 
-# $$\displaystyle  \frac{r^2}{R}\frac{\partial^2}{\partial R^2}+ \frac{r}{R}\frac{\partial^2R}{\partial r^2} +r^2k^2=n^2  \tag{48}$$
+# $$\displaystyle  \frac{r^2}{R}\frac{\partial^2}{\partial R^2}+ \frac{r}{R}\frac{\partial^2R}{\partial r^2} +r^2k^2=n^2  \qquad\tag{48}$$
 # 
 # is more difficult to solve but, with the substitution $x = kr$, has the form of Bessel's equation,
 # 
@@ -232,7 +232,7 @@ ans
 # 
 # The value $f(y)$ is any normal function that specifies how $V$ varies with position $y$. The four solutions are written without the integration constants because these are realized when the boundary conditions are applied and are
 # 
-# $$\displaystyle V=e^{+kx}\sin(ky)=e^{-kx}\sin(ky)=e^{+kx}\cos(ky)=e^{-kx}\cos(ky)  \tag{49}$$
+# $$\displaystyle V=e^{+kx}\sin(ky)=e^{-kx}\sin(ky)=e^{+kx}\cos(ky)=e^{-kx}\cos(ky)  \qquad\tag{49}$$
 # 
 # When $x = \infty$, the solution cannot contain $\displaystyle e^{+kx}$ because the temperature is zero not infinity, so $\displaystyle e^{+kx} \sin(ky)$ and $\displaystyle e^{+kx} \cos(ky)$ are not solutions. At $y = 0$, the temperature is zero and so the solution cannot be $\displaystyle e^{-kx}\cos(ky)$ because $\cos(0)$ is not zero. This leaves the solution as 
 # 
@@ -245,7 +245,7 @@ ans
 # 
 # However, this does not satisfy the condition that at $x$ = 0 the temperature is some arbitrary but normal function $f(y)$ which could be some constant value, say $T$. To obtain a solution, a sum of all possible solutions is tried and this produces
 # 
-# $$\displaystyle V=\sum_{n=1}^{\infty} b_ne^{-n\pi x/L}\sin(n\pi y/L)  \tag{50}$$
+# $$\displaystyle V=\sum_{n=1}^{\infty} b_ne^{-n\pi x/L}\sin(n\pi y/L)  \qquad\tag{50}$$
 # 
 # as a _formal solution_ where $b_n$ are the amounts of each term to be included in the sum. When $x$ = 0 the temperature is $f(y)$, thus,
 # 
@@ -253,7 +253,7 @@ ans
 # 
 # This relationship is a Fourier series of sines, therefore, we can find the coefficients $b_n$ as if they are Fourier coefficients (see Chapter 9.1.7) using
 # 
-# $$\displaystyle b_n=\frac{2}{L}\int_0^L f(y)\sin\left(\frac{n\pi y}{L} \right)dy  \tag{51}$$
+# $$\displaystyle b_n=\frac{2}{L}\int_0^L f(y)\sin\left(\frac{n\pi y}{L} \right)dy  \qquad\tag{51}$$
 # 
 # If, for example, the temperature function $f(y) = T$ and $L = \pi$, then the coefficients are $\displaystyle b_n=\frac{}{}\int_0^\pi \sin(n y)dy$ , which evaluate to $\displaystyle \frac{4T}{\pi},\; \frac{4T}{3\pi},\;\frac{4T}{5\pi},\cdots$ and the temperature profile is 
 # 
@@ -300,15 +300,15 @@ plt.show()
 # 
 # As each term must be constant, for example $-k^2$, two equations are produced
 # 
-# $$\displaystyle \frac{\partial c_t}{\partial t}=-Dk^2c_t, \qquad \text{and} \qquad \frac{\partial^2 c_x}{\partial x^2}=-k^2c_x \tag{52}$$
+# $$\displaystyle \frac{\partial c_t}{\partial t}=-Dk^2c_t, \qquad \text{and} \qquad \frac{\partial^2 c_x}{\partial x^2}=-k^2c_x \qquad\tag{52}$$
 # 
 # The time dependence has the solution $\displaystyle c = e^{-Dk^2t}$ and the spatial dependence is $\displaystyle c_x = \sin(kx)$ and $c_x = \cos(kx)$; by hypothesis the solutions are either
 # 
-# $$\displaystyle c=e^{-Dk^2t}\sin(kx), \qquad \text{or} \qquad c=e^{-Dk^2t}\cos(kx) \tag{53}$$
+# $$\displaystyle c=e^{-Dk^2t}\sin(kx), \qquad \text{or} \qquad c=e^{-Dk^2t}\cos(kx) \qquad\tag{53}$$
 # 
 # or the sum of both terms
 # 
-# $$\displaystyle c=e^{-Dk^2t}[A\sin(kx)+B\cos(kx)] \tag{54}$$
+# $$\displaystyle c=e^{-Dk^2t}[A\sin(kx)+B\cos(kx)] \qquad\tag{54}$$
 # 
 # with $A$ and $B$ as arbitrary constants that are found from the initial and boundary conditions. The constant is chosen to be $-k^2$, and is negative because the concentration might fall, but could not increase to infinity, which it would do if $+k^2$ were used. The constant is squared only to simplify the resulting equations.
 # 
@@ -320,12 +320,12 @@ plt.show()
 # 
 # Considering the boundary conditions, as for the previous example, the solution is based on $\displaystyle c = e^{−Dk^2t}\sin(kx)$ with $k = n\pi /L$, and the general form of the solution is based on equation (50) and is
 # 
-# $$\displaystyle c=\sum_{n=1}^\infty b_ne^{\large{-Dn^2\pi^2t/L^2}}\sin\left( \frac{n\pi x}{L} \right), \qquad b_n=\frac{2}{L}\int_0^L f(x)\sin\left( \frac{n\pi x}{L} \right)dx \tag{55}$$
+# $$\displaystyle c=\sum_{n=1}^\infty b_ne^{\large{-Dn^2\pi^2t/L^2}}\sin\left( \frac{n\pi x}{L} \right), \qquad b_n=\frac{2}{L}\int_0^L f(x)\sin\left( \frac{n\pi x}{L} \right)dx \qquad\tag{55}$$
 # 
 # If the initial concentration in the slab is a constant, then $f(x) = c_0$ and the integral in $b$ becomes $\displaystyle b_n=\frac{2c_0}{L}\int_0^L \sin\left( \frac{n\pi x}{L} \right)dx=\frac{2c_0}{n\pi}(1-(-1)^n)$
 #  which means that when $n$ is even, $b_n$ = 0. The concentration profile is
 #  
-#  $$\displaystyle c=\frac{2c_0}{\pi}\sum_{n=1}^\infty \frac{(1-(-1)^n)}{n}e^{\large{-Dn^2\pi^2 t/L^2}}\sin\left(\frac{n\pi x}{L}  \right) \tag{56}$$
+#  $$\displaystyle c=\frac{2c_0}{\pi}\sum_{n=1}^\infty \frac{(1-(-1)^n)}{n}e^{\large{-Dn^2\pi^2 t/L^2}}\sin\left(\frac{n\pi x}{L}  \right) \qquad\tag{56}$$
 #  
 # A calculation is shown in fig 24 where molecules are all initially at the top of the slab and subsequently diffuse out. The concentration at the edges of the slab is kept at zero which might be done by washing the molecules away. The initial concentration is arbitrarily set at $10$.
 # 
@@ -338,13 +338,13 @@ plt.show()
 # 
 # When diffusion and reaction compete it is possible that explosive growth of a product occurs. Starting with Fick's First Law a term is added to allow for first order reaction to form product and is
 # 
-# $$\frac{\partial c}{\partial t}=D\frac{\partial ^2c}{\partial x^2} +kc \tag{56a}$$
+# $$\frac{\partial c}{\partial t}=D\frac{\partial ^2c}{\partial x^2} +kc \qquad\tag{56a}$$
 # 
 # where $k$ is the first order rate constant for production of species $c$ which is a function of position $x$ and time $t$, i.e. $c(x,t)$. We will assume that the calculation takes place along a length $ 0\le x \le L$ and that the length is so long that the concentration of product $c$ is zero at either end at all times, $c(0,t)=c{L,t}=0$.
 # 
 # This differential equation look awkward to solve but if a new variable is defined as 
 # 
-# $$\displaystyle y(x,t)=c(x,t)e^{-kt}\tag{57b}$$
+# $$\displaystyle y(x,t)=c(x,t)e^{-kt}\qquad\tag{57b}$$
 # 
 # and this differentiated and substituted into the starting equation a familiar equation is produced.
 # 
@@ -356,7 +356,7 @@ plt.show()
 # 
 # which is just the diffusion equation but in variable $y$ instead of $c$. The answer can be written down as it is the same as eqn 55 and after substituting for $c$ gives
 # 
-# $$\displaystyle c=\sum_{n=1}^\infty b_ne^{kt}e^{\large{-Dn^2\pi^2t/L^2}}\sin\left( \frac{n\pi x}{L} \right), \qquad b_n=\frac{2}{L}\int_0^L f(x)\sin\left( \frac{n\pi x}{L} \right)dx \tag{55'}$$
+# $$\displaystyle c=\sum_{n=1}^\infty b_ne^{kt}e^{\large{-Dn^2\pi^2t/L^2}}\sin\left( \frac{n\pi x}{L} \right), \qquad b_n=\frac{2}{L}\int_0^L f(x)\sin\left( \frac{n\pi x}{L} \right)dx \qquad\tag{55'}$$
 # 
 # where $f(x)$ is the concentration profile in the tube at $t=0$. Notice that this is exactly the same as equation 55, i.e when no reaction occurs, but now multiplied by $\displaystyle e^{kt}$ to allow for reaction. 
 # 
@@ -422,7 +422,7 @@ plt.show()
 # 
 # Rather than use the flux it is easier to split this into $J \equiv vc$ and so
 # 
-# $$\frac{\partial c}{\partial t}=-v\frac{\partial c}{\partial x}  \tag{ 56a}$$
+# $$\frac{\partial c}{\partial t}=-v\frac{\partial c}{\partial x}  \qquad\tag{ 56a}$$
 # 
 # where $v = flow/area $ is the velocity of the flow. As chemical reaction can also occur this rate equation is modified to
 # 

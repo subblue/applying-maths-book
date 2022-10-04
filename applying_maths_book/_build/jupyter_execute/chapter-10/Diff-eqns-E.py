@@ -88,7 +88,7 @@
 # 
 # Many functions can be expanded as a power series that has the form
 # 
-# $$\displaystyle  y=a_0 +a_1x+a_2x^2 +a_3x^3 +\cdots+a_nx^n +\cdots \tag{38}$$
+# $$\displaystyle  y=a_0 +a_1x+a_2x^2 +a_3x^3 +\cdots+a_nx^n +\cdots \qquad\tag{38}$$
 # 
 # with constants $a_0, a_1$, etc. as described in Chapter 5. 
 # 
@@ -173,7 +173,7 @@
 # ### **(iii) The Hermite equation**
 # The Hermite equation is important because it leads to the solution of the Schroedinger equation for the quantum mechanical harmonic oscillator. This is discussed at the end of this section but first a method of solution is determined. The equation has the form
 # 
-# $$\displaystyle \frac{d^2y}{dx^2}-2x\frac{dy}{dx}+2\gamma y=0  \tag{39}$$
+# $$\displaystyle \frac{d^2y}{dx^2}-2x\frac{dy}{dx}+2\gamma y=0  \qquad\tag{39}$$
 # 
 # where $\gamma$ is a real number, Solving as a series leads to the coefficients
 # 
@@ -214,7 +214,7 @@
 # 
 # The equation 
 # 
-# $$\displaystyle \frac{d^2y}{dx^2}+(2\gamma-1-x^2)y=0 \tag{40}$$
+# $$\displaystyle \frac{d^2y}{dx^2}+(2\gamma-1-x^2)y=0 \qquad\tag{40}$$
 # 
 # with $\gamma$ as a constant is related to the Hermite equation if $\displaystyle y=ve^{-x^2/2}$, where $v$ is a function of $x$, then the second derivative is 
 # 

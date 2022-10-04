@@ -770,7 +770,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-7/matrices-L.html">
-     Principal axes for Moments of Inertia
+     Principal axes of Moments of Inertia
     </a>
    </li>
    <li class="toctree-l2">
@@ -1687,7 +1687,7 @@ title="Print to PDF"
 <p>Integrals where the function in the numerator is the derivative of the function in the
 denominator, evaluate to logs. For example,</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle I=\int\frac{f'(x)}{f(x)}dx =\ln(|f(x)|) +c  \tag{12}\]</div>
+\[\displaystyle I=\int\frac{f'(x)}{f(x)}dx =\ln(|f(x)|) +c  \qquad\tag{12}\]</div>
 <p>where <span class="math notranslate nohighlight">\(f'(x)\)</span> is the derivative of <span class="math notranslate nohighlight">\(f\)</span> and <span class="math notranslate nohighlight">\(c\)</span> is the constant of integration. The symbols <span class="math notranslate nohighlight">\(| \;|\)</span> indicate that the absolute value of the function must be taken because the log of a negative number is not permissible.</p>
 <p>This result can be demonstrated by substitution of <span class="math notranslate nohighlight">\(u = f(x)\)</span> then <span class="math notranslate nohighlight">\(du = f '(x)dx\)</span> into equation 12 giving</p>
 <div class="math notranslate nohighlight">
@@ -1698,11 +1698,11 @@ denominator, evaluate to logs. For example,</p>
 <p>The cosine is the derivative of the sine, and the absolute value is taken because the sine is negative for some values of <span class="math notranslate nohighlight">\(x\)</span>.</p>
 <p>Related to equation 12 is the integral</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle \int\frac{f'(x)}{\sqrt{f(x)}}dx=2\sqrt{f(x)}+c  \tag{13}\]</div>
+\[\displaystyle \int\frac{f'(x)}{\sqrt{f(x)}}dx=2\sqrt{f(x)}+c  \qquad\tag{13}\]</div>
 <p>and this can be verified by letting <span class="math notranslate nohighlight">\(f (x) = u\)</span> and differentiating <span class="math notranslate nohighlight">\(f (x) + c\)</span>. Try this and then integrate both sides of the equation.</p>
 <p>The third equation involves a function and its derivative and is the product,</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle I=\int f(x)f'(x)dx=\frac{1}{2}f(x)^2+c . \tag{14}\]</div>
+\[\displaystyle I=\int f(x)f'(x)dx=\frac{1}{2}f(x)^2+c . \qquad\tag{14}\]</div>
 <p>Notice that the function is written first, for example,</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \int \cos(x)\sin(x)dx=-\frac{1}{2}\cos^2(x) +c\]</div>
@@ -1713,13 +1713,13 @@ denominator, evaluate to logs. For example,</p>
 <p>Very often the products of two functions must be integrated and one way of doing this is to use ‘integration by parts’. Integration by parts is a major tool to integrate seemingly difficult expressions.</p>
 <p>In differentiating products of functions (Chapter 3.5.1), such as <span class="math notranslate nohighlight">\(u\)</span> and <span class="math notranslate nohighlight">\(v\)</span> where <em>each is itself a function of</em> <span class="math notranslate nohighlight">\(x\)</span>, we used the equation,</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle \frac{d}{dx}uv =u\frac{dv}{dx}+v\frac{du}{dx}  \tag{15}\]</div>
+\[\displaystyle \frac{d}{dx}uv =u\frac{dv}{dx}+v\frac{du}{dx}  \qquad\tag{15}\]</div>
 <p>Integrating this equation gives</p>
 <div class="math notranslate nohighlight">
 \[ uv = \int u\frac{dv}{dx}+\int v\frac{du}{dx}  \qquad \text{or} \qquad uv=\int udv+\int vdu \]</div>
 <p>and rearranging gives</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle \int udv= uv -\int vdu  \tag{16}\]</div>
+\[\displaystyle \int udv= uv -\int vdu  \qquad\tag{16}\]</div>
 <p>which is the <em>integration by parts</em> formula. This reads:</p>
 <p><span class="math notranslate nohighlight">\(\quad\)</span> <strong>The integral of <span class="math notranslate nohighlight">\(udv\)</span> is <span class="math notranslate nohighlight">\(u\)</span> times the integral of <span class="math notranslate nohighlight">\(dv\)</span>, which is <span class="math notranslate nohighlight">\(v\)</span> minus the integral of <span class="math notranslate nohighlight">\(v\)</span> times the derivative of <span class="math notranslate nohighlight">\(u\)</span></strong>.</p>
 <p>The trick is to find <span class="math notranslate nohighlight">\(u\)</span> that can be differentiated, which is usually easy, and <span class="math notranslate nohighlight">\(v\)</span> that can be integrated, which is sometimes much harder. It is worth exchanging <span class="math notranslate nohighlight">\(u\)</span> and <span class="math notranslate nohighlight">\(v\)</span> if the resulting integration gets more complicated.</p>

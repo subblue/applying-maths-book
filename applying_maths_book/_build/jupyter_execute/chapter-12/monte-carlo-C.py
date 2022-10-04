@@ -32,7 +32,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # By calculating the chance of energy transfer at some distance $R$, the decay of the fluorescence intensity of the  excited molecules is described by
 # 
-# $$I(t) = I_0\exp(-k_ft-\alpha \sqrt{k_ft}) \tag{14}$$
+# $$I(t) = I_0\exp(-k_ft-\alpha \sqrt{k_ft}) \qquad\tag{14}$$
 # 
 # which means that the energy transfer rate constant varies as $t^{-1/2}$ and so produces a non-exponential decay at short times. This can be seen by rewriting the intensity as 
 # 

@@ -47,7 +47,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # The magnitude of $\vec V$ is calculated in a similar way
 # 
-# $$ \displaystyle |\vec V|^2 =\vec V\cdot\vec V =v_1^2a^2 +v_2^2b^2 +v_3^2c^2 + 2v_1v_2ab\cos(\gamma ) + 2v_1v_3ac\cos(\beta) + 2v_2v_3bc\cos(\alpha) \tag{21}$$
+# $$ \displaystyle |\vec V|^2 =\vec V\cdot\vec V =v_1^2a^2 +v_2^2b^2 +v_3^2c^2 + 2v_1v_2ab\cos(\gamma ) + 2v_1v_3ac\cos(\beta) + 2v_2v_3bc\cos(\alpha) \qquad\tag{21}$$
 # 
 # as is $|\vec W|$ by substituting $w$'s for $v$'s. 
 # 
@@ -62,7 +62,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # dimensions and these are not always at right angles to one another. Suppose that the
 # vector of atom C$_A$'s coordinates, given in unit cell dimensions, is A and that for atom C$_B$ is AB. The bond length is calculated from the difference of two vectors $\vec V = \vec A - \vec B$ and then by calculating the dot product of this vector with itself, equation 21.
 # 
-# $$\displaystyle \vec V\cdot\vec V=|\vec V|^2. \tag{22}$$
+# $$\displaystyle \vec V\cdot\vec V=|\vec V|^2. \qquad\tag{22}$$
 # 
 # To illustrate the method described in Section 8.2, (i) the C-N$_1$ bond length and (ii) the angle between the N$_1$CN$_2$ atoms in s-tetrazine, $\mathrm{C_2N_4H_2}$, will be calculated; its geometry is shown in figure 22. The crystal structure was determined using Cu radiation with a wavelength of $0.1542 $ nm. The unit cell has dimensions of $a = 0.523$ nm, $b = 0.579$ nm, and $c = 0.663$ nm (Bertinotti & Giacomello 1956). The angle between the long and either short axis is $90^\text{o}$, and the angle between the two short axes is $115^\text{o}30'$. The crystal is therefore monoclinic and this crystal type is characterized by one twofold symmetry axis and one mirror plane. The fractional coordinates of some of the atoms in the crystal are shown in the table. These are in units of the length of each base vector or unit cell dimension.
 # 
@@ -106,11 +106,11 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # where $\Delta_1 =(v_1 -w_1),\Delta_2 =(v_2 -w_3),\Delta_3 =(v_3 -w_3)$ and as$|\Delta |= d$ is the bond length, using the definition of the dot product $\vec \Delta \cdot \vec\Delta$, given in equation 21 and substituting for $d$ will give
 # 
 # $$\displaystyle d^2 = \Delta_1^2 a^2 + \Delta_2^2 b^2 + \Delta_3^2 c^2
-# + 2\Delta_1\Delta_2ab\cos(\gamma ) + 2\Delta_1\Delta_3ac \cos(\beta) + 2\Delta_2\Delta_3bc\cos(\alpha) \tag{23}$$
+# + 2\Delta_1\Delta_2ab\cos(\gamma ) + 2\Delta_1\Delta_3ac \cos(\beta) + 2\Delta_2\Delta_3bc\cos(\alpha) \qquad\tag{23}$$
 # 
 # where $a, b, c$ are the magnitudes of their corresponding vectors $\vec a, \vec b,\vec c$ . In this particular example, $\beta = 115.5^\text{o}$ and the angles $\gamma=\alpha = 90^\text{o} $ and their cosines zero; therefore,
 # 
-# $$\displaystyle d^2 = \Delta_1^2 a^2 + \Delta_2^2 b^2 + \Delta_3^2 c^2 + 2\Delta_1\Delta_3ac \cos(\beta) \tag{24}$$
+# $$\displaystyle d^2 = \Delta_1^2 a^2 + \Delta_2^2 b^2 + \Delta_3^2 c^2 + 2\Delta_1\Delta_3ac \cos(\beta) \qquad\tag{24}$$
 # 
 # Substituting for numerical values gives \Delta_1 = 0.1834 - 0.2546 = -0.07128, \Delta_2 = -0.1822,
 # etc. Therefore
@@ -122,7 +122,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # **(ii)** The angle $\mathrm{N_1-C-N_2}$ (or any other) is found by defining difference vectors $\vec \Delta_{CN_2}$ and
 # $\vec \Delta_{CN_1}$  for the two bonds as just described, then calculating their dot product
 # 
-# $$\displaystyle \cos(\theta)=\frac{\vec \Delta_{CN_2}\cdot \vec \Delta_{CN_1}}{d_{CN_1}d_{CN_2}} \tag{25}$$
+# $$\displaystyle \cos(\theta)=\frac{\vec \Delta_{CN_2}\cdot \vec \Delta_{CN_1}}{d_{CN_1}d_{CN_2}} \qquad\tag{25}$$
 # 
 # The values $d_{CN_1}$ and $d_{CN_2}$ are the bond lengths and using the calculated bond lengths the $\mathrm{N_1-C-N_2}$ angle is $114.5^\text{o}$. To make sure you understand the calculation, calculate the $\mathrm{C-N_2}$ and $\mathrm{N_1-N_2}$ bond lengths. You should find them to be $0.1323$ and $0.1321$ nm respectively.
 # 
@@ -139,7 +139,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # Any vector is unchanged by changing its basis set and therefore its coefficients must change between bases. If $\vec V$ is any vector and $g_{x,y,z}$ is the set of its coefficients in an $xyz$ basis and $g_{A,B,C}$ in another basis $ABC$, this equality is written as
 # 
-# $$\displaystyle \vec V= g_x\vec x+g_y\vec y+g_z\vec z=g_A\vec A+g_B\vec B+g_C\vec C \tag{26}$$
+# $$\displaystyle \vec V= g_x\vec x+g_y\vec y+g_z\vec z=g_A\vec A+g_B\vec B+g_C\vec C \qquad\tag{26}$$
 # 
 # To transform from the ABC basis with known coefficients $g_A, g_B, g_c$ to another $xyz$ basis a new set of coefficients $g_x, g_y, g_z$ need to be calculated.
 # 
@@ -164,7 +164,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # $$\displaystyle A=k_1\vec x+k_2\vec y+k_3\vec z,
 # \quad B=m_1\vec x+m_2\vec y+m_3\vec z,  
-# \quad C=n_1\vec x+n_2\vec y+n_3\vec z \tag{27}$$
+# \quad C=n_1\vec x+n_2\vec y+n_3\vec z \qquad\tag{27}$$
 # 
 # The base vectors $A, B, C$ have unit lengths, therefore, $k_1^2 + k_2^2 + k_3^2 = 1$ and similarly for the $m$ and $n$. Changing a basis does not change the vector at all, it merely moves the components around so that they have different values in a different basis set. The equations 27 represent the axes conversion from the $ABC$ basis set to the $xyz$. These three equations can be put into a matrix form that shows the pattern of indices nicely. You should consult Chapter 7 if you are not familiar with matrices and their multiplication.
 # 
@@ -199,7 +199,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # therefore 
 # 
-# $$\displaystyle n_2=\frac{\cos(\alpha)-\cos(\beta)\cos(\gamma)}{\sin(\gamma)} \tag{29}$$
+# $$\displaystyle n_2=\frac{\cos(\alpha)-\cos(\beta)\cos(\gamma)}{\sin(\gamma)} \qquad\tag{29}$$
 # 
 # The coefficient $n_3$ remains to be determined. This can be found from the normalization condition $n^2_1 + n_2^2 + n^2_3 = 1$ and, again, using values already determined, is
 # 
@@ -248,7 +248,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # and the square matrix is the matrix, $\boldsymbol M$ of equation 30. This last equation can be summarized as the matrix equation
 # 
-# $$\displaystyle \vec g_{xyz}=g_{ABC}\boldsymbol M \tag{31}$$
+# $$\displaystyle \vec g_{xyz}=g_{ABC}\boldsymbol M \qquad\tag{31}$$
 # 
 # where the $g$'s are vectors of the _coefficients_ . With X-ray data, the $g_{ABC}$ are the $x/a, y/b, z/c$ data given in crystallographic tables. This equation shows us how to calculate the coordinates in $xyz$ axes given those in $abc$. To calculate $abc$ coordinates given $xyz$, the equation to use is
 # 
@@ -258,17 +258,17 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # If a vector $\vec W$ between two atoms represents the bond vector, then its coordinates are conventionally given in terms of $abc$ and its length can be calculated from equation 21. More conveniently, the dot product can be used 
 # 
-# $$\displaystyle d^2 = | \vec  W\cdot \vec W | = | \vec g_{xyz}\cdot \vec g_{xyz} | \tag{31a}$$
+# $$\displaystyle d^2 = | \vec  W\cdot \vec W | = | \vec g_{xyz}\cdot \vec g_{xyz} | \qquad\tag{31a}$$
 # 
 # and with equation 31 and is
 # 
-# $$\displaystyle d^2=(g_{abs}\boldsymbol M)\cdot(g_{abs}^T\boldsymbol M^T)\tag{32}$$
+# $$\displaystyle d^2=(g_{abs}\boldsymbol M)\cdot(g_{abs}^T\boldsymbol M^T)\qquad\tag{32}$$
 # 
 # which is the same as equation 21 when it is expanded out. The superscript $T$ means that the transpose is taken, see Chapter 7. This equation looks a little different from those dot products calculated previously because the transpose is in a different place. This is because $\vec g$ is a row vector and the left vector has to be a row, the right-hand side as a column, hence the transpose.
 # 
 # The bond angle can be calculated using the dot product of two bond vectors after converting into $xyz$ coordinates. The angle is therefore
 # 
-# $$\displaystyle \theta_{12}=\cos^{-1}\left(\frac{\vec g_{1,xyz}\cdot \vec g_{2,xyz}}{|\vec g_{1,xyz}||\vec g_{2,xyz}|} \right)=\cos^{-1}\left(\frac{\vec g_{1,xyz}\cdot \vec g_{2,xyz}}{d_1d_2} \right) \tag{33}$$
+# $$\displaystyle \theta_{12}=\cos^{-1}\left(\frac{\vec g_{1,xyz}\cdot \vec g_{2,xyz}}{|\vec g_{1,xyz}||\vec g_{2,xyz}|} \right)=\cos^{-1}\left(\frac{\vec g_{1,xyz}\cdot \vec g_{2,xyz}}{d_1d_2} \right) \qquad\tag{33}$$
 # 
 # In a monoclinic crystal, which is perhaps the most common crystal type, the equations are considerably simplified because $\alpha = \gamma = 90^\text{o}$ then the matrix $\boldsymbol M$, equation 30 is
 # 

@@ -19,13 +19,13 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # In calculating the energy and wavefunctions of the harmonic oscillator, hydrogen atoms, the rigid rotor, and many similar problems, the time-independent Schroedinger equation, $H\psi = E\psi$, is used. However, many processes evolve in time and then a time-dependent form of the equation must be used and this is 
 # 
-# $$\displaystyle H\psi = i\hbar \frac{d\psi}{dt}  \tag{49}$$
+# $$\displaystyle H\psi = i\hbar \frac{d\psi}{dt}  \qquad\tag{49}$$
 # 
 # where $H$ is the Hamiltonian operator. The wavefunction must now depend upon time or its derivative would be zero. In some experiments a superposition of different wavefunctions is unavoidable and a non-stationary state is produced which must evolve with time if the energy levels differ. An example is an electronically excited state that is produced by absorbing photons from a femtosecond duration laser pulse. Many vibrational levels are simultaneously excited, because a narrow laser pulse must have a wide energy spread, and the wavepacket produced evolves with time. This can be observed by pump-probe spectroscopy (Zewail 1994). The amount of each level populated depends on the intensity of the light at each absorption frequency, the Franck-Condon factors involved in the absorption and the shape of the laser pulse.
 # 
 # Suppose that $\displaystyle \psi_1^0(x)$ is the time-independent wavefunction which is the eigenfunction of $H\psi_1 = E_1\psi_1$. This wavefunction could be that of the harmonic oscillator, of s or p-orbitals, or any other quantum mechanical model of an atom or molecule, with energy eigenvalue $E_1$. The time-dependent version of this wavefunction is
 # 
-# $$\displaystyle \psi_1(x,t)=\psi_1^0(x)e^{-iE_1t/\hbar}  \tag{50}$$
+# $$\displaystyle \psi_1(x,t)=\psi_1^0(x)e^{-iE_1t/\hbar}  \qquad\tag{50}$$
 # 
 # where $t$ is time and $x$ is a spatial coordinate, which may be the bond extension of a vibrating molecule or the position of an electron in an atom. The probability of observing this single wavefunction in a region $x \to x + dx$ is $P(x, t)dx = \psi(x)^*\psi(x)dx$, which is constant in time because the complex conjugate removes any time dependence;
 # 
@@ -61,11 +61,11 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # Substituting for the wavefunctions and taking complex conjugates gives,
 # 
-# $$\displaystyle P(x,t)= [\psi_1^0(x)]^2+[\psi_2^0(x)]^2 + \psi_1^0(x)\psi_2^0(x)[ e^{+i(E_1-E_2)t/\hbar} + e^{-i(E_1-E_2)t/\hbar} ] \tag{51} $$
+# $$\displaystyle P(x,t)= [\psi_1^0(x)]^2+[\psi_2^0(x)]^2 + \psi_1^0(x)\psi_2^0(x)[ e^{+i(E_1-E_2)t/\hbar} + e^{-i(E_1-E_2)t/\hbar} ] \qquad\tag{51} $$
 # 
 # of which the last term is the most interesting as it represents the interference of the two wavefunctions with one another and is a purely quantum effect. The first two constant terms are those produced by a classical calculation. Defining a frequency as $\displaystyle \omega=(E_1-E_2)/\hbar$ and using the definition of the cosine  gives,
 # 
-# $$\displaystyle P(x,t)= [\psi_1^0(x)]^2+[\psi_2^0(x)]^2 + 2\psi_1^0(x)\psi_2^0(x)\cos(\omega t)   \tag{52} $$
+# $$\displaystyle P(x,t)= [\psi_1^0(x)]^2+[\psi_2^0(x)]^2 + 2\psi_1^0(x)\psi_2^0(x)\cos(\omega t)   \qquad\tag{52} $$
 # 
 # which shows that the probability oscillates with frequency $\omega$ in addition to a constant term. This means that the amount of each wavefunction in the superposition changes in time if the energy difference $E_1 - E_2$ is not zero. Note that the probability oscillates only because there is an energy difference between two levels.
 # 
@@ -175,11 +175,11 @@ plt.show()
 # 
 # The general superposition where each stationary-state wavefunction is weighted with its contribution $\alpha$ or $\beta$ is $\displaystyle \Psi = \frac{\alpha\psi_1+\beta\psi_2}{\sqrt{\alpha^2+\beta^2}}$. This similar to equations just derived because
 # 
-# $$\displaystyle \Psi(x,t)= \frac{1}{\sqrt{\alpha^2+\beta^2}}\left(\alpha\psi_1^0(x)e^{iE_1t/\hbar}+\beta\psi_1^0(x)e^{iE_2t/\hbar}\right)   \tag{53}$$
+# $$\displaystyle \Psi(x,t)= \frac{1}{\sqrt{\alpha^2+\beta^2}}\left(\alpha\psi_1^0(x)e^{iE_1t/\hbar}+\beta\psi_1^0(x)e^{iE_2t/\hbar}\right)   \qquad\tag{53}$$
 # 
 # Calculating the probability as $P = \Psi^*\Psi$ by taking the complex conjugate of the superposition wavefunction and multiplying gives
 # 
-# $$\displaystyle P(x,t)=\frac{1}{\alpha^2+\beta^2}\left((\alpha\psi_1^0)^2 +(\beta\psi_2^0)^2 +2\alpha \beta \psi_1^0(x)\psi_2^0(x)\cos(\omega t)\right)   \tag{54}$$
+# $$\displaystyle P(x,t)=\frac{1}{\alpha^2+\beta^2}\left((\alpha\psi_1^0)^2 +(\beta\psi_2^0)^2 +2\alpha \beta \psi_1^0(x)\psi_2^0(x)\cos(\omega t)\right)   \qquad\tag{54}$$
 # 
 # where the frequency is $\displaystyle \omega = (E_1-E_2)/\hbar$.
 # 

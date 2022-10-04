@@ -32,13 +32,13 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # The Fourier transform integral is one of several types of integral transforms that have the general form
 # 
-# $$\displaystyle g(k)=\int f(x)G(k,x)dx      \tag{23}$$
+# $$\displaystyle g(k)=\int f(x)G(k,x)dx      \qquad\tag{23}$$
 # 
 # The _transformed_ function is $g$ and the function being transformed is $f$. The algebraic expression $G$ is called the _kernel_ and this changes depending on the type of transform, Fourier, Abel, etc. The kernel for the Fourier transform is $\exp(\pm ikx)$ and so the forward transform takes a function $f(x)$ and returns $g(k)$. We could write this as $F(f(x))=g(k)$ and similarly the reverse transform $F^{-1}(g(k))=f(x)$. We shall only occasionally need to use this operator notation but for example $F(df(x)/dx)$ means make the fourier transform of the differential of $f(x)$ with respect to $x$. The fourier forwards and reverse equations are 
 # 
-# $$\displaystyle  g(k) = \frac{1}{\sqrt{2\pi}}\int_{-\infty}^\infty f(x)e^{-ikx}dx \quad\text{ or }\quad F(f(x))=g(k)\quad\text{ forward fourier transform}  \tag{23a}$$
+# $$\displaystyle  g(k) = \frac{1}{\sqrt{2\pi}}\int_{-\infty}^\infty f(x)e^{-ikx}dx \quad\text{ or }\quad F(f(x))=g(k)\quad\text{ forward fourier transform}  \qquad\tag{23a}$$
 # 
-# $$\displaystyle  f(x) = \frac{1}{\sqrt{2\pi}}\int_{-\infty}^\infty g(k)e^{+ikx}dk \quad\text{ or }\quad F^{-1}(g(k))=f(x)\quad\text{ reverse fourier transform}\tag{23b}$$
+# $$\displaystyle  f(x) = \frac{1}{\sqrt{2\pi}}\int_{-\infty}^\infty g(k)e^{+ikx}dk \quad\text{ or }\quad F^{-1}(g(k))=f(x)\quad\text{ reverse fourier transform}\qquad\tag{23b}$$
 # 
 # 
 # However, whatever form the transform takes it always occurs between pairs of conjugate variables, which are $x$ and $k$ in equation (23). Often these conjugate pairs are time (seconds) and frequency (1/seconds), or distance ($x$) and 1/distance ($k$). The reciprocal relationship between variables is why the transform converts time into frequency, changing, for example, an oscillating time profile into a spectrum. 
@@ -180,17 +180,17 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # The derivation of the transform equations is now sketched out by starting with the Fourier series. Butkov (1968) gives the full derivation. The Fourier series, considered in Section 1, are all formed from periodic functions, but suppose that the function is thought of as having an infinite period, or to put it another way, if the limits are $-L \to L$ then what happens when $L \to \infty $? It is easier here to use the complex exponential form of the series, equations (7), and write
 # 
-# $$\displaystyle f(x) = \sum_{n=-\infty}^{\infty}c_ne^{+in\pi x/L}    \tag{24} $$
+# $$\displaystyle f(x) = \sum_{n=-\infty}^{\infty}c_ne^{+in\pi x/L}    \qquad\tag{24} $$
 # 
 # with coefficients
 # 
-# $$\displaystyle c_n= \frac{1}{2L}\int_{-L}^L f(x)e^{-in\pi x/L}    \tag{25} $$
+# $$\displaystyle c_n= \frac{1}{2L}\int_{-L}^L f(x)e^{-in\pi x/L}    \qquad\tag{25} $$
 # 
 # where $n$ is an integer specifying the position in the series, therefore, $c_n$ is one of a series of numbers that could be plotted on a graph $c_n$ vs $n$. To simplify (24), we define $k = n\pi /L$, which gives $\Delta k = (\pi/L)\Delta n$ for a small change in $k$, and clearly, as $L$ gets larger, $k$ gets smaller. However, there is a problem here, for when $L\to \infty$ it looks as though all values of $c_n$, equation (25), will go to zero, because $L$ is in the denominator. 
 # 
 # Instead of immediately taking the limit, suppose that the values of $n$ describe adjacent points on a graph of $c_n$ vs $n$, and because adjacent points are the smallest differences that $n$ can have, then $\Delta n  = 1$ and so $\Delta k = \pi /L$ or $(L/\pi )\Delta k = 1$. Equation (24) can now be multiplied by this factor without difficulty because it is $1$, giving
 # 
-# $$\displaystyle f(x)=\sum_{n=-\infty}^{\infty}\frac{L}{\pi}c_ne^{+ikx} \Delta k   \tag{26} $$
+# $$\displaystyle f(x)=\sum_{n=-\infty}^{\infty}\frac{L}{\pi}c_ne^{+ikx} \Delta k   \qquad\tag{26} $$
 # 
 # and $c_n$ is given by equation (25). The limit $L\to \infty$ also means that $\Delta k \to  0$, which makes $k$ into a continuous variable, and the coefficients $c_n$ can now be written as a function of $k$, i.e. as $c(k)$ instead of the discrete values $c_n$. Taking this limit also changes $f(x)$ to an integral, because $\Delta k \to  0$,
 # 
@@ -202,11 +202,11 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # This equation is conventionally rewritten by defining a new function $g(k)$, where $g(k) = c(k)\sqrt{2π}$. This function is the _forward transform_ and is defined as 
 # 
-# $$\displaystyle  g(k) = \frac{1}{\sqrt{2\pi}}\int_{-\infty}^\infty f(x)e^{-ikx}dx \qquad\text{       forward transform} \tag{27}$$
+# $$\displaystyle  g(k) = \frac{1}{\sqrt{2\pi}}\int_{-\infty}^\infty f(x)e^{-ikx}dx \qquad\text{       forward transform} \qquad\tag{27}$$
 # 
 # and the reverse transform is 
 # 
-# $$\displaystyle  f(x) = \frac{1}{\sqrt{2\pi}}\int_{-\infty}^\infty g(k)e^{+ikx}dk \qquad\text{       reverse transform} \tag{28}$$
+# $$\displaystyle  f(x) = \frac{1}{\sqrt{2\pi}}\int_{-\infty}^\infty g(k)e^{+ikx}dk \qquad\text{       reverse transform} \qquad\tag{28}$$
 # 
 # notice how the $x$ and $k$ and the signs in the exponential change.
 # 
@@ -368,7 +368,7 @@ g
 # 
 # The sine at twice the reference frequency is electronically filtered away leaving a signal that is constant because $T$ is the integration time set by the experimentalist and normally ranges from a few milliseconds to a few seconds. The measured signal is
 # 
-# $$\displaystyle V_s=\frac{r_0s_0}{4\omega T} \big(\sin(\varphi)+2T\omega \cos(\varphi) \big)   \tag{29}$$
+# $$\displaystyle V_s=\frac{r_0s_0}{4\omega T} \big(\sin(\varphi)+2T\omega \cos(\varphi) \big)   \qquad\tag{29}$$
 # 
 # and as the phase $\varphi$ can be adjusted by the user, this signal can be maximized.
 # 
@@ -399,7 +399,7 @@ g
 # 
 # This theorem is important because it proves that there is no loss of information when transforming between Fourier transform pairs. This is rather important because otherwise how would it be possible to tell what information has been lost or added? Fortunately, it can be shown that
 # 
-# $$\displaystyle \int_{-\infty}^{\infty} g^*(k)g(k)dk = \int_{-\infty}^{\infty} f^*(x)f(x)dx  \tag{30}$$
+# $$\displaystyle \int_{-\infty}^{\infty} g^*(k)g(k)dk = \int_{-\infty}^{\infty} f^*(x)f(x)dx  \qquad\tag{30}$$
 # 
 # where the asterisk denotes the complex conjugate. The Fourier transform of $f(x)$ is $g(k)$, which is integrated over its variable $k$, and similarly $f(x)$ is integrated over its variable $x$. As the total integral taken over all coordinate space $x$ and that over its conjugate variable $k$ is the same, all the information in the original function is retained in the transformation, i.e. it looks as if the transform is a different beast but this is only a disguise as it contains exactly the same information. This, of course, means that if something is done to the transform, then, in effect, the same is done to the function.
 # 
@@ -421,7 +421,7 @@ g
 # 
 # The Parseval theorem can be proved using the delta function in its integral form. First we find the delta function. Suppose that a fourier transform is inserted into itself, starting with eqn. 28,
 # 
-# $$\displaystyle  f(x) = \frac{1}{\sqrt{2\pi}}\int_{-\infty}^\infty g(k)e^{+ikx}dk \tag{28}$$
+# $$\displaystyle  f(x) = \frac{1}{\sqrt{2\pi}}\int_{-\infty}^\infty g(k)e^{+ikx}dk \qquad\tag{28}$$
 # 
 # then from eqn. 27 substitute $g(k)$ and change the dummy integration variable to $x'$ to avoid confusion, 
 # 
@@ -433,11 +433,11 @@ g
 # 
 # For this equation to be true the expression in square brackets must now be interpreted as a delta function making
 # 
-# $$\displaystyle \delta(x-x')=\frac{1}{2\pi} \int_{-\infty}^\infty e^{-ik(x-x')}dk\tag{28a}$$
+# $$\displaystyle \delta(x-x')=\frac{1}{2\pi} \int_{-\infty}^\infty e^{-ik(x-x')}dk\qquad\tag{28a}$$
 # 
 # which means that one side is interpreted as having the same effect as the other, $\delta(x-x')=1$ if $x=x'$ otherwise it is zero and similarly for the integral. Recall that the delta function $\delta(x-x')$ picks out just one term in any integral at $x=x'$.
 # 
-# $$\displaystyle \int_{-\infty}^\infty f(x)\delta(x-x')dx = f(x')\tag{28b}$$
+# $$\displaystyle \int_{-\infty}^\infty f(x)\delta(x-x')dx = f(x')\qquad\tag{28b}$$
 # 
 # $$\displaystyle \int_a^b\delta(x-x')dx = 1 \text{ if } a\lt x\lt b \text{ otherwise } 0$$
 # 
@@ -494,11 +494,11 @@ g
 # 
 # which multiplying top and bottom by $e^{iak/2}$ and using the definition of a sine; $\sin(x)=(e^{ix}-e^{-ix})/2i$ produces
 # 
-# $$\displaystyle g(k)=\frac{1}{\sqrt{2\pi}}\frac{\sin\left((N+\frac{1}{2})ak\right)}{\sin\left(\frac{ak}{2}\right)}\tag{28c}$$
+# $$\displaystyle g(k)=\frac{1}{\sqrt{2\pi}}\frac{\sin\left((N+\frac{1}{2})ak\right)}{\sin\left(\frac{ak}{2}\right)}\qquad\tag{28c}$$
 # 
 # The function appears as a series of spikes separated by $2\pi/a$ when $N$ is large. Figure 21b shows the transform when $N=100, a=2$, and it is clear that the delta function is being approached even with small $N$. In the limit $N\to \infty$ the transform of a comb of separation $a$ is a comb of delta functions with separation $2\pi /a$. 
 # 
-# $$\displaystyle f(x)=\sum_{n=-\infty}^\infty \delta(x-na), \qquad g(k)=\frac{1}{\sqrt{2\pi}}\sum_{n=-\infty}^\infty \delta(x-2\pi n/a)\tag{28d}$$
+# $$\displaystyle f(x)=\sum_{n=-\infty}^\infty \delta(x-na), \qquad g(k)=\frac{1}{\sqrt{2\pi}}\sum_{n=-\infty}^\infty \delta(x-2\pi n/a)\qquad\tag{28d}$$
 # 
 # ![Drawing](fourier-fig21b.png)
 # 

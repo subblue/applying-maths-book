@@ -770,7 +770,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-7/matrices-L.html">
-     Principal axes for Moments of Inertia
+     Principal axes of Moments of Inertia
     </a>
    </li>
    <li class="toctree-l2">
@@ -1856,12 +1856,12 @@ title="Print to PDF"
 <h2>5.1 Fourier transform equations<a class="headerlink" href="#fourier-transform-equations" title="Permalink to this headline">#</a></h2>
 <p>The Fourier transform integral is one of several types of integral transforms that have the general form</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle g(k)=\int f(x)G(k,x)dx      \tag{23}\]</div>
+\[\displaystyle g(k)=\int f(x)G(k,x)dx      \qquad\tag{23}\]</div>
 <p>The <em>transformed</em> function is <span class="math notranslate nohighlight">\(g\)</span> and the function being transformed is <span class="math notranslate nohighlight">\(f\)</span>. The algebraic expression <span class="math notranslate nohighlight">\(G\)</span> is called the <em>kernel</em> and this changes depending on the type of transform, Fourier, Abel, etc. The kernel for the Fourier transform is <span class="math notranslate nohighlight">\(\exp(\pm ikx)\)</span> and so the forward transform takes a function <span class="math notranslate nohighlight">\(f(x)\)</span> and returns <span class="math notranslate nohighlight">\(g(k)\)</span>. We could write this as <span class="math notranslate nohighlight">\(F(f(x))=g(k)\)</span> and similarly the reverse transform <span class="math notranslate nohighlight">\(F^{-1}(g(k))=f(x)\)</span>. We shall only occasionally need to use this operator notation but for example <span class="math notranslate nohighlight">\(F(df(x)/dx)\)</span> means make the fourier transform of the differential of <span class="math notranslate nohighlight">\(f(x)\)</span> with respect to <span class="math notranslate nohighlight">\(x\)</span>. The fourier forwards and reverse equations are</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle  g(k) = \frac{1}{\sqrt{2\pi}}\int_{-\infty}^\infty f(x)e^{-ikx}dx \quad\text{ or }\quad F(f(x))=g(k)\quad\text{ forward fourier transform}  \tag{23a}\]</div>
+\[\displaystyle  g(k) = \frac{1}{\sqrt{2\pi}}\int_{-\infty}^\infty f(x)e^{-ikx}dx \quad\text{ or }\quad F(f(x))=g(k)\quad\text{ forward fourier transform}  \qquad\tag{23a}\]</div>
 <div class="math notranslate nohighlight">
-\[\displaystyle  f(x) = \frac{1}{\sqrt{2\pi}}\int_{-\infty}^\infty g(k)e^{+ikx}dk \quad\text{ or }\quad F^{-1}(g(k))=f(x)\quad\text{ reverse fourier transform}\tag{23b}\]</div>
+\[\displaystyle  f(x) = \frac{1}{\sqrt{2\pi}}\int_{-\infty}^\infty g(k)e^{+ikx}dk \quad\text{ or }\quad F^{-1}(g(k))=f(x)\quad\text{ reverse fourier transform}\qquad\tag{23b}\]</div>
 <p>However, whatever form the transform takes it always occurs between pairs of conjugate variables, which are <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(k\)</span> in equation (23). Often these conjugate pairs are time (seconds) and frequency (1/seconds), or distance (<span class="math notranslate nohighlight">\(x\)</span>) and 1/distance (<span class="math notranslate nohighlight">\(k\)</span>). The reciprocal relationship between variables is why the transform converts time into frequency, changing, for example, an oscillating time profile into a spectrum.</p>
 <p>A second property is that these integral transforms are reversible, also called <em>invertible</em>, which means that <span class="math notranslate nohighlight">\(f\)</span> can be changed into <span class="math notranslate nohighlight">\(g\)</span> and <span class="math notranslate nohighlight">\(g\)</span> can be changed into <span class="math notranslate nohighlight">\(f\)</span> depending on which one we start with.</p>
 <p>The notation and normalisation (<span class="math notranslate nohighlight">\(1/\sqrt{2\pi}\)</span>) varies quite a lot in the literature. It is common to add a hat or tilde to denote the transform thus if the function is <span class="math notranslate nohighlight">\(f\)</span> the transform may be <span class="math notranslate nohighlight">\(F\)</span> or <span class="math notranslate nohighlight">\(\hat F\)</span> or <span class="math notranslate nohighlight">\(\tilde f\)</span> etc. Sometimes <span class="math notranslate nohighlight">\(F^{-1}\)</span> is used to describe the reverse transform as above. We shall use <span class="math notranslate nohighlight">\(f\)</span> and <span class="math notranslate nohighlight">\(g\)</span> to denote the transform and its reverse respectively. Similarly the symbols used for the conjugate variables vary, <span class="math notranslate nohighlight">\(u,v\)</span> are common for general use, usually  <span class="math notranslate nohighlight">\(x,k\)</span> for distance <span class="math notranslate nohighlight">\(x\)</span> and inverse distance (wavevector <span class="math notranslate nohighlight">\(k\)</span>) and <span class="math notranslate nohighlight">\(t,\omega\)</span> for time and natural frequency.</p>
@@ -1950,14 +1950,14 @@ more complicated version of an operator than is <span class="math notranslate no
 <h2>6 The Fourier Transform equations<a class="headerlink" href="#the-fourier-transform-equations" title="Permalink to this headline">#</a></h2>
 <p>The derivation of the transform equations is now sketched out by starting with the Fourier series. Butkov (1968) gives the full derivation. The Fourier series, considered in Section 1, are all formed from periodic functions, but suppose that the function is thought of as having an infinite period, or to put it another way, if the limits are <span class="math notranslate nohighlight">\(-L \to L\)</span> then what happens when <span class="math notranslate nohighlight">\(L \to \infty \)</span>? It is easier here to use the complex exponential form of the series, equations (7), and write</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle f(x) = \sum_{n=-\infty}^{\infty}c_ne^{+in\pi x/L}    \tag{24} \]</div>
+\[\displaystyle f(x) = \sum_{n=-\infty}^{\infty}c_ne^{+in\pi x/L}    \qquad\tag{24} \]</div>
 <p>with coefficients</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle c_n= \frac{1}{2L}\int_{-L}^L f(x)e^{-in\pi x/L}    \tag{25} \]</div>
+\[\displaystyle c_n= \frac{1}{2L}\int_{-L}^L f(x)e^{-in\pi x/L}    \qquad\tag{25} \]</div>
 <p>where <span class="math notranslate nohighlight">\(n\)</span> is an integer specifying the position in the series, therefore, <span class="math notranslate nohighlight">\(c_n\)</span> is one of a series of numbers that could be plotted on a graph <span class="math notranslate nohighlight">\(c_n\)</span> vs <span class="math notranslate nohighlight">\(n\)</span>. To simplify (24), we define <span class="math notranslate nohighlight">\(k = n\pi /L\)</span>, which gives <span class="math notranslate nohighlight">\(\Delta k = (\pi/L)\Delta n\)</span> for a small change in <span class="math notranslate nohighlight">\(k\)</span>, and clearly, as <span class="math notranslate nohighlight">\(L\)</span> gets larger, <span class="math notranslate nohighlight">\(k\)</span> gets smaller. However, there is a problem here, for when <span class="math notranslate nohighlight">\(L\to \infty\)</span> it looks as though all values of <span class="math notranslate nohighlight">\(c_n\)</span>, equation (25), will go to zero, because <span class="math notranslate nohighlight">\(L\)</span> is in the denominator.</p>
 <p>Instead of immediately taking the limit, suppose that the values of <span class="math notranslate nohighlight">\(n\)</span> describe adjacent points on a graph of <span class="math notranslate nohighlight">\(c_n\)</span> vs <span class="math notranslate nohighlight">\(n\)</span>, and because adjacent points are the smallest differences that <span class="math notranslate nohighlight">\(n\)</span> can have, then <span class="math notranslate nohighlight">\(\Delta n  = 1\)</span> and so <span class="math notranslate nohighlight">\(\Delta k = \pi /L\)</span> or <span class="math notranslate nohighlight">\((L/\pi )\Delta k = 1\)</span>. Equation (24) can now be multiplied by this factor without difficulty because it is <span class="math notranslate nohighlight">\(1\)</span>, giving</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle f(x)=\sum_{n=-\infty}^{\infty}\frac{L}{\pi}c_ne^{+ikx} \Delta k   \tag{26} \]</div>
+\[\displaystyle f(x)=\sum_{n=-\infty}^{\infty}\frac{L}{\pi}c_ne^{+ikx} \Delta k   \qquad\tag{26} \]</div>
 <p>and <span class="math notranslate nohighlight">\(c_n\)</span> is given by equation (25). The limit <span class="math notranslate nohighlight">\(L\to \infty\)</span> also means that <span class="math notranslate nohighlight">\(\Delta k \to  0\)</span>, which makes <span class="math notranslate nohighlight">\(k\)</span> into a continuous variable, and the coefficients <span class="math notranslate nohighlight">\(c_n\)</span> can now be written as a function of <span class="math notranslate nohighlight">\(k\)</span>, i.e. as <span class="math notranslate nohighlight">\(c(k)\)</span> instead of the discrete values <span class="math notranslate nohighlight">\(c_n\)</span>. Taking this limit also changes <span class="math notranslate nohighlight">\(f(x)\)</span> to an integral, because <span class="math notranslate nohighlight">\(\Delta k \to  0\)</span>,</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle f(x)=\lim_{L \rightarrow \infty}\sum_{n=-\infty}^{\infty}\frac{L}{\pi}c_ce^{in\pi x/L}\Delta k =\int_{-\infty}^\infty c(k)e^{ikx} dk\]</div>
@@ -1966,10 +1966,10 @@ more complicated version of an operator than is <span class="math notranslate no
 \[c(k)= \frac{1}{2\pi}\int_{-\infty}^\infty f(x)e^{-ikx}dx  \]</div>
 <p>This equation is conventionally rewritten by defining a new function <span class="math notranslate nohighlight">\(g(k)\)</span>, where <span class="math notranslate nohighlight">\(g(k) = c(k)\sqrt{2π}\)</span>. This function is the <em>forward transform</em> and is defined as</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle  g(k) = \frac{1}{\sqrt{2\pi}}\int_{-\infty}^\infty f(x)e^{-ikx}dx \qquad\text{       forward transform} \tag{27}\]</div>
+\[\displaystyle  g(k) = \frac{1}{\sqrt{2\pi}}\int_{-\infty}^\infty f(x)e^{-ikx}dx \qquad\text{       forward transform} \qquad\tag{27}\]</div>
 <p>and the reverse transform is</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle  f(x) = \frac{1}{\sqrt{2\pi}}\int_{-\infty}^\infty g(k)e^{+ikx}dk \qquad\text{       reverse transform} \tag{28}\]</div>
+\[\displaystyle  f(x) = \frac{1}{\sqrt{2\pi}}\int_{-\infty}^\infty g(k)e^{+ikx}dk \qquad\text{       reverse transform} \qquad\tag{28}\]</div>
 <p>notice how the <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(k\)</span> and the signs in the exponential change.</p>
 <p>The two functions form a Fourier transform pair; the function <span class="math notranslate nohighlight">\(f(x)\)</span> with a positive exponential is the ‘reverse’ or ‘inverse’ transform, and <span class="math notranslate nohighlight">\(g(k)\)</span>, equation (27), with a negative exponential, the ‘forward’ transform because it converts the measured or known function <span class="math notranslate nohighlight">\(f(x)\)</span>, where <span class="math notranslate nohighlight">\(x\)</span> might be distance, into the transformed space <span class="math notranslate nohighlight">\(k\)</span> which is inverse distance. Alternatively, if <span class="math notranslate nohighlight">\(x\)</span> represents time then <span class="math notranslate nohighlight">\(k\)</span> represents frequency.</p>
 <p>As the equations involve <span class="math notranslate nohighlight">\(e^{ikx}\)</span> we can use de Moivre’s theorem to write them as sine and cosine, for example</p>
@@ -2096,7 +2096,7 @@ Right column: The period of the sine wave, (middle curve) which is determined by
 =\frac{r_0s_0}{4\omega T}\big(\sin(\varphi)+2T\omega \cos(\varphi)-\sin(2\omega T+\varphi) \big) \end{split}\]</div>
 <p>The sine at twice the reference frequency is electronically filtered away leaving a signal that is constant because <span class="math notranslate nohighlight">\(T\)</span> is the integration time set by the experimentalist and normally ranges from a few milliseconds to a few seconds. The measured signal is</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle V_s=\frac{r_0s_0}{4\omega T} \big(\sin(\varphi)+2T\omega \cos(\varphi) \big)   \tag{29}\]</div>
+\[\displaystyle V_s=\frac{r_0s_0}{4\omega T} \big(\sin(\varphi)+2T\omega \cos(\varphi) \big)   \qquad\tag{29}\]</div>
 <p>and as the phase <span class="math notranslate nohighlight">\(\varphi\)</span> can be adjusted by the user, this signal can be maximized.</p>
 <p>Now consider the situation when noise is present and assume that this has a wide range of frequencies <span class="math notranslate nohighlight">\(\omega_{1,2..}\)</span> and amplitudes <span class="math notranslate nohighlight">\(n_{1,2..}\)</span>. The signal from an instrument is normally noisy and is represented as</p>
 <div class="math notranslate nohighlight">
@@ -2118,7 +2118,7 @@ Right column: The period of the sine wave, (middle curve) which is determined by
 <h2>6.6 Parseval or Plancherel  theorem.<a class="headerlink" href="#parseval-or-plancherel-theorem" title="Permalink to this headline">#</a></h2>
 <p>This theorem is important because it proves that there is no loss of information when transforming between Fourier transform pairs. This is rather important because otherwise how would it be possible to tell what information has been lost or added? Fortunately, it can be shown that</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle \int_{-\infty}^{\infty} g^*(k)g(k)dk = \int_{-\infty}^{\infty} f^*(x)f(x)dx  \tag{30}\]</div>
+\[\displaystyle \int_{-\infty}^{\infty} g^*(k)g(k)dk = \int_{-\infty}^{\infty} f^*(x)f(x)dx  \qquad\tag{30}\]</div>
 <p>where the asterisk denotes the complex conjugate. The Fourier transform of <span class="math notranslate nohighlight">\(f(x)\)</span> is <span class="math notranslate nohighlight">\(g(k)\)</span>, which is integrated over its variable <span class="math notranslate nohighlight">\(k\)</span>, and similarly <span class="math notranslate nohighlight">\(f(x)\)</span> is integrated over its variable <span class="math notranslate nohighlight">\(x\)</span>. As the total integral taken over all coordinate space <span class="math notranslate nohighlight">\(x\)</span> and that over its conjugate variable <span class="math notranslate nohighlight">\(k\)</span> is the same, all the information in the original function is retained in the transformation, i.e. it looks as if the transform is a different beast but this is only a disguise as it contains exactly the same information. This, of course, means that if something is done to the transform, then, in effect, the same is done to the function.</p>
 <p>The Plancherel theorem (also called Rayleigh’s theorem as it was first used by him in the theory of Black-Body radiation) is effectively the same but usually written as</p>
 <div class="math notranslate nohighlight">
@@ -2132,7 +2132,7 @@ Right column: The period of the sine wave, (middle curve) which is determined by
 <h3><strong>The delta function as an integral</strong><a class="headerlink" href="#the-delta-function-as-an-integral" title="Permalink to this headline">#</a></h3>
 <p>The Parseval theorem can be proved using the delta function in its integral form. First we find the delta function. Suppose that a fourier transform is inserted into itself, starting with eqn. 28,</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle  f(x) = \frac{1}{\sqrt{2\pi}}\int_{-\infty}^\infty g(k)e^{+ikx}dk \tag{28}\]</div>
+\[\displaystyle  f(x) = \frac{1}{\sqrt{2\pi}}\int_{-\infty}^\infty g(k)e^{+ikx}dk \qquad\tag{28}\]</div>
 <p>then from eqn. 27 substitute <span class="math notranslate nohighlight">\(g(k)\)</span> and change the dummy integration variable to <span class="math notranslate nohighlight">\(x'\)</span> to avoid confusion,</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle  f(x) = \frac{1}{2\pi} \int_{-\infty}^\infty   \int_{-\infty}^\infty f(x')e^{-ikx'}dx'e^{+ikx}dk \]</div>
@@ -2141,10 +2141,10 @@ Right column: The period of the sine wave, (middle curve) which is determined by
 \[\displaystyle  f(x) = \int_{-\infty}^\infty f(x') \left[\frac{1}{2\pi} \int_{-\infty}^\infty e^{-ik(x-x')}dk\right]dx'\]</div>
 <p>For this equation to be true the expression in square brackets must now be interpreted as a delta function making</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle \delta(x-x')=\frac{1}{2\pi} \int_{-\infty}^\infty e^{-ik(x-x')}dk\tag{28a}\]</div>
+\[\displaystyle \delta(x-x')=\frac{1}{2\pi} \int_{-\infty}^\infty e^{-ik(x-x')}dk\qquad\tag{28a}\]</div>
 <p>which means that one side is interpreted as having the same effect as the other, <span class="math notranslate nohighlight">\(\delta(x-x')=1\)</span> if <span class="math notranslate nohighlight">\(x=x'\)</span> otherwise it is zero and similarly for the integral. Recall that the delta function <span class="math notranslate nohighlight">\(\delta(x-x')\)</span> picks out just one term in any integral at <span class="math notranslate nohighlight">\(x=x'\)</span>.</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle \int_{-\infty}^\infty f(x)\delta(x-x')dx = f(x')\tag{28b}\]</div>
+\[\displaystyle \int_{-\infty}^\infty f(x)\delta(x-x')dx = f(x')\qquad\tag{28b}\]</div>
 <div class="math notranslate nohighlight">
 \[\displaystyle \int_a^b\delta(x-x')dx = 1 \text{ if } a\lt x\lt b \text{ otherwise } 0\]</div>
 <p>The delta function also has these properties</p>
@@ -2187,10 +2187,10 @@ Right column: The period of the sine wave, (middle curve) which is determined by
 \[\displaystyle \sqrt{2\pi}g(x)=\sum_{n=-N}^N e^{-ikaN}=\frac{e^{iak(N+1)}-e^{-iakN} }{1-e^{-iak}}\]</div>
 <p>which multiplying top and bottom by <span class="math notranslate nohighlight">\(e^{iak/2}\)</span> and using the definition of a sine; <span class="math notranslate nohighlight">\(\sin(x)=(e^{ix}-e^{-ix})/2i\)</span> produces</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle g(k)=\frac{1}{\sqrt{2\pi}}\frac{\sin\left((N+\frac{1}{2})ak\right)}{\sin\left(\frac{ak}{2}\right)}\tag{28c}\]</div>
+\[\displaystyle g(k)=\frac{1}{\sqrt{2\pi}}\frac{\sin\left((N+\frac{1}{2})ak\right)}{\sin\left(\frac{ak}{2}\right)}\qquad\tag{28c}\]</div>
 <p>The function appears as a series of spikes separated by <span class="math notranslate nohighlight">\(2\pi/a\)</span> when <span class="math notranslate nohighlight">\(N\)</span> is large. Figure 21b shows the transform when <span class="math notranslate nohighlight">\(N=100, a=2\)</span>, and it is clear that the delta function is being approached even with small <span class="math notranslate nohighlight">\(N\)</span>. In the limit <span class="math notranslate nohighlight">\(N\to \infty\)</span> the transform of a comb of separation <span class="math notranslate nohighlight">\(a\)</span> is a comb of delta functions with separation <span class="math notranslate nohighlight">\(2\pi /a\)</span>.</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle f(x)=\sum_{n=-\infty}^\infty \delta(x-na), \qquad g(k)=\frac{1}{\sqrt{2\pi}}\sum_{n=-\infty}^\infty \delta(x-2\pi n/a)\tag{28d}\]</div>
+\[\displaystyle f(x)=\sum_{n=-\infty}^\infty \delta(x-na), \qquad g(k)=\frac{1}{\sqrt{2\pi}}\sum_{n=-\infty}^\infty \delta(x-2\pi n/a)\qquad\tag{28d}\]</div>
 <p><img alt="Drawing" src="../_images/fourier-fig21b.png" /></p>
 <p>Figure 21b. The transform of a comb of separation <span class="math notranslate nohighlight">\(a\)</span> is a comb of separation <span class="math notranslate nohighlight">\(2\pi/a\)</span>. In this figure <span class="math notranslate nohighlight">\(N=100, a=2\)</span>. In the limit <span class="math notranslate nohighlight">\(N\to\infty\)</span> a comb of <span class="math notranslate nohighlight">\(\delta\)</span> functions result.</p>
 <hr class="docutils" />

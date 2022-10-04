@@ -20,7 +20,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # A matrix can be of great use in solving simultaneous equations provided that its inverse exists. We consider two types of equations. First is the general case
 # 
-# $$\pmb{M}\vec x =  \vec C \tag{28} $$
+# $$\pmb{M}\vec x =  \vec C \qquad\tag{28} $$
 # 
 # where $\pmb M$ is a matrix and $\vec x$ and $\vec C$ are column vectors (one-dimensional matrices). Later on, we consider eigenvalue - eigenvector equations, which are more important and useful to us. In this section matrices are given bold letters, a vector is indicated by an arrow.
 # 
@@ -54,7 +54,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # The formal matrix method to solve equation (28) is to invert the equation by multiplying both sides by $\pmb{M}^{-1}$ to form $\pmb{M}^{-1}\pmb{M} = \pmb{1}$ and therefore $\pmb{M}^{-1}\pmb{M}\vec x = \pmb{M}^{-1}\vec C$. The next step is to replace the $\pmb{M}^{-1}\pmb{M}$ by the unit matrix $\pmb{1}$, but this has no further effect because $\pmb{1}\vec x = \pmb{M}^{-1}\vec C$ is the same as
 # 
-# $$ \vec x=\pmb{M}^{-1}\vec C\tag{30}$$
+# $$ \vec x=\pmb{M}^{-1}\vec C\qquad\tag{30}$$
 # 
 # The matrix method of solving simultaneous equations has therefore become that of finding the inverse of a matrix $\pmb{M}$, and performing a matrix multiplication with $\vec C$.
 # 
@@ -284,7 +284,7 @@ test
 # 
 # In matrix form, an eigenvector - eigenvalue equation is the special type of matrix-vector product where, 
 # 
-# $$\displaystyle  \pmb{A} \vec x = \lambda \vec x\tag{31}$$
+# $$\displaystyle  \pmb{A} \vec x = \lambda \vec x\qquad\tag{31}$$
 # 
 # The operator $\pmb A$ must be a square matrix, and alters column vector, $ x$ to produce itself multiplied by a constant $\lambda$. The constant $\lambda$ is called either an *eigenvalue*, a *proper value*, or a *characteristic value*. The eigenvector is $x$. The action of the operator is to magnify or reduce the eigenvector $ x$ by an amount $\lambda$ but other wise leaves it unchanged, i.e it 'points' in the same direction. In contrast, operators, such as rotation matrices, or those used in group theory, would leave the vector $x$ unchanged in length but pointing in another direction. The eigenvalues can be real numbers, positive, negative or zero or complex numbers or a mixture these. 
 # 
@@ -306,7 +306,7 @@ test
 # 
 # In an eigenvalue - eigenvector equation, the operator $\pmb{A}$ is always an $n \times n$ square matrix and $\vec x$ is an, as yet, unknown vector (single column matrix), and similarly for the eigenvalues $\lambda$ which also form an unknown single column matrix. The first step in solving equation 31 is to find the eigenvalues $\lambda$. Rearranging equation 31 by subtracting the $\lambda$ from the diagonals only produces a singular matrix, and the essential property of a singular matrix is that its determinant is zero. Doing this produces what is called the *Secular Equation*, 
 # 
-# $$\displaystyle (\pmb{A} - \lambda \pmb{1})x = \pmb{0} \tag{32}$$
+# $$\displaystyle (\pmb{A} - \lambda \pmb{1})x = \pmb{0} \qquad\tag{32}$$
 # 
 # where $\pmb{1}$ is the unit (diagonal) matrix and $\pmb 0$ is the null matrix. This equation is, in fact, just a set of simultaneous equations in $n$ unknowns, because there are $n$ rows and columns. The eigenvalues are calculated from the secular determinant by setting it to zero
 # 
@@ -329,7 +329,7 @@ test
 # 
 # Now that the eigenvalues are known the $n$ eigenvectors, $x_1 \to x_n$, each of length $n$, can be found. To each of these eigenvectors, belongs an eigenvalue, $\lambda_i$. Each eigenvalue in turn is substituted back into the secular equation and this is then solved for each $\vec x$. The $j^{th}$ solution, for example, is obtained using $(\pmb{A} - \lambda_j\pmb{1})x_j = 0$, and this is the part that takes the computer (or you) most time to evaluate. This is done by computing the $i^{th}$ component of the $j^{th}$ eigenvector, $x_j$, which is a multiple of
 # 
-# $$\displaystyle  x_{ij}=(-1)^{i+k}|(\pmb{A}-\lambda_j\pmb{1})_{kj}|  \tag{34}$$
+# $$\displaystyle  x_{ij}=(-1)^{i+k}|(\pmb{A}-\lambda_j\pmb{1})_{kj}|  \qquad\tag{34}$$
 # 
 # where $ (-1)^{i+k}|(\pmb{A}-\lambda_j\pmb{1})_{kj}| $ is the *cofactor* of the matrix of element $ki$; note that $j$ is the index of the eigenvalue and $k$ the index of a column. 
 # 
@@ -432,7 +432,7 @@ evals,evecs
 # which is $\lambda_2 x_2$. 
 # 
 # The same calculation using Python or Sympy is far easier and, in practice, you will always do the calculation in this way.
-
+# 
 # ## 12.7 Properties of eigenvalues and eigenvectors
 # Some of the more important properties of eigenvalues and eigenvectors are listed here.
 # 

@@ -48,7 +48,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # What the least squares method does is to minimize the square of the displacement between the values calculated from a 'model' function and the experimental data points $y$. Figure 7 shows the displacement for one point and a Gaussian distribution from which that point could have been produced. The statistic used to assess the goodness of fit is called 'chi squared' $\chi^2$ and is defined as
 # 
-# $$\displaystyle \chi^2=\sum_{i=1}^nw_i(y_i-Y_i)^2\tag{25}$$
+# $$\displaystyle \chi^2=\sum_{i=1}^nw_i(y_i-Y_i)^2\qquad\tag{25}$$
 # 
 # where $y$ is the experimental data, $Y$ the model set of estimated data, and $w$ the weighting. The ideal weighting is $w_i = 1/\sigma_i^2$ . The $\chi^2$ forms a distribution and the chance that a certain value can be obtained is calculated in a similar way as for the normal or $t$ distributions, see Section 5.4.
 # 
@@ -60,12 +60,12 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # To fit the straight-line model $Y = a_0 + b_0$x to experimental data $y_i$, the values a and b obtained will be the best estimates of $a_0$ and $b_0$ and therefore these are replaced with $a$ and $b$ in the equations. To find the minima, the derivatives $\partial \chi^2/\partial a$ and $\partial \chi^2/\partial b$ are calculated, 
 # 
-# $$\displaystyle \frac{\partial }{\partial a} \sum_{i=1}^n (y_i-a-bx_i)^2w_i=-2\sum_{i=1}^n (y_i-a-bx_i)w_i=0\tag{26}$$
-# $$\displaystyle \frac{\partial }{\partial b} \sum_{i=1}^n (y_i-a-bx_i)^2w_i=-2\sum_{i=1}^n (y_i-a-bx_i)w_ix_i=0\tag{27}$$
+# $$\displaystyle \frac{\partial }{\partial a} \sum_{i=1}^n (y_i-a-bx_i)^2w_i=-2\sum_{i=1}^n (y_i-a-bx_i)w_i=0\qquad\tag{26}$$
+# $$\displaystyle \frac{\partial }{\partial b} \sum_{i=1}^n (y_i-a-bx_i)^2w_i=-2\sum_{i=1}^n (y_i-a-bx_i)w_ix_i=0\qquad\tag{27}$$
 # 
 # which produce two equations and two unknowns; these simultaneous equations are known as the _normal equations_ ;
 # 
-# $$\displaystyle a\sum_{i=1}^n w_i+b\sum_{i=1}^n x_iw_i=\sum_{i=1}^n y_iw_i, \qquad a\sum_{i=1}^n x_iw_i+b\sum_{i=1}^n x_i^2w_i=\sum_{i=1}^n y_ix_iw_i \tag{28}$$
+# $$\displaystyle a\sum_{i=1}^n w_i+b\sum_{i=1}^n x_iw_i=\sum_{i=1}^n y_iw_i, \qquad a\sum_{i=1}^n x_iw_i+b\sum_{i=1}^n x_i^2w_i=\sum_{i=1}^n y_ix_iw_i \qquad\tag{28}$$
 # 
 # These simultaneous equations can be solved for $a$ and $b$ using the matrix method outlined in chapter 7. The determinant is 
 # 
@@ -79,17 +79,17 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # The best estimate of the slope $b$ can be rewritten in a form more convenient for calculation as 
 # 
-# $$\displaystyle b=\frac{S_{xy}}{S_{xx}}\tag{29}$$
+# $$\displaystyle b=\frac{S_{xy}}{S_{xx}}\qquad\tag{29}$$
 # 
 # where
 # 
-# $$\displaystyle S_{xy}=\sum_{i=1}^n x_iy_iw_i-\frac{\sum_{i=1}^n x_iw_i\sum_{i=1}^n y_iw_i}{\sum_{i=1}^n w_i}\qquad S_{xx}=\sum_{i=1}^n x_iw_i -\frac{\left(\sum_{i=1}^nx_iw_i\right)^2}{\sum_{i=1}^n w_i}\tag{30}$$
+# $$\displaystyle S_{xy}=\sum_{i=1}^n x_iy_iw_i-\frac{\sum_{i=1}^n x_iw_i\sum_{i=1}^n y_iw_i}{\sum_{i=1}^n w_i}\qquad S_{xx}=\sum_{i=1}^n x_iw_i -\frac{\left(\sum_{i=1}^nx_iw_i\right)^2}{\sum_{i=1}^n w_i}\qquad\tag{30}$$
 # 
-# $$\displaystyle S_w=\sum_{i=1}^n w_i\tag{31}$$
+# $$\displaystyle S_w=\sum_{i=1}^n w_i\qquad\tag{31}$$
 # 
 # The best estimate of the intercept a is
 # 
-# $$\displaystyle a=\langle y\rangle- b\langle x\rangle \tag{32}$$
+# $$\displaystyle a=\langle y\rangle- b\langle x\rangle \qquad\tag{32}$$
 # 
 # where the averages are 
 # 
@@ -99,7 +99,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # The intercept is also found by expanding the matrices above,
 # 
-# $$\displaystyle a= \frac{\sum_{i=1}^n w_ix_i^2\sum_{i=1}^n w_iy_i-\sum_{i=1}^nw_ix_i\sum_{i=1}^nw_ix_iy_i}{S_wS_{xx}} \tag{33}$$
+# $$\displaystyle a= \frac{\sum_{i=1}^n w_ix_i^2\sum_{i=1}^n w_iy_i-\sum_{i=1}^nw_ix_i\sum_{i=1}^nw_ix_iy_i}{S_wS_{xx}} \qquad\tag{33}$$
 # 
 # Most graphing packages and languages now have least squares fitting routines, but the calculation is also made easy by direct calculation and then weighting can be incorporated and confidence curves drawn. Because the differences between two large sums often occur in calculating terms such as $S_{xy}$ and $S_{xx}$, the possibility of rounding errors can be significant. It is always advisable if possible to use a higher precision calculation than would normally be used.
 # 
@@ -205,7 +205,7 @@ print('{:s} {:8.4g} {:s} {:8.4g}'.format('slope = ',slope,' intercept = ', inter
 # where $Y_i$ is the value of the calculated line at the $i^{th}\; x$ value. The reduced or normalized
 # residuals
 # 
-# $$\displaystyle r_i = (y_i - Y_i)/Y_i \tag{34}$$
+# $$\displaystyle r_i = (y_i - Y_i)/Y_i \qquad\tag{34}$$
 # 
 # are often the best to use, particularly if the data varies in size, as may be the case for exponential data. The reduced residuals between the calculated line and the data are shown in figure 9 and should be randomly distributed about zero if the fit is good, which it would appear to be.
 # 
@@ -236,7 +236,7 @@ Q
 # 
 # where $\Gamma$ is the gamma function. Because the distribution cannot be less than zero, it is not symmetrical and has a shape skewed towards small values. The integral to find the probability is 
 # 
-# $$\displaystyle Q= \int_{\chi^2}^\infty f_{\chi^2}(x,n) dx \tag{35}$$
+# $$\displaystyle Q= \int_{\chi^2}^\infty f_{\chi^2}(x,n) dx \qquad\tag{35}$$
 # 
 # which is done numerically below using the $\mathtt{quad()}$ integrator.
 
@@ -270,11 +270,11 @@ print('{:s} {:6.3f} {:s} {:6.3f}'.format('probability of getting chi sqrd > ',ch
 # 
 # Hines & Montgomery (Probability & Statistics in Engineering & Management Sciences, pub Wiley 1990) give the variance for slope $b$ as
 # 
-# $$\displaystyle \sigma_b^2=\frac{\sigma^2}{S_{xx}} \tag{36}$$
+# $$\displaystyle \sigma_b^2=\frac{\sigma^2}{S_{xx}} \qquad\tag{36}$$
 # 
 # and for the intercept $a$
 # 
-# $$\displaystyle \sigma_a^2=\sigma^2\left(\frac{1}{S_w}+\frac{\langle x\rangle}{S_{xx}}\right)\tag{37}$$
+# $$\displaystyle \sigma_a^2=\sigma^2\left(\frac{1}{S_w}+\frac{\langle x\rangle}{S_{xx}}\right)\qquad\tag{37}$$
 # 
 # To use these equations it is necessary to obtain an estimate of the variance $\sigma^2$. For the simple linear model an unbiased estimate of the variance of the error $\epsilon_i$ is given by the reduced $\chi^2$ as $\sigma_\epsilon^2\equiv \chi^2/(n-2)$. THis can be written in terms of quantities already calculated (Hines & Montgomery 1990)  and is called the mean square error, _mse_ used in algorithm 2. Then,
 # 
@@ -282,13 +282,13 @@ print('{:s} {:6.3f} {:s} {:6.3f}'.format('probability of getting chi sqrd > ',ch
 # 
 # and 
 # 
-# $$\displaystyle \sigma_b^2=\frac{\sigma_\epsilon^2}{S_{xx}}, \quad \sigma_a^2=\sigma_\epsilon^2\left(\frac{1}{S_w}+\frac{\langle x\rangle}{S_{xx}}\right)\tag{38}$$
+# $$\displaystyle \sigma_b^2=\frac{\sigma_\epsilon^2}{S_{xx}}, \quad \sigma_a^2=\sigma_\epsilon^2\left(\frac{1}{S_w}+\frac{\langle x\rangle}{S_{xx}}\right)\qquad\tag{38}$$
 # 
 # with values $0.0056$ and $1.54$ for the data in figure 8.
 # 
 # Alternative estimates of the variance in the coefficients are quoted by Bevington & Robinson (2003), 
 # 
-# $$\displaystyle \sigma_a^2=\frac{\sum_iw_ix_i^2}{S_wS{_{xx}}},\quad \sigma_b^2= \frac{1}{S_{xx}}\tag{39}$$
+# $$\displaystyle \sigma_a^2=\frac{\sum_iw_ix_i^2}{S_wS{_{xx}}},\quad \sigma_b^2= \frac{1}{S_{xx}}\qquad\tag{39}$$
 # 
 # These variances are calculated by using the equation for error propagation, equation 20, differentiating with respect to each $y_i$. However, these equations should not be used unless the weightings are known, which they are for photon counting experiments. If weightings are unknown and a constant weighting used instead, incorrect results are obtained because both expressions 39 now depend only on $x$.
 # 
@@ -298,17 +298,17 @@ print('{:s} {:6.3f} {:s} {:6.3f}'.format('probability of getting chi sqrd > ',ch
 # 
 # The confidence intervals about any data point, and hence the whole set, can be obtained from the data. The width of these lines at a given confidence level, 95% is typical, is a measure of the overall quality of fit to the data. As the errors $\epsilon_i$ are assumed to be normally distributed and independent of one another, then the slope has the confidence interval (Hines & Montgomery 1990)
 # 
-# $$\displaystyle b_0=b\pm t_{\alpha/2}\sqrt{\frac{\sigma_\epsilon^2}{S_{xx}}}\tag{40}$$
+# $$\displaystyle b_0=b\pm t_{\alpha/2}\sqrt{\frac{\sigma_\epsilon^2}{S_{xx}}}\qquad\tag{40}$$
 # 
 # giving $b_0=0.234\pm 0.0128$ and for the intercept where $S_w=\sum w_i$,
 # 
-# $$\displaystyle a_0=a\pm t_{\alpha/2}\sqrt{ \sigma_\epsilon^2\left(\frac{1}{S_w}+\frac{\langle x\rangle^2}{S_{xx}} \right) }\tag{41}$$
+# $$\displaystyle a_0=a\pm t_{\alpha/2}\sqrt{ \sigma_\epsilon^2\left(\frac{1}{S_w}+\frac{\langle x\rangle^2}{S_{xx}} \right) }\qquad\tag{41}$$
 # 
 # which has a value $a_0=-9.27\pm 3.55$ or better $a=-9\pm 4$, see figure 8.
 # 
 # The confidence for the mean point can be constructed and this is also called the confidence line $z$ for the regression curve. It has the following form (Hines & Montgomery 1990)
 # 
-# $$\displaystyle z=y\pm t_{\alpha/2}\sqrt{ \sigma_\epsilon^2\left(\frac{1}{S_w}+\frac{(x-\langle x\rangle)^2}{S_{xx}} \right) }\tag{42}$$
+# $$\displaystyle z=y\pm t_{\alpha/2}\sqrt{ \sigma_\epsilon^2\left(\frac{1}{S_w}+\frac{(x-\langle x\rangle)^2}{S_{xx}} \right) }\qquad\tag{42}$$
 # 
 # and these lines are shown in Figure 8. The two curves have a minimum width at $\langle x\rangle$ and widen either side of this. Strictly, they are not valid outside the range of the data. Prediction lines can be constructed to project confidence limits past the data and these lines are slightly wider than the confidence lines. The prediction lines are produced by replacing $1/S_w$ by $1 + 1/S_w$ in equation 42. This takes into account the error from the model and that associated with future observations. The two sets of curves are almost identical with the particular set of data used in figure 8.
 # 

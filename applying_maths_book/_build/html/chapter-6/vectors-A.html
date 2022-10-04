@@ -770,7 +770,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-7/matrices-L.html">
-     Principal axes for Moments of Inertia
+     Principal axes of Moments of Inertia
     </a>
    </li>
    <li class="toctree-l2">
@@ -1917,11 +1917,11 @@ then <span class="math notranslate nohighlight">\(|\vec V|= \sqrt{9+16+25}=5\sqr
 <h2>2.1 Dot product<a class="headerlink" href="#dot-product" title="Permalink to this headline">#</a></h2>
 <p>The dot product of two vectors <span class="math notranslate nohighlight">\(\vec{A}\)</span> and <span class="math notranslate nohighlight">\(\vec{B}\)</span> is a number and is defined as</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle \vec A\cdot \vec B=|\vec A||\vec B|\cos(\theta) \tag{1}\]</div>
+\[\displaystyle \vec A\cdot \vec B=|\vec A||\vec B|\cos(\theta) \qquad\tag{1}\]</div>
 <p>where <span class="math notranslate nohighlight">\(|\vec A|\)</span> is the absolute value of the vector <span class="math notranslate nohighlight">\(A\)</span>, which is its length, and <span class="math notranslate nohighlight">\(\theta\)</span> is the angle between the vectors. Figure 3 shows a two-dimensional vector. The dot product is a number not a vector because the absolute values <span class="math notranslate nohighlight">\(|\vec A||\vec B|\)</span> are numbers and as shown in figure 3, it is the length of <span class="math notranslate nohighlight">\(A\)</span> times <span class="math notranslate nohighlight">\(|\vec A|\cos(\theta)\)</span>, which is the same as the length of <span class="math notranslate nohighlight">\(B\)</span> times <span class="math notranslate nohighlight">\(|\vec A|\cos(\theta)\)</span>.</p>
 <p>We can find the angle between any two vectors by rearranging equation 1;</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle \cos(\theta)=\frac{\vec A \cdot \vec B}{|\vec A||\vec B|} \tag{2}\]</div>
+\[\displaystyle \cos(\theta)=\frac{\vec A \cdot \vec B}{|\vec A||\vec B|} \qquad\tag{2}\]</div>
 <p>Before this equation can be evaluated, the vectors <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> have to be represented in a basis set, that is, as components of basis vectors. Usually, and for simplicity, we choose a basis set that runs along the <span class="math notranslate nohighlight">\(x\)</span>-, <span class="math notranslate nohighlight">\(y\)</span>-, and <span class="math notranslate nohighlight">\(z\)</span>-axis. This is described in section 2.5.</p>
 <p>In figure 2c above the centre of mass scattering angle <span class="math notranslate nohighlight">\(\chi\)</span> can be found from the dot product of <span class="math notranslate nohighlight">\(\vec w_1\cdot \vec w_1'\)</span>.</p>
 <div class="math notranslate nohighlight">
@@ -1936,7 +1936,7 @@ then <span class="math notranslate nohighlight">\(|\vec V|= \sqrt{9+16+25}=5\sqr
 <p>The dot product is not the only way we can multiply two vectors, this can be done so that
 a vector rather than the scalar is produced. The cross product is</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle \vec A\times \vec B=|\vec A||\vec B|\sin(\theta)\vec n \tag{3}\]</div>
+\[\displaystyle \vec A\times \vec B=|\vec A||\vec B|\sin(\theta)\vec n \qquad\tag{3}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\vec n\)</span> is a unit vector perpendicular to vectors <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span>. More details are given in Section 16. This product vector is at right angles to the other two, consequently the cross product is unique to vectors in a three-dimensional space. The cross product, also called the <em>vector product</em> , is used to simplify geometric calculations, such as calculating torsion angles between bonds in proteins or other molecules, or the distance of an atom from the plane of a molecule; for instance, an oxygen molecule above the plane of the haem in haemoglobin, see Q 52. Cross products have other geometric uses, such as calculating the torque when tightening a screw thread, or the angular momentum and velocity of rotating bodies. Cross products also enable us to calculate the area of a triangle or parallelogram.</p>
 </section>
 <section id="perpendicular-vectors">
@@ -1982,10 +1982,10 @@ a vector rather than the scalar is produced. The cross product is</p>
 <h2>2.7 Magnitude<a class="headerlink" href="#magnitude" title="Permalink to this headline">#</a></h2>
 <p>The magnitude of a vector <span class="math notranslate nohighlight">\(A\)</span>, which may be imagined as its length, is used as <span class="math notranslate nohighlight">\(|\vec{A}|\)</span>. If <span class="math notranslate nohighlight">\(\vec{A} = [a b c]\)</span> where <span class="math notranslate nohighlight">\(A\)</span> has components <span class="math notranslate nohighlight">\(a, b, c\)</span> in the 3-dimensional basis set <span class="math notranslate nohighlight">\((x, y, z)\)</span>, then</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle |\vec A|\sqrt{a^2+b^2+c^2} \tag{3}\]</div>
+\[\displaystyle |\vec A|\sqrt{a^2+b^2+c^2} \qquad\tag{3}\]</div>
 <p>but we can equivalently calculate</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle |\vec{A}|=\sqrt{\vec A\cdot \vec A} \tag{4}\]</div>
+\[\displaystyle |\vec{A}|=\sqrt{\vec A\cdot \vec A} \qquad\tag{4}\]</div>
 <p>because any vector is parallel to itself and therefore <span class="math notranslate nohighlight">\(\theta = 0\)</span> in the dot product. This latter equation is very useful indeed when using the computer to do calculations because the dot product is usually a in-built function.</p>
 <p><img alt="Drawing" src="../_images/vectors-fig4.png" /></p>
 <p>Figure 4. The orthogonal and normalized base vectors <span class="math notranslate nohighlight">\((i, j, k )\)</span>.</p>
@@ -2022,7 +2022,7 @@ for example, the three-dimensional vectors represented by the two sets of coordi
 \[\begin{split}\displaystyle \begin{bmatrix} a &amp; b &amp; c \end{bmatrix}^T = \begin{bmatrix} a \\ b \\c \end{bmatrix}  \end{split}\]</div>
 <p>The angle between two vectors is <span class="math notranslate nohighlight">\(\cos(\theta) = (\vec A\cdot \vec B )/|\vec{A}||\vec{B}|\)</span>, equation 2, which can be expanded in the basis set giving</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle \cos(\theta)=\frac{ad+be+cf}{\sqrt{a^2+b^2+c^2}\sqrt{d^2+e^2+f^2}} \tag{6}\]</div>
+\[\displaystyle \cos(\theta)=\frac{ad+be+cf}{\sqrt{a^2+b^2+c^2}\sqrt{d^2+e^2+f^2}} \qquad\tag{6}\]</div>
 <p>The normalization terms on the bottom of this equation are just the length of each vector as calculated by Pythagoras’ theorem. The angle between two vectors <span class="math notranslate nohighlight">\(\vec A = [3\quad 2\quad 1]\)</span> and <span class="math notranslate nohighlight">\(\vec B=[-1\quad  0 \quad 1]\)</span> is calculated as follows: the length of each vector is <span class="math notranslate nohighlight">\(|\vec A|= \sqrt{9+4+1} =\sqrt{14}\)</span> and <span class="math notranslate nohighlight">\(|\vec B|= \sqrt{1+0+1} =\sqrt 2\)</span>, and the dot product is <span class="math notranslate nohighlight">\(\displaystyle \begin{bmatrix} 3&amp;2&amp;1 \end{bmatrix}\begin{bmatrix} -1\\0\\1  \end{bmatrix}=-2\)</span> and the angle <span class="math notranslate nohighlight">\(\cos(\theta)= -2/(\sqrt 14\sqrt 2)\)</span> which is <span class="math notranslate nohighlight">\(112.2^\text{o} \)</span>.</p>
 <section id="i-colliding-molecules">
 <h3><strong>(i) Colliding molecules</strong><a class="headerlink" href="#i-colliding-molecules" title="Permalink to this headline">#</a></h3>
@@ -2063,17 +2063,17 @@ for example, the three-dimensional vectors represented by the two sets of coordi
 <h2>2.10 Unit vectors and normalizing vectors<a class="headerlink" href="#unit-vectors-and-normalizing-vectors" title="Permalink to this headline">#</a></h2>
 <p>Unit vectors, as their name suggests, have a length of <span class="math notranslate nohighlight">\(1\)</span>. A vector can be made into a unit vector by dividing by its length. If a vector is <span class="math notranslate nohighlight">\(\vec v = [a\quad b\quad c\quad d]\)</span> the normalizing condition is</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle N^2(a^2 +b^2 +c^2 +d^2)=1 \tag{7}\]</div>
+\[\displaystyle N^2(a^2 +b^2 +c^2 +d^2)=1 \qquad\tag{7}\]</div>
 <p>where <span class="math notranslate nohighlight">\(N\)</span> is the normalization constant. If, for example, <span class="math notranslate nohighlight">\(a = 2, b = -4, c = 5, d = 1\)</span>, then <span class="math notranslate nohighlight">\(N^2(4+16+25+1)=1\)</span> or <span class="math notranslate nohighlight">\(N=1/\sqrt{46}\)</span> and the normalized or unit vector is <span class="math notranslate nohighlight">\([0.295\quad 0.589\quad 0.737\quad 0.147]\)</span>.</p>
 <p>A second method is to use the dot product formula on the same vector, <span class="math notranslate nohighlight">\(\vec v \cdot \vec v\)</span>, and because these must be parallel, <span class="math notranslate nohighlight">\(\cos(\theta) = 1\)</span>, then,</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle \vec v_n =\frac{\vec v}{|\vec v |}=\frac{\vec v}{\sqrt{\vec v \cdot \vec v} }  \tag{8}\]</div>
+\[\displaystyle \vec v_n =\frac{\vec v}{|\vec v |}=\frac{\vec v}{\sqrt{\vec v \cdot \vec v} }  \qquad\tag{8}\]</div>
 <p>where <span class="math notranslate nohighlight">\(|\vec v|\)</span> is the absolute value of length of the vector</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle |\vec v|=\sqrt{\vec v \cdot \vec v} =\sqrt{a^2+b^2+c^2+d^2} \tag{9}\]</div>
+\[\displaystyle |\vec v|=\sqrt{\vec v \cdot \vec v} =\sqrt{a^2+b^2+c^2+d^2} \qquad\tag{9}\]</div>
 <p>The angle <span class="math notranslate nohighlight">\(\theta\)</span> between and  two <em>normalised</em> vectors <span class="math notranslate nohighlight">\(\vec v_n\; \vec w_n\)</span> is found using</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle \cos(\theta) =\vec v_n \cdot \vec w_n \tag{10}\]</div>
+\[\displaystyle \cos(\theta) =\vec v_n \cdot \vec w_n \qquad\tag{10}\]</div>
 </section>
 <section id="the-orthonormal-boldsymbol-i-boldsymbol-j-boldsymbol-k-base-vectors">
 <h2>3 The orthonormal <span class="math notranslate nohighlight">\(\boldsymbol i, \boldsymbol j,\boldsymbol k\)</span> base vectors<a class="headerlink" href="#the-orthonormal-boldsymbol-i-boldsymbol-j-boldsymbol-k-base-vectors" title="Permalink to this headline">#</a></h2>
@@ -2093,9 +2093,9 @@ for example, the three-dimensional vectors represented by the two sets of coordi
 \[\displaystyle \boldsymbol{i\cdot i} = \boldsymbol{j\cdot j} = \boldsymbol{k\cdot k} = 1\]</div>
 <p>because any vector is clearly parallel to itself and <span class="math notranslate nohighlight">\(\cos(0) = 1\)</span>. Secondly, the base vectors <span class="math notranslate nohighlight">\(\boldsymbol i,\boldsymbol j\)</span>, and <span class="math notranslate nohighlight">\(\boldsymbol k\)</span> are orthogonal, because they lie along axes mutually set at <span class="math notranslate nohighlight">\(90^\text{o}\)</span>; therefore <span class="math notranslate nohighlight">\(\boldsymbol{i\cdot j} =\boldsymbol{ j\cdot k} = \boldsymbol{i\cdot k} = 0\)</span>. We can calculate a dot product fairly simply with the following rules:</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle \boldsymbol{i\cdot i} = \boldsymbol{j\cdot j} = \boldsymbol{k\cdot k} = 1, \tag{11}\]</div>
+\[\displaystyle \boldsymbol{i\cdot i} = \boldsymbol{j\cdot j} = \boldsymbol{k\cdot k} = 1, \qquad\tag{11}\]</div>
 <div class="math notranslate nohighlight">
-\[\displaystyle \boldsymbol{i\cdot j} = \boldsymbol{j\cdot k} = \boldsymbol{i\cdot k} = 0 \tag{12}\]</div>
+\[\displaystyle \boldsymbol{i\cdot j} = \boldsymbol{j\cdot k} = \boldsymbol{i\cdot k} = 0 \qquad\tag{12}\]</div>
 <p>Stated in words:</p>
 <p>Calculate the dot product by multiplying both of the <span class="math notranslate nohighlight">\(\boldsymbol i\)</span> vector terms together, making <span class="math notranslate nohighlight">\(\boldsymbol {i\cdot i} = 1\)</span>, do the same for <span class="math notranslate nohighlight">\(\boldsymbol j\)</span> and <span class="math notranslate nohighlight">\(\boldsymbol k\)</span>. Ignore, or make zero, all other cross terms, such as, <span class="math notranslate nohighlight">\(\boldsymbol {i\cdot j}\)</span>.</p>
 <p>Therefore, for our example   <span class="math notranslate nohighlight">\(\vec v \cdot \vec w = 15-32-10 =-27 \)</span> and this is the same result as would be obtained from the vector dot product equation 5,</p>

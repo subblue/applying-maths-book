@@ -46,7 +46,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # Figure 2. A row and column matrix are also vectors.
 # __________
-
+# 
 # ## 2 Determinants
 # 
 # The value of a determinant is always a number or a polynomial equation. Suppose a determinant consisting of the squares of the numbers one to four is
@@ -361,7 +361,7 @@ solve( char_eqn.evalf() )   # always use numberical solution for larger polynomi
 # 
 # The general case is simply
 # 
-# $$\displaystyle E_j = \alpha-2\beta\cos\left(\frac{2\pi j}{n}\right), \qquad j=0,1,2\cdots n-1\tag{1e}$$
+# $$\displaystyle E_j = \alpha-2\beta\cos\left(\frac{2\pi j}{n}\right), \qquad j=0,1,2\cdots n-1\qquad\tag{1e}$$
 # 
 # so that the energies of any ring can be found. Technically the solutions are called the eigenvalues.
 # 
@@ -413,7 +413,7 @@ solve( char_eqn.evalf() )   # always use numberical solution for larger polynomi
 # 
 # The Hamiltonian describing the motion of $N$ electrons in the field of $M$ nuclei, written in atomic units (see chapter 1) is
 # 
-# $$\displaystyle H_{elec}=-\sum_{i=1}^N\frac{1}{2}\nabla_i^2 -\sum_{i=1}^N\sum_{a=1}^M \frac{Z_a}{r_{i,a}}+\sum_{i=1}^N\sum_{j=1}^N \frac{1}{r_{i,j}}\tag{1f}$$
+# $$\displaystyle H_{elec}=-\sum_{i=1}^N\frac{1}{2}\nabla_i^2 -\sum_{i=1}^N\sum_{a=1}^M \frac{Z_a}{r_{i,a}}+\sum_{i=1}^N\sum_{j=1}^N \frac{1}{r_{i,j}}\qquad\tag{1f}$$
 # 
 # where $\nabla^2$ is the second derivative w.r.t. $x, y$ and $z$. The summations mean that very many integrals of the form energy $\epsilon= \int\phi H\phi$ have to be calculated. However, we do not know beforehand what the wavefunctions $\phi$ for a molecule may be. We might suppose that atomic orbitals could be used but these will be distorted by the charges on nearby atoms so are of limited use alone. What is done in practice is to use a _set of orthogonal functions_ which may be like 1s orbitals but more often, for technical/mathematical reasons, are Gaussian functions. An orthonormal set of functions $\psi$ is defined by having the property
 # 
@@ -423,7 +423,7 @@ solve( char_eqn.evalf() )   # always use numberical solution for larger polynomi
 # 
 # A normal, arbitrary function $f(\bar r)$, which could be a wavefunction, can be always described by a Fourier series of orthonormal functions whose summation has coefficients $a_i$. This function is written very straightforwardly as
 # 
-# $$ f(\bar r) = \sum_{i=1}^\infty a_i\psi_i(\bar r)\tag{1g}$$
+# $$ f(\bar r) = \sum_{i=1}^\infty a_i\psi_i(\bar r)\qquad\tag{1g}$$
 # 
 # and as the _basis set_ functions $\psi$ are known the $a_i$ coefficients have to be found. This equation is exact if the summation can be taken to infinity which is not possible in practice, so the function is only approximated if there are $K$ terms, $ f(\bar r) \approx \sum_{i=1}^K a_i\psi_i(\bar r)$. How good this approximation is depends on how many terms you choose to be included or that can be included in the summation and that effectively means how big or fast your computer is. 
 # 
@@ -439,7 +439,7 @@ solve( char_eqn.evalf() )   # always use numberical solution for larger polynomi
 # 
 # The set of spin orbitals follows the pattern $\alpha,\,\beta,\, \alpha$ etc. so can be written as  
 # 
-# $$\varphi_{2i-1}=\psi(\bar r)\alpha(s),\qquad \varphi_{2i}=\psi(\bar r)\beta(s), \quad i=1,2,\cdots K\tag{1h}$$
+# $$\varphi_{2i-1}=\psi(\bar r)\alpha(s),\qquad \varphi_{2i}=\psi(\bar r)\beta(s), \quad i=1,2,\cdots K\qquad\tag{1h}$$
 # 
 # If the spatial orbitals are orthonormal, then so are the spin orbitals and this means that we can forget about the spin because, as we shall see, this is automatically accounted for when a Slater Determinant is formed.
 # 
@@ -459,7 +459,7 @@ solve( char_eqn.evalf() )   # always use numberical solution for larger polynomi
 # 
 # To ensure that antisymmetry applies to the product wavefunction $\Psi$ a linear combination is made. Using two wavefunctions functions $i$ and $j$ with electrons $1$ and $2$ this is 
 # 
-# $$\displaystyle \Psi_A(\bar x_1,\bar x_2)= \frac{1}{\sqrt{2!}}\left(\varphi_i(\bar x_1)\varphi_j(\bar x_2))-\varphi_i(\bar x_2)\varphi_j(\bar x_1)\right)\tag{1i}$$
+# $$\displaystyle \Psi_A(\bar x_1,\bar x_2)= \frac{1}{\sqrt{2!}}\left(\varphi_i(\bar x_1)\varphi_j(\bar x_2))-\varphi_i(\bar x_2)\varphi_j(\bar x_1)\right)\qquad\tag{1i}$$
 # 
 # and has the required property $\Psi_A(\bar x_1,\bar x_2)= -\Psi_A(\bar x_2,\bar x_1)$.
 # 

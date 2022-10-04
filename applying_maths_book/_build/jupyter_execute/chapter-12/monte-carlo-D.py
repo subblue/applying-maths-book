@@ -48,7 +48,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # $^*$( The problem is more complicated than this because folding is cooperative, but we shall suppose that we do not know this. The allowed and forbidden angles, which are those with large steric repulsion, produce the Ramachandran plot, which shows how much $\alpha$-helix, $\beta$-sheet, and random coil a protein contains. See Chapter 6.20 for a description of how to calculate this from the X-ray structure.)
 # 
 # A second example is the Ising spin model problem studied by physicists. In this, a two- or three-dimensional grid of paramagnetic transition metal atoms is imagined either with or without an external magnetic field. The unpaired electrons have a spin that is either 'up' or 'down'. The problem is to find the minimum energy, magnetization, or spin heat capacity when the spins interact with one another and with an external magnetic field. If the grid of atoms is small, such as $10 \times 10$, as each atom can have only one of two spin states, there are $2^{100}$ or $\approx 10^{30}$ configurations to search to find the minimum energy; again a computational disaster. Two quantum states are present for each spin, which are similar in energy. The total energy for any configuration is the sum of all these individual but similar terms. Again, the partition function summation does not obviously tend to a limit as it does in the harmonic oscillator case, and hence, all configurations have to be evaluated. Two configurations of the $2^{256}\approx 10^{77}$ possible ones in a $16 \times 16$ lattice of spins, are shown in Figure 20.
-
+# 
 # The Metropolis algorithm is a Monte Carlo method that allows various average properties to be calculated, such as energy and magnetization, by sampling mainly those configurations that are important contributors to the average value; see Metropolis et al. (1953), Frenkel & Smit (1996), Newman & Barkema (1999) and Krauth (2006). The algorithm is general and can be used to perform ray-tracing in computer graphics and to work out the 'travelling salesman' problem, which is to find the shortest route when visiting several cities. The biasing in this case is based on how far the next city is from the one you are presently at, and so gives a very low weighting to routes that zigzag the country compared to those that visit neighbours.
 # 
 # Suppose, that instead of calculating the partition function, the energy or some other quantity could be calculated directly. If this quantity is called $Q$, the equation to evaluate the average is the same as has been met before (Chapter 4.8.2) and is
@@ -57,7 +57,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # where $P(x)$ is a probability distribution and in the Metropolis algorithm the Boltzmann distribution is used which means that sampling is energy biased. If energy levels are discrete, the integral can be replaced with a summation. Alternatively, if only finite changes to a parameter are possible, a spin changing from $-1/2$ to $1/2$ for example, then the integral can also be replaced with a sum. The average, or expectation value of $Q$ becomes
 # 
-# $$\displaystyle  \langle Q \rangle =\frac{\sum_n Q_n e^{-E_n/k_BT}}{\sum_n e^{-E_n/k_BT}}=\frac{\sum_n Q_n e^{-E_n/k_BT}}{Z}\tag{13a}$$
+# $$\displaystyle  \langle Q \rangle =\frac{\sum_n Q_n e^{-E_n/k_BT}}{\sum_n e^{-E_n/k_BT}}=\frac{\sum_n Q_n e^{-E_n/k_BT}}{Z}\qquad\tag{13a}$$
 # 
 # where $Z$ is the partition function. 
 # 
@@ -77,10 +77,10 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # The ratio of rates is the same as the ratio of probabilities of going between two configurations. The detailed balance condition ensures that any one configuration can be reached from another in a finite number of steps, and this condition is called ergodicity. This condition means that no configurations are systematically missed. Furthermore, if a sufficient number of samples are used in the calculation, all configurations will be sampled in proportion to their importance in contributing to $\langle Q \rangle$. The algorithm can also be viewed as a random walk among the many configurations, preferentially adding in those that contribute most to the average. The result is that states are produced in proportion to their Boltzmann distribution just as the states in reality are supposed to do.
 # 
 # All the basics of the algorithm are now assembled. The Metropolis idea is to compare two energies $E_1$ and $E_2$ from two guessed configurations 1 and 2. If the new one, 2, has the lower energy, then this configuration is accepted. If not, the chance of the new one, 2, contributing to $\langle Q \rangle$ is guessed by comparing $e^{-(E_2-E_1)/k_BT }$ to a uniform random number from zero to one and accepting configuration 2 if the random number is smaller; otherwise, the old configuration 1 is accepted, and so on.
-
+# 
 # To illustrate using equation 13a, in the next few examples it is calculated exactly and then by the Metropolis method.  Consider calculating the average kinetic energy of a molecule of mass $m$ moving in one dimension, but doing so in contact with a heat bath at temperature $T$ so that it undergoes random thermal motion. If $v$ is the velocity at any instant, the average kinetic energy $\langle E\rangle_k$  is found with $Q(v) = mv^2/2$, and the ratio of integrals is (see also eqn 13 a) 
 # 
-# $$\displaystyle  \langle E\rangle_k  =\frac{\int_{-\infty}^\infty v^2e^{-mv^2/(2k_BT)} dv} {\int_{-\infty}^\infty e^{-mv^2/(2k_BT)}dv}=\frac{1}{2}k_BT \tag{13b} $$
+# $$\displaystyle  \langle E\rangle_k  =\frac{\int_{-\infty}^\infty v^2e^{-mv^2/(2k_BT)} dv} {\int_{-\infty}^\infty e^{-mv^2/(2k_BT)}dv}=\frac{1}{2}k_BT \qquad\tag{13b} $$
 # 
 # As $\langle E^2\rangle = 3(k_BT/2)^2$, the heat capacity is $C_V = k_B/2$. It should be noted here that in the integration 13b the energy must always be specified in terms of its parameters. In this example, this means changing $dv$ to $dE$ via $dv = dE/(2mE)^{1/2}$. Only then will integrating over $E$ return the correct result.
 # 
@@ -198,7 +198,7 @@ print('{:s} {:8.4g} {:s} {:8.4g} {:s} {:8.4g}'.format('av E=',Eav, 'av e^2=',E2a
 # 
 # Normally kinetic energy $mv^2/2$ is interpreted as that due to molecules of a gas colliding with one another rather than that of the atoms of a harmonic oscillator. If this is the case then the Maxwell speed distribution can be constructed. To do this, the velocities that are accepted in the Metropolis step are stored as the calculation proceeds. Velocity is a vector but speed is not; consequently, the angles that a molecule has with respect to any axes are integrated away on calculating the speed distribution and no longer enter into the calculation. The result is that the speed distribution depends only on $v^2$, which is interpreted as a scalar equal to the speed squared. For example, the probability per unit speed of molecules with speed $s = |v|$ is,
 # 
-# $$\displaystyle f(s) = \frac{4}{\sqrt{\pi}}\left(\frac{m}{2k_BT} \right)^{3/2}s^2e^{-ms^2/(2k_BT)}  \tag{13c}$$
+# $$\displaystyle f(s) = \frac{4}{\sqrt{\pi}}\left(\frac{m}{2k_BT} \right)^{3/2}s^2e^{-ms^2/(2k_BT)}  \qquad\tag{13c}$$
 # 
 # It can be verified that $\displaystyle \int_0^\infty f(s) ds = 1$. If the values of $v$ calculated from the Monte Carlo method are put into equation 13b, they are distributed toward smaller values of $v$, which shows the weighting that the method produces. However, if the Metropolis probability test is changed to $\displaystyle (s_2^2/s_1^2)e^{-\Delta E/(k_BT)}$ from $e^{-\Delta E/(k_BT)}$, then the results are distributed more evenly according to the Maxwell distribution. The changes to the code are shown below.
 
@@ -288,7 +288,7 @@ CV     = (E2av - Eav**2)/(kB*T**2)
 # 
 # The energy of a chain in the absence of an external magnetic field is given by
 # 
-# $$\displaystyle  E_\alpha = -J\sum_k s_ks_{k+1}  \tag{13d}$$
+# $$\displaystyle  E_\alpha = -J\sum_k s_ks_{k+1} \qquad \tag{13d}$$
 # 
 # where $s_k =\pm 1$ represents the spin on the $k^{th}$ site, and the sum is taken over all pairs $s_ks_{k+1}$. The various combinations the spins take produce the different energies $E_\alpha$. Because the exchange interaction depends on the overlap of wavefunctions, as does the related Coulomb interaction, it is of very short-range; therefore, only the nearest neighbors are important, and the summation of eqn. 13d is pairwise.
 # 
@@ -389,7 +389,7 @@ print('{:s} {:f} {:s} {:f}'.format('av energy/site =',avE/L, 'Cv =',Cv) )
 # 
 # The entropy of the equilibrium state is given by $S = k_B \ln(\Omega)$ where $\Omega$ is the number of arrangements that the spins can take. To calculate $\Omega$, the number of groups of spins p present at the end of the calculation and at a given temperature is counted; see Figure 24. This is done by searching the pattern of spins for the number of spin changes and adding one to the total. From the theory of statistics, the number of ways of choosing $N_p$ distinguishable objects from a group of $N$ distinguishable objects, where the order of choosing does not matter, is given by
 # 
-# $$\displaystyle \Omega ' = \frac{N!}{N_p!(N-N_p)!}  \tag{13e} $$
+# $$\displaystyle \Omega ' = \frac{N!}{N_p!(N-N_p)!}  \qquad\tag{13e} $$
 # 
 # This is the number of arrangements, or combinations and also the binomial coefficients. Equation 13e is a good approximation to the number of arrangements of groups of spins, when $N$ is large and the temperature is not zero, thus $\Omega \approx \Omega '$. The good agreement, Figure 23, between the equation describing the entropy per spin and that obtained from the spin state on using the Metropolis algorithm shows that this is a good approximation.
 # 

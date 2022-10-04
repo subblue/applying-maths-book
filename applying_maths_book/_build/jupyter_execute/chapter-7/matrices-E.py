@@ -169,11 +169,11 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # the characteristic equation $(A-\lambda)(D-\lambda)-BC=0$ or $\lambda^2 -(A+D)\lambda+1=0$ because $AD-BC=1$ therefore 
 # 
-# $$\displaystyle \lambda = \frac{A+D \pm\sqrt{(A+D)^2-4} }{2}\tag{23}$$
+# $$\displaystyle \lambda = \frac{A+D \pm\sqrt{(A+D)^2-4} }{2}\qquad\tag{23}$$
 # 
 # Because the wavefronts must replicate themselves, $\lambda$ cannot be a real number unless it is unity, which is a trivial result; therefore it follows that $\lambda$ is purely imaginary. In this case $(A + D)^2 \lt 4$, which means that
 # 
-# $$\displaystyle \left| \frac{A+D}{2} \right| \lt 2 \tag{24}$$
+# $$\displaystyle \left| \frac{A+D}{2} \right| \lt 2 \qquad\tag{24}$$
 # 
 # Now this is surprising; we do not need to know the values of $\lambda$ because only equation 24 needs to be obeyed. If it is obeyed, the wavefronts in the cavity replicate themselves and the cavity is stable; if not it is unstable. To design a laser cavity, the first step is to calculate the values of $A$ and $D$ that make a cavity stable with the mirror radius of curvature that have been chosen and to plot a graph of the stable region. The next step is therefore to work out an $ABCD$ matrix for a cavity.
 # 
@@ -227,7 +227,7 @@ AplusD
 # 
 # Returning to equation 23 and as equation 24 also has to be satisfied, then this is possible if the two eigenvalues $\lambda$ are
 # 
-# $$\displaystyle \lambda_{1,2}= e^{\pm i \theta} \tag{26}$$
+# $$\displaystyle \lambda_{1,2}= e^{\pm i \theta} \qquad\tag{26}$$
 # 
 # where $\theta$ is an angle such that $\cos(\theta) = (A + D)/2$ will satisfy the eigenvalues $\lambda$. 
 # 

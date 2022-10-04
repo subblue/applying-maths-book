@@ -770,7 +770,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-7/matrices-L.html">
-     Principal axes for Moments of Inertia
+     Principal axes of Moments of Inertia
     </a>
    </li>
    <li class="toctree-l2">
@@ -1608,18 +1608,18 @@ In the reaction <span class="math notranslate nohighlight">\(A + B \to product\)
 <p>and in the limit of a small time interval <span class="math notranslate nohighlight">\(d\tau\)</span>, it becomes the true derivative <span class="math notranslate nohighlight">\(\displaystyle \frac{dP_0}{d\tau}=-\sum_{R=1}^na_R\)</span>.</p>
 <p>For clarity only, a notational change is now made so that</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle a_0=\sum_{R=1}^n a_R \tag{8}\]</div>
+\[\displaystyle a_0=\sum_{R=1}^n a_R \qquad\tag{8}\]</div>
 <p>and therefore <span class="math notranslate nohighlight">\(\displaystyle \frac{dP_0}{d\tau}=-a_0\)</span>.</p>
 <p>The chance of no reaction up to time <span class="math notranslate nohighlight">\(T\)</span> is found by integrating, and is <span class="math notranslate nohighlight">\(\displaystyle P_0(T)=e^{-a_0T}\)</span>.</p>
 <p>The final result for the probability of reaction <span class="math notranslate nohighlight">\(R\)</span> occurring at time <span class="math notranslate nohighlight">\(T\)</span> is the chance of no reaction up to <span class="math notranslate nohighlight">\(T \)</span> multiplied by the chance of reacting at <span class="math notranslate nohighlight">\(T\)</span>, which is <span class="math notranslate nohighlight">\(a_R\)</span>, giving</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle P(T,R) = a_Re^{-a_0T} \tag{9}\]</div>
+\[\displaystyle P(T,R) = a_Re^{-a_0T} \qquad\tag{9}\]</div>
 <p>an expression that shows that these times are Poisson distributed. Equation 9 is a joint probability density function, as it is the chance that reaction occurs in the time interval and that it will be reaction <span class="math notranslate nohighlight">\(R\)</span>.</p>
 <p>Two terms now remain undefined. The first is the individual <span class="math notranslate nohighlight">\(a_R\)</span> and their sum <span class="math notranslate nohighlight">\(a_0\)</span>, and the second determines which reaction happens next. Calculating <span class="math notranslate nohighlight">\(a_R\)</span> is very easy, as each <span class="math notranslate nohighlight">\(a_R\)</span> is the product of the number of molecules present in a reaction of type <span class="math notranslate nohighlight">\(R\)</span> multiplied with the rate constant per unit volume.</p>
 <p>If there is just a single reaction <span class="math notranslate nohighlight">\(\mathrm{A} \overset{k_1}\longrightarrow \mathrm{B}\)</span> then <span class="math notranslate nohighlight">\(a_1=k_1N_A\)</span> where <span class="math notranslate nohighlight">\(N_A\)</span> is the number of <span class="math notranslate nohighlight">\(A\)</span> molecules present at time <span class="math notranslate nohighlight">\(T\)</span>.</p>
 <p>If the reaction is <span class="math notranslate nohighlight">\(\mathrm{A+B} \overset{k_2} \longrightarrow \mathrm{C}\)</span> then <span class="math notranslate nohighlight">\(a_2=k_2N_aN_B\)</span> and if both reactions are present in the overall reaction scheme which would then be</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle \mathrm{A} \overset{k_1}\longrightarrow \mathrm{B} \qquad \mathrm{A+B} \overset{k_2} \longrightarrow \mathrm{C} \qquad a_0=\sum a_R=a_1+a_2 \tag{10}\]</div>
+\[\displaystyle \mathrm{A} \overset{k_1}\longrightarrow \mathrm{B} \qquad \mathrm{A+B} \overset{k_2} \longrightarrow \mathrm{C} \qquad a_0=\sum a_R=a_1+a_2 \qquad\tag{10}\]</div>
 <p>In the special case where a reaction combines two identical molecules <span class="math notranslate nohighlight">\(\mathrm{A+A} \overset{k_2} \longrightarrow \)</span> the number of <em>indistinguishable combinations</em>, i.e. the number of distinct A-A pairs of the two species must be calculated and this makes</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle a = k_2\frac{N_A(N_A - 1)}{2!}\]</div>
@@ -1647,7 +1647,7 @@ In the reaction <span class="math notranslate nohighlight">\(A + B \to product\)
 \[P(T,R)= P_1\cdot P_2 = \left(a_0e^{-a_0 T} \right)\left( \frac{a_R}{a_0}\right)\]</div>
 <p>and which can be determined by choosing two uniformly distributed random numbers, <span class="math notranslate nohighlight">\(r\)</span>, each in the range 0 to 1. The equation</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle T = -\frac{1}{a_0}\ln(r) \tag{11}\]</div>
+\[\displaystyle T = -\frac{1}{a_0}\ln(r) \qquad\tag{11}\]</div>
 <p>generates a random number <span class="math notranslate nohighlight">\(T\)</span> according to the probability density function <span class="math notranslate nohighlight">\(\displaystyle P_1=a_0e^{-a_0 T}\)</span>.</p>
 <p>Equation 11 produces times that are Poisson distributed, and the time <span class="math notranslate nohighlight">\(T\)</span> is added to the current time of the reaction. The second distribution, <span class="math notranslate nohighlight">\(P_2\)</span>, is calculated by choosing a uniform random number according to the probability density function <span class="math notranslate nohighlight">\(a_R/a_0\)</span>. For example, the chance that reaction 1, (equation 10), occurs is <span class="math notranslate nohighlight">\(a_1/(a_1 + a_2)\)</span> and for reaction 2 this chance is <span class="math notranslate nohighlight">\(1 - a_1/(a_1 + a_2) = a_2/(a_1 + a_2)\)</span>. Which reaction occurs is determined by choosing a random number between 0 and 1 and seeing which of the two regions it falls into. If it falls between 0 and <span class="math notranslate nohighlight">\(a_1/(a_1 + a_2)\)</span>, reaction 1 occurs; otherwise, reaction 2 occurs. If reaction 1 occurs, <span class="math notranslate nohighlight">\(\mathrm{A} \to \mathrm{B}\)</span>, then 1 is subtracted from the original number of <span class="math notranslate nohighlight">\(A\)</span> molecules in each step of the reaction and 1 is added to the number of <span class="math notranslate nohighlight">\(B\)</span> molecules.</p>
 <p>If reaction 2 happens, <span class="math notranslate nohighlight">\(\mathrm{A+B} \overset{k_2} \to \mathrm{C}\)</span> then 1 molecule is removed from each of the numbers for <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span>. How many molecules are added and subtracted, of course, depends on the stoicheiometry of each particular reaction.</p>

@@ -770,7 +770,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="matrices-L.html">
-     Principal axes for Moments of Inertia
+     Principal axes of Moments of Inertia
     </a>
    </li>
    <li class="toctree-l2">
@@ -1910,7 +1910,7 @@ The eigenvalue - eigenvector equation is met, for example, in solving problems i
 <p>provided the function is not zero. In matrix form, the eigenvector - eigenvalue equation is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \pmb{Ax}=\lambda \pmb{x}\]</div>
-<p>where <span class="math notranslate nohighlight">\(\pmb A\)</span> is an <span class="math notranslate nohighlight">\(n \times n\)</span> square matrix, <span class="math notranslate nohighlight">\(\pmb x\)</span> is one of <span class="math notranslate nohighlight">\(n\)</span>, one-dimensional column matrices (column vectors) and each one is called an eigenvector, <span class="math notranslate nohighlight">\(\lambda\)</span>  represents one of <span class="math notranslate nohighlight">\(n\)</span> numbers, and each <span class="math notranslate nohighlight">\(\lambda\)</span> is called an eigenvalue.</p>
+<p>where <span class="math notranslate nohighlight">\(\pmb A\)</span> is an <span class="math notranslate nohighlight">\(n \times n\)</span> square matrix, <span class="math notranslate nohighlight">\(\pmb x\)</span> is one of possibly <span class="math notranslate nohighlight">\(n\)</span>, one-dimensional column matrices (column vectors) each of length <span class="math notranslate nohighlight">\(n\)</span> and each one is called an <em>eigenvector</em>, <span class="math notranslate nohighlight">\(\lambda\)</span>  represents one of <span class="math notranslate nohighlight">\(n\)</span> numbers, and each <span class="math notranslate nohighlight">\(\lambda\)</span> is called an <em>eigenvalue</em>. What this equation shows us is that the operator (matrix <span class="math notranslate nohighlight">\(\pmb A\)</span>) changes a vector <span class="math notranslate nohighlight">\(\pmb x\)</span> by stretching or contracting it by an amount <span class="math notranslate nohighlight">\(\lambda\)</span> but leaves it pointing in the same direction.</p>
 <section id="addition-and-subtraction">
 <h3><strong>Addition and subtraction</strong><a class="headerlink" href="#addition-and-subtraction" title="Permalink to this headline">#</a></h3>
 <p>To add or subtract two matrices they must have the same shape. To add or subtract a constant or another matrix their individual elements are added or subtracted. Similarly, to multiply or divide by a constant number (a scalar), each element is also multiplied or divided by this value. Multiplying two matrices together is more complicated and depends on the order with which this is done and the shapes of the two matrices; sometimes it is just not possible.</p>
@@ -2082,7 +2082,7 @@ Some properties are</p>
 &amp;=\begin{bmatrix} a_{11}b_{11}+a_{12}b_{21} &amp; a_{11}b_{12}+a_{12}b_{22} \\ a_{21}b_{11}+a_{22}b_{21} &amp; a_{21}b_{12}+a_{22}b_{22} \end{bmatrix}\end{align}\end{split}\]</div>
 <p>and it is useful to look at the pattern of elements where you can see the <span class="math notranslate nohighlight">\(\pmb{A}\)</span> matrix in the pattern of <span class="math notranslate nohighlight">\(a\)</span>’s and columns in <span class="math notranslate nohighlight">\(\pmb{B}\)</span> appear as rows in the sums. If the matrices are not square, multiplying a <span class="math notranslate nohighlight">\(n \times  m\)</span> matrix by a <span class="math notranslate nohighlight">\(m \times r\)</span> one results in a <span class="math notranslate nohighlight">\(n \times r\)</span> matrix as shown above. The equation with which to calculate the (row - column) <span class="math notranslate nohighlight">\(ij^{th}\)</span> element of any matrix multiplication is</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle C_{ij}=\sum_{k=1}^m a_{ik}b_{kj} \tag{5}\]</div>
+\[\displaystyle C_{ij}=\sum_{k=1}^m a_{ik}b_{kj} \qquad\tag{5}\]</div>
 <p>where the sum index <span class="math notranslate nohighlight">\(k\)</span> runs from <span class="math notranslate nohighlight">\(1 \to m\)</span>, the number of columns in matrix <span class="math notranslate nohighlight">\(\pmb{A}\)</span> or rows in <span class="math notranslate nohighlight">\(\pmb{B}\)</span> and <span class="math notranslate nohighlight">\(i\)</span> takes values <span class="math notranslate nohighlight">\(1 \to n\)</span> and j from <span class="math notranslate nohighlight">\(1 \to r\)</span>. Multiplying a <span class="math notranslate nohighlight">\(2 \times 3\)</span>  matrix with a <span class="math notranslate nohighlight">\(3 \times 2\)</span> one, the number of columns in the left matrix is the same as the number of rows in the right-hand one and therefore the result is a <span class="math notranslate nohighlight">\(2 \times 2\)</span> square matrix,</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle\begin{align}  &amp; 
@@ -2121,7 +2121,7 @@ by a unit column vector. For example</p>
 <p>If matrices are not square then there is only one way to multiply them: the left-hand matrix’s number of columns must equal the right-hand matrix’s number of rows. When both matrices are square, to be multiplied they must be of the same size and we can then choose which is to be the left-hand and which the right-hand side of the multiplication, and now the <em>order</em> of multiplication does matter as illustrated on the previous page. Sometimes the result is the same, i.e. <span class="math notranslate nohighlight">\(\pmb{AB} = \pmb{BA}\)</span> then the matrices are said to <em>commute</em>, but generally they do not and, therefore, <span class="math notranslate nohighlight">\(\pmb{AB} \ne \pmb{BA}\)</span>.</p>
 <p>The commutator of two square matrices <span class="math notranslate nohighlight">\(\pmb{A}\)</span> and <span class="math notranslate nohighlight">\(\pmb{B}\)</span> is also a matrix and is defined as</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle \begin{bmatrix} \pmb{A},\pmb{B} \end {bmatrix} = \pmb{AB}-\pmb{BA} \tag{8}\]</div>
+\[\displaystyle \begin{bmatrix} \pmb{A},\pmb{B} \end {bmatrix} = \pmb{AB}-\pmb{BA} \qquad\tag{8}\]</div>
 <p>If the result is the null matrix <span class="math notranslate nohighlight">\(\pmb{0}\)</span>, which is full of zeros, <span class="math notranslate nohighlight">\(\pmb{A}\)</span> and <span class="math notranslate nohighlight">\(\pmb{B}\)</span> are said to <em>commute</em>:</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle [ \pmb{A},\pmb{B} ] = \pmb{AB}-\pmb{BA}=\pmb{0}\]</div>

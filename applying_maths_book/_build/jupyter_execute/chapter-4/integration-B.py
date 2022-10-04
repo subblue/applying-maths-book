@@ -69,7 +69,7 @@
 # Integrals where the function in the numerator is the derivative of the function in the
 # denominator, evaluate to logs. For example,
 # 
-# $$\displaystyle I=\int\frac{f'(x)}{f(x)}dx =\ln(|f(x)|) +c  \tag{12}$$
+# $$\displaystyle I=\int\frac{f'(x)}{f(x)}dx =\ln(|f(x)|) +c  \qquad\tag{12}$$
 # 
 # where $f'(x)$ is the derivative of $f$ and $c$ is the constant of integration. The symbols $| \;|$ indicate that the absolute value of the function must be taken because the log of a negative number is not permissible. 
 # 
@@ -85,13 +85,13 @@
 # 
 # Related to equation 12 is the integral
 # 
-# $$\displaystyle \int\frac{f'(x)}{\sqrt{f(x)}}dx=2\sqrt{f(x)}+c  \tag{13}$$
+# $$\displaystyle \int\frac{f'(x)}{\sqrt{f(x)}}dx=2\sqrt{f(x)}+c  \qquad\tag{13}$$
 # 
 # and this can be verified by letting $f (x) = u$ and differentiating $f (x) + c$. Try this and then integrate both sides of the equation.
 #  
 # The third equation involves a function and its derivative and is the product,
 #  
-#  $$\displaystyle I=\int f(x)f'(x)dx=\frac{1}{2}f(x)^2+c . \tag{14}$$
+#  $$\displaystyle I=\int f(x)f'(x)dx=\frac{1}{2}f(x)^2+c . \qquad\tag{14}$$
 #  
 #  Notice that the function is written first, for example, 
 #  
@@ -105,7 +105,7 @@
 # 
 # In differentiating products of functions (Chapter 3.5.1), such as $u$ and $v$ where _each is itself a function of_ $x$, we used the equation,
 # 
-# $$\displaystyle \frac{d}{dx}uv =u\frac{dv}{dx}+v\frac{du}{dx}  \tag{15}$$
+# $$\displaystyle \frac{d}{dx}uv =u\frac{dv}{dx}+v\frac{du}{dx}  \qquad\tag{15}$$
 # 
 # Integrating this equation gives
 # 
@@ -113,7 +113,7 @@
 # 
 # and rearranging gives
 # 
-# $$\displaystyle \int udv= uv -\int vdu  \tag{16}$$
+# $$\displaystyle \int udv= uv -\int vdu  \qquad\tag{16}$$
 # 
 # which is the _integration by parts_ formula. This reads:
 #    

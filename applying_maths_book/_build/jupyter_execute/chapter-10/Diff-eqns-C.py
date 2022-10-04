@@ -58,7 +58,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # $\quad$**(iv)** If $\varphi(D)$ represents a polynomial in the _D_ operator, such as $\varphi(D)=D^2 + D - 3$, the effect it has on the exponential function $ e^{kx}$, for example, is
 # 
-# $$\displaystyle \varphi(D)e^{kx}=\varphi(k)e^{kx}  \tag{28}$$
+# $$\displaystyle \varphi(D)e^{kx}=\varphi(k)e^{kx}  \qquad\tag{28}$$
 # 
 # where  $\varphi(k)$ is a polynomial in $k$; for example $\displaystyle (D^2+D-3)e^{kx}=(k^2+k-3)e^{kx}$.
 # 
@@ -72,7 +72,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # $\quad$**(vi)** Generally, if $\varphi$ is a polynomial function in $D$,
 # 
-# $$\displaystyle\varphi(D)(e^{ku})=e^{kx}\varphi(D+k)u  \tag{29}$$
+# $$\displaystyle\varphi(D)(e^{ku})=e^{kx}\varphi(D+k)u  \qquad\tag{29}$$
 # 
 # For example, $\displaystyle (D-2)e^{2x}\cos(x)=e^{2x}(D-2+2)\cos(x) =-\sin(x)e^{2x}$.
 # 
@@ -208,7 +208,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # By the rules in Section 4.1 this is $\varphi(D)u + \varphi(D)t = f(x)$ but as $u$ is a solution, $\varphi(D)u = 0$ hence
 #         
-# $$\displaystyle \varphi(D)t = f(x)  \tag{30}$$
+# $$\displaystyle \varphi(D)t = f(x)  \qquad\tag{30}$$
 # 
 # The equation $\varphi(D)u = 0$ was solved in Section 4.2-3 and forms the complementary function and homogeneous solution. To solve (30) it is symbolically written as
 # 
@@ -238,7 +238,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # and by repeated differentiation $\displaystyle  \frac{1}{D^n}e^{mx}=\frac{1}{m^n}e^{mx}$. The most general form is
 # 
-# $$\displaystyle  \frac{1}{\varphi(D)}e^{mx}=\frac{1}{\varphi(m)}e^{mx}, \qquad \text{ if }\qquad \varphi(m) \ne 0 \tag{31} $$
+# $$\displaystyle  \frac{1}{\varphi(D)}e^{mx}=\frac{1}{\varphi(m)}e^{mx}, \qquad \text{ if }\qquad \varphi(m) \ne 0 \qquad\tag{31} $$
 # 
 # which means that the particular integral can be found if it is an exponential. 
 # 
@@ -317,7 +317,7 @@ ans2
 # 
 # When the function on the right of the differential equation is more complex, the particular integral can still be found. In this case, the relationship,
 # 
-# $$\displaystyle \frac{1}{\varphi(D)}e^{mx}G(x)=e^{mx}\frac{1}{\varphi(D+m)}G(x)  \tag{32}$$
+# $$\displaystyle \frac{1}{\varphi(D)}e^{mx}G(x)=e^{mx}\frac{1}{\varphi(D+m)}G(x)  \qquad\tag{32}$$
 # 
 # is used. This is done by replacing each $D$ by $D + m$ with the $m$ coming from the power in the exponential. If, for example, $\varphi(D) = D + 3$ then $\varphi(D + m) = D + 3 + m$. If the function $G(x) = 1$, then the $f(x)$ reverts to a pure exponential. The formula (32) allows a solution in cases where $\varphi(m) = 0$.
 # 
@@ -326,7 +326,7 @@ ans2
 # 
 # $$\displaystyle y_p=\frac{1}{(D-1)(D+2)}\left(e^{2x}-e^{-2x}  \right)$$
 # 
-# Using the method from the previous section, the first term is $\displaystyle \frac{1}{(D-1)(D+2)}e^{2x}=\frac{e^{2x}}{4}$. The second exponential term is $\displaystyle \frac{-1}{(D-1)(D+2)}e^{-2x}=-\frac{e^{2x}}{0}$. which cannot be solved in this way as $\varphi (m) = 0$. Instead, the solution is found in two steps; the first step in the usual way, substituting into $D − 1$, and the second using equation (32). The first step is,
+# Using the method from the previous section, the first term is $\displaystyle \frac{1}{(D-1)(D+2)}e^{2x}=\frac{e^{2x}}{4}$. The second exponential term is $\displaystyle \frac{-1}{(D-1)(D+2)}e^{-2x}=-\frac{e^{2x}}{0}$, which cannot be solved in this way as $\varphi (m) = 0$. Instead, the solution is found in two steps; the first step in the usual way, substituting into $D − 1$, and the second using equation (32). The first step is,
 # 
 # $$\displaystyle \frac{-1}{(D-1)(D+2)}e^{-2x}=\frac{1}{3(D+2)}e^{-2x}$$
 # 
@@ -384,7 +384,7 @@ ans2
 # 
 # The particular integral is then calculated as the nested integral
 # 
-# $$\displaystyle y_p=e^{k_1x}\int e^{(k_2-k_1)x}\left[\int e^{-k_2x}f(x)dx  \right] dx  \tag{34}$$
+# $$\displaystyle y_p=e^{k_1x}\int e^{(k_2-k_1)x}\left[\int e^{-k_2x}f(x)dx  \right] dx  \qquad\tag{34}$$
 # 
 # If we consider again $\displaystyle(D^2 +D-2)y=x^3e^{-2x}$ ,the roots are $k_1 = 1$ and $k_2 = -2$ then
 # 
@@ -424,7 +424,7 @@ collect(expand(ans),exp(-2*x))
 # 
 # where for clarity the abbreviations $2h = c/m$ and $\displaystyle \omega^2 = k_f /m$ are made. The natural frequency of the oscillator is $\omega$. In $D$ operator notation, this equation is $\displaystyle D^2 + 2hD + \omega^2 x = 0$. Using the solutions developed in Section 4.4–9 the characteristic function can be written down directly after finding the roots of the equation $\displaystyle k^2 + 2hk + \omega^2 = 0$. These are $\displaystyle k = -h \pm \sqrt{ h^2 - \omega^2 }$, therefore, the homogeneous solution for the displacement at time $t$ is.
 # 
-# $$\displaystyle x=Ae^{(-h+\sqrt{h^2-\omega^2} )t} + Be^{(-h-\sqrt{h^2-\omega^2} )t}  \tag{36}$$
+# $$\displaystyle x=Ae^{(-h+\sqrt{h^2-\omega^2} )t} + Be^{(-h-\sqrt{h^2-\omega^2} )t}  \qquad\tag{36}$$
 # 
 # where $A$ and $B$ are constants determined by the initial conditions. This equation is more conveniently written as $\displaystyle x = Ae^{m_1t} + Be^{m_2t}$  using the abbreviations $\displaystyle m_{1,2} = -h \pm \sqrt{h^2 - \omega^2}$. The term $\sqrt{h^2 - \omega^2}$ has the dimensions of frequency but may be a complex number as the square root can negative, or it may be real or zero, therefore it is necessary to identify these different conditions.
 # 
@@ -463,7 +463,7 @@ collect(expand(ans),exp(-2*x))
 # 
 # As the exponentials are complex numbers it is sometimes convenient to write the constants as $\displaystyle A=\frac{C}{2}e^{i\theta},\; B=\frac{C}{2}e^{-i\theta}$ where $C$ and $\theta$ are new constants that depend on the initial conditions. This make
 # 
-# $$\displaystyle x= Ce^{-ht}\cos(\omega_1t+\theta) \tag{36a}$$
+# $$\displaystyle x= Ce^{-ht}\cos(\omega_1t+\theta) \qquad\tag{36a}$$
 # 
 # This solution can also be written as 
 # 

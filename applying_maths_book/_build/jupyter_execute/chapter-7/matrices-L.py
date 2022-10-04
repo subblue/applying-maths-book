@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 # coding: utf-8
 
+# # Principal axes of Moments of Inertia
+
 # In[1]:
 
 
@@ -12,8 +14,7 @@ from numpy import linalg as LA
 plt.rcParams.update({'font.size': 16})  # set font size for plots
 
 
-# ### Principal axes for Moments of Inertia
-# 
+# ## Introduction
 # We can cause any mass, such as a ball or spanner, to spin in any direction whatsoever with respect to itself; spin up, spin down, left, right, or any combination. If we calculate the moment of inertia about each of the axes the mass is spinning, we find that it is always possible to represent the motion and moments as a linear combination of three principal axes, which are intrinsic to the body and are defined by the shape and mass of the body itself. It is not so surprising that we can find a unique set of axes because we know that we can
 # decompose any vector into its basis vectors, for example along the $x-, y-$, or $z$-axes for the
 # unit vectors $i, j, k$. When decomposing the motion or moments of inertia, if each does not
@@ -69,7 +70,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # The $x$ component for the $k^{th}$ atom is found by expanding the dot product as $x_k\omega_x + y_k\omega_y + z_k\omega_z$ and then multiplying by $x_km_k$ and rearranging a little
 # 
-# $$\displaystyle \pmb{J}_{x,k} = m_k(r_k^2-x_k^2)\omega_x -m_kx_ky_k\omega_y-m_kx_kz_k\omega_z \tag{74}$$
+# $$\displaystyle \pmb{J}_{x,k} = m_k(r_k^2-x_k^2)\omega_x -m_kx_ky_k\omega_y-m_kx_kz_k\omega_z \qquad\tag{74}$$
 # 
 # and there are similar equations for the $y$ and $z$ direction components.
 # 

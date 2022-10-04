@@ -770,7 +770,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-7/matrices-L.html">
-     Principal axes for Moments of Inertia
+     Principal axes of Moments of Inertia
     </a>
    </li>
    <li class="toctree-l2">
@@ -1745,7 +1745,7 @@ title="Print to PDF"
 <p>While the series solution method will be described in general, in quantum mechanics and in some other problems, the equations often have a form whose solution is well known because the equation has a specific name. The harmonic oscillator is solved using Hermite’s differential equation and the hydrogen atom requires Legendre’s and Laguerre’s equations. Other commonly used equations are named after Helmholtz, Laplace, and Bessel.</p>
 <p>Many functions can be expanded as a power series that has the form</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle  y=a_0 +a_1x+a_2x^2 +a_3x^3 +\cdots+a_nx^n +\cdots \tag{38}\]</div>
+\[\displaystyle  y=a_0 +a_1x+a_2x^2 +a_3x^3 +\cdots+a_nx^n +\cdots \qquad\tag{38}\]</div>
 <p>with constants <span class="math notranslate nohighlight">\(a_0, a_1\)</span>, etc. as described in Chapter 5.</p>
 <p>By taking derivatives of <span class="math notranslate nohighlight">\(y\)</span> based on this expansion, the differential equation can be reconstructed in terms of the powers of <span class="math notranslate nohighlight">\(x\)</span> and these constants. To find the constants, the powers of <span class="math notranslate nohighlight">\(x\)</span> are collected together and the resulting group of constants solved assuming that each group of them is zero. What results is a recursion formula with which to calculate the constants and so the equation is solved without any formal integration. It is assumed that the solution can be found with this method, because this is ‘usually’ the case for problems in chemical physics. There is a simple way to check if a series solution is possible and if not, a related method due to Frobenius can be tried in these cases.</p>
 <section id="i-the-basic-series-method">
@@ -1815,7 +1815,7 @@ first two terms in the expansion must then be examined. These are <span class="m
 <h3><strong>(iii) The Hermite equation</strong><a class="headerlink" href="#iii-the-hermite-equation" title="Permalink to this headline">#</a></h3>
 <p>The Hermite equation is important because it leads to the solution of the Schroedinger equation for the quantum mechanical harmonic oscillator. This is discussed at the end of this section but first a method of solution is determined. The equation has the form</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle \frac{d^2y}{dx^2}-2x\frac{dy}{dx}+2\gamma y=0  \tag{39}\]</div>
+\[\displaystyle \frac{d^2y}{dx^2}-2x\frac{dy}{dx}+2\gamma y=0  \qquad\tag{39}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\gamma\)</span> is a real number, Solving as a series leads to the coefficients</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle \begin{align}2a_2+6a_3x+12a_4x^2+\cdots  \quad + (n+1)(n+2)a_{n+2}x^n&amp;+\cdots \\
@@ -1845,7 +1845,7 @@ H_0(x)=1 &amp; H_1(x)=x \\ H_2(x)=4x^2-2 &amp; H_3(x)=8x^3+12x \\H_4(x)=16x^4-48
 <p>where <span class="math notranslate nohighlight">\(c_1\)</span> and <span class="math notranslate nohighlight">\(c_2\)</span> are two new constants that are determined by the initial conditions.</p>
 <p>The equation</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle \frac{d^2y}{dx^2}+(2\gamma-1-x^2)y=0 \tag{40}\]</div>
+\[\displaystyle \frac{d^2y}{dx^2}+(2\gamma-1-x^2)y=0 \qquad\tag{40}\]</div>
 <p>with <span class="math notranslate nohighlight">\(\gamma\)</span> as a constant is related to the Hermite equation if <span class="math notranslate nohighlight">\(\displaystyle y=ve^{-x^2/2}\)</span>, where <span class="math notranslate nohighlight">\(v\)</span> is a function of <span class="math notranslate nohighlight">\(x\)</span>, then the second derivative is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle  \frac{d^2y}{dx^2}=\left(\frac{d^2v}{dx^2}-2x\frac{dv}{dx}+(x^2-1)v  \right)e^{-x^2/2}\]</div>

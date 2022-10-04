@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Principal axes for Moments of Inertia &#8212; Applying Maths in the Chemical &amp; Biomolecular Sciences</title>
+    <title>Principal axes of Moments of Inertia &#8212; Applying Maths in the Chemical &amp; Biomolecular Sciences</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -770,7 +770,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     Principal axes for Moments of Inertia
+     Principal axes of Moments of Inertia
     </a>
    </li>
    <li class="toctree-l2">
@@ -1481,17 +1481,17 @@ title="Print to PDF"
     </div>
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   Principal axes for Moments of Inertia
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction">
+   Introduction
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#formal-description-of-the-method">
    15.8 Formal description of the method
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#calculating-a-molecule-s-moments-of-inertia">
      Calculating a molecule’s moments of inertia:
     </a>
@@ -1507,7 +1507,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Principal axes for Moments of Inertia</h1>
+                <h1>Principal axes of Moments of Inertia</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -1517,17 +1517,17 @@ title="Print to PDF"
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   Principal axes for Moments of Inertia
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction">
+   Introduction
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#formal-description-of-the-method">
    15.8 Formal description of the method
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#calculating-a-molecule-s-moments-of-inertia">
      Calculating a molecule’s moments of inertia:
     </a>
@@ -1544,7 +1544,9 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="cell docutils container">
+  <section class="tex2jax_ignore mathjax_ignore" id="principal-axes-of-moments-of-inertia">
+<h1>Principal axes of Moments of Inertia<a class="headerlink" href="#principal-axes-of-moments-of-inertia" title="Permalink to this headline">#</a></h1>
+<div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import all python add-ons etc that will be needed later on</span>
 <span class="o">%</span><span class="k">matplotlib</span> inline
@@ -1556,8 +1558,8 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<section id="principal-axes-for-moments-of-inertia">
-<h1>Principal axes for Moments of Inertia<a class="headerlink" href="#principal-axes-for-moments-of-inertia" title="Permalink to this headline">#</a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h2>
 <p>We can cause any mass, such as a ball or spanner, to spin in any direction whatsoever with respect to itself; spin up, spin down, left, right, or any combination. If we calculate the moment of inertia about each of the axes the mass is spinning, we find that it is always possible to represent the motion and moments as a linear combination of three principal axes, which are intrinsic to the body and are defined by the shape and mass of the body itself. It is not so surprising that we can find a unique set of axes because we know that we can
 decompose any vector into its basis vectors, for example along the <span class="math notranslate nohighlight">\(x-, y-\)</span>, or <span class="math notranslate nohighlight">\(z\)</span>-axes for the
 unit vectors <span class="math notranslate nohighlight">\(i, j, k\)</span>. When decomposing the motion or moments of inertia, if each does not
@@ -1572,10 +1574,10 @@ contain components from any of the others, then the axes must be orthogonal and 
 <p>In calculating the moment of inertia, we are not interested in the exact formula for a particular molecule, which is often very complicated and of no intrinsic interest. We are interested, however, in the numerical values of the moment of inertia and their directions with respect to the molecule, because we ultimately want to calculate bond lengths. A very elegant eigenvalue - eigenvector matrix method can automatically find the principal axes and the moments of inertia of very complex molecules. The algorithm with which to do this is shown below. The eigenvalues produced are the moments of inertia; the eigenvectors are used to produce the principal or inertial axes; eigenvectors always produce geometry! The method is described next; equation (75) is the one we will use.</p>
 <p><img alt="Drawing" src="../_images/matrices-fig72.png" /></p>
 <p>Figure 72. Approximate location of the centre of mass together with two of the principal rotation axes. The third, describing rotational motion in the plane of the figure, is perpendicular to the other axes and points out of the plane of the figure. The molecule rotates about the centre of mass or gravity. This need not be situated on an atom.</p>
-<hr class="docutils" />
 </section>
+<hr class="docutils" />
 <section id="formal-description-of-the-method">
-<h1>15.8 Formal description of the method<a class="headerlink" href="#formal-description-of-the-method" title="Permalink to this headline">#</a></h1>
+<h2>15.8 Formal description of the method<a class="headerlink" href="#formal-description-of-the-method" title="Permalink to this headline">#</a></h2>
 <p>If all the atoms are rigidly connected together, the <span class="math notranslate nohighlight">\(k^{th}\)</span> atom and its velocity vector <span class="math notranslate nohighlight">\(\pmb{v}_k\)</span>, are
 related to the angular velocity of the molecule <span class="math notranslate nohighlight">\(\pmb{\omega}\)</span> about the centre of mass as</p>
 <div class="math notranslate nohighlight">
@@ -1598,7 +1600,7 @@ all <span class="math notranslate nohighlight">\(n\)</span> atoms and is</p>
 \[\begin{split}\displaystyle \pmb{J}_{(x,y,z),k}= m_kr_k^2\begin{bmatrix} \omega_x\\ \omega_y \\ \omega_x \end{bmatrix}-m_k\left(\begin{bmatrix} x_k&amp; y_k &amp; z_k \end{bmatrix}\begin{bmatrix} \omega_x\\ \omega_y \\ \omega_x \end{bmatrix} \right)\begin{bmatrix} x_k\\ y_k \\ z_k \end{bmatrix} \end{split}\]</div>
 <p>The <span class="math notranslate nohighlight">\(x\)</span> component for the <span class="math notranslate nohighlight">\(k^{th}\)</span> atom is found by expanding the dot product as <span class="math notranslate nohighlight">\(x_k\omega_x + y_k\omega_y + z_k\omega_z\)</span> and then multiplying by <span class="math notranslate nohighlight">\(x_km_k\)</span> and rearranging a little</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle \pmb{J}_{x,k} = m_k(r_k^2-x_k^2)\omega_x -m_kx_ky_k\omega_y-m_kx_kz_k\omega_z \tag{74}\]</div>
+\[\displaystyle \pmb{J}_{x,k} = m_k(r_k^2-x_k^2)\omega_x -m_kx_ky_k\omega_y-m_kx_kz_k\omega_z \qquad\tag{74}\]</div>
 <p>and there are similar equations for the <span class="math notranslate nohighlight">\(y\)</span> and <span class="math notranslate nohighlight">\(z\)</span> direction components.</p>
 <p>By comparing coefficients of <span class="math notranslate nohighlight">\(\omega_x, \omega_y\)</span>, and <span class="math notranslate nohighlight">\(\omega_z\)</span> in equations 74 and 75, the diagonal terms in this matrix are</p>
 <div class="math notranslate nohighlight">
@@ -1631,7 +1633,7 @@ J_z&amp;=I_{xz}\omega_x+I_{yz}\omega_y + I_{zz}\omega_z \end{align}\end{split}\]
 <p>Note that distances are in angstroms, and the masses of the common isotopes, <span class="math notranslate nohighlight">\(^{16}\)</span>O and <span class="math notranslate nohighlight">\(^{12}\)</span>C are in atomic mass units, therefore, we take the mass to be 16 and 12 respectively. The units of the moment of inertia can be changed to kg m<span class="math notranslate nohighlight">\(^2\)</span> units at the end of the calculation. Note that the coordinates are each adjusted to the centre of mass before the calculation of the moments of inertia begins. The centre of mass is labelled ‘com’.</p>
 <p>The order of the atoms is the same as for their coordinates</p>
 <section id="calculating-a-molecule-s-moments-of-inertia">
-<h2>Calculating a molecule’s moments of inertia:<a class="headerlink" href="#calculating-a-molecule-s-moments-of-inertia" title="Permalink to this headline">#</a></h2>
+<h3>Calculating a molecule’s moments of inertia:<a class="headerlink" href="#calculating-a-molecule-s-moments-of-inertia" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># data is for ethanol </span>
@@ -1742,6 +1744,7 @@ radius of gyration /m [5.77030049e-11 1.07209945e-10 1.14575504e-10]
 <hr class="docutils" />
 <p>Note that these results should be rounded to four figures, as this is the precision of the data. The rotational constants compare well with experimentally measured values which are, <span class="math notranslate nohighlight">\(A = 1.18, B = 0.318, C = 0.277\,\mathrm{ cm^{-1}}\)</span>. The inertial axes can now be drawn on top of the molecular structure. By convention, <span class="math notranslate nohighlight">\(Ic\)</span> labels the largest moment of inertia and <span class="math notranslate nohighlight">\(Ia\)</span> the smallest. Note that the units we use are in atomic mass units <span class="math notranslate nohighlight">\(\times\)</span> angstrom squared, which are equivalent to <span class="math notranslate nohighlight">\(1.667 \cdot 10^{47}\,\mathrm{ kg\,m^2}\)</span>.</p>
 <p>As might have been anticipated, the centre of mass is between the heavier atoms and is almost in the plane of these atoms. The smallest moment of inertia is about an axis in the plane of the OCC atoms and it points in the OC direction as shown approximately along the ‘line’ of the CCO atoms. The two largest moments of inertia, which are similar in value, describe motion perpendicular to this axis and are larger because the atoms are further from the axes. The new inertial axes, which are parallel to the moments of inertia, are drawn in proportion to the size of each eigenvector component from the initial molecular <span class="math notranslate nohighlight">\(x, y\)</span>, and <span class="math notranslate nohighlight">\(z\)</span>-axes; the <span class="math notranslate nohighlight">\(Ia\)</span> axis has <span class="math notranslate nohighlight">\(x, y, z\)</span> components of approximately <span class="math notranslate nohighlight">\(0.29, 0.8, -0.53\)</span> as shown in the modal matrix of eigenvectors.</p>
+</section>
 </section>
 </section>
 

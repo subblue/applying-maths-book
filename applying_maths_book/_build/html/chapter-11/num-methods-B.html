@@ -770,7 +770,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-7/matrices-L.html">
-     Principal axes for Moments of Inertia
+     Principal axes of Moments of Inertia
     </a>
    </li>
    <li class="toctree-l2">
@@ -1729,23 +1729,23 @@ title="Print to PDF"
 <h2>4.1 Euler’s and other methods of numerical approximation<a class="headerlink" href="#euler-s-and-other-methods-of-numerical-approximation" title="Permalink to this headline">#</a></h2>
 <p>The analytic or algebraic solution to an equation produces a function whose values are continuous in <span class="math notranslate nohighlight">\(x,\, y\)</span>, or <span class="math notranslate nohighlight">\(t\)</span>, and that allows us to calculate its value at any point we might choose, there being, effectively, an infinite number to choose from. A general feature of the numerical solution of a differential equation is that it is converted into recursive finite - difference equation and this is because a numerical solution can be obtained only at relatively few discrete values. The general first-order differential equation is</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle \frac{dy}{dt}=f(t,y)  \tag{16}\]</div>
+\[\displaystyle \frac{dy}{dt}=f(t,y)  \qquad\tag{16}\]</div>
 <p>which means that <span class="math notranslate nohighlight">\(f(t, y)\)</span> is a function of <span class="math notranslate nohighlight">\(y\)</span> and <span class="math notranslate nohighlight">\(t\)</span> such as <span class="math notranslate nohighlight">\(te^{-t} + y + 3\)</span>. The initial condition is <span class="math notranslate nohighlight">\(y(t_0) = y_0\)</span>. The differential has to be approximated in some way, because we can only evaluate at discrete points, and the simplest way to do this is to write</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle  \frac{\Delta y}{\Delta t}\approx \frac{dy}{dt}=f(t,y)  \tag{17}\]</div>
+\[\displaystyle  \frac{\Delta y}{\Delta t}\approx \frac{dy}{dt}=f(t,y)  \qquad\tag{17}\]</div>
 <p>If <span class="math notranslate nohighlight">\(\Delta t=t_{n+1}-t_n \equiv h\)</span> is small enough, then this first-order approximation is a good one. The change in <span class="math notranslate nohighlight">\(y\)</span> is calculated similarly,</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle  \frac{\Delta y}{\Delta t}= \frac{y_{n+1}-y_n}{h}\approx f(t_n,y_n)  \tag{18}\]</div>
+\[\displaystyle  \frac{\Delta y}{\Delta t}= \frac{y_{n+1}-y_n}{h}\approx f(t_n,y_n)  \qquad\tag{18}\]</div>
 <p>Rearranging gives the Euler method equations</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle  y_{n+1}=y_n+hf(t_n,y_n)  \tag{19a}\]</div>
+\[\displaystyle  y_{n+1}=y_n+hf(t_n,y_n)  \qquad\tag{19a}\]</div>
 <div class="math notranslate nohighlight">
-\[\displaystyle  y_0=y(t_0), \qquad t_n=t_0+nh, \qquad n=0,\,1,\,2\cdots N-1 \tag{19b}\]</div>
+\[\displaystyle  y_0=y(t_0), \qquad t_n=t_0+nh, \qquad n=0,\,1,\,2\cdots N-1 \qquad\tag{19b}\]</div>
 <p>The <span class="math notranslate nohighlight">\(n^{th}\)</span> value of <span class="math notranslate nohighlight">\(t\)</span> is <span class="math notranslate nohighlight">\(t_n = t_0 + nh,\,t_0\)</span> being the initial time when <span class="math notranslate nohighlight">\(n = 0\)</span>, and the initial condition is <span class="math notranslate nohighlight">\(y(t_0)=y_0\)</span> .The times are <span class="math notranslate nohighlight">\(t_0,\,t_1 =t_0 +h,\,t_2 =t_0 +2h\)</span>, and so forth. The grey area in Fig 7 (left) is <span class="math notranslate nohighlight">\(hf(t_n, y_n)\)</span> which approximates the whole area under the curved line in the Euler method.</p>
 <p>The calculation is easy to implement, but several terms have to be defined before starting. These are the initial condition, which means <span class="math notranslate nohighlight">\(t_0\)</span> and <span class="math notranslate nohighlight">\(y(t_0) = y_0\)</span>, the final time to stop the calculation <span class="math notranslate nohighlight">\(t_{max}\)</span>, and the number of points <span class="math notranslate nohighlight">\(N\)</span>. These will define <span class="math notranslate nohighlight">\(h\)</span> as <span class="math notranslate nohighlight">\(\displaystyle h= \frac{T_{max}-t_0}{N-1}\)</span>. Choosing <span class="math notranslate nohighlight">\(N\)</span> is not difficult; as a rule-of-thumb start with 100 points and see what happens, then repeatedly double or treble this value. Increasing <span class="math notranslate nohighlight">\(N\)</span> reduces <span class="math notranslate nohighlight">\(h\)</span> and this will often have to be <span class="math notranslate nohighlight">\(\ll\)</span> 0.01, but if it is too small, the calculation will take a considerable time to complete and therefore some compromise is always necessary.</p>
 <p>Sometimes, the solution of the equation is sought to smaller values than <span class="math notranslate nohighlight">\(t_0\)</span>, effectively running the calculation backwards, which means making <span class="math notranslate nohighlight">\(h\)</span> negative. In this case, the time has to be reduced as <span class="math notranslate nohighlight">\(t_n=t_0-nh\)</span> and the consecutive values of y calculated as</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle y_{n+1} = y_n - hf(t_n, y_n) \tag{20}\]</div>
+\[\displaystyle y_{n+1} = y_n - hf(t_n, y_n) \qquad\tag{20}\]</div>
 <p><img alt="Drawing" src="../_images/num-methods-fig7.png" /></p>
 <p>Fig. 7. The grey area is calculated in the Euler method (left) only very approximately measures the true area under the curve. On the right the improved Euler method is shown and is clearly better. The notation is <span class="math notranslate nohighlight">\(f_n \equiv f(t_n,y_n)\)</span>. The smaller <span class="math notranslate nohighlight">\(h\)</span> becomes the better the curve is approximated.</p>
 </section>
@@ -1829,13 +1829,13 @@ title="Print to PDF"
 \[\displaystyle \frac{h}{2}\Big(f(t_n,y_n)+f(t_{n+1},y_{n+1})\Big)\]</div>
 <p>The better method thus has an update term</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle y_{n+1}=y_n+\frac{h}{2}\left[f(t_n,y_n)+f(t_{n+1},y_{n+1})\right]  \tag{21}\]</div>
+\[\displaystyle y_{n+1}=y_n+\frac{h}{2}\left[f(t_n,y_n)+f(t_{n+1},y_{n+1})\right]  \qquad\tag{21}\]</div>
 <p>Some simplifications can now be made by replacing <span class="math notranslate nohighlight">\(t_{n+1} = t_n + h\)</span> and <span class="math notranslate nohighlight">\(y_{n+1} = y_n + hf(t_n, y_n)\)</span>, which is equation 19, into the second occurrence of the function to become the Modified Euler formula, which is sometimes also called Heun’s method. The result is</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle y_{n+1}=y_n+\frac{h}{2}\left[f(t_n,y_n)+f(t_n+h,y_n+hf(t_n,y_n))\right]  \tag{22}\]</div>
+\[\displaystyle y_{n+1}=y_n+\frac{h}{2}\left[f(t_n,y_n)+f(t_n+h,y_n+hf(t_n,y_n))\right]  \qquad\tag{22}\]</div>
 <p>which contains a function within a function. This is more clearly written in three steps by defining new terms <span class="math notranslate nohighlight">\(k_1,k_2\)</span>;</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle k_1 =f(t_n,y_n), \quad k_2 =f(t_n +h,y_n +hk_1),\quad  y_{n+1} =y_n +h(k_1 +k_2)/2 \tag{23}\]</div>
+\[\displaystyle k_1 =f(t_n,y_n), \quad k_2 =f(t_n +h,y_n +hk_1),\quad  y_{n+1} =y_n +h(k_1 +k_2)/2 \qquad\tag{23}\]</div>
 <p>This modification replaces the simpler expression in the  loop of the basic Euler code (Algorithm 9).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1942,15 +1942,15 @@ The MD simulation proceeds by calculating the forces between pairs of particles 
 \[\displaystyle r(t_0-\Delta t)=r(t_0)-v(t_0)\Delta t+\frac{(\Delta t)^2}{2!}\left( \frac{d^2r}{dt^2} \right)_{t_0} -\frac{(\Delta t)^3}{3!}\left( \frac{d^3r}{dt^3} \right)_{t_0} +\cdots \]</div>
 <p>where the velocity <span class="math notranslate nohighlight">\(v(t_0)=(dx/dt)_{t_0}\)</span>. The acceleration is <span class="math notranslate nohighlight">\((d^2r/dt^2)_{t_0}=f(t_{t_0})/m\)</span> where <span class="math notranslate nohighlight">\(m\)</span> is the mass and <span class="math notranslate nohighlight">\(f\)</span> is the force, which is calculated from the potential at the position corresponding to time <span class="math notranslate nohighlight">\(t_0\)</span>. The sum and the difference of increments in <span class="math notranslate nohighlight">\(r\)</span> are</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle  r(t_0+\Delta t)+r(t_0-\Delta t)=2r(t_0)+(\Delta t)^2\left( \frac{d^2r}{dt^2} \right)_{t_0}+\cdots \tag{24}\]</div>
+\[\displaystyle  r(t_0+\Delta t)+r(t_0-\Delta t)=2r(t_0)+(\Delta t)^2\left( \frac{d^2r}{dt^2} \right)_{t_0}+\cdots \qquad\tag{24}\]</div>
 <div class="math notranslate nohighlight">
-\[\displaystyle  r(t_0+\Delta t)-r(t_0-\Delta t)=2\Delta t r(t_0)+2\frac{(\Delta t)^3}{3!}\left( \frac{d^3r}{dt^3} \right)_{t_0} +\cdots \tag{25}\]</div>
+\[\displaystyle  r(t_0+\Delta t)-r(t_0-\Delta t)=2\Delta t r(t_0)+2\frac{(\Delta t)^3}{3!}\left( \frac{d^3r}{dt^3} \right)_{t_0} +\cdots \qquad\tag{25}\]</div>
 <p>If the time increment <span class="math notranslate nohighlight">\(\Delta t\)</span> is small, the third and higher derivatives can be ignored giving from equation 24</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle  r(t_0+\Delta t)\approx 2r(t_0)-r(t_0-\Delta t)+\frac{f(t_0)}{m}(\Delta t)^2  \tag{26}\]</div>
+\[\displaystyle  r(t_0+\Delta t)\approx 2r(t_0)-r(t_0-\Delta t)+\frac{f(t_0)}{m}(\Delta t)^2  \qquad\tag{26}\]</div>
 <p>which will be the new position of the particle after time step <span class="math notranslate nohighlight">\(\Delta t\)</span>. The velocity is obtained from equation 25 as the difference</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle v(t_0)\approx \frac{r(t_0+\Delta t)-r(t_0-\Delta t)}{2\Delta t}  \tag{27}\]</div>
+\[\displaystyle v(t_0)\approx \frac{r(t_0+\Delta t)-r(t_0-\Delta t)}{2\Delta t}  \qquad\tag{27}\]</div>
 <p>and not directly. These two equations give the new position and velocity and form the basis of the Verlet algorithm.</p>
 <p>To begin the calculation, two positions have to be known; equation 26 indicates that <span class="math notranslate nohighlight">\(r\)</span> is needed at times <span class="math notranslate nohighlight">\(t_0\)</span> and <span class="math notranslate nohighlight">\(t_0 - \Delta t\)</span>. If <span class="math notranslate nohighlight">\(\Delta t\)</span> is small, the latter can be approximated as <span class="math notranslate nohighlight">\(r(t_0) - v_0\Delta t\)</span> with initial velocity <span class="math notranslate nohighlight">\(v_0\)</span>. It seems strange to have to calculate values before the initial time, which could be negative, but this is what is required.</p>
 <p>The next step of the algorithm updates positions and forces and increments the time. The positions at the old time <span class="math notranslate nohighlight">\(t_0 - \Delta t\)</span> can be discarded; the current positions become the old ones and the new positions become the current ones. The force is also re-evaluated at the new position. This process is repeated in a loop with as many steps as are required. The forces are initially calculated outside the loop, and are calculated again at the end of the loop and are therefore ready to use when the loop restarts.</p>
@@ -1976,15 +1976,15 @@ The MD simulation proceeds by calculating the forces between pairs of particles 
 <p>There are other widely used versions of this algorithm, examples are the velocity Verlet and the Beeman algorithm, both of which give a better estimation of the velocities (see Frenkel &amp; Smit 1996). This is because there is no subtraction of two large numbers as in equation 27, which is the main disadvantage of the basic Verlet algorithm.</p>
 <p>The equations for the velocity Verlet method can be shown to be the same as for the normal Verlet. The position and velocity equations are</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle  r(t_0+\Delta t)= r(t_0)+v(t_0)\Delta t+\frac{f(t_0)}{m}(\Delta t)^2  \tag{28}\]</div>
+\[\displaystyle  r(t_0+\Delta t)= r(t_0)+v(t_0)\Delta t+\frac{f(t_0)}{m}(\Delta t)^2  \qquad\tag{28}\]</div>
 <div class="math notranslate nohighlight">
 \[\displaystyle v(t_0+\Delta t)= v(t_0)+\frac{f(t_0)+f(t_0+\Delta t)}{2m}  \]</div>
 <p>and because the force is needed in the velocity equation at <span class="math notranslate nohighlight">\(t_0+\Delta t\)</span>, the calculation has to be done in two steps. The position is calculated using 28, then the velocity at half a step calculated using</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle v(t_0 + \Delta t/2) = v(t_0) + f (t_0)/2m \tag{29}\]</div>
+\[\displaystyle v(t_0 + \Delta t/2) = v(t_0) + f (t_0)/2m \qquad\tag{29}\]</div>
 <p>and the force is calculated at <span class="math notranslate nohighlight">\(t_0 + \Delta t\)</span>, using the position <span class="math notranslate nohighlight">\(r(t_0 + \Delta t)\)</span>, and the velocity finally obtained is</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle v(t_0 + \Delta t) = v(t_0 + \Delta t/2) + f (t_0 + \Delta t)/2m \tag{30}\]</div>
+\[\displaystyle v(t_0 + \Delta t) = v(t_0 + \Delta t/2) + f (t_0 + \Delta t)/2m \qquad\tag{30}\]</div>
 </section>
 <section id="basic-verlet-algorithm">
 <h2>4.9 Basic Verlet Algorithm<a class="headerlink" href="#basic-verlet-algorithm" title="Permalink to this headline">#</a></h2>
@@ -2048,7 +2048,7 @@ The MD simulation proceeds by calculating the forces between pairs of particles 
 <p>Although these work reasonably well, they are not quite accurate enough as they give the approaching particle too much energy. This can be observed by calculating the minimum approach distance <span class="math notranslate nohighlight">\(r_0\)</span> and comparing that with a trajectory. It is found that, given its initial energy, the particle passes closer to the target particle than it should; it crosses the boundary defined by a circle of radius <span class="math notranslate nohighlight">\(r_0\)</span>, which is given by equation 15. A better approximation is to use equation 7 to calculate <span class="math notranslate nohighlight">\(v\)</span>. This gives the particle at
 <span class="math notranslate nohighlight">\(t_0 - \Delta t\)</span> the coordinates</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle x_0-\frac{x_0\Delta t}{r}\sqrt{2}\sqrt{E_0-E_0\left(\frac{y_0}{2}\right)^2-U(r)},\quad  y_0  \tag{31}\]</div>
+\[\displaystyle x_0-\frac{x_0\Delta t}{r}\sqrt{2}\sqrt{E_0-E_0\left(\frac{y_0}{2}\right)^2-U(r)},\quad  y_0  \qquad\tag{31}\]</div>
 <p>where only the <span class="math notranslate nohighlight">\(x\)</span> value is changed because equation 7 assumes that the particle is parallel to the x-axis. This gives the trajectory a good approximation to <span class="math notranslate nohighlight">\(r_0\)</span>, the distance of closest approach.</p>
 <p>The initial velocity only is used in the initial step; the velocity of the particle is not needed elsewhere in this particular calculation but if needed then equation 27 can be used to find <span class="math notranslate nohighlight">\(v_x\)</span> and <span class="math notranslate nohighlight">\(v_y\)</span>. The radial velocity <span class="math notranslate nohighlight">\(v_r\)</span> at any given time, at point <span class="math notranslate nohighlight">\((x, y)\)</span>, is the sum of the <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> components calculated as</p>
 <div class="math notranslate nohighlight">
@@ -2131,7 +2131,7 @@ The MD simulation proceeds by calculating the forces between pairs of particles 
 <p>Although the diffusion equation can be solved in many simple cases, often the geometry needed for a particular experiment is not simple and then a numerical solution is the only course of action. This is particularly the case for two and three dimensional problems.</p>
 <p>Often reaction and diffusion may be taking place and then the diffusion equation is extended with a rate expression and becomes</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle \frac{dC}{dt}=D\frac{d^2C}{dx^2}+ \text{rate expression} \tag{31a}\]</div>
+\[\displaystyle \frac{dC}{dt}=D\frac{d^2C}{dx^2}+ \text{rate expression} \qquad\tag{31a}\]</div>
 <p>where <span class="math notranslate nohighlight">\(C\)</span> is the concentration of some species and <span class="math notranslate nohighlight">\(D\)</span> the diffusion constant. The rate expression has the form <span class="math notranslate nohighlight">\(k[C][\cdots]\)</span> where <span class="math notranslate nohighlight">\(k\)</span> is a rate constant multiplied, as appropriate for the chemistry, by concentrations. In heat flow problems the concentration is replaced by temperature and the diffusion coefficient by thermal diffusivity, both have dimensions of length<span class="math notranslate nohighlight">\(^2\)</span>/time. Initially we shall ignore the rate expression term and deal with a single diffusing species in one dimension but suppose that the initial concentration has an interesting spatial profile.</p>
 <p>To tackle the calculation suppose that there is a grid of points in <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(t\)</span> over which the calculation is being performed, see figure 10a. The derivatives are calculated as differences by assuming small increments in <span class="math notranslate nohighlight">\(t\)</span> and <span class="math notranslate nohighlight">\(x\)</span>. The values are <span class="math notranslate nohighlight">\(\Delta x = 1/(m-1)\)</span> for a grid of <span class="math notranslate nohighlight">\(i=0\cdots m \)</span> points and similarly for time <span class="math notranslate nohighlight">\(\Delta t = 1/(n-1)\)</span> with <span class="math notranslate nohighlight">\(j= 0\cdots  n\)</span> points. The total length is <span class="math notranslate nohighlight">\(L = m\Delta x\)</span>, and total time <span class="math notranslate nohighlight">\(T_{max} = n\Delta t\)</span>. The approximation to the first derivatives are simple differences which approximate the true derivative when these differences are exceedingly small</p>
 <div class="math notranslate nohighlight">
@@ -2144,7 +2144,7 @@ The MD simulation proceeds by calculating the forces between pairs of particles 
 \[\displaystyle \frac{C_i^{j+1}-C_i^j}{\Delta t}=\frac{D}{\Delta x}\left(\frac{C_{i+1}^j-C_i^j}{\Delta x}-\frac{C_i^j-C_i^{j-1}}{\Delta x} \right)\]</div>
 <p>This can be rearranged into a new form</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle C_i^{new} = C_i^{old} + \frac{D\Delta t}{(\Delta x)^2}\left(  C_{i+1}^{old}-2C_i^{old} +C_{i-1}^{old}  \right) \tag{31b} \]</div>
+\[\displaystyle C_i^{new} = C_i^{old} + \frac{D\Delta t}{(\Delta x)^2}\left(  C_{i+1}^{old}-2C_i^{old} +C_{i-1}^{old}  \right) \qquad\tag{31b} \]</div>
 <p>where <span class="math notranslate nohighlight">\(new=j+1\)</span> and <span class="math notranslate nohighlight">\(old=j\)</span> so that each new concentration term requires 3 older terms at different spatial positions. This type of approach is called a Fully Implicit Method. The stencil shows the points used in the calculation, fig 10a.</p>
 <p><img alt="Drawing" src="../_images/num-methods-fig10a.png" /></p>
 <p>Figure 10 a. The Stencil used to calculate the updating points.</p>
@@ -2248,7 +2248,7 @@ The MD simulation proceeds by calculating the forces between pairs of particles 
 \[\displaystyle \sigma =\frac{D\Delta t }{2(\Delta x)^2} \]</div>
 <p>and its not so obvious, but it becomes clear later on, that it helps to rewrite the equations by collecting terms in <span class="math notranslate nohighlight">\(C^{j+1}\)</span> and in <span class="math notranslate nohighlight">\(C^j\)</span> as</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle -\sigma C_{i-1}^{j+1}+(1+2\sigma)C_i^{j+1}-\sigma C_{i+1}^{j+1} = \sigma C_{i-1}^{j}+(1-2\sigma)C_i^{j}+\sigma C_{i+1}^{j} + f(C_i^j)\Delta t  \tag{31c}\]</div>
+\[\displaystyle -\sigma C_{i-1}^{j+1}+(1+2\sigma)C_i^{j+1}-\sigma C_{i+1}^{j+1} = \sigma C_{i-1}^{j}+(1-2\sigma)C_i^{j}+\sigma C_{i+1}^{j} + f(C_i^j)\Delta t  \qquad\tag{31c}\]</div>
 <p>where <span class="math notranslate nohighlight">\(f(C_i^j)\)</span> represent the rate equations. The tri-diagonal form the the equations can be seen in the <span class="math notranslate nohighlight">\(i-1,\, i,\,i+1\)</span> terms on either side of the equation. However, there is a problem with this because when <span class="math notranslate nohighlight">\(i,j=0\)</span>  there are points are outside the grid, <span class="math notranslate nohighlight">\(C_{-1}\)</span> for example. This can be overcome using the boundary condition that is discretized (under the Neumann condition) to be</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \frac{C_0^j-C_{-1}^j}{\Delta x}=0, \qquad \frac{C_m^j-C_{m-1}^j}{\Delta x}=0\]</div>
@@ -2307,7 +2307,7 @@ f(C_{m-1}^{j}\Delta t
 \[\displaystyle  \mathbf{A C}^{j+1} = \mathbf{B C}^{j} + \mathbf{F}\]</div>
 <p>Multiplying both sides by <span class="math notranslate nohighlight">\(\mathbf{A^{-1}}\)</span> gives</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle  \mathbf{C}^{j+1} = \mathbf{A^{-1}}\left(\mathbf{B C}^{j} + \mathbf{F} \right)  \tag{31d}\]</div>
+\[\displaystyle  \mathbf{C}^{j+1} = \mathbf{A^{-1}}\left(\mathbf{B C}^{j} + \mathbf{F} \right)  \qquad\tag{31d}\]</div>
 <p>thus in the iteration scheme the <span class="math notranslate nohighlight">\(\mathbf A\)</span> matrix needs to be inverted once only which saves considerable effort. The matrix <span class="math notranslate nohighlight">\(\pmb F\)</span> contains the rate expressions. Time in the numerical model has index <span class="math notranslate nohighlight">\(j\)</span> so once initial values are determined, a loop with the matrix equation can be performed. Note that <span class="math notranslate nohighlight">\(\mathbf{A}^{-1}\)</span> and <span class="math notranslate nohighlight">\(\mathbf{B}\)</span> are constant in time so are evaluated once outside the time loop. Only the <span class="math notranslate nohighlight">\(f\)</span> and <span class="math notranslate nohighlight">\(\mathbf{C}\)</span> vectors vary in time.</p>
 <p>As an example we use the Michaelis-Menten scheme. <span class="math notranslate nohighlight">\(S\)</span> is the substrate,<span class="math notranslate nohighlight">\(E\)</span> the enzyme and <span class="math notranslate nohighlight">\(ES\)</span> the complex formed. The product into which the substrate is changed is <span class="math notranslate nohighlight">\(P\)</span>.  To generate the spatial dimension we shall suppose that the reactants are initially in separate microchannels at the end of which they form laminar flow with the enzyme between layers of substrate. The molecules  are able to mix by each diffusing into the other where they react. Naturally, there is an interplay between rate of diffusion and rate of reaction. Figure 10c shows a possible arrangement.</p>
 <div class="math notranslate nohighlight">

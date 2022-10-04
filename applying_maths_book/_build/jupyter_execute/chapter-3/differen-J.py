@@ -21,7 +21,7 @@
 # ____
 # The convention is that $f(x, y)$ represents the function, $g(x, y) = 0$ the constraint, and $\lambda$ the multiplier. The new function $Q$ we have to solve is
 # 
-# $$\displaystyle  Q(x, y, \lambda) = f(x, y) + \lambda g(x, y) \tag{36}$$ 
+# $$\displaystyle  Q(x, y, \lambda) = f(x, y) + \lambda g(x, y) \qquad\tag{36}$$ 
 # 
 # which is done by taking (partial) derivatives of $Q$ in $x,\; y$, and $\lambda$ and letting $\partial Q/\partial x = \partial Q/\partial y= \partial Q/\partial \lambda = 0$ and solving the simultaneous equations,
 # 
@@ -58,7 +58,7 @@
 # 
 # The function to minimize is the distance from $(x_0, y_0)$ to a point $(x, y)$ on the curve and this is calculated using Pythagoras' theorem,
 # 
-# $$\displaystyle f(x,y)=\sqrt{(x-x_0)^2+(y-y_0)^2}  \tag{38}$$
+# $$\displaystyle f(x,y)=\sqrt{(x-x_0)^2+(y-y_0)^2}  \qquad\tag{38}$$
 # 
 # The point $(x_0, y_0)$ is made the origin (0, 0) at the end of the calculation. 
 # 

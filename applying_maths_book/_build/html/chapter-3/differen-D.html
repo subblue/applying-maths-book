@@ -770,7 +770,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-7/matrices-L.html">
-     Principal axes for Moments of Inertia
+     Principal axes of Moments of Inertia
     </a>
    </li>
    <li class="toctree-l2">
@@ -1832,7 +1832,7 @@ title="Print to PDF"
 <p>The general equation on which to use the function-of-function or chain rule is <span class="math notranslate nohighlight">\(f[g(h)]\)</span>, which means that <span class="math notranslate nohighlight">\(f\)</span> is a function of a second function <span class="math notranslate nohighlight">\(g\)</span>, with the generic variable here called <span class="math notranslate nohighlight">\(h\)</span>; <span class="math notranslate nohighlight">\(\sin(ax^2 + x^{-3})\)</span> has this form with <span class="math notranslate nohighlight">\(f\)</span> being <span class="math notranslate nohighlight">\(\sin(\cdots)\)</span> and <span class="math notranslate nohighlight">\(g(x)\)</span> being <span class="math notranslate nohighlight">\(ax^2 + x^{-3}\)</span> and the generic variable <span class="math notranslate nohighlight">\(h\)</span> is <span class="math notranslate nohighlight">\(x\)</span> in this case.</p>
 <p>Differentiation is performed by letting <span class="math notranslate nohighlight">\(u = g(h)\)</span> giving</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle  \frac{d}{dh}f\left(g(h)\right)=\frac{df}{du}\frac{du}{dh} \tag{17}\]</div>
+\[\displaystyle  \frac{d}{dh}f\left(g(h)\right)=\frac{df}{du}\frac{du}{dh} \qquad\tag{17}\]</div>
 <p>and this formally expressed, is what was done in our previous examples. Notice how <span class="math notranslate nohighlight">\(du\)</span> is on the bottom of the derivative on the left, and on the top on the right. To differentiate the equation using the formal equation is harder than following the rule ‘differentiate the outside and then the inside’, but can be done. Suppose that <span class="math notranslate nohighlight">\(f = (a + x^2)^3\)</span> is to be differentiated with respect to <span class="math notranslate nohighlight">\(x\)</span>. Letting <span class="math notranslate nohighlight">\(x=h\)</span> and <span class="math notranslate nohighlight">\(u=1+x^2\)</span> gives <span class="math notranslate nohighlight">\(du/dx=2x\)</span> and as <span class="math notranslate nohighlight">\(f=u^3\)</span>,then <span class="math notranslate nohighlight">\(df/du = 3(u)^2\)</span> and the result is <span class="math notranslate nohighlight">\(df/du = 6x(1 + x^2)^2\)</span>.</p>
 <p>In thermodynamics, derivatives often seem to appear out of nowhere. For instance,</p>
 <div class="math notranslate nohighlight">
@@ -1853,13 +1853,13 @@ title="Print to PDF"
 <h2>4.4 General formula<a class="headerlink" href="#general-formula" title="Permalink to this headline">#</a></h2>
 <p>The general form of the product rule is:</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle  \frac{d}{dx}fg=g\frac{df}{dx}+f\frac{dg}{dx}\equiv gf'+fg'  \tag{18} \]</div>
+\[\displaystyle  \frac{d}{dx}fg=g\frac{df}{dx}+f\frac{dg}{dx}\equiv gf'+fg'  \qquad\tag{18} \]</div>
 <p>where <span class="math notranslate nohighlight">\(f'\)</span> is the derivative <span class="math notranslate nohighlight">\(df/dx\)</span> and the functions <span class="math notranslate nohighlight">\(f\)</span> and <span class="math notranslate nohighlight">\(g\)</span> are actually functions of variable <span class="math notranslate nohighlight">\(x\)</span> and should more properly be written as <span class="math notranslate nohighlight">\(f(x)\)</span> and <span class="math notranslate nohighlight">\(g(x)\)</span>. The formula can be understood by defining <span class="math notranslate nohighlight">\(y = fg\)</span> and in full notation, this is written as <span class="math notranslate nohighlight">\(y(x) = f(x)g(x)\)</span>. First, taking logs gives</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \ln(y)=\ln(f)+\ln(g)\]</div>
 <p>then differentiating gives</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle  \frac{1}{y}\frac{dy}{dx}=\frac{1}{f}\frac{df}{dx}+\frac{1}{g}\frac{dg}{dx} \tag{19}\]</div>
+\[\displaystyle  \frac{1}{y}\frac{dy}{dx}=\frac{1}{f}\frac{df}{dx}+\frac{1}{g}\frac{dg}{dx} \qquad\tag{19}\]</div>
 <p>and multiplying out gives equation 18.</p>
 <p>Naturally the second derivative can be obtained by repeating the process:</p>
 <div class="math notranslate nohighlight">
@@ -1873,10 +1873,10 @@ title="Print to PDF"
 <p>The product rule and function-of-function rule can be used to calculate quotients. If
 <span class="math notranslate nohighlight">\(\displaystyle y = \frac{f (x)}{g(x)}\)</span> then this can be represented as <span class="math notranslate nohighlight">\(\displaystyle y = f (x)g(x)^{−1}\)</span> and the derivative is,</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle   \frac{d}{dx}f(x)g(x)^{-1} =\frac{1}{g(x)}f'(x)+\frac{f(x)}{g(x)^2}g'(x) \tag{20}\]</div>
+\[\displaystyle   \frac{d}{dx}f(x)g(x)^{-1} =\frac{1}{g(x)}f'(x)+\frac{f(x)}{g(x)^2}g'(x) \qquad\tag{20}\]</div>
 <p>which, if simplified, becomes</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle  \frac{d}{dx}\left(\frac{f}{g}\right)=\frac{gf'-fg'}{g^2}  \tag{21}\]</div>
+\[\displaystyle  \frac{d}{dx}\left(\frac{f}{g}\right)=\frac{gf'-fg'}{g^2}  \qquad\tag{21}\]</div>
 <p>where the brackets and <span class="math notranslate nohighlight">\(x\)</span> are suppressed for clarity.  For example using eqn. (20)</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle  (a) \quad y=\frac{\sin(x)}{1+x^2}, \qquad \frac{dy}{dx}=\frac{\cos(x)}{1+x^2}-2x\frac{\sin(x)}{(1+x^2)^2}\]</div>
@@ -1893,7 +1893,7 @@ title="Print to PDF"
 \[\displaystyle \left( \frac{\partial G}{\partial T} \right)_p=-S\]</div>
 <p>But as <span class="math notranslate nohighlight">\(G = H - TS\)</span> we obtain the equation as is now normally written for a change in <span class="math notranslate nohighlight">\(G\)</span>,</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle  \left( \frac{\partial \Delta G}{\partial T} \right)_p=\frac{\Delta G-\Delta H}{T} \tag{22}\]</div>
+\[\displaystyle  \left( \frac{\partial \Delta G}{\partial T} \right)_p=\frac{\Delta G-\Delta H}{T} \qquad\tag{22}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\Delta H\)</span> is enthalpy and <span class="math notranslate nohighlight">\(T\)</span> temperature. The curly <span class="math notranslate nohighlight">\(\partial\)</span> indicates a partial derivative, which means only that <span class="math notranslate nohighlight">\(\Delta G\)</span>, depends on something other than <span class="math notranslate nohighlight">\(T\)</span> alone, which here is <span class="math notranslate nohighlight">\(p\)</span>, but is otherwise just the same as any other derivative. The <span class="math notranslate nohighlight">\(p\)</span> subscript indicates constant pressure, but we will drop this now for clarity. To calculate <span class="math notranslate nohighlight">\(d(\Delta G/T)/dT\)</span>: the function-of- function method of eqn. 20 is used knowing that <span class="math notranslate nohighlight">\(\Delta G\)</span> is a function of <span class="math notranslate nohighlight">\(T\)</span>,</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle  \frac{d}{dT}\left(\frac{\Delta G}{T}\right)=\frac{1}{T}\frac{d\Delta G}{dT}-\frac{\Delta G}{T^2}\]</div>
@@ -1956,7 +1956,7 @@ title="Print to PDF"
 <p>The parametric equations of an ellipse are <span class="math notranslate nohighlight">\(x = a \cos(t), y = b\sin(t)\)</span> where <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> are constants that define the axes of the ellipse. When they are the same, a circle results. The equation of a parabola is <span class="math notranslate nohighlight">\(\displaystyle y^2 = 4ax\)</span>; in parametric form this can be written as <span class="math notranslate nohighlight">\(x = at^2\)</span> and <span class="math notranslate nohighlight">\(y = 2at\)</span>.</p>
 <p>To differentiate the parametric form use the function-of-function approach and write</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle  \frac{dy}{dx}=\frac{dy}{dt}\frac{dt}{dx}=\frac{dy}{dt}/\frac{dx}{dt};  \quad \text{provided}\quad\frac{dx}{dt} \ne 0\tag{23}\]</div>
+\[\displaystyle  \frac{dy}{dx}=\frac{dy}{dt}\frac{dt}{dx}=\frac{dy}{dt}/\frac{dx}{dt};  \quad \text{provided}\quad\frac{dx}{dt} \ne 0\qquad\tag{23}\]</div>
 <p>Therefore, <span class="math notranslate nohighlight">\(dy/dx\)</span> is always the ratio of the two derivatives with respect to <span class="math notranslate nohighlight">\(t\)</span>, the parametric variable.</p>
 <p>The second derivative can be written, using <span class="math notranslate nohighlight">\(y' = dy/dt\)</span> and <span class="math notranslate nohighlight">\(x' = dx/dt\)</span> for clarity, as;</p>
 <div class="math notranslate nohighlight">

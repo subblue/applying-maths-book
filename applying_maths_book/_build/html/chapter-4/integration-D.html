@@ -770,7 +770,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-7/matrices-L.html">
-     Principal axes for Moments of Inertia
+     Principal axes of Moments of Inertia
     </a>
    </li>
    <li class="toctree-l2">
@@ -1742,7 +1742,7 @@ title="Print to PDF"
 <p>Suppose the numbers <span class="math notranslate nohighlight">\(q = 10,\, 13.5,\, 14, \,16.2\)</span> have been measured, then their average is clearly <span class="math notranslate nohighlight">\(\langle q \rangle  = (10 + 13.5 + 14 + 16.2)/4 = 53.7/4\)</span>. It has been implicitly assumed that each number is equally likely to have been measured, which is the familiar case because experiments are usually arranged in this way making them easier to do. It is not always true, however, that each value is equally probable, there is often a distribution of values that has to be taken into account, the Boltzmann distribution of energies or the degeneracy of rotational energy levels, for example.</p>
 <p>Replacing the numerical example above with a formula makes the calculation appear much more complicated when it is in fact just the same,</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle \langle q\rangle= \frac{\sum\limits_{i=1}^N q_iP(q_i)}{\sum\limits_{i=1}^N P(q_i)} \tag{25}\]</div>
+\[\displaystyle \langle q\rangle= \frac{\sum\limits_{i=1}^N q_iP(q_i)}{\sum\limits_{i=1}^N P(q_i)} \qquad\tag{25}\]</div>
 <p>In this equation the probability of observing the <span class="math notranslate nohighlight">\(i^{th}\)</span> observation of <span class="math notranslate nohighlight">\(q\)</span> is <span class="math notranslate nohighlight">\(P(q_i)\)</span> and if <span class="math notranslate nohighlight">\(P(q_i) = 1\)</span> then each measurement has an equal chance of occurring, which is 1, and the probability distribution is uniform or flat. If there are four measurements, then <span class="math notranslate nohighlight">\(N = 4\)</span>. Figure 16 shows two probability distributions. On the left is the uniform distribution, on the right a Gaussian one.</p>
 <p>To use equation 25, multiply each value <span class="math notranslate nohighlight">\(q_i\)</span> by the chance of observing it, which is <span class="math notranslate nohighlight">\(P(q_i)\)</span>, and then sum all the values together. The denominator tells us to add together all the probabilities. If the distribution is normalized this sum will be 1. Using the values for the numbers and <span class="math notranslate nohighlight">\(P\)</span>, then the average, or mean value of <span class="math notranslate nohighlight">\(q\)</span> is</p>
 <div class="math notranslate nohighlight">
@@ -1752,12 +1752,12 @@ title="Print to PDF"
 \[\displaystyle \langle q^2\rangle= \frac{\sum\limits_{i=1}^4 q_i^2 P(q_i)}{\sum\limits_{i=1}^4 P(q_i)} =\frac{10^2+13.5^2+14^2+16.2^2}{\sum\limits_1^4 1}=\frac{740.4}{4}\]</div>
 <p>The reason for wanting this quantity is that it is needed to calculate  the variance of the numbers.  The <em>variance</em> <span class="math notranslate nohighlight">\(\sigma^2\)</span> is a measure of the spread about the mean value. This spread is generally called the <em>dispersion</em> and often has a Gaussian or bell-shaped distribution. The variance of a set of numbers is defined as</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle \sigma ^2 =\langle q^2\rangle -\langle q\rangle^2 =  \langle q^2\rangle- \mu \tag{26}\]</div>
+\[\displaystyle \sigma ^2 =\langle q^2\rangle -\langle q\rangle^2 =  \langle q^2\rangle- \mu \qquad\tag{26}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\mu\)</span> is the <em>population mean</em>, see chapter 13. The <em>standard deviation</em>, the square root of the variance, is also used as a measure of dispersion and with this particular set of numbers <span class="math notranslate nohighlight">\(\sigma = 2.22\)</span>.</p>
 <p>If the numbers q represent energy <span class="math notranslate nohighlight">\(E\)</span> then its standard deviation is <span class="math notranslate nohighlight">\(\sigma_E =\sqrt{\langle E^2\rangle -\langle E\rangle^2}\)</span>. When analysing sets of data, the average value of a set of repeated measurements is reported with the standard deviation. The result is quoted as a mean value<span class="math notranslate nohighlight">\(\mu\pm\sigma\)</span>. By blind chance, 68% of observations are to be expected to fall in the range <span class="math notranslate nohighlight">\(\mu+\sigma \to \mu-\sigma\)</span> and clearly 32% outside this range. Chapter 13 describes this in more detail.</p>
 <p>To calculate the average of higher powers of <span class="math notranslate nohighlight">\(q\)</span>, the <span class="math notranslate nohighlight">\(n^{th}\)</span>, for example, use</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle \langle q^n\rangle= \frac{\sum\limits_{i=1}^N q_i^nP(q_i)}{\sum\limits_{i=1}^N P(q_i)} \tag{27}\]</div>
+\[\displaystyle \langle q^n\rangle= \frac{\sum\limits_{i=1}^N q_i^nP(q_i)}{\sum\limits_{i=1}^N P(q_i)} \qquad\tag{27}\]</div>
 <section id="i-invert-sugar">
 <h3><strong>(i) Invert sugar</strong><a class="headerlink" href="#i-invert-sugar" title="Permalink to this headline">#</a></h3>
 <p>When a solution of table sugar (sucrose) is heated it hydrolyzes to glucose(dextrose) and fructose and is catalysed by acid. The reaction can be easily followed by observing the rotation of plane polarised light with a polarimeter. The reaction is</p>
@@ -1826,7 +1826,7 @@ title="Print to PDF"
 <p>The average quantity derived from a theoretical model of a chemical or physical process, and described by an equation, is always used to compare with the experimental value from a set of measurements. Rather than a set of numbers, a calculation similar to that described above is needed to calculate the theoretical average. However, if the function is continuous, then integration rather than summation must be used.</p>
 <p>Suppose that <span class="math notranslate nohighlight">\(x\)</span> is the quantity whose average is <span class="math notranslate nohighlight">\(\langle x\rangle\)</span>, then this is calculated as</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle \langle x\rangle =\frac{\int xP(x)dx}{\int P(x)dx}    \tag{28}\]</div>
+\[\displaystyle \langle x\rangle =\frac{\int xP(x)dx}{\int P(x)dx}    \qquad\tag{28}\]</div>
 <p>where <span class="math notranslate nohighlight">\(P(x)dx\)</span> is the probability distribution of <span class="math notranslate nohighlight">\(x\)</span> and is the equation that describes how <span class="math notranslate nohighlight">\(x\)</span> is distributed and, colloquially speaking, <span class="math notranslate nohighlight">\(P(x)\)</span> is its shape. In equation 28 the denominator is the normalization term but if the distribution is already normalized then <span class="math notranslate nohighlight">\(\int P(x)dx = 1\)</span> and there is no need to calculate this integral.</p>
 <p>The limits of the integration cover the whole range of the distribution, usually <span class="math notranslate nohighlight">\(0 \to \infty\)</span>, or <span class="math notranslate nohighlight">\(-\infty  \to \infty\)</span> but may be <span class="math notranslate nohighlight">\(0 \to 2\pi\)</span> or <span class="math notranslate nohighlight">\(0 \to \pi\)</span> if the calculation involves angular values, however, the integration limits used depend upon the particular problem.</p>
 <p><img alt="Drawing" src="../_images/integration-fig16.png" /></p>
@@ -1839,7 +1839,7 @@ title="Print to PDF"
 \[\displaystyle P(t)dt=e^{-t/\tau}dt\]</div>
 <p>which is the chance the molecule has of still being excited during a time interval <span class="math notranslate nohighlight">\(dt\)</span> from <span class="math notranslate nohighlight">\(t \to t + dt\)</span>, if <span class="math notranslate nohighlight">\(\tau\)</span> is its lifetime, and it was already excited at time <span class="math notranslate nohighlight">\(t\)</span>. The lifetime is defined as the time an ensemble of the excited molecules take to decay to <span class="math notranslate nohighlight">\(1/e\)</span>, or <span class="math notranslate nohighlight">\(\approx 37 \text{%}\)</span>  of their initial number. The reciprocal of the lifetime is the rate constant. The half-life is the time taken to halve an initial population but half-lives are nowadays rarely used except for radioactive species. Using equation 28,</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle \langle t\rangle =\frac{\int tP(t)dt}{\int P(t)t}   =\frac{\int_0^\infty te^{-t/\tau}dt}{\int_0^\infty e^{-t/\tau}dt} \tag{29}\]</div>
+\[\displaystyle \langle t\rangle =\frac{\int tP(t)dt}{\int P(t)t}   =\frac{\int_0^\infty te^{-t/\tau}dt}{\int_0^\infty e^{-t/\tau}dt} \qquad\tag{29}\]</div>
 <p>Note that the integration limits start at <span class="math notranslate nohighlight">\(t = 0\)</span> and extend to infinity. Both integrals are ones met before, and can be found using Section 2.13,</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle  \int_0^\infty t e^{-t/\tau}dt=\tau^2  \qquad \int_0^\infty e^{-t/\tau}dt =\tau \]</div>
@@ -1866,7 +1866,7 @@ title="Print to PDF"
 <h3><strong>(iii) Centroids</strong><a class="headerlink" href="#iii-centroids" title="Permalink to this headline">#</a></h3>
 <p>In this example we find the position <span class="math notranslate nohighlight">\(\langle s\rangle\)</span> of the centre of gravity or mass of a body that has a weight distribution <span class="math notranslate nohighlight">\(w(s)\)</span>. The weight distribution describes how the mass resides in the object and therefore describes both its shape and how the mass varies across that shape. In general, there are three values of the centre of mass, one in each of the x-, y-, and z-axes, so it is necessary to specify which one is being considered. The centre of gravity is the average position according to its mass and therefore, for each axis, the appropriate equation to use has the form of equation 28,</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle \langle s\rangle = \frac{\int sw(s)}{\int w(s) }=\frac{M_s}{A}  \tag{30}\]</div>
+\[\displaystyle \langle s\rangle = \frac{\int sw(s)}{\int w(s) }=\frac{M_s}{A}  \qquad\tag{30}\]</div>
 <p>and <span class="math notranslate nohighlight">\(s\)</span> can represent any one of the x-, y- or z-coordinates but for simplicity, we will consider only two-dimensional shapes and uniform density. If the body has uniform density the coordinates of the centre of mass is often called the <em>centroid</em>. The integral<span class="math notranslate nohighlight">\(\int sw(s)ds\)</span> is the <em>moment</em> <span class="math notranslate nohighlight">\(M_s\)</span> about an axis <span class="math notranslate nohighlight">\(s\)</span> and <span class="math notranslate nohighlight">\(\int w(s) ds\)</span> the area <span class="math notranslate nohighlight">\(A\)</span>. If the density is not uniform, then the function <span class="math notranslate nohighlight">\(w(s)\)</span> has to be multiplied by the density at <span class="math notranslate nohighlight">\(s\)</span>.</p>
 <p>Consider calculating the centroids of an area in the x-y plane, Figure 17. The method is to calculate the moment of a strip about each of the x- and y-axes in turn then divide the result by the total area of the object. In this case this is bounded above and below by functions <span class="math notranslate nohighlight">\(f\)</span> and <span class="math notranslate nohighlight">\(g\)</span> and by <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> along the x-axis. This area is called a lamina if it is of uniform density. The area is shown shaded in Figure 17.</p>
 <p>The small element between the two curves has an area <span class="math notranslate nohighlight">\(( f(x) - g(x))\delta x\)</span> and when multiplied by the density this would be its mass. The centre of gravity, or mean value of the strip, is at <span class="math notranslate nohighlight">\(y\)</span> value of <span class="math notranslate nohighlight">\((f (x) + g(x))/2\)</span> and the moment of the strip about the x-axis is the product of these two terms.</p>
@@ -1874,22 +1874,22 @@ title="Print to PDF"
 \[\displaystyle \delta M_x= \frac{1}{2}\left( f(x)-g(x) \right)\left( f(x)+g(x) \right)\delta x\]</div>
 <p>Taking the limit to form a true differential, makes the change <span class="math notranslate nohighlight">\(\delta x \to 0\)</span> and then <span class="math notranslate nohighlight">\(d M_x /dx\)</span> is formed which when integrated to cover the whole area from <span class="math notranslate nohighlight">\(a \to b\)</span> gives the moment about the x-axis as</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle M_x=\frac{1}{2}\int_a^b f(x)^2-g(x)^2 dx  \tag{31}\]</div>
+\[\displaystyle M_x=\frac{1}{2}\int_a^b f(x)^2-g(x)^2 dx  \qquad\tag{31}\]</div>
 <p>In the special case that the lower curve is the x-axis, then the function <span class="math notranslate nohighlight">\(g(x) =0\)</span> and</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle M_x=\frac{1}{2}\int_a^b f(x)^2 dx = \frac{1}{2}\int_a^b y^2 dx\tag{32}\]</div>
+\[\displaystyle M_x=\frac{1}{2}\int_a^b f(x)^2 dx = \frac{1}{2}\int_a^b y^2 dx\qquad\tag{32}\]</div>
 <p>The similar calculation about the y-axis produces the moment</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \delta M_y=x\left(f(x)-g(x)\right)\delta x\]</div>
 <p>which produces</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle M_y= \int_a^b xf(x)-xg(x) dx\tag{33}\]</div>
+\[\displaystyle M_y= \int_a^b xf(x)-xg(x) dx\qquad\tag{33}\]</div>
 <p>and when <span class="math notranslate nohighlight">\(g\)</span> is the x-axis,</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle M_y= \int_a^b xf(x) dx=\int_a^b xy dx \tag{34}\]</div>
+\[\displaystyle M_y= \int_a^b xf(x) dx=\int_a^b xy dx \qquad\tag{34}\]</div>
 <p>The area <span class="math notranslate nohighlight">\(\displaystyle A=\int_a^bf(x)-g(x)dx \)</span> and the centroids are therefore</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle \langle y\rangle =\frac{M_x}{A}, \qquad \langle x\rangle =\frac{M_y}{A}  \tag{35}\]</div>
+\[\displaystyle \langle y\rangle =\frac{M_x}{A}, \qquad \langle x\rangle =\frac{M_y}{A}  \qquad\tag{35}\]</div>
 <p>Notice how the <span class="math notranslate nohighlight">\(y\)</span> centroid depends on <span class="math notranslate nohighlight">\(M_x\)</span> and vice versa.</p>
 <p><img alt="Drawing" src="../_images/integration-fig17-17b.png" /></p>
 <p>Figure 17. Left. Geometry for calculating centroids. Right centroid at <span class="math notranslate nohighlight">\((2/5,4/7)\)</span> (blue dot) of <span class="math notranslate nohighlight">\(x^{1/3}\)</span> with range <span class="math notranslate nohighlight">\(0 \to 1\)</span>.</p>
@@ -1902,7 +1902,7 @@ title="Print to PDF"
 <h3><strong>(iv) Chromatography. Average value and width of eluted profile</strong><a class="headerlink" href="#iv-chromatography-average-value-and-width-of-eluted-profile" title="Permalink to this headline">#</a></h3>
 <p>In chapter 1 section 9.10 a probabilistic model was developed to describe the shape of a chromatogram the result was a distribution <span class="math notranslate nohighlight">\(P(n)\)</span> closely related to the Poisson distribution was found,</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle P(n)= p\frac{(np)^{(N-1)}}{(N-1)!}e^{-np} \tag{35a}\]</div>
+\[\displaystyle P(n)= p\frac{(np)^{(N-1)}}{(N-1)!}e^{-np} \qquad\tag{35a}\]</div>
 <p>where <span class="math notranslate nohighlight">\(N\)</span> is the number of theoretical plates, <span class="math notranslate nohighlight">\(p\)</span> the probability related to the partition constant <span class="math notranslate nohighlight">\(K\)</span> the total volume of the mobile phase <span class="math notranslate nohighlight">\(V_m\)</span> and of <span class="math notranslate nohighlight">\(V_s\)</span> the stationary phase;</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle p=\left(1+K\frac{V_s}{V_m}\right)^{-1}\]</div>
@@ -1915,7 +1915,7 @@ title="Print to PDF"
 \[\displaystyle  \langle n\rangle =  \frac{1}{p(N-1)!}\int_0^\infty x^Ne^{-x}dx\]</div>
 <p>This is clearly a complicated integral and after some searching (or by using Python/Sympy) one finds that it is a standard integral which produces the gamma function, therefore  <span class="math notranslate nohighlight">\(\displaystyle  \langle n\rangle =  \frac{\Gamma(N+1)}{p(N-1)!}\)</span>.  Since <span class="math notranslate nohighlight">\(\Gamma(N+1)=N!\)</span>, for integer <span class="math notranslate nohighlight">\(N\)</span>, which is the case here then</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle  \langle n\rangle =  \frac{N}{p}\tag{35b}\]</div>
+\[\displaystyle  \langle n\rangle =  \frac{N}{p}\qquad\tag{35b}\]</div>
 <p>The average eluted volume is therefore  <span class="math notranslate nohighlight">\( V_m /p\)</span> because <span class="math notranslate nohighlight">\(N/p\)</span> volumes each of <span class="math notranslate nohighlight">\(V_m/N\)</span> are eluted.  This quantity is not the maximum of the peak, because this profile is not symmetric, but is close to that value. Differentiating <span class="math notranslate nohighlight">\(P(n)\)</span> and setting the result to zero will find the peak at <span class="math notranslate nohighlight">\(n=(N-1)/p\)</span>.</p>
 <p>The average value is sometimes called the <em>first moment</em> and the <em>second moment</em> is is used to calculate the variance of a quantity. In this case we use this to find the width of the distribution which is <span class="math notranslate nohighlight">\(\sigma_n\)</span> where <span class="math notranslate nohighlight">\(\sigma_n^2=  \langle n^2\rangle - \langle n\rangle^2\)</span>.</p>
 <p>The integral needed is <span class="math notranslate nohighlight">\(\langle n^2\rangle=\int n^2P(n)dn\)</span></p>
@@ -1926,7 +1926,7 @@ title="Print to PDF"
 \[\displaystyle  \langle n^2\rangle =  \frac{(N+1)!}{p^2(N-1)!}=\frac{N(N+1)}{p^2}\]</div>
 <p>the width of the peak is  given by <span class="math notranslate nohighlight">\(\sigma_n\)</span> where</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle \sigma_n^2=\displaystyle \frac{N(N+1)}{p^2}-\frac{N^2}{p^2}=\frac{N}{p^2}\tag{35c}\]</div>
+\[\displaystyle \sigma_n^2=\displaystyle \frac{N(N+1)}{p^2}-\frac{N^2}{p^2}=\frac{N}{p^2}\qquad\tag{35c}\]</div>
 <p>This squared value only in terms of the number of steps <span class="math notranslate nohighlight">\(n\)</span> and we as measure the eluted volume this number should be multiplied by <span class="math notranslate nohighlight">\( (V_m/N)^2\)</span> and so the average width of the measured peak is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle  \sigma=\frac{V_m}{p\sqrt{N}}\]</div>
@@ -1941,7 +1941,7 @@ title="Print to PDF"
 <h2>8.3 Average of a function<a class="headerlink" href="#average-of-a-function" title="Permalink to this headline">#</a></h2>
 <p>The average of a function of <span class="math notranslate nohighlight">\(x,\; f (x)\)</span>, is evaluated in a similar way as for a variable</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle \langle f(x) \rangle = \frac{\int f(x)P(x)dx}{\int P(x)dx}  \tag{36}\]</div>
+\[\displaystyle \langle f(x) \rangle = \frac{\int f(x)P(x)dx}{\int P(x)dx}  \qquad\tag{36}\]</div>
 <p>If the function is <span class="math notranslate nohighlight">\(f(x)=e^{-\alpha x}\)</span> and is distributed according to <span class="math notranslate nohighlight">\(P(x)=1/\cosh(\alpha x)\)</span> its average is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \langle f(x) \rangle = \frac{\int e^{-\alpha x}/\cosh(\alpha x)dx}{\int 1/\cosh(\alpha x)dx}  \]</div>
@@ -1958,7 +1958,7 @@ title="Print to PDF"
 <h2>8.4 Expectation values<a class="headerlink" href="#expectation-values" title="Permalink to this headline">#</a></h2>
 <p>In quantum mechanics, if <span class="math notranslate nohighlight">\(\psi\)</span> are the normalized wavefunctions and <span class="math notranslate nohighlight">\(x\)</span>, for example, is the displacement of an atom in a vibrating diatomic molecule from its equilibrium value, then its average position is in state <span class="math notranslate nohighlight">\(k\)</span></p>
 <div class="math notranslate nohighlight">
-\[\displaystyle \langle x_k\rangle = \int_{-\infty}^\infty \psi_k^*\,x\,\psi_k dx \equiv \langle k|x|k\rangle \tag{37}\]</div>
+\[\displaystyle \langle x_k\rangle = \int_{-\infty}^\infty \psi_k^*\,x\,\psi_k dx \equiv \langle k|x|k\rangle \qquad\tag{37}\]</div>
 <p>Expressions of this form are called the expectation value of the operator, which is <span class="math notranslate nohighlight">\(x\)</span> in this case. The wavefunctions also depend on position <span class="math notranslate nohighlight">\(x\)</span> although this is not explicitly shown. The subscript <span class="math notranslate nohighlight">\(k\)</span> tells us that we are examining level <span class="math notranslate nohighlight">\(k\)</span>; the superscript * shows that this is the complex conjugate of the wavefunction. The <span class="math notranslate nohighlight">\(\langle\;\rangle\)</span>  around the <span class="math notranslate nohighlight">\(x\)</span> indicates an average value. Alternatively an average can be written with a bar as <span class="math notranslate nohighlight">\(\bar x\)</span>. To the right of the equation the compact and much clearer bra-ket, or Dirac, notation is used, which uses only the indices of the wavefunction; see Chapter 8. Formally, in equation 37, <span class="math notranslate nohighlight">\(x\)</span> is the <em>operator</em> and it is always placed between the two wavefunctions. In this particular instance it does not make any difference where <span class="math notranslate nohighlight">\(x\)</span> is, but if the operator was <span class="math notranslate nohighlight">\(d/dx\)</span> then this has to be followed by something to operate on and this is always <span class="math notranslate nohighlight">\(\psi\)</span> and is preceded by <span class="math notranslate nohighlight">\(\psi^*\)</span> the complex conjugate.</p>
 <p>Suppose that you are in the teaching lab and are asked to devise an experiment that attempts to measure <span class="math notranslate nohighlight">\(\langle x\rangle\)</span> for a harmonic oscillator at several different vibrational energies. Do you rush away and collect lots of equipment or sit down and think about the problem? The former is definitely more exciting -select a laser, several mirrors and lenses, vacuum pump, oscilloscope, detectors, and so forth - but ultimately futile. Thinking about the experiment first is always the better option; it saves you wasting time on pointless experimentation, leaving you time to tackle interesting problems. The resulting average displacement <span class="math notranslate nohighlight">\(\langle x\rangle\)</span>, as you will have realized for a harmonic oscillator, should be zero.</p>
 <p>Why is it concluded that the average displacement is zero just by looking at equation 37? Because the wavefunctions are the same, their product must be an <em>even function</em>; any normal function squared is an even function. Because any displacement such as <span class="math notranslate nohighlight">\(x\)</span>, is an odd function: <span class="math notranslate nohighlight">\(-x\)</span> is not the same as <span class="math notranslate nohighlight">\(+x\)</span>, the integral is odd overall and must integrate to zero, provided the integration range is symmetrical about zero; Section 4.1.3. This result corresponds to the common sense observation that in the harmonic potential, the bond extension is equal and opposite to the compression, making the average displacement zero for any value of the vibrational quantum number. Figure 38 (in solutions) shows a harmonic potential. It was worth simply thinking about measuring the average displacement first. An experiment will still be needed, although we now know what to expect; it is often a mistake <em>not</em> to do an experiment because you ‘know’ what the answer is. If the average displacement measured from different vibrational levels were different, what then might you conclude?</p>
@@ -1972,10 +1972,10 @@ title="Print to PDF"
 <p>The odd/even classification is very simple; space is split into two parts. If it were split into four parts then, as you can appreciate, things would be more complicated. In general where functions are more complex, as the molecular orbitals or the vibrational normal modes of molecules can be, then group theory (Chapter 7) must be used to decide whether or not the direct product of the irreducible representations are, or are not, non-totally symmetric. The jargon makes this calculation sound difficult but, as with most jargon, it hides simple things.</p>
 <p>The general expectation value between levels with different quantum numbers <span class="math notranslate nohighlight">\(n\)</span> and <span class="math notranslate nohighlight">\(m\)</span> is always calculated as:</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle \langle Q_{n,m}\rangle =\frac{ \int\psi_n^*\,Q\,\psi_m dx}{ \int \psi_n^*\psi_m dx} \tag{38}\]</div>
+\[\displaystyle \langle Q_{n,m}\rangle =\frac{ \int\psi_n^*\,Q\,\psi_m dx}{ \int \psi_n^*\psi_m dx} \qquad\tag{38}\]</div>
 <p>where <span class="math notranslate nohighlight">\(Q\)</span> is the operator acting on the wavefunction <span class="math notranslate nohighlight">\(\psi_m\)</span> for state <span class="math notranslate nohighlight">\(m\)</span>. The wavefunction is a function only of <span class="math notranslate nohighlight">\(x\)</span> in this example and that is implied by the fact that integration is only with respect to <span class="math notranslate nohighlight">\(x\)</span>. You should be aware, however, that it is common to use <span class="math notranslate nohighlight">\(\tau\)</span>, for example,  to represent general coordinates which may be <span class="math notranslate nohighlight">\(x, y\)</span>, or <span class="math notranslate nohighlight">\(z\)</span> or <span class="math notranslate nohighlight">\(r,\, \theta, \, \phi\)</span>, and then the integral would be a triple one. Note that if the wavefunctions are normalized then the denominator is unity and</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle \langle Q_{n,m}\rangle = \int\psi_n^*\,Q\,\psi_m dx \tag{39}\]</div>
+\[\displaystyle \langle Q_{n,m}\rangle = \int\psi_n^*\,Q\,\psi_m dx \qquad\tag{39}\]</div>
 </section>
 <section id="uncertainty-principle">
 <h2>8.5 Uncertainty principle<a class="headerlink" href="#uncertainty-principle" title="Permalink to this headline">#</a></h2>
@@ -2060,13 +2060,13 @@ title="Print to PDF"
 <h2>8.6 Higher averages: moments and variance<a class="headerlink" href="#higher-averages-moments-and-variance" title="Permalink to this headline">#</a></h2>
 <p>The average <span class="math notranslate nohighlight">\(\langle x\rangle\)</span> is also called the <em>first moment</em> of its distribution; <span class="math notranslate nohighlight">\(\langle x^2\rangle\)</span> the second moment and so on. The general relationships are, assuming that <span class="math notranslate nohighlight">\(P(x)\)</span> is a normalized distribution,</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle \langle m_k\rangle = \int x^kP(x)dx  \tag{41}\]</div>
+\[\displaystyle \langle m_k\rangle = \int x^kP(x)dx  \qquad\tag{41}\]</div>
 <p>thus</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle m_1 \equiv \langle m_1\rangle =\int xP(x)dx , \qquad  m_2 \equiv \langle m_2\rangle =\int x^2P(x)dx  \tag{42}\]</div>
+\[\displaystyle m_1 \equiv \langle m_1\rangle =\int xP(x)dx , \qquad  m_2 \equiv \langle m_2\rangle =\int x^2P(x)dx  \qquad\tag{42}\]</div>
 <p>The <em>variance</em> of a distribution is</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle \sigma_x^2 = \langle x^2\rangle - \langle x\rangle ^2 = \int (x-\langle x\rangle )^2P(x)dx  \tag{43}\]</div>
+\[\displaystyle \sigma_x^2 = \langle x^2\rangle - \langle x\rangle ^2 = \int (x-\langle x\rangle )^2P(x)dx  \qquad\tag{43}\]</div>
 <p>and <span class="math notranslate nohighlight">\(\sigma_x\)</span> is the standard deviation and is described in more detail in chapter 13.</p>
 </section>
 </section>

@@ -65,7 +65,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # A rigid pendulum with a heavy bob at its end can move in two ways. When the energy is small, it will oscillate about the vertical in a good approximation to simple harmonic motion, and when the energy is large enough it will rotate continuously in the vertical plane. If the displacement from the vertical is not small, the motion is non-linear and the equation of motion has no exact analytical solution. If it is assumed that the pivot holding the pendulum is frictionless and that no air or other resistance hinders the motion, then the equation of motion is
 # 
-# $$ \frac{d^2\varphi}{dt^2}+\omega^2\sin(\varphi)=0 \tag{38}$$
+# $$ \frac{d^2\varphi}{dt^2}+\omega^2\sin(\varphi)=0 \qquad\tag{38}$$
 # 
 # This equation  is described as non-linear because the angle $\varphi$ does not change linearly but as $\sin(\varphi)$. A derivation of is given in Chapter 10. 
 # 
@@ -88,7 +88,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # Much of the dynamics of the real pendulum can be understood from the phase plane ($\varphi,\; d\varphi/dt)$ which can be calculated easily if the equation of motion is split into two; the first gives the angular velocity $v$, the second the angular acceleration or rate of change of
 # velocity,
 # 
-# $$\frac{d\varphi}{dt} = v, \quad \frac{dv}{dt} + \omega^2 \sin(\varphi) = 0 \tag{39}$$
+# $$\frac{d\varphi}{dt} = v, \quad \frac{dv}{dt} + \omega^2 \sin(\varphi) = 0 \qquad\tag{39}$$
 # 
 # The equilibrium or steady state point when the derivatives are zero is clearly $v = 0$ and $\omega^2 \sin(\varphi) = 0$, which will occur when $\varphi = 0, \pm n\pi$ with $n = 1,\, 2 \cdots$. The nullclines are zero because only $v$ or $\varphi$ occur in each equation; the isoclines are found when the derivative is a constant $k$, whose values you can choose. In this case, $v = k$ and, $\varphi = \sin^{-1}(k/\omega^2)$ are the isoclines. The phase plane is obtained by first using the chain rule to give
 # 
@@ -183,7 +183,7 @@ def EulerCromer(dphidt, dvdt, phi0, t0, maxt, omega):
 # 
 # An epidemic is defined as the number of infected persons, increasing with time to a number above those initially infected. Kermack & McKendrick (1927), were the first to describe a realistic disease model, which they used to study the spread of a plague on the island of Bombay in 1905/6. In the SIR model, one or more infected persons are introduced into a community where all are equally susceptible to the disease. The model assumes, first, that the disease spreads by contact one to another; each person runs the course of the disease and then cannot be re-infected; and, secondly, that the duration of the infection is short compared to an individual's lifetime, so that the total number of people is constant. Finally, the number of individuals is fixed once the infection has begun; therefore this model only describes infection in a closed community and is called a compartmentalised model. This is called the S-I-R model, because individuals are either susceptible (S), infected (I), or removed (R). The scheme is
 # 
-# $$ S+I \overset{k_2}\longrightarrow 2I ; \qquad   I \overset{k_1} \longrightarrow  R  \tag{40}$$
+# $$ S+I \overset{k_2}\longrightarrow 2I ; \qquad   I \overset{k_1} \longrightarrow  R  \qquad\tag{40}$$
 # 
 # and the aim is to calculate how R, S, and I change with time. In doing so we shall set up a set of rate equations and suppose that the numbers of individuals involved is sufficiently large that the integration is valid. In the case of Covid-19 the numbers are so large that this should not present a problem.
 # 
@@ -233,7 +233,7 @@ def EulerCromer(dphidt, dvdt, phi0, t0, maxt, omega):
 # 
 # where the initial values have been substituted with $I_0 + S_0 = N$; at $t = 0,\; R = 0$. Next, dividing by $N$ to make the calculation independent of the number of individuals produces
 # 
-# $$I_N=\frac{k_1}{k_2N}\ln\left(\frac{S_NN}{S_0}  \right)-S_N+1  \tag{42}$$
+# $$I_N=\frac{k_1}{k_2N}\ln\left(\frac{S_NN}{S_0}  \right)-S_N+1  \qquad\tag{42}$$
 # 
 # where the notation is $I_N = I/N$ and similarly for $S_N$. The graph of $I_N$ vs $S_N$ is shown in Fig. 16 at different values of $S_0/N$, which is the fraction initially susceptible. Time does not explicitly appear in this equation, but this does not mean that the curves are time independent; far from it, because S and I both depend on time. The curves, equation 42, must start at the line $S_N +I_N =1$ , or $S+I=N$, which is the diagonal line in Fig.16, because no $R$ (removed class) individuals are present initially, and must move to the left as time progresses. At very long times the fraction infected must become zero.
 # 
@@ -255,27 +255,27 @@ def EulerCromer(dphidt, dvdt, phi0, t0, maxt, omega):
 # The maximum fraction of infected individuals is found when $dI_N/dS_N = 0$, and this occurs
 # at the constant value $\displaystyle S_N=\frac{k_1}{k_2N}$ for any fixed $N$. When $dI_N/dS_N=0$ is reached, the infection has peaked and must start to decrease. The *maximum fraction* infected at any one time, is from 42
 # 
-# $$I_N^{max} = 1+\frac{k_1}{k_2(S_0+I_0)}\left(\ln\left( \frac{k_1}{k_2S_0} \right) -1  \right) \tag{43}$$
+# $$I_N^{max} = 1+\frac{k_1}{k_2(S_0+I_0)}\left(\ln\left( \frac{k_1}{k_2S_0} \right) -1  \right) \qquad\tag{43}$$
 # 
 # and, when multiplied by the total number $I_0 + S_0$, gives the maximum number of hospital beds necessary to treat the infection. The maximum $I_N^{max}$ may occur mathematically to the right of the diagonal line, Fig. 16, but clearly this is not physically possible, because the maximum value $I_N$ can ever take is subject to the condition $S_N^{max} + I_N^{max} \le 1$ and this occurs when $R_R \ge 1$.
 # 
 # When the number (or fraction) of infected individuals is zero, there are still some who remain susceptible, see Fig. 16, who did not catch the disease even in an epidemic. This fraction is in the range $0.02 \to 0.08$ in the figure, and is the extent of herd immunity. To be more quantitative, equation 42 describes $I$ vs $R$, and when $t \to \infty$ then $I$ is zero, giving
 # 
-# $$0 = \frac{k_1}{k_2N}\ln\left( \frac{S_N^\infty N}{S_0} \right)-S_N^{\infty} +1 \tag{44}$$
+# $$0 = \frac{k_1}{k_2N}\ln\left( \frac{S_N^\infty N}{S_0} \right)-S_N^{\infty} +1 \qquad\tag{44}$$
 # 
 # which is transcendental, and has to be solved numerically for $S_N^\infty$, the fractional amount of $S$ remaining at $t \to \infty$. The Newton-Raphson method (Chapter 3.10) could be used to solve the equation. However, for a strong epidemic the fractional amount of $S$ left at the end is very small; $S_N^\infty \ll 1$ hence
 # 
-# $$\frac{k_1}{k_2N}\ln\left( \frac{S_N^\infty N}{S_0} \right) +1=0 \tag{45}$$
+# $$\frac{k_1}{k_2N}\ln\left( \frac{S_N^\infty N}{S_0} \right) +1=0 \qquad\tag{45}$$
 # 
 # When re-arranged,
 # 
-# $$S_N^\infty =\frac{S_0}{N}e^{-k_2N/k_1},\qquad \text{or}\qquad S_N^\infty =\frac{S_0}{I_0/S_0+1}e^{-k_2S_0/k_1(1+I_0/S_0)} \tag{46}$$
+# $$S_N^\infty =\frac{S_0}{N}e^{-k_2N/k_1},\qquad \text{or}\qquad S_N^\infty =\frac{S_0}{I_0/S_0+1}e^{-k_2S_0/k_1(1+I_0/S_0)} \qquad\tag{46}$$
 # 
 # When $I_0/S_0 \ll 1$, for example, if only one person is infected initially, then $\displaystyle S_N^\infty \approx e^{-k_2S_0/k_1}$. As a check, using the lowest curve in Fig. 16, which has been calculated with the ratio $k_2N/k_1 = 3, S_0 = N - I_0$ and $I_0/S_0 = 1/1000$, the fractional amount of $S$ remaining at the end of the epidemic, calculated using the approximate formula, is $S_N^\infty  \approx 0.0498$ or 4.98% of the population were never infected. This is close to the exact value of 5.94%.
 # 
 # Finally, starting with equation 45 the total number infected is approximately
 # 
-# $$I_{tot} \approx N-S_0e^{-k_2N/k_1} \tag{45}$$
+# $$I_{tot} \approx N-S_0e^{-k_2N/k_1} \qquad\tag{45}$$
 # 
 # or $N(1 - 0.0498)$ and this is the size of the infection, and in effect defines the total number of hospital beds needed over the course of the epidemic.
 # 
