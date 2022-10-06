@@ -119,7 +119,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # The order of the atoms is the same as for their coordinates
 # 
-# #### Calculating a molecule's moments of inertia: 
+# ### Calculating a molecule's moments of inertia: 
 
 # In[2]:
 

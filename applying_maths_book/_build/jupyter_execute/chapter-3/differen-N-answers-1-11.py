@@ -16,9 +16,9 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 
 # ## Q1 answer
-# Rearranging the equation produces $V=1000/p $ and then a new function for the increased volume is produced by adding the small quantities $\delta V$ and 
+# Rearranging the equation produces $V=1000/p $ and then a new function for the increased volume is produced by adding the small quantities $\delta V$ and $\delta p$,
 # 
-# $$\displaystyle \delta p, \;(V + \delta V) = \frac{1000}{ p + \delta p}$$
+# $$\displaystyle  (V + \delta V) = \frac{1000}{ p + \delta p}$$
 # 
 # and the change in volume with pressure is therefore 
 # 
