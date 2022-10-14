@@ -147,7 +147,7 @@ vec,val
 # In[4]:
 
 
-M0 = Matrix([[A0,0,0]])
+M0 = Matrix([[A0,0,0]])                  # Initial condition, only A is present in this example
 exp_matrix = zeros(3,3)                  # make matrix full of zeros
 for i in range(3):
     exp_matrix[i,i]= exp(val[i,i]*t)     # fill diagonals 
@@ -172,7 +172,7 @@ populations
 
 max_num = 200
 t  = np.linspace(0,10,max_num)    # range 0 to 10, 200 points 
-M0 = np.array([1,0,0])            # initial concentrations
+M0 = np.array([1,0,0])            # initial concentrations, only A is present in this example
 n  = 3                            # number of equations
 k1 = 1.0                          # rate constnat
 k2 = 1.5
@@ -201,7 +201,7 @@ plt.show()
 # 
 # ### **Circular reaction scheme**
 # 
-# When the rate equations are more complex then a numerical solution is to be preferred simply because the equations can become impossibly complex. Consider a scheme (figure 55a) in which three species A, B, C are interconnected each with the others. 
+# When the rate equations are more complex then a numerical solution is to be preferred simply because the equations can become impossibly complex. Consider a scheme (figure 55a) in which three species A, B, C are interconnected each with the others. We can see that equilibrium will be established for all three species as there is no pathway for any species to react other than to the others. We can also guess at the concentration vs time if only one species is populated initially, which is that this species decays and the others increase until equilibrium is reached.
 # 
 # ![Drawing](matrices-fig55a.png)
 # 
@@ -215,15 +215,27 @@ plt.show()
 # 
 # $$\displaystyle \begin{bmatrix}\dot a\\ \dot b\\ \dot c \end{bmatrix}=\begin{bmatrix}-(k_{12}+k_{13}) & k_{21} & k_{31}\\k_{12} & -(k_{21}+k_{23}) & k_{32} \\k_{13} & k_{23} & -(k_{32}+k_{31})  \\ \end{bmatrix}\begin{bmatrix}a\\b\\c\end{bmatrix}$$
 # 
-# The rate expression for $b$ is $\displaystyle \frac{db}{dt}= -(k_{21}+k_{23})b + k_{12}a+k_{32}c$
+# The rate expression for $b$ is $\displaystyle \frac{db}{dt}=  k_{12}a -(k_{21}+k_{23})b +k_{32}c$
 # 
-# In general this can be written as
+# and in general this can be written as
 # 
-# $$\displaystyle \frac{db}{dt}= -\sum_i k_{2,i}(1-\delta_{2,i})b + k_{12}a+k_{32}c$$
+# $$\displaystyle \frac{db}{dt}= k_{12}a -\sum_i k_{2,i}(1-\delta_{2,i})b +k_{32}c$$
 # 
 # where the delta function removes the $k_{22}$ term. The summation is along the last index, i.e. the columns of the (rate constant) matrix of $k_{i,j}$ values in each case. Note that this $k$ matrix is simply the matrix of rate constants  and not organized as rate equations as $\pmb K$ is in eqn. 37. This means that the subscripts refer to the rate constants not to their index position in the matrix. As a check on the calculation the sum of the populations at any time must be equal to the total amount initially present.
 # 
-# This method can be extended to schemes with many other species as in question 52. If, for instance, species $b$ decays such as by fluorescence or phosphorescence then $-k_f b$ is added to the summation term in the rate equation for that species. The limitation is that only first order, or pseudo first order, reactions are possible, i.e. the rate constant matrix must not involve and concentrations unless they have a constant value.
+# This matrix method can be extended to schemes with many other species as in question 52. If, for instance, species $b$ decays such as by fluorescence or phosphorescence then $-k_f b$ is added to the summation term in the rate equation for that species. The limitation is that only first order, or pseudo first order, reactions are possible, i.e. the rate constant matrix must not involve and concentrations unless they have a constant value.
+# 
+# ### **Steady State**
+# 
+# In this particular scheme each species will soon reach the steady state, which is here equivalent to equilibrium, when the rate of change of concentration becomes zero. This happens because we have not included a process by which the total population can decrease, for example, by any one species reacting to a different molecule other than A, B or C. 
+# 
+# The rate equations become 
+# 
+# $$\displaystyle \begin{align} \frac{da}{dt}&= -(k_{12}+k_{13})a+k_{21}b+k_{31}c=0  \\ \frac{db}{dt}&= k_{12}a-(k_{21}+k_{23})b+k_{32}c =0\\\frac{dc}{dt}&= k_{13}a + k_{23}b-(k_{31}+k_{32})c =0\end{align} $$
+# 
+# but solving these equations only produces the ratio of concentrations because the species are linked and not independent unless the mass balance $a+b+c=c_{tot}$ is also included then individual concentrations can be obtained. The mass balance is true at any time including time zero. The ratio between A and C at equilibrium is 
+# 
+# $$\displaystyle \frac{a}{c}=\frac{ k_{21} k_{31} + k_{21} k_{32} + k_{23} k_{31}}{k_{12} k_{23} + k_{13} k_{21} + k_{13} k_{23}}$$
 
 # ### **Energy transfer on a Polygon. Circulant determinants**
 # 

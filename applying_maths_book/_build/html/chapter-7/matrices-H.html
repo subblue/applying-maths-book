@@ -1533,6 +1533,13 @@ title="Print to PDF"
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#steady-state">
+     <strong>
+      Steady State
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#energy-transfer-on-a-polygon-circulant-determinants">
      <strong>
       Energy transfer on a Polygon. Circulant determinants
@@ -1623,6 +1630,13 @@ title="Print to PDF"
     <a class="reference internal nav-link" href="#circular-reaction-scheme">
      <strong>
       Circular reaction scheme
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#steady-state">
+     <strong>
+      Steady State
      </strong>
     </a>
    </li>
@@ -1790,7 +1804,7 @@ scheme is</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">M0</span> <span class="o">=</span> <span class="n">Matrix</span><span class="p">([[</span><span class="n">A0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">M0</span> <span class="o">=</span> <span class="n">Matrix</span><span class="p">([[</span><span class="n">A0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]])</span>                  <span class="c1"># Initial condition, only A is present in this example</span>
 <span class="n">exp_matrix</span> <span class="o">=</span> <span class="n">zeros</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>                  <span class="c1"># make matrix full of zeros</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
     <span class="n">exp_matrix</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">i</span><span class="p">]</span><span class="o">=</span> <span class="n">exp</span><span class="p">(</span><span class="n">val</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="n">t</span><span class="p">)</span>     <span class="c1"># fill diagonals </span>
@@ -1818,7 +1832,7 @@ scheme is</p>
 
 <span class="n">max_num</span> <span class="o">=</span> <span class="mi">200</span>
 <span class="n">t</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="n">max_num</span><span class="p">)</span>    <span class="c1"># range 0 to 10, 200 points </span>
-<span class="n">M0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span>            <span class="c1"># initial concentrations</span>
+<span class="n">M0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span>            <span class="c1"># initial concentrations, only A is present in this example</span>
 <span class="n">n</span>  <span class="o">=</span> <span class="mi">3</span>                            <span class="c1"># number of equations</span>
 <span class="n">k1</span> <span class="o">=</span> <span class="mf">1.0</span>                          <span class="c1"># rate constnat</span>
 <span class="n">k2</span> <span class="o">=</span> <span class="mf">1.5</span>
@@ -1852,7 +1866,7 @@ scheme is</p>
 <hr class="docutils" />
 <section id="circular-reaction-scheme">
 <h3><strong>Circular reaction scheme</strong><a class="headerlink" href="#circular-reaction-scheme" title="Permalink to this headline">#</a></h3>
-<p>When the rate equations are more complex then a numerical solution is to be preferred simply because the equations can become impossibly complex. Consider a scheme (figure 55a) in which three species A, B, C are interconnected each with the others.</p>
+<p>When the rate equations are more complex then a numerical solution is to be preferred simply because the equations can become impossibly complex. Consider a scheme (figure 55a) in which three species A, B, C are interconnected each with the others. We can see that equilibrium will be established for all three species as there is no pathway for any species to react other than to the others. We can also guess at the concentration vs time if only one species is populated initially, which is that this species decays and the others increase until equilibrium is reached.</p>
 <p><img alt="Drawing" src="../_images/matrices-fig55a.png" /></p>
 <p>Figure 55a. Coupled kinetic scheme.</p>
 <hr class="docutils" />
@@ -1862,12 +1876,22 @@ scheme is</p>
 <p>where <span class="math notranslate nohighlight">\(a,b,c\)</span> are the concentrations of each species and <span class="math notranslate nohighlight">\(k_{21}\)</span> is the rate constant from <span class="math notranslate nohighlight">\(b \to a\)</span> and similarly for the others. In matrix form these equations are, where the dot over a letter indicated the time derivative,</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle \begin{bmatrix}\dot a\\ \dot b\\ \dot c \end{bmatrix}=\begin{bmatrix}-(k_{12}+k_{13}) &amp; k_{21} &amp; k_{31}\\k_{12} &amp; -(k_{21}+k_{23}) &amp; k_{32} \\k_{13} &amp; k_{23} &amp; -(k_{32}+k_{31})  \\ \end{bmatrix}\begin{bmatrix}a\\b\\c\end{bmatrix}\end{split}\]</div>
-<p>The rate expression for <span class="math notranslate nohighlight">\(b\)</span> is <span class="math notranslate nohighlight">\(\displaystyle \frac{db}{dt}= -(k_{21}+k_{23})b + k_{12}a+k_{32}c\)</span></p>
-<p>In general this can be written as</p>
+<p>The rate expression for <span class="math notranslate nohighlight">\(b\)</span> is <span class="math notranslate nohighlight">\(\displaystyle \frac{db}{dt}=  k_{12}a -(k_{21}+k_{23})b +k_{32}c\)</span></p>
+<p>and in general this can be written as</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle \frac{db}{dt}= -\sum_i k_{2,i}(1-\delta_{2,i})b + k_{12}a+k_{32}c\]</div>
+\[\displaystyle \frac{db}{dt}= k_{12}a -\sum_i k_{2,i}(1-\delta_{2,i})b +k_{32}c\]</div>
 <p>where the delta function removes the <span class="math notranslate nohighlight">\(k_{22}\)</span> term. The summation is along the last index, i.e. the columns of the (rate constant) matrix of <span class="math notranslate nohighlight">\(k_{i,j}\)</span> values in each case. Note that this <span class="math notranslate nohighlight">\(k\)</span> matrix is simply the matrix of rate constants  and not organized as rate equations as <span class="math notranslate nohighlight">\(\pmb K\)</span> is in eqn. 37. This means that the subscripts refer to the rate constants not to their index position in the matrix. As a check on the calculation the sum of the populations at any time must be equal to the total amount initially present.</p>
-<p>This method can be extended to schemes with many other species as in question 52. If, for instance, species <span class="math notranslate nohighlight">\(b\)</span> decays such as by fluorescence or phosphorescence then <span class="math notranslate nohighlight">\(-k_f b\)</span> is added to the summation term in the rate equation for that species. The limitation is that only first order, or pseudo first order, reactions are possible, i.e. the rate constant matrix must not involve and concentrations unless they have a constant value.</p>
+<p>This matrix method can be extended to schemes with many other species as in question 52. If, for instance, species <span class="math notranslate nohighlight">\(b\)</span> decays such as by fluorescence or phosphorescence then <span class="math notranslate nohighlight">\(-k_f b\)</span> is added to the summation term in the rate equation for that species. The limitation is that only first order, or pseudo first order, reactions are possible, i.e. the rate constant matrix must not involve and concentrations unless they have a constant value.</p>
+</section>
+<section id="steady-state">
+<h3><strong>Steady State</strong><a class="headerlink" href="#steady-state" title="Permalink to this headline">#</a></h3>
+<p>In this particular scheme each species will soon reach the steady state, which is here equivalent to equilibrium, when the rate of change of concentration becomes zero. This happens because we have not included a process by which the total population can decrease, for example, by any one species reacting to a different molecule other than A, B or C.</p>
+<p>The rate equations become</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin{align} \frac{da}{dt}&amp;= -(k_{12}+k_{13})a+k_{21}b+k_{31}c=0  \\ \frac{db}{dt}&amp;= k_{12}a-(k_{21}+k_{23})b+k_{32}c =0\\\frac{dc}{dt}&amp;= k_{13}a + k_{23}b-(k_{31}+k_{32})c =0\end{align} \end{split}\]</div>
+<p>but solving these equations only produces the ratio of concentrations because the species are linked and not independent unless the mass balance <span class="math notranslate nohighlight">\(a+b+c=c_{tot}\)</span> is also included then individual concentrations can be obtained. The mass balance is true at any time including time zero. The ratio between A and C at equilibrium is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{a}{c}=\frac{ k_{21} k_{31} + k_{21} k_{32} + k_{23} k_{31}}{k_{12} k_{23} + k_{13} k_{21} + k_{13} k_{23}}\]</div>
 </section>
 <section id="energy-transfer-on-a-polygon-circulant-determinants">
 <h3><strong>Energy transfer on a Polygon. Circulant determinants</strong><a class="headerlink" href="#energy-transfer-on-a-polygon-circulant-determinants" title="Permalink to this headline">#</a></h3>
