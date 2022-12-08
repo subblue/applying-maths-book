@@ -623,7 +623,39 @@ ans
 # Figure 5d. $\mathrm{2HI \rightleftharpoons H_2 + I_2}$ reaching equilibrium starting at zero HI, rising points, and eqn 5g, and only HI, falling points, and eqn 5h. The equilibrium value $x_e=0.786$ at $448^\text{o}$ C. The curves show that the same equilibrium is reached starting either with products or reactants. 
 # ____________
 # 
-# ### **(vii) Kinetics and flow** 
+# ### **(vii) Reversible reaction when the the equilibrium constant is known $A \overset{k_1}{\underset{k_{-1}} \rightleftharpoons } B$** 
+# 
+# Sometimes we may want the rate expression in terms of the equilibrium constant as this may be known when neither rate constant has been measured. As an example the  ortho to para conversion of H$_2$ with a catalyst such as Nickel on $\mathrm{Al_2O_3}$ has the form $o-H_2 \overset{k_1}{\underset{k_{-1}} \rightleftharpoons } p-H_2$. Other examples are cis - trans isomerisation of some hydrocarbons or of $\alpha -,\beta-$ glucoses. 
+# 
+# Letting $a\equiv o-H_2$ and $b\equiv p-H_2$ concentrations produces the rate equation
+# 
+# $$\displaystyle \frac{da}{dt} = -k_1a +k_{-1}b$$
+# 
+# The initial amounts are $a_0,b_0$ and as the total amount of ortho- and para-hydrogen is constant at all times 
+# 
+# $$\displaystyle a+b=a_0+b_0=a_e+b_e$$
+# 
+# where subscript e denotes the equilibrium.  The equilibrium constant is $\displaystyle K=\frac{k_1}{k_{-1}}=\frac{b_e}{a_e}=\frac{a_0+b_0-a_e}{a_e}$,
+# 
+# By rearranging and substituting for $K$, the rate expression becomes
+# 
+# $$\displaystyle \begin{align}\frac{da}{dt}=&-(k_1+k_{-1})a+k_{-1}(a_0+b_0)\\=&-k_1\left(1+\frac{k_{-1}}{k_1}\right)a+k_{-1}(a_0+b_0)\\=& -k_1\left(\frac{K+1}{K} \right) a+\frac{k_1}{K}(a_0+b_0)\end{align}$$
+# 
+# Using the total amount $a_0+b_0=a_e(K+1)$ and substituting again gives
+# 
+# $$\displaystyle \frac{da}{dt}=-k_1\frac{K+1}{K}(a-a_e)$$
+# 
+# which is now a standard integral with $a$ being the only variable
+# 
+# $$\displaystyle \int_{a_0}^a\frac{da}{a-a_e} = -k_1\frac{K+1}{K} \int_0^t dt $$
+# 
+# producing 
+# 
+# $$\displaystyle \ln\left( \frac{a-a_e}{a_0-a}\right)=-k_1\frac{K+1}{K}t$$
+# 
+# which illustrates an exponentially decaying population of $a$ or ortho hydrogen to reach a constant value with a measured rate constant of $k_1(K+1)/K$ from which both $k_1,k_{-1}$ can be found if $K$ is known, for example from thermodynamic data, via $\Delta G^\text{o}=RT\ln(K)$. Notice that the initial amount of species $b$ is irrelevant to the decay of $a$.
+
+# ### **(viii) Kinetics and flow** 
 # 
 # Water entering and leaving a tank, reaction vessel, or even a lake can be modelled by calculating the difference in the amount material flowing in and out, viz.,
 # 
@@ -666,7 +698,7 @@ ans
 # Fig. 6. Left. The change in the ratio $x/x_0$ vs. reduced flow $ft/V$ for different $r_{in} = x_{in} /x_0$ ratios, showing the range of curves obtainable with different starting conditions. Right. The same equation but rewritten with ratio $r_0=x_0/x_{in}$. The ratios in both plots are $0, 0.5, 1$ and $1.5$.
 # ________
 # 
-# ### **(viii) Dissolution kinetics** 
+# ### **(ix) Dissolution kinetics** 
 # 
 # When a solid solute is dissolved in a solvent, the rate equation is found by considering the change in the amount dissolved in solution during a short time period. In dissolving a solid, a saturated solution will eventually be formed and this limits how much solid will dissolve. If $x_0$ is the initial amount of solid to be dissolved in $m$ grams of solvent, $s_x /m$ the saturated solution concentration, $k$ the rate of dissolution (mass s$^{-1}$) and $x$ the number of grams of solid remaining at time $t$, then
 # 
@@ -702,7 +734,7 @@ ans
 # 
 # $$\displaystyle x=-\frac{1}{Nk}\log\left(\frac{x-N}{x} \right)+ const$$
 # 
-# ### **(ix) Mean free path and probability of obtaining a path of a given length**
+# ### **(x) Mean free path and probability of obtaining a path of a given length**
 # 
 # If $\bar c$ is the average velocity and there are $v$ molecules in unit volume then the total distance covered is $\bar c v$. Let $\gamma$ be the number of collisions that occur per unit volume per second and as each collision terminates two free paths, there are $2v$ free paths in the same time. As the average distance travelled is $\bar c v$ the average length of the free path $\lambda$ is 
 # 
