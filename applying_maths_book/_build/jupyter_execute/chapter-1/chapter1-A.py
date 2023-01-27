@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Numbers to Algorithms.
+# # 1 Numbers to Algorithms.
 
 # In[1]:
 
@@ -24,7 +24,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # There is one fundamental rule for manipulating an equation and that is to make sure that whatever is done to one side is done to the other. The equality$^1$ sign = means that the left-hand side of any equation is always equal to the right; for example the Ideal Gas Law equation,
 # 
-# $$\displaystyle  pV = nRT \tag{1} $$
+# $$\displaystyle  pV = nRT \qquad\tag{1} $$
 # 
 # means that the product of pressure $p$ and volume $V$ is always equal to the number of moles multiplied by the gas constant $R$ and the temperature $T$. To isolate the pressure on the left-hand side, both sides of the equation must be divided by the volume,
 # 
@@ -58,7 +58,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # Sometimes when one variable is small compared to another it can be ignored. The expansion of the exponential is one such case where this is legitimate; 
 # 
-# $$\displaystyle e^{-x}=1 - x + \frac{x^2}{2!}-\frac{x^3}{3!}\cdots$$ 
+# $$\displaystyle e^{-x}=1 - x + \frac{x^2}{2!}-\frac{x^3}{3!}\cdots \qquad\tag(2)$$ 
 # 
 # The terms $2!$ and $3!$ are factorials; $3!=3\times 3\times 1$ and similarly for other numbers.  Suppose that $x$ is small compared to  $1$ then $x^2$ is very small and $x^3$ tiny, then it is possible to approximate $\displaystyle e^{-x} \approx 1 - x$ and this is valid. However, to do this in the middle of a calculation is invariably fatal. Take a simple example, in the expression 
 # 
@@ -179,13 +179,13 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # Next, convince yourself, for example by drawing them out, that the triangles ABC and ACZ are similar because their angles are similar. The angle ACB is $90^\text{o}$ because an angle at the circumference is half that at the centre; see Figure 2, and AZC is also a right angle. Therefore the ratio of the sides AZ/AC is the same as AC/AB or as an equation AZ/$x_2 = x_2$/AB from which
 # 
-# $$\begin{equation}\displaystyle  x_2 =\mathrm{AZ \times AB} =2(1+\text{OZ}) \end{equation}$$
+# $$\displaystyle  x_2 =\mathrm{AZ \times AB} =2(1+\text{OZ}) \qquad\tag{2}$$
 # 
 # the length AB being $2$ because the radius of the circle is $1$. Our task now is to find OZ. 
 # 
 # The angles in triangles AOY and OZC are the same, see Figure 1, and the triangles are also the same size as both have the radius as their hypotenuse, AO and OC. Notice also that $\angle$AOY = $90 -\theta$ and therefore bisects the angle $\angle$AOD making AY = YD and AY = $x_1/2$ = OZ. Substituting for OZ produces
 # 
-# $$\begin{equation}\displaystyle x_2^2 = 2 + x_1\end{equation}$$ 
+# $$\displaystyle x_2^2 = 2 + x_1\qquad\tag{3}$$ 
 # 
 # A relationship between the length $x_1$ or $x_2$ and $a_2$ has to be found. Triangle ADB is right angled and as the hypotenuse is 2 (the diameter), using Pythagoras's theorem is 
 # 
@@ -267,16 +267,16 @@ for i in range(m):
 # ____
 # Suppose that $N$ is the number for which the square root is sought, then let $a$ be an estimate of this number and therefore we want an algorithm with which to find $a$. Suppose that $a_2$ differs from the true value $N$ by an error $\epsilon$; hence
 # 
-# $$\displaystyle \epsilon = N-a^2 \tag{4}$$
+# $$\displaystyle \epsilon = N-a^2 \qquad\tag{4}$$
 # 
 # The next step is to find a better approximation and instead of just randomly guessing a new value for $a$, a small positive or negative number $c$ is added. Now we suppose that $a + c$ is the new and better approximation to the square root, therefore
 # 
-# $$\displaystyle \epsilon = N-(a+c)^2 \tag{5}$$
+# $$\displaystyle \epsilon = N-(a+c)^2\qquad \tag{5}$$
 # 
 # Assuming that adding $c$ makes the error we call $\epsilon_c$  zero, by expanding the bracket, substituting
 # for $N - a^2$ and rearranging produces $\epsilon = 2ac+c^2$. However, as $c$ is small, then $c^2$ is even smaller,$^2$ and we will suppose we can ignore it and then $c = \epsilon /2a$. Next we suppose that the approximation to the square root is $a_1$ where $a_1 = a+c$. Hence
 # 
-# $$\displaystyle  a_1=a+\frac{\epsilon}{2a}= a +\frac{(N-a)^2}{2a}=\frac{1}{2}\left( a+\frac{N}{a} \right) \tag{6}$$
+# $$\displaystyle  a_1=a+\frac{\epsilon}{2a}= a +\frac{(N-a)^2}{2a}=\frac{1}{2}\left( a+\frac{N}{a} \right) \qquad\tag{6}$$
 # 
 # Repeating the procedure gives $a_2 = (a_1 + N/a_1)/2$ and then $a_3,\; a_4 \cdots$  and so forth, and and will eventually produce $\sqrt{N}$ after $n$ iterations. It is implicitly assumed that this sequence will converge to a real number as the error $\epsilon$ gets smaller.
 # 
@@ -356,7 +356,7 @@ for i in range(m):                          # do iteration
 # 
 # The golden ratio $1.618033 \cdots$ was thought by the ancient Greeks to be the perfect ratio of width to the height of a picture, but to me it appears a little too wide for its height. The golden ratio has been written about extensively and has somewhat of a cult following. In *ca* 300 BC Euclid divided the line, figure 5, so that AC is to AB as AB is to BC. This is the ratio of the total length and of the larger section, to the ratio of the larger to small sections. As an equation  $\displaystyle \phi=\frac{AC}{AB}=\frac{AB}{BC}$ , then
 # 
-#  $$\displaystyle  \frac{\phi +1}{\phi} = \phi \tag{7}$$
+#  $$\displaystyle  \frac{\phi +1}{\phi} = \phi \qquad\tag{7}$$
 #  
 #  ![drawing](chapter1-fig5.png)
 #  
@@ -461,7 +461,7 @@ while abs(b-a)> Lmt and i < N-1 :
 # 
 # The exponential is defined as a series expansion as was first discovered by Euler in 1748. The series converges absolutely for any finite value of $x$ even though it extends to infinity:
 # 
-# $$\displaystyle e^x = 1+x+\frac{x^2}{2!}+\frac{x^3}{3!}+\frac{x^4}{4!}+\cdots = \sum_{n=0}^\infty \frac{x^n}{n!} \tag{8}$$
+# $$\displaystyle e^x = 1+x+\frac{x^2}{2!}+\frac{x^3}{3!}+\frac{x^4}{4!}+\cdots = \sum_{n=0}^\infty \frac{x^n}{n!} \qquad\tag{8}$$
 # 
 # The $\sum$ sign at the end of the series is a shorthand and indicates summation in this case from $n = 0$ to infinity. The factorials $2!, 3!$, etc. are products, such that,
 # 
@@ -477,7 +477,7 @@ while abs(b-a)> Lmt and i < N-1 :
 # 
 # By multiplying term by term and rearranging, it is found that $f(x)f(y) = f(x + y)$ , which means that the familiar property, that powers of products of numbers add, has been confirmed because,
 # 
-# $$\displaystyle  e^xe^y= e^{x+y}; \qquad \text{and} \qquad e^xe^ye^z= e^{x+y+z}\tag{9}$$
+# $$\displaystyle  e^xe^y= e^{x+y}; \qquad \text{and} \qquad e^xe^ye^z= e^{x+y+z}\qquad\tag{9}$$
 # 
 # **Recursive calculation of e.** You can try calculating the exponential series by hand and easily see how the accuracy improves term by term. A quick examination of the series shows that you can use a previous value to obtain the next; starting at the second term, the third is calculated by multiplying the second by $x/3$, the fourth by multiplying the third by $x/4$, and so on. This type of process is called _recursion_ and the calculation of $\pi$ and of square roots described in Sections 1 and 2 are both recursive. The Python code to calculate $e^x$ recursively is shown below; you can add more terms in the for loop to get a better answer, which is the sum of terms $s$.
 
@@ -556,9 +556,9 @@ for i in range(1,12):      # increase number if does not comverge
 # 
 # If $a\gt 0$ and $ b> 0 $ the first two laws of logs are
 # 
-# $$\displaystyle \log(a) + \log(b) = \log(a \times b)  \tag{10}$$
+# $$\displaystyle \log(a) + \log(b) = \log(a \times b)  \qquad\tag{10}$$
 # 
-# $$\displaystyle \log(a) - \log(b) = \log\left( \frac{a}{b}\right)  \tag{11}$$
+# $$\displaystyle \log(a) - \log(b) = \log\left( \frac{a}{b}\right) \qquad \tag{11}$$
 # 
 # and these relationships are true no matter what the base is. 
 # 
@@ -574,7 +574,7 @@ for i in range(1,12):      # increase number if does not comverge
 # 
 # The number $2^8 = 256$ written in logarithmic form is $8 = \log_2(256)$, which means that '8 equals log base 2 of 256' and 'base 2' means that we are raising numbers to powers of $2$. The general formulae relating a number $N$ with base $b$ and a power $p$ are:
 # 
-# $$\displaystyle N = b^p \qquad \text{ or }\qquad  p = \log_b(N) \tag{13}$$
+# $$\displaystyle N = b^p \qquad \text{ or }\qquad  p = \log_b(N) \qquad\tag{13}$$
 # 
 # Natural (Napierian) logs, usually written as $\ln$, or $\log_e$, use $e$ as the base number with which we raise to a power, and $\log$ or $\log_{10}$ use 10 as the base, for example because $10^3 = 1000$ we can write this as $3 = \log_{10}(1000)$. The number $e^3 = 20.086$ can be written as $3 = \ln(20.086)$. The series of powers of 10 and $e$ are shown below:
 # 
@@ -611,7 +611,23 @@ for i in range(1,12):      # increase number if does not comverge
 # 
 # $$\displaystyle w =-nRT\ln\left(\frac{V_2}{V_1} \right)$$
 # 
-# The derivation of these equations need a knowledge of calculus and can be found in any phys. chem. or specialist textbook. 
+# The derivation of these equations need a knowledge of calculus and can be found in any phys. chem. or specialist textbook.
+# 
+# ### 4.1 Changing the base of logs
+# 
+# By definition
+# 
+# $$\displaystyle x=b^{\log_b(x)}$$
+# 
+# but if the log to a different base a is needed, then taking logs of both sides gives
+# 
+# $$\displaystyle \log_a(x)=\log_a(b)\log_b(x)\qquad\tag{14}$$
+# 
+# When we want to change the base of logs, such as when plotting $\log_{10}$ graphs but want $\log_e$ answers, which is common in chemical kinetics, the formula to use is
+# 
+# $$\displaystyle \ln(x)=\ln(10)\log(x)\qquad\tag{15}$$
+# 
+# which is $\ln(x)=2.30258\log(x)$.
 # 
 # ### 4.2 Summary of logs and powers: definition $x=b^{\log_b(x)}$
 # 

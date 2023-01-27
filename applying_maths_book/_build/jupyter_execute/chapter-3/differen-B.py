@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Trig functions, logs, power, reciprocals and integrals
+# # 3.9 Trig functions, logs, power, reciprocals and integrals
 
 # In[1]:
 
@@ -15,7 +15,7 @@ init_printing()                      # allows printing of SymPy results in types
 plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 
-# ## 3.9 Sine and cosine
+# ## 3.9 Differentiating sine and cosine
 # 
 # Sine and cosine functions are almost mirror images of one another when differentiated,
 # 
@@ -54,7 +54,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # The Pythagoras right-angled triangle can also be used to convert between trig functions. See Chapter 1.5 and a table of many functions is given in section 4.17.
 # 
-# ## 3.12 Logarithms
+# ## 3.12 Differentiating logarithms
 # 
 # Differentiating logarithms always has the form: 'derivative divided by the function'.
 # 
@@ -97,7 +97,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # where $C$ is a constant. The reason $C$ is there is that this is the general form and is simplified from the derivative of a log, since $\displaystyle \frac{d}{dx}\ln(Cx)=\frac{1}{x}$. 
 # 
 # 
-# ## 3.13 $x$ as a power: 
+# ## 3.13 Differentiating x as a power 
 # 
 # Expressions such as $y=a^x,\;y=x^{1/x},\; y= x^x $ etc. can be differentiated quite easily with a little care.
 # 
@@ -238,7 +238,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # The general result for the $n^{th}$ derivative of $x^m$ is $\displaystyle \frac{d^ny}{dx^n}=\frac{m!}{(m-n)!}x^{m-n}$ which can be generalised if $n$ is a fraction by changing the factorials to gamma functions as $n!=\Gamma (n+1)$ thus $\displaystyle \frac{d^ny}{dx^n}=\frac{\Gamma (m+1)}{\Gamma(m-n+1)}x^{m-n}$. As many functions can be expressed as power series it is possible to fractionally differentiate these. However, these unusual derivatives need not have more than a curiosity interest for us; they appear in Morse's paper on the anharmonic oscillator (P. Morse, Physical Review, 34, 57, 1929) and hardly anywhere else.
 
-# ## 3.17 Table of the differentials of some common functions.
+# ## 3.17 Table of Differentials
 # 
 # $a,\;,b,\;$ and $n$ are treated as constants.
 # 

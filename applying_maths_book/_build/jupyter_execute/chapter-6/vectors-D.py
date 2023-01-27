@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Basis sets with more than three dimensions
+# # 12 Basis sets with more than three dimensions
 
 # ## 12 Many dimensions
 # The $x, y$, and $z$-axes at $90^\text{o}$ to one another are very familiar and the basis set of unit vectors $\boldsymbol i, \boldsymbol j, \boldsymbol k$ can be used to describe any vector in these axes. These basis vectors  are orthogonal; geometrically they are each at $90^\text{o}$ to one another and their dot product is zero. We have seen that $\boldsymbol i\cdot\boldsymbol j = \boldsymbol j\cdot\boldsymbol k = \boldsymbol i\cdot\boldsymbol k = 0$ and that the vectors are normalized, $\boldsymbol i\cdot\boldsymbol i = \boldsymbol j\cdot\boldsymbol j = \boldsymbol k\cdot\boldsymbol k = 1$; however, not all of the properties of molecules are represented in three dimensions. For instance, molecular orbitals need large basis sets. Benzene for instance, would need at least a six element basis set just to describe the $\pi$ electrons alone. At the other extreme, we could have an infinite basis set, which is also quite common in quantum mechanical problems and would be needed to handle the infinite number of vibrational levels in a harmonic oscillator. Fortunately, a large basis set is handled in the same way as a small one.

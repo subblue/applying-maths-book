@@ -113,7 +113,7 @@
 # 
 # **Strategy:**  Assume that IM is at steady state and use this to simplify and then integrate the rate equation.
 # 
-# ## Q16 Glucose mutarotation
+# ## Q16 $A\rightleftharpoons B$, Glucose mutarotation & membrane proteins
 # The mutarotation of glucose in water or the racemisation of biphenyls are reversible unimolecular reactions with the scheme $\displaystyle A \underset {k_{-1}}{\stackrel{k_1} \rightleftharpoons} B$. Transitions in membrane proteins also follow this scheme if the transitions are induced by a voltage, and then A and B indicate states when the protein is open or closed to the passage of ions. If $a$ and $b$ are the initial amounts of A and B respectively and $x$ the amount of A reacted at time $t$,
 # 
 # (a) Calculate the change in A as equilibrium is reached.

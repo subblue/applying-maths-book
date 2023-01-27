@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Reaction schemes with feedback
+# # 8 Reaction schemes with feedback
 
 # ## Introduction
 # Feedback in a chemical reaction implies that there are at least two reactions for which the product of one is the reactant for the other, and vice versa; for example, 

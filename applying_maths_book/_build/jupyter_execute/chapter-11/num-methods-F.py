@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Boundary value problems.
+# # 9 Boundary value problems.
 
 # In[1]:
 
@@ -17,7 +17,7 @@ init_printing()                      # allows printing of SymPy results in types
 plt.rcParams.update({'font.size': 16})  # set font size for plots
 
 
-# ## Shooting method
+# ## 9.1 Shooting method
 # 
 # The previous examples have been treated as initial value problems, but, in many cases, the equation being examined requires that the solution has predetermined value at two places, and a number of engineering and quantum mechanical problems have this restriction. Figure 25 illustrates, in a schematic way, the difference in the initial value and boundary conditions for a second-order equation; $d^2y/dx^2 = f (x,y)$. The top sketch shows the two initial conditions chosen at $x = 0$ to be $y = 1$ and $dy/dx|_0 = 2$; the gradient is shown as an arrow. The lower figure illustrates the situation if the boundary condition on $y$ is one when $x = 0$, and zero when $x = 2$, which is the limit of the calculation; $x$ can only range from $0 \to 2$.
 # 

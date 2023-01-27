@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Modelling data is simpler using matrices
+# # 7 Modelling data is simpler using matrices
 
 # In[1]:
 
@@ -18,12 +18,12 @@ init_printing()                      # allows printing of SymPy results in types
 plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 
-# ## Introduction
+# ## 7.1 Introduction
 # While the equations for a linear equation are manageable as summations, the polynomial equations become impossibly complicated. However, as the main concern is not in the algebraic form of the equations _per se_ , only in obtaining the solution to a problem, it is then simpler to convert the simultaneous normal equations into a matrix equation and to solve this for the constants.
 # 
 # Fitting with the equation $y = \alpha_0 + \alpha_1x$ has already been described in some detail; the polynomial $y = \alpha_0 + \alpha_1x + \alpha_2x^2$ and exponential $y = \alpha_0e^{-\alpha_1x}$ are also commonly found functions that describe data. The polynomial still belongs to the class of linear least squares because the normal equations can be solved exactly. The exponential equation will need a non-linear least squares method because the normal equations cannot be solved exactly and an iterative method is required. The method of choice is often the gradient expansion method, also called the Levenberg-Marquardt method, and this is discussed in Section 8. First, however, a matrix formulation of the linear least squares problem is presented and a solution obtained for a polynomial.
 # 
-# ## 6.1 Least squares fit to a plane
+# ## 7.2 Least squares fit to a plane
 # 
 # In a molecule such as heam in hemoglobin it is important to know the distance of the oxygen and histidine N atom from the plane of the molecule and from the Fe atom as these may not be the same. For example the N-Fe atom distances may not change by much during reaction but the Fe itself may move relative to the plane of the molecule. 
 # 
@@ -96,7 +96,7 @@ print('{:s}{:8.4g}{:s}{:8.4g}{:s}{:8.4g}'.format('a = ', fit[0],', b = ',fit[1],
 # Figure 10a. The Fe atom is moved to be at zero in coordinates and other atoms moved accordingly. The fit is to the plane of the four N atoms and is the black rectangle shown almost edge on. The four N atoms in heam (blue) lie mostly in this plane. The data is used in Question 52 'Vectors' and from pdb 1THB. The Fe atom can be seen to be just out of the plane of the four nitrogen atoms. The two oxygens (red) and the N atom in histidine (green) are also shown. THe sizes of the atoms does not represent their actual or relative radii and was chosen for clarity.
 # ____________
 # 
-# ## 6.1 General least squares method for a polynomial
+# ## 7.3 General least squares method for a polynomial
 # 
 # A general way of describing a fitting equation is
 # 
@@ -150,7 +150,7 @@ print('{:s}{:8.4g}{:s}{:8.4g}{:s}{:8.4g}'.format('a = ', fit[0],', b = ',fit[1],
 # 
 # Thus the inverse of $\boldsymbol A$ is all that is needed to find the coefficients, furthermore this inverse is also the matrix of the variances and co-variances (Bevington 1969).
 # 
-# ## 6.2 Example of a polynomial fit 
+# ## 7.4 Example of a polynomial fit 
 # 
 # As an example, the functional dependence of the vibrational energy levels of the $B (^3\sum _u^-)$ excited state of the oxygen molecule, which has $D_{\infty h}$ point group symmetry, will be found by analysing some data. The $(^3\sum_u^-)$ term symbol means that the molecule is in a triplet spin state and hence has two unpaired electrons, one in each of two orbitals, which together have zero orbital angular momentum, hence the symbol $\sigma$. The orbitals are ungerade ($u$) or odd, so that they do not have a centre of inversion and the minus sign means that the electronic state is symmetric to $C_2\; (180^\text{o})$ rotation about the principal axis. The vibrational levels have been measured by observing the absorption spectrum in the ultraviolet starting just above $200$ nm and the $n=0$ level has energy of $49363\;\mathrm{cm^{-1}}$ above the $n=0$ of the ground state. The energies of the vibrational levels above the bottom of this potential well and their quantum numbers $n$, are shown in the table.
 # 
@@ -236,7 +236,7 @@ for i in range(m):
     print('{:8.4g} {:s} {:6.1g}'.format( C[i],' +/- ',np.sqrt(cov[i,i]) ) )
 
 
-# ## Discussion of results
+# ## 7.5 Discussion of results
 # 
 # To calculate the spectroscopic parameters, the constants have to be compared to the expansion of the $G_3$ equation 49, which is
 # 
@@ -259,7 +259,7 @@ for i in range(m):
 # Figure 12. Data, fit and residuals for the $G_2$ fitting equation showing oscillations because this model function does not describe the data well. Compare with fig 11.
 # _______
 # 
-# ## 6.3 Confidence limits
+# ## 7.6 Confidence limits
 # 
 # The confidence limits can be calculated in a similar manner to that for the straight line, using the value from the $t$ distribution. The equations look slightly different because the matrix method is used. (See Hines & Montgomery 1990, Chapters 14-15 for the details.) They calculate the mean square error $SSE /(n - m - 1)$, which is the same as the $\chi^2$ on the whole data set, and give the formula which is equivalent to the one used here, where matrices $\boldsymbol{C}$ and $\displaystyle{B}$ are defined as in equations 47-48,
 # 
@@ -277,7 +277,7 @@ for i in range(m):
 # 
 # This curve is not shown in figure 11 because it is almost identical to the fitted curve, and would not be clear on the graph. Note that the product of the three matrices is a function of $x$ because matrix A consists only of numbers. See figure 7.7 (Matrices) for examples of matrix multiplication.
 
-# ## 7 Photon and particle counting and the Poisson distribution
+# ## 8 Photon and particle counting and the Poisson distribution
 # 
 # The Poisson distribution is formed by accumulating many events, $n$, and describes the situation where each event has a very small probability of occurring, $p$, but the product $np$, the mean number of events, is moderate. The distribution is asymmetric and skewed towards small numbers, Figure 13, because it is not possible to have a negative number of events. This distribution is observed when photons are counted or particles counted after a radioactive atom disintegrates, provided their decay time is long compared to the observation time. However, the distribution applies to many other types of events, such as the number of faulty CDs produced, the number of misprints on a printed page, or the number of students absent from a class in any week. One of the earliest examples was recorded over a twenty year period during the 1800's, and was the number of deaths of infantrymen in the Prussian army after they were kicked by a horse.
 # 
@@ -389,7 +389,7 @@ for i in range(m):
 # 
 # Photon and particle counting experiments normally follow a Poisson distribution. The weighting to use is $w_i = 1/c_i$ where $c_i$ is the mean number of counts at the $i^{th}$ data point in the data, thus, the weighting is always known. This does lead to a specific problem, viz., what happens when no counts are recorded in a particular channel, $c_i = 0$? This is quite possible at low light levels as occurs in single photon counting fluorescence decay experiments, or, when measuring fluorescence from single molecules through a confocal microscope. The advice to deal with this is to manipulate the data either by ignoring values below $10$ counts, or to add $1$ to every data point or to make each zero into $1$ and leave all the rest alone. None of this is satisfactory because it will cause incorrect parameters to be produced to the fitted data, and must be avoided. By making these changes, both the data and residuals are changed similarly so the effect can be disguised. The solution (Turton et al. Anal. Chem. 2003) is to fit the data with a weighting of $1$ and then the use values from the fitted curve as the weighting and refit the data. This has been shown to produce unbiased fits down to a very few counts in the total signal and contradicts the widespread assumption that least squares fitting of Poisson distributed data is invalid. One further point worth making is that when conducting counting experiments, it is not the maximum number of counts in any one channel that is important for data fitting but the total number of counts in the whole signal.
 
-# ## 7.1 Estimating signals buried in noise
+# ## 9 Estimating signals buried in noise
 # 
 # A useful feature of Poisson distributed data is that their sum is also Poisson distributed. If $x_1, x_2, x_3 \cdots$ are a set of Poisson distributed random numbers with means $\mu_1, \mu_2\cdots$, then their sum $\mu = \mu_1 + \mu_2 + \mu_2 + \cdots$ is also Poisson distributed with mean $\mu$ and standard deviation $\sqrt{\mu}$. Thus, data can be summed to improve its standard deviation. However, Poisson distributed data cannot be subtracted, because it would be quite possible to obtain negative numbers. This means that when a signal that is Poisson distributed has some background noise, this cannot be subtracted away but the model used to analyse the data has to contain a constant term to account for this, if the background is known to be constant, or a polynomial if it is not.
 # 

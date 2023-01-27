@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Limits, l'Hopital's rule, Maximum, Minimum and Calculus of Variations 
+# # 6 Limits, l'Hopital's rule, Maximum, Minimum and Calculus of Variations 
 
 # ## 6  l' Hopital's rule
 # In many calculations limits are encountered. For example, in the theory of diffraction the function $\displaystyle \frac{\sin(x)}{x}$ is met which, when $x \to 0$, has the form $0/0$ and at first sight this ratio seem to be indeterminate. There are other forms similar to this such as $\infty/\infty,\, \infty/0,\, 0\times \infty,\, 0\times 0,\, \infty-\infty$ and l'Hopital's rule is a method, sometimes used with a little additional ingenuity, of determining these limits. This topic is discussed here, not only because it requires differentiation, but also because it will be needed in the next section. It seems that Johann Bernoulli first worked this out, but it is named after l'Hopital who was one of his pupils.

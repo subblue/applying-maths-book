@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Matrices in optics and designing laser cavities
+# # 9 Matrices in optics and designing laser cavities
 
 # In[1]:
 
@@ -15,7 +15,7 @@ init_printing()                      # allows printing of SymPy results in types
 plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 
-# ## 10 ABCD matrices.
+# ## 9 ABCD matrices.
 # Chemists are among the largest group of laser users and it is not often appreciated that, nowadays, not only is nearly all spectroscopy performed with lasers, but also that most chemical kinetics measurements use lasers to initiate and follow reactions. Lasers are also widely used to produce fluorescence from dye molecules bound to DNA or proteins and to generate intrinsic fluorescence or Raman scattering from tryptophan and tyrosine residues in proteins. Ultra-short femtosecond duration lasers are used to probe the excited state reactions of the chromophores in photosynthetic antennas and reaction centres, to study the photo-isomerization in vision and in bacteriorhodopsin (a light-driven proton pump), and in other chromophore containing proteins such as photoactive yellow and green proteins. Fluorescence excited by femtosecond and picosecond duration lasers in single and two photon events is used to image living cells. Some basic knowledge of optics is now definitely required to do research in many areas of the chemical and bio-sciences. It is essential to be able to understand for example, how to build a stable laser, how much light to deliver as watts/cm$^2$ into a sample, and to be able to work out what lenses or mirrors are needed to collect as much fluorescence as possible from a sample. And to this end, a very simple matrix method of analysing the behaviour of simple or complex optical systems has been developed and is described in this section. The books, Introduction to Matrix Methods in Optics (Gerrard & Burch 1975) and Lasers (Siegman 1986) provide a detailed description of these methods and the latter book considerably more than this.
 # 
 # The matrix method is based on following a two-component vector through an optical system. The first element of this vector represents the height of a light ray above the (optic) axis and the other element is the angle the ray makes to this axis. The optic axis is the direction the ray takes through the centre of all the optical elements. The angle the ray makes must be small enough, $\lt 6^\text{o}$, to allow the approximations $\tan(\theta) \approx \theta$ and $\sin(\theta) \approx \theta$ to be true, and this is good enough for most applications. This is known as the paraxial approximation. The basis set for the vector is $(y, \theta)$}. The calculation is always contained between pairs of reference planes and you have to decide where to put these based on the problem at hand.
@@ -88,7 +88,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # Figure 38. Matrices for lens-gap-lens-gap arrangement. The values $(y_1,V_1)$ are measured on the left of the diagram.
 # ______
 # 
-# ## 10.1 Understanding the $ABCD$ matrix
+# ## 9.1 Understanding the $ABCD$ matrix
 # 
 # The elements of the $ABCD$ matrix have the following meaning when each in turn is made
 # equal to zero. The other elements are unchanged.
@@ -140,7 +140,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # $$\displaystyle \frac{1}{v}+\frac{1}{u}=\frac{1}{f}$$ 
 
-# ## 10.2 The laser cavity
+# ## 10 The laser cavity
 # 
 # A laser cavity consists of two or more mirrors with a gain medium sandwiched between them, Figure 40. Usually one of the end mirrors is $100$% reflecting and the other mirror, the output coupler, is partially transmitting. This is typically in the range of $1 \to 10$% transmitting depending on the type of laser. The gain medium can be a gas, a liquid containing a highly fluorescent dye, such as Rhodamine-6, or a solid, usually a glass doped with a small percentage of luminescent ions, such as Nd$^{3+}$ or Ti$^+$. The gain medium is excited either electrically, forming a gas discharge, or from another laser or flash lamp. Most of the fluorescence is lost because it is emitted over all angles, but the laser's cavity mirrors capture some of it, which is then fed back into the gain medium where amplification caused by stimulated emission occurs. For the laser to work, the photons have to pass back and forth in the cavity indefinitely and can only do so if they follow the same path. This is equivalent to saying that the wave-front reproduces itself at the mirrors after each round trip. The wave-front is the shape of the wave inside the cavity and it has the same curvature as that of the mirror as it reaches it because light must be reflected normally off any mirror if it is to return along the same path. The curvature changes inside the cavity to satisfy this normality condition at the end mirrors. As the beam waist is approached, the curved wavefront becomes a plane wave and then changes to the opposite curvature as it moves towards the other mirror. When the laser beam leaves the cavity, its longitudinal profile is that determined by the cavity and it continuously diverges. The transverse profile of the laser intensity is ideally Gaussian, although lasers with other profiles can be made.
 # 

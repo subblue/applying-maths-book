@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Matrices in Quantum Mechanics
+# # 1 Matrices in Quantum Mechanics
 
 # In[1]:
 
@@ -115,7 +115,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # The columns of eigenvectors are calculated as the eigenvalue-eigenvector equation 8 is solved.
 # 
 # 
-# ## Summary of the method
+# ## 2.2 Summary of the method
 # 
 # **(i)**$\quad$ The wavefunctions $\psi$ are the solutions to Schroedinger's equation with Hamiltonian $H + V^1$, and $\varphi$ is the exact wavefunction to a simpler problem with Hamiltonian $H^0$, such as the harmonic oscillator or particle in a box. A linear combination of these known wavefunctions is is made to find $\psi$.
 # 
@@ -172,7 +172,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # In practice $L$ has to be slightly larger than the bond length because of the way the harmonic potential widens as $n$ increases. The equilibrium extension is at $L/2$. The potential energy on this scale is $V^1(x) = k(x - L/2)^2/2$ where $k$ is the bond force constant and $x$ the extension about the equilibrium position, $L/2$.
 
-# ## Summary of calculation
+# ## 2.3 Summary of calculation
 # 
 # **(i)**$\quad$ Use the particle in a box wavefunctions to approximate the harmonic oscillator. The more of these wavefunctions that are added together to make $\psi$, the better is the approximation. The eigenvectors of the Hamiltonian matrix determine the amount of each ‘particle in a box’ wavefunction to add together; these are $v$'s of equation 11.
 # 
@@ -188,7 +188,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # The basis set index is chosen to start at $0$ because python/numpy will be used to diagonalize the matrix and its indices start at 0. The particle in a box quantum numbers start at $1$.
 # 
-# ## 2.2 Matrix elements
+# ## 2.4 Matrix elements
 # 
 # The individual matrix elements are $\langle n|H|m\rangle = \int \varphi^*_n H\varphi_mdx$ where 
 # 

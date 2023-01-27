@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Solving equations using matrices. Eigenvectors & Eigenvalues. 
+# # 12 Solving equations using matrices. Eigenvectors and Eigenvalues. 
 
 # In[1]:
 

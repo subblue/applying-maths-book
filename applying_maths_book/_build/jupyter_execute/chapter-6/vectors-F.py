@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Torsion or dihedral angles
+# # 18 Torsion or dihedral angles
 
 # In[1]:
 
@@ -15,7 +15,7 @@ init_printing()                      # allows printing of SymPy results in types
 plt.rcParams.update({'font.size': 16})  # set font size for plots
 
 
-# ## 20 Dihedral  angles
+# ## 18 Dihedral  angles
 # The torsion or dihedral angle $\vec \psi$ between two bonds is something we might want to calculate from a chemical structure. A dihedral angle is the angle between two planes, see figure 41. Two such angles, $\psi$ and $\phi$ in proteins are used to generate Ramachandran plots as shown in figure 38. A regular or ideal protein helix would have angles $\phi = -60^\text{o}$ and $\psi = -50^\text{o}$ and real proteins with a large amount of $\alpha$-helical character, such as bacteriorhodopsin, show clusters of points in this area. The other main feature of proteins is the $\beta$-sheet and this is a more loosely defined structure and exhibits angles in the top left corner bounded by approximately $\phi = -60^\text{o}$ and $\psi = +40^\text{o}$. The exact areas describing the structure are limited by steric repulsion between the atoms as bonds rotate, and are described in most biochemistry, although few chemistry, textbooks. Ramachandran plots can be produced as part of the web interface of sites such as the RCSB Protein Data Bank (www.rcsb.org/pdb/) as well as in textbooks. You could also write your own program that can read '.pdb' or '.ent' files and produce a plot.
 # 
 # ![Drawing](vectors-fig38-38-1FBB.png)
@@ -109,7 +109,7 @@ psi = np.sign(np.dot(vec_a,n))*np.arccos(np.dot(n,m)/( np.sqrt(np.dot(n,n)) *np.
 print('{:s}{:6.2f}{:s}'.format('dihedral angle =',psi*180/np.pi,' degrees') )
 
 
-# ## 21 Torsion angles in sugars and DNA
+# ## 19 Torsion angles in sugars and DNA
 # 
 # The flexibility of the sugar in DNA makes it possible for more than one type of DNA to exist; the A and B forms differ in the conformation of the sugars being $C'_3$ endo in A-DNA and $C'_2$ endo in B-DNA. The notation is shown in figure 43; _endo_ is defined as being on the same side of the ring as the $C'_5$ carbon, _exo_ on the opposite side.
 # 
@@ -122,7 +122,7 @@ print('{:s}{:6.2f}{:s}'.format('dihedral angle =',psi*180/np.pi,' degrees') )
 # Figure 43. Left. A $C3'$ endo sugar. The $C_4'-O_4'-C_1'$ are in one plane, the $C_3'$ above the plane on the side of $C_5'$ and $C_2'$ below the plane. The cartoon structures on the right show this also. Right. Pseudo rotation angles.
 # _______
 # 
-# ## 21.1 Pseudo-rotation angles
+# ## 19.1 Pseudo-rotation angles
 # 
 # The torsion angles for the phosphate and sugar in the DNA are shown below, Figure 44, 45; the torsion angle $\gamma$ is calculated with atoms $O'_5C'_5-C'_4C'_3$, the pucker or pseudo-rotation angle $v_2 = C'_1C'_2 - C'_3C'_4$. The angle $\chi$ is calculated with atoms $O'_4C'_1-N_9C_4$ for purines, 
 # 
@@ -142,7 +142,7 @@ print('{:s}{:6.2f}{:s}'.format('dihedral angle =',psi*180/np.pi,' degrees') )
 # Figure 45 Definition of some torsion angles in DNA. The N in the base is N$_9$ (purines) or N$_1$.
 # _________
 # 
-# ## 21.2 Reading protein data bank data
+# ## 20 Reading protein data bank data
 # 
 # A protein data bank listing contains many lines of introductory information, with prefixes such as TITLE, REMARK, or SEQRES; most of this self-explanatory. The data on the crystal's space group is also to be found here. After these lines, the atom coordinates start with the word ATOM or HETATM if the atom does not belong to an amino acid, for example a porphyrin. The HETATM lines always follow the ATOM lines. At the end of the list, a TER termination statement occurs and either CONECT index numbers, to help drawing the structure or another ATOM line for the next amino acid chain. Details about the data format can be found on the protein data bank website, www.rcsb.org/pdb/home.do. A summary is given below once the coordinate data starts.
 # 

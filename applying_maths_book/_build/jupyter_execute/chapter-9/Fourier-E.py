@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Discrete Fourier  (DFT)  and Fast Fourier transforms (FFT)
+# # 9 Discrete Fourier  (DFT)  and Fast Fourier transforms (FFT)
 
 # In[1]:
 
@@ -80,7 +80,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # Figure 39. The transform of Fig. 38 rotated by $N/2$ points, and clearly showing its symmetrical nature.
 # ______
 
-# ## 9.2 A four point DFT.
+# ## 9.2 A four point DFT
 # 
 # As an example, suppose that we have four samples $f_4=a_0,a_1,a_2,a_3$ at points $n=0,1,2,3$ and use the notation of equation 44'. The first thing to note is that the exponential term is always one of the the complex roots of unity, i.e. satisfying $z^N=1$. Let the $k^{th}$ root of the $N^{th}$ power be $w_N^k$ (as was done in section 2.5 in Matrices), then
 # 
@@ -105,7 +105,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # Looking at the individual terms of $g$ you can perhaps see that matrix of $w$ terms with different powers could be extracted and also a vector of the set of $a$ values. In the next section we show how the matrix form leads to a great simplification but doing the matrix-vector calculation in this form is very slow, however, by rearranging the matrices a fast algorithm, the Fast Fourier Transform is achieved. 
 
-# ## 9.3 The DFT via a Circulant Matrix.
+# ## 9.3 The DFT via a Circulant Matrix
 # 
 # The DFT equation (eqn. 44) requires a great deal of computation, the sum is over $N$ points in time ($t=0\to N-1$ and then this is repeated at each of the $N$ frequencies $\nu$. This results in $N^2$ terms to be multiplied together which produces a slow calculation when $N$ is large. The important feature is the exponential which is $e^{-2\pi i/N(t/\nu)}$ and as such is one of the roots of unity, i.e. one of the $N$ solutions of the equation $z^N=1$, where $z$ is a complex number and $w$ a root which is also a complex number as just described in the four point example. Extracting a matrix from the $w$ values in this example forms a Circulant Matrix.
 # 
@@ -155,7 +155,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # Simplifying the matrix this way may not seem like much but if $N$ is large say $8000$ then only these many exponentials have to be calculated instead of $64$ million. However, matrix multiplication is rather slow in practice, and several methods of speeding up the calculation have been developed. The most commonly used method is a 'divide and rule' approach by Cooley and Tukey. This Fast Fourier Transform (FFT) algorithm works by computing the DFT for small subsets of the overall problem and then combining the results. For this reason it works fastest when $N$ is a power of $2$ and takes a time  $\approx n\log_2(n)$ to complete the calculation vs. $n^2$ for the direct DFT as shown above. This effect is actually rather dramatic, if $n=2^{12}=4096$ then by FFT the calculation takes $\approx 50000$ multiplications whereas a direct calculation $N^2\approx 17\cdot 10^6$, hundreds of times less. A lot of image analysis is done using FFT, noise removal etc., which would otherwise simply not be possible, an image containing $1064\times 1064$ pixels would need $\sim 10^{12}$ operations, which is impossible,  vs. $\sim 2\cdot 10^7$ which is easy.  
 
-# ## 9.4 Fast fourier transform (FFT) calculation
+# ## 9.4 Fast Fourier transform ( FFT ) calculation
 # 
 # The fast fourier transform idea works by dividing the data into two halves and then combining the result. The reason for doing this is that this will take $2(N/2)^2=N^2/2$ operations which is only half as many as the direct DFT on $N$ points. If the data is split in half again and then again and so on there is a similar reduction in the number of operations leading to the number $\approx N\log_2(N)$ for large $N$. The algorithm does not involve any new maths but rearranging the contents of the DFT matrix and the order of the data points. There are several variations on algorithms to do this but all involve repeatedly dividing the data into two equal parts and using recursion. For this reason the calculation is fastest when $N$ is a power of $2$ but even if it is not zero padding to reach this condition is still worth it.
 # 
@@ -242,7 +242,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # ______
 # 
-# ## 9.6 Numerically calculating a ( DFT)  using the FFT algorithm
+# ## 9.6 Numerically calculating a ( DFT )  using the FFT algorithm
 #              
 # The DFT can easily be calculated using matrix multiplication as in equation 44a but its is very slow and instead a Fast Fourier Transform algorithm is universally used and built into most computer languages. As an illustration of numerically obtaining a discrete transform, some data will be synthesized and then transformed. Each data point is in principle a complex number, and therefore can be displayed in different forms: as the real and imaginary parts, as the absolute value, and as the phase. If $Z$ is a complex number, recall that the absolute value, which is also called the modulus or magnitude, is $| Z^*Z|^{1/2}$. The square of this, when plotted against frequency, is called the _power spectrum_. The  _phase_ of the signal, in radians, is defined as $\displaystyle \theta =\tan^{-1}\left(Im(Z)/Re(Z)  \right)$.
 # 
@@ -452,7 +452,7 @@ plt.show()
 
 # The filter function above removes all but a few non-zero data points. This is only possible because the spikes in the transform are very sharp because each is a single frequency. If the signal were an exponential decay instead of a sine wave, then this Fourier method would perform very badly. The exponential is not periodic and is not described by single frequency but by a range of them in the form of a Lorentzian; in this and many other circumstances it is not easy to isolate the data from the noise. If Fourier and other smoothing methods fail then least squares fitting to a line or polynomial may be acceptable as a last resort.
 # 
-# ## Rolling or moving average    
+# ## 10.4 Rolling or moving average    
 # 
 # This method is widely used in the financial sector to smooth out fluctuations in the price of stocks and shares in an attempt to predict trends, it is also used to predict trends in data such as the number of infections and deaths in pandemics such as due to Covid-9. It is also a particularly good method of removing unwanted noise spikes in experimental data. These are not part of the noise normally expected on data but occur nevertheless because someone switches on an instrument elsewhere in the lab or there is a glitch in the mains power and so forth. Such spikes can completely ruin data so some way of removing them is necessary. The moving average method starts at the beginning of the data, and averages over a small odd number of the next few data points and this average is recorded. This averaging 'window' is moved by one point along the data and the new average recorded and so on. This process weights in some future and past data into any point and so if a spike is preset it is averaged away by the normal data on either side of it, see Fig. 48.
 # 
@@ -475,7 +475,7 @@ plt.show()
 # Figure 48 . Left. Illustrating the moving averaging smoothing to remove spikes in noise. A filter with $n$ = 3 was used which is a window of 7 points.  The original data is grey, the smoothed data, red. Right.  Daily deaths  due to Covid19 in the USA for a few weeks after March 4, 2020. The original data is grey, the rolling average data, red. A 5 day average was used. 
 # __________
 
-# ## The Hilbert Transform and the Analytic Signal
+# ## 10.5 The Hilbert Transform and the Analytic Signal
 # 
 # In some cases it is desirable to find the envelope of a signal, such as an FID or that of a pulse such as figure 35 in question 16. To do this the Hilbert transform is needed and with it the *analytic signal*. The analytic signal is defined as
 # 

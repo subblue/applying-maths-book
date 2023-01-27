@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Matrices
+# # 4 Matrices
 
 # In[1]:
 
@@ -116,7 +116,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # $$\displaystyle \pmb{b}^T\pmb{A}^T = \begin{bmatrix} 1 & 3  \\ 2& 4 \end{bmatrix}\begin{bmatrix} a & c  \\ b& d \end{bmatrix}=\begin{bmatrix} a +3b & c+3d  \\ 2a+4b & 2c+4d \end{bmatrix}$$
 
-# ## 4.6 Complex conjugate M*
+# ## 4.6 Complex conjugate of a matrix M*
 # This changes each matrix element with its complex conjugate, assuming there are complex numbers in the matrix; if not, it has no effect. 
 # 
 # The conjugate of a matrix $\pmb{M}$ is labelled $\pmb{M}^*$. In making a complex conjugate each $i$ is replaced by $-i$ where $i =\sqrt{-1}$, for example $[3\; i\;4]^* =[3\;-i \;4]$.
@@ -126,7 +126,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # where the last property describes the effect on the determinant of the matrix.
 # 
-# ## 4.7 Adjoint, $\pmb{M}^\dagger$
+# ## 4.7 Adjoint matrix, $\pmb{M}^\dagger$
 # 
 # This grand sounding name simply means
 # 
@@ -333,7 +333,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # ![Drawing](matrices-blockmatrix.png) 
 # _________
 # 
-# ## 5.7 The special case of the $2\times 2$ matrix
+# ## 5.7 The special case of the  2 x 2  matrix
 # 
 # The matrix is $\displaystyle \pmb{M}= \begin{bmatrix} A & B \\C & D \end{bmatrix}$ 
 # 
@@ -359,7 +359,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # The eigenvectors are $\displaystyle v_1=k \begin{bmatrix} B\\\lambda_1-A \end{bmatrix}$ and $\displaystyle v_2=k\begin{bmatrix} B\\\lambda_2-A \end{bmatrix}$ where $k$ is an arbitrary constant, for example to normalise the eigenvectors.
 # 
-# ## 5.8 Using Python and Sympy.
+# ## 5.8 Using matrices in Python and Sympy.
 # 
 # The is a distinction between doing numerical and symbolic calculations. Python/numpy is used for numerical work and Sympy for algebraic/symbolic calculations. The notation is slightly different depending on whether you use Sympy or numpy.
 # 

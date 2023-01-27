@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Differentiation
+# # 1 - 3.8 Differentiation, gradients & basic functions
 
 # In[1]:
 
@@ -150,7 +150,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # If $\displaystyle y = e^x$, then the value of the gradient is the size of the function itself; $\displaystyle \frac{d}{dx}e^x=e^x$
 # 
-# ## 3.3 Powers of $x$
+# ## 3.3 Differentiating powers of $x$
 # 
 # The similar procedure making $\delta x \to  0$ can be followed for lots of different functions, but need not be carried through because the results and methods are well understood and the results will be quoted. The derivatives of $\displaystyle y = x^n$ where $n$ is any positive or negative number, including fractions, have the form
 # 
@@ -180,7 +180,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # Letting $\delta x \to 0$ produces the familiar formula $\displaystyle \frac{dy}{dx}=nx^{n-1}$.
 # 
 # 
-# ## 3.4 Powers of $y$
+# ## 3.4 Differentiating powers of $y$
 # 
 # The differential of $y$ is $dy$ ; that of $y^2$ is $2y dy$ where the power of $y$ is differentiated as if it
 # were $x$ then multiplied by the differential of $y$ itself. It is very important to remember to do this. An example is,
@@ -193,7 +193,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # $$ g(y)=f(x), \qquad \frac{d}{dy}g(y)\frac{dy}{dx}=\frac{d}{dx} f(x)\qquad\tag{6}$$
 # 
-# ## 3.5 Constants
+# ## 3.5 Differentiating constants
 # 
 # Constants always differentiate to zero because a graph of $y$ = constant has a zero gradient.
 # 
@@ -264,7 +264,7 @@ diff(eq2, x)
 # 
 # Incidentally, this last equation tells us that the solutions of this type of differential equation are exponentials; $n$ can be $1, 2, 3$, and so forth.
 # 
-# ## 3.8 Many variables and Partial Differentiation
+# ## 3.8 Differentiating many variables and Partial Differentiation
 # 
 # Some functions depend upon more than one variable, say $x$ and $z$, which is written as $y(x, z)$ or $f(x, z)$, it is now possible to differentiate with respect to $x$ then $z$ or vice versa. For example, if $ \displaystyle  y(x, z) = x^3z^4$, differentiating by $z$ but keeping $x$ constant produces
 # 

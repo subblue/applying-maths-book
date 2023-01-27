@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Principal axes of Moments of Inertia
+# # 16 Principal axes and Moments of Inertia
 
 # In[1]:
 
@@ -14,7 +14,7 @@ from numpy import linalg as LA
 plt.rcParams.update({'font.size': 16})  # set font size for plots
 
 
-# ## Introduction
+# ## 16 Introduction
 # We can cause any mass, such as a ball or spanner, to spin in any direction whatsoever with respect to itself; spin up, spin down, left, right, or any combination. If we calculate the moment of inertia about each of the axes the mass is spinning, we find that it is always possible to represent the motion and moments as a linear combination of three principal axes, which are intrinsic to the body and are defined by the shape and mass of the body itself. It is not so surprising that we can find a unique set of axes because we know that we can
 # decompose any vector into its basis vectors, for example along the $x-, y-$, or $z$-axes for the
 # unit vectors $i, j, k$. When decomposing the motion or moments of inertia, if each does not
@@ -39,7 +39,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # Figure 72. Approximate location of the centre of mass together with two of the principal rotation axes. The third, describing rotational motion in the plane of the figure, is perpendicular to the other axes and points out of the plane of the figure. The molecule rotates about the centre of mass or gravity. This need not be situated on an atom.
 # ______
 
-# ## 15.8 Formal description of the method
+# ## 16.1 Formal description of the method
 # 
 # If all the atoms are rigidly connected together, the $k^{th}$ atom and its velocity vector $\pmb{v}_k$, are
 # related to the angular velocity of the molecule $\pmb{\omega}$ about the centre of mass as 
@@ -119,7 +119,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # The order of the atoms is the same as for their coordinates
 # 
-# ### Calculating a molecule's moments of inertia: 
+# ## 16.2 Calculating a molecule's moments of inertia: 
 
 # In[2]:
 

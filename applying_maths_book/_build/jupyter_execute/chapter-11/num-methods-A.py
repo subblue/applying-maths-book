@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Numerical Methods
+# # 1 Numerical Methods
 
 # In[1]:
 
@@ -180,7 +180,7 @@ for j in range(n):
 
 # ## 2 Numerical methods used to find the roots of an equation
 # 
-# ## Secant method
+# ## 2.1 Secant method
 # 
 # We now set aside the questions of numerical accuracy and chaos and look at some practical methods of numerically solving all sorts of equations. Sometimes in integration or in solving differential equations, the root of some function is required; three related numerical methods, the Secant, Regula Falsi, and bisection, are now described. The Newton - Raphson method has already been met in Chapter 3.10 and is used when the equation can be differentiated.
 # 

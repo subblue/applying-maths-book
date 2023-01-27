@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # References
+# # 1 References 
 
 # 
 # ( Journal references follow as;  $\quad$  Author(s) (year), journal name, volume: page number) 
@@ -18,9 +18,7 @@
 # 
 # Allen, M. P. & Tilldesley, D. J. (1987), Computer Simulation of Liquids, Oxford University Press. 
 # 
-# Altringham, J. (1996), Bats: Biology and Behaviour, Oxford University Press.
-# 
-# Aratyn, H. & Rasinariu, C. (2006), A Short Course in Mathematical Methods with Maple, World Scientific. 
+# Altringham, J. (1996), Bats: Biology and Behaviour, Oxford University Press. 
 # 
 # Arkfen, G. (1970), Mathematical Methods for Physicists, 2nd edition, Academic.
 # 
@@ -130,8 +128,6 @@
 # 
 # Frenkel. D. & Smit, B. (1996), Understanding Molecular Simulation, Academic Press.
 # 
-# Garvan, F. (2002), The Maple Book, Chapman & Hall/CRC.
-# 
 # Gerrard, A. & Burch, J. M. (1975), Introduction to Matrix Methods in Optics, Wiley.
 # 
 # Giacovazzo, C., Monaco, H. L., Viterbo, D., Scordari, F., Gilli, G., Zanotti, G., & Catti, M. (1992), IUCR
@@ -172,8 +168,6 @@
 # Harwit, M. & Sloane, N. J. A. (1979), Hadamard Transform Optics, Academic Press.
 # 
 # Hecht, E. & Zajac, A. (1982),Optics, Addison-Wesley Publishing Company.
-# 
-# Heck, A. (1996), Introduction to Maple, Springer. 
 # 
 # Herzberg, G. (1950), Spectra of Diatomic Molecules, 2nd edition, Van Nostrand Reinhold.
 # 
@@ -320,8 +314,6 @@
 # Reif, M., Gautel, M., Oesterhelt, F., Fernandez, J. M., & Gaub, H. E. (1977), 'Reversible Unfolding of
 # Individual Titin Immunoglobulin Domains by AFM’, Science 276: 1109.
 # 
-# Richards, D. (2002), Advanced Mathematical Method with Maple, Cambridge University Press.
-# 
 # Rigby, M., Smith, E. B., Wakenham, W. A., & Maitland, G. C. (1986), The Forces between Molecules,
 # Oxford Science Clarendon Press.
 # 
@@ -341,9 +333,6 @@
 # the Far Infrared Spectra of Some Isotopic Varieties of Ethanol’, Chem. Phys. 112: 5809.
 # 
 # Shey, H. (1993), Dit, Grad, Curl and All That, W. Norton.
-# 
-# Shingareva, I. & Lizarraga-Celaya, C. (2007), Maple and Mathematica: A Problem Solving Approach for
-# Mathematics, Springer-Verlag.
 # 
 # Siegman, A. (1986), Lasers, University Science Books.
 # 
@@ -406,15 +395,3 @@
 # 
 # Zimm. B. H. & Bragg, J. K. J. (1959), 'Theory of the Phase Transition between Helix and Random Coil in
 # Polypeptide Chains’, Chem. Phys. 31: 526.
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-

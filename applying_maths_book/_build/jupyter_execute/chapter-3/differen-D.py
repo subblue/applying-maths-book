@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Product rule and function of function or chain rule.
+# # 4 Product rule and function of function or chain rule.
 
 # In[1]:
 
@@ -70,7 +70,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # which should be the same result as was obtained by using the first method but substitution and rearranging is necessary to show this.
 # 
-# ## 4.2 Function of a function general formula
+# ## 4.2 Function-of-a-function, general formula
 # 
 # The general equation on which to use the function-of-function or chain rule is $f[g(h)]$, which means that $f$ is a function of a second function $g$, with the generic variable here called $h$; $\sin(ax^2 + x^{-3})$ has this form with $f$ being $\sin(\cdots)$ and $g(x)$ being $ax^2 + x^{-3}$ and the generic variable $h$ is $x$ in this case.
 # 
@@ -123,7 +123,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # $$\displaystyle \frac{d}{dx}\frac{d }{dx}e^{f}= \frac{d}{dx}\left(e^f\frac{df}{dx}\right)=e^f\left(\frac{df}{dx}\right)^2 +e^f\frac{d^2f}{dx^2}$$
 # 
-# ## 4.5 Ratios of functions: Quotients
+# ## 4.5 Differentiating ratios of functions: Quotient rule.
 # 
 # The product rule and function-of-function rule can be used to calculate quotients. If
 # $\displaystyle y = \frac{f (x)}{g(x)}$ then this can be represented as $\displaystyle y = f (x)g(x)^{−1}$ and the derivative is,
@@ -211,7 +211,7 @@ ans = diff(f,x)             # define y as a function of x so that it will be dif
 simplify(ans)
 
 
-# ## 4.8 Parametric functions and their differentiation
+# ## 4.8 Differentiating parametric functions
 # 
 #   Sometimes it is easier to describe equations in parametric form as two functions with a common or dummy variable, rather than in the conventional way; there is no fundamental reason for doing so, just convenience. An example is the equation of a circle. If it has a radius $a$ and is centred at the origin,
 #   
@@ -315,7 +315,7 @@ print('y0 = ', 2*np.sin(ans**2))
 # Figure 6b. Calculation of parametric equation for an epicycle.
 # ______
 # 
-# ## 4.9 Differentiation of vectors
+# ## 4.9 Differentiating vectors
 # 
 # To differentiate any vector, each of its elements is treated separately. In the previous section, we saw how to represent a curve in parametric form. The two parametric equations can also be represented in vector form; for example, a parabola is represented by the equation $y^2 = 4ax$, but in parametric form this can be written as $\displaystyle x = at^2$ and $y = 2at$ and in row vector form as $\displaystyle t = [x y] \equiv [at^2 2at]$. Since all elements are treated separately,
 # 
@@ -335,7 +335,7 @@ print('y0 = ', 2*np.sin(ans**2))
 # 
 # Differentiating vectors is described in more detail in Section 13.
 # 
-# ## 5 Summary
+# ## 5 Differentiation summary
 # 
 # Notation $f'=d/dx,\; f(x),\; g(x) $ are general functions in $x$ such as $x^2$ or $\sin(x)e^x$ etc. but mostly written as $f$ and $g$ for clarity. Constants used are $a$ and $b$.
 # 

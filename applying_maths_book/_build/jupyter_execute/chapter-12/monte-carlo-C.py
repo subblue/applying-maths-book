@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Energy transfer. Autocatalytic reaction and spreading of fires
+# # 4 Energy transfer. Autocatalytic reaction and spreading of fires
 
 # In[1]:
 
@@ -14,7 +14,7 @@ import matplotlib.pyplot as plt
 plt.rcParams.update({'font.size': 16})  # set font size for plots
 
 
-# ## Forster or dipole-dipole energy transfer
+# ## 4.1 Forster or dipole-dipole energy transfer
 # 
 # Forster, also called dipole - dipole or resonance energy transfer is a vital process in photosynthesis as it is the mechanism by which energy is transported in the antenna and then to the reaction centre. The same process is used in FRET, which is widely used in the biosciences as a 'spectroscopic ruler' to measure how close one molecule is to another. In this process an excited state of a molecule D* can, non-radiatively, transfer energy to a nearby acceptor molecule A, provided energy is conserved, which means that the donor's emission spectrum overlaps with the acceptor's absorption;
 # 

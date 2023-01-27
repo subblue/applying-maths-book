@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Characterizing experimental data. Accuracy, precision, mean and standard deviation
+# # 1 Characterizing experimental data. Accuracy, precision, mean and standard deviation
 
 # In[1]:
 
@@ -273,7 +273,7 @@ qtile(0.69146246 )
 # 
 # The term $Z_{\alpha/2}$ is the percentage point of the standard normal distribution, i.e. the '% chance' in table 1.
 # 
-# ### **(i) Estimate K$^+$ content of glass**
+# ### **(i) Estimating the K$^+$ content of glass**
 # Two hundred samples taken at random were obtained for the K$^+$ content of the glass used to make Pyrex flasks. The mean value was found to be $136.48\;\mathrm{\mu g}$ with a sample standard deviation of $25.31\;\mathrm{\mu g}$. The calculation of $95$% and $99$% confidence limits about the mean mass follows directly from equation 11;
 # 
 # $$\displaystyle 95\text{ %  limits :  } 136.48 \pm 1.96\cdot 25.31/\sqrt{200} = 136.48 \pm 3.51 \;\mathrm{\mu g}$$
@@ -536,7 +536,7 @@ else:
 # 
 # In many experiments, the standard deviation can be found by looking at an instrument's specification, where a resolution of a certain number of wavenumbers or millivolts, and so forth, is usually given. In other cases this may have to be estimated from the data itself and this can be difficult to do point by point. However, one case in which the standard deviation is known exactly is in a particle or photon counting experiment because the arrival of photons at the detector is Poisson distributed where $\sigma^2 = \mu$ and then $w_i = 1/\mu_i$ where $\mu_i$ is the average number of counts in the $i^{th}$ measurement. Fluorimeters often use photon counting to measure fluorescence and phosphorescence spectra, and the standard deviation can then be measure directly from the data.
 # 
-# ## 4 Propagation or combination of errors
+# ## 4 Error propagation
 # 
 # In many experimental situations, a measurement does not always produce the final result, which will be obtained from further calculations, and may also involve other experimental measurements. For example, the measured value and its associated error may have to be exponentiated and then multiplied by another quantity with its error.
 # 
@@ -616,7 +616,7 @@ sigT.evalf(3)
 # \hline
 # \end{array}$$
 # 
-# ## 4.2  Matrix formulation.
+# ## 4.2  Matrix formulation of errors
 # Barlow (1989) demonstrates that equation 20 can be written in a matrix form, which does not immediately seem to offer any advantage, but this becomes clearer for problems that are more complex. The matrix equation is
 # 
 # $$\displaystyle V=GV_\sigma^2G^T \qquad\tag{23}$$
@@ -636,7 +636,7 @@ sigT.evalf(3)
 # 
 # $$\displaystyle \sigma^2 =\begin{bmatrix} 1&1\end{bmatrix}\begin{bmatrix} \left(\displaystyle\frac{\partial T}{\partial m}\right)^2\sigma_m^2 \\ \left(\displaystyle\frac{\partial T}{\partial c}\right)^2\sigma_c^2\end{bmatrix}= \left(\displaystyle\frac{\partial T}{\partial m}\right)^2\sigma_m^2+  \left(\frac{\partial T}{\partial c}\right)^2\sigma_c^2$$
 # 
-# ## 4.3 Maximum Likelihood Method. Parameter estimation: 
+# ## 5 Maximum Likelihood Method. Parameter estimation: 
 # 
 # The variance and mean have been used in our calculations on the assumption that they were the 'best estimation' of these properties, which means that they are as close as possible to the true values for the underlying process given that only a limited number of measurements are taken. Using the Maximum Likelihood method these estimates, such as mean and variance, can be found in terms of the measured values which we call $x_i$.
 # 

@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # First order eqns & Integrating factors. Second order eqns, Newtons laws, equations of motion.
+# # 9 First order eqn's & Integrating factors. Second order eqn's, Newton's laws, equations of motion.
 
 # In[1]:
 
@@ -15,7 +15,7 @@ init_printing()                      # allows printing of SymPy results in types
 plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 
-# ## 4.1 Homogeneous equations
+# ## 9.1 Homogeneous equations
 # 
 # A homogeneous differential equation has the form
 # 
@@ -67,7 +67,7 @@ ans = dsolve(f01)                                  # solve then factor answer
 factor(ans)
 
 
-# ## 4.2 Exact equations
+# ## 9.2 Exact equations
 # 
 # The exact equation also has the form $Mdx + Ndy = 0$ with the additional constraint that 
 # 
@@ -81,7 +81,7 @@ factor(ans)
 # 
 # The term $G(x, y)$ is called an _integrating factor_ which in general can be difficult to uncover except in the case of linear first-order equations that are described next.
 # 
-# ## 4.3 Linear first-order equations and Integrating Factors
+# ## 9.3 Linear first-order equations and Integrating Factors
 # 
 # Linear first-order equations have the form,
 # 
@@ -165,7 +165,7 @@ factor(ans)
 # 
 # and this has the expected form; it is zero when $t = 0$ and again when $t = \infty$ and passes through a maximum when $dB/dt = 0$.
 # 
-# ## 4.4 The Bernoulli Equation 
+# ## 9.4 The Bernoulli Equation 
 # 
 # The equation $\displaystyle \frac{dy}{dx} + Py = Qy^n $, 
 # 
@@ -193,8 +193,9 @@ factor(ans)
 # 
 # Substituting back gives $\displaystyle y=-\frac{1}{x(e^x+c)} $
 
-# ## 5 Second-order differential equations
-# ## 5.1 Newton's laws and differential equations describing motion
+# ## 10 Second-order differential equations
+# 
+# ## 10.1 Newton's laws and differential equations describing motion
 # 
 # Differential equations dominate the study of the motion of the planets and of molecules. In single molecules or in ensembles of them, molecular dynamics calculations rely on solving many simultaneous equations according to Newton's laws of motion, linked to potentials describing intermolecular interactions. 
 # 
@@ -238,7 +239,7 @@ factor(ans)
 # 
 # This equation contains all the information about a freely falling body.
 # 
-# ## 5.2 General Equation of Motion, Energy equation and Simple Harmonic Motion.
+# ## 10.2 General Equation of Motion, Energy equation and Simple Harmonic Motion.
 # 
 # If the force is represented by $f(x)$ then different types of motion can be studied, for example motion under gravity or that due to extension of a spring which will lead to simple harmonic motion.
 # 
@@ -282,7 +283,7 @@ factor(ans)
 # 
 # The calculation can be completed when different types of forces are assigned to $f(x)$. Two examples are given, one for the motion of a rocket, another for simple harmonic motion.
 # 
-# ### **(i) Rockets**
+# ## 10.3 Rockets
 # At the end of section 3.5 the motion of a rocket launched vertically was examined. Figure 8b. shows plots of velocity and time vs distance away from the earth's surface. To calculate the distance moved in a given time equation 15 can be used. 
 # 
 # The equation to use is $\displaystyle \frac{dv}{dt}\equiv v\frac{dv}{dr}=-\frac{gR^2}{r^2}$ which leads to $\displaystyle F(r)= v_0^2 - 2gR+ \frac{2gR^2}{r}$. 
@@ -307,7 +308,7 @@ factor(ans)
 # 
 # $$\displaystyle \sinh^{-1}(x)=  \ln(x+\sqrt{x^2+1})$$
 # 
-# ### **(iii) Rockets and conservation of momentum**
+# ## 10.4 Rockets and conservation of momentum
 # 
 # The Law of Conservation of Momentum can be used to find the velocity of a rocket. Suppose that the rocket is moving at velocity $v$ (relative to some fixed coordinate system) and ejects fuel with velocity $-u$ relative to the rocket, therefore the mass of the rocket $M$ decreases with time as the fuel is used. We know that the rate of change of momentum is equal to the external force on a system of particles (i.e force is mass times acceleration and acceleration is the rate of change of momentum)
 # 
@@ -336,7 +337,7 @@ factor(ans)
 # 
 # If $m$ is the mass of the fuel and all is consumed then $M$ is the mass of the fuel empty rocket, $M_0=M+m$ and $v$ the maximum velocity, $\displaystyle v-v_0=u\ln\left(1+\frac{m}{M}\right)$. In a rocket it is therefore desirable to carry as much mass as fuel as possible so that $1+m/M)$ is large. Additionally, if the propellant is a cold gas, from the Kinetic Theory of Gases the r.m.s. speed of a gas decreases with atomic mass, i.e. $u$ is smaller for heavier than low atomic masses, so low atomic mass gases would seem to be preferred to make the final velocity as large as possible.  
 # 
-# ### **(iii) Hooke's Law and simple harmonic motion**
+# ## 10.5 Hooke's Law and simple harmonic motion
 # In the case of a force in a line towards the origin that is a fixed point, simple harmonic motion ensues if the force is described by Hooke's law $f (x) = -kx$ where $k$ is the force constant and $x$ the displacement from the origin. The minus sign indicates that the force is towards the origin; when $\displaystyle d^2x/dt^2$ is negative $x$ is positive and vice versa. The equation of motion is now
 # 
 # $$\displaystyle  \frac{d^2x}{dt^2}=-\frac{k}{m}x $$
@@ -422,7 +423,7 @@ simplify(ans)
 # __________
 # The figure shows the classical probability together with a harmonic potential such as for a diatomic molecule. The potential has a force constant of $172$ N/m and the first quantised energy level is shown at energy $E_1$. The square of the wavefunction is also shown. The classical probability extends only as far as the turning points at energy $E_1$. The difference between the probabilities is quite considerable not in their overall size but in their shape. The classical probability cannot extend past the turning point, but the quantised probability does so quite considerably. At large quantum numbers, e.g. $20$ the wavefunction has more probability close to the turning points, than in the middle of the potential and so resembles the classical behaviour a little more closely.
 # 
-# ### **(iv) Springs**
+# ## 10.6 Springs
 # 
 # Problems with springs often state that the spring has a weight attached, which causes the spring to extend by a certain amount. It is then extended or compressed by a further amount and let go. The equation of motion is then sought.
 # 
@@ -437,7 +438,7 @@ simplify(ans)
 # 
 # If the initial displacement is above the equilibrium position $x_0 = -3$, therefore $x = -3\cos(\omega t)$. Finally, the frequency is found from Hooke's law. At equilibrium, $mg = ks$ and $s = 5$ is the displacement from equilibrium before the mass is moved. Therefore, the force constant $k = 2 \cdot 9.81/5\,\mathrm{ N \,m^{-1 }}$ and the frequency squared is $\omega^2 = k/m$ or $\omega = 1.4\,\mathrm{ rad\, s^{-1}}$. This corresponds to a natural frequency of $\nu = \omega /2\pi$ or $0.223\,\mathrm{ s^{-1}}$ and period $T = 1/\nu = 4.49$ seconds. The position of the mass at any time $t$ is found to be $x = -3 \cos(1.4t)$. Note that if the question stated that the _weight_ was 2 kg then this would correspond to $mg$ not $m$ and the mass to use would therefore be $2/9.81$ kg.
 # 
-# ### **(v) Total energy**
+# ## 10.7 Total energy
 # 
 # The total energy is the sum of the kinetic and potential energy and is a constant if no external force acts on the system. The kinetic energy is that due to motion $mv^2/2$, and the potential energy can take several forms depending on how the motion is achieved. On extending a spring, the potential energy is force multiplied by distance displaced and the force is given by Hooke's law. If the potential energy is that due to displacing a mass in a gravitational field, as occurs with a pendulum, then the potential is $mgh$ where $h$ is the height change.
 # 
@@ -451,7 +452,7 @@ simplify(ans)
 # 
 # As $\displaystyle \omega^2 = k/m$ the total energy, the sum of the potential and kinetic terms, is $\displaystyle E=\frac{k}{2}A^2$ which is a constant.
 
-# ## 5.3 The simple pendulum
+# ## 11 The simple pendulum
 # 
 # The pendulum will consist of a light rigid rod with a mass $m$ at its end; the pivot holding the pendulum is frictionless and no air or other resistance hinders the motion. The variable $\varphi$ is the angle in radians away from the vertical; Fig. 11. It is found that the pendulum's angular frequency is 
 # 
@@ -486,7 +487,7 @@ simplify(ans)
 # 
 # If the angular displacement is not small then the problem becomes rather more difficult, and after some effort (Arkfen 1970) an elliptical integral is produced with which the period can be calculated but which has to be evaluated numerically. The numerical integration of the pendulum's equation of motion for any displacement is somewhat easier and is examined in Chapter 11.6.3.
 # 
-# ##  5.4 The compound pendulum and torsional oscillations
+# ##  11.1 The compound pendulum and torsional oscillations
 # 
 # The compound pendulum is a rigid body freely suspended from a point that is not its centre of gravity and allowed to oscillate. The equation of motion is
 # 
@@ -500,7 +501,7 @@ simplify(ans)
 # 
 # where $I$ is the moment of inertia of the mass about its point of suspension. Henry Cavendish (Philosophical Transactions, 1798, v 17 p 469, Royal Society London) used a torsional pendulum in his famous experiment to measure the gravitational constant. 
 # 
-# ## 5.5 Inverted pendulum: unstable equilibrium
+# ## 11.2 Inverted pendulum: unstable equilibrium
 # 
 # In the normal pendulum, acceleration is towards the vertical or origin of the motion. In the inverted pendulum with a rigid rod instead of a wire, acceleration is away from the vertical and the motion is unstable. The equation of motion for small displacements from the vertical, is similar to that of the pendulum but with a positive sign on the right-hand side of the equation,
 # 
@@ -516,7 +517,7 @@ simplify(ans)
 # 
 # which may be compared with equation 21.
 # 
-# ## 5.6 Simple harmonic motion with a constant force
+# ## 11.3 Simple harmonic motion with a constant force
 # 
 # If a particle is attracted to the origin of set of coordinates, and subject to a further constant force $W$, the equation of motion takes the form based on equation (13),
 # 
@@ -536,7 +537,7 @@ simplify(ans)
 # 
 # if $x_0$ and $\nu_0$ are the initial position and velocity. The frequency $\omega$ is the same whether the constant force is present or not.
 
-# ## 5.7 Particle in a one-dimensional box
+# ## 11.4 Particle in a one-dimensional box
 # 
 # Two quantum mechanical problems that can easily be solved using the methods just described are a particle (electron, proton, C60) in a one-dimensional box and a particle on a ring. Both involve integrating the Schroedinger equation, as must always be the case in quantum mechanics, but because the potential energy is zero the equations are considerably simpler than, say, that for the hydrogen atom or the harmonic oscillator. The one-dimensional Schroedinger equation in its general form is
 # 
@@ -587,7 +588,7 @@ simplify(ans)
 # Figure 11a. Energy levels and wavefunctions for a particle in a box. The mass used was that for an electron and the box is $1$ nm in length. Notice how the energy levels move apart as $n$ increases and how the number of nodes in the wavefunction also increases. A one dimensional box very approximately simulates a linear polyene, such as octatetraene.
 # _________
 # 
-# ## 5.8 The Rigid Rotor and a Particle on a Ring
+# ## 11.5 The Rigid Rotor and a Particle on a Ring
 # 
 # If the distance between two atoms is fixed, or if a particle is constrained to move on a circle, then the Schroedinger equation takes a simple form and the equation is essentially the same as for a harmonic oscillator. To describe motion in more than one dimension, the Schroedinger equation has coordinates in $x$ and $y$ if two dimensional, or $x$, $y$, and $z$ if the motion is three dimensional. Ratner & Schatz (2001) give a clear description of this problem and others in quantum mechanics relevant to Chemistry.
 # 

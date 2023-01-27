@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Differential Equations
+# # 1 Basics, Initial and Boundary Value problems, Steady state, Phase portrait, Chemical kinetics
 
 # In[1]:
 
@@ -15,7 +15,7 @@ init_printing()                      # allows printing of SymPy results in types
 plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 
-# ## 1.1 Differential equations
+# ## 1.1 Types of equations
 # 
 # Differential equations are characterized into _ordinary_ and _partial_ ones. Ordinary differential equations only involve one independent variable and so have ordinary (total) derivatives; for example, the equation for a damped harmonic oscillator is 
 # 
@@ -54,7 +54,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # The boundary value problem defines conditions at two places that have to be satisfied throughout the calculation, thereby constraining the solutions. The most familiar example is probably the Schroedinger equation describing the quantum mechanical particle in an infinitely high box. This is solved with boundary conditions that the wavefunction must always be zero at both sides of the box, because if this were not the case an infinite amount of energy would be needed. The Schroedinger equation equates the kinetic and potential energy, $V(x)$, with the total energy but as the potential is zero inside the box only the kinetic energy remains and $\displaystyle -\frac{\hbar ^2}{2m}\frac{d^2\psi}{dx^2} = E\psi$. The boundary conditions are $\psi(x_0) = 0$ and $\psi(x_L) = 0$ where $x_0$ and $x_L$ define the sides of the box.
 # 
-# ## 2 Separable variables
+# ## 1.4 Separable variables
 # 
 # The rate of a chemical reaction can always be written down because this is proportional to the rate of loss or gain of a molecule's population. For example, in a first-order process $A \to B$, such as a cis-trans isomerisation or decay of a radioactive nucleus, the rate of change of species A is proportional to the amount of A left unreacted or
 # 
@@ -100,14 +100,35 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # but now the terms are not separable, and another method is needed, which is described in Section 4. Sets of equations for sequential and parallel reactions such as $dA/dt = \cdots$, and $dB/dt = \cdots$ can alternatively be solved by eigenvalue methods described in Chapter 7 provided no terms with a product or ratio of concentrations is present, i.e. no A $\times$ B terms, unless pseudo first-order conditions apply.
 # 
-# ## 2.1 Steady State
+# ## 2 Steady State vs. Equilibrium
 # 
-# In many chemical schemes, after the reaction has started it enters a period where intermediate or transient species can be identified, and their rate of change is effectively zero. This does not mean, however, that their concentration has to be small but if the rate of change is zero, then most rate equations can be solved relatively easily. This is of great utility because the complete solution can be very complex and often only numerical solutions are available.
+# In many chemical schemes, after the reaction has started it enters a period where intermediate or transient species can be identified, and their rate of change is effectively zero. This does not mean, however, that their concentration has to be small but if the rate of change is zero, then most rate equations can be solved relatively easily. This is of great utility because the complete solution can be very complex and often only numerical solutions are available. An example of this situation is the scheme $A\to B\to C$ where the rate of change species B may be set to steady state but only once the reaction has started.  
 # 
-# ### **(i)  Iodine recombination, I + M reaction**
+# In other situations an equilibrium can be established between two species from which a second and slow reaction may proceed reaction, an example of this is $A\rightleftharpoons B \to C$ where the rate constant $B\to C$ is small compared to those establishing the equilibrium. 
+# 
+# In the scheme 
+# 
+# $$\displaystyle  A  \underset{k_{-1}}{\stackrel{k_1}{\rightleftharpoons}}B \\
+#  B\;{\stackrel{k_2}{\to}}\; C $$
+#  
+# the set of rate equations could be integrated, but if the rate of change of B is small then we can use the steady state approach,
+# 
+# $$\displaystyle \frac{dB}{dt} = k_1A -k_{-1}B-k_2B = 0$$
+# 
+# making $\displaystyle B = k_1A/(k_{-1}+k_2)$, and
+# 
+# $$\displaystyle \frac{dA}{dt} =-\frac{dC}{dt} = -\frac{k_1k_{2}}{k_{-1}+k_2}A $$
+# 
+# If the equilibrium had been established first, with $k_{-1} \gg k_2$ writing the equilibrium constant as $K_e = k_1/k_{-1}$ gives
+# 
+# $$\displaystyle \frac{dA}{dt} = -K_ek_2A$$
+# 
+# which means that both the equilibrium is established before the rate determining step and that $k_{-1}\gg k_2$.
+# 
+# ## 2.1 Iodine recombination, I + M reaction
 # The scheme
 # 
-# $$\displaystyle  I+M  \underset{k_2}{\stackrel{k_1}{\rightleftharpoons}} IM \\
+# $$\displaystyle  I+M  \underset{k_{-1}}{\stackrel{k_1}{\rightleftharpoons}} IM \\
 #  I+IM {\stackrel{k_2}{\longrightarrow}} I_2 + M $$
 # 
 # describes how iodine atoms are recombined to form I$_2$ in the presence of an inert buffer gas $M$. The transient collision complex $IM$ can be supposed to exist at steady state once the reaction has started then,
@@ -122,7 +143,45 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # which could be tested experimentally.
 # 
-# ### **(ii) Fluorescence yield**
+# 
+# ## 2.2 Decomposition of $\mathrm{BH_3CO}$
+# In the gas phase decomposition of borane carbonyl the equilibrium 
+# 
+# $$\displaystyle \mathrm{BH_3CO}\,+\underset{k_2}{\overset{k_1}{\rightleftharpoons} }\mathrm{BH_3+CO}$$
+# 
+# is rapidly established and the subsequent reaction 
+# 
+# $$\displaystyle  \mathrm{BH_3+BH_3CO}\overset{k_3}{\to }\mathrm{B_2H_6+CO}$$
+# 
+# is so slow that the equilibrium is effectively maintained. Steady state can be applied to the $\mathrm{BH_3}$ and  then the fact that $k_2\gg k_3$ is used to simplify the equation. For clarity we let $BH_3\equiv X,BH_3CO\equiv XCO$. The rate equation for $\mathrm{BH_3}$ is 
+# 
+# $$\displaystyle \frac{d[X]}{dt} = k_1[XCO]-k_2[X][CO]-k_3[X][XC0]$$
+# 
+# At steady state $d[X]/dt=0$ and therefore $\displaystyle [X]=\frac{k_1[XCO]}{k_3[XCO]+k_2[CO]}$. 
+# 
+# As
+# 
+# $$\displaystyle \frac{d[CO]}{dt}=k_1[XCO]-k_2[X][CO+k_3[X][XCO]$$
+# 
+# substituting for $[X]$ produces, after some re-arranging and simplifying,
+# 
+# $$\displaystyle \frac{d[CO]}{dt}=\frac{2k_1k_3[XCO]^2}{k_2[CO]+k_3[XCO]}$$
+# 
+# which, by the stoichiometry, is also $-d[XCO]/dt$. We are given that $k_3\ll k_2$ and therefore
+# 
+# $$\displaystyle \frac{d[CO]}{dt}=\frac{2k_3K_e[XCO]^2}{k_2[CO]}$$
+# 
+# where $K_e=k_1/k_2$ is the equilibrium constant. This equation can be solved by recognising that, by stoichiometry, if an amount $x$ of CO is produced then $a_0-x$ of $\mathrm{BH_3CO}$ remains when $a_0$ is the initial amount; 
+# 
+# $$\displaystyle \frac{dx}{dt}=2k_3K_e\frac{(a_0-x)^2}{x}\quad\text{then} \quad \int_0^x\frac{x}{(a_0-x)^2}dx=\frac{t}{2k_3K_e}$$
+# 
+# and by substituting $(a_0-x)=z$ produces the solution
+# 
+# $$\displaystyle \frac{x}{a_0-x}+\ln\left(\frac{a_0-x}{a_0}\right)=\frac{t}{2k_3K_e}$$
+# 
+# It is not obvious from this equation how the concentration of CO increases with time, in fact it increases rapidly  from zero with then more slowly. At very early times expanding both terms in $x/a_0$ gives $\sqrt{x/a_0}\sim t$.  
+# 
+# ## 2.3 Fluorescence yield
 # The fluorescence yield of a molecule $\varphi$ is the ratio of molecules excited to those that emit a photon and is defined as 
 # 
 # $$\displaystyle  \varphi = \frac{\text{rate of emission}}{\text{rate of absorption}} $$
@@ -141,7 +200,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # and is the fraction of molecules that fluoresce. A molecule fluoresces with a rate constant that is the sum of all process destroying the excited state; therefore, if $k = k_f + k_S$ and as the fluorescence lifetime is the reciprocal of $k$ or $\tau = 1/k$, the yield becomes $\varphi = k_f \tau$.
 # 
-# ### **(iii) Quenching an excited state. Electron spin can affect the outcome**
+# ## 2.4 Quenching an excited state. Electron spin can affect the outcome
 # 
 # The presence of paramagnetic species, such as O$_2$, or heavy atoms or ions, Xe, I$^-$ dissolved in solution will quench the excited state. The quenching process are energy transfer and spin orbit coupling. Quenching here means shortening the lifetime of the excited states, both singlet and triplet. Using nanosecond pump-probe (flash photolysis), which first became available shortly after the discovery of Q-switching in lasers in the 1960's, it was discovered that the singlet excited state of several types of aromatic molecules was quenched at diffusion controlled rate constant but that their triplet excited states were quenched at approximately one ninth of this. The values for anthracene quenched with molecular oxygen are, for the singlet, $k_q = 3.1\cdot 10 ^{10}$ and for the triplet, $3.4\cdot 10^9\;\mathrm{dm^3 mol^{-1} s^{-1}}$.
 # 
@@ -196,7 +255,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # Notice that this mechanism indicates that triplet-triplet annihilation is a spin allowed process provided the energy is sufficient, i.e. there must be enough energy to produce the singlet product, which means that energy conservation must always apply. Note also that when a singlet excited state is quenched by a triplet there is only one type of complex formed because the singlet has total spin of zero and multiplicity of $1$ which means that quenching always occurs at its full value.
 
-# ## 2.2 The Phase Portrait
+# ## 2.5 The Phase Portrait
 # 
 # The steady state is found when the gradient is zero, i.e. $dy/dx = 0$. In non-linear differential equations which have higher powers of $x$, such as $dy/dx = x + ax^2 + bx^3$, there are many 'steady states', which are also called *critical, fixed*, or *equilibrium points*, and it is now useful to see where these are by plotting $dy/dx$ vs. $x$. This graph is called the *phase portrait*. 
 # 
@@ -213,7 +272,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # ## 3 Phase planes and solving equations by separating variables
 # 
-# ### **(i) Laser Gain** 
+# ## 3.1 Laser Gain 
 # 
 # A laser has two basic forms, an amplifier and an oscillator. A laser amplifier is usually a single or double pass device in which an input laser is amplified by spontaneous emission in the gain material in which there is a population inversion. If the gain material contains atoms, ions, or molecules this inversion contains many more excited states than ground states and an incoming photon of the correct energy will stimulate an excited state to enter a lower state by releasing its energy as a new photon. The population of this lower state has to be kept close to zero if the laser is to work well, because the transition rate is proportional to the population difference. The initial inversion is produced by an external source, for example, by using another laser, flash lamps, or an electric current. 
 # 
@@ -287,7 +346,7 @@ ans
 # 
 # The form of the rate equations describing the laser is mathematically the same as those for an autocatalytic reaction; this is not so very surprising because in a laser one photon stimulates another. In an autocatalytic reaction, one molecule produces a copy of itself: A + B $\to$ P + 2B. An autocatalytic reaction is described in question Q18.
 # 
-# ### **(ii) Harmonic  oscillator**
+# ## 3.2 Harmonic  oscillator
 # 
 # Simple harmonic motion is described by the generic equation $\displaystyle \frac{d^2x}{dt^2}+\omega^2x=0$,
 # 
@@ -332,7 +391,7 @@ ans
 # 
 # which shows that the period $t$ is independent of the quantum number, just as expected for the harmonic oscillator.
 # 
-# ### **(iii) The Morse anharmonic oscillator**
+# ## 3.3 The Morse anharmonic oscillator
 # 
 # The Morse potential is often used as a model of a diatomic molecule as an anharmonic oscillator because not only does the potential allows the molecule to dissociate at high energy, unlike the harmonic oscillator so is inherently more realistic but also the Schroedinger can be solved analytically with this potential. The energy (eigenvalues) are 
 # 
@@ -365,7 +424,7 @@ ans
 # ________________
 # When there are very many levels in the potential, such as when $m$ is large then it is possible to excite the molecule to very close to the dissociation limit. In this case molecules can have a huge size, many hundreds of nanometres if not larger. These can be called 'Rydberg' molecules.
 
-# ### **Hamilton's Equations of Motion**
+# ## 3.4 Hamilton's Equations of Motion
 # The calculation of the period as was done with the harmonic oscillator is, in principle, just the same: the equation for the velocity is integrated by separating variables. However, in this case a very hard integral is produced and another and far more powerful approach can be used. Thus uses Hamilton's formulation of mechanics and is in itself a very powerful method but is huge topic in itself and so only an brief example will be given here. 
 # 
 # The basis of the method we use is based on two equations connecting the total energy (in this example) with momentum and position. The total energy is called the Hamiltonian, $H$ and position and momentum are conventionally labelled $q,\;p$ respectively.
@@ -423,10 +482,10 @@ ans
 # Figure 5c. The period of an anharmonic oscillator vs energy. The parameters are as used in figure 5b. The dissociation energy  $D=1$. The circles show the energy $E_n$ for $n=0\cdots 9$ the only bound energy levels in this particular potential.
 # ___________
 
-# ## 3.1 Chemical Kinetics
+# ## 4 Chemical Kinetics
 # Here we describe a few examples of chemical kinetics including those reaching equilibrium, reaction with flow,  and reaction and diffusion. In sections 9.2.iv,v and vi of this chapter and Chapter 11.4.10, 11.7 and 11.8 (Numerical methods) examples of more complex reactions with diffusion or multiple steps, which can generally only be solved numerically are examined.
 # 
-# ### **(i) Bimolecular reactions** 
+# ## 4.1 Bimolecular reactions 
 # 
 # In a bimolecular reaction, such as A + B $\rightarrow$ C, the rate of reaction of A would normally be written as
 # 
@@ -470,7 +529,7 @@ ans
 # 
 # Integrating gives $\displaystyle \frac{x}{(a_0-x)}=2a_0k_2t$ which on extracting $x$ gives the equation above for $B$.
 # 
-# ### **(iii) Reversible or opposing reactions $A \overset{k_1}{\underset{k_2} \rightleftharpoons }B+C$** 
+# ## 4.2 Reversible or opposing reactions $A \overset{k_1}{\underset{k_2} \rightleftharpoons }B+C$ 
 # 
 # Suppose that the reaction $A \overset{k_1}{\underset{k_2} \rightleftharpoons }B+C$ reaches equilibrium there being an amount $\mathrm{[A]_0}$ initially and $\mathrm{[B]_0=[C]_0=0}$. The simplest way to integrate the equation is to let an amount $x$ react then 
 # 
@@ -498,7 +557,7 @@ ans
 # 
 # and as $x,x_e,a_0$ are all concentrations this is dimensionally correct.
 # 
-# ### **(iv) Temperature Jump; a perturbation from the equilibrium $\mathrm{H_2O}\overset{k_1}{\underset{k_2} \rightleftharpoons }\mathrm{H^+}+\mathrm{OH^-} $** 
+# ## 4.3 Temperature Jump; a perturbation from the equilibrium $\mathrm{H_2O}\overset{k_1}{\underset{k_2} \rightleftharpoons }\mathrm{H^+}+\mathrm{OH^-} $ 
 # 
 # Once a reaction has come to equilibrium, such as $\mathrm{H_2O}\overset{k_1}{\underset{k_2} \rightleftharpoons }\mathrm{H^+}+\mathrm{OH^-} $, a small perturbation can be used to measure the return to equilibrium which may take only a few microseconds and by so doing the individual rate constants can be obtained. The change in absorption can be measured as equilibrium is reestablished. Often the perturbation is in the form of rapid heating of the solvent by a degrees or so. In the past heating by passing an electric current was used but today this can be effected most easily by using a nanosecond duration laser tuned, for example, to water's absorption in the infra red. An alternative is to add a dye with a low fluorescence yield to the solution, and use this to absorb visible light and so heat the solution as its excited state decays. Many enzyme's equilibria have been studied using T-jump.   
 # 
@@ -538,7 +597,7 @@ ans
 # 
 # which gives a value of $6.6\cdot 10^9 \;\mathrm{ dm^3\,mol^{-1}\,s^{-1}}$ in water with a viscosity $\eta=0.001$ Pa S. This is clearly way-off the measured value, but the formula was derived for neutral species and therefore ignores the fact that ions are involved which in this case are attracted to one another. Adding a correction (Wilkinson, 1980) increases $k_2$ by a factor of around twenty (depending on ion separation) bringing the value towards $10^{11}$ much closer to the experimental measurement.
 # 
-# ### **(v) Reversible reactions $A + B \overset{k_1}{\underset{k_2} \rightleftharpoons } C + D$** 
+# ## 4.4 Reversible reactions $A + B \overset{k_1}{\underset{k_2} \rightleftharpoons } C + D$ 
 # 
 # The gaseous decomposition of HCl follows follows the stoichiometry $\mathrm{2HCl \rightleftharpoons H_2 + Cl_2}$ although the reaction is more complex involving radicals. This is a particular case of a reversible reaction $A+B=C+D$. The scheme general is, using the same notation as above,
 # 
@@ -568,7 +627,7 @@ ans
 # 
 # is very similar to that of A+B=C+D and the equations become the same if we make $k_2'/4=k_2$.
 
-# ### **(vi) Hydrogen iodide equilibrium**
+# ## 4.5  Hydrogen iodide equilibrium
 # 
 # One of the first reaction to be studied in the late 1800's was the dissociation of hygrogen iodide vapour at high temperatures $\approx 450$ K. It is interesting to derive the kinetic equations for $\mathrm{2HI \rightleftharpoons H_2 + I_2}$  from scratch. 
 # 
@@ -623,7 +682,7 @@ ans
 # Figure 5d. $\mathrm{2HI \rightleftharpoons H_2 + I_2}$ reaching equilibrium starting at zero HI, rising points, and eqn 5g, and only HI, falling points, and eqn 5h. The equilibrium value $x_e=0.786$ at $448^\text{o}$ C. The curves show that the same equilibrium is reached starting either with products or reactants. 
 # ____________
 # 
-# ### **(vii) Reversible reaction when the the equilibrium constant is known $A \overset{k_1}{\underset{k_{-1}} \rightleftharpoons } B$** 
+# ## 4.6 Reversible reaction when the the equilibrium constant is known $A \overset{k_1}{\underset{k_{-1}} \rightleftharpoons } B$ 
 # 
 # Sometimes we may want the rate expression in terms of the equilibrium constant as this may be known when neither rate constant has been measured. As an example the  ortho to para conversion of H$_2$ with a catalyst such as Nickel on $\mathrm{Al_2O_3}$ has the form $o-H_2 \overset{k_1}{\underset{k_{-1}} \rightleftharpoons } p-H_2$. Other examples are cis - trans isomerisation of some hydrocarbons or of $\alpha -,\beta-$ glucoses. 
 # 
@@ -651,11 +710,15 @@ ans
 # 
 # producing 
 # 
-# $$\displaystyle \ln\left( \frac{a-a_e}{a_0-a}\right)=-k_1\frac{K+1}{K}t$$
+# $$\displaystyle \ln\left( \frac{a-a_e}{a_0-a_e}\right)=-k_1\frac{K+1}{K}t$$
 # 
-# which illustrates an exponentially decaying population of $a$ or ortho hydrogen to reach a constant value with a measured rate constant of $k_1(K+1)/K$ from which both $k_1,k_{-1}$ can be found if $K$ is known, for example from thermodynamic data, via $\Delta G^\text{o}=RT\ln(K)$. Notice that the initial amount of species $b$ is irrelevant to the decay of $a$.
+# or
+# 
+# $$\displaystyle a=a_e+(a_0-a_e)e^{-k_{obs}t}$$
+# 
+# which illustrates an exponentially decaying population of $a$ (ortho hydrogen) from $a_0$ to reach a constant value of $a_e$ at equilibrium with a measured rate constant of $k_{obs}=k_1(K+1)/K$. Both $k_1,k_{-1}$ can be found if $K$ is known, for example from thermodynamic data via the standard Gibbs energy change, $\Delta G^\text{o}=RT\ln(K)$. Notice that the initial amount of species $b$ is irrelevant to the decay of $a$.
 
-# ### **(viii) Kinetics and flow** 
+# ## 4.7 Kinetics and flow 
 # 
 # Water entering and leaving a tank, reaction vessel, or even a lake can be modelled by calculating the difference in the amount material flowing in and out, viz.,
 # 
@@ -698,7 +761,7 @@ ans
 # Fig. 6. Left. The change in the ratio $x/x_0$ vs. reduced flow $ft/V$ for different $r_{in} = x_{in} /x_0$ ratios, showing the range of curves obtainable with different starting conditions. Right. The same equation but rewritten with ratio $r_0=x_0/x_{in}$. The ratios in both plots are $0, 0.5, 1$ and $1.5$.
 # ________
 # 
-# ### **(ix) Dissolution kinetics** 
+# ## 4.8 Dissolution kinetics 
 # 
 # When a solid solute is dissolved in a solvent, the rate equation is found by considering the change in the amount dissolved in solution during a short time period. In dissolving a solid, a saturated solution will eventually be formed and this limits how much solid will dissolve. If $x_0$ is the initial amount of solid to be dissolved in $m$ grams of solvent, $s_x /m$ the saturated solution concentration, $k$ the rate of dissolution (mass s$^{-1}$) and $x$ the number of grams of solid remaining at time $t$, then
 # 
@@ -734,7 +797,7 @@ ans
 # 
 # $$\displaystyle x=-\frac{1}{Nk}\log\left(\frac{x-N}{x} \right)+ const$$
 # 
-# ### **(x) Mean free path and probability of obtaining a path of a given length**
+# ## 4.9  Mean free path and probability of obtaining a path of a given length
 # 
 # If $\bar c$ is the average velocity and there are $v$ molecules in unit volume then the total distance covered is $\bar c v$. Let $\gamma$ be the number of collisions that occur per unit volume per second and as each collision terminates two free paths, there are $2v$ free paths in the same time. As the average distance travelled is $\bar c v$ the average length of the free path $\lambda$ is 
 # 
@@ -769,7 +832,7 @@ ans
 # 
 # thus $\displaystyle p(L)=e^{- L/\lambda}=e^{- 2\gamma L/(v\bar c)}$ and shows how rapidly the chance of mean free path $L$ decreases at fixed $\gamma/v$ and also as $\gamma/v$ increases at fixed $L$. 
 
-# ## 3.2 Diffusion of heat and molecules
+# ## 5 Diffusion of heat and molecules
 # 
 # At steady state, the constant quantity of heat, or the heat flux, $Q$ in watts ( J s$^{-1}$ ) flowing through an area $A$, is proportional to the spatial rate of heat loss or
 # 
@@ -781,15 +844,15 @@ ans
 # 
 # where $J$ is the flux, which is the amount of material diffused/unit area/unit time and this is a constant quantity. The diffusion coefficient is $D$ ($\mathrm{m^2\,s^{-1}}$), $c$ is the concentration, and $x$ the distance over which diffusion occurs. If these last two 'diffusion' equations were to be rearranged, they would have the mathematical form of _zero-order_ rate equations because the rate of change does not depend on $\theta$ or $c$, but is a constant quantity for example, $\displaystyle \frac{ dc}{dx} = -\frac{J}{D}$ . An example from chemical kinetics of a zero-order rate equation is $\displaystyle \frac{dc}{dt} = -k_0$.
 #   
-#  ### **(i) Heat loss**
+#  ## 5.1 Heat loss
 #  The heat and diffusion equations can be used to solve a variety of different problems. For example, a fridge has a wall that is $5$ cm thick, and is kept $20^\mathrm{o}$  cooler than the room. The thermal conductivity coefficient $k = 0.1 \mathrm{J\, s^{-1}\, m^{-1}\, K^{-1}}$ ( or $0.1$ watt/metre/ kelvin ), which is typical of good insulating materials, then the steady heat flow into the fridge is $Q = -kA\Delta\theta /\Delta x = -40$ W for each m$^2$ of surface area. Because the temperature change is fixed as is the wall thickness, then $d\theta /dx = \Delta \theta /\Delta x$.
 # 
-# ### **(ii) Ice forming**
+# ## 5.2 Ice forming
 # The following example describes ice forming on a still lake. The ice layer increases in thickness with the square root of time when the water temperature is $0^\mathrm{o}$ C and the air temperature is lower and constant. The ice acts to insulate the water from the colder air above. A quantity of heat, $dH$, is taken from the water to freeze it in time $dt$, and the rate of heat transfer is $dH/dt$. By Fourier's law, equation (8) this is proportional to the temperature gradient $\Delta \theta/x $ across the ice, therefore $dH/dt \propto \Delta\theta/x$. As the ice thickens, the temperature gradient decreases and so heat transfer is reduced per unit time, which must be proportional to the thickness $dH \propto dx$, hence $dx/dt = \alpha\Delta\theta/x$ where $\alpha$ is a constant of proportionality. When integrated, this equation shows that the ice thickness increases as the square root of time; $x \propto \sqrt{t}$. This, and the fact that ice is less dense that water means that lakes do not generally freeze solid; there are usually not enough cold days.
 # 
 # An interesting consequence concerns the freezing of water droplets in the atmosphere. Non-linear freezing means that the outside of the liquid droplet freezes rapidly, forming a shell. This may become strained as it thickens, causing the ice to crack thus releasing a spurt of liquid water from the interior in the form of micro-droplets, which rapidly freeze in the cold air. Such a process may be important in cloud formation.
 # 
-# ###  **(iii) Diffusion through a cell wall**
+# ## 5.3 Diffusion through a cell wall
 # A third example concerns diffusion. A thin porous pipe of outer diameter $b$ has gas at pressure $p_0$ flowing inside it. The inside of the pipe has diameter of $a$ and the concentration of gas outside the pipe is zero. If the diffusion coefficient through the pipe to the outside is $D$, the rate of gas loss can be calculated using Fick's first law. The 'pipe' could be, for example, a capillary in the lungs containing O$_2$ and CO$_2$.
 # 
 # The flux (mass flow) per unit area/second through the pipe is a fixed quantity, which is given by $J = -D(dc/dr)$, where $r$ is the radial distance from the centre of the pipe and $c$ the concentration of the gas. The thickness of the pipe's wall is $b - a$ and the surface area is $2\pi r$ per unit length, hence $J = -2\pi rD(dc/dr)$ per unit length. Integrating through the wall of the pipe, from $a$ to $b$ gives 
@@ -810,7 +873,7 @@ ans
 # 
 # Does this make sense? Common sense would suggest that the flux of material is going to be large if the diffusion coefficient and initial concentration is large, and if the wall is thin. If the wall is very thin then $a \to b$ and the log becomes small ($\ln(1) = 0$) and the flux increases rapidly as the wall becomes thinner. The effect is quite dramatic; if initially the pipe has $b/a = 2$ and then this ratio is reduced to $1.25$, a reduction by a factor of $1.6$ times, but the flux is $\approx 6.5$ times greater. If two gases are in the pipe, the ratio of the amount of each transported outside is in the ratio of their diffusion coefficients and their concentrations. This is important for O$_2$ /CO$_2$ diffusion in the lungs.
 # 
-# ### **(iv) Reaction and diffusion**
+# ## 5.4 Reaction and diffusion
 # In the presence of a chemical reaction where the molecule is also diffusing, the diffusion equation is
 # 
 # $$\displaystyle   \frac{\partial c}{\partial t}=D\frac{\partial^2 c}{\partial x^2}-R$$
@@ -823,7 +886,7 @@ ans
 # 
 # if at $x = 0,\, c = c_0$. At the end of the flagellum, the concentration is $\displaystyle c=c_0-\frac{RL^2}{2D}$ which obviously cannot be negative; the limiting condition is, therefore, that $\displaystyle c_0 \ge \frac{RL^2}{2D}$. As a figure of merit, it is found that if $\displaystyle \frac{RL^2}{DC_0} \lt 1$ diffusion is sufficient to supply enough ATP to the molecular motors or to supply O$_2$ into cells. Using typical values, reaction can only take place within $10$ microns at most from the boundary. More sophisticated reactions with, say, spherical geometry lead to similar conclusions. Thus, it is understandable why small insects, for example, have tracheal tubes to increase the O$_2$ available to diffuse into their muscles and so maintain the high metabolic rate necessary for flight.
 # 
-# ### **(v) Cooling and heating.  Trommsdorff - Norrish effect**
+# ## 5.5 Cooling and heating.  Trommsdorff - Norrish effect
 # The time taken to cool a cup of coffee or tea follows Newton's law of cooling. This law states that the _rate_ of cooling depends on the difference in temperature compared to the surroundings and the form that the rate of heat transferred from one body is the same as that gained by another. This means that the rate is proportional to the temperature difference or
 # 
 # $$\displaystyle   \frac{d\theta}{dt}=k(\theta_s-\theta) \qquad\tag{10}  $$
@@ -836,7 +899,7 @@ ans
 # 
 # In radical polymerization reactions, as the reaction proceeds towards completion, the mixture must become very viscous. This means that the termination steps cannot occur and the rate of reaction increases because this is inversely proportional to the rate of termination. Secondly, the increased viscosity means that stirring can become ineffective and the only cooling mechanism is thus thermal diffusion to the vessel walls, which is slow. Consequently, if heat gain is too great, any gases or vapours trapped in the polymer may cause it to explode. This is called the _Trommsdorff - Norrish_ effect and is an example of an auto-acceleration process or one with positive feedback. The rate of temperature change has an extra term for the heat generated and should have the generic form $\displaystyle \frac{d\theta}{dt}=k(\theta_s-\theta)+k_re^{-E_a/R\theta}$ at temperature $\theta$. The activation energy is $E_a$, and $k_r$ is a constant proportional to the pre-exponential term from the Arrhenius equation and the heat capacity of the reaction mixture.
 
-# ## 3.3 The Centrifuge: Forced separation
+# ## 6 The Centrifuge: Forced separation
 # 
 # If a cylinder of radius $r$ and width $h$ is filled with a fluid, whose several components are to be separated, is spun about its axis at a speed of $\omega\, \mathrm{rad\, s^{-1}}$, the heavier components are forced to come to equilibrium further towards the outside of the cylinder than the lighter ones do. The balance is between _centripetal_ forces acting towards the axis of rotation and the _centrifugal_ forces acting in the opposite direction. 
 # 
@@ -863,7 +926,7 @@ ans
 # Fig. 7 Horizontally spinning disc; the fluid level is shown by the dashed line.
 # _________
 
-# ## 3.4 Absorption of photons and scattering of X-rays and electrons
+# ## 7 Absorption of photons and scattering of X-rays and electrons
 # 
 # Photons in the ultraviolet and visible part of the spectrum excite electrons from the HOMO to LUMO orbitals of molecules giving rise to the colours we see around us. Vibrational and rotational transitions are excited by infrared light. When photons are absorbed, if the cross section for absorption at a certain wavelength is $\sigma$, then $\sigma ndL$ photons per second are absorbed by $n$ molecules in a layer of thickness $dL$. The fractional decrease in intensity of the photons is then
 # 
@@ -878,7 +941,7 @@ ans
 # A beam of X-rays can be scattered by the electrons in a molecule's atoms, rather than being absorbed. In a single crystal, parallel planes of atoms occur at regular intervals. The scattered intensity from the many planes similarly oriented to the X-ray beam can add in phase or cancel out, and this forms the basis of X-ray crystallography. The beam of X-rays has intensity $I$, and if a sample contains $n$ electrons per unit volume, the first layer of thickness $dL$ intercepts $ndL$ photons, each electron presenting an area of $4\pi d^2$ where $d = e^2/mc^2$ and is approximately the closest approach distance of two electrons. An equation similar to the Beer-Lambert equation describes scattering but if this is small, and as $nL$ is the number of scattering electrons in the sample, the fractional scattering of a single electron becomes $I_s/I_0 =4\pi d^2=4\pi(e^2/mc^2)^2$, see Q5.
 # 
 # 
-# ## 3.5 Velocity and Acceleration
+# ## 8 Velocity and Acceleration
 # 
 # A number of problems involving the motion of bodies can be solved by using Newton's laws to equate forces, and separating the variables of the equation produced. Usually, the force acting downwards is gravity, and it is often convenient to choose the positive direction as downwards. By Newton's second law of motion, the net force $f$ acting on a body, is equal to the rate of change of momentum, or
 # 
@@ -890,7 +953,7 @@ ans
 # 
 # $x$ being the position at time $t$. Both of these equations are of fundamental importance in solving problems in dynamics.
 # 
-# ### **(i) Skydiving**
+# ## 8.1 Skydiving
 # Consider now a skydiver who jumps from an aeroplane and falls under gravity, but with air resistance that is linearly proportional to velocity. Naturally, we shall want to work out how velocity increases with time, and if it will reach a constant, limiting value. After a certain time, the parachute must open, and the resistance to falling will increase so that it is now proportional to the square of velocity. At any time the forces due to gravity and air resistance are balanced, and therefore act in opposite directions and this is used to solve the problem. The force of gravity is $mg, \,g$ being the acceleration due to gravity and $m$ the mass in kg. The air resistance (drag) is $av$ where $a$ is a constant with units of kg s$^{-1}$ and $v_0$ is the initial downwards velocity which could be zero. The equation of motion in terms of force is
 # 
 # $$\displaystyle  m\frac{dv}{dt}= mg - av, \qquad v(t_0) = v_0, \qquad t_0=0$$
@@ -946,7 +1009,7 @@ for i in range(3):         # Newton-Raphson. V rapid convergence.
 print('{:s}{:6.2f}{:s}'.format('time to reach ground ', tm, ' seconds'))
 
 
-# ### **(ii) Rockets**
+# ## 8.2 Rockets
 # A rocket is fired vertically into the air with an initial velocity $v_0$. To find the speed at any height where it has travelled a distance $r$ the equation to use is, 
 # 
 # $$\displaystyle  \frac{dv}{dt}\equiv v\frac{dv}{dr}=-\frac{gR^2}{r^2}$$

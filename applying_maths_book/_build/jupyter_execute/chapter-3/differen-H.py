@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Numerically finding the roots of an equation
+# # 9 Numerically finding the roots of an equation
 
 # In[1]:
 

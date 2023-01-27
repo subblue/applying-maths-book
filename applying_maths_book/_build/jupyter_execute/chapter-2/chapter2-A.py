@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Real, imaginary, conjugate and modulus
+# # 1 Real, imaginary, conjugate and modulus
 
 # In[1]:
 
@@ -15,7 +15,7 @@ init_printing()                      # allows printing of SymPy results in types
 plt.rcParams.update({'font.size': 16})  # set font size for plots
 
 
-# ## Motivation and concept
+# ## 1 Motivation and concept
 # 
 # Complex numbers arise naturally in mathematics, often when solving quadratic equations such as $x^2+x+1=0$, which has the solutions 
 # 
@@ -49,7 +49,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # $$\displaystyle i^0=1, \quad i^1=i, \quad i^2=-1, \quad i^3=-i , \quad i^4=1, \quad i^5=i , \quad i^6=-1,\quad i^7=-i \cdots$$
 # 
-# ## 1 Complex conjugate
+# ## 1.1 Complex conjugate
 # 
 # Complex numbers possess a new property compared to real numbers and this is the complex conjugate. If $z = a + ib$ then the complex conjugate is defined as
 # 
@@ -84,11 +84,11 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # Figure 2. The complex number $z$ and its complex conjugate $z^*$.
 # ______
 
-# ## 1.1 Adding and subtracting complex numbers
+# ## 1.2 Adding and subtracting complex numbers
 # 
 # The real and imaginary parts are added separately as shown in Fig.3. This is very much like adding two vectors. Figure 3(Left)  also illustrates the _Triangle Inequality_ of complex numbers, i.e. $|z_1+z_2|\le |z_1| + |z_2|$. In the figure the absolute value of the complex number $z_2$ is $|z_2|$ and the length of a line, $r$ for example. It can be seen that he green dotted line is longer than the sum of one black and one red line, i.e. the sum of the magnitudes of the two complex numbers.
 # 
-# ## 1.2 Multiplying and dividing complex numbers
+# ## 1.3 Multiplying and dividing complex numbers
 # 
 # Multiplying complex numbers is straightforward using the normal rules of algebra but remembering to use $i^2 = -1$ where necessary, e.g.,
 # 
@@ -107,7 +107,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # Figure 3. Left: Adding two complex numbers together to form $z_1+z_2$ green dashed line. Right: Adding and subtracting $z$ and its complex conjugate $z^*$. The red arrow pointing down has the same length and angle as has $z^*$ except that it starts at the end point of the line from the origin to $z$ and ends at $z+z^*$ The arrow going up is the reverse of that going down and leads to $z-z^*$. 
 # _________
 # 
-# ## 1.3 Modulus and Argument
+# ## 1.4 Modulus and Argument
 # 
 # The second new property held by complex numbers is variously called the modulus, magnitude, absolute value, or norm of the complex number. This is calculated in a similar way to that of a vector and is the length of the complex number measured from the origin, Figs 1,4.
 # 
@@ -141,7 +141,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # For example, if the complex number is $z = i$, it has a real part that is $0$ and an imaginary part of $1$, and is represented by a point $(0, 1)$ which is on the imaginary axis. Its modulus is $1$ and its argument (angle/phase)  $\pi/2$. If the number is $z = -1 - i$ then the point is found at $(-1, -1)$ on the Argand diagram. Its argument is $-5\pi/4$ (225$^\mathrm{o}$) and its modulus $\sqrt{(-1 - i)(-1 + i)} = \sqrt{2}$.
 # 
-# ## 1.4 Summary
+# ## 1.5 Summary
 # 
 # If $a$ and $b$ are real numbers, then the complex number is 
 # 

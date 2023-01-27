@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Moments of Inertia
+# # 15 Moments of Inertia
 
 # ## Introduction
 # Angular momentum plays a central role in chemistry, but this is usually in the context of nuclear and electron spin; for example, nuclear spin gives rise to NMR and electron spin (EPR) spectroscopies, as well as being essential for the formation of the chemical bond. The rotation of whole molecules is a natural consequence of thermal motion and is observed with microwave, infrared, Terahertz, or Raman spectroscopy. These techniques are used to measure the spacing between a molecule's rotational energy levels. This is described next, followed by a brief description of angular momentum and moments of inertia. Finally, the calculation of bond lengths is described.

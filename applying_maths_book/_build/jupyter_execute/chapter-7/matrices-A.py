@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Determinants 
+# # 1 Determinants 
 
 # In[1]:
 
@@ -196,9 +196,9 @@ M = Matrix([ [x,1,1], [1,x,1],[1,1,x] ])
 solve(M.det(),x)
 
 
-# ### **(iii) The $\mathrm{H\overset{\cdot\cdot}uckel } $ MO method** 
+# ## 3 The Huckel MO method** 
 # 
-# In the $\mathrm{H\overset{\cdot\cdot}uckel }$ molecular orbital approximation $\pi$ bonding energies of molecules, ions, and radicals can be calculated. This method reflects the topology of the structure because only adjacent atoms interact with one another, and the change in energy with the length or angle of bonds is not included in the calculation. In this model of $\pi$ bonding, each electron in a $\pi$ orbital interacts only with $\pi$ electrons on the nearest atoms. This interaction energy is calculated from the resonance (exchange) Coulomb energy integral, is conventionally given the symbol $\beta$, and is _negative_ since interaction is attractive. It has a value $\approx -300$  kJ/mole, although estimates vary widely. The $\pi$ electrons on any atom also have their own energy, which is the Coulomb self-energy integral, and this is labelled $\alpha$. The interaction energies can be made into a determinant, called the secular determinant$^*$, and which is then solved to find the energy. This determinant is formed by a set of simple rules; why it works is explained later on in Section 12.3 that describes eigenvalue - eigenvector equations, in particular the Secular equation, eqn. 32.
+# In the Huckel molecular orbital approximation $\pi$ bonding energies of molecules, ions, and radicals can be calculated. This method reflects the topology of the structure because only adjacent atoms interact with one another, and the change in energy with the length or angle of bonds is not included in the calculation. In this model of $\pi$ bonding, each electron in a $\pi$ orbital interacts only with $\pi$ electrons on the nearest atoms. This interaction energy is calculated from the resonance (exchange) Coulomb energy integral, is conventionally given the symbol $\beta$, and is _negative_ since interaction is attractive. It has a value $\approx -300$  kJ/mole, although estimates vary widely. The $\pi$ electrons on any atom also have their own energy, which is the Coulomb self-energy integral, and this is labelled $\alpha$. The interaction energies can be made into a determinant, called the secular determinant$^*$, and which is then solved to find the energy. This determinant is formed by a set of simple rules; why it works is explained later on in Section 12.3 that describes eigenvalue - eigenvector equations, in particular the Secular equation, eqn. 32.
 # 
 # The determinant is formed from the rules:
 # 
@@ -238,7 +238,7 @@ solve(M.det(),x)
 # 0 & 0 & 1 &x  \\
 # \end{vmatrix}=0\qquad\qquad\qquad\qquad\qquad\qquad\text{(1b)}$$
 # 
-# We could solve the determinant by hand and then attempt to solve the quartic equation also by hand by factoring out terms or perhaps by plotting the function and looking for its roots where $x = 0$. The Newton - Raphson method could also be used to find roots numerically and until recently, this would have been done. Instead, with Python the construction and solution of the $\mathrm{H\overset{\cdot\cdot}uckel }$ determinant is straightforward. The matrix can be constructed manually or the scheme below can be used which will make the $\mathrm{H\overset{\cdot\cdot}uckel }$ determinant for any linear polyene. 
+# We could solve the determinant by hand and then attempt to solve the quartic equation also by hand by factoring out terms or perhaps by plotting the function and looking for its roots where $x = 0$. The Newton - Raphson method could also be used to find roots numerically and until recently, this would have been done. Instead, with Python the construction and solution of the Huckel determinant is straightforward. The matrix can be constructed manually or the scheme below can be used which will make the determinant for any linear polyene. 
 
 # In[6]:
 
@@ -295,9 +295,9 @@ solve( char_eqn.evalf() )   # always use numberical solution for larger polynomi
 # 
 # The characteristic polynomial can be plotted also, as shown in Fig.5, to convince you that the solutions are correct. The roots of the equation $(y = 0)$ can be seen to be at just greater than $\pm 0.6$ and $\pm 1.6$. A more detailed plot would give more accurate answers but not as exactly as the algebraic solution.
 
-# ### **(iv) $\mathrm{H\overset{\cdot\cdot}uckel }$ method for single rings. Circulant determinants**
+# ## 3.1 Huckel method for single rings. Circulant determinants**
 # 
-# When the molecule has a ring of delocalised electrons such as benzene the $\mathrm{H\overset{\cdot\cdot}uckel }$ method can be treated rather simply using _Circulant_ determinants. As an illustration suppose the molecule has a diamond or square shape then the determinant has extra terms in position $0-3$ and $3-0$ to join the first and last atoms, i.e 
+# When the molecule has a ring of delocalised electrons such as benzene the Huckel method can be treated rather simply using _Circulant_ determinants. As an illustration suppose the molecule has a diamond or square shape then the determinant has extra terms in position $0-3$ and $3-0$ to join the first and last atoms, i.e 
 # 
 # $$\displaystyle \pmb C= \begin{bmatrix}
 # \alpha-E & \beta & 0 & \beta \\
@@ -306,7 +306,7 @@ solve( char_eqn.evalf() )   # always use numberical solution for larger polynomi
 # \beta & 0 & \beta &\alpha-E  \end{bmatrix}
 #  \qquad\qquad\begin{matrix}  0 &\cdots & 1\\ \vdots & &\vdots\\ 3 &\cdots& 2\end{matrix}\qquad\qquad\text{(1c)}$$
 # 
-# and this makes the matrix and its determinant _circulant_ which means that each row contains the same elements but each is simply rotated by one place from its neighbour, in other words once the first row is known so is the whole matrix. This matrix and others like it are symmetrical about the diagonal. A symmetric matrix is one in which the matrix is equal to its transpose, i.e. $M=M^T$, the transpose being the matrix with rows and columns replace with one another.
+# and this makes the matrix and its determinant circulant which means that each row contains the same elements but each is simply rotated by one place from its neighbour, in other words once the first row is known so is the whole matrix. This matrix and others like it are symmetrical about the diagonal. A symmetric matrix is one in which the matrix is equal to its transpose, i.e. $M=M^T$, the transpose being the matrix with rows and columns replace with one another.
 # 
 # Following the previous calculation let $\displaystyle x=\frac{\alpha-E}{\beta}$ and the determinant simplifies to
 # 
@@ -341,7 +341,7 @@ solve( char_eqn.evalf() )   # always use numberical solution for larger polynomi
 # 
 # $$\displaystyle E=\alpha +2\beta,\; \alpha,\;\alpha,\;\alpha -2\beta$$
 # 
-# Normally the energy is taken relative to the self-energy $\alpha$ meaning that the lowest level is $2\beta$ below this and the highest $-2\beta$ above. Adding four electrons produces two with lower and two unchanged in energy. Of course this particular molecule will be highly strained and can be in a singlet or more probably a triplet state with two electrons in the two orbitals with energy $\alpha$. $\mathrm{H\overset{\cdot\cdot}uckel }$ theory does not consider any such matters. It is based solely on allowing interaction to occur to nearest neighbours.
+# Normally the energy is taken relative to the self-energy $\alpha$ meaning that the lowest level is $2\beta$ below this and the highest $-2\beta$ above. Adding four electrons produces two with lower and two unchanged in energy. Of course this particular molecule will be highly strained and can be in a singlet or more probably a triplet state with two electrons in the two orbitals with energy $\alpha$. Huckel theory does not consider any such matters. It is based solely on allowing interaction to occur to nearest neighbours.
 # 
 # The method described is simple to use and can be generalised. The expansion of any circulant determinant with elements $a_0,a_1\cdots, a_{n-1}$ is a product of terms, i.e. 
 # 
@@ -405,7 +405,7 @@ solve( char_eqn.evalf() )   # always use numberical solution for larger polynomi
 # 
 # Interaction between $\pi$ orbitals is clear in aromatic molecules but it is possible that molecules themselves can interact also between near neighbours, if the molecules are disposed linearly _J aggregates_ are formed but molecules can be in a ring. The most famous example is the LH2 and LH1 light harvesting antenna of bacterial photosynthesis which has 18 or so chromophores arranged in a loop which interact with nearest neighbours. In sections 12 and 13  the kinetics of energy transfer in complicated assemblies of molecules is analysed. 
 
-# ### **(v) Slater Determinants**
+# ## 3.2 Slater Determinants**
 # 
 # Finding a solution to the electronic Schroedinger equation for molecules allows the calculation of molecular geometry and the corresponding energy levels. The electronic Schroedinger equation calculates the energy of the electrons at a fixed nuclear separation, i.e. after the Born-Oppenheimer approximation is invoked. This approximation is made to simplify the equations and is valid as the mass of the electron is far less than that of a proton or neutron and so the electrons can realise their minimum energy without being influenced any change in the motion of the nuclei. A potential energy surface is then made by repeatedly solving at different but fixed nuclear positions, i.e. the electronic energy is minimized in the field of the point charges of the nuclei. An excellent description of the theory is given by A. Szabo and N. Ostlund 'Modern Quantum Chemistry' publ Dover 1982. The description that follows is based on chapter 2 of that book.
 # 

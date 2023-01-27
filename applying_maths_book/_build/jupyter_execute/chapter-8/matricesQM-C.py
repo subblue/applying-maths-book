@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Continuous basis sets
+# # 5 Continuous basis sets
 
 # In[1]:
 
@@ -17,7 +17,7 @@ init_printing()                      # allows printing of SymPy results in types
 plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 
-# ## Example
+# ## 5.1 Example
 # Suppose a wavefunction $R$ represents the radial part of the ground state of a hydrogen atom then a continuous basis set is needed because the wavefunction depends on spatial coordinates, and in particular on the radial distance from the nucleus, $r$. At this point, $R$ is just the idea of the wavefunction as no basis or representation has yet been determined. The wavefunction can now be defined by left multiplying with a bra; the result is the value of the function at $r$,
 # 
 # $$\displaystyle r|R\rangle = R(r)$$

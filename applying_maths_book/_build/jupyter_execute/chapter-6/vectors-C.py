@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Axes need not be right-angled or of equal length 
+# # 8 Axes need not be right-angled or of equal length 
 
 # In[1]:
 
@@ -17,13 +17,13 @@ init_printing()                      # allows printing of SymPy results in types
 plt.rcParams.update({'font.size': 16})  # set font size for plots
 
 
-# ## 8.1 Basis set. 
+# ## 8.1 Basis set 
 # 
 # In crystallography the coordinates of the unit cell are often reported in terms of the crystal type, monoclinic, triclinic, and so forth, whose axes are not mutually at right angles or always of the same length. The base vectors are no longer the orthonormal $\boldsymbol i, j, k$ set we have been using and are now labelled as $\vec a, \vec b, \vec c$ to indicate that they are non-orthogonal. By convention, the angle $\alpha$ lies between $b$ and $c$, $\beta$ between $a$ and $c$, and $\gamma$ between $a$ and $b$. This is shown in figure 20. Many authors use $\boldsymbol {a,b,c}$ instead of $\vec a, \vec b, \vec c$ but using arrows is here clearer.  
 # 
 # As the base vectors are not at $90^\text{o}$ to one another, when a dot product is calculated, the terms $\vec a\cdot \vec b, \vec a\cdot\vec c$, and $\vec c\cdot \vec b$ are not zero but the corresponding cross terms $\boldsymbol i\cdot k, \boldsymbol i\cdot j$, and $\boldsymbol j\cdot k$ in the right-angled basis set are. Additionally, the base vectors are often not of unit length, but have the length, and relative angles, of the unit cell, which means that they are not normalized and not orthogonal - just about as bad as it can get! However, the method to calculate a dot product is, in principle, no different to that already described. Although a, b, and c represent the length of the unit cell, these are not unit vectors; the 'unit' here refers to the minimum repeat distance in the crystal.
 # 
-# ## 8.2 Vectors
+# ## 8.2 non-orthogonal vectors
 # 
 # Suppose two vectors are $\vec V$ and $\vec W$ in the non-normalized, non-orthogonal $(\vec a, \vec b, \vec c)$ basis
 # then we can write
@@ -353,7 +353,7 @@ print('{:s}{:6.1f}{:s}'.format('bond angle C123 =', bond_angle(C2,C1,C3),' degre
 print('{:s}{:6.1f}{:s}'.format('bond angle C12N =', bond_angle(C2,C1,N1),' degrees') )
 
 
-# ## 10.2 Unit cell volume
+# ## 11 Unit cell volume
 # 
 # The absolute value of the determinant of $\boldsymbol M$ is numerically equal to the volume of the unit cell, (Giacovazzo et al. 1992, p. 68). When all the angles are $90^\text{o}$ then this matrix reduces to a diagonal form, and the determinant is $abc$, which is equal to the volume. Consider a monoclinic crystal, such as benzoic acid, where only one crystal angle is not $90^\text{o}$, and where $a = 0.552, b = 0.514, c = 2.190$ nm and the angle $\beta= 97^\text{o}$. The volume of the crystal will only be a little smaller than that of a solid rectangle of sides $abc = 0.621\;\mathrm{ nm^3}$ because the angle $\beta$ is close to $90^\text{o}$. The $\boldsymbol M$ matrix for a monoclinic crystal where $\alpha = \gamma =90^\text{o}$ is
 # 

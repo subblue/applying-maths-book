@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-#  # Integration basics
+#  # 1 Integration basics
 
 # In[1]:
 
@@ -15,7 +15,7 @@ init_printing()                      # allows printing of SymPy results in types
 plt.rcParams.update({'font.size': 16})  # set font size for plots
 
 
-# ## 1 Basic concepts
+# ## 1.1 Basic concepts
 # Broadly speaking, integration is used to calculate the amount of some quantity. This might be the total concentration of a chemical product produced up to a certain time, the total amount of work done by a gas when expanding or that done in moving an object against gravity. Consider, for example, calculating the amount of oxygen in a tall column of still air. This is not simply the volume of the column times the gas density because gravity increases the O$_2$ concentration close to ground level. To calculate the total amount of O$_2$, the change in density has to be allowed for by integrating from the ground upwards, which means knowing how the density varies with altitude. Bearing in mind that integration will give us the total amount of O$_2$, the obvious way would be to take the column and divide it into many thin horizontal slabs, work out the amount of O$_2$ in each, and add them all up. The integral is the result that would be obtained when the slabs are made infinitesimally thin and, as with differentiation, the change is from a finite amount to an infinitesimal one, $\Delta x \to dx$. When this change is made the summation becomes an integral.
 # 
 # Now consider a general curve described by some function $f(x)$, and further suppose that it can be integrated because not all functions can be. Imagine splitting the area under a graph of $f(x)$ into $n$ small rectangles over the range $x = a$ to $x = b$ some of which are shown in the sketch, Figure 1, where there are only four rectangles. The purpose of doing this is to find the total area under the curve as accurately as possible. The total area of all the rectangles is
@@ -37,7 +37,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # Figure 1. Pictorial representation of the integral as area under a curve shown as a very approximate evaluation of an integral as the sum of a set of narrow rectangles. The width of each rectangle is made to approach zero, and their number increased to infinity, when the integration is performed.
 # 
 # 
-# ## 1.1 A note on notation
+# ### A note on notation
 # 
 # The integration operation be written either as $\int f(x)dx$ or $\int dx f(x)$. The latter is often used in physics texts particularly when $f(x)$ is a long and complex expression. In this case the integration is always assumed to extend over the function immediately following $dx$. As an aside, the symbol $\int$ was first introduced by Leibniz (1646 - 1716) is the stylized $S$ from the Latin word _summa_, reminding us that integration and summation are intimately linked. Leibniz named the integral calculus, calculus _summatorius_. An integral is also sometimes called an anti-derivative.
 # 
@@ -89,7 +89,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # where $a$ and $b$ are constants depending on the particular gas. 
 # 
 # 
-# ## 1.3 Changing limits, odd and even functions
+# ## 1.3 Changing limits, integrating odd and even functions
 # 
 # A definite integral is the difference in value of the integral calculated at the two limits,
 # equation 2, and changing their the order clearly produces -1 times the result,
@@ -157,7 +157,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # Several integrations are listed in Section 13, and Sympy can be used to do even more complex integrations. Why then, you might ask, should you bother to learn how to do integration? Calculations are done 'by hand' not only because it is often easier and quicker to do so, but also because it encourages a greater understanding of how the result was obtained. Additionally computer methods do not always work, and if you have an answer how will you know that it is correct if you have no understanding of the processes involved.
 # 
-# ## 2.1 Powers of $x$, but not $x^{-1}$
+# ## 2.1 integrating powers of x, but not 1/x
 # 
 # Integrating $x^2$ produces $\displaystyle \int x^2dx=\frac{x^3}{3}+const$  as can be seen differentiation of the result. Similarly, 
 # 
@@ -174,7 +174,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # and the definite integral is always evaluated by substituting the two limits into the algebraic result of the integration and therefore there is no constant term, as shown in figure 2. Notice the vertical line after the calculation and the limits top and bottom to the right of this. The top limit always comes first in the evaluation and the value of the integral with the second limit is always subtracted from the first. In integrations representing physical phenomena, such as the expansion or compression of a gas, the lower limit is always the
 # initial or starting value and the upper limit the final value no matter which is larger.
 # 
-# ## 2.2 $\int dx$, $\int d\ln(x)$ and similar expressions
+# ## 2.2 Integral of dx, $\int dx$, $\int d\ln(x)$ and similar expressions
 # 
 # In chemistry and physics textbooks it is not uncommon to meet expressions such as $\int dx,\; \int d \ln(x)$, or $\int d \sin(x)$. These cases are the simplest to evaluate because the answer is given in the integral,
 # 
@@ -182,7 +182,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # and so on; $c$ is an arbitrary constant.
 # 
-# ## 2.3 Integrating $1/x$ and $1/(ax+b)$ produces a logarithm
+# ## 2.3 Integrating 1/x and 1/(ax+b) produces a logarithm
 # 
 # The $\displaystyle \frac{x^{n+1}}{n + 1}$ rule is not going to work when $n = -1$ as this will produce $1/0$ which is infinity. In the case of reciprocal $x$ the integral is:
 # 
@@ -194,7 +194,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # $$\displaystyle \int\frac{1}{ax+b}dx=\frac{1}{a}\ln(ax+b) +const \qquad\tag{8}$$
 # 
-# ### Reaction on a surface
+# ### **Reaction on a surface**
 # 
 # Suppose that there are a large number of sites on a surface that can accept and react with a molecule reaching this from solution. Any one of the sites can either be occupied or empty. If $p(t)$ is the chance of being occupied at time $t$, let $k_d \delta t$ be the chance of becoming unoccupied (desorbing) in the interval $\delta t$. The average fraction becoming unoccupied is then $k_d p(t)\delta t$ in the interval $t\to t+\delta t$. Similarly, let the chance becoming occupied in the same time be $k_ap(t)\delta t$ where $k_a$ is the adsorption rate constant. The fraction of sites occupied is then $k_ap(t)(1 - p(t))\delta t$ which is the chance of being occupied multiplied by the chance that there is an empty site. The total rate of change in the limit $\delta t\to dt$ is
 # 
@@ -250,7 +250,7 @@ eq = (x-3)/(x**2-2*x-15)
 integrate(eq, x )
 
 
-# ## 2.5 Exponentials
+# ## 2.5 Integrating exponentials
 # 
 # When differentiating an exponential, the exponential is returned but multiplied by the derivative of the function within the exponential. For example the derivative
 # 
@@ -275,7 +275,7 @@ integrate(eq, x )
 # Figure 5. The exponential $e^{3x-6}$ and its integral from -1/3 to 1/3.
 # ________
 # 
-# ## 2.6 Sine, cosine, and tangent
+# ## 2.6 integrating sine, cosine and tangent
 # 
 # Differentiating the sine or cosine produces one from another and so it should not come as
 # a surprise that the same happens upon integration. For example, 
@@ -303,7 +303,7 @@ integrate(eq, x )
 # Figure 6. The shaded area under the cosine curve is zero from $0 \to 2\pi$; the integral from zero to $x$ is the sine curve, which is also zero at $2\pi$. The integral is also zero at 0 and $\pi$.
 # _______
 # 
-# ## 2.7 Exponential form of trig functions
+# ## 2.7 Integrating the exponential form of trig functions
 # 
 # The sine, cosine, and tangent together with the other trig functions can be expressed as complex exponentials and in this form are easy to integrate as are the hyperbolic functions sinh, cosh, and tanh; see Chapter 1.
 # 
@@ -376,7 +376,7 @@ integrate(eq, x )
 # Very occasionally a function has a discontinuity such as a vertical step. If this is at point $b$ and the integration is from $a \to c$ with $b$ in between, the integral is split into two parts, one part from $a \to b$ the other from $b \to c$; see Section 1.3.
 # 
 # 
-# ## 2.13 A few common integrals using SymPy
+# ## 2.13 Integration with SymPy
 # 
 # Many integrals can be obtained using SymPy or other algebraic engines.
 # 

@@ -38,7 +38,7 @@
 # **(b)**$\quad$ Calculate the lattice spacing.
 # 
 # ## Q8 Stern-Volmer & fluorescence quenching
-# The Stern-Volmer equation is used to analyse the quenching behaviour of electronically excited molecules S*. The equation is derived from a steady state analysis of the rate equations given in Chapter 10.1.5 and Q10.10 and is
+# The Stern-Volmer equation is used to analyse the quenching behaviour of electronically excited molecules S*. The equation is derived from a steady state analysis of the rate equations given in Chapter 10.2.1 and Q10.10 and is
 # $\varphi/\varphi_Q=1+k_{SV}[Q]$ where $\varphi$ is the fluorescence yield in the absence of quenchers and $\varphi_Q$ that with quencher concentration $[Q]$. The quenching constant is $k_{SV} = k_Q\tau$ where $k_Q$ is the second-order rate constant for the step $S^*+Q\overset{k_Q}\to S+Q$ and $\tau$ the excited state lifetime in the absence of quencher $S^*\overset{1/\tau}\to S$.
 # 
 # (a) Use the following data, which has been measured from the quenching of quinine sulphate in acidic solution, and determine whether,within error, the intercept is $1$.

@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Line integrals
+# # 13 Line integrals
 
 # In[1]:
 
@@ -15,7 +15,7 @@ init_printing()                         # allows printing of SymPy results
 plt.rcParams.update({'font.size': 16})  # set font size for plots
 
 
-# ## Introduction 
+# ## 13 Introduction 
 # The integrals so far studied have the form $\displaystyle \int f(x)dx$, which means that integration proceeds uniformly along the x-axis. Now suppose instead that we wish to integrate along some other direction, such as any curved line that is in the $x-y$ plane. This is not as obscure as it may sound. When you ride a bike, the force needed to keep you moving will obviously vary depending on which way or how fast you want to go. Similarly, the amount of energy you consume getting from one place to another depends on the path taken such as walking around a hill instead of over the top. In thermodynamics, line or path integrals are very important and explain why some integrals are represented as the difference between starting and ending values while other integrals have to be evaluated explicitly.
 # 
 # Three things are needed to calculate a line integral: 

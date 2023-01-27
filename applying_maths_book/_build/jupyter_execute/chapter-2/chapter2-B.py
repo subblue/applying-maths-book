@@ -1,9 +1,9 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # De Moivre's theorem and integer powers of complex numbers
+# # 3 De Moivre's theorem and integer powers of complex numbers
 
-# ## Complex number as $z = r\left(\cos(\theta) + i \sin(\theta)\right)$
+# ## 3 Complex number as $z = r\left(\cos(\theta) + i \sin(\theta)\right)$
 # 
 # A complex number $z=a+ib$ can be written equivalently as
 # 
@@ -52,7 +52,7 @@
 # Figure 5. Geometrical interpretation of the multiplication of two complex numbers.
 # _____
 # 
-# ## Hyperbolic functions and complex numbers
+# ## 3.1 Hyperbolic functions and complex numbers
 # 
 # In the case of hyperbolic functions there are related formulae since $\displaystyle \cosh(x) + \sinh(x) = e^x$ then 
 # 
@@ -63,7 +63,7 @@
 # $$\displaystyle \big(\cos(z)+\sin(z)\big)^n=\cos(nz)+\sin(nz) $$
 # 
 # 
-# ## 3.1 Roots of a complex number
+# ## 3.2 Roots of a complex number
 # 
 # Suppose that $w$ is a real or complex number whose roots we need to find, then mathematicians have shown that, in general, the answer will be a complex number. If the $n$ roots of a number $z$ are expressed as $w = z^{1/n}$, then the equation to examine is $w^n = z$.
 # 
@@ -109,7 +109,7 @@
 # 
 # Figure 6. The five roots of the equation $z^5 = 1$ form a pentagon. The radial lines to each root are $72^\text{o}$ apart. 
 
-# ## Euler's theorem, roots of unity, x-ray diffraction structure factor.
+# ## 3.3 Euler's theorem, roots of unity, x-ray diffraction structure factor.
 # 
 # The exponential series is $\displaystyle e^x = 1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \cdots$, and similarly a series can be formed in the complex number $w$, 
 # 
@@ -301,3 +301,9 @@
 # which will be zero if any two of the exponentials $e^{i\pi(h+k)}, e^{i\pi(h+l)}, e^{i\pi(k+l)}$ is negative. This will be the case if any two of $ h, k, l $ is an odd number and the other even or vice versa, i.e. the integers are mixed odd and even.
 # 
 # In the case that each $h, k, l$ is even or each odd  then $1+e^{i\pi(h+k)}+e^{i\pi(h+l)}+e^{i\pi(k+l)}=4 $ and then $F_{even}=4(f_{Na}+f_{Cl})$ and if odd $F_{odd}=4(f_{Na}-f_{Cl})$ and the intensity is then the square of these values. Notice that the 'odd' intensity may be quite small as it depends on the difference in atomic structure factors which is small if the atoms are close in atomic number and, of course, zero for the same type of atoms.
+
+# In[ ]:
+
+
+
+

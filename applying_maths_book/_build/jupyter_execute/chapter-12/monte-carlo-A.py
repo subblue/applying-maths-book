@@ -1,7 +1,13 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Monte - Carlo Methods 
+# In[ ]:
+
+
+
+
+
+# # 1 Monte - Carlo integration & importance sampling
 
 # In[1]:
 
@@ -14,7 +20,7 @@ import matplotlib.pyplot as plt
 plt.rcParams.update({'font.size': 16})  # set font size for plots
 
 
-# ## 1 Integration
+# ## 1.1 Integration
 # 
 # To use a Monte Carlo method to numerically integrate a function, the area corresponding to the integral is calculated by repeatedly guessing pairs of $x$ and $y$ values at random and evaluating the function $y = f (x)$ to see whether or not $y$ lies within the area bound by the integral, Figure 1. Clearly many guesses will be needed and while many will fall inside the required region, many will not. The ratio of correct guesses to the total number is proportional to the integral. The more guesses that are made, the closer the answer becomes to the true value. The error can then be estimated and the calculation truncated when a satisfactory result is achieved.
 # 
@@ -69,7 +75,7 @@ print('{:8.4f}'.format(av_f) )
 # A typical result with $2000$ evaluations lies in the range $1.06 \to 1.1$, which is fairly close to the exact value of $1.084$. However, many function evaluations ($200000$) are needed to get close to this exact value. Even with a minimal box size a Monte Carlo method always involves many evaluations of the function and this method really only comes into its own when the integrations involve many dimensions $d$, 'many' being greater than four. The number of strips $N$, and hence evaluations needed for the trapezoidal or Simpson's method, (see Chapter 11.3.3 and 11.3.4), to produce a given accuracy, increases in proportional to $1/N^{2/d}$, whereas the number needed by Monte Carlo for similar accuracy only increases as $1/ \sqrt{N}$ and is independent of the dimension.
 # 
 # 
-# ## 1.1 Mean-value method
+# ## 1.2 Mean-value method
 # 
 # By the mean-value theorem (Chapter 4.2.12) an integral of the function $f(x)$ can shown to be given by 
 # 
@@ -117,7 +123,7 @@ sig  = np.sqrt((av_f2 - av_f**2)/n )
 print('{:8.4f} {:s} {:8.4f}'.format( av_f, '+/-',  sig ) )
 
 
-# ## 1.2 Non-uniform distributions: Importance Sampling
+# ## 1.3 Non-uniform distributions: Importance Sampling
 # 
 # It is easy to imagine functions that are large in only small regions of $x$ and are virtually zero elsewhere; the bell-shaped Gaussian curve being one example. So far a uniform random number distribution has been used to numerically evaluate an integral, but this can waste a lot of effort by repeatedly calculating contributions to the integral that are effectively zero. In some instances, an incorrect result may even be obtained with this approach, see for example Krauth 2006. A better method is to use a non-uniform distribution to bias sampling and to add in more of those values that have a large contribution to the integral, and less of those that do not. This is sketched in the figure where many samples are taken where the function is large.
 # 
@@ -198,6 +204,6 @@ print('{:s} {:f}{:s} {:f} '.format( 'integral = ',av_f,' +/-',std_dev ) )
 
 # The result is that the integral typically has the value $0.882\pm 0.002$. The same integral, calculated by the mean-value method, had an error ± 0.01, which is a considerably larger error for the same number of samples. The accurate result is $0.88208$.
 # 
-# ## 1.3 Limits tending to infinity
+# ## 1.4 Limits tending to infinity
 # 
 # Integration limits that tend to $\pm \infty$ can present a particular problem for any numerical method. A way of solving this is to try to look at the function at large values of $x$. Often the function will become negligible and while, technically, the integral may go to infinity the numerical value may have converged to a sensible answer well before this. See question Q6 for an example of this.

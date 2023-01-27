@@ -1,0 +1,1586 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>14 SI Units, Scientific Constants, unit conversion, Glossary, Python &#8212; Applying Maths in the Chemical &amp; Biomolecular Sciences</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="1 SI Units, Unit conversions, Scientific Constants" href="chapter14-E.html" />
+    <link rel="prev" title="Solutions Q1 -11" href="../chapter-13/analysis-answers1-11.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/book-cover.jpg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Applying Maths in the Chemical & Biomolecular Sciences</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Applying Maths in the Chemical and Biomolecular Sciences.
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-1/chapter1-intro.html">
+   1 Numbers, Equations, Operators, and Algorithms.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-A.html">
+     1 Numbers to Algorithms.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-Q1-7.html">
+     Questions 1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-B.html">
+     5 Trig, hyperbolic and inverse functions, waves, polar coordinates &amp; factorials
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-Q8-16.html">
+     Questions 8 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-C.html">
+     9 Sophisticated Counting.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-Q17-34.html">
+     Questions 17 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-D.html">
+     10 Modulo arithmetic,
+     <span class="math notranslate nohighlight">
+      \(\delta\)
+     </span>
+     functions, types of  series &amp;  estimating quantities
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-Q35-39.html">
+     Questions 35 - 39
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-answers-1-7.html">
+     Solutions Q1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-answers-8-16.html">
+     Solutions Q8 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-answers-17-34.html">
+     Solutions Q17 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-1/chapter1-answers-35-39.html">
+     Solutions Q35 - 39
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-2/chapter2-intro.html">
+   2. Complex numbers.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2/chapter2-A.html">
+     1 Real, imaginary, conjugate and modulus
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2/chapter2-Q-1-9.html">
+     Questions 1 - 9
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2/chapter2-B.html">
+     3 De Moivre’s theorem and integer powers of complex numbers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2/chapter2-Q-10-13.html">
+     Questions 10 -13
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2/chapter2-Q-14-29.html">
+     Questions 14 - 29
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2/chapter2-answers.html">
+     Solutions Q1 - 27
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-3/differen-intro.html">
+   3. Differentiation.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-A.html">
+     1 - 3.8 Differentiation, gradients &amp; basic functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-B.html">
+     3.9 Trig functions, logs, power, reciprocals and integrals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-C-Q-4-11.html">
+     Questions 1-11
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-D.html">
+     4 Product rule and function of function or chain rule.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-E-Q-12-42.html">
+     Questions 12-42
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-F.html">
+     6 Limits, l’Hopital’s rule, Maximum, Minimum and Calculus of Variations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-G-Q-43-73.html">
+     Questions 43 - 73
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-H.html">
+     9 Numerically finding the roots of an equation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-I-Q-74-85.html">
+     Questions 74 - 85
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-J.html">
+     10 Minimizing or maximizing with constraints: Lagrange Undetermined Multipliers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-K-Q-86-92.html">
+     Questions 86 - 92
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-L.html">
+     11 Partial differentiation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-M-Q-93-114.html">
+     Questions 93-114
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-M1.html">
+     12 Differentiation of vectors
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-N-answers-1-11.html">
+     Solutions Q 1-11
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-O-answers-12-42.html">
+     Solutions Q 12-42
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-P-answers-43-73.html">
+     Solutions Q 43 - 73
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-Q-answers-74-85.html">
+     Solutions Q 74 - 85
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-R-answers-86-92.html">
+     Solutions Q 86 - 94
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3/differen-S-answers-93-114.html">
+     Solutions Q 93-114
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-4/integration-intro.html">
+   4 Integration.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-A.html">
+     1 Integration basics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-Q1-14.html">
+     Questions 1-14
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-B.html">
+     3 Integration by substitution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-Q15-30.html">
+     Questions 15-30
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-C.html">
+     6 Integration and parametric equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-Q31-48.html">
+     Questions 31 - 48
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-D.html">
+     8 Calculating an Average.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-Q49-72.html">
+     Questions 49 - 72
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-E.html">
+     9 The Variational Method in Quantum Mechanics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-Q73-77.html">
+     Questions 73 - 77
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-F.html">
+     10 Multiple integrals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-Q78-86.html">
+     Questions 78 - 86
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-G.html">
+     12 Calculating the energy of a Chemical Bond using Molecular Orbitals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-H.html">
+     13 Line integrals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-Q87-96.html">
+     Questions 87 - 96
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-answers-1-14.html">
+     Solutions Q1 - 14
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-answers-15-30.html">
+     Solutions Q15 - 30
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-answers-31-48.html">
+     Solutions Q31 - 48
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-answers-49-72.html">
+     Solutions Q49 - 72
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4/integration-answers-73-96.html">
+     Solutions Q73 - 96
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-5/chapter-5-intro.html">
+   5. Summations, Series and expansion of Functions.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-A.html">
+     1 Series, averages, partition functions, DNA melting, atom entropy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-B-Q1-13.html">
+     Questions 1 - 13
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-E.html">
+     6 Maclaurin and Taylor series expansions. Paramagnetic spins. Euler-Maclaurin formula.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-F-Q14-34.html">
+     Questions 14 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-G-Q35-44.html">
+     Questions 35 - 44
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-perturbation-A.html">
+     8 Perturbation Theory
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-perturbation-B-Q45-48.html">
+     Questions 45 - 48
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-perturbation-C.html">
+     9 Quantum superposition and wavepackets.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-perturbation-D-Q49-52.html">
+     Questions 49 - 52
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-answers-1-7.html">
+     Solutions Q 1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-answers-8-13.html">
+     Solutions Q8 - 13
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-answers-14-26.html">
+     Solutions Q 14 - 26
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-answers-27-32.html">
+     Solutions Q27 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-answers-33-44.html">
+     Solutions Q33 - 44
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-5/chapter-5-answers-45-52.html">
+     Solutions Q45 - 52
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-6/vectors-intro.html">
+   6. Vectors.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-A.html">
+     1 Vector basics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-Q1-24.html">
+     Questions 1 - 24
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-B.html">
+     6 Projections and components
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-Q25-32.html">
+     Questions 25 - 32
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-C.html">
+     8 Axes need not be right-angled or of equal length
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-Q33-38.html">
+     Questions 33 - 38
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-D.html">
+     12 Basis sets with more than three dimensions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-Q39-46.html">
+     Questions 39 - 46
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-E.html">
+     15 Cross product or vector product
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-Q47-52.html">
+     Questions 47 - 52
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-F.html">
+     18 Torsion or dihedral angles
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-Q53-48.html">
+     Questions 53 - 48
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-G.html">
+     21 Torque and angular momentum
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-Q59-61.html">
+     Questions 59 - 61
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-answers-Q1-24.html">
+     Solutions Q1 - 24
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-answers-Q25-32.html">
+     Solutions Q25 - 32
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-answers-Q33-38.html">
+     Solutions Q33 - 38
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-answers-Q39-46.html">
+     Solutions Q39 - 46
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-answers-Q47-52.html">
+     Solutions Q47 - 52
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-6/vectors-answers-Q53-61.html">
+     Solutions Q53 - 61
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-7/matrices-intro.html">
+   7. Matrices
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-A.html">
+     1 Determinants
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q1-10.html">
+     Questions  1 - 10
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-B.html">
+     4 Matrices
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q11-16.html">
+     Questions  11 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-C.html">
+     6 Molecular Group Theory
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q17-30.html">
+     Questions  17 - 30
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-D.html">
+     7 Rotation matrices: moving molecules. Coordinate transform as rotation.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q31-34.html">
+     Questions 31 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-E.html">
+     9 Matrices in optics and designing laser cavities
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q35-39.html">
+     Questions 35 - 39
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-F.html">
+     11 Polarizing optics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q40-44.html">
+     Questions 40 - 44
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-G.html">
+     12 Solving equations using matrices. Eigenvectors and Eigenvalues.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q45-50.html">
+     Questions 45 - 50
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-H.html">
+     13 Rate equations and Chemical Kinetics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q51-54.html">
+     Questions 51 - 54
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-I.html">
+     14 Molecular vibrations and pendulums
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q55-58.html">
+     Questions 55 - 58
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-J.html">
+     15 Moments of Inertia
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q59-60.html">
+     Questions 59 - 62
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-L.html">
+     16 Principal axes and Moments of Inertia
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-Q61-62.html">
+     Question 61 - 62
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-answersQ1-10.html">
+     Solutions Q1 - 10
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-answersQ11-16.html">
+     Solutions Q11 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-answersQ17-30.html">
+     Solutions Q17 - 30
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-answersQ31-34.html">
+     Solutions Q31 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-answersQ35-39.html">
+     Solutions Q35 - 39
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-answersQ40-44.html">
+     Solutions Q40 - 44
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-answersQ45-50.html">
+     Solutions Q45 - 50
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-answersQ51-54.html">
+     Solutions Q51 - 54
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-answersQ55-58.html">
+     Solutions Q55 - 58
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-7/matrices-answersQ59-61.html">
+     Solutions Q59 - 61
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-8/matricesQM-intro.html">
+   8. Matrices in Quantum Mechanics
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-8/matricesQM-A.html">
+     1 Matrices in Quantum Mechanics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-8/matricesQM-Q1-7.html">
+     Questions 1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-8/matricesQM-B.html">
+     4 Basis sets and bra-ket algebra
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-8/matricesQM-Q8-12.html">
+     Questions 8 - 12
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-8/matricesQM-C.html">
+     5 Continuous basis sets
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-8/matricesQM-answers1-7.html">
+     Solutions Q1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-8/matricesQM-answers8-12.html">
+     Solutions Q8 - 12
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-9/Fourier-intro.html">
+   9. Fourier Series and Transforms.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-A-B.html">
+     1 Fourier series, Gibbs phenomenon, generalised series.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-questions-1-6.html">
+     Questions 1 - 6
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-C.html">
+     5 Fourier Transforms
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-questions-7-15.html">
+     Questions 7 - 15
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-D.html">
+     7 Convolution and Autocorrelation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-questions-16-21.html">
+     Questions 16 - 21
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-E.html">
+     9 Discrete Fourier  (DFT)  and Fast Fourier transforms (FFT)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-F.html">
+     11 The Hadamard Transform: Encoding and Decoding
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-answers-1-6.html">
+     Solutions Q 1 - 6
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-answers-7-15.html">
+     Solutions Q 7 - 15
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-answers-16-21.html">
+     Solutions Q 16 - 21
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-2D-Diffraction.html">
+     12 The Fourier transform in two dimensions: images and x-ray Diffraction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-9/Fourier-tomography.html">
+     14 Computed Tomography
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-10/Diff-eqns-intro.html">
+   10. Differential Equations.
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-A.html">
+     1 Basics, Initial and Boundary Value problems, Steady state, Phase portrait, Chemical kinetics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-Q1-23.html">
+     Questions 1 - 23
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-B.html">
+     9 First order eqn’s &amp; Integrating factors. Second order eqn’s, Newton’s laws, equations of motion.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-C.html">
+     12 The ‘D’ operator.  Solving linear differential equations with constant coefficients
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-D.html">
+     13 Simultaneous equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-Q24-37.html">
+     Questions 24 - 37
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-E.html">
+     14 Linear equations with variable coefficients
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-F.html">
+     15 Partial Differential Equations, PDE
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-G.html">
+     16 PDE continued. Diffusion, wave eqn., Schroedinger eqn., Fourier method, Transient grating.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-answers-1-21.html">
+     Solutions Q1 - 21
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-10/Diff-eqns-answers-22-37.html">
+     Solutions Q22 - 37
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-11/num-methods-intro.html">
+   11. Numerical Methods
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-A.html">
+     1 Numerical Methods
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-Q1-7.html">
+     Questions 1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-B.html">
+     4 Numerical solution of differential equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-Q8-12.html">
+     Questions 8 - 12
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-C.html">
+     5 Coupled equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-Q13-16.html">
+     Questions 13 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-D.html">
+     6 The phase plane, nullclines, and stable points
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-Q17-20.html">
+     Questions 17 - 20
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-E.html">
+     8 Reaction schemes with feedback
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-Q21-34.html">
+     Questions 21 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-F.html">
+     9 Boundary value problems.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-Q35-40.html">
+     Questions 35 - 40
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-answers1-7.html">
+     Solutions Q1 - 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-answers8-12.html">
+     Solutions Q 8 - 12
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-answers13-16.html">
+     Solutions Q13 - 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-answers17-20.html">
+     Solutions Q17 - 20
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-answers21-34.html">
+     Solutions Q21 - 34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-11/num-methods-answers35-40.html">
+     Solutions Q35 - 40
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-12/monte-carlo-intro.html">
+   12. Monte Carlo Methods
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+  <label for="toctree-checkbox-12">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-A.html">
+     1 Monte - Carlo integration &amp; importance sampling
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-Q1-6.html">
+     Questions 1 - 6
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-B.html">
+     2 Solving rate equations. The Gillespie method
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-Q7-10.html">
+     Questions 7 - 10
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-CC.html">
+     3 Monte Carlo Simulations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-C.html">
+     4 Energy transfer. Autocatalytic reaction and spreading of fires
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-Q11-17.html">
+     Questions 11 - 17
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-D.html">
+     6 The Metropolis algorithm
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-answers1-6.html">
+     Solutions Q1 - 6
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-answers7-10.html">
+     Solutions Q7 - 10
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-12/monte-carlo-answers11-17.html">
+     Solutions Q11 - 17
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-13/analysis-intro.html">
+   13. Data Analysis
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+  <label for="toctree-checkbox-13">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-13/analysis-A.html">
+     1 Characterizing experimental data. Accuracy, precision, mean and standard deviation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-13/analysis-Q1-3.html">
+     Questions 1 - 3
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-13/analysis-B.html">
+     6 Modelling data. Least squares, chi squared, residuals, ANNOVA
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-13/analysis-Q4-9.html">
+     Questions 4 - 9
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-13/analysis-C.html">
+     7 Modelling data is simpler using matrices
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-13/analysis-Q10-11.html">
+     Questions 10 - 13
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-13/analysis-D.html">
+     10 Non-linear least squares. Least absolute deviation. Principal component analysis
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-13/analysis-answers1-11.html">
+     Solutions Q1 -11
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="current reference internal" href="#">
+   14 SI Units, Scientific Constants, unit conversion, Glossary, Python
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+  <label for="toctree-checkbox-14">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="chapter14-E.html">
+     1 SI Units, Unit conversions, Scientific Constants
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Python%20crib.html">
+     5 Appendix:  Some basic Python instructions with a few examples.
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../references/references-intro.html">
+   15 References and index
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+  <label for="toctree-checkbox-15">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../references/References.html">
+     1 References
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../references/index.html">
+     2 Index
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/subblue/applying-maths-book/main?urlpath=lab/tree/applying_maths_book/chapter-14/chapter14-intro.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://colab.research.google.com/github/subblue/applying-maths-book/blob/main/applying_maths_book/chapter-14/chapter14-intro.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/subblue/applying-maths-book"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/subblue/applying-maths-book/issues/new?title=Issue%20on%20page%20%2Fchapter-14/chapter14-intro.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/chapter-14/chapter14-intro.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>14 SI Units, Scientific Constants, unit conversion, Glossary, Python</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="si-units-scientific-constants-unit-conversion-glossary-python">
+<h1>14 SI Units, Scientific Constants, unit conversion, Glossary, Python<a class="headerlink" href="#si-units-scientific-constants-unit-conversion-glossary-python" title="Permalink to this headline">#</a></h1>
+<p>A table of SI units is listed and now to convert from one unit to an equivalent one is described. The syntax used and many of the instructions for using Python, Numpy, Sympy and Matplotlib are described in Appendix 1. Mathematical symbols are listed in the Glossary.</p>
+<div class="toctree-wrapper compound">
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./chapter-14"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="../chapter-13/analysis-answers1-11.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Solutions Q1 -11</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="chapter14-E.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">1 SI Units, Unit conversions, Scientific Constants</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Godfrey Beddard<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

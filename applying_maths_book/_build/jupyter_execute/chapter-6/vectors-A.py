@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Vector basics 
+# # 1 Vector basics 
 
 # ## Introduction
 # Although vectors, such as force or velocity, have two 'dimensions' - magnitude and direction - mathematically, they can have any number of dimensions. A vector's components need not be objects in any physical space; this is not as bizarre as it sounds, for example, your car can be described by its make, colour, manufacture date, engine-capacity, and model. These values can form a vector such as (Ford, yellow, 2005, 1900 cc, estate). However, a vector is more than just a list; it is constructed from a basis set. The basis set contains the primitive components and the vector is constructed as a linear combination of these elements; more of this later. The basis set is not always apparent, for example, when drawing arrows on a graph, but in all cases, including topics as diverse as quantum mechanics and geometry, the basis set must be explicitly defined before a calculation is started. However, in apparent contradiction to this, many vector properties and formulae can be obtained by symbolically, which means algebraically, $\boldsymbol{ A} + \boldsymbol{B}$, etc., without a thought about the basis set, and some of these calculations are described in Section 6.2. As an aside, W. Hamilton, of Hamiltonian fame, first seems to have used the word 'vector'. J. Willard Gibbs who developed much of thermodynamics also largely developed vector analysis. 
@@ -52,7 +52,7 @@
 # Figure 2. Two- and three-dimensional Cartesian coordinates. Right: A vector $\vec V$ is shown pointing from the origin to point $(x_1, y_1, z_)$.
 # ________
 
-# ### **Surface and Interfacial Tension**
+# ## 1.4 Surface Tension
 # The surface tension of a liquid is a property of the intermolecular forces that exist in a liquid. Mainly these forces are directed into the liquid at the surface with air (or with the liquid's vapour) and not out of the surface. The energy of molecules at the surface is greater than that of the bulk and consequently it takes energy to increase the surface area. In thermodynamic terms the surface tension $\gamma$ is the rate of change of Gibbs energy with increase in area, $dG=\gamma dA$ thus $\gamma$ has units of force/length. The values of $\gamma$ are in the range $20-30$ mN/m for common liquids such as acetone, benzene or ethanol, but are larger for water ($72.8$) because hydrogen bonds are broken and in liquid metals such as mercury where $\gamma =485$ mN/m the surface tension values are large due to the coulomb attraction to be overcome by bringing an ion from the interior to the surface.
 # 
 # ![Drawing](vectors-fig2a1.png)
@@ -86,7 +86,7 @@
 # 
 # $$\displaystyle S=\gamma_{wa}-\gamma_{oa}-\gamma_{w0}$$
 # 
-# ### **Newton Diagrams, molecular beams and reactive scattering**
+# ## 1.5 Newton Diagrams, molecular beams and reactive scattering
 # 
 # An important example of vector addition is found in Newton Diagrams which are used to describe the kinematics of  crossed molecular beams. In these experiments two gaseous species are cooled by expansion into a vacuum chamber and the atoms and molecules are made to collide into one another and the direction and energy of the scattered species is measured. Although the atoms or molecules are cooled they still have considerable velocity, a few hundred metres per second is not uncommon. If no reaction takes place the collision is called _elastic_ (Ar + Ne and Kr +HCl for example) and _inelastic_ if there is a chemical reaction such as $\mathrm{K+CH_3I} \to \mathrm{KI +CH_3}$ or $\mathrm{H+I_2}\to \mathrm{I+HI}$ and here the difference in velocity provides the kinetic energy to overcome any reaction barrier. 
 # 
@@ -266,11 +266,11 @@
 # 
 # The elements of basis set can be numbers, or they could be a vector, a matrix, or a function or a set of functions. Some examples are considered more fully after some basic properties have been described. Using functions as a basis set is described in Chapter 9. For the present, we shall assume that a suitable basis set always exists and perform some calculations.
 # 
-# ## 2.6 Origin
+# ## 2.6 Vector origin
 # 
 # If it is not otherwise specified, it is assumed that the origin of a vector is at the centre of the coordinates, i.e. at $(0, 0, 0)$. If this is not the case and the origin is at some other place, $(a, b, c)$ then we must subtract $a, b$, and $c$ from each of the three components and use $(x-a,\;  y-b,\; z-c)$  as our vector. This has the effect of moving the origin to the base of our vector. In addition, when subtracting two sets of coordinates to make a vector, its base is now at the origin of the new set of coordinates, i.e. the origin has again been shifted. This is important; a vector always starts at the origin of its own local coordinates, which may not be the same as initially drawn on a diagram, so some care is needed; vectors are only a direction and length in space; they carry around their own coordinate system or basis set with them but this is hardly ever drawn.
 # 
-# ## 2.7 Magnitude
+# ## 2.7 Vector magnitude
 # 
 # The magnitude of a vector $A$, which may be imagined as its length, is used as $|\vec{A}|$. If $\vec{A} = [a b c]$ where $A$ has components $a, b, c$ in the 3-dimensional basis set $(x, y, z)$, then
 # 
@@ -331,7 +331,7 @@
 # The normalization terms on the bottom of this equation are just the length of each vector as calculated by Pythagoras' theorem. The angle between two vectors $\vec A = [3\quad 2\quad 1]$ and $\vec B=[-1\quad  0 \quad 1]$ is calculated as follows: the length of each vector is $|\vec A|= \sqrt{9+4+1} =\sqrt{14}$ and $|\vec B|= \sqrt{1+0+1} =\sqrt 2$, and the dot product is $\displaystyle \begin{bmatrix} 3&2&1 \end{bmatrix}\begin{bmatrix} -1\\0\\1  \end{bmatrix}=-2$ and the angle $\cos(\theta)= -2/(\sqrt 14\sqrt 2)$ which is $112.2^\text{o} $.
 # 
 # 
-# ### **(i) Colliding molecules**
+# ## 2.10 Colliding molecules
 # Newton diagrams describing elastic scattering are given above. The angles  and vectors are shown in figure 2c. Suppose the initial speeds in an experiment colliding $\mathrm{Kr+HI}$ are $800$ and $250$ m/s respectively. The masses are $84$ and $128$ amu and the scattering angle is  $\chi =25^\text{o}$ in the c.o.m. frame, see fig 2b. We want to calculate the angle $\Theta$, the detector angle in the lab frame and also the angle $\delta$ which is used in the transformation from lab to centre of mass coordinates. It is necessary, therefore, to calculate $\vec v_1'$ (see figure 2c) and to do this $\vec w_1$ and $\vec w_1'$ are needed.
 # 
 # The initial vectors are $\vec v_1 =\begin{bmatrix} 800 & 0\end{bmatrix}, \quad \vec v_2 =\begin{bmatrix} 0 & 250\end{bmatrix}$, thus $\vec v_r=\vec v_1-\vec v_2=\begin{bmatrix} 800 & -250\end{bmatrix}$ with magnitude $|v_r|=\sqrt{800^2+250^2}$. 
@@ -369,14 +369,14 @@
 # 
 # The calculation starting with $\Theta$ and finding $\chi$ is a little different. Once $\vec w_1$ is found the vector $\vec w_1'$ will lie on a circle of radius $|\vec w_1|$ with its centre at the centre of mass. The vector $\vec v_1'$ will intersect this at two points and then $\vec w_1'$ can be found by substituting $y=x\tan(\Theta)$ into the equation for the circle described.
 # 
-# ### **(ii) ISBN number**
+# ## 2.11 ISBN number
 # An unexpected application of the dot product of a large vector is that used to check the ISBN number of a book. This code is unique to a book and also to each edition. A typical code is $978-0-19-923091-4$ where the last digit is the check digit used to determine if the rest of the code is correct. This is clearly useful when a book is ordered, for example, if the check digit is not $4$ a simple swapping of two digits may have occurred.
 # 
 # The calculation to produce the check digit ($4$) is
 # 
 # $$\displaystyle 10-\left(\begin{bmatrix}1&3&1&3&1&3&1&3&1&3&1&3\end{bmatrix}\cdot \begin{bmatrix}9&7&8&0&1&9&2&3&0&9&1\end{bmatrix}^T\right)\text{mod}(10)=4$$
 # 
-# ## 2.10 Unit vectors and normalizing vectors
+# ## 3 Unit vectors and normalizing vectors
 # 
 #  Unit vectors, as their name suggests, have a length of $1$. A vector can be made into a unit vector by dividing by its length. If a vector is $\vec v = [a\quad b\quad c\quad d]$ the normalizing condition is
 #  
@@ -396,7 +396,7 @@
 # 
 # $$\displaystyle \cos(\theta) =\vec v_n \cdot \vec w_n \qquad\tag{10}$$
 
-# ## 3 The orthonormal $\boldsymbol i, \boldsymbol j,\boldsymbol k$ base vectors
+# ## 4 The orthonormal ijk base vectors
 # 
 # A general method for describing a three-vector is to express it in terms of vectors along a set of axes. If the mutually perpendicular set of $x$-, $y$-, and $z$-axes is chosen, the basis set is orthogonal set. If the base vectors are also normalized to $1$, each base vector is a unit vector and the set is orthonormal. Conventionally, orthonormal base vectors are labelled $\boldsymbol i,\boldsymbol j,\boldsymbol k$ and any vector in this basis is written as,
 # 
@@ -453,7 +453,7 @@
 # 
 # so $|\vec A|=\sqrt{13}$. Similarly $|\vec B|=\sqrt{34}$ making $\cos(\theta)=9/(\sqrt{13}\sqrt{34})\sim 65^\text{o}$
 # 
-# ## 4 Summary
+# ## 5 Summary
 # 
 # ### **Dot Product**
 # $\displaystyle \qquad \vec A \cdot \vec B= |\vec A||\vec B|\cos(\theta)$  

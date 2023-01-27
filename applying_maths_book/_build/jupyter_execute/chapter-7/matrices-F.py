@@ -1,11 +1,11 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Polarizing optics
+# # 11 Polarizing optics
 
-# ## Polarisers
+# # 11 Polarizers
 # Using the polarization properties of light can lead to a very sensitive method of detecting spectroscopic features. If light is linearly polarized, its electric field oscillates in one plane only, which is perpendicular to the direction the light travels in. This is shown in Figure 45, where the polarization is in the x-z plane, and this plane is defined as 'vertical'. Horizontally polarized light would have its electric field in the y-z plane. Light can be linearly polarized at any other angle, perhaps $45^\text{o}$, in which case it would have equal components of the horizontal and vertical. Any amplitude of vertical and horizontal linear polarizations can be added vectorially to make linear polarization at any other angle. In this sense, vertical polarization is the addition of vertical with a zero horizontal component and vice versa.
-# In the most general case, components in the y- and x-directions have a phase difference between them. When the phase lag is zero, linear polarization results; when $\pm 90^\text{o}$, right and left circular polarization results and the electric field rotates about the direction of travel, see Figure 2.7. Linear polarized light is a special case of elliptical polarization. The description of polarisation states is quite technical and elliptical polarized light somewhat difficult to visualize properly; however, by accepting that such polarization exists, the matrix methods to calculate the complicated changes caused by wave-plates and polarizers are surprisingly simple.
+# In the most general case, components in the y- and x-directions have a phase difference between them. When the phase lag is zero, linear polarization results; when $\pm 90^\text{o}$, right and left circular polarization results and the electric field rotates about the direction of travel, see Figure 2.7. Linear polarized light is a special case of elliptical polarization. The description of polarization states is quite technical and elliptical polarized light somewhat difficult to visualize properly; however, by accepting that such polarization exists, the matrix methods to calculate the complicated changes caused by wave-plates and polarizers are surprisingly simple.
 # In a typical experiment, a sample is placed between two crossed polarizers the second of which is adjusted usually to $90^\text{o}$ compared to the first to extinguish any light passing through the first polarizer and the sample. If a small perturbation is now made to the sample, such as exciting it with a second laser or applying an electric or magnetic field, then its optical properties can be changed. Some light now leaks through the second polarizer and is detected; the amount of light is related to the perturbation and hence can convey some information about the molecules in the sample. The scheme is shown in Figure 46. This is a zero-background type of experiment, fluorescence is another, and because no signal is seen before the perturbation occurs, all zero-background types of experiments are very sensitive.
 # 
 # The polarizers could be made from sheets of Polaroid, such as in sunglasses. However, far better ones are made from the transparent and birefringent mineral calcite (CaCO$_3$). The crystal is cut at a certain angle and then made into two similarly shaped prisms or wedges, which, when placed at right angles to one another, form a cube. Variations of these polarizers are called Glan-Thomson or Glan-laser and when crossed only allow 1 part in $\approx 10^6$ of the initial radiation to be passed. A Glan-Thomson polarizer set to pass vertical polarized light rejects horizontally polarized light by total internal reflection at the internal surface of the wedge, and vice versa. The angle to some fixed axis, say the vertical, is sometimes called the 'pass-plane' or 'vibration plane' of the polarized radiation. The effect is illustrated in Fig. 47 where the matrices describing the polarization are also shown as an inset.
@@ -23,7 +23,7 @@
 # 
 # ![Drawing](matrices-fig46.png)
 #  
-# Figure 46. A polarization experiment; polarizer 1 and 2 are crossed and will not transmit any light. If the sample is perturbed, such by polarised laser light, it acts as a waveplate and some light is transmitted. 
+# Figure 46. A polarization experiment; polarizer 1 and 2 are crossed and will not transmit any light. If the sample is perturbed, such by polarized laser light, it acts as a waveplate and some light is transmitted. 
 # __________
 # The fundamental nature of light can be considered to be one of the two circular polarized states, left and right. To allow analysis of any polarization states, two types of algebra have been developed; these are the Jones and Mueller matrices. We shall concentrate on the Jones matrices. Gerrard & Burch (1975) describe the Mueller matrices, which are more appropriate for partially polarized light. The state of the electric field is represented as a _Maxwell column_; equation 27 shows equivalent forms of this
 # 
@@ -82,7 +82,7 @@
 # 
 # $$\displaystyle \begin{bmatrix} \cos^2(\theta) & \sin(\theta)\cos(\theta)\\ \sin(\theta)\cos(\theta) & \sin^2(\theta) \end{bmatrix}$$
 # 
-# $\qquad$ Vertical polariser $\theta=0^\text{o}\quad \begin{bmatrix} 1 & 0 \\0& 0 \end{bmatrix} \qquad$ Horizontal polariser $\theta=90^\text{o}\quad \begin{bmatrix} 0 & 0 \\0& 1 \end{bmatrix} $
+# $\qquad$ Vertical polarizer $\theta=0^\text{o}\quad \begin{bmatrix} 1 & 0 \\0& 0 \end{bmatrix} \qquad$ Horizontal polarizer $\theta=90^\text{o}\quad \begin{bmatrix} 0 & 0 \\0& 1 \end{bmatrix} $
 # 
 # **(b)**$\quad$ Quarter wave plate:  $\Delta = \pi/2$, with fast axis angle $\theta$,
 # 

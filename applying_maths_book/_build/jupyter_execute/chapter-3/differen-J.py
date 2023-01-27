@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Minimizing or maximizing with constraints: Lagrange Undetermined Multipliers
+# # 10 Minimizing or maximizing with constraints: Lagrange Undetermined Multipliers
 
 # ## 10 Lagrange Multipliers
 # 
@@ -84,7 +84,7 @@
 # 
 # **(e)** The quantities $x_0$ and $y_0$ are constants in the last equation, which can be solved to find $x$ and then this substituted into our function $y = e^{-x^2}$ to obtain $y$. The distance from the origin with $x_0 = 0$ and $y_0 = 0$ to the curve is found by solving $\displaystyle -1+2e^{-2x^2}=0$ giving $\displaystyle x=\pm\sqrt{\frac{\ln(2)}{2}} =\pm 0.5887$ and $y=1/\sqrt{2}$ as the coordinates of the shortest distance, see Fig. 30. This distance itself is found by substituting into $f (x, y)$, equation (38), and is $(\ln(2) + 1)/2 \approx 0.92$.
 # 
-# ### **(ii) Object -  image distance in a thin lens**
+# ### **(ii) Object -  image distance in a thin lens. Thin lens formula**
 # In this second example, the closest distance an object can be to its image, when using a thin lens, is found. The lens has a focal length $f$, the object is at a distance $u$ before, and the image $v$, after the lens. 
 # 
 # The lens maker's formula 

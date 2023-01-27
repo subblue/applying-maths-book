@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Using parametric equations
+# # 6 Integration and parametric equations
 
 # In[1]:
 

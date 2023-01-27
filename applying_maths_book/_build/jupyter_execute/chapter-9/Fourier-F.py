@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # The Hadamard Transform: Encoding and Decoding 
+# # 11 The Hadamard Transform: Encoding and Decoding 
 
 # In[1]:
 

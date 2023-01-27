@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Solving rate equations 
+# # 2 Solving rate equations. The Gillespie method 
 
 # In[1]:
 
@@ -124,7 +124,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # In the case of a termolecular reaction $\mathrm{ A + B + C} \rightarrow $ when the probability of three molecules simultaneously colliding is calculated the probability the chance that this occurs in  an infinitesimal time interval $d t$ is proportional to $dt^2$ so becomes vanishingly small and thus does not occur with any physical reality. It is often convenient, however, to consider a termolecular scheme as a simplified approximation to a scheme such as $N_A+N_B \leftrightharpoons X^*; \; X^* + N_C \longrightarrow$ 
 # 
-# ### **Outline of method**
+# ## 2.3 Outline of method and example calculation of excited state decay
 # 
 # The outline plan for the Gillespie algorithm is actually quite simple
 # 
@@ -212,6 +212,8 @@ while indx < bins and nA > 0  :
 # The result of a calculation is plotted in Figure 5; the line through the data is an exponential with a $\tau = 20$ ns lifetime; $e^{-t/\tau}$. The 'drop-outs' in the data at long times ($\gt 100$ ns) are due to there being too few simulations to fill properly all the time bins and are distinctly un-physical. They are most apparent in a log plot, but in this case only produce a small error that is hardly noticeable on a linear plot, and are an inevitable part of the method; if more time points are used then the drop-outs become more frequent. As they are so noticeable, and clearly unphysical, they can be ignored, if desired. However, they should really be eliminated by starting with more molecules; the only penalty is a longer calculation.
 # 
 # At intermediate times, the limited number of events simulated is also seen as noise on the data, but it is clear that the simulated data is a good match with the theoretical line over about a thousand-fold range of counts. An improved calculation could be made, by starting with a larger initial number or averaging together several single calculations such as this one. The noise on this data is completely different to what would be observed experimentally and to that on Fig. 12.16, which is the result of a simulation of the process.
+# 
+# ## 2.4 Excited state forming triplet
 # 
 # As a second example, suppose an excited state of a molecule reacts as shown in Figure 6. The excited state decays to the triplet state by intersystem crossing and by fluorescence, to the ground state. The triplet is assumed to have a very long lifetime, so does not convert to the ground state during the time considered in this calculation. The rate constants are $k_{isc}$ to the triplet and $k_f$ to the ground state. The population of all three states involved will be calculated. The decay of the excited state is $\tau = 1/(k_f + k_{isc})$ and this is the lifetime with which the triplet is formed and also that with which the ground state is formed; equivalently the rate constant is $k_1 = k_f + k_{isc}$. In fact, only two states need be calculated as the total number of all molecules is a constant number, but all state populations will be calculated by way of illustration.
 # 

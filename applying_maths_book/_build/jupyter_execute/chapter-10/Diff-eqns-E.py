@@ -1,9 +1,9 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Linear equations with variable coefficients
+# # 14 Linear equations with variable coefficients
 
-# ## 8.1 Linear equations with variable coefficients
+# ## 14.1 Linear equations with variable coefficients
 # A more difficult equation to solve than those met previously is
 # 
 # $$\displaystyle a(x)\frac{d^2y}{dx^2}+b(x)\frac{dy}{dx}+c(x)y=g(x)$$
@@ -14,7 +14,7 @@
 # 
 # by dividing through by $a(x)$. The general method to use is the _variation of parameters_, because this can be applied to all differential equations. However, it is quite complicated to use and specialized texts should be consulted (Jeffery 1990; Bronson 1994; Aratyn & Rasinariu 2006). There are, however, at least two methods that can still be used: the main one is to solve the equation as a series expansion and the second reduces the equation to a simpler one, but this can be used only in certain cases.
 # 
-# ## 8.1 Reduction to simpler forms by change of variable and substitution
+# ## 14.1 Reduction to simpler forms by change of variable and substitution
 # 
 # ### **(i) Substitution**
 # Sometimes a simple substitution can produce constant coefficients, but success in this depends very much on the exact form of the equation. The equation 
@@ -80,7 +80,7 @@
 # $$\displaystyle \frac{d^2u}{dx^2}=\left(\frac{3}{2}+\frac{x^2}{4} -x \right)u = 0$$
 #   
 
-# ## 8.2 Series solution of differential equations
+# ## 14.2 Series solution of differential equations
 # 
 # While many types of equations can be solved using the methods described so far, there are a number of problems whose equations can only be solved by a series expansion. These are often different forms of the Schroedinger equation, examples of which are the quantum harmonic oscillator and the radial and angular solutions to the hydrogen atom. 
 # 
@@ -237,7 +237,7 @@
 # Figure 19a. harmonic oscillator wavefunctions assuming a harmonic potential. The frequency is 214.5 cm$^{-1}$ and the force constant $172$ N/m. The levels have quantum numbers $n=$ 0, 1, 2,$\cdots$.
 # ____
 # 
-# ## 8.3 Checking whether a series solution is possible
+# ## 14.3 Checking whether a series solution is possible
 # 
 # A solution is usually expanded as a series about $x$ = 0; therefore, the first thing to check is whether the series method is applicable. This means examining the differential equation to ensure that $x$ = 0 is analytic, hence not singular, which in turn means that $x$ = 0 does not produce infinity when substituted into the equation.
 # The general equation is

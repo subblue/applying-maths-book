@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Maclaurin and Taylor series expansions. Paramagnetic spins. Euler-Maclaurin formula.
+# # 6 Maclaurin and Taylor series expansions. Paramagnetic spins. Euler-Maclaurin formula.
 
 # In[1]:
 
@@ -76,7 +76,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # In a series expansion of a function $f(x)$ it is often possible to state something general perhaps that that $f(x) \to \infty$ as $x\to \infty$. This is, however, often too general and if a series is to be used only to a finite number of terms we would like to know how quickly the term after the last one used is varying as $x$ changes; does it change as $x^2$ or $e^x$ for example? 
 # 
-# The 'big-O' notation, for example, $O(x^2),\; O(e^x)$, and so forth, is used for this purpose and means that the function whose series we are examining grows at a rate $x^2$ or $e^x$ at the point that the function is being evaluated. An example is the series $x^{-2} - x^{-4} + O(x^{-6})$ when $x \gt 1$ which means that the next term in the series is vastly smaller than the $x^{-4}$ term and can be safely ignored. The symbol $\sim $ is generally interpreted as meaning 'is proportional to' and as used in $\sin(x) \sim x$ when $x \to$ 0 means that the function grows at the same rate as $x$.
+# The 'big O' notation, for example, $O(x^2),\; O(e^x)$, and so forth, is used for this purpose and means that the function whose series we are examining grows at a rate $x^2$ or $e^x$ at the point that the function is being evaluated. An example is the series $x^{-2} - x^{-4} + O(x^{-6})$ when $x \gt 1$ which means that the next term in the series is vastly smaller than the $x^{-4}$ term and can be safely ignored. The symbol $\sim $ is generally interpreted as meaning 'is proportional to' and as used in $\sin(x) \sim x$ when $x \to$ 0 means that the function grows at the same rate as $x$.
 # 
 # ## 6.4 Useful series expansion formulae
 # 
@@ -95,7 +95,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # (a+x)^n &= a^n+\frac{a^n}{a}x+\frac{a^nn(n-1)}{a^2}x^2+\frac{a^nn(n-1)(n-2}{a^3}x^3 +\mathcal{O}\left(x^{6}\right)
 # \end{align}$$
 
-# ## 6.5 Trig functions
+# ## 6.5 Trig functions expansion
 # 
 # The Maclaurin series of $f(x) = \sin(x)$ is equivalent to a Taylor series expanded about zero.
 # By definition the expansion is given by replacing $f(x)$ in equation $15$,
@@ -271,7 +271,7 @@ plt.show()
 # 
 # $$\displaystyle  (1+x)^{-1/2}=1-\frac{x}{2}+ \frac{x^2}{8}-\frac{x^3}{16}+\cdots  \qquad\tag{25}$$
 # 
-# ### **Example, calculate square root**
+# ### **Example; calculate square root**
 # Consider calculating $\sqrt{3/2}$, using equation (25). Letting $x$ = 1/2 the series is $(1+x)^{1/2}= 1+ 1/4 - 1/32 + 1/128 \cdots = 1.2265$. The correct answer to 4 decimal places is 1.2247 and the series has to be extended to nine terms, the highest power being $x^8$ to reach this level of accuracy. Trying to calculate $\sqrt 3$ using this series gives a divergent result; why is this? Try it for yourself. The ancient Algorithm 1.2 could, however, be used.
 # 
 # ## 6.9 Derivatives of series
@@ -460,8 +460,9 @@ plt.show()
 
 
 # Euler Maclaurin eqn. 27
+
 for k in range(1,8):   
-    print('{:s}{:d}{:s}{:s}'.format('2k = ',2*k,' B/factrl ', str(bernoulli(2*k)/factorial(2*k))))
+    print('{:s}{:d}{:s}{:s}'.format('2k = ',2*k,' thus B(2k)/(2k!) = ', str(bernoulli(2*k)/factorial(2*k))))
 
 k, x = symbols('k, x')                   # use sympy
 m = 1

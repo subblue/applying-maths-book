@@ -1,9 +1,9 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Torque and angular momentum
+# # 21 Torque and angular momentum
 
-# ## 23 Torque and angular momentum
+# ## 21 Torque and angular momentum
 # If two objects are joined with a bolt and this is tightened with a spanner, the clockwise motion of tightening causes a force to be applied to the bolt that generates a _torque or moment_ of that force about the rotation axis. The torque has a magnitude that is the force $F$ multiplied by the length $r$ of the lever. It is well known that a longer spanner is needed to more easily undo or tighten a stiff bolt. Similarly, if you push on a seesaw, torque is generated about the pivot, and it is easier to move the seesaw if it is pushed at its end rather than close to its centre. If $F$ is the size of the force that is applied at an angle $\theta$ at a distance $r$ from a pivot, then the torque has magnitude $Fr\sin(\theta)$, thus, only a component of the force is effective. 
 # 
 # Next we consider the force and distance to be vectors $\vec F$ and $\vec r$ respectively, then by the definition of a cross product $|\vec F \times \vec r| = |\vec F||\vec r|\sin(\theta) = Fr\sin(\theta)\vec n$. Torque can consequently be identified as a vector in the direction $\vec n$ and defined as the cross product,
@@ -31,7 +31,7 @@
 # Figure 52. Dipole in a field.
 # _________
 # 
-# ## 23.1 Angular momentum
+# ## 21.1 Angular momentum
 # 
 # When studying the motion of rotating bodies, nuclei, molecules, or footballs we must define angular velocity $\omega$, angular momentum $L$, and moment of inertia $I$, which replace velocity, momentum, and mass respectively as used with linear motion. If you hold a bicycle wheel by its axle with both hands, and spin it in a clockwise direction, so that the wheel spins away from you, then its angular velocity $\vec \omega$ , a vector of magnitude $| \vec \omega |$, is perpendicular to the plane of motion and points to your left. This is in the direction of a right-handed screw. The angular momentum $\vec L$, also a vector quantity, acts in the same direction as the angular velocity and has a value
 # 

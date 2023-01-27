@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Trig, hyperbolic and inverse functions, waves, polar coordinates & factorials
+# # 5 Trig, hyperbolic and inverse functions, waves, polar coordinates & factorials
 
 # In[1]:
 
@@ -90,7 +90,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # The velocity of the wave $v$ is the product of frequency and wavelength; $v = \upsilon\lambda= \omega/k$. The general equation for a travelling wave, either transverse or longitudinal, is
 # 
-# $$\displaystyle y = A\sin(\omega t - kx +\varphi) \tag{16}$$ 
+# $$\displaystyle y = A\sin(\omega t - kx +\varphi) \qquad\tag{16}$$ 
 # 
 # In this equation the sign $-kx$ means that the wave is travelling to the right, which is positive $x$. If the term were written $+kx$, then the wave would be travelling to the left. Depending upon whether $x$ or $t$ is plotted the similar but different plots in Figure 11 are produced. On the left the displacement $x$ is plotted and therefore as time progresses the particle moves up and down at fixed $x$. On the right the displacement vs time at a fixed $x$ is plotted.
 # 
@@ -181,7 +181,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # In detecting infra-red, visible light or even x-rays the intensity $I$ is always measured, because of the nature of the interaction of electromagnetic radiation with the atoms and molecules in the detector. The $\omega t$ terms cannot be measured as the frequency is far too high, and is averaged in the measuring process and can therefore be absorbed into the amplitude and so ignored. The intensity is the square of the wave's amplitude $I=a_s^2$ and adding the squares of $a_s\cos(\varphi_s)$ and $a_s\sin(\varphi_s)$ and using $\cos^2(\varphi_s)+\sin^2(\varphi_s)=1$ we find that $a^2$ is produced as
 # 
-# $$\displaystyle   I\equiv  a_s^2 = \left(\sum_{i=1}^N a_i\cos(\varphi_i)\right)^2+ \left(\sum_{i=1}^N a_i\sin(\varphi_i)\right)^2 \tag{16a}$$
+# $$\displaystyle   I\equiv  a_s^2 = \left(\sum_{i=1}^N a_i\cos(\varphi_i)\right)^2+ \left(\sum_{i=1}^N a_i\sin(\varphi_i)\right)^2 \qquad\tag{16a}$$
 # 
 # with overall phase $\varphi_s$ given by
 # 
@@ -353,7 +353,7 @@ asinh(x).rewrite('log')
 # 
 # A ratio of factorials arises from the series 
 # 
-# $$ x(x+1)(x+2)\cdots (x+n-1)=\frac{(x+n-1)!}{(x-1)!} \tag{17}$$
+# $$ x(x+1)(x+2)\cdots (x+n-1)=\frac{(x+n-1)!}{(x-1)!} \qquad\tag{17}$$
 # 
 # is sometimes given the symbol $(x)_n$ which is called the Pochhammer symbol, although this notation is not universal. Ratios of factorials similar to these occur in quantum mechanics, particularly when angular momentum quantum numbers are involved.
 # 
@@ -361,7 +361,7 @@ asinh(x).rewrite('log')
 # 
 # The log of the factorial is often used as a way of calculating factorials and Stirling's formula
 # 
-# $$\displaystyle \ln(n!) = n \ln(n) - n  \tag{18}$$
+# $$\displaystyle \ln(n!) = n \ln(n) - n  \qquad\tag{18}$$
 # 
 # is particularly useful for large $n$. For smaller values we can use the equivalent formula $\displaystyle  n!=n^ne^{-n}$.
 # 
@@ -421,7 +421,7 @@ print(fact(15))
 
 # The polynomials used to define wavefunctions in quantum mechanics can be calculated by recursion and while there are other ways of calculating them, such as the generating function method, see Chapter 9, recursion is often convenient. The Hermite polynomials $H_n(x)$ describe part of the wavefunctions of the Quantum Harmonic Oscillator, as used to describe vibrations of a molecule, and the other parts multiply the Hermite by a normalization constant and by $e^{-x^2/2}$. In the Hermite polynomial, $n$ is an integer $n \ge 0$ representing the quantum number, and $x$ is proportional to the displacement of the oscillator from equilibrium. The wavefunction's equation is 
 # 
-# $$\displaystyle \psi _{n}(x)={\frac {1}{\sqrt {2^{n}\,n!}}} \left({\frac {m\omega }{\pi \hbar }}\right)^{1/4} e^{-{{m\omega x^{2}}/{2\hbar }}} H_{n}\left({\sqrt {\frac {m\omega }{\hbar }}}\,x\right),\qquad n=0,1,2,\cdots \tag{18a}$$
+# $$\displaystyle \psi _{n}(x)={\frac {1}{\sqrt {2^{n}\,n!}}} \left({\frac {m\omega }{\pi \hbar }}\right)^{1/4} e^{-{{m\omega x^{2}}/{2\hbar }}} H_{n}\left({\sqrt {\frac {m\omega }{\hbar }}}\,x\right),\qquad n=0,1,2,\cdots \qquad\tag{18a}$$
 # 
 # where $m$ is the mass and $\omega=2\pi v$ the frequency.
 # 

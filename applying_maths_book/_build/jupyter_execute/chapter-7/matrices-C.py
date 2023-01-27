@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Molecular Group Theory 
+# # 6 Molecular Group Theory 
 
 # In[1]:
 

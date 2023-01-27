@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Partial differentiation
+# # 11 Partial differentiation
 
 # In[1]:
 

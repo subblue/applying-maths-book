@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Rate equations and Chemical Kinetics
+# # 13 Rate equations and Chemical Kinetics
 
 # In[1]:
 
@@ -70,9 +70,9 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # The next section describes how this and many other complex schemes can be solved using matrix methods both algebraically and more often for complicated rate equations, numerically.
 # 
-# ## 13.2 Matrix solutions
+# ## 13.2 Matrix solutions. Master Equations.
 # 
-# Using matrix methods changes the way the problem is solved into that of finding eigenvalues and eigenvectors, thereby avoiding the difficulty of integration, but it is only applicable to first order or linear equations; i.e. product terms such as $k_2AB$ are not allowed. For very complex schemes, consisting of hundreds of equations, the master equation approach is used and is usually solved numerically. A master equation is defined as a phenomenological, first-order differential equation, describing the time evolution of the probability of a 'system' to occupy any one of a discrete set of states.
+# Using matrix methods changes the way the problem is solved into that of finding eigenvalues and eigenvectors, thereby avoiding the difficulty of integration, but it is only applicable to first order or linear equations; i.e. product terms such as $k_2AB$ are not allowed. For very complex schemes, consisting of hundreds of equations, the Master Equation approach is used and is usually solved numerically. A master equation is defined as a phenomenological, first-order differential equation, describing the time evolution of the probability of a 'system' to occupy any one of a discrete set of states.
 # 
 # The matrix method is described first and justified in the next section. Returning to the sequential scheme 35, the three equations can be reproduced in matrix form as
 # 
@@ -81,11 +81,11 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # $$\displaystyle \pmb{M}=\pmb{M_0}e^{-\pmb{K}t} \qquad\tag{37}$$
 # 
-# where $\pmb{M}$ is a column matrix of concentrations at time $t$, $\pmb{M}_0$ the matrix of their initial values, and $\pmb K$ is a square matrix of rate constants organised as in the rate equation. The rate equations 35 are rewritten in matrix form as
+# where $\pmb{M}$ is a column matrix of concentrations at time $t$, $\pmb{M}_0$ the matrix of their initial values, and $\pmb K$ is a square matrix of rate constants organised as in the rate equation. In the master Equation approach the rate equations 35 are rewritten in matrix form as
 # 
 # $$\displaystyle \qquad\qquad\begin{bmatrix} \displaystyle\frac{dA}{dt}\\ \displaystyle\frac{dB}{dt}\\ \displaystyle\frac{dC}{dt}\end{bmatrix} =\begin{bmatrix} -k_1 & 0 & 0\\ k_1 & -k_2 & 0\\0 & k_2 & 0\\\end{bmatrix}\begin{bmatrix}A\\B\\C \end{bmatrix} \qquad\qquad\qquad\qquad\text{(38)}$$
 # 
-# Notice how the decay rate constant of each species is on the diagonal, and the grow-in or decay of species $C$ from $B$ and $B$ from $A$, on the off-diagonal. Notice also that the matrix is not Hermitian, i.e. is not symmetrical, although each term is real. This means that when the equation is solved the eigenvectors $x$ are not orthogonal.
+# Notice how the decay rate constant of each species is on the diagonal, and the grow-in or decay of species $C$ from $B$ and $B$ from $A$, on the off-diagonal. The position of a row of  rate constants in the matrix is the same as in the rate equation for that species.  Notice also that the matrix is not Hermitian, i.e. is not symmetrical, although each term is real. This means that when the equation is solved the eigenvectors $x$ are not orthogonal. The next sections illustrate how the solution is determined.
 # 
 # ### **Secular Determinant**
 # 
@@ -97,7 +97,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # ### **Time profiles**
 # 
-# To calculate the populations, or concentrations, the matrix equation
+# To calculate the populations, or concentrations, using the Master equation approach the matrix equation
 # 
 # $$\displaystyle \pmb{M}(t)=\pmb{x}[\pmb{e}^{\lambda t}]\pmb{x}^{-1}\pmb{M}_0 \qquad\tag{39}$$
 # 
@@ -120,7 +120,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # where each eigenvector is a column in the $x$ matrix and the notation $k_{12}$ is the rate constant from species $1(a) \to 2(b)$ etc.  The populations of each species are the rows of the $\pmb{M}(t)$ column vector.
 # 
-# The calculation, using python/Sympy, is shown below. The solution is found algebraically but in practice for complex kinetic schemes a purely numerical solution is the way to proceed because algebraic solution become impossibly complex.
+# The calculation, using python/Sympy, is shown below. The solution is found algebraically but in practice for complex kinetic schemes a purely numerical solution is the way to proceed because algebraic solution become impossibly complex. Question 52 illustrates the Master Equation method for a complicated set of rate equations.
 # 
 # ### **Algebraic solution of $A \to B \to C$**
 # 
@@ -163,12 +163,12 @@ populations
 # Figure 55. Populations of species $A, \;B$, and $C$ with time when $k_1 = 1,\; k_2 = 1.5$ with initial concentrations $A_0 =1,\;B_0 =C_0 =0$. The scheme is $\displaystyle A \overset{k_1}\to B \overset{k_2}\to C$.
 # ________
 # 
-# ### **Numerical solution of $A \leftrightharpoons B \leftrightharpoons C$** 
+# ### **Numerical solution of $A \leftrightharpoons B \leftrightharpoons C$ using the Master Equation** 
 
 # In[5]:
 
 
-# numerical calculation using python/numpy
+# Master Equation numerical calculation using python/numpy
 
 max_num = 200
 t  = np.linspace(0,10,max_num)    # range 0 to 10, 200 points 
@@ -176,7 +176,7 @@ M0 = np.array([1,0,0])            # initial concentrations, only A is present in
 n  = 3                            # number of equations
 k1 = 1.0                          # rate constnat
 k2 = 1.5
-M = np.array([ [-k1,0,0], [k1,-k2,0], [0,k2,0]    ])   # rate constnat matrix
+M = np.array([ [-k1,0,0], [k1,-k2,0], [0,k2,0]    ])   # rate constant matrix
 
 val,vec = LA.eig(M)              # eigenvalues;  eigenvectors
 #print('eigenval, eigenvec', val,'\n', vec)
@@ -484,7 +484,7 @@ M5
 #  
 
 # ## 13.5 A Similarity Transform used to evaluate a partition function.  The helix-coil transition
-# A polypeptide or a protein can change from a helix to a random coil structure or vice versa, over a small range of temperatures. This sudden change is suggestive of a cooperative process and Zimm & Bragg (1959) used a statistical model and calculated the partition function for a peptide chain consisting of two types of residues, either those that form a helix or those that do not. A section of protein will be described as having an unstructured coil if it has c type amino acids and h type if they are helix forming such as alanine. A portion of the chain could be $\cdots cchccchhhcchh\cdots$ . The statistical weight of a $\cdots ch$ boundary and of continuing to grow a helix $\cdots chhh$ once formed is calculated and this statistical weight is the Boltzmann contribution to the partition function or $e^{-\Delta G/k_BT}$, where $\Delta G$ is the change in free energy when the next residue is encountered along the chain. The model is successful despite the assumption of nearest neighbour interactions whereas a helix strictly involves interactions with residues that are not just nearest neighbours.
+# A polypeptide or a protein can change from a helix to a random coil structure or vice versa, over a small range of temperatures. This sudden change is suggestive of a cooperative process and Zimm and Bragg (1959) used a statistical model and calculated the partition function for a peptide chain consisting of two types of residues, either those that form a helix or those that do not. A section of protein will be described as having an unstructured coil if it has c type amino acids and h type if they are helix forming such as alanine. A portion of the chain could be $\cdots cchccchhhcchh\cdots$ . The statistical weight of a $\cdots ch$ boundary and of continuing to grow a helix $\cdots chhh$ once formed is calculated and this statistical weight is the Boltzmann contribution to the partition function or $e^{-\Delta G/k_BT}$, where $\Delta G$ is the change in free energy when the next residue is encountered along the chain. The model is successful despite the assumption of nearest neighbour interactions whereas a helix strictly involves interactions with residues that are not just nearest neighbours.
 # 
 # The model has the following rules.
 # 
@@ -496,7 +496,7 @@ M5
 # 
 # The results of the calculation show that there is cooperativity in the helix-coil transition. When $\sigma \ll 1$ it is hard to form a helix, but once formed it is energetically favourable to continue to add only $h$ residues and the helix-coil 'phase transition' is sharp. Conversely, when $\sigma \sim 1$ there is no cooperativity in the transition and it occurs over a relatively wide range of temperature, which effectively means a large range of $s$ because $s$ is the Boltzmann contribution $e^{-\Delta G/k_BT}$ to the partition function.
 # 
-# Zimm & Bragg (1959) presented a matrix method to calculate the partition function sum, and they showed that the equation $\pmb{A}_{n+1} = \pmb{MA}_n$ can be used where $\pmb{M}$ is a transition matrix and $\pmb{A}n$ is a column vector containing two terms, one for adding a $c$ residue and one for adding an $h$ residue. The transition matrix represents the statistical weight of adding the next residue but also takes into account the weights of all the preceding ones. This matrix equation is
+# Zimm and Bragg (1959) presented a matrix method to calculate the partition function sum, and they showed that the equation $\pmb{A}_{n+1} = \pmb{MA}_n$ can be used where $\pmb{M}$ is a transition matrix and $\pmb{A}n$ is a column vector containing two terms, one for adding a $c$ residue and one for adding an $h$ residue. The transition matrix represents the statistical weight of adding the next residue but also takes into account the weights of all the preceding ones. This matrix equation is
 # 
 # $$\displaystyle \begin{bmatrix}A^c_{n+1}\\A^h_{n+1} \end{bmatrix}=\begin{bmatrix}1 & 1\\s\sigma & s \end{bmatrix}\begin{bmatrix}A^c_{n}\\A^h_{n} \end{bmatrix}$$
 # 

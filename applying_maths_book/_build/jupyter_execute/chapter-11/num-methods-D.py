@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # The phase plane, nullclines, and stable points
+# # 6 The phase plane, nullclines, and stable points
 
 # In[1]:
 
@@ -15,7 +15,7 @@ init_printing()                    # allows printing of SymPy results in typeset
 plt.rcParams.update({'font.size': 16})  # set font size for plots
 
 
-# ## Introduction
+# ## 6.1 Introduction
 # In the study of two-dimensional linear and non-linear differential equations, the phase plane, nullclines, and fixed points are very useful tools for analysing the equations before any numerical or algebraic calculation. The phase plane allows fixed points to be found, these are also called *steady state*, or *equilibrium* points and occur when $dy/dt = dx/dt = 0$. Some examples are also given in Chapter 10. *Closed orbits* and *limit-cycles* can also be observed in the phase plane and are described shortly.
 # 
 # Written generally, pairs of differential equations are
@@ -27,7 +27,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # $$ \frac{dy}{dt} = xy+x^2 -y^2, \qquad \frac{dy}{dt}=-\sin(x)+(y-1)^2$$
 # 
 # 
-# ## 6.1 The phase plane $^2$
+# ## 6.2 The phase plane $^2$
 # The phase plane is the plot of $y$ vs $x$ and is found by calculating $dy/dx$ by using the chain rule. In practice, this means dividing the equation for $y$ by that for $x$; therefore the phase plane does not explicitly contain time. If the resulting equation can be integrated, the family of curves produced can be plotted for different values of the integration constant, which means for different initial values of $y$ and $x$. If the integration cannot be done analytically, then a numerical solution of the two initial equations has to be found and, again, $y$ plotted vs $x$ at various times until the entire phase plane is produced.
 # 
 # For example, if the equations governing the motion of a particle in a particular double-well potential, Fig. 13, are
@@ -50,7 +50,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # $^2$ The name is historical and apparently was originally used in dynamics as the plane containing position $x$ and momentum $mdx/dt$ of a object as it moved under the influence of a force.
 # 
-# ## 6.2 Isoclines and nullclines
+# ## 6.3 Isoclines and nullclines
 # 
 # The equation produced when the rate of change is zero is sometimes called an isocline or nullcline. Just as on an incline we move up, or on a decline down, an isocline means that the gradient is always the same and must therefore be a constant number, and a contour path is followed in the phase plane. A nullcline occurs when this constant is zero The nullclines are $x - x^3 = 0$ and $y = 0$, which in this case are both straight lines. Isoclines are the lines when $x - x^3 = a$ and $y = a$ where $a$ is some constant. Assuming that $y$ is plotted vertically and $x$ horizontally, the 'flow' or vector showing the direction of change, is always horizontal at each point along the nullcline, $dy/dt = 0$, no matter what its curve is, and vertical on the nullcline $dx/dt = 0$. The nullclines also partition the phase plane into areas where the derivatives have different sign; exactly what these are depends upon the particular equations. Figure  shows the phase portrait with isoclines at different $c$ values and the nullclines, which are dotted. The figure-of-eight curve is the _separatrix_ and, in this example, is the point when the particle has just enough initial energy to cross the barrier separating the region of oscillation in one well from motion over the barrier, and hence, motion between both wells. When the particle is placed in the bottom of either well, it has zero potential and zero kinetic energy. If it is not pushed, it will remain in this stable state at ($\pm 1, 0$) which are the points on the axis marked with a red dot.
 # 
@@ -61,7 +61,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # Figure 13. Example of a phase - plane with a few contours (isoclines) making up the phase portrait. The potential energy profile  has barrier with a maximum energy of zero. The motion of a particle starting at different points is shown on the right. The $dy/dt = 0$ nullclines are shown dotted, the other nullcline, $dx/dt = y = 0$ is the x-axis. The arrows show the direction of motion around the phase plane. The separatrix is the light blue 'figure of eight' and passes through the origin.
 # _______
 # 
-# ## 6.3 Non-linear equations: the pendulum
+# ## 6.4 Non-linear equations: the pendulum
 # 
 # A rigid pendulum with a heavy bob at its end can move in two ways. When the energy is small, it will oscillate about the vertical in a good approximation to simple harmonic motion, and when the energy is large enough it will rotate continuously in the vertical plane. If the displacement from the vertical is not small, the motion is non-linear and the equation of motion has no exact analytical solution. If it is assumed that the pivot holding the pendulum is frictionless and that no air or other resistance hinders the motion, then the equation of motion is
 # 
@@ -143,7 +143,7 @@ dvdt  = lambda phi : -omega0**2*sin(phi)
 # Figure 15. Angle (radians) and velocity (radians/sec) vs time of the non-linear pendulum, with $\omega = 1,\;v_0=0$ and an initial angle of $8\pi/9$. Notice that the velocity is zero when the potential energy is a maximum. This is when its angle is greatest or smallest and vice versa.
 # _____
 # 
-# ## 6.4 Euler–Cromer equations
+# ## 6.5 Euler–Cromer equations
 # Although the Euler method will work well in all our examples, it is not necessarily the best method to use for oscillating systems, such as the pendulum, because energy is not conserved that well. By changing the algorithm as below then the error in the energy becomes proportional to $\Delta t^3$ which is a significant improvement over $\Delta t$ when the step size is small. The angle is calculated as $\mathtt{phi= phi + h*v}$ instead of $\mathtt{phi= phi + h*dphidt}$ as in the Euler method, Algorithm 14. See Gould et al. (2007) for more details of this and related methods.
 
 # In[4]:
@@ -206,7 +206,7 @@ def EulerCromer(dphidt, dvdt, phi0, t0, maxt, omega):
 # 
 # Before the equations are numerically integrated, a complete analytical solution not being possible, some analysis of the problem will be carried out. The actual values of the constants are important if a real disease is to be modelled, and before trying to fit the data, it is necessary to know what range of parameters will produce an epidemic and what the expected populations will look like.
 # 
-# Intuitively, the scheme 40 suggests that the number infected I, which is initially small (for instance, one person), increases rapidly, passes through a maximum, then slowly decays away. However, this will occur only if $k_2S_0 \gt k_1$ because when S is large, I is initially formed more rapidly than it is consumed. If the opposite is true, then I is consumed more rapidly and its population cannot become large and no epidemic occurs. To be quantitative, let $R_R = k_2S_0/k_1$ be defined as the reproductive ratio,$^3$ which is the number of secondary infections caused by one infected person if all the population is equally susceptible. An epidemic must ensue if the reproductive ratio is greater than one, because more individuals will become infected with time. This can also be appreciated by examining the rate of change of I in the second of equations 41 at 
+# Intuitively, the scheme 40 suggests that the number infected I, which is initially small (for instance, one person), increases rapidly, passes through a maximum, then slowly decays away. However, this will occur only if $k_2S_0 \gt k_1$ because when S is large, I is initially formed more rapidly than it is consumed. If the opposite is true, then I is consumed more rapidly and its population cannot become large and no epidemic occurs. To be quantitative, let $R_R = k_2S_0/k_1$ be defined as the reproductive ratio,$^\dagger$ which is the number of secondary infections caused by one infected person if all the population is equally susceptible. An epidemic must ensue if the reproductive ratio is greater than one, because more individuals will become infected with time. This can also be appreciated by examining the rate of change of I in the second of equations 41 at 
 # 
 # $$\displaystyle t = 0;\; dI/dt\big|_{t = 0} = I_0(k_2S_0 − k_1)\quad\text{ if }\quad k_2S_0 \gt k_1$$
 # 
@@ -214,7 +214,7 @@ def EulerCromer(dphidt, dvdt, phi0, t0, maxt, omega):
 # 
 # Typical values for the reproductive ratio are smallpox = 4; mumps = 5; German measles (rubella) = 6; measles = 12; malaria $\approx$100, (see Britton 2003).
 # 
-# $^3$ Many texts call the reproductive ratio $R_0$, which is unfortunately confusing with $R_0$, the initial number in the removed class.
+# ( $^\dagger$ Many texts call the reproductive ratio $R_0$, which is unfortunately confusing with $R_0$, the initial number in the removed class.)
 
 # ## 7.2 The SIR phase plane
 # 

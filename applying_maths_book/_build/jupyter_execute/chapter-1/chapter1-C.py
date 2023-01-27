@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Sophisticated Counting.
+# # 9 Sophisticated Counting.
 
 # In[1]:
 
@@ -12,7 +12,7 @@ import matplotlib.pyplot as plt
 from sympy import *
 
 
-# ## Permutations, Combinations and Probability.
+# ## 9.1 Permutations, Combinations and Probability.
 # 
 # The branch of mathematics dealing with permutations, combinations, and probability is perhaps that most closely related to everyday experience, particularly so if you play cards or do the lottery. There are different ways of counting the number of the arrangements of objects, such as molecules or footballs and these are permutations and combinations.
 # 
@@ -28,7 +28,7 @@ from sympy import *
 # 
 # The probability or _chance_ of an event occurring, will be defined as the ratio of the number of successful outcomes to the total number of possible outcomes, and can only have values from $0$ to $1$. It is implicitly assumed that any one event is just as likely to occur as any other. A particular outcome is not therefore predictable; only that a certain fraction of times the expected result will occur if many trials are carried out. For instance, you would not expect to be able to throw a die so that a $1$ is always produced. One might obtain a $1$ on the first throw. If a $1$ is obtained on the second throw, this is surprising, but if on a third, this suggests, but does not prove, that the die might be biased because we expect a die to produce a $1$, or any of its other numbers, _on average_ only once in six throws. Probability theory allows the calculation of the exact chance of each possible outcome without having to do the experiment. Because the probability or chance of a successful event $p$, cannot be greater than $1$, the chance of failure is $q = 1 - p$.
 # 
-# ## 9.1 Permutations
+# ## 9.2 Permutations
 # 
 # A permutation is an _ordered_ arrangement of objects and if the order is changed then a new permutation is produced. The five letters A to E arranged as A B C D E form one permutation; A B C E D and A B E C D are others. If there are five objects then there are $5! = 5 \times 4 \times 3 \times 2 \times 1 = 120$ permutations. The proof is straightforward: the letter E can be put into five different positions. If D is now moved then it can be placed in four positions, C in three, and so forth; therefore, the number of permutations when all $n$ objects are chosen is $n(n - 1)(n - 2) \cdots 1$ which is $n!$. This can easily be a truly vast number, but if there are only three objects then there are only 3! = 6 ways of doing this which are ABC, ACB, CAB, BAC, BCA, CBA. The permutation of $n$ objects is written as
 # 
@@ -40,7 +40,7 @@ from sympy import *
 # 
 # Choosing any two letters, $p = 2$, from three, $n = 3$ produces 3!/1! = 6 permutations. For example, if the letters are ABC, then the six choices are AB, BA, AC, CA, BC, CB. Because each permutation is distinct, if we were to place them into groups or 'boxes' then only one arrangement goes into each box. When $n = p$, because $0! = 1$ this equation equals $P(n, n) = n!$. If each of the permutations is equally likely, then the probability of any one occurring is $1/P(n, p)$. Note also that the notation $P(n, p)$ is not universal and $_nP_p,\; ^nP_p$ or $P_p^n$ are also commonly used.
 # 
-# ## 9.2 Permutation with groups of identical objects
+# ## 9.3 Permutation with groups of identical objects
 # 
 # If some of the $n$ objects are identical then clearly the number of choices is going to be reduced. To take an extreme example, if all the objects are identical or indistinguishable from one another, then there is only one way of arranging them and the number of permutations is one. If there are $n$ objects split into two groups and each of $v$ and $w$ are identical objects, the number of permutations is reduced by dividing by the number of ways of separately arranging every identical group, and the result is $n!/(v!w!)$. If the $n$ objects are A A B B B E C D, then there are $8!/(2!3!) = 8 \times 7 \times 6 \times 5 \times 2 $ ways of arranging them or 12 times less than if all the letters were distinct.
 # 
@@ -62,7 +62,7 @@ from sympy import *
 # 
 # ways of arranging a chain. Nature has had to search in the 'space' of all combinations to find an effective protein (one that causes pain when you are stung) and has had a very long time to do so. However, this number of permutations is still so large that even producing a different sequence at one a minute, supposing that this were possible, would have taken $\approx 5 \cdot 10^{15}$ years, which is far longer than the age of the Earth. This is, of course, a misleading calculation for two reasons at least. One is that it assumes that the protein always had $26$ amino acids whereas, in the distant past, it was probably far smaller but was nevertheless effective  enough  to give the bee's ancient ancestor an evolutionary advantage. Secondly, many permutations of even a few amino acids will not have the stability to form any structure other than a random coil and so could never exist as a functioning protein. Those that do form some stable structure and are effective are then preserved and passed down to the next generation, and by mating and random mutations, improved. Therefore the whole of the possible permutation space is never searched, but the search algorithm that is natural selection very effectively finds a working solution and one that is usually close to the optimum.
 
-# ## 9.3 Combinations
+# ## 9.4 Combinations
 # 
 # A combination is really a misnomer, because it is the number of ways of choosing $p$ distinguishable objects from a group of $n$ distinguishable objects, and the order of choosing these $p$ objects does not matter. If two letters from ABC are chosen, the number of combinations is three and the choices or combinations are AB $\equiv$ BA, AC  $\equiv$ CA, BC  $\equiv$ CB because the order does not matter. 
 # 
@@ -80,7 +80,7 @@ from sympy import *
 # 
 # The original context of the word combination is that the number $C(n, p)$ is the number of combinations of $n$ things selected $p$ at a time. Since $\displaystyle \binom{n}{p}=\binom{n}{n-p}$ this is also equal to the number of combinations of $n$ things selected $n-p$ at a time.
 # 
-# ### **Lottery**
+# ## 9.5 Lottery
 # 
 # The chance of winning a lottery can be found from the number of combinations. For instance, choosing 6 numbers out of 48 produces
 # 
@@ -88,26 +88,26 @@ from sympy import *
 # 
 # possible choices or just under one in twelve million chances of winning, as the chance of any one combination being chosen is just as likely as any other, then its probability is $1/C(n, p)$. If $\approx 12$ million people play each week, then on average one might expect one winner each week, assuming that the numbers are equally likely to be chosen by the players.
 # 
-# ### **Choosing groups**
+# ## 9.6 Choosing groups
 # 
 # If you are making choices when two or more conditions apply, then the combinations are multiplied together. For example, suppose that a study is to be conducted in which $25$ patients are to be placed into three groups of equal size. The control group must contain $8$ persons and therefore so must the experimental groups. These must be selected from $25 - 8 = 17$ and $9$ persons each. The number of ways of making this choice is huge even for such small numbers, and is
 # 
 # $$\displaystyle C(25, 8)C(17, 6)C(9, 8) =\frac{25!}{8!(25-8)!}\frac{17!}{6!(17-8)!}\frac{9!}{8!(9-8)!}=230\,637\,794\,250$$
 # 
-# ### **Number of transitions.**
+# ## 9.7 Number of transitions
 # 
 # In a stack of energy levels such as in an atom, many transitions are possible from an upper level $n_2$ to a lower one $n_1$, when the selection rules are ignored. Thus level $6$ can have transitions to levels $5,4,3,2,1$, level $1$ being lowest, and level $5$ can then transfer to levels $4,3,2,1$ etc. The first step is to calculate the number of levels and this is just $n_2-n_1+1$. You can check this by drawing a set of levels. Next, each transition, of course, involves two levels so we need to find the number of ways of selecting two levels (objects) at a time out of the total and this is
 # 
 # $$\displaystyle \binom{n_2-n_1+1}{2}=\frac{(n_2-n_1+1)!}{2!(n_2-n_1+1-2)!}=\frac{(n_2-n_1+1)(n_2-n_1)}{2}$$
 # 
-# ### **Number of determinants in a MO calculation**
+# ## 9.8 Number of determinants in a MO calculation
 # 
 # In the Hartree-Fock self consistent field method of calculating molecular orbitals the wavefunction is described by spin orbitals that are arranged into Slater determinants (see chapter 7 Matrices). There are more spin orbitals than electrons because the wavefunction is expressed as a series of terms and the more terms included lower the energy. The determinants are used to ensure that the Pauli principle applies, which in its wider sense means that the wavefunction is antisymmetric when any two electron coordinates are exchanged. The calculation can be done with the smallest set of determinants, which means using just the lowest energy spin orbitals, but this does not generate the lowest possible energy. What is done is to make wavefunctions, described by Slater determinants, that correspond to one or more excitations and this lowers the energy. This is fine as far as it goes but the number of possible ways excitations can be achieved is vast, and this is of practical importance as each calculation involves evaluating an integral and so has implications on computer time and memory size. Including excited determinants is called *Configuration Interaction*. A typical example is that of benzene described by $72$ spin orbitals and $42$ electrons.
 # 
 # Instead of thinking of determinants, suppose that there are a number of energy levels, or boxes if you wish, into which particles are placed such that only one is allowed into any level. If, for example, there are $72$ levels and $42$ particles what are the number of ways that these can be placed? The number of combinations is $\displaystyle \binom{72}{42}=\frac{72!}{42!30!}=1.6\cdot 10^{20}$ which is vast. Next, suppose that only the lowest $42$ levels are occupied how many ways can we move a single particle at a time to an empty level. This would correspond to singly excited determinants and is the number of choices by which one particle can be moved and that is $30$ and so for all particles is $42\cdot 30 = 1260$. Now if two are moved at a time (a doubly excited determinant) then the number is $\displaystyle \binom{42}{2}\binom{72-42}{2}=374535$. The extension to moving three at a time is clear but we cannot move all of them at once because there are more particles than empty spaces. You can appreciate just how many integrals have to be evaluated when calculating benzene's molecular orbitals. 
 # 
 
-# ## 9.4 Indistinguishable objects
+# ## 9.9 Indistinguishable objects
 # 
 # The cards in a pack of playing cards are clearly distinguishable; it would be pointless if they were not. White tennis balls are generally indistinguishable from one another and so would golf balls be if they were not numbered after manufacture to enable players to identify one from another. Atoms or photons are truly indistinguishable; we cannot label them to tell one from another. The number of ways of placing (distributing) $n$ indistinguishable objects into $p$ distinguishable boxes with $p \ge n$ and with any number of objects being allowed in any one box is,
 # 
@@ -147,7 +147,7 @@ from sympy import *
 # 
 # The number of combinations just described also answers an apparently harder question. If there are $n$ boxes, and $p \lt n$ indistinguishable objects to be placed in the boxes so that no more than one is in any box, then the number of ways of doing this is $C(n, p)$. The assignment into boxes is the same as selecting $p$ out of $n$ objects. In an atom when calculating the term symbols, the number of microstates in a configuration must be enumerated. If there are two electrons to be placed into the three 2p orbitals, a $p^2$ configuration, then there are $C(6, 2) = 6!/(2!4!) = 15$ microstates. Why the 6 when there are only three p orbitals? The electrons must each have a unique set of quantum numbers therefore the spin states are unique; spin up is different from spin down. (See Steinfeld (1981) and also Foote (2005) for a diagrammatic way of calculating term symbols.)
 # 
-# ## 9.5 Sampling with replacement
+# ## 9.10 Sampling with replacement
 # 
 # If a bag contains $n$ objects and we choose $p$ of them but return each object to the bag before making the next choice, then there are $n^p$ ways of choosing them: there are always $n$ ways of choosing, and this is done $p$ times over. If there are four letters ABCD, then choosing three of them produces $4^3 = 64$ possible samples. The number of samples under permutation rules is $4!/1! = 24$ and $4!/(3!1!) = 2$ under combination rules.
 # 
@@ -161,7 +161,7 @@ from sympy import *
 # 
 # therefore, there are $4^3 = 64$ possible binding states in the protein at any one time.
 
-# ## 9.6 Probability
+# ## 9.11 Probability
 # 
 # When answering questions about the probability or chance of some event occurring, it is always worth considering whether the question is real. The question 'what is the chance that next Friday is the 13th?' is not a question involving chance, since checking with a calendar will produce the answer. Similarly, asking 'what is the chance that that runner will win this race?', or 'what is the chance that Portsmouth will beat Manchester United?' is not a question that probability theory can answer, since there are factors involved other than pure chance that make the outcome unpredictable. The question 'what is the chance that I will win the lottery?' is a question to which only a probabilistic, not predictable, answer can be given, provided of course that you have bought a ticket! A probabilistic answer is possible because one number is just as likely to be drawn as another is, otherwise the lottery would not be fair. The _just as likely_ is important here as it indicates that random chance is involved.
 # 
@@ -170,7 +170,7 @@ from sympy import *
 # ### **Probability** 
 # Probability is defined as the ratio of the number of successful outcomes to the total number of possible outcomes.
 # 
-# ## 9.7 Calculating probability: Sample space
+# ## 9.12 Calculating probability: Sample space
 # 
 # The foundations of this subject are based on the ideas of sets and subsets of objects and their properties; for example 'union' and 'intersection', Figure 20. A set is defined as a collection of objects such as the letters of the alphabet. A subset of these could be the vowels, {a, e, i, o, u}. The sample space is the total number of arrangements of objects that are possible for any particular problem. Flipping two coins has the sample space of four elements {HH, HT, TH, TT }. To determine an event or successful outcome is the purpose or object of the calculation, and is a subset of this sample space. Suppose that the event we want is that one head is to be produced when two coins are tossed; then this is the subset A = {HH, HT, TH}. If we want the event, which is two heads, then only one element exists and this is B = {HH}. An event such as B that contains only one sample point is called a simple event. As probability is defined as the ratio of the number of successful outcomes to the total number of possible outcomes, the probability of observing event A, that of one head, is the number of arrangements for this event over the total number in the sample space, making the probability $3/4$. Similarly, observing two heads occurs on average $1/4$ of the times two coins are thrown.
 # 
@@ -182,7 +182,7 @@ from sympy import *
 # _____
 # 
 # 
-# ## 9.8 Definitions, notation, and some useful formulae
+# ## 9.13 Definitions, notation, and some useful formulae
 # 
 # **(i)** The probability of an event $A$ is $p(A)\ge 0$.
 # 
@@ -220,7 +220,9 @@ from sympy import *
 # 
 # **(x)** If two objects are placed into two different boxes, hence distinguishable, then the outcomes are (AB, -), (-, AB), (A, B), (B, A). As each of these is a simple event, the probability of each occurring is 1/4. If the objects are _indistinguishable_, then there are three arrangements (xx, -), (xx, -), (x, x), but the last may be considered to be two events and in this case would occur with a probability of $2/4$. However, if we take the three outcomes to be equally likely then the probability of the last is $1/3$, and this is the case for bosons.
 
-# ## 9.9 Independent and exclusive events, sample spaces, and conditional probability
+# ## 9.14 Independent and exclusive events, sample spaces, and conditional probability
+# 
+# Examples:
 # 
 # ### **(i) Chance of observing a head on a coin and a $6$ on a dice**
 # If a coin and a die are thrown they are clearly independent events and the chance of observing a head and a $6$ is $(1/2) \times (1/6)$. This follows from the fundamental principle of counting; if a job is completed in $n$ ways and another in $m$ ways then both can be completed in $n \times m$ ways. For instance, if there are $6$ types of anions and $8$ types of cations then $48$ different salts can be produced. Now, suppose that two dice are thrown and you want to find the chance that the total of their numbers is $10$. The two dice are independent, the result of one does not influence the other, and the probabilities therefore multiply. As one die can fall in one of six ways, two can fall in $6 \times 6 = 36$ different ways. The number $10$ can be obtained in three different ways, each of which is equally likely to occur: $6 + 4,\, 4 + 6,$ and $5 + 5$. The probability of observing $10$ is therefore $3/36$. If a sum of $6$ is sought, then this is produced in the combinations $1+5,\, 5+1,\, 4+2, \,2+4, \, 1+3$ and would be expected to be observed $5/36$ times the dice are thrown.
@@ -239,7 +241,7 @@ from sympy import *
 # 
 # This calculation can also be described using inclusive probability. Suppose that there are two outcomes A and B, and at least one outcome is required, then the probability is that of event A, plus event B minus that of both A and B or p = p(A) + p(B) - p(AB). The chance that a $3$ is thrown, is $1/6$ on the first throw (outcome A), and again on the second throw is $1/6$, and the chance of both occurring p(AB) = $1/36$ making $1/6 + 1/6 - 1/36 = 11/36$ overall.
 # 
-# ### **Summary:** 
+# ## 9.15 Summary 
 # If $n$ and $m$ are the numbers $1$ to $6$ (the sample space) on a die, then the probability of throwing;
 # 
 # (1) any number $n$ is $1/6$ and of not throwing any $n$ is $1-1/6$.
@@ -313,7 +315,7 @@ from sympy import *
 # 
 # Adding one or two non-alphabetical characters such as space, dash, question mark etc. really helps as would more random numbers and letters. Thus if the password contains $15$ characters for example $8$ letters, $4$ numbers and $3$ non-alphbetical characters (there are at least $30$) the total number of possibilities is $N =26^8\cdot 10^4 \cdot 30^3 \approx 5\cdot 10^{19}$ and the chance of guessing after the huge, and possibly impractical, number of $10^{18}$ guesses is still effectively zero. 
 
-# ## 9.10 The Binomial distribution  (See also chapter 12.3)
+# ## 9.16 The Binomial distribution  (See also chapter 12.3)
 # 
 # If $n$ boxes each contain a large number $W$ of white balls and similarly $B$ black ones, and if one ball is taken from each box, we want to find the chance that exactly $m$ of them will be white. The chance of choosing a white ball from a single box is $p = W/(W + B)$ and correspondingly a black one $q = B/(W + B) = 1 - p$. Therefore if $n = 1$, the probabilities are $p$ white balls and $q$ black. 
 # 
@@ -359,7 +361,7 @@ from sympy import *
 # 
 # The chance of picking four red cards is similarly $35/128$, and of picking four picture cards (12 in each pack) out of five packs, is $P(5, 4, 12/52) = 4050/371 298 \approx 0.01$. The chance of obtaining an even number of aces from six packs of cards, is $313201/4826809 \approx 0.065$ and is the sum of choosing 2, 4 and 6 aces, each with a chance $q = 4/52$.
 # 
-# ###  **Chance of getting $4$ heads in $12$ coin flips** 
+# ## 9.17 Chance of getting $4$ heads in $12$ coin flips 
 # 
 # In this case imagine that the coins are labelled H or T and there are many possible lists of the coins such as HTHHTTHTTHH among which are those that have only $3$ heads. The strategy is therefore to find the number of lists and so the chance of having any list whatever its composition, and then the chance that any one of these has only $3$ heads.
 # 
@@ -369,7 +371,7 @@ from sympy import *
 # 
 # $$\displaystyle p(12,4,1/2)=\binom{12}{4}\left(\frac{1}{2}\right)^4\left(\frac{1}{2}\right)^{12-4}=\frac{495}{4096}$$
 # 
-# ### **Similar random digits**
+# ## 9.18 Similar random digits
 # 
 # What is the probability of finding $20$ similar digits such as $0$, in $1000$ random digits. There are only $10$ types of digits, so using the binomial distribution the probability for $m$ similar digits gives (eqn. 25a)
 # 
@@ -380,7 +382,7 @@ from sympy import *
 # In[2]:
 
 
-n,m,q = symbols('n,m,q')  
+n, m, q = symbols('n, m, q')  
 n = 1000
 m = 50
 q = 1/10
@@ -388,7 +390,7 @@ prob = factorial(n)/(factorial(m)*factorial(n-m))*(q)**m*(1-q)**(n-m)
 prob
 
 
-# ### **How many fragments are there in a well in a 96 well plate?**
+# ## 9.19 How many fragments are there in a well in a 96 well plate?
 # 
 # Labelled DNA fragments are randomly distributed into a $96$ well plate for fluorescence analysis. There are $100$ fragments, what is the chance of having more that one fragment in a well? Using the Binomial distribution  with $p(n=100, m, q=1/96)$, gives the chance of $m$ fragments. Calculating the fraction with $m=0$ and $m=1$ and subtracting these from unity gives the probability. The calculation for $m$ present is
 # 
@@ -396,7 +398,7 @@ prob
 # 
 # which is $35.1$% empty wells and $36.9$% with one fragment and $28$% have more than one fragment.
 # 
-# ### **Red shifted Tryptophan fluorescence**
+# ## 9.20 Red shifted Tryptophan fluorescence
 # 
 # The fluorescence of Tryptophan residues in several types of proteins shows variations in emission wavelength over a range of several nanometres around $340$ nm. Most shifts, but not all, are to the red of Tryptophan in solution. It is suggested that this red shift is due to the presence of electric fields present in the proteins that are caused by nearby residues. The effect might of course just be random, however, only $3$ in $19$ different types of protein have blue shifts so its seems that a random effect is unlikely. As a check the binomial theorem can easily be used. There are two choices, red shift or blue shift and so the chance of a blue shift is 
 # 
@@ -405,7 +407,7 @@ prob
 # which clearly shows that this is unlikely to be a random effect.
 # 
 # 
-# ### **Isotopes**
+# ## 9.21 Isotopes
 # 
 # Consider finding the chance that at least one atom in C$_{60}$ is a $^{13}$C. This isotope is only present at  $1.109$% and $^{12}$C as $98.89$% because carbon only has two stable isotopes.  If we find the chance that no $^{13}$C is present then one minus this number is the chance that at least one is present. Of course, it is also possible to find the chance that $1,2,\cdots$ only are present.
 # 
@@ -419,7 +421,7 @@ prob
 # 
 # Rather than use the formula we work out step by step. The probability of one $^{13}$C is $0.01109$ so the chance of not having one is $(1-0.01109)^9$. The probability of the first one being $^{13}$C is $0.01109(1-0.01109)^9$, however, this carbon could be in any position so we multiply by $10$ to give $10\cdot 0.01109(1-0.01109)^9 = 0.10$ which is $P(9,1,q)$. The calculation for the N atom gives $0.069$ so the joint probability is $0.0069$.
 
-# ### **Chromatography** 
+# ## 9.22 Chromatography 
 # 
 # The shape of a peak as a result of measuring some property of molecules in the mobile phase eluted in a chromatography column will calculated and to do this the column is split into a series of $N$ theoretical plates just as is done for a distillation column. In each theoretical plate there is equilibrium between the mobile and the stationary phase, but not between one plate and its neighbour because the mobile phase flows through the column. The solid or stationary phase consists of the packing material in the column and onto which the solute adsorbs and then desorbs back into the mobile phase at a later time. The number of plates is large, typically several hundred to a few thousand per metre of column. This is a model based just on probabilities and ignores any of the kinetics of forming and being released from a surface or any molecular properties.
 # 
@@ -429,10 +431,7 @@ prob
 # 
 # The equilibration partitions the amount in the mobile and solid phase as $p:(1-p)$. The calculation for the fist step is that $m_0p$ is partitioned into the mobile phase and therefore $m_0 - m_0p = m_0(1-p)$ adsorbed onto the stationary phase. In the next step the mobile phase moves to the next empty plate and $m_0p$ is partitioned between phases meaning that at equilibrium $m_p^2$ is in the mobile and $m_0p(1-p)$ in the stationary phase. The amount $m_0p^2$ is transferred to the third plate and equilibrated, and $m_0p(1-p)$ from the first plate moves to the second and equilibrates. The table shows the scheme. Note the symmetry in the terms at each state, and that the constants follow those of the binomial distribution and Pascal's triangle, 1, 11, 121, 1331.
 # 
-# ```{image} chapter1-chromat-table.png
-# :alt: drawing
-# :align: center
-# ```
+# ![Display](chapter1-chromat-table.png)
 # 
 # Table 1: Progress down the column and the equilibrium amounts of solute at each stage with plates, $0,1,2,3$. The vertical lines indicate equilibration, the curved ones transfer.
 # ________
@@ -461,7 +460,7 @@ prob
 # 
 # which is the probability that a molecule will be eluted. This is the Poisson distribution multiplied by $p$, it still has the shape of the Poisson distribution which for large average value is approximately a 'bell shaped' curve. In chapter 4.8 the width of the eluted curve, which needs a knowledge of integration, is examined. (This example is based on one by C. Perrin, 'Mathematics for Chemists' publ. Wiley 1970). 
 
-# ## 9.11 Large numbers, most probable state and Entropy.
+# ## 9.23 Large numbers, most probable state and Entropy.
 # 
 # An alternative way of forming the binomial coefficient $\displaystyle \frac{n!}{m!(n-m)!}$ in equation 25a is to consider many of two different types of atoms, e.g. He and Ne, or types of snooker balls, e.g. red and white which gives a reasonable analogy as He and Ne have no strong interactions between then when not in contact and neither do billiard balls. Suppose that we place the balls into a jar so that red and white layers are apparent. Next by shaking the jar this arrangement is lost and a irregular looking one is formed. In fact if shaking is continued the ordered layers are almost never going to be seen again. This means that the ordered starting point is just one possibility of a truly vast number of others and returning to the original arrangement is highly unlikely which means that the probability of this is extremely small.
 # 
@@ -500,7 +499,7 @@ prob
 # Figure 20b. The peak normalised probability function  $\displaystyle p=\frac{n!}{k!(n-k)!}\frac{1}{2^n}$ vs $k/n$ for different $n$. The the data only exists for integer values as shown as circles for $n=20$, at larger $n$ a line is drawn as the points become too congested. The curve for $n=10000$ is in red. At large $n$ the distribution becomes very narrow and the maximum value at $n/2$ is greater than all others combined and the distribution can be approximated by its maximum value.
 # ___________
 # 
-# ### **Entropy** 
+# ## 9.24 Entropy 
 # 
 # Returning to  the example of using coloured balls, and starting with ordered layers, on shaking these balls became mixed up and this is a little like two gases diffusing into one another, however, we supposed that there were $100$ balls and $100$ slots to put them into each with the same probability. In reality, in a gas the atoms/molecules (particles) themselves occupy virtually no volume compared to the volume occupied by the gas, thus the number of spaces available is vastly more than the number of particles. If we divide the space occupied up into a  number $w$ of minute cells these are far greater than the number of particles $n$. The total number of configurations is found using the similar equation as before 
 # 
@@ -552,7 +551,7 @@ prob
 # 
 # which is utterly minute and hard to comprehend. Suppose that $10^{12}$ observations could be made each second, then this would mean taking $3\cdot 10^{19}$ /year, and if this continues for the age of the universe ($10^{10})$ years would make $\approx 10^{29}$ observations. However, this would not be of any help at all as it represents only $4\cdot 10^{-4\cdot 10^{21} -29}$ of the total, an utterly insignificant amount. Just to be clear $10^{10^{21}}$ is $1$ followed by $\mathrm{1000 \times a\; million \times a\; million\times a\; million\; zeros} $.
 
-# ## 9.13 Poisson distribution (see also Chapter 13.7)
+# ## 9.25 Poisson distribution (see also Chapter 13.7)
 # 
 # The Poisson distribution is formed by accumulating many events, $n$, where each have a very small probability, $p$, of occurring, but the product $np$, the mean number of events, is moderate. The distribution is asymmetric and skewed for small positive numbers, $n \ge 0$, because it is not possible to have a negative number of events. This distribution is observed when photons are counted or particles counted after a radioactive atom disintegrates, provided their decay time is long compared to the observation time. However, the distribution applies to many other types of events, such as the number of faulty CDs produced, the number of misprints on a printed page, or the number of students absent from a class in any week. One of the earliest examples was recorded over a 20-year period during the 1800's, and was the number of deaths of infantrymen occurred in the Prussian army after they were kicked by a horse.
 # 
@@ -623,7 +622,7 @@ prob
 # 
 # which follows from the definition of the exponential (section 3) and combining the terms gives $\displaystyle \frac{q^me^{-q}}{m!}$ which is the Poisson distribution.
 
-# ## 9.14 Multinomial distribution
+# ## 9.26 Multinomial distribution
 # 
 # The binomial distribution is concerned with selecting between two classes: success and failure; but the choices need not be restricted to two classes. We have already calculated the chance of observing groups of objects or events, such as the chance of 3 GLY, 3 ILE, etc. in the protein sequence in Section 9.2. When there are several choices the multinomial distribution is required and is
 # 
@@ -637,7 +636,7 @@ prob
 # 
 # from which the $m_i$ has to be found and the distribution is maximized subject to the restriction that both the number of particles and the total energy are constant. This is usually done by taking the log of the distribution and, as each $m_i$ is large using Stirling's approximation for $m_i!$. The constraints are dealt with using the method of Lagrange multipliers see chapter 3.11. The full calculation can be found in textbooks on statistical mechanics.
 
-# ## 9.15 Genetics
+# ## 9.27 Genetics
 # 
 # Mendel discovered that pure bred but different strains of peas gave rise to offspring that showed different features but did so in definite proportions. His peas had yellow and green seeds, but 75.05% of the offspring in 8023 trials were yellow, and the remainder, green. Others have since found very similar numbers in even larger trials and in other organisms, such as fruit flies or mice (Maynard Smith 1995). The genetic information we now know is encoded in DNA. The regions involved in transmitting genetic information are called genes, and these form part of a chromosome of which several different types are present in an organism. We are familiar with the observation that the probability with which molecules react is exponentially distributed, which is expressed in the Arrhenius rate equation, the rate being probability/time. In genetics, the situation is entirely different. The probability distribution is flat and the chance that genes mix genetic information occurs with the same constant probability as if they were selected out of boxes, each one being equally probable. Although these genes 'mix' during reproduction, they still retain their own identity and are passed down through the generations. An individual needs two genes to express a trait; yellow vs green seeds or stumpy vs normal wings in a fruit fly, and these mix freely from both parents to produce offspring. These traits are usually called _phenotypes_. The traits the offspring show are expected to be those of the parents, but depending on the genetic make up (_genotype_) of the parent, some traits appear less than would be expected from simple numerology. The reason for this is that some genes are recessive to others and therefore a characteristic trait does not manifest itself in the presence of a dominant gene. Only when the genotype is examined can the true make-up of an individual be found.
 # 

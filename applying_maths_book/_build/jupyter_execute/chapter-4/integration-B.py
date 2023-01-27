@@ -1,9 +1,9 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Integration by substitution
+# # 3 Integration by substitution
 
-# ## 3 Clever substitution can help to solve an integral
+# ## 3.1 Clever substitution can help to solve an integral
 # 
 # It may appear at first that if an integral is not in a standard form then it cannot be solved - not so! The purpose of substitution is to convert the integral into a standard and therefore simpler form whose solution is known. Choosing a substitution is rather an art and some trial and error is usually required. However, just as in football, a clever substitution can produce the required result.
 # 
@@ -41,7 +41,7 @@
 # $$4\int\sin^2(\theta)d\theta = 2\theta -2\sin(\theta)\cos(\theta)+c=2\sin^{-1}\left(\frac{x}{2}\right)-\frac{x}{2}\sqrt{4-x^2}+c$$
 # ____
 # 
-# ## Table 1 Trig. formulas
+# ## 3.2 Table 1 Trig formulas
 # 
 # ![Drawing](integration-table1.png)
 # 
@@ -52,7 +52,7 @@
 # \displaystyle \tan(\theta)=\frac{x}{\sqrt{a^2-x^2}} &\displaystyle \tan(\theta)=\frac{x}{a} &\displaystyle \tan(\theta)=\frac{\sqrt{x^2-a^2}}{a}\\
 # \hline \end{array}$$
 
-# ## 3.1 Definite integrals with substitution
+# ## 3.3 Definite integrals with substitution
 # 
 # When calculating a definite integral first evaluate the indefinite integral and then using the limits, work out the final value. If a substitution is made it is also _necessary to change the limits_, thus making it unnecessary to reverse the substitution to obtain the result.
 # 

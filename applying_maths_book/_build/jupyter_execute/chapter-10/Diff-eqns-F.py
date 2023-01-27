@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Partial Differential Equations, PDE
+# # 15 Partial Differential Equations, PDE
 
 # In[1]:
 
@@ -16,7 +16,7 @@ init_printing()                      # allows printing of SymPy results in types
 plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 
-# ## 9.1 Background
+# ## 15.1 Background
 # 
 # Many important phenomena in chemistry, physics, and biology involve partial differential equations; for example, the Schroedinger, wave, and diffusion equations. Although the general theory of partial differential equations is well beyond the scope of this book, the equations mentioned are among those whose solutions can be obtained by a powerful method known as the separation of variables.
 # 
@@ -67,11 +67,11 @@ ans = simplify(diff(f,t,t) - a**2*diff(f,x,x))
 ans
 
 
-# ## 9.2 Separation of variables
+# ## 15.2 Separation of variables
 # 
 # This method assumes that the solution to the partial differential equation is based on splitting the problem into two parts. In the diffusion equation the quantity required is usually the concentration of a species as a function of time and of position. The solution is therefore found using $c(x,t) = c(x)c(t)$ and splitting the partial differential equation into two parts, one, which depends on time alone and the other on position alone. Both these equations are then made equal to a constant and each can be solved. To find the constants introduced by integration, and thus the exact form of the solution, the initial and boundary conditions are now used. Finding these constants often, but not always, involves expanding the solution as a Fourier series. Solving the differential equations is often the simpler part of the calculation; handing the boundary conditions can involve more work. Some examples are now given.
 # 
-# ### **(i) Particle in a two-dimensional box**
+# ## 15.3 Particle in a two-dimensional box
 # 
 # The energy and wavefunctions of a particle in a two-dimensional box with sides of length $a$ and $b$ are calculated from the Schroedinger equation
 # 
@@ -108,7 +108,7 @@ ans
 # Fig. 20 Wavefunctions in the square well drawn as contour plots. The quantum numbers are labelled above each plot. Negative values are drawn as dashed lines.
 # _____
 # 
-# ### **(ii) Particle in a  circular well**
+# ## 15.4 Particle in a  circular well
 # 
 # The pattern of nodes of the radial part of a wavefunction of a particle in a deep circular well is described by a Bessel function. The properties of these functions are well established and look like damped sine and cosine waves. The pattern of vibrations on a circular drum head is similar.
 # 
@@ -194,7 +194,7 @@ ans
 # 
 # Equation (46), if slightly modified, describes the shape of the normal modes of a circular drum, and the corresponding equations for a square box those of a square drum. The change to make is $\displaystyle k^2 = \omega^2/c^2$ where $c^2 = \sqrt{T/\sigma}$ and $\omega$ is the normal mode's vibrational frequency in rad $s^{-1}$. If the drum skin were cut, a tension of $T$ newton per metre would be needed to keep it closed. The density of the drum skin $\rho$ (units of kg m$^{-2}$) gives $c$ units of velocity. The normal mode frequencies are $\displaystyle \omega_{n,l} = \frac{\rho_{n,l}c}{a}$ and because the overtones are never an integer multiple of the fundamental, because of the values $\rho$ takes (see table), a drum makes a noise rather than a pure sound.
 
-# ### **(iii) Steady State temperature profile in two dimensions**
+# ## 15.5 Steady State temperature profile in two dimensions
 # 
 # The Laplace equation 
 # 
@@ -282,7 +282,7 @@ plt.contour(X, Y, V(X,Y,40))
 plt.show()
 
 
-# ### **(iv) One-dimensional diffusion**
+# ## 15.6 One-dimensional diffusion
 # 
 # To find the time profile of the non-equilibrium concentration of a solute in solution, the diffusion equation, or Fick's second law, is required. Imagine that a partition separates a solution from pure solvent. When the partition is removed, without otherwise disturbing the solution, diffusion of solute into the solvent occurs and _vice versa_. At any given place the concentration is changing as time progresses. At any given time, there is a concentration profile along the whole sample. Fick's First Law states that the flux is proportional to the negative gradient of concentration with distance, multiplied by the diffusion constant, or,
 # 
@@ -334,7 +334,7 @@ plt.show()
 # Fig. 24 Concentration profiles vs. position at different times inside the slab. Molecules are diffusing out from the top and the edges of the slab are kept at zero concentration, for example, by washing material away. The diffusion coefficient used is similar to that of lysozyme $11\cdot 10^{-11}\,\mathrm{m^2\, s^{-1}}$, the initial concentration $10$ mM. The width of the slab is $10$ nm. The times are given next to the lines and are in nanoseconds. The oscillating grey line at the top of the figure is set at $0.01$ ns and shows that close to zero time the sine functions almost but not exactly cancel out one another even with $100$ terms in the summation.  The plot also shows how slow diffusion is as it takes $\approx 600$ ns for the molecules to be removed and the concentration to approach zero.
 # _________
 
-# ### **(v) Diffusion and chemical reactions**
+# ## 15.7 Diffusion and chemical reactions
 # 
 # When diffusion and reaction compete it is possible that explosive growth of a product occurs. Starting with Fick's First Law a term is added to allow for first order reaction to form product and is
 # 
@@ -375,7 +375,7 @@ plt.show()
 # fig 24a. Diffusion and reaction population at different times in microseconds. $L=10^{-4}$ m, $k=10^3$ /s, $D/L^2=0.1$ The totals listed in the plot are proportional to the area under each curve, i.e to the amount of $c$ produced. It is clear that the amount produced increases slowly to begin with then exponentially. The vertical line at $x/L=0.5$ represents the delta function population at zero time.
 # ______
 
-# ### **(vi) Flow and chemical reaction. Lateral flow tests**
+# ## 15.8 Flow and chemical reaction. Lateral flow tests
 # 
 # In a lateral flow test used to detect, for example, Covid 19 viruses, the analyte containing the virus is solubilsed in a buffer along with other reagents and a few drops added to a sample pad in the test device, see figure 24b. By capillary action, similar to that which occurs in thin layer chromatography, the fluid containing the analyte passes through to a second region containing antibodies (immunoglobulins) attached to silver or gold nanoparticles. The fluid then passes into a ribbon of nitrocellulose impregnated with reporter antibodies in two specific places, the first to trap any analyte containing species and the second as a test region to confirm that flow has occurred. Finally this ribbon is attached to a wick that ensures that flow continues until no more fluid is left.
 # 
@@ -447,7 +447,7 @@ plt.show()
 # Figure 24c. Calculated profiles of Ab$\cdot$A species in a lateral flow test as time vs distance. The reactive area $x_a\to x_b$ is shown by the vertical lines and is where the species Ab$\cdot$A binds to form Ab$\cdot$A$\cdot$X. The population of this rises in the test region as Ab$\cdot$A declines. Notice that outside this region the population of Ab$\cdot$A remains constant and its shape unchanged. The bottom line (red) shows the _time_ profile of the product placed in the test region.
 # ________
 
-# ### **(vii) Diffusion in a closed tube or isolated bar**
+# ## 15.9 Diffusion in a closed tube or isolated bar
 # 
 # If the ends of a long tube are filled with solvent, then closed and some solute injected, diffusion will ensure that equilibrium will eventually be reached no matter where the solute is injected. Similarly, if the end of an otherwise insulated bar is heated for a short while, as heat cannot escape, a uniform temperature will be reached. From these results, we know that, because the initial concentration or temperature profile levels out to a constant value, the solution must have both a time-dependent and a constant part. At long times the temperature or concentration will become uniform and, if $f(x)$ describes the amount initially added and $0 \lt x \lt L$, the long time value is $\displaystyle \frac{1}{L}\int_0^L f(x)dx$. The initial condition is given by the shape of the concentration profile $f(x)$.
 # 
@@ -490,7 +490,7 @@ plt.show()
 # Right: The figure on the right shows the time profile measured at $x = 2.5, 10$ and $25$ nm along the tube. Both the x and y- axes are shown on a logarithmic scale which makes the plotted lines easier to distinguish from one another. Initially at $x = 2.5$ the concentration falls rapidly, while that at 10 nm remains effectively zero for about $10$ ns and that at $25$ nm remains zero for a few hundred ns. Eventually some molecules reach $10$ nm and then $25$ nm and the population at both positions begins to rise as a wave of molecules passes. As the tube is of finite length  eventually a steady concentration along the tube is reached. This takes $\approx 50000$ ns and demonstrates that molecular diffusion is an intrinsically slow process.
 # _______
 # 
-# ### **(viii) Periodic boundary conditions**
+# ## 15.10 Periodic boundary conditions
 # 
 # When diffusion is on a circular loop, the boundary conditions are periodic. The effect is similar to the insulated bar in that an initial concentration profile becomes constant at long times. If the concentration is initially $f(\theta), -\pi < \theta < +\pi$, the amount initially present at long times is $\displaystyle \frac{1}{\pi}\int_{\pi}^{\pi}f(\theta)d\theta$. The boundary conditions ensure that the concentration and its gradient are the same after a period,
 # 

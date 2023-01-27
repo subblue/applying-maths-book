@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Cross product or vector product
+# # 15 Cross product or vector product
 
 # In[1]:
 
@@ -15,7 +15,7 @@ init_printing()                      # allows printing of SymPy results in types
 plt.rcParams.update({'font.size': 16})  # set font size for plots
 
 
-# ## 16 Cross product or vector product
+# ## 15 Cross product or vector product
 # The cross product of two vectors produces a vector rather than a scalar. This vector is at right angles to the other two; consequently, the cross product is unique to vectors in three- dimensional space. The symbol $\times$ is used to indicate a cross product; some authors use $\land $ although this less is common nowadays. 
 # 
 # If $\vec u$ and $\vec v$ are two vectors at an angle $\theta$ to one another, the cross product is
@@ -63,7 +63,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # This relationship can be understood by realizing that the area of triangle $bce$ is half that of the rectangle. To calculate the area of a triangle we need to use a basis set and this is done next.
 # 
-# ## 16.1 Cross products using the $( i,  j,  k)$ basis set
+# ## 15.1 Cross products using the i j k basis set
 # 
 # Returning to equation 38 we can see that the cross product of two vectors can be zero; $\vec A \times \vec B = 0$ even when neither $\vec A$ nor $\vec B$ are zero because the angle between them is zero. It is clear that, if $\vec A$ and $\vec B$ are parallel to one another the angle between them being zero, $\sin(0) = 0$; the same is true if the vectors are anti-parallel because $\sin(180^\text{o}) = 0$, see figure 32.
 # 
@@ -101,7 +101,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # $$\displaystyle \frac{1}{2}\big|\vec a\times\vec b\big|= \frac{1}{2}\big|28\boldsymbol i - 28\boldsymbol j - 14\boldsymbol k\big|=\frac{1}{2}\sqrt{28^2 + 28^2 + 14^2} = 21$$
 # 
-# ## 16.2 Cross product with a vector basis set
+# ## 15.2 Cross product with a vector basis set
 # 
 # If a basis set of vectors such as $(1, 0, 0), (0, 1, 0), (0, 0, 1)$ is used instead of $(i, j, k)$ then the cross product is written slightly differently. If the vectors are $\vec v = \begin{bmatrix}3& 2 &5\end{bmatrix}$ and $\vec u = \begin{bmatrix}4 &3& 6\end{bmatrix}$ the cross product determinant gives the vector
 # 
@@ -109,7 +109,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # where the determinant multiplication is performed in the normal way. The length of the vector is its absolute value, which is $14$.
 # 
-# ## 16.3 Distance from a point to a line and between two skew lines
+# ## 15.3 Distance from a point to a line and between two skew lines
 # 
 # Cross products are useful in calculating the distance between a point and a line or plane and between two skew lines; a calculation that is very hard to do with coordinate geometry. If $p$ is our victim point, figure 34, and a line goes from point $A \to B$, then the perpendicular (shortest) distance is $d$. The cross product of vector $\vec a$ with $\vec b $ is $\vec a \times \vec b = | \vec a || \vec b |\sin(\theta)\vec n$, where $\vec n$ is a unit vector. The magnitude of this cross product is $|\vec a \times \vec b| = |\vec a||\vec b|\sin(\theta)$ but by trigonometry, $\sin(\theta) = d/a$ where $a$ is the length of $\vec a$ or $a = |\vec a|$, then
 # 
@@ -145,7 +145,7 @@ print('{:s} {:s} {:s} {:8.3f}'.format('cross product=', str(ab),' distance = ',d
 
 # Skew lines are straight lines in three dimensions that do not cross because they are displaced from one another. Aircraft trajectories generally follow skew lines, the closest distance of approach permitted is approximately 3 miles. This distance is the absolute value of the cross product of the two vectors defining the trajectories because the shortest approach vector is at right angles to both trajectories, as shown in figure 34.
 # 
-# ## 16.4 Equation of a plane and distance from a point to a plane
+# ## 15.4 Equation of a plane and distance from a point to a plane
 # 
 # Often when studying molecules, the distance of an atom to the bond formed by two other atoms, or to the plane formed by several others, is an important quantity; for example, to calculate the $\pi\pi$ interaction between an atom and an aromatic ring or double bond. In X-ray crystallography, the distance from the origin to planes of atoms generating the diffraction pattern defines the distances used to make the reciprocal lattice.
 # 
@@ -226,7 +226,7 @@ X = np.array([x,y,z])
 np.dot(n,(X-T))          # equation of plane 
 
 
-# ## 16.5 Plane defined by its intercepts
+# ## 15.5 Plane defined by its intercepts
 # 
 # The distance from the origin to a plane is given by equation 47 but in the special case that the intercepts $a, b, c$ are known, and the plane goes through the points $(a, 0 0), (0, b, 0),(0, 0, c)$, the equation is
 # 
@@ -238,11 +238,11 @@ np.dot(n,(X-T))          # equation of plane
 # 
 # and _only_ applies when the plane is defined by its intercepts; notice that the intercept values only are used. This equation is particularly useful in crystallography to calculate the reciprocal lattice distance from the origin, and hence the inter-lattice spacing of crystals with orthorhombic (orthogonal) axes.
 # 
-# ## 16.6 Best plane through a set of points
+# ## 15.6 Best plane through a set of points
 # 
-# In haemoglobin, the porphyrin has four N atoms roughly, but not exactly, in a plane surrounding the Fe, and similarly in chlorophyll-containing proteins found in photosynthetic organisms, the four N atoms surround the Mg. We often need to know how far an atom is from the plane of another molecule. A plane is determined by choosing three atoms not four. However, four atoms defining the plane would be more useful and, in this case, a best-fit plane to these four atoms is needed. This plane can be calculated using a matrix method similar to that used to determine moments of inertia, and this is described in Chapter 7.13 or by least squares, chapter 13. When this plane is found, the equations developed in Sections 16 can be used to find distances.
+# In haemoglobin, the porphyrin has four N atoms roughly, but not exactly, in a plane surrounding the Fe, and similarly in chlorophyll-containing proteins found in photosynthetic organisms, the four N atoms surround the Mg. We often need to know how far an atom is from the plane of another molecule. A plane is determined by choosing three atoms not four. However, four atoms defining the plane would be more useful and, in this case, a best-fit plane to these four atoms is needed. This plane can be calculated using a matrix method similar to that used to determine moments of inertia, and this is described by least squares in chapter 13. When this plane is found, the equations developed in Sections 16 can be used to find distances.
 # 
-# ## 17 Scalar triple products are numbers
+# ## 16 Scalar triple products are numbers
 # 
 # If $\vec u, \vec v$, and $\vec w$ are vectors, the expression $\vec w\cdot (u \times \vec v)$ or equivalently $\vec w\cdot (u \times \vec v)$ or $\vec w\cdot u \times \vec v$ etc. is a _triple product_  Using the results from 16.1 this equates to
 # 
@@ -280,7 +280,7 @@ np.dot(n,(X-T))          # equation of plane
 # 
 # To calculate $\vec b^*$ the cross product needed is $\vec c\times \vec a=\begin{vmatrix}1&1&1\\0 &0&2 \\5/2&0&0 \end{vmatrix} =5$ making $\vec b^*=2/3$ which is the reciprocal of $b$. A similar result is found for $\vec a^*$ and $\vec c^*$.
 # 
-# ## 18 Vector triple product
+# ## 17 Vector triple product
 # 
 # The vector triple product is the identity
 # 

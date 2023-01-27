@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Basis sets and bra-ket algebra
+# # 4 Basis sets and bra-ket algebra
 
 # In this section, bra-ket algebra is described more fully together with basis sets and how they are intimately related to the bra and ket. Some algebra for manipulating the bra and ket is also described.
 # 

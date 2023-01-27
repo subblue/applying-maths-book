@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Projections and components
+# # 6 Projections and components
 
 # ## 6 Projections
 # To find the projection or component of a vector $\vec A$ that lies along an axis, the dot product with one of the vector's orthonormal base vectors is calculated. For example, to calculate the component along the x-axis the base vector $\boldsymbol i$ is used;
@@ -118,7 +118,7 @@
 # Figure 17a. Calculating the shortest distance (a Great Circle) between two points on the surface of a sphere using the dot product and spherical polar coordinates.
 # ______
 
-# ## 6.1 Direction cosines
+# ## 7 Direction cosines
 # 
 # A three-dimensional vector is often defined as $\vec V = a\boldsymbol i + b\boldsymbol j + c\boldsymbol k$. However, the vector can equally well be described by the angles it makes to the $x, y$ and $z$-axes, when these angles are $\alpha, \beta,  \gamma$, as shown in figure 18, where the angles are measured away from the axes to the vector.
 # The vector $v$ is now described by
