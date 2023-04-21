@@ -58,7 +58,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # Sometimes when one variable is small compared to another it can be ignored. The expansion of the exponential is one such case where this is legitimate; 
 # 
-# $$\displaystyle e^{-x}=1 - x + \frac{x^2}{2!}-\frac{x^3}{3!}\cdots \qquad\tag(2)$$ 
+# $$\displaystyle e^{-x}=1 - x + \frac{x^2}{2!}-\frac{x^3}{3!}\cdots$$ 
 # 
 # The terms $2!$ and $3!$ are factorials; $3!=3\times 3\times 1$ and similarly for other numbers.  Suppose that $x$ is small compared to  $1$ then $x^2$ is very small and $x^3$ tiny, then it is possible to approximate $\displaystyle e^{-x} \approx 1 - x$ and this is valid. However, to do this in the middle of a calculation is invariably fatal. Take a simple example, in the expression 
 # 
