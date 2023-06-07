@@ -1563,11 +1563,12 @@ title="Print to PDF"
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#small-sample-confidence-limits-students-t">
+  <a class="reference internal nav-link" href="#small-sample-confidence-limits-students-t-distribution">
    3.2 Small sample confidence limits: Student’s
    <em>
     t
    </em>
+   distribution
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -1778,11 +1779,12 @@ title="Print to PDF"
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#small-sample-confidence-limits-students-t">
+  <a class="reference internal nav-link" href="#small-sample-confidence-limits-students-t-distribution">
    3.2 Small sample confidence limits: Student’s
    <em>
     t
    </em>
+   distribution
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -2193,12 +2195,12 @@ always necessary to check the equation being used, which unfortunately, is not a
 \hline \end{array}\end{split}\]</div>
 </section>
 </section>
-<section id="small-sample-confidence-limits-students-t">
-<h2>3.2 Small sample confidence limits: Student’s <em>t</em><a class="headerlink" href="#small-sample-confidence-limits-students-t" title="Permalink to this headline">#</a></h2>
-<p>When the number of samples is small, s may not be a very good estimate of <span class="math notranslate nohighlight">\(\sigma\)</span> and, in this case, Student’s ‘<span class="math notranslate nohighlight">\(t\)</span>’ test is needed. The distribution is similar in shape to the normal distribution, but is wider in the wings. It is characterized by one parameter <span class="math notranslate nohighlight">\(t = n - 1\)</span> where <span class="math notranslate nohighlight">\(n\)</span> is the number of samples being averaged, and <span class="math notranslate nohighlight">\(t\)</span> is called its ‘degrees of freedom’. When the sample size increases, the t distribution approaches the normal one. Using a similar argument to that for the normal distribution, the <span class="math notranslate nohighlight">\(t\)</span> distribution produces confidence limits,</p>
+<section id="small-sample-confidence-limits-students-t-distribution">
+<h2>3.2 Small sample confidence limits: Student’s <em>t</em> distribution<a class="headerlink" href="#small-sample-confidence-limits-students-t-distribution" title="Permalink to this headline">#</a></h2>
+<p>When the number of samples is small, s may not be a very good estimate of <span class="math notranslate nohighlight">\(\sigma\)</span> and, in this case, Student’s ‘<span class="math notranslate nohighlight">\(t\)</span>’ test is needed. The distribution is similar in shape to the normal distribution, but is wider in the wings. It is characterized by one parameter <span class="math notranslate nohighlight">\(v = n - 1\)</span> where <span class="math notranslate nohighlight">\(n\)</span> is the number of samples being averaged, and <span class="math notranslate nohighlight">\(v\)</span> is called its ‘degrees of freedom’. When the sample size increases, the <span class="math notranslate nohighlight">\(t\)</span> distribution approaches the normal one. Using a similar argument to that for the normal distribution, the <span class="math notranslate nohighlight">\(t\)</span> distribution produces confidence limits,</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \langle x \rangle\pm t_{\alpha/2}\frac{s}{\sqrt{n}}\qquad\tag{12}\]</div>
-<p>where <span class="math notranslate nohighlight">\(t_{\alpha/2}\)</span> is obtained by integrating the distribution, just as was done for the normal distribution. Only a few values are used regularly, some of which are listed in Table 3. (Notice that in the table that <span class="math notranslate nohighlight">\(t\)</span> is one less than the number of data points.)</p>
+<p>where <span class="math notranslate nohighlight">\(t_{\alpha/2}\)</span> is obtained by integrating the distribution, just as was done for the normal distribution. Only a few values are used regularly, some of which are listed in Table 3. (Notice that in the table that <span class="math notranslate nohighlight">\(v\)</span> is one less than the number of data points.)</p>
 </section>
 <section id="table-3-student-s-t-distribution">
 <h2>Table 3 Student’s <em>t</em> distribution<a class="headerlink" href="#table-3-student-s-t-distribution" title="Permalink to this headline">#</a></h2>
@@ -2234,15 +2236,15 @@ v &amp; &amp; &amp;\\
 <p>and <span class="math notranslate nohighlight">\(95\)</span>% confidence limits need to be placed on the population mean <span class="math notranslate nohighlight">\(\mu\)</span>. To calculate how many days on average it will be necessary to wait to be <span class="math notranslate nohighlight">\(95\)</span>% sure of obtaining the results of an analysis, use equation 12 with the <span class="math notranslate nohighlight">\(t\)</span> value taken from Table 3. As <span class="math notranslate nohighlight">\(\sigma\)</span> (population mean) is unknown and the sample is small then</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \langle x\rangle \pm t_{0.025}\frac{s}{\sqrt{n}}\qquad\tag{13}\]</div>
-<p>The sample size <span class="math notranslate nohighlight">\(n = 6\)</span> so there are <span class="math notranslate nohighlight">\(t = n - 1 = 5\)</span> degrees of freedom, and from <span class="math notranslate nohighlight">\(t\)</span> distribution table <span class="math notranslate nohighlight">\(t_{0.025} = 2.571\)</span> for <span class="math notranslate nohighlight">\(95\)</span>% confidence. The <span class="math notranslate nohighlight">\(0.025\)</span> is used because this is the two sided value, the limit being <span class="math notranslate nohighlight">\(2.5\)</span>% to the far right and far left of the <span class="math notranslate nohighlight">\(t\)</span>-distribution, in the same way as that shown for the normal distribution in figure 4. The sample mean <span class="math notranslate nohighlight">\(\langle x\rangle = 16.94\)</span> days and the sample standard deviation <span class="math notranslate nohighlight">\(s = 6.47\)</span> days. Therefore, a <span class="math notranslate nohighlight">\(95\)</span>% confidence interval for <span class="math notranslate nohighlight">\(\mu\)</span> is given by</p>
+<p>The sample size <span class="math notranslate nohighlight">\(n = 6\)</span> so there are <span class="math notranslate nohighlight">\(v = n - 1 = 5\)</span> degrees of freedom, and from <span class="math notranslate nohighlight">\(t\)</span> distribution table <span class="math notranslate nohighlight">\(t_{0.025} = 2.571\)</span> for <span class="math notranslate nohighlight">\(95\)</span>% confidence. The <span class="math notranslate nohighlight">\(0.025\)</span> is used because this is the two sided value, the limit being <span class="math notranslate nohighlight">\(2.5\)</span>% to the far right and far left of the <span class="math notranslate nohighlight">\(t\)</span>-distribution, in the same way as that shown for the normal distribution in figure 4. The sample mean <span class="math notranslate nohighlight">\(\langle x\rangle = 16.94\)</span> days and the sample standard deviation <span class="math notranslate nohighlight">\(s = 6.47\)</span> days. Therefore, a <span class="math notranslate nohighlight">\(95\)</span>% confidence interval for <span class="math notranslate nohighlight">\(\mu\)</span> is given by</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle 16.94 \pm 2.571\cdot6.47/\sqrt{6} = 16.94 \pm 6.79 \text{ days}\]</div>
-<p>Rounding the answers gives <span class="math notranslate nohighlight">\(17 \pm 7\)</span> which is  <span class="math notranslate nohighlight">\(10 \to 24\)</span> days and is a very wide variation. It would certainly be worth considering changing your supplier!</p>
+<p>Rounding the answers gives <span class="math notranslate nohighlight">\(17 \pm 7\)</span> which is <span class="math notranslate nohighlight">\(10 \to 24\)</span> days and is a very wide variation. It would certainly be worth considering changing your supplier!</p>
 </section>
 </section>
 <section id="critical-values-from-cumulative-student-s-t-distribution">
 <h2>3.3 Critical values from cumulative Student’ s <em>t</em> distribution<a class="headerlink" href="#critical-values-from-cumulative-student-s-t-distribution" title="Permalink to this headline">#</a></h2>
-<p>To use Python to find the <span class="math notranslate nohighlight">\(t\)</span> values for n points with <span class="math notranslate nohighlight">\(\alpha/2 = 0.025\)</span> we follow the method used for the normal distribution but now with the <span class="math notranslate nohighlight">\(t\)</span> distribution. This means loading the library as ‘from scipy.stats import t,norm’ as shown at the top of this page.  Looking at Table 3, with <span class="math notranslate nohighlight">\(v=5\)</span> and at <span class="math notranslate nohighlight">\(95\)</span>% the value is <span class="math notranslate nohighlight">\(2.571\)</span>. Using the t.cdf function produces <span class="math notranslate nohighlight">\(0.975\)</span> which is the value fro <span class="math notranslate nohighlight">\(-\infty\to 2.571\)</span> and so the two tailed value is <span class="math notranslate nohighlight">\(0.95\)</span> or <span class="math notranslate nohighlight">\(95\)</span>%.</p>
+<p>To use Python to find the <span class="math notranslate nohighlight">\(t\)</span> values for <span class="math notranslate nohighlight">\(n\)</span> points with <span class="math notranslate nohighlight">\(\alpha/2 = 0.025\)</span> we follow the method used for the normal distribution but now with the <span class="math notranslate nohighlight">\(t\)</span> distribution. This means loading the library as ‘from scipy.stats import t,norm’ as shown at the top of this page.  Looking at Table 3, with <span class="math notranslate nohighlight">\(v=5\)</span> and at <span class="math notranslate nohighlight">\(95\)</span>% the value is <span class="math notranslate nohighlight">\(2.571\)</span>. Using the t.cdf function produces <span class="math notranslate nohighlight">\(0.975\)</span> which is the value fro <span class="math notranslate nohighlight">\(-\infty\to 2.571\)</span> and so the two tailed value is <span class="math notranslate nohighlight">\(0.95\)</span> or <span class="math notranslate nohighlight">\(95\)</span>%.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">w</span> <span class="o">=</span> <span class="mf">2.571</span>
