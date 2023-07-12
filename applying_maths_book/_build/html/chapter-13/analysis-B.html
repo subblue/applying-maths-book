@@ -1548,6 +1548,24 @@ title="Print to PDF"
    6.7 Correlation coefficients
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-function-should-i-use-for-a-linear-fit-y-bx-or-y-a-bx">
+   6.8 What function should I use for a linear fit,
+   <span class="math notranslate nohighlight">
+    \(y=bx\)
+   </span>
+   or
+   <span class="math notranslate nohighlight">
+    \(y=a+bx\)
+   </span>
+   ?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#over-parameterising">
+   Over-parameterising
+  </a>
+ </li>
 </ul>
 
     </nav>
@@ -1603,6 +1621,24 @@ title="Print to PDF"
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#correlation-coefficients">
    6.7 Correlation coefficients
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-function-should-i-use-for-a-linear-fit-y-bx-or-y-a-bx">
+   6.8 What function should I use for a linear fit,
+   <span class="math notranslate nohighlight">
+    \(y=bx\)
+   </span>
+   or
+   <span class="math notranslate nohighlight">
+    \(y=a+bx\)
+   </span>
+   ?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#over-parameterising">
+   Over-parameterising
   </a>
  </li>
 </ul>
@@ -1719,7 +1755,7 @@ x &amp; y &amp; \sigma\\
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Algorithm: Weighted Least Squares</span>
 
 <span class="c1">#--------------------------------      </span>
-<span class="k">def</span> <span class="nf">lsq</span><span class="p">(</span><span class="n">xval</span><span class="p">,</span><span class="n">yval</span><span class="p">,</span><span class="n">w</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">lsq</span><span class="p">(</span><span class="n">xval</span><span class="p">,</span><span class="n">yval</span><span class="p">,</span><span class="n">w</span><span class="p">):</span>  <span class="c1"># y = a + bx</span>
     <span class="n">Sw</span>   <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">w</span><span class="p">)</span>
     <span class="n">Sxw</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">xval</span><span class="o">*</span><span class="n">w</span><span class="p">)</span>
     <span class="n">Syw</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">yval</span><span class="o">*</span><span class="n">w</span><span class="p">)</span>
@@ -1925,7 +1961,7 @@ residuals</p>
 \[\displaystyle  F_0=\frac{ \text{Mean Square for Regression}}{\text{Mean Square for Error}} \]</div>
 <p>should behave like a random variable from an <span class="math notranslate nohighlight">\(F\)</span>-distribution with <span class="math notranslate nohighlight">\(1\)</span> and <span class="math notranslate nohighlight">\((n - 2)\)</span> degrees of freedom. (<span class="math notranslate nohighlight">\(F\)</span>-distributions are tabulated in many books on statistics but can be calculated using Python, as shown below.) Values close to <span class="math notranslate nohighlight">\(1.0\)</span> support the null hypothesis that the model <em>does not fit the data</em> well, while large extreme values, exceeding some critical value from the upper tail of the <span class="math notranslate nohighlight">\(F\)</span>-distribution, lead to the conclusion that <span class="math notranslate nohighlight">\(x\)</span> has a significant effect upon <span class="math notranslate nohighlight">\(y\)</span>.</p>
 <p>The null hypothesis, called <span class="math notranslate nohighlight">\(H_0\)</span>, is one where model does not fit the data, versus <span class="math notranslate nohighlight">\(H_1\)</span> where it does fit the data. To test this, the calculated <span class="math notranslate nohighlight">\(F_0 = 1778\)</span>  greatly exceeds the critical value <span class="math notranslate nohighlight">\(11.26\)</span> at the <span class="math notranslate nohighlight">\(1\)</span>% level calculated from the <span class="math notranslate nohighlight">\(F\)</span>-distribution <span class="math notranslate nohighlight">\(f(0.01, 1, n -2)\)</span>. This suggests that <span class="math notranslate nohighlight">\(x\)</span> has a significant effect upon <span class="math notranslate nohighlight">\(y\)</span>. This result from the ANOVA table is hardly surprising because the data is clearly well described by a straight line.</p>
-<p>The critical value of <span class="math notranslate nohighlight">\(F_0\)</span> is calculated using Python with the <span class="math notranslate nohighlight">\(f\)</span> distribution loaded via scipy.stats defined  the top of the page. (You must avoid using symbol <span class="math notranslate nohighlight">\(f\)</span> in any other python as this overwrites the stats value). The ppf function gives the quantile value needed at the <span class="math notranslate nohighlight">\(1\)</span> level,which is the <span class="math notranslate nohighlight">\(0.99\)</span></p>
+<p>The critical value of <span class="math notranslate nohighlight">\(F_0\)</span> is calculated using Python with the <span class="math notranslate nohighlight">\(f\)</span> distribution loaded via scipy.stats defined  the top of the page. (You must avoid using symbol <span class="math notranslate nohighlight">\(f\)</span> in any other python as this overwrites the stats value). The ppf function below gives the quantile value needed at the <span class="math notranslate nohighlight">\(1\)</span>% level, hence the <span class="math notranslate nohighlight">\(0.99\)</span> used below,</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mf">0.99</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">8</span><span class="p">)</span>    <span class="c1"># f is name of distribution, see top of page, from scipy.stats ....</span>
@@ -1943,6 +1979,29 @@ residuals</p>
 <p>The reason is that what would be considered as a good fit has a correlation coefficient of, for example, <span class="math notranslate nohighlight">\(R = 0.99\)</span> and a poor fit perhaps a value of <span class="math notranslate nohighlight">\(0.98\)</span>, which is so similar that it provides very poor discrimination between good and bad fits. This poor discrimination is illustrated if larger and larger random numbers are added to the data and the least squares fitting repeated until <span class="math notranslate nohighlight">\(R\)</span> decreases slightly to <span class="math notranslate nohighlight">\(0.98\)</span>. However, the reduced <span class="math notranslate nohighlight">\(\chi^2\)</span> has now increased to <span class="math notranslate nohighlight">\(\approx 8\)</span> i.e. by about ten times, instead of being <span class="math notranslate nohighlight">\(\approx 1\)</span>, indicating that now, with the added random values, the model is a very poor fit to the data.</p>
 <p>If <span class="math notranslate nohighlight">\(R\)</span> is the sample correlation coefficient then <span class="math notranslate nohighlight">\(0 \lt R \lt 1\)</span> and is defined as <span class="math notranslate nohighlight">\(R = b\sqrt{S_{xx} /S_{yy}}\)</span> and
 as the <span class="math notranslate nohighlight">\(S_{xx}\)</span> and <span class="math notranslate nohighlight">\(S_{yy}\)</span> depend only on the data points, the ratio is a constant multiplied by the gradient <span class="math notranslate nohighlight">\(b\)</span> and this is why it is a poor statistic. The constant part is the ‘spread’ of the <span class="math notranslate nohighlight">\(x\)</span> values divided by that of the <span class="math notranslate nohighlight">\(y\)</span>.</p>
+</section>
+<section id="what-function-should-i-use-for-a-linear-fit-y-bx-or-y-a-bx">
+<h2>6.8 What function should I use for a linear fit, <span class="math notranslate nohighlight">\(y=bx\)</span> or <span class="math notranslate nohighlight">\(y=a+bx\)</span> ?<a class="headerlink" href="#what-function-should-i-use-for-a-linear-fit-y-bx-or-y-a-bx" title="Permalink to this headline">#</a></h2>
+<p>After completing an experiment you will have data that describes the effect that you are examining. You should also have a model/hypothesis that produces an equation that describes the same effect. We will suppose, for simplicity, that you need a linear least squares fit to your data to obtain the parameters in your model.</p>
+<p>A basic undergraduate experiment is to use a spectrophotometer to measure the optical density of a series of solutions of known concentration to form a calibration curve, and then to determine an unknown concentration. The calibration curve has the simple form</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle D_\lambda=\epsilon_\lambda[C]\ell\]</div>
+<p>where <span class="math notranslate nohighlight">\(D_\lambda\)</span> is the optical density, at wavelength <span class="math notranslate nohighlight">\(\lambda\)</span>, <span class="math notranslate nohighlight">\(\epsilon_\lambda\)</span> the extinction coefficient,  <span class="math notranslate nohighlight">\(\ell\)</span> the sample path length and <span class="math notranslate nohighlight">\([C]\)</span> the concentration, thus the gradient is <span class="math notranslate nohighlight">\(\epsilon_\lambda \ell\)</span>. A second example is the Stern_Volmer equation, which describes the relative fluorescence yield as a result of quenching at quencher concentration <span class="math notranslate nohighlight">\([Q]\)</span>. (See Chapter 10, Q10 and Q8 of this Chapter). This equation has the form</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{\varphi}{\varphi_0}=1+K[Q]\tag{42 a}\]</div>
+<p>The fluorescence yield is <span class="math notranslate nohighlight">\(\varphi\)</span> at quencher concentration <span class="math notranslate nohighlight">\([Q]\)</span>, <span class="math notranslate nohighlight">\(\varphi_0\)</span> the yield without quencher and <span class="math notranslate nohighlight">\(K\)</span> the Stern-Volmer constant. This equation can also be written equivalently as</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{\varphi}{\varphi_0}-1 = K[Q]\tag{42 b}\]</div>
+<p>and so has the simpler mathematical form <span class="math notranslate nohighlight">\(y=bx\)</span>. The question remains, however, should these data be analysed using either <span class="math notranslate nohighlight">\(y=bx\)</span> or <span class="math notranslate nohighlight">\(y=a+bx\)</span> even though theoretically <span class="math notranslate nohighlight">\(a=0\)</span>.</p>
+<p>The answer is always to use <span class="math notranslate nohighlight">\(y = a+bx\)</span> for the simple reason that any experimental measurement always contains some noise and that noise has a distribution of values. Of course there is also the additional possibility of some bias has crept into the measurement such as an unexpected and systematic error. Additionally experiment measures what actually happens and the equation, from theory, used may not adequately describe this. For all of these reasons it is always best for linear least-squares to use <span class="math notranslate nohighlight">\(y=a+bx\)</span>. The Stern-Volmer equation should therefore be used as eqn. 42a with the expectation that <span class="math notranslate nohighlight">\(a=1\pm \sigma\)</span>, where the error in the intercept can be analysed to see if it is within what is expected at, say, a <span class="math notranslate nohighlight">\(95\)</span>% level. If it is not, and the error in the gradient is also large then one may suspect that the model used does not describe the data or that some other unexpected error is involved. If eqn. <span class="math notranslate nohighlight">\(42b\)</span> has been used then such important information is lost and the analysis may seem correct but is misleading.</p>
+<p>The result of analysing data described as <span class="math notranslate nohighlight">\(y=5+10x\)</span> is shown below, where normally distributed noise is added. The results of a typical fit shown in. fig 9a (left). You can see that in this particular case the gradient of the <span class="math notranslate nohighlight">\(a+bx\)</span> fit is slightly less than the true value while that for <span class="math notranslate nohighlight">\(y=bx\)</span> is too large. After <span class="math notranslate nohighlight">\(1000\)</span> similar trials a histogram of the least squares gradient is plotted for both cases, fig. 9a (right). It is clear that while both sets of data produce a distribution of gradients, only the plot of <span class="math notranslate nohighlight">\(y=a+bx\)</span> produces, on average, the correct gradient as shown by the vertical line at <span class="math notranslate nohighlight">\(b=10\)</span>. The distribution of gradients is a gaussian whose width is proportional to the standard deviation of the slope.</p>
+<p>These plots also illustrate that although the least squares gives the best fit to the data, this is usually slightly different to the true value, which is entirely to be expected given the nature of the noise, i.e. the noise always has a distribution and this is reflected in the distribution of results obtained. These distributions also illustrate the necessity of repeated measurements, for only by repeated measurements can the true value be approached. Of course, the true value might be obtained by chance with the first measurement, however, you will not know that this is the case.</p>
+<p><img alt="Drawing" src="../_images/analysis-fig9a.png" /></p>
+<p>Figure 9a. Left. The function <span class="math notranslate nohighlight">\(y=5+10x\)</span> is shown as a thick grey line. Data points (<span class="math notranslate nohighlight">\(y\)</span>) with noise added (blue circles) from a normal distribution with <span class="math notranslate nohighlight">\(\sigma=1, \mu=0\)</span>. The blue dashed line is the fit to the same data points using <span class="math notranslate nohighlight">\(y=a+bx\)</span> and the red dashed line using <span class="math notranslate nohighlight">\(y=bx\)</span>. Right. This plot shows histograms of the gradients for the two fitting functions after <span class="math notranslate nohighlight">\(1000\)</span> calculations. The vertical line at <span class="math notranslate nohighlight">\(b=10\)</span> shows the true gradient. The gray dotted lines show the (average) standard deviation of the slope, <span class="math notranslate nohighlight">\(b\pm\sigma\)</span> for the fits making up the histogram and has a value of <span class="math notranslate nohighlight">\(\approx 0.56\)</span></p>
+</section>
+<section id="over-parameterising">
+<h2>Over-parameterising<a class="headerlink" href="#over-parameterising" title="Permalink to this headline">#</a></h2>
+<p>Finally, a note on over-parameterising the fit. If we use <span class="math notranslate nohighlight">\(y=a+bx\)</span> perhaps <span class="math notranslate nohighlight">\(y=a+bx+cx^2\)</span> might be better? The way to check this is to observe the fitted data using this non-linear function starting from different initial values. If the data is actually a straight line then the parameters <span class="math notranslate nohighlight">\(b\)</span> and <span class="math notranslate nohighlight">\(c\)</span> compensate for one another, i.e. lots of pairs of <span class="math notranslate nohighlight">\(b,c\)</span> will give practically identical fits and thus similar overall error and a similar error to the linear fit. Of course the context is important here, there has to be a reason based on the science to use a different fitting function, otherwise all one is doing is smoothing the data with an arbitrary function.</p>
 </section>
 </section>
 
