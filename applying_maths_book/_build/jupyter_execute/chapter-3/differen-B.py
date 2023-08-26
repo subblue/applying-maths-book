@@ -160,77 +160,37 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # As an example, suppose that $\displaystyle \sin(y^2) = x$, differentiating by $y$ gives the result $\displaystyle dx/dy = 2y \cos(y^2)$. Differentiating by $x$ could mean that a rearrangement must first be done to form $\displaystyle y = \sqrt{\sin^{-1}(x)}$ and then this differentiated, which is quite involved. Instead using equation (6), the result is obtained directly $\displaystyle 2y \cos(y^2)dy/dx = 1$ and these two results show that equation (13) is true.
 # 
-# 
 # ## 3.15 Differentiating integrals
 # 
-# If you are unfamiliar with integration, it will help to know the basic rules; see Chapter 4. It is possible to differentiate integrals; well why not! Integration and differentiation are linked as shown in equation (1) and as given by the fundamental theorem of the calculus:
+# If you are unfamiliar with integration, it will help to know the basic rules; see Chapter 4. In that chapter more examples are given particularly using both the Leibniz formula and Feynman's method of evaluating integrals. Only an outline of differentiating an integral is given here. 
 # 
-# $$\displaystyle  \frac{d}{dx}\int_a^xf(u)du=\frac{d}{dx}\left(F(x)-F(a)   \right)=f(x)  \qquad\tag{14}$$
+# Differentiating a definite integral with two limits both of which are constants, i.e. simply numbers $a$ and $b$, produces zero, because integration with such limits produces a number, e.g. the area under the curve from $a$ to $b$, see Fig. 1, and the differential of a constant is zero,
 # 
-# $a$ being a constant and $F$ is the result of integration. The variable $u$ used in the integration is a dummy variable, any letter could be used instead, but it is better in this instance not to use $x$ as this can be confusing. In this formula at least one of the integration limits must be a function of $x$ as explained next.
+# $$\displaystyle  \frac{d}{dx}\int_a^bf(x)dx=0 \qquad\tag{14}$$
 # 
-# Differentiating the integral with two limits both of which are constants, i.e. simply numbers $a$ and $b$, produces a result of 0, because integration with such limits produces a number, e.g. the area under the curve from $a$ to $b$, see Fig. 1, and the differential of a constant is zero,
+# In the more complex and general case, where the limits $u$ and $v$ are themselves functions of $x$, the function of function rule is used (Section 5.1) as shown next.
 # 
-# $$\displaystyle  \frac{d}{dx}\int_a^bf(u)dx=0$$
+# The fundamental theorem of the calculus states that
 # 
-# In the more complex and general cases, where the limits $u$ and $v$ are themselves functions of $x$, the function of function rule is used (Section 5.1),
+# $$\displaystyle \frac{d}{dx}\int_a^x f(t)dt=f(x)$$
 # 
-# $$\displaystyle  \frac{d}{dx}\int_{v(x)}^{u(x)}f(s)ds=f(u)\frac{du}{dx}-f(v)\frac{dv}{dx}  \qquad\tag{15}  $$
+# and to differentiate an integral with one limit that is a function of $x$, i.e. $v(x)$ and one a constant $a$ we start with
 # 
-# which is also called Leibniz's Rule. An example where $x^2$ is one of the limits is,
+# $$\displaystyle \frac{d}{dx}\int_a^{v(x)} f(t)dt $$
 # 
-# $$\displaystyle  \frac{d}{dx}\int_a^{x^2} e^{-az^2}dz=2xe^{-ax^2}$$
+# and let $y=v(x)$ thus
+# 
+# $$\displaystyle \frac{d}{dx}\int_a^{v(x)} f(t)dt= \frac{dy}{dx}\frac{d}{dy}\int_a^y f(t)dt =\frac{dy}{dx}f(y)\equiv\frac{dv(x)}{dx}f(v(x))$$
+# 
+# When both limits are functions
+# 
+# $$\displaystyle  \frac{d}{dx}\int_{v(x)}^{u(x)}f(t)dt=f(u)\frac{du}{dx}-f(v)\frac{dv}{dx}  \qquad\tag{15}  $$
+# 
+# which is the simpler form of Leibniz's Integral Rule. An example where $x^2$ is one of the limits is,
+# 
+# $$\displaystyle  \frac{d}{dx}\int_a^{x^2} e^{-at^2}dt=2xe^{-ax^4}-e^{-a^3}\cdot 0  $$
 # 
 # The aim in differentiating integrals is not to work out the integral first, which might not be possible anyway, and then differentiate the result, but to use equation (15), which avoids doing this.
-# 
-# ### **Nearest Neighbour Distribution**
-# 
-# One interesting, but rather sophisticated example of differentiating integrals occurs when finding the distribution of nearest (closest or first) neighbour molecules in a solution, Chandrasekhar(1943).
-# 
-# Let $w(r)$ be the probability that the nearest neighbour occurs between distance  $r$ and $r + dr$. This must be the probability than no molecules exist up to $r$ and that the next molecule exists in the shell $r \to r + dr$. Thus, 
-# 
-# $$\displaystyle  w(r)=\left(  1-\int_0^r w(r)dr \right)4\pi r^2 n \qquad\tag{15a}$$
-# 
-# where $n$ is the average number of molecules / unit volume. ($1 \mathrm{\,mol\,m^{-3}} \equiv 10^3 N_A/10^{27} = 0.6023 $ molecules / nm$^3$). The term in brackets is 1-probability that a molecule exists, i.e. that it does not exist in $0 \to r$ and the integral is the probability that it exists in $0 \to r$. The $4\pi r^2 n$ is the number of molecules in the shell $\delta r$.
-# 
-# This looks hard to solve because $w(r)$ is also inside the integration, so it is necessary to isolate the integral first (by dividing both sides by $4\pi r^2 n$) and then differentiating both sides to find 
-# 
-# $$\displaystyle  \frac{d}{dr}\left(\frac{w(r)}{4\pi r^2 n}\right)= \frac{d}{dr}\left(1-\int w(r)dr\right) = -w(r)\qquad\tag{15b}$$
-# 
-# 
-# In the next step we multiply the rhs. by one by multiplying top and bottom by the same term, 
-# 
-# $$\displaystyle \frac{d}{dr}\left(\frac{w(r)}{4\pi r^2 n}\right)=-4\pi r^2 n \left(\frac{w(r)}{4\pi r^2 n}\right)$$ 
-# 
-# The result is seen by inspection if you recognize that by letting $w(r)/4\pi r^2 n=y$ and integrating the equation it has the form $\displaystyle \int\frac{dy}{y}=-4\pi n \int r^2dr $ which is a standard integral (see chapter 4) and gives 
-# 
-# $$\displaystyle  w(r)=4\pi r^2 ne^{-4\pi r^3n/3}$$
-# 
-# The shape of $w(r)$ can be worked out just by looking at it. The term in $r^2$ causes $w(r)$ to increase and the exponential to decrease, thus we expect it to start at zero reach a maximum and fall off to zero at large $r$. Physically this is what one might expect, no near neighbour will be at at zero distance and none either at very large distances because they are all present at some shorter distance.
-# 
-# ![Drawing](differen-fig5a.png)
-# 
-# Figure 5a. Probability of a nearest neighbour $w(r)$ at various concentrations.
-# _____
-# 
-# ### **Functions of two variables**
-# 
-# A different case, and one to be aware of, involves function in _two_ variables, say $x$ and $y$.
-# In this example, notice the variable of the integration is $y$, that of differentiation $x$, and therefore the differentiation is first performed inside the integration.
-# 
-# 
-# $$\displaystyle \frac{d}{dx}\int_a^bf(x,y)dy = \int_a^b \frac{\partial f(x,y)}{\partial x}dy$$
-# 
-# After differentiation with respect to $x$, $x$ is treated as a constant because integration is in $y$. For example,
-# 
-# $$\displaystyle \frac{d}{dx}\int_0^1x^2ydy=2x\int_0^1ydy=\left .xy^2\right|_0^1=x$$
-# 
-# where the integral of $y$ is $y^2/2$, see Chapter 4. Another example of this is,
-# 
-# $$\displaystyle \frac{d}{da}\int e^{ax}dx = \int_a^b \frac{\partial }{\partial a}e^{ax}dx = \int xe^{ax}dx$$
-# 
-# where differentiation is with respect to $a$ and not $x$. The partial derivative symbol $\partial$ is used
-# inside the integration sign to specify that only $a$ in this case is to be differentiated.
 # 
 # ## 3.16 Fractional derivatives
 # 

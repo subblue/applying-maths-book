@@ -369,7 +369,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-4/integration-B.html">
-     3 Integration by substitution
+     3 Integration by substitution and ‘by parts’. Differentiation and the Leibniz formula. Feynman’s ‘Trick’
     </a>
    </li>
    <li class="toctree-l2">
@@ -1573,22 +1573,6 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#differentiating-integrals">
    3.15 Differentiating integrals
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#nearest-neighbour-distribution">
-     <strong>
-      Nearest Neighbour Distribution
-     </strong>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#functions-of-two-variables">
-     <strong>
-      Functions of two variables
-     </strong>
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#fractional-derivatives">
@@ -1682,22 +1666,6 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#differentiating-integrals">
    3.15 Differentiating integrals
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#nearest-neighbour-distribution">
-     <strong>
-      Nearest Neighbour Distribution
-     </strong>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#functions-of-two-variables">
-     <strong>
-      Functions of two variables
-     </strong>
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#fractional-derivatives">
@@ -1851,56 +1819,27 @@ if <span class="math notranslate nohighlight">\(y = a^x\)</span>, taking logs of
 </section>
 <section id="differentiating-integrals">
 <h2>3.15 Differentiating integrals<a class="headerlink" href="#differentiating-integrals" title="Permalink to this headline">#</a></h2>
-<p>If you are unfamiliar with integration, it will help to know the basic rules; see Chapter 4. It is possible to differentiate integrals; well why not! Integration and differentiation are linked as shown in equation (1) and as given by the fundamental theorem of the calculus:</p>
+<p>If you are unfamiliar with integration, it will help to know the basic rules; see Chapter 4. In that chapter more examples are given particularly using both the Leibniz formula and Feynman’s method of evaluating integrals. Only an outline of differentiating an integral is given here.</p>
+<p>Differentiating a definite integral with two limits both of which are constants, i.e. simply numbers <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span>, produces zero, because integration with such limits produces a number, e.g. the area under the curve from <span class="math notranslate nohighlight">\(a\)</span> to <span class="math notranslate nohighlight">\(b\)</span>, see Fig. 1, and the differential of a constant is zero,</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle  \frac{d}{dx}\int_a^xf(u)du=\frac{d}{dx}\left(F(x)-F(a)   \right)=f(x)  \qquad\tag{14}\]</div>
-<p><span class="math notranslate nohighlight">\(a\)</span> being a constant and <span class="math notranslate nohighlight">\(F\)</span> is the result of integration. The variable <span class="math notranslate nohighlight">\(u\)</span> used in the integration is a dummy variable, any letter could be used instead, but it is better in this instance not to use <span class="math notranslate nohighlight">\(x\)</span> as this can be confusing. In this formula at least one of the integration limits must be a function of <span class="math notranslate nohighlight">\(x\)</span> as explained next.</p>
-<p>Differentiating the integral with two limits both of which are constants, i.e. simply numbers <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span>, produces a result of 0, because integration with such limits produces a number, e.g. the area under the curve from <span class="math notranslate nohighlight">\(a\)</span> to <span class="math notranslate nohighlight">\(b\)</span>, see Fig. 1, and the differential of a constant is zero,</p>
+\[\displaystyle  \frac{d}{dx}\int_a^bf(x)dx=0 \qquad\tag{14}\]</div>
+<p>In the more complex and general case, where the limits <span class="math notranslate nohighlight">\(u\)</span> and <span class="math notranslate nohighlight">\(v\)</span> are themselves functions of <span class="math notranslate nohighlight">\(x\)</span>, the function of function rule is used (Section 5.1) as shown next.</p>
+<p>The fundamental theorem of the calculus states that</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle  \frac{d}{dx}\int_a^bf(u)dx=0\]</div>
-<p>In the more complex and general cases, where the limits <span class="math notranslate nohighlight">\(u\)</span> and <span class="math notranslate nohighlight">\(v\)</span> are themselves functions of <span class="math notranslate nohighlight">\(x\)</span>, the function of function rule is used (Section 5.1),</p>
+\[\displaystyle \frac{d}{dx}\int_a^x f(t)dt=f(x)\]</div>
+<p>and to differentiate an integral with one limit that is a function of <span class="math notranslate nohighlight">\(x\)</span>, i.e. <span class="math notranslate nohighlight">\(v(x)\)</span> and one a constant <span class="math notranslate nohighlight">\(a\)</span> we start with</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle  \frac{d}{dx}\int_{v(x)}^{u(x)}f(s)ds=f(u)\frac{du}{dx}-f(v)\frac{dv}{dx}  \qquad\tag{15}  \]</div>
-<p>which is also called Leibniz’s Rule. An example where <span class="math notranslate nohighlight">\(x^2\)</span> is one of the limits is,</p>
+\[\displaystyle \frac{d}{dx}\int_a^{v(x)} f(t)dt \]</div>
+<p>and let <span class="math notranslate nohighlight">\(y=v(x)\)</span> thus</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle  \frac{d}{dx}\int_a^{x^2} e^{-az^2}dz=2xe^{-ax^2}\]</div>
+\[\displaystyle \frac{d}{dx}\int_a^{v(x)} f(t)dt= \frac{dy}{dx}\frac{d}{dy}\int_a^y f(t)dt =\frac{dy}{dx}f(y)\equiv\frac{dv(x)}{dx}f(v(x))\]</div>
+<p>When both limits are functions</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle  \frac{d}{dx}\int_{v(x)}^{u(x)}f(t)dt=f(u)\frac{du}{dx}-f(v)\frac{dv}{dx}  \qquad\tag{15}  \]</div>
+<p>which is the simpler form of Leibniz’s Integral Rule. An example where <span class="math notranslate nohighlight">\(x^2\)</span> is one of the limits is,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle  \frac{d}{dx}\int_a^{x^2} e^{-at^2}dt=2xe^{-ax^4}-e^{-a^3}\cdot 0  \]</div>
 <p>The aim in differentiating integrals is not to work out the integral first, which might not be possible anyway, and then differentiate the result, but to use equation (15), which avoids doing this.</p>
-<section id="nearest-neighbour-distribution">
-<h3><strong>Nearest Neighbour Distribution</strong><a class="headerlink" href="#nearest-neighbour-distribution" title="Permalink to this headline">#</a></h3>
-<p>One interesting, but rather sophisticated example of differentiating integrals occurs when finding the distribution of nearest (closest or first) neighbour molecules in a solution, Chandrasekhar(1943).</p>
-<p>Let <span class="math notranslate nohighlight">\(w(r)\)</span> be the probability that the nearest neighbour occurs between distance  <span class="math notranslate nohighlight">\(r\)</span> and <span class="math notranslate nohighlight">\(r + dr\)</span>. This must be the probability than no molecules exist up to <span class="math notranslate nohighlight">\(r\)</span> and that the next molecule exists in the shell <span class="math notranslate nohighlight">\(r \to r + dr\)</span>. Thus,</p>
-<div class="math notranslate nohighlight">
-\[\displaystyle  w(r)=\left(  1-\int_0^r w(r)dr \right)4\pi r^2 n \qquad\tag{15a}\]</div>
-<p>where <span class="math notranslate nohighlight">\(n\)</span> is the average number of molecules / unit volume. (<span class="math notranslate nohighlight">\(1 \mathrm{\,mol\,m^{-3}} \equiv 10^3 N_A/10^{27} = 0.6023 \)</span> molecules / nm<span class="math notranslate nohighlight">\(^3\)</span>). The term in brackets is 1-probability that a molecule exists, i.e. that it does not exist in <span class="math notranslate nohighlight">\(0 \to r\)</span> and the integral is the probability that it exists in <span class="math notranslate nohighlight">\(0 \to r\)</span>. The <span class="math notranslate nohighlight">\(4\pi r^2 n\)</span> is the number of molecules in the shell <span class="math notranslate nohighlight">\(\delta r\)</span>.</p>
-<p>This looks hard to solve because <span class="math notranslate nohighlight">\(w(r)\)</span> is also inside the integration, so it is necessary to isolate the integral first (by dividing both sides by <span class="math notranslate nohighlight">\(4\pi r^2 n\)</span>) and then differentiating both sides to find</p>
-<div class="math notranslate nohighlight">
-\[\displaystyle  \frac{d}{dr}\left(\frac{w(r)}{4\pi r^2 n}\right)= \frac{d}{dr}\left(1-\int w(r)dr\right) = -w(r)\qquad\tag{15b}\]</div>
-<p>In the next step we multiply the rhs. by one by multiplying top and bottom by the same term,</p>
-<div class="math notranslate nohighlight">
-\[\displaystyle \frac{d}{dr}\left(\frac{w(r)}{4\pi r^2 n}\right)=-4\pi r^2 n \left(\frac{w(r)}{4\pi r^2 n}\right)\]</div>
-<p>The result is seen by inspection if you recognize that by letting <span class="math notranslate nohighlight">\(w(r)/4\pi r^2 n=y\)</span> and integrating the equation it has the form <span class="math notranslate nohighlight">\(\displaystyle \int\frac{dy}{y}=-4\pi n \int r^2dr \)</span> which is a standard integral (see chapter 4) and gives</p>
-<div class="math notranslate nohighlight">
-\[\displaystyle  w(r)=4\pi r^2 ne^{-4\pi r^3n/3}\]</div>
-<p>The shape of <span class="math notranslate nohighlight">\(w(r)\)</span> can be worked out just by looking at it. The term in <span class="math notranslate nohighlight">\(r^2\)</span> causes <span class="math notranslate nohighlight">\(w(r)\)</span> to increase and the exponential to decrease, thus we expect it to start at zero reach a maximum and fall off to zero at large <span class="math notranslate nohighlight">\(r\)</span>. Physically this is what one might expect, no near neighbour will be at at zero distance and none either at very large distances because they are all present at some shorter distance.</p>
-<p><img alt="Drawing" src="../_images/differen-fig5a.png" /></p>
-<p>Figure 5a. Probability of a nearest neighbour <span class="math notranslate nohighlight">\(w(r)\)</span> at various concentrations.</p>
-</section>
-<hr class="docutils" />
-<section id="functions-of-two-variables">
-<h3><strong>Functions of two variables</strong><a class="headerlink" href="#functions-of-two-variables" title="Permalink to this headline">#</a></h3>
-<p>A different case, and one to be aware of, involves function in <em>two</em> variables, say <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span>.
-In this example, notice the variable of the integration is <span class="math notranslate nohighlight">\(y\)</span>, that of differentiation <span class="math notranslate nohighlight">\(x\)</span>, and therefore the differentiation is first performed inside the integration.</p>
-<div class="math notranslate nohighlight">
-\[\displaystyle \frac{d}{dx}\int_a^bf(x,y)dy = \int_a^b \frac{\partial f(x,y)}{\partial x}dy\]</div>
-<p>After differentiation with respect to <span class="math notranslate nohighlight">\(x\)</span>, <span class="math notranslate nohighlight">\(x\)</span> is treated as a constant because integration is in <span class="math notranslate nohighlight">\(y\)</span>. For example,</p>
-<div class="math notranslate nohighlight">
-\[\displaystyle \frac{d}{dx}\int_0^1x^2ydy=2x\int_0^1ydy=\left .xy^2\right|_0^1=x\]</div>
-<p>where the integral of <span class="math notranslate nohighlight">\(y\)</span> is <span class="math notranslate nohighlight">\(y^2/2\)</span>, see Chapter 4. Another example of this is,</p>
-<div class="math notranslate nohighlight">
-\[\displaystyle \frac{d}{da}\int e^{ax}dx = \int_a^b \frac{\partial }{\partial a}e^{ax}dx = \int xe^{ax}dx\]</div>
-<p>where differentiation is with respect to <span class="math notranslate nohighlight">\(a\)</span> and not <span class="math notranslate nohighlight">\(x\)</span>. The partial derivative symbol <span class="math notranslate nohighlight">\(\partial\)</span> is used
-inside the integration sign to specify that only <span class="math notranslate nohighlight">\(a\)</span> in this case is to be differentiated.</p>
-</section>
 </section>
 <section id="fractional-derivatives">
 <h2>3.16 Fractional derivatives<a class="headerlink" href="#fractional-derivatives" title="Permalink to this headline">#</a></h2>

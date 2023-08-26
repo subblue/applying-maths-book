@@ -439,26 +439,25 @@ print( ans)
 # 
 # $\displaystyle \int  e^{- a x^{2}} \;dx =  \frac{\sqrt{\pi} \operatorname{erf}{\left (\sqrt{a} x \right )}}{2 \sqrt{a}} $
 # 
-# $\displaystyle \int  x^{2} e^{- a x^{2}} \;dx =  - \frac{x e^{- a x^{2}}}{2 a} + \frac{\sqrt{\pi} \operatorname{erf}{\left (\sqrt{a} x \right )}}{4 a^{\frac{3}{2}}} $
+# $\int e^{-ax^2+bx}dx=\displaystyle\sqrt\frac{\pi}{4a}\mathrm{erf}\left(\frac{2ax-b}{\sqrt{4a}}\right)e^{b^2/4a}$
 # 
 # $\displaystyle \int  x^{2} e^{- a x^{2}} \;dx =  - \frac{x e^{- a x^{2}}}{2 a} + \frac{\sqrt{\pi} \operatorname{erf}{\left (\sqrt{a} x \right )}}{4 a^{\frac{3}{2}}} $
+# 
 # 
 # To make your own table make a list then loop over values printing output in markdown.
 
 # In[5]:
 
 
-x,n,a,b,c = symbols('x,n,a,b,c', positive = True)   # use Sympy
-eqns = [x**n, 1/(a*x), exp(a*x + b), 1/(a*x + b)]   # list of integrals here 
+x,n,a,b,c = symbols('x,n,a,b,c', positive = True)                # use Sympy
+eqns = [x**n, 1/(a*x), exp(a*x + b), 1/(a*x + b)]                # list of integrals here 
 ans = []
 for  i, eqn in enumerate(eqns): 
-    ans.append(simplify(integrate(eqn, x) ) )       # append make list of answers
+    ans.append( [eqns[i], simplify(integrate(eqn, x) ) ] )       # append make list of answers
     pass
 ans
 
 
-# In[ ]:
+# 
 
-
-
-
+# 

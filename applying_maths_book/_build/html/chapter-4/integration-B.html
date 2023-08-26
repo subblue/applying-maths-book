@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>3 Integration by substitution &#8212; Applying Maths in the Chemical &amp; Biomolecular Sciences</title>
+    <title>3 Integration by substitution and ‘by parts’. Differentiation and the Leibniz formula. Feynman’s ‘Trick’ &#8212; Applying Maths in the Chemical &amp; Biomolecular Sciences</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -369,7 +369,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     3 Integration by substitution
+     3 Integration by substitution and ‘by parts’. Differentiation and the Leibniz formula. Feynman’s ‘Trick’
     </a>
    </li>
    <li class="toctree-l2">
@@ -1536,6 +1536,40 @@ title="Print to PDF"
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#qquad-the-integral-of-udv-is-u-times-the-integral-of-dv-which-is-v-minus-the-integral-of-v-times-the-derivative-of-u">
+     <strong>
+      <span class="math notranslate nohighlight">
+       \(\qquad\)
+      </span>
+      The integral of
+      <span class="math notranslate nohighlight">
+       \(udv\)
+      </span>
+      is
+      <span class="math notranslate nohighlight">
+       \(u\)
+      </span>
+      times the integral of
+      <span class="math notranslate nohighlight">
+       \(dv\)
+      </span>
+      , which is
+      <span class="math notranslate nohighlight">
+       \(v\)
+      </span>
+      , minus the integral of
+      <span class="math notranslate nohighlight">
+       \(v\)
+      </span>
+      times the derivative of
+      <span class="math notranslate nohighlight">
+       \(u\)
+      </span>
+      .
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#i-displaystyle-int-y-cos-y-dy">
      <strong>
       (i)
@@ -1546,11 +1580,11 @@ title="Print to PDF"
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#ii-int-x-ln-x-dx">
+    <a class="reference internal nav-link" href="#ii-int-x-ln-x-dx-quad-int-x-n-ln-x-dx">
      <strong>
       (ii)
       <span class="math notranslate nohighlight">
-       \(\int x\ln(x)dx\)
+       \(\int x\ln(x)dx,\quad \int x^n\ln(x)dx\)
       </span>
      </strong>
     </a>
@@ -1565,12 +1599,193 @@ title="Print to PDF"
      </strong>
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#iv-an-integral-by-parts-and-recursion-displaystyle-i-n-int-x-ne-ax-dx">
+     <strong>
+      (iv) An integral by parts and recursion,
+      <span class="math notranslate nohighlight">
+       \(\displaystyle I_n=\int x^ne^{-ax}dx\)
+      </span>
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#v-simplifying-the-partition-function-for-the-debye-model-of-a-solid">
+     <strong>
+      (v) Simplifying the partition function for the Debye model of a solid
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vi-using-summation-and-by-parts-to-evaluate-the-integral-int-0-infty-frac-x-3-e-x-1-dx-from-the-debye-model">
+     <strong>
+      (vi)  Using summation and ‘by-parts’ to evaluate the integral
+      <span class="math notranslate nohighlight">
+       \(\int_0^\infty \frac{x^3}{e^x -1}dx\)
+      </span>
+      from the Debye model
+     </strong>
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#small-angle-x-ray-scattering-saxs">
    5.1 Small angle x-ray scattering: SAXS
   </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#differentiation-under-the-integral-the-leibniz-formula">
+   5.2 Differentiation under the Integral. The Leibniz formula
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#examples">
+     <strong>
+      Examples
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#i-int-0-pi-2-sin-t-x-dx">
+     <strong>
+      (i)
+      <span class="math notranslate nohighlight">
+       \(\int_0^{\pi/2}\sin(t-x)dx\)
+      </span>
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ii-f-t-int-0-t-2-x-1-2-dx">
+     <strong>
+      (ii)
+      <span class="math notranslate nohighlight">
+       \(F(t)=\int_0^{t^2} x^{1/2}\; dx\)
+      </span>
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#iii-partition-function-and-heat-capacity-for-the-debye-model-of-a-solid">
+     <strong>
+      (iii) Partition function and heat capacity for the Debye model of a solid
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#iv-int-t-t-2-e-xt-dx-using-the-full-leibniz-formula">
+     <strong>
+      (iv)
+      <span class="math notranslate nohighlight">
+       \( \int_t^{t^2} e^{xt}dx\)
+      </span>
+      using the full Leibniz formula
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#v-int-0-infty-e-ax-dx-frac-1-a-by-repeated-differentiation">
+     <strong>
+      (v)
+      <span class="math notranslate nohighlight">
+       \( \int_0^\infty e^{-ax}dx=\frac{1}{a}\)
+      </span>
+      by repeated differentiation
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vi-a-complicated-integral-i-n-int-0-1-x-t-ln-n-x-dx-solved-by-recursion">
+     <strong>
+      (vi) A complicated integral
+      <span class="math notranslate nohighlight">
+       \( I_n=\int_0^1 x^t\ln^n(x)dx\)
+      </span>
+      solved by recursion
+     </strong>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#nearest-neighbour-distribution">
+   5.3 Nearest Neighbour Distribution
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#evaluating-integrals-via-differentiation-and-feynman-s-trick">
+   5.4 Evaluating integrals
+   <em>
+    via
+   </em>
+   differentiation and  ‘Feynman’s trick’
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Examples
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#i-f-t-int-0-ln-t-e-xdx">
+     <strong>
+      (i)
+      <span class="math notranslate nohighlight">
+       \( F(t)= \int_0^{\ln(t)}e^xdx\)
+      </span>
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ii-a-hard-integral-made-easier-int-0-1-x-1-ln-x-dx">
+     <strong>
+      (ii) A hard integral made easier:
+      <span class="math notranslate nohighlight">
+       \( \int_0^1(x-1)/\ln(x)dx\)
+      </span>
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#iii-the-sinc-function-sin-ax-ax">
+     <strong>
+      (iii) The sinc function
+      <span class="math notranslate nohighlight">
+       \( \sin(ax)/ax\)
+      </span>
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#iv-harmonic-oscillator">
+     <strong>
+      (iv) Harmonic Oscillator
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#expectation-values-and-uncertainty-principle">
+     Expectation values and uncertainty principle
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#i-average-position-and-its-uncertainty">
+       <strong>
+        (i) Average position and its uncertainty
+       </strong>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#ii-average-momentum">
+       <strong>
+        (ii) Average momentum
+       </strong>
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -1581,7 +1796,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>3 Integration by substitution</h1>
+                <h1>3 Integration by substitution and ‘by parts’. Differentiation and the Leibniz formula. Feynman’s ‘Trick’</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -1617,6 +1832,40 @@ title="Print to PDF"
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#qquad-the-integral-of-udv-is-u-times-the-integral-of-dv-which-is-v-minus-the-integral-of-v-times-the-derivative-of-u">
+     <strong>
+      <span class="math notranslate nohighlight">
+       \(\qquad\)
+      </span>
+      The integral of
+      <span class="math notranslate nohighlight">
+       \(udv\)
+      </span>
+      is
+      <span class="math notranslate nohighlight">
+       \(u\)
+      </span>
+      times the integral of
+      <span class="math notranslate nohighlight">
+       \(dv\)
+      </span>
+      , which is
+      <span class="math notranslate nohighlight">
+       \(v\)
+      </span>
+      , minus the integral of
+      <span class="math notranslate nohighlight">
+       \(v\)
+      </span>
+      times the derivative of
+      <span class="math notranslate nohighlight">
+       \(u\)
+      </span>
+      .
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#i-displaystyle-int-y-cos-y-dy">
      <strong>
       (i)
@@ -1627,11 +1876,11 @@ title="Print to PDF"
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#ii-int-x-ln-x-dx">
+    <a class="reference internal nav-link" href="#ii-int-x-ln-x-dx-quad-int-x-n-ln-x-dx">
      <strong>
       (ii)
       <span class="math notranslate nohighlight">
-       \(\int x\ln(x)dx\)
+       \(\int x\ln(x)dx,\quad \int x^n\ln(x)dx\)
       </span>
      </strong>
     </a>
@@ -1646,12 +1895,193 @@ title="Print to PDF"
      </strong>
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#iv-an-integral-by-parts-and-recursion-displaystyle-i-n-int-x-ne-ax-dx">
+     <strong>
+      (iv) An integral by parts and recursion,
+      <span class="math notranslate nohighlight">
+       \(\displaystyle I_n=\int x^ne^{-ax}dx\)
+      </span>
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#v-simplifying-the-partition-function-for-the-debye-model-of-a-solid">
+     <strong>
+      (v) Simplifying the partition function for the Debye model of a solid
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vi-using-summation-and-by-parts-to-evaluate-the-integral-int-0-infty-frac-x-3-e-x-1-dx-from-the-debye-model">
+     <strong>
+      (vi)  Using summation and ‘by-parts’ to evaluate the integral
+      <span class="math notranslate nohighlight">
+       \(\int_0^\infty \frac{x^3}{e^x -1}dx\)
+      </span>
+      from the Debye model
+     </strong>
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#small-angle-x-ray-scattering-saxs">
    5.1 Small angle x-ray scattering: SAXS
   </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#differentiation-under-the-integral-the-leibniz-formula">
+   5.2 Differentiation under the Integral. The Leibniz formula
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#examples">
+     <strong>
+      Examples
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#i-int-0-pi-2-sin-t-x-dx">
+     <strong>
+      (i)
+      <span class="math notranslate nohighlight">
+       \(\int_0^{\pi/2}\sin(t-x)dx\)
+      </span>
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ii-f-t-int-0-t-2-x-1-2-dx">
+     <strong>
+      (ii)
+      <span class="math notranslate nohighlight">
+       \(F(t)=\int_0^{t^2} x^{1/2}\; dx\)
+      </span>
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#iii-partition-function-and-heat-capacity-for-the-debye-model-of-a-solid">
+     <strong>
+      (iii) Partition function and heat capacity for the Debye model of a solid
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#iv-int-t-t-2-e-xt-dx-using-the-full-leibniz-formula">
+     <strong>
+      (iv)
+      <span class="math notranslate nohighlight">
+       \( \int_t^{t^2} e^{xt}dx\)
+      </span>
+      using the full Leibniz formula
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#v-int-0-infty-e-ax-dx-frac-1-a-by-repeated-differentiation">
+     <strong>
+      (v)
+      <span class="math notranslate nohighlight">
+       \( \int_0^\infty e^{-ax}dx=\frac{1}{a}\)
+      </span>
+      by repeated differentiation
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vi-a-complicated-integral-i-n-int-0-1-x-t-ln-n-x-dx-solved-by-recursion">
+     <strong>
+      (vi) A complicated integral
+      <span class="math notranslate nohighlight">
+       \( I_n=\int_0^1 x^t\ln^n(x)dx\)
+      </span>
+      solved by recursion
+     </strong>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#nearest-neighbour-distribution">
+   5.3 Nearest Neighbour Distribution
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#evaluating-integrals-via-differentiation-and-feynman-s-trick">
+   5.4 Evaluating integrals
+   <em>
+    via
+   </em>
+   differentiation and  ‘Feynman’s trick’
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Examples
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#i-f-t-int-0-ln-t-e-xdx">
+     <strong>
+      (i)
+      <span class="math notranslate nohighlight">
+       \( F(t)= \int_0^{\ln(t)}e^xdx\)
+      </span>
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ii-a-hard-integral-made-easier-int-0-1-x-1-ln-x-dx">
+     <strong>
+      (ii) A hard integral made easier:
+      <span class="math notranslate nohighlight">
+       \( \int_0^1(x-1)/\ln(x)dx\)
+      </span>
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#iii-the-sinc-function-sin-ax-ax">
+     <strong>
+      (iii) The sinc function
+      <span class="math notranslate nohighlight">
+       \( \sin(ax)/ax\)
+      </span>
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#iv-harmonic-oscillator">
+     <strong>
+      (iv) Harmonic Oscillator
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#expectation-values-and-uncertainty-principle">
+     Expectation values and uncertainty principle
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#i-average-position-and-its-uncertainty">
+       <strong>
+        (i) Average position and its uncertainty
+       </strong>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#ii-average-momentum">
+       <strong>
+        (ii) Average momentum
+       </strong>
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -1663,8 +2093,21 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="integration-by-substitution">
-<h1>3 Integration by substitution<a class="headerlink" href="#integration-by-substitution" title="Permalink to this headline">#</a></h1>
+  <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="n">init_printing</span><span class="p">()</span>                         <span class="c1"># allows printing of SymPy results in typeset maths format</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;font.size&#39;</span><span class="p">:</span> <span class="mi">16</span><span class="p">})</span>  <span class="c1"># set font size for plots</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section class="tex2jax_ignore mathjax_ignore" id="integration-by-substitution-and-by-parts-differentiation-and-the-leibniz-formula-feynman-s-trick">
+<h1>3 Integration by substitution and ‘by parts’. Differentiation and the Leibniz formula. Feynman’s ‘Trick’<a class="headerlink" href="#integration-by-substitution-and-by-parts-differentiation-and-the-leibniz-formula-feynman-s-trick" title="Permalink to this headline">#</a></h1>
 <section id="clever-substitution-can-help-to-solve-an-integral">
 <h2>3.1 Clever substitution can help to solve an integral<a class="headerlink" href="#clever-substitution-can-help-to-solve-an-integral" title="Permalink to this headline">#</a></h2>
 <p>It may appear at first that if an integral is not in a standard form then it cannot be solved - not so! The purpose of substitution is to convert the integral into a standard and therefore simpler form whose solution is known. Choosing a substitution is rather an art and some trial and error is usually required. However, just as in football, a clever substitution can produce the required result.</p>
@@ -1704,12 +2147,26 @@ title="Print to PDF"
 <section id="definite-integrals-with-substitution">
 <h2>3.3 Definite integrals with substitution<a class="headerlink" href="#definite-integrals-with-substitution" title="Permalink to this headline">#</a></h2>
 <p>When calculating a definite integral first evaluate the indefinite integral and then using the limits, work out the final value. If a substitution is made it is also <em>necessary to change the limits</em>, thus making it unnecessary to reverse the substitution to obtain the result.</p>
-<p>Suppose the integral is <span class="math notranslate nohighlight">\(\displaystyle \int_2^8 \frac{3}{(1+2x)^3}dx\)</span>, trying the substitution <span class="math notranslate nohighlight">\(u = 1 + 2x\)</span> seems an obvious choice and therefore <span class="math notranslate nohighlight">\(dx = du/2\)</span>. The limits are <span class="math notranslate nohighlight">\(x = 2\)</span> and  8, which become <span class="math notranslate nohighlight">\(u = 5\)</span> and <span class="math notranslate nohighlight">\(17\)</span> in the new variable, making the integral</p>
+<p><strong>(1)</strong> Suppose the integral is <span class="math notranslate nohighlight">\(\displaystyle \int_2^8 \frac{3}{(1+2x)^3}dx\)</span>, trying the substitution <span class="math notranslate nohighlight">\(u = 1 + 2x\)</span> seems an obvious choice and therefore <span class="math notranslate nohighlight">\(dx = du/2\)</span>. The limits are <span class="math notranslate nohighlight">\(x = 2\)</span> and  8, which become <span class="math notranslate nohighlight">\(u = 5\)</span> and <span class="math notranslate nohighlight">\(17\)</span> in the new variable, making the integral</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \int_5^{17}\frac{3}{2u^2}du = -\frac{3}{2u}\bigg|_5^{17} =\frac{18}{85}\]</div>
 <p>Alternatively, calculate the integral leaving out the limits to begin with, then convert back to <span class="math notranslate nohighlight">\(x\)</span> and then use the original limits;</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \int\frac{3}{2u^2}du = -\frac{3}{2u} \equiv \frac{3}{2(1+2x))}\bigg|_2^{8}\]</div>
+<p><strong>(2)</strong> Integrals of the Gaussian type</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \int_{-\infty}^\infty e^{-ax^2/2+bx}dx\]</div>
+<p>often occur in quantum problems. The solution to the simpler integral is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \int_{-\infty}^\infty e^{-ax^2/2}dx=\sqrt{2\pi/a}\]</div>
+<p>and with a substitution we can solve the more complex integral.</p>
+<p>The first step is to ‘complete the square’ which means converting <span class="math notranslate nohighlight">\(-ax^2/2+bx\)</span> into a quadratic. A general quadratic is <span class="math notranslate nohighlight">\(ax^2+bx+c\)</span> and this is changed to  <span class="math notranslate nohighlight">\(a(x-h)^2+k\)</span> where <span class="math notranslate nohighlight">\(h=-b/a, k=c-b^2/4a\)</span>.</p>
+<p>In our example <span class="math notranslate nohighlight">\(\displaystyle \frac{-a}{2}x^2+bx \to -\frac{a}{2}\left(x-\frac{b}{a}\right)^2+\frac{b^2}{2a}\)</span>, which means the integral becomes</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \int_{-\infty}^\infty  e^{-a(x-b/a)^2+b^2/2a} dx\]</div>
+<p>which is a little simpler and now allows us to make a substitution such as <span class="math notranslate nohighlight">\(z=x-b/a, dz=dx\)</span> and so</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin{align}\int_{-\infty}^\infty  e^{-a(x-b/a)^2+b^2/2a} dx &amp;= e^{b^2/2a}\int_{-\infty}^\infty  e^{-az^2/2} dz\\&amp;=\sqrt{\frac{2\pi}{a}}e^{b^2/2a}\end{align}\end{split}\]</div>
 </section>
 <section id="three-useful-results-with-a-function-and-its-derivative">
 <h2>4 Three useful results with a function and its derivative<a class="headerlink" href="#three-useful-results-with-a-function-and-its-derivative" title="Permalink to this headline">#</a></h2>
@@ -1748,34 +2205,40 @@ denominator, evaluate to logs. For example,</p>
 \[ uv = \int u\frac{dv}{dx}+\int v\frac{du}{dx}  \qquad \text{or} \qquad uv=\int udv+\int vdu \]</div>
 <p>and rearranging gives</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle \int udv= uv -\int vdu  \qquad\tag{16}\]</div>
+\[\displaystyle \int u\,dv= u\,v -\int v\,du  \qquad\tag{16}\]</div>
 <p>which is the <em>integration by parts</em> formula. This reads:</p>
-<p><span class="math notranslate nohighlight">\(\quad\)</span> <strong>The integral of <span class="math notranslate nohighlight">\(udv\)</span> is <span class="math notranslate nohighlight">\(u\)</span> times the integral of <span class="math notranslate nohighlight">\(dv\)</span>, which is <span class="math notranslate nohighlight">\(v\)</span> minus the integral of <span class="math notranslate nohighlight">\(v\)</span> times the derivative of <span class="math notranslate nohighlight">\(u\)</span></strong>.</p>
+<section id="qquad-the-integral-of-udv-is-u-times-the-integral-of-dv-which-is-v-minus-the-integral-of-v-times-the-derivative-of-u">
+<h3><strong><span class="math notranslate nohighlight">\(\qquad\)</span>   The integral of <span class="math notranslate nohighlight">\(udv\)</span> is <span class="math notranslate nohighlight">\(u\)</span> times the integral of <span class="math notranslate nohighlight">\(dv\)</span>, which is <span class="math notranslate nohighlight">\(v\)</span>, minus the integral of <span class="math notranslate nohighlight">\(v\)</span> times the derivative of <span class="math notranslate nohighlight">\(u\)</span>.</strong><a class="headerlink" href="#qquad-the-integral-of-udv-is-u-times-the-integral-of-dv-which-is-v-minus-the-integral-of-v-times-the-derivative-of-u" title="Permalink to this headline">#</a></h3>
 <p>The trick is to find <span class="math notranslate nohighlight">\(u\)</span> that can be differentiated, which is usually easy, and <span class="math notranslate nohighlight">\(v\)</span> that can be integrated, which is sometimes much harder. It is worth exchanging <span class="math notranslate nohighlight">\(u\)</span> and <span class="math notranslate nohighlight">\(v\)</span> if the resulting integration gets more complicated.</p>
 <p>A few examples should make this important method clearer.</p>
+</section>
 <section id="i-displaystyle-int-y-cos-y-dy">
 <h3><strong>(i) <span class="math notranslate nohighlight">\(\displaystyle \int y\cos(y)dy\)</span></strong><a class="headerlink" href="#i-displaystyle-int-y-cos-y-dy" title="Permalink to this headline">#</a></h3>
 <p>To solve <span class="math notranslate nohighlight">\(\displaystyle \int y\cos(y)dy\)</span> using equation 16</p>
-<p>(i) Start by trying <span class="math notranslate nohighlight">\(u=y\)</span> and <span class="math notranslate nohighlight">\(dv=\cos(y)dy\)</span></p>
-<p>(ii) To find <span class="math notranslate nohighlight">\(uv\)</span>, integrate <span class="math notranslate nohighlight">\(v=\cos(y)dy\)</span> to <span class="math notranslate nohighlight">\(v=\sin(y)\)</span> and then multiply this by <span class="math notranslate nohighlight">\(u\equiv y\)</span>.</p>
-<p>(iii) Form the <span class="math notranslate nohighlight">\(vdu\)</span> integral by differentiating <span class="math notranslate nohighlight">\(u\)</span> giving <span class="math notranslate nohighlight">\(du\equiv dy=1 \)</span> and multiply by <span class="math notranslate nohighlight">\(v=\sin(y)\)</span> to give <span class="math notranslate nohighlight">\(\int vdu =\int \sin( y)dy\)</span>.</p>
-<p>(iv) Combining these terms gives</p>
+<p><span class="math notranslate nohighlight">\(\quad\)</span><strong>(i)</strong> Start by trying <span class="math notranslate nohighlight">\(u=y\)</span> and <span class="math notranslate nohighlight">\(dv=\cos(y)dy\)</span></p>
+<p><span class="math notranslate nohighlight">\(\quad\)</span><strong>(ii)</strong>  To find <span class="math notranslate nohighlight">\(uv\)</span>, integrate <span class="math notranslate nohighlight">\(v=\cos(y)dy\)</span> to <span class="math notranslate nohighlight">\(v=\sin(y)\)</span> and then multiply this by <span class="math notranslate nohighlight">\(u\equiv y\)</span>.</p>
+<p><span class="math notranslate nohighlight">\(\quad\)</span><strong>(iii)</strong>  Form the <span class="math notranslate nohighlight">\(vdu\)</span> integral by differentiating <span class="math notranslate nohighlight">\(u\)</span> giving <span class="math notranslate nohighlight">\(du\equiv dy=1 \)</span> and multiply by <span class="math notranslate nohighlight">\(v=\sin(y)\)</span> to give <span class="math notranslate nohighlight">\(\int vdu =\int \sin( y)dy\)</span>.</p>
+<p><span class="math notranslate nohighlight">\(\quad\)</span><strong>(iv)</strong> ) Combining these terms gives</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \int y\cos(y)dy=y\sin(y)-\int \sin(y)dy = y\sin(y)+\cos(y)+c\]</div>
 </section>
-<section id="ii-int-x-ln-x-dx">
-<h3><strong>(ii) <span class="math notranslate nohighlight">\(\int x\ln(x)dx\)</span></strong><a class="headerlink" href="#ii-int-x-ln-x-dx" title="Permalink to this headline">#</a></h3>
+<section id="ii-int-x-ln-x-dx-quad-int-x-n-ln-x-dx">
+<h3><strong>(ii) <span class="math notranslate nohighlight">\(\int x\ln(x)dx,\quad \int x^n\ln(x)dx\)</span></strong><a class="headerlink" href="#ii-int-x-ln-x-dx-quad-int-x-n-ln-x-dx" title="Permalink to this headline">#</a></h3>
 <p>The integral <span class="math notranslate nohighlight">\(\int x\ln(x)dx\)</span> can be evaluated by parts if <span class="math notranslate nohighlight">\(u=\ln(x)\)</span> and <span class="math notranslate nohighlight">\(dv=xdx\)</span>, producing</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \int x\ln(x)=\ln(x)\frac{x^2}{2}-\frac{1}{2}\int\frac{1}{x}x^2dx =\ln(x)\frac{x^2}{2}-\frac{x^2}{4}+c\]</div>
 <p>with <span class="math notranslate nohighlight">\(c\)</span> as the integration constant. Trying this integral the other way round with <span class="math notranslate nohighlight">\(u = x\)</span>, and <span class="math notranslate nohighlight">\(dv = \ln(x)dx\)</span> is more difficult because to obtain t we have to know the integral of <span class="math notranslate nohighlight">\(\ln(x)\)</span>. This can be looked up and is <span class="math notranslate nohighlight">\(x\ln(x) - x\)</span>, and has to be integrated again in the next step.</p>
 <div class="math notranslate nohighlight">
-\[\int x\ln(x)dx=x(x\ln(x)-x) -/int (x\ln(x)-x)dx\]</div>
+\[\int x\ln(x)dx=x(x\ln(x)-x) -\int (x\ln(x)-x)dx\]</div>
 <p>What has happened here is that the original integral is produced on the right, making the
 method recursive in this instance. Rearranging gives</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle 2\int x\ln(x)dx=x(x\ln(x)-x)+\int x dx= \ln(x)x^2-\frac{x^2}{2}+c\]</div>
 <p>which is the same result as by the first method when both sides are divided by two.</p>
+<p>The integral <span class="math notranslate nohighlight">\(\int x^n\ln(x) dx\)</span> is also solved by parts and is no harder. let <span class="math notranslate nohighlight">\(u=ln(x)\)</span> and <span class="math notranslate nohighlight">\(dv=x^ndx\)</span> then</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle\begin{align} \int x^n\ln(x)dx&amp;= \ln(x)\frac{n^{n+1}}{n+1}-\int \frac{x^{n+1}}{(n+1)}\frac{1}{x}dx+c\\ &amp;=\ln(x)\frac{x^{n+1}}{n+1}-\frac{x^{n+1}}{(n+1)^2}+c\\&amp;=\frac{x^{n+1}(\ln(x^{n+1})-1)  }{(n+1)^2}+c\end{align}\end{split}\]</div>
+<p>The integral <span class="math notranslate nohighlight">\(\int x\ln(x)^n dx\)</span> is much more difficult and produces a result using the incomplete gamma function, but the integral  <span class="math notranslate nohighlight">\(\displaystyle\int x\ln(x)^2 dx =\ln(x)^2\frac{x^2}{2}-\int x\ln(x)dx\)</span> and so we can use our previous result and so on for higher log powers in a recursive manner, see 5.2(vi) below.</p>
 </section>
 <section id="iii-int-e-x-sin-x-dx">
 <h3><strong>(iii) <span class="math notranslate nohighlight">\(\int e^x\sin(x)dx\)</span></strong><a class="headerlink" href="#iii-int-e-x-sin-x-dx" title="Permalink to this headline">#</a></h3>
@@ -1792,6 +2255,105 @@ method recursive in this instance. Rearranging gives</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \int e^x\sin(x)dx=-e^x\frac{(\sin(x)-\cos(x))}{2}+c\]</div>
 <p>As a check, differentiate the result. Notice that the integral could more easily be solved by converting the sine to its exponential form. It is often, but not always the case, that more than one method could be used to solve an integral. Which you choose depends on your particular liking for one method over another.</p>
+</section>
+<section id="iv-an-integral-by-parts-and-recursion-displaystyle-i-n-int-x-ne-ax-dx">
+<h3><strong>(iv) An integral by parts and recursion, <span class="math notranslate nohighlight">\(\displaystyle I_n=\int x^ne^{-ax}dx\)</span></strong><a class="headerlink" href="#iv-an-integral-by-parts-and-recursion-displaystyle-i-n-int-x-ne-ax-dx" title="Permalink to this headline">#</a></h3>
+<p>The integral <span class="math notranslate nohighlight">\(\displaystyle I_n=\int x^ne^{-ax}dx\)</span> can be solved for <span class="math notranslate nohighlight">\(n=0,1,2\cdots\)</span> where <span class="math notranslate nohighlight">\(a\)</span> is a constant. The first in the series is <span class="math notranslate nohighlight">\(\displaystyle I_0=\int x^0e^{-ax}dx=-\frac{e^{-ax}}{a}\)</span> . The next is integrated by parts, with <span class="math notranslate nohighlight">\(u=x, dv=e^{-ax}dx\)</span>, and <span class="math notranslate nohighlight">\(v=-e^{-ax}/a\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle I_1= \int xe^{-ax}dx= -\frac{xe^{-ax}}{a}+\frac{1}{a}\int e^{-ax}dx=-\frac{xe^{-ax}}{a}+\frac{e^{-ax}}{a}\]</div>
+<p>we note that the rhs. integral is actually that of the first in the series, thus</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle I_1=-\frac{xe^{-ax}}{a}+\frac{I_0}{a}\]</div>
+<p>which means that it appears that only the first integral has to be worked out and the rest found by recursion. To see if this is correct the next powers are tested</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle I_2= \int x^2e^{-ax}dx= -\frac{x^2e^{-ax}}{a}+\frac{2}{a}\int xe^{-ax}dx=-\frac{x^2e^{-ax}}{a}+\frac{2I_1}{a}\]</div>
+<div class="math notranslate nohighlight">
+\[\displaystyle I_3= \int x^3e^{-ax}dx= -\frac{x^3e^{-ax}}{a}+\frac{3}{a}\int x^2e^{-ax}dx=-\frac{x^3e^{-ax}}{a}+\frac{3I_2}{a}\]</div>
+<p>and by induction we propose that the <span class="math notranslate nohighlight">\(n^{th}\)</span> term is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle I_n= \int x^ne^{-ax}dx= -\frac{x^ne^{-ax}}{a}+\frac{n}{a}\int x^{n-1}e^{-ax}dx=-\frac{x^ne^{-ax}}{a}+\frac{nI_{n-1}}{a}\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Use Sympy to do an algebraic calculation by recursion</span>
+<span class="n">n</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">a</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;n,x,a&#39;</span><span class="p">,</span><span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">xnexp</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>                                     <span class="c1"># define I(n)= x^n.exp(-ax)/a+I(n-1)</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">:</span>
+        <span class="k">return</span> <span class="o">-</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">a</span><span class="o">*</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="n">a</span>                      <span class="c1"># value of integral I0</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="o">-</span><span class="n">x</span><span class="o">**</span><span class="n">n</span><span class="o">*</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">a</span><span class="o">*</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="n">a</span> <span class="o">+</span> <span class="p">(</span><span class="n">n</span><span class="o">/</span><span class="n">a</span><span class="p">)</span><span class="o">*</span><span class="n">xnexp</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> 
+
+<span class="n">simplify</span><span class="p">(</span><span class="n">xnexp</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="p">)</span>                               <span class="c1"># n=3 </span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/integration-B_5_0.png" src="../_images/integration-B_5_0.png" />
+</div>
+</div>
+<p>As a check the integral is calculated directly,</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">simplify</span><span class="p">(</span><span class="n">integrate</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">3</span><span class="o">*</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">a</span><span class="o">*</span><span class="n">x</span><span class="p">),</span><span class="n">x</span><span class="p">)</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/integration-B_7_0.png" src="../_images/integration-B_7_0.png" />
+</div>
+</div>
+<p>If limits of <span class="math notranslate nohighlight">\(0\to \infty\)</span> are added to the integral then the last result becomes</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \int_0^\infty x^3e^{-a*x}dx=-(a^3x^3+3a^2x^2-6ax-6)\frac{e^{-ax}}{a^4}\bigg|_0^\infty=\frac{6}{x^4}\]</div>
+<p>In the limit <span class="math notranslate nohighlight">\(x=0\)</span> all terms in brackets, except the constant, are zero, and the remaining term is multiplied by <span class="math notranslate nohighlight">\(-1\)</span> as it the lower limit, and when <span class="math notranslate nohighlight">\(x=\infty\)</span> the exponential decreases faster than the power of <span class="math notranslate nohighlight">\(x\)</span> increases and the whole becomes zero. The next few integrals are</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\int_0^\infty x^4e^{-ax}dx=\frac{24}{a^5}\\ \int_0^\infty x^5e^{-ax}dx=\frac{120}{a^5}\\ \int_0^\infty x^6e^{-ax}dx=\frac{720}{a^7}\end{split}\]</div>
+<p>and after a bit of fiddling around we find that the numbers are <span class="math notranslate nohighlight">\(n!\)</span> thus</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \int_0^\infty x^ne^{-ax}dx=\frac{n!}{a^{n+1}}\]</div>
+<p>which defines the Gamma function when <span class="math notranslate nohighlight">\(a=1\)</span>.</p>
+</section>
+<section id="v-simplifying-the-partition-function-for-the-debye-model-of-a-solid">
+<h3><strong>(v) Simplifying the partition function for the Debye model of a solid</strong><a class="headerlink" href="#v-simplifying-the-partition-function-for-the-debye-model-of-a-solid" title="Permalink to this headline">#</a></h3>
+<p>In the Debye model of a perfect crystal the partition function <span class="math notranslate nohighlight">\(Z\)</span> is</p>
+<div class="math notranslate nohighlight">
+\[ \displaystyle \ln(Z)=-9\left(\frac{T}{\theta}\right)^3\int_0^{\theta/T}x^2\ln(1-e^{-x})dx\]</div>
+<p>The Debye temperature is <span class="math notranslate nohighlight">\(\theta=\hbar\omega/k_B\)</span> where <span class="math notranslate nohighlight">\(k_B\)</span> is the Boltzmann constant and the Debye frequency <span class="math notranslate nohighlight">\(\omega\)</span> is the highest frequency a phonon can have in the crystal’s lattice. For silver <span class="math notranslate nohighlight">\(\theta\)</span> = <span class="math notranslate nohighlight">\(225\)</span> K.</p>
+<p>We try to solve the integral ‘by parts’ letting <span class="math notranslate nohighlight">\(dv=x^2, u=\ln(1-e^{-x})\)</span> then</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \int_0^{\theta/T}x^2\ln(1-e^{-x})dx= \ln(1-e^{-x})\frac{x^3}{3}\bigg|_0^{\theta/T}-\int_0^{\theta/T} \frac{x^3e^{-x}}{3(1-e^{-x})}dx\]</div>
+<p>and therefore</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \ln(Z)=-3\ln(1-e^{-\theta/T})+3\left(\frac{T}{\theta}\right)^3\int_0^{\theta/T} \frac{x^3}{(e^{x}-1)}dx\]</div>
+<p>Unfortunately the integral appears to have no algebraic solution, unless the limits are <span class="math notranslate nohighlight">\(0\to \infty\)</span>, and will have to be evaluated numerically.</p>
+</section>
+<section id="vi-using-summation-and-by-parts-to-evaluate-the-integral-int-0-infty-frac-x-3-e-x-1-dx-from-the-debye-model">
+<h3><strong>(vi)  Using summation and ‘by-parts’ to evaluate the integral <span class="math notranslate nohighlight">\(\int_0^\infty \frac{x^3}{e^x -1}dx\)</span> from the Debye model</strong><a class="headerlink" href="#vi-using-summation-and-by-parts-to-evaluate-the-integral-int-0-infty-frac-x-3-e-x-1-dx-from-the-debye-model" title="Permalink to this headline">#</a></h3>
+<p>In calculating the heat capacity of a crystal at low temperatures using the Debye model the integral to be solved is <span class="math notranslate nohighlight">\(I=\displaystyle \int_0^{\theta/T} \frac{x^3}{e^x -1}dx\)</span>. At low temperatures the parameter <span class="math notranslate nohighlight">\(x =\theta/T\)</span> is large and so, without adding any significant error the integral becomes <span class="math notranslate nohighlight">\(I=\displaystyle \int_0^\infty \frac{x^3}{e^x -1}dx\)</span>. The parameter <span class="math notranslate nohighlight">\(\theta\)</span> is the Debye temperature, a constant for each substance.  At first sight this seems very a daunting integral but if the argument is re-written it allows a series expansion to be used because at low temperature only <span class="math notranslate nohighlight">\(e^{-x}\lt 1\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin{align}\frac{x^3}{e^x -1}&amp;=x^3\frac{e^{-x}}{1-e^{-x}}=x^3e^{-x}(1+e^{-x}+e^{-2x}+\cdots)\\&amp;=\sum_{n=1}^\infty e^{-nx}x^3 \end{align}\end{split}\]</div>
+<p>The integral is now</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle I= \sum_{n=1}^\infty \int_0^\infty e^{-nx}x^3dx \]</div>
+<p>and can be solved with a substitution <span class="math notranslate nohighlight">\(z=nx,\; dz=ndx\)</span> and then repeatedly using the ‘by parts’ method.</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle I= \sum_{n=1}^\infty \int_0^\infty e^{-nx}x^3dx =\sum_{n=1}^\infty \frac{1}{n^4}\int_0^\infty e^{-z}z^3dz\]</div>
+<p>Then choosing <span class="math notranslate nohighlight">\(u=z^3, v  =e^{-z}\)</span></p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \int_0^\infty e^{-z}z^3dz =  -e^{-z}z^3\bigg|_0^\infty - 3\int_0^\infty e^{-z}z^2dz\]</div>
+<p>and the first term on the right is zero, as it will be in the next integral hence,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle - 3\int_0^\infty e^{-z}z^2dz= 3\cdot 2 \int_0^\infty e^{-z}zdz\]</div>
+<p>and continuing</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle 6\int_0^\infty e^{-z}zdz= -6\int_0^\infty e^{-z}dz=6\]</div>
+<p>thus</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle I= \sum_{n=1}^\infty \frac{1}{n^4}\int_0^\infty e^{-nx}x^3dx = 6\sum_{n=1}^\infty \frac{1}{n^4}\]</div>
+<p>the summation converges after only a few terms and so can be found numerically, but found analytically it is <span class="math notranslate nohighlight">\(\pi^4/90\)</span></p>
+<p>hence</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \int_0^\infty \frac{x^3}{e^x -1}dx =\frac{\pi^4}{15}\]</div>
 </section>
 </section>
 <section id="small-angle-x-ray-scattering-saxs">
@@ -1813,6 +2375,320 @@ method recursive in this instance. Rearranging gives</p>
 <p>Only the absolute value of the scattering is measured in an experiment: negative numbers of photons do not make any sense. The zeros correspond to destructive interference between the incoming and scattered waves.</p>
 <p><img alt="Drawing" src="../_images/integration-fig7a.png" /></p>
 <p>Figure 7a. Calculated scattering profile as might be measure in a SAXS experiment with a square potential. The inset shows the vectors describing the incoming x-ray <span class="math notranslate nohighlight">\(k_0\)</span> and the scattered ray <span class="math notranslate nohighlight">\(k\)</span> with the wavevector <span class="math notranslate nohighlight">\(q\)</span>.</p>
+</section>
+<section id="differentiation-under-the-integral-the-leibniz-formula">
+<h2>5.2 Differentiation under the Integral. The Leibniz formula<a class="headerlink" href="#differentiation-under-the-integral-the-leibniz-formula" title="Permalink to this headline">#</a></h2>
+<p>To differentiate an integral this either must contain a function or have limits that contains a parameter, otherwise the integral is simply a number and differentiation results in zero.  For example the integral</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle F(t)=\int_0^{\pi/2}\sin(tx)dx\]</div>
+<p>is still a function of <span class="math notranslate nohighlight">\(t\)</span> after integration and substitution of limits gives</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle F(t)=-\frac{\cos(xt)}{t}\bigg|_0^{x\,=\,\pi/2}=\frac{1}{t}\left(1-\cos\left(\frac{\pi t}{2}\right)\right)\]</div>
+<p>and naturally this can be differentiated with respect to <span class="math notranslate nohighlight">\(t\)</span>, i.e. we can evaluate <span class="math notranslate nohighlight">\(dF/dt\)</span>.</p>
+<p>However, it is permissible to move the derivative to inside the integral and thus differentiation occurs before integration. This can be advantageous because the integral either may not be able to be calculated, or it is very tricky to do so. After differentiation and integration of the result, we may be able to solve the original integral. This is illustrated in next main section after introducing the Leibniz formula.</p>
+<p>If <span class="math notranslate nohighlight">\(f(x,t)\)</span> is the function then</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{dF}{dt}=\frac{d }{d t}\int_u^v f(x,t)dx=\int_u^v \frac{\partial f(x,t)}{\partial t}dx\tag{16A}\]</div>
+<p>When <span class="math notranslate nohighlight">\(u,v\)</span> are constants this is the limited form of the Leibniz formula. In the general case when <span class="math notranslate nohighlight">\(u,v\)</span> are functions of <span class="math notranslate nohighlight">\(t\)</span> i.e. <span class="math notranslate nohighlight">\(u(t), v(t)\)</span>, then the complete formula is needed for the derivative of an integral. (See Sokolkinoff &amp; Sokolkinoff, ‘Higher Mathematics for Engineers and Physicists’, McGraw Hill for a full derivation).</p>
+<p>To derive the Leibniz formula we start with any ordinary function of <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(t\)</span>, i.e. <span class="math notranslate nohighlight">\(f(x,t)\)</span> then its integral is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \int f(x,t)dx=F(x,t)\tag{16B}\]</div>
+<p>so that</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{\partial F}{\partial x}=f(x,t)\tag{16C}\]</div>
+<p>and adding limits in the most general way as functions of <span class="math notranslate nohighlight">\(t\)</span></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin{align} F(t)=\int_{u(t)}^{v(t)} f(x,t)dx&amp;=F(x,t)\bigg|_{x\,=\,u(t)}^{x\,=\,v(t)}\\
+&amp;=F(v,t)-F(u,t)\end{align}\end{split}\]</div>
+<p>Using the chain / function-of-a-function rule the derivative is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{dF}{dt}=\frac{\partial F(v,t) }{\partial v}\frac{dv}{dt}+\frac{\partial F(v,t)}{\partial t} -\left(\frac{\partial F(u,t) }{\partial u}\frac{du}{dt}+\frac{\partial F(u,t)}{\partial t}\right )\]</div>
+<p>which can be rearranged using the definitions above, viz,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin{align}\frac{dF}{dt}&amp;=  f(v,t)\frac{dv}{dt}-f(u,t)\frac{du}{dt}+\frac{\partial }{\partial t}\left(F(v,t)-F(u,t)\right)\\ &amp;=
+f(v,t)\frac{dv}{dt}-f(u,t)\frac{du}{dt}+\frac{\partial }{\partial t}\int_{u(t)}^{v(t)} f(x,t)dx \end{align}\end{split}\]</div>
+<p>where in the partial derivative the differentiation is done with respect to <span class="math notranslate nohighlight">\(t\)</span> and <span class="math notranslate nohighlight">\(v,u\)</span> are treated as constants. Rearranging this term produces Leibniz’s formula and is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{dF}{dt}= f(v,t)\frac{dv}{dt}-f(u,t)\frac{du}{dt}+\int_{u(t)}^{v(t)} \frac{\partial }{\partial t}f(x,t)dx \qquad\qquad\text{Leibniz formula}\tag{16D}\]</div>
+<p>There are three forms to be aware of when using this equation.</p>
+<p>(a) When the limits are functions of <span class="math notranslate nohighlight">\(t\)</span> and <span class="math notranslate nohighlight">\(f\)</span> is a function of <span class="math notranslate nohighlight">\(t\)</span> and <span class="math notranslate nohighlight">\(x\)</span>, then the full equation (eqn 16D) is used.</p>
+<p>(b) When the limits are constants then eqn. 16A can be used, and</p>
+<p>(c) If the limits are functions of <span class="math notranslate nohighlight">\(t\)</span>, but <span class="math notranslate nohighlight">\(f\)</span> is not a function of <span class="math notranslate nohighlight">\(t\)</span>, and thus integrates to zero then only the first two terms in eqn. 16D are used.</p>
+<section id="examples">
+<h3><strong>Examples</strong><a class="headerlink" href="#examples" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="i-int-0-pi-2-sin-t-x-dx">
+<h3><strong>(i)  <span class="math notranslate nohighlight">\(\int_0^{\pi/2}\sin(t-x)dx\)</span></strong><a class="headerlink" href="#i-int-0-pi-2-sin-t-x-dx" title="Permalink to this headline">#</a></h3>
+<p>Let <span class="math notranslate nohighlight">\(\displaystyle F(t)=\int_0^{\pi/2}\sin(t-x)dx\)</span> then <span class="math notranslate nohighlight">\(\displaystyle \frac{dF}{dt}\)</span> can either be evaluated by direct calculation or by using the simpler form of the Leibniz formula, (eqn. A), since the limits are constants. Using Leibniz produces</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin{align}\frac{dF}{dt}&amp;= \int_0^{\pi/2}\frac{\partial }{\partial t}\sin(t-x)dx= \int_0^{\pi/2} \cos(t-x)dx=\sin(t-x)\bigg |_{x\,=\,0}^{x\,=\,\pi/2} \\&amp;= -\sin(t-\pi/2)+\sin(t)=\cos(t)+\sin(t)\end{align}\end{split}\]</div>
+</section>
+<section id="ii-f-t-int-0-t-2-x-1-2-dx">
+<h3><strong>(ii) <span class="math notranslate nohighlight">\(F(t)=\int_0^{t^2} x^{1/2}\; dx\)</span></strong><a class="headerlink" href="#ii-f-t-int-0-t-2-x-1-2-dx" title="Permalink to this headline">#</a></h3>
+<p>If <span class="math notranslate nohighlight">\(\displaystyle F(t)=\int_0^{t^2} \sqrt{x}\; dx\)</span> then <span class="math notranslate nohighlight">\(dF/dt\)</span> can be found by integrating first, as the integral is easy, then differentiating or by using the Leibniz formula.</p>
+<p>By direct calculation</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle F(t)=\int_0^{t^2} \sqrt{x}\; dx = \frac{2}{3}x^{3/2}\bigg|_0^{x\,=\,t^2} =\frac{2}{3}t^3\]</div>
+<p>and differentiating wrt. <span class="math notranslate nohighlight">\(t\)</span> gives</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{dF}{dt}=2t^2\]</div>
+<p>Using the Leibniz formula</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin{align}\frac{dF}{dt}&amp;=2t\sqrt{t^2}-0+\int_0^{t^2}\frac{d}{dt}\sqrt{x} dx\\
+&amp;=2t^2\end{align}\end{split}\]</div>
+<p>because the derivative is in <span class="math notranslate nohighlight">\(t\)</span> any term in <span class="math notranslate nohighlight">\(x\)</span> only, such as the integral, is in effect a constant and becomes zero.</p>
+</section>
+<section id="iii-partition-function-and-heat-capacity-for-the-debye-model-of-a-solid">
+<h3><strong>(iii) Partition function and heat capacity for the Debye model of a solid</strong><a class="headerlink" href="#iii-partition-function-and-heat-capacity-for-the-debye-model-of-a-solid" title="Permalink to this headline">#</a></h3>
+<p>The internal energy of a system is calculated from the partition function as <span class="math notranslate nohighlight">\(\displaystyle U = RT^2\frac{\partial }{\partial T^2}\ln(Z)\)</span> and the heat capacity <span class="math notranslate nohighlight">\(\displaystyle C_V=\frac{\partial U}{\partial T}\)</span> both at constant volume.</p>
+<p>In part 5 example v, the integral in the partition function for the Debye crystal was simplified, here we find the internal energy and heat capacity by differentiating the integral.</p>
+<p>The Debye temperature is <span class="math notranslate nohighlight">\(\theta=\hbar\omega/k_B\)</span> where <span class="math notranslate nohighlight">\(k_B\)</span> is the Boltzmann constant and the Debye frequency <span class="math notranslate nohighlight">\(\omega\)</span> is the highest frequency a phonon can have in the crystal’s lattice. For silver <span class="math notranslate nohighlight">\(\theta\)</span> = <span class="math notranslate nohighlight">\(225\)</span> K. The partition function is given by</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \ln(Z)=-3\ln(1-e^{-\theta/T})+3\left(\frac{T}{\theta}\right)^3\int_0^{\theta/T} \frac{x^3}{(e^{x}-1)}dx\]</div>
+<p>and differentiating the first term wrt. <span class="math notranslate nohighlight">\(T\)</span> gives</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle -3\frac{d}{dT}\ln(1-e^{-\theta/T})= \frac{3\theta e^{-\theta/T}}{T^2(1-e^{-\theta/T}) }= \frac{3\theta }{T^2(e^{\theta/T}-1) }\tag{i}\]</div>
+<p>and the second term</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle 9\frac{T^2}{\theta^3}\int_0^{\theta/T} \frac{x^3}{(e^{x}-1)}dx+3\left(\frac{T}{\theta}\right)^3\frac{d}{dT}\int_0^{\theta/T} \frac{x^3}{(e^{x}-1)}dx\tag{ii}\]</div>
+<p>and the derivative of the integral is found using the Leibniz formula (with simplification (c) ) and is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{d}{dT}\int_0^{\theta/T} \frac{x^3}{(e^{x}-1)}dx=-\frac{\theta}{T^2}\frac{(\theta/T)^3}{(e^{\theta/T}-1)}\tag{iii}\]</div>
+<p>To form the internal energy add <span class="math notranslate nohighlight">\({i}+{ii}\)</span> and multiply by <span class="math notranslate nohighlight">\(RT^2\)</span> and after simplification the internal energy is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{U}{R}=9T\left(\frac{T}{\theta}\right)^3\int_0^{\theta/T} \frac{x^3}{(e^{x}-1)}dx\]</div>
+<p>The heat capacity <span class="math notranslate nohighlight">\(C_V\)</span> is found by differentiating this result by <span class="math notranslate nohighlight">\(T\)</span> and is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{C_V}{R}= 36\left(\frac{T}{\theta}\right)^3\int_0^{\theta/T} \frac{x^3}{(e^{x}-1)}dx -9\left(\frac{\theta}{T}\right)\frac{1}{e^{\theta/T}-1} \]</div>
+<p>and <span class="math notranslate nohighlight">\(C_V\)</span> ranges between zero and <span class="math notranslate nohighlight">\(3R\)</span> this the high temperature limit as found experimentally by Dulong and Petit for many compounds.</p>
+<p>At low temperatures when <span class="math notranslate nohighlight">\(\theta/T\to \infty\)</span> the second term in the heat capacity tends to zero, because the exponential term increases far more rapidly than does <span class="math notranslate nohighlight">\(\theta/T\)</span>. l’Hopital’s rule could also be used. In the first term the integral becomes</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \int_0^\infty \frac{x^3}{(e^{x}-1)}dx\]</div>
+<p>which as a definite integral is just a number. This integral is solved above, see section 5 example (vi), and is <span class="math notranslate nohighlight">\(\pi^4/15\)</span> making the low temperature heat capacity</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle C_V= \frac{12\pi^4R}{5}\left(\frac{T}{\theta}\right)^3,\qquad T\to 0 \]</div>
+<p>and the <span class="math notranslate nohighlight">\(T^3\)</span> dependence has been amply confirmed by experiment.</p>
+</section>
+<section id="iv-int-t-t-2-e-xt-dx-using-the-full-leibniz-formula">
+<h3><strong>(iv)<span class="math notranslate nohighlight">\( \int_t^{t^2} e^{xt}dx\)</span> using the full Leibniz formula</strong><a class="headerlink" href="#iv-int-t-t-2-e-xt-dx-using-the-full-leibniz-formula" title="Permalink to this headline">#</a></h3>
+<p>If <span class="math notranslate nohighlight">\(\displaystyle F(t)=\int_t^{t^2} e^{xt}dx\)</span> to find <span class="math notranslate nohighlight">\(dF/dt\)</span> we must use the full Leibniz formula eqn. D.</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{dF(t)}{dt}=   2te^{t^3}-e^{t^2}+\int_t^{t^2}\frac{\partial }{\partial t}e^{xt} dx\]</div>
+<p>The right hand integral evaluates to</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \int_t^{t^2}\frac{\partial }{\partial t}e^{xt} dx = \int_t^{t^2}x e^{xt}dx=\frac{(tx-1)}{t^2}e^{tx}\bigg|_{x\,=\,t}^{x\,=\,t^2}=\frac{(t^3-1)}{t^2}e^{t^3}-\frac{(t^2-1)}{t^2}e^{t^2}\]</div>
+<p>where a standard integral for <span class="math notranslate nohighlight">\(xe^{tx}\)</span> was used, see table in section 2.14. The result is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{dF(t)}{dt}=(3t-1/t^2)e^{t^3}+(1/t^2-2)e^{t^2}\]</div>
+</section>
+<section id="v-int-0-infty-e-ax-dx-frac-1-a-by-repeated-differentiation">
+<h3><strong>(v) <span class="math notranslate nohighlight">\( \int_0^\infty e^{-ax}dx=\frac{1}{a}\)</span> by repeated differentiation</strong><a class="headerlink" href="#v-int-0-infty-e-ax-dx-frac-1-a-by-repeated-differentiation" title="Permalink to this headline">#</a></h3>
+<p>The integral <span class="math notranslate nohighlight">\(\displaystyle \int_0^\infty e^{-ax}dx=\frac{1}{a}\)</span> can be differentiated wrt. <span class="math notranslate nohighlight">\(a\)</span> and if we differentiate one side then the other side must also be differentiated, viz</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{d}{da}\int_0^\infty e^{-ax}dx =\frac{d}{da}\left(\frac{1}{a}\right)\longrightarrow \int_0^\infty - xe^{-ax}dx =-\frac{1}{a^2}\]</div>
+<p>This can be repeated</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{d}{da}\int_0^\infty -xe^{-ax}dx =-\frac{d}{da}\left(\frac{1}{a^2}\right)\longrightarrow \int_0^\infty x^2e^{-ax}dx =\frac{2}{a^3}\]</div>
+<div class="math notranslate nohighlight">
+\[\displaystyle \int_0^\infty -x^3e^{-ax}dx =-\frac{2\cdot 3}{a^4},\qquad \int_0^\infty x^4e^{-ax}dx =\frac{2\cdot 3\cdot 4}{a^5}\]</div>
+<p>The last equation is the same as <span class="math notranslate nohighlight">\(\displaystyle \int_0^\infty x^4e^{-ax}dx=\frac{4!}{a^5}\)</span> and by induction we can extrapolate to the <span class="math notranslate nohighlight">\(n^{th}\)</span> term as</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle (-1)^{n}\int_0^\infty x^ne^{-ax}dx=\frac{n!}{a^{n+1}}\]</div>
+<p>which has the form of the gamma function when <span class="math notranslate nohighlight">\(a=1\)</span>.</p>
+</section>
+<section id="vi-a-complicated-integral-i-n-int-0-1-x-t-ln-n-x-dx-solved-by-recursion">
+<h3><strong>(vi) A complicated integral <span class="math notranslate nohighlight">\( I_n=\int_0^1 x^t\ln^n(x)dx\)</span> solved by recursion</strong><a class="headerlink" href="#vi-a-complicated-integral-i-n-int-0-1-x-t-ln-n-x-dx-solved-by-recursion" title="Permalink to this headline">#</a></h3>
+<p>The complicated integral <span class="math notranslate nohighlight">\(\displaystyle I_n=\int_0^1 x^t\ln^n(x)dx\)</span> can be solved by differentiating wrt. <span class="math notranslate nohighlight">\(t\)</span> starting with <span class="math notranslate nohighlight">\(\displaystyle \int_0^1 x^t dx=(t+1)^{-1}\)</span>. ( The non standard notation <span class="math notranslate nohighlight">\(\ln^n(x) \equiv (\ln(x))^n\)</span> is used for clarity). By using the ‘by parts’ method <span class="math notranslate nohighlight">\(I_n\)</span> can also be evaluated, and this leads to recursion as follows.</p>
+<p>Choosing <span class="math notranslate nohighlight">\(u=\ln^n(x), dv=x^t\)</span>, then</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin{align} I_n=\int x^t\ln^n(x)dx &amp;= \ln^n(x)\frac{x^{t+1}}{t+1}-\int \frac{x^{t+1}}{t+1}\frac{n\ln^{n-1}(x)}{x} dx\\&amp;=\ln^n(x)\frac{x^{t+1}}{t+1}-\frac{n}{t+1}\int x^{t}\ln^{n-1}(x)dx \end{align}\end{split}\]</div>
+<p>and as <span class="math notranslate nohighlight">\(\displaystyle I_{n-1} = \int x^{t}\ln^{n-1}(x)dx\)</span> the integral can be written recursively as</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle I_n=\frac{x^{t+1}}{t+1}\ln^n(x)-\frac{n}{t+1}I_{n-1}\]</div>
+<p>and the first integral only is required <span class="math notranslate nohighlight">\(\displaystyle I_0 =\int x^tdx\)</span>, but of course the <span class="math notranslate nohighlight">\(I_n\)</span> integral contains very many terms for any reasonably sized <span class="math notranslate nohighlight">\(n\)</span> and no general equation is apparent. When limits <span class="math notranslate nohighlight">\(x=0\to 1\)</span> are added the first term on the rhs. of the recursion equation is zero.</p>
+<p>The same integral evaluated by differentiation starts by differentiating both sides of <span class="math notranslate nohighlight">\(\displaystyle \int_0^1 x^t dx=(t+1)^{-1}\)</span>  which produces</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{d}{dt}\int_0^1 x^tdx=\int_0^1 x^t\ln(x)dx=-\frac{1}{(t+1)^2}\]</div>
+<p>and repeatedly differentiating gives</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin{align}&amp;\frac{d}{dt}\int_0^1 x^t\ln(x)dx=\int_0^1 x^t\ln^2(x)dx =2\frac{1}{(t+1)^3}\\
+&amp;\frac{d}{dt}\int_0^1 x^t\ln^2(x)dx=\int_0^1 x^t\ln^3(x)dx =-2\cdot3\frac{1}{(t+1)^4}\\
+&amp; \frac{d}{dt}\int_0^1 x^t\ln^3(x)dx=\int_0^1 x^t\ln^4(x)dx =2\cdot3\cdot 4\frac{1}{(t+1)^5}\end{align}\\ \vdots\end{split}\]</div>
+<p>from which we surmise that</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{d}{dt}\int_0^1 x^t\ln^n(x)dx=\int_0^1 x^t\ln^n(x)dx =(-1)^n\frac{n!}{(t+1)^{n+1}}\]</div>
+<p>which gives the general form of the integral for any <span class="math notranslate nohighlight">\(t\)</span> and <span class="math notranslate nohighlight">\(n\ge 0\)</span>.</p>
+</section>
+</section>
+<section id="nearest-neighbour-distribution">
+<h2>5.3 Nearest Neighbour Distribution<a class="headerlink" href="#nearest-neighbour-distribution" title="Permalink to this headline">#</a></h2>
+<p>We shall now take a small diversion. One interesting, but rather sophisticated example of differentiating integrals occurs when finding the distribution of nearest (closest or first) neighbour molecules in a solution, see Chandrasekhar(1943). This also applies to colloids, proteins and even galaxies.</p>
+<p>Let <span class="math notranslate nohighlight">\(w(r)\)</span> be the probability that the nearest neighbour occurs between distance <span class="math notranslate nohighlight">\(r\)</span> and <span class="math notranslate nohighlight">\(r + dr\)</span>. This must be the probability than no molecules exist up to <span class="math notranslate nohighlight">\(r\)</span> and that the next molecule exists in the shell <span class="math notranslate nohighlight">\(r \to r + dr\)</span>. The molecules are assumed to be positioned at random in the solution. Thus,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle  w(r)=\left(  1-\int_0^r w(r)dr \right)4\pi r^2 n \qquad\]</div>
+<p>where <span class="math notranslate nohighlight">\(n\)</span> is the average number of molecules / unit volume. (<span class="math notranslate nohighlight">\(1 \mathrm{\,mol\, m^{-3}}  \equiv 10^3  N_A/10^{27} = 0.6023\)</span> molecules / nm<span class="math notranslate nohighlight">\(^3\)</span>). The term in brackets is 1-probability that a molecule exists, i.e. that it does not exist in <span class="math notranslate nohighlight">\(0 \to r\)</span> and the integral is the probability that it exists in <span class="math notranslate nohighlight">\(0 \to r\)</span>. The <span class="math notranslate nohighlight">\(4\pi r^2 n\)</span> is the number of molecules in the shell <span class="math notranslate nohighlight">\(\delta r\)</span>.</p>
+<p>This looks hard to solve because <span class="math notranslate nohighlight">\(w(r)\)</span> is also inside the integration, so it is necessary to isolate the integral first, by dividing both sides by <span class="math notranslate nohighlight">\(4\pi r^2 n\)</span>, and then differentiating both sides to find</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle  \frac{d}{dr}\left(\frac{w(r)}{4\pi r^2 n}\right)= \frac{d}{dr}\left(1-\int w(r)dr\right) = -w(r)\qquad\]</div>
+<p>In the next step we multiply the rhs by one by multiplying top and bottom by the same term,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{d}{dr}\left(\frac{w(r)}{4\pi r^2 n}\right)=-4\pi r^2 n \left(\frac{w(r)}{4\pi r^2 n}\right)\]</div>
+<p>The result is seen by inspection if you recognize that by letting <span class="math notranslate nohighlight">\(w(r)/4\pi r^2 n=y\)</span> and integrating the equation it has the form <span class="math notranslate nohighlight">\(\displaystyle \int\frac{dy}{y}=-4\pi n \int r^2dr \)</span> which is a standard integral and gives</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle  w(r)=4\pi r^2 ne^{-4\pi r^3n/3}\]</div>
+<p>The shape of <span class="math notranslate nohighlight">\(w(r)\)</span> can be worked out just by looking at it. The term in <span class="math notranslate nohighlight">\(r^2\)</span> causes <span class="math notranslate nohighlight">\(w(r)\)</span> to increase and the exponential to decrease, thus we expect it to start at zero reach a maximum and fall off to zero at large <span class="math notranslate nohighlight">\(r\)</span>. Physically this is what one might expect, no near neighbour will be at at zero distance and none either at very large distances because they are all present at some shorter distance.</p>
+<p><img alt="Drawing" src="../_images/differen-fig5a.png" /></p>
+<p>Figure 7b. Probability of a nearest neighbour molecules <span class="math notranslate nohighlight">\(w(r)\)</span> being present at distance <span class="math notranslate nohighlight">\(r\)</span> (nm) at various concentrations in mol/dm<span class="math notranslate nohighlight">\(^3\)</span> assuming that molecules are positioned at random in solution.</p>
+</section>
+<section id="evaluating-integrals-via-differentiation-and-feynman-s-trick">
+<h2>5.4 Evaluating integrals <em>via</em> differentiation and  ‘Feynman’s trick’<a class="headerlink" href="#evaluating-integrals-via-differentiation-and-feynman-s-trick" title="Permalink to this headline">#</a></h2>
+<p>Once the derivative of an integral is found we naturally want to evaluate the integral itself. This can be achieved only by knowing the value of the integral <span class="math notranslate nohighlight">\(F(x)\)</span> at, for example, <span class="math notranslate nohighlight">\(F(1)\)</span> or <span class="math notranslate nohighlight">\(F(0)\)</span> etc. because this allows the integration constant to be calculated. The ‘Feynman’s trick’, as integration using derivatives has become known, uses an artificially added parameter with which to differentiate with the purpose of removing some terms in the integral and thereby simplifying it. Finally, this parameter is set to a value as appropriate to re-form the initial integral. Some examples should make this method clearer, but it has to be remembered that a lot of cunning and imagination is often required to make this method work.</p>
+<section id="id1">
+<h3>Examples<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="i-f-t-int-0-ln-t-e-xdx">
+<h3><strong>(i) <span class="math notranslate nohighlight">\( F(t)= \int_0^{\ln(t)}e^xdx\)</span></strong><a class="headerlink" href="#i-f-t-int-0-ln-t-e-xdx" title="Permalink to this headline">#</a></h3>
+<p>To reach a solution it is essential that the integral is known at some value, this is because after differentiation an integration without limits, i.e. an indefinite integral remains, and the integration constant has to be evaluated. To illustrate this the integral</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle F(t)= \int_0^{\ln(t)}e^xdx\]</div>
+<p>is evaluated using the Leibniz method.</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{dF}{dt}=f'(t)=\frac{d}{dt} \int_0^{\ln(t)}e^x= e^{-\ln(t)}\frac{1}{t}=-1 \]</div>
+<p>The derivative <span class="math notranslate nohighlight">\(\displaystyle \int_o^{\ln(t)} \frac{\partial }{\partial t}e^x dx\)</span> is zero because <span class="math notranslate nohighlight">\(\displaystyle \frac{\partial }{\partial t}e^{x}=0\)</span>. Integrating <span class="math notranslate nohighlight">\(dF/dt\)</span> gives</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle F(t)=\int f'(t)dt=-t+c\]</div>
+<p>where <span class="math notranslate nohighlight">\(c\)</span> is a constant of integration. This can only be found if a value of <span class="math notranslate nohighlight">\(F(t)\)</span> is known for some <span class="math notranslate nohighlight">\(t\)</span>. Choosing <span class="math notranslate nohighlight">\(t=1\)</span> gives <span class="math notranslate nohighlight">\(F(0)=0\)</span> because both limits are the same (<span class="math notranslate nohighlight">\(\ln(1)=0\)</span>) and so</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle F(t)=1-1/t\]</div>
+<p>This result could, of course, have been found easily by direct integration, but illustrates the method to be used for far more complex integrals where direct integration is not possible.</p>
+</section>
+<section id="ii-a-hard-integral-made-easier-int-0-1-x-1-ln-x-dx">
+<h3><strong>(ii) A hard integral made easier: <span class="math notranslate nohighlight">\( \int_0^1(x-1)/\ln(x)dx\)</span></strong><a class="headerlink" href="#ii-a-hard-integral-made-easier-int-0-1-x-1-ln-x-dx" title="Permalink to this headline">#</a></h3>
+<p>A far harder integral than in example (i) is <span class="math notranslate nohighlight">\(\displaystyle \int_0^1\frac{x-1}{\ln(x)}dx\)</span> which using the Feynman method by adding a parameter <span class="math notranslate nohighlight">\(t\)</span> is changed to</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle F(t)=\int_0^1\frac{x^t-1}{\ln(x)}dx\]</div>
+<p>and we seek a solution when <span class="math notranslate nohighlight">\(t=1\)</span>. Differentiating gives,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{dF}{dt}=\int_0^1\frac{d}{dt}\left(\frac{x^t-1}{\ln(x)}\right)dx=\int_0^1 x^t dx = \frac{x^{t+1}}{t+1}\bigg |_0^{x\,=\,1}=\frac{1}{1+t}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\displaystyle \frac{d x^t}{dt}=x^t\ln(x)\)</span> was used. Integrating the result gives</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle F(t)=\int\frac{1}{1+t}dt=\ln(|1+t|)+c\]</div>
+<p>To find the constant <span class="math notranslate nohighlight">\(c\)</span> we can use the fact that <span class="math notranslate nohighlight">\(F(t=0)=0\)</span> in the original integral thus</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle F(t)=\ln(|1+t|)\]</div>
+<p>and the value of <span class="math notranslate nohighlight">\(t\)</span> can be chosen as unity for our integral.</p>
+</section>
+<section id="iii-the-sinc-function-sin-ax-ax">
+<h3><strong>(iii) The sinc function <span class="math notranslate nohighlight">\( \sin(ax)/ax\)</span></strong><a class="headerlink" href="#iii-the-sinc-function-sin-ax-ax" title="Permalink to this headline">#</a></h3>
+<p>The sinc function has the form <span class="math notranslate nohighlight">\(\displaystyle \frac{\sin(ax)}{ax}\)</span> and is the fourier transform of a rectangular pulse of length <span class="math notranslate nohighlight">\(a\)</span>. The integral</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \int_{-\infty}^\infty \frac{\sin(x)}{x}dx=2\int_0^\infty \frac{\sin(x)}{x}dx\tag{16E}\]</div>
+<p>is very difficult to evaluate. Instead using the Feynman method the integral is changed by introducing a term <span class="math notranslate nohighlight">\(e^{-xt}\)</span> that when differentiated removes <span class="math notranslate nohighlight">\(1/x\)</span> from the integral and which will produce the integral (16E) when <span class="math notranslate nohighlight">\(t=0\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle F(t)=\int_0^\infty \frac{\sin(x)}{x}e^{-tx}dx\tag{16F}\]</div>
+<p>The derivative wrt. <span class="math notranslate nohighlight">\(t\)</span> is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{dF(t)}{dt}=-\int_0^\infty \sin(x)e^{-tx}dx\]</div>
+<p>which can be evaluated by using the ‘by parts’ method or by converting the sine to its exponential form <span class="math notranslate nohighlight">\(\displaystyle \sin(x)=\frac{e^{ix}-e^{-ix}}{2i}\)</span> producing</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle\begin{align} \frac{dF(t)}{dt}&amp;=\frac{-1}{2i}\int_0^\infty \left(e^{ix}-e^{-ix}\right)e^{-tx})dx\\&amp;=\frac{-1}{2i}\left(\frac{e^{(i-t)x}}{i-t}-\frac{e^{-(i+t)x}}{-(i+t)}\right) \bigg |_0^{x\,=\,\infty} =-\frac{1}{1+t^2}\qquad (t \gt 0)\end{align}\end{split}\]</div>
+<p>integrating this again to find <span class="math notranslate nohighlight">\(F\)</span> is a standard integral and using tables gives</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle F(t)=-\int \frac{1}{1+t^2}dt= -\tan^{-1}(t)+c\]</div>
+<p>To find <span class="math notranslate nohighlight">\(c\)</span>, values of <span class="math notranslate nohighlight">\(F(t)\)</span> and <span class="math notranslate nohighlight">\(\tan^{-1}(t)\)</span> must be known at some value of <span class="math notranslate nohighlight">\(t\)</span>. We try <span class="math notranslate nohighlight">\(t\to \infty\)</span>, then <span class="math notranslate nohighlight">\(F(\infty)\to 0\)</span> and <span class="math notranslate nohighlight">\(\tan^{-1}(\infty)\to \pi/2\)</span> thus <span class="math notranslate nohighlight">\(c=\pi/2\)</span>. The integration is therefore</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle F(t)=\frac{\pi}{2}-\tan^{-1}(t)\]</div>
+<p>In eqn. (16F) if <span class="math notranslate nohighlight">\(t=0\)</span> then <span class="math notranslate nohighlight">\(e^{-tx}=1\)</span> and we obtain the original integration (E), thus setting <span class="math notranslate nohighlight">\(t=0\)</span> in the last equation produces <span class="math notranslate nohighlight">\(F(t=0)=\pi/2\)</span> and so</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \int_{-\infty}^\infty \frac{\sin(x)}{x}dx=\pi\]</div>
+<p>If the integral were <span class="math notranslate nohighlight">\(\displaystyle \int_{-\infty}^\infty \frac{\sin(ax)}{ax}dx\)</span> by substituting <span class="math notranslate nohighlight">\(z\to ax\; dz=adx\)</span> the result is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \int_{-\infty}^\infty \frac{\sin(ax)}{ax}dx=\frac{\pi}{a}\]</div>
+</section>
+<section id="iv-harmonic-oscillator">
+<h3><strong>(iv) Harmonic Oscillator</strong><a class="headerlink" href="#iv-harmonic-oscillator" title="Permalink to this headline">#</a></h3>
+<p>The wavefunctions for the Harmonic oscillator, as used to describe the vibrational energy levels of a diatomic molecule, have the form <span class="math notranslate nohighlight">\(\psi_n=N_nH_ne^{-a x^2/2}\)</span> where <span class="math notranslate nohighlight">\(n\)</span> is the quantum number, <span class="math notranslate nohighlight">\(N_n\)</span> is the normalisation, <span class="math notranslate nohighlight">\(H_n\)</span> a Hermite polynomial. The parameter <span class="math notranslate nohighlight">\(x=r-r_e\)</span> where <span class="math notranslate nohighlight">\(r_e\)</span> is the equilibrium bond length and <span class="math notranslate nohighlight">\(a=\sqrt{\mu k}/\hbar\)</span>. The first few wavefunctions are</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin{align}&amp;\psi_0=N_0e^{-a x^2/2},\qquad \psi_1=N_1xe^{-a x^2/2}\\&amp; \psi_2=N_2(2a x^2-1)e^{-a x^2/2}\qquad \psi_3=N_3(2a x^3-3x)e^{-a x^2/2}\end{align}\end{split}\]</div>
+<p>and these wavefunctions have the general form <span class="math notranslate nohighlight">\(x^se^{-ax^2/2}\)</span>, where <span class="math notranslate nohighlight">\(s=0,1,\cdots\)</span>. The normalisation is given by <span class="math notranslate nohighlight">\(N_n^2\displaystyle \int_{-\infty}^\infty\psi_n^*\psi_n dx=1\)</span> which means integrating equations such as <span class="math notranslate nohighlight">\(\displaystyle \int_{-\infty}^\infty x^se^{-ax^2}dx\)</span> where <span class="math notranslate nohighlight">\(s\)</span> is always an even number. If <span class="math notranslate nohighlight">\(s\)</span> is odd then the integral is an odd function and will be zero over any symmetrical integration limits. First the integrations are evaluated then the normalisation calculated.</p>
+<p>The integration can be done ‘by parts’ but also by the Feynman method, the only integration we need to know is the first</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \int_{-\infty}^\infty e^{-ax^2/2}dx=\sqrt{\frac{2\pi}{a}}\]</div>
+<p>and both sides of this equation will be differentiated. In this instance the ‘trick’ is to recognise that</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \int_{-\infty}^\infty \frac{\partial}{\partial a}e^{-ax^2/2}dx=-\int_{-\infty}^\infty \frac{x^2}{2}e^{-ax^2/2}dx\]</div>
+<p>and so the calculation runs backwards as it were;</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \int_{-\infty}^\infty x^2e^{-ax^2/2}dx=-2\int_{-\infty}^\infty \frac{\partial }{\partial a}e^{-ax^2/2}dx=-2\frac{\partial }{\partial a}\int_{-\infty}^\infty e^{-ax^2/2}dx=-2\frac{\partial }{\partial a}\sqrt{\frac{2\pi}{a}}=\sqrt{\frac{2\pi}{a^3}} \]</div>
+<p>and no further integrations were done. It is now easy to see that by differentiating <span class="math notranslate nohighlight">\(\displaystyle \frac{d}{da}x^2e^{-ax^2/2}=-x^4e^{-ax^2}/2\)</span> is produced and so we can now proceed to calculate all the terms in <span class="math notranslate nohighlight">\(\displaystyle \int_{-\infty}^\infty x^se^{-ax^2/2}dx\)</span> where <span class="math notranslate nohighlight">\(s\)</span> is even, for example</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \int_{-\infty}^\infty x^4e^{-ax^2/2}dx=-2\frac{\partial }{\partial a}\frac{\sqrt{2\pi}}{a^{3/2}}=3\sqrt{\frac{2\pi}{a^5}}\]</div>
+<div class="math notranslate nohighlight">
+\[\displaystyle \int_{-\infty}^\infty x^6e^{-ax^2/2}dx=-2\frac{\partial }{\partial a}\frac{3\sqrt{2\pi}}{a^{5/2}}=15\sqrt{\frac{2\pi}{a^7}}\]</div>
+<p>The normalisations <span class="math notranslate nohighlight">\(N_n\)</span> are calculated as</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle N_n^2\int \psi_n^*\psi_n dx=1\]</div>
+<p>and for <span class="math notranslate nohighlight">\(n=0\)</span> gives a value</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle N_0^2\sqrt{\frac{\pi}{a}}=1\]</div>
+<p>where the change <span class="math notranslate nohighlight">\(a\to 2a\)</span> was made as now the integral is <span class="math notranslate nohighlight">\(\displaystyle \int e^{-ax^2}dx\)</span>. The wavefunction is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \psi_0= \left(\frac{a}{\pi}\right)^{1/4}e^{-ax^2/2}\]</div>
+<p>and for <span class="math notranslate nohighlight">\(\psi_1\)</span> the normalisation is after replaceng <span class="math notranslate nohighlight">\(a\to 2a\)</span> is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle N_1^2\int x^2e^{-ax^2}dx= N^2_1 \sqrt{\frac{\pi}{4a^3}}=1\]</div>
+<p>making <span class="math notranslate nohighlight">\(\displaystyle N_1= \left(\frac{4a^3}{\pi}\right)^{1/4}\)</span> and the wavefunction</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \psi_1=\left(\frac{4a^3}{\pi}\right)^{1/4} xe^{-ax^2/2}\]</div>
+<p>and the normalisations for the other wavefunctions are done similarly, although they are more complicated, without having to do any integrations.</p>
+</section>
+<section id="expectation-values-and-uncertainty-principle">
+<h3>Expectation values and uncertainty principle<a class="headerlink" href="#expectation-values-and-uncertainty-principle" title="Permalink to this headline">#</a></h3>
+<p>The expectation values can now be very easily calculated, for example to calculate the average momentum <span class="math notranslate nohighlight">\(\langle p\rangle&gt;\)</span> or  distance or average square distance <span class="math notranslate nohighlight">\(\langle x\rangle, \langle x^2\rangle\)</span>.</p>
+<p>The general equation is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \langle Q\rangle =\frac{\int_{-\infty}^\infty\psi\,\hat Q\, \psi dx}{\int_{-\infty}^\infty\psi\ \psi dx}\]</div>
+<p>and <span class="math notranslate nohighlight">\(\hat Q\)</span> is the operator. The operator is just multiplication by <span class="math notranslate nohighlight">\(x\)</span> for calculating average distance but for momentum is <span class="math notranslate nohighlight">\(\displaystyle -i\hbar\frac{d}{dx}\)</span>.</p>
+<section id="i-average-position-and-its-uncertainty">
+<h4><strong>(i) Average position and its uncertainty</strong><a class="headerlink" href="#i-average-position-and-its-uncertainty" title="Permalink to this headline">#</a></h4>
+<p>The average displacement for is by definition <span class="math notranslate nohighlight">\(\langle x\rangle\)</span> and for the harmonic oscillator <span class="math notranslate nohighlight">\(\langle x\rangle =0\)</span> for any quantum number as this will always be an odd function. Physically this makes sense as the potential is symmetrical about <span class="math notranslate nohighlight">\(r_e\)</span> for any <span class="math notranslate nohighlight">\(n\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \langle x_n\rangle = \frac{\int\psi_n\,x\,\psi_ndx}{\int \psi_n\psi_ndx}= 0\]</div>
+<p>but the average squared term, is finite,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin{align}\langle x^2_1\rangle &amp;= \frac{\int\psi_1\,x^2\,\psi_1dx}{\int \psi_1\psi_1dx}=\frac{\int xe^{-ax^2/2}\,(x^2)\,xe^{-ax^2/2}dx}{\int xe^{-ax^2/2}xe^{-ax^2/2}dx}\\&amp;= \frac{\int x^4e^{-ax^2}dx}{\int x^2e^{-ax^2}dx}=3\frac{\sqrt{2\pi/(2a^5)}}{\sqrt{2\pi/(2a)^3}}\\&amp;=\frac{3}{2a}\end{align}\end{split}\]</div>
+<p>The standard deviation for any measurement <span class="math notranslate nohighlight">\(Q\)</span> is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle\sigma_Q = \sqrt{\langle Q^2\rangle-\langle Q\rangle^2}\]</div>
+<p>and is a measure of the uncertainty in a measurement. Knowing both values for position when <span class="math notranslate nohighlight">\(n=1\)</span> gives <span class="math notranslate nohighlight">\(\displaystyle \sigma_x=\sqrt{\frac{3}{2a}}\)</span></p>
+</section>
+<section id="ii-average-momentum">
+<h4><strong>(ii) Average momentum</strong><a class="headerlink" href="#ii-average-momentum" title="Permalink to this headline">#</a></h4>
+<p>To calculate the expectation values for momentum the operator is <span class="math notranslate nohighlight">\(\displaystyle -i\hbar\frac{d}{dx}\)</span> thus</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \langle p\rangle=-i\hbar\int_{-\infty}^\infty \psi_n \frac{d}{dx} \psi_n dx\]</div>
+<p>and the denominator is unity as the wavefunctions are normalised. If <span class="math notranslate nohighlight">\(n=1\)</span> the integral is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \langle p_1\rangle=i\hbar N_1^2\int_{-\infty}^\infty axe^{-ax^2} dx\]</div>
+<p>which is an odd symmetry integral and therefore <span class="math notranslate nohighlight">\(\displaystyle \langle p_1\rangle=0\)</span> and this is true for all <span class="math notranslate nohighlight">\(n\)</span>.</p>
+<p>The operator for momentum squared is just the second derivative or <span class="math notranslate nohighlight">\(\displaystyle -\hbar^2\frac{d^2}{dx^2}\)</span>, thus</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \langle p^2\rangle=-\hbar^2\int_{-\infty}^\infty \psi^*_n \displaystyle\frac{d^2}{dx^2} \psi_n dx\]</div>
+<p>the wavefunctions are normalised so the denominator is unity, and for <span class="math notranslate nohighlight">\(n=1\)</span></p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \langle p^2_1\rangle=-\hbar^2\sqrt{\frac{4a^3}{\pi}} \int_{-\infty}^\infty a e^{-ax^2}ax^2(ax^2-3)dx\]</div>
+<p>for which we already have calculated values of the integrals; <span class="math notranslate nohighlight">\(\int x^2e^{-ax^2}dx=\sqrt{\pi/4a^3}\quad\int x^4e^{-ax^2}dx=3\sqrt{\pi/16a^5}\)</span> and so</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \langle p^2_1\rangle=\hbar^2\frac{3}{2a}\]</div>
+<p>and the standard deviation of the momentum is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \sigma_p=\hbar\sqrt{\frac{3}{2a}}\]</div>
+<p>Therefore the uncertainty product when <span class="math notranslate nohighlight">\(n=1\)</span> is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \sigma_x\sigma_p= \frac{3}{2}\hbar \]</div>
+<p>which agrees with the Heisenberg Uncertainty Principle that <span class="math notranslate nohighlight">\(\sigma_x\sigma_p \ge \hbar/2\)</span></p>
+</section>
+</section>
 </section>
 </section>
 

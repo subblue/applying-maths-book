@@ -310,7 +310,7 @@
 #  
 # Dating minerals    3-7.1
 #  
-# De Moivre's theorem    2-3,   2-3.2,   2-3.3,   9-6
+# De Moivre s theorem    2-3,   2-3.2,   2-3.3,   9-6
 #  
 # Decoding    9-11.1,   9-11.2
 #  
@@ -348,9 +348,11 @@
 #  
 # Differentiating exponentials    3-3.2
 #  
-# Differentiating integrals    3-3.15
+# Differentiating integrals    3-3.15,    4-5.2
 #  
 # Differentiating logarithms    3-3.12
+# 
+# Differentiating by parts    3-5
 #  
 # Differentiating parametric functions    3-4.8
 #  
@@ -359,6 +361,8 @@
 # Differentiating ratios of functions    3-4.5
 #  
 # Differentiating sine and cosine    3-3.9
+# 
+# Differentiating by substitution    3-3
 #  
 # Differentiating vectors    3-4.9,   3-4.10
 #  
@@ -547,6 +551,8 @@
 # Femtosecond    5-9,   7-9,   7-13.1,   9-5.7,   9-7.4,   9-8.4,   9-11.4,   10-15.1,   10-18.5
 #  
 # Fermion    1-9.9
+# 
+# Feynman's Trick (Integration) 4-5.4,
 #  
 # Fick's first law    10-5.3,   10-15.6,   10-15.7
 #  
@@ -857,6 +863,8 @@
 # Legendre polynomial    9-4,   9-4.1
 #  
 # Leibniz's rule    3-3.15,   3-5
+# 
+# Leibniz's formula    4-5.2
 #  
 # Length of a curve    4-,   4-13.4
 #  
@@ -996,7 +1004,7 @@
 #  
 # Multiplying and dividing complex numbers    2-1.3
 # 
-# Nearest neighbours     
+# Nearest neighbours     4-5.3    
 #  
 # Nerve impulses    11-8.3
 #  
@@ -1686,3 +1694,9 @@
 #  
 # Zipper model    5-5.2
 # 
+
+# In[ ]:
+
+
+
+
