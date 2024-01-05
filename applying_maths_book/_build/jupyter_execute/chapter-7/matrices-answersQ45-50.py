@@ -31,14 +31,34 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # $$\displaystyle  \begin{bmatrix} -0.3827i & 0.9239 \end{bmatrix} \begin{bmatrix}0.9239\\ 0.3827i \end{bmatrix} =0 $$
 # 
-# which is to be expected for a symmetrical matrix.
+# which is to be expected for a hermitian matrix.
 # 
-# (b) $\displaystyle \begin{vmatrix} 1-\lambda & -i\\i & 1-\lambda  \end{vmatrix}=(1-\lambda)^21=0 $, 
+# To calculate the eigenvectors by hand we use eqn. 34 and can choose $k=1, i=1$ the cofactor for the $ki^{th}$ entry in the matrix is $2-\lambda$. Setting up the calculation as a table using $k=1$ gives
+# 
+# $$\displaystyle \begin{array}{ll|lll}
+# & & j=1& j=2\\
+# \hline
+# k=1, i=1& x_{1j}=(-1)^{k+i}(2-\lambda_j) & x_{11}=2-3+\sqrt{2} & x_{12}=2-3-\sqrt{2}\\
+# k=1,i=2&x_{2j}=(-1)^3(i)& x_{21}=-i& x_{22}=-i\\
+# \hline
+# \end{array}$$
+# 
+# the first eigenvalue is $\lambda_1=3-\sqrt{2}$ and eigenvector  $\begin{bmatrix} x_{11} \\ x_{21} \end{bmatrix}=\begin{bmatrix} -1+\sqrt{2} \\ -i \end{bmatrix}$ which becomes 
+# 
+# $$\displaystyle x_1=\frac{1}{\sqrt{(\sqrt{2}-1)^2+i(-i))} }\begin{bmatrix} \sqrt{2}-1 \\ -i\end{bmatrix}=\begin{bmatrix} 0.3827 \\ -0.9239i \end{bmatrix}=\begin{bmatrix} 0.3827i \\ 0.9239 \end{bmatrix}$$ 
+# 
+# when normalised. We have multiplied by a constant, in this case $i$, and for no other reason than to make the two solutions symmetric. 
+# 
+# $$\displaystyle x_2=\frac{1}{\sqrt{(-\sqrt{2}-1)^2+i(-i))} }\begin{bmatrix} -\sqrt{2}-1 \\ -i\end{bmatrix}=\begin{bmatrix} 0.9239 \\ 0.3827i \end{bmatrix}$$ 
+# 
+# and where the eigenvector was multiplied by $(-1)$.
+# 
+# (b) $\displaystyle \begin{vmatrix} 1-\lambda & -i\\-i & 1-\lambda  \end{vmatrix}=(1-\lambda)^2+1=0 $, 
 # 
 # solving produces $\lambda_1=1+i,\; \lambda_2=1-i$. The normalised eivenvectors are 
 # 
 # $$\displaystyle  x_1=\frac{1}{\sqrt{2}}\begin{bmatrix} -1 \\ 1 \end{bmatrix},\; x_2= \frac{1}{\sqrt{2}}\begin{bmatrix}1 \\ 1\end{bmatrix}  $$ 
-# 
+
 # ## Q46 answer
 # The large matrix contains two $1 \times 1$ matrices and two $2\times 2$ matrices. Two eigenvalues can be found immediately, and are one and two. The other two matrices can be separated out and secular equations written, one of which is
 # 
@@ -72,7 +92,7 @@ ans
 # In[4]:
 
 
-simplify(ans[1][2][0] )  # 2ndset of values, 3rd entry. [0] gets indside vector
+simplify(ans[1][2][0] )  # 2nd set of values, 3rd entry. [0] gets indside vector
 
 
 # In[5]:
@@ -95,24 +115,24 @@ simplify(ans[2][2][0] )
 # using Sympy for algebraic solutions
 n = 4      # n = number of atoms 
 x = symbols('x')
-M = Matrix([ [x,1.0,0,0],[1,x,1,0] , [0,1,x,1], [0,0,1,x ] ])  # Huckel matrix 
+M = Matrix([ [x,1,0,0],[1,x,1,0] , [0,1,x,1], [0,0,1,x ] ])  # Huckel matrix 
 M.eigenvals()
 
 
-# It is simpler for numerical calculations to use numpy and so make $x=0$ and solve the eigenvalue/eigenvector matrix.  The eigenvalues are also normalised
+# It is simpler for numerical calculations to use numpy and solve the eigenvalue/eigenvector matrix.  The eigenvalues are also normalised
 
 # In[7]:
 
 
 M = np.array([ [0,1.0,0,0], [1,0,1,0], [0,1,0,1], [0,0,1,0 ]])  # Huckel matrix 
-ans = LA.eigh(M)
-ans[0]
+evals,evects = LA.eigh(M)
+evals  # 
 
 
 # In[8]:
 
 
-ans[1]
+evects
 
 
 # The order in which the eigenvalues and so eigenvectors are displayed is always the same as one another, however, which eigenvalue is first and which second and so forth, is arbitrary, and may not be the same in your calculation as is shown here.
@@ -146,7 +166,7 @@ ans[1]
 
 
 print('pi bond orders')
-evects = ans[1]
+
 ne = [2,2,0,0]   # number of electrons in orbitals in same order as eigvalues
 rho = np.zeros((n,n),dtype=float)  # 2D array
 for a in range(n):
@@ -197,7 +217,7 @@ M0 = np.array([ [0,1,0,0,0,0 ], [1,0,1,0,0,1], [0,1,0,1,0,0],\
 
 ans = LA.eigh(M0)        # using numpy linear algebra for numerical values
 for i in range(n):
-    print(i, ans[0][i])                   # list of eigenvalues 
+    print('{:d} {:8.4f}'.format( i, ans[0][i])  )                 # list of eigenvalues 
 
 
 # In[12]:
@@ -277,6 +297,14 @@ M
 
 
 M.eigenvects()  # order is:  eigenval, degeneracy, eigevector. labelled 1 to 6 in text
+
+
+# In[18]:
+
+
+# alternnative calculkation
+
+M.diagonalize()     # gives eigenvectors then eigenvalue matrix
 
 
 # The order of the energies is that $2 + x$ is the lowest; then a degenerate pair at energy $x + 1$, and at $x - 1$, and the highest at $x - 2$; recall that $\displaystyle x=\frac{\alpha-E}{\beta }$ and that $\beta$ is negative. The of nodes in the eigenvectors determines the energy, with the lowest being the eigenvector where each element has the same sign; in this example this is number 6. The highest energy orbital has the most changes in sign and is number 1.

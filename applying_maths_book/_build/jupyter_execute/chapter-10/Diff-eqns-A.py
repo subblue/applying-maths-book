@@ -175,11 +175,12 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # $$\displaystyle \frac{dx}{dt}=2k_3K_e\frac{(a_0-x)^2}{x}\quad\text{then} \quad \int_0^x\frac{x}{(a_0-x)^2}dx=\frac{t}{2k_3K_e}$$
 # 
-# and by substituting $(a_0-x)=z$ produces the solution
+# and by substituting $(a_0-x)=z$, $-dx=dz$ and integrating produces the solution
 # 
 # $$\displaystyle \frac{x}{a_0-x}+\ln\left(\frac{a_0-x}{a_0}\right)=\frac{t}{2k_3K_e}$$
 # 
-# It is not obvious from this equation how the concentration of CO increases with time, in fact it increases rapidly  from zero with then more slowly. At very early times expanding both terms in $x/a_0$ gives $\sqrt{x/a_0}\sim t$.  
+# where $x \le a_0$. It is not obvious from this equation how the concentration of CO increases with time because $x$ cannot be isolated on one side of the equation, in fact $\mathrm{[CO]}$ increases initially with a large gradient which continuously reduces towards zero such that  at long times $x \to a_0$. At very early times expanding both terms in $x/a_0$ gives $\sqrt{x/a_0}\sim t$.  A general plot can be made by substituting $z=x/a_0$ and plot vs $t'= t/2k_3K_e$ into the last equation. 
+#  
 # 
 # ## 2.3 Fluorescence yield
 # The fluorescence yield of a molecule $\varphi$ is the ratio of molecules excited to those that emit a photon and is defined as 
@@ -198,7 +199,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # $$\displaystyle \varphi = \frac{\text{rate of emission}}{\text{rate of absorption}} =\frac{k_fS_1}{k_aG}=\frac{k_f}{k_f+k_S} \qquad\tag{5}$$
 # 
-# and is the fraction of molecules that fluoresce. A molecule fluoresces with a rate constant that is the sum of all process destroying the excited state; therefore, if $k = k_f + k_S$ and as the fluorescence lifetime is the reciprocal of $k$ or $\tau = 1/k$, the yield becomes $\varphi = k_f \tau$.
+# and is the fraction of molecules that fluoresce. A molecule fluoresces with a rate constant that is the sum of all process destroying the excited state; therefore, if $k = k_f + k_S$ and as the fluorescence lifetime is the reciprocal of $k$ or $\tau = 1/k$, the yield becomes $\varphi = k_f \tau$. 
 # 
 # ## 2.4 Quenching an excited state. Electron spin can affect the outcome
 # 
@@ -543,7 +544,7 @@ ans
 # 
 # This equation has a standard form
 # 
-# $$\displaystyle \int\frac{1}{\alpha x^2+bx+c}dx=\frac{1}{\sqrt{b^2-4\alpha c}}\ln\left(\frac{2\alpha x+b-\sqrt{b^2-4\alpha c}}{2\alpha x+b+\sqrt{b^2-4\alpha c}} \right)+const, \qquad b^2\gt 4\alpha c \qquad\tag{5a}$$
+# $$\displaystyle \int\frac{1}{\alpha x^2+bx+c}dx=\frac{1}{\sqrt{b^2-4\alpha c}}\ln\left(\frac{2\alpha x+b-\sqrt{b^2-4\alpha c}}{2\alpha x+b+\sqrt{b^2-4\alpha c}} \right)+const, \quad b^2\gt 4\alpha c \tag{5a}$$
 # 
 # where $\alpha = -k_2,\; b=-k_1,\; c=k_1a_0$  and the condition is that $k_1^2 \gt -4k_2k_1a_0$ which is true. Substituting produces $\sqrt{b^2-4\alpha c} = \sqrt{k_1^2+4k_2k_1a_0}$ and also evaluating the constant, gives
 # 
@@ -682,7 +683,7 @@ ans
 # Figure 5d. $\mathrm{2HI \rightleftharpoons H_2 + I_2}$ reaching equilibrium starting at zero HI, rising points, and eqn 5g, and only HI, falling points, and eqn 5h. The equilibrium value $x_e=0.786$ at $448^\text{o}$ C. The curves show that the same equilibrium is reached starting either with products or reactants. 
 # ____________
 # 
-# ## 4.6 Reversible reaction when the the equilibrium constant is known $A \overset{k_1}{\underset{k_{-1}} \rightleftharpoons } B$ 
+# ## 4.6 Reversible reaction when only the equilibrium constant is known $A \overset{k_1}{\underset{k_{-1}} \rightleftharpoons } B$ 
 # 
 # Sometimes we may want the rate expression in terms of the equilibrium constant as this may be known when neither rate constant has been measured. As an example the  ortho to para conversion of H$_2$ with a catalyst such as Nickel on $\mathrm{Al_2O_3}$ has the form $o-H_2 \overset{k_1}{\underset{k_{-1}} \rightleftharpoons } p-H_2$. Other examples are cis - trans isomerisation of some hydrocarbons or of $\alpha -,\beta-$ glucoses. 
 # 
@@ -714,13 +715,55 @@ ans
 # 
 # or
 # 
-# $$\displaystyle a=a_e+(a_0-a_e)e^{-k_{obs}t}$$
+# $$\displaystyle a = a_e + (a_0-a_e)e^{-k_{obs}t}$$
 # 
-# which illustrates an exponentially decaying population of $a$ (ortho hydrogen) from $a_0$ to reach a constant value of $a_e$ at equilibrium with a measured rate constant of $k_{obs}=k_1(K+1)/K$. Both $k_1,k_{-1}$ can be found if $K$ is known, for example from thermodynamic data via the standard Gibbs energy change, $\Delta G^\text{o}=RT\ln(K)$. Notice that the initial amount of species $b$ is irrelevant to the decay of $a$.
+# which illustrates an exponentially decaying population of $a$ (ortho hydrogen) from $a_0$ to reach a constant value of $a_e$ at equilibrium with a measured rate constant of $k_{obs}=k_1(K+1)/K$. Both $k_1,k_{-1}$ can be found if $K$ is known, for example from thermodynamic data via the standard Gibbs energy change, $\Delta G^\text{o}=-RT\ln(K)$. Notice that the initial amount of species $b$ is irrelevant to the decay of $a$.
+# 
+# ## 4.7 Kinetics of ligand exchange using isotopes
+# 
+# A number of reactions involving electron and ligand exchange can be followed using isotopes ( H. McKay J. Am. Chem. Soc. 1943, v 65, p 702). Examples are
+# 
+# $$\displaystyle \mathrm{Cu^{2+}}(aq)+ \mathrm{Cu^*.ligand} \overset{k}{\underset{k}\rightleftharpoons } \mathrm{Cu.ligand}+\mathrm{Cu^{*2+}}(aq)$$
+# 
+# $$\mathrm{Fe^{2+}}(aq)+ \mathrm{Fe^{*3+}}(aq) \overset{k}{\underset{k}\rightleftharpoons } \mathrm{Fe^{3+}}(aq)+\mathrm{Fe^{*2+}}(aq)$$
+# 
+# where the $*$ represents the radioactive tracer. In both reactions $\Delta H=0$ but $\Delta S \gt 0$ because of the scrambling of isotopes between the products. As $\Delta H=0$ this does not means that there is not an activation energy for the process. The energy barrier in the second example is caused by the different bond lengths when an electron is transfered between $\mathrm{Fe^{II}-OH_2}$ and $\mathrm{Fe^{III}-OH_2}$ the former being $0.22$ nm the latter $0.205$ nm. One bond has to stretch the other contract and this takes energy. There will also be a contribution from re-arranging water molecules surrounding the ions as the charge changes. The reaction is followed by precipitating out some $\mathrm{Fe^{3+}}$ to stop further reaction, and measuring its radioactivity. (We shall assume that any decay during the reaction is insignificant, although if it is not, it can be accounted for knowing the half life). 
+# 
+# The general equations are
+# 
+# $$\displaystyle AX+B^*X\rightleftharpoons A^*X+BX, \qquad K_e=1$$
+# 
+# and let 
+# 
+# $$\displaystyle [AX]+[A^*X]=a,\quad [A^*X]=x,\quad [BX]+[B^*X]=b,\quad [B^*X]=y$$
+# 
+# At $t=0$, $[A^*X]=0$ and at infinite time we measure $x_{\infty},y_{\infty}$ and as mass is conserved $x+y=x_{\infty}+y_{\infty}$. At the end of the reaction the tracer is distributed in proportion the the number of moles of each that are present, thus $\displaystyle \frac{x_{\infty}}{a}=\frac{y_{\infty}}{b}$. 
+# 
+# The reaction scheme only gives the stoichiometry and does not indicate any mechanism, first or second order for example, so instead of using rate constants we use a proportionality constant $R$ which is the gross rate of exchange of ligands, which is constant because the chemical composition is constant, and has units of concentration/time. If the reaction is in fact bimolecular then $R=k_2ab$. The rate of production of $[A^*X]$ is $dx/dt=-dy/dt$, therefore
+# 
+# $$\displaystyle \frac{dx}{dt} = R\frac{[AX][B^*X]}{ab}-R\frac{[A^*X][BX]}{ab}$$
+# 
+# We shall need to eliminate $y$ before integration. To do this start by rearranging,
+# 
+# $$\displaystyle \frac{dx}{dt} = \frac{R}{ab}(ay-bx)=R\left(\frac{y}{b}-\frac{x}{a}\right)$$
+# 
+# where $y/b$ is the fraction of $[B^*X]$ and $x/a$ for $[A^*X]$, and substitute for $y$ using $x+y=x_{\infty}+y_{\infty}$, which leads to 
+# 
+# $$\displaystyle \frac{dx}{dt} = \frac{R}{ab}(a+b)(x_{\infty}-x)$$
+# 
+# Separating variables and integrating gives
+# 
+# $$\displaystyle \int_0^x\frac{dx}{(x_{\infty}-x)}=\frac{R}{ab}(a+b)\int_0^t dt$$
+# 
+# which is 
+# 
+# $$\displaystyle \ln\left(1-\frac{x}{x_{\infty}}\right)=-\frac{R}{ab}(a+b)t$$
+# 
+# The measurements produce $x/x_{\infty}$ at different times so a log plot has a gradient of $-R(a+b)/(ab)$ from which $R$ is found as $a,b$ are known. The form of $R$, for example $k_2ab$ or $k_1a$ is found by repeating the experiment with different values of $a$ and $b$. 
 
-# ## 4.7 Kinetics and flow 
+# ## 4.8 Kinetics and flow 
 # 
-# Water entering and leaving a tank, reaction vessel, or even a lake can be modelled by calculating the difference in the amount material flowing in and out, viz.,
+# Water entering and leaving a tank, reaction vessel, or even a lake can be modeled by calculating the difference in the amount material flowing in and out, viz.,
 # 
 # $$\displaystyle \text{Rate of change of material = rate in - rate out}$$
 # 
@@ -761,7 +804,7 @@ ans
 # Fig. 6. Left. The change in the ratio $x/x_0$ vs. reduced flow $ft/V$ for different $r_{in} = x_{in} /x_0$ ratios, showing the range of curves obtainable with different starting conditions. Right. The same equation but rewritten with ratio $r_0=x_0/x_{in}$. The ratios in both plots are $0, 0.5, 1$ and $1.5$.
 # ________
 # 
-# ## 4.8 Dissolution kinetics 
+# ## 4.9 Dissolution kinetics 
 # 
 # When a solid solute is dissolved in a solvent, the rate equation is found by considering the change in the amount dissolved in solution during a short time period. In dissolving a solid, a saturated solution will eventually be formed and this limits how much solid will dissolve. If $x_0$ is the initial amount of solid to be dissolved in $m$ grams of solvent, $s_x /m$ the saturated solution concentration, $k$ the rate of dissolution (mass s$^{-1}$) and $x$ the number of grams of solid remaining at time $t$, then
 # 
@@ -797,7 +840,7 @@ ans
 # 
 # $$\displaystyle x=-\frac{1}{Nk}\log\left(\frac{x-N}{x} \right)+ const$$
 # 
-# ## 4.9  Mean free path and probability of obtaining a path of a given length
+# ## 4.10  Mean free path and probability of obtaining a path of a given length
 # 
 # If $\bar c$ is the average velocity and there are $v$ molecules in unit volume then the total distance covered is $\bar c v$. Let $\gamma$ be the number of collisions that occur per unit volume per second and as each collision terminates two free paths, there are $2v$ free paths in the same time. As the average distance travelled is $\bar c v$ the average length of the free path $\lambda$ is 
 # 

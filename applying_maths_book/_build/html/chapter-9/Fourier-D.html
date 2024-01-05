@@ -976,7 +976,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-B.html">
-     9 First order eqn’s &amp; Integrating factors. Second order eqn’s, Newton’s laws, equations of motion.
+     9 First order equations &amp; Integrating factors. Second order equations, Newton’s laws and equations of motion.
     </a>
    </li>
    <li class="toctree-l2">
@@ -1001,7 +1001,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-F.html">
-     15 Partial Differential Equations, PDE
+     15 Partial Differential Equations, PDE. 1D &amp; 2D diffusion, Particle in a box, Lateral flow tests, Diffusion and Reaction, Cable equation, Algal Blooms
     </a>
    </li>
    <li class="toctree-l2">
@@ -1531,6 +1531,11 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-time-course-of-drug-action">
+   The time course of drug action.
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#convolution-by-fourier-transform">
    7.4 Convolution by Fourier transform
   </a>
@@ -1679,6 +1684,11 @@ title="Print to PDF"
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#convolution-by-summation">
    7.3 Convolution by summation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-time-course-of-drug-action">
+   The time course of drug action.
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -1845,11 +1855,12 @@ Figure 25. The convolution of a narrow spectral line with a wide slit in a spect
 <p>Figure 26. Curves show the instrument response (red), made up as a series of impulses (dotted), which produce a response (<span class="math notranslate nohighlight">\(w\)</span>) at each point on its profile any a few of which are shown. These are then added together in this time delayed manner, to produce the convoluted response.</p>
 <hr class="docutils" />
 <p>To understand how convolution works, suppose that the overall instrument response is made up of a series of <span class="math notranslate nohighlight">\(\delta\)</span>-function impulses. These can be infinitesimally narrow light pulses that excite a molecule. Suppose these impulses are made at ever shorter time intervals, then the effect is that of smoothly exciting the molecule. Each of the impulses elicits an ideal response but because there are many of them, their responses must be added together. The result is the convolution; the effect is shown in Fig. 26. It is always assumed in the convolution that the response is linear with the impulse, which simply means that doubling the impulse doubles the response and so forth.</p>
-<p>The light pulses occur at each point in the dashed curve, Fig. 26. The response from each impulse is the decaying solid curve. To calculate the overall response at any given point along the x-axis, the effect of all previous impulses must be added into the calculation. Suppose that the pulse exciting the sample has a shape given by some function <span class="math notranslate nohighlight">\(f\)</span>, the ideal experimental response <span class="math notranslate nohighlight">\(w\)</span>, and the convolution <span class="math notranslate nohighlight">\(C\)</span>. The terms can be written down at each time if it is assumed, for the present, that the impulses are discrete and the data is represented as a series of points at times <span class="math notranslate nohighlight">\(1, 2, 3\)</span>, and so forth; <span class="math notranslate nohighlight">\(f\)</span>(6), for example, represents the value of <span class="math notranslate nohighlight">\(f\)</span> at the sixth time position. The first point of the impulse is <span class="math notranslate nohighlight">\(f\)</span>(1) and this produces the response</p>
+<p>The light pulses occur at each point in the red instrument response curve, Fig. 26. The response from each impulse is the decaying solid curve. To calculate the overall response at any given point along the x-axis, the effect of all previous impulses must be added into the calculation. Suppose that the pulse exciting the sample has a shape given by some function <span class="math notranslate nohighlight">\(f\)</span>, the ideal experimental response <span class="math notranslate nohighlight">\(w\)</span>, and the convolution <span class="math notranslate nohighlight">\(C\)</span>. The terms can be written down at each time if it is assumed, for the present, that the impulses are discrete and the data is represented as a series of points at times <span class="math notranslate nohighlight">\(1, 2, 3\)</span>, and so forth; <span class="math notranslate nohighlight">\(f\)</span>(6), for example, represents the value of <span class="math notranslate nohighlight">\(f\)</span> at the sixth time position. The first point of the impulse is <span class="math notranslate nohighlight">\(f\)</span>(1) and this produces the response</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle f (1)[w(1) + w(2) + w(3) + \cdots]\]</div>
 <p>The second and third impulses produce</p>
-<p><span class="math notranslate nohighlight">\(\displaystyle f(2)[w(1) + w(2) + w(3) + \cdots]\)</span> and <span class="math notranslate nohighlight">\(f(3)[w(1) + w(2) + w(3) + \cdots]\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle f(2)[w(1) + w(2) + w(3) + \cdots]\quad \text{and}\quad f(3)[w(1) + w(2) + w(3) + \cdots]\]</div>
 <p>The convolution is the sum of these terms at times 1, 2, 3, and so on therefore;</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle\begin{align}
@@ -1871,12 +1882,13 @@ C(4)&amp; = f (1)w(4) + f (2)w(3) + f (3)w(2) + f (4)w(1)\\
 <p>This sum evaluates just one point; to calculate the whole convolution, the index <span class="math notranslate nohighlight">\(k\)</span> must now be varied from 1 to <span class="math notranslate nohighlight">\(n\)</span>, which is the number of data points, making a double summation. One reason Fourier transforms are used to calculate convolutions is that the fast Fourier transform algorithm, FFT, is far quicker on the computer than calculating the convolution as a double summation, particularly for a large number of data points.</p>
 <p>The algorithm to calculate the summation has a double loop to calculate all values of <span class="math notranslate nohighlight">\(k\)</span> and to perform the summation in eqn. 32. The two functions used are those that produced Fig. 24, which are <span class="math notranslate nohighlight">\(\displaystyle f(t) = e^{-t/100}\)</span> and <span class="math notranslate nohighlight">\(\displaystyle w(t) = e^{-(t-100)^2/1000}\)</span>, and <span class="math notranslate nohighlight">\(2^{10}\)</span> points will be also be used to mimic the data produced by an instrument.</p>
 <p>First, because the data is discrete, arrays <span class="math notranslate nohighlight">\(f\)</span> and <span class="math notranslate nohighlight">\(w\)</span> are made; to hold the data points. Then two loops are made, one changes <span class="math notranslate nohighlight">\(k\)</span> from 1 to <span class="math notranslate nohighlight">\(n\)</span> the and inside one calculates <span class="math notranslate nohighlight">\(C(k)\)</span>. The indices are arranged as in equation 32. The variable <span class="math notranslate nohighlight">\(s\)</span> accumulates the sum as the inner do loop progresses. This is a relatively slow calculation because of the double loop.</p>
+<p>The calculation is shown below, the convolution is normalised down to <span class="math notranslate nohighlight">\(1\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># algorithm convolution by double summation</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Algorithm convolution by double summation</span>
 <span class="c1">#---------------------------</span>
 <span class="k">def</span> <span class="nf">do_convolution</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">w</span><span class="p">):</span>   <span class="c1"># f and w are arrays </span>
-    <span class="c1"># Sigma f(n-m)g(m) ;   c(0) = f(0)w(0),    c(1) =  f(0)w(1) + f(1)w(0)  etc </span>
+    <span class="c1"># Sigma f(n-m)w(m) ;   c(0) = f(0)w(0),    c(1) =  f(0)w(1) + f(1)w(0)  etc </span>
     <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
     <span class="n">c</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.0</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span>
     <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
@@ -1889,15 +1901,15 @@ C(4)&amp; = f (1)w(4) + f (2)w(3) + f (3)w(2) + f (4)w(1)\\
 <span class="c1">#---------------------------</span>
 
 <span class="n">n</span> <span class="o">=</span> <span class="mi">2</span><span class="o">**</span><span class="mi">10</span>
-<span class="n">f</span> <span class="o">=</span> <span class="p">[</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">i</span><span class="o">/</span><span class="mf">100.0</span><span class="p">)</span>  <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span>
-<span class="n">w</span> <span class="o">=</span> <span class="p">[</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="mi">100</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="mf">1e3</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span>
+<span class="n">w</span> <span class="o">=</span> <span class="p">[</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">i</span><span class="o">/</span><span class="mf">100.0</span><span class="p">)</span>  <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span>         <span class="c1"># molecular decay</span>
+<span class="n">f</span> <span class="o">=</span> <span class="p">[</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="mi">120</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="mf">1e3</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span>   <span class="c1"># instrument</span>
 <span class="n">t</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span>
 
 <span class="n">C</span> <span class="o">=</span> <span class="n">do_convolution</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">w</span><span class="p">)</span>
-<span class="n">mxc</span>  <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">C</span><span class="p">)</span>         <span class="c1"># use to normalse</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">C</span><span class="o">/</span><span class="n">mxc</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;C , convolution &#39;</span><span class="o">+</span><span class="sa">r</span><span class="s1">&#39;$f\otimes w$&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">f</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;f(x)&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">w</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;w(x)&#39;</span><span class="p">)</span>
+<span class="n">mxc</span>  <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">C</span><span class="p">)</span>                      <span class="c1"># use to normalse</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">C</span><span class="o">/</span><span class="n">mxc</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;C , convolution &#39;</span><span class="o">+</span><span class="sa">r</span><span class="s1">&#39;$f\otimes w$&#39;</span><span class="p">,</span><span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;dashed&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">f</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;w(x), instrument&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">w</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;f(x), decay&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="n">n</span><span class="p">])</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
@@ -1908,6 +1920,15 @@ C(4)&amp; = f (1)w(4) + f (2)w(3) + f (3)w(2) + f (4)w(1)\\
 <img alt="../_images/Fourier-D_3_0.png" src="../_images/Fourier-D_3_0.png" />
 </div>
 </div>
+</section>
+<section id="the-time-course-of-drug-action">
+<h2>The time course of drug action.<a class="headerlink" href="#the-time-course-of-drug-action" title="Permalink to this headline">#</a></h2>
+<p>Most of us will have taken a course of antibiotics at one time or another. Some people have to take medication each day, for example thyroxine when their thyroid is malfunctioning or has been removed through surgery. The time - course of the concentration of a drug in the body depends not only on the lifetime the drug’s removal but also how frequently it is administered.</p>
+<p>Typically, a fixed dose is taken at strictly defined intervals, for example once per day, and in this case we can use convolution to predict the time course of the action. The ‘instrument function’ is a series of spikes at a constant separation, modeling the drug being taken once per day for instance. The decrease of the drug’s concentration we shall assume is first order, and we can use the algorithm above to calculate what happens. We can imagine this behaviour first, of course. When the lifetime of the medication is short compared to the time interval between taking it the concentration will rapidly rise and then fall close to zero following the daily periodicity. On the other hand if the lifetime is long relative to the frequency of administration then the concentration increases exponentially on average with a lifetime of <span class="math notranslate nohighlight">\(\tau\)</span>, but with a superimposed saw-tooth and eventually, after many days, becoming on average constant but still oscillating.  This behaviour is shown in figure 27a where a tablet is taken each day and the decay lifetime (elimination lifetime) is <span class="math notranslate nohighlight">\(3\)</span> days.</p>
+<p><img alt="Drawing" src="../_images/fourier-fig27a.png" /></p>
+<p>Fig 27a. The convolution of a comb function with an exponential decay, mimicking the concentration of a drug in the body. The decay with lifetime of <span class="math notranslate nohighlight">\(3\)</span> days is shown in gray at the lower left of the figure. The profile of taking the medication is the comb of spikes. The concentration in the body is the blue saw-tooth like curve showing the integrating effect as the amount of medication does not fall to zero in the time interval before the next ingestion. The three red lines show the minimum, average and maximum  concentrations achieved. The initial amount <span class="math notranslate nohighlight">\(I_0=1\)</span>.</p>
+<hr class="docutils" />
+<p>At long times the smallest amount present is <span class="math notranslate nohighlight">\(\approx \displaystyle e^{-1/\tau}/(1-e^{-1/\tau})\)</span> and the maximum is <span class="math notranslate nohighlight">\(\displaystyle \approx 1/(1-e^{-1/\tau})\)</span>. The approximate average concentration (middle red line, top right) is the average of the upper and lower limits and is <span class="math notranslate nohighlight">\(\coth(1/(2\tau))/2 \approx \tau\)</span> in the arbitrary units used. If <span class="math notranslate nohighlight">\(f\)</span> is the fraction of the final average level reached after <span class="math notranslate nohighlight">\(n\)</span> doses then <span class="math notranslate nohighlight">\(f=1-e^{-nT/\tau}\)</span> where <span class="math notranslate nohighlight">\(T\)</span> is the time interval between doses. To reach <span class="math notranslate nohighlight">\(99\)</span>% of the final average value when <span class="math notranslate nohighlight">\(\tau=3\)</span> takes <span class="math notranslate nohighlight">\(n=14\)</span> doses or the same number of days in this example.</p>
 </section>
 <section id="convolution-by-fourier-transform">
 <h2>7.4 Convolution by Fourier transform<a class="headerlink" href="#convolution-by-fourier-transform" title="Permalink to this headline">#</a></h2>
@@ -1976,8 +1997,8 @@ C(4)&amp; = f (1)w(4) + f (2)w(3) + f (3)w(2) + f (4)w(1)\\
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># convolution by fourier transform</span>
 
 <span class="n">n</span> <span class="o">=</span> <span class="mi">2</span><span class="o">**</span><span class="mi">10</span>
-<span class="n">f</span> <span class="o">=</span> <span class="p">[</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">i</span><span class="o">/</span><span class="mf">100.0</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span>
-<span class="n">w</span> <span class="o">=</span> <span class="p">[</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="mi">100</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="mf">1e3</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span>
+<span class="n">f</span> <span class="o">=</span> <span class="p">[</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">i</span><span class="o">/</span><span class="mf">100.0</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span>           <span class="c1"># molecular decay    </span>
+<span class="n">w</span> <span class="o">=</span> <span class="p">[</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="mi">120</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="mf">1e3</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span>    <span class="c1"># instrument response</span>
 <span class="n">t</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span>
 
 <span class="n">F</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">rfft</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>        <span class="c1"># use rfft as input in only real </span>
@@ -1987,8 +2008,8 @@ C(4)&amp; = f (1)w(4) + f (2)w(3) + f (3)w(2) + f (4)w(1)\\
 <span class="n">mxc</span>  <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">C</span><span class="p">)</span>         <span class="c1"># use to normalse</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">C</span><span class="o">/</span><span class="n">mxc</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;C , convolution &#39;</span><span class="o">+</span><span class="sa">r</span><span class="s1">&#39;$f\otimes w$&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">f</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;f&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">w</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;w&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">f</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;f, decay&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">w</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;w, instrument&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="n">n</span><span class="p">])</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
@@ -1997,7 +2018,7 @@ C(4)&amp; = f (1)w(4) + f (2)w(3) + f (3)w(2) + f (4)w(1)\\
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Fourier-D_5_0.png" src="../_images/Fourier-D_5_0.png" />
+<img alt="../_images/Fourier-D_6_0.png" src="../_images/Fourier-D_6_0.png" />
 </div>
 </div>
 </section>
@@ -2120,7 +2141,7 @@ C(4)&amp; = f (1)w(4) + f (2)w(3) + f (3)w(2) + f (4)w(1)\\
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Fourier-D_7_0.png" src="../_images/Fourier-D_7_0.png" />
+<img alt="../_images/Fourier-D_8_0.png" src="../_images/Fourier-D_8_0.png" />
 </div>
 </div>
 <p>from which it is seen that the normalised autocorrelation is also a cosine <span class="math notranslate nohighlight">\(\displaystyle G(u) = \cos\left(2\pi \frac{u}{T}\right)\)</span>. If the initial cosine is written as <span class="math notranslate nohighlight">\(\cos(\omega t + \varphi)\)</span> then the period is <span class="math notranslate nohighlight">\(T = 2\pi/\omega\)</span>.</p>
@@ -2161,7 +2182,7 @@ C(4)&amp; = f (1)w(4) + f (2)w(3) + f (3)w(2) + f (4)w(1)\\
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Fourier-D_9_0.png" src="../_images/Fourier-D_9_0.png" />
+<img alt="../_images/Fourier-D_10_0.png" src="../_images/Fourier-D_10_0.png" />
 </div>
 </div>
 <p>The normalization integration can be looked up  but need not be worked out because it is the value of autocorrelation when <span class="math notranslate nohighlight">\(u\)</span> = 0. The normalization equation is therefore <span class="math notranslate nohighlight">\(\displaystyle \int e^{-2t^2/a^2}dt=a\sqrt{\pi /2}\)</span>. The normalized autocorrelation <span class="math notranslate nohighlight">\(G(u)\)</span> is also a Gaussian, with a value <span class="math notranslate nohighlight">\(\displaystyle G(u)=e^{-u^2/(2a^2)}\)</span>. The <em>fwhm</em> of this function is calculated when <span class="math notranslate nohighlight">\(G(u)=1/2\)</span> and is <span class="math notranslate nohighlight">\(a\sqrt{2\ln(2)}\)</span> and that of the original pulse is <span class="math notranslate nohighlight">\(a\sqrt{\ln(2)}\)</span> therefore, the autocorrelation is <span class="math notranslate nohighlight">\(\sqrt{2} \approx\)</span> 1.414 times wider than the pulse. Knowing this factor provides a convenient way of measuring the duration of a short laser pulse assuming it has a Gaussian profile.</p>
@@ -2220,7 +2241,7 @@ C(4)&amp; = f (1)w(4) + f (2)w(3) + f (3)w(2) + f (4)w(1)\\
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Fourier-D_11_0.png" src="../_images/Fourier-D_11_0.png" />
+<img alt="../_images/Fourier-D_12_0.png" src="../_images/Fourier-D_12_0.png" />
 </div>
 </div>
 <p>Fig. 33 Normalized autocorrelations of <span class="math notranslate nohighlight">\(250\)</span> random numbers with an average of <span class="math notranslate nohighlight">\(0\)</span> (left) and an average of <span class="math notranslate nohighlight">\(1/2\)</span> (right). Only the right-hand half of the autocorrelation is calculated and plotted. The left-hand part is the exact mirror image.</p>

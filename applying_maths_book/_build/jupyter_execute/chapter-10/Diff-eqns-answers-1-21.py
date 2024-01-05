@@ -265,7 +265,7 @@ print('{:s} {:f} {:s} {:f} {:f} '.format('times at conc', Bc, 'are ',roots[0],ro
 # ![Drawing](diffeqn-fig33.png)
 # 
 # Fig. 33 Relative or fractional concentration of the poison vs. the fraction of the pellet's radius at two different values of $\alpha$. The value $x$ = 0 means that $r_p = r_0$ and $x$ = 1 means that $r_p$ = 0.
-# _____
+# _____ 
 # 
 # ## Q13 answer
 # As M and Q react, the rate is $\displaystyle k_2MQ = JM = +4πr^2DM \frac{dQ}{dr}$. 
@@ -275,18 +275,27 @@ print('{:s} {:f} {:s} {:f} {:f} '.format('times at conc', Bc, 'are ',roots[0],ro
 # $$\displaystyle  \frac{J}{4\pi D}\int_R^\infty\frac{dr}{r^2}=\int_0^QdQ$$
 # 
 # which gives $J=4\pi DRQ$. Equating this to the rate produces the diffusion controlled rate constant $k_2=4\pi DR$.
-# 
+
 # ## Q14 answer
 # The rate equation is $\displaystyle \frac{dR}{dt} = k_IM + (\alpha - 1)k_BR + k_pR - k_pR - k_TR$  
 # 
-# and the propagation step cancels out because in this step, one radical is produced for each one consumed. The branching step has the term $\alpha$ - 1 because one radical is lost accounting for propagation. The integral equation from a radical concentration of zero at zero time is
+# and for clarity we use $R$ to represent $[R\cdot]$. The propagation step cancels out because in this step one radical is produced for each one consumed. The branching step has the term $\alpha$ - 1 because one radical is lost accounting for propagation itself. The integral equation when the radical concentration is zero initially is
 # 
 # $$\displaystyle \int_0^R\frac{1}{k_IM+\gamma R}dR=\int_0^tdt$$
 # 
-# where for clarity $\gamma = (\alpha - 1)k_B - k_T$. Integrating produces $\displaystyle \ln\left(1+\frac{\gamma R}{k_IM} \right)=\gamma t$ which is more conveniently written as $\displaystyle R = k_IM(e^{\gamma t} - 1)/\gamma$. 
+# where $\gamma = (\alpha - 1)k_B - k_T$. Integrating produces $\displaystyle \ln\left(k_IM+\gamma R \right)-\ln(k_IM)=\gamma t$ which is more conveniently written as 
 # 
-# When $\gamma \gt 0$, this means that the branching rate is larger than the termination rate, and an explosion may occur because the term $\gamma t$ in the exponential is positive. The radical population increases towards infinity and hence the rate of reaction increases rapidly. Reaction is stable when $\gamma \lt 0$ and reaches steady state at long times; $R_\infty = k_I M/\gamma$. When $\gamma = 0$ the reaction is on the border between stability and explosion and radical concentration increases linearly with time as $k_IMt$.
+# $$\displaystyle R = \frac{k_IM}{\gamma}(e^{\gamma t} - 1)$$ 
 # 
+# When $\gamma \gt 0$, this means that the branching rate constant is larger than the termination one $(\alpha - 1)k_B \gt k_T$, and an explosion could occur because the term $\gamma t$ in the exponential is positive. However, the rate is limited somewhat at early times, when $\gamma t\le 1$ and thus there is a short induction period, but after this time is over the radical concentration increases very rapidly and hence the rate of reaction increases rapidly also. 
+# 
+# The reaction is stable when $\gamma \lt 0$ and reaches a steady state at long times; $R_\infty = k_I M/\gamma$, and this limit is shown in the figure as the horizontal line. The time to reach steady state is the induction period. When $\gamma \to 0$ the reaction is on the border between stability and explosion and the radical concentration increases linearly with time and to show this we expand the exponential in $\gamma$ or use L'Hopital's rule and find $R = k_IMt $. The condition $\gamma =0 $ is called 'chain ignition'.
+# 
+# ![Drawing](diffeqn-fig33a.png)
+# 
+# Fig. 33a. The radical $R\cdot$ concentration under different conditions of chain branching determined by $\gamma = (\alpha - 1)k_B - k_T$. The steady state limit is shown by the horizontal line.
+# _____________
+
 # ## Q15 answer
 # (a) Equilibrium is rapidly established with the complex IM and its rate of change can be taken to be at steady state, hence 
 # 

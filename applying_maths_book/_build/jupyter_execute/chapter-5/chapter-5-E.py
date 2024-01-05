@@ -62,15 +62,34 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # In the Maclaurin series, the derivative is calculated at $x = 0$ and the function is described as having been 'expanded about zero'. However, a function can be expanded about any other value of $x$, say $x_0$; this will generate the Taylor series which is the 'expansion about $x_0$'. This series is
 # 
-# $$\displaystyle \qquad\qquad\begin{align}f(x) &= f(x_0) + (x-x_0)f'(x_0) + \frac{(x-x_0)^2}{2!} f''(x_0) + \frac{(x-x_0)^3}{3!} f'''(x_0) +\\ &\cdots + \frac{(x-x_0)^n}{n!} f^n(x_0) + \cdots \qquad\qquad\qquad \qquad\qquad\qquad \text{(16)} \end{align} $$
+# $$\displaystyle f(x) = f(x_0) + (x-x_0)f'(x_0) + \frac{(x-x_0)^2}{2!} f''(x_0) $$
+# $$\displaystyle \quad\qquad\quad\qquad\quad\qquad + \frac{(x-x_0)^3}{3!} f'''(x_0) +\cdots + \frac{(x-x_0)^n}{n!} f^n(x_0) + \cdots  \tag{16}  $$
 # 
 # or equivalently
 # 
-# $$\displaystyle \qquad\qquad\begin{align}f(x) &=f(x_0)+(x-x_0)\left( \frac{df}{dx} \right)_{x_0} + \frac{(x-x_0)^2}{2!}\left( \frac{d^2f}{dx^2} \right)_{x_0}\\ &\cdots +\frac{(x-x_0)^n}{n!}\left( \frac{d^nf}{dx^n} \right)_{x_0}+\cdots \qquad\qquad\qquad \qquad\qquad\qquad \text{(17)}\end{align} $$
+# $$\displaystyle f(x) =f(x_0)+(x-x_0)\left( \frac{df}{dx} \right)_{x_0} + \frac{(x-x_0)^2}{2!}\left( \frac{d^2f}{dx^2} \right)_{x_0}+\cdots   \tag{17} $$
 # 
 # where the subscript $x_0$ means evaluate the derivative at $x = x_0$: The Taylor series evaluated at zero is the Maclaurin series.
 # 
 # These series are extremely useful, for example, to calculate $\sin(1.3), \;\cos(\pi/4),\; \ln(1 + x)$, and so forth if the function can be expanded as a Taylor series and the terms added until the required numerical accuracy is needed. This is tedious to do by hand, rather than being difficult, but is ideally suited for computer calculation where repetitive calculations are easily performed.
+# 
+# ### 6.2.1 **Series of an Unknown function** 
+# 
+# If there is a multiply differentiable but unknown function $f$ then expansion of $f(x+x_0)$ is possible. Starting with eqn 16 we substitute $x+x_0$ for $x$ and $x$ for $x_0$ then
+# 
+# $$\displaystyle f(x+x_0)=f(x)+x_0\frac{df}{dx}+\frac{x_0^2}{2!}\frac{d^2f}{dx^2}+\cdots$$
+# 
+# and similarly
+# 
+# $$\displaystyle f(x-x_0)=f(x)-x_0\frac{df}{dx}+\frac{x_0^2}{2!}\frac{d^2f}{dx^2}-\cdots$$
+# 
+# To form a good approximation to the second derivative which is often needed in numerical methods, e.g. as when using the diffusion equation in cases where an algebraic solution cannot be found, we add the series for $f(x+x_0)$ and $f(x-x_0)$ together. In these cases in the derivation leading to this point $x_0$ will be a very small quantity and small compared to $x$. To emphasise this we change $x_0 \to \delta x$ in the next equations 
+# 
+# $$\displaystyle f(x+\delta x)+f(x-\delta x)= 2f(x) + \delta x^2\frac{d^2f}{dx^2}+2\frac{\delta x^4}{4!}\frac{d^2f}{dx^2} +\cdots $$
+# 
+# and therefore a good approximation, if we assume $\delta x$ is a small quantity and so $\delta x^2 \gg \delta x^4$ and so this approximation is a good one as the quartic terms are effectively zero, 
+# 
+# $$\displaystyle \frac{d^2f}{dx^2}\approx\frac{f(x+\delta x)+f(x-\delta x)-2f(x)}{\delta x^2}$$
 # 
 # ## 6.3 $O(x)$ and $\sim$ notations
 # 

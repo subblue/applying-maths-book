@@ -976,7 +976,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-B.html">
-     9 First order eqn’s &amp; Integrating factors. Second order eqn’s, Newton’s laws, equations of motion.
+     9 First order equations &amp; Integrating factors. Second order equations, Newton’s laws and equations of motion.
     </a>
    </li>
    <li class="toctree-l2">
@@ -1001,7 +1001,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-F.html">
-     15 Partial Differential Equations, PDE
+     15 Partial Differential Equations, PDE. 1D &amp; 2D diffusion, Particle in a box, Lateral flow tests, Diffusion and Reaction, Cable equation, Algal Blooms
     </a>
    </li>
    <li class="toctree-l2">
@@ -1524,6 +1524,80 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#definite-integrals-with-substitution">
    3.3 Definite integrals with substitution
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#i-reciprocal-functions">
+     <strong>
+      (i)
+     </strong>
+     Reciprocal functions
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ii-integrals-of-the-gaussian-type">
+     <strong>
+      (ii)
+     </strong>
+     Integrals of the Gaussian type
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#iii-integrals-as-products-and-ratios-of-sines-and-cosines-int-cos-n-theta-sin-m-theta-d-theta">
+     <strong>
+      (iii)  Integrals as products and ratios of sines and cosines
+      <span class="math notranslate nohighlight">
+       \(\int \cos^n(\theta)\sin^m(\theta)d\theta\)
+      </span>
+     </strong>
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#int-cos-n-theta-sin-theta-d-theta-can-be-solved-with-the-substitution-x-cos-theta">
+       <strong>
+        (1)
+        <span class="math notranslate nohighlight">
+         \(\int \cos^n(\theta)\sin(\theta)d\theta\)
+        </span>
+        can be solved with the substitution
+        <span class="math notranslate nohighlight">
+         \(x=\cos(\theta)\)
+        </span>
+       </strong>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#integrals-such-as-displaystyle-int-cos-4-theta-sin-3-theta-d-theta">
+       <strong>
+        (2) Integrals such as
+        <span class="math notranslate nohighlight">
+         \(\displaystyle \int \cos^4(\theta)\sin^3(\theta)d\theta \)
+        </span>
+       </strong>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#ratios-of-sine-and-cosine-e-g-displaystyle-int-frac-cos-3-theta-sin-2-theta-d-theta">
+       <strong>
+        (3) Ratios of sine and cosine, e.g.
+        <span class="math notranslate nohighlight">
+         \(\displaystyle \int \frac{\cos^3(\theta)}{\sin^2(\theta)}d\theta\)
+        </span>
+       </strong>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-general-integral-int-cos-n-theta-sin-m-theta-d-theta">
+     <strong>
+      The general integral
+      <span class="math notranslate nohighlight">
+       \(\int \cos^n(\theta)\sin^m(\theta)d\theta \)
+      </span>
+     </strong>
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#three-useful-results-with-a-function-and-its-derivative">
@@ -1820,6 +1894,80 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#definite-integrals-with-substitution">
    3.3 Definite integrals with substitution
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#i-reciprocal-functions">
+     <strong>
+      (i)
+     </strong>
+     Reciprocal functions
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ii-integrals-of-the-gaussian-type">
+     <strong>
+      (ii)
+     </strong>
+     Integrals of the Gaussian type
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#iii-integrals-as-products-and-ratios-of-sines-and-cosines-int-cos-n-theta-sin-m-theta-d-theta">
+     <strong>
+      (iii)  Integrals as products and ratios of sines and cosines
+      <span class="math notranslate nohighlight">
+       \(\int \cos^n(\theta)\sin^m(\theta)d\theta\)
+      </span>
+     </strong>
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#int-cos-n-theta-sin-theta-d-theta-can-be-solved-with-the-substitution-x-cos-theta">
+       <strong>
+        (1)
+        <span class="math notranslate nohighlight">
+         \(\int \cos^n(\theta)\sin(\theta)d\theta\)
+        </span>
+        can be solved with the substitution
+        <span class="math notranslate nohighlight">
+         \(x=\cos(\theta)\)
+        </span>
+       </strong>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#integrals-such-as-displaystyle-int-cos-4-theta-sin-3-theta-d-theta">
+       <strong>
+        (2) Integrals such as
+        <span class="math notranslate nohighlight">
+         \(\displaystyle \int \cos^4(\theta)\sin^3(\theta)d\theta \)
+        </span>
+       </strong>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#ratios-of-sine-and-cosine-e-g-displaystyle-int-frac-cos-3-theta-sin-2-theta-d-theta">
+       <strong>
+        (3) Ratios of sine and cosine, e.g.
+        <span class="math notranslate nohighlight">
+         \(\displaystyle \int \frac{\cos^3(\theta)}{\sin^2(\theta)}d\theta\)
+        </span>
+       </strong>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-general-integral-int-cos-n-theta-sin-m-theta-d-theta">
+     <strong>
+      The general integral
+      <span class="math notranslate nohighlight">
+       \(\int \cos^n(\theta)\sin^m(\theta)d\theta \)
+      </span>
+     </strong>
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#three-useful-results-with-a-function-and-its-derivative">
@@ -2139,21 +2287,25 @@ title="Print to PDF"
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle \begin{array}{l|l|l}
 \hline
-\displaystyle \sin(\theta)=\frac{x}{a} &amp; \displaystyle \sin(\theta)=\frac{x}{\sqrt{x^2+a^2}} &amp; \displaystyle \sin(\theta)=\frac{\sqrt{x^2-a^2}}{x} \\
-\displaystyle \cos(\theta)=\frac{\sqrt{x^2-a^2}}{a} &amp;\displaystyle \cos(\theta)=\frac{a}{\sqrt{a^2+x^2}} &amp; \displaystyle \cos(\theta)=\frac{a}{x} \\
-\displaystyle \tan(\theta)=\frac{x}{\sqrt{a^2-x^2}} &amp;\displaystyle \tan(\theta)=\frac{x}{a} &amp;\displaystyle \tan(\theta)=\frac{\sqrt{x^2-a^2}}{a}\\
+\displaystyle \sin(\theta)=\frac{x}{a} &amp; \displaystyle \sin(\theta)=\frac{\sqrt{x^2-a^2}}{x} &amp; \displaystyle \sin(\theta)=\frac{x}{\sqrt{x^2+a^2}}  \\
+\displaystyle \cos(\theta)=\frac{\sqrt{x^2-a^2}}{a} &amp; \displaystyle \cos(\theta)=\frac{a}{x} &amp;\displaystyle \cos(\theta)=\frac{a}{\sqrt{a^2+x^2}}  \\
+\displaystyle \tan(\theta)=\frac{x}{\sqrt{a^2-x^2}} &amp;\displaystyle \tan(\theta)=\frac{\sqrt{x^2-a^2}}{a}&amp;\displaystyle \tan(\theta)=\frac{x}{a} \\
 \hline \end{array}\end{split}\]</div>
 </section>
 <section id="definite-integrals-with-substitution">
 <h2>3.3 Definite integrals with substitution<a class="headerlink" href="#definite-integrals-with-substitution" title="Permalink to this headline">#</a></h2>
 <p>When calculating a definite integral first evaluate the indefinite integral and then using the limits, work out the final value. If a substitution is made it is also <em>necessary to change the limits</em>, thus making it unnecessary to reverse the substitution to obtain the result.</p>
-<p><strong>(1)</strong> Suppose the integral is <span class="math notranslate nohighlight">\(\displaystyle \int_2^8 \frac{3}{(1+2x)^3}dx\)</span>, trying the substitution <span class="math notranslate nohighlight">\(u = 1 + 2x\)</span> seems an obvious choice and therefore <span class="math notranslate nohighlight">\(dx = du/2\)</span>. The limits are <span class="math notranslate nohighlight">\(x = 2\)</span> and  8, which become <span class="math notranslate nohighlight">\(u = 5\)</span> and <span class="math notranslate nohighlight">\(17\)</span> in the new variable, making the integral</p>
+<section id="i-reciprocal-functions">
+<h3><strong>(i)</strong> Reciprocal functions<a class="headerlink" href="#i-reciprocal-functions" title="Permalink to this headline">#</a></h3>
+<p>Suppose the integral is <span class="math notranslate nohighlight">\(\displaystyle \int_2^8 \frac{3}{(1+2x)^3}dx\)</span>, trying the substitution <span class="math notranslate nohighlight">\(u = 1 + 2x\)</span> seems an obvious choice and therefore <span class="math notranslate nohighlight">\(dx = du/2\)</span>. The limits are <span class="math notranslate nohighlight">\(x = 2\)</span> and  8, which become <span class="math notranslate nohighlight">\(u = 5\)</span> and <span class="math notranslate nohighlight">\(17\)</span> in the new variable, making the integral</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \int_5^{17}\frac{3}{2u^2}du = -\frac{3}{2u}\bigg|_5^{17} =\frac{18}{85}\]</div>
 <p>Alternatively, calculate the integral leaving out the limits to begin with, then convert back to <span class="math notranslate nohighlight">\(x\)</span> and then use the original limits;</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \int\frac{3}{2u^2}du = -\frac{3}{2u} \equiv \frac{3}{2(1+2x))}\bigg|_2^{8}\]</div>
-<p><strong>(2)</strong> Integrals of the Gaussian type</p>
+</section>
+<section id="ii-integrals-of-the-gaussian-type">
+<h3><strong>(ii)</strong> Integrals of the Gaussian type<a class="headerlink" href="#ii-integrals-of-the-gaussian-type" title="Permalink to this headline">#</a></h3>
 <div class="math notranslate nohighlight">
 \[\displaystyle \int_{-\infty}^\infty e^{-ax^2/2+bx}dx\]</div>
 <p>often occur in quantum problems. The solution to the simpler integral is</p>
@@ -2167,6 +2319,57 @@ title="Print to PDF"
 <p>which is a little simpler and now allows us to make a substitution such as <span class="math notranslate nohighlight">\(z=x-b/a, dz=dx\)</span> and so</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle \begin{align}\int_{-\infty}^\infty  e^{-a(x-b/a)^2+b^2/2a} dx &amp;= e^{b^2/2a}\int_{-\infty}^\infty  e^{-az^2/2} dz\\&amp;=\sqrt{\frac{2\pi}{a}}e^{b^2/2a}\end{align}\end{split}\]</div>
+</section>
+<section id="iii-integrals-as-products-and-ratios-of-sines-and-cosines-int-cos-n-theta-sin-m-theta-d-theta">
+<h3><strong>(iii)  Integrals as products and ratios of sines and cosines  <span class="math notranslate nohighlight">\(\int \cos^n(\theta)\sin^m(\theta)d\theta\)</span></strong><a class="headerlink" href="#iii-integrals-as-products-and-ratios-of-sines-and-cosines-int-cos-n-theta-sin-m-theta-d-theta" title="Permalink to this headline">#</a></h3>
+<p>The integral <span class="math notranslate nohighlight">\(\int \cos^n(\theta)\sin^m(\theta)d\theta \)</span> can be found when <span class="math notranslate nohighlight">\(n\)</span> or <span class="math notranslate nohighlight">\(m\)</span> or both is an odd number. If the index of the sine is odd let <span class="math notranslate nohighlight">\(x=\cos(\theta)\)</span>, if the index of cosine is odd let <span class="math notranslate nohighlight">\(x=\sin(\theta)\)</span>. If <span class="math notranslate nohighlight">\(n+m\)</span> is a negative even integer then the integral can also be found. This was illustrated above. When <span class="math notranslate nohighlight">\(n\)</span> and <span class="math notranslate nohighlight">\(m\)</span> are both even the integral becomes very difficult and then using computer algebra is by far the quickest way to arrive at at solution.</p>
+<section id="int-cos-n-theta-sin-theta-d-theta-can-be-solved-with-the-substitution-x-cos-theta">
+<h4><strong>(1) <span class="math notranslate nohighlight">\(\int \cos^n(\theta)\sin(\theta)d\theta\)</span> can be solved with the substitution <span class="math notranslate nohighlight">\(x=\cos(\theta)\)</span></strong><a class="headerlink" href="#int-cos-n-theta-sin-theta-d-theta-can-be-solved-with-the-substitution-x-cos-theta" title="Permalink to this headline">#</a></h4>
+<p>The integrals <span class="math notranslate nohighlight">\(\int \cos^n(\theta)\sin(\theta)d\theta\)</span> can be solved with the substitution <span class="math notranslate nohighlight">\(x=\cos(\theta)\)</span> and so <span class="math notranslate nohighlight">\(dx=-\sin(\theta)d\theta\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \int \cos^n(\theta)\sin(\theta)d\theta \to -\int x^n dx = \frac{x^{n+1}}{n+1}+c\]</div>
+<p>where <span class="math notranslate nohighlight">\(n\)</span> is a positive integer and <span class="math notranslate nohighlight">\(c\)</span> a constant. With the definite integral</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \int_0^\pi \cos^n(\theta)\sin(\theta)d\theta \to  -\frac{x^{n+1}}{n+1}\bigg|_1^{-1}=-\frac{\cos^{n+1}(\theta)}{n+1}\bigg|_0^\pi\]</div>
+<p>the range can be found using <span class="math notranslate nohighlight">\(\theta=0, x=1,\; \theta=\pi, x=-1\)</span> or by substituting for <span class="math notranslate nohighlight">\(x\)</span> directly either way</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \int_0^\pi \cos^n(\theta)\sin(\theta)d\theta =\frac{(-1)^n +1}{n+1}\]</div>
+<p>making all the integrals zero for odd <span class="math notranslate nohighlight">\(n\)</span>.</p>
+</section>
+<section id="integrals-such-as-displaystyle-int-cos-4-theta-sin-3-theta-d-theta">
+<h4><strong>(2) Integrals such as <span class="math notranslate nohighlight">\(\displaystyle \int \cos^4(\theta)\sin^3(\theta)d\theta \)</span></strong><a class="headerlink" href="#integrals-such-as-displaystyle-int-cos-4-theta-sin-3-theta-d-theta" title="Permalink to this headline">#</a></h4>
+<p>Again let <span class="math notranslate nohighlight">\(x=\cos(\theta)\)</span> then</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \int \cos^4(\theta)\sin^3(\theta)d\theta =-\int x^4(\theta)\sin^2(\theta)dx \]</div>
+<p>Use <span class="math notranslate nohighlight">\(\sin^2(\theta)=1-\cos^2(\theta)\)</span> to make the integral</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle -\int (x^4-x^6) dx=-\frac{x^5}{5}+\frac{x^7}{7}=-\frac{\cos^5{\theta}}{5}+\frac{\cos^7{\theta}}{7}+c\]</div>
+</section>
+<section id="ratios-of-sine-and-cosine-e-g-displaystyle-int-frac-cos-3-theta-sin-2-theta-d-theta">
+<h4><strong>(3) Ratios of sine and cosine, e.g.  <span class="math notranslate nohighlight">\(\displaystyle \int \frac{\cos^3(\theta)}{\sin^2(\theta)}d\theta\)</span></strong><a class="headerlink" href="#ratios-of-sine-and-cosine-e-g-displaystyle-int-frac-cos-3-theta-sin-2-theta-d-theta" title="Permalink to this headline">#</a></h4>
+<p>With the substitution <span class="math notranslate nohighlight">\(x=\sin(\theta), dx=\cos(\theta)d\theta\)</span> the integral becomes</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \int \frac{1-x^2}{x^2}dx=\int \left(\frac{1}{x^2}-1\right)dx=-\frac{1}{x}-x=-\frac{1}{\sin(\theta)}-\sin(\theta)+c\]</div>
+</section>
+</section>
+<section id="the-general-integral-int-cos-n-theta-sin-m-theta-d-theta">
+<h3><strong>The general integral <span class="math notranslate nohighlight">\(\int \cos^n(\theta)\sin^m(\theta)d\theta \)</span></strong><a class="headerlink" href="#the-general-integral-int-cos-n-theta-sin-m-theta-d-theta" title="Permalink to this headline">#</a></h3>
+<p>The general integral <span class="math notranslate nohighlight">\(\int \cos^n(\theta)\sin^m(\theta)d\theta \)</span> is hard to integrate whe the conditions given above do not apply, but can be done by iteration which means finding a reduction formula. The method is to start with another related function, differentiate it then integrate the result. The integral we require will then appear in terms of a new function and a new integral that can usually be solved easily. If this is not the case then the process can be repeated until a solvable integral appears.</p>
+<p>Start by differentiating</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin{align}&amp;\frac{d}{d\theta}\left(\cos^{n-1}(\theta)\sin^{m+1}(\theta) \right)\\&amp;
+=(n-1)\cos^{n-2}(\theta)(-\sin(\theta)\sin^{m+1}(\theta)+(m+1)\sin^m(\theta)\cos(\theta)\cos^{n-1}(\theta)\\&amp; =-(n-1)\cos^{n-2}(\theta)\sin^m(\theta)+(m+n)\sin^m(\theta)\cos^n(\theta)\end{align}\end{split}\]</div>
+<p>where to get to the second step involves several manipulations.  Integrating we get <span class="math notranslate nohighlight">\(\cos^{n-1}(\theta)\sin^{m+1}(\theta)\)</span> and rearranging produces</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \int \cos^n(\theta)\sin^m(\theta)d\theta=\frac{\cos^{n-1}(\theta)\sin^{m+1}(\theta)}{n+m}+\frac{n-1}{m+n}\int \cos^{n-2}(\theta)\sin^m(\theta)d\theta\]</div>
+<p>As an example, let the rather tricky integral be <span class="math notranslate nohighlight">\(\displaystyle \int \cos^2(\theta)\sin^2(\theta)d\theta\)</span> in this case <span class="math notranslate nohighlight">\(m=n=2\)</span> and so the solution is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \int \cos^2(\theta)\sin^2(\theta)d\theta=\frac{\cos(\theta)\sin^{3}(\theta)}{4}+\frac{1}{4}\int \sin^2(\theta)d\theta\]</div>
+<p>and the remaining integral is given above as <span class="math notranslate nohighlight">\(\displaystyle \frac{1}{2}(\theta -\sin(\theta)\cos(\theta))\)</span> and using identities for <span class="math notranslate nohighlight">\(\sin(2\theta)\)</span> and <span class="math notranslate nohighlight">\(\cos(2\theta)\)</span> and after some manipulation gives</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \int \cos^2(\theta)\sin^2(\theta)d\theta=\frac{\theta}{8}-\frac{\sin(2\theta)\cos(2\theta)}{16}\]</div>
+<p>If the integral was <span class="math notranslate nohighlight">\(\displaystyle \int \cos^4(\theta)\sin^2(\theta)d\theta\)</span> then we would find that we needed the integral <span class="math notranslate nohighlight">\(\displaystyle \int \cos^2(\theta)\sin^2(\theta)d\theta\)</span> which we have just found.</p>
+</section>
 </section>
 <section id="three-useful-results-with-a-function-and-its-derivative">
 <h2>4 Three useful results with a function and its derivative<a class="headerlink" href="#three-useful-results-with-a-function-and-its-derivative" title="Permalink to this headline">#</a></h2>

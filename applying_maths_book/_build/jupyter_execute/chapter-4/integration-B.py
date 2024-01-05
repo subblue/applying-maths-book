@@ -59,16 +59,18 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # $$\displaystyle \begin{array}{l|l|l}
 # \hline
-# \displaystyle \sin(\theta)=\frac{x}{a} & \displaystyle \sin(\theta)=\frac{x}{\sqrt{x^2+a^2}} & \displaystyle \sin(\theta)=\frac{\sqrt{x^2-a^2}}{x} \\
-# \displaystyle \cos(\theta)=\frac{\sqrt{x^2-a^2}}{a} &\displaystyle \cos(\theta)=\frac{a}{\sqrt{a^2+x^2}} & \displaystyle \cos(\theta)=\frac{a}{x} \\
-# \displaystyle \tan(\theta)=\frac{x}{\sqrt{a^2-x^2}} &\displaystyle \tan(\theta)=\frac{x}{a} &\displaystyle \tan(\theta)=\frac{\sqrt{x^2-a^2}}{a}\\
+# \displaystyle \sin(\theta)=\frac{x}{a} & \displaystyle \sin(\theta)=\frac{\sqrt{x^2-a^2}}{x} & \displaystyle \sin(\theta)=\frac{x}{\sqrt{x^2+a^2}}  \\
+# \displaystyle \cos(\theta)=\frac{\sqrt{x^2-a^2}}{a} & \displaystyle \cos(\theta)=\frac{a}{x} &\displaystyle \cos(\theta)=\frac{a}{\sqrt{a^2+x^2}}  \\
+# \displaystyle \tan(\theta)=\frac{x}{\sqrt{a^2-x^2}} &\displaystyle \tan(\theta)=\frac{\sqrt{x^2-a^2}}{a}&\displaystyle \tan(\theta)=\frac{x}{a} \\
 # \hline \end{array}$$
 
 # ## 3.3 Definite integrals with substitution
 # 
 # When calculating a definite integral first evaluate the indefinite integral and then using the limits, work out the final value. If a substitution is made it is also _necessary to change the limits_, thus making it unnecessary to reverse the substitution to obtain the result.
 # 
-# **(1)** Suppose the integral is $\displaystyle \int_2^8 \frac{3}{(1+2x)^3}dx$, trying the substitution $u = 1 + 2x$ seems an obvious choice and therefore $dx = du/2$. The limits are $x = 2$ and  8, which become $u = 5$ and $17$ in the new variable, making the integral
+# ### **(i)** Reciprocal functions
+# 
+# Suppose the integral is $\displaystyle \int_2^8 \frac{3}{(1+2x)^3}dx$, trying the substitution $u = 1 + 2x$ seems an obvious choice and therefore $dx = du/2$. The limits are $x = 2$ and  8, which become $u = 5$ and $17$ in the new variable, making the integral
 # 
 # $$\displaystyle \int_5^{17}\frac{3}{2u^2}du = -\frac{3}{2u}\bigg|_5^{17} =\frac{18}{85}$$
 # 
@@ -77,7 +79,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # $$\displaystyle \int\frac{3}{2u^2}du = -\frac{3}{2u} \equiv \frac{3}{2(1+2x))}\bigg|_2^{8}$$
 # 
 # 
-# **(2)** Integrals of the Gaussian type 
+# ### **(ii)** Integrals of the Gaussian type 
 # 
 # $$\displaystyle \int_{-\infty}^\infty e^{-ax^2/2+bx}dx$$
 # 
@@ -97,6 +99,64 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # $$\displaystyle \begin{align}\int_{-\infty}^\infty  e^{-a(x-b/a)^2+b^2/2a} dx &= e^{b^2/2a}\int_{-\infty}^\infty  e^{-az^2/2} dz\\&=\sqrt{\frac{2\pi}{a}}e^{b^2/2a}\end{align}$$
 # 
+# ### **(iii)  Integrals as products and ratios of sines and cosines  $\int \cos^n(\theta)\sin^m(\theta)d\theta$**
+# 
+# The integral $\int \cos^n(\theta)\sin^m(\theta)d\theta $ can be found when $n$ or $m$ or both is an odd number. If the index of the sine is odd let $x=\cos(\theta)$, if the index of cosine is odd let $x=\sin(\theta)$. If $n+m$ is a negative even integer then the integral can also be found. This was illustrated above. When $n$ and $m$ are both even the integral becomes very difficult and then using computer algebra is by far the quickest way to arrive at at solution. 
+# 
+# #### **(1) $\int \cos^n(\theta)\sin(\theta)d\theta$ can be solved with the substitution $x=\cos(\theta)$**
+# 
+#  The integrals $\int \cos^n(\theta)\sin(\theta)d\theta$ can be solved with the substitution $x=\cos(\theta)$ and so $dx=-\sin(\theta)d\theta$,
+# 
+# $$\displaystyle \int \cos^n(\theta)\sin(\theta)d\theta \to -\int x^n dx = \frac{x^{n+1}}{n+1}+c$$
+# 
+# where $n$ is a positive integer and $c$ a constant. With the definite integral
+# 
+# $$\displaystyle \int_0^\pi \cos^n(\theta)\sin(\theta)d\theta \to  -\frac{x^{n+1}}{n+1}\bigg|_1^{-1}=-\frac{\cos^{n+1}(\theta)}{n+1}\bigg|_0^\pi$$
+# 
+# the range can be found using $\theta=0, x=1,\; \theta=\pi, x=-1$ or by substituting for $x$ directly either way 
+# 
+# $$\displaystyle \int_0^\pi \cos^n(\theta)\sin(\theta)d\theta =\frac{(-1)^n +1}{n+1}$$
+# 
+# making all the integrals zero for odd $n$. 
+# 
+# #### **(2) Integrals such as $\displaystyle \int \cos^4(\theta)\sin^3(\theta)d\theta $**
+# 
+# Again let $x=\cos(\theta)$ then 
+# 
+# $$\displaystyle \int \cos^4(\theta)\sin^3(\theta)d\theta =-\int x^4(\theta)\sin^2(\theta)dx $$ 
+# 
+# Use $\sin^2(\theta)=1-\cos^2(\theta)$ to make the integral
+# 
+# $$\displaystyle -\int (x^4-x^6) dx=-\frac{x^5}{5}+\frac{x^7}{7}=-\frac{\cos^5{\theta}}{5}+\frac{\cos^7{\theta}}{7}+c$$
+# 
+# #### **(3) Ratios of sine and cosine, e.g.  $\displaystyle \int \frac{\cos^3(\theta)}{\sin^2(\theta)}d\theta$**
+# 
+# With the substitution $x=\sin(\theta), dx=\cos(\theta)d\theta$ the integral becomes 
+# 
+# $$\displaystyle \int \frac{1-x^2}{x^2}dx=\int \left(\frac{1}{x^2}-1\right)dx=-\frac{1}{x}-x=-\frac{1}{\sin(\theta)}-\sin(\theta)+c$$
+# 
+# ### **The general integral $\int \cos^n(\theta)\sin^m(\theta)d\theta $**
+# 
+# The general integral $\int \cos^n(\theta)\sin^m(\theta)d\theta $ is hard to integrate whe the conditions given above do not apply, but can be done by iteration which means finding a reduction formula. The method is to start with another related function, differentiate it then integrate the result. The integral we require will then appear in terms of a new function and a new integral that can usually be solved easily. If this is not the case then the process can be repeated until a solvable integral appears.
+# 
+# Start by differentiating
+# 
+# $$\displaystyle \begin{align}&\frac{d}{d\theta}\left(\cos^{n-1}(\theta)\sin^{m+1}(\theta) \right)\\&
+# =(n-1)\cos^{n-2}(\theta)(-\sin(\theta)\sin^{m+1}(\theta)+(m+1)\sin^m(\theta)\cos(\theta)\cos^{n-1}(\theta)\\& =-(n-1)\cos^{n-2}(\theta)\sin^m(\theta)+(m+n)\sin^m(\theta)\cos^n(\theta)\end{align}$$
+# 
+# where to get to the second step involves several manipulations.  Integrating we get $\cos^{n-1}(\theta)\sin^{m+1}(\theta)$ and rearranging produces
+# 
+# $$\displaystyle \int \cos^n(\theta)\sin^m(\theta)d\theta=\frac{\cos^{n-1}(\theta)\sin^{m+1}(\theta)}{n+m}+\frac{n-1}{m+n}\int \cos^{n-2}(\theta)\sin^m(\theta)d\theta$$
+# 
+# As an example, let the rather tricky integral be $\displaystyle \int \cos^2(\theta)\sin^2(\theta)d\theta$ in this case $m=n=2$ and so the solution is
+# 
+# $$\displaystyle \int \cos^2(\theta)\sin^2(\theta)d\theta=\frac{\cos(\theta)\sin^{3}(\theta)}{4}+\frac{1}{4}\int \sin^2(\theta)d\theta$$
+# 
+# and the remaining integral is given above as $\displaystyle \frac{1}{2}(\theta -\sin(\theta)\cos(\theta))$ and using identities for $\sin(2\theta)$ and $\cos(2\theta)$ and after some manipulation gives
+# 
+# $$\displaystyle \int \cos^2(\theta)\sin^2(\theta)d\theta=\frac{\theta}{8}-\frac{\sin(2\theta)\cos(2\theta)}{16}$$
+# 
+# If the integral was $\displaystyle \int \cos^4(\theta)\sin^2(\theta)d\theta$ then we would find that we needed the integral $\displaystyle \int \cos^2(\theta)\sin^2(\theta)d\theta$ which we have just found.
 
 # ## 4 Three useful results with a function and its derivative 
 # 

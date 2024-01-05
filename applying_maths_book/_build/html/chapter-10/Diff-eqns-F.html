@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>15 Partial Differential Equations, PDE &#8212; Applying Maths in the Chemical &amp; Biomolecular Sciences</title>
+    <title>15 Partial Differential Equations, PDE. 1D &amp; 2D diffusion, Particle in a box, Lateral flow tests, Diffusion and Reaction, Cable equation, Algal Blooms &#8212; Applying Maths in the Chemical &amp; Biomolecular Sciences</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -976,7 +976,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="Diff-eqns-B.html">
-     9 First order eqn’s &amp; Integrating factors. Second order eqn’s, Newton’s laws, equations of motion.
+     9 First order equations &amp; Integrating factors. Second order equations, Newton’s laws and equations of motion.
     </a>
    </li>
    <li class="toctree-l2">
@@ -1001,7 +1001,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     15 Partial Differential Equations, PDE
+     15 Partial Differential Equations, PDE. 1D &amp; 2D diffusion, Particle in a box, Lateral flow tests, Diffusion and Reaction, Cable equation, Algal Blooms
     </a>
    </li>
    <li class="toctree-l2">
@@ -1564,8 +1564,13 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#diffusion-and-chemical-reactions">
-   15.7 Diffusion and chemical reactions
+  <a class="reference internal nav-link" href="#a-diffusion-and-chemical-reactions-example-of-the-growth-of-algal-blooms">
+   15.7a Diffusion and chemical reactions. Example of the growth of Algal Blooms
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#b-voltage-in-a-cell-the-cable-equation-revisited">
+   15.7b Voltage in a cell. The Cable equation revisited.
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -1592,7 +1597,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>15 Partial Differential Equations, PDE</h1>
+                <h1>15 Partial Differential Equations, PDE. 1D & 2D diffusion, Particle in a box, Lateral flow tests, Diffusion and Reaction, Cable equation, Algal Blooms</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -1656,8 +1661,13 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#diffusion-and-chemical-reactions">
-   15.7 Diffusion and chemical reactions
+  <a class="reference internal nav-link" href="#a-diffusion-and-chemical-reactions-example-of-the-growth-of-algal-blooms">
+   15.7a Diffusion and chemical reactions. Example of the growth of Algal Blooms
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#b-voltage-in-a-cell-the-cable-equation-revisited">
+   15.7b Voltage in a cell. The Cable equation revisited.
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -1685,8 +1695,8 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="partial-differential-equations-pde">
-<h1>15 Partial Differential Equations, PDE<a class="headerlink" href="#partial-differential-equations-pde" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="partial-differential-equations-pde-1d-2d-diffusion-particle-in-a-box-lateral-flow-tests-diffusion-and-reaction-cable-equation-algal-blooms">
+<h1>15 Partial Differential Equations, PDE. 1D &amp; 2D diffusion, Particle in a box, Lateral flow tests, Diffusion and Reaction, Cable equation, Algal Blooms<a class="headerlink" href="#partial-differential-equations-pde-1d-2d-diffusion-particle-in-a-box-lateral-flow-tests-diffusion-and-reaction-cable-equation-algal-blooms" title="Permalink to this headline">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import all python add-ons etc that will be needed later on</span>
@@ -1961,33 +1971,49 @@ which means that when <span class="math notranslate nohighlight">\(n\)</span> is
 <p>Fig. 24 Concentration profiles vs. position at different times inside the slab. Molecules are diffusing out from the top and the edges of the slab are kept at zero concentration, for example, by washing material away. The diffusion coefficient used is similar to that of lysozyme <span class="math notranslate nohighlight">\(11\cdot 10^{-11}\,\mathrm{m^2\, s^{-1}}\)</span>, the initial concentration <span class="math notranslate nohighlight">\(10\)</span> mM. The width of the slab is <span class="math notranslate nohighlight">\(10\)</span> nm. The times are given next to the lines and are in nanoseconds. The oscillating grey line at the top of the figure is set at <span class="math notranslate nohighlight">\(0.01\)</span> ns and shows that close to zero time the sine functions almost but not exactly cancel out one another even with <span class="math notranslate nohighlight">\(100\)</span> terms in the summation.  The plot also shows how slow diffusion is as it takes <span class="math notranslate nohighlight">\(\approx 600\)</span> ns for the molecules to be removed and the concentration to approach zero.</p>
 </section>
 <hr class="docutils" />
-<section id="diffusion-and-chemical-reactions">
-<h2>15.7 Diffusion and chemical reactions<a class="headerlink" href="#diffusion-and-chemical-reactions" title="Permalink to this headline">#</a></h2>
-<p>When diffusion and reaction compete it is possible that explosive growth of a product occurs. Starting with Fick’s First Law a term is added to allow for first order reaction to form product and is</p>
+<section id="a-diffusion-and-chemical-reactions-example-of-the-growth-of-algal-blooms">
+<h2>15.7a Diffusion and chemical reactions. Example of the growth of Algal Blooms<a class="headerlink" href="#a-diffusion-and-chemical-reactions-example-of-the-growth-of-algal-blooms" title="Permalink to this headline">#</a></h2>
+<p>Diffusion and reaction can sometimes compete because reaction can be controlled by how quickly species come together. The diffusion equation can be modified by reaction and we let this to be first order, a term <span class="math notranslate nohighlight">\(\pm kt\)</span> is thus added to the diffusion equation to allow for growth (<span class="math notranslate nohighlight">\(+kt\)</span>) or decay (<span class="math notranslate nohighlight">\(-kt\)</span>) of species.  Growth is examined first and decay in the next section 15.7b.</p>
+<p>When diffusion and reaction compete it is possible that explosive growth of a product occurs, and for this to happen it is assumed that enough material is always present. Starting with Fick’s First Law the growth term <span class="math notranslate nohighlight">\(+kt\)</span> is added to allow for first order reaction forming product and is</p>
 <div class="math notranslate nohighlight">
 \[\frac{\partial c}{\partial t}=D\frac{\partial ^2c}{\partial x^2} +kc \qquad\tag{56a}\]</div>
-<p>where <span class="math notranslate nohighlight">\(k\)</span> is the first order rate constant for production of species <span class="math notranslate nohighlight">\(c\)</span> which is a function of position <span class="math notranslate nohighlight">\(x\)</span> and time <span class="math notranslate nohighlight">\(t\)</span>, i.e. <span class="math notranslate nohighlight">\(c(x,t)\)</span>. We will assume that the calculation takes place along a length <span class="math notranslate nohighlight">\( 0\le x \le L\)</span> and that the length is so long that the concentration of product <span class="math notranslate nohighlight">\(c\)</span> is zero at either end at all times, <span class="math notranslate nohighlight">\(c(0,t)=c{L,t}=0\)</span>.</p>
+<p>where <span class="math notranslate nohighlight">\(k\)</span> is the first order rate constant for production of species <span class="math notranslate nohighlight">\(c\)</span> which itself is a function of position <span class="math notranslate nohighlight">\(x\)</span> and time <span class="math notranslate nohighlight">\(t\)</span>, i.e. <span class="math notranslate nohighlight">\(c(x,t)\)</span>. We will assume that the calculation takes place along a length <span class="math notranslate nohighlight">\( 0\le x \le L\)</span> and that the length is so long that the concentration of product <span class="math notranslate nohighlight">\(c\)</span> is zero at either end at all times, <span class="math notranslate nohighlight">\(c(0,t)=c{L,t}=0\)</span>.</p>
 <p>This differential equation look awkward to solve but if a new variable is defined as</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle y(x,t)=c(x,t)e^{-kt}\qquad\tag{57b}\]</div>
 <p>and this differentiated and substituted into the starting equation a familiar equation is produced.</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle \frac{\partial y}{\partial t}=\frac{\partial c}{\partial t}e^{-kt}-cke^{-kt}, \qquad  \frac{\partial^2 y}{\partial t^2}=\frac{\partial^2 c}{\partial t^2}e^{-kt}\]</div>
+\[\displaystyle \frac{\partial y}{\partial t}=\frac{\partial c}{\partial t}e^{-kt}-cke^{-kt}, \qquad  \frac{\partial^2 y}{\partial x^2}=\frac{\partial^2 c}{\partial x^2}e^{-kt}\]</div>
 <p>substituting and simplifying gives,</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle \frac{\partial y}{\partial t}=D\frac{\partial^2 y}{\partial t^2}\]</div>
-<p>which is just the diffusion equation but in variable <span class="math notranslate nohighlight">\(y\)</span> instead of <span class="math notranslate nohighlight">\(c\)</span>. The answer can be written down as it is the same as eqn 55 and after substituting for <span class="math notranslate nohighlight">\(c\)</span> gives</p>
+\[\displaystyle \frac{\partial y}{\partial t}=D\frac{\partial^2 y}{\partial x^2}\]</div>
+<p>which is just the diffusion equation but in variable <span class="math notranslate nohighlight">\(y\)</span> instead of <span class="math notranslate nohighlight">\(c\)</span>. The answer can be written down as it is the same as eqn 55 and after substituting <span class="math notranslate nohighlight">\(c\)</span> for <span class="math notranslate nohighlight">\(y\)</span> gives,</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle c=\sum_{n=1}^\infty b_ne^{kt}e^{\large{-Dn^2\pi^2t/L^2}}\sin\left( \frac{n\pi x}{L} \right), \qquad b_n=\frac{2}{L}\int_0^L f(x)\sin\left( \frac{n\pi x}{L} \right)dx \qquad\tag{55'}\]</div>
 <p>where <span class="math notranslate nohighlight">\(f(x)\)</span> is the concentration profile in the tube at <span class="math notranslate nohighlight">\(t=0\)</span>. Notice that this is exactly the same as equation 55, i.e when no reaction occurs, but now multiplied by <span class="math notranslate nohighlight">\(\displaystyle e^{kt}\)</span> to allow for reaction.</p>
 <p>As an example suppose that an initial amount is placed as a very small drop in the centre of the long tube, i.e mathematically we will allow this to be a Kronecker delta function, i.e. <span class="math notranslate nohighlight">\(f(x)=\delta(x-L/2)\)</span> and follow what happens in time. The integrals <span class="math notranslate nohighlight">\(b\)</span> are</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle \frac{2}{L}\int_0^L \delta(x-L/2)\sin\left( \frac{n\pi x}{L} \right)dx=\sin(n\pi/2)\]</div>
+\[\displaystyle \int_0^L \delta(x-L/2)\sin\left( \frac{n\pi x}{L} \right)dx=\sin\left(\frac{n\pi}{2}\right)\]</div>
 <p>where we use the fact that the delta function is zero except when <span class="math notranslate nohighlight">\(x=L/2\)</span>. These <span class="math notranslate nohighlight">\(b_n\)</span> integrals are <span class="math notranslate nohighlight">\(0,\pm 1\)</span> depending on <span class="math notranslate nohighlight">\(n\)</span>.</p>
 <p>Because the extra reaction term <span class="math notranslate nohighlight">\(+kc\)</span> is positive the species <span class="math notranslate nohighlight">\(c\)</span> may grow in time, if it were negative the population of <span class="math notranslate nohighlight">\(c\)</span> would always decay exponentially in time. The critical term is <span class="math notranslate nohighlight">\(\displaystyle kt-(n\pi/L)^2Dt\)</span> in the exponential. The series of terms to be summed starts with <span class="math notranslate nohighlight">\(n=1\)</span> and when <span class="math notranslate nohighlight">\(k \gt (\pi/L)^2D\)</span> the exponential is greater than <span class="math notranslate nohighlight">\(1\)</span> and even though other terms in the summation with <span class="math notranslate nohighlight">\((n\pi/L)^2D\)</span>  make each the exponential term smaller, perhaps less than <span class="math notranslate nohighlight">\(1\)</span> overall, the population increases, i.e. is dominated by the first few terms with small <span class="math notranslate nohighlight">\(n\)</span>. The critical factor for growth is that <span class="math notranslate nohighlight">\(k \gt D\pi^2/L^2\)</span>. The effect of this behaviour is that suddenly the amount of <span class="math notranslate nohighlight">\(c\)</span> becomes very large indeed.  If the species were bacteria in a nutrient medium or algae in a pond this behaviour describes an ‘algal bloom’.</p>
 <p>At small times figure 24a shows diffusion spreading the concentration with very little change in total concentration as there is slow growth initially, but this is soon overtaken and diffusion now has a small effect in spreading compared to the explosive growth. Eventually the growth must be limited by the amount of material available but this limit is not included in this model, thus <span class="math notranslate nohighlight">\(c\)</span> could increase to unrealistic values. In effect, when explosive growth occurs that area into which diffusion has occurred is fixed and suddenly filled with product. Eventually the whole extent of the available volume will slowly be filled with product: growth, explosive or otherwise, cannot occur where there is no material to react, and this is limited by diffusion.</p>
 <p><img alt="Drawing" src="../_images/diffeqn-fig24a.png" /></p>
 <p>fig 24a. Diffusion and reaction population at different times in microseconds. <span class="math notranslate nohighlight">\(L=10^{-4}\)</span> m, <span class="math notranslate nohighlight">\(k=10^3\)</span> /s, <span class="math notranslate nohighlight">\(D/L^2=0.1\)</span> The totals listed in the plot are proportional to the area under each curve, i.e to the amount of <span class="math notranslate nohighlight">\(c\)</span> produced. It is clear that the amount produced increases slowly to begin with then exponentially. The vertical line at <span class="math notranslate nohighlight">\(x/L=0.5\)</span> represents the delta function population at zero time.</p>
+</section>
+<hr class="docutils" />
+<section id="b-voltage-in-a-cell-the-cable-equation-revisited">
+<h2>15.7b Voltage in a cell. The Cable equation revisited.<a class="headerlink" href="#b-voltage-in-a-cell-the-cable-equation-revisited" title="Permalink to this headline">#</a></h2>
+<p>The cable equation was introduced in section 11.3 where the equation found was</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle r_mC_m\frac{\partial V}{\partial t}=\frac{r_m}{r_c}\frac{\partial^2V}{\partial x^2}-V \]</div>
+<p>and where  <span class="math notranslate nohighlight">\(\lambda = \sqrt{r_m/r_c}\)</span> metres, the lifetime of the membrane capacitance is defined as  <span class="math notranslate nohighlight">\(\tau= r_mC\)</span> seconds and  <span class="math notranslate nohighlight">\(r_m,r_c\)</span> are the resistivites of the membrane and cytoplasm respectively, and <span class="math notranslate nohighlight">\(C_m\)</span> is the capacitance of the membrane itself. This equation has the same mathematical form as that for diffusion and reaction described in the previous section, with the exception that now the term <span class="math notranslate nohighlight">\(kc\)</span> has become <span class="math notranslate nohighlight">\(-V/\tau\)</span> and the sign change is most important because it shows that the voltage decreases as time progresses.</p>
+<p>The equation in the previous section was converted to a reduced form, but here for numerical calculation it is more convenient to re-arrange it to the same form as the diffusion equation 56a, above, i.e.</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{\partial V}{\partial t}=\frac{\lambda^2}{\tau}\frac{\partial^2 V}{\partial x^2}-\frac{1}{\tau}V \]</div>
+<p>if use the same boundary conditions as in eqn 55’, i.e. <span class="math notranslate nohighlight">\(V=0\)</span> both at <span class="math notranslate nohighlight">\(x=0\)</span> and <span class="math notranslate nohighlight">\(x=L\)</span> and the initial amount of charge injected is given by <span class="math notranslate nohighlight">\(f(x)\)</span>. Comparing with eqn <span class="math notranslate nohighlight">\(55'\)</span>, makes <span class="math notranslate nohighlight">\(k \equiv -1/\tau\)</span> and <span class="math notranslate nohighlight">\(D\equiv \lambda^2/\tau\)</span> and we can then use the equations directly. The results are shown in fig 24b where a delta function voltage excited the membrane at <span class="math notranslate nohighlight">\(x/L=0.1\)</span>.</p>
+<p>The behaviour of the voltage with distance and time is complicated by the fact that <span class="math notranslate nohighlight">\(\tau\)</span> occurs in both terms on the right. Thus while <span class="math notranslate nohighlight">\(\tau\)</span> describes the lifetime of the charge due to capacitance of the membrane it also influence the spatial term via <span class="math notranslate nohighlight">\(\lambda^2/\tau\)</span> and so the extent with which the voltage changes at at given time. The time dependence is given by the exponential term, which unlike eqn. <span class="math notranslate nohighlight">\(55'\)</span> all terms in the exponential are negative, thus the voltage can only decrease with time. If instead of considering voltages we could just as easily be considering a species reacting with rate constant <span class="math notranslate nohighlight">\(k\)</span> and diffusing in solution with coefficient <span class="math notranslate nohighlight">\(D\)</span>. Exactly the same equations apply, if the same boundary conditions are used.</p>
+<p><img alt="Drawing" src="../_images/diffeqn-fig24aa.png" /></p>
+<p>Fig. 24b. Voltage change in a cell. The initial charge is as a delta function at <span class="math notranslate nohighlight">\(x/L=0.1\)</span>, (vertical line) with the values for each curve shown in the panel. When <span class="math notranslate nohighlight">\(\tau\)</span> increases although the charge dissipates more slowly through the membrane, the term <span class="math notranslate nohighlight">\(\lambda^2/\tau\)</span> is reduced and this effectively pins the charge close to the insertion point and so the voltage does not spread nearly so rapidly as when <span class="math notranslate nohighlight">\(\tau \)</span>is small. The boundary conditions mean that <span class="math notranslate nohighlight">\(V=0\)</span> at <span class="math notranslate nohighlight">\(x=0\)</span> and <span class="math notranslate nohighlight">\(L\)</span>.</p>
 </section>
 <hr class="docutils" />
 <section id="flow-and-chemical-reaction-lateral-flow-tests">
@@ -2002,7 +2028,7 @@ which means that when <span class="math notranslate nohighlight">\(n\)</span> is
 <p>where <span class="math notranslate nohighlight">\(X\)</span> represents the reporting antibody. Both Ab<span class="math notranslate nohighlight">\(\cdot\)</span>A and Ab<span class="math notranslate nohighlight">\(\cdot\)</span>A<span class="math notranslate nohighlight">\(\cdot\)</span>X are coloured as both contain the nanoparticle it is the concentration of Ab<span class="math notranslate nohighlight">\(\cdot\)</span>A<span class="math notranslate nohighlight">\(\cdot\)</span>X bound to the test region that makes detection by eye possible after the flow has removed all unbound species.</p>
 <p>The thin ribbon of nitrocellulose is typically <span class="math notranslate nohighlight">\(2\)</span> cm long by <span class="math notranslate nohighlight">\(3\)</span> mm wide and <span class="math notranslate nohighlight">\(0.1\)</span> mm thick into which are placed an active zone, which is a <span class="math notranslate nohighlight">\(\sim 1\)</span> mm long zone of antibodies that will bind only to those complexes containing the analyte, and a second test zone further on, also containing antibodies that will react with any complexes remaining.</p>
 <p><img alt="Drawing" src="../_images/diffeqn-fig24b.png" /></p>
-<p>Figure 24b. Schematic of a lateral flow device. The whole assembly is <span class="math notranslate nohighlight">\(\approx 6\)</span> cm long. The coloured complex Ab<span class="math notranslate nohighlight">\(\cdot\)</span>A<span class="math notranslate nohighlight">\(\cdot\)</span>X is bound in the test region where it becomes concentrated and can be differentiated from the background colour due to the Ab<span class="math notranslate nohighlight">\(\cdot\)</span>A conjugate complex.</p>
+<p>Figure 24c. Schematic of a lateral flow device. The whole assembly is <span class="math notranslate nohighlight">\(\approx 6\)</span> cm long. The coloured complex Ab<span class="math notranslate nohighlight">\(\cdot\)</span>A<span class="math notranslate nohighlight">\(\cdot\)</span>X is bound in the test region where it becomes concentrated and can be differentiated from the background colour due to the Ab<span class="math notranslate nohighlight">\(\cdot\)</span>A conjugate complex.</p>
 <hr class="docutils" />
 <p>The flow velocity in the nitrocellulose is typically <span class="math notranslate nohighlight">\(0.25\)</span> mm/s and a test area is <span class="math notranslate nohighlight">\(\sim 1\)</span> mm. The analyte - nanoparticle - antibody complex Ab<span class="math notranslate nohighlight">\(\cdot\)</span>A has to rapidly become attached to an antibody in the detecting strip as the liquid flows through it. Only some will bind because rate constant <span class="math notranslate nohighlight">\(k\)</span> is small, far less than diffusion controlled (in water <span class="math notranslate nohighlight">\(\approx 10^{10}\,\mathrm{dm^3\,mol^{-1}\,sec^{-1}}\)</span>) which means that it is <em>reaction controlled</em> and numerous encounters of the species occur before reaction.</p>
 <p>When in the test volume the nanoparticle complex must diffuse to the edge of a pore in the nitrocellulose. These   typically have a radius of <span class="math notranslate nohighlight">\(\sim 5\)</span> microns and the reporter antibody X is bound to the surface of the pores. In three dimensions the mean distance diffused is <span class="math notranslate nohighlight">\(\sqrt{6Dt}\)</span> where the diffusion constant<span class="math notranslate nohighlight">\(^1\)</span> which for a nanoparticle is typically <span class="math notranslate nohighlight">\(10^{-11}\)</span> m<span class="math notranslate nohighlight">\(^2\)</span>/s thus to diffuse <span class="math notranslate nohighlight">\(5\cdot 10^{-6}\)</span> m will take <span class="math notranslate nohighlight">\(\approx 0.4\)</span> seconds. This gives a time scale for reaction.</p>
@@ -2035,7 +2061,7 @@ which means that when <span class="math notranslate nohighlight">\(n\)</span> is
 \[\displaystyle c(x,t)=e^{-kc(x,t)}c_0(x-vt)\]</div>
 <p>and so on entering the zone at a certain <span class="math notranslate nohighlight">\(x=x_a\)</span> the concentration is reduced with rate constant <span class="math notranslate nohighlight">\(k\)</span> and on exiting the region at <span class="math notranslate nohighlight">\(x_b\)</span> the concentration is no longer changed. Naturally, the product of the reaction increases to <span class="math notranslate nohighlight">\(\int(c_0(x,0)-c(x,\infty))dx\)</span>. This how the lateral flow result is observed by eye, the product is concentrated in a small area and the colour becomes intensified due to this.</p>
 <p><img alt="Drawing" src="../_images/diffeqn-fig24c.png" /></p>
-<p>Figure 24c. Calculated profiles of Ab<span class="math notranslate nohighlight">\(\cdot\)</span>A species in a lateral flow test as time vs distance. The reactive area <span class="math notranslate nohighlight">\(x_a\to x_b\)</span> is shown by the vertical lines and is where the species Ab<span class="math notranslate nohighlight">\(\cdot\)</span>A binds to form Ab<span class="math notranslate nohighlight">\(\cdot\)</span>A<span class="math notranslate nohighlight">\(\cdot\)</span>X. The population of this rises in the test region as Ab<span class="math notranslate nohighlight">\(\cdot\)</span>A declines. Notice that outside this region the population of Ab<span class="math notranslate nohighlight">\(\cdot\)</span>A remains constant and its shape unchanged. The bottom line (red) shows the <em>time</em> profile of the product placed in the test region.</p>
+<p>Figure 24d. Calculated profiles of Ab<span class="math notranslate nohighlight">\(\cdot\)</span>A species in a lateral flow test as time vs distance. The reactive area <span class="math notranslate nohighlight">\(x_a\to x_b\)</span> is shown by the vertical lines and is where the species Ab<span class="math notranslate nohighlight">\(\cdot\)</span>A binds to form Ab<span class="math notranslate nohighlight">\(\cdot\)</span>A<span class="math notranslate nohighlight">\(\cdot\)</span>X. The population of this rises in the test region as Ab<span class="math notranslate nohighlight">\(\cdot\)</span>A declines. Notice that outside this region the population of Ab<span class="math notranslate nohighlight">\(\cdot\)</span>A remains constant and its shape unchanged. The bottom line (red) shows the <em>time</em> profile of the product placed in the test region.</p>
 </section>
 <hr class="docutils" />
 <section id="diffusion-in-a-closed-tube-or-isolated-bar">
@@ -2064,7 +2090,7 @@ which means that when <span class="math notranslate nohighlight">\(n\)</span> is
 \[\displaystyle c=\frac{b_0}{2}+\sum_{n=1}^\infty b_ne^{-(n\pi /L)^2Dt}\cos\left(\frac{n\pi x}{L}\right)\]</div>
 <p>The first term <span class="math notranslate nohighlight">\(b_0/2\)</span> is divided by 2 to make it equal to the average concentration at long times viz, <span class="math notranslate nohighlight">\(\displaystyle  \frac{1}{L}\int_0^L f(x) dx\)</span>, because by its defining equation <span class="math notranslate nohighlight">\(b_0\)</span> is otherwise 2 times too large. The results show how the initial profile eventually reaches a constant, time-independent value, the total amount of material or heat being conserved.</p>
 <p><img alt="Drawing" src="../_images/diffeqn-fig25a.png" /></p>
-<p>Fig. 25a Left: One-dimensional diffusion in a closed tube of length 100 nm at the times (in ns) shown.  The initial concentration profile has the Gaussian shape <span class="math notranslate nohighlight">\(\displaystyle e^{-2(x-2.5)^2}\)</span>, and is essentially indistinguishable from the curve plotted at the first time of <span class="math notranslate nohighlight">\(0.01\)</span> ns. The diffusion coefficient used is similar to that of lysozyme <span class="math notranslate nohighlight">\(D = 11\cdot 10^{-2} \,\mathrm{nm^2\,ns^{-1} }\)</span>. The profile at different times is shown. The times are shown on the plot. An essentially uniform profile is not reached until <span class="math notranslate nohighlight">\(t \approx 5000\)</span> ns. The equilibrium concentration is shown as the black dashed line.</p>
+<p>Fig. 25 Left: One-dimensional diffusion in a closed tube of length 100 nm at the times (in ns) shown.  The initial concentration profile has the Gaussian shape <span class="math notranslate nohighlight">\(\displaystyle e^{-2(x-2.5)^2}\)</span>, and is essentially indistinguishable from the curve plotted at the first time of <span class="math notranslate nohighlight">\(0.01\)</span> ns. The diffusion coefficient used is similar to that of lysozyme <span class="math notranslate nohighlight">\(D = 11\cdot 10^{-2} \,\mathrm{nm^2\,ns^{-1} }\)</span>. The profile at different times is shown. The times are shown on the plot. An essentially uniform profile is not reached until <span class="math notranslate nohighlight">\(t \approx 5000\)</span> ns. The equilibrium concentration is shown as the black dashed line.</p>
 <p>Right: The figure on the right shows the time profile measured at <span class="math notranslate nohighlight">\(x = 2.5, 10\)</span> and <span class="math notranslate nohighlight">\(25\)</span> nm along the tube. Both the x and y- axes are shown on a logarithmic scale which makes the plotted lines easier to distinguish from one another. Initially at <span class="math notranslate nohighlight">\(x = 2.5\)</span> the concentration falls rapidly, while that at 10 nm remains effectively zero for about <span class="math notranslate nohighlight">\(10\)</span> ns and that at <span class="math notranslate nohighlight">\(25\)</span> nm remains zero for a few hundred ns. Eventually some molecules reach <span class="math notranslate nohighlight">\(10\)</span> nm and then <span class="math notranslate nohighlight">\(25\)</span> nm and the population at both positions begins to rise as a wave of molecules passes. As the tube is of finite length  eventually a steady concentration along the tube is reached. This takes <span class="math notranslate nohighlight">\(\approx 50000\)</span> ns and demonstrates that molecular diffusion is an intrinsically slow process.</p>
 </section>
 <hr class="docutils" />

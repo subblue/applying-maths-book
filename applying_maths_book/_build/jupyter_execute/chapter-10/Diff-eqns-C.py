@@ -123,12 +123,13 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # where $A$ and $B$ are arbitrary constants determined by the initial conditions. There are three different types of roots to the auxiliary equation.
 # 
-# **Case (i)**$\quad$   The roots are real: the result $y$ is the sum of exponentials.
+# >**Case (i)**$\quad$   The roots are real: the result $y$ is the sum of exponentials.
 # 
-# **Case (ii)**$\quad$  The roots are complex: the result $y$ is the sum of complex exponentials, which
+# >**Case (ii)**$\quad$  The roots are complex: the result $y$ is the sum of complex exponentials, which
 # can be converted into sine and cosines.
 # 
-# **Case (iii)**$\quad$ The roots are the same. In this case, one solution is missing and a test solution has to be tried.
+# >**Case (iii)**$\quad$ The roots are the same. In this case, one solution is missing and a test solution has to be tried.
+# 
 # ### **Case (i)**
 # Suppose that the equation is $\displaystyle \frac{d^2y}{dx^2} -\frac{dy}{dx}-12=0 $ or $\displaystyle D^2 -D-12 = 0$,
 # 
@@ -149,6 +150,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # The initial condition, $y = 0$ at $x = 0$, gives $A = -B$ and from the gradient found by differentiating the solution gives  $2 = -3A + 4B$, as $dy/dx = 2$ at $x = 0$. Then $A = -2/7$ and $B = 2/7$ and the final result is 
 # 
 # $$\displaystyle y = \frac{2}{7} (e^{4x} - e^{-3x})$$
+# 
 # ### **Case (ii)**
 # The equation $\displaystyle \frac{d^2y}{dx^2}+16=0$, 
 # 
@@ -163,8 +165,9 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # which could be written with new constants $a$ and $b$ (determined by boundary conditions) as $y = a\cos(4x) + b\sin(4x)$.
 # 
 # This is the most compact form of the general solution except perhaps the equivalent form $\displaystyle y = R\cos(4x + \varphi)$ where $R$ is the amplitude and $\varphi$ the phase.
+# 
 # ### **Case (iii)**
-# The equation $\displaystyle \frac{d^2y}{dx^2}-4\frac{dy}{dx}=4y = 0$, 
+# The equation $\displaystyle \frac{d^2y}{dx^2}-4\frac{dy}{dx}-4y = 0$, 
 # 
 # has the auxiliary equation $\displaystyle k^2 - 4k + 4 = 0$ with both roots $k = 2$. This means that one solution is missing. We can, so far, write only $\displaystyle y = Ae^{2x} + y_2$ and have to find $y_2$.
 # 

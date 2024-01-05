@@ -14,21 +14,71 @@
 # 
 # $$ \displaystyle \qquad\qquad \langle v| = \begin{bmatrix}a^*& b^*& c^*\end{bmatrix} \qquad   \tag{28}$$
 # 
-# where * indicates a complex conjugate. The $a, b, c$ are the elements of the basis set being used. However, these are themselves only aliases or references to the actual properties. By manipulating these symbols, problems can be solved so that only at the end of the calculation do numbers have to be used. The bra and ket can be multiplied together in two ways, as an _inner product_ (dot product) to produce a scalar number
+# where * indicates a complex conjugate. The $a, b, c$ are the elements of the basis set being used. However, these are themselves only aliases or references to the actual properties. By manipulating these symbols, problems can be solved so that only at the end of the calculation do numbers have to be used. 
 # 
-# $$\displaystyle \qquad\qquad \langle A|B\rangle =\begin{bmatrix} a^*_1 & a^*_2 & a^*_3 \cdots\end{bmatrix}\begin{bmatrix} b_1\\b_2\\b_3\\\vdots\end{bmatrix} = \sum_i a^*_ib_i\qquad\qquad \qquad\qquad  \text{(29)}$$
+# The fact that the bra is the conjugate transpose of the ket means that the correspondence between them is *antilinear*, for example the ket $ a_1|\varphi_1\rangle +a_2|\varphi_2\rangle$ and its bra are always related as 
+# 
+# $$\displaystyle a_1|\varphi_1\rangle +a_2|\varphi_2\rangle \rightleftharpoons a^*_1\langle\varphi_1| +a^*_2\langle\varphi_2|$$
+# 
+# where the superscript $^*$ indicated the complex conjugate. Of course coefficient $a$ will not always be complex, but that does not change the principle.  
+# 
+# We do have to be careful about how we write things, for example when $a$ is a complex number 
+# 
+# $$\displaystyle |a\;\varphi\rangle=a|\varphi\rangle\qquad \text{but}\qquad \langle a\;\varphi|=a^*\langle\varphi|$$
+# 
+# The dot or _inner product_ of two kets $|\varphi\rangle$ and $|\psi\rangle$ is the same as multiplying the bra of $\varphi$ and ket of $\psi$, or vice versa, and produces a number
+# 
+# $$\displaystyle \qquad\qquad \langle \varphi|\psi\rangle =\begin{bmatrix} a^*_1 & a^*_2 & a^*_3 \cdots\end{bmatrix}\begin{bmatrix} b_1\\b_2\\b_3\\\vdots\end{bmatrix} = \sum_i a^*_ib_i=\text{ a number}\qquad\qquad \qquad\qquad  \text{(29)}$$
 # 
 # and an _outer product_ which is an _operator_ and produces a matrix.
 # 
-# $$\displaystyle \qquad\qquad |B\rangle\langle A|= \begin{bmatrix} b_1\\b_2\\b_3\\\vdots\end{bmatrix}\begin{bmatrix} a^*_1 & a^*_2 & a^*_3 \cdots\end{bmatrix}=\begin{bmatrix}b_1a_1^* & b_1a_2^* & b_1a_3^*\cdots \\ b_2a_1^* & b_2a_2^* &\cdots \\ \vdots & \vdots& \ddots\end{bmatrix} \qquad\qquad \qquad\qquad \text{(30)}$$
+# $$\displaystyle \qquad\qquad |\psi\rangle\langle \varphi|= \begin{bmatrix} b_1\\b_2\\b_3\\\vdots\end{bmatrix}\begin{bmatrix} a^*_1 & a^*_2 & a^*_3 \cdots\end{bmatrix}=\begin{bmatrix}b_1a_1^* & b_1a_2^* & b_1a_3^*\cdots \\ b_2a_1^* & b_2a_2^* &\cdots \\ \vdots & \vdots& \ddots\end{bmatrix} \qquad\qquad \qquad\qquad \text{(30)}$$
 # 
-# which are the same rules for any matrix met in Chapter 7. The only difference in their usage in quantum mechanics is that the elements of the basis set must form an orthogonal set. If they are also normalised then they form an orthonormal set.
+# which are the same rules for any matrix as shown in Chapter 7. The only difference in their usage in quantum mechanics is that the elements of the basis set must form an orthogonal set. If they are also normalised they form an orthonormal set.
+
+# ### **Summary of bra-ket properties**
 # 
+# The complex conjugate is indicated by superscript $^*$, the adjoint by $^\dagger, A, B$ are linear operators, $a$'s numbers
+# 
+# $$\displaystyle \begin{array}{lll}\\
+# \hline
+# |\psi\rangle a=a|\psi\rangle\\
+# \langle\psi| a=a\langle\psi|\\
+# \langle \varphi|a|\psi\rangle=a\langle \varphi|\psi\rangle=\langle \varphi|\psi\rangle a\\
+# \langle\varphi|\psi\rangle=\langle\psi|\varphi\rangle^*\\
+# \langle\psi|\psi\rangle =\text{ a real positive number}\\
+# \langle\psi|\psi\rangle =1\text{ if }\psi \text{ is normalised}\\
+# \langle\varphi|\;(a_1\psi_1+a_2\psi_2)\;\rangle = a_1\langle\varphi|\psi_1\rangle+a_2\langle\varphi|\psi_2\rangle\\
+# \langle\;(a_1\varphi_1+a_2\varphi_2)\;|\psi\rangle = a^*_1\langle\varphi_1|\psi\rangle + a^*_2\langle\varphi_2|\psi \rangle\\
+# \hline
+# \end{array}$$
+# 
+# Linear operators are labelled as $A,B$ and a Hermitian operator as $H$. An arbitrary ket is labelled $|x\rangle$ and $a$ is a (complex) number. Superscript $\dagger$ is the adjoint (conjugate-transpose), superscript $*$ complex conjugate.
+# 
+# $$\displaystyle \begin{array}{lll}\\
+# \hline
+# \pmb A|\psi\rangle =|x\rangle\\
+# \pmb A a|\psi\rangle=a \pmb A|\psi\rangle\\
+# \pmb A(a_1\psi_1+a_2\psi_2\;\rangle)=a_1\pmb A|\psi_1\rangle+a_2\pmb A|\psi_2\rangle \\
+# (\pmb A\pmb B)|\psi\rangle=\pmb A(\pmb B|\psi\rangle\\
+# (\pmb A^\dagger)^\dagger=\pmb A\\
+# (a\pmb A)^\dagger = a^*\pmb A\dagger\\
+# (\pmb A\pmb B)^\dagger =\pmb B^\dagger \pmb A^\dagger\text{ notice change in ordering}\\
+# |\pmb A\psi\rangle=\pmb A|\psi\rangle\\
+# \langle \pmb A\psi| =\langle\psi|\pmb A^\dagger\\
+# \langle\varphi|\pmb A|\psi\rangle=\text{a number}\\
+# \pmb A|\psi\rangle=E|\psi\rangle\;\text{, eigenvalue/eigenvector eqn}\\
+# \langle\psi|\pmb A|\psi\rangle=E\langle\psi|\psi\rangle\\
+# \langle\psi|\pmb A^\dagger=E^*\langle\psi|\\
+# \langle\psi|\pmb A|\psi\rangle=\langle  A\rangle \text{, expectation value }\psi\text{ normalised}\\
+# \hline
+# \end{array}$$
+
 # ## 4.2 Discrete basis sets
 # 
 # The bra and ket, equations 27 and 28 have terms $a,\, b,\, c$ and these are the elements of the basis set chosen for the calculation. All quantum problems using bra-ket notation must have a basis set defined before the calculation starts. Unlike many calculations using vectors, the basis set does not usually represent spatial coordinates but is instead some other relevant property. The spin state of the proton, which is described next, is an example of this.
 # 
-# The spin state of an atom or nucleus can be described with a spin quantum number $s$ and magnetic (azimuthal) quantum numbers $m$, which, when $s = 1/2$ has values $+1/2$ or $-1/2$, or, in general, $m = +s, +s - 1, \cdots -s$ and thus is a range of values from $s \to -s$ each separated from one another by unity. Sometimes the magnetic quantum number is labelled $m_s$ or $m_z$; the latter because it is the projection of angular momentum onto a unique axis normally labelled $z$ when a unidirectional magnetic field is present, Fig. 4.  The magnitude(expectation value of the angular momentum is $\hbar\sqrt{ s(s+1)}$. Nuclear spin angular momentum is usually labelled with $I$ instead of $s$. If a magnetic field $B$ is along the $z$-axis, the energy of the spin depends on its orientation and is $E = -\gamma m_z\hbar B$ where $\gamma$ is the magnetogyric ratio with units of rad T${-1}$ s$^{-1}$.
+# The spin state of an atom or nucleus can be described with a spin quantum number $s$ and magnetic (azimuthal) quantum numbers $m$, which, when $s = 1/2$ has values $+1/2$ or $-1/2$, or, in general, $m = +s, +s - 1, \cdots -s$ and thus is a range of values from $s \to -s$ each separated from one another by unity. Sometimes the magnetic quantum number is labelled $m_s$ or $m_z$; the latter because it is the projection of angular momentum onto a unique axis normally labelled $z$ when a unidirectional magnetic field is present, Fig. 4.  The magnitude (expectation value of the angular momentum) is $\hbar\sqrt{ s(s+1)}$. Nuclear spin angular momentum is usually labelled with $I$ instead of $s$. If a magnetic field $B$ is along the $z$-axis, the energy of the spin depends on its orientation and is $E = -\gamma m_z\hbar B$ where $\gamma$ is the magnetogyric ratio with units of rad T$^{-1}$ s$^{-1}$.
 # 
 # The spin basis set for a spin half particle (electron, $^1$H, $^{13}$13C, etc.) can be constructed in terms of the two quantum numbers $s$ and $m$, labelled with two indices as $(s, m)$, and is
 # 
@@ -82,11 +132,11 @@
 # 
 # $$ \displaystyle \langle\varphi |\varphi\rangle=\begin{bmatrix}a^* &b^*\end{bmatrix} \begin{bmatrix} a\\b\end{bmatrix} = a^*a+b^*b$$
 # 
-# and the normalization equation defined as $N^2\langle\varphi |\varphi\rangle = 1$ with normalization constant $N$. Hence $N^2 = a*a + b*b$ and normalized wavefunction is
+# and the normalization equation defined as $N^2\langle\varphi |\varphi\rangle = 1$ with normalization constant $N$. Hence $N^2 = a^*a + b^*b$ and normalized wavefunction is
 # 
 # $$\displaystyle |\varphi\rangle =\frac{a|\alpha\rangle+b|\beta\rangle}{\sqrt{a^*a+b^*b} } $$
 # 
-# If the constants are real numbers, the complex conjugates are not needed. If there are equal amounts of $a$ and $b$ in $\varphi$, then
+# If the constants are real numbers, the complex conjugates are equal to the number. If there are equal amounts of $a$ and $b$ in $\varphi$, then
 # 
 # $$\displaystyle |\varphi\rangle =\frac{|\alpha\rangle+|\beta\rangle}{\sqrt{2} } $$
 # 
@@ -98,7 +148,7 @@
 # 
 # $$\displaystyle \langle \alpha|\varphi\rangle=a\langle \alpha|\alpha\rangle+b\langle \alpha|\beta\rangle=a\qquad\tag{32}$$
 # 
-# but, in either case, this result is interpreted to be the probability amplitude for the state  $\varphi$ to collapse into the state $\alpha$ and the probability of this happening is $\langle|\varphi^2$. Similarly, acting on $\varphi$ with $\beta$ gives the probability amplitude $\langle\beta|\varphi\rangle =b$. As the product $\langle \alpha|\varphi\rangle$ evaluates to  the coefficient $a$, we can write the odd looking equation
+# but, in either case, this result is interpreted to be the probability amplitude for the state  $\varphi$ to collapse into the state $\alpha$ and the probability of this happening is $a^2$. Similarly, acting on $\varphi$ with $\beta$ gives the probability amplitude $\langle\beta|\varphi\rangle =b$. As the product $\langle \alpha|\varphi\rangle$ evaluates to  the coefficient $a$, we can write the odd looking equation
 # 
 # $$\displaystyle |\varphi\rangle=\langle\alpha|\varphi\rangle |\alpha\rangle + \langle\beta|\varphi\rangle |\beta\rangle$$
 # 
@@ -123,25 +173,142 @@
 # ## 4.4 Outer products:$|\alpha\rangle\langle \beta|$ and projection operators $|\alpha\rangle\langle\alpha|$ are matrices
 # Objects of the form $|\alpha\rangle\langle \alpha|$, $|\alpha\rangle\langle \beta|$ or $|\psi_{z^2}\rangle\langle \psi_{xy}|$ and so forth are always square matrices and correspond to *operators*. This means that when they are placed to the left of a ket they operate on this and a new ket is formed. Using the definitions above
 # 
-# $$\displaystyle|\alpha\rangle\langle\beta|=\begin{bmatrix} 1 \\ 0 \end{bmatrix} \begin{bmatrix} 1 & 0 \end{bmatrix} = \begin{bmatrix} 0 & 1\\ 0 & 0\end{bmatrix}$$
+# $$\displaystyle|\alpha\rangle\langle\beta|=\begin{bmatrix} 1 \\ 0 \end{bmatrix} \begin{bmatrix} 0 & 1 \end{bmatrix} = \begin{bmatrix} 0 & 1\\ 0 & 0\end{bmatrix}$$
 # 
 # $$\displaystyle|\psi_{z^2}\rangle\langle\psi_{xy}|=\begin{bmatrix}0 \\0 \\ 1 \\ 0 \\0  \end{bmatrix} \begin{bmatrix}0 & 0 & 0 & 1 & 0\end{bmatrix} = \begin{bmatrix} 0 & 0 & 0 & 0 & 0\\ 0 & 0 & 0 & 0 & 0\\ 0 & 0 & 0 & 1 & 0 \\0 & 0 & 0 & 0 & 0\\ 0 & 0 & 0 & 0 & 0 \end{bmatrix}$$
 # 
-# Operating on the ket 
+# ## 4.5 Hermitians,  Hamiltonans in bra-ket notation
+# 
+# The ket $|\psi\rangle$ and bra $\langle\psi|$ are Hermitian conjugates of each other, this means that to go from one to the other involves transposing the vector and taking the complex conjugate, i.e making the adjoint, and their order is also reversed. The Hamiltonian operator is Hermitian. The same process also applies to operators, for example
+# 
+# $$\displaystyle (\pmb A\pmb B)^\dagger=\pmb B^\dagger \pmb A^\dagger$$
+# 
+# $$\displaystyle \langle \varphi|\pmb A\psi\rangle=\langle \pmb A^\dagger\varphi|\psi\rangle$$
+# 
+# $$\displaystyle (|\varphi\rangle\langle\psi|)^\dagger=\langle\psi|\varphi\rangle$$
+# 
+# $$\displaystyle \langle \psi |\pmb A^\dagger|\varphi\rangle=\langle\varphi |\pmb A|\psi\rangle^*$$
+# 
+# and superscript $\dagger$ indicates the adjoint. The Hermitian operator is equal to its adjoint, i.e. 
+# 
+# $$\displaystyle \pmb A^\dagger=\pmb A,\qquad \text{operator A is Hermitian}$$
+# 
+# and an example of this is $\displaystyle \langle\psi |\pmb A|\psi\rangle^*=\langle \psi |\pmb A^\dagger|\psi\rangle=\langle\psi |\pmb A|\psi\rangle$
+# 
+# ### **Rule**
+# 
+# To obtain the Hermitian conjugate of bras, kets and operators
+# 
+# >replace constants by their complex conjugates, bras by their kets, kets by their bras and operators with their adjoint.
+# 
+# > reverse the order of these, except for constants whose position is not important.
+
+# ## 4.6 Manipulating bra's and ket's  with operators
+# 
+# The outer product is a matrix and hence a linear operator $\pmb A$ and expressions such as 
+# 
+# $$\displaystyle |\alpha\rangle\langle\beta|\varphi\rangle,\qquad\langle\alpha |\pmb A|\beta\rangle,\qquad \langle \pmb A\alpha|\beta\rangle= \langle \alpha|\pmb A^\dagger \beta\rangle$$
+# 
+# are often met. The important point to note is that the bra $\langle \alpha|$ is always a row vector and the complex conjugate of column vector or ket $|\alpha\rangle$ 
+# 
+# ### **(i) $\langle\alpha |\pmb A|\beta\rangle$ is an expectation or average value**
+# 
+# The expectation or average value is $\langle E\rangle=\langle\alpha |\pmb A|\beta\rangle$ if $\pmb A$ is the Hamiltonian (hermitian) operator and produces an energy, assuming that the wavefunctions represented by $\langle\alpha|$ and $|\beta\rangle$ are normalised.
+# 
+# We suppose that the vectors $\alpha$ and $\beta$ are initially written as column vectors. The general form is
+# 
+# $$\displaystyle  \langle \alpha|\pmb A|\beta\rangle=\begin{bmatrix}\alpha^*_1&\alpha^*_2&\cdots & \alpha^*_n\end{bmatrix}\begin{bmatrix} A_{11} & A_{12} & \cdots& A_{1n}\\ A_{21} & A_{22} & \cdots& \vdots\\ \vdots &\cdots \\A_{n1}& \cdots & & A_{nn} \end{bmatrix}\begin{bmatrix}\beta_1\\\beta_2\\\vdots\\\beta_n\end{bmatrix}=\text{a number}$$
+# 
+# where the $^*$ indicates the complex conjugate of ket $a$, the column vector $\alpha$, or $|a\rangle$, which is also transposed.
+# 
+# Suppose for the purposes of illustrating the maths only the operator is $$\pmb A=\begin{bmatrix} 0 & 2i & 1\\ 0 & 0 & 0\\ 0 & 6 & -3i \end{bmatrix}$$
+# 
+# which is clearly not Hermitian and let $|\alpha\rangle=\begin{bmatrix}i\\0\\3\end{bmatrix},\quad |\beta\rangle = \begin{bmatrix}0\\2\\-i \end{bmatrix}$
+# 
+# Transposing and making the complex conjugate produces the bra $\langle\alpha|$, therefore 
+# 
+# $$\displaystyle \langle\alpha |\pmb A|\beta\rangle=\begin{bmatrix}-i&0&3\end{bmatrix}\begin{bmatrix} 0 & 2i & 1\\ 0 & 0 & 0\\ 0 & 6 & -3i \end{bmatrix}\begin{bmatrix}0\\2\\-i \end{bmatrix}$$
+# 
+# The matrix multiplication diagrams, chapter 7 fig 7 show that this product is a number. Multiplying out starting at the right gives
+# 
+# $$\displaystyle \langle\alpha |\pmb A|\beta\rangle=\begin{bmatrix}-i&0&3\end{bmatrix}\begin{bmatrix}3i\\0\\9 \end{bmatrix}=30$$
+# 
+# ### **(ii) $ \langle \pmb A\alpha|\beta\rangle= \langle \alpha|\pmb A^\dagger \beta\rangle$**
+# 
+# The quantity $\langle \pmb A\alpha|\beta\rangle$ is a number. This can be appreciated by noticing that $H\alpha$ is a matrix left multiplying a column vector and so produces a column vector, see fig 7 chapter 7. The vector $\alpha$ has to be a column as only a column vector can be left multiplied by a matrix. This resultant vector has to be changed into a row vector and made into its complex conjugate to become a bra and so to be able to form a dot product with column vector $\beta$. 
+# 
+# The equality can be confirmed by manipulating the symbols using the rules given above in 4.5., i.e. $\langle \pmb A\alpha|= \langle\alpha |\pmb A^\dagger$ and $|\pmb A^\dagger \beta\rangle|=\pmb A^\dagger |\beta\rangle$,
+# 
+# $$\displaystyle \langle \pmb A\alpha|\beta\rangle= \langle\alpha |\pmb A^\dagger |\beta\rangle = \langle \alpha|\pmb A^\dagger \beta\rangle$$
+# 
+# which is a number. To check this argument $\alpha,\beta$ and $\pmb A$ as above are used again
+# 
+# $$\displaystyle  \pmb A\alpha=\begin{bmatrix} 0 & 2i & 1\\ 0 & 0 & 0\\ 0 & 6 & -3i \end{bmatrix}\begin{bmatrix}i\\0\\3\end{bmatrix}=\begin{bmatrix}3\\0\\-9i\end{bmatrix}$$
+# 
+# as a matrix can only left operate on a column vector. The bra is the complex conjugate and transpose, $\langle \pmb A\alpha|= \begin{bmatrix}3&0&9i\end{bmatrix}$ and so 
+# 
+# $$\displaystyle \langle \pmb A\alpha|\beta\rangle=\begin{bmatrix}3&0&9i\end{bmatrix}\begin{bmatrix}0\\2\\-i\end{bmatrix}= 9$$
+# 
+# The symbol $\dagger$ represents the conjugate transpose or adjoint operation. Thus $\pmb A^\dagger\beta$ is
+# 
+# $$\displaystyle  \pmb A^\dagger\beta=\begin{bmatrix} 0 & 0 & 0\\ -2i & 0 & 6\\ 1 & 0 & 3i \end{bmatrix} \begin{bmatrix}0 \\ 2 \\ -i\end{bmatrix}= \begin{bmatrix}0 \\ -6i \\ -3i^2\end{bmatrix}$$
+# 
+# and now take the dot product with $\langle \alpha|$, 
+# 
+# $$\displaystyle \begin{bmatrix}i&0&3\end{bmatrix}\begin{bmatrix}0\\-6i\\3\end{bmatrix}= 9$$
+# 
+# ### **(iii) Eigenvalues of a Hermitian operator $\pmb H$ are orthogonal**
+# 
+# We can show that two eigenvectors are orthogonal by manipulating the bras and kets. Two eigenvectors  of the hermitian operator  are $|\psi\rangle,|\varphi\rangle$ hence
+# 
+# $$\displaystyle \pmb H|\psi\rangle =a_1|\psi\rangle \tag{32a}$$
+# 
+# $$\displaystyle  \pmb H|\varphi\rangle =a_2|\varphi\rangle \tag{32b}$$
+# 
+# where the $a$'s are constants. Since $\pmb H$ is hermitian it is equal to it its adjoint or transpose of its  complex conjugate, $\pmb H=\pmb H^\dagger$ hence we can write eqn. 32b as
+# 
+# $$\displaystyle \langle \varphi|H=a_2\langle\varphi| \tag{32c}$$
+# 
+# and left multiply eqn. 32a by $\langle\varphi|$ on the left and 32c $|\psi\rangle$ on the right
+# 
+# $$\displaystyle \langle \varphi|\pmb H|\psi\rangle=a_1\langle\varphi|\psi\rangle\qquad \langle \varphi|\pmb H|\psi\rangle=a_2\langle\varphi|\psi\rangle$$
+# 
+# and subtract them 
+# 
+# $$\displaystyle (a_2-a_1)\langle\varphi|\psi\rangle=0$$
+# 
+# and thus when $a_2-a_1 \ne 0$ then $|\varphi\rangle$ and $ |\psi\rangle$ are orthogonal.
+
+# ### **(iv) Projection Operators  are matrices that operate on a ket**
+# 
+# The kets $|\alpha\rangle=\begin{bmatrix}1\\0\end{bmatrix},\;|\beta\rangle=\begin{bmatrix}0\\1\end{bmatrix}$ are orthogonal $\langle\alpha|\beta\rangle=\langle\beta|\alpha\rangle=0 $  as may be seem by forming their dot product. They form the operator
+# 
+# $$\displaystyle|\alpha\rangle\langle\beta|=\begin{bmatrix} 1 \\ 0 \end{bmatrix} \begin{bmatrix} 0 & 1 \end{bmatrix} = \begin{bmatrix} 0 & 1\\ 0 & 0\end{bmatrix}$$
+# If this operates on a ket such as 
 # 
 # $$|\varphi\rangle = a|\alpha\rangle + b|\beta\rangle$$
 # 
-# with $|\alpha\rangle\langle\beta|$ produces the new ket, $b|\alpha\rangle$,
+# the new ket, $b|\alpha\rangle$ is produced. This can be seen by manipulating the symbols and knowing that the the bra, ket $|\alpha\rangle,|\beta\rangle$ are orthonormal.
 # 
-# $$\displaystyle (|\alpha\rangle\langle\beta|)|\varphi\rangle =|\alpha \rangle\;\langle\beta  |\varphi\rangle= \langle\beta|\varphi\rangle|\alpha\rangle=b|\alpha\rangle$$
+# $$\displaystyle |\alpha\rangle\langle\beta||\varphi\rangle =|\alpha \rangle\langle\beta  |\;(a|\alpha\rangle + b|\beta\rangle\;)=b|\alpha\rangle$$
 # 
-# and the last step is made by identifying with $|\alpha\rangle$. The result of $|\alpha\rangle \langle \beta|$ acting on the ket $|\varphi\rangle$, is to produce another ket which is $b|\alpha\rangle$, and hence, $|\alpha\rangle\langle \beta|$ is an operator. The $2 \times 2$ matrix produced is zero except for just one place; hence, it will extract just one value. The alternative calculation can be done by multiplying the two right-hand matrices first, operating with $\langle \beta|$ on $|\varphi\rangle$ and then multiplying the answer by $|\alpha\rangle$,
+# where $\langle\beta|\alpha\rangle=0$ and $\langle\beta|\beta\rangle=1$ was used and a constant can be moved to the front of any bra-ket.  The result of $|\alpha\rangle \langle \beta|$ acting on the ket $|\varphi\rangle$, is to produce another ket which is $b|\alpha\rangle$, and hence, $|\alpha\rangle\langle \beta|$ is an operator.
 # 
-# $$\displaystyle |\alpha\rangle\left(\langle\beta| \varphi \rangle \right) = \begin{bmatrix}1\\0\end{bmatrix}\left(\begin{bmatrix} 0&1\end{bmatrix} \begin{bmatrix}a\\b\end{bmatrix}\right)=\begin{bmatrix}1\\0\end{bmatrix}b=b|\alpha\rangle$$
+# The matrix calculation can be done by multiplying the two right-hand vectors first, operating with $\langle \beta|$ on $|\varphi\rangle$ and then multiplying the answer by $|\alpha\rangle$,
 # 
-# The operator $|\alpha\rangle\langle\alpha|$ will project $a|\alpha\rangle$ out of the ket $|\varphi\rangle$, and is therefore called a *projection operator*. The calculation is
+# $$\displaystyle |\alpha\rangle\;(\langle\beta| \varphi \rangle ) = \begin{bmatrix}1\\0\end{bmatrix}\left(\begin{bmatrix} 0&1\end{bmatrix} \left(a\begin{bmatrix}1\\0\end{bmatrix}+b\begin{bmatrix}0\\1\end{bmatrix}\right)\right)=\begin{bmatrix}1\\0\end{bmatrix}(0a+b)=b|\alpha\rangle$$
 # 
-# $$\displaystyle |\alpha\rangle\langle\alpha||\varphi\rangle=\begin{bmatrix}1& 0\\0 & 0\end{bmatrix}|\varphi\rangle=\begin{bmatrix}1& 0\\0 & 0\end{bmatrix}\begin{bmatrix}a\\b\end{bmatrix} = a|\alpha\rangle$$
+# The order of multiplication can be changed so that the operator is formed first
+# 
+# $$\displaystyle|\alpha\rangle\langle\beta|\varphi\rangle = \begin{bmatrix} 0 & 1\\ 0 & 0\end{bmatrix}\left(a\begin{bmatrix}1\\0\end{bmatrix}+b\begin{bmatrix}0\\1\end{bmatrix}\right)=a\begin{bmatrix}0\\0\end{bmatrix}+b\begin{bmatrix}1\\0\end{bmatrix}=b|\alpha\rangle$$
+# 
+# and the magnitude of the vector is $\sqrt{b^2+0^2}=b$.
+# 
+# The operator $|\alpha\rangle\langle\alpha|$ will project $a|\alpha\rangle$ out of the ket $|\varphi\rangle$, and is therefore also called a projection operator. The calculation is
+# 
+# $$\displaystyle |\alpha\rangle\langle\alpha|\varphi\rangle=\begin{bmatrix}1& 0\\0 & 0\end{bmatrix}\left(a\begin{bmatrix}1\\0\end{bmatrix}+b\begin{bmatrix}0\\1\end{bmatrix}\right) =a\begin{bmatrix}1\\0\end{bmatrix}+b\begin{bmatrix}0\\0\end{bmatrix}= a|\alpha\rangle$$
+# 
+# and $|\alpha\rangle\langle\alpha|\varphi\rangle$ is the projection of $\varphi$ along $\alpha$.
 
 # In[ ]:
 

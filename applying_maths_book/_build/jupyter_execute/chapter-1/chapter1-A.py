@@ -530,7 +530,7 @@ for i in range(1,12):      # increase number if does not comverge
 # 
 # $$\displaystyle  x = b^{\log_b(x)}$$
 # 
-# The value of $x$ must be greater than zero for the log to be a real number. If $x\lt 0$,then a complex number is obtained, see Chapter 2.
+# The value of $x$ must be greater than zero for the log to be a real number. If $x\lt 0$, then a complex number is obtained, see Chapter 2.
 # 
 # A series of increasing powers of $2$, familiar in computing where $2$ kilobytes $\equiv 2048$ bytes, is shown on the bottom row of the table; the top row is the power with which to raise $2$ to obtain the number, e.g. $2^3 = 8$.
 # 
@@ -552,7 +552,7 @@ for i in range(1,12):      # increase number if does not comverge
 # 
 # $$\displaystyle \log_2\left(\frac{1}{4}\right) +\log_2(128) =-\log_2(4) +\log_2(128)=5$$
 # 
-# and as $5 = \log_2(32))$ the result is $32$.
+# and as $5 = \log_2(32)$ the result is $32$.
 # 
 # If $a\gt 0$ and $ b> 0 $ the first two laws of logs are
 # 
@@ -562,9 +562,9 @@ for i in range(1,12):      # increase number if does not comverge
 # 
 # and these relationships are true no matter what the base is. 
 # 
-# Note that this rule does not apply to $\displaystyle \frac{\log(a)}{\log(b)}$  , which cannot be simplified.
+# Note that this rule does not apply to $\displaystyle \frac{\log(a)}{\log(b)}$ which cannot be simplified.
 # 
-# When Napier invented logarithms in ca.1614, he used bones inscribed with numbers. The old-fashioned slide rule uses the principle of addition and subtraction to do multiplication and division with lines marked on rulers that slide past one another. The slide rule is quite easy to use with practice, and not that much slower, but less accurate, than a hand calculator but no one ever uses one today.
+# When Napier invented logarithms in ca.1614, he used bones inscribed with numbers. The old-fashioned slide rule uses the principle of addition and subtraction to do multiplication and division with lines marked on rulers that slide past one another. The slide rule is quite easy to use with only a little practice, and not that much slower, but less accurate, than a hand calculator, but no one ever uses one today.
 # 
 # The 'third law' of logs is:
 # 
@@ -613,7 +613,37 @@ for i in range(1,12):      # increase number if does not comverge
 # 
 # The derivation of these equations need a knowledge of calculus and can be found in any phys. chem. or specialist textbook.
 # 
-# ### 4.1 Changing the base of logs
+# 
+# ### **A very confusing function simplified using logs, $\displaystyle \sqrt{1\sqrt{2\sqrt{3\cdots\sqrt{n}}}}$**
+# 
+# The product of square roots $\displaystyle \sqrt{1\sqrt{2\sqrt{3\cdots\sqrt{n}}}}$ is very hard to read but can be simplified using logs. Start by writing down the first few terms as powers of $1/2$ and then by induction propose that the formula found can be extended. Thus,
+# 
+# $$\displaystyle \sqrt{1\sqrt{2\sqrt{3}}}= \left(1\sqrt{2\sqrt{3}}\right)^{1/2}=\left(1\left(2\sqrt{3}\right)^{1/2}\right)^{1/2}=\left(1\left(2(3)^{1/2}\right)^{1/2}\right)^{1/2}$$ 
+# 
+# The square root of one can be dispensed with and then simplifying powers gives
+# 
+# $$\displaystyle \sqrt{1\sqrt{2\sqrt{3}}}=\left(2(3)^{1/2}\right)^{1/4}=2^{1/4}3^{1/8}$$ 
+# 
+# Taking logs produces 
+# 
+# $$\displaystyle \ln( 2^{1/4}3^{1/8} )= \frac{1}{2^2}\ln(2)+\frac{1}{2^3}\ln(3)$$
+# 
+# Now making the entirely reasonable assumption that this procedure can continue _ad infinitum_ then
+# 
+# 
+# $$\displaystyle \ln\left(\sqrt{1\sqrt{2\sqrt{3\cdots\sqrt{n}}}}\right)=\sum_{n=2}^\infty \frac{1}{2^n}\ln(n)$$
+# 
+# and the sum starts at $n=2$ because $\ln(1) =0$. To evaluate the initial expression this result has to be exponentiated 
+# 
+# $$\displaystyle\sqrt{1\sqrt{2\sqrt{3\cdots\sqrt{n}}}}=\large e^{\sum_{n=2}^\infty \frac{1}{2^n}\ln(n)}$$
+# 
+# If the expression had cubed roots instead of square roots then the powers would be $3^n$ instead of $2^n$, i.e.
+# 
+# $$\displaystyle \ln\left(\sqrt[\raise{5pt}\Large3]{1\;\sqrt[\raise{5pt}\Large3]{2\;\sqrt[\raise{5pt}\Large3]{3\;\cdots\sqrt[\raise{5pt}\Large3]{n}}}}\right)=\sum_{n=2}^\infty \frac{1}{3^n}\ln(n)$$
+# 
+# and you can see how this could be generalised to the $m^{th}$ root.
+# 
+# ## 4.1 Changing the base of logs
 # 
 # By definition
 # 
@@ -629,7 +659,7 @@ for i in range(1,12):      # increase number if does not comverge
 # 
 # which is $\ln(x)=2.30258\log(x)$.
 # 
-# ### 4.2 Summary of logs and powers: definition $x=b^{\log_b(x)}$
+# ## 4.2 Summary of logs and powers: definition $x=b^{\log_b(x)}$
 # 
 # $$\displaystyle \begin{array}{lll}\\
 # \hline

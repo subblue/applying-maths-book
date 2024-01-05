@@ -55,7 +55,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="9 First order eqn’s &amp; Integrating factors. Second order eqn’s, Newton’s laws, equations of motion." href="Diff-eqns-B.html" />
+    <link rel="next" title="9 First order equations &amp; Integrating factors. Second order equations, Newton’s laws and equations of motion." href="Diff-eqns-B.html" />
     <link rel="prev" title="1 Basics, Initial and Boundary Value problems, Steady state, Phase portrait, Chemical kinetics" href="Diff-eqns-A.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -976,7 +976,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="Diff-eqns-B.html">
-     9 First order eqn’s &amp; Integrating factors. Second order eqn’s, Newton’s laws, equations of motion.
+     9 First order equations &amp; Integrating factors. Second order equations, Newton’s laws and equations of motion.
     </a>
    </li>
    <li class="toctree-l2">
@@ -1001,7 +1001,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="Diff-eqns-F.html">
-     15 Partial Differential Equations, PDE
+     15 Partial Differential Equations, PDE. 1D &amp; 2D diffusion, Particle in a box, Lateral flow tests, Diffusion and Reaction, Cable equation, Algal Blooms
     </a>
    </li>
    <li class="toctree-l2">
@@ -1862,14 +1862,15 @@ title="Print to PDF"
 <section id="q14-chain-branching-explosion">
 <h2>Q14 Chain-branching explosion<a class="headerlink" href="#q14-chain-branching-explosion" title="Permalink to this headline">#</a></h2>
 <p>A gas phase chain-branching reaction is stable under some conditions, but can be explosive under others. Chain branching is the cause of the first explosion limit in the H<span class="math notranslate nohighlight">\(_2\)</span>/O<span class="math notranslate nohighlight">\(_2\)</span> reaction.</p>
-<p>The general radical chain reaction scheme can be drawn pictorially, as shown in Fig. 9. The initial species M reacts to produce some chain carriers R, which can produce more of themselves, <span class="math notranslate nohighlight">\(\alpha\)</span>R and also the reaction product <span class="math notranslate nohighlight">\(P\)</span>. A chain carrier can also be deactivated by reacting with other species or with the walls of the reaction vessel, both of which lead to termination. The branching number <span class="math notranslate nohighlight">\(\alpha\)</span>, must be greater than unity if branching is to occur, because by definition the propagation step produces one radical as well as product, e.g. R + M <span class="math notranslate nohighlight">\(\to\)</span> R + product.
-In the H<span class="math notranslate nohighlight">\(_2\)</span>/O<span class="math notranslate nohighlight">\(_2\)</span> reaction the branching steps are,</p>
+<p>The general radical chain reaction scheme can be drawn pictorially, as shown in Fig. 9. The initial step is to produce a reactive, chain-carrier species <span class="math notranslate nohighlight">\(R\cdot\)</span> from reactant <span class="math notranslate nohighlight">\(M\)</span>. In a continuation or propagation step the chain carriers can produce more of themselves or of a different type of radical, however, when examining the kinetics we need not distinguish between these different chemical species as they are chain-carriers so they act in a similar way. The reaction product <span class="math notranslate nohighlight">\(P\)</span> is also formed from the chain-carrier in a propagation step, i.e. the propagation step produces a new radical as well as product, e.g. <span class="math notranslate nohighlight">\(R\cdot + M \overset{k_p}\to R\cdot +P\)</span>. The propagation step determines the overall rate of product formation even though <span class="math notranslate nohighlight">\(k_p\)</span> will not appear in the final rate expression. The overall rate of converting reactants into products is the radical concentration multiplied by the propagation rate constant, <span class="math notranslate nohighlight">\(k_p[R\cdot]\)</span>. The chain carrier may be deactivated by reacting with other species or with the walls of the reaction vessel, both of which lead to chain termination.</p>
+<p>The chain-branching number <span class="math notranslate nohighlight">\(\alpha\)</span> must be greater than unity if branching is to occur. A linear chain has <span class="math notranslate nohighlight">\(\alpha=1\)</span>. In the H<span class="math notranslate nohighlight">\(_2\)</span>/O<span class="math notranslate nohighlight">\(_2\)</span> reaction the branching steps are,</p>
 <div class="math notranslate nohighlight">
-\[\text{H+O}_2 \to \text{OH+O} \qquad \text{O+H}_2 \to\text{ OH + H}\]</div>
-<p>so that one radical H or O produces an extra one making <span class="math notranslate nohighlight">\(\alpha = 2\)</span>. The rate of reaction is the radical concentration multiplied by the propagation rate constant, <span class="math notranslate nohighlight">\(k_pR\)</span>.</p>
-<p>Using Fig. 9, write down <span class="math notranslate nohighlight">\(dR/dt\)</span> and integrate this equation to find the radial population <span class="math notranslate nohighlight">\(R\cdot\)</span> vs time, assuming that no radicals are present at <span class="math notranslate nohighlight">\(t = 0\)</span>. Show that explosion occurs when the rate of branching is greater than the rate of termination, as might be anticipated, and, if not, that a steady state is reached.</p>
-<p><img alt="Drawing" src="../_images/diffeqn-fig9.png" /></p>
-<p>Fig. 9 Chain branching; <span class="math notranslate nohighlight">\(P\)</span> is the product; <span class="math notranslate nohighlight">\(R\)</span> is the radical chain carrier.</p>
+\[\mathrm{H\cdot+O}_2 \to \mathrm{OH\cdot+O\cdot} \qquad \mathrm{O\cdot+H}_2 \to\mathrm{ OH\cdot + H\cdot}\]</div>
+<p>so that one radical <span class="math notranslate nohighlight">\(\mathrm{H\cdot}\)</span> or <span class="math notranslate nohighlight">\(\mathrm{O\cdot}\)</span> produces an extra one making <span class="math notranslate nohighlight">\(\alpha = 2\)</span>.</p>
+<p>Using Fig. 9, write down <span class="math notranslate nohighlight">\(d[R\cdot]/dt\)</span> and integrate this equation to find the radial population <span class="math notranslate nohighlight">\([R\cdot]\)</span> vs time, assuming that no radicals are present at <span class="math notranslate nohighlight">\(t = 0\)</span>. Show that explosion occurs when the branching rate constant is greater than that for termination, as might be anticipated, and, if not, that a steady state is reached.</p>
+<p>A more sophisticated model should include changes in temperature, and hence rate constants, and pressure, the pressure dependence of termination steps, i.e. a quadratic term in pressure, the size, shape and surface condition of the the reaction vessel and changes in diffusion of the gases with temperature and pressure.</p>
+<p><img alt="Drawing" src="../_images/diffeqn-fig9b.png" /></p>
+<p>Fig. 9 Chain branching; <span class="math notranslate nohighlight">\(P\)</span> is the product; <span class="math notranslate nohighlight">\(R\cdot\)</span> is the radical chain carrier.</p>
 </section>
 <hr class="docutils" />
 <section id="q15-iodine-recombination">
@@ -2016,7 +2017,7 @@ T + T &amp;\stackrel{k_a}\longrightarrow G + G \text{ or } S_1+G
     <a class='right-next' id="next-link" href="Diff-eqns-B.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">9 First order eqn’s &amp; Integrating factors. Second order eqn’s, Newton’s laws, equations of motion.</p>
+        <p class="prev-next-title">9 First order equations &amp; Integrating factors. Second order equations, Newton’s laws and equations of motion.</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

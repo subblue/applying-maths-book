@@ -94,15 +94,15 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # $$\displaystyle\begin{bmatrix} a & b & c \\ d & e & f   \end{bmatrix}^T= \begin{bmatrix} a & d \\b & e\\ c & f \end{bmatrix}$$ 
 # 
-# and for a square matrix this operation leaves the diagonal unchanged
+# and for a square matrix this operation leaves the diagonal unchanged, and is, in effect, a reflection about the diagonal,
 # 
-# $$\displaystyle\begin{bmatrix} a & b & c \\ d & e & f \\g & h & i  \end{bmatrix}^T= \begin{bmatrix} a & d & g\\b & e & h\\ c & f & i\end{bmatrix}$$ 
+# $$\displaystyle\begin{bmatrix} a & b & c \\ d & e & f \\g & h & i  \end{bmatrix}^{\,T}= \begin{bmatrix} a & d & g\\b & e & h\\ c & f & i\end{bmatrix}$$ 
 # 
 # You can appreciate that two transposes reproduce the initial matrix $(\pmb{M}^T)^T = \pmb{M}$.
 # 
 # A _symmetric_ matrix is equal to its transpose and therefore must also be square and have off-diagonal elements $a_{ij} = a_{ji}$. An _antisymmetric_ matrix satisfies the identity $\pmb{A} = -\pmb{A}^T$ and must therefore have zeros on its diagonal and have components $a_{ij} = -a_{ji}$; for example, such a matrix and its transpose is
 # 
-# $$\displaystyle\begin{bmatrix} 0 & 2 & 3 \\ -2 & 0 & 4 \\-3 & -4 & 0  \end{bmatrix}^T= \begin{bmatrix} 0 & -2 & 3\\2 & 0 & -4\\ 3 & 4 & 0\end{bmatrix}=-\begin{bmatrix} 0 & 2 & 3 \\ -2 & 0 & 4 \\-3 & -4 & 0  \end{bmatrix}$$
+# $$\displaystyle\begin{bmatrix} 0 & 2 & 3 \\ -2 & 0 & 4 \\-3 & -4 & 0  \end{bmatrix}^{\,T}= \begin{bmatrix} 0 & -2 & 3\\2 & 0 & -4\\ 3 & 4 & 0\end{bmatrix}=-\begin{bmatrix} 0 & 2 & 3 \\ -2 & 0 & 4 \\-3 & -4 & 0  \end{bmatrix}$$
 # 
 # When two matrices are multiplied, then the transpose reorders the matrix multiplication because rows are converted into columns and vice versa. This means that
 # 
@@ -132,18 +132,35 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # $\qquad\qquad$_'Form the complex conjugate, then transpose the matrix or vice versa'_
 # 
-# The special symbol $\dagger$ is conventionally used as a superscript. The effect of the adjoint operation is 
+# The special symbol $\dagger$ is conventionally used as a superscript, e.g.  
+# 
+# $$\displaystyle  \pmb M=\begin{bmatrix} 1&0&0\\0&0&w\\0&w^2&0 \end{bmatrix},\qquad \pmb M^\dagger=\begin{bmatrix} 1&0&0\\0&0&w^{*2}\\0&w^*&0 \end{bmatrix}$$
+# 
+# where $w$ is complex. The effect of the adjoint operation is 
 # 
 # $$\displaystyle \pmb{M}^\dagger = (\pmb{M}^*)^T=(\pmb{M}^T)^*$$
 # 
+# Other properties are, where $A$ and $B$ are matrices and $\lambda$ a (complex) number,
+# 
+# $$\displaystyle (\pmb{A}^\dagger)^\dagger=\pmb{A},\qquad (\pmb{A}^\dagger)^{-1}=(\pmb{A}^{-1})^\dagger, \quad (\lambda\pmb{A})^\dagger=\lambda^*\pmb{A}^\dagger$$
+# 
+# $$\displaystyle (\pmb{A}+\pmb{B})^\dagger=\pmb{A}^\dagger+\pmb{B}^\dagger,\qquad  (\pmb{A}\pmb{B})^\dagger=\pmb{B}^\dagger\pmb{A}^\dagger,\quad |\pmb A^\dagger|=|\pmb A|^*$$
+# 
 # In quantum mechanics, the adjoint is always used to convert a 'ket' into a 'bra' and vice versa, see Chapter 8.
+# 
+# (Warning: In pure mathematics, in particular, the adjoint is defined differently as the transposed matrix of cofactors and call our adjoint the conjugate transpose or the Hermitian adjoint.)
 # 
 # ## 4.8 Hermitian or self-adjoint matrix $\pmb{M}^\dagger=\pmb{M}$
 # In these matrices the diagonals are real and the off-diagonals $a_{i,j} = a_{j,i}^*$. The Pauli spin matrices of quantum mechanics are Hermitian; for example
 # 
 # $$\displaystyle \pmb{\sigma}_2=\begin{bmatrix} 0 & i \\ -i & 0\end{bmatrix}$$
 # 
-# Taking the transpose then the complex conjugate produces a matrix that is clearly the same as $\pmb{\sigma}_2$. If the Hermitian matrix is real, which means that it contains only real numbers, then it must be symmetric. 
+# Taking the transpose then the complex conjugate produces a matrix that is clearly the same as $\pmb{\sigma}_2$. 
+# 
+# $$\displaystyle \begin{bmatrix} 0 & i \\ -i & 0\end{bmatrix}^T=\begin{bmatrix} 0 & -i \\ i & 0\end{bmatrix}\quad\text{then}\quad
+# \begin{bmatrix} 0 & -i \\ i & 0\end{bmatrix}^*=\begin{bmatrix} 0 & i \\ -i & 0\end{bmatrix}$$
+# 
+# If the Hermitian matrix is real, which means that it contains only real numbers, then it must be symmetric. 
 # 
 # In quantum mechanics, a matrix containing the integrals that evaluate to expectation values is always a real Hermitian matrix whose eigenvalues are real and eigenvectors orthogonal, but not necessarily normalized.
 # 
@@ -169,18 +186,30 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # and this is used in the calculation of vibrational normal modes.
 # 
+# The rotation matrix is often needed when using molecular point groups
+# 
+# $$\displaystyle \pmb M_R=\begin{bmatrix} \cos(\theta)&\sin(\theta) &0\\ -\sin(\theta)&\cos(\theta) &0\\0&0&1\end{bmatrix}$$
+# 
+# has the inverse
+# 
+# $$\displaystyle \pmb M_R^{-1}=\begin{bmatrix} \cos(\theta)&-\sin(\theta) &0\\ \sin(\theta)&\cos(\theta) &0\\0&0&1\end{bmatrix}$$
+# 
+# as can be seen by showing that $\pmb M_R\pmb M_R^{-1}=\pmb 1$.
+# 
 # ## 4.10 Singular matrix, determinant $|\pmb{M}|=0$
 # 
 # The determinant is zero and the matrix has no inverse. This is not the same as the null matrix, $\pmb{0}$. Odd sized $n \times n$, anti-symmetric matrices are singular, see section 4.6.
 # 
 # 
-# ## 4.11 Unitary matrix $\pmb M^\dagger = \pmb M^{-1}$ or $\pmb {M}^\dagger \pmb{M} = \pmb{1}$ and $ |\pmb {M} | = 1$
+# ## 4.11 Unitary matrix $\pmb M^\dagger = \pmb M^{-1}$ or $\pmb {M}^\dagger \pmb{M} = \pmb{1}$ or $\pmb {M} \pmb{M}^\dagger = \pmb{1}$ and $ |\pmb {M} | = 1$
 # 
-# Two examples of unitary matrices are  $\displaystyle \quad\begin{bmatrix} 0 & 1 & 0 \\ 0 & 0 & 1\\1 & 0 & 0 \end{bmatrix}$,
+# A matrix is unitary if its adjoint is equal to its inverse and all unitary matrices must be square.
+# 
+# An example of a unitary matrix is  $\displaystyle \quad\begin{bmatrix} 0 & 1 & 0 \\ 0 & 0 & 1\\1 & 0 & 0 \end{bmatrix}$,
 # 
 # which has the determinant $0(0 - 1) - 1(0 - 1) + 0(0 - 0) = 1$, 
 # 
-# and the rotation matrix
+# The rotation matrix is also unitary.
 # 
 # $$\displaystyle \begin{bmatrix} \cos(\theta) & \sin(\theta)  \\ -\sin(\theta) & \cos(\theta)  \end{bmatrix} \qquad\qquad\text{(3)}$$
 # 
@@ -228,7 +257,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # Multiplying two $2 \times 2$ matrices produces
 # 
 # $$\displaystyle \begin{align} \begin{bmatrix} a_{11} & a_{12} \\ a_{21} & a_{22} \end{bmatrix} \times \begin{bmatrix} b_{11} & b_{12} \\ b_{21} & b_{22} \end{bmatrix} 
-# &=\begin{bmatrix}row(1)\cdot col(1) & row(1)\cdot col(2)\\ row(2)\cdot col(1)& row(2)\cdot col(2)\end{bmatrix}\\
+# &=\begin{bmatrix}row(1)\cdot col(1) & row(1)\cdot col(2)\\ row(2)\cdot col(1)& row(2)\cdot col(2)\end{bmatrix}\\\\
 # &=\begin{bmatrix} a_{11}b_{11}+a_{12}b_{21} & a_{11}b_{12}+a_{12}b_{22} \\ a_{21}b_{11}+a_{22}b_{21} & a_{21}b_{12}+a_{22}b_{22} \end{bmatrix}\end{align}$$
 # 
 # and it is useful to look at the pattern of elements where you can see the $\pmb{A}$ matrix in the pattern of $a$'s and columns in $\pmb{B}$ appear as rows in the sums. If the matrices are not square, multiplying a $n \times  m$ matrix by a $m \times r$ one results in a $n \times r$ matrix as shown above. The equation with which to calculate the (row - column) $ij^{th}$ element of any matrix multiplication is
@@ -251,7 +280,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # Suppose there are three matrices $\pmb{ABC}$, then the safest rule to follow is to left-multiply $\pmb{C}$ by
 # $\pmb{B}$ first, then to left-multiply the result by $\pmb{A}$. The same rule is applied to several matrices; start at the right and work to the left. However, by the associative rule, Section 4.1, as long as the order $\pmb{ABCD}$ is maintained, this product can be multiplied in any order.
 # 
-# The diagrams in Fig. 7 show, diagrammatically, the result of multiplying differently shaped matrices. The 'bra-ket' notation is shown also. 
+# The diagrams in Fig. 7 show, diagrammatically, the result of multiplying differently shaped matrices. Only these multiplications are defines. The 'bra-ket' notation is shown also. 
 # 
 # ![Drawing](matrices-fig7a.png) 
 # _____
@@ -259,7 +288,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # _____
 # ![Drawing](matrices-fig7c.png) 
 # 
-# Figure 7. Pictorial representation of matrix multiplication. The bra-ket notation used in quantum mechanics is shown on the right.  The dot product is also called the *inner product*.
+# Figure 7. Pictorial representation of allowed matrix multiplication. Only these four types of multiplications are possible. The bra-ket notation used in quantum mechanics is shown also.  The dot product is also called the *inner product*.
 # _______
 # 
 # ## 5.1 Matrix sum
@@ -432,53 +461,59 @@ V*transpose(W)                   # outer product is a matrix see figure 7
 
 a = np.array([[1, 3],  [5, 1]])
 b = np.array([[4, 1], [2, 2]])
-
-np.matmul(a, b)     # matrix multiply
+print('a and b')
+a,b
 
 
 # In[12]:
 
 
-a @ b               # equivalent to np.matmul(a,b) 
+np.matmul(a, b)     # matrix multiply
 
 
 # In[13]:
 
 
-a * b               # this is not matrix multiply but element by element multiply 
+a @ b               # equivalent to np.matmul(a,b) 
 
 
 # In[14]:
 
 
-v = np.array([2,3])
+a * b               # this is NOT matrix multiply but element by element multiply 
 
 
 # In[15]:
 
 
-v.dot(v)            # dot product with itself is scalar
+v = np.array([2,3])
 
 
 # In[16]:
 
 
-np.dot(v, v)        # alternative way of doing dot product
+v.dot(v)            # dot product with itself is scalar
 
 
 # In[17]:
 
 
-v @ a               # will automatically make transpose
+np.dot(v, v)        # alternative way of doing dot product
 
 
 # In[18]:
 
 
-a @ v               # will automatically make transpose
+v @ a               # will automatically make transpose
 
 
 # In[19]:
+
+
+a @ v               # will automatically make transpose
+
+
+# In[20]:
 
 
 a @ b - b @ a       # commute ? No!

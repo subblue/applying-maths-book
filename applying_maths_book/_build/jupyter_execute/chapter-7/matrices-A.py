@@ -196,7 +196,7 @@ M = Matrix([ [x,1,1], [1,x,1],[1,1,x] ])
 solve(M.det(),x)
 
 
-# ## 3 The Huckel MO method** 
+# ## 3 The Huckel MO method 
 # 
 # In the Huckel molecular orbital approximation $\pi$ bonding energies of molecules, ions, and radicals can be calculated. This method reflects the topology of the structure because only adjacent atoms interact with one another, and the change in energy with the length or angle of bonds is not included in the calculation. In this model of $\pi$ bonding, each electron in a $\pi$ orbital interacts only with $\pi$ electrons on the nearest atoms. This interaction energy is calculated from the resonance (exchange) Coulomb energy integral, is conventionally given the symbol $\beta$, and is _negative_ since interaction is attractive. It has a value $\approx -300$  kJ/mole, although estimates vary widely. The $\pi$ electrons on any atom also have their own energy, which is the Coulomb self-energy integral, and this is labelled $\alpha$. The interaction energies can be made into a determinant, called the secular determinant$^*$, and which is then solved to find the energy. This determinant is formed by a set of simple rules; why it works is explained later on in Section 12.3 that describes eigenvalue - eigenvector equations, in particular the Secular equation, eqn. 32.
 # 
@@ -295,7 +295,7 @@ solve( char_eqn.evalf() )   # always use numberical solution for larger polynomi
 # 
 # The characteristic polynomial can be plotted also, as shown in Fig.5, to convince you that the solutions are correct. The roots of the equation $(y = 0)$ can be seen to be at just greater than $\pm 0.6$ and $\pm 1.6$. A more detailed plot would give more accurate answers but not as exactly as the algebraic solution.
 
-# ## 3.1 Huckel method for single rings. Circulant determinants**
+# ## 3.1 Huckel method for single rings. Circulant determinants
 # 
 # When the molecule has a ring of delocalised electrons such as benzene the Huckel method can be treated rather simply using _Circulant_ determinants. As an illustration suppose the molecule has a diamond or square shape then the determinant has extra terms in position $0-3$ and $3-0$ to join the first and last atoms, i.e 
 # 
@@ -375,7 +375,7 @@ solve( char_eqn.evalf() )   # always use numberical solution for larger polynomi
 # 
 # ![Display](matrices-fig5b.png)
 # 
-# Figure 5a. Energy levels for odd and even numbered 'ring' molecules such as benzene in terms of $x=(\alpha-E)/\beta$.
+# Figure 5a. Energy levels for odd (grey) and even (blue) numbered 'ring' molecules such as benzene in terms of $x=(\alpha-E)/\beta$.
 # ________
 # 
 # In addition to the energies the shape, as in pattern, of the molecular orbital can also be calculated. These are technically called the eigenvectors. Later on in this chapter we discuss eigenvector and eigenvalue equations but it seems sensible to show what these do in the case of Huckel molecular orbitals. Again the circulant nature of the matrix/determinant allows a very simple calculation of the eigenvectors. There are $n$ of these vectors of length $n$. The values, when normalised, give the sign and size of the contribution of each p electron's orbital to the full Huckel molecular orbital. 
@@ -405,7 +405,7 @@ solve( char_eqn.evalf() )   # always use numberical solution for larger polynomi
 # 
 # Interaction between $\pi$ orbitals is clear in aromatic molecules but it is possible that molecules themselves can interact also between near neighbours, if the molecules are disposed linearly _J aggregates_ are formed but molecules can be in a ring. The most famous example is the LH2 and LH1 light harvesting antenna of bacterial photosynthesis which has 18 or so chromophores arranged in a loop which interact with nearest neighbours. In sections 12 and 13  the kinetics of energy transfer in complicated assemblies of molecules is analysed. 
 
-# ## 3.2 Slater Determinants**
+# ## 3.2 Slater Determinants
 # 
 # Finding a solution to the electronic Schroedinger equation for molecules allows the calculation of molecular geometry and the corresponding energy levels. The electronic Schroedinger equation calculates the energy of the electrons at a fixed nuclear separation, i.e. after the Born-Oppenheimer approximation is invoked. This approximation is made to simplify the equations and is valid as the mass of the electron is far less than that of a proton or neutron and so the electrons can realise their minimum energy without being influenced any change in the motion of the nuclei. A potential energy surface is then made by repeatedly solving at different but fixed nuclear positions, i.e. the electronic energy is minimized in the field of the point charges of the nuclei. An excellent description of the theory is given by A. Szabo and N. Ostlund 'Modern Quantum Chemistry' publ Dover 1982. The description that follows is based on chapter 2 of that book.
 # 
@@ -512,3 +512,9 @@ solve( char_eqn.evalf() )   # always use numberical solution for larger polynomi
 # 
 # which shows that the probability is finite when $\bar r_i=\bar r_2$. 
 # 
+
+# In[ ]:
+
+
+
+

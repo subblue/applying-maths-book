@@ -74,7 +74,7 @@
 # 
 # $$\displaystyle C_e=\frac{A_0(K_e-\sqrt{K_e})}{K_e-1}$$
 # 
-# To find the concentration when $K_e=1$ the fraction seems to be $0/\infty$. Using L'Hopital's rule and differentiating with $K_e$ gives
+# To find the concentration when $K_e=1$ the fraction seems to be $0/0$. Using L'Hopital's rule and differentiating with $K_e$ gives
 # 
 # $$\displaystyle \frac{A_0(K_e-\sqrt{K_e})}{K_e-1}\to \frac{A_0(1-\frac{1}{2}K_e^{-1/2})}{1}=\frac{A_0}{2}$$
 # 
@@ -96,6 +96,21 @@
 # $$\displaystyle \lim_{\delta\to 0}\frac{\sin(N\delta/2)}{\sin(\delta/2)}\to\frac{N\cos(N\delta/2)/2}{\cos(\delta/2)/2}=N$$
 # 
 # making the maximum intensity $I=N^2I_0$ when $\delta=2\pi m$ which makes the cosines $1$. See fig 15 in chapter 9, 'Fourier Transforms' for a figure of the sinc function where $\mathrm{sinc}(ax)=\sin(ax)/\sin(x)$.
+# 
+# ### **Transitions between stationary states**
+# 
+# When a molecule absorbs light it can undergo a transition from, for example the ground state to the first excited state. This might be a vibrational or rotational transition or an electronic one in which a new electronic state is produced. This type of transition is called an electric dipole transition. The probability for this depends on the radiation's (light) frequency $\nu$ in that the Bohr condition is obeyed $E_1-E_0=h\nu$ where the energy levels are $E_0,E_1$. The probability of absorption is 
+# 
+# $$\displaystyle f(\nu) \sim \frac{\sin^2((E_1-E_0-h\nu)t/2\hbar)}{(E_1-E_0-h\nu)^2}$$
+# 
+# and we are interested in what happens as $E_1-E_0\to h\nu$ when $f(\nu)\to 0/0$. To determine this l'Hopital's rule can be used. We make the substitution $x=E_1-E_0-h\nu$ and look for the limit $x\to 0$.
+# 
+# $$\displaystyle lim_{x\to 0} \quad\frac{\sin^2(xt/2\hbar)}{x^2}\to \frac{t}{2\hbar}\frac{2\sin(xt/2\hbar) \cos(xt/2\hbar)}{2x}$$
+# 
+# which still has the variable in both numerator and denominator so differentiating again produces
+# 
+# $$\displaystyle lim_{x\to 0} \quad \frac{t}{2\hbar}\frac{2\sin(xt/2\hbar)\cos(xt/2\hbar)}{2x}\to\frac{t}{4\hbar}\left(\frac{t}{\hbar}\cos^2(xt/2\hbar)-\frac{t}{\hbar}\sin^2(xt/2\hbar)\right)\to \frac{t^2}{4\hbar^2}$$
+# 
 # 
 # ## 6.1 Beware of 'False fractions'
 # 

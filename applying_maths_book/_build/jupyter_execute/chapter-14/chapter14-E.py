@@ -31,13 +31,13 @@
 # \text{Electrical resistance (ohm) } & \mathrm{\Omega} & \mathrm{V/A} \\
 # \text{Electrical capacitance (farad) } & \text{F} & \mathrm{C/V} \\
 # \text{Inductance (henry) } & \text{H} & \mathrm{ V\,A^{-1}\,s\equiv m\,kg\,\,s^{-2}\,A^{-2}} \\
-# \text{Angular velocity } & \mathrm{\omega} & \mathrm{rad \,s^{-1}}(\text{ often just } \mathrm{s^{-1}} \text{ is reported}) \\
+# \text{Angular velocity } & \mathrm{\omega} & \mathrm{rad \,s^{-1}}(\text{ often just } \mathrm{s^{-1}}) \\
 # \text{Heat capacity, molar heat capacity} & C_p, C_V & \mathrm{ J\,K^{-1},\; J\,K^{-1} mol^{-1} }  \\
 # \text{Entropy, molar entropy} & \text{S} & \mathrm{ J\,K^{-1},\; J\,K^{-1} mol^{-1} }  \\
-# \text{concentration} & \text{[c]} & \mathrm{ mol\, m^{-3},}\text{ conventionally }\mathrm{mol\, dm^{-3} }  \\
+# \text{concentration} & \text{[c]} & \mathrm{ mol\, m^{-3},}\text{ usually }\mathrm{mol\, dm^{-3} }  \\
 # \text{Viscosity$^*$} & \mathrm{\eta} & \mathrm{ Pa\,s \equiv kg\,m^{-1}\,s^{-1} }  \\
 # \text{Frequency (hertz)} & \mathrm{Hz} & \mathrm{ s^{-1} }  \\
-# \text{wavenumber} & \mathrm{cm^{-1}} & \mathrm{ m^{-1} } \text{ but conventionally }\mathrm{cm^{-1}} \\
+# \text{wavenumber} & \mathrm{cm^{-1}} & \mathrm{ m^{-1} } \text{usually }\mathrm{cm^{-1}} \\
 # \hline\\
 # \end{array} $$
 # 
@@ -150,7 +150,7 @@
 # 
 # Values mainly from CODATA 2018, and NIST SP961 2019.
 # 
-# $$\displaystyle \begin{array}{lll}\\
+# $$\displaystyle \small\begin{array}{lll}\\
 # \hline
 # \text{ Quantity} & \text{Symbol, equation} & \text{value}\\
 # \hline

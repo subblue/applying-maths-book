@@ -976,7 +976,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-B.html">
-     9 First order eqn’s &amp; Integrating factors. Second order eqn’s, Newton’s laws, equations of motion.
+     9 First order equations &amp; Integrating factors. Second order equations, Newton’s laws and equations of motion.
     </a>
    </li>
    <li class="toctree-l2">
@@ -1001,7 +1001,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-F.html">
-     15 Partial Differential Equations, PDE
+     15 Partial Differential Equations, PDE. 1D &amp; 2D diffusion, Particle in a box, Lateral flow tests, Diffusion and Reaction, Cable equation, Algal Blooms
     </a>
    </li>
    <li class="toctree-l2">
@@ -1529,6 +1529,13 @@ title="Print to PDF"
      </strong>
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#transitions-between-stationary-states">
+     <strong>
+      Transitions between stationary states
+     </strong>
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -1605,6 +1612,13 @@ title="Print to PDF"
     <a class="reference internal nav-link" href="#diffraction-intensity">
      <strong>
       Diffraction intensity
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#transitions-between-stationary-states">
+     <strong>
+      Transitions between stationary states
      </strong>
     </a>
    </li>
@@ -1712,7 +1726,7 @@ title="Print to PDF"
 <p>which has the solution</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle C_e=\frac{A_0(K_e-\sqrt{K_e})}{K_e-1}\]</div>
-<p>To find the concentration when <span class="math notranslate nohighlight">\(K_e=1\)</span> the fraction seems to be <span class="math notranslate nohighlight">\(0/\infty\)</span>. Using L’Hopital’s rule and differentiating with <span class="math notranslate nohighlight">\(K_e\)</span> gives</p>
+<p>To find the concentration when <span class="math notranslate nohighlight">\(K_e=1\)</span> the fraction seems to be <span class="math notranslate nohighlight">\(0/0\)</span>. Using L’Hopital’s rule and differentiating with <span class="math notranslate nohighlight">\(K_e\)</span> gives</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \frac{A_0(K_e-\sqrt{K_e})}{K_e-1}\to \frac{A_0(1-\frac{1}{2}K_e^{-1/2})}{1}=\frac{A_0}{2}\]</div>
 <p>which makes sense as there are equal moles initially of <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> so in total <span class="math notranslate nohighlight">\(2A_0\)</span> and equal concentrations for each species but only in this particular case.</p>
@@ -1730,6 +1744,18 @@ title="Print to PDF"
 <div class="math notranslate nohighlight">
 \[\displaystyle \lim_{\delta\to 0}\frac{\sin(N\delta/2)}{\sin(\delta/2)}\to\frac{N\cos(N\delta/2)/2}{\cos(\delta/2)/2}=N\]</div>
 <p>making the maximum intensity <span class="math notranslate nohighlight">\(I=N^2I_0\)</span> when <span class="math notranslate nohighlight">\(\delta=2\pi m\)</span> which makes the cosines <span class="math notranslate nohighlight">\(1\)</span>. See fig 15 in chapter 9, ‘Fourier Transforms’ for a figure of the sinc function where <span class="math notranslate nohighlight">\(\mathrm{sinc}(ax)=\sin(ax)/\sin(x)\)</span>.</p>
+</section>
+<section id="transitions-between-stationary-states">
+<h3><strong>Transitions between stationary states</strong><a class="headerlink" href="#transitions-between-stationary-states" title="Permalink to this headline">#</a></h3>
+<p>When a molecule absorbs light it can undergo a transition from, for example the ground state to the first excited state. This might be a vibrational or rotational transition or an electronic one in which a new electronic state is produced. This type of transition is called an electric dipole transition. The probability for this depends on the radiation’s (light) frequency <span class="math notranslate nohighlight">\(\nu\)</span> in that the Bohr condition is obeyed <span class="math notranslate nohighlight">\(E_1-E_0=h\nu\)</span> where the energy levels are <span class="math notranslate nohighlight">\(E_0,E_1\)</span>. The probability of absorption is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle f(\nu) \sim \frac{\sin^2((E_1-E_0-h\nu)t/2\hbar)}{(E_1-E_0-h\nu)^2}\]</div>
+<p>and we are interested in what happens as <span class="math notranslate nohighlight">\(E_1-E_0\to h\nu\)</span> when <span class="math notranslate nohighlight">\(f(\nu)\to 0/0\)</span>. To determine this l’Hopital’s rule can be used. We make the substitution <span class="math notranslate nohighlight">\(x=E_1-E_0-h\nu\)</span> and look for the limit <span class="math notranslate nohighlight">\(x\to 0\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle lim_{x\to 0} \quad\frac{\sin^2(xt/2\hbar)}{x^2}\to \frac{t}{2\hbar}\frac{2\sin(xt/2\hbar) \cos(xt/2\hbar)}{2x}\]</div>
+<p>which still has the variable in both numerator and denominator so differentiating again produces</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle lim_{x\to 0} \quad \frac{t}{2\hbar}\frac{2\sin(xt/2\hbar)\cos(xt/2\hbar)}{2x}\to\frac{t}{4\hbar}\left(\frac{t}{\hbar}\cos^2(xt/2\hbar)-\frac{t}{\hbar}\sin^2(xt/2\hbar)\right)\to \frac{t^2}{4\hbar^2}\]</div>
 </section>
 </section>
 <section id="beware-of-false-fractions">

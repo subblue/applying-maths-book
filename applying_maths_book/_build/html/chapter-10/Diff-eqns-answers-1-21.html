@@ -976,7 +976,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="Diff-eqns-B.html">
-     9 First order eqn’s &amp; Integrating factors. Second order eqn’s, Newton’s laws, equations of motion.
+     9 First order equations &amp; Integrating factors. Second order equations, Newton’s laws and equations of motion.
     </a>
    </li>
    <li class="toctree-l2">
@@ -1001,7 +1001,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="Diff-eqns-F.html">
-     15 Partial Differential Equations, PDE
+     15 Partial Differential Equations, PDE. 1D &amp; 2D diffusion, Particle in a box, Lateral flow tests, Diffusion and Reaction, Cable equation, Algal Blooms
     </a>
    </li>
    <li class="toctree-l2">
@@ -2010,12 +2010,18 @@ title="Print to PDF"
 <section id="q14-answer">
 <h2>Q14 answer<a class="headerlink" href="#q14-answer" title="Permalink to this headline">#</a></h2>
 <p>The rate equation is <span class="math notranslate nohighlight">\(\displaystyle \frac{dR}{dt} = k_IM + (\alpha - 1)k_BR + k_pR - k_pR - k_TR\)</span></p>
-<p>and the propagation step cancels out because in this step, one radical is produced for each one consumed. The branching step has the term <span class="math notranslate nohighlight">\(\alpha\)</span> - 1 because one radical is lost accounting for propagation. The integral equation from a radical concentration of zero at zero time is</p>
+<p>and for clarity we use <span class="math notranslate nohighlight">\(R\)</span> to represent <span class="math notranslate nohighlight">\([R\cdot]\)</span>. The propagation step cancels out because in this step one radical is produced for each one consumed. The branching step has the term <span class="math notranslate nohighlight">\(\alpha\)</span> - 1 because one radical is lost accounting for propagation itself. The integral equation when the radical concentration is zero initially is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \int_0^R\frac{1}{k_IM+\gamma R}dR=\int_0^tdt\]</div>
-<p>where for clarity <span class="math notranslate nohighlight">\(\gamma = (\alpha - 1)k_B - k_T\)</span>. Integrating produces <span class="math notranslate nohighlight">\(\displaystyle \ln\left(1+\frac{\gamma R}{k_IM} \right)=\gamma t\)</span> which is more conveniently written as <span class="math notranslate nohighlight">\(\displaystyle R = k_IM(e^{\gamma t} - 1)/\gamma\)</span>.</p>
-<p>When <span class="math notranslate nohighlight">\(\gamma \gt 0\)</span>, this means that the branching rate is larger than the termination rate, and an explosion may occur because the term <span class="math notranslate nohighlight">\(\gamma t\)</span> in the exponential is positive. The radical population increases towards infinity and hence the rate of reaction increases rapidly. Reaction is stable when <span class="math notranslate nohighlight">\(\gamma \lt 0\)</span> and reaches steady state at long times; <span class="math notranslate nohighlight">\(R_\infty = k_I M/\gamma\)</span>. When <span class="math notranslate nohighlight">\(\gamma = 0\)</span> the reaction is on the border between stability and explosion and radical concentration increases linearly with time as <span class="math notranslate nohighlight">\(k_IMt\)</span>.</p>
+<p>where <span class="math notranslate nohighlight">\(\gamma = (\alpha - 1)k_B - k_T\)</span>. Integrating produces <span class="math notranslate nohighlight">\(\displaystyle \ln\left(k_IM+\gamma R \right)-\ln(k_IM)=\gamma t\)</span> which is more conveniently written as</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle R = \frac{k_IM}{\gamma}(e^{\gamma t} - 1)\]</div>
+<p>When <span class="math notranslate nohighlight">\(\gamma \gt 0\)</span>, this means that the branching rate constant is larger than the termination one <span class="math notranslate nohighlight">\((\alpha - 1)k_B \gt k_T\)</span>, and an explosion could occur because the term <span class="math notranslate nohighlight">\(\gamma t\)</span> in the exponential is positive. However, the rate is limited somewhat at early times, when <span class="math notranslate nohighlight">\(\gamma t\le 1\)</span> and thus there is a short induction period, but after this time is over the radical concentration increases very rapidly and hence the rate of reaction increases rapidly also.</p>
+<p>The reaction is stable when <span class="math notranslate nohighlight">\(\gamma \lt 0\)</span> and reaches a steady state at long times; <span class="math notranslate nohighlight">\(R_\infty = k_I M/\gamma\)</span>, and this limit is shown in the figure as the horizontal line. The time to reach steady state is the induction period. When <span class="math notranslate nohighlight">\(\gamma \to 0\)</span> the reaction is on the border between stability and explosion and the radical concentration increases linearly with time and to show this we expand the exponential in <span class="math notranslate nohighlight">\(\gamma\)</span> or use L’Hopital’s rule and find <span class="math notranslate nohighlight">\(R = k_IMt \)</span>. The condition <span class="math notranslate nohighlight">\(\gamma =0 \)</span> is called ‘chain ignition’.</p>
+<p><img alt="Drawing" src="../_images/diffeqn-fig33a.png" /></p>
+<p>Fig. 33a. The radical <span class="math notranslate nohighlight">\(R\cdot\)</span> concentration under different conditions of chain branching determined by <span class="math notranslate nohighlight">\(\gamma = (\alpha - 1)k_B - k_T\)</span>. The steady state limit is shown by the horizontal line.</p>
 </section>
+<hr class="docutils" />
 <section id="q15-answer">
 <h2>Q15 answer<a class="headerlink" href="#q15-answer" title="Permalink to this headline">#</a></h2>
 <p>(a) Equilibrium is rapidly established with the complex IM and its rate of change can be taken to be at steady state, hence</p>
@@ -2159,7 +2165,7 @@ a-x &amp; &amp; b+x
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Diff-eqns-answers-1-21_10_0.png" src="../_images/Diff-eqns-answers-1-21_10_0.png" />
+<img alt="../_images/Diff-eqns-answers-1-21_12_0.png" src="../_images/Diff-eqns-answers-1-21_12_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2170,7 +2176,7 @@ a-x &amp; &amp; b+x
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Diff-eqns-answers-1-21_11_0.png" src="../_images/Diff-eqns-answers-1-21_11_0.png" />
+<img alt="../_images/Diff-eqns-answers-1-21_13_0.png" src="../_images/Diff-eqns-answers-1-21_13_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2181,7 +2187,7 @@ a-x &amp; &amp; b+x
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Diff-eqns-answers-1-21_12_0.png" src="../_images/Diff-eqns-answers-1-21_12_0.png" />
+<img alt="../_images/Diff-eqns-answers-1-21_14_0.png" src="../_images/Diff-eqns-answers-1-21_14_0.png" />
 </div>
 </div>
 <p>which can be re-written as</p>

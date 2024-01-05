@@ -80,24 +80,27 @@
 # 
 # ![Drawing](diffeqn-fig8.png)
 # ________
-# 
+
 # ## Q14 Chain-branching explosion
 # A gas phase chain-branching reaction is stable under some conditions, but can be explosive under others. Chain branching is the cause of the first explosion limit in the H$_2$/O$_2$ reaction. 
 # 
-# The general radical chain reaction scheme can be drawn pictorially, as shown in Fig. 9. The initial species M reacts to produce some chain carriers R, which can produce more of themselves, $\alpha$R and also the reaction product $P$. A chain carrier can also be deactivated by reacting with other species or with the walls of the reaction vessel, both of which lead to termination. The branching number $\alpha$, must be greater than unity if branching is to occur, because by definition the propagation step produces one radical as well as product, e.g. R + M $\to$ R + product.
-# In the H$_2$/O$_2$ reaction the branching steps are,
+# The general radical chain reaction scheme can be drawn pictorially, as shown in Fig. 9. The initial step is to produce a reactive, chain-carrier species $R\cdot$ from reactant $M$. In a continuation or propagation step the chain carriers can produce more of themselves or of a different type of radical, however, when examining the kinetics we need not distinguish between these different chemical species as they are chain-carriers so they act in a similar way. The reaction product $P$ is also formed from the chain-carrier in a propagation step, i.e. the propagation step produces a new radical as well as product, e.g. $R\cdot + M \overset{k_p}\to R\cdot +P$. The propagation step determines the overall rate of product formation even though $k_p$ will not appear in the final rate expression. The overall rate of converting reactants into products is the radical concentration multiplied by the propagation rate constant, $k_p[R\cdot]$. The chain carrier may be deactivated by reacting with other species or with the walls of the reaction vessel, both of which lead to chain termination. 
 # 
-# $$\text{H+O}_2 \to \text{OH+O} \qquad \text{O+H}_2 \to\text{ OH + H}$$
+# The chain-branching number $\alpha$ must be greater than unity if branching is to occur. A linear chain has $\alpha=1$. In the H$_2$/O$_2$ reaction the branching steps are,
 # 
-# so that one radical H or O produces an extra one making $\alpha = 2$. The rate of reaction is the radical concentration multiplied by the propagation rate constant, $k_pR$.
+# $$\mathrm{H\cdot+O}_2 \to \mathrm{OH\cdot+O\cdot} \qquad \mathrm{O\cdot+H}_2 \to\mathrm{ OH\cdot + H\cdot}$$
 # 
-# Using Fig. 9, write down $dR/dt$ and integrate this equation to find the radial population $R\cdot$ vs time, assuming that no radicals are present at $t = 0$. Show that explosion occurs when the rate of branching is greater than the rate of termination, as might be anticipated, and, if not, that a steady state is reached.
+# so that one radical $\mathrm{H\cdot}$ or $\mathrm{O\cdot}$ produces an extra one making $\alpha = 2$. 
 # 
-# ![Drawing](diffeqn-fig9.png)
+# Using Fig. 9, write down $d[R\cdot]/dt$ and integrate this equation to find the radial population $[R\cdot]$ vs time, assuming that no radicals are present at $t = 0$. Show that explosion occurs when the branching rate constant is greater than that for termination, as might be anticipated, and, if not, that a steady state is reached.
 # 
-# Fig. 9 Chain branching; $P$ is the product; $R$ is the radical chain carrier.
+# A more sophisticated model should include changes in temperature, and hence rate constants, and pressure, the pressure dependence of termination steps, i.e. a quadratic term in pressure, the size, shape and surface condition of the the reaction vessel and changes in diffusion of the gases with temperature and pressure.
+# 
+# ![Drawing](diffeqn-fig9b.png)
+# 
+# Fig. 9 Chain branching; $P$ is the product; $R\cdot$ is the radical chain carrier.
 # _____
-
+# 
 # ## Q15 Iodine recombination
 # The recombination of iodine atoms after the photo-dissociation of molecular iodine in the presence of inert buffer gas, was one of the first reactions followed by Porter using the technique of flash photolysis he had invented and for which he won a share of the Nobel Prize in Chemistry (Porter 1967; Christie et al. 1952; Porter & Smith 1961; Phillips & Barber 2006). This technique uses a flash of light to initiate a reaction followed by a second weaker flash at a predetermined time to probe the species produced.
 # 

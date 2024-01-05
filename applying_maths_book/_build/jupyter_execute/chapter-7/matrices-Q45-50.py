@@ -8,7 +8,7 @@
 # 
 # $$(a) \displaystyle \begin{bmatrix}4 & -i\\i & 2 \end{bmatrix} , \qquad (b) \begin{bmatrix} 1& -i\\ -i & 1 \end{bmatrix}$$
 # 
-# **Strategy:** Expand the determinants of the matrices to find the characteristic equations, then use Maple, as shown in the text, or, if you wish, do the calculation by hand. The normalization term is $\sqrt{v\cdot v}$. The numpy/Sympy instruction for a dot product is a.dot(b) 
+# **Strategy:** Expand the determinants of the matrices to find the characteristic equations, then use Python/Sympy, as shown in the text, or, if you wish, do the calculation by hand. The normalization term is $\sqrt{v\cdot v}$. The numpy/Sympy instruction for a dot product is a.dot(b) 
 # 
 # ## Q46 Eigenvalues
 # Find the eigenvalues of the matrix by hand

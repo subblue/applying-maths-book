@@ -976,7 +976,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="Diff-eqns-B.html">
-     9 First order eqn’s &amp; Integrating factors. Second order eqn’s, Newton’s laws, equations of motion.
+     9 First order equations &amp; Integrating factors. Second order equations, Newton’s laws and equations of motion.
     </a>
    </li>
    <li class="toctree-l2">
@@ -1001,7 +1001,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="Diff-eqns-F.html">
-     15 Partial Differential Equations, PDE
+     15 Partial Differential Equations, PDE. 1D &amp; 2D diffusion, Particle in a box, Lateral flow tests, Diffusion and Reaction, Cable equation, Algal Blooms
     </a>
    </li>
    <li class="toctree-l2">
@@ -1628,26 +1628,31 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#reversible-reaction-when-the-the-equilibrium-constant-is-known-a-overset-k-1-underset-k-1-rightleftharpoons-b">
-   4.6 Reversible reaction when the the equilibrium constant is known
+  <a class="reference internal nav-link" href="#reversible-reaction-when-only-the-equilibrium-constant-is-known-a-overset-k-1-underset-k-1-rightleftharpoons-b">
+   4.6 Reversible reaction when only the equilibrium constant is known
    <span class="math notranslate nohighlight">
     \(A \overset{k_1}{\underset{k_{-1}} \rightleftharpoons } B\)
    </span>
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#kinetics-of-ligand-exchange-using-isotopes">
+   4.7 Kinetics of ligand exchange using isotopes
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#kinetics-and-flow">
-   4.7 Kinetics and flow
+   4.8 Kinetics and flow
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#dissolution-kinetics">
-   4.8 Dissolution kinetics
+   4.9 Dissolution kinetics
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#mean-free-path-and-probability-of-obtaining-a-path-of-a-given-length">
-   4.9  Mean free path and probability of obtaining a path of a given length
+   4.10  Mean free path and probability of obtaining a path of a given length
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -1842,26 +1847,31 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#reversible-reaction-when-the-the-equilibrium-constant-is-known-a-overset-k-1-underset-k-1-rightleftharpoons-b">
-   4.6 Reversible reaction when the the equilibrium constant is known
+  <a class="reference internal nav-link" href="#reversible-reaction-when-only-the-equilibrium-constant-is-known-a-overset-k-1-underset-k-1-rightleftharpoons-b">
+   4.6 Reversible reaction when only the equilibrium constant is known
    <span class="math notranslate nohighlight">
     \(A \overset{k_1}{\underset{k_{-1}} \rightleftharpoons } B\)
    </span>
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#kinetics-of-ligand-exchange-using-isotopes">
+   4.7 Kinetics of ligand exchange using isotopes
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#kinetics-and-flow">
-   4.7 Kinetics and flow
+   4.8 Kinetics and flow
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#dissolution-kinetics">
-   4.8 Dissolution kinetics
+   4.9 Dissolution kinetics
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#mean-free-path-and-probability-of-obtaining-a-path-of-a-given-length">
-   4.9  Mean free path and probability of obtaining a path of a given length
+   4.10  Mean free path and probability of obtaining a path of a given length
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -2064,10 +2074,10 @@ title="Print to PDF"
 <p>where <span class="math notranslate nohighlight">\(K_e=k_1/k_2\)</span> is the equilibrium constant. This equation can be solved by recognising that, by stoichiometry, if an amount <span class="math notranslate nohighlight">\(x\)</span> of CO is produced then <span class="math notranslate nohighlight">\(a_0-x\)</span> of <span class="math notranslate nohighlight">\(\mathrm{BH_3CO}\)</span> remains when <span class="math notranslate nohighlight">\(a_0\)</span> is the initial amount;</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \frac{dx}{dt}=2k_3K_e\frac{(a_0-x)^2}{x}\quad\text{then} \quad \int_0^x\frac{x}{(a_0-x)^2}dx=\frac{t}{2k_3K_e}\]</div>
-<p>and by substituting <span class="math notranslate nohighlight">\((a_0-x)=z\)</span> produces the solution</p>
+<p>and by substituting <span class="math notranslate nohighlight">\((a_0-x)=z\)</span>, <span class="math notranslate nohighlight">\(-dx=dz\)</span> and integrating produces the solution</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \frac{x}{a_0-x}+\ln\left(\frac{a_0-x}{a_0}\right)=\frac{t}{2k_3K_e}\]</div>
-<p>It is not obvious from this equation how the concentration of CO increases with time, in fact it increases rapidly  from zero with then more slowly. At very early times expanding both terms in <span class="math notranslate nohighlight">\(x/a_0\)</span> gives <span class="math notranslate nohighlight">\(\sqrt{x/a_0}\sim t\)</span>.</p>
+<p>where <span class="math notranslate nohighlight">\(x \le a_0\)</span>. It is not obvious from this equation how the concentration of CO increases with time because <span class="math notranslate nohighlight">\(x\)</span> cannot be isolated on one side of the equation, in fact <span class="math notranslate nohighlight">\(\mathrm{[CO]}\)</span> increases initially with a large gradient which continuously reduces towards zero such that  at long times <span class="math notranslate nohighlight">\(x \to a_0\)</span>. At very early times expanding both terms in <span class="math notranslate nohighlight">\(x/a_0\)</span> gives <span class="math notranslate nohighlight">\(\sqrt{x/a_0}\sim t\)</span>.  A general plot can be made by substituting <span class="math notranslate nohighlight">\(z=x/a_0\)</span> and plot vs <span class="math notranslate nohighlight">\(t'= t/2k_3K_e\)</span> into the last equation.</p>
 </section>
 <section id="fluorescence-yield">
 <h2>2.3 Fluorescence yield<a class="headerlink" href="#fluorescence-yield" title="Permalink to this headline">#</a></h2>
@@ -2350,7 +2360,7 @@ title="Print to PDF"
 \[\displaystyle -\frac{dx}{dt}=-k_1(a_0-x)+k_2x^2,\qquad \int_0^x \frac{1}{k_1(a_0-x)-k_2x^2}dx=\int_0^tdt\]</div>
 <p>This equation has a standard form</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle \int\frac{1}{\alpha x^2+bx+c}dx=\frac{1}{\sqrt{b^2-4\alpha c}}\ln\left(\frac{2\alpha x+b-\sqrt{b^2-4\alpha c}}{2\alpha x+b+\sqrt{b^2-4\alpha c}} \right)+const, \qquad b^2\gt 4\alpha c \qquad\tag{5a}\]</div>
+\[\displaystyle \int\frac{1}{\alpha x^2+bx+c}dx=\frac{1}{\sqrt{b^2-4\alpha c}}\ln\left(\frac{2\alpha x+b-\sqrt{b^2-4\alpha c}}{2\alpha x+b+\sqrt{b^2-4\alpha c}} \right)+const, \quad b^2\gt 4\alpha c \tag{5a}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\alpha = -k_2,\; b=-k_1,\; c=k_1a_0\)</span>  and the condition is that <span class="math notranslate nohighlight">\(k_1^2 \gt -4k_2k_1a_0\)</span> which is true. Substituting produces <span class="math notranslate nohighlight">\(\sqrt{b^2-4\alpha c} = \sqrt{k_1^2+4k_2k_1a_0}\)</span> and also evaluating the constant, gives</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \ln\left(\frac{-2k_2 x-k_1-\sqrt{k_1^2+4k_2k_1a_0}}{-2k_2 x-k_1+\sqrt{k_1^2+4k_2k_1a_0}} \right)-\ln\left(\frac{-k_1-\sqrt{k_1^2+4k_2k_1a_0}}{-k_1+\sqrt{k_1^2+4k_2k_1a_0}} \right)=t\sqrt{k_1^2+4k_2k_1a_0}\]</div>
@@ -2451,8 +2461,8 @@ title="Print to PDF"
 <p>Figure 5d. <span class="math notranslate nohighlight">\(\mathrm{2HI \rightleftharpoons H_2 + I_2}\)</span> reaching equilibrium starting at zero HI, rising points, and eqn 5g, and only HI, falling points, and eqn 5h. The equilibrium value <span class="math notranslate nohighlight">\(x_e=0.786\)</span> at <span class="math notranslate nohighlight">\(448^\text{o}\)</span> C. The curves show that the same equilibrium is reached starting either with products or reactants.</p>
 </section>
 <hr class="docutils" />
-<section id="reversible-reaction-when-the-the-equilibrium-constant-is-known-a-overset-k-1-underset-k-1-rightleftharpoons-b">
-<h2>4.6 Reversible reaction when the the equilibrium constant is known <span class="math notranslate nohighlight">\(A \overset{k_1}{\underset{k_{-1}} \rightleftharpoons } B\)</span><a class="headerlink" href="#reversible-reaction-when-the-the-equilibrium-constant-is-known-a-overset-k-1-underset-k-1-rightleftharpoons-b" title="Permalink to this headline">#</a></h2>
+<section id="reversible-reaction-when-only-the-equilibrium-constant-is-known-a-overset-k-1-underset-k-1-rightleftharpoons-b">
+<h2>4.6 Reversible reaction when only the equilibrium constant is known <span class="math notranslate nohighlight">\(A \overset{k_1}{\underset{k_{-1}} \rightleftharpoons } B\)</span><a class="headerlink" href="#reversible-reaction-when-only-the-equilibrium-constant-is-known-a-overset-k-1-underset-k-1-rightleftharpoons-b" title="Permalink to this headline">#</a></h2>
 <p>Sometimes we may want the rate expression in terms of the equilibrium constant as this may be known when neither rate constant has been measured. As an example the  ortho to para conversion of H<span class="math notranslate nohighlight">\(_2\)</span> with a catalyst such as Nickel on <span class="math notranslate nohighlight">\(\mathrm{Al_2O_3}\)</span> has the form <span class="math notranslate nohighlight">\(o-H_2 \overset{k_1}{\underset{k_{-1}} \rightleftharpoons } p-H_2\)</span>. Other examples are cis - trans isomerisation of some hydrocarbons or of <span class="math notranslate nohighlight">\(\alpha -,\beta-\)</span> glucoses.</p>
 <p>Letting <span class="math notranslate nohighlight">\(a\equiv o-H_2\)</span> and <span class="math notranslate nohighlight">\(b\equiv p-H_2\)</span> concentrations produces the rate equation</p>
 <div class="math notranslate nohighlight">
@@ -2475,12 +2485,44 @@ title="Print to PDF"
 \[\displaystyle \ln\left( \frac{a-a_e}{a_0-a_e}\right)=-k_1\frac{K+1}{K}t\]</div>
 <p>or</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle a=a_e+(a_0-a_e)e^{-k_{obs}t}\]</div>
-<p>which illustrates an exponentially decaying population of <span class="math notranslate nohighlight">\(a\)</span> (ortho hydrogen) from <span class="math notranslate nohighlight">\(a_0\)</span> to reach a constant value of <span class="math notranslate nohighlight">\(a_e\)</span> at equilibrium with a measured rate constant of <span class="math notranslate nohighlight">\(k_{obs}=k_1(K+1)/K\)</span>. Both <span class="math notranslate nohighlight">\(k_1,k_{-1}\)</span> can be found if <span class="math notranslate nohighlight">\(K\)</span> is known, for example from thermodynamic data via the standard Gibbs energy change, <span class="math notranslate nohighlight">\(\Delta G^\text{o}=RT\ln(K)\)</span>. Notice that the initial amount of species <span class="math notranslate nohighlight">\(b\)</span> is irrelevant to the decay of <span class="math notranslate nohighlight">\(a\)</span>.</p>
+\[\displaystyle a = a_e + (a_0-a_e)e^{-k_{obs}t}\]</div>
+<p>which illustrates an exponentially decaying population of <span class="math notranslate nohighlight">\(a\)</span> (ortho hydrogen) from <span class="math notranslate nohighlight">\(a_0\)</span> to reach a constant value of <span class="math notranslate nohighlight">\(a_e\)</span> at equilibrium with a measured rate constant of <span class="math notranslate nohighlight">\(k_{obs}=k_1(K+1)/K\)</span>. Both <span class="math notranslate nohighlight">\(k_1,k_{-1}\)</span> can be found if <span class="math notranslate nohighlight">\(K\)</span> is known, for example from thermodynamic data via the standard Gibbs energy change, <span class="math notranslate nohighlight">\(\Delta G^\text{o}=-RT\ln(K)\)</span>. Notice that the initial amount of species <span class="math notranslate nohighlight">\(b\)</span> is irrelevant to the decay of <span class="math notranslate nohighlight">\(a\)</span>.</p>
+</section>
+<section id="kinetics-of-ligand-exchange-using-isotopes">
+<h2>4.7 Kinetics of ligand exchange using isotopes<a class="headerlink" href="#kinetics-of-ligand-exchange-using-isotopes" title="Permalink to this headline">#</a></h2>
+<p>A number of reactions involving electron and ligand exchange can be followed using isotopes ( H. McKay J. Am. Chem. Soc. 1943, v 65, p 702). Examples are</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \mathrm{Cu^{2+}}(aq)+ \mathrm{Cu^*.ligand} \overset{k}{\underset{k}\rightleftharpoons } \mathrm{Cu.ligand}+\mathrm{Cu^{*2+}}(aq)\]</div>
+<div class="math notranslate nohighlight">
+\[\mathrm{Fe^{2+}}(aq)+ \mathrm{Fe^{*3+}}(aq) \overset{k}{\underset{k}\rightleftharpoons } \mathrm{Fe^{3+}}(aq)+\mathrm{Fe^{*2+}}(aq)\]</div>
+<p>where the <span class="math notranslate nohighlight">\(*\)</span> represents the radioactive tracer. In both reactions <span class="math notranslate nohighlight">\(\Delta H=0\)</span> but <span class="math notranslate nohighlight">\(\Delta S \gt 0\)</span> because of the scrambling of isotopes between the products. As <span class="math notranslate nohighlight">\(\Delta H=0\)</span> this does not means that there is not an activation energy for the process. The energy barrier in the second example is caused by the different bond lengths when an electron is transfered between <span class="math notranslate nohighlight">\(\mathrm{Fe^{II}-OH_2}\)</span> and <span class="math notranslate nohighlight">\(\mathrm{Fe^{III}-OH_2}\)</span> the former being <span class="math notranslate nohighlight">\(0.22\)</span> nm the latter <span class="math notranslate nohighlight">\(0.205\)</span> nm. One bond has to stretch the other contract and this takes energy. There will also be a contribution from re-arranging water molecules surrounding the ions as the charge changes. The reaction is followed by precipitating out some <span class="math notranslate nohighlight">\(\mathrm{Fe^{3+}}\)</span> to stop further reaction, and measuring its radioactivity. (We shall assume that any decay during the reaction is insignificant, although if it is not, it can be accounted for knowing the half life).</p>
+<p>The general equations are</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle AX+B^*X\rightleftharpoons A^*X+BX, \qquad K_e=1\]</div>
+<p>and let</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle [AX]+[A^*X]=a,\quad [A^*X]=x,\quad [BX]+[B^*X]=b,\quad [B^*X]=y\]</div>
+<p>At <span class="math notranslate nohighlight">\(t=0\)</span>, <span class="math notranslate nohighlight">\([A^*X]=0\)</span> and at infinite time we measure <span class="math notranslate nohighlight">\(x_{\infty},y_{\infty}\)</span> and as mass is conserved <span class="math notranslate nohighlight">\(x+y=x_{\infty}+y_{\infty}\)</span>. At the end of the reaction the tracer is distributed in proportion the the number of moles of each that are present, thus <span class="math notranslate nohighlight">\(\displaystyle \frac{x_{\infty}}{a}=\frac{y_{\infty}}{b}\)</span>.</p>
+<p>The reaction scheme only gives the stoichiometry and does not indicate any mechanism, first or second order for example, so instead of using rate constants we use a proportionality constant <span class="math notranslate nohighlight">\(R\)</span> which is the gross rate of exchange of ligands, which is constant because the chemical composition is constant, and has units of concentration/time. If the reaction is in fact bimolecular then <span class="math notranslate nohighlight">\(R=k_2ab\)</span>. The rate of production of <span class="math notranslate nohighlight">\([A^*X]\)</span> is <span class="math notranslate nohighlight">\(dx/dt=-dy/dt\)</span>, therefore</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{dx}{dt} = R\frac{[AX][B^*X]}{ab}-R\frac{[A^*X][BX]}{ab}\]</div>
+<p>We shall need to eliminate <span class="math notranslate nohighlight">\(y\)</span> before integration. To do this start by rearranging,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{dx}{dt} = \frac{R}{ab}(ay-bx)=R\left(\frac{y}{b}-\frac{x}{a}\right)\]</div>
+<p>where <span class="math notranslate nohighlight">\(y/b\)</span> is the fraction of <span class="math notranslate nohighlight">\([B^*X]\)</span> and <span class="math notranslate nohighlight">\(x/a\)</span> for <span class="math notranslate nohighlight">\([A^*X]\)</span>, and substitute for <span class="math notranslate nohighlight">\(y\)</span> using <span class="math notranslate nohighlight">\(x+y=x_{\infty}+y_{\infty}\)</span>, which leads to</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{dx}{dt} = \frac{R}{ab}(a+b)(x_{\infty}-x)\]</div>
+<p>Separating variables and integrating gives</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \int_0^x\frac{dx}{(x_{\infty}-x)}=\frac{R}{ab}(a+b)\int_0^t dt\]</div>
+<p>which is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \ln\left(1-\frac{x}{x_{\infty}}\right)=-\frac{R}{ab}(a+b)t\]</div>
+<p>The measurements produce <span class="math notranslate nohighlight">\(x/x_{\infty}\)</span> at different times so a log plot has a gradient of <span class="math notranslate nohighlight">\(-R(a+b)/(ab)\)</span> from which <span class="math notranslate nohighlight">\(R\)</span> is found as <span class="math notranslate nohighlight">\(a,b\)</span> are known. The form of <span class="math notranslate nohighlight">\(R\)</span>, for example <span class="math notranslate nohighlight">\(k_2ab\)</span> or <span class="math notranslate nohighlight">\(k_1a\)</span> is found by repeating the experiment with different values of <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span>.</p>
 </section>
 <section id="kinetics-and-flow">
-<h2>4.7 Kinetics and flow<a class="headerlink" href="#kinetics-and-flow" title="Permalink to this headline">#</a></h2>
-<p>Water entering and leaving a tank, reaction vessel, or even a lake can be modelled by calculating the difference in the amount material flowing in and out, viz.,</p>
+<h2>4.8 Kinetics and flow<a class="headerlink" href="#kinetics-and-flow" title="Permalink to this headline">#</a></h2>
+<p>Water entering and leaving a tank, reaction vessel, or even a lake can be modeled by calculating the difference in the amount material flowing in and out, viz.,</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \text{Rate of change of material = rate in - rate out}\]</div>
 <p>in an analogous way to a chemical reaction. Terms for chemical reactions can be added if needed. It has to be assumed not only that the rate of inflow is the same as outflow, otherwise the lake will fill or empty, but also that material entering is fully mixed before it leaves (a well-stirred reactor), otherwise a concentration gradient would exist and this will complicate the calculation. If the concentration is <span class="math notranslate nohighlight">\(x_0\)</span> before any flow starts, the material entering has a constant concentration <span class="math notranslate nohighlight">\(x_{in}\)</span>, the in-flow rate is <span class="math notranslate nohighlight">\(f \,\mathrm{dm^3\,s^{-1}}\)</span>, the volume of the lake is <span class="math notranslate nohighlight">\(V\)</span> and if <span class="math notranslate nohighlight">\(x\)</span> is the concentration (mole dm<span class="math notranslate nohighlight">\(^{-3}\)</span>) of the tank/lake at any time <span class="math notranslate nohighlight">\(t\)</span> then,</p>
@@ -2510,7 +2552,7 @@ title="Print to PDF"
 </section>
 <hr class="docutils" />
 <section id="dissolution-kinetics">
-<h2>4.8 Dissolution kinetics<a class="headerlink" href="#dissolution-kinetics" title="Permalink to this headline">#</a></h2>
+<h2>4.9 Dissolution kinetics<a class="headerlink" href="#dissolution-kinetics" title="Permalink to this headline">#</a></h2>
 <p>When a solid solute is dissolved in a solvent, the rate equation is found by considering the change in the amount dissolved in solution during a short time period. In dissolving a solid, a saturated solution will eventually be formed and this limits how much solid will dissolve. If <span class="math notranslate nohighlight">\(x_0\)</span> is the initial amount of solid to be dissolved in <span class="math notranslate nohighlight">\(m\)</span> grams of solvent, <span class="math notranslate nohighlight">\(s_x /m\)</span> the saturated solution concentration, <span class="math notranslate nohighlight">\(k\)</span> the rate of dissolution (mass s<span class="math notranslate nohighlight">\(^{-1}\)</span>) and <span class="math notranslate nohighlight">\(x\)</span> the number of grams of solid remaining at time <span class="math notranslate nohighlight">\(t\)</span>, then</p>
 <p><span class="math notranslate nohighlight">\(\qquad\qquad\)</span> Amount of <span class="math notranslate nohighlight">\(x\)</span> dissolved in time <span class="math notranslate nohighlight">\(t + \delta t\)</span> = amount <span class="math notranslate nohighlight">\(x\)</span> at <span class="math notranslate nohighlight">\(t - \)</span> amount dissolved in <span class="math notranslate nohighlight">\(\delta t\)</span>.</p>
 <p>The amount dissolved in time <span class="math notranslate nohighlight">\(\delta t\)</span> is proportional to the amount of solid undissolved <span class="math notranslate nohighlight">\(x\)</span>, multiplied by the difference in concentration compared to that of a saturated solution, and this product is <span class="math notranslate nohighlight">\(\displaystyle kx\left( \frac{x_s}{m}-\frac{x_0-x}{m}\right)\delta t\)</span>.  The term <span class="math notranslate nohighlight">\((x_0 - x)/m\)</span> is the concentration dissolved, making the rate equation,</p>
@@ -2537,7 +2579,7 @@ title="Print to PDF"
 \[\displaystyle x=-\frac{1}{Nk}\log\left(\frac{x-N}{x} \right)+ const\]</div>
 </section>
 <section id="mean-free-path-and-probability-of-obtaining-a-path-of-a-given-length">
-<h2>4.9  Mean free path and probability of obtaining a path of a given length<a class="headerlink" href="#mean-free-path-and-probability-of-obtaining-a-path-of-a-given-length" title="Permalink to this headline">#</a></h2>
+<h2>4.10  Mean free path and probability of obtaining a path of a given length<a class="headerlink" href="#mean-free-path-and-probability-of-obtaining-a-path-of-a-given-length" title="Permalink to this headline">#</a></h2>
 <p>If <span class="math notranslate nohighlight">\(\bar c\)</span> is the average velocity and there are <span class="math notranslate nohighlight">\(v\)</span> molecules in unit volume then the total distance covered is <span class="math notranslate nohighlight">\(\bar c v\)</span>. Let <span class="math notranslate nohighlight">\(\gamma\)</span> be the number of collisions that occur per unit volume per second and as each collision terminates two free paths, there are <span class="math notranslate nohighlight">\(2v\)</span> free paths in the same time. As the average distance travelled is <span class="math notranslate nohighlight">\(\bar c v\)</span> the average length of the free path <span class="math notranslate nohighlight">\(\lambda\)</span> is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \lambda = \frac{\bar c v}{2\gamma}\]</div>

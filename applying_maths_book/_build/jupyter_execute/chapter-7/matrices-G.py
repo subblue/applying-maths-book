@@ -321,21 +321,31 @@ test
 # 
 # The $n$ solutions of the polynomial are the eigenvalues $\lambda_1 \to \lambda_n$ normally formed into the vector $\pmb{\lambda}$. 
 # 
-# Useful facts that can help in the solution are that the trace of the matrix $\pmb A$ is equal to the sum of the eigenvalues, the trace is the sum of the diagonal terms, therefore,
+# Useful facts that can help in checking the solution are that the trace of the matrix $\pmb A$ is equal to the sum of the eigenvalues, the trace is the sum of the diagonal terms, therefore,
 # 
 # $$\displaystyle \text{Trace}\equiv \sum_{i=0}^{n-1} a_{i,i} =\sum_{i=0}^{n-1}\lambda_i$$ 
 # 
 # and the determinant is the product of the eigenvalues $|\pmb A|=\prod_i \lambda_i$.
 # 
-# Now that the eigenvalues are known the $n$ eigenvectors, $x_1 \to x_n$, each of length $n$, can be found. To each of these eigenvectors, belongs an eigenvalue, $\lambda_i$. Each eigenvalue in turn is substituted back into the secular equation and this is then solved for each $\vec x$. The $j^{th}$ solution, for example, is obtained using $(\pmb{A} - \lambda_j\pmb{1})x_j = 0$, and this is the part that takes the computer (or you) most time to evaluate. This is done by computing the $i^{th}$ component of the $j^{th}$ eigenvector, $x_j$, which is a multiple of
+# Now that the eigenvalues are known the $n$ eigenvectors, $x_1 \to x_n$, each of length $n$, can be found. To each of these eigenvectors, belongs an eigenvalue, $\lambda_i$.  Each eigenvalue in turn is substituted back into the secular equation and this is then solved for each $\vec x$. The $j^{th}$ solution, for example, is obtained using $(\pmb{A} - \lambda_j\pmb{1})x_j = 0$, and this is the part that takes the computer (or you) most time to evaluate This is done by computing the $i^{th}$ component of the $j^{th}$ eigenvector, $x_j$, which is a multiple of
 # 
-# $$\displaystyle  x_{ij}=(-1)^{i+k}|(\pmb{A}-\lambda_j\pmb{1})_{kj}|  \qquad\tag{34}$$
+# $$\displaystyle  x_{ij}=(-1)^{i+k}|(\pmb{A}-\lambda_j\pmb{1})_{ki}|  =\qquad \qquad\tag{34}$$
 # 
-# where $ (-1)^{i+k}|(\pmb{A}-\lambda_j\pmb{1})_{kj}| $ is the *cofactor* of the matrix of element $ki$; note that $j$ is the index of the eigenvalue and $k$ the index of a column. 
+# and $ (-1)^{i+k}|(\pmb{A}-\lambda_j\pmb{1})_{ki}| $ is the *cofactor* of the matrix of element $ki$. The method now described is only possible for non-degenerate eigenvalues. We arbitrarily choose a row $k$ and so evaluate $x_{ij=1}\to x_{i,j=n}$. The eigenvectors are columns in matrix $x$. The procedure is best explained as an algorithm. First a reminder of how to calculate a cofactor. The cofactor of element $mn$ in a matrix $M$ is the determinant remaining after rows $m$ and columns $n$ are crossed out, multiplied by $(-1)^{n+m}$ and is shown below for position $23$,
 # 
-# Collecting all the eigenvectors together, they can be placed into a matrix, each *column* of which is an eigenvector, the first column belonging to the first eigenvalue and so forth; this is why $x$ in equation 34 has two subscripts; the second $j$ identifies the eigenvalue. The matrix of eigenvectors a sometimes called the *modal* matrix.
+# $$\displaystyle \require{cancel} M_{23}=(-1)^{2+3}\begin{vmatrix} a_{11}-\lambda & a_{12} & \cancel{a_{13}} \\ \cancel{a_{21}} & \cancel{a_{22}-\lambda} & \cancel{a_{23} }\\ a_{31} & a_{32} & \cancel{a_{33}-\lambda } \end{vmatrix}=-\left((a_{11}-\lambda) a_{32}-a_{12}a_{31} \right)\qquad\qquad\text{34'}$$
 # 
-# We can use Python with Numpy (for fast numerical solutions) or Sympy (for algebraic solutions) to do most of the matrix diagonalization. When the matrix is formed both eigenvectors and eigenvalues can be produced together. The position of any eigenvalue - eigenvector pair that the computer produces is arbitrary, and this order does not, unless accidentally, correspond to the ordering of the basis set, but the eigenvalue and its corresponding eigenvector are always produced in the same relative positions. Note that the syntax is different for Numpy and for Sympy. It is assumed that these libraries are already loaded. 
+# The algorithm for eqn 34 has the steps
+# 
+# >(a) Start with eigenvector $i=1$ and choose a value for $k$ and find the cofactor for element $ki$ in the matrix.
+# 
+# >(b) If this cofactor contains $\lambda$ calculate $x_{ij}$ by using the value of $\lambda_j$ where $j=1,2\cdots,n$ for matrix size $n \times n$ and so calculate all of row $i$, i.e. if $i=1$, $x_{11},x_{12}.\cdots x_{1,n}$
+# 
+# >(c) repeat from (a) for $i=2$ to find $x_{21},x_{22}.\cdots x_{2,n}$ and continue until all $n\times n$ values if matrix $x$ are found. 
+# 
+# The result of calculating all values is a matrix of cofactors whose columns are the un-normalised eigenvectors. The $n\times n$ matrix of eigenvectors (as columns) a sometimes called the *modal* matrix.
+# 
+# We can use Python with Numpy (for fast numerical solutions) or Sympy (for algebraic solutions) to do most of the matrix diagonalization. When the matrix is formed both eigenvectors and eigenvalues can be produced together. The position of any eigenvalue - eigenvector pair that the computer produces is arbitrary, and this order does not, unless accidentally, correspond to the ordering of the basis set, but the eigenvalue and its corresponding eigenvector are always produced in the same relative positions. Also notice that eigenvectors are Note that the syntax is different for Numpy and for Sympy. It is assumed that these libraries are already loaded. 
 
 # In[13]:
 
@@ -354,12 +364,6 @@ print(evecs)
 # In[14]:
 
 
-print(evecs.T[0],evecs.T[1])  # these are first and second eigenvectors  .T is transpose just to make row
-
-
-# In[15]:
-
-
 # with Sympy, algebraic solution
 M = symbols('M')
 M = Matrix( [ [2,4], [3,1] ] )         # note different syntax to numpy
@@ -368,7 +372,7 @@ ans = M.eigenvects()     # returns in order : eigenvalue, multiplicity, eigenvec
 ans
 
 
-# In[16]:
+# In[15]:
 
 
 ev1 = ans[1][2][0]  # get second eigenvector 
@@ -377,7 +381,7 @@ ev1
 
 # Another alternative is to use the sympy function matrix $\mathtt{.diagonalize() }$ that returns eigenvectors and eigenvalues in matrix form, i.e. 
 
-# In[17]:
+# In[16]:
 
 
 M = symbols('M')
@@ -406,31 +410,62 @@ evals,evecs
 # 
 # As a check the trace of the matrix is $3$ which is also the sum of the eigenvalues, and the determinant is $2-12=-10$ which is the product of the eigenvalues.
 # 
-# The eigenvectors are evaluated following equation 34. The cofactor of the top left matrix element is $1 - \lambda$; the cofactor of $4$ is $3$ and so on. We have to calculate $x_{11}, x_{12}, x_{21}$, and $x_{22}$ and these terms form a matrix with the eigenvectors as columns. Three subscripts are needed to use equation 34; $i, j$, and $k$. The eigenvalue index is $j$ and $k$ is any column index, which is $1$ or $2$ in this example. Suppose we start with $k = 1$ and $i = 1$ then
+# The eigenvectors are evaluated following the algorithm based on  eqn. 34. We start with eigenvector $i=1$ and choose row $k=1$, this means finding the cofactor $1,1$ which is following the diagram eqn 34' 
 # 
-# $$\displaystyle x_{1j} = (-1)^{1+1}|(\pmb A - \lambda_j \pmb 1)_{11} | = 1 - \lambda_j$$
+# $$\displaystyle M_{11}=(-1)^{k+i}(1-\lambda_j)$$
 # 
-# As the cofactor of element $(1,1)$ is $1-\lambda$ ,using $j=1$ then $j=2$, for $\lambda_1$ then $\lambda_2$, we obtain $x_{11} = 3$ and $x_{12} = -4$ respectively, because $\lambda_1 = -2$ and $\lambda_2 = 5$.
+# and now substituting for $j=1,2$ gives
 # 
-# Next, choose $i = 2$ to obtain the second row of the same eigenvector and again chose $k = 1$ then
-# $x_{2j} = (-1)^{2+k}| (\pmb A - \lambda_j\pmb 1){k_2} | = -3$ therefore, $x_{21} = -3$ and $x_{22} = -3$. The first eigenvector is
+# $$\displaystyle x_{1,1}=(-1)^{k+i}(1-\lambda_1))=3, \qquad x_{1,2}=(-1)^{2}(1-\lambda_2)=-4$$
 # 
-# $$\displaystyle x_1=\begin{bmatrix}x_{11} \\x_{22}\end{bmatrix} =\begin{bmatrix}3 \\-3\end{bmatrix}$$
+# 
+# The row with $i=2$ can be calculated with $k=1,i = 2$ giving $M_{k=1,i=2}=(-1)^{k+i}(3)=-3$, therefore 
+# 
+# $$\displaystyle \quad x_{2,1}=(-1)^{3}(3)=-3, \qquad x_{2,2}=(-1)^{3}(3)=-3$$
+# 
+# hence
+# 
+# $$\displaystyle x_1=\begin{bmatrix}x_{11} \\x_{21}\end{bmatrix} =\begin{bmatrix}3 \\-3\end{bmatrix}\\x_2=\begin{bmatrix}x_{12} \\x_{22}\end{bmatrix} =\begin{bmatrix}-4 \\-3\end{bmatrix}$$
+# 
 # 
 # The eigenvectors can be normalized to give
 # 
-# $$\displaystyle x_1 =\frac{1}{\sqrt{3^2+3^2}} \begin{bmatrix}3 \\-3\end{bmatrix} =\frac{1}{\sqrt{2}}\begin{bmatrix}1 \\-1\end{bmatrix} \qquad x_2 =\frac{1}{\sqrt{4^2+3^2}}\begin{bmatrix}4 \\3\end{bmatrix}=\frac{1}{\sqrt{5}}\begin{bmatrix}4 \\3\end{bmatrix} $$
+# $$\displaystyle \begin{align}x_1 &=\frac{1}{\sqrt{(-3)^2+3^2}} \begin{bmatrix}3 \\-3\end{bmatrix} =\frac{1}{3\sqrt{2}}\begin{bmatrix}3 \\-3\end{bmatrix}=\frac{1}{\sqrt{2}}\begin{bmatrix}1 \\-1\end{bmatrix},\qquad &\text{eigenvalue  }\lambda_1=-2 \\ 
+# x_2 &=\frac{1}{\sqrt{4^2+3^2}}\begin{bmatrix}4 \\3\end{bmatrix}=\frac{1}{5}\begin{bmatrix}4 \\3\end{bmatrix}= \begin{bmatrix}0.8 \\0.6\end{bmatrix},\qquad &\text{eigenvalue  }\lambda_2=+5\end{align}$$
 # 
-# The negative sign on $x_2$ was ignored because both terms are negative and it does not make any difference to the result if both are negative or both positive. As a check, put these eigenvector values back into the original equation
+# In the case that both terms are negative you can make them both positive since it does not make any difference to the result if both are negative or both positive. As a check, put these eigenvector values back into the original equation
 # 
-# $$ \pmb A x_1= \frac{1}{\sqrt{2}}\begin{bmatrix}2 & 4 \\3 & 1\end{bmatrix}\begin{bmatrix}1 \\-1\end{bmatrix}=\frac{1}{\sqrt{2}}\begin{bmatrix}-2 \\2\end{bmatrix}=-2x_1$$
+# $$ \pmb A x_1= \frac{1}{\sqrt{2}}\begin{bmatrix}2 & 4 \\3 & 1\end{bmatrix}\begin{bmatrix}-1 \\1\end{bmatrix}=\frac{1}{\sqrt{2}}\begin{bmatrix}2 \\-2\end{bmatrix}=-2x_1$$
 # 
 # which is $\lambda_1 x_1$ and 
 # 
-# $$ \pmb A x_2= \frac{1}{\sqrt{5}}\begin{bmatrix}2 & 4 \\3 & 1\end{bmatrix}\begin{bmatrix}4 \\3\end{bmatrix}=\frac{1}{\sqrt{5}}\begin{bmatrix}20 \\15\end{bmatrix}=5x_2$$
+# $$ \pmb A x_2= \frac{1}{5}\begin{bmatrix}2 & 4 \\3 & 1\end{bmatrix}\begin{bmatrix}4 \\3\end{bmatrix}=\frac{1}{5}\begin{bmatrix}20 \\15\end{bmatrix}=5x_2$$
 # 
 # which is $\lambda_2 x_2$. 
+
+# ### **(ii)  find the eigenvalues and eigenvectors of $\scriptsize{\begin{bmatrix} 0& \sqrt{2}&0\\-\sqrt{2}&0&\sqrt{2}\\0&-\sqrt{2}&0\end{bmatrix}}$.**
+#  
+# In this example we make a table to calculate the eigenvectors. The secular determinant is  
 # 
+# $$\displaystyle \begin{vmatrix} 0-\lambda& \sqrt{2}&0\\-\sqrt{2}&0-\lambda&\sqrt{2}\\0&-\sqrt{2}&0-\lambda\end{vmatrix}=0$$
+# 
+# which has the characteristic equation $\lambda^3+4\lambda =0$ and eigenvalues $\lambda_1=0,\lambda_2=-2i,\lambda_3=2i$.
+# 
+# To use eqn 34 we choose $k=1$ and form a table starting with cofactor for element $ki$ where $i=1$ This has the value $(-1)^{k+i}(\lambda_j^2+2)$ where $j=1,2,3$. The table is 
+# 
+# $$\displaystyle\small \begin{array}{ll|lll}
+# & &  j=1 & j=2 & j=3\\
+# \hline
+# k=1,i=1 & M_{11}=(-1)^{k+i}(\lambda_j^2+2)& x_{11}=(-1)^2(0+2) & x_{12}=(-1)^2\left((-2i)^2+2\right) & x_{13}=(-1)^2\left((2i)^2+2\right)\\
+# k=1,i=2 & M_{12}=(-1)^{k+i}\sqrt{2}\lambda_j&x_{21}=0 & x_{2,2}=-1\sqrt{2}(-2i) & x_{23}=-2i\sqrt{2}\\
+# k=1,i=3 & M_{12}=(-1)^{k+i}2&x_{31}=2 & x_{32}=2 & x_{33}=2\\
+# \hline
+# \end{array}$$
+# 
+# thus the eigenvector matrix and eigenvectors are 
+# 
+# $$\displaystyle \begin{bmatrix}2&-2&-2\\0&2\sqrt{2}i&-2\sqrt{2}i\\2&2&2\end{bmatrix}\qquad \overset{normalize} \longrightarrow x_1=\begin{bmatrix}1\\0\\1\end{bmatrix}\quad x_2=\begin{bmatrix}-1\\i\sqrt{2}\\1\end{bmatrix}\quad x_3=\begin{bmatrix}-1\\-i\sqrt{2}\\1\end{bmatrix}$$
+
 # The same calculation using Python or Sympy is far easier and, in practice, you will always do the calculation in this way.
 # 
 # ## 12.7 Properties of eigenvalues and eigenvectors
@@ -472,7 +507,7 @@ evals,evecs
 # which gives $\begin{bmatrix} 1&0&0 \end{bmatrix}\begin{bmatrix} 2\\0\\0 \end{bmatrix}=2$ for the first term of $V$. All three terms produce the vector $V=\begin{bmatrix} 2\\3\\-4 \end{bmatrix}$. This calculation has used the fact that the summation of the product of pairs of terms with the same index, is the same as the dot product of two vectors;
 # 
 # $$ \displaystyle   \sum_{j=1}^n b_jx_j \equiv\begin{bmatrix} b_i & \cdots & b_n\end{bmatrix} ,\begin{bmatrix} x_1\\\vdots\\x_n \end{bmatrix}$$
-# 
+
 # ## 12.9 Interpreting the Secular Determinant
 # 
 # The nature of the secular determinant, and hence the matrix from which it is generated, needs explaining particularly in quantum mechanical problems. In these problems, the secular determinant is always symmetrical and contains only real numbers; it is Hermitian. The order of the element in both rows and columns is the same as the ordering of the basis set. If the secular determinant is diagonal, that is contains only the diagonal elements, and all the rest are zero, then the eigenvalues are the diagonal terms and are the solutions to the Schroedinger equation. If there are non-zero, off-diagonal terms, then these mix the basis set wavefunctions and energies together when the matrix is diagonalized. The off-diagonal terms are often referred to as coupling terms, because they 'cause interaction' between the energy levels in the diagonal of that row and column in which that matrix element is present. The type of interaction, Coulombic or dipole-dipole for instance, varies depending on the problem at hand. In the context of chemical kinetics the terms in the matrix are combinations of rate constants linking molecules of different types as described in by the rate equations, see section 13.
@@ -488,7 +523,98 @@ evals,evecs
 # Figure 54. The diagonal matrix produces energy levels (left). The interactions 1-3 and 2-3 move the energy levels about as sketched (right).
 # ________________________
 # 
-# ### **Coupling between two spins. The secular determinant and block diagonal matrices**
+# ## 12.10 **Avoided crossings. Landau-Zener equation and NaI dissociation**
+# 
+# A reaction starting in an excited state will occur via an 'avoided crossing' with a probability obtained from the Landau-Zener equation. A seminal example is the dissociation of an excited state of NaI in the vapour phase (Zewail 1994).
+# 
+# How two energy levels become split in energy is described first. The result is that one level rises the other falls by the same amount so that overall energy is conserved, but when the lower level is populated, there is a lowering in energy. Incidentally, this one way of thinking about chemical bonding.
+# 
+# ![Drawing](matrices-fig54b.png)
+# 
+# fig 54a. Left. The allowed crossing of states of different symmetry, wavefunction $\varphi_{1,2}$. Right, the avoided crossing of states of the same symmetry with wavefunction $\psi_{1,2}$ The crossing point is at $r_c$. 
+# _____________
+# 
+# Suppose that there are two states that cross one another but do not interact because they have a different symmetry thus moving along one state occurs independently of the other, i.e. they do not 'know' of each others existence, fig54a (A).  The Hamiltonian operator (matrix) is zero for all off-diagonal terms indicating no interaction between states $1$ and $2$,
+# 
+# $$\displaystyle \begin{bmatrix}H_1& 0\\0&H_2\end{bmatrix}\begin{bmatrix}\varphi_1\\ \varphi_2\end{bmatrix}=\begin{bmatrix}\epsilon_1\\ \epsilon_2\end{bmatrix}\begin{bmatrix}\varphi_1\\ \varphi_2\end{bmatrix}  \qquad\qquad\qquad\text{(34a)}$$
+# 
+# If one passes point $r_c$ when on state $2$ the system remains on $2$ and similarly $1\to 1$ and so crossing is allowed. The wavefunctions and energy must clearly be functions of some parameter $r$ where this is, for example, the separation of two atoms or of magnetic or electric field strength. The energies (eigenvalues) found by solving the equation are $\epsilon_{1,2}$ and as they are a function of $r$ they could represent a particular electronic state, the ground state for example, and the other could be an electronically excited state. At the crossing point $\epsilon_1=\epsilon_2$ but as the two states have different symmetry there is no degeneracy and the energy levels are not split.
+# 
+# Suppose now that an interaction, $\Delta$, such as caused by spin-orbit coupling is introduced as off-diagonal terms thus mixing the states $1$ and $2$ such that they now have the same symmetry (which could be no symmetry) and so
+# 
+# $$\displaystyle \begin{bmatrix}\epsilon_1& \Delta\\\Delta&\epsilon_2\end{bmatrix}\begin{bmatrix}\psi_1\\ \psi_2\end{bmatrix}=\begin{bmatrix}E_1\\ E_2\end{bmatrix}\begin{bmatrix}\psi_1\\ \psi_2\end{bmatrix} \qquad\qquad\qquad\text{(34b)}$$
+# 
+# We could also include an interaction energy on the diagonals but this only raises or lowers the whole energy so it can simply be set to zero for the purposes of our illustration. A new set of energies and wavefunctions results after solving the secular determinant $\begin{bmatrix}\epsilon_1-E& \Delta\\\Delta&\epsilon_2-E\end{bmatrix}=0$ and are
+# 
+# $$\displaystyle E_{1,2}=\frac{1}{2}\left(\epsilon_1+\epsilon_2\pm\sqrt{(\epsilon_1-\epsilon_2)^2+4\Delta ^2}\right)$$
+# 
+# rearranging produces
+# 
+# $$\displaystyle E_{1,2}=\frac{1}{2}\left(\epsilon_1+\epsilon_2\pm(\epsilon_1-\epsilon_2)\sqrt{1+\frac{4\Delta ^2}{(\epsilon_1-\epsilon_2)^2}}\right)$$
+# 
+# and to see that one level rise the other falls, suppose that the interaction energy $\Delta$ is small, i.e. a perturbation, then when $\displaystyle \frac{4\Delta ^2}{(\epsilon_1-\epsilon_2)^2}\ll 1$ the square root can be expanded as $(\sqrt{1\pm x} \approx 1\pm x$) then after simplifying to a high degree of accuracy
+# 
+# $$\displaystyle E_{1,2}\approx\frac{1}{2}\left(\epsilon_1+\epsilon_2\pm\left(\epsilon_1-\epsilon_2+\frac{4\Delta ^2}{(\epsilon_1-\epsilon_2)}\right)\right)$$
+# 
+# thus
+# 
+# $$\displaystyle E_1\approx\epsilon_1-\frac{2\Delta ^2}{\epsilon_2-\epsilon_1},\quad E_2\approx\epsilon_2+\frac{2\Delta ^2}{\epsilon_2-\epsilon_1},\qquad \epsilon_2 \gt \epsilon_1$$
+# 
+# It is clear from this result that the energies are separated with one rising and the other falling, but the total remains the same $E_1+E_2=\epsilon_1+\epsilon_2$.
+# 
+# The new *adiabatic* wavefunctions $\psi$ are combinations of the *diabatic* ones $\varphi$
+# 
+# $$\psi_{1,2}=c_1\varphi_1+c_2\varphi_2$$
+# 
+# where the coefficients $c$ can be found using the Variational Principle. At the crossing point $r_c$ the new wavefunction has equal contributions from $\varphi_1$ and $\varphi_2$ thus $\displaystyle \psi_{1,2} = \left( \varphi_1 \pm \varphi_2\right )/\sqrt{2}$ and the energy gap $E_2-E_1=2\Delta$. Moving away from the crossing point to larger or smaller $r$ than $r_c$, the amount of each $\varphi$ changes, for example on the bottom left of image (B) in fig 54a, $\psi_1$ will mainly consist of $\varphi_1$ with a little $\varphi_2$, whereas at the top right the opposite is true. A similar argument applies to $\psi_2$. This can be understood because the energy gap ($|E_2-E_1|$) at large or small $r$ is large compared to $\Delta$ and so the contribution to the new wavefunction is small when that state is far away in energy.
+# 
+# ### **Adiabatic and diabatic curves**
+# 
+# The use of the words adiabatic and diabatic in quantum chemistry is very confusing. If a wavefunction representing the true solution such as the $\psi$ are in eqn. 34b then the curves with energy $E_{1,2}$ and wavefunction $\psi$ are called adiabatic as the two curves do not cross, see fig 54a (right B). The other curves (dashed) in this figure are the diabatic curves. The adiabatic wavefunction $\psi$ is made up of various amounts of the diabatic wavefunctions $\varphi$. However, in fig 54a (left A) these are the adiabatic curves as these arise from eqn. 34a and are the true solution to this Hamiltonian and do not cross. 'Does not cross' here means that motion from curve $1\to 2$ or vice versa does not occur.
+# 
+# #### **Symmetry**
+# 
+# We noted above that the symmetries of the two states interacting are important. If the symmetry is the same then the states interact and an avoided crossing occurs and a picture as in the right hand part of Fig(54a) results. If not, then no interaction is possible. Interactions causing the coupling $\Delta$ are generated within the molecule and represent energy and therefore must be have a *totally symmetric* representation. This being the case because the probability of a transition in quantum mechanics between state 1 and 2 is proportional to  $\displaystyle \int \psi_1\Delta \psi_2dr $ this integral will be zero unless $\psi_1$ and $\psi_2$ have the same symmetry. This may not be obvious, immediately, but first work out the integral say from $-r\to r$ (the limits must be symmetrical) if both wavefunctions are either of the same symmetry and $\Delta$ a constant or totally symmetric, and second if one wavefunction has 'odd' symmetry. In the latter case the integral is zero. The odd = even rules are $odd\cdot  odd=even\cdot even=even,\; odd\cdot even=0$. Examples are $\int odd\cdot even\cdot odd \ne 0$,$\int even\cdot even\cdot even \ne 0$, $\int odd\cdot even\cdot even =0 $, see chapter 4, section 1.3.
+# 
+
+# ### **Landau-Zener and Curve-Crossing**
+# 
+# Projecting the ground state wavefunction on to the upper state such as $A_2$ fig54a (B), with a femtosecond laser pulse produces a wavepacket on $A_2$.  The wavepacket is the quantum equivalent of a particle, it is restricted in spacial extent as it is the sum of several wavefunctions each separated in energy. See chapter 5.9. As the wavepacket is confined in space and moves back and forth on $A_2$ this means that any population on $A_1$ will increase in a step-wise manner as there is a small chance that crossing the barrier $A_2\to A_1$ occurs each time the wavepacket goes close to point $r_c$. This behaviour was first observed by Zewail and coworkers in NAI (Zewail 1994). This is examined shortly but first the factors determining the probability of reaction are described. 
+# 
+# As the energy gap between the two adiabatic curves $\psi_{1,2}$ becomes smaller there is the possibility that the system will cross the barrier from one state to the other. The chance (probability) of crossing from one *adiabatic* state to the other is given by the Landau-Zener equation
+# 
+# $$\displaystyle P_{LZ}=\exp\left(-\frac{2\pi}{\hbar}\frac{\Delta^2}{v\Delta S}\right)$$
+# 
+# where $v$ is the speed along the potential, $\Delta S=\displaystyle\frac{\partial}{dr}|E_2-E_1|$ the difference in gradient of the two diabatic potentials at the crossing point, and $\Delta$ the interaction energy as before. Some conditions for the three factors involved can now be examined. 
+# 
+# If the argument ($\Delta^2/v\Delta S $) to the exponential is large the chance of crossing from one adiabatic potential to the other becomes small, decreasing exponentially to zero, $e^{-big}\to 0$. This means that a reaction has occurred on going from position $1\to 2$ in figure 54a (B) along adiabatic $A_1$. This condition is met when the interaction energy is large making the energy gap between adiabatic curves $A_1$ and $A_2$ at the crossing point $r_c$ also large. This is the 'strong coupling' case and an example would be a ground state reaction crossing a potential barrier to product also on the ground state. The similar situation occurs when the difference in gradient between the two diabatic potentials is small making it easy to stay on the same adiabatic surface that to cross over to the other.  
+# 
+# When $\Delta$ is small the energy gap is small at the crossing point and the chance of crossing is high, i.e. the chance of staying on an adiabatic curve say $A_2$ is low and this probability is found by expanding the exponential,
+# 
+# $$\displaystyle P_{LZ}=1 -\frac{2\pi}{\hbar}\frac{\Delta^2}{v\Delta S}+\cdots $$
+# 
+# This is the 'weak coupling' case, and now the chance of reaction is $\displaystyle \approx 2\pi\Delta^2/(\hbar v\Delta S)$. This would be the situation in a reaction starting in the excited state, say at position $2$ top left on $A_2$ in fig 54a(B) and ending up on $A_1$ at large $r$. The same effect occurs when the change in slope is large or when the velocity is large or both. In these situations the system cannot withstand the sudden change in slope, for example, and continues on in the same direction to the other surface and similarly when the velocity is large whatever the change in slope.
+# 
+# Zewail et al. (Rose, Rosker & Zewail J. Chem. Phys. v91, p7415, 1989, & Zewail 1994, p219.) used NaI vapour in a vacuum and ultra-fast, pump-probe laser spectroscopy to observe the crossing from the excited state to the dissociated state which is formed of the atoms, See fig54b.  
+# 
+# ![Drawing](matrices-fig54c.png)
+# 
+# fig 54b. Adiabatic potential energy curves for the ground state (blue) and first excited state of the molecule NaI, calculated via eqn. 34b and using known spectroscopic constants for the diabatic potentials. The crossing point of the diabatic curves is at $\approx 0.693$ nm, (vertical dashed line). The Ground state has a lot ionic character but dissociates to  the atoms because of the curve crossing. The laser excitation is shown as a thick vertical line and two sketches representing the wavepacket as it moves back and forth in the potential are also shown.
+# ____________
+# 
+# The NaI molecule was excited by a sub-picosecond laser pulse at $311$ nm onto the repulsive upper state potential and a wavepacket formed and because it is formed on the repulsive potential, at $\approx 0.27$ nm, it moves rapidly towards the crossing point at $\approx 0.69$ nm, see fig 54b. The wavepacket was probed by a second and weak laser pulse at several different wavelengths corresponding to being in the well, $\approx 0.3 \to 6$ nm and after the crossing point $\gt 0.7$ nm. At the crossing point there is a chance either to reflect from the $\mathrm{Na^+I^-}$ part of the potential and return towards shorter bond length or to cross the barrier to form products $\mathrm{Na+I}$. Because the molecule vibrates a pulse of the product (Na + I) was observed each time the wavepacket reached the crossing point and the time between product appearance was $1.2$ ps at this pump wavelength. The product appears in stepwise manner because the total amount is monitored and a little more is added each time the crossing point is reached. Several bursts of product lasting up to about 10 ps in total were observed. Probing inside the well produces an oscillating signal as the wavepacket crosses and re-crosses the probed region. 
+# 
+# Notice that that these observations are entirely different to that expected from a 'normal' kinetic experiment where excitation is not short lived compared to the vibrational period, as then we observe continuous formation of product and measure a 'normal' decay profile. Only because the laser pump pulse is of short duration compared to a vibrational period can the step-wise appearance of product be observed. This is obvious now but it was a revelation when this data was first reported, nothing like it had been seen before and for this Zewail was subsequently awarded a Nobel Prize in Chemistry.
+# 
+# **Calculating $P_{LZ}$**
+# 
+# The upper state has a largely flat potential at large NA-I separation but the ionic potential has a Coulombic shape $\sim e^2/(4\pi\epsilon_0 R)$ where $\epsilon_0$ is the permittivity of free space. The difference in slopes thus depends on the ionic potential alone and at the crossing point $r_c=0.693$ nm,
+# 
+# $$\displaystyle \frac{dE}{dR}=\bigg|\frac{e^2}{4\pi\epsilon_0 r_c^2}\bigg|= 4.84\cdot10^{-10}\, \text{, J/m}$$
+# 
+# The wavepacket velocity $v=\sqrt{2E/\mu}$ is found from the energy above dissociation ($\approx E= 7266\,\mathrm{cm^{-1}}$) and is $v\approx 3000$ m/s. From other spectroscopic experiments the interaction energy was measured to be $\mathrm{370, cm^{-1}}$ making the Landau-Zener probability  $P_{LZ}=0.11$ at $311$ nm excitation, which is in agreement with that calculated directly from the time-resolved data.
+
+# ## 12.11 **Coupling between two spins. The secular determinant and block diagonal matrices**
 # 
 # The coupling between two spins will be calculated. The magnetic moments of electrons and nuclei are coupled via the so-called _contact_ interaction, introduced by Fermi to account for the hyperfine interactions in atomic spectra. The nucleus has spin angular momentum $I$ and the electron $S$. The interaction represents the energy of the nuclear magnetic moment in the magnetic field at the nucleus, produced by the 'spinning' electrons. The coupling matrix with nuclear spin $S_n = 1/2$ and electron spin $S_e = 1/2$ produces a $4 \times 4$ matrix because terms arise from spin combinations $\alpha\alpha, \alpha\beta, \beta\alpha, \beta\beta$. The first letter describes the electron spin, the second nuclear spin. The label $\alpha$ represents either the electron or nuclear spin wavefunction with spin magnetic quantum number $m_s = 1/2$ and $\beta$ that with $m_s = -1/2$ ($m_s$ is also called the projection or azimuthal quantum number). With the basis set $(\alpha\alpha, \alpha\beta, \beta\alpha, \beta\beta)$ determining the order of terms in the rows and columns of the interaction matrix is
 # 
@@ -508,20 +634,20 @@ evals,evecs
 # 
 # To find the eigenvectors we can use Python/Sympy
 
-# In[18]:
+# In[17]:
 
 
 M = symbols('M')
 M = Matrix([[1,0,0,0],[0,-1,2,0],[0,2,-1,0],[0,0,0,1]])
 
 
-# In[19]:
+# In[18]:
 
 
 M.eigenvals()  # second value in each pair is multiplicity
 
 
-# In[20]:
+# In[19]:
 
 
 M.eigenvects()    # eigenvalues and eigenvectors. second number in each (1 , 3) is multiplicity
@@ -531,7 +657,7 @@ M.eigenvects()    # eigenvalues and eigenvectors. second number in each (1 , 3) 
 # 
 # A simpler notation can be found is using (sympy) diagonalisation where the eigenvector's matrix is returned first.
 
-# In[21]:
+# In[20]:
 
 
 M.diagonalize()

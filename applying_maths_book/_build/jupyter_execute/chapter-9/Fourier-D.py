@@ -56,13 +56,13 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # To understand how convolution works, suppose that the overall instrument response is made up of a series of $\delta$-function impulses. These can be infinitesimally narrow light pulses that excite a molecule. Suppose these impulses are made at ever shorter time intervals, then the effect is that of smoothly exciting the molecule. Each of the impulses elicits an ideal response but because there are many of them, their responses must be added together. The result is the convolution; the effect is shown in Fig. 26. It is always assumed in the convolution that the response is linear with the impulse, which simply means that doubling the impulse doubles the response and so forth.
 # 
-# The light pulses occur at each point in the dashed curve, Fig. 26. The response from each impulse is the decaying solid curve. To calculate the overall response at any given point along the x-axis, the effect of all previous impulses must be added into the calculation. Suppose that the pulse exciting the sample has a shape given by some function $f$, the ideal experimental response $w$, and the convolution $C$. The terms can be written down at each time if it is assumed, for the present, that the impulses are discrete and the data is represented as a series of points at times $1, 2, 3$, and so forth; $f$(6), for example, represents the value of $f$ at the sixth time position. The first point of the impulse is $f$(1) and this produces the response
+# The light pulses occur at each point in the red instrument response curve, Fig. 26. The response from each impulse is the decaying solid curve. To calculate the overall response at any given point along the x-axis, the effect of all previous impulses must be added into the calculation. Suppose that the pulse exciting the sample has a shape given by some function $f$, the ideal experimental response $w$, and the convolution $C$. The terms can be written down at each time if it is assumed, for the present, that the impulses are discrete and the data is represented as a series of points at times $1, 2, 3$, and so forth; $f$(6), for example, represents the value of $f$ at the sixth time position. The first point of the impulse is $f$(1) and this produces the response
 # 
 # $$\displaystyle f (1)[w(1) + w(2) + w(3) + \cdots]$$
 # 
 # The second and third impulses produce
 # 
-# $\displaystyle f(2)[w(1) + w(2) + w(3) + \cdots]$ and $f(3)[w(1) + w(2) + w(3) + \cdots]$.
+# $$\displaystyle f(2)[w(1) + w(2) + w(3) + \cdots]\quad \text{and}\quad f(3)[w(1) + w(2) + w(3) + \cdots]$$
 # 
 # The convolution is the sum of these terms at times 1, 2, 3, and so on therefore;
 # 
@@ -92,14 +92,16 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # The algorithm to calculate the summation has a double loop to calculate all values of $k$ and to perform the summation in eqn. 32. The two functions used are those that produced Fig. 24, which are $\displaystyle f(t) = e^{-t/100}$ and $\displaystyle w(t) = e^{-(t-100)^2/1000}$, and $2^{10}$ points will be also be used to mimic the data produced by an instrument.
 # 
 # First, because the data is discrete, arrays $f$ and $w$ are made; to hold the data points. Then two loops are made, one changes $k$ from 1 to $n$ the and inside one calculates $C(k)$. The indices are arranged as in equation 32. The variable $s$ accumulates the sum as the inner do loop progresses. This is a relatively slow calculation because of the double loop.
+# 
+# The calculation is shown below, the convolution is normalised down to $1$.
 
 # In[2]:
 
 
-# algorithm convolution by double summation
+# Algorithm convolution by double summation
 #---------------------------
 def do_convolution(f,w):   # f and w are arrays 
-    # Sigma f(n-m)g(m) ;   c(0) = f(0)w(0),    c(1) =  f(0)w(1) + f(1)w(0)  etc 
+    # Sigma f(n-m)w(m) ;   c(0) = f(0)w(0),    c(1) =  f(0)w(1) + f(1)w(0)  etc 
     n = len(f)
     c = [0.0 for i in range(n)]
     for k in range(n):
@@ -112,19 +114,32 @@ def do_convolution(f,w):   # f and w are arrays
 #---------------------------
 
 n = 2**10
-f = [ np.exp(-i/100.0)  for i in range(n)]
-w = [ np.exp(-(i-100)**2/1e3) for i in range(n)]
+w = [ np.exp(-i/100.0)  for i in range(n)]         # molecular decay
+f = [ np.exp(-(i-120)**2/1e3) for i in range(n)]   # instrument
 t = [i for i in range(n)]
 
 C = do_convolution(f,w)
-mxc  = max(C)         # use to normalse
-plt.plot(t,C/mxc,color='red',label='C , convolution '+r'$f\otimes w$')
-plt.plot(t,f,color='black',label='f(x)')
-plt.plot(t,w,color='blue',label='w(x)')
+mxc  = max(C)                      # use to normalse
+plt.plot(t,C/mxc,color='red',label='C , convolution '+r'$f\otimes w$',linestyle='dashed')
+plt.plot(t,f,color='black',label='w(x), instrument')
+plt.plot(t,w,color='blue',label='f(x), decay')
 plt.xlim([0,n])
 plt.legend()
 plt.show()
 
+
+# ## The time course of drug action.
+# 
+# Most of us will have taken a course of antibiotics at one time or another. Some people have to take medication each day, for example thyroxine when their thyroid is malfunctioning or has been removed through surgery. The time - course of the concentration of a drug in the body depends not only on the lifetime the drug's removal but also how frequently it is administered. 
+# 
+# Typically, a fixed dose is taken at strictly defined intervals, for example once per day, and in this case we can use convolution to predict the time course of the action. The 'instrument function' is a series of spikes at a constant separation, modeling the drug being taken once per day for instance. The decrease of the drug's concentration we shall assume is first order, and we can use the algorithm above to calculate what happens. We can imagine this behaviour first, of course. When the lifetime of the medication is short compared to the time interval between taking it the concentration will rapidly rise and then fall close to zero following the daily periodicity. On the other hand if the lifetime is long relative to the frequency of administration then the concentration increases exponentially on average with a lifetime of $\tau$, but with a superimposed saw-tooth and eventually, after many days, becoming on average constant but still oscillating.  This behaviour is shown in figure 27a where a tablet is taken each day and the decay lifetime (elimination lifetime) is $3$ days.  
+# 
+# ![Drawing](fourier-fig27a.png)
+# 
+# Fig 27a. The convolution of a comb function with an exponential decay, mimicking the concentration of a drug in the body. The decay with lifetime of $3$ days is shown in gray at the lower left of the figure. The profile of taking the medication is the comb of spikes. The concentration in the body is the blue saw-tooth like curve showing the integrating effect as the amount of medication does not fall to zero in the time interval before the next ingestion. The three red lines show the minimum, average and maximum  concentrations achieved. The initial amount $I_0=1$.
+# _______________
+# 
+# At long times the smallest amount present is $\approx \displaystyle e^{-1/\tau}/(1-e^{-1/\tau})$ and the maximum is $\displaystyle \approx 1/(1-e^{-1/\tau})$. The approximate average concentration (middle red line, top right) is the average of the upper and lower limits and is $\coth(1/(2\tau))/2 \approx \tau$ in the arbitrary units used. If $f$ is the fraction of the final average level reached after $n$ doses then $f=1-e^{-nT/\tau}$ where $T$ is the time interval between doses. To reach $99$% of the final average value when $\tau=3$ takes $n=14$ doses or the same number of days in this example.
 
 # ## 7.4 Convolution by Fourier transform
 # 
@@ -226,8 +241,8 @@ plt.show()
 # convolution by fourier transform
 
 n = 2**10
-f = [ np.exp(-i/100.0) for i in range(n)]
-w = [ np.exp(-(i-100)**2/1e3) for i in range(n)]
+f = [ np.exp(-i/100.0) for i in range(n)]           # molecular decay    
+w = [ np.exp(-(i-120)**2/1e3) for i in range(n)]    # instrument response
 t = [i for i in range(n)]
 
 F = np.fft.rfft(f)        # use rfft as input in only real 
@@ -237,8 +252,8 @@ C = np.fft.irfft(F*W)
 mxc  = max(C)         # use to normalse
 
 plt.plot(t,C/mxc,color='red',label='C , convolution '+r'$f\otimes w$')
-plt.plot(t,f,color='black',label='f')
-plt.plot(t,w,color='blue',label='w')
+plt.plot(t,f,color='black',label='f, decay')
+plt.plot(t,w,color='blue',label='w, instrument')
 plt.plot()
 plt.xlim([0,n])
 plt.legend()

@@ -976,7 +976,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-B.html">
-     9 First order eqn’s &amp; Integrating factors. Second order eqn’s, Newton’s laws, equations of motion.
+     9 First order equations &amp; Integrating factors. Second order equations, Newton’s laws and equations of motion.
     </a>
    </li>
    <li class="toctree-l2">
@@ -1001,7 +1001,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-F.html">
-     15 Partial Differential Equations, PDE
+     15 Partial Differential Equations, PDE. 1D &amp; 2D diffusion, Particle in a box, Lateral flow tests, Diffusion and Reaction, Cable equation, Algal Blooms
     </a>
    </li>
    <li class="toctree-l2">
@@ -1608,7 +1608,7 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#unitary-matrix-pmb-m-dagger-pmb-m-1-or-pmb-m-dagger-pmb-m-pmb-1-and-pmb-m-1">
+  <a class="reference internal nav-link" href="#unitary-matrix-pmb-m-dagger-pmb-m-1-or-pmb-m-dagger-pmb-m-pmb-1-or-pmb-m-pmb-m-dagger-pmb-1-and-pmb-m-1">
    4.11 Unitary matrix
    <span class="math notranslate nohighlight">
     \(\pmb M^\dagger = \pmb M^{-1}\)
@@ -1616,6 +1616,10 @@ title="Print to PDF"
    or
    <span class="math notranslate nohighlight">
     \(\pmb {M}^\dagger \pmb{M} = \pmb{1}\)
+   </span>
+   or
+   <span class="math notranslate nohighlight">
+    \(\pmb {M} \pmb{M}^\dagger = \pmb{1}\)
    </span>
    and
    <span class="math notranslate nohighlight">
@@ -1811,7 +1815,7 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#unitary-matrix-pmb-m-dagger-pmb-m-1-or-pmb-m-dagger-pmb-m-pmb-1-and-pmb-m-1">
+  <a class="reference internal nav-link" href="#unitary-matrix-pmb-m-dagger-pmb-m-1-or-pmb-m-dagger-pmb-m-pmb-1-or-pmb-m-pmb-m-dagger-pmb-1-and-pmb-m-1">
    4.11 Unitary matrix
    <span class="math notranslate nohighlight">
     \(\pmb M^\dagger = \pmb M^{-1}\)
@@ -1819,6 +1823,10 @@ title="Print to PDF"
    or
    <span class="math notranslate nohighlight">
     \(\pmb {M}^\dagger \pmb{M} = \pmb{1}\)
+   </span>
+   or
+   <span class="math notranslate nohighlight">
+    \(\pmb {M} \pmb{M}^\dagger = \pmb{1}\)
    </span>
    and
    <span class="math notranslate nohighlight">
@@ -1993,13 +2001,13 @@ The eigenvalue - eigenvector equation is met, for example, in solving problems i
 <p>The transpose operation replaces rows and columns with one another, and so  exchanges element <span class="math notranslate nohighlight">\((1, 2)\)</span> with <span class="math notranslate nohighlight">\((2, 1)\)</span>, and <span class="math notranslate nohighlight">\((1, 3)\)</span> with <span class="math notranslate nohighlight">\((3, 1)\)</span> and so on. For example;</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle\begin{bmatrix} a &amp; b &amp; c \\ d &amp; e &amp; f   \end{bmatrix}^T= \begin{bmatrix} a &amp; d \\b &amp; e\\ c &amp; f \end{bmatrix}\end{split}\]</div>
-<p>and for a square matrix this operation leaves the diagonal unchanged</p>
+<p>and for a square matrix this operation leaves the diagonal unchanged, and is, in effect, a reflection about the diagonal,</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}\displaystyle\begin{bmatrix} a &amp; b &amp; c \\ d &amp; e &amp; f \\g &amp; h &amp; i  \end{bmatrix}^T= \begin{bmatrix} a &amp; d &amp; g\\b &amp; e &amp; h\\ c &amp; f &amp; i\end{bmatrix}\end{split}\]</div>
+\[\begin{split}\displaystyle\begin{bmatrix} a &amp; b &amp; c \\ d &amp; e &amp; f \\g &amp; h &amp; i  \end{bmatrix}^{\,T}= \begin{bmatrix} a &amp; d &amp; g\\b &amp; e &amp; h\\ c &amp; f &amp; i\end{bmatrix}\end{split}\]</div>
 <p>You can appreciate that two transposes reproduce the initial matrix <span class="math notranslate nohighlight">\((\pmb{M}^T)^T = \pmb{M}\)</span>.</p>
 <p>A <em>symmetric</em> matrix is equal to its transpose and therefore must also be square and have off-diagonal elements <span class="math notranslate nohighlight">\(a_{ij} = a_{ji}\)</span>. An <em>antisymmetric</em> matrix satisfies the identity <span class="math notranslate nohighlight">\(\pmb{A} = -\pmb{A}^T\)</span> and must therefore have zeros on its diagonal and have components <span class="math notranslate nohighlight">\(a_{ij} = -a_{ji}\)</span>; for example, such a matrix and its transpose is</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}\displaystyle\begin{bmatrix} 0 &amp; 2 &amp; 3 \\ -2 &amp; 0 &amp; 4 \\-3 &amp; -4 &amp; 0  \end{bmatrix}^T= \begin{bmatrix} 0 &amp; -2 &amp; 3\\2 &amp; 0 &amp; -4\\ 3 &amp; 4 &amp; 0\end{bmatrix}=-\begin{bmatrix} 0 &amp; 2 &amp; 3 \\ -2 &amp; 0 &amp; 4 \\-3 &amp; -4 &amp; 0  \end{bmatrix}\end{split}\]</div>
+\[\begin{split}\displaystyle\begin{bmatrix} 0 &amp; 2 &amp; 3 \\ -2 &amp; 0 &amp; 4 \\-3 &amp; -4 &amp; 0  \end{bmatrix}^{\,T}= \begin{bmatrix} 0 &amp; -2 &amp; 3\\2 &amp; 0 &amp; -4\\ 3 &amp; 4 &amp; 0\end{bmatrix}=-\begin{bmatrix} 0 &amp; 2 &amp; 3 \\ -2 &amp; 0 &amp; 4 \\-3 &amp; -4 &amp; 0  \end{bmatrix}\end{split}\]</div>
 <p>When two matrices are multiplied, then the transpose reorders the matrix multiplication because rows are converted into columns and vice versa. This means that</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle (\pmb{AB})^T=\pmb{B}^T\pmb{A}^T\]</div>
@@ -2023,17 +2031,30 @@ Some properties are</p>
 <h2>4.7 Adjoint matrix, <span class="math notranslate nohighlight">\(\pmb{M}^\dagger\)</span><a class="headerlink" href="#adjoint-matrix-pmb-m-dagger" title="Permalink to this headline">#</a></h2>
 <p>This grand sounding name simply means</p>
 <p><span class="math notranslate nohighlight">\(\qquad\qquad\)</span><em>’Form the complex conjugate, then transpose the matrix or vice versa’</em></p>
-<p>The special symbol <span class="math notranslate nohighlight">\(\dagger\)</span> is conventionally used as a superscript. The effect of the adjoint operation is</p>
+<p>The special symbol <span class="math notranslate nohighlight">\(\dagger\)</span> is conventionally used as a superscript, e.g.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle  \pmb M=\begin{bmatrix} 1&amp;0&amp;0\\0&amp;0&amp;w\\0&amp;w^2&amp;0 \end{bmatrix},\qquad \pmb M^\dagger=\begin{bmatrix} 1&amp;0&amp;0\\0&amp;0&amp;w^{*2}\\0&amp;w^*&amp;0 \end{bmatrix}\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(w\)</span> is complex. The effect of the adjoint operation is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \pmb{M}^\dagger = (\pmb{M}^*)^T=(\pmb{M}^T)^*\]</div>
+<p>Other properties are, where <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> are matrices and <span class="math notranslate nohighlight">\(\lambda\)</span> a (complex) number,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle (\pmb{A}^\dagger)^\dagger=\pmb{A},\qquad (\pmb{A}^\dagger)^{-1}=(\pmb{A}^{-1})^\dagger, \quad (\lambda\pmb{A})^\dagger=\lambda^*\pmb{A}^\dagger\]</div>
+<div class="math notranslate nohighlight">
+\[\displaystyle (\pmb{A}+\pmb{B})^\dagger=\pmb{A}^\dagger+\pmb{B}^\dagger,\qquad  (\pmb{A}\pmb{B})^\dagger=\pmb{B}^\dagger\pmb{A}^\dagger,\quad |\pmb A^\dagger|=|\pmb A|^*\]</div>
 <p>In quantum mechanics, the adjoint is always used to convert a ‘ket’ into a ‘bra’ and vice versa, see Chapter 8.</p>
+<p>(Warning: In pure mathematics, in particular, the adjoint is defined differently as the transposed matrix of cofactors and call our adjoint the conjugate transpose or the Hermitian adjoint.)</p>
 </section>
 <section id="hermitian-or-self-adjoint-matrix-pmb-m-dagger-pmb-m">
 <h2>4.8 Hermitian or self-adjoint matrix <span class="math notranslate nohighlight">\(\pmb{M}^\dagger=\pmb{M}\)</span><a class="headerlink" href="#hermitian-or-self-adjoint-matrix-pmb-m-dagger-pmb-m" title="Permalink to this headline">#</a></h2>
 <p>In these matrices the diagonals are real and the off-diagonals <span class="math notranslate nohighlight">\(a_{i,j} = a_{j,i}^*\)</span>. The Pauli spin matrices of quantum mechanics are Hermitian; for example</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle \pmb{\sigma}_2=\begin{bmatrix} 0 &amp; i \\ -i &amp; 0\end{bmatrix}\end{split}\]</div>
-<p>Taking the transpose then the complex conjugate produces a matrix that is clearly the same as <span class="math notranslate nohighlight">\(\pmb{\sigma}_2\)</span>. If the Hermitian matrix is real, which means that it contains only real numbers, then it must be symmetric.</p>
+<p>Taking the transpose then the complex conjugate produces a matrix that is clearly the same as <span class="math notranslate nohighlight">\(\pmb{\sigma}_2\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin{bmatrix} 0 &amp; i \\ -i &amp; 0\end{bmatrix}^T=\begin{bmatrix} 0 &amp; -i \\ i &amp; 0\end{bmatrix}\quad\text{then}\quad
+\begin{bmatrix} 0 &amp; -i \\ i &amp; 0\end{bmatrix}^*=\begin{bmatrix} 0 &amp; i \\ -i &amp; 0\end{bmatrix}\end{split}\]</div>
+<p>If the Hermitian matrix is real, which means that it contains only real numbers, then it must be symmetric.</p>
 <p>In quantum mechanics, a matrix containing the integrals that evaluate to expectation values is always a real Hermitian matrix whose eigenvalues are real and eigenvectors orthogonal, but not necessarily normalized.</p>
 <p>An <em>anti-Hermitian</em> matrix is defined as <span class="math notranslate nohighlight">\(\pmb{M}^\dagger = -\pmb{M}\)</span>.</p>
 </section>
@@ -2051,16 +2072,24 @@ Some properties are</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle\begin{bmatrix} a &amp; 0 &amp; 0 \\ 0 &amp; b &amp; 0 \\0 &amp; 0 &amp; c  \end{bmatrix}^{-1}= \begin{bmatrix} 1/a &amp; 0 &amp; 0\\0 &amp; 1/b &amp; 0\\ 0 &amp; 0 &amp; 1/c\end{bmatrix}\end{split}\]</div>
 <p>and this is used in the calculation of vibrational normal modes.</p>
+<p>The rotation matrix is often needed when using molecular point groups</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \pmb M_R=\begin{bmatrix} \cos(\theta)&amp;\sin(\theta) &amp;0\\ -\sin(\theta)&amp;\cos(\theta) &amp;0\\0&amp;0&amp;1\end{bmatrix}\end{split}\]</div>
+<p>has the inverse</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \pmb M_R^{-1}=\begin{bmatrix} \cos(\theta)&amp;-\sin(\theta) &amp;0\\ \sin(\theta)&amp;\cos(\theta) &amp;0\\0&amp;0&amp;1\end{bmatrix}\end{split}\]</div>
+<p>as can be seen by showing that <span class="math notranslate nohighlight">\(\pmb M_R\pmb M_R^{-1}=\pmb 1\)</span>.</p>
 </section>
 <section id="singular-matrix-determinant-pmb-m-0">
 <h2>4.10 Singular matrix, determinant <span class="math notranslate nohighlight">\(|\pmb{M}|=0\)</span><a class="headerlink" href="#singular-matrix-determinant-pmb-m-0" title="Permalink to this headline">#</a></h2>
 <p>The determinant is zero and the matrix has no inverse. This is not the same as the null matrix, <span class="math notranslate nohighlight">\(\pmb{0}\)</span>. Odd sized <span class="math notranslate nohighlight">\(n \times n\)</span>, anti-symmetric matrices are singular, see section 4.6.</p>
 </section>
-<section id="unitary-matrix-pmb-m-dagger-pmb-m-1-or-pmb-m-dagger-pmb-m-pmb-1-and-pmb-m-1">
-<h2>4.11 Unitary matrix <span class="math notranslate nohighlight">\(\pmb M^\dagger = \pmb M^{-1}\)</span> or <span class="math notranslate nohighlight">\(\pmb {M}^\dagger \pmb{M} = \pmb{1}\)</span> and <span class="math notranslate nohighlight">\( |\pmb {M} | = 1\)</span><a class="headerlink" href="#unitary-matrix-pmb-m-dagger-pmb-m-1-or-pmb-m-dagger-pmb-m-pmb-1-and-pmb-m-1" title="Permalink to this headline">#</a></h2>
-<p>Two examples of unitary matrices are  <span class="math notranslate nohighlight">\(\displaystyle \quad\begin{bmatrix} 0 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 1\\1 &amp; 0 &amp; 0 \end{bmatrix}\)</span>,</p>
+<section id="unitary-matrix-pmb-m-dagger-pmb-m-1-or-pmb-m-dagger-pmb-m-pmb-1-or-pmb-m-pmb-m-dagger-pmb-1-and-pmb-m-1">
+<h2>4.11 Unitary matrix <span class="math notranslate nohighlight">\(\pmb M^\dagger = \pmb M^{-1}\)</span> or <span class="math notranslate nohighlight">\(\pmb {M}^\dagger \pmb{M} = \pmb{1}\)</span> or <span class="math notranslate nohighlight">\(\pmb {M} \pmb{M}^\dagger = \pmb{1}\)</span> and <span class="math notranslate nohighlight">\( |\pmb {M} | = 1\)</span><a class="headerlink" href="#unitary-matrix-pmb-m-dagger-pmb-m-1-or-pmb-m-dagger-pmb-m-pmb-1-or-pmb-m-pmb-m-dagger-pmb-1-and-pmb-m-1" title="Permalink to this headline">#</a></h2>
+<p>A matrix is unitary if its adjoint is equal to its inverse and all unitary matrices must be square.</p>
+<p>An example of a unitary matrix is  <span class="math notranslate nohighlight">\(\displaystyle \quad\begin{bmatrix} 0 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 1\\1 &amp; 0 &amp; 0 \end{bmatrix}\)</span>,</p>
 <p>which has the determinant <span class="math notranslate nohighlight">\(0(0 - 1) - 1(0 - 1) + 0(0 - 0) = 1\)</span>,</p>
-<p>and the rotation matrix</p>
+<p>The rotation matrix is also unitary.</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle \begin{bmatrix} \cos(\theta) &amp; \sin(\theta)  \\ -\sin(\theta) &amp; \cos(\theta)  \end{bmatrix} \qquad\qquad\text{(3)}\end{split}\]</div>
 <p>whose determinant is unity because <span class="math notranslate nohighlight">\(\sin^2(\theta)+\cos^2(\theta)=1\)</span>.</p>
@@ -2099,7 +2128,7 @@ Some properties are</p>
 <p>Multiplying two <span class="math notranslate nohighlight">\(2 \times 2\)</span> matrices produces</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle \begin{align} \begin{bmatrix} a_{11} &amp; a_{12} \\ a_{21} &amp; a_{22} \end{bmatrix} \times \begin{bmatrix} b_{11} &amp; b_{12} \\ b_{21} &amp; b_{22} \end{bmatrix} 
-&amp;=\begin{bmatrix}row(1)\cdot col(1) &amp; row(1)\cdot col(2)\\ row(2)\cdot col(1)&amp; row(2)\cdot col(2)\end{bmatrix}\\
+&amp;=\begin{bmatrix}row(1)\cdot col(1) &amp; row(1)\cdot col(2)\\ row(2)\cdot col(1)&amp; row(2)\cdot col(2)\end{bmatrix}\\\\
 &amp;=\begin{bmatrix} a_{11}b_{11}+a_{12}b_{21} &amp; a_{11}b_{12}+a_{12}b_{22} \\ a_{21}b_{11}+a_{22}b_{21} &amp; a_{21}b_{12}+a_{22}b_{22} \end{bmatrix}\end{align}\end{split}\]</div>
 <p>and it is useful to look at the pattern of elements where you can see the <span class="math notranslate nohighlight">\(\pmb{A}\)</span> matrix in the pattern of <span class="math notranslate nohighlight">\(a\)</span>’s and columns in <span class="math notranslate nohighlight">\(\pmb{B}\)</span> appear as rows in the sums. If the matrices are not square, multiplying a <span class="math notranslate nohighlight">\(n \times  m\)</span> matrix by a <span class="math notranslate nohighlight">\(m \times r\)</span> one results in a <span class="math notranslate nohighlight">\(n \times r\)</span> matrix as shown above. The equation with which to calculate the (row - column) <span class="math notranslate nohighlight">\(ij^{th}\)</span> element of any matrix multiplication is</p>
 <div class="math notranslate nohighlight">
@@ -2116,13 +2145,13 @@ Some properties are</p>
 <p>where <span class="math notranslate nohighlight">\(P = a_{11}b_1 + a_{12}b_2 + a_{13}b_3\)</span> and <span class="math notranslate nohighlight">\(R = a_{21}b_1 + a_{22}b_2 + a_{23}b_3\)</span>.</p>
 <p>Suppose there are three matrices <span class="math notranslate nohighlight">\(\pmb{ABC}\)</span>, then the safest rule to follow is to left-multiply <span class="math notranslate nohighlight">\(\pmb{C}\)</span> by
 <span class="math notranslate nohighlight">\(\pmb{B}\)</span> first, then to left-multiply the result by <span class="math notranslate nohighlight">\(\pmb{A}\)</span>. The same rule is applied to several matrices; start at the right and work to the left. However, by the associative rule, Section 4.1, as long as the order <span class="math notranslate nohighlight">\(\pmb{ABCD}\)</span> is maintained, this product can be multiplied in any order.</p>
-<p>The diagrams in Fig. 7 show, diagrammatically, the result of multiplying differently shaped matrices. The ‘bra-ket’ notation is shown also.</p>
+<p>The diagrams in Fig. 7 show, diagrammatically, the result of multiplying differently shaped matrices. Only these multiplications are defines. The ‘bra-ket’ notation is shown also.</p>
 <p><img alt="Drawing" src="../_images/matrices-fig7a.png" /></p>
 <hr class="docutils" />
 <p><img alt="Drawing" src="../_images/matrices-fig7b.png" /></p>
 <hr class="docutils" />
 <p><img alt="Drawing" src="../_images/matrices-fig7c.png" /></p>
-<p>Figure 7. Pictorial representation of matrix multiplication. The bra-ket notation used in quantum mechanics is shown on the right.  The dot product is also called the <em>inner product</em>.</p>
+<p>Figure 7. Pictorial representation of allowed matrix multiplication. Only these four types of multiplications are possible. The bra-ket notation used in quantum mechanics is shown also.  The dot product is also called the <em>inner product</em>.</p>
 </section>
 <hr class="docutils" />
 <section id="matrix-sum">
@@ -2315,8 +2344,26 @@ by a unit column vector. For example</p>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>  <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span>
 <span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">]])</span>
-
-<span class="n">np</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>     <span class="c1"># matrix multiply</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;a and b&#39;</span><span class="p">)</span>
+<span class="n">a</span><span class="p">,</span><span class="n">b</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a and b
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([[1, 3],
+        [5, 1]]),
+ array([[4, 1],
+        [2, 2]]))
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>     <span class="c1"># matrix multiply</span>
 </pre></div>
 </div>
 </div>
@@ -2342,7 +2389,7 @@ by a unit column vector. For example</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">*</span> <span class="n">b</span>               <span class="c1"># this is not matrix multiply but element by element multiply </span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">*</span> <span class="n">b</span>               <span class="c1"># this is NOT matrix multiply but element by element multiply </span>
 </pre></div>
 </div>
 </div>

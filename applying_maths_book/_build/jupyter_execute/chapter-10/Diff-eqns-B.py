@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # 9 First order eqn's & Integrating factors. Second order eqn's, Newton's laws, equations of motion.
+# # 9 First order equations & Integrating factors. Second order equations, Newton's laws and equations of motion.
 
 # In[1]:
 
@@ -195,6 +195,49 @@ factor(ans)
 
 # ## 10 Second-order differential equations
 # 
+# In the next few sections equations of the general mathematical form 
+# 
+# $$\displaystyle  \frac{d^2y}{dx^2} = \pm f(y)$$
+# 
+# are solved where the $\pm f(y)$ is some function of $y$. In simple harmonic motion, for example, $f(y)= y$. The solution always involves exponentials or sines/cosines depending on the boundary conditions needed. 
+# 
+# There are different ways of solving differential equations as illustrated in the next few sections, but a general method of solution is detailed in section 12 using the 'D operator' method and is briefly outlined here. 
+# 
+# A second-order equation for illustration is,
+# 
+# $$\displaystyle \frac{d^2y}{dx^2} + ay = 0$$
+# 
+# The differential is replaced by the differential operator, $\displaystyle D=\frac{dy}{dx},\;D^2=\frac{d^2y}{dx^2}  $ and so the equation becomes,
+# 
+# $$\displaystyle D^2 + ay = 0$$
+# 
+# Next we hypothesize that the equation is satisfied by exponential functions such as $\displaystyle y = e^{kx}$ where $k$ is a constant to be determined. The way to find $k$ is to substitute the guessed answer into the equation $\displaystyle (D^2 + a)e^{kx} = 0$ and evaluate, viz.,
+# 
+# $$\displaystyle (D^2 +a)e^{kx} =(k^2 +a)e^{kx} = 0$$ 
+# 
+# Next evaluate $k$ via the _auxiliary equation_  which in this case is
+# 
+# $$\displaystyle k^2 + a = 0 $$
+# 
+# which has roots of $k_1 = +\sqrt{-a}=i\sqrt{a} $ and $k_2 = -\sqrt{-a}=-i\sqrt{a}$. As there are two roots the solution is thus the sum of two exponentials 
+# 
+# $$\displaystyle y = Ae^{i\sqrt{a}x} + Be^{-i\sqrt{a}x}$$
+# 
+# where $A$ and $B$ are arbitrary constants determined by the initial conditions. As the equation has effectively been integrated twice two lots of initial conditions are needed, for example at $x = 0, y = y_0$ and also, say,  $dy/dx = 0$ (called a _reflecting_ boundary condition) thus $y_0 = A+B$ and $0 = iA\sqrt{a}-iB\sqrt{a}$ or $A=B$ forming 
+# 
+# $$\displaystyle y = \frac{y_0}{2}\left(e^{i\sqrt{a}x} + e^{-i\sqrt{a}x}\right)$$
+# 
+# and as the exponentials are complex this solution can be converted into a cosine as
+# 
+# $$\displaystyle y = y_0\cos(\sqrt{a}x)$$
+# 
+# as a check differentiate twice, $\displaystyle \frac{d^2y}{dx^2} = -y_0a\cos(\sqrt{a}x)=-ay$.
+# 
+# If the boundary conditions were $x = 0, y = y_0$ and when $x=L, y=0$ (an _absorbing_ boundary condition) where $L$ is some particular value, then $y_0=A+B$ and $\displaystyle 0=Ae^{i\sqrt{a}L}+Be^{-i\sqrt{a}L}$from which $A,B$ can be determined. The result can be expressed as a ratio of exponentials or cosines in $x$ and $x-L$.
+# 
+# 
+# 
+
 # ## 10.1 Newton's laws and differential equations describing motion
 # 
 # Differential equations dominate the study of the motion of the planets and of molecules. In single molecules or in ensembles of them, molecular dynamics calculations rely on solving many simultaneous equations according to Newton's laws of motion, linked to potentials describing intermolecular interactions. 
@@ -419,10 +462,10 @@ simplify(ans)
 # 
 # ![Drawing](diffeqn-fig11b.png)
 # 
-# Fig 11b Classical and quantised probability in a harmonic potential.
+# Fig 11a Classical and quantised probability in a harmonic potential.
 # __________
 # The figure shows the classical probability together with a harmonic potential such as for a diatomic molecule. The potential has a force constant of $172$ N/m and the first quantised energy level is shown at energy $E_1$. The square of the wavefunction is also shown. The classical probability extends only as far as the turning points at energy $E_1$. The difference between the probabilities is quite considerable not in their overall size but in their shape. The classical probability cannot extend past the turning point, but the quantised probability does so quite considerably. At large quantum numbers, e.g. $20$ the wavefunction has more probability close to the turning points, than in the middle of the potential and so resembles the classical behaviour a little more closely.
-# 
+
 # ## 10.6 Springs
 # 
 # Problems with springs often state that the spring has a weight attached, which causes the spring to extend by a certain amount. It is then extended or compressed by a further amount and let go. The equation of motion is then sought.
@@ -452,6 +495,26 @@ simplify(ans)
 # 
 # As $\displaystyle \omega^2 = k/m$ the total energy, the sum of the potential and kinetic terms, is $\displaystyle E=\frac{k}{2}A^2$ which is a constant.
 
+# ## 10.8 Simple harmonic motion with a constant force
+# 
+# If a particle is attracted to the origin of set of coordinates, and subject to a further constant force $W$, the equation of motion takes the form based on equation (13),
+# 
+# $$\displaystyle m\frac{d^2x}{dt^2}=f(x)+W$$
+# 
+# If a spring is displaced, then the force is $f(x) = -kx$ at extension $x$, and the equation of motion is 
+# 
+# $$\displaystyle  m\frac{d^2x}{dt^2}=-kx+W$$
+# 
+# If this is re-written as $\displaystyle \frac{d^2x}{dt^2} = -\omega^2x+\frac{W}{m}$ and then as,
+# 
+# $$\displaystyle  \frac{d^2}{dt^2}\left(x-\frac{W}{m\omega^2}  \right) +\omega^2\left(x-\frac{W}{m\omega^2}  \right)=0$$
+# 
+# then it has the form of (13) with a displacement about a new equilibrium position $W/(m\omega ^2)$ rather than zero. This is understandable since a constant force is applied to the mass which must displace it by a constant average amount even though it is oscillating. The position at time $t$ is therefore obtained directly from equation (20) as
+# 
+# $$\displaystyle x-\frac{W}{m\omega^2}=\frac{\nu_0}{\omega}\sin(\omega t)+x_0\cos(\omega t)$$
+# 
+# if $x_0$ and $\nu_0$ are the initial position and velocity. The frequency $\omega$ is the same whether the constant force is present or not.
+
 # ## 11 The simple pendulum
 # 
 # The pendulum will consist of a light rigid rod with a mass $m$ at its end; the pivot holding the pendulum is frictionless and no air or other resistance hinders the motion. The variable $\varphi$ is the angle in radians away from the vertical; Fig. 11. It is found that the pendulum's angular frequency is 
@@ -466,7 +529,7 @@ simplify(ans)
 # 
 # ![Drawing](diffeqn-fig11.png)
 # 
-# Fig. 11 The geometry used to calculate the forces acting on the pendulum.
+# Fig. 11b The geometry used to calculate the forces acting on the pendulum.
 # ____
 # 
 # Equating forces produces, $\displaystyle mL\frac{d^2\varphi }{dt^2}=-mg\sin(\varphi)$ which, by cancelling the mass and substituting for $\omega$, produces the equation of motion
@@ -500,44 +563,201 @@ simplify(ans)
 # $$\displaystyle I \frac{d^2\theta}{dt^2} = - k\theta/L$$
 # 
 # where $I$ is the moment of inertia of the mass about its point of suspension. Henry Cavendish (Philosophical Transactions, 1798, v 17 p 469, Royal Society London) used a torsional pendulum in his famous experiment to measure the gravitational constant. 
-# 
+
 # ## 11.2 Inverted pendulum: unstable equilibrium
 # 
 # In the normal pendulum, acceleration is towards the vertical or origin of the motion. In the inverted pendulum with a rigid rod instead of a wire, acceleration is away from the vertical and the motion is unstable. The equation of motion for small displacements from the vertical, is similar to that of the pendulum but with a positive sign on the right-hand side of the equation,
 # 
-# $$\displaystyle \frac{d^2x}{dt^2}=n^2x  \qquad\tag{22}$$
+# $$\displaystyle \frac{d^2\varphi}{dt^2}=n^2\varphi  \qquad\tag{22}$$
 # 
-# and $n$ is a constant. The horizontal component of the thrust outwards is $mgx/L$, provided $x$ is small; the constant is therefore $n^2 = g/L$. The solution for angular position is
+# and $n$ is a constant. The horizontal component of the thrust outwards is $mgx/L$, provided $\varphi$ is small; the constant is therefore $n^2 = g/L$. The solution for angular position is
 # 
 # $$\displaystyle \varphi = Ae^{nt}+Be^{-nt} \qquad\tag{23}$$
 # 
-# where $A$ and $B$ are constants determined by the initial conditions. The general method of solution is given in Section 4.3. If the initial position is $x_0$ and velocity $\nu_0$, then $\varphi_0 = A + B$ and $\nu_0 = n(A - B)$. Changing the exponentials into hyperbolic sinh and cosh and substituting for the constants gives 
+# where $A$ and $B$ are constants determined by the initial conditions. The general method of solution is given in Section 12, ('D' operator method). If the initial position is $x_0$ and velocity $\nu_0$, then $\varphi_0 = A + B$ and $\nu_0 = n(A - B)$. Changing the exponentials into hyperbolic sinh and cosh and substituting for the constants gives 
 # 
 # $$\displaystyle \varphi=\varphi_0\cosh(nt)+\frac{\nu_0}{n}\sinh(nt)$$
 # 
 # which may be compared with equation 21.
-# 
-# ## 11.3 Simple harmonic motion with a constant force
-# 
-# If a particle is attracted to the origin of set of coordinates, and subject to a further constant force $W$, the equation of motion takes the form based on equation (13),
-# 
-# $$\displaystyle m\frac{d^2x}{dt^2}=f(x)+W$$
-# 
-# If a spring is displaced, then the force is $f(x) = -kx$ at extension $x$, and the equation of motion is 
-# 
-# $$\displaystyle  m\frac{d^2x}{dt^2}=-kx+W$$
-# 
-# If this is re-written as $\displaystyle \frac{d^2x}{dt^2} = -\omega^2x+\frac{W}{m}$ and then as,
-# 
-# $$\displaystyle  \frac{d^2}{dt^2}\left(x-\frac{W}{m\omega^2}  \right) +\omega^2\left(x-\frac{W}{m\omega^2}  \right)=0$$
-# 
-# then it has the form of (13) with a displacement about a new equilibrium position $W/(m\omega ^2)$ rather than zero. This is understandable since a constant force is applied to the mass which must displace it by a constant average amount even though it is oscillating. The position at time $t$ is therefore obtained directly from equation (20) as
-# 
-# $$\displaystyle x-\frac{W}{m\omega^2}=\frac{\nu_0}{\omega}\sin(\omega t)+x_0\cos(\omega t)$$
-# 
-# if $x_0$ and $\nu_0$ are the initial position and velocity. The frequency $\omega$ is the same whether the constant force is present or not.
 
-# ## 11.4 Particle in a one-dimensional box
+# ## 11.3 Torsional Oscillations in ethene
+# 
+# The ethylene molecule can undergo torsional motion whereby the double bond twists and so each CH$_2$ group oscillates with respect to the other. Naturally, single bonds also do this but to a much greater extent such that complete rotation of a group is possible. We shall examine just the small angle torsional oscillations of a double bond and calculate the motion using classical equations of motion. This section follows the method used in chapter V of Cohen-Tannoudji, Diu, & Laloë, 'Quantum mechanics'. 
+# 
+# The potential for the motion of the CH$_2$ is provided by the double bond and by comparison with other molecules, such as the inversion of ammonia we shall suppose that the potential has the form
+# 
+# $$\displaystyle V(\alpha)=\frac{V_0}{2}\left(1-\cos(2\alpha)\right)$$
+# 
+# where $\alpha=\alpha_1-\alpha_2$ and $\alpha_1,\alpha_2$ are the angles each CH$_2$ relative to a fixed plane as shown in the figure. $V_0$ is the maximum potential energy at $\alpha =90^\text{o}$. 
+# 
+# 
+# ![Drawing](diffeqn-fig11cc.png)
+# 
+# Fig 11c. Definition of angles used to define the CH$_2$ -CH$_2$ torsional motion in ethene. The horizontal line 
+# is a fixed reference plane. The whole molecule rotates about an axis going into the page. The angle $\alpha=\alpha_1-\alpha_2$, the extent of the torsional motion is $-\alpha/2\to \alpha/2$. 
+# 
+# ___________________
+# 
+# The twisting motion is about the C=C bond where $I$ is the moment of inertia of a CH$_2$ group. The force on one CH$_2$ is found from Newton's law and equating this to the derivative of the potential gives for each CH$_2$ group
+# 
+# $$\displaystyle I\frac{d^2\alpha_1}{dt^2}=-\frac{d}{d\alpha_1}V(\alpha_1-\alpha_2)$$
+# 
+# $$\displaystyle I\frac{d^2\alpha_2}{dt^2}=-\frac{d}{d\alpha_2}V(\alpha_1-\alpha_2)$$
+# 
+# The derivative wrt $\alpha_2$ is the negative of that for $\alpha_1$ by function-of-a-function when when the potential depends on $(\alpha_1-\alpha_2$). To see that this is the case the particular derivatives wrt $\alpha_{1,2}$ are  
+# 
+# $$\displaystyle \begin{align} -\frac{d}{d\alpha_1}V(\alpha_1-\alpha_2)&= -V_0\sin(\alpha_1-\alpha_2)=-\frac{dV(\alpha)}{d\alpha}\\ -\frac{d}{d\alpha_2}V(\alpha_1-\alpha_2)&= V_0\sin(\alpha_1-\alpha_2)=\frac{dV(\alpha)}{d\alpha}\end{align}$$ 
+# 
+# making the equations of motion 
+# 
+# $$\displaystyle I\frac{d^2\alpha_1}{dt^2}=-\frac{dV(\alpha)}{d\alpha}, \qquad  I\frac{d^2\alpha_2}{dt^2}=\frac{dV(\alpha)}{d\alpha}$$
+# 
+# adding produces
+# 
+# $$\displaystyle I\frac{d^2}{dt^2}(\alpha_1+\alpha_2)=0\tag{23a}$$
+# 
+# and subtracting
+# 
+# $$\displaystyle I\frac{d^2\alpha}{dt^2}=-2\frac{d}{d\alpha}V(\alpha)\tag{23b}$$
+# 
+# where $\alpha=\alpha_1-\alpha_2$.
+# 
+# The first equation 23a, shows that the molecule rotates freely about the C-C axis as a whole body because there is no force restricting it. The angle $\alpha_1+\alpha_2$ increases continually as time increases as may be seen by integrating 23a twice, producing $\alpha_1+\alpha_2=c_0t+c_1$ where the $c$'s are constants. The second equation has the same form as that for a simple pendulum, eqn 17. Notice that there is no coupling between the whole body rotation and the  torsional motion, therefore one motion does not affect the other. If there were coupling eqn 23a would equal zero.
+# 
+# In ethene the maximum potential restricting twisting the double bond is very large compared to room temperature thermal energy and this will mean that motion is restricted to the bottom of the potential. In this case the cosine can be expanded as $\cos(2\alpha)=1-2x^2+\cdots$ and the potential becomes $V(\alpha)\sim V_0\alpha^2$ and
+# 
+# $$\displaystyle \frac{d^2\alpha}{dt^2}=-\frac{4V_0}{I}\alpha$$
+# 
+# where the torsion frequency is $\displaystyle \omega=2\sqrt{\frac{V_0}{I}}$ by comparison with eqn. 17. A solution is $\alpha=A\sin(\omega t+B)$ where $A,B$ are constants determined by initial conditions such as $\alpha=0,t=0$ and $d\alpha/dt=\omega_0, t=0$, where $\omega_0$ is the initial torsion frequency.
+
+# ## 11.4 The Cable equation. Voltage change in a Cell
+# 
+# The biological cell consists of a bilayer membrane, made mainly of phospholipids, encapsulating the cytoplasm. The membrane also contains various proteins that connect the inner cytoplasm to the outside of the cell. The cytoplasm is a gel-like substance that is highly conductive, unlike the membrane itself, because it contains various ions, as well as organelles, such as the mitochondria. Some cells, such as in muscles and nerves, can be stimulated to act by an electrical potential. When this potential travels along a cell it acts to trigger cellular events. 
+# 
+# The Cable model of the cell has been borrowed and simplified from a similar one of a telegraph cable first worked out by Kelvin in the 1850's. In this model the central core (the cytoplasm) has high conductivity and so low electrical resistance and the membrane low conductivity and high resistance, thus current can flow along the cell quickly with but only slowly is this lost via ions passing through ion-channel proteins in the membrane itself. The analogy with a telegraph wire is clear, the wire itself has low resistance to current flow but some small leakage to ground must also occur through any partial insulation, such as at the receivers or telegraph pole connections or through the air. Sometimes the comparison with a leaky hosepipe is also made.
+# 
+# The resistance can be used to compare the current flow in the cytoplasm and in the membrane. In the cytoplasm the *resistivity* $r_c$ is defined as resistance per unit length of cable and so has units $\Omega$/cm, and the resistivity of current flowing through the membrane $r_m$ is the resistance of a unit length of the membrane in $\Omega$ m. This means that the resistance is reduced as a membrane's length increases because we divide by length to obtain the resistance.  The physical reason is that there are more pores to allow current to flow through the longer the membrane is. Conversely, the cytoplasm resistance increases with length, as expected as current flows through more substance. The resistivity has units of $\Omega$/m so this is multiplied by length to obtain the resistance. The membrane also has capacitance $C_m$, (unit F/m=(C/V)/m) and the capacitance increases with length as there will be more ions with opposite charge on either side of the membrane as the length increases. 
+# 
+# ![Drawing](diffeqn-fig11dd.png)
+# 
+# Fig 11d. Schematic of the cable/cell
+# __________
+# 
+# To calculate the potential vs time and distance, the current flowing through the cell membrane is first calculated. This has two parts, current due to the capacitance of the membrane and that due to its resistance. The membrane has capacitance as it has a different overall charge on the inner and outer surfaces with a dielectric in between, i.e. the long alkyl chains of the lipid. The nature of capacitance is such that it does not pass a  current when the potential is constant but only when this changes. The current due to resistance is determined by Ohm's Law. These two terms for the current at a position $x\to x+dx$ are
+# 
+# $$\displaystyle i_m(x)=C_m\frac{\partial V}{\partial t} + \frac{V}{r_m}$$
+# 
+# Now it remains to find $i_m(x)$, which has units amp/metre. As current is not created of destroyed, that at a position $x$ flowing through the membrane must be equal to the difference in that in the cell cytoplasm entering at $x$ and that leaving at $x+\delta x$ where $\delta x$ is small. The current through the membrane over length $\delta x$ is therefore
+# 
+# $$\displaystyle i_m(x) = i(x)-i(x+\delta x)$$
+# 
+# Ohm's law ($V=iR$) relates the current and voltage, thus the current at position $x$ in the cytoplasm is
+# 
+# $$\displaystyle i(x) = \frac{1}{r_c}(V(x-\delta x)-V(x))$$
+# 
+# see figure 11d, and
+# 
+# $$\displaystyle i(x+\delta x) = \frac{1}{r_c}(V(x)-V(x+\delta x))$$
+# 
+# subtracting these produces 
+# 
+# $$\displaystyle i_m(x) =\frac{1}{r_c}(V(x-\delta x)-2V(x)+V(x-\delta x)) $$
+# 
+# 
+# This expression is the second derivative, and this most easily shown by expanding $V(x\pm \delta x)$ as Taylor series (see Chapter 5). Using $V',V''$ to indicate the first and second derivatives respectively the expansions are,
+# 
+# $$\displaystyle V(x+\delta x)=V(x)+\delta xV'(x)+\delta x^2V''(x)/2!+\cdots $$
+# 
+# $$\displaystyle V(x-\delta x)=V(x)-\delta xV'(x)+\delta x^2V''(x)/2!-\cdots $$
+# 
+# and adding gives
+# 
+# $$\displaystyle V(x+\delta x)+V(x-\delta x)=2V(x)+\delta x^2V''(x)+\cdots $$
+# 
+# and higher derivatives are ignored because $\delta x $ is very small and $\delta x^4$ even smaller. In the limit that $\delta x\to 0$ the derivative is formed, 
+# 
+# $$\displaystyle i_m(x) =\frac{1}{r_c}\frac{\partial^2V}{\partial x^2} $$
+# 
+# and partial derivatives are used because $V$ is a function of both $x$ and $t$.
+# 
+# 
+# Equating both equations for $i_m$ produces the Cable equation after a little rearranging
+# 
+# $$\displaystyle \frac{r_m}{r_c}\frac{\partial^2V}{\partial x^2}-V=r_mC_m\frac{\partial V}{\partial t} $$
+# 
+# This equation can be simplified for the purposes of analysis, with the substitutions $\displaystyle \gamma = t/\tau$. where the decay lifetime is defined as  $\tau= r_mC$ seconds and distances in  $u=x/\lambda$, where $\lambda = \sqrt{r_m/r_c}$ metres, hence $\lambda$ is a measure of how far the potential spreads, and is called a length constant.
+# 
+# $$\displaystyle \frac{\partial^2 V}{\partial u^2}-V=\frac{\partial V}{\partial \gamma}$$ 
+# 
+# The steady state is described next but the time dependence is found in section 15.8 after full solutions to the equation and other similar ones are worked out. At steady state after all transients have died away $\partial V/\partial \gamma=0$ and so
+# 
+# $$\displaystyle \frac{\partial^2 V}{\partial u^2}- V=0$$
+# 
+# To solve this equation for $V$ integration must occur twice, two constants are thus needed. The boundary conditions are used to find these and they are applied after the general solution is found.  Using the 'D' operator method  outlined at the start of section 10 and in more detail in section 12, gives
+# 
+# $$\displaystyle D^2 - V = 0$$
+# 
+# and if a solution is $V=e^{ku}$ the auxiliary equation is formed from $(D^2-1)e^{ku}=0$ which gives values for $k$ by solving
+# 
+# $$\displaystyle k^2 - 1 = 0 $$
+# 
+# thus $k=\pm 1$ and the general solution is  
+# 
+# $$\displaystyle V=Ae^{-u}+Be^{u}$$
+# 
+# which is 
+# 
+# $$\displaystyle V=Ae^{-x/\lambda}+Be^{x/\lambda}$$
+# 
+# where $A,B$ are constants determined by using the boundary conditions.
+# 
+# ### **Infinite length cable**
+# 
+# If the cell (cable) is of infinite length then the potential will be zero at its end, so one condition is $x=\infty, V=0$ and the other is an initial voltage $V_0$ imposed by an electrode placed at $u=0$ .
+# 
+# At $x=0,\;V=V_0$ then $V_0 = A + B$ and when $x=\infty,\; V = 0$ giving $0=B\cdot \infty$ therefore $B=0$ and the solution is
+# 
+# $$\displaystyle V=V_0e^{-x/\lambda}$$
+# 
+# which clearly shows how the potential decays away from one end with $\lambda$ as its characteristic parameter, just as the lifetime does in the first order decay of a species.
+# 
+# ### **Finite length**
+# 
+# In a finite length cable of length $L$ but open at its end, the boundary conditions are changed to $V=0, x=L$, called an absorbing boundary condition and an electrode again causes a potential $V_0$ at $x=0$. 
+# 
+# Returning to the general solution gives 
+# 
+# $$\displaystyle V_0=A+B \quad \text{and} \quad 0=Ae^{-L/\lambda}+Be^{L/\lambda}$$
+# 
+# from which $A,B$ are calculated as $B=V_0/(1-e^{2L/\lambda}),\; A=-V_0e^{2L/\lambda}/(1-e^{2L/\lambda})$ giving
+# 
+# $$\displaystyle V=\frac{V_0}{1-e^{2L/\lambda}}\left(- e^{(2L-x)/\lambda} + e^{x/\lambda}  \right)=\frac{V_0}{e^{L/\lambda}-e^{-L/\lambda}}\left( e^{(L-x)/\lambda} - e^{-(L-x)/\lambda } \right)$$
+# 
+# This result can also be expressed as a ratio of sinh functions as $\displaystyle V=V_0\frac{\sinh((L-u)/\lambda)}{\sinh(L/\lambda)}$,
+# 
+# At $x=0$, $V=V_0$ as it should, and at large $x\to L$ the potential tends to zero, because $\left( e^{L-x} - e^{-(L-x) } \right)\to 0$.
+# 
+# ### **Sealed Cable**
+# 
+# If the cable is sealed at its end and has length $L$, then one initial condition must be that the gradient of the potential is zero at $x=L$, and again $x=0,V=V_0$ is imposed by an electrode. The derivative being zero produces $dV/dx=0=-Ae^{-x/\lambda}+Be^{x/\lambda}$ and so $Ae^{-x/\lambda}=Be^{x/\lambda}$. Working this through produces almost the same result as for the finite cable but with two sign changes.
+# 
+# $$\displaystyle V=\frac{V_0}{e^{L/\lambda}+e^{-L/\lambda}}\left( e^{(L-x)/\lambda} + e^{-(L-x)/\lambda } \right)$$
+# 
+# This result can also be expressed as a ratio of cosh functions $V=V_0\cosh((L-u)/\lambda)/\cosh(L/\lambda)$. 
+# 
+# At $x=0$, $V=V_0$ as it should, and at large $L$ and when $x\to L$ and $e^L/\lambda \gg e^{-L/\lambda}$ the potential tends to $2e^{-L/\lambda}$ which clearly becomes smaller and tends to zero as $L$ increases.
+# 
+# The shape of the solutions for the last two situations are not clear to visualise except that we know that they start at $V_0$ and tend to a smaller value at larger $u$, but they are easily plotted. The result is shown in figure 11d.  As expected, because of $e^L/\lambda$ in the denominator the potential becomes very similar and small as $L$ is increased.
+# 
+# 
+# ![Drawing](diffeqn-fig11d.png)
+# 
+# Figure 11e. Steady state voltage along a cable/cell with different boundary conditions.
+# 
+# _________
+# 
+
+# ## 11.5 Particle in a one-dimensional box
 # 
 # Two quantum mechanical problems that can easily be solved using the methods just described are a particle (electron, proton, C60) in a one-dimensional box and a particle on a ring. Both involve integrating the Schroedinger equation, as must always be the case in quantum mechanics, but because the potential energy is zero the equations are considerably simpler than, say, that for the hydrogen atom or the harmonic oscillator. The one-dimensional Schroedinger equation in its general form is
 # 
@@ -557,7 +777,7 @@ simplify(ans)
 # 
 # $$\displaystyle \psi_n = \alpha \sin\left(\frac{n\pi x}{L} \right)$$
 # 
-# When $n$ = 0 then $\psi = 0$, which is not a physically acceptable solution. Positive and negative integers $n$ each produce acceptable solutions, but they are not independent of one another; therefore $n = 1, 2, 3, \cdots$ are used to give unique solutions. As the sine function is periodic, increasing $n$ means that waves with smaller periods can fit into the same box; the $n^{th}$ wavefunction has $n$ − 1 nodes between the walls, the lowest wavefunction having no nodes is just half a sine wave.
+# When $n = 0$ then $\psi = 0$, which is not a physically acceptable solution. Positive and negative integers $n$ each produce acceptable solutions, but they are not independent of one another; therefore $n = 1, 2, 3, \cdots$ are used to give unique solutions. As the sine function is periodic, increasing $n$ means that waves with smaller periods can fit into the same box; the $n^{th}$ wavefunction has $n - 1$ nodes between the walls, the lowest wavefunction having no nodes is just half a sine wave.
 # 
 # The constant $\alpha$ can be obtained by using the normalization condition $\displaystyle N^2\int_0^L \psi_n^*\psi_n dx = 1$ and then $N = 2/L$ . The normalized wavefunctions are
 # 
@@ -585,10 +805,10 @@ simplify(ans)
 # 
 # ![Drawing](diffeqn-fig11a.png)
 # 
-# Figure 11a. Energy levels and wavefunctions for a particle in a box. The mass used was that for an electron and the box is $1$ nm in length. Notice how the energy levels move apart as $n$ increases and how the number of nodes in the wavefunction also increases. A one dimensional box very approximately simulates a linear polyene, such as octatetraene.
+# Figure 11f. Energy levels and wavefunctions for a particle in a box. The mass used was that for an electron and the box is $1$ nm in length. Notice how the energy levels move apart as $n$ increases and how the number of nodes in the wavefunction also increases. A one dimensional box very approximately simulates a linear polyene, such as octatetraene.
 # _________
 # 
-# ## 11.5 The Rigid Rotor and a Particle on a Ring
+# ## 11.6 The Rigid Rotor and a Particle on a Ring
 # 
 # If the distance between two atoms is fixed, or if a particle is constrained to move on a circle, then the Schroedinger equation takes a simple form and the equation is essentially the same as for a harmonic oscillator. To describe motion in more than one dimension, the Schroedinger equation has coordinates in $x$ and $y$ if two dimensional, or $x$, $y$, and $z$ if the motion is three dimensional. Ratner & Schatz (2001) give a clear description of this problem and others in quantum mechanics relevant to Chemistry.
 # 
@@ -637,3 +857,50 @@ simplify(ans)
 # The quantum numbers are $k = 0, \pm 1, \pm 2, \cdots$ and as the lowest value is zero, this means that the minimum energy is zero and the rotor is stationary. As $k \ne 0$ can be positive or negative it indicates that the rotor moves to the right or left and that these levels are each doubly degenerate. 
 # 
 # As the lowest energy is zero it initially suggests that the Heisenberg uncertainty principle $\Delta \theta \Delta p \ge \hbar/2$ is not obeyed. However, when $J = 0$ the wavefunction is a constant, $1/ (2\pi)$, so we cannot know what angle the rotor has and this means that $\Delta \theta \Delta p  \ne 0$. 
+
+# ## 11.6 Bernoulli Principle, fluid flow in a pipe
+# 
+# The density of a flowing liquid is generally constant as the pressure changes and when this is so the liquid is considered to be *incompressible*. If a liquid flows towards a narrowing in a pipe, then the static pressure of the liquid is higher in the wider part of the pipe and the flow is slow, whereas in its narrow part the flow is increased and the static pressure reduced. This is called Bernoulli's Principle.
+# 
+# ![Drawing](diffeqn-fig11c.png)
+# 
+# Figure 11g. Sketch showing Bernoulli's Principle.
+# ___________
+# 
+# Bernoulli's equation can be derived using Newton's $2^{nd}$ law of motion. Suppose that the pipe is horizontal, so the effect of gravity can be ignored, and a small volume of liquid of length $dx$ is flowing at speed $v=dx/dt$. The pipe has a cross-sectional area $A$ and the liquid  has the same density $\rho$ at all points and is $\rho=m/Adx$ so that the mass of liquid in volume $Adx$ is $m=\rho Adx$. The pressure change over length $dx$ is $dp$. The force on the volume is therefore $f=-Adp$ because pressure is force/area$. Using Newton's second law; force equals mass times acceleration,
+# 
+# $$\displaystyle f=m\frac{d^2x}{dt^2}=m\frac{dv}{dt}$$
+# 
+# substituting for force and mass gives
+# 
+# $$\displaystyle -Adp=\rho Adx\frac{dv}{dt}, \qquad\to\qquad -\frac{dp}{dx}=\rho \frac{dv}{dt}$$
+# 
+# To proceed further it is now necessary to deal with the derivative in time. This can be done as velocity is distance/time. Rewriting the acceleration gives
+# 
+# $$\displaystyle \frac{dv}{dt}=\frac{dv}{dx}\frac{dx}{dt}=\frac{dv}{dx}v=\frac{d}{dx}\left(\frac{v^2}{2}\right)$$
+# 
+# and by substituting produces
+# 
+# $$\displaystyle -\frac{dp}{dx}=\rho \frac{d}{dx}\left(\frac{v^2}{2}\right)$$
+# 
+# which rearranges to 
+# 
+# $$\displaystyle\frac{d}{dx}\left(\frac{\rho}{2}v^2+p\right)=0$$
+# 
+# and when integrated gives the Bernoulli equation,
+# 
+# $$\displaystyle \frac{v^2}{2}+\frac{p}{\rho}=C$$
+# 
+# where $C$ is a constant that depends on the particular fluid used. We can see from this equation that Bernoulli's principle is obeyed because when the pressure is high the speed must be low and vice versa because $\displaystyle v^2/2+p/\rho$ is a constant. 
+# 
+# If there is a difference in height $z$ in the flow then
+# 
+# $$\displaystyle \frac{v^2}{2}+gz+\frac{p}{\rho}=C$$
+# 
+# where $g$ is the acceleration due to gravity and is the general form of the equation. 
+
+# In[ ]:
+
+
+
+

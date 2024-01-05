@@ -117,6 +117,8 @@
 # Benjamin Franklin    1-13.3
 #  
 # Bernoulli equation    10-9.4
+# 
+# Bernoulli Principle    10-11.7
 #  
 # Best plane    6-15.6
 #  
@@ -169,6 +171,8 @@
 # Brownian motion    10-12.1
 #  
 # Butadiene    6-14,   7-3
+# 
+# Cable equation     10-11.3,    10-15.7
 #  
 # Calculating the structure factors    9-13.8
 #  
@@ -1128,9 +1132,9 @@
 #  
 # Particle in a gravitational potential    10-18.2
 #  
-# Particle in a one-dimensional box    5-8.2,   10-11.4,   10-15.3
+# Particle in a one-dimensional box    5-8.2,   10-11.5,   10-15.3
 #  
-# Particle on a Ring    7-8,   10-11.4,   10-11.5,   10-15.4
+# Particle on a Ring    7-8,   10-11.6,   10-15.4
 #  
 # Particular integral    1-9.1,   5-5,   5-5.3,   5-6.10,   10-12.1,   10-12.5 to  10-12.9
 #  
