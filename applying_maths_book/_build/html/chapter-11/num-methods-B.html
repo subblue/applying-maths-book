@@ -51,6 +51,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -409,7 +411,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-4/integration-F.html">
-     10 Multiple integrals
+     10 Multiple integrals, Change of variables: Jacobians
     </a>
    </li>
    <li class="toctree-l2">
@@ -1006,7 +1008,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-G.html">
-     16 PDE continued. Diffusion, wave eqn., Schroedinger eqn., Fourier method, Transient grating.
+     16 PDE continued. Diffusion, Wave and Schroedinger eqns. Solution by the Fourier method. Transient grating.
     </a>
    </li>
    <li class="toctree-l2">
@@ -1576,6 +1578,20 @@ title="Print to PDF"
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#adding-a-reaction">
+     <strong>
+      Adding a reaction
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#stability">
+     <strong>
+      Stability
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#initial-conditions">
      <strong>
       Initial Conditions
@@ -1592,14 +1608,30 @@ title="Print to PDF"
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#crank-nicholson-method">
-   4.12 Crank-Nicholson Method
+  <a class="reference internal nav-link" href="#d-diffusion-in-a-plate">
+   4.12 2D diffusion in a plate.
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#d-diffusion-in-a-plate">
-   4.13 2D diffusion in a plate.
+  <a class="reference internal nav-link" href="#crank-nicholson-method-the-time-dependent-schroedinger-equation">
+   4.13 Crank-Nicholson Method. The time-dependent Schroedinger equation
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#wavepacket-motion">
+     <strong>
+      Wavepacket motion
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#wavepacket-animation">
+     <strong>
+      Wavepacket Animation
+     </strong>
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -1686,6 +1718,20 @@ title="Print to PDF"
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#adding-a-reaction">
+     <strong>
+      Adding a reaction
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#stability">
+     <strong>
+      Stability
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#initial-conditions">
      <strong>
       Initial Conditions
@@ -1702,14 +1748,30 @@ title="Print to PDF"
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#crank-nicholson-method">
-   4.12 Crank-Nicholson Method
+  <a class="reference internal nav-link" href="#d-diffusion-in-a-plate">
+   4.12 2D diffusion in a plate.
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#d-diffusion-in-a-plate">
-   4.13 2D diffusion in a plate.
+  <a class="reference internal nav-link" href="#crank-nicholson-method-the-time-dependent-schroedinger-equation">
+   4.13 Crank-Nicholson Method. The time-dependent Schroedinger equation
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#wavepacket-motion">
+     <strong>
+      Wavepacket motion
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#wavepacket-animation">
+     <strong>
+      Wavepacket Animation
+     </strong>
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -2150,23 +2212,58 @@ The MD simulation proceeds by calculating the forces between pairs of particles 
 <div class="math notranslate nohighlight">
 \[\displaystyle \frac{dC}{dt}=D\frac{d^2C}{dx^2}+ \text{rate expression} \qquad\tag{31a}\]</div>
 <p>where <span class="math notranslate nohighlight">\(C\)</span> is the concentration of some species and <span class="math notranslate nohighlight">\(D\)</span> the diffusion constant. The rate expression has the form <span class="math notranslate nohighlight">\(k[C][\cdots]\)</span> where <span class="math notranslate nohighlight">\(k\)</span> is a rate constant multiplied, as appropriate for the chemistry, by concentrations. In heat flow problems the concentration is replaced by temperature and the diffusion coefficient by thermal diffusivity, both have dimensions of length<span class="math notranslate nohighlight">\(^2\)</span>/time. Initially we shall ignore the rate expression term and deal with a single diffusing species in one dimension but suppose that the initial concentration has an interesting spatial profile.</p>
-<p>To tackle the calculation suppose that there is a grid of points in <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(t\)</span> over which the calculation is being performed, see figure 10a. The derivatives are calculated as differences by assuming small increments in <span class="math notranslate nohighlight">\(t\)</span> and <span class="math notranslate nohighlight">\(x\)</span>. The values are <span class="math notranslate nohighlight">\(\Delta x = 1/(m-1)\)</span> for a grid of <span class="math notranslate nohighlight">\(i=0\cdots m \)</span> points and similarly for time <span class="math notranslate nohighlight">\(\Delta t = 1/(n-1)\)</span> with <span class="math notranslate nohighlight">\(j= 0\cdots  n\)</span> points. The total length is <span class="math notranslate nohighlight">\(L = m\Delta x\)</span>, and total time <span class="math notranslate nohighlight">\(T_{max} = n\Delta t\)</span>. The approximation to the first derivatives are simple differences which approximate the true derivative when these differences are exceedingly small</p>
+<p>To tackle the calculation suppose that there is a grid of points in <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(t\)</span> over which the calculation is being performed, see figure 10a. The derivatives are calculated as differences by assuming small increments in <span class="math notranslate nohighlight">\(t\)</span> and <span class="math notranslate nohighlight">\(x\)</span>. The values are <span class="math notranslate nohighlight">\(\Delta x = 1/(m-1)\)</span> for a grid of <span class="math notranslate nohighlight">\(k=0\cdots m \)</span> points and similarly for time <span class="math notranslate nohighlight">\(\Delta t = 1/(n-1)\)</span> with <span class="math notranslate nohighlight">\(j= 0\cdots  n\)</span> points. The total length is <span class="math notranslate nohighlight">\(L = m\Delta x\)</span>, and total time <span class="math notranslate nohighlight">\(T_{max} = n\Delta t\)</span>. The approximation to the first derivatives are simple differences which approximate the true derivative when these differences are exceedingly small</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle \frac{dC}{dt}\approx \frac{C_i^{j+1}-C_i^j }{\Delta t} \]</div>
+\[\displaystyle \frac{dC}{dt}\approx \frac{C_k^{j+1}-C_k^j }{\Delta t} \]</div>
 <div class="math notranslate nohighlight">
-\[\displaystyle \frac{dC}{dx}\approx \frac{C_{i+1}^{j}-C_i^j}{\Delta x} \]</div>
+\[\displaystyle \frac{dC}{dx}\approx \frac{C_{k+1}^{j}-C_k^j}{\Delta x} \]</div>
 <p>where subscript <span class="math notranslate nohighlight">\(i\)</span> is a spatial index with step <span class="math notranslate nohighlight">\(\Delta x\)</span> and superscript <span class="math notranslate nohighlight">\(j\)</span> a time position index with step <span class="math notranslate nohighlight">\(\Delta t\)</span>. This arrangement is equivalent to the Euler approximation which is the simplest of various such schemes. Other more sophisticated schemes are Heun’s method (a modification of Euler) and  Runge-Kutta, see section 4.</p>
-<p>The second derivative  is calculated as two further terms and the approximation to the diffusion equation becomes</p>
-<div class="math notranslate nohighlight">
-\[\displaystyle \frac{C_i^{j+1}-C_i^j}{\Delta t}=\frac{D}{\Delta x}\left(\frac{C_{i+1}^j-C_i^j}{\Delta x}-\frac{C_i^j-C_i^{j-1}}{\Delta x} \right)\]</div>
-<p>This can be rearranged into a new form</p>
-<div class="math notranslate nohighlight">
-\[\displaystyle C_i^{new} = C_i^{old} + \frac{D\Delta t}{(\Delta x)^2}\left(  C_{i+1}^{old}-2C_i^{old} +C_{i-1}^{old}  \right) \qquad\tag{31b} \]</div>
-<p>where <span class="math notranslate nohighlight">\(new=j+1\)</span> and <span class="math notranslate nohighlight">\(old=j\)</span> so that each new concentration term requires 3 older terms at different spatial positions. This type of approach is called a Fully Implicit Method. The stencil shows the points used in the calculation, fig 10a.</p>
+<p>The stencil below shows the points used in the calculation, fig 10a.</p>
 <p><img alt="Drawing" src="../_images/num-methods-fig10a.png" /></p>
 <p>Figure 10a. The Stencil used to calculate the updating points.</p>
 <hr class="docutils" />
-<p>The condition for absolute stability depends on both the spatial and temporal steps and is <span class="math notranslate nohighlight">\(\displaystyle \frac{D\Delta t}{(\Delta x)^2} \le 1/2\)</span> and  making <span class="math notranslate nohighlight">\(m\)</span> bigger (more spatial grid points) is the only way to ensure absolute stability since the spatial extent is defined in the initial conditions pertaining to the problem at hand and <span class="math notranslate nohighlight">\(\Delta t\)</span>c depend on <span class="math notranslate nohighlight">\(\delta x\)</span>.</p>
+<p>The second derivative  is calculated as two further terms and the approximation to the diffusion equation becomes</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{C_k^{j+1}-C_k^j}{\Delta t}=\frac{D}{\Delta x}\left(\frac{C_{k+1}^j-C_k^j}{\Delta x}-\frac{C_k^j-C_k^{j-1}}{\Delta x} \right)\]</div>
+<p>This can be rearranged into a new form</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle C_k^{new} = C_k^{old} + \frac{D\Delta t}{(\Delta x)^2}\left(  C_{k+1}^{old}-2C_k^{old} +C_{k-1}^{old}  \right) \qquad\tag{31b} \]</div>
+<p>where <span class="math notranslate nohighlight">\(new=j+1\)</span> and <span class="math notranslate nohighlight">\(old=j\)</span> so that each new concentration term requires 3 older terms at different spatial positions. This type of approach is called a Fully Implicit Method.</p>
+<p>The equation can also be put into  a matrix form as</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} 
+\begin{bmatrix}
+C_0^{j+1}\\
+C_1^{j+1}\\
+\vdots\\
+C_{m-1}^{j+1}
+\end{bmatrix} = 
+\begin{bmatrix}
+1-2\sigma &amp; +\sigma &amp; 0 &amp; 0 &amp; \dots\\
++\sigma &amp; 1-2\sigma &amp; +\sigma &amp;0 &amp;   \\
+&amp;  \vdots&amp; &amp; &amp;\\
+ &amp; \cdots &amp;+\sigma &amp; 1-2\sigma &amp;+\sigma \\
+&amp;  &amp;\cdots &amp;+\sigma &amp; 1-2\sigma 
+\end{bmatrix} 
+\begin{bmatrix}
+C_0^{j}\\
+C_1^{j}\\
+\vdots\\
+C_{m-1}^{}
+\end{bmatrix}
+\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\sigma =D\Delta t/\Delta x^2\)</span>. The tri-diagonal matrix contains the values at each old concentration at spatial position <span class="math notranslate nohighlight">\(k+1,k\)</span> and <span class="math notranslate nohighlight">\(k-1\)</span>. Computationally the matrix multiply may be slower than using the direct calculation particularly so if array slicing is used, i.e. <span class="math notranslate nohighlight">\(c[1:-1]\)</span> etc. as in algorithm 13a below.</p>
+<section id="adding-a-reaction">
+<h3><strong>Adding a reaction</strong><a class="headerlink" href="#adding-a-reaction" title="Permalink to this headline">#</a></h3>
+<p>A reaction is added by including a term such as <span class="math notranslate nohighlight">\(kC^i_j\)</span> to the right hand side of the equation. In the calculation of a transient decay, illustrated below this could be the decay of the excited state produced thus <span class="math notranslate nohighlight">\(k\)</span> would be the excited state decay rate constant.</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle C_k^{new} = C_k^{old} + \frac{D\Delta t}{(\Delta x)^2}\left(  C_{k+1}^{old}-2C_k^{old} +C_{k-1}^{old}  \right)  - k\Delta tC_k^{old}\]</div>
+<p>and this could be added into the matrix form as an extra term but only in the diagonal as <span class="math notranslate nohighlight">\(k\Delta t/\sigma\)</span>.</p>
+</section>
+<section id="stability">
+<h3><strong>Stability</strong><a class="headerlink" href="#stability" title="Permalink to this headline">#</a></h3>
+<p>The condition for absolute stability depends on both the spatial and temporal steps and is <span class="math notranslate nohighlight">\(\displaystyle \frac{D\Delta t}{(\Delta x)^2} \le 1/2\)</span> and making more spatial grid points is the only way to ensure absolute stability since the spatial extent is defined in the initial conditions pertaining to the problem at hand.</p>
+</section>
 <section id="initial-conditions">
 <h3><strong>Initial Conditions</strong><a class="headerlink" href="#initial-conditions" title="Permalink to this headline">#</a></h3>
 <p>As with the solution of any differential equation  the calculation cannot be completed until the initial conditions have been specified. There are two types of these. The simplest to apply is to fix the value of <span class="math notranslate nohighlight">\(C\)</span> at the edge of the grid to a constant value, the Dirichlet condition, the other is to make the gradient at the edge a constant value, Neumann condition. The former is more suitable for thermal calculations where the edges can be kept at a constant temperature. It would be hard to make a membrane that held the same chemical species at a higher concentration on one side than the other.</p>
@@ -2175,24 +2272,25 @@ The MD simulation proceeds by calculating the forces between pairs of particles 
 \[\displaystyle \frac{dC}{dx}=\alpha\quad \text{at}\quad x = 0\]</div>
 <div class="math notranslate nohighlight">
 \[\displaystyle \frac{dC}{dx}=\beta\quad\text{at}\quad x= L\]</div>
-<p>where <span class="math notranslate nohighlight">\(\alpha,\;\beta\)</span> are constants. This condition ensures conservation of mass as no material can enter or leave and is enabled by making <span class="math notranslate nohighlight">\(C_0= C_1, C_m = C_{m-1}\)</span> at each updating step.  The same condition when dealing with thermal diffusion corresponds to having an insulated block of material unable to exchange energy with its surroundings.</p>
+<p>where <span class="math notranslate nohighlight">\(\alpha,\;\beta\)</span> are constants. This condition ensures conservation of mass as no material can enter or leave and is enabled by making <span class="math notranslate nohighlight">\(C_0 = C_1, C_m = C_{m-1}\)</span> at each updating step.  The same condition when dealing with thermal diffusion corresponds to having an insulated block of material unable to exchange energy with its surroundings.</p>
 </section>
 <section id="example-calculation-decay-of-transient-grating-see-also-chapter-10-18-5">
 <h3><strong>Example Calculation: Decay of Transient Grating. ( See also chapter 10-18.5 )</strong><a class="headerlink" href="#example-calculation-decay-of-transient-grating-see-also-chapter-10-18-5" title="Permalink to this headline">#</a></h3>
-<p>In the transient grating experiment a laser pulse is split into two parts and recombined in a sample and so produces a grating from which a probe laser can be diffracted. The grating dies away depending on excited state lifetime and linear and rotational diffusion. See Chapter 10.10 for a digram and details.</p>
-<p>an initial concentration of <span class="math notranslate nohighlight">\(C\)</span> has to be present at zero time which means defining <span class="math notranslate nohighlight">\(C \gt 0\)</span> and the form the concentration profile will take vs. position <span class="math notranslate nohighlight">\(x\)</span>.  For illustration we assume this profile is the function  <span class="math notranslate nohighlight">\(a+b\cos(kx)\)</span>. This has the form expected in a transient grating experiment, which can be used to measure the diffusion coefficient of electronically excited states.  In these type of experiments a polarised laser pulse is split into two parts and recombined in a solution containing molecules that will absorb this light. As the beams are from the same source they are ‘in phase’ and will interfere at the sample producing strips of excited molecules separated by strips of unexcited ones. This grating is ‘transient’ because molecules diffuse and also because the excited states decay away. A third probe laser is used to scatter light off the transient grating and measures how quickly this decays away. In fluid solution rotational diffusion of the molecules primarily washes out the grating, whereas if this is not possible linear diffusion will do this but on a much longer time scale. A thermal grating may also be present if absorption is into a solid substrate.  Figure 30f in chapter 10 ( differential equations section 10) shows a possible experimental set-up.</p>
+<p>In the transient grating experiment a laser pulse is split into two parts and recombined in a sample and so produces a grating from which a probe laser can be diffracted. The grating dies away depending on excited state lifetime and linear and rotational diffusion. In solution rotational diffusion of a dye molecule is on the same time scale as the excited state decay of the dye and can thus be measured. See Chapter 10.10 for a diagram and details and H. Eichler, P. Gunter &amp; D. Pohl, ‘Laser induced Dynamic Gratings’, publ Springer-Verlag 1986.</p>
+<p>an initial concentration of <span class="math notranslate nohighlight">\(C\)</span> has to be present at zero time which means defining <span class="math notranslate nohighlight">\(C \gt 0\)</span> and the form the concentration profile will take vs. position <span class="math notranslate nohighlight">\(x\)</span>.  For illustration we assume this profile is the function  <span class="math notranslate nohighlight">\(a+b\cos(kx)\)</span>. This has the form expected in a transient grating experiment, which can be used to measure the rotational diffusion coefficient of electronically excited states.  In these type of experiments a polarised laser pulse is split into two parts and recombined in a solution containing molecules that will absorb this light. As the beams are from the same source they are ‘in phase’ and will interfere at the sample producing strips of excited molecules separated by strips of unexcited ones. This grating is ‘transient’ because molecules diffuse and also because the excited states decay away. A third probe laser is used to scatter light off the transient grating and measures how quickly this decays away. In fluid solution rotational diffusion of the molecules primarily washes out the grating, whereas if this is not possible linear diffusion will do this but on a much longer time scale. A thermal grating may also be present if absorption is into a solid substrate.  Figure 30f in chapter 10 ( differential equations section 10) shows a possible experimental set-up. In solution the diffracted beam decays due to the normal decay lifetime of the molecule and by rotational diffusion of a dye molecule washing out the grating. If the probe laser has its polarisation perpendicular to that forming the grating the decay has the form <span class="math notranslate nohighlight">\(\displaystyle \sim e^{-t/\tau}(1+4e^{-t/\tau_{r}}/5)\)</span> whee <span class="math notranslate nohighlight">\(\tau\)</span> is the excited state decay lifetime and <span class="math notranslate nohighlight">\(\tau_{r}\)</span> that due to rotational diffusion. If the probe is parallel to the polarisation of the laser forming the grating the decay is <span class="math notranslate nohighlight">\(\displaystyle \sim e^{-t/\tau}e^{-t/\tau_{r}}\)</span>.</p>
 <p>Before the calculation can start the dimensions in space and time have to be worked out. As a laser wavelength is measure in nanometres it seems sensible to use this as a unit of distance. The grating wavelength formed by the intersection of the two laser beams has wavelength <span class="math notranslate nohighlight">\(\Lambda=\lambda/2\cos(\theta/2)\)</span>. Using a <span class="math notranslate nohighlight">\(532\)</span> nm laser and an angle of <span class="math notranslate nohighlight">\(20\)</span> degrees between beams produces a value of <span class="math notranslate nohighlight">\(\Lambda \approx 46\)</span> nm. The initial grating will have the form <span class="math notranslate nohighlight">\(c_{00}+\cos(2kx)\)</span> where <span class="math notranslate nohighlight">\(x\)</span> is in nm and <span class="math notranslate nohighlight">\(k=\pi/\Lambda\)</span>. The population <span class="math notranslate nohighlight">\(c_{00}\)</span> is that in the sample where no grating is present but molecules are excited and we chose this to be (<span class="math notranslate nohighlight">\(c_{00}=2\)</span>). Outside the region where the grating is formed the concentration of excited molecules zero and as a result an area larger than the grating is used in the calculation. The reason for doing this is that as time progresses the excited molecules can diffuse into this unexcited area.</p>
 <p>The diffusion constant is normally quoted in units of <span class="math notranslate nohighlight">\(\mathrm{m^2\,s^{-1}}\)</span> which is changed into <span class="math notranslate nohighlight">\(\mathrm{nm^2\,ns^{-1}}\)</span> in the calculation meaning that the unit of time is nanoseconds. Because of the limit on the increments, which is that <span class="math notranslate nohighlight">\(\displaystyle \frac{D\Delta t}{(\Delta x)^2} \le 1/2\)</span>, the time step is calculated using this formula. A smaller value could be used if preferred. This means that only <span class="math notranslate nohighlight">\(\Delta x\)</span> need to be chosen and so the concentration plots below always have the same shape but correspond to different times if a different <span class="math notranslate nohighlight">\(\Delta x\)</span> is chosen. It is clear that if too large a value is chosen that the calculation fails, this is observed as oscillations and unrealistic behaviour in the concentration, and illustrates that great care has always to be exercised in choosing parameter values in numerical calculations.</p>
-<p>As a thought experiment we imagine that as time progresses the grating should become washed out which is what the calculation shows. If the calculation continues for a very long time then a constant population across the whole region is produced, but only if the Neumann limiting condition is applied, because no excited state decay was included and the total concentration is held constant.</p>
+<p>As a thought experiment we imagine that as time progresses the grating should become washed out which is what the calculation shows. If the calculation continues for a very long time then a constant population across the whole region is produced, but only if the Neumann limiting condition is applied because this limiting condition ensures that the total concentration is held constant. Naturally, if we allow the excited state to decay the population will fall in this way independently of diffusion.</p>
 <p>If a reaction such as <span class="math notranslate nohighlight">\(d[C]/dt =-k[C]\)</span> were to be included then the updating equation has the additional rate term,</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle C_i^{new} = C_i^{old} + \frac{D\Delta t}{(\Delta x)^2}\left(  C_{i+1}^{old}-2C_i^{old} +C_{i-1}^{old}  \right) -kC_i^{old}\Delta t \]</div>
+\[\displaystyle C_k^{new} = C_k^{old} + \frac{D\Delta t}{(\Delta x)^2}\left(  C_{k+1}^{old}-2C_k^{old} +C_{k-1}^{old}  \right) -kC_k^{old}\Delta t \]</div>
 <p>where <span class="math notranslate nohighlight">\(k\)</span> is the rate constant and <span class="math notranslate nohighlight">\(\Delta t\)</span> the time increment.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Algorithm 13a; 1D diffusion of a sinusoidal population as in a transient grating experiment</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Algorithm 13a.</span>
+<span class="c1"># 1D diffusion of a sinusoidal population as in a transient grating experiment</span>
 
-<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;font.size&#39;</span><span class="p">:</span> <span class="mi">14</span><span class="p">})</span>        <span class="c1"># set font size for plots</span>
 
 <span class="n">ax</span> <span class="o">=</span> <span class="p">[</span><span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">230</span> <span class="o">+</span> <span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">7</span><span class="p">)]</span>  <span class="c1"># make axes to plot</span>
@@ -2201,25 +2299,26 @@ The MD simulation proceeds by calculating the forces between pairs of particles 
 <span class="n">w</span>  <span class="o">=</span>   <span class="mi">20</span><span class="o">*</span><span class="n">Lambda</span>                              <span class="c1"># total calculation width as multiple of grating wavelength</span>
 <span class="n">nsteps</span> <span class="o">=</span> <span class="mi">5000</span>
 
-<span class="n">D</span>  <span class="o">=</span> <span class="mf">1e-8</span><span class="o">*</span><span class="mf">1e18</span><span class="o">/</span><span class="mf">1e9</span>                            <span class="c1"># diffusion cofff   m^2/s-&gt;1e18/1e9 nm^2/ns </span>
+<span class="n">D</span>  <span class="o">=</span> <span class="mf">1e-8</span><span class="o">*</span><span class="mf">1e18</span><span class="o">/</span><span class="mf">1e9</span>                            <span class="c1"># diffusion coeff   m^2/s-&gt;1e18/1e9 nm^2/ns </span>
 <span class="n">dx</span> <span class="o">=</span> <span class="mf">0.7</span>                                      <span class="c1"># step length nm</span>
 <span class="n">nx</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span> <span class="n">w</span><span class="o">/</span><span class="n">dx</span> <span class="p">)</span>                              <span class="c1"># total number of steps</span>
-<span class="n">dt</span> <span class="o">=</span> <span class="n">dx</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="n">D</span><span class="o">/</span><span class="mi">2</span>                                <span class="c1"># time step in nanosec </span>
-<span class="n">alphax</span> <span class="o">=</span> <span class="n">D</span><span class="o">*</span><span class="n">dt</span><span class="o">/</span><span class="n">dx</span><span class="o">**</span><span class="mi">2</span>                           <span class="c1"># constants </span>
+<span class="n">dt</span> <span class="o">=</span> <span class="n">dx</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="n">D</span><span class="o">/</span><span class="mi">4</span>                                <span class="c1"># time step in nanosec </span>
+<span class="n">sigma</span> <span class="o">=</span> <span class="n">D</span><span class="o">*</span><span class="n">dt</span><span class="o">/</span><span class="n">dx</span><span class="o">**</span><span class="mi">2</span>                            <span class="c1"># constants </span>
 
 <span class="n">c0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">nx</span><span class="p">,</span> <span class="n">dtype</span> <span class="o">=</span> <span class="nb">float</span><span class="p">)</span>              <span class="c1"># make arrays </span>
 <span class="n">c</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">nx</span><span class="p">,</span><span class="n">dtype</span> <span class="o">=</span> <span class="nb">float</span><span class="p">)</span>
 <span class="n">x</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">nx</span><span class="p">)</span>
 
-<span class="c1">#kk= 0.25e-1                                  # excited state decay </span>
-<span class="n">c00</span> <span class="o">=</span> <span class="mi">2</span>                                       <span class="c1"># value when no grating just two lasers</span>
+<span class="n">tau</span> <span class="o">=</span> <span class="mi">100</span>                                     <span class="c1"># excited state lifetime,  in update_step</span>
+<span class="n">kk</span>  <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="n">tau</span>                                   <span class="c1"># used as - kk*dt*c0[1:-1] in update step</span>
 <span class="n">q</span>   <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="mi">5</span><span class="o">*</span><span class="n">Lambda</span><span class="o">/</span><span class="n">dx</span><span class="p">)</span>                        <span class="c1"># start grating q, and  nx-q stop grating</span>
+<span class="n">c00</span> <span class="o">=</span> <span class="mi">2</span>                                       <span class="c1"># value when no grating just two lasers</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">q</span><span class="p">,</span><span class="n">nx</span><span class="o">-</span><span class="n">q</span><span class="p">):</span>
     <span class="n">c0</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">c00</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">/</span><span class="n">Lambda</span><span class="p">)</span>   <span class="c1"># initial sinusoidal profile  </span>
 
 <span class="c1">#--------------------</span>
-<span class="k">def</span> <span class="nf">update_step</span><span class="p">(</span><span class="n">c0</span><span class="p">):</span>     <span class="c1"># Propagate with forward-difference in time, central-difference in space</span>
-    <span class="n">c</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">c0</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">alphax</span><span class="o">*</span><span class="p">(</span><span class="n">c0</span><span class="p">[</span><span class="mi">2</span><span class="p">:]</span> <span class="o">-</span> <span class="mi">2</span><span class="o">*</span><span class="n">c0</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">c0</span><span class="p">[:</span><span class="o">-</span><span class="mi">2</span><span class="p">])</span>   <span class="c1">#  -kk*dt*c0[1:-1]</span>
+<span class="k">def</span> <span class="nf">update_step</span><span class="p">(</span><span class="n">c0</span><span class="p">,</span><span class="n">c</span><span class="p">):</span>     <span class="c1"># Propagate with forward-difference in time, central-difference in space</span>
+    <span class="n">c</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">c0</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">sigma</span><span class="o">*</span><span class="p">(</span><span class="n">c0</span><span class="p">[</span><span class="mi">2</span><span class="p">:]</span> <span class="o">-</span> <span class="mi">2</span><span class="o">*</span><span class="n">c0</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">c0</span><span class="p">[:</span><span class="o">-</span><span class="mi">2</span><span class="p">])</span>   <span class="o">-</span> <span class="n">kk</span><span class="o">*</span><span class="n">dt</span><span class="o">*</span><span class="n">c0</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
     <span class="n">c</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>    <span class="o">=</span> <span class="n">c</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>                            <span class="c1"># Neumann condition   dc/dt=const</span>
     <span class="n">c</span><span class="p">[</span><span class="n">nx</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">c</span><span class="p">[</span><span class="n">nx</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
     <span class="k">return</span> <span class="n">c</span>
@@ -2229,16 +2328,18 @@ The MD simulation proceeds by calculating the forces between pairs of particles 
 
 <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nsteps</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
-    <span class="n">c</span>  <span class="o">=</span> <span class="n">update_step</span><span class="p">(</span><span class="n">c0</span><span class="p">)</span>
+    <span class="n">c</span>  <span class="o">=</span> <span class="n">update_step</span><span class="p">(</span><span class="n">c0</span><span class="p">,</span><span class="n">c</span><span class="p">)</span>
     <span class="n">c0</span> <span class="o">=</span> <span class="n">c</span>                     <span class="c1"># make copy as starting data for next iteration</span>
     <span class="k">if</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">tsteps</span><span class="p">:</span>            <span class="c1"># plot only at these times</span>
         <span class="n">ax</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">/</span><span class="n">Lambda</span><span class="p">,</span><span class="n">c</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
         <span class="n">ax</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mf">3.15</span><span class="p">])</span>
         <span class="n">ax</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="n">w</span><span class="o">/</span><span class="n">Lambda</span><span class="p">])</span>
-        <span class="n">ax</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">20</span><span class="o">/</span><span class="n">Lambda</span><span class="p">,</span><span class="mf">2.5</span><span class="p">,</span><span class="nb">str</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:0.1f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">m</span><span class="o">*</span><span class="n">dt</span><span class="p">))</span><span class="o">+</span><span class="s1">&#39; ns&#39;</span><span class="p">)</span>
+        <span class="n">ax</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">20</span><span class="o">/</span><span class="n">Lambda</span><span class="p">,</span><span class="mf">2.5</span><span class="p">,</span><span class="nb">str</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:0.1f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">m</span><span class="o">*</span><span class="n">dt</span><span class="p">))</span><span class="o">+</span><span class="s1">&#39; ns&#39;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
         <span class="n">ax</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span><span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;dashed&#39;</span><span class="p">)</span>
         <span class="n">ax</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span><span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;dashed&#39;</span><span class="p">)</span>
         <span class="n">i</span><span class="o">=</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">c00</span><span class="p">,</span><span class="n">linewidth</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;grey&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">c00</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">m</span><span class="o">*</span><span class="n">dt</span><span class="o">/</span><span class="n">tau</span><span class="p">),</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;grey&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
@@ -2248,350 +2349,36 @@ The MD simulation proceeds by calculating the forces between pairs of particles 
 <img alt="../_images/num-methods-B_14_0.png" src="../_images/num-methods-B_14_0.png" />
 </div>
 </div>
+<p>Figure 10 b. This plot shows the grating amplitude decreasing due to diffusion, the total amount of excited state present is also reduced by excited state decay. In the last frame the upper horizontal line shows the initial amount when all the grating has decayed assuming no excited state decay, and the lower line the amount left as a result of the excited state decay, in this example <span class="math notranslate nohighlight">\(\tau=100\)</span>. The signal that would be diffracted of this grating thus decays as diffusion occurs and as the excited state decays.</p>
 </section>
 </section>
-<section id="crank-nicholson-method">
-<h2>4.12 Crank-Nicholson Method<a class="headerlink" href="#crank-nicholson-method" title="Permalink to this headline">#</a></h2>
-<p>The best method to perform 1D diffusion type calculations, including reaction-diffusion, is, according to Prest (Numerical Recipes), the Crank-Nicholson approach as it is second order in time and space. This method is still subject to numerical instability as are all numerical methods. The method is computationally more complex than the approach above. The method uses the stencil shown below and is based on using the trapezoidal rule to perform the integration.</p>
-<p><img alt="Drawing" src="../_images/num-methods-fig10c.png" /></p>
-<p>Figure 10c. Stencil for the Crank-Nicholson calculation. The top three values labelled with <span class="math notranslate nohighlight">\(j+1\)</span> are unknown.</p>
 <hr class="docutils" />
-<p>The differential equation is expanded in a manner similar to that of eqn. 31b but as better approximation is made to the second derivative. The result is</p>
-<div class="math notranslate nohighlight">
-\[\displaystyle \frac{C_i^{j+1}-C_i^j}{\Delta t}=\frac{D}{2(\Delta x)^2}\left(\left[C_{i+1}^{j+1}-2C_i^{j+1}+C_{i-1}^{j+1}\right] - \left[C_{i+1}^j-2C_i^j+C_{i-1}^j  \right ]\right)\]</div>
-<p>Any rate equations are added at the end of this scheme as  <span class="math notranslate nohighlight">\(-k[C][..]\Delta t+\cdots \)</span> etc.  The solution for a reaction scheme is given in the code below after the method is explained.</p>
-<p>To solve the equation it is far easier to convert it into matrix form. This means calculating all the spatial dimension terms before calculating in time. For clarity let</p>
-<div class="math notranslate nohighlight">
-\[\displaystyle \sigma =\frac{D\Delta t }{2(\Delta x)^2} \]</div>
-<p>and its not so obvious, but it becomes clear later on, that it helps to rewrite the equations by collecting terms in <span class="math notranslate nohighlight">\(C^{j+1}\)</span> and in <span class="math notranslate nohighlight">\(C^j\)</span> as</p>
-<div class="math notranslate nohighlight">
-\[\displaystyle -\sigma C_{i-1}^{j+1}+(1+2\sigma)C_i^{j+1}-\sigma C_{i+1}^{j+1} = \sigma C_{i-1}^{j}+(1-2\sigma)C_i^{j}+\sigma C_{i+1}^{j} + f(C_i^j)\Delta t  \qquad\tag{31c}\]</div>
-<p>where <span class="math notranslate nohighlight">\(f(C_i^j)\)</span> represent the rate equations. The tri-diagonal form the the equations can be seen in the <span class="math notranslate nohighlight">\(i-1,\, i,\,i+1\)</span> terms on either side of the equation. However, there is a problem with this because when <span class="math notranslate nohighlight">\(i,j=0\)</span>  there are points are outside the grid, <span class="math notranslate nohighlight">\(C_{-1}\)</span> for example. This can be overcome using the boundary condition that is discretized (under the Neumann condition) to be</p>
-<div class="math notranslate nohighlight">
-\[\displaystyle \frac{C_0^j-C_{-1}^j}{\Delta x}=0, \qquad \frac{C_m^j-C_{m-1}^j}{\Delta x}=0\]</div>
-<p>this leads to the conditions when <span class="math notranslate nohighlight">\(i=0\)</span> that</p>
-<div class="math notranslate nohighlight">
-\[\displaystyle C_0^j=C_{-1}^j, \; C_0^{j+1}=C_{-1}^{j+1}\]</div>
-<p>and when <span class="math notranslate nohighlight">\(i=m-1\)</span></p>
-<div class="math notranslate nohighlight">
-\[\displaystyle C_{m-1}^j=C_m^j, \; C_{m-1}^{j+1}=C_m^{j+1}\]</div>
-<p>The Neumann boundary condition of constant spatial gradient at the limits (in this example the gradient is zero)  prohibits material from entering or leaving across the boundaries; so it is a ‘no flux’ condition.</p>
-<p>To solve the equations we have to iterate in time but solve the equations above in spatial coordinates. The best way to do this is to solve for all <span class="math notranslate nohighlight">\(x\)</span> at a given time then increment time and repeat. Although it look very complex, the simplest approach is to transform the equations into matrix form. The concentrations (eqn 31c) can be put into matrix form by defining a column vector,</p>
-<div class="math notranslate nohighlight">
-\[\displaystyle C^J=\left[ C_0^j,C_1^j\cdots C_{m-1}^j \right]^T\]</div>
-<p>and then the ‘tri-diagonal’ matrices for the coefficients in eqn. 31c, including the boundary condition in the first and last rows, are</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\displaystyle \begin{align}&amp;\begin{bmatrix}
-1+\sigma &amp; -\sigma &amp; 0 &amp; 0 &amp;0&amp; 0\\
--\sigma &amp; 1+2\sigma &amp; -\sigma &amp;0 &amp; 0 &amp;0\\
-0 &amp; -\sigma &amp; 1+2\sigma &amp; -\sigma &amp; 0 &amp;0\\
-&amp; &amp; \vdots&amp; &amp; &amp;\\
- &amp; &amp;\cdots &amp;-\sigma &amp; 1+2\sigma &amp;-\sigma \\
-&amp; &amp; &amp;\cdots &amp;-\sigma &amp; 1+\sigma 
-\end{bmatrix} 
-\begin{bmatrix}
-C_0^{j+1}\\
-C_1^{j+1}\\
- \\
-\vdots\\
-C_{m-1}^{j+1}
-\end{bmatrix} =\\&amp; 
-\begin{bmatrix}
-1-\sigma &amp; +\sigma &amp; 0 &amp; 0 &amp;0&amp; 0\\
-+\sigma &amp; 1-2\sigma &amp; +\sigma &amp;0 &amp; 0 &amp;0\\
-0 &amp; +\sigma &amp; 1-2\sigma &amp; +\sigma &amp; 0 &amp;0\\
-&amp; &amp; \vdots&amp; &amp; &amp;\\
- &amp; &amp;\cdots &amp;+\sigma &amp; 1-2\sigma &amp;+\sigma \\
-&amp; &amp; &amp;\cdots &amp;+\sigma &amp; 1-\sigma 
-\end{bmatrix} 
-\begin{bmatrix}
-C_0^{j}\\
-C_1^{j}\\
- \\
-\vdots\\
-C_{m-1}^{}
-\end{bmatrix}
-+ 
-\begin{bmatrix}
-f(C_0^{j})\Delta t\\
-f(C_1^{j})\Delta t\\
- \\
-\vdots\\
-f(C_{m-1}^{j}\Delta t
-\end{bmatrix}\end{align}\end{split}\]</div>
-<p>and in matrix notation this is</p>
-<div class="math notranslate nohighlight">
-\[\displaystyle  \mathbf{A C}^{j+1} = \mathbf{B C}^{j} + \mathbf{F}\]</div>
-<p>Multiplying both sides by <span class="math notranslate nohighlight">\(\mathbf{A^{-1}}\)</span> gives</p>
-<div class="math notranslate nohighlight">
-\[\displaystyle  \mathbf{C}^{j+1} = \mathbf{A^{-1}}\left(\mathbf{B C}^{j} + \mathbf{F} \right)  \qquad\tag{31d}\]</div>
-<p>thus in the iteration scheme the <span class="math notranslate nohighlight">\(\mathbf A\)</span> matrix needs to be inverted once only which saves considerable effort. The matrix <span class="math notranslate nohighlight">\(\pmb F\)</span> contains the rate expressions. Time in the numerical model has index <span class="math notranslate nohighlight">\(j\)</span> so once initial values are determined, a loop with the matrix equation can be performed. Note that <span class="math notranslate nohighlight">\(\mathbf{A}^{-1}\)</span> and <span class="math notranslate nohighlight">\(\mathbf{B}\)</span> are constant in time so are evaluated once outside the time loop. Only the <span class="math notranslate nohighlight">\(f\)</span> and <span class="math notranslate nohighlight">\(\mathbf{C}\)</span> vectors vary in time.</p>
-<p>As an example we use the Michaelis-Menten scheme. <span class="math notranslate nohighlight">\(S\)</span> is the substrate,<span class="math notranslate nohighlight">\(E\)</span> the enzyme and <span class="math notranslate nohighlight">\(ES\)</span> the complex formed. The product into which the substrate is changed is <span class="math notranslate nohighlight">\(P\)</span>.  To generate the spatial dimension we shall suppose that the reactants are initially in separate microchannels at the end of which they form laminar flow with the enzyme between layers of substrate. The molecules  are able to mix by each diffusing into the other where they react. Naturally, there is an interplay between rate of diffusion and rate of reaction. Figure 10c shows a possible arrangement.</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\displaystyle \begin{align}  
-S+E &amp;\underset{k_-1}{\stackrel{k_1} \leftrightharpoons} ES\stackrel {k_2}\longrightarrow E+P\\
-\frac{d[E]}{dt} &amp;= -k_1[S][E] + (k_{-1}+k_2)[ES] \\
-\frac{d[S]}{dt} &amp;= -k_1[S][E] + k_{-1}[ES]\\
-\frac{d[ES]}{dt}&amp;= -(k_{-1} + k_2)[ES] + k_1[S][E] \\
-\frac{d[P]}{dt} &amp;=  k_2[ES] 
-\end{align}\end{split}\]</div>
-<p>The  terms to use in the diffusion  equation (equation <span class="math notranslate nohighlight">\(31a\)</span> )  are the right hand sides of the rate equations. And as we have four species there are four similar diffusion equations to be calculated. Clearly, the diffusion coefficient in the solvent used has to be known for each species as do all the rate constants.</p>
-<p><img alt="Drawing" src="../_images/num-methods-fig10d.png" /></p>
-<p>Figure 10d. Schematic for microchannel reaction. The reactants are in separate microchannels (grey) on the left which opens into a larger single channel. As they flow the fluids react and diffuse together.The entrance width of a channel is typically <span class="math notranslate nohighlight">\(50\)</span> microns. The enzyme is flowing down the centre of the channel (red). The measurement is made at different points across the channels corresponding to different times.</p>
-<hr class="docutils" />
-<p>The calculation is shown below. The initial concentrations are in the first two plots in the top line and the results at later times below these. The intermediate ES is shown in the third plot and the concentrations vs. time measured just in the narrow channel is shown below this.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Algorithm 13b Crank-Nicholson</span>
-
-<span class="c1"># reaction diffusion  Crank_Nicolson + chemistry</span>
-
-<span class="c1"># S+Ez &lt;=&gt; ES -&gt; Ez+P,  k1, (km1), k2 .   </span>
-<span class="c1"># dEz/dt = -k1.S.Ez + (km1+k2).ES, </span>
-<span class="c1"># dS/dt  =  -k1.S.Ez + km1.ES ,</span>
-<span class="c1"># dES/dt = -(k2+km1).ES + k1.S.Ez , </span>
-<span class="c1"># dU/dt  = D_u(d^2U/dx^2) - f(rate expression) for each species </span>
-<span class="c1"># use time in microsec , distances in micrometres.</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;font.size&#39;</span><span class="p">:</span> <span class="mi">14</span><span class="p">})</span>  <span class="c1"># set font size for plots</span>
-
-<span class="n">fig1</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>        <span class="c1"># set plot window and 2 rows 3 cols sub plots</span>
-<span class="n">ax0</span> <span class="o">=</span> <span class="n">fig1</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">ax1</span> <span class="o">=</span> <span class="n">fig1</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">ax2</span> <span class="o">=</span> <span class="n">fig1</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
-<span class="n">ax3</span> <span class="o">=</span> <span class="n">fig1</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
-<span class="n">ax4</span> <span class="o">=</span> <span class="n">fig1</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
-<span class="n">ax5</span> <span class="o">=</span> <span class="n">fig1</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">6</span><span class="p">)</span>
-<span class="c1">#-----------------------------------</span>
-<span class="k">def</span> <span class="nf">do_calc</span><span class="p">():</span>
-
-    <span class="c1">#---------</span>
-    <span class="k">def</span> <span class="nf">Ezvec</span><span class="p">(</span><span class="n">Ez</span><span class="p">,</span><span class="n">S</span><span class="p">,</span><span class="n">ES</span><span class="p">):</span>                                    <span class="c1"># vector for chemistry dEz/dt  </span>
-        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">J</span> <span class="p">):</span>
-            <span class="n">avec</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="n">k1</span><span class="o">*</span><span class="n">Ez</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="n">S</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="p">(</span><span class="n">km1</span><span class="o">+</span><span class="n">k2</span><span class="p">)</span><span class="o">*</span><span class="n">ES</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>      <span class="c1"># rate constants defined in outside.</span>
-        <span class="k">return</span> <span class="n">avec</span><span class="o">*</span><span class="n">dt</span>    
-    <span class="c1">#---------</span>
-    
-    <span class="k">def</span> <span class="nf">Svec</span><span class="p">(</span><span class="n">Ez</span><span class="p">,</span><span class="n">S</span><span class="p">,</span><span class="n">ES</span><span class="p">):</span>                                     <span class="c1"># chemistry dS/dt  </span>
-        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">J</span> <span class="p">):</span>
-            <span class="n">avec</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="n">k1</span><span class="o">*</span><span class="n">Ez</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="n">S</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">km1</span><span class="o">*</span><span class="n">ES</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>           <span class="c1"># rate constants defined in outside.</span>
-        <span class="k">return</span> <span class="n">avec</span><span class="o">*</span><span class="n">dt</span>    
-    <span class="c1">#---------</span>
-    
-    <span class="k">def</span> <span class="nf">ESvec</span><span class="p">(</span><span class="n">Ez</span><span class="p">,</span><span class="n">S</span><span class="p">,</span><span class="n">ES</span><span class="p">):</span>                                    <span class="c1"># chemistrty dES/dt</span>
-        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">J</span> <span class="p">):</span>
-            <span class="n">avec</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">k1</span><span class="o">*</span><span class="n">Ez</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="n">S</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="p">(</span><span class="n">k2</span><span class="o">+</span><span class="n">km1</span><span class="p">)</span><span class="o">*</span><span class="n">ES</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
-        <span class="k">return</span> <span class="n">avec</span><span class="o">*</span><span class="n">dt</span>   
-    <span class="c1">#---------</span>
-    
-    <span class="k">def</span> <span class="nf">make_tri_matrix</span><span class="p">(</span><span class="n">J</span><span class="p">,</span><span class="n">Q</span><span class="p">):</span>           <span class="c1"># matrix is symmetrical when ss=2, or 1st/last row ss=1</span>
-        <span class="n">ss</span> <span class="o">=</span> <span class="mf">1.0</span>  
-        <span class="n">M</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">J</span><span class="p">,</span><span class="n">J</span><span class="p">),</span><span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
-        <span class="n">M</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">ss</span><span class="o">*</span><span class="n">Q</span>
-        <span class="n">M</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="n">Q</span>
-        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">J</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
-            <span class="n">M</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="n">Q</span>
-            <span class="n">M</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">i</span><span class="p">]</span>   <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">Q</span>
-            <span class="n">M</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="n">Q</span>
-            <span class="k">pass</span>
-        <span class="n">M</span><span class="p">[</span><span class="n">J</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">J</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span>  <span class="o">-</span><span class="n">Q</span>
-        <span class="n">M</span><span class="p">[</span><span class="n">J</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">J</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">ss</span><span class="o">*</span><span class="n">Q</span>
-        
-        <span class="k">return</span> <span class="n">M</span>
-    <span class="c1">#----------</span>
-    
-    <span class="k">def</span> <span class="nf">pretty_plot</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">xvals</span><span class="p">,</span> <span class="n">yvals</span><span class="p">,</span><span class="n">ymax</span><span class="p">,</span> <span class="n">atext</span><span class="p">,</span> <span class="n">colr</span><span class="p">):</span>   <span class="c1"># put common features here</span>
-        <span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">([</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.1</span><span class="o">*</span><span class="n">ymax</span><span class="p">]</span> <span class="p">)</span>
-        <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$x$&#39;</span><span class="p">)</span>
-        <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;concentration&#39;</span><span class="p">)</span>
-        <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">atext</span><span class="p">)</span>
-        <span class="n">ax</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">xvals</span><span class="p">[</span><span class="n">x0</span><span class="p">],</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;grey&#39;</span><span class="p">,</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;dashed&#39;</span><span class="p">)</span>
-        <span class="n">ax</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">xvals</span><span class="p">[</span><span class="n">x1</span><span class="p">],</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;grey&#39;</span><span class="p">,</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;dashed&#39;</span><span class="p">)</span>
-        <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xvals</span><span class="p">,</span> <span class="n">yvals</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="n">colr</span><span class="p">)</span>
-        <span class="k">pass</span>
-    <span class="c1">#-----------------------</span>
-                       <span class="c1">#  constants etc </span>
-    
-    <span class="n">ms</span> <span class="o">=</span> <span class="mf">1e-6</span>          <span class="c1"># scale microseconds &amp; micrometres</span>
-    <span class="n">L</span>  <span class="o">=</span> <span class="mf">100.0</span><span class="o">*</span><span class="n">ms</span>      <span class="c1"># total width in dm :  30*ms = 3 micrometres</span>
-    <span class="n">J</span>  <span class="o">=</span> <span class="mi">200</span>           <span class="c1"># number spatial points </span>
-    <span class="n">dx</span> <span class="o">=</span> <span class="n">L</span><span class="o">/</span><span class="p">(</span><span class="n">J</span><span class="o">-</span><span class="mf">1.0</span><span class="p">)</span> 
-    
-    <span class="n">T</span>  <span class="o">=</span> <span class="mf">100000.0</span><span class="o">*</span><span class="n">ms</span>   <span class="c1"># total time  seconds </span>
-    <span class="n">N</span>  <span class="o">=</span> <span class="mi">10000</span>         <span class="c1"># number of time points</span>
-    <span class="n">dt</span> <span class="o">=</span> <span class="n">T</span><span class="o">/</span><span class="p">(</span><span class="n">N</span><span class="o">-</span><span class="mf">1.0</span><span class="p">)</span> 
-    
-    <span class="n">DS</span>  <span class="o">=</span> <span class="mf">1e-2</span><span class="o">*</span><span class="n">ms</span>      <span class="c1"># diff coeffs dm^2/s  substrate   1e-6 cm^2/s == 1e-10 m^2/s == 1e-8 dm^2/s</span>
-    <span class="n">DEz</span> <span class="o">=</span> <span class="mf">1e-3</span><span class="o">*</span><span class="n">ms</span>      <span class="c1"># enzyme diffn coeff smaller than substrate as it is big</span>
-    <span class="n">DES</span> <span class="o">=</span> <span class="mf">1.00</span> <span class="o">*</span> <span class="n">DEz</span>   <span class="c1"># same as enzyme</span>
-    
-    <span class="n">k1</span>  <span class="o">=</span> <span class="mf">0.5</span> <span class="o">/</span><span class="n">ms</span>      <span class="c1">#  2 nd order rate const   dm^3/mol/s -&gt; E+S</span>
-    <span class="n">km1</span> <span class="o">=</span> <span class="mf">0.02</span><span class="o">/</span><span class="n">ms</span>      <span class="c1">#  1 st order 1/s reverse reaction</span>
-    <span class="n">k2</span>  <span class="o">=</span> <span class="mf">0.01</span> <span class="o">/</span><span class="n">ms</span>     <span class="c1">#  1 st order ES to product</span>
-    <span class="n">kk</span>  <span class="o">=</span> <span class="n">km1</span> <span class="o">+</span> <span class="n">k2</span>     <span class="c1">#  allow for ES to react to product </span>
-    
-    <span class="n">S0</span>  <span class="o">=</span> <span class="mf">1.0e-2</span>       <span class="c1"># initial concentrations  </span>
-    <span class="n">Ez0</span> <span class="o">=</span> <span class="mf">1.0e-3</span>
-    <span class="n">ES0</span> <span class="o">=</span> <span class="mf">0.0</span>
-    
-    <span class="c1">#------------------------</span>
-    
-    <span class="n">SEz</span> <span class="o">=</span> <span class="n">DEz</span><span class="o">*</span><span class="n">dt</span><span class="o">/</span><span class="p">(</span><span class="mf">2.0</span><span class="o">*</span><span class="n">dx</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>    <span class="c1"># scaling params in eqns</span>
-    <span class="n">SS</span> <span class="o">=</span>  <span class="n">DS</span> <span class="o">*</span><span class="n">dt</span><span class="o">/</span><span class="p">(</span><span class="mf">2.0</span><span class="o">*</span><span class="n">dx</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> 
-    <span class="n">SE</span> <span class="o">=</span>  <span class="n">DES</span><span class="o">*</span><span class="n">dt</span><span class="o">/</span><span class="p">(</span><span class="mf">2.0</span><span class="o">*</span><span class="n">dx</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
-    
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:s}</span><span class="s1"> </span><span class="si">{:8.3g}</span><span class="s1"> </span><span class="si">{:8.3g}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;dx,dt&#39;</span><span class="p">,</span><span class="n">dx</span><span class="p">,</span><span class="n">dt</span><span class="p">)</span> <span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:s}</span><span class="s1"> </span><span class="si">{:10.5g}</span><span class="s1"> </span><span class="si">{:10.5g}</span><span class="s1"> </span><span class="si">{:10.5g}</span><span class="s1"> &#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;k1, km1, k2  &#39;</span><span class="p">,</span><span class="n">k1</span><span class="p">,</span><span class="n">km1</span><span class="p">,</span><span class="n">k2</span><span class="p">)</span> <span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:s}</span><span class="s1"> </span><span class="si">{:10.5g}</span><span class="s1"> </span><span class="si">{:10.5g}</span><span class="s1"> </span><span class="si">{:10.5g}</span><span class="s1"> &#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;DS, DEz, DES &#39;</span><span class="p">,</span><span class="n">DS</span><span class="p">,</span> <span class="n">DEz</span><span class="p">,</span> <span class="n">DES</span> <span class="p">)</span> <span class="p">)</span>
-    
-    <span class="c1"># make initial profiles</span>
-    <span class="n">tgrid</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">T</span><span class="p">,</span><span class="n">N</span><span class="p">)</span>  <span class="c1"># time grid points</span>
-    <span class="n">xgrid</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">L</span><span class="p">,</span><span class="n">J</span><span class="p">)</span>  <span class="c1"># spatial grid</span>
-    
-    <span class="n">Ez</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">J</span><span class="p">,</span><span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
-    <span class="n">ES</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">J</span><span class="p">,</span><span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
-    
-    <span class="n">avec</span><span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">J</span><span class="p">,</span><span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>   <span class="c1"># used to set up A, B matrices</span>
-    <span class="n">S</span>   <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">J</span><span class="p">,</span><span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>   <span class="c1"># used just for pics</span>
-    
-    <span class="c1">#  set channels and init conc&#39;ns Ez, S</span>
-    <span class="n">dwidth</span> <span class="o">=</span> <span class="mf">0.1</span>
-    <span class="n">xf0</span> <span class="o">=</span> <span class="mf">0.45</span>                      <span class="c1"># set start as fractional width of channel</span>
-    <span class="n">xf1</span> <span class="o">=</span> <span class="n">xf0</span> <span class="o">+</span> <span class="n">dwidth</span>              <span class="c1"># set fractional increment</span>
-    <span class="n">indx0</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="n">indx1</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">J</span><span class="p">):</span>              <span class="c1"># set width of channel </span>
-        <span class="n">Ez</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
-        <span class="n">S</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>  <span class="o">=</span>  <span class="n">S0</span>
-        <span class="k">if</span> <span class="n">xgrid</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">xf0</span><span class="o">*</span><span class="n">L</span><span class="p">:</span>
-            <span class="n">indx0</span> <span class="o">=</span> <span class="n">indx0</span> <span class="o">+</span> <span class="mi">1</span>   
-        <span class="k">if</span> <span class="n">xgrid</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">xf0</span><span class="o">*</span><span class="n">L</span> <span class="ow">and</span> <span class="n">xgrid</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">xf1</span><span class="o">*</span><span class="n">L</span><span class="p">:</span>
-            <span class="n">Ez</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">Ez0</span>
-            <span class="n">S</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>  <span class="o">=</span> <span class="mf">0.0</span>
-            <span class="n">indx1</span> <span class="o">=</span> <span class="n">indx1</span> <span class="o">+</span> <span class="mi">1</span>
-        <span class="k">pass</span>
-    <span class="n">x0</span> <span class="o">=</span> <span class="n">indx0</span>                      <span class="c1"># index of right side area.    </span>
-    <span class="n">x1</span> <span class="o">=</span> <span class="n">indx0</span> <span class="o">+</span> <span class="n">indx1</span> 
-    <span class="k">if</span> <span class="n">x1</span> <span class="o">&gt;=</span> <span class="n">J</span><span class="p">:</span> 
-        <span class="n">x1</span> <span class="o">=</span> <span class="n">J</span><span class="o">-</span><span class="mi">1</span>
-        
-    <span class="n">pretty_plot</span><span class="p">(</span><span class="n">ax0</span><span class="p">,</span><span class="n">xgrid</span><span class="o">/</span><span class="n">ms</span><span class="p">,</span><span class="n">Ez</span><span class="p">,</span><span class="n">Ez0</span><span class="p">,</span><span class="s1">&#39;Ez initial&#39;</span><span class="p">,</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>             <span class="c1"># plot initial profiles</span>
-    <span class="n">ax0</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">xgrid</span><span class="o">/</span><span class="n">ms</span><span class="p">,</span> <span class="n">Ez</span><span class="p">,</span> <span class="n">y2</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span><span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">)</span>
-    <span class="n">pretty_plot</span><span class="p">(</span><span class="n">ax1</span><span class="p">,</span><span class="n">xgrid</span><span class="o">/</span><span class="n">ms</span><span class="p">,</span><span class="n">S</span><span class="p">,</span><span class="n">S0</span><span class="p">,</span><span class="s1">&#39;S initial&#39;</span><span class="p">,</span><span class="s1">&#39;grey&#39;</span><span class="p">)</span>
-    <span class="n">pretty_plot</span><span class="p">(</span><span class="n">ax4</span><span class="p">,</span><span class="n">xgrid</span><span class="o">/</span><span class="n">ms</span><span class="p">,</span><span class="n">S</span><span class="p">,</span><span class="n">S0</span><span class="p">,</span><span class="s1">&#39;S vs. time&#39;</span><span class="p">,</span><span class="s1">&#39;grey&#39;</span><span class="p">)</span>
-    <span class="n">ax1</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">xgrid</span><span class="o">/</span><span class="n">ms</span><span class="p">,</span> <span class="n">S</span><span class="p">,</span> <span class="n">y2</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span><span class="n">color</span><span class="o">=</span> <span class="s1">&#39;grey&#39;</span><span class="p">,</span><span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">)</span>
-    <span class="n">pretty_plot</span><span class="p">(</span><span class="n">ax3</span><span class="p">,</span><span class="n">xgrid</span><span class="o">/</span><span class="n">ms</span><span class="p">,</span><span class="n">Ez</span><span class="p">,</span><span class="n">Ez0</span><span class="p">,</span><span class="s1">&#39;Ez vs. time&#39;</span><span class="p">,</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
-    <span class="n">pretty_plot</span><span class="p">(</span><span class="n">ax2</span><span class="p">,</span><span class="n">xgrid</span><span class="o">/</span><span class="n">ms</span><span class="p">,</span><span class="n">ES</span><span class="p">,</span><span class="n">Ez0</span><span class="p">,</span><span class="s1">&#39;ES x 10 vs. time&#39;</span><span class="p">,</span><span class="s1">&#39;green&#39;</span><span class="p">)</span>
-    
-    <span class="c1"># end set channels and plotting</span>
-    
-    <span class="n">AEz</span> <span class="o">=</span> <span class="n">make_tri_matrix</span><span class="p">(</span><span class="n">J</span><span class="p">,</span><span class="n">SEz</span><span class="p">)</span>          <span class="c1">#set up tri diagonal matrices </span>
-    <span class="n">AS</span>  <span class="o">=</span> <span class="n">make_tri_matrix</span><span class="p">(</span><span class="n">J</span><span class="p">,</span><span class="n">SS</span><span class="p">)</span>
-    <span class="n">AES</span> <span class="o">=</span> <span class="n">make_tri_matrix</span><span class="p">(</span><span class="n">J</span><span class="p">,</span><span class="n">SE</span><span class="p">)</span>
-    <span class="n">BEz</span> <span class="o">=</span> <span class="n">make_tri_matrix</span><span class="p">(</span><span class="n">J</span><span class="p">,</span><span class="o">-</span><span class="n">SEz</span><span class="p">)</span>
-    <span class="n">BS</span>  <span class="o">=</span> <span class="n">make_tri_matrix</span><span class="p">(</span><span class="n">J</span><span class="p">,</span><span class="o">-</span><span class="n">SS</span><span class="p">)</span>
-    <span class="n">BES</span> <span class="o">=</span> <span class="n">make_tri_matrix</span><span class="p">(</span><span class="n">J</span><span class="p">,</span><span class="o">-</span><span class="n">SE</span><span class="p">)</span>
-    
-    <span class="n">Ezall</span> <span class="o">=</span> <span class="p">[]</span>                            <span class="c1"># initialise list used to hold data</span>
-    <span class="n">Sall</span>  <span class="o">=</span> <span class="p">[]</span>
-    <span class="n">ESall</span> <span class="o">=</span> <span class="p">[]</span>
-    
-    <span class="n">Ezall</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Ez</span><span class="p">)</span>                      <span class="c1"># store values</span>
-    <span class="n">Sall</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">S</span><span class="p">)</span>
-    <span class="n">ESall</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ES</span><span class="p">)</span>
-
-    <span class="n">invAEz</span> <span class="o">=</span> <span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">AEz</span><span class="p">)</span>             <span class="c1"># invert matrices only once</span>
-    <span class="n">invAS</span>  <span class="o">=</span> <span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">AS</span><span class="p">)</span> 
-    <span class="n">invAES</span> <span class="o">=</span> <span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">AES</span><span class="p">)</span>
-   
-    <span class="c1">#print(&#39;starting calc&#39;)</span>
-    
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">N</span><span class="p">):</span>                 <span class="c1"># main calculation: iteration in time</span>
-        <span class="c1">#dt = tgrid[i]-tgrid[i-1]        # equivalent time used if log time scale used</span>
-        <span class="n">Eznew</span> <span class="o">=</span> <span class="n">invAEz</span> <span class="o">@</span> <span class="p">(</span> <span class="n">BEz</span> <span class="o">@</span> <span class="n">Ez</span> <span class="o">+</span> <span class="n">Ezvec</span><span class="p">(</span> <span class="n">Ez</span><span class="p">,</span><span class="n">S</span><span class="p">,</span> <span class="n">ES</span><span class="p">)</span> <span class="p">)</span>  <span class="c1"># @ is matrix multiply</span>
-        <span class="n">Snew</span>  <span class="o">=</span> <span class="n">invAS</span>  <span class="o">@</span> <span class="p">(</span> <span class="n">BS</span>  <span class="o">@</span> <span class="n">S</span>  <span class="o">+</span> <span class="n">Svec</span><span class="p">(</span> <span class="n">Ez</span><span class="p">,</span><span class="n">S</span><span class="p">,</span> <span class="n">ES</span><span class="p">)</span> <span class="p">)</span>
-        <span class="n">ESnew</span> <span class="o">=</span> <span class="n">invAES</span> <span class="o">@</span> <span class="p">(</span> <span class="n">BES</span> <span class="o">@</span> <span class="n">ES</span> <span class="o">+</span> <span class="n">ESvec</span><span class="p">(</span> <span class="n">Ez</span><span class="p">,</span><span class="n">S</span><span class="p">,</span> <span class="n">ES</span><span class="p">)</span> <span class="p">)</span>   
-        
-        <span class="n">Ez</span> <span class="o">=</span> <span class="n">Eznew</span>
-        <span class="n">S</span>  <span class="o">=</span> <span class="n">Snew</span>
-        <span class="n">ES</span> <span class="o">=</span> <span class="n">ESnew</span>
-        
-        <span class="k">if</span>  <span class="n">i</span> <span class="o">%</span> <span class="nb">int</span><span class="p">(</span><span class="n">N</span><span class="o">/</span><span class="mi">20</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>         <span class="c1"># plot multiples of N/20</span>
-            <span class="n">ax4</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xgrid</span><span class="o">/</span><span class="n">ms</span><span class="p">,</span> <span class="n">S</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span>  <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-            <span class="n">ax3</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xgrid</span><span class="o">/</span><span class="n">ms</span><span class="p">,</span> <span class="n">Ez</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span>  <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-            <span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xgrid</span><span class="o">/</span><span class="n">ms</span><span class="p">,</span> <span class="n">ES</span><span class="o">*</span><span class="mi">10</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">,</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-            <span class="k">pass</span>
-        <span class="n">Ezall</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Ez</span><span class="p">)</span>
-        <span class="n">Sall</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">S</span><span class="p">)</span>
-        <span class="n">ESall</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ES</span><span class="p">)</span>
-        <span class="k">pass</span>
-    <span class="c1">#print(&#39;finished calculation - plotting&#39;)</span>
-    
-    <span class="n">Ezsum</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">N</span><span class="p">,</span><span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
-    <span class="n">ESsum</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">N</span><span class="p">,</span><span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
-   
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>                       <span class="c1"># N time points</span>
-        <span class="n">Ezsum</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">Ezall</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">x0</span><span class="p">:</span><span class="n">x1</span> <span class="p">])</span><span class="o">*</span><span class="n">dwidth</span>  <span class="c1"># sum over central region only</span>
-        <span class="n">ESsum</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">ESall</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">x0</span><span class="p">:</span><span class="n">x1</span> <span class="p">])</span><span class="o">*</span><span class="n">dwidth</span> 
-    
-    <span class="n">Ezmx</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">Ezsum</span><span class="p">)</span>
-    <span class="n">ESmx</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">ESsum</span><span class="p">)</span>
-    
-    
-    <span class="n">ax5</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mf">1.2</span><span class="o">*</span><span class="n">Ezsum</span><span class="p">[</span><span class="mi">0</span><span class="p">]])</span>
-    <span class="n">ax5</span><span class="o">.</span><span class="n">set_xscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>   <span class="c1"># log time</span>
-    <span class="n">ax5</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">tgrid</span><span class="p">,</span><span class="n">Ezsum</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;Ez&#39;</span><span class="p">)</span>
-    <span class="n">ax5</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">tgrid</span><span class="p">,</span><span class="n">ESsum</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;ES&#39;</span><span class="p">)</span>
-    
-    <span class="n">ax5</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;ES, Ez&#39;</span><span class="p">)</span>    
-    <span class="n">ax5</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;time/ s&#39;</span><span class="p">)</span>
-    <span class="n">ax5</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39; ES, Ez&#39;</span><span class="p">)</span>
-    <span class="n">ax5</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
-      
-    <span class="n">astr1</span> <span class="o">=</span><span class="s1">&#39;$k_1=$&#39;</span><span class="o">+</span><span class="s1">&#39; </span><span class="si">{:10.4g}</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">((</span><span class="n">k1</span><span class="p">)</span>  <span class="p">)</span> <span class="c1"># use Mathjax in $  ... $ to prettyfy</span>
-    <span class="n">astr2</span> <span class="o">=</span><span class="s1">&#39;$k_{-1}=$&#39;</span><span class="o">+</span><span class="s1">&#39;</span><span class="si">{:10.4g}</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">((</span><span class="n">km1</span><span class="p">)</span>  <span class="p">)</span>
-    <span class="n">astr3</span> <span class="o">=</span><span class="s1">&#39;$k_2=$&#39;</span><span class="o">+</span><span class="s1">&#39; </span><span class="si">{:10.4g}</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">((</span><span class="n">k2</span><span class="p">)</span>  <span class="p">)</span>
-    <span class="n">ax5</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="n">astr1</span><span class="o">+</span><span class="n">astr2</span><span class="o">+</span><span class="n">astr3</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span> <span class="p">(</span><span class="n">xgrid</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="p">,</span> <span class="mf">0.5</span><span class="o">*</span><span class="n">Ezsum</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span> <span class="p">)</span>
-    <span class="k">pass</span>   <span class="c1"># end of do_calc</span>
-
-<span class="c1">#----------------------------  end of main def do_calc()</span>
-
-<span class="n">do_calc</span><span class="p">()</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dx,dt 5.03e-07    1e-05
-k1, km1, k2        5e+05      20000      10000 
-DS, DEz, DES       1e-08      1e-09      1e-09 
-</pre></div>
-</div>
-<img alt="../_images/num-methods-B_17_1.png" src="../_images/num-methods-B_17_1.png" />
-</div>
-</div>
-</section>
 <section id="d-diffusion-in-a-plate">
-<h2>4.13 2D diffusion in a plate.<a class="headerlink" href="#d-diffusion-in-a-plate" title="Permalink to this headline">#</a></h2>
-<p>Returning to using the simpler integration scheme described at the start of this section but now  in two dimensions. The reason for using the simpler scheme is because the 2D Crank-Nicholson scheme produces equations that are hard to solve and alternative, and complicated,  methods as described by Prest et al. (Numerical Recipes) are then used.</p>
+<h2>4.12 2D diffusion in a plate.<a class="headerlink" href="#d-diffusion-in-a-plate" title="Permalink to this headline">#</a></h2>
+<p>We now use the integration scheme described at the start of this section but in two dimensions. The reason for using the simpler scheme is because the Crank-Nicholson scheme, described below, produces equations that are hard to solve in 2D and alternative, and complicated,  methods as described by Prest et al. (Numerical Recipes) are then used.</p>
 <p>The two-dimensional diffusion equation is</p>
 <div class="math notranslate nohighlight">
 \[\frac{\partial U}{\partial t}=D\left(  \frac{\partial^2 U }{\partial x^2 }+\frac{\partial ^2U }{\partial y^2}\right) \]</div>
-<p>where <span class="math notranslate nohighlight">\(U\)</span> represents temperature of concentration as necessary. Since there no terms involving both <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> the two dimensions can be treated separately and this greatly simplifies the calculation. It is also assumed that the diffusion coefficient is the same in all directions and is constant as the temperature changes, which implies that any temperature change must be small.</p>
-<p>A numerical solution on the domain of the unit square <span class="math notranslate nohighlight">\(0 \le x \lt 1,\;0\le y \lt 1\)</span> approximates <span class="math notranslate nohighlight">\(U(x,y;t)\)</span> by the discrete function <span class="math notranslate nohighlight">\(u^{n}_{i,j}\)</span> where <span class="math notranslate nohighlight">\(x=i\Delta x, y=j\Delta y , t = n\Delta t\)</span>. If a unit square is not what is required then we suppose that <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> are fractions of the true dimensions and adjust the graphs plotted at the end as appropriate.  Applying finite difference approximations yields</p>
+<p>where <span class="math notranslate nohighlight">\(U\)</span> represents temperature or concentration as necessary. Since there no terms involving both <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> the two dimensions can be treated separately and this greatly simplifies the calculation. It is also assumed that the diffusion coefficient is the same in all directions and is constant as the temperature changes, which implies that any temperature change must be small.</p>
+<p>A numerical solution on the domain of the unit square <span class="math notranslate nohighlight">\(0 \le x \lt 1,\;0\le y \lt 1\)</span> approximates <span class="math notranslate nohighlight">\(U(x,y;t)\)</span> by the discrete function <span class="math notranslate nohighlight">\(u^{j}_{i,k}\)</span> where <span class="math notranslate nohighlight">\(x=i\Delta x, y=k\Delta y , t = j\Delta t\)</span>. If a unit square is not what is required then we suppose that <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> are fractions of the true dimensions and adjust the graphs plotted at the end as appropriate.  Applying a finite difference approximations yields</p>
 <div class="math notranslate nohighlight">
-\[\frac{u^{(n+1)}_{i,j}- u^{n}_{i,j}}{Δt} =D\left( \frac{u^{n}_{i+1,j}- 2u^{n}_{i,j} + u^{n}_{i-1,j}}{\Delta x^2} +\frac{u^{n}_{i+1,j}- 2u^{n}_{i,j} + u^{n}_{i-1,j}}{\Delta y^2}\right) \]</div>
-<p>and hence time step <span class="math notranslate nohighlight">\(n+1, u^{(n+1)}_{i,j}\)</span> may be calculated from its state at time step <span class="math notranslate nohighlight">\(n, u^{n}_{i,j}\)</span> through this  equation by separating out as was done in one dimension</p>
+\[\frac{u^{(j+1)}_{i,k}- u^{j}_{i,k}}{Δt} =D\left( \frac{u^{j}_{i+1,k}- 2u^{j}_{i,k} + u^{j}_{i-1,k}}{\Delta x^2} +\frac{u^{j}_{i,k+1}- 2u^{j}_{i,k} + u^{j}_{i,k-1}}{\Delta y^2}\right) \]</div>
+<p>and hence time step <span class="math notranslate nohighlight">\(j+1, u^{(j+1)}_{i,k}\)</span> may be calculated from its state at time step <span class="math notranslate nohighlight">\(j, u^{j}_{i,k}\)</span> via this equation by factoring terms as was done in one dimension</p>
 <div class="math notranslate nohighlight">
-\[u^{(n+1)}_{i,j}= u^n_{i,j}+D\Delta t \left( \cdots \right)\]</div>
-<p>Consider the diffusion equation applied to a plate initially at temperature <span class="math notranslate nohighlight">\(T_0\)</span> apart from a disc of a specified size which is at temperature <span class="math notranslate nohighlight">\(T_1\)</span>. We suppose that the edges of the plate are held fixed at <span class="math notranslate nohighlight">\(T_0\)</span>. Experimentally this might correspond to heating a spot in a thin sample with pulse from a laser and then observing the change in temperature. A related experiment is to ablate a region in a cell membrane into which a protein of other molecule is labelled with a fluorescent dye. The ablation is such that it bleaches the dye without appreciably heating the sample, and then the re-appearance of the fluorescence is monitored after the ablating laser pulse has ended. This then produced the diffusion coefficient of the labelled molecules. This is  what occurs in a FRAP (Fluorescence Recovery after Photo-bleaching) experiment.</p>
+\[u^{(j+1)}_{i,k}= u^j_{i,k}+\frac{D\Delta t}{\Delta x^2} \left( \cdots \right)\]</div>
+<p>Consider the diffusion equation applied to a plate initially at temperature <span class="math notranslate nohighlight">\(T_0\)</span> apart from a disc of a specified size which is at temperature <span class="math notranslate nohighlight">\(T_1\)</span>. We suppose that the edges of the plate are held fixed at <span class="math notranslate nohighlight">\(T_0\)</span>. Experimentally this might correspond to heating a spot in a thin sample with pulse from a laser and then observing the change in temperature. A related experiment is to ablate a region in a cell membrane into which a protein of other molecule is labelled with a fluorescent dye. The ablation is such that it bleaches the dye without appreciably heating the sample, and then the re-appearance of the fluorescence is monitored after the ablating laser pulse has ended. This measurement produces the diffusion coefficient of the labelled molecules and  is  what occurs in a FRAP (Fluorescence Recovery after Photo-bleaching) experiment.</p>
 <p>The following code applies the above formula to follow the evolution of the temperature of a plate. The initial spot is heated with respect to the rest of the plate. The code used is similar to that given above in the subroutine ‘update_step’.</p>
 <p>It can be shown that the maximum time step, <span class="math notranslate nohighlight">\(\Delta t\)</span> that we can allow without the process becoming unstable is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \Delta t=\frac{(\Delta x\Delta y)^2}{2D(\Delta x^2+\Delta y^2)}\]</div>
-<p>The Neumann initial condition is used and ensures that no heat is lost, which can be checked by summing the total temperature of the plate at different times.  The images clearly show how the energy deposited into the central spot diffuses into the surroundings as time passes. Calculating the temperature  at the centre of the disc (or at any other position) indicates how the energy spreads with time.  The average distance heat or molecules diffuse in time <span class="math notranslate nohighlight">\(t\)</span> is given by <span class="math notranslate nohighlight">\(\langle r\rangle =\sqrt{2nDt}\)</span> in dimension <span class="math notranslate nohighlight">\(n\)</span> thus <span class="math notranslate nohighlight">\(\langle r\rangle =\sqrt{4Dt}\)</span> in this example. These average distances are shown on the plots and show how the radial distance diffused slows down in time.</p>
+<p>The Neumann initial condition is used and ensures that no heat is lost, which can be checked by summing the total temperature of the plate at different times.  The images clearly show how the energy deposited into the central spot diffuses into the surroundings as time passes. Calculating the temperature  at the centre of the disc (or at any other position) indicates how the energy spreads with time.</p>
+<p>The average distance heat or molecules diffuse in time <span class="math notranslate nohighlight">\(t\)</span> is given by</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \langle r\rangle =\sqrt{2nDt}\]</div>
+<p>in dimension <span class="math notranslate nohighlight">\(n\)</span> thus <span class="math notranslate nohighlight">\(\langle r\rangle =\sqrt{4Dt}\)</span> in this example. The rate of increase in <span class="math notranslate nohighlight">\(\langle r\rangle\)</span> is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{d}{dt}\langle r\rangle =\sqrt{\frac{D}{t}}\]</div>
+<p>These average distances are shown on the plots and show how the radial distance diffused slows down with increasing time.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Algorithm 13b; 2D diffusion in a plate</span>
@@ -2623,7 +2410,7 @@ DS, DEz, DES       1e-08      1e-09      1e-09
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;spot radius&#39;</span><span class="p">,</span><span class="n">r</span><span class="o">*</span><span class="mi">1000</span><span class="p">,</span><span class="s1">&#39; micron&#39;</span><span class="p">)</span>
 
 <span class="c1">#--------------------</span>
-<span class="k">def</span> <span class="nf">hot_spot</span><span class="p">(</span><span class="n">u0</span><span class="p">,</span><span class="n">Thot</span><span class="p">):</span>                     <span class="c1"># check where to pot hot molecules</span>
+<span class="k">def</span> <span class="nf">hot_spot</span><span class="p">(</span><span class="n">u0</span><span class="p">,</span><span class="n">Thot</span><span class="p">):</span>                     <span class="c1"># check where to put hot molecules</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nx</span><span class="p">):</span>
         <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">ny</span><span class="p">):</span>
             <span class="n">p2</span> <span class="o">=</span> <span class="p">(</span><span class="n">i</span><span class="o">*</span><span class="n">dx</span><span class="o">-</span><span class="n">cx</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">j</span><span class="o">*</span><span class="n">dy</span><span class="o">-</span><span class="n">cy</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>  <span class="c1"># in mm</span>
@@ -2641,7 +2428,7 @@ DS, DEz, DES       1e-08      1e-09      1e-09
 <span class="k">def</span> <span class="nf">update_step2D</span><span class="p">(</span><span class="n">u0</span><span class="p">):</span>                     <span class="c1"># Neumann conditions added at end</span>
     <span class="n">u</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">u0</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">alphax</span><span class="o">*</span><span class="p">(</span><span class="n">u0</span><span class="p">[</span><span class="mi">2</span><span class="p">:,</span> <span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="mi">2</span><span class="o">*</span><span class="n">u0</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">u0</span><span class="p">[:</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> \
                                    <span class="o">+</span> <span class="n">alphay</span><span class="o">*</span><span class="p">(</span><span class="n">u0</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">:]</span> <span class="o">-</span> <span class="mi">2</span><span class="o">*</span><span class="n">u0</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">u0</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="p">:</span><span class="o">-</span><span class="mi">2</span><span class="p">])</span> 
-    <span class="n">u</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">:</span><span class="n">ny</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>    <span class="o">=</span> <span class="n">u</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">:</span><span class="n">ny</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>           <span class="c1"># Neumann limits</span>
+    <span class="n">u</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">:</span><span class="n">ny</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>    <span class="o">=</span> <span class="n">u</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">:</span><span class="n">ny</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>           <span class="c1"># Neumann boundary condition</span>
     <span class="n">u</span><span class="p">[</span><span class="n">nx</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">:</span><span class="n">ny</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">u</span><span class="p">[</span><span class="n">nx</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">:</span><span class="n">ny</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
     <span class="n">u</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="n">nx</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>    <span class="o">=</span> <span class="n">u</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="n">nx</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
     <span class="n">u</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="n">nx</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="n">ny</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">u</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="n">nx</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="n">ny</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
@@ -2713,11 +2500,313 @@ time steps 0
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time steps 2000
 </pre></div>
 </div>
-<img alt="../_images/num-methods-B_19_6.png" src="../_images/num-methods-B_19_6.png" />
+<img alt="../_images/num-methods-B_17_6.png" src="../_images/num-methods-B_17_6.png" />
+</div>
+</div>
+</section>
+<section id="crank-nicholson-method-the-time-dependent-schroedinger-equation">
+<h2>4.13 Crank-Nicholson Method. The time-dependent Schroedinger equation<a class="headerlink" href="#crank-nicholson-method-the-time-dependent-schroedinger-equation" title="Permalink to this headline">#</a></h2>
+<p>The best method with which to perform 1D diffusion type calculations and the 1D time-dependent Schroedinger equation, is, according to Prest (Numerical Recipes), the Crank-Nicholson approach as it is second order in time and space. This method is still, however, subject to numerical instability as are all such methods. This method is computationally a little more complex than the approach in section 4.11. The method uses the stencil shown below and is based on using the trapezoidal rule to perform the integration.</p>
+<p><img alt="Drawing" src="../_images/num-methods-fig10c.png" /></p>
+<p>Figure 10c. Stencil for the Crank-Nicholson calculation. The top three values labelled with <span class="math notranslate nohighlight">\(j+1\)</span> are unknown.</p>
+<hr class="docutils" />
+<p>The method is explained  with the time-dependent Schroedinger equation.</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle i\hbar \frac{\partial \psi}{\partial t}=-\frac{\hbar^2}{2m}\frac{\partial^2 \psi}{\partial x^2}+V(x)\psi\]</div>
+<p>where <span class="math notranslate nohighlight">\(\psi\)</span> is a function of time and space, or <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(t\)</span>. Atomic units are used which means that <span class="math notranslate nohighlight">\(\hbar=m=1\)</span> where <span class="math notranslate nohighlight">\(m\)</span> is the mass of the electron.  The unit of distance is <span class="math notranslate nohighlight">\(a_0\)</span>, the Bohr atom radius, (<span class="math notranslate nohighlight">\(a_0=5.21\times 10^{-11}\)</span> m) and the unit of time is <span class="math notranslate nohighlight">\(\hbar/E_H=2.419\times 10^{-17}\)</span> s where <span class="math notranslate nohighlight">\(E_H\)</span> is the Hartree = <span class="math notranslate nohighlight">\(4.3597\times 10^{-18}\)</span> J which is twice the ionisation energy of an hydrogen atom. If we wish to do the calculation with a different mass all that has to happen is to change the time, energy etc. at the end of the calculation when changing back to SI units.</p>
+<p>The atomic units simplify the Schroedinger equation to</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle i \frac{\partial \psi}{\partial t}=-\frac{1}{2}\frac{\partial^2 \psi}{\partial x^2}+V\psi\]</div>
+<p>The potential energy <span class="math notranslate nohighlight">\(V\)</span> depends only on a spatial coordinate. Expanding in a manner similar to that of eqn. 31b except that a better approximation is made to the second derivative, which is the average of the past and future time points. The spatial grid has index <span class="math notranslate nohighlight">\(k\)</span>, time time grid <span class="math notranslate nohighlight">\(j\)</span> and after dividing by <span class="math notranslate nohighlight">\(i=\sqrt{-1}\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{\psi_k^{j+1}-\psi_k^j}{\Delta t}=i\frac{1}{2(\Delta x)^2}\bigg(\left(\psi_{k+1}^{j+1}-2\psi_k^{j+1}+\psi_{k-1}^{j+1}\right) + \left(\psi_{k+1}^j-2\psi_k^j+\psi_{k-1}^j  \right )\bigg)-i V_k(\psi_k^{j+1}+\psi_k^j)\]</div>
+<p>Expanding on a grid means that the end points effectively form an infinitely high barrier, i.e the calculation takes place within a square well or ‘particle in a box’ potential so normally the calculation is stopped before the ends are reached. If not you do this you should observe the wavepacket being reflected of the wall and then its continued motion.</p>
+<p>To solve the equation it is far easier to convert it into matrix form. This means calculating all the spatial dimension terms before calculating in time. Its not so obvious, but it becomes clear later on, that it helps to rewrite the equations by collecting terms in <span class="math notranslate nohighlight">\(\psi^{j+1}\)</span> and in <span class="math notranslate nohighlight">\(\psi^j\)</span> as</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle - \sigma\psi_{k-1}^{j+1}+(1+2\sigma)\psi_k^{j+1}- \sigma\psi_{k+1}^{j+1}+i V_k\psi_k^{j+1}\Delta t = \sigma \psi_{k-1}^{j}+(1-2\sigma)\psi_k^{j}+ \sigma\psi_{k+1}^{j} -i V_k\psi_k^j\Delta t  \qquad\tag{31c}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\sigma=i\Delta t/(2(\Delta x)^2)\)</span>. The tri-diagonal form the equations have can be seen in the <span class="math notranslate nohighlight">\(k-1,\, k,\,k+1\)</span> terms on either side of the equation. Thus, given the initial wavefunction/wavepacket and the boundary conditions that <span class="math notranslate nohighlight">\(\psi\to 0 \)</span> at <span class="math notranslate nohighlight">\(x\to \pm \infty\)</span>, <span class="math notranslate nohighlight">\(\psi\)</span> can be calculated at later times.</p>
+<p>To solve the equations it is necessary to iterate in time and at each time solve the equations above in spatial coordinates. The best way to do this is to solve for all <span class="math notranslate nohighlight">\(x\)</span> at a given time then increment time and repeat. Although it looks very complex, the simplest approach is to transform the equations into matrix form. The <span class="math notranslate nohighlight">\(\psi\)</span> (eqn 31c) can be put into matrix form by defining a column vector,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \mathbf{P}^J=\left[ \psi_0^j,\psi_1^j\cdots \psi_{m-1}^j \right]^T\]</div>
+<p>and then the ‘tri-diagonal’ matrices for the coefficients in eqn. 31c are,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\small\left(\begin{bmatrix}
+1+2\sigma &amp; -\sigma &amp; 0 &amp; 0 &amp;\dots\\
+-\sigma &amp; 1+2\sigma &amp; -\sigma &amp;0 &amp;\\
+&amp; &amp; \vdots&amp; &amp; &amp;\\
+ &amp; \cdots &amp;-\sigma &amp; 1+2\sigma &amp;-\sigma \\
+&amp; &amp; \cdots &amp;-\sigma &amp; 1+2\sigma 
+\end{bmatrix} +
+\begin{bmatrix}
+iV_0\Delta t&amp;0&amp;\cdots\\
+0 &amp; V_1\Delta t &amp; 0 \\
+&amp; \vdots\\
+\dots &amp; 0 &amp; iV_{m-1}\Delta t
+\end{bmatrix}\right)
+\begin{bmatrix}
+\psi_0^{j+1}\\
+\psi_1^{j+1}\\
+\vdots\\
+\psi_{m-1}^{j+1}
+\end{bmatrix} \\= 
+\left(\begin{bmatrix}
+1-2\sigma &amp; +\sigma &amp; 0 &amp; 0 &amp; \dots\\
++\sigma &amp; 1-2\sigma &amp; +\sigma &amp;0 &amp;   \\
+&amp;  \vdots&amp; &amp; &amp;\\
+ &amp; \cdots &amp;+\sigma &amp; 1-2\sigma &amp;+\sigma \\
+&amp;  &amp;\cdots &amp;+\sigma &amp; 1-2\sigma 
+\end{bmatrix} -
+\begin{bmatrix}
+iV_0\Delta t&amp;0&amp;\cdots\\
+0 &amp; iV_1\Delta t &amp; 0 \\
+&amp; \vdots\\
+\dots &amp; 0 &amp; iV_{m-1}\Delta t
+\end{bmatrix}\right)
+\begin{bmatrix}
+\psi_0^{j}\\
+\psi_1^{j}\\
+\vdots\\
+\psi_{m-1}^{}
+\end{bmatrix}
+\end{split}\]</div>
+<p>and in matrix notation this is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle  \mathbf{(A'+V) P}^{j+1} = \mathbf{(B'-V) P}^{j} \]</div>
+<p>where the matrix of the potential is diagonal and can therefore be added to the diagonals of the tri-diagonal. Letting <span class="math notranslate nohighlight">\(\mathbf{A'+V\to A}\)</span> and similarly <span class="math notranslate nohighlight">\(\mathbf {B'-V\to B}\)</span>, multiplying both sides by <span class="math notranslate nohighlight">\(\mathbf{A^{-1}}\)</span> gives</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle  \mathbf{P}^{j+1} = \mathbf{A^{-1}}\mathbf{B P}^{j}\]</div>
+<p>thus in the iteration scheme the <span class="math notranslate nohighlight">\(\mathbf A\)</span> and <span class="math notranslate nohighlight">\(\mathbf{B}\)</span> matrices needs to be inverted once only, as they contain only constant terms. This saves considerable effort. Time in the numerical model has index <span class="math notranslate nohighlight">\(j\)</span> so once initial values are determined, a loop with the matrix equation can be performed. As <span class="math notranslate nohighlight">\(\mathbf{A}^{-1}\)</span> and <span class="math notranslate nohighlight">\(\mathbf{B}\)</span> are constant in time they are only evaluated once and outside the time loop. Only <span class="math notranslate nohighlight">\(\mathbf{P}\)</span> vectors vary in time, we could write the last equation as</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle  \mathbf{P}^{new} = \mathbf{A^{-1}}\mathbf{B P}^{old}   \qquad\tag{31d}\]</div>
+<p>and this equation is iterated as</p>
+<p><span class="math notranslate nohighlight">\(P^{old}=\text{initial wavepacket}\\
+\text{loop over time}\\
+\quad{P}^{new} = {A^{-1}}{B P}^{old}\\
+\quad  P^{old} = {P^{new}}\\
+\quad\text{save }P^{new}\\
+\text{repeat}\)</span></p>
+<section id="wavepacket-motion">
+<h3><strong>Wavepacket motion</strong><a class="headerlink" href="#wavepacket-motion" title="Permalink to this headline">#</a></h3>
+<p>The following calculation illustrates a particle moving inside an infinite square-well potential and encountering a barrier. Because we are dealing with an atomic sized particle this is represented as a wavepacket. Depending on the initial conditions, i.e., the height and thickness of the barrier and its momentum the wavepacket either may reflect from the barrier, pass completely through (quantum tunnelling) or be split into two parts, one part being reflected the other tunnelling through.  The calculation’s parameters are set up the illustrate the latter process.</p>
+<p>The wavepacket used has the form of a plane wave multiplied by a gaussian envelope and has the normalised form,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle W(x,t) = \frac{1}{(2\pi\sigma^2)^{1/4}}e^{-x^2/(4 \sigma^2) }e^{ip_0x}\]</div>
+<p>where  <span class="math notranslate nohighlight">\(p_0\)</span> the initial momentum. Notice that <span class="math notranslate nohighlight">\(W(x,t)\)</span> is a complex quantity, we usually plot it as the probability distribution <span class="math notranslate nohighlight">\(W^*W\)</span> where * indicated the complex conjugate. Mathematically normalisation means that <span class="math notranslate nohighlight">\(\int_{-\infty}^\infty W^*Wdx=1\)</span> and physically is equivalent to conservation of mass since the particle always exists somewhere.</p>
+<p>To form a wavepacket the particle must have a range of momenta, which also means a range of energies, so it cannot be in a single eigenstate and, because of the uncertainty principle, it must also occupy one of a range of positions. Experimentally, wavepackets of vibrational levels are made by exciting a molecule with a laser pulse of short (femtosecond) duration.</p>
+<p>In our calculation the wavepacket <span class="math notranslate nohighlight">\(W(x,t)\)</span> is in its <em>minimum-uncertainty state</em> in which the product <span class="math notranslate nohighlight">\(\Delta p\Delta x =\hbar/2\)</span>, i.e. the Heisenberg uncertainty is obeyed. Thus the particle represented by this wavepacket is localised at time <span class="math notranslate nohighlight">\(t=0\)</span> within space <span class="math notranslate nohighlight">\(\Delta x\)</span> and momenta <span class="math notranslate nohighlight">\(\Delta p\)</span>. If this were a molecule, proton or electron the particle does not itself ‘spread out’ i.e. a particle always has a well defined size (and shape if a molecule), but to detect it the detector will have to be large enough to cover its whole distribution of positions.</p>
+<p>The uncertainty in position is <span class="math notranslate nohighlight">\(\delta x=\sigma\)</span> and in momentum <span class="math notranslate nohighlight">\(\Delta p=\hbar/2\sigma\)</span>.  The momentum is also defined as <span class="math notranslate nohighlight">\(p=\hbar k_0\)</span> where <span class="math notranslate nohighlight">\(k_0\)</span> is the wavevector and the energy is given by <span class="math notranslate nohighlight">\(E=(\hbar k_0)^2/2m\)</span>. As time progresses the wavepacket moves and its width increases. Initially the fwhm. of the gaussian shape is <span class="math notranslate nohighlight">\(2\sqrt{2\ln(2)}\)</span>. Its group velocity is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle v_g=\frac{dE}{dp}=\frac{\hbar k}{m}\]</div>
+<p>which is the speed at which the envelope moves and is the velocity of a classical particle. Its phase velocity is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle v_{ph}=\frac{E}{p}=\frac{\hbar k}{2m}\]</div>
+<p>The phase velocity is the speed at which the peak of the wave inside the envelope moves. This can be viewed if the real or imaginary part of  <span class="math notranslate nohighlight">\(W\)</span> is plotted and has spatial frequency <span class="math notranslate nohighlight">\(p_0\)</span>. The energy of the particle is <span class="math notranslate nohighlight">\(E=\hbar\omega\)</span> where <span class="math notranslate nohighlight">\(\omega\)</span> is the wave frequency in radians/sec (<span class="math notranslate nohighlight">\(\omega=2\pi\nu\)</span> where <span class="math notranslate nohighlight">\(\nu\)</span> is the frequency in s<span class="math notranslate nohighlight">\(^{-1}\)</span>). The energy is also <span class="math notranslate nohighlight">\(p^2/2m\)</span> so that <span class="math notranslate nohighlight">\(k^2=2m\omega/\hbar\)</span>, so that <span class="math notranslate nohighlight">\(k\)</span> is proportional to frequency.</p>
+<p>As the wavepacket moves, in the absence of a barrier, its overall shape remains the same but its width spreads and amplitude decreases, this is called dispersion.. It is simpler to look at the probability distribution <span class="math notranslate nohighlight">\(|W|^2\)</span> rather than the wavepacket itself. This is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle p(x,t)=|W(x,t)|^2 \sim \exp\left(-\frac{\left(x-\hbar k_0 t/m\right)^2}{2\sigma_t^2}\right),\qquad \sigma_t^2=\sigma^2+\frac{\hbar^2 t^2}{4m^2\sigma^2}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\sigma_t\)</span> shows how the wavepacket width spreads in time while moving with velocity <span class="math notranslate nohighlight">\(\hbar k_0/m\)</span>. Its amplitude must decreases because the total probability is unity at all times and over the whole range of positions.  (At negative times the wavepacket compresses to its minimum value at <span class="math notranslate nohighlight">\(t=0\)</span> and then expands as positive time).</p>
+<p>In the following calculation we use atomic units, <span class="math notranslate nohighlight">\(\hbar=m=1\)</span> and allow the wavepacket to collide with a thin barrier, a very hard calculation if not done numerically. You can see that as the wavepacket moves its amplitude becomes smaller and its width increases just as described above. When the barrier is reached, some tunnelling and some reflection occurs. The reflected part shows rapid oscillations due to interference of the incoming and out going  waves. Recall that the wavepacket we show is only the envelope <span class="math notranslate nohighlight">\(W^*W\)</span>, <span class="math notranslate nohighlight">\(W\)</span> itself contains <span class="math notranslate nohighlight">\(e^{ik_0x}\)</span> which is also <span class="math notranslate nohighlight">\(\cos(k_0x)+i\sin(k_0x)\)</span> so clearly has wavelike nature. It is this that interferes and caused huge oscillations in <span class="math notranslate nohighlight">\(W^*W\)</span> as shown in the calculation.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Algorithm 13c Crank-Nicholson method.</span>
+<span class="c1"># 1D time dependent Schroedinger eqn with potential V. </span>
+<span class="c1"># Calculation using Atomic Units. hbar  = m = 1, m is the mass of electron</span>
+
+<span class="c1">#-------------------------</span>
+<span class="k">def</span> <span class="nf">barrier</span><span class="p">(</span><span class="n">nx</span><span class="p">,</span><span class="n">V0</span><span class="p">,</span><span class="n">w</span><span class="p">):</span>                         <span class="c1"># barrier is a rectangle -w to w</span>
+    <span class="n">V</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">nx</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">nx</span><span class="p">,</span><span class="n">nx</span><span class="p">)</span>
+    <span class="n">mask</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span> <span class="o">&gt;=</span> <span class="n">nx</span><span class="o">//</span><span class="mi">2</span><span class="o">-</span><span class="n">w</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">x</span> <span class="o">&lt;=</span> <span class="n">nx</span><span class="o">//</span><span class="mi">2</span><span class="o">+</span><span class="n">w</span><span class="p">)</span>
+    <span class="n">V</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">mask</span><span class="p">,</span> <span class="n">V0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">V</span>
+<span class="c1">#-------------------------</span>
+
+<span class="k">def</span> <span class="nf">wavepacket</span><span class="p">(</span><span class="n">nx</span><span class="p">,</span><span class="n">x0</span><span class="p">,</span><span class="n">sig</span><span class="p">,</span><span class="n">k0</span><span class="p">):</span>                 <span class="c1"># Gaussian wavepacket</span>
+    <span class="n">wp</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">nx</span><span class="p">,</span><span class="n">dtype</span> <span class="o">=</span> <span class="nb">complex</span><span class="p">)</span> 
+    <span class="n">wp</span><span class="p">[:]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="n">x</span><span class="p">[:]</span><span class="o">-</span><span class="n">x0</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">sig</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">k0</span><span class="o">*</span><span class="n">x</span><span class="p">[:])</span>  
+    <span class="k">return</span> <span class="n">wp</span>
+<span class="c1">#--------------------------------------</span>
+
+<span class="k">def</span> <span class="nf">make_tri_matrix</span><span class="p">(</span><span class="n">J</span><span class="p">,</span><span class="n">sig</span><span class="p">):</span>                   <span class="c1"># tri-diagonal matrix</span>
+    <span class="n">ss</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">M</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">([</span><span class="n">J</span><span class="p">,</span><span class="n">J</span><span class="p">],</span><span class="n">dtype</span> <span class="o">=</span> <span class="nb">complex</span><span class="p">)</span>
+    <span class="n">M</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">sig</span><span class="o">*</span><span class="n">ss</span>
+    <span class="n">M</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="n">sig</span><span class="o">*</span><span class="n">ss</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">J</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+        <span class="n">M</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="n">sig</span>
+        <span class="n">M</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">i</span><span class="p">]</span>   <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">sig</span>
+        <span class="n">M</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="n">sig</span>
+        <span class="k">pass</span>
+    <span class="n">M</span><span class="p">[</span><span class="n">J</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">J</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span>  <span class="o">-</span><span class="n">sig</span><span class="o">*</span><span class="n">ss</span>
+    <span class="n">M</span><span class="p">[</span><span class="n">J</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">J</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">sig</span><span class="o">*</span><span class="n">ss</span>
+        
+    <span class="k">return</span> <span class="n">M</span>
+
+<span class="c1">#-------------------------</span>
+<span class="k">def</span> <span class="nf">V_diag_matrix</span><span class="p">(</span><span class="n">J</span><span class="p">):</span>                          <span class="c1"># poetntial energy    </span>
+    
+    <span class="n">M</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">([</span><span class="n">J</span><span class="p">,</span><span class="n">J</span><span class="p">],</span> <span class="n">dtype</span> <span class="o">=</span> <span class="nb">complex</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">J</span><span class="p">):</span>
+        <span class="n">M</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">V</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="n">dt</span>
+    <span class="k">return</span> <span class="n">M</span>      
+<span class="c1">#-------------------------</span>
+
+<span class="k">def</span> <span class="nf">updatePsi</span><span class="p">(</span><span class="n">p0</span><span class="p">,</span><span class="n">pnew</span><span class="p">):</span>                             <span class="c1"># update all x at new time t+1</span>
+    
+    <span class="n">pnew</span> <span class="o">=</span>  <span class="n">invAmat</span> <span class="o">@</span> <span class="p">(</span><span class="n">Bmat</span> <span class="o">@</span> <span class="n">p0</span> <span class="p">)</span>                  <span class="c1"># Crank-Nicholson  </span>
+    <span class="n">pnew</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">pnew</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>                               <span class="c1"># boundary</span>
+    <span class="n">pnew</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">=</span> <span class="n">pnew</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
+    <span class="n">nn</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">dx</span><span class="o">*</span><span class="nb">sum</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">conj</span><span class="p">(</span><span class="n">pnew</span><span class="p">[:])</span><span class="o">*</span><span class="n">pnew</span><span class="p">[:]))</span>  <span class="c1"># normalise</span>
+    <span class="n">pnew</span><span class="p">[:]</span> <span class="o">=</span> <span class="n">pnew</span><span class="p">[:]</span><span class="o">/</span><span class="n">nn</span>
+    <span class="k">return</span> <span class="n">pnew</span>
+<span class="c1">#--------------------------</span>
+
+<span class="k">def</span> <span class="nf">inits</span><span class="p">():</span>                                         <span class="c1"># initial values</span>
+    <span class="n">nt</span> <span class="o">=</span> <span class="mi">1500</span>        <span class="c1"># number time points (integer)</span>
+    <span class="n">dt</span> <span class="o">=</span> <span class="mf">0.125</span>       <span class="c1"># can be tricky to get this right.</span>
+    <span class="n">nx</span> <span class="o">=</span> <span class="mi">600</span>         <span class="c1"># num grid x points</span>
+    <span class="n">Lb</span> <span class="o">=</span> <span class="mi">200</span>         <span class="c1"># grid end  (integer)</span>
+    <span class="n">La</span> <span class="o">=</span> <span class="o">-</span><span class="mi">200</span>        <span class="c1"># grid start (integer)</span>
+    <span class="n">V0</span> <span class="o">=</span> <span class="mf">0.25</span>         <span class="c1"># barrier height</span>
+    <span class="n">w</span>  <span class="o">=</span> <span class="mi">3</span>           <span class="c1"># half barrier width (integer)</span>
+    <span class="n">k0</span> <span class="o">=</span> <span class="mi">1</span>           <span class="c1"># wavepacket momentum</span>
+    <span class="n">sig</span><span class="o">=</span> <span class="mi">5</span>           <span class="c1"># wavepacket width sigma</span>
+    <span class="n">x0</span> <span class="o">=</span> <span class="o">-</span><span class="mi">100</span>         <span class="c1"># wave packet centre</span>
+    
+    <span class="k">return</span> <span class="n">nx</span><span class="p">,</span><span class="n">nt</span><span class="p">,</span><span class="n">dt</span><span class="p">,</span><span class="n">k0</span><span class="p">,</span><span class="n">La</span><span class="p">,</span><span class="n">Lb</span><span class="p">,</span><span class="n">V0</span><span class="p">,</span><span class="n">w</span><span class="p">,</span><span class="n">sig</span><span class="p">,</span><span class="n">x0</span>
+<span class="c1">#--------------------------</span>
+
+<span class="n">nx</span><span class="p">,</span><span class="n">nt</span><span class="p">,</span><span class="n">dt</span><span class="p">,</span><span class="n">k0</span><span class="p">,</span><span class="n">La</span><span class="p">,</span><span class="n">Lb</span><span class="p">,</span><span class="n">V0</span><span class="p">,</span><span class="n">w</span><span class="p">,</span><span class="n">sig</span><span class="p">,</span><span class="n">x0</span> <span class="o">=</span> <span class="n">inits</span><span class="p">()</span>
+
+<span class="n">x</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">La</span><span class="p">,</span><span class="n">Lb</span><span class="p">,</span><span class="n">nx</span><span class="p">)</span>                <span class="c1"># x range </span>
+<span class="n">dx</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="n">psi0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">nx</span><span class="p">,</span><span class="n">dtype</span> <span class="o">=</span> <span class="nb">complex</span><span class="p">)</span>       <span class="c1"># initial wavefunction/wavepacket</span>
+<span class="n">psi</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">([</span><span class="n">nt</span><span class="p">,</span><span class="n">nx</span><span class="p">],</span><span class="n">dtype</span> <span class="o">=</span> <span class="nb">complex</span> <span class="p">)</span> <span class="c1"># final results</span>
+<span class="n">p</span>    <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">nx</span><span class="p">,</span><span class="n">dtype</span> <span class="o">=</span> <span class="nb">complex</span><span class="p">)</span>       <span class="c1"># array to hold intermediate values</span>
+
+<span class="n">psi0</span> <span class="o">=</span> <span class="n">wavepacket</span><span class="p">(</span><span class="n">nx</span><span class="p">,</span><span class="n">x0</span><span class="p">,</span><span class="n">sig</span><span class="p">,</span><span class="n">k0</span><span class="p">)</span>           <span class="c1"># make wavepacket</span>
+<span class="n">psi0</span> <span class="o">=</span> <span class="n">psi0</span><span class="o">/</span><span class="nb">sum</span><span class="p">(</span><span class="n">dx</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">psi0</span><span class="p">[:]))</span>       <span class="c1"># normalise wavepacket</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:s}{:g}</span><span class="s1"> </span><span class="si">{:s}</span><span class="s1"> </span><span class="si">{:g}</span><span class="s1"> </span><span class="si">{:s}</span><span class="s1"> </span><span class="si">{:g}</span><span class="s1">&#39;</span>\
+      <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;dx = &#39;</span><span class="p">,</span><span class="n">dx</span><span class="p">,</span><span class="s1">&#39;dt = &#39;</span><span class="p">,</span><span class="n">dt</span><span class="p">,</span><span class="s1">&#39;dt/dx^2 = &#39;</span><span class="p">,</span><span class="n">dt</span><span class="o">/</span><span class="n">dx</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="p">)</span>
+
+<span class="n">sig</span> <span class="o">=</span> <span class="mf">0.25</span><span class="o">*</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">dt</span><span class="o">/</span><span class="n">dx</span><span class="o">**</span><span class="mi">2</span>                    <span class="c1"># i hbar/(2m)dt/dx^2   constants</span>
+<span class="n">V</span> <span class="o">=</span> <span class="n">barrier</span><span class="p">(</span><span class="n">nx</span><span class="p">,</span><span class="n">V0</span><span class="p">,</span><span class="n">w</span><span class="p">)</span>                      <span class="c1"># make barrier</span>
+
+<span class="n">Amat</span>    <span class="o">=</span> <span class="n">make_tri_matrix</span><span class="p">(</span><span class="n">nx</span><span class="p">,</span> <span class="n">sig</span><span class="p">)</span>  <span class="o">+</span> <span class="n">V_diag_matrix</span><span class="p">(</span><span class="n">nx</span><span class="p">)</span>  <span class="c1"># start Crank-Nicholson</span>
+<span class="n">Bmat</span>    <span class="o">=</span> <span class="n">make_tri_matrix</span><span class="p">(</span><span class="n">nx</span><span class="p">,</span><span class="o">-</span><span class="n">sig</span><span class="p">)</span>  <span class="o">-</span> <span class="n">V_diag_matrix</span><span class="p">(</span><span class="n">nx</span><span class="p">)</span>
+<span class="n">invAmat</span> <span class="o">=</span> <span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">Amat</span><span class="p">)</span>
+    
+<span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">nt</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>                   <span class="c1"># main calculation here, time loop. </span>
+    <span class="n">p</span> <span class="o">=</span> <span class="n">updatePsi</span><span class="p">(</span><span class="n">psi0</span><span class="p">,</span><span class="n">p</span><span class="p">)</span>
+    <span class="n">psi0</span> <span class="o">=</span> <span class="n">p</span>
+    <span class="n">psi</span><span class="p">[</span><span class="n">t</span><span class="o">+</span><span class="mi">1</span><span class="p">,:]</span> <span class="o">=</span> <span class="n">psi0</span><span class="p">[:]</span>
+    <span class="k">pass</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;finished calculation&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dx = 0.66778 dt =  0.125 dt/dx^2 =  0.280313
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>finished calculation
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig2</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;font.size&#39;</span><span class="p">:</span> <span class="mi">14</span><span class="p">})</span>        <span class="c1"># set font size for plots</span>
+
+<span class="n">f0</span> <span class="o">=</span> <span class="n">dt</span><span class="o">*</span><span class="mf">2.41888e-17</span><span class="o">*</span><span class="mf">1e15</span>                      <span class="c1"># atomic units to femtoseconds</span>
+<span class="n">mx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">amax</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">conj</span><span class="p">(</span><span class="n">psi</span><span class="p">)</span><span class="o">*</span><span class="n">psi</span> <span class="p">)</span> <span class="p">)</span>      <span class="c1"># global maximum</span>
+
+<span class="n">j</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">7</span><span class="o">-</span><span class="n">j</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">psi</span><span class="p">[</span><span class="mi">100</span><span class="p">,:]),</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;grey&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span><span class="mi">400</span><span class="p">,</span><span class="mi">800</span><span class="p">,</span><span class="mi">900</span><span class="p">,</span><span class="mi">1000</span><span class="p">,</span><span class="mi">1200</span><span class="p">,</span><span class="mi">1400</span><span class="p">]</span> <span class="p">:</span>   <span class="c1"># I choose to plot at these time points</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="mi">6</span><span class="o">-</span><span class="n">j</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">conj</span><span class="p">(</span><span class="n">psi</span><span class="p">[</span><span class="n">i</span><span class="p">,:])</span><span class="o">*</span><span class="n">psi</span><span class="p">[</span><span class="n">i</span><span class="p">,:]</span><span class="o">/</span><span class="n">mx</span><span class="p">)</span> <span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="mi">6</span><span class="o">-</span><span class="n">j</span><span class="o">+</span><span class="mf">0.95</span><span class="o">*</span><span class="n">V</span><span class="o">/</span><span class="n">V0</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;grey&#39;</span><span class="p">,</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">fmt</span><span class="o">=</span><span class="s1">&#39;</span><span class="si">{:d}{:6.2f}{:s}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">i</span><span class="o">*</span><span class="n">f0</span><span class="p">,</span><span class="s1">&#39; fs&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">0.35</span><span class="o">*</span><span class="n">Lb</span><span class="p">,</span><span class="mi">6</span><span class="o">-</span><span class="n">j</span><span class="o">+</span><span class="mf">0.5</span><span class="p">,</span><span class="n">fmt</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+    <span class="n">j</span><span class="o">=</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span>
+    <span class="k">pass</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$x/a_0$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$\psi^*\psi\; (a.u.)$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">([</span><span class="o">-</span><span class="mi">150</span><span class="p">,</span><span class="mi">150</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">([])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/num-methods-B_20_0.png" src="../_images/num-methods-B_20_0.png" />
+</div>
+</div>
+<p>Figure 10 d. The figure above shows the probability <span class="math notranslate nohighlight">\(\psi^*\psi\)</span> vs <span class="math notranslate nohighlight">\(x\)</span> at different times. The scattering of the wavepacket and its subsequent re-phasing is clear. The <span class="math notranslate nohighlight">\(\displaystyle e^{ik_0x}\)</span> term of the wavepacket generates high spatial frequencies which are observed when the wavepacket is dephased at the barrier. Subsequently these reform and a smooth wavepacket is reproduced.  The probability is scaled to the maximum value at any time, the area is the same in each plot as the wavepacket is normalised.  The real part of the wavepacket is show above its envelope. This shows oscillatory behaviour due to the  <span class="math notranslate nohighlight">\(e^{ik_0x}\)</span> term.</p>
+</section>
+<section id="wavepacket-animation">
+<h3><strong>Wavepacket Animation</strong><a class="headerlink" href="#wavepacket-animation" title="Permalink to this headline">#</a></h3>
+<p>The following script produces an animation of the wavepacket motion. The axes and calculation are the same as the figure above.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ipywidgets.widgets</span>  <span class="k">as</span> <span class="nn">wgt</span>
+<span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="n">interact</span><span class="p">,</span> <span class="n">interactive</span><span class="p">,</span> <span class="n">fixed</span><span class="p">,</span> <span class="n">interact_manual</span><span class="p">,</span><span class="n">VBox</span><span class="p">,</span><span class="n">HBox</span><span class="p">,</span><span class="n">Layout</span><span class="p">,</span><span class="n">HTML</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span>
+
+<span class="n">fig22</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;font.size&#39;</span><span class="p">:</span> <span class="mi">14</span><span class="p">})</span>                 <span class="c1"># set font size for plots</span>
+ 
+<span class="n">mx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">amax</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">conj</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">conj</span><span class="p">(</span><span class="n">psi</span><span class="p">)</span><span class="o">*</span><span class="n">psi</span> <span class="p">)</span> <span class="p">)</span>  <span class="p">)</span>   <span class="c1"># global max</span>
+
+<span class="k">def</span> <span class="nf">wpacket</span><span class="p">(</span><span class="n">k</span><span class="p">):</span>
+    <span class="n">fmtt</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">{:s}</span><span class="s1"> </span><span class="si">{:4.2f}</span><span class="s1"> </span><span class="si">{:s}</span><span class="s1"> </span><span class="si">{:d}</span><span class="s1"> &#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;t = &#39;</span><span class="p">,</span> <span class="p">((</span><span class="n">k</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">f0</span><span class="p">),</span><span class="s1">&#39;fs # &#39;</span><span class="p">,(</span><span class="n">k</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span> 
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="n">fmtt</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">V</span><span class="o">/</span><span class="n">V0</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span><span class="n">zorder</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$x/ a_0$&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$\psi^*\psi$&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mf">1.1</span><span class="p">])</span>
+    <span class="n">temp</span> <span class="o">=</span>  <span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">conj</span><span class="p">(</span><span class="n">psi</span><span class="p">[</span><span class="n">k</span><span class="p">,:])</span><span class="o">*</span><span class="n">psi</span><span class="p">[</span><span class="n">k</span><span class="p">,:]</span> <span class="p">)</span><span class="o">/</span><span class="n">mx</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">temp</span><span class="p">[:],</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+    <span class="k">pass</span>
+
+<span class="n">f02</span> <span class="o">=</span> <span class="n">wgt</span><span class="o">.</span><span class="n">HTML</span><span class="p">(</span> <span class="n">value</span><span class="o">=</span><span class="s2">&quot;push triangle to start, must push (square) stop before restart &quot;</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">f02</span><span class="p">)</span>
+
+<span class="n">f01</span> <span class="o">=</span> <span class="n">wgt</span><span class="o">.</span><span class="n">interact</span><span class="p">(</span><span class="n">wpacket</span><span class="p">,</span><span class="n">k</span> <span class="o">=</span> <span class="n">wgt</span><span class="o">.</span><span class="n">Play</span><span class="p">(</span><span class="nb">min</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="nb">max</span><span class="o">=</span><span class="n">nt</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">step</span><span class="o">=</span><span class="mi">20</span><span class="p">))</span>  <span class="c1"># step changes speed</span>
+<span class="n">display</span><span class="p">(</span><span class="n">f01</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"version_major": 2, "version_minor": 0, "model_id": "823dc9af85144125a7e0edda56f1a253"}
+</script><div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 600x400 with 0 Axes&gt;
+</pre></div>
+</div>
+<script type="application/vnd.jupyter.widget-view+json">
+{"version_major": 2, "version_minor": 0, "model_id": "1f688cd0ec124db799567752b6a0349d"}
+</script><div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;function __main__.wpacket(k)&gt;
+</pre></div>
+</div>
 </div>
 </div>
 </section>
 </section>
+</section>
+
+
+<script type="application/vnd.jupyter.widget-state+json">
+{"state": {"123c7abc434a4c7798c6b8ca2d0be418": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "b5e96b33726f4e688949f9699b8dd50c": {"model_name": "DescriptionStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "823dc9af85144125a7e0edda56f1a253": {"model_name": "HTMLModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_123c7abc434a4c7798c6b8ca2d0be418", "placeholder": "\u200b", "style": "IPY_MODEL_b5e96b33726f4e688949f9699b8dd50c", "value": "push triangle to start, must push (square) stop before restart "}}, "c9578094f14749248c25cf51e3382a76": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "7da7febf44d84e1baa728940e0448398": {"model_name": "DescriptionStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "20dc6b0c32b9470a8a76316755d04f84": {"model_name": "PlayModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "PlayModel", "_playing": false, "_repeat": false, "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "PlayView", "description": "k", "description_tooltip": null, "disabled": false, "interval": 100, "layout": "IPY_MODEL_c9578094f14749248c25cf51e3382a76", "max": 1499, "min": 0, "show_repeat": true, "step": 20, "style": "IPY_MODEL_7da7febf44d84e1baa728940e0448398", "value": 0}}, "8eee81eceacd4b0db5a6fd1152837dd6": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "1f688cd0ec124db799567752b6a0349d": {"model_name": "VBoxModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": ["widget-interact"], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "VBoxModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "VBoxView", "box_style": "", "children": ["IPY_MODEL_20dc6b0c32b9470a8a76316755d04f84", "IPY_MODEL_e5cb6f5d849b407bb52669653c3bf08f"], "layout": "IPY_MODEL_8eee81eceacd4b0db5a6fd1152837dd6"}}, "f8ebbf26585e40fc8a92c7527a4c05b4": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "e5cb6f5d849b407bb52669653c3bf08f": {"model_name": "OutputModel", "model_module": "@jupyter-widgets/output", "model_module_version": "1.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/output", "_model_module_version": "1.0.0", "_model_name": "OutputModel", "_view_count": null, "_view_module": "@jupyter-widgets/output", "_view_module_version": "1.0.0", "_view_name": "OutputView", "layout": "IPY_MODEL_f8ebbf26585e40fc8a92c7527a4c05b4", "msg_id": "", "outputs": [{"output_type": "display_data", "metadata": {}, "data": {"text/plain": "<Figure size 640x480 with 1 Axes>", "image/png": "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FRkZKUlasWKFTp48qXr16nmsb+lquNu0aZNat25tC0uS9PXXX6t27dpup0QBlEZgAlCpAgICJEkFBQVu29hvElmrVq0K77c815Z1PGXxwAMPqFmzZvrhhx8UERGhhIQEde3aVb/61a/UqVMnh/VF1+Prr79WUVGRevfubTu2d+9eZWZm6r777ivTVCeAq/jTAqBShYWFSZJOnz7ttk3JFJmvr6+Cg4PL1e/Zs2dlGIbLabmSfu3bl3dM9tfdqICAAK1du1aTJ0/WggULtGzZMi1btkzS1X2MRowYocmTJ5c5pM2dO1dz5861fX3o0CFJ0ieffKJVq1Y53MfWrVsd1rR9+umnCg8P98h9ATcjAhNwC6kOi76bNWsm6eoP88uXL7tc+L1v3z5JUnR0dJmrICX9FhQU6NChQ7bpLlf9+vv7O5wvufann35y23/JtSVtPaVevXqaOXOm3njjDf34449at26d0tLS9J///EevvPKKsrKytHDhwjL1dejQIZfr1Hbv3l1qsfrhw4d1+PBh29fX+9EvwK2CwAR4ifL+tpQr1WHRd6dOnSRdDTbr16932H26RMmv2Ze0LYtWrVrJ399fly5d0po1azR06FC3/bZv3962pYD9+xw8eFBZWVkuf8vuesZUHhaLRTExMYqJidETTzyhJUuW6De/+Y0WLVqkf/3rX6pTp45pHy+88ILtN/FOnz6tevXqqWvXrraxS1LDhg1VUFCgkydPeuS/KeBWwcaVgJcomZa5kUXHhmFc16tk80VPuPPOO237Cs2aNavU+VOnTunTTz+VpHJ9PEpgYKCSkpIkSbNnzy51Pj8/33Yfzv3Gx8fr9ttvdzumXbt2afXq1bJYLPr9739f5jHdCPvfXivLhwY7y8jIkGEYDoF03759ys7OVpcuXQhLQDkRmAAvUVLl+eabb6p4JDdu0qRJkqT58+frzTfftP323pkzZzRw4ECdP39eHTt2tAUge126dFFUVJRmzJhR6tyECRPk6+urdevW6a9//asuX74s6WrIHD58uA4cOKDIyEg9/vjjDtf5+fnp+eeflyRNnz5dqamptnNZWVkaMGCAioqK9Pvf/14xMTEe+R5I0quvvqp//vOftl3cS/z888+2SlFISIiaNGlS7r5LPivO1efHuarqATBRyR/FAuA6ffrpp7ZPfI+Ojja6du1qxMfHG1OnTq3qoV2X5ORk2/00bNjQaN26tREQEGBIMiIiIozMzEyX15V8pp67z2abNWuW4ePjY0gy6tata7Rp08YIDg42JBmhoaHGli1bXF5XVFRkDBkyxDamxo0bG3FxcUaNGjUMSUaLFi0cPoutrB555BG34x0zZozt/Ro0aGC0bdvWaNGihREYGGhIMvz8/IwFCxaU+z0NwzDat29v+Pr6Grm5ubZjjz32mCHJ2LBhw3X1WR6HDh0y6tSpY3uVfD6gj4+Pw/Hf/va3FT4WwBOoMAFeol+/fpo7d646dOigkydPKiMjQ6tXr7ZtfuhtXnrpJX355Zfq2bOnLl26pB9++EF33HGH/vznP2v79u2lPkakrEaOHKm1a9fqgQcekMVi0Y4dOxQaGqpRo0Zpx44datWqlcvrLBaLPvjgA73//vvq0qWLzpw5o927d6tp06b6+9//rg0bNjh8FpsnPPnkk3rxxRfVvXt31axZUz/88IN2796t8PBwPfroo9q8eXO5piVL/Pzzz9qyZYtatGih2rVr246vXbtWtWrVKtdHrVyvwsJCnT592vY6f/68JKmoqMjheE5OToWPBfAEi2FUg53sAAAAqjEqTAAAACYITAAAACYITAAAACYITAAAACYITAAAACYITAAAACb4LDkPKCoq0tGjR1W7dm0+bgAAAC9hGIbOnz+vhg0bOny+pCsEJg84evSoyw/rBAAA1V9WVpb+53/+55ptCEweULKTblZWloKDg6t4NAAAoCxyc3MVERHhsCO+OwQmDyiZhgsODiYwAQDgZcqynIZF3wAAACYITAAAACYITAAAACYITAAAACYITAAAACYITAAAACYITAAAACYITAAAACYITAAAACYITAAAACYITAAAACYITAAAACYITAAAACYITAAAACYITAAAACYITAAAACYITAAAACYITAAAACYITAAAACYITAAAACYITAAAACYITAAAACYITAAAACYITAAAACa8LjB9+OGHGjlypNq2bSur1SqLxaJ58+aVu5+ioiLNnDlTsbGxCggIUL169TRo0CDt37/f84MGAABezesC03PPPad33nlHmZmZatCgwXX3M3LkSP3pT3+SYRj605/+pN69e+uzzz5Tu3bttHfvXg+OGAAAeDuvC0xz5szRwYMHdfLkSY0aNeq6+li1apXmzJmjbt26acuWLZo2bZo+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yV5CQoIkaevWrR4YMQCv5hyYANyyvCowxcfHS5KWL19e6lxaWppDG3cKCgokud824OTJk5JEBQm41bGtAAA7XhWYunfvrujoaM2fP1/btm2zHc/JydGUKVNUs2ZNPfzww7bj2dnZ2rVrl8MUXp06ddSsWTMdOnRIc+bMcej/3Llzmj59uqT/VpoA3KKYkgNgx6sCk5+fn+bMmaOioiJ169ZNTzzxhMaOHauWLVtqz549mjJliqKiomztx48fr+bNm+vf//63Qz+vvfaa/Pz8NGLECPXo0UPPPvushg8frqZNm2rXrl3q16+fevToUcl3BwAAqiuvWvQtXa38ZGRkaOLEiVq4cKEuX76s2NhYTZs2TQMGDChTH3369NG3336rl19+WRkZGVq9erX8/f3VvHlzTZgwQU8++WQF3wWAao8KEwA7XvVZctUVnyUH3IR++9ur//zPf67+c9QoadOmqy8AN4Wb9rPkAKDSUGECYIfABADusK0AgGIEJgBwhW0FANghMAGAK0zJAbBDYAIAADBBYAIAV6gwAbBDYAIAADBBYAIAV6gwAbBDYAIAVwhMAOwQmAAAAEwQmADAFSpMAOwQmAAAAEwQmADAFSpMAOwQmAAAAEwQmADAFSpMAOwQmADAFQITADsEJgAAABMEJgBwhQoTADsEJgAAABMEJgBwhQoTADsEJgAAABMEJgBwhQoTADsEJgBwhcAEwA6BCQAAwASBCQBcocIEwA6BCQAAwASBCQBcocIEwA6BCQAAwASBCQBcocIEwA6BCQBcITABsENgAgAAMEFgAgBXqDABsENgAgAAMEFgAgBXqDABsENgAgAAMEFgAgBXqDABsENgAgBXCEwA7BCYAAAATBCYAMAVKkwA7BCYAAAATBCYAMAVKkwA7BCYAMAd58AE4JZFYAIAV1xVk6gwAbcsAhMAuMKUHAA7BCYAAAATBCYAcIUKEwA7BCYAAAATBCYAcIUKEwA7BCYAcIdtBQAUIzABgCtsKwDADoEJAFxhSg6AHQITAACACa8MTBs3blRSUpJCQ0MVGBiojh07atGiReXu58SJE3r66afVpEkT+fv7q06dOurUqZPefvvtChg1AK9ChQmAHb+qHkB5rVq1SomJifL399fAgQNVu3ZtpaamasCAAcrKytLYsWPL1M+2bdvUq1cvnT17Vvfee6/69++vvLw8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NElBQUEaM2ZMqT0GJemBBx5QXFycpGr8DD0Su1Buq1atMiRd8+WuUvHhhx8abdu2NQICAoyQkBAjKSnJ2Lx5s9v32rBhg9G7d28jODjYCAgIMNq3b1/qs3twfcryHF3hGVZ/fM+rj5LqhLvXI4884tD+3LlzxlNPPWVEREQYNWrUMBo1amSMHTvWyM3Nddl/YWGh8frrrxsxMTGG1Wo16tSpYwwYMMD46aefKuHubn5mz08uKobV8RlSYQIAADDBom8AAAATBCYAAAATBCYAAAATBCYAAAATBCYAAAATBCYAAAATBCYAAAATBCYAAAATBCYAAAATBCYAAAATBCYAcGHTpk2yWCx68803q3ooAKoBAhMAuPD5559Lku6///4qHgmA6oAP3wUAF1q0aKEaNWpo8+bNVT0UANUAFSYAN7VOnTrJYrHou+++cziem5uruLg4Wa1WrVixwuHcgQMHtGPHjlLVpXfffVe/+93vdOedd6pWrVqqX7++evbsqbVr11b4fQCoWgQmADe1adOmSZKee+4527GCggL17dtX//d//6eUlBT17NnT4ZrFixdLcpyOy8rK0ujRo3X27Fn16NFDY8aMUUJCgjIyMtSzZ09t27atwu8FQNXxq+oBAEBF6tatm+69914tWbJE6enpio+P17Bhw7Ry5UrNmDFDAwcOLHXN559/rqioKLVs2dJ2LDg4WMeOHVOdOnUc2n799dfq2bOn5s+fr7i4uIq+HQBVhAoTgJve1KlT5ePjo+eff15//vOf9fHHH2v8+PEaM2ZMqbanT59WRkZGqem4kJCQUmFJklq3bi1JOnr0aMUMHkC1QGACcNOLjY3VkCFDlJGRoVdffVWPPfaYpkyZ4rLtkiVLVFhYWCownThxQsnJyWrdurWCg4Pl4+Mji8ViC1GNGjVyaP/6668rMjJS/v7+6tKli7Zv314xNwegUjAlB+CWUK9ePUlS7dq19dZbb7ltt3jxYt12223q2rWr7dj//u//qnfv3srJyVGXLl30yCOPKDQ0VL6+vsrIyNA333yjFi1a2NrPnz9f48aN0zvvvKM2bdro5ZdfVmJiovbs2aPg4OCKu0kAFYZtBQDc9N588039v//3/1S/fn0dP35cs2bN0siRI0u1u3TpkurWravf/e53ev/99yVJhmGoWbNmOnbsmNLT021TcCX69OmjZcuWadeuXWrWrJkkqV27durcubNmzJghSbpy5YrCw8P14osvatSoURV7swAqBFNyAG5qixYtsv1G29atWxUSEqJJkybp559/LtX266+/1oULFxym43766Sft3btXSUlJpcLSDz/8oK+//lpBQUFq2rSppKu/gbd161b16NHD1s7Pz0/33HNPqa0NAHgPAhOAm9Y333yjoUOHKjY2VosXL1aDBg309NNPKzs7W6+//nqp9p9//rmsVqsSExNtx6xWq6Srwcm+IP/TTz+pX79+unLliuLi4mSxWCRJp06dUmFhoerXr+/Q9+23365jx45VxG0CqAQEJgA3pS1btqhv375q2LChli5dals79PTTT+u2227TtGnTdObMGVv7oqIiffHFF+revbuCgoJsxxs1aqROnTpp8+bN6tKli8aNG6ff//73atGihWJjYyVJrVq1qtybA1DpCEwAbjr79u1TUlKSatasqWXLlqlBgwa2c8HBwRo3bpxycnI0depU2/H169fr+PHjeuCBB0r1l5qaqgcffFA7d+7UrFmzdPbsWX3++efq06ePJDlM1dWtW1e+vr46fvy4Qx8nTpxQeHi4h+8UQGVh0TcASBo3bpxefvllHT169IaDTbt27dSlSxe99tprklj0DdwM2FYAAHR1/VKHDh08UgV6+umn9fjjj6tNmzZq3bq1pk+fLj8/Pw0ePNgDIwVQFQhMACBp165dHutr8ODBOnnypJKTk3X8+HG1bdtWaWlp7MEEeDGm5AAAAEyw6BsAAMAEgQkAAMAEgQkAAMAEgQkAAMAEgQkAAMAEgQkAAMAEgQkAAMAEgQkAAMAEgQkAAMAEgQkAAMAEgQkAAMDE/wfMwBZUjzBPDQAAAABJRU5ErkJggg==\n"}}]}}}, "version_major": 2, "version_minor": 0}
+</script>
+
 
     <script type="text/x-thebe-config">
     {

@@ -81,7 +81,7 @@
 # 
 # where $k = 0,\, 1,\, 2, \cdots n - 1$ because sine and cosine are cyclic functions; $\sin(\theta) = \sin(\theta + 2\pi) = \sin(\theta + 4\pi)$ and so forth, therefore there will be more than one root to the equation. Using $n\varphi = \theta$ only allows one root to be found. Using equations 11 and 13, gives
 # 
-# $$\displaystyle w=R^{1/n}\left( \cos\left( \frac{\theta+2\pi k}{n} \right) +i\sin\left( \frac{\theta+2\pi k}{n} \right)  \right) \qquad\tag{14}$$
+# $$\displaystyle w=r^{1/n}\left( \cos\left( \frac{\theta+2\pi k}{n} \right) +i\sin\left( \frac{\theta+2\pi k}{n} \right)  \right) \qquad\tag{14}$$
 #  
 # In the special case of calculating the $n^\mathrm{th}$ root of unity, $w^n = 1$ and $z = 1$, then from equation 12, $r = 1,\; \theta = 0$ and therefore, 
 # 
@@ -188,7 +188,7 @@
 # 
 # $$\displaystyle \prod_{k=0}^{n-1} x^k= x^{n(n-1)/2}$$
 # 
-# where the sum of numbers from $0 \to n-1$ is $n(n-1)/2)$ as first worked out by Gauss when a schoolboy. The product is therefore 
+# where the sum of numbers from $0 \to n-1$ is $n(n-1)/2$ as first worked out by Gauss when a schoolboy. The product is therefore 
 # 
 # $$\displaystyle e^{2\pi i (n-1)/2}=e^{i\pi n}e^{-i\pi}$$
 # 
@@ -227,27 +227,27 @@
 # Figure 7. Visualizations of the complex number $e^{i\theta} = \cos(\theta) + i \sin(\theta)$ illustrate that it has a wavelike form.
 # __________
 # 
-# **(iv) x-ray diffraction intensity. The Structure Factor** 
+# ## 4.3 x-ray diffraction intensity. The Structure Factor and Phase Problem 
 # In chapter 9, (Fourier Series and Transforms) and in section 13.6, x-ray diffraction by a single crystal is described. The structure factor $F$ described how the intensity of a given 'reflection' is related to the coordinates of the atoms in the unit cell _via_ the Miller indices $( h k l )$ of the planes of atoms. The Miller indices are integers that can be positive, zero or negative. The planes of atoms occur because the unit cell is repeated throughout the crystal to form a lattice of points. The unit cell is the smallest arrangement of atoms from which the whole crystal can be constructed. 
 # 
-# The fractional position of an atom is $u,v,w$ making the scattering factor the straightforward formula 
+# The fractional position of an atom is $u,v,w$ making the scattering factor, 
 # 
 # $$\displaystyle F= \sum_i f_i e^{i\pi(hu_i+kv_i+lw_i)}\qquad\tag{21}$$
 # 
 # where subscript $i$ refers to atoms $i$ in the unit cell. The values $u, v, w$ are the atom positions as *fractions* of the sides of the unit cell. The structure factor can also be put into a sine/cosine form
 # 
-# $$\displaystyle F=\sum_i f_i\big(\cos(\pi(hu_i+kv_i+lw_i))+i\sin(\pi(hu_i+kv_i+lw_i)) \big)$$ 
+# $$\displaystyle F=\sum_i f_i\Big(\cos\big(\pi(hu_i+kv_i+lw_i)\big)+i\sin\big(\pi(hu_i+kv_i+lw_i)\big) \Big)$$ 
 # 
 # but it is often easier to use as eqn 21.
 # 
 # ### **The phase problem**  
-# The intensity of the diffracted spot is $I=|F|^2=F^*F$  which means that the series of terms in $F$ has to be multiplied by its complex conjugate. The term $f_i$ is the atomic scattering factor for each type of atom relative to that of a single electron. It is the electrons in an atom that predominantly scatter the x-rays and so $f_i$ is proportional to the number of electrons, so is larger for heavy atoms than light ones. See Chapter 9-13.6 for details. Notice in particular that the structure factor *does not depend on the shape or size of the unit cell*, but on the fractional positions of the atoms.
+# The intensity of the diffracted spot is $I=|F|^2=F^*F$  which means that the series of terms in $F$ has to be multiplied by its complex conjugate. The term $f_i$ is the atomic scattering factor for each type of atom relative to that of a single electron. Electrons in an atom that predominantly scatter the x-rays and as $f_i$ is proportional to the number of electrons, scattering is larger for heavy atoms than light ones. See Chapter 9-13.6 for details. Notice in particular that the structure factor *does not depend on the shape or size of the unit cell*, but on the fractional positions of the atoms.
 # 
 # The fact that the detector, e.g. CCD or photon counting array, always measures the intensity $F^*F$ is the reason the _phase problem_ exists which makes interpreting X-ray diffraction data somewhat complicated. To illustrate, if there are only two atoms then eqn. 21 becomes
 # 
 # $$\displaystyle F= f_0 e^{i\pi\beta_0}+f_1 e^{i\pi\beta_1}$$
 # 
-# where we let $\beta_i=hu_i+kv_i+lw_i$ for clarity. The intensity is therefore 
+# where we let $\beta_i=hu_i+kv_i+lw_i$ for clarity. The measured intensity is therefore
 # 
 # $$\displaystyle I=f_0^2+f_1^2 + f_0 f_1\left(e^{i\pi(\beta_0-\beta_1)}+e^{-i\pi(\beta_0-\beta_1)} \right)=f_0^2+f_1^2 + 2f_0 f_1\cos(\beta_0-\beta_1)$$
 # 
@@ -277,7 +277,7 @@
 # 
 # $$\displaystyle \begin{align}F^*F&=f^2(1 +e^{-i\pi(h+k)})(1 +e^{+i\pi(h+k)})\\&=f^2(2+e^{-i\pi(h+k)}+e^{+i\pi(h+k)})\\&=2f^2\big(1+\cos(\,(h+k)\pi \,)\big)\end{align}$$
 # 
-# and when $k+k$ is an odd number $\cos(\pi(h+k))=-1$ making $F=0$ and when $h+k$ is even the intensity is $4f^2$.  Because the detected intensity is $4f^2$ heavy atoms, with more electrons have far 'brighter' spots that do H atoms, meaning that it is far more difficult to detect these. 
+# and when $k+k$ is an odd number $\cos(\pi(h+k))=-1$ making $F=0$ and when $h+k$ is even the intensity is $4f^2$.  Because the detected intensity is $4f^2$ heavy atoms, with more electrons have far 'brighter' spots that do H atoms, meaning that it is far more difficult to detect the latter. 
 # 
 # **(v) NaCl structure factor**. The NaCl crystal has a cubic structure with $4$ Na and $4$Cl in the unit cell. The coordinates (as fractions of the unit cell sides) are
 # 

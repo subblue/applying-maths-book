@@ -409,7 +409,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="integration-F.html">
-     10 Multiple integrals
+     10 Multiple integrals, Change of variables: Jacobians
     </a>
    </li>
    <li class="toctree-l2">
@@ -1006,7 +1006,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-G.html">
-     16 PDE continued. Diffusion, wave eqn., Schroedinger eqn., Fourier method, Transient grating.
+     16 PDE continued. Diffusion, Wave and Schroedinger eqns. Solution by the Fourier method. Transient grating.
     </a>
    </li>
    <li class="toctree-l2">
@@ -1610,45 +1610,11 @@ title="Print to PDF"
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#qquad-the-integral-of-udv-is-u-times-the-integral-of-dv-which-is-v-minus-the-integral-of-v-times-the-derivative-of-u">
-     <strong>
-      <span class="math notranslate nohighlight">
-       \(\qquad\)
-      </span>
-      The integral of
-      <span class="math notranslate nohighlight">
-       \(udv\)
-      </span>
-      is
-      <span class="math notranslate nohighlight">
-       \(u\)
-      </span>
-      times the integral of
-      <span class="math notranslate nohighlight">
-       \(dv\)
-      </span>
-      , which is
-      <span class="math notranslate nohighlight">
-       \(v\)
-      </span>
-      , minus the integral of
-      <span class="math notranslate nohighlight">
-       \(v\)
-      </span>
-      times the derivative of
-      <span class="math notranslate nohighlight">
-       \(u\)
-      </span>
-      .
-     </strong>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#i-displaystyle-int-y-cos-y-dy">
+    <a class="reference internal nav-link" href="#i-displaystyle-int-x-cos-x-dx-int-x-n-sin-x-dx">
      <strong>
       (i)
       <span class="math notranslate nohighlight">
-       \(\displaystyle \int y\cos(y)dy\)
+       \(\displaystyle \int x\cos(x)dx, \int x^n\sin(x)dx\)
       </span>
      </strong>
     </a>
@@ -1980,45 +1946,11 @@ title="Print to PDF"
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#qquad-the-integral-of-udv-is-u-times-the-integral-of-dv-which-is-v-minus-the-integral-of-v-times-the-derivative-of-u">
-     <strong>
-      <span class="math notranslate nohighlight">
-       \(\qquad\)
-      </span>
-      The integral of
-      <span class="math notranslate nohighlight">
-       \(udv\)
-      </span>
-      is
-      <span class="math notranslate nohighlight">
-       \(u\)
-      </span>
-      times the integral of
-      <span class="math notranslate nohighlight">
-       \(dv\)
-      </span>
-      , which is
-      <span class="math notranslate nohighlight">
-       \(v\)
-      </span>
-      , minus the integral of
-      <span class="math notranslate nohighlight">
-       \(v\)
-      </span>
-      times the derivative of
-      <span class="math notranslate nohighlight">
-       \(u\)
-      </span>
-      .
-     </strong>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#i-displaystyle-int-y-cos-y-dy">
+    <a class="reference internal nav-link" href="#i-displaystyle-int-x-cos-x-dx-int-x-n-sin-x-dx">
      <strong>
       (i)
       <span class="math notranslate nohighlight">
-       \(\displaystyle \int y\cos(y)dy\)
+       \(\displaystyle \int x\cos(x)dx, \int x^n\sin(x)dx\)
       </span>
      </strong>
     </a>
@@ -2410,20 +2342,27 @@ denominator, evaluate to logs. For example,</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \int u\,dv= u\,v -\int v\,du  \qquad\tag{16}\]</div>
 <p>which is the <em>integration by parts</em> formula. This reads:</p>
-<section id="qquad-the-integral-of-udv-is-u-times-the-integral-of-dv-which-is-v-minus-the-integral-of-v-times-the-derivative-of-u">
-<h3><strong><span class="math notranslate nohighlight">\(\qquad\)</span>   The integral of <span class="math notranslate nohighlight">\(udv\)</span> is <span class="math notranslate nohighlight">\(u\)</span> times the integral of <span class="math notranslate nohighlight">\(dv\)</span>, which is <span class="math notranslate nohighlight">\(v\)</span>, minus the integral of <span class="math notranslate nohighlight">\(v\)</span> times the derivative of <span class="math notranslate nohighlight">\(u\)</span>.</strong><a class="headerlink" href="#qquad-the-integral-of-udv-is-u-times-the-integral-of-dv-which-is-v-minus-the-integral-of-v-times-the-derivative-of-u" title="Permalink to this headline">#</a></h3>
+<p><strong><span class="math notranslate nohighlight">\(\qquad\)</span>   The integral of <span class="math notranslate nohighlight">\(udv\)</span> is <span class="math notranslate nohighlight">\(u\)</span> times the integral of <span class="math notranslate nohighlight">\(dv\)</span>, which is <span class="math notranslate nohighlight">\(v\)</span>, minus the integral of <span class="math notranslate nohighlight">\(v\)</span> times the derivative of <span class="math notranslate nohighlight">\(u\)</span>.</strong></p>
 <p>The trick is to find <span class="math notranslate nohighlight">\(u\)</span> that can be differentiated, which is usually easy, and <span class="math notranslate nohighlight">\(v\)</span> that can be integrated, which is sometimes much harder. It is worth exchanging <span class="math notranslate nohighlight">\(u\)</span> and <span class="math notranslate nohighlight">\(v\)</span> if the resulting integration gets more complicated.</p>
 <p>A few examples should make this important method clearer.</p>
-</section>
-<section id="i-displaystyle-int-y-cos-y-dy">
-<h3><strong>(i) <span class="math notranslate nohighlight">\(\displaystyle \int y\cos(y)dy\)</span></strong><a class="headerlink" href="#i-displaystyle-int-y-cos-y-dy" title="Permalink to this headline">#</a></h3>
-<p>To solve <span class="math notranslate nohighlight">\(\displaystyle \int y\cos(y)dy\)</span> using equation 16</p>
-<p><span class="math notranslate nohighlight">\(\quad\)</span><strong>(i)</strong> Start by trying <span class="math notranslate nohighlight">\(u=y\)</span> and <span class="math notranslate nohighlight">\(dv=\cos(y)dy\)</span></p>
-<p><span class="math notranslate nohighlight">\(\quad\)</span><strong>(ii)</strong>  To find <span class="math notranslate nohighlight">\(uv\)</span>, integrate <span class="math notranslate nohighlight">\(v=\cos(y)dy\)</span> to <span class="math notranslate nohighlight">\(v=\sin(y)\)</span> and then multiply this by <span class="math notranslate nohighlight">\(u\equiv y\)</span>.</p>
-<p><span class="math notranslate nohighlight">\(\quad\)</span><strong>(iii)</strong>  Form the <span class="math notranslate nohighlight">\(vdu\)</span> integral by differentiating <span class="math notranslate nohighlight">\(u\)</span> giving <span class="math notranslate nohighlight">\(du\equiv dy=1 \)</span> and multiply by <span class="math notranslate nohighlight">\(v=\sin(y)\)</span> to give <span class="math notranslate nohighlight">\(\int vdu =\int \sin( y)dy\)</span>.</p>
-<p><span class="math notranslate nohighlight">\(\quad\)</span><strong>(iv)</strong> ) Combining these terms gives</p>
+<section id="i-displaystyle-int-x-cos-x-dx-int-x-n-sin-x-dx">
+<h3><strong>(i) <span class="math notranslate nohighlight">\(\displaystyle \int x\cos(x)dx, \int x^n\sin(x)dx\)</span></strong><a class="headerlink" href="#i-displaystyle-int-x-cos-x-dx-int-x-n-sin-x-dx" title="Permalink to this headline">#</a></h3>
+<p>To solve <span class="math notranslate nohighlight">\(\displaystyle \int x\cos(x)dx\)</span> using equation 16</p>
+<p><span class="math notranslate nohighlight">\(\quad\)</span><strong>(1)</strong> Start by trying <span class="math notranslate nohighlight">\(u=x\)</span> and <span class="math notranslate nohighlight">\(dv=\cos(x)dx\)</span></p>
+<p><span class="math notranslate nohighlight">\(\quad\)</span><strong>(2)</strong> To find <span class="math notranslate nohighlight">\(uv\)</span>, integrate <span class="math notranslate nohighlight">\(v=\cos(x)dx\)</span> to <span class="math notranslate nohighlight">\(v=\sin(x)\)</span> and then multiply this by <span class="math notranslate nohighlight">\(u\equiv x\)</span>, making <span class="math notranslate nohighlight">\(uv=x\sin(x)\)</span></p>
+<p><span class="math notranslate nohighlight">\(\quad\)</span><strong>(3)</strong> Form the <span class="math notranslate nohighlight">\(vdu\)</span> integral by differentiating <span class="math notranslate nohighlight">\(u\)</span> giving <span class="math notranslate nohighlight">\(du\equiv dx=1 \)</span> and multiply by <span class="math notranslate nohighlight">\(v=\sin(x)\)</span> to give <span class="math notranslate nohighlight">\(\int vdu =\int \sin( x)dy\)</span>.</p>
+<p><span class="math notranslate nohighlight">\(\quad\)</span><strong>(4)</strong> ) Combining these terms gives</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle \int y\cos(y)dy=y\sin(y)-\int \sin(y)dy = y\sin(y)+\cos(y)+c\]</div>
+\[\displaystyle \int x\cos(x)dx=x\sin(x)-\int \sin(x)dx = x\sin(x)+\cos(x)+c\]</div>
+<p>In the case of a definite integral, such as <span class="math notranslate nohighlight">\(\int_a^bx\sin(x)dx\)</span> the result becomes</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \int_a^b x\cos(x)dx=x\sin(x)\bigg|_a^b-\int_a^b \sin(x)dx = x\sin(x)\bigg|_a^b+\cos(x)\bigg|_a^b\]</div>
+<p>In cases such as <span class="math notranslate nohighlight">\(\int x^n\cos(x)dx\)</span> or <span class="math notranslate nohighlight">\(\int x^n\sin(x)dx\)</span> the process can be repeated but it can be rather laborious, for example with <span class="math notranslate nohighlight">\(\int x^2\sin(x)dx\)</span> choose <span class="math notranslate nohighlight">\(u=x^2\)</span> so that when it is repeatedly differentiated it will eventually become a constant, <span class="math notranslate nohighlight">\(n!\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \int x^2\sin(x)dx=-x^2\cos(x)+2\int x\cos(x)dx\]</div>
+<p>and integrating again gives <span class="math notranslate nohighlight">\(\displaystyle \int x\cos(x)dx=x\sin(x)-\int \sin(x)dx\)</span>, and combining gives</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \int x^2\sin(x)dx=-x^2\cos(x)+2x\sin(x)+2\cos(x) +c\]</div>
 </section>
 <section id="ii-int-x-ln-x-dx-quad-int-x-n-ln-x-dx">
 <h3><strong>(ii) <span class="math notranslate nohighlight">\(\int x\ln(x)dx,\quad \int x^n\ln(x)dx\)</span></strong><a class="headerlink" href="#ii-int-x-ln-x-dx-quad-int-x-n-ln-x-dx" title="Permalink to this headline">#</a></h3>
@@ -2456,7 +2395,7 @@ method recursive in this instance. Rearranging gives</p>
 \[\displaystyle \int e^x\sin(x)dx=-e^x\cos(x)+e^x\sin(x)-\int e^x\sin(x)dx\]</div>
 <p>which, after rearranging, is</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle \int e^x\sin(x)dx=-e^x\frac{(\sin(x)-\cos(x))}{2}+c\]</div>
+\[\displaystyle \int e^x\sin(x)dx=-\frac{e^x}{2}\big(\sin(x)-\cos(x)\big)+c\]</div>
 <p>As a check, differentiate the result. Notice that the integral could more easily be solved by converting the sine to its exponential form. It is often, but not always the case, that more than one method could be used to solve an integral. Which you choose depends on your particular liking for one method over another.</p>
 </section>
 <section id="iv-an-integral-by-parts-and-recursion-displaystyle-i-n-int-x-ne-ax-dx">
@@ -2767,7 +2706,7 @@ f(v,t)\frac{dv}{dt}-f(u,t)\frac{du}{dt}+\frac{\partial }{\partial t}\int_{u(t)}^
 </section>
 <section id="ii-a-hard-integral-made-easier-int-0-1-x-1-ln-x-dx">
 <h3><strong>(ii) A hard integral made easier: <span class="math notranslate nohighlight">\( \int_0^1(x-1)/\ln(x)dx\)</span></strong><a class="headerlink" href="#ii-a-hard-integral-made-easier-int-0-1-x-1-ln-x-dx" title="Permalink to this headline">#</a></h3>
-<p>A far harder integral than in example (i) is <span class="math notranslate nohighlight">\(\displaystyle \int_0^1\frac{x-1}{\ln(x)}dx\)</span> which using the Feynman method by adding a parameter <span class="math notranslate nohighlight">\(t\)</span> is changed to</p>
+<p>A far harder integral than in example (i) is <span class="math notranslate nohighlight">\(\displaystyle \int_0^1\frac{x-1}{\ln(x)}dx\)</span> which, using the Feynman method by adding a parameter <span class="math notranslate nohighlight">\(t\)</span>, is changed to</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle F(t)=\int_0^1\frac{x^t-1}{\ln(x)}dx\]</div>
 <p>and we seek a solution when <span class="math notranslate nohighlight">\(t=1\)</span>. Differentiating gives,</p>

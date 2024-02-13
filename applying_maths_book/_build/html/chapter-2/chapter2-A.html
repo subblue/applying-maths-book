@@ -409,7 +409,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-4/integration-F.html">
-     10 Multiple integrals
+     10 Multiple integrals, Change of variables: Jacobians
     </a>
    </li>
    <li class="toctree-l2">
@@ -1006,7 +1006,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-G.html">
-     16 PDE continued. Diffusion, wave eqn., Schroedinger eqn., Fourier method, Transient grating.
+     16 PDE continued. Diffusion, Wave and Schroedinger eqns. Solution by the Fourier method. Transient grating.
     </a>
    </li>
    <li class="toctree-l2">
@@ -1628,12 +1628,12 @@ title="Print to PDF"
 <h2>1 Motivation and concept<a class="headerlink" href="#motivation-and-concept" title="Permalink to this headline">#</a></h2>
 <p>Complex numbers arise naturally in mathematics, often when solving quadratic equations such as <span class="math notranslate nohighlight">\(x^2+x+1=0\)</span>, which has the solutions</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle x=\frac{1\pm\sqrt{-4}}{2} = \frac{1}{2}1 \pm \sqrt{-1}.\]</div>
+\[\displaystyle x=\frac{1\pm\sqrt{-4}}{2} = \frac{1}{2} \pm \sqrt{-1}\]</div>
 <p>Because the negative square root cannot be evaluated, as no ordinary number can be negative when squared, a new number conventionally called <span class="math notranslate nohighlight">\(i\)</span> (although engineers call this <span class="math notranslate nohighlight">\(j\)</span>) was invented with the property <span class="math notranslate nohighlight">\(i^2 = -1\)</span>  or <span class="math notranslate nohighlight">\(i = \sqrt{-1}\)</span>. The solution to the equation becomes <span class="math notranslate nohighlight">\(x = 1/2 \pm i\)</span>.</p>
 <p>This new number is one of a new class called <em>complex numbers</em>. These are not numbers in the elementary sense used in counting or measuring, but constitute new mathematical objects and have an existence of their own. These numbers are called ‘complex’ only because they contain two parts and can always be written in the form</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle z=a+ ib \qquad\tag{1}\]</div>
-<p>where <span class="math notranslate nohighlight">\(a\)</span> is called the <em>real</em> (Re) part and <span class="math notranslate nohighlight">\(b\)</span> the <em>imaginary</em> (Im) part of the number. The complex number <span class="math notranslate nohighlight">\(z = i\)</span>, if written in the form of equation 1, has a real part <span class="math notranslate nohighlight">\(a = 0\)</span> and an imaginary part <span class="math notranslate nohighlight">\(b = 1\)</span>. The latter is rather a misnomer as <span class="math notranslate nohighlight">\(b\)</span> is just as ‘real’ as is <span class="math notranslate nohighlight">\(a\)</span>; it is just a number and perhaps, therefore, the best way to view a complex number is to consider it a number in two dimensions with amounts <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> in each of these dimensions. In that case, a complex number can be represented as a point on a graph rather than being a point on a line, as a normal number may be considered to be. The graph is called an Argand diagram, if drawn with the real part <span class="math notranslate nohighlight">\(a\)</span> along the conventional x-axis and <span class="math notranslate nohighlight">\(b\)</span> along the y-axis; the area defined by <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> is also called the Argand or Gauss plane. The imaginary number <span class="math notranslate nohighlight">\(i\)</span> has a real part that is 0 and an imaginary part that is 1, and is represented by the point (0, 1) on the y-axis of an Argand diagram, see figure 1.</p>
+<p>where <span class="math notranslate nohighlight">\(a\)</span> is called the <em>real</em> (Re) part and <span class="math notranslate nohighlight">\(b\)</span> the <em>imaginary</em> (Im) part of the number. The complex number <span class="math notranslate nohighlight">\(z = i\)</span>, if written in the form of equation 1, has a real part <span class="math notranslate nohighlight">\(a = 0\)</span> and an imaginary part <span class="math notranslate nohighlight">\(b = 1\)</span>. The latter is rather a misnomer as <span class="math notranslate nohighlight">\(b\)</span> is just as ‘real’ as is <span class="math notranslate nohighlight">\(a\)</span>; it is just a number and perhaps, therefore, the best way to view a complex number is to consider it a number in two dimensions with amounts <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> in each of these dimensions. In that case, a complex number can be represented as a point on a graph rather than being a point on a line, as a normal number may be considered to be. The graph is called an <em>Argand</em> diagram, if drawn with the real part <span class="math notranslate nohighlight">\(a\)</span> along the conventional x-axis and <span class="math notranslate nohighlight">\(b\)</span> along the y-axis; the area defined by <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> is also called the Argand or Gauss plane. The imaginary number <span class="math notranslate nohighlight">\(i\)</span> has a real part that is 0 and an imaginary part that is 1, and is represented by the point (0, 1) on the y-axis of an Argand diagram, see figure 1.</p>
 <p><img alt="Drawing" src="../_images/chapter2-fig1.png" /></p>
 <p>Figure 1. The Argand diagram showing two complex numbers in the form <span class="math notranslate nohighlight">\(z = a + ib\)</span>, <span class="math notranslate nohighlight">\(r\)</span> is the modulus of the complex number <span class="math notranslate nohighlight">\(z\)</span> and <span class="math notranslate nohighlight">\(\theta\)</span> the argument measured anticlockwise from the real axis.</p>
 <hr class="docutils" />
@@ -1654,9 +1654,9 @@ title="Print to PDF"
 \[\displaystyle z^* = a - ib, \qquad\tag{2}\]</div>
 <p>where, by convention, an asterisk is added and every <span class="math notranslate nohighlight">\(i\)</span> is replaced with <span class="math notranslate nohighlight">\(-i\)</span>; the result is that <span class="math notranslate nohighlight">\(z^*z\)</span> is always a real number;</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle z*z=(a+ib)^*(a+ib)=(a-ib)(a+ib)=a^2 +b^2. \qquad\tag{3}\]</div>
+\[\displaystyle z^*z=(a+ib)^*(a+ib)=(a-ib)(a+ib)=a^2 +b^2. \qquad\tag{3}\]</div>
 <p>In geometrical terms, forming the complex conjugate is equivalent to a reflection in the real axis because only the imaginary part is inverted.</p>
-<p>In quantum mechanics, the wavefunction is often found to be a complex quantity and, therefore, the complex conjugate is always used to calculate expectation or average values such as <span class="math notranslate nohighlight">\(\langle x \rangle = \int\psi_i^* x\psi_f dx\)</span> and probabilities <span class="math notranslate nohighlight">\(p = \int \psi^*\psi dx\)</span> because only a mathematically real quantity is measured in an experiment, not an imaginary one.</p>
+<p>In quantum mechanics, the wavefunction is often found to be a complex quantity and, therefore, the complex conjugate is always used to calculate expectation or average values such as <span class="math notranslate nohighlight">\(\displaystyle \langle x \rangle = \int\psi_i^* x\psi_f dx\)</span> and probabilities <span class="math notranslate nohighlight">\(\displaystyle p = \int \psi^*\psi dx\)</span> because only a mathematically real quantity is measured in an experiment, not an imaginary one.</p>
 <p>The quantity <span class="math notranslate nohighlight">\(z + z^*\)</span> is always a real number equal to <span class="math notranslate nohighlight">\(2Re(z)\)</span> or <span class="math notranslate nohighlight">\(2Re(z^*)\)</span> which is the same. It is worth remembering the rules</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle (z_1 + z_2)^* = z_1^* + z_2^* \qquad  (z_1z_2)^* = z_1^*z_2^*\]</div>
@@ -1675,15 +1675,20 @@ title="Print to PDF"
 <hr class="docutils" />
 <section id="adding-and-subtracting-complex-numbers">
 <h2>1.2 Adding and subtracting complex numbers<a class="headerlink" href="#adding-and-subtracting-complex-numbers" title="Permalink to this headline">#</a></h2>
-<p>The real and imaginary parts are added separately as shown in Fig.3. This is very much like adding two vectors. Figure 3(Left)  also illustrates the <em>Triangle Inequality</em> of complex numbers, i.e. <span class="math notranslate nohighlight">\(|z_1+z_2|\le |z_1| + |z_2|\)</span>. In the figure the absolute value of the complex number <span class="math notranslate nohighlight">\(z_2\)</span> is <span class="math notranslate nohighlight">\(|z_2|\)</span> and the length of a line, <span class="math notranslate nohighlight">\(r\)</span> for example. It can be seen that he green dotted line is longer than the sum of one black and one red line, i.e. the sum of the magnitudes of the two complex numbers.</p>
+<p>The real and imaginary parts are added separately as shown in Fig.3. This is very much like adding two vectors. Figure 3(Left) also illustrates the <em>Triangle Inequality</em> of complex numbers, i.e.</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle |z_1+z_2|\le |z_1| + |z_2|,\qquad \text{Triangle inequality}\]</div>
+<p>In figure 3 the absolute value of the complex number <span class="math notranslate nohighlight">\(z_2\)</span> is <span class="math notranslate nohighlight">\(|z_2|\)</span> of length <span class="math notranslate nohighlight">\(r\)</span>. It can be seen that the green dotted line is less than the sum of one black and one red line, i.e. less than the sum of the magnitudes of the two complex numbers.</p>
 </section>
 <section id="multiplying-and-dividing-complex-numbers">
 <h2>1.3 Multiplying and dividing complex numbers<a class="headerlink" href="#multiplying-and-dividing-complex-numbers" title="Permalink to this headline">#</a></h2>
 <p>Multiplying complex numbers is straightforward using the normal rules of algebra but remembering to use <span class="math notranslate nohighlight">\(i^2 = -1\)</span> where necessary, e.g.,</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle (3+5i)(1-2i)=3-6i+5i-10i^2 =13-i\]</div>
-<p>Dividing numbers is a little more difficult the rule to use is</p>
-<p><span class="math notranslate nohighlight">\(\qquad\)</span> Always multiply the top and bottom of the whole expression by the complex conjugate of the denominator.</p>
+<p>Dividing numbers is a little more difficult. The rule to use is,</p>
+<blockquote>
+<div><p>Always multiply the top and bottom of the whole expression by the complex conjugate of the denominator.</p>
+</div></blockquote>
 <p>This is equivalent to multiplying by 1,  and makes the denominator a real number. An example makes this clearer.</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \frac{3+5i}{1-2i}=\left( \frac{3+5i}{1-2i} \right)\frac{(1-2i)^*}{(1-2i)^*}=\left( \frac{3+5i}{1-2i} \right)\left(\frac{1+2i}{1+2i}\right)=\frac{-7+11i}{5}\]</div>
@@ -1693,7 +1698,7 @@ title="Print to PDF"
 <hr class="docutils" />
 <section id="modulus-and-argument">
 <h2>1.4 Modulus and Argument<a class="headerlink" href="#modulus-and-argument" title="Permalink to this headline">#</a></h2>
-<p>The second new property held by complex numbers is variously called the modulus, magnitude, absolute value, or norm of the complex number. This is calculated in a similar way to that of a vector and is the length of the complex number measured from the origin, Figs 1,4.</p>
+<p>The second new property held by complex numbers is variously called the modulus, magnitude, absolute value, or norm of the complex number. This is calculated in a similar way to that of a vector and is the length of the complex number measured from the origin, Figs 1, 4.</p>
 <p>The modulus <span class="math notranslate nohighlight">\(r\)</span> of the complex number <span class="math notranslate nohighlight">\(z = a + ib\)</span> is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle r=+\sqrt{a^2 +b^2} \qquad\tag{4}\]</div>

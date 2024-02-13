@@ -409,7 +409,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-4/integration-F.html">
-     10 Multiple integrals
+     10 Multiple integrals, Change of variables: Jacobians
     </a>
    </li>
    <li class="toctree-l2">
@@ -1006,7 +1006,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-G.html">
-     16 PDE continued. Diffusion, wave eqn., Schroedinger eqn., Fourier method, Transient grating.
+     16 PDE continued. Diffusion, Wave and Schroedinger eqns. Solution by the Fourier method. Transient grating.
     </a>
    </li>
    <li class="toctree-l2">
@@ -1760,7 +1760,7 @@ title="Print to PDF"
 \[\displaystyle y = A\sin(\omega t+\varphi)= A\sin(2\pi\upsilon t+\varphi) \]</div>
 <p>The velocity of the wave <span class="math notranslate nohighlight">\(v\)</span> is the product of frequency and wavelength; <span class="math notranslate nohighlight">\(v = \upsilon\lambda= \omega/k\)</span>. The general equation for a travelling wave, either transverse or longitudinal, is</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle y = A\sin(\omega t - kx +\varphi) \qquad\tag{16}\]</div>
+\[\displaystyle y = A\sin(\omega t - kx +\varphi)  \tag{16}\]</div>
 <p>In this equation the sign <span class="math notranslate nohighlight">\(-kx\)</span> means that the wave is travelling to the right, which is positive <span class="math notranslate nohighlight">\(x\)</span>. If the term were written <span class="math notranslate nohighlight">\(+kx\)</span>, then the wave would be travelling to the left. Depending upon whether <span class="math notranslate nohighlight">\(x\)</span> or <span class="math notranslate nohighlight">\(t\)</span> is plotted the similar but different plots in Figure 11 are produced. On the left the displacement <span class="math notranslate nohighlight">\(x\)</span> is plotted and therefore as time progresses the particle moves up and down at fixed <span class="math notranslate nohighlight">\(x\)</span>. On the right the displacement vs time at a fixed <span class="math notranslate nohighlight">\(x\)</span> is plotted.</p>
 <p>The phase <span class="math notranslate nohighlight">\(\varphi\)</span> (figure 12) displaces the wave but does not change its frequency or wavelength. The dashed curve, Figure 12 has <span class="math notranslate nohighlight">\(\varphi = +2/3\)</span> radians compared the solid curve where the phase is zero. Note that a positive phase displaces the curve to the left compared to zero phase.</p>
 <p><img alt="Drawing" src="../_images/chapter1-fig12.png" /></p>
@@ -1825,7 +1825,7 @@ title="Print to PDF"
 \[\displaystyle \psi = a_s\cos(\omega t)\cos(\varphi_s) - a_s\sin(\omega t)\sin(\varphi_s) \]</div>
 <p>In detecting infra-red, visible light or even x-rays the intensity <span class="math notranslate nohighlight">\(I\)</span> is always measured, because of the nature of the interaction of electromagnetic radiation with the atoms and molecules in the detector. The <span class="math notranslate nohighlight">\(\omega t\)</span> terms cannot be measured as the frequency is far too high, and is averaged in the measuring process and can therefore be absorbed into the amplitude and so ignored. The intensity is the square of the wave’s amplitude <span class="math notranslate nohighlight">\(I=a_s^2\)</span> and adding the squares of <span class="math notranslate nohighlight">\(a_s\cos(\varphi_s)\)</span> and <span class="math notranslate nohighlight">\(a_s\sin(\varphi_s)\)</span> and using <span class="math notranslate nohighlight">\(\cos^2(\varphi_s)+\sin^2(\varphi_s)=1\)</span> we find that <span class="math notranslate nohighlight">\(a^2\)</span> is produced as</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle   I\equiv  a_s^2 = \left(\sum_{i=1}^N a_i\cos(\varphi_i)\right)^2+ \left(\sum_{i=1}^N a_i\sin(\varphi_i)\right)^2 \qquad\tag{16a}\]</div>
+\[\displaystyle   I\equiv  a_s^2 = \left(\sum_{i=1}^N a_i\cos(\varphi_i)\right)^2+ \left(\sum_{i=1}^N a_i\sin(\varphi_i)\right)^2  \tag{16a}\]</div>
 <p>with overall phase <span class="math notranslate nohighlight">\(\varphi_s\)</span> given by</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle  \tan(\varphi_s) =\frac{\sum_{i=1}^N a_i\sin(\varphi_i)}{\sum_{i=1}^N a_i\cos(\varphi_i)}\]</div>
@@ -1925,13 +1925,13 @@ title="Print to PDF"
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle \begin{align} x &amp;= r \sin(\theta)\cos(\phi),\qquad &amp;y = r \sin(\theta)\sin(\phi)\\
 z&amp;=r\cos(\theta), \qquad   &amp;r^2 =x^2 +y^2 +z^2\end{align}\end{split}\]</div>
-<p>The azimuthal angle <span class="math notranslate nohighlight">\(\phi\)</span> is in the x- y plane and measures the angle from the x-axis to the line formed by the projection of the point onto this plane, and has a maximum of 360<span class="math notranslate nohighlight">\(^\text{o}\)</span>. <span class="math notranslate nohighlight">\(\theta\)</span> is the polar angle measured from 0 to 180<span class="math notranslate nohighlight">\(^\text{o}\)</span> from the z-axis.</p>
+<p>The azimuthal angle <span class="math notranslate nohighlight">\(\phi\)</span> is in the <span class="math notranslate nohighlight">\(x-y\)</span> plane and measures the angle from the x-axis to the line formed by the projection of the point onto this plane, and has a maximum of 360<span class="math notranslate nohighlight">\(^\text{o}\)</span>. <span class="math notranslate nohighlight">\(\theta\)</span> is the polar angle measured from 0 to 180<span class="math notranslate nohighlight">\(^\text{o}\)</span> from the z-axis. Sometimes when doing an integration it is advantageous to change coordinates from <span class="math notranslate nohighlight">\(xyz\)</span> to spherical polar ones. The volume element <span class="math notranslate nohighlight">\(dxdydx\)</span> then becomes <span class="math notranslate nohighlight">\(r^2\sin(\theta)drd\theta d\phi\)</span> and the limits on the integration are also changed to <span class="math notranslate nohighlight">\(0\to 2\pi\)</span> for <span class="math notranslate nohighlight">\(\phi\)</span>, <span class="math notranslate nohighlight">\(0\to \pi\)</span> for <span class="math notranslate nohighlight">\(\theta\)</span> and <span class="math notranslate nohighlight">\(0\to \infty\)</span> for <span class="math notranslate nohighlight">\(r\)</span>. How the volume element is formed is shown using Jacobian determinants in Chapter 4, section 10.11.</p>
+<p><img alt="Drawing" src="../_images/chapter1-fig17.png" /></p>
+<p>Figure 17 Spherical polar coordinates. The point at <span class="math notranslate nohighlight">\((x,\; y,\; z)\)</span> in Cartesian coordinates is at <span class="math notranslate nohighlight">\((r,\; \theta, \; \phi)\)</span>  in spherical polar coordinates.</p>
 <p>In two dimensions, <em>plane polar</em> coordinates are used to define a point in the x-y plane. If z is included then these coordinates become the cylindrical coordinates. The relationship of plane polar to Cartesian coordinates is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle x=r\cos(\theta),\quad y=r\sin(\theta), \quad r^2 =x^2 +y^2\]</div>
-<p>The angle <span class="math notranslate nohighlight">\(\theta\)</span> is measured from the x- to the y-axis, figure 18</p>
-<p><img alt="Drawing" src="../_images/chapter1-fig17.png" /></p>
-<p>Figure 17. Spherical polar coordinates. The point at <span class="math notranslate nohighlight">\((x,\; y,\; z)\)</span> in Cartesian coordinates is at <span class="math notranslate nohighlight">\((r,\; \theta, \; \phi)\)</span>  in spherical polar coordinates.</p>
+<p>The angle <span class="math notranslate nohighlight">\(\theta\)</span> is measured from the x- to the y-axis, figure 18. The volume element used in integrations is changed as  <span class="math notranslate nohighlight">\(dxdy \to rdrd\theta\)</span> and the integration limits fro <span class="math notranslate nohighlight">\(\pm\infty\)</span> to <span class="math notranslate nohighlight">\(0\to \infty\)</span> in <span class="math notranslate nohighlight">\(r\)</span>  and <span class="math notranslate nohighlight">\(0\to 2\pi\)</span> in <span class="math notranslate nohighlight">\(\theta\)</span>. (Note that <span class="math notranslate nohighlight">\(\theta\)</span> is defined differently than that in spherical polar coordinates).</p>
 <p><img alt="Drawing" src="../_images/chapter1-fig18.png" /></p>
 <p>Figure 18. Plane polar coordinates.</p>
 </section>

@@ -505,30 +505,68 @@ for i,y0 in enumerate([j*0.15 for j in range(0,21)]):   # calculate range of val
 # 
 # where $C$ is the concentration of some species and $D$ the diffusion constant. The rate expression has the form $k[C][\cdots]$ where $k$ is a rate constant multiplied, as appropriate for the chemistry, by concentrations. In heat flow problems the concentration is replaced by temperature and the diffusion coefficient by thermal diffusivity, both have dimensions of length$^2$/time. Initially we shall ignore the rate expression term and deal with a single diffusing species in one dimension but suppose that the initial concentration has an interesting spatial profile. 
 # 
-# To tackle the calculation suppose that there is a grid of points in $x$ and $t$ over which the calculation is being performed, see figure 10a. The derivatives are calculated as differences by assuming small increments in $t$ and $x$. The values are $\Delta x = 1/(m-1)$ for a grid of $i=0\cdots m $ points and similarly for time $\Delta t = 1/(n-1)$ with $j= 0\cdots  n$ points. The total length is $L = m\Delta x$, and total time $T_{max} = n\Delta t$. The approximation to the first derivatives are simple differences which approximate the true derivative when these differences are exceedingly small
+# To tackle the calculation suppose that there is a grid of points in $x$ and $t$ over which the calculation is being performed, see figure 10a. The derivatives are calculated as differences by assuming small increments in $t$ and $x$. The values are $\Delta x = 1/(m-1)$ for a grid of $k=0\cdots m $ points and similarly for time $\Delta t = 1/(n-1)$ with $j= 0\cdots  n$ points. The total length is $L = m\Delta x$, and total time $T_{max} = n\Delta t$. The approximation to the first derivatives are simple differences which approximate the true derivative when these differences are exceedingly small
 # 
-# $$\displaystyle \frac{dC}{dt}\approx \frac{C_i^{j+1}-C_i^j }{\Delta t} $$
+# $$\displaystyle \frac{dC}{dt}\approx \frac{C_k^{j+1}-C_k^j }{\Delta t} $$
 # 
-# $$\displaystyle \frac{dC}{dx}\approx \frac{C_{i+1}^{j}-C_i^j}{\Delta x} $$
+# $$\displaystyle \frac{dC}{dx}\approx \frac{C_{k+1}^{j}-C_k^j}{\Delta x} $$
 # 
-# where subscript $i$ is a spatial index with step $\Delta x$ and superscript $j$ a time position index with step $\Delta t$. This arrangement is equivalent to the Euler approximation which is the simplest of various such schemes. Other more sophisticated schemes are Heun's method (a modification of Euler) and  Runge-Kutta, see section 4. 
+# where subscript $i$ is a spatial index with step $\Delta x$ and superscript $j$ a time position index with step $\Delta t$. This arrangement is equivalent to the Euler approximation which is the simplest of various such schemes. Other more sophisticated schemes are Heun's method (a modification of Euler) and  Runge-Kutta, see section 4.
 # 
-# The second derivative  is calculated as two further terms and the approximation to the diffusion equation becomes 
-# 
-# $$\displaystyle \frac{C_i^{j+1}-C_i^j}{\Delta t}=\frac{D}{\Delta x}\left(\frac{C_{i+1}^j-C_i^j}{\Delta x}-\frac{C_i^j-C_i^{j-1}}{\Delta x} \right)$$
-# 
-# This can be rearranged into a new form 
-# 
-# $$\displaystyle C_i^{new} = C_i^{old} + \frac{D\Delta t}{(\Delta x)^2}\left(  C_{i+1}^{old}-2C_i^{old} +C_{i-1}^{old}  \right) \qquad\tag{31b} $$
-# 
-# where $new=j+1$ and $old=j$ so that each new concentration term requires 3 older terms at different spatial positions. This type of approach is called a Fully Implicit Method. The stencil shows the points used in the calculation, fig 10a.
+# The stencil below shows the points used in the calculation, fig 10a.
 # 
 # ![Drawing](num-methods-fig10a.png)
 # 
 # Figure 10a. The Stencil used to calculate the updating points.
 # ______
 # 
-# The condition for absolute stability depends on both the spatial and temporal steps and is $\displaystyle \frac{D\Delta t}{(\Delta x)^2} \le 1/2$ and  making $m$ bigger (more spatial grid points) is the only way to ensure absolute stability since the spatial extent is defined in the initial conditions pertaining to the problem at hand and $\Delta t$c depend on $\delta x$.
+# The second derivative  is calculated as two further terms and the approximation to the diffusion equation becomes 
+# 
+# $$\displaystyle \frac{C_k^{j+1}-C_k^j}{\Delta t}=\frac{D}{\Delta x}\left(\frac{C_{k+1}^j-C_k^j}{\Delta x}-\frac{C_k^j-C_k^{j-1}}{\Delta x} \right)$$
+# 
+# This can be rearranged into a new form 
+# 
+# $$\displaystyle C_k^{new} = C_k^{old} + \frac{D\Delta t}{(\Delta x)^2}\left(  C_{k+1}^{old}-2C_k^{old} +C_{k-1}^{old}  \right) \qquad\tag{31b} $$
+# 
+# where $new=j+1$ and $old=j$ so that each new concentration term requires 3 older terms at different spatial positions. This type of approach is called a Fully Implicit Method. 
+# 
+# The equation can also be put into  a matrix form as
+# 
+# $$ 
+# \begin{bmatrix}
+# C_0^{j+1}\\
+# C_1^{j+1}\\
+# \vdots\\
+# C_{m-1}^{j+1}
+# \end{bmatrix} = 
+# \begin{bmatrix}
+# 1-2\sigma & +\sigma & 0 & 0 & \dots\\
+# +\sigma & 1-2\sigma & +\sigma &0 &   \\
+# &  \vdots& & &\\
+#  & \cdots &+\sigma & 1-2\sigma &+\sigma \\
+# &  &\cdots &+\sigma & 1-2\sigma 
+# \end{bmatrix} 
+# \begin{bmatrix}
+# C_0^{j}\\
+# C_1^{j}\\
+# \vdots\\
+# C_{m-1}^{}
+# \end{bmatrix}
+# $$
+# 
+# where $\sigma =D\Delta t/\Delta x^2$. The tri-diagonal matrix contains the values at each old concentration at spatial position $k+1,k$ and $k-1$. Computationally the matrix multiply may be slower than using the direct calculation particularly so if array slicing is used, i.e. $c[1:-1]$ etc. as in algorithm 13a below.
+# 
+# ### **Adding a reaction**
+# 
+# A reaction is added by including a term such as $kC^i_j$ to the right hand side of the equation. In the calculation of a transient decay, illustrated below this could be the decay of the excited state produced thus $k$ would be the excited state decay rate constant.
+# 
+# $$\displaystyle C_k^{new} = C_k^{old} + \frac{D\Delta t}{(\Delta x)^2}\left(  C_{k+1}^{old}-2C_k^{old} +C_{k-1}^{old}  \right)  - k\Delta tC_k^{old}$$
+# 
+# and this could be added into the matrix form as an extra term but only in the diagonal as $k\Delta t/\sigma$.
+# 
+# ### **Stability**
+# 
+# The condition for absolute stability depends on both the spatial and temporal steps and is $\displaystyle \frac{D\Delta t}{(\Delta x)^2} \le 1/2$ and making more spatial grid points is the only way to ensure absolute stability since the spatial extent is defined in the initial conditions pertaining to the problem at hand.
 # 
 # ### **Initial Conditions**
 # As with the solution of any differential equation  the calculation cannot be completed until the initial conditions have been specified. There are two types of these. The simplest to apply is to fix the value of $C$ at the edge of the grid to a constant value, the Dirichlet condition, the other is to make the gradient at the edge a constant value, Neumann condition. The former is more suitable for thermal calculations where the edges can be kept at a constant temperature. It would be hard to make a membrane that held the same chemical species at a higher concentration on one side than the other. 
@@ -539,32 +577,33 @@ for i,y0 in enumerate([j*0.15 for j in range(0,21)]):   # calculate range of val
 # 
 # $$\displaystyle \frac{dC}{dx}=\beta\quad\text{at}\quad x= L$$
 # 
-# where $\alpha,\;\beta$ are constants. This condition ensures conservation of mass as no material can enter or leave and is enabled by making $C_0= C_1, C_m = C_{m-1}$ at each updating step.  The same condition when dealing with thermal diffusion corresponds to having an insulated block of material unable to exchange energy with its surroundings.
+# where $\alpha,\;\beta$ are constants. This condition ensures conservation of mass as no material can enter or leave and is enabled by making $C_0 = C_1, C_m = C_{m-1}$ at each updating step.  The same condition when dealing with thermal diffusion corresponds to having an insulated block of material unable to exchange energy with its surroundings.
 # 
 # ### **Example Calculation: Decay of Transient Grating. ( See also chapter 10-18.5 )** 
 # 
-# In the transient grating experiment a laser pulse is split into two parts and recombined in a sample and so produces a grating from which a probe laser can be diffracted. The grating dies away depending on excited state lifetime and linear and rotational diffusion. See Chapter 10.10 for a digram and details.
+# In the transient grating experiment a laser pulse is split into two parts and recombined in a sample and so produces a grating from which a probe laser can be diffracted. The grating dies away depending on excited state lifetime and linear and rotational diffusion. In solution rotational diffusion of a dye molecule is on the same time scale as the excited state decay of the dye and can thus be measured. See Chapter 10.10 for a diagram and details and H. Eichler, P. Gunter & D. Pohl, 'Laser induced Dynamic Gratings', publ Springer-Verlag 1986.
 # 
-# an initial concentration of $C$ has to be present at zero time which means defining $C \gt 0$ and the form the concentration profile will take vs. position $x$.  For illustration we assume this profile is the function  $a+b\cos(kx)$. This has the form expected in a transient grating experiment, which can be used to measure the diffusion coefficient of electronically excited states.  In these type of experiments a polarised laser pulse is split into two parts and recombined in a solution containing molecules that will absorb this light. As the beams are from the same source they are 'in phase' and will interfere at the sample producing strips of excited molecules separated by strips of unexcited ones. This grating is 'transient' because molecules diffuse and also because the excited states decay away. A third probe laser is used to scatter light off the transient grating and measures how quickly this decays away. In fluid solution rotational diffusion of the molecules primarily washes out the grating, whereas if this is not possible linear diffusion will do this but on a much longer time scale. A thermal grating may also be present if absorption is into a solid substrate.  Figure 30f in chapter 10 ( differential equations section 10) shows a possible experimental set-up.
+# an initial concentration of $C$ has to be present at zero time which means defining $C \gt 0$ and the form the concentration profile will take vs. position $x$.  For illustration we assume this profile is the function  $a+b\cos(kx)$. This has the form expected in a transient grating experiment, which can be used to measure the rotational diffusion coefficient of electronically excited states.  In these type of experiments a polarised laser pulse is split into two parts and recombined in a solution containing molecules that will absorb this light. As the beams are from the same source they are 'in phase' and will interfere at the sample producing strips of excited molecules separated by strips of unexcited ones. This grating is 'transient' because molecules diffuse and also because the excited states decay away. A third probe laser is used to scatter light off the transient grating and measures how quickly this decays away. In fluid solution rotational diffusion of the molecules primarily washes out the grating, whereas if this is not possible linear diffusion will do this but on a much longer time scale. A thermal grating may also be present if absorption is into a solid substrate.  Figure 30f in chapter 10 ( differential equations section 10) shows a possible experimental set-up. In solution the diffracted beam decays due to the normal decay lifetime of the molecule and by rotational diffusion of a dye molecule washing out the grating. If the probe laser has its polarisation perpendicular to that forming the grating the decay has the form $\displaystyle \sim e^{-t/\tau}(1+4e^{-t/\tau_{r}}/5)$ whee $\tau$ is the excited state decay lifetime and $\tau_{r}$ that due to rotational diffusion. If the probe is parallel to the polarisation of the laser forming the grating the decay is $\displaystyle \sim e^{-t/\tau}e^{-t/\tau_{r}}$.
 # 
 # Before the calculation can start the dimensions in space and time have to be worked out. As a laser wavelength is measure in nanometres it seems sensible to use this as a unit of distance. The grating wavelength formed by the intersection of the two laser beams has wavelength $\Lambda=\lambda/2\cos(\theta/2)$. Using a $532$ nm laser and an angle of $20$ degrees between beams produces a value of $\Lambda \approx 46$ nm. The initial grating will have the form $c_{00}+\cos(2kx)$ where $x$ is in nm and $k=\pi/\Lambda$. The population $c_{00}$ is that in the sample where no grating is present but molecules are excited and we chose this to be ($c_{00}=2$). Outside the region where the grating is formed the concentration of excited molecules zero and as a result an area larger than the grating is used in the calculation. The reason for doing this is that as time progresses the excited molecules can diffuse into this unexcited area.
 # 
 # The diffusion constant is normally quoted in units of $\mathrm{m^2\,s^{-1}}$ which is changed into $\mathrm{nm^2\,ns^{-1}}$ in the calculation meaning that the unit of time is nanoseconds. Because of the limit on the increments, which is that $\displaystyle \frac{D\Delta t}{(\Delta x)^2} \le 1/2$, the time step is calculated using this formula. A smaller value could be used if preferred. This means that only $\Delta x$ need to be chosen and so the concentration plots below always have the same shape but correspond to different times if a different $\Delta x$ is chosen. It is clear that if too large a value is chosen that the calculation fails, this is observed as oscillations and unrealistic behaviour in the concentration, and illustrates that great care has always to be exercised in choosing parameter values in numerical calculations.
 # 
-# As a thought experiment we imagine that as time progresses the grating should become washed out which is what the calculation shows. If the calculation continues for a very long time then a constant population across the whole region is produced, but only if the Neumann limiting condition is applied, because no excited state decay was included and the total concentration is held constant.
+# As a thought experiment we imagine that as time progresses the grating should become washed out which is what the calculation shows. If the calculation continues for a very long time then a constant population across the whole region is produced, but only if the Neumann limiting condition is applied because this limiting condition ensures that the total concentration is held constant. Naturally, if we allow the excited state to decay the population will fall in this way independently of diffusion.
 # 
 # If a reaction such as $d[C]/dt =-k[C]$ were to be included then the updating equation has the additional rate term,
 # 
-#  $$\displaystyle C_i^{new} = C_i^{old} + \frac{D\Delta t}{(\Delta x)^2}\left(  C_{i+1}^{old}-2C_i^{old} +C_{i-1}^{old}  \right) -kC_i^{old}\Delta t $$
+#  $$\displaystyle C_k^{new} = C_k^{old} + \frac{D\Delta t}{(\Delta x)^2}\left(  C_{k+1}^{old}-2C_k^{old} +C_{k-1}^{old}  \right) -kC_k^{old}\Delta t $$
 #  
 #  where $k$ is the rate constant and $\Delta t$ the time increment.
 
 # In[7]:
 
 
-# Algorithm 13a; 1D diffusion of a sinusoidal population as in a transient grating experiment
+# Algorithm 13a.
+# 1D diffusion of a sinusoidal population as in a transient grating experiment
 
-fig = plt.figure(figsize=(12,6))
+fig = plt.figure(figsize=(8,5))
 plt.rcParams.update({'font.size': 14})        # set font size for plots
 
 ax = [fig.add_subplot(230 + i) for i in range(1,7)]  # make axes to plot
@@ -573,25 +612,26 @@ Lambda = (530e-9 /2)*np.sin(20*np.pi/360)*1e9 # 530 nm light grating wavelength
 w  =   20*Lambda                              # total calculation width as multiple of grating wavelength
 nsteps = 5000
 
-D  = 1e-8*1e18/1e9                            # diffusion cofff   m^2/s->1e18/1e9 nm^2/ns 
+D  = 1e-8*1e18/1e9                            # diffusion coeff   m^2/s->1e18/1e9 nm^2/ns 
 dx = 0.7                                      # step length nm
 nx = int( w/dx )                              # total number of steps
-dt = dx**2/D/2                                # time step in nanosec 
-alphax = D*dt/dx**2                           # constants 
+dt = dx**2/D/4                                # time step in nanosec 
+sigma = D*dt/dx**2                            # constants 
 
 c0 = np.zeros(nx, dtype = float)              # make arrays 
 c  = np.zeros(nx,dtype = float)
 x  = np.linspace(0, w, nx)
 
-#kk= 0.25e-1                                  # excited state decay 
-c00 = 2                                       # value when no grating just two lasers
+tau = 100                                     # excited state lifetime,  in update_step
+kk  = 1/tau                                   # used as - kk*dt*c0[1:-1] in update step
 q   = int(5*Lambda/dx)                        # start grating q, and  nx-q stop grating
+c00 = 2                                       # value when no grating just two lasers
 for i in range(q,nx-q):
     c0[i] = c00 + np.cos(np.pi*x[i]/Lambda)   # initial sinusoidal profile  
 
 #--------------------
-def update_step(c0):     # Propagate with forward-difference in time, central-difference in space
-    c[1:-1] = c0[1:-1] + alphax*(c0[2:] - 2*c0[1:-1] + c0[:-2])   #  -kk*dt*c0[1:-1]
+def update_step(c0,c):     # Propagate with forward-difference in time, central-difference in space
+    c[1:-1] = c0[1:-1] + sigma*(c0[2:] - 2*c0[1:-1] + c0[:-2])   - kk*dt*c0[1:-1]
     c[0]    = c[1]                            # Neumann condition   dc/dt=const
     c[nx-1] = c[nx-2]
     return c
@@ -601,377 +641,44 @@ tsteps = [i/10*nsteps for i in range(0,11,2)]    # plot at these timesteps
 
 i = 0
 for m in range(nsteps+1):
-    c  = update_step(c0)
+    c  = update_step(c0,c)
     c0 = c                     # make copy as starting data for next iteration
     if m in tsteps:            # plot only at these times
         ax[i].plot(x/Lambda,c,color='blue')
         ax[i].set_ylim([0,3.15])
         ax[i].set_xlim([0,w/Lambda])
-        ax[i].text(20/Lambda,2.5,str('{:0.1f}'.format(m*dt))+' ns')
+        ax[i].text(20/Lambda,2.5,str('{:0.1f}'.format(m*dt))+' ns',fontsize=12)
         ax[i].axvline(5,linewidth=1, color='gray',linestyle='dashed')
         ax[i].axvline(15,linewidth=1, color='gray',linestyle='dashed')
         i=i+1
+plt.axhline(c00,linewidth=0.5, color='grey')
+plt.axhline(c00*np.exp(-m*dt/tau),linewidth=1, color='grey')
 plt.tight_layout()
 plt.show()
 
 
-# In[ ]:
+# Figure 10 b. This plot shows the grating amplitude decreasing due to diffusion, the total amount of excited state present is also reduced by excited state decay. In the last frame the upper horizontal line shows the initial amount when all the grating has decayed assuming no excited state decay, and the lower line the amount left as a result of the excited state decay, in this example $\tau=100$. The signal that would be diffracted of this grating thus decays as diffusion occurs and as the excited state decays.
+# _____________________
 
-
-
-
-
-# ## 4.12 Crank-Nicholson Method
+# ## 4.12 2D diffusion in a plate.
 # 
-# The best method to perform 1D diffusion type calculations, including reaction-diffusion, is, according to Prest (Numerical Recipes), the Crank-Nicholson approach as it is second order in time and space. This method is still subject to numerical instability as are all numerical methods. The method is computationally more complex than the approach above. The method uses the stencil shown below and is based on using the trapezoidal rule to perform the integration.
-# 
-# ![Drawing](num-methods-fig10c.png)
-#      
-# Figure 10c. Stencil for the Crank-Nicholson calculation. The top three values labelled with $j+1$ are unknown.
-# ______
-# The differential equation is expanded in a manner similar to that of eqn. 31b but as better approximation is made to the second derivative. The result is 
-# 
-# $$\displaystyle \frac{C_i^{j+1}-C_i^j}{\Delta t}=\frac{D}{2(\Delta x)^2}\left(\left[C_{i+1}^{j+1}-2C_i^{j+1}+C_{i-1}^{j+1}\right] - \left[C_{i+1}^j-2C_i^j+C_{i-1}^j  \right ]\right)$$
-# 
-# Any rate equations are added at the end of this scheme as  $-k[C][..]\Delta t+\cdots $ etc.  The solution for a reaction scheme is given in the code below after the method is explained. 
-# 
-# To solve the equation it is far easier to convert it into matrix form. This means calculating all the spatial dimension terms before calculating in time. For clarity let 
-# 
-# $$\displaystyle \sigma =\frac{D\Delta t }{2(\Delta x)^2} $$
-# 
-# and its not so obvious, but it becomes clear later on, that it helps to rewrite the equations by collecting terms in $C^{j+1}$ and in $C^j$ as
-# 
-# $$\displaystyle -\sigma C_{i-1}^{j+1}+(1+2\sigma)C_i^{j+1}-\sigma C_{i+1}^{j+1} = \sigma C_{i-1}^{j}+(1-2\sigma)C_i^{j}+\sigma C_{i+1}^{j} + f(C_i^j)\Delta t  \qquad\tag{31c}$$
-# 
-# where $f(C_i^j)$ represent the rate equations. The tri-diagonal form the the equations can be seen in the $i-1,\, i,\,i+1$ terms on either side of the equation. However, there is a problem with this because when $i,j=0$  there are points are outside the grid, $C_{-1}$ for example. This can be overcome using the boundary condition that is discretized (under the Neumann condition) to be 
-# 
-# $$\displaystyle \frac{C_0^j-C_{-1}^j}{\Delta x}=0, \qquad \frac{C_m^j-C_{m-1}^j}{\Delta x}=0$$
-# 
-# this leads to the conditions when $i=0$ that 
-# 
-# $$\displaystyle C_0^j=C_{-1}^j, \; C_0^{j+1}=C_{-1}^{j+1}$$
-# 
-# and when $i=m-1$
-# 
-# $$\displaystyle C_{m-1}^j=C_m^j, \; C_{m-1}^{j+1}=C_m^{j+1}$$
-# 
-# The Neumann boundary condition of constant spatial gradient at the limits (in this example the gradient is zero)  prohibits material from entering or leaving across the boundaries; so it is a 'no flux' condition.
-# 
-# To solve the equations we have to iterate in time but solve the equations above in spatial coordinates. The best way to do this is to solve for all $x$ at a given time then increment time and repeat. Although it look very complex, the simplest approach is to transform the equations into matrix form. The concentrations (eqn 31c) can be put into matrix form by defining a column vector,
-# 
-# $$\displaystyle C^J=\left[ C_0^j,C_1^j\cdots C_{m-1}^j \right]^T$$
-# 
-# and then the 'tri-diagonal' matrices for the coefficients in eqn. 31c, including the boundary condition in the first and last rows, are 
-# 
-# $$\displaystyle \begin{align}&\begin{bmatrix}
-# 1+\sigma & -\sigma & 0 & 0 &0& 0\\
-# -\sigma & 1+2\sigma & -\sigma &0 & 0 &0\\
-# 0 & -\sigma & 1+2\sigma & -\sigma & 0 &0\\
-# & & \vdots& & &\\
-#  & &\cdots &-\sigma & 1+2\sigma &-\sigma \\
-# & & &\cdots &-\sigma & 1+\sigma 
-# \end{bmatrix} 
-# \begin{bmatrix}
-# C_0^{j+1}\\
-# C_1^{j+1}\\
-#  \\
-# \vdots\\
-# C_{m-1}^{j+1}
-# \end{bmatrix} =\\& 
-# \begin{bmatrix}
-# 1-\sigma & +\sigma & 0 & 0 &0& 0\\
-# +\sigma & 1-2\sigma & +\sigma &0 & 0 &0\\
-# 0 & +\sigma & 1-2\sigma & +\sigma & 0 &0\\
-# & & \vdots& & &\\
-#  & &\cdots &+\sigma & 1-2\sigma &+\sigma \\
-# & & &\cdots &+\sigma & 1-\sigma 
-# \end{bmatrix} 
-# \begin{bmatrix}
-# C_0^{j}\\
-# C_1^{j}\\
-#  \\
-# \vdots\\
-# C_{m-1}^{}
-# \end{bmatrix}
-# + 
-# \begin{bmatrix}
-# f(C_0^{j})\Delta t\\
-# f(C_1^{j})\Delta t\\
-#  \\
-# \vdots\\
-# f(C_{m-1}^{j}\Delta t
-# \end{bmatrix}\end{align}$$
-# 
-# and in matrix notation this is 
-# 
-# $$\displaystyle  \mathbf{A C}^{j+1} = \mathbf{B C}^{j} + \mathbf{F}$$ 
-# 
-# Multiplying both sides by $\mathbf{A^{-1}}$ gives 
-# 
-# $$\displaystyle  \mathbf{C}^{j+1} = \mathbf{A^{-1}}\left(\mathbf{B C}^{j} + \mathbf{F} \right)  \qquad\tag{31d}$$
-# 
-# thus in the iteration scheme the $\mathbf A$ matrix needs to be inverted once only which saves considerable effort. The matrix $\pmb F$ contains the rate expressions. Time in the numerical model has index $j$ so once initial values are determined, a loop with the matrix equation can be performed. Note that $\mathbf{A}^{-1}$ and $\mathbf{B}$ are constant in time so are evaluated once outside the time loop. Only the $f$ and $\mathbf{C}$ vectors vary in time.
-# 
-# As an example we use the Michaelis-Menten scheme. $S$ is the substrate,$E$ the enzyme and $ES$ the complex formed. The product into which the substrate is changed is $P$.  To generate the spatial dimension we shall suppose that the reactants are initially in separate microchannels at the end of which they form laminar flow with the enzyme between layers of substrate. The molecules  are able to mix by each diffusing into the other where they react. Naturally, there is an interplay between rate of diffusion and rate of reaction. Figure 10c shows a possible arrangement.
-# 
-# $$\displaystyle \begin{align}  
-# S+E &\underset{k_-1}{\stackrel{k_1} \leftrightharpoons} ES\stackrel {k_2}\longrightarrow E+P\\
-# \frac{d[E]}{dt} &= -k_1[S][E] + (k_{-1}+k_2)[ES] \\
-# \frac{d[S]}{dt} &= -k_1[S][E] + k_{-1}[ES]\\
-# \frac{d[ES]}{dt}&= -(k_{-1} + k_2)[ES] + k_1[S][E] \\
-# \frac{d[P]}{dt} &=  k_2[ES] 
-# \end{align}$$
-# 
-# The  terms to use in the diffusion  equation (equation $31a$ )  are the right hand sides of the rate equations. And as we have four species there are four similar diffusion equations to be calculated. Clearly, the diffusion coefficient in the solvent used has to be known for each species as do all the rate constants. 
-# 
-# ![Drawing](num-methods-fig10d.png)
-#      
-# Figure 10d. Schematic for microchannel reaction. The reactants are in separate microchannels (grey) on the left which opens into a larger single channel. As they flow the fluids react and diffuse together.The entrance width of a channel is typically $50$ microns. The enzyme is flowing down the centre of the channel (red). The measurement is made at different points across the channels corresponding to different times.
-# ____________
-# The calculation is shown below. The initial concentrations are in the first two plots in the top line and the results at later times below these. The intermediate ES is shown in the third plot and the concentrations vs. time measured just in the narrow channel is shown below this.
-
-# In[8]:
-
-
-# Algorithm 13b Crank-Nicholson
-
-# reaction diffusion  Crank_Nicolson + chemistry
-
-# S+Ez <=> ES -> Ez+P,  k1, (km1), k2 .   
-# dEz/dt = -k1.S.Ez + (km1+k2).ES, 
-# dS/dt  =  -k1.S.Ez + km1.ES ,
-# dES/dt = -(k2+km1).ES + k1.S.Ez , 
-# dU/dt  = D_u(d^2U/dx^2) - f(rate expression) for each species 
-# use time in microsec , distances in micrometres.
-
-plt.rcParams.update({'font.size': 14})  # set font size for plots
-
-fig1=plt.figure(figsize=(15,10))        # set plot window and 2 rows 3 cols sub plots
-ax0 = fig1.add_subplot(2,3,1)
-ax1 = fig1.add_subplot(2,3,2)
-ax2 = fig1.add_subplot(2,3,3)
-ax3 = fig1.add_subplot(2,3,4)
-ax4 = fig1.add_subplot(2,3,5)
-ax5 = fig1.add_subplot(2,3,6)
-#-----------------------------------
-def do_calc():
-
-    #---------
-    def Ezvec(Ez,S,ES):                                    # vector for chemistry dEz/dt  
-        for i in range(J ):
-            avec[i] = -k1*Ez[i]*S[i] + (km1+k2)*ES[i]      # rate constants defined in outside.
-        return avec*dt    
-    #---------
-    
-    def Svec(Ez,S,ES):                                     # chemistry dS/dt  
-        for i in range(J ):
-            avec[i] = -k1*Ez[i]*S[i] + km1*ES[i]           # rate constants defined in outside.
-        return avec*dt    
-    #---------
-    
-    def ESvec(Ez,S,ES):                                    # chemistrty dES/dt
-        for i in range(J ):
-            avec[i] = k1*Ez[i]*S[i] - (k2+km1)*ES[i]
-        return avec*dt   
-    #---------
-    
-    def make_tri_matrix(J,Q):           # matrix is symmetrical when ss=2, or 1st/last row ss=1
-        ss = 1.0  
-        M  = np.zeros((J,J),dtype=float)
-        M[0,0] = 1 + ss*Q
-        M[0,1] = -Q
-        for i in range(1,J-1):
-            M[i,i-1] = -Q
-            M[i,i]   = 1 + 2*Q
-            M[i,i+1] = -Q
-            pass
-        M[J-1,J-2] =  -Q
-        M[J-1,J-1] = 1 + ss*Q
-        
-        return M
-    #----------
-    
-    def pretty_plot(ax, xvals, yvals,ymax, atext, colr):   # put common features here
-        ax.set_ylim([0.0, 1.1*ymax] )
-        ax.set_xlabel(r'$x$')
-        ax.set_ylabel('concentration')
-        ax.set_title(atext)
-        ax.axvline(xvals[x0],color='grey',linewidth=1, linestyle='dashed')
-        ax.axvline(xvals[x1],color='grey',linewidth=1, linestyle='dashed')
-        ax.plot(xvals, yvals,color=colr)
-        pass
-    #-----------------------
-                       #  constants etc 
-    
-    ms = 1e-6          # scale microseconds & micrometres
-    L  = 100.0*ms      # total width in dm :  30*ms = 3 micrometres
-    J  = 200           # number spatial points 
-    dx = L/(J-1.0) 
-    
-    T  = 100000.0*ms   # total time  seconds 
-    N  = 10000         # number of time points
-    dt = T/(N-1.0) 
-    
-    DS  = 1e-2*ms      # diff coeffs dm^2/s  substrate   1e-6 cm^2/s == 1e-10 m^2/s == 1e-8 dm^2/s
-    DEz = 1e-3*ms      # enzyme diffn coeff smaller than substrate as it is big
-    DES = 1.00 * DEz   # same as enzyme
-    
-    k1  = 0.5 /ms      #  2 nd order rate const   dm^3/mol/s -> E+S
-    km1 = 0.02/ms      #  1 st order 1/s reverse reaction
-    k2  = 0.01 /ms     #  1 st order ES to product
-    kk  = km1 + k2     #  allow for ES to react to product 
-    
-    S0  = 1.0e-2       # initial concentrations  
-    Ez0 = 1.0e-3
-    ES0 = 0.0
-    
-    #------------------------
-    
-    SEz = DEz*dt/(2.0*dx**2)    # scaling params in eqns
-    SS =  DS *dt/(2.0*dx**2) 
-    SE =  DES*dt/(2.0*dx**2)
-    
-    print('{:s} {:8.3g} {:8.3g}'.format('dx,dt',dx,dt) )
-    print('{:s} {:10.5g} {:10.5g} {:10.5g} '.format('k1, km1, k2  ',k1,km1,k2) )
-    print('{:s} {:10.5g} {:10.5g} {:10.5g} '.format('DS, DEz, DES ',DS, DEz, DES ) )
-    
-    # make initial profiles
-    tgrid = np.linspace(0,T,N)  # time grid points
-    xgrid = np.linspace(0,L,J)  # spatial grid
-    
-    Ez = np.zeros(J,dtype=float)
-    ES = np.zeros(J,dtype=float)
-    
-    avec= np.zeros(J,dtype=float)   # used to set up A, B matrices
-    S   = np.zeros(J,dtype=float)   # used just for pics
-    
-    #  set channels and init conc'ns Ez, S
-    dwidth = 0.1
-    xf0 = 0.45                      # set start as fractional width of channel
-    xf1 = xf0 + dwidth              # set fractional increment
-    indx0 = 0
-    indx1 = 0
-    for i in range(J):              # set width of channel 
-        Ez[i] = 0
-        S[i]  =  S0
-        if xgrid[i] < xf0*L:
-            indx0 = indx0 + 1   
-        if xgrid[i] > xf0*L and xgrid[i] < xf1*L:
-            Ez[i] = Ez0
-            S[i]  = 0.0
-            indx1 = indx1 + 1
-        pass
-    x0 = indx0                      # index of right side area.    
-    x1 = indx0 + indx1 
-    if x1 >= J: 
-        x1 = J-1
-        
-    pretty_plot(ax0,xgrid/ms,Ez,Ez0,'Ez initial','red')             # plot initial profiles
-    ax0.fill_between(xgrid/ms, Ez, y2 = 0,color='red',alpha = 0.5)
-    pretty_plot(ax1,xgrid/ms,S,S0,'S initial','grey')
-    pretty_plot(ax4,xgrid/ms,S,S0,'S vs. time','grey')
-    ax1.fill_between(xgrid/ms, S, y2 = 0,color= 'grey',alpha = 0.5)
-    pretty_plot(ax3,xgrid/ms,Ez,Ez0,'Ez vs. time','red')
-    pretty_plot(ax2,xgrid/ms,ES,Ez0,'ES x 10 vs. time','green')
-    
-    # end set channels and plotting
-    
-    AEz = make_tri_matrix(J,SEz)          #set up tri diagonal matrices 
-    AS  = make_tri_matrix(J,SS)
-    AES = make_tri_matrix(J,SE)
-    BEz = make_tri_matrix(J,-SEz)
-    BS  = make_tri_matrix(J,-SS)
-    BES = make_tri_matrix(J,-SE)
-    
-    Ezall = []                            # initialise list used to hold data
-    Sall  = []
-    ESall = []
-    
-    Ezall.append(Ez)                      # store values
-    Sall.append(S)
-    ESall.append(ES)
-
-    invAEz = linalg.inv(AEz)             # invert matrices only once
-    invAS  = linalg.inv(AS) 
-    invAES = linalg.inv(AES)
-   
-    #print('starting calc')
-    
-    for i in range(1,N):                 # main calculation: iteration in time
-        #dt = tgrid[i]-tgrid[i-1]        # equivalent time used if log time scale used
-        Eznew = invAEz @ ( BEz @ Ez + Ezvec( Ez,S, ES) )  # @ is matrix multiply
-        Snew  = invAS  @ ( BS  @ S  + Svec( Ez,S, ES) )
-        ESnew = invAES @ ( BES @ ES + ESvec( Ez,S, ES) )   
-        
-        Ez = Eznew
-        S  = Snew
-        ES = ESnew
-        
-        if  i % int(N/20) == 0:         # plot multiples of N/20
-            ax4.plot(xgrid/ms, S,color='black',  linewidth=1)
-            ax3.plot(xgrid/ms, Ez,color='red',  linewidth=1)
-            ax2.plot(xgrid/ms, ES*10,color='green',linewidth=1)
-            pass
-        Ezall.append(Ez)
-        Sall.append(S)
-        ESall.append(ES)
-        pass
-    #print('finished calculation - plotting')
-    
-    Ezsum = np.zeros(N,dtype=float)
-    ESsum = np.zeros(N,dtype=float)
-   
-    for i in range(N):                       # N time points
-        Ezsum[i] = sum(Ezall[i][x0:x1 ])*dwidth  # sum over central region only
-        ESsum[i] = sum(ESall[i][x0:x1 ])*dwidth 
-    
-    Ezmx = max(Ezsum)
-    ESmx = max(ESsum)
-    
-    
-    ax5.set_ylim([0,1.2*Ezsum[0]])
-    ax5.set_xscale('log')   # log time
-    ax5.plot(tgrid,Ezsum,color='red',label='Ez')
-    ax5.plot(tgrid,ESsum,color='green',label='ES')
-    
-    ax5.set_ylabel('ES, Ez')    
-    ax5.set_xlabel('time/ s')
-    ax5.set_title(' ES, Ez')
-    ax5.legend(fontsize=12)
-      
-    astr1 ='$k_1=$'+' {:10.4g}\n'.format((k1)  ) # use Mathjax in $  ... $ to prettyfy
-    astr2 ='$k_{-1}=$'+'{:10.4g}\n'.format((km1)  )
-    astr3 ='$k_2=$'+' {:10.4g}\n'.format((k2)  )
-    ax5.annotate(astr1+astr2+astr3, xy= (xgrid[1] , 0.5*Ezsum[0]),fontsize=10 )
-    pass   # end of do_calc
-
-#----------------------------  end of main def do_calc()
-
-do_calc()
-
-plt.tight_layout()
-plt.show()
-
-
-# ## 4.13 2D diffusion in a plate.
-# 
-# Returning to using the simpler integration scheme described at the start of this section but now  in two dimensions. The reason for using the simpler scheme is because the 2D Crank-Nicholson scheme produces equations that are hard to solve and alternative, and complicated,  methods as described by Prest et al. (Numerical Recipes) are then used.  
+# We now use the integration scheme described at the start of this section but in two dimensions. The reason for using the simpler scheme is because the Crank-Nicholson scheme, described below, produces equations that are hard to solve in 2D and alternative, and complicated,  methods as described by Prest et al. (Numerical Recipes) are then used.  
 # 
 # The two-dimensional diffusion equation is
 # 
 # $$\frac{\partial U}{\partial t}=D\left(  \frac{\partial^2 U }{\partial x^2 }+\frac{\partial ^2U }{\partial y^2}\right) $$
 # 
-# where $U$ represents temperature of concentration as necessary. Since there no terms involving both $x$ and $y$ the two dimensions can be treated separately and this greatly simplifies the calculation. It is also assumed that the diffusion coefficient is the same in all directions and is constant as the temperature changes, which implies that any temperature change must be small.
+# where $U$ represents temperature or concentration as necessary. Since there no terms involving both $x$ and $y$ the two dimensions can be treated separately and this greatly simplifies the calculation. It is also assumed that the diffusion coefficient is the same in all directions and is constant as the temperature changes, which implies that any temperature change must be small.
 # 
-# A numerical solution on the domain of the unit square $0 \le x \lt 1,\;0\le y \lt 1$ approximates $U(x,y;t)$ by the discrete function $u^{n}_{i,j}$ where $x=i\Delta x, y=j\Delta y , t = n\Delta t$. If a unit square is not what is required then we suppose that $x$ and $y$ are fractions of the true dimensions and adjust the graphs plotted at the end as appropriate.  Applying finite difference approximations yields
+# A numerical solution on the domain of the unit square $0 \le x \lt 1,\;0\le y \lt 1$ approximates $U(x,y;t)$ by the discrete function $u^{j}_{i,k}$ where $x=i\Delta x, y=k\Delta y , t = j\Delta t$. If a unit square is not what is required then we suppose that $x$ and $y$ are fractions of the true dimensions and adjust the graphs plotted at the end as appropriate.  Applying a finite difference approximations yields
 # 
-# $$\frac{u^{(n+1)}_{i,j}- u^{n}_{i,j}}{Δt} =D\left( \frac{u^{n}_{i+1,j}- 2u^{n}_{i,j} + u^{n}_{i-1,j}}{\Delta x^2} +\frac{u^{n}_{i+1,j}- 2u^{n}_{i,j} + u^{n}_{i-1,j}}{\Delta y^2}\right) $$
+# $$\frac{u^{(j+1)}_{i,k}- u^{j}_{i,k}}{Δt} =D\left( \frac{u^{j}_{i+1,k}- 2u^{j}_{i,k} + u^{j}_{i-1,k}}{\Delta x^2} +\frac{u^{j}_{i,k+1}- 2u^{j}_{i,k} + u^{j}_{i,k-1}}{\Delta y^2}\right) $$
 # 
-# and hence time step $n+1, u^{(n+1)}_{i,j}$ may be calculated from its state at time step $n, u^{n}_{i,j}$ through this  equation by separating out as was done in one dimension
+# and hence time step $j+1, u^{(j+1)}_{i,k}$ may be calculated from its state at time step $j, u^{j}_{i,k}$ via this equation by factoring terms as was done in one dimension
 # 
-# $$u^{(n+1)}_{i,j}= u^n_{i,j}+D\Delta t \left( \cdots \right)$$
+# $$u^{(j+1)}_{i,k}= u^j_{i,k}+\frac{D\Delta t}{\Delta x^2} \left( \cdots \right)$$
 # 
-# Consider the diffusion equation applied to a plate initially at temperature $T_0$ apart from a disc of a specified size which is at temperature $T_1$. We suppose that the edges of the plate are held fixed at $T_0$. Experimentally this might correspond to heating a spot in a thin sample with pulse from a laser and then observing the change in temperature. A related experiment is to ablate a region in a cell membrane into which a protein of other molecule is labelled with a fluorescent dye. The ablation is such that it bleaches the dye without appreciably heating the sample, and then the re-appearance of the fluorescence is monitored after the ablating laser pulse has ended. This then produced the diffusion coefficient of the labelled molecules. This is  what occurs in a FRAP (Fluorescence Recovery after Photo-bleaching) experiment. 
+# Consider the diffusion equation applied to a plate initially at temperature $T_0$ apart from a disc of a specified size which is at temperature $T_1$. We suppose that the edges of the plate are held fixed at $T_0$. Experimentally this might correspond to heating a spot in a thin sample with pulse from a laser and then observing the change in temperature. A related experiment is to ablate a region in a cell membrane into which a protein of other molecule is labelled with a fluorescent dye. The ablation is such that it bleaches the dye without appreciably heating the sample, and then the re-appearance of the fluorescence is monitored after the ablating laser pulse has ended. This measurement produces the diffusion coefficient of the labelled molecules and  is  what occurs in a FRAP (Fluorescence Recovery after Photo-bleaching) experiment. 
 # 
 # The following code applies the above formula to follow the evolution of the temperature of a plate. The initial spot is heated with respect to the rest of the plate. The code used is similar to that given above in the subroutine 'update_step'. 
 # 
@@ -979,9 +686,19 @@ plt.show()
 # 
 # $$\displaystyle \Delta t=\frac{(\Delta x\Delta y)^2}{2D(\Delta x^2+\Delta y^2)}$$
 # 
-# The Neumann initial condition is used and ensures that no heat is lost, which can be checked by summing the total temperature of the plate at different times.  The images clearly show how the energy deposited into the central spot diffuses into the surroundings as time passes. Calculating the temperature  at the centre of the disc (or at any other position) indicates how the energy spreads with time.  The average distance heat or molecules diffuse in time $t$ is given by $\langle r\rangle =\sqrt{2nDt}$ in dimension $n$ thus $\langle r\rangle =\sqrt{4Dt}$ in this example. These average distances are shown on the plots and show how the radial distance diffused slows down in time.
+# The Neumann initial condition is used and ensures that no heat is lost, which can be checked by summing the total temperature of the plate at different times.  The images clearly show how the energy deposited into the central spot diffuses into the surroundings as time passes. Calculating the temperature  at the centre of the disc (or at any other position) indicates how the energy spreads with time.  
+# 
+# The average distance heat or molecules diffuse in time $t$ is given by 
+# 
+# $$\displaystyle \langle r\rangle =\sqrt{2nDt}$$
+# 
+# in dimension $n$ thus $\langle r\rangle =\sqrt{4Dt}$ in this example. The rate of increase in $\langle r\rangle$ is 
+# 
+# $$\displaystyle \frac{d}{dt}\langle r\rangle =\sqrt{\frac{D}{t}}$$
+# 
+# These average distances are shown on the plots and show how the radial distance diffused slows down with increasing time.
 
-# In[9]:
+# In[8]:
 
 
 # Algorithm 13b; 2D diffusion in a plate
@@ -1013,7 +730,7 @@ r2 = r**2
 print('spot radius',r*1000,' micron')
 
 #--------------------
-def hot_spot(u0,Thot):                     # check where to pot hot molecules
+def hot_spot(u0,Thot):                     # check where to put hot molecules
     for i in range(nx):
         for j in range(ny):
             p2 = (i*dx-cx)**2 + (j*dy-cy)**2  # in mm
@@ -1031,7 +748,7 @@ def aring(r,cx,cy):                        # returns list of x and y coords of c
 def update_step2D(u0):                     # Neumann conditions added at end
     u[1:-1, 1:-1] = u0[1:-1, 1:-1] + alphax*(u0[2:, 1:-1] - 2*u0[1:-1, 1:-1] + u0[:-2, 1:-1]) \
                                    + alphay*(u0[1:-1, 2:] - 2*u0[1:-1, 1:-1] + u0[1:-1, :-2]) 
-    u[0,1:ny-2]    = u[1,1:ny-2]           # Neumann limits
+    u[0,1:ny-2]    = u[1,1:ny-2]           # Neumann boundary condition
     u[nx-1,1:ny-2] = u[nx-2,1:ny-2]
     u[1:nx-2,0]    = u[1:nx-2,1]
     u[1:nx-2,ny-1] = u[1:nx-2,ny-2]
@@ -1077,6 +794,303 @@ cbar_ax.set_xlabel('$T$ / K', labelpad = 5)
 fig.colorbar(im, cax = cbar_ax)
 
 plt.show()
+
+
+# ## 4.13 Crank-Nicholson Method. The time-dependent Schroedinger equation
+# 
+# The best method with which to perform 1D diffusion type calculations and the 1D time-dependent Schroedinger equation, is, according to Prest (Numerical Recipes), the Crank-Nicholson approach as it is second order in time and space. This method is still, however, subject to numerical instability as are all such methods. This method is computationally a little more complex than the approach in section 4.11. The method uses the stencil shown below and is based on using the trapezoidal rule to perform the integration.
+# 
+# ![Drawing](num-methods-fig10c.png)
+#      
+# Figure 10c. Stencil for the Crank-Nicholson calculation. The top three values labelled with $j+1$ are unknown.
+# ______
+# 
+# The method is explained  with the time-dependent Schroedinger equation. 
+# 
+# $$\displaystyle i\hbar \frac{\partial \psi}{\partial t}=-\frac{\hbar^2}{2m}\frac{\partial^2 \psi}{\partial x^2}+V(x)\psi$$
+# 
+# where $\psi$ is a function of time and space, or $x$ and $t$. Atomic units are used which means that $\hbar=m=1$ where $m$ is the mass of the electron.  The unit of distance is $a_0$, the Bohr atom radius, ($a_0=5.21\times 10^{-11}$ m) and the unit of time is $\hbar/E_H=2.419\times 10^{-17}$ s where $E_H$ is the Hartree = $4.3597\times 10^{-18}$ J which is twice the ionisation energy of an hydrogen atom. If we wish to do the calculation with a different mass all that has to happen is to change the time, energy etc. at the end of the calculation when changing back to SI units. 
+# 
+# The atomic units simplify the Schroedinger equation to
+# 
+# $$\displaystyle i \frac{\partial \psi}{\partial t}=-\frac{1}{2}\frac{\partial^2 \psi}{\partial x^2}+V\psi$$
+# 
+# The potential energy $V$ depends only on a spatial coordinate. Expanding in a manner similar to that of eqn. 31b except that a better approximation is made to the second derivative, which is the average of the past and future time points. The spatial grid has index $k$, time time grid $j$ and after dividing by $i=\sqrt{-1}$,
+# 
+# $$\displaystyle \frac{\psi_k^{j+1}-\psi_k^j}{\Delta t}=i\frac{1}{2(\Delta x)^2}\bigg(\left(\psi_{k+1}^{j+1}-2\psi_k^{j+1}+\psi_{k-1}^{j+1}\right) + \left(\psi_{k+1}^j-2\psi_k^j+\psi_{k-1}^j  \right )\bigg)-i V_k(\psi_k^{j+1}+\psi_k^j)$$
+# 
+# Expanding on a grid means that the end points effectively form an infinitely high barrier, i.e the calculation takes place within a square well or 'particle in a box' potential so normally the calculation is stopped before the ends are reached. If not you do this you should observe the wavepacket being reflected of the wall and then its continued motion. 
+# 
+# To solve the equation it is far easier to convert it into matrix form. This means calculating all the spatial dimension terms before calculating in time. Its not so obvious, but it becomes clear later on, that it helps to rewrite the equations by collecting terms in $\psi^{j+1}$ and in $\psi^j$ as
+# 
+# $$\displaystyle - \sigma\psi_{k-1}^{j+1}+(1+2\sigma)\psi_k^{j+1}- \sigma\psi_{k+1}^{j+1}+i V_k\psi_k^{j+1}\Delta t = \sigma \psi_{k-1}^{j}+(1-2\sigma)\psi_k^{j}+ \sigma\psi_{k+1}^{j} -i V_k\psi_k^j\Delta t  \qquad\tag{31c}$$
+# 
+# where $\sigma=i\Delta t/(2(\Delta x)^2)$. The tri-diagonal form the equations have can be seen in the $k-1,\, k,\,k+1$ terms on either side of the equation. Thus, given the initial wavefunction/wavepacket and the boundary conditions that $\psi\to 0 $ at $x\to \pm \infty$, $\psi$ can be calculated at later times.
+# 
+# To solve the equations it is necessary to iterate in time and at each time solve the equations above in spatial coordinates. The best way to do this is to solve for all $x$ at a given time then increment time and repeat. Although it looks very complex, the simplest approach is to transform the equations into matrix form. The $\psi$ (eqn 31c) can be put into matrix form by defining a column vector,
+# 
+# $$\displaystyle \mathbf{P}^J=\left[ \psi_0^j,\psi_1^j\cdots \psi_{m-1}^j \right]^T$$
+# 
+# and then the 'tri-diagonal' matrices for the coefficients in eqn. 31c are, 
+# 
+# $$\small\left(\begin{bmatrix}
+# 1+2\sigma & -\sigma & 0 & 0 &\dots\\
+# -\sigma & 1+2\sigma & -\sigma &0 &\\
+# & & \vdots& & &\\
+#  & \cdots &-\sigma & 1+2\sigma &-\sigma \\
+# & & \cdots &-\sigma & 1+2\sigma 
+# \end{bmatrix} +
+# \begin{bmatrix}
+# iV_0\Delta t&0&\cdots\\
+# 0 & V_1\Delta t & 0 \\
+# & \vdots\\
+# \dots & 0 & iV_{m-1}\Delta t
+# \end{bmatrix}\right)
+# \begin{bmatrix}
+# \psi_0^{j+1}\\
+# \psi_1^{j+1}\\
+# \vdots\\
+# \psi_{m-1}^{j+1}
+# \end{bmatrix} \\= 
+# \left(\begin{bmatrix}
+# 1-2\sigma & +\sigma & 0 & 0 & \dots\\
+# +\sigma & 1-2\sigma & +\sigma &0 &   \\
+# &  \vdots& & &\\
+#  & \cdots &+\sigma & 1-2\sigma &+\sigma \\
+# &  &\cdots &+\sigma & 1-2\sigma 
+# \end{bmatrix} -
+# \begin{bmatrix}
+# iV_0\Delta t&0&\cdots\\
+# 0 & iV_1\Delta t & 0 \\
+# & \vdots\\
+# \dots & 0 & iV_{m-1}\Delta t
+# \end{bmatrix}\right)
+# \begin{bmatrix}
+# \psi_0^{j}\\
+# \psi_1^{j}\\
+# \vdots\\
+# \psi_{m-1}^{}
+# \end{bmatrix}
+# $$
+# 
+# and in matrix notation this is 
+# 
+# $$\displaystyle  \mathbf{(A'+V) P}^{j+1} = \mathbf{(B'-V) P}^{j} $$ 
+# 
+# where the matrix of the potential is diagonal and can therefore be added to the diagonals of the tri-diagonal. Letting $\mathbf{A'+V\to A}$ and similarly $\mathbf {B'-V\to B}$, multiplying both sides by $\mathbf{A^{-1}}$ gives 
+# 
+# $$\displaystyle  \mathbf{P}^{j+1} = \mathbf{A^{-1}}\mathbf{B P}^{j}$$
+# 
+# thus in the iteration scheme the $\mathbf A$ and $\mathbf{B}$ matrices needs to be inverted once only, as they contain only constant terms. This saves considerable effort. Time in the numerical model has index $j$ so once initial values are determined, a loop with the matrix equation can be performed. As $\mathbf{A}^{-1}$ and $\mathbf{B}$ are constant in time they are only evaluated once and outside the time loop. Only $\mathbf{P}$ vectors vary in time, we could write the last equation as 
+# 
+# $$\displaystyle  \mathbf{P}^{new} = \mathbf{A^{-1}}\mathbf{B P}^{old}   \qquad\tag{31d}$$
+# 
+# and this equation is iterated as
+# 
+# $P^{old}=\text{initial wavepacket}\\
+# \text{loop over time}\\
+# \quad{P}^{new} = {A^{-1}}{B P}^{old}\\
+# \quad  P^{old} = {P^{new}}\\
+# \quad\text{save }P^{new}\\
+# \text{repeat}$
+# 
+# ### **Wavepacket motion**
+# 
+# The following calculation illustrates a particle moving inside an infinite square-well potential and encountering a barrier. Because we are dealing with an atomic sized particle this is represented as a wavepacket. Depending on the initial conditions, i.e., the height and thickness of the barrier and its momentum the wavepacket either may reflect from the barrier, pass completely through (quantum tunnelling) or be split into two parts, one part being reflected the other tunnelling through.  The calculation's parameters are set up the illustrate the latter process. 
+# 
+# The wavepacket used has the form of a plane wave multiplied by a gaussian envelope and has the normalised form,
+# 
+# $$\displaystyle W(x,t) = \frac{1}{(2\pi\sigma^2)^{1/4}}e^{-x^2/(4 \sigma^2) }e^{ip_0x}$$ 
+# 
+# where  $p_0$ the initial momentum. Notice that $W(x,t)$ is a complex quantity, we usually plot it as the probability distribution $W^*W$ where * indicated the complex conjugate. Mathematically normalisation means that $\int_{-\infty}^\infty W^*Wdx=1$ and physically is equivalent to conservation of mass since the particle always exists somewhere. 
+# 
+# To form a wavepacket the particle must have a range of momenta, which also means a range of energies, so it cannot be in a single eigenstate and, because of the uncertainty principle, it must also occupy one of a range of positions. Experimentally, wavepackets of vibrational levels are made by exciting a molecule with a laser pulse of short (femtosecond) duration. 
+# 
+# In our calculation the wavepacket $W(x,t)$ is in its *minimum-uncertainty state* in which the product $\Delta p\Delta x =\hbar/2$, i.e. the Heisenberg uncertainty is obeyed. Thus the particle represented by this wavepacket is localised at time $t=0$ within space $\Delta x$ and momenta $\Delta p$. If this were a molecule, proton or electron the particle does not itself 'spread out' i.e. a particle always has a well defined size (and shape if a molecule), but to detect it the detector will have to be large enough to cover its whole distribution of positions. 
+# 
+# The uncertainty in position is $\delta x=\sigma$ and in momentum $\Delta p=\hbar/2\sigma$.  The momentum is also defined as $p=\hbar k_0$ where $k_0$ is the wavevector and the energy is given by $E=(\hbar k_0)^2/2m$. As time progresses the wavepacket moves and its width increases. Initially the fwhm. of the gaussian shape is $2\sqrt{2\ln(2)}$. Its group velocity is 
+# 
+# $$\displaystyle v_g=\frac{dE}{dp}=\frac{\hbar k}{m}$$
+# 
+# which is the speed at which the envelope moves and is the velocity of a classical particle. Its phase velocity is 
+# 
+# $$\displaystyle v_{ph}=\frac{E}{p}=\frac{\hbar k}{2m}$$
+# 
+# The phase velocity is the speed at which the peak of the wave inside the envelope moves. This can be viewed if the real or imaginary part of  $W$ is plotted and has spatial frequency $p_0$. The energy of the particle is $E=\hbar\omega$ where $\omega$ is the wave frequency in radians/sec ($\omega=2\pi\nu$ where $\nu$ is the frequency in s$^{-1}$). The energy is also $p^2/2m$ so that $k^2=2m\omega/\hbar$, so that $k$ is proportional to frequency.
+# 
+# As the wavepacket moves, in the absence of a barrier, its overall shape remains the same but its width spreads and amplitude decreases, this is called dispersion.. It is simpler to look at the probability distribution $|W|^2$ rather than the wavepacket itself. This is  
+# 
+# $$\displaystyle p(x,t)=|W(x,t)|^2 \sim \exp\left(-\frac{\left(x-\hbar k_0 t/m\right)^2}{2\sigma_t^2}\right),\qquad \sigma_t^2=\sigma^2+\frac{\hbar^2 t^2}{4m^2\sigma^2}$$
+# 
+# where $\sigma_t$ shows how the wavepacket width spreads in time while moving with velocity $\hbar k_0/m$. Its amplitude must decreases because the total probability is unity at all times and over the whole range of positions.  (At negative times the wavepacket compresses to its minimum value at $t=0$ and then expands as positive time).
+# 
+# In the following calculation we use atomic units, $\hbar=m=1$ and allow the wavepacket to collide with a thin barrier, a very hard calculation if not done numerically. You can see that as the wavepacket moves its amplitude becomes smaller and its width increases just as described above. When the barrier is reached, some tunnelling and some reflection occurs. The reflected part shows rapid oscillations due to interference of the incoming and out going  waves. Recall that the wavepacket we show is only the envelope $W^*W$, $W$ itself contains $e^{ik_0x}$ which is also $\cos(k_0x)+i\sin(k_0x)$ so clearly has wavelike nature. It is this that interferes and caused huge oscillations in $W^*W$ as shown in the calculation.
+
+# In[9]:
+
+
+# Algorithm 13c Crank-Nicholson method.
+# 1D time dependent Schroedinger eqn with potential V. 
+# Calculation using Atomic Units. hbar  = m = 1, m is the mass of electron
+
+#-------------------------
+def barrier(nx,V0,w):                         # barrier is a rectangle -w to w
+    V  = np.zeros(nx)
+    x = np.linspace(0,nx,nx)
+    mask = (x >= nx//2-w) & (x <= nx//2+w)
+    V = np.where(mask, V0, 0)
+    return V
+#-------------------------
+
+def wavepacket(nx,x0,sig,k0):                 # Gaussian wavepacket
+    wp  = np.zeros(nx,dtype = complex) 
+    wp[:] = np.exp(-(x[:]-x0)**2/(4*sig**2))*np.exp(1j*k0*x[:])  
+    return wp
+#--------------------------------------
+
+def make_tri_matrix(J,sig):                   # tri-diagonal matrix
+    ss = 1
+    M  = np.zeros([J,J],dtype = complex)
+    M[0,0] = 1 + sig*ss
+    M[0,1] = -sig*ss
+    for i in range(1,J-1):
+        M[i,i-1] = -sig
+        M[i,i]   = 1 + 2*sig
+        M[i,i+1] = -sig
+        pass
+    M[J-1,J-2] =  -sig*ss
+    M[J-1,J-1] = 1 + sig*ss
+        
+    return M
+
+#-------------------------
+def V_diag_matrix(J):                          # poetntial energy    
+    
+    M  = np.zeros([J,J], dtype = complex)
+    for i in range(J):
+        M[i,i] = 1j*V[i]*dt
+    return M      
+#-------------------------
+
+def updatePsi(p0,pnew):                             # update all x at new time t+1
+    
+    pnew =  invAmat @ (Bmat @ p0 )                  # Crank-Nicholson  
+    pnew[0] = pnew[1]                               # boundary
+    pnew[-1]= pnew[-2]
+    nn = np.sqrt(dx*sum(np.conj(pnew[:])*pnew[:]))  # normalise
+    pnew[:] = pnew[:]/nn
+    return pnew
+#--------------------------
+
+def inits():                                         # initial values
+    nt = 1500        # number time points (integer)
+    dt = 0.125       # can be tricky to get this right.
+    nx = 600         # num grid x points
+    Lb = 200         # grid end  (integer)
+    La = -200        # grid start (integer)
+    V0 = 0.25         # barrier height
+    w  = 3           # half barrier width (integer)
+    k0 = 1           # wavepacket momentum
+    sig= 5           # wavepacket width sigma
+    x0 = -100         # wave packet centre
+    
+    return nx,nt,dt,k0,La,Lb,V0,w,sig,x0
+#--------------------------
+
+nx,nt,dt,k0,La,Lb,V0,w,sig,x0 = inits()
+
+x  = np.linspace(La,Lb,nx)                # x range 
+dx = x[1] - x[0]
+
+psi0 = np.zeros(nx,dtype = complex)       # initial wavefunction/wavepacket
+psi  = np.zeros([nt,nx],dtype = complex ) # final results
+p    = np.zeros(nx,dtype = complex)       # array to hold intermediate values
+
+psi0 = wavepacket(nx,x0,sig,k0)           # make wavepacket
+psi0 = psi0/sum(dx*np.abs(psi0[:]))       # normalise wavepacket
+
+print('{:s}{:g} {:s} {:g} {:s} {:g}'\
+      .format('dx = ',dx,'dt = ',dt,'dt/dx^2 = ',dt/dx**2) )
+
+sig = 0.25*1j*dt/dx**2                    # i hbar/(2m)dt/dx^2   constants
+V = barrier(nx,V0,w)                      # make barrier
+
+Amat    = make_tri_matrix(nx, sig)  + V_diag_matrix(nx)  # start Crank-Nicholson
+Bmat    = make_tri_matrix(nx,-sig)  - V_diag_matrix(nx)
+invAmat = linalg.inv(Amat)
+    
+for t in range(0,nt-1):                   # main calculation here, time loop. 
+    p = updatePsi(psi0,p)
+    psi0 = p
+    psi[t+1,:] = psi0[:]
+    pass
+
+print('finished calculation')
+
+
+# In[10]:
+
+
+fig2 = plt.figure(figsize = (6,6))
+plt.rcParams.update({'font.size': 14})        # set font size for plots
+
+f0 = dt*2.41888e-17*1e15                      # atomic units to femtoseconds
+mx = np.abs(np.amax(np.conj(psi)*psi ) )      # global maximum
+
+j = 0
+plt.plot(x, 7-j+np.real(psi[100,:]),color='grey', linewidth=1)
+for i in [100,400,800,900,1000,1200,1400] :   # I choose to plot at these time points
+
+    plt.plot(x,6-j + np.real(np.conj(psi[i,:])*psi[i,:]/mx) ,color='red',linewidth=1)
+    plt.plot(x,6-j+0.95*V/V0,color='grey',linewidth=1)
+    fmt='{:d}{:6.2f}{:s}'.format(i,i*f0,' fs')
+    plt.text(0.35*Lb,6-j+0.5,fmt,fontsize=10)
+    j=j+1
+    pass
+
+plt.xlabel(r'$x/a_0$')
+plt.ylabel(r'$\psi^*\psi\; (a.u.)$')
+plt.xlim([-150,150])
+plt.yticks([])
+plt.tight_layout()
+plt.show()
+
+
+# Figure 10 d. The figure above shows the probability $\psi^*\psi$ vs $x$ at different times. The scattering of the wavepacket and its subsequent re-phasing is clear. The $\displaystyle e^{ik_0x}$ term of the wavepacket generates high spatial frequencies which are observed when the wavepacket is dephased at the barrier. Subsequently these reform and a smooth wavepacket is reproduced.  The probability is scaled to the maximum value at any time, the area is the same in each plot as the wavepacket is normalised.  The real part of the wavepacket is show above its envelope. This shows oscillatory behaviour due to the  $e^{ik_0x}$ term. 
+# 
+# ### **Wavepacket Animation**
+# 
+# The following script produces an animation of the wavepacket motion. The axes and calculation are the same as the figure above.
+
+# In[11]:
+
+
+import ipywidgets.widgets  as wgt
+from ipywidgets import interact, interactive, fixed, interact_manual,VBox,HBox,Layout,HTML
+from IPython.display import display
+
+fig22 = plt.figure(figsize = (6,4))
+plt.rcParams.update({'font.size': 14})                 # set font size for plots
+ 
+mx = np.real(np.amax(np.conj(np.conj(psi)*psi ) )  )   # global max
+
+def wpacket(k):
+    fmtt = '{:s} {:4.2f} {:s} {:d} '.format('t = ', ((k+1)*f0),'fs # ',(k+1)) 
+    plt.title(fmtt)
+    plt.plot(x,V/V0,color='red',zorder=-1,linewidth=1)
+    plt.xlabel(r'$x/ a_0$')
+    plt.ylabel(r'$\psi^*\psi$')
+    plt.ylim([0,1.1])
+    temp =  np.real(np.conj(psi[k,:])*psi[k,:] )/mx
+    plt.plot(x,temp[:],color='black', linewidth=0.5)
+    plt.show()
+    pass
+
+f02 = wgt.HTML( value="push triangle to start, must push (square) stop before restart ")
+display(f02)
+
+f01 = wgt.interact(wpacket,k = wgt.Play(min=0,max=nt-1,step=20))  # step changes speed
+display(f01)
 
 
 # In[ ]:

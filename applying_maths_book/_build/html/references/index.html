@@ -51,6 +51,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="prev" title="1 References" href="References.html" />
@@ -406,7 +408,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-4/integration-F.html">
-     10 Multiple integrals
+     10 Multiple integrals, Change of variables: Jacobians
     </a>
    </li>
    <li class="toctree-l2">
@@ -1003,7 +1005,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-G.html">
-     16 PDE continued. Diffusion, wave eqn., Schroedinger eqn., Fourier method, Transient grating.
+     16 PDE continued. Diffusion, Wave and Schroedinger eqns. Solution by the Fourier method. Transient grating.
     </a>
    </li>
    <li class="toctree-l2">
@@ -1511,7 +1513,7 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="index">
 <h1>2 Index<a class="headerlink" href="#index" title="Permalink to this headline">#</a></h1>
-<p>2D diffusion in a plate    11-4.13</p>
+<p>2D diffusion in a plate    11-4.12</p>
 <p>2D Fourier Transforms    9-,   9-12</p>
 <p>2D Ising spin    12-6.10</p>
 <p>Abcd matrix    7-9</p>
@@ -1530,6 +1532,7 @@ title="Print to PDF"
 <p>Angular frequency    1-5.2,  6-21.1,   7-14.2,   7-15.2,   8-3,   9-1.2,   9-6.3,   9-6.7,   9-7.4,   9-9.6,   10-11,   11-6.4</p>
 <p>Angular momentum    1-8,   1-9.9,   4-12.6,   5-5.3,   5-6.10,   6-2.2,   6-21,   7-,   7-5.3,   7-12.9,   7-15.2   7-16,   7-16.1   8-2,   8-3,   8-4.2,   8-4.3,   9-4.1,   9-8.6,   10-2.4,   10-3.2,   11-3.7,   11-6.4,   13-7.4</p>
 <p>Anharmonic oscillator    3-3.16,   5-9,   8-2,   10-3.3,   11-10.1,   12-6.1</p>
+<p>Animation     11-4.13</p>
 <p>Annihilation    10-2.4</p>
 <p>ANOVA    13-6.6</p>
 <p>Antenna    7-3.1,   7-13.2,   10-15.1,   12-4.1</p>
@@ -1653,7 +1656,7 @@ title="Print to PDF"
 <p>Coulomb potential    7-14,   7-14.2,   11-3.9,   11-4.5,  to  11-4.7,   11-5.1,  to   11-5.5,   11-6.3,   11-7,   11-9.1</p>
 <p>Coupled springs    10-13.4</p>
 <p>Coupling between two spins    7-12.9</p>
-<p>Crank-Nicholson    11-4.12,   11-4.13</p>
+<p>Crank-Nicholson    11-4.13</p>
 <p>Critical point    3-11.2</p>
 <p>Critical temperature    3-11.2,   11-5.4</p>
 <p>Cross product    3-4.10,   6-2.2,   6-2.3,   6-2.4,   6-5,   6-15,   6-15.1  to  6-15.4,   6-16,   6-17,   6-21,   7-15.2,   7-16.1</p>
@@ -1984,9 +1987,9 @@ title="Print to PDF"
 <p>Mean value theorem for integrals    4-2.8</p>
 <p>Mean-value method    12-1.1  to   12-1.3</p>
 <p>Metropolis algorithm    12-1.3,   12-6.1,   12-6.2,   12-6.6,   12-6.7,   12-6.10</p>
-<p>Michaelis-Menten scheme    11-4.12,   11-5.4</p>
+<p>Michaelis-Menten scheme    11-5.4</p>
 <p>Michelson interferometer    9-5.2,   9-8.4,   9-8.7</p>
-<p>Microchannels    11-4.12,   11-5.4</p>
+<p>Microchannels    11-5.4</p>
 <p>Mid-point rule integration    11-3.2</p>
 <p>Miller indices    2-4.2,   9-13.1  to  9-13.5</p>
 <p>Minima    3-7,   5-5.1,   11-8.1,   11-10.2,   13-6.2,   13-10.1</p>
@@ -2081,7 +2084,8 @@ title="Print to PDF"
 <p>Path independent integrals    4-13.6</p>
 <p>Path integrals    4-13,   4-14</p>
 <p>Pauli exclusion principle    1-9.9</p>
-<p>Principal compoent analysis (PCA)    1-9.3,   5-4.3,   5-8.2,   6-18,   6-20,   9-4.1,   11-4.12,   11-5.3,   11-5.4,   13-6.1   13-7.2,   13-11</p>
+<p>PCR (Polymerise Chain Reaction)     11-5.3</p>
+<p>Principal component analysis (PCA)    1-9.3,   5-4.3,   5-8.2,   6-18,   6-20,   9-4.1,   11-4.12,   11-5.3,   11-5.4,   13-6.1   13-7.2,   13-11</p>
 <p>Pendulum    1-5.2,   5-6,   7-14.1  to  7-14.3,   10-1.1,   10-3.2,   10-10.2,   10-10.7,   10-11.1,   10-11.2,   10-12.1,   11-6.4,   11-6.5</p>
 <p>Percolation    12-5</p>
 <p>Periodic boundary conditions    10-15.1,   12-6.10</p>
@@ -2296,7 +2300,7 @@ title="Print to PDF"
 <p>Thin lens    3-10.2,   7-9.1</p>
 <p>Threshold for an epidemic    11-7.4</p>
 <p>Time profile of an epidemic    11-7.6</p>
-<p>Time-dependent Schroedinger equation    10-15.1,   10-16.4</p>
+<p>Time-dependent Schroedinger equation    10-15.1,   10-16.4,     11-4.13</p>
 <p>Torque    6-2.2,  6-21.1,   9-5.3</p>
 <p>Torsion angles in sugars    6-19</p>
 <p>Torsional oscillations    10-11.1</p>
@@ -2318,6 +2322,7 @@ title="Print to PDF"
 <p>Trommsdorff-Norrish effect    10-5.5</p>
 <p>Truncation errors    11-1.2,   11-4.2</p>
 <p>Two pendulums    7-14.1,   7-14.2</p>
+<p>Tunnelling (Quantum)    11-4.13</p>
 <p>Uncertainty Principle    4-8.5,   7-5.3,   9-5.6,   9-6.6,   9-6.7,   10-11.4,   10-11.5</p>
 <p>Undefined integrals    4-2.10</p>
 <p>Under-damped    10-12.1</p>
@@ -2345,11 +2350,12 @@ title="Print to PDF"
 <p>Virial Theorem    4-12.5,   4-12.6</p>
 <p>Viscosity    10-2.4,   10-4.3,   10-4.9,   10-5.5,   10-12.1,   10-15.8,   13-6.1</p>
 <p>Wave equation    1-5.5,   1-8.1,   1-9.8,   1-9.25,   4-8.4  to  4-9.2,   4-11,   4-12.1  to  4-12.3,   5-8.1,   5-8.2,   5-9,   5-9.1,   6-12,   7-2.4,   7-6.12,   7-8,   7-12.3,   7-12.4,   7-12.9,   8-1,   8-1.1,   8-2,   8-2.1  to  8-2.4,   8-3,   8-4.2,   8-5.1,   9-3,   9-4.1,   9-6.7,   10-11.4,   10-14.2,   10-15.1  to  10-15.4,   10-17,   10-18.2,   10-18.3,   11-1.3,   11-10,   12-6.6</p>
-<p>Wavepacket    1-5.5,   5-9,   5-9.1,   9-6.7,   9-7.4,   10-15.1,   10-18.2</p>
+<p>Wavepacket    1-5.5,   5-9,   5-9.1,   9-6.7,   9-7.4,   10-15.1,   10-18.2,     11-4.13</p>
 <p>Waves    1-5.2  to  1-5.5,   1-13.3,   2-3.3,   3-6,   4-5.1,   5-1.2,   5-1.3,   9-1.1,   9-1.2,   9-5.2  to  9-5.7,   9-6.3,   9-6.6,   9-6.7,   9-7.4,   9-8.7,   9-10.3,   9-12,   9-13.1  to  9-13.8,   9-14.1,   10-11.4,   10-15.4,   10-16.4,   10-17</p>
 <p>Weight average    5-4.2</p>
 <p>Weighting    4-8.1,   6-1.5,   9-1.2,   9-4,   12-6.1,   12-6.4,   13-3.8,   13-6.2,   13-6.4,   13-7.5,   13-8,   13-10.1</p>
 <p>White noise    9-6.5,   9-8.5,   9-8.6</p>
+<p>Widgets (in Python)     11-4.13</p>
 <p>Wiener-Khinchin    9-8.3,   9-8.6</p>
 <p>Work done    1-4,   3-11.1,   4-1.1,   4-1.2,   4-14,   6-6,   10-12.2,   10-12.4</p>
 <p>X ray diffraction    1-5.5,   2-3.3,   2-4.2,   5-1.2,   9-,   9-5.4,   9-13,   9-13.1,   9-13.2,   9-13.6,   9-13.9</p>

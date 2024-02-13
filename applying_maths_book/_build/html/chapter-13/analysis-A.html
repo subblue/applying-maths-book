@@ -409,7 +409,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-4/integration-F.html">
-     10 Multiple integrals
+     10 Multiple integrals, Change of variables: Jacobians
     </a>
    </li>
    <li class="toctree-l2">
@@ -1006,7 +1006,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-10/Diff-eqns-G.html">
-     16 PDE continued. Diffusion, wave eqn., Schroedinger eqn., Fourier method, Transient grating.
+     16 PDE continued. Diffusion, Wave and Schroedinger eqns. Solution by the Fourier method. Transient grating.
     </a>
    </li>
    <li class="toctree-l2">
@@ -2006,7 +2006,7 @@ always necessary to check the equation being used, which unfortunately, is not a
 <h2>2 Central Limit Theorem<a class="headerlink" href="#central-limit-theorem" title="Permalink to this headline">#</a></h2>
 <p>The mean <span class="math notranslate nohighlight">\(\mu\)</span> and standard deviation <span class="math notranslate nohighlight">\(\sigma\)</span> are used assuming that data is distributed normally. But many quantities measured are not expected to have a normal distribution; for example, when counting photons or particles, a Poisson distribution is produced which is quite unlike a normal distribution at small <span class="math notranslate nohighlight">\(\mu\)</span>, see figure 13. The speed of a molecule follows a Maxwell - Boltzmann distribution (see chapter 3 Q54), which is clearly skewed or lopsided, again quite unlike a normal distribution. However, remarkably, if several measurements are taken of a given velocity, their distribution will be normal. This is what the central limit theorem predicts and although easy to demonstrate, it is harder to prove. It states that by taking many similar measurements from (almost) any type of continuous distribution, the result always approaches a normal (Gaussian) distribution. This population distribution has the theoretical form</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle p(x)=\frac{1}{\sqrt{2\pi \mu^2}}e^{\large{-\frac{(x-\mu)^2}{2\sigma^2}} }\qquad\tag{4}\]</div>
+\[\displaystyle p(x)=\frac{1}{\sqrt{2\pi \sigma^2}}e^{\large{-\frac{(x-\mu)^2}{2\sigma^2}} }\qquad\tag{4}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\mu\)</span> is the mean of the distribution and <span class="math notranslate nohighlight">\(\sigma\)</span> the standard deviation. The central limit theorem forms the basis by which the standard deviation of a normal distribution is used to characterize data.</p>
 <p>The reasoning put more technically is that the sample mean <span class="math notranslate nohighlight">\(\langle x\rangle\)</span>, although an unbiased estimate, is unlikely to be exactly equal to the true population mean <span class="math notranslate nohighlight">\(\mu\)</span> and is itself subject to random variation. By repeating the sampling process, i.e. by repeating the whole set of measurements, a number of different estimates of <span class="math notranslate nohighlight">\(\langle x\rangle\)</span> are obtained which are distributed about the true value <span class="math notranslate nohighlight">\(\mu\)</span>. To simulate this and illustrate the central limit theorem, suppose that there are five measurements A, B, C, D, and E and each is an experimental result with values <span class="math notranslate nohighlight">\(1, 2, 3, 4\)</span>, and <span class="math notranslate nohighlight">\(5\)</span> respectively. Any other numbers could be used but these are easy to average. The distribution of the numbers is uniform as shown in figure 2.</p>
 <p>Suppose that randomly selected pairs of these values are taken making <span class="math notranslate nohighlight">\(2\)</span>5 possible samples. The pairs are shown on the left of the table and the corresponding average (sample mean) is shown on the right. Looking at this table there are five entries with a value of <span class="math notranslate nohighlight">\(3\)</span>, and only <span class="math notranslate nohighlight">\(1\)</span> entry each with a value of <span class="math notranslate nohighlight">\(1\)</span> or <span class="math notranslate nohighlight">\(5\)</span>. If plotted as a histogram, this begins to look a little like a normal distribution; figure 2.</p>

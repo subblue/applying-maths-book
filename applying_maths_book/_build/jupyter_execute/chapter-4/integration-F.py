@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # 10 Multiple integrals 
+# # 10 Multiple integrals, Change of variables: Jacobians 
 
 # In[1]:
 
@@ -73,25 +73,25 @@ simplify( integrate(ansy,(x,-1,1) ) )
 # 
 # The integral
 # 
-# $$\displaystyle A=\int\int 1\,dxdy \qquad\tag{52}$$
+# $$\displaystyle A=\int\int 1\,dxdy \tag{52}$$
 # 
 # is a _volume_ of unit thickness. The result $A$ is also called a _lamina_, which is a sheet of unit but uniform thickness.
 # 
 # The _x-centroid_, the average position of the x-coordinate of the function is 
 # 
-# $$\displaystyle \langle x\rangle =\frac{1}{A}\int\int x\,dxdy \qquad\tag{53}$$
+# $$\displaystyle \langle x\rangle =\frac{1}{A}\int\int x\,dxdy \tag{53}$$
 # 
 # and similarly for the y-coordinate $\displaystyle \langle y\rangle =\frac{1}{A}\int\int y\,dxdy$. 
 # 
 # If the density is not constant but is described by a function $f(x, y)$ then the formulae are changed to;
 # 
-# $$\displaystyle  \langle x\rangle =\frac{1}{A}\int\int xf(x,y)\,dxdy,\quad \langle y\rangle =\frac{1}{A}\int\int yf(x,y)\,dxdy,\quad A=\int\int f(x,y)\,dxdy \qquad\tag{54}$$
+# $$\displaystyle  \langle x\rangle =\frac{1}{A}\int\int xf(x,y)\,dxdy,\quad \langle y\rangle =\frac{1}{A}\int\int yf(x,y)\,dxdy,\quad A=\int\int f(x,y)\,dxdy \tag{54}$$
 # 
 # which is essentially equation 28. The position of the centroids is often called the _centre of gravity_ of the object.
 # 
 # By definition, the moment of inertia of an object about an axis is the product of the distance squared from the axis times the mass; $I = mL^2$. If the body is extended, then the integration must be performed over the entire shape. Should the mass is distributed as $f (x, y)$ then the x-direction moment of inertia depends on the distance from the y-axis and is
 # 
-# $$\displaystyle  I_x=\int\int y^2f(x,y)dydx \qquad\tag{55}$$
+# $$\displaystyle  I_x=\int\int y^2f(x,y)dydx \tag{55}$$
 # 
 # The y-direction moment is calculated similarly using $x^2$, 
 # 
@@ -136,17 +136,17 @@ print(Ix,';',Iy)
 # 
 # One commonly met triple integral is the normalization of a wavefunction $\psi(r, \theta, \phi)$; when integrated over all space the product $\psi^* \psi$ must be unity. This means that
 # 
-# $$\displaystyle \int_0^{2\pi}\int_0^\pi\int_0^\infty \psi(r, \theta, \phi)^* \psi(r, \theta, \phi) r^2\sin(\theta)drd\theta d\phi =1 \qquad\tag{56}$$
+# $$\displaystyle \int_0^{2\pi}\int_0^\pi\int_0^\infty \psi(r, \theta, \phi)^* \psi(r, \theta, \phi) r^2\sin(\theta)drd\theta d\phi =1  \tag{56}$$
 # 
 # where the superscript * indicates a complex conjugate. The $r^2\sin(\theta)drd\theta d\phi$ term comes from converting the volume element $dxdydz$ in Cartesian to spherical polar coordinates; see Section 11 where the calculation of this conversion is described. The limits are almost invariably the same for quantum problems. The polar angle $\theta$ ranges from north to south and can only have values from $0 \to \pi$. The azimuthal (equatorial) angle $\phi$ moves around the equator so ranges from $0 \to 2\pi$.
 # 
 # One of the $3$p atomic orbitals has quantum numbers $n = 3,\, s = 1, \, m = 1$, and is
 # 
-# $$\displaystyle \psi_{311}=N\frac{r}{a_0}\left( 6-\frac{r}{a_0} \right)e^{-r/3a_0}\sin(\theta)e^{i\phi} \qquad\tag{57}$$
+# $$\displaystyle \psi_{311}=N\frac{r}{a_0}\left( 6-\frac{r}{a_0} \right)e^{-r/3a_0}\sin(\theta)e^{i\phi}  \tag{57}$$
 # 
 # where $N$ is the normalization constant we want to find. Because $r, \,\theta, \, \phi$ are separate there being no term in a product such as  $\theta\phi$ when calculating equation (4.56), the integrals in $r,\, \theta$, and $\phi$ can be treated separately. The integral of $\psi^*\psi$ just in $r$ is
 # 
-# $$\displaystyle  \frac{N^2}{a_0^2}\int_0^\infty r^2\left( 6-\frac{r}{a_0} \right)^2e^{-2r/3a_0}r^2= \frac{19683}{8}a_0N^4 \qquad\tag{58}$$
+# $$\displaystyle  \frac{N^2}{a_0^2}\int_0^\infty r^2\left( 6-\frac{r}{a_0} \right)^2e^{-2r/3a_0}r^2= \frac{19683}{8}a_0N^4  \tag{58}$$
 # 
 # where the second $r^2$ comes from the volume element, eqn 56. This integral has a standard form, (two terms of the type $x^ne^{-ax}$) which can be integrated by parts; see (2.13). Using Sympy, because the calculation while straightforward is involved, gives for the radial part equation 58
 
@@ -241,7 +241,7 @@ eq= r**4*(6-r/a0)**2*exp(-2*r/(3*a0))
 #     
 # The volume element conversion is then written as
 # 
-# $$\displaystyle dxdydx=r^2\sin(\theta)dr d\theta d\varphi \qquad\tag{60}$$
+# $$\displaystyle dxdydx=r^2\sin(\theta)dr d\theta d\varphi  \tag{60}$$
 # 
 # In some cases, the determinant may produce a negative answer depending on the order of calculating the derivatives; however, the Jacobian represents an area or volume element so the positive result may legitimately be taken in such cases.
 

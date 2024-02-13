@@ -4,7 +4,7 @@
 # # 2 Index
 
 # 
-# 2D diffusion in a plate    11-4.13
+# 2D diffusion in a plate    11-4.12
 # 
 # 2D Fourier Transforms    9-,   9-12
 #  
@@ -42,6 +42,8 @@
 #  
 # Anharmonic oscillator    3-3.16,   5-9,   8-2,   10-3.3,   11-10.1,   12-6.1
 #  
+# Animation     11-4.13
+# 
 # Annihilation    10-2.4
 #  
 # ANOVA    13-6.6
@@ -288,7 +290,7 @@
 #  
 # Coupling between two spins    7-12.9
 #  
-# Crank-Nicholson    11-4.12,   11-4.13
+# Crank-Nicholson    11-4.13
 #  
 # Critical point    3-11.2
 #  
@@ -950,11 +952,11 @@
 #  
 # Metropolis algorithm    12-1.3,   12-6.1,   12-6.2,   12-6.6,   12-6.7,   12-6.10
 #  
-# Michaelis-Menten scheme    11-4.12,   11-5.4
+# Michaelis-Menten scheme    11-5.4
 #  
 # Michelson interferometer    9-5.2,   9-8.4,   9-8.7
 #  
-# Microchannels    11-4.12,   11-5.4
+# Microchannels    11-5.4
 #  
 # Mid-point rule integration    11-3.2
 #  
@@ -1143,8 +1145,10 @@
 # Path integrals    4-13,   4-14
 #  
 # Pauli exclusion principle    1-9.9
+# 
+# PCR (Polymerise Chain Reaction)     11-5.3
 #  
-# Principal compoent analysis (PCA)    1-9.3,   5-4.3,   5-8.2,   6-18,   6-20,   9-4.1,   11-4.12,   11-5.3,   11-5.4,   13-6.1   13-7.2,   13-11
+# Principal component analysis (PCA)    1-9.3,   5-4.3,   5-8.2,   6-18,   6-20,   9-4.1,   11-4.12,   11-5.3,   11-5.4,   13-6.1   13-7.2,   13-11
 #  
 # Pendulum    1-5.2,   5-6,   7-14.1  to  7-14.3,   10-1.1,   10-3.2,   10-10.2,   10-10.7,   10-11.1,   10-11.2,   10-12.1,   11-6.4,   11-6.5
 #  
@@ -1574,7 +1578,7 @@
 #  
 # Time profile of an epidemic    11-7.6
 #  
-# Time-dependent Schroedinger equation    10-15.1,   10-16.4
+# Time-dependent Schroedinger equation    10-15.1,   10-16.4,     11-4.13
 #  
 # Torque    6-2.2,  6-21.1,   9-5.3
 #  
@@ -1617,6 +1621,8 @@
 # Truncation errors    11-1.2,   11-4.2
 #  
 # Two pendulums    7-14.1,   7-14.2
+# 
+# Tunnelling (Quantum)    11-4.13
 #  
 # Uncertainty Principle    4-8.5,   7-5.3,   9-5.6,   9-6.6,   9-6.7,   10-11.4,   10-11.5
 #  
@@ -1672,7 +1678,7 @@
 #  
 # Wave equation    1-5.5,   1-8.1,   1-9.8,   1-9.25,   4-8.4  to  4-9.2,   4-11,   4-12.1  to  4-12.3,   5-8.1,   5-8.2,   5-9,   5-9.1,   6-12,   7-2.4,   7-6.12,   7-8,   7-12.3,   7-12.4,   7-12.9,   8-1,   8-1.1,   8-2,   8-2.1  to  8-2.4,   8-3,   8-4.2,   8-5.1,   9-3,   9-4.1,   9-6.7,   10-11.4,   10-14.2,   10-15.1  to  10-15.4,   10-17,   10-18.2,   10-18.3,   11-1.3,   11-10,   12-6.6
 #  
-# Wavepacket    1-5.5,   5-9,   5-9.1,   9-6.7,   9-7.4,   10-15.1,   10-18.2
+# Wavepacket    1-5.5,   5-9,   5-9.1,   9-6.7,   9-7.4,   10-15.1,   10-18.2,     11-4.13
 #  
 # Waves    1-5.2  to  1-5.5,   1-13.3,   2-3.3,   3-6,   4-5.1,   5-1.2,   5-1.3,   9-1.1,   9-1.2,   9-5.2  to  9-5.7,   9-6.3,   9-6.6,   9-6.7,   9-7.4,   9-8.7,   9-10.3,   9-12,   9-13.1  to  9-13.8,   9-14.1,   10-11.4,   10-15.4,   10-16.4,   10-17
 #  
@@ -1681,6 +1687,8 @@
 # Weighting    4-8.1,   6-1.5,   9-1.2,   9-4,   12-6.1,   12-6.4,   13-3.8,   13-6.2,   13-6.4,   13-7.5,   13-8,   13-10.1
 #  
 # White noise    9-6.5,   9-8.5,   9-8.6
+# 
+# Widgets (in Python)     11-4.13
 #  
 # Wiener-Khinchin    9-8.3,   9-8.6
 #  
