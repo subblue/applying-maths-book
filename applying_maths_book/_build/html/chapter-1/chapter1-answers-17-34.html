@@ -51,6 +51,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -139,7 +141,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="chapter1-B.html">
-     5 Trig, hyperbolic and inverse functions, waves, polar coordinates &amp; factorials
+     5 Trig, hyperbolic and inverse functions, waves, polar coordinates,  factorials
     </a>
    </li>
    <li class="toctree-l2">
@@ -471,7 +473,7 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-5/chapter-5-A.html">
-     1 Series, averages, partition functions, DNA melting, atom entropy
+     1 Series, averages, waves, partition functions, DNA melting, atom entropy
     </a>
    </li>
    <li class="toctree-l2">
@@ -1840,8 +1842,8 @@ title="Print to PDF"
 </section>
 <section id="q28-answer">
 <h2>Q28 answer<a class="headerlink" href="#q28-answer" title="Permalink to this headline">#</a></h2>
-<p>The important words here are ‘at least’ which means that we look for the chance that the event does not happen. The chance of <em>not</em> observing one six is <span class="math notranslate nohighlight">\(5/6\)</span> and in four throws, as they are independent, is <span class="math notranslate nohighlight">\((5/6)^4\)</span>. Therefore, the chance of observing at least one six in four throws is <span class="math notranslate nohighlight">\(1 - (5/6)^4 = 0.518\)</span> , which is slightly better than  evens or <span class="math notranslate nohighlight">\(50\)</span>% chance of winning.</p>
-<p>On the other hand, the chance of observing two sixes in <span class="math notranslate nohighlight">\(24\)</span> throws is <span class="math notranslate nohighlight">\(1 - (35/36)^{24} = 0.491\)</span> and, as there is less than a <span class="math notranslate nohighlight">\(50\)</span>% chance of winning, money will inevitably be lost. Had the Chevalier insisted instead on gambling that two sixes would be produced in <span class="math notranslate nohighlight">\(25\)</span> throws he would have, perhaps, not lost his money. He is remembered because he asked Pascal to help work out out the odds of success and failure and so helped to found probability theory.</p>
+<p>The important words here are ‘at least’ which means that we look for the chance that the event does not happen (Subtraction Rule). The chance of <em>not</em> observing one six is <span class="math notranslate nohighlight">\(5/6\)</span> and in four throws, as they are independent, is <span class="math notranslate nohighlight">\((5/6)^4\)</span>. Therefore, the chance of observing at least one six in four throws is <span class="math notranslate nohighlight">\(1 - (5/6)^4 = 0.518\)</span> , which is slightly better than  evens or <span class="math notranslate nohighlight">\(50\)</span>% chance of winning.</p>
+<p>On the other hand, the chance of observing two sixes in <span class="math notranslate nohighlight">\(24\)</span> throws is <span class="math notranslate nohighlight">\(1 - (35/36)^{24} = 0.491\)</span> and, as there is less than a <span class="math notranslate nohighlight">\(50\)</span>% chance of winning, money will inevitably be lost. The <span class="math notranslate nohighlight">\(35/36\)</span> occurs as there are <span class="math notranslate nohighlight">\(36\)</span> possibilities with two throws of the dice but only one combination has two sixes and we seek the chance that this is <em>not</em> observed in <span class="math notranslate nohighlight">\(24\)</span> attempts. Had the Chevalier insisted instead on gambling that two sixes would be produced in <span class="math notranslate nohighlight">\(25\)</span> throws or more he would have not lost his money. As the number of tries gets larger the chance of getting two sixes increases, as one might expect, and as may be seen because <span class="math notranslate nohighlight">\(35/36 &lt;1\)</span> thus becomes smaller when raised to a power. The Chavalier is remembered because he asked Pascal to help work out out the odds of success and failure and so helped to found probability theory.</p>
 </section>
 <section id="q29-answer">
 <h2>Q29 answer<a class="headerlink" href="#q29-answer" title="Permalink to this headline">#</a></h2>

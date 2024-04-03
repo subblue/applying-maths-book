@@ -51,6 +51,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -139,7 +141,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="chapter1-B.html">
-     5 Trig, hyperbolic and inverse functions, waves, polar coordinates &amp; factorials
+     5 Trig, hyperbolic and inverse functions, waves, polar coordinates,  factorials
     </a>
    </li>
    <li class="toctree-l2">
@@ -471,7 +473,7 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-5/chapter-5-A.html">
-     1 Series, averages, partition functions, DNA melting, atom entropy
+     1 Series, averages, waves, partition functions, DNA melting, atom entropy
     </a>
    </li>
    <li class="toctree-l2">
@@ -1535,6 +1537,15 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#id1">
    9.2 Permutations
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#permutation-examples">
+     <strong>
+      Permutation Examples
+     </strong>
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#permutation-with-groups-of-identical-objects">
@@ -1617,30 +1628,37 @@ title="Print to PDF"
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#ii-cards-drawn-in-succession">
+    <a class="reference internal nav-link" href="#ii-throw-two-dice-to-get-a-given-total">
      <strong>
-      (ii) Cards drawn in succession
+      (ii) Throw two dice to get a given total
      </strong>
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#iii-independent-events-molecular-yield">
+    <a class="reference internal nav-link" href="#iii-cards-drawn-in-succession">
      <strong>
-      (iii) Independent events. Molecular yield
+      (iii) Cards drawn in succession
      </strong>
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#iv-cards-drawn-but-not-replaced">
+    <a class="reference internal nav-link" href="#iv-independent-events-molecular-yield">
      <strong>
-      (iv) Cards drawn but not replaced
+      (iv) Independent events. Molecular yield
      </strong>
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#v-throw-a-die-n-time">
+    <a class="reference internal nav-link" href="#v-cards-drawn-but-not-replaced">
      <strong>
-      (v) Throw a die
+      (v) Cards drawn but not replaced
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vi-throw-a-die-n-time">
+     <strong>
+      (vi) Throw a die
       <span class="math notranslate nohighlight">
        \(n\)
       </span>
@@ -1813,6 +1831,15 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#id1">
    9.2 Permutations
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#permutation-examples">
+     <strong>
+      Permutation Examples
+     </strong>
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#permutation-with-groups-of-identical-objects">
@@ -1895,30 +1922,37 @@ title="Print to PDF"
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#ii-cards-drawn-in-succession">
+    <a class="reference internal nav-link" href="#ii-throw-two-dice-to-get-a-given-total">
      <strong>
-      (ii) Cards drawn in succession
+      (ii) Throw two dice to get a given total
      </strong>
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#iii-independent-events-molecular-yield">
+    <a class="reference internal nav-link" href="#iii-cards-drawn-in-succession">
      <strong>
-      (iii) Independent events. Molecular yield
+      (iii) Cards drawn in succession
      </strong>
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#iv-cards-drawn-but-not-replaced">
+    <a class="reference internal nav-link" href="#iv-independent-events-molecular-yield">
      <strong>
-      (iv) Cards drawn but not replaced
+      (iv) Independent events. Molecular yield
      </strong>
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#v-throw-a-die-n-time">
+    <a class="reference internal nav-link" href="#v-cards-drawn-but-not-replaced">
      <strong>
-      (v) Throw a die
+      (v) Cards drawn but not replaced
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vi-throw-a-die-n-time">
+     <strong>
+      (vi) Throw a die
       <span class="math notranslate nohighlight">
        \(n\)
       </span>
@@ -2080,27 +2114,37 @@ title="Print to PDF"
 <h3><strong>Combinations</strong><a class="headerlink" href="#combinations" title="Permalink to this headline">#</a></h3>
 <p>Combinations count the number of ways of selecting objects from a group without considering the order of selecting.</p>
 <p>We shall describe these quantities in terms of ‘objects’ and ‘boxes’ and let them variously apply to dice, playing cards, electrons, atoms, molecules, and energy levels as the context requires.</p>
-<p>In genetics, probabilities are used when calculating the outcome from mixing genes through the generations. In physical science, statistical mechanics uses ideas based on placing particles into energy levels and from their distribution, partition functions can be calculated which in turn lead to thermodynamic qualities.</p>
+<p>In genetics, probabilities are used when calculating the outcome from mixing genes through the generations. In physical science, statistical mechanics uses ideas based on placing particles into energy levels and from their distribution, partition functions can be calculated which in turn lead to thermodynamic quantities.</p>
 <p>The probability or <em>chance</em> of an event occurring, will be defined as the ratio of the number of successful outcomes to the total number of possible outcomes, and can only have values from <span class="math notranslate nohighlight">\(0\)</span> to <span class="math notranslate nohighlight">\(1\)</span>. It is implicitly assumed that any one event is just as likely to occur as any other. A particular outcome is not therefore predictable; only that a certain fraction of times the expected result will occur if many trials are carried out. For instance, you would not expect to be able to throw a die so that a <span class="math notranslate nohighlight">\(1\)</span> is always produced. One might obtain a <span class="math notranslate nohighlight">\(1\)</span> on the first throw. If a <span class="math notranslate nohighlight">\(1\)</span> is obtained on the second throw, this is surprising, but if on a third, this suggests, but does not prove, that the die might be biased because we expect a die to produce a <span class="math notranslate nohighlight">\(1\)</span>, or any of its other numbers, <em>on average</em> only once in six throws. Probability theory allows the calculation of the exact chance of each possible outcome without having to do the experiment. Because the probability or chance of a successful event <span class="math notranslate nohighlight">\(p\)</span>, cannot be greater than <span class="math notranslate nohighlight">\(1\)</span>, the chance of failure is <span class="math notranslate nohighlight">\(q = 1 - p\)</span>.</p>
 </section>
 </section>
 <section id="id1">
 <h2>9.2 Permutations<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
-<p>A permutation is an <em>ordered</em> arrangement of objects and if the order is changed then a new permutation is produced. The five letters A to E arranged as A B C D E form one permutation; A B C E D and A B E C D are others. If there are five objects then there are <span class="math notranslate nohighlight">\(5! = 5 \times 4 \times 3 \times 2 \times 1 = 120\)</span> permutations. The proof is straightforward: the letter E can be put into five different positions. If D is now moved then it can be placed in four positions, C in three, and so forth; therefore, the number of permutations when all <span class="math notranslate nohighlight">\(n\)</span> objects are chosen is <span class="math notranslate nohighlight">\(n(n - 1)(n - 2) \cdots 1\)</span> which is <span class="math notranslate nohighlight">\(n!\)</span>. This can easily be a truly vast number, but if there are only three objects then there are only 3! = 6 ways of doing this which are ABC, ACB, CAB, BAC, BCA, CBA. The permutation of <span class="math notranslate nohighlight">\(n\)</span> objects is written as</p>
+<p>A permutation is an <em>ordered</em> arrangement of objects and if the order is changed then a new permutation is produced. The five letters A to E arranged as A B C D E form one permutation; A B C E D and A B E C D are two others. It is implicitly assumed that the each number/letter/object is chosen with equal probability and there is an equal chance of filling any place in the list that is produced. Note that there are no repeated letters, or numbers (objects), in any list.</p>
+<p>If there are five different objects (<span class="math notranslate nohighlight">\(n=5\)</span>) then there are <span class="math notranslate nohighlight">\(5! = 5 \times 4 \times 3 \times 2 \times 1 = 120\)</span> permutations. The proof is straightforward: starting with five vacant places in a row, one letter, the letter E, for example, can be put into any one of five different places. There are now <span class="math notranslate nohighlight">\(n-1 = 4\)</span> letters left and if D is now chosen then it can only be placed in four, i.e. <span class="math notranslate nohighlight">\(n-1\)</span> different positions as E occupies one of them. This means that the first two numbers can be placed in <span class="math notranslate nohighlight">\(n(n-1)\)</span> different ways. The third letter chosen can only be put into three (<span class="math notranslate nohighlight">\(n-2\)</span>) empty positions and so the first three numbers can be placed in <span class="math notranslate nohighlight">\(n(n-1)(n-2)\)</span> different ways and so forth. The number of permutations when all <span class="math notranslate nohighlight">\(n\)</span> objects are chosen is therefore the product of the numbers of ways in which to put the letters and this is <span class="math notranslate nohighlight">\(n(n - 1)(n - 2) \cdots 1= n!\)</span>. This can easily be a truly vast number, but if there are only three objects then there are only 3! = 6 ways of doing this which are ABC, ACB, CAB, BAC, BCA, CBA. The permutation of <span class="math notranslate nohighlight">\(n\)</span> objects is written as</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle P(n, n) = n!\]</div>
-<p>When only some of the objects are chosen, the permutations will be fewer. Suppose that either <span class="math notranslate nohighlight">\(p\)</span> objects at a time are chosen out of <span class="math notranslate nohighlight">\(n\)</span>, or that <span class="math notranslate nohighlight">\(p\)</span> objects are placed into <span class="math notranslate nohighlight">\(n\)</span> boxes so that no more than one is in any box, then the number of ways of doing this <em>‘p from n’</em> calculation is</p>
+<p>When only some number <span class="math notranslate nohighlight">\(p\)</span> of the <span class="math notranslate nohighlight">\(n\)</span> objects are chosen, the permutations will be fewer, we effectively stop before <span class="math notranslate nohighlight">\(n\)</span> choices have been made. We saw above that if only two choices are made out of <span class="math notranslate nohighlight">\(n\)</span> the number different choices is <span class="math notranslate nohighlight">\(n(n-1)\)</span>. Suppose that either <span class="math notranslate nohighlight">\(p\)</span> objects at a time are chosen out of <span class="math notranslate nohighlight">\(n\)</span>, or that <span class="math notranslate nohighlight">\(p\)</span> objects are placed into <span class="math notranslate nohighlight">\(n\)</span> boxes so that no more than one is in any box, then the number of different ways of doing this <em>‘p from n’</em> calculation is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle P(n, p) = n(n - 1)(n - 2) \cdots (n - p + 1) =\frac{n!}{(n-p)!}\qquad\tag{19}\]</div>
-<p>Choosing any two letters, <span class="math notranslate nohighlight">\(p = 2\)</span>, from three, <span class="math notranslate nohighlight">\(n = 3\)</span> produces 3!/1! = 6 permutations. For example, if the letters are ABC, then the six choices are AB, BA, AC, CA, BC, CB. Because each permutation is distinct, if we were to place them into groups or ‘boxes’ then only one arrangement goes into each box. When <span class="math notranslate nohighlight">\(n = p\)</span>, because <span class="math notranslate nohighlight">\(0! = 1\)</span> this equation equals <span class="math notranslate nohighlight">\(P(n, n) = n!\)</span>. If each of the permutations is equally likely, then the probability of any one occurring is <span class="math notranslate nohighlight">\(1/P(n, p)\)</span>. Note also that the notation <span class="math notranslate nohighlight">\(P(n, p)\)</span> is not universal and <span class="math notranslate nohighlight">\(_nP_p,\; ^nP_p\)</span> or <span class="math notranslate nohighlight">\(P_p^n\)</span> are also commonly used.</p>
+<p>Choosing any two letters, <span class="math notranslate nohighlight">\(p = 2\)</span>, from three, <span class="math notranslate nohighlight">\(n = 3\)</span> produces 3!/1! = 6 permutations. For example, if the letters are ABC, then the six choices are AB, BA, AC, CA, BC, CB. Because each permutation is distinct, if we were to place them into groups or ‘boxes’ then only one arrangement goes into each box. When <span class="math notranslate nohighlight">\(n = p\)</span>, because <span class="math notranslate nohighlight">\(0! = 1\)</span> this equation equals <span class="math notranslate nohighlight">\(P(n, n) = n!\)</span>. If each of the permutations is equally likely, then the probability of any one occurring is <span class="math notranslate nohighlight">\(1/P(n, p)\)</span>. Finally, note also that the notation <span class="math notranslate nohighlight">\(P(n, p)\)</span> is not universal and <span class="math notranslate nohighlight">\(_nP_p,\; ^nP_p\)</span> or <span class="math notranslate nohighlight">\(P_p^n\)</span> are also commonly used.</p>
+<p>If the letter/number/object is removed after being put into a box, so that all boxes are empty, then there are always <span class="math notranslate nohighlight">\(n\)</span> choices and so the total number of different ways becomes <span class="math notranslate nohighlight">\(n^p\)</span> when there are <span class="math notranslate nohighlight">\(n\)</span> boxes and only <span class="math notranslate nohighlight">\(p\)</span> objects. Alternatively, if we imagine that the box is full of letters then in the first case there are <span class="math notranslate nohighlight">\(n\)</span> choices to take the first letter out and <span class="math notranslate nohighlight">\(n-1\)</span> for the second etc., but if the letter is replaced then there are <span class="math notranslate nohighlight">\(n\)</span> each time making <span class="math notranslate nohighlight">\(n^p\)</span> in total.</p>
+<section id="permutation-examples">
+<h3><strong>Permutation Examples</strong><a class="headerlink" href="#permutation-examples" title="Permalink to this headline">#</a></h3>
+<p><strong>(a)</strong> The number of permutations that can be made, each of 3 vowels long, from a, e, i, o, u is <span class="math notranslate nohighlight">\(\displaystyle P(5,3) = \frac{5!}{2!}=20\)</span></p>
+<p><strong>(b)</strong> If five letters are chosen from the alphabet there will be <span class="math notranslate nohighlight">\(\displaystyle p(26,5)=\frac{26!}{21!}=7,893,600\)</span> different ways of forming these groups.</p>
+<p><strong>(c)</strong> A six digit phone number, where all digits are different, is made up of the digits <span class="math notranslate nohighlight">\(0-9\)</span> inclusive, thus there will only be <span class="math notranslate nohighlight">\(\displaystyle p(10,6)=\frac{10!}{4!}=151200\)</span> different groups.</p>
+<p><strong>(d)</strong> How many integers are there between <span class="math notranslate nohighlight">\(10\)</span> and <span class="math notranslate nohighlight">\(100\)</span> ignoring those with the same two digits, i.e. <span class="math notranslate nohighlight">\(11,22\)</span> etc? This can, of course, be worked out by simply adding up the integers but the number of them is also found from the number of groups of two <em>different</em> numbers out of the numbers <span class="math notranslate nohighlight">\(0-9\)</span>, which is <span class="math notranslate nohighlight">\(\displaystyle p(10,2)=\frac{10!}{8!}=90\)</span>. The similar problem of finding <em>all</em> positive three digit integers not containing any repeated digits is <span class="math notranslate nohighlight">\(\displaystyle p(10,3)=\frac{10!}{7!}=720\)</span>, much easier than trying to work it out by counting how many of each type there is.</p>
+<p><strong>(e)</strong> In a race between twelve runners the number of ways that first, second and third places can be awarded is <span class="math notranslate nohighlight">\(\displaystyle p(12,3)=\frac{12!}{9!}=1320\)</span>.</p>
+</section>
 </section>
 <section id="permutation-with-groups-of-identical-objects">
 <h2>9.3 Permutation with groups of identical objects<a class="headerlink" href="#permutation-with-groups-of-identical-objects" title="Permalink to this headline">#</a></h2>
 <p>If some of the <span class="math notranslate nohighlight">\(n\)</span> objects are identical then clearly the number of choices is going to be reduced. To take an extreme example, if all the objects are identical or indistinguishable from one another, then there is only one way of arranging them and the number of permutations is one. If there are <span class="math notranslate nohighlight">\(n\)</span> objects split into two groups and each of <span class="math notranslate nohighlight">\(v\)</span> and <span class="math notranslate nohighlight">\(w\)</span> are identical objects, the number of permutations is reduced by dividing by the number of ways of separately arranging every identical group, and the result is <span class="math notranslate nohighlight">\(n!/(v!w!)\)</span>. If the <span class="math notranslate nohighlight">\(n\)</span> objects are A A B B B E C D, then there are <span class="math notranslate nohighlight">\(8!/(2!3!) = 8 \times 7 \times 6 \times 5 \times 2 \)</span> ways of arranging them or 12 times less than if all the letters were distinct.</p>
 <p>The identical grouping permutation can be stated more formally as the number of ways of selecting <span class="math notranslate nohighlight">\(n\)</span> objects if these are in <span class="math notranslate nohighlight">\(r\; (\le n)\)</span> groups of <span class="math notranslate nohighlight">\(m_1, m_2, m_3 \cdots m_r\)</span> objects. The total of all <span class="math notranslate nohighlight">\(m_r\)</span> objects must be <span class="math notranslate nohighlight">\(n\)</span>. The number of permutations with groups is</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle P_G = \frac{n!}{\prod_{i=1}^r m_i!}\]</div>
-<p>where the symbol <span class="math notranslate nohighlight">\(\prod\)</span> indicates the product. This number is also the number of ways of placing <span class="math notranslate nohighlight">\(n\)</span> distinguishable objects into <span class="math notranslate nohighlight">\(r\)</span> distinguishable boxes so that boxes contain <span class="math notranslate nohighlight">\(m_1,\; m_2, \;m_3 \cdots m_i\)</span> objects each, and each of the objects in any box is alike.</p>
+\[\displaystyle P_G = \frac{n!}{m_1!m_2!\cdots}=\frac{n!}{\prod_{i=1}^r m_i!}\]</div>
+<p>where the symbol <span class="math notranslate nohighlight">\(\prod\)</span> indicates the product. This number is also the number of ways of placing <span class="math notranslate nohighlight">\(n\)</span> distinguishable objects into <span class="math notranslate nohighlight">\(r\)</span> distinguishable boxes so that boxes contain <span class="math notranslate nohighlight">\(m_1,\; m_2, \;m_3 \cdots m_i\)</span> objects each, and each of the objects in any one box is alike.</p>
 <p>The number of ways of arranging the amino acid residues of even a small protein is astronomically large, but countable. An active protein in a bee’s sting is called mellitin. It is a protein with only 26 amino acids and which forms two short <span class="math notranslate nohighlight">\(\alpha\)</span>-helical regions, with a bend in between. Two such helices are seen in the crystal structure 2MLT.pdb in the RCSB data base (<a class="reference external" href="http://www.rcsb.org/pdb/home/home.do">www.rcsb.org/pdb/home/home.do</a>).</p>
 <p>The sequence of the structure is</p>
 <p>GLY ILE GLY ALA VAL LEU LYS VAL LEU THR THR GLY LEU PRO ALA LEU ILE SER TRP ILE LYS ARG LYS ARG GLN GLN</p>
@@ -2111,33 +2155,33 @@ title="Print to PDF"
 </section>
 <section id="id2">
 <h2>9.4 Combinations<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
-<p>A combination is really a misnomer, because it is the number of ways of choosing <span class="math notranslate nohighlight">\(p\)</span> distinguishable objects from a group of <span class="math notranslate nohighlight">\(n\)</span> distinguishable objects, and the order of choosing these <span class="math notranslate nohighlight">\(p\)</span> objects does not matter. If two letters from ABC are chosen, the number of combinations is three and the choices or combinations are AB <span class="math notranslate nohighlight">\(\equiv\)</span> BA, AC  <span class="math notranslate nohighlight">\(\equiv\)</span> CA, BC  <span class="math notranslate nohighlight">\(\equiv\)</span> CB because the order does not matter.</p>
-<p>If we think of placing objects into boxes, combinations, unlike permutations, allow more than one object to be placed in each box. For example, the letters ABC fill three boxes each containing two objects. Removing <span class="math notranslate nohighlight">\(p\)</span> of the permutations is equivalent to dividing the objects into two groups, the chosen group of <span class="math notranslate nohighlight">\(p\)</span> objects and another group of <span class="math notranslate nohighlight">\(n - p\)</span> objects.</p>
-<p>In a permutation, there are <span class="math notranslate nohighlight">\(n!\)</span> ways of choosing (if all the objects are different) and a combination must be less than this because the ordering of similar objects does not matter, and is less by the factorial of the number chosen, which is <span class="math notranslate nohighlight">\(p!\)</span>. Four objects A B C D produce <span class="math notranslate nohighlight">\(4! = 24\)</span> permutations. If any three (<span class="math notranslate nohighlight">\(p = 3\)</span>) are chosen at a time, the four combinations <span class="math notranslate nohighlight">\(C(4, 3)\)</span> are ABC, ACD, ABD, BCD. Each of these groups has <span class="math notranslate nohighlight">\(p! = 3! = 6\)</span> permutations making <span class="math notranslate nohighlight">\(4 \times 6 = 24\)</span> permutations in total. Thus the number of combinations <span class="math notranslate nohighlight">\(C\)</span> is</p>
+<p>A combination is really a misnomer, because it is the number of ways of choosing <span class="math notranslate nohighlight">\(p\)</span> distinguishable objects from a group of <span class="math notranslate nohighlight">\(n\)</span> distinguishable objects, and the order of choosing these <span class="math notranslate nohighlight">\(p\)</span> objects does not matter. If two letters from ABC are chosen, the number of combinations is three and the choices or combinations are AB <span class="math notranslate nohighlight">\(\equiv\)</span> BA, AC  <span class="math notranslate nohighlight">\(\equiv\)</span> CA, BC  <span class="math notranslate nohighlight">\(\equiv\)</span> CB because the order does not matter. If there are five things we can take two of them in ten different ways. If the things are labelled A, B, C, D, E then the combinations of two at a time are AB, AC, AD, AE, BC, BD, BE, CD, CE, DE.</p>
+<p>If we think of placing objects into boxes, combinations, unlike permutations, allow more than one object to be placed in each box. For example, the letters ABC can fill three boxes each containing two objects. Removing <span class="math notranslate nohighlight">\(p\)</span> of the permutations is equivalent to dividing the objects into two groups, the chosen group of <span class="math notranslate nohighlight">\(p\)</span> objects and another group, not chosen, containing <span class="math notranslate nohighlight">\(n - p\)</span> objects.</p>
+<p>In a permutation, there are <span class="math notranslate nohighlight">\(n!\)</span> ways of choosing (if all the objects are different) and a combination must be less than this because the ordering of similar objects does not matter, and is less by the factorial of the number chosen, which is <span class="math notranslate nohighlight">\(p!\)</span>. Four objects A, B, C, D produce <span class="math notranslate nohighlight">\(4! = 24\)</span> permutations. If any three (<span class="math notranslate nohighlight">\(p = 3\)</span>) are chosen at a time, the four combinations <span class="math notranslate nohighlight">\(C(4, 3)\)</span> are ABC, ACD, ABD, BCD. Each of these groups has <span class="math notranslate nohighlight">\(p! = 3! = 6\)</span> permutations making <span class="math notranslate nohighlight">\(4 \times 6 = 24\)</span> permutations in total. Thus the number of combinations <span class="math notranslate nohighlight">\(C\)</span> is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle C(n,p)=\frac{p(n,p)}{p!}\qquad \tag{20}\]</div>
 <p>Therefore, using equation 19, the number of ways of choosing <span class="math notranslate nohighlight">\(p\)</span> objects at a time out of a total of <span class="math notranslate nohighlight">\(n\)</span>, is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle C(n,p)=\frac{n!}{p!(n-p)!}=\binom{n}{p}\qquad \tag{21}\]</div>
-<p>The second notation, ‘n over p’, is that used for the coefficients in the binomial expansion. As for permutations, the notations <span class="math notranslate nohighlight">\(_nC_p,\; ^nC_p,\; C_p^n\)</span> are also commonly used. This number gives the coefficients in the binomial expansion and in the Binomial Probability distribution, see section 9.10.</p>
+<p>The second notation, ‘n over p’, is that used for the coefficients in the binomial expansion. As for permutations, various notations for combinations, <span class="math notranslate nohighlight">\(_nC_p,\; ^nC_p,\; C_p^n\)</span> are also common. The combination gives the coefficients in the binomial expansion and in the Binomial Probability distribution, see section 9.10.</p>
 <p>The original context of the word combination is that the number <span class="math notranslate nohighlight">\(C(n, p)\)</span> is the number of combinations of <span class="math notranslate nohighlight">\(n\)</span> things selected <span class="math notranslate nohighlight">\(p\)</span> at a time. Since <span class="math notranslate nohighlight">\(\displaystyle \binom{n}{p}=\binom{n}{n-p}\)</span> this is also equal to the number of combinations of <span class="math notranslate nohighlight">\(n\)</span> things selected <span class="math notranslate nohighlight">\(n-p\)</span> at a time.</p>
 </section>
 <section id="lottery">
 <h2>9.5 Lottery<a class="headerlink" href="#lottery" title="Permalink to this headline">#</a></h2>
 <p>The chance of winning a lottery can be found from the number of combinations. For instance, choosing 6 numbers out of 48 produces</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle C(48,6)=\frac{48!}{6!42!}=\frac{48\cdot 47\cdot 46 \cdot45 \cdot 44 \cdot 43}{6 \cdot 5\cdot 4 \cdot 3 \cdot 2}=12\,271\,512\]</div>
+\[\displaystyle C(48,6)=\frac{48!}{6!42!}=\frac{48\cdot 47\cdot 46 \cdot45 \cdot 44 \cdot 43}{6 \cdot 5\cdot 4 \cdot 3 \cdot 2}=12,271,512\]</div>
 <p>possible choices or just under one in twelve million chances of winning, as the chance of any one combination being chosen is just as likely as any other, then its probability is <span class="math notranslate nohighlight">\(1/C(n, p)\)</span>. If <span class="math notranslate nohighlight">\(\approx 12\)</span> million people play each week, then on average one might expect one winner each week, assuming that the numbers are equally likely to be chosen by the players.</p>
 </section>
 <section id="choosing-groups">
 <h2>9.6 Choosing groups<a class="headerlink" href="#choosing-groups" title="Permalink to this headline">#</a></h2>
 <p>If you are making choices when two or more conditions apply, then the combinations are multiplied together. For example, suppose that a study is to be conducted in which <span class="math notranslate nohighlight">\(25\)</span> patients are to be placed into three groups of equal size. The control group must contain <span class="math notranslate nohighlight">\(8\)</span> persons and therefore so must the experimental groups. These must be selected from <span class="math notranslate nohighlight">\(25 - 8 = 17\)</span> and <span class="math notranslate nohighlight">\(9\)</span> persons each. The number of ways of making this choice is huge even for such small numbers, and is</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle C(25, 8)C(17, 6)C(9, 8) =\frac{25!}{8!(25-8)!}\frac{17!}{6!(17-8)!}\frac{9!}{8!(9-8)!}=230\,637\,794\,250\]</div>
+\[\displaystyle C(25, 8)C(17, 6)C(9, 8) =\frac{25!}{8!(25-8)!}\frac{17!}{6!(17-8)!}\frac{9!}{8!(9-8)!}=230,637,794,250\]</div>
 </section>
 <section id="number-of-transitions">
 <h2>9.7 Number of transitions<a class="headerlink" href="#number-of-transitions" title="Permalink to this headline">#</a></h2>
-<p>In a stack of energy levels such as in an atom, many transitions are possible from an upper level <span class="math notranslate nohighlight">\(n_2\)</span> to a lower one <span class="math notranslate nohighlight">\(n_1\)</span>, when the selection rules are ignored. Thus level <span class="math notranslate nohighlight">\(6\)</span> can have transitions to levels <span class="math notranslate nohighlight">\(5,4,3,2,1\)</span>, level <span class="math notranslate nohighlight">\(1\)</span> being lowest, and level <span class="math notranslate nohighlight">\(5\)</span> can then transfer to levels <span class="math notranslate nohighlight">\(4,3,2,1\)</span> etc. The first step is to calculate the number of levels and this is just <span class="math notranslate nohighlight">\(n_2-n_1+1\)</span>. You can check this by drawing a set of levels. Next, each transition, of course, involves two levels so we need to find the number of ways of selecting two levels (objects) at a time out of the total and this is</p>
+<p>In a stack of energy levels such as in an atom, many transitions are possible from an upper level <span class="math notranslate nohighlight">\(n_2\)</span> to a lower one <span class="math notranslate nohighlight">\(n_1\)</span> if the selection rules are ignored. Thus level <span class="math notranslate nohighlight">\(6\)</span> can have transitions to levels <span class="math notranslate nohighlight">\(5,4,3,2,1\)</span>, level <span class="math notranslate nohighlight">\(1\)</span> being lowest, and level <span class="math notranslate nohighlight">\(5\)</span> can then transfer to levels <span class="math notranslate nohighlight">\(4,3,2,1\)</span> etc. The first step is to calculate the number of levels and this is just <span class="math notranslate nohighlight">\(n_2-n_1+1\)</span>. You can check this by drawing a set of levels. Next, each transition, of course, involves two levels so we need to find the number of ways of selecting two levels (objects) at a time out of the total and this is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \binom{n_2-n_1+1}{2}=\frac{(n_2-n_1+1)!}{2!(n_2-n_1+1-2)!}=\frac{(n_2-n_1+1)(n_2-n_1)}{2}\]</div>
 </section>
@@ -2194,7 +2238,9 @@ a &amp; - &amp; a
 <p>Quite often, some caution is necessary in analysing problems involving chance or random events. For example, if two coins are simultaneously flipped what is the change of observing two heads? The ways the coins can fall is either head H, or tail T, but to think that there are only three outcomes, HH, HT, TT and the chance <span class="math notranslate nohighlight">\(1/3\)</span> is wrong. This is because there are four outcomes HH, HT, TH and TT so the chance of observing HH is <span class="math notranslate nohighlight">\(1/4\)</span>. The chance of a head and a tail is <span class="math notranslate nohighlight">\(1/2\)</span>.  Thus the definition of probability is</p>
 <section id="id3">
 <h3><strong>Probability</strong><a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h3>
-<p>Probability is defined as the ratio of the number of successful outcomes to the total number of possible outcomes.</p>
+<blockquote>
+<div><p>Probability is defined as the ratio of the number of successful outcomes to the total number of possible outcomes.</p>
+</div></blockquote>
 </section>
 </section>
 <section id="calculating-probability-sample-space">
@@ -2207,63 +2253,86 @@ a &amp; - &amp; a
 <hr class="docutils" />
 <section id="definitions-notation-and-some-useful-formulae">
 <h2>9.13 Definitions, notation, and some useful formulae<a class="headerlink" href="#definitions-notation-and-some-useful-formulae" title="Permalink to this headline">#</a></h2>
-<p><strong>(i)</strong> The probability of an event <span class="math notranslate nohighlight">\(A\)</span> is <span class="math notranslate nohighlight">\(p(A)\ge 0\)</span>.</p>
+<p><strong>Mutually exclusive <em>vs</em>. independent events.</strong></p>
+<blockquote>
+<div><p>A mutually exclusive event is one whose occurrence prevents the other form happening at the same time. Tossing a coin can only produce a head or a tail, if a head is observed the tail is prevented from happening and vice versa, both occurring is prevented.</p>
+</div></blockquote>
+<blockquote>
+<div><p>Independent events mean that one outcome does not influence the other, and so these events cannot be mutually exclusive. Throwing a dice and tossing a coin are independent events, as are tossing two coins, the result of one does not influence that of the other and <em>vice versa</em>.</p>
+</div></blockquote>
+<p><strong>(i)</strong> The probability of an event <span class="math notranslate nohighlight">\(A\)</span> is <span class="math notranslate nohighlight">\(0 \ge  p(A) \le 1\)</span>.</p>
 <p><strong>(ii)</strong> The certain event <span class="math notranslate nohighlight">\(S\)</span> has a probability of 1; <span class="math notranslate nohighlight">\(p(S)=1\)</span>.</p>
 <p><strong>(iii)</strong> The probability of an event <span class="math notranslate nohighlight">\(p(A)\)</span> is the sum of  simple events in the sample space.</p>
 <p><strong>(iv)</strong> The word ‘or’ is used in the inclusive sense. Thus, <em>A or B</em> means ‘either A or B, or, both’. The notation <span class="math notranslate nohighlight">\(p(A + B)\)</span>, is the probability that either <span class="math notranslate nohighlight">\(A\)</span> or <span class="math notranslate nohighlight">\(B\)</span> or both occurs. The notation <span class="math notranslate nohighlight">\(p(AB)\)</span> is a joint probability and means that both <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> occur. In set theory, this is the intersection or overlap of <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span>, and is usually written as <span class="math notranslate nohighlight">\(p(A\cap B)\)</span>; figure 20.</p>
-<p><strong>(v)</strong> If several <em>independent</em> events each of a probabilistic nature occur to produce a successful outcome, then the overall chance of this happening is the product of the probabilities of the individual events. An independent event is one whose outcome does not influence that for any of the others; <span class="math notranslate nohighlight">\(p(A \&amp; B) = p(A)p(B)\)</span>.</p>
+<p><strong>(v)</strong> If several <em>independent</em> events each of a probabilistic nature occur to produce a successful outcome, then the overall chance of this happening is the product of the probabilities of the individual events, (<strong>Product Rule</strong>). An independent event is one whose outcome does not influence that for any of the others; <span class="math notranslate nohighlight">\(p(A \&amp; B) = p(A)p(B)\)</span>.</p>
 <p><strong>(vi)</strong> If two events <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> can occur, their inclusive probability <span class="math notranslate nohighlight">\(p(A + B)\)</span> means that at least one event occurs, which is to be interpreted as event <span class="math notranslate nohighlight">\(A\)</span> or <span class="math notranslate nohighlight">\(B\)</span>  occurs. In figure 20 (left) the sample spaces are related as</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle n(A) + n(B) = n(A + B) + n(AB)\]</div>
 <p>The area <span class="math notranslate nohighlight">\(n(A)\)</span> and <span class="math notranslate nohighlight">\(n(B)\)</span> is the whole of their respective ellipses, <span class="math notranslate nohighlight">\(n(A + B)\)</span> is the total area less the overlap <span class="math notranslate nohighlight">\(n(AB)\)</span>. When divided by the number of arrangements in the sample space these numbers become probabilities. The inclusive probability, either <span class="math notranslate nohighlight">\(A\)</span> or <span class="math notranslate nohighlight">\(B\)</span> or both, is the probability that <span class="math notranslate nohighlight">\(A\)</span> occurs, plus, the chance that <span class="math notranslate nohighlight">\(B\)</span> occurs minus the chance that both occur or</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle p(inclusive) = p(A) + p(B) - p(AB)\qquad \qquad\tag{23}\]</div>
-<p><strong>(vii)</strong> A mutually exclusive event is one whose outcome prevents any others occurring. The two events <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span>, are mutually exclusive if there is no intersection or overlap of <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span>, <span class="math notranslate nohighlight">\(p(AB) = 0\)</span>, therefore the probability of the occurrence of at least one out of two possible events is the sum of the individual probabilities,</p>
+<p><strong>(vii)</strong> A mutually exclusive event is one whose outcome prevents any others occurring. The two events <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span>, are mutually exclusive if there is no intersection or overlap of <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span>, <span class="math notranslate nohighlight">\(p(AB) = 0\)</span>, therefore the probability of the occurrence of at least one out of two possible events is the sum of the individual probabilities, (<strong>Addition Rule</strong>),</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle p(exclusive) = p(A) + p(B)\]</div>
 <p>This equation only applies to two events.</p>
-<p><strong>(viii)</strong> The sample space in tossing a coin is heads and tails, (H, T); in tossing a die this is <span class="math notranslate nohighlight">\((1 \cdots 6)\)</span>, in one set of playing cards <span class="math notranslate nohighlight">\((1 \cdots 52)\)</span>, and so forth. If three coins are used, the sample space contains <span class="math notranslate nohighlight">\(2^3\)</span> elements, HHH, HHT, etc. If <span class="math notranslate nohighlight">\(n_S\)</span> represents the number of arrangements in the whole sample space, <span class="math notranslate nohighlight">\(n_A\)</span> the subset that is the number of ways of arranging events in a successful outcome, <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(n_{NA}\)</span> the subset that is not <span class="math notranslate nohighlight">\(A\)</span> then, clearly, <span class="math notranslate nohighlight">\(n_S = n_A + n_{NA}\)</span>. The probability of outcome <span class="math notranslate nohighlight">\(A\)</span> is therefore</p>
+<p><strong>(viii)</strong> The sample space in tossing a coin is heads and tails, (H, T); in tossing a die this is <span class="math notranslate nohighlight">\((1 \cdots 6)\)</span>, in one set of playing cards <span class="math notranslate nohighlight">\((1 \cdots 52)\)</span>, and so forth. If three coins are used, the sample space contains <span class="math notranslate nohighlight">\(2^3\)</span> elements, HHH, HHT, etc. If <span class="math notranslate nohighlight">\(n_S\)</span> represents the number of arrangements in the whole sample space, <span class="math notranslate nohighlight">\(n_A\)</span> the subset that is the number of ways of arranging events in a successful outcome (call this <span class="math notranslate nohighlight">\(A\)</span>) and <span class="math notranslate nohighlight">\(n_{NA}\)</span> the subset that is not <span class="math notranslate nohighlight">\(A\)</span> then, clearly, <span class="math notranslate nohighlight">\(n_S = n_A + n_{NA}\)</span>. The probability of outcome <span class="math notranslate nohighlight">\(A\)</span> is therefore</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle p=\frac{n_A}{n_s}=1-\frac{n_{NA}}{n_s}\qquad \tag{24}\]</div>
-<p><strong>(ix)</strong> If <span class="math notranslate nohighlight">\(p\)</span> is the chance that an event occurs, then <span class="math notranslate nohighlight">\(1-p\)</span> is the chance that it will not,</p>
+<p><strong>(ix)</strong> If <span class="math notranslate nohighlight">\(p\)</span> is the chance that an event occurs, then <span class="math notranslate nohighlight">\(1-p\)</span> is the chance that it will not, (<strong>Subtraction Rule</strong>),</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle p(not A) = 1 - p(A)\]</div>
 <p>This is called the complement. On the right of figure 20, the complement of <span class="math notranslate nohighlight">\(p(A\cup B)\)</span> is the area outside the two shaded circles. In the left-hand sketch, the complement of the intersection <span class="math notranslate nohighlight">\(p(A\cap B) \equiv p(AB)\)</span>, is all the area not labelled <span class="math notranslate nohighlight">\(AB\)</span> inside the square.</p>
-<p><strong>(x)</strong> If two objects are placed into two different boxes, hence distinguishable, then the outcomes are (AB, -), (-, AB), (A, B), (B, A). As each of these is a simple event, the probability of each occurring is 1/4. If the objects are <em>indistinguishable</em>, then there are three arrangements (xx, -), (xx, -), (x, x), but the last may be considered to be two events and in this case would occur with a probability of <span class="math notranslate nohighlight">\(2/4\)</span>. However, if we take the three outcomes to be equally likely then the probability of the last is <span class="math notranslate nohighlight">\(1/3\)</span>, and this is the case for bosons.</p>
+<p><strong>(x)</strong> Two objects can be placed into either one or the other or both of two different boxes, hence are distinguishable, then the outcomes are (AB, -), (-, AB), (A, B), (B, A). As each of these is a simple event, the probability of each occurring is 1/4. If the objects are <em>indistinguishable</em>, then there are three arrangements (xx, -), (xx, -), (x, x), but the last may be considered to be two events and in this case would occur with a probability of <span class="math notranslate nohighlight">\(2/4\)</span>. However, if we take the three outcomes to be equally likely then the probability of the last is <span class="math notranslate nohighlight">\(1/3\)</span>, and this is the case for bosons.</p>
 </section>
 <section id="independent-and-exclusive-events-sample-spaces-and-conditional-probability">
 <h2>9.14 Independent and exclusive events, sample spaces, and conditional probability<a class="headerlink" href="#independent-and-exclusive-events-sample-spaces-and-conditional-probability" title="Permalink to this headline">#</a></h2>
-<p>Examples:</p>
 <section id="i-chance-of-observing-a-head-on-a-coin-and-a-6-on-a-dice">
 <h3><strong>(i) Chance of observing a head on a coin and a <span class="math notranslate nohighlight">\(6\)</span> on a dice</strong><a class="headerlink" href="#i-chance-of-observing-a-head-on-a-coin-and-a-6-on-a-dice" title="Permalink to this headline">#</a></h3>
-<p>If a coin and a die are thrown they are clearly independent events and the chance of observing a head and a <span class="math notranslate nohighlight">\(6\)</span> is <span class="math notranslate nohighlight">\((1/2) \times (1/6)\)</span>. This follows from the fundamental principle of counting; if a job is completed in <span class="math notranslate nohighlight">\(n\)</span> ways and another in <span class="math notranslate nohighlight">\(m\)</span> ways then both can be completed in <span class="math notranslate nohighlight">\(n \times m\)</span> ways. For instance, if there are <span class="math notranslate nohighlight">\(6\)</span> types of anions and <span class="math notranslate nohighlight">\(8\)</span> types of cations then <span class="math notranslate nohighlight">\(48\)</span> different salts can be produced. Now, suppose that two dice are thrown and you want to find the chance that the total of their numbers is <span class="math notranslate nohighlight">\(10\)</span>. The two dice are independent, the result of one does not influence the other, and the probabilities therefore multiply. As one die can fall in one of six ways, two can fall in <span class="math notranslate nohighlight">\(6 \times 6 = 36\)</span> different ways. The number <span class="math notranslate nohighlight">\(10\)</span> can be obtained in three different ways, each of which is equally likely to occur: <span class="math notranslate nohighlight">\(6 + 4,\, 4 + 6,\)</span> and <span class="math notranslate nohighlight">\(5 + 5\)</span>. The probability of observing <span class="math notranslate nohighlight">\(10\)</span> is therefore <span class="math notranslate nohighlight">\(3/36\)</span>. If a sum of <span class="math notranslate nohighlight">\(6\)</span> is sought, then this is produced in the combinations <span class="math notranslate nohighlight">\(1+5,\, 5+1,\, 4+2, \,2+4, \, 1+3\)</span> and would be expected to be observed <span class="math notranslate nohighlight">\(5/36\)</span> times the dice are thrown.</p>
+<p>If a coin and a die are thrown they are clearly independent events and the chance of observing a head and a <span class="math notranslate nohighlight">\(6\)</span> is <span class="math notranslate nohighlight">\((1/2) \times (1/6)\)</span>. This follows from the fundamental principle of counting; if a job is completed in <span class="math notranslate nohighlight">\(n\)</span> ways and another in <span class="math notranslate nohighlight">\(m\)</span> ways then both can be completed in <span class="math notranslate nohighlight">\(n \times m\)</span> ways. For instance, if there are <span class="math notranslate nohighlight">\(6\)</span> types of anions and <span class="math notranslate nohighlight">\(8\)</span> types of cations then <span class="math notranslate nohighlight">\(48\)</span> different salts can be produced.</p>
 </section>
-<section id="ii-cards-drawn-in-succession">
-<h3><strong>(ii) Cards drawn in succession</strong><a class="headerlink" href="#ii-cards-drawn-in-succession" title="Permalink to this headline">#</a></h3>
-<p>If you want two cards containing the number <span class="math notranslate nohighlight">\(7\)</span> to be drawn in succession from a pack of <span class="math notranslate nohighlight">\(52\)</span> playing cards, what is the chance of this happening if the first card chosen is not replaced in the pack? The chance of the first <span class="math notranslate nohighlight">\(7\)</span> being chosen is <span class="math notranslate nohighlight">\(4/52\)</span> because there are four <span class="math notranslate nohighlight">\(7\)</span>’s in a pack of <span class="math notranslate nohighlight">\(52\)</span> cards. It is now assumed that a <span class="math notranslate nohighlight">\(7\)</span> has been removed and therefore the chance that the second card removed is a <span class="math notranslate nohighlight">\(7\)</span> is <span class="math notranslate nohighlight">\(3/51\)</span> making the chance <span class="math notranslate nohighlight">\((4/51) \times (3/51) = 1/221\)</span> overall. The second choice is <span class="math notranslate nohighlight">\(3/51\)</span> because we have only <span class="math notranslate nohighlight">\(51\)</span> cards left and one <span class="math notranslate nohighlight">\(7\)</span> is assumed to have been removed in our first try. Had we chosen to find the probability that a <span class="math notranslate nohighlight">\(7\)</span> and a <span class="math notranslate nohighlight">\(6\)</span> were to be removed in succession, the chance would be <span class="math notranslate nohighlight">\((4/52) \times (4/51)\)</span>. If instead we wanted to draw a <span class="math notranslate nohighlight">\(7\)</span> or a <span class="math notranslate nohighlight">\(6\)</span> from the pack, then the probability would be <span class="math notranslate nohighlight">\(4/52 + 4/52\)</span> as these are independent of one another; drawing one card does not depend on the other.</p>
+<section id="ii-throw-two-dice-to-get-a-given-total">
+<h3><strong>(ii) Throw two dice to get a given total</strong><a class="headerlink" href="#ii-throw-two-dice-to-get-a-given-total" title="Permalink to this headline">#</a></h3>
+<p>Suppose that two dice are thrown (or the same one twice) and you want to find the chance that the total of their numbers is <span class="math notranslate nohighlight">\(10\)</span>. The two dice are independent, the result of one does not influence the other, and the probabilities therefore multiply. As one die can fall in one of six ways, two can fall in <span class="math notranslate nohighlight">\(6 \times 6 = 36\)</span> different ways, (Product Rule). The number <span class="math notranslate nohighlight">\(10\)</span> can be obtained in three different ways, each of which is equally likely to occur: <span class="math notranslate nohighlight">\(6 + 4,\, 4 + 6,\)</span> and <span class="math notranslate nohighlight">\(5 + 5\)</span>. The probability of observing <span class="math notranslate nohighlight">\(10\)</span> is therefore <span class="math notranslate nohighlight">\(3/36\)</span>. If a sum of <span class="math notranslate nohighlight">\(6\)</span> is sought, then this is produced in the combinations <span class="math notranslate nohighlight">\(1+5,\, 5+1,\, 4+2, \,2+4, \, 1+3\)</span> and would be expected to be observed <span class="math notranslate nohighlight">\(5/36\)</span> times the dice are thrown.</p>
 </section>
-<section id="iii-independent-events-molecular-yield">
-<h3><strong>(iii) Independent events. Molecular yield</strong><a class="headerlink" href="#iii-independent-events-molecular-yield" title="Permalink to this headline">#</a></h3>
+<section id="iii-cards-drawn-in-succession">
+<h3><strong>(iii) Cards drawn in succession</strong><a class="headerlink" href="#iii-cards-drawn-in-succession" title="Permalink to this headline">#</a></h3>
+<p>If you want two cards containing the number <span class="math notranslate nohighlight">\(7\)</span> to be drawn in succession from a pack of <span class="math notranslate nohighlight">\(52\)</span> playing cards, what is the chance of this happening if the first card chosen is not replaced in the pack? The chance of the first <span class="math notranslate nohighlight">\(7\)</span> being chosen is <span class="math notranslate nohighlight">\(4/52\)</span> because there are four <span class="math notranslate nohighlight">\(7\)</span>’s in a pack of <span class="math notranslate nohighlight">\(52\)</span> cards. It is now assumed that a <span class="math notranslate nohighlight">\(7\)</span> has been removed and therefore the chance that the second card removed is a <span class="math notranslate nohighlight">\(7\)</span> is <span class="math notranslate nohighlight">\(3/51\)</span> making the chance <span class="math notranslate nohighlight">\((4/51) \times (3/51) = 1/221\)</span> overall and the Product Rule is used. The second choice is <span class="math notranslate nohighlight">\(3/51\)</span> because we have only <span class="math notranslate nohighlight">\(51\)</span> cards left and one <span class="math notranslate nohighlight">\(7\)</span> is assumed to have been removed in our first try. Had we chosen to find the probability that a <span class="math notranslate nohighlight">\(7\)</span> and a <span class="math notranslate nohighlight">\(6\)</span> were to be removed in succession, the chance would be <span class="math notranslate nohighlight">\((4/52) \times (4/51)\)</span>.</p>
+<p>If instead we wanted to draw either a <span class="math notranslate nohighlight">\(7\)</span> or a <span class="math notranslate nohighlight">\(6\)</span> from the pack, then the probability would be <span class="math notranslate nohighlight">\(4/52 + 4/52\)</span> as these are independent of one another; drawing one card does not depend on the other. Using ‘either or’ usually means that the Addition Rule is used.</p>
+</section>
+<section id="iv-independent-events-molecular-yield">
+<h3><strong>(iv) Independent events. Molecular yield</strong><a class="headerlink" href="#iv-independent-events-molecular-yield" title="Permalink to this headline">#</a></h3>
 <p>Independent events can occur in the way molecules react. If a molecule can react to produce two different products A and B with rate constants <span class="math notranslate nohighlight">\(k_A\)</span> and <span class="math notranslate nohighlight">\(k_B\)</span> respectively, the chance of product A being observed is <span class="math notranslate nohighlight">\(p_A = k_A/(k_A + k_B)\)</span> and of B is <span class="math notranslate nohighlight">\(1 - p_A\)</span>, which is <span class="math notranslate nohighlight">\(p_B = k_B /(k_A + k_B)\)</span>. The sum of both events is 1. In chemistry, probability <span class="math notranslate nohighlight">\(p_A\)</span> is normally called the yield of A and is often expressed as a percentage. If an excited state of a molecule can fluoresce with rate constant <span class="math notranslate nohighlight">\(k_f\)</span> or produce another state such as a triplet by intersystem crossing with rate constant <span class="math notranslate nohighlight">\(k_i\)</span> then the fluorescence yield is <span class="math notranslate nohighlight">\(k_f /(k_f + k_i)\)</span> and the triplet yield <span class="math notranslate nohighlight">\(k_i /(k_f + k_i)\)</span>.</p>
 </section>
-<section id="iv-cards-drawn-but-not-replaced">
-<h3><strong>(iv) Cards drawn but not replaced</strong><a class="headerlink" href="#iv-cards-drawn-but-not-replaced" title="Permalink to this headline">#</a></h3>
+<section id="v-cards-drawn-but-not-replaced">
+<h3><strong>(v) Cards drawn but not replaced</strong><a class="headerlink" href="#v-cards-drawn-but-not-replaced" title="Permalink to this headline">#</a></h3>
 <p>Suppose that two cards are drawn from a pack and the first not replaced, and we want the chance that the second is a <span class="math notranslate nohighlight">\(7\)</span> of diamonds. This question has two answers. If the first card happens to be the <span class="math notranslate nohighlight">\(7\)</span>, then the chance of the second being this card is obviously zero. If the first card is not the <span class="math notranslate nohighlight">\(7\)</span> of diamonds, the chance of choosing it a second time is <span class="math notranslate nohighlight">\(1/51\)</span> making the chance <span class="math notranslate nohighlight">\((1/52) \times (1/51)\)</span> overall.</p>
 </section>
-<section id="v-throw-a-die-n-time">
-<h3><strong>(v) Throw a die <span class="math notranslate nohighlight">\(n\)</span> time</strong><a class="headerlink" href="#v-throw-a-die-n-time" title="Permalink to this headline">#</a></h3>
-<p>Suppose a die is thrown <span class="math notranslate nohighlight">\(n\)</span> times, what will be the chance that a <span class="math notranslate nohighlight">\(3\)</span> appears at least once? In one throw the <span class="math notranslate nohighlight">\(3\)</span> appears with a chance <span class="math notranslate nohighlight">\(1/6\)</span> and there is a <span class="math notranslate nohighlight">\(5/6\)</span> chance that it does not appear. After <span class="math notranslate nohighlight">\(n\)</span> throws, then the chance is <span class="math notranslate nohighlight">\((5/6)^n\)</span> that the <span class="math notranslate nohighlight">\(3\)</span> does not appear and therefore <span class="math notranslate nohighlight">\(1 - (5/6)^n\)</span> that it appears at least once. For two throws, this is <span class="math notranslate nohighlight">\(11/36\)</span>.</p>
+<section id="vi-throw-a-die-n-time">
+<h3><strong>(vi) Throw a die <span class="math notranslate nohighlight">\(n\)</span> time</strong><a class="headerlink" href="#vi-throw-a-die-n-time" title="Permalink to this headline">#</a></h3>
+<p>Suppose a die is thrown <span class="math notranslate nohighlight">\(n\)</span> times, what will be the chance that a <span class="math notranslate nohighlight">\(3\)</span> appears at least once? Usually when the expression ‘at least once’ is used we use the Subtraction Rule to find the chance that the outcome wanted does not occur. In one throw the <span class="math notranslate nohighlight">\(3\)</span> appears with a chance <span class="math notranslate nohighlight">\(1/6\)</span> and there is a <span class="math notranslate nohighlight">\(5/6\)</span> chance that it does not appear. After <span class="math notranslate nohighlight">\(n\)</span> throws, then the chance is <span class="math notranslate nohighlight">\((5/6)^n\)</span> that the <span class="math notranslate nohighlight">\(3\)</span> does not appear and therefore <span class="math notranslate nohighlight">\(1 - (5/6)^n\)</span> that it appears at least once. For two throws, this is <span class="math notranslate nohighlight">\(11/36\)</span>.</p>
 <p>This calculation can also be described using inclusive probability. Suppose that there are two outcomes A and B, and at least one outcome is required, then the probability is that of event A, plus event B minus that of both A and B or p = p(A) + p(B) - p(AB). The chance that a <span class="math notranslate nohighlight">\(3\)</span> is thrown, is <span class="math notranslate nohighlight">\(1/6\)</span> on the first throw (outcome A), and again on the second throw is <span class="math notranslate nohighlight">\(1/6\)</span>, and the chance of both occurring p(AB) = <span class="math notranslate nohighlight">\(1/36\)</span> making <span class="math notranslate nohighlight">\(1/6 + 1/6 - 1/36 = 11/36\)</span> overall.</p>
 </section>
 </section>
 <section id="summary">
 <h2>9.15 Summary<a class="headerlink" href="#summary" title="Permalink to this headline">#</a></h2>
 <p>If <span class="math notranslate nohighlight">\(n\)</span> and <span class="math notranslate nohighlight">\(m\)</span> are the numbers <span class="math notranslate nohighlight">\(1\)</span> to <span class="math notranslate nohighlight">\(6\)</span> (the sample space) on a die, then the probability of throwing;</p>
-<p>(1) any number <span class="math notranslate nohighlight">\(n\)</span> is <span class="math notranslate nohighlight">\(1/6\)</span> and of not throwing any <span class="math notranslate nohighlight">\(n\)</span> is <span class="math notranslate nohighlight">\(1-1/6\)</span>.</p>
-<p>(2) either <span class="math notranslate nohighlight">\(n\)</span> or <span class="math notranslate nohighlight">\(m\)</span> is <span class="math notranslate nohighlight">\(1/6+1/6 = 1/3\)</span>.</p>
-<p>(3) the same <span class="math notranslate nohighlight">\(n\)</span> twice in two throws is <span class="math notranslate nohighlight">\((1/6)(1/6)\)</span>.</p>
-<p>(4) <span class="math notranslate nohighlight">\(n\)</span> at least once in two throws is <span class="math notranslate nohighlight">\(1 - (5/6)^2 = 11/36\)</span>.</p>
-<p>(5) <span class="math notranslate nohighlight">\(n\)</span> exactly once in two throws is <span class="math notranslate nohighlight">\(1/6+(1/6)(1-2/6)\)</span>.</p>
+<p><strong>(1)</strong> any number <span class="math notranslate nohighlight">\(n\)</span> is <span class="math notranslate nohighlight">\(1/6\)</span> and of not throwing any <span class="math notranslate nohighlight">\(n\)</span> is <span class="math notranslate nohighlight">\(1-1/6\)</span>.</p>
+<p><strong>(2)</strong> either <span class="math notranslate nohighlight">\(n\)</span> or <span class="math notranslate nohighlight">\(m\)</span> is <span class="math notranslate nohighlight">\(1/6+1/6 = 1/3\)</span>. (Addition Rule)</p>
+<p><strong>(3)</strong> the same <span class="math notranslate nohighlight">\(n\)</span> twice in two throws is <span class="math notranslate nohighlight">\((1/6)(1/6)\)</span>. (Product Rule)</p>
+<p><strong>(4)</strong> any number twice in two throws is <span class="math notranslate nohighlight">\(6\cdot (1/36)=1/6\)</span>. You don’t care what the first number is just that the second matches it. The table shows all the possible outcomes (sample space) and is often a convenient way of working out probabilities. The <span class="math notranslate nohighlight">\(6\)</span> double numbers are outlined.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin{array}{ccccccc}
+\hline
+\fbox {1,1}&amp; 1,2 &amp; 1,3 &amp; 1,4 &amp; 1,5 &amp; 1,6\\
+2,1&amp; \fbox{2,2}&amp;2,3&amp;2,4&amp;2,5&amp;2,6\\
+3,1&amp; 3,2 &amp; \fbox{3,3}&amp; 3,4&amp;3,5&amp;3.6\\
+4,1&amp; 4,2 &amp; 4,3 &amp; \fbox{4,4}&amp;4,5&amp;4,6\\
+5,1&amp; 5,2 &amp;5,3 &amp; 5,4 &amp; \fbox{5,5} &amp;5,6\\
+6,1&amp; 6,2 &amp;6,3 &amp; 6,4 &amp; 6,5 &amp;\fbox{6,6}\\
+\hline
+\end{array}\end{split}\]</div>
+<p><strong>(5)</strong> <span class="math notranslate nohighlight">\(n\)</span> at least once in two throws is <span class="math notranslate nohighlight">\(1 - (5/6)^2 = 11/36\)</span>. (Subtraction Rule)</p>
+<p><strong>(6)</strong> <span class="math notranslate nohighlight">\(n\)</span> exactly once in two throws is the chance on the first throw of getting the number <span class="math notranslate nohighlight">\(n\)</span> with the first dice but not the second, and the other way round on the second throw which is <span class="math notranslate nohighlight">\(\displaystyle\frac{1}{6}\cdot\frac{5}{6}+\frac{5}{6}\cdot\frac{1}{6}\)</span>. The chance of not getting <span class="math notranslate nohighlight">\(n\)</span> on either throw is <span class="math notranslate nohighlight">\((5/6)^2\)</span>. These results can be seen in the table above.</p>
 <section id="vii-same-birthdays">
 <h3><strong>(vii) Same birthdays</strong><a class="headerlink" href="#vii-same-birthdays" title="Permalink to this headline">#</a></h3>
 <p>To illustrate explicitly the use of a sample space, consider the problem of calculating whether at least two people from a group of <span class="math notranslate nohighlight">\(25\)</span> people have the same birthday (see Goldberg 1986, p. 53). First, to simplify the calculation it is necessary to ignore leap years, and then to assume that there are no twins in the group and that births occur with equal probability throughout the year. None of these may be true in a real sample of people, but we will assume that they are.</p>
@@ -2302,12 +2371,12 @@ a &amp; - &amp; a
 <h3><strong>(ix) Passwords</strong><a class="headerlink" href="#ix-passwords" title="Permalink to this headline">#</a></h3>
 <p>Finally in this section consider a hacker using a computer to guess what your password is. Of course this could happen by random chance happen on the first try but the chance is small if the password is made up of <em>random</em> characters, letters and numbers. However, the hacker can easily try <span class="math notranslate nohighlight">\(10^8\)</span> times with a computer so probabilities become a consideration</p>
 <p>Suppose that the requirements are very low, such that the password must have four letters, two of which are capitals and four numbers. As there are <span class="math notranslate nohighlight">\(26\)</span> letters in our alphabet and ten numbers (<span class="math notranslate nohighlight">\(0\to 9\)</span>) the total number of passwords is</p>
-<p><span class="math notranslate nohighlight">\(N= 26^2\cdot26^2\cdot10^4=4569760000\)</span></p>
+<p><span class="math notranslate nohighlight">\(N= 26^2\cdot26^2\cdot10^4=4,569,760,000\)</span></p>
 <p>and so the chance of guessing correctly is <span class="math notranslate nohighlight">\(1/N\)</span> which is quite small. Now the chance of not guessing correctly is <span class="math notranslate nohighlight">\(1-1/N\)</span> and to do so <span class="math notranslate nohighlight">\(10^8\)</span> times is <span class="math notranslate nohighlight">\((1-1/N)^{10^8}\)</span>. Therefore the chance of guessing correctly is the complement of this which is</p>
 <div class="math notranslate nohighlight">
 \[P_{correct}=1-(1-1/N)^{10^8}\]</div>
 <p>and is <span class="math notranslate nohighlight">\(0.021\)</span> or <span class="math notranslate nohighlight">\(2.1\)</span>% which you might think is a good enough risk for you but is rather high if many millions of passwords are being challenged. If the hacker tried <span class="math notranslate nohighlight">\(10^{10}\)</span> times then the chance of guessing correctly is <span class="math notranslate nohighlight">\(87\)</span>%, very high indeed.</p>
-<p>Adding one or two non-alphabetical characters such as space, dash, question mark etc. really helps as would more random numbers and letters. Thus if the password contains <span class="math notranslate nohighlight">\(15\)</span> characters for example <span class="math notranslate nohighlight">\(8\)</span> letters, <span class="math notranslate nohighlight">\(4\)</span> numbers and <span class="math notranslate nohighlight">\(3\)</span> non-alphbetical characters (there are at least <span class="math notranslate nohighlight">\(30\)</span>) the total number of possibilities is <span class="math notranslate nohighlight">\(N =26^8\cdot 10^4 \cdot 30^3 \approx 5\cdot 10^{19}\)</span> and the chance of guessing after the huge, and possibly impractical, number of <span class="math notranslate nohighlight">\(10^{18}\)</span> guesses is still effectively zero.</p>
+<p>Adding one or two non-alphabetical characters such as space, dash, question mark etc. really helps as would more random numbers and letters. Thus if the password contains <span class="math notranslate nohighlight">\(15\)</span> characters for example <span class="math notranslate nohighlight">\(8\)</span> letters, <span class="math notranslate nohighlight">\(4\)</span> numbers and <span class="math notranslate nohighlight">\(3\)</span> non-alphabetical characters (there are at least <span class="math notranslate nohighlight">\(30\)</span>) the total number of possibilities is <span class="math notranslate nohighlight">\(N =26^8\cdot 10^4 \cdot 30^3 \approx 5\cdot 10^{19}\)</span> and the chance of guessing after the huge, and possibly impractical, number of <span class="math notranslate nohighlight">\(10^{18}\)</span> guesses is still effectively zero.</p>
 </section>
 </section>
 <section id="the-binomial-distribution-see-also-chapter-12-3">

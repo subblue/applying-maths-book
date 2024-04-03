@@ -75,21 +75,21 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # In a chain reaction, in contrast to a 'normal' reaction, one of the products is the same species as a reactant, or can react in an equivalent way, and so the reaction propagates. Polymer formation and may gas phase reactions such as $\mathrm{O_2 + H_2}$ are chain reactions. In gas phase reactions radical species, such as $\mathrm{H\cdot,\, OH\cdot}$,  are usually the chain carriers.
 # 
-# The general scheme is shown in fig 17c. Species I is the initiator step, for example a thermal reaction that generates active molecules, A and C a product. As can be seen the species A is reformed and cycles around the reaction.  
+# The general scheme is shown in fig 16a. Species I is the initiator step, for example a thermal reaction that generates active molecules, $A$ and $C$ a product. As can be seen the species $A$ is reformed and cycles around the reaction.  
 # 
 # ![Drawing](integration-fig17c.png )
 # 
 # figure 16a: Semenov's scheme for a simple chain reaction.
 # ____
 # 
-# The probability of propagation is defined as that fraction of A which is used again $\displaystyle \alpha =\frac{v_1}{v_1+v_2}$ where $v_1,\,v_2$ are effective first order rate constants with $v_2$ forming any species that undergoes no further reaction.  The rate of reaction is 
+# The probability of propagation is defined as that fraction of $A$ which is used again $\displaystyle \alpha =\frac{v_1}{v_1+v_2}$ where $v_1,\,v_2$ are effective first order rate constants with $v_2$ forming any species that undergoes no further reaction.  The rate of reaction is 
 # 
 # $$\displaystyle W =\frac{d[C]}{dt} = v_1[A]$$
 # 
 # and A reacts as
 # 
 # $$\displaystyle \qquad\qquad\qquad \begin{align}
-# \frac{d[A]}{dt}&= I- (v_1+v_2)[A]+v_1[A] \\&= I-\frac{(1-\alpha)}{\alpha}v_1[A] \qquad\qquad\qquad\text{(27a)}\\
+# \frac{d[A]}{dt}&= I- (v_1+v_2)[A]+v_1[A] \\&= I-\frac{(1-\alpha)}{\alpha}v_1[A] \quad\qquad\qquad\qquad\qquad\text{(27a)}\\
 # &= I-\frac{(1-\alpha)}{\alpha}W\end{align} $$
 # 
 # In the stationary phase of the reaction (steady state), then $\displaystyle d[A]/dt = 0$ then defining  the chain length as $v=W/I$ then $\displaystyle v=\frac{\alpha }{1-\alpha}$.
@@ -176,7 +176,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # ### **(ii) Infection period**
 # 
-# This example is that of calculating the mean time that a person is infected with a disease. Suppose that you are infected at time $t$, and that the chance that you are no longer infected in the next small time interval $\delta t$, is $a\delta t$, where $a$ is a constant depending on the type of disease. This is the rate constant with which the disease will die out. If $p(t)$ is the chance that you were infected at time $t$, during the time $t + \delta t$ this changes to $p(t + \delta t) = p(t)(1 - a\delta t) + O(\delta t^2)$, which is the chance of being infected at time $t$ multiplied by the chance of remaining infected during the following time $\delta t$. The term $O(\delta t^2)$ means that terms in $\delta t^2$ and higher are ignored because they are so small (see Chapter 5 for 'big O' notation). Subtracting $p(t)$ from both sides and dividing by $\delta t$ gives
+# The mean time that a person is infected with a disease is calculated. Suppose that you are infected at time $t$, and that the chance that you are no longer infected in the next small time interval $\delta t$, is $a\delta t$, where $a$ is a constant depending on the type of disease. This is the rate constant with which the disease will die out. If $p(t)$ is the chance that you were infected at time $t$, during the time $t + \delta t$ this changes to $p(t + \delta t) = p(t)(1 - a\delta t) + O(\delta t^2)$, which is the chance of being infected at time $t$ multiplied by the chance of remaining infected during the following time $\delta t$. The term $O(\delta t^2)$ means that terms in $\delta t^2$ and higher are ignored because they are so small (see Chapter 5 for 'big O' notation). Subtracting $p(t)$ from both sides and dividing by $\delta t$ gives
 # 
 # $$\displaystyle \frac{p(t+\delta t)-p(t)}{\delta t}=-ap(t)$$
 # 
@@ -188,7 +188,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # $$\displaystyle \langle t\rangle   =\frac{\int_0^\infty te^{-at}dt}{\int_0^\infty e^{-at}dt} =\frac{1}{a}$$
 # 
-# A related type of argument is followed to find the mean free path of gas molecules or atoms, but with the distance between collisions taking the place of time.
+# A related argument is followed to find the mean free path of gas molecules or atoms, but with the distance between collisions taking the place of time.
 # 
 # ### **(iii) Centroids** 
 # 

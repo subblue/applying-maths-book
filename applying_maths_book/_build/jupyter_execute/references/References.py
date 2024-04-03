@@ -112,6 +112,8 @@
 # 
 # Dence, J. (1975), Mathematical Techniques in Chemistry, Wiley.
 # 
+# Dunham W. (2018), The Calculus Gallery' Princeton University Press.
+# 
 # Evans, E. & Ritchie, K. (1997), 'Dynamic Strength of Molecular Adhesion Bonds’, Biophysics J. 72: 1541. 
 # 
 # Eyring, H., Lin, S. H., & Lin, S. M. (1980), Basic Chemical Kinetics, Wiley.

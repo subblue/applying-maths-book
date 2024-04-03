@@ -51,6 +51,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -139,7 +141,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-1/chapter1-B.html">
-     5 Trig, hyperbolic and inverse functions, waves, polar coordinates &amp; factorials
+     5 Trig, hyperbolic and inverse functions, waves, polar coordinates,  factorials
     </a>
    </li>
    <li class="toctree-l2">
@@ -471,7 +473,7 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-5/chapter-5-A.html">
-     1 Series, averages, partition functions, DNA melting, atom entropy
+     1 Series, averages, waves, partition functions, DNA melting, atom entropy
     </a>
    </li>
    <li class="toctree-l2">
@@ -1588,9 +1590,9 @@ title="Print to PDF"
     </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#the-general-integral-int-cos-n-theta-sin-m-theta-d-theta">
+    <a class="reference internal nav-link" href="#iv-the-general-integral-int-cos-n-theta-sin-m-theta-d-theta">
      <strong>
-      The general integral
+      (iv) The general integral
       <span class="math notranslate nohighlight">
        \(\int \cos^n(\theta)\sin^m(\theta)d\theta \)
       </span>
@@ -1754,8 +1756,52 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#definite-integrals-using-series">
+   5.4 Definite integrals using series
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     <strong>
+      Examples
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#i-displaystyle-int-0-1-frac-ln-1-x-x-dx">
+     <strong>
+      (i)
+      <span class="math notranslate nohighlight">
+       \(\displaystyle \int_0^1\frac{\ln(1+x)}{x}dx\)
+      </span>
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ii-displaystyle-int-0-1x-ln-1-x-dx">
+     <strong>
+      (ii)
+      <span class="math notranslate nohighlight">
+       \(\displaystyle \int_0^1x\ln(1+x)dx\)
+      </span>
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#iii-displaystyle-int-0-1-frac-sin-ln-x-ln-x-dx">
+     <strong>
+      (iii)
+      <span class="math notranslate nohighlight">
+       \(\displaystyle \int_0^1\frac{\sin(\ln(x))}{\ln(x)}dx\)
+      </span>
+     </strong>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#evaluating-integrals-via-differentiation-and-feynman-s-trick">
-   5.4 Evaluating integrals
+   5.5 Evaluating integrals
    <em>
     via
    </em>
@@ -1763,7 +1809,7 @@ title="Print to PDF"
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id1">
+    <a class="reference internal nav-link" href="#id2">
      Examples
     </a>
    </li>
@@ -1803,23 +1849,25 @@ title="Print to PDF"
       (iv) Harmonic Oscillator
      </strong>
     </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#expectation-values-and-uncertainty-principle">
-     Expectation values and uncertainty principle
-    </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#i-average-position-and-its-uncertainty">
+      <a class="reference internal nav-link" href="#i-expectation-values-and-uncertainty-principle">
        <strong>
-        (i) Average position and its uncertainty
+        (i) Expectation values and uncertainty principle
        </strong>
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#ii-average-momentum">
+      <a class="reference internal nav-link" href="#ii-average-position-and-its-uncertainty">
        <strong>
-        (ii) Average momentum
+        (ii) Average position and its uncertainty
+       </strong>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#iii-average-momentum">
+       <strong>
+        (iii) Average momentum
        </strong>
       </a>
      </li>
@@ -1924,9 +1972,9 @@ title="Print to PDF"
     </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#the-general-integral-int-cos-n-theta-sin-m-theta-d-theta">
+    <a class="reference internal nav-link" href="#iv-the-general-integral-int-cos-n-theta-sin-m-theta-d-theta">
      <strong>
-      The general integral
+      (iv) The general integral
       <span class="math notranslate nohighlight">
        \(\int \cos^n(\theta)\sin^m(\theta)d\theta \)
       </span>
@@ -2090,8 +2138,52 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#definite-integrals-using-series">
+   5.4 Definite integrals using series
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     <strong>
+      Examples
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#i-displaystyle-int-0-1-frac-ln-1-x-x-dx">
+     <strong>
+      (i)
+      <span class="math notranslate nohighlight">
+       \(\displaystyle \int_0^1\frac{\ln(1+x)}{x}dx\)
+      </span>
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ii-displaystyle-int-0-1x-ln-1-x-dx">
+     <strong>
+      (ii)
+      <span class="math notranslate nohighlight">
+       \(\displaystyle \int_0^1x\ln(1+x)dx\)
+      </span>
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#iii-displaystyle-int-0-1-frac-sin-ln-x-ln-x-dx">
+     <strong>
+      (iii)
+      <span class="math notranslate nohighlight">
+       \(\displaystyle \int_0^1\frac{\sin(\ln(x))}{\ln(x)}dx\)
+      </span>
+     </strong>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#evaluating-integrals-via-differentiation-and-feynman-s-trick">
-   5.4 Evaluating integrals
+   5.5 Evaluating integrals
    <em>
     via
    </em>
@@ -2099,7 +2191,7 @@ title="Print to PDF"
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id1">
+    <a class="reference internal nav-link" href="#id2">
      Examples
     </a>
    </li>
@@ -2139,23 +2231,25 @@ title="Print to PDF"
       (iv) Harmonic Oscillator
      </strong>
     </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#expectation-values-and-uncertainty-principle">
-     Expectation values and uncertainty principle
-    </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#i-average-position-and-its-uncertainty">
+      <a class="reference internal nav-link" href="#i-expectation-values-and-uncertainty-principle">
        <strong>
-        (i) Average position and its uncertainty
+        (i) Expectation values and uncertainty principle
        </strong>
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#ii-average-momentum">
+      <a class="reference internal nav-link" href="#ii-average-position-and-its-uncertainty">
        <strong>
-        (ii) Average momentum
+        (ii) Average position and its uncertainty
+       </strong>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#iii-average-momentum">
+       <strong>
+        (iii) Average momentum
        </strong>
       </a>
      </li>
@@ -2284,8 +2378,8 @@ title="Print to PDF"
 \[\displaystyle \int \frac{1-x^2}{x^2}dx=\int \left(\frac{1}{x^2}-1\right)dx=-\frac{1}{x}-x=-\frac{1}{\sin(\theta)}-\sin(\theta)+c\]</div>
 </section>
 </section>
-<section id="the-general-integral-int-cos-n-theta-sin-m-theta-d-theta">
-<h3><strong>The general integral <span class="math notranslate nohighlight">\(\int \cos^n(\theta)\sin^m(\theta)d\theta \)</span></strong><a class="headerlink" href="#the-general-integral-int-cos-n-theta-sin-m-theta-d-theta" title="Permalink to this headline">#</a></h3>
+<section id="iv-the-general-integral-int-cos-n-theta-sin-m-theta-d-theta">
+<h3><strong>(iv) The general integral <span class="math notranslate nohighlight">\(\int \cos^n(\theta)\sin^m(\theta)d\theta \)</span></strong><a class="headerlink" href="#iv-the-general-integral-int-cos-n-theta-sin-m-theta-d-theta" title="Permalink to this headline">#</a></h3>
 <p>The general integral <span class="math notranslate nohighlight">\(\int \cos^n(\theta)\sin^m(\theta)d\theta \)</span> is hard to integrate whe the conditions given above do not apply, but can be done by iteration which means finding a reduction formula. The method is to start with another related function, differentiate it then integrate the result. The integral we require will then appear in terms of a new function and a new integral that can usually be solved easily. If this is not the case then the process can be repeated until a solvable integral appears.</p>
 <p>Start by differentiating</p>
 <div class="math notranslate nohighlight">
@@ -2682,11 +2776,63 @@ f(v,t)\frac{dv}{dt}-f(u,t)\frac{du}{dt}+\frac{\partial }{\partial t}\int_{u(t)}^
 <p><img alt="Drawing" src="../_images/differen-fig5a.png" /></p>
 <p>Figure 7b. Probability of a nearest neighbour molecules <span class="math notranslate nohighlight">\(w(r)\)</span> being present at distance <span class="math notranslate nohighlight">\(r\)</span> (nm) at various concentrations in mol/dm<span class="math notranslate nohighlight">\(^3\)</span> assuming that molecules are positioned at random in solution.</p>
 </section>
-<section id="evaluating-integrals-via-differentiation-and-feynman-s-trick">
-<h2>5.4 Evaluating integrals <em>via</em> differentiation and  ‘Feynman’s trick’<a class="headerlink" href="#evaluating-integrals-via-differentiation-and-feynman-s-trick" title="Permalink to this headline">#</a></h2>
-<p>Once the derivative of an integral is found we naturally want to evaluate the integral itself. This can be achieved only by knowing the value of the integral <span class="math notranslate nohighlight">\(F(x)\)</span> at, for example, <span class="math notranslate nohighlight">\(F(1)\)</span> or <span class="math notranslate nohighlight">\(F(0)\)</span> etc. because this allows the integration constant to be calculated. The ‘Feynman’s trick’, as integration using derivatives has become known, uses an artificially added parameter with which to differentiate with the purpose of removing some terms in the integral and thereby simplifying it. Finally, this parameter is set to a value as appropriate to re-form the initial integral. Some examples should make this method clearer, but it has to be remembered that a lot of cunning and imagination is often required to make this method work.</p>
+<section id="definite-integrals-using-series">
+<h2>5.4 Definite integrals using series<a class="headerlink" href="#definite-integrals-using-series" title="Permalink to this headline">#</a></h2>
+<p>One method of integrating which seems not to be used much nowadays is to expand the function as a series and integrate term by term.  If you are lucky the resulting series produced can be neatly summed as in integrating the Debye function, section 5(vi). Euler (1707-1783), who was one of history’s foremost integrators, often used this approach, See W. Dunham. ‘The Calculus Gallery’, Princeton  University press, 2018, chapter 4. Three examples are given below.</p>
 <section id="id1">
-<h3>Examples<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
+<h3><strong>Examples</strong><a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="i-displaystyle-int-0-1-frac-ln-1-x-x-dx">
+<h3><strong>(i)<span class="math notranslate nohighlight">\(\displaystyle \int_0^1\frac{\ln(1+x)}{x}dx\)</span></strong><a class="headerlink" href="#i-displaystyle-int-0-1-frac-ln-1-x-x-dx" title="Permalink to this headline">#</a></h3>
+<p>The first step is to use the series expansion for <span class="math notranslate nohighlight">\(\ln(1+x)=x-x^2/2+x^3/3\cdots\)</span>, divide by <span class="math notranslate nohighlight">\(x\)</span> then integrate each term, which gives</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin{align}\int_0^1\frac{\ln(1+x)}{x}dx&amp;= \int_0^1 1-\frac{x}{2}+\frac{x^2}{3}-\frac{x^3}{4}\cdots dx\\&amp;=x-\frac{x^2}{2^2}+\frac{x^3}{3^2}-\frac{x^4}{4^2}\cdots \bigg|_0^1\\&amp;=1-\frac{1}{2^2}+\frac{1}{3^2}-\frac{1}{4^2}\cdots \frac{1}{n^2}\cdots\end{align}\end{split}\]</div>
+<p>It is necessary to know the series summation to infinity, the simplest way is to look this up or use Sympy to calculate it, otherwise the sum can be calculated numerically to whatever precision is needed. The series is <span class="math notranslate nohighlight">\(\displaystyle\sum_{n=1}^\infty\frac{(-1)^{n+1}}{n^2}=\frac{\pi^2}{12}\)</span>, thus</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \int_0^1\frac{\ln(1+x)}{x}dx=\frac{\pi^2}{12}\]</div>
+</section>
+<section id="ii-displaystyle-int-0-1x-ln-1-x-dx">
+<h3><strong>(ii) <span class="math notranslate nohighlight">\(\displaystyle \int_0^1x\ln(1+x)dx\)</span></strong><a class="headerlink" href="#ii-displaystyle-int-0-1x-ln-1-x-dx" title="Permalink to this headline">#</a></h3>
+<p>Expanding the series and integrating term by term gives</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin{align}\int_0^1x\ln(1+x)dx&amp;=\int_0^1 x^2-\frac{x^3}{2}+\frac{x^4}{3}\cdots dx\\&amp;=\frac{x^3}{3\cdot 1}-\frac{x^4}{4\cdot 2}+\frac{x^5}{5\cdot 3}\cdots\bigg |_0^1\\&amp;=
+\frac{1}{3}-\frac{1}{8}+\frac{1}{15}-\frac{1}{24}\cdots \\&amp;= \sum_{n=1}^\infty \frac{(-1)^{n+1}}{n(n+2)}\\&amp;=\frac{1}{4}\end{align}\end{split}\]</div>
+<p>where working out the form of the summation is somewhat of an art. As in the other examples the summation is known or you can use Sympy to work it out for you.</p>
+</section>
+<section id="iii-displaystyle-int-0-1-frac-sin-ln-x-ln-x-dx">
+<h3><strong>(iii) <span class="math notranslate nohighlight">\(\displaystyle \int_0^1\frac{\sin(\ln(x))}{\ln(x)}dx\)</span></strong><a class="headerlink" href="#iii-displaystyle-int-0-1-frac-sin-ln-x-ln-x-dx" title="Permalink to this headline">#</a></h3>
+<p>The integral we try is one that Euler solved in the <span class="math notranslate nohighlight">\(1760\)</span>’s and is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \int_0^1\frac{\sin(\ln(x))}{\ln(x)}dx\]</div>
+<p>and this appears to be extremely difficult, but is clarified is the sine is expanded as a series. This series was known to Euler and is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \sin(x) = x-\frac{x^3}{3!}+\frac{x^5}{5!}-\cdots\]</div>
+<p>and so</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin{align}\frac{\sin(\ln(x))}{\ln(x)}&amp;= \frac{\ln(x)-\ln^3(x)/3!+\ln^5(x)/5!\cdots}{\ln(x)}\\&amp;=1-\frac{\ln^2(x)}{3!}+\frac{\ln^4(x))}{5!}-\cdots\end{align}\end{split}\]</div>
+<p>where, for clarity, we use the non-standard notation <span class="math notranslate nohighlight">\(\ln^3(x)\equiv (\ln(x))^3\)</span> etc. This series can now be integrated term by term</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \int_0^1\frac{\sin(\ln(x))}{\ln(x)}dx=\int_0^1 dx-\frac{1}{3!}\int_0^1\ln^2(x)dx+\frac{1}{5!}\int_0^1\ln^4(x)dx-\cdots\]</div>
+<p>which means that integrals of the form <span class="math notranslate nohighlight">\(\displaystyle \int_0^1\ln^n(x)dx\)</span> are needed where <span class="math notranslate nohighlight">\(n =2,4,6\cdots\)</span>, i.e. even numbers. This integral has already been met in example (vi) section 5.2 as <span class="math notranslate nohighlight">\(\displaystyle \int_0^1x^t\ln^n(x)dx\)</span> and and the result is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \int_0^1 x^t\ln^n(x)dx =(-1)^n\frac{n!}{(t+1)^{n+1}}\]</div>
+<p>As we can let <span class="math notranslate nohighlight">\(t=0\)</span> then</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \int_0^1 \ln^n(x)dx =(-1)^n n!\]</div>
+<p>then substituting gives</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin{align}\int_0^1\frac{\sin(\ln(x))}{\ln(x)}dx&amp;= 1-\frac{2!}{3!}+\frac{4!}{5!}-\frac{6!}{7!}\\&amp;=1-\frac{1}{3}+\frac{1}{5}-\frac{1}{7}\cdots\end{align}\end{split}\]</div>
+<p>and this is called the Leibniz series and its sum is <span class="math notranslate nohighlight">\(\pi/4\)</span> therefore</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \int_0^1\frac{\sin(\ln(x))}{\ln(x)}dx=\frac{\pi}{4}\]</div>
+<p>Very elegant and quite remarkable!</p>
+</section>
+</section>
+<section id="evaluating-integrals-via-differentiation-and-feynman-s-trick">
+<h2>5.5 Evaluating integrals <em>via</em> differentiation and  ‘Feynman’s trick’<a class="headerlink" href="#evaluating-integrals-via-differentiation-and-feynman-s-trick" title="Permalink to this headline">#</a></h2>
+<p>Once the derivative of an integral is found we naturally want to evaluate the integral itself. This can be achieved only by knowing the value of the integral <span class="math notranslate nohighlight">\(F(x)\)</span> at, for example, <span class="math notranslate nohighlight">\(F(1)\)</span> or <span class="math notranslate nohighlight">\(F(0)\)</span> etc. because this allows the integration constant to be calculated. The ‘Feynman’s trick’, as integration using derivatives has become known, uses an artificially added parameter with which to differentiate with the purpose of removing some terms in the integral and thereby simplifying it. Finally, this parameter is set to a value as appropriate to re-form the initial integral. Some examples should make this method clearer, but it has to be remembered that a lot of cunning and imagination is often required to make this method work.</p>
+<section id="id2">
+<h3>Examples<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
 </section>
 <section id="i-f-t-int-0-ln-t-e-xdx">
 <h3><strong>(i) <span class="math notranslate nohighlight">\( F(t)= \int_0^{\ln(t)}e^xdx\)</span></strong><a class="headerlink" href="#i-f-t-int-0-ln-t-e-xdx" title="Permalink to this headline">#</a></h3>
@@ -2740,7 +2886,7 @@ f(v,t)\frac{dv}{dt}-f(u,t)\frac{du}{dt}+\frac{\partial }{\partial t}\int_{u(t)}^
 <p>To find <span class="math notranslate nohighlight">\(c\)</span>, values of <span class="math notranslate nohighlight">\(F(t)\)</span> and <span class="math notranslate nohighlight">\(\tan^{-1}(t)\)</span> must be known at some value of <span class="math notranslate nohighlight">\(t\)</span>. We try <span class="math notranslate nohighlight">\(t\to \infty\)</span>, then <span class="math notranslate nohighlight">\(F(\infty)\to 0\)</span> and <span class="math notranslate nohighlight">\(\tan^{-1}(\infty)\to \pi/2\)</span> thus <span class="math notranslate nohighlight">\(c=\pi/2\)</span>. The integration is therefore</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle F(t)=\frac{\pi}{2}-\tan^{-1}(t)\]</div>
-<p>In eqn. (16F) if <span class="math notranslate nohighlight">\(t=0\)</span> then <span class="math notranslate nohighlight">\(e^{-tx}=1\)</span> and we obtain the original integration (E), thus setting <span class="math notranslate nohighlight">\(t=0\)</span> in the last equation produces <span class="math notranslate nohighlight">\(F(t=0)=\pi/2\)</span> and so</p>
+<p>In eqn. (16F) if <span class="math notranslate nohighlight">\(t=0\)</span> then <span class="math notranslate nohighlight">\(e^{-tx}=1\)</span> and we obtain the original integration (16E), thus setting <span class="math notranslate nohighlight">\(t=0\)</span> in the last equation produces <span class="math notranslate nohighlight">\(F(t=0)=\pi/2\)</span> and so</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \int_{-\infty}^\infty \frac{\sin(x)}{x}dx=\pi\]</div>
 <p>If the integral were <span class="math notranslate nohighlight">\(\displaystyle \int_{-\infty}^\infty \frac{\sin(ax)}{ax}dx\)</span> by substituting <span class="math notranslate nohighlight">\(z\to ax\; dz=adx\)</span> the result is</p>
@@ -2783,16 +2929,16 @@ f(v,t)\frac{dv}{dt}-f(u,t)\frac{du}{dt}+\frac{\partial }{\partial t}\int_{u(t)}^
 <div class="math notranslate nohighlight">
 \[\displaystyle \psi_1=\left(\frac{4a^3}{\pi}\right)^{1/4} xe^{-ax^2/2}\]</div>
 <p>and the normalisations for the other wavefunctions are done similarly, although they are more complicated, without having to do any integrations.</p>
-</section>
-<section id="expectation-values-and-uncertainty-principle">
-<h3>Expectation values and uncertainty principle<a class="headerlink" href="#expectation-values-and-uncertainty-principle" title="Permalink to this headline">#</a></h3>
+<section id="i-expectation-values-and-uncertainty-principle">
+<h4><strong>(i) Expectation values and uncertainty principle</strong><a class="headerlink" href="#i-expectation-values-and-uncertainty-principle" title="Permalink to this headline">#</a></h4>
 <p>The expectation values can now be very easily calculated, for example to calculate the average momentum <span class="math notranslate nohighlight">\(\langle p\rangle&gt;\)</span> or  distance or average square distance <span class="math notranslate nohighlight">\(\langle x\rangle, \langle x^2\rangle\)</span>.</p>
 <p>The general equation is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \langle Q\rangle =\frac{\int_{-\infty}^\infty\psi\,\hat Q\, \psi dx}{\int_{-\infty}^\infty\psi\ \psi dx}\]</div>
 <p>and <span class="math notranslate nohighlight">\(\hat Q\)</span> is the operator. The operator is just multiplication by <span class="math notranslate nohighlight">\(x\)</span> for calculating average distance but for momentum is <span class="math notranslate nohighlight">\(\displaystyle -i\hbar\frac{d}{dx}\)</span>.</p>
-<section id="i-average-position-and-its-uncertainty">
-<h4><strong>(i) Average position and its uncertainty</strong><a class="headerlink" href="#i-average-position-and-its-uncertainty" title="Permalink to this headline">#</a></h4>
+</section>
+<section id="ii-average-position-and-its-uncertainty">
+<h4><strong>(ii) Average position and its uncertainty</strong><a class="headerlink" href="#ii-average-position-and-its-uncertainty" title="Permalink to this headline">#</a></h4>
 <p>The average displacement for is by definition <span class="math notranslate nohighlight">\(\langle x\rangle\)</span> and for the harmonic oscillator <span class="math notranslate nohighlight">\(\langle x\rangle =0\)</span> for any quantum number as this will always be an odd function. Physically this makes sense as the potential is symmetrical about <span class="math notranslate nohighlight">\(r_e\)</span> for any <span class="math notranslate nohighlight">\(n\)</span>.</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \langle x_n\rangle = \frac{\int\psi_n\,x\,\psi_ndx}{\int \psi_n\psi_ndx}= 0\]</div>
@@ -2804,8 +2950,8 @@ f(v,t)\frac{dv}{dt}-f(u,t)\frac{du}{dt}+\frac{\partial }{\partial t}\int_{u(t)}^
 \[\displaystyle\sigma_Q = \sqrt{\langle Q^2\rangle-\langle Q\rangle^2}\]</div>
 <p>and is a measure of the uncertainty in a measurement. Knowing both values for position when <span class="math notranslate nohighlight">\(n=1\)</span> gives <span class="math notranslate nohighlight">\(\displaystyle \sigma_x=\sqrt{\frac{3}{2a}}\)</span></p>
 </section>
-<section id="ii-average-momentum">
-<h4><strong>(ii) Average momentum</strong><a class="headerlink" href="#ii-average-momentum" title="Permalink to this headline">#</a></h4>
+<section id="iii-average-momentum">
+<h4><strong>(iii) Average momentum</strong><a class="headerlink" href="#iii-average-momentum" title="Permalink to this headline">#</a></h4>
 <p>To calculate the expectation values for momentum the operator is <span class="math notranslate nohighlight">\(\displaystyle -i\hbar\frac{d}{dx}\)</span> thus</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \langle p\rangle=-i\hbar\int_{-\infty}^\infty \psi_n \frac{d}{dx} \psi_n dx\]</div>

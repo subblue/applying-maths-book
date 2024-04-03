@@ -19,9 +19,9 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # When we learn to draw molecules and molecular orbitals their inherent symmetry becomes clear; benzene or perhaps tetrahedral methane spring to mind and possibly the geometry of sp$^2$ and sp$^3$ hybridizations. To characterize exactly what such symmetry means is the role of molecular group theory. This can also be used to determine the selection rules of spectroscopic transitions, to characterize the 'shapes' of normal mode vibrations and simplify molecular orbital calculations. In chemistry, the word 'symmetry', while retaining its colloquial meaning also has a technical meaning and this might appear to be rather abstract and divorced from other topics such as quantum mechanics and spectroscopy. Group theory's jargon does not help in learning the subject mainly because it appears to be so abstract. In fact, it is quite the opposite: it is intensely practical, and expresses a complicated set of rules and ideas in a few symbols; $D_{6h}$, for example, encapsulates all the many symmetry properties of benzene. The jargon we shall have to understand will lead us to be able to distinguish between 
 # 
-# $\qquad$*symmetry elements, symmetry operations, irreducible* and *reducible representations, characters, classes*,
+# $\qquad$*symmetry elements, symmetry operations, irreducible* and *reducible representations,*,
 # 
-# $\qquad$*basis sets, similarity transforms*, and *Mulliken labels*.
+# $\qquad$*characters, classes, basis sets, similarity transforms*, and *Mulliken labels*.
 # 
 # This section can only give a brief introduction to the subject to act as a basis for further
 # study. There are many books on this topic, but Vincent (2001) follows a tutorial approach; Molloy (2004) has many molecular examples; Atkins & Friedman (1997) has a chapter giving a thorough mathematical approach; and Cotton (1990) and Bishop (1993) discuss the subject fully. 
@@ -879,7 +879,7 @@ A
 # 
 # The z-direction operator is also no good, producing an $A_2$ direct product. There are, however, allowed dipole transitions for example from a state with symmetry species $\Gamma_{S_1}=\Gamma_{S_2} =A_1$, with an $z$ direction dipole and also when $\Gamma_{S_1} =A_1,\, \Gamma_{S_1}=B_1$ with a $x$ direction dipole and $\Gamma_{S_1} =A_1,\, \Gamma_{S_1}=B_2$ with a $y$ direction dipole.
 
-# ### **Diatomic molecules**
+# ### **(i) Diatomic molecules**
 # 
 # The direct calculation of eqn. 9.23 has to give the same answers as using symmetry species and this is now illustrated, first with diatomic and then with polyatomic molecules.  Equation 9.23 is evaluated with harmonic oscillator wavefunctions. These have the form
 # 
@@ -903,7 +903,7 @@ A
 # 
 # In the harmonic oscillator the symmetry of the wavefunctions ensures that only the $v=0\to 1$ transition can occur, but in reality the potential is anharmonic and transitions to other levels do occur, they are weak and called *overtones*, $v=0 \to v\ne 1$, as a ball-park number weak means $\lt 0.1$ of allowed transition . Weak transitions can also occur when more than one upper vibrational level is excited, these are called *combination bands*. 
 # 
-# ### **Polyatomic molecules**
+# ### **(ii) Polyatomic molecules**
 # 
 # The vibrations of the polyatomic vibrations are not those of individual pairs of atoms moving randomly with respect to others, but a collective in-phase motion of all atoms. The way these move is governed by the molecules symmetry and are called *normal modes* of which there are $3N-6$ for $N$ atoms and $3N-5$ if the molecule is linear. These normal modes are described by the complicated motion of the displacement of each atom, the *normal coordinates* and 'modes' and 'coordinates' are sometimes used interchangeably.
 # 
@@ -940,7 +940,7 @@ A
 # When $v = 1$ is excited the wavefunction has the form $\Psi_{v=1}=q\,\Psi_{v=0}$ which means that it transforms as the normal coordinate $q$ which transforms in the same way as the symmetry species of one of translations $x,y$ or $z$ in the point group table.
 
 # 
-# ### **Connecting the transition moment integral to symmetry species**
+# ### **(iii) Connecting the transition moment integral to symmetry species**
 # 
 # The transition moment integral has been evaluated using the odd/even nature of wavefunctions and, without explanation, as the product of their symmetry species. In polyatomic molecules a molecular orbital or a normal mode has a complicated mathematical description and it is much easier to use their symmetry properties to decide if the transition is allowed or not. The down-side of this is that the magnitude of the transition is not known, but in practice this is not so important, the presence or otherwise of a transition is usually enough to determine the information we seek, i.e. what a molecule's point group is as this gives clues about its structure.
 # 
@@ -994,8 +994,8 @@ A
 # so this transition would not be allowed.
 # 
 # Having learned how to find from a fundamental perspective whether or not a transition is allowed or not, we tend not to use the method of eqn. 9.24, basic though it is, but instead use direct product tables and look up the products of the symmetry species. Disappointing but practical.
-
-# ### **El-Sayed Rules in spectroscopy**
+# 
+# ### **(iv) El-Sayed Rules in spectroscopy**
 # 
 # The intersystem crossing transition between a singlet excited state to a triplet state is formally forbidden but may occur because of spin-orbit coupling allowing a change in angular momentum to occur. Transitions are  enhanced by heavy atoms, often called the 'heavy-atom effect', however, paramagnetic species, such as O$_2$ also enhance spin-orbit coupling. The spin-orbit operator has the form $H_{SO}\sim \pmb\ell\cdot \pmb s$ where $\pmb\ell$ and $ \pmb s$ are the orbital and spin angular momentum vectors respectively. In terms of symmetry the spin-orbit operator transforms as $R_k,k={x,y,z}$ and appears in column 3 in the point group table. 
 # 
@@ -1010,8 +1010,8 @@ A
 # The comparison is best observed in N-heterocyclics such as pyrazine and quinoline and carbonyl compounds such as benzaldehyde, which have both $n\pi$ and $\pi\pi$ excited states. 
 # 
 # The spin orbit operator belongs to the same irreducible representation as $R_k,k={x,y,z}$ which means for an allowed transition the product $\Gamma_S\otimes R_k\otimes\Gamma_T$ must contain the totally symmetric representation, $A_1,A_g$ etc. for any $x,y,z$.  When singlet and triplet have the same configuration then $\Gamma_S=\Gamma_T$ and thus for a transition $S\to T $ to be allowed the spin-orbit operator $R_k$ must belong to the totally symmetric representation. Examining the point group tables shows that molecules in $C_{nV}, D_{nh} D_{nd}$ and a few other point groups do not have a $R_k$ operator that is totally symmetric so $S\to T$ transitions cannot occur by spin-orbit coupling in molecule of these point groups, i.e. are formally forbidden and hence occur very slowly. It is, of course, possible that $^1\pi\pi^*$ and $^3\pi\pi^*$ belong to different symmetry species and then the $S\to T$ transition may be allowed if there is a suitable symmetry species for $R_k$, but in practice the rate constant is still small compared to $\pi\pi^* \rightleftharpoons n\pi^*$ transitions. The original papers are by M.A. El-Sayed J. Chem. Phys. 36, p 573 - 74, 1962 and J. Chem. Phys. 38, p 2834 - 38,1963.
-
-# ### **Vibronic transitions and Herzberg - Teller coupling**
+# 
+# ### **(v) Vibronic transitions and Herzberg - Teller coupling**
 # When a vibration is involved in an electronic transition the transition is called *vibronic*. The transition moment changes a little to reflect this and becomes
 # 
 # $$\displaystyle R_{ev} =  \int \psi^a_e\psi_v^a\,\vec{\mu}\,\psi^b_e\psi_v^b d\tau  \qquad\qquad\tag{9.25}$$

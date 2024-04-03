@@ -51,6 +51,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -139,7 +141,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-1/chapter1-B.html">
-     5 Trig, hyperbolic and inverse functions, waves, polar coordinates &amp; factorials
+     5 Trig, hyperbolic and inverse functions, waves, polar coordinates,  factorials
     </a>
    </li>
    <li class="toctree-l2">
@@ -471,7 +473,7 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-5/chapter-5-A.html">
-     1 Series, averages, partition functions, DNA melting, atom entropy
+     1 Series, averages, waves, partition functions, DNA melting, atom entropy
     </a>
    </li>
    <li class="toctree-l2">
@@ -1529,6 +1531,75 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#reacting-molecules">
    3.4 Reacting molecules.
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#reaction-a-to-b">
+     Reaction
+     <span class="math notranslate nohighlight">
+      \(A\to B\)
+     </span>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#reaction-a-to-b-to-c">
+     Reaction
+     <span class="math notranslate nohighlight">
+      \(A\to B\to C\)
+     </span>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-growth-polymerisation">
+   3.5 Step-Growth polymerisation
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#algorithm-1">
+     Algorithm 1
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#algorithm-2">
+     Algorithm 2
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#statistical-approach">
+     Statistical approach
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#simulation">
+     <strong>
+      Simulation
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#algorithm-2-simulation">
+     Algorithm 2 simulation
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#simulation-of-an-equilibrium-reaction-a-rightleftharpoons-2b">
+   3.6 Simulation of an equilibrium  reaction
+   <span class="math notranslate nohighlight">
+    \(A \rightleftharpoons 2B\)
+   </span>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#algorithm-outline">
+     <strong>
+      Algorithm outline
+     </strong>
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -1568,6 +1639,75 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#reacting-molecules">
    3.4 Reacting molecules.
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#reaction-a-to-b">
+     Reaction
+     <span class="math notranslate nohighlight">
+      \(A\to B\)
+     </span>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#reaction-a-to-b-to-c">
+     Reaction
+     <span class="math notranslate nohighlight">
+      \(A\to B\to C\)
+     </span>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-growth-polymerisation">
+   3.5 Step-Growth polymerisation
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#algorithm-1">
+     Algorithm 1
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#algorithm-2">
+     Algorithm 2
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#statistical-approach">
+     Statistical approach
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#simulation">
+     <strong>
+      Simulation
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#algorithm-2-simulation">
+     Algorithm 2 simulation
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#simulation-of-an-equilibrium-reaction-a-rightleftharpoons-2b">
+   3.6 Simulation of an equilibrium  reaction
+   <span class="math notranslate nohighlight">
+    \(A \rightleftharpoons 2B\)
+   </span>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#algorithm-outline">
+     <strong>
+      Algorithm outline
+     </strong>
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -1644,7 +1784,7 @@ In the simulation of a random walk, only discrete steps can be taken <span class
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Algorithm: 1D random walk </span>
-
+<span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">()</span>               <span class="c1"># initialise random number generator</span>
 <span class="n">n</span>    <span class="o">=</span> <span class="mi">501</span>                                  <span class="c1"># walk array size</span>
 <span class="n">steps</span><span class="o">=</span> <span class="mi">50</span>                                   <span class="c1"># number of time steps</span>
 <span class="n">reps</span> <span class="o">=</span> <span class="mi">5000</span>                                 <span class="c1"># repeats</span>
@@ -1656,7 +1796,7 @@ In the simulation of a random walk, only discrete steps can be taken <span class
 <span class="k">for</span> <span class="n">L</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">reps</span><span class="p">):</span>
     <span class="n">m</span> <span class="o">=</span> <span class="mi">0</span>   
     <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">steps</span><span class="p">):</span>
-        <span class="n">r</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">ranf</span><span class="p">()</span>   <span class="c1"># choose random number 0-1</span>
+        <span class="n">r</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">uniform</span><span class="p">()</span>   <span class="c1"># choose random number 0-1</span>
         <span class="k">if</span> <span class="n">r</span> <span class="o">&lt;</span> <span class="mf">0.50</span> <span class="p">:</span>
             <span class="n">m</span> <span class="o">=</span> <span class="n">m</span> <span class="o">+</span> <span class="mi">1</span>          <span class="c1"># move right one step</span>
         <span class="k">else</span><span class="p">:</span>
@@ -1687,6 +1827,8 @@ In the simulation of a random walk, only discrete steps can be taken <span class
 <hr class="docutils" />
 <section id="reacting-molecules">
 <h2>3.4 Reacting molecules.<a class="headerlink" href="#reacting-molecules" title="Permalink to this headline">#</a></h2>
+<section id="reaction-a-to-b">
+<h3>Reaction <span class="math notranslate nohighlight">\(A\to B\)</span><a class="headerlink" href="#reaction-a-to-b" title="Permalink to this headline">#</a></h3>
 <p>Many molecules react by a first-order process; <span class="math notranslate nohighlight">\(A\overset{k}\to B\)</span>, e.g. <span class="math notranslate nohighlight">\(\mathrm{CH_3CN} \to \mathrm{CH_3NC}\)</span> or a cis - trans isomerisation. A first-order decay was calculated by the Gillespie method in Section 2.2, but the method used there is very different to this one.</p>
 <p>Imagine instantly starting a reaction and then being able to observe each molecule individually and record the instant <span class="math notranslate nohighlight">\(t\)</span> that each reacts. Each molecule follows a first-order process, the probability of not having reacted up to time <span class="math notranslate nohighlight">\(t\)</span> is <span class="math notranslate nohighlight">\(p = e^{-kt}\)</span>, where <span class="math notranslate nohighlight">\(k\)</span> is the rate constant and the lifetime <span class="math notranslate nohighlight">\(\tau\)</span> for the reaction is <span class="math notranslate nohighlight">\(\tau = 1/k\)</span>. Observing these times for different molecules allows the probability distribution to be made and the reaction rate constant or lifetime calculated. The lifetimes of excited states and of first-order reactions have a huge range from <span class="math notranslate nohighlight">\(\approx 10^{-13}\)</span> to <span class="math notranslate nohighlight">\(\gt 10\)</span> s. The lifetimes of radioactive nuclei range from a few seconds to thousands of years.</p>
 <p>When we simulate the population of a species, the distribution of reaction times has to be known. This can be achieved by inverting the exponential equation to produce the time and guessing the probability <span class="math notranslate nohighlight">\(p\)</span>, from a uniform distribution between zero and one. The list of times produced by repeatedly doing this are then made into a histogram and displayed, and, if enough events are recorded, a decay similar to one that could be observed experimentally will be produced. The time <span class="math notranslate nohighlight">\(t\)</span> that a molecule reacts, not having reacted up to that time, is</p>
@@ -1699,13 +1841,14 @@ In the simulation of a random walk, only discrete steps can be taken <span class
 <p><span class="math notranslate nohighlight">\(\qquad\)</span> Calculate <span class="math notranslate nohighlight">\(t=-\ln(p)/k\)</span>, where <span class="math notranslate nohighlight">\(p\)</span> is a random number <span class="math notranslate nohighlight">\(0 \to 1\)</span>.</p>
 <p><span class="math notranslate nohighlight">\(\qquad\)</span>  Convert <span class="math notranslate nohighlight">\(t\)</span> to an integer to use as array index (see code below).</p>
 <p><span class="math notranslate nohighlight">\(\qquad\)</span> Add up the number of events with this index in <span class="math notranslate nohighlight">\(\mathtt{fcount}\)</span>.</p>
-<p>The Python code is shown below with 5000 events placed in a histogram of <span class="math notranslate nohighlight">\(100\)</span> bins. The reaction lifetime <span class="math notranslate nohighlight">\(\tau=50\)</span>. In the simulation, the time - scale need not be explicitly defined; each time unit could be femtoseconds or years; it all depends on the reaction.</p>
+<p>The Python code is shown below with 50000 events placed in a histogram of <span class="math notranslate nohighlight">\(500\)</span> bins. The reaction lifetime <span class="math notranslate nohighlight">\(\tau = 50\)</span>. In the simulation, the time - scale need not be explicitly defined; each time unit could be femtoseconds or years; it all depends on the reaction.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">events</span><span class="o">=</span> <span class="mi">5000</span>          <span class="c1"># integer</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">()</span>                <span class="c1"># initialise random number generator</span>
+<span class="n">events</span><span class="o">=</span> <span class="mi">50000</span>         <span class="c1"># integer</span>
 <span class="n">bins</span>  <span class="o">=</span> <span class="mi">500</span>           <span class="c1"># integer</span>
 <span class="n">maxt</span>  <span class="o">=</span> <span class="mf">500.0</span>
-<span class="n">tau</span>   <span class="o">=</span> <span class="mf">50.0</span>          <span class="c1"># ns</span>
+<span class="n">tau</span>   <span class="o">=</span> <span class="mf">50.0</span>          <span class="c1"># e.g. ns</span>
 <span class="n">fcount</span><span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">bins</span><span class="p">,</span><span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>
 <span class="n">dtime</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">bins</span><span class="p">,</span><span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
 
@@ -1732,6 +1875,276 @@ In the simulation of a random walk, only discrete steps can be taken <span class
 <p>Some results are shown in figure 11. On the left, the time a molecule remains excited (residence time) is plotted vs. the event number. Although there are some long times the average time is about <span class="math notranslate nohighlight">\(50\)</span>, which is the lifetime of the ensemble of molecules. The histogram of these times from the left figure produces the right-hand one when plotted on a log scale. This data looks just like that determined experimentally by time-correlated single photon counting experiments used to measure the excited state lifetime of a molecule or atom.</p>
 <p><img alt="Drawing" src="../_images/monte-carlo-fig11.png" /></p>
 <p>Figure 11 Left: The residence times vs event number for <span class="math notranslate nohighlight">\(500\)</span> events. Right: A histogram of the natural logarithm of the number of counts in each time channel in the simulation of a first-order rate process together with an exponential decay with the same decay time; <span class="math notranslate nohighlight">\(\tau = 50\)</span> in this example, and <span class="math notranslate nohighlight">\(200000\)</span> events have been recorded.</p>
+</section>
+<section id="reaction-a-to-b-to-c">
+<h3>Reaction <span class="math notranslate nohighlight">\(A\to B\to C\)</span><a class="headerlink" href="#reaction-a-to-b-to-c" title="Permalink to this headline">#</a></h3>
+<p>The Monte-Carlo method can be extended for example to <span class="math notranslate nohighlight">\(A \overset{k_A}\to  B \overset{ k_B} \to C\)</span> by recording the total time when intermediate B is produced.  Molecule A decays at time <span class="math notranslate nohighlight">\(t_A=\tau_A\ln(p_1)\)</span>  where <span class="math notranslate nohighlight">\(p_1\)</span> is a random number in the range <span class="math notranslate nohighlight">\(0\to 1\)</span> and <span class="math notranslate nohighlight">\(\tau_A\)</span> is A’s lifetime. Molecule B cannot be formed before this time, and then it takes A time <span class="math notranslate nohighlight">\(t_B = \tau_B\ln(p_2)\)</span>, to react so that B is formed at time <span class="math notranslate nohighlight">\(t_A + t_B\)</span>, where <span class="math notranslate nohighlight">\(p_2\)</span> is another random number in range <span class="math notranslate nohighlight">\(0\to 1\)</span>. The times <span class="math notranslate nohighlight">\(t_A+t_B\)</span> are recorded, binned, and a histogram of the number of B produced is made. Figure 11a shows such a calculation with <span class="math notranslate nohighlight">\(\tau_A=50, \tau_B=30\)</span>.</p>
+<p>The equations for the <span class="math notranslate nohighlight">\(A\to B\to C\)</span> scheme are, of course, well known, see chapter XX. The rate constants used to make the figure are <span class="math notranslate nohighlight">\(k_A=1/\tau_A, k_B=1/\tau_B\)</span> and the amount of B is given by <span class="math notranslate nohighlight">\(\displaystyle[B]=[A_0]\frac{k_B}{k_A-k_B}(e^{-k_Bt}-e^{-k_At})\)</span> and this is shown on a linear scale in the figure together with the simulated data.  To observe the rise of C as the number of trials, and hence molecules, is fixed this can be found by subtracting the numbers of A and B in each bin from this number.  If a more complex scheme is required such as molecule B reacting to produce another product D as well as C, then the fraction of molecules to pathway C (or D) needs to be found. The fraction going to C would be <span class="math notranslate nohighlight">\(k_B/(k_D+k_B)\)</span> and this is made by examining whether the random number is in the range <span class="math notranslate nohighlight">\(0 \le k_B/(k_D+k_B)\)</span> or greater than this.</p>
+<p><img alt="Drawing" src="../_images/monte-carlo-fig11a.png" /></p>
+<p>Figure 11a. Simulation of reaction <span class="math notranslate nohighlight">\(A\to B\to C\)</span>. The lifetime of molecules A and B is <span class="math notranslate nohighlight">\(50\)</span> and <span class="math notranslate nohighlight">\(30\)</span> respectively. The solid lines show the populations using the analytical equations and needed no adjustable parameters to fit. The simulated curves were made with <span class="math notranslate nohighlight">\(50000\)</span> events and the signal to noise ratio will clearly improve if more trials (events) are made, but only as <span class="math notranslate nohighlight">\(\sqrt{events}\)</span>. The rise and fall of B’s population is clear.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="step-growth-polymerisation">
+<h2>3.5 Step-Growth polymerisation<a class="headerlink" href="#step-growth-polymerisation" title="Permalink to this headline">#</a></h2>
+<p>In synthetic polymers the length of the chain is determined entirely by random events. In addition reactions it depends the lifetime of the carrier chain and in condensation reactions by the presence of a reactive group. These process are random in nature and they add monomer molecules in a step-wise manner to the chain, but the chains do not grow endlessly because there is a small but finite chance of being terminated that happens at random. Consequently, any polymer has a distribution of chain lengths and hence molar mass and this distinguishes polymers from simple molecules. The chain length can be calculated statistically and the number and weight average molar mass of polymer chains is given in Chapter (Summations &amp; Series) 5-4.2. The process can also be simulated as outlined next. The features of step-growth polymerisation are (J. Cowie &amp; V. Arrighi Polymers: Chemistry and Physics of Modern materials publ. CRC Press 2007 3rd ed.)</p>
+<p>(1) Any two molecular species can react,
+(2) Most monomers are incorporated early on in the reaction.
+(3) The chain length increases steadily during reaction.
+(4) High conversion is needed to form long polymers which also takes time.</p>
+<section id="algorithm-1">
+<h3>Algorithm 1<a class="headerlink" href="#algorithm-1" title="Permalink to this headline">#</a></h3>
+<p>The distribution of chain lengths is computed using a Monte-Carlo method. An array is made whose indices each represent one polymer chain. The value at each index gives the length of the chain, initially set to zero. At each step in the simulation the number <span class="math notranslate nohighlight">\(1\)</span> is added to each element of the array, unless a random termination event has occurred and then a zero is added for this step and all future ones at this index, i.e. this particular chain’s growth is halted. After repeating this many times a histogram is made of the chain lengths. The histogram records how many chains of a given length occur and groups these into ‘bins’ of a given width. A plot is made of the number of events (length of the chain) vs. the length itself. The random or Monte-Carlo part enters only in the termination step. A certain number of chains are chosen at random to be terminated on each round, this means that we must know the extent of reaction labelled <span class="math notranslate nohighlight">\(p\)</span>. The longer the rounds adding a molecule go on for, the longer the chain gets but also the greater the chance of termination. Thus, at the end of the process there are many chains of short length and fewer long ones. The maximum chain length is the number of rounds or repetitions.</p>
+</section>
+<section id="algorithm-2">
+<h3>Algorithm 2<a class="headerlink" href="#algorithm-2" title="Permalink to this headline">#</a></h3>
+<p>There is a second way of calculating the length distribution that is similar to the method developed in the previous section for an excited state. In this we determine the length of the chain at termination, rather than time of decay, from the probability of reacting and compute the length at which it is terminated, repeat this many times and then form a histogram. The lifetime <span class="math notranslate nohighlight">\(\tau\)</span> used with a decaying molecule is replaced by the chain length, <span class="math notranslate nohighlight">\(tau\)</span> being the length at which the distribution of lengths has fallen to <span class="math notranslate nohighlight">\(1/e\approx 0.37\)</span> of its initial value.</p>
+</section>
+<section id="statistical-approach">
+<h3>Statistical approach<a class="headerlink" href="#statistical-approach" title="Permalink to this headline">#</a></h3>
+<p>We have to answer the question; how shall we know that the Monte-Carlo simulation represents anything approximating theory or even reality? To answer this we need to use statistical theory model the distribution of polymer chain lengths. The number and weight averages can be calculated from the Monte-Carlo data, but these are only point measures of the polymer’s length and mass distribution, the distributions themselves are really needed. Using arguments based on probability these distributions can be calculated (Cowie &amp; Arrichi 2007), and the starting point is Carothers’ equation. Carothers pioneered step-growth reactions and invented nylon 66.</p>
+<p>Let <span class="math notranslate nohighlight">\(x_n\)</span> be the number average chain length which is defined as <span class="math notranslate nohighlight">\(\displaystyle x_n=\frac{n_0}{n}\)</span> where <span class="math notranslate nohighlight">\(n_0\)</span> is the original number of molecules present as monomers, and <span class="math notranslate nohighlight">\(n\)</span> the number of all molecules able to react at a later time <span class="math notranslate nohighlight">\(t\)</span>, which included all potentially reactive polymers. The total number of functional groups that have reacted is therefore <span class="math notranslate nohighlight">\((n_0-n)\)</span>  and then the extent of reaction <span class="math notranslate nohighlight">\(p\)</span> is the fraction</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle p=\frac{n_0-n}{n},\quad\text{or}\quad n=n_0(1-p)\]</div>
+<p>Combining this with <span class="math notranslate nohighlight">\(x_n\)</span> gives the Carothers equation</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle x_n=\frac{1}{1-p}=\frac{n_0}{n}\]</div>
+<p>This equation is particularly useful. Suppose there is <span class="math notranslate nohighlight">\(50\)</span>% reaction then the average chain length is surprisingly only <span class="math notranslate nohighlight">\(2\)</span>. It follows that if we want a long average chain length of, say, <span class="math notranslate nohighlight">\(100\)</span> then <span class="math notranslate nohighlight">\(p\)</span> has to be large, e.g. when <span class="math notranslate nohighlight">\(x_n = 100, p = 0.99\)</span> which means <span class="math notranslate nohighlight">\(99\)</span>% conversion therefore the reaction must be driven almost to completion. This also gives us an indication that in our simulation <span class="math notranslate nohighlight">\(p\)</span> has to be very close to unity.</p>
+<p>A chain grows as monomers are added, and if there are <span class="math notranslate nohighlight">\(x\)</span> chains at time <span class="math notranslate nohighlight">\(t\)</span> then <span class="math notranslate nohighlight">\(x-1\)</span> are left after the next step and the probability that <span class="math notranslate nohighlight">\((x-1)\)</span> groups have reacted is <span class="math notranslate nohighlight">\(p^{x-1}\)</span>, where <span class="math notranslate nohighlight">\(p\)</span> is the extent of reaction. A group unreacted has a probability of <span class="math notranslate nohighlight">\((1-p)\)</span> and therefore the probability <span class="math notranslate nohighlight">\(p_x\)</span> of finding a chain of <span class="math notranslate nohighlight">\(x\)</span> units long is the product of reacting up to that time and not yet having reacted which is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle p_x=(1-p)p^{x-1}\]</div>
+<p>and since <span class="math notranslate nohighlight">\(p_x=n_x/n\)</span> is the fraction of finding <span class="math notranslate nohighlight">\(n_x\)</span> in a total of <span class="math notranslate nohighlight">\(n\)</span> polymers,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle n_x=n(1-p)p^{x-1}\]</div>
+<p>Substituting for <span class="math notranslate nohighlight">\(n\)</span> using the Carothers equation gives the distribution</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle n_x=n_0(1-p)^2p^{x-1}\]</div>
+<p>Although not apparent, this equation has a shape very close to an exponential decay as in fig XX below, The histogram formed from chain lengths, which is the plot of the number of chains of length <span class="math notranslate nohighlight">\(n_x\)</span> (of mass <span class="math notranslate nohighlight">\(m_0n_x)\)</span> vs. <span class="math notranslate nohighlight">\(x\)</span> is ideally of the same shape as this distribution. This distribution should be what is obtained from the simulation. The number average molar mass in terms of extent of reaction <span class="math notranslate nohighlight">\(p\)</span> is from the Carothers equation</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \langle m_n\rangle = \frac{M_0}{1-p}\]</div>
+<p>where <span class="math notranslate nohighlight">\(m_0\)</span> is the mass of the monomer and is also given by <span class="math notranslate nohighlight">\(\displaystyle \langle m_n\rangle =\frac{\sum n_im_i}{N}\)</span>, see Chapter (Summations &amp; Series) 5-4.2.</p>
+<p>The distribution of mass/weight fraction is slightly different, weighted more to higher mass. If we use the mass fraction <span class="math notranslate nohighlight">\(w_x = xn_x/n_0\)</span> then</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle w_x = x(1-p)^2p^{x-1}\]</div>
+<p>where <span class="math notranslate nohighlight">\(x\)</span> can be chosen to be either the number, <span class="math notranslate nohighlight">\(x\)</span>, of monomer units, or the mass of <span class="math notranslate nohighlight">\(x\)</span> monomers. The weight average molar mass in terms of <span class="math notranslate nohighlight">\(p\)</span> is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \langle m_w\rangle = M_0\left(\frac{1+p}{1-p}\right)\]</div>
+<p>and the ratio of the weight to number averages when <span class="math notranslate nohighlight">\(p=1\)</span> is <span class="math notranslate nohighlight">\(2\)</span> which is close to what is observed because <span class="math notranslate nohighlight">\(p\)</span> will be close to unity. The weight average molar mass as a summation of chain lengths and masses is <span class="math notranslate nohighlight">\(\displaystyle \langle m_w\rangle =\frac{\sum n_im_i^2}{\sum n_im_i}\)</span>.</p>
+<p>The simulation shows (fig 11d) that this gives good agreement with the predicted data based on statistical arguments.</p>
+</section>
+<section id="simulation">
+<h3><strong>Simulation</strong><a class="headerlink" href="#simulation" title="Permalink to this headline">#</a></h3>
+<p>The code to do the algorithm 1 simulation is shown below. The array ‘chains’ represents the polymers, the value at each index is the polymer length, e.g. chains[4] = 10 means that chain <span class="math notranslate nohighlight">\(4\)</span> has length <span class="math notranslate nohighlight">\(10\)</span>. The array ‘term’ is either <span class="math notranslate nohighlight">\(1\)</span> or <span class="math notranslate nohighlight">\(0\)</span> and the whole array is added to the chains. Python allows whole arrays to be added without specifying indices but using <span class="math notranslate nohighlight">\([:]\)</span>. The parameter <span class="math notranslate nohighlight">\(z\)</span> is the number of chains to be terminated at each round. The plots are scaled to take into account the width of the bins used in the histogram.</p>
+<p>Sometimes when making the histogram, the way the histogram’s algorithm works to partitions the number of events into each bin can sometimes cause points to appear in a regular pattern being either too high or too low or both. This unphysical behaviour can be corrected by choosing a different number of bins, for example by doubling, plotting, re-choosing, re-plotting etc. until this effect disappears.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Algorithm 1. Step-wise chain growth polymerisation </span>
+
+<span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">()</span>           <span class="c1"># initialise random number generator</span>
+
+<span class="n">reps</span> <span class="o">=</span> <span class="mi">1000</span>                             <span class="c1"># repeat addition</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">100000</span>                              <span class="c1"># number of chains</span>
+<span class="n">p</span> <span class="o">=</span> <span class="mf">0.99</span>                                <span class="c1"># prob of growth over termination</span>
+<span class="n">z</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">n</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">p</span><span class="p">))</span>                        <span class="c1"># number of guesses to terminate </span>
+
+<span class="n">chains</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>          <span class="c1"># array holds all chain lengths</span>
+<span class="n">term</span>   <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>          <span class="c1"># array holds 1 or 0 for growth or termination</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">reps</span><span class="p">):</span>
+    <span class="n">chains</span><span class="p">[:]</span> <span class="o">=</span> <span class="n">chains</span><span class="p">[:]</span> <span class="o">+</span> <span class="n">term</span><span class="p">[:]</span>     <span class="c1"># add arrays index by index</span>
+    <span class="n">rand_indx</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">integers</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">size</span><span class="o">=</span> <span class="n">z</span><span class="p">)</span> <span class="c1"># choose index of z numbers at random</span>
+    <span class="n">term</span><span class="p">[</span><span class="n">rand_indx</span><span class="p">[:]]</span><span class="o">=</span> <span class="mi">0</span>               <span class="c1"># make chosen ones zero                </span>
+    <span class="k">pass</span>
+
+<span class="c1"># now plot data. Make histogram of number of chains of mass m, vs mass m then plot</span>
+
+<span class="c1">#nbins = 200                             # number of bins for histogram</span>
+<span class="c1">#num_at_m, m = np.histogram(chains,bins = nbins)      # returns number with mass m, vs mass</span>
+<span class="c1">#</span>
+<span class="c1">#m_i = np.array([m[-1]/nbins*(i+0.5) for i in range(nbins)] )  # m_i puts mass at centre of bin</span>
+<span class="c1">#sc = np.sum(chains)   # total weight</span>
+<span class="c1">#delta_mi = m_i[2]-m_i[1]                             </span>
+<span class="c1">#figx, (ax1, ax2) = plt.subplots(1, 2,figsize=(9,4))    </span>
+<span class="c1">#ax1.fill_between(m_i, num_at_m, color=&#39;lightgrey&#39;)   # fill histogram points</span>
+<span class="c1">#ax1.scatter(m_i, num_at_m,s=5,color=&#39;red&#39;)           # plot as points</span>
+<span class="c1">#ax2.scatter(m_i,num_at_m*m_i/sc/delta_mi,s=5,color=&#39;red&#39;)  # plot mass weighted distribution</span>
+<span class="c1">#plt.show()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><img alt="Drawing" src="../_images/monte-carlo-fig11d.png" /></p>
+<p>Fig. 11b. Left Histogram of the number of chains of mass <span class="math notranslate nohighlight">\(m\)</span> vs. the mass <span class="math notranslate nohighlight">\(m\)</span>, (grey) and red dots on a log scale.  The solid line (blue) is the number distribution  <span class="math notranslate nohighlight">\( n_x = n_0(1-p)^2p^{x-1}\)</span> which is close to an exponential decrease. The average <span class="math notranslate nohighlight">\(\langle m_n\rangle = 99\)</span> is also shown. Right, the theoretical weight distribution <span class="math notranslate nohighlight">\(w_x = x(1-p)^2p^{x-1}\)</span> (blue) with the Monte-Carlo calculated distribution ‘num_at_m x m_i’ vs ‘m_i’ which is <span class="math notranslate nohighlight">\(m\times n_x\)</span> vs <span class="math notranslate nohighlight">\(m\)</span>. The average <span class="math notranslate nohighlight">\(\langle M_w\rangle =200\)</span> is also shown.</p>
+</section>
+<hr class="docutils" />
+<section id="algorithm-2-simulation">
+<h3>Algorithm 2 simulation<a class="headerlink" href="#algorithm-2-simulation" title="Permalink to this headline">#</a></h3>
+<p>An alternative approach to the simulation allows a chain to live for a certain time and is then terminated. The ‘lifetime’ of the chain is <span class="math notranslate nohighlight">\(1/(1-p)\)</span> in terms of the chain length and the ‘time’ is <span class="math notranslate nohighlight">\(-1/(1-p)\ln(rand)\)</span> where ‘rand’ is a uniformly distributed random number in the range <span class="math notranslate nohighlight">\(0\to 1\)</span>. The list of chain lengths is made into a histogram as before. The code is simple and gives the same results as the other method.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Algorithm 2. Step-wise chain growth polymerisation </span>
+
+<span class="n">reps</span><span class="o">=</span> <span class="mi">100000</span>                       <span class="c1"># number of calculations</span>
+<span class="n">p</span>   <span class="o">=</span> <span class="mf">0.99</span>                         <span class="c1"># prob of growth over termination</span>
+<span class="n">tau</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">p</span><span class="p">)</span>                      <span class="c1"># length of chain when distribution is 1/e of maximum</span>
+<span class="n">chains</span><span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">reps</span><span class="p">,</span><span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>   <span class="c1"># array holds all chain lengths</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">reps</span><span class="p">):</span>
+    <span class="n">rnum</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">uniform</span><span class="p">()</span>                      <span class="c1"># random 0..1</span>
+    <span class="n">chains</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="n">tau</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">rnum</span><span class="p">)</span>
+    <span class="k">pass</span>
+<span class="c1"># in condensed form the loop is condensed into one line</span>
+
+<span class="c1">#chains[:] = -1/(1-p)*np.log( rng.uniform(size=reps) )</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="simulation-of-an-equilibrium-reaction-a-rightleftharpoons-2b">
+<h2>3.6 Simulation of an equilibrium  reaction <span class="math notranslate nohighlight">\(A \rightleftharpoons 2B\)</span><a class="headerlink" href="#simulation-of-an-equilibrium-reaction-a-rightleftharpoons-2b" title="Permalink to this headline">#</a></h2>
+<p>In reactions where we are not particularly interested in the time course but in their equilibrium a straightforward approach is to allow the reaction to occur at each step of the simulation and count the number of each type of molecule present. The reaction <span class="math notranslate nohighlight">\(\mathrm{N_2O_4} \rightleftharpoons \mathrm{2NO_2}\)</span> or in general <span class="math notranslate nohighlight">\(A \rightleftharpoons 2B\)</span> is used as an illustration. If we start with only A molecules then we expect A to decrease and B increase until the rate forwards is equal to the rate back when equilibrium is reached. The equilibrium mole fraction of A and B will change with the initial amount of A. If at equilibrium more A is added then we expect the reaction to produce more B, and vice-versa. We can test this with the Monte-Carlo calculation, the key point being that at each step we add to or subtract from the total A and B molecules depending on whether a forwards or reverse reaction has been chosen. First we will workout what the maximum fraction of sites A can initially fill because there are only a finite number of them. The algorithm and details set out below is based on that by Kraska (J. Chem. Educ. 2022, v99, 2026).</p>
+<p>Let there be <span class="math notranslate nohighlight">\(n_0\)</span> molecules of type <span class="math notranslate nohighlight">\(A\)</span> out of a total of <span class="math notranslate nohighlight">\(N\)</span> sites and let <span class="math notranslate nohighlight">\(n_a\)</span> be the number of type A present at equilibrium, thus <span class="math notranslate nohighlight">\(n_a = n_0-n_e\)</span> and <span class="math notranslate nohighlight">\(n_b = 2n_e\)</span> where <span class="math notranslate nohighlight">\(n_e\)</span> have reacted. The equilibrium constant in terms of the number of molecules is,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle K_e=\frac{n_b^2}{n_a}=\frac{4n_e^2}{n_0-n_e}\]</div>
+<p>which, when solved for <span class="math notranslate nohighlight">\(n_e\)</span>, gives</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle n_e= \frac{-K_e+\sqrt{K_e^2+16K_e n_0} }{8}\tag{13a}\]</div>
+<p>If <span class="math notranslate nohighlight">\(k_1,k_2\)</span> are the forward and reverse rate constants the respective <em>rates</em>, <span class="math notranslate nohighlight">\(\displaystyle R_1 = k_1n_a, R_2 = k_2 n_b^2\)</span>, are equal at equilibrium and if we interpret these as probabilities per unit step the forward rate is <span class="math notranslate nohighlight">\(\displaystyle R_1=\frac{n_a}{N}\)</span> and the backward bimolecular rate <span class="math notranslate nohighlight">\(\displaystyle R_2=\frac{n_b}{N}\left(\frac{n_b-1}{N-1}\right)\)</span>. This expression occurs because once we have chosen a site there is one less left to choose from a second time. When <span class="math notranslate nohighlight">\(n_b\)</span> and <span class="math notranslate nohighlight">\(N\)</span> are both far greater than one <span class="math notranslate nohighlight">\(\displaystyle R_2=\frac{n_b^2}{N^2}\)</span> without significant error. At equilibrium <span class="math notranslate nohighlight">\(R_1 = R_2\)</span> and <span class="math notranslate nohighlight">\(K_e\)</span> is found using</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{n_a}{N} = \frac{n_b^2}{N^2}\]</div>
+<p>thus, with definition above,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle K_e = N\]</div>
+<p>which now allows us to calculate <span class="math notranslate nohighlight">\(n_e\)</span> and hence the mole fraction of A and B molecules at equilibrium  for any <span class="math notranslate nohighlight">\(n_0\)</span>. In fact this is not quite true because the total number of sites is fixed at <span class="math notranslate nohighlight">\(N\)</span> and each A produces two B’s so there is a maximum valid number of initial A’s. This is worked out by substituting for <span class="math notranslate nohighlight">\(n_e\)</span> in <span class="math notranslate nohighlight">\(n_a = n_0-n_e\)</span> to give <span class="math notranslate nohighlight">\(n_a=n_0-n_b/2\)</span> and then solving for <span class="math notranslate nohighlight">\(n_0\)</span> in <span class="math notranslate nohighlight">\(n_a=n_0-\sqrt{n_aK_e}/2\)</span> where the definition of the equilibrium constant was used, <span class="math notranslate nohighlight">\(n_aK_e=n_b^2\)</span>. The maximum <span class="math notranslate nohighlight">\(n_0\)</span> is <span class="math notranslate nohighlight">\(\approx 0.691N\)</span>.</p>
+<p>The differential equation for the number of A molecules is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle\frac{dn_A}{dt}=-k_1n_a+k_2n_b^2\]</div>
+<p>which is simplified substituting <span class="math notranslate nohighlight">\(n_a = n_0-n_e\)</span> and <span class="math notranslate nohighlight">\(n_b = 2n_e\)</span> to give</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{dn_e}{dt}= k_1(n_0-n_a)-4k_2n_e^2\]</div>
+<p>This can be solved analytically but has a rather complicated solution, and it is easier to integrate numerically using, for example, the Euler method described in chapter 11-4.1. The rate constants are known from the rate expressions given above.</p>
+<section id="algorithm-outline">
+<h3><strong>Algorithm outline</strong><a class="headerlink" href="#algorithm-outline" title="Permalink to this headline">#</a></h3>
+<p>An array larger than the total initial number of all molecules is made and is used to hold the ‘molecules’ distinguished by their value, for example, we can choose <span class="math notranslate nohighlight">\( \mathrm{Empty=0, A=1, B=2}\)</span>. The molecule’s positions are initially chosen at random. You may wish to imagine this as a 2D array partially filled with molecules of type A and B, but as we shall not insist that when A breaks up into two B’s that these must be on adjacent sites, or that when 2B’s react they are also adjacent, we can simply use a 1D array. We can do this only because we are counting the number of A and B at each step, we make no assumptions about any mechanism. Furthermore as the total number of sites is fixed, this is equivalent to a fixed volume, but if we change the number of molecule present the density changes, which in a real gas would be a pressure change, for example via the ideal gas equation.</p>
+<p>We  do not check at each step whether a molecule has enough energy to react, therefore temperature is not directly involved in the simulation other than that it is sufficiently high that reaction always occurs. When equilibrium is reached, more molecules can be added and the response of the system observed. The initial number of A must be <span class="math notranslate nohighlight">\(\le 0.691\cdot\mathrm{sites}\)</span> (explained above), no other check is made. If this is not followed the calculation still runs but the result is meaningless.</p>
+<p>The instructions are put into a procedure (def calc():) and this in a loop for the number of repeated trials needed, for example <span class="math notranslate nohighlight">\(40000\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin{array}{lll}
+(i) &amp; \text{Choose one site at random, i.e. A, B or empty.} \\
+(ii)&amp; \text{If it is A, replace it by B and choose another empty site and make it B.}\\
+&amp; \text{Change } n_A \to n_A - 1,\quad n_B \to n_B + 2\\
+(iii) &amp;\text{If B is chosen, choose another site at random.}\\ 
+    &amp;\text{If it is B, empty this site and change the previous B chosen into A.}\\
+    &amp;\text{Change }n_A \to n_A + 1,\quad n_B \to n_B - 2\\
+    (iv)&amp;\text{If the site is empty do nothing.} \end{array}\end{split}\]</div>
+<p>At each step with index <span class="math notranslate nohighlight">\(k\)</span>, we count the number of type A and type B molecules present and the mole fraction as <span class="math notranslate nohighlight">\(\mathrm{mfA[k]=n_a/(n_a+n_b)}\)</span> for A molecules and <span class="math notranslate nohighlight">\(\mathrm{1-mfA[k]}\)</span> for B molecules. These are plotted vs. number of tries.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#-------------------------------</span>
+<span class="k">def</span> <span class="nf">fill_sites</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">Q</span><span class="p">):</span>
+    <span class="n">k</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="n">k</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">:</span>                     <span class="c1"># make exactly n sites equal to A</span>
+        <span class="n">i</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">integers</span><span class="p">(</span><span class="n">sites</span><span class="p">)</span>   
+        <span class="k">if</span> <span class="n">M</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">M</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">Q</span>
+            <span class="n">k</span> <span class="o">=</span> <span class="n">k</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">M</span>
+<span class="c1">#--------------------------------</span>
+<span class="k">def</span> <span class="nf">findempty</span><span class="p">():</span>                     <span class="c1"># Search for empty site in array to make into B</span>
+    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">sites</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">M</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">==</span> <span class="n">Empty</span><span class="p">:</span>
+            <span class="k">break</span> 
+    <span class="k">return</span> <span class="n">k</span>
+<span class="c1">#--------------------------------</span>
+<span class="k">def</span> <span class="nf">calc</span><span class="p">():</span>                          <span class="c1"># choose A=0, B=1, empty=2</span>
+    <span class="n">j</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">integers</span><span class="p">(</span><span class="n">sites</span><span class="p">)</span>          <span class="c1"># choose an index at random</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">if</span> <span class="n">M</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">==</span> <span class="n">A</span> <span class="p">:</span>                   <span class="c1"># if type A Step (ii)</span>
+        <span class="n">M</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">B</span>
+        <span class="n">i</span> <span class="o">=</span> <span class="n">findempty</span><span class="p">()</span>
+        <span class="n">M</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">B</span>
+        <span class="n">a</span> <span class="o">=</span> <span class="o">-</span> <span class="mi">1</span>                      <span class="c1"># will reduce na by 1</span>
+        <span class="n">b</span> <span class="o">=</span> <span class="o">+</span> <span class="mi">2</span>                      <span class="c1"># will increase nb by 2</span>
+    <span class="k">elif</span> <span class="n">M</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">==</span> <span class="n">B</span> <span class="p">:</span>                 <span class="c1"># if type B. Step(iii)</span>
+        <span class="n">k</span> <span class="o">=</span>  <span class="n">rng</span><span class="o">.</span><span class="n">integers</span><span class="p">(</span><span class="n">sites</span><span class="p">)</span>     <span class="c1"># choose 2nd site at random</span>
+        <span class="k">while</span> <span class="n">k</span> <span class="o">==</span>  <span class="n">j</span><span class="p">:</span>               <span class="c1"># but dont choose site  again</span>
+            <span class="n">k</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">integers</span><span class="p">(</span><span class="n">sites</span><span class="p">)</span>
+            <span class="k">pass</span>    
+        <span class="k">if</span> <span class="n">M</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">==</span> <span class="n">B</span><span class="p">:</span>                <span class="c1"># is B</span>
+            <span class="n">M</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">=</span> <span class="n">A</span>                  <span class="c1"># was B now make site A</span>
+            <span class="n">M</span><span class="p">[</span><span class="n">k</span><span class="p">]</span><span class="o">=</span> <span class="n">Empty</span>              <span class="c1"># make site k empty so remove one B</span>
+            <span class="n">a</span> <span class="o">=</span> <span class="o">+</span> <span class="mi">1</span>
+            <span class="n">b</span> <span class="o">=</span> <span class="o">-</span> <span class="mi">2</span>
+            <span class="k">pass</span>
+    <span class="k">return</span> <span class="n">a</span><span class="p">,</span><span class="n">b</span>                       <span class="c1"># return increments to numbers of A &amp; B.</span>
+<span class="c1">#--------------------------------</span>
+
+<span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">()</span>         <span class="c1"># initialise random number generator</span>
+
+<span class="n">sites</span> <span class="o">=</span> <span class="mi">10000</span>                         <span class="c1"># number of sites</span>
+<span class="n">reps</span>  <span class="o">=</span> <span class="mi">20000</span>                         <span class="c1"># repeat calc&#39;n</span>
+
+<span class="n">A</span> <span class="o">=</span> <span class="mi">1</span>                                 <span class="c1"># codes for molecules</span>
+<span class="n">B</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">Empty</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="n">na</span> <span class="o">=</span> <span class="mi">2000</span>                             <span class="c1"># Must be &lt; 0.691 * sites. starting number of A and B</span>
+<span class="n">nb</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">n</span> <span class="o">=</span> <span class="n">na</span> <span class="o">+</span> <span class="n">nb</span>
+
+<span class="n">M</span>   <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">sites</span><span class="p">,</span><span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>       <span class="c1"># store array</span>
+<span class="n">mfA</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">reps</span><span class="p">)</span>                  <span class="c1"># mole fraction of A</span>
+<span class="n">x</span>   <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">reps</span><span class="p">,</span><span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>        <span class="c1"># array index</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">reps</span><span class="p">):</span>                 <span class="c1"># make array of integers for plotting only</span>
+    <span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">i</span>
+
+<span class="n">M</span> <span class="o">=</span> <span class="n">fill_sites</span><span class="p">(</span><span class="n">na</span><span class="p">,</span><span class="n">A</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">nb</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="n">M</span> <span class="o">=</span> <span class="n">fill_sites</span><span class="p">(</span><span class="n">nb</span><span class="p">,</span><span class="n">B</span><span class="p">)</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="mi">0</span>                                 <span class="c1"># na increments</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">0</span>                                 <span class="c1"># nb increments</span>
+<span class="n">k</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="n">k</span> <span class="o">&lt;</span> <span class="n">reps</span><span class="p">:</span>                       <span class="c1"># main loop of calculation</span>
+    <span class="n">mfA</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">na</span><span class="o">/</span><span class="p">(</span><span class="n">na</span> <span class="o">+</span> <span class="n">nb</span><span class="p">)</span>           <span class="c1"># mole fraction of A</span>
+    <span class="n">a</span><span class="p">,</span> <span class="n">b</span>  <span class="o">=</span> <span class="n">calc</span><span class="p">()</span>                    <span class="c1"># return increments in A and B</span>
+    <span class="n">na</span> <span class="o">=</span> <span class="n">na</span> <span class="o">+</span> <span class="n">a</span>                       <span class="c1"># a,b are changes in na and nb</span>
+    <span class="n">nb</span> <span class="o">=</span> <span class="n">nb</span> <span class="o">+</span> <span class="n">b</span> 
+    <span class="n">k</span> <span class="o">=</span> <span class="n">k</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="k">pass</span>
+
+<span class="c1">#plt.plot(x,mfA)</span>
+<span class="c1">#plt.plot(x,1-mfA)</span>
+<span class="c1">#plt.show()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><img alt="Drawing" src="../_images/monte-carlo-fig11b.png" /></p>
+<p>Fig 11c. Monte-Carlo calculation of the <span class="math notranslate nohighlight">\(A\rightleftharpoons 2B\)</span> reaction. Left mole fractions of A and B vs. number of steps, which are proportional to time. The initial number of A was <span class="math notranslate nohighlight">\(2000\)</span> and total number of sites was <span class="math notranslate nohighlight">\(10000\)</span>. Right: The rates of reaction become equal at equilibrium. See text for details.</p>
+<hr class="docutils" />
+<p>Figure 11c shows the mole fraction as the reaction evolves, with an initial number of <span class="math notranslate nohighlight">\(2000\)</span> A molecules. After about <span class="math notranslate nohighlight">\(25000\)</span> steps each mole fraction has become constant and equilibrium is reached. This can also be determined by plotting the reaction rate for <span class="math notranslate nohighlight">\(A\to 2B\)</span> and <span class="math notranslate nohighlight">\(2B\to A\)</span>. From the discussion above the rates are <span class="math notranslate nohighlight">\(\displaystyle R_1=\frac{n_a}{N}\)</span> and <span class="math notranslate nohighlight">\(\displaystyle R_2=\frac{n_b}{N}\left(\frac{n_b-1}{N-1}\right)\)</span> and these are equal at equilibrium as can be seen on the right of fig 11b. As the number of ‘molecules’ is relatively small, <span class="math notranslate nohighlight">\(\le 10000\)</span> fluctuations about equilibrium can be seen. Using eqn 13a the mole fraction can be calculated as <span class="math notranslate nohighlight">\((n_0-n_e)/(n_0+n_e)\)</span> and compared to that obtained from the simulation. For the data in fig 11b the mole fraction of A is <span class="math notranslate nohighlight">\(0.214\)</span> while that from eqn 11a is <span class="math notranslate nohighlight">\(0.208\)</span>. The comparison the the calculated values of the mole fraction vs. the simulated ones show that the two numbers agree to two decimal places when rounded, and the largest difference being when <span class="math notranslate nohighlight">\(n_0\)</span> is small.</p>
+<p>If, when equilibrium is reached, the number of A or B is changed and a new equilibrium position will be reached eventually as more A will convert to B or <em>vice versa</em>. This change is done at constant volume as the number of sites is unchanged in the simulation. This is shown in figure 11c, where there are initially <span class="math notranslate nohighlight">\(n_0=2000\)</span> A and after <span class="math notranslate nohighlight">\(\approx 40000\)</span> steps <span class="math notranslate nohighlight">\(1000\)</span> more A are added to vacant sites. The final mole fractions and rates are those as if initially <span class="math notranslate nohighlight">\(n_0=3000\)</span>.</p>
+<p>When the addition is made the mole fraction of A suddenly rises and that of B falls, simply because the total mole fraction must add to one. The rates on the other hand (as shown in the right hand panel) are proportional to the numbers of A and B and we can see that as more A is injected the number of these suddenly rise then slowly fall as the predominant reaction is, until equilibrium is established, <span class="math notranslate nohighlight">\(A\to B\)</span>. The number of B rises continuously until equilibrium is re-established. If B had been added the similar behaviour is observed but with A and B reversed. This behaviour when returning to equilibrium accords with that expected when perturbing an equilibrium and expressed as the Le Chatelier principle.</p>
+<p>The differential equation for the number of A molecules given above is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle\frac{dn_A}{dt}=-k_1n_a+k_2n_b^2\]</div>
+<p>and at equilibrium if this is disturbed by a small change <span class="math notranslate nohighlight">\(\Delta\)</span> to the number of type A molecules then <span class="math notranslate nohighlight">\(n_a\to n_{ae}-\Delta, n_b\to n_{be}+2\Delta\)</span> where <span class="math notranslate nohighlight">\(n_e\)</span> is the equilibrium amount, hence</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle\frac{d\Delta}{dt}=k_1(n_{ae}-\Delta) -k_2(n_{be}+2\Delta)^2\]</div>
+<p>At equilibrium as <span class="math notranslate nohighlight">\(k_1n_{ae}=k_2n_{be}^2\)</span> by expanding and substituting gives, after some canceling,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle\frac{d\Delta}{dt}=-(k_1+4k_2)\Delta -4k_2\Delta^2\]</div>
+<p>If the change <span class="math notranslate nohighlight">\(\Delta\)</span> is small the <span class="math notranslate nohighlight">\(\Delta^2\)</span> term is even smaller and can be ignored. This produces</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle\frac{d\Delta}{dt}=-(k_1+4k_2)\Delta \]</div>
+<p>which is a first order decay of the perturbation back to equilibrium. This is observed in the simulations, but only after much averaging since the perturbation has to be small, and not in fig. 11c where for clarity too large a perturbation was used for this approximation to be accurate.</p>
+<p><img alt="Drawing" src="../_images/monte-carlo-fig11c.png" /></p>
+<p>Fig 11d. Monte-Carlo calculation of the <span class="math notranslate nohighlight">\(A\rightleftharpoons 2B\)</span> reaction. Left mole fractions of A and B vs. number of steps, which are proportional to time. The initial number of A was <span class="math notranslate nohighlight">\(2000\)</span> and total number of sites was <span class="math notranslate nohighlight">\(10000\)</span>. Right: The rates of reaction become equal at equilibrium. At <span class="math notranslate nohighlight">\(\approx 40000\)</span> steps <span class="math notranslate nohighlight">\(1000\)</span> A were added. The change in numbers show how the equilibrium is reestablished, its final value is as if <span class="math notranslate nohighlight">\(n_0=3000\)</span> A had been present initially. Naturally the data is noise as only a limited number of samples are taken.</p>
+</section>
 </section>
 </section>
 

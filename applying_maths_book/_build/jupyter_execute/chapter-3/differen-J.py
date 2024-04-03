@@ -25,7 +25,8 @@
 # 
 # which is done by taking (partial) derivatives of $Q$ in $x,\; y$, and $\lambda$ and letting $\partial Q/\partial x = \partial Q/\partial y= \partial Q/\partial \lambda = 0$ and solving the simultaneous equations,
 # 
-# $$\displaystyle \qquad\qquad\qquad \begin{align}\frac{df(x,y)}{dx}+\lambda \frac{dg(x,y)}{dx}&=0  \\\frac{df(x,y)}{dy}+\lambda\frac{dg(x,y)}{dy}&=0 \end{align}\qquad\qquad\qquad\qquad \text{(37)} $$
+# $$\displaystyle \frac{df(x,y)}{dx}+\lambda \frac{dg(x,y)}{dx}=0$$
+# $$\displaystyle \frac{df(x,y)}{dy}+\lambda\frac{dg(x,y)}{dy} =0 \tag{37} $$
 # 
 # Notice that differentiation is with respect to $x$ and then with $y$ as variables on both function and constraint. The method or algorithm is
 # 
@@ -58,7 +59,7 @@
 # 
 # The function to minimize is the distance from $(x_0, y_0)$ to a point $(x, y)$ on the curve and this is calculated using Pythagoras' theorem,
 # 
-# $$\displaystyle f(x,y)=\sqrt{(x-x_0)^2+(y-y_0)^2}  \qquad\tag{38}$$
+# $$\displaystyle f(x,y)=\sqrt{(x-x_0)^2+(y-y_0)^2}  \tag{38}$$
 # 
 # The point $(x_0, y_0)$ is made the origin (0, 0) at the end of the calculation. 
 # 

@@ -610,7 +610,7 @@ g
 # \text{(vii)}& n^{th}\text{ Derivative}     & \displaystyle   F\left(\frac{d^n}{dx^n}f(x)\right) & \rightleftharpoons &(ik)^n\,g(k)\\[0.15cm]
 # \text{(viii)}&\text{Derivative} & \displaystyle F\left(\frac{d}{dt}f(x,t)\right)& \rightleftharpoons & \int \displaystyle \frac{d}{dt}g(k,t)e^{-ikx} dx \\[0.15cm]
 # \text{(ix)}&\text{Product}      & F(xf(x)) & \rightleftharpoons &\displaystyle i\,\frac{d}{dk}g(k)\\[0.15cm]
-# \text{(x)}&\text{(linearity} & F\left(af_a(x) + bf_b(x)\right)& \rightleftharpoons & ag_a(k) + bg_b(k)\\ 
+# \text{(x)}&\text{linearity} & F\left(af_a(x) + bf_b(x)\right)& \rightleftharpoons & ag_a(k) + bg_b(k)\\ 
 # \hline
 # \end{array}
 # $$
@@ -664,6 +664,29 @@ g
 # $\qquad$The product $xf(x)$ can be useful in solving differential equations.
 # 
 # $$\displaystyle \begin{align}F\left(xf(x)\right)&=\int_{-\infty}^{\infty} xf(x)e^{-ikx}dx =\int_{-\infty}^{\infty} f(x)\frac{d}{dk}\left(ie^{-ikx}\right) dx\\&=i\frac{d}{dk}\int_{-\infty}^{\infty} f(x)e^{-ikx} dx=i\frac{d}{dk}g(k)\end{align}$$
+
+# ### **Example. Using the Shift Theorem**
+# 
+# When we measure a spectrum we expect to see a number of lines depending on the particular molecules being excited. These lines each have their own width and energy, i.e wavelength or frequency. However, if the light entering the spectrometer has a little of it delayed, such as by a beam splitter, and which then enters the spectrometer extra lines can be observed due to the phase-change introduced by the delay. The extra lines are caused by beating between the two light fields. The situation is shown in the diagram.
+# 
+# ![Drawing](fourier-fig21c.png)
+# 
+# figure 21c. Left The arrangement whereby two beams enter the spectrometer. Right The spectrum as it should be (left) and (right) after contamination with a little of the delayed beam.
+# ____________
+# 
+# If the spectrum has the field $E(t)$ the detector measures the absolute value squared of the fourier transform $F$ of the total field, which in this case is the sum of the direct and reflected parts, i.e. a 'square law detector' measures
+# 
+# $$\displaystyle W(\omega)=\bigg| F\left(E(t)+cE(t-\Delta)\right)\bigg|^2$$
+# 
+# where $\Delta$ is the time delay and $c$ the amount in the delayed beam. Using the Shift Theorem produces
+# 
+# $$\displaystyle \begin{align}W(\omega)&=\bigg|E(\omega)(1+ce^{-i\omega\Delta})\bigg|^2\\
+# &= |E(\omega)|^2(1+ce^{-i\omega\Delta})(1+ce^{+i\omega\Delta})\\
+# &= |E(\omega)|^2(1+c^2+2c\cos(\omega \Delta))\end{align}$$
+# 
+# where the identity $2\cos(\theta)=e^{+i\theta}+e^{-i\theta}$ was used.  This expression shows us that the spectrum $E(\omega)$ now has oscillations that might look like new transitions but are an artefact of allowing two beams into the spectrometer. The way round this is to use a beam-splitter that is anti-reflection coated on its far side, or use a far thicker one and use a knife edge to remove the weaker beam.
+# 
+# The spectrum is shown in fig. 21c. The fringes are very clear even when $c$ is small, for example the figure shows the spectrum when $c=0.05$ or $5$% of the more intense beam. The oscillation at the peak is $\approx \pm 10$% of the peak height, rather large for such a small amount of extra light.
 
 # ## 6.9 Table of useful Fourier transforms
 # 

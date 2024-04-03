@@ -51,6 +51,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -139,7 +141,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-1/chapter1-B.html">
-     5 Trig, hyperbolic and inverse functions, waves, polar coordinates &amp; factorials
+     5 Trig, hyperbolic and inverse functions, waves, polar coordinates,  factorials
     </a>
    </li>
    <li class="toctree-l2">
@@ -471,7 +473,7 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-5/chapter-5-A.html">
-     1 Series, averages, partition functions, DNA melting, atom entropy
+     1 Series, averages, waves, partition functions, DNA melting, atom entropy
     </a>
    </li>
    <li class="toctree-l2">
@@ -1614,25 +1616,33 @@ title="Print to PDF"
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#adiabatic-and-diabatic-curves">
+    <a class="reference internal nav-link" href="#i-adiabatic-and-diabatic-curves">
      <strong>
-      Adiabatic and diabatic curves
+      (i) Adiabatic and diabatic curves
      </strong>
     </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#symmetry">
-       <strong>
-        Symmetry
-       </strong>
-      </a>
-     </li>
-    </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#landau-zener-and-curve-crossing">
+    <a class="reference internal nav-link" href="#ii-symmetry">
      <strong>
-      Landau-Zener and Curve-Crossing
+      (ii) Symmetry
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#iii-landau-zener-and-curve-crossing">
+     <strong>
+      (iii) Landau-Zener and Curve-Crossing
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#iv-calculating-p-lz">
+     <strong>
+      (iv) Calculating
+      <span class="math notranslate nohighlight">
+       \(P_{LZ}\)
+      </span>
      </strong>
     </a>
    </li>
@@ -1769,25 +1779,33 @@ title="Print to PDF"
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#adiabatic-and-diabatic-curves">
+    <a class="reference internal nav-link" href="#i-adiabatic-and-diabatic-curves">
      <strong>
-      Adiabatic and diabatic curves
+      (i) Adiabatic and diabatic curves
      </strong>
     </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#symmetry">
-       <strong>
-        Symmetry
-       </strong>
-      </a>
-     </li>
-    </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#landau-zener-and-curve-crossing">
+    <a class="reference internal nav-link" href="#ii-symmetry">
      <strong>
-      Landau-Zener and Curve-Crossing
+      (ii) Symmetry
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#iii-landau-zener-and-curve-crossing">
+     <strong>
+      (iii) Landau-Zener and Curve-Crossing
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#iv-calculating-p-lz">
+     <strong>
+      (iv) Calculating
+      <span class="math notranslate nohighlight">
+       \(P_{LZ}\)
+      </span>
      </strong>
     </a>
    </li>
@@ -2361,16 +2379,26 @@ called the <em>eigenvalue spectrum</em>.</p>
 <div class="math notranslate nohighlight">
 \[\psi_{1,2}=c_1\varphi_1+c_2\varphi_2\]</div>
 <p>where the coefficients <span class="math notranslate nohighlight">\(c\)</span> can be found using the Variational Principle. At the crossing point <span class="math notranslate nohighlight">\(r_c\)</span> the new wavefunction has equal contributions from <span class="math notranslate nohighlight">\(\varphi_1\)</span> and <span class="math notranslate nohighlight">\(\varphi_2\)</span> thus <span class="math notranslate nohighlight">\(\displaystyle \psi_{1,2} = \left( \varphi_1 \pm \varphi_2\right )/\sqrt{2}\)</span> and the energy gap <span class="math notranslate nohighlight">\(E_2-E_1=2\Delta\)</span>. Moving away from the crossing point to larger or smaller <span class="math notranslate nohighlight">\(r\)</span> than <span class="math notranslate nohighlight">\(r_c\)</span>, the amount of each <span class="math notranslate nohighlight">\(\varphi\)</span> changes, for example on the bottom left of image (B) in fig 54a, <span class="math notranslate nohighlight">\(\psi_1\)</span> will mainly consist of <span class="math notranslate nohighlight">\(\varphi_1\)</span> with a little <span class="math notranslate nohighlight">\(\varphi_2\)</span>, whereas at the top right the opposite is true. A similar argument applies to <span class="math notranslate nohighlight">\(\psi_2\)</span>. This can be understood because the energy gap (<span class="math notranslate nohighlight">\(|E_2-E_1|\)</span>) at large or small <span class="math notranslate nohighlight">\(r\)</span> is large compared to <span class="math notranslate nohighlight">\(\Delta\)</span> and so the contribution to the new wavefunction is small when that state is far away in energy.</p>
-<section id="adiabatic-and-diabatic-curves">
-<h3><strong>Adiabatic and diabatic curves</strong><a class="headerlink" href="#adiabatic-and-diabatic-curves" title="Permalink to this headline">#</a></h3>
+<section id="i-adiabatic-and-diabatic-curves">
+<h3><strong>(i) Adiabatic and diabatic curves</strong><a class="headerlink" href="#i-adiabatic-and-diabatic-curves" title="Permalink to this headline">#</a></h3>
 <p>The use of the words adiabatic and diabatic in quantum chemistry is very confusing. If a wavefunction representing the true solution such as the <span class="math notranslate nohighlight">\(\psi\)</span> are in eqn. 34b then the curves with energy <span class="math notranslate nohighlight">\(E_{1,2}\)</span> and wavefunction <span class="math notranslate nohighlight">\(\psi\)</span> are called adiabatic as the two curves do not cross, see fig 54a (right B). The other curves (dashed) in this figure are the diabatic curves. The adiabatic wavefunction <span class="math notranslate nohighlight">\(\psi\)</span> is made up of various amounts of the diabatic wavefunctions <span class="math notranslate nohighlight">\(\varphi\)</span>. However, in fig 54a (left A) these are the adiabatic curves as these arise from eqn. 34a and are the true solution to this Hamiltonian and do not cross. ‘Does not cross’ here means that motion from curve <span class="math notranslate nohighlight">\(1\to 2\)</span> or vice versa does not occur.</p>
-<section id="symmetry">
-<h4><strong>Symmetry</strong><a class="headerlink" href="#symmetry" title="Permalink to this headline">#</a></h4>
-<p>We noted above that the symmetries of the two states interacting are important. If the symmetry is the same then the states interact and an avoided crossing occurs and a picture as in the right hand part of Fig(54a) results. If not, then no interaction is possible. Interactions causing the coupling <span class="math notranslate nohighlight">\(\Delta\)</span> are generated within the molecule and represent energy and therefore must be have a <em>totally symmetric</em> representation. This being the case because the probability of a transition in quantum mechanics between state 1 and 2 is proportional to  <span class="math notranslate nohighlight">\(\displaystyle \int \psi_1\Delta \psi_2dr \)</span> this integral will be zero unless <span class="math notranslate nohighlight">\(\psi_1\)</span> and <span class="math notranslate nohighlight">\(\psi_2\)</span> have the same symmetry. This may not be obvious, immediately, but first work out the integral say from <span class="math notranslate nohighlight">\(-r\to r\)</span> (the limits must be symmetrical) if both wavefunctions are either of the same symmetry and <span class="math notranslate nohighlight">\(\Delta\)</span> a constant or totally symmetric, and second if one wavefunction has ‘odd’ symmetry. In the latter case the integral is zero. The odd = even rules are <span class="math notranslate nohighlight">\(odd\cdot  odd=even\cdot even=even,\; odd\cdot even=0\)</span>. Examples are <span class="math notranslate nohighlight">\(\int odd\cdot even\cdot odd \ne 0\)</span>,<span class="math notranslate nohighlight">\(\int even\cdot even\cdot even \ne 0\)</span>, <span class="math notranslate nohighlight">\(\int odd\cdot even\cdot even =0 \)</span>, see chapter 4, section 1.3.</p>
 </section>
+<section id="ii-symmetry">
+<h3><strong>(ii) Symmetry</strong><a class="headerlink" href="#ii-symmetry" title="Permalink to this headline">#</a></h3>
+<p>We noted above that the symmetries of the two states interacting are important. If the symmetry is the same then the states interact and an avoided crossing occurs and a picture as in the right hand part of Fig(54a) results. If not, then no interaction is possible. Interactions causing the coupling <span class="math notranslate nohighlight">\(\Delta\)</span> are generated within the molecule and represent energy and therefore must be have a <em>totally symmetric</em> representation. This being the case because the probability of a transition in quantum mechanics between state 1 and 2 is proportional to  <span class="math notranslate nohighlight">\(\displaystyle \int \psi_1\Delta \psi_2dr \)</span> this integral will be zero unless <span class="math notranslate nohighlight">\(\psi_1\)</span> and <span class="math notranslate nohighlight">\(\psi_2\)</span> have the same symmetry. This may not be obvious, immediately, but first work out the integral say from <span class="math notranslate nohighlight">\(-r\to r\)</span> (the limits must be symmetrical) if both wavefunctions are either of the same symmetry and <span class="math notranslate nohighlight">\(\Delta\)</span> a constant or totally symmetric, and second if one wavefunction has ‘odd’ symmetry. In the latter case the integral is zero. The odd = even rules are</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin{align} &amp;odd\cdot  odd = even\cdot even=even\quad (\mathrm{integral \ne 0})\\ &amp;odd\cdot even =0\end{align}\end{split}\]</div>
+<p>Examples are</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin{array}{ccc}
+\int odd\cdot even\cdot odd \ne 0\\
+\int even\cdot even\cdot even \ne 0\\ 
+\int odd\cdot even\cdot even =0\\
+\end{array}\end{split}\]</div>
+<p>see also chapter 4, section 1.3.</p>
 </section>
-<section id="landau-zener-and-curve-crossing">
-<h3><strong>Landau-Zener and Curve-Crossing</strong><a class="headerlink" href="#landau-zener-and-curve-crossing" title="Permalink to this headline">#</a></h3>
+<section id="iii-landau-zener-and-curve-crossing">
+<h3><strong>(iii) Landau-Zener and Curve-Crossing</strong><a class="headerlink" href="#iii-landau-zener-and-curve-crossing" title="Permalink to this headline">#</a></h3>
 <p>Projecting the ground state wavefunction on to the upper state such as <span class="math notranslate nohighlight">\(A_2\)</span> fig54a (B), with a femtosecond laser pulse produces a wavepacket on <span class="math notranslate nohighlight">\(A_2\)</span>.  The wavepacket is the quantum equivalent of a particle, it is restricted in spacial extent as it is the sum of several wavefunctions each separated in energy. See chapter 5.9. As the wavepacket is confined in space and moves back and forth on <span class="math notranslate nohighlight">\(A_2\)</span> this means that any population on <span class="math notranslate nohighlight">\(A_1\)</span> will increase in a step-wise manner as there is a small chance that crossing the barrier <span class="math notranslate nohighlight">\(A_2\to A_1\)</span> occurs each time the wavepacket goes close to point <span class="math notranslate nohighlight">\(r_c\)</span>. This behaviour was first observed by Zewail and coworkers in NAI (Zewail 1994). This is examined shortly but first the factors determining the probability of reaction are described.</p>
 <p>As the energy gap between the two adiabatic curves <span class="math notranslate nohighlight">\(\psi_{1,2}\)</span> becomes smaller there is the possibility that the system will cross the barrier from one state to the other. The chance (probability) of crossing from one <em>adiabatic</em> state to the other is given by the Landau-Zener equation</p>
 <div class="math notranslate nohighlight">
@@ -2387,7 +2415,9 @@ called the <em>eigenvalue spectrum</em>.</p>
 <hr class="docutils" />
 <p>The NaI molecule was excited by a sub-picosecond laser pulse at <span class="math notranslate nohighlight">\(311\)</span> nm onto the repulsive upper state potential and a wavepacket formed and because it is formed on the repulsive potential, at <span class="math notranslate nohighlight">\(\approx 0.27\)</span> nm, it moves rapidly towards the crossing point at <span class="math notranslate nohighlight">\(\approx 0.69\)</span> nm, see fig 54b. The wavepacket was probed by a second and weak laser pulse at several different wavelengths corresponding to being in the well, <span class="math notranslate nohighlight">\(\approx 0.3 \to 6\)</span> nm and after the crossing point <span class="math notranslate nohighlight">\(\gt 0.7\)</span> nm. At the crossing point there is a chance either to reflect from the <span class="math notranslate nohighlight">\(\mathrm{Na^+I^-}\)</span> part of the potential and return towards shorter bond length or to cross the barrier to form products <span class="math notranslate nohighlight">\(\mathrm{Na+I}\)</span>. Because the molecule vibrates a pulse of the product (Na + I) was observed each time the wavepacket reached the crossing point and the time between product appearance was <span class="math notranslate nohighlight">\(1.2\)</span> ps at this pump wavelength. The product appears in stepwise manner because the total amount is monitored and a little more is added each time the crossing point is reached. Several bursts of product lasting up to about 10 ps in total were observed. Probing inside the well produces an oscillating signal as the wavepacket crosses and re-crosses the probed region.</p>
 <p>Notice that that these observations are entirely different to that expected from a ‘normal’ kinetic experiment where excitation is not short lived compared to the vibrational period, as then we observe continuous formation of product and measure a ‘normal’ decay profile. Only because the laser pump pulse is of short duration compared to a vibrational period can the step-wise appearance of product be observed. This is obvious now but it was a revelation when this data was first reported, nothing like it had been seen before and for this Zewail was subsequently awarded a Nobel Prize in Chemistry.</p>
-<p><strong>Calculating <span class="math notranslate nohighlight">\(P_{LZ}\)</span></strong></p>
+</section>
+<section id="iv-calculating-p-lz">
+<h3><strong>(iv) Calculating <span class="math notranslate nohighlight">\(P_{LZ}\)</span></strong><a class="headerlink" href="#iv-calculating-p-lz" title="Permalink to this headline">#</a></h3>
 <p>The upper state has a largely flat potential at large NA-I separation but the ionic potential has a Coulombic shape <span class="math notranslate nohighlight">\(\sim e^2/(4\pi\epsilon_0 R)\)</span> where <span class="math notranslate nohighlight">\(\epsilon_0\)</span> is the permittivity of free space. The difference in slopes thus depends on the ionic potential alone and at the crossing point <span class="math notranslate nohighlight">\(r_c=0.693\)</span> nm,</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \frac{dE}{dR}=\bigg|\frac{e^2}{4\pi\epsilon_0 r_c^2}\bigg|= 4.84\cdot10^{-10}\, \text{, J/m}\]</div>

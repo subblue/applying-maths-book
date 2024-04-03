@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>1 Series, averages, partition functions, DNA melting, atom entropy &#8212; Applying Maths in the Chemical &amp; Biomolecular Sciences</title>
+    <title>1 Series, averages, waves, partition functions, DNA melting, atom entropy &#8212; Applying Maths in the Chemical &amp; Biomolecular Sciences</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -51,6 +51,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -139,7 +141,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-1/chapter1-B.html">
-     5 Trig, hyperbolic and inverse functions, waves, polar coordinates &amp; factorials
+     5 Trig, hyperbolic and inverse functions, waves, polar coordinates,  factorials
     </a>
    </li>
    <li class="toctree-l2">
@@ -471,7 +473,7 @@ const thebe_selector_output = ".output, .cell_output"
   <ul class="current">
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     1 Series, averages, partition functions, DNA melting, atom entropy
+     1 Series, averages, waves, partition functions, DNA melting, atom entropy
     </a>
    </li>
    <li class="toctree-l2">
@@ -1519,10 +1521,22 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#summation-of-waves">
    1.2 Summation of waves
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#mode-locked-lasers">
+     Mode-locked lasers.
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#diffraction">
    1.3 Diffraction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#average-concentration-from-the-time-course-of-drug-action">
+   1.4  Average concentration from the time course of drug action
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -1589,7 +1603,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>1 Series, averages, partition functions, DNA melting, atom entropy</h1>
+                <h1>1 Series, averages, waves, partition functions, DNA melting, atom entropy</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -1608,10 +1622,22 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#summation-of-waves">
    1.2 Summation of waves
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#mode-locked-lasers">
+     Mode-locked lasers.
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#diffraction">
    1.3 Diffraction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#average-concentration-from-the-time-course-of-drug-action">
+   1.4  Average concentration from the time course of drug action
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -1679,8 +1705,8 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="series-averages-partition-functions-dna-melting-atom-entropy">
-<h1>1 Series, averages, partition functions, DNA melting, atom entropy<a class="headerlink" href="#series-averages-partition-functions-dna-melting-atom-entropy" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="series-averages-waves-partition-functions-dna-melting-atom-entropy">
+<h1>1 Series, averages, waves, partition functions, DNA melting, atom entropy<a class="headerlink" href="#series-averages-waves-partition-functions-dna-melting-atom-entropy" title="Permalink to this headline">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import all python add-ons etc that will be needed later on</span>
@@ -1716,14 +1742,14 @@ summed to form a function. The power series</p>
 (1-x)S_n&amp;=(1+x+x^2 +x^3 +x^4 +\cdots+x^N)-(x+x^2 +x^3 +x^4 +\cdots+x^{N+1}) \\&amp;=(1-x^{N+1})\end{align}\end{split}\]</div>
 <p>and the summation is</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle \sum_{n=0}^N x^n=\frac{1-x^{N+1}}{1-x}\]</div>
+\[\displaystyle \sum_{n=0}^N x^n=\frac{1-x^{N+1}}{1-x}\qquad\tag{2a}\]</div>
 <p>Taken to infinity the summation becomes</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle\sum_{n=0}^\infty x^n = \frac{1}{1-x }  \qquad\tag{2} \]</div>
+\[\displaystyle\sum_{n=0}^\infty x^n = \frac{1}{1-x }  \qquad\tag{2b} \]</div>
 <p>but only if <span class="math notranslate nohighlight">\(-1\lt x\lt 1\)</span>.</p>
-<p>If the summation starts at <span class="math notranslate nohighlight">\(m&lt;N\)</span> then</p>
+<p>If the summation starts at <span class="math notranslate nohighlight">\(1\)</span> then</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle \sum_{n=1}^N x^n=\frac{x^m-x^{N+1}}{1-x}\]</div>
+\[\displaystyle \sum_{n=1}^N x^n=\frac{x(1-x^N)}{1-x}\qquad\tag{2c}\]</div>
 <p>The function  <span class="math notranslate nohighlight">\(f(x)  = 1/(1-x) \)</span> (eqn. 2) can be represented by the polynomial series equation (1), again this is only true if <span class="math notranslate nohighlight">\(-1\, x \, \lt 1\)</span>. The polynomial is calculated as</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle f(0) = 1, \quad f(1/2) = 1 + 1/2 + 1/4 + 1/8 + \cdots\]</div>
@@ -1745,16 +1771,34 @@ summed to form a function. The power series</p>
 \[\displaystyle S = \frac{e^{-i\omega(N+1/2) t} - e^{i\omega (N+1/2)t}}{e^{-i\omega t/2}-e^{+i\omega t/2}}\]</div>
 <p>and using the definition of a sine in terms of exponentials <span class="math notranslate nohighlight">\(\sin(x)=(e^{ix}-e^{-ix})/2i\)</span> gives</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle S=\frac{\sin((N+1/2)\omega t)}{\sin(\omega t/2)}\]</div>
+\[\displaystyle S=\frac{\sin\big((N+1/2)\omega t\big)}{\sin(\omega t/2)}\qquad \tag{2d}\]</div>
 <p>which is a series of spikes separated by <span class="math notranslate nohighlight">\(2\pi/\omega\)</span>, see fig. 21b chapter 9 (Fourier transforms).</p>
+<section id="mode-locked-lasers">
+<h3>Mode-locked lasers.<a class="headerlink" href="#mode-locked-lasers" title="Permalink to this headline">#</a></h3>
+<p>A mode-locked laser is one that produces a continuous train of short laser pulses, these can be very short indeed, just a few femtoseconds, for example <span class="math notranslate nohighlight">\(20\cdot10^{-15}\)</span> seconds is quite easily obtained from a Ti-sapphire laser. In these lasers Ti ions are doped into <span class="math notranslate nohighlight">\(\mathrm{Al_2O_3}\)</span> (sapphire) crystals. The short pulses are possible because the Ti ions are in a wide variety of environments so that their emission spectrum is wide. The connection between pulse width and energy(frequency) spread is <span class="math notranslate nohighlight">\(\Delta t \sim k/\Delta \nu\)</span> where <span class="math notranslate nohighlight">\(k\)</span> is a constant of order of unity. (The value of <span class="math notranslate nohighlight">\(k\)</span> depends on the shape of the laser pulse, 0.44 for a gaussian shaped (transform limited) pulse). Thus a gas laser with a narrow atomic emission line can only produce pulse of <span class="math notranslate nohighlight">\(\approx 0.1\)</span> ns but a Ti sapphire laser with a fwhm of <span class="math notranslate nohighlight">\(\sim 700 \to 900\)</span> nanometres which is a frequency spread of <span class="math notranslate nohighlight">\(\Delta \nu \approx 3175\,\mathrm{cm^{-1}}\)</span> can potentially produce a pulse of <span class="math notranslate nohighlight">\(\Delta t = 10\)</span> fs duration.</p>
+<p>Suppose that the laser is running in a continuous way (continuous wave or cw), in this case the phases of the waves is random. This means that the standing waves at each of many wavelengths that exist in the cavity are oscillating independently of one another. To make a pulse these modes have all to oscillate together, i.e. in phase with one another, i.e. these numerous mode must be locked together. Mode-locking can be produced in a variety of ways but this always involves modifying the ‘gain’ in the laser cavity, where ‘gain’ means the amplification of the light.</p>
+<p>If the the laser cavity is perturbed in some way it is possible for the most intense part of the circulating light to produce more gain at the expense of the less intense parts. These more intense modes will then become more intense and so on, and eventually become locked simply because these are the only ones left with any amplitude. The result is that a pulse moves end to end in the cavity with a small amount of this being lost through the output coupler mirror each round trip and so produces a train of pulses. Each pulse is separated by the round trip time <span class="math notranslate nohighlight">\(2L/c\)</span> seconds from its neighbour, where <span class="math notranslate nohighlight">\(L\)</span> is the path-length in the laser and <span class="math notranslate nohighlight">\(c\)</span> the speed of light, thus for a <span class="math notranslate nohighlight">\(1.5\)</span> m cavity pulses are produced <span class="math notranslate nohighlight">\(10\)</span> ns apart. The perturbation to start mode-locking can be in the form on an acoustic modulator inside the cavity, a saturable absorber or in the case of Ti-sapphire lasers by tapping one mirror. This minor motion causes the gain to oscillate and so a pulse is formed as the most intense part of this stimulates more photons and so on to form a pulse.</p>
+<p>The total electric field of the radiation inside the cavity has very many modes, these are called <em>longitudinal</em> modes (Svelto, 1982). Such a mode is a wave that that has an integer number <span class="math notranslate nohighlight">\(n\)</span> of half wavelengths and so fits exactly into the cavity. Not all wavelengths will do this and so do not exist in the laser output. At a wavelength <span class="math notranslate nohighlight">\(\lambda_n\)</span> the condition is <span class="math notranslate nohighlight">\(n\lambda_n/2 = L\)</span>. However, at a slightly different wavelength <span class="math notranslate nohighlight">\((n+1)\lambda_{n+1}=2L\)</span> is also true. The typical length for a mode-locked laser is <span class="math notranslate nohighlight">\(1.5\)</span> m and if the wavelength is <span class="math notranslate nohighlight">\(800\)</span> nm then <span class="math notranslate nohighlight">\(n=3750000\)</span> making the next mode at a wavelength of <span class="math notranslate nohighlight">\(3/3750001= 799.99978\)</span> nm thus these modes are extremely close in wavelength, and consequently there are a vast number of modes making up the laser pulse. Instead of calculating the change in wavelength, if frequency is used the  separation of the modes is <span class="math notranslate nohighlight">\(\Delta \nu=c/2L\)</span> Hz or <span class="math notranslate nohighlight">\(\tau=2L/c\)</span> seconds. The pulse moving round the cavity means that the phase of these modes is locked together and it is this effect that makes the pulse; random phases of sine waves would cancel one another out, see fig 18 in section 5.7 of this chapter.</p>
+<p>To calculate the laser output we suppose that all the longitudinal modes are of equal intensity <span class="math notranslate nohighlight">\(E_0\)</span> and the phase difference between two consecutive modes is fixed and equal to <span class="math notranslate nohighlight">\(\varphi\)</span>, the total electric field of the radiation is the sum of all the longitudinal modes which is,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle E(t)=E_0\sum_{j=-n}^n \exp\big(i(\omega_0+j\Delta \omega)t+j\varphi\big)\]</div>
+<p>where <span class="math notranslate nohighlight">\(\omega_0\)</span> is the frequency of the central mode, which we give a phase of zero, and <span class="math notranslate nohighlight">\(\Delta \omega\)</span> the frequency difference between two adjacent modes and is <span class="math notranslate nohighlight">\(\Delta\omega =\pi c/L\)</span>. Note that <span class="math notranslate nohighlight">\(\omega=2\pi \nu\)</span>. This summation is closely related to that leading to eqn. 2d and is</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin{align}E(t)&amp; =A(t)e^{i\omega_0 t}\\A(t)&amp;=E_0
+\frac{\sin\big((2N+1)(\Delta\omega t+\varphi)/2\big)}{\sin\big(( \Delta\omega t+\varphi)/2\big)}\end{align}\end{split}\]</div>
+<p>The intensity measured on a photodiode or other ‘square law’ detector is <span class="math notranslate nohighlight">\(E(t)E^*(t)=A(t)^2\)</span> where the <span class="math notranslate nohighlight">\(^*\)</span> is the complex conjugate and some pulses are shown in the figure. The sine terms ensure that the pulse repeats itself at intervals of <span class="math notranslate nohighlight">\(\tau=2L/c\)</span>. The pulse width is <span class="math notranslate nohighlight">\(\displaystyle \Delta \tau \approx \frac{2\pi}{(2n+1)\Delta \omega}\)</span> which shows that a large number of oscillating modes, and hence a broad emission spectrum, are needed to produce a short pulse.</p>
+<p><img alt="Drawing" src="../_images/series-fig00a.png" /></p>
+<p>fig 1. Mode-locked laser pulses, calculated as the square of the amplitude of the electric field, ten modes were used in the calculation each with equal amplitude.</p>
 </section>
+</section>
+<hr class="docutils" />
 <section id="diffraction">
 <h2>1.3 Diffraction<a class="headerlink" href="#diffraction" title="Permalink to this headline">#</a></h2>
-<p>Suppose that there is a line of identical oscillators each emitting waves in the arrangement of figure 0. These could be a row of slits in a transmission grating or reflective strips in a reflection grating but in either case the sources are all in phase and emit over all angles. Thy could also be water waves or scattered off atoms by x-rays. If we observe at some distant point, a distance many times larger than the grating period <span class="math notranslate nohighlight">\(d\)</span>, and at an angle <span class="math notranslate nohighlight">\(theta\)</span> we would like to know how the intensity of the summed waves varies as <span class="math notranslate nohighlight">\(theta\)</span> is changed. At some angles the waves will be in phase with one another and so produce a wave of maximum amplitude, less so at another angle and at yet other angles be completely out of phase. Thus we expect to repeatedly see bright and dark regions as the angle is changed.</p>
+<p>Suppose that there is a line of identical oscillators each emitting waves in the arrangement of figure 0. These could be a row of slits in a transmission grating or reflective strips in a reflection grating but in either case the sources are all in phase and emit over all angles. Thy could also be water waves or scattered off atoms by x-rays. If we observe at some distant point, a distance many times larger than the grating period <span class="math notranslate nohighlight">\(d\)</span>, and at an angle <span class="math notranslate nohighlight">\(theta\)</span> we would like to know how the intensity of the summed waves varies as <span class="math notranslate nohighlight">\(\theta\)</span> is changed. At some angles the waves will be in phase with one another and so produce a wave of maximum amplitude, less so at another angle and at yet other angles be completely out of phase. Thus we expect to repeatedly see bright and dark regions as the angle is changed.</p>
 <p>The calculation to do this means adding up the path lengths from each emitter and seeing what the total path is. The total number of wavelengths does not matter just what the surplus over a whole number of waves is, as this determines the phase and hence amplitude.</p>
-<p>Using figure 0, the difference in path-length between <span class="math notranslate nohighlight">\(r_1\)</span> and <span class="math notranslate nohighlight">\(r_0\)</span> is <span class="math notranslate nohighlight">\(r_1-r_0=\delta\)</span> and at the angle drawn <span class="math notranslate nohighlight">\(2\delta=\lambda \)</span>. The distance between <span class="math notranslate nohighlight">\(r_2-r_1=2\delta\)</span> and so on thus <span class="math notranslate nohighlight">\(n\delta=r_n-r_0\)</span>.</p>
+<p>Using figure 1a, the difference in path-length between <span class="math notranslate nohighlight">\(r_1\)</span> and <span class="math notranslate nohighlight">\(r_0\)</span> is <span class="math notranslate nohighlight">\(r_1-r_0=\delta\)</span> and at the angle drawn <span class="math notranslate nohighlight">\(2\delta=\lambda \)</span>. The distance between <span class="math notranslate nohighlight">\(r_2-r_1=2\delta\)</span> and so on thus <span class="math notranslate nohighlight">\(n\delta=r_n-r_0\)</span>.</p>
 <p><img alt="Drawing" src="../_images/series-fig0.png" /></p>
-<p>Figure 0. An array of <span class="math notranslate nohighlight">\(N\)</span> coherent oscillators separated by spacing <span class="math notranslate nohighlight">\(d\)</span>. The path difference measured from the first oscillator is <span class="math notranslate nohighlight">\(n\delta\)</span> where <span class="math notranslate nohighlight">\(n=0,1\cdots N-1\)</span>. At the angle shown <span class="math notranslate nohighlight">\(2\delta =\lambda\)</span> where <span class="math notranslate nohighlight">\(\lambda\)</span> is the wavelength.</p>
+<p>Figure 1a. An array of <span class="math notranslate nohighlight">\(N\)</span> coherent oscillators separated by spacing <span class="math notranslate nohighlight">\(d\)</span>. The path difference measured from the first oscillator is <span class="math notranslate nohighlight">\(n\delta\)</span> where <span class="math notranslate nohighlight">\(n=0,1\cdots N-1\)</span>. At the angle shown <span class="math notranslate nohighlight">\(2\delta =\lambda\)</span> where <span class="math notranslate nohighlight">\(\lambda\)</span> is the wavelength.</p>
 <hr class="docutils" />
 <p>The general form is a wave is <span class="math notranslate nohighlight">\(e^{i(kr-\omega t)}\)</span> where <span class="math notranslate nohighlight">\(\omega\)</span> is the frequency and <span class="math notranslate nohighlight">\(k=2\pi/\lambda\)</span> is the wavevector. If all the emitters have the same amplitude then the total wave is</p>
 <div class="math notranslate nohighlight">
@@ -1783,16 +1827,50 @@ summed to form a function. The power series</p>
 \[\displaystyle \delta = d\sin(\theta)\]</div>
 <p>then the intensity becomes</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle I=I_0\frac{1-\cos(Nkd\sin(\theta))}{1-\cos(kd\sin(\theta))}\]</div>
+\[\displaystyle I=I_0\frac{1-\cos\big(Nkd\sin(\theta)\big)}{1-\cos\big(kd\sin(\theta)\big)}\]</div>
 <p>and has maxima at <span class="math notranslate nohighlight">\(\theta=0,\pm \pi, \pm 2\pi\cdots\)</span>.</p>
 <p>This last equation is more often put into a sine form using the identity <span class="math notranslate nohighlight">\(1-\cos(x)=2\sin^2(x/2)\)</span> which produces</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle I=I_0\frac{\sin^2(Nkd\sin(\theta)/2)}{\sin^2(kd\sin(\theta)/2)}\]</div>
+\[\displaystyle I=I_0\frac{\sin^2\big(Nkd\sin(\theta)/2\big)}{\sin^2\big(kd\sin(\theta)/2\big)}\qquad \tag{2e}\]</div>
 <p>which is a <em>sinc</em> function, i.e. a central lobe plus decreasing oscillations to either side.</p>
+</section>
+<section id="average-concentration-from-the-time-course-of-drug-action">
+<h2>1.4  Average concentration from the time course of drug action<a class="headerlink" href="#average-concentration-from-the-time-course-of-drug-action" title="Permalink to this headline">#</a></h2>
+<p>When an antibiotic is administered the course normally lasts for several days, typically with tablets taken <span class="math notranslate nohighlight">\(2\)</span> or <span class="math notranslate nohighlight">\(3\)</span> times daily. The medication has to enter the blood stream to be dispersed to other organs, then acts on its target site and from here or from the blood it is excreted. Ideally, when taken the drug’s concentration rises rapidly compared to its removal and thus gradually decreases in concentration as time proceeds. It rises rapidly again with each dose taken. The concentration vs time therefore has a saw-tooth profile whose <em>average</em> value rises initially then reaches a steady value. An oscillating steady value may be reached when the amount decayed  balances the amount added in the dose. If the time between doses is to large, the steady state can never be reached in a sensible amount of time. Conversely, if the time between doses is too short the accumulated amount may become far too large to be a safe dose. An alternative way of calculating the time profile is given in Chapter 9-7.3 (Fourier Transforms).</p>
+<p>Typically a two compartment model is used to describe the kinetics involved. This can be represented as</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin {align}\overset{k_0}\longrightarrow &amp; A\overset{k_{12},k_{21}}\rightleftharpoons B \\ &amp; \downarrow k_3\end{align}\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(A\)</span> represents blood and <span class="math notranslate nohighlight">\(B\)</span> the target site for the drug. Clearly this is a complicated kinetic scheme and which can be solved by matrix methods described in chapter 10. When multiple doses are given the algebra becomes extremely complicated, however, if we concentrate just on the points at which the medication is administered the maximum, minimum and average dosage can be found using some of the series just described. To make the equations simpler we shall ignore species B, and suppose that species A is instantaneously populated, such as by intra-venous injection, and further that A decays by first order kinetics. These are all rather drastic simplifications but will serve, nevertheless, to illustrate the nature of what actually happens. The time profile is shown in figure 0a.</p>
+<p><img alt="Drawing" src="../_images/series-fig0a.png" /></p>
+<p>Fig. 1b. The concentration profile of a drug as more doses are taken at intervals <span class="math notranslate nohighlight">\(\tau\)</span>. It is assumed that the uptake of the drug is effectively instantaneous (say by intra-venous injection) and is removed from the body by a first -order process. (i.e. by exponential decay). The points <span class="math notranslate nohighlight">\(a_1\cdots\)</span> and <span class="math notranslate nohighlight">\(b_1\cdots\)</span>  are used to calculate the steady state maximum/minimum and average concentration. The lower curve shows the decay from the first dose. It is present over the whole time range as is that from every other dose. These are not shown for clarity. The dots show the average concentration at the point of each new dose,  the short horizontal lines the maximum and minimum amounts as calculated below <span class="math notranslate nohighlight">\(c_{a_N},c_{b_N}\)</span>. In plotting this figure <span class="math notranslate nohighlight">\(\tau =1\)</span> and <span class="math notranslate nohighlight">\(k=1/2\)</span>.</p>
+<hr class="docutils" />
+<p>The time between taking the drug is constant at <span class="math notranslate nohighlight">\(\tau\)</span> and we let it decay away with rate constant <span class="math notranslate nohighlight">\(k\)</span>. The decay is shown in fig 1b as the lower grey line. The same decay occurs, of course, from every dose and so adds into the total as time proceeds. Calculating the whole time profile is rather complicated and needs the use of the Heaviside function (a step function) introduced at each dosage point. (The Heaviside function prevents the exponential terms becoming <span class="math notranslate nohighlight">\(e^{+k(t-t_a)}\)</span> when <span class="math notranslate nohighlight">\(t_a \gt t\)</span> rather than decaying as <span class="math notranslate nohighlight">\(e^{-k(t-t_a)}\)</span>).</p>
+<p>If each dose is <span class="math notranslate nohighlight">\(c_0\)</span> then first dose decays as <span class="math notranslate nohighlight">\(c=c_0e^{-kt}\)</span>, and at time <span class="math notranslate nohighlight">\(\tau\)</span> (point <span class="math notranslate nohighlight">\(a_1\)</span> in the figure) the amount present is</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{c_{a_1}}{c_0}=e^{-k\tau}\]</div>
+<p>and at point <span class="math notranslate nohighlight">\(b_1\)</span> as an amount <span class="math notranslate nohighlight">\(c_0\)</span> has been added giving</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{c_{b_1}}{c_0} = 1+ e^{-k\tau}\]</div>
+<p>and at points <span class="math notranslate nohighlight">\(a_2\)</span> at time <span class="math notranslate nohighlight">\(2\tau\)</span>, another <span class="math notranslate nohighlight">\(e^{-k\tau}\)</span> of that present is used up. An amount <span class="math notranslate nohighlight">\(c_0\)</span> is again added to give point <span class="math notranslate nohighlight">\(b_2\)</span> where,</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{c_{a_2}}{c_0} = (1+ e^{-k\tau})e^{-k\tau},\qquad \frac{c_{b_2}}{c_0} =1+ (1+ e^{-k\tau})e^{-k\tau}\]</div>
+<p>We can continue this process and it becomes clear that the upper points (<span class="math notranslate nohighlight">\(b_1\cdots\)</span> ) have the form</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{c_{b_N}}{c_0}=1+e^{-k\tau}+e^{-2k\tau}+e^{-3k\tau}+\cdots= \sum_{n=0}^N e^{-nk\tau}\]</div>
+<p>and the lower points (<span class="math notranslate nohighlight">\(a_n\)</span>) have the form</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{c_{a_N}}{c_0}=e^{-k\tau}+e^{-2k\tau}+e^{-3k\tau}+\cdots= \sum_{n=1}^N e^{-nk\tau}\]</div>
+<p>where the summation starts at <span class="math notranslate nohighlight">\(n=1\)</span>. Using equations (2) the amounts after <span class="math notranslate nohighlight">\(N\)</span> doses at time points <span class="math notranslate nohighlight">\(N\tau\)</span> are</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{c_{a_N}}{c_0}=\frac{e^{-k\tau}(1-e^{-k\tau N})}{1-e^{-k\tau}},\qquad \frac{c_{b_N}}{c_0}=\frac{1-e^{-k\tau (N+1)}}{1-e^{-k\tau}}\qquad\tag{2f}\]</div>
+<p>from which the average dose can be calculated as</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{c_{av}}{c_0}= \frac{1+e^{-k\tau}-2e^{-k\tau(N+1)}}{2(1-e^{-k\tau})} \qquad\tag{2g}\]</div>
+<p>and as <span class="math notranslate nohighlight">\(k\tau\)</span> is a constant the steady state is found when <span class="math notranslate nohighlight">\(e^{-k\tau (N+1)} \ll e^{-k\tau}\)</span> which happens when <span class="math notranslate nohighlight">\(N\)</span> is large enough so that <span class="math notranslate nohighlight">\(e^{-k\tau N} \ll 1\)</span>. In the figure above <span class="math notranslate nohighlight">\(k\tau =1/2\)</span> so that when <span class="math notranslate nohighlight">\(N=6\)</span>, <span class="math notranslate nohighlight">\(e^{-k\tau N} \approx 0.05\)</span> and as can be seen in the figure, when this is the case steady-state is almost reached.</p>
 </section>
 <section id="making-new-series">
 <h2>2 Making new series<a class="headerlink" href="#making-new-series" title="Permalink to this headline">#</a></h2>
-<p><strong>(i)</strong> New series can often be made from existing ones. Suppose each term in the series of <span class="math notranslate nohighlight">\(f(x)=1+x+x^2+\cdots\)</span> is differentiated, then using eqn 2,</p>
+<p><strong>(i)</strong> New series can often be made from existing ones. Suppose each term in the series of <span class="math notranslate nohighlight">\(f(x)=1+x+x^2+\cdots\)</span> is differentiated, then using eqn. 2,</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle f^′(x)= \frac{1}{(1 - x)^2} =1+2x+3x^2 +4x^3 +\cdots+nx^{n-1} +\cdots  \qquad\tag{3}\]</div>
 <p>and if <span class="math notranslate nohighlight">\(| \,x\, | \lt 1\)</span> this is the expansion of <span class="math notranslate nohighlight">\( 1/(1 - x)^2\)</span>, which can be written as</p>
@@ -1829,7 +1907,7 @@ summed to form a function. The power series</p>
 \sum_0^\infty\limits n(1-x)x^{n-1} =\displaystyle\frac{1}{1-x},\quad |x|&lt;1\\
 \hline
 \end{array}\end{split}\]</div>
-<p>Figure 1, below, shows the function of equation (3) and several approximations which are ever longer series with increasing powers of <span class="math notranslate nohighlight">\(x\)</span>. Expanding the series as far as <span class="math notranslate nohighlight">\(x^6\)</span> only matches the <span class="math notranslate nohighlight">\(f(x)\)</span> well up to about <span class="math notranslate nohighlight">\(x = 0.5\)</span> indicating the rather obvious fact that that many terms may be needed to accurately reproduce a function. The plot also shows haw a function may be approximated by its first couple of terms when the variable <span class="math notranslate nohighlight">\(x\)</span> is very small.  This is a very common procedure to account for a perturbation.</p>
+<p>Figure 1c, below, shows the function of equation (3) and several approximations which are ever longer series with increasing powers of <span class="math notranslate nohighlight">\(x\)</span>. Expanding the series as far as <span class="math notranslate nohighlight">\(x^6\)</span> only matches the <span class="math notranslate nohighlight">\(f(x)\)</span> well up to about <span class="math notranslate nohighlight">\(x = 0.5\)</span> indicating the rather obvious fact that that many terms may be needed to accurately reproduce a function. The plot also shows haw a function may be approximated by its first couple of terms when the variable <span class="math notranslate nohighlight">\(x\)</span> is very small.  This is a very common procedure to account for a perturbation.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># power series calculation</span>
@@ -1870,10 +1948,10 @@ summed to form a function. The power series</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/chapter-5-A_4_0.png" src="../_images/chapter-5-A_4_0.png" />
+<img alt="../_images/chapter-5-A_5_0.png" src="../_images/chapter-5-A_5_0.png" />
 </div>
 </div>
-<p>Figure 1. The function <span class="math notranslate nohighlight">\(1/(1-x)^2 \)</span> (top black line) and its series approximations  <span class="math notranslate nohighlight">\(\Sigma_n nx^{n-1}\)</span> with <span class="math notranslate nohighlight">\(n\)</span> = 1, 2, <span class="math notranslate nohighlight">\(\cdots\)</span>.</p>
+<p>Figure 1c. The function <span class="math notranslate nohighlight">\(1/(1-x)^2 \)</span> (top black line) and its series approximations  <span class="math notranslate nohighlight">\(\Sigma_n nx^{n-1}\)</span> with <span class="math notranslate nohighlight">\(n\)</span> = 1, 2, <span class="math notranslate nohighlight">\(\cdots\)</span>.</p>
 </section>
 <hr class="docutils" />
 <section id="convergence">
@@ -1932,20 +2010,22 @@ In the ratio test, the ratio of any term <span class="math notranslate nohighlig
 </section>
 <section id="polymers">
 <h2>4.2 Polymers<a class="headerlink" href="#polymers" title="Permalink to this headline">#</a></h2>
-<p>In synthesizing polymers by radical or condensation polymerisation, the random nature of the chemistry that adds monomers to an already growing chain dictates that a range of polymer lengths is normally produced; the polymer is poly-disperse. Two different averages are frequently taken to characterize the polymer; one is the number average mass, the other the weight average mass.</p>
+<p>In synthesizing polymers by radical or condensation polymerisation, the random nature of the chemistry that adds monomers to an already growing chain dictates that a range of polymer lengths is normally produced; the polymer is poly-disperse. Two different averages are frequently taken to characterize the polymer; one is the number average mass, the other the weight average mass. The reason for having two averages is two fold. Since there in not single polymer length (or mass) but a distribution of these measures of the shape/width of this distribution is needed to characterise the polymer. Secondly the number average is measured by colligative properties such as osmosis, whereas size/mass is measured by light scattering.</p>
 <p>The number average mass <span class="math notranslate nohighlight">\(m_n\)</span> is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \langle m_n \rangle = \frac{\sum_k m_kp(n_k)}{\sum_k p(n_k)} = \frac{n_1m_1+n_2m_2 +\cdots }{n_1+n_2+\cdots} \qquad\tag{9}\]</div>
-<p>where <span class="math notranslate nohighlight">\(p\)</span> is the distribution of the number of polymers of length <span class="math notranslate nohighlight">\(k\)</span> and <span class="math notranslate nohighlight">\(m_k\)</span> is the mass of each polymer <span class="math notranslate nohighlight">\(k\)</span>. The sum  <span class="math notranslate nohighlight">\(\sum p(n_k) = N\)</span>  the total number of molecules.</p>
+<p>where <span class="math notranslate nohighlight">\(p\)</span> is the distribution of the number of polymers of length <span class="math notranslate nohighlight">\(k\)</span> and <span class="math notranslate nohighlight">\(m_k\)</span> is the mass of each polymer <span class="math notranslate nohighlight">\(k\)</span>. The sum  <span class="math notranslate nohighlight">\(\sum p(n_k) = N\)</span>  the total number of molecules. This average can also be written in terms of the weight as</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \langle m_n \rangle =  \frac{\sum_k w_k}{\sum_k (w_k/m_k)} \]</div>
 <p>The weight (mass)average mass is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \langle m_w \rangle = \frac{\sum_k \limits m_k\cdot m_kp(n_k)}{\sum_k\limits m_kp(n_k)} = \frac{n_1m_1^2+n_2m_2^2 +\cdots }{n_1m_1+n_2m_2+\cdots} \qquad\tag{10}\]</div>
-<p>If the number average and mass (weight) average is the same, the polymer is mono-disperse, however, this is not usually the case. To illustrate that these two averages are different, suppose the number distribution, which may not necessarily relate to a particular polymer but has approximately the right shape, is <span class="math notranslate nohighlight">\(\displaystyle p(n_k) = n_ke^{-an_k}\)</span> where <span class="math notranslate nohighlight">\(a\)</span> is a positive constant roughly describing the width of the distribution. If <span class="math notranslate nohighlight">\(n_k = k\)</span> then, by definition, the number of moles of polymers with length <span class="math notranslate nohighlight">\(1\)</span> is <span class="math notranslate nohighlight">\(1\)</span> and the number of length <span class="math notranslate nohighlight">\(2\)</span> is <span class="math notranslate nohighlight">\(2\)</span> and so forth. The mass of the polymer with <span class="math notranslate nohighlight">\(k\)</span> segments is <span class="math notranslate nohighlight">\(m_k = km_0\)</span>, if <span class="math notranslate nohighlight">\(m_0\)</span> is the mass of a mole of monomer units, then the number average, if <span class="math notranslate nohighlight">\(k\)</span> is taken to infinity, is</p>
+<p>Statistically <span class="math notranslate nohighlight">\(\langle m_n\rangle\)</span> is the first moment of the distribution <span class="math notranslate nohighlight">\(p\)</span>, but <span class="math notranslate nohighlight">\(\langle m_w\rangle\)</span> is the  ratio of the first and second moments.   If the number average and mass (weight) average is the same, the polymer is mono-disperse, however, this is not usually the case. To illustrate that these two averages are different, suppose the number distribution, which may not necessarily relate to a particular polymer but has approximately the right shape, is <span class="math notranslate nohighlight">\(\displaystyle p(n_k) = n_ke^{-an_k}\)</span> where <span class="math notranslate nohighlight">\(a\)</span> is a positive constant roughly describing the width of the distribution. If <span class="math notranslate nohighlight">\(n_k = k\)</span> then, by definition, the number of moles of polymers with length <span class="math notranslate nohighlight">\(1\)</span> is <span class="math notranslate nohighlight">\(1\)</span> and the number of length <span class="math notranslate nohighlight">\(2\)</span> is <span class="math notranslate nohighlight">\(2\)</span> and so forth. The mass of the polymer with <span class="math notranslate nohighlight">\(k\)</span> segments is <span class="math notranslate nohighlight">\(m_k = km_0\)</span>, if <span class="math notranslate nohighlight">\(m_0\)</span> is the mass of a mole of monomer units, then the number average, if <span class="math notranslate nohighlight">\(k\)</span> is taken to infinity, is</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle \langle m_n\rangle = m_0 \frac{\sum_{k=1}\limits n_k^2e^{-an_k}}{\sum_{k=1}\limits n_ke^{-an_k}} = m_0\frac{e^a+1}{e^a-1}\]</div>
+\[\displaystyle \langle m_n\rangle = m_0 \frac{\sum_{k=1}\limits k^2e^{-ak}}{\sum_{k=1}\limits ke^{-ak}} = m_0\frac{e^a+1}{e^a-1}\]</div>
 <p>In contrast the weight average is</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle \langle m_w\rangle = m_0 \frac{\sum_{k=1}\limits n_k^3e^{-an_k}}{\sum_{k=1}\limits n_k^2e^{-an_k}} = m_0\frac{4e^a+e^{2a}+1}{e^{2a}-1}\]</div>
+\[\displaystyle \langle m_w\rangle = m_0 \frac{\sum_{k=1}\limits k^3e^{-ak}}{\sum_{k=1}\limits k^2e^{-ak}} = m_0\frac{4e^a+e^{2a}+1}{e^{2a}-1}\]</div>
 <p>which is clearly not the same as <span class="math notranslate nohighlight">\(\langle m_n \rangle\)</span>. The two averages are approximately linear, for <span class="math notranslate nohighlight">\(a&lt;1\)</span>, if plotted on a log-log plot and have a negative slope, with <span class="math notranslate nohighlight">\(\langle m_w\rangle \gt \langle m_n\rangle\)</span>. When <span class="math notranslate nohighlight">\(a \gt 1\)</span> the two curves converge to a limiting value of <span class="math notranslate nohighlight">\(m_0\)</span>.</p>
 </section>
 <section id="sequence-repeats-in-dna">
@@ -1993,9 +2073,9 @@ In the ratio test, the ratio of any term <span class="math notranslate nohighlig
 </section>
 <section id="bond-rotation">
 <h2>5.1 Bond rotation<a class="headerlink" href="#bond-rotation" title="Permalink to this headline">#</a></h2>
-<p>The use of the word ‘particle’ is rather general, it might represent a molecule in a given vibrational or rotational energy level, a nuclear spin state in an NMR experiment, or the torsional energy of a restricted rotor as in the alkyl chain of hydrocarbons (Jackson 2006). In this example, consider butane, which has trans and gauche configurations as shown in figure 1a. These have different energies due to interactions between the protons on carbon <span class="math notranslate nohighlight">\(1\)</span> and <span class="math notranslate nohighlight">\(4\)</span> as bond C2 to C3 rotates.</p>
+<p>The use of the word ‘particle’ is rather general, it might represent a molecule in a given vibrational or rotational energy level, a nuclear spin state in an NMR experiment, or the torsional energy of a restricted rotor as in the alkyl chain of hydrocarbons (Jackson 2006). In this example, consider butane, which has trans and gauche configurations as shown in figure 1d. These have different energies due to interactions between the protons on carbon <span class="math notranslate nohighlight">\(1\)</span> and <span class="math notranslate nohighlight">\(4\)</span> as bond C2 to C3 rotates.</p>
 <p><img alt="Drawing" src="../_images/series-fig2a.png" /></p>
-<p>Figure 1a Bond angles in butane. The angles, <span class="math notranslate nohighlight">\(0,120,240\)</span> represent the position of <span class="math notranslate nohighlight">\(C_4\)</span>.</p>
+<p>Figure 1d Bond angles in butane. The angles, <span class="math notranslate nohighlight">\(0,120,240\)</span> represent the position of <span class="math notranslate nohighlight">\(C_4\)</span>.</p>
 <hr class="docutils" />
 <p>The energy of the trans state at <span class="math notranslate nohighlight">\(0^\text{o}\)</span> is taken as zero, <span class="math notranslate nohighlight">\(E_0 = 0\)</span>. The energy of the other two conformations, measured relative to this, have minima at <span class="math notranslate nohighlight">\(120^\text{o}\)</span> and <span class="math notranslate nohighlight">\(240^\text{o}\)</span> and are <span class="math notranslate nohighlight">\(E_{120}\)</span> and <span class="math notranslate nohighlight">\(E_{240}\)</span>. The partition function is <span class="math notranslate nohighlight">\(\displaystyle Z = 1 + e^{-E_{120}/ k_BT} + e^{-E_{240}/ k_BT}\)</span>. The probability of being in the trans state is <span class="math notranslate nohighlight">\(1/Z\)</span> and of being in the <span class="math notranslate nohighlight">\(120^\text{o}\)</span> gauche state is <span class="math notranslate nohighlight">\(\displaystyle e^{-E_{120}/k_BT}/Z\)</span> which is less than at <span class="math notranslate nohighlight">\(0^\text{o}\)</span> but changes with temperature. By symmetry, the energy of the <span class="math notranslate nohighlight">\(120\)</span> and <span class="math notranslate nohighlight">\(240\)</span> states are the same and the probability of being in either is <span class="math notranslate nohighlight">\(\displaystyle 2e^{-E_g / k_BT}/Z\)</span> where <span class="math notranslate nohighlight">\(E_g\)</span> is an abbreviation for <span class="math notranslate nohighlight">\(E_{120}\)</span> and <span class="math notranslate nohighlight">\(E_{240}\)</span>. These two levels are accidentally degenerate. Once the partition function has been found, the average energy follows easily because by definition <span class="math notranslate nohighlight">\(\langle E \rangle = \sum_i E_i p_i\)</span> then</p>
 <div class="math notranslate nohighlight">
@@ -2006,12 +2086,12 @@ In the ratio test, the ratio of any term <span class="math notranslate nohighlig
 <p>If the alkyl chain is longer then the probability of the final state being a trans or gauche configuration is multiplied by however many repeat units there are, the partition function becoming <span class="math notranslate nohighlight">\(Z^n\)</span> for <span class="math notranslate nohighlight">\(n\)</span> units.</p>
 <p>As an example, if <span class="math notranslate nohighlight">\(E_g /k_BT = 1\)</span>, which would be the case for a small barrier between trans to gauche or at a high temperature, then the partition function <span class="math notranslate nohighlight">\(Z = 1.736\)</span>. If there are <span class="math notranslate nohighlight">\(10\)</span> repeat units in an alkane then the chance of an all-trans chain is <span class="math notranslate nohighlight">\(1/Z^{10} = 0.004\)</span> compared to <span class="math notranslate nohighlight">\(0.58\)</span> for butane. If <span class="math notranslate nohighlight">\(E_g /k_BT\)</span> is larger, which it will be at a low temperature, then the probability of being in the all-trans state is almost one, even for a long alkyl chain because <span class="math notranslate nohighlight">\(Z \to 1\)</span> at a low temperature.</p>
 <p><img alt="Drawing" src="../_images/series-fig2b.png" /></p>
-<p>Figure 1b. Probability of an all trans chain vs the ratio <span class="math notranslate nohighlight">\(E_g/k_BT\)</span> for butane and then for a ten fold longer chain of butane like repeat units. Large <span class="math notranslate nohighlight">\(E_g/k_BT\)</span> corresponds to low temperature or small energy <span class="math notranslate nohighlight">\(E_g\)</span>.</p>
+<p>Figure 1e. Probability of an all trans chain vs the ratio <span class="math notranslate nohighlight">\(E_g/k_BT\)</span> for butane and then for a ten fold longer chain of butane like repeat units. Large <span class="math notranslate nohighlight">\(E_g/k_BT\)</span> corresponds to low temperature or small energy <span class="math notranslate nohighlight">\(E_g\)</span>.</p>
 </section>
 <hr class="docutils" />
 <section id="dna-melting-zipper-model">
 <h2>5.2 DNA melting: Zipper model<a class="headerlink" href="#dna-melting-zipper-model" title="Permalink to this headline">#</a></h2>
-<p>DNA can melt if the temperature is raised a little above room temperature, <span class="math notranslate nohighlight">\(60 \to 70^\text{o}\)</span>C would be typical depending on the composition. As a very simple model(see sketch) suppose that as the double stranded molecule unfolds the separated residues become free to move about on the backbone, with degeneracy <span class="math notranslate nohighlight">\(g\)</span>, but linked residues remain fixed in place. One end of the double stranded molecule is fixed thus the molecule can only unfold from the other. Link <span class="math notranslate nohighlight">\(n\)</span> can only open if all those before it are already open, i.e. links <span class="math notranslate nohighlight">\(n=0,1,2,\cdots, N-1\)</span> and the energy to do this is <span class="math notranslate nohighlight">\(\epsilon\)</span> so that <span class="math notranslate nohighlight">\(n\)</span> open links have energy <span class="math notranslate nohighlight">\(n\epsilon\)</span>. Closed links have energy zero and the energy needed to open a link other than that next to already open ones is infinite.  This model was first examined by C. Kittel Am. J. Physics, v37, p917, 1969.</p>
+<p>DNA can melt if the temperature is raised a little above room temperature, <span class="math notranslate nohighlight">\(60 \to 70^\text{o}\)</span>C would be typical depending on the composition. As a very simple model(see sketch) suppose that as the double stranded molecule unfolds the separated residues become free to move about on the backbone, with degeneracy <span class="math notranslate nohighlight">\(g\)</span>, but linked residues remain fixed in place. One end of the double stranded molecule is fixed thus the molecule can only unfold from the other. Link <span class="math notranslate nohighlight">\(n\)</span> can only open if all those before it are already open, i.e. links <span class="math notranslate nohighlight">\(n=0,1,2,\cdots, N-1\)</span> and the energy to do this is <span class="math notranslate nohighlight">\(\epsilon\)</span> so that <span class="math notranslate nohighlight">\(n\)</span> open links have energy <span class="math notranslate nohighlight">\(n\epsilon\)</span>. Closed links have energy zero and the energy needed to open a link other than that next to already open ones is infinite.  This model was first examined by C. Kittel, Am. J. Physics, v37, p917, 1969.</p>
 <p>To open <span class="math notranslate nohighlight">\(n\)</span> links requires energy <span class="math notranslate nohighlight">\(n\epsilon\)</span> and those open links have degeneracy <span class="math notranslate nohighlight">\(g^n\)</span>. The partition function (equation 11) is therefore</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle Z = \sum_{n=0}^{N-1} g^ne^{-n\epsilon/k_BT}  \]</div>
@@ -2020,7 +2100,7 @@ In the ratio test, the ratio of any term <span class="math notranslate nohighlig
 \[\displaystyle Z=\sum_{n=0}^{N-1} (gx)^n\]</div>
 <p>which is the summation of a geometric series <span class="math notranslate nohighlight">\(\sum_{i=0}^n r^i= (1-r^{n+1})/(1-r)\)</span> thus the partition function evaluates to</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle Z=\frac{1-(ge^{-\epsilon/k_BT})^N}{1-ge^{-\epsilon/k_BT}}\qquad\tag{12 a}\]</div>
+\[\displaystyle Z=\frac{1-(ge^{-\epsilon/k_BT})^N}{1-ge^{-\epsilon/k_BT}}\qquad\tag{12a}\]</div>
 <p>As the average energy is <span class="math notranslate nohighlight">\(\langle E\rangle = \epsilon \langle n\rangle\)</span> the number of open links can be found via <span class="math notranslate nohighlight">\(\langle e\rangle\)</span>. The relationship between average energy (in thermodynamic terms the internal energy <span class="math notranslate nohighlight">\(U\)</span>) and partition function is equation 8d, using <span class="math notranslate nohighlight">\(d\log(Z)\equiv dZ/Z\)</span></p>
 <div class="math notranslate nohighlight">
 \[ \displaystyle \langle E\rangle =\frac{k_BT^2}{Z} \frac{d Z}{dT}\]</div>
@@ -2039,15 +2119,15 @@ In the ratio test, the ratio of any term <span class="math notranslate nohighlig
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/chapter-5-A_8_0.png" src="../_images/chapter-5-A_8_0.png" />
+<img alt="../_images/chapter-5-A_10_0.png" src="../_images/chapter-5-A_10_0.png" />
 </div>
 </div>
 <p>which can be simplified by dividing common factors</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle \langle n\rangle = \frac{Ng^N}{g^N-e^{N\epsilon/k_BT}} -\frac{g}{g-e^{\epsilon/k_BT}}=\frac{N}{1-(e^{\epsilon/k_BT}/g)^N} -\frac{1}{1-e^{\epsilon/k_BT}/g}\qquad\tag{12 b}\]</div>
+\[\displaystyle \langle n\rangle = \frac{Ng^N}{g^N-e^{N\epsilon/k_BT}} -\frac{g}{g-e^{\epsilon/k_BT}}=\frac{N}{1-(e^{\epsilon/k_BT}/g)^N} -\frac{1}{1-e^{\epsilon/k_BT}/g}\qquad\tag{12b}\]</div>
 <p>whose behaviour is easier to see in a plot of <span class="math notranslate nohighlight">\(\langle n\rangle\)</span> <em>vs.</em> <span class="math notranslate nohighlight">\(\epsilon/k_BT\)</span>.</p>
 <p><img alt="Drawing" src="../_images/series-fig2c.png" /></p>
-<p>Figure 1c. Average length of free links in the zipper model <span class="math notranslate nohighlight">\(\langle n\rangle\)</span> <em>vs.</em> dimensionless energy <span class="math notranslate nohighlight">\(\epsilon/k_BT\)</span>. The vertical line is at <span class="math notranslate nohighlight">\(\ln(g)=\epsilon/k_BT\)</span>.</p>
+<p>Figure 1f. Average length of free links in the zipper model <span class="math notranslate nohighlight">\(\langle n\rangle\)</span> <em>vs.</em> dimensionless energy <span class="math notranslate nohighlight">\(\epsilon/k_BT\)</span>. The vertical line is at <span class="math notranslate nohighlight">\(\ln(g)=\epsilon/k_BT\)</span>.</p>
 <hr class="docutils" />
 <p>At low values of <span class="math notranslate nohighlight">\(\epsilon/k_BT\)</span>, which means at high temperature or zero energy to unfold, almost the whole zipper is unfolded, as intuition would suggest Conversely at large <span class="math notranslate nohighlight">\(\epsilon/k_BT\)</span>, low temperature or large unfolding energy almost all bonds are intact. The transition between the two is quite sharp and occurs at <span class="math notranslate nohighlight">\(\ln(g)=\epsilon/k_BT\)</span> as can be seen in equation 12b. The heat capacity which is <span class="math notranslate nohighlight">\(d\langle E\rangle/dT\)</span> shows a sharp peak at this value. This overall behaviour  somewhat unexpected, the model does not immediately suggest that a ‘phase transition’ should occur. In effect it means that either the zipper is closed or it is fully open and hardly ever in between.</p>
 </section>

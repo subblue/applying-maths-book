@@ -24,21 +24,39 @@ from sympy import *
 # 
 # We shall describe these quantities in terms of 'objects' and 'boxes' and let them variously apply to dice, playing cards, electrons, atoms, molecules, and energy levels as the context requires.
 # 
-# In genetics, probabilities are used when calculating the outcome from mixing genes through the generations. In physical science, statistical mechanics uses ideas based on placing particles into energy levels and from their distribution, partition functions can be calculated which in turn lead to thermodynamic qualities.
+# In genetics, probabilities are used when calculating the outcome from mixing genes through the generations. In physical science, statistical mechanics uses ideas based on placing particles into energy levels and from their distribution, partition functions can be calculated which in turn lead to thermodynamic quantities.
 # 
 # The probability or _chance_ of an event occurring, will be defined as the ratio of the number of successful outcomes to the total number of possible outcomes, and can only have values from $0$ to $1$. It is implicitly assumed that any one event is just as likely to occur as any other. A particular outcome is not therefore predictable; only that a certain fraction of times the expected result will occur if many trials are carried out. For instance, you would not expect to be able to throw a die so that a $1$ is always produced. One might obtain a $1$ on the first throw. If a $1$ is obtained on the second throw, this is surprising, but if on a third, this suggests, but does not prove, that the die might be biased because we expect a die to produce a $1$, or any of its other numbers, _on average_ only once in six throws. Probability theory allows the calculation of the exact chance of each possible outcome without having to do the experiment. Because the probability or chance of a successful event $p$, cannot be greater than $1$, the chance of failure is $q = 1 - p$.
 # 
 # ## 9.2 Permutations
 # 
-# A permutation is an _ordered_ arrangement of objects and if the order is changed then a new permutation is produced. The five letters A to E arranged as A B C D E form one permutation; A B C E D and A B E C D are others. If there are five objects then there are $5! = 5 \times 4 \times 3 \times 2 \times 1 = 120$ permutations. The proof is straightforward: the letter E can be put into five different positions. If D is now moved then it can be placed in four positions, C in three, and so forth; therefore, the number of permutations when all $n$ objects are chosen is $n(n - 1)(n - 2) \cdots 1$ which is $n!$. This can easily be a truly vast number, but if there are only three objects then there are only 3! = 6 ways of doing this which are ABC, ACB, CAB, BAC, BCA, CBA. The permutation of $n$ objects is written as
+# A permutation is an _ordered_ arrangement of objects and if the order is changed then a new permutation is produced. The five letters A to E arranged as A B C D E form one permutation; A B C E D and A B E C D are two others. It is implicitly assumed that the each number/letter/object is chosen with equal probability and there is an equal chance of filling any place in the list that is produced. Note that there are no repeated letters, or numbers (objects), in any list.
+# 
+# If there are five different objects ($n=5$) then there are $5! = 5 \times 4 \times 3 \times 2 \times 1 = 120$ permutations. The proof is straightforward: starting with five vacant places in a row, one letter, the letter E, for example, can be put into any one of five different places. There are now $n-1 = 4$ letters left and if D is now chosen then it can only be placed in four, i.e. $n-1$ different positions as E occupies one of them. This means that the first two numbers can be placed in $n(n-1)$ different ways. The third letter chosen can only be put into three ($n-2$) empty positions and so the first three numbers can be placed in $n(n-1)(n-2)$ different ways and so forth. The number of permutations when all $n$ objects are chosen is therefore the product of the numbers of ways in which to put the letters and this is $n(n - 1)(n - 2) \cdots 1= n!$. This can easily be a truly vast number, but if there are only three objects then there are only 3! = 6 ways of doing this which are ABC, ACB, CAB, BAC, BCA, CBA. The permutation of $n$ objects is written as
 # 
 # $$\displaystyle P(n, n) = n!$$
 # 
-# When only some of the objects are chosen, the permutations will be fewer. Suppose that either $p$ objects at a time are chosen out of $n$, or that $p$ objects are placed into $n$ boxes so that no more than one is in any box, then the number of ways of doing this _'p from n'_ calculation is
+# When only some number $p$ of the $n$ objects are chosen, the permutations will be fewer, we effectively stop before $n$ choices have been made. We saw above that if only two choices are made out of $n$ the number different choices is $n(n-1)$. Suppose that either $p$ objects at a time are chosen out of $n$, or that $p$ objects are placed into $n$ boxes so that no more than one is in any box, then the number of different ways of doing this _'p from n'_ calculation is
 # 
 # $$\displaystyle P(n, p) = n(n - 1)(n - 2) \cdots (n - p + 1) =\frac{n!}{(n-p)!}\qquad\tag{19}$$
 # 
-# Choosing any two letters, $p = 2$, from three, $n = 3$ produces 3!/1! = 6 permutations. For example, if the letters are ABC, then the six choices are AB, BA, AC, CA, BC, CB. Because each permutation is distinct, if we were to place them into groups or 'boxes' then only one arrangement goes into each box. When $n = p$, because $0! = 1$ this equation equals $P(n, n) = n!$. If each of the permutations is equally likely, then the probability of any one occurring is $1/P(n, p)$. Note also that the notation $P(n, p)$ is not universal and $_nP_p,\; ^nP_p$ or $P_p^n$ are also commonly used.
+# Choosing any two letters, $p = 2$, from three, $n = 3$ produces 3!/1! = 6 permutations. For example, if the letters are ABC, then the six choices are AB, BA, AC, CA, BC, CB. Because each permutation is distinct, if we were to place them into groups or 'boxes' then only one arrangement goes into each box. When $n = p$, because $0! = 1$ this equation equals $P(n, n) = n!$. If each of the permutations is equally likely, then the probability of any one occurring is $1/P(n, p)$. Finally, note also that the notation $P(n, p)$ is not universal and $_nP_p,\; ^nP_p$ or $P_p^n$ are also commonly used.
+# 
+# If the letter/number/object is removed after being put into a box, so that all boxes are empty, then there are always $n$ choices and so the total number of different ways becomes $n^p$ when there are $n$ boxes and only $p$ objects. Alternatively, if we imagine that the box is full of letters then in the first case there are $n$ choices to take the first letter out and $n-1$ for the second etc., but if the letter is replaced then there are $n$ each time making $n^p$ in total. 
+# 
+# 
+# ### **Permutation Examples**
+# 
+# **(a)** The number of permutations that can be made, each of 3 vowels long, from a, e, i, o, u is $\displaystyle P(5,3) = \frac{5!}{2!}=20$ 
+# 
+# **(b)** If five letters are chosen from the alphabet there will be $\displaystyle p(26,5)=\frac{26!}{21!}=7,893,600$ different ways of forming these groups.
+# 
+# **(c)** A six digit phone number, where all digits are different, is made up of the digits $0-9$ inclusive, thus there will only be $\displaystyle p(10,6)=\frac{10!}{4!}=151200$ different groups.
+# 
+# **(d)** How many integers are there between $10$ and $100$ ignoring those with the same two digits, i.e. $11,22$ etc? This can, of course, be worked out by simply adding up the integers but the number of them is also found from the number of groups of two *different* numbers out of the numbers $0-9$, which is $\displaystyle p(10,2)=\frac{10!}{8!}=90$. The similar problem of finding *all* positive three digit integers not containing any repeated digits is $\displaystyle p(10,3)=\frac{10!}{7!}=720$, much easier than trying to work it out by counting how many of each type there is.  
+# 
+# **(e)** In a race between twelve runners the number of ways that first, second and third places can be awarded is $\displaystyle p(12,3)=\frac{12!}{9!}=1320$.
+# 
 # 
 # ## 9.3 Permutation with groups of identical objects
 # 
@@ -46,9 +64,9 @@ from sympy import *
 # 
 # The identical grouping permutation can be stated more formally as the number of ways of selecting $n$ objects if these are in $r\; (\le n)$ groups of $m_1, m_2, m_3 \cdots m_r$ objects. The total of all $m_r$ objects must be $n$. The number of permutations with groups is
 # 
-# $$\displaystyle P_G = \frac{n!}{\prod_{i=1}^r m_i!}$$
+# $$\displaystyle P_G = \frac{n!}{m_1!m_2!\cdots}=\frac{n!}{\prod_{i=1}^r m_i!}$$
 # 
-# where the symbol $\prod$ indicates the product. This number is also the number of ways of placing $n$ distinguishable objects into $r$ distinguishable boxes so that boxes contain $m_1,\; m_2, \;m_3 \cdots m_i$ objects each, and each of the objects in any box is alike.
+# where the symbol $\prod$ indicates the product. This number is also the number of ways of placing $n$ distinguishable objects into $r$ distinguishable boxes so that boxes contain $m_1,\; m_2, \;m_3 \cdots m_i$ objects each, and each of the objects in any one box is alike.
 # 
 # The number of ways of arranging the amino acid residues of even a small protein is astronomically large, but countable. An active protein in a bee's sting is called mellitin. It is a protein with only 26 amino acids and which forms two short $\alpha$-helical regions, with a bend in between. Two such helices are seen in the crystal structure 2MLT.pdb in the RCSB data base (www.rcsb.org/pdb/home/home.do). 
 # 
@@ -64,11 +82,11 @@ from sympy import *
 
 # ## 9.4 Combinations
 # 
-# A combination is really a misnomer, because it is the number of ways of choosing $p$ distinguishable objects from a group of $n$ distinguishable objects, and the order of choosing these $p$ objects does not matter. If two letters from ABC are chosen, the number of combinations is three and the choices or combinations are AB $\equiv$ BA, AC  $\equiv$ CA, BC  $\equiv$ CB because the order does not matter. 
+# A combination is really a misnomer, because it is the number of ways of choosing $p$ distinguishable objects from a group of $n$ distinguishable objects, and the order of choosing these $p$ objects does not matter. If two letters from ABC are chosen, the number of combinations is three and the choices or combinations are AB $\equiv$ BA, AC  $\equiv$ CA, BC  $\equiv$ CB because the order does not matter. If there are five things we can take two of them in ten different ways. If the things are labelled A, B, C, D, E then the combinations of two at a time are AB, AC, AD, AE, BC, BD, BE, CD, CE, DE.  
 # 
-# If we think of placing objects into boxes, combinations, unlike permutations, allow more than one object to be placed in each box. For example, the letters ABC fill three boxes each containing two objects. Removing $p$ of the permutations is equivalent to dividing the objects into two groups, the chosen group of $p$ objects and another group of $n - p$ objects.
+# If we think of placing objects into boxes, combinations, unlike permutations, allow more than one object to be placed in each box. For example, the letters ABC can fill three boxes each containing two objects. Removing $p$ of the permutations is equivalent to dividing the objects into two groups, the chosen group of $p$ objects and another group, not chosen, containing $n - p$ objects.
 # 
-# In a permutation, there are $n!$ ways of choosing (if all the objects are different) and a combination must be less than this because the ordering of similar objects does not matter, and is less by the factorial of the number chosen, which is $p!$. Four objects A B C D produce $4! = 24$ permutations. If any three ($p = 3$) are chosen at a time, the four combinations $C(4, 3)$ are ABC, ACD, ABD, BCD. Each of these groups has $p! = 3! = 6$ permutations making $4 \times 6 = 24$ permutations in total. Thus the number of combinations $C$ is
+# In a permutation, there are $n!$ ways of choosing (if all the objects are different) and a combination must be less than this because the ordering of similar objects does not matter, and is less by the factorial of the number chosen, which is $p!$. Four objects A, B, C, D produce $4! = 24$ permutations. If any three ($p = 3$) are chosen at a time, the four combinations $C(4, 3)$ are ABC, ACD, ABD, BCD. Each of these groups has $p! = 3! = 6$ permutations making $4 \times 6 = 24$ permutations in total. Thus the number of combinations $C$ is
 # 
 # $$\displaystyle C(n,p)=\frac{p(n,p)}{p!}\qquad \tag{20}$$
 # 
@@ -76,7 +94,7 @@ from sympy import *
 # 
 # $$\displaystyle C(n,p)=\frac{n!}{p!(n-p)!}=\binom{n}{p}\qquad \tag{21}$$
 # 
-# The second notation, 'n over p', is that used for the coefficients in the binomial expansion. As for permutations, the notations $_nC_p,\; ^nC_p,\; C_p^n$ are also commonly used. This number gives the coefficients in the binomial expansion and in the Binomial Probability distribution, see section 9.10.
+# The second notation, 'n over p', is that used for the coefficients in the binomial expansion. As for permutations, various notations for combinations, $_nC_p,\; ^nC_p,\; C_p^n$ are also common. The combination gives the coefficients in the binomial expansion and in the Binomial Probability distribution, see section 9.10.
 # 
 # The original context of the word combination is that the number $C(n, p)$ is the number of combinations of $n$ things selected $p$ at a time. Since $\displaystyle \binom{n}{p}=\binom{n}{n-p}$ this is also equal to the number of combinations of $n$ things selected $n-p$ at a time.
 # 
@@ -84,7 +102,7 @@ from sympy import *
 # 
 # The chance of winning a lottery can be found from the number of combinations. For instance, choosing 6 numbers out of 48 produces
 # 
-# $$\displaystyle C(48,6)=\frac{48!}{6!42!}=\frac{48\cdot 47\cdot 46 \cdot45 \cdot 44 \cdot 43}{6 \cdot 5\cdot 4 \cdot 3 \cdot 2}=12\,271\,512$$
+# $$\displaystyle C(48,6)=\frac{48!}{6!42!}=\frac{48\cdot 47\cdot 46 \cdot45 \cdot 44 \cdot 43}{6 \cdot 5\cdot 4 \cdot 3 \cdot 2}=12,271,512$$
 # 
 # possible choices or just under one in twelve million chances of winning, as the chance of any one combination being chosen is just as likely as any other, then its probability is $1/C(n, p)$. If $\approx 12$ million people play each week, then on average one might expect one winner each week, assuming that the numbers are equally likely to be chosen by the players.
 # 
@@ -92,11 +110,11 @@ from sympy import *
 # 
 # If you are making choices when two or more conditions apply, then the combinations are multiplied together. For example, suppose that a study is to be conducted in which $25$ patients are to be placed into three groups of equal size. The control group must contain $8$ persons and therefore so must the experimental groups. These must be selected from $25 - 8 = 17$ and $9$ persons each. The number of ways of making this choice is huge even for such small numbers, and is
 # 
-# $$\displaystyle C(25, 8)C(17, 6)C(9, 8) =\frac{25!}{8!(25-8)!}\frac{17!}{6!(17-8)!}\frac{9!}{8!(9-8)!}=230\,637\,794\,250$$
+# $$\displaystyle C(25, 8)C(17, 6)C(9, 8) =\frac{25!}{8!(25-8)!}\frac{17!}{6!(17-8)!}\frac{9!}{8!(9-8)!}=230,637,794,250$$
 # 
 # ## 9.7 Number of transitions
 # 
-# In a stack of energy levels such as in an atom, many transitions are possible from an upper level $n_2$ to a lower one $n_1$, when the selection rules are ignored. Thus level $6$ can have transitions to levels $5,4,3,2,1$, level $1$ being lowest, and level $5$ can then transfer to levels $4,3,2,1$ etc. The first step is to calculate the number of levels and this is just $n_2-n_1+1$. You can check this by drawing a set of levels. Next, each transition, of course, involves two levels so we need to find the number of ways of selecting two levels (objects) at a time out of the total and this is
+# In a stack of energy levels such as in an atom, many transitions are possible from an upper level $n_2$ to a lower one $n_1$ if the selection rules are ignored. Thus level $6$ can have transitions to levels $5,4,3,2,1$, level $1$ being lowest, and level $5$ can then transfer to levels $4,3,2,1$ etc. The first step is to calculate the number of levels and this is just $n_2-n_1+1$. You can check this by drawing a set of levels. Next, each transition, of course, involves two levels so we need to find the number of ways of selecting two levels (objects) at a time out of the total and this is
 # 
 # $$\displaystyle \binom{n_2-n_1+1}{2}=\frac{(n_2-n_1+1)!}{2!(n_2-n_1+1-2)!}=\frac{(n_2-n_1+1)(n_2-n_1)}{2}$$
 # 
@@ -168,7 +186,7 @@ from sympy import *
 # Quite often, some caution is necessary in analysing problems involving chance or random events. For example, if two coins are simultaneously flipped what is the change of observing two heads? The ways the coins can fall is either head H, or tail T, but to think that there are only three outcomes, HH, HT, TT and the chance $1/3$ is wrong. This is because there are four outcomes HH, HT, TH and TT so the chance of observing HH is $1/4$. The chance of a head and a tail is $1/2$.  Thus the definition of probability is 
 # 
 # ### **Probability** 
-# Probability is defined as the ratio of the number of successful outcomes to the total number of possible outcomes.
+# >Probability is defined as the ratio of the number of successful outcomes to the total number of possible outcomes.
 # 
 # ## 9.12 Calculating probability: Sample space
 # 
@@ -184,15 +202,21 @@ from sympy import *
 # 
 # ## 9.13 Definitions, notation, and some useful formulae
 # 
-# **(i)** The probability of an event $A$ is $p(A)\ge 0$.
+# **Mutually exclusive *vs*. independent events.** 
+# 
+# >A mutually exclusive event is one whose occurrence prevents the other form happening at the same time. Tossing a coin can only produce a head or a tail, if a head is observed the tail is prevented from happening and vice versa, both occurring is prevented. 
+# 
+# >Independent events mean that one outcome does not influence the other, and so these events cannot be mutually exclusive. Throwing a dice and tossing a coin are independent events, as are tossing two coins, the result of one does not influence that of the other and *vice versa*. 
+# 
+# **(i)** The probability of an event $A$ is $0 \ge  p(A) \le 1$.
 # 
 # **(ii)** The certain event $S$ has a probability of 1; $p(S)=1$.
 # 
 # **(iii)** The probability of an event $p(A)$ is the sum of  simple events in the sample space.
 # 
-# **(iv)** The word 'or' is used in the inclusive sense. Thus, _A or B_ means 'either A or B, or, both'. The notation $p(A + B)$, is the probability that either $A$ or $B$ or both occurs. The notation $p(AB)$ is a joint probability and means that both $A$ and $B$ occur. In set theory, this is the intersection or overlap of $A$ and $B$, and is usually written as $p(A\cap B)$; figure 20.
+# **(iv)** The word 'or' is used in the inclusive sense. Thus, *A or B* means 'either A or B, or, both'. The notation $p(A + B)$, is the probability that either $A$ or $B$ or both occurs. The notation $p(AB)$ is a joint probability and means that both $A$ and $B$ occur. In set theory, this is the intersection or overlap of $A$ and $B$, and is usually written as $p(A\cap B)$; figure 20.
 # 
-# **(v)** If several _independent_ events each of a probabilistic nature occur to produce a successful outcome, then the overall chance of this happening is the product of the probabilities of the individual events. An independent event is one whose outcome does not influence that for any of the others; $p(A \& B) = p(A)p(B)$.
+# **(v)** If several _independent_ events each of a probabilistic nature occur to produce a successful outcome, then the overall chance of this happening is the product of the probabilities of the individual events, (**Product Rule**). An independent event is one whose outcome does not influence that for any of the others; $p(A \& B) = p(A)p(B)$.
 # 
 # **(vi)** If two events $A$ and $B$ can occur, their inclusive probability $p(A + B)$ means that at least one event occurs, which is to be interpreted as event $A$ or $B$  occurs. In figure 20 (left) the sample spaces are related as
 # 
@@ -202,57 +226,73 @@ from sympy import *
 # 
 # $$\displaystyle p(inclusive) = p(A) + p(B) - p(AB)\qquad \qquad\tag{23}$$
 # 
-# **(vii)** A mutually exclusive event is one whose outcome prevents any others occurring. The two events $A$ and $B$, are mutually exclusive if there is no intersection or overlap of $A$ and $B$, $p(AB) = 0$, therefore the probability of the occurrence of at least one out of two possible events is the sum of the individual probabilities,
+# **(vii)** A mutually exclusive event is one whose outcome prevents any others occurring. The two events $A$ and $B$, are mutually exclusive if there is no intersection or overlap of $A$ and $B$, $p(AB) = 0$, therefore the probability of the occurrence of at least one out of two possible events is the sum of the individual probabilities, (**Addition Rule**),
 # 
 # $$\displaystyle p(exclusive) = p(A) + p(B)$$ 
 # 
 # This equation only applies to two events.
 # 
-# **(viii)** The sample space in tossing a coin is heads and tails, (H, T); in tossing a die this is $(1 \cdots 6)$, in one set of playing cards $(1 \cdots 52)$, and so forth. If three coins are used, the sample space contains $2^3$ elements, HHH, HHT, etc. If $n_S$ represents the number of arrangements in the whole sample space, $n_A$ the subset that is the number of ways of arranging events in a successful outcome, $A$ and $n_{NA}$ the subset that is not $A$ then, clearly, $n_S = n_A + n_{NA}$. The probability of outcome $A$ is therefore
+# **(viii)** The sample space in tossing a coin is heads and tails, (H, T); in tossing a die this is $(1 \cdots 6)$, in one set of playing cards $(1 \cdots 52)$, and so forth. If three coins are used, the sample space contains $2^3$ elements, HHH, HHT, etc. If $n_S$ represents the number of arrangements in the whole sample space, $n_A$ the subset that is the number of ways of arranging events in a successful outcome (call this $A$) and $n_{NA}$ the subset that is not $A$ then, clearly, $n_S = n_A + n_{NA}$. The probability of outcome $A$ is therefore
 # 
 # $$\displaystyle p=\frac{n_A}{n_s}=1-\frac{n_{NA}}{n_s}\qquad \tag{24}$$
 # 
-# **(ix)** If $p$ is the chance that an event occurs, then $1-p$ is the chance that it will not, 
+# **(ix)** If $p$ is the chance that an event occurs, then $1-p$ is the chance that it will not, (**Subtraction Rule**),
 # 
 # $$\displaystyle p(not A) = 1 - p(A)$$
 # 
 # This is called the complement. On the right of figure 20, the complement of $p(A\cup B)$ is the area outside the two shaded circles. In the left-hand sketch, the complement of the intersection $p(A\cap B) \equiv p(AB)$, is all the area not labelled $AB$ inside the square.
 # 
-# **(x)** If two objects are placed into two different boxes, hence distinguishable, then the outcomes are (AB, -), (-, AB), (A, B), (B, A). As each of these is a simple event, the probability of each occurring is 1/4. If the objects are _indistinguishable_, then there are three arrangements (xx, -), (xx, -), (x, x), but the last may be considered to be two events and in this case would occur with a probability of $2/4$. However, if we take the three outcomes to be equally likely then the probability of the last is $1/3$, and this is the case for bosons.
+# **(x)** Two objects can be placed into either one or the other or both of two different boxes, hence are distinguishable, then the outcomes are (AB, -), (-, AB), (A, B), (B, A). As each of these is a simple event, the probability of each occurring is 1/4. If the objects are _indistinguishable_, then there are three arrangements (xx, -), (xx, -), (x, x), but the last may be considered to be two events and in this case would occur with a probability of $2/4$. However, if we take the three outcomes to be equally likely then the probability of the last is $1/3$, and this is the case for bosons.
 
 # ## 9.14 Independent and exclusive events, sample spaces, and conditional probability
 # 
-# Examples:
-# 
 # ### **(i) Chance of observing a head on a coin and a $6$ on a dice**
-# If a coin and a die are thrown they are clearly independent events and the chance of observing a head and a $6$ is $(1/2) \times (1/6)$. This follows from the fundamental principle of counting; if a job is completed in $n$ ways and another in $m$ ways then both can be completed in $n \times m$ ways. For instance, if there are $6$ types of anions and $8$ types of cations then $48$ different salts can be produced. Now, suppose that two dice are thrown and you want to find the chance that the total of their numbers is $10$. The two dice are independent, the result of one does not influence the other, and the probabilities therefore multiply. As one die can fall in one of six ways, two can fall in $6 \times 6 = 36$ different ways. The number $10$ can be obtained in three different ways, each of which is equally likely to occur: $6 + 4,\, 4 + 6,$ and $5 + 5$. The probability of observing $10$ is therefore $3/36$. If a sum of $6$ is sought, then this is produced in the combinations $1+5,\, 5+1,\, 4+2, \,2+4, \, 1+3$ and would be expected to be observed $5/36$ times the dice are thrown.
+# If a coin and a die are thrown they are clearly independent events and the chance of observing a head and a $6$ is $(1/2) \times (1/6)$. This follows from the fundamental principle of counting; if a job is completed in $n$ ways and another in $m$ ways then both can be completed in $n \times m$ ways. For instance, if there are $6$ types of anions and $8$ types of cations then $48$ different salts can be produced. 
 # 
-# ### **(ii) Cards drawn in succession**
-# If you want two cards containing the number $7$ to be drawn in succession from a pack of $52$ playing cards, what is the chance of this happening if the first card chosen is not replaced in the pack? The chance of the first $7$ being chosen is $4/52$ because there are four $7$'s in a pack of $52$ cards. It is now assumed that a $7$ has been removed and therefore the chance that the second card removed is a $7$ is $3/51$ making the chance $(4/51) \times (3/51) = 1/221$ overall. The second choice is $3/51$ because we have only $51$ cards left and one $7$ is assumed to have been removed in our first try. Had we chosen to find the probability that a $7$ and a $6$ were to be removed in succession, the chance would be $(4/52) \times (4/51)$. If instead we wanted to draw a $7$ or a $6$ from the pack, then the probability would be $4/52 + 4/52$ as these are independent of one another; drawing one card does not depend on the other.
+# ### **(ii) Throw two dice to get a given total**
+# Suppose that two dice are thrown (or the same one twice) and you want to find the chance that the total of their numbers is $10$. The two dice are independent, the result of one does not influence the other, and the probabilities therefore multiply. As one die can fall in one of six ways, two can fall in $6 \times 6 = 36$ different ways, (Product Rule). The number $10$ can be obtained in three different ways, each of which is equally likely to occur: $6 + 4,\, 4 + 6,$ and $5 + 5$. The probability of observing $10$ is therefore $3/36$. If a sum of $6$ is sought, then this is produced in the combinations $1+5,\, 5+1,\, 4+2, \,2+4, \, 1+3$ and would be expected to be observed $5/36$ times the dice are thrown.
 # 
-# ### **(iii) Independent events. Molecular yield**
+# ### **(iii) Cards drawn in succession**
+# If you want two cards containing the number $7$ to be drawn in succession from a pack of $52$ playing cards, what is the chance of this happening if the first card chosen is not replaced in the pack? The chance of the first $7$ being chosen is $4/52$ because there are four $7$'s in a pack of $52$ cards. It is now assumed that a $7$ has been removed and therefore the chance that the second card removed is a $7$ is $3/51$ making the chance $(4/51) \times (3/51) = 1/221$ overall and the Product Rule is used. The second choice is $3/51$ because we have only $51$ cards left and one $7$ is assumed to have been removed in our first try. Had we chosen to find the probability that a $7$ and a $6$ were to be removed in succession, the chance would be $(4/52) \times (4/51)$. 
+# 
+# If instead we wanted to draw either a $7$ or a $6$ from the pack, then the probability would be $4/52 + 4/52$ as these are independent of one another; drawing one card does not depend on the other. Using 'either or' usually means that the Addition Rule is used.
+# 
+# ### **(iv) Independent events. Molecular yield**
 # Independent events can occur in the way molecules react. If a molecule can react to produce two different products A and B with rate constants $k_A$ and $k_B$ respectively, the chance of product A being observed is $p_A = k_A/(k_A + k_B)$ and of B is $1 - p_A$, which is $p_B = k_B /(k_A + k_B)$. The sum of both events is 1. In chemistry, probability $p_A$ is normally called the yield of A and is often expressed as a percentage. If an excited state of a molecule can fluoresce with rate constant $k_f$ or produce another state such as a triplet by intersystem crossing with rate constant $k_i$ then the fluorescence yield is $k_f /(k_f + k_i)$ and the triplet yield $k_i /(k_f + k_i)$.
 # 
-# ### **(iv) Cards drawn but not replaced**
+# ### **(v) Cards drawn but not replaced**
 # Suppose that two cards are drawn from a pack and the first not replaced, and we want the chance that the second is a $7$ of diamonds. This question has two answers. If the first card happens to be the $7$, then the chance of the second being this card is obviously zero. If the first card is not the $7$ of diamonds, the chance of choosing it a second time is $1/51$ making the chance $(1/52) \times (1/51)$ overall.
 #  
-# ### **(v) Throw a die $n$ time**
-# Suppose a die is thrown $n$ times, what will be the chance that a $3$ appears at least once? In one throw the $3$ appears with a chance $1/6$ and there is a $5/6$ chance that it does not appear. After $n$ throws, then the chance is $(5/6)^n$ that the $3$ does not appear and therefore $1 - (5/6)^n$ that it appears at least once. For two throws, this is $11/36$. 
+# ### **(vi) Throw a die $n$ time**
+# Suppose a die is thrown $n$ times, what will be the chance that a $3$ appears at least once? Usually when the expression 'at least once' is used we use the Subtraction Rule to find the chance that the outcome wanted does not occur. In one throw the $3$ appears with a chance $1/6$ and there is a $5/6$ chance that it does not appear. After $n$ throws, then the chance is $(5/6)^n$ that the $3$ does not appear and therefore $1 - (5/6)^n$ that it appears at least once. For two throws, this is $11/36$. 
 # 
 # This calculation can also be described using inclusive probability. Suppose that there are two outcomes A and B, and at least one outcome is required, then the probability is that of event A, plus event B minus that of both A and B or p = p(A) + p(B) - p(AB). The chance that a $3$ is thrown, is $1/6$ on the first throw (outcome A), and again on the second throw is $1/6$, and the chance of both occurring p(AB) = $1/36$ making $1/6 + 1/6 - 1/36 = 11/36$ overall.
 # 
 # ## 9.15 Summary 
 # If $n$ and $m$ are the numbers $1$ to $6$ (the sample space) on a die, then the probability of throwing;
 # 
-# (1) any number $n$ is $1/6$ and of not throwing any $n$ is $1-1/6$.
+# **(1)** any number $n$ is $1/6$ and of not throwing any $n$ is $1-1/6$.
 # 
-# (2) either $n$ or $m$ is $1/6+1/6 = 1/3$.
+# **(2)** either $n$ or $m$ is $1/6+1/6 = 1/3$. (Addition Rule)
 # 
-# (3) the same $n$ twice in two throws is $(1/6)(1/6)$.
+# **(3)** the same $n$ twice in two throws is $(1/6)(1/6)$. (Product Rule)
 # 
-# (4) $n$ at least once in two throws is $1 - (5/6)^2 = 11/36$.
+# **(4)** any number twice in two throws is $6\cdot (1/36)=1/6$. You don't care what the first number is just that the second matches it. The table shows all the possible outcomes (sample space) and is often a convenient way of working out probabilities. The $6$ double numbers are outlined.
 # 
-# (5) $n$ exactly once in two throws is $1/6+(1/6)(1-2/6)$.
+# $$\displaystyle \begin{array}{ccccccc}
+# \hline
+# \fbox {1,1}& 1,2 & 1,3 & 1,4 & 1,5 & 1,6\\
+# 2,1& \fbox{2,2}&2,3&2,4&2,5&2,6\\
+# 3,1& 3,2 & \fbox{3,3}& 3,4&3,5&3.6\\
+# 4,1& 4,2 & 4,3 & \fbox{4,4}&4,5&4,6\\
+# 5,1& 5,2 &5,3 & 5,4 & \fbox{5,5} &5,6\\
+# 6,1& 6,2 &6,3 & 6,4 & 6,5 &\fbox{6,6}\\
+# \hline
+# \end{array}$$
+# 
+# **(5)** $n$ at least once in two throws is $1 - (5/6)^2 = 11/36$. (Subtraction Rule)
+# 
+# **(6)** $n$ exactly once in two throws is the chance on the first throw of getting the number $n$ with the first dice but not the second, and the other way round on the second throw which is $\displaystyle\frac{1}{6}\cdot\frac{5}{6}+\frac{5}{6}\cdot\frac{1}{6}$. The chance of not getting $n$ on either throw is $(5/6)^2$. These results can be seen in the table above.
 # 
 # 
 # ### **(vii) Same birthdays**
@@ -305,7 +345,7 @@ from sympy import *
 # 
 # Suppose that the requirements are very low, such that the password must have four letters, two of which are capitals and four numbers. As there are $26$ letters in our alphabet and ten numbers ($0\to 9$) the total number of passwords is 
 # 
-# $N= 26^2\cdot26^2\cdot10^4=4569760000$
+# $N= 26^2\cdot26^2\cdot10^4=4,569,760,000$
 # 
 # and so the chance of guessing correctly is $1/N$ which is quite small. Now the chance of not guessing correctly is $1-1/N$ and to do so $10^8$ times is $(1-1/N)^{10^8}$. Therefore the chance of guessing correctly is the complement of this which is 
 # 
@@ -313,7 +353,7 @@ from sympy import *
 # 
 # and is $0.021$ or $2.1$% which you might think is a good enough risk for you but is rather high if many millions of passwords are being challenged. If the hacker tried $10^{10}$ times then the chance of guessing correctly is $87$%, very high indeed. 
 # 
-# Adding one or two non-alphabetical characters such as space, dash, question mark etc. really helps as would more random numbers and letters. Thus if the password contains $15$ characters for example $8$ letters, $4$ numbers and $3$ non-alphbetical characters (there are at least $30$) the total number of possibilities is $N =26^8\cdot 10^4 \cdot 30^3 \approx 5\cdot 10^{19}$ and the chance of guessing after the huge, and possibly impractical, number of $10^{18}$ guesses is still effectively zero. 
+# Adding one or two non-alphabetical characters such as space, dash, question mark etc. really helps as would more random numbers and letters. Thus if the password contains $15$ characters for example $8$ letters, $4$ numbers and $3$ non-alphabetical characters (there are at least $30$) the total number of possibilities is $N =26^8\cdot 10^4 \cdot 30^3 \approx 5\cdot 10^{19}$ and the chance of guessing after the huge, and possibly impractical, number of $10^{18}$ guesses is still effectively zero. 
 
 # ## 9.16 The Binomial distribution  (See also chapter 12.3)
 # 

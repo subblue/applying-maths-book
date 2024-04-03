@@ -51,6 +51,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -139,7 +141,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-1/chapter1-B.html">
-     5 Trig, hyperbolic and inverse functions, waves, polar coordinates &amp; factorials
+     5 Trig, hyperbolic and inverse functions, waves, polar coordinates,  factorials
     </a>
    </li>
    <li class="toctree-l2">
@@ -471,7 +473,7 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-5/chapter-5-A.html">
-     1 Series, averages, partition functions, DNA melting, atom entropy
+     1 Series, averages, waves, partition functions, DNA melting, atom entropy
     </a>
    </li>
    <li class="toctree-l2">
@@ -1735,7 +1737,11 @@ title="Print to PDF"
 </section>
 <section id="differentiating-logarithms">
 <h2>3.12 Differentiating logarithms<a class="headerlink" href="#differentiating-logarithms" title="Permalink to this headline">#</a></h2>
-<p>Differentiating logarithms always has the form: ‘derivative divided by the function’.</p>
+<p>In a 1697 paper Johann Bernoulli states ( Dunham 2018),</p>
+<blockquote>
+<div><p>‘The differential of a logarithm, no matter how composed, is equal to the differential of the expression divided by the expression’</p>
+</div></blockquote>
+<p>thus differentiating logarithms always has the form:</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \frac{d}{dx}\ln\left( f(x) \right)=\frac{f'(x)}{f(x)} \quad \text{where }\quad f' =\frac{d}{dx} \qquad\tag{10} \]</div>
 <p>for example,</p>
@@ -1744,11 +1750,11 @@ title="Print to PDF"
 <p>Differentiating <span class="math notranslate nohighlight">\(\ln(y)\)</span> with respect to <span class="math notranslate nohighlight">\(x\)</span> produces a most useful form, which is worth remembering</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \frac{d}{dx}\ln(y)=\frac{1}{y}\frac{dy}{dx} \qquad\tag{11}\]</div>
-<p>The van’t Hoff equation of chemical thermodynamics has this last form,</p>
+<p><strong>(i)</strong> The van’t Hoff equation of chemical thermodynamics has this last form,</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \frac{d\ln(K_p)}{dT}=\frac{\Delta_rH^{\mathrm{o}}}{RT^2}\]</div>
 <p>This equation describes the change of an equilibrium constant <span class="math notranslate nohighlight">\(K_p\)</span> for a reaction carried out at constant pressure with temperature <span class="math notranslate nohighlight">\(T\)</span> and quantifies the Le Chatelier principle. <span class="math notranslate nohighlight">\(\Delta_rH^{\mathrm{o}}\)</span> is the standard molar enthalpy of the reaction. In this form it is easier to plot or integrate wrt.temperature.</p>
-<p>A particularly cunning and somewhat complicated example using this log derivative is to solve the equation</p>
+<p><strong>(ii)</strong> A particularly cunning and somewhat complicated example using this log derivative is to solve the equation</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle R\frac{d^2S}{dx^2}+2\frac{dR}{dx}\frac{dS}{dx}=0\]</div>
 <p>where both <span class="math notranslate nohighlight">\(R\)</span> and <span class="math notranslate nohighlight">\(S\)</span> are functions of <span class="math notranslate nohighlight">\(x\)</span>. The first step is to divide by <span class="math notranslate nohighlight">\(R\)</span> and then to use the form of equation 11 on the derivative in <span class="math notranslate nohighlight">\(R\)</span>.</p>
@@ -1764,6 +1770,12 @@ title="Print to PDF"
 <div class="math notranslate nohighlight">
 \[\displaystyle \frac{dS}{dx}=\frac{C}{R^2}\]</div>
 <p>where <span class="math notranslate nohighlight">\(C\)</span> is a constant. The reason <span class="math notranslate nohighlight">\(C\)</span> is there is that this is the general form and is simplified from the derivative of a log, since <span class="math notranslate nohighlight">\(\displaystyle \frac{d}{dx}\ln(Cx)=\frac{1}{x}\)</span>.</p>
+<p><strong>(iii)</strong> The product <span class="math notranslate nohighlight">\(\displaystyle \prod_{n=1}^\infty \left(1-\frac{x^2}{n^2}\right)\)</span> cannot be easily differentiated but its log can be and so</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \log\left( \prod_{n=1}^\infty \left(1-\frac{x^2}{n^2}\right) \right)= \sum_{n=1}^\infty \log\left(1-\frac{x^2}{n^2}\right)\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{d}{dx}\sum_{n=1}^\infty \log\left(1-\frac{x^2}{n^2}\right)= -\sum_{n=1}^\infty\frac{2x}{n^2-x^2}\]</div>
 </section>
 <section id="differentiating-x-as-a-power">
 <h2>3.13 Differentiating x as a power<a class="headerlink" href="#differentiating-x-as-a-power" title="Permalink to this headline">#</a></h2>
@@ -1781,11 +1793,11 @@ if <span class="math notranslate nohighlight">\(y = a^x\)</span>, taking logs of
 </section>
 <section id="ii-which-is-larger-e-pi-or-pi-e">
 <h3><strong>(ii) Which is larger <span class="math notranslate nohighlight">\(e^\pi\)</span> or <span class="math notranslate nohighlight">\(\pi^e\)</span> ?</strong><a class="headerlink" href="#ii-which-is-larger-e-pi-or-pi-e" title="Permalink to this headline">#</a></h3>
-<p>As a second example we differentiate <span class="math notranslate nohighlight">\(x^{1/x}\)</span> and from this we can determine which is larger <span class="math notranslate nohighlight">\(e^\pi\)</span> or <span class="math notranslate nohighlight">\(\pi^e\)</span>.</p>
+<p>As a second example we differentiate <span class="math notranslate nohighlight">\(x^{1/x}\)</span> and from this we can determine which is larger <span class="math notranslate nohighlight">\(e^\pi\)</span> or <span class="math notranslate nohighlight">\(\pi^e\)</span> in other words is <span class="math notranslate nohighlight">\(e^\pi &gt;\pi^e\)</span> or not. Taking logs of both side gives <span class="math notranslate nohighlight">\(\pi\ln(e)&gt;e\ln(\pi)\)</span>, and dividing by <span class="math notranslate nohighlight">\(e\)</span> and <span class="math notranslate nohighlight">\(\pi\)</span> gives <span class="math notranslate nohighlight">\(\displaystyle \frac{\ln(e)}{e}&gt;\frac{\ln(\pi)}{\pi}\)</span> thus the test to make is to see if <span class="math notranslate nohighlight">\(\displaystyle e^{1/e}&gt;\pi^{1/\pi}\)</span> or not. If the maximum of <span class="math notranslate nohighlight">\(x^{1/x}\)</span> can be found then we determine if the inequality is true or not.</p>
 <p>First take logs giving <span class="math notranslate nohighlight">\(\displaystyle \ln(y)=\frac{1}{x}\ln(x)\)</span> and then differentiate and using eqn. 11 to simplify gives</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \frac{1}{y}\frac{dy}{dx}= \frac{1}{x^2}-\frac{1}{x^2}\ln(x)\quad\to\quad \frac{dy}{dx}=\frac{x^{1/x}}{x^2}(1-\ln(x))\]</div>
-<p>To determine which is bigger by dividing <span class="math notranslate nohighlight">\(e^\pi \)</span> and <span class="math notranslate nohighlight">\( \pi^e\)</span> by <span class="math notranslate nohighlight">\(e\)</span> and <span class="math notranslate nohighlight">\(\pi\)</span> means that we should compare  <span class="math notranslate nohighlight">\(e^{1/e}\)</span>  and <span class="math notranslate nohighlight">\(\pi^{1/\pi}\)</span>. The thing to realize here is that if we find the maximum of the derivative of <span class="math notranslate nohighlight">\(x^{1/x}\)</span> we can then check which of our two terms is bigger. To find the minimum/maximum is very simple (see section 9) and is found by setting the derivative to zero, then <span class="math notranslate nohighlight">\(\ln(x)=1\)</span> so that <span class="math notranslate nohighlight">\(x=e\)</span> is the <em>global maximum</em> and this means that <span class="math notranslate nohighlight">\(e^{1/e}\)</span> is the maximum possible value and so <span class="math notranslate nohighlight">\(e^\pi\; \gt\; \pi^e\)</span>.</p>
+<p>To determine which is bigger <span class="math notranslate nohighlight">\(e^\pi\)</span> or <span class="math notranslate nohighlight">\(\pi^e\)</span> means that we should compare  <span class="math notranslate nohighlight">\(e^{1/e}\)</span>  and <span class="math notranslate nohighlight">\(\pi^{1/\pi}\)</span>. The thing to realize here is that if we find the maximum of the derivative of <span class="math notranslate nohighlight">\(x^{1/x}\)</span> we can then check which of our two terms is bigger. To find the minimum/maximum is very simple (see section 9) and is found by setting the derivative to zero, then <span class="math notranslate nohighlight">\(\ln(x)=1\)</span> so that <span class="math notranslate nohighlight">\(x=e\)</span> is the <em>global maximum</em> and this means that <span class="math notranslate nohighlight">\(e^{1/e}\)</span> is the maximum possible value and so <span class="math notranslate nohighlight">\(e^\pi\; \gt\; \pi^e\)</span>. The graph of <span class="math notranslate nohighlight">\(\displaystyle x^{1/x}\)</span> is zero at <span class="math notranslate nohighlight">\(x=0\)</span>, rises rapidly then decreases again as <span class="math notranslate nohighlight">\(x\)</span> increases.</p>
 </section>
 <section id="iii-factorials">
 <h3><strong>(iii) Factorials</strong><a class="headerlink" href="#iii-factorials" title="Permalink to this headline">#</a></h3>

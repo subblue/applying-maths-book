@@ -52,7 +52,7 @@
 # 
 # Suppose that there is another vector $\vec W$ then in the same fashion then $\displaystyle \vec W=\sum_{p=1}^n w_p\vec x_p $ and the dot product is
 # 
-# $$\displaystyle \qquad\qquad\qquad\qquad\vec W \cdot \vec V= \left(\sum_{p=1}^n w_p\vec x_p\right)\left( \sum_{q=1}^n v_p\vec x_q\right)\equiv \begin{bmatrix}w_1&w_2&\cdots\end{bmatrix} \begin{bmatrix}v_1\\v_2\\ \vdots\end{bmatrix} \qquad\qquad\qquad\qquad\text{(35)}$$
+# $$\displaystyle \vec W \cdot \vec V= \left(\sum_{p=1}^n w_p\vec x_p\right)\left( \sum_{q=1}^n v_p\vec x_q\right)\equiv \begin{bmatrix}w_1&w_2&\cdots\end{bmatrix} \begin{bmatrix}v_1\\v_2\\ \vdots\end{bmatrix} \qquad\qquad\qquad\qquad\qquad\qquad\text{(35)}$$
 # 
 # in this case, also using dummy indices $p$ and $q$. This equation is interpreted to mean that we first expand out both the summations then multiply term by term but keeping the dot operator between the left and right hand of each pair of values; recall that the $x$ are vectors. The subscripts $p$ or $q$ are only an index to each term; they have no physical meaning and so are dummy subscripts. Let us do the summation with three terms to show how the double summation and dot product works. Notice that we have to use subscripts for the coefficients $w_1$ etc. if we are going to use this method. Let
 # 
@@ -82,7 +82,7 @@
 # 
 # if $n=3$ the expansion is
 # 
-# $$\displaystyle \vec W\cdot \vec V = \sum_{p=1}^3\sum_{q=1}^3w_pv_q\delta_{p,q}=w_1(v_1\delta_{11}+v_2\delta_{12}+v_3\delta_{13})+w_2(v_1\delta_{21}+\cdots) = w_1v_2+w_2v_2+w_3v_3$$
+# $$\displaystyle \begin{align}\vec W\cdot \vec V = \sum_{p=1}^3\sum_{q=1}^3w_pv_q\delta_{p,q}&=w_1(v_1\delta_{11}+v_2\delta_{12}+v_3\delta_{13})+w_2(v_1\delta_{21}+\cdots)\\& = w_1v_2+w_2v_2+w_3v_3\end{align}$$
 # 
 # The projection of one vector onto another is calculated with equation 14 and this can be expressed also as the summation formula,
 # 

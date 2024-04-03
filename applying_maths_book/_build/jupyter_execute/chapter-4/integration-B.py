@@ -135,7 +135,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # $$\displaystyle \int \frac{1-x^2}{x^2}dx=\int \left(\frac{1}{x^2}-1\right)dx=-\frac{1}{x}-x=-\frac{1}{\sin(\theta)}-\sin(\theta)+c$$
 # 
-# ### **The general integral $\int \cos^n(\theta)\sin^m(\theta)d\theta $**
+# ### **(iv) The general integral $\int \cos^n(\theta)\sin^m(\theta)d\theta $**
 # 
 # The general integral $\int \cos^n(\theta)\sin^m(\theta)d\theta $ is hard to integrate whe the conditions given above do not apply, but can be done by iteration which means finding a reduction formula. The method is to start with another related function, differentiate it then integrate the result. The integral we require will then appear in terms of a new function and a new integral that can usually be solved easily. If this is not the case then the process can be repeated until a solvable integral appears.
 # 
@@ -401,7 +401,7 @@ simplify(integrate(x**3*exp(-a*x),x) )
 # hence 
 # 
 # $$\displaystyle \int_0^\infty \frac{x^3}{e^x -1}dx =\frac{\pi^4}{15}$$
-
+# 
 # ## 5.1 Small angle x-ray scattering: SAXS 
 # 
 # A real example of integration by parts can be found when determining the scattering of x-rays by a molecule. In the technique of small angle scattering called SAXS the scattering is determined by the overall 'shape' of the electron distribution $\rho(r)$ at some point $r$ in a molecule and the wavevector $q$ of the scattering. 
@@ -428,6 +428,7 @@ simplify(integrate(x**3*exp(-a*x),x) )
 # ![Drawing](integration-fig7a.png)
 # 
 # Figure 7a. Calculated scattering profile as might be measure in a SAXS experiment with a square potential. The inset shows the vectors describing the incoming x-ray $k_0$ and the scattered ray $k$ with the wavevector $q$.
+# 
 
 # ## 5.2 Differentiation under the Integral. The Leibniz formula 
 # 
@@ -643,7 +644,68 @@ simplify(integrate(x**3*exp(-a*x),x) )
 # 
 # Figure 7b. Probability of a nearest neighbour molecules $w(r)$ being present at distance $r$ (nm) at various concentrations in mol/dm$^3$ assuming that molecules are positioned at random in solution.
 
-# ## 5.4 Evaluating integrals *via* differentiation and  'Feynman's trick'
+# ## 5.4 Definite integrals using series
+# 
+# One method of integrating which seems not to be used much nowadays is to expand the function as a series and integrate term by term.  If you are lucky the resulting series produced can be neatly summed as in integrating the Debye function, section 5(vi). Euler (1707-1783), who was one of history's foremost integrators, often used this approach, See W. Dunham. 'The Calculus Gallery', Princeton  University press, 2018, chapter 4. Three examples are given below.
+# 
+# ### **Examples**
+# 
+# ### **(i)$\displaystyle \int_0^1\frac{\ln(1+x)}{x}dx$**
+# 
+# The first step is to use the series expansion for $\ln(1+x)=x-x^2/2+x^3/3\cdots$, divide by $x$ then integrate each term, which gives
+# 
+# $$\displaystyle \begin{align}\int_0^1\frac{\ln(1+x)}{x}dx&= \int_0^1 1-\frac{x}{2}+\frac{x^2}{3}-\frac{x^3}{4}\cdots dx\\&=x-\frac{x^2}{2^2}+\frac{x^3}{3^2}-\frac{x^4}{4^2}\cdots \bigg|_0^1\\&=1-\frac{1}{2^2}+\frac{1}{3^2}-\frac{1}{4^2}\cdots \frac{1}{n^2}\cdots\end{align}$$
+# 
+# It is necessary to know the series summation to infinity, the simplest way is to look this up or use Sympy to calculate it, otherwise the sum can be calculated numerically to whatever precision is needed. The series is $\displaystyle\sum_{n=1}^\infty\frac{(-1)^{n+1}}{n^2}=\frac{\pi^2}{12}$, thus 
+#  
+# $$\displaystyle \int_0^1\frac{\ln(1+x)}{x}dx=\frac{\pi^2}{12}$$ 
+# 
+# ### **(ii) $\displaystyle \int_0^1x\ln(1+x)dx$**
+# 
+# Expanding the series and integrating term by term gives
+# 
+# $$\displaystyle \begin{align}\int_0^1x\ln(1+x)dx&=\int_0^1 x^2-\frac{x^3}{2}+\frac{x^4}{3}\cdots dx\\&=\frac{x^3}{3\cdot 1}-\frac{x^4}{4\cdot 2}+\frac{x^5}{5\cdot 3}\cdots\bigg |_0^1\\&=
+# \frac{1}{3}-\frac{1}{8}+\frac{1}{15}-\frac{1}{24}\cdots \\&= \sum_{n=1}^\infty \frac{(-1)^{n+1}}{n(n+2)}\\&=\frac{1}{4}\end{align}$$
+# 
+# where working out the form of the summation is somewhat of an art. As in the other examples the summation is known or you can use Sympy to work it out for you.
+# 
+# ### **(iii) $\displaystyle \int_0^1\frac{\sin(\ln(x))}{\ln(x)}dx$**
+# 
+# The integral we try is one that Euler solved in the $1760$'s and is
+# 
+# $$\displaystyle \int_0^1\frac{\sin(\ln(x))}{\ln(x)}dx$$
+# 
+# and this appears to be extremely difficult, but is clarified is the sine is expanded as a series. This series was known to Euler and is 
+# 
+# $$\displaystyle \sin(x) = x-\frac{x^3}{3!}+\frac{x^5}{5!}-\cdots$$
+# 
+# and so
+# 
+# $$\displaystyle \begin{align}\frac{\sin(\ln(x))}{\ln(x)}&= \frac{\ln(x)-\ln^3(x)/3!+\ln^5(x)/5!\cdots}{\ln(x)}\\&=1-\frac{\ln^2(x)}{3!}+\frac{\ln^4(x))}{5!}-\cdots\end{align}$$
+# 
+# where, for clarity, we use the non-standard notation $\ln^3(x)\equiv (\ln(x))^3$ etc. This series can now be integrated term by term
+# 
+# $$\displaystyle \int_0^1\frac{\sin(\ln(x))}{\ln(x)}dx=\int_0^1 dx-\frac{1}{3!}\int_0^1\ln^2(x)dx+\frac{1}{5!}\int_0^1\ln^4(x)dx-\cdots$$
+# 
+# which means that integrals of the form $\displaystyle \int_0^1\ln^n(x)dx$ are needed where $n =2,4,6\cdots$, i.e. even numbers. This integral has already been met in example (vi) section 5.2 as $\displaystyle \int_0^1x^t\ln^n(x)dx$ and and the result is 
+# 
+# $$\displaystyle \int_0^1 x^t\ln^n(x)dx =(-1)^n\frac{n!}{(t+1)^{n+1}}$$
+# 
+# As we can let $t=0$ then
+# 
+# $$\displaystyle \int_0^1 \ln^n(x)dx =(-1)^n n!$$
+# 
+# then substituting gives
+# 
+# $$\displaystyle \begin{align}\int_0^1\frac{\sin(\ln(x))}{\ln(x)}dx&= 1-\frac{2!}{3!}+\frac{4!}{5!}-\frac{6!}{7!}\\&=1-\frac{1}{3}+\frac{1}{5}-\frac{1}{7}\cdots\end{align}$$
+# 
+# and this is called the Leibniz series and its sum is $\pi/4$ therefore
+# 
+# $$\displaystyle \int_0^1\frac{\sin(\ln(x))}{\ln(x)}dx=\frac{\pi}{4}$$
+# 
+# Very elegant and quite remarkable!
+
+# ## 5.5 Evaluating integrals *via* differentiation and  'Feynman's trick'
 # 
 # Once the derivative of an integral is found we naturally want to evaluate the integral itself. This can be achieved only by knowing the value of the integral $F(x)$ at, for example, $F(1)$ or $F(0)$ etc. because this allows the integration constant to be calculated. The 'Feynman's trick', as integration using derivatives has become known, uses an artificially added parameter with which to differentiate with the purpose of removing some terms in the integral and thereby simplifying it. Finally, this parameter is set to a value as appropriate to re-form the initial integral. Some examples should make this method clearer, but it has to be remembered that a lot of cunning and imagination is often required to make this method work.
 # 
@@ -715,7 +777,7 @@ simplify(integrate(x**3*exp(-a*x),x) )
 # 
 # $$\displaystyle F(t)=\frac{\pi}{2}-\tan^{-1}(t)$$
 # 
-# In eqn. (16F) if $t=0$ then $e^{-tx}=1$ and we obtain the original integration (E), thus setting $t=0$ in the last equation produces $F(t=0)=\pi/2$ and so
+# In eqn. (16F) if $t=0$ then $e^{-tx}=1$ and we obtain the original integration (16E), thus setting $t=0$ in the last equation produces $F(t=0)=\pi/2$ and so
 # 
 # $$\displaystyle \int_{-\infty}^\infty \frac{\sin(x)}{x}dx=\pi$$
 # 
@@ -770,7 +832,7 @@ simplify(integrate(x**3*exp(-a*x),x) )
 # 
 # and the normalisations for the other wavefunctions are done similarly, although they are more complicated, without having to do any integrations.
 # 
-# ### Expectation values and uncertainty principle
+# #### **(i) Expectation values and uncertainty principle**
 # 
 # The expectation values can now be very easily calculated, for example to calculate the average momentum $\langle p\rangle>$ or  distance or average square distance $\langle x\rangle, \langle x^2\rangle$. 
 # 
@@ -780,7 +842,7 @@ simplify(integrate(x**3*exp(-a*x),x) )
 # 
 # and $\hat Q$ is the operator. The operator is just multiplication by $x$ for calculating average distance but for momentum is $\displaystyle -i\hbar\frac{d}{dx}$. 
 # 
-# #### **(i) Average position and its uncertainty**
+# #### **(ii) Average position and its uncertainty**
 # 
 # The average displacement for is by definition $\langle x\rangle$ and for the harmonic oscillator $\langle x\rangle =0$ for any quantum number as this will always be an odd function. Physically this makes sense as the potential is symmetrical about $r_e$ for any $n$.  
 # 
@@ -796,7 +858,7 @@ simplify(integrate(x**3*exp(-a*x),x) )
 # 
 # and is a measure of the uncertainty in a measurement. Knowing both values for position when $n=1$ gives $\displaystyle \sigma_x=\sqrt{\frac{3}{2a}}$
 # 
-# #### **(ii) Average momentum**
+# #### **(iii) Average momentum**
 # 
 # To calculate the expectation values for momentum the operator is $\displaystyle -i\hbar\frac{d}{dx}$ thus
 #  

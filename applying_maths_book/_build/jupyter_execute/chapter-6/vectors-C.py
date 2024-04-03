@@ -43,11 +43,11 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # The cosines remain because the axes are not at $90^\text{o}$ so that the contribution a component along each axis makes to the others is not zero. Substituting into equation 18 gives,
 # 
-# $$\displaystyle  \qquad\qquad\begin{align}\vec V\cdot \vec W =&\; v_1w_1a^2 + v_2w_2b^2 + v_3w_3c^2 \\& +(v_1w_2 +v_2w_1)ab\cos(\gamma) \\&+ (v_1w_3 + v_3w_1)ac\cos(\beta)\\&+ (v_2w_3 + v_3w_2)bc\cos(\alpha)\end{align}  \qquad\qquad\qquad\qquad \text{(20)}$$ 
+# $$\displaystyle  \qquad\qquad\begin{align}\vec V\cdot \vec W =&\; v_1w_1a^2 + v_2w_2b^2 + v_3w_3c^2 \\& +(v_1w_2 +v_2w_1)ab\cos(\gamma) \\&+ (v_1w_3 + v_3w_1)ac\cos(\beta)\\&+ (v_2w_3 + v_3w_2)bc\cos(\alpha)\end{align} \qquad\qquad\qquad\qquad\qquad\qquad \text{(20)}$$ 
 # 
 # The magnitude of $\vec V$ is calculated in a similar way
 # 
-# $$ \displaystyle |\vec V|^2 =\vec V\cdot\vec V =v_1^2a^2 +v_2^2b^2 +v_3^2c^2 + 2v_1v_2ab\cos(\gamma ) + 2v_1v_3ac\cos(\beta) + 2v_2v_3bc\cos(\alpha) \qquad\tag{21}$$
+# $$ \displaystyle |\vec V|^2 =\vec V\cdot\vec V =v_1^2a^2 +v_2^2b^2 +v_3^2c^2 + 2v_1v_2ab\cos(\gamma ) + 2v_1v_3ac\cos(\beta) + 2v_2v_3bc\cos(\alpha) \tag{21}$$
 # 
 # as is $|\vec W|$ by substituting $w$'s for $v$'s. 
 # 
@@ -90,7 +90,11 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # **(i)** To find the C-N1 bond length, let the vector for the position of the N$_1$ atom be $\vec W_{N_1} = w_1\vec a + w_2\vec b + w_3\vec c$. Using data in the table, this vector is 
 # 
-# $$\displaystyle \vec W_{N_1} = 0.1834a\vec a - 0.1669b\vec b - 0.0015c\vec c, \quad\text{where}\quad w_1 = 0.1834a, w_2 = -0.1669b, w_3 = -0.0015c$$
+# $$\displaystyle \vec W_{N_1} = 0.1834a\vec a - 0.1669b\vec b - 0.0015c\vec c$$
+# 
+# where 
+# 
+# $$\displaystyle w_1 = 0.1834a,\quad w_2 = -0.1669b,\quad w_3 = -0.0015c$$
 # 
 # and the constants $a, b, c$ are present because the lengths are given as fractions of the unit cell length. These could be multiplied out at the outset to give the vector
 # 
@@ -168,7 +172,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # The base vectors $A, B, C$ have unit lengths, therefore, $k_1^2 + k_2^2 + k_3^2 = 1$ and similarly for the $m$ and $n$. Changing a basis does not change the vector at all, it merely moves the components around so that they have different values in a different basis set. The equations 27 represent the axes conversion from the $ABC$ basis set to the $xyz$. These three equations can be put into a matrix form that shows the pattern of indices nicely. You should consult Chapter 7 if you are not familiar with matrices and their multiplication.
 # 
-# $$\displaystyle \qquad\qquad\begin{bmatrix} A\\B\\C\end{bmatrix}=\begin{bmatrix}k_1 & k_2 & k_3\\m_1 & m_2 & m_3\\ n_1 & n_2 & n_3 \end{bmatrix} \begin{bmatrix}x\\y\\z\end{bmatrix}\qquad\qquad \qquad\qquad\text{(28)}$$
+# $$\displaystyle \begin{bmatrix} A\\B\\C\end{bmatrix}=\begin{bmatrix}k_1 & k_2 & k_3\\m_1 & m_2 & m_3\\ n_1 & n_2 & n_3 \end{bmatrix} \begin{bmatrix}x\\y\\z\end{bmatrix}\qquad\qquad\qquad\qquad\qquad\qquad\text{(28)}$$
 # 
 # The two sets of axes could be placed at any orientation with respect to one another but to make things easier, let vectors $A$ and $x$ coincide and let vector $B$ be in the $x-y$ plane, see figure 23. If this orientation is calculated in some other way then the basis set $(x\; y\; z)$ may need to be reordered to get everything correct. The way to check that everything is all right is to make all the angles $90^\text{o}$ then a diagonal matrix should result.
 # 
@@ -215,7 +219,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # Written in matrix form they are clearer,
 # 
-# $$\displaystyle \qquad\qquad\begin{bmatrix} \vec a\\ \vec b\\ \vec c\end{bmatrix}=\begin{bmatrix}a&0&0\\b\cos(\gamma)& b\sin(\gamma) & 0\\c\cos(\gamma) & cn_2 & c\sqrt{\sin^2(\beta)-n_2^2} \end{bmatrix}\begin{bmatrix}\vec x\\\vec y\\\vec z \end{bmatrix}\qquad\qquad\qquad\qquad \text{(30)}$$
+# $$\displaystyle \begin{bmatrix} \vec a\\ \vec b\\ \vec c\end{bmatrix}=\begin{bmatrix}a&0&0\\b\cos(\gamma)& b\sin(\gamma) & 0\\c\cos(\gamma) & cn_2 & c\sqrt{\sin^2(\beta)-n_2^2} \end{bmatrix}\begin{bmatrix}\vec x\\\vec y\\\vec z \end{bmatrix}\qquad\qquad\qquad\qquad\qquad\qquad\text{(30)}$$
 # 
 # This equation can be written in shorthand as
 # 
@@ -284,10 +288,9 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # The C-N$_1$ bond length can be calculated either by converting the C or N$_1$ atom's coordinates separately, or by forming the $g_{ABC}$ values of a bond vector as the difference in C and N$_1$ values, and then transforming with the M matrix. The result is $0.1346$ nm, which is the same found in Section 8.3 but arrived at far more simply.
 # 
-# A more complex example of using these formulae is to calculate the volume of the unit cell, (see Section 10.2) bond distances $\mathrm{C_1-C_2}$ and $\mathrm{C_2-C_3}$ and the $\mathrm{C1-C2} \to \mathrm{C_2-C_3}$ bond angle in the benzene ring of o-nitrobenzoic acid. Python will be used to do the arithmetic. The crystal structure is triclinic with the following cell parameters (G. Portalone Acta Cryst. E, 2009, v65, p0954), lengths in $\overset{\text{ o}}{A}$ and angles in degrees.
+# A more complex example of using these formulae is to calculate the volume of the unit cell, (see Section 10.2) bond distances $\mathrm{C_1-C_2}$ and $\mathrm{C_2-C_3}$ and the $\mathrm{C_1-C_2} \to \mathrm{C_2-C_3}$ bond angle in the benzene ring of o-nitrobenzoic acid. Python will be used to do the arithmetic. The crystal structure is triclinic with the following cell parameters (G. Portalone Acta Cryst. E, 2009, v65, p0954), lengths in $\overset{\text{ o}}{A}$ and angles in degrees.
 # 
-# $$\displaystyle a  =   5.0147, b  =   7.527, c  =   10.620, \alpha = 69.41, \beta  = 86.07, \gamma  = 71.01
-# $$
+# $$\displaystyle a  = 5.0147,\; b = 7.527,\; c = 10.620,\; \alpha = 69.41,\; \beta = 86.07,\; \gamma = 71.01 $$
 # 
 # The first step is to define the matrix $\boldsymbol M$, and then equation 31 where the row vector is the vector of bond coordinates. When M was defined, it was done so in terms of fractional coordinates, as shown in the table, so that these can be used directly in the calculation. The angles are quoted in degrees and minutes and must be converted into fractions of degrees and then radians.
 # 
@@ -331,7 +334,7 @@ print('{:s}{:8.4f}{:s}'.format('Volume =',Volume/1000,' nm^3') )
 
 def bond_length(A,B):  # A and B are vectors of x/a, y/b, z/c  eqn. 31a 
     
-    dAB = (A - B) @ M                 # @ is matric multiply
+    dAB = (A - B) @ M                   # @ is matrix multiply
     return  np.sqrt(np.dot(dAB,dAB))
 #---------------------------------
 
@@ -357,9 +360,9 @@ print('{:s}{:6.1f}{:s}'.format('bond angle C12N =', bond_angle(C2,C1,N1),' degre
 # 
 # The absolute value of the determinant of $\boldsymbol M$ is numerically equal to the volume of the unit cell, (Giacovazzo et al. 1992, p. 68). When all the angles are $90^\text{o}$ then this matrix reduces to a diagonal form, and the determinant is $abc$, which is equal to the volume. Consider a monoclinic crystal, such as benzoic acid, where only one crystal angle is not $90^\text{o}$, and where $a = 0.552, b = 0.514, c = 2.190$ nm and the angle $\beta= 97^\text{o}$. The volume of the crystal will only be a little smaller than that of a solid rectangle of sides $abc = 0.621\;\mathrm{ nm^3}$ because the angle $\beta$ is close to $90^\text{o}$. The $\boldsymbol M$ matrix for a monoclinic crystal where $\alpha = \gamma =90^\text{o}$ is
 # 
-# $$\displaystyle \qquad\qquad\begin{bmatrix}\vec a\\ \vec b\\ \vec c\end{bmatrix}=\begin{bmatrix}a&0&0\\0&b&0\\c\cos(\beta) & 0 & c\sin(\beta)\end{bmatrix}\begin{bmatrix}\vec x\\ \vec y\\ \vec z\end{bmatrix}\qquad\qquad\qquad\qquad \text{(34)}$$
+# $$\displaystyle \begin{bmatrix}\vec a\\ \vec b\\ \vec c\end{bmatrix}=\begin{bmatrix}a&0&0\\0&b&0\\c\cos(\beta) & 0 & c\sin(\beta)\end{bmatrix}\begin{bmatrix}\vec x\\ \vec y\\ \vec z\end{bmatrix}\qquad\qquad\qquad\qquad\qquad\qquad\text{(36)}$$
 # 
-# The determinant is simple to do by hand in this particular example because the terms that are zero mean that the determinant is the product of the diagonal terms or $V=abc\sin(\beta)$. This result makes sense viewing the geometry of a monoclinic crystal, figure 22, which is that of a rectangular box pushed along one side. The term $\sin(\beta)$ is the amount the height is reduced compared to a rectangular box. Using the cell parameters, the volume of the benzoic acid unit cell is $0.617\;\mathrm{ nm^3}$, which is slightly smaller than the rectangular $0.621\;\mathrm{nm^3}$.
+# The determinant is simple to calculate by hand in this particular example because the terms that are zero mean that the determinant is the product of the diagonal terms or $V=abc\sin(\beta)$. This result makes sense viewing the geometry of a monoclinic crystal, figure 22, which is that of a rectangular box pushed along one side. The term $\sin(\beta)$ is the amount the height is reduced compared to a rectangular box. Using the cell parameters, the volume of the benzoic acid unit cell is $0.617\;\mathrm{ nm^3}$, which is slightly smaller than the rectangular $0.621\;\mathrm{nm^3}$.
 
 # In[ ]:
 

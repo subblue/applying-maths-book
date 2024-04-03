@@ -12,7 +12,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from sympy import *
 init_printing()                  # allows printing of SymPy results in typeset maths format
-plt.rcParams.update({'font.size': 16})  # set font size for plots
+plt.rcParams.update({'font.size': 16}) # set font size for plots
 
 
 # 
@@ -250,10 +250,9 @@ for i in range(m):
 # 
 # Such has been the fascination of $\pi$ to mathematicians that there are many algebraic formulae which contain $\pi$ and others with which to calculate it. Some examples are shown below.
 # 
-# $$ e^{i\pi}=-1, \qquad \int_0^\infty \frac{\ln(x)^2}{1+x^2}=\left(\frac{\pi}{2} \right)^2 ,\qquad \frac{\pi^6}{6}=\frac{1}{1^2}+\frac{1}{2^2}+\frac{1}{3^2}\cdots=\sum_{n=1}^\infty\frac{1}{n^2}+$$
+# $$ e^{i\pi}=-1, \qquad \int_0^\infty \frac{\ln(x)^2}{1+x^2}=\left(\frac{\pi}{2} \right)^2 ,\qquad \frac{\pi^2}{6}=\frac{1}{1^2}+\frac{1}{2^2}+\frac{1}{3^2}\cdots=\sum_{n=1}^\infty\frac{1}{n^2}$$
 # 
-# In these and many other formulae producing $\pi$, it is difficult to appreciate why $\pi$ appears; some are far more efficient at calculating than the method described, but do not have the appeal of the geometric approach.
-# 
+# The  last equation summing to $\pi^2/6$ is called the Basel Problem. The Bernoulli brothers, both formidable mathematicians, failed to workout this summation which was done by Euler in 1743. 
 
 # ## 2.2 Square Roots
 # 
@@ -317,15 +316,17 @@ for i in range(m):                          # do iteration
 
 # If you try this algorithm with other values of $N$, you will soon realize that from a very wide range of initial values, convergence takes only a few iterations; it is far more efficient than the algorithm calculating $\pi$. You will need to increase $m$ a little to get more iterations with larger $N$.
 
-# ## 2.3 Average or mean values. Arithmetic, Geometric and Harmonic.
+# ## 2.3 Average or mean values. Arithmetic, Geometric and Harmonic
 # 
-# **Arithmetic mean.** The common or arithmetic average is the sum of a set of numbers divided by their number,
+# ### **Arithmetic mean** 
+# The common or arithmetic average is the sum of a set of numbers divided by their number $m$,
 # 
 # $$\displaystyle \mu_A= \frac{(n_1+n_2+n_3 \cdots+n_m)}{m}=\frac{1}{m}\sum_{i=1}^m n_i$$
 # 
 # This mean is described in more detail in chapter 4.8 (integration), however, this is not the only type of average. 
 # 
-# **Geometric mean.** The Geometric mean $\mu_G$ is defined as
+# ### **Geometric mean** 
+# The Geometric mean $\mu_G$ is defined as
 # 
 # $$\displaystyle \mu_G = (n_1\cdot n_2 \cdots n_m)^{1/m}= \left(\prod_{i=1}^m\right)^{1/m}$$
 # 
@@ -342,13 +343,14 @@ for i in range(m):                          # do iteration
 # 
 # This mean is useful when there are outliers in a data set as it produces a value closer to most number rather than being biased by the outlier. For example if the data is $(2,10,14, 50)$ the arithmetic mean is $39$ but the geometric mean is $10.88$ a much more reasonable value.
 # 
-# **Harmonic mean.** You may occasionally come across the Harmonic mean $\mu_H$ defined as
+# ### **Harmonic mean.** 
+# You may occasionally come across the Harmonic mean $\mu_H$ of $m$ numbers which is defined as
 # 
 # $$\displaystyle \frac{1}{\mu_H}=\frac{1}{m}\left(\frac{1}{n_1}+\frac{1}{n_2}+\cdots +\frac{1}{n_m} \right)$$
 # 
 # which can be put into the more complicated formula,
 # 
-# $$\displaystyle \mu_H=m\frac{1}{\sum_{i=1}^m\frac{1}{ a_i} }$$
+# $$\displaystyle \mu_H=m\frac{1}{\sum_{i=1}^m\frac{1}{\large{ n_i}} }$$
 # 
 # This mean is used when the quantity $n_i$ is a ratio. The typical example is to work out an average speed when a journey is travelled at different speeds. The average speed is the total distance travelled divided by the total time. The total time for each leg is speed divided by distance. If the journey is to somewhere and back again by the same route, the distance is $2d$. If the first leg is travelled at $60$ mph and the return at $30$ the average is  $2d/(d/60 + d/30)=40$ mph not $45$ as a simple average would suggest. Resistors arranged in parallel also have an average value given by the Harmonic mean.
 
@@ -479,7 +481,8 @@ while abs(b-a)> Lmt and i < N-1 :
 # 
 # $$\displaystyle  e^xe^y= e^{x+y}; \qquad \text{and} \qquad e^xe^ye^z= e^{x+y+z}\qquad\tag{9}$$
 # 
-# **Recursive calculation of e.** You can try calculating the exponential series by hand and easily see how the accuracy improves term by term. A quick examination of the series shows that you can use a previous value to obtain the next; starting at the second term, the third is calculated by multiplying the second by $x/3$, the fourth by multiplying the third by $x/4$, and so on. This type of process is called _recursion_ and the calculation of $\pi$ and of square roots described in Sections 1 and 2 are both recursive. The Python code to calculate $e^x$ recursively is shown below; you can add more terms in the for loop to get a better answer, which is the sum of terms $s$.
+# ### **Recursive calculation of e.** 
+# You can try calculating the exponential series by hand and easily see how the accuracy improves term by term. A quick examination of the series shows that you can use a previous value to obtain the next; starting at the second term, the third is calculated by multiplying the second by $x/3$, the fourth by multiplying the third by $x/4$, and so on. This type of process is called _recursion_ and the calculation of $\pi$ and of square roots described in Sections 1 and 2 are both recursive. The Python code to calculate $e^x$ recursively is shown below; you can add more terms in the for loop to get a better answer, which is the sum of terms $s$.
 
 # In[5]:
 
@@ -546,7 +549,7 @@ for i in range(1,12):      # increase number if does not comverge
 # 
 # The idea behind the logarithm, therefore, is to 
 # 
-# $$\displaystyle \text{'use addition to multiply and subtraction to divide'}$$
+# > **use addition to multiply and subtraction to divide**
 # 
 # and this is because logs relate to powers of numbers. The calculation $128/4$ done with logs is
 # 
@@ -570,7 +573,7 @@ for i in range(1,12):      # increase number if does not comverge
 # 
 # $$\displaystyle \log(x^n) = n \log(x)\tag{12}$$
 # 
-# but note that $\log(x)^n$  means that the log of the number is raised to $n$; for example, $\log(x)^3 = \log(x)\log(x)\log(x)$, whereas $\log(x^3) = 3\log(x)$.
+# but note that $\log(x)^n$  means that the log of the number is raised to $n$; for example, $\log(x)^3 = \log(x)\log(x)\log(x)$, whereas $\log(x^3) = 3\log(x)$. It is becoming more common to use, for example, $\ln^3(x)$ rather than $\ln(x)^3$ which is the same notation as used for trig functions.
 # 
 # The number $2^8 = 256$ written in logarithmic form is $8 = \log_2(256)$, which means that '8 equals log base 2 of 256' and 'base 2' means that we are raising numbers to powers of $2$. The general formulae relating a number $N$ with base $b$ and a power $p$ are:
 # 
@@ -660,35 +663,40 @@ for i in range(1,12):      # increase number if does not comverge
 # which is $\ln(x)=2.30258\log(x)$.
 # 
 # ## 4.2 Summary of logs and powers: definition $x=b^{\log_b(x)}$
-# 
-# $$\displaystyle \begin{array}{lll}\\
+# $$\displaystyle \begin{array}{lll}
 # \hline
 # a^0 = 1& \log(0)=-\infty& \log(1)=0,\quad \log(\infty)=\infty\\[10pt]
 # a^{n+m}=a^ma^n & \log(a)+\log(b)=\log(a\cdot b) & \text{ if } a \gt 0 ; b\gt 0\\[10pt]
 # a^{n-m}=a^na^{-m}=\displaystyle \frac{a^n}{a^m} & \displaystyle \log(a)-\log(b)=\log\left(\frac{a}{b}\right) & \text{ if } a \gt 0 ; b\gt 0\\[10pt]
 # \left(a^m \right)^n=a^{m\cdot n} & \log(a^n)=n\log(a)& \text{ if } a \gt 0 ; n\ne 0\\[10pt]
-# \text{ change base } &\log_a(x)=\log_a(b)\log_b(x)\\[10pt]
+# \text{ change base } &\log_a(x)=\log_a(b)\log_b(x)\\
 # \hline
 # \end{array}$$
 #     
 # ## 4.3 Comparison of log and exponential 
-# 
 # The graph in Figure 8 shows the exponential and log functions; $e^x,\; e^{-x}$, and $\ln(x)$. Notice how the exponential and log are symmetrical about the line $y = x$. The curve that would be symmetrical about $y=-x$ and $e^{-x}$ is $\ln(|x|)$ where $|x|$ means taking the absolute value, which if $x$ is real means changing $-x$ into $x$.
 # 
 # The log is normally defined only over the range of positive $x$ values $0 \lt x \lt \infty,\; \ln(1) = 0$ and $\ln(0) = -\infty$. The log with negative $x$ values is a complex number; see Chapter 2.8. The exponential is defined over all values of $x$ and has the values $e^0 = 1,\; e^{-\infty} = 0$ and $e^\infty = \infty$. 
 # 
-# ## 4.4 Log as a series 
+# ## 4.4 Log as a series, $\ln(1\pm x)$ 
 # 
 # Just as with the exponential, the log can be written as a series expansion, but only if $|x|\lt 1$:
 # 
 # $$\displaystyle \begin{align}\ln(1+x)&=x-\frac{x^2}{2}+\frac{x^3}{3}-\frac{x^4}{4}+\cdots =\sum_{n=1}^\infty (-1)^{n+1}\frac{x^n}{n}  ,\\
 # \ln(1-x)&=-x-\frac{x^2}{2}-\frac{x^3}{3}-\frac{x^4}{4}-\cdots =-\sum_{n=1}^\infty \frac{x^n}{n} \end{align} $$
 # 
-# and where the $(-1)^{n+1}$  makes the even-valued terms in $n$ negative. If we want to calculate $\ln(q)$, we can make $q = 1 + x$ and substitute $x = q - 1$ into the series. This and other series are described in Chapter 5.
+# and where the $(-1)^{n+1}$  makes the even-valued terms in $n$ negative. If we want to calculate $\ln(q)$, we can make $q = 1 + x$ and substitute $x = q - 1$ into the series. 
+# 
+# When we want to expand $\ln(1+x)$ provided that $|x|>1$ the formula to use is 
+# 
+# $$\displaystyle \ln(1+x)=\ln(x)- \sum_{n=1}^\infty (-1)^{n}\frac{x^{-n}}{n},\quad |x|>1$$
+# 
+# where we used $\ln(1+x)-\ln(x)=\ln(1+1/x)$. Notice that the power of $x$ is now negative. Log and other series are described in Chapter 5.
 # 
 # ![drawing](chapter1-fig8.png)
 # 
 # Figure 8 Graph of exponential and log functions with the straight line $y = x$. The symmetry between $e^x$ and $\ln(x)$ is clear.
+# ____________________
 # 
 # ## 4.5 Arguments to functions such as exponential, sine etc.  do not have units
 # 

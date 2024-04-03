@@ -51,6 +51,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -139,7 +141,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-1/chapter1-B.html">
-     5 Trig, hyperbolic and inverse functions, waves, polar coordinates &amp; factorials
+     5 Trig, hyperbolic and inverse functions, waves, polar coordinates,  factorials
     </a>
    </li>
    <li class="toctree-l2">
@@ -471,7 +473,7 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-5/chapter-5-A.html">
-     1 Series, averages, partition functions, DNA melting, atom entropy
+     1 Series, averages, waves, partition functions, DNA melting, atom entropy
     </a>
    </li>
    <li class="toctree-l2">
@@ -1806,17 +1808,17 @@ title="Print to PDF"
 <section id="ii-chain-reactions-mean-chain-length">
 <h3><strong>(ii) Chain reactions. Mean Chain length</strong><a class="headerlink" href="#ii-chain-reactions-mean-chain-length" title="Permalink to this headline">#</a></h3>
 <p>In a chain reaction, in contrast to a ‘normal’ reaction, one of the products is the same species as a reactant, or can react in an equivalent way, and so the reaction propagates. Polymer formation and may gas phase reactions such as <span class="math notranslate nohighlight">\(\mathrm{O_2 + H_2}\)</span> are chain reactions. In gas phase reactions radical species, such as <span class="math notranslate nohighlight">\(\mathrm{H\cdot,\, OH\cdot}\)</span>,  are usually the chain carriers.</p>
-<p>The general scheme is shown in fig 17c. Species I is the initiator step, for example a thermal reaction that generates active molecules, A and C a product. As can be seen the species A is reformed and cycles around the reaction.</p>
+<p>The general scheme is shown in fig 16a. Species I is the initiator step, for example a thermal reaction that generates active molecules, <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(C\)</span> a product. As can be seen the species <span class="math notranslate nohighlight">\(A\)</span> is reformed and cycles around the reaction.</p>
 <p><img alt="Drawing" src="../_images/integration-fig17c.png" /></p>
 <p>figure 16a: Semenov’s scheme for a simple chain reaction.</p>
 <hr class="docutils" />
-<p>The probability of propagation is defined as that fraction of A which is used again <span class="math notranslate nohighlight">\(\displaystyle \alpha =\frac{v_1}{v_1+v_2}\)</span> where <span class="math notranslate nohighlight">\(v_1,\,v_2\)</span> are effective first order rate constants with <span class="math notranslate nohighlight">\(v_2\)</span> forming any species that undergoes no further reaction.  The rate of reaction is</p>
+<p>The probability of propagation is defined as that fraction of <span class="math notranslate nohighlight">\(A\)</span> which is used again <span class="math notranslate nohighlight">\(\displaystyle \alpha =\frac{v_1}{v_1+v_2}\)</span> where <span class="math notranslate nohighlight">\(v_1,\,v_2\)</span> are effective first order rate constants with <span class="math notranslate nohighlight">\(v_2\)</span> forming any species that undergoes no further reaction.  The rate of reaction is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle W =\frac{d[C]}{dt} = v_1[A]\]</div>
 <p>and A reacts as</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle \qquad\qquad\qquad \begin{align}
-\frac{d[A]}{dt}&amp;= I- (v_1+v_2)[A]+v_1[A] \\&amp;= I-\frac{(1-\alpha)}{\alpha}v_1[A] \qquad\qquad\qquad\text{(27a)}\\
+\frac{d[A]}{dt}&amp;= I- (v_1+v_2)[A]+v_1[A] \\&amp;= I-\frac{(1-\alpha)}{\alpha}v_1[A] \quad\qquad\qquad\qquad\qquad\text{(27a)}\\
 &amp;= I-\frac{(1-\alpha)}{\alpha}W\end{align} \end{split}\]</div>
 <p>In the stationary phase of the reaction (steady state), then <span class="math notranslate nohighlight">\(\displaystyle d[A]/dt = 0\)</span> then defining  the chain length as <span class="math notranslate nohighlight">\(v=W/I\)</span> then <span class="math notranslate nohighlight">\(\displaystyle v=\frac{\alpha }{1-\alpha}\)</span>.</p>
 <p>If the chain has <span class="math notranslate nohighlight">\(s\)</span> links then it must have propagated with chance <span class="math notranslate nohighlight">\(\alpha,\; s\)</span> times  and not propagated with chance <span class="math notranslate nohighlight">\((1-\alpha)\)</span> once. Thus the probability of <span class="math notranslate nohighlight">\(s\)</span> links in a chain is <span class="math notranslate nohighlight">\(p_s=\alpha^s(1-\alpha)\)</span>.</p>
@@ -1880,7 +1882,7 @@ title="Print to PDF"
 </section>
 <section id="ii-infection-period">
 <h3><strong>(ii) Infection period</strong><a class="headerlink" href="#ii-infection-period" title="Permalink to this headline">#</a></h3>
-<p>This example is that of calculating the mean time that a person is infected with a disease. Suppose that you are infected at time <span class="math notranslate nohighlight">\(t\)</span>, and that the chance that you are no longer infected in the next small time interval <span class="math notranslate nohighlight">\(\delta t\)</span>, is <span class="math notranslate nohighlight">\(a\delta t\)</span>, where <span class="math notranslate nohighlight">\(a\)</span> is a constant depending on the type of disease. This is the rate constant with which the disease will die out. If <span class="math notranslate nohighlight">\(p(t)\)</span> is the chance that you were infected at time <span class="math notranslate nohighlight">\(t\)</span>, during the time <span class="math notranslate nohighlight">\(t + \delta t\)</span> this changes to <span class="math notranslate nohighlight">\(p(t + \delta t) = p(t)(1 - a\delta t) + O(\delta t^2)\)</span>, which is the chance of being infected at time <span class="math notranslate nohighlight">\(t\)</span> multiplied by the chance of remaining infected during the following time <span class="math notranslate nohighlight">\(\delta t\)</span>. The term <span class="math notranslate nohighlight">\(O(\delta t^2)\)</span> means that terms in <span class="math notranslate nohighlight">\(\delta t^2\)</span> and higher are ignored because they are so small (see Chapter 5 for ‘big O’ notation). Subtracting <span class="math notranslate nohighlight">\(p(t)\)</span> from both sides and dividing by <span class="math notranslate nohighlight">\(\delta t\)</span> gives</p>
+<p>The mean time that a person is infected with a disease is calculated. Suppose that you are infected at time <span class="math notranslate nohighlight">\(t\)</span>, and that the chance that you are no longer infected in the next small time interval <span class="math notranslate nohighlight">\(\delta t\)</span>, is <span class="math notranslate nohighlight">\(a\delta t\)</span>, where <span class="math notranslate nohighlight">\(a\)</span> is a constant depending on the type of disease. This is the rate constant with which the disease will die out. If <span class="math notranslate nohighlight">\(p(t)\)</span> is the chance that you were infected at time <span class="math notranslate nohighlight">\(t\)</span>, during the time <span class="math notranslate nohighlight">\(t + \delta t\)</span> this changes to <span class="math notranslate nohighlight">\(p(t + \delta t) = p(t)(1 - a\delta t) + O(\delta t^2)\)</span>, which is the chance of being infected at time <span class="math notranslate nohighlight">\(t\)</span> multiplied by the chance of remaining infected during the following time <span class="math notranslate nohighlight">\(\delta t\)</span>. The term <span class="math notranslate nohighlight">\(O(\delta t^2)\)</span> means that terms in <span class="math notranslate nohighlight">\(\delta t^2\)</span> and higher are ignored because they are so small (see Chapter 5 for ‘big O’ notation). Subtracting <span class="math notranslate nohighlight">\(p(t)\)</span> from both sides and dividing by <span class="math notranslate nohighlight">\(\delta t\)</span> gives</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \frac{p(t+\delta t)-p(t)}{\delta t}=-ap(t)\]</div>
 <p>Forming the differential with the limit <span class="math notranslate nohighlight">\(\delta t \to 0\)</span> gives</p>
@@ -1889,7 +1891,7 @@ title="Print to PDF"
 <p>As only one individual was considered <span class="math notranslate nohighlight">\(p(0) = 1\)</span>, and when integrated, by separating variables, <span class="math notranslate nohighlight">\(p(t) = e^{-at}\)</span>. If <span class="math notranslate nohighlight">\(N\)</span> individuals were initially infected then <span class="math notranslate nohighlight">\(p(t) = Ne^{-at}\)</span>. The average or mean time of infected is therefore by 29,</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \langle t\rangle   =\frac{\int_0^\infty te^{-at}dt}{\int_0^\infty e^{-at}dt} =\frac{1}{a}\]</div>
-<p>A related type of argument is followed to find the mean free path of gas molecules or atoms, but with the distance between collisions taking the place of time.</p>
+<p>A related argument is followed to find the mean free path of gas molecules or atoms, but with the distance between collisions taking the place of time.</p>
 </section>
 <section id="iii-centroids">
 <h3><strong>(iii) Centroids</strong><a class="headerlink" href="#iii-centroids" title="Permalink to this headline">#</a></h3>

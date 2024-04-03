@@ -37,8 +37,8 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # **(i)** To differentiate $\displaystyle y=\sin(ax^2+x^{-3})$ treat the sine as the outside function, differentiate it to produce $\cos(\cdots)$, then multiply by the differential of the terms inside the sine bracket
 # 
 # $$\displaystyle \qquad\qquad\begin{align} y& =\sin(\underline{ax^2+x^{-3}})\\
-#  &\quad\uparrow \qquad \uparrow\\
-# &\text{   outside}\; \text{      inside}\end{align} \qquad\qquad\qquad\qquad\qquad\text{(16)} $$
+# &\quad\uparrow \qquad \uparrow\\
+# &\text{   outside}\; \text{      inside}\end{align}\qquad\qquad \text{(16)} $$
 # 
 # differentiating the outside first, then the inside
 # 
@@ -199,15 +199,15 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # $$\displaystyle \frac{dy}{dx}\left(1+\ln(y)\right)=1+\ln(x)$$
 # 
-# SymPy produces the same result after a little simplification and remembering that the function equals zero
+# SymPy produces the same result after a little simplification and remembering that the function equals zero and that x^x=y^y$.
 
 # In[2]:
 
 
 x,y = symbols('x,y')
-y = Function('y')           # define y to be a function 
-f = y(x)**y(x) - x**x       # define this as a function not an equation
-ans = diff(f,x)             # define y as a function of x so that it will be differentiated.
+y   = Function('y')           # define y to be a function 
+f   = y(x)**y(x) - x**x       # define this as a function not an equation
+ans = diff(f,x)               # define y as a function of x so that it will be differentiated.
 simplify(ans)
 
 

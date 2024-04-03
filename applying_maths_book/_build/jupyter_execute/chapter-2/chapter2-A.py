@@ -47,7 +47,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # The series formed from the first few powers of $i$ has a repeating pattern of four terms,
 # 
-# $$\displaystyle i^0=1, \quad i^1=i, \quad i^2=-1, \quad i^3=-i , \quad i^4=1, \quad i^5=i , \quad i^6=-1,\quad i^7=-i \cdots$$
+# $$\displaystyle \begin{align}&i^0 =1, \quad i^1=i, \quad i^2=-1, \quad i^3=-i, \\  &i^4=1, \quad i^5=i , \quad i^6=-1,\quad i^7=-i \cdots\end{align}$$
 # 
 # ## 1.1 Complex conjugate
 # 
@@ -131,7 +131,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # In figures 1 and 4 the line from the origin to the complex number is at an angle $\theta$  given by
 # 
-# $$ \tan(\theta) = \frac{b}{a},\qquad \theta = \tan^{-1}\left(\frac{b}{a}\right) =\tan^{-1}\left( \frac{Im(z)}{Re(z)} \right) \qquad\tag{2.6}$$
+# $$ \tan(\theta) = \frac{b}{a},\qquad \theta = \tan^{-1}\left(\frac{b}{a}\right) =\tan^{-1}\left( \frac{Im(z)}{Re(z)} \right) \tag{6}$$
 # 
 # measured anticlockwise from the real axis. This angle $\theta$ is variously called the _argument, amplitude, polar angle_, or _phase_ of the complex number and is measured in radians, a full circle being $2\pi$ radians. The use of the word 'amplitude' to mean an angle is very confusing, and should probably be avoided.
 # 

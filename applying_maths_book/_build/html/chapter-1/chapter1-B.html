@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>5 Trig, hyperbolic and inverse functions, waves, polar coordinates &amp; factorials &#8212; Applying Maths in the Chemical &amp; Biomolecular Sciences</title>
+    <title>5 Trig, hyperbolic and inverse functions, waves, polar coordinates, factorials &#8212; Applying Maths in the Chemical &amp; Biomolecular Sciences</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -51,6 +51,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -139,7 +141,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     5 Trig, hyperbolic and inverse functions, waves, polar coordinates &amp; factorials
+     5 Trig, hyperbolic and inverse functions, waves, polar coordinates,  factorials
     </a>
    </li>
    <li class="toctree-l2">
@@ -471,7 +473,7 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-5/chapter-5-A.html">
-     1 Series, averages, partition functions, DNA melting, atom entropy
+     1 Series, averages, waves, partition functions, DNA melting, atom entropy
     </a>
    </li>
    <li class="toctree-l2">
@@ -1567,8 +1569,8 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#factorials">
-   8 Factorials
+  <a class="reference internal nav-link" href="#factorials-stirling-s-formula-gamma-function">
+   8 Factorials, Stirling’s formula, gamma function
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -1594,7 +1596,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>5 Trig, hyperbolic and inverse functions, waves, polar coordinates & factorials</h1>
+                <h1>5 Trig, hyperbolic and inverse functions, waves, polar coordinates,  factorials</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -1661,8 +1663,8 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#factorials">
-   8 Factorials
+  <a class="reference internal nav-link" href="#factorials-stirling-s-formula-gamma-function">
+   8 Factorials, Stirling’s formula, gamma function
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -1690,7 +1692,7 @@ title="Print to PDF"
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="trig-hyperbolic-and-inverse-functions-waves-polar-coordinates-factorials">
-<h1>5 Trig, hyperbolic and inverse functions, waves, polar coordinates &amp; factorials<a class="headerlink" href="#trig-hyperbolic-and-inverse-functions-waves-polar-coordinates-factorials" title="Permalink to this headline">#</a></h1>
+<h1>5 Trig, hyperbolic and inverse functions, waves, polar coordinates,  factorials<a class="headerlink" href="#trig-hyperbolic-and-inverse-functions-waves-polar-coordinates-factorials" title="Permalink to this headline">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## import all python add-ons etc that will be needed later on</span>
@@ -1936,8 +1938,8 @@ z&amp;=r\cos(\theta), \qquad   &amp;r^2 =x^2 +y^2 +z^2\end{align}\end{split}\]</
 <p>Figure 18. Plane polar coordinates.</p>
 </section>
 <hr class="docutils" />
-<section id="factorials">
-<h2>8 Factorials<a class="headerlink" href="#factorials" title="Permalink to this headline">#</a></h2>
+<section id="factorials-stirling-s-formula-gamma-function">
+<h2>8 Factorials, Stirling’s formula, gamma function<a class="headerlink" href="#factorials-stirling-s-formula-gamma-function" title="Permalink to this headline">#</a></h2>
 <p>The factorial function is the product of a set of <em>positive integers</em> from 1 up to n;</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle n! = n \times (n - 1) \times (n - 2) \times \cdots \times 2 \times 1 \]</div>
@@ -1951,7 +1953,7 @@ z&amp;=r\cos(\theta), \qquad   &amp;r^2 =x^2 +y^2 +z^2\end{align}\end{split}\]</
 <p>Fractional, negative, and complex factorials are defined by the (complete) gamma function <span class="math notranslate nohighlight">\(\Gamma(n)\)</span>. Positive integer values of this function produce the factorials, and are related as</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \Gamma(n) = (n - 1)!\]</div>
-<p>The gamma function is the integral</p>
+<p>The Gamma Function is the integral</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \Gamma(z) = \int_0^\infty t^{z-1}e^{-t}dt\]</div>
 <p>which is defined in Python using a special function and imported as <span class="math notranslate nohighlight">\(\mathtt{from\,scipy.special \,import \,gamma}\)</span>. This can then be used to calculate any factorials such as shown in the figure.</p>
@@ -1975,9 +1977,10 @@ z&amp;=r\cos(\theta), \qquad   &amp;r^2 =x^2 +y^2 +z^2\end{align}\end{split}\]</
 <p>The approximations is calculated as</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle \begin{align}\ln(n!)&amp;=\sum_{j=1}^n \ln(n_j) \approx \int_1^n \ln(x)dx=(n\ln(n)-n)\big|_1^n\\ &amp;= n \ln(n) - n+1\end{align} \end{split}\]</div>
-<p>A much more accurate approximation is</p>
+<p>which is slightly smaller than the true value. A far more accurate approximation is</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \ln(n!) = \left(n+\frac{1}{2}\right) \ln(n) - n +\frac{1}{2}\ln(2\pi)\]</div>
+<p>which on the scale of figure 19 produces values indistinguishable from the true values.</p>
 <p><img alt="Drawing" src="../_images/chapter1-fig19.png" /></p>
 <p>Figure 19. Left: <span class="math notranslate nohighlight">\(\ln(n!)\)</span> vs <span class="math notranslate nohighlight">\(n\)</span>. The curve is not smooth because the factorials are integer numbers. Right: The gamma function (solid line) and the factorial (circles).</p>
 </section>

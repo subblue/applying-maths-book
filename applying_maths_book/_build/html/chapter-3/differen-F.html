@@ -51,6 +51,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -139,7 +141,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-1/chapter1-B.html">
-     5 Trig, hyperbolic and inverse functions, waves, polar coordinates &amp; factorials
+     5 Trig, hyperbolic and inverse functions, waves, polar coordinates,  factorials
     </a>
    </li>
    <li class="toctree-l2">
@@ -471,7 +473,7 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-5/chapter-5-A.html">
-     1 Series, averages, partition functions, DNA melting, atom entropy
+     1 Series, averages, waves, partition functions, DNA melting, atom entropy
     </a>
    </li>
    <li class="toctree-l2">
@@ -1787,7 +1789,8 @@ title="Print to PDF"
 <p>The first derivative is zero at <span class="math notranslate nohighlight">\(x=0\)</span>, and the second zero at <span class="math notranslate nohighlight">\(\displaystyle x=\pm\frac{1}{\sqrt{3}}\)</span>  and <span class="math notranslate nohighlight">\(\displaystyle y=\pm\frac{3}{4}\)</span></p>
 <section id="luminescence-from-phosphors-an-example-with-differentiation-of-an-integral-and-numerically-solving-for-a-root">
 <h3><strong>Luminescence from phosphors. An example with differentiation of an integral and numerically solving for a root</strong><a class="headerlink" href="#luminescence-from-phosphors-an-example-with-differentiation-of-an-integral-and-numerically-solving-for-a-root" title="Permalink to this headline">#</a></h3>
-<p>Many non metallic compounds such as ZnS-Cu and zinc silicates-Mn, will show phosphorescence lasting many tens of seconds after excitation with UV light. Some phosphors also show luminescence on heating and this provides a method of dating minerals and clays directly or in man-made objects discovered by archaeologists. The cause of the luminescence is the recombination of electrons, liberated by the UV or heat, with relatively low energy impurity ‘traps’ and the excess energy is released as a photon. These impurity traps have an energy between the filled levels (ground state or valance band) and the empty ones at higher energy (excited state or conduction band).</p>
+<p>Many compounds such as ZnS-Cu and zinc silicates-Mn and many other crystalline minerals, will show phosphorescence lasting many tens of seconds after excitation with UV light. Some phosphors also show luminescence on heating and this provides a method of dating minerals and clays directly or in man-made objects discovered by archaeologists after being buried perhaps for millenia. The cause of the luminescence is the recombination of electrons, liberated by the UV or heat (i.e. as phonons), with relatively low energy impurity ‘traps’. The excess energy is released as a photon. These impurity traps have an energy between the filled levels (ground state or valence band) and the empty ones at higher energy (excited state or conduction band).</p>
+<p>In ceramics heating during firing the clay releases all the previously trapped electrons and effectively sets the clock to zero. Subsequently the compounds in the ceramic are continuously energised via the breakdown of radioactive elements in their environment, the total amount growing with the time they are buried. After millenia there are enough trapped electrons to produce a measureable amount of phosphorescence when the material either is exposed to strong light, often a few seconds exposure to daylight is sufficient, or heated. The time-range with this method is from approximately <span class="math notranslate nohighlight">\(2000 \to 350,000\)</span> years ago.</p>
 <p>If there are <span class="math notranslate nohighlight">\(n\)</span> electrons liberated their decay into a trap can be described by a first order scheme as,</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \frac{dn}{dt}=-k_1n\]</div>

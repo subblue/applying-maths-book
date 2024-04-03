@@ -51,6 +51,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -139,7 +141,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-1/chapter1-B.html">
-     5 Trig, hyperbolic and inverse functions, waves, polar coordinates &amp; factorials
+     5 Trig, hyperbolic and inverse functions, waves, polar coordinates,  factorials
     </a>
    </li>
    <li class="toctree-l2">
@@ -471,7 +473,7 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-5/chapter-5-A.html">
-     1 Series, averages, partition functions, DNA melting, atom entropy
+     1 Series, averages, waves, partition functions, DNA melting, atom entropy
     </a>
    </li>
    <li class="toctree-l2">
@@ -1832,8 +1834,8 @@ title="Print to PDF"
 <p><strong>(i)</strong> To differentiate <span class="math notranslate nohighlight">\(\displaystyle y=\sin(ax^2+x^{-3})\)</span> treat the sine as the outside function, differentiate it to produce <span class="math notranslate nohighlight">\(\cos(\cdots)\)</span>, then multiply by the differential of the terms inside the sine bracket</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle \qquad\qquad\begin{align} y&amp; =\sin(\underline{ax^2+x^{-3}})\\
- &amp;\quad\uparrow \qquad \uparrow\\
-&amp;\text{   outside}\; \text{      inside}\end{align} \qquad\qquad\qquad\qquad\qquad\text{(16)} \end{split}\]</div>
+&amp;\quad\uparrow \qquad \uparrow\\
+&amp;\text{   outside}\; \text{      inside}\end{align}\qquad\qquad \text{(16)} \end{split}\]</div>
 <p>differentiating the outside first, then the inside</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \frac{dy}{dx}=\cos(ax^2+x^{-3})\frac{d}{dx}(ax^2+x^{-3})=\cos(ax^2+x^{-3})(2ax-3x^{-4})\]</div>
@@ -1956,13 +1958,13 @@ title="Print to PDF"
 <p>which can be simplified to</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \frac{dy}{dx}\left(1+\ln(y)\right)=1+\ln(x)\]</div>
-<p>SymPy produces the same result after a little simplification and remembering that the function equals zero</p>
+<p>SymPy produces the same result after a little simplification and remembering that the function equals zero and that x^x=y^y$.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">,</span><span class="n">y</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x,y&#39;</span><span class="p">)</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">Function</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">)</span>           <span class="c1"># define y to be a function </span>
-<span class="n">f</span> <span class="o">=</span> <span class="n">y</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">**</span><span class="n">y</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">-</span> <span class="n">x</span><span class="o">**</span><span class="n">x</span>       <span class="c1"># define this as a function not an equation</span>
-<span class="n">ans</span> <span class="o">=</span> <span class="n">diff</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>             <span class="c1"># define y as a function of x so that it will be differentiated.</span>
+<span class="n">y</span>   <span class="o">=</span> <span class="n">Function</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">)</span>           <span class="c1"># define y to be a function </span>
+<span class="n">f</span>   <span class="o">=</span> <span class="n">y</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">**</span><span class="n">y</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">-</span> <span class="n">x</span><span class="o">**</span><span class="n">x</span>       <span class="c1"># define this as a function not an equation</span>
+<span class="n">ans</span> <span class="o">=</span> <span class="n">diff</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>               <span class="c1"># define y as a function of x so that it will be differentiated.</span>
 <span class="n">simplify</span><span class="p">(</span><span class="n">ans</span><span class="p">)</span>
 </pre></div>
 </div>

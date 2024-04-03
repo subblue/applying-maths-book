@@ -51,6 +51,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -139,7 +141,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-1/chapter1-B.html">
-     5 Trig, hyperbolic and inverse functions, waves, polar coordinates &amp; factorials
+     5 Trig, hyperbolic and inverse functions, waves, polar coordinates,  factorials
     </a>
    </li>
    <li class="toctree-l2">
@@ -471,7 +473,7 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-5/chapter-5-A.html">
-     1 Series, averages, partition functions, DNA melting, atom entropy
+     1 Series, averages, waves, partition functions, DNA melting, atom entropy
     </a>
    </li>
    <li class="toctree-l2">
@@ -1783,10 +1785,10 @@ title="Print to PDF"
 <p>If a function has a value <span class="math notranslate nohighlight">\(y = f(x)\)</span> at <span class="math notranslate nohighlight">\(x\)</span> and at a nearby point <span class="math notranslate nohighlight">\(x + \delta x\)</span> its value is <span class="math notranslate nohighlight">\(y + \delta y = f(x + \delta x)\)</span>, then the slope is approximately <span class="math notranslate nohighlight">\(\displaystyle \frac{\delta y}{\delta x}=\frac{f(x+\delta x)-f(x)}{\delta x}\)</span> provided that <span class="math notranslate nohighlight">\(\delta x \ne 0\)</span>. To find the gradient exactly at the point <span class="math notranslate nohighlight">\(x\)</span>, <span class="math notranslate nohighlight">\(\delta x\)</span> must tend to zero; <span class="math notranslate nohighlight">\(\delta x \to  0\)</span>, which means finding the limit of the equation, and at the limit <span class="math notranslate nohighlight">\(\delta\)</span> is changed to <span class="math notranslate nohighlight">\(d\)</span> and the derivative of the function is written in mathematical notation as <span class="math notranslate nohighlight">\(dy/dx\)</span> .</p>
 <p>The derivative can be written in a number of different ways besides <span class="math notranslate nohighlight">\(\displaystyle \frac{dy}{dx}\)</span>, although this is by far the most common. The following forms are equivalent:</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}\displaystyle \begin{align}\frac{dy}{dx}=  \lim_{\delta x \to 0} \frac{f(x+\delta x)-f(x)}{\delta x}&amp;\equiv \lim_{\delta x \to 0} \frac{\delta y}{\delta x}\\
+\[\begin{split}\displaystyle \qquad\qquad\begin{align}\frac{dy}{dx}=  \lim_{\delta x \to 0} \frac{f(x+\delta x)-f(x)}{\delta x}&amp;\equiv \lim_{\delta x \to 0} \frac{\delta y}{\delta x}\\
 &amp; \equiv \frac{df}{dx}\equiv \frac{df(x)}{dx}\equiv \frac{d}{dx}f(x)\\
 &amp;\equiv y' \equiv f(x)' \equiv f' \equiv \dot f\\
-&amp;\equiv Dy \equiv Df \equiv Df(x) \end{align}\qquad\qquad\qquad\qquad \text{(3)}\end{split}\]</div>
+&amp;\equiv Dy \equiv Df \equiv Df(x) \end{align}\qquad\qquad\text{(3)}\end{split}\]</div>
 <p>The derivative <span class="math notranslate nohighlight">\(df/dx\)</span> is the <em>gradient of the function</em> <span class="math notranslate nohighlight">\(f(x)\)</span> <em>at point</em> <span class="math notranslate nohighlight">\(x\)</span>. The gradient is also the tangent to the curve at the point <span class="math notranslate nohighlight">\(x\)</span>; a line at right angles to the tangent is called the <em>normal</em> to the curve, Fig. 3.</p>
 <p>In the next few sections simple functions are differentiated and the methods for dealing with products of these functions and more complex cases are described. Many are illustrated with SymPy and while this could be used to perform every calculation, using it as a ‘black box’ is not advisable; it is important to understand the approach used to reach a result.</p>
 <p><img alt="Drawing" src="../_images/differen-fig3.png" /></p>
@@ -1985,7 +1987,7 @@ again. Performing the operation twice is written as <span class="math notranslat
 \[\frac{1}{2}\mathrm{H_2(g) + AgCl(s) =Ag(s)+H^+(aq)+Cl^-(aq)}\]</div>
 <p>and</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle \epsilon = 0.35510-0.3422\cdot 10^{-4}T-3.2347\cdot10^{-6}T^2+6.314\cdot 10^{-9}T^3\quad \mathrm{ V}\]</div>
+\[\displaystyle \epsilon = 0.35510-0.3422\cdot 10^{-4}T-3.2347\cdot10^{-6}T^2+6.314\cdot 10^{-9}T^3\quad \mathrm{ Volt}\]</div>
 <p>and the temperature was measured in degrees Celsius. The derivatives are</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \left(\frac{\partial \epsilon}{\partial T}\right)_p= -3.422\cdot 10^{-5}-6.4694\cdot 10^{-6}T+1.8942\cdot 10^{-8}T^2\]</div>

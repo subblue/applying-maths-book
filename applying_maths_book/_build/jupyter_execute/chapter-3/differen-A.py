@@ -77,10 +77,10 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # The derivative can be written in a number of different ways besides $\displaystyle \frac{dy}{dx}$, although this is by far the most common. The following forms are equivalent:
 # 
-# $$\displaystyle \begin{align}\frac{dy}{dx}=  \lim_{\delta x \to 0} \frac{f(x+\delta x)-f(x)}{\delta x}&\equiv \lim_{\delta x \to 0} \frac{\delta y}{\delta x}\\
+# $$\displaystyle \qquad\qquad\begin{align}\frac{dy}{dx}=  \lim_{\delta x \to 0} \frac{f(x+\delta x)-f(x)}{\delta x}&\equiv \lim_{\delta x \to 0} \frac{\delta y}{\delta x}\\
 # & \equiv \frac{df}{dx}\equiv \frac{df(x)}{dx}\equiv \frac{d}{dx}f(x)\\
 # &\equiv y' \equiv f(x)' \equiv f' \equiv \dot f\\
-# &\equiv Dy \equiv Df \equiv Df(x) \end{align}\qquad\qquad\qquad\qquad \text{(3)}$$
+# &\equiv Dy \equiv Df \equiv Df(x) \end{align}\qquad\qquad\text{(3)}$$
 # 
 # The derivative $df/dx$ is the _gradient of the function_ $f(x)$ _at point_ $x$. The gradient is also the tangent to the curve at the point $x$; a line at right angles to the tangent is called the _normal_ to the curve, Fig. 3.
 # 
@@ -303,7 +303,7 @@ diff(eq2, x)
 # 
 # and 
 # 
-# $$\displaystyle \epsilon = 0.35510-0.3422\cdot 10^{-4}T-3.2347\cdot10^{-6}T^2+6.314\cdot 10^{-9}T^3\quad \mathrm{ V}$$
+# $$\displaystyle \epsilon = 0.35510-0.3422\cdot 10^{-4}T-3.2347\cdot10^{-6}T^2+6.314\cdot 10^{-9}T^3\quad \mathrm{ Volt}$$
 # 
 # and the temperature was measured in degrees Celsius. The derivatives are
 # 

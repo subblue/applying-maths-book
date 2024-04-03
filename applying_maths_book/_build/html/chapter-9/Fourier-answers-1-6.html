@@ -51,6 +51,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -139,7 +141,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-1/chapter1-B.html">
-     5 Trig, hyperbolic and inverse functions, waves, polar coordinates &amp; factorials
+     5 Trig, hyperbolic and inverse functions, waves, polar coordinates,  factorials
     </a>
    </li>
    <li class="toctree-l2">
@@ -471,7 +473,7 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-5/chapter-5-A.html">
-     1 Series, averages, partition functions, DNA melting, atom entropy
+     1 Series, averages, waves, partition functions, DNA melting, atom entropy
     </a>
    </li>
    <li class="toctree-l2">
@@ -1893,14 +1895,15 @@ L( 5 ,x)  -x**5/120 + 5*x**4/24 - 5*x**3/3 + 5*x**2 - 5*x + 1
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>L( 0 ,x)  1
 L( 1 ,x)  3 - x
 L( 2 ,x)  x**2/2 - 4*x + 6
-L( 3 ,x)  -x**3/6 + 5*x**2/2 - 10*x + 10
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>L(
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>L( 3 ,x)  -x**3/6 + 5*x**2/2 - 10*x + 10
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 4 ,x)  x**4/24 - x**3 + 15*x**2/2 - 20*x + 15
-L( 5 ,x)  -x**5/120 + 7*x**4/24 - 7*x**3/2 + 35*x**2/2 - 35*x + 21
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>L( 4 ,x)  x**4/24 - x**3 + 15*x**2/2 - 20*x + 15
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>L( 5 ,x)  -x**5/120 + 7*x**4/24 - 7*x**3/2 + 35*x**2/2 - 35*x + 21
 </pre></div>
 </div>
 </div>
@@ -1923,7 +1926,9 @@ L( 2 ,x)  x**2/2 - 2*x + 1
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>L( 3 ,x)  -x**3/6 + 3*x**2/2 - 3*x + 1
-L( 4 ,x)  x**4/24 - 2*x**3/3 + 3*x**2 - 4*x + 1
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>L( 4 ,x)  x**4/24 - 2*x**3/3 + 3*x**2 - 4*x + 1
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>L( 5 ,x)  -x**5/120 + 5*x**4/24 - 5*x**3/3 + 5*x**2 - 5*x + 1
@@ -1955,7 +1960,9 @@ L( 3 ,x) -x**3/6 + 3*x**2/2 - 3*x + 1
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>L( 4 ,x) x**4/24 - 2*x**3/3 + 3*x**2 - 4*x + 1
-L( 5 ,x) -x**5/120 + 5*x**4/24 - 5*x**3/3 + 5*x**2 - 5*x + 1
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>L( 5 ,x) -x**5/120 + 5*x**4/24 - 5*x**3/3 + 5*x**2 - 5*x + 1
 </pre></div>
 </div>
 </div>
@@ -2021,11 +2028,11 @@ L( 5 ,x) -x**5/120 + 5*x**4/24 - 5*x**3/3 + 5*x**2 - 5*x + 1
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   3   0      x*(5*x**2 - 3)/2
-   3   1      (1 - x**2)**0.5*(1.5 - 7.5*x**2)
-   3   2      15.0*x*(1 - x**2)**1.0
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   3   3      -15.0*(1 - x**2)**1.5
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   3   1      (1 - x**2)**0.5*(1.5 - 7.5*x**2)
+   3   2      15.0*x*(1 - x**2)**1.0
+   3   3      -15.0*(1 - x**2)**1.5
 
               spherical harmonics
    L   m
@@ -2041,16 +2048,20 @@ L( 5 ,x) -x**5/120 + 5*x**4/24 - 5*x**3/3 + 5*x**2 - 5*x + 1
    2   2      0.125*sqrt(30)*(1 - x**2)**1.0*exp(2*I*phi)/sqrt(pi)
    2  -2      0.125*sqrt(30)*(1 - x**2)**1.0*exp(-2*I*phi)/sqrt(pi)
    3   0      sqrt(7)*(5*x*(3*x**2/2 - 1/2)/3 - 2*x/3)/(2*sqrt(pi))
-   3   1      sqrt(21)*(-7.5*x**2*(1 - x**2)**0.5 + 1.5*(1 - x**2)**0.5)*exp(I*phi)/(12*sqrt(pi))
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   3   1      sqrt(21)*(-7.5*x**2*(1 - x**2)**0.5 + 1.5*(1 - x**2)**0.5)*exp(I*phi)/(12*sqrt(pi))
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   3  -1      sqrt(21)*(1 - x**2)**0.5*(0.625*x**2 - 0.125)*exp(-I*phi)/sqrt(pi)
    3   2      0.125*sqrt(210)*x*(1 - x**2)**1.0*exp(2*I*phi)/sqrt(pi)
-   3  -2      0.125*sqrt(210)*x*(1 - x**2)**1.0*exp(-2*I*phi)/sqrt(pi)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   3   3      -0.125*sqrt(35)*(1 - x**2)**1.5*exp(3*I*phi)/sqrt(pi)
-   3  -3      0.125*sqrt(35)*(1 - x**2)**1.5*exp(-3*I*phi)/sqrt(pi)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   3  -2      0.125*sqrt(210)*x*(1 - x**2)**1.0*exp(-2*I*phi)/sqrt(pi)
+   3   3      -0.125*sqrt(35)*(1 - x**2)**1.5*exp(3*I*phi)/sqrt(pi)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   3  -3      0.125*sqrt(35)*(1 - x**2)**1.5*exp(-3*I*phi)/sqrt(pi)
 </pre></div>
 </div>
 </div>

@@ -56,7 +56,11 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # ## 3.12 Differentiating logarithms
 # 
-# Differentiating logarithms always has the form: 'derivative divided by the function'.
+# In a 1697 paper Johann Bernoulli states ( Dunham 2018), 
+# 
+# >'The differential of a logarithm, no matter how composed, is equal to the differential of the expression divided by the expression' 
+# 
+# thus differentiating logarithms always has the form: 
 # 
 # $$\displaystyle \frac{d}{dx}\ln\left( f(x) \right)=\frac{f'(x)}{f(x)} \quad \text{where }\quad f' =\frac{d}{dx} \qquad\tag{10} $$
 # 
@@ -68,13 +72,13 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # $$\displaystyle \frac{d}{dx}\ln(y)=\frac{1}{y}\frac{dy}{dx} \qquad\tag{11}$$
 # 
-# The van't Hoff equation of chemical thermodynamics has this last form, 
+# **(i)** The van't Hoff equation of chemical thermodynamics has this last form, 
 # 
 # $$\displaystyle \frac{d\ln(K_p)}{dT}=\frac{\Delta_rH^{\mathrm{o}}}{RT^2}$$
 # 
 # This equation describes the change of an equilibrium constant $K_p$ for a reaction carried out at constant pressure with temperature $T$ and quantifies the Le Chatelier principle. $\Delta_rH^{\mathrm{o}}$ is the standard molar enthalpy of the reaction. In this form it is easier to plot or integrate wrt.temperature.
 # 
-# A particularly cunning and somewhat complicated example using this log derivative is to solve the equation
+# **(ii)** A particularly cunning and somewhat complicated example using this log derivative is to solve the equation
 # 
 # $$\displaystyle R\frac{d^2S}{dx^2}+2\frac{dR}{dx}\frac{dS}{dx}=0$$
 # 
@@ -96,6 +100,15 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # where $C$ is a constant. The reason $C$ is there is that this is the general form and is simplified from the derivative of a log, since $\displaystyle \frac{d}{dx}\ln(Cx)=\frac{1}{x}$. 
 # 
+# **(iii)** The product $\displaystyle \prod_{n=1}^\infty \left(1-\frac{x^2}{n^2}\right)$ cannot be easily differentiated but its log can be and so
+# 
+# $$\displaystyle \log\left( \prod_{n=1}^\infty \left(1-\frac{x^2}{n^2}\right) \right)= \sum_{n=1}^\infty \log\left(1-\frac{x^2}{n^2}\right)$$
+# 
+# and 
+# 
+# $$\displaystyle \frac{d}{dx}\sum_{n=1}^\infty \log\left(1-\frac{x^2}{n^2}\right)= -\sum_{n=1}^\infty\frac{2x}{n^2-x^2}$$
+# 
+# 
 # 
 # ## 3.13 Differentiating x as a power 
 # 
@@ -115,13 +128,13 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # 
 # ### **(ii) Which is larger $e^\pi$ or $\pi^e$ ?**
-# As a second example we differentiate $x^{1/x}$ and from this we can determine which is larger $e^\pi$ or $\pi^e$.
+# As a second example we differentiate $x^{1/x}$ and from this we can determine which is larger $e^\pi$ or $\pi^e$ in other words is $e^\pi >\pi^e$ or not. Taking logs of both side gives $\pi\ln(e)>e\ln(\pi)$, and dividing by $e$ and $\pi$ gives $\displaystyle \frac{\ln(e)}{e}>\frac{\ln(\pi)}{\pi}$ thus the test to make is to see if $\displaystyle e^{1/e}>\pi^{1/\pi}$ or not. If the maximum of $x^{1/x}$ can be found then we determine if the inequality is true or not.
 # 
 # First take logs giving $\displaystyle \ln(y)=\frac{1}{x}\ln(x)$ and then differentiate and using eqn. 11 to simplify gives
 # 
 # $$\displaystyle \frac{1}{y}\frac{dy}{dx}= \frac{1}{x^2}-\frac{1}{x^2}\ln(x)\quad\to\quad \frac{dy}{dx}=\frac{x^{1/x}}{x^2}(1-\ln(x))$$
 # 
-# To determine which is bigger by dividing $e^\pi $ and $ \pi^e$ by $e$ and $\pi$ means that we should compare  $e^{1/e}$  and $\pi^{1/\pi}$. The thing to realize here is that if we find the maximum of the derivative of $x^{1/x}$ we can then check which of our two terms is bigger. To find the minimum/maximum is very simple (see section 9) and is found by setting the derivative to zero, then $\ln(x)=1$ so that $x=e$ is the _global maximum_ and this means that $e^{1/e}$ is the maximum possible value and so $e^\pi\; \gt\; \pi^e$.
+# To determine which is bigger $e^\pi$ or $\pi^e$ means that we should compare  $e^{1/e}$  and $\pi^{1/\pi}$. The thing to realize here is that if we find the maximum of the derivative of $x^{1/x}$ we can then check which of our two terms is bigger. To find the minimum/maximum is very simple (see section 9) and is found by setting the derivative to zero, then $\ln(x)=1$ so that $x=e$ is the _global maximum_ and this means that $e^{1/e}$ is the maximum possible value and so $e^\pi\; \gt\; \pi^e$. The graph of $\displaystyle x^{1/x}$ is zero at $x=0$, rises rapidly then decreases again as $x$ increases.
 # 
 # ### **(iii) Factorials** 
 # A factorial is defined as $x!=x\cdot(x-1)\cdot (x-2)\cdots 2\cdot 1$ where $x$ is an integer, thus this function cannot be differentiated. Factorials occur most commonly in evaluating probabilities such as the binomial coefficients 

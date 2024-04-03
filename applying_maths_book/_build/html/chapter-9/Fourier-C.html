@@ -51,6 +51,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -139,7 +141,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-1/chapter1-B.html">
-     5 Trig, hyperbolic and inverse functions, waves, polar coordinates &amp; factorials
+     5 Trig, hyperbolic and inverse functions, waves, polar coordinates,  factorials
     </a>
    </li>
    <li class="toctree-l2">
@@ -471,7 +473,7 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-5/chapter-5-A.html">
-     1 Series, averages, partition functions, DNA melting, atom entropy
+     1 Series, averages, waves, partition functions, DNA melting, atom entropy
     </a>
    </li>
    <li class="toctree-l2">
@@ -1663,6 +1665,15 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#summary-of-some-fourier-transform-properties">
    6.8 Summary of some  Fourier Transform properties
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-using-the-shift-theorem">
+     <strong>
+      Example. Using the Shift Theorem
+     </strong>
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#table-of-useful-fourier-transforms">
@@ -1841,6 +1852,15 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#summary-of-some-fourier-transform-properties">
    6.8 Summary of some  Fourier Transform properties
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-using-the-shift-theorem">
+     <strong>
+      Example. Using the Shift Theorem
+     </strong>
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#table-of-useful-fourier-transforms">
@@ -2306,7 +2326,7 @@ Right column: The period of the sine wave, (middle curve) which is determined by
 \text{(vii)}&amp; n^{th}\text{ Derivative}     &amp; \displaystyle   F\left(\frac{d^n}{dx^n}f(x)\right) &amp; \rightleftharpoons &amp;(ik)^n\,g(k)\\[0.15cm]
 \text{(viii)}&amp;\text{Derivative} &amp; \displaystyle F\left(\frac{d}{dt}f(x,t)\right)&amp; \rightleftharpoons &amp; \int \displaystyle \frac{d}{dt}g(k,t)e^{-ikx} dx \\[0.15cm]
 \text{(ix)}&amp;\text{Product}      &amp; F(xf(x)) &amp; \rightleftharpoons &amp;\displaystyle i\,\frac{d}{dk}g(k)\\[0.15cm]
-\text{(x)}&amp;\text{(linearity} &amp; F\left(af_a(x) + bf_b(x)\right)&amp; \rightleftharpoons &amp; ag_a(k) + bg_b(k)\\ 
+\text{(x)}&amp;\text{linearity} &amp; F\left(af_a(x) + bf_b(x)\right)&amp; \rightleftharpoons &amp; ag_a(k) + bg_b(k)\\ 
 \hline
 \end{array}
 \end{split}\]</div>
@@ -2345,6 +2365,23 @@ F\left(\frac{df}{dx}\right)  = \int_{-\infty}^\infty \frac{df}{dx}e^{-ikx}\, dx
 <p><span class="math notranslate nohighlight">\(\qquad\)</span>The product <span class="math notranslate nohighlight">\(xf(x)\)</span> can be useful in solving differential equations.</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\displaystyle \begin{align}F\left(xf(x)\right)&amp;=\int_{-\infty}^{\infty} xf(x)e^{-ikx}dx =\int_{-\infty}^{\infty} f(x)\frac{d}{dk}\left(ie^{-ikx}\right) dx\\&amp;=i\frac{d}{dk}\int_{-\infty}^{\infty} f(x)e^{-ikx} dx=i\frac{d}{dk}g(k)\end{align}\end{split}\]</div>
+<section id="example-using-the-shift-theorem">
+<h3><strong>Example. Using the Shift Theorem</strong><a class="headerlink" href="#example-using-the-shift-theorem" title="Permalink to this headline">#</a></h3>
+<p>When we measure a spectrum we expect to see a number of lines depending on the particular molecules being excited. These lines each have their own width and energy, i.e wavelength or frequency. However, if the light entering the spectrometer has a little of it delayed, such as by a beam splitter, and which then enters the spectrometer extra lines can be observed due to the phase-change introduced by the delay. The extra lines are caused by beating between the two light fields. The situation is shown in the diagram.</p>
+<p><img alt="Drawing" src="../_images/fourier-fig21c.png" /></p>
+<p>figure 21c. Left The arrangement whereby two beams enter the spectrometer. Right The spectrum as it should be (left) and (right) after contamination with a little of the delayed beam.</p>
+<hr class="docutils" />
+<p>If the spectrum has the field <span class="math notranslate nohighlight">\(E(t)\)</span> the detector measures the absolute value squared of the fourier transform <span class="math notranslate nohighlight">\(F\)</span> of the total field, which in this case is the sum of the direct and reflected parts, i.e. a ‘square law detector’ measures</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle W(\omega)=\bigg| F\left(E(t)+cE(t-\Delta)\right)\bigg|^2\]</div>
+<p>where <span class="math notranslate nohighlight">\(\Delta\)</span> is the time delay and <span class="math notranslate nohighlight">\(c\)</span> the amount in the delayed beam. Using the Shift Theorem produces</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin{align}W(\omega)&amp;=\bigg|E(\omega)(1+ce^{-i\omega\Delta})\bigg|^2\\
+&amp;= |E(\omega)|^2(1+ce^{-i\omega\Delta})(1+ce^{+i\omega\Delta})\\
+&amp;= |E(\omega)|^2(1+c^2+2c\cos(\omega \Delta))\end{align}\end{split}\]</div>
+<p>where the identity <span class="math notranslate nohighlight">\(2\cos(\theta)=e^{+i\theta}+e^{-i\theta}\)</span> was used.  This expression shows us that the spectrum <span class="math notranslate nohighlight">\(E(\omega)\)</span> now has oscillations that might look like new transitions but are an artefact of allowing two beams into the spectrometer. The way round this is to use a beam-splitter that is anti-reflection coated on its far side, or use a far thicker one and use a knife edge to remove the weaker beam.</p>
+<p>The spectrum is shown in fig. 21c. The fringes are very clear even when <span class="math notranslate nohighlight">\(c\)</span> is small, for example the figure shows the spectrum when <span class="math notranslate nohighlight">\(c=0.05\)</span> or <span class="math notranslate nohighlight">\(5\)</span>% of the more intense beam. The oscillation at the peak is <span class="math notranslate nohighlight">\(\approx \pm 10\)</span>% of the peak height, rather large for such a small amount of extra light.</p>
+</section>
 </section>
 <section id="table-of-useful-fourier-transforms">
 <h2>6.9 Table of useful Fourier transforms<a class="headerlink" href="#table-of-useful-fourier-transforms" title="Permalink to this headline">#</a></h2>

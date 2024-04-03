@@ -87,7 +87,7 @@ plt.rcParams.update({'font.size': 16})  # set font size for plots
 # 
 # The wavefunctions become 
 # 
-# $$\displaystyle \varphi_1=\frac{1}{\sqrt{\pi a_0^3}}e^{-\rho_1}, \qquad \varphi_2=\frac{1}{\sqrt{\pi a_0^3}}e^{-\rho_2} \qquad\tag{46}$$
+# $$\displaystyle \varphi_1=\frac{1}{\sqrt{\pi a_0^3}}e^{-\rho_1}, \qquad \varphi_2=\frac{1}{\sqrt{\pi a_0^3}}e^{-\rho_2} \qquad\tag{65}$$
 # 
 # ## 12.2 Calculating the overlap integral S
 # 

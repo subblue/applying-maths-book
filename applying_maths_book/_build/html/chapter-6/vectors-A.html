@@ -51,6 +51,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -139,7 +141,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-1/chapter1-B.html">
-     5 Trig, hyperbolic and inverse functions, waves, polar coordinates &amp; factorials
+     5 Trig, hyperbolic and inverse functions, waves, polar coordinates,  factorials
     </a>
    </li>
    <li class="toctree-l2">
@@ -471,7 +473,7 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-5/chapter-5-A.html">
-     1 Series, averages, partition functions, DNA melting, atom entropy
+     1 Series, averages, waves, partition functions, DNA melting, atom entropy
     </a>
    </li>
    <li class="toctree-l2">
@@ -1896,7 +1898,7 @@ then <span class="math notranslate nohighlight">\(|\vec V|= \sqrt{9+16+25}=5\sqr
 <p>and similarly for the other vectors,</p>
 <div class="math notranslate nohighlight">
 \[ \vec w_2 = -\vec v_r \frac{m_1}{m_1+m_2}
-\qquad\vec w_1' = \vec v_r' \frac{m_2}{m_1+m_2}\qquad \vec w_2' = -\vec v_r' \frac{m_1}{m_1+m_2}\tag{0}\]</div>
+\qquad\vec w_1' = \vec v_r' \frac{m_2}{m_1+m_2}\qquad \vec w_2' = -\vec v_r' \frac{m_1}{m_1+m_2}\]</div>
 <p>from which it can be seen that for elastic scattering <span class="math notranslate nohighlight">\(|\vec w_1|=|\vec w_1'|\)</span> and similarly for <span class="math notranslate nohighlight">\(\vec w_2\)</span>. The vectors in each pair are only rotated by <span class="math notranslate nohighlight">\(\chi\)</span> from one another and as energy is related to the magnitude of the velocity squared the total energy is unchanged.</p>
 <p>The direction of the scattering, forwards or backwards can be appreciated with figure 2d and fig 11.5, 11.6 and 11.10 (Chapter 11). If the impact parameter is large the approaching atom skims past the other and its trajectory is only slightly changed and scattering is in the forwards direction. If, on the other hand <span class="math notranslate nohighlight">\(b\)</span> is small the collision is much more ‘head on’ and the scattering returns the atom towards its starting position, effectively a reflection, and the scattering is backwards. The zero angle for scattering is taken to be that given by vector <span class="math notranslate nohighlight">\(\vec v_r\)</span>, or equivalently <span class="math notranslate nohighlight">\(\vec w_1\)</span>, the back scattering at <span class="math notranslate nohighlight">\(180^\text{o}\)</span> is in the direction of <span class="math notranslate nohighlight">\(\vec w_2\)</span>.</p>
 <p>If a chemical reaction can occur the process is called <em>reactive</em> or <em>inelastic</em> scattering and then the mass of the scattered species has changed <span class="math notranslate nohighlight">\(\mathrm{K+CH_3I} \to \mathrm{KI +CH_3}\)</span> for example and so the equations above have to be modified accordingly. Additionally molecules have internal energy and this changes on reaction not least due to the differences in zero point energy but also other vibrational and rotational levels may be excited. This change in total kinetic energy means that the vector of the product must lie between two limits; no internal energy or <span class="math notranslate nohighlight">\(100\)</span>% internal energy and the (product) vector <span class="math notranslate nohighlight">\(\vec w_1'\)</span> can lie anywhere on a circle centred at the c.o.m. with radius <span class="math notranslate nohighlight">\(|\vec w_1'|\)</span>. This also means that because <span class="math notranslate nohighlight">\(\vec v_1'\)</span> is linked to <span class="math notranslate nohighlight">\(\vec w_1'\)</span> it is to be found within a cone whose centre line is <span class="math notranslate nohighlight">\(\vec v_{cm}\)</span>.</p>
@@ -2012,7 +2014,7 @@ for example, the three-dimensional vectors represented by the two sets of coordi
 <h2>2.9 Dot Products or Inner Products in matrix-vector form<a class="headerlink" href="#dot-products-or-inner-products-in-matrix-vector-form" title="Permalink to this headline">#</a></h2>
 <p>The dot product using vectors in a three-dimensional basis set is calculated by defining the vectors as one-dimensional matrices, multiplying element by element and summing the result. See chapter 7 for matrix multiplication. The result is</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}\displaystyle \qquad\qquad\vec A \cdot \vec B=\begin{bmatrix} a &amp; b &amp; c \end{bmatrix}\begin{bmatrix} d\\e\\f \end{bmatrix} \qquad\qquad\qquad\qquad \text{(5)}\end{split}\]</div>
+\[\begin{split}\displaystyle \qquad\qquad\vec A \cdot \vec B=\begin{bmatrix} a &amp; b &amp; c \end{bmatrix}\begin{bmatrix} d\\e\\f \end{bmatrix} \qquad\qquad\qquad\qquad\qquad\qquad\text{(5)}\end{split}\]</div>
 <p>In a dot product, the left-hand of the two vectors is <em>always</em> written as a row and the right always a column. The vector dot product is also called the vector <em>inner product</em> .</p>
 <p>Changing a row into a column vector is called <em>transposing</em> , and this operation is indicated by a superscript <span class="math notranslate nohighlight">\(T\)</span>. In quantum mechanics, the complex conjugate of each element in the row is always made when the dot product is formed from column vectors. The transpose is</p>
 <div class="math notranslate nohighlight">
@@ -2054,7 +2056,7 @@ for example, the three-dimensional vectors represented by the two sets of coordi
 <p>An unexpected application of the dot product of a large vector is that used to check the ISBN number of a book. This code is unique to a book and also to each edition. A typical code is <span class="math notranslate nohighlight">\(978-0-19-923091-4\)</span> where the last digit is the check digit used to determine if the rest of the code is correct. This is clearly useful when a book is ordered, for example, if the check digit is not <span class="math notranslate nohighlight">\(4\)</span> a simple swapping of two digits may have occurred.</p>
 <p>The calculation to produce the check digit (<span class="math notranslate nohighlight">\(4\)</span>) is</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle 10-\left(\begin{bmatrix}1&amp;3&amp;1&amp;3&amp;1&amp;3&amp;1&amp;3&amp;1&amp;3&amp;1&amp;3\end{bmatrix}\cdot \begin{bmatrix}9&amp;7&amp;8&amp;0&amp;1&amp;9&amp;2&amp;3&amp;0&amp;9&amp;1\end{bmatrix}^T\right)\text{mod}(10)=4\]</div>
+\[\displaystyle \small 10-\left(\begin{bmatrix}1&amp;3&amp;1&amp;3&amp;1&amp;3&amp;1&amp;3&amp;1&amp;3&amp;1&amp;3\end{bmatrix}\cdot \begin{bmatrix}9&amp;7&amp;8&amp;0&amp;1&amp;9&amp;2&amp;3&amp;0&amp;9&amp;1\end{bmatrix}^T\right)\text{mod}(10)=4\]</div>
 </section>
 <section id="unit-vectors-and-normalizing-vectors">
 <h2>3 Unit vectors and normalizing vectors<a class="headerlink" href="#unit-vectors-and-normalizing-vectors" title="Permalink to this headline">#</a></h2>

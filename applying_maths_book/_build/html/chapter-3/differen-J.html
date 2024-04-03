@@ -51,6 +51,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -139,7 +141,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-1/chapter1-B.html">
-     5 Trig, hyperbolic and inverse functions, waves, polar coordinates &amp; factorials
+     5 Trig, hyperbolic and inverse functions, waves, polar coordinates,  factorials
     </a>
    </li>
    <li class="toctree-l2">
@@ -471,7 +473,7 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-5/chapter-5-A.html">
-     1 Series, averages, partition functions, DNA melting, atom entropy
+     1 Series, averages, waves, partition functions, DNA melting, atom entropy
     </a>
    </li>
    <li class="toctree-l2">
@@ -1609,7 +1611,9 @@ title="Print to PDF"
 \[\displaystyle  Q(x, y, \lambda) = f(x, y) + \lambda g(x, y) \qquad\tag{36}\]</div>
 <p>which is done by taking (partial) derivatives of <span class="math notranslate nohighlight">\(Q\)</span> in <span class="math notranslate nohighlight">\(x,\; y\)</span>, and <span class="math notranslate nohighlight">\(\lambda\)</span> and letting <span class="math notranslate nohighlight">\(\partial Q/\partial x = \partial Q/\partial y= \partial Q/\partial \lambda = 0\)</span> and solving the simultaneous equations,</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}\displaystyle \qquad\qquad\qquad \begin{align}\frac{df(x,y)}{dx}+\lambda \frac{dg(x,y)}{dx}&amp;=0  \\\frac{df(x,y)}{dy}+\lambda\frac{dg(x,y)}{dy}&amp;=0 \end{align}\qquad\qquad\qquad\qquad \text{(37)} \end{split}\]</div>
+\[\displaystyle \frac{df(x,y)}{dx}+\lambda \frac{dg(x,y)}{dx}=0\]</div>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{df(x,y)}{dy}+\lambda\frac{dg(x,y)}{dy} =0 \tag{37} \]</div>
 <p>Notice that differentiation is with respect to <span class="math notranslate nohighlight">\(x\)</span> and then with <span class="math notranslate nohighlight">\(y\)</span> as variables on both function and constraint. The method or algorithm is</p>
 <p><span class="math notranslate nohighlight">\(\quad\)</span><strong>(a)</strong> Determine what is the function <span class="math notranslate nohighlight">\(f\)</span> and what the constraint <span class="math notranslate nohighlight">\(g\)</span>.</p>
 <p><span class="math notranslate nohighlight">\(\quad\)</span><strong>(b)</strong> Work out the four derivatives shown in (37).</p>
@@ -1631,7 +1635,7 @@ title="Print to PDF"
 \[\displaystyle g(x, y) = y - e^{-x^2}\]</div>
 <p>The function to minimize is the distance from <span class="math notranslate nohighlight">\((x_0, y_0)\)</span> to a point <span class="math notranslate nohighlight">\((x, y)\)</span> on the curve and this is calculated using Pythagoras’ theorem,</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle f(x,y)=\sqrt{(x-x_0)^2+(y-y_0)^2}  \qquad\tag{38}\]</div>
+\[\displaystyle f(x,y)=\sqrt{(x-x_0)^2+(y-y_0)^2}  \tag{38}\]</div>
 <p>The point <span class="math notranslate nohighlight">\((x_0, y_0)\)</span> is made the origin (0, 0) at the end of the calculation.</p>
 <p><strong>(b)</strong> Differentiating both <span class="math notranslate nohighlight">\(f\)</span> and <span class="math notranslate nohighlight">\(g\)</span> with respect to <span class="math notranslate nohighlight">\(x\)</span> and to <span class="math notranslate nohighlight">\(y\)</span> produces</p>
 <div class="math notranslate nohighlight">

@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # 5 Trig, hyperbolic and inverse functions, waves, polar coordinates & factorials
+# # 5 Trig, hyperbolic and inverse functions, waves, polar coordinates,  factorials
 
 # In[1]:
 
@@ -315,7 +315,7 @@ asinh(x).rewrite('log')
 # Figure 18. Plane polar coordinates.
 # _______
 
-# ## 8 Factorials
+# ## 8 Factorials, Stirling's formula, gamma function
 # 
 # The factorial function is the product of a set of _positive integers_ from 1 up to n;
 # 
@@ -335,7 +335,7 @@ asinh(x).rewrite('log')
 # 
 # $$\displaystyle \Gamma(n) = (n - 1)!$$
 # 
-# The gamma function is the integral 
+# The Gamma Function is the integral 
 # 
 # $$\displaystyle \Gamma(z) = \int_0^\infty t^{z-1}e^{-t}dt$$
 # 
@@ -369,9 +369,11 @@ asinh(x).rewrite('log')
 # 
 # $$\displaystyle \begin{align}\ln(n!)&=\sum_{j=1}^n \ln(n_j) \approx \int_1^n \ln(x)dx=(n\ln(n)-n)\big|_1^n\\ &= n \ln(n) - n+1\end{align} $$
 # 
-# A much more accurate approximation is 
+# which is slightly smaller than the true value. A far more accurate approximation is 
 # 
 # $$\displaystyle \ln(n!) = \left(n+\frac{1}{2}\right) \ln(n) - n +\frac{1}{2}\ln(2\pi)$$
+# 
+# which on the scale of figure 19 produces values indistinguishable from the true values.
 # 
 # ![Drawing](chapter1-fig19.png) 
 #  

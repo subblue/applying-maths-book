@@ -62,9 +62,9 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # $$\displaystyle \frac{1}{y}\frac{dy}{dx}=\frac{dy}{dx}\ln(x)+\frac{y}{x} \to \frac{dy}{dx}=\frac{y^2}{x(1-y\ln(x))}$$
 # 
-# (b) again taking logs gives $\ln(x)=y\ln(y)$ hence $\displaystyle \frac{1}{x}=\frac{dy}{dx}\ln(y)+\frac{dy}{dx}$
+# (b) again taking logs gives $\ln(x)=y\ln(y)$ hence $\displaystyle \frac{1}{x}=\frac{dy}{dx}(\ln(y)+1)$
 # 
-# (c) $\ln(y)=x\ln(x)$ therefore $\displaystyle \frac{1}{y}\frac{dy}{dx}=\ln(x)+1$
+# (c) $\ln(y)=x\ln(x)$ therefore $\displaystyle \frac{1}{y}\frac{dy}{dx}=\ln(x)+1$. At the minimum $dy/dx=0$ then $\ln(x)=-1$ or $x=e^{-1}$ and minimum $y$ is $y=(e^{-1})^{e^{-1}}$. If you plot $x^x$ it looks a bit like a harmonic potential.
 # 
 # ## Q14 answer
 # Differentiating once by $a$ gives $\displaystyle \frac{d}{da}\int e^{ax}dx=\int\frac{\partial}{\partial a}e^{ax} dx=\int xe^{ax}dx$

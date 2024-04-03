@@ -216,7 +216,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # In the form shown below, we _define_ a matrix $\pmb{G}$ as
 # 
-# $$\displaystyle \qquad\qquad\begin{align} \pmb{G}&=diagonal\left(1/\sqrt{m_1},1/\sqrt{m_2}\cdots 1/\sqrt{m_n}   \right)\\ \qquad \pmb{G}^{-1}&=diagonal\left(\sqrt{m_1},\sqrt{m_2}\cdots \sqrt{m_n} \right)\end{align}\qquad\qquad \qquad\qquad\qquad\qquad\text{(62)}$$
+# $$\displaystyle \qquad\qquad\begin{align} &\pmb{G}=diagonal\left(1/\sqrt{m_1},1/\sqrt{m_2}\cdots 1/\sqrt{m_n}   \right)\\  &\pmb{G}^{-1} =diagonal\left(\sqrt{m_1},\sqrt{m_2}\cdots \sqrt{m_n} \right)\end{align}\qquad\qquad \qquad\qquad\qquad\qquad\text{(62)}$$
 # 
 # and define the displacement in terms of _reduced_ mass
 # 

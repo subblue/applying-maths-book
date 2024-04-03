@@ -568,16 +568,27 @@ evals,evecs
 # 
 # where the coefficients $c$ can be found using the Variational Principle. At the crossing point $r_c$ the new wavefunction has equal contributions from $\varphi_1$ and $\varphi_2$ thus $\displaystyle \psi_{1,2} = \left( \varphi_1 \pm \varphi_2\right )/\sqrt{2}$ and the energy gap $E_2-E_1=2\Delta$. Moving away from the crossing point to larger or smaller $r$ than $r_c$, the amount of each $\varphi$ changes, for example on the bottom left of image (B) in fig 54a, $\psi_1$ will mainly consist of $\varphi_1$ with a little $\varphi_2$, whereas at the top right the opposite is true. A similar argument applies to $\psi_2$. This can be understood because the energy gap ($|E_2-E_1|$) at large or small $r$ is large compared to $\Delta$ and so the contribution to the new wavefunction is small when that state is far away in energy.
 # 
-# ### **Adiabatic and diabatic curves**
+# ### **(i) Adiabatic and diabatic curves**
 # 
 # The use of the words adiabatic and diabatic in quantum chemistry is very confusing. If a wavefunction representing the true solution such as the $\psi$ are in eqn. 34b then the curves with energy $E_{1,2}$ and wavefunction $\psi$ are called adiabatic as the two curves do not cross, see fig 54a (right B). The other curves (dashed) in this figure are the diabatic curves. The adiabatic wavefunction $\psi$ is made up of various amounts of the diabatic wavefunctions $\varphi$. However, in fig 54a (left A) these are the adiabatic curves as these arise from eqn. 34a and are the true solution to this Hamiltonian and do not cross. 'Does not cross' here means that motion from curve $1\to 2$ or vice versa does not occur.
 # 
-# #### **Symmetry**
+# ### **(ii) Symmetry**
 # 
-# We noted above that the symmetries of the two states interacting are important. If the symmetry is the same then the states interact and an avoided crossing occurs and a picture as in the right hand part of Fig(54a) results. If not, then no interaction is possible. Interactions causing the coupling $\Delta$ are generated within the molecule and represent energy and therefore must be have a *totally symmetric* representation. This being the case because the probability of a transition in quantum mechanics between state 1 and 2 is proportional to  $\displaystyle \int \psi_1\Delta \psi_2dr $ this integral will be zero unless $\psi_1$ and $\psi_2$ have the same symmetry. This may not be obvious, immediately, but first work out the integral say from $-r\to r$ (the limits must be symmetrical) if both wavefunctions are either of the same symmetry and $\Delta$ a constant or totally symmetric, and second if one wavefunction has 'odd' symmetry. In the latter case the integral is zero. The odd = even rules are $odd\cdot  odd=even\cdot even=even,\; odd\cdot even=0$. Examples are $\int odd\cdot even\cdot odd \ne 0$,$\int even\cdot even\cdot even \ne 0$, $\int odd\cdot even\cdot even =0 $, see chapter 4, section 1.3.
+# We noted above that the symmetries of the two states interacting are important. If the symmetry is the same then the states interact and an avoided crossing occurs and a picture as in the right hand part of Fig(54a) results. If not, then no interaction is possible. Interactions causing the coupling $\Delta$ are generated within the molecule and represent energy and therefore must be have a *totally symmetric* representation. This being the case because the probability of a transition in quantum mechanics between state 1 and 2 is proportional to  $\displaystyle \int \psi_1\Delta \psi_2dr $ this integral will be zero unless $\psi_1$ and $\psi_2$ have the same symmetry. This may not be obvious, immediately, but first work out the integral say from $-r\to r$ (the limits must be symmetrical) if both wavefunctions are either of the same symmetry and $\Delta$ a constant or totally symmetric, and second if one wavefunction has 'odd' symmetry. In the latter case the integral is zero. The odd = even rules are 
 # 
+# $$\displaystyle \begin{align} &odd\cdot  odd = even\cdot even=even\quad (\mathrm{integral \ne 0})\\ &odd\cdot even =0\end{align}$$ 
+# 
+# Examples are 
+# 
+# $$\displaystyle \begin{array}{ccc}
+# \int odd\cdot even\cdot odd \ne 0\\
+# \int even\cdot even\cdot even \ne 0\\ 
+# \int odd\cdot even\cdot even =0\\
+# \end{array}$$
+# 
+# see also chapter 4, section 1.3.
 
-# ### **Landau-Zener and Curve-Crossing**
+# ### **(iii) Landau-Zener and Curve-Crossing**
 # 
 # Projecting the ground state wavefunction on to the upper state such as $A_2$ fig54a (B), with a femtosecond laser pulse produces a wavepacket on $A_2$.  The wavepacket is the quantum equivalent of a particle, it is restricted in spacial extent as it is the sum of several wavefunctions each separated in energy. See chapter 5.9. As the wavepacket is confined in space and moves back and forth on $A_2$ this means that any population on $A_1$ will increase in a step-wise manner as there is a small chance that crossing the barrier $A_2\to A_1$ occurs each time the wavepacket goes close to point $r_c$. This behaviour was first observed by Zewail and coworkers in NAI (Zewail 1994). This is examined shortly but first the factors determining the probability of reaction are described. 
 # 
@@ -606,7 +617,7 @@ evals,evecs
 # 
 # Notice that that these observations are entirely different to that expected from a 'normal' kinetic experiment where excitation is not short lived compared to the vibrational period, as then we observe continuous formation of product and measure a 'normal' decay profile. Only because the laser pump pulse is of short duration compared to a vibrational period can the step-wise appearance of product be observed. This is obvious now but it was a revelation when this data was first reported, nothing like it had been seen before and for this Zewail was subsequently awarded a Nobel Prize in Chemistry.
 # 
-# **Calculating $P_{LZ}$**
+# ### **(iv) Calculating $P_{LZ}$**
 # 
 # The upper state has a largely flat potential at large NA-I separation but the ionic potential has a Coulombic shape $\sim e^2/(4\pi\epsilon_0 R)$ where $\epsilon_0$ is the permittivity of free space. The difference in slopes thus depends on the ionic potential alone and at the crossing point $r_c=0.693$ nm,
 # 

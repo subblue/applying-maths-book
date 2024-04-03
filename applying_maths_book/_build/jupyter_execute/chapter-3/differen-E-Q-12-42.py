@@ -21,7 +21,7 @@
 # ## Q13
 # Differentiate with respect to $x$ without using the computer: 
 # 
-# $$ (a)\; y=x^y,\quad (b)\; x=y^y,\quad (c)\; y=x^x$$
+# $$ (a)\; y=x^y,\quad (b)\; x=y^y,\quad (c)\; y=x^x and find the minimum $y$.$$
 # 
 # **Strategy:** Usually with powers of $x$ and $y$ it is simpler to take logs first then differentiate.
 # 

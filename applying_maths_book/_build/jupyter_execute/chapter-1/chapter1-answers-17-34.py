@@ -122,9 +122,9 @@ for p in range(2*n+1):      # 1 added as range is otherwise 0 to 2n-1
 # If you are not convinced, label the chlorine isotopes A and B and work out the number of arrangements of 2A and 2B atoms such as AABB, etc.
 # 
 # ## Q28 answer
-# The important words here are 'at least' which means that we look for the chance that the event does not happen. The chance of _not_ observing one six is $5/6$ and in four throws, as they are independent, is $(5/6)^4$. Therefore, the chance of observing at least one six in four throws is $1 - (5/6)^4 = 0.518$ , which is slightly better than  evens or $50$% chance of winning. 
+# The important words here are 'at least' which means that we look for the chance that the event does not happen (Subtraction Rule). The chance of *not* observing one six is $5/6$ and in four throws, as they are independent, is $(5/6)^4$. Therefore, the chance of observing at least one six in four throws is $1 - (5/6)^4 = 0.518$ , which is slightly better than  evens or $50$% chance of winning. 
 # 
-# On the other hand, the chance of observing two sixes in $24$ throws is $1 - (35/36)^{24} = 0.491$ and, as there is less than a $50$% chance of winning, money will inevitably be lost. Had the Chevalier insisted instead on gambling that two sixes would be produced in $25$ throws he would have, perhaps, not lost his money. He is remembered because he asked Pascal to help work out out the odds of success and failure and so helped to found probability theory.
+# On the other hand, the chance of observing two sixes in $24$ throws is $1 - (35/36)^{24} = 0.491$ and, as there is less than a $50$% chance of winning, money will inevitably be lost. The $35/36$ occurs as there are $36$ possibilities with two throws of the dice but only one combination has two sixes and we seek the chance that this is *not* observed in $24$ attempts. Had the Chevalier insisted instead on gambling that two sixes would be produced in $25$ throws or more he would have not lost his money. As the number of tries gets larger the chance of getting two sixes increases, as one might expect, and as may be seen because $35/36 <1$ thus becomes smaller when raised to a power. The Chavalier is remembered because he asked Pascal to help work out out the odds of success and failure and so helped to found probability theory.
 # 
 # ## Q29 answer
 # (a) The chance of at least one club being chosen can be found using equation 23 and is the chance of obtaining a club from each group less the joint chance which is $\displaystyle \frac{3}{5}+\frac{1}{4}-\frac{3}{5}\times\frac{1}{4}=\frac{7}{10}$.
@@ -202,3 +202,9 @@ for p in range(2*n+1):      # 1 added as range is otherwise 0 to 2n-1
 # 
 # ## Q34 answer
 # Using the method in the text, $100759-86$ has the sum $1 \times 6 + 2 \times 8 + 3 \times 9 + 4 \times 5 + 5 \times 7 + 8 \times 1 = 112$ and $112\,\mathrm{mod}\, 10 = 2$ which is the checksum. The CAS number $116-31$ has a sum $34$ and so a check digit of $4$ and $103-30$ has the sum $20$ and check digit $0$. The alternative registry number for pheophytin-A is $603-17-8$
+
+# In[ ]:
+
+
+
+

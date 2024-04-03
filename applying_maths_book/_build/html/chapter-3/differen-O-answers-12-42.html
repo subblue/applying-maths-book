@@ -51,6 +51,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -139,7 +141,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-1/chapter1-B.html">
-     5 Trig, hyperbolic and inverse functions, waves, polar coordinates &amp; factorials
+     5 Trig, hyperbolic and inverse functions, waves, polar coordinates,  factorials
     </a>
    </li>
    <li class="toctree-l2">
@@ -471,7 +473,7 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-5/chapter-5-A.html">
-     1 Series, averages, partition functions, DNA melting, atom entropy
+     1 Series, averages, waves, partition functions, DNA melting, atom entropy
     </a>
    </li>
    <li class="toctree-l2">
@@ -1902,8 +1904,8 @@ title="Print to PDF"
 <p>(a) Taking logs gives <span class="math notranslate nohighlight">\(\ln(y)=y\ln(x)\)</span> and differentiating</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \frac{1}{y}\frac{dy}{dx}=\frac{dy}{dx}\ln(x)+\frac{y}{x} \to \frac{dy}{dx}=\frac{y^2}{x(1-y\ln(x))}\]</div>
-<p>(b) again taking logs gives <span class="math notranslate nohighlight">\(\ln(x)=y\ln(y)\)</span> hence <span class="math notranslate nohighlight">\(\displaystyle \frac{1}{x}=\frac{dy}{dx}\ln(y)+\frac{dy}{dx}\)</span></p>
-<p>(c) <span class="math notranslate nohighlight">\(\ln(y)=x\ln(x)\)</span> therefore <span class="math notranslate nohighlight">\(\displaystyle \frac{1}{y}\frac{dy}{dx}=\ln(x)+1\)</span></p>
+<p>(b) again taking logs gives <span class="math notranslate nohighlight">\(\ln(x)=y\ln(y)\)</span> hence <span class="math notranslate nohighlight">\(\displaystyle \frac{1}{x}=\frac{dy}{dx}(\ln(y)+1)\)</span></p>
+<p>(c) <span class="math notranslate nohighlight">\(\ln(y)=x\ln(x)\)</span> therefore <span class="math notranslate nohighlight">\(\displaystyle \frac{1}{y}\frac{dy}{dx}=\ln(x)+1\)</span>. At the minimum <span class="math notranslate nohighlight">\(dy/dx=0\)</span> then <span class="math notranslate nohighlight">\(\ln(x)=-1\)</span> or <span class="math notranslate nohighlight">\(x=e^{-1}\)</span> and minimum <span class="math notranslate nohighlight">\(y\)</span> is <span class="math notranslate nohighlight">\(y=(e^{-1})^{e^{-1}}\)</span>. If you plot <span class="math notranslate nohighlight">\(x^x\)</span> it looks a bit like a harmonic potential.</p>
 </section>
 <section id="q14-answer">
 <h2>Q14 answer<a class="headerlink" href="#q14-answer" title="Permalink to this headline">#</a></h2>

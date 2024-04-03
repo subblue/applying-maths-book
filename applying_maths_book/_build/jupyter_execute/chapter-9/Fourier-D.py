@@ -12,7 +12,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from sympy import *
 from scipy.integrate import quad
-init_printing()                      # allows printing of SymPy results in typeset maths format
+init_printing()                         # allows printing of SymPy results in typeset maths format
 plt.rcParams.update({'font.size': 14})  # set font size for plots
 
 
@@ -33,7 +33,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # Figure 24. Top: A signal representing the ideal response of an experiment to a sudden impulse. Middle: The actual stimulation used in the experiment represented as the instrument response. Bottom: The measured signal, the convolution of the two upper curves.
 # ____
 # 
-# If either one or both of these conditions cannot be met, then the data will be distorted by the relatively slow response of the instrument. The convolution curve in fig 24 shows how this distortion affects some data. In this figure, the top curve is the ideal decay of the excited state, but it could represent any ideal response. This behaviour would be observed if the molecules could be excited with an infinitesimally narrow laser pulse and measured with a photo-detector with an unlimited time response. The second curve is the actual shape of the laser pulse, and/or detector response, and is the 'instrument response' drawn on the same timescale. Clearly, this has a width and a rise and decay time that is not so very different to that of the ideal response. The lower curve is the convolution of the ideal response with the instrument response, and is what would be measured experimentally and clearly has characteristics of both curves. A log plot of the data would show that only at long times does the convoluted response have the same slope as the ideal one. It makes no difference if the instrument response consists of a slow 'driving force' for the experiment, in this case a long-lived light-pulse, or a slowly responding detector or both, because the effect producing the convolution is the same. Fortunately, convolution can be calculated easily and rapidly using Fourier transforms.
+# If either one or both of these conditions cannot be met, then the data will be distorted by the relatively slow response of the instrument. The convolution curve in fig. 24 shows how this distortion affects some data. In this figure, the top curve is the ideal decay of the excited state, but it could represent any ideal response. This behaviour would be observed if the molecules could be excited with an infinitesimally narrow laser pulse and measured with a photo-detector with an unlimited time response. The second curve is the actual shape of the laser pulse, and/or detector response, and is the 'instrument response' drawn on the same timescale. Clearly, this has a width and a rise and decay time that is not so very different to that of the ideal response. The lower curve is the convolution of the ideal response with the instrument response, and is what would be measured experimentally and clearly has characteristics of both curves. A log plot of the data would show that only at long times does the convoluted response have the same slope as the ideal one. It makes no difference if the instrument response consists of a slow 'driving force' for the experiment, in this case a long-lived light-pulse, or a slowly responding detector or both, because the effect producing the convolution is the same. Fortunately, convolution can be calculated easily and rapidly using Fourier transforms.
 # 
 # ![Drawing](fourier-fig25.png)
 # Figure 25. The convolution of a narrow spectral line with a wide slit in a spectrometer.
@@ -47,7 +47,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # ## 7.2 How convolution works
 # 
-# In the next sections, a convolution will be calculated by direct summation and by a Fourier transform. Convolution is related to the auto- and cross-correlations and these will also be described. How to go about estimating the true response from the convoluted response in real, that is experimental data, i.e. reversing the effects of convolution, is discussed in chapter 13 on numerical methods. This is usually done using iterative, non-linear least-squares methods, (See 13.6.7), because when using real data, which always contains noise, it is found that reverse transforming the convolution often results in a calculated ideal response that is so noisy as to be useless.
+# In the next sections, a convolution will be calculated by direct summation, by a matrix method and by a Fourier transform. Convolution is related to the auto- and cross-correlations and these will also be described. How to go about estimating the true response from the convoluted response in real, that is experimental data, i.e. reversing the effects of convolution, is discussed in chapter 13 on numerical methods. This is usually done using iterative, non-linear least-squares methods, (See 13.6.7), because when using real data, which always contains noise, it is found that reverse transforming the convolution often results in a calculated ideal response that is so noisy as to be useless.
 # 
 # ![Drawing](fourier-fig26.png)
 # 
@@ -56,21 +56,21 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # To understand how convolution works, suppose that the overall instrument response is made up of a series of $\delta$-function impulses. These can be infinitesimally narrow light pulses that excite a molecule. Suppose these impulses are made at ever shorter time intervals, then the effect is that of smoothly exciting the molecule. Each of the impulses elicits an ideal response but because there are many of them, their responses must be added together. The result is the convolution; the effect is shown in Fig. 26. It is always assumed in the convolution that the response is linear with the impulse, which simply means that doubling the impulse doubles the response and so forth.
 # 
-# The light pulses occur at each point in the red instrument response curve, Fig. 26. The response from each impulse is the decaying solid curve. To calculate the overall response at any given point along the x-axis, the effect of all previous impulses must be added into the calculation. Suppose that the pulse exciting the sample has a shape given by some function $f$, the ideal experimental response $w$, and the convolution $C$. The terms can be written down at each time if it is assumed, for the present, that the impulses are discrete and the data is represented as a series of points at times $1, 2, 3$, and so forth; $f$(6), for example, represents the value of $f$ at the sixth time position. The first point of the impulse is $f$(1) and this produces the response
+# The light pulses occur at each point in the red instrument response curve, Fig. 26. The response from each impulse is the decaying solid curve. To calculate the overall response at any given point along the x-axis, the effect of all previous impulses must be added into the calculation. Suppose that the pulse exciting the sample has a shape given by some function $f$, the ideal experimental response $w$, and the convolution $C$. The terms can be written down at each time if it is assumed, for the present, that the impulses are discrete and the data is represented as a series of points at times $1, 2, 3$, and so forth; $f_6$, for example, represents the value of $f$ at the sixth time position. The first point of the impulse is $f_1$ and this produces the response
 # 
-# $$\displaystyle f (1)[w(1) + w(2) + w(3) + \cdots]$$
+# $$\displaystyle f_1[w_1 + w_1 + w_3 + \cdots]$$
 # 
 # The second and third impulses produce
 # 
-# $$\displaystyle f(2)[w(1) + w(2) + w(3) + \cdots]\quad \text{and}\quad f(3)[w(1) + w(2) + w(3) + \cdots]$$
+# $$\displaystyle f_2[w_1 + w_2 + w_3 + \cdots]\quad \text{and}\quad f_3[w_1 + w_2 + w_3 + \cdots]$$
 # 
 # The convolution is the sum of these terms at times 1, 2, 3, and so on therefore;
 # 
 # $$\displaystyle\begin{align}
-# C(1)& = f (1)w(1)\\
-# C(2)& = f (1)w(2) + f (2)w(1)\\
-# C(3) &= f (1)w(3) + f (2)w(2) + f (3)w(1)\\
-# C(4)& = f (1)w(4) + f (2)w(3) + f (3)w(2) + f (4)w(1)\\
+# C_1 & = f_1w_1\\
+# C_2 & = f_1w_2 + f_2w_1\\
+# C_3 & = f_1w_3 + f_2w_2 + f_3w_1\\
+# C_4 & = f_1w_4 + f_2w_3 + f_3w_2 + f_4w_1\\
 # \end{align}$$
 # 
 # These sums are shown in Fig. 27 by adding the products of $f$ and $w$ vertically. Clearly, only where both $f$ and $w$ are not zero, will this product have a value. The symmetry in these sums soon becomes apparent, each being the product of one series running to the right, and the other to the left; for instance, look at $C$(4). The name convolution arises from just this effect; the word also means 'folded' and this is shown in the form of the series where each function is folded back onto the other. Convolution is also the distribution of one function in accordance with a 'law' specified by another function (Steward 1987) because the whole of one function $w$, is multiplied with each ordinate of the other $f$, and the results added. The ideal response (the 'one function') is distributed, i.e. spread out according to the law or shape of the driving function $f$.
@@ -85,7 +85,7 @@ plt.rcParams.update({'font.size': 14})  # set font size for plots
 # 
 # Written as a summation, the convolution at point $k$ is
 # 
-# $$\displaystyle C(k) = \sum_{i=0}^k f(i)w(k - i )   \qquad\tag{32}$$
+# $$\displaystyle C(k) = \sum_{i=1}^{k+1} f_i w_{(k - i )}   \qquad\tag{32}$$
 # 
 # This sum evaluates just one point; to calculate the whole convolution, the index $k$ must now be varied from 1 to $n$, which is the number of data points, making a double summation. One reason Fourier transforms are used to calculate convolutions is that the fast Fourier transform algorithm, FFT, is far quicker on the computer than calculating the convolution as a double summation, particularly for a large number of data points.
 # 
@@ -128,22 +128,109 @@ plt.legend()
 plt.show()
 
 
-# ## The time course of drug action.
+# ## 7.4 Convolution by matrix multiplication. Toeplitz matrices.
 # 
-# Most of us will have taken a course of antibiotics at one time or another. Some people have to take medication each day, for example thyroxine when their thyroid is malfunctioning or has been removed through surgery. The time - course of the concentration of a drug in the body depends not only on the lifetime the drug's removal but also how frequently it is administered. 
+# The convolution is the sum of terms of the two functions $f$ and $w$ as just described. The indices of the functions run in opposite directions, i.e. if $C_i$ is a value in the convolution
 # 
-# Typically, a fixed dose is taken at strictly defined intervals, for example once per day, and in this case we can use convolution to predict the time course of the action. The 'instrument function' is a series of spikes at a constant separation, modeling the drug being taken once per day for instance. The decrease of the drug's concentration we shall assume is first order, and we can use the algorithm above to calculate what happens. We can imagine this behaviour first, of course. When the lifetime of the medication is short compared to the time interval between taking it the concentration will rapidly rise and then fall close to zero following the daily periodicity. On the other hand if the lifetime is long relative to the frequency of administration then the concentration increases exponentially on average with a lifetime of $\tau$, but with a superimposed saw-tooth and eventually, after many days, becoming on average constant but still oscillating.  This behaviour is shown in figure 27a where a tablet is taken each day and the decay lifetime (elimination lifetime) is $3$ days.  
+# $$\displaystyle\begin{align}
+# C_1 & = f_1w_1\\
+# C_2 & = f_1w_2 + f_2w_1\\
+# C_3 & = f_1w_3 + f_2w_2 + f_3w_1\\
+# C_4 & = f_1w_4 + f_2w_3 + f_3w_2 + f_4w_1\\
+# \end{align}$$
+# 
+# and we can imagine each row as the dot products of two vectors, one in reversed order wrt. the other, for example
+# 
+# $$\displaystyle C_4= \begin{bmatrix}w_4&w_3&w_2&w_1\end{bmatrix} \begin{bmatrix}f_1\\f_2\\f_3\\f_4\end{bmatrix}$$
+# 
+# and if all four rows are put into a matrix this will look like
+# 
+# $$\displaystyle C= \begin{bmatrix}w_1&0&0&0\\w_2&w_1&0&0\\w_3&w_2&w_1&0\\w_4&w_3&w_2&w_1\end{bmatrix} \begin{bmatrix}f_1\\f_2\\f_3\\f_4\end{bmatrix}$$
+# 
+# and when multiplied out the whole convolution is produced.  You can see that entries for each column in the matrix is displaced down by one row and the missing value made into zero. This type of matrix is a specific type of Toeplitz matrix and is a very fast way of calculating the convolution because matrix multiplication is highly optimised in most if not all computer languages. In fact in Python there is a function (Toeplitz) that automatically forms the Toeplitz matrix given the first row and column so there is no need to work out a method of doing this yourself, although it is not that hard to do using the 'rotate' function for an array. 
+
+# In[3]:
+
+
+from scipy.linalg import toeplitz                         # import matrix function
+
+#------------------------------------
+def toep_conv(f,w):
+    top_row = np.zeros(n,dtype=float)
+    top_row[0]= w[0]                                      # put first element into top row of zeros
+    toep = toeplitz(w,top_row)                            # column is w, top row is top_row
+    return toep @ f                                       # @ is matrix multiplication operator     
+#-------------------------------------
+
+n = 2**10
+f = [ np.exp(-i/200.0) for i in range(n)]                 # molecular function 
+w = [ np.exp(-(i-100)**2/1e3) for i in range(n)]          # instrument reponse 
+t = [i for i in range(n)]                                 # time
+
+C = toep_conv(f,w)
+
+#plt.plot(t,C/max(C))                                      # plot normalised convolution
+#plt.plot(t,f)
+#plt.plot(t,w)
+#plt.show()
+
+
+# ## 7.5 Convolution with a Comb of pulses 
+# 
+# A mode-locked laser produced a series of short pulses each one separated by the round-trip time in the laser cavity, see chapter 5-1.2. The train of laser pulses can be constructed either by summing the electric field, as shown in Chapter 5-1.2, or from a single pulse by convoluting this with a comb of delta functions. This comb is sometimes called the Shah function and given the symbol III. Figure 27a (left) shows the effect of convolution. The time between pulses is $\tau = 2L/c$ where $2L$ is the round trip distance in the laser of optical length $L$, and is $c$ the speed of light. If $L=1.5$ m each pulse is $\tau=10$ ns apart which corresponds to a frequency of $10^8$ pulses per second.   
+# 
+# ![Drawing](fourier-fig27b.png)
+# 
+# Figure 27a. (A) The single laser pulse is convoluted with a comb of delta functions. (B) The electric field  of the pulse shown in A with its profile $f(t)$. The first pulse is shown in grey, the next one in black with a phase delay $\Delta\varphi$. (C) The transform of the train of laser pulses. The solid line is the envelope of the spectrum of a single pulse and the lines are caused by the repetitive nature of the comb of pulses and separated by the reciprocal of the time between pulses. The frequency spacing of lines is that between adjacent longitudinal modes in the laser cavity. This is $f_{rep}=1/\tau = c/2L$ Hz, and the time between pulses is $\tau=2L/c$ for optical cavity length $L$. The frequency of a line is $f_n = nf_{rep}+f_c$ where $f_c=\Delta \varphi f_{rep}/2\pi=\Delta \varphi /( 2\pi\tau)$ and where $f_c$ is the offset of the whole train of frequencies from zero. 
+# _____________
+# 
+# The comb function $K$ is a series of delta functions and if these are at intervals $\tau$, 
+# 
+# $$\displaystyle K(t/\tau) =\sum_{n=-\infty}^\infty \delta(t-n\tau)$$
+#  
+# The fourier transform  of this function is also a comb of delta functions but now in transform space $k$,
+# 
+# $$\displaystyle g(k)= \frac{1}{\tau}\sum_{n=-\infty}^\infty \delta(k-n\tau)$$
+# 
+# The convolution of the pulse with the comb function is the product of the fourier transforms, and as the transform of the comb is also a comb we can see that each delta function becomes 'dressed with the pulse', as can be seen in figure 27b. 
+# 
+# The transform of the convolution of the train of 'dressed pulses' is shown in fig 27a frame (A). The electric field of the pulse is shown with its envelope in frame (B), and the frequency profile $f(\nu)$ of the original pulse (frame (C)), where the vertical lines show that the pulse is actually composed only of a series of individual frequencies which are the frequencies of the longitudinal modes of the laser (see Chapter 5-1). The frequency spacing between modes is $f_{rep}=c/2L$ Hz where $L$ is the optical length of the laser, and for a $1.5$ m long mode-locked laser these modes are separated by $10^8$ Hz, which might seem to be  a rather large value but as the centre wavelength of the pulse in a Ti Sapphire laser is $\approx 800$ nm, which is $3.75\cdot 10^{14}$ Hz, this is actually a very small frequency difference. 
+# 
+# ### **Comb Spectroscopy**
+# 
+# The advent of stable, mode-locked lasers with ultra-short pulses has led to new forms of high resolution spectroscopy using combs of these laser pulses. See N. Pique & T. Hansch, Nature Photonics, 2019, v13, p146 for a review. As can be seen in fig 27a (C) the femtosecond pulse is comprised of a number of closely spaced frequencies. These are so closely spaced that they are narrower than many vibrational/rotational transitions and so can be used to measure these with great accuracy. There are several variations of this method but the simplest, direct comb spectroscopy, is shown in the next figure where the absorption of the sample is measured as if in a normal spectrophotometer. A molecular transition that is $1\,\mathrm{cm^{-1}}$ wide has a frequency width of $3\cdot10^{10}$ Hz so that many comb lines will cover this frequency as typically their separation is $10^8$ Hz. 
+# 
+# The frequency of a mode is altered from the phase delay, $\Delta\varphi$ that occurs in the laser cavity, see fig 27a. The is is due to dispersion of the pulses due to refractive index in any medium (except vacuum) changing with wavelength. This causes the group velocity, the speed of the peak of pulse envelope moves, to be different to the phase velocity, which is the speed of light in the medium. This phase changes by a fixed amount each round trip and makes the frequency of a line $f_n = nf_{rep}+f_c$ where $f_c=\Delta \varphi f_{rep}/2\pi=\Delta \varphi /( 2\pi\tau)$ and where $f_c$ is the offset of the whole train of frequencies from zero. The offset $f_c$ is called the carrier-envelope offset frequency. The phase $\varphi$ can change in the range $0\to 2\pi$ which means that the actual frequency of any particular comb frequency can be unknown. The phase changes due to fluctuations in for example, laser power, laser length, air currents, vibration etc. and so for high resolution spectroscopy one way to overcome this phase variation is to lock one mode either to that of a second and very stable cavity, or to radiation of a known frequency, see Pique & Hansch. 
+# 
+# ![Drawing](fourier-fig27c.png)
+# 
+# Figure 27b. Schematic of how to use a comb of pulses from a mode-locked laser to measure an absorption spectrum. (After fig 1, N. Pique & T. Hansch, Nature Photonics, 2019, v13, p146). The lines shown are those of the longitudinal modes of the laser and there are normally many more than shown in this schematic, their separation is $c/2L$ Hz. The frequency of the $n^{th}$  mode is $nf_{rep}+f_c$. These modes are the same as are shown in fig 27a C only there an intensity envelope is added.
+# _________
+
+# ## 7.6 The time course of drug action
+# 
+# Most of us will have taken a course of antibiotics at one time or another. Some people have to take medication each day, for example thyroxine when their thyroid is malfunctioning or has been removed through surgery. The time - course of the concentration of a drug in the body depends not only on the lifetime the drug's removal but also how frequently it is administered. (An alternative mathematical approach to the one illustrated here is given in chapter 5 section 1.4.) 
+# 
+# Typically, a fixed dose is taken at strictly defined intervals, for example once per day, and in this case we can use convolution to predict the time course of the action. The 'instrument function' is a series of spikes at a constant separation, modeling the interval between the drug being taken. The decrease of the drug's concentration we shall assume is first order, and we can use a convolution algorithm to calculate what happens. We can imagine what happens before actually doing the calculation. When the lifetime of the medication is short compared to the time interval between taking it the concentration will rapidly rise and then fall close to zero following the daily periodicity. On the other hand if the lifetime is long relative to the frequency of administration then the concentration increases exponentially on average with a lifetime of $\tau$, but with a superimposed saw-tooth and eventually, after many days, becoming on average constant but still oscillating about the mean.  This behaviour is shown in figure 27a where a tablet is taken each day and the decay lifetime (elimination lifetime) is $3$ days. The amount still varies quite a lot each day, which may not matter but if it does, a smaller dose given more frequently will reach the same average value and have the effect of smoothing out this variation.
 # 
 # ![Drawing](fourier-fig27a.png)
 # 
-# Fig 27a. The convolution of a comb function with an exponential decay, mimicking the concentration of a drug in the body. The decay with lifetime of $3$ days is shown in gray at the lower left of the figure. The profile of taking the medication is the comb of spikes. The concentration in the body is the blue saw-tooth like curve showing the integrating effect as the amount of medication does not fall to zero in the time interval before the next ingestion. The three red lines show the minimum, average and maximum  concentrations achieved. The initial amount $I_0=1$.
+# Fig 27c. The convolution of a comb function with an exponential decay, mimicking the concentration of a drug in the body. The decay with lifetime of $3$ days is shown in gray at the lower left of the figure. The profile of taking the medication is the comb of spikes. The concentration in the body is the blue saw-tooth like curve showing the integrating effect as the amount of medication does not fall to zero in the time interval before the next ingestion. The three red lines show the minimum, average and maximum  concentrations achieved. The initial amount $I_0=1$.
 # _______________
 # 
 # At long times the smallest amount present is $\approx \displaystyle e^{-1/\tau}/(1-e^{-1/\tau})$ and the maximum is $\displaystyle \approx 1/(1-e^{-1/\tau})$. The approximate average concentration (middle red line, top right) is the average of the upper and lower limits and is $\coth(1/(2\tau))/2 \approx \tau$ in the arbitrary units used. If $f$ is the fraction of the final average level reached after $n$ doses then $f=1-e^{-nT/\tau}$ where $T$ is the time interval between doses. To reach $99$% of the final average value when $\tau=3$ takes $n=14$ doses or the same number of days in this example.
 
-# ## 7.4 Convolution by Fourier transform
+# ## 7.7 Convolution by Fourier transform
 # 
-# The convolution can also become an integral, by supposing that the points are separated by an infinitesimal amount, and therefore, the change $sum \rightarrow \int $  is allowable. The integral form of the convolution at time $u$, is
+# The connection between convolution and fourier transforms is
+# 
+# >**convolution in real space = multiplication in fourier space**
+# 
+# >**multiplication in real space = convolution in fourier space**
+# 
+# Performing a fourier transform  is often a very fast way of computing a convolution by computer because the digital transform (DFT) is highly optimised.
+# 
+# The convolution can also become an integral by supposing that the points are separated by an infinitesimal amount, and therefore, the change $sum \rightarrow \int $  is allowable. The integral form of the convolution at time $u$, is
 # 
 # $$\displaystyle C(u)=\int_{-\infty}^\infty f(t)w(u-t)dt \qquad\tag{33}$$
 # 
@@ -153,7 +240,7 @@ plt.show()
 # 
 # $$\displaystyle C(t) = f (t) \otimes w(t) \qquad  \text{ or } \qquad C = f \otimes w \qquad\tag{34} $$
 # 
-# The convolution is performed by Fourier transforming functions $f$ and $w$ separately, multiplying the transforms together and then inverse transforming. The symbol $\otimes$ represents all these calculations because the result is returned in the time domain. Sometimes, the convolution is written only as a conversion into the frequency domain as
+# The convolution is performed by Fourier transforming functions $f$ and $w$ separately, multiplying the transforms together and then inverse transforming. The symbol $\otimes$ represents all these calculations because the result is returned in the time domain. (Note that some authors use * instead of  $\otimes$).  Sometimes, the convolution is written only as a conversion into the frequency domain as
 # 
 # $$\displaystyle f(t)\otimes w(t) = \sqrt{2\pi} F(\omega)W(\omega)$$
 # 
@@ -216,11 +303,11 @@ plt.show()
 # 
 # ### **Shifting a wavepacket: $T(f\cdot w)=T(f)\otimes T(w)$:   Products and transforms**
 # 
-# As an illustration that the transform of a product is the convolution of the transforms we examine a wavepacket which  has the form of a complex exponential modified by a gaussian envelope, fig 29a. A femtosecond laser pulse could have this time profile, a vibrational wavepacket this shape with bond extension $x$.  The wavepacket is
+# As an illustration that the transform of a product is the convolution of the transforms we examine a wavepacket which  has the form of a complex exponential modified by a gaussian envelope, fig 29a. A femtosecond laser pulse could have this time profile, a vibrational wavepacket has this shape with bond extension $x$.  The wavepacket is
 # 
 # $$\displaystyle f(t)= e^{ikx}e^{-x^2/2\sigma^2}$$
 # 
-# where $\sigma$ is the variance of the envelope. You can see that this function is the product of an exponential and a Gaussian. Its fourier transform is therefore the convolution of the transform of these two functions. The exponential has the transform (see table 6.7) $\delta(k-k_0)$ and the Gaussian  $\sigma e^{-\sigma^2k^2/2}$.
+# where $\sigma$ is the variance of the envelope. You can see that this function is the product of an exponential and a Gaussian. Its fourier transform is therefore the convolution of the transform of these two functions. The complex exponential has the transform (see table 6.9) $\delta(k-k_0)$ and the Gaussian  $\sigma e^{-\sigma^2k^2/2}$.
 # 
 # The convolution and hence transform is
 # 
@@ -235,15 +322,19 @@ plt.show()
 # 
 # ### **Code example of convolution by fourier transform**
 
-# In[3]:
+# In[4]:
 
 
-# convolution by fourier transform
+# convolution by fourier transform.
 
 n = 2**10
 f = [ np.exp(-i/100.0) for i in range(n)]           # molecular decay    
 w = [ np.exp(-(i-120)**2/1e3) for i in range(n)]    # instrument response
 t = [i for i in range(n)]
+z = np.zeros(n)
+
+f.extend(z)               # zero padding to prevent wrap-around
+w.extend(z)
 
 F = np.fft.rfft(f)        # use rfft as input in only real 
 W = np.fft.rfft(w)
@@ -251,22 +342,22 @@ C = np.fft.irfft(F*W)
 
 mxc  = max(C)         # use to normalse
 
-plt.plot(t,C/mxc,color='red',label='C , convolution '+r'$f\otimes w$')
-plt.plot(t,f,color='black',label='f, decay')
-plt.plot(t,w,color='blue',label='w, instrument')
+plt.plot(t,C[0:n]/mxc,color='red',label='C , convolution '+r'$f\otimes w$')
+plt.plot(t,f[0:n],color='black',label='f, decay')
+plt.plot(t,w[0:n],color='blue',label='w, instrument')
 plt.plot()
 plt.xlim([0,n])
 plt.legend()
 plt.show()
 
 
-# ## 7.5 A warning and a Solution
+# ## 7.9 A warning and a Solution
 # 
-# Finally a warning about using Fourier transforms to perform convolution. The transform assumes that the function being transformed is periodic, this means that if the signal is not of the same size, such as zero,  at its start and end there is a frequency associated with changing from end to start so that this will appear as an artifact in the convolution. THis occurs because the transform assumes that the signal is periodic. This does not arise in the case of the summation method and even though this may be slower to calculate, it is more robust.  The difference is shown in the next figure 29b. On the left is shown the summation based convolution calculation using an exponential, with lifetime of 10000, and a Gaussian and on the right using the Fourier transform method. All is not lost, however, because by padding the data with zeros to double its length the correct result can be obtained. 
+# Finally a warning about using Fourier transforms to perform convolution. The transform assumes that the function being transformed is periodic, this means that if the signal is not of the same size, such as zero,  at its start and end there is a frequency associated with changing from end to start so that this will appear as an artifact in the convolution. This occurs because the transform assumes that the signal is periodic. This does not arise in the case of the summation method and even though this may be slower to calculate, it is more robust.  The difference is shown in the next figure 29b. On the left is shown the summation based convolution calculation using an exponential, with lifetime of 10000, and a Gaussian and on the right using the Fourier transform method. All is not lost, however, because by padding the data with zeros to double its length the correct result can be obtained and of course only the first half is now plotted.
 # 
 # ![Drawing](fourier-fig29b.png)
 # 
-# Figure 29b. The figure shows the difference between the correct convolution done by summation ( red curve left ) and the artefact introduced by using the Fourier method ( red curve right ) this is produced when the functions are not the same size, preferably zero, at the start and end of the data.
+# Figure 29b. The figure shows the difference between the correct convolution done by summation ( red curve left ) and the artefact introduced by using the Fourier method ( red curve right ) without zero padding. This artefact is produced when the functions are not the same size at the start and end of the data.
 # ________
 # 
 # ## 8 Autocorrelation and Cross-Correlation
@@ -282,75 +373,110 @@ plt.show()
 # 
 # ##  8.1 Applications 
 # 
-# In ultra-fast (femtosecond) laser spectroscopy, autocorrelations are used to measure the length of the laser pulse because no electronic device is fast enough to do this, as they are limited to a time resolution of a few tens of picoseconds at best, but laser pulses can be less than $10$ fs in duration. In single molecule spectroscopy, the correlation of the number of fluorescent photons detected in a given time interval is used to determine the diffusion coefficient of the molecules. In the study of the electronically excited states of molecules, the correlation of time resolved spectra, recorded as the molecule moves on its potential energy surface, is a measure of excited state and solvent dynamics.  Perhaps the most important application is in FTIR spectroscopy. 
+# Applications of autocorrelations are very varied such as from medical ultra-sound imaging to improving GPS location to predicting trends in finance i.e. non-randomness in data. In ultra-fast (femtosecond) laser spectroscopy, autocorrelations are used to measure the length of the laser pulse because no electronic device is fast enough to do this, as they are limited to a time resolution of a few tens of picoseconds at best, but laser pulses can be less than $10$ fs in duration. Fluorescence correlation spectroscopy measures the time correlation of fluorescence fluctuations from a small number of fluorophores in a sample and is used to measure diffusion coefficients, particle size and concentration.  However, probably the most important application in Chemistry is in FTIR spectroscopy. 
 # 
-# The signal from an FTIR spectrometer is the autocorrelation of the infra-red radiation because in this instrument one arm of the (Michaelson) interferometer is moved relative to the other thus changing i.r. radiation's pathlength. The two beams interfere on the detector forming the autocorrelation, see section 5.2 and figure 12. More details are given shortly in section XX. 
+# The signal from an FTIR spectrometer is the autocorrelation of the infra-red radiation because in this instrument one arm of the (Michaelson) interferometer is moved relative to the other thus changing the i.r. radiation's path-length. The two beams interfere on the detector forming the autocorrelation, see section 5.2 and figure 12. More details are given in section 8.7. 
 # 
-# Two dimensional cross correlation is used in imaging for example to identify a particular feature by correlating two images. High spots in the correlation show where the images have similarities.
+# Two-dimensional cross-correlation is used in imaging for example to identify a particular feature by correlating two images. High spots in the correlation show where the images have similarities. 
 # 
 # ## 8.2 Calculating the correlation
 # 
 # The correlation function is similar to, but different from, convolution. The autocorrelation is always symmetrical about zero displacement or lag, the cross-correlation is not. In the convolution the two functions $f$ and $w$ are folded on one another, the first point of $f$ multiplying the last of $w$ and so on, until the last point of $f$ multiplies the first of $w$, equation 31. In the auto- and cross-correlation, one function is also moved past the other and the sum of the product of each term is made but with the indices running in the _same direction_, both increasing. 
 # 
-# A cross-correlation is shown in Fig. 31 using a triangle $w$ and a rectangle $f$, each with a base line, and for clarity, defined with only six points. The first term in auto- or cross-correlation $A$ occurs when point $f$(6) overlaps with $w$(1), when $f$ is to the far left of $w$. The position at $-5$ to the left is shown in the figure as $A$(-5). The middle term in the correlation is at zero displacement, or lag, and there is total overlap of the two shapes and the correlation is at a maximum. The figure on the right shows the last overlap, consisting of just one point in common between the two shapes. There are six terms in the summation of $A$(0) down to one in each of $A$(-5) and $A$(5). The zero lag term is
+# A cross-correlation is shown in Fig. 31 using a triangle $w$ and a rectangle $f$, each with a base line, and for clarity, defined with only six points. The first term in auto- or cross-correlation $A$ occurs when point $f_6$ overlaps with $w_1$, when $f$ is to the far left of $w$. The position at $-5$ to the left is shown in the figure as $A_{-5}$. The middle term in the correlation is at zero displacement, or lag, and there is total overlap of the two shapes and the correlation is at a maximum. The figure on the right shows the last overlap, consisting of just one point in common between the two shapes. There are six terms in the summation of $A_0$ down to one in each of $A_{-5}$ and $A_5$. The zero lag term is
 # 
-# $$\displaystyle A(0) = f (1)w(1) + f (2)w(2) + \cdots + f (6)w(6)$$
+# $$\displaystyle A_0 = f_1w_1 + f_2w_2 + \cdots + f_6w_6$$
 # 
 # The next term has one point displacement between $f$ and $w$ and five terms are summed,
 # 
-# $$A(1) = f (1)w(2) + f (2)w(3) + f (3)w(4) + f (4)w(5) + f (5)w(6)$$
+# $$A_1 = f_1w_2 + f_2w_3 + f_3w_4 + f_4w_5 + f_5w_6$$
 # 
 # With two points displaced, there are four terms
 # 
-# $$\displaystyle A(2) = f (1)w(3) + f (2)w(4) + f (3)w(5) + f (4)w(6) $$
+# $$\displaystyle A_2 = f_1w_3 + f_2w_4 + f_3w_5 + f_4w_6 $$
 # 
 # and so forth for the other terms. The last overlap is
 # 
-# $$\displaystyle A(5) = f (1)w(6)   \qquad\tag{36}$$
+# $$\displaystyle A_5 = f_1w_6   \qquad\tag{36}$$
 # 
 # On the negative side, the indices are interchanged, $f$ for $w$ and vice versa, and the first (far left) term is
-# $A(-5) = f (6)w(1)$ and similarly for the other terms. There are 11 terms in all or, in general $2n - 1$, for data of $n$ points. In an autocorrelation, $f$ and $w$ are the same function and therefore the autocorrelation must be symmetrical and only terms from zero to five are needed, the others being known by symmetry.
+# $A_{-5} = f_6w_1$ and similarly for the other terms. There are 11 terms in all or, in general $2n - 1$, for data of $n$ points. In an autocorrelation, $f$ and $w$ are the same function and therefore the autocorrelation must be symmetrical and only terms from zero to five are needed, the others being known by symmetry.
 # 
 # ![Drawing](fourier-fig31.png)
 # 
-# Figure 31. A pictorial description of cross-correlation of the signals (functions) $w$ a traingle and $f$ a 'top-hat' or rectangle.
+# Figure 31. A pictorial description of cross-correlation of the signals (functions) $w$ a triangle and $f$ a 'top-hat' or rectangle.
 # ____
 # 
 # The formula for the autocorrelation for $n$ data points is
 # 
-# $$\displaystyle A_a(k)=\sum_{i=0}^{n-k}f(i)f(k+i) \qquad k=0,1,\cdots \rightarrow \cdots n   \qquad\tag{37}$$
+# $$\displaystyle A^a_k=\sum_{i=1}^{n-k}f_if_{(k+i)} \qquad k=0,1,\cdots \rightarrow \cdots n-1   \qquad\tag{37}$$
 # 
-# where the first value of the displacement $k$ is zero, and the last $n$, and both functions are now labelled $f$. Very often the autocorrelation is normalized; this means dividing by $\sum f(i)^2$, 
+# where the first value of the displacement $k$ is zero, and the last $n$, and both functions are now labelled $f$. Very often the autocorrelation is normalized; this means dividing by $\sum f_i^2$, 
 # 
-# $$\displaystyle A_a(k)=\frac{\sum\limits_{i=0}^{n-k}f(i)f(k+i)}{\sum f(i)^2}   \qquad\tag{38}$$
+# $$\displaystyle A^a_k=\frac{\sum\limits_{i=1}^{n-k}f_if_{(k+i)}}{\sum f_i^2}   \qquad\tag{38}$$
 # 
 # These last two formulae produce just half of the autocorrelation. To produce the full correlation, symmetrical about zero lag, the mirror image of equation (37) must be added as points $-n \to -1$ to the left-hand part of the data.
 # 
 # The cross-correlation uses a similar formula
 # 
-# $$\displaystyle A_c(k)=\sum\limits_{i=0}^{n-k} f(i)w(k+i) \qquad k=-n+1,\cdots 0, \cdots n-1  \qquad\tag{39}$$
+# $$\displaystyle A^c_k=\sum\limits_{i=1}^{n-k} f_iw_{(k+i)} \qquad k=-n+1,\cdots 0, \cdots n-1  \qquad\tag{39}$$
 # 
 # but now $k$ always ranges from $-n + 1 \to n - 1$. This distinction is crucial, otherwise the whole of the cross-correlation is not calculated.
 # 
-# In calculating a correlation as a summation with a computer, as with a convolution, each term in the correlation is a sum, so this means that two nested 'loops' are needed to calculate the whole function; one loop sums each individual term, the other calculates the sum, $A(k)$.
+# ### **Numerical calculation using a  Toeplitz matrix**
+# 
+# In calculating a correlation as a summation with a computer, as with a convolution, each term in the correlation is a sum, so this means that two nested 'loops' are needed to calculate the whole function; one loop sums each individual term, the other calculates the sum, $A_k$. Alternatively the Toeplitz matrix method can be used. This is explained in section 7.3 for convolution and the method to be used with correlation is similar. The Toeplitz matrix is made in the same way as for convolution but the *vector is reversed* in order. The final result also has to be reversed. Why this is is shown below.
+# 
+# Placing $w$ into a matrix, as was done for convolution, and right multiplying by a reversed $f$ vector produces
+# 
+# $$\displaystyle A^c= \begin{bmatrix}w_1&0&0&0&0&0\\w_2&w_1&0&0&0&0\\w_3&w_2&w_1&0&0&0\\w_4&w_3&w_2&w_1&0&0\\
+# w_5&w_4&w_3&w_2&w_1&0\\w_6&w_5&w_4&w_3&w_2&w_1\end{bmatrix} \begin{bmatrix}f_6\\f_5\\f_4\\f_3\\f_2\\f_1\end{bmatrix}$$
+# 
+# which gives the following terms on expanding out
+# 
+# $$\displaystyle \begin{array}{lll}
+# A_0= w_1f_6\\
+# A_1= w_2f_6+w_1f_5\\
+# A_2= w_3f_6+w_2f_5+w_1f_4\\
+# \vdots\\
+# A_5= w_6f_6+w_5f_5+w_4f_4+w_3f_3+w_2f_2+w_1f_1\end{array}$$
+# 
+# which is the same result as given above but the $A_0$ is here the $A_5$ given above so that the ordering of the points $A_i$ should be reversed. In Python if the whole array is $\mathrm{A[:]}$, reversing is done with $\mathrm{A[:\;:-1]}$.
+# 
 # 
 # Some authors define the correlation up to a maximum of $n$ in the summation, not $n - k$. There is, however, a pitfall in doing this because, if the correlation is not zero above half the length of the data, then this folds round and what is calculated is the sum of the correlation plus its mirror image. The way to avoid this is to add $n$ zeros to the data and the summation continued until $2n$. This should be done routinely if Fourier transforms are used to calculate the correlation.
 # 
+# ### **Code example of autocorrelation using Toeplitz matrix**
+
+# In[5]:
+
+
+def toep_corrl(f,w):
+    r = np.zeros(n,dtype=float)
+    r[0]= w[0]
+    toep=toeplitz(w,r)              # size is n x n
+    temp = toep @ f[::-1]           # reverse f
+    return temp[::-1]               # reverse result
+#---------------------------------
+
+
+# ### **Integral forms**
+# 
 # Correlations and convolution are not restricted to digitized data but apply also to normal functions. Written as an integral, the cross-correlation of a real, i.e. not complex, function is
 # 
-# $$\displaystyle A_c(u) =\int_{-\infty}^{\infty}f(t)w(u+t)dt  \qquad\tag{40}$$
+# $$\displaystyle A^c(u) =\int_{-\infty}^{\infty}f(t)w(u+t)dt  \qquad\tag{40}$$
 # 
 # and the autocorrelation of $f$,
 # 
-# $$\displaystyle A_a(u) =\int_{-\infty}^{\infty}f(t)f(u+t)dt  \qquad\tag{41}$$
+# $$\displaystyle A^a(u) =\int_{-\infty}^{\infty}f(t)f(u+t)dt  \qquad\tag{41}$$
 # 
 # Notice that the sign in the second term is positive in the correlation but negative in a convolution, equation (33). Some authors multiply by a normalising term $1/\sqrt{2\pi}$ to the autocorrelation but we shall ignore this constant as in most applications it is not usually necessary to know it. The autocorrelation is an even function thus
 # 
-# $$\displaystyle A_a(u)=A_a(-u)$$
+# $$\displaystyle A^a(u)=A_a(-u)$$
 # 
 # and if the function contains a complex number, then the conjugate is always placed on the left,
 # 
-# $$\displaystyle A_a(u) =\int_{-\infty}^{\infty}f(t)^*f(u+t)dt  \qquad\tag{41}$$
+# $$\displaystyle A^a(u) =\int_{-\infty}^{\infty}f(t)^*f(u+t)dt  \qquad\tag{41}$$
 # 
 # The normalised autocorrelation is 
 # 
@@ -360,7 +486,7 @@ plt.show()
 # 
 # If $f(x)$ is complex then it is conventional to write 
 # 
-# $$\displaystyle A_a(u)=\int_{-\infty}^\infty f(t)f^*(u-t)dt\qquad\text{or}\qquad \displaystyle A_a(u)=\int_{-\infty}^\infty f^*(t)f(u+t)dt $$
+# $$\displaystyle A^a(u)=\int_{-\infty}^\infty f(t)f^*(u-t)dt\qquad\text{or}\qquad \displaystyle A_a(u)=\int_{-\infty}^\infty f^*(t)f(u+t)dt $$
 # 
 # where * indicates the complex conjugate.
 # 
@@ -372,11 +498,11 @@ plt.show()
 # 
 # whereas the correlation is 
 # 
-# $$\displaystyle A_c(u)=\int f(t)w(u+t)dt\qquad \text{correlation}$$
+# $$\displaystyle A^c(u)=\int f(t)w(u+t)dt\qquad \text{correlation}$$
 # 
 # and as with a convolution, an autocorrelation can be represented as a fourier transform. To show this start by  replacing $f$ and $w$ by their transforms which we call $g$ and $h$ respectively, and to be general suppose that $f$ and $w$ are complex then the change is $f\to f^*$ which is its complex conjugate. 
 # 
-# $$\displaystyle A_c(u)=\int_{-\infty}^\infty \left[\int_{-\infty}^\infty g^*(\omega)e^{i\omega t} d\omega\right]\left[ \int h(\omega' ) e^{-i\omega'(t+ u)}d\omega'\right]dt $$
+# $$\displaystyle A^c(u)=\int_{-\infty}^\infty \left[\int_{-\infty}^\infty g^*(\omega)e^{i\omega t} d\omega\right]\left[ \int h(\omega' ) e^{-i\omega'(t+ u)}d\omega'\right]dt $$
 # 
 # $$=\int_{-\infty}^\infty \int_{-\infty}^\infty \int_{-\infty}^\infty g^*(\omega)h(\omega')e^{i\omega t} e^{-i\omega'(t+ u)}dt  d\omega d\omega'$$
 # 
@@ -384,15 +510,42 @@ plt.show()
 # 
 # the integral in $dt$ is the delta function $\delta(\omega'-\omega)$ which is zero unless $\omega=\omega'$ which leaves one integral
 # 
-# $$A_c(u)=\int_{-\infty}^\infty  g^*(\omega)h(\omega)e^{-i\omega u}  d\omega $$
+# $$A^c(u)=\int_{-\infty}^\infty  g^*(\omega)h(\omega)e^{-i\omega u}  d\omega $$
 # 
 # 
 # In the case of an autocorrelation $f=w$ and
 # 
-# $$\displaystyle A_a(u)= \int_{-\infty}^\infty f(t)f(u+t)dt =\int_{-\infty}^\infty |g(\omega)|^2 e^{-i\omega u}  d\omega$$
+# $$\displaystyle A^a(u)= \int_{-\infty}^\infty f(t)f(u+t)dt =\int_{-\infty}^\infty |g(\omega)|^2 e^{-i\omega u}  d\omega\qquad\qquad\tag{42a}$$
 # 
 # which is the Wiener-Khinchin Theorem described shortly. This shows us that the square of the absolute value of the fourier transform of $f$ is its autocorrelation.
 # 
+# ### **Code example. Calculating an autocorrelation with fourier transforms**
+# 
+# The calculation leading to equation 42a can be used to obtain the autocorrelation using a fourier transform. The procedure is to calculate the transform, multiply this by its complex conjugate and inverse transform, and as in the warning of section 7.5 the transform should be padded to prevent wrap-around. Try other functions and add noise to understand what autocorrelations look like.
+
+# In[6]:
+
+
+# Autocorrelation of function w
+fig1= plt.figure(figsize=(5.0,3.0))
+n = 2**10                                      # number of points
+w = [ np.exp(-i/80) for i in range(n)]         # exponential decay as example
+x = [i for i in range(n)]                      # x value
+z = np.zeros(n,dtype=int)                      # zero padding
+w.extend(z)                                    # extend data with zero padding
+
+W = np.fft.rfft(w)                             # Fourier transform
+A = np.fft.irfft( W*np.conj(W) )               # multiply by complex conj, invert
+Ac = np.roll(A,n//2)                           # roll to get zero at centre of image
+
+mxc  = max(Ac)                                 # normalse to make pretty picture
+plt.plot(x,Ac[0:n]/mxc,color='red',label='autoc')
+plt.plot(x,w[0:n],color='blue',label='w')
+plt.xlim([0,n])
+plt.legend()
+plt.show()
+
+
 # ## 8.4 Examples
 # 
 # ### **(i) Periodic function**
@@ -402,7 +555,7 @@ plt.show()
 # 
 # and the result will be independent of the phase. Note that we could also use $\omega =2\pi \nu$ as the frequency, which to use is a matter of preference. The normalisation integral is a standard one and can be looked up or converted to an exponential form to simplify integration. The result is $\displaystyle \int_0^T \cos(2\pi t/T+\varphi)^2dt = T/2$. The other integral can similarly be calculated. Using SymPy, this is
 
-# In[4]:
+# In[7]:
 
 
 t, phi, T, u = symbols('t, phi, T, u',positive =True)
@@ -450,11 +603,11 @@ simplify(G)
 # 
 # and the calculation with SymPy is
 
-# In[5]:
+# In[8]:
 
 
-t, u, a =symbols('t u a',positive=True)
-f01= exp(-(t/a)**2)*exp(-((u+t)**2)/a**2)
+t, u, a = symbols('t u a',positive=True)
+f01 = exp(-(t/a)**2)*exp(-((u+t)**2)/a**2)
 G= simplify(integrate(f01, (t,-oo,oo), conds='none'))    # oo is infinity
 G.doit()
 
@@ -470,7 +623,7 @@ G.doit()
 # 
 # The autocorrelation calculation is shown below.
 
-# In[6]:
+# In[9]:
 
 
 # Algorithm: Autocorrelation
@@ -601,19 +754,25 @@ plt.show()
 # 
 # Recall that the FTIR instrument is a Michelson interferometer in which the input beam is made parallel and has a round cross-section as it passes through the instrument. This beam contains all wavelengths, its amplitude is divided at the beam splitter, and finally recombined onto a single detector whose output produces 'fringes' as one arm moves relative to the other. If $d$ is the difference in distance travelled by the beams they arrive at the detector at times separated by a delay of $\tau=d/c$ seconds. The detector measures the _intensity_ $I$ which is the complex square of the amplitude of any wave $f^*f = |f|^2$. If the i.r. radiation is hypothetically monochromatic with frequency $\omega_0$ as the mirror is translated the detector measures a sinusoidally varying signal as the pathlength $\tau$ varies because the i.r. waves become in and out of phase with one another.
 # 
-# The _amplitude_ or field is $f=ae^{i\omega_0 t}$ at frequency $\omega_0$ ($\equiv 2\pi \nu_0$) and at the detector the fields at time $t$ and $t+\tau$ are recombined as
+# The overall equation relating the autocorrelation of the radiation's electric field $f$ and at time delays $\tau$ is, via the Weiner-Kinchin equation, where $F(\cdots)$ is the fourier transform
+# 
+# $$\displaystyle F\bigg(\int_{-\infty}^\infty f(t)f^*(t+\tau)\bigg)= |F(f(t)|^2=|f(\omega|^2=spectrum $$
+# 
+# in other words the fourier transform of the autocorrelation is the spectrum. The i.r detector is a 'square-law' detector which means that the intensity $f*(\omega)f(\omega)$ is detected rather than the field(f(\omega)$. A typical detector material would consist of HgCdTe. 
+# 
+# To analyse what the detector measures we consider what happens at each delay. Each position of the movable mirror causes a time delay $\tau$ of one beam vs. the other, and at each position the detector signal is averaged over a small time interval $t_m$.  The _amplitude_ or field of the i.r. radiation is $f=ae^{i\omega_0 t}$ at frequency $\omega_0$ ($\omega= 2\pi \nu_0$) and at the detector the fields at time $t$ and $t+\tau$ are recombined as
 # 
 # $$\displaystyle I(\tau)=\beta \int |f(t)+f(t+\tau)|^2dt \qquad\tag{46a}$$
 # 
-# where $\beta$ is the product of reflectivity and transmission of the beam splitter. The signal is averaged at each time delay $\tau$ for a small time $t_m$, say a second. Expanding out (and ignoring limits for clarity) gives
+# to form the autocorrelation. The constant $\beta$ is the product of reflectivity and transmission of the beam splitter. The signal is averaged at each time delay $\tau$ for a small time $t_m$, say a second. Expanding out (and ignoring limits for clarity) gives
 # 
-# $$\displaystyle \begin{align}I(\tau)/\beta &= \int\; \Big(f^*(t)+f^*(t+\tau)\Big) \Big( f(t)+f(t+\tau) \Big)\;dt\\&=\int f^*(t)f(t)dt+\int f^*(t)f(t+\tau)dt +\int f(t)f^*(t+\tau)dt +\int f^*(t+\tau)f(t+\tau)dt\end{align}$$
+# $$\displaystyle \begin{align} \frac{I(\tau)}{\beta} &= \int\; \Big(f^*(t)+f^*(t+\tau)\Big) \Big( f(t)+f(t+\tau) \Big)\;dt\\&=\int f^*(t)f(t)dt+\int f^*(t)f(t+\tau)dt +\int f(t)f^*(t+\tau)dt +\int f^*(t+\tau)f(t+\tau)dt\end{align}$$
 # 
 # The first and last integrals are just the average intensity which is constant, for example 
 # 
 # $$\displaystyle \int_0^{t_m} f^*(t+\tau)f(t+\tau)dt=a^2\int_0^{t_m} e^{-i\omega_0((t+\tau)}e^{+i\omega_0((t+\tau)} dt=a^2t_m$$
 # 
-# The other integrals are autocorrelations
+# where $a$ is a constant. The other integrals are autocorrelations
 # 
 # $$\displaystyle \begin{align}\int_0^{t_m} f^*(t)f(t+\tau)+ f(t)f^*(t+\tau) dt &= a^2\int_0^{t_m}e^{-i\omega_0 t}e^{i\omega_0 (t+\tau)}+e^{+i\omega_0 t}e^{-i\omega_0 (t+\tau)}dt\\ &=a^2t_m (e^{i\omega_0 \tau}+e^{-i\omega_0 \tau})\end{align}$$
 #  
@@ -625,9 +784,9 @@ plt.show()
 # 
 # $$\displaystyle I(\tau)=C (1+\cos(\omega_0\tau) )$$
 # 
-# which shows the sinusoidal variation on top of a constant signal. Recall that as $\tau =d/c$ the time delay is equivalent to a distance moved by the interferometer. 
+# which shows the sinusoidal variation on top of a constant signal. Recall that as $\tau =d/c$ the time delay is equivalent to a distance moved by the mirror in the interferometer. As the delay $\tau$ is changed this signal will follow a sinusoidal pattern, but this equation is only at one frequency $\omega_0$. As all frequencies are combined on the detector the same variation will occur at each individual frequency but the peaks and troughs will occur at different $\tau$ and so combined signal will be recorded at each time delay. At short $\tau$ waves will only be out of step by a small amount, and so a large signal is expected but as the waves differ more in wavelength they will cancel one another and so the signal will become smaller and oscillate about the average value. 
 # 
-# Molecules naturally have many vibrational and rotational transitions, think of the HCl rotational/vibration spectrum for example, and therefore the field at the detector will be the sum of many different frequencies, we call this distribution $B(\omega)$, which is the spectrum we hope to measure, and therefore
+# Molecules naturally have many vibrational and rotational transitions, think of the HCl rotational/vibration spectrum for example, and therefore the field at the detector will be the sum of many different frequencies, we call this distribution $B(\omega)$, which is the spectrum we hope to measure, and therefore integrating $I(\tau)$ over all frequencies produces,
 # 
 # $$\displaystyle I(\tau) =\int_0^\infty B(\omega)(1+\cos(\omega\tau) )d\omega$$
 # 
@@ -639,7 +798,7 @@ plt.show()
 # 
 # $$\displaystyle B(\omega) = \int_0^\infty \left(I(\tau)-\frac{I(0)}{2}\right)\cos(\omega\tau)d\tau\qquad\tag{46b}$$
 # 
-# which is the basic equation for FTIR and is the cosine fourier transform of $(I(\tau)-I(0)/2) $ where $I(\tau)$ is the intensity the detector measures at delay time $\tau$. As $\tau$ changes this function will oscillate up and down as the phase between the two arms changes due to both pathlength change and absorption in the sample. How the transform extracts a signal is explained earlier in the chapter, see 6.4. To see that this equation is a fourier transform recall that $\displaystyle 2\cos(\omega\tau)=e^{i\omega \tau}+e^{-i\omega \tau}$. The integration ranges from $0\to \infty$ which in practice is the distance that becomes $\approx 500\to \approx 4000\; \mathrm{cm^{-1}}$. Note that for each frequency $\omega$ the integration on the right has to be performed. Normally this will be done numerically using a fast four transform FFT.
+# which is the basic equation for FTIR and is the cosine fourier transform of $(I(\tau)-I(0)/2) $ where $I(\tau)$ is the intensity the detector measures at delay time $\tau$. As $\tau$ changes this function will oscillate up and down as the phase between the two arms changes due to both pathlength change and absorption in the sample. How the transform extracts a signal is explained earlier in the chapter, see 6.4. To see that this equation is a fourier transform recall that $\displaystyle 2\cos(\omega\tau)=e^{i\omega \tau}+e^{-i\omega \tau}$. The integration ranges from $0\to \infty$ which in practice is the distance that becomes $\approx 500\to \approx 4000\; \mathrm{cm^{-1}}$. Note that for each frequency $\omega$ the integration on the right of eqn. 46b has to be performed. Normally this will be done numerically using a fast four transform FFT.
 # 
 # At very long times there can no longer be any correlation between the two arms and the signal remaining is due to that of the two separate arms, the constant terms from eqn 46a, making the long time value $I(0)/2$.  
 # 

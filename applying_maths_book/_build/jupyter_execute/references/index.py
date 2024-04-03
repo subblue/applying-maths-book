@@ -4,6 +4,7 @@
 # # 2 Index
 
 # 
+# 
 # 2D diffusion in a plate    11-4.12
 # 
 # 2D Fourier Transforms    9-,   9-12
@@ -1443,6 +1444,10 @@
 # Simulation    6-18,   9-13.1,   10-12.1,   11-4.6,   11-4.7,   12-,   12-3.1,   12-3.2,   12-3.3,   12-3.4,   12-4.1,   12-6.2,   12-6.4
 #  
 # Simulation of one-dimensional diffusion    12-3.3
+# 
+# Sumulation $A\rightleftharpoons 2B$    12-3.6
+# 
+# Simulation of polymer growth    12-3.5
 #  
 # Simultaneous equations    3-10.2,   7-12.1  to  7-12.6,   7-14.3,   7-14.4,   8-1.1,   10-10.1,   10-13.2,   13-6.2,   13-7.3
 #  
@@ -1579,6 +1584,8 @@
 # Time profile of an epidemic    11-7.6
 #  
 # Time-dependent Schroedinger equation    10-15.1,   10-16.4,     11-4.13
+# 
+# Toeplitz matrix    9-7,    9-8
 #  
 # Torque    6-2.2,  6-21.1,   9-5.3
 #  

@@ -51,6 +51,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -139,7 +141,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-1/chapter1-B.html">
-     5 Trig, hyperbolic and inverse functions, waves, polar coordinates &amp; factorials
+     5 Trig, hyperbolic and inverse functions, waves, polar coordinates,  factorials
     </a>
    </li>
    <li class="toctree-l2">
@@ -471,7 +473,7 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-5/chapter-5-A.html">
-     1 Series, averages, partition functions, DNA melting, atom entropy
+     1 Series, averages, waves, partition functions, DNA melting, atom entropy
     </a>
    </li>
    <li class="toctree-l2">
@@ -1517,8 +1519,21 @@ title="Print to PDF"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#cross-products-using-the-i-j-k-basis-set">
-   15.1 Cross products using the i j k basis set
+   15.1 Cross products using the
+   <span class="math notranslate nohighlight">
+    \(i\; j\; k\)
+   </span>
+   basis set
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-area-of-a-triangle">
+     <strong>
+      The area of a triangle
+     </strong>
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#cross-product-with-a-vector-basis-set">
@@ -1581,8 +1596,21 @@ title="Print to PDF"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#cross-products-using-the-i-j-k-basis-set">
-   15.1 Cross products using the i j k basis set
+   15.1 Cross products using the
+   <span class="math notranslate nohighlight">
+    \(i\; j\; k\)
+   </span>
+   basis set
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-area-of-a-triangle">
+     <strong>
+      The area of a triangle
+     </strong>
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#cross-product-with-a-vector-basis-set">
@@ -1669,43 +1697,50 @@ title="Print to PDF"
 <div class="math notranslate nohighlight">
 \[(\vec A + \vec B) \times  (\vec A - \vec B) = -\vec A \times  \vec B + \vec B \times  \vec A = 2(\vec B \times  \vec A) = -2(\vec A \times  \vec B)\]</div>
 <p>because <span class="math notranslate nohighlight">\(-\vec A \times  \vec B = \vec B \times  \vec A\)</span>.</p>
-<p><img alt="Drawing" src="../_images/vectors-fig32-33.png" /></p>
-<p>Left Figure 32. Right figure 33. Left. Definition of cross products <span class="math notranslate nohighlight">\(\vec u \times \vec v\)</span> and <span class="math notranslate nohighlight">\(\vec v \times \vec u\)</span>. Notice that <span class="math notranslate nohighlight">\(\vec u\)</span> and <span class="math notranslate nohighlight">\(\vec v\)</span> are in the same plane and that the two resultant vectors point in opposite directions. Notice also the relative orientation of the vectors. Right. Parallelogram.</p>
+<p><img alt="Drawing" src="../_images/vectors-fig32.png" /></p>
+<p>Left Figure 32. Definition of cross products <span class="math notranslate nohighlight">\(\vec u \times \vec v\)</span> and <span class="math notranslate nohighlight">\(\vec v \times \vec u\)</span>. Notice that <span class="math notranslate nohighlight">\(\vec u\)</span> and <span class="math notranslate nohighlight">\(\vec v\)</span> are in the same plane and that the two resultant vectors point in opposite directions. Notice also the relative orientation of the vectors.</p>
 <hr class="docutils" />
 <p>The area of the parallelogram with sides of length <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> is <span class="math notranslate nohighlight">\(AB\sin(\theta)\)</span>, where <span class="math notranslate nohighlight">\(\theta\)</span> is the enclosed angle. A parallelogram is shown in figure 33. The strategy used to prove this result is to calculate the area of the rectangle <span class="math notranslate nohighlight">\(abcd\)</span> and to convince yourself that this is the same as the area of the parallelogram by moving triangle <span class="math notranslate nohighlight">\( cdf\)</span> onto <span class="math notranslate nohighlight">\(abe\)</span>.</p>
-<p>By definition, <span class="math notranslate nohighlight">\(\sin(\theta) = opposite/hypotenuse\)</span>, therefore the height of the rectangle <span class="math notranslate nohighlight">\(h = |\vec A|\sin(\theta)\)</span> and, as the area of the rectangle is <span class="math notranslate nohighlight">\(h|\vec B|\)</span>, it follows that the area of the parallelogram is <span class="math notranslate nohighlight">\(| \vec A ||\vec B | \sin(\theta) \equiv | \vec A \times \vec B |\)</span> and the last identity follows by definition. The area of any triangle with sides <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> and enclosed angle <span class="math notranslate nohighlight">\(\theta\)</span> is therefore</p>
+<p>By definition, <span class="math notranslate nohighlight">\(\sin(\theta) = \mathrm{opposite/hypotenuse}\)</span>, therefore the height of the rectangle <span class="math notranslate nohighlight">\(h = |\vec A|\sin(\theta)\)</span> (fig. 33) and, as the area of the rectangle is <span class="math notranslate nohighlight">\(h|\vec B|\)</span>, it follows that the area of the parallelogram is <span class="math notranslate nohighlight">\(| \vec A ||\vec B | \sin(\theta) \equiv | \vec A \times \vec B |\)</span> and the last identity follows by definition. The area of any triangle with sides <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> and enclosed angle <span class="math notranslate nohighlight">\(\theta\)</span> is therefore</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle area = \frac{1}{2}|\vec A||\vec B|\sin(\theta) = \frac{1}{2}|\vec A \times\vec B|\]</div>
 <p>This relationship can be understood by realizing that the area of triangle <span class="math notranslate nohighlight">\(bce\)</span> is half that of the rectangle. To calculate the area of a triangle we need to use a basis set and this is done next.</p>
 </section>
 <section id="cross-products-using-the-i-j-k-basis-set">
-<h2>15.1 Cross products using the i j k basis set<a class="headerlink" href="#cross-products-using-the-i-j-k-basis-set" title="Permalink to this headline">#</a></h2>
+<h2>15.1 Cross products using the <span class="math notranslate nohighlight">\(i\; j\; k\)</span> basis set<a class="headerlink" href="#cross-products-using-the-i-j-k-basis-set" title="Permalink to this headline">#</a></h2>
 <p>Returning to equation 38 we can see that the cross product of two vectors can be zero; <span class="math notranslate nohighlight">\(\vec A \times \vec B = 0\)</span> even when neither <span class="math notranslate nohighlight">\(\vec A\)</span> nor <span class="math notranslate nohighlight">\(\vec B\)</span> are zero because the angle between them is zero. It is clear that, if <span class="math notranslate nohighlight">\(\vec A\)</span> and <span class="math notranslate nohighlight">\(\vec B\)</span> are parallel to one another the angle between them being zero, <span class="math notranslate nohighlight">\(\sin(0) = 0\)</span>; the same is true if the vectors are anti-parallel because <span class="math notranslate nohighlight">\(\sin(180^\text{o}) = 0\)</span>, see figure 32.</p>
 <p>In the description of dot products we used the right-angled unit vector (orthonormal) basis set <span class="math notranslate nohighlight">\((i, j, k)\)</span> to describe each vector, and found that in some circumstances calculations were more easily performed in this way. Naturally, we can do the same for the vectors here but we have to learn the rules for calculating cross products of the unit vectors.</p>
-<p>The rules are easy to remember as the <em>indices rotate</em> about the equations always being in the order,<span class="math notranslate nohighlight">\(i \to j \to k\)</span>;
-$<span class="math notranslate nohighlight">\(\displaystyle         \boldsymbol i \times \boldsymbol j = \boldsymbol k, \boldsymbol k \times \boldsymbol i = \boldsymbol j, \boldsymbol j \times \boldsymbol k = \boldsymbol i\)</span>$</p>
+<p>The rules are easy to remember as the <em>indices rotate</em> about the equations always being in the order,<span class="math notranslate nohighlight">\(i \to j \to k\)</span>;</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle         \boldsymbol i \times \boldsymbol j = \boldsymbol k,\; \boldsymbol k \times \boldsymbol i = \boldsymbol j,\; \boldsymbol j \times \boldsymbol k = \boldsymbol i\]</div>
 <p>Additionally, we use the rule that the cross product of any vector with itself is zero, for example <span class="math notranslate nohighlight">\(\boldsymbol  \times \boldsymbol i = 0\)</span> because <span class="math notranslate nohighlight">\(\sin(0) = 0\)</span>. Notice also the effect of reversing the order, for example  <span class="math notranslate nohighlight">\(\boldsymbol j \times \boldsymbol k = -\boldsymbol k \times \boldsymbol j = \boldsymbol i\)</span> as the vectors are anti-commutative. With this in mind, if a vector is defined in the usual way as</p>
 <div class="math notranslate nohighlight">
 \[\vec u = u_x\boldsymbol i+u_y\boldsymbol j+u_z\boldsymbol k \]</div>
 <p>where <span class="math notranslate nohighlight">\(u_x, u_y, u_z\)</span> are the amounts of <span class="math notranslate nohighlight">\(\boldsymbol i, \boldsymbol j, \boldsymbol k\)</span> respectively in the vector, then</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}\displaystyle \begin{align}\vec u \times \vec v =&amp; (u_x\boldsymbol i + u_y \boldsymbol j + u_z\boldsymbol k) \times (v_x\boldsymbol i + v_y\boldsymbol  j + v_z\boldsymbol k)\\
-=&amp; (u_yv_z - u_zv_y)\;\boldsymbol i + (u_zv_x - u_xv_z)\;\boldsymbol j + (u_xv_y - u_yv_x)\;\boldsymbol k\\
-=&amp;\begin{bmatrix}\boldsymbol i &amp;\boldsymbol j &amp; \boldsymbol k\\u_x &amp; u_y &amp; u_z\\
-v_x &amp; v_y &amp; v_z \end{bmatrix}\qquad\tag{41} \end{align}\end{split}\]</div>
+\[\begin{split}\displaystyle \begin{align}\vec u \times \vec v = &amp; (u_x\boldsymbol i + u_y \boldsymbol j + u_z\boldsymbol k) \times (v_x\boldsymbol i + v_y\boldsymbol  j + v_z\boldsymbol k)\\
+= &amp; (u_yv_z - u_zv_y)\;\boldsymbol i + (u_zv_x - u_xv_z)\;\boldsymbol j + (u_xv_y - u_yv_x)\;\boldsymbol k\\
+= &amp;\begin{bmatrix}\boldsymbol i &amp;\boldsymbol j &amp; \boldsymbol k\\u_x &amp; u_y &amp; u_z\\
+v_x &amp; v_y &amp; v_z \end{bmatrix} \end{align}\qquad\qquad\qquad\text{(41)}\end{split}\]</div>
 <p>where the last equality is a <em>determinant</em> and is by far the simplest way of remembering the cross product. Determinants are described in more detail in Chapter 7 and multiplication illustrated in Chapter 7.2.2. In the multiplication, notice that the second (middle) term</p>
 <p>is pre-multiplied by <span class="math notranslate nohighlight">\(-1\)</span> and the first term starts at the top left of the four terms to be multiplied.</p>
 <p><img alt="Drawing" src="../_images/vectors-crossprod.png" /></p>
 <div class="math notranslate nohighlight">
 \[\displaystyle = (u_yv_z - u_zv_y)\;\boldsymbol i\quad - (u_xv_z - u_zv_x)\;\boldsymbol j\quad + (u_xv_y - u_yv_x)\;\boldsymbol k \qquad\]</div>
-<p>The area of any triangle, such as in figure 33, can now be found. Suppose a triangle is enclosed by three vertices <span class="math notranslate nohighlight">\((2, -1, 6), (8, 3, 10), (10, -2, 16)\)</span>. To calculate the area, make the triangle’s sides into vectors and calculate half the absolute value of the cross product. The <span class="math notranslate nohighlight">\((i, j, k)\)</span> basis set should be used. Three vectors <span class="math notranslate nohighlight">\(\vec a, \vec b, \vec c\)</span> will form a triangle if <span class="math notranslate nohighlight">\(\vec a +\vec b + \vec c = 0\)</span>. Using the coordinates, let <span class="math notranslate nohighlight">\(\vec a\)</span> be the difference between the first and second <span class="math notranslate nohighlight">\(\vec a=(8-2)\boldsymbol i+(3+1)\boldsymbol j+(10-6)\boldsymbol k\)</span>, <span class="math notranslate nohighlight">\(\vec b\)</span> the difference between the first and third <span class="math notranslate nohighlight">\(\vec b=8\boldsymbol i-\boldsymbol j+10\boldsymbol k\)</span>, and then <span class="math notranslate nohighlight">\(\vec c = -14\boldsymbol i - 7\boldsymbol j - 14\boldsymbol k\)</span> although it is not needed. The vectors must form a triangle unless they lie on the same straight line, in which case the area would be zero. The cross product is</p>
+<section id="the-area-of-a-triangle">
+<h3><strong>The area of a triangle</strong><a class="headerlink" href="#the-area-of-a-triangle" title="Permalink to this headline">#</a></h3>
+<p>The area of any triangle, such as in figure 33, can now be found. Suppose a triangle is enclosed by three vertices <span class="math notranslate nohighlight">\((2, -1, 6), (8, 3, 10), (10, -2, 16)\)</span>. To calculate the area, make the triangle’s sides into vectors and calculate half the absolute value of the cross product. The <span class="math notranslate nohighlight">\((i, j, k)\)</span> basis set should be used. Three vectors <span class="math notranslate nohighlight">\(\vec A, \vec B, \vec C\)</span> will form a triangle if <span class="math notranslate nohighlight">\(\vec A +\vec B + \vec C = 0\)</span>. Using the coordinates, let <span class="math notranslate nohighlight">\(\vec A\)</span> be the difference between the first and second <span class="math notranslate nohighlight">\(\vec A=(8-2)\boldsymbol i+(3+1)\boldsymbol j+(10-6)\boldsymbol k\)</span>, <span class="math notranslate nohighlight">\(\vec B\)</span> the difference between the first and third <span class="math notranslate nohighlight">\(\vec B=8\boldsymbol i-\boldsymbol j+10\boldsymbol k\)</span>, and then <span class="math notranslate nohighlight">\(\vec C = -14\boldsymbol i - 7\boldsymbol j - 14\boldsymbol k\)</span> although it is not needed. The vectors must form a triangle unless they lie on the same straight line, in which case the area would be zero. The cross product is</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}\displaystyle \vec a\times\vec b=\begin{vmatrix}\boldsymbol i&amp; \boldsymbol j &amp; k\\
+\[\begin{split}\displaystyle \vec A\times\vec B=\begin{vmatrix}\boldsymbol i&amp; \boldsymbol j &amp; k\\
 6 &amp; 4 &amp; 4\\8 &amp; 3 &amp; 10\end{vmatrix} = 28\boldsymbol i - 28\boldsymbol j - 14\boldsymbol k\end{split}\]</div>
 <p>and the area is</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle \frac{1}{2}\big|\vec a\times\vec b\big|= \frac{1}{2}\big|28\boldsymbol i - 28\boldsymbol j - 14\boldsymbol k\big|=\frac{1}{2}\sqrt{28^2 + 28^2 + 14^2} = 21\]</div>
+\[\displaystyle \frac{1}{2}\big|\vec A\times\vec A\big|= \frac{1}{2}\big|28\boldsymbol i - 28\boldsymbol j - 14\boldsymbol k\big|=\frac{1}{2}\sqrt{28^2 + 28^2 + 14^2} = 21\]</div>
+<p><img alt="Drawing" src="../_images/vectors-fig33.png" /></p>
+<p>figure 33. The area of the triangle is half the area of the parallelogram which is the cross product of vectors <span class="math notranslate nohighlight">\(\vec A\)</span> and <span class="math notranslate nohighlight">\(\vec B\)</span> or <span class="math notranslate nohighlight">\(|\vec A\times \vec B|/2\)</span>.</p>
 </section>
+</section>
+<hr class="docutils" />
 <section id="cross-product-with-a-vector-basis-set">
 <h2>15.2 Cross product with a vector basis set<a class="headerlink" href="#cross-product-with-a-vector-basis-set" title="Permalink to this headline">#</a></h2>
 <p>If a basis set of vectors such as <span class="math notranslate nohighlight">\((1, 0, 0), (0, 1, 0), (0, 0, 1)\)</span> is used instead of <span class="math notranslate nohighlight">\((i, j, k)\)</span> then the cross product is written slightly differently. If the vectors are <span class="math notranslate nohighlight">\(\vec v = \begin{bmatrix}3&amp; 2 &amp;5\end{bmatrix}\)</span> and <span class="math notranslate nohighlight">\(\vec u = \begin{bmatrix}4 &amp;3&amp; 6\end{bmatrix}\)</span> the cross product determinant gives the vector</p>
